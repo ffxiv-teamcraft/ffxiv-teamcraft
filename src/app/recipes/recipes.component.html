@@ -1,0 +1,14 @@
+<md-card>
+    <md-input-container>
+        <md-icon mdPrefix>search</md-icon>
+        <input mdInput placeholder="Recipe name" #filter>
+    </md-input-container>
+    <md-list>
+        <md-list-item *ngFor="let recipe of recipes | async">
+            <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.item_name}}">
+            <h4 md-line>{{recipe.item_name}}</h4>
+            <p md-line>{{recipe.class_name}} {{recipe.level_view}}</p>
+            <md-icon>playlist_add</md-icon>
+        </md-list-item>
+    </md-list>
+</md-card>
