@@ -19,7 +19,7 @@
     </button>
     <md-expansion-panel [expanded]="false">
         <md-expansion-panel-header>
-            {{list.name}} - {{list.recipes.length}} items
+            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} items
         </md-expansion-panel-header>
         <md-list>
             <md-list-item *ngFor="let recipe of list.recipes">

@@ -70,7 +70,7 @@ export class ListManagerService {
             });
     }
 
-    //TODO
+    // TODO
     private removeCrafts(p: ListRow, r: any, l: List, a: number): Observable<List> {
         return Observable.of([{parent: p, recipe: r, list: l, amount: a}])
             .expand(dataArray => {
