@@ -1,0 +1,43 @@
+<button md-fab color="accent" class="reset" mdTooltip="Reset progression" (click)="resetProgression()">
+    <md-icon>refresh</md-icon>
+</button>
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>Crystals</md-expansion-panel-header>
+    <md-list>
+
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let crystal of list?.crystals"
+                  [row]="crystal"></app-item>
+    </md-list>
+</md-expansion-panel>
+
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>Gathering</md-expansion-panel-header>
+    <md-list>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let gather of list?.gathers"
+                  [row]="gather"></app-item>
+    </md-list>
+</md-expansion-panel>
+
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>Other</md-expansion-panel-header>
+    <md-list>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let other of list?.others"
+                  [row]="other"></app-item>
+    </md-list>
+</md-expansion-panel>
+
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>Pre crafts</md-expansion-panel-header>
+    <md-list>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let preCraft of list?.preCrafts"
+                  [row]="preCraft"></app-item>
+    </md-list>
+</md-expansion-panel>
+
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>Items</md-expansion-panel-header>
+    <md-list>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let recipe of list?.recipes"
+                  [row]="recipe"></app-item>
+    </md-list>
+</md-expansion-panel>

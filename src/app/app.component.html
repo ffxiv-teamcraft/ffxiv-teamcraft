@@ -1,1 +1,11 @@
-<app-recipes></app-recipes>
+<md-toolbar color="primary">
+    <h1>FFXIV Team Craft</h1>
+    <span class="spacer"></span>
+    <button md-button class="nav" routerLink="/recipes">Recipes</button>
+    <button md-button class="nav" routerLink="/lists">Lists</button>
+</md-toolbar>
+<div class="content">
+    <div class="content-middle">
+        <router-outlet></router-outlet>
+    </div>
+</div>

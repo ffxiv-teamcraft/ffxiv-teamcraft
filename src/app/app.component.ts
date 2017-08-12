@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
     selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    constructor() {
+    constructor(private auth: AngularFireAuth) {
+        auth.auth.signInAnonymously();
     }
 }

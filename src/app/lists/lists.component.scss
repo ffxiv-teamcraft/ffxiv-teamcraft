@@ -1,0 +1,19 @@
+@import "../../theme";
+
+.row {
+    position: relative;
+    .delete {
+        position: absolute;
+        left: -50px;
+        margin-top: 4px;
+    }
+    .details {
+        position: absolute;
+        left: -100px;
+        margin-top: 4px;
+    }
+    .amount {
+        width: 50px;
+        margin-right: 30px;
+    }
+}

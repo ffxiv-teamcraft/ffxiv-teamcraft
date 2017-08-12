@@ -1,0 +1,15 @@
+<md-list-item>
+    <img md-list-avatar src="{{item.icon}}" alt="{{item.name}}">
+    <span md-line>
+        {{item.name}}
+        {{row.done}}/{{row.amount}}
+    </span>
+
+    <div class="done">
+        <a md-mini-fab *ngIf="row.amount > row.done" (click)="setDone(row, row.amount)">
+            <md-icon>check</md-icon>
+        </a>
+        <md-icon *ngIf="row.amount === row.done" color="accent">done</md-icon>
+    </div>
+    <div class="right"></div>
+</md-list-item>

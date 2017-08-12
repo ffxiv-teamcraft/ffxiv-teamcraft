@@ -1,0 +1,37 @@
+<form (submit)="createNewList()">
+    <md-input-container>
+        <input mdInput type="text" name="listname" placeholder="List name"
+               [formControl]="newListFormControl" required>
+        <md-error *ngIf="newListFormControl.hasError('required')">
+            Please enter a name
+        </md-error>
+    </md-input-container>
+    <button type="submit" md-raised-button color="accent">Add a list</button>
+</form>
+<h3 class="mat-h3">Lists</h3>
+
+<div class="row" *ngFor="let list of lists | async">
+    <button md-mini-fab class="delete" (click)="delete(list.$key)">
+        <md-icon>delete</md-icon>
+    </button>
+    <button md-mini-fab class="details" routerLink="/list/{{user.uid}}/{{list.$key}}">
+        <md-icon>remove_red_eye</md-icon>
+    </button>
+    <md-expansion-panel [expanded]="false">
+        <md-expansion-panel-header>
+            {{list.name}} - {{list.recipes.length}} items
+        </md-expansion-panel-header>
+        <md-list>
+            <md-list-item *ngFor="let recipe of list.recipes">
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.name}}">
+                <h3 md-line>{{recipe.name}}</h3>
+                <md-input-container class="amount">
+                    <input mdInput type="number" readonly [(ngModel)]="recipe.amount" min="1">
+                </md-input-container>
+                <button disabled md-mini-fab (click)="removeRecipe(recipe, list, list.$key)">
+                    <md-icon>delete</md-icon>
+                </button>
+            </md-list-item>
+        </md-list>
+    </md-expansion-panel>
+</div>

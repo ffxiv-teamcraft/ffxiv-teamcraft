@@ -1,6 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {ListManagerService} from '../core/list-manager.service';
+import {List} from '../model/list';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {MdDialog, MdSnackBar} from '@angular/material';
+import {ListNamePopupComponent} from '../list-name-popup/list-name-popup.component';
 
 @Component({
     selector: 'app-recipes',
@@ -14,23 +20,49 @@ export class RecipesComponent implements OnInit {
     @ViewChild('filter')
     filter: ElementRef;
 
-    constructor(private http: HttpClient) {
+    lists: FirebaseListObservable<List[]>;
+
+    constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
+                private http: HttpClient, private resolver: ListManagerService,
+                private snackBar: MdSnackBar, private dialog: MdDialog) {
     }
 
     ngOnInit() {
+        this.auth.idToken.subscribe(user => {
+            this.lists = this.af.list(`/lists/${user.uid}`);
+        });
         this.recipes = Observable.fromEvent(this.filter.nativeElement, 'keyup')
-            .debounceTime(200)
+            .debounceTime(150)
             .distinctUntilChanged()
             .mergeMap(() => {
                 const filter = this.filter.nativeElement.value;
                 if (filter === '') {
                     return Observable.of([]);
                 }
-                return this.http.get<any>(`https://api.xivdb.com/search?language=fr&string=${filter}&one=recipes`)
+                return this.http.get<any>(`https://api.xivdb.com/search?string=${filter}&one=recipes`)
                     .map(results => {
                         return results.recipes.results;
                     });
             });
+    }
+
+    addRecipe(recipe: any, list: List, key: string): void {
+        console.log(key);
+        this.resolver.addToList(recipe.id, list).subscribe(updatedList => {
+            this.lists.update(key, updatedList).then(() => {
+                this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
+            });
+        });
+    }
+
+    addToNewList(recipe: any): void {
+        this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
+            const list = new List();
+            list.name = res;
+            this.lists.push(list).then(l => {
+                this.addRecipe(recipe, list, l.key);
+            });
+        });
     }
 
 }

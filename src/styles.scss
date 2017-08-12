@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-size: cover;
+  background: map-get(map-get($theme, background), background);
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

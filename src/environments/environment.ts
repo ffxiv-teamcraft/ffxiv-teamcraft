@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    firebase: {
+        apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
+        authDomain: 'ffxivteamcraft.firebaseapp.com',
+        databaseURL: 'https://ffxivteamcraft.firebaseio.com',
+        projectId: 'ffxivteamcraft',
+        storageBucket: 'ffxivteamcraft.appspot.com',
+        messagingSenderId: '1082504004791'
+    }
 };

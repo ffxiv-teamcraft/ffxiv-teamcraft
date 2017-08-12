@@ -1,0 +1,12 @@
+<h2 md-dialog-title>New List</h2>
+<div md-dialog-content>
+    <form (submit)="submit()">
+        <md-input-container>
+            <input mdInput type="text" [formControl]="form" required>
+            <md-error *ngIf="form.hasError('required')">
+                Please enter a name
+            </md-error>
+        </md-input-container>
+        <button md-raised-button type="submit" color="accent">Confirm</button>
+    </form>
+</div>
