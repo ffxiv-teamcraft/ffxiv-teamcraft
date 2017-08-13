@@ -9,6 +9,9 @@
         .spacer {
             flex: 1 1 auto;
         }
+        .version {
+            margin: 0 20px;
+        }
     }
     .content {
         overflow: auto;
@@ -17,7 +20,7 @@
         left: 0;
         right: 0;
         top: 64px;
-        .content-middle{
+        .content-middle {
             padding: 20px;
             width: 60%;
             margin: auto;

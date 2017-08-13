@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     MdButtonModule,
     MdCardModule,
+    MdChipsModule,
     MdDialogModule,
     MdExpansionModule,
     MdIconModule,
@@ -86,6 +87,7 @@ const routes: Routes = [
         MdSnackBarModule,
         MdExpansionModule,
         MdTooltipModule,
+        MdChipsModule,
 
         BrowserModule,
         FormsModule,
