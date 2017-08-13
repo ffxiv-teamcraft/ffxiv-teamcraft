@@ -9,7 +9,7 @@
             <md-list-item *ngFor="let recipe of recipes | async">
                 <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.item_name}}">
                 <h4 md-line>{{recipe.item_name}}</h4>
-                <p md-line>{{recipe.class_name}} {{recipe.level_view}}</p>
+                <p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>
                 <md-menu #appMenu="mdMenu">
                     <button md-menu-item (click)="addToNewList(recipe)"><md-icon>add</md-icon><span>New List</span></button>
                     <button md-menu-item *ngFor="let list of lists | async"
