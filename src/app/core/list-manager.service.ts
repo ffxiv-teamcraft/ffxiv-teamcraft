@@ -99,7 +99,6 @@ export class ListManagerService {
                                         .map(recipe => {
                                             const added = this.add(data.list.preCrafts, synth.item.id,
                                                 element.quantity * data.amount);
-                                            console.log(element.name, 'needs', element.quantity * data.amount, synth.item.name);
                                             return {
                                                 parent: added,
                                                 recipe: recipe,
