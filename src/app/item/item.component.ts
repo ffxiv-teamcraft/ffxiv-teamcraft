@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {ListRow} from '../model/list-row';
+import {XivdbService} from '../core/xivdb.service';
 
 @Component({
     selector: 'app-item',
@@ -24,11 +24,12 @@ export class ItemComponent implements OnInit {
         this.done.emit({row: row, amount: amount});
     }
 
-    constructor(private http: HttpClient) {
+    constructor(private xivdb: XivdbService) {
     }
 
     ngOnInit() {
-        this.item = this.http.get(`https://api.xivdb.com/item/${this.row.id}`).subscribe(item => this.item = item);
+        this.item = this.xivdb.getItem(this.row.id)
+            .subscribe(item => this.item = item);
     }
 
 }

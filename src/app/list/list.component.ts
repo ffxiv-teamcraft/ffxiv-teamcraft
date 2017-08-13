@@ -30,9 +30,7 @@ export class ListComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
-            this.listObj.subscribe(list => {
-                this.list = list;
-            });
+            this.listObj.subscribe(l => this.list = l);
         });
         this.auth.idToken.subscribe(user => {
             this.user = user;

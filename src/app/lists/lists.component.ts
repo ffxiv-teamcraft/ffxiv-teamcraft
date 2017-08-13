@@ -44,7 +44,8 @@ export class ListsComponent implements OnInit {
     }
 
     removeRecipe(recipe: any, list: List, key: string): void {
-        this.listManager.removeFromList(recipe, list);
+        this.listManager.addToList(recipe.recipeId, list, -recipe.amount)
+            .subscribe(resultList => this.lists.update(key, resultList));
         this.lists.update(key, list);
     }
 

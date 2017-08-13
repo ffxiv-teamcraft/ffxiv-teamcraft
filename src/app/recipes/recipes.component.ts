@@ -1,12 +1,12 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
 import {ListManagerService} from '../core/list-manager.service';
 import {List} from '../model/list';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../list-name-popup/list-name-popup.component';
+import {XivdbService} from '../core/xivdb.service';
 
 @Component({
     selector: 'app-recipes',
@@ -23,7 +23,7 @@ export class RecipesComponent implements OnInit {
     lists: FirebaseListObservable<List[]>;
 
     constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
-                private http: HttpClient, private resolver: ListManagerService,
+                private resolver: ListManagerService, private xivdb: XivdbService,
                 private snackBar: MdSnackBar, private dialog: MdDialog) {
     }
 
@@ -39,7 +39,7 @@ export class RecipesComponent implements OnInit {
                 if (filter === '') {
                     return Observable.of([]);
                 }
-                return this.http.get<any>(`https://api.xivdb.com/search?string=${filter}&one=recipes`)
+                return this.xivdb.searchRecipe(filter)
                     .map(results => {
                         return results.recipes.results;
                     });
@@ -47,7 +47,6 @@ export class RecipesComponent implements OnInit {
     }
 
     addRecipe(recipe: any, list: List, key: string): void {
-        console.log(key);
         this.resolver.addToList(recipe.id, list).subscribe(updatedList => {
             this.lists.update(key, updatedList).then(() => {
                 this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});

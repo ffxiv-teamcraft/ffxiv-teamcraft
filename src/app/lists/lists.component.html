@@ -28,7 +28,7 @@
                 <md-input-container class="amount">
                     <input mdInput type="number" readonly [(ngModel)]="recipe.amount" min="1">
                 </md-input-container>
-                <button disabled md-mini-fab (click)="removeRecipe(recipe, list, list.$key)">
+                <button md-mini-fab (click)="removeRecipe(recipe, list, list.$key)">
                     <md-icon>delete</md-icon>
                 </button>
             </md-list-item>

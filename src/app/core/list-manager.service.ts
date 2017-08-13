@@ -46,71 +46,34 @@ export class ListManagerService {
         return undefined;
     }
 
-    public addToList(recipeId: number, plist: List): Observable<List> {
+    public addToList(recipeId: number, plist: List, amount = 1): Observable<List> {
         return Observable.of(this.initList(plist))
             .mergeMap(list => {
                 return this.xivdb.getRecipe(recipeId)
                     .mergeMap(recipe => {
-                        const added = this.add(list.recipes, recipe.item.id, 1);
+                        const added = this.add(list.recipes, recipe.item.id, amount);
                         added.name = recipe.name;
                         added.icon = recipe.item.icon;
-                        return this.addCrafts(added, recipe, list, 1);
+                        added.recipeId = recipeId;
+                        return this.addCrafts(added, recipe, list, amount);
                     });
-            });
-    }
-
-    public removeFromList(recipeId: number, plist: List): Observable<List> {
-        return Observable.of(this.initList(plist))
-            .mergeMap(list => {
-                return this.xivdb.getRecipe(recipeId)
-                    .mergeMap(recipe => {
-                        const purgedList = this.remove(list.recipes, recipe.item.id);
-                        return this.removeCrafts(recipe, recipe, list, 1);
-                    });
-            });
-    }
-
-    // TODO
-    private removeCrafts(p: ListRow, r: any, l: List, a: number): Observable<List> {
-        return Observable.of([{parent: p, recipe: r, list: l, amount: a}])
-            .expand(dataArray => {
-                const res = [];
-                for (const data of dataArray) {
-                    if (data.recipe === undefined) {
-                        return Observable.empty();
-                    }
-                    for (const element of data.recipe.tree) {
-                        if (element.category_name === 'Crystal') {
-                            this.remove(data.list.crystals, element.id);
-                        } else {
-                            if (element.connect_craftable > 0) {
-                                const synth = element.synths[Object.keys(element.synths)[0]];
-                                res.push(
-                                    this.xivdb.getRecipe(synth.id)
-                                        .map(recipe => {
-                                            const added = this.remove(data.list.preCrafts, synth.item.id);
-                                            return {
-                                                parent: added,
-                                                recipe: recipe,
-                                                list: data.list,
-                                                amount: element.quantity * data.amount
-                                            };
-                                        })
-                                );
-                            } else if (element.connect_gathering >= 1) {
-                                this.remove(data.list.gathers, element.id);
-                            } else {
-                                this.remove(data.list.others, element.id);
-                            }
-                        }
-                    }
-                }
-                if (res.length > 0) {
-                    return Observable.concat(Observable.combineLatest(res));
-                }
-                return Observable.empty();
             })
-            .map(d => d[0].list);
+            .map(list => this.cleanList(list))
+            .debounceTime(200);
+    }
+
+    private cleanList(list: List): List {
+        for (const prop of Object.keys(list)) {
+            if (prop !== 'name') {
+                for (const row of list[prop]) {
+                    if (row.amount <= 0) {
+                        const index = list[prop].indexOf(row);
+                        list[prop].splice(index, 1);
+                    }
+                }
+            }
+        }
+        return list;
     }
 
     private addCrafts(p: ListRow, r: any, l: List, a: number): Observable<List> {
@@ -136,6 +99,7 @@ export class ListManagerService {
                                         .map(recipe => {
                                             const added = this.add(data.list.preCrafts, synth.item.id,
                                                 element.quantity * data.amount);
+                                            console.log(element.name, 'needs', element.quantity * data.amount, synth.item.name);
                                             return {
                                                 parent: added,
                                                 recipe: recipe,
@@ -172,13 +136,6 @@ export class ListManagerService {
         return array.filter((r) => {
             return r.id === id;
         })[0];
-    }
-
-    private remove(array: ListRow[], id: number): ListRow[] {
-        return array.filter((item) => {
-            return item.id !== id;
-        });
-
     }
 
     private addRequirement(item: ListRow, id: number, amount: number): ListRow {
