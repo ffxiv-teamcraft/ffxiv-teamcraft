@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ListRow} from '../model/list-row';
 import {I18nTools} from '../core/i18n-tools';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-item',
@@ -18,7 +19,7 @@ export class ItemComponent {
     @Output()
     done: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private i18n: I18nTools) {
+    constructor(private i18n: I18nTools, private translator: TranslateService) {
     }
 
     public setDone(row: ListRow, amount: number) {
@@ -27,5 +28,12 @@ export class ItemComponent {
 
     public getName(item: ListRow) {
         return this.i18n.getName(item.name);
+    }
+
+    public getXivdbDomain(): string {
+        if (this.translator.currentLang === 'en') {
+            return 'www';
+        }
+        return this.translator.currentLang;
     }
 }

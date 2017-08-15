@@ -19,7 +19,7 @@ import {
     MdToolbarModule,
     MdTooltipModule
 } from '@angular/material';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RecipesComponent} from './recipes/recipes.component';
 import {ListsComponent} from './lists/lists.component';
 import {environment} from '../environments/environment';
@@ -34,6 +34,8 @@ import {ItemComponent} from './item/item.component';
 import {XivdbService} from './core/xivdb.service';
 import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
 import {I18nTools} from './core/i18n-tools';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 const routes: Routes = [
     {
@@ -55,6 +57,10 @@ const routes: Routes = [
     },
 ];
 
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -66,6 +72,14 @@ const routes: Routes = [
         ListNamePopupComponent,
     ],
     imports: [
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
