@@ -1,6 +1,6 @@
 <md-input-container>
     <md-icon mdPrefix>search</md-icon>
-    <input mdInput placeholder="Recipe name" #filter>
+    <input mdInput i18n-placeholder placeholder="Recipe name" #filter>
 </md-input-container>
 <md-divider></md-divider>
 <md-list>
@@ -11,7 +11,7 @@
                 <h4 md-line>{{recipe.item_name}}</h4>
                 <p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>
                 <md-menu #appMenu="mdMenu">
-                    <button md-menu-item (click)="addToNewList(recipe)"><md-icon>add</md-icon><span>New List</span></button>
+                    <button md-menu-item (click)="addToNewList(recipe)"><md-icon>add</md-icon><span i18n>New List</span></button>
                     <button md-menu-item *ngFor="let list of lists | async"
                             (click)="addRecipe(recipe, list, list.$key)"><md-icon>playlist_play</md-icon><span>{{list.name}}</span></button>
                 </md-menu>
@@ -22,7 +22,7 @@
         </span>
     <span *ngIf="(recipes | async)?.length === 0">
             <md-list-item>
-                <h4>No matching recipe</h4>
+                <h4 i18n>No matching recipe</h4>
             </md-list-item>
         </span>
 </md-list>

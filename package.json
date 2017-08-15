@@ -12,7 +12,8 @@
         "deploy": "npm run build:prod && firebase deploy && npm run release:git",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "i18n": "ng-xi18n"
     },
     "private": true,
     "dependencies": {

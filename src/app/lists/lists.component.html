@@ -1,14 +1,14 @@
 <form (submit)="createNewList()">
     <md-input-container>
-        <input mdInput type="text" name="listname" placeholder="List name"
+        <input mdInput type="text" name="listname" i18n-placeholder placeholder="List name"
                [formControl]="newListFormControl" required>
         <md-error *ngIf="newListFormControl.hasError('required')">
             Please enter a name
         </md-error>
     </md-input-container>
-    <button type="submit" md-raised-button color="accent">Add a list</button>
+    <button type="submit" md-raised-button color="accent" i18n>Add a list</button>
 </form>
-<h3 class="mat-h3">Lists</h3>
+<h3 class="mat-h3" i18n>Lists</h3>
 
 <div class="row" *ngFor="let list of lists | async">
     <button md-mini-fab class="delete" (click)="delete(list.$key)">
@@ -19,7 +19,7 @@
     </button>
     <md-expansion-panel [expanded]="false">
         <md-expansion-panel-header>
-            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} items
+            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span i18n>items</span>
         </md-expansion-panel-header>
         <md-list>
             <md-list-item *ngFor="let recipe of list.recipes">
