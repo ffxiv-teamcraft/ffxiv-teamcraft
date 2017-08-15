@@ -1,8 +1,9 @@
 <button md-fab color="accent" class="reset" mdTooltip="Reset progression" (click)="resetProgression()">
     <md-icon>refresh</md-icon>
 </button>
+<h3>{{list.name}}</h3>
 <md-expansion-panel expanded="true">
-    <md-expansion-panel-header i18n>Crystals</md-expansion-panel-header>
+    <md-expansion-panel-header>Crystals</md-expansion-panel-header>
     <div class="crystal-row" *ngFor="let crystal of (listObj | async)?.crystals">
         <div *ngIf="crystal.amount > crystal.done">
             <img class="crystal" mdTooltip="{{getName(crystal.name)}}" mdTooltipPosition="above"
@@ -13,7 +14,7 @@
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
-    <md-expansion-panel-header i18n>Gathering</md-expansion-panel-header>
+    <md-expansion-panel-header>Gathering</md-expansion-panel-header>
     <md-list>
         <app-item (update)="update()" (done)="setDone($event)" *ngFor="let gather of (listObj | async)?.gathers"
                   [item]="gather"></app-item>
@@ -21,7 +22,7 @@
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
-    <md-expansion-panel-header i18n>Other</md-expansion-panel-header>
+    <md-expansion-panel-header>Other</md-expansion-panel-header>
     <md-list>
         <app-item (update)="update()" (done)="setDone($event)" *ngFor="let other of (listObj | async)?.others"
                   [item]="other"></app-item>
@@ -29,7 +30,7 @@
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
-    <md-expansion-panel-header i18n>Pre crafts</md-expansion-panel-header>
+    <md-expansion-panel-header>Pre crafts</md-expansion-panel-header>
     <md-list>
         <app-item (update)="update()" (done)="setDone($event)" *ngFor="let preCraft of (listObj | async)?.preCrafts"
                   [item]="preCraft"></app-item>
@@ -37,7 +38,7 @@
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
-    <md-expansion-panel-header i18n>Items</md-expansion-panel-header>
+    <md-expansion-panel-header>Items</md-expansion-panel-header>
     <md-list>
         <app-item (update)="update()" (done)="setDone($event)" *ngFor="let recipe of (listObj | async)?.recipes"
                   [item]="recipe"></app-item>
