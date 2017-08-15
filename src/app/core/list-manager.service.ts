@@ -10,16 +10,17 @@ export class ListManagerService {
     constructor(private xivdb: XivdbService) {
     }
 
-    public setDone(item: ListRow, amount: number, list: List): void {
+    public setDone(itemId: number, amount: number, list: List): void {
+        const item = this.getById(itemId, list);
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
         }
         if (item.requires !== undefined) {
-            item.requires.forEach(requirement => {
+            for (const requirement of item.requires) {
                 const requirementItem = this.getById(requirement.id, list);
-                this.setDone(requirementItem, requirement.amount * amount, list);
-            });
+                this.setDone(requirementItem.id, requirement.amount * amount, list);
+            }
         }
     }
 
@@ -51,9 +52,7 @@ export class ListManagerService {
             .mergeMap(list => {
                 return this.xivdb.getRecipe(recipeId)
                     .mergeMap(recipe => {
-                        const added = this.add(list.recipes, recipe.item.id, amount);
-                        added.name = recipe.name;
-                        added.icon = recipe.item.icon;
+                        const added = this.add(list.recipes, recipe.item.id, recipe.name, recipe.item.icon, amount);
                         added.recipeId = recipeId;
                         return this.addCrafts(added, recipe, list, amount);
                     });
@@ -90,15 +89,17 @@ export class ListManagerService {
                             this.addRequirement(data.parent, element.id, element.quantity);
                         }
                         if (element.category_name === 'Crystal') {
-                            this.add(data.list.crystals, element.id, element.quantity * data.amount);
+                            this.add(data.list.crystals, element.id, element.name, element.icon, element.quantity * data.amount);
                         } else {
                             if (element.connect_craftable > 0) {
                                 const synth = element.synths[Object.keys(element.synths)[0]];
                                 res.push(
                                     this.xivdb.getRecipe(synth.id)
                                         .map(recipe => {
-                                            const added = this.add(data.list.preCrafts, synth.item.id,
-                                                element.quantity * data.amount);
+                                            const added = this.add(data.list.preCrafts, synth.item.id, synth.item.name, synth.item.icon,
+                                                    element.quantity * data.amount
+                                                )
+                                            ;
                                             return {
                                                 parent: added,
                                                 recipe: recipe,
@@ -108,9 +109,15 @@ export class ListManagerService {
                                         })
                                 );
                             } else if (element.connect_gathering >= 1) {
-                                this.add(data.list.gathers, element.id, element.quantity * data.amount);
+                                this.add(data.list.gathers, element.id, element.name, element.icon,
+                                    element.quantity * data.amount
+                                )
+                                ;
                             } else {
-                                this.add(data.list.others, element.id, element.quantity * data.amount);
+                                this.add(data.list.others, element.id, element.name, element.icon,
+                                    element.quantity * data.amount
+                                )
+                                ;
                             }
                         }
                     }
@@ -123,12 +130,12 @@ export class ListManagerService {
             .map(d => d[0].list);
     }
 
-    private add(array: ListRow[], id: number, amount: number): ListRow {
+    private add(array: ListRow[], id: number, name: string, icon: string, amount: number): ListRow {
         const row = array.filter(r => {
             return r.id === id;
         });
         if (row.length === 0) {
-            array.push({id: id, amount: amount, done: 0});
+            array.push({id: id, amount: amount, name: name, icon: icon, done: 0});
         } else {
             row[0].amount += amount;
         }

@@ -5,39 +5,39 @@
     <md-expansion-panel-header>Crystals</md-expansion-panel-header>
     <md-list>
 
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let crystal of list?.crystals"
-                  [row]="crystal"></app-item>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let crystal of (listObj | async)?.crystals"
+                  [item]="crystal"></app-item>
     </md-list>
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>Gathering</md-expansion-panel-header>
     <md-list>
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let gather of list?.gathers"
-                  [row]="gather"></app-item>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let gather of (listObj | async)?.gathers"
+                  [item]="gather"></app-item>
     </md-list>
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>Other</md-expansion-panel-header>
     <md-list>
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let other of list?.others"
-                  [row]="other"></app-item>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let other of (listObj | async)?.others"
+                  [item]="other"></app-item>
     </md-list>
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>Pre crafts</md-expansion-panel-header>
     <md-list>
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let preCraft of list?.preCrafts"
-                  [row]="preCraft"></app-item>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let preCraft of (listObj | async)?.preCrafts"
+                  [item]="preCraft"></app-item>
     </md-list>
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>Items</md-expansion-panel-header>
     <md-list>
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let recipe of list?.recipes"
-                  [row]="recipe"></app-item>
+        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let recipe of (listObj | async)?.recipes"
+                  [item]="recipe"></app-item>
     </md-list>
 </md-expansion-panel>

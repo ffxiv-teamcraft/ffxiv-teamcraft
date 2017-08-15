@@ -1,18 +1,15 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ListRow} from '../model/list-row';
-import {XivdbService} from '../core/xivdb.service';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
 
     @Input()
-    row: ListRow;
-
-    item: any;
+    item: ListRow;
 
     @Output()
     update: EventEmitter<void> = new EventEmitter<void>();
@@ -23,13 +20,4 @@ export class ItemComponent implements OnInit {
     public setDone(row: ListRow, amount: number) {
         this.done.emit({row: row, amount: amount});
     }
-
-    constructor(private xivdb: XivdbService) {
-    }
-
-    ngOnInit() {
-        this.item = this.xivdb.getItem(this.row.id)
-            .subscribe(item => this.item = item);
-    }
-
 }

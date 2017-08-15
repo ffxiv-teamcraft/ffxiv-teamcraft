@@ -28,7 +28,7 @@ export class XivdbService {
     }
 
     private getFirebaseCache(uri: string): Observable<any> {
-        return this.af.object(`/xivdb${uri}`).distinctUntilChanged();
+        return this.af.object(`/xivdb${uri}`);
     }
 
 }

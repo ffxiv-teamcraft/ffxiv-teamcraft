@@ -42,7 +42,8 @@ export class ListComponent implements OnInit {
     }
 
     public setDone(data: { row: ListRow, amount: number }): void {
-        this.listManager.setDone(data.row, data.amount, this.list);
+        this.listManager.setDone(data.row.id, data.amount, this.list);
+        console.log(this.list);
         this.listObj.update(this.list);
     }
 
