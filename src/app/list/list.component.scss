@@ -2,3 +2,13 @@
     position: absolute;
     left: 81%;
 }
+
+.crystal-row {
+    display: inline-block;
+    text-align: center;
+    .crystal {
+        margin: 0 5px;
+        width: 40px;
+        border-radius: 40px;
+    }
+}

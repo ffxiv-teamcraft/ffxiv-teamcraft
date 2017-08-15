@@ -3,6 +3,7 @@ import {List} from '../model/list';
 import {Observable} from 'rxjs';
 import {ListRow} from '../model/list-row';
 import {XivdbService} from './xivdb.service';
+import {CraftedBy} from '../model/crafted-by';
 
 @Injectable()
 export class ListManagerService {
@@ -47,13 +48,40 @@ export class ListManagerService {
         return undefined;
     }
 
+    private getCraftedBy(recipe: any): CraftedBy[] {
+        let stars_tooltip = '';
+        for (let i = 0; i < recipe.stars; i++) {
+            stars_tooltip += '★';
+        }
+        const craftedBy: CraftedBy = {
+            icon: `https://secure.xivdb.com/img/classes/set2/${recipe.classjob.icon}.png`,
+            level: recipe.level_view,
+            stars_html: recipe.stars_html,
+            stars_tooltip: stars_tooltip
+        };
+
+        if (recipe.masterbook !== undefined) {
+            craftedBy.masterbook = {
+                name: recipe.masterbook.name,
+                id: recipe.masterbook.id
+            };
+        }
+        return [craftedBy];
+    }
+
     public addToList(recipeId: number, plist: List, amount = 1): Observable<List> {
         return Observable.of(this.initList(plist))
             .mergeMap(list => {
                 return this.xivdb.getRecipe(recipeId)
                     .mergeMap(recipe => {
-                        const added = this.add(list.recipes, recipe.item.id, recipe.name, recipe.item.icon, amount);
-                        added.recipeId = recipeId;
+                        const added = this.add(list.recipes, {
+                            id: recipe.item.id,
+                            name: recipe.name,
+                            icon: recipe.item.icon,
+                            amount: amount,
+                            done: 0,
+                            craftedBy: this.getCraftedBy(recipe)
+                        });
                         return this.addCrafts(added, recipe, list, amount);
                     });
             })
@@ -89,17 +117,31 @@ export class ListManagerService {
                             this.addRequirement(data.parent, element.id, element.quantity);
                         }
                         if (element.category_name === 'Crystal') {
-                            this.add(data.list.crystals, element.id, element.name, element.icon, element.quantity * data.amount);
+                            this.add(data.list.crystals, {
+                                id: element.id,
+                                name: element.name,
+                                icon: element.icon,
+                                amount: element.quantity * data.amount,
+                                done: 0
+                            });
                         } else {
                             if (element.connect_craftable > 0) {
+                                let craftedBy = [];
                                 const synth = element.synths[Object.keys(element.synths)[0]];
+                                Object.keys(element.synths).forEach(s => {
+                                    craftedBy = [...this.getCraftedBy(element.synths[s]), ...craftedBy];
+                                });
                                 res.push(
                                     this.xivdb.getRecipe(synth.id)
                                         .map(recipe => {
-                                            const added = this.add(data.list.preCrafts, synth.item.id, synth.item.name, synth.item.icon,
-                                                    element.quantity * data.amount
-                                                )
-                                            ;
+                                            const added = this.add(data.list.preCrafts, {
+                                                id: element.id,
+                                                name: element.name,
+                                                icon: element.icon,
+                                                amount: element.quantity * data.amount,
+                                                done: 0,
+                                                craftedBy: craftedBy
+                                            });
                                             return {
                                                 parent: added,
                                                 recipe: recipe,
@@ -109,15 +151,22 @@ export class ListManagerService {
                                         })
                                 );
                             } else if (element.connect_gathering >= 1) {
-                                this.add(data.list.gathers, element.id, element.name, element.icon,
-                                    element.quantity * data.amount
-                                )
-                                ;
+                                this.add(data.list.gathers, {
+                                    id: element.id,
+                                    name: element.name,
+                                    icon: element.icon,
+                                    amount: element.quantity * data.amount,
+                                    done: 0
+                                });
+
                             } else {
-                                this.add(data.list.others, element.id, element.name, element.icon,
-                                    element.quantity * data.amount
-                                )
-                                ;
+                                this.add(data.list.others, {
+                                    id: element.id,
+                                    name: element.name,
+                                    icon: element.icon,
+                                    amount: element.quantity * data.amount,
+                                    done: 0
+                                });
                             }
                         }
                     }
@@ -130,17 +179,17 @@ export class ListManagerService {
             .map(d => d[0].list);
     }
 
-    private add(array: ListRow[], id: number, name: string, icon: string, amount: number): ListRow {
+    private add(array: ListRow[], data: ListRow): ListRow {
         const row = array.filter(r => {
-            return r.id === id;
+            return r.id === data.id;
         });
         if (row.length === 0) {
-            array.push({id: id, amount: amount, name: name, icon: icon, done: 0});
+            array.push(data);
         } else {
-            row[0].amount += amount;
+            row[0].amount += data.amount;
         }
         return array.filter((r) => {
-            return r.id === id;
+            return r.id === data.id;
         })[0];
     }
 

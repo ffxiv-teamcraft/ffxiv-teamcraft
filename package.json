@@ -1,13 +1,15 @@
 {
     "name": "teamcraft",
-    "version": "0.5.0",
+    "version": "0.5.0-alpha.0",
     "license": "GNU GPL v3",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
         "build:prod": "ng build -prod",
-        "deploy": "npm run build:prod && firebase deploy",
+        "standard-version": "standard-version --prerelease alpha --dry-run",
+        "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
+        "deploy": "npm run build:prod && firebase deploy && npm run release:git",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
@@ -39,6 +41,7 @@
         "@types/jasmine": "2.5.38",
         "@types/node": "~6.0.60",
         "codelyzer": "~2.0.0",
+        "husky": "^0.14.3",
         "jasmine-core": "~2.5.2",
         "jasmine-spec-reporter": "~3.2.0",
         "karma": "~1.4.1",
@@ -49,6 +52,7 @@
         "karma-jasmine-html-reporter": "^0.2.2",
         "node-sass": "^4.5.2",
         "protractor": "~5.1.0",
+        "standard-version": "^4.2.0",
         "ts-node": "~2.0.0",
         "tslint": "~4.5.0",
         "typescript": "~2.2.0"

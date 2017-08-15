@@ -1,5 +1,7 @@
 <md-list-item>
-    <img md-list-avatar src="{{item.icon}}" alt="{{item.name}}">
+    <a md-list-avatar href="http://xivdb.com/item/{{item.id}}" target="_blank">
+        <img md-list-avatar src="{{item.icon}}" alt="{{item.name}}">
+    </a>
     <span md-line>
         {{item.name}}
         {{item.done}}/{{item.amount}}
@@ -11,5 +13,11 @@
         </a>
         <md-icon *ngIf="item.amount === item.done" color="accent">done</md-icon>
     </div>
-    <div class="right"></div>
+    <div class="right">
+        <span md-line *ngIf="item.craftedBy !== undefined">
+            <img *ngFor="let craft of item.craftedBy" class="crafted-by"
+                 mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                 mdTooltipPosition="above" src="{{craft.icon}}">
+        </span>
+    </div>
 </md-list-item>

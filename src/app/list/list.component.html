@@ -3,11 +3,13 @@
 </button>
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>Crystals</md-expansion-panel-header>
-    <md-list>
-
-        <app-item (update)="update()" (done)="setDone($event)" *ngFor="let crystal of (listObj | async)?.crystals"
-                  [item]="crystal"></app-item>
-    </md-list>
+    <div class="crystal-row" *ngFor="let crystal of (listObj | async)?.crystals">
+        <div *ngIf="crystal.amount > crystal.done">
+            <img class="crystal" mdTooltip="{{crystal.name}}" mdTooltipPosition="above"
+                 src="{{crystal.icon}}" alt="{{crystal.name}}">
+            <div>{{crystal.amount - crystal.done}}</div>
+        </div>
+    </div>
 </md-expansion-panel>
 
 <md-expansion-panel expanded="true">
