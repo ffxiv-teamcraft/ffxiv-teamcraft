@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0-alpha.1"></a>
+# [0.5.0-alpha.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.5.0-alpha.0...v0.5.0-alpha.1) (2017-08-15)
+
+
+### Features
+
+* add crafter icon for each craft in list ([3bbfe2f](https://github.com/Supamiu/ffxiv-teamcraft/commit/3bbfe2f))
+* add i18n, first pass ([7e6a1b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/7e6a1b9))
+* add masterbook chip and compact crystals viewing ([0228573](https://github.com/Supamiu/ffxiv-teamcraft/commit/0228573))
+
+
+
 <a name="0.5.0-alpha.0"></a>
 # 0.5.0-alpha.0 (2017-08-15)
 
