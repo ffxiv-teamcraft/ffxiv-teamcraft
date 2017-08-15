@@ -1,8 +1,19 @@
-md-input-container {
-    width: 300px;
-    margin: auto;
+.input-container {
+    width: 100%;
+    md-input-container {
+        font-size: 20px;
+        width: 60%;
+        margin: auto;
+        display: block;
+    }
 }
 
 .add {
     cursor: pointer;
+}
+
+.no-recipe {
+    text-align: center;
+    font-size: 40px;
+    opacity: 0.6;
 }

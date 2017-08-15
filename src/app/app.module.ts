@@ -33,6 +33,7 @@ import {ListComponent} from './list/list.component';
 import {ItemComponent} from './item/item.component';
 import {XivdbService} from './core/xivdb.service';
 import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
+import {I18nTools} from './core/i18n-tools';
 
 const routes: Routes = [
     {
@@ -100,7 +101,8 @@ const routes: Routes = [
     ],
     providers: [
         XivdbService,
-        ListManagerService
+        ListManagerService,
+        I18nTools
     ],
     bootstrap: [AppComponent]
 })

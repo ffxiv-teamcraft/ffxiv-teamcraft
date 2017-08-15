@@ -1,4 +1,4 @@
-@import '~@angular/material/_theming.scss';
+@import '../node_modules/@angular/material/_theming.scss';
 
 @include mat-core();
 $primary: mat-palette($mat-orange, 800);

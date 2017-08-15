@@ -1,14 +1,20 @@
 :host {
     .done {
+        width: 20%;
+        text-align: center;
+    }
+    .done-check {
         width: 35px;
         padding: auto;
     }
-
-    .right {
-        width: 30%;
+    .masterbook {
+        width: 25%;
         text-align: center;
     }
-
+    .classes {
+        width: 20%;
+        text-align: center;
+    }
     .crafted-by {
         height: 30px;
     }

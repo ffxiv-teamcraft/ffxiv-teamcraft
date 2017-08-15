@@ -5,8 +5,8 @@
     <md-expansion-panel-header i18n>Crystals</md-expansion-panel-header>
     <div class="crystal-row" *ngFor="let crystal of (listObj | async)?.crystals">
         <div *ngIf="crystal.amount > crystal.done">
-            <img class="crystal" mdTooltip="{{crystal.name}}" mdTooltipPosition="above"
-                 src="{{crystal.icon}}" alt="{{crystal.name}}">
+            <img class="crystal" mdTooltip="{{getName(crystal.name)}}" mdTooltipPosition="above"
+                 src="{{crystal.icon}}" alt="{{getName(crystal.name)}}">
             <div>{{crystal.amount - crystal.done}}</div>
         </div>
     </div>

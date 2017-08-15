@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable, LOCALE_ID} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabase} from 'angularfire2/database';
@@ -8,7 +8,7 @@ export class XivdbService {
 
     private xivdbUrl = 'https://api.xivdb.com';
 
-    constructor(private http: HttpClient, private af: AngularFireDatabase) {
+    constructor(private http: HttpClient, private af: AngularFireDatabase, @Inject(LOCALE_ID) private locale: string) {
     }
 
     public getRecipe(id: number): Observable<any> {
@@ -20,7 +20,7 @@ export class XivdbService {
     }
 
     public searchRecipe(query: string): Observable<any> {
-        return this.getXivdb(`/search?string=${query}&one=recipes`);
+        return this.getXivdb(`/search?string=${query}&one=recipes&language=${this.locale.split('-')[0]}`);
     }
 
     private getXivdb(uri: string): Observable<any> {

@@ -4,16 +4,18 @@
     "license": "GNU GPL v3",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "build:prod": "ng build -prod",
+        "start": "ng serve --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf",
+        "start:fr": "ng serve --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf",
+        "build:fr": "ng build -prod --aot --output-path dist/fr --base-href fr --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf",
+        "build:en": "ng build -prod --aot --output-path dist/en --base-href en --locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf",
+        "build:prod": "npm run build:fr && npm run build:en",
         "standard-version": "standard-version --prerelease alpha --dry-run",
         "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
         "deploy": "npm run build:prod && firebase deploy && npm run release:git",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "i18n": "ng-xi18n"
+        "i18n": "ng-xi18n --i18nFormat=xlf -p src/tsconfig.json"
     },
     "private": true,
     "dependencies": {

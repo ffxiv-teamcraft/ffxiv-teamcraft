@@ -1,7 +1,9 @@
-<md-input-container>
-    <md-icon mdPrefix>search</md-icon>
-    <input mdInput i18n-placeholder placeholder="Recipe name" #filter>
-</md-input-container>
+<div class="input-container">
+    <md-input-container>
+        <md-icon mdPrefix>search</md-icon>
+        <input class="filter" mdInput i18n-placeholder placeholder="Recipe name" #filter>
+    </md-input-container>
+</div>
 <md-divider></md-divider>
 <md-list>
 
@@ -20,9 +22,7 @@
                 </button>
             </md-list-item>
         </span>
-    <span *ngIf="(recipes | async)?.length === 0">
-            <md-list-item>
-                <h4 i18n>No matching recipe</h4>
-            </md-list-item>
-        </span>
+    <div *ngIf="(recipes | async)?.length === 0 || (recipes | async) === null">
+        <h4 class="no-recipe" i18n>No matching recipe</h4>
+    </div>
 </md-list>

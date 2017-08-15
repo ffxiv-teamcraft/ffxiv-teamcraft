@@ -7,6 +7,8 @@ import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../core/list-manager.service';
+import {I18nTools} from '../core/i18n-tools';
+import {I18nName} from '../model/i18n-name';
 
 @Component({
     selector: 'app-lists',
@@ -22,7 +24,8 @@ export class ListsComponent implements OnInit {
     newListFormControl = new FormControl('', Validators.required);
 
     constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
-                private dialog: MdDialog, private listManager: ListManagerService) {
+                private dialog: MdDialog, private listManager: ListManagerService,
+                private i18n: I18nTools) {
     }
 
     createNewList(): void {
@@ -47,6 +50,10 @@ export class ListsComponent implements OnInit {
         this.listManager.addToList(recipe.recipeId, list, -recipe.amount)
             .subscribe(resultList => this.lists.update(key, resultList));
         this.lists.update(key, list);
+    }
+
+    public getName(i18nName: I18nName): string {
+        return this.i18n.getName(i18nName);
     }
 
     ngOnInit() {

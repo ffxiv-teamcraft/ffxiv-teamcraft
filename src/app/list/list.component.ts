@@ -8,6 +8,8 @@ import {ListRow} from '../model/list-row';
 import {ListManagerService} from '../core/list-manager.service';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
+import {I18nTools} from '../core/i18n-tools';
+import {I18nName} from '../model/i18n-name';
 
 @Component({
     selector: 'app-list',
@@ -24,7 +26,7 @@ export class ListComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, private af: AngularFireDatabase,
                 private auth: AngularFireAuth, private listManager: ListManagerService,
-                private dialog: MdDialog) {
+                private dialog: MdDialog, private i18n: I18nTools) {
     }
 
     ngOnInit() {
@@ -55,5 +57,9 @@ export class ListComponent implements OnInit {
                 }
             }
         });
+    }
+
+    public getName(entry: I18nName): string {
+        return this.i18n.getName(entry);
     }
 }

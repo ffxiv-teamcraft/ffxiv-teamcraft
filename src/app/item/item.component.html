@@ -1,19 +1,30 @@
 <md-list-item>
     <a md-list-avatar href="http://xivdb.com/item/{{item.id}}" target="_blank">
-        <img md-list-avatar src="{{item.icon}}" alt="{{item.name}}">
+        <img md-list-avatar src="{{item.icon}}" alt="{{getName(item)}}">
     </a>
     <span md-line>
-        {{item.name}}
-        {{item.done}}/{{item.amount}}
+        {{getName(item)}}
     </span>
 
+    <div class="masterbook">
+        <span *ngIf="item.craftedBy !== undefined">
+            <span *ngFor="let craft of item.craftedBy">
+                <md-chip-list>
+                    <md-chip color="primary" selected="true" *ngIf="craft.masterbook !== undefined">{{craft.masterbook.name}}</md-chip>
+                </md-chip-list>
+            </span>
+        </span>
+    </div>
     <div class="done">
+    {{item.done}}/{{item.amount}}
+    </div>
+    <div class="done-check">
         <a md-mini-fab *ngIf="item.amount > item.done" (click)="setDone(item, item.amount)">
             <md-icon>check</md-icon>
         </a>
         <md-icon *ngIf="item.amount === item.done" color="accent">done</md-icon>
     </div>
-    <div class="right">
+    <div class="classes">
         <span md-line *ngIf="item.craftedBy !== undefined">
             <img *ngFor="let craft of item.craftedBy" class="crafted-by"
                  mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"

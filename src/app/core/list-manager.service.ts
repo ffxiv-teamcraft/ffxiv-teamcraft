@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {ListRow} from '../model/list-row';
 import {XivdbService} from './xivdb.service';
 import {CraftedBy} from '../model/crafted-by';
+import {I18nName} from '../model/i18n-name';
 
 @Injectable()
 export class ListManagerService {
@@ -23,6 +24,13 @@ export class ListManagerService {
                 this.setDone(requirementItem.id, requirement.amount * amount, list);
             }
         }
+    }
+
+    private getI18nName(item: any): I18nName {
+        return {
+            fr: item.name_fr || item.name,
+            en: item.name_en || item.name
+        };
     }
 
     public resetDone(item: ListRow, list: List): void {
@@ -76,7 +84,7 @@ export class ListManagerService {
                     .mergeMap(recipe => {
                         const added = this.add(list.recipes, {
                             id: recipe.item.id,
-                            name: recipe.name,
+                            name: this.getI18nName(recipe),
                             icon: recipe.item.icon,
                             amount: amount,
                             done: 0,
@@ -119,7 +127,7 @@ export class ListManagerService {
                         if (element.category_name === 'Crystal') {
                             this.add(data.list.crystals, {
                                 id: element.id,
-                                name: element.name,
+                                name: this.getI18nName(element),
                                 icon: element.icon,
                                 amount: element.quantity * data.amount,
                                 done: 0
@@ -136,7 +144,7 @@ export class ListManagerService {
                                         .map(recipe => {
                                             const added = this.add(data.list.preCrafts, {
                                                 id: element.id,
-                                                name: element.name,
+                                                name: this.getI18nName(recipe),
                                                 icon: element.icon,
                                                 amount: element.quantity * data.amount,
                                                 done: 0,
@@ -153,7 +161,7 @@ export class ListManagerService {
                             } else if (element.connect_gathering >= 1) {
                                 this.add(data.list.gathers, {
                                     id: element.id,
-                                    name: element.name,
+                                    name: this.getI18nName(element),
                                     icon: element.icon,
                                     amount: element.quantity * data.amount,
                                     done: 0
@@ -162,7 +170,7 @@ export class ListManagerService {
                             } else {
                                 this.add(data.list.others, {
                                     id: element.id,
-                                    name: element.name,
+                                    name: this.getI18nName(element),
                                     icon: element.icon,
                                     amount: element.quantity * data.amount,
                                     done: 0
@@ -187,6 +195,9 @@ export class ListManagerService {
             array.push(data);
         } else {
             row[0].amount += data.amount;
+            if (row[0].amount < 0) {
+                row[0].amount = 0;
+            }
         }
         return array.filter((r) => {
             return r.id === data.id;

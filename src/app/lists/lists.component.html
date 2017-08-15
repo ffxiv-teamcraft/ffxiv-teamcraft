@@ -19,12 +19,12 @@
     </button>
     <md-expansion-panel [expanded]="false">
         <md-expansion-panel-header>
-            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span i18n>items</span>
+            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;" i18n>items</span>
         </md-expansion-panel-header>
         <md-list>
             <md-list-item *ngFor="let recipe of list.recipes">
-                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.name}}">
-                <h3 md-line>{{recipe.name}}</h3>
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">
+                <h3 md-line>{{getName(recipe.name)}}</h3>
                 <md-input-container class="amount">
                     <input mdInput type="number" readonly [(ngModel)]="recipe.amount" min="1">
                 </md-input-container>
