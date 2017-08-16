@@ -31,7 +31,7 @@ export class ListManagerService {
             fr: item.name_fr || item.name,
             en: item.name_en || item.name,
             de: item.name_de || item.name,
-            jp: item.name_jp || item.name,
+            ja: item.name_ja || item.name,
         };
     }
 
@@ -122,7 +122,7 @@ export class ListManagerService {
                 element.recipe.tree[row.index].name_fr = row.item.name_fr;
                 element.recipe.tree[row.index].name_de = row.item.name_de;
                 element.recipe.tree[row.index].name_en = row.item.name_en;
-                element.recipe.tree[row.index].name_jp = row.item.name_jp;
+                element.recipe.tree[row.index].name_ja = row.item.name_ja;
             }
             return result;
         }));
