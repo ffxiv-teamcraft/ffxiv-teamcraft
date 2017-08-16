@@ -88,13 +88,42 @@ export class ListManagerService {
                             icon: recipe.item.icon,
                             amount: amount,
                             done: 0,
-                            craftedBy: this.getCraftedBy(recipe)
+                            craftedBy: this.getCraftedBy(recipe),
+                            recipeId: recipe.id
                         });
                         return this.addCrafts(added, recipe, list, amount);
                     });
             })
             .map(list => this.cleanList(list))
             .debounceTime(200);
+    }
+
+    private addI18nNames(elements: any[]): Observable<any> {
+        const treeDetails = [];
+        for (const element of elements) {
+            if (element.recipe.tree !== undefined) {
+                element.recipe.tree.forEach(item => {
+                    treeDetails.push(this.xivdb.getItem(item.id).map(i => {
+                        return {item: i, element: element, index: element.recipe.tree.indexOf(item)};
+                    }));
+                });
+            }
+        }
+        return Observable.combineLatest(treeDetails, ((...details) => {
+            const result = [];
+            for (const row of details) {
+                let element = result.find(o => o.recipe.id === row.element.recipe.id);
+                if (element === undefined) {
+                    result.push(row.element);
+                    element = result.find(o => o.recipe.id === row.element.recipe.id);
+                }
+                element.recipe.tree[row.index].name_fr = row.item.name_fr;
+                element.recipe.tree[row.index].name_de = row.item.name_de;
+                element.recipe.tree[row.index].name_en = row.item.name_en;
+                element.recipe.tree[row.index].name_jp = row.item.name_jp;
+            }
+            return result;
+        }));
     }
 
     private cleanList(list: List): List {
@@ -113,6 +142,7 @@ export class ListManagerService {
 
     private addCrafts(p: ListRow, r: any, l: List, a: number): Observable<List> {
         return Observable.of([{parent: p, recipe: r, list: l, amount: a}])
+            .mergeMap(d => this.addI18nNames(d))
             .expand(dataArray => {
                 const res = [];
                 for (const data of dataArray) {
@@ -180,7 +210,10 @@ export class ListManagerService {
                     }
                 }
                 if (res.length > 0) {
-                    return Observable.concat(Observable.combineLatest(res));
+                    return Observable.combineLatest(res)
+                        .mergeMap(elements => {
+                            return this.addI18nNames(elements);
+                        });
                 }
                 return Observable.empty();
             })

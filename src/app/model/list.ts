@@ -6,4 +6,5 @@ export class List {
     gathers: ListRow[] = [];
     others: ListRow[] = [];
     crystals: ListRow[] = [];
+    createdAt: string = new Date().toISOString();
 }

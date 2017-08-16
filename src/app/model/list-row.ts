@@ -8,4 +8,5 @@ export interface ListRow {
     done: number;
     requires?: ListRow[];
     craftedBy?: CraftedBy[];
+    recipeId?: number;
 }

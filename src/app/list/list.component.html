@@ -1,7 +1,7 @@
 <button md-fab color="accent" class="reset" mdTooltip="Reset progression" (click)="resetProgression()">
     <md-icon>refresh</md-icon>
 </button>
-<h3>{{list.name}}</h3>
+<h3>{{list?.name}}</h3>
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>{{'Crystals'| translate}}</md-expansion-panel-header>
     <div class="crystal-row" *ngFor="let crystal of (listObj | async)?.crystals">
