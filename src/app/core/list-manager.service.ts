@@ -29,7 +29,9 @@ export class ListManagerService {
     private getI18nName(item: any): I18nName {
         return {
             fr: item.name_fr || item.name,
-            en: item.name_en || item.name
+            en: item.name_en || item.name,
+            de: item.name_de || item.name,
+            jp: item.name_jp || item.name,
         };
     }
 
