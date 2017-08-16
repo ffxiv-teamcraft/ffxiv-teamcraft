@@ -1,7 +1,7 @@
 {
     "Confirmation": "Confirmation",
     "Yes": "Yes",
-    "No": "Yes",
+    "No": "No",
     "Crystals": "Crystals",
     "Gathering": "Gathering",
     "Other": "Other",
@@ -16,5 +16,6 @@
     "Add_a_list": "Add a list",
     "List_name": "List name",
     "Recipe_name": "Recipe name",
-    "No_matching_recipe": "No matching recipe"
+    "No_matching_recipe": "No matching recipe",
+    "Reset_progression": "Reset progression"
 }
