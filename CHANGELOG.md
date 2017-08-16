@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0-alpha.1"></a>
+# [0.6.0-alpha.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.5.0-alpha.3...v0.6.0-alpha.1) (2017-08-16)
+
+
+### Features
+
+* add list item amount modification ([fbab5aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/fbab5aa))
+
+
+
 <a name="0.5.0-alpha.3"></a>
 # [0.5.0-alpha.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.5.0-alpha.2...v0.5.0-alpha.3) (2017-08-16)
 
