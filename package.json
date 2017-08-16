@@ -1,6 +1,6 @@
 {
   "name": "teamcraft",
-  "version": "0.6.0-alpha.3",
+  "version": "0.6.0-alpha.4",
   "license": "GNU GPL v3",
   "scripts": {
     "ng": "ng",
