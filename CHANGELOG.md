@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0-alpha.8"></a>
+# [0.6.0-alpha.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.6.0-alpha.7...v0.6.0-alpha.8) (2017-08-16)
+
+
+### Bug Fixes
+
+* forgot a refactor element ([1a14d73](https://github.com/Supamiu/ffxiv-teamcraft/commit/1a14d73))
+
+
+
 <a name="0.6.0-alpha.7"></a>
 # [0.6.0-alpha.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.6.0-alpha.6...v0.6.0-alpha.7) (2017-08-16)
 
