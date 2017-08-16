@@ -3,6 +3,15 @@
     <md-chip-list class="version">
         <md-chip>Alpha</md-chip>
     </md-chip-list>
+
+    <md-menu #langMenu="mdMenu" yPosition="above">
+        <button md-menu-item (click)="use('fr')">FR</button>
+        <button md-menu-item (click)="use('en')">EN</button>
+    </md-menu>
+    <button md-raised-button [mdMenuTriggerFor]="langMenu">
+        {{locale | uppercase}}
+    </button>
+
     <span class="spacer"></span>
     <button md-button class="nav" routerLink="/recipes">{{'Recipes' | translate}}</button>
     <button md-button class="nav" routerLink="/lists">{{'Lists' | translate}}</button>

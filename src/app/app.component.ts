@@ -9,9 +9,22 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
 
-    constructor(auth: AngularFireAuth, translate: TranslateService) {
+    locale: string;
+
+    constructor(auth: AngularFireAuth, private translate: TranslateService) {
         auth.auth.signInAnonymously();
         translate.setDefaultLang('en');
-        translate.use(translate.getBrowserLang());
+        const lang = localStorage.getItem('locale');
+        if (lang !== null) {
+            this.use(lang);
+        } else {
+            this.use(translate.getBrowserLang());
+        }
+    }
+
+    use(lang: string): void {
+        this.locale = lang;
+        localStorage.setItem('locale', lang);
+        this.translate.use(lang);
     }
 }
