@@ -49,7 +49,11 @@ export class ListsComponent implements OnInit {
     removeRecipe(recipe: any, list: List, key: string): void {
         this.listManager.addToList(recipe.recipeId, list, -recipe.amount)
             .subscribe(resultList => this.lists.update(key, resultList));
-        this.lists.update(key, list);
+    }
+
+    updateAmount(recipe: any, list: List, key: string, amount: number): void {
+        this.listManager.addToList(recipe.recipeId, list, amount - recipe.amount)
+            .subscribe(resultList => this.lists.update(key, resultList));
     }
 
     public getName(i18nName: I18nName): string {

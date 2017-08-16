@@ -17,7 +17,7 @@
     <button md-mini-fab class="details" routerLink="/list/{{user.uid}}/{{list.$key}}">
         <md-icon>remove_red_eye</md-icon>
     </button>
-    <md-expansion-panel [expanded]="false">
+    <md-expansion-panel [expanded]="true">
         <md-expansion-panel-header>
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </md-expansion-panel-header>
@@ -26,7 +26,8 @@
                 <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">
                 <h3 md-line>{{getName(recipe.name)}}</h3>
                 <md-input-container class="amount">
-                    <input mdInput type="number" readonly [(ngModel)]="recipe.amount" min="1">
+                    <input mdInput type="number" [ngModel]="recipe.amount"
+                           (ngModelChange)="updateAmount(recipe, list, list.$key, $event)" min="1">
                 </md-input-container>
                 <button md-mini-fab (click)="removeRecipe(recipe, list, list.$key)">
                     <md-icon>delete</md-icon>

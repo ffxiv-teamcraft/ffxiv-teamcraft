@@ -10,7 +10,6 @@ import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
 import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
-import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'app-list',
@@ -19,7 +18,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ListComponent implements OnInit {
 
-    listObj: Observable<List>;
+    listObj: FirebaseObjectObservable<List>;
 
     list: List;
 
@@ -32,10 +31,7 @@ export class ListComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`)
-                .mergeMap((list) => {
-                    return this.listManager.addToList(32431, list);
-                });
+            this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
             this.listObj.subscribe(l => this.list = l);
         });
         this.auth.idToken.subscribe(user => {
@@ -43,21 +39,21 @@ export class ListComponent implements OnInit {
         });
     }
 
-    // update(): void {
-    //     this.listObj.update(this.list);
-    // }
+    update(): void {
+        this.listObj.update(this.list);
+    }
 
-    // public setDone(data: { row: ListRow, amount: number }): void {
-    //     this.listManager.setDone(data.row.id, data.amount, this.list);
-    //     this.listObj.update(this.list);
-    // }
+    public setDone(data: { row: ListRow, amount: number }): void {
+        this.listManager.setDone(data.row.id, data.amount, this.list);
+        this.listObj.update(this.list);
+    }
 
     public resetProgression(): void {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {
                 for (const recipe of this.list.recipes) {
                     this.listManager.resetDone(recipe, this.list);
-                    // this.listObj.update(this.list);
+                    this.listObj.update(this.list);
                 }
             }
         });
