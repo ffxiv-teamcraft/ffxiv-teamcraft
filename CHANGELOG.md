@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0-alpha.2"></a>
+# [0.6.0-alpha.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.6.0-alpha.1...v0.6.0-alpha.2) (2017-08-16)
+
+
+### Features
+
+* add ability to change language at anytime ([684fb51](https://github.com/Supamiu/ffxiv-teamcraft/commit/684fb51)), closes [#1](https://github.com/Supamiu/ffxiv-teamcraft/issues/1)
+* add DE and JP to localized item names ([4108dc0](https://github.com/Supamiu/ffxiv-teamcraft/commit/4108dc0))
+
+
+
 <a name="0.6.0-alpha.1"></a>
 # [0.6.0-alpha.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.5.0-alpha.3...v0.6.0-alpha.1) (2017-08-16)
 
