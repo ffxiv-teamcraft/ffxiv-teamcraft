@@ -7,6 +7,7 @@
     <md-menu #langMenu="mdMenu" yPosition="above">
         <button md-menu-item (click)="use('fr')">FR</button>
         <button md-menu-item (click)="use('en')">EN</button>
+        <button md-menu-item (click)="use('de')">DE</button>
     </md-menu>
     <button md-raised-button [mdMenuTriggerFor]="langMenu">
         {{locale | uppercase}}
