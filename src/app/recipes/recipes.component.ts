@@ -6,7 +6,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../list-name-popup/list-name-popup.component';
-import {XivdbService} from '../core/xivdb.service';
+import {DataService} from '../core/data.service';
 
 @Component({
     selector: 'app-recipes',
@@ -23,7 +23,7 @@ export class RecipesComponent implements OnInit {
     lists: FirebaseListObservable<List[]>;
 
     constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
-                private resolver: ListManagerService, private xivdb: XivdbService,
+                private resolver: ListManagerService, private xivdb: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog) {
     }
 
@@ -47,7 +47,7 @@ export class RecipesComponent implements OnInit {
     }
 
     addRecipe(recipe: any, list: List, key: string): void {
-        this.resolver.addToList(recipe.id, list).subscribe(updatedList => {
+        this.resolver.addToList(recipe.item.id, list).subscribe(updatedList => {
             this.lists.update(key, updatedList).then(() => {
                 this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
             });

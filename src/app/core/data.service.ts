@@ -5,9 +5,10 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {TranslateService} from '@ngx-translate/core';
 
 @Injectable()
-export class XivdbService {
+export class DataService {
 
     private xivdbUrl = 'https://api.xivdb.com';
+    private garlandUrl = 'https://www.garlandtools.org/db/data';
 
     constructor(private http: HttpClient, private af: AngularFireDatabase, private i18n: TranslateService) {
     }
@@ -17,7 +18,7 @@ export class XivdbService {
     }
 
     public getItem(id: number): Observable<any> {
-        return this.getFirebaseCache(`/item/${id}`);
+        return this.getGarland(`/item/${id}`);
     }
 
     public searchRecipe(query: string): Observable<any> {
@@ -26,6 +27,10 @@ export class XivdbService {
 
     private getXivdb(uri: string): Observable<any> {
         return this.http.get<any>(this.xivdbUrl + uri);
+    }
+
+    private getGarland(uri: string): Observable<any> {
+        return this.http.get<any>(this.garlandUrl + uri + '.json');
     }
 
     private getFirebaseCache(uri: string): Observable<any> {

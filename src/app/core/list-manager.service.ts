@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 import {List} from '../model/list';
 import {Observable} from 'rxjs';
 import {ListRow} from '../model/list-row';
-import {XivdbService} from './xivdb.service';
+import {DataService} from './data.service';
 import {CraftedBy} from '../model/crafted-by';
 import {I18nName} from '../model/i18n-name';
 
 @Injectable()
 export class ListManagerService {
 
-    constructor(private xivdb: XivdbService) {
+    constructor(private db: DataService) {
     }
 
     public setDone(itemId: number, amount: number, list: List): void {
@@ -82,7 +82,7 @@ export class ListManagerService {
     public addToList(recipeId: number, plist: List, amount = 1): Observable<List> {
         return Observable.of(this.initList(plist))
             .mergeMap(list => {
-                return this.xivdb.getRecipe(recipeId)
+                return this.db.getRecipe(recipeId)
                     .mergeMap(recipe => {
                         const added = this.add(list.recipes, {
                             id: recipe.item.id,
@@ -105,8 +105,8 @@ export class ListManagerService {
         for (const element of elements) {
             if (element.recipe.tree !== undefined) {
                 element.recipe.tree.forEach(item => {
-                    treeDetails.push(this.xivdb.getItem(item.id).map(i => {
-                        return {item: i, element: element, index: element.recipe.tree.indexOf(item)};
+                    treeDetails.push(this.db.getItem(item.id).map(i => {
+                        return {data: i, element: element, index: element.recipe.tree.indexOf(item)};
                     }));
                 });
             }
@@ -119,10 +119,10 @@ export class ListManagerService {
                     result.push(row.element);
                     element = result.find(o => o.recipe.id === row.element.recipe.id);
                 }
-                element.recipe.tree[row.index].name_fr = row.item.name_fr;
-                element.recipe.tree[row.index].name_de = row.item.name_de;
-                element.recipe.tree[row.index].name_en = row.item.name_en;
-                element.recipe.tree[row.index].name_ja = row.item.name_ja;
+                element.recipe.tree[row.index].name_fr = row.data.item.fr.name;
+                element.recipe.tree[row.index].name_de = row.data.item.de.name;
+                element.recipe.tree[row.index].name_en = row.data.item.en.name;
+                element.recipe.tree[row.index].name_ja = row.data.item.ja.name;
             }
             return result;
         }));
@@ -172,7 +172,7 @@ export class ListManagerService {
                                     craftedBy = [...this.getCraftedBy(element.synths[s]), ...craftedBy];
                                 });
                                 res.push(
-                                    this.xivdb.getRecipe(synth.id)
+                                    this.db.getRecipe(synth.id)
                                         .map(recipe => {
                                             const added = this.add(data.list.preCrafts, {
                                                 id: element.id,

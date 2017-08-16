@@ -31,7 +31,7 @@ import {ConfirmationPopupComponent} from './confirmation-popup/confirmation-popu
 import {RouterModule, Routes} from '@angular/router';
 import {ListComponent} from './list/list.component';
 import {ItemComponent} from './item/item.component';
-import {XivdbService} from './core/xivdb.service';
+import {DataService} from './core/data.service';
 import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
 import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -114,7 +114,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ConfirmationPopupComponent
     ],
     providers: [
-        XivdbService,
+        DataService,
         ListManagerService,
         I18nTools
     ],
