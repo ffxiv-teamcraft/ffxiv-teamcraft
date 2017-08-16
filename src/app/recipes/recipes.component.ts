@@ -47,7 +47,7 @@ export class RecipesComponent implements OnInit {
     }
 
     addRecipe(recipe: any, list: List, key: string): void {
-        this.resolver.addToList(recipe.item.id, list).subscribe(updatedList => {
+        this.resolver.addToList(recipe.id, list).subscribe(updatedList => {
             this.lists.update(key, updatedList).then(() => {
                 this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
             });
