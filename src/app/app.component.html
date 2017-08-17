@@ -9,6 +9,7 @@
         <button md-menu-item (click)="use('en')">EN</button>
         <button md-menu-item (click)="use('de')">DE</button>
     </md-menu>
+
     <button md-raised-button [mdMenuTriggerFor]="langMenu">
         {{locale | uppercase}}
     </button>
@@ -18,6 +19,9 @@
     <button md-button class="nav" routerLink="/lists">{{'Lists' | translate}}</button>
 </md-toolbar>
 <div class="content">
+    <md-card class="warning-message">
+        Lists will be wiped upon beta start, which should occur around the week end, once this message is removed, your lists are safe (a wipe could occur before the release, depending on the bugs found).
+    </md-card>
     <div class="content-middle">
         <router-outlet></router-outlet>
     </div>
