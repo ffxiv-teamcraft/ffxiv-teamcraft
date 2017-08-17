@@ -12,4 +12,5 @@ export interface ListRow {
 
     craftedBy?: CraftedBy[];
     gatheredBy?: GatheredBy;
+    gardening?: boolean;
 }

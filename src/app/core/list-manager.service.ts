@@ -67,7 +67,6 @@ export class ListManagerService {
         if (item.nodes !== undefined) {
             for (const node of item.nodes) {
                 const details = this.gt.getNode(node);
-                console.log(item);
                 if (details.type <= 1) {
                     gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
                 } else if (details.type < 4) {
@@ -144,6 +143,15 @@ export class ListManagerService {
                                 l.gathers.forEach(g => {
                                     if (g.gatheredBy === undefined) {
                                         g.gatheredBy = this.getGatheredBy(this.getRelated(data, g.id));
+                                    }
+                                });
+                                return l;
+                            })
+                            .map(l => {
+                                l.others.forEach(o => {
+                                    const related = this.getRelated(data, o.id);
+                                    if (related !== undefined && related.seed !== undefined) {
+                                        o.gardening = true;
                                     }
                                 });
                                 return l;

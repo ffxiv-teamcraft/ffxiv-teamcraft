@@ -35,5 +35,8 @@
                  mdTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
                  mdTooltipPosition="above" src="{{item.gatheredBy.icon}}">
         </button>
+        <img *ngIf="item.gardening" class="crafted-by"
+             mdTooltip="{{'Gardening' | translate}}"
+             mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
     </div>
 </md-list-item>
