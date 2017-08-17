@@ -36,6 +36,7 @@ import {ListNamePopupComponent} from './list-name-popup/list-name-popup.componen
 import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {GarlandToolsService} from './core/garland-tools.service';
 
 const routes: Routes = [
     {
@@ -116,7 +117,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     providers: [
         DataService,
         ListManagerService,
-        I18nTools
+        I18nTools,
+        GarlandToolsService
     ],
     bootstrap: [AppComponent]
 })

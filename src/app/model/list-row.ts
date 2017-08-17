@@ -1,7 +1,7 @@
 import {CraftedBy} from './crafted-by';
 import {I18nName} from './i18n-name';
 export interface ListRow {
-    name?: I18nName;
+    name: I18nName;
     icon?: string;
     id: number;
     amount: number;
