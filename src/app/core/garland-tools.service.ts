@@ -15,14 +15,40 @@ export class GarlandToolsService {
     }
 
     public getNode(id: number): any {
-        return this.gt.node.index[id];
+        const node = this.mockI18n(this.gt.node.index[id], this.gt.node.index[id].name);
+        if (node.limitType !== undefined) {
+            node.limitType = this.mockI18nLimitType(node);
+        }
+        return node;
     }
 
     public getLocation(id: number): any {
-        return this.gt.location.index[id];
+        return this.mockI18n(this.gt.location.index[id], this.gt.location.index[id].name);
     }
 
-    getFishingSpot(id: number): any {
-        return this.gt.fishing.index[id];
+    public getFishingSpot(id: number): any {
+        return this.mockI18n(this.gt.fishing.index[id], this.gt.fishing.index[id].name);
+    }
+
+    private mockI18nLimitType(node: any): any {
+        const clone = JSON.parse(JSON.stringify(node));
+        clone.limitType = {
+            fr: node.limitType,
+            en: node.limitType,
+            de: node.limitType,
+            ja: node.limitType,
+        };
+        return clone;
+    }
+
+    private mockI18n(item: any, name: string): any {
+        const clone = JSON.parse(JSON.stringify(item));
+        clone.name = {
+            fr: name,
+            en: name,
+            de: name,
+            ja: name,
+        };
+        return clone;
     }
 }

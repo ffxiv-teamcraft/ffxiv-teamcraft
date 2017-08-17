@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
+import {AngularFireDatabase} from 'angularfire2/database';
 import {List} from '../model/list';
 import {UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
@@ -19,7 +19,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ListComponent implements OnInit {
 
-    listObj: FirebaseObjectObservable<List>;
+    listObj: Observable<List>;
 
     list: List;
 
@@ -32,7 +32,9 @@ export class ListComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
+            this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`)
+                .mergeMap(l => this.listManager.addToList(20545, l, 32431))
+                .mergeMap(l => this.listManager.addToList(19990, l, 32429));
             this.listObj.subscribe(l => this.list = l);
         });
         this.auth.idToken.subscribe(user => {
@@ -41,12 +43,12 @@ export class ListComponent implements OnInit {
     }
 
     update(): void {
-        this.listObj.update(this.list);
+        // this.listObj.update(this.list);
     }
 
     public setDone(data: { row: ListRow, amount: number }): void {
         this.listManager.setDone(data.row.id, data.amount, this.list);
-        this.listObj.update(this.list);
+        // this.listObj.update(this.list);
     }
 
     public resetProgression(): void {
@@ -54,7 +56,7 @@ export class ListComponent implements OnInit {
             if (res) {
                 for (const recipe of this.list.recipes) {
                     this.listManager.resetDone(recipe, this.list);
-                    this.listObj.update(this.list);
+                    // this.listObj.update(this.list);
                 }
             }
         });

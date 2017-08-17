@@ -3,13 +3,13 @@
     <md-list-item *ngFor="let node of data.gatheredBy.nodes">
         <md-icon md-list-icon>location_on</md-icon>
         <b md-line>
-            {{getLocation(node.zoneid).name}}
+            {{getName(getLocation(node.zoneid).name)}}
         </b>
-        <i md-line [innerHTML]="getLocation(node.areaid)?.name">
+        <i md-line [innerHTML]="getName(getLocation(node.areaid).name)">
         </i>
         <md-chip-list>
             <md-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
-                {{node.limitType}}
+                {{getLimitType(node)}}
             </md-chip>
         </md-chip-list>
         <p md-line *ngIf="node.coords !== undefined">

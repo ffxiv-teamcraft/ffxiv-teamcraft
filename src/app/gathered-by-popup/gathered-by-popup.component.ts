@@ -18,6 +18,10 @@ export class GatheredByPopupComponent {
         return this.i18n.getName(name);
     }
 
+    public getLimitType(node: any): string {
+        return this.getName(node.limitType);
+    }
+
     public getLocation(id: number): any {
         return this.gt.getLocation(id);
     }

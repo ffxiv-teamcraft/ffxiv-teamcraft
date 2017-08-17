@@ -67,6 +67,7 @@ export class ListManagerService {
         if (item.nodes !== undefined) {
             for (const node of item.nodes) {
                 const details = this.gt.getNode(node);
+                console.log(item);
                 if (details.type <= 1) {
                     gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
                 } else if (details.type < 4) {
@@ -91,7 +92,6 @@ export class ListManagerService {
                 gatheredBy.level = details.lvl;
             }
         }
-
         return gatheredBy;
     }
 
