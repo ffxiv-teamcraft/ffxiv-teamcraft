@@ -1,0 +1,28 @@
+<h2 md-dialog-title>{{this.getName(data.name)}}</h2>
+<md-list>
+    <md-list-item *ngFor="let node of data.gatheredBy.nodes">
+        <md-icon md-list-icon>location_on</md-icon>
+        <b md-line>
+            {{getLocation(node.zoneid).name}}
+        </b>
+        <i md-line [innerHTML]="getLocation(node.areaid)?.name">
+        </i>
+        <md-chip-list>
+            <md-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
+                {{node.limitType}}
+            </md-chip>
+        </md-chip-list>
+        <p md-line *ngIf="node.coords !== undefined">
+            X:{{node.coords[0]}} Y:{{node.coords[1]}}
+        </p>
+        <p md-line *ngIf="node.x !== undefined && node.y !== undefined">
+            X:{{node.x}} Y:{{node.y}}
+        </p>
+        <span>
+            <b md-line *ngIf="getSlot(node).slot !== undefined" selected="true" color="accent">Slot:{{getSlot(node).slot}}</b>
+            <span md-line *ngIf="node.time !== undefined">
+                <i md-line *ngFor="let time of node.time">{{time}} - {{time + (node.uptime / 60)}}</i>
+            </span>
+        </span>
+    </md-list-item>
+</md-list>

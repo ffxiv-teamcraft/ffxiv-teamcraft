@@ -1,5 +1,6 @@
-import {CraftedBy} from './crafted-by';
 import {I18nName} from './i18n-name';
+import {CraftedBy} from './crafted-by';
+import {GatheredBy} from './gathered-by';
 export interface ListRow {
     name: I18nName;
     icon?: string;
@@ -7,6 +8,8 @@ export interface ListRow {
     amount: number;
     done: number;
     requires?: ListRow[];
-    craftedBy?: CraftedBy[];
     recipeId?: number;
+
+    craftedBy?: CraftedBy[];
+    gatheredBy?: GatheredBy;
 }

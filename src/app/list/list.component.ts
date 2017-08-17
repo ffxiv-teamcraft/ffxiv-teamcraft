@@ -10,6 +10,7 @@ import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
 import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'app-list',

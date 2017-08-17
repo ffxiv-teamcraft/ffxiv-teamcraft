@@ -7,6 +7,7 @@ import {CraftedBy} from '../model/crafted-by';
 import {I18nName} from '../model/i18n-name';
 import {GarlandToolsService} from 'app/core/garland-tools.service';
 import {CraftAddition} from '../model/craft-addition';
+import {GatheredBy} from '../model/gathered-by';
 
 @Injectable()
 export class ListManagerService {
@@ -23,17 +24,22 @@ export class ListManagerService {
         };
     }
 
+    protected generateStars(amount: number): string {
+        let stars = '';
+        for (let i = 0; i < amount; i++) {
+            stars += '★';
+        }
+        return stars;
+    }
+
     protected getCraftedBy(item: any): Observable<CraftedBy[]> {
         const result = [];
         for (const craft of item.craft) {
-            let stars_tooltip = '';
-            for (let i = 0; i < craft.stars; i++) {
-                stars_tooltip += '★';
-            }
             const craftedBy: CraftedBy = {
+                itemId: item.id,
                 icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
                 level: craft.lvl,
-                stars_tooltip: stars_tooltip
+                stars_tooltip: this.generateStars(craft.stars)
             };
             if (craft.unlockId !== undefined) {
                 result.push(this.db.getItem(craft.unlockId).map(masterbook => {
@@ -48,6 +54,45 @@ export class ListManagerService {
             }
         }
         return Observable.combineLatest(result);
+    }
+
+    protected getGatheredBy(item: any): GatheredBy {
+        const gatheredBy: GatheredBy = {
+            icon: '',
+            stars_tooltip: '',
+            level: 0,
+            nodes: []
+        };
+        // If it's a node gather (not a fish)
+        if (item.nodes !== undefined) {
+            for (const node of item.nodes) {
+                const details = this.gt.getNode(node);
+                if (details.type <= 1) {
+                    gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
+                } else if (details.type < 4) {
+                    gatheredBy.icon = 'https://garlandtools.org/db/images/BTN.png';
+                } else {
+                    gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
+                }
+                gatheredBy.stars_tooltip = this.generateStars(details.stars);
+                gatheredBy.level = details.lvl;
+                if (details.areaid !== undefined) {
+                    gatheredBy.nodes.push(details);
+                }
+            }
+        } else {
+            // If it's a fish, we have to handle it in another way
+            for (const spot of item.fishingSpots) {
+                const details = this.gt.getFishingSpot(spot);
+                gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
+                if (details.areaid !== undefined) {
+                    gatheredBy.nodes.push(details);
+                }
+                gatheredBy.level = details.lvl;
+            }
+        }
+
+        return gatheredBy;
     }
 
     protected getCraft(item: any, id: number): any {
@@ -68,12 +113,41 @@ export class ListManagerService {
                             done: 0,
                             recipeId: recipeId
                         };
-                        return this.getCraftedBy(data.item).map(crafted => {
-                            toAdd.craftedBy = crafted;
-                            const added = this.add(list.recipes, toAdd);
-                            added.requires = this.getCraft(data.item, recipeId)[0].ingredients;
-                            return this.addCraft([{item: data.item, data: data, amount: amount}], list);
-                        });
+                        return this.getCraftedBy(data.item)
+                            .map(crafted => {
+                                toAdd.craftedBy = crafted;
+                                const added = this.add(list.recipes, toAdd);
+                                added.requires = this.getCraft(data.item, recipeId)[0].ingredients;
+                                return this.addCraft([{item: data.item, data: data, amount: amount}], list);
+                            })
+                            .mergeMap(l => {
+                                const precrafts = [];
+                                l.preCrafts.forEach(craft => {
+                                    if (craft.craftedBy === undefined) {
+                                        precrafts.push(this.getCraftedBy(this.getRelated(data, craft.id)));
+                                    }
+                                });
+                                if (precrafts.length > 0) {
+                                    return Observable.combineLatest(...precrafts, (...details: any[]) => {
+                                        const crafts = [].concat.apply([], details);
+                                        l.preCrafts.forEach(craft => {
+                                            if (craft.craftedBy === undefined) {
+                                                craft.craftedBy = crafts.filter(c => c.itemId === craft.id);
+                                            }
+                                        });
+                                        return l;
+                                    });
+                                }
+                                return Observable.of(l);
+                            })
+                            .map(l => {
+                                l.gathers.forEach(g => {
+                                    if (g.gatheredBy === undefined) {
+                                        g.gatheredBy = this.getGatheredBy(this.getRelated(data, g.id));
+                                    }
+                                });
+                                return l;
+                            });
                     })
                     .map(l => this.cleanList(l))
                     .debounceTime(500);
@@ -120,7 +194,7 @@ export class ListManagerService {
                             data: addition.data,
                             amount: element.amount * addition.amount
                         });
-                    } else if (elementDetails.nodes !== undefined) {
+                    } else if (elementDetails.nodes !== undefined || elementDetails.fishingSpots !== undefined) {
                         this.add(list.gathers, {
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
@@ -185,13 +259,10 @@ export class ListManagerService {
 
     protected cleanList(list: List): List {
         for (const prop of Object.keys(list)) {
-            if (prop !== 'name') {
-                for (const row of list[prop]) {
-                    if (row.amount <= 0) {
-                        const index = list[prop].indexOf(row);
-                        list[prop].splice(index, 1);
-                    }
-                }
+            if (prop !== 'name' && prop !== 'createdAt') {
+                list[prop] = list[prop].filter(row => {
+                    return row.amount > 0;
+                });
             }
         }
         return list;

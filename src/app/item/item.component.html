@@ -30,5 +30,10 @@
                  mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
                  mdTooltipPosition="above" src="{{craft.icon}}">
         </span>
+        <button md-icon-button md-line *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+            <img class="crafted-by"
+                 mdTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
+                 mdTooltipPosition="above" src="{{item.gatheredBy.icon}}">
+        </button>
     </div>
 </md-list-item>

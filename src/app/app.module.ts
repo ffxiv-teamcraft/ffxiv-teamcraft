@@ -37,6 +37,7 @@ import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GarlandToolsService} from './core/garland-tools.service';
+import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.component';
 
 const routes: Routes = [
     {
@@ -71,6 +72,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListComponent,
         ItemComponent,
         ListNamePopupComponent,
+        GatheredByPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -112,7 +114,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     entryComponents: [
         ListNamePopupComponent,
-        ConfirmationPopupComponent
+        ConfirmationPopupComponent,
+        GatheredByPopupComponent,
     ],
     providers: [
         DataService,
