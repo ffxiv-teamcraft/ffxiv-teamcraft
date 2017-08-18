@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../model/garland-tools/garland-tools-data';
+import {Drop} from '../model/garland-tools/drop';
 
 @Injectable()
 export class GarlandToolsService {
@@ -15,7 +16,7 @@ export class GarlandToolsService {
     }
 
     public getNode(id: number): any {
-        const node = this.mockI18n(this.gt.node.index[id], this.gt.node.index[id].name);
+        const node = this.mockI18n(this.gt.node.index[id]);
         if (node.limitType !== undefined) {
             node.limitType = this.mockI18nLimitType(node);
         }
@@ -23,11 +24,15 @@ export class GarlandToolsService {
     }
 
     public getLocation(id: number): any {
-        return this.mockI18n(this.gt.location.index[id], this.gt.location.index[id].name);
+        return this.mockI18n(this.gt.location.index[id]);
     }
 
     public getFishingSpot(id: number): any {
-        return this.mockI18n(this.gt.fishing.index[id], this.gt.fishing.index[id].name);
+        return this.mockI18n(this.gt.fishing.index[id]);
+    }
+
+    public getDrop(id: number): Drop {
+        return this.mockI18n(this.gt.mob.index[id]);
     }
 
     private mockI18nLimitType(node: any): any {
@@ -41,13 +46,13 @@ export class GarlandToolsService {
         return clone;
     }
 
-    private mockI18n(item: any, name: string): any {
+    private mockI18n(item: any): any {
         const clone = JSON.parse(JSON.stringify(item));
         clone.name = {
-            fr: name,
-            en: name,
-            de: name,
-            ja: name,
+            fr: item.name,
+            en: item.name,
+            de: item.name,
+            ja: item.name,
         };
         return clone;
     }

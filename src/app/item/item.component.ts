@@ -4,6 +4,7 @@ import {I18nTools} from '../core/i18n-tools';
 import {TranslateService} from '@ngx-translate/core';
 import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
 import {MdDialog} from '@angular/material';
+import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -34,6 +35,12 @@ export class ItemComponent {
 
     public openGatheredByDetails(item: ListRow): void {
         this.dialog.open(GatheredByPopupComponent, {
+            data: item
+        });
+    }
+
+    public openDropsDetails(item: ListRow): void {
+        this.dialog.open(DropsDetailsPopupComponent, {
             data: item
         });
     }

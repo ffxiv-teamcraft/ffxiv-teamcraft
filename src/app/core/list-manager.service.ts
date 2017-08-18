@@ -155,6 +155,20 @@ export class ListManagerService {
                                     }
                                 });
                                 return l;
+                            })
+                            .map(l => {
+                                l.others.forEach(o => {
+                                    const related = this.getRelated(data, o.id);
+                                    if (related !== undefined && related.drops !== undefined) {
+                                        related.drops.forEach(d => {
+                                            if (o.drops === undefined) {
+                                                o.drops = [];
+                                            }
+                                            o.drops.push(this.gt.getDrop(d));
+                                        });
+                                    }
+                                });
+                                return l;
                             });
                     })
                     .map(l => this.cleanList(l))

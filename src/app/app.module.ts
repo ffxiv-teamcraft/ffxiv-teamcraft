@@ -38,6 +38,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GarlandToolsService} from './core/garland-tools.service';
 import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.component';
+import { DropsDetailsPopupComponent } from './drops-details-popup/drops-details-popup.component';
 
 const routes: Routes = [
     {
@@ -73,6 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ItemComponent,
         ListNamePopupComponent,
         GatheredByPopupComponent,
+        DropsDetailsPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -116,6 +118,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListNamePopupComponent,
         ConfirmationPopupComponent,
         GatheredByPopupComponent,
+        DropsDetailsPopupComponent,
     ],
     providers: [
         DataService,
