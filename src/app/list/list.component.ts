@@ -34,7 +34,8 @@ export class ListComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`)
                 .mergeMap(l => this.listManager.addToList(20545, l, 32431))
-                .mergeMap(l => this.listManager.addToList(19990, l, 32429));
+                .mergeMap(l => this.listManager.addToList(19990, l, 32429))
+                .mergeMap(l => this.listManager.addToList(19024, l, 32394));
             this.listObj.subscribe(l => this.list = l, err => console.error(err));
         });
         this.auth.idToken.subscribe(user => {

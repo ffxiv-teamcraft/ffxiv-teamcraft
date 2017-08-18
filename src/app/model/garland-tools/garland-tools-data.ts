@@ -18,4 +18,5 @@ export interface GarlandToolsData {
     item: {
         index: any[]
     };
+    instanceTypes: string[];
 }

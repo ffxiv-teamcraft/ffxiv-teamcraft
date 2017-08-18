@@ -36,8 +36,8 @@ export class ItemComponent {
         return this.i18n.getName(item.name);
     }
 
-    public getZoneName(zone: I18nName) {
-        return this.i18n.getName(zone);
+    public getI18n(name: I18nName) {
+        return this.i18n.getName(name);
     }
 
     public openGatheredByDetails(item: ListRow): void {

@@ -8,7 +8,7 @@
         padding: auto;
     }
     .masterbook {
-        width: 25%;
+        width: 35%;
         text-align: center;
     }
     .classes {
@@ -19,7 +19,18 @@
             width: 32px;
             margin-top: 5px;
         }
-        width: 30%;
+        div {
+            vertical-align: middle;
+            display: inline-block;
+            img {
+                margin: 0 2px;
+            }
+            .icon {
+                width: 32px;
+                border-radius: 32px;
+            }
+        }
+        width: 50%;
         text-align: center;
     }
     .crafted-by {

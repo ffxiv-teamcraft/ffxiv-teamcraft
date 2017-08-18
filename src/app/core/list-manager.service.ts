@@ -10,6 +10,7 @@ import {CraftAddition} from '../model/craft-addition';
 import {GatheredBy} from '../model/gathered-by';
 import {TradeSource} from '../model/trade-source';
 import {Trade} from '../model/trade';
+import {Instance} from 'app/model/instance';
 
 @Injectable()
 export class ListManagerService {
@@ -152,8 +153,30 @@ export class ListManagerService {
         return Observable.combineLatest(tradeSources);
     }
 
+    protected getReducedFrom(item: any): Observable<I18nName[]> {
+        const reductions: Observable<I18nName>[] = [];
+        for (const id of item.reducedFrom) {
+            const reductionObs = Observable
+                .of({fr: '', de: '', en: '', ja: ''})
+                .mergeMap((name: I18nName) => {
+                    return this.db.getItem(id).map(data => {
+                        name = this.getI18nName(data.item);
+                        return name;
+                    });
+                });
+            reductions.push(reductionObs);
+        }
+        return Observable.combineLatest(reductions);
+    }
+
     protected getCraft(item: any, id: number): any {
         return item.craft.filter(c => c.id === id);
+    }
+
+    protected forEachItem(list: List, method: (arg: ListRow) => void) {
+        list.others.forEach(method);
+        list.gathers.forEach(method);
+        list.preCrafts.forEach(method);
     }
 
     public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
@@ -199,14 +222,14 @@ export class ListManagerService {
                             })
                             .mergeMap(l => {
                                 const trades: Observable<{ item: any, tradeSources: TradeSource[] }>[] = [];
-                                for (const item of l.others) {
+                                this.forEachItem(list, item => {
                                     const related = this.getRelated(data, item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
                                         trades.push(this.getTradeSources(related).map(ts => {
                                             return {item: item, tradeSources: ts};
                                         }));
                                     }
-                                }
+                                });
                                 if (trades.length > 0) {
                                     return Observable.combineLatest(...trades, (...ptrades) => {
                                         ptrades.forEach(ptrade => {
@@ -218,6 +241,41 @@ export class ListManagerService {
                                     return Observable.of(l);
                                 }
                             })
+                            .mergeMap(l => {
+                                const reductions: Observable<{ item: any, reducedFrom: I18nName[] }>[] = [];
+                                this.forEachItem(list, i => {
+                                    const related = this.getRelated(data, i.id);
+                                    if (related !== undefined && related.reducedFrom !== undefined) {
+                                        reductions.push(this.getReducedFrom(related).map(rs => {
+                                            return {item: i, reducedFrom: rs};
+                                        }));
+                                    }
+                                });
+                                if (reductions.length > 0) {
+                                    return Observable.combineLatest(...reductions, (...results) => {
+                                        results.forEach(res => {
+                                            res.item.reducedFrom = res.reducedFrom;
+                                        });
+                                        return l;
+                                    });
+                                } else {
+                                    return Observable.of(l);
+                                }
+                            })
+                            .map(l => {
+                                this.forEachItem(l, o => {
+                                    const related = this.getRelated(data, o.id);
+                                    if (related !== undefined && related.instances !== undefined) {
+                                        const instances: Instance[] = [];
+                                        related.instances.forEach(id => {
+                                            const instance = this.gt.getInstance(id);
+                                            instances.push(instance);
+                                        });
+                                        o.instances = instances;
+                                    }
+                                });
+                                return l;
+                            })
                             .map(l => {
                                 l.gathers.forEach(g => {
                                     if (g.gatheredBy === undefined) {
@@ -227,7 +285,7 @@ export class ListManagerService {
                                 return l;
                             })
                             .map(l => {
-                                l.others.forEach(o => {
+                                this.forEachItem(l, o => {
                                     const related = this.getRelated(data, o.id);
                                     if (related !== undefined && related.seed !== undefined) {
                                         o.gardening = true;
@@ -236,7 +294,7 @@ export class ListManagerService {
                                 return l;
                             })
                             .map(l => {
-                                l.others.forEach(o => {
+                                this.forEachItem(l, o => {
                                     const related = this.getRelated(data, o.id);
                                     if (related !== undefined && related.drops !== undefined) {
                                         related.drops.forEach(d => {

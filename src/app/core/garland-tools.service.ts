@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../model/garland-tools/garland-tools-data';
 import {Drop} from '../model/garland-tools/drop';
+import {Instance} from '../model/instance';
 
 @Injectable()
 export class GarlandToolsService {
@@ -35,15 +36,29 @@ export class GarlandToolsService {
         return this.mockI18n(this.gt.mob.index[id]);
     }
 
+    public getInstance(id: any): Instance {
+        const raw = this.gt.instance.partialIndex[id];
+        const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
+            'Treasure Hunt', 'Seasonal Event'][raw.t];
+        return this.mockI18n({
+            name: raw.n,
+            id: raw.id,
+            type: {
+                fr: type,
+                en: type,
+                de: type,
+                ja: type
+            }
+        });
+    }
+
     private mockI18nLimitType(node: any): any {
-        const clone = JSON.parse(JSON.stringify(node));
-        clone.limitType = {
+        return {
             fr: node.limitType,
             en: node.limitType,
             de: node.limitType,
             ja: node.limitType,
         };
-        return clone;
     }
 
     private mockI18n(item: any): any {

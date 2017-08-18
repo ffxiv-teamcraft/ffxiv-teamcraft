@@ -2,8 +2,8 @@
     <a md-list-avatar href="http://{{getXivdbDomain()}}.xivdb.com/item/{{item.id}}" target="_blank">
         <img md-list-avatar src="{{item.icon}}" alt="{{getName(item)}}">
     </a>
-    <span md-line>
-        {{getName(item)}}
+
+    <span md-line [innerHTML]="getName(item)">
     </span>
 
     <div class="masterbook">
@@ -25,33 +25,50 @@
         <md-icon *ngIf="item.amount === item.done" color="accent">done</md-icon>
     </div>
     <div class="classes">
-        <span md-line *ngIf="item.craftedBy !== undefined">
+        <div *ngIf="item.craftedBy !== undefined">
             <img *ngFor="let craft of item.craftedBy" class="crafted-by"
                  mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
                  mdTooltipPosition="above" src="{{craft.icon}}">
-        </span>
-        <button md-icon-button md-line *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+        </div>
+        <div>
+            <button md-icon-button *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+                <img class="crafted-by"
+                     mdTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
+                     mdTooltipPosition="above" src="{{item.gatheredBy.icon}}">
+            </button>
+        </div>
+        <div *ngIf="item.gardening">
             <img class="crafted-by"
-                 mdTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
-                 mdTooltipPosition="above" src="{{item.gatheredBy.icon}}">
-        </button>
-        <img *ngIf="item.gardening" class="crafted-by"
-             mdTooltip="{{'Gardening' | translate}}"
-             mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
-
-        <button md-icon-button md-line *ngIf="item.drops !== undefined" (click)="openDropsDetails(item)">
-            <img *ngIf="item.drops !== undefined" class="crafted-by"
-                 mdTooltip="{{getName(item.drops[0])}}"
-                 mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
-        </button>
+                 mdTooltip="{{'Gardening' | translate}}"
+                 mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
+        </div>
+        <div>
+            <button md-icon-button *ngIf="item.drops !== undefined" (click)="openDropsDetails(item)">
+                <img *ngIf="item.drops !== undefined" class="crafted-by"
+                     mdTooltip="{{'Hunting' | translate}}"
+                     mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
+            </button>
+        </div>
         <div *ngIf="item.tradeSources !== undefined">
             <button *ngFor="let tradeSource of item.tradeSources" md-icon-button md-line
                     (click)="openTradeDetails(item, tradeSource)">
                 <img class="currency"
-                     mdTooltip="{{tradeSource.npcName}} - {{getZoneName(tradeSource.zoneName)}}"
+                     mdTooltip="{{tradeSource.npcName}} - {{getI18n(tradeSource.zoneName)}}"
                      mdTooltipPosition="above"
                      src="https://www.garlandtools.org/db/icons/item/{{tradeSource.trades[0].currencyIcon}}.png">
             </button>
+        </div>
+        <div *ngIf="item.instances !== undefined">
+            <img *ngFor="let instance of item.instances"
+                 mdTooltip="{{getName(instance)}}"
+                 mdTooltipPosition="above"
+                 src="https://www.garlandtools.org/db/images/{{getI18n(instance.type)}}.png" class="currency">
+        </div>
+        <div *ngIf="item.reducedFrom !== undefined">
+            <img class="icon" *ngFor="let reduction of item.reducedFrom"
+                 mdTooltip="{{getI18n(reduction)}}"
+                 mdTooltipPosition="above"
+                 src="https://www.garlandtools.org/db/images/Reduce.png">
         </div>
     </div>
 </md-list-item>
