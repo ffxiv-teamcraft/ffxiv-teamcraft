@@ -8,6 +8,8 @@ import {I18nName} from '../model/i18n-name';
 import {GarlandToolsService} from 'app/core/garland-tools.service';
 import {CraftAddition} from '../model/craft-addition';
 import {GatheredBy} from '../model/gathered-by';
+import {TradeSource} from '../model/trade-source';
+import {Trade} from '../model/trade';
 
 @Injectable()
 export class ListManagerService {
@@ -94,6 +96,62 @@ export class ListManagerService {
         return gatheredBy;
     }
 
+    protected getTradeSources(item: any): Observable<TradeSource[]> {
+        const tradeSources: Observable<TradeSource>[] = [];
+        for (const ts of Object.keys(item.tradeSources)) {
+            const tradeObs = Observable
+                .of({
+                    npcName: '',
+                    zoneName: {fr: '', de: '', en: '', ja: ''}
+                })
+                .mergeMap((tradeSource: TradeSource) => {
+                    return this.db.getNpc(+ts)
+                        .map(data => {
+                            tradeSource.npcName = data.npc.name;
+                            tradeSource.zoneName = this.gt.getLocation(data.npc.zoneid).name;
+                            return tradeSource as TradeSource;
+                        });
+                })
+                .mergeMap((tradeSource: TradeSource) => {
+                    const trades: Observable<Trade>[] = [];
+                    for (const row of item.tradeSources[ts]) {
+                        const obs: Observable<Trade> = Observable
+                            .of({
+                                itemIcon: 0,
+                                itemAmount: 0,
+                                currencyIcon: 0,
+                                currencyAmount: 0,
+                                itemHQ: false
+                            })
+                            .mergeMap(trade => {
+                                return this.db.getItem(+row.item[0].id)
+                                    .map(data => {
+                                        trade.itemIcon = data.item.icon;
+                                        trade.itemAmount = row.item[0].amount;
+                                        trade.itemHQ = row.item[0].hq === 1;
+                                        return trade;
+                                    });
+                            })
+                            .mergeMap(trade => {
+                                return this.db.getItem(+row.currency[0].id)
+                                    .map(data => {
+                                        trade.currencyIcon = data.item.icon;
+                                        trade.currencyAmount = row.currency[0].amount;
+                                        return trade;
+                                    });
+                            });
+                        trades.push(obs);
+                    }
+                    return Observable.combineLatest(...trades, (...ptrades: Trade[]) => {
+                        tradeSource.trades = ptrades;
+                        return tradeSource;
+                    });
+                });
+            tradeSources.push(tradeObs);
+        }
+        return Observable.combineLatest(tradeSources);
+    }
+
     protected getCraft(item: any, id: number): any {
         return item.craft.filter(c => c.id === id);
     }
@@ -138,6 +196,27 @@ export class ListManagerService {
                                     });
                                 }
                                 return Observable.of(l);
+                            })
+                            .mergeMap(l => {
+                                const trades: Observable<{ item: any, tradeSources: TradeSource[] }>[] = [];
+                                for (const item of l.others) {
+                                    const related = this.getRelated(data, item.id);
+                                    if (related !== undefined && related.tradeSources !== undefined) {
+                                        trades.push(this.getTradeSources(related).map(ts => {
+                                            return {item: item, tradeSources: ts};
+                                        }));
+                                    }
+                                }
+                                if (trades.length > 0) {
+                                    return Observable.combineLatest(...trades, (...ptrades) => {
+                                        ptrades.forEach(ptrade => {
+                                            ptrade.item.tradeSources = ptrade.tradeSources;
+                                        });
+                                        return l;
+                                    });
+                                } else {
+                                    return Observable.of(l);
+                                }
                             })
                             .map(l => {
                                 l.gathers.forEach(g => {
@@ -281,7 +360,7 @@ export class ListManagerService {
 
     protected cleanList(list: List): List {
         for (const prop of Object.keys(list)) {
-            if (prop !== 'name' && prop !== 'createdAt') {
+            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
                 list[prop] = list[prop].filter(row => {
                     return row.amount > 0;
                 });

@@ -12,10 +12,14 @@
         text-align: center;
     }
     .classes {
-        button{
+        button {
             display: inline-block;
         }
-        width: 20%;
+        .currency {
+            width: 32px;
+            margin-top: 5px;
+        }
+        width: 30%;
         text-align: center;
     }
     .crafted-by {

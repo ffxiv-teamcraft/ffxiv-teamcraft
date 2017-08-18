@@ -16,7 +16,7 @@
         </span>
     </div>
     <div class="done">
-    {{item.done}}/{{item.amount}}
+        {{item.done}}/{{item.amount}}
     </div>
     <div class="done-check">
         <a md-mini-fab *ngIf="item.amount > item.done" (click)="setDone(item, item.amount)">
@@ -44,5 +44,14 @@
                  mdTooltip="{{getName(item.drops[0])}}"
                  mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
         </button>
+        <div *ngIf="item.tradeSources !== undefined">
+            <button *ngFor="let tradeSource of item.tradeSources" md-icon-button md-line
+                    (click)="openTradeDetails(item, tradeSource)">
+                <img class="currency"
+                     mdTooltip="{{tradeSource.npcName}} - {{getZoneName(tradeSource.zoneName)}}"
+                     mdTooltipPosition="above"
+                     src="https://www.garlandtools.org/db/icons/item/{{tradeSource.trades[0].currencyIcon}}.png">
+            </button>
+        </div>
     </div>
 </md-list-item>

@@ -5,6 +5,9 @@ import {TranslateService} from '@ngx-translate/core';
 import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
 import {MdDialog} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
+import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-popup.component';
+import {TradeSource} from '../model/trade-source';
+import {I18nName} from '../model/i18n-name';
 
 @Component({
     selector: 'app-item',
@@ -33,6 +36,10 @@ export class ItemComponent {
         return this.i18n.getName(item.name);
     }
 
+    public getZoneName(zone: I18nName) {
+        return this.i18n.getName(zone);
+    }
+
     public openGatheredByDetails(item: ListRow): void {
         this.dialog.open(GatheredByPopupComponent, {
             data: item
@@ -42,6 +49,12 @@ export class ItemComponent {
     public openDropsDetails(item: ListRow): void {
         this.dialog.open(DropsDetailsPopupComponent, {
             data: item
+        });
+    }
+
+    public openTradeDetails(item: ListRow, tradeSource: TradeSource): void {
+        this.dialog.open(TradeDetailsPopupComponent, {
+            data: {item: item, tradeSource: tradeSource}
         });
     }
 

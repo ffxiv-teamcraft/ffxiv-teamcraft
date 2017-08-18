@@ -2,6 +2,7 @@ import {I18nName} from './i18n-name';
 import {CraftedBy} from './crafted-by';
 import {GatheredBy} from './gathered-by';
 import {Drop} from 'app/model/garland-tools/drop';
+import {TradeSource} from './trade-source';
 export interface ListRow {
     name: I18nName;
     icon?: string;
@@ -15,4 +16,5 @@ export interface ListRow {
     gatheredBy?: GatheredBy;
     gardening?: boolean;
     drops?: Drop[];
+    tradeSources?: TradeSource[];
 }
