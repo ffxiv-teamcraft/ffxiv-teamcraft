@@ -21,6 +21,7 @@
     <div class="done">
         <md-input-container class="amount">
             <input mdInput type="number" [ngModel]="item.done"
+                   #doneInput
                    (ngModelChange)="setDone(item, $event - item.done)" min="0" max="{{item.amount}}">
             <span mdSuffix>/{{item.amount}}</span>
         </md-input-container>
@@ -76,6 +77,13 @@
                  mdTooltip="{{getI18n(reduction)}}"
                  mdTooltipPosition="above"
                  src="https://www.garlandtools.org/db/images/Reduce.png">
+        </div>
+        <div *ngIf="item.desynths !== undefined">
+            <button md-icon-button (click)="openDesynthDetails(item)">
+                <img class="icon" mdTooltip="{{'Desynth' | translate}}"
+                     mdTooltipPosition="above"
+                     src="https://www.garlandtools.org/db/images/Desynth.png">
+            </button>
         </div>
     </div>
 </md-list-item>

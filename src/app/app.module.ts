@@ -40,6 +40,7 @@ import {GarlandToolsService} from './core/garland-tools.service';
 import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.component';
 import { DropsDetailsPopupComponent } from './drops-details-popup/drops-details-popup.component';
 import { TradeDetailsPopupComponent } from './trade-details-popup/trade-details-popup.component';
+import { DesynthPopupComponent } from './desynth-popup/desynth-popup.component';
 
 const routes: Routes = [
     {
@@ -77,6 +78,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         GatheredByPopupComponent,
         DropsDetailsPopupComponent,
         TradeDetailsPopupComponent,
+        DesynthPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -122,6 +124,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         GatheredByPopupComponent,
         DropsDetailsPopupComponent,
         TradeDetailsPopupComponent,
+        DesynthPopupComponent,
     ],
     providers: [
         DataService,

@@ -8,6 +8,7 @@ import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-p
 import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-popup.component';
 import {TradeSource} from '../model/trade-source';
 import {I18nName} from '../model/i18n-name';
+import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -48,6 +49,11 @@ export class ItemComponent {
 
     public openDropsDetails(item: ListRow): void {
         this.dialog.open(DropsDetailsPopupComponent, {
+            data: item
+        });
+    }
+    public openDesynthDetails(item: ListRow): void {
+        this.dialog.open(DesynthPopupComponent, {
             data: item
         });
     }

@@ -169,6 +169,22 @@ export class ListManagerService {
         return Observable.combineLatest(reductions);
     }
 
+    protected getDesynths(item: any): Observable<I18nName[]> {
+        const desynths: Observable<I18nName>[] = [];
+        for (const id of item.desynthedFrom) {
+            const desynthObs = Observable
+                .of({fr: '', de: '', en: '', ja: ''})
+                .mergeMap((name: I18nName) => {
+                    return this.db.getItem(id).map(data => {
+                        name = this.getI18nName(data.item);
+                        return name;
+                    });
+                });
+            desynths.push(desynthObs);
+        }
+        return Observable.combineLatest(desynths);
+    }
+
     protected getCraft(item: any, id: number): any {
         return item.craft.filter(c => c.id === id);
     }
@@ -258,6 +274,28 @@ export class ListManagerService {
                                     return Observable.combineLatest(...reductions, (...results) => {
                                         results.forEach(res => {
                                             res.item.reducedFrom = res.reducedFrom;
+                                        });
+                                        return l;
+                                    });
+                                } else {
+                                    return Observable.of(l);
+                                }
+                            })
+                            .mergeMap(l => {
+                                const desynths: Observable<{ item: any, desynths: I18nName[] }>[] = [];
+                                this.forEachItem(list, i => {
+                                    const related = this.getRelated(data, i.id);
+                                    if (related !== undefined && related.desynthedFrom !== undefined) {
+                                        desynths.push(this.getDesynths(related).map(rs => {
+                                            return {item: i, desynths: rs};
+                                        }));
+                                    }
+                                });
+                                console.log(desynths.length);
+                                if (desynths.length > 0) {
+                                    return Observable.combineLatest(...desynths, (...results) => {
+                                        results.forEach(res => {
+                                            res.item.desynths = res.desynths;
                                         });
                                         return l;
                                     });

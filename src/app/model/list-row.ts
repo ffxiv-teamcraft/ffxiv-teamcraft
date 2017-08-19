@@ -22,4 +22,5 @@ export interface ListRow {
     tradeSources?: TradeSource[];
     instances?: Instance[];
     reducedFrom?: I18nName[];
+    desynths?: I18nName[];
 }
