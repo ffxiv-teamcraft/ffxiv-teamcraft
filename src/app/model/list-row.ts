@@ -5,6 +5,7 @@ import {Drop} from 'app/model/garland-tools/drop';
 import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 export interface ListRow {
+    addedAt: number;
     name: I18nName;
     icon?: string;
     id: number;

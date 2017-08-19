@@ -197,7 +197,8 @@ export class ListManagerService {
                                     recipeId: recipeId,
                                     yield: craft.yield || 1,
                                     requires: craft.ingredients,
-                                    craftedBy: crafted
+                                    craftedBy: crafted,
+                                    addedAt: Date.now()
                                 };
                                 this.add(list.recipes, toAdd);
                                 return this.addCraft([{item: data.item, data: data, amount: Math.ceil(amount / toAdd.yield)}], list);
@@ -338,7 +339,8 @@ export class ListManagerService {
                         icon: this.getIcon(crystal),
                         amount: element.amount * addition.amount,
                         done: 0,
-                        yield: 1
+                        yield: 1,
+                        addedAt: Date.now()
                     });
                 } else {
                     const elementDetails = this.getRelated(addition.data, element.id);
@@ -352,7 +354,8 @@ export class ListManagerService {
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
                             name: this.getI18nName(elementDetails),
-                            yield: yields
+                            yield: yields,
+                            addedAt: Date.now()
                         });
                         nextIteration.push({
                             item: elementDetails,
@@ -366,7 +369,8 @@ export class ListManagerService {
                             amount: element.amount * addition.amount,
                             done: 0,
                             name: this.getI18nName(elementDetails),
-                            yield: 1
+                            yield: 1,
+                            addedAt: Date.now()
                         });
                     } else {
                         this.add(list.others, {
@@ -375,7 +379,8 @@ export class ListManagerService {
                             amount: element.amount * addition.amount,
                             done: 0,
                             name: this.getI18nName(elementDetails),
-                            yield: 1
+                            yield: 1,
+                            addedAt: Date.now()
                         });
                     }
                 }
@@ -387,8 +392,8 @@ export class ListManagerService {
         return list;
     }
 
-    public setDone(itemId: number, amount: number, list: List): void {
-        const item = this.getById(itemId, list);
+    public setDone(pitem: ListRow, amount: number, list: List): void {
+        const item = this.getById(pitem.id, list, pitem.addedAt);
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
@@ -396,7 +401,7 @@ export class ListManagerService {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getById(requirement.id, list);
-                this.setDone(requirementItem.id, requirement.amount * amount, list);
+                this.setDone(requirementItem, requirement.amount * amount, list);
             }
         }
     }
@@ -411,12 +416,18 @@ export class ListManagerService {
         }
     }
 
-    protected getById(id: number, list: List): ListRow {
+    protected getById(id: number, list: List, addedAt?: number): ListRow {
         for (const prop of Object.keys(list)) {
             if (prop !== 'name') {
                 for (const row of list[prop]) {
                     if (row.id === id) {
-                        return row;
+                        if (addedAt !== undefined) {
+                            if (addedAt === row.addedAt) {
+                                return row;
+                            }
+                        } else {
+                            return row;
+                        }
                     }
                 }
             }
