@@ -21,6 +21,10 @@ export class DataService {
         return this.getGarland(`/item/${id}`);
     }
 
+    public getNpc(id: number): any {
+        return this.getGarland(`/npc/${id}`);
+    }
+
     public searchRecipe(query: string): Observable<any> {
         return this.getXivdb(`/search?string=${query}&one=recipes&language=${this.i18n.currentLang}`);
     }
@@ -36,5 +40,4 @@ export class DataService {
     private getFirebaseCache(uri: string): Observable<any> {
         return this.af.object(`/xivdb${uri}`);
     }
-
 }

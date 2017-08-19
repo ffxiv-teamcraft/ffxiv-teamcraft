@@ -4,15 +4,45 @@
         text-align: center;
     }
     .done-check {
-        width: 35px;
-        padding: auto;
-    }
-    .masterbook {
-        width: 25%;
+        min-width: 35px;
         text-align: center;
     }
+    .masterbook {
+        width: 35%;
+        text-align: center;
+    }
+    .icon {
+        position: relative;
+        .yield {
+            position: absolute;
+            bottom: -2px;
+            right: -8px;
+        }
+    }
+    .amount {
+        width: 60px;
+        margin-right: 10px;
+    }
     .classes {
-        width: 20%;
+        button {
+            display: inline-block;
+        }
+        .currency {
+            width: 32px;
+            margin-top: 5px;
+        }
+        div {
+            vertical-align: middle;
+            display: inline-block;
+            img {
+                margin: 0 2px;
+            }
+            .icon {
+                width: 32px;
+                border-radius: 32px;
+            }
+        }
+        width: 50%;
         text-align: center;
     }
     .crafted-by {

@@ -47,12 +47,14 @@ export class ListsComponent implements OnInit {
     }
 
     removeRecipe(recipe: any, list: List, key: string): void {
-        this.listManager.addToList(recipe.recipeId, list, -recipe.amount)
+        this.listManager
+            .addToList(recipe.id, list, recipe.recipeId, -recipe.amount)
             .subscribe(resultList => this.lists.update(key, resultList));
     }
 
     updateAmount(recipe: any, list: List, key: string, amount: number): void {
-        this.listManager.addToList(recipe.recipeId, list, amount - recipe.amount)
+        this.listManager
+            .addToList(recipe.id, list, recipe.recipeId, amount - recipe.amount)
             .subscribe(resultList => this.lists.update(key, resultList));
     }
 

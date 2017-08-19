@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
-            this.listObj.subscribe(l => this.list = l);
+            this.listObj.subscribe(l => this.list = l, err => console.error(err));
         });
         this.auth.idToken.subscribe(user => {
             this.user = user;
@@ -43,8 +43,8 @@ export class ListComponent implements OnInit {
         this.listObj.update(this.list);
     }
 
-    public setDone(data: { row: ListRow, amount: number }): void {
-        this.listManager.setDone(data.row.id, data.amount, this.list);
+    public setDone(data: { row: ListRow, amount: number}): void {
+        this.listManager.setDone(data.row, data.amount, this.list);
         this.listObj.update(this.list);
     }
 

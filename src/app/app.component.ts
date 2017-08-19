@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
+import {NavigationEnd, Router} from '@angular/router';
+
+declare const ga: Function;
 
 @Component({
     selector: 'app-root',
@@ -11,7 +14,18 @@ export class AppComponent {
 
     locale: string;
 
-    constructor(auth: AngularFireAuth, private translate: TranslateService) {
+    constructor(auth: AngularFireAuth, private translate: TranslateService, router: Router) {
+        // Using Rx's built in `distinctUntilChanged ` feature to handle url change c/o @dloomb's answer
+        router.events.distinctUntilChanged((previous: any, current: any) => {
+            // Subscribe to any `NavigationEnd` events where the url has changed
+            if (current instanceof NavigationEnd) {
+                return previous.url === current.url;
+            }
+            return true;
+        }).subscribe((x: any) => {
+            ga('set', 'page', x.url);
+            ga('send', 'pageview');
+        });
         auth.auth.signInAnonymously();
         translate.setDefaultLang('en');
         const lang = localStorage.getItem('locale');

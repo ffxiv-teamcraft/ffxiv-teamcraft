@@ -17,5 +17,8 @@
     "List_name": "Nom de la liste",
     "Recipe_name": "Chercher une recette",
     "No_matching_recipe": "Aucune recette correspondante",
-    "Reset_progression": "Remettre la progression à 0"
+    "Reset_progression": "Remettre la progression à 0",
+    "Gardening": "Jardinage",
+    "Hunting": "Chasse",
+    "Desynth": "Recyclage"
 }

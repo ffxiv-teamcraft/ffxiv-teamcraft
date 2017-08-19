@@ -36,6 +36,11 @@ import {ListNamePopupComponent} from './list-name-popup/list-name-popup.componen
 import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {GarlandToolsService} from './core/garland-tools.service';
+import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.component';
+import { DropsDetailsPopupComponent } from './drops-details-popup/drops-details-popup.component';
+import { TradeDetailsPopupComponent } from './trade-details-popup/trade-details-popup.component';
+import { DesynthPopupComponent } from './desynth-popup/desynth-popup.component';
 
 const routes: Routes = [
     {
@@ -70,6 +75,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListComponent,
         ItemComponent,
         ListNamePopupComponent,
+        GatheredByPopupComponent,
+        DropsDetailsPopupComponent,
+        TradeDetailsPopupComponent,
+        DesynthPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -111,12 +120,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     entryComponents: [
         ListNamePopupComponent,
-        ConfirmationPopupComponent
+        ConfirmationPopupComponent,
+        GatheredByPopupComponent,
+        DropsDetailsPopupComponent,
+        TradeDetailsPopupComponent,
+        DesynthPopupComponent,
     ],
     providers: [
         DataService,
         ListManagerService,
-        I18nTools
+        I18nTools,
+        GarlandToolsService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import {I18nName} from './i18n-name';
-export interface CompactMasterbook {
+export interface Instance {
+    type: string;
     name: I18nName;
-    id: number;
 }
