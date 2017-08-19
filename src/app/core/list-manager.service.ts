@@ -291,7 +291,6 @@ export class ListManagerService {
                                         }));
                                     }
                                 });
-                                console.log(desynths.length);
                                 if (desynths.length > 0) {
                                     return Observable.combineLatest(...desynths, (...results) => {
                                         results.forEach(res => {

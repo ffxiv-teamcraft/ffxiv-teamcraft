@@ -14,7 +14,7 @@ export class DataService {
     }
 
     public getRecipe(id: number): Observable<any> {
-        return this.getFirebaseCache(`/recipe/${id}`);
+        return this.getXivdb(`/recipe/${id}`);
     }
 
     public getItem(id: number): Observable<any> {
