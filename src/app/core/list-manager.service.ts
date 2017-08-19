@@ -185,20 +185,22 @@ export class ListManagerService {
             .mergeMap(list => {
                 return this.db.getItem(itemId)
                     .mergeMap(data => {
-                        const toAdd: ListRow = {
-                            id: data.item.id,
-                            name: this.getI18nName(data.item),
-                            icon: this.getIcon(data.item),
-                            amount: amount,
-                            done: 0,
-                            recipeId: recipeId
-                        };
                         return this.getCraftedBy(data.item)
                             .map(crafted => {
-                                toAdd.craftedBy = crafted;
-                                const added = this.add(list.recipes, toAdd);
-                                added.requires = this.getCraft(data.item, recipeId)[0].ingredients;
-                                return this.addCraft([{item: data.item, data: data, amount: amount}], list);
+                                const craft = this.getCraft(data.item, recipeId)[0];
+                                const toAdd: ListRow = {
+                                    id: data.item.id,
+                                    name: this.getI18nName(data.item),
+                                    icon: this.getIcon(data.item),
+                                    amount: amount,
+                                    done: 0,
+                                    recipeId: recipeId,
+                                    yield: craft.yield || 1,
+                                    requires: craft.ingredients,
+                                    craftedBy: crafted
+                                };
+                                this.add(list.recipes, toAdd);
+                                return this.addCraft([{item: data.item, data: data, amount: Math.ceil(amount / toAdd.yield)}], list);
                             })
                             .mergeMap(l => {
                                 const precrafts = [];
@@ -335,23 +337,27 @@ export class ListManagerService {
                         name: this.getI18nName(crystal),
                         icon: this.getIcon(crystal),
                         amount: element.amount * addition.amount,
-                        done: 0
+                        done: 0,
+                        yield: 1
                     });
                 } else {
                     const elementDetails = this.getRelated(addition.data, element.id);
                     if (elementDetails.craft !== undefined) {
+                        const yields = elementDetails.craft[0].yield || 1;
+                        const amount = Math.ceil(element.amount * addition.amount / yields);
                         this.add(list.preCrafts, {
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
-                            amount: element.amount * addition.amount,
+                            amount: amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
-                            name: this.getI18nName(elementDetails)
+                            name: this.getI18nName(elementDetails),
+                            yield: yields
                         });
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: element.amount * addition.amount
+                            amount: amount
                         });
                     } else if (elementDetails.nodes !== undefined || elementDetails.fishingSpots !== undefined) {
                         this.add(list.gathers, {
@@ -359,7 +365,8 @@ export class ListManagerService {
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: this.getI18nName(elementDetails)
+                            name: this.getI18nName(elementDetails),
+                            yield: 1
                         });
                     } else {
                         this.add(list.others, {
@@ -367,7 +374,8 @@ export class ListManagerService {
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: this.getI18nName(elementDetails)
+                            name: this.getI18nName(elementDetails),
+                            yield: 1
                         });
                     }
                 }

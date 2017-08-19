@@ -11,6 +11,14 @@
         width: 35%;
         text-align: center;
     }
+    .icon {
+        position: relative;
+        .yield {
+            position: absolute;
+            bottom: -2px;
+            right: -8px;
+        }
+    }
     .classes {
         button {
             display: inline-block;

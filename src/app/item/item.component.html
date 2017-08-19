@@ -1,7 +1,10 @@
 <md-list-item>
-    <a md-list-avatar href="http://{{getXivdbDomain()}}.xivdb.com/item/{{item.id}}" target="_blank">
-        <img md-list-avatar src="{{item.icon}}" alt="{{getName(item)}}">
-    </a>
+    <div md-list-avatar class="icon">
+        <a md-list-avatar href="http://{{getXivdbDomain()}}.xivdb.com/item/{{item.id}}" target="_blank">
+            <img md-list-avatar src="{{item.icon}}" alt="{{getName(item)}}">
+        </a>
+        <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+    </div>
 
     <span md-line [innerHTML]="getName(item)">
     </span>

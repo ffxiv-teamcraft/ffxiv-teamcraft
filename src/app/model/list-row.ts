@@ -12,6 +12,7 @@ export interface ListRow {
     done: number;
     requires?: ListRow[];
     recipeId?: number;
+    yield: number;
 
     craftedBy?: CraftedBy[];
     gatheredBy?: GatheredBy;
