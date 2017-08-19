@@ -19,7 +19,11 @@
         </span>
     </div>
     <div class="done">
-        {{item.done}}/{{item.amount}}
+        <md-input-container class="amount">
+            <input mdInput type="number" [ngModel]="item.done"
+                   (ngModelChange)="setDone(item, $event - item.done)" min="0" max="{{item.amount}}">
+            <span mdSuffix>/{{item.amount}}</span>
+        </md-input-container>
     </div>
     <div class="done-check">
         <a md-mini-fab *ngIf="item.amount > item.done" (click)="setDone(item, item.amount)">

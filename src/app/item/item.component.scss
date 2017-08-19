@@ -4,8 +4,8 @@
         text-align: center;
     }
     .done-check {
-        width: 35px;
-        padding: auto;
+        min-width: 35px;
+        text-align: center;
     }
     .masterbook {
         width: 35%;
@@ -18,6 +18,10 @@
             bottom: -2px;
             right: -8px;
         }
+    }
+    .amount {
+        width: 60px;
+        margin-right: 10px;
     }
     .classes {
         button {
