@@ -1,12 +1,12 @@
 {
   "name": "teamcraft",
-  "version": "0.6.0-alpha.8",
+  "version": "1.0.0-beta.1",
   "license": "GNU GPL v3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build:prod": "ng build -prod --aot",
-    "standard-version": "standard-version --prerelease alpha",
+    "standard-version": "standard-version --prerelease beta",
     "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
     "deploy": "npm run build:prod && firebase deploy && npm run release:git",
     "test": "ng test",

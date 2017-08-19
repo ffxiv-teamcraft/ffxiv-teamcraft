@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.1"></a>
+# [1.0.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.6.0-alpha.8...v1.0.0-beta.1) (2017-08-19)
+
+
+### Bug Fixes
+
+* double masterbook chip ([8a20a8a](https://github.com/Supamiu/ffxiv-teamcraft/commit/8a20a8a))
+* item in both recipes and pre-crafts are checked together (#2) ([0342ed3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0342ed3))
+
+
+### Features
+
+* add "report a bug" button ([d41ac82](https://github.com/Supamiu/ffxiv-teamcraft/commit/d41ac82))
+* add drop support ([e78972c](https://github.com/Supamiu/ffxiv-teamcraft/commit/e78972c))
+* add future i18n support for nodes ([87b48d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/87b48d7))
+* add gardening support ([4b92be9](https://github.com/Supamiu/ffxiv-teamcraft/commit/4b92be9))
+* add gathered items details ([a3e448e](https://github.com/Supamiu/ffxiv-teamcraft/commit/a3e448e))
+* add instance and reduction support ([e7344e7](https://github.com/Supamiu/ffxiv-teamcraft/commit/e7344e7))
+* add multi-crafts support ([0577f0a](https://github.com/Supamiu/ffxiv-teamcraft/commit/0577f0a))
+* add support for desynth items ([58ea86b](https://github.com/Supamiu/ffxiv-teamcraft/commit/58ea86b))
+* add support for number-based progression ([795e3c8](https://github.com/Supamiu/ffxiv-teamcraft/commit/795e3c8))
+* add trade support ([4540a09](https://github.com/Supamiu/ffxiv-teamcraft/commit/4540a09))
+
+
+
 <a name="0.6.0-alpha.8"></a>
 # [0.6.0-alpha.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v0.6.0-alpha.7...v0.6.0-alpha.8) (2017-08-16)
 
