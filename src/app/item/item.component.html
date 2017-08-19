@@ -11,9 +11,9 @@
 
     <div class="masterbook">
         <span *ngIf="item.craftedBy !== undefined">
-            <span *ngFor="let craft of item.craftedBy">
+            <span *ngFor="let masterbook of getMasterBooks(item)">
                 <md-chip-list>
-                    <md-chip color="primary" selected="true" *ngIf="craft.masterbook !== undefined">{{this.getName(craft.masterbook)}}</md-chip>
+                    <md-chip color="primary" selected="true">{{this.getName(masterbook)}}</md-chip>
                 </md-chip-list>
             </span>
         </span>

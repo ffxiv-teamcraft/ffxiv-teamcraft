@@ -9,6 +9,7 @@ import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-p
 import {TradeSource} from '../model/trade-source';
 import {I18nName} from '../model/i18n-name';
 import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
+import {CompactMasterbook} from '../model/compact-masterbook';
 
 @Component({
     selector: 'app-item',
@@ -27,6 +28,18 @@ export class ItemComponent {
     done: EventEmitter<any> = new EventEmitter<any>();
 
     constructor(private i18n: I18nTools, private translator: TranslateService, private dialog: MdDialog) {
+    }
+
+    public getMasterBooks(item: ListRow): CompactMasterbook[] {
+        const res: CompactMasterbook[] = [];
+        for (const craft of item.craftedBy) {
+            if (craft.masterbook !== undefined) {
+                if (res.find(m => m.id === craft.masterbook.id) === undefined) {
+                    res.push(craft.masterbook);
+                }
+            }
+        }
+        return res;
     }
 
     public setDone(row: ListRow, amount: number) {
@@ -52,6 +65,7 @@ export class ItemComponent {
             data: item
         });
     }
+
     public openDesynthDetails(item: ListRow): void {
         this.dialog.open(DesynthPopupComponent, {
             data: item
