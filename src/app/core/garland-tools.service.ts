@@ -62,6 +62,9 @@ export class GarlandToolsService {
     }
 
     private mockI18n(item: any): any {
+        if (item === undefined) {
+            return item;
+        }
         const clone = JSON.parse(JSON.stringify(item));
         clone.name = {
             fr: item.name,

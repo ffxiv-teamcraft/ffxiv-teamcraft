@@ -32,7 +32,7 @@ export class RecipesComponent implements OnInit {
             this.lists = this.af.list(`/lists/${user.uid}`);
         });
         this.recipes = Observable.fromEvent(this.filter.nativeElement, 'keyup')
-            .debounceTime(150)
+            .debounceTime(500)
             .distinctUntilChanged()
             .mergeMap(() => {
                 const filter = this.filter.nativeElement.value;
@@ -53,7 +53,7 @@ export class RecipesComponent implements OnInit {
             this.lists.update(key, updatedList).then(() => {
                 this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
             });
-        });
+        }, err => console.error(err));
     }
 
     addToNewList(recipe: any): void {

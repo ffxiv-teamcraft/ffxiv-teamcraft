@@ -109,6 +109,9 @@ export class ListManagerService {
                     return this.db.getNpc(+ts)
                         .map(data => {
                             tradeSource.npcName = data.npc.name;
+                            if (data.npc.zoneid === undefined) {
+                                return undefined;
+                            }
                             tradeSource.zoneName = this.gt.getLocation(data.npc.zoneid).name;
                             return tradeSource as TradeSource;
                         });
@@ -144,13 +147,18 @@ export class ListManagerService {
                         trades.push(obs);
                     }
                     return Observable.combineLatest(...trades, (...ptrades: Trade[]) => {
+                        if(tradeSource === undefined){
+                            return undefined;
+                        }
                         tradeSource.trades = ptrades;
                         return tradeSource;
                     });
                 });
             tradeSources.push(tradeObs);
         }
-        return Observable.combineLatest(tradeSources);
+        return Observable.combineLatest(...tradeSources, (...ts) => {
+            return ts.filter(t => t !== undefined);
+        });
     }
 
     protected getReducedFrom(item: any): Observable<I18nName[]> {
