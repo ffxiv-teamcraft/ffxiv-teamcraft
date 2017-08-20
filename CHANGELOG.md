@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.4"></a>
+# [1.0.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2017-08-20)
+
+
+### Bug Fixes
+
+* bug with items that can be bought in old diadem ([4809e94](https://github.com/Supamiu/ffxiv-teamcraft/commit/4809e94))
+
+
+
 <a name="1.0.0-beta.3"></a>
 # [1.0.0-beta.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2017-08-19)
 
