@@ -6,25 +6,28 @@
 </div>
 <md-divider></md-divider>
 <md-list>
-
-    <span *ngIf="(recipes | async)?.length > 0">
-            <md-list-item *ngFor="let recipe of recipes | async">
-                <a md-list-avatar href="{{recipe.url_xivdb}}" target="_blank">
-                    <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.item_name}}">
-                </a>
-                <h4 md-line>{{recipe.item_name}}</h4>
-                <p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>
-                <md-menu #appMenu="mdMenu">
-                    <button md-menu-item (click)="addToNewList(recipe)"><md-icon>add</md-icon><span>{{'New_List' | translate}}</span></button>
-                    <button md-menu-item *ngFor="let list of lists | async"
-                            (click)="addRecipe(recipe, list, list.$key)"><md-icon>playlist_play</md-icon><span>{{list.name}}</span></button>
-                </md-menu>
-                <button md-icon-button [mdMenuTriggerFor]="appMenu">
-                    <md-icon>playlist_add</md-icon>
-                </button>
-            </md-list-item>
-        </span>
-    <div *ngIf="(recipes | async)?.length === 0 || (recipes | async) === null">
+    <div *ngIf="recipes.length === 0 || recipes === null">
         <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>
+    </div>
+    <div *ngIf="recipes.length > 0">
+        <md-list-item *ngFor="let recipe of recipes">
+            <a md-list-avatar href="{{recipe.url_xivdb}}" target="_blank">
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.item_name}}">
+            </a>
+            <h4 md-line>{{recipe.item_name}}</h4>
+            <p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>
+            <md-menu #appMenu="mdMenu">
+                <button md-menu-item (click)="addToNewList(recipe)">
+                    <md-icon>add</md-icon>
+                    <span>{{'New_List' | translate}}</span></button>
+                <button md-menu-item *ngFor="let list of lists | async"
+                        (click)="addRecipe(recipe, list, list.$key)">
+                    <md-icon>playlist_play</md-icon>
+                    <span>{{list.name}}</span></button>
+            </md-menu>
+            <button md-icon-button [mdMenuTriggerFor]="appMenu">
+                <md-icon>playlist_add</md-icon>
+            </button>
+        </md-list-item>
     </div>
 </md-list>
