@@ -1,16 +1,17 @@
-import {Injectable} from '@angular/core';
-import {List} from '../model/list';
-import {Observable} from 'rxjs';
-import {ListRow} from '../model/list-row';
-import {DataService} from './data.service';
-import {CraftedBy} from '../model/crafted-by';
-import {I18nName} from '../model/i18n-name';
-import {GarlandToolsService} from 'app/core/garland-tools.service';
-import {CraftAddition} from '../model/craft-addition';
-import {GatheredBy} from '../model/gathered-by';
-import {TradeSource} from '../model/trade-source';
-import {Trade} from '../model/trade';
-import {Instance} from 'app/model/instance';
+import { Injectable } from '@angular/core';
+import { List } from '../model/list';
+import { Observable } from 'rxjs';
+import { ListRow } from '../model/list-row';
+import { DataService } from './data.service';
+import { CraftedBy } from '../model/crafted-by';
+import { I18nName } from '../model/i18n-name';
+import { GarlandToolsService } from 'app/core/garland-tools.service';
+import { CraftAddition } from '../model/craft-addition';
+import { GatheredBy } from '../model/gathered-by';
+import { TradeSource } from '../model/trade-source';
+import { Trade } from '../model/trade';
+import { Instance } from 'app/model/instance';
+import { Vendor } from '../model/vendor';
 
 @Injectable()
 export class ListManagerService {
@@ -147,7 +148,7 @@ export class ListManagerService {
                         trades.push(obs);
                     }
                     return Observable.combineLatest(...trades, (...ptrades: Trade[]) => {
-                        if(tradeSource === undefined){
+                        if (tradeSource === undefined) {
                             return undefined;
                         }
                         tradeSource.trades = ptrades;
@@ -159,6 +160,37 @@ export class ListManagerService {
         return Observable.combineLatest(...tradeSources, (...ts) => {
             return ts.filter(t => t !== undefined);
         });
+    }
+
+    protected getVendor(item: any): Observable<Vendor[]> {
+        const vendors: Observable<Vendor>[] = [];
+        for (const id of item.vendors) {
+            const vendorObs: Observable<Vendor> = Observable
+                .of({
+                    npcName: '',
+                    zoneName: {fr: '', de: '', en: '', ja: ''}
+                }).mergeMap((vendor: Vendor) => {
+                    return this.db.getNpc(+id)
+                        .map(data => {
+                            vendor.npcName = data.npc.name;
+                            if (data.npc.zoneid === undefined) {
+                                return undefined;
+                            }
+                            vendor.zoneName = this.gt.getLocation(data.npc.zoneid).name;
+                            const tradeInfo = data.npc.partials.find(o => o.obj.i === item.id);
+                            vendor.gilsAmount = tradeInfo.p;
+                            if (data.npc.coords !== undefined) {
+                                vendor.coords = {
+                                    x: data.npc.coords[0],
+                                    y: data.npc.coords[1]
+                                };
+                            }
+                            return vendor as Vendor;
+                        });
+                });
+            vendors.push(vendorObs);
+        }
+        return Observable.combineLatest(vendors);
     }
 
     protected getReducedFrom(item: any): Observable<I18nName[]> {
