@@ -15,7 +15,7 @@ import {DataService} from '../core/data.service';
 })
 export class RecipesComponent implements OnInit {
 
-    recipes: Observable<any[]>;
+    recipes: any[] = [];
 
     @ViewChild('filter')
     filter: ElementRef;
@@ -31,7 +31,7 @@ export class RecipesComponent implements OnInit {
         this.auth.idToken.subscribe(user => {
             this.lists = this.af.list(`/lists/${user.uid}`);
         });
-        this.recipes = Observable.fromEvent(this.filter.nativeElement, 'keyup')
+        Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
             .mergeMap(() => {
@@ -43,7 +43,7 @@ export class RecipesComponent implements OnInit {
                     .map(results => {
                         return results.recipes.results;
                     });
-            });
+            }).subscribe(results => this.recipes = results);
     }
 
     addRecipe(recipe: any, list: List, key: string): void {
