@@ -1,0 +1,15 @@
+<h2 md-dialog-title>{{getName(data.name)}}</h2>
+<md-list>
+    <md-list-item *ngFor="let vendor of data.vendors">
+        <md-icon md-list-icon>location_on</md-icon>
+        <b md-line>{{vendor.npcName}}</b>
+        <i md-line>
+            {{getName(vendor.zoneName)}}
+        </i>
+        <p md-line *ngIf="vendor.coords !== undefined">
+            X:{{vendor.coords.x}} Y:{{vendor.coords.y}}
+        </p>
+        <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gils">
+        <p>{{vendor.price}}</p>
+    </md-list-item>
+</md-list>

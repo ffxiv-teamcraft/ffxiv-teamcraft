@@ -162,7 +162,7 @@ export class ListManagerService {
         });
     }
 
-    protected getVendor(item: any): Observable<Vendor[]> {
+    protected getVendors(item: any): Observable<Vendor[]> {
         const vendors: Observable<Vendor>[] = [];
         for (const id of item.vendors) {
             const vendorObs: Observable<Vendor> = Observable
@@ -177,8 +177,8 @@ export class ListManagerService {
                                 return undefined;
                             }
                             vendor.zoneName = this.gt.getLocation(data.npc.zoneid).name;
-                            const tradeInfo = data.npc.partials.find(o => o.obj.i === item.id);
-                            vendor.gilsAmount = tradeInfo.p;
+                            const tradeInfo = data.partials.find(o => o.obj.i === item.id);
+                            vendor.price = tradeInfo.obj.p;
                             if (data.npc.coords !== undefined) {
                                 vendor.coords = {
                                     x: data.npc.coords[0],
@@ -293,6 +293,27 @@ export class ListManagerService {
                                     return Observable.combineLatest(...trades, (...ptrades) => {
                                         ptrades.forEach(ptrade => {
                                             ptrade.item.tradeSources = ptrade.tradeSources;
+                                        });
+                                        return l;
+                                    });
+                                } else {
+                                    return Observable.of(l);
+                                }
+                            })
+                            .mergeMap(l => {
+                                const vendors: Observable<{ item: any, vendors: Vendor[] }>[] = [];
+                                this.forEachItem(list, item => {
+                                    const related = this.getRelated(data, item.id);
+                                    if (related !== undefined && related.vendors !== undefined) {
+                                        vendors.push(this.getVendors(related).map(ts => {
+                                            return {item: item, vendors: ts};
+                                        }));
+                                    }
+                                });
+                                if (vendors.length > 0) {
+                                    return Observable.combineLatest(...vendors, (...pvendors) => {
+                                        pvendors.forEach(v => {
+                                            v.item.vendors = v.vendors;
                                         });
                                         return l;
                                     });

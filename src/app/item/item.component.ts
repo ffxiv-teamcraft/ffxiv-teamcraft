@@ -10,6 +10,7 @@ import {TradeSource} from '../model/trade-source';
 import {I18nName} from '../model/i18n-name';
 import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
 import {CompactMasterbook} from '../model/compact-masterbook';
+import {VendorsDetailsPopupComponent} from '../vendors-details-popup/vendors-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -68,6 +69,12 @@ export class ItemComponent {
 
     public openDesynthDetails(item: ListRow): void {
         this.dialog.open(DesynthPopupComponent, {
+            data: item
+        });
+    }
+
+    public openVendorsDetails(item: ListRow): void {
+        this.dialog.open(VendorsDetailsPopupComponent, {
             data: item
         });
     }

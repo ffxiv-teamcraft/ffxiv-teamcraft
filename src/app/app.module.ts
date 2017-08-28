@@ -41,6 +41,7 @@ import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.
 import { DropsDetailsPopupComponent } from './drops-details-popup/drops-details-popup.component';
 import { TradeDetailsPopupComponent } from './trade-details-popup/trade-details-popup.component';
 import { DesynthPopupComponent } from './desynth-popup/desynth-popup.component';
+import { VendorsDetailsPopupComponent } from './vendors-details-popup/vendors-details-popup.component';
 
 const routes: Routes = [
     {
@@ -79,6 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         DropsDetailsPopupComponent,
         TradeDetailsPopupComponent,
         DesynthPopupComponent,
+        VendorsDetailsPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -125,6 +127,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         DropsDetailsPopupComponent,
         TradeDetailsPopupComponent,
         DesynthPopupComponent,
+        VendorsDetailsPopupComponent,
     ],
     providers: [
         DataService,
