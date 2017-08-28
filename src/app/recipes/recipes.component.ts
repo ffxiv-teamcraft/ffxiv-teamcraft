@@ -39,29 +39,25 @@ export class RecipesComponent implements OnInit {
                 if (filter === '') {
                     return Observable.of([]);
                 }
-                return this.xivdb.searchRecipe(filter)
-                    .map(results => {
-                        return results.recipes.results;
-                    });
+                return this.xivdb.searchRecipe(filter);
             }).subscribe(results => this.recipes = results);
     }
 
-    addRecipe(recipe: any, list: List, key: string): void {
-        this.xivdb.getRecipe(recipe.id).mergeMap(r => {
-            return this.resolver.addToList(r.item.id, list, recipe.id);
-        }).subscribe(updatedList => {
-            this.lists.update(key, updatedList).then(() => {
-                this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
-            });
-        }, err => console.error(err));
+    addRecipe(recipe: any, recipeId, list: List, key: string): void {
+        this.resolver.addToList(recipe.id, list, recipe.recipeId)
+            .subscribe(updatedList => {
+                this.lists.update(key, updatedList).then(() => {
+                    this.snackBar.open(`${recipe.name} added to list ${list.name}`, '', {duration: 1000});
+                });
+            }, err => console.error(err));
     }
 
-    addToNewList(recipe: any): void {
+    addToNewList(recipe: any, recipeId: number): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;
             this.lists.push(list).then(l => {
-                this.addRecipe(recipe, list, l.key);
+                this.addRecipe(recipe, list, recipeId, l.key);
             });
         });
     }

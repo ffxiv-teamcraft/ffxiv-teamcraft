@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import { List } from '../model/list';
-import { Observable } from 'rxjs';
-import { ListRow } from '../model/list-row';
-import { DataService } from './data.service';
-import { CraftedBy } from '../model/crafted-by';
-import { I18nName } from '../model/i18n-name';
-import { GarlandToolsService } from 'app/core/garland-tools.service';
-import { CraftAddition } from '../model/craft-addition';
-import { GatheredBy } from '../model/gathered-by';
-import { TradeSource } from '../model/trade-source';
-import { Trade } from '../model/trade';
-import { Instance } from 'app/model/instance';
-import { Vendor } from '../model/vendor';
+import {Injectable} from '@angular/core';
+import {List} from '../model/list';
+import {Observable} from 'rxjs';
+import {ListRow} from '../model/list-row';
+import {DataService} from './data.service';
+import {CraftedBy} from '../model/crafted-by';
+import {I18nName} from '../model/i18n-name';
+import {GarlandToolsService} from 'app/core/garland-tools.service';
+import {CraftAddition} from '../model/craft-addition';
+import {GatheredBy} from '../model/gathered-by';
+import {TradeSource} from '../model/trade-source';
+import {Trade} from '../model/trade';
+import {Instance} from 'app/model/instance';
+import {Vendor} from '../model/vendor';
 
 @Injectable()
 export class ListManagerService {
@@ -190,7 +190,9 @@ export class ListManagerService {
                 });
             vendors.push(vendorObs);
         }
-        return Observable.combineLatest(vendors);
+        return Observable.combineLatest(...vendors, (...vs) => {
+            return vs.filter(v => v !== undefined);
+        });
     }
 
     protected getReducedFrom(item: any): Observable<I18nName[]> {
@@ -225,14 +227,14 @@ export class ListManagerService {
         return Observable.combineLatest(desynths);
     }
 
-    protected getCraft(item: any, id: number): any {
-        return item.craft.filter(c => c.id === id);
-    }
-
     protected forEachItem(list: List, method: (arg: ListRow) => void) {
         list.others.forEach(method);
         list.gathers.forEach(method);
         list.preCrafts.forEach(method);
+    }
+
+    protected getCraft(item: any, recipeId: number): any {
+        return item.craft.find(i => i.id === recipeId);
     }
 
     public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
@@ -243,15 +245,15 @@ export class ListManagerService {
                     .mergeMap(data => {
                         return this.getCraftedBy(data.item)
                             .map(crafted => {
-                                const craft = this.getCraft(data.item, recipeId)[0];
+                                const craft = this.getCraft(data.item, recipeId);
                                 const toAdd: ListRow = {
                                     id: data.item.id,
                                     name: this.getI18nName(data.item),
                                     icon: this.getIcon(data.item),
                                     amount: amount,
                                     done: 0,
-                                    recipeId: recipeId,
                                     yield: craft.yield || 1,
+                                    recipeId: recipeId,
                                     requires: craft.ingredients,
                                     craftedBy: crafted,
                                     addedAt: Date.now()
