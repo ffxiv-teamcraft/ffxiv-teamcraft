@@ -7,6 +7,7 @@ import {Instance} from '../model/instance';
 export class GarlandToolsService {
 
     private gt: GarlandToolsData = (<any>window).gt;
+    private gItemIndex: any[] = (<any>window).gItemIndex;
 
     public getJob(id: number): any {
         return this.gt.jobs.find(job => job.id === id);
@@ -50,6 +51,14 @@ export class GarlandToolsService {
                 ja: type
             }
         });
+    }
+
+    public getItem(id: number): any {
+        for (const item of this.gItemIndex) {
+            if (item.i === id) {
+                return item;
+            }
+        }
     }
 
     private mockI18nLimitType(node: any): any {

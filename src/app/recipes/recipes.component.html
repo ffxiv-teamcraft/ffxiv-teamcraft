@@ -12,10 +12,10 @@
     <div *ngIf="recipes.length > 0">
         <md-list-item *ngFor="let recipe of recipes">
             <a md-list-avatar href="{{recipe.url_xivdb}}" target="_blank">
-                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.item_name}}">
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.name}}">
             </a>
-            <h4 md-line>{{recipe.item_name}}</h4>
-            <p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>
+            <h4 md-line>{{recipe.name}}</h4>
+            <!--<p md-line>{{recipe.class_name}} {{recipe.level_view}} <span [innerHtml]="recipe.stars_html"></span></p>-->
             <md-menu #appMenu="mdMenu">
                 <button md-menu-item (click)="addToNewList(recipe)">
                     <md-icon>add</md-icon>
