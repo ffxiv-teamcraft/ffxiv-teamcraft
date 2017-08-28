@@ -4,6 +4,7 @@ import {GatheredBy} from './gathered-by';
 import {Drop} from 'app/model/garland-tools/drop';
 import {TradeSource} from './trade-source';
 import {Instance} from './instance';
+import {Vendor} from './vendor';
 export interface ListRow {
     addedAt: number;
     name: I18nName;
@@ -23,4 +24,5 @@ export interface ListRow {
     instances?: Instance[];
     reducedFrom?: I18nName[];
     desynths?: I18nName[];
+    vendors?: Vendor[];
 }

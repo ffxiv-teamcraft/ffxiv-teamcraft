@@ -85,5 +85,12 @@
                      src="https://www.garlandtools.org/db/images/Desynth.png">
             </button>
         </div>
+        <div *ngIf="item.vendors !== undefined">
+            <button md-icon-button (click)="openVendorsDetails(item)">
+                <img class="icon" mdTooltip="{{'Vendors' | translate}}"
+                     mdTooltipPosition="above"
+                     src="https://secure.xivdb.com/img/game/065000/065002.png">
+            </button>
+        </div>
     </div>
 </md-list-item>
