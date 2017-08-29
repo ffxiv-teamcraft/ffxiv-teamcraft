@@ -1,36 +1,41 @@
 @import "../theme.scss";
 
 :host {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    min-height: 100%;
     md-toolbar {
         min-height: 64px;
-        .spacer {
-            flex: 1 1 auto;
-        }
         .version {
             margin: 0 20px;
         }
     }
-    .content {
-        overflow: auto;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 64px;
-        .content-middle {
-            padding: 20px;
-            width: 70%;
-            margin: auto;
-            min-height: 20%;
+    md-sidenav-container {
+        display: block;
+        height: calc(100% - 64px);
+        md-sidenav {
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            .spacer {
+                flex: 1 1 auto;
+            }
+            .report-bug {
+                margin-bottom: 10px;
+            }
         }
-        .warning-message{
-            text-align: center;
-            color: mat-color(map-get($theme, warn));
+        .content {
+            overflow: auto;
+            .content-middle {
+                padding: 20px;
+                width: 70%;
+                margin: auto;
+                min-height: 20%;
+            }
         }
     }
 }

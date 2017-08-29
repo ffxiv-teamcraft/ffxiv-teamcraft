@@ -1,4 +1,7 @@
 <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+        <md-icon>menu</md-icon>
+    </button>
     <h1>FFXIV Team Craft</h1>
     <md-chip-list class="version">
         <md-chip>Beta</md-chip>
@@ -13,14 +16,22 @@
     <button md-raised-button [mdMenuTriggerFor]="langMenu">
         {{locale | uppercase}}
     </button>
-
-    <span class="spacer"></span>
-    <button md-button routerLink="/recipes">{{'Recipes' | translate}}</button>
-    <button md-button routerLink="/lists">{{'Lists' | translate}}</button>
-    <a md-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank">Report a bug</a>
 </md-toolbar>
-<div class="content">
-    <div class="content-middle">
-        <router-outlet></router-outlet>
+<md-sidenav-container>
+    <md-sidenav mode="over" #sidenav>
+        <md-nav-list>
+            <a md-list-item routerLink="/recipes" (click)="sidenav.close()">{{'Recipes' | translate}}</a>
+            <a md-list-item routerLink="/lists" (click)="sidenav.close()">{{'Lists' | translate}}</a>
+        </md-nav-list>
+        <div class="spacer"></div>
+        <a md-raised-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank" color="warn" class="report-bug">Report a bug</a>
+    </md-sidenav>
+    <div class="my-content">
+        <div class="content">
+            <div class="content-middle">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
     </div>
-</div>
+</md-sidenav-container>
+

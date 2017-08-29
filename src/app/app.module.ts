@@ -14,7 +14,7 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule,
+    MdPaginatorModule, MdSidenavModule,
     MdSnackBarModule,
     MdToolbarModule,
     MdTooltipModule
@@ -114,6 +114,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdExpansionModule,
         MdTooltipModule,
         MdChipsModule,
+        MdSidenavModule,
 
         BrowserModule,
         FormsModule,
