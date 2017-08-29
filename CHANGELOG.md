@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.5"></a>
+# [1.0.0-beta.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2017-08-29)
+
+
+### Bug Fixes
+
+* search sometimes showing empty result set with no message ([e518376](https://github.com/Supamiu/ffxiv-teamcraft/commit/e518376)), closes [#5](https://github.com/Supamiu/ffxiv-teamcraft/issues/5)
+
+
+### Features
+
+* add FC crafts support ([ab0d9ca](https://github.com/Supamiu/ffxiv-teamcraft/commit/ab0d9ca))
+* add gils support ([64f4a8e](https://github.com/Supamiu/ffxiv-teamcraft/commit/64f4a8e))
+
+
+
 <a name="1.0.0-beta.4"></a>
 # [1.0.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2017-08-20)
 
