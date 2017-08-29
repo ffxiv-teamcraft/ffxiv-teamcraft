@@ -21,8 +21,7 @@
     <div class="done">
         <md-input-container class="amount">
             <input mdInput type="number" [ngModel]="item.done"
-                   #doneInput
-                   (ngModelChange)="setDone(item, $event - item.done)" min="0" max="{{item.amount}}">
+                   #doneInput min="0" max="{{item.amount}}">
             <span mdSuffix>/{{item.amount}}</span>
         </md-input-container>
     </div>

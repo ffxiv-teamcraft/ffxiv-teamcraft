@@ -1,26 +1,30 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ListRow} from '../model/list-row';
-import {I18nTools} from '../core/i18n-tools';
-import {TranslateService} from '@ngx-translate/core';
-import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
-import {MdDialog} from '@angular/material';
-import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
-import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-popup.component';
-import {TradeSource} from '../model/trade-source';
-import {I18nName} from '../model/i18n-name';
-import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
-import {CompactMasterbook} from '../model/compact-masterbook';
-import {VendorsDetailsPopupComponent} from '../vendors-details-popup/vendors-details-popup.component';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, OnInit } from '@angular/core';
+import { ListRow } from '../model/list-row';
+import { I18nTools } from '../core/i18n-tools';
+import { TranslateService } from '@ngx-translate/core';
+import { GatheredByPopupComponent } from '../gathered-by-popup/gathered-by-popup.component';
+import { MdDialog } from '@angular/material';
+import { DropsDetailsPopupComponent } from '../drops-details-popup/drops-details-popup.component';
+import { TradeDetailsPopupComponent } from '../trade-details-popup/trade-details-popup.component';
+import { TradeSource } from '../model/trade-source';
+import { I18nName } from '../model/i18n-name';
+import { DesynthPopupComponent } from '../desynth-popup/desynth-popup.component';
+import { CompactMasterbook } from '../model/compact-masterbook';
+import { VendorsDetailsPopupComponent } from '../vendors-details-popup/vendors-details-popup.component';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent {
+export class ItemComponent implements OnInit {
 
     @Input()
     item: ListRow;
+
+    @ViewChild('doneInput')
+    doneInput: ElementRef;
 
     @Output()
     update: EventEmitter<void> = new EventEmitter<void>();
@@ -29,6 +33,18 @@ export class ItemComponent {
     done: EventEmitter<any> = new EventEmitter<any>();
 
     constructor(private i18n: I18nTools, private translator: TranslateService, private dialog: MdDialog) {
+    }
+
+    ngOnInit(): void {
+        Observable.fromEvent(this.doneInput.nativeElement, 'input')
+            .debounceTime(500)
+            .distinctUntilChanged()
+            .map(() => {
+                return this.doneInput.nativeElement.value;
+            })
+            .subscribe(value => {
+                this.setDone(this.item, value - this.item.done);
+            });
     }
 
     public getMasterBooks(item: ListRow): CompactMasterbook[] {
