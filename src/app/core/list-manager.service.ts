@@ -1,17 +1,17 @@
-import {Injectable} from '@angular/core';
-import {List} from '../model/list';
-import {Observable} from 'rxjs';
-import {ListRow} from '../model/list-row';
-import {DataService} from './data.service';
-import {CraftedBy} from '../model/crafted-by';
-import {I18nName} from '../model/i18n-name';
-import {GarlandToolsService} from 'app/core/garland-tools.service';
-import {CraftAddition} from '../model/craft-addition';
-import {GatheredBy} from '../model/gathered-by';
-import {TradeSource} from '../model/trade-source';
-import {Trade} from '../model/trade';
-import {Instance} from 'app/model/instance';
-import {Vendor} from '../model/vendor';
+import { Injectable } from '@angular/core';
+import { List } from '../model/list';
+import { Observable } from 'rxjs';
+import { ListRow } from '../model/list-row';
+import { DataService } from './data.service';
+import { CraftedBy } from '../model/crafted-by';
+import { I18nName } from '../model/i18n-name';
+import { GarlandToolsService } from 'app/core/garland-tools.service';
+import { CraftAddition } from '../model/craft-addition';
+import { GatheredBy } from '../model/gathered-by';
+import { TradeSource } from '../model/trade-source';
+import { Trade } from '../model/trade';
+import { Instance } from 'app/model/instance';
+import { Vendor } from '../model/vendor';
 
 @Injectable()
 export class ListManagerService {
@@ -28,7 +28,7 @@ export class ListManagerService {
         };
     }
 
-    protected generateStars(amount: number): string {
+    public generateStars(amount: number): string {
         let stars = '';
         for (let i = 0; i < amount; i++) {
             stars += '★';
@@ -45,6 +45,9 @@ export class ListManagerService {
                 level: craft.lvl,
                 stars_tooltip: this.generateStars(craft.stars)
             };
+            if (craft.job === 0) {
+                craftedBy.icon = '';
+            }
             if (craft.unlockId !== undefined) {
                 result.push(this.db.getItem(craft.unlockId).map(masterbook => {
                     craftedBy.masterbook = {
