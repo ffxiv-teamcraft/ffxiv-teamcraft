@@ -10,11 +10,13 @@ import {
     MdChipsModule,
     MdDialogModule,
     MdExpansionModule,
+    MdGridListModule,
     MdIconModule,
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule, MdSidenavModule,
+    MdPaginatorModule,
+    MdSidenavModule,
     MdSnackBarModule,
     MdToolbarModule,
     MdTooltipModule
@@ -37,11 +39,11 @@ import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GarlandToolsService} from './core/garland-tools.service';
-import { GatheredByPopupComponent } from './gathered-by-popup/gathered-by-popup.component';
-import { DropsDetailsPopupComponent } from './drops-details-popup/drops-details-popup.component';
-import { TradeDetailsPopupComponent } from './trade-details-popup/trade-details-popup.component';
-import { DesynthPopupComponent } from './desynth-popup/desynth-popup.component';
-import { VendorsDetailsPopupComponent } from './vendors-details-popup/vendors-details-popup.component';
+import {GatheredByPopupComponent} from './gathered-by-popup/gathered-by-popup.component';
+import {DropsDetailsPopupComponent} from './drops-details-popup/drops-details-popup.component';
+import {TradeDetailsPopupComponent} from './trade-details-popup/trade-details-popup.component';
+import {DesynthPopupComponent} from './desynth-popup/desynth-popup.component';
+import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-details-popup.component';
 
 const routes: Routes = [
     {
@@ -115,6 +117,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdTooltipModule,
         MdChipsModule,
         MdSidenavModule,
+        MdGridListModule,
 
         BrowserModule,
         FormsModule,

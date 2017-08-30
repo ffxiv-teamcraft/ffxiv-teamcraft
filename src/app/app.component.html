@@ -17,6 +17,16 @@
         {{locale | uppercase}}
     </button>
 </md-toolbar>
+<md-card class="announcement" *ngIf="showAnnouncement()">
+    <md-grid-list cols="5" rowHeight="35px">
+        <md-grid-tile colspan="4">
+            {{announcement}}
+        </md-grid-tile>
+        <md-grid-tile>
+            <button md-raised-button color="accent" (click)="dismissAnnouncement()">Dismiss</button>
+        </md-grid-tile>
+    </md-grid-list>
+</md-card>
 <md-sidenav-container>
     <md-sidenav mode="over" #sidenav>
         <md-nav-list>
@@ -24,7 +34,8 @@
             <a md-list-item routerLink="/lists" (click)="sidenav.close()">{{'Lists' | translate}}</a>
         </md-nav-list>
         <div class="spacer"></div>
-        <a md-raised-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank" color="warn" class="report-bug">Report a bug</a>
+        <a md-raised-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank" color="warn"
+           class="report-bug">Report a bug</a>
     </md-sidenav>
     <div class="my-content">
         <div class="content">
