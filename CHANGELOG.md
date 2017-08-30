@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.6"></a>
+# [1.0.0-beta.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2017-08-30)
+
+
+### Bug Fixes
+
+* masterbook size fix ([f787f7f](https://github.com/Supamiu/ffxiv-teamcraft/commit/f787f7f))
+
+
+### Features
+
+* added announcement system ([8b1c1ad](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b1c1ad))
+
+
+
 <a name="1.0.0-beta.5"></a>
 # [1.0.0-beta.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2017-08-29)
 
