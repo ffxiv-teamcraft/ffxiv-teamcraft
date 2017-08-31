@@ -27,7 +27,7 @@
     </div>
     <div class="done-check">
         <a md-mini-fab *ngIf="item.amount > item.done" (click)="setDone(item, item.amount)">
-            <md-icon>check</md-icon>
+            <md-icon>playlist_add_check</md-icon>
         </a>
         <md-icon *ngIf="item.amount === item.done" color="accent">done</md-icon>
     </div>
