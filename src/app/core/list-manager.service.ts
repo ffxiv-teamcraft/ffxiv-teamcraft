@@ -230,7 +230,7 @@ export class ListManagerService {
         return Observable.combineLatest(desynths);
     }
 
-    protected forEachItem(list: List, method: (arg: ListRow) => void) {
+    public forEachItem(list: List, method: (arg: ListRow) => void) {
         list.others.forEach(method);
         list.gathers.forEach(method);
         list.preCrafts.forEach(method);

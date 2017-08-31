@@ -1,6 +1,10 @@
-.reset {
-    position: absolute;
-    left: 81%;
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .spacer{
+        flex: 1 1 auto;
+    }
 }
 
 .crystal-row {
@@ -15,4 +19,17 @@
 
 md-expansion-panel {
     margin: 10px 0;
+}
+
+.filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .filter {
+        margin: 0 5px;
+        .filter_icons {
+            height: 30px;
+            vertical-align: middle;
+        }
+    }
 }

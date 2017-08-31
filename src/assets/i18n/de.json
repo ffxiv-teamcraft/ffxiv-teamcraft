@@ -23,5 +23,8 @@
     "Desynth": "Materialverwertung",
     "Vendors": "Verkäufer",
     "Open": "Offen",
-    "Trade": "Handel"
+    "Trade": "Handel",
+    "Filters": "Filter",
+    "Check_all": "Alle überprüfen",
+    "Uncheck_all": "Alle deaktivieren"
 }

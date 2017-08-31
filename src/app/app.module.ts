@@ -19,7 +19,8 @@ import {
     MdSidenavModule,
     MdSnackBarModule,
     MdToolbarModule,
-    MdTooltipModule
+    MdTooltipModule,
+    MdCheckboxModule
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RecipesComponent} from './recipes/recipes.component';
@@ -120,6 +121,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdChipsModule,
         MdSidenavModule,
         MdGridListModule,
+        MdCheckboxModule,
 
         BrowserModule,
         FormsModule,

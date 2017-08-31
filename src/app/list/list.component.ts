@@ -10,6 +10,8 @@ import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
 import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'app-list',
@@ -24,16 +26,68 @@ export class ListComponent implements OnInit {
 
     user: UserInfo;
 
+    filters = [
+        {job: 'BTN', checked: true},
+        {job: 'MIN', checked: true},
+        {job: 'FSH', checked: true},
+
+        {job: 'ALC', checked: true},
+        {job: 'ARM', checked: true},
+        {job: 'BSM', checked: true},
+        {job: 'CRP', checked: true},
+        {job: 'CUL', checked: true},
+        {job: 'GSM', checked: true},
+        {job: 'LTW', checked: true},
+        {job: 'WVR', checked: true}
+    ];
+
+    abbreviations = {
+        ALC: 'alchemist',
+        ARM: 'armorer',
+        BSM: 'blacksmith',
+        CRP: 'carpenter',
+        CUL: 'culinarian',
+        GSM: 'goldsmith',
+        LTW: 'leatherworker',
+        WVR: 'weaver',
+    };
+
+    private filterTrigger = new Subject<void>();
+
     constructor(private route: ActivatedRoute, private af: AngularFireDatabase,
                 private auth: AngularFireAuth, private listManager: ListManagerService,
                 private dialog: MdDialog, private i18n: I18nTools) {
     }
 
+    public triggerFilter(): void {
+        this.filterTrigger.next();
+    }
+
+    public checkAll(checked: boolean): void {
+        this.filters.forEach(f => f.checked = checked);
+        this.triggerFilter();
+    }
+
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
-            this.listObj.subscribe(l => this.list = l, err => console.error(err));
+            Observable.combineLatest(this.filterTrigger,
+                this.listObj,
+                (ignored, list) => {
+                    this.listManager.forEachItem(list, item => {
+                        if (item.gatheredBy !== undefined) {
+                            item.hidden = !this.filters.find(filter => item.gatheredBy.icon.indexOf(filter.job) > -1).checked;
+                        }
+                        if (item.craftedBy !== undefined) {
+                            for (const craft of item.craftedBy) {
+                                item.hidden = !this.filters.find(filter => craft.icon.indexOf(this.abbreviations[filter.job]) > -1).checked;
+                            }
+                        }
+                    });
+                    return list;
+                }).subscribe(l => this.list = l, err => console.error(err));
         });
+        this.triggerFilter();
         this.auth.idToken.subscribe(user => {
             this.user = user;
         });
@@ -43,7 +97,7 @@ export class ListComponent implements OnInit {
         this.listObj.update(this.list);
     }
 
-    public setDone(data: { row: ListRow, amount: number}): void {
+    public setDone(data: { row: ListRow, amount: number }): void {
         this.listManager.setDone(data.row, data.amount, this.list);
         this.listObj.update(this.list);
     }
