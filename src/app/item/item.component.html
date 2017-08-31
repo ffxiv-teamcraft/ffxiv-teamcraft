@@ -57,19 +57,20 @@
             </button>
         </div>
         <div *ngIf="item.tradeSources !== undefined">
-            <button *ngFor="let tradeSource of item.tradeSources" md-icon-button md-line
-                    (click)="openTradeDetails(item, tradeSource)">
+            <button md-icon-button md-line
+                    (click)="openTradeDetails(item)">
                 <img class="currency"
-                     mdTooltip="{{tradeSource.npcName}} - {{getI18n(tradeSource.zoneName)}}"
+                     mdTooltip="{{'Trade' | translate}}"
                      mdTooltipPosition="above"
-                     src="https://www.garlandtools.org/db/icons/item/{{tradeSource.trades[0].currencyIcon}}.png">
+                     src="https://www.garlandtools.org/db/images/Shop.png">
             </button>
         </div>
         <div *ngIf="item.instances !== undefined">
-            <img *ngFor="let instance of item.instances"
-                 mdTooltip="{{getName(instance)}}"
+            <button md-icon-button (click)="openInstancesDetails(item)">
+            <img mdTooltip="{{getI18n(item.instances[0].type)}}"
                  mdTooltipPosition="above"
-                 src="https://www.garlandtools.org/db/images/{{getI18n(instance.type)}}.png" class="currency">
+                 src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png" class="currency">
+            </button>
         </div>
         <div *ngIf="item.reducedFrom !== undefined">
             <img class="icon" *ngFor="let reduction of item.reducedFrom"

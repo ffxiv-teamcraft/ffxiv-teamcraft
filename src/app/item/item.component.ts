@@ -1,17 +1,18 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, OnInit } from '@angular/core';
-import { ListRow } from '../model/list-row';
-import { I18nTools } from '../core/i18n-tools';
-import { TranslateService } from '@ngx-translate/core';
-import { GatheredByPopupComponent } from '../gathered-by-popup/gathered-by-popup.component';
-import { MdDialog } from '@angular/material';
-import { DropsDetailsPopupComponent } from '../drops-details-popup/drops-details-popup.component';
-import { TradeDetailsPopupComponent } from '../trade-details-popup/trade-details-popup.component';
-import { TradeSource } from '../model/trade-source';
-import { I18nName } from '../model/i18n-name';
-import { DesynthPopupComponent } from '../desynth-popup/desynth-popup.component';
-import { CompactMasterbook } from '../model/compact-masterbook';
-import { VendorsDetailsPopupComponent } from '../vendors-details-popup/vendors-details-popup.component';
-import { Observable } from 'rxjs/Observable';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, OnInit} from '@angular/core';
+import {ListRow} from '../model/list-row';
+import {I18nTools} from '../core/i18n-tools';
+import {TranslateService} from '@ngx-translate/core';
+import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
+import {MdDialog} from '@angular/material';
+import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
+import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-popup.component';
+import {TradeSource} from '../model/trade-source';
+import {I18nName} from '../model/i18n-name';
+import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
+import {CompactMasterbook} from '../model/compact-masterbook';
+import {VendorsDetailsPopupComponent} from '../vendors-details-popup/vendors-details-popup.component';
+import {Observable} from 'rxjs/Observable';
+import {InstancesDetailsPopupComponent} from '../instances-details-popup/instances-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -89,15 +90,21 @@ export class ItemComponent implements OnInit {
         });
     }
 
+    public openInstancesDetails(item: ListRow): void {
+        this.dialog.open(InstancesDetailsPopupComponent, {
+            data: item
+        });
+    }
+
     public openVendorsDetails(item: ListRow): void {
         this.dialog.open(VendorsDetailsPopupComponent, {
             data: item
         });
     }
 
-    public openTradeDetails(item: ListRow, tradeSource: TradeSource): void {
+    public openTradeDetails(item: ListRow): void {
         this.dialog.open(TradeDetailsPopupComponent, {
-            data: {item: item, tradeSource: tradeSource}
+            data: item
         });
     }
 

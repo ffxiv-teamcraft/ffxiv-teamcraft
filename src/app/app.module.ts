@@ -44,6 +44,7 @@ import {DropsDetailsPopupComponent} from './drops-details-popup/drops-details-po
 import {TradeDetailsPopupComponent} from './trade-details-popup/trade-details-popup.component';
 import {DesynthPopupComponent} from './desynth-popup/desynth-popup.component';
 import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-details-popup.component';
+import { InstancesDetailsPopupComponent } from './instances-details-popup/instances-details-popup.component';
 
 const routes: Routes = [
     {
@@ -83,6 +84,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         TradeDetailsPopupComponent,
         DesynthPopupComponent,
         VendorsDetailsPopupComponent,
+        InstancesDetailsPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -132,6 +134,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         TradeDetailsPopupComponent,
         DesynthPopupComponent,
         VendorsDetailsPopupComponent,
+        InstancesDetailsPopupComponent,
     ],
     providers: [
         DataService,

@@ -4,11 +4,11 @@ import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
 
 @Component({
-    selector: 'app-trade-details-popup',
-    templateUrl: './trade-details-popup.component.html',
-    styleUrls: ['./trade-details-popup.component.scss']
+    selector: 'app-instances-details-popup',
+    templateUrl: './instances-details-popup.component.html',
+    styleUrls: ['./instances-details-popup.component.scss']
 })
-export class TradeDetailsPopupComponent {
+export class InstancesDetailsPopupComponent {
 
     constructor(@Inject(MD_DIALOG_DATA) public data: any, private i18n: I18nTools) {
     }
@@ -16,4 +16,5 @@ export class TradeDetailsPopupComponent {
     public getName(name: I18nName): string {
         return this.i18n.getName(name);
     }
+
 }
