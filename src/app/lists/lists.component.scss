@@ -1,16 +1,11 @@
 @import "../../theme.scss";
 
 .row {
-    position: relative;
-    .delete {
-        position: absolute;
-        left: -50px;
-        margin-top: 4px;
+    .spacer {
+        flex: 1 1 auto;
     }
-    .details {
-        position: absolute;
-        left: -100px;
-        margin-top: 4px;
+    .buttons {
+        margin-right: 10px;
     }
     .amount {
         width: 50px;

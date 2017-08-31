@@ -10,3 +10,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.snack {
+    background-color: mat-color(map-get($theme, accent)) !important;
+}

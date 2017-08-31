@@ -11,15 +11,18 @@
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="row" *ngFor="let list of lists | async">
-    <button md-mini-fab class="delete" (click)="delete(list.$key)">
-        <md-icon>delete</md-icon>
-    </button>
-    <button md-mini-fab class="details" routerLink="/list/{{user.uid}}/{{list.$key}}">
-        <md-icon>remove_red_eye</md-icon>
-    </button>
     <md-expansion-panel [expanded]="true">
         <md-expansion-panel-header>
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
+            <div class="spacer"></div>
+            <div class="buttons">
+                <button md-icon-button routerLink="/list/{{user.uid}}/{{list.$key}}">
+                    <md-icon>open_in_new</md-icon>
+                </button>
+                <button md-icon-button (click)="delete(list.$key)">
+                    <md-icon>delete</md-icon>
+                </button>
+            </div>
         </md-expansion-panel-header>
         <md-list>
             <md-list-item *ngFor="let recipe of list.recipes">

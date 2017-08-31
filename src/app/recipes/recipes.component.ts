@@ -1,16 +1,18 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ListManagerService } from '../core/list-manager.service';
-import { List } from '../model/list';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { MdDialog, MdSnackBar } from '@angular/material';
-import { ListNamePopupComponent } from '../list-name-popup/list-name-popup.component';
-import { DataService } from '../core/data.service';
-import { Recipe } from '../model/recipe';
-import { I18nTools } from '../core/i18n-tools';
-import { I18nName } from '../model/i18n-name';
-import { GarlandToolsService } from '../core/garland-tools.service';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ListManagerService} from '../core/list-manager.service';
+import {List} from '../model/list';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {MdDialog, MdSnackBar} from '@angular/material';
+import {ListNamePopupComponent} from '../list-name-popup/list-name-popup.component';
+import {DataService} from '../core/data.service';
+import {Recipe} from '../model/recipe';
+import {I18nTools} from '../core/i18n-tools';
+import {I18nName} from '../model/i18n-name';
+import {GarlandToolsService} from '../core/garland-tools.service';
+import {TranslateService} from '@ngx-translate/core';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-recipes',
@@ -26,15 +28,19 @@ export class RecipesComponent implements OnInit {
 
     lists: FirebaseListObservable<List[]>;
 
+    uid: string;
+
     constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
                 private resolver: ListManagerService, private xivdb: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
-                private i18n: I18nTools, private gt: GarlandToolsService) {
+                private i18n: I18nTools, private gt: GarlandToolsService,
+                private translator: TranslateService, private router: Router) {
     }
 
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
             this.lists = this.af.list(`/lists/${user.uid}`);
+            this.uid = user.uid;
         });
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
@@ -64,7 +70,16 @@ export class RecipesComponent implements OnInit {
         this.resolver.addToList(recipe.itemId, list, recipe.recipeId)
             .subscribe(updatedList => {
                 this.lists.update(key, updatedList).then(() => {
-                    this.snackBar.open(`${this.i18n.getName(recipe.name)} added to list ${list.name}`, '', {duration: 1000});
+                    this.snackBar.open(
+                        `${this.i18n.getName(recipe.name)} added to list ${list.name}`,
+                        this.translator.instant('Open'),
+                        {
+                            duration: 10000,
+                            extraClasses: ['snack']
+                        }
+                    ).onAction().subscribe(() => {
+                        this.router.navigate(['list', this.uid, key]);
+                    });
                 });
             }, err => console.error(err));
     }
