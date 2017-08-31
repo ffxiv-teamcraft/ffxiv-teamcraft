@@ -1,18 +1,21 @@
 <h2 md-dialog-title>{{getName(data.item.name)}}</h2>
-<md-list>
-    <h3 md-subheader>{{data.tradeSource.npcName}} - {{getName(data.tradeSource.zoneName)}}</h3>
-    <md-list-item *ngFor="let trade of data.tradeSource.trades">
-        <div class="trade-part">
-            <img src="https://www.garlandtools.org/db/icons/item/{{trade.currencyIcon}}.png" class="currency">
-            {{trade.currencyAmount}}
-        </div>
-        <md-icon>arrow_forward</md-icon>
-        <div class="trade-part">
-            <div class="itemParent">
-                <img src="https://www.garlandtools.org/db/icons/item/{{trade.itemIcon}}.png" class="item currency">
-                <img *ngIf="trade.itemHQ" src="https://www.garlandtools.org/db/images/HQOverlay.png" class="overlay currency">
+<div md-dialog-content>
+    <md-list>
+        <h3 md-subheader>{{data.tradeSource.npcName}} - {{getName(data.tradeSource.zoneName)}}</h3>
+        <md-list-item *ngFor="let trade of data.tradeSource.trades">
+            <div class="trade-part">
+                <img src="https://www.garlandtools.org/db/icons/item/{{trade.currencyIcon}}.png" class="currency">
+                {{trade.currencyAmount}}
             </div>
-        </div>
-        {{trade.itemAmount}}
-    </md-list-item>
-</md-list>
+            <md-icon>arrow_forward</md-icon>
+            <div class="trade-part">
+                <div class="itemParent">
+                    <img src="https://www.garlandtools.org/db/icons/item/{{trade.itemIcon}}.png" class="item currency">
+                    <img *ngIf="trade.itemHQ" src="https://www.garlandtools.org/db/images/HQOverlay.png"
+                         class="overlay currency">
+                </div>
+            </div>
+            {{trade.itemAmount}}
+        </md-list-item>
+    </md-list>
+</div>

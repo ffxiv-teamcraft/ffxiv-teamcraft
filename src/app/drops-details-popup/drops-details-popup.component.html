@@ -1,10 +1,12 @@
 <h2 md-dialog-title>{{getName(data.name)}}</h2>
-<md-list>
-    <md-list-item *ngFor="let drop of data.drops">
-        <md-icon md-list-icon>location_on</md-icon>
-        <b md-line>{{getName(drop.name)}}</b>
-        <i md-line>
-            {{getName(getLocation(drop.zoneid).name)}}
-        </i>
-    </md-list-item>
-</md-list>
+<div md-dialog-content>
+    <md-list>
+        <md-list-item *ngFor="let drop of data.drops">
+            <md-icon md-list-icon>location_on</md-icon>
+            <b md-line>{{getName(drop.name)}}</b>
+            <i md-line>
+                {{getName(getLocation(drop.zoneid).name)}}
+            </i>
+        </md-list-item>
+    </md-list>
+</div>
