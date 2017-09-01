@@ -7,32 +7,41 @@
     </button>
 </div>
 
-<md-card>
-    <md-card-header>
-        <div md-card-title>
-            {{'Filters' | translate}}
-        </div>
-    </md-card-header>
-    <md-card-content>
-        <div class="filters">
-            <md-checkbox *ngFor="let filter of filters" class="filter"
-                         [(ngModel)]="filter.checked"
-                         (change)="triggerFilter()">
-                <img src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
-                     alt="{{filter.job}}"
-                     class="filter_icons">
-            </md-checkbox>
-            <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
-                    (click)="checkAll(true)" class="filter">
-                <md-icon>done_all</md-icon>
-            </button>
-            <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
-                    (click)="checkAll(false)" class="filter">
-                <md-icon>clear</md-icon>
-            </button>
-        </div>
-    </md-card-content>
-</md-card>
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>{{'Filters' | translate}}</md-expansion-panel-header>
+    <h3>{{'Level' | translate}}</h3>
+    <div class="level-filter">
+        <md-input-container>
+            <input mdInput type="number"
+                   [(ngModel)]="levelFilter.min"
+                   min="1" max="69" (change)="triggerFilter()">
+        </md-input-container>
+        -
+        <md-input-container>
+            <input mdInput type="number"
+                   [(ngModel)]="levelFilter.max"
+                   min="1" max="70" (change)="triggerFilter()">
+        </md-input-container>
+    </div>
+    <h3>Jobs</h3>
+    <div class="class-filters">
+        <md-checkbox *ngFor="let filter of filters" class="filter"
+                     [(ngModel)]="filter.checked"
+                     (change)="triggerFilter()">
+            <img src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
+                 alt="{{filter.job}}"
+                 class="filter_icons">
+        </md-checkbox>
+        <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
+                (click)="checkAll(true)" class="filter">
+            <md-icon>done_all</md-icon>
+        </button>
+        <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
+                (click)="checkAll(false)" class="filter">
+            <md-icon>clear</md-icon>
+        </button>
+    </div>
+</md-expansion-panel>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>{{'Crystals'| translate}}</md-expansion-panel-header>

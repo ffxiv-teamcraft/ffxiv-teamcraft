@@ -26,6 +26,11 @@ export class ListComponent implements OnInit {
 
     user: UserInfo;
 
+    levelFilter = {
+        min: 1,
+        max: 70
+    };
+
     filters = [
         {job: 'BTN', checked: true},
         {job: 'MIN', checked: true},
@@ -76,11 +81,16 @@ export class ListComponent implements OnInit {
                 (ignored, list) => {
                     this.listManager.forEachItem(list, item => {
                         if (item.gatheredBy !== undefined) {
-                            item.hidden = !this.filters.find(filter => item.gatheredBy.icon.indexOf(filter.job) > -1).checked;
+                            item.hidden =
+                                !this.filters.find(filter => item.gatheredBy.icon.indexOf(filter.job) > -1).checked
+                                || item.gatheredBy.level < this.levelFilter.min
+                                || item.gatheredBy.level > this.levelFilter.max;
                         }
                         if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
-                                item.hidden = !this.filters.find(filter => craft.icon.indexOf(this.abbreviations[filter.job]) > -1).checked;
+                                item.hidden = !this.filters.find(filter => craft.icon.indexOf(this.abbreviations[filter.job]) > -1).checked
+                                    || craft.level < this.levelFilter.min
+                                    || craft.level > this.levelFilter.max;
                             }
                         }
                     });
