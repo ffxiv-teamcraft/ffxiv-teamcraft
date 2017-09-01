@@ -26,24 +26,19 @@ export class ListComponent implements OnInit {
 
     user: UserInfo;
 
-    levelFilter = {
-        min: 1,
-        max: 70
-    };
-
     filters = [
-        {job: 'BTN', checked: true},
-        {job: 'MIN', checked: true},
-        {job: 'FSH', checked: true},
+        {job: 'BTN', level: 70, checked: true},
+        {job: 'MIN', level: 70, checked: true},
+        {job: 'FSH', level: 70, checked: true},
 
-        {job: 'ALC', checked: true},
-        {job: 'ARM', checked: true},
-        {job: 'BSM', checked: true},
-        {job: 'CRP', checked: true},
-        {job: 'CUL', checked: true},
-        {job: 'GSM', checked: true},
-        {job: 'LTW', checked: true},
-        {job: 'WVR', checked: true}
+        {job: 'ALC', level: 70, checked: true},
+        {job: 'ARM', level: 70, checked: true},
+        {job: 'BSM', level: 70, checked: true},
+        {job: 'CRP', level: 70, checked: true},
+        {job: 'CUL', level: 70, checked: true},
+        {job: 'GSM', level: 70, checked: true},
+        {job: 'LTW', level: 70, checked: true},
+        {job: 'WVR', level: 70, checked: true}
     ];
 
     abbreviations = {
@@ -81,16 +76,13 @@ export class ListComponent implements OnInit {
                 (ignored, list) => {
                     this.listManager.forEachItem(list, item => {
                         if (item.gatheredBy !== undefined) {
-                            item.hidden =
-                                !this.filters.find(filter => item.gatheredBy.icon.indexOf(filter.job) > -1).checked
-                                || item.gatheredBy.level < this.levelFilter.min
-                                || item.gatheredBy.level > this.levelFilter.max;
+                            const filter = this.filters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
+                            item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                         }
                         if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
-                                item.hidden = !this.filters.find(filter => craft.icon.indexOf(this.abbreviations[filter.job]) > -1).checked
-                                    || craft.level < this.levelFilter.min
-                                    || craft.level > this.levelFilter.max;
+                                const filter = this.filters.find(f => craft.icon.indexOf(this.abbreviations[f.job]) > -1);
+                                item.hidden = !filter.checked || craft.level > filter.level;
                             }
                         }
                     });
