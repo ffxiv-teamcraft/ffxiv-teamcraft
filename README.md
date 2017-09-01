@@ -54,8 +54,6 @@ Simply run `npm start` to start a live server with file watcher.
  
  For our http calls, rxjs can make us save a lot of time, it had to be updated.
  ```
- 
-### Pull Requests
 
 ## License
 
