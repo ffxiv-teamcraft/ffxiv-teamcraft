@@ -29,6 +29,19 @@
 </md-card>
 <md-sidenav-container>
     <md-sidenav mode="over" #sidenav>
+        <div class="user-box">
+            <div class="user">
+                <md-icon>person</md-icon>
+                <p *ngIf="(authState | async)?.isAnonymous" class="name">Anonymous</p>
+                <p *ngIf="!(authState | async)?.isAnonymous" class="name">{{(authState | async)?.displayName}}</p>
+            </div>
+            <div *ngIf="(authState | async)?.isAnonymous">
+                <button md-raised-button (click)="openLoginPopup()">Log In</button>
+                <button md-raised-button (click)="openRegistrationPopup()">Sign Up</button>
+            </div>
+            <button md-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">Disconnect</button>
+        </div>
+        <md-divider></md-divider>
         <md-nav-list>
             <a md-list-item routerLink="/recipes" (click)="sidenav.close()">{{'Recipes' | translate}}</a>
             <a md-list-item routerLink="/lists" (click)="sidenav.close()">{{'Lists' | translate}}</a>

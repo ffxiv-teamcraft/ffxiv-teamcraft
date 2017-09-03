@@ -7,7 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../model/list-row';
 import {ListManagerService} from '../core/list-manager.service';
 import {MdDialog} from '@angular/material';
-import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
+import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
 import {Subject} from 'rxjs/Subject';

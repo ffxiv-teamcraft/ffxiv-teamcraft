@@ -13,7 +13,7 @@
             margin: 0 20px;
         }
     }
-    .announcement{
+    .announcement {
         text-align: center;
     }
     md-sidenav-container {
@@ -24,6 +24,19 @@
             min-width: 200px;
             display: flex;
             flex-direction: column;
+            .user-box {
+                background: mat-color(map-get($theme, accent));
+                padding: 15px 16px;
+                font-size: 16px;
+                .user {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .name {
+                        margin-left: 5px;
+                    }
+                }
+            }
             .spacer {
                 flex: 1 1 auto;
             }
