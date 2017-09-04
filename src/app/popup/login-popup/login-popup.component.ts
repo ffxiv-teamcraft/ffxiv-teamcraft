@@ -4,6 +4,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {MdDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
+import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 
 @Component({
     selector: 'app-login-popup',
@@ -17,15 +18,28 @@ export class LoginPopupComponent {
                 public firebase: AngularFireDatabase) {
     }
 
+    login(user: any): void {
+        const userRef = this.firebase.database.ref(`/users/${user.uid}`);
+        userRef.once('value').then(snap => {
+            if (snap.val() === null) {
+                this.af.auth.signOut();
+                this.af.auth.signInAnonymously();
+                // TODO error message
+            }else{
+                this.dialogRef.close();
+            }
+        });
+    }
+
     googleOauth(): void {
         this.af.auth.signInWithPopup(new GoogleAuthProvider()).then((oauth) => {
-            const userRef = this.firebase.object(`/users/${oauth.user.uid}`);
-            userRef.subscribe(user => {
-                if (user.$value === null) {
-                    this.af.auth.signOut();
-                    this.af.auth.signInAnonymously();
-                }
-            });
+            this.login(oauth.user);
+        });
+    }
+
+    facebookOauth(): void {
+        this.af.auth.signInWithPopup(new FacebookAuthProvider()).then((oauth) => {
+            this.login(oauth.user);
         });
     }
 

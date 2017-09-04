@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import {MdDialogRef} from '@angular/material';
 import {AngularFireDatabase} from 'angularfire2/database';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
+import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 
 @Component({
     selector: 'app-register-popup',
@@ -36,20 +37,30 @@ export class RegisterPopupComponent implements OnInit {
         });
     }
 
+    register(user: any): void {
+        const userRef = this.firebase.database.ref(`/users/${user.uid}`);
+        userRef.once('value').then(snap => {
+            if (snap.val() === null) {
+                userRef.set({
+                    email: user.email,
+                    lists: this.lists
+                });
+                this.dialogRef.close();
+            } else {
+                // TODO error message
+            }
+        });
+    }
+
     googleOauth(): void {
         this.af.auth.signInWithPopup(new GoogleAuthProvider()).then((oauth) => {
-            const userRef = this.firebase.database.ref(`/users/${oauth.user.uid}`);
-            userRef.once('value').then(snap => {
-                if (snap.val() === null) {
-                    userRef.set({
-                        email: oauth.user.email,
-                        lists: this.lists
-                    });
-                    this.dialogRef.close();
-                } else {
-                    // TODO error message
-                }
-            });
+            this.register(oauth.user);
+        });
+    }
+
+    facebookOauth(): void {
+        this.af.auth.signInWithPopup(new FacebookAuthProvider()).then((oauth) => {
+            this.register(oauth.user);
         });
     }
 }
