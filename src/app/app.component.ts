@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -9,6 +9,8 @@ import {User} from 'firebase/app';
 import {MdDialog} from '@angular/material';
 import {RegisterPopupComponent} from './popup/register-popup/register-popup.component';
 import {LoginPopupComponent} from './popup/login-popup/login-popup.component';
+import {CharacterAddPopupComponent} from './popup/character-add-popup/character-add-popup.component';
+import {DataService} from 'app/core/data.service';
 import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
@@ -18,7 +20,7 @@ declare const ga: Function;
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     locale: string;
 
@@ -26,11 +28,15 @@ export class AppComponent {
 
     authState: Observable<User>;
 
+    username: string;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
                 data: AngularFireDatabase,
-                private dialog: MdDialog) {
+                private dialog: MdDialog,
+                private firebase: AngularFireDatabase,
+                private db: DataService) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -67,6 +73,36 @@ export class AppComponent {
             .subscribe(announcement => {
                 this.announcement = announcement;
             });
+    }
+
+    ngOnInit(): void {
+        this.authState.subscribe(state => {
+            if (state === null) {
+                return;
+            }
+            this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
+                .once('value')
+                .then(snap => {
+                    if (snap.val() === null && !state.isAnonymous) {
+                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
+                    }
+                });
+        });
+
+        this.authState.mergeMap(user => {
+            if (user === null || user.isAnonymous) {
+                return Observable.of('Anonymous');
+            } else {
+                return this.firebase.object(`/users/${user.uid}`)
+                    .mergeMap(u => {
+                        if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
+                            return this.db.getCharacter(u.lodestoneId).map(char => char.name);
+                        } else {
+                            return Observable.of('Anonymous');
+                        }
+                    });
+            }
+        }).subscribe(name => this.username = name);
     }
 
     showAnnouncement(): boolean {

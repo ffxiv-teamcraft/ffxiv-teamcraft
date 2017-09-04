@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import {MdDialogRef} from '@angular/material';
+import {MdDialog, MdDialogRef} from '@angular/material';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {CharacterAddPopupComponent} from '../character-add-popup/character-add-popup.component';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 

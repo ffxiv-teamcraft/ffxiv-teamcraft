@@ -32,8 +32,7 @@
         <div class="user-box">
             <div class="user">
                 <md-icon>person</md-icon>
-                <p *ngIf="(authState | async)?.isAnonymous" class="name">Anonymous</p>
-                <p *ngIf="!(authState | async)?.isAnonymous" class="name">{{(authState | async)?.displayName}}</p>
+                <p class="name">{{username}}</p>
             </div>
             <div *ngIf="(authState | async)?.isAnonymous">
                 <button md-raised-button (click)="openLoginPopup()">Log In</button>

@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { TranslateService } from '@ngx-translate/core';
-import { GarlandToolsService } from './garland-tools.service';
-import { Recipe } from '../model/recipe';
-import { I18nName } from '../model/i18n-name';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabase} from 'angularfire2/database';
+import {TranslateService} from '@ngx-translate/core';
+import {GarlandToolsService} from './garland-tools.service';
+import {Recipe} from '../model/recipe';
+import {I18nName} from '../model/i18n-name';
 
 @Injectable()
 export class DataService {
@@ -68,15 +68,19 @@ export class DataService {
         };
     }
 
+    public searchCharacter(name: string, server: string): Observable<any[]> {
+        return this.getXivdb(`/search?string=${name}&server|et=${server}&one=characters`).map(data => data.characters.results);
+    }
+
+    public getCharacter(id: number): Observable<any> {
+        return this.getXivdb(`/character/${id}`);
+    }
+
     private getXivdb(uri: string): Observable<any> {
         return this.http.get<any>(this.xivdbUrl + uri);
     }
 
     private getGarland(uri: string): Observable<any> {
         return this.http.get<any>(this.garlandUrl + uri + '.json');
-    }
-
-    private getFirebaseCache(uri: string): Observable<any> {
-        return this.af.object(`/xivdb${uri}`);
     }
 }

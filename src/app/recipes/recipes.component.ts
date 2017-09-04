@@ -39,8 +39,12 @@ export class RecipesComponent implements OnInit {
 
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
-            this.lists = this.af.list(`/users/${user.uid}/lists`);
-            this.uid = user.uid;
+            if (user === null) {
+                this.lists = null;
+            } else {
+                this.lists = this.af.list(`/users/${user.uid}/lists`);
+                this.uid = user.uid;
+            }
         });
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
