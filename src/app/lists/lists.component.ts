@@ -4,7 +4,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../model/list';
 import {FormControl, Validators} from '@angular/forms';
 import {MdDialog} from '@angular/material';
-import {ConfirmationPopupComponent} from '../confirmation-popup/confirmation-popup.component';
+import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../core/list-manager.service';
 import {I18nTools} from '../core/i18n-tools';
@@ -64,8 +64,14 @@ export class ListsComponent implements OnInit {
 
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
-            this.user = user;
-            this.lists = this.af.list(`/lists/${user.uid}`);
+            if (user === null) {
+                this.lists = null;
+                this.user = undefined;
+
+            } else {
+                this.user = user;
+                this.lists = this.af.list(`/users/${user.uid}/lists`);
+            }
         });
     }
 

@@ -33,9 +33,12 @@
     </div>
     <div class="classes">
         <div *ngIf="item.craftedBy !== undefined">
-            <img *ngFor="let craft of item.craftedBy" class="crafted-by"
-                 mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                 mdTooltipPosition="above" src="{{craft.icon}}">
+            <div *ngFor="let craft of item.craftedBy">
+                <img class="crafted-by"
+                     *ngIf="craft.icon !== ''"
+                     mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                     mdTooltipPosition="above" src="{{craft.icon}}">
+            </div>
         </div>
         <div>
             <button md-icon-button *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
@@ -67,9 +70,10 @@
         </div>
         <div *ngIf="item.instances !== undefined">
             <button md-icon-button (click)="openInstancesDetails(item)">
-            <img mdTooltip="{{getI18n(item.instances[0].type)}}"
-                 mdTooltipPosition="above"
-                 src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png" class="currency">
+                <img mdTooltip="{{getI18n(item.instances[0].type)}}"
+                     mdTooltipPosition="above"
+                     src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png"
+                     class="currency">
             </button>
         </div>
         <div *ngIf="item.reducedFrom !== undefined">

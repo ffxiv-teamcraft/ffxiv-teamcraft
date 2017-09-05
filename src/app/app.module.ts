@@ -30,22 +30,26 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ListManagerService} from './core/list-manager.service';
-import {ConfirmationPopupComponent} from './confirmation-popup/confirmation-popup.component';
+import {ConfirmationPopupComponent} from './popup/confirmation-popup/confirmation-popup.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ListComponent} from './list/list.component';
 import {ItemComponent} from './item/item.component';
 import {DataService} from './core/data.service';
-import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
+import {ListNamePopupComponent} from './popup/list-name-popup/list-name-popup.component';
 import {I18nTools} from './core/i18n-tools';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GarlandToolsService} from './core/garland-tools.service';
-import {GatheredByPopupComponent} from './gathered-by-popup/gathered-by-popup.component';
-import {DropsDetailsPopupComponent} from './drops-details-popup/drops-details-popup.component';
-import {TradeDetailsPopupComponent} from './trade-details-popup/trade-details-popup.component';
-import {DesynthPopupComponent} from './desynth-popup/desynth-popup.component';
-import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-details-popup.component';
-import { InstancesDetailsPopupComponent } from './instances-details-popup/instances-details-popup.component';
+import {GatheredByPopupComponent} from './popup/gathered-by-popup/gathered-by-popup.component';
+import {DropsDetailsPopupComponent} from './popup/drops-details-popup/drops-details-popup.component';
+import {TradeDetailsPopupComponent} from './popup/trade-details-popup/trade-details-popup.component';
+import {DesynthPopupComponent} from './popup/desynth-popup/desynth-popup.component';
+import {VendorsDetailsPopupComponent} from './popup/vendors-details-popup/vendors-details-popup.component';
+import { InstancesDetailsPopupComponent } from './popup/instances-details-popup/instances-details-popup.component';
+import { LoginPopupComponent } from './popup/login-popup/login-popup.component';
+import { RegisterPopupComponent } from './popup/register-popup/register-popup.component';
+import { CharacterAddPopupComponent } from './popup/character-add-popup/character-add-popup.component';
+import {UserService} from './core/user.service';
 
 const routes: Routes = [
     {
@@ -86,6 +90,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         DesynthPopupComponent,
         VendorsDetailsPopupComponent,
         InstancesDetailsPopupComponent,
+        LoginPopupComponent,
+        RegisterPopupComponent,
+        CharacterAddPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -137,12 +144,16 @@ export function HttpLoaderFactory(http: HttpClient) {
         DesynthPopupComponent,
         VendorsDetailsPopupComponent,
         InstancesDetailsPopupComponent,
+        LoginPopupComponent,
+        RegisterPopupComponent,
+        CharacterAddPopupComponent,
     ],
     providers: [
         DataService,
         ListManagerService,
         I18nTools,
-        GarlandToolsService
+        GarlandToolsService,
+        UserService,
     ],
     bootstrap: [AppComponent]
 })

@@ -27,5 +27,19 @@
     "Filters": "Filtres",
     "Check_all": "Tout cocher",
     "Uncheck_all": "Tout décocher",
-    "Level": "Niveau"
+    "Level": "Niveau",
+    "auth/credential-already-in-use": "Compte déjà utilisé",
+    "Registration": "Inscription",
+    "Google_register": "Inscription avec Google",
+    "Facebook_register": "Inscription avec Facebook",
+    "Google_login": "S'identifier avec Google",
+    "Facebook_login": "S'identifier avec Facebook",
+    "Login": "Identification",
+    "Disconnect": "Déconnexion",
+    "Password": "Mot de passe",
+    "Password_Confirmation": "Confirmation",
+    "Submit": "Soumettre",
+    "Invalid_credentials": "Mauvais email ou mot de passe",
+    "Verification_mail_sent": "Email de vérification envoyé, merci de vérifier votre boîte mail",
+    "Not_verified": "Email non vérifié, merci de consulter votre boîte mail"
 }

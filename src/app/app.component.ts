@@ -1,8 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
+import {User} from 'firebase/app';
+import {MdDialog} from '@angular/material';
+import {RegisterPopupComponent} from './popup/register-popup/register-popup.component';
+import {LoginPopupComponent} from './popup/login-popup/login-popup.component';
+import {CharacterAddPopupComponent} from './popup/character-add-popup/character-add-popup.component';
+import {UserService} from './core/user.service';
+import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
 
@@ -11,16 +20,25 @@ declare const ga: Function;
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     locale: string;
 
     announcement: string;
 
-    constructor(auth: AngularFireAuth,
-                router: Router,
+    authState: Observable<User>;
+
+    username: string;
+
+    userIcon: string;
+
+    constructor(private auth: AngularFireAuth,
+                private router: Router,
                 private translate: TranslateService,
-                data: AngularFireDatabase) {
+                data: AngularFireDatabase,
+                private dialog: MdDialog,
+                private firebase: AngularFireDatabase,
+                private userService: UserService) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -33,7 +51,8 @@ export class AppComponent {
         });
 
         // Firebase Auth
-        auth.auth.signInAnonymously();
+        this.auth.auth.setPersistence(Persistence.LOCAL);
+        this.authState = this.auth.authState;
 
         // Translation
         translate.setDefaultLang('en');
@@ -58,12 +77,47 @@ export class AppComponent {
             });
     }
 
+    ngOnInit(): void {
+        this.authState.debounceTime(2000).subscribe(state => {
+            if (state === null || state.isAnonymous) {
+                return;
+            }
+            this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
+                .once('value')
+                .then(snap => {
+                    if (snap.val() === null && !state.isAnonymous) {
+                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
+                    }
+                });
+        });
+
+        this.userService.getUser()
+            .subscribe(u => {
+                this.username = u.name;
+                this.userIcon = u.avatar;
+            });
+    }
+
     showAnnouncement(): boolean {
         return this.announcement !== undefined && localStorage.getItem('announcement:hide') !== 'true';
     }
 
     dismissAnnouncement(): void {
         localStorage.setItem('announcement:hide', 'true');
+    }
+
+    openRegistrationPopup(): void {
+        this.dialog.open(RegisterPopupComponent);
+    }
+
+    openLoginPopup(): void {
+        this.dialog.open(LoginPopupComponent);
+    }
+
+    disconnect(): void {
+        this.router.navigate(['recipes']);
+        this.auth.auth.signOut();
+        this.auth.auth.signInAnonymously();
     }
 
     use(lang: string): void {

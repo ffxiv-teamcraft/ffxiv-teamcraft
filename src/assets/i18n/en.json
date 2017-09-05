@@ -27,5 +27,19 @@
     "Filters": "Filters",
     "Check_all": "Check all",
     "Uncheck_all": "Uncheck all",
-    "Level": "Level"
+    "Level": "Level",
+    "auth/credential-already-in-use": "Account already in use",
+    "Registration": "Registration",
+    "Google_register": "Register with Google",
+    "Facebook_register": "Register with Facebook",
+    "Google_login": "Log In with Google",
+    "Facebook_login": "Login in with Facebook",
+    "Login": "Login",
+    "Disconnect": "Disconnect",
+    "Password": "Password",
+    "Password_Confirmation": "Confirmation",
+    "Submit": "Submit",
+    "Invalid_credentials": "Invalid credentials",
+    "Verification_mail_sent": "Verification email sent, please check up your mailing box",
+    "Not_verified": "Your email has not been verified yet, please check your mailing box"
 }

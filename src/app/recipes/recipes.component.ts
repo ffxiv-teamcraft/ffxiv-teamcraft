@@ -5,7 +5,7 @@ import {List} from '../model/list';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {MdDialog, MdSnackBar} from '@angular/material';
-import {ListNamePopupComponent} from '../list-name-popup/list-name-popup.component';
+import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../core/data.service';
 import {Recipe} from '../model/recipe';
 import {I18nTools} from '../core/i18n-tools';
@@ -39,8 +39,12 @@ export class RecipesComponent implements OnInit {
 
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
-            this.lists = this.af.list(`/lists/${user.uid}`);
-            this.uid = user.uid;
+            if (user === null) {
+                this.lists = null;
+            } else {
+                this.lists = this.af.list(`/users/${user.uid}/lists`);
+                this.uid = user.uid;
+            }
         });
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)

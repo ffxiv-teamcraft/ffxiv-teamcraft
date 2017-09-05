@@ -1,0 +1,20 @@
+.oauth {
+    display: flex;
+    flex-direction: column;
+    button {
+        margin: 5px 0;
+    }
+}
+
+md-error {
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+md-divider {
+    margin: 5px 0;
+}

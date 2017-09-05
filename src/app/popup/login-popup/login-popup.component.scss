@@ -1,0 +1,16 @@
+.oauth {
+    display: flex;
+    flex-direction: column;
+    button {
+        margin: 5px 0;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+md-divider {
+    margin: 5px 0;
+}

@@ -1,8 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {MD_DIALOG_DATA} from '@angular/material';
-import {GarlandToolsService} from '../core/garland-tools.service';
-import {I18nTools} from '../core/i18n-tools';
-import {I18nName} from '../model/i18n-name';
+import {GarlandToolsService} from '../../core/garland-tools.service';
+import {I18nTools} from '../../core/i18n-tools';
+import {I18nName} from '../../model/i18n-name';
 
 @Component({
     selector: 'app-gathered-by-popup',

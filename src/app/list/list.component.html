@@ -9,30 +9,56 @@
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>{{'Filters' | translate}}</md-expansion-panel-header>
-    <div class="class-filters">
-        <div *ngFor="let filter of filters">
-            <md-input-container>
-                <md-checkbox mdPrefix class="filter"
-                             [(ngModel)]="filter.checked"
-                             (change)="triggerFilter()">
-                </md-checkbox>
-                <input mdInput type="number"
-                       [(ngModel)]="filter.level"
-                       min="1" max="70" (change)="triggerFilter()">
+    <div class="filters">
+        <div class="class-filters">
+            <div *ngFor="let filter of gatheringFilters">
+                <md-input-container>
+                    <md-checkbox mdPrefix class="filter"
+                                 [(ngModel)]="filter.checked"
+                                 (change)="triggerFilter()">
+                    </md-checkbox>
+                    <input mdInput type="number"
+                           [(ngModel)]="filter.level"
+                           min="1" max="70" (change)="triggerFilter()">
 
-                <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
-                     alt="{{filter.job}}"
-                     class="filter_icons">
-            </md-input-container>
+                    <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
+                         alt="{{filter.job}}"
+                         class="filter_icons">
+                </md-input-container>
+            </div>
+            <div class="spacer"></div>
+            <button md-raised-button
+                    [disabled]="(getUser() | async)?.isAnonymous"
+                    (click)="adaptFilters()"
+                    color="accent">Adapt to character</button>
         </div>
-        <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
-                (click)="checkAll(true)" class="filter">
-            <md-icon>done_all</md-icon>
-        </button>
-        <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
-                (click)="checkAll(false)" class="filter">
-            <md-icon>clear</md-icon>
-        </button>
+        <div class="class-filters">
+            <div *ngFor="let filter of craftFilters">
+                <md-input-container>
+                    <md-checkbox mdPrefix class="filter"
+                                 [(ngModel)]="filter.checked"
+                                 (change)="triggerFilter()">
+                    </md-checkbox>
+                    <input mdInput type="number"
+                           [(ngModel)]="filter.level"
+                           min="1" max="70" (change)="triggerFilter()">
+
+                    <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
+                         alt="{{filter.job}}"
+                         class="filter_icons">
+                </md-input-container>
+            </div>
+        </div>
+        <div class="class-filters">
+            <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
+                    (click)="checkAll(true)" class="filter">
+                <md-icon>done_all</md-icon>
+            </button>
+            <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
+                    (click)="checkAll(false)" class="filter">
+                <md-icon>clear</md-icon>
+            </button>
+        </div>
     </div>
 </md-expansion-panel>
 
