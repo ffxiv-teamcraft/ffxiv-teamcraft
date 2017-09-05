@@ -28,5 +28,12 @@
     "Check_all": "Check all",
     "Uncheck_all": "Uncheck all",
     "Level": "Level",
-    "auth/credential-already-in-use": "Account already in use"
+    "auth/credential-already-in-use": "Account already in use",
+    "Registration": "Registration",
+    "Google_register": "Register with Google",
+    "Facebook_register": "Register with Facebook",
+    "Google_login": "Log In with Google",
+    "Facebook_login": "Login in with Facebook",
+    "Login": "Login",
+    "Disconnect": "Disconnect"
 }

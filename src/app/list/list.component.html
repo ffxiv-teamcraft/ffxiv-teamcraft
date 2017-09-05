@@ -27,7 +27,10 @@
                 </md-input-container>
             </div>
             <div class="spacer"></div>
-            <button md-raised-button (click)="adaptFilters()" color="accent">Adapt to character</button>
+            <button md-raised-button
+                    [disabled]="(getUser() | async)?.isAnonymous"
+                    (click)="adaptFilters()"
+                    color="accent">Adapt to character</button>
         </div>
         <div class="class-filters">
             <div *ngFor="let filter of craftFilters">

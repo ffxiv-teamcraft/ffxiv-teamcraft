@@ -231,9 +231,9 @@ export class ListManagerService {
     }
 
     public forEachItem(list: List, method: (arg: ListRow) => void) {
-        list.others.forEach(method);
-        list.gathers.forEach(method);
-        list.preCrafts.forEach(method);
+        (list.others || []).forEach(method);
+        (list.gathers || []).forEach(method);
+        (list.preCrafts || []).forEach(method);
     }
 
     protected getCraft(item: any, recipeId: number): any {

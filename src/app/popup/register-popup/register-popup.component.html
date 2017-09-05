@@ -1,10 +1,10 @@
 <h3 md-dialog-title>
-    Registration
+    {{'Registration' | translate}}
 </h3>
 <div md-dialog-content>
     <div class="oauth">
-        <button md-raised-button color="primary" (click)="googleOauth()">Register with Google</button>
-        <button md-raised-button color="primary" (click)="facebookOauth()">Register with Facebook</button>
+        <button md-raised-button color="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
+        <button md-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
     </div>
     <md-error *ngIf="error">{{error}}</md-error>
 </div>

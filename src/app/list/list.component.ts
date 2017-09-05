@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 import {List} from '../model/list';
-import {UserInfo} from 'firebase/app';
+import {UserInfo, User} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../model/list-row';
 import {ListManagerService} from '../core/list-manager.service';
@@ -61,6 +61,10 @@ export class ListComponent implements OnInit {
                 private auth: AngularFireAuth, private listManager: ListManagerService,
                 private dialog: MdDialog, private i18n: I18nTools,
                 private userService: UserService) {
+    }
+
+    public getUser(): Observable<User> {
+        return this.auth.authState;
     }
 
     public adaptFilters(): void {

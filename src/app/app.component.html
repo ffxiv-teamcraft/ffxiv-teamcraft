@@ -36,10 +36,10 @@
                 <p class="name">{{username}}</p>
             </div>
             <div *ngIf="(authState | async)?.isAnonymous">
-                <button md-raised-button (click)="openLoginPopup()">Log In</button>
-                <button md-raised-button (click)="openRegistrationPopup()">Sign Up</button>
+                <button md-raised-button (click)="openLoginPopup()">{{'Login' | translate}}</button>
+                <button md-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
             </div>
-            <button md-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">Disconnect</button>
+            <button md-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">{{'Disconnect' | translate}}</button>
         </div>
         <md-divider></md-divider>
         <md-nav-list>
