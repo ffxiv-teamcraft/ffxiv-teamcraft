@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.authState.debounceTime(5000).subscribe(state => {
+        this.authState.debounceTime(2000).subscribe(state => {
             if (state === null || state.isAnonymous) {
                 return;
             }
@@ -92,7 +92,6 @@ export class AppComponent implements OnInit {
         });
 
         this.userService.getUser()
-            .debounceTime(2000)
             .subscribe(u => {
                 this.username = u.name;
                 this.userIcon = u.avatar;

@@ -75,7 +75,7 @@ export class DataService {
     }
 
     public getCharacter(id: number): Observable<any> {
-        return this.getXivdb(`/character/${id}`);
+        return this.http.get<any>(`https://xivsync.com/character/parse/${id}`);
     }
 
     private getXivdb(uri: string): Observable<any> {

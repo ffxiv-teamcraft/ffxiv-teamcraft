@@ -2,6 +2,26 @@
     {{'Registration' | translate}}
 </h3>
 <div md-dialog-content>
+    <form [formGroup]="form" (submit)="classicRegister()">
+        <md-input-container>
+            <input type="text" required mdInput placeholder="Email" formControlName="email">
+            <md-error></md-error>
+        </md-input-container>
+        <div formGroupName="passwords">
+            <md-input-container>
+                <input type="password" required formControlName="password" mdInput
+                       placeholder="{{'Password' | translate}}">
+                <md-error></md-error>
+            </md-input-container>
+            <md-input-container>
+                <input type="password" required formControlName="password_check" mdInput
+                       placeholder="{{'Password_Confirmation' | translate}}">
+                <md-error></md-error>
+            </md-input-container>
+        </div>
+        <button md-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
+    </form>
+    <md-divider></md-divider>
     <div class="oauth">
         <button md-raised-button color="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
         <button md-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>

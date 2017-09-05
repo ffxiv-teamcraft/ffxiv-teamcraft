@@ -30,7 +30,8 @@ export class UserService {
                             })
                             .mergeMap(u => {
                                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
-                                    return this.db.getCharacter(u.lodestoneId);
+                                    return this.db.getCharacter(u.lodestoneId)
+                                        .map(result => result.data);
                                 } else {
                                     return Observable.of({name: 'Anonymous'});
                                 }
