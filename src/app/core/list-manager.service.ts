@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import { List } from '../model/list';
-import { Observable } from 'rxjs';
-import { ListRow } from '../model/list-row';
-import { DataService } from './data.service';
-import { CraftedBy } from '../model/crafted-by';
-import { I18nName } from '../model/i18n-name';
-import { GarlandToolsService } from 'app/core/garland-tools.service';
-import { CraftAddition } from '../model/craft-addition';
-import { GatheredBy } from '../model/gathered-by';
-import { TradeSource } from '../model/trade-source';
-import { Trade } from '../model/trade';
-import { Instance } from 'app/model/instance';
-import { Vendor } from '../model/vendor';
+import {Injectable} from '@angular/core';
+import {List} from '../model/list';
+import {Observable} from 'rxjs';
+import {ListRow} from '../model/list-row';
+import {DataService} from './data.service';
+import {CraftedBy} from '../model/crafted-by';
+import {I18nName} from '../model/i18n-name';
+import {GarlandToolsService} from 'app/core/garland-tools.service';
+import {CraftAddition} from '../model/craft-addition';
+import {GatheredBy} from '../model/gathered-by';
+import {TradeSource} from '../model/trade-source';
+import {Trade} from '../model/trade';
+import {Instance} from 'app/model/instance';
+import {Vendor} from '../model/vendor';
 
 @Injectable()
 export class ListManagerService {
@@ -407,7 +407,10 @@ export class ListManagerService {
                                             if (o.drops === undefined) {
                                                 o.drops = [];
                                             }
-                                            o.drops.push(this.gt.getDrop(d));
+                                            const drop = this.gt.getDrop(d);
+                                            if (drop !== undefined) {
+                                                o.drops.push(drop);
+                                            }
                                         });
                                     }
                                 });
