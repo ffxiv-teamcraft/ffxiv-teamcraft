@@ -46,14 +46,16 @@
                 </md-input-container>
             </div>
         </div>
-        <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
-                (click)="checkAll(true)" class="filter">
-            <md-icon>done_all</md-icon>
-        </button>
-        <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
-                (click)="checkAll(false)" class="filter">
-            <md-icon>clear</md-icon>
-        </button>
+        <div class="class-filters">
+            <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
+                    (click)="checkAll(true)" class="filter">
+                <md-icon>done_all</md-icon>
+            </button>
+            <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
+                    (click)="checkAll(false)" class="filter">
+                <md-icon>clear</md-icon>
+            </button>
+        </div>
     </div>
 </md-expansion-panel>
 

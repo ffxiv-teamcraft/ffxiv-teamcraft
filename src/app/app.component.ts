@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
 
     username: string;
 
+    userIcon: string;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -89,7 +91,12 @@ export class AppComponent implements OnInit {
                 });
         });
 
-        this.userService.getUser().debounceTime(2000).subscribe(u => this.username = u.name);
+        this.userService.getUser()
+            .debounceTime(2000)
+            .subscribe(u => {
+                this.username = u.name;
+                this.userIcon = u.avatar;
+            });
     }
 
     showAnnouncement(): boolean {

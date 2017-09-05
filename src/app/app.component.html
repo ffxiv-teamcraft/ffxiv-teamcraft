@@ -23,7 +23,7 @@
             {{announcement}}
         </md-grid-tile>
         <md-grid-tile>
-            <button md-raised-button color="accent" (click)="dismissAnnouncement()">Dismiss</button>
+            <button md-icon-button color="accent" (click)="dismissAnnouncement()"><md-icon>clear</md-icon></button>
         </md-grid-tile>
     </md-grid-list>
 </md-card>
@@ -31,7 +31,8 @@
     <md-sidenav mode="over" #sidenav>
         <div class="user-box">
             <div class="user">
-                <md-icon>person</md-icon>
+                <md-icon *ngIf="(authState | async)?.isAnonymous">person</md-icon>
+                <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" alt="avatar">
                 <p class="name">{{username}}</p>
             </div>
             <div *ngIf="(authState | async)?.isAnonymous">
