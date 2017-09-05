@@ -6,4 +6,5 @@
         <button md-raised-button color="primary" (click)="googleOauth()">Register with Google</button>
         <button md-raised-button color="primary" (click)="facebookOauth()">Register with Facebook</button>
     </div>
+    <md-error *ngIf="error">{{error}}</md-error>
 </div>

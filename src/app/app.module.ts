@@ -49,6 +49,7 @@ import { InstancesDetailsPopupComponent } from './popup/instances-details-popup/
 import { LoginPopupComponent } from './popup/login-popup/login-popup.component';
 import { RegisterPopupComponent } from './popup/register-popup/register-popup.component';
 import { CharacterAddPopupComponent } from './popup/character-add-popup/character-add-popup.component';
+import {UserService} from './core/user.service';
 
 const routes: Routes = [
     {
@@ -151,7 +152,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         DataService,
         ListManagerService,
         I18nTools,
-        GarlandToolsService
+        GarlandToolsService,
+        UserService,
     ],
     bootstrap: [AppComponent]
 })

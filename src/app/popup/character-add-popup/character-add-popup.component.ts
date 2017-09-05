@@ -41,8 +41,10 @@ export class CharacterAddPopupComponent implements OnInit {
             .searchCharacter(this.form.value.character, this.form.value.server)
             .mergeMap(results => {
                 return this.af.idToken.mergeMap(user => {
-                    return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
-                        .set(results[0].id);
+                    if (user !== null) {
+                        return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
+                            .set(results[0].id);
+                    }
                 });
             }).subscribe(() => {
             this.dialogRef.close();

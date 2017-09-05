@@ -27,5 +27,6 @@
     "Filters": "Filters",
     "Check_all": "Check all",
     "Uncheck_all": "Uncheck all",
-    "Level": "Level"
+    "Level": "Level",
+    "auth/credential-already-in-use": "Account already in use"
 }

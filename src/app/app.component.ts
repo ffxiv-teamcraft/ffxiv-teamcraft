@@ -10,7 +10,7 @@ import {MdDialog} from '@angular/material';
 import {RegisterPopupComponent} from './popup/register-popup/register-popup.component';
 import {LoginPopupComponent} from './popup/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './popup/character-add-popup/character-add-popup.component';
-import {DataService} from 'app/core/data.service';
+import {UserService} from './core/user.service';
 import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
                 data: AngularFireDatabase,
                 private dialog: MdDialog,
                 private firebase: AngularFireDatabase,
-                private db: DataService) {
+                private userService: UserService) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -76,8 +76,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.authState.subscribe(state => {
-            if (state === null) {
+        this.authState.debounceTime(5000).subscribe(state => {
+            if (state === null || state.isAnonymous) {
                 return;
             }
             this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
@@ -89,20 +89,7 @@ export class AppComponent implements OnInit {
                 });
         });
 
-        this.authState.mergeMap(user => {
-            if (user === null || user.isAnonymous) {
-                return Observable.of('Anonymous');
-            } else {
-                return this.firebase.object(`/users/${user.uid}`)
-                    .mergeMap(u => {
-                        if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
-                            return this.db.getCharacter(u.lodestoneId).map(char => char.name);
-                        } else {
-                            return Observable.of('Anonymous');
-                        }
-                    });
-            }
-        }).subscribe(name => this.username = name);
+        this.userService.getUser().debounceTime(2000).subscribe(u => this.username = u.name);
     }
 
     showAnnouncement(): boolean {
