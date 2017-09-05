@@ -1,8 +1,8 @@
-.header{
+.header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    .spacer{
+    .spacer {
         flex: 1 1 auto;
     }
 }
@@ -21,15 +21,19 @@ md-expansion-panel {
     margin: 10px 0;
 }
 
-.class-filters{
+.filters {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    .filter {
-        margin: 0 5px;
-    }
-    .filter_icons {
-        height: 30px;
-        vertical-align: middle;
+    flex-direction: column;
+    .class-filters {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .filter {
+            margin: 0 5px;
+        }
+        .filter_icons {
+            height: 30px;
+            vertical-align: middle;
+        }
     }
 }

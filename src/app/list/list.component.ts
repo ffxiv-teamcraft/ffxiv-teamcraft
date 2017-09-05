@@ -26,11 +26,13 @@ export class ListComponent implements OnInit {
 
     user: UserInfo;
 
-    filters = [
+    gatheringFilters = [
         {job: 'BTN', level: 70, checked: true},
         {job: 'MIN', level: 70, checked: true},
-        {job: 'FSH', level: 70, checked: true},
+        {job: 'FSH', level: 70, checked: true}
+    ];
 
+    craftFilters = [
         {job: 'ALC', level: 70, checked: true},
         {job: 'ARM', level: 70, checked: true},
         {job: 'BSM', level: 70, checked: true},
@@ -64,24 +66,25 @@ export class ListComponent implements OnInit {
     }
 
     public checkAll(checked: boolean): void {
-        this.filters.forEach(f => f.checked = checked);
+        this.craftFilters.forEach(f => f.checked = checked);
+        this.gatheringFilters.forEach(f => f.checked = checked);
         this.triggerFilter();
     }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.listObj = this.af.object(`/lists/${params.uid}/${params.listId}`);
+            this.listObj = this.af.object(`/users/${params.uid}/lists/${params.listId}`);
             Observable.combineLatest(this.filterTrigger,
                 this.listObj,
                 (ignored, list) => {
                     this.listManager.forEachItem(list, item => {
                         if (item.gatheredBy !== undefined) {
-                            const filter = this.filters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
+                            const filter = this.gatheringFilters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
                             item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                         }
                         if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
-                                const filter = this.filters.find(f => craft.icon.indexOf(this.abbreviations[f.job]) > -1);
+                                const filter = this.craftFilters.find(f => craft.icon.indexOf(this.abbreviations[f.job]) > -1);
                                 item.hidden = !filter.checked || craft.level > filter.level;
                             }
                         }
