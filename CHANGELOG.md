@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta.7"></a>
+# [1.0.0-beta.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2017-09-05)
+
+
+### Bug Fixes
+
+* add scrollable content to details popups ([0c6451e](https://github.com/Supamiu/ffxiv-teamcraft/commit/0c6451e))
+* drops-related items not added to list ([b227d0c](https://github.com/Supamiu/ffxiv-teamcraft/commit/b227d0c)), closes [#8](https://github.com/Supamiu/ffxiv-teamcraft/issues/8)
+
+
+### Features
+
+* add character-related filter for list ([ba75367](https://github.com/Supamiu/ffxiv-teamcraft/commit/ba75367))
+* add email verification and better profile fetching ([df6555c](https://github.com/Supamiu/ffxiv-teamcraft/commit/df6555c))
+* add facebook oauth support ([e826aca](https://github.com/Supamiu/ffxiv-teamcraft/commit/e826aca))
+* add first pass for auth ([40f5070](https://github.com/Supamiu/ffxiv-teamcraft/commit/40f5070))
+* add level filter to list ([4402f91](https://github.com/Supamiu/ffxiv-teamcraft/commit/4402f91))
+* add lodestone profile support on auth ([b67b1a3](https://github.com/Supamiu/ffxiv-teamcraft/commit/b67b1a3))
+* add login ([2b765a3](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b765a3))
+* add specific jobs level filter, remove old one ([a273f50](https://github.com/Supamiu/ffxiv-teamcraft/commit/a273f50))
+* add translations for new content ([476d1ae](https://github.com/Supamiu/ffxiv-teamcraft/commit/476d1ae))
+* added job filters to list details ([9b70a9f](https://github.com/Supamiu/ffxiv-teamcraft/commit/9b70a9f))
+* profile picture ([2a8dd61](https://github.com/Supamiu/ffxiv-teamcraft/commit/2a8dd61))
+
+
+
 <a name="1.0.0-beta.6"></a>
 # [1.0.0-beta.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2017-08-30)
 
