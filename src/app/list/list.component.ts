@@ -12,6 +12,7 @@ import {I18nTools} from '../core/i18n-tools';
 import {I18nName} from '../model/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
+import {UserService} from 'app/core/user.service';
 
 @Component({
     selector: 'app-list',
@@ -27,20 +28,20 @@ export class ListComponent implements OnInit {
     user: UserInfo;
 
     gatheringFilters = [
-        {job: 'BTN', level: 70, checked: true},
-        {job: 'MIN', level: 70, checked: true},
-        {job: 'FSH', level: 70, checked: true}
+        {job: 'BTN', level: 70, checked: true, id: 17},
+        {job: 'MIN', level: 70, checked: true, id: 16},
+        {job: 'FSH', level: 70, checked: true, id: 18}
     ];
 
     craftFilters = [
-        {job: 'ALC', level: 70, checked: true},
-        {job: 'ARM', level: 70, checked: true},
-        {job: 'BSM', level: 70, checked: true},
-        {job: 'CRP', level: 70, checked: true},
-        {job: 'CUL', level: 70, checked: true},
-        {job: 'GSM', level: 70, checked: true},
-        {job: 'LTW', level: 70, checked: true},
-        {job: 'WVR', level: 70, checked: true}
+        {job: 'ALC', level: 70, checked: true, id: 14},
+        {job: 'ARM', level: 70, checked: true, id: 10},
+        {job: 'BSM', level: 70, checked: true, id: 9},
+        {job: 'CRP', level: 70, checked: true, id: 8},
+        {job: 'CUL', level: 70, checked: true, id: 15},
+        {job: 'GSM', level: 70, checked: true, id: 11},
+        {job: 'LTW', level: 70, checked: true, id: 12},
+        {job: 'WVR', level: 70, checked: true, id: 13}
     ];
 
     abbreviations = {
@@ -58,7 +59,33 @@ export class ListComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, private af: AngularFireDatabase,
                 private auth: AngularFireAuth, private listManager: ListManagerService,
-                private dialog: MdDialog, private i18n: I18nTools) {
+                private dialog: MdDialog, private i18n: I18nTools,
+                private userService: UserService) {
+    }
+
+    public adaptFilters(): void {
+        this.userService.getUser()
+            .map(u => <any>u)
+            .subscribe(u => {
+                this.craftFilters.forEach(filter => {
+                    const userJob = u.data.classjobs[filter.id];
+                    if (userJob === undefined) {
+                        filter.checked = false;
+                    } else {
+                        filter.checked = true;
+                        filter.level = userJob.level;
+                    }
+                });
+                this.gatheringFilters.forEach(filter => {
+                    const userJob = u.data.classjobs[filter.id];
+                    if (userJob === undefined) {
+                        filter.checked = false;
+                    } else {
+                        filter.checked = true;
+                        filter.level = userJob.level;
+                    }
+                });
+            });
     }
 
     public triggerFilter(): void {

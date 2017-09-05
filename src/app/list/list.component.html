@@ -26,6 +26,8 @@
                          class="filter_icons">
                 </md-input-container>
             </div>
+            <div class="spacer"></div>
+            <button md-raised-button (click)="adaptFilters()" color="accent">Adapt to character</button>
         </div>
         <div class="class-filters">
             <div *ngFor="let filter of craftFilters">

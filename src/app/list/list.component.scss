@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    .spacer {
-        flex: 1 1 auto;
-    }
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
 
 .crystal-row {
