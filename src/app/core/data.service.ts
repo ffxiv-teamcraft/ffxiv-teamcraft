@@ -69,7 +69,9 @@ export class DataService {
     }
 
     public searchCharacter(name: string, server: string): Observable<any[]> {
-        return this.getXivdb(`/search?string=${name}&server|et=${server}&one=characters`).map(data => data.characters.results);
+        return this.http.get<any>(`https://xivsync.com/character/search?name=${name}`)
+            .map(res => res.data.results)
+            .map(res => res.filter(char => char.server.toLowerCase() === server.toLowerCase()));
     }
 
     public getCharacter(id: number): Observable<any> {
