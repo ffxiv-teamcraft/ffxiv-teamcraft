@@ -4,6 +4,8 @@ Collaborative crafting tool for Final Fantasy XIV
 
 https://ffxivteamcraft.com
 
+Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6P
+
 ## Development
 
 ### Prepare your environment
