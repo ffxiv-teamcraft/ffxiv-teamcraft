@@ -69,9 +69,8 @@ export class DataService {
     }
 
     public searchCharacter(name: string, server: string): Observable<any[]> {
-        return this.http.get<any>(`https://xivsync.com/character/search?name=${name}`)
+        return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
             .map(res => res.data.results)
-            .map(res => res.filter(char => char.server.toLowerCase() === server.toLowerCase()))
             .map(res => res.filter(char => char.name === name));
     }
 

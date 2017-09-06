@@ -56,8 +56,6 @@ export class RecipesComponent implements OnInit {
                 }
                 return this.xivdb.searchRecipe(filter);
             }).subscribe(results => this.recipes = results);
-
-        this.xivdb.searchCharacter('Blackphoenix Black', 'Moogle').subscribe(console.log);
     }
 
     getJob(id: number): any {
