@@ -28,32 +28,21 @@ export class ListComponent implements OnInit {
     user: UserInfo;
 
     gatheringFilters = [
-        {job: 'BTN', level: 70, checked: true, id: 17},
-        {job: 'MIN', level: 70, checked: true, id: 16},
-        {job: 'FSH', level: 70, checked: true, id: 18}
+        {job: 'BTN', level: 70, checked: true, name: 'botanist'},
+        {job: 'MIN', level: 70, checked: true, name: 'miner'},
+        {job: 'FSH', level: 70, checked: true, name: 'fisher'}
     ];
 
     craftFilters = [
-        {job: 'ALC', level: 70, checked: true, id: 14},
-        {job: 'ARM', level: 70, checked: true, id: 10},
-        {job: 'BSM', level: 70, checked: true, id: 9},
-        {job: 'CRP', level: 70, checked: true, id: 8},
-        {job: 'CUL', level: 70, checked: true, id: 15},
-        {job: 'GSM', level: 70, checked: true, id: 11},
-        {job: 'LTW', level: 70, checked: true, id: 12},
-        {job: 'WVR', level: 70, checked: true, id: 13}
+        {job: 'ALC', level: 70, checked: true, name: 'alchemist'},
+        {job: 'ARM', level: 70, checked: true, name: 'armorer'},
+        {job: 'BSM', level: 70, checked: true, name: 'blacksmith'},
+        {job: 'CRP', level: 70, checked: true, name: 'carpenter'},
+        {job: 'CUL', level: 70, checked: true, name: 'culinarian'},
+        {job: 'GSM', level: 70, checked: true, name: 'goldsmith'},
+        {job: 'LTW', level: 70, checked: true, name: 'leatherworker'},
+        {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
-
-    abbreviations = {
-        ALC: 'alchemist',
-        ARM: 'armorer',
-        BSM: 'blacksmith',
-        CRP: 'carpenter',
-        CUL: 'culinarian',
-        GSM: 'goldsmith',
-        LTW: 'leatherworker',
-        WVR: 'weaver',
-    };
 
     private filterTrigger = new Subject<void>();
 
@@ -72,7 +61,7 @@ export class ListComponent implements OnInit {
             .map(u => <any>u)
             .subscribe(u => {
                 this.craftFilters.forEach(filter => {
-                    const userJob = u.data.classjobs[filter.id];
+                    const userJob = u.classjobs[filter.name];
                     if (userJob === undefined) {
                         filter.checked = false;
                     } else {
@@ -81,7 +70,7 @@ export class ListComponent implements OnInit {
                     }
                 });
                 this.gatheringFilters.forEach(filter => {
-                    const userJob = u.data.classjobs[filter.id];
+                    const userJob = u.classjobs[filter.name];
                     if (userJob === undefined) {
                         filter.checked = false;
                     } else {
@@ -89,6 +78,7 @@ export class ListComponent implements OnInit {
                         filter.level = userJob.level;
                     }
                 });
+                this.triggerFilter();
             });
     }
 
@@ -115,7 +105,7 @@ export class ListComponent implements OnInit {
                         }
                         if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
-                                const filter = this.craftFilters.find(f => craft.icon.indexOf(this.abbreviations[f.job]) > -1);
+                                const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
                                 item.hidden = !filter.checked || craft.level > filter.level;
                             }
                         }
