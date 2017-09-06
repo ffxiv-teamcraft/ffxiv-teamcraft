@@ -7,6 +7,7 @@
     "start": "ng serve",
     "build:prod": "ng build -prod --aot",
     "standard-version": "standard-version",
+    "standard-version:dry": "standard-version --dry-run",
     "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
     "deploy": "npm run build:prod && firebase deploy && npm run release:git",
     "test": "ng test",
