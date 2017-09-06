@@ -96,6 +96,8 @@ export class AppComponent implements OnInit {
                 this.username = u.name;
                 this.userIcon = u.avatar;
             });
+
+        this.auth.auth.signInAnonymously();
     }
 
     showAnnouncement(): boolean {
