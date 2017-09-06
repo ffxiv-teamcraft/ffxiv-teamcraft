@@ -14,3 +14,7 @@ body {
 .snack {
     background-color: mat-color(map-get($theme, accent)) !important;
 }
+
+.snack-warn {
+    background-color: mat-color(map-get($theme, warn)) !important;
+}

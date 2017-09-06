@@ -6,7 +6,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import {User} from 'firebase/app';
-import {MdDialog} from '@angular/material';
+import {MdDialog, MdSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './popup/register-popup/register-popup.component';
 import {LoginPopupComponent} from './popup/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './popup/character-add-popup/character-add-popup.component';
@@ -38,7 +38,8 @@ export class AppComponent implements OnInit {
                 data: AngularFireDatabase,
                 private dialog: MdDialog,
                 private firebase: AngularFireDatabase,
-                private userService: UserService) {
+                private userService: UserService,
+                private snack: MdSnackBar) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -83,6 +84,16 @@ export class AppComponent implements OnInit {
                 this.auth.auth.signInAnonymously();
                 return;
             } else if (state.isAnonymous) {
+                this.snack.open(
+                    this.translate.instant('Anonymous_Warning'),
+                    this.translate.instant('Registration'),
+                    {
+                        duration: 10000,
+                        extraClasses: ['snack-warn']
+                    }
+                ).onAction().subscribe(() => {
+                    this.openRegistrationPopup();
+                });
                 return;
             }
             this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)

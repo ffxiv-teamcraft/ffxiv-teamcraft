@@ -42,5 +42,6 @@
     "Invalid_credentials": "Mauvais email ou mot de passe",
     "Verification_mail_sent": "Email de vérification envoyé, merci de vérifier votre boîte mail",
     "Not_verified": "Email non vérifié, merci de consulter votre boîte mail",
-    "Lodestone_already_used": "Ce personnage est déjà utilisé"
+    "Lodestone_already_used": "Ce personnage est déjà utilisé",
+    "Anonymous_Warning": "Créer un compte permet de conserver ses listes et d'activer plus de fonctionnalités comme le filtre automatique"
 }
