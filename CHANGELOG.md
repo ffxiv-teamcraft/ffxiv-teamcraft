@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.7...v1.0.0) (2017-09-06)
+
+
+### Bug Fixes
+
+* adapt filters broken due to data changes ([5228aa0](https://github.com/Supamiu/ffxiv-teamcraft/commit/5228aa0)), closes [#11](https://github.com/Supamiu/ffxiv-teamcraft/issues/11)
+* anonymous state at first connexion ([3967c97](https://github.com/Supamiu/ffxiv-teamcraft/commit/3967c97))
+* authentication now kept after site reloading ([94a7357](https://github.com/Supamiu/ffxiv-teamcraft/commit/94a7357)), closes [#9](https://github.com/Supamiu/ffxiv-teamcraft/issues/9)
+
+
+### Features
+
+* lodestone character can only be used once ([114f165](https://github.com/Supamiu/ffxiv-teamcraft/commit/114f165))
+
+
+
 <a name="1.0.0-beta.7"></a>
 # [1.0.0-beta.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2017-09-05)
 
