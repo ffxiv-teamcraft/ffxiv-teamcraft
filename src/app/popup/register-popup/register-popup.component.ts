@@ -11,6 +11,8 @@ import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import EmailAuthProvider = firebase.auth.EmailAuthProvider;
 
+declare const ga: Function;
+
 @Component({
     selector: 'app-register-popup',
     templateUrl: './register-popup.component.html',
@@ -71,6 +73,7 @@ export class RegisterPopupComponent {
                 res.afterClosed().subscribe(() => {
                     this.dialogRef.close();
                     this.userService.reload();
+                    ga('send', 'event', 'Site', 'signup');
                     resolve();
                 });
             });
