@@ -9,8 +9,8 @@
     min-height: 100%;
     md-toolbar {
         min-height: 64px;
-        .version {
-            margin: 0 20px;
+        md-menu {
+            margin-left: 20px;
         }
     }
     .announcement {
