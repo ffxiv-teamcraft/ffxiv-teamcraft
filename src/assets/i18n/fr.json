@@ -41,5 +41,6 @@
     "Submit": "Soumettre",
     "Invalid_credentials": "Mauvais email ou mot de passe",
     "Verification_mail_sent": "Email de vérification envoyé, merci de vérifier votre boîte mail",
-    "Not_verified": "Email non vérifié, merci de consulter votre boîte mail"
+    "Not_verified": "Email non vérifié, merci de consulter votre boîte mail",
+    "Lodestone_already_used": "Ce personnage est déjà utilisé"
 }
