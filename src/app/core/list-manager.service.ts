@@ -351,7 +351,7 @@ export class ListManagerService {
                                 const desynths: Observable<{ item: any, desynths: I18nName[] }>[] = [];
                                 this.forEachItem(list, i => {
                                     const related = this.getRelated(data, i.id);
-                                    if (related !== undefined && related.desynthedFrom !== undefined) {
+                                    if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
                                         desynths.push(this.getDesynths(related).map(rs => {
                                             return {item: i, desynths: rs};
                                         }));
