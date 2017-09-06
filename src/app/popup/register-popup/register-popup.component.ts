@@ -95,6 +95,9 @@ export class RegisterPopupComponent {
             this.register(auth).then(() => {
                 this.af.auth.currentUser.sendEmailVerification().then(() => {
                     this.snack.open(this.translate.instant('Verification_mail_sent'), '', {duration: 10000});
+                    this.af.auth.signOut().then(() => {
+                        this.af.auth.signInAnonymously();
+                    });
                 });
             });
         });

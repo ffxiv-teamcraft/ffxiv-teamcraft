@@ -79,7 +79,10 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.authState.debounceTime(2000).subscribe(state => {
-            if (state === null || state.isAnonymous) {
+            if (state === null) {
+                this.auth.auth.signInAnonymously();
+                return;
+            } else if (state.isAnonymous) {
                 return;
             }
             this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
@@ -91,13 +94,12 @@ export class AppComponent implements OnInit {
                 });
         });
 
-        this.userService.getUser()
+        this.userService
+            .getUser()
             .subscribe(u => {
                 this.username = u.name;
                 this.userIcon = u.avatar;
             });
-
-        this.auth.auth.signInAnonymously();
     }
 
     showAnnouncement(): boolean {
