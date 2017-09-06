@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.1.1...v1.1.2) (2017-09-06)
+
+
+### Bug Fixes
+
+* empty desynthedFrom array causing issues with list generation ([6d22741](https://github.com/Supamiu/ffxiv-teamcraft/commit/6d22741))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.1.0...v1.1.1) (2017-09-06)
 
