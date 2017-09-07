@@ -7,7 +7,7 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
-import {Recipe} from '../../model/garland-tools/recipe';
+import {Recipe} from '../../model/recipe';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {I18nName} from '../../model/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';

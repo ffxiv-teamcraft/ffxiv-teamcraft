@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
-import {Recipe} from '../../model/garland-tools/recipe';
+import {Recipe} from '../../model/recipe';
 import {I18nName} from '../../model/i18n-name';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import {CompactMasterbook} from './garland-tools/compact-masterbook';
+import {CompactMasterbook} from './compact-masterbook';
 export interface CraftedBy {
     itemId: number;
     icon: string;

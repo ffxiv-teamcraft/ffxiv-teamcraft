@@ -1,4 +1,4 @@
-import {I18nName} from '../i18n-name';
+import {I18nName} from './i18n-name';
 export interface Drop {
     id: number;
     name: string;

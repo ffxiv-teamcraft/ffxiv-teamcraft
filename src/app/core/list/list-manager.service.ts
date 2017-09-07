@@ -8,10 +8,10 @@ import {I18nName} from '../../model/i18n-name';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {CraftAddition} from '../../model/craft-addition';
 import {GatheredBy} from '../../model/gathered-by';
-import {TradeSource} from '../../model/garland-tools/trade-source';
-import {Trade} from '../../model/garland-tools/trade';
-import {Instance} from 'app/model/garland-tools/instance';
-import {Vendor} from '../../model/garland-tools/vendor';
+import {TradeSource} from '../../model/trade-source';
+import {Trade} from '../../model/trade';
+import {Instance} from 'app/model/instance';
+import {Vendor} from '../../model/vendor';
 import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 

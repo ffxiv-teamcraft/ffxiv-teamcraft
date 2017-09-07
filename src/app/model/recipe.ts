@@ -1,5 +1,5 @@
 import { CompactMasterbook } from './compact-masterbook';
-import { I18nName } from '../i18n-name';
+import { I18nName } from './i18n-name';
 export interface Recipe {
     recipeId: number;
     itemId: number;

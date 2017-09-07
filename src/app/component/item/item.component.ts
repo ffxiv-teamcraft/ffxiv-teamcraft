@@ -8,7 +8,7 @@ import {DropsDetailsPopupComponent} from '../popup/drops-details-popup/drops-det
 import {TradeDetailsPopupComponent} from '../popup/trade-details-popup/trade-details-popup.component';
 import {I18nName} from '../../model/i18n-name';
 import {DesynthPopupComponent} from '../popup/desynth-popup/desynth-popup.component';
-import {CompactMasterbook} from '../../model/garland-tools/compact-masterbook';
+import {CompactMasterbook} from '../../model/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
