@@ -4,7 +4,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {User} from '../model/user';
 import {Observable} from 'rxjs/Observable';
-import {DataService} from './data.service';
+import {DataService} from './api/data.service';
 
 @Injectable()
 export class UserService {

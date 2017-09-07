@@ -2,16 +2,16 @@ import {Injectable} from '@angular/core';
 import {List} from '../model/list';
 import {Observable} from 'rxjs';
 import {ListRow} from '../model/list-row';
-import {DataService} from './data.service';
+import {DataService} from './api/data.service';
 import {CraftedBy} from '../model/crafted-by';
 import {I18nName} from '../model/i18n-name';
-import {GarlandToolsService} from 'app/core/garland-tools.service';
+import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {CraftAddition} from '../model/craft-addition';
 import {GatheredBy} from '../model/gathered-by';
-import {TradeSource} from '../model/trade-source';
-import {Trade} from '../model/trade';
-import {Instance} from 'app/model/instance';
-import {Vendor} from '../model/vendor';
+import {TradeSource} from '../model/garland-tools/trade-source';
+import {Trade} from '../model/garland-tools/trade';
+import {Instance} from 'app/model/garland-tools/instance';
+import {Vendor} from '../model/garland-tools/vendor';
 
 @Injectable()
 export class ListManagerService {
