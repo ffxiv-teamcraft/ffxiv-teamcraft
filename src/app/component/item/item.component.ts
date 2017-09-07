@@ -1,6 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, OnInit} from '@angular/core';
 import {ListRow} from '../../model/list-row';
-import {I18nTools} from '../../core/i18n-tools';
+import {I18nToolsService} from '../../core/i18n-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
 import {MdDialog} from '@angular/material';
@@ -32,7 +32,7 @@ export class ItemComponent implements OnInit {
     @Output()
     done: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private i18n: I18nTools, private translator: TranslateService, private dialog: MdDialog) {
+    constructor(private i18n: I18nToolsService, private translator: TranslateService, private dialog: MdDialog) {
     }
 
     ngOnInit(): void {

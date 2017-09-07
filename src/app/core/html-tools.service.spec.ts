@@ -13,7 +13,7 @@ describe('HtmlToolsService', () => {
     expect(service).toBeTruthy();
   }));
 
-    it('should geberate stars properly', inject([HtmlToolsService], (service: HtmlToolsService) => {
+    it('should generate stars properly', inject([HtmlToolsService], (service: HtmlToolsService) => {
         expect(service.generateStars(3)).toEqual('★★★');
     }));
 });

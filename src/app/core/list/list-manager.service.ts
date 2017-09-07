@@ -13,22 +13,15 @@ import {Trade} from '../../model/garland-tools/trade';
 import {Instance} from 'app/model/garland-tools/instance';
 import {Vendor} from '../../model/garland-tools/vendor';
 import {HtmlToolsService} from '../html-tools.service';
+import {I18nToolsService} from '../i18n-tools.service';
 
 @Injectable()
 export class ListManagerService {
 
     constructor(protected db: DataService,
                 private gt: GarlandToolsService,
-                protected htmlTools: HtmlToolsService) {
-    }
-
-    protected getI18nName(item: any): I18nName {
-        return {
-            fr: item.fr.name,
-            en: item.en.name,
-            de: item.de.name,
-            ja: item.ja.name,
-        };
+                protected htmlTools: HtmlToolsService,
+                protected i18n: I18nToolsService) {
     }
 
     protected getCraftedBy(item: any): Observable<CraftedBy[]> {
@@ -46,7 +39,7 @@ export class ListManagerService {
             if (craft.unlockId !== undefined) {
                 result.push(this.db.getItem(craft.unlockId).map(masterbook => {
                     craftedBy.masterbook = {
-                        name: this.getI18nName(masterbook.item),
+                        name: this.i18n.createI18nName(masterbook.item),
                         id: masterbook.item.id
                     };
                     return craftedBy;
@@ -200,7 +193,7 @@ export class ListManagerService {
                 .of({fr: '', de: '', en: '', ja: ''})
                 .mergeMap((name: I18nName) => {
                     return this.db.getItem(id).map(data => {
-                        name = this.getI18nName(data.item);
+                        name = this.i18n.createI18nName(data.item);
                         return name;
                     });
                 });
@@ -216,7 +209,7 @@ export class ListManagerService {
                 .of({fr: '', de: '', en: '', ja: ''})
                 .mergeMap((name: I18nName) => {
                     return this.db.getItem(id).map(data => {
-                        name = this.getI18nName(data.item);
+                        name = this.i18n.createI18nName(data.item);
                         return name;
                     });
                 });
@@ -246,7 +239,7 @@ export class ListManagerService {
                                 const craft = this.getCraft(data.item, recipeId);
                                 const toAdd: ListRow = {
                                     id: data.item.id,
-                                    name: this.getI18nName(data.item),
+                                    name: this.i18n.createI18nName(data.item),
                                     icon: this.getIcon(data.item),
                                     amount: amount,
                                     done: 0,
@@ -436,7 +429,7 @@ export class ListManagerService {
                     const crystal = this.gt.getCrystalDetails(element.id);
                     this.add(list.crystals, {
                         id: element.id,
-                        name: this.getI18nName(crystal),
+                        name: this.i18n.createI18nName(crystal),
                         icon: this.getIcon(crystal),
                         amount: element.amount * addition.amount,
                         done: 0,
@@ -454,7 +447,7 @@ export class ListManagerService {
                             amount: amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
-                            name: this.getI18nName(elementDetails),
+                            name: this.i18n.createI18nName(elementDetails),
                             yield: yields,
                             addedAt: Date.now()
                         });
@@ -469,7 +462,7 @@ export class ListManagerService {
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: this.getI18nName(elementDetails),
+                            name: this.i18n.createI18nName(elementDetails),
                             yield: 1,
                             addedAt: Date.now()
                         });
@@ -479,7 +472,7 @@ export class ListManagerService {
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: this.getI18nName(elementDetails),
+                            name: this.i18n.createI18nName(elementDetails),
                             yield: 1,
                             addedAt: Date.now()
                         });

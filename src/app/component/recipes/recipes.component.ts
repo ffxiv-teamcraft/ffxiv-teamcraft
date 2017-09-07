@@ -8,7 +8,7 @@ import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {Recipe} from '../../model/garland-tools/recipe';
-import {I18nTools} from '../../core/i18n-tools';
+import {I18nToolsService} from '../../core/i18n-tools.service';
 import {I18nName} from '../../model/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
@@ -34,7 +34,7 @@ export class RecipesComponent implements OnInit {
     constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
                 private resolver: ListManagerService, private xivdb: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
-                private i18n: I18nTools, private gt: GarlandToolsService,
+                private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService) {
     }

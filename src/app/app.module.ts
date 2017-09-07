@@ -36,7 +36,7 @@ import {ListComponent} from './component/list/list.component';
 import {ItemComponent} from './component/item/item.component';
 import {DataService} from './core/api/data.service';
 import {ListNamePopupComponent} from './component/popup/list-name-popup/list-name-popup.component';
-import {I18nTools} from './core/i18n-tools';
+import {I18nToolsService} from './core/i18n-tools.service';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GarlandToolsService} from './core/api/garland-tools.service';
@@ -155,7 +155,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     providers: [
         DataService,
         ListManagerService,
-        I18nTools,
+        I18nToolsService,
         GarlandToolsService,
         UserService,
     ],
