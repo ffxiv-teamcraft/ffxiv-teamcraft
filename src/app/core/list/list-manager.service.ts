@@ -24,6 +24,33 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
+    public getCraftedBy(item: any): Observable<CraftedBy[]> {
+        const result = [];
+        for (const craft of item.craft) {
+            const craftedBy: CraftedBy = {
+                itemId: item.id,
+                icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
+                level: craft.lvl,
+                stars_tooltip: this.htmlTools.generateStars(craft.stars)
+            };
+            if (craft.job === 0) {
+                craftedBy.icon = '';
+            }
+            if (craft.unlockId !== undefined) {
+                result.push(this.db.getItem(craft.unlockId).map(masterbook => {
+                    craftedBy.masterbook = {
+                        name: this.i18n.createI18nName(masterbook.item),
+                        id: masterbook.item.id
+                    };
+                    return craftedBy;
+                }));
+            } else {
+                result.push(Observable.of(craftedBy));
+            }
+        }
+        return Observable.combineLatest(result);
+    }
+
     protected getGatheredBy(item: any): GatheredBy {
         const gatheredBy: GatheredBy = {
             icon: '',
@@ -63,7 +90,7 @@ export class ListManagerService {
     }
 
     protected getTradeSources(item: any): Observable<TradeSource[]> {
-        const tradeSources: Observable<TradeSource>[] = [];
+        const tradeSources: Observable<TradeSource> [] = [];
         for (const ts of Object.keys(item.tradeSources)) {
             const tradeObs = Observable
                 .of({
@@ -127,7 +154,7 @@ export class ListManagerService {
     }
 
     protected getVendors(item: any): Observable<Vendor[]> {
-        const vendors: Observable<Vendor>[] = [];
+        const vendors: Observable<Vendor> [] = [];
         for (const id of item.vendors) {
             const vendorObs: Observable<Vendor> = Observable
                 .of({
@@ -160,7 +187,7 @@ export class ListManagerService {
     }
 
     protected getReducedFrom(item: any): Observable<I18nName[]> {
-        const reductions: Observable<I18nName>[] = [];
+        const reductions: Observable<I18nName> [] = [];
         for (const id of item.reducedFrom) {
             const reductionObs = Observable
                 .of({fr: '', de: '', en: '', ja: ''})
@@ -176,7 +203,7 @@ export class ListManagerService {
     }
 
     protected getDesynths(item: any): Observable<I18nName[]> {
-        const desynths: Observable<I18nName>[] = [];
+        const desynths: Observable<I18nName> [] = [];
         for (const id of item.desynthedFrom) {
             const desynthObs = Observable
                 .of({fr: '', de: '', en: '', ja: ''})
@@ -216,7 +243,7 @@ export class ListManagerService {
                                     craftedBy: crafted,
                                     addedAt: Date.now()
                                 };
-                                this.add(list.recipes, toAdd);
+                                list.addToRecipes(toAdd);
                                 return this.addCraft([{item: data.item, data: data, amount: Math.ceil(amount / toAdd.yield)}], list);
                             })
                             .mergeMap(l => {
@@ -372,7 +399,7 @@ export class ListManagerService {
                                 return l;
                             });
                     })
-                    .map(l => this.cleanList(l))
+                    .map(l => l.clean())
                     .debounceTime(500);
             });
     }
@@ -408,7 +435,7 @@ export class ListManagerService {
                     if (elementDetails.craft !== undefined) {
                         const yields = elementDetails.craft[0].yield || 1;
                         const amount = Math.ceil(element.amount * addition.amount / yields);
-                        this.add(list.preCrafts, {
+                        list.addToPreCrafts( {
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
                             amount: amount,
@@ -424,7 +451,7 @@ export class ListManagerService {
                             amount: amount
                         });
                     } else if (elementDetails.nodes !== undefined || elementDetails.fishingSpots !== undefined) {
-                        this.add(list.gathers, {
+                        list.addToGathers({
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,
@@ -434,7 +461,7 @@ export class ListManagerService {
                             addedAt: Date.now()
                         });
                     } else {
-                        this.add(list.others, {
+                        list.addToOthers({
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
                             amount: element.amount * addition.amount,

@@ -51,7 +51,7 @@ export class List {
         })[0];
     }
 
-    public clear(): List {
+    public clean(): List {
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
                 this[prop] = this[prop].filter(row => {
