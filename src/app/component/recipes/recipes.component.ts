@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
-import {ListManagerService} from '../../core/list-manager.service';
+import {ListManagerService} from '../../core/list/list-manager.service';
 import {List} from '../../model/list';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
@@ -13,6 +13,7 @@ import {I18nName} from '../../model/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
+import {HtmlToolsService} from '../../core/html-tools.service';
 
 @Component({
     selector: 'app-recipes',
@@ -34,7 +35,8 @@ export class RecipesComponent implements OnInit {
                 private resolver: ListManagerService, private xivdb: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
                 private i18n: I18nTools, private gt: GarlandToolsService,
-                private translator: TranslateService, private router: Router) {
+                private translator: TranslateService, private router: Router,
+                private htmlTools: HtmlToolsService) {
     }
 
     ngOnInit() {
@@ -63,7 +65,7 @@ export class RecipesComponent implements OnInit {
     }
 
     getStars(nb: number): string {
-        return this.resolver.generateStars(nb);
+        return this.htmlTools.generateStars(nb);
     }
 
     getName(i18nName: I18nName): string {

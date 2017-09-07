@@ -5,7 +5,7 @@ import {List} from '../../model/list';
 import {UserInfo, User} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../../model/list-row';
-import {ListManagerService} from '../../core/list-manager.service';
+import {ListManagerService} from '../../core/list/list-manager.service';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nTools} from '../../core/i18n-tools';

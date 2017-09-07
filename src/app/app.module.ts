@@ -29,7 +29,7 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {ListManagerService} from './core/list-manager.service';
+import {ListManagerService} from './core/list/list-manager.service';
 import {ConfirmationPopupComponent} from './component/popup/confirmation-popup/confirmation-popup.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ListComponent} from './component/list/list.component';
@@ -50,6 +50,7 @@ import { LoginPopupComponent } from './component/popup/login-popup/login-popup.c
 import { RegisterPopupComponent } from './component/popup/register-popup/register-popup.component';
 import { CharacterAddPopupComponent } from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
+import {CoreModule} from './core/core.module';
 
 const routes: Routes = [
     {
@@ -133,7 +134,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule
+        HttpModule,
+
+        // App modules
+        CoreModule.forRoot()
     ],
     entryComponents: [
         ListNamePopupComponent,

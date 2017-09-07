@@ -1,22 +1,25 @@
 import {Injectable} from '@angular/core';
-import {List} from '../model/list';
+import {List} from '../../model/list';
 import {Observable} from 'rxjs';
-import {ListRow} from '../model/list-row';
-import {DataService} from './api/data.service';
-import {CraftedBy} from '../model/crafted-by';
-import {I18nName} from '../model/i18n-name';
+import {ListRow} from '../../model/list-row';
+import {DataService} from '../api/data.service';
+import {CraftedBy} from '../../model/crafted-by';
+import {I18nName} from '../../model/i18n-name';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
-import {CraftAddition} from '../model/craft-addition';
-import {GatheredBy} from '../model/gathered-by';
-import {TradeSource} from '../model/garland-tools/trade-source';
-import {Trade} from '../model/garland-tools/trade';
+import {CraftAddition} from '../../model/craft-addition';
+import {GatheredBy} from '../../model/gathered-by';
+import {TradeSource} from '../../model/garland-tools/trade-source';
+import {Trade} from '../../model/garland-tools/trade';
 import {Instance} from 'app/model/garland-tools/instance';
-import {Vendor} from '../model/garland-tools/vendor';
+import {Vendor} from '../../model/garland-tools/vendor';
+import {HtmlToolsService} from '../html-tools.service';
 
 @Injectable()
 export class ListManagerService {
 
-    constructor(protected db: DataService, private gt: GarlandToolsService) {
+    constructor(protected db: DataService,
+                private gt: GarlandToolsService,
+                protected htmlTools: HtmlToolsService) {
     }
 
     protected getI18nName(item: any): I18nName {
@@ -28,14 +31,6 @@ export class ListManagerService {
         };
     }
 
-    public generateStars(amount: number): string {
-        let stars = '';
-        for (let i = 0; i < amount; i++) {
-            stars += '★';
-        }
-        return stars;
-    }
-
     protected getCraftedBy(item: any): Observable<CraftedBy[]> {
         const result = [];
         for (const craft of item.craft) {
@@ -43,7 +38,7 @@ export class ListManagerService {
                 itemId: item.id,
                 icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
                 level: craft.lvl,
-                stars_tooltip: this.generateStars(craft.stars)
+                stars_tooltip: this.htmlTools.generateStars(craft.stars)
             };
             if (craft.job === 0) {
                 craftedBy.icon = '';
@@ -81,7 +76,7 @@ export class ListManagerService {
                 } else {
                     gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
                 }
-                gatheredBy.stars_tooltip = this.generateStars(details.stars);
+                gatheredBy.stars_tooltip = this.htmlTools.generateStars(details.stars);
                 gatheredBy.level = details.lvl;
                 if (details.areaid !== undefined) {
                     gatheredBy.nodes.push(details);
