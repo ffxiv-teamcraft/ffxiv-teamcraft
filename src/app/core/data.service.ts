@@ -49,7 +49,7 @@ export class DataService {
                                 name: {fr: item.fr.name, en: item.en.name, ja: item.ja.name, de: item.de.name},
                                 lvl: craft.lvl,
                                 icon: item.icon,
-                                url_xivdb: this.getXivdbUrl(craft.id, 'recipe')
+                                url_xivdb: this.getXivdbUrl(item.id, item.en.name)
                             };
                             res.push(recipe);
                         }
@@ -59,12 +59,13 @@ export class DataService {
             });
     }
 
-    private getXivdbUrl(id: number, type: string): I18nName {
+    private getXivdbUrl(id: number, name: string): I18nName {
+        const urlName = name.replace(/ /g, '+').toLowerCase();
         return {
-            fr: `http://fr.xivdb.com/${type}/${id}`,
-            en: `http://xivdb.com/${type}/${id}`,
-            de: `http://de.xivdb.com/${type}/${id}`,
-            ja: `http://ja.xivdb.com/${type}/${id}`
+            fr: `http://fr.xivdb.com/item/${id}/${urlName}`,
+            en: `http://xivdb.com/item/${id}/${urlName}`,
+            de: `http://de.xivdb.com/item/${id}/${urlName}`,
+            ja: `http://ja.xivdb.com/item/${id}/${urlName}`
         };
     }
 
