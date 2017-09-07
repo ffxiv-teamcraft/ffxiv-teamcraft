@@ -136,6 +136,9 @@ export class AppComponent implements OnInit {
     }
 
     use(lang: string): void {
+        if (['en', 'de', 'fr'].indexOf(lang) === -1) {
+            lang = 'en';
+        }
         this.locale = lang;
         localStorage.setItem('locale', lang);
         this.translate.use(lang);
