@@ -24,33 +24,6 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
-    protected getCraftedBy(item: any): Observable<CraftedBy[]> {
-        const result = [];
-        for (const craft of item.craft) {
-            const craftedBy: CraftedBy = {
-                itemId: item.id,
-                icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
-                level: craft.lvl,
-                stars_tooltip: this.htmlTools.generateStars(craft.stars)
-            };
-            if (craft.job === 0) {
-                craftedBy.icon = '';
-            }
-            if (craft.unlockId !== undefined) {
-                result.push(this.db.getItem(craft.unlockId).map(masterbook => {
-                    craftedBy.masterbook = {
-                        name: this.i18n.createI18nName(masterbook.item),
-                        id: masterbook.item.id
-                    };
-                    return craftedBy;
-                }));
-            } else {
-                result.push(Observable.of(craftedBy));
-            }
-        }
-        return Observable.combineLatest(result);
-    }
-
     protected getGatheredBy(item: any): GatheredBy {
         const gatheredBy: GatheredBy = {
             icon: '',
@@ -224,7 +197,7 @@ export class ListManagerService {
 
     public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
         return Observable
-            .of(this.initList(plist))
+            .of(plist)
             .mergeMap(list => {
                 return this.db.getItem(itemId)
                     .mergeMap(data => {
@@ -421,7 +394,7 @@ export class ListManagerService {
                 // If this is a crystal
                 if (element.id < 20 && element.id > 1) {
                     const crystal = this.gt.getCrystalDetails(element.id);
-                    this.add(list.crystals, {
+                    list.addToCrystals({
                         id: element.id,
                         name: this.i18n.createI18nName(crystal),
                         icon: this.getIcon(crystal),
@@ -481,14 +454,14 @@ export class ListManagerService {
     }
 
     public setDone(pitem: ListRow, amount: number, list: List): void {
-        const item = this.getById(pitem.id, list, pitem.addedAt);
+        const item = list.getItemById(pitem.id, pitem.addedAt);
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
         }
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
-                const requirementItem = this.getById(requirement.id, list);
+                const requirementItem = list.getItemById(requirement.id);
                 this.setDone(requirementItem, requirement.amount * amount, list);
             }
         }
@@ -498,65 +471,9 @@ export class ListManagerService {
         item.done = 0;
         if (item.requires !== undefined) {
             item.requires.forEach(requirement => {
-                const requirementItem = this.getById(requirement.id, list);
+                const requirementItem = list.getItemById(requirement.id);
                 this.resetDone(requirementItem, list);
             });
         }
-    }
-
-    protected getById(id: number, list: List, addedAt?: number): ListRow {
-        for (const prop of Object.keys(list)) {
-            if (prop !== 'name') {
-                for (const row of list[prop]) {
-                    if (row.id === id) {
-                        if (addedAt !== undefined) {
-                            if (addedAt === row.addedAt) {
-                                return row;
-                            }
-                        } else {
-                            return row;
-                        }
-                    }
-                }
-            }
-        }
-        return undefined;
-    }
-
-    protected cleanList(list: List): List {
-        for (const prop of Object.keys(list)) {
-            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
-                list[prop] = list[prop].filter(row => {
-                    return row.amount > 0;
-                });
-            }
-        }
-        return list;
-    }
-
-    protected add(array: ListRow[], data: ListRow): ListRow {
-        const row = array.filter(r => {
-            return r.id === data.id;
-        });
-        if (row.length === 0) {
-            array.push(data);
-        } else {
-            row[0].amount += data.amount;
-            if (row[0].amount < 0) {
-                row[0].amount = 0;
-            }
-        }
-        return array.filter((r) => {
-            return r.id === data.id;
-        })[0];
-    }
-
-    protected initList(list): List {
-        list.recipes = list.recipes || [];
-        list.preCrafts = list.preCrafts || [];
-        list.gathers = list.gathers || [];
-        list.others = list.others || [];
-        list.crystals = list.crystals || [];
-        return list;
     }
 }

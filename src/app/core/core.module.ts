@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {GarlandToolsService} from './api/garland-tools.service';
 import {I18nToolsService} from './i18n-tools.service';
 import {DataService} from './api/data.service';
+import {ListBuilderService} from './list-builder.service';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {DataService} from './api/data.service';
         I18nToolsService,
         DataService,
         ListManagerService,
-        HtmlToolsService
+        HtmlToolsService,
+        ListBuilderService
     ]
 })
 export class CoreModule {
