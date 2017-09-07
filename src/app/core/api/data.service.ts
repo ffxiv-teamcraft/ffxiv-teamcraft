@@ -59,7 +59,7 @@ export class DataService {
             });
     }
 
-    private getXivdbUrl(id: number, name: string): I18nName {
+    public getXivdbUrl(id: number, name: string): I18nName {
         const urlName = name.replace(/ /g, '+').toLowerCase();
         return {
             fr: `http://fr.xivdb.com/item/${id}/${urlName}`,

@@ -12,6 +12,7 @@ import {CompactMasterbook} from '../../model/garland-tools/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
+import {DataService} from '../../core/api/data.service';
 
 @Component({
     selector: 'app-item',
@@ -32,7 +33,9 @@ export class ItemComponent implements OnInit {
     @Output()
     done: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private i18n: I18nToolsService, private translator: TranslateService, private dialog: MdDialog) {
+    constructor(private i18n: I18nToolsService,
+                private data: DataService,
+                private dialog: MdDialog) {
     }
 
     ngOnInit(): void {
@@ -107,10 +110,9 @@ export class ItemComponent implements OnInit {
         });
     }
 
-    public getXivdbDomain(): string {
-        if (this.translator.currentLang === 'en') {
-            return 'www';
-        }
-        return this.translator.currentLang;
+    public getXivdbLink(item: any): string {
+        const name = this.getName(item);
+        const link = this.data.getXivdbUrl(item.id, name);
+        return this.i18n.getName(link);
     }
 }
