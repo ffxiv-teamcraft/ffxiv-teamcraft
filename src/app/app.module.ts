@@ -1,12 +1,12 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     MdButtonModule,
     MdCardModule,
+    MdCheckboxModule,
     MdChipsModule,
     MdDialogModule,
     MdExpansionModule,
@@ -19,8 +19,7 @@ import {
     MdSidenavModule,
     MdSnackBarModule,
     MdToolbarModule,
-    MdTooltipModule,
-    MdCheckboxModule
+    MdTooltipModule
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RecipesComponent} from './component/recipes/recipes.component';
@@ -45,11 +44,12 @@ import {DropsDetailsPopupComponent} from './component/popup/drops-details-popup/
 import {TradeDetailsPopupComponent} from './component/popup/trade-details-popup/trade-details-popup.component';
 import {DesynthPopupComponent} from './component/popup/desynth-popup/desynth-popup.component';
 import {VendorsDetailsPopupComponent} from './component/popup/vendors-details-popup/vendors-details-popup.component';
-import { InstancesDetailsPopupComponent } from './component/popup/instances-details-popup/instances-details-popup.component';
-import { LoginPopupComponent } from './component/popup/login-popup/login-popup.component';
-import { RegisterPopupComponent } from './component/popup/register-popup/register-popup.component';
-import { CharacterAddPopupComponent } from './component/popup/character-add-popup/character-add-popup.component';
+import {InstancesDetailsPopupComponent} from './component/popup/instances-details-popup/instances-details-popup.component';
+import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
+import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
+import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
+import {HtmlToolsService} from 'app/core/html-tools.service';
 import {CoreModule} from './core/core.module';
 
 const routes: Routes = [
@@ -134,10 +134,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule,
 
-        // App modules
-        CoreModule.forRoot()
+        // App Modules
+        CoreModule
     ],
     entryComponents: [
         ListNamePopupComponent,
@@ -153,10 +152,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         CharacterAddPopupComponent,
     ],
     providers: [
-        DataService,
-        ListManagerService,
-        I18nToolsService,
-        GarlandToolsService,
         UserService,
     ],
     bootstrap: [AppComponent]

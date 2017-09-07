@@ -95,10 +95,21 @@ export class ListComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.listObj = this.af.object(`/users/${params.uid}/lists/${params.listId}`);
-            Observable.combineLatest(this.filterTrigger,
-                this.listObj,
+            Observable.combineLatest(
+                this.filterTrigger,
+                this.listObj.map(obj => {
+                    const list = new List();
+                    list.name = obj.name;
+                    list.createdAt = obj.createdAt;
+                    list.crystals = obj.crystals;
+                    list.gathers = obj.gathers;
+                    list.others = obj.others;
+                    list.preCrafts = obj.preCrafts;
+                    list.recipes = obj.recipes;
+                    return list;
+                }),
                 (ignored, list) => {
-                    this.listManager.forEachItem(list, item => {
+                    list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
                             const filter = this.gatheringFilters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
                             item.hidden = !filter.checked || item.gatheredBy.level > filter.level;

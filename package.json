@@ -27,7 +27,6 @@
         "@angular/platform-browser": "^4.3.2",
         "@angular/platform-browser-dynamic": "^4.3.2",
         "@angular/router": "^4.3.2",
-        "@kaiu/ng-serializer": "^1.0.0",
         "@ngx-translate/core": "^7.2.0",
         "@ngx-translate/http-loader": "^1.0.2",
         "@types/jwt-decode": "^1.4.28",

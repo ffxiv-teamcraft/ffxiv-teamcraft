@@ -218,12 +218,6 @@ export class ListManagerService {
         return Observable.combineLatest(desynths);
     }
 
-    public forEachItem(list: List, method: (arg: ListRow) => void) {
-        (list.others || []).forEach(method);
-        (list.gathers || []).forEach(method);
-        (list.preCrafts || []).forEach(method);
-    }
-
     protected getCraft(item: any, recipeId: number): any {
         return item.craft.find(i => i.id === recipeId);
     }
@@ -274,7 +268,7 @@ export class ListManagerService {
                             })
                             .mergeMap(l => {
                                 const trades: Observable<{ item: any, tradeSources: TradeSource[] }>[] = [];
-                                this.forEachItem(list, item => {
+                                list.forEachItem(item => {
                                     const related = this.getRelated(data, item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
                                         trades.push(this.getTradeSources(related).map(ts => {
@@ -295,7 +289,7 @@ export class ListManagerService {
                             })
                             .mergeMap(l => {
                                 const vendors: Observable<{ item: any, vendors: Vendor[] }>[] = [];
-                                this.forEachItem(list, item => {
+                                list.forEachItem(item => {
                                     const related = this.getRelated(data, item.id);
                                     if (related !== undefined && related.vendors !== undefined) {
                                         vendors.push(this.getVendors(related).map(ts => {
@@ -316,7 +310,7 @@ export class ListManagerService {
                             })
                             .mergeMap(l => {
                                 const reductions: Observable<{ item: any, reducedFrom: I18nName[] }>[] = [];
-                                this.forEachItem(list, i => {
+                                list.forEachItem(i => {
                                     const related = this.getRelated(data, i.id);
                                     if (related !== undefined && related.reducedFrom !== undefined) {
                                         reductions.push(this.getReducedFrom(related).map(rs => {
@@ -337,7 +331,7 @@ export class ListManagerService {
                             })
                             .mergeMap(l => {
                                 const desynths: Observable<{ item: any, desynths: I18nName[] }>[] = [];
-                                this.forEachItem(list, i => {
+                                list.forEachItem(i => {
                                     const related = this.getRelated(data, i.id);
                                     if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
                                         desynths.push(this.getDesynths(related).map(rs => {
@@ -357,7 +351,7 @@ export class ListManagerService {
                                 }
                             })
                             .map(l => {
-                                this.forEachItem(l, o => {
+                                l.forEachItem(o => {
                                     const related = this.getRelated(data, o.id);
                                     if (related !== undefined && related.instances !== undefined) {
                                         const instances: Instance[] = [];
@@ -379,7 +373,7 @@ export class ListManagerService {
                                 return l;
                             })
                             .map(l => {
-                                this.forEachItem(l, o => {
+                                l.forEachItem(o => {
                                     const related = this.getRelated(data, o.id);
                                     if (related !== undefined && related.seed !== undefined) {
                                         o.gardening = true;
@@ -388,7 +382,7 @@ export class ListManagerService {
                                 return l;
                             })
                             .map(l => {
-                                this.forEachItem(l, o => {
+                                l.forEachItem(o => {
                                     const related = this.getRelated(data, o.id);
                                     if (related !== undefined && related.drops !== undefined) {
                                         related.drops.forEach(d => {

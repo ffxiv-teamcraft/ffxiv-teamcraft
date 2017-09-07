@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
 import {Recipe} from '../../model/garland-tools/recipe';
@@ -13,7 +12,8 @@ export class DataService {
     private xivdbUrl = 'https://api.xivdb.com';
     private garlandUrl = 'https://www.garlandtools.org/db/data';
 
-    constructor(private http: HttpClient, private af: AngularFireDatabase, private i18n: TranslateService,
+    constructor(private http: HttpClient,
+                private i18n: TranslateService,
                 private gt: GarlandToolsService) {
     }
 
