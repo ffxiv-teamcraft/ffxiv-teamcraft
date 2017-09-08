@@ -16,7 +16,6 @@ import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 import {Item} from '../../model/garland-tools/item';
 import {Craft} from '../../model/garland-tools/craft';
-import {ItemData} from '../../model/garland-tools/item-data';
 
 @Injectable()
 export class ListManagerService {
@@ -253,7 +252,7 @@ export class ListManagerService {
                                 const precrafts = [];
                                 l.preCrafts.forEach(craft => {
                                     if (craft.craftedBy === undefined) {
-                                        precrafts.push(this.getCraftedBy(this.getRelated(data, craft.id)));
+                                        precrafts.push(this.getCraftedBy(data.getRelated(craft.id)));
                                     }
                                 });
                                 if (precrafts.length > 0) {
@@ -272,7 +271,7 @@ export class ListManagerService {
                             .mergeMap(l => {
                                 const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
                                 list.forEachItem(item => {
-                                    const related = this.getRelated(data, item.id);
+                                    const related = data.getRelated(item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
                                         trades.push(this.getTradeSources(related).map(ts => {
                                             return {item: item, tradeSources: ts};
@@ -293,7 +292,7 @@ export class ListManagerService {
                             .mergeMap(l => {
                                 const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
                                 list.forEachItem(item => {
-                                    const related = this.getRelated(data, item.id);
+                                    const related = data.getRelated(item.id);
                                     if (related !== undefined && related.vendors !== undefined) {
                                         vendors.push(this.getVendors(related).map(ts => {
                                             return {item: item, vendors: ts};
@@ -314,7 +313,7 @@ export class ListManagerService {
                             .mergeMap(l => {
                                 const reductions: Observable<{ item: ListRow, reducedFrom: I18nName[] }>[] = [];
                                 list.forEachItem(i => {
-                                    const related = this.getRelated(data, i.id);
+                                    const related = data.getRelated(i.id);
                                     if (related !== undefined && related.reducedFrom !== undefined) {
                                         reductions.push(this.getReducedFrom(related).map(rs => {
                                             return {item: i, reducedFrom: rs};
@@ -335,7 +334,7 @@ export class ListManagerService {
                             .mergeMap(l => {
                                 const desynths: Observable<{ item: ListRow, desynths: I18nName[] }>[] = [];
                                 list.forEachItem(i => {
-                                    const related = this.getRelated(data, i.id);
+                                    const related = data.getRelated(i.id);
                                     if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
                                         desynths.push(this.getDesynths(related).map(rs => {
                                             return {item: i, desynths: rs};
@@ -355,7 +354,7 @@ export class ListManagerService {
                             })
                             .map(l => {
                                 l.forEachItem(o => {
-                                    const related = this.getRelated(data, o.id);
+                                    const related = data.getRelated(o.id);
                                     if (related !== undefined && related.instances !== undefined) {
                                         const instances: Instance[] = [];
                                         related.instances.forEach(id => {
@@ -370,14 +369,14 @@ export class ListManagerService {
                             .map(l => {
                                 l.gathers.forEach(g => {
                                     if (g.gatheredBy === undefined) {
-                                        g.gatheredBy = this.getGatheredBy(this.getRelated(data, g.id));
+                                        g.gatheredBy = this.getGatheredBy(data.getRelated(g.id));
                                     }
                                 });
                                 return l;
                             })
                             .map(l => {
                                 l.forEachItem(o => {
-                                    const related = this.getRelated(data, o.id);
+                                    const related = data.getRelated(o.id);
                                     if (related !== undefined && related.seeds !== undefined) {
                                         o.gardening = true;
                                     }
@@ -386,7 +385,7 @@ export class ListManagerService {
                             })
                             .map(l => {
                                 l.forEachItem(o => {
-                                    const related = this.getRelated(data, o.id);
+                                    const related = data.getRelated(o.id);
                                     if (related !== undefined && related.drops !== undefined) {
                                         related.drops.forEach(d => {
                                             if (o.drops === undefined) {
@@ -405,12 +404,6 @@ export class ListManagerService {
                     .map(l => l.clean())
                     .debounceTime(500);
             });
-    }
-
-    protected getRelated(data: ItemData, id: number): Item {
-        return data.related.find(item => {
-            return item.id === id;
-        });
     }
 
     protected getIcon(item: Item): string {
@@ -434,7 +427,7 @@ export class ListManagerService {
                         addedAt: Date.now()
                     });
                 } else {
-                    const elementDetails = this.getRelated(addition.data, element.id);
+                    const elementDetails = addition.data.getRelated(element.id);
                     if (elementDetails.craft !== undefined) {
                         const yields = elementDetails.craft[0].yield || 1;
                         const amount = Math.ceil(element.amount * addition.amount / yields);
