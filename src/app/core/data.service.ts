@@ -49,7 +49,7 @@ export class DataService {
                                 name: {fr: item.fr.name, en: item.en.name, ja: item.ja.name, de: item.de.name},
                                 lvl: craft.lvl,
                                 icon: item.icon,
-                                url_xivdb: this.getXivdbUrl(craft.id, 'recipe')
+                                url_xivdb: this.getXivdbUrl(item.id, item.en.name)
                             };
                             res.push(recipe);
                         }
@@ -59,19 +59,20 @@ export class DataService {
             });
     }
 
-    private getXivdbUrl(id: number, type: string): I18nName {
+    private getXivdbUrl(id: number, name: string): I18nName {
+        const urlName = name.replace(/ /g, '+').toLowerCase();
         return {
-            fr: `http://fr.xivdb.com/${type}/${id}`,
-            en: `http://xivdb.com/${type}/${id}`,
-            de: `http://de.xivdb.com/${type}/${id}`,
-            ja: `http://ja.xivdb.com/${type}/${id}`
+            fr: `http://fr.xivdb.com/item/${id}/${urlName}`,
+            en: `http://xivdb.com/item/${id}/${urlName}`,
+            de: `http://de.xivdb.com/item/${id}/${urlName}`,
+            ja: `http://ja.xivdb.com/item/${id}/${urlName}`
         };
     }
 
     public searchCharacter(name: string, server: string): Observable<any[]> {
-        return this.http.get<any>(`https://xivsync.com/character/search?name=${name}`)
+        return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
             .map(res => res.data.results)
-            .map(res => res.filter(char => char.server.toLowerCase() === server.toLowerCase()));
+            .map(res => res.filter(char => char.name === name));
     }
 
     public getCharacter(id: number): Observable<any> {
