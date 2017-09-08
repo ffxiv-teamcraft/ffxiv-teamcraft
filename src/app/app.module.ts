@@ -47,6 +47,7 @@ import {CharacterAddPopupComponent} from './component/popup/character-add-popup/
 import {UserService} from './core/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
+import {FirebaseDataModule} from './core/firebase/firebase-data.module';
 
 const routes: Routes = [
     {
@@ -134,7 +135,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         NgSerializerModule.forRoot(),
 
         // App Modules
-        CoreModule
+        CoreModule,
+        FirebaseDataModule
     ],
     entryComponents: [
         ListNamePopupComponent,

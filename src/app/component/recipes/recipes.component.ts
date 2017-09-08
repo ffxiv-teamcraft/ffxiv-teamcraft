@@ -2,8 +2,6 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {List} from '../../model/list/list';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
@@ -14,6 +12,7 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {HtmlToolsService} from '../../core/html-tools.service';
+import {ListService} from '../../core/firebase/list.service';
 
 @Component({
     selector: 'app-recipes',
@@ -27,27 +26,18 @@ export class RecipesComponent implements OnInit {
     @ViewChild('filter')
     filter: ElementRef;
 
-    lists: FirebaseListObservable<List[]>;
+    lists: Observable<List[]>;
 
-    uid: string;
-
-    constructor(private af: AngularFireDatabase, private auth: AngularFireAuth,
-                private resolver: ListManagerService, private xivdb: DataService,
+    constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
-                private htmlTools: HtmlToolsService) {
+                private htmlTools: HtmlToolsService, private listService: ListService) {
     }
 
     ngOnInit() {
-        this.auth.idToken.subscribe(user => {
-            if (user === null) {
-                this.lists = null;
-            } else {
-                this.lists = this.af.list(`/users/${user.uid}/lists`);
-                this.uid = user.uid;
-            }
-        });
+        this.lists = this.listService.getAll();
+
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
@@ -56,7 +46,7 @@ export class RecipesComponent implements OnInit {
                 if (filter === '') {
                     return Observable.of([]);
                 }
-                return this.xivdb.searchRecipe(filter);
+                return this.db.searchRecipe(filter);
             }).subscribe(results => this.recipes = results);
     }
 
@@ -75,7 +65,7 @@ export class RecipesComponent implements OnInit {
     addRecipe(recipe: Recipe, list: List, key: string): void {
         this.resolver.addToList(recipe.itemId, list, recipe.recipeId)
             .subscribe(updatedList => {
-                this.lists.update(key, updatedList).then(() => {
+                this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
                         `${this.i18n.getName(recipe.name)} added to list ${list.name}`,
                         this.translator.instant('Open'),
@@ -84,7 +74,9 @@ export class RecipesComponent implements OnInit {
                             extraClasses: ['snack']
                         }
                     ).onAction().subscribe(() => {
-                        this.router.navigate(['list', this.uid, key]);
+                        this.listService.getRouterPath(key).subscribe(path => {
+                            this.router.navigate(path);
+                        });
                     });
                 });
             }, err => console.error(err));
@@ -94,7 +86,7 @@ export class RecipesComponent implements OnInit {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;
-            this.lists.push(list).then(l => {
+            this.listService.push(list).then(l => {
                 this.addRecipe(recipe, list, l.key);
             });
         });
