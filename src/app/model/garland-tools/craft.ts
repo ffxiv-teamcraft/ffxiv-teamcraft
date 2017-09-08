@@ -15,4 +15,6 @@ export interface Craft {
     unlockId: number;
     ingredients: Ingredient[];
     complexity: Complexity;
+    fc?: number;
+    yield?: number;
 }

@@ -1,10 +1,11 @@
 import {I18nName} from './i18n-name';
 import {CraftedBy} from './crafted-by';
 import {GatheredBy} from './gathered-by';
-import {Drop} from 'app/model/drop';
+import {Drop} from 'app/model/list/drop';
 import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 import {Vendor} from './vendor';
+import {Ingredient} from '../garland-tools/ingredient';
 export interface ListRow {
     addedAt: number;
     name: I18nName;
@@ -12,7 +13,7 @@ export interface ListRow {
     id: number;
     amount: number;
     done: number;
-    requires?: ListRow[];
+    requires?: Ingredient[];
     recipeId?: number;
     yield: number;
 

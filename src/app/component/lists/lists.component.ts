@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {List} from '../../model/list';
+import {List} from '../../model/list/list';
 import {FormControl, Validators} from '@angular/forms';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/i18n-name';
+import {I18nName} from '../../model/list/i18n-name';
 
 @Component({
     selector: 'app-lists',

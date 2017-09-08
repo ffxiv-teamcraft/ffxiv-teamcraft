@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {GarlandToolsData} from '../../model/garland-tools-data';
-import {Drop} from '../../model/drop';
-import {Instance} from '../../model/instance';
+import {GarlandToolsData} from '../../model/list/garland-tools-data';
+import {Drop} from '../../model/list/drop';
+import {Instance} from '../../model/list/instance';
 
 @Injectable()
 export class GarlandToolsService {

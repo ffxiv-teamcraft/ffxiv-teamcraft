@@ -1,13 +1,13 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {ListRow} from '../../model/list-row';
+import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
 import {MdDialog} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../popup/drops-details-popup/drops-details-popup.component';
 import {TradeDetailsPopupComponent} from '../popup/trade-details-popup/trade-details-popup.component';
-import {I18nName} from '../../model/i18n-name';
+import {I18nName} from '../../model/list/i18n-name';
 import {DesynthPopupComponent} from '../popup/desynth-popup/desynth-popup.component';
-import {CompactMasterbook} from '../../model/compact-masterbook';
+import {CompactMasterbook} from '../../model/list/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';

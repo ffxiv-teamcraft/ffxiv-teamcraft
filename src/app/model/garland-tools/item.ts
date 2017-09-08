@@ -1,25 +1,29 @@
 import {Craft} from './craft';
-import {I18nDataRow} from '../i18n-data-row';
+import {I18nData} from '../list/i18n-data';
+import {TradeData} from './trade-data';
 
-export interface Item {
+export interface Item extends I18nData {
     id: number;
-    en: I18nDataRow;
-    ja: I18nDataRow;
-    de: I18nDataRow;
-    fr: I18nDataRow;
     patch: number;
     patchCategory: number;
-    price: number;
     ilvl: number;
     category: number;
-    tradeable: number;
-    sell_price: number;
     rarity: number;
     icon: number;
-    craft: Craft[];
-    cost: number;
-    skill_angle: number;
-    aoe: number;
     strengths: string[];
     attr: Attr;
+
+    tradeable?: number;
+    craft?: Craft[];
+    vendors?: number[];
+    tradeSources?: { [index: number]: TradeData };
+    drops?: number[];
+    nodes?: number[];
+    ventures?: number[];
+    voyages?: string[];
+    instances?: number[];
+    reducedFrom?: number[];
+    desynthedFrom?: number[];
+    fishingSpots?: number[];
+    seeds?: number[];
 }

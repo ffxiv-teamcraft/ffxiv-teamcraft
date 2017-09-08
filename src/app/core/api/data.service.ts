@@ -3,8 +3,10 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
-import {Recipe} from '../../model/recipe';
-import {I18nName} from '../../model/i18n-name';
+import {Recipe} from '../../model/list/recipe';
+import {I18nName} from '../../model/list/i18n-name';
+import {ItemData} from '../../model/garland-tools/item-data';
+import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
 
 @Injectable()
 export class DataService {
@@ -14,11 +16,13 @@ export class DataService {
 
     constructor(private http: HttpClient,
                 private i18n: TranslateService,
-                private gt: GarlandToolsService) {
+                private gt: GarlandToolsService,
+                private serializer: NgSerializerService) {
     }
 
-    public getItem(id: number): Observable<any> {
-        return this.getGarland(`/item/${id}`);
+    public getItem(id: number): Observable<ItemData> {
+        return this.getGarland(`/item/${id}`)
+            .map(item => this.serializer.deserialize<ItemData>(item, ItemData));
     }
 
     public getNpc(id: number): any {

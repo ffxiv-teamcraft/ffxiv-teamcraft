@@ -1,19 +1,22 @@
 import {Injectable} from '@angular/core';
-import {List} from '../../model/list';
+import {List} from '../../model/list/list';
 import {Observable} from 'rxjs';
-import {ListRow} from '../../model/list-row';
+import {ListRow} from '../../model/list/list-row';
 import {DataService} from '../api/data.service';
-import {CraftedBy} from '../../model/crafted-by';
-import {I18nName} from '../../model/i18n-name';
+import {CraftedBy} from '../../model/list/crafted-by';
+import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
-import {CraftAddition} from '../../model/craft-addition';
-import {GatheredBy} from '../../model/gathered-by';
-import {TradeSource} from '../../model/trade-source';
-import {Trade} from '../../model/trade';
-import {Instance} from 'app/model/instance';
-import {Vendor} from '../../model/vendor';
+import {CraftAddition} from '../../model/list/craft-addition';
+import {GatheredBy} from '../../model/list/gathered-by';
+import {TradeSource} from '../../model/list/trade-source';
+import {Trade} from '../../model/list/trade';
+import {Instance} from 'app/model/list/instance';
+import {Vendor} from '../../model/list/vendor';
 import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
+import {Item} from '../../model/garland-tools/item';
+import {Craft} from '../../model/garland-tools/craft';
+import {ItemData} from '../../model/garland-tools/item-data';
 
 @Injectable()
 export class ListManagerService {
@@ -24,7 +27,7 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
-    public getCraftedBy(item: any): Observable<CraftedBy[]> {
+    public getCraftedBy(item: Item): Observable<CraftedBy[]> {
         const result = [];
         for (const craft of item.craft) {
             const craftedBy: CraftedBy = {
@@ -51,7 +54,7 @@ export class ListManagerService {
         return Observable.combineLatest(result);
     }
 
-    protected getGatheredBy(item: any): GatheredBy {
+    protected getGatheredBy(item: Item): GatheredBy {
         const gatheredBy: GatheredBy = {
             icon: '',
             stars_tooltip: '',
@@ -89,7 +92,7 @@ export class ListManagerService {
         return gatheredBy;
     }
 
-    protected getTradeSources(item: any): Observable<TradeSource[]> {
+    protected getTradeSources(item: Item): Observable<TradeSource[]> {
         const tradeSources: Observable<TradeSource> [] = [];
         for (const ts of Object.keys(item.tradeSources)) {
             const tradeObs = Observable
@@ -153,7 +156,7 @@ export class ListManagerService {
         });
     }
 
-    protected getVendors(item: any): Observable<Vendor[]> {
+    protected getVendors(item: Item): Observable<Vendor[]> {
         const vendors: Observable<Vendor> [] = [];
         for (const id of item.vendors) {
             const vendorObs: Observable<Vendor> = Observable
@@ -186,7 +189,7 @@ export class ListManagerService {
         });
     }
 
-    protected getReducedFrom(item: any): Observable<I18nName[]> {
+    protected getReducedFrom(item: Item): Observable<I18nName[]> {
         const reductions: Observable<I18nName> [] = [];
         for (const id of item.reducedFrom) {
             const reductionObs = Observable
@@ -202,7 +205,7 @@ export class ListManagerService {
         return Observable.combineLatest(reductions);
     }
 
-    protected getDesynths(item: any): Observable<I18nName[]> {
+    protected getDesynths(item: Item): Observable<I18nName[]> {
         const desynths: Observable<I18nName> [] = [];
         for (const id of item.desynthedFrom) {
             const desynthObs = Observable
@@ -218,7 +221,7 @@ export class ListManagerService {
         return Observable.combineLatest(desynths);
     }
 
-    protected getCraft(item: any, recipeId: number): any {
+    protected getCraft(item: Item, recipeId: number): Craft {
         return item.craft.find(i => i.id === recipeId);
     }
 
@@ -254,7 +257,7 @@ export class ListManagerService {
                                     }
                                 });
                                 if (precrafts.length > 0) {
-                                    return Observable.combineLatest(...precrafts, (...details: any[]) => {
+                                    return Observable.combineLatest(...precrafts, (...details: Craft[]) => {
                                         const crafts = [].concat.apply([], details);
                                         l.preCrafts.forEach(craft => {
                                             if (craft.craftedBy === undefined) {
@@ -267,7 +270,7 @@ export class ListManagerService {
                                 return Observable.of(l);
                             })
                             .mergeMap(l => {
-                                const trades: Observable<{ item: any, tradeSources: TradeSource[] }>[] = [];
+                                const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
                                 list.forEachItem(item => {
                                     const related = this.getRelated(data, item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
@@ -288,7 +291,7 @@ export class ListManagerService {
                                 }
                             })
                             .mergeMap(l => {
-                                const vendors: Observable<{ item: any, vendors: Vendor[] }>[] = [];
+                                const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
                                 list.forEachItem(item => {
                                     const related = this.getRelated(data, item.id);
                                     if (related !== undefined && related.vendors !== undefined) {
@@ -309,7 +312,7 @@ export class ListManagerService {
                                 }
                             })
                             .mergeMap(l => {
-                                const reductions: Observable<{ item: any, reducedFrom: I18nName[] }>[] = [];
+                                const reductions: Observable<{ item: ListRow, reducedFrom: I18nName[] }>[] = [];
                                 list.forEachItem(i => {
                                     const related = this.getRelated(data, i.id);
                                     if (related !== undefined && related.reducedFrom !== undefined) {
@@ -330,7 +333,7 @@ export class ListManagerService {
                                 }
                             })
                             .mergeMap(l => {
-                                const desynths: Observable<{ item: any, desynths: I18nName[] }>[] = [];
+                                const desynths: Observable<{ item: ListRow, desynths: I18nName[] }>[] = [];
                                 list.forEachItem(i => {
                                     const related = this.getRelated(data, i.id);
                                     if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
@@ -375,7 +378,7 @@ export class ListManagerService {
                             .map(l => {
                                 l.forEachItem(o => {
                                     const related = this.getRelated(data, o.id);
-                                    if (related !== undefined && related.seed !== undefined) {
+                                    if (related !== undefined && related.seeds !== undefined) {
                                         o.gardening = true;
                                     }
                                 });
@@ -404,13 +407,13 @@ export class ListManagerService {
             });
     }
 
-    protected getRelated(data: any, id: number): any {
+    protected getRelated(data: ItemData, id: number): Item {
         return data.related.find(item => {
             return item.id === id;
         });
     }
 
-    protected getIcon(item: any): string {
+    protected getIcon(item: Item): string {
         return `https://www.garlandtools.org/db/icons/item/${item.icon}.png`;
     }
 

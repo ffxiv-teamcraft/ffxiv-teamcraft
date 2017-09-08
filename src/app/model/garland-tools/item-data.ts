@@ -1,10 +1,9 @@
 import {Item} from './item';
-import {Related} from './related';
 import {Partial} from './partial';
 
-export interface ItemData {
+export class ItemData {
     item: Item;
-    related: Related[];
+    related: Item[];
     partials: Partial[];
 }
 

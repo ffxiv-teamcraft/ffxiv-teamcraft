@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
-import {List} from '../../model/list';
+import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
-import {ListRow} from '../../model/list-row';
+import {ListRow} from '../../model/list/list-row';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/i18n-name';
+import {I18nName} from '../../model/list/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';

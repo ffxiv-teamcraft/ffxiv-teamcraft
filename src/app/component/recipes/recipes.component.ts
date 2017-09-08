@@ -1,15 +1,15 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ListManagerService} from '../../core/list/list-manager.service';
-import {List} from '../../model/list';
+import {List} from '../../model/list/list';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
-import {Recipe} from '../../model/recipe';
+import {Recipe} from '../../model/list/recipe';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/i18n-name';
+import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
