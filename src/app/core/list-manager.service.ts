@@ -52,6 +52,7 @@ export class ListManagerService {
                 result.push(this.db.getItem(craft.unlockId).map(masterbook => {
                     craftedBy.masterbook = {
                         name: this.getI18nName(masterbook.item),
+                        icon: this.getIcon(masterbook.item),
                         id: masterbook.item.id
                     };
                     return craftedBy;

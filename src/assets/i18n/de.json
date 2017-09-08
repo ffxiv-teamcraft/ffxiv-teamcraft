@@ -43,5 +43,7 @@
     "Verification_mail_sent": "Verification email sent, please check up your mailing box",
     "Not_verified": "Your email has not been verified yet, please check your mailing box",
     "Lodestone_already_used": "This character is already used",
-    "Anonymous_Warning": "You should create an account to avoid loosing your lists and enable more features like adaptive filter"
+    "Anonymous_Warning": "You should create an account to avoid loosing your lists and enable more features like adaptive filter",
+    "Game_Term/DoH": "Handwerker",
+    "Game_Term/DoL": "Sammler"
 }
