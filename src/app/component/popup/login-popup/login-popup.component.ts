@@ -4,11 +4,11 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {MdDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
 import EmailAuthProvider = firebase.auth.EmailAuthProvider;
-import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-login-popup',

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 import {List} from '../../model/list';
-import {UserInfo, User} from 'firebase/app';
+import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../../model/list-row';
 import {ListManagerService} from '../../core/list/list-manager.service';

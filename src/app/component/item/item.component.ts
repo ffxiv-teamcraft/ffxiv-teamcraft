@@ -1,7 +1,6 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild, OnInit} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../model/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {TranslateService} from '@ngx-translate/core';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
 import {MdDialog} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../popup/drops-details-popup/drops-details-popup.component';

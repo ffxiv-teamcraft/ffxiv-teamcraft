@@ -435,7 +435,7 @@ export class ListManagerService {
                     if (elementDetails.craft !== undefined) {
                         const yields = elementDetails.craft[0].yield || 1;
                         const amount = Math.ceil(element.amount * addition.amount / yields);
-                        list.addToPreCrafts( {
+                        list.addToPreCrafts({
                             id: elementDetails.id,
                             icon: this.getIcon(elementDetails),
                             amount: amount,

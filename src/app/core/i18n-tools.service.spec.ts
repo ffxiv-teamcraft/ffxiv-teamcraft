@@ -1,6 +1,4 @@
-import {TestBed, inject} from '@angular/core/testing';
-
-import {HtmlToolsService} from './html-tools.service';
+import {inject, TestBed} from '@angular/core/testing';
 import {I18nToolsService} from './i18n-tools.service';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
 

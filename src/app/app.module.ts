@@ -28,17 +28,13 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {ListManagerService} from './core/list/list-manager.service';
 import {ConfirmationPopupComponent} from './component/popup/confirmation-popup/confirmation-popup.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ListComponent} from './component/list/list.component';
 import {ItemComponent} from './component/item/item.component';
-import {DataService} from './core/api/data.service';
 import {ListNamePopupComponent} from './component/popup/list-name-popup/list-name-popup.component';
-import {I18nToolsService} from './core/i18n-tools.service';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {GarlandToolsService} from './core/api/garland-tools.service';
 import {GatheredByPopupComponent} from './component/popup/gathered-by-popup/gathered-by-popup.component';
 import {DropsDetailsPopupComponent} from './component/popup/drops-details-popup/drops-details-popup.component';
 import {TradeDetailsPopupComponent} from './component/popup/trade-details-popup/trade-details-popup.component';
@@ -49,8 +45,8 @@ import {LoginPopupComponent} from './component/popup/login-popup/login-popup.com
 import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
-import {HtmlToolsService} from 'app/core/html-tools.service';
 import {CoreModule} from './core/core.module';
+import {NgSerializerModule} from '@kaiu/ng-serializer';
 
 const routes: Routes = [
     {
@@ -134,6 +130,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+
+        NgSerializerModule.forRoot(),
 
         // App Modules
         CoreModule
