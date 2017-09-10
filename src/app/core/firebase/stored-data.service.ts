@@ -2,15 +2,16 @@ import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} f
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
 import * as firebase from 'firebase/app';
+import {FirebaseDataModel} from '../../model/list/firebase-data-model';
 import ThenableReference = firebase.database.ThenableReference;
 import Promise = firebase.Promise;
 
-export abstract class StoredDataService<T> {
+export abstract class StoredDataService<T extends FirebaseDataModel> {
 
     constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService) {
     }
 
-    protected abstract getBaseUri(): Observable<string>;
+    protected abstract getBaseUri(): string;
 
     protected abstract getClass(): any;
 
@@ -21,7 +22,11 @@ export abstract class StoredDataService<T> {
      * @returns {Observable<R>}
      */
     public get(uid: string): Observable<T> {
-        return this.oneRef(uid).map(obj => this.serializer.deserialize(obj, this.getClass()));
+        return this.oneRef(uid).map(obj => {
+            const res: T = this.serializer.deserialize<T>(obj, this.getClass());
+            res.$key = obj.$key;
+            return res;
+        });
     }
 
     /**
@@ -30,7 +35,13 @@ export abstract class StoredDataService<T> {
      * @returns {Observable<R>}
      */
     public getAll(): Observable<T[]> {
-        return this.listRef.map(obj => this.serializer.deserialize(obj, [this.getClass()]));
+        return this.listRef.map(obj => {
+            const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
+            res.forEach((row, index) => {
+                row.$key = obj[index].$key;
+            });
+            return res;
+        });
     }
 
     /**
@@ -51,6 +62,7 @@ export abstract class StoredDataService<T> {
      * @returns {firebase.Promise<void>}
      */
     public update(uid: string, value: T): Promise<void> {
+        delete value.$key;
         return this.oneRef(uid).update(value);
     }
 
@@ -65,7 +77,7 @@ export abstract class StoredDataService<T> {
     }
 
     private get listRef(): FirebaseListObservable<T[]> {
-        return this.getBaseUri().mergeMap(uri => this.firebase.list(`${uri}`)) as FirebaseListObservable<T[]>;
+        return this.firebase.list(this.getBaseUri());
     }
 
     private oneRef(uid: string): FirebaseObjectObservable<T> {

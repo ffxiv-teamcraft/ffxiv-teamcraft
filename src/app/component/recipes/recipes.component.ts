@@ -26,7 +26,7 @@ export class RecipesComponent implements OnInit {
     @ViewChild('filter')
     filter: ElementRef;
 
-    lists: Observable<List[]>;
+    lists: Observable<List[]> = this.listService.getAll();
 
     constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
@@ -36,8 +36,6 @@ export class RecipesComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.lists = this.listService.getAll();
-
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()

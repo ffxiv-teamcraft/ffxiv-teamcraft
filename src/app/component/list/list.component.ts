@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
@@ -13,6 +12,7 @@ import {I18nName} from '../../model/list/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';
+import {ListService} from '../../core/firebase/list.service';
 
 @Component({
     selector: 'app-list',
@@ -21,11 +21,13 @@ import {UserService} from 'app/core/user.service';
 })
 export class ListComponent implements OnInit {
 
-    listObj: FirebaseObjectObservable<List>;
+    listObj: Observable<List>;
 
     list: List;
 
     user: UserInfo;
+
+    listUid: string;
 
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, name: 'botanist'},
@@ -46,10 +48,10 @@ export class ListComponent implements OnInit {
 
     private filterTrigger = new Subject<void>();
 
-    constructor(private route: ActivatedRoute, private af: AngularFireDatabase,
-                private auth: AngularFireAuth, private listManager: ListManagerService,
+    constructor(private auth: AngularFireAuth,
+                private route: ActivatedRoute, private listManager: ListManagerService,
                 private dialog: MdDialog, private i18n: I18nToolsService,
-                private userService: UserService) {
+                private userService: UserService, private listService: ListService) {
     }
 
     public getUser(): Observable<User> {
@@ -94,20 +96,11 @@ export class ListComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.listObj = this.af.object(`/users/${params.uid}/lists/${params.listId}`);
+            this.listUid = params.listId;
+            this.listObj = this.listService.getUserList(params.uid, this.listUid);
             Observable.combineLatest(
                 this.filterTrigger,
-                this.listObj.map(obj => {
-                    const list = new List();
-                    list.name = obj.name;
-                    list.createdAt = obj.createdAt;
-                    list.crystals = obj.crystals;
-                    list.gathers = obj.gathers;
-                    list.others = obj.others;
-                    list.preCrafts = obj.preCrafts;
-                    list.recipes = obj.recipes;
-                    return list;
-                }),
+                this.listObj,
                 (ignored, list) => {
                     list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
@@ -131,12 +124,12 @@ export class ListComponent implements OnInit {
     }
 
     update(): void {
-        this.listObj.update(this.list);
+        this.listService.update(this.listUid, this.list);
     }
 
     public setDone(data: { row: ListRow, amount: number }): void {
         this.listManager.setDone(data.row, data.amount, this.list);
-        this.listObj.update(this.list);
+        this.listService.update(this.listUid, this.list);
     }
 
     public resetProgression(): void {
@@ -144,7 +137,7 @@ export class ListComponent implements OnInit {
             if (res) {
                 for (const recipe of this.list.recipes) {
                     this.listManager.resetDone(recipe, this.list);
-                    this.listObj.update(this.list);
+                    this.listService.update(this.listUid, this.list);
                 }
             }
         });

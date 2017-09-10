@@ -1,5 +1,6 @@
 import {ListRow} from './list-row';
-export class List {
+import {FirebaseDataModel} from './firebase-data-model';
+export class List extends FirebaseDataModel {
     name: string;
     recipes: ListRow[] = [];
     preCrafts: ListRow[] = [];
@@ -7,6 +8,10 @@ export class List {
     others: ListRow[] = [];
     crystals: ListRow[] = [];
     createdAt: string = new Date().toISOString();
+
+    constructor() {
+        super();
+    }
 
     public forEachItem(method: (arg: ListRow) => void): void {
         (this.others || []).forEach(method);
