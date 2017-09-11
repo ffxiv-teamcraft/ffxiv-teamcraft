@@ -7,7 +7,6 @@ import {CraftedBy} from '../../model/list/crafted-by';
 import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {CraftAddition} from '../../model/list/craft-addition';
-import {GatheredBy} from '../../model/list/gathered-by';
 import {TradeSource} from '../../model/list/trade-source';
 import {Trade} from '../../model/list/trade';
 import {Instance} from 'app/model/list/instance';
@@ -16,6 +15,7 @@ import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 import {Item} from '../../model/garland-tools/item';
 import {Craft} from '../../model/garland-tools/craft';
+import {ItemData} from 'app/model/garland-tools/item-data';
 
 @Injectable()
 export class ListManagerService {
@@ -27,6 +27,9 @@ export class ListManagerService {
     }
 
     public getCraftedBy(item: Item): Observable<CraftedBy[]> {
+        if (!item.isCraft()) {
+            return Observable.of([]);
+        }
         const result = [];
         for (const craft of item.craft) {
             const craftedBy: CraftedBy = {
@@ -53,44 +56,6 @@ export class ListManagerService {
         return Observable.combineLatest(result);
     }
 
-    protected getGatheredBy(item: Item): GatheredBy {
-        const gatheredBy: GatheredBy = {
-            icon: '',
-            stars_tooltip: '',
-            level: 0,
-            nodes: []
-        };
-        // If it's a node gather (not a fish)
-        if (item.nodes !== undefined) {
-            for (const node of item.nodes) {
-                const details = this.gt.getNode(node);
-                if (details.type <= 1) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
-                } else if (details.type < 4) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/BTN.png';
-                } else {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
-                }
-                gatheredBy.stars_tooltip = this.htmlTools.generateStars(details.stars);
-                gatheredBy.level = details.lvl;
-                if (details.areaid !== undefined) {
-                    gatheredBy.nodes.push(details);
-                }
-            }
-        } else {
-            // If it's a fish, we have to handle it in another way
-            for (const spot of item.fishingSpots) {
-                const details = this.gt.getFishingSpot(spot);
-                gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
-                if (details.areaid !== undefined) {
-                    gatheredBy.nodes.push(details);
-                }
-                gatheredBy.level = details.lvl;
-            }
-        }
-        return gatheredBy;
-    }
-
     protected getTradeSources(item: Item): Observable<TradeSource[]> {
         const tradeSources: Observable<TradeSource> [] = [];
         for (const ts of Object.keys(item.tradeSources)) {
@@ -115,9 +80,9 @@ export class ListManagerService {
                     for (const row of item.tradeSources[ts]) {
                         const obs: Observable<Trade> = Observable
                             .of({
-                                itemIcon: 0,
+                                itemIcon: '',
                                 itemAmount: 0,
-                                currencyIcon: 0,
+                                currencyIcon: '',
                                 currencyAmount: 0,
                                 itemHQ: false
                             })
@@ -220,23 +185,19 @@ export class ListManagerService {
         return Observable.combineLatest(desynths);
     }
 
-    protected getCraft(item: Item, recipeId: number): Craft {
-        return item.craft.find(i => i.id === recipeId);
-    }
-
     public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
         return Observable
             .of(plist)
             .mergeMap(list => {
                 return this.db.getItem(itemId)
-                    .mergeMap(data => {
+                    .mergeMap((data: ItemData) => {
                         return this.getCraftedBy(data.item)
                             .map(crafted => {
-                                const craft = this.getCraft(data.item, recipeId);
+                                const craft = data.getCraft(recipeId);
                                 const toAdd: ListRow = {
                                     id: data.item.id,
                                     name: this.i18n.createI18nName(data.item),
-                                    icon: this.getIcon(data.item),
+                                    icon: data.item.icon,
                                     amount: amount,
                                     done: 0,
                                     yield: craft.yield || 1,
@@ -369,7 +330,7 @@ export class ListManagerService {
                             .map(l => {
                                 l.gathers.forEach(g => {
                                     if (g.gatheredBy === undefined) {
-                                        g.gatheredBy = this.getGatheredBy(data.getRelated(g.id));
+                                        g.gatheredBy = data.getRelated(g.id).getGatheredBy(this.gt, this.htmlTools);
                                     }
                                 });
                                 return l;
@@ -406,10 +367,6 @@ export class ListManagerService {
             });
     }
 
-    protected getIcon(item: Item): string {
-        return `https://www.garlandtools.org/db/icons/item/${item.icon}.png`;
-    }
-
     protected addCraft(additions: CraftAddition[], list: List): List {
         const nextIteration: CraftAddition[] = [];
         for (const addition of additions) {
@@ -420,7 +377,7 @@ export class ListManagerService {
                     list.addToCrystals({
                         id: element.id,
                         name: this.i18n.createI18nName(crystal),
-                        icon: this.getIcon(crystal),
+                        icon: crystal.icon,
                         amount: element.amount * addition.amount,
                         done: 0,
                         yield: 1,
@@ -428,12 +385,12 @@ export class ListManagerService {
                     });
                 } else {
                     const elementDetails = addition.data.getRelated(element.id);
-                    if (elementDetails.craft !== undefined) {
+                    if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
                         const amount = Math.ceil(element.amount * addition.amount / yields);
                         list.addToPreCrafts({
                             id: elementDetails.id,
-                            icon: this.getIcon(elementDetails),
+                            icon: elementDetails.icon,
                             amount: amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
@@ -446,10 +403,10 @@ export class ListManagerService {
                             data: addition.data,
                             amount: amount
                         });
-                    } else if (elementDetails.nodes !== undefined || elementDetails.fishingSpots !== undefined) {
+                    } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         list.addToGathers({
                             id: elementDetails.id,
-                            icon: this.getIcon(elementDetails),
+                            icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
                             name: this.i18n.createI18nName(elementDetails),
@@ -459,7 +416,7 @@ export class ListManagerService {
                     } else {
                         list.addToOthers({
                             id: elementDetails.id,
-                            icon: this.getIcon(elementDetails),
+                            icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
                             name: this.i18n.createI18nName(elementDetails),
@@ -474,29 +431,5 @@ export class ListManagerService {
             return this.addCraft(nextIteration, list);
         }
         return list;
-    }
-
-    public setDone(pitem: ListRow, amount: number, list: List): void {
-        const item = list.getItemById(pitem.id, pitem.addedAt);
-        item.done += amount;
-        if (item.done > item.amount) {
-            item.done = item.amount;
-        }
-        if (item.requires !== undefined) {
-            for (const requirement of item.requires) {
-                const requirementItem = list.getItemById(requirement.id);
-                this.setDone(requirementItem, requirement.amount * amount, list);
-            }
-        }
-    }
-
-    public resetDone(item: ListRow, list: List): void {
-        item.done = 0;
-        if (item.requires !== undefined) {
-            item.requires.forEach(requirement => {
-                const requirementItem = list.getItemById(requirement.id);
-                this.resetDone(requirementItem, list);
-            });
-        }
     }
 }

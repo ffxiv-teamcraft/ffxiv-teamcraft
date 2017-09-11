@@ -4,13 +4,13 @@
         <h3 md-subheader>{{tradeSource.npcName}} - {{getName(tradeSource.zoneName)}}</h3>
         <md-list-item *ngFor="let trade of tradeSource.trades">
             <div class="trade-part">
-                <img src="https://www.garlandtools.org/db/icons/item/{{trade.currencyIcon}}.png" class="currency">
+                <img src="{{trade.currencyIcon}}" class="currency">
                 {{trade.currencyAmount}}
             </div>
             <md-icon>arrow_forward</md-icon>
             <div class="trade-part">
                 <div class="itemParent">
-                    <img src="https://www.garlandtools.org/db/icons/item/{{trade.itemIcon}}.png" class="item currency">
+                    <img src="{{trade.itemIcon}}" class="item currency">
                     <img *ngIf="trade.itemHQ" src="https://www.garlandtools.org/db/images/HQOverlay.png"
                          class="overlay currency">
                 </div>

@@ -85,4 +85,31 @@ export class List extends FirebaseDataModel {
         }
         return undefined;
     }
+
+    public setDone(pitem: ListRow, amount: number): void {
+        const item = this.getItemById(pitem.id, pitem.addedAt);
+        item.done += amount;
+        if (item.done > item.amount) {
+            item.done = item.amount;
+        }
+        if (item.done < 0) {
+            item.done = 0;
+        }
+        if (item.requires !== undefined) {
+            for (const requirement of item.requires) {
+                const requirementItem = this.getItemById(requirement.id);
+                this.setDone(requirementItem, requirement.amount * amount);
+            }
+        }
+    }
+
+    public resetDone(item: ListRow): void {
+        item.done = 0;
+        if (item.requires !== undefined) {
+            item.requires.forEach(requirement => {
+                const requirementItem = this.getItemById(requirement.id);
+                this.resetDone(requirementItem);
+            });
+        }
+    }
 }

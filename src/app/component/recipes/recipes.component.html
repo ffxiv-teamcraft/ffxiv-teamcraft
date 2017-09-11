@@ -12,7 +12,7 @@
     <div *ngIf="recipes.length > 0">
         <md-list-item *ngFor="let recipe of recipes">
             <a md-list-avatar href="{{getName(recipe.url_xivdb)}}" target="_blank">
-                <img md-list-avatar src="https://www.garlandtools.org/db/icons/item/{{recipe.icon}}.png" alt="{{getName(recipe.name)}}">
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">
             </a>
             <h4 md-line>{{getName(recipe.name)}}</h4>
             <p md-line *ngIf="getJob(recipe.job).abbreviation !== 'ADV'">

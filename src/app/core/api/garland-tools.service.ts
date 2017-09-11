@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../../model/list/garland-tools-data';
 import {Drop} from '../../model/list/drop';
 import {Instance} from '../../model/list/instance';
+import {Item} from '../../model/garland-tools/item';
+import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
 
 @Injectable()
 export class GarlandToolsService {
@@ -9,12 +11,15 @@ export class GarlandToolsService {
     private gt: GarlandToolsData = (<any>window).gt;
     private gItemIndex: any[] = (<any>window).gItemIndex;
 
+    constructor(private serializer: NgSerializerService) {
+    }
+
     public getJob(id: number): any {
         return this.gt.jobs.find(job => job.id === id);
     }
 
-    public getCrystalDetails(id: number): any {
-        return this.gt.item.index[id];
+    public getCrystalDetails(id: number): Item {
+        return this.serializer.deserialize<Item>(this.gt.item.index[id], Item);
     }
 
     public getNode(id: number): any {

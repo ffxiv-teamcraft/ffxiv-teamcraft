@@ -1,4 +1,4 @@
-export interface Partial {
+export class Partial {
     type: string;
     id: string;
     obj: {

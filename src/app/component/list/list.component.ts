@@ -4,7 +4,6 @@ import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
-import {ListManagerService} from '../../core/list/list-manager.service';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nToolsService} from '../../core/i18n-tools.service';
@@ -49,7 +48,7 @@ export class ListComponent implements OnInit {
     private filterTrigger = new Subject<void>();
 
     constructor(private auth: AngularFireAuth,
-                private route: ActivatedRoute, private listManager: ListManagerService,
+                private route: ActivatedRoute,
                 private dialog: MdDialog, private i18n: I18nToolsService,
                 private userService: UserService, private listService: ListService) {
     }
@@ -128,7 +127,7 @@ export class ListComponent implements OnInit {
     }
 
     public setDone(data: { row: ListRow, amount: number }): void {
-        this.listManager.setDone(data.row, data.amount, this.list);
+        this.list.setDone(data.row, data.amount);
         this.listService.update(this.listUid, this.list);
     }
 
@@ -136,7 +135,7 @@ export class ListComponent implements OnInit {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {
                 for (const recipe of this.list.recipes) {
-                    this.listManager.resetDone(recipe, this.list);
+                    this.list.resetDone(recipe);
                     this.listService.update(this.listUid, this.list);
                 }
             }
