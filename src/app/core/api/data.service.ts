@@ -40,6 +40,9 @@ export class DataService {
                 results.forEach(item => {
                     recipes.push(this.getItem(item.id));
                 });
+                if (recipes.length === 0) {
+                    return Observable.of([]);
+                }
                 return Observable.combineLatest(...recipes, (...details) => {
                     const res: Recipe[] = [];
                     for (const row of details) {
