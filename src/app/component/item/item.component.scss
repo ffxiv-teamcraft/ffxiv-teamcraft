@@ -1,4 +1,4 @@
-@import "../../theme.scss";
+@import "../../../theme.scss";
 
 :host {
 
@@ -40,7 +40,7 @@
             justify-content: flex-end;
 
             > div {
-                padding: 0px 10px;
+                padding: 0 10px;
             }
         }
     }

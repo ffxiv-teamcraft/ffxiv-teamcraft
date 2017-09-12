@@ -13,26 +13,22 @@ $min-width-medium: 992px;
 $min-width-large: 1200px;
 
 @mixin client-width($breakpoint) {
-  @if $breakpoint == 'small' {
-    @media (max-width: $min-width-small) {
-      @content;
+    @if $breakpoint == 'small' {
+        @media (max-width: $min-width-small) {
+            @content;
+        }
+    } @else if $breakpoint == 'medium' {
+        @media (max-width: $min-width-medium) {
+            @content;
+        }
+    } @else if $breakpoint == 'large' {
+        @media (max-width: $min-width-large) {
+            @content;
+        }
     }
-  }
-
-  @else if $breakpoint == 'medium' {
-    @media (max-width: $min-width-medium) {
-      @content;
-    }
-  }
-
-  @else if $breakpoint == 'large' {
-    @media (max-width: $min-width-large) {
-      @content;
-    }
-  }
 }
 
 // Let's not get hung up on our margin/passing definitions, yo!
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

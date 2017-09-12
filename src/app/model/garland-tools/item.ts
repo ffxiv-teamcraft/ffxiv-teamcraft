@@ -85,6 +85,7 @@ export class Item implements I18nData {
                 result.push(db.getItem(craft.unlockId).map(masterbook => {
                     craftedBy.masterbook = {
                         name: i18n.createI18nName(masterbook.item),
+                        icon: masterbook.item.icon,
                         id: masterbook.item.id
                     };
                     return craftedBy;
