@@ -10,9 +10,10 @@
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>{{'Filters' | translate}}</md-expansion-panel-header>
     <div class="filters">
+        <div class="category-header">{{'Game_Term/DoL' | translate}}</div>
         <div class="class-filters">
             <div *ngFor="let filter of gatheringFilters">
-                <md-input-container>
+                <md-input-container class="class-filter">
                     <md-checkbox mdPrefix class="filter"
                                  [(ngModel)]="filter.checked"
                                  (change)="triggerFilter()">
@@ -26,15 +27,11 @@
                          class="filter_icons">
                 </md-input-container>
             </div>
-            <div class="spacer"></div>
-            <button md-raised-button
-                    [disabled]="(getUser() | async)?.isAnonymous"
-                    (click)="adaptFilters()"
-                    color="accent">Adapt to character</button>
         </div>
+        <div class="category-header">{{'Game_Term/DoH' | translate}}</div>
         <div class="class-filters">
             <div *ngFor="let filter of craftFilters">
-                <md-input-container>
+                <md-input-container class="class-filter">
                     <md-checkbox mdPrefix class="filter"
                                  [(ngModel)]="filter.checked"
                                  (change)="triggerFilter()">
@@ -58,6 +55,11 @@
                     (click)="checkAll(false)" class="filter">
                 <md-icon>clear</md-icon>
             </button>
+            <div class="spacer"></div>
+            <button md-raised-button
+                    [disabled]="(getUser() | async)?.isAnonymous"
+                    (click)="adaptFilters()"
+                    color="accent">Adapt to character</button>
         </div>
     </div>
 </md-expansion-panel>

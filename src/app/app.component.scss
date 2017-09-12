@@ -55,6 +55,14 @@
                 width: 70%;
                 margin: auto;
                 min-height: 20%;
+
+                @include client-width('large') {
+                    width: 90%;
+                }
+
+                @include client-width('medium') {
+                    width: 100%;
+                }
             }
         }
     }

@@ -27,8 +27,16 @@ md-expansion-panel {
     flex-direction: column;
     .class-filters {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
+
+        // Wrapper around each individual filter
+        .class-filter {
+            min-width: 96px;
+        }
+
+        // Checkbox
         .filter {
             margin: 0 5px;
         }

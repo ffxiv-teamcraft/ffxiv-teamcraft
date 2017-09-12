@@ -1,7 +1,51 @@
+@import "../../theme.scss";
+
 :host {
 
+    // Item Column Defaults
+    [class^=item-col] {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 50%;
+
+        @include client-width('medium') {
+            width: 100%;
+        }
+
+        .icon {
+            position: relative;
+            margin-right: 10px;
+            .yield {
+                position: absolute;
+                bottom: -2px;
+                right: -8px;
+            }
+        }
+
+        .done {
+
+        }
+
+        .done-check {
+
+        }
+
+        .classes {
+            width: 100px;
+        }
+
+        // Second column
+        &.item-col-right {
+            justify-content: flex-end;
+
+            > div {
+                padding: 0px 10px;
+            }
+        }
+    }
+
     .done {
-        width: 20%;
         text-align: center;
     }
     .done-check {
@@ -9,19 +53,9 @@
         text-align: center;
     }
     .masterbook {
-        width: 75%;
         text-align: center;
     }
-    .icon {
-        position: relative;
-        .yield {
-            position: absolute;
-            bottom: -2px;
-            right: -8px;
-        }
-    }
     .amount {
-        width: 100px;
         margin-right: 10px;
     }
     .classes {
@@ -43,7 +77,6 @@
                 border-radius: 32px;
             }
         }
-        width: 60%;
         text-align: center;
     }
     .crafted-by {
