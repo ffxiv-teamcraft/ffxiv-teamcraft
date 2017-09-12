@@ -1,5 +1,8 @@
 import {ListRow} from './list-row';
 import {FirebaseDataModel} from './firebase-data-model';
+import {CraftAddition} from './craft-addition';
+import {GarlandToolsService} from '../../core/api/garland-tools.service';
+import {I18nToolsService} from '../../core/i18n-tools.service';
 export class List extends FirebaseDataModel {
     name: string;
     recipes: ListRow[] = [];
@@ -111,5 +114,71 @@ export class List extends FirebaseDataModel {
                 this.resetDone(requirementItem);
             });
         }
+    }
+
+    public addCraft(additions: CraftAddition[], gt: GarlandToolsService, i18n: I18nToolsService): List {
+        const nextIteration: CraftAddition[] = [];
+        for (const addition of additions) {
+            for (const element of addition.item.craft[0].ingredients) {
+                // If this is a crystal
+                if (element.id < 20 && element.id > 1) {
+                    const crystal = gt.getCrystalDetails(element.id);
+                    this.addToCrystals({
+                        id: element.id,
+                        name: i18n.createI18nName(crystal),
+                        icon: crystal.icon,
+                        amount: element.amount * addition.amount,
+                        done: 0,
+                        yield: 1,
+                        addedAt: Date.now()
+                    });
+                } else {
+                    const elementDetails = addition.data.getRelated(element.id);
+                    if (elementDetails.isCraft()) {
+                        const yields = elementDetails.craft[0].yield || 1;
+                        const amount = Math.ceil(element.amount * addition.amount / yields);
+                        this.addToPreCrafts({
+                            id: elementDetails.id,
+                            icon: elementDetails.icon,
+                            amount: amount,
+                            requires: elementDetails.craft[0].ingredients,
+                            done: 0,
+                            name: i18n.createI18nName(elementDetails),
+                            yield: yields,
+                            addedAt: Date.now()
+                        });
+                        nextIteration.push({
+                            item: elementDetails,
+                            data: addition.data,
+                            amount: amount
+                        });
+                    } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
+                        this.addToGathers({
+                            id: elementDetails.id,
+                            icon: elementDetails.icon,
+                            amount: element.amount * addition.amount,
+                            done: 0,
+                            name: i18n.createI18nName(elementDetails),
+                            yield: 1,
+                            addedAt: Date.now()
+                        });
+                    } else {
+                        this.addToOthers({
+                            id: elementDetails.id,
+                            icon: elementDetails.icon,
+                            amount: element.amount * addition.amount,
+                            done: 0,
+                            name: i18n.createI18nName(elementDetails),
+                            yield: 1,
+                            addedAt: Date.now()
+                        });
+                    }
+                }
+            }
+        }
+        if (nextIteration.length > 0) {
+            return this.addCraft(nextIteration, gt, i18n);
+        }
+        return this;
     }
 }
