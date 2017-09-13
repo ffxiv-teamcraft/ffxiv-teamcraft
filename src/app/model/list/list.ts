@@ -136,7 +136,8 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getRelated(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const amount = Math.ceil(element.amount * addition.amount);
+                        const amount = element.amount * addition.amount / yields;
+                        const preCraft = this.preCrafts.find(i => i.id === element.id);
                         this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
@@ -147,10 +148,15 @@ export class List extends FirebaseDataModel {
                             yield: yields,
                             addedAt: Date.now()
                         });
+                        // If adding a requirement doesn't add a craft (like if you need another 0.3
+                        // of this item but it doesn't make 2 crafts.
+                        if (preCraft !== undefined && Math.ceil(preCraft.amount + amount) === Math.ceil(preCraft.amount)) {
+                            continue;
+                        }
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: amount
+                            amount: Math.ceil(amount)
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({
