@@ -1,8 +1,9 @@
-<form (submit)="createNewList()">
+<form (submit)="createNewList()" #f="ngForm">
     <md-input-container>
         <input mdInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
                [formControl]="newListFormControl" required>
-        <md-error *ngIf="newListFormControl.hasError('required')">
+        <md-error
+            *ngIf="newListFormControl.hasError('required')">
             {{'Please_enter_a_name' | translate}}
         </md-error>
     </md-input-container>

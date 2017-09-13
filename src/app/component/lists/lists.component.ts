@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {FormControl, Validators} from '@angular/forms';
@@ -24,6 +24,8 @@ export class ListsComponent implements OnInit {
 
     newListFormControl = new FormControl('', Validators.required);
 
+    @ViewChild('f') myNgForm;
+
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
                 private i18n: I18nToolsService, private listService: ListService) {
@@ -33,8 +35,10 @@ export class ListsComponent implements OnInit {
         if (this.newListFormControl.valid) {
             const list = new List();
             list.name = this.newListFormControl.value;
-            this.listService.push(list);
-            this.newListFormControl.reset();
+            this.listService.push(list).then(() => {
+                this.newListFormControl.reset();
+                this.myNgForm.resetForm();
+            });
         }
     }
 

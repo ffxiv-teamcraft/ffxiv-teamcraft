@@ -47,7 +47,6 @@ export class CharacterAddPopupComponent implements OnInit {
                         .orderByChild('lodestoneId')
                         .equalTo(results[0].id.toString())
                         .once('value').then(res => {
-                            console.log(res.val());
                             if (res.val() === null) {
                                 this.alreadyUsed = false;
                                 if (user !== null) {
