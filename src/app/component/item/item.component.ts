@@ -45,7 +45,7 @@ export class ItemComponent implements OnInit {
                 return this.doneInput.nativeElement.value;
             })
             .subscribe(value => {
-                this.setDone(this.item, value - this.item.done);
+                this.setDone(this.item, value - this.getDone(this.item));
             });
     }
 
@@ -63,6 +63,10 @@ export class ItemComponent implements OnInit {
 
     public setDone(row: ListRow, amount: number) {
         this.done.emit({row: row, amount: amount});
+    }
+
+    public getDone(row: ListRow): number {
+        return Math.ceil(row.done);
     }
 
     public getName(item: ListRow) {
@@ -109,9 +113,13 @@ export class ItemComponent implements OnInit {
         });
     }
 
-    public getXivdbLink(item: any): string {
+    public getXivdbLink(item: ListRow): string {
         const name = this.getName(item);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
+    }
+
+    public getAmount(item: ListRow): number {
+        return Math.ceil(item.amount / item.yield);
     }
 }

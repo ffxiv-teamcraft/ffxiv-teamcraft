@@ -101,7 +101,7 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, requirement.amount * amount);
+                this.setDone(requirementItem, Math.ceil(requirement.amount * amount) / requirementItem.yield);
             }
         }
     }
@@ -136,7 +136,7 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getRelated(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const amount = Math.ceil(element.amount * addition.amount / yields);
+                        const amount = Math.ceil(element.amount * addition.amount);
                         this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,

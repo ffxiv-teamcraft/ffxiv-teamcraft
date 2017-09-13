@@ -19,16 +19,17 @@
         </div>
         <div class="done">
             <md-input-container class="amount">
-                <input mdInput type="number" [ngModel]="item.done"
-                       #doneInput min="0" max="{{item.amount}}">
-                <span mdSuffix>/{{item.amount}}</span>
+                <input mdInput type="number" [ngModel]="getDone(item)"
+                       #doneInput min="0" max="{{getAmount(item)}}">
+                <span mdSuffix>/{{getAmount(item)}}</span>
             </md-input-container>
         </div>
         <div class="done-check">
-            <a md-mini-fab *ngIf="item.amount > item.done" (click)="setDone(item, item.amount)">
+            <a md-mini-fab *ngIf="getAmount(item) > getDone(item)"
+               (click)="setDone(item, item.amount / item.yield)">
                 <md-icon>playlist_add_check</md-icon>
             </a>
-            <md-icon *ngIf="item.amount === item.done" color="accent">done</md-icon>
+            <md-icon *ngIf="getAmount(item) === getDone(item)" color="accent">done</md-icon>
         </div>
         <div class="classes">
             <div *ngIf="item.craftedBy !== undefined">
