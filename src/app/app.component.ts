@@ -22,6 +22,8 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
+    lightTheme = false;
+
     locale: string;
 
     announcement: string;
@@ -79,6 +81,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.lightTheme = localStorage.getItem('theme:light') === 'true';
+
         this.authState.debounceTime(2000).subscribe(state => {
             if (state === null) {
                 this.auth.auth.signInAnonymously();
@@ -111,6 +115,10 @@ export class AppComponent implements OnInit {
                 this.username = u.name;
                 this.userIcon = u.avatar;
             });
+    }
+
+    saveTheme(): void {
+        localStorage.setItem('theme:light', (!this.lightTheme).toString());
     }
 
     showAnnouncement(): boolean {

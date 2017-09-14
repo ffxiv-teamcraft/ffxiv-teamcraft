@@ -1,12 +1,13 @@
 @import "../theme.scss";
 
-:host {
+.app-container {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
     min-height: 100%;
+    display: inline;
     md-toolbar {
         min-height: 64px;
         md-menu {
@@ -24,8 +25,11 @@
             min-width: 200px;
             display: flex;
             flex-direction: column;
+            .theme-switch {
+                padding: 20px;
+            }
             .user-box {
-                background: mat-color(map-get($theme, accent));
+                background: mat-color(map-get($dark-theme, accent));
                 padding: 15px 16px;
                 font-size: 16px;
                 .user {
