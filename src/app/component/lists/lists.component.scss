@@ -11,4 +11,11 @@
         width: 50px;
         margin-right: 30px;
     }
+    .mat-expansion-panel {
+        background: inherit;
+        color: inherit;
+    }
+    .mat-list .mat-list-item {
+        color: inherit;
+    }
 }
