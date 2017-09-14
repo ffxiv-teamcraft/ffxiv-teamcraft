@@ -1,0 +1,85 @@
+@import "../../../theme.scss";
+
+:host {
+
+    // Item Column Defaults
+    [class^=item-col] {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 50%;
+
+        @include client-width('medium') {
+            width: 100%;
+        }
+
+        .icon {
+            position: relative;
+            margin-right: 10px;
+            .yield {
+                position: absolute;
+                bottom: -2px;
+                right: -8px;
+            }
+        }
+
+        .done {
+
+        }
+
+        .done-check {
+
+        }
+
+        .classes {
+            width: 100px;
+        }
+
+        // Second column
+        &.item-col-right {
+            justify-content: flex-end;
+
+            > div {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .done {
+        text-align: center;
+    }
+    .done-check {
+        min-width: 35px;
+        text-align: center;
+    }
+    .masterbook {
+        text-align: center;
+    }
+    .amount {
+        margin-right: 10px;
+    }
+    .classes {
+        button {
+            display: inline-block;
+        }
+        .currency {
+            width: 32px;
+            margin-top: 5px;
+        }
+        div {
+            vertical-align: middle;
+            display: inline-block;
+            img {
+                margin: 0 2px;
+            }
+            .icon {
+                width: 32px;
+                border-radius: 32px;
+            }
+        }
+        text-align: center;
+    }
+    .crafted-by {
+        height: 30px;
+    }
+}

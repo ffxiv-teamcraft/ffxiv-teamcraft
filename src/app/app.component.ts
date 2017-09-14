@@ -7,9 +7,9 @@ import {Observable} from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import {User} from 'firebase/app';
 import {MdDialog, MdSnackBar} from '@angular/material';
-import {RegisterPopupComponent} from './popup/register-popup/register-popup.component';
-import {LoginPopupComponent} from './popup/login-popup/login-popup.component';
-import {CharacterAddPopupComponent} from './popup/character-add-popup/character-add-popup.component';
+import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
+import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
+import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
 import Persistence = firebase.auth.Auth.Persistence;
 
@@ -21,6 +21,8 @@ declare const ga: Function;
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+    lightTheme = false;
 
     locale: string;
 
@@ -79,6 +81,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.lightTheme = localStorage.getItem('theme:light') === 'true';
+
         this.authState.debounceTime(2000).subscribe(state => {
             if (state === null) {
                 this.auth.auth.signInAnonymously();
@@ -111,6 +115,10 @@ export class AppComponent implements OnInit {
                 this.username = u.name;
                 this.userIcon = u.avatar;
             });
+    }
+
+    saveTheme(): void {
+        localStorage.setItem('theme:light', (!this.lightTheme).toString());
     }
 
     showAnnouncement(): boolean {

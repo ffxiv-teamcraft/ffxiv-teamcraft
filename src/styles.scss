@@ -6,15 +6,15 @@ html, body {
 }
 
 body {
-  background: map-get(map-get($theme, background), background);
+  background: map-get(map-get($dark-theme, background), background);
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .snack {
-    background-color: mat-color(map-get($theme, accent)) !important;
+    background-color: mat-color(map-get($dark-theme, accent)) !important;
 }
 
 .snack-warn {
-    background-color: mat-color(map-get($theme, warn)) !important;
+    background-color: mat-color(map-get($dark-theme, warn)) !important;
 }
