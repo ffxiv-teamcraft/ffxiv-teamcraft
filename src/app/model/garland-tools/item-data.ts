@@ -9,21 +9,16 @@ export class ItemData {
     item: Item;
 
     @DeserializeAs([Item])
-    related: Item[];
+    ingredients: Item[];
 
     @DeserializeAs([Partial])
     partials: Partial[];
 
-    public getRelated(id: number): Item {
-        return this.related.find(item => item.id === id);
+    public getIngredient(id: number): Item {
+        return this.ingredients.find(item => item.id === id);
     }
 
     public getCraft(recipeId: number): Craft {
         return this.item.craft.find(i => i.id === recipeId);
     }
 }
-
-
-
-
-

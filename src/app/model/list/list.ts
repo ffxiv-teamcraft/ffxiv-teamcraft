@@ -133,7 +133,7 @@ export class List extends FirebaseDataModel {
                         addedAt: Date.now()
                     });
                 } else {
-                    const elementDetails = addition.data.getRelated(element.id);
+                    const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
                         const amount = element.amount * addition.amount / yields;
