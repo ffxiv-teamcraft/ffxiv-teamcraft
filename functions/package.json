@@ -1,0 +1,9 @@
+{
+    "name": "list-count",
+    "description": "Firebase cloud function to count the amount of list created",
+    "private": true,
+    "dependencies": {
+        "firebase-admin": "^4.1.1",
+        "firebase-functions": "^0.5.1"
+    }
+}
