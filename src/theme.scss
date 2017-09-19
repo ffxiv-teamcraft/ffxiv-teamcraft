@@ -1,12 +1,24 @@
 @import '../node_modules/@angular/material/_theming.scss';
 
 @include mat-core();
+
+
+// Custom mixins for theming
+@mixin theme-background($theme) {
+    $accent: map-get($theme, accent);
+
+    .user-box {
+        background: mat-color($accent);
+    }
+}
+
+
 $dark-primary: mat-palette($mat-orange, 800);
 $dark-accent: mat-palette($mat-light-blue, 600, 100, 800);
 $dark-warn: mat-palette($mat-red, 600);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 @include angular-material-theme($dark-theme);
-
+@include theme-background($dark-theme);
 
 $light-primary: mat-palette($mat-teal);
 $light-accent: mat-palette($mat-deep-orange);
@@ -16,6 +28,7 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
 // Light theme class
 .light-theme {
     @include angular-material-theme($light-theme);
+    @include theme-background($light-theme);
 }
 
 // Responsive breakpoint mixin/definitions
