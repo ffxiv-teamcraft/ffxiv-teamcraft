@@ -48,8 +48,17 @@
                 <a md-list-item routerLink="/recipes" (click)="sidenav.close()">{{'Recipes' | translate}}</a>
                 <a md-list-item routerLink="/lists" (click)="sidenav.close()">{{'Lists' | translate}}</a>
             </md-nav-list>
-            <md-slide-toggle class="theme-switch" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme</md-slide-toggle>
+            <md-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
+            </md-slide-toggle>
             <div class="spacer"></div>
+            <div class="sidebar-element social-icons">
+                <a target="_blank" href="https://discord.gg/r6qxt6P" md-icon-button><img
+                    class="icon"
+                    src="https://camo.githubusercontent.com/8593f18483b8bc603725d988c3fba1d728bc27d4/68747470733a2f2f646973636f72646170702e636f6d2f6173736574732f32633231616564613136646533353462613533333435353161383833623438312e706e67"
+                    alt="discord"></a>
+                <a target="_blank" href="https://www.facebook.com/FFXIVTeamcraft/" md-icon-button><img class="icon" src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" alt="facebook"></a>
+                <a target="_blank" href="https://github.com/supamiu/ffxiv-teamcraft" md-icon-button><img class="icon" src="https://github.com/fluidicon.png" alt="Github"></a>
+            </div>
             <a md-raised-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </md-sidenav>

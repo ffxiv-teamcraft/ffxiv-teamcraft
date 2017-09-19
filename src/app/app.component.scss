@@ -25,8 +25,16 @@
             min-width: 200px;
             display: flex;
             flex-direction: column;
-            .theme-switch {
+            .sidebar-element {
                 padding: 20px;
+            }
+            .social-icons{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .icon {
+                    width: 32px;
+                }
             }
             .user-box {
                 background: mat-color(map-get($dark-theme, accent));
