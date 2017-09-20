@@ -13,9 +13,9 @@
             <img *ngFor="let masterbook of getMasterBooks(item)"
                  md-list-avatar
                  src="{{masterbook.icon}}"
-                 mdTooltip="{{this.getName(masterbook)}}"
+                 mdTooltip="{{getName(masterbook)}}"
                  mdTooltipPosition="above"
-                 alt="{{this.getName(masterbook)}}">
+                 alt="{{getName(masterbook)}}">
         </div>
         <div class="done">
             <md-input-container class="amount">
