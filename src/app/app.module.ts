@@ -30,7 +30,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ConfirmationPopupComponent} from './component/popup/confirmation-popup/confirmation-popup.component';
 import {RouterModule, Routes} from '@angular/router';
-import {ListComponent} from './component/list/list.component';
+import {ListDetailsComponent} from './component/list-details/list-details.component';
 import {ItemComponent} from './component/item/item.component';
 import {ListNamePopupComponent} from './component/popup/list-name-popup/list-name-popup.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -49,6 +49,7 @@ import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
 import { CeilPipe } from './pipe/ceil.pipe';
+import { ListComponent } from './component/list/list.component';
 
 const routes: Routes = [
     {
@@ -61,8 +62,8 @@ const routes: Routes = [
         component: RecipesComponent
     },
     {
-        path: 'list/:uid/:listId',
-        component: ListComponent
+        path: 'list-details/:uid/:listId',
+        component: ListDetailsComponent
     },
     {
         path: 'lists',
@@ -80,7 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RecipesComponent,
         ListsComponent,
         ConfirmationPopupComponent,
-        ListComponent,
+        ListDetailsComponent,
         ItemComponent,
         ListNamePopupComponent,
         GatheredByPopupComponent,
@@ -93,6 +94,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RegisterPopupComponent,
         CharacterAddPopupComponent,
         CeilPipe,
+        ListComponent,
     ],
     imports: [
         TranslateModule.forRoot({

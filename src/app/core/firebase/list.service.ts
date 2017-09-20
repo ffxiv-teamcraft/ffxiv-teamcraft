@@ -20,8 +20,8 @@ export class ListService extends StoredDataService<List> {
     }
 
     /**
-     * Gets the router path for a given list (useful to share lists)
-     * @param uid The uid of the list
+     * Gets the router path for a given list-details (useful to share lists)
+     * @param uid The uid of the list-details
      * @returns {Observable<R>}
      */
     public getRouterPath(uid: string): Observable<string[]> {
@@ -31,10 +31,10 @@ export class ListService extends StoredDataService<List> {
     }
 
     /**
-     * Gets an external list (one that doesn't belong to the current user)
+     * Gets an external list-details (one that doesn't belong to the current user)
      *
      * @param uuid The user uid
-     * @param uid The list uid
+     * @param uid The list-details uid
      */
     public getUserList(uuid: string, uid: string): Observable<List> {
         return this.firebase.object(`/users/${uuid}/lists/${uid}`).map(list => this.serializer.deserialize<List>(list, List));

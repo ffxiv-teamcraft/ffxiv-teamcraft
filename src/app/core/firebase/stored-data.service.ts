@@ -32,7 +32,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
     }
 
     /**
-     * Gets the list of items in this base uri.
+     * Gets the list-details of items in this base uri.
      *
      * @returns {Observable<R>}
      */
@@ -49,7 +49,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
     }
 
     /**
-     * Pushes an item in the database list.
+     * Pushes an item in the database list-details.
      *
      * @param item
      * @returns {firebase.database.ThenableReference}
