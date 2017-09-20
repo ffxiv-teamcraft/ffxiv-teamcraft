@@ -1,0 +1,10 @@
+<md-list-item>
+    <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">
+    <h3 md-line>{{getName(recipe.name)}}</h3>
+    <md-input-container class="amount">
+        <input mdInput type="number" [ngModel]="recipe.amount" #amount min="1">
+    </md-input-container>
+    <button md-mini-fab (click)="delete()">
+        <md-icon>delete</md-icon>
+    </button>
+</md-list-item>

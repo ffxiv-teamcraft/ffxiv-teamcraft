@@ -26,17 +26,11 @@
             </div>
         </md-expansion-panel-header>
         <md-list>
-            <md-list-item *ngFor="let recipe of list.recipes">
-                <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">
-                <h3 md-line>{{getName(recipe.name)}}</h3>
-                <md-input-container class="amount">
-                    <input mdInput type="number" [ngModel]="recipe.amount"
-                           (ngModelChange)="updateAmount(recipe, list, list.$key, $event)" min="1">
-                </md-input-container>
-                <button md-mini-fab (click)="removeRecipe(recipe, list, list.$key)">
-                    <md-icon>delete</md-icon>
-                </button>
-            </md-list-item>
+            <app-recipe *ngFor="let recipe of list.recipes"
+                        [recipe]="recipe"
+                        (ondelete)="removeRecipe(recipe, list, list.$key)"
+                        (onedit)="updateAmount(recipe, list, list.$key, $event)">
+            </app-recipe>
         </md-list>
     </md-expansion-panel>
 </div>

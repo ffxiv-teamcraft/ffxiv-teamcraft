@@ -49,7 +49,7 @@ import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
 import { CeilPipe } from './pipe/ceil.pipe';
-import { ListComponent } from './component/list/list.component';
+import { RecipeComponent } from './component/recipe/recipe.component';
 
 const routes: Routes = [
     {
@@ -62,7 +62,7 @@ const routes: Routes = [
         component: RecipesComponent
     },
     {
-        path: 'list-details/:uid/:listId',
+        path: 'list/:uid/:listId',
         component: ListDetailsComponent
     },
     {
@@ -94,7 +94,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RegisterPopupComponent,
         CharacterAddPopupComponent,
         CeilPipe,
-        ListComponent,
+        RecipeComponent,
     ],
     imports: [
         TranslateModule.forRoot({
