@@ -12,6 +12,7 @@ import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';
 import {ListService} from '../../core/firebase/list.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-list',
@@ -47,10 +48,10 @@ export class ListComponent implements OnInit {
 
     private filterTrigger = new Subject<void>();
 
-    constructor(private auth: AngularFireAuth,
-                private route: ActivatedRoute,
+    constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MdDialog, private i18n: I18nToolsService,
-                private userService: UserService, private listService: ListService) {
+                private userService: UserService, private listService: ListService,
+                private title: Title) {
     }
 
     public getUser(): Observable<User> {
@@ -114,7 +115,9 @@ export class ListComponent implements OnInit {
                         }
                     });
                     return list;
-                }).subscribe(l => this.list = l, err => console.error(err));
+                })
+                .do(l => this.title.setTitle(`${l.name}`))
+                .subscribe(l => this.list = l, err => console.error(err));
         });
         this.triggerFilter();
         this.auth.idToken.subscribe(user => {
