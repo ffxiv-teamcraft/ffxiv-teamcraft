@@ -31,11 +31,34 @@ export class DataService {
 
     public searchRecipe(query: string): Observable<Recipe[]> {
         return this.getXivdb(`/search?string=${query}&one=items&language=${this.i18n.currentLang}`)
-            .map(results => {
+            .mergeMap((res: any) => {
+                const pages = [];
+                if (res.items.paging.total === 1) {
+                    return Observable.of(res);
+                }
+                for (let p = 2; p < res.items.paging.total; p++) {
+                    pages.push(
+                        // First we create a dummy Observable
+                        Observable.of({})
+                        // Then we add a delay for xivdb
+                            .delay((p - 2) * 200)
+                            // And we finaly do the request for the next page
+                            .mergeMap(() => this.getXivdb(`/search?string=${query}&one=items&language=${this.i18n.currentLang}&page=${p}`))
+                    );
+                }
+                return Observable.combineLatest(...pages, (...pagesContent: any[]) => {
+                    for (const pageContent of pagesContent) {
+                        res.items.results.push(...pageContent.items.results);
+                    }
+                    return res;
+                });
+            })
+            .map((results: any) => {
                 return results.items.results.filter(i => {
                     return this.gt.getItem(i.id).f === 1;
                 });
-            }).mergeMap(results => {
+            })
+            .mergeMap(results => {
                 const recipes: Observable<any>[] = [];
                 results.forEach(item => {
                     recipes.push(this.getItem(item.id));

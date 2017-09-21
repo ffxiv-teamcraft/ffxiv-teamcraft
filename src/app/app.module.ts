@@ -15,7 +15,7 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule,
+    MdPaginatorModule, MdProgressSpinnerModule,
     MdSidenavModule, MdSlideToggleModule,
     MdSnackBarModule,
     MdToolbarModule,
@@ -132,6 +132,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdGridListModule,
         MdCheckboxModule,
         MdSlideToggleModule,
+        MdProgressSpinnerModule,
 
         BrowserModule,
         FormsModule,

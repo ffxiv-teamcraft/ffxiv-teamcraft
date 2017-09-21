@@ -6,10 +6,11 @@
 </div>
 <md-divider></md-divider>
 <md-list>
-    <div *ngIf="recipes.length === 0 || recipes === null">
+    <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
         <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>
     </div>
-    <div *ngIf="recipes.length > 0">
+    <div *ngIf="loading" class="loading"><md-spinner></md-spinner></div>
+    <div *ngIf="recipes.length > 0 && !loading">
         <md-list-item *ngFor="let recipe of recipes">
             <a md-list-avatar href="{{getName(recipe.url_xivdb)}}" target="_blank">
                 <img md-list-avatar src="{{recipe.icon}}" alt="{{getName(recipe.name)}}">

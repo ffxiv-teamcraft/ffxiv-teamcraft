@@ -28,6 +28,8 @@ export class RecipesComponent implements OnInit {
 
     lists: Observable<List[]> = this.listService.getAll();
 
+    loading = false;
+
     constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MdSnackBar, private dialog: MdDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
@@ -39,13 +41,18 @@ export class RecipesComponent implements OnInit {
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
+            .do(() => this.loading = true)
             .mergeMap(() => {
                 const filter = this.filter.nativeElement.value;
                 if (filter === '') {
                     return Observable.of([]);
                 }
                 return this.db.searchRecipe(filter);
-            }).subscribe(results => this.recipes = results);
+            })
+            .subscribe(results => {
+                this.recipes = results;
+                this.loading = false;
+            });
     }
 
     getJob(id: number): any {
