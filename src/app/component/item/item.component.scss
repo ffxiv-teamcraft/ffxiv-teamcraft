@@ -40,16 +40,21 @@
             justify-content: flex-end;
 
             > div {
-                padding: 0 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
             }
         }
     }
 
     .done {
         text-align: center;
+        md-input-container .mat-form-field {
+            width: auto;
+        }
     }
     .done-check {
-        min-width: 35px;
+        min-width: 40px;
         text-align: center;
     }
     .masterbook {

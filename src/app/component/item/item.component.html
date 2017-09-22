@@ -19,8 +19,11 @@
         </div>
         <div class="done">
             <md-input-container class="amount">
-                <input mdInput type="number" [ngModel]="item.done | ceil"
-                       #doneInput min="0" max="{{item.amount | ceil}}">
+                <input mdInput type="number"
+                       [ngModel]="item.done | ceil"
+                       #doneInput min="0"
+                       max="{{item.amount | ceil}}"
+                       maxlength="{{(item.amount | ceil).toString().length}}">
                 <span mdSuffix>/{{item.amount | ceil}}</span>
             </md-input-container>
         </div>
