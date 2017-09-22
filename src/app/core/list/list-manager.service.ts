@@ -54,7 +54,8 @@ export class ListManagerService {
                                 const precrafts = [];
                                 l.preCrafts.forEach(craft => {
                                     if (craft.craftedBy === undefined) {
-                                        precrafts.push(data.getIngredient(craft.id).getCraftedBy(this.htmlTools, this.db, this.gt, this.i18n));
+                                        precrafts.push(data.getIngredient(craft.id)
+                                            .getCraftedBy(this.htmlTools, this.db, this.gt, this.i18n));
                                     }
                                 });
                                 if (precrafts.length > 0) {

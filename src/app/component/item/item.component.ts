@@ -12,6 +12,7 @@ import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendo
 import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
 import {DataService} from '../../core/api/data.service';
+import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -87,6 +88,12 @@ export class ItemComponent implements OnInit {
 
     public openDesynthDetails(item: ListRow): void {
         this.dialog.open(DesynthPopupComponent, {
+            data: item
+        });
+    }
+
+    public openReductionDetails(item: ListRow): void {
+        this.dialog.open(ReductionDetailsPopupComponent, {
             data: item
         });
     }

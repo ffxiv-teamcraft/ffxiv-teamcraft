@@ -80,10 +80,12 @@
                 </button>
             </div>
             <div *ngIf="item.reducedFrom !== undefined">
-                <img class="icon" *ngFor="let reduction of item.reducedFrom"
-                     mdTooltip="{{getI18n(reduction)}}"
+                <button md-icon-button (click)="openReductionDetails(item)">
+                <img class="icon"
+                     mdTooltip="{{'Reduction' | translate}}"
                      mdTooltipPosition="above"
                      src="https://www.garlandtools.org/db/images/Reduce.png">
+                </button>
             </div>
             <div *ngIf="item.desynths !== undefined">
                 <button md-icon-button (click)="openDesynthDetails(item)">

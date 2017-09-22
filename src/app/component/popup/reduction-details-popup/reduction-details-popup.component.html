@@ -1,0 +1,8 @@
+<h2 md-dialog-title>{{getName(data.name)}}</h2>
+<div md-dialog-content>
+    <md-list>
+        <md-list-item *ngFor="let reduction of data.reducedFrom">
+            <h3>{{getName(reduction)}}</h3>
+        </md-list-item>
+    </md-list>
+</div>

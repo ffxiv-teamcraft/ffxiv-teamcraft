@@ -50,6 +50,7 @@ import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
 import { CeilPipe } from './pipe/ceil.pipe';
 import { RecipeComponent } from './component/recipe/recipe.component';
+import { ReductionDetailsPopupComponent } from './component/popup/reduction-details-popup/reduction-details-popup.component';
 
 const routes: Routes = [
     {
@@ -95,6 +96,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CharacterAddPopupComponent,
         CeilPipe,
         RecipeComponent,
+        ReductionDetailsPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -156,6 +158,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         LoginPopupComponent,
         RegisterPopupComponent,
         CharacterAddPopupComponent,
+        ReductionDetailsPopupComponent,
     ],
     providers: [
         UserService,
