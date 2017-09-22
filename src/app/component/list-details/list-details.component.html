@@ -86,7 +86,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <md-list>
+    <md-list dense>
         <div *ngFor="let gather of list?.gathers">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
                       [item]="gather"></app-item>
@@ -98,7 +98,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Other'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <md-list>
+    <md-list dense>
         <div *ngFor="let other of list?.others">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!other.hidden"
                       [item]="other"></app-item>
@@ -110,7 +110,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <md-list>
+    <md-list dense>
         <div *ngFor="let preCraft of list?.preCrafts">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
                       [item]="preCraft"></app-item>
@@ -122,7 +122,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Items'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <md-list>
+    <md-list dense>
         <div *ngFor="let recipe of list?.recipes">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!recipe.hidden"
                       [item]="recipe"></app-item>
