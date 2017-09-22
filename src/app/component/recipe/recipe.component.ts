@@ -7,7 +7,7 @@ import {I18nToolsService} from '../../core/i18n-tools.service';
 @Component({
     selector: 'app-recipe',
     templateUrl: './recipe.component.html',
-    styleUrls: ['./recipe.component.css']
+    styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
 

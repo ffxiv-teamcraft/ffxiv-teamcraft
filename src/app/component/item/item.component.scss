@@ -49,8 +49,8 @@
 
     .done {
         text-align: center;
-        md-input-container .mat-form-field {
-            width: auto;
+        md-input-container {
+            width: auto !important;
         }
     }
     .done-check {

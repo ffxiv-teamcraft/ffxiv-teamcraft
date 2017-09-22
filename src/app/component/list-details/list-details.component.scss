@@ -25,6 +25,9 @@ md-expansion-panel {
 .filters {
     display: flex;
     flex-direction: column;
+    md-input-container {
+        width: auto !important;
+    }
     .class-filters {
         display: flex;
         flex-wrap: wrap;
