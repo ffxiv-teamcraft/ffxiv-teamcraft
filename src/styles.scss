@@ -1,14 +1,14 @@
 @import './theme.scss';
 
 html, body {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-  background: map-get(map-get($dark-theme, background), background);
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: map-get(map-get($dark-theme, background), background);
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .snack {
@@ -17,4 +17,8 @@ body {
 
 .snack-warn {
     background-color: mat-color(map-get($dark-theme, warn)) !important;
+}
+
+.mat-content {
+    align-items: center;
 }
