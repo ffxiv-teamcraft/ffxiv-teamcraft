@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.1.3...v1.2.0) (2017-09-23)
+
+
+### Bug Fixes
+
+* bad amount for done with multiple items crafts ([96784c8](https://github.com/Supamiu/ffxiv-teamcraft/commit/96784c8))
+* bad locale setting for non fr, en or de locales ([fffae17](https://github.com/Supamiu/ffxiv-teamcraft/commit/fffae17)), closes [#24](https://github.com/Supamiu/ffxiv-teamcraft/issues/24)
+* broken links in EN list view ([41c6954](https://github.com/Supamiu/ffxiv-teamcraft/commit/41c6954)), closes [#15](https://github.com/Supamiu/ffxiv-teamcraft/issues/15)
+* character search issue ([d5cf160](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5cf160)), closes [#12](https://github.com/Supamiu/ffxiv-teamcraft/issues/12)
+* character search issue, second pass ([49a3ce9](https://github.com/Supamiu/ffxiv-teamcraft/commit/49a3ce9)), closes [#12](https://github.com/Supamiu/ffxiv-teamcraft/issues/12)
+* empty result after not empty one is shown properly ([d629b50](https://github.com/Supamiu/ffxiv-teamcraft/commit/d629b50)), closes [#25](https://github.com/Supamiu/ffxiv-teamcraft/issues/25)
+* input field state after sumbmit is now correct ([7a0095a](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a0095a)), closes [#28](https://github.com/Supamiu/ffxiv-teamcraft/issues/28)
+* recipes yielding more than one items are handled properly ([8793226](https://github.com/Supamiu/ffxiv-teamcraft/commit/8793226)), closes [#27](https://github.com/Supamiu/ffxiv-teamcraft/issues/27)
+* related renamed to ingredients ([283402b](https://github.com/Supamiu/ffxiv-teamcraft/commit/283402b))
+* typos in fr translations ([23626fe](https://github.com/Supamiu/ffxiv-teamcraft/commit/23626fe))
+* wrong color for theme in lists view ([1b1bbf4](https://github.com/Supamiu/ffxiv-teamcraft/commit/1b1bbf4))
+
+
+### Features
+
+* add multiple themes support with new light theme ([e5a3038](https://github.com/Supamiu/ffxiv-teamcraft/commit/e5a3038))
+* add popup for reduction details ([a7ba553](https://github.com/Supamiu/ffxiv-teamcraft/commit/a7ba553))
+* add realtime list counter ([69f08ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/69f08ef))
+* add social buttons and some ads-related stuff ([6b6e1af](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b6e1af))
+* add support for big result sets + loading spinner ([f206f01](https://github.com/Supamiu/ffxiv-teamcraft/commit/f206f01)), closes [#35](https://github.com/Supamiu/ffxiv-teamcraft/issues/35)
+* add title change on list view ([eb8db20](https://github.com/Supamiu/ffxiv-teamcraft/commit/eb8db20))
+* point recipe links directly to the item page ([ebc3516](https://github.com/Supamiu/ffxiv-teamcraft/commit/ebc3516)), closes [#15](https://github.com/Supamiu/ffxiv-teamcraft/issues/15)
+
+
+### Reverts
+
+* hand-made revert of last commit ([1606d93](https://github.com/Supamiu/ffxiv-teamcraft/commit/1606d93))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.1.2...v1.1.3) (2017-09-06)
 
