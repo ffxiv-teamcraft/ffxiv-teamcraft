@@ -1,7 +1,7 @@
 <h2 md-dialog-title>{{getName(data.name)}}</h2>
 <div md-dialog-content>
     <md-list *ngFor="let tradeSource of data.tradeSources">
-        <h3 md-subheader>{{tradeSource.npcName}} - {{getName(tradeSource.zoneName)}}</h3>
+        <h3 md-subheader>{{getName(tradeSource.npcName)}} - {{getName(tradeSource.zoneName)}}</h3>
         <md-list-item *ngFor="let trade of tradeSource.trades">
             <div class="trade-part">
                 <img src="{{trade.currencyIcon}}" class="currency">

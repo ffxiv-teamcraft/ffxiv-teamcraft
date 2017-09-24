@@ -76,7 +76,7 @@ export class ListManagerService {
                                 list.forEachItem(item => {
                                     const related = data.getIngredient(item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
-                                        trades.push(related.getTradeSources(this.db, this.gt).map(ts => {
+                                        trades.push(related.getTradeSources(this.db, this.gt, this.i18n).map(ts => {
                                             return {item: item, tradeSources: ts};
                                         }));
                                     }
@@ -97,7 +97,7 @@ export class ListManagerService {
                                 list.forEachItem(item => {
                                     const related = data.getIngredient(item.id);
                                     if (related !== undefined && related.vendors !== undefined) {
-                                        vendors.push(related.getVendors(this.db, this.gt).map(ts => {
+                                        vendors.push(related.getVendors(this.db, this.gt, this.i18n).map(ts => {
                                             return {item: item, vendors: ts};
                                         }));
                                     }

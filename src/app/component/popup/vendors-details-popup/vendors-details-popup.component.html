@@ -3,7 +3,7 @@
     <md-list>
         <md-list-item *ngFor="let vendor of data.vendors">
             <md-icon md-list-icon>location_on</md-icon>
-            <b md-line>{{vendor.npcName}}</b>
+            <b md-line>{{getName(vendor.npcName)}}</b>
             <i md-line>
                 {{getName(vendor.zoneName)}}
             </i>

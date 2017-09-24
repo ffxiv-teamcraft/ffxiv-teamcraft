@@ -97,18 +97,18 @@ export class Item implements I18nData {
         return Observable.combineLatest(result);
     }
 
-    public getTradeSources(db: DataService, gt: GarlandToolsService): Observable<TradeSource[]> {
+    public getTradeSources(db: DataService, gt: GarlandToolsService, i18n: I18nToolsService): Observable<TradeSource[]> {
         const tradeSources: Observable<TradeSource> [] = [];
         for (const ts of Object.keys(this.tradeSources)) {
             const tradeObs = Observable
                 .of({
-                    npcName: '',
+                    npcName: {fr: '', de: '', en: '', ja: ''},
                     zoneName: {fr: '', de: '', en: '', ja: ''}
                 })
                 .mergeMap((tradeSource: TradeSource) => {
                     return db.getNpc(+ts)
                         .map(data => {
-                            tradeSource.npcName = data.npc.name;
+                            tradeSource.npcName = i18n.createI18nName(data.npc);
                             if (data.npc.zoneid === undefined) {
                                 return undefined;
                             }
@@ -161,17 +161,17 @@ export class Item implements I18nData {
         });
     }
 
-    public getVendors(db: DataService, gt: GarlandToolsService): Observable<Vendor[]> {
+    public getVendors(db: DataService, gt: GarlandToolsService, i18n: I18nToolsService): Observable<Vendor[]> {
         const vendors: Observable<Vendor> [] = [];
         for (const id of this.vendors) {
             const vendorObs: Observable<Vendor> = Observable
                 .of({
-                    npcName: '',
+                    npcName: {fr: '', de: '', en: '', ja: ''},
                     zoneName: {fr: '', de: '', en: '', ja: ''}
                 }).mergeMap((vendor: Vendor) => {
                     return db.getNpc(+id)
                         .map(data => {
-                            vendor.npcName = data.npc.name;
+                            vendor.npcName = i18n.createI18nName(data.npc);
                             if (data.npc.zoneid === undefined) {
                                 return undefined;
                             }
