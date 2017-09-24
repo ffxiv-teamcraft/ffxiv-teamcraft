@@ -12,7 +12,7 @@
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="row" *ngFor="let list of lists | async">
-    <md-expansion-panel [expanded]="true">
+    <md-expansion-panel [expanded]="expanded === list.$key" (opened)="expanded = list.$key">
         <md-expansion-panel-header>
             <md-panel-title>
                 {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>

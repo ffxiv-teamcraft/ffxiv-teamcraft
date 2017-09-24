@@ -26,6 +26,8 @@ export class ListsComponent implements OnInit {
 
     @ViewChild('f') myNgForm;
 
+    expanded: string;
+
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
                 private i18n: I18nToolsService, private listService: ListService) {
