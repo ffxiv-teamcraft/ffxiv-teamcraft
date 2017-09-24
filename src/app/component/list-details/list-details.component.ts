@@ -145,6 +145,10 @@ export class ListDetailsComponent implements OnInit {
         });
     }
 
+    public save(): void {
+        console.log('saved');
+    }
+
     public getName(entry: I18nName): string {
         return this.i18n.getName(entry);
     }
