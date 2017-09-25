@@ -152,9 +152,6 @@ export class List extends FirebaseDataModel {
                         });
                         // If adding a requirement doesn't add a craft (like if you need another 0.3
                         // of this item but it doesn't make 2 crafts).
-                        if (preCraft !== undefined) {
-                            console.log(preCraft.amount, amount);
-                        }
                         if (preCraft !== undefined && MathTools.round(preCraft.amount + amount) === MathTools.round(preCraft.amount)) {
                             continue;
                         }
