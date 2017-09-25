@@ -46,8 +46,9 @@ export class ListsComponent implements OnInit {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
-                this.listService.remove(listKey);
-                this.title.setTitle('Teamcraft');
+                this.listService.remove(listKey).then(() => {
+                    this.title.setTitle('Teamcraft');
+                });
             }
         });
     }
