@@ -41,6 +41,7 @@ export class RecipeComponent implements OnInit {
             .map(() => {
                 return this.amount.nativeElement.value;
             })
+            .filter(value => value > 0)
             .subscribe(value => {
                 this.onedit.emit(value);
             });
