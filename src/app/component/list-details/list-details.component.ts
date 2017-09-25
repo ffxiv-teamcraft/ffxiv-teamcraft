@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
@@ -19,7 +19,7 @@ import {Title} from '@angular/platform-browser';
     templateUrl: './list-details.component.html',
     styleUrls: ['./list-details.component.scss']
 })
-export class ListDetailsComponent implements OnInit {
+export class ListDetailsComponent implements OnInit, OnDestroy {
 
     listObj: Observable<List>;
 
@@ -123,6 +123,10 @@ export class ListDetailsComponent implements OnInit {
         this.auth.idToken.subscribe(user => {
             this.user = user;
         });
+    }
+
+    ngOnDestroy(): void {
+        this.title.setTitle('Teamcraft');
     }
 
     update(): void {
