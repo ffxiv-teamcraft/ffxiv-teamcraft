@@ -53,13 +53,11 @@ export class DataService {
                     return res;
                 });
             })
-            .do(() => console.log('Step 1'))
             .map((results: any) => {
                 return results.items.results.filter(i => {
                     return this.gt.getItem(i.id).f === 1;
                 });
             })
-            .do(() => console.log('Step 2'))
             .mergeMap(results => {
                 const recipes: Observable<any>[] = [];
                 results.forEach(item => {
