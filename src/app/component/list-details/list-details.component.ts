@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
@@ -7,7 +7,6 @@ import {ListRow} from '../../model/list/list-row';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';
@@ -19,7 +18,7 @@ import {Title} from '@angular/platform-browser';
     templateUrl: './list-details.component.html',
     styleUrls: ['./list-details.component.scss']
 })
-export class ListDetailsComponent implements OnInit {
+export class ListDetailsComponent implements OnInit, OnDestroy {
 
     listObj: Observable<List>;
 
@@ -125,6 +124,10 @@ export class ListDetailsComponent implements OnInit {
         });
     }
 
+    ngOnDestroy(): void {
+        this.title.setTitle('Teamcraft');
+    }
+
     update(): void {
         this.listService.update(this.listUid, this.list);
     }
@@ -143,9 +146,5 @@ export class ListDetailsComponent implements OnInit {
                 }
             }
         });
-    }
-
-    public getName(entry: I18nName): string {
-        return this.i18n.getName(entry);
     }
 }

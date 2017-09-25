@@ -33,7 +33,7 @@ export class DataService {
         return this.getXivdb(`/search?string=${query}&one=items&language=${this.i18n.currentLang}`)
             .mergeMap((res: any) => {
                 const pages = [];
-                if (res.items.paging.total === 1) {
+                if (res.items.paging.total === 1 || res.items.paging.total === 0) {
                     return Observable.of(res);
                 }
                 for (let p = 2; p < res.items.paging.total; p++) {
@@ -53,11 +53,13 @@ export class DataService {
                     return res;
                 });
             })
+            .do(() => console.log('Step 1'))
             .map((results: any) => {
                 return results.items.results.filter(i => {
                     return this.gt.getItem(i.id).f === 1;
                 });
             })
+            .do(() => console.log('Step 2'))
             .mergeMap(results => {
                 const recipes: Observable<any>[] = [];
                 results.forEach(item => {

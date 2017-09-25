@@ -15,8 +15,10 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule, MdProgressSpinnerModule,
-    MdSidenavModule, MdSlideToggleModule,
+    MdPaginatorModule,
+    MdProgressSpinnerModule,
+    MdSidenavModule,
+    MdSlideToggleModule,
     MdSnackBarModule,
     MdToolbarModule,
     MdTooltipModule
@@ -48,9 +50,10 @@ import {UserService} from './core/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
-import { CeilPipe } from './pipe/ceil.pipe';
-import { RecipeComponent } from './component/recipe/recipe.component';
-import { ReductionDetailsPopupComponent } from './component/popup/reduction-details-popup/reduction-details-popup.component';
+import {CeilPipe} from './pipe/ceil.pipe';
+import {RecipeComponent} from './component/recipe/recipe.component';
+import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
+import {I18nPipe} from './pipe/i18n.pipe';
 
 const routes: Routes = [
     {
@@ -97,6 +100,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CeilPipe,
         RecipeComponent,
         ReductionDetailsPopupComponent,
+        I18nPipe,
     ],
     imports: [
         TranslateModule.forRoot({

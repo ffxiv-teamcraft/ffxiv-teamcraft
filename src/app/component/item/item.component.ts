@@ -13,6 +13,7 @@ import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
+import {MathTools} from '../../tools/math-tools';
 
 @Component({
     selector: 'app-item',
@@ -46,7 +47,7 @@ export class ItemComponent implements OnInit {
                 return this.doneInput.nativeElement.value;
             })
             .subscribe(value => {
-                this.setDone(this.item, value - Math.ceil(this.item.done));
+                this.setDone(this.item, value - MathTools.absoluteCeil(this.item.done));
             });
     }
 
@@ -64,10 +65,6 @@ export class ItemComponent implements OnInit {
 
     public setDone(row: ListRow, amount: number) {
         this.done.emit({row: row, amount: amount});
-    }
-
-    public getName(item: ListRow) {
-        return this.i18n.getName(item.name);
     }
 
     public getI18n(name: I18nName) {
@@ -117,7 +114,7 @@ export class ItemComponent implements OnInit {
     }
 
     public getXivdbLink(item: ListRow): string {
-        const name = this.getName(item);
+        const name = this.i18n.getName(item.name);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
     }
