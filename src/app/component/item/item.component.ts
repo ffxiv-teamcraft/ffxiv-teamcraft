@@ -66,10 +66,6 @@ export class ItemComponent implements OnInit {
         this.done.emit({row: row, amount: amount});
     }
 
-    public getName(item: ListRow) {
-        return this.i18n.getName(item.name);
-    }
-
     public getI18n(name: I18nName) {
         return this.i18n.getName(name);
     }
@@ -117,7 +113,7 @@ export class ItemComponent implements OnInit {
     }
 
     public getXivdbLink(item: ListRow): string {
-        const name = this.getName(item);
+        const name = this.i18n.getName(item.name);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
     }

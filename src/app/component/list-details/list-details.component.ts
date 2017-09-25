@@ -7,7 +7,6 @@ import {ListRow} from '../../model/list/list-row';
 import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';
@@ -147,9 +146,5 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 }
             }
         });
-    }
-
-    public getName(entry: I18nName): string {
-        return this.i18n.getName(entry);
     }
 }
