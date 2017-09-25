@@ -9,6 +9,7 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {ListService} from '../../core/firebase/list.service';
 import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../tools/math-tools';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-lists',
@@ -27,7 +28,7 @@ export class ListsComponent implements OnInit {
 
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
-                private listService: ListService) {
+                private listService: ListService, private title: Title) {
     }
 
     createNewList(): void {
@@ -46,6 +47,7 @@ export class ListsComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 this.listService.remove(listKey);
+                this.title.setTitle('Teamcraft');
             }
         });
     }
