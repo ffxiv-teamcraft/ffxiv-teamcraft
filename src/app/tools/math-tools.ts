@@ -17,6 +17,9 @@ export class MathTools {
     public static round(n: number): number {
         const rounded = Math.round(n * MathTools.PRECISION) / MathTools.PRECISION;
         // We have to handle /3 fraction by ourselves, this check is here for that
-        return Math.abs(rounded % 1) === 0.999999 ? Math.round(rounded) : rounded;
+        if (Math.abs(rounded % 1) === 0.999999 || Math.abs(rounded % 1) === 0.000001) {
+            return Math.round(rounded);
+        }
+        return rounded;
     }
 }

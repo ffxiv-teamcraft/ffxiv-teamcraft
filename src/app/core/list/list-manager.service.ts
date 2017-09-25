@@ -48,7 +48,7 @@ export class ListManagerService {
                                 return list.addCraft([{
                                     item: data.item,
                                     data: data,
-                                    amount: MathTools.absoluteCeil(amount / toAdd.yield)
+                                    amount: MathTools.round(amount / toAdd.yield)
                                 }], this.gt, this.i18n);
                             })
                             .mergeMap(l => {

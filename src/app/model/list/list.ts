@@ -51,6 +51,7 @@ export class List extends FirebaseDataModel {
         if (row === undefined) {
             array.push(data);
         } else {
+            console.log(row.amount, data.amount, MathTools.round(row.amount + data.amount));
             row.amount = MathTools.round(row.amount + data.amount);
             if (row.amount < 0) {
                 row.amount = 0;
