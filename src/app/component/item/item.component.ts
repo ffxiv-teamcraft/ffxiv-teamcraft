@@ -47,7 +47,7 @@ export class ItemComponent implements OnInit {
                 return this.doneInput.nativeElement.value;
             })
             .subscribe(value => {
-                this.setDone(this.item, value - MathTools.round(this.item.done));
+                this.setDone(this.item, value - MathTools.absoluteCeil(this.item.done));
             });
     }
 

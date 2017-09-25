@@ -22,7 +22,7 @@ export class RecipeComponent implements OnInit {
     @Input()
     recipe: Recipe;
 
-    constructor(private i18n: I18nToolsService) {
+    constructor() {
     }
 
     public delete(): void {

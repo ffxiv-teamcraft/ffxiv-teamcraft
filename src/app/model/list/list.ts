@@ -45,20 +45,20 @@ export class List extends FirebaseDataModel {
     }
 
     private add(array: ListRow[], data: ListRow): ListRow {
-        const row = array.filter(r => {
+        const row = array.find(r => {
             return r.id === data.id;
         });
-        if (row.length === 0) {
+        if (row === undefined) {
             array.push(data);
         } else {
-            row[0].amount += data.amount;
-            if (row[0].amount < 0) {
-                row[0].amount = 0;
+            row.amount = MathTools.round(row.amount + data.amount);
+            if (row.amount < 0) {
+                row.amount = 0;
             }
         }
-        return array.filter((r) => {
+        return array.find((r) => {
             return r.id === data.id;
-        })[0];
+        });
     }
 
     public clean(): List {
@@ -103,7 +103,7 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, MathTools.round(requirement.amount * amount) / requirementItem.yield);
+                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount) / requirementItem.yield);
             }
         }
     }
@@ -138,7 +138,7 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const amount = element.amount * addition.amount / yields;
+                        const amount = MathTools.round(element.amount * addition.amount / yields);
                         const preCraft = this.preCrafts.find(i => i.id === element.id);
                         this.addToPreCrafts({
                             id: elementDetails.id,
@@ -152,13 +152,14 @@ export class List extends FirebaseDataModel {
                         });
                         // If adding a requirement doesn't add a craft (like if you need another 0.3
                         // of this item but it doesn't make 2 crafts).
-                        if (preCraft !== undefined && MathTools.round(preCraft.amount + amount) === MathTools.round(preCraft.amount)) {
+                        if (preCraft !== undefined
+                            && MathTools.absoluteCeil(preCraft.amount + amount) === MathTools.absoluteCeil(preCraft.amount)) {
                             continue;
                         }
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: MathTools.round(amount)
+                            amount: MathTools.absoluteCeil(amount)
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({

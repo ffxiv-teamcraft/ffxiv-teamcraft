@@ -8,6 +8,7 @@ import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {ListService} from '../../core/firebase/list.service';
 import {Observable} from 'rxjs/Observable';
+import {MathTools} from '../../tools/math-tools';
 
 @Component({
     selector: 'app-lists',
@@ -57,7 +58,7 @@ export class ListsComponent implements OnInit {
 
     updateAmount(recipe: any, list: List, key: string, amount: number): void {
         this.listManager
-            .addToList(recipe.id, list, recipe.recipeId, amount - recipe.amount)
+            .addToList(recipe.id, list, recipe.recipeId, MathTools.round(amount - recipe.amount))
             .subscribe(resultList => this.listService.update(key, resultList));
     }
 
