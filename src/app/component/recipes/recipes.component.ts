@@ -7,7 +7,6 @@ import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.c
 import {DataService} from '../../core/api/data.service';
 import {Recipe} from '../../model/list/recipe';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
@@ -61,10 +60,6 @@ export class RecipesComponent implements OnInit {
 
     getStars(nb: number): string {
         return this.htmlTools.generateStars(nb);
-    }
-
-    getName(i18nName: I18nName): string {
-        return this.i18n.getName(i18nName);
     }
 
     addRecipe(recipe: Recipe, list: List, key: string): void {

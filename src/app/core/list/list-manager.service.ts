@@ -12,6 +12,7 @@ import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
+import {MathTools} from '../../tools/math-tools';
 
 @Injectable()
 export class ListManagerService {
@@ -47,7 +48,7 @@ export class ListManagerService {
                                 return list.addCraft([{
                                     item: data.item,
                                     data: data,
-                                    amount: Math.ceil(amount / toAdd.yield)
+                                    amount: MathTools.round(amount / toAdd.yield)
                                 }], this.gt, this.i18n);
                             })
                             .mergeMap(l => {

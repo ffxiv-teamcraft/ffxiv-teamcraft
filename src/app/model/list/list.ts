@@ -3,6 +3,8 @@ import {FirebaseDataModel} from './firebase-data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/i18n-tools.service';
+import {MathTools} from 'app/tools/math-tools';
+
 export class List extends FirebaseDataModel {
     name: string;
     recipes: ListRow[] = [];
@@ -101,7 +103,7 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, Math.ceil(requirement.amount * amount) / requirementItem.yield);
+                this.setDone(requirementItem, MathTools.round(requirement.amount * amount) / requirementItem.yield);
             }
         }
     }
@@ -149,14 +151,17 @@ export class List extends FirebaseDataModel {
                             addedAt: Date.now()
                         });
                         // If adding a requirement doesn't add a craft (like if you need another 0.3
-                        // of this item but it doesn't make 2 crafts.
-                        if (preCraft !== undefined && Math.ceil(preCraft.amount + amount) === Math.ceil(preCraft.amount)) {
+                        // of this item but it doesn't make 2 crafts).
+                        if (preCraft !== undefined) {
+                            console.log(preCraft.amount, amount);
+                        }
+                        if (preCraft !== undefined && MathTools.round(preCraft.amount + amount) === MathTools.round(preCraft.amount)) {
                             continue;
                         }
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: Math.ceil(amount)
+                            amount: MathTools.round(amount)
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({

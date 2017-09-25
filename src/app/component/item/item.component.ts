@@ -13,6 +13,7 @@ import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
+import {MathTools} from '../../tools/math-tools';
 
 @Component({
     selector: 'app-item',
@@ -46,7 +47,7 @@ export class ItemComponent implements OnInit {
                 return this.doneInput.nativeElement.value;
             })
             .subscribe(value => {
-                this.setDone(this.item, value - Math.ceil(this.item.done));
+                this.setDone(this.item, value - MathTools.round(this.item.done));
             });
     }
 
