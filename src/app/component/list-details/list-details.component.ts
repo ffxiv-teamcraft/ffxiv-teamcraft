@@ -129,7 +129,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     upgradeList(): void {
         this.listManager.upgradeList(this.list)
             .mergeMap(list => this.listService.update(this.list.$key, list))
-            .debounceTime(500)
+            .debounceTime(3000)
             .subscribe(() => {
                 this.snack.open(this.translate.instant('List_recreated'));
             });
