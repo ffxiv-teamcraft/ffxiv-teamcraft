@@ -77,7 +77,7 @@
         <div *ngIf="crystal.amount > crystal.done">
             <img class="crystal" mdTooltip="{{crystal | i18n}}" mdTooltipPosition="above"
                  src="{{crystal.icon}}" alt="{{crystal | i18n}}">
-            <div>{{crystal.amount - crystal.done}}</div>
+            <div>{{(crystal.amount - crystal.done) | ceil}}</div>
         </div>
     </div>
 </md-expansion-panel>
