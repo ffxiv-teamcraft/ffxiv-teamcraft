@@ -34,6 +34,54 @@ export class ItemComponent implements OnInit {
     @Output()
     done: EventEmitter<any> = new EventEmitter<any>();
 
+    tradeSourcePriorities = {
+        // MGP, just in case
+        5752: 20,
+        // Seals
+        20: 18,
+        21: 18,
+        22: 18,
+        27: 18,
+        7550: 18,
+        // Tomestones
+        23: 15,
+        24: 15,
+        26: 15,
+        28: 15,
+        10972: 15,
+        11252: 15,
+        7548: 15,
+        7549: 15,
+        8285: 15,
+        9053: 15,
+        // Scripts
+        7553: 13,
+        7554: 13,
+        11090: 13,
+        11091: 13,
+        // Beast tribe currencies
+        8477: 10,
+        8267: 10,
+        3455: 10,
+        3456: 10,
+        3457: 10,
+        3458: 10,
+        3459: 10,
+        3460: 10,
+        3461: 10,
+        3462: 10,
+        3463: 10,
+        3464: 10,
+        3465: 10,
+        3466: 10,
+        3467: 10,
+        3468: 10,
+        3469: 10,
+        7812: 10,
+        // Spoils
+        7731: 2
+    };
+
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
                 private dialog: MdDialog) {
@@ -105,6 +153,20 @@ export class ItemComponent implements OnInit {
         this.dialog.open(VendorsDetailsPopupComponent, {
             data: item
         });
+    }
+
+    public getTradeIcon(item: ListRow): string {
+        const res = {priority: 0, icon: 'https://www.garlandtools.org/db/images/Shop.png'};
+        item.tradeSources.forEach(ts => {
+            ts.trades.forEach(trade => {
+                const id = +trade.currencyIcon.split('/').pop().split('.')[0];
+                if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
+                    res.icon = trade.currencyIcon;
+                    res.priority = this.tradeSourcePriorities[id];
+                }
+            });
+        });
+        return res.icon;
     }
 
     public openTradeDetails(item: ListRow): void {

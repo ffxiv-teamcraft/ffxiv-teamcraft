@@ -68,7 +68,7 @@
                     <img class="currency"
                          mdTooltip="{{'Trade' | translate}}"
                          mdTooltipPosition="above"
-                         src="https://www.garlandtools.org/db/images/Shop.png">
+                         src="{{getTradeIcon(item)}}">
                 </button>
             </div>
             <div *ngIf="item.instances !== undefined">
