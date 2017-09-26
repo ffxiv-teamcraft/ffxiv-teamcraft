@@ -12,7 +12,6 @@ import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
-import {MathTools} from '../../tools/math-tools';
 
 @Injectable()
 export class ListManagerService {
@@ -211,12 +210,14 @@ export class ListManagerService {
     }
 
     public upgradeList(list: List): Observable<List> {
-        const remove = [];
         const add = [];
         list.recipes.forEach((recipe) => {
-            remove.push(this.addToList(recipe.id, list, recipe.recipeId, -recipe.amount));
             add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
         });
-        return Observable.concat(...remove, ...add);
+        list.crystals = [];
+        list.gathers = [];
+        list.preCrafts = [];
+        list.others = [];
+        return Observable.concat(...add);
     }
 }
