@@ -218,6 +218,7 @@ export class ListManagerService {
         list.gathers = [];
         list.preCrafts = [];
         list.others = [];
+        list.recipes = [];
         return Observable.concat(...add);
     }
 }
