@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.3...v1.2.4) (2017-09-26)
+
+
+### Bug Fixes
+
+* crystal number sometimes not rounded properly ([32dc2eb](https://github.com/Supamiu/ffxiv-teamcraft/commit/32dc2eb))
+* realtime translation issues with new i18n pipe ([a473a99](https://github.com/Supamiu/ffxiv-teamcraft/commit/a473a99))
+
+
+### Features
+
+* new button to recreate the list with latest changes ([636e6cb](https://github.com/Supamiu/ffxiv-teamcraft/commit/636e6cb)), closes [#44](https://github.com/Supamiu/ffxiv-teamcraft/issues/44)
+
+
+### BREAKING CHANGES
+
+* Lists are now using the amount of crafts you wantto do, not the amount of items you want to have. Meaning that crafts like potions will yield 3 potions per craft you want to do.
+
+
+
 <a name="1.2.3"></a>
 ## [1.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.2...v1.2.3) (2017-09-25)
 
