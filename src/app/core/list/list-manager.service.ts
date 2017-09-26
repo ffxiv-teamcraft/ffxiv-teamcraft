@@ -48,7 +48,7 @@ export class ListManagerService {
                                 return list.addCraft([{
                                     item: data.item,
                                     data: data,
-                                    amount: MathTools.round(amount / toAdd.yield)
+                                    amount: amount
                                 }], this.gt, this.i18n);
                             })
                             .mergeMap(l => {
@@ -208,5 +208,15 @@ export class ListManagerService {
                     .map(l => l.clean())
                     .debounceTime(500);
             });
+    }
+
+    public upgradeList(list: List): Observable<List> {
+        const remove = [];
+        const add = [];
+        list.recipes.forEach((recipe) => {
+            remove.push(this.addToList(recipe.id, list, recipe.recipeId, -recipe.amount));
+            add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
+        });
+        return Observable.concat(...remove, ...add);
     }
 }
