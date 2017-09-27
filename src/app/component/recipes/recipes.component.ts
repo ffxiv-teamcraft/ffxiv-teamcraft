@@ -62,7 +62,15 @@ export class RecipesComponent implements OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
-    // Amount is declared as string because it comes as a string from the template binding, so we need to cast it in this method
+
+    /**
+     * Adds a recipe to a given list
+     *
+     * @param {Recipe} recipe The recipe we want to add
+     * @param {List} list The list we want to add the recipe to
+     * @param {string} key The database key of the list
+     * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
+     */
     addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
         this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
