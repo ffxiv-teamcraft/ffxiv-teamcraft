@@ -54,6 +54,7 @@ import {CeilPipe} from './pipe/ceil.pipe';
 import {RecipeComponent} from './component/recipe/recipe.component';
 import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
 import {I18nPipe} from './pipe/i18n.pipe';
+import { RegenerationPopupComponent } from './component/popup/regeneration-popup/regeneration-popup.component';
 
 const routes: Routes = [
     {
@@ -101,6 +102,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RecipeComponent,
         ReductionDetailsPopupComponent,
         I18nPipe,
+        RegenerationPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -163,6 +165,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RegisterPopupComponent,
         CharacterAddPopupComponent,
         ReductionDetailsPopupComponent,
+        RegenerationPopupComponent,
     ],
     providers: [
         UserService,

@@ -5,11 +5,17 @@
             (click)="resetProgression()">
         <md-icon>refresh</md-icon>
     </button>
-    <button md-mini-fab color="accent" mdTooltip="{{'Upgrade_list' | translate}}"
+    <button md-mini-fab color="accent" *ngIf="isOwnList()" mdTooltip="{{'Upgrade_list' | translate}}"
             (click)="upgradeList()">
         <md-icon>update</md-icon>
     </button>
 </div>
+
+<md-error *ngIf="list?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"| translate}}</md-error>
+<md-error *ngIf="list?.isOutDated() && isOwnList()" class="listError">{{"Own_list_outdated_before_button"| translate}}
+    <md-icon>update</md-icon>
+    {{"Own_list_outdated_after_button"| translate}}
+</md-error>
 
 <md-expansion-panel expanded="true">
     <md-expansion-panel-header>

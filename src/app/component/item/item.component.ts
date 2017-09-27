@@ -95,7 +95,7 @@ export class ItemComponent implements OnInit {
                 return this.doneInput.nativeElement.value;
             })
             .subscribe(value => {
-                this.setDone(this.item, value - MathTools.absoluteCeil(this.item.done));
+                this.setDone(this.item, value, this.item.done);
             });
     }
 
@@ -111,8 +111,8 @@ export class ItemComponent implements OnInit {
         return res;
     }
 
-    public setDone(row: ListRow, amount: number) {
-        this.done.emit({row: row, amount: amount});
+    public setDone(row: ListRow, amount: number, done: number) {
+        this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done)});
     }
 
     public getI18n(name: I18nName) {

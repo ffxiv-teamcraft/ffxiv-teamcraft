@@ -210,6 +210,22 @@ export class ListManagerService {
     }
 
     public upgradeList(list: List): Observable<List> {
+        const progressionBackup = [];
+        list.crystals.forEach(item => {
+            progressionBackup.push({array: 'crystals', item: item});
+        });
+        list.gathers.forEach(item => {
+            progressionBackup.push({array: 'gathers', item: item});
+        });
+        list.preCrafts.forEach(item => {
+            progressionBackup.push({array: 'preCrafts', item: item});
+        });
+        list.others.forEach(item => {
+            progressionBackup.push({array: 'others', item: item});
+        });
+        list.recipes.forEach(item => {
+            progressionBackup.push({array: 'recipes', item: item});
+        });
         const add = [];
         list.recipes.forEach((recipe) => {
             add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
@@ -219,6 +235,18 @@ export class ListManagerService {
         list.preCrafts = [];
         list.others = [];
         list.recipes = [];
-        return Observable.concat(...add);
+        return Observable.concat(...add)
+            .map((resultList: List) => {
+                progressionBackup.forEach(row => {
+                    const listRow = resultList[row.array].find(item => item.id === row.item.id);
+                    if (listRow !== undefined) {
+                        listRow.done = row.item.done;
+                        if (listRow.done > listRow.amount_needed) {
+                            listRow.done = listRow.amount_needed;
+                        }
+                    }
+                });
+                return resultList;
+            });
     }
 }

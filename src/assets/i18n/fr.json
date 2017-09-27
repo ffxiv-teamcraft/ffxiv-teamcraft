@@ -29,6 +29,7 @@
     "Uncheck_all": "Tout décocher",
     "Level": "Niveau",
     "auth/credential-already-in-use": "Compte déjà utilisé",
+    "auth/email-already-in-use": "Email déjà utilisé",
     "Registration": "Inscription",
     "Google_register": "Inscription avec Google",
     "Facebook_register": "Inscription avec Facebook",
@@ -47,6 +48,11 @@
     "Game_Term/DoH": "Disciples de la main",
     "Game_Term/DoL": "Disciples de la terre",
     "Reduction": "Étherolyse",
-    "Upgrade_list": "Régénérer la liste avec la dernière version de l'application (remet la progression à 0)",
-    "List_recreated": "Liste régénérée avec succès"
+    "Upgrade_list": "Régénérer la liste avec la dernière version de l'application",
+    "List_recreated": "Liste régénérée avec succès",
+    "List_popup_title": "Régénération de la liste en cours, merci de patienter",
+    "List_popup_p": "La régénération devrait prendre quelques secondes, voici un gif pour patienter",
+    "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
+    "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
+    "Own_list_outdated_after_button": ""
 }

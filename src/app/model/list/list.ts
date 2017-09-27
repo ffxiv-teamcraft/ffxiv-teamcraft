@@ -25,7 +25,7 @@ export class List extends FirebaseDataModel {
     }
 
     public addToRecipes(data: ListRow): ListRow {
-        return this.add(this.recipes, data);
+        return this.add(this.recipes, data, true);
     }
 
     public addToPreCrafts(data: ListRow): ListRow {
@@ -44,21 +44,25 @@ export class List extends FirebaseDataModel {
         return this.add(this.crystals, data);
     }
 
-    private add(array: ListRow[], data: ListRow): ListRow {
-        const row = array.find(r => {
+    private add(array: ListRow[], data: ListRow, recipe = false): ListRow {
+        let row = array.find(r => {
             return r.id === data.id;
         });
         if (row === undefined) {
             array.push(data);
+            row = array[array.length - 1];
         } else {
             row.amount = MathTools.round(row.amount + data.amount);
             if (row.amount < 0) {
                 row.amount = 0;
             }
         }
-        return array.find((r) => {
-            return r.id === data.id;
-        });
+        if (!recipe) {
+            row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
+        } else {
+            row.amount_needed = row.amount;
+        }
+        return row;
     }
 
     public clean(): List {
@@ -103,9 +107,21 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount) / requirementItem.yield);
+                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount / requirementItem.yield));
             }
         }
+    }
+
+    /**
+     * Checks if the list is outdated, the implementation is meant to change.
+     * @returns {boolean}
+     */
+    public isOutDated(): boolean {
+        let res = true;
+        this.forEachItem(i => {
+            res = res && (i.amount_needed === undefined);
+        });
+        return res;
     }
 
     public resetDone(item: ListRow): void {
@@ -138,28 +154,20 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const amount = MathTools.round(element.amount * addition.amount / yields);
-                        const preCraft = this.preCrafts.find(i => i.id === element.id);
-                        this.addToPreCrafts({
+                        const resultRow = this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
-                            amount: amount,
+                            amount: element.amount * addition.amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
                             name: i18n.createI18nName(elementDetails),
                             yield: yields,
                             addedAt: Date.now()
                         });
-                        // If adding a requirement doesn't add a craft (like if you need another 0.3
-                        // of this item but it doesn't make 2 crafts).
-                        if (preCraft !== undefined
-                            && MathTools.absoluteCeil(preCraft.amount + amount) === MathTools.absoluteCeil(preCraft.amount)) {
-                            continue;
-                        }
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: MathTools.absoluteCeil(amount)
+                            amount: resultRow.amount_needed
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({

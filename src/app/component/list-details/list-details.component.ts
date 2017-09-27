@@ -13,6 +13,7 @@ import {ListService} from '../../core/firebase/list.service';
 import {Title} from '@angular/platform-browser';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
+import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 
 @Component({
     selector: 'app-list',
@@ -28,6 +29,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     user: UserInfo;
 
     listUid: string;
+
+    authorUid: string;
 
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, name: 'botanist'},
@@ -98,6 +101,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.listUid = params.listId;
+            this.authorUid = params.uid;
             this.listObj = this.listService.getUserList(params.uid, this.listUid);
             Observable.combineLatest(
                 this.filterTrigger,
@@ -126,11 +130,17 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         });
     }
 
+    isOwnList(): boolean {
+        return this.user !== undefined && this.user.uid === this.authorUid;
+    }
+
     upgradeList(): void {
+        const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.listManager.upgradeList(this.list)
             .mergeMap(list => this.listService.update(this.listUid, list))
-            .debounceTime(5000)
+            .debounceTime(6000)
             .subscribe(() => {
+                dialogRef.close();
                 this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
             });
     }
