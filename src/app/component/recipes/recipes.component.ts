@@ -62,8 +62,9 @@ export class RecipesComponent implements OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
-    addRecipe(recipe: Recipe, list: List, key: string): void {
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId)
+    // Amount is declared as string because it comes as a string from the template binding, so we need to cast it in this method
+    addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
+        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
@@ -82,12 +83,12 @@ export class RecipesComponent implements OnInit {
             }, err => console.error(err));
     }
 
-    addToNewList(recipe: any): void {
+    addToNewList(recipe: any, amount: string): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;
             this.listService.push(list).then(l => {
-                this.addRecipe(recipe, list, l.key);
+                this.addRecipe(recipe, list, l.key, amount);
             });
         });
     }

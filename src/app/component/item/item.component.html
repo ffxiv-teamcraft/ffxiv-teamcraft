@@ -22,17 +22,17 @@
                 <input mdInput type="number"
                        [ngModel]="item.done | ceil"
                        #doneInput min="0"
-                       max="{{item.amount | ceil}}"
-                       maxlength="{{(item.amount | ceil).toString().length}}">
-                <span mdSuffix>/{{item.amount | ceil}}</span>
+                       max="{{item.amount_needed}}"
+                       maxlength="{{item.amount_needed?.toString().length}}">
+                <span mdSuffix>/{{item.amount_needed}}</span>
             </md-input-container>
         </div>
         <div class="done-check">
-            <a md-mini-fab *ngIf="(item.amount | ceil) > (item.done | ceil)"
-               (click)="setDone(item, item.amount - item.done)">
+            <a md-mini-fab *ngIf="item.amount_needed > (item.done | ceil)"
+               (click)="setDone(item, item.amount_needed, item.done)">
                 <md-icon>playlist_add_check</md-icon>
             </a>
-            <md-icon *ngIf="(item.amount | ceil) <= (item.done | ceil)" color="accent">done</md-icon>
+            <md-icon *ngIf="item.amount_needed <= (item.done | ceil)" color="accent">done</md-icon>
         </div>
         <div class="classes">
             <div *ngIf="item.craftedBy !== undefined">

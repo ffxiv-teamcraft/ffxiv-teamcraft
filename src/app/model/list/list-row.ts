@@ -12,6 +12,7 @@ export interface ListRow {
     icon?: string;
     id: number;
     amount: number;
+    amount_needed?: number;
     done: number;
     requires?: Ingredient[];
     recipeId?: number;
