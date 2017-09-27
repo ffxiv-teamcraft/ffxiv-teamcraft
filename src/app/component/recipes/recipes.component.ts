@@ -62,8 +62,16 @@ export class RecipesComponent implements OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
-    addRecipe(recipe: Recipe, list: List, key: string, amount: number): void {
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, amount)
+    /**
+     * Adds a recipe to a given list
+     *
+     * @param {Recipe} recipe The recipe we want to add
+     * @param {List} list The list we want to add the recipe to
+     * @param {string} key The database key of the list
+     * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
+     */
+    addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
+        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
@@ -82,7 +90,7 @@ export class RecipesComponent implements OnInit {
             }, err => console.error(err));
     }
 
-    addToNewList(recipe: any, amount = 1): void {
+    addToNewList(recipe: any, amount = '1'): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;

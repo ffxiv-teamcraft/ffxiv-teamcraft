@@ -5,10 +5,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {GarlandToolsService} from './api/garland-tools.service';
 import {I18nToolsService} from './i18n-tools.service';
 import {DataService} from './api/data.service';
+import {NgSerializerModule} from '@kaiu/ng-serializer';
 
 @NgModule({
     imports: [
-        HttpClientModule
+        HttpClientModule,
+        NgSerializerModule
     ],
     providers: [
         GarlandToolsService,
