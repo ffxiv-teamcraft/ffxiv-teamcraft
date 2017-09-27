@@ -3,7 +3,7 @@ import {GarlandToolsData} from '../../model/list/garland-tools-data';
 import {Drop} from '../../model/list/drop';
 import {Instance} from '../../model/list/instance';
 import {Item} from '../../model/garland-tools/item';
-import {NgSerializerService} from '@kaiu/ng-serializer';
+import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
 
 @Injectable()
 export class GarlandToolsService {

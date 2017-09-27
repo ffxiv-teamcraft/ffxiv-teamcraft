@@ -6,7 +6,7 @@ import {GarlandToolsService} from './garland-tools.service';
 import {Recipe} from '../../model/list/recipe';
 import {I18nName} from '../../model/list/i18n-name';
 import {ItemData} from '../../model/garland-tools/item-data';
-import {NgSerializerService} from '@kaiu/ng-serializer';
+import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
 
 @Injectable()
 export class DataService {
