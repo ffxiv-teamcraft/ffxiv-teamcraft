@@ -15,6 +15,8 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 
+declare const ga: Function;
+
 @Component({
     selector: 'app-list',
     templateUrl: './list-details.component.html',
@@ -140,6 +142,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             .mergeMap(list => this.listService.update(this.listUid, list))
             .debounceTime(6000)
             .subscribe(() => {
+                ga('send', 'event', 'List', 'regenerate');
                 dialogRef.close();
                 this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
             });
