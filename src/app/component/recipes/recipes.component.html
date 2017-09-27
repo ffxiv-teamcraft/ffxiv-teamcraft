@@ -20,12 +20,15 @@
                 <img src="https://www.garlandtools.org/db/images/{{getJob(recipe.job).abbreviation}}.png"
                             alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span [innerHtml]="getStars(recipe.stars)"></span>
             </p>
+            <md-input-container>
+                <input mdInput #amount type="number" value="1" min="1">
+            </md-input-container>
             <md-menu #appMenu="mdMenu">
-                <button md-menu-item (click)="addToNewList(recipe)">
+                <button md-menu-item (click)="addToNewList(recipe, amount.value)">
                     <md-icon>add</md-icon>
                     <span>{{'New_List' | translate}}</span></button>
                 <button md-menu-item *ngFor="let list of lists | async"
-                        (click)="addRecipe(recipe, list, list.$key)">
+                        (click)="addRecipe(recipe, list, list.$key, amount.value)">
                     <md-icon>playlist_play</md-icon>
                     <span>{{list.name}}</span></button>
             </md-menu>
