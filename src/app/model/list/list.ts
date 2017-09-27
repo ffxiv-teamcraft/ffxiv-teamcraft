@@ -112,6 +112,18 @@ export class List extends FirebaseDataModel {
         }
     }
 
+    /**
+     * Checks if the list is outdated, the implementation is meant to change.
+     * @returns {boolean}
+     */
+    public isOutDated(): boolean {
+        let res = true;
+        this.forEachItem(i => {
+            res = res && (i.amount_needed === undefined);
+        });
+        return res;
+    }
+
     public resetDone(item: ListRow): void {
         item.done = 0;
         if (item.requires !== undefined) {
