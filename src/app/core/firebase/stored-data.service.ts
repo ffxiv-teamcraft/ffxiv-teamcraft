@@ -1,6 +1,6 @@
 import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
-import {NgSerializerService} from '@kaiu/ng-serializer/ng-serializer.service';
+import {NgSerializerService} from '@kaiu/ng-serializer';
 import * as firebase from 'firebase/app';
 import {FirebaseDataModel} from '../../model/list/firebase-data-model';
 import ThenableReference = firebase.database.ThenableReference;

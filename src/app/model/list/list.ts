@@ -24,27 +24,28 @@ export class List extends FirebaseDataModel {
         (this.preCrafts || []).forEach(method);
     }
 
-    public addToRecipes(data: ListRow): ListRow {
+    public addToRecipes(data: ListRow): number {
         return this.add(this.recipes, data, true);
     }
 
-    public addToPreCrafts(data: ListRow): ListRow {
+    public addToPreCrafts(data: ListRow): number {
         return this.add(this.preCrafts, data);
     }
 
-    public addToGathers(data: ListRow): ListRow {
+    public addToGathers(data: ListRow): number {
         return this.add(this.gathers, data);
     }
 
-    public addToOthers(data: ListRow): ListRow {
+    public addToOthers(data: ListRow): number {
         return this.add(this.others, data);
     }
 
-    public addToCrystals(data: ListRow): ListRow {
+    public addToCrystals(data: ListRow): number {
         return this.add(this.crystals, data);
     }
 
-    private add(array: ListRow[], data: ListRow, recipe = false): ListRow {
+    private add(array: ListRow[], data: ListRow, recipe = false): number {
+        let previousAmount = 0;
         let row = array.find(r => {
             return r.id === data.id;
         });
@@ -55,14 +56,16 @@ export class List extends FirebaseDataModel {
             row.amount = MathTools.round(row.amount + data.amount);
             if (row.amount < 0) {
                 row.amount = 0;
+                row.amount_needed = row.amount;
             }
+            previousAmount = row.amount_needed;
         }
         if (!recipe) {
             row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
         } else {
             row.amount_needed = row.amount;
         }
-        return row;
+        return row.amount_needed - previousAmount;
     }
 
     public clean(): List {
@@ -165,7 +168,7 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const resultRow = this.addToPreCrafts({
+                        const added = this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
@@ -178,7 +181,7 @@ export class List extends FirebaseDataModel {
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: resultRow.amount_needed
+                            amount: added
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({
