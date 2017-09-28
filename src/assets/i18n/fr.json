@@ -54,5 +54,6 @@
     "List_popup_p": "La régénération devrait prendre quelques secondes, voici un gif pour patienter",
     "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
     "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
-    "Own_list_outdated_after_button": ""
+    "Own_list_outdated_after_button": "",
+    "Home": "Accueil"
 }

@@ -55,12 +55,17 @@ import {RecipeComponent} from './component/recipe/recipe.component';
 import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
 import {I18nPipe} from './pipe/i18n.pipe';
 import { RegenerationPopupComponent } from './component/popup/regeneration-popup/regeneration-popup.component';
+import { HomeComponent } from './component/home/home.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/recipes',
+        redirectTo: '/home',
         pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: HomeComponent
     },
     {
         path: 'recipes',
@@ -103,6 +108,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ReductionDetailsPopupComponent,
         I18nPipe,
         RegenerationPopupComponent,
+        HomeComponent,
     ],
     imports: [
         TranslateModule.forRoot({
