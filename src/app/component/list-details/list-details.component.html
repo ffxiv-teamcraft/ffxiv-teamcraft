@@ -5,7 +5,8 @@
             (click)="resetProgression()">
         <md-icon>refresh</md-icon>
     </button>
-    <button md-mini-fab color="accent" *ngIf="isOwnList()" mdTooltip="{{'Upgrade_list' | translate}}"
+    <button md-mini-fab color="accent" *ngIf="isOwnList() && list?.isOutDated()"
+            mdTooltip="{{'Upgrade_list' | translate}}"
             (click)="upgradeList()">
         <md-icon>update</md-icon>
     </button>

@@ -76,6 +76,14 @@ export class List extends FirebaseDataModel {
         return this;
     }
 
+    public isEmpty(): boolean {
+        return this.recipes.length === 0 &&
+            this.preCrafts.length === 0 &&
+            this.gathers.length === 0 &&
+            this.others.length === 0 &&
+            this.crystals.length === 0;
+    }
+
     public getItemById(id: number, addedAt?: number): ListRow {
         for (const prop of Object.keys(this)) {
             if (prop !== 'name') {
@@ -117,6 +125,9 @@ export class List extends FirebaseDataModel {
      * @returns {boolean}
      */
     public isOutDated(): boolean {
+        if (this.isEmpty()) {
+            return false;
+        }
         let res = true;
         this.forEachItem(i => {
             res = res && (i.amount_needed === undefined);
