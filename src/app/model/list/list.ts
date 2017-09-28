@@ -13,6 +13,7 @@ export class List extends FirebaseDataModel {
     others: ListRow[] = [];
     crystals: ListRow[] = [];
     createdAt: string = new Date().toISOString();
+    version: string;
 
     constructor() {
         super();
@@ -25,7 +26,7 @@ export class List extends FirebaseDataModel {
     }
 
     public addToRecipes(data: ListRow): number {
-        return this.add(this.recipes, data, true);
+        return this.add(this.recipes, data);
     }
 
     public addToPreCrafts(data: ListRow): number {
@@ -44,7 +45,7 @@ export class List extends FirebaseDataModel {
         return this.add(this.crystals, data);
     }
 
-    private add(array: ListRow[], data: ListRow, recipe = false): number {
+    private add(array: ListRow[], data: ListRow): number {
         let previousAmount = 0;
         let row = array.find(r => {
             return r.id === data.id;
@@ -60,11 +61,7 @@ export class List extends FirebaseDataModel {
             }
             previousAmount = row.amount_needed;
         }
-        if (!recipe) {
-            row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
-        } else {
-            row.amount_needed = row.amount;
-        }
+        row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
         return row.amount_needed - previousAmount;
     }
 
@@ -106,7 +103,7 @@ export class List extends FirebaseDataModel {
         return undefined;
     }
 
-    public setDone(pitem: ListRow, amount: number): void {
+    public setDone(pitem: ListRow, amount: number, recipe: boolean = false): void {
         const item = this.getItemById(pitem.id, pitem.addedAt);
         item.done += amount;
         if (item.done > item.amount) {
@@ -114,6 +111,9 @@ export class List extends FirebaseDataModel {
         }
         if (item.done < 0) {
             item.done = 0;
+        }
+        if (recipe) {
+            amount = MathTools.absoluteCeil(amount / pitem.yield);
         }
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
@@ -135,6 +135,7 @@ export class List extends FirebaseDataModel {
         this.forEachItem(i => {
             res = res && (i.amount_needed === undefined);
         });
+        res = res || (this.version === undefined);
         return res;
     }
 

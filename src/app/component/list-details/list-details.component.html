@@ -136,7 +136,7 @@
     </md-expansion-panel-header>
     <md-list dense>
         <div *ngFor="let recipe of list?.recipes">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!recipe.hidden"
+            <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
                       [item]="recipe"></app-item>
         </div>
     </md-list>

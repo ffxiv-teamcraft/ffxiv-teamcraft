@@ -34,6 +34,9 @@ export class ItemComponent implements OnInit {
     @Output()
     done: EventEmitter<any> = new EventEmitter<any>();
 
+    @Input()
+    recipe = false;
+
     tradeSourcePriorities = {
         // MGP, just in case
         5752: 20,
@@ -87,6 +90,10 @@ export class ItemComponent implements OnInit {
                 private dialog: MdDialog) {
     }
 
+    getAmount(): number {
+        return this.recipe ? this.item.amount : this.item.amount_needed;
+    }
+
     ngOnInit(): void {
         Observable.fromEvent(this.doneInput.nativeElement, 'input')
             .debounceTime(500)
@@ -111,7 +118,7 @@ export class ItemComponent implements OnInit {
         return res;
     }
 
-    public setDone(row: ListRow, amount: number, done: number) {
+    public setDone(row: ListRow, amount: number, done: number, recipe: boolean = false) {
         this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done)});
     }
 

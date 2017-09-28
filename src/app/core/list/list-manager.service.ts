@@ -12,6 +12,7 @@ import {HtmlToolsService} from '../html-tools.service';
 import {I18nToolsService} from '../i18n-tools.service';
 import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
+import {environment} from '../../../environments/environment';
 
 @Injectable()
 export class ListManagerService {
@@ -25,6 +26,10 @@ export class ListManagerService {
     public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
         return Observable
             .of(plist)
+            .map(list => {
+                list.version = environment.version;
+                return list;
+            })
             .mergeMap(list => {
                 return this.db.getItem(itemId)
                     .mergeMap((data: ItemData) => {
@@ -43,11 +48,11 @@ export class ListManagerService {
                                     craftedBy: crafted,
                                     addedAt: Date.now()
                                 };
-                                list.addToRecipes(toAdd);
+                                const added = list.addToRecipes(toAdd);
                                 return list.addCraft([{
                                     item: data.item,
                                     data: data,
-                                    amount: amount
+                                    amount: added
                                 }], this.gt, this.i18n);
                             })
                             .mergeMap(l => {

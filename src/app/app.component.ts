@@ -11,6 +11,7 @@ import {RegisterPopupComponent} from './component/popup/register-popup/register-
 import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
+import {environment} from '../environments/environment';
 import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
@@ -33,6 +34,8 @@ export class AppComponent implements OnInit {
     username: string;
 
     userIcon: string;
+
+    version = environment.version;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,

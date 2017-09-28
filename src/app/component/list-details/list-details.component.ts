@@ -156,8 +156,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.listService.update(this.listUid, this.list);
     }
 
-    public setDone(data: { row: ListRow, amount: number }): void {
-        this.list.setDone(data.row, data.amount);
+    public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
+        this.list.setDone(data.row, data.amount, recipe);
         this.listService.update(this.listUid, this.list);
     }
 

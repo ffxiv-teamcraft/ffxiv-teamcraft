@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build:prod": "ng build -prod",
+    "start": "node ./build/prebuild.js && ng serve",
+    "build:prod": "node ./build/prebuild.js && ng build -prod",
     "standard-version": "standard-version",
     "standard-version:dry": "standard-version --dry-run",
     "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
@@ -58,6 +58,7 @@
     "standard-version": "^4.2.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "2.3.4"
+    "typescript": "2.3.4",
+    "colors": "latest"
   }
 }

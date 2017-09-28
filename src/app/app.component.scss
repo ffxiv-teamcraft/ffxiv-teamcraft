@@ -14,6 +14,15 @@
             margin-left: 20px;
         }
     }
+    .version {
+        position: absolute;
+        top: 8px;
+        right: 15px;
+        opacity: .7;
+    }
+    .light-text {
+        color: white;
+    }
     .announcement {
         text-align: center;
     }
@@ -28,7 +37,7 @@
             .sidebar-element {
                 padding: 20px;
             }
-            .social-icons{
+            .social-icons {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
