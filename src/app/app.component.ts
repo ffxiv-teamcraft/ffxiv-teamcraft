@@ -6,7 +6,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import {User} from 'firebase/app';
-import {MdDialog, MdSnackBar} from '@angular/material';
+import {MdDialog, MdSnackBar, MdSnackBarRef, SimpleSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
 import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
@@ -36,6 +36,10 @@ export class AppComponent implements OnInit {
     userIcon: string;
 
     version = environment.version;
+
+    registrationSnackRef: MdSnackBarRef<SimpleSnackBar>;
+
+    isRegistering = false;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -83,25 +87,34 @@ export class AppComponent implements OnInit {
             });
     }
 
+    closeSnack(): void {
+        if (this.registrationSnackRef !== undefined) {
+            this.registrationSnackRef.dismiss();
+        }
+    }
+
     ngOnInit(): void {
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
-        this.authState.debounceTime(2000).subscribe(state => {
+        this.authState.debounceTime(1000).subscribe(state => {
             if (state === null) {
                 this.auth.auth.signInAnonymously();
                 return;
-            } else if (state.isAnonymous) {
-                this.snack.open(
+            } else if (state.isAnonymous && !this.isRegistering) {
+                this.registrationSnackRef = this.snack.open(
                     this.translate.instant('Anonymous_Warning'),
                     this.translate.instant('Registration'),
                     {
                         duration: 10000,
                         extraClasses: ['snack-warn']
                     }
-                ).onAction().subscribe(() => {
+                );
+                this.registrationSnackRef.onAction().subscribe(() => {
                     this.openRegistrationPopup();
                 });
                 return;
+            } else {
+                this.closeSnack();
             }
             this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
                 .once('value')
@@ -133,7 +146,8 @@ export class AppComponent implements OnInit {
     }
 
     openRegistrationPopup(): void {
-        this.dialog.open(RegisterPopupComponent);
+        this.isRegistering = true;
+        this.dialog.open(RegisterPopupComponent).afterClosed().subscribe(() => this.isRegistering = false);
     }
 
     openLoginPopup(): void {
