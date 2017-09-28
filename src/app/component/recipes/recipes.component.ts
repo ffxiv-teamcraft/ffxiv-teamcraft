@@ -7,7 +7,6 @@ import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.c
 import {DataService} from '../../core/api/data.service';
 import {Recipe} from '../../model/list/recipe';
 import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
@@ -63,12 +62,16 @@ export class RecipesComponent implements OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
-    getName(i18nName: I18nName): string {
-        return this.i18n.getName(i18nName);
-    }
-
-    addRecipe(recipe: Recipe, list: List, key: string): void {
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId)
+    /**
+     * Adds a recipe to a given list
+     *
+     * @param {Recipe} recipe The recipe we want to add
+     * @param {List} list The list we want to add the recipe to
+     * @param {string} key The database key of the list
+     * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
+     */
+    addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
+        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
@@ -87,12 +90,12 @@ export class RecipesComponent implements OnInit {
             }, err => console.error(err));
     }
 
-    addToNewList(recipe: any): void {
+    addToNewList(recipe: any, amount = '1'): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;
             this.listService.push(list).then(l => {
-                this.addRecipe(recipe, list, l.key);
+                this.addRecipe(recipe, list, l.key, amount);
             });
         });
     }

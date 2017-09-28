@@ -46,5 +46,7 @@
     "Anonymous_Warning": "Créer un compte permet de conserver ses listes et d'activer plus de fonctionnalités comme le filtre automatique",
     "Game_Term/DoH": "Disciples de la main",
     "Game_Term/DoL": "Disciples de la terre",
-    "Reduction": "Étherolyse"
+    "Reduction": "Étherolyse",
+    "Upgrade_list": "Régénérer la liste avec la dernière version de l'application (remet la progression à 0)",
+    "List_recreated": "Liste régénérée avec succès"
 }

@@ -1,11 +1,11 @@
-<h2 md-dialog-title>{{getName(data.name)}}</h2>
+<h2 md-dialog-title>{{data | i18n}}</h2>
 <div md-dialog-content>
     <md-list>
         <md-list-item *ngFor="let instance of data.instances">
-            <img src="https://www.garlandtools.org/db/images/{{getName(instance.type)}}.png"
+            <img src="https://www.garlandtools.org/db/images/{{instance.type | i18n}}.png"
                  md-list-avatar
-                 alt="{{getName(instance.type)}}">
-            <b md-line>{{getName(instance.name)}}</b>
+                 alt="{{instance.type | i18n}}">
+            <b md-line>{{instance | i18n}}</b>
         </md-list-item>
     </md-list>
 </div>

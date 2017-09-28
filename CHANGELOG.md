@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.3...v1.2.4) (2017-09-26)
+
+
+### Bug Fixes
+
+* crystal number sometimes not rounded properly ([32dc2eb](https://github.com/Supamiu/ffxiv-teamcraft/commit/32dc2eb))
+* realtime translation issues with new i18n pipe ([a473a99](https://github.com/Supamiu/ffxiv-teamcraft/commit/a473a99))
+
+
+### Features
+
+* new button to recreate the list with latest changes ([636e6cb](https://github.com/Supamiu/ffxiv-teamcraft/commit/636e6cb)), closes [#44](https://github.com/Supamiu/ffxiv-teamcraft/issues/44)
+
+
+### BREAKING CHANGES
+
+* Lists are now using the amount of crafts you wantto do, not the amount of items you want to have. Meaning that crafts like potions will yield 3 potions per craft you want to do.
+
+
+
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.2...v1.2.3) (2017-09-25)
+
+
+### Bug Fixes
+
+* ghost materials in lists after deleting some items ([5ddedbe](https://github.com/Supamiu/ffxiv-teamcraft/commit/5ddedbe)), closes [#40](https://github.com/Supamiu/ffxiv-teamcraft/issues/40)
+* page title sometimes undefined ([48dcc36](https://github.com/Supamiu/ffxiv-teamcraft/commit/48dcc36))
+* recipe amount sometimes wrong with high amount of items ([89b73f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/89b73f5)), closes [#40](https://github.com/Supamiu/ffxiv-teamcraft/issues/40)
+* removing value from amount field removes the item from the list ([cbfe0b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/cbfe0b4)), closes [#39](https://github.com/Supamiu/ffxiv-teamcraft/issues/39)
+* searching for empty recipe makes loading spin forever ([165453c](https://github.com/Supamiu/ffxiv-teamcraft/commit/165453c))
+* undefined title after list deletion ([b9c3b54](https://github.com/Supamiu/ffxiv-teamcraft/commit/b9c3b54))
+
+
+
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.1...v1.2.2) (2017-09-24)
+
+
+### Bug Fixes
+
+* not enough space for icons in item component ([ad564fd](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad564fd))
+* unexpected html entities in list recipe name ([99d7dd9](https://github.com/Supamiu/ffxiv-teamcraft/commit/99d7dd9))
+* unexpected html entities in search results ([a8967ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/a8967ed))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.0...v1.2.1) (2017-09-24)
 

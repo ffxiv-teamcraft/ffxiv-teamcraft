@@ -1,7 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Recipe} from '../../model/list/recipe';
 import {Observable} from 'rxjs/Observable';
-import {I18nName} from '../../model/list/i18n-name';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 
 @Component({
@@ -23,15 +22,11 @@ export class RecipeComponent implements OnInit {
     @Input()
     recipe: Recipe;
 
-    constructor(private i18n: I18nToolsService) {
+    constructor() {
     }
 
     public delete(): void {
         this.ondelete.emit();
-    }
-
-    public getName(i18nName: I18nName): string {
-        return this.i18n.getName(i18nName);
     }
 
     public ngOnInit(): void {
@@ -41,6 +36,7 @@ export class RecipeComponent implements OnInit {
             .map(() => {
                 return this.amount.nativeElement.value;
             })
+            .filter(value => value > 0)
             .subscribe(value => {
                 this.onedit.emit(value);
             });

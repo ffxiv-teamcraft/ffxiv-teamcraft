@@ -1,8 +1,6 @@
 import {Component, Inject} from '@angular/core';
-import {I18nToolsService} from '../../../core/i18n-tools.service';
 import {GarlandToolsService} from '../../../core/api/garland-tools.service';
 import {MD_DIALOG_DATA} from '@angular/material';
-import {I18nName} from '../../../model/list/i18n-name';
 
 @Component({
     selector: 'app-drops-details-popup',
@@ -11,11 +9,7 @@ import {I18nName} from '../../../model/list/i18n-name';
 })
 export class DropsDetailsPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: any, private gt: GarlandToolsService, private i18n: I18nToolsService) {
-    }
-
-    public getName(name: I18nName): string {
-        return this.i18n.getName(name);
+    constructor(@Inject(MD_DIALOG_DATA) public data: any, private gt: GarlandToolsService) {
     }
 
     public getLocation(id: number): any {

@@ -6,10 +6,10 @@ import {MdDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../core/list/list-manager.service';
-import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {ListService} from '../../core/firebase/list.service';
 import {Observable} from 'rxjs/Observable';
+import {MathTools} from '../../tools/math-tools';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-lists',
@@ -30,7 +30,7 @@ export class ListsComponent implements OnInit {
 
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
-                private i18n: I18nToolsService, private listService: ListService) {
+                private listService: ListService, private title: Title) {
     }
 
     createNewList(): void {
@@ -48,7 +48,9 @@ export class ListsComponent implements OnInit {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
-                this.listService.remove(listKey);
+                this.listService.remove(listKey).then(() => {
+                    this.title.setTitle('Teamcraft');
+                });
             }
         });
     }
@@ -61,12 +63,8 @@ export class ListsComponent implements OnInit {
 
     updateAmount(recipe: any, list: List, key: string, amount: number): void {
         this.listManager
-            .addToList(recipe.id, list, recipe.recipeId, amount - recipe.amount)
+            .addToList(recipe.id, list, recipe.recipeId, MathTools.round(amount - recipe.amount))
             .subscribe(resultList => this.listService.update(key, resultList));
-    }
-
-    public getName(i18nName: I18nName): string {
-        return this.i18n.getName(i18nName);
     }
 
     ngOnInit() {

@@ -1,25 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
-import {MdDialog} from '@angular/material';
+import {MdDialog, MdSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
-import {I18nToolsService} from '../../core/i18n-tools.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/user.service';
 import {ListService} from '../../core/firebase/list.service';
 import {Title} from '@angular/platform-browser';
+import {ListManagerService} from '../../core/list/list-manager.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-list',
     templateUrl: './list-details.component.html',
     styleUrls: ['./list-details.component.scss']
 })
-export class ListDetailsComponent implements OnInit {
+export class ListDetailsComponent implements OnInit, OnDestroy {
 
     listObj: Observable<List>;
 
@@ -49,9 +49,10 @@ export class ListDetailsComponent implements OnInit {
     private filterTrigger = new Subject<void>();
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
-                private dialog: MdDialog, private i18n: I18nToolsService,
-                private userService: UserService, private listService: ListService,
-                private title: Title) {
+                private dialog: MdDialog, private userService: UserService,
+                private listService: ListService, private title: Title,
+                private listManager: ListManagerService, private snack: MdSnackBar,
+                private translate: TranslateService) {
     }
 
     public getUser(): Observable<User> {
@@ -125,6 +126,19 @@ export class ListDetailsComponent implements OnInit {
         });
     }
 
+    upgradeList(): void {
+        this.listManager.upgradeList(this.list)
+            .mergeMap(list => this.listService.update(this.listUid, list))
+            .debounceTime(5000)
+            .subscribe(() => {
+                this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.title.setTitle('Teamcraft');
+    }
+
     update(): void {
         this.listService.update(this.listUid, this.list);
     }
@@ -143,13 +157,5 @@ export class ListDetailsComponent implements OnInit {
                 }
             }
         });
-    }
-
-    public save(): void {
-        console.log('saved');
-    }
-
-    public getName(entry: I18nName): string {
-        return this.i18n.getName(entry);
     }
 }
