@@ -95,12 +95,22 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        Observable.fromEvent(this.doneInput.nativeElement, 'input')
-            .debounceTime(500)
+        const focusOutObservable = Observable.fromEvent(this.doneInput.nativeElement, 'focusout')
             .distinctUntilChanged()
             .map(() => {
                 return this.doneInput.nativeElement.value;
-            })
+            });
+        const keyUpObservable = Observable.fromEvent(this.doneInput.nativeElement, 'keyup')
+            .filter((e: KeyboardEvent) => e.keyCode === 13)
+            .map(() => {
+                return this.doneInput.nativeElement.value;
+            });
+        this.registerSetDone(focusOutObservable);
+        this.registerSetDone(keyUpObservable);
+    }
+
+    private registerSetDone(eventObservable: Observable<any>): void {
+        eventObservable
             .subscribe(value => {
                 this.setDone(this.item, value, this.item.done);
             });
