@@ -85,7 +85,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Crystals'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <div class="crystal-row" *ngFor="let crystal of list?.crystals">
+    <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
         <div *ngIf="crystal.amount > crystal.done">
             <img class="crystal" mdTooltip="{{crystal | i18n}}" mdTooltipPosition="above"
                  src="{{crystal.icon}}" alt="{{crystal | i18n}}">

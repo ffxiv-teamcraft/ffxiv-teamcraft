@@ -161,6 +161,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.update();
     }
 
+    orderCrystals(crystals: ListRow[]): ListRow[] {
+        return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
+    }
+
     public resetProgression(): void {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {
