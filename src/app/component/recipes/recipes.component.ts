@@ -12,6 +12,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {HtmlToolsService} from '../../core/html-tools.service';
 import {ListService} from '../../core/firebase/list.service';
+import {SearchFilter} from '../../model/search/search-filter.interface';
 
 @Component({
     selector: 'app-recipes',
@@ -23,7 +24,63 @@ export class RecipesComponent implements OnInit {
     recipes: Recipe[] = [];
 
     @ViewChild('filter')
-    filter: ElementRef;
+    filterElement: ElementRef;
+
+    filters: SearchFilter[] = [
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 999
+            },
+            name: 'filters/ilvl',
+            filterName: 'ilvl'
+        },
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 70
+            },
+            name: 'filters/lvl',
+            filterName: 'lvl'
+        },
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 70
+            },
+            name: 'filters/craft_lvl',
+            filterName: 'clvl'
+        },
+        {
+            enabled: false,
+            minMax: false,
+            select: true,
+            value: 0,
+            values: this.gt.getJobs().filter(job => job.isJob !== undefined),
+            name: 'filters/worn_by',
+            filterName: 'jobCategories'
+        },
+        {
+            enabled: false,
+            minMax: false,
+            select: true,
+            value: 0,
+            values: this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1),
+            name: 'filters/crafted_by',
+            filterName: ''
+        },
+    ];
+
+    query: string;
 
     lists: Observable<List[]> = this.listService.getAll();
 
@@ -37,21 +94,28 @@ export class RecipesComponent implements OnInit {
     }
 
     ngOnInit() {
-        Observable.fromEvent(this.filter.nativeElement, 'keyup')
+        Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
-            .do(() => this.loading = true)
-            .mergeMap(() => {
-                const filter = this.filter.nativeElement.value;
-                if (filter === '') {
-                    return Observable.of([]);
-                }
-                return this.db.searchRecipe(filter);
-            })
-            .subscribe(results => {
-                this.recipes = results;
-                this.loading = false;
+            .subscribe(() => {
+                this.doSearch();
             });
+
+    }
+
+    doSearch(): void {
+        this.loading = true;
+        let hasFilters = false;
+        this.filters.forEach(f => hasFilters = hasFilters || f.enabled);
+        if ((this.query === undefined || this.query === '') && !hasFilters) {
+            this.recipes = [];
+            this.loading = false;
+            return;
+        }
+        this.db.searchRecipe(this.query, this.filters).subscribe(results => {
+            this.recipes = results;
+            this.loading = false;
+        });
     }
 
     getJob(id: number): any {

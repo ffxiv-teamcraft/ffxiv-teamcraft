@@ -15,8 +15,9 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
+    MdOptionModule,
     MdPaginatorModule,
-    MdProgressSpinnerModule,
+    MdProgressSpinnerModule, MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -54,8 +55,8 @@ import {CeilPipe} from './pipe/ceil.pipe';
 import {RecipeComponent} from './component/recipe/recipe.component';
 import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
 import {I18nPipe} from './pipe/i18n.pipe';
-import { RegenerationPopupComponent } from './component/popup/regeneration-popup/regeneration-popup.component';
-import { HomeComponent } from './component/home/home.component';
+import {RegenerationPopupComponent} from './component/popup/regeneration-popup/regeneration-popup.component';
+import {HomeComponent} from './component/home/home.component';
 
 const routes: Routes = [
     {
@@ -147,6 +148,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdCheckboxModule,
         MdSlideToggleModule,
         MdProgressSpinnerModule,
+        MdOptionModule,
+        MdSelectModule,
 
         BrowserModule,
         FormsModule,

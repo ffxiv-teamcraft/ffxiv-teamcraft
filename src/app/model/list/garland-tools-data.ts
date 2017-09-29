@@ -19,4 +19,5 @@ export interface GarlandToolsData {
         index: any[]
     };
     instanceTypes: string[];
+    jobCategories: any;
 }

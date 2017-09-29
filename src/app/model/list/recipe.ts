@@ -10,6 +10,6 @@ export interface Recipe {
     masterbook?: CompactMasterbook;
     name: I18nName;
     lvl: number;
-    icon: number;
-    url_xivdb: I18nName;
+    icon: string;
+    url_xivdb?: I18nName;
 }

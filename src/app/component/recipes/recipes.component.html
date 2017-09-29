@@ -1,9 +1,47 @@
 <div class="input-container">
     <md-input-container>
         <md-icon mdPrefix>search</md-icon>
-        <input class="filter" mdInput placeholder="{{'Recipe_name' | translate}}" #filter>
+        <input class="filter" [(ngModel)]="query" mdInput placeholder="{{'Recipe_name' | translate}}" #filter>
     </md-input-container>
 </div>
+<md-expansion-panel class="filters" #filtersPanel>
+    <md-expansion-panel-header>
+        <md-panel-title>
+            {{"Filters" | translate}}
+        </md-panel-title>
+    </md-expansion-panel-header>
+    <div *ngFor="let filter of filters">
+        <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
+        <div class="filter" *ngIf="!filter.minMax && !filter.select">
+            <md-input-container>
+                <span mdPrefix>{{filter.name}}</span>
+                <input mdInput type="number" disabled="{{!filter.enabled}}" [(ngModel)]="filter.value">
+            </md-input-container>
+        </div>
+        <div class="filter">
+            <md-select placeholder="{{filter.name}}" *ngIf="filter.select" disabled="{{!filter.enabled}}"
+                       [(ngModel)]="filter.value">
+                <md-option *ngFor="let value of filter.values" [value]="value.id">{{value.abbreviation}}</md-option>
+            </md-select>
+        </div>
+        <div class="filter" *ngIf="filter.minMax">
+            <span>{{filter.name}}</span>
+            <md-input-container>
+                <input mdInput type="number" maxlength="2" disabled="{{!filter.enabled}}"
+                       [(ngModel)]="filter.value.min">
+                <span mdSuffix>Min</span>
+            </md-input-container>
+            <md-input-container>
+                <input mdInput type="number" maxlength="2" disabled="{{!filter.enabled}}"
+                       [(ngModel)]="filter.value.max">
+                <span mdSuffix>Max</span>
+            </md-input-container>
+        </div>
+    </div>
+    <md-action-row>
+        <button md-raised-button color="accent" (click)="filtersPanel.close();doSearch()">Filter</button>
+    </md-action-row>
+</md-expansion-panel>
 <md-divider></md-divider>
 <md-list>
     <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
