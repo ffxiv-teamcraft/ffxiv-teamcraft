@@ -62,6 +62,7 @@ export class RecipesComponent implements OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
+
     /**
      * Adds a recipe to a given list
      *
@@ -90,7 +91,7 @@ export class RecipesComponent implements OnInit {
             }, err => console.error(err));
     }
 
-    addToNewList(recipe: any, amount = '1'): void {
+    addToNewList(recipe: any, amount: string): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
             list.name = res;

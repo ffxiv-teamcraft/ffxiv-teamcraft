@@ -13,6 +13,7 @@ export class List extends FirebaseDataModel {
     others: ListRow[] = [];
     crystals: ListRow[] = [];
     createdAt: string = new Date().toISOString();
+    version: string;
 
     constructor() {
         super();
@@ -24,41 +25,44 @@ export class List extends FirebaseDataModel {
         (this.preCrafts || []).forEach(method);
     }
 
-    public addToRecipes(data: ListRow): ListRow {
+    public addToRecipes(data: ListRow): number {
         return this.add(this.recipes, data);
     }
 
-    public addToPreCrafts(data: ListRow): ListRow {
+    public addToPreCrafts(data: ListRow): number {
         return this.add(this.preCrafts, data);
     }
 
-    public addToGathers(data: ListRow): ListRow {
+    public addToGathers(data: ListRow): number {
         return this.add(this.gathers, data);
     }
 
-    public addToOthers(data: ListRow): ListRow {
+    public addToOthers(data: ListRow): number {
         return this.add(this.others, data);
     }
 
-    public addToCrystals(data: ListRow): ListRow {
+    public addToCrystals(data: ListRow): number {
         return this.add(this.crystals, data);
     }
 
-    private add(array: ListRow[], data: ListRow): ListRow {
-        const row = array.find(r => {
+    private add(array: ListRow[], data: ListRow): number {
+        let previousAmount = 0;
+        let row = array.find(r => {
             return r.id === data.id;
         });
         if (row === undefined) {
             array.push(data);
+            row = array[array.length - 1];
         } else {
             row.amount = MathTools.round(row.amount + data.amount);
             if (row.amount < 0) {
                 row.amount = 0;
+                row.amount_needed = row.amount;
             }
+            previousAmount = row.amount_needed;
         }
-        return array.find((r) => {
-            return r.id === data.id;
-        });
+        row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
+        return row.amount_needed - previousAmount;
     }
 
     public clean(): List {
@@ -70,6 +74,14 @@ export class List extends FirebaseDataModel {
             }
         }
         return this;
+    }
+
+    public isEmpty(): boolean {
+        return this.recipes.length === 0 &&
+            this.preCrafts.length === 0 &&
+            this.gathers.length === 0 &&
+            this.others.length === 0 &&
+            this.crystals.length === 0;
     }
 
     public getItemById(id: number, addedAt?: number): ListRow {
@@ -91,7 +103,7 @@ export class List extends FirebaseDataModel {
         return undefined;
     }
 
-    public setDone(pitem: ListRow, amount: number): void {
+    public setDone(pitem: ListRow, amount: number, recipe: boolean = false): void {
         const item = this.getItemById(pitem.id, pitem.addedAt);
         item.done += amount;
         if (item.done > item.amount) {
@@ -100,12 +112,31 @@ export class List extends FirebaseDataModel {
         if (item.done < 0) {
             item.done = 0;
         }
+        if (recipe) {
+            amount = MathTools.absoluteCeil(amount / pitem.yield);
+        }
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount) / requirementItem.yield);
+                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount / requirementItem.yield));
             }
         }
+    }
+
+    /**
+     * Checks if the list is outdated, the implementation is meant to change.
+     * @returns {boolean}
+     */
+    public isOutDated(): boolean {
+        if (this.isEmpty()) {
+            return false;
+        }
+        let res = true;
+        this.forEachItem(i => {
+            res = res && (i.amount_needed === undefined);
+        });
+        res = res || (this.version === undefined);
+        return res;
     }
 
     public resetDone(item: ListRow): void {
@@ -138,28 +169,20 @@ export class List extends FirebaseDataModel {
                     const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
                         const yields = elementDetails.craft[0].yield || 1;
-                        const amount = MathTools.round(element.amount * addition.amount / yields);
-                        const preCraft = this.preCrafts.find(i => i.id === element.id);
-                        this.addToPreCrafts({
+                        const added = this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
-                            amount: amount,
+                            amount: element.amount * addition.amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
                             name: i18n.createI18nName(elementDetails),
                             yield: yields,
                             addedAt: Date.now()
                         });
-                        // If adding a requirement doesn't add a craft (like if you need another 0.3
-                        // of this item but it doesn't make 2 crafts).
-                        if (preCraft !== undefined
-                            && MathTools.absoluteCeil(preCraft.amount + amount) === MathTools.absoluteCeil(preCraft.amount)) {
-                            continue;
-                        }
                         nextIteration.push({
                             item: elementDetails,
                             data: addition.data,
-                            amount: MathTools.absoluteCeil(amount)
+                            amount: added
                         });
                     } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
                         this.addToGathers({

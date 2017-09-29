@@ -21,7 +21,7 @@
                             alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span [innerHtml]="getStars(recipe.stars)"></span>
             </p>
             <md-input-container>
-                <input mdInput #amount type="number" value="1" min="1">
+                <input mdInput type="number" min="1" value="1" #amount>
             </md-input-container>
             <md-menu #appMenu="mdMenu">
                 <button md-menu-item (click)="addToNewList(recipe, amount.value)">
