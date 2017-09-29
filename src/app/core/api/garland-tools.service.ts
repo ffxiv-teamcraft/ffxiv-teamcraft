@@ -18,6 +18,10 @@ export class GarlandToolsService {
         return this.gt.jobs.find(job => job.id === id);
     }
 
+    public getJobs(): any[] {
+        return this.gt.jobs;
+    }
+
     public getCrystalDetails(id: number): Item {
         return this.serializer.deserialize<Item>(this.gt.item.index[id], Item);
     }
@@ -87,5 +91,16 @@ export class GarlandToolsService {
             ja: item.name,
         };
         return clone;
+    }
+
+    getJobCategories(job: number): number[] {
+        // Get all keys of the given object.
+        return Object.keys(this.gt.jobCategories)
+        // Get only the ones that are made for our job id.
+            .filter(categoryId => {
+                return this.gt.jobCategories[categoryId].jobs.indexOf(job) > -1;
+            })
+            // Then we convert the string array to a number array
+            .map(key => +key);
     }
 }

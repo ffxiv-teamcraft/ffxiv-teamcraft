@@ -8,6 +8,19 @@
     }
 }
 
+.filters {
+    margin-bottom: 20px;
+    .filter {
+        display: inline-block;
+        md-input-container {
+            width: auto !important;
+            input {
+                text-align: right;
+            }
+        }
+    }
+}
+
 .add {
     cursor: pointer;
 }
