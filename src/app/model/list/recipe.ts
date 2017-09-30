@@ -3,7 +3,7 @@ import {I18nName} from './i18n-name';
 
 export interface Recipe {
     amount?: number;
-    recipeId: number;
+    recipeId: string;
     itemId: number;
     job: number;
     stars: number;

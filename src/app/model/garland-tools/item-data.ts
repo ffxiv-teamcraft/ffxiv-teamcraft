@@ -18,7 +18,7 @@ export class ItemData {
         return this.ingredients.find(item => item.id === id);
     }
 
-    public getCraft(recipeId: number): Craft {
+    public getCraft(recipeId: string): Craft {
         return this.item.craft.find(i => i.id === recipeId);
     }
 }

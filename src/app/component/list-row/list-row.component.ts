@@ -21,6 +21,9 @@ export class ListRowComponent {
     opened: EventEmitter<void> = new EventEmitter<void>();
 
     @Output()
+    onrecipedelete: EventEmitter<void> = new EventEmitter<void>();
+
+    @Output()
     ondelete: EventEmitter<void> = new EventEmitter<void>();
 
     @Output()

@@ -2,7 +2,7 @@ import {Complexity} from './complexity';
 import {Ingredient} from './ingredient';
 
 export interface Craft {
-    id: number;
+    id: string;
     job: number;
     rlvl: number;
     durability: number;

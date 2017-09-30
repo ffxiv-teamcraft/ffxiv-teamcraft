@@ -12,7 +12,6 @@ import {SearchFilter} from '../../model/search/search-filter.interface';
 @Injectable()
 export class DataService {
 
-    private xivdbUrl = 'https://api.xivdb.com';
     private garlandUrl = 'https://www.garlandtools.org/db/data';
     private garlandApiUrl = 'https://www.garlandtools.org/api';
 
@@ -57,7 +56,7 @@ export class DataService {
             const recipes: Recipe[] = [];
             garlandResults.forEach(item => {
                 recipes.push({
-                    recipeId: 200,
+                    recipeId: '200',
                     itemId: item.id,
                     job: item.obj.f[0],
                     stars: 0,

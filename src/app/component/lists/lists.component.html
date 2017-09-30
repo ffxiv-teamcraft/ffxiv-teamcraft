@@ -15,7 +15,8 @@
     <app-list-row [list]="list"
                   [expanded]="expanded === list.$key"
                   (opened)="expanded = list.$key"
-                  (ondelete)="removeRecipe($event.recipe, list, list.$key)"
+                  (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
                   (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                  (ondelete)="delete(list.$key)"
                   [authorUid]="user.uid"></app-list-row>
 </div>

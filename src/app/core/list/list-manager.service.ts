@@ -23,7 +23,7 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
-    public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
+    public addToList(itemId: number, plist: List, recipeId: string, amount = 1): Observable<List> {
         return Observable
             .of(plist)
             .map(list => {
