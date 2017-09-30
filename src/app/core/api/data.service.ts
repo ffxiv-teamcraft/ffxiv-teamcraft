@@ -55,7 +55,17 @@ export class DataService {
             })
             .map((results: any) => {
                 return results.items.results.filter(i => {
-                    return (this.gt.getItem(i.d).f.job || this.gt.getItem(i.d).f) === 1;
+                    const item = this.gt.getItem(i.id);
+                    if (item.f === undefined) {
+                        return false;
+                    }
+                    if (item.f === 1) {
+                        return true;
+                    }
+                    if (Array.isArray(item.f)) {
+                        return item.f.find(fRow => fRow.job === 1) !== undefined;
+                    }
+                    return false;
                 });
             })
             .mergeMap(results => {
