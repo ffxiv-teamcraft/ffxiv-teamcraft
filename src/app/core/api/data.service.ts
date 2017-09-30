@@ -55,7 +55,7 @@ export class DataService {
             })
             .map((results: any) => {
                 return results.items.results.filter(i => {
-                    return this.gt.getItem(i.id).f === 1;
+                    return (this.gt.getItem(i.d).f.job || this.gt.getItem(i.d).f) === 1;
                 });
             })
             .mergeMap(results => {
