@@ -38,9 +38,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     userData: AppUser;
 
     gatheringFilters = [
-        {job: 'BTN', level: 70, checked: true, name: 'botanist'},
-        {job: 'MIN', level: 70, checked: true, name: 'miner'},
-        {job: 'FSH', level: 70, checked: true, name: 'fisher'}
+        {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
+        {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
+        {job: 'FSH', level: 70, checked: true, types: [4], name: 'fisher'}
     ];
 
     craftFilters = [
@@ -114,7 +114,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 (ignored, list) => {
                     list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
-                            const filter = this.gatheringFilters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
+                            const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                            if (filter === undefined) {
+                                return;
+                            }
                             item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                         }
                         if (item.craftedBy !== undefined) {

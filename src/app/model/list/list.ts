@@ -133,9 +133,12 @@ export class List extends FirebaseDataModel {
         if (this.isEmpty()) {
             return false;
         }
-        let res = true;
+        let res = false;
         this.forEachItem(i => {
-            res = res && (i.amount_needed === undefined);
+            res = res || (i.amount_needed === undefined);
+            if (i.gatheredBy !== undefined) {
+                res = res || (i.gatheredBy.type === undefined);
+            }
         });
         res = res || (this.version === undefined);
         return res;

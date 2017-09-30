@@ -231,19 +231,21 @@ export class Item implements I18nData {
             icon: '',
             stars_tooltip: '',
             level: 0,
-            nodes: []
+            nodes: [],
+            type: -1
         };
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
             for (const node of this.nodes) {
                 const details = gt.getNode(node);
-                if (details.type <= 1) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
-                } else if (details.type < 4) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/BTN.png';
-                } else {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
-                }
+                gatheredBy.type = details.type;
+                gatheredBy.icon = [
+                    '/assets/icons/Mineral_Deposit.png',
+                    '/assets/icons/MIN.png',
+                    '/assets/icons/Mature_Tree.png',
+                    '/assets/icons/BTN.png',
+                    'https://garlandtools.org/db/images/FSH.png'
+                ][details.type];
                 gatheredBy.stars_tooltip = htmlTools.generateStars(details.stars);
                 gatheredBy.level = details.lvl;
                 if (details.areaid !== undefined) {
