@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+    list_count = this.firebase.object('/list_count');
 
-  ngOnInit() {
-  }
+    constructor(private firebase: AngularFireDatabase) {
+    }
 
 }
