@@ -160,7 +160,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     update(): void {
-        this.listService.update(this.listUid, this.list).then(() => console.log('update done !')).catch(console.error);
+        this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
     }
 
     toggleFavorite(): void {
