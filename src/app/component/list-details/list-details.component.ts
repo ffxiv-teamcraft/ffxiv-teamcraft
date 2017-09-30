@@ -126,6 +126,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     });
                     return list;
                 })
+                .distinctUntilChanged()
                 .do(l => this.title.setTitle(`${l.name}`))
                 .subscribe(l => this.list = l, err => console.error(err));
         });
