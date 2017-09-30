@@ -14,6 +14,7 @@ import {Title} from '@angular/platform-browser';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
+import {AppUser} from 'app/model/list/app-user';
 
 declare const ga: Function;
 
@@ -33,6 +34,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     listUid: string;
 
     authorUid: string;
+
+    userData: AppUser;
 
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, name: 'botanist'},
@@ -130,6 +133,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.auth.idToken.subscribe(user => {
             this.user = user;
         });
+        this.userService.getUserData()
+            .subscribe(user => {
+                this.userData = user;
+            });
     }
 
     isOwnList(): boolean {
@@ -153,6 +160,33 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     update(): void {
+        this.listService.update(this.listUid, this.list).then(() => console.log('update done !')).catch(console.error);
+    }
+
+    toggleFavorite(): void {
+        if (this.userData.favorites === null || this.userData.favorites === undefined) {
+            this.userData.favorites = [];
+        }
+        if (!this.isFavorite()) {
+            this.userData.favorites.push(`${this.authorUid}/${this.listUid}`);
+            this.list.favorites.push(this.user.uid);
+        } else {
+            this.userData.favorites =
+                Object.keys(this.userData.favorites)
+                    .filter(key => this.userData.favorites[key] !== `${this.authorUid}/${this.listUid}`);
+            this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
+        }
+        this.userService.saveUser(this.user.uid, this.userData);
+        this.update();
+    }
+
+    isFavorite(): boolean {
+        if (this.userData === undefined || this.userData.favorites === undefined) {
+            return false;
+        }
+        return Object.keys(this.userData.favorites)
+            .map(key => this.userData.favorites[key])
+            .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
         this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
     }
 

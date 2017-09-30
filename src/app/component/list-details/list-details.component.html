@@ -1,5 +1,12 @@
 <div class="header">
     <h3>{{list?.name}}</h3>
+    <button md-mini-fab color="accent"
+            *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
+            mdTooltip="Favorite"
+            (click)="toggleFavorite()">
+        <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
+        <md-icon *ngIf="isFavorite()">favorite</md-icon>
+    </button>
     <div class="spacer"></div>
     <button md-mini-fab color="accent" mdTooltip="{{'Reset_progression' | translate}}"
             (click)="resetProgression()">
@@ -141,3 +148,5 @@
         </div>
     </md-list>
 </md-expansion-panel>
+
+<pre>{{list | json}}</pre>

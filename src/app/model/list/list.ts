@@ -15,6 +15,8 @@ export class List extends FirebaseDataModel {
     createdAt: string = new Date().toISOString();
     version: string;
 
+    favorites: string[] = [];
+
     constructor() {
         super();
     }

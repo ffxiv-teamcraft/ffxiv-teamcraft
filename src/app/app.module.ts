@@ -57,6 +57,8 @@ import {ReductionDetailsPopupComponent} from './component/popup/reduction-detail
 import {I18nPipe} from './pipe/i18n.pipe';
 import {RegenerationPopupComponent} from './component/popup/regeneration-popup/regeneration-popup.component';
 import {HomeComponent} from './component/home/home.component';
+import { FavoritesComponent } from './component/favorites/favorites.component';
+import { ListRowComponent } from './component/list-row/list-row.component';
 
 const routes: Routes = [
     {
@@ -67,6 +69,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'favorites',
+        component: FavoritesComponent
     },
     {
         path: 'recipes',
@@ -110,6 +116,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         I18nPipe,
         RegenerationPopupComponent,
         HomeComponent,
+        FavoritesComponent,
+        ListRowComponent,
     ],
     imports: [
         TranslateModule.forRoot({
