@@ -3,7 +3,6 @@ import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import * as firebase from 'firebase/app';
 import {FirebaseDataModel} from '../../model/list/firebase-data-model';
-import ThenableReference = firebase.database.ThenableReference;
 import Promise = firebase.Promise;
 
 export abstract class StoredDataService<T extends FirebaseDataModel> {
@@ -11,7 +10,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
     constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService) {
     }
 
-    protected abstract getBaseUri(): Observable<string>;
+    protected abstract getBaseUri(params?: any): Observable<string>;
 
     protected abstract getClass(): any;
 
@@ -67,14 +66,15 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      *
      * @param uid
      * @param value
+     * @param params
      * @returns {firebase.Promise<void>}
      */
-    public update(uid: string, value: T): Promise<void> {
+    public update(uid: string, value: T, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri().subscribe(uri => {
+            return this.getBaseUri(params).mergeMap(uri => {
                 delete value.$key;
-                return this.oneRef(uri, uid).update(value).then(resolve);
-            });
+                return Observable.fromPromise(this.oneRef(uri, uid).update(value));
+            }).subscribe(resolve);
         });
     }
 

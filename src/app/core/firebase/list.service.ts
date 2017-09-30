@@ -40,7 +40,10 @@ export class ListService extends StoredDataService<List> {
         return this.firebase.object(`/users/${uuid}/lists/${uid}`).map(list => this.serializer.deserialize<List>(list, List));
     }
 
-    getBaseUri(): Observable<string> {
+    getBaseUri(params?: any): Observable<string> {
+        if (params !== undefined) {
+            return Observable.of(`/users/${params.uuid}/lists`);
+        }
         return this.af.authState.map(user => {
             return `/users/${user.uid}/lists`;
         });

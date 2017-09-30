@@ -153,12 +153,12 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     update(): void {
-        this.listService.update(this.listUid, this.list);
+        this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
     }
 
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
         this.list.setDone(data.row, data.amount, recipe);
-        this.listService.update(this.listUid, this.list);
+        this.update();
     }
 
     public resetProgression(): void {
@@ -166,8 +166,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             if (res) {
                 for (const recipe of this.list.recipes) {
                     this.list.resetDone(recipe);
-                    this.listService.update(this.listUid, this.list);
                 }
+                this.update();
             }
         });
     }
