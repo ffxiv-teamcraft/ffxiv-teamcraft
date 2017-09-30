@@ -55,5 +55,6 @@
     "Not_own_list_outdated": "This list is outdated, please ask the owner to regenerate it",
     "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
     "Own_list_outdated_after_button": "button",
-    "Home": "Home"
+    "Home": "Home",
+    "Favorites": "Favorites"
 }

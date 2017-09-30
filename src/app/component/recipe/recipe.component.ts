@@ -22,6 +22,9 @@ export class RecipeComponent implements OnInit {
     @Input()
     recipe: Recipe;
 
+    @Input()
+    readonly = false;
+
     constructor() {
     }
 

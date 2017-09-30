@@ -71,10 +71,10 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      */
     public update(uid: string, value: T): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri().subscribe(uri => {
+            return this.getBaseUri().mergeMap(uri => {
                 delete value.$key;
-                return this.oneRef(uri, uid).update(value).then(resolve);
-            });
+                return Observable.fromPromise(this.oneRef(uri, uid).update(value));
+            }).subscribe(resolve);
         });
     }
 

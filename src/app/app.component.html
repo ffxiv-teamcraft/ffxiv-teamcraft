@@ -58,6 +58,10 @@
                     <md-icon mdListIcon>view_list</md-icon>
                     <h3 mdLine>{{'Lists' | translate}}</h3>
                 </md-list-item>
+                <md-list-item routerLink="/favorites" (click)="sidenav.close()">
+                    <md-icon mdListIcon>favorite</md-icon>
+                    <h3 mdLine>{{'Favorites' | translate}}</h3>
+                </md-list-item>
             </md-nav-list>
             <md-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
             </md-slide-toggle>
