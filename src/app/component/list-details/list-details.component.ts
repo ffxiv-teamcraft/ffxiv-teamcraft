@@ -187,7 +187,6 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         return Object.keys(this.userData.favorites)
             .map(key => this.userData.favorites[key])
             .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
-        this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
     }
 
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
