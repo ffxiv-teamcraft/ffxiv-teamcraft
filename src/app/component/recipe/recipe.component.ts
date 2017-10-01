@@ -1,14 +1,12 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Recipe} from '../../model/list/recipe';
-import {Observable} from 'rxjs/Observable';
-import {I18nToolsService} from '../../core/i18n-tools.service';
 
 @Component({
     selector: 'app-recipe',
     templateUrl: './recipe.component.html',
     styleUrls: ['./recipe.component.scss']
 })
-export class RecipeComponent implements OnInit {
+export class RecipeComponent {
 
     @Output()
     ondelete: EventEmitter<void> = new EventEmitter<void>();
@@ -30,19 +28,6 @@ export class RecipeComponent implements OnInit {
 
     public delete(): void {
         this.ondelete.emit();
-    }
-
-    public ngOnInit(): void {
-        Observable.fromEvent(this.amount.nativeElement, 'input')
-            .debounceTime(500)
-            .distinctUntilChanged()
-            .map(() => {
-                return this.amount.nativeElement.value;
-            })
-            .filter(value => value > 0)
-            .subscribe(value => {
-                this.onedit.emit(value);
-            });
     }
 
 }

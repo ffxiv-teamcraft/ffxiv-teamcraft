@@ -59,6 +59,7 @@ import {RegenerationPopupComponent} from './component/popup/regeneration-popup/r
 import {HomeComponent} from './component/home/home.component';
 import { FavoritesComponent } from './component/favorites/favorites.component';
 import { ListRowComponent } from './component/list-row/list-row.component';
+import { AmountInputComponent } from './component/common/amount-input/amount-input.component';
 
 const routes: Routes = [
     {
@@ -118,6 +119,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         HomeComponent,
         FavoritesComponent,
         ListRowComponent,
+        AmountInputComponent,
     ],
     imports: [
         TranslateModule.forRoot({
