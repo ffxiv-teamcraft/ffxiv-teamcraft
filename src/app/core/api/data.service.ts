@@ -55,15 +55,16 @@ export class DataService {
         return this.getGarlandSearch(params).map(garlandResults => {
             const recipes: Recipe[] = [];
             garlandResults.forEach(item => {
-                recipes.push({
-                    recipeId: '200',
-                    itemId: item.id,
-                    job: item.obj.f[0],
-                    stars: 0,
-                    name: {fr: item.obj.fr.n, en: item.obj.en.n, ja: item.obj.ja.n, de: item.obj.de.n},
-                    lvl: 70,
-                    icon: `https://www.garlandtools.org/db/icons/item/${item.obj.c}.png`,
-                    url_xivdb: this.getXivdbUrl(item.id, item.obj.en.n),
+                item.obj.f.forEach(recipe => {
+                    recipes.push({
+                        recipeId: recipe.id,
+                        itemId: item.id,
+                        job: recipe.job,
+                        stars: recipe.stars,
+                        name: {fr: item.obj.fr.n, en: item.obj.en.n, ja: item.obj.ja.n, de: item.obj.de.n},
+                        lvl: recipe.lvl,
+                        icon: `https://www.garlandtools.org/db/icons/item/${item.obj.c}.png`
+                    });
                 });
             });
             return recipes;

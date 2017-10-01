@@ -4,7 +4,7 @@
     "license": "MIT",
     "scripts": {
         "ng": "ng",
-        "start": "node ./build/prebuild.js && ng serve",
+        "start": "node ./build/prebuild.js && ng serve --host 0.0.0.0",
         "build:prod": "node ./build/prebuild.js && ng build -prod",
         "standard-version": "standard-version",
         "standard-version:dry": "standard-version --dry-run",
