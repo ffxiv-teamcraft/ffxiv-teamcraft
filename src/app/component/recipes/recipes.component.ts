@@ -47,7 +47,7 @@ export class RecipesComponent implements OnInit {
                 max: 70
             },
             name: 'filters/lvl',
-            filterName: 'lvl'
+            filterName: 'elvl'
         },
         {
             enabled: false,
@@ -76,7 +76,7 @@ export class RecipesComponent implements OnInit {
             value: 0,
             values: this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1),
             name: 'filters/crafted_by',
-            filterName: ''
+            filterName: 'craftJob'
         },
     ];
 
