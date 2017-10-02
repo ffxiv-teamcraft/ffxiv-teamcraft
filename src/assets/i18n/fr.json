@@ -56,5 +56,10 @@
     "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
     "Own_list_outdated_after_button": "",
     "Home": "Accueil",
-    "Favorites": "Favoris"
+    "Favorites": "Favoris",
+    "filters/ilvl": "Niveau d'objet",
+    "filters/lvl": "Niveau d'équipement",
+    "filters/craft_lvl": "Niveau de la recette",
+    "filters/worn_by": "Équipé par",
+    "filters/crafted_by": "Fabriqué par"
 }

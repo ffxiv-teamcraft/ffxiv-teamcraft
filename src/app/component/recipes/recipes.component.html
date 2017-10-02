@@ -10,34 +10,37 @@
             {{"Filters" | translate}}
         </md-panel-title>
     </md-expansion-panel-header>
-    <div *ngFor="let filter of filters">
-        <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
-        <div class="filter" *ngIf="!filter.minMax && !filter.select">
-            <md-input-container>
-                <span mdPrefix>{{filter.name}}</span>
-                <input mdInput type="number" disabled="{{!filter.enabled}}" [(ngModel)]="filter.value">
-            </md-input-container>
+    <ul class="filters">
+        <div *ngFor="let filter of filters">
+            <li colspan="2" *ngIf="filter.select">
+                <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
+                <md-select placeholder="{{filter.name | translate}}"
+                           disabled="{{!filter.enabled}}"
+                           [(ngModel)]="filter.value">
+                    <md-option *ngFor="let value of filter.values" [value]="value.id">
+                        <img src="https://garlandtools.org/db/images/{{value.abbreviation}}.png" class="img-option"
+                             alt="{{value.abbreviation}}">
+                    </md-option>
+                </md-select>
+            </li>
+            <li class="min-max" *ngIf="filter.minMax">
+                <div>
+                    <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
+                    <span>{{filter.name | translate}}</span>
+                </div>
+                <md-input-container>
+                    <input mdInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
+                           [(ngModel)]="filter.value.min">
+                    <span mdSuffix>Min</span>
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
+                           [(ngModel)]="filter.value.max">
+                    <span mdSuffix>Max</span>
+                </md-input-container>
+            </li>
         </div>
-        <div class="filter">
-            <md-select placeholder="{{filter.name}}" *ngIf="filter.select" disabled="{{!filter.enabled}}"
-                       [(ngModel)]="filter.value">
-                <md-option *ngFor="let value of filter.values" [value]="value.id">{{value.abbreviation}}</md-option>
-            </md-select>
-        </div>
-        <div class="filter" *ngIf="filter.minMax">
-            <span>{{filter.name}}</span>
-            <md-input-container>
-                <input mdInput type="number" maxlength="2" disabled="{{!filter.enabled}}"
-                       [(ngModel)]="filter.value.min">
-                <span mdSuffix>Min</span>
-            </md-input-container>
-            <md-input-container>
-                <input mdInput type="number" maxlength="2" disabled="{{!filter.enabled}}"
-                       [(ngModel)]="filter.value.max">
-                <span mdSuffix>Max</span>
-            </md-input-container>
-        </div>
-    </div>
+    </ul>
     <md-action-row>
         <button md-raised-button color="accent" (click)="filtersPanel.close();doSearch()">Filter</button>
     </md-action-row>
@@ -47,7 +50,9 @@
     <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
         <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>
     </div>
-    <div *ngIf="loading" class="loading"><md-spinner></md-spinner></div>
+    <div *ngIf="loading" class="loading">
+        <md-spinner></md-spinner>
+    </div>
     <div *ngIf="recipes.length > 0 && !loading">
         <md-list-item *ngFor="let recipe of recipes">
             <a md-list-avatar target="_blank">
@@ -56,7 +61,8 @@
             <h4 md-line [innerHTML]="recipe | i18n"></h4>
             <p md-line *ngIf="getJob(recipe.job).abbreviation !== 'ADV'">
                 <img src="https://www.garlandtools.org/db/images/{{getJob(recipe.job).abbreviation}}.png"
-                            alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span [innerHtml]="getStars(recipe.stars)"></span>
+                     alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span
+                [innerHtml]="getStars(recipe.stars)"></span>
             </p>
             <md-input-container>
                 <input mdInput type="number" min="1" value="1" #amount>

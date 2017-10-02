@@ -56,5 +56,10 @@
     "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
     "Own_list_outdated_after_button": "button",
     "Home": "Home",
-    "Favorites": "Favorites"
+    "Favorites": "Favorites",
+    "filters/ilvl": "Item level",
+    "filters/lvl": "Required level",
+    "filters/craft_lvl": "Recipe level",
+    "filters/worn_by": "Worn by",
+    "filters/crafted_by": "Crafted by"
 }
