@@ -63,5 +63,6 @@
     "filters/worn_by": "Worn by",
     "filters/crafted_by": "Crafted by",
     "Adding_recipes":"Adding {{amount}} recipes to list {{listname}}",
-    "Add_all_recipes":"Add results to a list"
+    "Add_all_recipes":"Add results to a list",
+    "Character_not_found": "Character not found"
 }
