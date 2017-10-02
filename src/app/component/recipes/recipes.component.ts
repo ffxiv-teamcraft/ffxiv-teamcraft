@@ -65,7 +65,7 @@ export class RecipesComponent implements OnInit {
             minMax: false,
             select: true,
             value: 0,
-            values: this.gt.getJobs().filter(job => job.isJob !== undefined),
+            values: this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === "Disciple of the Land"),
             name: 'filters/worn_by',
             filterName: 'jobCategories'
         },

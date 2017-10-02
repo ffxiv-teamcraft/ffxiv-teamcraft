@@ -12,8 +12,9 @@
     display: inline-block;
     width: 100%;
     div {
-        width: 50%;
+        width: 65%;
         li {
+            margin-top: 20px;
             display: flex;
             align-items: baseline;
             md-input-container {
@@ -21,8 +22,17 @@
                 margin-right: 10px;
             }
         }
-        li .min-max *:first-child {
+        li *:first-child {
             flex: 1;
+        }
+        div {
+            min-width: 250px;
+        }
+        md-radio-group {
+            width: 520px;
+            md-radio-button {
+                margin-right: 5px;
+            }
         }
     }
 }

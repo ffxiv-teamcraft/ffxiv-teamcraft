@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
                     this.translate.instant('Anonymous_Warning'),
                     this.translate.instant('Registration'),
                     {
-                        duration: 10000,
+                        duration: 5000,
                         extraClasses: ['snack-warn']
                     }
                 );

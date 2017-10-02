@@ -12,16 +12,17 @@
     </md-expansion-panel-header>
     <ul class="filters">
         <div *ngFor="let filter of filters">
-            <li colspan="2" *ngIf="filter.select">
-                <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
-                <md-select placeholder="{{filter.name | translate}}"
-                           disabled="{{!filter.enabled}}"
-                           [(ngModel)]="filter.value">
-                    <md-option *ngFor="let value of filter.values" [value]="value.id">
+            <li *ngIf="filter.select" class="options">
+                <div>
+                    <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
+                    {{filter.name | translate}}
+                </div>
+                <md-radio-group disabled="{{!filter.enabled}}" [(ngModel)]="filter.value">
+                    <md-radio-button *ngFor="let value of filter.values" [value]="value.id">
                         <img src="https://garlandtools.org/db/images/{{value.abbreviation}}.png" class="img-option"
                              alt="{{value.abbreviation}}">
-                    </md-option>
-                </md-select>
+                    </md-radio-button>
+                </md-radio-group>
             </li>
             <li class="min-max" *ngIf="filter.minMax">
                 <div>
