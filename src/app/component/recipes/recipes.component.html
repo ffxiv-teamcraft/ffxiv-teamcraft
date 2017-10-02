@@ -47,6 +47,23 @@
     </md-action-row>
 </md-expansion-panel>
 <md-divider></md-divider>
+
+<md-menu #addAllMenu="mdMenu">
+    <button md-menu-item (click)="addAllToNewList()">
+        <md-icon>add</md-icon>
+        <span>{{'New_List' | translate}}</span></button>
+    <button md-menu-item *ngFor="let list of lists | async"
+            (click)="addAllRecipes(list, list.$key)">
+        <md-icon>playlist_play</md-icon>
+        <span>{{list.name}}</span></button>
+</md-menu>
+
+<div class="add-all-wrapper">
+    <button md-raised-button [mdMenuTriggerFor]="addAllMenu" class="add-all-recipes" [disabled]="recipes.length === 0">
+        {{'Add_all_recipes' | translate}}
+    </button>
+</div>
+
 <md-list>
     <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
         <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>

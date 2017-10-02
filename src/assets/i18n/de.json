@@ -61,5 +61,7 @@
     "filters/lvl": "Required level",
     "filters/craft_lvl": "Recipe level",
     "filters/worn_by": "Worn by",
-    "filters/crafted_by": "Crafted by"
+    "filters/crafted_by": "Crafted by",
+    "Adding_recipes":"Adding {{amount}} recipes to list {{listname}}",
+    "Add_all_recipes":"Add results to a list"
 }

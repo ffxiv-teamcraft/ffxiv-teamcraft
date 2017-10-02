@@ -37,6 +37,14 @@
     }
 }
 
+.add-all-wrapper {
+    display: flex;
+    justify-content: center;
+    .add-all-recipes {
+        margin-top: 10px;
+    }
+}
+
 .img-option {
     height: 32px;
     vertical-align: middle;

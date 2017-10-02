@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 import {HtmlToolsService} from '../../core/html-tools.service';
 import {ListService} from '../../core/firebase/list.service';
 import {SearchFilter} from '../../model/search/search-filter.interface';
+import {BulkAdditionPopupComponent} from '../popup/bulk-addition-popup/bulk-addition-popup.component';
 
 @Component({
     selector: 'app-recipes',
@@ -65,7 +66,7 @@ export class RecipesComponent implements OnInit {
             minMax: false,
             select: true,
             value: 0,
-            values: this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === "Disciple of the Land"),
+            values: this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land'),
             name: 'filters/worn_by',
             filterName: 'jobCategories'
         },
@@ -153,6 +154,40 @@ export class RecipesComponent implements OnInit {
                     });
                 });
             }, err => console.error(err));
+    }
+
+    addAllRecipes(list: List, key: string): void {
+        const additions = [];
+        this.recipes.forEach(recipe => {
+            additions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, 1));
+        });
+        this.dialog.open(BulkAdditionPopupComponent, {
+            data: {additions: additions, key: key, listname: list.name},
+            disableClose: true
+        }).afterClosed().subscribe(() => {
+            this.snackBar.open(
+                `Results added to list ${list.name}`,
+                this.translator.instant('Open'),
+                {
+                    duration: 10000,
+                    extraClasses: ['snack']
+                }
+            ).onAction().subscribe(() => {
+                this.listService.getRouterPath(key).subscribe(path => {
+                    this.router.navigate(path);
+                });
+            });
+        });
+    }
+
+    addAllToNewList(): void {
+        this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
+            const list = new List();
+            list.name = res;
+            this.listService.push(list).then(l => {
+                this.addAllRecipes(list, l.key);
+            });
+        });
     }
 
     addToNewList(recipe: any, amount: string): void {

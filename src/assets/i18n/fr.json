@@ -61,5 +61,7 @@
     "filters/lvl": "Niveau d'équipement",
     "filters/craft_lvl": "Niveau de la recette",
     "filters/worn_by": "Équipé par",
-    "filters/crafted_by": "Fabriqué par"
+    "filters/crafted_by": "Fabriqué par",
+    "Adding_recipes":"Ajout de {{amount}} recettes à la liste {{listname}}",
+    "Add_all_recipes":"Ajouter les résultats à une liste"
 }

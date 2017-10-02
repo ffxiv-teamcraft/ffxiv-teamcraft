@@ -15,7 +15,7 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule,
+    MdPaginatorModule, MdProgressBarModule,
     MdProgressSpinnerModule,
     MdRadioModule,
     MdSidenavModule,
@@ -60,6 +60,8 @@ import {HomeComponent} from './component/home/home.component';
 import {FavoritesComponent} from './component/favorites/favorites.component';
 import {ListRowComponent} from './component/list-row/list-row.component';
 import {AmountInputComponent} from './component/common/amount-input/amount-input.component';
+import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
+import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
 
 const routes: Routes = [
     {
@@ -120,6 +122,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         FavoritesComponent,
         ListRowComponent,
         AmountInputComponent,
+        BulkAdditionPopupComponent,
+        RandomGifComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -160,6 +164,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdProgressSpinnerModule,
         MdRadioModule,
         MdGridListModule,
+        MdProgressBarModule,
 
         BrowserModule,
         FormsModule,
@@ -185,6 +190,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CharacterAddPopupComponent,
         ReductionDetailsPopupComponent,
         RegenerationPopupComponent,
+        BulkAdditionPopupComponent,
     ],
     providers: [
         UserService,

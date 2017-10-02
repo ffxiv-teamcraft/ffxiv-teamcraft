@@ -28,6 +28,8 @@ export class ListsComponent implements OnInit {
 
     expanded: string;
 
+    expandAll = false;
+
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title) {

@@ -11,9 +11,11 @@
 </form>
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
+<md-slide-toggle [(ngModel)]="expandAll">Allow multiple opened lists</md-slide-toggle>
+
 <div class="row" *ngFor="let list of lists | async">
     <app-list-row [list]="list"
-                  [expanded]="expanded === list.$key"
+                  [expanded]="expanded === list.$key || expandAll"
                   (opened)="expanded = list.$key"
                   (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
                   (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
