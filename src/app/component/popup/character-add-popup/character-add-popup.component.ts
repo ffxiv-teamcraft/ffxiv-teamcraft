@@ -17,6 +17,8 @@ export class CharacterAddPopupComponent implements OnInit {
 
     alreadyUsed = false;
 
+    validateTimeout: any;
+
     constructor(private data: DataService,
                 private fb: FormBuilder,
                 private firebase: AngularFireDatabase,
@@ -24,18 +26,24 @@ export class CharacterAddPopupComponent implements OnInit {
                 public dialogRef: MdDialogRef<CharacterAddPopupComponent>) {
     }
 
-    validateData(group: FormGroup): Observable<any> {
-        return this.data
-            .searchCharacter(group.controls.character.value, group.controls.server.value)
-            .catch(() => {
-                return Observable.of([]);
-            }).map(result => {
-                if (result.length !== 1) {
-                    return {invalid: true};
-                } else {
-                    return null;
-                }
-            });
+    validateData(group: FormGroup): Promise<any> {
+        const delay = 300;
+        clearTimeout(this.validateTimeout);
+        return new Promise((resolve) => {
+            this.validateTimeout = setTimeout(() => {
+                return this.data
+                    .searchCharacter(group.controls.character.value, group.controls.server.value)
+                    .catch(() => {
+                        return Observable.of([]);
+                    }).subscribe(result => {
+                        if (result.length !== 1) {
+                            resolve({invalid: true});
+                        } else {
+                            resolve();
+                        }
+                    });
+            }, delay);
+        });
     }
 
     submit(): void {
