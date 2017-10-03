@@ -15,10 +15,10 @@ export class ItemData {
     partials: Partial[];
 
     public getIngredient(id: number): Item {
-        return this.ingredients.find(item => item.id === id);
+        return this.ingredients.find(item => id.toString().indexOf(item.id.toString()) > -1);
     }
 
     public getCraft(recipeId: string): Craft {
-        return this.item.craft.find(i => i.id === recipeId);
+        return this.item.craft.find(i => recipeId.toString().indexOf(i.id.toString()) > -1);
     }
 }
