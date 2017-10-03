@@ -14,6 +14,7 @@ import {Title} from '@angular/platform-browser';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
+import {AppUser} from 'app/model/list/app-user';
 
 declare const ga: Function;
 
@@ -34,10 +35,12 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     authorUid: string;
 
+    userData: AppUser;
+
     gatheringFilters = [
-        {job: 'BTN', level: 70, checked: true, name: 'botanist'},
-        {job: 'MIN', level: 70, checked: true, name: 'miner'},
-        {job: 'FSH', level: 70, checked: true, name: 'fisher'}
+        {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
+        {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
+        {job: 'FSH', level: 70, checked: true, types: [4], name: 'fisher'}
     ];
 
     craftFilters = [
@@ -111,7 +114,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 (ignored, list) => {
                     list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
-                            const filter = this.gatheringFilters.find(f => item.gatheredBy.icon.indexOf(f.job) > -1);
+                            const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                            if (filter === undefined) {
+                                return;
+                            }
                             item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                         }
                         if (item.craftedBy !== undefined) {
@@ -123,6 +129,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     });
                     return list;
                 })
+                .distinctUntilChanged()
                 .do(l => this.title.setTitle(`${l.name}`))
                 .subscribe(l => this.list = l, err => console.error(err));
         });
@@ -130,6 +137,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.auth.idToken.subscribe(user => {
             this.user = user;
         });
+        this.userService.getUserData()
+            .subscribe(user => {
+                this.userData = user;
+            });
     }
 
     isOwnList(): boolean {
@@ -140,7 +151,6 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.listManager.upgradeList(this.list)
             .mergeMap(list => this.listService.update(this.listUid, list))
-            .debounceTime(6000)
             .subscribe(() => {
                 ga('send', 'event', 'List', 'regenerate');
                 dialogRef.close();
@@ -156,9 +166,39 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
     }
 
+    toggleFavorite(): void {
+        if (this.userData.favorites === null || this.userData.favorites === undefined) {
+            this.userData.favorites = [];
+        }
+        if (!this.isFavorite()) {
+            this.userData.favorites.push(`${this.authorUid}/${this.listUid}`);
+            this.list.favorites.push(this.user.uid);
+        } else {
+            this.userData.favorites =
+                Object.keys(this.userData.favorites)
+                    .filter(key => this.userData.favorites[key] !== `${this.authorUid}/${this.listUid}`);
+            this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
+        }
+        this.userService.saveUser(this.user.uid, this.userData);
+        this.update();
+    }
+
+    isFavorite(): boolean {
+        if (this.userData === undefined || this.userData.favorites === undefined) {
+            return false;
+        }
+        return Object.keys(this.userData.favorites)
+            .map(key => this.userData.favorites[key])
+            .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
+    }
+
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
         this.list.setDone(data.row, data.amount, recipe);
         this.update();
+    }
+
+    orderCrystals(crystals: ListRow[]): ListRow[] {
+        return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
     }
 
     public resetProgression(): void {

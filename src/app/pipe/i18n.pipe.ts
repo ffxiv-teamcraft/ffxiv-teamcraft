@@ -11,6 +11,9 @@ export class I18nPipe implements PipeTransform {
     }
 
     transform(value: any): string {
+        if (value === undefined) {
+            return undefined;
+        }
         if (this.isI18nEntry(value.name)) {
             return this.i18n.getName(value.name);
         }

@@ -15,8 +15,9 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule,
+    MdPaginatorModule, MdProgressBarModule,
     MdProgressSpinnerModule,
+    MdRadioModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -54,13 +55,28 @@ import {CeilPipe} from './pipe/ceil.pipe';
 import {RecipeComponent} from './component/recipe/recipe.component';
 import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
 import {I18nPipe} from './pipe/i18n.pipe';
-import { RegenerationPopupComponent } from './component/popup/regeneration-popup/regeneration-popup.component';
+import {RegenerationPopupComponent} from './component/popup/regeneration-popup/regeneration-popup.component';
+import {HomeComponent} from './component/home/home.component';
+import {FavoritesComponent} from './component/favorites/favorites.component';
+import {ListRowComponent} from './component/list-row/list-row.component';
+import {AmountInputComponent} from './component/common/amount-input/amount-input.component';
+import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
+import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
+import { ItemIconComponent } from './component/common/item-icon/item-icon.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/recipes',
+        redirectTo: '/home',
         pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: HomeComponent
+    },
+    {
+        path: 'favorites',
+        component: FavoritesComponent
     },
     {
         path: 'recipes',
@@ -103,6 +119,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         ReductionDetailsPopupComponent,
         I18nPipe,
         RegenerationPopupComponent,
+        HomeComponent,
+        FavoritesComponent,
+        ListRowComponent,
+        AmountInputComponent,
+        BulkAdditionPopupComponent,
+        RandomGifComponent,
+        ItemIconComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -141,6 +164,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdCheckboxModule,
         MdSlideToggleModule,
         MdProgressSpinnerModule,
+        MdRadioModule,
+        MdGridListModule,
+        MdProgressBarModule,
 
         BrowserModule,
         FormsModule,
@@ -166,6 +192,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CharacterAddPopupComponent,
         ReductionDetailsPopupComponent,
         RegenerationPopupComponent,
+        BulkAdditionPopupComponent,
     ],
     providers: [
         UserService,

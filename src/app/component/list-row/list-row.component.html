@@ -1,0 +1,24 @@
+<md-expansion-panel [expanded]="expanded" (opened)="opened.emit()">
+    <md-expansion-panel-header>
+        <md-panel-title>
+            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
+        </md-panel-title>
+        <div class="spacer"></div>
+        <div class="buttons">
+            <button md-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}">
+                <md-icon>open_in_new</md-icon>
+            </button>
+            <button md-icon-button *ngIf="!readonly" (click)="ondelete.emit()">
+                <md-icon>delete</md-icon>
+            </button>
+        </div>
+    </md-expansion-panel-header>
+    <md-list>
+        <app-recipe *ngFor="let recipe of list.recipes"
+                    [recipe]="recipe"
+                    (ondelete)="onrecipedelete.emit()"
+                    (onedit)="onedit.emit({recipe: recipe, amount:$event})"
+                    [readonly]="readonly">
+        </app-recipe>
+    </md-list>
+</md-expansion-panel>

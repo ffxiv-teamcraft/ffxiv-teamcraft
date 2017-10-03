@@ -123,8 +123,10 @@ export class Item implements I18nData {
                             .of({
                                 itemIcon: '',
                                 itemAmount: 0,
+                                itemName: {fr: '', de: '', en: '', ja: ''},
                                 currencyIcon: '',
                                 currencyAmount: 0,
+                                currencyName: {fr: '', de: '', en: '', ja: ''},
                                 itemHQ: false
                             })
                             .mergeMap(trade => {
@@ -132,6 +134,7 @@ export class Item implements I18nData {
                                     .map(data => {
                                         trade.itemIcon = data.item.icon;
                                         trade.itemAmount = row.item[0].amount;
+                                        trade.itemName = data.item.name;
                                         trade.itemHQ = row.item[0].hq === 1;
                                         return trade;
                                     });
@@ -141,6 +144,7 @@ export class Item implements I18nData {
                                     .map(data => {
                                         trade.currencyIcon = data.item.icon;
                                         trade.currencyAmount = row.currency[0].amount;
+                                        trade.currencyName = data.item.name;
                                         return trade;
                                     });
                             });
@@ -231,19 +235,21 @@ export class Item implements I18nData {
             icon: '',
             stars_tooltip: '',
             level: 0,
-            nodes: []
+            nodes: [],
+            type: -1
         };
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
             for (const node of this.nodes) {
                 const details = gt.getNode(node);
-                if (details.type <= 1) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/MIN.png';
-                } else if (details.type < 4) {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/BTN.png';
-                } else {
-                    gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
-                }
+                gatheredBy.type = details.type;
+                gatheredBy.icon = [
+                    '/assets/icons/Mineral_Deposit.png',
+                    '/assets/icons/MIN.png',
+                    '/assets/icons/Mature_Tree.png',
+                    '/assets/icons/BTN.png',
+                    'https://garlandtools.org/db/images/FSH.png'
+                ][details.type];
                 gatheredBy.stars_tooltip = htmlTools.generateStars(details.stars);
                 gatheredBy.level = details.lvl;
                 if (details.areaid !== undefined) {
@@ -262,5 +268,9 @@ export class Item implements I18nData {
             }
         }
         return gatheredBy;
+    }
+
+    public get name(): I18nName {
+        return {fr: this.fr.name, de: this.de.name, en: this.en.name, ja: this.ja.name};
     }
 }

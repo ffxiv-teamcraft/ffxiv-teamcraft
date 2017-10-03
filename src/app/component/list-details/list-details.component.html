@@ -1,5 +1,12 @@
 <div class="header">
     <h3>{{list?.name}}</h3>
+    <button md-mini-fab color="accent"
+            *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
+            mdTooltip="Favorite"
+            (click)="toggleFavorite()">
+        <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
+        <md-icon *ngIf="isFavorite()">favorite</md-icon>
+    </button>
     <div class="spacer"></div>
     <button md-mini-fab color="accent" mdTooltip="{{'Reset_progression' | translate}}"
             (click)="resetProgression()">
@@ -19,7 +26,7 @@
     {{"Own_list_outdated_after_button"| translate}}
 </md-error>
 
-<md-expansion-panel expanded="true">
+<md-expansion-panel>
     <md-expansion-panel-header>
         <md-panel-title>
             {{'Filters' | translate}}
@@ -85,7 +92,7 @@
     <md-expansion-panel-header>
         <md-panel-title>{{'Crystals'| translate}}</md-panel-title>
     </md-expansion-panel-header>
-    <div class="crystal-row" *ngFor="let crystal of list?.crystals">
+    <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
         <div *ngIf="crystal.amount > crystal.done">
             <img class="crystal" mdTooltip="{{crystal | i18n}}" mdTooltipPosition="above"
                  src="{{crystal.icon}}" alt="{{crystal | i18n}}">

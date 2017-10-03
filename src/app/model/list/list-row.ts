@@ -15,7 +15,7 @@ export interface ListRow {
     amount_needed?: number;
     done: number;
     requires?: Ingredient[];
-    recipeId?: number;
+    recipeId?: string;
     yield: number;
 
     craftedBy?: CraftedBy[];

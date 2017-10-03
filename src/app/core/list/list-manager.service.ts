@@ -23,7 +23,7 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
-    public addToList(itemId: number, plist: List, recipeId: number, amount = 1): Observable<List> {
+    public addToList(itemId: number, plist: List, recipeId: string, amount = 1): Observable<List> {
         return Observable
             .of(plist)
             .map(list => {
@@ -210,6 +210,15 @@ export class ListManagerService {
                             });
                     })
                     .map(l => l.clean())
+                    .map(l => {
+                        l.preCrafts = l.preCrafts.sort((a: ListRow, b: ListRow) => {
+                            if (a.requires.find(requirement => requirement.id === b.id) !== undefined) {
+                                return 1;
+                            }
+                            return -1;
+                        });
+                        return l;
+                    })
                     .debounceTime(500);
             });
     }
@@ -240,6 +249,7 @@ export class ListManagerService {
         list.preCrafts = [];
         list.others = [];
         list.recipes = [];
+        let done = 0;
         return Observable.concat(...add)
             .map((resultList: List) => {
                 progressionBackup.forEach(row => {
@@ -252,6 +262,8 @@ export class ListManagerService {
                     }
                 });
                 return resultList;
-            });
+            })
+            .do(() => done++)
+            .filter(() => done === add.length);
     }
 }

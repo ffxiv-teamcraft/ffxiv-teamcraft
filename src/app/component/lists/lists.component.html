@@ -11,28 +11,14 @@
 </form>
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
+<md-slide-toggle [(ngModel)]="expandAll">Allow multiple opened lists</md-slide-toggle>
+
 <div class="row" *ngFor="let list of lists | async">
-    <md-expansion-panel [expanded]="true">
-        <md-expansion-panel-header>
-            <md-panel-title>
-                {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
-            </md-panel-title>
-            <div class="spacer"></div>
-            <div class="buttons">
-                <button md-icon-button routerLink="/list/{{user.uid}}/{{list.$key}}">
-                    <md-icon>open_in_new</md-icon>
-                </button>
-                <button md-icon-button (click)="delete(list.$key)">
-                    <md-icon>delete</md-icon>
-                </button>
-            </div>
-        </md-expansion-panel-header>
-        <md-list>
-            <app-recipe *ngFor="let recipe of list.recipes"
-                        [recipe]="recipe"
-                        (ondelete)="removeRecipe(recipe, list, list.$key)"
-                        (onedit)="updateAmount(recipe, list, list.$key, $event)">
-            </app-recipe>
-        </md-list>
-    </md-expansion-panel>
+    <app-list-row [list]="list"
+                  [expanded]="expanded === list.$key || expandAll"
+                  (opened)="expanded = list.$key"
+                  (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                  (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                  (ondelete)="delete(list.$key)"
+                  [authorUid]="user.uid"></app-list-row>
 </div>

@@ -46,8 +46,22 @@
             </div>
             <md-divider></md-divider>
             <md-nav-list>
-                <a md-list-item routerLink="/recipes" (click)="sidenav.close()">{{'Recipes' | translate}}</a>
-                <a md-list-item routerLink="/lists" (click)="sidenav.close()">{{'Lists' | translate}}</a>
+                <md-list-item routerLink="/home" (click)="sidenav.close()">
+                    <md-icon mdListIcon>home</md-icon>
+                    <h3 mdLine>{{'Home' | translate}}</h3>
+                </md-list-item>
+                <md-list-item routerLink="/recipes" (click)="sidenav.close()">
+                    <md-icon mdListIcon>search</md-icon>
+                    <h3 mdLine>{{'Recipes' | translate}}</h3>
+                </md-list-item>
+                <md-list-item routerLink="/lists" (click)="sidenav.close()">
+                    <md-icon mdListIcon>view_list</md-icon>
+                    <h3 mdLine>{{'Lists' | translate}}</h3>
+                </md-list-item>
+                <md-list-item routerLink="/favorites" (click)="sidenav.close()">
+                    <md-icon mdListIcon>favorite</md-icon>
+                    <h3 mdLine>{{'Favorites' | translate}}</h3>
+                </md-list-item>
             </md-nav-list>
             <md-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
             </md-slide-toggle>
@@ -64,7 +78,7 @@
                                                                                                          src="https://github.com/fluidicon.png"
                                                                                                          alt="Github"></a>
             </div>
-            <a md-raised-button href="https://www.reddit.com/r/ffxivteamcraft/" target="_blank" color="warn"
+            <a md-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </md-sidenav>
         <div class="my-content">

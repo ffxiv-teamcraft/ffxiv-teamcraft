@@ -12,6 +12,8 @@ import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {HtmlToolsService} from '../../core/html-tools.service';
 import {ListService} from '../../core/firebase/list.service';
+import {SearchFilter} from '../../model/search/search-filter.interface';
+import {BulkAdditionPopupComponent} from '../popup/bulk-addition-popup/bulk-addition-popup.component';
 
 @Component({
     selector: 'app-recipes',
@@ -23,7 +25,63 @@ export class RecipesComponent implements OnInit {
     recipes: Recipe[] = [];
 
     @ViewChild('filter')
-    filter: ElementRef;
+    filterElement: ElementRef;
+
+    filters: SearchFilter[] = [
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 999
+            },
+            name: 'filters/ilvl',
+            filterName: 'ilvl'
+        },
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 70
+            },
+            name: 'filters/lvl',
+            filterName: 'elvl'
+        },
+        {
+            enabled: false,
+            minMax: true,
+            select: false,
+            value: {
+                min: 0,
+                max: 70
+            },
+            name: 'filters/craft_lvl',
+            filterName: 'clvl'
+        },
+        {
+            enabled: false,
+            minMax: false,
+            select: true,
+            value: 0,
+            values: this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land'),
+            name: 'filters/worn_by',
+            filterName: 'jobCategories'
+        },
+        {
+            enabled: false,
+            minMax: false,
+            select: true,
+            value: 0,
+            values: this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1),
+            name: 'filters/crafted_by',
+            filterName: 'craftJob'
+        },
+    ];
+
+    query: string;
 
     lists: Observable<List[]> = this.listService.getAll();
 
@@ -37,21 +95,28 @@ export class RecipesComponent implements OnInit {
     }
 
     ngOnInit() {
-        Observable.fromEvent(this.filter.nativeElement, 'keyup')
+        Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
-            .do(() => this.loading = true)
-            .mergeMap(() => {
-                const filter = this.filter.nativeElement.value;
-                if (filter === '') {
-                    return Observable.of([]);
-                }
-                return this.db.searchRecipe(filter);
-            })
-            .subscribe(results => {
-                this.recipes = results;
-                this.loading = false;
+            .subscribe(() => {
+                this.doSearch();
             });
+
+    }
+
+    doSearch(): void {
+        this.loading = true;
+        let hasFilters = false;
+        this.filters.forEach(f => hasFilters = hasFilters || f.enabled);
+        if ((this.query === undefined || this.query === '') && !hasFilters) {
+            this.recipes = [];
+            this.loading = false;
+            return;
+        }
+        this.db.searchRecipe(this.query, this.filters).subscribe(results => {
+            this.recipes = results;
+            this.loading = false;
+        });
     }
 
     getJob(id: number): any {
@@ -76,7 +141,7 @@ export class RecipesComponent implements OnInit {
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
-                        `${this.i18n.getName(recipe.name)} added to list ${list.name}`,
+                        this.translator.instant('Recipe_Added', {itemname: this.i18n.getName(recipe.name), listname: list.name}),
                         this.translator.instant('Open'),
                         {
                             duration: 10000,
@@ -89,6 +154,40 @@ export class RecipesComponent implements OnInit {
                     });
                 });
             }, err => console.error(err));
+    }
+
+    addAllRecipes(list: List, key: string): void {
+        const additions = [];
+        this.recipes.forEach(recipe => {
+            additions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, 1));
+        });
+        this.dialog.open(BulkAdditionPopupComponent, {
+            data: {additions: additions, key: key, listname: list.name},
+            disableClose: true
+        }).afterClosed().subscribe(() => {
+            this.snackBar.open(
+                this.translator.instant('Recipes_Added', {listname: list.name}),
+                this.translator.instant('Open'),
+                {
+                    duration: 10000,
+                    extraClasses: ['snack']
+                }
+            ).onAction().subscribe(() => {
+                this.listService.getRouterPath(key).subscribe(path => {
+                    this.router.navigate(path);
+                });
+            });
+        });
+    }
+
+    addAllToNewList(): void {
+        this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
+            const list = new List();
+            list.name = res;
+            this.listService.push(list).then(l => {
+                this.addAllRecipes(list, l.key);
+            });
+        });
     }
 
     addToNewList(recipe: any, amount: string): void {

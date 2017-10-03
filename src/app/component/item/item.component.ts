@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
@@ -9,7 +9,6 @@ import {I18nName} from '../../model/list/i18n-name';
 import {DesynthPopupComponent} from '../popup/desynth-popup/desynth-popup.component';
 import {CompactMasterbook} from '../../model/list/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
-import {Observable} from 'rxjs/Observable';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
@@ -20,7 +19,7 @@ import {MathTools} from '../../tools/math-tools';
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
 
     @Input()
     item: ListRow;
@@ -94,18 +93,6 @@ export class ItemComponent implements OnInit {
         return this.recipe ? this.item.amount : this.item.amount_needed;
     }
 
-    ngOnInit(): void {
-        Observable.fromEvent(this.doneInput.nativeElement, 'input')
-            .debounceTime(500)
-            .distinctUntilChanged()
-            .map(() => {
-                return this.doneInput.nativeElement.value;
-            })
-            .subscribe(value => {
-                this.setDone(this.item, value, this.item.done);
-            });
-    }
-
     public getMasterBooks(item: ListRow): CompactMasterbook[] {
         const res: CompactMasterbook[] = [];
         for (const craft of item.craftedBy) {
@@ -118,7 +105,7 @@ export class ItemComponent implements OnInit {
         return res;
     }
 
-    public setDone(row: ListRow, amount: number, done: number, recipe: boolean = false) {
+    public setDone(row: ListRow, amount: number, done: number) {
         this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done)});
     }
 
