@@ -210,6 +210,15 @@ export class ListManagerService {
                             });
                     })
                     .map(l => l.clean())
+                    .map(l => {
+                        l.preCrafts = l.preCrafts.sort((a: ListRow, b: ListRow) => {
+                            if (a.requires.find(requirement => requirement.id === b.id) !== undefined) {
+                                return 1;
+                            }
+                            return -1;
+                        });
+                        return l;
+                    })
                     .debounceTime(500);
             });
     }
