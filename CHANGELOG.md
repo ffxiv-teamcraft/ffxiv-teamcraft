@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.4...v2.0.0) (2017-10-03)
+
+
+### Bug Fixes
+
+* add cache system for better animations on panels ([cec585d](https://github.com/Supamiu/ffxiv-teamcraft/commit/cec585d))
+* bad amount for multiple item occurences in pre-requisite crafts, fixes FC crafts ([5bad9f6](https://github.com/Supamiu/ffxiv-teamcraft/commit/5bad9f6))
+* broken search feature ([376afe5](https://github.com/Supamiu/ffxiv-teamcraft/commit/376afe5))
+* collaborative contribution not working ([07941b8](https://github.com/Supamiu/ffxiv-teamcraft/commit/07941b8))
+* empty list considered as outdated ([23d1dff](https://github.com/Supamiu/ffxiv-teamcraft/commit/23d1dff))
+* hotfix for new recipe format on garlandtools ([ea5fd52](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea5fd52))
+* input field for recipes was used as string, resulting on a concatenated number set ([82c4a77](https://github.com/Supamiu/ffxiv-teamcraft/commit/82c4a77))
+* list regeneration popup now stays until it's 100% done ([d5a70cb](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5a70cb))
+* missing error message on character not found ([4f9b0df](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f9b0df))
+* regenerate button now removes unused items ([9c0c52b](https://github.com/Supamiu/ffxiv-teamcraft/commit/9c0c52b))
+
+
+### Code Refactoring
+
+* item numbers are now used as is, no more crafting numbers required. ([066b4a3](https://github.com/Supamiu/ffxiv-teamcraft/commit/066b4a3))
+
+
+### Features
+
+* add item name in trade details popup ([64a0a0a](https://github.com/Supamiu/ffxiv-teamcraft/commit/64a0a0a))
+* add new input field to add multiple crafts ([9cfa73e](https://github.com/Supamiu/ffxiv-teamcraft/commit/9cfa73e))
+* add proper icon depending on gathering type ([ba39b97](https://github.com/Supamiu/ffxiv-teamcraft/commit/ba39b97)), closes [#47](https://github.com/Supamiu/ffxiv-teamcraft/issues/47)
+* advanced search filters for recipe search ([42651d9](https://github.com/Supamiu/ffxiv-teamcraft/commit/42651d9))
+* advanced search filters for recipe search ([ebb0bce](https://github.com/Supamiu/ffxiv-teamcraft/commit/ebb0bce))
+* amount field in list details now updates value on focusout and enter keypress ([e48be18](https://github.com/Supamiu/ffxiv-teamcraft/commit/e48be18))
+* amount field in list details now updates value on focusout and enter keypress ([0d978d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d978d0))
+* bulk add search results ([a819f12](https://github.com/Supamiu/ffxiv-teamcraft/commit/a819f12))
+* crystals now ordered (shards, crystals, clusters) ([8c1915d](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c1915d))
+* crystals now ordered (shards, crystals, clusters) ([839acd3](https://github.com/Supamiu/ffxiv-teamcraft/commit/839acd3))
+* display trade icon based on the currency used ([22bde3c](https://github.com/Supamiu/ffxiv-teamcraft/commit/22bde3c)), closes [#45](https://github.com/Supamiu/ffxiv-teamcraft/issues/45)
+* favorite lists ([98e3ef4](https://github.com/Supamiu/ffxiv-teamcraft/commit/98e3ef4))
+* favorite lists ([446eb2e](https://github.com/Supamiu/ffxiv-teamcraft/commit/446eb2e))
+* input fields now updated on focus loose or enter keyup ([204c44c](https://github.com/Supamiu/ffxiv-teamcraft/commit/204c44c))
+* precrafts are now ordered based on dependencies (if a precraft depends on another precraft, it will be listed after its dependencies) ([e8095fd](https://github.com/Supamiu/ffxiv-teamcraft/commit/e8095fd))
+* proper home page ([0d53e08](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d53e08)), closes [#20](https://github.com/Supamiu/ffxiv-teamcraft/issues/20)
+
+
+### BREAKING CHANGES
+
+* We reverted the previous breaking change, if you want to craft 99 potions, add 99 potions and the system will handle it properly, you don't have to divide by the number of item yielded, this will now be like that, no more change to this feature.
+
+
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.3...v1.2.4) (2017-09-26)
 
