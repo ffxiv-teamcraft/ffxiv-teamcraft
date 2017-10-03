@@ -141,7 +141,7 @@ export class RecipesComponent implements OnInit {
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
-                        `${this.i18n.getName(recipe.name)} added to list ${list.name}`,
+                        this.translator.instant('Recipe_Added', {itemname: this.i18n.getName(recipe.name), listname: list.name}),
                         this.translator.instant('Open'),
                         {
                             duration: 10000,
@@ -166,7 +166,7 @@ export class RecipesComponent implements OnInit {
             disableClose: true
         }).afterClosed().subscribe(() => {
             this.snackBar.open(
-                `Results added to list ${list.name}`,
+                this.translator.instant('Recipes_Added', {listname: list.name}),
                 this.translator.instant('Open'),
                 {
                     duration: 10000,

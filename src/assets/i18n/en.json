@@ -63,6 +63,11 @@
     "filters/worn_by": "Worn by",
     "filters/crafted_by": "Crafted by",
     "Adding_recipes":"Adding {{amount}} recipes to list {{listname}}",
+    "Recipe_Added":"{{itemname}} added to list {{listname}}",
+    "Recipes_Added":"Results added to list {{listname}}",
+    "Character_name":"Character Name",
+    "Character_informations": "Character informations",
+    "Server_name":"Server Name",
     "Add_all_recipes":"Add results to a list",
     "Character_not_found": "Character not found",
 
