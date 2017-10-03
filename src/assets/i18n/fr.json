@@ -64,5 +64,29 @@
     "filters/crafted_by": "Fabriqué par",
     "Adding_recipes":"Ajout de {{amount}} recettes à la liste {{listname}}",
     "Add_all_recipes":"Ajouter les résultats à une liste",
-    "Character_not_found": "Personnage non trouvé"
+    "Character_not_found": "Personnage non trouvé",
+
+
+    "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
+    "HOME_PAGE.count": "listes actuellement stockées",
+    "HOME_PAGE.p1": "Bonjour, je suis Miu Asakura sur Louisoix. Je suis le créateur de FFXIV Teamcraft, un outil qui permet de créer des listes de craft en ligne, les partager avec ses amis et y contribuer en temps réel. À cause du fait que nous avions des soucis avec la gestion de grandes listes de craft avec ma Compagnie Libre en utilisant les outils actuels, j'ai voulu trouver un moyen de créer des listes qui sont stockées sur lesquelles chacun pourait dire \"J'ai cet  objet, je peux le donner pour la recette\". J'ai donc commencé à développer FFXIV Teamcraft.",
+    "HOME_PAGE.p2": "Puis je me suis dit, \"Si ma Compagnie Libre trouve cet outil utile, pourquoi les autres n'en penseraient-ils pas de même?\". Alors j'ai acheté un nom de domaine, j'ai créé un topic sur reddit et j'ai commencé à ajouter des fonctionnalités. Actuallement l'application est capable de stocker vos listes, montrer ce que vous pouvez obtenir par vous même et tout cela dans votre langue (certaines traductions sont manquantes mais elles seront ajoutées dès que possible) avec un seul lien. Que vous soyez francophone, anglophone ou germanophone, l'application vous montrera une version de la liste que vous pouvez comprendre. C'est le but premier de celle-ci.",
+    "HOME_PAGE.p3": "FFXIV Teamcraft est là pour faire les calculs, pour que vous puissiez vous concentrer sur la partie essentielle du craft et que vous oubliiez vos tableurs et vos feuilles avec tous les composants écrits dessus. Ajoutez simplement une recette à une liste, donnez le lien à vos amis et commencez à crafter ensemble !",
+    "HOME_PAGE.support_patreon": "Soutenez-nous sur patreon",
+    "HOME_PAGE.features": "Fonctionnalités",
+    "HOME_PAGE.FEATURES.list_creation_title": "Crétion de listes",
+    "HOME_PAGE.FEATURES.list_creation_content": "Cherchez une recette, ajoutez-là à une liste, et c'est fait !",
+    "HOME_PAGE.FEATURES.realtime_translations_title": "Traduction en temps réel",
+    "HOME_PAGE.FEATURES.realtime_translations_content": "Les listes sont indépendantes de la langue, elles peuvent être vues dans n'importe quelle langue !",
+    "HOME_PAGE.FEATURES.item_details_title": "Détails des objets",
+    "HOME_PAGE.FEATURES.item_details_content": "Trouvez comment obtenir les composants de votre liste en un clic !",
+    "HOME_PAGE.FEATURES.search_filters_title": "Filtres de recherche",
+    "HOME_PAGE.FEATURES.search_filters_content": "Trouvez rapidement ce que vous cherchez, plus de recherches multiples !",
+    "HOME_PAGE.FEATURES.bulk_import_title": "Import multiple",
+    "HOME_PAGE.FEATURES.bulk_import_content": "Ajoutez plusieurs objets à la fois !",
+    "HOME_PAGE.support_title": "Support",
+    "HOME_PAGE.support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
+    "HOME_PAGE.support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
+    "HOME_PAGE.contribute_title": "Contribuer",
+    "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et evoyez une Pull Request !"
 }
