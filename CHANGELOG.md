@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.0...v2.0.1) (2017-10-03)
+
+
+### Bug Fixes
+
+* character add popup is now working properly ([6e4b4dc](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e4b4dc))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v1.2.4...v2.0.0) (2017-10-03)
 
