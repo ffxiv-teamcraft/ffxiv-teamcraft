@@ -93,5 +93,6 @@
     "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
     "HOME_PAGE.support_comtent_facebook": "You can also find us on facebook",
     "HOME_PAGE.contribute_title": "Contribute",
-    "HOME_PAGE.contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !"
+    "HOME_PAGE.contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
+    "HOME_PAGE.changelog": "To get every news about the website, each changes, please refer to the changelog."
 }

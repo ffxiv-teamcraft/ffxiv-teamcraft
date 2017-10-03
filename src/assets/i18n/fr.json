@@ -93,5 +93,6 @@
     "HOME_PAGE.support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
     "HOME_PAGE.support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
     "HOME_PAGE.contribute_title": "Contribuer",
-    "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et evoyez une Pull Request !"
+    "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et evoyez une Pull Request !",
+    "HOME_PAGE.changelog": "Pour suivre toutes les nouveautés de chaque version à tout momen, se référer au changelog (Anglais)"
 }
