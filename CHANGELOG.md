@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.1...v2.0.2) (2017-10-03)
+
+
+### Bug Fixes
+
+* can't add FC craft to a list ([5ed6536](https://github.com/Supamiu/ffxiv-teamcraft/commit/5ed6536))
+* fr typos ([d8f8df6](https://github.com/Supamiu/ffxiv-teamcraft/commit/d8f8df6))
+* searching for ingot with "crafted by BSM" filter returns ARM ingots too ([858c58f](https://github.com/Supamiu/ffxiv-teamcraft/commit/858c58f)), closes [#51](https://github.com/Supamiu/ffxiv-teamcraft/issues/51)
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.0...v2.0.1) (2017-10-03)
 
