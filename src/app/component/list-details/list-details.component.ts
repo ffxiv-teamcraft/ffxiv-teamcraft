@@ -151,7 +151,6 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.listManager.upgradeList(this.list)
             .mergeMap(list => this.listService.update(this.listUid, list))
-            .debounceTime(6000)
             .subscribe(() => {
                 ga('send', 'event', 'List', 'regenerate');
                 dialogRef.close();

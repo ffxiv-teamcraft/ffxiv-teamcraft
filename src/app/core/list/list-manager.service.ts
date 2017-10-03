@@ -249,6 +249,7 @@ export class ListManagerService {
         list.preCrafts = [];
         list.others = [];
         list.recipes = [];
+        let done = 0;
         return Observable.concat(...add)
             .map((resultList: List) => {
                 progressionBackup.forEach(row => {
@@ -261,6 +262,8 @@ export class ListManagerService {
                     }
                 });
                 return resultList;
-            });
+            })
+            .do(() => done++)
+            .filter(() => done === add.length);
     }
 }
