@@ -35,6 +35,8 @@ export class DataService {
             .set('craftable', '1')
             .set('lang', this.i18n.currentLang);
 
+        let craftedByFilter: SearchFilter;
+
         if (query !== undefined) {
             params = params.set('text', query);
         }
@@ -49,6 +51,9 @@ export class DataService {
                 } else {
                     params = params.set(filter.filterName, filter.value);
                 }
+                if (filter.name === 'filters/crafted_by') {
+                    craftedByFilter = filter;
+                }
             }
         });
 
@@ -56,6 +61,9 @@ export class DataService {
             const recipes: Recipe[] = [];
             garlandResults.forEach(item => {
                 item.obj.f.forEach(recipe => {
+                    if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
+                        return;
+                    }
                     recipes.push({
                         recipeId: recipe.id,
                         itemId: item.id,
