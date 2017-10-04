@@ -2,13 +2,15 @@
     <h3>{{list?.name}}</h3>
     <button md-mini-fab color="accent"
             *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
-            mdTooltip="Favorite"
+            mdTooltip="{{'Favorite' | translate}}"
             (click)="toggleFavorite()">
         <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
         <md-icon *ngIf="isFavorite()">favorite</md-icon>
     </button>
 
-    <button md-mini-fab (click)="forkList()">
+    <button md-mini-fab *ngIf="list !== undefined && !isOwnList() && user !== undefined"
+            (click)="forkList()"
+            mdTooltip="{{'List_fork' | translate}}">
         <md-icon>content_copy</md-icon>
     </button>
 
