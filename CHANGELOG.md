@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.4...v2.1.0) (2017-10-04)
+
+
+### Bug Fixes
+
+* removing a list from favorites corrupts the entire list ([cc635fe](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc635fe)), closes [#58](https://github.com/Supamiu/ffxiv-teamcraft/issues/58)
+
+
+### Features
+
+* proper not found page for lists ([f7b4cdc](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7b4cdc))
+* recipe details in list crafts ([0513f3b](https://github.com/Supamiu/ffxiv-teamcraft/commit/0513f3b))
+* you can now copy a list to your account to have your own progression tracking ([ef66043](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef66043)), closes [#53](https://github.com/Supamiu/ffxiv-teamcraft/issues/53)
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.3...v2.0.4) (2017-10-04)
 
