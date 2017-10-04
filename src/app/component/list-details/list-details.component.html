@@ -1,150 +1,164 @@
-<div class="header">
-    <h3>{{list?.name}}</h3>
-    <button md-mini-fab color="accent"
-            *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
-            mdTooltip="Favorite"
-            (click)="toggleFavorite()">
-        <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
-        <md-icon *ngIf="isFavorite()">favorite</md-icon>
-    </button>
-    <div class="spacer"></div>
-    <button md-mini-fab color="accent" mdTooltip="{{'Reset_progression' | translate}}"
-            (click)="resetProgression()">
-        <md-icon>refresh</md-icon>
-    </button>
+<div *ngIf="list !== undefined && list.$value !== null">
+    <div class="header">
+        <h3>{{list?.name}}</h3>
+        <button md-mini-fab color="accent"
+                *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
+                mdTooltip="{{'Favorite' | translate}}"
+                (click)="toggleFavorite()">
+            <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
+            <md-icon *ngIf="isFavorite()">favorite</md-icon>
+        </button>
 
-    <button md-mini-fab color="accent" *ngIf="isOwnList()"
-            mdTooltip="{{'Upgrade_list' | translate}}"
-            (click)="upgradeList()">
+        <button md-mini-fab *ngIf="list !== undefined && !isOwnList() && user !== undefined"
+                (click)="forkList()"
+                mdTooltip="{{'List_fork' | translate}}">
+            <md-icon>content_copy</md-icon>
+        </button>
+
+        <div class="spacer"></div>
+
+        <button md-mini-fab color="accent" mdTooltip="{{'Reset_progression' | translate}}"
+                (click)="resetProgression()">
+            <md-icon>refresh</md-icon>
+        </button>
+
+        <button md-mini-fab color="accent" *ngIf="isOwnList()"
+                mdTooltip="{{'Upgrade_list' | translate}}"
+                (click)="upgradeList()">
+            <md-icon>update</md-icon>
+        </button>
+    </div>
+
+    <md-error *ngIf="list?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"| translate}}
+    </md-error>
+    <md-error *ngIf="list?.isOutDated() && isOwnList()" class="listError">{{"Own_list_outdated_before_button"|
+        translate}}
         <md-icon>update</md-icon>
-    </button>
+        {{"Own_list_outdated_after_button"| translate}}
+    </md-error>
+
+    <md-expansion-panel>
+        <md-expansion-panel-header>
+            <md-panel-title>
+                {{'Filters' | translate}}
+            </md-panel-title>
+        </md-expansion-panel-header>
+        <div class="filters">
+            <div class="category-header">{{'Game_Term/DoL' | translate}}</div>
+            <div class="class-filters">
+                <div *ngFor="let filter of gatheringFilters">
+                    <md-input-container class="class-filter">
+                        <md-checkbox mdPrefix class="filter"
+                                     [(ngModel)]="filter.checked"
+                                     (change)="triggerFilter()">
+                        </md-checkbox>
+                        <input mdInput type="number"
+                               [(ngModel)]="filter.level"
+                               min="1" max="70" (change)="triggerFilter()">
+
+                        <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
+                             alt="{{filter.job}}"
+                             class="filter_icons">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="category-header">{{'Game_Term/DoH' | translate}}</div>
+            <div class="class-filters">
+                <div *ngFor="let filter of craftFilters">
+                    <md-input-container class="class-filter">
+                        <md-checkbox mdPrefix class="filter"
+                                     [(ngModel)]="filter.checked"
+                                     (change)="triggerFilter()">
+                        </md-checkbox>
+                        <input mdInput type="number"
+                               [(ngModel)]="filter.level"
+                               min="1" max="70" (change)="triggerFilter()">
+
+                        <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
+                             alt="{{filter.job}}"
+                             class="filter_icons">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="class-filters">
+                <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
+                        (click)="checkAll(true)" class="filter">
+                    <md-icon>done_all</md-icon>
+                </button>
+                <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
+                        (click)="checkAll(false)" class="filter">
+                    <md-icon>clear</md-icon>
+                </button>
+                <div class="spacer"></div>
+                <button md-raised-button
+                        [disabled]="(getUser() | async)?.isAnonymous"
+                        (click)="adaptFilters()"
+                        color="accent">Adapt to character
+                </button>
+            </div>
+        </div>
+    </md-expansion-panel>
+
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Crystals'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
+            <div *ngIf="crystal.amount > crystal.done">
+                <img class="crystal" mdTooltip="{{crystal | i18n}}" mdTooltipPosition="above"
+                     src="{{crystal.icon}}" alt="{{crystal | i18n}}">
+                <div>{{(crystal.amount - crystal.done) | ceil}}</div>
+            </div>
+        </div>
+    </md-expansion-panel>
+
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let gather of list?.gathers">
+                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
+                          [item]="gather"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
+
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Other'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let other of list?.others">
+                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!other.hidden"
+                          [item]="other"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
+
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let preCraft of list?.preCrafts">
+                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
+                          [item]="preCraft"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
+
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Items'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let recipe of list?.recipes">
+                <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
+                          [item]="recipe"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
+
 </div>
-
-<md-error *ngIf="list?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"| translate}}</md-error>
-<md-error *ngIf="list?.isOutDated() && isOwnList()" class="listError">{{"Own_list_outdated_before_button"| translate}}
-    <md-icon>update</md-icon>
-    {{"Own_list_outdated_after_button"| translate}}
-</md-error>
-
-<md-expansion-panel>
-    <md-expansion-panel-header>
-        <md-panel-title>
-            {{'Filters' | translate}}
-        </md-panel-title>
-    </md-expansion-panel-header>
-    <div class="filters">
-        <div class="category-header">{{'Game_Term/DoL' | translate}}</div>
-        <div class="class-filters">
-            <div *ngFor="let filter of gatheringFilters">
-                <md-input-container class="class-filter">
-                    <md-checkbox mdPrefix class="filter"
-                                 [(ngModel)]="filter.checked"
-                                 (change)="triggerFilter()">
-                    </md-checkbox>
-                    <input mdInput type="number"
-                           [(ngModel)]="filter.level"
-                           min="1" max="70" (change)="triggerFilter()">
-
-                    <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
-                         alt="{{filter.job}}"
-                         class="filter_icons">
-                </md-input-container>
-            </div>
-        </div>
-        <div class="category-header">{{'Game_Term/DoH' | translate}}</div>
-        <div class="class-filters">
-            <div *ngFor="let filter of craftFilters">
-                <md-input-container class="class-filter">
-                    <md-checkbox mdPrefix class="filter"
-                                 [(ngModel)]="filter.checked"
-                                 (change)="triggerFilter()">
-                    </md-checkbox>
-                    <input mdInput type="number"
-                           [(ngModel)]="filter.level"
-                           min="1" max="70" (change)="triggerFilter()">
-
-                    <img mdSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
-                         alt="{{filter.job}}"
-                         class="filter_icons">
-                </md-input-container>
-            </div>
-        </div>
-        <div class="class-filters">
-            <button md-icon-button md-tooltip="{{'Check_all' | translate}}" mdTooltipPosition="above"
-                    (click)="checkAll(true)" class="filter">
-                <md-icon>done_all</md-icon>
-            </button>
-            <button md-icon-button md-tooltip="{{'Uncheck_all' | translate}}" mdTooltipPosition="above"
-                    (click)="checkAll(false)" class="filter">
-                <md-icon>clear</md-icon>
-            </button>
-            <div class="spacer"></div>
-            <button md-raised-button
-                    [disabled]="(getUser() | async)?.isAnonymous"
-                    (click)="adaptFilters()"
-                    color="accent">Adapt to character
-            </button>
-        </div>
-    </div>
-</md-expansion-panel>
-
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Crystals'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
-        <div *ngIf="crystal.amount > crystal.done">
-            <img class="crystal" mdTooltip="{{crystal | i18n}}" mdTooltipPosition="above"
-                 src="{{crystal.icon}}" alt="{{crystal | i18n}}">
-            <div>{{(crystal.amount - crystal.done) | ceil}}</div>
-        </div>
-    </div>
-</md-expansion-panel>
-
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let gather of list?.gathers">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
-                      [item]="gather"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
-
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Other'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let other of list?.others">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!other.hidden"
-                      [item]="other"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
-
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let preCraft of list?.preCrafts">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
-                      [item]="preCraft"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
-
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Items'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let recipe of list?.recipes">
-            <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
-                      [item]="recipe"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
+<h4 class="not-found" *ngIf="list !== undefined && list.$value === null">{{"List_not_found" | translate}}</h4>
