@@ -175,8 +175,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             this.list.favorites.push(this.user.uid);
         } else {
             this.userData.favorites =
-                Object.keys(this.userData.favorites)
-                    .filter(key => this.userData.favorites[key] !== `${this.authorUid}/${this.listUid}`);
+                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
             this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
         }
         this.userService.saveUser(this.user.uid, this.userData);
