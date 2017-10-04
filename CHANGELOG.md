@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.3...v2.0.4) (2017-10-04)
+
+
+### Bug Fixes
+
+* amount field behavior sometimes was entering wrong amount ([afa6f7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/afa6f7c))
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.2...v2.0.3) (2017-10-04)
 
