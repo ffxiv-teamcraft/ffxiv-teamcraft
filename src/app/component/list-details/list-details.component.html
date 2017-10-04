@@ -132,7 +132,7 @@
     <md-list dense>
         <div *ngFor="let preCraft of list?.preCrafts">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
-                      [item]="preCraft"></app-item>
+                      [item]="preCraft" [highlighted]="true"></app-item>
         </div>
     </md-list>
 </md-expansion-panel>

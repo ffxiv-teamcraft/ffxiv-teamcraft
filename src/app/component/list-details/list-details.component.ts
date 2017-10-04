@@ -211,4 +211,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             }
         });
     }
+
+    public mouseOver(event: MouseEvent): void {
+        console.log(event);
+    }
 }

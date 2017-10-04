@@ -13,6 +13,7 @@ import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/i
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 import {MathTools} from '../../tools/math-tools';
+import {List} from '../../model/list/list';
 
 @Component({
     selector: 'app-item',
@@ -35,6 +36,15 @@ export class ItemComponent {
 
     @Input()
     recipe = false;
+
+    @Input()
+    highlighted = false;
+
+    @Input()
+    list: List;
+
+    @Input()
+    showRequirements = false;
 
     tradeSourcePriorities = {
         // MGP, just in case
