@@ -57,6 +57,7 @@
     "Own_list_outdated_after_button": "button",
     "Home": "Home",
     "Favorites": "Favorites",
+    "Favorite": "Favorite",
     "filters/ilvl": "Item level",
     "filters/lvl": "Required level",
     "filters/craft_lvl": "Recipe level",
@@ -71,6 +72,9 @@
     "Add_all_recipes": "Add results to a list",
     "Character_not_found": "Character not found",
     "Requirements_for_craft": "See requirements",
+    "List_forked": "List copied to your account",
+    "List_fork": "Copy this list to your account",
+    "List_not_found": "List not found",
 
 
     "HOME_PAGE.title": "Create lists, share, contribute, craft",

@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
@@ -60,7 +60,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private dialog: MdDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
-                private translate: TranslateService) {
+                private translate: TranslateService, private router: Router) {
     }
 
     public getUser(): Observable<User> {
@@ -130,8 +130,13 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     return list;
                 })
                 .distinctUntilChanged()
-                .do(l => this.title.setTitle(`${l.name}`))
-                .subscribe(l => this.list = l, err => console.error(err));
+                .do(l => {
+                    if (l.name !== undefined) {
+                        this.title.setTitle(`${l.name}`);
+                    } else {
+                        this.title.setTitle(this.translate.instant('List_not_found'));
+                    }
+                }).subscribe(l => this.list = l, err => console.error(err));
         });
         this.triggerFilter();
         this.auth.idToken.subscribe(user => {
@@ -175,8 +180,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             this.list.favorites.push(this.user.uid);
         } else {
             this.userData.favorites =
-                Object.keys(this.userData.favorites)
-                    .filter(key => this.userData.favorites[key] !== `${this.authorUid}/${this.listUid}`);
+                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
             this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
         }
         this.userService.saveUser(this.user.uid, this.userData);
@@ -195,6 +199,21 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
         this.list.setDone(data.row, data.amount, recipe);
         this.update();
+    }
+
+    public forkList(): void {
+        // Little trick to clone an object using JS.
+        const fork = this.list.clone();
+        this.listService.push(fork).then((list) => {
+            this.snack.open(this.translate.instant('List_forked'),
+                this.translate.instant('Open')).onAction()
+                .subscribe(() => {
+                    this.listService.getRouterPath(list.key)
+                        .subscribe(path => {
+                            this.router.navigate(path);
+                        });
+                });
+        });
     }
 
     orderCrystals(crystals: ListRow[]): ListRow[] {

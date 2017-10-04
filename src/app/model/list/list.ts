@@ -21,6 +21,19 @@ export class List extends FirebaseDataModel {
         super();
     }
 
+    public clone(): List {
+        const clone = new List();
+        for (const prop of Object.keys(this)) {
+            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
+                clone[prop] = this[prop];
+            }
+        }
+        clone.name = this.name;
+        clone.version = this.version;
+        delete clone.$key;
+        return clone;
+    }
+
     public forEachItem(method: (arg: ListRow) => void): void {
         (this.others || []).forEach(method);
         (this.gathers || []).forEach(method);
