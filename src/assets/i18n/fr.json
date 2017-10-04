@@ -57,6 +57,7 @@
     "Own_list_outdated_after_button": "",
     "Home": "Accueil",
     "Favorites": "Favoris",
+    "Favorite": "Favoris",
     "filters/ilvl": "Niveau d'objet",
     "filters/lvl": "Niveau d'équipement",
     "filters/craft_lvl": "Niveau de la recette",
@@ -70,6 +71,10 @@
     "Server_name":"Nom du serveur",
     "Add_all_recipes":"Ajouter les résultats à une liste",
     "Character_not_found": "Personnage non trouvé",
+    "Requirements_for_craft": "Voir les prérequis",
+    "List_forked": "Liste copiée sur votre compte",
+    "List_fork": "Copier cette liste sur votre compte",
+    "List_not_found": "Liste introuvable",
 
 
     "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
