@@ -48,7 +48,9 @@ export class AmountInputComponent implements OnInit {
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        observable.subscribe(value => {
+        observable
+            .map(value => +value)
+            .subscribe(value => {
             if (value > this.max) {
                 value = this.max;
             }
