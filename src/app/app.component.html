@@ -30,7 +30,7 @@
     <p class="version {{lightTheme?'':'light-text'}}">{{version}}</p>
     <md-sidenav-container>
         <md-sidenav mode="over" #sidenav>
-            <div class="user-box">
+            <div class="accent-background">
                 <div class="user">
                     <md-icon *ngIf="(authState | async)?.isAnonymous">person</md-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" alt="avatar">

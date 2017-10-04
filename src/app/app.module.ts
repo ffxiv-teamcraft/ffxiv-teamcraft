@@ -63,6 +63,7 @@ import {AmountInputComponent} from './component/common/amount-input/amount-input
 import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
 import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
 import { ItemIconComponent } from './component/common/item-icon/item-icon.component';
+import { RequirementsPopupComponent } from './component/popup/requirements-popup/requirements-popup.component';
 
 const routes: Routes = [
     {
@@ -126,6 +127,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BulkAdditionPopupComponent,
         RandomGifComponent,
         ItemIconComponent,
+        RequirementsPopupComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -193,6 +195,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ReductionDetailsPopupComponent,
         RegenerationPopupComponent,
         BulkAdditionPopupComponent,
+        RequirementsPopupComponent,
     ],
     providers: [
         UserService,

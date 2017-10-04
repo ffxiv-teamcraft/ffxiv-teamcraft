@@ -6,7 +6,7 @@
 @mixin theme-background($theme) {
     $accent: map-get($theme, accent);
 
-    .user-box {
+    .accent-background {
         background: mat-color($accent);
         color: black;
     }

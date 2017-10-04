@@ -13,6 +13,8 @@ import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/i
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 import {MathTools} from '../../tools/math-tools';
+import {List} from '../../model/list/list';
+import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -35,6 +37,12 @@ export class ItemComponent {
 
     @Input()
     recipe = false;
+
+    @Input()
+    list: List;
+
+    @Input()
+    showRequirements = false;
 
     tradeSourcePriorities = {
         // MGP, just in case
@@ -87,6 +95,10 @@ export class ItemComponent {
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
                 private dialog: MdDialog) {
+    }
+
+    openRequirementsPopup(): void {
+        this.dialog.open(RequirementsPopupComponent, {data: {item: this.item, list: this.list}});
     }
 
     getAmount(): number {

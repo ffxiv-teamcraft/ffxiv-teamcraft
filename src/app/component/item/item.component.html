@@ -7,6 +7,11 @@
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
         <div class="item-name" md-line [innerHTML]="item | i18n"></div>
+        <button *ngIf="showRequirements" md-icon-button class="warning"
+                mdTooltip="{{'Requirements_for_craft' | translate}}"
+                mdTooltipPosition="above" (click)="openRequirementsPopup()">
+            <md-icon color="accent">assignment</md-icon>
+        </button>
     </div>
     <div class="item-col-right">
         <div *ngIf="item.craftedBy !== undefined" class="masterbook">
