@@ -16,7 +16,7 @@
     <md-list>
         <app-recipe *ngFor="let recipe of list.recipes"
                     [recipe]="recipe"
-                    (ondelete)="onrecipedelete.emit()"
+                    (ondelete)="onrecipedelete.emit({recipe: recipe})"
                     (onedit)="onedit.emit({recipe: recipe, amount:$event})"
                     [readonly]="readonly">
         </app-recipe>
