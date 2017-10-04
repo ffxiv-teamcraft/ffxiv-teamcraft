@@ -7,7 +7,13 @@
         <md-icon *ngIf="!isFavorite()">favorite_border</md-icon>
         <md-icon *ngIf="isFavorite()">favorite</md-icon>
     </button>
+
+    <button md-mini-fab (click)="forkList()">
+        <md-icon>content_copy</md-icon>
+    </button>
+
     <div class="spacer"></div>
+
     <button md-mini-fab color="accent" mdTooltip="{{'Reset_progression' | translate}}"
             (click)="resetProgression()">
         <md-icon>refresh</md-icon>

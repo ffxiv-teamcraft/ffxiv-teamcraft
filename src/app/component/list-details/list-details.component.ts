@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
@@ -15,6 +15,7 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
+import {NgSerializerService} from '@kaiu/ng-serializer';
 
 declare const ga: Function;
 
@@ -60,7 +61,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private dialog: MdDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
-                private translate: TranslateService) {
+                private translate: TranslateService, private serializer: NgSerializerService,
+                private router: Router) {
     }
 
     public getUser(): Observable<User> {
@@ -195,6 +197,23 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
         this.list.setDone(data.row, data.amount, recipe);
         this.update();
+    }
+
+    public forkList(): void {
+        // Little trick to clone an object using JS.
+        const listClone = this.serializer.deserialize<List>(JSON.stringify(this.list), List);
+        for (const recipe of listClone.recipes) {
+            listClone.resetDone(recipe);
+        }
+        this.listService.push(listClone).then((list) => {
+            this.snack.open(this.translate.instant('List_forked'),
+                this.translate.instant('Open')).onAction()
+                .subscribe(() => {
+                    this.listService.getRouterPath(list.key).subscribe(path => {
+                        this.router.navigate(path);
+                    });
+                });
+        });
     }
 
     orderCrystals(crystals: ListRow[]): ListRow[] {
