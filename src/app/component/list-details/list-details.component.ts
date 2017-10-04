@@ -130,8 +130,13 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     return list;
                 })
                 .distinctUntilChanged()
-                .do(l => this.title.setTitle(`${l.name}`))
-                .subscribe(l => this.list = l, err => console.error(err));
+                .do(l => {
+                    if (l.name !== undefined) {
+                        this.title.setTitle(`${l.name}`);
+                    } else {
+                        this.title.setTitle(this.translate.instant('List_not_found'));
+                    }
+                }).subscribe(l => this.list = l, err => console.error(err));
         });
         this.triggerFilter();
         this.auth.idToken.subscribe(user => {
