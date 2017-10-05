@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.0...v2.1.1) (2017-10-05)
+
+
+### Bug Fixes
+
+* gathering section now ordered based on english name ([05481cf](https://github.com/Supamiu/ffxiv-teamcraft/commit/05481cf))
+* precrafts not ordered properly ([4c722dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/4c722dd))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.4...v2.1.0) (2017-10-04)
 
