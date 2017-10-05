@@ -141,7 +141,7 @@
         <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
     </md-expansion-panel-header>
     <md-list dense>
-        <div *ngFor="let preCraft of list?.preCrafts">
+        <div *ngFor="let preCraft of orderPreCrafts(list?.preCrafts)">
             <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
                       [item]="preCraft" [list]="list" [showRequirements]="true"></app-item>
         </div>

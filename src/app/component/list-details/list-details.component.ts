@@ -220,6 +220,25 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
     }
 
+    orderPreCrafts(preCrafts: ListRow[]): ListRow[] {
+        return preCrafts === null ? null : preCrafts.sort((a: ListRow, b: ListRow) => {
+            let aRequiredItems = 0;
+            let bRequiredItems = 0;
+            a.requires.forEach(requirement => {
+                aRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
+            });
+            b.requires.forEach(requirement => {
+                bRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
+            });
+            const result = aRequiredItems - bRequiredItems;
+            // If we get 0 as result, the template will act in a strange way, moving items as we hover them, so we need a failsafe.
+            if (result === 0) {
+                return a.name.en > b.name.en ? 1 : -1;
+            }
+            return result;
+        });
+    }
+
     public resetProgression(): void {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {
@@ -229,9 +248,5 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 this.update();
             }
         });
-    }
-
-    public mouseOver(event: MouseEvent): void {
-        console.log(event);
     }
 }
