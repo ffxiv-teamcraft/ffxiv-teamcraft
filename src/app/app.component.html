@@ -83,6 +83,7 @@
         </md-sidenav>
         <div class="my-content">
             <div class="content">
+                <p>{{getETime() | async | date}}</p>
                 <div class="content-middle">
                     <router-outlet></router-outlet>
                 </div>
