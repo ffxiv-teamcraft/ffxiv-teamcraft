@@ -239,6 +239,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         });
     }
 
+    orderGatherings(gatherings: ListRow[]): ListRow[] {
+        return gatherings.sort((a, b) => a.name.en > b.name.en ? 1 : (b.name.en > a.name.en) ? -1 : 0);
+    }
+
     public resetProgression(): void {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {

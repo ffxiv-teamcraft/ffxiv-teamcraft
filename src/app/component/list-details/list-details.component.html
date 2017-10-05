@@ -117,7 +117,7 @@
             <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
         </md-expansion-panel-header>
         <md-list dense>
-            <div *ngFor="let gather of list?.gathers">
+            <div *ngFor="let gather of orderGatherings(list?.gathers)">
                 <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
                           [item]="gather"></app-item>
             </div>
