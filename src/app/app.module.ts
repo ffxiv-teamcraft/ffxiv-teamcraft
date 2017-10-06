@@ -15,7 +15,8 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule, MdProgressBarModule,
+    MdPaginatorModule,
+    MdProgressBarModule,
     MdProgressSpinnerModule,
     MdRadioModule,
     MdSidenavModule,
@@ -60,13 +61,12 @@ import {HomeComponent} from './component/home/home.component';
 import {FavoritesComponent} from './component/favorites/favorites.component';
 import {ListRowComponent} from './component/list-row/list-row.component';
 import {AmountInputComponent} from './component/common/amount-input/amount-input.component';
-import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
-import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
-import { ItemIconComponent } from './component/common/item-icon/item-icon.component';
-import { RequirementsPopupComponent } from './component/popup/requirements-popup/requirements-popup.component';
-import { MobileItemComponent } from './component/mobile/mobile-item/mobile-item.component';
+import {BulkAdditionPopupComponent} from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
+import {RandomGifComponent} from './component/common/random-gif/random-gif.component';
+import {ItemIconComponent} from './component/common/item-icon/item-icon.component';
+import {RequirementsPopupComponent} from './component/popup/requirements-popup/requirements-popup.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { ListDetailsPanelComponent } from './component/list-details-panel/list-details-panel.component';
+import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
 
 const routes: Routes = [
     {
@@ -131,7 +131,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         RandomGifComponent,
         ItemIconComponent,
         RequirementsPopupComponent,
-        MobileItemComponent,
         ListDetailsPanelComponent,
     ],
     imports: [
