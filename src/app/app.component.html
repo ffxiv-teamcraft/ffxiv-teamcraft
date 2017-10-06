@@ -3,7 +3,7 @@
         <button md-icon-button (click)="sidenav.toggle()">
             <md-icon>menu</md-icon>
         </button>
-        <h1>FFXIV Team Craft</h1>
+        <h1>FFXIV Teamcraft</h1>
 
         <md-menu #langMenu="mdMenu" yPosition="above">
             <button md-menu-item (click)="use('fr')">FR</button>
@@ -81,9 +81,8 @@
             <a md-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </md-sidenav>
-        <div class="my-content">
+        <div>
             <div class="content">
-                <p>{{getETime() | async | date}}</p>
                 <div class="content-middle">
                     <router-outlet></router-outlet>
                 </div>

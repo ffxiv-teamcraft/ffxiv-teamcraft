@@ -1,4 +1,7 @@
 <div *ngIf="list !== undefined && list.$value !== null">
+    <div class="etime-container">
+        <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
+    </div>
     <div class="header">
         <h3>{{list?.name}}</h3>
         <button md-mini-fab color="accent"
@@ -136,29 +139,29 @@
         </md-list>
     </md-expansion-panel>
 
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let preCraft of orderPreCrafts(list?.preCrafts)">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
-                      [item]="preCraft" [list]="list" [showRequirements]="true"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let preCraft of orderPreCrafts(list?.preCrafts)">
+                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
+                          [item]="preCraft" [list]="list" [showRequirements]="true"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
 
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Items'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let recipe of list?.recipes">
-            <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
-                      [item]="recipe" [list]="list" [showRequirements]="true"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
+    <md-expansion-panel expanded="true">
+        <md-expansion-panel-header>
+            <md-panel-title>{{'Items'| translate}}</md-panel-title>
+        </md-expansion-panel-header>
+        <md-list dense>
+            <div *ngFor="let recipe of list?.recipes">
+                <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
+                          [item]="recipe" [list]="list" [showRequirements]="true"></app-item>
+            </div>
+        </md-list>
+    </md-expansion-panel>
 
 </div>
 <h4 class="not-found" *ngIf="list !== undefined && list.$value === null">{{"List_not_found" | translate}}</h4>

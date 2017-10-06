@@ -15,6 +15,7 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
+import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 
 declare const ga: Function;
 
@@ -54,13 +55,16 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
 
+    etime: Date = this.eorzeanTimeService.toEorzeanTime(new Date());
+
     private filterTrigger = new Subject<void>();
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MdDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
-                private translate: TranslateService, private router: Router) {
+                private translate: TranslateService, private router: Router,
+                private eorzeanTimeService: EorzeanTimeService) {
     }
 
     public getUser(): Observable<User> {
@@ -104,6 +108,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date);
+
         this.route.params.subscribe(params => {
             this.listUid = params.listId;
             this.authorUid = params.uid;

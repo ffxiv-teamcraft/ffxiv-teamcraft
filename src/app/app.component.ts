@@ -49,8 +49,7 @@ export class AppComponent implements OnInit {
                 private dialog: MdDialog,
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
-                private snack: MdSnackBar,
-                private eorzeanTimeService: EorzeanTimeService) {
+                private snack: MdSnackBar,) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -87,10 +86,6 @@ export class AppComponent implements OnInit {
             .subscribe(announcement => {
                 this.announcement = announcement;
             });
-    }
-
-    getETime(): Observable<Date> {
-        return this.eorzeanTimeService.getEorzeanTime();
     }
 
     closeSnack(): void {
