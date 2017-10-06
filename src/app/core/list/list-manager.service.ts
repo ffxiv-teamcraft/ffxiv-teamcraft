@@ -247,8 +247,14 @@ export class ListManagerService {
                     const listRow = resultList[row.array].find(item => item.id === row.item.id);
                     if (listRow !== undefined) {
                         listRow.done = row.item.done;
-                        if (listRow.done > listRow.amount_needed) {
-                            listRow.done = listRow.amount_needed;
+                        if (row.array === 'recipes') {
+                            if (listRow.done > listRow.amount) {
+                                listRow.done = listRow.amount;
+                            }
+                        } else {
+                            if (listRow.done > listRow.amount_needed) {
+                                listRow.done = listRow.amount_needed;
+                            }
                         }
                     }
                 });
