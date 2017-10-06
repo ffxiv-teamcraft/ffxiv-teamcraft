@@ -64,6 +64,9 @@ import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popu
 import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
 import { ItemIconComponent } from './component/common/item-icon/item-icon.component';
 import { RequirementsPopupComponent } from './component/popup/requirements-popup/requirements-popup.component';
+import { MobileItemComponent } from './component/mobile/mobile-item/mobile-item.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { ListDetailsPanelComponent } from './component/list-details-panel/list-details-panel.component';
 
 const routes: Routes = [
     {
@@ -128,8 +131,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         RandomGifComponent,
         ItemIconComponent,
         RequirementsPopupComponent,
+        MobileItemComponent,
+        ListDetailsPanelComponent,
     ],
     imports: [
+        FlexLayoutModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

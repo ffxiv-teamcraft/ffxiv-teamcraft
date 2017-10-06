@@ -1,4 +1,5 @@
-<md-list-item>
+<!--Layout for desktop browsers-->
+<md-list-item *ngIf="!isMobile">
     <div class="item-col-left">
         <div md-list-avatar class="icon">
             <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
@@ -107,5 +108,109 @@
                 </button>
             </div>
         </div>
+    </div>
+</md-list-item>
+
+<md-list-item *ngIf="isMobile" class="mobile">
+    <div md-list-avatar class="icon">
+        <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
+            <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+        </a>
+        <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+    </div>
+    <div class="item-name" md-line [innerHTML]="item | i18n"></div>
+    <div *ngIf="item.craftedBy !== undefined" class="masterbook">
+        <img *ngFor="let masterbook of getMasterBooks(item)"
+             md-list-avatar
+             src="{{masterbook.icon}}"
+             mdTooltip="{{masterbook | i18n}}"
+             mdTooltipPosition="above"
+             alt="{{masterbook | i18n}}">
+    </div>
+    <div class="done" md-line>
+        <app-amount-input class="amount"
+                          max="{{getAmount()}}"
+                          maxlength="{{getAmount()?.toString().length}}"
+                          min="0"
+                          [value]="item.done | ceil"
+                          (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+        <button *ngIf="showRequirements" md-icon-button class="requirements"
+                mdTooltip="{{'Requirements_for_craft' | translate}}"
+                mdTooltipPosition="above" (click)="openRequirementsPopup()">
+            <md-icon color="accent">assignment</md-icon>
+        </button>
+        <div class="classes">
+            <div *ngIf="item.craftedBy !== undefined">
+                <div *ngFor="let craft of item.craftedBy">
+                    <img class="crafted-by"
+                         *ngIf="craft.icon !== ''"
+                         mdTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                         mdTooltipPosition="above" src="{{craft.icon}}">
+                </div>
+            </div>
+            <button md-icon-button *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+                <img class="crafted-by"
+                     mdTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
+                     mdTooltipPosition="above" src="{{item.gatheredBy.icon}}">
+            </button>
+            <div *ngIf="item.gardening">
+                <img class="crafted-by"
+                     mdTooltip="{{'Gardening' | translate}}"
+                     mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
+            </div>
+            <button md-icon-button *ngIf="item.drops !== undefined" (click)="openDropsDetails(item)">
+                <img *ngIf="item.drops !== undefined" class="crafted-by"
+                     mdTooltip="{{'Hunting' | translate}}"
+                     mdTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
+            </button>
+            <div *ngIf="item.tradeSources !== undefined">
+                <button md-icon-button md-line
+                        (click)="openTradeDetails(item)">
+                    <img class="currency"
+                         mdTooltip="{{'Trade' | translate}}"
+                         mdTooltipPosition="above"
+                         src="{{getTradeIcon(item)}}">
+                </button>
+            </div>
+            <div *ngIf="item.instances !== undefined">
+                <button md-icon-button (click)="openInstancesDetails(item)">
+                    <img mdTooltip="{{getI18n(item.instances[0].type)}}"
+                         mdTooltipPosition="above"
+                         src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png"
+                         class="currency">
+                </button>
+            </div>
+            <div *ngIf="item.reducedFrom !== undefined">
+                <button md-icon-button (click)="openReductionDetails(item)">
+                    <img class="icon"
+                         mdTooltip="{{'Reduction' | translate}}"
+                         mdTooltipPosition="above"
+                         src="https://www.garlandtools.org/db/images/Reduce.png">
+                </button>
+            </div>
+            <div *ngIf="item.desynths !== undefined">
+                <button md-icon-button (click)="openDesynthDetails(item)">
+                    <img class="icon" mdTooltip="{{'Desynth' | translate}}"
+                         mdTooltipPosition="above"
+                         src="https://www.garlandtools.org/db/images/Desynth.png">
+                </button>
+            </div>
+            <div *ngIf="item.vendors !== undefined">
+                <button md-icon-button (click)="openVendorsDetails(item)">
+                    <img class="icon" mdTooltip="{{'Vendors' | translate}}"
+                         mdTooltipPosition="above"
+                         src="https://secure.xivdb.com/img/game/065000/065002.png">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="done-check">
+        <a md-mini-fab *ngIf="getAmount() > (item.done | ceil)"
+           (click)="setDone(item, getAmount(), item.done, recipe)">
+            <md-icon>playlist_add_check</md-icon>
+        </a>
+        <md-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</md-icon>
     </div>
 </md-list-item>

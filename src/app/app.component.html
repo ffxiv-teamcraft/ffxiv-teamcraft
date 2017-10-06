@@ -3,7 +3,7 @@
         <button md-icon-button (click)="sidenav.toggle()">
             <md-icon>menu</md-icon>
         </button>
-        <h1>FFXIV Team Craft</h1>
+        <h1>FFXIV Teamcraft</h1>
 
         <md-menu #langMenu="mdMenu" yPosition="above">
             <button md-menu-item (click)="use('fr')">FR</button>
@@ -11,9 +11,11 @@
             <button md-menu-item (click)="use('de')">DE</button>
         </md-menu>
 
-        <button md-button [mdMenuTriggerFor]="langMenu">
+        <button md-button [mdMenuTriggerFor]="langMenu" fxShow fxHide.lt-md>
             {{locale | uppercase}}
         </button>
+        <div class="spacer"></div>
+        <p class="version">{{version}}</p>
     </md-toolbar>
     <md-card class="announcement" *ngIf="showAnnouncement()">
         <md-grid-list cols="5" rowHeight="35px">
@@ -27,7 +29,6 @@
             </md-grid-tile>
         </md-grid-list>
     </md-card>
-    <p class="version {{lightTheme?'':'light-text'}}">{{version}}</p>
     <md-sidenav-container>
         <md-sidenav mode="over" #sidenav>
             <div class="accent-background">
@@ -65,19 +66,10 @@
             </md-nav-list>
             <md-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
             </md-slide-toggle>
+            <button md-button [mdMenuTriggerFor]="langMenu" fxHide fxShow.lt-md>
+                {{locale | uppercase}}
+            </button>
             <div class="spacer"></div>
-            <div class="sidebar-element social-icons">
-                <a target="_blank" href="https://discord.gg/r6qxt6P" md-icon-button><img
-                    class="icon"
-                    src="https://camo.githubusercontent.com/8593f18483b8bc603725d988c3fba1d728bc27d4/68747470733a2f2f646973636f72646170702e636f6d2f6173736574732f32633231616564613136646533353462613533333435353161383833623438312e706e67"
-                    alt="discord"></a>
-                <a target="_blank" href="https://www.facebook.com/FFXIVTeamcraft/" md-icon-button><img class="icon"
-                                                                                                       src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png"
-                                                                                                       alt="facebook"></a>
-                <a target="_blank" href="https://github.com/supamiu/ffxiv-teamcraft" md-icon-button><img class="icon"
-                                                                                                         src="https://github.com/fluidicon.png"
-                                                                                                         alt="Github"></a>
-            </div>
             <a md-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </md-sidenav>
