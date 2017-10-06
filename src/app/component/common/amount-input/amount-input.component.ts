@@ -51,15 +51,19 @@ export class AmountInputComponent implements OnInit {
         observable
             .map(value => +value)
             .subscribe(value => {
-            if (value > this.max) {
-                value = this.max;
-            }
-            if (value < this.min) {
-                value = this.min;
-            }
-            this.value = value;
-            this.onchange.emit(value);
-        });
+                if (value > this.max) {
+                    value = this.max;
+                }
+                if (value < this.min) {
+                    value = this.min;
+                }
+                this.value = value;
+                this.onchange.emit(value);
+            });
+    }
+
+    public getWidth(): number {
+        return (this.max || 0).toString().length * 10 + 20;
     }
 
 }

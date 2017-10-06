@@ -15,6 +15,7 @@ import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/r
 import {MathTools} from '../../tools/math-tools';
 import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
+import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-item',
@@ -92,9 +93,15 @@ export class ItemComponent {
         7731: 2
     };
 
+    isMobile = false;
+
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
-                private dialog: MdDialog) {
+                private dialog: MdDialog,
+                media: ObservableMedia) {
+        media.subscribe((change: MediaChange) => {
+            this.isMobile = ['xs', 'sm'].indexOf(change.mqAlias) > -1;
+        });
     }
 
     openRequirementsPopup(): void {
