@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MdButtonModule,
+    MdButtonModule, MdButtonToggleModule,
     MdCardModule,
     MdCheckboxModule,
     MdChipsModule,
@@ -174,6 +174,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdRadioModule,
         MdGridListModule,
         MdProgressBarModule,
+        MdButtonToggleModule,
 
         BrowserModule,
         FormsModule,

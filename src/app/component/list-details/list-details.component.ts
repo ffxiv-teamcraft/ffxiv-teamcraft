@@ -15,6 +15,9 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
+import {ZoneBreakdown} from '../../model/list/zone-breakdown';
+import {I18nName} from '../../model/list/i18n-name';
+import {GarlandToolsService} from '../../core/api/garland-tools.service';
 
 declare const ga: Function;
 
@@ -37,6 +40,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     userData: AppUser;
 
+    zoneBreakdownToggle = false;
+
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
         {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
@@ -56,15 +61,25 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     private filterTrigger = new Subject<void>();
 
+    zoneBreakdown: ZoneBreakdown;
+
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MdDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
-                private translate: TranslateService, private router: Router) {
+                private translate: TranslateService, private router: Router,
+                private gt: GarlandToolsService) {
     }
 
     public getUser(): Observable<User> {
         return this.auth.authState;
+    }
+
+    public getLocation(id: number): I18nName {
+        if (id === -1) {
+            return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
+        }
+        return this.gt.getLocation(id);
     }
 
     public adaptFilters(): void {
@@ -136,7 +151,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     } else {
                         this.title.setTitle(this.translate.instant('List_not_found'));
                     }
-                }).subscribe(l => this.list = l, err => console.error(err));
+                }).subscribe(l => {
+                this.list = l;
+                this.zoneBreakdown = new ZoneBreakdown(l);
+            }, err => console.error(err));
         });
         this.triggerFilter();
         this.auth.idToken.subscribe(user => {
@@ -252,5 +270,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 this.update();
             }
         });
+    }
+
+    public toggleZoneBreakdown(): void {
+        this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
     }
 }
