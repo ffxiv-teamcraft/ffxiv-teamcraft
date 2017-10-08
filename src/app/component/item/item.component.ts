@@ -93,15 +93,10 @@ export class ItemComponent {
         7731: 2
     };
 
-    isMobile = false;
-
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
                 private dialog: MdDialog,
-                media: ObservableMedia) {
-        media.subscribe((change: MediaChange) => {
-            this.isMobile = ['xs', 'sm'].indexOf(change.mqAlias) > -1;
-        });
+                private media: ObservableMedia) {
     }
 
     openRequirementsPopup(): void {
@@ -192,5 +187,9 @@ export class ItemComponent {
         const name = this.i18n.getName(item.name);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
+    }
+
+    public get isMobile():boolean{
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }
