@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {List} from '../../model/list/list';
-import {MdDialog, MdSnackBar} from '@angular/material';
+import {MatCheckboxChange, MdDialog, MdSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {Recipe} from '../../model/list/recipe';
@@ -32,6 +32,7 @@ export class RecipesComponent implements OnInit {
             enabled: false,
             minMax: true,
             select: false,
+            multiple: false,
             value: {
                 min: 0,
                 max: 999
@@ -43,6 +44,7 @@ export class RecipesComponent implements OnInit {
             enabled: false,
             minMax: true,
             select: false,
+            multiple: false,
             value: {
                 min: 0,
                 max: 70
@@ -54,6 +56,7 @@ export class RecipesComponent implements OnInit {
             enabled: false,
             minMax: true,
             select: false,
+            multiple: false,
             value: {
                 min: 0,
                 max: 70
@@ -64,8 +67,9 @@ export class RecipesComponent implements OnInit {
         {
             enabled: false,
             minMax: false,
-            select: true,
-            value: 0,
+            select: false,
+            multiple: true,
+            value: [],
             values: this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land'),
             name: 'filters/worn_by',
             filterName: 'jobCategories'
@@ -74,6 +78,7 @@ export class RecipesComponent implements OnInit {
             enabled: false,
             minMax: false,
             select: true,
+            multiple: false,
             value: 0,
             values: this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1),
             name: 'filters/crafted_by',
@@ -102,6 +107,15 @@ export class RecipesComponent implements OnInit {
                 this.doSearch();
             });
 
+    }
+
+    checkJobCategory(id: number, event: MatCheckboxChange): void {
+        const jobCategories = this.filters.find(filter => filter.filterName === 'jobCategories');
+        if (event.checked) {
+            jobCategories.value.push(id);
+        } else {
+            jobCategories.value = jobCategories.value.filter(jobId => jobId !== id);
+        }
     }
 
     doSearch(): void {
