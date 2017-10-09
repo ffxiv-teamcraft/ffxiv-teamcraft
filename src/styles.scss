@@ -43,4 +43,10 @@ body {
     .mat-form-field-infix {
         border-top: none;
     }
+    .mat-button {
+        line-height: initial;
+    }
+    .mat-raised-button {
+        line-height: initial;
+    }
 }

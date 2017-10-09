@@ -1,4 +1,7 @@
 <div *ngIf="list !== undefined && list.$value !== null">
+    <div class="etime-container">
+        <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
+    </div>
     <div class="header">
         <h3>{{list?.name}}</h3>
         <button md-mini-fab color="accent"
@@ -42,6 +45,8 @@
         <md-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
             {{"Zone_breakdown" | translate}}
         </md-button-toggle>
+        <div class="spacer"></div>
+        <button md-button color="accent" (click)="openTimerOptionsPopup()">{{"Timer_options" | translate}}</button>
     </div>
     <md-expansion-panel>
         <md-expansion-panel-header>
@@ -129,7 +134,7 @@
             <md-list dense>
                 <div *ngFor="let gather of orderGatherings(list?.gathers)">
                     <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
-                              [item]="gather"></app-item>
+                              [item]="gather" [showTimer]="true"></app-item>
                 </div>
             </md-list>
         </md-expansion-panel>
@@ -152,7 +157,7 @@
                     <h3 md-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
                     <div *ngFor="let item of row.items">
                         <app-item (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
-                                  [item]="item"></app-item>
+                                  [item]="item" [showTimer]="true"></app-item>
                     </div>
                     <md-divider class="zone-divider"></md-divider>
                 </div>

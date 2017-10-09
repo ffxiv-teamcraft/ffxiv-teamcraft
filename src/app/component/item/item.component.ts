@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
@@ -15,14 +15,15 @@ import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/r
 import {MathTools} from '../../tools/math-tools';
 import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
+import {ObservableMedia} from '@angular/flex-layout';
+import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent {
+export class ItemComponent implements OnInit {
 
     @Input()
     item: ListRow;
@@ -44,6 +45,21 @@ export class ItemComponent {
 
     @Input()
     showRequirements = false;
+
+    @Input()
+    showTimer = false;
+
+    timer: string;
+
+    timerMinutes = 0;
+
+    spawned: boolean;
+
+    spawnAlarm: boolean;
+
+    slot: number;
+
+    notified = false;
 
     tradeSourcePriorities = {
         // MGP, just in case
@@ -96,7 +112,104 @@ export class ItemComponent {
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
                 private dialog: MdDialog,
-                private media: ObservableMedia) {
+                private media: ObservableMedia,
+                private etimeService: EorzeanTimeService) {
+    }
+
+    toggleAlarm(): void {
+        this.spawnAlarm = !this.spawnAlarm;
+        if (this.spawnAlarm) {
+            localStorage.setItem(this.item.id + ':spawnAlarm', this.spawnAlarm.toString());
+        } else {
+            localStorage.removeItem(this.item.id + ':spawnAlarm');
+        }
+    }
+
+    ngOnInit(): void {
+        this.spawnAlarm = localStorage.getItem(this.item.id + ':spawnAlarm') === 'true' || false;
+        if (this.hasTimers()) {
+            this.etimeService.getEorzeanTime().subscribe(date => {
+                const timers = [];
+                this.item.gatheredBy.nodes.forEach(node => {
+                    node.time.forEach(t => {
+                        timers.push({
+                            start: this.getTimeUntil(date, t, 0),
+                            end: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0),
+                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) <= node.uptime
+                        });
+                    });
+                    this.slot = node.items.find(item => item.id === this.item.id).slot;
+                });
+                const options = this.getTimerOptions();
+                for (const t of timers) {
+                    // If the node is spawned
+                    if (t.spawned) {
+                        this.timerMinutes = t.end;
+                        if (!this.spawned && this.spawnAlarm && options.hoursBefore === 0 && !this.notified) {
+                            this.notify();
+                        }
+                        this.spawned = true;
+                        break;
+                    }
+                    if (this.timerMinutes / 60 <= options.hoursBefore && !this.notified && this.spawnAlarm) {
+                        this.notify();
+                    }
+                    // If this this.timerMinutes is closer than the actual one
+                    if (t.start < this.timerMinutes) {
+                        this.timerMinutes = t.start;
+                    }
+                    // If we're in the first iteration and the node isn't spawned
+                    if (this.timerMinutes === 0 && !t.spawned) {
+                        this.timerMinutes = t.start;
+                        this.notified = false;
+                    }
+                    this.spawned = t.spawned;
+                }
+                const resultEarthTime = this.etimeService.toEarthTime(this.timerMinutes);
+                this.timer = this.getTimerString(resultEarthTime);
+            });
+        }
+    }
+
+    public getTimerColor(): string {
+        if (this.spawned) {
+            return 'primary';
+        }
+        if (this.notified && this.spawnAlarm) {
+            return 'accent';
+        }
+        return '';
+    }
+
+    private getTimerOptions(): any {
+        return JSON.parse(localStorage.getItem('timer:options'));
+    }
+
+    notify(): void {
+        const audio = new Audio(`/assets/audio/${this.getTimerOptions().sound}.mp3`);
+        audio.loop = false;
+        audio.play();
+        this.notified = true;
+    }
+
+    getTimeUntil(currentDate: Date, hours: number, minutes: number): number {
+        const resHours = hours - currentDate.getUTCHours();
+        let resMinutes = resHours * 60 + minutes - currentDate.getUTCMinutes();
+        if (resMinutes < 0) {
+            resMinutes += 1440;
+        }
+        return resMinutes;
+    }
+
+    hasTimers(): boolean {
+        return this.item.gatheredBy !== undefined &&
+            this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+    }
+
+    getTimerString(timer: number): string {
+        const seconds = timer % 60;
+        const minutes = Math.floor(timer / 60);
+        return `${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
     }
 
     openRequirementsPopup(): void {
@@ -189,7 +302,7 @@ export class ItemComponent {
         return this.i18n.getName(link);
     }
 
-    public get isMobile():boolean{
+    public get isMobile(): boolean {
         return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }

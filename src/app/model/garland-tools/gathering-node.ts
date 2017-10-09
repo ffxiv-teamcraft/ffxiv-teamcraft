@@ -4,6 +4,6 @@ export interface GatheringNode {
     limitType: string;
     coords: number[];
     items: any[];
-    time?: number;
+    time?: number[];
     uptime?: number;
 }

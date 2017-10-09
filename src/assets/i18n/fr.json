@@ -76,6 +76,10 @@
     "List_fork": "Copier cette liste sur votre compte",
     "List_not_found": "Liste introuvable",
     "Zone_breakdown": "Résumé par zone",
+    "Timer_options": "Options des alarmes",
+    "Early_by": "Prévenir en avance (heures éorzéennes)",
+    "Sound": "Son",
+
 
 
     "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
@@ -91,6 +95,10 @@
     "HOME_PAGE.FEATURES.realtime_translations_content": "Les listes sont indépendantes de la langue, elles peuvent être vues dans n'importe quelle langue !",
     "HOME_PAGE.FEATURES.item_details_title": "Détails des objets",
     "HOME_PAGE.FEATURES.item_details_content": "Trouvez comment obtenir les composants de votre liste en un clic !",
+    "HOME_PAGE.FEATURES.node_timers_title": "Alarmes pour les récoltes timées",
+    "HOME_PAGE.FEATURES.node_timers_content": "Ne ratez jamais une récolte de votre liste !",
+    "HOME_PAGE.FEATURES.area_breakdown_title": "Résumé par zone",
+    "HOME_PAGE.FEATURES.area_breakdown_content": "Optimisez vos récoltes et votre chasse en triant par zone !",
     "HOME_PAGE.FEATURES.search_filters_title": "Filtres de recherche",
     "HOME_PAGE.FEATURES.search_filters_content": "Trouvez rapidement ce que vous cherchez, plus de recherches multiples !",
     "HOME_PAGE.FEATURES.bulk_import_title": "Import multiple",

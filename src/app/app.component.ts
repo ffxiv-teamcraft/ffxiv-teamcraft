@@ -12,6 +12,7 @@ import {LoginPopupComponent} from './component/popup/login-popup/login-popup.com
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
 import {environment} from '../environments/environment';
+import {EorzeanTimeService} from './core/time/eorzean-time.service';
 import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit {
                 private dialog: MdDialog,
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
-                private snack: MdSnackBar) {
+                private snack: MdSnackBar,) {
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {

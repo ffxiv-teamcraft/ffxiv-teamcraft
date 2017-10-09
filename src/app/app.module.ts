@@ -4,7 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MdButtonModule, MdButtonToggleModule,
+    MdButtonModule,
+    MdButtonToggleModule,
     MdCardModule,
     MdCheckboxModule,
     MdChipsModule,
@@ -18,7 +19,7 @@ import {
     MdPaginatorModule,
     MdProgressBarModule,
     MdProgressSpinnerModule,
-    MdRadioModule,
+    MdRadioModule, MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -65,8 +66,10 @@ import {BulkAdditionPopupComponent} from './component/popup/bulk-addition-popup/
 import {RandomGifComponent} from './component/common/random-gif/random-gif.component';
 import {ItemIconComponent} from './component/common/item-icon/item-icon.component';
 import {RequirementsPopupComponent} from './component/popup/requirements-popup/requirements-popup.component';
+import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
+import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
 
 const routes: Routes = [
     {
@@ -131,10 +134,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         RandomGifComponent,
         ItemIconComponent,
         RequirementsPopupComponent,
+        EorzeanTimeComponent,
         ListDetailsPanelComponent,
+        TimerOptionsPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
+
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -175,6 +181,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdGridListModule,
         MdProgressBarModule,
         MdButtonToggleModule,
+        MdSelectModule,
 
         BrowserModule,
         FormsModule,
@@ -202,6 +209,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RegenerationPopupComponent,
         BulkAdditionPopupComponent,
         RequirementsPopupComponent,
+        TimerOptionsPopupComponent,
     ],
     providers: [
         UserService,
