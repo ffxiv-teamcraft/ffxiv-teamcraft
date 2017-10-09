@@ -4,7 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MdButtonModule, MdButtonToggleModule,
+    MdButtonModule,
+    MdButtonToggleModule,
     MdCardModule,
     MdCheckboxModule,
     MdChipsModule,
@@ -66,11 +67,6 @@ import {RandomGifComponent} from './component/common/random-gif/random-gif.compo
 import {ItemIconComponent} from './component/common/item-icon/item-icon.component';
 import {RequirementsPopupComponent} from './component/popup/requirements-popup/requirements-popup.component';
 import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {BulkAdditionPopupComponent} from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
-import {RandomGifComponent} from './component/common/random-gif/random-gif.component';
-import {ItemIconComponent} from './component/common/item-icon/item-icon.component';
-import {RequirementsPopupComponent} from './component/popup/requirements-popup/requirements-popup.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
 

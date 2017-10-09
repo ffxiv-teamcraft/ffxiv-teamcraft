@@ -60,7 +60,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
 
-    etime: Date = this.eorzeanTimeService.toEorzeanTime(new Date());
+    etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
     private filterTrigger = new Subject<void>();
 
