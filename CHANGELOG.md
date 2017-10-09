@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.2...v2.2.0) (2017-10-09)
+
+
+### Bug Fixes
+
+* amount input field sometimes has the wrong width ([f157bf3](https://github.com/Supamiu/ffxiv-teamcraft/commit/f157bf3))
+* bad maths with multiple yielding precrafts ([5dd0e5e](https://github.com/Supamiu/ffxiv-teamcraft/commit/5dd0e5e))
+* bad mobile design detection ([4a942d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/4a942d6))
+* changing amount on opened list closes it ([b8488e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8488e1))
+* remove adsense since it's not available for the app ([f76a6d4](https://github.com/Supamiu/ffxiv-teamcraft/commit/f76a6d4))
+* wrong progression restored for recipe upon list regeneration ([61f860d](https://github.com/Supamiu/ffxiv-teamcraft/commit/61f860d))
+
+
+### Features
+
+* add eorzean clock on top of list details ([ca46816](https://github.com/Supamiu/ffxiv-teamcraft/commit/ca46816))
+* area breakdown added to lists, this allows you to see items ordered by area ([a6360bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/a6360bd))
+* timed nodes alarm ([ef5d4d2](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef5d4d2))
+* update home page tutorials ([046cd64](https://github.com/Supamiu/ffxiv-teamcraft/commit/046cd64))
+* worn_by filter can now accept multiple values ([cc8e781](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc8e781))
+
+
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.1...v2.1.2) (2017-10-06)
 
