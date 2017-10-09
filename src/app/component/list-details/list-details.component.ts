@@ -18,6 +18,7 @@ import {AppUser} from 'app/model/list/app-user';
 import {ZoneBreakdown} from '../../model/list/zone-breakdown';
 import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
+import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 
 declare const ga: Function;
 
@@ -59,6 +60,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
 
+    etime: Date = this.eorzeanTimeService.toEorzeanTime(new Date());
+
     private filterTrigger = new Subject<void>();
 
     zoneBreakdown: ZoneBreakdown;
@@ -68,6 +71,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
                 private translate: TranslateService, private router: Router,
+                private eorzeanTimeService: EorzeanTimeService,
                 private gt: GarlandToolsService) {
     }
 
@@ -119,6 +123,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date);
+
         this.route.params.subscribe(params => {
             this.listUid = params.listId;
             this.authorUid = params.uid;

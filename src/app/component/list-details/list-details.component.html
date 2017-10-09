@@ -1,4 +1,7 @@
 <div *ngIf="list !== undefined && list.$value !== null">
+    <div class="etime-container">
+        <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
+    </div>
     <div class="header">
         <h3>{{list?.name}}</h3>
         <button md-mini-fab color="accent"

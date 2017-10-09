@@ -12,7 +12,7 @@ export class EorzeanTimeService {
     }
 
     public getEorzeanTime(): Observable<Date> {
-        return Observable.interval(1000).map(() => {
+        return Observable.interval(60000 / EorzeanTimeService.EPOCH_TIME_FACTOR).map(() => {
             return this.toEorzeanTime(new Date());
         });
     }
