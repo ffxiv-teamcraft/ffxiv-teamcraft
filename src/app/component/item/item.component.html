@@ -14,6 +14,15 @@
             <md-icon color="accent">assignment</md-icon>
         </button>
     </div>
+
+    <div class="timer" *ngIf="hasTimers()">
+        <button md-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
+            <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
+            <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>
+            {{timer}} ({{slot}})
+        </button>
+    </div>
+
     <div class="item-col-right">
         <div *ngIf="item.craftedBy !== undefined" class="masterbook">
             <img *ngFor="let masterbook of getMasterBooks(item)"
@@ -206,10 +215,10 @@
     </div>
 
     <div class="timer" *ngIf="hasTimers()">
-        <button md-raised-button [color]="spawned?'primary':''" (click)="toggleAlarm()">
+        <button md-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
             <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
             <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>
-            {{timer}}
+            {{timer}} ({{slot}})
         </button>
     </div>
 

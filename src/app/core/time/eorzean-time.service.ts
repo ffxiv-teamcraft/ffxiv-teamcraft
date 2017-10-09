@@ -1,10 +1,18 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class EorzeanTimeService {
 
     private static EPOCH_TIME_FACTOR = 20.571428571428573;
+
+    private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
+
+
+    constructor() {
+        setInterval(() => this.tick(), 60000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
+    }
 
     /**
      * Converts an earth date to an eorzean date.
@@ -25,9 +33,11 @@ export class EorzeanTimeService {
         return Math.round(minutes / EorzeanTimeService.EPOCH_TIME_FACTOR * 60);
     }
 
+    private tick(): void {
+        this._timerObservable.next(this.toEorzeanDate(new Date()));
+    }
+
     public getEorzeanTime(): Observable<Date> {
-        return Observable.interval(60000 / EorzeanTimeService.EPOCH_TIME_FACTOR).map(() => {
-            return this.toEorzeanDate(new Date());
-        });
+        return this._timerObservable;
     }
 }

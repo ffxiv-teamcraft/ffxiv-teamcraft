@@ -19,6 +19,7 @@ import {ZoneBreakdown} from '../../model/list/zone-breakdown';
 import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
+import {TimerOptionsPopupComponent} from '../popup/timer-options-popup/timer-options-popup.component';
 
 declare const ga: Function;
 
@@ -84,6 +85,10 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
         }
         return this.gt.getLocation(id);
+    }
+
+    public openTimerOptionsPopup(): void {
+        this.dialog.open(TimerOptionsPopupComponent);
     }
 
     public adaptFilters(): void {

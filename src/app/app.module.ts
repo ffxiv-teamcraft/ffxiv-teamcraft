@@ -19,7 +19,7 @@ import {
     MdPaginatorModule,
     MdProgressBarModule,
     MdProgressSpinnerModule,
-    MdRadioModule,
+    MdRadioModule, MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -69,6 +69,7 @@ import {RequirementsPopupComponent} from './component/popup/requirements-popup/r
 import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
+import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
 
 const routes: Routes = [
     {
@@ -135,6 +136,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RequirementsPopupComponent,
         EorzeanTimeComponent,
         ListDetailsPanelComponent,
+        TimerOptionsPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
@@ -179,6 +181,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdGridListModule,
         MdProgressBarModule,
         MdButtonToggleModule,
+        MdSelectModule,
 
         BrowserModule,
         FormsModule,
@@ -206,6 +209,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RegenerationPopupComponent,
         BulkAdditionPopupComponent,
         RequirementsPopupComponent,
+        TimerOptionsPopupComponent,
     ],
     providers: [
         UserService,

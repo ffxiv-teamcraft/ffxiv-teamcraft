@@ -51,11 +51,15 @@ export class ItemComponent implements OnInit {
 
     timer: string;
 
-    timerMinutes: number = -1;
+    timerMinutes = 0;
 
     spawned: boolean;
 
     spawnAlarm: boolean;
+
+    slot: number;
+
+    notified = false;
 
     tradeSourcePriorities = {
         // MGP, just in case
@@ -114,7 +118,11 @@ export class ItemComponent implements OnInit {
 
     toggleAlarm(): void {
         this.spawnAlarm = !this.spawnAlarm;
-        localStorage.setItem(this.item.id + ':spawnAlarm', this.spawnAlarm.toString());
+        if (this.spawnAlarm) {
+            localStorage.setItem(this.item.id + ':spawnAlarm', this.spawnAlarm.toString());
+        } else {
+            localStorage.removeItem(this.item.id + ':spawnAlarm');
+        }
     }
 
     ngOnInit(): void {
@@ -127,37 +135,61 @@ export class ItemComponent implements OnInit {
                         timers.push({
                             start: this.getTimeUntil(date, t, 0),
                             end: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0),
-                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) < node.uptime
+                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) <= node.uptime
                         });
                     });
+                    this.slot = node.items.find(item => item.id === this.item.id).slot;
                 });
+                const options = this.getTimerOptions();
                 for (const t of timers) {
                     // If the node is spawned
                     if (t.spawned) {
                         this.timerMinutes = t.end;
-                        if (!this.spawned && this.spawnAlarm) {
-                            const audio = new Audio('/assets/audio/Wondrous_Tales_Line_Comp.mp3');
-                            audio.loop = false;
-                            audio.play();
+                        if (!this.spawned && this.spawnAlarm && options.hoursBefore === 0 && !this.notified) {
+                            this.notify();
                         }
                         this.spawned = true;
                         break;
                     }
+                    if (this.timerMinutes / 60 <= options.hoursBefore && !this.notified && this.spawnAlarm) {
+                        this.notify();
+                    }
                     // If this this.timerMinutes is closer than the actual one
                     if (t.start < this.timerMinutes) {
                         this.timerMinutes = t.start;
-                        this.spawned = t.spawned;
                     }
                     // If we're in the first iteration and the node isn't spawned
-                    if (this.timerMinutes === -1) {
+                    if (this.timerMinutes === 0 && !t.spawned) {
                         this.timerMinutes = t.start;
-                        this.spawned = t.spawned;
+                        this.notified = false;
                     }
+                    this.spawned = t.spawned;
                 }
                 const resultEarthTime = this.etimeService.toEarthTime(this.timerMinutes);
                 this.timer = this.getTimerString(resultEarthTime);
             });
         }
+    }
+
+    public getTimerColor(): string {
+        if (this.spawned) {
+            return 'primary';
+        }
+        if (this.notified && this.spawnAlarm) {
+            return 'accent';
+        }
+        return '';
+    }
+
+    private getTimerOptions(): any {
+        return JSON.parse(localStorage.getItem('timer:options'));
+    }
+
+    notify(): void {
+        const audio = new Audio(`/assets/audio/${this.getTimerOptions().sound}.mp3`);
+        audio.loop = false;
+        audio.play();
+        this.notified = true;
     }
 
     getTimeUntil(currentDate: Date, hours: number, minutes: number): number {

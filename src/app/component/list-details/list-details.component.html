@@ -45,6 +45,8 @@
         <md-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
             {{"Zone_breakdown" | translate}}
         </md-button-toggle>
+        <div class="spacer"></div>
+        <button md-button color="accent" (click)="openTimerOptionsPopup()">{{"Timer_options" | translate}}</button>
     </div>
     <md-expansion-panel>
         <md-expansion-panel-header>
