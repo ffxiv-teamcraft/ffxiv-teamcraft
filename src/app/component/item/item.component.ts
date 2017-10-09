@@ -15,6 +15,7 @@ import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/r
 import {MathTools} from '../../tools/math-tools';
 import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
+import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-item',
@@ -94,7 +95,8 @@ export class ItemComponent {
 
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
-                private dialog: MdDialog) {
+                private dialog: MdDialog,
+                private media: ObservableMedia) {
     }
 
     openRequirementsPopup(): void {
@@ -185,5 +187,9 @@ export class ItemComponent {
         const name = this.i18n.getName(item.name);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
+    }
+
+    public get isMobile():boolean{
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }

@@ -24,6 +24,19 @@
                     </md-radio-button>
                 </md-radio-group>
             </li>
+            <li *ngIf="filter.multiple" class="options">
+                <div>
+                    <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>
+                    {{filter.name | translate}}
+                </div>
+                <section>
+                    <md-checkbox disabled="{{!filter.enabled}}" *ngFor="let value of filter.values"
+                                 (change)="checkJobCategory(value.id, $event)">
+                        <img src="https://garlandtools.org/db/images/{{value.abbreviation}}.png" class="img-option"
+                             alt="{{value.abbreviation}}">
+                    </md-checkbox>
+                </section>
+            </li>
             <li class="min-max" *ngIf="filter.minMax">
                 <div>
                     <md-checkbox [(ngModel)]="filter.enabled"></md-checkbox>

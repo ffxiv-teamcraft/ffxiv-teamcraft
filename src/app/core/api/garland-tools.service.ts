@@ -62,14 +62,6 @@ export class GarlandToolsService {
         });
     }
 
-    public getItem(id: number): any {
-        for (const item of this.gItemIndex) {
-            if (item.i === id) {
-                return item;
-            }
-        }
-    }
-
     private mockI18nLimitType(node: any): any {
         return {
             fr: node.limitType,
@@ -93,12 +85,16 @@ export class GarlandToolsService {
         return clone;
     }
 
-    getJobCategories(job: number): number[] {
+    getJobCategories(jobs: number[]): number[] {
         // Get all keys of the given object.
         return Object.keys(this.gt.jobCategories)
         // Get only the ones that are made for our job id.
             .filter(categoryId => {
-                return this.gt.jobCategories[categoryId].jobs.indexOf(job) > -1;
+                let match = true;
+                jobs.forEach(job => {
+                    match = match && this.gt.jobCategories[categoryId].jobs.indexOf(job) > -1;
+                });
+                return match;
             })
             // Then we convert the string array to a number array
             .map(key => +key);

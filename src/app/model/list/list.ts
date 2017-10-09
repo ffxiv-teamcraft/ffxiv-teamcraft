@@ -127,9 +127,7 @@ export class List extends FirebaseDataModel {
         if (item.done < 0) {
             item.done = 0;
         }
-        if (recipe) {
-            amount = MathTools.absoluteCeil(amount / pitem.yield);
-        }
+        amount = MathTools.absoluteCeil(amount / pitem.yield);
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);

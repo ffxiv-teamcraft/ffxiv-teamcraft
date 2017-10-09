@@ -13,24 +13,6 @@
             width: 100%;
         }
 
-        .icon {
-            position: relative;
-            margin-right: 10px;
-            .yield {
-                position: absolute;
-                bottom: -2px;
-                right: -8px;
-            }
-        }
-
-        .done {
-
-        }
-
-        .done-check {
-
-        }
-
         .classes {
             width: 150px;
         }
@@ -83,5 +65,49 @@
     }
     .crafted-by {
         height: 30px;
+    }
+    .icon {
+        position: relative;
+        margin-right: 10px;
+        .yield {
+            position: absolute;
+            bottom: -2px;
+            right: -8px;
+        }
+    }
+
+    // Mobile specific classes
+    .mobile {
+        .item-name {
+            font-size: 14px;
+        }
+        .done {
+            .amount{
+                margin: 0;
+            }
+            .requirements {
+                width: 32px;
+                height: 32px;
+            }
+            .classes {
+                display: inline-block;
+                margin: 0;
+                button {
+                    width: 24px;
+                    height: 24px;
+                }
+                .crafted-by {
+                    height: 24px;
+                }
+                .currency {
+                    width: 24px;
+                    margin: 0;
+                }
+                .icon {
+                    width: 24px;
+                    border-radius: 24px;
+                }
+            }
+        }
     }
 }

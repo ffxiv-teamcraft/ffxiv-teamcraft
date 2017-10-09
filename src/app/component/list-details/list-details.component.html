@@ -37,6 +37,12 @@
         {{"Own_list_outdated_after_button"| translate}}
     </md-error>
 
+    <md-divider></md-divider>
+    <div class="options">
+        <md-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
+            {{"Zone_breakdown" | translate}}
+        </md-button-toggle>
+    </div>
     <md-expansion-panel>
         <md-expansion-panel-header>
             <md-panel-title>
@@ -99,7 +105,7 @@
         </div>
     </md-expansion-panel>
 
-    <md-expansion-panel expanded="true">
+    <md-expansion-panel class="panel" expanded="true">
         <md-expansion-panel-header>
             <md-panel-title>{{'Crystals'| translate}}</md-panel-title>
         </md-expansion-panel-header>
@@ -112,53 +118,62 @@
         </div>
     </md-expansion-panel>
 
-    <md-expansion-panel expanded="true">
-        <md-expansion-panel-header>
-            <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
-        </md-expansion-panel-header>
-        <md-list dense>
-            <div *ngFor="let gather of orderGatherings(list?.gathers)">
-                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
-                          [item]="gather"></app-item>
-            </div>
-        </md-list>
-    </md-expansion-panel>
+    <!--If we don't want to see the zone-breakdown for gathering and others-->
+    <section *ngIf="!zoneBreakdownToggle">
 
-    <md-expansion-panel expanded="true">
-        <md-expansion-panel-header>
-            <md-panel-title>{{'Other'| translate}}</md-panel-title>
-        </md-expansion-panel-header>
-        <md-list dense>
-            <div *ngFor="let other of list?.others">
-                <app-item (update)="update()" (done)="setDone($event)" *ngIf="!other.hidden"
-                          [item]="other"></app-item>
-            </div>
-        </md-list>
-    </md-expansion-panel>
+        <!--We need a specific one for gatherings because it will have some specific features-->
+        <md-expansion-panel expanded="true">
+            <md-expansion-panel-header>
+                <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
+            </md-expansion-panel-header>
+            <md-list dense>
+                <div *ngFor="let gather of orderGatherings(list?.gathers)">
+                    <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
+                              [item]="gather"></app-item>
+                </div>
+            </md-list>
+        </md-expansion-panel>
 
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Pre_crafts'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let preCraft of orderPreCrafts(list?.preCrafts)">
-            <app-item (update)="update()" (done)="setDone($event)" *ngIf="!preCraft.hidden"
-                      [item]="preCraft" [list]="list" [showRequirements]="true"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
 
-<md-expansion-panel expanded="true">
-    <md-expansion-panel-header>
-        <md-panel-title>{{'Items'| translate}}</md-panel-title>
-    </md-expansion-panel-header>
-    <md-list dense>
-        <div *ngFor="let recipe of list?.recipes">
-            <app-item [recipe]="true" (update)="update()" (done)="setDone($event, true)" *ngIf="!recipe.hidden"
-                      [item]="recipe" [list]="list" [showRequirements]="true"></app-item>
-        </div>
-    </md-list>
-</md-expansion-panel>
+        <app-list-details-panel [list]="list"
+                                (update)="update()"
+                                (done)="setDone($event)"
+                                [data]="list?.others"
+                                [title]="'Other'| translate"></app-list-details-panel>
+    </section>
+
+    <section *ngIf="zoneBreakdownToggle">
+        <md-expansion-panel expanded="true">
+            <md-expansion-panel-header>
+                <md-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</md-panel-title>
+            </md-expansion-panel-header>
+            <md-list dense>
+                <div *ngFor="let row of zoneBreakdown?.rows">
+                    <h3 md-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
+                    <div *ngFor="let item of row.items">
+                        <app-item (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
+                                  [item]="item"></app-item>
+                    </div>
+                    <md-divider class="zone-divider"></md-divider>
+                </div>
+            </md-list>
+        </md-expansion-panel>
+    </section>
+
+    <app-list-details-panel [list]="list"
+                            (update)="update()"
+                            (done)="setDone($event)"
+                            [data]="orderPreCrafts(list?.preCrafts)"
+                            [showRequirements]="true"
+                            [title]="'Pre_crafts'| translate"></app-list-details-panel>
+
+    <app-list-details-panel [list]="list"
+                            (update)="update()"
+                            (done)="setDone($event)"
+                            [data]="list?.recipes"
+                            [recipe]="true"
+                            [showRequirements]="true"
+                            [title]="'Items'| translate"></app-list-details-panel>
 
 </div>
 <h4 class="not-found" *ngIf="list !== undefined && list.$value === null">{{"List_not_found" | translate}}</h4>

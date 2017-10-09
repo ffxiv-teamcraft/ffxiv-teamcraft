@@ -26,9 +26,7 @@ export class ListsComponent implements OnInit {
 
     @ViewChild('f') myNgForm;
 
-    expanded: string;
-
-    expandAll = false;
+    expanded: string[] = [];
 
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
@@ -44,6 +42,10 @@ export class ListsComponent implements OnInit {
                 this.myNgForm.resetForm();
             });
         }
+    }
+
+    closed(key: string): void {
+        this.expanded = this.expanded.filter(i => i !== key);
     }
 
     delete(listKey: string): void {
