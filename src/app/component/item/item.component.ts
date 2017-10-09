@@ -182,7 +182,10 @@ export class ItemComponent implements OnInit {
     }
 
     private getTimerOptions(): any {
-        return JSON.parse(localStorage.getItem('timer:options'));
+        return JSON.parse(localStorage.getItem('timer:options')) || {
+            sound: 'Notification',
+            hoursBefore: 0
+        };
     }
 
     notify(): void {
