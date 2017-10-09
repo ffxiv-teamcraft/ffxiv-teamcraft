@@ -6,6 +6,7 @@ import {GarlandToolsService} from './api/garland-tools.service';
 import {I18nToolsService} from './i18n-tools.service';
 import {DataService} from './api/data.service';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
+import {EorzeanTimeService} from './time/eorzean-time.service';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import {NgSerializerModule} from '@kaiu/ng-serializer';
         DataService,
         ListManagerService,
         HtmlToolsService,
+        EorzeanTimeService,
     ]
 })
 export class CoreModule {
