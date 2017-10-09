@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class TimerOptionsPopupComponent {
 
-    private options: any = {
+    public options: any = {
         sound: 'Wondrous_tales',
         hoursBefore: 0
     };
