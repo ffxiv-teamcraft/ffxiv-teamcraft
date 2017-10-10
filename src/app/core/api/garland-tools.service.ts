@@ -42,10 +42,6 @@ export class GarlandToolsService {
         return this.mockI18n(this.gt.fishing.index[id]);
     }
 
-    public getDrop(id: number): Drop {
-        return this.mockI18n(this.gt.mob.index[id]);
-    }
-
     public getInstance(id: any): Instance {
         const raw = this.gt.instance.partialIndex[id];
         const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',

@@ -13,6 +13,7 @@ import {I18nToolsService} from '../i18n-tools.service';
 import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
+import {Drop} from '../../model/list/drop';
 
 @Injectable()
 export class ListManagerService {
@@ -199,8 +200,14 @@ export class ListManagerService {
                                             if (o.drops === undefined) {
                                                 o.drops = [];
                                             }
-                                            const drop = this.gt.getDrop(d);
-                                            if (drop !== undefined) {
+                                            const partial = data.getPartial(d.toString());
+                                            if (partial !== undefined) {
+                                                const drop: Drop = {
+                                                    id: d,
+                                                    name: this.i18n.createI18nNameFromPartial(partial),
+                                                    zoneid: partial.obj.z,
+                                                    lvl: partial.obj.l
+                                                };
                                                 o.drops.push(drop);
                                             }
                                         });
