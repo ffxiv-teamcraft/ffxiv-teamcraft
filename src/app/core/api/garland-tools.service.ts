@@ -43,6 +43,9 @@ export class GarlandToolsService {
 
     public getInstance(id: any): Instance {
         const raw = this.gt.instance.partialIndex[id];
+        if (raw === undefined) {
+            return undefined;
+        }
         const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
             'Treasure Hunt', 'Seasonal Event'][raw.t];
         return {

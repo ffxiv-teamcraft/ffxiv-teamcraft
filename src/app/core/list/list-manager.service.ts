@@ -168,7 +168,9 @@ export class ListManagerService {
                                         const instances: Instance[] = [];
                                         related.instances.forEach(id => {
                                             const instance = this.gt.getInstance(id);
-                                            instances.push(instance);
+                                            if (instance !== undefined) {
+                                                instances.push(instance);
+                                            }
                                         });
                                         o.instances = instances;
                                     }
