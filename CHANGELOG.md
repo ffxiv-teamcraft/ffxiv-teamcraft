@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.0...v2.2.1) (2017-10-10)
+
+
+### Bug Fixes
+
+* add share button on lists ([8817632](https://github.com/Supamiu/ffxiv-teamcraft/commit/8817632))
+* missing area name with timed nodes ([4320cfa](https://github.com/Supamiu/ffxiv-teamcraft/commit/4320cfa))
+* missing default options for node timers ([f7d2dbc](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7d2dbc))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.2...v2.2.0) (2017-10-09)
 
