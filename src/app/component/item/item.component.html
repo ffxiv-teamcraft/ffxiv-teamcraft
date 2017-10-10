@@ -16,10 +16,14 @@
     </div>
 
     <div class="timer" *ngIf="hasTimers()">
-        <button md-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
+        <button md-raised-button
+                [color]="getTimerColor()"
+                (click)="toggleAlarm()"
+                mdTooltip="{{nextSpawnLocation | i18n}}"
+                mdTooltipPosition="above">
             <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
             <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>
-            {{timer}} ({{slot}})
+            {{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>
         </button>
     </div>
 
@@ -215,10 +219,11 @@
     </div>
 
     <div class="timer" *ngIf="hasTimers()">
+        <span>{{nextSpawnLocation | i18n}}</span><br>
         <button md-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
             <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
             <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>
-            {{timer}} ({{slot}})
+            {{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>
         </button>
     </div>
 

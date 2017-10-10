@@ -68,6 +68,10 @@
     }
     .timer {
         width: 100%;
+        text-align: center;
+        span {
+            opacity: .8;
+        }
     }
     .icon {
         position: relative;
@@ -85,7 +89,7 @@
             font-size: 14px;
         }
         .done {
-            .amount{
+            .amount {
                 margin: 0;
             }
             .requirements {

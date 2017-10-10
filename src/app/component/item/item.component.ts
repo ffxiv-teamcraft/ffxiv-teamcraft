@@ -17,6 +17,7 @@ import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
 import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
+import {GarlandToolsService} from '../../core/api/garland-tools.service';
 
 @Component({
     selector: 'app-item',
@@ -58,6 +59,8 @@ export class ItemComponent implements OnInit {
     spawnAlarm: boolean;
 
     slot: number;
+
+    nextSpawnZoneId: number;
 
     notified = false;
 
@@ -113,7 +116,8 @@ export class ItemComponent implements OnInit {
                 private data: DataService,
                 private dialog: MdDialog,
                 private media: ObservableMedia,
-                private etimeService: EorzeanTimeService) {
+                private etimeService: EorzeanTimeService,
+                private gt: GarlandToolsService) {
     }
 
     toggleAlarm(): void {
@@ -123,6 +127,10 @@ export class ItemComponent implements OnInit {
         } else {
             localStorage.removeItem(this.item.id + ':spawnAlarm');
         }
+    }
+
+    public get nextSpawnLocation(): string {
+        return this.gt.getLocation(this.nextSpawnZoneId);
     }
 
     ngOnInit(): void {
@@ -135,16 +143,18 @@ export class ItemComponent implements OnInit {
                         timers.push({
                             start: this.getTimeUntil(date, t, 0),
                             end: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0),
-                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) <= node.uptime
+                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) <= node.uptime,
+                            zoneid: node.zoneid
                         });
                     });
-                    this.slot = node.items.find(item => item.id === this.item.id).slot;
+                    this.slot = node.items.find(item => item.id === this.item.id).slot || undefined;
                 });
                 const options = this.getTimerOptions();
                 for (const t of timers) {
                     // If the node is spawned
                     if (t.spawned) {
                         this.timerMinutes = t.end;
+                        this.nextSpawnZoneId = t.zoneid;
                         if (!this.spawned && this.spawnAlarm && options.hoursBefore === 0 && !this.notified) {
                             this.notify();
                         }
@@ -164,6 +174,7 @@ export class ItemComponent implements OnInit {
                         this.notified = false;
                     }
                     this.spawned = t.spawned;
+                    this.nextSpawnZoneId = t.zoneid;
                 }
                 const resultEarthTime = this.etimeService.toEarthTime(this.timerMinutes);
                 this.timer = this.getTimerString(resultEarthTime);
