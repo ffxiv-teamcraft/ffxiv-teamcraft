@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {List} from '../../model/list/list';
+import {MdSnackBar} from '@angular/material';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-list-row',
@@ -32,6 +34,19 @@ export class ListRowComponent {
     @Input()
     public readonly = false;
 
-    constructor() {
+    constructor(private snack: MdSnackBar, private translator: TranslateService) {
+    }
+
+    public getLink(): string {
+        return `${window.location.protocol}//${window.location.host}/list/${this.authorUid}/${this.list.$key}`;
+    }
+
+    public showCopiedNotification(): void {
+        this.snack.open(
+            this.translator.instant('Share_link_copied'),
+            '', {
+                duration: 10000,
+                extraClasses: ['snack']
+            });
     }
 }

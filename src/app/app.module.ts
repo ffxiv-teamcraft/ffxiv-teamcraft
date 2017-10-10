@@ -70,6 +70,7 @@ import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.compon
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
 import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
+import {ClipboardModule} from 'ngx-clipboard/dist';
 
 const routes: Routes = [
     {
@@ -182,6 +183,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdProgressBarModule,
         MdButtonToggleModule,
         MdSelectModule,
+
+        ClipboardModule,
 
         BrowserModule,
         FormsModule,

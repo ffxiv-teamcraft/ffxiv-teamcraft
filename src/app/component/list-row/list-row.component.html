@@ -5,10 +5,15 @@
         </md-panel-title>
         <div class="spacer"></div>
         <div class="buttons">
-            <button md-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}">
+            <button md-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"
+                    mdTooltip="{{'Share' | translate}}" mdTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
+                <md-icon>share</md-icon>
+            </button>
+            <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+            <button md-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}" (click)="$event.stopPropagation()">
                 <md-icon>open_in_new</md-icon>
             </button>
-            <button md-icon-button *ngIf="!readonly" (click)="ondelete.emit()">
+            <button md-icon-button *ngIf="!readonly" (click)="ondelete.emit(); $event.stopPropagation()">
                 <md-icon>delete</md-icon>
             </button>
         </div>
