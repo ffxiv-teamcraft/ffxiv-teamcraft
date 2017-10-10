@@ -216,7 +216,7 @@ export class ItemComponent implements OnInit {
     }
 
     hasTimers(): boolean {
-        return this.item.gatheredBy !== undefined &&
+        return this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
     }
 

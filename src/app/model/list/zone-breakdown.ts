@@ -8,6 +8,9 @@ export class ZoneBreakdown {
 
     constructor(list: List) {
         list.gathers.forEach(gather => {
+            if (gather.gatheredBy.nodes === undefined) {
+                return;
+            }
             gather.gatheredBy.nodes.forEach(node => {
                 this.addToBreakdown(node.zoneid, gather);
             });
