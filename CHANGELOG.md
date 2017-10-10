@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.3"></a>
+## [2.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.2...v2.2.3) (2017-10-10)
+
+
+### Bug Fixes
+
+* add localized dungeon names ([ad37489](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad37489))
+* no place to type min and max values in filter input fields ([76ebbae](https://github.com/Supamiu/ffxiv-teamcraft/commit/76ebbae))
+
+
+
 <a name="2.2.2"></a>
 ## [2.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.1...v2.2.2) (2017-10-10)
 
