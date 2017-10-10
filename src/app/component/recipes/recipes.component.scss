@@ -20,6 +20,7 @@
             md-input-container {
                 width: auto !important;
                 margin-right: 10px;
+                min-width: 60px;
             }
         }
         li *:first-child {
