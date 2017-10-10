@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.2"></a>
+## [2.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.1...v2.2.2) (2017-10-10)
+
+
+### Bug Fixes
+
+* add translation for monster names ([c6fb9a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/c6fb9a6))
+* broken lists with fishing nodes ([4984eba](https://github.com/Supamiu/ffxiv-teamcraft/commit/4984eba))
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.0...v2.2.1) (2017-10-10)
 
