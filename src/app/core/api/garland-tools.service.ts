@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../../model/list/garland-tools-data';
-import {Drop} from '../../model/list/drop';
 import {Instance} from '../../model/list/instance';
 import {Item} from '../../model/garland-tools/item';
 import {NgSerializerService} from '@kaiu/ng-serializer';
@@ -46,16 +45,21 @@ export class GarlandToolsService {
         const raw = this.gt.instance.partialIndex[id];
         const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
             'Treasure Hunt', 'Seasonal Event'][raw.t];
-        return this.mockI18n({
-            name: raw.n,
-            id: raw.id,
+        return {
+            id: raw.i,
+            name: {
+                en: raw.en.n,
+                de: raw.de.n,
+                fr: raw.fr.n,
+                ja: raw.ja.n,
+            },
             type: {
                 fr: type,
                 en: type,
                 de: type,
                 ja: type
             }
-        });
+        };
     }
 
     private mockI18nLimitType(node: any): any {
