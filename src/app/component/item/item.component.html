@@ -120,6 +120,14 @@
                          src="https://secure.xivdb.com/img/game/065000/065002.png">
                 </button>
             </div>
+
+            <div *ngIf="item.voyages !== undefined">
+                <button md-icon-button (click)="openVoyagesDetails(item)">
+                    <img class="icon" mdTooltip="{{'Voyages' | translate}}"
+                         mdTooltipPosition="above"
+                         src="https://www.garlandtools.org/db/images/Voyage.png">
+                </button>
+            </div>
         </div>
     </div>
 </md-list-item>
@@ -213,6 +221,13 @@
                     <img class="icon" mdTooltip="{{'Vendors' | translate}}"
                          mdTooltipPosition="above"
                          src="https://secure.xivdb.com/img/game/065000/065002.png">
+                </button>
+            </div>
+            <div *ngIf="item.voyages !== undefined">
+                <button md-icon-button (click)="openVoyagesDetails(item)">
+                    <img class="icon" mdTooltip="{{'Voyages' | translate}}"
+                         mdTooltipPosition="above"
+                         src="https://www.garlandtools.org/db/images/Voyage.png">
                 </button>
             </div>
         </div>

@@ -1,0 +1,9 @@
+<h2 md-dialog-title>{{data | i18n}}</h2>
+<div md-dialog-content>
+    <md-list>
+        <md-list-item *ngFor="let voyage of data.voyages">
+            <md-icon md-list-icon>location_on</md-icon>
+            <b md-line>{{voyage | i18n}}</b>
+        </md-list-item>
+    </md-list>
+</div>

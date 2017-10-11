@@ -197,6 +197,15 @@ export class ListManagerService {
                             .map(l => {
                                 l.forEachItem(o => {
                                     const related = data.getIngredient(o.id);
+                                    if (related !== undefined && related.voyages !== undefined) {
+                                        o.voyages = related.getVoyages();
+                                    }
+                                });
+                                return l;
+                            })
+                            .map(l => {
+                                l.forEachItem(o => {
+                                    const related = data.getIngredient(o.id);
                                     if (related !== undefined && related.drops !== undefined) {
                                         related.drops.forEach(d => {
                                             if (o.drops === undefined) {

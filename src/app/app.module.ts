@@ -71,6 +71,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
 import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
+import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
 
 const routes: Routes = [
     {
@@ -138,6 +139,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         EorzeanTimeComponent,
         ListDetailsPanelComponent,
         TimerOptionsPopupComponent,
+        VoyagesDetailsPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
@@ -213,6 +215,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BulkAdditionPopupComponent,
         RequirementsPopupComponent,
         TimerOptionsPopupComponent,
+        VoyagesDetailsPopupComponent,
     ],
     providers: [
         UserService,

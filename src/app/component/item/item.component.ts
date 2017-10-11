@@ -18,6 +18,7 @@ import {RequirementsPopupComponent} from '../popup/requirements-popup/requiremen
 import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
+import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -268,6 +269,12 @@ export class ItemComponent implements OnInit {
 
     public openDesynthDetails(item: ListRow): void {
         this.dialog.open(DesynthPopupComponent, {
+            data: item
+        });
+    }
+
+    public openVoyagesDetails(item: ListRow): void {
+        this.dialog.open(VoyagesDetailsPopupComponent, {
             data: item
         });
     }
