@@ -282,7 +282,6 @@ export class Item implements I18nData {
                 gatheredBy.level = details.lvl;
             }
         }
-        console.log(gatheredBy);
         return gatheredBy;
     }
 
