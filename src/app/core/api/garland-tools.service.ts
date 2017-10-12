@@ -3,6 +3,7 @@ import {GarlandToolsData} from '../../model/list/garland-tools-data';
 import {Instance} from '../../model/list/instance';
 import {Item} from '../../model/garland-tools/item';
 import {NgSerializerService} from '@kaiu/ng-serializer';
+import {I18nToolsService} from '../i18n-tools.service';
 
 @Injectable()
 export class GarlandToolsService {
@@ -10,7 +11,7 @@ export class GarlandToolsService {
     private gt: GarlandToolsData = (<any>window).gt;
     private gItemIndex: any[] = (<any>window).gItemIndex;
 
-    constructor(private serializer: NgSerializerService) {
+    constructor(private serializer: NgSerializerService, private i18n: I18nToolsService) {
     }
 
     public getJob(id: number): any {
@@ -38,7 +39,7 @@ export class GarlandToolsService {
     }
 
     public getFishingSpot(id: number): any {
-        return this.mockI18n(this.gt.fishing.index[id]);
+        return this.gt.fishing.index[id];
     }
 
     public getInstance(id: any): Instance {

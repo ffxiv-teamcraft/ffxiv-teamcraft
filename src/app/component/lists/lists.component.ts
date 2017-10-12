@@ -74,11 +74,11 @@ export class ListsComponent implements OnInit {
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
             if (user === null) {
-                this.lists = null;
+                this.lists = Observable.of([]);
                 this.user = undefined;
             } else {
                 this.user = user;
-                this.lists = this.listService.getAll();
+                this.lists = this.listService.getAll().do(data => console.log(data, this.expanded));
             }
         });
     }
