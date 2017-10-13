@@ -301,7 +301,12 @@ export class ItemComponent implements OnInit {
         const res = {priority: 0, icon: 'https://www.garlandtools.org/db/images/Shop.png'};
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
-                const id = +trade.currencyIcon.split('/').pop().split('.')[0];
+                let id = 0;
+                if (typeof trade.currencyIcon === 'string') {
+                    id = +trade.currencyIcon.split('/').pop().split('.')[0];
+                } else {
+                    id = trade.currencyIcon;
+                }
                 if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
                     res.icon = trade.currencyIcon;
                     res.priority = this.tradeSourcePriorities[id];
