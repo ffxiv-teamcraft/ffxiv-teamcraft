@@ -90,7 +90,7 @@
                          src="{{getTradeIcon(item)}}">
                 </button>
             </div>
-            <div *ngIf="item.instances !== undefined">
+            <div *ngIf="item.instances !== undefined && item.instances.length > 0">
                 <button md-icon-button (click)="openInstancesDetails(item)">
                     <img mdTooltip="{{getI18n(item.instances[0].type)}}"
                          mdTooltipPosition="above"

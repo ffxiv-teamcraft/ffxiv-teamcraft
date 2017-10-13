@@ -44,7 +44,7 @@
     "Verification_mail_sent": "Verification email sent, please check up your mailing box",
     "Not_verified": "Your email has not been verified yet, please check your mailing box",
     "Lodestone_already_used": "This character is already used",
-    "Anonymous_Warning": "You should create an account to avoid loosing your lists and enable more features like adaptive filter",
+    "Anonymous_Warning": "You should create an account to avoid losing your lists and enable more features like adaptive filter",
     "Game_Term/DoH": "Handwerker",
     "Game_Term/DoL": "Sammler",
     "Reduction": "Reduction",
@@ -81,6 +81,11 @@
     "Sound": "Sound",
     "Share_link_copied":"List link copied in the clipboard",
     "Share":"Share",
+    "Patreon_popup_title": "We need your help",
+    "Patreon_popup_body": "As the user base is getting bigger, FFXIV Teamcraft will need a better hosting to make sure everything is working properly with good response time. Because of that we need your support to ensure we have enough funds to pay for the hosting you deserve, to make your experience with the tool the best possible.",
+    "Patreon_popup_body_end": "Please consider supporting us on patreon, by doing this you'll help the team and the users.",
+    "Current_funds":"Current funds",
+    "Close": "Close",
 
 
     "HOME_PAGE.title": "Create lists, share, contribute, craft",

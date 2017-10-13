@@ -72,6 +72,7 @@ import {ListDetailsPanelComponent} from './component/list-details-panel/list-det
 import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
 import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
+import { PatreonPopupComponent } from './patreon/patreon-popup/patreon-popup.component';
 
 const routes: Routes = [
     {
@@ -140,6 +141,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListDetailsPanelComponent,
         TimerOptionsPopupComponent,
         VoyagesDetailsPopupComponent,
+        PatreonPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
@@ -216,6 +218,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         RequirementsPopupComponent,
         TimerOptionsPopupComponent,
         VoyagesDetailsPopupComponent,
+        PatreonPopupComponent,
     ],
     providers: [
         UserService,

@@ -29,7 +29,7 @@ export class List extends FirebaseDataModel {
             }
         }
         clone.name = this.name;
-        clone.version = this.version;
+        clone.version = this.version || '1.0.0';
         delete clone.$key;
         return clone;
     }
