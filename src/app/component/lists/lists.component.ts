@@ -11,6 +11,8 @@ import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
 
+declare const ga: Function;
+
 @Component({
     selector: 'app-lists',
     templateUrl: './lists.component.html',
@@ -57,6 +59,7 @@ export class ListsComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 this.listService.remove(listKey).then(() => {
+                    ga('send', 'event', 'List', 'deletion');
                     this.title.setTitle('Teamcraft');
                 });
             }
