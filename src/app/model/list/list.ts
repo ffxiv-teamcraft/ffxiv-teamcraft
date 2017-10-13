@@ -5,6 +5,8 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 
+declare const ga: Function;
+
 export class List extends FirebaseDataModel {
     name: string;
     recipes: ListRow[] = [];
@@ -19,6 +21,7 @@ export class List extends FirebaseDataModel {
 
     constructor() {
         super();
+        ga('send', 'event', 'List', 'creation');
     }
 
     public clone(): List {
