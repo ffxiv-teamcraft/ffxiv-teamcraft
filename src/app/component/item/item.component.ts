@@ -63,8 +63,6 @@ export class ItemComponent implements OnInit {
 
     nextSpawnZoneId: number;
 
-    notified = false;
-
     tradeSourcePriorities = {
         // MGP, just in case
         5752: 20,
@@ -168,11 +166,11 @@ export class ItemComponent implements OnInit {
                     // If this this.timerMinutes is closer than the actual one
                     if (t.start < this.timerMinutes) {
                         this.timerMinutes = t.start;
+                        this.notified = false;
                     }
                     // If we're in the first iteration and the node isn't spawned
                     if (this.timerMinutes === 0 && !t.spawned) {
                         this.timerMinutes = t.start;
-                        this.notified = false;
                     }
                     this.spawned = t.spawned;
                     this.nextSpawnZoneId = t.zoneid;
@@ -180,6 +178,18 @@ export class ItemComponent implements OnInit {
                 const resultEarthTime = this.etimeService.toEarthTime(this.timerMinutes);
                 this.timer = this.getTimerString(resultEarthTime);
             });
+        }
+    }
+
+    public get notified(): boolean {
+        return localStorage.getItem(this.item.id + ':notified') === 'true';
+    }
+
+    public set notified(n: boolean) {
+        if (n) {
+            localStorage.setItem(this.item.id + ':notified', n.toString());
+        } else {
+            localStorage.removeItem(this.item.id + ':notified');
         }
     }
 
