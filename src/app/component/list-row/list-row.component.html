@@ -1,5 +1,5 @@
-<md-expansion-panel [expanded]="expanded" (opened)="opened.emit()">
-    <md-expansion-panel-header>
+<md-expansion-panel #panel [expanded]="expanded">
+    <md-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
         <md-panel-title>
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </md-panel-title>

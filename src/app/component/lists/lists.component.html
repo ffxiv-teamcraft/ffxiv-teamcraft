@@ -14,7 +14,7 @@
 <div class="row" *ngFor="let list of lists | async">
     <app-list-row [list]="list"
                   [expanded]="expanded.indexOf(list.$key) > -1"
-                  (opened)="expanded.push(list.$key)"
+                  (opened)="opened(list.$key)"
                   (closed)="closed(list.$key)"
                   (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
                   (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"

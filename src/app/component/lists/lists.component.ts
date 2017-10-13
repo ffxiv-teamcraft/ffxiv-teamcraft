@@ -48,6 +48,10 @@ export class ListsComponent implements OnInit {
         this.expanded = this.expanded.filter(i => i !== key);
     }
 
+    opened(key: string): void {
+        this.expanded.push(key);
+    }
+
     delete(listKey: string): void {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         dialogRef.afterClosed().subscribe(result => {
@@ -78,7 +82,7 @@ export class ListsComponent implements OnInit {
                 this.user = undefined;
             } else {
                 this.user = user;
-                this.lists = this.listService.getAll().do(data => console.log(data, this.expanded));
+                this.lists = this.listService.getAll();
             }
         });
     }
