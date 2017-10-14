@@ -9,8 +9,7 @@
             <input mdInput placeholder="{{'Server_name' | translate}}" formControlName="server" type="text" required>
             <md-error>Required</md-error>
         </md-input-container>
-        <md-error *ngIf="alreadyUsed">{{'Lodestone_already_used' | translate}}</md-error>
-        <md-error *ngIf="!form.valid && !alreadyUsed">{{'Character_not_found' | translate}}</md-error>
+        <md-error *ngIf="!form.valid">{{'Character_not_found' | translate}}</md-error>
         <button md-raised-button type="submit" [disabled]="!form.valid" color="primary">Confirm</button>
     </form>
 </div>

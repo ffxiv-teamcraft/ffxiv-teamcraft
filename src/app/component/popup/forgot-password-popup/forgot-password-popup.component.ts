@@ -21,7 +21,7 @@ export class ForgotPasswordPopupComponent {
     sendEmail(): void {
         this.af.auth.sendPasswordResetEmail(this.email)
             .then(() => {
-                this.snack.open(this.translate.instant('Email_sent'));
+                this.snack.open(this.translate.instant('Email_sent'), '', {duration: 5000});
                 this.ref.close();
             })
             .catch(err => this.error = (<any>err).code);
