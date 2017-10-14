@@ -1,0 +1,27 @@
+@mixin theme-background($theme) {
+    $accent: map-get($theme, accent);
+
+    .user-box {
+        background: mat-color($accent);
+        color: black;
+    }
+}
+@mixin expansion-panel-accent($theme) {
+    md-expansion-panel.accent {
+        $accent: map-get($theme, accent);
+        $foreground: map-get($theme, foreground);
+        background: mat-color($accent);
+        .mat-expansion-panel-header-title {
+            color: black;
+        }
+        .mat-expansion-panel-header-description {
+            color: black;
+            opacity: .7;
+        }
+    }
+}
+@mixin load-theme($theme){
+  @include angular-material-theme($theme);
+  @include theme-background($theme);
+  @include expansion-panel-accent($theme);
+}
