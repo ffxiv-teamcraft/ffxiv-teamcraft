@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
 import * as firebase from 'firebase/app';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {MdDialogRef} from '@angular/material';
+import {MdDialog, MdDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
-import EmailAuthProvider = firebase.auth.EmailAuthProvider;
 
 @Component({
     selector: 'app-login-popup',
@@ -27,12 +27,17 @@ export class LoginPopupComponent {
                 public dialogRef: MdDialogRef<LoginPopupComponent>,
                 public firebase: AngularFireDatabase,
                 private fb: FormBuilder,
-                private router: Router) {
+                private router: Router,
+                private dialog: MdDialog) {
 
         this.form = fb.group({
             email: ['', Validators.email],
             password: ['', Validators.required],
         });
+    }
+
+    openForgotPasswordPopup(): void {
+        this.dialog.open(ForgotPasswordPopupComponent);
     }
 
     login(user: any): Promise<void> {
