@@ -1,0 +1,88 @@
+//Importing this file allows the use of the $teamcraft-theme variable
+//You can use this variable in every way as $light-theme or $dark-theme
+//Updated 10/13/2017 by Delaxiox
+
+//   Custom Function - Creates map of a single color hex
+@function hex-to-mat-color($hex){
+  @return mat-palette((
+  50: $hex,
+  100: $hex,
+  200: $hex,
+  300: $hex,
+  400: $hex,
+  500: $hex,
+  600: $hex,
+  700: $hex,
+  800: $hex,
+  900: $hex,
+  A100: $hex,
+  A200: $hex,
+  A400: $hex,
+  A700: $hex,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+    )
+  ));
+}
+
+//  Foreground/Background
+$teamcraft-foreground: (
+  base:              white,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+$teamcraft-background: (
+  status-bar: black,
+  app-bar:    map_get($mat-grey, 900),
+  background: #303030,
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-grey, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$teamcraft-dark-black: #201F1D;
+$teamcraft-grey: #868685;
+$teamcraft-orange: #DE8D47;
+$teamcraft-kinda-white: #DCDCDC;
+$teamcraft-white: #FFFFFF;
+
+//  Declaring Colors
+$teamcraft-primary: hex-to-mat-color($teamcraft-dark-black);
+$teamcraft-accent: hex-to-mat-color($teamcraft-orange);
+$teamcraft-warn: mat-palette($mat-red);
+
+//  DO NOT EDIT BELOW THIS LINE
+// ------------------------------------------------
+$teamcraft-theme: (primary:$teamcraft-primary, accent:$teamcraft-accent, warn:$teamcraft-warn, is-dark:true, foreground:$teamcraft-foreground, background:$teamcraft-background);

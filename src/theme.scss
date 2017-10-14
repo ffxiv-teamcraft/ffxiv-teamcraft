@@ -1,54 +1,22 @@
 @import '../node_modules/@angular/material/_theming.scss';
-
+@import './theme/mixins.scss';
+@import './theme/teamcraft-theme.scss';
+@import './theme/old-theme.scss';
+@import './theme/light-theme.scss';
 @include mat-core();
 
-// Custom mixins for theming
-@mixin theme-background($theme) {
-    $accent: map-get($theme, accent);
+//  Primary Theme
+@include load-theme($dark-theme);
 
-    .accent-background {
-        background: mat-color($accent);
-        color: black;
-    }
-}
-
-@mixin expansion-panel-accent($theme) {
-    md-expansion-panel.accent {
-        $accent: map-get($theme, accent);
-        $foreground: map-get($theme, foreground);
-        background: mat-color($accent);
-        .mat-expansion-panel-header-title {
-            color: black;
-        }
-        .mat-expansion-panel-header-description {
-            color: black;
-            opacity: .7;
-        }
-    }
-}
-
-$primary: mat-palette($mat-teal, 300);
-$accent: mat-palette($mat-indigo, 100);
-$warn: mat-palette($mat-red, 600);
-$dark-theme: mat-dark-theme($primary, $accent, $warn);
-@include angular-material-theme($dark-theme);
-@include theme-background($dark-theme);
-@include expansion-panel-accent($dark-theme);
-
-$light-theme: mat-light-theme($primary, $accent, $warn);
-
-// Light theme class
+//  Light Theme
 .light-theme {
-    @include angular-material-theme($light-theme);
-    @include theme-background($light-theme);
-    @include expansion-panel-accent($light-theme);
+    @include load-theme($light-theme);
 }
 
 // Responsive breakpoint mixin/definitions
 $min-width-small: 767px;
 $min-width-medium: 992px;
 $min-width-large: 1200px;
-
 @mixin client-width($breakpoint) {
     @if $breakpoint == 'small' {
         @media (max-width: $min-width-small) {

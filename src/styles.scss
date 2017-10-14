@@ -1,4 +1,7 @@
-@import './theme.scss';
+@import "./theme.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+// styles.scss is the last SCSS file to load.
+// Anything put in this file will override previous stylesheets.
 
 html, body {
     width: 100%;
@@ -6,11 +9,38 @@ html, body {
 }
 
 body {
-    background: map-get(map-get($dark-theme, background), background);
+    background: map-get(map-get($teamcraft-theme, background), background);
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.3em;
+    p{
+      font-weight: 300;
+    }
 }
 
+// ---------------------------------------------
+// ------ Material Element Style Overides ------
+// ---------------------------------------------
+
+
+// Version Text
+p.version.light-text{
+  top: 0px!important;
+  z-index: 99;
+}
+
+// Make header bar shorter
+md-toolbar.mat-toolbar.mat-primary{
+  min-height: 48px!important;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  z-index:1;
+  position:relative;
+}
+.mat-toolbar,.mat-toolbar-row{
+  height: 48px!important;
+}
+
+// Snacks are the notifications that pop up on the bottom
 .snack {
     background-color: mat-color(map-get($dark-theme, accent)) !important;
 }
@@ -19,6 +49,7 @@ body {
     background-color: mat-color(map-get($dark-theme, warn)) !important;
 }
 
+// Centers the content
 .mat-content {
     align-items: center;
 }
