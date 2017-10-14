@@ -15,8 +15,6 @@ export class CharacterAddPopupComponent implements OnInit {
 
     form: FormGroup;
 
-    alreadyUsed = false;
-
     validateTimeout: any;
 
     constructor(private data: DataService,
@@ -51,25 +49,14 @@ export class CharacterAddPopupComponent implements OnInit {
             .searchCharacter(this.form.value.character, this.form.value.server)
             .mergeMap(results => {
                 return this.af.idToken.mergeMap(user => {
-                    return Observable.fromPromise(this.firebase.database.ref(`/users`)
-                        .orderByChild('lodestoneId')
-                        .equalTo(results[0].id.toString())
-                        .once('value').then(res => {
-                            if (res.val() === null) {
-                                this.alreadyUsed = false;
-                                if (user !== null) {
-                                    return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
-                                        .set(results[0].id);
-                                }
-                            } else {
-                                this.alreadyUsed = true;
-                            }
-                        }));
+                    if (user !== null) {
+                        return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
+                            .set(results[0].id);
+                    }
+                    return Observable.of(null);
                 });
             }).subscribe(() => {
-            if (!this.alreadyUsed) {
-                this.dialogRef.close();
-            }
+            this.dialogRef.close();
         });
     }
 

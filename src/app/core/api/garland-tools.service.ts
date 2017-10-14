@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../../model/list/garland-tools-data';
-import {Drop} from '../../model/list/drop';
 import {Instance} from '../../model/list/instance';
 import {Item} from '../../model/garland-tools/item';
 import {NgSerializerService} from '@kaiu/ng-serializer';
+import {I18nToolsService} from '../i18n-tools.service';
 
 @Injectable()
 export class GarlandToolsService {
@@ -11,7 +11,7 @@ export class GarlandToolsService {
     private gt: GarlandToolsData = (<any>window).gt;
     private gItemIndex: any[] = (<any>window).gItemIndex;
 
-    constructor(private serializer: NgSerializerService) {
+    constructor(private serializer: NgSerializerService, private i18n: I18nToolsService) {
     }
 
     public getJob(id: number): any {
@@ -39,35 +39,31 @@ export class GarlandToolsService {
     }
 
     public getFishingSpot(id: number): any {
-        return this.mockI18n(this.gt.fishing.index[id]);
-    }
-
-    public getDrop(id: number): Drop {
-        return this.mockI18n(this.gt.mob.index[id]);
+        return this.gt.fishing.index[id];
     }
 
     public getInstance(id: any): Instance {
         const raw = this.gt.instance.partialIndex[id];
+        if (raw === undefined) {
+            return undefined;
+        }
         const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
             'Treasure Hunt', 'Seasonal Event'][raw.t];
-        return this.mockI18n({
-            name: raw.n,
-            id: raw.id,
+        return {
+            id: raw.i,
+            name: {
+                en: raw.en.n,
+                de: raw.de.n,
+                fr: raw.fr.n,
+                ja: raw.ja.n,
+            },
             type: {
                 fr: type,
                 en: type,
                 de: type,
                 ja: type
             }
-        });
-    }
-
-    public getItem(id: number): any {
-        for (const item of this.gItemIndex) {
-            if (item.i === id) {
-                return item;
-            }
-        }
+        };
     }
 
     private mockI18nLimitType(node: any): any {
@@ -93,12 +89,16 @@ export class GarlandToolsService {
         return clone;
     }
 
-    getJobCategories(job: number): number[] {
+    getJobCategories(jobs: number[]): number[] {
         // Get all keys of the given object.
         return Object.keys(this.gt.jobCategories)
         // Get only the ones that are made for our job id.
             .filter(categoryId => {
-                return this.gt.jobCategories[categoryId].jobs.indexOf(job) > -1;
+                let match = true;
+                jobs.forEach(job => {
+                    match = match && this.gt.jobCategories[categoryId].jobs.indexOf(job) > -1;
+                });
+                return match;
             })
             // Then we convert the string array to a number array
             .map(key => +key);

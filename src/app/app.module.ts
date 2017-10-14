@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     MdButtonModule,
+    MdButtonToggleModule,
     MdCardModule,
     MdCheckboxModule,
     MdChipsModule,
@@ -15,9 +16,10 @@ import {
     MdInputModule,
     MdListModule,
     MdMenuModule,
-    MdPaginatorModule, MdProgressBarModule,
+    MdPaginatorModule,
+    MdProgressBarModule,
     MdProgressSpinnerModule,
-    MdRadioModule,
+    MdRadioModule, MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -60,9 +62,18 @@ import {HomeComponent} from './component/home/home.component';
 import {FavoritesComponent} from './component/favorites/favorites.component';
 import {ListRowComponent} from './component/list-row/list-row.component';
 import {AmountInputComponent} from './component/common/amount-input/amount-input.component';
-import { BulkAdditionPopupComponent } from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
-import { RandomGifComponent } from './component/common/random-gif/random-gif.component';
-import { ItemIconComponent } from './component/common/item-icon/item-icon.component';
+import {BulkAdditionPopupComponent} from './component/popup/bulk-addition-popup/bulk-addition-popup.component';
+import {RandomGifComponent} from './component/common/random-gif/random-gif.component';
+import {ItemIconComponent} from './component/common/item-icon/item-icon.component';
+import {RequirementsPopupComponent} from './component/popup/requirements-popup/requirements-popup.component';
+import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
+import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
+import {ClipboardModule} from 'ngx-clipboard/dist';
+import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
+import { PatreonPopupComponent } from './patreon/patreon-popup/patreon-popup.component';
+import { ForgotPasswordPopupComponent } from './component/popup/forgot-password-popup/forgot-password-popup.component';
 
 const routes: Routes = [
     {
@@ -126,8 +137,17 @@ export function HttpLoaderFactory(http: HttpClient) {
         BulkAdditionPopupComponent,
         RandomGifComponent,
         ItemIconComponent,
+        RequirementsPopupComponent,
+        EorzeanTimeComponent,
+        ListDetailsPanelComponent,
+        TimerOptionsPopupComponent,
+        VoyagesDetailsPopupComponent,
+        PatreonPopupComponent,
+        ForgotPasswordPopupComponent,
     ],
     imports: [
+        FlexLayoutModule,
+
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -167,6 +187,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdRadioModule,
         MdGridListModule,
         MdProgressBarModule,
+        MdButtonToggleModule,
+        MdSelectModule,
+
+        ClipboardModule,
 
         BrowserModule,
         FormsModule,
@@ -193,6 +217,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         ReductionDetailsPopupComponent,
         RegenerationPopupComponent,
         BulkAdditionPopupComponent,
+        RequirementsPopupComponent,
+        TimerOptionsPopupComponent,
+        VoyagesDetailsPopupComponent,
+        PatreonPopupComponent,
+        ForgotPasswordPopupComponent,
     ],
     providers: [
         UserService,

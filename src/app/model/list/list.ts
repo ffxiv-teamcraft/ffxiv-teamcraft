@@ -5,6 +5,8 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 
+declare const ga: Function;
+
 export class List extends FirebaseDataModel {
     name: string;
     recipes: ListRow[] = [];
@@ -19,6 +21,20 @@ export class List extends FirebaseDataModel {
 
     constructor() {
         super();
+        ga('send', 'event', 'List', 'creation');
+    }
+
+    public clone(): List {
+        const clone = new List();
+        for (const prop of Object.keys(this)) {
+            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
+                clone[prop] = this[prop];
+            }
+        }
+        clone.name = this.name;
+        clone.version = this.version || '1.0.0';
+        delete clone.$key;
+        return clone;
     }
 
     public forEachItem(method: (arg: ListRow) => void): void {
@@ -114,9 +130,7 @@ export class List extends FirebaseDataModel {
         if (item.done < 0) {
             item.done = 0;
         }
-        if (recipe) {
-            amount = MathTools.absoluteCeil(amount / pitem.yield);
-        }
+        amount = MathTools.absoluteCeil(amount / pitem.yield);
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);

@@ -165,6 +165,21 @@ export class Item implements I18nData {
         });
     }
 
+    public getVoyages(): I18nName[] {
+        const voyages: I18nName[] = [];
+        if (this.voyages !== undefined) {
+            this.voyages.forEach(v => {
+                voyages.push({
+                    en: v,
+                    fr: v,
+                    de: v,
+                    ja: v
+                });
+            });
+        }
+        return voyages;
+    }
+
     public getVendors(db: DataService, gt: GarlandToolsService, i18n: I18nToolsService): Observable<Vendor[]> {
         const vendors: Observable<Vendor> [] = [];
         for (const id of this.vendors) {

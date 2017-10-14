@@ -2,9 +2,13 @@ export class Partial {
     type: string;
     id: string;
     obj: {
+        en: { n: string };
+        fr: { n: string };
+        ja: { n: string };
+        de: { n: string };
         n: string;
-        i: any;
-        l: any;
+        i: number;
+        l: string;
         c?: number;
         t: any;
         r: number;

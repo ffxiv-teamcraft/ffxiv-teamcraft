@@ -13,6 +13,7 @@ import {I18nToolsService} from '../i18n-tools.service';
 import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
+import {Drop} from '../../model/list/drop';
 
 @Injectable()
 export class ListManagerService {
@@ -167,7 +168,9 @@ export class ListManagerService {
                                         const instances: Instance[] = [];
                                         related.instances.forEach(id => {
                                             const instance = this.gt.getInstance(id);
-                                            instances.push(instance);
+                                            if (instance !== undefined) {
+                                                instances.push(instance);
+                                            }
                                         });
                                         o.instances = instances;
                                     }
@@ -194,13 +197,28 @@ export class ListManagerService {
                             .map(l => {
                                 l.forEachItem(o => {
                                     const related = data.getIngredient(o.id);
+                                    if (related !== undefined && related.voyages !== undefined) {
+                                        o.voyages = related.getVoyages();
+                                    }
+                                });
+                                return l;
+                            })
+                            .map(l => {
+                                l.forEachItem(o => {
+                                    const related = data.getIngredient(o.id);
                                     if (related !== undefined && related.drops !== undefined) {
                                         related.drops.forEach(d => {
                                             if (o.drops === undefined) {
                                                 o.drops = [];
                                             }
-                                            const drop = this.gt.getDrop(d);
-                                            if (drop !== undefined) {
+                                            const partial = data.getPartial(d.toString());
+                                            if (partial !== undefined) {
+                                                const drop: Drop = {
+                                                    id: d,
+                                                    name: this.i18n.createI18nNameFromPartial(partial),
+                                                    zoneid: partial.obj.z,
+                                                    lvl: partial.obj.l
+                                                };
                                                 o.drops.push(drop);
                                             }
                                         });
@@ -210,15 +228,6 @@ export class ListManagerService {
                             });
                     })
                     .map(l => l.clean())
-                    .map(l => {
-                        l.preCrafts = l.preCrafts.sort((a: ListRow, b: ListRow) => {
-                            if (a.requires.find(requirement => requirement.id === b.id) !== undefined) {
-                                return 1;
-                            }
-                            return -1;
-                        });
-                        return l;
-                    })
                     .debounceTime(500);
             });
     }
@@ -256,8 +265,14 @@ export class ListManagerService {
                     const listRow = resultList[row.array].find(item => item.id === row.item.id);
                     if (listRow !== undefined) {
                         listRow.done = row.item.done;
-                        if (listRow.done > listRow.amount_needed) {
-                            listRow.done = listRow.amount_needed;
+                        if (row.array === 'recipes') {
+                            if (listRow.done > listRow.amount) {
+                                listRow.done = listRow.amount;
+                            }
+                        } else {
+                            if (listRow.done > listRow.amount_needed) {
+                                listRow.done = listRow.amount_needed;
+                            }
                         }
                     }
                 });

@@ -14,6 +14,9 @@
         <md-error *ngIf="error">{{'Invalid_credentials' | translate}}</md-error>
         <md-error *ngIf="notVerified">{{'Not_verified' | translate}}</md-error>
         <button md-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
+        <button md-button color="warn" class="forgot-password" type="button" (click)="openForgotPasswordPopup()">
+            {{"Forgot_password" | translate}}
+        </button>
     </form>
     <md-divider></md-divider>
     <div class="oauth">

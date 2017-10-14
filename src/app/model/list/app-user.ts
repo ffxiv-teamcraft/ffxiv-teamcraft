@@ -7,4 +7,5 @@ export interface AppUser {
     lodestoneId: number;
     avatar?: string;
     favorites: string[];
+    patron?: boolean;
 }

@@ -1,0 +1,11 @@
+<md-expansion-panel expanded="true">
+    <md-expansion-panel-header>
+        <md-panel-title>{{title}}</md-panel-title>
+    </md-expansion-panel-header>
+    <md-list dense>
+        <div *ngFor="let row of data">
+            <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
+                      [item]="row" [list]="list" [showRequirements]="showRequirements" [recipe]="recipe"></app-item>
+        </div>
+    </md-list>
+</md-expansion-panel>

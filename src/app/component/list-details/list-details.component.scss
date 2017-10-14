@@ -1,3 +1,9 @@
+.etime-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -7,7 +13,7 @@
     }
 }
 
-.listError{
+.listError {
     font-size: 30px;
     text-align: center;
 }
@@ -26,7 +32,16 @@
     }
 }
 
-md-expansion-panel {
+.panel {
+    margin: 10px 0;
+}
+
+.options {
+    padding: 15px 0;
+    display: flex;
+}
+
+.zone-divider {
     margin: 10px 0;
 }
 
@@ -56,4 +71,10 @@ md-expansion-panel {
             vertical-align: middle;
         }
     }
+}
+
+.not-found {
+    text-align: center;
+    font-size: 40px;
+    opacity: 0.6;
 }

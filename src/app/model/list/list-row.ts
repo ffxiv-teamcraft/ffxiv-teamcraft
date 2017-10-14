@@ -27,6 +27,7 @@ export interface ListRow {
     reducedFrom?: I18nName[];
     desynths?: I18nName[];
     vendors?: Vendor[];
+    voyages?: I18nName[];
 
     hidden?: boolean;
 }

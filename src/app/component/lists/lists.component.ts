@@ -11,6 +11,8 @@ import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
 
+declare const ga: Function;
+
 @Component({
     selector: 'app-lists',
     templateUrl: './lists.component.html',
@@ -26,9 +28,7 @@ export class ListsComponent implements OnInit {
 
     @ViewChild('f') myNgForm;
 
-    expanded: string;
-
-    expandAll = false;
+    expanded: string[] = [];
 
     constructor(private auth: AngularFireAuth,
                 private dialog: MdDialog, private listManager: ListManagerService,
@@ -46,11 +46,20 @@ export class ListsComponent implements OnInit {
         }
     }
 
+    closed(key: string): void {
+        this.expanded = this.expanded.filter(i => i !== key);
+    }
+
+    opened(key: string): void {
+        this.expanded.push(key);
+    }
+
     delete(listKey: string): void {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 this.listService.remove(listKey).then(() => {
+                    ga('send', 'event', 'List', 'deletion');
                     this.title.setTitle('Teamcraft');
                 });
             }
@@ -72,7 +81,7 @@ export class ListsComponent implements OnInit {
     ngOnInit() {
         this.auth.idToken.subscribe(user => {
             if (user === null) {
-                this.lists = null;
+                this.lists = Observable.of([]);
                 this.user = undefined;
             } else {
                 this.user = user;

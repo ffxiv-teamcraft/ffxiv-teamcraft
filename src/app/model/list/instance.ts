@@ -1,5 +1,6 @@
 import {I18nName} from './i18n-name';
 export interface Instance {
-    type: string;
+    id: number;
+    type: I18nName;
     name: I18nName;
 }

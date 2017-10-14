@@ -48,16 +48,22 @@ export class AmountInputComponent implements OnInit {
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        observable.subscribe(value => {
-            if (value > this.max) {
-                value = this.max;
-            }
-            if (value < this.min) {
-                value = this.min;
-            }
-            this.value = value;
-            this.onchange.emit(value);
-        });
+        observable
+            .map(value => +value)
+            .subscribe(value => {
+                if (value > this.max) {
+                    value = this.max;
+                }
+                if (value < this.min) {
+                    value = this.min;
+                }
+                this.value = value;
+                this.onchange.emit(value);
+            });
+    }
+
+    public getWidth(): number {
+        return (this.max || this.value || 0).toString().length * 10 + 20;
     }
 
 }

@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
 import {MdDialog, MdSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
@@ -15,6 +15,11 @@ import {ListManagerService} from '../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../popup/regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
+import {ZoneBreakdown} from '../../model/list/zone-breakdown';
+import {I18nName} from '../../model/list/i18n-name';
+import {GarlandToolsService} from '../../core/api/garland-tools.service';
+import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
+import {TimerOptionsPopupComponent} from '../popup/timer-options-popup/timer-options-popup.component';
 
 declare const ga: Function;
 
@@ -37,6 +42,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     userData: AppUser;
 
+    zoneBreakdownToggle = false;
+
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
         {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
@@ -54,17 +61,34 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
 
+    etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
+
     private filterTrigger = new Subject<void>();
+
+    zoneBreakdown: ZoneBreakdown;
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MdDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MdSnackBar,
-                private translate: TranslateService) {
+                private translate: TranslateService, private router: Router,
+                private eorzeanTimeService: EorzeanTimeService,
+                private gt: GarlandToolsService) {
     }
 
     public getUser(): Observable<User> {
         return this.auth.authState;
+    }
+
+    public getLocation(id: number): I18nName {
+        if (id === -1) {
+            return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
+        }
+        return this.gt.getLocation(id);
+    }
+
+    public openTimerOptionsPopup(): void {
+        this.dialog.open(TimerOptionsPopupComponent);
     }
 
     public adaptFilters(): void {
@@ -104,6 +128,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date);
+
         this.route.params.subscribe(params => {
             this.listUid = params.listId;
             this.authorUid = params.uid;
@@ -130,8 +156,16 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     return list;
                 })
                 .distinctUntilChanged()
-                .do(l => this.title.setTitle(`${l.name}`))
-                .subscribe(l => this.list = l, err => console.error(err));
+                .do(l => {
+                    if (l.name !== undefined) {
+                        this.title.setTitle(`${l.name}`);
+                    } else {
+                        this.title.setTitle(this.translate.instant('List_not_found'));
+                    }
+                }).subscribe(l => {
+                this.list = l;
+                this.zoneBreakdown = new ZoneBreakdown(l);
+            }, err => console.error(err));
         });
         this.triggerFilter();
         this.auth.idToken.subscribe(user => {
@@ -175,8 +209,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             this.list.favorites.push(this.user.uid);
         } else {
             this.userData.favorites =
-                Object.keys(this.userData.favorites)
-                    .filter(key => this.userData.favorites[key] !== `${this.authorUid}/${this.listUid}`);
+                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
             this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
         }
         this.userService.saveUser(this.user.uid, this.userData);
@@ -197,8 +230,46 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.update();
     }
 
+    public forkList(): void {
+        // Little trick to clone an object using JS.
+        const fork = this.list.clone();
+        this.listService.push(fork).then((list) => {
+            this.snack.open(this.translate.instant('List_forked'),
+                this.translate.instant('Open')).onAction()
+                .subscribe(() => {
+                    this.listService.getRouterPath(list.key)
+                        .subscribe(path => {
+                            this.router.navigate(path);
+                        });
+                });
+        });
+    }
+
     orderCrystals(crystals: ListRow[]): ListRow[] {
         return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
+    }
+
+    orderPreCrafts(preCrafts: ListRow[]): ListRow[] {
+        return preCrafts === null ? null : preCrafts.sort((a: ListRow, b: ListRow) => {
+            let aRequiredItems = 0;
+            let bRequiredItems = 0;
+            a.requires.forEach(requirement => {
+                aRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
+            });
+            b.requires.forEach(requirement => {
+                bRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
+            });
+            const result = aRequiredItems - bRequiredItems;
+            // If we get 0 as result, the template will act in a strange way, moving items as we hover them, so we need a failsafe.
+            if (result === 0) {
+                return a.name.en > b.name.en ? 1 : -1;
+            }
+            return result;
+        });
+    }
+
+    orderGatherings(gatherings: ListRow[]): ListRow[] {
+        return gatherings.sort((a, b) => a.name.en > b.name.en ? 1 : (b.name.en > a.name.en) ? -1 : 0);
     }
 
     public resetProgression(): void {
@@ -210,5 +281,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 this.update();
             }
         });
+    }
+
+    public toggleZoneBreakdown(): void {
+        this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
     }
 }

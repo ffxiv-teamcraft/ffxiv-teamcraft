@@ -20,13 +20,14 @@
             md-input-container {
                 width: auto !important;
                 margin-right: 10px;
+                min-width: 60px;
             }
         }
         li *:first-child {
             flex: 1;
         }
         div {
-            min-width: 250px;
+            min-width: 150px;
         }
         md-radio-group {
             width: 520px;

@@ -12,6 +12,7 @@ import {LoginPopupComponent} from './component/popup/login-popup/login-popup.com
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
 import {environment} from '../environments/environment';
+import {PatreonPopupComponent} from './patreon/patreon-popup/patreon-popup.component';
 import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
@@ -41,6 +42,8 @@ export class AppComponent implements OnInit {
 
     isRegistering = false;
 
+    patreonPopupDisplayed = false;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -49,6 +52,7 @@ export class AppComponent implements OnInit {
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
                 private snack: MdSnackBar) {
+
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {
@@ -96,34 +100,47 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
-        this.authState.debounceTime(1000).subscribe(state => {
-            if (state === null) {
-                this.auth.auth.signInAnonymously();
-                return;
-            } else if (state.isAnonymous && !this.isRegistering) {
-                this.registrationSnackRef = this.snack.open(
-                    this.translate.instant('Anonymous_Warning'),
-                    this.translate.instant('Registration'),
-                    {
-                        duration: 5000,
-                        extraClasses: ['snack-warn']
-                    }
-                );
-                this.registrationSnackRef.onAction().subscribe(() => {
-                    this.openRegistrationPopup();
-                });
-                return;
-            } else {
-                this.closeSnack();
-            }
-            this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
-                .once('value')
-                .then(snap => {
-                    if (snap.val() === null && !state.isAnonymous) {
-                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
-                    }
-                });
-        });
+        this.authState.debounceTime(1000)
+            .subscribe(state => {
+                if (this.router.url.indexOf('home') === -1) {
+                    this.firebase.object('/patreon').subscribe(patreon => {
+                        this.firebase.database.ref(`/users/${state.uid}/patron`)
+                            .once('value')
+                            .then(snap => {
+                                if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && snap.val() !== true) {
+                                    this.dialog.open(PatreonPopupComponent, {data: patreon});
+                                    this.patreonPopupDisplayed = true;
+                                }
+                            });
+                    });
+                }
+                if (state === null) {
+                    this.auth.auth.signInAnonymously();
+                    return;
+                } else if (state.isAnonymous && !this.isRegistering) {
+                    this.registrationSnackRef = this.snack.open(
+                        this.translate.instant('Anonymous_Warning'),
+                        this.translate.instant('Registration'),
+                        {
+                            duration: 5000,
+                            extraClasses: ['snack-warn']
+                        }
+                    );
+                    this.registrationSnackRef.onAction().subscribe(() => {
+                        this.openRegistrationPopup();
+                    });
+                    return;
+                } else {
+                    this.closeSnack();
+                }
+                this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
+                    .once('value')
+                    .then(snap => {
+                        if (snap.val() === null && !state.isAnonymous) {
+                            this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
+                        }
+                    });
+            });
 
         this.userService
             .getUser()
@@ -161,7 +178,7 @@ export class AppComponent implements OnInit {
     }
 
     use(lang: string): void {
-        if (['en', 'de', 'fr'].indexOf(lang) === -1) {
+        if (['en', 'de', 'fr', 'ja'].indexOf(lang) === -1) {
             lang = 'en';
         }
         this.locale = lang;

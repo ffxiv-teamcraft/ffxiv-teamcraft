@@ -2,6 +2,129 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.2.4"></a>
+## [2.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.3...v2.2.4) (2017-10-12)
+
+
+### Bug Fixes
+
+* error with undefined dungeon case ([5215bb5](https://github.com/Supamiu/ffxiv-teamcraft/commit/5215bb5))
+* missing airship expedition informations ([9004eea](https://github.com/Supamiu/ffxiv-teamcraft/commit/9004eea)), closes [#63](https://github.com/Supamiu/ffxiv-teamcraft/issues/63)
+* some nodes with undefined name were making recipe addition impossible ([9807eab](https://github.com/Supamiu/ffxiv-teamcraft/commit/9807eab))
+
+
+
+<a name="2.2.3"></a>
+## [2.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.2...v2.2.3) (2017-10-10)
+
+
+### Bug Fixes
+
+* add localized dungeon names ([ad37489](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad37489))
+* no place to type min and max values in filter input fields ([76ebbae](https://github.com/Supamiu/ffxiv-teamcraft/commit/76ebbae))
+
+
+
+<a name="2.2.2"></a>
+## [2.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.1...v2.2.2) (2017-10-10)
+
+
+### Bug Fixes
+
+* add translation for monster names ([c6fb9a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/c6fb9a6))
+* broken lists with fishing nodes ([4984eba](https://github.com/Supamiu/ffxiv-teamcraft/commit/4984eba))
+
+
+
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.0...v2.2.1) (2017-10-10)
+
+
+### Bug Fixes
+
+* add share button on lists ([8817632](https://github.com/Supamiu/ffxiv-teamcraft/commit/8817632))
+* missing area name with timed nodes ([4320cfa](https://github.com/Supamiu/ffxiv-teamcraft/commit/4320cfa))
+* missing default options for node timers ([f7d2dbc](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7d2dbc))
+
+
+
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.2...v2.2.0) (2017-10-09)
+
+
+### Bug Fixes
+
+* amount input field sometimes has the wrong width ([f157bf3](https://github.com/Supamiu/ffxiv-teamcraft/commit/f157bf3))
+* bad maths with multiple yielding precrafts ([5dd0e5e](https://github.com/Supamiu/ffxiv-teamcraft/commit/5dd0e5e))
+* bad mobile design detection ([4a942d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/4a942d6))
+* changing amount on opened list closes it ([b8488e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8488e1))
+* remove adsense since it's not available for the app ([f76a6d4](https://github.com/Supamiu/ffxiv-teamcraft/commit/f76a6d4))
+* wrong progression restored for recipe upon list regeneration ([61f860d](https://github.com/Supamiu/ffxiv-teamcraft/commit/61f860d))
+
+
+### Features
+
+* add eorzean clock on top of list details ([ca46816](https://github.com/Supamiu/ffxiv-teamcraft/commit/ca46816))
+* area breakdown added to lists, this allows you to see items ordered by area ([a6360bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/a6360bd))
+* timed nodes alarm ([ef5d4d2](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef5d4d2))
+* update home page tutorials ([046cd64](https://github.com/Supamiu/ffxiv-teamcraft/commit/046cd64))
+* worn_by filter can now accept multiple values ([cc8e781](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc8e781))
+
+
+
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.1...v2.1.2) (2017-10-06)
+
+
+
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.1.0...v2.1.1) (2017-10-05)
+
+
+### Bug Fixes
+
+* gathering section now ordered based on english name ([05481cf](https://github.com/Supamiu/ffxiv-teamcraft/commit/05481cf))
+* precrafts not ordered properly ([4c722dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/4c722dd))
+
+
+
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.4...v2.1.0) (2017-10-04)
+
+
+### Bug Fixes
+
+* removing a list from favorites corrupts the entire list ([cc635fe](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc635fe)), closes [#58](https://github.com/Supamiu/ffxiv-teamcraft/issues/58)
+
+
+### Features
+
+* proper not found page for lists ([f7b4cdc](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7b4cdc))
+* recipe details in list crafts ([0513f3b](https://github.com/Supamiu/ffxiv-teamcraft/commit/0513f3b))
+* you can now copy a list to your account to have your own progression tracking ([ef66043](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef66043)), closes [#53](https://github.com/Supamiu/ffxiv-teamcraft/issues/53)
+
+
+
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.3...v2.0.4) (2017-10-04)
+
+
+### Bug Fixes
+
+* amount field behavior sometimes was entering wrong amount ([afa6f7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/afa6f7c))
+
+
+
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.2...v2.0.3) (2017-10-04)
+
+
+### Bug Fixes
+
+* can't remove recipe from list ([884d02a](https://github.com/Supamiu/ffxiv-teamcraft/commit/884d02a)), closes [#56](https://github.com/Supamiu/ffxiv-teamcraft/issues/56)
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.0.1...v2.0.2) (2017-10-03)
 

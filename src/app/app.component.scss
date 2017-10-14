@@ -1,5 +1,9 @@
 @import "../theme.scss";
 
+.spacer {
+    flex: 1 1 auto;
+}
+
 .app-container {
     top: 0;
     left: 0;
@@ -9,16 +13,14 @@
     min-height: 100%;
     display: inline;
     md-toolbar {
+        display: flex;
         min-height: 64px;
         md-menu {
             margin-left: 20px;
         }
-    }
-    .version {
-        position: absolute;
-        top: 8px;
-        right: 15px;
-        opacity: .7;
+        .version {
+            opacity: .7;
+        }
     }
     .light-text {
         color: white;
@@ -36,6 +38,7 @@
             flex-direction: column;
             .sidebar-element {
                 padding: 20px;
+                margin: 10px 0;
             }
             .social-icons {
                 display: flex;
@@ -45,7 +48,7 @@
                     width: 32px;
                 }
             }
-            .user-box {
+            .accent-background {
                 padding: 15px 16px;
                 font-size: 16px;
                 .user {
@@ -61,9 +64,6 @@
                     }
                 }
             }
-            .spacer {
-                flex: 1 1 auto;
-            }
             .report-bug {
                 margin-bottom: 10px;
             }
@@ -71,7 +71,7 @@
         .content {
             overflow: auto;
             .content-middle {
-                padding: 20px;
+                padding: 10px;
                 width: 70%;
                 margin: auto;
                 min-height: 20%;
@@ -81,6 +81,10 @@
                 }
 
                 @include client-width('medium') {
+                    width: 100%;
+                }
+
+                @include client-width('small') {
                     width: 100%;
                 }
             }

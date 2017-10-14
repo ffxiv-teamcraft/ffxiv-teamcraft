@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
@@ -13,13 +13,19 @@ import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/i
 import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 import {MathTools} from '../../tools/math-tools';
+import {List} from '../../model/list/list';
+import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
+import {ObservableMedia} from '@angular/flex-layout';
+import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
+import {GarlandToolsService} from '../../core/api/garland-tools.service';
+import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent {
+export class ItemComponent implements OnInit {
 
     @Input()
     item: ListRow;
@@ -35,6 +41,27 @@ export class ItemComponent {
 
     @Input()
     recipe = false;
+
+    @Input()
+    list: List;
+
+    @Input()
+    showRequirements = false;
+
+    @Input()
+    showTimer = false;
+
+    timer: string;
+
+    timerMinutes = 0;
+
+    spawned: boolean;
+
+    spawnAlarm: boolean;
+
+    slot: number;
+
+    nextSpawnZoneId: number;
 
     tradeSourcePriorities = {
         // MGP, just in case
@@ -86,7 +113,132 @@ export class ItemComponent {
 
     constructor(private i18n: I18nToolsService,
                 private data: DataService,
-                private dialog: MdDialog) {
+                private dialog: MdDialog,
+                private media: ObservableMedia,
+                private etimeService: EorzeanTimeService,
+                private gt: GarlandToolsService) {
+    }
+
+    toggleAlarm(): void {
+        this.spawnAlarm = !this.spawnAlarm;
+        if (this.spawnAlarm) {
+            localStorage.setItem(this.item.id + ':spawnAlarm', this.spawnAlarm.toString());
+        } else {
+            localStorage.removeItem(this.item.id + ':spawnAlarm');
+        }
+    }
+
+    public get nextSpawnLocation(): string {
+        return this.gt.getLocation(this.nextSpawnZoneId);
+    }
+
+    ngOnInit(): void {
+        this.spawnAlarm = localStorage.getItem(this.item.id + ':spawnAlarm') === 'true' || false;
+        if (this.hasTimers()) {
+            this.etimeService.getEorzeanTime().subscribe(date => {
+                const timers = [];
+                this.item.gatheredBy.nodes.forEach(node => {
+                    node.time.forEach(t => {
+                        timers.push({
+                            start: this.getTimeUntil(date, t, 0),
+                            end: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0),
+                            spawned: this.getTimeUntil(date, (t + node.uptime / 60) % 24, 0) <= node.uptime,
+                            zoneid: node.zoneid
+                        });
+                    });
+                    this.slot = node.items.find(item => item.id === this.item.id).slot || undefined;
+                });
+                const options = this.getTimerOptions();
+                for (const t of timers) {
+                    // If the node is spawned
+                    if (t.spawned) {
+                        this.timerMinutes = t.end;
+                        this.nextSpawnZoneId = t.zoneid;
+                        if (!this.spawned && this.spawnAlarm && options.hoursBefore === 0 && !this.notified) {
+                            this.notify();
+                        }
+                        this.spawned = true;
+                        break;
+                    }
+                    if (this.timerMinutes / 60 <= options.hoursBefore && !this.notified && this.spawnAlarm) {
+                        this.notify();
+                    }
+                    // If this this.timerMinutes is closer than the actual one
+                    if (t.start < this.timerMinutes) {
+                        this.timerMinutes = t.start;
+                        this.notified = false;
+                    }
+                    // If we're in the first iteration and the node isn't spawned
+                    if (this.timerMinutes === 0 && !t.spawned) {
+                        this.timerMinutes = t.start;
+                    }
+                    this.spawned = t.spawned;
+                    this.nextSpawnZoneId = t.zoneid;
+                }
+                const resultEarthTime = this.etimeService.toEarthTime(this.timerMinutes);
+                this.timer = this.getTimerString(resultEarthTime);
+            });
+        }
+    }
+
+    public get notified(): boolean {
+        return localStorage.getItem(this.item.id + ':notified') === 'true';
+    }
+
+    public set notified(n: boolean) {
+        if (n) {
+            localStorage.setItem(this.item.id + ':notified', n.toString());
+        } else {
+            localStorage.removeItem(this.item.id + ':notified');
+        }
+    }
+
+    public getTimerColor(): string {
+        if (this.spawned) {
+            return 'primary';
+        }
+        if (this.notified && this.spawnAlarm) {
+            return 'accent';
+        }
+        return '';
+    }
+
+    private getTimerOptions(): any {
+        return JSON.parse(localStorage.getItem('timer:options')) || {
+            sound: 'Notification',
+            hoursBefore: 0
+        };
+    }
+
+    notify(): void {
+        const audio = new Audio(`/assets/audio/${this.getTimerOptions().sound}.mp3`);
+        audio.loop = false;
+        audio.play();
+        this.notified = true;
+    }
+
+    getTimeUntil(currentDate: Date, hours: number, minutes: number): number {
+        const resHours = hours - currentDate.getUTCHours();
+        let resMinutes = resHours * 60 + minutes - currentDate.getUTCMinutes();
+        if (resMinutes < 0) {
+            resMinutes += 1440;
+        }
+        return resMinutes;
+    }
+
+    hasTimers(): boolean {
+        return this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
+            this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+    }
+
+    getTimerString(timer: number): string {
+        const seconds = timer % 60;
+        const minutes = Math.floor(timer / 60);
+        return `${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
+    }
+
+    openRequirementsPopup(): void {
+        this.dialog.open(RequirementsPopupComponent, {data: {item: this.item, list: this.list}});
     }
 
     getAmount(): number {
@@ -131,6 +283,12 @@ export class ItemComponent {
         });
     }
 
+    public openVoyagesDetails(item: ListRow): void {
+        this.dialog.open(VoyagesDetailsPopupComponent, {
+            data: item
+        });
+    }
+
     public openReductionDetails(item: ListRow): void {
         this.dialog.open(ReductionDetailsPopupComponent, {
             data: item
@@ -153,7 +311,12 @@ export class ItemComponent {
         const res = {priority: 0, icon: 'https://www.garlandtools.org/db/images/Shop.png'};
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
-                const id = +trade.currencyIcon.split('/').pop().split('.')[0];
+                let id = 0;
+                if (typeof trade.currencyIcon === 'string') {
+                    id = +trade.currencyIcon.split('/').pop().split('.')[0];
+                } else {
+                    id = trade.currencyIcon;
+                }
                 if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
                     res.icon = trade.currencyIcon;
                     res.priority = this.tradeSourcePriorities[id];
@@ -173,5 +336,9 @@ export class ItemComponent {
         const name = this.i18n.getName(item.name);
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
+    }
+
+    public get isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }
