@@ -6,7 +6,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng test --single-run
+  - npm test
   - npm run build:prod
 
 notifications:
