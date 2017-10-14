@@ -7,7 +7,7 @@ before_script:
 
 script:
   - ng test --single-run
-  - ng build --prod
+  - npm run build:prod
 
 notifications:
   email:
