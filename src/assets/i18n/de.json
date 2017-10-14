@@ -86,6 +86,9 @@
     "Patreon_popup_body_end": "Please consider supporting us on patreon, by doing this you'll help the team and the users.",
     "Current_funds":"Current funds",
     "Close": "Close",
+    "Email_enter": "Enter your email address",
+    "Email_not_found":"Email not found",
+    "Email_send":"An email has been sent with instructions to change your password.",
 
 
     "HOME_PAGE.title": "Create lists, share, contribute, craft",
