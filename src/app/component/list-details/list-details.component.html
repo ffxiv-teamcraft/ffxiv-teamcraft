@@ -1,4 +1,4 @@
-<app-pricing [list]="list" *ngIf="pricingMode; else details" (close)="pricingMode = false"></app-pricing>
+<app-pricing [list]="list" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
     <div *ngIf="list !== undefined && list.$value !== null">
