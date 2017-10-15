@@ -57,7 +57,7 @@ export class ItemComponent implements OnInit {
 
     spawned: boolean;
 
-    spawnAlarm: boolean;
+    spawnAlarm = false;
 
     slot: number;
 

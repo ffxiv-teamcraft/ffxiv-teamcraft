@@ -74,6 +74,7 @@ import {ClipboardModule} from 'ngx-clipboard/dist';
 import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
 import { PatreonPopupComponent } from './patreon/patreon-popup/patreon-popup.component';
 import { ForgotPasswordPopupComponent } from './component/popup/forgot-password-popup/forgot-password-popup.component';
+import { PricingComponent } from './pricing/pricing/pricing.component';
 
 const routes: Routes = [
     {
@@ -144,6 +145,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         VoyagesDetailsPopupComponent,
         PatreonPopupComponent,
         ForgotPasswordPopupComponent,
+        PricingComponent,
     ],
     imports: [
         FlexLayoutModule,
