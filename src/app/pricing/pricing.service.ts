@@ -31,15 +31,16 @@ export class PricingService {
     get(item: ListRow): Price {
         const storedValue = this.data[item.id];
         if (storedValue !== undefined) {
+            storedValue.fromVendor = false;
             return storedValue;
         }
         if (item.vendors !== undefined && item.vendors.length > 0) {
             const cheapest = item.vendors.sort((a, b) => {
                 return a.price - b.price;
             })[0];
-            return {nq: cheapest.price, hq: 0};
+            return {nq: cheapest.price, hq: 0, fromVendor: true};
         }
-        return {nq: 0, hq: 0};
+        return {nq: 0, hq: 0, fromVendor: false};
     }
 
     /**

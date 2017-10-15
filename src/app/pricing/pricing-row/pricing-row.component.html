@@ -7,21 +7,21 @@
         <div md-line>
             <md-form-field class="nofix price">
                 <span mdPrefix>NQ &nbsp;</span>
-                <input mdInput type="number" [value]="getPrice().nq">
+                <input mdInput type="number" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
             </md-form-field>
             <md-form-field class="nofix amount">
                 <span mdPrefix>x &nbsp;</span>
-                <input mdInput type="number" [value]="0">
+                <input mdInput type="number" [value]="amount?.nq">
             </md-form-field>
         </div>
         <div md-line *ngIf="!isCrystal()">
             <md-form-field class="nofix price">
                 <span mdPrefix>HQ &nbsp;</span>
-                <input mdInput type="number" [value]="getPrice().hq">
+                <input mdInput type="number" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
             </md-form-field>
             <md-form-field class="nofix amount">
                 <span mdPrefix>x &nbsp;</span>
-                <input mdInput type="number" [value]="0">
+                <input mdInput type="number" [value]="amount?.hq">
             </md-form-field>
         </div>
     </div>

@@ -5,6 +5,7 @@ import {PricingService} from './pricing.service';
 import {MdExpansionModule, MdInputModule, MdListModule} from '@angular/material';
 import {CoreModule} from '../core/core.module';
 import { PricingRowComponent } from './pricing-row/pricing-row.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import { PricingRowComponent } from './pricing-row/pricing-row.component';
         MdExpansionModule,
         MdListModule,
         MdInputModule,
+        FormsModule,
     ],
     declarations: [
         PricingComponent,
