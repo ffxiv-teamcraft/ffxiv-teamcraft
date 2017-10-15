@@ -1,0 +1,42 @@
+<h3>{{list?.name}} - {{"Pricing" | translate}}</h3>
+
+<md-expansion-panel *ngIf="list" [expanded]="true">
+    <md-expansion-panel-header>
+        <md-panel-title>{{"Spending" | translate}}</md-panel-title>
+        <md-panel-description>Total: 250 gils</md-panel-description>
+    </md-expansion-panel-header>
+    <md-list dense>
+        <h3 md-subheader>{{"Crystals" | translate}}</h3>
+        <app-pricing-row  *ngFor="let item of list.crystals" [item]="item"></app-pricing-row>
+        <md-divider></md-divider>
+    </md-list>
+    <md-list dense *ngIf="list.gathers.length > 0">
+        <h3 md-subheader>{{"Gathering" | translate}}</h3>
+        <app-pricing-row  *ngFor="let item of list.gathers" [item]="item"></app-pricing-row>
+        <md-divider></md-divider>
+    </md-list>
+    <md-list dense *ngIf="list.others.length > 0">
+        <h3 md-subheader>{{"Other" | translate}}</h3>
+        <app-pricing-row  *ngFor="let item of list.others" [item]="item"></app-pricing-row>
+        <md-divider></md-divider>
+    </md-list>
+    <md-list dense *ngIf="list.preCrafts.length > 0">
+        <h3 md-subheader>{{"Pre_crafts" | translate}}</h3>
+        <app-pricing-row  *ngFor="let item of list.preCrafts" [item]="item"></app-pricing-row>
+        <md-divider></md-divider>
+    </md-list>
+</md-expansion-panel>
+
+<md-expansion-panel *ngIf="list">
+    <md-expansion-panel-header>
+        <md-panel-title>{{"Earning" | translate}}</md-panel-title>
+    </md-expansion-panel-header>
+    <md-list dense>
+        <md-list-item *ngFor="let item of list.recipes">
+            <div md-list-avatar class="icon">
+                <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+            </div>
+            <p md-line [innerHTML]="item.name | i18n"></p>
+        </md-list-item>
+    </md-list>
+</md-expansion-panel>

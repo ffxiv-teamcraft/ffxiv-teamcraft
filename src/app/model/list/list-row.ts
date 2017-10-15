@@ -6,7 +6,7 @@ import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
-export interface ListRow {
+export class ListRow {
     addedAt: number;
     name: I18nName;
     icon?: string;
