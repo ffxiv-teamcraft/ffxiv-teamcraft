@@ -37,6 +37,8 @@ export class ListManagerService {
                         return data.item.getCraftedBy(this.htmlTools, this.db, this.gt)
                             .map(crafted => {
                                 const craft = data.getCraft(recipeId);
+                                // We have to remove quality because we don't need this.
+                                craft.ingredients.forEach(i => delete i.quality);
                                 const toAdd: ListRow = {
                                     id: data.item.id,
                                     icon: data.item.icon,
