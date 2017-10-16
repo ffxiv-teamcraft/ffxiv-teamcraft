@@ -34,12 +34,11 @@ export class ListManagerService {
             .mergeMap(list => {
                 return this.db.getItem(itemId)
                     .mergeMap((data: ItemData) => {
-                        return data.item.getCraftedBy(this.htmlTools, this.db, this.gt, this.i18n)
+                        return data.item.getCraftedBy(this.htmlTools, this.db, this.gt)
                             .map(crafted => {
                                 const craft = data.getCraft(recipeId);
                                 const toAdd: ListRow = {
                                     id: data.item.id,
-                                    name: this.i18n.createI18nName(data.item),
                                     icon: data.item.icon,
                                     amount: amount,
                                     done: 0,
@@ -61,7 +60,7 @@ export class ListManagerService {
                                 l.preCrafts.forEach(craft => {
                                     if (craft.craftedBy === undefined) {
                                         precrafts.push(data.getIngredient(craft.id)
-                                            .getCraftedBy(this.htmlTools, this.db, this.gt, this.i18n));
+                                            .getCraftedBy(this.htmlTools, this.db, this.gt));
                                     }
                                 });
                                 if (precrafts.length > 0) {
@@ -82,7 +81,7 @@ export class ListManagerService {
                                 list.forEachItem(item => {
                                     const related = data.getIngredient(item.id);
                                     if (related !== undefined && related.tradeSources !== undefined) {
-                                        trades.push(related.getTradeSources(this.db, this.gt, this.i18n).map(ts => {
+                                        trades.push(related.getTradeSources(this.db).map(ts => {
                                             return {item: item, tradeSources: ts};
                                         }));
                                     }
@@ -103,7 +102,7 @@ export class ListManagerService {
                                 list.forEachItem(item => {
                                     const related = data.getIngredient(item.id);
                                     if (related !== undefined && related.vendors !== undefined) {
-                                        vendors.push(related.getVendors(this.db, this.gt, this.i18n).map(ts => {
+                                        vendors.push(related.getVendors(this.db).map(ts => {
                                             return {item: item, vendors: ts};
                                         }));
                                     }
@@ -119,47 +118,23 @@ export class ListManagerService {
                                     return Observable.of(l);
                                 }
                             })
-                            .mergeMap(l => {
-                                const reductions: Observable<{ item: ListRow, reducedFrom: I18nName[] }>[] = [];
-                                list.forEachItem(i => {
+                            .map(l => {
+                                l.forEachItem(i => {
                                     const related = data.getIngredient(i.id);
                                     if (related !== undefined && related.reducedFrom !== undefined) {
-                                        reductions.push(related.getReducedFrom(this.db, this.i18n).map(rs => {
-                                            return {item: i, reducedFrom: rs};
-                                        }));
+                                        i.reducedFrom = related.getReducedFrom();
                                     }
                                 });
-                                if (reductions.length > 0) {
-                                    return Observable.combineLatest(...reductions, (...results) => {
-                                        results.forEach(res => {
-                                            res.item.reducedFrom = res.reducedFrom;
-                                        });
-                                        return l;
-                                    });
-                                } else {
-                                    return Observable.of(l);
-                                }
+                                return l;
                             })
-                            .mergeMap(l => {
-                                const desynths: Observable<{ item: ListRow, desynths: I18nName[] }>[] = [];
+                            .map(l => {
                                 list.forEachItem(i => {
                                     const related = data.getIngredient(i.id);
                                     if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
-                                        desynths.push(related.getDesynths(this.db, this.i18n).map(rs => {
-                                            return {item: i, desynths: rs};
-                                        }));
+                                        i.desynths = related.getDesynths();
                                     }
                                 });
-                                if (desynths.length > 0) {
-                                    return Observable.combineLatest(...desynths, (...results) => {
-                                        results.forEach(res => {
-                                            res.item.desynths = res.desynths;
-                                        });
-                                        return l;
-                                    });
-                                } else {
-                                    return Observable.of(l);
-                                }
+                                return l;
                             })
                             .map(l => {
                                 l.forEachItem(o => {
@@ -215,7 +190,6 @@ export class ListManagerService {
                                             if (partial !== undefined) {
                                                 const drop: Drop = {
                                                     id: d,
-                                                    name: this.i18n.createI18nNameFromPartial(partial),
                                                     zoneid: partial.obj.z,
                                                     lvl: partial.obj.l
                                                 };

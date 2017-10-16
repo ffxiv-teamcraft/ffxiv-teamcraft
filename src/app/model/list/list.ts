@@ -185,7 +185,6 @@ export class List extends FirebaseDataModel {
                     const crystal = gt.getCrystalDetails(element.id);
                     this.addToCrystals({
                         id: element.id,
-                        name: i18n.createI18nName(crystal),
                         icon: crystal.icon,
                         amount: element.amount * addition.amount,
                         done: 0,
@@ -202,7 +201,6 @@ export class List extends FirebaseDataModel {
                             amount: element.amount * addition.amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
-                            name: i18n.createI18nName(elementDetails),
                             yield: yields,
                             addedAt: Date.now()
                         });
@@ -217,7 +215,6 @@ export class List extends FirebaseDataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: i18n.createI18nName(elementDetails),
                             yield: 1,
                             addedAt: Date.now()
                         });
@@ -227,7 +224,6 @@ export class List extends FirebaseDataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
-                            name: i18n.createI18nName(elementDetails),
                             yield: 1,
                             addedAt: Date.now()
                         });

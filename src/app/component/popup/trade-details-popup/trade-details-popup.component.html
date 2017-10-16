@@ -1,15 +1,15 @@
-<h2 md-dialog-title>{{data | i18n}}</h2>
+<h2 md-dialog-title>{{data.id | itemName | i18n}}</h2>
 <div md-dialog-content>
     <md-list *ngFor="let tradeSource of data.tradeSources">
-        <h3 md-subheader>{{tradeSource.npcName | i18n}} - {{tradeSource.zoneName | i18n}}</h3>
+        <h3 md-subheader>{{tradeSource.npcId | npcName | i18n}} - {{tradeSource.zoneId | placeName | i18n}}</h3>
         <md-list-item *ngFor="let trade of tradeSource.trades">
             <div class="trade-part">
-                <app-item-icon [item]="{icon: trade.currencyIcon, name: trade.currencyName}"></app-item-icon>
+                <app-item-icon [item]="{icon: trade.currencyIcon, id: trade.currencyId}"></app-item-icon>
                 {{trade.currencyAmount}}
             </div>
             <md-icon>arrow_forward</md-icon>
             <div class="trade-part">
-                <app-item-icon [item]="{icon: trade.itemIcon, HQ: trade.itemHQ, name: trade.itemName}"></app-item-icon>
+                <app-item-icon [item]="{icon: trade.itemIcon, HQ: trade.itemHQ, id: trade.itemId}"></app-item-icon>
                 {{trade.itemAmount}}
             </div>
         </md-list-item>

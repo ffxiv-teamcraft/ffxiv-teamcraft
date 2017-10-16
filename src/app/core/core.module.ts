@@ -9,6 +9,7 @@ import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {EorzeanTimeService} from './time/eorzean-time.service';
 import {I18nPipe} from '../pipe/i18n.pipe';
 import {TranslateModule} from '@ngx-translate/core';
+import {LocalizedDataService} from './data/localized-data.service';
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import {TranslateModule} from '@ngx-translate/core';
         ListManagerService,
         HtmlToolsService,
         EorzeanTimeService,
+        LocalizedDataService,
     ],
     declarations: [
         I18nPipe,

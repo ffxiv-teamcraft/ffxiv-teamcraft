@@ -19,6 +19,7 @@ import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 @Component({
     selector: 'app-item',
@@ -116,7 +117,7 @@ export class ItemComponent implements OnInit {
                 private dialog: MdDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
-                private gt: GarlandToolsService) {
+                private localizedData: LocalizedDataService) {
     }
 
     toggleAlarm(): void {
@@ -129,7 +130,7 @@ export class ItemComponent implements OnInit {
     }
 
     public get nextSpawnLocation(): string {
-        return this.gt.getLocation(this.nextSpawnZoneId);
+        return this.i18n.getName(this.localizedData.getPlace(this.nextSpawnZoneId));
     }
 
     ngOnInit(): void {
@@ -333,7 +334,7 @@ export class ItemComponent implements OnInit {
     }
 
     public getXivdbLink(item: ListRow): string {
-        const name = this.i18n.getName(item.name);
+        const name = this.i18n.getName(this.localizedData.getItem(item.id));
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
     }

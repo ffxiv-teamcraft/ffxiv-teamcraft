@@ -1,12 +1,12 @@
-<h2 md-dialog-title>{{data | i18n}}</h2>
+<h2 md-dialog-title>{{data.id | itemName | i18n}}</h2>
 <div md-dialog-content>
     <md-list>
         <md-list-item *ngFor="let vendor of data.vendors">
             <md-icon md-list-icon>location_on</md-icon>
-            <b md-line>{{vendor.npcName | i18n}}</b>
-            <i md-line>
-                {{vendor.zoneName | i18n}}
-            </i>
+            <b md-line>{{vendor.npcId | npcName | i18n}}</b>
+            <p md-line>
+                {{vendor.zoneId | placeName | i18n}}
+            </p>
             <p md-line *ngIf="vendor.coords !== undefined">
                 X:{{vendor.coords.x}} Y:{{vendor.coords.y}}
             </p>

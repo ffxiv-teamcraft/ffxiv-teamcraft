@@ -1,13 +1,13 @@
-<h2 md-dialog-title>{{data | i18n}}</h2>
+<h2 md-dialog-title>{{data.id | itemName | i18n}}</h2>
 <div md-dialog-content>
     <md-list>
         <md-list-item *ngFor="let node of data.gatheredBy.nodes">
             <md-icon md-list-icon>location_on</md-icon>
             <b md-line>
-                {{getLocation(node.zoneid) | i18n}}
+                {{node.zoneid | placeName | i18n}}
             </b>
-            <i md-line [innerHTML]="getLocation(node.areaid) | i18n">
-            </i>
+            <p md-line [innerHTML]="node.areaid | placeName | i18n">
+            </p>
             <md-chip-list>
                 <md-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
                     {{node.limitType | i18n}}

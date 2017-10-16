@@ -87,9 +87,9 @@
     <div *ngIf="recipes.length > 0 && !loading">
         <md-list-item *ngFor="let recipe of recipes">
             <a md-list-avatar target="_blank">
-                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe | i18n}}">
+                <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe.itemId | itemName | i18n}}">
             </a>
-            <h4 md-line [innerHTML]="recipe | i18n"></h4>
+            <h4 md-line>{{recipe.itemId | itemName | i18n}}</h4>
             <p md-line *ngIf="getJob(recipe.job).abbreviation !== 'ADV'">
                 <img src="https://www.garlandtools.org/db/images/{{getJob(recipe.job).abbreviation}}.png"
                      alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span

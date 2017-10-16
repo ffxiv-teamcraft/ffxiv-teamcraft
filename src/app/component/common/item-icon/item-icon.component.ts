@@ -9,7 +9,7 @@ import {I18nName} from '../../../model/list/i18n-name';
 export class ItemIconComponent {
 
     @Input()
-    public item: { icon: string, name: I18nName, HQ?: boolean };
+    public item: { icon: string, id: number,  HQ?: boolean };
 
     constructor() {
     }

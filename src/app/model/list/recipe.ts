@@ -8,7 +8,6 @@ export interface Recipe {
     job: number;
     stars: number;
     masterbook?: CompactMasterbook;
-    name: I18nName;
     lvl: number;
     icon: string;
     url_xivdb?: I18nName;

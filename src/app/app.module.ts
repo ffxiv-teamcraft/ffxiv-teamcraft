@@ -19,7 +19,8 @@ import {
     MdPaginatorModule,
     MdProgressBarModule,
     MdProgressSpinnerModule,
-    MdRadioModule, MdSelectModule,
+    MdRadioModule,
+    MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
     MdSnackBarModule,
@@ -53,10 +54,8 @@ import {UserService} from './core/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
-import {CeilPipe} from './pipe/ceil.pipe';
 import {RecipeComponent} from './component/recipe/recipe.component';
 import {ReductionDetailsPopupComponent} from './component/popup/reduction-details-popup/reduction-details-popup.component';
-import {I18nPipe} from './pipe/i18n.pipe';
 import {RegenerationPopupComponent} from './component/popup/regeneration-popup/regeneration-popup.component';
 import {HomeComponent} from './component/home/home.component';
 import {FavoritesComponent} from './component/favorites/favorites.component';
@@ -69,13 +68,13 @@ import {RequirementsPopupComponent} from './component/popup/requirements-popup/r
 import {EorzeanTimeComponent} from './component/eorzean-time/eorzean-time.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListDetailsPanelComponent} from './component/list-details-panel/list-details-panel.component';
-import { TimerOptionsPopupComponent } from './component/popup/timer-options-popup/timer-options-popup.component';
+import {TimerOptionsPopupComponent} from './component/popup/timer-options-popup/timer-options-popup.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
-import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
-import { PatreonPopupComponent } from './patreon/patreon-popup/patreon-popup.component';
-import { ForgotPasswordPopupComponent } from './component/popup/forgot-password-popup/forgot-password-popup.component';
-import { PricingComponent } from './pricing/pricing/pricing.component';
+import {VoyagesDetailsPopupComponent} from './component/popup/voyages-details-popup/voyages-details-popup.component';
+import {PatreonPopupComponent} from './patreon/patreon-popup/patreon-popup.component';
+import {ForgotPasswordPopupComponent} from './component/popup/forgot-password-popup/forgot-password-popup.component';
 import {PricingModule} from './pricing/pricing.module';
+import {PipesModule} from './pipe/pipes.module';
 
 const routes: Routes = [
     {
@@ -127,7 +126,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         LoginPopupComponent,
         RegisterPopupComponent,
         CharacterAddPopupComponent,
-        CeilPipe,
         RecipeComponent,
         ReductionDetailsPopupComponent,
         RegenerationPopupComponent,
@@ -203,6 +201,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CoreModule,
         FirebaseDataModule,
         PricingModule,
+        PipesModule,
     ],
     entryComponents: [
         ListNamePopupComponent,
