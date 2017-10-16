@@ -1,0 +1,28 @@
+<md-list-item>
+    <div md-list-avatar class="icon">
+        <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+    </div>
+    <p md-line [innerHTML]="item.name | i18n"></p>
+    <div>
+        <div md-line>
+            <md-form-field class="nofix price">
+                <span mdPrefix>NQ &nbsp;</span>
+                <input mdInput type="number" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+            </md-form-field>
+            <md-form-field class="nofix amount">
+                <span mdPrefix>x &nbsp;</span>
+                <input mdInput type="number" [(ngModel)]="amount.nq" (ngModelChange)="saveAmount()">
+            </md-form-field>
+        </div>
+        <div md-line *ngIf="!isCrystal()">
+            <md-form-field class="nofix price">
+                <span mdPrefix>HQ &nbsp;</span>
+                <input mdInput type="number" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+            </md-form-field>
+            <md-form-field class="nofix amount">
+                <span mdPrefix>x &nbsp;</span>
+                <input mdInput type="number" [(ngModel)]="amount.hq" (ngModelChange)="saveAmount()">
+            </md-form-field>
+        </div>
+    </div>
+</md-list-item>

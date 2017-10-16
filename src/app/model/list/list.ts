@@ -43,6 +43,14 @@ export class List extends FirebaseDataModel {
         (this.preCrafts || []).forEach(method);
     }
 
+    public forEach(method: (arg: ListRow) => void): void {
+        (this.crystals || []).forEach(method);
+        (this.others || []).forEach(method);
+        (this.gathers || []).forEach(method);
+        (this.preCrafts || []).forEach(method);
+        (this.recipes || []).forEach(method);
+    }
+
     public addToRecipes(data: ListRow): number {
         return this.add(this.recipes, data);
     }

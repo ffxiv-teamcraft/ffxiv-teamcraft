@@ -10,7 +10,7 @@
     "standard-version:dry": "standard-version --dry-run",
     "release:git": "git add package.json && npm run standard-version && git push --follow-tags origin master",
     "deploy": "npm run release:git && npm run build:prod && firebase deploy",
-    "test": "ng test",
+    "test": "node ./build/prebuild.js && ng test --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "extract": "ngx-translate-extract -i ./src --output ./src/assets/i18n/{de,en,fr}.json --clean --sort --format namespaced-json"

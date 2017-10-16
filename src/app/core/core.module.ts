@@ -7,11 +7,14 @@ import {I18nToolsService} from './i18n-tools.service';
 import {DataService} from './api/data.service';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {EorzeanTimeService} from './time/eorzean-time.service';
+import {I18nPipe} from '../pipe/i18n.pipe';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
     imports: [
         HttpClientModule,
-        NgSerializerModule
+        NgSerializerModule,
+        TranslateModule,
     ],
     providers: [
         GarlandToolsService,
@@ -20,6 +23,13 @@ import {EorzeanTimeService} from './time/eorzean-time.service';
         ListManagerService,
         HtmlToolsService,
         EorzeanTimeService,
+    ],
+    declarations: [
+        I18nPipe,
+    ],
+    exports: [
+        I18nPipe,
+        TranslateModule,
     ]
 })
 export class CoreModule {

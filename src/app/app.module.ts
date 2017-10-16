@@ -74,6 +74,8 @@ import {ClipboardModule} from 'ngx-clipboard/dist';
 import { VoyagesDetailsPopupComponent } from './component/popup/voyages-details-popup/voyages-details-popup.component';
 import { PatreonPopupComponent } from './patreon/patreon-popup/patreon-popup.component';
 import { ForgotPasswordPopupComponent } from './component/popup/forgot-password-popup/forgot-password-popup.component';
+import { PricingComponent } from './pricing/pricing/pricing.component';
+import {PricingModule} from './pricing/pricing.module';
 
 const routes: Routes = [
     {
@@ -128,7 +130,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         CeilPipe,
         RecipeComponent,
         ReductionDetailsPopupComponent,
-        I18nPipe,
         RegenerationPopupComponent,
         HomeComponent,
         FavoritesComponent,
@@ -200,7 +201,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
         // App Modules
         CoreModule,
-        FirebaseDataModule
+        FirebaseDataModule,
+        PricingModule,
     ],
     entryComponents: [
         ListNamePopupComponent,
