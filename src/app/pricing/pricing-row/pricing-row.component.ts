@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ListRow} from '../../model/list/list-row';
 import {PricingService} from '../pricing.service';
 import {Price} from '../model/price';
 import {ItemAmount} from '../model/item-amount';
+import {ListRow} from '../../model/list/list-row';
 
 @Component({
     selector: 'app-pricing-row',
@@ -13,6 +13,9 @@ export class PricingRowComponent implements OnInit {
 
     @Input()
     item: ListRow;
+
+    @Input()
+    listId: string;
 
     price: Price;
 
@@ -26,12 +29,16 @@ export class PricingRowComponent implements OnInit {
     }
 
     savePrice(): void {
-        this.pricingService.save(this.item, this.price);
+        this.pricingService.savePrice(this.item, this.price);
+    }
+
+    saveAmount(): void {
+        this.pricingService.saveAmount(this.listId, this.item, this.amount);
     }
 
     ngOnInit(): void {
-        this.price = this.pricingService.get(this.item);
-        this.amount = {nq: this.item.amount, hq: 0};
+        this.price = this.pricingService.getPrice(this.item);
+        this.amount = this.pricingService.getAmount(this.listId, this.item);
     }
 
 }

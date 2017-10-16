@@ -48,8 +48,9 @@
             <md-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
                 {{"Zone_breakdown" | translate}}
             </md-button-toggle>
-            <button md-button color="accent" (click)="pricingMode = true" *ngIf="isOwnList()">{{"Pricing_mode" |
-                translate}}
+            <button md-icon-button color="accent" (click)="pricingMode = true" *ngIf="isOwnList()"
+                    mdTooltip="{{'Pricing_mode' | translate}}" mdTooltipPosition="above">
+                <md-icon>attach_money</md-icon>
             </button>
             <div class="spacer"></div>
             <button md-button color="accent" (click)="openTimerOptionsPopup()">{{"Timer_options" | translate}}</button>

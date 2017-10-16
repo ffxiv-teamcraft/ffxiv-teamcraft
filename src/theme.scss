@@ -24,6 +24,19 @@
             color: black;
             opacity: .7;
         }
+        .mat-expansion-indicator {
+            color: black;
+            opacity: .7;
+        }
+    }
+}
+
+@mixin card-accent($theme) {
+    .mat-card.accent {
+        $accent: map-get($theme, accent);
+        $foreground: map-get($theme, foreground);
+        background: mat-color($accent);
+        color: black;
     }
 }
 
@@ -34,6 +47,7 @@ $dark-theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($dark-theme);
 @include theme-background($dark-theme);
 @include expansion-panel-accent($dark-theme);
+@include card-accent($dark-theme);
 
 $light-theme: mat-light-theme($primary, $accent, $warn);
 
@@ -42,6 +56,7 @@ $light-theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($light-theme);
     @include theme-background($light-theme);
     @include expansion-panel-accent($light-theme);
+    @include card-accent($light-theme);
 }
 
 // Responsive breakpoint mixin/definitions

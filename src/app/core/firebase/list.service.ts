@@ -37,7 +37,11 @@ export class ListService extends StoredDataService<List> {
      * @param uid The list-details uid
      */
     public getUserList(uuid: string, uid: string): Observable<List> {
-        return this.firebase.object(`/users/${uuid}/lists/${uid}`).map(list => this.serializer.deserialize<List>(list, List));
+        return this.firebase.object(`/users/${uuid}/lists/${uid}`).map(list => {
+            const res = this.serializer.deserialize<List>(list, List);
+            res.$key = uid;
+            return res;
+        });
     }
 
     getBaseUri(params?: any): Observable<string> {

@@ -44,7 +44,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     zoneBreakdownToggle = false;
 
-    pricingMode = true;
+    pricingMode = false;
 
     gatheringFilters = [
         {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
