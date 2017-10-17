@@ -3,7 +3,7 @@
     <md-list>
         <md-list-item *ngFor="let drop of data.drops">
             <md-icon md-list-icon>location_on</md-icon>
-            <b md-line>{{drop.id | npcName | i18n}}</b>
+            <b md-line>{{drop.id | mobName | i18n}}</b>
             <i md-line>
                 {{drop.zoneid | placeName | i18n}}
             </i>

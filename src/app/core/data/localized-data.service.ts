@@ -12,10 +12,13 @@ export class LocalizedDataService {
 
     private npcs: { [index: number]: I18nName };
 
+    private mobs: { [index: number]: I18nName };
+
     constructor(private http: HttpClient) {
         this.load('items').subscribe(items => this.items = items);
         this.load('places').subscribe(places => this.places = places);
         this.load('npcs').subscribe(npcs => this.npcs = npcs);
+        this.load('mobs').subscribe(mobs => this.mobs = mobs);
     }
 
     public getItem(id: number): I18nName {
@@ -28,6 +31,10 @@ export class LocalizedDataService {
 
     public getNpc(id: number): I18nName {
         return this.getRow(this.npcs, id);
+    }
+
+    public getMob(id: number): I18nName {
+        return this.getRow(this.mobs, id);
     }
 
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
