@@ -34,10 +34,6 @@ export class GarlandToolsService {
         return node;
     }
 
-    public getLocation(id: number): any {
-        return this.mockI18n(this.gt.location.index[id]);
-    }
-
     public getFishingSpot(id: number): any {
         return this.gt.fishing.index[id];
     }
