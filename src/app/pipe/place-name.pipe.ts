@@ -3,7 +3,8 @@ import {LocalizedDataService} from '../core/data/localized-data.service';
 import {I18nName} from '../model/list/i18n-name';
 
 @Pipe({
-    name: 'placeName'
+    name: 'placeName',
+    pure: false
 })
 export class PlaceNamePipe implements PipeTransform {
 
