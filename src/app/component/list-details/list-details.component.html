@@ -7,6 +7,7 @@
         </div>
         <div class="header">
             <h3>{{list?.name}}</h3>
+            <button md-icon-button *ngIf="isOwnList()" (click)="rename()"><md-icon>mode_edit</md-icon></button>
             <button md-mini-fab color="accent"
                     *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
                     mdTooltip="{{'Favorite' | translate}}"

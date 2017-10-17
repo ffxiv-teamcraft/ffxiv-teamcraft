@@ -20,6 +20,7 @@ import {I18nName} from '../../model/list/i18n-name';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../popup/timer-options-popup/timer-options-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
+import {NameEditPopupComponent} from '../popup/name-edit-popup/name-edit-popup.component';
 
 declare const ga: Function;
 
@@ -301,5 +302,15 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     public toggleZoneBreakdown(): void {
         this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
+    }
+
+    public rename(): void {
+        const dialog = this.dialog.open(NameEditPopupComponent, {data: this.list.name});
+        dialog.afterClosed().subscribe(value => {
+            if (value !== undefined && value.length > 0) {
+                this.list.name = value;
+                this.update();
+            }
+        });
     }
 }
