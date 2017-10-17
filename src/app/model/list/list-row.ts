@@ -8,7 +8,7 @@ import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
 
 export class ListRow {
-    addedAt: number;
+    addedAt?: number;
     icon?: number;
     id: number;
     amount: number;

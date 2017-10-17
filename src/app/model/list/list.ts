@@ -188,8 +188,7 @@ export class List extends FirebaseDataModel {
                         icon: crystal.icon,
                         amount: element.amount * addition.amount,
                         done: 0,
-                        yield: 1,
-                        addedAt: Date.now()
+                        yield: 1
                     });
                 } else {
                     const elementDetails = addition.data.getIngredient(element.id);
@@ -215,8 +214,7 @@ export class List extends FirebaseDataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
-                            yield: 1,
-                            addedAt: Date.now()
+                            yield: 1
                         });
                     } else {
                         this.addToOthers({
@@ -224,8 +222,7 @@ export class List extends FirebaseDataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
-                            yield: 1,
-                            addedAt: Date.now()
+                            yield: 1
                         });
                     }
                 }
