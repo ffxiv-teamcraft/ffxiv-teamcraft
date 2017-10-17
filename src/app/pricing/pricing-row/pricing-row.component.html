@@ -1,6 +1,6 @@
 <md-list-item>
     <div md-list-avatar class="icon">
-        <img md-list-avatar src="{{item.icon}}" alt="{{item.id | itemName | i18n}}">
+        <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>
     <p md-line [innerHTML]="item.id | itemName | i18n"></p>
     <div>

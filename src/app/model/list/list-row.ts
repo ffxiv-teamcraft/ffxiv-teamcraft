@@ -9,7 +9,7 @@ import {Ingredient} from '../garland-tools/ingredient';
 
 export class ListRow {
     addedAt: number;
-    icon?: string;
+    icon?: number;
     id: number;
     amount: number;
     amount_needed?: number;

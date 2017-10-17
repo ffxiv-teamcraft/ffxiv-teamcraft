@@ -1,4 +1,4 @@
 export interface CompactMasterbook {
-    icon: string;
+    icon: number;
     id: number;
 }

@@ -59,8 +59,8 @@ export class Item implements I18nData {
         return this.craft !== undefined;
     }
 
-    public get icon(): string {
-        return `https://www.garlandtools.org/db/icons/item/${this._icon}.png`;
+    public get icon(): number {
+        return this._icon;
     }
 
 
@@ -117,10 +117,10 @@ export class Item implements I18nData {
                     for (const row of this.tradeSources[ts]) {
                         const obs: Observable<Trade> = Observable
                             .of({
-                                itemIcon: '',
+                                itemIcon: 0,
                                 itemAmount: 0,
                                 itemId: 0,
-                                currencyIcon: '',
+                                currencyIcon: 0,
                                 currencyAmount: 0,
                                 currencyId: 0,
                                 itemHQ: false

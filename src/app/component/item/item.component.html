@@ -3,7 +3,7 @@
     <div class="item-col-left">
         <div md-list-avatar class="icon">
             <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
-                <img md-list-avatar src="{{item.icon}}" alt="{{item.id | itemName | i18n}}">
+                <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
             </a>
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
@@ -31,7 +31,7 @@
         <div *ngIf="item.craftedBy !== undefined" class="masterbook">
             <img *ngFor="let masterbook of getMasterBooks(item)"
                  md-list-avatar
-                 src="{{masterbook.icon}}"
+                 src="{{masterbook.icon | icon}}"
                  mdTooltip="{{masterbook.id | itemName | i18n}}"
                  mdTooltipPosition="above"
                  alt="{{masterbook.id | itemName | i18n}}">
@@ -87,7 +87,7 @@
                     <img class="currency"
                          mdTooltip="{{'Trade' | translate}}"
                          mdTooltipPosition="above"
-                         src="{{getTradeIcon(item)}}">
+                         src="{{getTradeIcon(item) | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
                 </button>
             </div>
             <div *ngIf="item.instances !== undefined && item.instances.length > 0">
@@ -135,7 +135,7 @@
 <md-list-item *ngIf="isMobile" class="mobile">
     <div md-list-avatar class="icon">
         <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
-            <img md-list-avatar src="{{item.icon}}" alt="{{item.id | itemName | i18n}}">
+            <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
         </a>
         <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
     </div>
@@ -143,7 +143,7 @@
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
              md-list-avatar
-             src="{{masterbook.icon}}"
+             src="{{masterbook.icon | icon}}"
              mdTooltip="{{masterbook.id | itemName | i18n}}"
              mdTooltipPosition="above"
              alt="{{masterbook.id | itemName | i18n}}">

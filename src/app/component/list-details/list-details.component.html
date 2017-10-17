@@ -124,7 +124,7 @@
             <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
                 <div *ngIf="crystal.amount > crystal.done">
                     <img class="crystal" mdTooltip="{{crystal.id | itemName | i18n}}" mdTooltipPosition="above"
-                         src="{{crystal.icon}}" alt="{{crystal.id | itemName | i18n}}">
+                         src="{{crystal.icon | icon}}" alt="{{crystal.id | itemName | i18n}}">
                     <div>{{(crystal.amount - crystal.done) | ceil}}</div>
                 </div>
             </div>

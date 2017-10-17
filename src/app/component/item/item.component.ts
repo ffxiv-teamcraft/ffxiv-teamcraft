@@ -17,7 +17,6 @@ import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
 import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
-import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 
@@ -308,16 +307,11 @@ export class ItemComponent implements OnInit {
         });
     }
 
-    public getTradeIcon(item: ListRow): string {
-        const res = {priority: 0, icon: 'https://www.garlandtools.org/db/images/Shop.png'};
+    public getTradeIcon(item: ListRow): number {
+        const res = {priority: 0, icon: 0};
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
-                let id = 0;
-                if (typeof trade.currencyIcon === 'string') {
-                    id = +trade.currencyIcon.split('/').pop().split('.')[0];
-                } else {
-                    id = trade.currencyIcon;
-                }
+                const id = trade.currencyIcon;
                 if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
                     res.icon = trade.currencyIcon;
                     res.priority = this.tradeSourcePriorities[id];

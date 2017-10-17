@@ -3,7 +3,6 @@ import {List} from '../../model/list/list';
 import {Observable} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {DataService} from '../api/data.service';
-import {I18nName} from '../../model/list/i18n-name';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {TradeSource} from '../../model/list/trade-source';
 import {Instance} from 'app/model/list/instance';

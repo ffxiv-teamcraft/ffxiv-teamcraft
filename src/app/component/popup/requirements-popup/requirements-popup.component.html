@@ -2,8 +2,8 @@
 <div md-dialog-content>
     <md-list>
         <md-list-item *ngFor="let requirement of data.item.requires">
-            <img md-list-avatar [src]="getRequirementDetails(requirement).icon"
-                 alt="getRequirementDetails(requirement).name | i18n">
+            <img md-list-avatar [src]="getRequirementDetails(requirement).icon | icon"
+                 alt="{{getRequirementDetails(requirement).id | itemName | i18n}}">
             <div md-line>{{getRequirementDetails(requirement).id | itemName | i18n}}</div>
             <p md-line>x{{requirement.amount * data.item.amount_needed}}</p>
         </md-list-item>

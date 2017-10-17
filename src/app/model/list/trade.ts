@@ -1,9 +1,9 @@
 export interface Trade {
-    itemIcon: string;
+    itemIcon: number;
     itemAmount: number;
     itemId: number;
     itemHQ: boolean;
-    currencyIcon: string;
+    currencyIcon: number;
     currencyAmount: number;
     currencyId: number;
 }

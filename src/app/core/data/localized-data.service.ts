@@ -19,15 +19,28 @@ export class LocalizedDataService {
     }
 
     public getItem(id: number): I18nName {
-        return this.items[id];
+        return this.getRow(this.items, id);
     }
 
     public getPlace(id: number): I18nName {
-        return this.places[id];
+        return this.getRow(this.places, id);
     }
 
     public getNpc(id: number): I18nName {
-        return this.npcs[id];
+        return this.getRow(this.npcs, id);
+    }
+
+    private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
+        if (array === undefined) {
+            // I18n strings (comment used for search matching)
+            return {
+                'en': 'Loading',
+                'fr': 'Chargement en cours',
+                'ja': 'ロード中',
+                'de': 'Laden'
+            };
+        }
+        return array[id];
     }
 
     private load(fileName: string): Observable<{ [index: number]: I18nName }> {
