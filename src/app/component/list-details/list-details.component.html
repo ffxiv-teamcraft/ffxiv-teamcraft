@@ -15,7 +15,7 @@
                 <md-icon *ngIf="isFavorite()">favorite</md-icon>
             </button>
 
-            <button md-mini-fab *ngIf="list !== undefined && !isOwnList() && user !== undefined"
+            <button md-mini-fab *ngIf="list !== undefined && user !== undefined"
                     (click)="forkList()"
                     mdTooltip="{{'List_fork' | translate}}">
                 <md-icon>content_copy</md-icon>
