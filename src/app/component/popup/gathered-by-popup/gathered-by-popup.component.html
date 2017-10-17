@@ -6,7 +6,8 @@
             <b md-line>
                 {{node.zoneid | placeName | i18n}}
             </b>
-            <p md-line [innerHTML]="node.areaid | placeName | i18n">
+            <p md-line>
+                {{node.areaid | placeName | i18n}}
             </p>
             <md-chip-list>
                 <md-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
@@ -20,7 +21,7 @@
                 X:{{node.x}} Y:{{node.y}}
             </p>
             <span>
-            <b md-line *ngIf="getSlot(node).slot !== undefined" selected="true" color="accent">Slot:{{getSlot(node).slot}}</b>
+            <b md-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
             <span md-line *ngIf="node.time !== undefined">
                 <i md-line *ngFor="let time of node.time">{{time}} - {{time + (node.uptime / 60)}}</i>
             </span>

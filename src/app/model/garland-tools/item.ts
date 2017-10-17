@@ -223,7 +223,7 @@ export class Item implements I18nData {
             stars_tooltip: '',
             level: 0,
             nodes: [],
-            type: -1
+            type: -1,
         };
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
@@ -239,8 +239,24 @@ export class Item implements I18nData {
                 ][details.type];
                 gatheredBy.stars_tooltip = htmlTools.generateStars(details.stars);
                 gatheredBy.level = details.lvl;
+                const slot = details.items.find(item => item.id === this.id).slot || undefined;
                 if (details.areaid !== undefined) {
-                    gatheredBy.nodes.push(details);
+                    const storedNode = {
+                        zoneid: details.zoneid,
+                        areaid: details.areaid,
+                        limitType: details.limitType,
+                        coords: details.coords,
+                        time: details.time,
+                        uptime: details.uptime,
+                        slot: slot
+                    };
+                    // We need to cleanup the node object to avoid firebase issues with udnefined value.
+                    Object.keys(storedNode).forEach(key => {
+                        if (storedNode[key] === undefined) {
+                            delete storedNode[key];
+                        }
+                    });
+                    gatheredBy.nodes.push(storedNode);
                 }
             }
         } else {

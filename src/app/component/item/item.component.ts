@@ -146,7 +146,7 @@ export class ItemComponent implements OnInit {
                             zoneid: node.zoneid
                         });
                     });
-                    this.slot = node.items.find(item => item.id === this.item.id).slot || undefined;
+                    this.slot = node.slot;
                 });
                 const options = this.getTimerOptions();
                 for (const t of timers) {
