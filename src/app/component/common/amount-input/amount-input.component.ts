@@ -63,7 +63,7 @@ export class AmountInputComponent implements OnInit {
     }
 
     public getWidth(): number {
-        return (this.max || this.value || 0).toString().length * 10 + 20;
+        return (this.max || this.value || 0).toString().length * 12 + 20;
     }
 
 }
