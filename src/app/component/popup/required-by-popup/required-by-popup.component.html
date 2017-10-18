@@ -1,0 +1,11 @@
+<h2 md-dialog-title>{{data.item.id | itemName | i18n}}</h2>
+<div md-dialog-content>
+    <md-list>
+        <h3 md-subheader>{{"Used_for" | translate}}</h3>
+        <md-list-item *ngFor="let recipe of getRequiredBy()">
+            <img md-list-avatar [src]="recipe.icon | icon"
+                 alt="{{recipe.id | itemName | i18n}}">
+            <div md-line>{{recipe.id | itemName | i18n}}</div>
+        </md-list-item>
+    </md-list>
+</div>

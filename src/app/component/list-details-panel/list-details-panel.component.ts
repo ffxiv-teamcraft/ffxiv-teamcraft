@@ -22,6 +22,9 @@ export class ListDetailsPanelComponent {
     showRequirements = false;
 
     @Input()
+    showRequiredBy = false;
+
+    @Input()
     recipe = false;
 
     @Output()

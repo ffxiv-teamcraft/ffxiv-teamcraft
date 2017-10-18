@@ -13,6 +13,11 @@
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
             <md-icon color="accent">assignment</md-icon>
         </button>
+        <button *ngIf="showRequiredBy" md-icon-button class="warning"
+                mdTooltip="{{'Used_for' | translate}}"
+                mdTooltipPosition="above" (click)="openRequiredByPopup()">
+            <md-icon color="accent">help</md-icon>
+        </button>
     </div>
 
     <div class="timer" *ngIf="hasTimers()">
@@ -159,6 +164,11 @@
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
             <md-icon color="accent">assignment</md-icon>
+        </button>
+        <button *ngIf="showRequiredBy" md-icon-button class="requirements"
+                mdTooltip="{{'Used_for' | translate}}"
+                mdTooltipPosition="above" (click)="openRequiredByPopup()">
+            <md-icon color="accent">help</md-icon>
         </button>
         <div class="classes">
             <div *ngIf="item.craftedBy !== undefined">
