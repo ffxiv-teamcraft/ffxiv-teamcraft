@@ -3,11 +3,11 @@
     <div class="item-col-left">
         <div md-list-avatar class="icon">
             <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
-                <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+                <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
             </a>
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
-        <div class="item-name" md-line [innerHTML]="item | i18n"></div>
+        <div class="item-name" md-line> {{item.id | itemName | i18n}}</div>
         <button *ngIf="showRequirements" md-icon-button class="warning"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
@@ -19,7 +19,7 @@
         <button md-raised-button
                 [color]="getTimerColor()"
                 (click)="toggleAlarm()"
-                mdTooltip="{{nextSpawnLocation | i18n}}"
+                mdTooltip="{{nextSpawnLocation}}"
                 mdTooltipPosition="above">
             <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
             <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>
@@ -31,10 +31,10 @@
         <div *ngIf="item.craftedBy !== undefined" class="masterbook">
             <img *ngFor="let masterbook of getMasterBooks(item)"
                  md-list-avatar
-                 src="{{masterbook.icon}}"
-                 mdTooltip="{{masterbook | i18n}}"
+                 src="{{masterbook.icon | icon}}"
+                 mdTooltip="{{masterbook.id | itemName | i18n}}"
                  mdTooltipPosition="above"
-                 alt="{{masterbook | i18n}}">
+                 alt="{{masterbook.id | itemName | i18n}}">
         </div>
 
         <div class="done">
@@ -87,7 +87,7 @@
                     <img class="currency"
                          mdTooltip="{{'Trade' | translate}}"
                          mdTooltipPosition="above"
-                         src="{{getTradeIcon(item)}}">
+                         src="{{getTradeIcon(item) | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
                 </button>
             </div>
             <div *ngIf="item.instances !== undefined && item.instances.length > 0">
@@ -135,18 +135,18 @@
 <md-list-item *ngIf="isMobile" class="mobile">
     <div md-list-avatar class="icon">
         <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
-            <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+            <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
         </a>
         <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
     </div>
-    <div class="item-name" md-line [innerHTML]="item | i18n"></div>
+    <div class="item-name" md-line>{{item.id | itemName | i18n}}</div>
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
              md-list-avatar
-             src="{{masterbook.icon}}"
-             mdTooltip="{{masterbook | i18n}}"
+             src="{{masterbook.icon | icon}}"
+             mdTooltip="{{masterbook.id | itemName | i18n}}"
              mdTooltipPosition="above"
-             alt="{{masterbook | i18n}}">
+             alt="{{masterbook.id | itemName | i18n}}">
     </div>
     <div class="done" md-line>
         <app-amount-input class="amount"
@@ -234,7 +234,7 @@
     </div>
 
     <div class="timer" *ngIf="hasTimers()">
-        <span>{{nextSpawnLocation | i18n}}</span><br>
+        <span>{{nextSpawnLocation}}</span><br>
         <button md-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
             <md-icon *ngIf="!spawnAlarm">alarm_add</md-icon>
             <md-icon *ngIf="spawnAlarm">alarm_on</md-icon>

@@ -1,10 +1,10 @@
-import {GatheringNode} from '../garland-tools/gathering-node';
+import {StoredNode} from './stored-node';
 
 export interface GatheredBy {
     type: number;
     icon: string;
     level: number;
-    nodes: GatheringNode[];
+    nodes: StoredNode[];
     stars_tooltip: string;
     legend?: any;
 }

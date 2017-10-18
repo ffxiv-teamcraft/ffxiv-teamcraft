@@ -1,5 +1,4 @@
 import {Component, Inject} from '@angular/core';
-import {GarlandToolsService} from '../../../core/api/garland-tools.service';
 import {MD_DIALOG_DATA} from '@angular/material';
 
 @Component({
@@ -9,10 +8,8 @@ import {MD_DIALOG_DATA} from '@angular/material';
 })
 export class DropsDetailsPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: any, private gt: GarlandToolsService) {
-    }
+    // TODO get proper mob data to fix this.
 
-    public getLocation(id: number): any {
-        return this.gt.getLocation(id);
+    constructor(@Inject(MD_DIALOG_DATA) public data: any) {
     }
 }

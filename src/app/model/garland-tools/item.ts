@@ -12,7 +12,6 @@ import {TradeSource} from '../list/trade-source';
 import {Vendor} from '../list/vendor';
 import {I18nName} from '../list/i18n-name';
 import {DataService} from '../../core/api/data.service';
-import {I18nToolsService} from '../../core/i18n-tools.service';
 import {Trade} from '../list/trade';
 
 export class Item implements I18nData {
@@ -60,13 +59,12 @@ export class Item implements I18nData {
         return this.craft !== undefined;
     }
 
-    public get icon(): string {
-        return `https://www.garlandtools.org/db/icons/item/${this._icon}.png`;
+    public get icon(): number {
+        return this._icon;
     }
 
 
-    public getCraftedBy(htmlTools: HtmlToolsService, db: DataService, gt: GarlandToolsService,
-                        i18n: I18nToolsService): Observable<CraftedBy[]> {
+    public getCraftedBy(htmlTools: HtmlToolsService, db: DataService, gt: GarlandToolsService): Observable<CraftedBy[]> {
         if (!this.isCraft()) {
             return Observable.of([]);
         }
@@ -84,7 +82,6 @@ export class Item implements I18nData {
             if (craft.unlockId !== undefined) {
                 result.push(db.getItem(craft.unlockId).map(masterbook => {
                     craftedBy.masterbook = {
-                        name: i18n.createI18nName(masterbook.item),
                         icon: masterbook.item.icon,
                         id: masterbook.item.id
                     };
@@ -97,22 +94,21 @@ export class Item implements I18nData {
         return Observable.combineLatest(result);
     }
 
-    public getTradeSources(db: DataService, gt: GarlandToolsService, i18n: I18nToolsService): Observable<TradeSource[]> {
+    public getTradeSources(db: DataService): Observable<TradeSource[]> {
         const tradeSources: Observable<TradeSource> [] = [];
         for (const ts of Object.keys(this.tradeSources)) {
             const tradeObs = Observable
                 .of({
-                    npcName: {fr: '', de: '', en: '', ja: ''},
-                    zoneName: {fr: '', de: '', en: '', ja: ''}
+                    npcId: +ts,
+                    zoneId: 0
                 })
                 .mergeMap((tradeSource: TradeSource) => {
                     return db.getNpc(+ts)
                         .map(data => {
-                            tradeSource.npcName = i18n.createI18nName(data.npc);
                             if (data.npc.zoneid === undefined) {
                                 return undefined;
                             }
-                            tradeSource.zoneName = gt.getLocation(data.npc.zoneid).name;
+                            tradeSource.zoneId = data.npc.zoneid;
                             return tradeSource as TradeSource;
                         });
                 })
@@ -121,12 +117,12 @@ export class Item implements I18nData {
                     for (const row of this.tradeSources[ts]) {
                         const obs: Observable<Trade> = Observable
                             .of({
-                                itemIcon: '',
+                                itemIcon: 0,
                                 itemAmount: 0,
-                                itemName: {fr: '', de: '', en: '', ja: ''},
-                                currencyIcon: '',
+                                itemId: 0,
+                                currencyIcon: 0,
                                 currencyAmount: 0,
-                                currencyName: {fr: '', de: '', en: '', ja: ''},
+                                currencyId: 0,
                                 itemHQ: false
                             })
                             .mergeMap(trade => {
@@ -134,7 +130,7 @@ export class Item implements I18nData {
                                     .map(data => {
                                         trade.itemIcon = data.item.icon;
                                         trade.itemAmount = row.item[0].amount;
-                                        trade.itemName = data.item.name;
+                                        trade.itemId = data.item.id;
                                         trade.itemHQ = row.item[0].hq === 1;
                                         return trade;
                                     });
@@ -144,7 +140,7 @@ export class Item implements I18nData {
                                     .map(data => {
                                         trade.currencyIcon = data.item.icon;
                                         trade.currencyAmount = row.currency[0].amount;
-                                        trade.currencyName = data.item.name;
+                                        trade.currencyId = data.item.id;
                                         return trade;
                                     });
                             });
@@ -180,21 +176,21 @@ export class Item implements I18nData {
         return voyages;
     }
 
-    public getVendors(db: DataService, gt: GarlandToolsService, i18n: I18nToolsService): Observable<Vendor[]> {
+    public getVendors(db: DataService): Observable<Vendor[]> {
         const vendors: Observable<Vendor> [] = [];
         for (const id of this.vendors) {
             const vendorObs: Observable<Vendor> = Observable
                 .of({
-                    npcName: {fr: '', de: '', en: '', ja: ''},
-                    zoneName: {fr: '', de: '', en: '', ja: ''}
+                    npcId: 0,
+                    zoneId: 0
                 }).mergeMap((vendor: Vendor) => {
                     return db.getNpc(+id)
                         .map(data => {
-                            vendor.npcName = i18n.createI18nName(data.npc);
+                            vendor.npcId = +id;
                             if (data.npc.zoneid === undefined) {
                                 return undefined;
                             }
-                            vendor.zoneName = gt.getLocation(data.npc.zoneid).name;
+                            vendor.zoneId = data.npc.zoneid;
                             const tradeInfo = data.partials.find(o => o.obj.i === this.id);
                             vendor.price = tradeInfo.obj.p;
                             if (data.npc.coords !== undefined) {
@@ -213,36 +209,12 @@ export class Item implements I18nData {
         });
     }
 
-    public getReducedFrom(db: DataService, i18n: I18nToolsService): Observable<I18nName[]> {
-        const reductions: Observable<I18nName> [] = [];
-        for (const id of this.reducedFrom) {
-            const reductionObs = Observable
-                .of({fr: '', de: '', en: '', ja: ''})
-                .mergeMap((name: I18nName) => {
-                    return db.getItem(id).map(data => {
-                        name = i18n.createI18nName(data.item);
-                        return name;
-                    });
-                });
-            reductions.push(reductionObs);
-        }
-        return Observable.combineLatest(reductions);
+    public getReducedFrom(): number[] {
+        return this.reducedFrom;
     }
 
-    public getDesynths(db: DataService, i18n: I18nToolsService): Observable<I18nName[]> {
-        const desynths: Observable<I18nName> [] = [];
-        for (const id of this.desynthedFrom) {
-            const desynthObs = Observable
-                .of({fr: '', de: '', en: '', ja: ''})
-                .mergeMap((name: I18nName) => {
-                    return db.getItem(id).map(data => {
-                        name = i18n.createI18nName(data.item);
-                        return name;
-                    });
-                });
-            desynths.push(desynthObs);
-        }
-        return Observable.combineLatest(desynths);
+    public getDesynths(): number[] {
+        return this.desynthedFrom;
     }
 
     public getGatheredBy(gt: GarlandToolsService, htmlTools: HtmlToolsService): GatheredBy {
@@ -251,7 +223,7 @@ export class Item implements I18nData {
             stars_tooltip: '',
             level: 0,
             nodes: [],
-            type: -1
+            type: -1,
         };
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
@@ -267,8 +239,24 @@ export class Item implements I18nData {
                 ][details.type];
                 gatheredBy.stars_tooltip = htmlTools.generateStars(details.stars);
                 gatheredBy.level = details.lvl;
+                const slot = details.items.find(item => item.id === this.id).slot || undefined;
                 if (details.areaid !== undefined) {
-                    gatheredBy.nodes.push(details);
+                    const storedNode = {
+                        zoneid: details.zoneid,
+                        areaid: details.areaid,
+                        limitType: details.limitType,
+                        coords: details.coords,
+                        time: details.time,
+                        uptime: details.uptime,
+                        slot: slot
+                    };
+                    // We need to cleanup the node object to avoid firebase issues with udnefined value.
+                    Object.keys(storedNode).forEach(key => {
+                        if (storedNode[key] === undefined) {
+                            delete storedNode[key];
+                        }
+                    });
+                    gatheredBy.nodes.push(storedNode);
                 }
             }
         } else {
@@ -283,9 +271,5 @@ export class Item implements I18nData {
             }
         }
         return gatheredBy;
-    }
-
-    public get name(): I18nName {
-        return {fr: this.fr.name, de: this.de.name, en: this.en.name, ja: this.ja.name};
     }
 }

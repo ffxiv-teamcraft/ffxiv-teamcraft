@@ -1,6 +1,6 @@
 <md-list-item>
-    <img md-list-avatar src="{{recipe.icon}}" alt="{{recipe | i18n}}">
-    <h3 md-line [innerHTML]="recipe | i18n"></h3>
+    <img md-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
+    <h3 md-line>{{recipe.id | itemName | i18n}}</h3>
     <app-amount-input class="amount"
                       [value]="recipe.amount"
                       min="1"

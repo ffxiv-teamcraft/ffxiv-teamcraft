@@ -1,8 +1,8 @@
 <md-list-item>
     <div md-list-avatar class="icon">
-        <img md-list-avatar src="{{item.icon}}" alt="{{item | i18n}}">
+        <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>
-    <p md-line [innerHTML]="item.name | i18n"></p>
+    <p md-line [innerHTML]="item.id | itemName | i18n"></p>
     <div>
         <div md-line>
             <md-form-field class="nofix price">

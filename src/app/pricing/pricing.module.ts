@@ -7,6 +7,8 @@ import {CoreModule} from '../core/core.module';
 import { PricingRowComponent } from './pricing-row/pricing-row.component';
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {ItemNamePipe} from '../pipe/item-name.pipe';
+import {PipesModule} from '../pipe/pipes.module';
 
 @NgModule({
     imports: [
@@ -20,6 +22,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         MdIconModule,
         FormsModule,
         FlexLayoutModule,
+        PipesModule,
     ],
     declarations: [
         PricingComponent,

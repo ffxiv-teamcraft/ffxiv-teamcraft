@@ -1,0 +1,12 @@
+<h2 md-dialog-title>{{'Edit' | translate}}</h2>
+<div md-dialog-content>
+    <form (submit)="close()">
+        <md-form-field>
+            <input mdInput type="text" [(ngModel)]="data" required name="data">
+        </md-form-field>
+    </form>
+</div>
+<div md-dialog-actions>
+    <button md-raised-button (click)="close()" color="primary">{{'Confirm' | translate}}</button>
+    <button md-raised-button (click)="close(true)" color="warn">{{'Cancel' | translate}}</button>
+</div>

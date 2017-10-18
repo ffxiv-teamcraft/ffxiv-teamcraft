@@ -1,0 +1,20 @@
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.buttons {
+    margin-right: 10px;
+    display: inline-flex !important;
+    min-width: 120px;
+}
+
+.mat-expansion-panel {
+    background: inherit;
+    color: inherit;
+}
+
+.mat-list .mat-list-item {
+    color: inherit;
+}
+

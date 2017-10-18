@@ -14,6 +14,7 @@ import {HtmlToolsService} from '../../core/html-tools.service';
 import {ListService} from '../../core/firebase/list.service';
 import {SearchFilter} from '../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../popup/bulk-addition-popup/bulk-addition-popup.component';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 @Component({
     selector: 'app-recipes',
@@ -96,7 +97,8 @@ export class RecipesComponent implements OnInit {
                 private snackBar: MdSnackBar, private dialog: MdDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
-                private htmlTools: HtmlToolsService, private listService: ListService) {
+                private htmlTools: HtmlToolsService, private listService: ListService,
+                private localizedData: LocalizedDataService) {
     }
 
     ngOnInit() {
@@ -155,7 +157,8 @@ export class RecipesComponent implements OnInit {
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
-                        this.translator.instant('Recipe_Added', {itemname: this.i18n.getName(recipe.name), listname: list.name}),
+                        this.translator.instant('Recipe_Added',
+                            {itemname: this.i18n.getName(this.localizedData.getItem(recipe.itemId)), listname: list.name}),
                         this.translator.instant('Open'),
                         {
                             duration: 10000,

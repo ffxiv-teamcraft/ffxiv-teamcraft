@@ -17,9 +17,10 @@ import {RegenerationPopupComponent} from '../popup/regeneration-popup/regenerati
 import {AppUser} from 'app/model/list/app-user';
 import {ZoneBreakdown} from '../../model/list/zone-breakdown';
 import {I18nName} from '../../model/list/i18n-name';
-import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../popup/timer-options-popup/timer-options-popup.component';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
+import {NameEditPopupComponent} from '../popup/name-edit-popup/name-edit-popup.component';
 
 declare const ga: Function;
 
@@ -75,7 +76,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private listManager: ListManagerService, private snack: MdSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService,
-                private gt: GarlandToolsService) {
+                private data: LocalizedDataService) {
     }
 
     public getUser(): Observable<User> {
@@ -86,7 +87,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         if (id === -1) {
             return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
         }
-        return this.gt.getLocation(id);
+        return this.data.getPlace(id);
     }
 
     public openTimerOptionsPopup(): void {
@@ -264,14 +265,28 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             const result = aRequiredItems - bRequiredItems;
             // If we get 0 as result, the template will act in a strange way, moving items as we hover them, so we need a failsafe.
             if (result === 0) {
-                return a.name.en > b.name.en ? 1 : -1;
+                return this.data.getItem(a.id).en > this.data.getItem(b.id).en ? 1 : -1;
             }
             return result;
         });
     }
 
     orderGatherings(gatherings: ListRow[]): ListRow[] {
-        return gatherings.sort((a, b) => a.name.en > b.name.en ? 1 : (b.name.en > a.name.en) ? -1 : 0);
+        return gatherings.sort((a, b) => {
+            if (this.data.getItem(b.id).en > this.data.getItem(a.id).en) {
+                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            } else {
+                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
     }
 
     public resetProgression(): void {
@@ -287,5 +302,15 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     public toggleZoneBreakdown(): void {
         this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
+    }
+
+    public rename(): void {
+        const dialog = this.dialog.open(NameEditPopupComponent, {data: this.list.name});
+        dialog.afterClosed().subscribe(value => {
+            if (value !== undefined && value.length > 0) {
+                this.list.name = value;
+                this.update();
+            }
+        });
     }
 }

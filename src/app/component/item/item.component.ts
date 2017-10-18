@@ -17,8 +17,8 @@ import {List} from '../../model/list/list';
 import {RequirementsPopupComponent} from '../popup/requirements-popup/requirements-popup.component';
 import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
-import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 @Component({
     selector: 'app-item',
@@ -116,7 +116,7 @@ export class ItemComponent implements OnInit {
                 private dialog: MdDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
-                private gt: GarlandToolsService) {
+                private localizedData: LocalizedDataService) {
     }
 
     toggleAlarm(): void {
@@ -129,7 +129,7 @@ export class ItemComponent implements OnInit {
     }
 
     public get nextSpawnLocation(): string {
-        return this.gt.getLocation(this.nextSpawnZoneId);
+        return this.i18n.getName(this.localizedData.getPlace(this.nextSpawnZoneId));
     }
 
     ngOnInit(): void {
@@ -146,7 +146,7 @@ export class ItemComponent implements OnInit {
                             zoneid: node.zoneid
                         });
                     });
-                    this.slot = node.items.find(item => item.id === this.item.id).slot || undefined;
+                    this.slot = node.slot;
                 });
                 const options = this.getTimerOptions();
                 for (const t of timers) {
@@ -307,16 +307,11 @@ export class ItemComponent implements OnInit {
         });
     }
 
-    public getTradeIcon(item: ListRow): string {
-        const res = {priority: 0, icon: 'https://www.garlandtools.org/db/images/Shop.png'};
+    public getTradeIcon(item: ListRow): number {
+        const res = {priority: 0, icon: 0};
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
-                let id = 0;
-                if (typeof trade.currencyIcon === 'string') {
-                    id = +trade.currencyIcon.split('/').pop().split('.')[0];
-                } else {
-                    id = trade.currencyIcon;
-                }
+                const id = trade.currencyIcon;
                 if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
                     res.icon = trade.currencyIcon;
                     res.priority = this.tradeSourcePriorities[id];
@@ -333,7 +328,7 @@ export class ItemComponent implements OnInit {
     }
 
     public getXivdbLink(item: ListRow): string {
-        const name = this.i18n.getName(item.name);
+        const name = this.i18n.getName(this.localizedData.getItem(item.id));
         const link = this.data.getXivdbUrl(item.id, name);
         return this.i18n.getName(link);
     }

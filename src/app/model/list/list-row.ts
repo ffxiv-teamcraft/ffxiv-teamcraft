@@ -6,10 +6,10 @@ import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
+
 export class ListRow {
-    addedAt: number;
-    name: I18nName;
-    icon?: string;
+    addedAt?: number;
+    icon?: number;
     id: number;
     amount: number;
     amount_needed?: number;
@@ -24,8 +24,8 @@ export class ListRow {
     drops?: Drop[];
     tradeSources?: TradeSource[];
     instances?: Instance[];
-    reducedFrom?: I18nName[];
-    desynths?: I18nName[];
+    reducedFrom?: number[];
+    desynths?: number[];
     vendors?: Vendor[];
     voyages?: I18nName[];
 

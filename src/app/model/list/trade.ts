@@ -1,11 +1,9 @@
-import {I18nName} from './i18n-name';
-
 export interface Trade {
-    itemIcon: string;
+    itemIcon: number;
     itemAmount: number;
-    itemName: I18nName;
+    itemId: number;
     itemHQ: boolean;
-    currencyIcon: string;
+    currencyIcon: number;
     currencyAmount: number;
-    currencyName: I18nName;
+    currencyId: number;
 }

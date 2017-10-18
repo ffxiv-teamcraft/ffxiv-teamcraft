@@ -69,9 +69,8 @@ export class DataService {
                         itemId: item.id,
                         job: recipe.job,
                         stars: recipe.stars,
-                        name: {fr: item.obj.fr.n, en: item.obj.en.n, ja: item.obj.ja.n, de: item.obj.de.n},
                         lvl: recipe.lvl,
-                        icon: `https://www.garlandtools.org/db/icons/item/${item.obj.c}.png`
+                        icon: item.obj.c
                     });
                 });
             });

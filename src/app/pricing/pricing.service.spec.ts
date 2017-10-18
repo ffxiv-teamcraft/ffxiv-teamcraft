@@ -26,8 +26,8 @@ describe('PricingService', () => {
         const row = new ListRow();
         row.id = 654987;
         row.vendors = [{
-            npcName: {en: '', fr: '', de: '', ja: ''},
-            zoneName: {en: '', fr: '', de: '', ja: ''},
+            npcId: 123465,
+            zoneId: 654987,
             price: 9001
         }];
         expect(service.getPrice(row).nq).toBe(9001);

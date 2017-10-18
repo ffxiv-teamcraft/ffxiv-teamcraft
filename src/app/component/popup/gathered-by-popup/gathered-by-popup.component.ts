@@ -1,7 +1,5 @@
 import {Component, Inject} from '@angular/core';
 import {MD_DIALOG_DATA} from '@angular/material';
-import {GarlandToolsService} from '../../../core/api/garland-tools.service';
-import {GatheringNode} from '../../../model/garland-tools/gathering-node';
 import {ListRow} from '../../../model/list/list-row';
 
 @Component({
@@ -11,14 +9,6 @@ import {ListRow} from '../../../model/list/list-row';
 })
 export class GatheredByPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: ListRow, private gt: GarlandToolsService) {
-    }
-
-    public getLocation(id: number): any {
-        return this.gt.getLocation(id);
-    }
-
-    public getSlot(node: GatheringNode) {
-        return node.items.find(item => item.id === this.data.id);
+    constructor(@Inject(MD_DIALOG_DATA) public data: ListRow) {
     }
 }

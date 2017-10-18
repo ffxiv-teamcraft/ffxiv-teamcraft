@@ -1,21 +1,5 @@
 @import "../../../theme";
 
-.row {
-    .spacer {
-        flex: 1 1 auto;
-    }
-    .buttons {
-        margin-right: 10px;
-        display: inline-flex !important;
-    }
-    .mat-expansion-panel {
-        background: inherit;
-        color: inherit;
-    }
-    .mat-list .mat-list-item {
-        color: inherit;
-    }
-}
 
 md-slide-toggle {
     height: 40px;
