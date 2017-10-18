@@ -77,6 +77,7 @@ import {PricingModule} from './pricing/pricing.module';
 import {PipesModule} from './pipe/pipes.module';
 import { NameEditPopupComponent } from './component/popup/name-edit-popup/name-edit-popup.component';
 import { RequiredByPopupComponent } from './component/popup/required-by-popup/required-by-popup.component';
+import { CartImportComponent } from './component/cart-import/cart-import.component';
 
 const routes: Routes = [
     {
@@ -103,6 +104,10 @@ const routes: Routes = [
     {
         path: 'lists',
         component: ListsComponent
+    },
+    {
+        path: 'cart-import/:importString',
+        component: CartImportComponent
     },
 ];
 
@@ -147,6 +152,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
         RequiredByPopupComponent,
+        CartImportComponent,
     ],
     imports: [
         FlexLayoutModule,
