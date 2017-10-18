@@ -8,4 +8,11 @@
     .amount {
         width: 60px;
     }
+
+    .item-name {
+        .mat-icon {
+            vertical-align: middle;
+            cursor: default;
+        }
+    }
 }
