@@ -1,12 +1,14 @@
 <!--Layout for desktop browsers-->
 <md-list-item *ngIf="!isMobile">
     <div class="item-col-left">
-        <div md-list-avatar class="icon">
-            <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
-                <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
-            </a>
-            <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
-        </div>
+        <app-tooltip [id]="item.id">
+            <div md-list-avatar class="icon">
+                <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
+                    <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+                </a>
+                <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+            </div>
+        </app-tooltip>
         <div class="item-name" md-line> {{item.id | itemName | i18n}}</div>
         <button *ngIf="showRequirements" md-icon-button class="warning"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
