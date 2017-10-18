@@ -3,6 +3,7 @@ import {PricingService} from '../pricing.service';
 import {Price} from '../model/price';
 import {ItemAmount} from '../model/item-amount';
 import {ListRow} from '../../model/list/list-row';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-pricing-row',
@@ -17,11 +18,14 @@ export class PricingRowComponent implements OnInit {
     @Input()
     listId: string;
 
+    @Input()
+    craftCost: number;
+
     price: Price;
 
     amount: ItemAmount;
 
-    constructor(private pricingService: PricingService) {
+    constructor(private pricingService: PricingService, private media: ObservableMedia) {
     }
 
     isCrystal(): boolean {
@@ -39,6 +43,10 @@ export class PricingRowComponent implements OnInit {
     ngOnInit(): void {
         this.price = this.pricingService.getPrice(this.item);
         this.amount = this.pricingService.getAmount(this.listId, this.item);
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('sm') || this.media.isActive('xs');
     }
 
 }

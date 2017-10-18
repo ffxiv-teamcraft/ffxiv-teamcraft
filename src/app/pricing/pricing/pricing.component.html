@@ -44,7 +44,8 @@
             <md-panel-description>{{getTotalPrice(list.preCrafts).toLocaleString()}} gils</md-panel-description>
         </md-expansion-panel-header>
         <md-list dense>
-            <app-pricing-row *ngFor="let item of list.preCrafts" [item]="item" [listId]="list.$key"></app-pricing-row>
+            <app-pricing-row *ngFor="let item of list.preCrafts" [item]="item" [listId]="list.$key"
+                             [craftCost]="getCraftCost(item)"></app-pricing-row>
         </md-list>
     </md-expansion-panel>
 
@@ -54,7 +55,8 @@
     <md-card-title>{{"Earning" | translate}}</md-card-title>
     <md-card-subtitle>{{getTotalPrice(list.recipes).toLocaleString()}} gils</md-card-subtitle>
     <md-list dense>
-        <app-pricing-row *ngFor="let item of list.recipes" [item]="item" [listId]="list.$key"></app-pricing-row>
+        <app-pricing-row *ngFor="let item of list.recipes" [item]="item" [listId]="list.$key"
+                         [craftCost]="getCraftCost(item)"></app-pricing-row>
     </md-list>
 </md-card>
 

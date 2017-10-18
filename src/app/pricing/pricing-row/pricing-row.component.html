@@ -1,8 +1,17 @@
 <md-list-item>
-    <div md-list-avatar class="icon">
+
+    <div md-list-avatar class="icon" *ngIf="!isMobile()">
         <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>
-    <p md-line [innerHTML]="item.id | itemName | i18n"></p>
+    <p md-line class="item-name">
+        {{item.id | itemName | i18n}}
+        <md-icon *ngIf="craftCost !== undefined" mdTooltip="{{'Minimal_craft_cost' | translate}}: {{craftCost}} gils"
+                 mdTooltipPosition="above">
+            attach_money
+        </md-icon>
+    </p>
+
+
     <div>
         <div md-line>
             <md-form-field class="nofix price">
