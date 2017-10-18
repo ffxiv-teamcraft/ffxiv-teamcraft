@@ -70,7 +70,7 @@ export class DataService {
                         job: recipe.job,
                         stars: recipe.stars,
                         lvl: recipe.lvl,
-                        icon: `https://www.garlandtools.org/db/icons/item/${item.obj.c}.png`
+                        icon: item.obj.c
                     });
                 });
             });
