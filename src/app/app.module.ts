@@ -76,6 +76,7 @@ import {ForgotPasswordPopupComponent} from './component/popup/forgot-password-po
 import {PricingModule} from './pricing/pricing.module';
 import {PipesModule} from './pipe/pipes.module';
 import { NameEditPopupComponent } from './component/popup/name-edit-popup/name-edit-popup.component';
+import { RequiredByPopupComponent } from './component/popup/required-by-popup/required-by-popup.component';
 
 const routes: Routes = [
     {
@@ -145,6 +146,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         PatreonPopupComponent,
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
+        RequiredByPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
@@ -226,6 +228,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         PatreonPopupComponent,
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
+        RequiredByPopupComponent,
     ],
     providers: [
         UserService,
