@@ -2,6 +2,7 @@
     <md-input-container>
         <md-icon mdPrefix>search</md-icon>
         <input class="filter" [(ngModel)]="query" mdInput placeholder="{{'Recipe_name' | translate}}" #filter>
+        <md-hint align="end"><small>{{'Data_from_gt' | translate}}</small></md-hint>
     </md-input-container>
 </div>
 <md-expansion-panel class="filters" #filtersPanel>
