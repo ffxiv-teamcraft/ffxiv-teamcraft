@@ -79,6 +79,7 @@ import {NameEditPopupComponent} from './component/popup/name-edit-popup/name-edi
 import {RequiredByPopupComponent} from './component/popup/required-by-popup/required-by-popup.component';
 import {CartImportComponent} from './component/cart-import/cart-import.component';
 import {TooltipModule} from './tooltip/tooltip.module';
+import {DonationModule} from './donation/donation.module';
 
 const routes: Routes = [
     {
@@ -214,6 +215,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         PricingModule,
         PipesModule,
         TooltipModule,
+        DonationModule,
     ],
     entryComponents: [
         ListNamePopupComponent,
