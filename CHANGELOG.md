@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.4...v2.3.0) (2017-10-19)
+
+
+### Bug Fixes
+
+* alarm triggered even if not set to true ([6452cec](https://github.com/Supamiu/ffxiv-teamcraft/commit/6452cec))
+* amount input too small ([23e5d62](https://github.com/Supamiu/ffxiv-teamcraft/commit/23e5d62))
+* broken list details with too old list ([f826efb](https://github.com/Supamiu/ffxiv-teamcraft/commit/f826efb))
+* list expansion panel collapsing after each change made to the list ([c0e577d](https://github.com/Supamiu/ffxiv-teamcraft/commit/c0e577d))
+* node timer alarm triggered upon amount modification ([97fa88e](https://github.com/Supamiu/ffxiv-teamcraft/commit/97fa88e))
+* remove unique contraint on lodestoneId ([c091e2d](https://github.com/Supamiu/ffxiv-teamcraft/commit/c091e2d))
+
+
+### Features
+
+* add details tooltip on item icon hover ([6e553d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e553d7)), closes [#72](https://github.com/Supamiu/ffxiv-teamcraft/issues/72)
+* add forgot password popup ([20551f3](https://github.com/Supamiu/ffxiv-teamcraft/commit/20551f3))
+* add informations about which recipe needs a given ingredient ([9e2e647](https://github.com/Supamiu/ffxiv-teamcraft/commit/9e2e647)), closes [#70](https://github.com/Supamiu/ffxiv-teamcraft/issues/70)
+* add localized mob names ([e9f0217](https://github.com/Supamiu/ffxiv-teamcraft/commit/e9f0217))
+* add localized names to every npc, zone and area ([cdbfcfa](https://github.com/Supamiu/ffxiv-teamcraft/commit/cdbfcfa))
+* add one time donation button ([9ba1be1](https://github.com/Supamiu/ffxiv-teamcraft/commit/9ba1be1))
+* add pricing feature ([fdff970](https://github.com/Supamiu/ffxiv-teamcraft/commit/fdff970))
+* add support for xivdb cart imports ([65d2105](https://github.com/Supamiu/ffxiv-teamcraft/commit/65d2105)), closes [#69](https://github.com/Supamiu/ffxiv-teamcraft/issues/69)
+* enable list copy for your own list ([a86baf7](https://github.com/Supamiu/ffxiv-teamcraft/commit/a86baf7))
+* hide completed rows on list details ([8988883](https://github.com/Supamiu/ffxiv-teamcraft/commit/8988883))
+* new popup for patreon support, will be hidden once the goal is reached ([a530c0f](https://github.com/Supamiu/ffxiv-teamcraft/commit/a530c0f))
+* rename list ([0087795](https://github.com/Supamiu/ffxiv-teamcraft/commit/0087795)), closes [#67](https://github.com/Supamiu/ffxiv-teamcraft/issues/67)
+* see price for a given craft in pricing view ([11713ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/11713ef)), closes [#68](https://github.com/Supamiu/ffxiv-teamcraft/issues/68)
+
+
+### Performance Improvements
+
+* change node informations to use only what's needed ([20a1cb6](https://github.com/Supamiu/ffxiv-teamcraft/commit/20a1cb6))
+* remove useless addedAt property on some list rows ([8f5ef35](https://github.com/Supamiu/ffxiv-teamcraft/commit/8f5ef35))
+* remove useless data in ingredients ([d776b3e](https://github.com/Supamiu/ffxiv-teamcraft/commit/d776b3e))
+* use id instead of full path for icons ([89fc655](https://github.com/Supamiu/ffxiv-teamcraft/commit/89fc655))
+
+
+
 <a name="2.2.4"></a>
 ## [2.2.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.3...v2.2.4) (2017-10-12)
 
