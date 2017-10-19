@@ -29,6 +29,10 @@ body {
     }
 }
 
+.mat-expansion-panel-content.mat-expanded {
+    overflow: visible !important;
+}
+
 .nofix {
     .mat-form-field-infix {
         border-top: none !important;

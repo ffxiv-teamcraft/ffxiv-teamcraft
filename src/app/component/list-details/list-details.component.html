@@ -157,7 +157,7 @@
         </section>
 
         <section *ngIf="zoneBreakdownToggle">
-            <md-expansion-panel expanded="true">
+            <md-expansion-panel expanded="true" class="{{expanded?'overflow':null}}">
                 <md-expansion-panel-header>
                     <md-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</md-panel-title>
                 </md-expansion-panel-header>
