@@ -12,6 +12,9 @@ export class TooltipComponent {
     @Input()
     id: number;
 
+    @Input()
+    disabled = false;
+
     displayed = false;
 
     template: string;

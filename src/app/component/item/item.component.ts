@@ -123,6 +123,10 @@ export class ItemComponent implements OnInit {
                 private localizedData: LocalizedDataService) {
     }
 
+    isDraft(): boolean {
+        return this.item.id.toString().indexOf('draft') > -1;
+    }
+
     toggleAlarm(): void {
         this.spawnAlarm = !this.spawnAlarm;
         if (this.spawnAlarm) {

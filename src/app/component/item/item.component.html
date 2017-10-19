@@ -1,9 +1,9 @@
 <!--Layout for desktop browsers-->
 <md-list-item *ngIf="!isMobile">
     <div class="item-col-left">
-        <app-tooltip [id]="item.id">
+        <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
-                <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
+                <a md-list-avatar disabled="isDraft()" href="{{getXivdbLink(item)}}" target="_blank">
                     <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
                 </a>
                 <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
