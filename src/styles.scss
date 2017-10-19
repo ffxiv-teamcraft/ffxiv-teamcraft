@@ -29,6 +29,10 @@ body {
     }
 }
 
+.mat-expansion-panel-content.mat-expanded {
+    overflow: visible !important;
+}
+
 
 .mat-input-subscript-wrapper {
     margin-top: 0 !important;

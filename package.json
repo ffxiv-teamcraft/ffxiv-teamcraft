@@ -33,6 +33,7 @@
     "@ngx-translate/core": "^8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "@types/jwt-decode": "^1.4.30",
+    "@types/semver": "^5.4.0",
     "angularfire2": "^4.0.0-rc.2",
     "core-js": "^2.5.1",
     "firebase": "^4.3.1",
@@ -40,6 +41,7 @@
     "jwt-decode": "^2.2.0",
     "ngx-clipboard": "^8.1.0",
     "rxjs": "^5.4.3",
+    "semver": "^5.4.1",
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
