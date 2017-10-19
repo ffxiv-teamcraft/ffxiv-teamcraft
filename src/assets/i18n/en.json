@@ -134,5 +134,6 @@
     "xivdb_cart_import": "Importing from xivdb shopping cart",
     "Or": "or",
     "Make_donation": "Make a donation",
-    "Data_from_gt": "Data provided by garlandtools.org"
+    "Data_from_gt": "Data provided by garlandtools.org",
+    "Hide_completed": "Hide completed rows"
 }

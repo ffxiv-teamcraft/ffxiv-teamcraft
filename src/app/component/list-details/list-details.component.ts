@@ -64,6 +64,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         {job: 'WVR', level: 70, checked: true, name: 'weaver'}
     ];
 
+    hideCompleted = false;
+
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
     private filterTrigger = new Subject<void>();
@@ -144,16 +146,18 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
                             const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                            if (filter === undefined) {
-                                return;
+                            if (filter !== undefined) {
+                                item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                             }
-                            item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                         }
                         if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
                                 const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
                                 item.hidden = !filter.checked || craft.level > filter.level;
                             }
+                        }
+                        if (item.done >= item.amount_needed && this.hideCompleted) {
+                            item.hidden = true;
                         }
                     });
                     return list;
@@ -302,6 +306,11 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     public toggleZoneBreakdown(): void {
         this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
+    }
+
+    public toggleHideCompleted(): void {
+        this.hideCompleted = !this.hideCompleted;
+        this.triggerFilter();
     }
 
     public rename(): void {
