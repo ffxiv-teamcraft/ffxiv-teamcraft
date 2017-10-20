@@ -16,6 +16,8 @@ import {SearchFilter} from '../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../popup/bulk-addition-popup/bulk-addition-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 
+declare const ga: Function;
+
 @Component({
     selector: 'app-recipes',
     templateUrl: './recipes.component.html',
@@ -200,6 +202,7 @@ export class RecipesComponent implements OnInit {
     addAllToNewList(): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
+            ga('send', 'event', 'List', 'creation');
             list.name = res;
             this.listService.push(list).then(l => {
                 this.addAllRecipes(list, l.key);
@@ -210,6 +213,7 @@ export class RecipesComponent implements OnInit {
     addToNewList(recipe: any, amount: string): void {
         this.dialog.open(ListNamePopupComponent).afterClosed().subscribe(res => {
             const list = new List();
+            ga('send', 'event', 'List', 'creation');
             list.name = res;
             this.listService.push(list).then(l => {
                 this.addRecipe(recipe, list, l.key, amount);
