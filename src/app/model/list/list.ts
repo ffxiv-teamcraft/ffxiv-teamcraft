@@ -22,7 +22,6 @@ export class List extends FirebaseDataModel {
 
     constructor() {
         super();
-        ga('send', 'event', 'List', 'creation');
     }
 
     public clone(): List {
@@ -35,6 +34,8 @@ export class List extends FirebaseDataModel {
         clone.name = this.name;
         clone.version = this.version || '1.0.0';
         delete clone.$key;
+        ga('send', 'event', 'List', 'creation');
+        ga('send', 'event', 'List', 'clone');
         return clone;
     }
 
