@@ -19,6 +19,12 @@ body {
     background-color: mat-color(map-get($dark-theme, warn)) !important;
 }
 
+app-item {
+    .mat-list-item-content {
+        height: inherit !important;
+    }
+}
+
 .mat-content {
     align-items: center;
 }
