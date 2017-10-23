@@ -149,12 +149,14 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                             if (filter !== undefined) {
                                 item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
                             }
-                        }
-                        if (item.craftedBy !== undefined) {
+                        } else if (item.craftedBy !== undefined) {
                             for (const craft of item.craftedBy) {
                                 const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
                                 item.hidden = !filter.checked || craft.level > filter.level;
                             }
+                        } else {
+                            // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
+                            item.hidden = false;
                         }
                         if (item.done >= item.amount_needed && this.hideCompleted) {
                             item.hidden = true;
