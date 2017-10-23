@@ -1,5 +1,5 @@
 <!--Layout for desktop browsers-->
-<md-list-item *ngIf="!isMobile" class="{{even?'even':null}}">
+<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}}">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
