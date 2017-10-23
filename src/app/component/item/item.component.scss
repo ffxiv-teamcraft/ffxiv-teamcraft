@@ -1,6 +1,9 @@
 @import "../../../theme.scss";
 
 :host {
+    .even {
+        background-color: rgba(123, 123, 123, .2);
+    }
 
     // Item Column Defaults
     [class^=item-col] {

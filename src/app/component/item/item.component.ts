@@ -55,6 +55,9 @@ export class ItemComponent implements OnInit {
     @Input()
     showTimer = false;
 
+    @Input()
+    even = false;
+
     timer: string;
 
     timerMinutes = 0;

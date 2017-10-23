@@ -146,9 +146,10 @@
                     <md-panel-title>{{'Gathering'| translate}}</md-panel-title>
                 </md-expansion-panel-header>
                 <md-list dense>
-                    <div *ngFor="let gather of orderGatherings(list?.gathers)">
+                    <div *ngFor="let gather of orderGatherings(list?.gathers); let i = index">
                         <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
-                                  [item]="gather" [showTimer]="true" [showRequiredBy]="true" [list]="list"></app-item>
+                                  [item]="gather" [showTimer]="true" [showRequiredBy]="true" [list]="list"
+                        [even]="i%2==0"></app-item>
                     </div>
                 </md-list>
             </md-expansion-panel>
@@ -168,11 +169,12 @@
                     <md-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</md-panel-title>
                 </md-expansion-panel-header>
                 <md-list dense>
-                    <div *ngFor="let row of zoneBreakdown?.rows">
+                    <div *ngFor="let row of zoneBreakdown?.rows; let i = index">
                         <h3 md-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
                         <div *ngFor="let item of row.items">
                             <app-item [list]="list" (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
-                                      [item]="item" [showTimer]="true" [showRequiredBy]="true"></app-item>
+                                      [item]="item" [showTimer]="true" [showRequiredBy]="true"
+                            [even]="i%2==0"></app-item>
                         </div>
                         <md-divider class="zone-divider"></md-divider>
                     </div>

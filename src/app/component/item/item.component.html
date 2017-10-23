@@ -1,5 +1,5 @@
 <!--Layout for desktop browsers-->
-<md-list-item *ngIf="!isMobile">
+<md-list-item *ngIf="!isMobile" class="{{even?'even':null}}">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
@@ -139,7 +139,7 @@
     </div>
 </md-list-item>
 
-<md-list-item *ngIf="isMobile" class="mobile">
+<md-list-item *ngIf="isMobile" class="mobile {{even?'even':null}}">
     <div md-list-avatar class="icon">
         <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
             <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
