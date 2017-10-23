@@ -187,7 +187,9 @@
                                 (done)="setDone($event)"
                                 [data]="orderPreCrafts(list?.preCrafts)"
                                 [showRequirements]="true"
-                                [title]="'Pre_crafts'| translate" [showRequiredBy]="true"></app-list-details-panel>
+                                [title]="'Pre_crafts'| translate"
+                                [showRequiredBy]="true"
+                                [recipe]="true"></app-list-details-panel>
 
         <app-list-details-panel [list]="list"
                                 (update)="update()"
