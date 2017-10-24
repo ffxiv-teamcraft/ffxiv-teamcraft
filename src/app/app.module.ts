@@ -81,6 +81,7 @@ import {CartImportComponent} from './component/cart-import/cart-import.component
 import {TooltipModule} from './tooltip/tooltip.module';
 import {DonationModule} from './donation/donation.module';
 import { FishDetailsPopupComponent } from './component/popup/fish-details-popup/fish-details-popup.component';
+import {MapModule} from './map/map.module';
 
 const routes: Routes = [
     {
@@ -218,6 +219,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         PipesModule,
         TooltipModule,
         DonationModule,
+        MapModule,
     ],
     entryComponents: [
         ListNamePopupComponent,

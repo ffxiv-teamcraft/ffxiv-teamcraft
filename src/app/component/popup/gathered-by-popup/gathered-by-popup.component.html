@@ -14,12 +14,8 @@
                     {{node.limitType | i18n}}
                 </md-chip>
             </md-chip-list>
-            <p md-line *ngIf="node.coords !== undefined">
-                X:{{node.coords[0]}} Y:{{node.coords[1]}}
-            </p>
-            <p md-line *ngIf="node.x !== undefined && node.y !== undefined">
-                X:{{node.x}} Y:{{node.y}}
-            </p>
+            <app-map-position md-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
+                              [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
             <span>
             <b md-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
             <span md-line *ngIf="node.time !== undefined">
