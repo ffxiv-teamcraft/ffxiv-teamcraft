@@ -1,0 +1,38 @@
+<h2 md-dialog-title>{{item.id | itemName | i18n}}</h2>
+<!--If we're loading the informations, simply show a spinner-->
+<div md-dialog-content *ngIf="loading">
+    <md-spinner></md-spinner>
+</div>
+<div md-dialog-content *ngIf="!loading" class="content">
+    <div class="icon-container">
+        <img src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}" class="item-icon">
+    </div>
+    <h3>Spots</h3>
+    <div *ngFor="let spot of fish.spots" class="spot-row">
+        <span class="place-name">{{getNode(spot.spot).zoneid | placeName | i18n}} - {{getNode(spot.spot).areaid | placeName |
+            i18n}}</span>
+        <br>
+        <span class="place-coords">X: {{getNode(spot.spot).x}} - Y: {{getNode(spot.spot).y}}</span>
+        <div class="schedule" *ngIf="spot.during !== undefined">
+            <md-icon class="schedule-icon">schedule</md-icon>
+            {{spot.during.start}} - {{spot.during.end}}
+        </div>
+        <md-list *ngIf="spot.weather !== undefined" class="weather-icons" dense>
+            <h4 md-subheader>Weather</h4>
+            <md-list-item *ngFor="let weather of spot.weather">
+                <img md-list-avatar class="weather-icon"
+                     src="https://www.garlandtools.org/db/icons/weather/{{weather}}.png"
+                     alt="{{weather}}">
+                <p md-line>{{getWeatherName(weather) | i18n}}</p>
+            </md-list-item>
+        </md-list>
+        <md-list *ngIf="spot.bait !== undefined" class="baits" dense>
+            <h4 md-subheader>Baits</h4>
+            <md-list-item *ngFor="let bait of spot.bait">
+                <img md-list-avatar src="{{getBaitIcon(bait) | icon}}" alt="">
+                <p md-line>{{bait | itemName | i18n}}</p>
+            </md-list-item>
+        </md-list>
+        <md-divider></md-divider>
+    </div>
+</div>

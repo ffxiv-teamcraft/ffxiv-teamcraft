@@ -20,6 +20,7 @@ import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {RequiredByPopupComponent} from '../popup/required-by-popup/required-by-popup.component';
+import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -278,9 +279,17 @@ export class ItemComponent implements OnInit {
     }
 
     public openGatheredByDetails(item: ListRow): void {
-        this.dialog.open(GatheredByPopupComponent, {
-            data: item
-        });
+        // If it is a MIN/BOT node
+        if (item.gatheredBy.type > -1) {
+            this.dialog.open(GatheredByPopupComponent, {
+                data: item
+            });
+        } else {
+            // Else it's a fish
+            this.dialog.open(FishDetailsPopupComponent, {
+                data: item
+            });
+        }
     }
 
     public openDropsDetails(item: ListRow): void {

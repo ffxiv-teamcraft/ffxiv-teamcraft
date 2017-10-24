@@ -6,4 +6,6 @@ export interface GatheringNode {
     items: any[];
     time?: number[];
     uptime?: number;
+    x?: number;
+    y?: number;
 }

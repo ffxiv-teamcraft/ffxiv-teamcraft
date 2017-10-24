@@ -13,6 +13,7 @@ import {Vendor} from '../list/vendor';
 import {I18nName} from '../list/i18n-name';
 import {DataService} from '../../core/api/data.service';
 import {Trade} from '../list/trade';
+import {Fish} from './fish';
 
 export class Item implements I18nData {
 
@@ -45,6 +46,7 @@ export class Item implements I18nData {
     reducedFrom?: number[];
     desynthedFrom?: number[];
     fishingSpots?: number[];
+    fish?: Fish;
     seeds?: number[];
 
     public hasNodes(): boolean {

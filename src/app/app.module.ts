@@ -80,6 +80,7 @@ import {RequiredByPopupComponent} from './component/popup/required-by-popup/requ
 import {CartImportComponent} from './component/cart-import/cart-import.component';
 import {TooltipModule} from './tooltip/tooltip.module';
 import {DonationModule} from './donation/donation.module';
+import { FishDetailsPopupComponent } from './component/popup/fish-details-popup/fish-details-popup.component';
 
 const routes: Routes = [
     {
@@ -155,6 +156,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         NameEditPopupComponent,
         RequiredByPopupComponent,
         CartImportComponent,
+        FishDetailsPopupComponent,
     ],
     imports: [
         FlexLayoutModule,
@@ -239,6 +241,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
         RequiredByPopupComponent,
+        FishDetailsPopupComponent,
     ],
     providers: [
         UserService,

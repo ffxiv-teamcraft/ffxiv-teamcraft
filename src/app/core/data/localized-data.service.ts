@@ -14,11 +14,14 @@ export class LocalizedDataService {
 
     private mobs: { [index: number]: I18nName };
 
+    private weathers: { [index: number]: I18nName };
+
     constructor(private http: HttpClient) {
         this.load('items').subscribe(items => this.items = items);
         this.load('places').subscribe(places => this.places = places);
         this.load('npcs').subscribe(npcs => this.npcs = npcs);
         this.load('mobs').subscribe(mobs => this.mobs = mobs);
+        this.load('weathers').subscribe(weathers => this.weathers = weathers);
     }
 
     public getItem(id: number): I18nName {
@@ -37,6 +40,10 @@ export class LocalizedDataService {
         return this.getRow(this.mobs, id);
     }
 
+    public getWeather(name: string): I18nName {
+        return this.getRowByENName(this.weathers, name);
+    }
+
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
         if (array === undefined) {
             // I18n strings (comment used for search matching)
@@ -48,6 +55,25 @@ export class LocalizedDataService {
             };
         }
         return array[id];
+    }
+
+    /**
+     * Specific case for weather, might be usefule for other data.
+     * @param array
+     * @param name
+     * @returns {I18nName}
+     */
+    private getRowByENName(array: { [index: number]: I18nName }, name: string): I18nName {
+        if (array === undefined) {
+            // I18n strings (comment used for search matching)
+            return {
+                'en': 'Loading',
+                'fr': 'Chargement en cours',
+                'ja': 'ロード中',
+                'de': 'Laden'
+            };
+        }
+        return Object.keys(array).map(key => array[key]).find(row => row.en === name);
     }
 
     private load(fileName: string): Observable<{ [index: number]: I18nName }> {
