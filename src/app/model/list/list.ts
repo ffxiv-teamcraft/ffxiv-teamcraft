@@ -144,7 +144,12 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                this.setDone(requirementItem, MathTools.absoluteCeil(requirement.amount * amount / requirementItem.yield));
+                let nextAmount = requirement.amount * amount;
+                // If this is not a precraft, we have to take yields in consideration.
+                if (requirementItem.requires === undefined) {
+                    nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
+                }
+                this.setDone(requirementItem, nextAmount);
             }
         }
     }
@@ -220,6 +225,9 @@ export class List extends FirebaseDataModel {
                             yield: 1
                         });
                     } else {
+                        if (element.id === 19849) {
+                            console.log(element.amount, addition.amount);
+                        }
                         this.addToOthers({
                             id: elementDetails.id,
                             icon: elementDetails.icon,

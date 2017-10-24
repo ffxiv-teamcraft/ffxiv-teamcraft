@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.2"></a>
+## [2.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.3.1...v2.3.2) (2017-10-23)
+
+
+### Bug Fixes
+
+* bad amounts for specific list ([4828442](https://github.com/Supamiu/ffxiv-teamcraft/commit/4828442)), closes [#85](https://github.com/Supamiu/ffxiv-teamcraft/issues/85)
+
+
+
+<a name="2.3.1"></a>
+## [2.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.3.0...v2.3.1) (2017-10-23)
+
+
+### Bug Fixes
+
+* bad tracking for list creation ([a576056](https://github.com/Supamiu/ffxiv-teamcraft/commit/a576056))
+* broken item name for drafts ([8e5eb4a](https://github.com/Supamiu/ffxiv-teamcraft/commit/8e5eb4a))
+* completed Others won't reappear after filter toggled to off ([e9d8ff1](https://github.com/Supamiu/ffxiv-teamcraft/commit/e9d8ff1))
+* typo in FR strings ([bf7ab7e](https://github.com/Supamiu/ffxiv-teamcraft/commit/bf7ab7e))
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.2.4...v2.3.0) (2017-10-19)
 

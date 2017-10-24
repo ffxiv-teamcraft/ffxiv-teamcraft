@@ -1,5 +1,5 @@
 <!--Layout for desktop browsers-->
-<md-list-item *ngIf="!isMobile">
+<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}}">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
@@ -50,7 +50,7 @@
                               maxlength="{{getAmount()?.toString().length}}"
                               min="0"
                               [value]="item.done | ceil"
-                              (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+                              (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         </div>
         <div class="done-check">
             <a md-mini-fab *ngIf="getAmount() > (item.done | ceil)"
@@ -161,7 +161,7 @@
                           maxlength="{{getAmount()?.toString().length}}"
                           min="0"
                           [value]="item.done | ceil"
-                          (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+                          (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         <button *ngIf="showRequirements" md-icon-button class="requirements"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
