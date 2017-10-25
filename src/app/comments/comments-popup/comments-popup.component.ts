@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {CommentsService} from '../comments.service';
 import {ResourceComment} from '../resource-comment';
 import {MD_DIALOG_DATA} from '@angular/material';
@@ -18,8 +18,10 @@ export class CommentsPopupComponent implements OnInit {
 
     userId: number;
 
+    @ViewChild('f') myNgForm;
+
     constructor(private commentsService: CommentsService,
-                @Inject(MD_DIALOG_DATA) public data: { resourceUri: string, name: string },
+                @Inject(MD_DIALOG_DATA) public data: { resourceUri: string, name: string, isOwnList: boolean },
                 private userService: UserService) {
         this.userService.getUserData().subscribe(user => {
             if (user.name === 'Anonymous') {
@@ -35,7 +37,10 @@ export class CommentsPopupComponent implements OnInit {
         comment.date = new Date().toISOString();
         comment.content = this.control.value.comment;
         comment.authorId = this.userId;
-        this.commentsService.push(comment, this.data.resourceUri);
+        this.commentsService.push(comment, this.data.resourceUri).then(() => {
+            this.control.reset();
+            this.myNgForm.resetForm();
+        });
     }
 
     deleteComment(key: string): void {

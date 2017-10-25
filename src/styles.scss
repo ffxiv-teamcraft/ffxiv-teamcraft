@@ -39,9 +39,10 @@ app-item {
     overflow: visible !important;
 }
 
-
-.mat-input-subscript-wrapper {
-    margin-top: 0 !important;
+.compact {
+    .mat-input-subscript-wrapper {
+        margin-top: 0 !important;
+    }
 }
 
 .nofix {

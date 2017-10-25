@@ -1,13 +1,14 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MdDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
+import {CommentsService} from '../comments.service';
 
 @Component({
     selector: 'app-comments-button',
     templateUrl: './comments-button.component.html',
     styleUrls: ['./comments-button.component.scss']
 })
-export class CommentsButtonComponent {
+export class CommentsButtonComponent implements OnInit {
 
     @Input()
     uri: string;
@@ -15,11 +16,20 @@ export class CommentsButtonComponent {
     @Input()
     name: string;
 
-    constructor(private dialog: MdDialog) {
+    @Input()
+    isOwnList = false;
+
+    amount: number;
+
+    constructor(private dialog: MdDialog, private commentsService: CommentsService) {
     }
 
     openPopup(): void {
-        this.dialog.open(CommentsPopupComponent, {data: {name: this.name, resourceUri: this.uri}});
+        this.dialog.open(CommentsPopupComponent, {data: {name: this.name, resourceUri: this.uri, isOwnList: this.isOwnList}});
+    }
+
+    ngOnInit(): void {
+        this.commentsService.getAll(this.uri).subscribe(comments => this.amount = comments.length);
     }
 
 }

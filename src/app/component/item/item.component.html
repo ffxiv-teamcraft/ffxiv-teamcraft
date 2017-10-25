@@ -10,7 +10,8 @@
             </div>
         </app-tooltip>
         <div class="item-name" md-line>{{item.id | itemName | i18n}}
-            <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"></app-comments-button>
+            <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+                                 [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
         </div>
         <button *ngIf="showRequirements" md-icon-button class="warning"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"

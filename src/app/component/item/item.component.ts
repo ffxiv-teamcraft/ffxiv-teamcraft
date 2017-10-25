@@ -21,8 +21,8 @@ import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyag
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {RequiredByPopupComponent} from '../popup/required-by-popup/required-by-popup.component';
 import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
-import {ListService} from '../../core/firebase/list.service';
-import {Observable} from 'rxjs/Observable';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {UserInfo} from 'firebase/app';
 
 @Component({
     selector: 'app-item',
@@ -60,6 +60,8 @@ export class ItemComponent implements OnInit {
 
     @Input()
     even = false;
+
+    user: UserInfo;
 
     itemUri: string;
 
@@ -129,7 +131,7 @@ export class ItemComponent implements OnInit {
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
                 private localizedData: LocalizedDataService,
-                private listService: ListService) {
+                private auth: AngularFireAuth) {
     }
 
     isDraft(): boolean {
@@ -150,13 +152,16 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.auth.idToken.subscribe(user => {
+            this.user = user;
+        });
+
         this.spawnAlarm = localStorage.getItem(this.item.id + ':spawnAlarm') === 'true' || false;
 
-        this.listService.getUri(this.list.$key).map(listUri => {
-            const listCategory = this.list.getCategory(this.item);
-            const index = this.list[listCategory].indexOf(this.item);
-            return `${listUri}/${listCategory}/${index}`;
-        }).subscribe(uri => this.itemUri = uri);
+        const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
+        const listCategory = this.list.getCategory(this.item);
+        const index = this.list[listCategory].indexOf(this.item);
+        this.itemUri = `${listUri}/${listCategory}/${index}`;
 
         if (this.hasTimers()) {
             this.etimeService.getEorzeanTime().subscribe(date => {
