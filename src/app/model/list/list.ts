@@ -244,4 +244,30 @@ export class List extends FirebaseDataModel {
         }
         return this;
     }
+
+    /**
+     * Returns the name of the category where you can find a given row.
+     * Useful for routing in firebase database.
+     * @param {ListRow} row
+     * @returns {string}
+     */
+    public getCategory(row: ListRow): string {
+        if (this.recipes.indexOf(row) > -1) {
+            return 'recipes';
+        }
+        if (this.gathers.indexOf(row) > -1) {
+            return 'gathers';
+        }
+        if (this.others.indexOf(row) > -1) {
+            return 'others';
+        }
+        if (this.preCrafts.indexOf(row) > -1) {
+            return 'preCrafts';
+        }
+        if (this.crystals.indexOf(row) > -1) {
+            return 'crystals';
+        }
+        // Should never happen, but still needs an exception just in case.
+        throw new Error('Row not in list');
+    }
 }

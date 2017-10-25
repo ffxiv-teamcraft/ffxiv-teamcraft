@@ -95,7 +95,7 @@ export class DataService {
     }
 
     public getCharacter(id: number): Observable<any> {
-        return this.http.get<any>(`https://xivsync.com/character/parse/${id}`);
+        return this.http.get<any>(`https://xivsync.com/character/parse/${id}`).map(result => result.data);
     }
 
     private getGarlandData(uri: string): Observable<any> {

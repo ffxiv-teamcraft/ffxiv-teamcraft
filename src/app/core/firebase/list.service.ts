@@ -31,6 +31,17 @@ export class ListService extends StoredDataService<List> {
     }
 
     /**
+     * Gets the firebase uri for a given list
+     * @param uid The uid of the list-details
+     * @returns {Observable<R>}
+     */
+    public getUri(uid: string): Observable<string> {
+        return this.af.authState.map(state => {
+            return `/users/${state.uid}/lists/${uid}`;
+        });
+    }
+
+    /**
      * Gets an external list-details (one that doesn't belong to the current user)
      *
      * @param uuid The user uid
