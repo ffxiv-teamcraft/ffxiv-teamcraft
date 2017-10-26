@@ -5,6 +5,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class ListService extends StoredDataService<List> {
@@ -39,9 +40,16 @@ export class ListService extends StoredDataService<List> {
     public getUserList(uuid: string, uid: string): Observable<List> {
         return this.firebase.object(`/users/${uuid}/lists/${uid}`).map(list => {
             const res = this.serializer.deserialize<List>(list, List);
+            res.authorUid = uuid;
             res.$key = uid;
             return res;
         });
+    }
+
+    public update(uid: string, value: List, params?: any): firebase.Promise<void> {
+        delete value.authorUid;
+        delete value.$key;
+        return super.update(uid, value, params);
     }
 
     getBaseUri(params?: any): Observable<string> {

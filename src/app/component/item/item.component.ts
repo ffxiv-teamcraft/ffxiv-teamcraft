@@ -21,6 +21,8 @@ import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyag
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {RequiredByPopupComponent} from '../popup/required-by-popup/required-by-popup.component';
 import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {UserInfo} from 'firebase/app';
 
 @Component({
     selector: 'app-item',
@@ -58,6 +60,10 @@ export class ItemComponent implements OnInit {
 
     @Input()
     even = false;
+
+    user: UserInfo;
+
+    itemUri: string;
 
     timer: string;
 
@@ -124,7 +130,8 @@ export class ItemComponent implements OnInit {
                 private dialog: MdDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
-                private localizedData: LocalizedDataService) {
+                private localizedData: LocalizedDataService,
+                private auth: AngularFireAuth) {
     }
 
     isDraft(): boolean {
@@ -145,7 +152,17 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.auth.idToken.subscribe(user => {
+            this.user = user;
+        });
+
         this.spawnAlarm = localStorage.getItem(this.item.id + ':spawnAlarm') === 'true' || false;
+
+        const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
+        const listCategory = this.list.getCategory(this.item);
+        const index = this.list[listCategory].indexOf(this.item);
+        this.itemUri = `${listUri}/${listCategory}/${index}`;
+
         if (this.hasTimers()) {
             this.etimeService.getEorzeanTime().subscribe(date => {
                 const timers = [];

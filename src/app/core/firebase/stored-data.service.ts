@@ -18,10 +18,11 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * Gets one object from database as T instance
      *
      * @param uid
+     * @param params
      * @returns {Observable<R>}
      */
-    public get(uid: string): Observable<T> {
-        return this.getBaseUri().mergeMap(uri => {
+    public get(uid: string, params?: any): Observable<T> {
+        return this.getBaseUri(params).mergeMap(uri => {
             return this.oneRef(uri, uid).map(obj => {
                 const res: T = this.serializer.deserialize<T>(obj, this.getClass());
                 res.$key = obj.$key;
@@ -35,8 +36,8 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      *
      * @returns {Observable<R>}
      */
-    public getAll(): Observable<T[]> {
-        return this.getBaseUri().mergeMap(uri => {
+    public getAll(params?: any): Observable<T[]> {
+        return this.getBaseUri(params).mergeMap(uri => {
             return this.listRef(uri).map(obj => {
                 const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
                 res.forEach((row, index) => {
@@ -51,11 +52,12 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * Pushes an item in the database list-details.
      *
      * @param item
+     * @param params
      * @returns {firebase.database.ThenableReference}
      */
-    public push(item: T): Promise<any> {
+    public push(item: T, params?: any): Promise<any> {
         return new Promise<any>(resolve => {
-            return this.getBaseUri().subscribe(uri => {
+            return this.getBaseUri(params).subscribe(uri => {
                 return this.listRef(`${uri}`).push(item).then(resolve);
             });
         });
@@ -82,11 +84,12 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * removes the given item in the current reference.
      *
      * @param uid
+     * @param params
      * @returns {firebase.Promise<void>}
      */
-    public remove(uid: string): Promise<void> {
+    public remove(uid: string, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri().subscribe(uri => {
+            return this.getBaseUri(params).subscribe(uri => {
                 return this.oneRef(uri, uid).remove().then(resolve);
             });
         });

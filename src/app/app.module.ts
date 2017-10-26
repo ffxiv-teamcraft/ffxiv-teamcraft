@@ -82,6 +82,7 @@ import {TooltipModule} from './tooltip/tooltip.module';
 import {DonationModule} from './donation/donation.module';
 import { FishDetailsPopupComponent } from './component/popup/fish-details-popup/fish-details-popup.component';
 import {MapModule} from './map/map.module';
+import {CommentsModule} from './comments/comments.module';
 
 const routes: Routes = [
     {
@@ -220,6 +221,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         TooltipModule,
         DonationModule,
         MapModule,
+        CommentsModule,
     ],
     entryComponents: [
         ListNamePopupComponent,

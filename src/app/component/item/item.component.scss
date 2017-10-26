@@ -5,6 +5,10 @@
         background-color: rgba(123, 123, 123, .2);
     }
 
+    .item-name {
+        display: flex !important;
+        align-items: center !important;
+    }
     // Item Column Defaults
     [class^=item-col] {
         display: flex;
