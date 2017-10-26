@@ -53,6 +53,7 @@
                               maxlength="{{getAmount()?.toString().length}}"
                               min="0"
                               [value]="item.done | ceil"
+                              [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
                               (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         </div>
         <div class="done-check">
@@ -167,6 +168,7 @@
                           maxlength="{{getAmount()?.toString().length}}"
                           min="0"
                           [value]="item.done | ceil"
+                          [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
                           (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         <button *ngIf="showRequirements" md-icon-button class="requirements"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
