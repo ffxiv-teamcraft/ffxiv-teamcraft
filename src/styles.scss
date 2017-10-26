@@ -19,9 +19,10 @@ body {
     background-color: mat-color(map-get($dark-theme, warn)) !important;
 }
 
-app-item {
+.auto-height {
     .mat-list-item-content {
         height: inherit !important;
+        min-height: 72px;
     }
 }
 
