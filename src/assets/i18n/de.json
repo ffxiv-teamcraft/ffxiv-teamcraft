@@ -141,7 +141,7 @@
     "Required_crafts_amount": "Menge an Herstellungen",
 
     "SETTINGS": {
-        "title": "Settings",
-        "link_base": "Item links"
+        "title": "Einstellungen",
+        "link_base": "Gegenstandslink-Quelle"
     }
 }
