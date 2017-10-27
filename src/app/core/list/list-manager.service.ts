@@ -213,21 +213,21 @@ export class ListManagerService {
     }
 
     public upgradeList(list: List): Observable<List> {
-        const progressionBackup = [];
+        const backup = [];
         list.crystals.forEach(item => {
-            progressionBackup.push({array: 'crystals', item: item});
+            backup.push({array: 'crystals', item: item});
         });
         list.gathers.forEach(item => {
-            progressionBackup.push({array: 'gathers', item: item});
+            backup.push({array: 'gathers', item: item});
         });
         list.preCrafts.forEach(item => {
-            progressionBackup.push({array: 'preCrafts', item: item});
+            backup.push({array: 'preCrafts', item: item});
         });
         list.others.forEach(item => {
-            progressionBackup.push({array: 'others', item: item});
+            backup.push({array: 'others', item: item});
         });
         list.recipes.forEach(item => {
-            progressionBackup.push({array: 'recipes', item: item});
+            backup.push({array: 'recipes', item: item});
         });
         const add = [];
         list.recipes.forEach((recipe) => {
@@ -241,9 +241,12 @@ export class ListManagerService {
         let done = 0;
         return Observable.concat(...add)
             .map((resultList: List) => {
-                progressionBackup.forEach(row => {
+                backup.forEach(row => {
                     const listRow = resultList[row.array].find(item => item.id === row.item.id);
                     if (listRow !== undefined) {
+                        if (row.item.comments !== undefined) {
+                            listRow.comments = row.item.comments;
+                        }
                         listRow.done = row.item.done;
                         if (row.array === 'recipes') {
                             if (listRow.done > listRow.amount) {

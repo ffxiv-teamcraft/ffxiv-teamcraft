@@ -6,6 +6,7 @@ import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
+import {ResourceComment} from '../../comments/resource-comment';
 
 export class ListRow {
     addedAt?: number;
@@ -28,6 +29,8 @@ export class ListRow {
     desynths?: number[];
     vendors?: Vendor[];
     voyages?: I18nName[];
+
+    comments?: { [index: string]: ResourceComment };
 
     hidden?: boolean;
 }
