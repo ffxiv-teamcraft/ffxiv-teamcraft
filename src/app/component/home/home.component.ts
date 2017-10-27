@@ -10,6 +10,8 @@ export class HomeComponent {
 
     list_count = this.firebase.object('/list_count');
 
+    lists_created = this.firebase.object('/lists_created');
+
     constructor(private firebase: AngularFireDatabase) {
     }
 
