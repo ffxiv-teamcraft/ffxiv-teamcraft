@@ -227,9 +227,6 @@ export class List extends FirebaseDataModel {
                             yield: 1
                         });
                     } else {
-                        if (element.id === 19849) {
-                            console.log(element.amount, addition.amount);
-                        }
                         this.addToOthers({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
