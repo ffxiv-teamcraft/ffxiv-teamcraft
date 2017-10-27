@@ -1,7 +1,9 @@
 <md-list-item>
     <div md-list-avatar>
         <app-tooltip [id]="recipe.id">
-            <img md-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
+            <a md-list-avatar href="{{recipe.id | itemLink | i18n}}">
+                <img md-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
+            </a>
         </app-tooltip>
     </div>
     <h3 md-line>{{recipe.id | itemName | i18n}}</h3>

@@ -15,7 +15,7 @@ export class TimerOptionsPopupComponent {
     public sounds = ['Wondrous_tales', 'LB_charged', 'Notification'];
 
     constructor() {
-        const stored = localStorage.getItem('timer:options');
+        const stored = localStorage.getItem('timer:settings');
         if (stored !== null) {
             this.options = JSON.parse(stored);
         }
@@ -23,7 +23,7 @@ export class TimerOptionsPopupComponent {
     }
 
     public persist(): void {
-        localStorage.setItem('timer:options', JSON.stringify(this.options));
+        localStorage.setItem('timer:settings', JSON.stringify(this.options));
     }
 
     public previewSound(): void {

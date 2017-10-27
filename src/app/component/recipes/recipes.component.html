@@ -87,7 +87,7 @@
     </div>
     <div *ngIf="recipes.length > 0 && !loading">
         <md-list-item *ngFor="let recipe of recipes">
-            <a md-list-avatar target="_blank">
+            <a md-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
                 <app-tooltip [id]="recipe.itemId">
                     <img md-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.itemId | itemName | i18n}}">
                 </app-tooltip>

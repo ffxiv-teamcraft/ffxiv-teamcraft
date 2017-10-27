@@ -138,5 +138,10 @@
     "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
     "Hide_completed": "Verstecke komplettierte Reihen",
     "Your_comment": "Dein Kommentar",
-    "Required_crafts_amount": "Menge an Herstellungen"
+    "Required_crafts_amount": "Menge an Herstellungen",
+
+    "SETTINGS": {
+        "title": "Settings",
+        "link_base": "Item links"
+    }
 }

@@ -139,5 +139,10 @@
     "Data_from_gt": "Données fournies par garlandtools.org",
     "Hide_completed": "Masquer les éléments complétés",
     "Your_comment": "Votre commentaire",
-    "Required_crafts_amount": "Nombre de crafts à faire"
+    "Required_crafts_amount": "Nombre de crafts à faire",
+
+    "SETTINGS": {
+        "title": "Options",
+        "link_base": "Liens des objets"
+    }
 }

@@ -80,16 +80,6 @@ export class DataService {
         });
     }
 
-    public getXivdbUrl(id: number, name: string): I18nName {
-        const urlName = name.replace(/ /g, '+').toLowerCase();
-        return {
-            fr: `http://fr.xivdb.com/item/${id}/${urlName}`,
-            en: `http://xivdb.com/item/${id}/${urlName}`,
-            de: `http://de.xivdb.com/item/${id}/${urlName}`,
-            ja: `http://ja.xivdb.com/item/${id}/${urlName}`
-        };
-    }
-
     public searchCharacter(name: string, server: string): Observable<any[]> {
         return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
             .map(res => res.data.results)

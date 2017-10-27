@@ -10,7 +10,6 @@ import {DesynthPopupComponent} from '../popup/desynth-popup/desynth-popup.compon
 import {CompactMasterbook} from '../../model/list/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
-import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 import {MathTools} from '../../tools/math-tools';
 import {List} from '../../model/list/list';
@@ -126,7 +125,6 @@ export class ItemComponent implements OnInit {
     };
 
     constructor(private i18n: I18nToolsService,
-                private data: DataService,
                 private dialog: MdDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
@@ -233,7 +231,7 @@ export class ItemComponent implements OnInit {
     }
 
     private getTimerOptions(): any {
-        return JSON.parse(localStorage.getItem('timer:options')) || {
+        return JSON.parse(localStorage.getItem('timer:settings')) || {
             sound: 'Notification',
             hoursBefore: 0
         };
@@ -366,12 +364,6 @@ export class ItemComponent implements OnInit {
         this.dialog.open(TradeDetailsPopupComponent, {
             data: item
         });
-    }
-
-    public getXivdbLink(item: ListRow): string {
-        const name = this.i18n.getName(this.localizedData.getItem(item.id));
-        const link = this.data.getXivdbUrl(item.id, name);
-        return this.i18n.getName(link);
     }
 
     public get isMobile(): boolean {
