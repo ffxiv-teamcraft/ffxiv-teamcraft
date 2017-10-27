@@ -23,193 +23,186 @@ export class ListManagerService {
                 protected i18n: I18nToolsService) {
     }
 
-    public addToList(itemId: number, plist: List, recipeId: string, amount = 1): Observable<List> {
-        return Observable
-            .of(plist)
-            .map(list => {
-                list.version = environment.version;
-                return list;
-            })
-            .mergeMap(list => {
-                return this.db.getItem(itemId)
-                    .mergeMap((data: ItemData) => {
-                        return data.item.getCraftedBy(this.htmlTools, this.db, this.gt)
-                            .map(crafted => {
-                                const craft = data.getCraft(recipeId);
-                                // We have to remove unused ingredient properties.
-                                craft.ingredients.forEach(i => {
-                                    delete i.quality;
-                                    delete i.stepid;
-                                    delete i.part;
-                                    delete i.phase;
-                                });
-                                const toAdd: ListRow = {
-                                    id: data.item.id,
-                                    icon: data.item.icon,
-                                    amount: amount,
-                                    done: 0,
-                                    yield: craft.yield || 1,
-                                    recipeId: recipeId,
-                                    requires: craft.ingredients,
-                                    craftedBy: crafted,
-                                    addedAt: Date.now()
-                                };
-                                const added = list.addToRecipes(toAdd);
-                                return list.addCraft([{
-                                    item: data.item,
-                                    data: data,
-                                    amount: added
-                                }], this.gt, this.i18n);
-                            })
-                            .mergeMap(l => {
-                                const precrafts = [];
+    public addToList(itemId: number, list: List, recipeId: string, amount = 1): Observable<List> {
+        list.version = environment.version;
+        return this.db.getItem(itemId)
+            .mergeMap((data: ItemData) => {
+                return data.item.getCraftedBy(this.htmlTools, this.db, this.gt)
+                    .map(crafted => {
+                        const craft = data.getCraft(recipeId);
+                        // We have to remove unused ingredient properties.
+                        craft.ingredients.forEach(i => {
+                            delete i.quality;
+                            delete i.stepid;
+                            delete i.part;
+                            delete i.phase;
+                        });
+                        const toAdd: ListRow = {
+                            id: data.item.id,
+                            icon: data.item.icon,
+                            amount: amount,
+                            done: 0,
+                            yield: craft.yield || 1,
+                            recipeId: recipeId,
+                            requires: craft.ingredients,
+                            craftedBy: crafted,
+                            addedAt: Date.now()
+                        };
+                        const added = list.addToRecipes(toAdd);
+                        return list.addCraft([{
+                            item: data.item,
+                            data: data,
+                            amount: added
+                        }], this.gt, this.i18n);
+                    })
+                    .mergeMap(l => {
+                        const precrafts = [];
+                        l.preCrafts.forEach(craft => {
+                            if (craft.craftedBy === undefined) {
+                                precrafts.push(data.getIngredient(craft.id)
+                                    .getCraftedBy(this.htmlTools, this.db, this.gt));
+                            }
+                        });
+                        if (precrafts.length > 0) {
+                            return Observable.combineLatest(...precrafts, (...details: Craft[]) => {
+                                const crafts = [].concat.apply([], details);
                                 l.preCrafts.forEach(craft => {
                                     if (craft.craftedBy === undefined) {
-                                        precrafts.push(data.getIngredient(craft.id)
-                                            .getCraftedBy(this.htmlTools, this.db, this.gt));
-                                    }
-                                });
-                                if (precrafts.length > 0) {
-                                    return Observable.combineLatest(...precrafts, (...details: Craft[]) => {
-                                        const crafts = [].concat.apply([], details);
-                                        l.preCrafts.forEach(craft => {
-                                            if (craft.craftedBy === undefined) {
-                                                craft.craftedBy = crafts.filter(c => c.itemId === craft.id);
-                                            }
-                                        });
-                                        return l;
-                                    });
-                                }
-                                return Observable.of(l);
-                            })
-                            .mergeMap(l => {
-                                const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
-                                list.forEachItem(item => {
-                                    const related = data.getIngredient(item.id);
-                                    if (related !== undefined && related.tradeSources !== undefined) {
-                                        trades.push(related.getTradeSources(this.db).map(ts => {
-                                            return {item: item, tradeSources: ts};
-                                        }));
-                                    }
-                                });
-                                if (trades.length > 0) {
-                                    return Observable.combineLatest(...trades, (...ptrades) => {
-                                        ptrades.forEach(ptrade => {
-                                            ptrade.item.tradeSources = ptrade.tradeSources;
-                                        });
-                                        return l;
-                                    });
-                                } else {
-                                    return Observable.of(l);
-                                }
-                            })
-                            .mergeMap(l => {
-                                const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
-                                list.forEachItem(item => {
-                                    const related = data.getIngredient(item.id);
-                                    if (related !== undefined && related.vendors !== undefined) {
-                                        vendors.push(related.getVendors(this.db).map(ts => {
-                                            return {item: item, vendors: ts};
-                                        }));
-                                    }
-                                });
-                                if (vendors.length > 0) {
-                                    return Observable.combineLatest(...vendors, (...pvendors) => {
-                                        pvendors.forEach(v => {
-                                            v.item.vendors = v.vendors;
-                                        });
-                                        return l;
-                                    });
-                                } else {
-                                    return Observable.of(l);
-                                }
-                            })
-                            .map(l => {
-                                l.forEachItem(i => {
-                                    const related = data.getIngredient(i.id);
-                                    if (related !== undefined && related.reducedFrom !== undefined) {
-                                        i.reducedFrom = related.getReducedFrom();
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                list.forEachItem(i => {
-                                    const related = data.getIngredient(i.id);
-                                    if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
-                                        i.desynths = related.getDesynths();
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                l.forEachItem(o => {
-                                    const related = data.getIngredient(o.id);
-                                    if (related !== undefined && related.instances !== undefined) {
-                                        const instances: Instance[] = [];
-                                        related.instances.forEach(id => {
-                                            const instance = this.gt.getInstance(id);
-                                            if (instance !== undefined) {
-                                                instances.push(instance);
-                                            }
-                                        });
-                                        o.instances = instances;
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                l.gathers.forEach(g => {
-                                    if (g.gatheredBy === undefined) {
-                                        g.gatheredBy = data.getIngredient(g.id).getGatheredBy(this.gt, this.htmlTools);
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                l.forEachItem(o => {
-                                    const related = data.getIngredient(o.id);
-                                    if (related !== undefined && related.seeds !== undefined) {
-                                        o.gardening = true;
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                l.forEachItem(o => {
-                                    const related = data.getIngredient(o.id);
-                                    if (related !== undefined && related.voyages !== undefined) {
-                                        o.voyages = related.getVoyages();
-                                    }
-                                });
-                                return l;
-                            })
-                            .map(l => {
-                                l.forEachItem(o => {
-                                    const related = data.getIngredient(o.id);
-                                    if (related !== undefined && related.drops !== undefined) {
-                                        related.drops.forEach(d => {
-                                            if (o.drops === undefined) {
-                                                o.drops = [];
-                                            }
-                                            const partial = data.getPartial(d.toString());
-                                            if (partial !== undefined) {
-                                                const drop: Drop = {
-                                                    id: d,
-                                                    zoneid: partial.obj.z,
-                                                    lvl: partial.obj.l
-                                                };
-                                                o.drops.push(drop);
-                                            }
-                                        });
+                                        craft.craftedBy = crafts.filter(c => c.itemId === craft.id);
                                     }
                                 });
                                 return l;
                             });
+                        }
+                        return Observable.of(l);
                     })
-                    .map(l => l.clean())
-                    .debounceTime(500);
-            });
+                    .mergeMap(l => {
+                        const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
+                        list.forEachItem(item => {
+                            const related = data.getIngredient(item.id);
+                            if (related !== undefined && related.tradeSources !== undefined) {
+                                trades.push(related.getTradeSources(this.db).map(ts => {
+                                    return {item: item, tradeSources: ts};
+                                }));
+                            }
+                        });
+                        if (trades.length > 0) {
+                            return Observable.combineLatest(...trades, (...ptrades) => {
+                                ptrades.forEach(ptrade => {
+                                    ptrade.item.tradeSources = ptrade.tradeSources;
+                                });
+                                return l;
+                            });
+                        } else {
+                            return Observable.of(l);
+                        }
+                    })
+                    .mergeMap(l => {
+                        const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
+                        list.forEachItem(item => {
+                            const related = data.getIngredient(item.id);
+                            if (related !== undefined && related.vendors !== undefined) {
+                                vendors.push(related.getVendors(this.db).map(ts => {
+                                    return {item: item, vendors: ts};
+                                }));
+                            }
+                        });
+                        if (vendors.length > 0) {
+                            return Observable.combineLatest(...vendors, (...pvendors) => {
+                                pvendors.forEach(v => {
+                                    v.item.vendors = v.vendors;
+                                });
+                                return l;
+                            });
+                        } else {
+                            return Observable.of(l);
+                        }
+                    })
+                    .map(l => {
+                        l.forEachItem(i => {
+                            const related = data.getIngredient(i.id);
+                            if (related !== undefined && related.reducedFrom !== undefined) {
+                                i.reducedFrom = related.getReducedFrom();
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        list.forEachItem(i => {
+                            const related = data.getIngredient(i.id);
+                            if (related !== undefined && related.desynthedFrom !== undefined && related.desynthedFrom.length > 0) {
+                                i.desynths = related.getDesynths();
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        l.forEachItem(o => {
+                            const related = data.getIngredient(o.id);
+                            if (related !== undefined && related.instances !== undefined) {
+                                const instances: Instance[] = [];
+                                related.instances.forEach(id => {
+                                    const instance = this.gt.getInstance(id);
+                                    if (instance !== undefined) {
+                                        instances.push(instance);
+                                    }
+                                });
+                                o.instances = instances;
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        l.gathers.forEach(g => {
+                            if (g.gatheredBy === undefined) {
+                                g.gatheredBy = data.getIngredient(g.id).getGatheredBy(this.gt, this.htmlTools);
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        l.forEachItem(o => {
+                            const related = data.getIngredient(o.id);
+                            if (related !== undefined && related.seeds !== undefined) {
+                                o.gardening = true;
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        l.forEachItem(o => {
+                            const related = data.getIngredient(o.id);
+                            if (related !== undefined && related.voyages !== undefined) {
+                                o.voyages = related.getVoyages();
+                            }
+                        });
+                        return l;
+                    })
+                    .map(l => {
+                        l.forEachItem(o => {
+                            const related = data.getIngredient(o.id);
+                            if (related !== undefined && related.drops !== undefined) {
+                                related.drops.forEach(d => {
+                                    if (o.drops === undefined) {
+                                        o.drops = [];
+                                    }
+                                    const partial = data.getPartial(d.toString());
+                                    if (partial !== undefined) {
+                                        const drop: Drop = {
+                                            id: d,
+                                            zoneid: partial.obj.z,
+                                            lvl: partial.obj.l
+                                        };
+                                        o.drops.push(drop);
+                                    }
+                                });
+                            }
+                        });
+                        return l;
+                    });
+            })
+            .map(l => l.clean())
+            .debounceTime(500);
     }
 
     public upgradeList(list: List): Observable<List> {
