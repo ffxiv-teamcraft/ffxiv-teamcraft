@@ -101,6 +101,7 @@ export class AppComponent implements OnInit {
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
         this.authState.debounceTime(1000)
+            .filter(state => state !== null)
             .subscribe(state => {
                 if (this.router.url.indexOf('home') === -1) {
                     this.firebase.object('/patreon').subscribe(patreon => {
