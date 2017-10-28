@@ -17,7 +17,7 @@ export class ListService extends StoredDataService<List> {
                 protected serializer: NgSerializerService,
                 private af: AngularFireAuth) {
         super(firebase, serializer);
-        this.af.authState.subscribe(state => this.uuid = state.uid);
+        this.af.authState.filter(state => state !== null).subscribe(state => this.uuid = state.uid);
     }
 
     /**
