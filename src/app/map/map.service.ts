@@ -9,7 +9,7 @@ export class MapService {
     data: Observable<MapData[]>;
 
     constructor(private http: HttpClient) {
-        this.data = this.http.get<any>('http://api.xivdb.com/maps/get/layers/id')
+        this.data = this.http.get<any>('https://api.xivdb.com/maps/get/layers/id')
             .map(res => {
                 return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
             })
