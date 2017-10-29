@@ -25,8 +25,8 @@ export class ItemData {
             .find(i => recipeId.toString().indexOf(i.id.toString()) > -1 || i.id.toString().indexOf(recipeId.toString()) > -1);
     }
 
-    public getPartial(id: string): Partial {
-        return this.partials.find(p => p.id === id);
+    public getPartial(id: string, type?: string): Partial {
+        return this.partials.filter(p => type !== undefined ? p.type === type : true).find(p => p.id === id);
     }
 
     public getInstance(id: any): Instance {

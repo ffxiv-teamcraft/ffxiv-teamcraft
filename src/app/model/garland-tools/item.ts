@@ -234,7 +234,7 @@ export class Item implements I18nData {
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
             for (const node of this.nodes) {
-                const partial = data.getPartial(node.toString()).obj;
+                const partial = data.getPartial(node.toString(), 'node').obj;
                 let details;
                 if (partial.lt !== undefined) {
                     details = gt.getBellNode(node);
