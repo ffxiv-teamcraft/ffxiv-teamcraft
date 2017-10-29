@@ -30,7 +30,7 @@ export class ItemData {
     }
 
     public getInstance(id: any): Instance {
-        const raw = this.getPartial(id.toString());
+        const raw = this.getPartial(id.toString(), 'instance');
         if (raw === undefined) {
             return undefined;
         }
