@@ -1,15 +1,19 @@
 <!--Layout for desktop browsers-->
-<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}}">
+<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}} auto-height">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
-                <a md-list-avatar disabled="isDraft()" href="{{getXivdbLink(item)}}" target="_blank">
+                <a md-list-avatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
                     <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
                 </a>
                 <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
             </div>
         </app-tooltip>
-        <div class="item-name" md-line> {{item.id | itemName | i18n}}</div>
+        <div class="item-name" md-line>
+            <span class="{{item.done === item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
+            <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+                                 [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
+        </div>
         <button *ngIf="showRequirements" md-icon-button class="warning"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
@@ -50,6 +54,7 @@
                               maxlength="{{getAmount()?.toString().length}}"
                               min="0"
                               [value]="item.done | ceil"
+                              [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
                               (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         </div>
         <div class="done-check">
@@ -139,14 +144,18 @@
     </div>
 </md-list-item>
 
-<md-list-item *ngIf="isMobile" class="mobile">
+<md-list-item *ngIf="isMobile" class="{{even?null:'even'}} mobile auto-height">
     <div md-list-avatar class="icon">
-        <a md-list-avatar href="{{getXivdbLink(item)}}" target="_blank">
+        <a md-list-avatar href="{{item.id | itemLink | i18n}}" target="_blank">
             <img md-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
         </a>
         <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
     </div>
-    <div class="item-name" md-line>{{item.id | itemName | i18n}}</div>
+    <div class="item-name" md-line>
+        <span class="{{item.done === item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
+        <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+                             [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
+    </div>
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
              md-list-avatar
@@ -161,6 +170,7 @@
                           maxlength="{{getAmount()?.toString().length}}"
                           min="0"
                           [value]="item.done | ceil"
+                          [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
                           (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
         <button *ngIf="showRequirements" md-icon-button class="requirements"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"

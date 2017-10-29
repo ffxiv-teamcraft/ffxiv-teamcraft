@@ -1,5 +1,7 @@
 <h1>{{"HOME_PAGE.title" | translate}}</h1>
 
+<h3 class="list-count">{{(lists_created | async)?.$value}} {{"HOME_PAGE.lists_created_count" | translate}}</h3>
+
 <h3 class="list-count">{{(list_count | async)?.$value}} {{"HOME_PAGE.count" | translate}}</h3>
 
 <p>{{"HOME_PAGE.p1" | translate}}</p>
@@ -84,6 +86,36 @@
         </md-panel-description>
     </md-expansion-panel-header>
     <img src="/assets/tutorial/bulk_import.gif" alt="bulk import gif">
+</md-expansion-panel>
+
+<md-expansion-panel class="accent">
+    <md-expansion-panel-header>
+        <md-panel-title>{{"HOME_PAGE.FEATURES.map_markers_title" | translate}}</md-panel-title>
+        <md-panel-description>
+            {{"HOME_PAGE.FEATURES.map_markers_content" | translate}}
+        </md-panel-description>
+    </md-expansion-panel-header>
+    <img src="/assets/tutorial/map_markers.gif" alt="map marker gif">
+</md-expansion-panel>
+
+<md-expansion-panel class="accent">
+    <md-expansion-panel-header>
+        <md-panel-title>{{"HOME_PAGE.FEATURES.comments_title" | translate}}</md-panel-title>
+        <md-panel-description>
+            {{"HOME_PAGE.FEATURES.comments_content" | translate}}
+        </md-panel-description>
+    </md-expansion-panel-header>
+    <img src="/assets/tutorial/comments.gif" alt="comments gif">
+</md-expansion-panel>
+
+<md-expansion-panel class="accent">
+    <md-expansion-panel-header>
+        <md-panel-title>{{"HOME_PAGE.FEATURES.pricing_title" | translate}}</md-panel-title>
+        <md-panel-description>
+            {{"HOME_PAGE.FEATURES.pricing_content" | translate}}
+        </md-panel-description>
+    </md-expansion-panel-header>
+    <img src="/assets/tutorial/pricing.gif" alt="pricing gif">
 </md-expansion-panel>
 
 <h3>{{"HOME_PAGE.support_title" | translate}}</h3>

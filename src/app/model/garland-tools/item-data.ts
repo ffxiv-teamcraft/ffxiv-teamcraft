@@ -2,6 +2,7 @@ import {Item} from './item';
 import {Partial} from './partial';
 import {DeserializeAs} from '@kaiu/serializer';
 import {Craft} from './craft';
+import {Instance} from '../list/instance';
 
 export class ItemData {
 
@@ -26,5 +27,29 @@ export class ItemData {
 
     public getPartial(id: string): Partial {
         return this.partials.find(p => p.id === id);
+    }
+
+    public getInstance(id: any): Instance {
+        const raw = this.getPartial(id.toString());
+        if (raw === undefined) {
+            return undefined;
+        }
+        const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
+            'Treasure Hunt', 'Seasonal Event'][raw.obj.t];
+        return {
+            id: raw.obj.i,
+            name: {
+                en: raw.obj.en.n,
+                de: raw.obj.de.n,
+                fr: raw.obj.fr.n,
+                ja: raw.obj.ja.n,
+            },
+            type: {
+                fr: type,
+                en: type,
+                de: type,
+                ja: type
+            }
+        };
     }
 }

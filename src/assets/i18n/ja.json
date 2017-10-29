@@ -96,6 +96,7 @@
 
     "HOME_PAGE.title": "Create lists, share, contribute, craft",
     "HOME_PAGE.count": "lists currently stored",
+    "HOME_PAGE.lists_created_count": "lists created using FFXIV Teamcraft",
     "HOME_PAGE.p1": "Hi, I'm Miu Asakura on Louisoix. I'm the creator of FFXIV Teamcraft, a tool that allows you to create crafting lists online, share them with your friend and contribute together in realtime. Because we were struggling to manage big lists using actual tools, I wanted to have a way to create lists that are stored, on which every could say \"I have that, I can provide it\". So I started creating FFXIV Teamcraft.",
     "HOME_PAGE.p2": "Then I thought \"If my FC finds the app useful, why would others not find it useful too?\". So I bought a domain name, I made a reddit topic and started adding more features. At the moment the app is able to store your crafting lists, show you what you can gather/craft by yourself, all of this in your language (some translated assets are still missing but they will be available in the future) with a single link. Wether you are French, English or Deutch speaker, the app will show you a version of the list that you can understand. That's the main goal of the application.",
     "HOME_PAGE.p3": "FFXIV Teamcraft is here do to the maths, so you can focus on the essential part of crafting and forget your calc sheets and your paper with everything written on it. Simply add a recipe to a list, give the link to your friends and start creating awesome stuff together !",
@@ -115,6 +116,12 @@
     "HOME_PAGE.FEATURES.search_filters_content": "Easily find what you're looking for with powerful filters !",
     "HOME_PAGE.FEATURES.bulk_import_title": "Bulk import",
     "HOME_PAGE.FEATURES.bulk_import_content": "Add multiple items at the same time !",
+    "HOME_PAGE.FEATURES.map_markers_title": "Map markers",
+    "HOME_PAGE.FEATURES.map_markers_content": "Don't look for coordinates ingame again !",
+    "HOME_PAGE.FEATURES.comments_title": "Comments",
+    "HOME_PAGE.FEATURES.comments_content": "Add informations on your list items easily !",
+    "HOME_PAGE.FEATURES.pricing_title": "Pricing",
+    "HOME_PAGE.FEATURES.pricing_content": "Easily get the benefits you'll make from a given list !",
     "HOME_PAGE.support_title": "Support",
     "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
     "HOME_PAGE.support_comtent_facebook": "You can also find us on facebook",
@@ -135,5 +142,12 @@
     "Or":"or",
     "Make_donation":"Make a donation",
     "Data_from_gt": "Data provided by garlandtools.org",
-    "Hide_completed": "Hide completed rows"
+    "Hide_completed": "Hide completed rows",
+    "Your_comment": "Your comment",
+    "Required_crafts_amount": "Required amount of crafts",
+
+    "SETTINGS": {
+        "title": "Settings",
+        "link_base": "Item links"
+    }
 }

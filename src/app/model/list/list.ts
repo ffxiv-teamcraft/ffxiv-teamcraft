@@ -18,6 +18,8 @@ export class List extends FirebaseDataModel {
     createdAt: string = new Date().toISOString();
     version: string;
 
+    authorUid: string;
+
     favorites: string[] = [];
 
     constructor() {
@@ -190,6 +192,7 @@ export class List extends FirebaseDataModel {
             for (const element of addition.item.craft[0].ingredients) {
                 // If this is a crystal
                 if (element.id < 20 && element.id > 1) {
+
                     const crystal = gt.getCrystalDetails(element.id);
                     this.addToCrystals({
                         id: element.id,
@@ -225,9 +228,6 @@ export class List extends FirebaseDataModel {
                             yield: 1
                         });
                     } else {
-                        if (element.id === 19849) {
-                            console.log(element.amount, addition.amount);
-                        }
                         this.addToOthers({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
@@ -243,5 +243,31 @@ export class List extends FirebaseDataModel {
             return this.addCraft(nextIteration, gt, i18n);
         }
         return this;
+    }
+
+    /**
+     * Returns the name of the category where you can find a given row.
+     * Useful for routing in firebase database.
+     * @param {ListRow} row
+     * @returns {string}
+     */
+    public getCategory(row: ListRow): string {
+        if (this.recipes.indexOf(row) > -1) {
+            return 'recipes';
+        }
+        if (this.gathers.indexOf(row) > -1) {
+            return 'gathers';
+        }
+        if (this.others.indexOf(row) > -1) {
+            return 'others';
+        }
+        if (this.preCrafts.indexOf(row) > -1) {
+            return 'preCrafts';
+        }
+        if (this.crystals.indexOf(row) > -1) {
+            return 'crystals';
+        }
+        // Should never happen, but still needs an exception just in case.
+        throw new Error('Row not in list');
     }
 }

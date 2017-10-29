@@ -96,6 +96,7 @@
 
     "HOME_PAGE.title": "Erstelle Listen, teile, trage bei, stelle her",
     "HOME_PAGE.count": "Listen derzeit gespeichert",
+    "HOME_PAGE.lists_created_count": "Listen erstellt mit FFXIV Teamcraft",
     "HOME_PAGE.p1": "Hi, ich bin Miu Asakura von Louisoix. Ich bin der Ersteller von FFXIV Teamcraft, einem Tool das dir ermöglicht Online-Listen zu erstellen, sie mit deinen Freunden zu teilen und in Echtzeit miteinander daran zu arbeiten. Weil große Listen mit den üblichen Tools schwer zu managen waren, wollte ich ein Tool womit ich Listen speichern und verfügbar machen konnte, sodass jeder sich diese Liste anschauen kann und sagen kann \"Ich hab das, ich kann das zur Verfügung stellen.\".",
     "HOME_PAGE.p2": "Dann dachte ich: \"Wenn meine Freie Gesellschaft das Tool gut findet, warum sollten nicht auch andere?\". Also kaufte ich einen Domain-Namen, machte einen Post auf Reddit und fügte mehr Features hinzu. Derzeit kann das Tool deine Herstellungslisten speichern, dir zeigen was du selber sammeln/herstellen kannst und das ganze in deiner Sprache (manche Übersetzungen fehlen noch, werden aber noch kommen) mit nur einem Link. Egal ob du französisch, deutsch oder englisch sprichst, das Tool zeigt dir eine Ansicht der Liste die du verstehst. Das ist das Hauptziel.",
     "HOME_PAGE.p3": "FFXIV Teamcraft unterstützt dich bei den Berechnungen, sodass du dich ganz auf das Herstellen konzentrieren kannst und deine Excel-Listen und handgeschriebenen Notizen vergessen kannst. Füge einfach ein Rezept einer Liste hinzu, gib deinen Freunden den Link und fangt an großartiges herzustellen!",
@@ -115,6 +116,12 @@
     "HOME_PAGE.FEATURES.search_filters_content": "Finde einfach genau dass was du suchst dank der Filter!",
     "HOME_PAGE.FEATURES.bulk_import_title": "Massenimport",
     "HOME_PAGE.FEATURES.bulk_import_content": "Füge mehrere Gegenstände auf einmal hinzu!",
+    "HOME_PAGE.FEATURES.map_markers_title": "Kartenmarkierung",
+    "HOME_PAGE.FEATURES.map_markers_content": "Suche nie wieder nach Koordinaten im Spiel!",
+    "HOME_PAGE.FEATURES.comments_title": "Kommentare",
+    "HOME_PAGE.FEATURES.comments_content": "Füge einfach hilfreiche Informationen zu deinen Listen hinzu!",
+    "HOME_PAGE.FEATURES.pricing_title": "Gewinn",
+    "HOME_PAGE.FEATURES.pricing_content": "Sieh auf einen Blick wieviel dir deine Liste einbringt!",
     "HOME_PAGE.support_title": "Hilfe",
     "HOME_PAGE.support_content_discord": "Falls du Probleme mit dem Tool hast, schau einfach bei uns im Discord vorbei!",
     "HOME_PAGE.support_comtent_facebook": "Du findest uns auch auf Facebook",
@@ -135,5 +142,12 @@
     "Or":"oder",
     "Make_donation":"Spende",
     "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
-    "Hide_completed": "Verstecke komplettierte Reihen"
+    "Hide_completed": "Verstecke komplettierte Reihen",
+    "Your_comment": "Dein Kommentar",
+    "Required_crafts_amount": "Menge an Herstellungen",
+
+    "SETTINGS": {
+        "title": "Einstellungen",
+        "link_base": "Gegenstandslink-Quelle"
+    }
 }

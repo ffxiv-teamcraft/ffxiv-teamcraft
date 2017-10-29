@@ -1,0 +1,12 @@
+<md-list-item class="auto-height">
+    <img md-list-avatar *ngIf="authorIcon !== undefined" src="{{authorIcon}}" alt="{{authorName}}"
+         mdTooltip="{{authorName}}" mdTooltipPosition="above">
+    <md-icon md-list-icon *ngIf="authorIcon === undefined" mdTooltip="{{authorName}}" mdTooltipPosition="above">
+        person
+    </md-icon>
+    <p md-line class="content">{{comment.content}}</p>
+    <span md-line class="date">{{getDate()}}</span>
+    <button md-icon-button (click)="deleteComment()" *ngIf="canDelete">
+        <md-icon>delete</md-icon>
+    </button>
+</md-list-item>

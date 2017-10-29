@@ -1,0 +1,18 @@
+<h2 md-dialog-title>{{data.name}}</h2>
+<div md-dialog-content>
+    <md-list>
+        <app-comment-row *ngFor="let comment of comments" [comment]="comment"
+                         [canDelete]="comment.authorId === userId || data.isOwnList"
+                         (delete)="deleteComment(comment.$key)"></app-comment-row>
+    </md-list>
+    <form (submit)="addComment()" [formGroup]="control" #f="ngForm">
+        <md-form-field class="input-field">
+            <textarea type="text" mdInput placeholder="{{'Your_comment' | translate}}" formControlName="comment"
+                      tabindex="-1" #input></textarea>
+            <md-hint align="end">{{input.value?.length || 0}}/140</md-hint>
+        </md-form-field>
+        <button md-button class="submit-button" type="submit" [disabled]="!control.valid || comments.length >= 10">
+            <md-icon>send</md-icon>
+        </button>
+    </form>
+</div>

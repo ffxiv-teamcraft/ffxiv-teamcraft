@@ -5,7 +5,7 @@
             <img md-list-avatar [src]="getRequirementDetails(requirement).icon | icon"
                  alt="{{getRequirementDetails(requirement).id | itemName | i18n}}">
             <div md-line>{{getRequirementDetails(requirement).id | itemName | i18n}}</div>
-            <p md-line>x{{requirement.amount * data.item.amount_needed}}</p>
+            <p md-line>x{{requirement.amount * (data.item.amount_needed - data.item.done)}}</p>
         </md-list-item>
     </md-list>
 </div>

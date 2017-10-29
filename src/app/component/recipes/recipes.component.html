@@ -1,4 +1,4 @@
-<div class="input-container">
+<div class="input-container compact">
     <md-input-container>
         <md-icon mdPrefix>search</md-icon>
         <input class="filter" [(ngModel)]="query" mdInput placeholder="{{'Recipe_name' | translate}}" #filter>
@@ -87,7 +87,7 @@
     </div>
     <div *ngIf="recipes.length > 0 && !loading">
         <md-list-item *ngFor="let recipe of recipes">
-            <a md-list-avatar target="_blank">
+            <a md-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
                 <app-tooltip [id]="recipe.itemId">
                     <img md-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.itemId | itemName | i18n}}">
                 </app-tooltip>

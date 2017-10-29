@@ -15,6 +15,8 @@ export class DataService {
     private garlandUrl = 'https://www.garlandtools.org/db/data';
     private garlandApiUrl = 'https://www.garlandtools.org/api';
 
+    private characterCache = new Map<number, Observable<any>>();
+
     constructor(private http: HttpClient,
                 private i18n: TranslateService,
                 private gt: GarlandToolsService,
@@ -78,16 +80,6 @@ export class DataService {
         });
     }
 
-    public getXivdbUrl(id: number, name: string): I18nName {
-        const urlName = name.replace(/ /g, '+').toLowerCase();
-        return {
-            fr: `http://fr.xivdb.com/item/${id}/${urlName}`,
-            en: `http://xivdb.com/item/${id}/${urlName}`,
-            de: `http://de.xivdb.com/item/${id}/${urlName}`,
-            ja: `http://ja.xivdb.com/item/${id}/${urlName}`
-        };
-    }
-
     public searchCharacter(name: string, server: string): Observable<any[]> {
         return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
             .map(res => res.data.results)
@@ -95,7 +87,14 @@ export class DataService {
     }
 
     public getCharacter(id: number): Observable<any> {
-        return this.http.get<any>(`https://xivsync.com/character/parse/${id}`);
+        if (!this.characterCache.get(id)) {
+            const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`).map(result => result.data)
+                .publishReplay(1)
+                .refCount()
+                .take(1);
+            this.characterCache.set(id, request);
+        }
+        return this.characterCache.get(id);
     }
 
     private getGarlandData(uri: string): Observable<any> {

@@ -10,7 +10,6 @@ import {DesynthPopupComponent} from '../popup/desynth-popup/desynth-popup.compon
 import {CompactMasterbook} from '../../model/list/compact-masterbook';
 import {VendorsDetailsPopupComponent} from '../popup/vendors-details-popup/vendors-details-popup.component';
 import {InstancesDetailsPopupComponent} from '../popup/instances-details-popup/instances-details-popup.component';
-import {DataService} from '../../core/api/data.service';
 import {ReductionDetailsPopupComponent} from '../popup/reduction-details-popup/reduction-details-popup.component';
 import {MathTools} from '../../tools/math-tools';
 import {List} from '../../model/list/list';
@@ -20,6 +19,9 @@ import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {RequiredByPopupComponent} from '../popup/required-by-popup/required-by-popup.component';
+import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {UserInfo} from 'firebase/app';
 
 @Component({
     selector: 'app-item',
@@ -57,6 +59,10 @@ export class ItemComponent implements OnInit {
 
     @Input()
     even = false;
+
+    user: UserInfo;
+
+    itemUri: string;
 
     timer: string;
 
@@ -119,11 +125,11 @@ export class ItemComponent implements OnInit {
     };
 
     constructor(private i18n: I18nToolsService,
-                private data: DataService,
                 private dialog: MdDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
-                private localizedData: LocalizedDataService) {
+                private localizedData: LocalizedDataService,
+                private auth: AngularFireAuth) {
     }
 
     isDraft(): boolean {
@@ -144,7 +150,17 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.auth.idToken.subscribe(user => {
+            this.user = user;
+        });
+
         this.spawnAlarm = localStorage.getItem(this.item.id + ':spawnAlarm') === 'true' || false;
+
+        const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
+        const listCategory = this.list.getCategory(this.item);
+        const index = this.list[listCategory].indexOf(this.item);
+        this.itemUri = `${listUri}/${listCategory}/${index}`;
+
         if (this.hasTimers()) {
             this.etimeService.getEorzeanTime().subscribe(date => {
                 const timers = [];
@@ -215,7 +231,7 @@ export class ItemComponent implements OnInit {
     }
 
     private getTimerOptions(): any {
-        return JSON.parse(localStorage.getItem('timer:options')) || {
+        return JSON.parse(localStorage.getItem('timer:settings')) || {
             sound: 'Notification',
             hoursBefore: 0
         };
@@ -281,9 +297,17 @@ export class ItemComponent implements OnInit {
     }
 
     public openGatheredByDetails(item: ListRow): void {
-        this.dialog.open(GatheredByPopupComponent, {
-            data: item
-        });
+        // If it is a MIN/BOT node
+        if (item.gatheredBy.type > -1) {
+            this.dialog.open(GatheredByPopupComponent, {
+                data: item
+            });
+        } else {
+            // Else it's a fish
+            this.dialog.open(FishDetailsPopupComponent, {
+                data: item
+            });
+        }
     }
 
     public openDropsDetails(item: ListRow): void {
@@ -340,12 +364,6 @@ export class ItemComponent implements OnInit {
         this.dialog.open(TradeDetailsPopupComponent, {
             data: item
         });
-    }
-
-    public getXivdbLink(item: ListRow): string {
-        const name = this.i18n.getName(this.localizedData.getItem(item.id));
-        const link = this.data.getXivdbUrl(item.id, name);
-        return this.i18n.getName(link);
     }
 
     public get isMobile(): boolean {

@@ -96,6 +96,7 @@
 
     "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
     "HOME_PAGE.count": "listes actuellement stockées",
+    "HOME_PAGE.lists_created_count": "listes créées avec FFXIV Teamcraft",
     "HOME_PAGE.p1": "Bonjour, je suis Miu Asakura sur Louisoix. Je suis le créateur de FFXIV Teamcraft, un outil qui permet de créer des listes de craft en ligne, les partager avec ses amis et y contribuer en temps réel. À cause du fait que nous avions des soucis avec la gestion de grandes listes de craft avec ma Compagnie Libre en utilisant les outils actuels, j'ai voulu trouver un moyen de créer des listes qui sont stockées sur lesquelles chacun pourait dire \"J'ai cet  objet, je peux le donner pour la recette\". J'ai donc commencé à développer FFXIV Teamcraft.",
     "HOME_PAGE.p2": "Puis je me suis dit, \"Si ma Compagnie Libre trouve cet outil utile, pourquoi les autres n'en penseraient-ils pas de même?\". Alors j'ai acheté un nom de domaine, j'ai créé un topic sur reddit et j'ai commencé à ajouter des fonctionnalités. Actuallement l'application est capable de stocker vos listes, montrer ce que vous pouvez obtenir par vous même et tout cela dans votre langue (certaines traductions sont manquantes mais elles seront ajoutées dès que possible) avec un seul lien. Que vous soyez francophone, anglophone ou germanophone, l'application vous montrera une version de la liste que vous pouvez comprendre. C'est le but premier de celle-ci.",
     "HOME_PAGE.p3": "FFXIV Teamcraft est là pour faire les calculs, pour que vous puissiez vous concentrer sur la partie essentielle du craft et que vous oubliiez vos tableurs et vos feuilles avec tous les composants écrits dessus. Ajoutez simplement une recette à une liste, donnez le lien à vos amis et commencez à crafter ensemble !",
@@ -115,6 +116,12 @@
     "HOME_PAGE.FEATURES.search_filters_content": "Trouvez rapidement ce que vous cherchez, plus de recherches multiples !",
     "HOME_PAGE.FEATURES.bulk_import_title": "Import multiple",
     "HOME_PAGE.FEATURES.bulk_import_content": "Ajoutez plusieurs objets à la fois !",
+    "HOME_PAGE.FEATURES.map_markers_title": "Marqueurs de position",
+    "HOME_PAGE.FEATURES.map_markers_content": "Ne cherchez plus les coordonnées sur la map en jeu !",
+    "HOME_PAGE.FEATURES.comments_title": "Commentaires",
+    "HOME_PAGE.FEATURES.comments_content": "Ajoutez des informations et échangez à propos d'une liste!",
+    "HOME_PAGE.FEATURES.pricing_title": "Calcul de bénéfice",
+    "HOME_PAGE.FEATURES.pricing_content": "Calculez facilement les bénéfices d'une liste !",
     "HOME_PAGE.support_title": "Support",
     "HOME_PAGE.support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
     "HOME_PAGE.support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
@@ -136,5 +143,12 @@
     "Or":"ou",
     "Make_donation":"Faire un don",
     "Data_from_gt": "Données fournies par garlandtools.org",
-    "Hide_completed": "Masquer les éléments complétés"
+    "Hide_completed": "Masquer les éléments complétés",
+    "Your_comment": "Votre commentaire",
+    "Required_crafts_amount": "Nombre de crafts à faire",
+
+    "SETTINGS": {
+        "title": "Options",
+        "link_base": "Liens des objets"
+    }
 }

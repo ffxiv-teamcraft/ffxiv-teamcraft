@@ -23,6 +23,9 @@ export class AmountInputComponent implements OnInit {
     @Input()
     max: number;
 
+    @Input()
+    craftAmount: number;
+
     @ViewChild('input')
     private input: ElementRef;
 
