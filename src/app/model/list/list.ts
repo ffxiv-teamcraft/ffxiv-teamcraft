@@ -192,6 +192,7 @@ export class List extends FirebaseDataModel {
             for (const element of addition.item.craft[0].ingredients) {
                 // If this is a crystal
                 if (element.id < 20 && element.id > 1) {
+
                     const crystal = gt.getCrystalDetails(element.id);
                     this.addToCrystals({
                         id: element.id,

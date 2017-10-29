@@ -13,6 +13,7 @@ import {Craft} from '../../model/garland-tools/craft';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
 import {Drop} from '../../model/list/drop';
+import {LocalizedDataService} from '../data/localized-data.service';
 
 @Injectable()
 export class ListManagerService {
@@ -20,7 +21,8 @@ export class ListManagerService {
     constructor(protected db: DataService,
                 private gt: GarlandToolsService,
                 protected htmlTools: HtmlToolsService,
-                protected i18n: I18nToolsService) {
+                protected i18n: I18nToolsService,
+                private localized: LocalizedDataService) {
     }
 
     public addToList(itemId: number, list: List, recipeId: string, amount = 1): Observable<List> {
@@ -142,7 +144,7 @@ export class ListManagerService {
                             if (related !== undefined && related.instances !== undefined) {
                                 const instances: Instance[] = [];
                                 related.instances.forEach(id => {
-                                    const instance = this.gt.getInstance(id);
+                                    const instance = data.getInstance(id);
                                     if (instance !== undefined) {
                                         instances.push(instance);
                                     }
@@ -155,7 +157,7 @@ export class ListManagerService {
                     .map(l => {
                         l.gathers.forEach(g => {
                             if (g.gatheredBy === undefined) {
-                                g.gatheredBy = data.getIngredient(g.id).getGatheredBy(this.gt, this.htmlTools);
+                                g.gatheredBy = data.getIngredient(g.id).getGatheredBy(this.gt, this.htmlTools, data, this.localized);
                             }
                         });
                         return l;

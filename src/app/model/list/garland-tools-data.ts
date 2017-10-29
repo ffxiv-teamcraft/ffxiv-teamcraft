@@ -16,8 +16,11 @@ export interface GarlandToolsData {
     instance: any;
     fate: any;
     item: {
-        index: any[]
+        ingredients: any[]
     };
     instanceTypes: string[];
     jobCategories: any;
+    bell: {
+        nodes: any[]
+    };
 }

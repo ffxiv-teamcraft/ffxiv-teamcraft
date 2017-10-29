@@ -14,6 +14,9 @@ import {I18nName} from '../list/i18n-name';
 import {DataService} from '../../core/api/data.service';
 import {Trade} from '../list/trade';
 import {Fish} from './fish';
+import {ItemData} from './item-data';
+import {StoredNode} from '../list/stored-node';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 export class Item implements I18nData {
 
@@ -219,7 +222,8 @@ export class Item implements I18nData {
         return this.desynthedFrom;
     }
 
-    public getGatheredBy(gt: GarlandToolsService, htmlTools: HtmlToolsService): GatheredBy {
+    public getGatheredBy(gt: GarlandToolsService, htmlTools: HtmlToolsService, data: ItemData,
+                         localized: LocalizedDataService): GatheredBy {
         const gatheredBy: GatheredBy = {
             icon: '',
             stars_tooltip: '',
@@ -230,29 +234,34 @@ export class Item implements I18nData {
         // If it's a node gather (not a fish)
         if (this.hasNodes()) {
             for (const node of this.nodes) {
-                const details = gt.getNode(node);
-                gatheredBy.type = details.type;
+                const partial = data.getPartial(node.toString()).obj;
+                let details;
+                if (partial.lt !== undefined) {
+                    details = gt.getBellNode(node);
+                }
+                gatheredBy.type = partial.t;
                 gatheredBy.icon = [
                     '/assets/icons/Mineral_Deposit.png',
                     '/assets/icons/MIN.png',
                     '/assets/icons/Mature_Tree.png',
                     '/assets/icons/BTN.png',
                     'https://garlandtools.org/db/images/FSH.png'
-                ][details.type];
-                gatheredBy.stars_tooltip = htmlTools.generateStars(details.stars);
-                gatheredBy.level = details.lvl;
-                const slot = details.items.find(item => item.id === this.id).slot || undefined;
-                if (details.areaid !== undefined) {
-                    const storedNode = {
-                        zoneid: details.zoneid,
-                        areaid: details.areaid,
-                        limitType: details.limitType,
-                        coords: details.coords,
-                        time: details.time,
-                        uptime: details.uptime,
-                        slot: slot
+                ][partial.t];
+                gatheredBy.stars_tooltip = htmlTools.generateStars(partial.s);
+                gatheredBy.level = +partial.l;
+                if (partial.n !== undefined) {
+                    const storedNode: StoredNode = {
+                        zoneid: partial.z,
+                        areaid: localized.getAreaIdByENName(partial.n),
                     };
-                    // We need to cleanup the node object to avoid firebase issues with udnefined value.
+                    if (details !== undefined) {
+                        storedNode.slot = details.items.find(item => item.id === this.id).slot;
+                        storedNode.time = details.time;
+                        storedNode.uptime = details.uptime;
+                        storedNode.limitType = {en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt};
+                        storedNode.coords = details.coords;
+                    }
+                    // We need to cleanup the node object to avoid firebase issues with undefined value.
                     Object.keys(storedNode).forEach(key => {
                         if (storedNode[key] === undefined) {
                             delete storedNode[key];

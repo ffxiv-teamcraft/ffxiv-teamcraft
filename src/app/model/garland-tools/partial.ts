@@ -15,6 +15,8 @@ export class Partial {
         f?: number;
         j?: number;
         p?: number;
+        lt?: string;
+        ti?: number[];
         min_lvl?: number;
         max_lvl?: number;
         z?: number;
