@@ -187,7 +187,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     isOwnList(): boolean {
-        return this.user !== undefined && this.user.uid === this.authorUid;
+        return this.user !== undefined && this.user !== null && this.user.uid === this.authorUid;
     }
 
     upgradeList(): void {
