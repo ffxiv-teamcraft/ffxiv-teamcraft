@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.3.2...v2.4.0) (2017-10-29)
+
+
+### Bug Fixes
+
+* adding a recipe to a list breaks after garlandtools changes ([2777167](https://github.com/Supamiu/ffxiv-teamcraft/commit/2777167))
+* first list view with cleared cache makes the app crash ([cfdf595](https://github.com/Supamiu/ffxiv-teamcraft/commit/cfdf595))
+* null uid after registration ([5582114](https://github.com/Supamiu/ffxiv-teamcraft/commit/5582114))
+
+
+### Features
+
+* add amount of craft details next to the amount of items ([fbb3661](https://github.com/Supamiu/ffxiv-teamcraft/commit/fbb3661))
+* add map markers for every location display ([b45229b](https://github.com/Supamiu/ffxiv-teamcraft/commit/b45229b))
+* add more gifs for new features in home page ([615136f](https://github.com/Supamiu/ffxiv-teamcraft/commit/615136f))
+* add more informations about fishs ([3fd3b81](https://github.com/Supamiu/ffxiv-teamcraft/commit/3fd3b81)), closes [#82](https://github.com/Supamiu/ffxiv-teamcraft/issues/82)
+* add new counter for the amount of lists created using the tool ([eb8e7e3](https://github.com/Supamiu/ffxiv-teamcraft/commit/eb8e7e3))
+* comments on list rows ([3f5af48](https://github.com/Supamiu/ffxiv-teamcraft/commit/3f5af48))
+* configurable recipe links ([eeddffc](https://github.com/Supamiu/ffxiv-teamcraft/commit/eeddffc)), closes [#14](https://github.com/Supamiu/ffxiv-teamcraft/issues/14)
+* IE 10 & 11, Safari 7 & 8 support ([b0f654b](https://github.com/Supamiu/ffxiv-teamcraft/commit/b0f654b))
+* requirements popup now shows the amount of items required for the remaining crafts ([b805bda](https://github.com/Supamiu/ffxiv-teamcraft/commit/b805bda))
+
+
+
 <a name="2.3.2"></a>
 ## [2.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.3.1...v2.3.2) (2017-10-23)
 
