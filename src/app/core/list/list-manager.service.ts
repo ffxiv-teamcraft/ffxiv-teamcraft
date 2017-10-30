@@ -188,7 +188,7 @@ export class ListManagerService {
                                     if (o.drops === undefined) {
                                         o.drops = [];
                                     }
-                                    const partial = data.getPartial(d.toString());
+                                    const partial = data.getPartial(d.toString(), 'mob');
                                     if (partial !== undefined) {
                                         const drop: Drop = {
                                             id: d,
