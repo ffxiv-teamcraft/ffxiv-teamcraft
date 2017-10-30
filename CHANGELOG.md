@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.0...v2.4.1) (2017-10-30)
+
+
+### Bug Fixes
+
+* broken app when viewing a list for the first time with anonymous account ([8a03882](https://github.com/Supamiu/ffxiv-teamcraft/commit/8a03882))
+* can't add items with too big partial array ([62be1bb](https://github.com/Supamiu/ffxiv-teamcraft/commit/62be1bb)), closes [#91](https://github.com/Supamiu/ffxiv-teamcraft/issues/91)
+* forgot https for new data calls ([b516557](https://github.com/Supamiu/ffxiv-teamcraft/commit/b516557))
+* issues with partial data ([1857512](https://github.com/Supamiu/ffxiv-teamcraft/commit/1857512))
+* item not green if done > amount ([b254d1a](https://github.com/Supamiu/ffxiv-teamcraft/commit/b254d1a))
+* modifying list recipe amounts sometimes has bad results for row amounts ([9c680c8](https://github.com/Supamiu/ffxiv-teamcraft/commit/9c680c8))
+
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.3.2...v2.4.0) (2017-10-29)
 
