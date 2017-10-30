@@ -5,8 +5,8 @@
     <md-list dense>
         <div *ngFor="let row of data; let i = index">
             <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
-                      [item]="row" [list]="list" [showRequirements]="showRequirements" [recipe]="recipe"
-                      [showRequiredBy]="showRequiredBy" [even]="i%2==0"></app-item>
+                      [item]="row" [list]="list" [recipe]="recipe"
+                      [even]="i%2==0"></app-item>
         </div>
     </md-list>
 </md-expansion-panel>

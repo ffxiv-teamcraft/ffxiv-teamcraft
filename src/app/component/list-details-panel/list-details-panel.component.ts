@@ -19,12 +19,6 @@ export class ListDetailsPanelComponent {
     list: List;
 
     @Input()
-    showRequirements = false;
-
-    @Input()
-    showRequiredBy = false;
-
-    @Input()
     recipe = false;
 
     @Output()

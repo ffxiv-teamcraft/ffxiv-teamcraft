@@ -14,15 +14,10 @@
             <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
                                  [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
         </div>
-        <button *ngIf="showRequirements" md-icon-button class="warning"
+        <button md-icon-button class="warning"
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
             <md-icon color="accent">assignment</md-icon>
-        </button>
-        <button *ngIf="showRequiredBy" md-icon-button class="warning"
-                mdTooltip="{{'Used_for' | translate}}"
-                mdTooltipPosition="above" (click)="openRequiredByPopup()">
-            <md-icon color="accent">help</md-icon>
         </button>
     </div>
 
@@ -172,15 +167,8 @@
                           [value]="item.done | ceil"
                           [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
                           (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
-        <button *ngIf="showRequirements" md-icon-button class="requirements"
-                mdTooltip="{{'Requirements_for_craft' | translate}}"
-                mdTooltipPosition="above" (click)="openRequirementsPopup()">
+        <button md-icon-button class="requirements" (click)="openRequirementsPopup()">
             <md-icon color="accent">assignment</md-icon>
-        </button>
-        <button *ngIf="showRequiredBy" md-icon-button class="requirements"
-                mdTooltip="{{'Used_for' | translate}}"
-                mdTooltipPosition="above" (click)="openRequiredByPopup()">
-            <md-icon color="accent">help</md-icon>
         </button>
         <div class="classes">
             <div *ngIf="item.craftedBy !== undefined">

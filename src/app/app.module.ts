@@ -23,7 +23,7 @@ import {
     MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
-    MdSnackBarModule,
+    MdSnackBarModule, MdTabsModule,
     MdToolbarModule,
     MdTooltipModule
 } from '@angular/material';
@@ -76,7 +76,6 @@ import {ForgotPasswordPopupComponent} from './component/popup/forgot-password-po
 import {PricingModule} from './pricing/pricing.module';
 import {PipesModule} from './pipe/pipes.module';
 import {NameEditPopupComponent} from './component/popup/name-edit-popup/name-edit-popup.component';
-import {RequiredByPopupComponent} from './component/popup/required-by-popup/required-by-popup.component';
 import {CartImportComponent} from './component/cart-import/cart-import.component';
 import {TooltipModule} from './tooltip/tooltip.module';
 import {DonationModule} from './donation/donation.module';
@@ -157,7 +156,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         PatreonPopupComponent,
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
-        RequiredByPopupComponent,
         CartImportComponent,
         FishDetailsPopupComponent,
     ],
@@ -205,6 +203,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MdProgressBarModule,
         MdButtonToggleModule,
         MdSelectModule,
+        MdTabsModule,
 
         ClipboardModule,
 
@@ -246,7 +245,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         PatreonPopupComponent,
         ForgotPasswordPopupComponent,
         NameEditPopupComponent,
-        RequiredByPopupComponent,
         FishDetailsPopupComponent,
     ],
     providers: [

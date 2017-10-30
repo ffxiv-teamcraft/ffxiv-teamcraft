@@ -18,7 +18,6 @@ import {ObservableMedia} from '@angular/flex-layout';
 import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {VoyagesDetailsPopupComponent} from '../popup/voyages-details-popup/voyages-details-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
-import {RequiredByPopupComponent} from '../popup/required-by-popup/required-by-popup.component';
 import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {UserInfo} from 'firebase/app';
@@ -47,12 +46,6 @@ export class ItemComponent implements OnInit {
 
     @Input()
     list: List;
-
-    @Input()
-    showRequirements = false;
-
-    @Input()
-    showRequiredBy = false;
 
     @Input()
     showTimer = false;
@@ -266,10 +259,6 @@ export class ItemComponent implements OnInit {
 
     openRequirementsPopup(): void {
         this.dialog.open(RequirementsPopupComponent, {data: {item: this.item, list: this.list}});
-    }
-
-    openRequiredByPopup(): void {
-        this.dialog.open(RequiredByPopupComponent, {data: {item: this.item, list: this.list}});
     }
 
     getAmount(): number {
