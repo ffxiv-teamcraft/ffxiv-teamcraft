@@ -56,7 +56,7 @@ export class List extends FirebaseDataModel {
     }
 
     public addToRecipes(data: ListRow): number {
-        return this.add(this.recipes, data);
+        return this.add(this.recipes, data, true);
     }
 
     public addToPreCrafts(data: ListRow): number {
@@ -75,7 +75,7 @@ export class List extends FirebaseDataModel {
         return this.add(this.crystals, data);
     }
 
-    private add(array: ListRow[], data: ListRow): number {
+    private add(array: ListRow[], data: ListRow, recipe = false): number {
         let previousAmount = 0;
         let row = array.find(r => {
             return r.id === data.id;
@@ -92,7 +92,16 @@ export class List extends FirebaseDataModel {
             previousAmount = row.amount_needed;
         }
         row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
-        return row.amount_needed - previousAmount;
+        const added = row.amount_needed - previousAmount;
+        if (added < 0 && recipe) {
+            const previousDone = row.done;
+            console.log(previousDone, row.amount_needed);
+            if (previousDone > row.amount_needed) {
+                this.setDone(row, row.amount_needed - previousDone, recipe);
+            }
+        }
+
+        return added;
     }
 
     public clean(): List {
