@@ -10,7 +10,7 @@
             </div>
         </app-tooltip>
         <div class="item-name" md-line>
-            <span class="{{item.done === item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
+            <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
             <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
                                  [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
         </div>
@@ -152,7 +152,7 @@
         <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
     </div>
     <div class="item-name" md-line>
-        <span class="{{item.done === item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
+        <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
                              [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
     </div>
