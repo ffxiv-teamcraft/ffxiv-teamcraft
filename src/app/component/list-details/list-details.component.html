@@ -182,6 +182,7 @@
         </section>
 
         <app-list-details-panel *ngIf="list?.preCrafts.length > 0" [list]="list"
+                                [showTier]="true"
                                 (update)="update()"
                                 (done)="setDone($event)"
                                 [data]="orderPreCrafts(list?.preCrafts)"

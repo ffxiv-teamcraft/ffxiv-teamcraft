@@ -149,6 +149,9 @@
     "Copy_item_name_to_clipboard": "Copy item name to clipboard",
     "Item_name_copied": "{{itemname}} copied to clipboard",
 
+    "Tier_display_toggle": "Display crafting tiers",
+    "Precraft_tier": "Tier",
+
     "SETTINGS": {
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle"
