@@ -11,14 +11,18 @@
         </app-tooltip>
         <div class="item-name" md-line>
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
-            <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
-                                 [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
         </div>
-        <button md-icon-button class="warning"
+        <button mdTooltipPosition="above" mdTooltip="{{'Copy_item_name_to_clipboard' | translate}}" md-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n">
+            <md-icon>content_copy</md-icon>
+        </button>
+        <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+                             [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
+        <button md-icon-button
                 mdTooltip="{{'Requirements_for_craft' | translate}}"
                 mdTooltipPosition="above" (click)="openRequirementsPopup()">
             <md-icon color="accent">assignment</md-icon>
         </button>
+
     </div>
 
     <div class="timer" *ngIf="hasTimers()">

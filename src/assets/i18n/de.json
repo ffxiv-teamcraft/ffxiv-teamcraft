@@ -146,6 +146,7 @@
     "Your_comment": "Dein Kommentar",
     "Required_crafts_amount": "Menge an Herstellungen",
     "Requires": "Erfordert",
+    "Copy_item_name_to_clipboard": "Copy item name to clipboard",
 
     "SETTINGS": {
         "title": "Einstellungen",
