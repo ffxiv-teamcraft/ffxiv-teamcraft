@@ -1,5 +1,5 @@
 <!--Layout for desktop browsers-->
-<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}} auto-height">
+<md-list-item *ngIf="!isMobile" class="{{even?null:'even'}} auto-height" (mouseenter)="hovered = true" (mouseleave)="hovered = false">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
             <div md-list-avatar class="icon">
@@ -12,7 +12,9 @@
         <div class="item-name" md-line>
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         </div>
-        <button mdTooltipPosition="above" mdTooltip="{{'Copy_item_name_to_clipboard' | translate}}" md-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n">
+        <button mdTooltipPosition="above" *ngIf="hovered"
+                mdTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
+                md-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n">
             <md-icon>content_copy</md-icon>
         </button>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"

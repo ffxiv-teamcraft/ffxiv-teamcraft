@@ -69,6 +69,8 @@ export class ItemComponent implements OnInit {
 
     nextSpawnZoneId: number;
 
+    hovered: boolean;
+
     tradeSourcePriorities = {
         // MGP, just in case
         5752: 20,
