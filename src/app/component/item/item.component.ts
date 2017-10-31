@@ -2,7 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
-import {MdDialog} from '@angular/material';
+import {MdDialog, MdSnackBar} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../popup/drops-details-popup/drops-details-popup.component';
 import {TradeDetailsPopupComponent} from '../popup/trade-details-popup/trade-details-popup.component';
 import {I18nName} from '../../model/list/i18n-name';
@@ -21,6 +21,7 @@ import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {FishDetailsPopupComponent} from '../popup/fish-details-popup/fish-details-popup.component';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {UserInfo} from 'firebase/app';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-item',
@@ -124,7 +125,9 @@ export class ItemComponent implements OnInit {
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
                 private localizedData: LocalizedDataService,
-                private auth: AngularFireAuth) {
+                private auth: AngularFireAuth,
+                private snackBar: MdSnackBar,
+                private translator: TranslateService) {
     }
 
     isDraft(): boolean {
@@ -142,6 +145,18 @@ export class ItemComponent implements OnInit {
 
     public get nextSpawnLocation(): string {
         return this.i18n.getName(this.localizedData.getPlace(this.nextSpawnZoneId));
+    }
+
+    public afterNameCopy(id: number): void {
+        this.snackBar.open(
+            this.translator.instant('Item_name_copied',
+                {itemname: this.localizedData.getItem(id)[this.translator.currentLang]}),
+            '',
+            {
+                duration: 2000,
+                extraClasses: ['snack']
+            }
+        );
     }
 
     ngOnInit(): void {

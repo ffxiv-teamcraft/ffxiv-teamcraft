@@ -147,7 +147,8 @@
     "Your_comment": "Votre commentaire",
     "Required_crafts_amount": "Nombre de crafts à faire",
     "Requires": "Nécessite",
-    "Copy_item_name_to_clipboard": "Copier le nom dans le press-papier",
+    "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
+    "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
 
     "SETTINGS": {
         "title": "Options",

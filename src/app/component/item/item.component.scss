@@ -12,6 +12,9 @@
     .item-name {
         display: flex !important;
         align-items: center !important;
+        span {
+            cursor: pointer;
+        }
     }
     // Item Column Defaults
     [class^=item-col] {
