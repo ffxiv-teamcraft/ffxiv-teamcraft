@@ -181,7 +181,7 @@
             </md-expansion-panel>
         </section>
 
-        <app-list-details-panel [list]="list"
+        <app-list-details-panel *ngIf="list?.preCrafts.length > 0" [list]="list"
                                 (update)="update()"
                                 (done)="setDone($event)"
                                 [data]="orderPreCrafts(list?.preCrafts)"
