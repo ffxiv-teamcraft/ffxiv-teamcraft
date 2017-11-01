@@ -109,11 +109,19 @@
                         <md-icon>clear</md-icon>
                     </button>
                     <div class="spacer"></div>
-                    <button md-raised-button
-                            [disabled]="(getUser() | async)?.isAnonymous"
-                            (click)="adaptFilters()"
-                            color="accent">Adapt to character
-                    </button>
+                    <div class="btn-group">
+                        <button md-raised-button
+                                [disabled]="(getUser() | async)?.isAnonymous"
+                                (click)="adaptFilters()"
+                                color="accent">Adapt to character
+                        </button>
+
+                        <button md-raised-button
+                                [disabled]="(getUser() | async)?.isAnonymous"
+                                (click)="resetFilters()"
+                                color="accent">Reset Filters
+                        </button>
+                    </div>
                 </div>
                 <div>
                     <md-button-toggle [checked]="hideCompleted" (change)="toggleHideCompleted()">
