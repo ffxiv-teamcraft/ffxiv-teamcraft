@@ -1,26 +1,26 @@
-<h3 md-dialog-title>
+<h3 mat-dialog-title>
     {{'Login' | translate}}
 </h3>
-<div md-dialog-content>
+<div mat-dialog-content>
     <form [formGroup]="form" (submit)="classicLogin()">
-        <md-input-container>
+        <mat-input-container>
             <input type="text" required mdInput placeholder="Email" formControlName="email">
-        </md-input-container>
-        <md-input-container>
+        </mat-input-container>
+        <mat-input-container>
             <input type="password" required formControlName="password" mdInput
                    placeholder="{{'Password' | translate}}">
-            <md-error></md-error>
-        </md-input-container>
-        <md-error *ngIf="error">{{'Invalid_credentials' | translate}}</md-error>
-        <md-error *ngIf="notVerified">{{'Not_verified' | translate}}</md-error>
-        <button md-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
-        <button md-button color="warn" class="forgot-password" type="button" (click)="openForgotPasswordPopup()">
+            <mat-error></mat-error>
+        </mat-input-container>
+        <mat-error *ngIf="error">{{'Invalid_credentials' | translate}}</mat-error>
+        <mat-error *ngIf="notVerified">{{'Not_verified' | translate}}</mat-error>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
+        <button mat-button color="warn" class="forgot-password" type="button" (click)="openForgotPasswordPopup()">
             {{"Forgot_password" | translate}}
         </button>
     </form>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="oauth">
-        <button md-raised-button color="primary" (click)="googleOauth()">{{'Google_login' | translate}}</button>
-        <button md-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_login' | translate}}</button>
+        <button mat-raised-button color="primary" (click)="googleOauth()">{{'Google_login' | translate}}</button>
+        <button mat-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_login' | translate}}</button>
     </div>
 </div>

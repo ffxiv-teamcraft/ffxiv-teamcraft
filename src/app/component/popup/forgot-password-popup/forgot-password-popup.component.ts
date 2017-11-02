@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {MdDialogRef, MdSnackBar} from '@angular/material';
+import {MatDialogRef, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -14,8 +14,8 @@ export class ForgotPasswordPopupComponent {
 
     public error: string;
 
-    constructor(private af: AngularFireAuth, private ref: MdDialogRef<ForgotPasswordPopupComponent>,
-                private snack: MdSnackBar, private translate: TranslateService) {
+    constructor(private af: AngularFireAuth, private ref: MatDialogRef<ForgotPasswordPopupComponent>,
+                private snack: MatSnackBar, private translate: TranslateService) {
     }
 
     sendEmail(): void {

@@ -4,10 +4,10 @@ import {Observable} from 'rxjs/Observable';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
 import {Recipe} from '../../model/list/recipe';
-import {I18nName} from '../../model/list/i18n-name';
 import {ItemData} from '../../model/garland-tools/item-data';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {SearchFilter} from '../../model/search/search-filter.interface';
+import {publishReplay, refCount, take} from 'rxjs/operators'
 
 @Injectable()
 export class DataService {
@@ -89,9 +89,11 @@ export class DataService {
     public getCharacter(id: number): Observable<any> {
         if (!this.characterCache.get(id)) {
             const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`).map(result => result.data)
-                .publishReplay(1)
-                .refCount()
-                .take(1);
+                .pipe(
+                    publishReplay(1),
+                    refCount(),
+                    take(1),
+                );
             this.characterCache.set(id, request);
         }
         return this.characterCache.get(id);

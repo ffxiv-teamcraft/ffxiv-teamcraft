@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {MdDialogRef} from '@angular/material';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-character-add-popup',
@@ -21,7 +21,7 @@ export class CharacterAddPopupComponent implements OnInit {
                 private fb: FormBuilder,
                 private firebase: AngularFireDatabase,
                 private af: AngularFireAuth,
-                public dialogRef: MdDialogRef<CharacterAddPopupComponent>) {
+                public dialogRef: MatDialogRef<CharacterAddPopupComponent>) {
     }
 
     validateData(group: FormGroup): Promise<any> {
@@ -47,8 +47,8 @@ export class CharacterAddPopupComponent implements OnInit {
     submit(): void {
         this.data
             .searchCharacter(this.form.value.character, this.form.value.server)
-            .mergeMap(results => {
-                return this.af.idToken.mergeMap(user => {
+            .switchMap(results => {
+                return this.af.idToken.switchMap(user => {
                     if (user !== null) {
                         return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
                             .set(results[0].id);

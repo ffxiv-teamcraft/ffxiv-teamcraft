@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-name-edit-popup',
@@ -8,7 +8,7 @@ import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
 })
 export class NameEditPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: string, public dialogRef: MdDialogRef<NameEditPopupComponent>) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: string, public dialogRef: MatDialogRef<NameEditPopupComponent>) {
     }
 
     public close(cancel = false): void {

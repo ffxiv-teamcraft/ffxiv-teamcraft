@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {List} from '../../model/list/list';
-import {MatCheckboxChange, MdDialog, MdSnackBar} from '@angular/material';
+import {MatCheckboxChange, MatDialog, MatSnackBar} from '@angular/material';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {DataService} from '../../core/api/data.service';
 import {Recipe} from '../../model/list/recipe';
@@ -96,7 +96,7 @@ export class RecipesComponent implements OnInit {
     loading = false;
 
     constructor(private resolver: ListManagerService, private db: DataService,
-                private snackBar: MdSnackBar, private dialog: MdDialog,
+                private snackBar: MatSnackBar, private dialog: MatDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,

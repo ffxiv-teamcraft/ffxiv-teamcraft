@@ -15,7 +15,7 @@ export class FavoritesComponent {
 
     constructor(private userService: UserService, private listService: ListService) {
         this.userService.getUserData()
-            .mergeMap(userData => {
+            .switchMap(userData => {
                 const lists: Observable<{ authorUid: string, list: List }>[] = [];
                 (userData.favorites || []).forEach(fav => {
                     const favData = fav.split('/');

@@ -3,13 +3,13 @@ import {CommonModule} from '@angular/common';
 import {PricingComponent} from './pricing/pricing.component';
 import {PricingService} from './pricing.service';
 import {
-    MdButtonModule,
-    MdCardModule,
-    MdExpansionModule,
-    MdIconModule,
-    MdInputModule,
-    MdListModule,
-    MdTooltipModule
+    MatButtonModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatTooltipModule
 } from '@angular/material';
 import {CoreModule} from '../core/core.module';
 import {PricingRowComponent} from './pricing-row/pricing-row.component';
@@ -21,13 +21,13 @@ import {PipesModule} from '../pipe/pipes.module';
     imports: [
         CoreModule,
         CommonModule,
-        MdCardModule,
-        MdExpansionModule,
-        MdListModule,
-        MdInputModule,
-        MdButtonModule,
-        MdIconModule,
-        MdTooltipModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatListModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
         FormsModule,
         FlexLayoutModule,
         PipesModule,

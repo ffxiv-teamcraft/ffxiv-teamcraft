@@ -4,7 +4,7 @@ import {List} from '../../model/list/list';
 import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
-import {MdDialog, MdSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
@@ -73,9 +73,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     zoneBreakdown: ZoneBreakdown;
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
-                private dialog: MdDialog, private userService: UserService,
+                private dialog: MatDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
-                private listManager: ListManagerService, private snack: MdSnackBar,
+                private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService,
                 private data: LocalizedDataService) {
@@ -193,7 +193,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.listManager.upgradeList(this.list)
-            .mergeMap(list => this.listService.update(this.listUid, list))
+            .switchMap(list => this.listService.update(this.listUid, list))
             .subscribe(() => {
                 ga('send', 'event', 'List', 'regenerate');
                 dialogRef.close();

@@ -22,7 +22,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * @returns {Observable<R>}
      */
     public get(uid: string, params?: any): Observable<T> {
-        return this.getBaseUri(params).mergeMap(uri => {
+        return this.getBaseUri(params).switchMap(uri => {
             return this.oneRef(uri, uid).map(obj => {
                 const res: T = this.serializer.deserialize<T>(obj, this.getClass());
                 res.$key = obj.$key;
@@ -37,7 +37,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * @returns {Observable<R>}
      */
     public getAll(params?: any): Observable<T[]> {
-        return this.getBaseUri(params).mergeMap(uri => {
+        return this.getBaseUri(params).switchMap(uri => {
             return this.listRef(uri).map(obj => {
                 const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
                 res.forEach((row, index) => {
@@ -73,7 +73,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      */
     public update(uid: string, value: T, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri(params).mergeMap(uri => {
+            return this.getBaseUri(params).switchMap(uri => {
                 delete value.$key;
                 return Observable.fromPromise(this.oneRef(uri, uid).update(value));
             }).subscribe(resolve);

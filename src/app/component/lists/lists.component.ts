@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
 import {FormControl, Validators} from '@angular/forms';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../popup/confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../core/list/list-manager.service';
@@ -31,7 +31,7 @@ export class ListsComponent implements OnInit {
     expanded: string[] = [];
 
     constructor(private auth: AngularFireAuth,
-                private dialog: MdDialog, private listManager: ListManagerService,
+                private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title) {
     }
 

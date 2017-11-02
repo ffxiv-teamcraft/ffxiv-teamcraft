@@ -1,29 +1,29 @@
-<md-expansion-panel #panel [expanded]="expanded">
-    <md-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
-        <md-panel-title>
+<mat-expansion-panel #panel [expanded]="expanded">
+    <mat-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
+        <mat-panel-title>
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
-        </md-panel-title>
+        </mat-panel-title>
         <div class="spacer"></div>
         <div class="buttons">
-            <button md-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"
-                    mdTooltip="{{'Share' | translate}}" mdTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
-                <md-icon>share</md-icon>
+            <button mat-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"
+                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
             </button>
             <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
-            <button md-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}" (click)="$event.stopPropagation()">
-                <md-icon>open_in_new</md-icon>
+            <button mat-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}" (click)="$event.stopPropagation()">
+                <mat-icon>open_in_new</mat-icon>
             </button>
-            <button md-icon-button *ngIf="!readonly" (click)="ondelete.emit(); $event.stopPropagation()">
-                <md-icon>delete</md-icon>
+            <button mat-icon-button *ngIf="!readonly" (click)="ondelete.emit(); $event.stopPropagation()">
+                <mat-icon>delete</mat-icon>
             </button>
         </div>
-    </md-expansion-panel-header>
-    <md-list>
+    </mat-expansion-panel-header>
+    <mat-list>
         <app-recipe *ngFor="let recipe of list.recipes"
                     [recipe]="recipe"
                     (ondelete)="onrecipedelete.emit({recipe: recipe})"
                     (onedit)="onedit.emit({recipe: recipe, amount:$event})"
                     [readonly]="readonly">
         </app-recipe>
-    </md-list>
-</md-expansion-panel>
+    </mat-list>
+</mat-expansion-panel>

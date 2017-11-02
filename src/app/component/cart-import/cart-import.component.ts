@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListManagerService} from '../../core/list/list-manager.service';
 import {List} from '../../model/list/list';
-import {MdDialog} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {ListNamePopupComponent} from '../popup/list-name-popup/list-name-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {ListService} from '../../core/firebase/list.service';
@@ -17,7 +17,7 @@ export class CartImportComponent {
     progress = 0;
 
     constructor(route: ActivatedRoute, listManager: ListManagerService,
-                dialog: MdDialog, listService: ListService, router: Router) {
+                dialog: MatDialog, listService: ListService, router: Router) {
         const list = new List();
         dialog.open(ListNamePopupComponent).afterClosed().subscribe(name => {
             let done = 0;

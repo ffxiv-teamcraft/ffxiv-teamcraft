@@ -2,7 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {ListRow} from '../../model/list/list-row';
 import {I18nToolsService} from '../../core/i18n-tools.service';
 import {GatheredByPopupComponent} from '../popup/gathered-by-popup/gathered-by-popup.component';
-import {MdDialog, MdSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../popup/drops-details-popup/drops-details-popup.component';
 import {TradeDetailsPopupComponent} from '../popup/trade-details-popup/trade-details-popup.component';
 import {I18nName} from '../../model/list/i18n-name';
@@ -121,12 +121,12 @@ export class ItemComponent implements OnInit {
     };
 
     constructor(private i18n: I18nToolsService,
-                private dialog: MdDialog,
+                private dialog: MatDialog,
                 private media: ObservableMedia,
                 private etimeService: EorzeanTimeService,
                 private localizedData: LocalizedDataService,
                 private auth: AngularFireAuth,
-                private snackBar: MdSnackBar,
+                private snackBar: MatSnackBar,
                 private translator: TranslateService) {
     }
 
@@ -160,7 +160,7 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.auth.idToken.subscribe(user => {
+        this.auth.authState.subscribe(user => {
             this.user = user;
         });
 

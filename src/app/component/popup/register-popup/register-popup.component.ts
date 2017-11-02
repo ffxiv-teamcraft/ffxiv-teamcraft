@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {UserService} from '../../../core/user.service';
 import {CharacterAddPopupComponent} from 'app/component/popup/character-add-popup/character-add-popup.component';
@@ -25,13 +25,13 @@ export class RegisterPopupComponent {
     public form: FormGroup;
 
     constructor(private af: AngularFireAuth,
-                public dialogRef: MdDialogRef<RegisterPopupComponent>,
+                public dialogRef: MatDialogRef<RegisterPopupComponent>,
                 public firebase: AngularFireDatabase,
                 private userService: UserService,
-                private dialog: MdDialog,
+                private dialog: MatDialog,
                 private translate: TranslateService,
                 private fb: FormBuilder,
-                private snack: MdSnackBar) {
+                private snack: MatSnackBar) {
 
         this.form = fb.group({
             email: ['', Validators.email],

@@ -107,7 +107,7 @@ export class Item implements I18nData {
                     npcId: +ts,
                     zoneId: 0
                 })
-                .mergeMap((tradeSource: TradeSource) => {
+                .switchMap((tradeSource: TradeSource) => {
                     return db.getNpc(+ts)
                         .map(data => {
                             if (data.npc.zoneid === undefined) {
@@ -117,7 +117,7 @@ export class Item implements I18nData {
                             return tradeSource as TradeSource;
                         });
                 })
-                .mergeMap((tradeSource: TradeSource) => {
+                .switchMap((tradeSource: TradeSource) => {
                     const trades: Observable<Trade>[] = [];
                     for (const row of this.tradeSources[ts]) {
                         const obs: Observable<Trade> = Observable
@@ -130,7 +130,7 @@ export class Item implements I18nData {
                                 currencyId: 0,
                                 itemHQ: false
                             })
-                            .mergeMap(trade => {
+                            .switchMap(trade => {
                                 return db.getItem(+row.item[0].id)
                                     .map(data => {
                                         trade.itemIcon = data.item.icon;
@@ -140,7 +140,7 @@ export class Item implements I18nData {
                                         return trade;
                                     });
                             })
-                            .mergeMap(trade => {
+                            .switchMap(trade => {
                                 return db.getItem(+row.currency[0].id)
                                     .map(data => {
                                         trade.currencyIcon = data.item.icon;
@@ -188,7 +188,7 @@ export class Item implements I18nData {
                 .of({
                     npcId: 0,
                     zoneId: 0
-                }).mergeMap((vendor: Vendor) => {
+                }).switchMap((vendor: Vendor) => {
                     return db.getNpc(+id)
                         .map(data => {
                             vendor.npcId = +id;

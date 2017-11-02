@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 import {DataService} from '../../../core/api/data.service';
 import {Fish} from '../../../model/garland-tools/fish';
 import {ListRow} from '../../../model/list/list-row';
@@ -22,7 +22,7 @@ export class FishDetailsPopupComponent implements OnInit {
 
     loading = true;
 
-    constructor(@Inject(MD_DIALOG_DATA) public item: ListRow, private api: DataService,
+    constructor(@Inject(MAT_DIALOG_DATA) public item: ListRow, private api: DataService,
                 private gt: GarlandToolsService, private i18nData: LocalizedDataService) {
     }
 

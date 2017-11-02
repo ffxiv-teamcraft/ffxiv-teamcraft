@@ -1,6 +1,6 @@
 .input-container {
     width: 100%;
-    md-input-container {
+    mat-input-container {
         font-size: 20px;
         width: 60%;
         margin: auto;
@@ -17,7 +17,7 @@
             margin-top: 20px;
             display: flex;
             align-items: baseline;
-            md-input-container {
+            mat-input-container {
                 width: auto !important;
                 margin-right: 10px;
                 min-width: 60px;
@@ -29,9 +29,9 @@
         div {
             min-width: 170px;
         }
-        md-radio-group {
+        mat-radio-group {
             width: 520px;
-            md-radio-button {
+            mat-radio-button {
                 margin-right: 5px;
             }
         }

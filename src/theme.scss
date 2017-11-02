@@ -13,7 +13,7 @@
 }
 
 @mixin expansion-panel-accent($theme) {
-    md-expansion-panel.accent {
+    mat-expansion-panel.accent {
         $accent: map-get($theme, accent);
         $foreground: map-get($theme, foreground);
         background: mat-color($accent);

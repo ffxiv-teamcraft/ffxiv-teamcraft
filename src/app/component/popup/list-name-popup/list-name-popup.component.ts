@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {MdDialogRef} from '@angular/material';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-list-name-popup',
@@ -11,7 +11,7 @@ export class ListNamePopupComponent {
 
     public form: FormControl = new FormControl('', Validators.required);
 
-    constructor(private ref: MdDialogRef<ListNamePopupComponent>) {
+    constructor(private ref: MatDialogRef<ListNamePopupComponent>) {
     }
 
     submit() {

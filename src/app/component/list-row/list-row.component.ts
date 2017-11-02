@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {List} from '../../model/list/list';
-import {MdSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -37,7 +37,7 @@ export class ListRowComponent {
     @Input()
     public readonly = false;
 
-    constructor(private snack: MdSnackBar, private translator: TranslateService) {
+    constructor(private snack: MatSnackBar, private translator: TranslateService) {
     }
 
     public getLink(): string {

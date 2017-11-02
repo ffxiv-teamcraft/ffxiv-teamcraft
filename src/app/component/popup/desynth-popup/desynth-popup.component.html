@@ -1,9 +1,9 @@
-<h2 md-dialog-title>{{data.id |itemName | i18n}}</h2>
-<div md-dialog-content>
-    <md-list>
-        <md-list-item *ngFor="let desynth of data.desynths">
-            <img md-list-avatar src="https://www.garlandtools.org/db/images/Desynth.png">
-            <b md-line>{{desynth | itemName | i18n}}</b>
-        </md-list-item>
-    </md-list>
+<h2 mat-dialog-title>{{data.id |itemName | i18n}}</h2>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item *ngFor="let desynth of data.desynths">
+            <img mat-list-avatar src="https://www.garlandtools.org/db/images/Desynth.png">
+            <b mat-line>{{desynth | itemName | i18n}}</b>
+        </mat-list-item>
+    </mat-list>
 </div>

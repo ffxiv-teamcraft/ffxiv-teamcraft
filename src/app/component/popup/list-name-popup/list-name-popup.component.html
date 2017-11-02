@@ -1,12 +1,12 @@
-<h2 md-dialog-title>{{'New_List' | translate}}</h2>
-<div md-dialog-content>
+<h2 mat-dialog-title>{{'New_List' | translate}}</h2>
+<div mat-dialog-content>
     <form (submit)="submit()">
-        <md-input-container>
+        <mat-input-container>
             <input mdInput type="text" [formControl]="form" required>
-            <md-error *ngIf="form.hasError('required')">
+            <mat-error *ngIf="form.hasError('required')">
                 {{'Please_enter_a_name' | translate}}
-            </md-error>
-        </md-input-container>
-        <button md-raised-button type="submit" color="accent">{{'Confirm' | translate}}</button>
+            </mat-error>
+        </mat-input-container>
+        <button mat-raised-button type="submit" color="accent">{{'Confirm' | translate}}</button>
     </form>
 </div>

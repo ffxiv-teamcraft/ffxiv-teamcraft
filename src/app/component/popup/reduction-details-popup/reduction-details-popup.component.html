@@ -1,8 +1,8 @@
-<h2 md-dialog-title>{{data.id | itemName | i18n}}</h2>
-<div md-dialog-content>
-    <md-list>
-        <md-list-item *ngFor="let reduction of data.reducedFrom">
+<h2 mat-dialog-title>{{data.id | itemName | i18n}}</h2>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item *ngFor="let reduction of data.reducedFrom">
             <h3>{{reduction | itemName | i18n}}</h3>
-        </md-list-item>
-    </md-list>
+        </mat-list-item>
+    </mat-list>
 </div>

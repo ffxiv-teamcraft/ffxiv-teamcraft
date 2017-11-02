@@ -1,5 +1,5 @@
-<h2 md-dialog-title>{{"Patreon_popup_title" | translate}}</h2>
-<div md-dialog-content>
+<h2 mat-dialog-title>{{"Patreon_popup_title" | translate}}</h2>
+<div mat-dialog-content>
     <p>
         {{"Patreon_popup_body" | translate}}
     </p>
@@ -11,9 +11,9 @@
     <div>
         <h3>{{"Current_funds" | translate}}</h3>
         <p>${{data.current}} / ${{data.goal}}</p>
-        <md-progress-bar class="progressbar" [value]="data.current*100 / data.goal"></md-progress-bar>
+        <mat-progress-bar class="progressbar" [value]="data.current*100 / data.goal"></mat-progress-bar>
     </div>
-    <a href="https://www.patreon.com/bePatron?u=702160" md-raised-button class="patreon"> <img
+    <a href="https://www.patreon.com/bePatron?u=702160" mat-raised-button class="patreon"> <img
         src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
         class="patreon-logo">{{"HOME_PAGE.support_patreon" | translate}}</a>
 
@@ -21,6 +21,6 @@
 
     <app-donation-button></app-donation-button>
 </div>
-<div md-dialog-actions>
-    <button md-raised-button md-dialog-close color="warn">{{"Close" | translate}}</button>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="warn">{{"Close" | translate}}</button>
 </div>

@@ -28,7 +28,7 @@ export class ListManagerService {
     public addToList(itemId: number, list: List, recipeId: string, amount = 1): Observable<List> {
         list.version = environment.version;
         return this.db.getItem(itemId)
-            .mergeMap((data: ItemData) => {
+            .switchMap((data: ItemData) => {
                 return data.item.getCraftedBy(this.htmlTools, this.db, this.gt)
                     .map(crafted => {
                         const craft = data.getCraft(recipeId);
@@ -57,7 +57,7 @@ export class ListManagerService {
                             amount: added
                         }], this.gt, this.i18n);
                     })
-                    .mergeMap(l => {
+                    .switchMap(l => {
                         const precrafts = [];
                         l.preCrafts.forEach(craft => {
                             if (craft.craftedBy === undefined) {
@@ -78,7 +78,7 @@ export class ListManagerService {
                         }
                         return Observable.of(l);
                     })
-                    .mergeMap(l => {
+                    .switchMap(l => {
                         const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
                         list.forEachItem(item => {
                             const related = data.getIngredient(item.id);
@@ -99,7 +99,7 @@ export class ListManagerService {
                             return Observable.of(l);
                         }
                     })
-                    .mergeMap(l => {
+                    .switchMap(l => {
                         const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
                         list.forEachItem(item => {
                             const related = data.getIngredient(item.id);

@@ -1,83 +1,83 @@
 <div class="app-container {{lightTheme?'light-theme':''}}">
-    <md-toolbar color="primary">
-        <button md-icon-button (click)="sidenav.toggle()">
-            <md-icon>menu</md-icon>
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
         </button>
         <h1>FFXIV Teamcraft</h1>
 
-        <md-menu #langMenu="mdMenu" yPosition="above">
-            <button md-menu-item (click)="use('fr')">FR</button>
-            <button md-menu-item (click)="use('en')">EN</button>
-            <button md-menu-item (click)="use('de')">DE</button>
-            <button md-menu-item (click)="use('ja')">JA</button>
-        </md-menu>
+        <mat-menu #langMenu="matMenu" yPosition="above">
+            <button mat-menu-item (click)="use('fr')">FR</button>
+            <button mat-menu-item (click)="use('en')">EN</button>
+            <button mat-menu-item (click)="use('de')">DE</button>
+            <button mat-menu-item (click)="use('ja')">JA</button>
+        </mat-menu>
 
-        <button md-button [mdMenuTriggerFor]="langMenu" fxShow fxHide.lt-md>
+        <button mat-button [matMenuTriggerFor]="langMenu" fxShow fxHide.lt-md>
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>
         <p class="version">{{version}}</p>
-    </md-toolbar>
-    <md-card class="announcement" *ngIf="showAnnouncement()">
-        <md-grid-list cols="5" rowHeight="35px">
-            <md-grid-tile colspan="4">
+    </mat-toolbar>
+    <mat-card class="announcement" *ngIf="showAnnouncement()">
+        <mat-grid-list cols="5" rowHeight="35px">
+            <mat-grid-tile colspan="4">
                 <p [innerHTML]="announcement"></p>
-            </md-grid-tile>
-            <md-grid-tile>
-                <button md-icon-button color="accent" (click)="dismissAnnouncement()">
-                    <md-icon>clear</md-icon>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-icon-button color="accent" (click)="dismissAnnouncement()">
+                    <mat-icon>clear</mat-icon>
                 </button>
-            </md-grid-tile>
-        </md-grid-list>
-    </md-card>
-    <md-sidenav-container>
-        <md-sidenav mode="over" #sidenav>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+    <mat-sidenav-container>
+        <mat-sidenav mode="over" #sidenav>
             <div class="accent-background">
                 <div class="user">
-                    <md-icon *ngIf="(authState | async)?.isAnonymous">person</md-icon>
+                    <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" alt="avatar">
                     <p class="name">{{username}}</p>
                 </div>
                 <div *ngIf="(authState | async)?.isAnonymous">
-                    <button md-raised-button (click)="openLoginPopup()">{{'Login' | translate}}</button>
-                    <button md-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
+                    <button mat-raised-button (click)="openLoginPopup()">{{'Login' | translate}}</button>
+                    <button mat-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
                 </div>
-                <button md-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">{{'Disconnect'
+                <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">{{'Disconnect'
                     | translate}}
                 </button>
             </div>
-            <md-divider></md-divider>
-            <md-nav-list>
-                <md-list-item routerLink="/home" (click)="sidenav.close()">
-                    <md-icon mdListIcon>home</md-icon>
+            <mat-divider></mat-divider>
+            <mat-nav-list>
+                <mat-list-item routerLink="/home" (click)="sidenav.close()">
+                    <mat-icon mdListIcon>home</mat-icon>
                     <h3 mdLine>{{'Home' | translate}}</h3>
-                </md-list-item>
-                <md-list-item routerLink="/recipes" (click)="sidenav.close()">
-                    <md-icon mdListIcon>search</md-icon>
+                </mat-list-item>
+                <mat-list-item routerLink="/recipes" (click)="sidenav.close()">
+                    <mat-icon mdListIcon>search</mat-icon>
                     <h3 mdLine>{{'Recipes' | translate}}</h3>
-                </md-list-item>
-                <md-list-item routerLink="/lists" (click)="sidenav.close()">
-                    <md-icon mdListIcon>view_list</md-icon>
+                </mat-list-item>
+                <mat-list-item routerLink="/lists" (click)="sidenav.close()">
+                    <mat-icon mdListIcon>view_list</mat-icon>
                     <h3 mdLine>{{'Lists' | translate}}</h3>
-                </md-list-item>
-                <md-list-item routerLink="/favorites" (click)="sidenav.close()">
-                    <md-icon mdListIcon>favorite</md-icon>
+                </mat-list-item>
+                <mat-list-item routerLink="/favorites" (click)="sidenav.close()">
+                    <mat-icon mdListIcon>favorite</mat-icon>
                     <h3 mdLine>{{'Favorites' | translate}}</h3>
-                </md-list-item>
-                <md-list-item routerLink="/settings" (click)="sidenav.close()">
-                    <md-icon mdListIcon>settings</md-icon>
+                </mat-list-item>
+                <mat-list-item routerLink="/settings" (click)="sidenav.close()">
+                    <mat-icon mdListIcon>settings</mat-icon>
                     <h3 mdLine>{{'SETTINGS.title' | translate}}</h3>
-                </md-list-item>
-            </md-nav-list>
-            <md-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
-            </md-slide-toggle>
-            <button md-button [mdMenuTriggerFor]="langMenu" fxHide fxShow.lt-md>
+                </mat-list-item>
+            </mat-nav-list>
+            <mat-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
+            </mat-slide-toggle>
+            <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md>
                 {{locale | uppercase}}
             </button>
             <div class="spacer"></div>
-            <a md-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
+            <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
-        </md-sidenav>
+        </mat-sidenav>
         <div>
             <div class="content">
                 <div class="content-middle">
@@ -85,5 +85,5 @@
                 </div>
             </div>
         </div>
-    </md-sidenav-container>
+    </mat-sidenav-container>
 </div>

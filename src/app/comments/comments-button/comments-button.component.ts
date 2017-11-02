@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
 import {CommentsService} from '../comments.service';
 
@@ -21,7 +21,7 @@ export class CommentsButtonComponent implements OnInit {
 
     amount: number;
 
-    constructor(private dialog: MdDialog, private commentsService: CommentsService) {
+    constructor(private dialog: MatDialog, private commentsService: CommentsService) {
     }
 
     openPopup(): void {

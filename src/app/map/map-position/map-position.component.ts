@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {MapPopupComponent} from '../map-popup/map-popup.component';
 
 @Component({
@@ -15,7 +15,7 @@ export class MapPositionComponent {
     @Input()
     zoneId: number;
 
-    constructor(private dialog: MdDialog) {
+    constructor(private dialog: MatDialog) {
     }
 
     getMarker(): { x: number, y: number } {

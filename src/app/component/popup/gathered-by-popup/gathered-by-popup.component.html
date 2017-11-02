@@ -1,27 +1,27 @@
-<h2 md-dialog-title>{{data.id | itemName | i18n}}</h2>
-<div md-dialog-content>
-    <md-list>
-        <md-list-item *ngFor="let node of data.gatheredBy.nodes">
-            <md-icon md-list-icon>location_on</md-icon>
-            <b md-line>
+<h2 mat-dialog-title>{{data.id | itemName | i18n}}</h2>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item *ngFor="let node of data.gatheredBy.nodes">
+            <mat-icon mat-list-icon>location_on</mat-icon>
+            <b mat-line>
                 {{node.zoneid | placeName | i18n}}
             </b>
-            <p md-line>
+            <p mat-line>
                 {{node.areaid | placeName | i18n}}
             </p>
-            <md-chip-list>
-                <md-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
+            <mat-chip-list>
+                <mat-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
                     {{node.limitType | i18n}}
-                </md-chip>
-            </md-chip-list>
-            <app-map-position md-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
+                </mat-chip>
+            </mat-chip-list>
+            <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
                               [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
             <span>
-            <b md-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
-            <span md-line *ngIf="node.time !== undefined">
-                <i md-line *ngFor="let time of node.time">{{time}} - {{time + (node.uptime / 60)}}</i>
+            <b mat-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
+            <span mat-line *ngIf="node.time !== undefined">
+                <i mat-line *ngFor="let time of node.time">{{time}} - {{time + (node.uptime / 60)}}</i>
             </span>
         </span>
-        </md-list-item>
-    </md-list>
+        </mat-list-item>
+    </mat-list>
 </div>

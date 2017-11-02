@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
     selector: 'app-patreon-popup',
@@ -8,7 +8,7 @@ import {MD_DIALOG_DATA} from '@angular/material';
 })
 export class PatreonPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: any) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     }
 
 }

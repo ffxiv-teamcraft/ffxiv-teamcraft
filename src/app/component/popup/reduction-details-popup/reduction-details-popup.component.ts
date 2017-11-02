@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {I18nToolsService} from '../../../core/i18n-tools.service';
 import {GarlandToolsService} from '../../../core/api/garland-tools.service';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
     selector: 'app-reduction-details-popup',
@@ -10,6 +10,6 @@ import {MD_DIALOG_DATA} from '@angular/material';
 })
 export class ReductionDetailsPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: any, private gt: GarlandToolsService, private i18n: I18nToolsService) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: any, private gt: GarlandToolsService, private i18n: I18nToolsService) {
     }
 }

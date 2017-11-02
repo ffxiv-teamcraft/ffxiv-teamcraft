@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {CommentsService} from '../comments.service';
 import {ResourceComment} from '../resource-comment';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../core/user.service';
 
@@ -21,7 +21,7 @@ export class CommentsPopupComponent implements OnInit {
     @ViewChild('f') myNgForm;
 
     constructor(private commentsService: CommentsService,
-                @Inject(MD_DIALOG_DATA) public data: { resourceUri: string, name: string, isOwnList: boolean },
+                @Inject(MAT_DIALOG_DATA) public data: { resourceUri: string, name: string, isOwnList: boolean },
                 private userService: UserService) {
         this.userService.getUserData().subscribe(user => {
             if (user.name === 'Anonymous') {

@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
     selector: 'app-voyages-details-popup',
@@ -8,7 +8,7 @@ import {MD_DIALOG_DATA} from '@angular/material';
 })
 export class VoyagesDetailsPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA) public data: any) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     }
 
 }

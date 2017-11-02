@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import * as firebase from 'firebase/app';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {MdDialog, MdDialogRef} from '@angular/material';
+import {MatDialog, MatDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -24,11 +24,11 @@ export class LoginPopupComponent {
     public notVerified = false;
 
     constructor(private af: AngularFireAuth,
-                public dialogRef: MdDialogRef<LoginPopupComponent>,
+                public dialogRef: MatDialogRef<LoginPopupComponent>,
                 public firebase: AngularFireDatabase,
                 private fb: FormBuilder,
                 private router: Router,
-                private dialog: MdDialog) {
+                private dialog: MatDialog) {
 
         this.form = fb.group({
             email: ['', Validators.email],

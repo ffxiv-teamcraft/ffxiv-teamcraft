@@ -5,6 +5,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {AppUser} from '../model/list/app-user';
 import {Observable} from 'rxjs/Observable';
 import {DataService} from './api/data.service';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -18,7 +19,7 @@ export class UserService {
 
     public getUser(): Observable<AppUser> {
         return this.getUserData()
-            .mergeMap(u => {
+            .switchMap(u => {
                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
                     return this.db.getCharacter(u.lodestoneId);
                 } else {
@@ -29,16 +30,19 @@ export class UserService {
 
     public getUserData(): Observable<AppUser> {
         return this.reloader
-            .mergeMap(() => {
-                return this.af.authState.mergeMap(user => {
+            .switchMap(() => {
+                return this.af.authState.switchMap(user => {
                     if (user === null || user.isAnonymous) {
                         return Observable.of({name: 'Anonymous'});
                     } else {
                         return this.firebase
                             .object(`/users/${user.uid}`)
-                            .catch(() => {
-                                return Observable.of(null);
-                            });
+                            .valueChanges()
+                            .pipe(
+                                catchError(() => {
+                                    return Observable.of(null);
+                                })
+                            );
                     }
                 });
             });

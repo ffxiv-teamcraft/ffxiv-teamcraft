@@ -4,16 +4,14 @@ import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
-import * as firebase from 'firebase/app';
 import {User} from 'firebase/app';
-import {MdDialog, MdSnackBar, MdSnackBarRef, SimpleSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
 import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './patreon/patreon-popup/patreon-popup.component';
-import Persistence = firebase.auth.Auth.Persistence;
 
 declare const ga: Function;
 
@@ -38,7 +36,7 @@ export class AppComponent implements OnInit {
 
     version = environment.version;
 
-    registrationSnackRef: MdSnackBarRef<SimpleSnackBar>;
+    registrationSnackRef: MatSnackBarRef<SimpleSnackBar>;
 
     isRegistering = false;
 
@@ -48,10 +46,10 @@ export class AppComponent implements OnInit {
                 private router: Router,
                 private translate: TranslateService,
                 data: AngularFireDatabase,
-                private dialog: MdDialog,
+                private dialog: MatDialog,
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
-                private snack: MdSnackBar) {
+                private snack: MatSnackBar) {
 
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
@@ -65,7 +63,6 @@ export class AppComponent implements OnInit {
         });
 
         // Firebase Auth
-        this.auth.auth.setPersistence(Persistence.LOCAL);
         this.authState = this.auth.authState;
 
         // Translation
@@ -79,14 +76,12 @@ export class AppComponent implements OnInit {
 
         // Annoucement
         data.object('/announcement')
-            .map(res => res.$value)
-            .do(announcement => {
+            .valueChanges()
+            .subscribe((announcement: string) => {
                 if (announcement !== localStorage.getItem('announcement:last')) {
                     localStorage.setItem('announcement:last', announcement);
                     localStorage.setItem('announcement:hide', 'false');
                 }
-            })
-            .subscribe(announcement => {
                 this.announcement = announcement;
             });
     }
@@ -100,10 +95,12 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
-        this.authState.debounceTime(1000)
+        this.authState
             .subscribe(state => {
                 if (this.router.url.indexOf('home') === -1) {
-                    this.firebase.object('/patreon').subscribe(patreon => {
+                    this.firebase.object('/patreon')
+                        .valueChanges()
+                        .subscribe((patreon: any) => {
                         this.firebase.database.ref(`/users/${state.uid}/patron`)
                             .once('value')
                             .then(snap => {

@@ -1,30 +1,30 @@
-<h3 md-dialog-title>
+<h3 mat-dialog-title>
     {{'Registration' | translate}}
 </h3>
-<div md-dialog-content>
+<div mat-dialog-content>
     <form [formGroup]="form" (submit)="classicRegister()">
-        <md-input-container>
+        <mat-input-container>
             <input type="text" required mdInput placeholder="Email" formControlName="email">
-            <md-error></md-error>
-        </md-input-container>
+            <mat-error></mat-error>
+        </mat-input-container>
         <div formGroupName="passwords">
-            <md-input-container>
+            <mat-input-container>
                 <input type="password" required formControlName="password" mdInput
                        placeholder="{{'Password' | translate}}">
-                <md-error></md-error>
-            </md-input-container>
-            <md-input-container>
+                <mat-error></mat-error>
+            </mat-input-container>
+            <mat-input-container>
                 <input type="password" required formControlName="password_check" mdInput
                        placeholder="{{'Password_Confirmation' | translate}}">
-                <md-error></md-error>
-            </md-input-container>
+                <mat-error></mat-error>
+            </mat-input-container>
         </div>
-        <button md-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">{{'Submit' | translate}}</button>
     </form>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <div class="oauth">
-        <button md-raised-button color="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
-        <button md-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
+        <button mat-raised-button color="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
+        <button mat-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
     </div>
-    <md-error *ngIf="error">{{error}}</md-error>
+    <mat-error *ngIf="error">{{error}}</mat-error>
 </div>

@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 import {List} from '../../../model/list/list';
 import {ListRow} from '../../../model/list/list-row';
 
@@ -10,7 +10,7 @@ import {ListRow} from '../../../model/list/list-row';
 })
 export class RequirementsPopupComponent {
 
-    constructor(@Inject(MD_DIALOG_DATA)public data: { item: ListRow, list: List }) {
+    constructor(@Inject(MAT_DIALOG_DATA)public data: { item: ListRow, list: List }) {
         if (this.data.item.requires !== undefined) {
             this.data.item.requires = data.item.requires.sort((a, b) => a.id - b.id);
         }
