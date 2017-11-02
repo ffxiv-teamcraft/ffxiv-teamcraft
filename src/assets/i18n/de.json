@@ -155,5 +155,10 @@
     "SETTINGS": {
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle"
-    }
+    },
+
+
+    "Adapt to Character": "Adapt to Character(but in german)",
+    "Reset Filters": "Reset Filters(but in german"
+
 }

@@ -156,5 +156,7 @@
     "SETTINGS": {
         "title": "Options",
         "link_base": "Liens des objets"
-    }
+    },
+    "Adapt to Character": "Adapter au personnage",
+    "Reset Filters": "Remettre les filtres à zero"
 }

@@ -113,13 +113,13 @@
                         <button md-raised-button
                                 [disabled]="(getUser() | async)?.isAnonymous"
                                 (click)="adaptFilters()"
-                                color="accent">Adapt to character
+                                color="accent">{{'Adapt to Character' | translate}}
                         </button>
 
                         <button md-raised-button
                                 [disabled]="(getUser() | async)?.isAnonymous"
                                 (click)="resetFilters()"
-                                color="accent">Reset Filters
+                                color="accent">{{'Reset Filters' | translate}}
                         </button>
                     </div>
                 </div>
