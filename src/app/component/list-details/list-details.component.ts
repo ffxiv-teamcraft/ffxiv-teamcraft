@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../model/list/list';
-import {User, UserInfo} from 'firebase/app';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
@@ -21,6 +20,9 @@ import {EorzeanTimeService} from '../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../popup/timer-options-popup/timer-options-popup.component';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {NameEditPopupComponent} from '../popup/name-edit-popup/name-edit-popup.component';
+import {User, UserInfo} from 'firebase';
+import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/operator/do';
 
 declare const ga: Function;
 
@@ -177,7 +179,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             }, err => console.error(err));
         });
         this.triggerFilter();
-        this.auth.idToken.subscribe(user => {
+        this.auth.authState.subscribe(user => {
             this.user = user;
         });
         this.userService.getUserData()

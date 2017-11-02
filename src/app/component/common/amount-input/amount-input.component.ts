@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
 
 @Component({
     selector: 'app-amount-input',

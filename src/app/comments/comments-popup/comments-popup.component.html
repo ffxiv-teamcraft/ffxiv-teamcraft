@@ -7,7 +7,7 @@
     </mat-list>
     <form (submit)="addComment()" [formGroup]="control" #f="ngForm">
         <mat-form-field class="input-field">
-            <textarea type="text" mdInput placeholder="{{'Your_comment' | translate}}" formControlName="comment"
+            <textarea type="text" matInput placeholder="{{'Your_comment' | translate}}" formControlName="comment"
                       tabindex="-1" #input></textarea>
             <mat-hint align="end">{{input.value?.length || 0}}/140</mat-hint>
         </mat-form-field>

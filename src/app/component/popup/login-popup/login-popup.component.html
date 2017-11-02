@@ -4,10 +4,10 @@
 <div mat-dialog-content>
     <form [formGroup]="form" (submit)="classicLogin()">
         <mat-input-container>
-            <input type="text" required mdInput placeholder="Email" formControlName="email">
+            <input type="text" required matInput placeholder="Email" formControlName="email">
         </mat-input-container>
         <mat-input-container>
-            <input type="password" required formControlName="password" mdInput
+            <input type="password" required formControlName="password" matInput
                    placeholder="{{'Password' | translate}}">
             <mat-error></mat-error>
         </mat-input-container>

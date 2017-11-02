@@ -1,6 +1,6 @@
 <form (submit)="createNewList()" #f="ngForm">
     <mat-input-container>
-        <input mdInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
+        <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
                [formControl]="newListFormControl" required>
         <mat-error
             *ngIf="newListFormControl.hasError('required')">

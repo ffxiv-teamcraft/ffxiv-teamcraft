@@ -49,24 +49,24 @@
             <mat-divider></mat-divider>
             <mat-nav-list>
                 <mat-list-item routerLink="/home" (click)="sidenav.close()">
-                    <mat-icon mdListIcon>home</mat-icon>
-                    <h3 mdLine>{{'Home' | translate}}</h3>
+                    <mat-icon matListIcon>home</mat-icon>
+                    <h3 matLine>{{'Home' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="sidenav.close()">
-                    <mat-icon mdListIcon>search</mat-icon>
-                    <h3 mdLine>{{'Recipes' | translate}}</h3>
+                    <mat-icon matListIcon>search</mat-icon>
+                    <h3 matLine>{{'Recipes' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="sidenav.close()">
-                    <mat-icon mdListIcon>view_list</mat-icon>
-                    <h3 mdLine>{{'Lists' | translate}}</h3>
+                    <mat-icon matListIcon>view_list</mat-icon>
+                    <h3 matLine>{{'Lists' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="sidenav.close()">
-                    <mat-icon mdListIcon>favorite</mat-icon>
-                    <h3 mdLine>{{'Favorites' | translate}}</h3>
+                    <mat-icon matListIcon>favorite</mat-icon>
+                    <h3 matLine>{{'Favorites' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/settings" (click)="sidenav.close()">
-                    <mat-icon mdListIcon>settings</mat-icon>
-                    <h3 mdLine>{{'SETTINGS.title' | translate}}</h3>
+                    <mat-icon matListIcon>settings</mat-icon>
+                    <h3 matLine>{{'SETTINGS.title' | translate}}</h3>
                 </mat-list-item>
             </mat-nav-list>
             <mat-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme

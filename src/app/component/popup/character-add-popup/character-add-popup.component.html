@@ -2,11 +2,11 @@
 <div mat-dialog-content>
     <form [formGroup]="form" (submit)="submit()">
         <mat-input-container>
-            <input mdInput placeholder="{{'Character_name' | translate}}" formControlName="character" type="text" required>
+            <input matInput placeholder="{{'Character_name' | translate}}" formControlName="character" type="text" required>
             <mat-error>Required</mat-error>
         </mat-input-container>
         <mat-input-container>
-            <input mdInput placeholder="{{'Server_name' | translate}}" formControlName="server" type="text" required>
+            <input matInput placeholder="{{'Server_name' | translate}}" formControlName="server" type="text" required>
             <mat-error>Required</mat-error>
         </mat-input-container>
         <mat-error *ngIf="!form.valid">{{'Character_not_found' | translate}}</mat-error>

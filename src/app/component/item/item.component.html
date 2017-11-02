@@ -1,15 +1,15 @@
 <!--Layout for desktop browsers-->
-<mat-list-item *ngIf="!isMobile" class="{{even?null:'even'}} auto-height" ho>
+<mat-list-item *ngIf="!isMobile" [ngClass]="{'even': even, 'auto-height':true}">
     <div class="item-col-left">
         <app-tooltip [id]="item.id" [disabled]="isDraft()">
-            <div mat-list-avatar class="icon">
-                <a mat-list-avatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
-                    <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+            <div matListAvatar class="icon">
+                <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
+                    <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
                 </a>
                 <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
             </div>
         </app-tooltip>
-        <div class="item-name" mat-line matTooltipPosition="above"
+        <div class="item-name" matLine matTooltipPosition="above"
              matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n" (cbOnSuccess)="afterNameCopy(item.id)">
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
@@ -39,7 +39,7 @@
     <div class="item-col-right">
         <div *ngIf="item.craftedBy !== undefined" class="masterbook">
             <img *ngFor="let masterbook of getMasterBooks(item)"
-                 mat-list-avatar
+                 matListAvatar
                  src="{{masterbook.icon | icon}}"
                  matTooltip="{{masterbook.id | itemName | i18n}}"
                  matTooltipPosition="above"
@@ -92,7 +92,7 @@
                 </button>
             </div>
             <div *ngIf="item.tradeSources !== undefined">
-                <button mat-icon-button mat-line
+                <button mat-icon-button matLine
                         (click)="openTradeDetails(item)">
                     <img class="currency"
                          matTooltip="{{'Trade' | translate}}"
@@ -142,27 +142,27 @@
     </div>
 </mat-list-item>
 
-<mat-list-item *ngIf="isMobile" class="{{even?null:'even'}} mobile auto-height">
-    <div mat-list-avatar class="icon">
-        <a mat-list-avatar href="{{item.id | itemLink | i18n}}" target="_blank">
-            <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+<mat-list-item *ngIf="isMobile" [ngClass]="{'even':even, 'auto-height':true, 'mobile':true}">
+    <div matListAvatar class="icon">
+        <a matListAvatar href="{{item.id | itemLink | i18n}}" target="_blank">
+            <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
         </a>
         <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
     </div>
-    <div class="item-name" mat-line>
+    <div class="item-name" matLine>
         <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
                              [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
     </div>
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
-             mat-list-avatar
+             matListAvatar
              src="{{masterbook.icon | icon}}"
              matTooltip="{{masterbook.id | itemName | i18n}}"
              matTooltipPosition="above"
              alt="{{masterbook.id | itemName | i18n}}">
     </div>
-    <div class="done" mat-line>
+    <div class="done" matLine>
         <app-amount-input class="amount"
                           max="{{getAmount()}}"
                           maxlength="{{getAmount()?.toString().length}}"
@@ -198,7 +198,7 @@
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
             </button>
             <div *ngIf="item.tradeSources !== undefined">
-                <button mat-icon-button mat-line
+                <button mat-icon-button matLine
                         (click)="openTradeDetails(item)">
                     <img class="currency"
                          matTooltip="{{'Trade' | translate}}"

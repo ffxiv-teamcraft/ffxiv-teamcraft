@@ -1,13 +1,18 @@
 <h2 mat-dialog-title>Timer options</h2>
 <div mat-dialog-content>
-    <mat-select placeholder="{{'Sound' | translate}}" [(ngModel)]="options.sound" (change)="previewSound();persist()">
-        <mat-option *ngFor="let sound of sounds" [value]="sound">
-            {{ sound }}
-        </mat-option>
-    </mat-select>
-    <mat-select placeholder="{{'Early_by' | translate}}" [(ngModel)]="options.hoursBefore" (change)="persist()">
-        <mat-option *ngFor="let value of [0,1,2,5]" [value]="value">
-            {{ value }}
-        </mat-option>
-    </mat-select>
+    <mat-form-field>
+        <mat-select placeholder="{{'Sound' | translate}}" [(ngModel)]="options.sound"
+                    (change)="previewSound();persist()">
+            <mat-option *ngFor="let sound of sounds" [value]="sound">
+                {{ sound }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="{{'Early_by' | translate}}" [(ngModel)]="options.hoursBefore" (change)="persist()">
+            <mat-option *ngFor="let value of [0,1,2,5]" [value]="value">
+                {{ value }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>

@@ -1,13 +1,13 @@
-import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
+import {AngularFireAction, AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import * as firebase from 'firebase/app';
 import {FirebaseDataModel} from '../../model/list/firebase-data-model';
-import Promise = firebase.Promise;
+import * as firebase from 'firebase/app';
+import DataSnapshot = firebase.database.DataSnapshot;
 
 export abstract class StoredDataService<T extends FirebaseDataModel> {
 
-    constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService) {
+    constructor(protected afdb: AngularFireDatabase, protected serializer: NgSerializerService) {
     }
 
     protected abstract getBaseUri(params?: any): Observable<string>;
@@ -23,11 +23,13 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      */
     public get(uid: string, params?: any): Observable<T> {
         return this.getBaseUri(params).switchMap(uri => {
-            return this.oneRef(uri, uid).map(obj => {
-                const res: T = this.serializer.deserialize<T>(obj, this.getClass());
-                res.$key = obj.$key;
-                return res;
-            });
+            return this.oneRef(uri, uid).snapshotChanges()
+                .map(snap => {
+                    const obj = snap.payload.val();
+                    const res: T = this.serializer.deserialize<T>(obj, this.getClass());
+                    res.$key = snap.payload.key;
+                    return res;
+                });
         });
     }
 
@@ -38,13 +40,16 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      */
     public getAll(params?: any): Observable<T[]> {
         return this.getBaseUri(params).switchMap(uri => {
-            return this.listRef(uri).map(obj => {
-                const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
-                res.forEach((row, index) => {
-                    row.$key = obj[index].$key;
+            return this.listRef(uri)
+                .snapshotChanges()
+                .map((snap: AngularFireAction<DataSnapshot>[]) => {
+                    const obj = snap.map(snapRow => snapRow.payload.val());
+                    const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
+                    res.forEach((row, index) => {
+                        row.$key = snap[index].payload.key;
+                    });
+                    return res;
                 });
-                return res;
-            });
         });
     }
 
@@ -95,11 +100,11 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
         });
     }
 
-    private listRef(uri: string): FirebaseListObservable<T[]> {
-        return this.firebase.list(uri);
+    private listRef(uri: string): AngularFireList<T> {
+        return this.afdb.list(uri);
     }
 
-    private oneRef(uri: string, uid: string): FirebaseObjectObservable<T> {
-        return this.firebase.object(`${uri}/${uid}`);
+    private oneRef(uri: string, uid: string): AngularFireObject<T> {
+        return this.afdb.object(`${uri}/${uid}`);
     }
 }

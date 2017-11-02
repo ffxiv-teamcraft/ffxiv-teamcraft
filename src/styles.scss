@@ -36,8 +36,15 @@ body {
     }
 }
 
-.mat-expansion-panel-content.mat-expanded {
-    overflow: visible !important;
+.mat-expansion-panel-content {
+    &.mat-expanded {
+        overflow: visible !important;
+    }
+    .mat-expansion-panel-body {
+        padding: 0 24px 16px;
+        margin: 0;
+        overflow: inherit;
+    }
 }
 
 .compact {

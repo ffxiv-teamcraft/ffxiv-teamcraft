@@ -48,9 +48,10 @@ export class CharacterAddPopupComponent implements OnInit {
         this.data
             .searchCharacter(this.form.value.character, this.form.value.server)
             .switchMap(results => {
-                return this.af.idToken.switchMap(user => {
+                return this.af.authState.switchMap(user => {
                     if (user !== null) {
-                        return this.firebase.database.ref(`/users/${user.uid}/lodestoneId`)
+                        return this.firebase.database
+                            .ref(`/users/${user.uid}/lodestoneId`)
                             .set(results[0].id);
                     }
                     return Observable.of(null);

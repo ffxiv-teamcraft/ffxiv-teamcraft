@@ -1,7 +1,7 @@
 <div class="input-container compact">
     <mat-input-container>
-        <mat-icon mdPrefix>search</mat-icon>
-        <input class="filter" [(ngModel)]="query" mdInput placeholder="{{'Recipe_name' | translate}}" #filter>
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="filter" [(ngModel)]="query" matInput placeholder="{{'Recipe_name' | translate}}" #filter>
         <mat-hint align="end"><small>{{'Data_from_gt' | translate}}</small></mat-hint>
     </mat-input-container>
 </div>
@@ -44,14 +44,14 @@
                     <span>{{filter.name | translate}}</span>
                 </div>
                 <mat-input-container>
-                    <input mdInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
+                    <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.min">
-                    <span mdSuffix>Min</span>
+                    <span matSuffix>Min</span>
                 </mat-input-container>
                 <mat-input-container>
-                    <input mdInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
+                    <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.max">
-                    <span mdSuffix>Max</span>
+                    <span matSuffix>Max</span>
                 </mat-input-container>
             </li>
         </div>
@@ -99,7 +99,7 @@
                 [innerHtml]="getStars(recipe.stars)"></span>
             </p>
             <mat-input-container>
-                <input mdInput type="number" min="1" value="1" #amount>
+                <input matInput type="number" min="1" value="1" #amount>
             </mat-input-container>
             <mat-menu #appMenu="matMenu">
                 <button mat-menu-item (click)="addToNewList(recipe, amount.value)">
