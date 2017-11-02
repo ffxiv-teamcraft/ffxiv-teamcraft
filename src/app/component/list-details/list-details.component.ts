@@ -47,22 +47,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     pricingMode = false;
 
-    gatheringFilters = [
-        {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
-        {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
-        {job: 'FSH', level: 70, checked: true, types: [4], name: 'fisher'}
-    ];
+    gatheringFilters = [];
 
-    craftFilters = [
-        {job: 'ALC', level: 70, checked: true, name: 'alchemist'},
-        {job: 'ARM', level: 70, checked: true, name: 'armorer'},
-        {job: 'BSM', level: 70, checked: true, name: 'blacksmith'},
-        {job: 'CRP', level: 70, checked: true, name: 'carpenter'},
-        {job: 'CUL', level: 70, checked: true, name: 'culinarian'},
-        {job: 'GSM', level: 70, checked: true, name: 'goldsmith'},
-        {job: 'LTW', level: 70, checked: true, name: 'leatherworker'},
-        {job: 'WVR', level: 70, checked: true, name: 'weaver'}
-    ];
+    craftFilters = [];
 
     hideCompleted = false;
 
@@ -79,6 +66,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService,
                 private data: LocalizedDataService) {
+        this.initFilters();
+
     }
 
     public getUser(): Observable<User> {
@@ -324,4 +313,31 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
             }
         });
     }
+
+    protected resetFilters(): void {
+        this.initFilters();
+
+        this.triggerFilter();
+    }
+
+    private initFilters() {
+        this.gatheringFilters = [
+            {job: 'BTN', level: 70, checked: true, types: [2, 3], name: 'botanist'},
+            {job: 'MIN', level: 70, checked: true, types: [0, 1], name: 'miner'},
+            {job: 'FSH', level: 70, checked: true, types: [4], name: 'fisher'}
+        ];
+
+        this.craftFilters = [
+            {job: 'ALC', level: 70, checked: true, name: 'alchemist'},
+            {job: 'ARM', level: 70, checked: true, name: 'armorer'},
+            {job: 'BSM', level: 70, checked: true, name: 'blacksmith'},
+            {job: 'CRP', level: 70, checked: true, name: 'carpenter'},
+            {job: 'CUL', level: 70, checked: true, name: 'culinarian'},
+            {job: 'GSM', level: 70, checked: true, name: 'goldsmith'},
+            {job: 'LTW', level: 70, checked: true, name: 'leatherworker'},
+            {job: 'WVR', level: 70, checked: true, name: 'weaver'}
+        ];
+
+    }
+
 }
