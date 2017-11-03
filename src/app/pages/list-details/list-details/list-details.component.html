@@ -109,11 +109,19 @@
                         <mat-icon>clear</mat-icon>
                     </button>
                     <div class="spacer"></div>
-                    <button mat-raised-button
-                            [disabled]="(getUser() | async)?.isAnonymous"
-                            (click)="adaptFilters()"
-                            color="accent">Adapt to character
-                    </button>
+                    <div class="btn-group">
+                        <button mat-raised-button
+                                [disabled]="(getUser() | async)?.isAnonymous"
+                                (click)="adaptFilters()"
+                                color="accent">{{'adapt_to_character' | translate}}
+                        </button>
+
+                        <button mat-raised-button
+                                [disabled]="(getUser() | async)?.isAnonymous"
+                                (click)="resetFilters()"
+                                color="accent">{{'reset_filters' | translate}}
+                        </button>
+                    </div>
                 </div>
                 <div>
                     <mat-button-toggle [checked]="hideCompleted" (change)="toggleHideCompleted()">

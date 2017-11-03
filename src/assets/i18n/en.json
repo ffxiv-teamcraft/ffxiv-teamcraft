@@ -156,5 +156,7 @@
     "SETTINGS": {
         "title": "Settings",
         "link_base": "Item links"
-    }
+    },
+    "adapt_to_character": "Adapt to Character",
+    "reset_filters": "Reset Filters"
 }
