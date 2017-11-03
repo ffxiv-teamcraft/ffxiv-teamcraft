@@ -6,7 +6,7 @@ import {TradeSource} from './trade-source';
 import {Instance} from './instance';
 import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
-import {ResourceComment} from '../../comments/resource-comment';
+import {ResourceComment} from '../../modules/comments/resource-comment';
 
 export class ListRow {
     addedAt?: number;

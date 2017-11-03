@@ -6,12 +6,12 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {User} from 'firebase/app';
 import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
-import {RegisterPopupComponent} from './component/popup/register-popup/register-popup.component';
-import {LoginPopupComponent} from './component/popup/login-popup/login-popup.component';
-import {CharacterAddPopupComponent} from './component/popup/character-add-popup/character-add-popup.component';
+import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
+import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
+import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
 import {UserService} from './core/user.service';
 import {environment} from '../environments/environment';
-import {PatreonPopupComponent} from './patreon/patreon-popup/patreon-popup.component';
+import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
 
 declare const ga: Function;
 
@@ -148,7 +148,7 @@ export class AppComponent implements OnInit {
     }
 
     saveTheme(): void {
-        localStorage.setItem('theme:light', (!this.lightTheme).toString());
+        localStorage.setItem('theme:light', this.lightTheme.toString());
     }
 
     showAnnouncement(): boolean {

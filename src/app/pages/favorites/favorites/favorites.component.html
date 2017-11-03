@@ -1,0 +1,6 @@
+<h2>{{'Favorites' | translate}}</h2>
+<app-list-panel *ngFor="let row of favorites"
+              [list]="row.list"
+              [expanded]="false"
+              [readonly]="true"
+              [authorUid]="row.authorUid"></app-list-panel>

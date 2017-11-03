@@ -14,6 +14,7 @@ import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
 import {Drop} from '../../model/list/drop';
 import {LocalizedDataService} from '../data/localized-data.service';
+import 'rxjs/add/operator/debounceTime';
 
 @Injectable()
 export class ListManagerService {

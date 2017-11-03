@@ -7,15 +7,17 @@ import {I18nToolsService} from './i18n-tools.service';
 import {DataService} from './api/data.service';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {EorzeanTimeService} from './time/eorzean-time.service';
-import {I18nPipe} from '../pipe/i18n.pipe';
+import {I18nPipe} from '../pipes/i18n.pipe';
 import {TranslateModule} from '@ngx-translate/core';
 import {LocalizedDataService} from './data/localized-data.service';
+import {AngularFireModule} from 'angularfire2';
 
 @NgModule({
     imports: [
         HttpClientModule,
         NgSerializerModule,
         TranslateModule,
+        AngularFireModule,
     ],
     providers: [
         GarlandToolsService,
@@ -32,6 +34,7 @@ import {LocalizedDataService} from './data/localized-data.service';
     exports: [
         I18nPipe,
         TranslateModule,
+        AngularFireModule,
     ]
 })
 export class CoreModule {
