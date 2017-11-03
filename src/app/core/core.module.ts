@@ -11,6 +11,8 @@ import {I18nPipe} from '../pipes/i18n.pipe';
 import {TranslateModule} from '@ngx-translate/core';
 import {LocalizedDataService} from './data/localized-data.service';
 import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 @NgModule({
     imports: [
@@ -35,6 +37,8 @@ import {AngularFireModule} from 'angularfire2';
         I18nPipe,
         TranslateModule,
         AngularFireModule,
+        AngularFireDatabaseModule,
+        AngularFireAuthModule
     ]
 })
 export class CoreModule {

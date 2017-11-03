@@ -3,7 +3,7 @@ import {CommentsService} from '../comments.service';
 import {ResourceComment} from '../resource-comment';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../../../core/user.service';
+import {UserService} from '../../../core/firebase/user.service';
 
 @Component({
     selector: 'app-comments-popup',

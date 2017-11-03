@@ -7,7 +7,7 @@ import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
-import {UserService} from 'app/core/user.service';
+import {UserService} from 'app/core/firebase/user.service';
 import {ListService} from '../../../core/firebase/list.service';
 import {Title} from '@angular/platform-browser';
 import {ListManagerService} from '../../../core/list/list-manager.service';

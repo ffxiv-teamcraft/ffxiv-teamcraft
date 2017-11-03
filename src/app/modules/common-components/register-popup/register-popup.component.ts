@@ -3,7 +3,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {UserService} from '../../../core/user.service';
+import {UserService} from '../../../core/firebase/user.service';
 import {CharacterAddPopupComponent} from 'app/modules/common-components/character-add-popup/character-add-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';

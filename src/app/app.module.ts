@@ -23,7 +23,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {UserService} from './core/user.service';
+import {UserService} from './core/firebase/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {FirebaseDataModule} from './core/firebase/firebase-data.module';
@@ -103,9 +103,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListDetailsModule,
         RecipesModule,
         ListsModule,
-    ],
-    providers: [
-        UserService,
     ],
     bootstrap: [AppComponent]
 })

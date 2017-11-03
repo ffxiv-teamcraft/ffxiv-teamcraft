@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {UserService} from '../../../core/user.service';
+import {UserService} from '../../../core/firebase/user.service';
 import {List} from '../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListService} from '../../../core/firebase/list.service';

@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {MatProgressBarModule} from '@angular/material';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {CoreModule} from '../../core/core.module';
 
 const routes: Routes = [
     {
@@ -24,6 +25,7 @@ const routes: Routes = [
         TranslateModule,
 
         CommonComponentsModule,
+        CoreModule,
     ],
     declarations: [CartImportComponent]
 })
