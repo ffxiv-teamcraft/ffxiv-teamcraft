@@ -2,7 +2,7 @@ import {ListRow} from './list-row';
 import {FirebaseDataModel} from './firebase-data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
-import {I18nToolsService} from '../../core/i18n-tools.service';
+import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
 

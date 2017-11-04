@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {I18nToolsService} from '../../../core/i18n-tools.service';
+import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {GarlandToolsService} from '../../../core/api/garland-tools.service';
 import {MAT_DIALOG_DATA} from '@angular/material';
 

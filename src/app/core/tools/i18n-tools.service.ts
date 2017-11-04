@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {I18nName} from '../model/list/i18n-name';
+import {I18nName} from '../../model/list/i18n-name';
 import {TranslateService} from '@ngx-translate/core';
-import {I18nData} from '../model/list/i18n-data';
-import {Partial} from '../model/garland-tools/partial';
+import {I18nData} from '../../model/list/i18n-data';
+import {Partial} from '../../model/garland-tools/partial';
 
 @Injectable()
 export class I18nToolsService {

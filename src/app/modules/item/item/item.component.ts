@@ -1,6 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
-import {I18nToolsService} from '../../../core/i18n-tools.service';
+import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
