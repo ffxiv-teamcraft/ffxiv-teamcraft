@@ -12,12 +12,13 @@
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="row" *ngFor="let list of lists | async">
-    <app-list-panel [list]="list"
-                  [expanded]="expanded.indexOf(list.$key) > -1"
-                  (opened)="opened(list.$key)"
-                  (closed)="closed(list.$key)"
-                  (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
-                  (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
-                  (ondelete)="delete(list.$key)"
-                  [authorUid]="user.uid"></app-list-panel>
+    <app-list-panel
+        [list]="list"
+        [expanded]="expanded.indexOf(list.$key) > -1"
+        (opened)="opened(list.$key)"
+        (closed)="closed(list.$key)"
+        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+        (ondelete)="delete(list.$key)"
+        [authorUid]="user.uid"></app-list-panel>
 </div>

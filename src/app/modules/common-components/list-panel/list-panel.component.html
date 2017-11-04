@@ -18,7 +18,7 @@
             </button>
         </div>
     </mat-expansion-panel-header>
-    <mat-list>
+    <mat-list *ngIf="expanded">
         <app-recipe *ngFor="let recipe of list.recipes"
                     [recipe]="recipe"
                     (ondelete)="onrecipedelete.emit({recipe: recipe})"
