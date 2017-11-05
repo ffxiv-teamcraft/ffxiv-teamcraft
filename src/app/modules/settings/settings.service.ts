@@ -11,4 +11,16 @@ export class SettingsService {
         localStorage.setItem('settings:base-link', base);
     }
 
+    public get alarmHoursBefore(): number {
+        return 0;
+    }
+
+    public get alarmSound(): string {
+        return 'Notification';
+    }
+
+    public get alarmVolume(): number {
+        return 100;
+    }
+
 }

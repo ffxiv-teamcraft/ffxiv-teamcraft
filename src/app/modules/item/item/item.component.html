@@ -245,15 +245,15 @@
             </div>
         </div>
     </div>
-
-    <div class="timer" *ngIf="hasTimers()">
-        <span>{{nextSpawnLocation}}</span><br>
-        <button mat-raised-button [color]="getTimerColor()" (click)="toggleAlarm()">
-            <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
-            <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-            {{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>
-        </button>
-    </div>
+    <!--TODO-->
+    <!--<div class="timer" *ngIf="hasTimers()">-->
+        <!--<span>{{nextSpawnLocation}}</span><br>-->
+        <!--<button mat-raised-button [color]="getTimerColor()" (click)="alarmService.register(item)">-->
+            <!--<mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>-->
+            <!--<mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>-->
+            <!--{{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>-->
+        <!--</button>-->
+    <!--</div>-->
 
 
     <div class="done-check">

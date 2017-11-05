@@ -24,6 +24,7 @@ import {GardeningExtractor} from './list/data/extractor/gardening-extractor';
 import {VoyagesExtractor} from './list/data/extractor/voyages-extractor';
 import {DropsExtractor} from './list/data/extractor/drops-extractor';
 import {InstancesExtractor} from './list/data/extractor/instances-extractor';
+import {AlarmService} from './time/alarm.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -58,6 +59,7 @@ const dataExtractorProviders: Provider[] = [
         HtmlToolsService,
         EorzeanTimeService,
         LocalizedDataService,
+        AlarmService,
     ],
     declarations: [
         I18nPipe,
