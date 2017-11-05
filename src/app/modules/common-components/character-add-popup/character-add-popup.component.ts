@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {MatDialogRef} from '@angular/material';
+import 'rxjs/add/operator/catch';
 
 @Component({
     selector: 'app-character-add-popup',

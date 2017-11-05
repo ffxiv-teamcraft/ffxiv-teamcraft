@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
 import {MatCheckboxChange, MatDialog, MatSnackBar} from '@angular/material';
@@ -91,7 +91,7 @@ export class RecipesComponent implements OnInit {
 
     query: string;
 
-    lists: Observable<List[]> = this.listService.getAll();
+    lists: List[];
 
     loading = false;
 
@@ -104,6 +104,7 @@ export class RecipesComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.listService.getAll().subscribe(lists => this.lists = lists);
         Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()

@@ -28,6 +28,7 @@ export class ListManagerService {
             .switchMap((data: ItemData) => {
                 return this.extractor.extractCraftedBy(itemId, data)
                     .map(crafted => {
+                        const addition = new List();
                         const craft = data.getCraft(recipeId);
                         // We have to remove unused ingredient properties.
                         craft.ingredients.forEach(i => {
@@ -47,16 +48,16 @@ export class ListManagerService {
                             craftedBy: crafted,
                             addedAt: Date.now()
                         };
-                        const added = list.addToRecipes(toAdd);
-                        return list.addCraft([{
+                        const added = addition.addToRecipes(toAdd);
+                        return addition.addCraft([{
                             item: data.item,
                             data: data,
                             amount: added
                         }], this.gt, this.i18n);
                     })
-                    .switchMap(l => {
+                    .switchMap(addition => {
                         const precrafts = [];
-                        l.preCrafts.forEach(craft => {
+                        addition.preCrafts.forEach(craft => {
                             if (craft.craftedBy === undefined) {
                                 precrafts.push(this.extractor.extractCraftedBy(craft.id, data));
                             }
@@ -64,19 +65,19 @@ export class ListManagerService {
                         if (precrafts.length > 0) {
                             return Observable.combineLatest(...precrafts, (...details: Craft[]) => {
                                 const crafts = [].concat.apply([], details);
-                                l.preCrafts.forEach(craft => {
+                                addition.preCrafts.forEach(craft => {
                                     if (craft.craftedBy === undefined) {
                                         craft.craftedBy = crafts.filter(c => c.itemId === craft.id);
                                     }
                                 });
-                                return l;
+                                return addition;
                             });
                         }
-                        return Observable.of(l);
+                        return Observable.of(addition);
                     })
-                    .switchMap(l => {
+                    .switchMap(addition => {
                         const trades: Observable<{ item: ListRow, tradeSources: TradeSource[] }>[] = [];
-                        list.forEachItem(item => {
+                        addition.forEachItem(item => {
                             trades.push(this.extractor.extractTradeSources(item.id, data)
                                 .map(ts => {
                                     return {item: item, tradeSources: ts};
@@ -89,15 +90,15 @@ export class ListManagerService {
                                         ptrade.item.tradeSources = ptrade.tradeSources;
                                     }
                                 });
-                                return l;
+                                return addition;
                             });
                         } else {
-                            return Observable.of(l);
+                            return Observable.of(addition);
                         }
                     })
-                    .switchMap(l => {
+                    .switchMap(addition => {
                         const vendors: Observable<{ item: ListRow, vendors: Vendor[] }>[] = [];
-                        list.forEachItem(item => {
+                        addition.forEachItem(item => {
                             vendors.push(this.extractor.extractVendors(item.id, data).map(ts => {
                                 return {item: item, vendors: ts};
                             }));
@@ -109,14 +110,14 @@ export class ListManagerService {
                                         v.item.vendors = v.vendors;
                                     }
                                 });
-                                return l;
+                                return addition;
                             });
                         } else {
-                            return Observable.of(l);
+                            return Observable.of(addition);
                         }
                     })
-                    .map(l => {
-                        l.forEachItem(i => {
+                    .map(addition => {
+                        addition.forEachItem(i => {
                             i.reducedFrom = this.extractor.extractReducedFrom(i.id, data);
                             i.desynths = this.extractor.extractDesynths(i.id, data);
                             i.instances = this.extractor.extractInstances(i.id, data);
@@ -124,19 +125,19 @@ export class ListManagerService {
                             i.voyages = this.extractor.extractVoyages(i.id, data);
                             i.drops = this.extractor.extractDrops(i.id, data);
                         });
-                        return l;
+                        return addition;
                     })
-                    .map(l => {
-                        l.gathers.forEach(g => {
+                    .map(addition => {
+                        addition.gathers.forEach(g => {
                             if (g.gatheredBy === undefined) {
                                 g.gatheredBy = this.extractor.extractGatheredBy(g.id, data);
                             }
                         });
-                        return l;
+                        return addition;
                     })
             })
-            .map(l => l.clean())
-            .debounceTime(500);
+            .map(addition => addition.clean())
+            .map(addition => list.merge(addition));
     }
 
     public upgradeList(list: List): Observable<List> {
@@ -165,30 +166,30 @@ export class ListManagerService {
         list.preCrafts = [];
         list.others = [];
         list.recipes = [];
-        let done = 0;
-        return Observable.concat(...add)
-            .map((resultList: List) => {
-                backup.forEach(row => {
-                    const listRow = resultList[row.array].find(item => item.id === row.item.id);
-                    if (listRow !== undefined) {
-                        if (row.item.comments !== undefined) {
-                            listRow.comments = row.item.comments;
+        const start = Date.now();
+        return Observable.combineLatest(...add, (...additions: List[]) => {
+            // Because list is passed by reference, we can simply return the first one.
+            return additions[0];
+        }).map((resultList: List) => {
+            backup.forEach(row => {
+                const listRow = resultList[row.array].find(item => item.id === row.item.id);
+                if (listRow !== undefined) {
+                    if (row.item.comments !== undefined) {
+                        listRow.comments = row.item.comments;
+                    }
+                    listRow.done = row.item.done;
+                    if (row.array === 'recipes') {
+                        if (listRow.done > listRow.amount) {
+                            listRow.done = listRow.amount;
                         }
-                        listRow.done = row.item.done;
-                        if (row.array === 'recipes') {
-                            if (listRow.done > listRow.amount) {
-                                listRow.done = listRow.amount;
-                            }
-                        } else {
-                            if (listRow.done > listRow.amount_needed) {
-                                listRow.done = listRow.amount_needed;
-                            }
+                    } else {
+                        if (listRow.done > listRow.amount_needed) {
+                            listRow.done = listRow.amount_needed;
                         }
                     }
-                });
-                return resultList;
-            })
-            .do(() => done++)
-            .filter(() => done === add.length);
+                }
+            });
+            return resultList;
+        }).do(() => console.log(`Regeneration took ${Date.now() - start}ms`));
     }
 }

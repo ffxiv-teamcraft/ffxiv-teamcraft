@@ -79,19 +79,19 @@
                          matTooltipPosition="above" src="{{item.gatheredBy.icon}}">
                 </button>
             </div>
-            <div *ngIf="item.gardening">
+            <div *ngIf="item.gardening === true">
                 <img class="crafted-by"
                      matTooltip="{{'Gardening' | translate}}"
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
             </div>
             <div>
-                <button mat-icon-button *ngIf="item.drops !== undefined" (click)="openDropsDetails(item)">
+                <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openDropsDetails(item)">
                     <img *ngIf="item.drops !== undefined" class="crafted-by"
                          matTooltip="{{'Hunting' | translate}}"
                          matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
                 </button>
             </div>
-            <div *ngIf="item.tradeSources !== undefined">
+            <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
                 <button mat-icon-button matLine
                         (click)="openTradeDetails(item)">
                     <img class="currency"
@@ -108,7 +108,7 @@
                          class="currency">
                 </button>
             </div>
-            <div *ngIf="item.reducedFrom !== undefined">
+            <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
                 <button mat-icon-button (click)="openReductionDetails(item)">
                     <img class="icon"
                          matTooltip="{{'Reduction' | translate}}"
@@ -116,14 +116,14 @@
                          src="https://www.garlandtools.org/db/images/Reduce.png">
                 </button>
             </div>
-            <div *ngIf="item.desynths !== undefined">
+            <div *ngIf="item.desynths !== undefined && item.desynths.length > 0">
                 <button mat-icon-button (click)="openDesynthDetails(item)">
                     <img class="icon" matTooltip="{{'Desynth' | translate}}"
                          matTooltipPosition="above"
                          src="https://www.garlandtools.org/db/images/Desynth.png">
                 </button>
             </div>
-            <div *ngIf="item.vendors !== undefined">
+            <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
                 <button mat-icon-button (click)="openVendorsDetails(item)">
                     <img class="icon" matTooltip="{{'Vendors' | translate}}"
                          matTooltipPosition="above"
@@ -131,7 +131,7 @@
                 </button>
             </div>
 
-            <div *ngIf="item.voyages !== undefined">
+            <div *ngIf="item.voyages !== undefined && item.voyages.length > 0">
                 <button mat-icon-button (click)="openVoyagesDetails(item)">
                     <img class="icon" matTooltip="{{'Voyages' | translate}}"
                          matTooltipPosition="above"

@@ -75,6 +75,30 @@ export class List extends FirebaseDataModel {
         return this.add(this.crystals, data);
     }
 
+    /**
+     * Merges the list with another one, used for list additions to me more efficient.
+     * @param {List} otherList
+     * @returns {List}
+     */
+    public merge(otherList: List): List {
+        otherList.crystals.forEach(crystal => {
+            this.add(this.crystals, crystal);
+        });
+        otherList.gathers.forEach(gather => {
+            this.add(this.gathers, gather);
+        });
+        otherList.others.forEach(other => {
+            this.add(this.others, other);
+        });
+        otherList.preCrafts.forEach(preCraft => {
+            this.add(this.preCrafts, preCraft, true);
+        });
+        otherList.recipes.forEach(recipe => {
+            this.add(this.recipes, recipe, true);
+        });
+        return this;
+    }
+
     private add(array: ListRow[], data: ListRow, recipe = false): number {
         let previousAmount = 0;
         let row = array.find(r => {
@@ -95,7 +119,6 @@ export class List extends FirebaseDataModel {
         const added = row.amount_needed - previousAmount;
         if (added < 0 && recipe) {
             const previousDone = row.done;
-            console.log(previousDone, row.amount_needed);
             if (previousDone > row.amount_needed) {
                 this.setDone(row, row.amount_needed - previousDone, recipe);
             }
@@ -155,12 +178,14 @@ export class List extends FirebaseDataModel {
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id);
-                let nextAmount = requirement.amount * amount;
-                // If this is not a precraft, we have to take yields in consideration.
-                if (requirementItem.requires === undefined) {
-                    nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
+                if (requirementItem !== undefined) {
+                    let nextAmount = requirement.amount * amount;
+                    // If this is not a precraft, we have to take yields in consideration.
+                    if (requirementItem.requires === undefined) {
+                        nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
+                    }
+                    this.setDone(requirementItem, nextAmount);
                 }
-                this.setDone(requirementItem, nextAmount);
             }
         }
     }
