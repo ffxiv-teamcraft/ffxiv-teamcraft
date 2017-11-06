@@ -4,11 +4,12 @@ import {Alarm} from './alarm';
 import {Subscription} from 'rxjs/Subscription';
 import {ListRow} from '../../model/list/list-row';
 import {SettingsService} from '../../modules/settings/settings.service';
-import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {LocalizedDataService} from '../data/localized-data.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs/Observable';
 import {Timer} from 'app/core/time/timer';
+import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
 
 @Injectable()
 export class AlarmService {
@@ -18,7 +19,7 @@ export class AlarmService {
     private alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
-                private localizedData: LocalizedDataService, private translator: TranslateService) {
+                private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog) {
         this.loadAlarms();
     }
 
@@ -108,8 +109,12 @@ export class AlarmService {
     private playAlarm(alarm: Alarm): void {
         this.snack.open(this.translator.instant('ALARM.Spawned',
             this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]),
-            '',
-            {duration: 5000});
+            this.translator.instant('ALARM.See_on_map'),
+            {duration: 5000})
+
+            .onAction().subscribe(() => {
+            this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
+        });
         const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
         audio.loop = false;
         audio.volume = this.settings.alarmVolume;
@@ -211,7 +216,7 @@ export class AlarmService {
         return this.etime.getEorzeanTime().map(time => {
             let alerted = false;
             this.getAlarms(item).forEach(alarm => {
-                if (time.getUTCHours() > this.substractHours(alarm.spawn,
+                if (time.getUTCHours() >= this.substractHours(alarm.spawn,
                         this.settings.alarmHoursBefore) && time.getUTCHours() < alarm.spawn) {
                     alerted = true;
                 }
@@ -220,6 +225,12 @@ export class AlarmService {
         })
     }
 
+    /**
+     * Little helper to substract hours and cycle through a day if it's necessary.
+     * @param {number} h1
+     * @param {number} h2
+     * @returns {number}
+     */
     substractHours(h1: number, h2: number): number {
         let result = (h1 - h2) % 24;
         if (result < 0) {
