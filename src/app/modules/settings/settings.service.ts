@@ -20,7 +20,7 @@ export class SettingsService {
     }
 
     public get alarmVolume(): number {
-        return 100;
+        return 1;
     }
 
 }

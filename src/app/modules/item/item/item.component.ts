@@ -22,6 +22,8 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {UserInfo} from 'firebase/app';
 import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
+import {Observable} from 'rxjs/Observable';
+import {Timer} from '../../../core/time/timer';
 
 @Component({
     selector: 'app-item',
@@ -58,9 +60,9 @@ export class ItemComponent implements OnInit {
 
     itemUri: string;
 
-    timer: string;
-
     slot: number;
+
+    timerColor = '';
 
     tradeSourcePriorities = {
         // MGP, just in case
@@ -141,6 +143,14 @@ export class ItemComponent implements OnInit {
             this.user = user;
         });
 
+        this.alarmService.isSpawned(this.item).subscribe(spawned => {
+            if (spawned) {
+                this.timerColor = 'primary';
+            } else {
+                this.timerColor = '';
+            }
+        });
+
         const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
         const listCategory = this.list.getCategory(this.item);
         const index = this.list[listCategory].indexOf(this.item);
@@ -157,10 +167,6 @@ export class ItemComponent implements OnInit {
 
     public get spawnAlarm(): boolean {
         return this.alarmService.hasAlarm(this.item);
-    }
-
-    public getTimerColor(): string {
-        return '';
     }
 
     hasTimers(): boolean {
@@ -190,6 +196,10 @@ export class ItemComponent implements OnInit {
 
     public setDone(row: ListRow, amount: number, done: number) {
         this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done)});
+    }
+
+    public getTimer(): Observable<Timer> {
+        return this.alarmService.getTimer(this.item);
     }
 
     public getI18n(name: I18nName) {

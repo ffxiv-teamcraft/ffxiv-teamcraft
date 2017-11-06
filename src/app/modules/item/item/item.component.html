@@ -26,13 +26,13 @@
 
     <div class="timer" *ngIf="hasTimers()">
         <button mat-raised-button
-                [color]="getTimerColor()"
+                [color]="timerColor"
                 (click)="toggleAlarm()"
-                matTooltip="{{nextSpawnLocation}}"
+                matTooltip="{{(getTimer() | async)?.zoneId | placeName | i18n}} - {{(getTimer() | async)?.areaId | placeName | i18n}}"
                 matTooltipPosition="above">
             <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
             <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-            {{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>
+            {{(getTimer() | async)?.display}} <span>({{(getTimer() | async)?.slot}})</span>
         </button>
     </div>
 

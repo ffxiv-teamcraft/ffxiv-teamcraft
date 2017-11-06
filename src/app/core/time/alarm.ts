@@ -1,7 +1,9 @@
-import {ListRow} from '../../model/list/list-row';
-
 export interface Alarm {
-    item: ListRow;
+    itemId: number;
     spawn: number;
     duration: number;
+    slot?: number;
+    zoneId?: number;
+    areaId?: number;
+    coords?: number[];
 }
