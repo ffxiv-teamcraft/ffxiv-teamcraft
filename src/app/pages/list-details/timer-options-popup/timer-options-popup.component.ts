@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {SettingsService} from '../../../modules/settings/settings.service';
 
 @Component({
     selector: 'app-timer-options-popup',
@@ -7,29 +8,32 @@ import {Component} from '@angular/core';
 })
 export class TimerOptionsPopupComponent {
 
-    public options: any = {
-        sound: 'Notification',
-        hoursBefore: 0
-    };
-
     public sounds = ['Wondrous_tales', 'LB_charged', 'Notification'];
 
-    constructor() {
-        const stored = localStorage.getItem('timer:settings');
-        if (stored !== null) {
-            this.options = JSON.parse(stored);
-        }
-        this.persist();
-    }
-
-    public persist(): void {
-        localStorage.setItem('timer:settings', JSON.stringify(this.options));
+    constructor(private settings: SettingsService) {
     }
 
     public previewSound(): void {
-        const audio = new Audio(`/assets/audio/${this.options.sound}.mp3`);
+        const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
         audio.loop = false;
+        audio.volume = this.settings.alarmVolume;
         audio.play();
+    }
+
+    public setVolume(volume: number): void {
+        this.settings.alarmVolume = volume;
+        this.previewSound();
+
+    }
+
+    public setSound(sound: string): void {
+        this.settings.alarmSound = sound;
+        this.previewSound();
+
+    }
+
+    public setHoursBefore(hours: number): void {
+        this.settings.alarmHoursBefore = hours;
     }
 
 }

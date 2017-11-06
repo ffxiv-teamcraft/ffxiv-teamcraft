@@ -12,7 +12,7 @@ import {
     MatCheckboxModule, MatDialogModule,
     MatExpansionModule,
     MatIconModule, MatInputModule,
-    MatListModule, MatSelectModule,
+    MatListModule, MatSelectModule, MatSliderModule,
     MatTooltipModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
@@ -46,6 +46,7 @@ const routes: Routes = [
         MatDialogModule,
         MatInputModule,
         MatSelectModule,
+        MatSliderModule,
 
         CoreModule,
         PricingModule,
