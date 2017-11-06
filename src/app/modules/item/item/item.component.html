@@ -11,7 +11,8 @@
         </app-tooltip>
         <div class="item-name" matLine matTooltipPosition="above"
              matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
-             mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n" (cbOnSuccess)="afterNameCopy(item.id)">
+             mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
+             (cbOnSuccess)="afterNameCopy(item.id)">
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
@@ -85,7 +86,8 @@
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
             </div>
             <div>
-                <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openDropsDetails(item)">
+                <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0"
+                        (click)="openDropsDetails(item)">
                     <img *ngIf="item.drops !== undefined" class="crafted-by"
                          matTooltip="{{'Hunting' | translate}}"
                          matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
@@ -245,15 +247,15 @@
             </div>
         </div>
     </div>
-    <!--TODO-->
-    <!--<div class="timer" *ngIf="hasTimers()">-->
-        <!--<span>{{nextSpawnLocation}}</span><br>-->
-        <!--<button mat-raised-button [color]="getTimerColor()" (click)="alarmService.register(item)">-->
-            <!--<mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>-->
-            <!--<mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>-->
-            <!--{{timer}} <span *ngIf="slot !== undefined">({{slot}})</span>-->
-        <!--</button>-->
-    <!--</div>-->
+
+    <div class="timer" *ngIf="hasTimers()">
+        <span>{{(getTimer() | async)?.zoneId | placeName | i18n}} - {{(getTimer() | async)?.areaId | placeName | i18n}}</span><br>
+        <button mat-raised-button [color]="timerColor" (click)="toggleAlarm()">
+            <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
+            <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
+            {{(getTimer() | async)?.display}} <span>({{(getTimer() | async)?.slot}})</span>
+        </button>
+    </div>
 
 
     <div class="done-check">

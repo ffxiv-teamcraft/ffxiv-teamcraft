@@ -1,6 +1,9 @@
 <h3>{{list?.name}} - {{"Pricing" | translate}}</h3>
 
-<button mat-button color="accent" (click)="close.emit()"><mat-icon>arrow_back</mat-icon>{{"Back_to_list" | translate}}</button>
+<button mat-button color="accent" (click)="close.emit()">
+    <mat-icon>arrow_back</mat-icon>
+    {{"Back_to_list" | translate}}
+</button>
 
 <mat-card *ngIf="list" [class]="isMobile()?'mobile':null">
     <mat-card-title>
@@ -51,7 +54,7 @@
 
 </mat-card>
 
-<mat-card *ngIf="list" [class]="isMobile()?'mobile':null">
+<mat-card *ngIf="list" [ngClass]="{'mobile':isMobile()}">
     <mat-card-title>{{"Earning" | translate}}</mat-card-title>
     <mat-card-subtitle>{{getTotalPrice(list.recipes).toLocaleString()}} gils</mat-card-subtitle>
     <mat-list dense>
