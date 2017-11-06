@@ -70,7 +70,7 @@ export class AlarmService {
     private _register(...alarms: Alarm[]): void {
         alarms.forEach(alarm => {
             this.alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
-                if (time.getUTCHours() + this.settings.alarmHoursBefore === alarm.spawn && time.getUTCMinutes() === 0) {
+                if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) && time.getUTCMinutes() === 0) {
                     this.playAlarm(alarm);
                 }
             }));
@@ -211,12 +211,21 @@ export class AlarmService {
         return this.etime.getEorzeanTime().map(time => {
             let alerted = false;
             this.getAlarms(item).forEach(alarm => {
-                if (time.getUTCHours() > alarm.spawn - this.settings.alarmHoursBefore && time.getUTCHours() < alarm.spawn) {
+                if (time.getUTCHours() > this.substractHours(alarm.spawn,
+                        this.settings.alarmHoursBefore) && time.getUTCHours() < alarm.spawn) {
                     alerted = true;
                 }
             });
             return alerted;
         })
+    }
+
+    substractHours(h1: number, h2: number): number {
+        let result = (h1 - h2) % 24;
+        if (result < 0) {
+            result += 24;
+        }
+        return result;
     }
 
     /**
