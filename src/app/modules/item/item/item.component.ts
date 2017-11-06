@@ -143,13 +143,18 @@ export class ItemComponent implements OnInit {
             this.user = user;
         });
 
-        this.alarmService.isSpawned(this.item).subscribe(spawned => {
-            if (spawned) {
-                this.timerColor = 'primary';
-            } else {
-                this.timerColor = '';
-            }
-        });
+        Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item))
+            .subscribe((result) => {
+                const spawned = result[0];
+                const alerted = result[1];
+                if (spawned) {
+                    this.timerColor = 'primary';
+                } else if (alerted) {
+                    this.timerColor = 'accent';
+                } else {
+                    this.timerColor = '';
+                }
+            });
 
         const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
         const listCategory = this.list.getCategory(this.item);

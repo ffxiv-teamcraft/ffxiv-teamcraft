@@ -203,6 +203,23 @@ export class AlarmService {
     }
 
     /**
+     * Returns an observable of the alert state, for color purposes.
+     * @param {ListRow} item
+     * @returns {Observable<boolean>}
+     */
+    public isAlerted(item: ListRow): Observable<boolean> {
+        return this.etime.getEorzeanTime().map(time => {
+            let alerted = false;
+            this.getAlarms(item).forEach(alarm => {
+                if (time.getUTCHours() > alarm.spawn - this.settings.alarmHoursBefore && time.getUTCHours() < alarm.spawn) {
+                    alerted = true;
+                }
+            });
+            return alerted;
+        })
+    }
+
+    /**
      * Returns the amount of minutes before a given alarm.
      * @param {number} currentTime
      * @param hours
