@@ -130,6 +130,11 @@
     "HOME_PAGE.contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
     "HOME_PAGE.changelog": "To get every news about the website, each changes, please refer to the changelog.",
 
+    "ALARM": {
+        "Spawned": "{{itemName}} will spawn !",
+        "See_on_map": "Location"
+    },
+
     "Pricing_mode": "Pricing mode",
     "Back_to_list": "Back to list",
     "Spending": "Spending",

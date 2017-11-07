@@ -108,7 +108,7 @@ export class AlarmService {
      */
     private playAlarm(alarm: Alarm): void {
         this.snack.open(this.translator.instant('ALARM.Spawned',
-            this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]),
+            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
             this.translator.instant('ALARM.See_on_map'),
             {duration: 5000})
 

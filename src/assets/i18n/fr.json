@@ -128,8 +128,10 @@
     "HOME_PAGE.contribute_title": "Contribuer",
     "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
     "HOME_PAGE.changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
-
-
+    "ALARM": {
+        "Spawned": "{{itemName}} va apparaître !",
+        "See_on_map": "Emplacement"
+    },
     "Pricing_mode": "Calculer les bénéfices",
     "Back_to_list": "Retour à la liste",
     "Spending": "Dépenses",

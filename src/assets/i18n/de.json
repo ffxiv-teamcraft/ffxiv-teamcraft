@@ -129,6 +129,11 @@
     "HOME_PAGE.contribute_content": "Wenn du zu dem Tool beitragen möchtest, schau dir einfach den Quellcode an uns schick einen Pull-Request mit deinen Änderungen!",
     "HOME_PAGE.changelog": "Um alle Neuigkeiten über das Tool und die Änderungen an ihm zu erfahren, schaue einfach in den Change-Log.",
 
+    "ALARM": {
+        "Spawned": "{{itemName}} will spawn !",
+        "See_on_map": "Location"
+    },
+
     "Pricing_mode": "Wert-Modus",
     "Back_to_list": "Zurück zur Liste",
     "Spending": "Ausgaben",
