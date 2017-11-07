@@ -12,26 +12,55 @@ export class GarlandToolsService {
     constructor(private serializer: NgSerializerService) {
     }
 
+    /**
+     * Gets a job item.
+     * @param {number} id
+     * @returns {any}
+     */
     public getJob(id: number): any {
         return this.gt.jobs.find(job => job.id === id);
     }
 
+    /**
+     * Gets all the jobs stored by garlandtools.
+     * @returns {any[]}
+     */
     public getJobs(): any[] {
         return this.gt.jobs;
     }
 
+    /**
+     * Gets details for a given crystal in garlandtools data.
+     * @param {number} id
+     * @returns {Item}
+     */
     public getCrystalDetails(id: number): Item {
         return this.serializer.deserialize<Item>(this.gt.item.ingredients[id], Item);
     }
 
+    /**
+     * Gets details about a fishing spot in garlandtools data.
+     * @param {number} id
+     * @returns {any}
+     */
     public getFishingSpot(id: number): any {
         return this.gt.fishing.index[id];
     }
 
+    /**
+     * Gets details in a bell node (data used for garlandtools bell)
+     * @param {number} id
+     * @returns {any}
+     */
     getBellNode(id: number): any {
         return this.gt.bell.nodes.find(node => node.id === id);
     }
 
+    /**
+     * Gets a list of category ids for a given job, useful for search filters.
+     * @param {number[]} jobs
+     * @returns {number[]}
+     */
     getJobCategories(jobs: number[]): number[] {
         // Get all keys of the given object.
         return Object.keys(this.gt.jobCategories)

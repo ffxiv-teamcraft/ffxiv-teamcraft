@@ -23,15 +23,31 @@ export class DataService {
                 private serializer: NgSerializerService) {
     }
 
+    /**
+     * Gets an item based on its id.
+     * @param {number} id
+     * @returns {Observable<ItemData>}
+     */
     public getItem(id: number): Observable<ItemData> {
         return this.getGarlandData(`/item/${id}`)
             .map(item => this.serializer.deserialize<ItemData>(item, ItemData));
     }
 
+    /**
+     * Gets a NPC baed on its id.
+     * @param {number} id
+     * @returns {any}
+     */
     public getNpc(id: number): any {
         return this.getGarlandData(`/npc/${id}`);
     }
 
+    /**
+     * Fires a search request to the search api in order to get results based on filters.
+     * @param {string} query
+     * @param {SearchFilter[]} filters
+     * @returns {Observable<Recipe[]>}
+     */
     public searchRecipe(query: string, filters: SearchFilter[]): Observable<Recipe[]> {
         let params = new HttpParams()
             .set('craftable', '1')
@@ -80,12 +96,23 @@ export class DataService {
         });
     }
 
+    /**
+     * Searchs for a character using a lodestone id.
+     * @param {string} name
+     * @param {string} server
+     * @returns {Observable<any[]>}
+     */
     public searchCharacter(name: string, server: string): Observable<any[]> {
         return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
             .map(res => res.data.results)
             .map(res => res.filter(char => char.name.toLowerCase() === name.toLowerCase()));
     }
 
+    /**
+     * gets a character by lodestone id.
+     * @param {number} id
+     * @returns {Observable<any>}
+     */
     public getCharacter(id: number): Observable<any> {
         if (!this.characterCache.get(id)) {
             const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`).map(result => result.data)
@@ -97,10 +124,20 @@ export class DataService {
         return this.characterCache.get(id);
     }
 
+    /**
+     * Creates a request to garlandtools.org.
+     * @param {string} uri
+     * @returns {Observable<any>}
+     */
     private getGarlandData(uri: string): Observable<any> {
         return this.http.get<any>(this.garlandUrl + uri + '.json');
     }
 
+    /**
+     * Creates a search request to garlandtools.org.
+     * @param {HttpParams} query
+     * @returns {Observable<any>}
+     */
     private getGarlandSearch(query: HttpParams): Observable<any> {
         return this.http.get<any>(`${this.garlandApiUrl}/search.php`, {params: query});
     }
