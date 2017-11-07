@@ -44,14 +44,40 @@ export class PricingComponent {
      */
     getTotalPrice(rows: ListRow[]): number {
         let total = 0;
+        // For each row of the list
         rows.forEach(row => {
+            // Get the amount of items required.
             const amount = this.pricingService.getAmount(this.list.$key, row);
+            // Get the price of the item.
             const price = this.pricingService.getPrice(row);
-            total += amount.nq * price.nq + amount.hq * price.hq;
+            // Compute the price of this row.
+            const addition = amount.nq * price.nq + amount.hq * price.hq;
+            // If the row is a craft
+            if (row.requires !== undefined) {
+                // Compute the price of the craft
+                const craftingPrice = this.getCraftCost(row);
+                // If it's cheaper
+                if (craftingPrice < addition) {
+                    // If the crafting price is cheaper than the item itself,
+                    // don't add the price because mats are already used in the price.
+                    total += 0;
+                } else {
+                    // Else, remove the price of the craft because the user won't craft the item, he'll buy it.
+                    total -= craftingPrice;
+                }
+            } else {
+                // If this is not a craft, simply add its price.
+                total += addition;
+            }
         });
         return total;
     }
 
+    /**
+     * Gets the minimum crafting cost of a given item.
+     * @param {ListRow} row
+     * @returns {number}
+     */
     getCraftCost(row: ListRow): number {
         let total = 0;
         row.requires.forEach(requirement => {

@@ -9,6 +9,8 @@
                  matTooltipPosition="above">
             attach_money
         </mat-icon>
+        <mat-icon color="warn" *ngIf="craftCost < (price.nq * amount.nq + price.hq * amount.hq)"
+        matTooltip="{{'PRICING.Craft_cheaper'}}" matTooltipPosition="above">error_outline</mat-icon>
     </p>
 
     <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
