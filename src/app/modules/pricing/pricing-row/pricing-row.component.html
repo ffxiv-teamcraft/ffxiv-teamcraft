@@ -11,6 +11,9 @@
         </mat-icon>
     </p>
 
+    <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
+              matTooltipPosition="above">group
+    </mat-icon>
 
     <div>
         <div mat-line>
