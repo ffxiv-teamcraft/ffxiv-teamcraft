@@ -2,7 +2,6 @@ import {AbstractExtractor} from './abstract-extractor';
 import {CraftedBy} from '../../../../model/list/crafted-by';
 import {ItemData} from '../../../../model/garland-tools/item-data';
 import {DataType} from '../data-type';
-import {Observable} from 'rxjs/Observable';
 import {GarlandToolsService} from '../../../api/garland-tools.service';
 import {HtmlToolsService} from '../../../tools/html-tools.service';
 import {DataService} from '../../../api/data.service';
@@ -18,7 +17,7 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
         return item.isCraft();
     }
 
-    protected doExtract(item: Item, itemData: ItemData): Observable<CraftedBy[]> {
+    protected doExtract(item: Item, itemData: ItemData): CraftedBy[] {
         const result = [];
         for (const craft of item.craft) {
             const craftedBy: CraftedBy = {
@@ -31,22 +30,21 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
                 craftedBy.icon = '';
             }
             if (craft.unlockId !== undefined) {
-                result.push(this.db.getItem(craft.unlockId).map(masterbook => {
+                const masterbookPartial = itemData.getPartial(craft.unlockId.toString(), 'item');
+                if (masterbookPartial !== undefined) {
                     craftedBy.masterbook = {
-                        icon: masterbook.item.icon,
-                        id: masterbook.item.id
+                        icon: masterbookPartial.obj.c,
+                        id: craft.unlockId
                     };
-                    return craftedBy;
-                }));
-            } else {
-                result.push(Observable.of(craftedBy));
+                }
             }
+            result.push(craftedBy);
         }
-        return Observable.combineLatest(result);
+        return result;
     }
 
     public isAsync(): boolean {
-        return true;
+        return false;
     }
 
     public getDataType(): DataType {

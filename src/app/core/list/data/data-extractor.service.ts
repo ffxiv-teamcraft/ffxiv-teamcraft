@@ -95,8 +95,8 @@ export class DataExtractorService {
      * @param {ItemData} data
      * @returns {CraftedBy}
      */
-    extractVendors(id: number, data: ItemData): Observable<Vendor[]> {
-        return this.extract<Observable<Vendor[]>>(DataType.VENDORS, id, data);
+    extractVendors(id: number, data: ItemData): Vendor[] {
+        return this.extract<Vendor[]>(DataType.VENDORS, id, data);
     }
 
     /**
@@ -105,8 +105,8 @@ export class DataExtractorService {
      * @param {ItemData} data
      * @returns {CraftedBy}
      */
-    extractTradeSources(id: number, data: ItemData): Observable<TradeSource[]> {
-        return this.extract<Observable<TradeSource[]>>(DataType.TRADE_SOURCES, id, data);
+    extractTradeSources(id: number, data: ItemData): TradeSource[] {
+        return this.extract<TradeSource[]>(DataType.TRADE_SOURCES, id, data);
     }
 
     /**
@@ -115,8 +115,8 @@ export class DataExtractorService {
      * @param {ItemData} data
      * @returns {CraftedBy}
      */
-    extractCraftedBy(id: number, data: ItemData): Observable<CraftedBy[]> {
-        return this.extract<Observable<CraftedBy[]>>(DataType.CRAFTED_BY, id, data);
+    extractCraftedBy(id: number, data: ItemData): CraftedBy[] {
+        return this.extract<CraftedBy[]>(DataType.CRAFTED_BY, id, data);
     }
 
     /**

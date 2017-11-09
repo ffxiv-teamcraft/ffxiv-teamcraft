@@ -1,5 +1,4 @@
 import {Item} from './item';
-import {Partial} from './partial';
 import {DeserializeAs} from '@kaiu/serializer';
 import {Craft} from './craft';
 import {Instance} from '../list/instance';
@@ -12,8 +11,7 @@ export class ItemData {
     @DeserializeAs([Item])
     ingredients: Item[];
 
-    @DeserializeAs([Partial])
-    partials: Partial[];
+    partials: any[];
 
     public getIngredient(id: number): Item {
         return this.ingredients
@@ -25,7 +23,7 @@ export class ItemData {
             .find(i => recipeId.toString().indexOf(i.id.toString()) > -1 || i.id.toString().indexOf(recipeId.toString()) > -1);
     }
 
-    public getPartial(id: string, type?: string): Partial {
+    public getPartial(id: string, type?: string): any {
         return this.partials.filter(p => type !== undefined ? p.type === type : true).find(p => p.id === id);
     }
 

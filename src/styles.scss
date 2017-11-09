@@ -20,9 +20,9 @@ body {
 }
 
 .auto-height {
+    min-height: 54px;
     .mat-list-item-content {
-        height: inherit !important;
-        min-height: 54px;
+        height: 100% !important;
     }
 }
 
