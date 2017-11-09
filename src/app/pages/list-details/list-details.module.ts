@@ -25,6 +25,10 @@ import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-po
 const routes: Routes = [
     {
         path: 'list/:uid/:listId',
+        redirectTo: 'list/:listId'
+    },
+    {
+        path: 'list/:listId',
         component: ListDetailsComponent
     },
 ];

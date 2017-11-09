@@ -18,7 +18,7 @@ export class List extends FirebaseDataModel {
     createdAt: string = new Date().toISOString();
     version: string;
 
-    authorUid: string;
+    authorId: string;
 
     favorites: string[] = [];
 
@@ -109,10 +109,6 @@ export class List extends FirebaseDataModel {
             row = array[array.length - 1];
         } else {
             row.amount = MathTools.round(row.amount + data.amount);
-            if (row.amount < 0) {
-                row.amount = 0;
-                row.amount_needed = row.amount;
-            }
             previousAmount = row.amount_needed;
         }
         row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);

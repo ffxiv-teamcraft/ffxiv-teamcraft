@@ -10,7 +10,7 @@
                 <mat-icon>share</mat-icon>
             </button>
             <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
-            <button mat-icon-button routerLink="/list/{{authorUid}}/{{list.$key}}" (click)="$event.stopPropagation()">
+            <button mat-icon-button routerLink="/list/{{list.$key}}" (click)="$event.stopPropagation()">
                 <mat-icon>open_in_new</mat-icon>
             </button>
             <button mat-icon-button *ngIf="!readonly" (click)="ondelete.emit(); $event.stopPropagation()">

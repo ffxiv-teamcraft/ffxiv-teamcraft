@@ -1,13 +1,14 @@
-import {AngularFireAction, AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirebaseDataModel} from '../../model/list/firebase-data-model';
 import * as firebase from 'firebase/app';
-import DataSnapshot = firebase.database.DataSnapshot;
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
+import 'rxjs/add/observable/fromPromise';
 
 export abstract class StoredDataService<T extends FirebaseDataModel> {
 
-    constructor(protected afdb: AngularFireDatabase, protected serializer: NgSerializerService) {
+    constructor(protected afdb: AngularFirestore, protected serializer: NgSerializerService) {
     }
 
     protected abstract getBaseUri(params?: any): Observable<string>;
@@ -23,11 +24,12 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      */
     public get(uid: string, params?: any): Observable<T> {
         return this.getBaseUri(params).switchMap(uri => {
-            return this.oneRef(uri, uid).snapshotChanges()
+            return this.oneRef(uri, uid)
+                .snapshotChanges()
                 .map(snap => {
-                    const obj = snap.payload.val();
+                    const obj = snap.payload.data();
                     const res: T = this.serializer.deserialize<T>(obj, this.getClass());
-                    res.$key = snap.payload.key;
+                    res.$key = snap.payload.id;
                     return res;
                 });
         });
@@ -42,11 +44,11 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
         return this.getBaseUri(params).switchMap(uri => {
             return this.listRef(uri)
                 .snapshotChanges()
-                .map((snap: AngularFireAction<DataSnapshot>[]) => {
-                    const obj = snap.map(snapRow => snapRow.payload.val());
+                .map((snap: DocumentChangeAction[]) => {
+                    const obj = snap.map(snapRow => snapRow.payload.doc.data());
                     const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
                     res.forEach((row, index) => {
-                        row.$key = snap[index].payload.key;
+                        row.$key = snap[index].payload.doc.id;
                     });
                     return res;
                 });
@@ -60,10 +62,10 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
      * @param params
      * @returns {firebase.database.ThenableReference}
      */
-    public push(item: T, params?: any): Promise<any> {
+    public push(item: T, params?: any): Promise<string> {
         return new Promise<any>(resolve => {
             return this.getBaseUri(params).subscribe(uri => {
-                return this.listRef(`${uri}`).push(item).then(resolve);
+                return this.listRef(`${uri}`).add(<T>item.getData()).then(ref => resolve(ref.id));
             });
         });
     }
@@ -80,8 +82,8 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
         return new Promise<void>(resolve => {
             return this.getBaseUri(params).switchMap(uri => {
                 delete value.$key;
-                return Observable.fromPromise(this.oneRef(uri, uid).update(value));
-            }).subscribe(resolve);
+                return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
+            }).do(() => console.log('update done')).subscribe(resolve);
         });
     }
 
@@ -95,16 +97,16 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
     public remove(uid: string, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
             return this.getBaseUri(params).subscribe(uri => {
-                return this.oneRef(uri, uid).remove().then(resolve);
+                return this.oneRef(uri, uid).delete().then(resolve);
             });
         });
     }
 
-    private listRef(uri: string): AngularFireList<T> {
-        return this.afdb.list(uri);
+    private listRef(uri: string): AngularFirestoreCollection<T> {
+        return this.afdb.collection<T>(uri);
     }
 
-    private oneRef(uri: string, uid: string): AngularFireObject<T> {
-        return this.afdb.object(`${uri}/${uid}`);
+    private oneRef(uri: string, uid: string): AngularFirestoreDocument<T> {
+        return this.afdb.doc<T>(`${uri}/${uid}`);
     }
 }

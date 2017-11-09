@@ -2,21 +2,16 @@ import {StoredDataService} from './stored-data.service';
 import {List} from '../../model/list/list';
 import {Injectable} from '@angular/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 
 @Injectable()
 export class ListService extends StoredDataService<List> {
 
-    private uuid: string;
-
-
-    constructor(protected firebase: AngularFireDatabase,
-                protected serializer: NgSerializerService,
-                private af: AngularFireAuth) {
+    constructor(protected firebase: AngularFirestore,
+                protected serializer: NgSerializerService) {
         super(firebase, serializer);
-        this.af.authState.filter(state => state !== null).subscribe(state => this.uuid = state.uid);
     }
 
     /**
@@ -25,41 +20,32 @@ export class ListService extends StoredDataService<List> {
      * @returns {Observable<R>}
      */
     public getRouterPath(uid: string): Observable<string[]> {
-        return this.af.authState.map(state => {
-            return ['list', state.uid, uid];
-        });
+        return Observable.of(['list', uid]);
     }
 
-    /**
-     * Gets an external list-details (one that doesn't belong to the current user)
-     *
-     * @param uuid The user uid
-     * @param uid The list-details uid
-     */
-    public getUserList(uuid: string, uid: string): Observable<List> {
-        return this.firebase.object(`/users/${uuid}/lists/${uid}`)
-            .valueChanges()
-            .map(list => {
-                const res = this.serializer.deserialize<List>(list, List);
-                res.authorUid = uuid;
-                res.$key = uid;
+    public getUserLists(userId: string): Observable<List[]> {
+        return this.firebase
+            .collection('lists', ref => ref.where('authorId', '==', userId))
+            .snapshotChanges()
+            .map((snap: DocumentChangeAction[]) => {
+                const obj = snap.map(snapRow => snapRow.payload.doc.data());
+                const res: List[] = this.serializer.deserialize<List>(obj, [this.getClass()]);
+                res.forEach((row, index) => {
+                    row.$key = snap[index].payload.doc.id;
+                });
                 return res;
             });
     }
 
-    public update(uid: string, value: List, params?: any): Promise<void> {
-        delete value.authorUid;
-        delete value.$key;
-        return super.update(uid, value, params);
+    push(list: List, params?: any): Promise<string> {
+        if (list.authorId === undefined) {
+            throw new Error('Tried to persist a list with no author ID');
+        }
+        return super.push(list, params);
     }
 
     getBaseUri(params?: any): Observable<string> {
-        if (params !== undefined) {
-            return Observable.of(`/users/${params.uuid}/lists`);
-        }
-        return this.af.authState.map(user => {
-            return `/users/${user.uid}/lists`;
-        });
+        return Observable.of('lists');
     }
 
     getClass(): any {

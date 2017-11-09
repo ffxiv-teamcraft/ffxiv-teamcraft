@@ -41,7 +41,7 @@ export class ListPanelComponent {
     }
 
     public getLink(): string {
-        return `${window.location.protocol}//${window.location.host}/list/${this.authorUid}/${this.list.$key}`;
+        return `${window.location.protocol}//${window.location.host}/list/${this.list.$key}`;
     }
 
     public showCopiedNotification(): void {

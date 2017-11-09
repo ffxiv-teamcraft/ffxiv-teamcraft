@@ -16,7 +16,7 @@
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
-                             [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
+                             [isOwnList]="user?.uid === list.authorId"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" (click)="openRequirementsPopup()">
@@ -154,7 +154,7 @@
     <div class="item-name" matLine>
         <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
-                             [isOwnList]="user?.uid === list.authorUid"></app-comments-button>
+                             [isOwnList]="user?.uid === list.authorId"></app-comments-button>
     </div>
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"

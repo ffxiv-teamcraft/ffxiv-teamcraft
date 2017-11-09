@@ -39,6 +39,7 @@ export class ListsComponent implements OnInit {
         if (this.newListFormControl.valid) {
             const list = new List();
             list.name = this.newListFormControl.value;
+            list.authorId = this.user.uid;
             this.listService.push(list).then(() => {
                 this.newListFormControl.reset();
                 this.myNgForm.resetForm();
@@ -85,7 +86,7 @@ export class ListsComponent implements OnInit {
                 this.user = undefined;
             } else {
                 this.user = user;
-                this.lists = this.listService.getAll();
+                this.lists = this.listService.getUserLists(user.uid);
             }
         });
     }

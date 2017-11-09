@@ -15,6 +15,7 @@ import {ListService} from '../../../core/firebase/list.service';
 import {SearchFilter} from '../../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../bulk-addition-popup/bulk-addition-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 declare const ga: Function;
 
@@ -100,11 +101,13 @@ export class RecipesComponent implements OnInit {
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,
-                private localizedData: LocalizedDataService) {
+                private localizedData: LocalizedDataService, private auth: AngularFireAuth) {
     }
 
     ngOnInit() {
-        this.listService.getAll().subscribe(lists => this.lists = lists);
+        this.auth.authState.filter(t => t !== null).switchMap((state) => {
+            return this.listService.getUserLists(state.uid);
+        }).subscribe(lists => this.lists = lists);
         Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
@@ -205,8 +208,9 @@ export class RecipesComponent implements OnInit {
             const list = new List();
             ga('send', 'event', 'List', 'creation');
             list.name = res;
-            this.listService.push(list).then(l => {
-                this.addAllRecipes(list, l.key);
+            // TODO add authorId to the list
+            this.listService.push(list).then(id => {
+                this.addAllRecipes(list, id);
             });
         });
     }
@@ -216,8 +220,9 @@ export class RecipesComponent implements OnInit {
             const list = new List();
             ga('send', 'event', 'List', 'creation');
             list.name = res;
-            this.listService.push(list).then(l => {
-                this.addRecipe(recipe, list, l.key, amount);
+            // TODO add authorId to the list
+            this.listService.push(list).then(id => {
+                this.addRecipe(recipe, list, id, amount);
             });
         });
     }

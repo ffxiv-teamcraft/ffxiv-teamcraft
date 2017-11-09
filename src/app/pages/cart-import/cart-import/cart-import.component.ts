@@ -28,7 +28,7 @@ export class CartImportComponent {
                 const cart = decoded.split(';');
                 const importObservables = [];
                 // We create the list
-                listService.push(list).then((l) => {
+                listService.push(list).then((id) => {
                     // Then we prepare the list creation Observable
                     cart.forEach(row => {
                         const parsed = row.split(',');
@@ -40,13 +40,13 @@ export class CartImportComponent {
                     // We can now execute the observable
                     Observable.concat(...importObservables)
                         .subscribe(() => {
-                            listService.update(l.key, list).then(() => {
+                            listService.update(id, list).then(() => {
                                 done++;
                                 // Update progression
                                 this.progress = Math.ceil(100 * done / cart.length);
                                 // If everything is done, redirect to the list
                                 if (this.progress >= 100) {
-                                    listService.getRouterPath(l.key).subscribe(path => {
+                                    listService.getRouterPath(id).subscribe(path => {
                                         router.navigate(path);
                                     });
                                 }

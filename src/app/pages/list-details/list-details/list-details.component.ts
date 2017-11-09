@@ -128,12 +128,12 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
         this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.authorUid = params.uid;
-            this.listObj = this.listService.getUserList(params.uid, this.listUid);
+            this.listObj = this.listService.get(this.listUid);
             Observable.combineLatest(
                 this.filterTrigger,
                 this.listObj,
                 (ignored, list) => {
+                    this.authorUid = list.authorId;
                     list.forEachItem(item => {
                         if (item.gatheredBy !== undefined) {
                             const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
@@ -233,11 +233,11 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     public forkList(): void {
         // Little trick to clone an object using JS.
         const fork = this.list.clone();
-        this.listService.push(fork).then((list) => {
+        this.listService.push(fork).then((id) => {
             this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
                 .subscribe(() => {
-                    this.listService.getRouterPath(list.key)
+                    this.listService.getRouterPath(id)
                         .subscribe(path => {
                             this.router.navigate(path);
                         });

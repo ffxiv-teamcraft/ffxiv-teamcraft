@@ -77,10 +77,10 @@ export class ListManagerService {
                 // Return the addition for the next chain element.
                 return addition;
             })
-            // Clear the addition, removing useless properties.
-            .map(addition => addition.clean())
             // merge the addition list with the list we want to add items in.
-            .map(addition => list.merge(addition));
+            .map(addition => list.merge(addition))
+            // Clear the result list, removing useless properties.
+            .map(addition => addition.clean());
     }
 
     public upgradeList(list: List): Observable<List> {

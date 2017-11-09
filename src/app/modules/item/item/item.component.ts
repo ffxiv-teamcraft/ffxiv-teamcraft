@@ -156,7 +156,8 @@ export class ItemComponent implements OnInit {
                 }
             });
 
-        const listUri = `/users/${this.list.authorUid}/lists/${this.list.$key}`;
+        // TODO update this for betetr management for comments.
+        const listUri = `/lists/${this.list.$key}`;
         const listCategory = this.list.getCategory(this.item);
         const index = this.list[listCategory].indexOf(this.item);
         this.itemUri = `${listUri}/${listCategory}/${index}`;
