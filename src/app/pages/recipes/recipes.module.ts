@@ -11,7 +11,7 @@ import {
     MatInputModule,
     MatListModule,
     MatMenuModule,
-    MatProgressBarModule,
+    MatProgressBarModule, MatProgressSpinnerModule,
     MatRadioModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
@@ -44,6 +44,7 @@ const routes: Routes = [
         MatMenuModule,
         MatInputModule,
         MatProgressBarModule,
+        MatProgressSpinnerModule,
 
         CoreModule,
         SettingsModule,

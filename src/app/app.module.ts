@@ -4,8 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MatButtonModule,
-    MatExpansionModule,
+    MatButtonModule, MatCardModule,
+    MatExpansionModule, MatGridListModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
@@ -82,6 +82,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatSlideToggleModule,
         MatIconModule,
         MatListModule,
+        MatGridListModule,
+        MatCardModule,
 
         BrowserModule,
         FormsModule,

@@ -21,7 +21,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
-    "@angular/cdk": "^2.0.0-beta.11",
+    "@angular/cdk": "^5.0.0-rc0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",

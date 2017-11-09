@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ItemComponent} from './item/item.component';
 import {
-    MatButtonModule, MatChipsModule, MatDialogModule, MatIconModule, MatListModule, MatTabsModule,
+    MatButtonModule, MatChipsModule, MatDialogModule, MatIconModule, MatListModule, MatProgressSpinnerModule, MatTabsModule,
     MatTooltipModule
 } from '@angular/material';
 import {TooltipModule} from '../tooltip/tooltip.module';
@@ -35,6 +35,7 @@ import {MapModule} from '../map/map.module';
         MatDialogModule,
         MatChipsModule,
         MatTabsModule,
+        MatProgressSpinnerModule,
 
         ClipboardModule,
 
