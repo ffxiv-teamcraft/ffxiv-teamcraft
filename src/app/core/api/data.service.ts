@@ -12,7 +12,8 @@ import 'rxjs/add/operator/publishReplay';
 @Injectable()
 export class DataService {
 
-    private garlandUrl = 'https://www.garlandtools.org/db/data';
+    private garlandUrl = 'https://www.garlandtools.org/db/doc';
+    private garlandtoolsVersion = 1;
     private garlandApiUrl = 'https://www.garlandtools.org/api';
 
     private characterCache = new Map<number, Observable<any>>();
@@ -29,7 +30,7 @@ export class DataService {
      * @returns {Observable<ItemData>}
      */
     public getItem(id: number): Observable<ItemData> {
-        return this.getGarlandData(`/item/${id}`)
+        return this.getGarlandData(`/item/${this.garlandtoolsVersion}/${id}`)
             .map(item => this.serializer.deserialize<ItemData>(item, ItemData));
     }
 
@@ -39,7 +40,7 @@ export class DataService {
      * @returns {any}
      */
     public getNpc(id: number): any {
-        return this.getGarlandData(`/npc/${id}`);
+        return this.getGarlandData(`/npc/${this.garlandtoolsVersion}/${id}`);
     }
 
     /**
