@@ -9,7 +9,7 @@ import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/m
 import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
 import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
-import {UserService} from './core/firebase/user.service';
+import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
 

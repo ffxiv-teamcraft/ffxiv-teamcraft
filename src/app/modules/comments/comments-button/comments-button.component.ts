@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
 import {ListRow} from '../../../model/list/list-row';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
 
 @Component({

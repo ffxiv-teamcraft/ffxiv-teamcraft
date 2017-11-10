@@ -11,7 +11,7 @@ import {GarlandToolsService} from '../../../core/api/garland-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
 import {HtmlToolsService} from '../../../core/tools/html-tools.service';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 import {SearchFilter} from '../../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../bulk-addition-popup/bulk-addition-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';

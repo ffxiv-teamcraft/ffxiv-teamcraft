@@ -2,9 +2,9 @@ import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {ResourceComment} from '../resource-comment';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../../../core/firebase/user.service';
+import {UserService} from '../../../core/database/user.service';
 import {ListRow} from '../../../model/list/list-row';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 import {List} from 'app/model/list/list';
 
 @Component({

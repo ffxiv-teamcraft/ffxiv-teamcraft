@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {Observable} from 'rxjs/Observable';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
 import 'rxjs/add/observable/concat';
 

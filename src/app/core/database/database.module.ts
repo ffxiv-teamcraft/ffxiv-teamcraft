@@ -13,5 +13,5 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
         UserService
     ]
 })
-export class FirebaseDataModule {
+export class DatabaseModule {
 }

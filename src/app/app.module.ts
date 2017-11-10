@@ -23,10 +23,10 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {UserService} from './core/firebase/user.service';
+import {UserService} from './core/database/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
-import {FirebaseDataModule} from './core/firebase/firebase-data.module';
+import {DatabaseModule} from './core/database/database.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ClipboardModule} from 'ngx-clipboard/dist';
 import {PipesModule} from './pipes/pipes.module';
@@ -93,7 +93,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
         // App Modules
         CoreModule,
-        FirebaseDataModule,
+        DatabaseModule,
         PipesModule,
         DonationModule,
         SettingsModule,
