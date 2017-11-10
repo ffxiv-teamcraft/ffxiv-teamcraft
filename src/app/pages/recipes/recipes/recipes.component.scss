@@ -67,10 +67,8 @@
 }
 
 .loading {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    .mat-progress-spinner {
-        width: auto !important;
-    }
+    margin-top:10%;
+    margin-left: 45%;
+    margin-right: 55%;
+    align-content:center;
 }

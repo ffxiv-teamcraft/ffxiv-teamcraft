@@ -82,9 +82,11 @@
     <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
         <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>
     </div>
+
     <div *ngIf="loading" class="loading">
         <mat-spinner></mat-spinner>
     </div>
+
     <div *ngIf="recipes.length > 0 && !loading">
         <mat-list-item *ngFor="let recipe of recipes">
             <a mat-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
