@@ -7,6 +7,7 @@ import {Instance} from './instance';
 import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
 import {ResourceComment} from '../../modules/comments/resource-comment';
+import {DeserializeAs} from '@kaiu/serializer';
 
 export class ListRow {
     addedAt?: number;
@@ -30,7 +31,8 @@ export class ListRow {
     vendors?: Vendor[];
     voyages?: I18nName[];
 
-    comments?: { [index: string]: ResourceComment };
+    @DeserializeAs([ResourceComment])
+    comments?: ResourceComment[];
 
     hidden?: boolean;
 }

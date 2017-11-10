@@ -3,7 +3,7 @@
     <mat-list>
         <app-comment-row *ngFor="let comment of comments" [comment]="comment"
                          [canDelete]="comment.authorId === userId || data.isOwnList"
-                         (delete)="deleteComment(comment.$key)"></app-comment-row>
+                         (delete)="deleteComment(comment)"></app-comment-row>
     </mat-list>
     <form (submit)="addComment()" [formGroup]="control" #f="ngForm">
         <mat-form-field class="input-field">
@@ -11,7 +11,7 @@
                       tabindex="-1" #input></textarea>
             <mat-hint align="end">{{input.value?.length || 0}}/140</mat-hint>
         </mat-form-field>
-        <button mat-button class="submit-button" type="submit" [disabled]="!control.valid || comments.length >= 10">
+        <button mat-button class="submit-button" type="submit" [disabled]="!control.valid || comments?.length >= 10">
             <mat-icon>send</mat-icon>
         </button>
     </form>

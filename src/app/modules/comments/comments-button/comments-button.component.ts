@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
-import {CommentsService} from '../comments.service';
+import {ListRow} from '../../../model/list/list-row';
+import {ListService} from '../../../core/firebase/list.service';
+import {List} from '../../../model/list/list';
 
 @Component({
     selector: 'app-comments-button',
@@ -11,7 +13,10 @@ import {CommentsService} from '../comments.service';
 export class CommentsButtonComponent implements OnInit {
 
     @Input()
-    uri: string;
+    row: ListRow;
+
+    @Input()
+    list: List;
 
     @Input()
     name: string;
@@ -21,15 +26,15 @@ export class CommentsButtonComponent implements OnInit {
 
     amount: number;
 
-    constructor(private dialog: MatDialog, private commentsService: CommentsService) {
+    constructor(private dialog: MatDialog) {
     }
 
     openPopup(): void {
-        this.dialog.open(CommentsPopupComponent, {data: {name: this.name, resourceUri: this.uri, isOwnList: this.isOwnList}});
+        this.dialog.open(CommentsPopupComponent, {data: {name: this.name, row: this.row, list: this.list, isOwnList: this.isOwnList}});
     }
 
     ngOnInit(): void {
-        this.commentsService.getAll(this.uri).subscribe(comments => this.amount = comments.length);
+        this.amount = this.row.comments === undefined ? 0 : this.row.comments.length;
     }
 
 }

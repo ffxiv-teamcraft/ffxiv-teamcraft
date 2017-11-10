@@ -83,7 +83,7 @@ export abstract class StoredDataService<T extends FirebaseDataModel> {
             return this.getBaseUri(params).switchMap(uri => {
                 delete value.$key;
                 return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
-            }).do(() => console.log('update done')).subscribe(resolve);
+            }).subscribe(resolve);
         });
     }
 

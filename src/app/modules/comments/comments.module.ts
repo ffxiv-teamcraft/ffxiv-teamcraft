@@ -6,7 +6,6 @@ import {MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatList
 import {CoreModule} from '../../core/core.module';
 import {PipesModule} from '../../pipes/pipes.module';
 import {CommentsButtonComponent} from './comments-button/comments-button.component';
-import {CommentsService} from './comments.service';
 import { CommentRowComponent } from './comment-row/comment-row.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
@@ -34,9 +33,6 @@ import {TranslateModule} from '@ngx-translate/core';
     exports: [
         CommentsPopupComponent,
         CommentsButtonComponent,
-    ],
-    providers: [
-        CommentsService,
     ],
     entryComponents: [
         CommentsPopupComponent,

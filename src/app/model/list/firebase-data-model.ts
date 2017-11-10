@@ -3,8 +3,6 @@ export class FirebaseDataModel {
     $value: any;
 
     getData(): object {
-        const result = {};
-        Object.keys(this).map(key => result[key] = this[key]);
-        return result;
+        return JSON.parse(JSON.stringify(this));
     }
 }

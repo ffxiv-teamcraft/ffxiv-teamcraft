@@ -1,9 +1,11 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
-import {CommentsService} from '../comments.service';
 import {ResourceComment} from '../resource-comment';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../core/firebase/user.service';
+import {ListRow} from '../../../model/list/list-row';
+import {ListService} from '../../../core/firebase/list.service';
+import {List} from 'app/model/list/list';
 
 @Component({
     selector: 'app-comments-popup',
@@ -20,8 +22,8 @@ export class CommentsPopupComponent implements OnInit {
 
     @ViewChild('f') myNgForm;
 
-    constructor(private commentsService: CommentsService,
-                @Inject(MAT_DIALOG_DATA) public data: { resourceUri: string, name: string, isOwnList: boolean },
+    constructor(private service: ListService,
+                @Inject(MAT_DIALOG_DATA) public data: { row: ListRow, list: List, name: string, isOwnList: boolean },
                 private userService: UserService) {
         this.userService.getUserData().subscribe(user => {
             if (user.name === 'Anonymous') {
@@ -37,18 +39,24 @@ export class CommentsPopupComponent implements OnInit {
         comment.date = new Date().toISOString();
         comment.content = this.control.value.comment;
         comment.authorId = this.userId;
-        this.commentsService.push(comment, this.data.resourceUri).then(() => {
+        this.comments.push(comment);
+        this.data.row.comments = this.comments;
+        this.service.update(this.data.list.$key, this.data.list).then(() => {
             this.control.reset();
             this.myNgForm.resetForm();
         });
     }
 
-    deleteComment(key: string): void {
-        this.commentsService.remove(key, this.data.resourceUri);
+    deleteComment(comment: ResourceComment): void {
+        this.data.row.comments = this.data.row.comments.filter(row => {
+            return row.authorId !== comment.authorId || row.date !== comment.date || row.content !== comment.content;
+        });
+        this.comments = this.data.row.comments;
+        this.service.update(this.data.list.$key, this.data.list);
     }
 
     ngOnInit() {
-        this.commentsService.getAll(this.data.resourceUri).subscribe(comments => this.comments = comments);
+        this.comments = this.data.row.comments || [];
     }
 
 }

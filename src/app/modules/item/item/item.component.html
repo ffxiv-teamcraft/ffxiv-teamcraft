@@ -15,7 +15,7 @@
              (cbOnSuccess)="afterNameCopy(item.id)">
             <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         </div>
-        <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+        <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.uid === list.authorId"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
@@ -153,7 +153,7 @@
     </div>
     <div class="item-name" matLine>
         <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
-        <app-comments-button [name]="item.id | itemName | i18n" [uri]="itemUri"
+        <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.uid === list.authorId"></app-comments-button>
     </div>
     <div *ngIf="item.craftedBy !== undefined" class="masterbook">
