@@ -41,6 +41,7 @@ import {FavoritesModule} from './pages/favorites/favorites.module';
 import {ListDetailsModule} from './pages/list-details/list-details.module';
 import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -63,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
 
         AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule.enablePersistence(),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
 

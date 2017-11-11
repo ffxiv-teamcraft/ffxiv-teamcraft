@@ -1,5 +1,5 @@
 import {ListRow} from './list-row';
-import {FirebaseDataModel} from './firebase-data-model';
+import {DataModel} from './data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
@@ -8,7 +8,7 @@ import * as semver from 'semver';
 
 declare const ga: Function;
 
-export class List extends FirebaseDataModel {
+export class List extends DataModel {
     name: string;
     recipes: ListRow[] = [];
     preCrafts: ListRow[] = [];
@@ -277,7 +277,7 @@ export class List extends FirebaseDataModel {
 
     /**
      * Returns the name of the category where you can find a given row.
-     * Useful for routing in firebase database.
+     * Useful for routing in database database.
      * @param {ListRow} row
      * @returns {string}
      */

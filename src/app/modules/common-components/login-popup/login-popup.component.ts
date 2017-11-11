@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 import * as firebase from 'firebase/app';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
+import {UserService} from '../../../core/database/user.service';
+import {ListService} from '../../../core/database/list.service';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
@@ -25,10 +26,11 @@ export class LoginPopupComponent {
 
     constructor(private af: AngularFireAuth,
                 public dialogRef: MatDialogRef<LoginPopupComponent>,
-                public firebase: AngularFireDatabase,
+                public userService: UserService,
                 private fb: FormBuilder,
                 private router: Router,
-                private dialog: MatDialog) {
+                private dialog: MatDialog,
+                private listService: ListService) {
 
         this.form = fb.group({
             email: ['', Validators.email],
@@ -42,10 +44,9 @@ export class LoginPopupComponent {
 
     login(user: any): Promise<void> {
         return new Promise<void>((resolve, reject) => {
-            const userRef = this.firebase.database.ref(`/users/${user.uid}`);
-            userRef.once('value').then(snap => {
-                if (snap.val() === null) {
-                    reject();
+            return this.userService.get(user.uid).subscribe(u => {
+                if (u === null) {
+                    reject('User not found');
                 } else {
                     resolve();
                 }
@@ -54,62 +55,68 @@ export class LoginPopupComponent {
     }
 
     googleOauth(): void {
-        this.router.navigate(['recipes']).then(() => {
+        this.router.navigate(['home']).then(() => {
             return this.oauth(new GoogleAuthProvider());
         });
     }
 
     facebookOauth(): void {
-        this.router.navigate(['recipes']).then(() => {
+        this.router.navigate(['home']).then(() => {
             return this.oauth(new FacebookAuthProvider());
         });
     }
 
     classicLogin(): void {
-        this.router.navigate(['recipes']).then(() => {
+        this.router.navigate(['home']).then(() => {
             const prevUser = this.af.auth.currentUser;
-            this.firebase.database.ref(`/users/${prevUser.uid}/lists`)
-                .once('value')
-                .then(snap => snap.val())
-                .then(lists => {
-                    if (this.af.auth.currentUser.isAnonymous) {
-                        this.firebase.object(`/users/${prevUser.uid}`).remove();
-                        this.af.auth.currentUser.delete();
-                    }
-                    this.af.auth
-                        .signInWithEmailAndPassword(this.form.value.email, this.form.value.password)
-                        .catch(() => {
-                            this.errorState(lists);
-                        })
-                        .then((auth) => {
-                            if (!auth.emailVerified) {
-                                this.af.auth.currentUser.sendEmailVerification();
-                                this.af.auth.signOut().then(() => {
-                                    this.af.auth.signInAnonymously().then(user => {
-                                        this.firebase.database
-                                            .ref(`/users/${user.uid}/lists`)
-                                            .set(lists);
-                                        this.notVerified = true;
+            this.listService.getUserLists(prevUser.uid).subscribe(listsBackup => {
+                // Delete the previous anonymous user
+                if (this.af.auth.currentUser.isAnonymous) {
+                    this.userService.deleteUser(prevUser.uid);
+                    this.af.auth.currentUser.delete();
+                }
+                // Try to log in
+                this.af.auth
+                    .signInWithEmailAndPassword(this.form.value.email, this.form.value.password)
+                    .catch((err) => {
+                        console.error(err);
+                        this.errorState(listsBackup);
+                    })
+                    .then((auth) => {
+                        if (auth !== null && !auth.emailVerified) {
+                            // If the user didn't verify his email, send him a new one.
+                            this.af.auth.currentUser.sendEmailVerification();
+                            // Log out from this user, as his email isn't verified yet.
+                            this.af.auth.signOut().then(() => {
+                                // Sign in anonymously again, then restore list backup to the newly created user.
+                                this.af.auth.signInAnonymously().then(user => {
+                                    listsBackup.forEach(list => {
+                                        list.authorId = user.uid;
+                                        this.listService.push(list);
                                     });
+                                    this.notVerified = true;
                                 });
-                            } else {
-                                this.login(auth).then(() => {
-                                    this.dialogRef.close();
-                                }).catch(() => {
-                                    this.errorState(lists);
-                                });
-                            }
-                        });
-                });
+                            });
+                        } else {
+                            this.login(auth).then(() => {
+                                this.dialogRef.close();
+                            }).catch((err) => {
+                                console.error(err);
+                                this.errorState(listsBackup);
+                            });
+                        }
+                    });
+            });
         });
     }
 
     private errorState(lists: any): void {
         this.af.auth.signOut().then(() => {
             this.af.auth.signInAnonymously().then(user => {
-                this.firebase.database
-                    .ref(`/users/${user.uid}/lists`)
-                    .set(lists);
+                lists.forEach(list => {
+                    list.authorId = user.uid;
+                    this.listService.push(list);
+                });
                 this.error = true;
             });
         });
@@ -117,29 +124,27 @@ export class LoginPopupComponent {
 
     private oauth(provider: AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
-        this.firebase.database.ref(`/users/${prevUser.uid}/lists`)
-            .once('value')
-            .then(snap => snap.val())
-            .then(lists => {
-                if (this.af.auth.currentUser.isAnonymous) {
-                    this.firebase.object(`/users/${prevUser.uid}`).remove();
-                    this.af.auth.currentUser.delete();
-                }
-                this.af.auth.signInWithPopup(provider).then((oauth) => {
-                    this.login(oauth.user).then(() => {
-                        this.dialogRef.close();
-                    }).catch(() => {
-                        this.af.auth.signOut().then(() => {
-                            this.af.auth.signInAnonymously().then(user => {
-                                this.firebase.database
-                                    .ref(`/users/${user.uid}/lists`)
-                                    .set(lists);
-                                this.dialogRef.close();
+        this.listService.getUserLists(prevUser.uid).subscribe(lists => {
+            if (this.af.auth.currentUser.isAnonymous) {
+                this.userService.deleteUser(prevUser.uid);
+                this.af.auth.currentUser.delete();
+            }
+            this.af.auth.signInWithPopup(provider).then((oauth) => {
+                this.login(oauth.user).then(() => {
+                    this.dialogRef.close();
+                }).catch(() => {
+                    this.af.auth.signOut().then(() => {
+                        this.af.auth.signInAnonymously().then(user => {
+                            lists.forEach(list => {
+                                list.authorId = user.uid;
+                                this.listService.push(list);
                             });
+                            this.dialogRef.close();
                         });
                     });
                 });
             });
+        });
     }
 
 }

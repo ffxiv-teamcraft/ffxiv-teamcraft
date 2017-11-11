@@ -88,7 +88,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     public adaptFilters(): void {
-        this.userService.getUser()
+        this.userService.getCharacter()
             .map(u => <any>u)
             .subscribe(u => {
                 this.craftFilters.forEach(filter => {
@@ -212,7 +212,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
             this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
         }
-        this.userService.saveUser(this.user.uid, this.userData);
+        this.userService.update(this.user.uid, this.userData);
         this.update();
     }
 
