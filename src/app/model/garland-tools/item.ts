@@ -255,7 +255,10 @@ export class Item implements I18nData {
                         areaid: localized.getAreaIdByENName(partial.n),
                     };
                     if (details !== undefined) {
-                        storedNode.slot = details.items.find(item => item.id === this.id).slot;
+                        const nodeInfo = details.items.find(item => item.id === this.id);
+                        if (nodeInfo !== undefined) {
+                            storedNode.slot = nodeInfo.slot;
+                        }
                         storedNode.time = details.time;
                         storedNode.uptime = details.uptime;
                         storedNode.limitType = {en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt};
