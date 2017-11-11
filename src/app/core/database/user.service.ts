@@ -13,6 +13,8 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 @Injectable()
 export class UserService extends StoredDataService<AppUser> {
 
+    public loggingIn = false;
+
     private reloader: BehaviorSubject<void> = new BehaviorSubject(null);
 
     constructor(private af: AngularFireAuth,
@@ -46,11 +48,11 @@ export class UserService extends StoredDataService<AppUser> {
         return this.reloader
             .switchMap(() => {
                 return this.af.authState.switchMap(user => {
-                    if (user === null) {
-                        this.af.auth.signInAnonymously();
+                    if (user === null && !this.loggingIn) {
+                        this.af.auth.signInAnonymously().then(() => {console.log('Signed in as anonymous')});
                         return Observable.of({name: 'Anonymous', anonymous: true});
                     }
-                    if (user === null || user.isAnonymous) {
+                    if (user.isAnonymous) {
                         return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
                     } else {
                         return this.get(user.uid)

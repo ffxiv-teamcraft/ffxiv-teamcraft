@@ -43,14 +43,17 @@ export class LoginPopupComponent {
     }
 
     login(user: any): Promise<void> {
+        this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
-            return this.userService.get(user.uid).subscribe(u => {
-                if (u === null) {
-                    reject('User not found');
-                } else {
-                    resolve();
-                }
-            });
+            return this.userService.get(user.uid)
+                .subscribe(u => {
+                    this.userService.loggingIn = false;
+                    if (u === null) {
+                        reject('User not found');
+                    } else {
+                        resolve();
+                    }
+                });
         });
     }
 
@@ -83,7 +86,7 @@ export class LoginPopupComponent {
                         this.errorState(listsBackup);
                     })
                     .then((auth) => {
-                        if (auth !== null && !auth.emailVerified) {
+                        if (auth !== null && auth !== undefined && !auth.emailVerified) {
                             // If the user didn't verify his email, send him a new one.
                             this.af.auth.currentUser.sendEmailVerification();
                             // Log out from this user, as his email isn't verified yet.
