@@ -64,7 +64,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
 
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule.enablePersistence(),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
 
