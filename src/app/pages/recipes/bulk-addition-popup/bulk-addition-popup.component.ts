@@ -21,14 +21,16 @@ export class BulkAdditionPopupComponent implements OnInit {
 
     ngOnInit(): void {
         let done = 0;
-        Observable.concat(...this.data.additions).subscribe((resultList: List) => {
-            this.listService.update(this.data.key, resultList).then(() => {
+        Observable.concat(...this.data.additions)
+            .do(() => {
                 done++;
                 this.progress = Math.ceil(100 * done / this.data.additions.length);
-                if (this.progress >= 100) {
+            })
+            .filter(() => this.progress >= 100)
+            .subscribe((resultList: List) => {
+                this.listService.update(this.data.key, resultList).then(() => {
                     this.dialogRef.close();
-                }
+                });
             });
-        });
     }
 }

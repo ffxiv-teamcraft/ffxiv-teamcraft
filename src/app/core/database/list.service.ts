@@ -48,7 +48,7 @@ export class ListService extends StoredDataService<List> {
      * @returns {Promise<void>}
      */
     public deleteUserLists(uid: string): Promise<void> {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             this.firestore
                 .collection('lists', ref => ref.where('authorId', '==', uid))
                 .snapshotChanges()
