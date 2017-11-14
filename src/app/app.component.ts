@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -42,6 +42,9 @@ export class AppComponent implements OnInit {
 
     patreonPopupDisplayed = false;
 
+    sidebarExpanded = false;
+    sidebarExpandable = true;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -50,6 +53,17 @@ export class AppComponent implements OnInit {
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
                 private snack: MatSnackBar) {
+
+
+        //check for width
+        if (window.screen.width >= 768) {
+            this.sidebarExpanded = true;
+            this.sidebarExpandable = false;
+        } else {
+            this.sidebarExpanded = false;
+            this.sidebarExpandable = true;
+
+        }
 
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
@@ -115,7 +129,7 @@ export class AppComponent implements OnInit {
         }
         // Anonymous sign in with "please register" snack.
         this.auth.authState.debounceTime(1000).subscribe(state => {
-             if (state ! == null && state.isAnonymous && !this.isRegistering) {
+            if (state ! == null && state.isAnonymous && !this.isRegistering) {
                 this.registrationSnackRef = this.snack.open(
                     this.translate.instant('Anonymous_Warning'),
                     this.translate.instant('Registration'),
@@ -195,5 +209,19 @@ export class AppComponent implements OnInit {
         this.locale = lang;
         localStorage.setItem('locale', lang);
         this.translate.use(lang);
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        // target width for tablets
+        if (event.target.innerWidth >= 768) {
+            this.sidebarExpanded = true;
+            this.sidebarExpandable = false;
+        } else {
+            this.sidebarExpanded = false;
+            this.sidebarExpandable = true;
+
+        }
+
     }
 }
