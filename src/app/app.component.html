@@ -1,6 +1,6 @@
 <div class="app-container {{lightTheme?'light-theme':''}}">
     <mat-toolbar color="primary">
-        <button *ngIf="sidebarExpandable" mat-icon-button (click)="sidenav.toggle()">
+        <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
         <h1>FFXIV Teamcraft</h1>
@@ -31,7 +31,7 @@
         </mat-grid-list>
     </mat-card>
     <mat-sidenav-container>
-        <mat-sidenav mode="side" opened="{{sidebarExpanded}}" #sidenav>
+        <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav>
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
@@ -48,23 +48,23 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item routerLink="/home" (click)="!sidebarExpandable ? return : sidenav.close()">
+                <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  return">
                     <mat-icon matListIcon>home</mat-icon>
                     <h3 matLine>{{'Home' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/recipes" (click)="!sidebarExpandable ? return : sidenav.close()">
+                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  return">
                     <mat-icon matListIcon>search</mat-icon>
                     <h3 matLine>{{'Recipes' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/lists" (click)="!sidebarExpandable ? return : sidenav.close()">
+                <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  return">
                     <mat-icon matListIcon>view_list</mat-icon>
                     <h3 matLine>{{'Lists' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/favorites" (click)="!sidebarExpandable ? return : sidenav.close()">
+                <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  return">
                     <mat-icon matListIcon>favorite</mat-icon>
                     <h3 matLine>{{'Favorites' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/settings" (click)="!sidebarExpandable ? return : sidenav.close()">
+                <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  return">
                     <mat-icon matListIcon>settings</mat-icon>
                     <h3 matLine>{{'SETTINGS.title' | translate}}</h3>
                 </mat-list-item>

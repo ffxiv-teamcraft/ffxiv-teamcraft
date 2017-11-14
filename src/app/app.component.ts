@@ -12,6 +12,8 @@ import {CharacterAddPopupComponent} from './modules/common-components/character-
 import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
+import {Subscription} from 'rxjs/Subscription';
+import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 
 declare const ga: Function;
 
@@ -42,8 +44,10 @@ export class AppComponent implements OnInit {
 
     patreonPopupDisplayed = false;
 
-    sidebarExpanded = false;
-    sidebarExpandable = true;
+    mobile = true;
+
+    watcher : Subscription;
+    activeMediaQuery = '';
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -52,18 +56,15 @@ export class AppComponent implements OnInit {
                 private dialog: MatDialog,
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
-                private snack: MatSnackBar) {
+                private snack: MatSnackBar,
+                media: ObservableMedia) {
 
 
-        //check for width
-        if (window.screen.width >= 768) {
-            this.sidebarExpanded = true;
-            this.sidebarExpandable = false;
-        } else {
-            this.sidebarExpanded = false;
-            this.sidebarExpandable = true;
+        this.watcher = media.subscribe((change: MediaChange) => {
+            this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
+            this.mobile = (change.mqAlias === 'xs') || (change.mqAlias === 'sm');
 
-        }
+        });
 
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
@@ -165,6 +166,8 @@ export class AppComponent implements OnInit {
             });
     }
 
+
+
     /**
      * Persists the actual theme in localstorage.
      */
@@ -211,17 +214,5 @@ export class AppComponent implements OnInit {
         this.translate.use(lang);
     }
 
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
-        // target width for tablets
-        if (event.target.innerWidth >= 768) {
-            this.sidebarExpanded = true;
-            this.sidebarExpandable = false;
-        } else {
-            this.sidebarExpanded = false;
-            this.sidebarExpandable = true;
 
-        }
-
-    }
 }
