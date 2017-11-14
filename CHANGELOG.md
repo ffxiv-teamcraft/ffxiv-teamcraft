@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.3"></a>
+## [2.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.2...v2.4.3) (2017-11-14)
+
+
+### Bug Fixes
+
+* recipes yielding more than one item are hidden by filters when they shouldn't ([b01c160](https://github.com/Supamiu/ffxiv-teamcraft/commit/b01c160))
+
+
+
 <a name="2.4.2"></a>
 ## [2.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.1...v2.4.2) (2017-11-11)
 
