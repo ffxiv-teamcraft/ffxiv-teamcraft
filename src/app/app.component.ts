@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
     mobile = true;
 
-    watcher : Subscription;
+    watcher: Subscription;
     activeMediaQuery = '';
 
     constructor(private auth: AngularFireAuth,
@@ -165,7 +165,6 @@ export class AppComponent implements OnInit {
                 this.userIcon = character.avatar;
             });
     }
-
 
 
     /**
