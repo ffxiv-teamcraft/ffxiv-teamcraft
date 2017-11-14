@@ -5,7 +5,7 @@ import {List} from '../../../model/list/list';
 import {MatDialog} from '@angular/material/dialog';
 import {ListNamePopupComponent} from '../../../modules/common-components/list-name-popup/list-name-popup.component';
 import {Observable} from 'rxjs/Observable';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 
 @Component({
     selector: 'app-cart-import',

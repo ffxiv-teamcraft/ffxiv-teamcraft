@@ -6,7 +6,7 @@ import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../../core/list/list-manager.service';
-import {ListService} from '../../../core/firebase/list.service';
+import {ListService} from '../../../core/database/list.service';
 import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../../tools/math-tools';
 import {Title} from '@angular/platform-browser';

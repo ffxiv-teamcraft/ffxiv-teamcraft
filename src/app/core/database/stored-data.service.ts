@@ -1,12 +1,12 @@
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {FirebaseDataModel} from '../../model/list/firebase-data-model';
+import {DataModel} from '../../model/list/data-model';
 import * as firebase from 'firebase/app';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import 'rxjs/add/observable/fromPromise';
 
-export abstract class StoredDataService<T extends FirebaseDataModel> {
+export abstract class StoredDataService<T extends DataModel> {
 
     constructor(protected afdb: AngularFirestore, protected serializer: NgSerializerService) {
     }

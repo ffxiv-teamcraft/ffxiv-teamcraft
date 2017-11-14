@@ -1,11 +1,11 @@
-import {List} from './list';
+import {DataModel} from './data-model';
 
-export interface AppUser {
-    name: string;
-    lists?: { [key: string]: List };
-    email?: string;
+export class AppUser extends DataModel {
+    name?: string;
+    email: string;
     lodestoneId?: number;
     avatar?: string;
     favorites?: string[];
     patron?: boolean;
+    anonymous?: boolean;
 }

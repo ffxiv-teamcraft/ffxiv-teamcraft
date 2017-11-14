@@ -35,7 +35,7 @@
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
-                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" alt="avatar">
+                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}">
                     <p class="name">{{username}}</p>
                 </div>
                 <div *ngIf="(authState | async)?.isAnonymous">

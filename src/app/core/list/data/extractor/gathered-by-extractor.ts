@@ -56,7 +56,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                         storedNode.limitType = {en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt};
                         storedNode.coords = details.coords;
                     }
-                    // We need to cleanup the node object to avoid firebase issues with undefined value.
+                    // We need to cleanup the node object to avoid database issues with undefined value.
                     Object.keys(storedNode).forEach(key => {
                         if (storedNode[key] === undefined) {
                             delete storedNode[key];

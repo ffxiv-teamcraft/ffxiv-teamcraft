@@ -2,11 +2,12 @@ import {Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {UserService} from '../../../core/firebase/user.service';
+import {UserService} from '../../../core/database/user.service';
 import {CharacterAddPopupComponent} from 'app/modules/common-components/character-add-popup/character-add-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {AppUser} from '../../../model/list/app-user';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import EmailAuthProvider = firebase.auth.EmailAuthProvider;
@@ -26,7 +27,7 @@ export class RegisterPopupComponent {
 
     constructor(private af: AngularFireAuth,
                 public dialogRef: MatDialogRef<RegisterPopupComponent>,
-                public firebase: AngularFireDatabase,
+                public firestore: AngularFirestore,
                 private userService: UserService,
                 private dialog: MatDialog,
                 private translate: TranslateService,
@@ -63,14 +64,19 @@ export class RegisterPopupComponent {
         };
     }
 
+    /**
+     * Registers a user in the database.
+     * @param user
+     * @returns {Promise<void>}
+     */
     register(user: any): Promise<void> {
         return new Promise<void>(resolve => {
             this.error = undefined;
-            const userRef = this.firebase.database.ref(`/users/${user.uid}/email`);
-            userRef.once('value').then(() => {
-                userRef.set(user.email);
-                const res = this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
-                res.afterClosed().subscribe(() => {
+            const u = new AppUser();
+            u.$key = user.uid;
+            u.email = user.email;
+            this.userService.update(user.uid, u).then(() => {
+                this.dialog.open(CharacterAddPopupComponent, {disableClose: true}).afterClosed().subscribe(() => {
                     this.dialogRef.close();
                     this.userService.reload();
                     ga('send', 'event', 'Site', 'signup');
@@ -80,18 +86,27 @@ export class RegisterPopupComponent {
         });
     }
 
+    /**
+     * Creates a user from google's oauth.
+     */
     googleOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new GoogleAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = this.translate.instant(error.code));
     }
 
+    /**
+     * Creates a user from facebook's oauth.
+     */
     facebookOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new FacebookAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = this.translate.instant(error.code));
     }
 
+    /**
+     * Creates a user from a classic email/password pair.
+     */
     classicRegister(): void {
         const credential = EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
         this.af.auth.currentUser.linkWithCredential(credential).then((auth) => {

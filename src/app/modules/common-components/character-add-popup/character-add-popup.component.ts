@@ -2,10 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {MatDialogRef} from '@angular/material';
 import 'rxjs/add/operator/catch';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-character-add-popup',
@@ -20,8 +19,7 @@ export class CharacterAddPopupComponent implements OnInit {
 
     constructor(private data: DataService,
                 private fb: FormBuilder,
-                private firebase: AngularFireDatabase,
-                private af: AngularFireAuth,
+                private userService: UserService,
                 public dialogRef: MatDialogRef<CharacterAddPopupComponent>) {
     }
 
@@ -49,14 +47,13 @@ export class CharacterAddPopupComponent implements OnInit {
         this.data
             .searchCharacter(this.form.value.character, this.form.value.server)
             .switchMap(results => {
-                return this.af.authState.switchMap(user => {
-                    if (user !== null) {
-                        return this.firebase.database
-                            .ref(`/users/${user.uid}/lodestoneId`)
-                            .set(results[0].id);
-                    }
-                    return Observable.of(null);
-                });
+                return this.userService.getUserData()
+                    .map(user => {
+                        if (user !== null && !user.anonymous) {
+                            user.lodestoneId = results[0].id;
+                            this.userService.update(user.$key, user);
+                        }
+                    });
             }).subscribe(() => {
             this.dialogRef.close();
         });

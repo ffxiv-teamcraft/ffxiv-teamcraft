@@ -9,7 +9,7 @@ import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/m
 import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
 import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
-import {UserService} from './core/firebase/user.service';
+import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
 
@@ -95,66 +95,80 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
-        this.authState
-            .subscribe(state => {
-                if (this.router.url.indexOf('home') === -1) {
-                    this.firebase.object('/patreon')
-                        .valueChanges()
-                        .subscribe((patreon: any) => {
-                        this.firebase.database.ref(`/users/${state.uid}/patron`)
-                            .once('value')
-                            .then(snap => {
-                                if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && snap.val() !== true) {
-                                    this.dialog.open(PatreonPopupComponent, {data: patreon});
-                                    this.patreonPopupDisplayed = true;
-                                }
-                            });
-                    });
+        // Patreon popup.
+        if (this.router.url.indexOf('home') === -1) {
+            this.firebase
+                .object('/patreon')
+                .valueChanges()
+                .subscribe((patreon: any) => {
+                    this.userService.getUserData()
+                    // We want to make sure that we get a boolean in there.
+                        .map(user => user.patron || false)
+                        // Display patreon popup is goal isn't reached and the user isn't a registered patron.
+                        .subscribe(isPatron => {
+                            if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && !isPatron) {
+                                this.dialog.open(PatreonPopupComponent, {data: patreon});
+                                this.patreonPopupDisplayed = true;
+                            }
+                        });
+                });
+        }
+        // Anonymous sign in with "please register" snack.
+        this.auth.authState.debounceTime(1000).subscribe(state => {
+             if (state ! == null && state.isAnonymous && !this.isRegistering) {
+                this.registrationSnackRef = this.snack.open(
+                    this.translate.instant('Anonymous_Warning'),
+                    this.translate.instant('Registration'),
+                    {
+                        duration: 5000,
+                        extraClasses: ['snack-warn']
+                    }
+                );
+                this.registrationSnackRef.onAction().subscribe(() => {
+                    this.openRegistrationPopup();
+                });
+                return;
+            } else {
+                this.closeSnack();
+            }
+        });
+
+        // Character addition popup.
+        this.userService
+            .getUserData()
+            .subscribe(u => {
+                if (u.lodestoneId === undefined && !u.anonymous) {
+                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
                 }
-                if (state === null) {
-                    this.auth.auth.signInAnonymously();
-                    return;
-                } else if (state.isAnonymous && !this.isRegistering) {
-                    this.registrationSnackRef = this.snack.open(
-                        this.translate.instant('Anonymous_Warning'),
-                        this.translate.instant('Registration'),
-                        {
-                            duration: 5000,
-                            extraClasses: ['snack-warn']
-                        }
-                    );
-                    this.registrationSnackRef.onAction().subscribe(() => {
-                        this.openRegistrationPopup();
-                    });
-                    return;
-                } else {
-                    this.closeSnack();
-                }
-                this.firebase.database.ref(`/users/${state.uid}/lodestoneId`)
-                    .once('value')
-                    .then(snap => {
-                        if (snap.val() === null && !state.isAnonymous) {
-                            this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
-                        }
-                    });
             });
 
+        // Character informations for side menu.
         this.userService
-            .getUser()
-            .subscribe(u => {
-                this.username = u.name;
-                this.userIcon = u.avatar;
+            .getCharacter()
+            .subscribe(character => {
+                this.username = character.name;
+                this.userIcon = character.avatar;
             });
     }
 
+    /**
+     * Persists the actual theme in localstorage.
+     */
     saveTheme(): void {
         localStorage.setItem('theme:light', this.lightTheme.toString());
     }
 
+    /**
+     * Returns a boolean which is linked to announcement display.
+     * @returns {boolean}
+     */
     showAnnouncement(): boolean {
         return this.announcement !== undefined && localStorage.getItem('announcement:hide') !== 'true';
     }
 
+    /**
+     * Persists the dismissed announcement into localstorage.
+     */
     dismissAnnouncement(): void {
         localStorage.setItem('announcement:hide', 'true');
     }
