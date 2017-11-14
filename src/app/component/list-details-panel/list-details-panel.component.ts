@@ -1,10 +1,9 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {List} from '../../model/list/list';
 
 @Component({
     selector: 'app-list-details-panel',
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './list-details-panel.component.html',
     styleUrls: ['./list-details-panel.component.scss']
 })

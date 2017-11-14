@@ -147,7 +147,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                             // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
                             item.hidden = false;
                         }
-                        if (item.done >= item.amount_needed && this.hideCompleted) {
+                        if (item.done >= item.amount && this.hideCompleted) {
                             item.hidden = true;
                         }
                     });
