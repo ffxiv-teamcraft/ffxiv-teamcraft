@@ -21,7 +21,7 @@ import {ListPanelComponent} from './list-panel/list-panel.component';
 import {RecipeComponent} from './recipe/recipe.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
 import {RouterModule} from '@angular/router';
-import {SettingsModule} from '../settings/settings.module';
+import {SettingsModule} from '../../pages/settings/settings.module';
 import {TooltipModule} from '../tooltip/tooltip.module';
 import {CharacterAddPopupComponent} from './character-add-popup/character-add-popup.component';
 import {ConfirmationPopupComponent} from './confirmation-popup/confirmation-popup.component';

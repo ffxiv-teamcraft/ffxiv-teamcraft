@@ -15,7 +15,7 @@ import {
     MatRadioModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {SettingsModule} from '../../modules/settings/settings.module';
+import {SettingsModule} from '../settings/settings.module';
 import {PipesModule} from '../../pipes/pipes.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {BulkAdditionPopupComponent} from './bulk-addition-popup/bulk-addition-popup.component';

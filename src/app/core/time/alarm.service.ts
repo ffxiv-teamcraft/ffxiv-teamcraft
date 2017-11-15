@@ -3,7 +3,7 @@ import {EorzeanTimeService} from './eorzean-time.service';
 import {Alarm} from './alarm';
 import {Subscription} from 'rxjs/Subscription';
 import {ListRow} from '../../model/list/list-row';
-import {SettingsService} from '../../modules/settings/settings.service';
+import {SettingsService} from '../../pages/settings/settings.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {LocalizedDataService} from '../data/localized-data.service';
 import {TranslateService} from '@ngx-translate/core';

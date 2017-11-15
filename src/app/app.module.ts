@@ -32,7 +32,7 @@ import {ClipboardModule} from 'ngx-clipboard/dist';
 import {PipesModule} from './pipes/pipes.module';
 import {TooltipModule} from './modules/tooltip/tooltip.module';
 import {DonationModule} from './modules/donation/donation.module';
-import {SettingsModule} from './modules/settings/settings.module';
+import {SettingsModule} from './pages/settings/settings.module';
 import {CartImportModule} from './pages/cart-import/cart-import.module';
 import {CommonComponentsModule} from './modules/common-components/common-components.module';
 import {HomeModule} from './pages/home/home.module';
