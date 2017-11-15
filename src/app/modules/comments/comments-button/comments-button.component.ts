@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
 import {ListRow} from '../../../model/list/list-row';
-import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-comments-button',
@@ -26,7 +26,7 @@ export class CommentsButtonComponent implements OnInit {
 
     amount: number;
 
-    constructor(private dialog: MatDialog) {
+    constructor(private dialog: MatDialog, private media: ObservableMedia) {
     }
 
     openPopup(): void {
@@ -35,6 +35,10 @@ export class CommentsButtonComponent implements OnInit {
 
     ngOnInit(): void {
         this.amount = this.row.comments === undefined ? 0 : this.row.comments.length;
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 
 }
