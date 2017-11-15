@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.5"></a>
+## [2.4.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.4...v2.4.5) (2017-11-15)
+
+
+
+<a name="2.4.4"></a>
+## [2.4.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.3...v2.4.4) (2017-11-15)
+
+
+### Bug Fixes
+
+* crafting tiers toggle makes the app crash ([a85a29f](https://github.com/Supamiu/ffxiv-teamcraft/commit/a85a29f))
+
+
+
+<a name="2.4.3"></a>
+## [2.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.2...v2.4.3) (2017-11-14)
+
+
+### Bug Fixes
+
+* recipes yielding more than one item are hidden by filters when they shouldn't ([b01c160](https://github.com/Supamiu/ffxiv-teamcraft/commit/b01c160))
+
+
+
+<a name="2.4.2"></a>
+## [2.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.1...v2.4.2) (2017-11-11)
+
+
+### Bug Fixes
+
+* can't create a list on first visit ([ed0e223](https://github.com/Supamiu/ffxiv-teamcraft/commit/ed0e223))
+* display copy button only upon item row hover ([660cab0](https://github.com/Supamiu/ffxiv-teamcraft/commit/660cab0))
+* grade 3 wheels cannot be added to list ([7dd9254](https://github.com/Supamiu/ffxiv-teamcraft/commit/7dd9254)), closes [#96](https://github.com/Supamiu/ffxiv-teamcraft/issues/96)
+
+
+### Features
+
+* add a button to copy item name to clipboard ([2ba6481](https://github.com/Supamiu/ffxiv-teamcraft/commit/2ba6481))
+* add precraft tier display toggle ([4ecd433](https://github.com/Supamiu/ffxiv-teamcraft/commit/4ecd433))
+* added a button to reset filters ([41fa4d9](https://github.com/Supamiu/ffxiv-teamcraft/commit/41fa4d9))
+
+
+### Performance Improvements
+
+* lower home page hosting size by removing gifs ([0842afa](https://github.com/Supamiu/ffxiv-teamcraft/commit/0842afa))
+
+
+
 <a name="2.4.1"></a>
 ## [2.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.0...v2.4.1) (2017-10-30)
 
