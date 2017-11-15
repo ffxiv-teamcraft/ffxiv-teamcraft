@@ -10,7 +10,7 @@
         </div>
     </md-list>
     <md-list dense *ngIf="tierBreakdownToggle">
-        <md-list *ngFor="let tier of getTiers(); let tierNumber = index">
+        <md-list *ngFor="let tier of tiers; let tierNumber = index">
             <h3 md-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
             <md-divider></md-divider>
             <div *ngFor="let row of tier; let i = index">

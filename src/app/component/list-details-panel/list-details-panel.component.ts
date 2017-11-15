@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {List} from '../../model/list/list';
 
@@ -7,7 +7,7 @@ import {List} from '../../model/list/list';
     templateUrl: './list-details-panel.component.html',
     styleUrls: ['./list-details-panel.component.scss']
 })
-export class ListDetailsPanelComponent {
+export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     @Input()
     title: string;
@@ -30,19 +30,21 @@ export class ListDetailsPanelComponent {
     @Output()
     update: EventEmitter<void> = new EventEmitter<void>();
 
+    tiers: ListRow[][] = [[]];
+
     tierBreakdownToggle = false;
 
     /**
      * Returns a list of tiers based on dependencies between each list row.
      * each tier is a list of rows.
-     * @returns {ListRow[][]}
      */
-    public getTiers(): ListRow[][] {
-        let result = [[]];
+    public generateTiers(): void {
+        this.tiers = [[]];
         this.data.forEach(row => {
-            result = this.setTier(row, result);
+            if (row.requires !== undefined) {
+                this.tiers = this.setTier(row, this.tiers);
+            }
         });
-        return result;
     }
 
     private setTier(row: ListRow, result: ListRow[][], tier = 0): ListRow[][] {
@@ -62,4 +64,13 @@ export class ListDetailsPanelComponent {
         this.tierBreakdownToggle = !this.tierBreakdownToggle;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.list.previousValue !== changes.list.currentValue) {
+            this.generateTiers();
+        }
+    }
+
+    ngOnInit(): void {
+        this.generateTiers();
+    }
 }
