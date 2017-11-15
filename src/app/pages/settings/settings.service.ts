@@ -11,6 +11,14 @@ export class SettingsService {
         this.setSetting('base-link', base);
     }
 
+    public get compactLists(): boolean {
+        return this.getSetting('compact-lists', 'false') === 'true';
+    }
+
+    public set compactLists(compact: boolean) {
+        this.setSetting('Compact-lists', compact.toString());
+    }
+
     public get alarmHoursBefore(): number {
         return +this.getSetting('alarm:hours-before', '0');
     }

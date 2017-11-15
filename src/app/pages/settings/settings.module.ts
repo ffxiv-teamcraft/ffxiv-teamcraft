@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {SettingsComponent} from './settings/settings.component';
 import {RouterModule, Routes} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
-import {MatFormFieldModule, MatSelectModule} from '@angular/material';
+import {MatCheckboxModule, MatFormFieldModule, MatSelectModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SettingsService} from './settings.service';
 import {ItemLinkPipe} from './pipe/item-link.pipe';
@@ -26,6 +26,7 @@ const routing: Routes = [
 
         MatSelectModule,
         MatFormFieldModule,
+        MatCheckboxModule
     ],
     declarations: [
         SettingsComponent,
