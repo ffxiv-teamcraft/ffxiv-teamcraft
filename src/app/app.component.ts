@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -12,6 +12,8 @@ import {CharacterAddPopupComponent} from './modules/common-components/character-
 import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
+import {Subscription} from 'rxjs/Subscription';
+import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 
 declare const ga: Function;
 
@@ -42,6 +44,11 @@ export class AppComponent implements OnInit {
 
     patreonPopupDisplayed = false;
 
+    mobile = true;
+
+    watcher: Subscription;
+    activeMediaQuery = '';
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -49,7 +56,15 @@ export class AppComponent implements OnInit {
                 private dialog: MatDialog,
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
-                private snack: MatSnackBar) {
+                private snack: MatSnackBar,
+                media: ObservableMedia) {
+
+
+        this.watcher = media.subscribe((change: MediaChange) => {
+            this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
+            this.mobile = (change.mqAlias === 'xs') || (change.mqAlias === 'sm');
+
+        });
 
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
@@ -115,7 +130,7 @@ export class AppComponent implements OnInit {
         }
         // Anonymous sign in with "please register" snack.
         this.auth.authState.debounceTime(1000).subscribe(state => {
-             if (state ! == null && state.isAnonymous && !this.isRegistering) {
+            if (state ! == null && state.isAnonymous && !this.isRegistering) {
                 this.registrationSnackRef = this.snack.open(
                     this.translate.instant('Anonymous_Warning'),
                     this.translate.instant('Registration'),
@@ -150,6 +165,7 @@ export class AppComponent implements OnInit {
                 this.userIcon = character.avatar;
             });
     }
+
 
     /**
      * Persists the actual theme in localstorage.
@@ -196,4 +212,6 @@ export class AppComponent implements OnInit {
         localStorage.setItem('locale', lang);
         this.translate.use(lang);
     }
+
+
 }

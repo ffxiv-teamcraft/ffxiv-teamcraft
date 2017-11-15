@@ -156,7 +156,7 @@
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.uid === list.authorId"></app-comments-button>
     </div>
-    <div *ngIf="item.craftedBy !== undefined" class="masterbook">
+    <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
              matListAvatar
              src="{{masterbook.icon | icon}}"
@@ -176,7 +176,7 @@
             <mat-icon color="accent">assignment</mat-icon>
         </button>
         <div class="classes">
-            <div *ngIf="item.craftedBy !== undefined">
+            <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
                 <div *ngFor="let craft of item.craftedBy">
                     <img class="crafted-by"
                          *ngIf="craft.icon !== ''"
@@ -184,7 +184,7 @@
                          matTooltipPosition="above" src="{{craft.icon}}">
                 </div>
             </div>
-            <button mat-icon-button *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+            <button mat-icon-button *ngIf="item.gatheredBy !== undefined && item.gatheredBy.length > 0" (click)="openGatheredByDetails(item)">
                 <img class="crafted-by"
                      matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
                      matTooltipPosition="above" src="{{item.gatheredBy.icon}}">
@@ -194,12 +194,12 @@
                      matTooltip="{{'Gardening' | translate}}"
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
             </div>
-            <button mat-icon-button *ngIf="item.drops !== undefined" (click)="openDropsDetails(item)">
+            <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openDropsDetails(item)">
                 <img *ngIf="item.drops !== undefined" class="crafted-by"
                      matTooltip="{{'Hunting' | translate}}"
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
             </button>
-            <div *ngIf="item.tradeSources !== undefined">
+            <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
                 <button mat-icon-button matLine
                         (click)="openTradeDetails(item)">
                     <img class="currency"
@@ -208,7 +208,7 @@
                          src="{{getTradeIcon(item)}}">
                 </button>
             </div>
-            <div *ngIf="item.instances !== undefined">
+            <div *ngIf="item.instances !== undefined && item.instances.length > 0">
                 <button mat-icon-button (click)="openInstancesDetails(item)">
                     <img matTooltip="{{getI18n(item.instances[0].type)}}"
                          matTooltipPosition="above"
@@ -216,7 +216,7 @@
                          class="currency">
                 </button>
             </div>
-            <div *ngIf="item.reducedFrom !== undefined">
+            <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
                 <button mat-icon-button (click)="openReductionDetails(item)">
                     <img class="icon"
                          matTooltip="{{'Reduction' | translate}}"
@@ -224,21 +224,21 @@
                          src="https://www.garlandtools.org/db/images/Reduce.png">
                 </button>
             </div>
-            <div *ngIf="item.desynths !== undefined">
+            <div *ngIf="item.desynths !== undefined && item.desynths.length > 0">
                 <button mat-icon-button (click)="openDesynthDetails(item)">
                     <img class="icon" matTooltip="{{'Desynth' | translate}}"
                          matTooltipPosition="above"
                          src="https://www.garlandtools.org/db/images/Desynth.png">
                 </button>
             </div>
-            <div *ngIf="item.vendors !== undefined">
+            <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
                 <button mat-icon-button (click)="openVendorsDetails(item)">
                     <img class="icon" matTooltip="{{'Vendors' | translate}}"
                          matTooltipPosition="above"
                          src="https://secure.xivdb.com/img/game/065000/065002.png">
                 </button>
             </div>
-            <div *ngIf="item.voyages !== undefined">
+            <div *ngIf="item.voyages !== undefined && item.voyages.length > 0">
                 <button mat-icon-button (click)="openVoyagesDetails(item)">
                     <img class="icon" matTooltip="{{'Voyages' | translate}}"
                          matTooltipPosition="above"
