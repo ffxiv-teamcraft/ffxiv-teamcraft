@@ -40,6 +40,7 @@ import {FavoritesModule} from './pages/favorites/favorites.module';
 import {ListDetailsModule} from './pages/list-details/list-details.module';
 import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
+import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -104,6 +105,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListDetailsModule,
         RecipesModule,
         ListsModule,
+        BetaDisclaimerModule,
     ],
     bootstrap: [AppComponent]
 })
