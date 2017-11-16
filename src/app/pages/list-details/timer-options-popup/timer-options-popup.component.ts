@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SettingsService} from '../../../modules/settings/settings.service';
+import {SettingsService} from '../../settings/settings.service';
 
 @Component({
     selector: 'app-timer-options-popup',

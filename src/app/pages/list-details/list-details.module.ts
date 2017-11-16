@@ -17,7 +17,7 @@ import {
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {PipesModule} from '../../pipes/pipes.module';
-import {SettingsModule} from '../../modules/settings/settings.module';
+import {SettingsModule} from '../settings/settings.module';
 import {ItemModule} from '../../modules/item/item.module';
 import {RegenerationPopupComponent} from './regeneration-popup/regeneration-popup.component';
 import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-popup.component';

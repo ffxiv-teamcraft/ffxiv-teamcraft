@@ -26,4 +26,12 @@ export class SettingsComponent {
         this.settings.baseLink = base;
     }
 
+    get compactLists(): boolean {
+        return this.settings.compactLists;
+    }
+
+    set compactLists(compact: boolean) {
+        this.settings.compactLists = compact;
+    }
+
 }
