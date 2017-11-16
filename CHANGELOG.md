@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.0"></a>
+# [3.0.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.5...v3.0.0-beta.0) (2017-11-16)
+
+
+### Bug Fixes
+
+* alarm alerted state not triggered with hoursBefore = 1 ([fc80b8b](https://github.com/Supamiu/ffxiv-teamcraft/commit/fc80b8b))
+* alarm not triggered with nodes that spawns at midnight ([1465195](https://github.com/Supamiu/ffxiv-teamcraft/commit/1465195))
+* errors in mobile design with empty details array ([ed2209f](https://github.com/Supamiu/ffxiv-teamcraft/commit/ed2209f))
+* precrafts and precrafts mats are accounted twice ([2d6e0e2](https://github.com/Supamiu/ffxiv-teamcraft/commit/2d6e0e2))
+* timer options popup bad width ([9e602ad](https://github.com/Supamiu/ffxiv-teamcraft/commit/9e602ad))
+
+
+### Features
+
+* add icon next to price when obtained from npc price ([d30dff1](https://github.com/Supamiu/ffxiv-teamcraft/commit/d30dff1))
+* add volume control to timer options ([2835cde](https://github.com/Supamiu/ffxiv-teamcraft/commit/2835cde))
+* Persistent sidebar on larger devices ([046a612](https://github.com/Supamiu/ffxiv-teamcraft/commit/046a612))
+* Persistent sidebar on larger devices ([9c9a3a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/9c9a3a8))
+* Persistent sidebar on larger devices ([ed10e3e](https://github.com/Supamiu/ffxiv-teamcraft/commit/ed10e3e))
+
+
+### Performance Improvements
+
+* list creation optimization ([6622e22](https://github.com/Supamiu/ffxiv-teamcraft/commit/6622e22))
+* lower lists page loading time ([1246843](https://github.com/Supamiu/ffxiv-teamcraft/commit/1246843))
+
+
+
 <a name="2.4.5"></a>
 ## [2.4.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.4...v2.4.5) (2017-11-15)
 
