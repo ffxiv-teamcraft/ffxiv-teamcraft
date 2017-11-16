@@ -26,6 +26,11 @@ body {
     }
 }
 
+// We set the max height for menus at 300 px for better UX.
+.mat-menu-panel {
+    max-height: 300px !important;
+}
+
 .mat-content {
     align-items: center;
 }

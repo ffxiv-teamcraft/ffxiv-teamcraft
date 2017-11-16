@@ -62,7 +62,7 @@
 </mat-expansion-panel>
 <mat-divider></mat-divider>
 
-<mat-menu #addAllMenu="matMenu">
+<mat-menu #addAllMenu="matMenu" class="lists-menu">
     <button mat-menu-item (click)="addAllToNewList()">
         <mat-icon>add</mat-icon>
         <span>{{'New_List' | translate}}</span></button>
@@ -103,7 +103,7 @@
             <mat-input-container>
                 <input matInput type="number" min="1" value="1" #amount>
             </mat-input-container>
-            <mat-menu #appMenu="matMenu">
+            <mat-menu #appMenu="matMenu" class="lists-menu">
                 <button mat-menu-item (click)="addToNewList(recipe, amount.value)">
                     <mat-icon>add</mat-icon>
                     <span>{{'New_List' | translate}}</span></button>
