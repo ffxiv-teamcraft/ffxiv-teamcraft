@@ -65,7 +65,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes.list.previousValue !== changes.list.currentValue) {
+        if (changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
             this.generateTiers();
         }
     }

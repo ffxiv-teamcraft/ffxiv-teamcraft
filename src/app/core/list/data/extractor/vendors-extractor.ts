@@ -35,7 +35,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
                     x: npcPartial.c[0],
                     y: npcPartial.c[1]
                 };
-                vendor.zoneId = npcPartial.i;
+                vendor.zoneId = npcPartial.l;
                 vendor.areaId = npcPartial.a;
             }
             vendors.push(vendor);
