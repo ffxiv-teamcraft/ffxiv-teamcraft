@@ -28,7 +28,7 @@ export abstract class StoredDataService<T extends DataModel> {
                 .snapshotChanges()
                 .map(doc => {
                     if (!doc.payload.exists) {
-                        throw new Error('User not found');
+                        throw new Error('Not found');
                     }
                     const obj = doc.payload.data();
                     const res: T = this.serializer.deserialize<T>(obj, this.getClass());
