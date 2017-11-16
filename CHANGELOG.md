@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.1"></a>
+# [3.0.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2017-11-16)
+
+
+### Bug Fixes
+
+* login with non-registered account is possible ([94f2cd5](https://github.com/Supamiu/ffxiv-teamcraft/commit/94f2cd5))
+* recipe addition menu too long ([c4ec343](https://github.com/Supamiu/ffxiv-teamcraft/commit/c4ec343))
+
+
+### Features
+
+* add beta disclaimer popup for beta version ([cf55fd7](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf55fd7))
+* add compact list option in settings page ([9a573f6](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a573f6))
+* new features page to make the home page lighter ([288a7a1](https://github.com/Supamiu/ffxiv-teamcraft/commit/288a7a1))
+
+
+
 <a name="3.0.0-beta.0"></a>
 # [3.0.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v2.4.5...v3.0.0-beta.0) (2017-11-16)
 
