@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -13,7 +13,8 @@ import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
 import {Subscription} from 'rxjs/Subscription';
-import {MediaChange, ObservableMedia} from "@angular/flex-layout";
+import {MediaChange, ObservableMedia} from '@angular/flex-layout';
+import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
 
 declare const ga: Function;
 
@@ -108,6 +109,15 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
+        if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
+            // Open beta disclaimer popup.
+            this.dialog.open(BetaDisclaimerPopupComponent).afterClosed().subscribe(() => {
+                // Once it's closed, set the storage value to say it has been displayed.
+                localStorage.setItem('beta-disclaimer', 'true');
+            });
+        }
+
         this.lightTheme = localStorage.getItem('theme:light') === 'true';
 
         // Patreon popup.
