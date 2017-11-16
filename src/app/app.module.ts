@@ -4,8 +4,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MatButtonModule, MatCardModule,
-    MatExpansionModule, MatGridListModule,
+    MatButtonModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
@@ -23,14 +25,11 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {UserService} from './core/database/user.service';
 import {CoreModule} from './core/core.module';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {DatabaseModule} from './core/database/database.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {ClipboardModule} from 'ngx-clipboard/dist';
 import {PipesModule} from './pipes/pipes.module';
-import {TooltipModule} from './modules/tooltip/tooltip.module';
 import {DonationModule} from './modules/donation/donation.module';
 import {SettingsModule} from './pages/settings/settings.module';
 import {CartImportModule} from './pages/cart-import/cart-import.module';
@@ -42,6 +41,7 @@ import {ListDetailsModule} from './pages/list-details/list-details.module';
 import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {FeaturesModule} from './pages/features/features.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -66,6 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
+        AngularFirestoreModule,
 
         RouterModule.forRoot([]),
 
@@ -106,6 +107,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListDetailsModule,
         RecipesModule,
         ListsModule,
+        FeaturesModule,
     ],
     bootstrap: [AppComponent]
 })

@@ -16,124 +16,38 @@
 
 <app-donation-button></app-donation-button>
 
-<h2>{{"HOME_PAGE.features" | translate}}</h2>
+<mat-grid-list cols="2" gutterSize="10" rowHeight="300px" class="bottom-cards">
+    <mat-grid-tile>
+        <mat-card class="bottom-card">
+            <mat-card-header>
+                <mat-card-title><h2>{{"HOME_PAGE.support_title" | translate}}</h2></mat-card-title>
+            </mat-card-header>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.list_creation_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.list_creation_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/add_recipe.gif" alt="add recipe gif">
-</mat-expansion-panel>
+            <p>{{"HOME_PAGE.support_content_discord" | translate}}</p>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.realtime_translations_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.realtime_translations_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/realtime_translations.gif" alt="realtime translations gif">
-</mat-expansion-panel>
+            <a mat-raised-button href="https://discord.gg/r6qxt6P" target="_blank" color="accent">Discord</a>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.item_details_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.item_details_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/item_details.gif" alt="item details gif">
-</mat-expansion-panel>
+            <p>{{"HOME_PAGE.changelog" | translate}}</p>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.node_timers_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.node_timers_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/node_timers.gif" alt="node timers gif">
-</mat-expansion-panel>
+            <a mat-raised-button href="https://github.com/Supamiu/ffxiv-teamcraft/blob/master/CHANGELOG.md"
+               target="_blank"
+               color="accent">Changelog</a>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="bottom-card">
+            <mat-card-header>
+                <mat-card-title><h2>{{"HOME_PAGE.contribute_title" | translate}}</h2></mat-card-title>
+            </mat-card-header>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.area_breakdown_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.area_breakdown_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/area_breakdown.gif" alt="area breakdown gif">
-</mat-expansion-panel>
+            <p>{{"HOME_PAGE.contribute_content" | translate}}</p>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.search_filters_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.search_filters_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/search_filters.gif" alt="search filters gif">
-</mat-expansion-panel>
+            <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank"
+               color="accent">Github</a>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.bulk_import_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.bulk_import_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/bulk_import.gif" alt="bulk import gif">
-</mat-expansion-panel>
+            <p>{{"HOME_PAGE.support_comtent_facebook" | translate}}</p>
 
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.map_markers_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.map_markers_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/map_markers.gif" alt="map marker gif">
-</mat-expansion-panel>
-
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.comments_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.comments_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/comments.gif" alt="comments gif">
-</mat-expansion-panel>
-
-<mat-expansion-panel class="accent">
-    <mat-expansion-panel-header>
-        <mat-panel-title>{{"HOME_PAGE.FEATURES.pricing_title" | translate}}</mat-panel-title>
-        <mat-panel-description>
-            {{"HOME_PAGE.FEATURES.pricing_content" | translate}}
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <img src="/assets/tutorial/pricing.gif" alt="pricing gif">
-</mat-expansion-panel>
-
-<h3>{{"HOME_PAGE.support_title" | translate}}</h3>
-
-<p>{{"HOME_PAGE.support_content_discord" | translate}}</p>
-
-<a mat-raised-button href="https://discord.gg/r6qxt6P" target="_blank" color="accent">Discord</a>
-
-<p>{{"HOME_PAGE.changelog" | translate}}</p>
-
-<a mat-raised-button href="https://github.com/Supamiu/ffxiv-teamcraft/blob/master/CHANGELOG.md" target="_blank" color="accent">Changelog</a>
-
-<p>{{"HOME_PAGE.support_comtent_facebook" | translate}}</p>
-
-<a mat-raised-button href="https://facebook.com/FFXIVTeamcraft" target="_blank" color="accent">Facebook</a>
-
-<h3>{{"HOME_PAGE.contribute_title" | translate}}</h3>
-
-<p>{{"HOME_PAGE.contribute_content" | translate}}</p>
-
-<a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank" color="accent">Github</a>
+            <a mat-raised-button href="https://facebook.com/FFXIVTeamcraft" target="_blank" color="accent">Facebook</a>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

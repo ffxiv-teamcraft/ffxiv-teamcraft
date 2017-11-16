@@ -17,11 +17,10 @@
     a {
         align-self: center;
     }
-    mat-expansion-panel {
-        margin-bottom: 10px;
-        img {
-            height: auto;
-            width: 100%;
+    .bottom-cards {
+        margin-top: 50px;
+        .bottom-card {
+            height: 100%;
         }
     }
 }
