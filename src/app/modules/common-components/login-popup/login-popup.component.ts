@@ -46,13 +46,12 @@ export class LoginPopupComponent {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
-                .subscribe(u => {
+                .subscribe(() => {
                     this.userService.loggingIn = false;
-                    if (u === null) {
-                        reject('User not found');
-                    } else {
-                        resolve();
-                    }
+                    resolve();
+                }, err => {
+                    this.userService.loggingIn = false;
+                    reject(err);
                 });
         });
     }
@@ -103,8 +102,7 @@ export class LoginPopupComponent {
                         } else {
                             this.login(auth).then(() => {
                                 this.dialogRef.close();
-                            }).catch((err) => {
-                                console.error(err);
+                            }).catch(() => {
                                 this.errorState(listsBackup);
                             });
                         }
@@ -136,15 +134,7 @@ export class LoginPopupComponent {
                 this.login(oauth.user).then(() => {
                     this.dialogRef.close();
                 }).catch(() => {
-                    this.af.auth.signOut().then(() => {
-                        this.af.auth.signInAnonymously().then(user => {
-                            lists.forEach(list => {
-                                list.authorId = user.uid;
-                                this.listService.push(list);
-                            });
-                            this.dialogRef.close();
-                        });
-                    });
+                    this.errorState(lists);
                 });
             });
         });

@@ -26,10 +26,13 @@ export abstract class StoredDataService<T extends DataModel> {
         return this.getBaseUri(params).switchMap(uri => {
             return this.oneRef(uri, uid)
                 .snapshotChanges()
-                .map(snap => {
-                    const obj = snap.payload.data();
+                .map(doc => {
+                    if (!doc.payload.exists) {
+                        throw new Error('User not found');
+                    }
+                    const obj = doc.payload.data();
                     const res: T = this.serializer.deserialize<T>(obj, this.getClass());
-                    res.$key = snap.payload.id;
+                    res.$key = doc.payload.id;
                     return res;
                 });
         });

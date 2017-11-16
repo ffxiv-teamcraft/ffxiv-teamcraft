@@ -17,19 +17,26 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
     protected doExtract(item: Item, itemData: ItemData): Vendor[] {
         const vendors: Vendor[] = [];
         for (const vendorId of item.vendors) {
-            const partial = itemData.getPartial(vendorId.toString(), 'npc').obj;
-            const itemPartial = itemData.getPartial(item.id.toString(), 'item').obj;
+            const npcPartial = itemData.getPartial(vendorId.toString(), 'npc').obj;
+            let itemPartial = itemData.getPartial(item.id.toString(), 'item');
+            // If we didn't find the item in partials, get it from ingredients
+            if (itemPartial === undefined) {
+                itemPartial = itemData.getIngredient(item.id);
+            } else {
+                // Else, simply bind the obj property to the effective partial
+                itemPartial = itemPartial.obj;
+            }
             const vendor: Vendor = {
                 npcId: vendorId,
                 price: itemPartial.p
             };
-            if (partial.c !== undefined && partial.i !== undefined && partial.a !== undefined) {
+            if (npcPartial.c !== undefined && npcPartial.i !== undefined && npcPartial.a !== undefined) {
                 vendor.coords = {
-                    x: partial.c[0],
-                    y: partial.c[1]
+                    x: npcPartial.c[0],
+                    y: npcPartial.c[1]
                 };
-                vendor.zoneId = partial.i;
-                vendor.areaId = partial.a;
+                vendor.zoneId = npcPartial.i;
+                vendor.areaId = npcPartial.a;
             }
             vendors.push(vendor);
         }

@@ -4,7 +4,6 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {AppUser} from '../../model/list/app-user';
 import {Observable} from 'rxjs/Observable';
 import {DataService} from '../api/data.service';
-import {catchError} from 'rxjs/operators';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {ListService} from './list.service';
 import {StoredDataService} from './stored-data.service';
@@ -49,18 +48,13 @@ export class UserService extends StoredDataService<AppUser> {
             .switchMap(() => {
                 return this.af.authState.switchMap(user => {
                     if (user === null && !this.loggingIn) {
-                        this.af.auth.signInAnonymously().then(() => {console.log('Signed in as anonymous')});
+                        this.af.auth.signInAnonymously();
                         return Observable.of({name: 'Anonymous', anonymous: true});
                     }
-                    if (user.isAnonymous) {
+                    if (user === null || user.isAnonymous) {
                         return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
                     } else {
-                        return this.get(user.uid)
-                            .pipe(
-                                catchError(() => {
-                                    return Observable.of(null);
-                                })
-                            );
+                        return this.get(user.uid);
                     }
                 });
             });
