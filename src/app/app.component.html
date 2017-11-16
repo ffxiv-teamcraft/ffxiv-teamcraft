@@ -48,23 +48,23 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  return">
+                <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>home</mat-icon>
                     <h3 matLine>{{'Home' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  return">
+                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>
                     <h3 matLine>{{'Recipes' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  return">
+                <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>view_list</mat-icon>
                     <h3 matLine>{{'Lists' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  return">
+                <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
                     <h3 matLine>{{'Favorites' | translate}}</h3>
                 </mat-list-item>
-                <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  return">
+                <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>settings</mat-icon>
                     <h3 matLine>{{'SETTINGS.title' | translate}}</h3>
                 </mat-list-item>

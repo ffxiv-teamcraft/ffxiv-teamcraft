@@ -10,7 +10,7 @@ export class TimerOptionsPopupComponent {
 
     public sounds = ['Wondrous_tales', 'LB_charged', 'Notification'];
 
-    constructor(private settings: SettingsService) {
+    constructor(public settings: SettingsService) {
     }
 
     public previewSound(): void {

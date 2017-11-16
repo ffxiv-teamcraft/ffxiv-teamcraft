@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "node ./build/prebuild.js && ng serve --host 0.0.0.0",
     "build:prod": "node ./build/prebuild.js && ng build -prod",
-    "build:beta": "node ./build/prebuild.js && ng build --env=beta",
+    "build:beta": "node ./build/prebuild.js && ng build --aot --target=production --env=beta",
     "standard-version": "standard-version",
     "standard-version:dry": "standard-version --dry-run",
     "release:git": "npm run standard-version && git push --follow-tags origin master",
