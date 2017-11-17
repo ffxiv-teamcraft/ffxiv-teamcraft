@@ -43,6 +43,7 @@ import {ListsModule} from 'app/pages/lists/lists.module';
 import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {FeaturesModule} from './pages/features/features.module';
+import {AlarmsModule} from './pages/alarms/alarms.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -110,6 +111,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ListsModule,
         FeaturesModule,
         BetaDisclaimerModule,
+        AlarmsModule,
     ],
     bootstrap: [AppComponent]
 })

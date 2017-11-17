@@ -1,5 +1,6 @@
 export interface Alarm {
     itemId: number;
+    icon: number;
     spawn: number;
     duration: number;
     slot?: number;

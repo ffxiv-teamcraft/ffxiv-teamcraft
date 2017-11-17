@@ -16,7 +16,7 @@ export class AlarmService {
 
     private static LOCALSTORAGE_KEY = 'alarms';
 
-    private alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
+    private _alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog) {
@@ -43,7 +43,7 @@ export class AlarmService {
      */
     public hasAlarm(item: ListRow): boolean {
         let res = false;
-        this.alarms.forEach((value, key) => {
+        this._alarms.forEach((value, key) => {
             if (key.itemId === item.id) {
                 res = true;
             }
@@ -57,8 +57,8 @@ export class AlarmService {
      */
     public unregister(item: ListRow): void {
         this.getAlarms(item).forEach((alarm) => {
-            this.alarms.get(alarm).unsubscribe();
-            this.alarms.delete(alarm);
+            this._alarms.get(alarm).unsubscribe();
+            this._alarms.delete(alarm);
         });
         this.persistAlarms();
     }
@@ -70,7 +70,7 @@ export class AlarmService {
      */
     private _register(...alarms: Alarm[]): void {
         alarms.forEach(alarm => {
-            this.alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
+            this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
                 if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) && time.getUTCMinutes() === 0) {
                     this.playAlarm(alarm);
                 }
@@ -93,8 +93,13 @@ export class AlarmService {
             if (node.time !== undefined) {
                 node.time.forEach(spawn => {
                     alarms.push({
-                        spawn: spawn, duration: node.uptime / 60, itemId: item.id, slot: node.slot,
-                        areaId: node.areaid, coords: node.coords, zoneId: node.zoneid
+                        spawn: spawn, duration: node.uptime / 60,
+                        itemId: item.id,
+                        icon: item.icon,
+                        slot: node.slot,
+                        areaId: node.areaid,
+                        coords: node.coords,
+                        zoneId: node.zoneid
                     });
                 });
             }
@@ -128,15 +133,7 @@ export class AlarmService {
      */
     public getTimer(item: ListRow): Observable<Timer> {
         return this.etime.getEorzeanTime().map(time => {
-            const alarm = this.generateAlarms(item).sort((a, b) => {
-                if (this._isSpawned(a, time)) {
-                    return -1;
-                } else if (this._isSpawned(b, time)) {
-                    return 1;
-                } else {
-                    return this.getMinutesBefore(time, a.spawn) > this.getMinutesBefore(time, b.spawn) ? 1 : -1;
-                }
-            })[0];
+            const alarm = this.closestAlarm(this.generateAlarms(item), time);
             if (this._isSpawned(alarm, time)) {
                 const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
                 return {
@@ -151,6 +148,24 @@ export class AlarmService {
                 };
             }
         });
+    }
+
+    /**
+     * Returns the closest alarm at a given time.
+     * @param {Alarm[]} alarms
+     * @param {Date} time
+     * @returns {Alarm}
+     */
+    public closestAlarm(alarms: Alarm[], time: Date): Alarm {
+        return alarms.sort((a, b) => {
+            if (this._isSpawned(a, time)) {
+                return -1;
+            } else if (this._isSpawned(b, time)) {
+                return 1;
+            } else {
+                return this.getMinutesBefore(time, a.spawn) > this.getMinutesBefore(time, b.spawn) ? 1 : -1;
+            }
+        })[0]
     }
 
     /**
@@ -171,7 +186,7 @@ export class AlarmService {
      */
     private getAlarms(item: ListRow): Alarm[] {
         const alarms: Alarm[] = [];
-        this.alarms.forEach((value, key) => {
+        this._alarms.forEach((value, key) => {
             if (key.itemId === item.id) {
                 alarms.push(key);
             }
@@ -276,6 +291,14 @@ export class AlarmService {
      * Persist the current alarms into browser's localstorage.
      */
     private persistAlarms(): void {
-        localStorage.setItem(AlarmService.LOCALSTORAGE_KEY, JSON.stringify(Array.from(this.alarms.keys())));
+        localStorage.setItem(AlarmService.LOCALSTORAGE_KEY, JSON.stringify(Array.from(this._alarms.keys())));
+    }
+
+    /**
+     * Gets a list of currently active alarms.
+     * @returns {Alarm[]}
+     */
+    public get alarms(): Alarm[] {
+        return Array.from(this._alarms.keys());
     }
 }
