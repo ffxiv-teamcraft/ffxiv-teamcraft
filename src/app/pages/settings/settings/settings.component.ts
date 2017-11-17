@@ -15,23 +15,6 @@ export class SettingsComponent {
         // {name: 'Lodestone', value: 'LODESTONE'}, TODO
     ];
 
-    constructor(private settings: SettingsService) {
+    constructor(public settings: SettingsService) {
     }
-
-    get baseLink(): string {
-        return this.settings.baseLink;
-    }
-
-    set baseLink(base: string) {
-        this.settings.baseLink = base;
-    }
-
-    get compactLists(): boolean {
-        return this.settings.compactLists;
-    }
-
-    set compactLists(compact: boolean) {
-        this.settings.compactLists = compact;
-    }
-
 }

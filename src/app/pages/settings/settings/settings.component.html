@@ -1,11 +1,15 @@
 <h1>{{'SETTINGS.title' | translate}}</h1>
 <div class="settings-row">
     <mat-form-field>
-        <mat-select [(ngModel)]="baseLink" class="select-box" placeholder="{{'SETTINGS.link_base' | translate}}">
+        <mat-select [(ngModel)]="settings.baseLink" class="select-box" placeholder="{{'SETTINGS.link_base' | translate}}">
             <mat-option *ngFor="let row of linkBases" [value]="row.value">{{row.name}}</mat-option>
         </mat-select>
     </mat-form-field>
 </div>
-<div class="compact-lists">
-    <mat-checkbox [(ngModel)]="compactLists">{{'SETTINGS.compact_lists' | translate}}</mat-checkbox>
+<div>
+    <mat-checkbox [(ngModel)]="settings.compactLists">{{'SETTINGS.compact_lists' | translate}}</mat-checkbox>
+</div>
+<div>
+    <mat-checkbox [(ngModel)]="settings.lightTheme">{{'SETTINGS.light_theme' | translate}}
+    </mat-checkbox>
 </div>

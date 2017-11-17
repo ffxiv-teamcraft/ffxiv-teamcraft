@@ -15,6 +15,7 @@ import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-pop
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
+import {SettingsService} from './pages/settings/settings.service';
 
 declare const ga: Function;
 
@@ -24,8 +25,6 @@ declare const ga: Function;
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-    lightTheme = false;
 
     locale: string;
 
@@ -58,7 +57,8 @@ export class AppComponent implements OnInit {
                 private firebase: AngularFireDatabase,
                 private userService: UserService,
                 private snack: MatSnackBar,
-                media: ObservableMedia) {
+                media: ObservableMedia,
+                public settings: SettingsService) {
 
 
         this.watcher = media.subscribe((change: MediaChange) => {
@@ -118,8 +118,6 @@ export class AppComponent implements OnInit {
             });
         }
 
-        this.lightTheme = localStorage.getItem('theme:light') === 'true';
-
         // Patreon popup.
         if (this.router.url.indexOf('home') === -1) {
             this.firebase
@@ -174,14 +172,6 @@ export class AppComponent implements OnInit {
                 this.username = character.name;
                 this.userIcon = character.avatar;
             });
-    }
-
-
-    /**
-     * Persists the actual theme in localstorage.
-     */
-    saveTheme(): void {
-        localStorage.setItem('theme:light', this.lightTheme.toString());
     }
 
     /**

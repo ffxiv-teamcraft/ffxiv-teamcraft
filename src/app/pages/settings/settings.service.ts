@@ -16,7 +16,15 @@ export class SettingsService {
     }
 
     public set compactLists(compact: boolean) {
-        this.setSetting('Compact-lists', compact.toString());
+        this.setSetting('compact-lists', compact.toString());
+    }
+
+    public get lightTheme(): boolean {
+        return this.getSetting('light-theme', 'false') === 'true';
+    }
+
+    public set lightTheme(light: boolean) {
+        this.setSetting('light-theme', light.toString());
     }
 
     public get alarmHoursBefore(): number {

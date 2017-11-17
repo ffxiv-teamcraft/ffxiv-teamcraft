@@ -26,7 +26,7 @@ const routing: Routes = [
 
         MatSelectModule,
         MatFormFieldModule,
-        MatCheckboxModule
+        MatCheckboxModule,
     ],
     declarations: [
         SettingsComponent,

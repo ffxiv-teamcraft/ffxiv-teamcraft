@@ -1,4 +1,4 @@
-<div class="app-container {{lightTheme?'light-theme':''}}">
+<div class="app-container {{settings.lightTheme?'light-theme':''}}">
     <mat-toolbar color="primary">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
@@ -73,8 +73,7 @@
                     <h3 matLine>{{'SETTINGS.title' | translate}}</h3>
                 </mat-list-item>
             </mat-nav-list>
-            <mat-slide-toggle class="sidebar-element" [(ngModel)]="lightTheme" (change)="saveTheme()">Light Theme
-            </mat-slide-toggle>
+
             <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md>
                 {{locale | uppercase}}
             </button>
