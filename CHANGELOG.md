@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.2"></a>
+# [3.0.0-beta.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2017-11-17)
+
+
+### Bug Fixes
+
+* npc location popups broken ([b0ccb9c](https://github.com/Supamiu/ffxiv-teamcraft/commit/b0ccb9c))
+
+
+### Features
+
+* alarms-specific page ([7f48ab3](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f48ab3))
+* compact list toggle option ([edcec22](https://github.com/Supamiu/ffxiv-teamcraft/commit/edcec22))
+
+
+
 <a name="3.0.0-beta.1"></a>
 # [3.0.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2017-11-16)
 
