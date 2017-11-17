@@ -53,10 +53,10 @@ export class AlarmService {
 
     /**
      * Unregisters a given item alarm by finding it, then unregisters the subscription, and finally deletes the entry from the alarms.
-     * @param {ListRow} item
+     * @param id
      */
-    public unregister(item: ListRow): void {
-        this.getAlarms(item).forEach((alarm) => {
+    public unregister(id: number): void {
+        this.getAlarms(id).forEach((alarm) => {
             this._alarms.get(alarm).unsubscribe();
             this._alarms.delete(alarm);
         });
@@ -150,6 +150,16 @@ export class AlarmService {
         });
     }
 
+    public getAlarmTimerString(alarm: Alarm, time: Date): string {
+        let timer: number;
+        if (this._isSpawned(alarm, time)) {
+            timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
+        } else {
+            timer = this.getMinutesBefore(time, alarm.spawn)
+        }
+        return this.getTimerString(this.etime.toEarthTime(timer));
+    }
+
     /**
      * Returns the closest alarm at a given time.
      * @param {Alarm[]} alarms
@@ -168,6 +178,10 @@ export class AlarmService {
         })[0]
     }
 
+    public isAlarmSpawned(alarm: Alarm, time: Date): boolean {
+        return this._isSpawned(alarm, time);
+    }
+
     /**
      * Formats a given timer to a string;
      * @param {number} timer
@@ -181,13 +195,13 @@ export class AlarmService {
 
     /**
      * Gets alarms for a given item.
-     * @param {ListRow} item
      * @returns {Alarm[]}
+     * @param id
      */
-    private getAlarms(item: ListRow): Alarm[] {
+    private getAlarms(id: number): Alarm[] {
         const alarms: Alarm[] = [];
         this._alarms.forEach((value, key) => {
-            if (key.itemId === item.id) {
+            if (key.itemId === id) {
                 alarms.push(key);
             }
         });
@@ -224,13 +238,13 @@ export class AlarmService {
 
     /**
      * Returns an observable of the alert state, for color purposes.
-     * @param {ListRow} item
      * @returns {Observable<boolean>}
+     * @param id
      */
-    public isAlerted(item: ListRow): Observable<boolean> {
+    public isAlerted(id: number): Observable<boolean> {
         return this.etime.getEorzeanTime().map(time => {
             let alerted = false;
-            this.getAlarms(item).forEach(alarm => {
+            this.getAlarms(id).forEach(alarm => {
                 if (time.getUTCHours() >= this.substractHours(alarm.spawn,
                         this.settings.alarmHoursBefore) && time.getUTCHours() < alarm.spawn) {
                     alerted = true;

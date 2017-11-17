@@ -3,10 +3,11 @@ import {CommonModule} from '@angular/common';
 import {AlarmsComponent} from './alarms/alarms.component';
 import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
-import { AlarmCardComponent } from './alarm-card/alarm-card.component';
-import {MatCardModule, MatGridListModule} from '@angular/material';
+import {AlarmCardComponent} from './alarm-card/alarm-card.component';
+import {MatButtonModule, MatCardModule, MatGridListModule, MatIconModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {PipesModule} from '../../pipes/pipes.module';
+import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 
 const routes: Routes = [{
     path: 'alarms',
@@ -23,8 +24,11 @@ const routes: Routes = [{
 
         MatCardModule,
         MatGridListModule,
+        MatIconModule,
+        MatButtonModule,
 
         CoreModule,
+        CommonComponentsModule,
     ],
     declarations: [
         AlarmsComponent,

@@ -11,21 +11,29 @@ import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 })
 export class AlarmsComponent {
 
-    constructor(public alarmService: AlarmService, private etime: EorzeanTimeService) {
+    time: Date = new Date();
+
+    constructor(public alarmService: AlarmService, public etime: EorzeanTimeService) {
     }
 
     public getAlarms(): Observable<Alarm[]> {
-        return this.etime.getEorzeanTime().map(time => {
-            const alarms: Alarm[] = [];
-            this.alarmService.alarms.forEach(alarm => {
-                if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
-                    return;
-                }
-                const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
-                alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
+        return this.etime.getEorzeanTime()
+            .do(time => this.time = time)
+            .map(time => {
+                const alarms: Alarm[] = [];
+                this.alarmService.alarms.forEach(alarm => {
+                    if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
+                        return;
+                    }
+                    const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
+                    alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
+                });
+                return alarms;
             });
-            return alarms;
-        });
+    }
+
+    deleteAlarm(alarm: Alarm): void {
+        this.alarmService.unregister(alarm.itemId);
     }
 
 }
