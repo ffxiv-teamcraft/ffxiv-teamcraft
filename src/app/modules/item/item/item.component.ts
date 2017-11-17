@@ -145,7 +145,7 @@ export class ItemComponent implements OnInit {
             this.user = user;
         });
 
-        Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item))
+        Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item.id))
             .subscribe((result) => {
                 const spawned = result[0];
                 const alerted = result[1];
@@ -167,7 +167,7 @@ export class ItemComponent implements OnInit {
 
     toggleAlarm(): void {
         if (this.alarmService.hasAlarm(this.item)) {
-            this.alarmService.unregister(this.item);
+            this.alarmService.unregister(this.item.id);
         } else {
             this.alarmService.register(this.item);
         }

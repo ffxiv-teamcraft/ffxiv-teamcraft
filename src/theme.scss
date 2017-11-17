@@ -5,10 +5,22 @@
 // Custom mixins for theming
 @mixin theme-background($theme) {
     $accent: map-get($theme, accent);
+    $primary: map-get($theme, primary);
 
     .accent-background {
         background: mat-color($accent);
         color: black;
+        .mat-card-subtitle {
+            color: black;
+        }
+    }
+
+    .primary-background {
+        background: mat-color($primary);
+        color: black;
+        .mat-card-subtitle {
+            color: black;
+        }
     }
 }
 

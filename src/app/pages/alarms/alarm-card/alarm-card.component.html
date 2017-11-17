@@ -1,0 +1,26 @@
+<mat-card [ngClass]="{'card': true, 'primary-background': spawned, 'accent-background': !spawned && alerted}">
+    <mat-card-header>
+        <img mat-card-avatar src="{{alarm.icon | icon}}" alt="">
+        <mat-card-title>{{alarm.itemId | itemName | i18n}}</mat-card-title>
+        <mat-card-subtitle>
+            {{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}} ({{alarm.slot}})
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div mat-card-image class="map-container">
+        <img src="{{(map | async)?.image}}" alt="Map" class="map-image">
+        <mat-icon
+            class="marker"
+            [ngStyle]="{top:(getPosition() | async)?.y+'%', left:(getPosition() | async)?.x+'%'}">
+            location_on
+        </mat-icon>
+    </div>
+    <mat-card-content>
+        <p>{{timer}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="deleteAlarm()">
+            <mat-icon>delete</mat-icon>
+            Delete
+        </button>
+    </mat-card-actions>
+</mat-card>

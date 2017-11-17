@@ -36,6 +36,7 @@
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}">
+                    <p class="name" *ngIf="username === undefined">Loading...</p>
                     <p class="name">{{username}}</p>
                 </div>
                 <div *ngIf="(authState | async)?.isAnonymous">
@@ -63,6 +64,10 @@
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>view_list</mat-icon>
                     <h3 matLine>{{'Lists' | translate}}</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
+                    <mat-icon matListIcon>alarm</mat-icon>
+                    <h3 matLine>{{'Alarms' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
