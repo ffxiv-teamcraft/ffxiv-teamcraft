@@ -23,6 +23,7 @@ import {NameEditPopupComponent} from '../../../modules/common-components/name-ed
 import {User, UserInfo} from 'firebase';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
+import {SettingsService} from '../../settings/settings.service';
 
 declare const ga: Function;
 
@@ -67,7 +68,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService,
-                private data: LocalizedDataService) {
+                private data: LocalizedDataService, public settings: SettingsService) {
         this.initFilters();
 
     }

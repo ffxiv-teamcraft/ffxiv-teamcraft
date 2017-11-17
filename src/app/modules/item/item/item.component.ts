@@ -24,6 +24,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Observable} from 'rxjs/Observable';
 import {Timer} from '../../../core/time/timer';
+import {SettingsService} from '../../../pages/settings/settings.service';
 
 @Component({
     selector: 'app-item',
@@ -119,7 +120,8 @@ export class ItemComponent implements OnInit {
                 private auth: AngularFireAuth,
                 private snackBar: MatSnackBar,
                 private translator: TranslateService,
-                private alarmService: AlarmService) {
+                private alarmService: AlarmService,
+                public settings: SettingsService) {
     }
 
     isDraft(): boolean {

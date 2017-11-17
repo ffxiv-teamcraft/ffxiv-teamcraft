@@ -7,6 +7,7 @@ import {MatCheckboxModule, MatFormFieldModule, MatSelectModule} from '@angular/m
 import {FormsModule} from '@angular/forms';
 import {SettingsService} from './settings.service';
 import {ItemLinkPipe} from './pipe/item-link.pipe';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const routing: Routes = [
     {
@@ -19,6 +20,7 @@ const routing: Routes = [
     imports: [
         CommonModule,
         FormsModule,
+        FlexLayoutModule,
 
         RouterModule.forChild(routing),
 

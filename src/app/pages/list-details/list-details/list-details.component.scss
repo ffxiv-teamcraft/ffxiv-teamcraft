@@ -28,7 +28,10 @@
     .crystal {
         margin: 0 5px;
         width: 40px;
-        border-radius: 40px;
+        border-radius: 50%;
+        &.compact {
+            width: 25px;
+        }
     }
 }
 

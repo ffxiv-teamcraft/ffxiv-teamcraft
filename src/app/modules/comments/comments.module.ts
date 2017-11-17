@@ -9,14 +9,18 @@ import {CommentsButtonComponent} from './comments-button/comments-button.compone
 import { CommentRowComponent } from './comment-row/comment-row.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
+import {SettingsModule} from '../../pages/settings/settings.module';
 
 @NgModule({
     imports: [
         CommonModule,
         AngularFireDatabaseModule,
         MatDialogModule,
+
         CoreModule,
         PipesModule,
+        SettingsModule,
+
         MatIconModule,
         MatButtonModule,
         MatInputModule,

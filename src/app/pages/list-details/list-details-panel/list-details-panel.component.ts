@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
+import {SettingsService} from '../../settings/settings.service';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -33,6 +34,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     tiers: ListRow[][] = [[]];
 
     tierBreakdownToggle = false;
+
+    constructor(public settings: SettingsService) {
+    }
 
     /**
      * Returns a list of tiers based on dependencies between each list row.

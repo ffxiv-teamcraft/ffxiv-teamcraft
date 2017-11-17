@@ -10,7 +10,7 @@
         </div>
     </mat-list>
     <mat-list dense *ngIf="tierBreakdownToggle">
-        <mat-list *ngFor="let tier of getTiers(); let tierNumber = index">
+        <mat-list *ngFor="let tier of tiers; let tierNumber = index">
             <h3 mat-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
             <mat-divider></mat-divider>
             <div *ngFor="let row of tier; let i = index">

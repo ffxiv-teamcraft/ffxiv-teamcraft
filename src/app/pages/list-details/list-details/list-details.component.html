@@ -138,7 +138,7 @@
             </mat-expansion-panel-header>
             <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
                 <div *ngIf="crystal.amount > crystal.done">
-                    <img class="crystal" matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
+                    <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}" matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
                          src="{{crystal.icon | icon}}" alt="{{crystal.id | itemName | i18n}}">
                     <div>{{(crystal.amount - crystal.done) | ceil}}</div>
                 </div>

@@ -9,10 +9,14 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {
     MatButtonModule,
     MatButtonToggleModule,
-    MatCheckboxModule, MatDialogModule,
+    MatCheckboxModule,
+    MatDialogModule,
     MatExpansionModule,
-    MatIconModule, MatInputModule,
-    MatListModule, MatSelectModule, MatSliderModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatSelectModule,
+    MatSliderModule,
     MatTooltipModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';

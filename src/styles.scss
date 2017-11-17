@@ -26,6 +26,27 @@ body {
     }
 }
 
+// This has to be done here, because of an override error in component's style
+.mat-mini-fab.compact {
+    .mat-button-wrapper {
+        padding: 1px 1px !important;
+        line-height: inherit;
+    }
+}
+
+.mat-icon-button.compact {
+    line-height: inherit;
+    .mat-button-wrapper {
+        padding: 1px 1px !important;
+    }
+}
+
+.compact {
+    .mat-icon {
+        font-size: 20px;
+    }
+}
+
 // We set the max height for menus at 300 px for better UX.
 .mat-menu-panel {
     max-height: 300px !important;

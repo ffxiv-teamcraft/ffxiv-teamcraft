@@ -1,6 +1,11 @@
 @import "../../../../theme";
 
 :host {
+    mat-list-item.compact {
+        min-height: 0;
+        height: 35px !important;
+    }
+
     .even {
         background-color: rgba(123, 123, 123, .2);
     }
@@ -14,6 +19,18 @@
         align-items: center !important;
         span {
             cursor: pointer;
+            &.compact {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .requirements-button {
+        &.compact {
+            height: 25px;
+            width: 25px;
+            line-height: 25px;
+            margin-left: 5px;
         }
     }
     // Item Column Defaults
@@ -45,10 +62,26 @@
     .done-check {
         min-width: 40px;
         text-align: center;
+        &.compact {
+            min-width: inherit;
+            .done-button.compact {
+                height: 25px;
+                width: 25px;
+                span {
+                    padding: 1px 1px !important;
+                }
+            }
+        }
     }
     .masterbook {
         text-align: center;
         margin-right: 10px;
+        &.compact {
+            > img {
+                height: 25px;
+                width: 25px;
+            }
+        }
     }
     .amount {
         margin-right: 10px;
@@ -57,12 +90,20 @@
         margin-left: 3px;
     }
     .classes {
-        button {
+        .icon-button {
             display: inline-block;
+            &.compact {
+                height: 25px;
+                width: 25px;
+            }
         }
         .currency {
             width: 32px;
             margin-top: 5px;
+            &.compact {
+                width: 25px;
+                border-radius: 50%;
+            }
         }
         div {
             vertical-align: middle;
@@ -71,14 +112,21 @@
                 margin: 0 2px;
             }
             .icon {
+                &.compact {
+                    width: 25px;
+                    border-radius: 50%;
+                }
                 width: 32px;
-                border-radius: 32px;
+                border-radius: 50%;
             }
         }
         text-align: center;
     }
     .crafted-by {
         height: 30px;
+        &.compact {
+            height: 20px;
+        }
     }
     .timer {
         margin-right: 10px;
@@ -86,10 +134,24 @@
         span {
             opacity: .8;
         }
+        &.compact {
+            height: 25px;
+            > button {
+                line-height: 25px;
+            }
+        }
     }
     .icon {
         position: relative;
         margin-right: 10px;
+        &.compact {
+            width: 25px;
+            height: 25px;
+            .mat-list-avatar {
+                width: 25px;
+                height: 25px;
+            }
+        }
         .yield {
             position: absolute;
             bottom: -2px;

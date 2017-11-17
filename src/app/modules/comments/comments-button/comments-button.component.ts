@@ -4,6 +4,7 @@ import {CommentsPopupComponent} from '../comments-popup/comments-popup.component
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {ObservableMedia} from '@angular/flex-layout';
+import {SettingsService} from '../../../pages/settings/settings.service';
 
 @Component({
     selector: 'app-comments-button',
@@ -26,7 +27,7 @@ export class CommentsButtonComponent implements OnInit {
 
     amount: number;
 
-    constructor(private dialog: MatDialog, private media: ObservableMedia) {
+    constructor(private dialog: MatDialog, private media: ObservableMedia, public settings: SettingsService) {
     }
 
     openPopup(): void {
