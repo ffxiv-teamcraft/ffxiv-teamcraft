@@ -43,7 +43,8 @@
                     <button mat-raised-button (click)="openLoginPopup()">{{'Login' | translate}}</button>
                     <button mat-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
                 </div>
-                <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">{{'Disconnect'
+                <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
+                    {{'Disconnect'
                     | translate}}
                 </button>
             </div>
@@ -52,6 +53,11 @@
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>home</mat-icon>
                     <h3 matLine>{{'Home' | translate}}</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
+                               *ngIf="!(authState | async)?.isAnonymous">
+                    <mat-icon matListIcon>person</mat-icon>
+                    <h3 matLine>{{'Profile' | translate}}</h3>
                 </mat-list-item>
                 <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>help_outline</mat-icon>

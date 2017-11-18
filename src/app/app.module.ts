@@ -44,6 +44,7 @@ import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.mo
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
+import {ProfileModule} from './pages/profile/profile.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -100,18 +101,21 @@ export function HttpLoaderFactory(http: HttpClient) {
         DatabaseModule,
         PipesModule,
         DonationModule,
-        SettingsModule,
         CartImportModule,
         CommonComponentsModule,
-        HomeModule,
         ItemModule,
-        FavoritesModule,
         ListDetailsModule,
+        BetaDisclaimerModule,
+
+        // Pages
+        HomeModule,
+        ProfileModule,
+        FeaturesModule,
         RecipesModule,
         ListsModule,
-        FeaturesModule,
-        BetaDisclaimerModule,
         AlarmsModule,
+        FavoritesModule,
+        SettingsModule,
     ],
     bootstrap: [AppComponent]
 })

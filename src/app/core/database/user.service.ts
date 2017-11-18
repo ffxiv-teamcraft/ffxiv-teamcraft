@@ -32,7 +32,10 @@ export class UserService extends StoredDataService<AppUser> {
         return this.getUserData()
             .switchMap(u => {
                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
-                    return this.dataService.getCharacter(u.lodestoneId);
+                    return this.dataService.getCharacter(u.lodestoneId).map(c => {
+                        c.patron = u.patron;
+                        return c;
+                    });
                 } else {
                     return Observable.of({name: 'Anonymous'});
                 }

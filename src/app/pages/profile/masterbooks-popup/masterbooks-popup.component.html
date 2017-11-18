@@ -1,0 +1,14 @@
+<h3 mat-dialog-title>{{data.jobAbbr}} - {{'PROFILE.Masterbooks' | translate}}</h3>
+<mat-dialog-content>
+    <mat-selection-list>
+        <mat-list-option *ngFor="let book of masterbookService.getBooks(data.jobAbbr)"
+                         selected="{{data.user.masterbooks !== undefined && data.user.masterbooks.indexOf(book) > -1}}"
+                         value="{{book}}"
+        (selectionChange)="setMasterbook(book, $event.selected)">
+            {{book | itemName | i18n}}
+        </mat-list-option>
+    </mat-selection-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="submit()">{{'COMMON.Save' | translate}}</button>
+</mat-dialog-actions>
