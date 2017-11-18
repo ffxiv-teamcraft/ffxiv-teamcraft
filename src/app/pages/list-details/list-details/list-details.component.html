@@ -1,7 +1,7 @@
 <app-pricing [list]="list" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="list !== undefined && list.$value !== null">
+    <div *ngIf="list !== undefined">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>

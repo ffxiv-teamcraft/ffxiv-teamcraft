@@ -11,6 +11,11 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+// Helper class
+.spacer {
+    flex: 1 1 auto;
+}
+
 .snack {
     background-color: mat-color(map-get($dark-theme, accent)) !important;
 }

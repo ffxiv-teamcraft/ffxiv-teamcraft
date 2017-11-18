@@ -16,14 +16,17 @@
             <span [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.uid === list.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list.authorId"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
                 (click)="openRequirementsPopup()">
             <mat-icon color="accent">assignment</mat-icon>
         </button>
-
+        <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+                  color="warn">
+            warning
+        </mat-icon>
     </div>
 
     <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngIf="hasTimers()">
@@ -168,7 +171,11 @@
     <div class="item-name" matLine>
         <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.uid === list.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list.authorId"></app-comments-button>
+        <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+                  color="warn">
+            warning
+        </mat-icon>
     </div>
     <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0" class="masterbook">
         <img *ngFor="let masterbook of getMasterBooks(item)"
@@ -198,7 +205,8 @@
                          matTooltipPosition="above" src="{{craft.icon}}">
                 </div>
             </div>
-            <button mat-icon-button *ngIf="item.gatheredBy !== undefined && item.gatheredBy.length > 0" (click)="openGatheredByDetails(item)">
+            <button mat-icon-button *ngIf="item.gatheredBy !== undefined && item.gatheredBy.length > 0"
+                    (click)="openGatheredByDetails(item)">
                 <img class="crafted-by"
                      matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
                      matTooltipPosition="above" src="{{item.gatheredBy.icon}}">
@@ -208,7 +216,8 @@
                      matTooltip="{{'Gardening' | translate}}"
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
             </div>
-            <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openDropsDetails(item)">
+            <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0"
+                    (click)="openDropsDetails(item)">
                 <img *ngIf="item.drops !== undefined" class="crafted-by"
                      matTooltip="{{'Hunting' | translate}}"
                      matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">

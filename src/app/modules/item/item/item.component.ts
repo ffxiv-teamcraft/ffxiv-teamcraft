@@ -18,13 +18,13 @@ import {ObservableMedia} from '@angular/flex-layout';
 import {VoyagesDetailsPopupComponent} from '../voyages-details-popup/voyages-details-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {FishDetailsPopupComponent} from '../fish-details-popup/fish-details-popup.component';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {UserInfo} from 'firebase/app';
 import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Observable} from 'rxjs/Observable';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
+import {AppUser} from '../../../model/list/app-user';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-item',
@@ -57,7 +57,7 @@ export class ItemComponent implements OnInit {
     @Input()
     even = false;
 
-    user: UserInfo;
+    user: AppUser;
 
     itemUri: string;
 
@@ -117,7 +117,7 @@ export class ItemComponent implements OnInit {
                 private dialog: MatDialog,
                 private media: ObservableMedia,
                 private localizedData: LocalizedDataService,
-                private auth: AngularFireAuth,
+                private userService: UserService,
                 private snackBar: MatSnackBar,
                 private translator: TranslateService,
                 private alarmService: AlarmService,
@@ -141,7 +141,7 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.auth.authState.subscribe(user => {
+        this.userService.getUserData().subscribe(user => {
             this.user = user;
         });
 
@@ -200,6 +200,30 @@ export class ItemComponent implements OnInit {
             }
         }
         return res;
+    }
+
+    public hasBook(): boolean {
+        // If we're loading the user or he's undefined, we can't provide this service so we assume he can craft it.
+        if (this.user === undefined || this.user.anonymous) {
+            return true;
+        }
+        // If this is a craft
+        if (this.item.craftedBy !== undefined) {
+            const books = this.getMasterBooks(this.item);
+            // If there's no book for this item, it means that the user can craft it for sure.
+            if (books.length === 0) {
+                return true;
+            }
+            // If the user has at least one of the required books, it's okay.
+            for (const book of books) {
+                if ((this.user.masterbooks || []).indexOf(book.id) > -1) {
+                    return true;
+                }
+            }
+            // Else, he can't craft the item, put a warning on it.
+            return false;
+        }
+        return true;
     }
 
     public setDone(row: ListRow, amount: number, done: number) {

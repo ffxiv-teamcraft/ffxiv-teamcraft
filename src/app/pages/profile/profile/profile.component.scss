@@ -1,0 +1,32 @@
+:host {
+    .loader-container {
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 200px;
+    }
+
+    .portrait {
+        height: 100%;
+    }
+
+    .profile-card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .patreon-badge {
+        height: 40px;
+    }
+
+    .job-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .job-icon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

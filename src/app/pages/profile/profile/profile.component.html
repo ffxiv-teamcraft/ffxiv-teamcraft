@@ -1,0 +1,36 @@
+<div *ngIf="character === undefined || user === undefined" class="loader-container">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="character !== undefined && user !== undefined">
+    <mat-grid-list cols="3" rowHeight="600px">
+        <mat-grid-tile class="portrait-container">
+            <img src="{{character.portrait}}" alt="portrait" class="portrait">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+            <mat-card class="profile-card">
+                <mat-card-header>
+                    <mat-card-title>{{character.name}}</mat-card-title>
+                    <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
+                    <div class="spacer"></div>
+                    <img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png"
+                         alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"
+                         class="patreon-badge" matTooltipPosition="above" *ngIf="character.patron">
+                </mat-card-header>
+                <mat-grid-list cols="8">
+                    <mat-grid-tile *ngFor="let job of getJobs()">
+                        <div class="job-container">
+                            <div>
+                                <img src="https://www.garlandtools.org/db/images/{{job.abbr}}.png"
+                                     alt="{{job.name.toLowerCase()}}" class="job-icon">
+                            </div>
+                            <div class="job-level">{{job.level}}</div>
+                            <button mat-button (click)="openMasterbooksPopup(job.abbr)">
+                                <mat-icon>book</mat-icon>
+                            </button>
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
