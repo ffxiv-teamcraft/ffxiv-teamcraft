@@ -1,4 +1,11 @@
 {
+    "Profile": "Profil",
+    "COMMON": {
+        "Save": "Sauvegarder"
+    },
+    "ALARMS": {
+        "No_alarm": "Aucune alarme définie"
+    },
     "Confirmation": "Confirmation",
     "Yes": "Oui",
     "No": "Non",
@@ -92,8 +99,6 @@
     "Email_enter": "Email",
     "Email_not_found": "Email non trouvé",
     "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
-
-
     "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
     "HOME_PAGE.count": "listes actuellement stockées",
     "HOME_PAGE.lists_created_count": "listes créées avec FFXIV Teamcraft",
@@ -139,11 +144,10 @@
     "Earning": "Gains",
     "Benefits": "Bénéfice",
     "Minimal_craft_cost": "Coût minimal de fabrication",
-
     "Used_for": "Utilisé pour",
     "xivdb_cart_import": "Import depuis xivdb shopping cart",
-    "Or":"ou",
-    "Make_donation":"Faire un don",
+    "Or": "ou",
+    "Make_donation": "Faire un don",
     "Data_from_gt": "Données fournies par garlandtools.org",
     "Hide_completed": "Masquer les éléments complétés",
     "Your_comment": "Votre commentaire",
@@ -151,13 +155,20 @@
     "Requires": "Nécessite",
     "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
     "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
-
     "Tier_display_toggle": "Voir les étapes de craft",
     "Precraft_tier": "Étape",
-
     "SETTINGS": {
         "title": "Options",
-        "link_base": "Liens des objets"
+        "link_base": "Liens des objets",
+        "compact_lists": "Affichage compact des listes",
+        "light_theme": "Thème lumineux"
+    },
+    "PROFILE": {
+        "Masterbooks": "Livres",
+        "Patreon_supporter": "Supporter Patreon"
+    },
+    "LIST_DETAILS": {
+        "No_book": "Livre manquant"
     },
     "adapt_to_character": "Adapter au personnage",
     "reset_filters": "Remettre les filtres à zero"

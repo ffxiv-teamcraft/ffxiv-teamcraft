@@ -1,4 +1,11 @@
 {
+    "Profile": "Profile",
+    "COMMON": {
+        "Save": "Save"
+    },
+    "ALARMS": {
+        "No_alarm": "No alarm set"
+    },
     "Confirmation": "Confirmation",
     "Yes": "Yes",
     "No": "No",
@@ -122,6 +129,7 @@
     "HOME_PAGE.FEATURES.comments_content": "Add informations on your list items easily !",
     "HOME_PAGE.FEATURES.pricing_title": "Pricing",
     "HOME_PAGE.FEATURES.pricing_content": "Easily get the benefits you'll make from a given list !",
+
     "HOME_PAGE.support_title": "Support",
     "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
     "HOME_PAGE.support_comtent_facebook": "You can also find us on facebook",
@@ -144,8 +152,8 @@
 
     "Used_for": "Used for",
     "xivdb_cart_import": "Importing from xivdb shopping cart",
-    "Or":"or",
-    "Make_donation":"Make a donation",
+    "Or": "or",
+    "Make_donation": "Make a donation",
     "Data_from_gt": "Data provided by garlandtools.org",
     "Hide_completed": "Hide completed rows",
     "Your_comment": "Your comment",
@@ -159,9 +167,17 @@
 
     "SETTINGS": {
         "title": "Settings",
-        "link_base": "Item links"
+        "link_base": "Item links",
+        "compact_lists": "Compact list display",
+        "light_theme": "Light theme"
     },
-
+    "PROFILE": {
+        "Masterbooks": "Masterbooks",
+        "Patreon_supporter": "Patreon Supporter"
+    },
+    "LIST_DETAILS": {
+        "No_book": "Missing book"
+    },
     "adapt_to_character": "Adapt to Character",
     "reset_filters": "Reset Filters"
 }
