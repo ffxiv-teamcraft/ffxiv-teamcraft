@@ -37,10 +37,10 @@ export class ItemData {
         return {
             id: raw.obj.i,
             name: {
-                en: raw.obj.en.n,
-                de: raw.obj.de.n,
-                fr: raw.obj.fr.n,
-                ja: raw.obj.ja.n,
+                en: raw.obj.n,
+                de: raw.obj.n,
+                fr: raw.obj.n,
+                ja: raw.obj.n,
             },
             type: {
                 fr: type,
