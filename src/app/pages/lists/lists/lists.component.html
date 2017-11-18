@@ -19,6 +19,6 @@
         (closed)="closed(list.$key)"
         (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
         (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
-        (ondelete)="delete(list.$key)"
+        (ondelete)="delete(list)"
         [authorUid]="user.uid"></app-list-panel>
 </div>

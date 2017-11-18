@@ -10,6 +10,7 @@ import {ListService} from '../../../core/database/list.service';
 import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
+import {AlarmService} from '../../../core/time/alarm.service';
 
 declare const ga: Function;
 
@@ -30,7 +31,7 @@ export class ListsComponent implements OnInit {
 
     expanded: string[] = [];
 
-    constructor(private auth: AngularFireAuth,
+    constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title) {
     }
@@ -55,11 +56,16 @@ export class ListsComponent implements OnInit {
         this.expanded.push(key);
     }
 
-    delete(listKey: string): void {
+    delete(list: List): void {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
-                this.listService.remove(listKey).then(() => {
+                list.forEachItem(row => {
+                    if (this.alarmService.hasAlarm(row)) {
+                        this.alarmService.unregister(row.id);
+                    }
+                });
+                this.listService.remove(list.$key).then(() => {
                     ga('send', 'event', 'List', 'deletion');
                     this.title.setTitle('Teamcraft');
                 });
