@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.3"></a>
+# [3.0.0-beta.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2017-11-18)
+
+
+### Features
+
+* profile page with masterbook alert if you can't craft an item ([09d4449](https://github.com/Supamiu/ffxiv-teamcraft/commit/09d4449))
+* remove list alarms when deleting lists ([8e269a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/8e269a8))
+
+
+
 <a name="3.0.0-beta.2"></a>
 # [3.0.0-beta.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2017-11-17)
 
