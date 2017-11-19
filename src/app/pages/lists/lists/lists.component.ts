@@ -11,6 +11,7 @@ import {Observable} from 'rxjs/Observable';
 import {MathTools} from '../../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
 import {AlarmService} from '../../../core/time/alarm.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 declare const ga: Function;
 
@@ -19,7 +20,7 @@ declare const ga: Function;
     templateUrl: './lists.component.html',
     styleUrls: ['./lists.component.scss']
 })
-export class ListsComponent implements OnInit {
+export class ListsComponent extends ComponentWithSubscriptions implements OnInit {
 
     lists: Observable<List[]>;
 
@@ -34,6 +35,7 @@ export class ListsComponent implements OnInit {
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title) {
+        super();
     }
 
     createNewList(): void {
@@ -58,7 +60,7 @@ export class ListsComponent implements OnInit {
 
     delete(list: List): void {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
-        dialogRef.afterClosed().subscribe(result => {
+        this.subscriptions.push(dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 list.forEachItem(row => {
                     if (this.alarmService.hasAlarm(row)) {
@@ -70,23 +72,23 @@ export class ListsComponent implements OnInit {
                     this.title.setTitle('Teamcraft');
                 });
             }
-        });
+        }));
     }
 
     removeRecipe(recipe: any, list: List, key: string): void {
-        this.listManager
+        this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, -recipe.amount)
-            .subscribe(resultList => this.listService.update(key, resultList));
+            .subscribe(resultList => this.listService.update(key, resultList)));
     }
 
     updateAmount(recipe: any, list: List, key: string, amount: number): void {
-        this.listManager
+        this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, MathTools.round(amount - recipe.amount))
-            .subscribe(resultList => this.listService.update(key, resultList));
+            .subscribe(resultList => this.listService.update(key, resultList)));
     }
 
     ngOnInit() {
-        this.auth.authState.subscribe(user => {
+        this.subscriptions.push(this.auth.authState.subscribe(user => {
             if (user === null) {
                 this.lists = Observable.of([]);
                 this.user = undefined;
@@ -94,7 +96,7 @@ export class ListsComponent implements OnInit {
                 this.user = user;
                 this.lists = this.listService.getUserLists(user.uid);
             }
-        });
+        }));
     }
 
 }

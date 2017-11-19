@@ -6,20 +6,22 @@ import {MatDialog} from '@angular/material/dialog';
 import {ListNamePopupComponent} from '../../../modules/common-components/list-name-popup/list-name-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {ListService} from '../../../core/database/list.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-cart-import',
     templateUrl: './cart-import.component.html',
     styleUrls: ['./cart-import.component.scss']
 })
-export class CartImportComponent {
+export class CartImportComponent extends ComponentWithSubscriptions {
 
     progress = 0;
 
     constructor(route: ActivatedRoute, listManager: ListManagerService,
                 dialog: MatDialog, listService: ListService, router: Router) {
+        super();
         const list = new List();
-        dialog.open(ListNamePopupComponent).afterClosed().subscribe(name => {
+        this.subscriptions.push(dialog.open(ListNamePopupComponent).afterClosed().subscribe(name => {
             let done = 0;
             list.name = name;
             route.params.subscribe(params => {
@@ -54,7 +56,7 @@ export class CartImportComponent {
                         });
                 });
             });
-        });
+        }));
     }
 
 }

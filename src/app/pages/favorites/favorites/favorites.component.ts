@@ -3,18 +3,20 @@ import {UserService} from '../../../core/database/user.service';
 import {List} from '../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListService} from '../../../core/database/list.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-favorites',
     templateUrl: './favorites.component.html',
     styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent {
+export class FavoritesComponent extends ComponentWithSubscriptions {
 
     favorites: { authorUid: string, list: List }[];
 
     constructor(private userService: UserService, private listService: ListService) {
-        this.userService.getUserData()
+        super();
+        this.subscriptions.push(this.userService.getUserData()
             .switchMap(userData => {
                 const lists: Observable<{ authorUid: string, list: List }>[] = [];
                 (userData.favorites || []).forEach(fav => {
@@ -30,6 +32,6 @@ export class FavoritesComponent {
                 });
                 return Observable.combineLatest(lists);
             })
-            .subscribe(favs => this.favorites = favs);
+            .subscribe(favs => this.favorites = favs));
     }
 }

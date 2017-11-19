@@ -25,13 +25,14 @@ import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
 import {UserService} from '../../../core/database/user.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent extends ComponentWithSubscriptions implements OnInit {
 
     @Input()
     item: ListRow;
@@ -65,7 +66,7 @@ export class ItemComponent implements OnInit {
 
     timerColor = '';
 
-    tradeSourcePriorities = {
+    private static TRADE_SOURCES_PRIORITIES = {
         // MGP, just in case
         5752: 20,
         // Seals
@@ -122,6 +123,7 @@ export class ItemComponent implements OnInit {
                 private translator: TranslateService,
                 private alarmService: AlarmService,
                 public settings: SettingsService) {
+        super();
     }
 
     isDraft(): boolean {
@@ -141,11 +143,11 @@ export class ItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.userService.getUserData().subscribe(user => {
+        this.subscriptions.push(this.userService.getUserData().subscribe(user => {
             this.user = user;
-        });
+        }));
 
-        Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item.id))
+        this.subscriptions.push(Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item.id))
             .subscribe((result) => {
                 const spawned = result[0];
                 const alerted = result[1];
@@ -156,7 +158,7 @@ export class ItemComponent implements OnInit {
                 } else {
                     this.timerColor = '';
                 }
-            });
+            }));
 
         // TODO update this for betetr management for comments.
         const listUri = `/lists/${this.list.$key}`;
@@ -293,9 +295,9 @@ export class ItemComponent implements OnInit {
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
                 const id = trade.currencyIcon;
-                if (this.tradeSourcePriorities[id] !== undefined && this.tradeSourcePriorities[id] > res.priority) {
+                if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined && ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
                     res.icon = trade.currencyIcon;
-                    res.priority = this.tradeSourcePriorities[id];
+                    res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
                 }
             });
         });

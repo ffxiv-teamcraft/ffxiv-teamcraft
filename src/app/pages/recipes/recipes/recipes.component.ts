@@ -16,6 +16,7 @@ import {SearchFilter} from '../../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../bulk-addition-popup/bulk-addition-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {UserService} from '../../../core/database/user.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 declare const ga: Function;
 
@@ -24,7 +25,7 @@ declare const ga: Function;
     templateUrl: './recipes.component.html',
     styleUrls: ['./recipes.component.scss']
 })
-export class RecipesComponent implements OnInit {
+export class RecipesComponent extends ComponentWithSubscriptions implements OnInit {
 
     recipes: Recipe[] = [];
 
@@ -102,24 +103,25 @@ export class RecipesComponent implements OnInit {
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService) {
+        super();
     }
 
     ngOnInit() {
         // Load user's lists
-        this.userService.getUserData().switchMap((user) => {
+        this.subscriptions.push(this.userService.getUserData().switchMap((user) => {
             if (user.$key !== undefined) {
                 return this.listService.getUserLists(user.$key);
             }
             return Observable.of([]);
-        }).subscribe(lists => this.lists = lists);
+        }).subscribe(lists => this.lists = lists));
 
         // Connect debounce listener on recipe search field
-        Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
+        this.subscriptions.push(Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
             .debounceTime(500)
             .distinctUntilChanged()
             .subscribe(() => {
                 this.doSearch();
-            });
+            }));
 
     }
 
@@ -149,10 +151,10 @@ export class RecipesComponent implements OnInit {
             this.loading = false;
             return;
         }
-        this.db.searchRecipe(this.query, this.filters).subscribe(results => {
+        this.subscriptions.push(this.db.searchRecipe(this.query, this.filters).subscribe(results => {
             this.recipes = results;
             this.loading = false;
-        });
+        }));
     }
 
     /**
@@ -183,7 +185,7 @@ export class RecipesComponent implements OnInit {
      * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
      */
     addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
+        this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).then(() => {
                     this.snackBar.open(
@@ -200,7 +202,7 @@ export class RecipesComponent implements OnInit {
                         });
                     });
                 });
-            }, err => console.error(err));
+            }, err => console.error(err)));
     }
 
     /**
@@ -213,7 +215,7 @@ export class RecipesComponent implements OnInit {
         this.recipes.forEach(recipe => {
             additions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, 1));
         });
-        this.dialog.open(BulkAdditionPopupComponent, {
+        this.subscriptions.push(this.dialog.open(BulkAdditionPopupComponent, {
             data: {additions: additions, key: key, listname: list.name},
             disableClose: true
         }).afterClosed().subscribe(() => {
@@ -229,7 +231,7 @@ export class RecipesComponent implements OnInit {
                     this.router.navigate(path);
                 });
             });
-        });
+        }));
     }
 
     /**
@@ -258,7 +260,7 @@ export class RecipesComponent implements OnInit {
      */
     createNewList(): Promise<{ id: string, list: List }> {
         return new Promise<{ id: string, list: List }>(resolve => {
-            this.dialog.open(ListNamePopupComponent).afterClosed()
+            this.subscriptions.push(this.dialog.open(ListNamePopupComponent).afterClosed()
                 .switchMap(res => {
                     return this.userService.getUserData().map(u => {
                         return {authorId: u.$key, listName: res};
@@ -272,7 +274,7 @@ export class RecipesComponent implements OnInit {
                     this.listService.push(list).then(id => {
                         resolve({id: id, list: list});
                     });
-                });
+                }));
         });
     }
 

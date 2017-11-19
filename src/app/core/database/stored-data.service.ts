@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/first';
 
 export abstract class StoredDataService<T extends DataModel> {
 
@@ -67,7 +68,7 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public push(item: T, params?: any): Promise<string> {
         return new Promise<any>(resolve => {
-            return this.getBaseUri(params).subscribe(uri => {
+            return this.getBaseUri(params).first().subscribe(uri => {
                 return this.listRef(`${uri}`).add(<T>item.getData()).then(ref => resolve(ref.id));
             });
         });
@@ -86,7 +87,7 @@ export abstract class StoredDataService<T extends DataModel> {
             return this.getBaseUri(params).switchMap(uri => {
                 delete value.$key;
                 return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
-            }).subscribe(resolve);
+            }).first().subscribe(resolve);
         });
     }
 
@@ -99,7 +100,7 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public remove(uid: string, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri(params).subscribe(uri => {
+            return this.getBaseUri(params).first().subscribe(uri => {
                 return this.oneRef(uri, uid).delete().then(resolve);
             });
         });

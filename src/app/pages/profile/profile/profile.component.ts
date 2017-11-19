@@ -3,13 +3,14 @@ import {UserService} from '../../../core/database/user.service';
 import {MatDialog} from '@angular/material';
 import {MasterbooksPopupComponent} from '../masterbooks-popup/masterbooks-popup.component';
 import {AppUser} from '../../../model/list/app-user';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent extends ComponentWithSubscriptions{
 
     static craftingJobs = [
         {abbr: 'ALC', name: 'alchemist'},
@@ -30,10 +31,11 @@ export class ProfileComponent {
 
 
     constructor(userService: UserService, private dialog: MatDialog) {
-        userService.getCharacter().subscribe(character => {
+        super();
+        this.subscriptions.push(userService.getCharacter().subscribe(character => {
             this.character = character;
-        });
-        userService.getUserData().subscribe(user => this.user = user);
+        }));
+        this.subscriptions.push(userService.getUserData().subscribe(user => this.user = user));
     }
 
     public getJobs(): any[] {

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';

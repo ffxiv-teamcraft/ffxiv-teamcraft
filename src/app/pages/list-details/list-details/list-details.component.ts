@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -24,6 +24,7 @@ import {User, UserInfo} from 'firebase';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import {SettingsService} from '../../settings/settings.service';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 declare const ga: Function;
 
@@ -32,7 +33,7 @@ declare const ga: Function;
     templateUrl: './list-details.component.html',
     styleUrls: ['./list-details.component.scss']
 })
-export class ListDetailsComponent implements OnInit, OnDestroy {
+export class ListDetailsComponent extends ComponentWithSubscriptions implements OnInit, OnDestroy {
 
     listObj: Observable<List>;
 
@@ -69,8 +70,8 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService,
                 private data: LocalizedDataService, public settings: SettingsService) {
+        super();
         this.initFilters();
-
     }
 
     public getUser(): Observable<User> {
@@ -89,7 +90,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     public adaptFilters(): void {
-        this.userService.getCharacter()
+        this.subscriptions.push(this.userService.getCharacter()
             .map(u => <any>u)
             .subscribe(u => {
                 this.craftFilters.forEach(filter => {
@@ -111,7 +112,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                     }
                 });
                 this.triggerFilter();
-            });
+            }));
     }
 
     public triggerFilter(): void {
@@ -125,9 +126,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date);
+        this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
 
-        this.route.params.subscribe(params => {
+        this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
             this.listObj = this.listService.get(this.listUid);
             Observable.combineLatest(
@@ -167,15 +168,15 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
                 this.list = l;
                 this.zoneBreakdown = new ZoneBreakdown(l);
             }, err => console.error(err));
-        });
+        }));
         this.triggerFilter();
-        this.auth.authState.subscribe(user => {
+        this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
-        });
-        this.userService.getUserData()
+        }));
+        this.subscriptions.push(this.userService.getUserData()
             .subscribe(user => {
                 this.userData = user;
-            });
+            }));
     }
 
     isOwnList(): boolean {
@@ -184,13 +185,13 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
-        this.listManager.upgradeList(this.list)
+        this.subscriptions.push(this.listManager.upgradeList(this.list)
             .switchMap(list => this.listService.update(this.listUid, list))
             .subscribe(() => {
                 ga('send', 'event', 'List', 'regenerate');
                 dialogRef.close();
                 this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
-            });
+            }));
     }
 
     ngOnDestroy(): void {
@@ -235,14 +236,14 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         // Little trick to clone an object using JS.
         const fork = this.list.clone();
         this.listService.push(fork).then((id) => {
-            this.snack.open(this.translate.instant('List_forked'),
+            this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
                 .subscribe(() => {
                     this.listService.getRouterPath(id)
                         .subscribe(path => {
                             this.router.navigate(path);
                         });
-                });
+                }));
         });
     }
 
@@ -288,14 +289,14 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     }
 
     public resetProgression(): void {
-        this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
+        this.subscriptions.push(this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
             if (res) {
                 for (const recipe of this.list.recipes) {
                     this.list.resetDone(recipe);
                 }
                 this.update();
             }
-        });
+        }));
     }
 
     public toggleZoneBreakdown(): void {
@@ -309,12 +310,12 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
 
     public rename(): void {
         const dialog = this.dialog.open(NameEditPopupComponent, {data: this.list.name});
-        dialog.afterClosed().subscribe(value => {
+        this.subscriptions.push(dialog.afterClosed().subscribe(value => {
             if (value !== undefined && value.length > 0) {
                 this.list.name = value;
                 this.update();
             }
-        });
+        }));
     }
 
     protected resetFilters(): void {
