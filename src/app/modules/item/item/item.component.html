@@ -58,12 +58,12 @@
                               min="0"
                               [value]="item.done | ceil"
                               [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
-                              (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
+                              (onchange)="setDone(item, $event, item.done)"></app-amount-input>
         </div>
         <div [ngClass]="{'done-check':true, 'compact': settings.compactLists}">
             <a mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
                [ngClass]="{'done-button':true, 'compact': settings.compactLists}"
-               (click)="setDone(item, getAmount(), item.done, recipe)">
+               (click)="setDone(item, getAmount(), item.done)">
                 <mat-icon>playlist_add_check</mat-icon>
             </a>
             <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
@@ -192,7 +192,7 @@
                           min="0"
                           [value]="item.done | ceil"
                           [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
-                          (onchange)="setDone(item, $event, item.done, recipe)"></app-amount-input>
+                          (onchange)="setDone(item, $event, item.done)"></app-amount-input>
         <button mat-icon-button class="requirements" (click)="openRequirementsPopup()">
             <mat-icon color="accent">assignment</mat-icon>
         </button>
@@ -283,7 +283,7 @@
 
     <div class="done-check">
         <a mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
-           (click)="setDone(item, getAmount(), item.done, recipe)">
+           (click)="setDone(item, getAmount(), item.done)">
             <mat-icon>playlist_add_check</mat-icon>
         </a>
         <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>

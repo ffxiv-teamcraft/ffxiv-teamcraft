@@ -3,6 +3,12 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class SettingsService {
 
+    private cache: { [id: string]: string };
+
+    constructor() {
+        this.cache = JSON.parse(localStorage.getItem('settings')) || {};
+    }
+
     public get baseLink(): string {
         return this.getSetting('base-link', 'XIVDB');
     }
@@ -52,11 +58,12 @@ export class SettingsService {
     }
 
     private getSetting(name: string, defaultValue: string): string {
-        return localStorage.getItem(`settings:${name}`) || defaultValue;
+        return this.cache[name] || defaultValue;
     }
 
     private setSetting(name: string, value: string): void {
-        localStorage.setItem(`settings:${name}`, value);
+        this.cache[name] = value;
+        localStorage.setItem('settings', JSON.stringify(this.cache));
     }
 
 }

@@ -23,6 +23,7 @@ import {TradeDetailsPopupComponent} from './trade-details-popup/trade-details-po
 import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-details-popup.component';
 import {VoyagesDetailsPopupComponent} from './voyages-details-popup/voyages-details-popup.component';
 import {MapModule} from '../map/map.module';
+import {DatabaseModule} from '../../core/database/database.module';
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import {MapModule} from '../map/map.module';
 
         CoreModule,
         TooltipModule,
+        DatabaseModule,
         SettingsModule,
         PipesModule,
         CommentsModule,

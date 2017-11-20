@@ -4,13 +4,13 @@ import {DataModel} from '../../model/list/data-model';
 import * as firebase from 'firebase/app';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/first';
-import {Subject} from 'rxjs/Subject';
 
 export abstract class StoredDataService<T extends DataModel> {
 
-    private optimisticData: { [index: string]: Subject<T> } = {};
+    protected cache: { [id: string]: ReplaySubject<T> } = {};
 
     constructor(protected afdb: AngularFirestore, protected serializer: NgSerializerService) {
     }
@@ -27,20 +27,25 @@ export abstract class StoredDataService<T extends DataModel> {
      * @returns {Observable<R>}
      */
     public get(uid: string, params?: any): Observable<T> {
-        return this.getBaseUri(params).switchMap(uri => {
-            // Prepare optimistic state if it's not ready.
-            this.optimisticData[uid] = this.optimisticData[uid] || new Subject<T>();
-            return Observable.merge(this.optimisticData[uid], this.oneRef(uri, uid)
-                .snapshotChanges()
-                .map(doc => {
-                    if (!doc.payload.exists) {
-                        throw new Error('Not found');
-                    }
-                    const res: T = this.serializer.deserialize<T>(doc.payload.data(), this.getClass());
-                    res.$key = doc.payload.id;
-                    return <T>res;
-                }));
-        });
+        if (this.cache[uid] === undefined) {
+            this.cache[uid] = new ReplaySubject<T>();
+            this.getBaseUri(params).switchMap(uri => {
+                return this.oneRef(uri, uid)
+                    .snapshotChanges()
+                    .map(doc => {
+                        if (!doc.payload.exists) {
+                            throw new Error('Not found');
+                        }
+                        const obj = doc.payload.data();
+                        const res: T = this.serializer.deserialize<T>(obj, this.getClass());
+                        res.$key = doc.payload.id;
+                        return res;
+                    });
+            }).subscribe(res => {
+                this.cache[uid].next(res);
+            });
+        }
+        return this.cache[uid].asObservable();
     }
 
     /**
@@ -88,11 +93,12 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public update(uid: string, value: T, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
-            return this.getBaseUri(params).switchMap(uri => {
-                this.nextOptimistic(uid, value);
+            return this.getBaseUri(params).subscribe(uri => {
+                console.log('uid', uid);
+                this.cache[uid].next(value);
                 delete value.$key;
-                return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
-            }).first().subscribe(resolve);
+                this.oneRef(uri, uid).set(<T>value.getData()).then(resolve);
+            });
         });
     }
 
@@ -109,14 +115,6 @@ export abstract class StoredDataService<T extends DataModel> {
                 return this.oneRef(uri, uid).delete().then(resolve);
             });
         });
-    }
-
-    private nextOptimistic(uid: string, value: T): void {
-        // Because we're using firestore, we can be quite optimistic regarding the update of the data,
-        // this represents a huge performance gain.
-        if (this.optimisticData[uid] !== undefined) {
-            this.optimisticData[uid].next(value);
-        }
     }
 
     private listRef(uri: string): AngularFirestoreCollection<T> {

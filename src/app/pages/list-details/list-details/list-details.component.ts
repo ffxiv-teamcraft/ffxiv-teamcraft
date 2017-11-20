@@ -62,6 +62,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     zoneBreakdown: ZoneBreakdown;
 
+    blockUpdates = false;
+
+    notFound = false;
+
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MatDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
@@ -165,7 +169,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     }
                 }).subscribe(l => {
                 this.zoneBreakdown = new ZoneBreakdown(l);
-            }, err => console.error(err));
+            }, err => this.notFound = true);
         }));
         this.triggerFilter();
         this.subscriptions.push(this.auth.authState.subscribe(user => {
@@ -185,7 +189,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.subscriptions.push(this.list.switchMap(l => {
             return this.listManager.upgradeList(l)
-            .switchMap(list => this.listService.update(this.listUid, list))
+                .switchMap(list => this.listService.update(this.listUid, list))
         }).subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
             dialogRef.close();
@@ -195,10 +199,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     ngOnDestroy(): void {
         this.title.setTitle('Teamcraft');
+        super.ngOnDestroy();
     }
 
-    update(list: List): void {
-        this.listService.update(list.$key, list, {uuid: this.authorUid});
+    update(list: List): Promise<void> {
+        if (!this.blockUpdates) {
+            return this.listService.update(list.$key, list);
+        }
+        return Promise.resolve();
     }
 
     toggleFavorite(): void {
@@ -308,7 +316,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     for (const recipe of list.recipes) {
                         list.resetDone(recipe);
                     }
-                    this.update(list);
+                    this.blockUpdates = true;
+                    this.update(list).then(() => this.blockUpdates = false);
                 }));
     }
 

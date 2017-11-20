@@ -1,7 +1,7 @@
 <app-pricing [list]="list | async" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="(list | async) !== undefined">
+    <div *ngIf="(list | async) !== null && !notFound">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
@@ -205,5 +205,5 @@
                                 [title]="'Items'| translate"></app-list-details-panel>
 
     </div>
-    <h4 class="not-found" *ngIf="list !== undefined && list.$value === null">{{"List_not_found" | translate}}</h4>
+    <h4 class="not-found" *ngIf="(list | async) === null && notFound">{{"List_not_found" | translate}}</h4>
 </div>
