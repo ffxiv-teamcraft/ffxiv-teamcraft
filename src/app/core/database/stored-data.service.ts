@@ -6,8 +6,11 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/first';
+import {Subject} from 'rxjs/Subject';
 
 export abstract class StoredDataService<T extends DataModel> {
+
+    private optimisticData: { [index: string]: Subject<T> } = {};
 
     constructor(protected afdb: AngularFirestore, protected serializer: NgSerializerService) {
     }
@@ -25,7 +28,9 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public get(uid: string, params?: any): Observable<T> {
         return this.getBaseUri(params).switchMap(uri => {
-            return this.oneRef(uri, uid)
+            // Prepare optimistic state if it's not ready.
+            this.optimisticData[uid] = this.optimisticData[uid] || new Subject<T>();
+            return Observable.merge(this.optimisticData[uid], this.oneRef(uri, uid)
                 .snapshotChanges()
                 .map(doc => {
                     if (!doc.payload.exists) {
@@ -33,8 +38,8 @@ export abstract class StoredDataService<T extends DataModel> {
                     }
                     const res: T = this.serializer.deserialize<T>(doc.payload.data(), this.getClass());
                     res.$key = doc.payload.id;
-                    return res;
-                });
+                    return <T>res;
+                }));
         });
     }
 
@@ -84,6 +89,7 @@ export abstract class StoredDataService<T extends DataModel> {
     public update(uid: string, value: T, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
             return this.getBaseUri(params).switchMap(uri => {
+                this.nextOptimistic(uid, value);
                 delete value.$key;
                 return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
             }).first().subscribe(resolve);
@@ -103,6 +109,14 @@ export abstract class StoredDataService<T extends DataModel> {
                 return this.oneRef(uri, uid).delete().then(resolve);
             });
         });
+    }
+
+    private nextOptimistic(uid: string, value: T): void {
+        // Because we're using firestore, we can be quite optimistic regarding the update of the data,
+        // this represents a huge performance gain.
+        if (this.optimisticData[uid] !== undefined) {
+            this.optimisticData[uid].next(value);
+        }
     }
 
     private listRef(uri: string): AngularFirestoreCollection<T> {

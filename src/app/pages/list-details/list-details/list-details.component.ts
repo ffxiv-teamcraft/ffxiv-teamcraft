@@ -31,13 +31,12 @@ declare const ga: Function;
 @Component({
     selector: 'app-list',
     templateUrl: './list-details.component.html',
-    styleUrls: ['./list-details.component.scss']
+    styleUrls: ['./list-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsComponent extends ComponentWithSubscriptions implements OnInit, OnDestroy {
 
-    listObj: Observable<List>;
-
-    list: List;
+    list: Observable<List>;
 
     user: UserInfo;
 
@@ -130,10 +129,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
         this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.listObj = this.listService.get(this.listUid);
+            this.list = this.listService.get(this.listUid);
             Observable.combineLatest(
                 this.filterTrigger,
-                this.listObj,
+                this.list,
                 (ignored, list) => {
                     this.authorUid = list.authorId;
                     list.forEachItem(item => {
@@ -165,7 +164,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         this.title.setTitle(this.translate.instant('List_not_found'));
                     }
                 }).subscribe(l => {
-                this.list = l;
                 this.zoneBreakdown = new ZoneBreakdown(l);
             }, err => console.error(err));
         }));
@@ -185,21 +183,22 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
-        this.subscriptions.push(this.listManager.upgradeList(this.list)
+        this.subscriptions.push(this.list.switchMap(l => {
+            return this.listManager.upgradeList(l)
             .switchMap(list => this.listService.update(this.listUid, list))
-            .subscribe(() => {
-                ga('send', 'event', 'List', 'regenerate');
-                dialogRef.close();
-                this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
-            }));
+        }).subscribe(() => {
+            ga('send', 'event', 'List', 'regenerate');
+            dialogRef.close();
+            this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
+        }));
     }
 
     ngOnDestroy(): void {
         this.title.setTitle('Teamcraft');
     }
 
-    update(): void {
-        this.listService.update(this.listUid, this.list, {uuid: this.authorUid});
+    update(list: List): void {
+        this.listService.update(list.$key, list, {uuid: this.authorUid});
     }
 
     toggleFavorite(): void {
@@ -208,14 +207,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         }
         if (!this.isFavorite()) {
             this.userData.favorites.push(`${this.authorUid}/${this.listUid}`);
-            this.list.favorites.push(this.user.uid);
         } else {
             this.userData.favorites =
                 this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
-            this.list.favorites = this.list.favorites.filter(uuid => uuid !== this.user.uid);
         }
         this.userService.update(this.user.uid, this.userData);
-        this.update();
     }
 
     isFavorite(): boolean {
@@ -228,30 +224,40 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
-        this.list.setDone(data.row, data.amount, recipe);
-        this.update();
+        this.subscriptions.push(this.list.first().subscribe(l => {
+            l.setDone(data.row, data.amount, recipe);
+            this.update(l);
+        }));
     }
 
     public forkList(): void {
-        // Little trick to clone an object using JS.
-        const fork = this.list.clone();
-        this.listService.push(fork).then((id) => {
-            this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
-                this.translate.instant('Open')).onAction()
-                .subscribe(() => {
-                    this.listService.getRouterPath(id)
-                        .subscribe(path => {
-                            this.router.navigate(path);
-                        });
-                }));
-        });
+        this.subscriptions.push(this.list.first().subscribe(l => {
+            // Little trick to clone an object using JS.
+            const fork = l.clone();
+            this.listService.push(fork).then((id) => {
+                this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
+                    this.translate.instant('Open')).onAction()
+                    .subscribe(() => {
+                        this.listService.getRouterPath(id)
+                            .subscribe(path => {
+                                this.router.navigate(path);
+                            });
+                    }));
+            });
+        }));
     }
 
     orderCrystals(crystals: ListRow[]): ListRow[] {
+        if (crystals === null) {
+            return [];
+        }
         return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
     }
 
     orderPreCrafts(preCrafts: ListRow[]): ListRow[] {
+        if (preCrafts === null) {
+            return [];
+        }
         return preCrafts === null ? null : preCrafts.sort((a: ListRow, b: ListRow) => {
             let aRequiredItems = 0;
             let bRequiredItems = 0;
@@ -271,6 +277,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     orderGatherings(gatherings: ListRow[]): ListRow[] {
+        if (gatherings === null) {
+            return [];
+        }
         return gatherings.sort((a, b) => {
             if (this.data.getItem(b.id).en > this.data.getItem(a.id).en) {
                 if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
@@ -289,14 +298,18 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public resetProgression(): void {
-        this.subscriptions.push(this.dialog.open(ConfirmationPopupComponent).afterClosed().subscribe(res => {
-            if (res) {
-                for (const recipe of this.list.recipes) {
-                    this.list.resetDone(recipe);
-                }
-                this.update();
-            }
-        }));
+        this.subscriptions.push(
+            this.dialog.open(ConfirmationPopupComponent).afterClosed()
+                .filter(r => r)
+                .switchMap(() => {
+                    return this.list;
+                })
+                .subscribe(list => {
+                    for (const recipe of list.recipes) {
+                        list.resetDone(recipe);
+                    }
+                    this.update(list);
+                }));
     }
 
     public toggleZoneBreakdown(): void {
@@ -309,13 +322,19 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public rename(): void {
-        const dialog = this.dialog.open(NameEditPopupComponent, {data: this.list.name});
-        this.subscriptions.push(dialog.afterClosed().subscribe(value => {
-            if (value !== undefined && value.length > 0) {
-                this.list.name = value;
-                this.update();
-            }
-        }));
+        this.subscriptions.push(
+            this.list.switchMap(list => {
+                const dialog = this.dialog.open(NameEditPopupComponent, {data: list.name});
+                return dialog.afterClosed().map(value => {
+                    if (value !== undefined && value.length > 0) {
+                        list.name = value;
+                    }
+                    return list;
+                });
+            }).subscribe((list) => {
+                this.update(list);
+            })
+        );
     }
 
     protected resetFilters(): void {

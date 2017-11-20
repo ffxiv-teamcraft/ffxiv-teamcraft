@@ -1,22 +1,22 @@
-<app-pricing [list]="list" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
+<app-pricing [list]="list | async" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="list !== undefined">
+    <div *ngIf="(list | async) !== undefined">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
         <div class="header">
-            <h3>{{list?.name}}</h3>
+            <h3>{{(list | async)?.name}}</h3>
             <button mat-icon-button *ngIf="isOwnList()" (click)="rename()"><mat-icon>mode_edit</mat-icon></button>
             <button mat-mini-fab color="accent"
-                    *ngIf="list !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
+                    *ngIf="(list | async) !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
                     matTooltip="{{'Favorite' | translate}}"
                     (click)="toggleFavorite()">
                 <mat-icon *ngIf="!isFavorite()">favorite_border</mat-icon>
                 <mat-icon *ngIf="isFavorite()">favorite</mat-icon>
             </button>
 
-            <button mat-mini-fab *ngIf="list !== undefined && user !== undefined"
+            <button mat-mini-fab *ngIf="(list | async) !== undefined && user !== undefined"
                     (click)="forkList()"
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
@@ -36,9 +36,9 @@
             </button>
         </div>
 
-        <mat-error *ngIf="list?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"| translate}}
+        <mat-error *ngIf="(list| async)?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"| translate}}
         </mat-error>
-        <mat-error *ngIf="list?.isOutDated() && isOwnList()" class="listError">{{"Own_list_outdated_before_button"|
+        <mat-error *ngIf="(list| async)?.isOutDated() && isOwnList()" class="listError">{{"Own_list_outdated_before_button"|
             translate}}
             <mat-icon>update</mat-icon>
             {{"Own_list_outdated_after_button"| translate}}
@@ -136,7 +136,7 @@
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <div class="crystal-row" *ngFor="let crystal of orderCrystals(list?.crystals)">
+            <div class="crystal-row" *ngFor="let crystal of orderCrystals((list | async)?.crystals)">
                 <div *ngIf="crystal.amount > crystal.done">
                     <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}" matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
                          src="{{crystal.icon | icon}}" alt="{{crystal.id | itemName | i18n}}">
@@ -154,19 +154,19 @@
                     <mat-panel-title>{{'Gathering'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list dense>
-                    <div *ngFor="let gather of orderGatherings(list?.gathers); let i = index">
+                    <div *ngFor="let gather of orderGatherings((list | async)?.gathers); let i = index">
                         <app-item (update)="update()" (done)="setDone($event)" *ngIf="!gather.hidden"
-                                  [item]="gather" [showTimer]="true" [list]="list"
+                                  [item]="gather" [showTimer]="true" [list]="list | async"
                         [even]="i%2!=0"></app-item>
                     </div>
                 </mat-list>
             </mat-expansion-panel>
 
 
-            <app-list-details-panel [list]="list"
+            <app-list-details-panel [list]="list | async"
                                     (update)="update()"
                                     (done)="setDone($event)"
-                                    [data]="list?.others"
+                                    [data]="(list | async)?.others"
                                     [title]="'Other'| translate"></app-list-details-panel>
         </section>
 
@@ -179,7 +179,7 @@
                     <div *ngFor="let row of zoneBreakdown?.rows; let i = index">
                         <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
                         <div *ngFor="let item of row.items">
-                            <app-item [list]="list" (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
+                            <app-item [list]="list | async" (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
                                       [item]="item" [showTimer]="true"
                             [even]="i%2!=0"></app-item>
                         </div>
@@ -189,18 +189,18 @@
             </mat-expansion-panel>
         </section>
 
-        <app-list-details-panel *ngIf="list?.preCrafts.length > 0" [list]="list"
+        <app-list-details-panel *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
                                 [showTier]="true"
                                 (update)="update()"
                                 (done)="setDone($event)"
-                                [data]="orderPreCrafts(list?.preCrafts)"
+                                [data]="orderPreCrafts((list | async)?.preCrafts)"
                                 [title]="'Pre_crafts'| translate"
                                 [recipe]="true"></app-list-details-panel>
 
-        <app-list-details-panel [list]="list"
+        <app-list-details-panel [list]="list | async"
                                 (update)="update()"
                                 (done)="setDone($event)"
-                                [data]="list?.recipes"
+                                [data]="(list | async)?.recipes"
                                 [recipe]="true"
                                 [title]="'Items'| translate"></app-list-details-panel>
 

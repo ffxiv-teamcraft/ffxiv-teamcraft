@@ -1,11 +1,12 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
 import {TooltipDataService} from './tooltip-data.service';
 
 @Component({
     selector: 'app-tooltip',
     templateUrl: './tooltip.component.html',
     styleUrls: ['./tooltip.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class TooltipComponent {
 

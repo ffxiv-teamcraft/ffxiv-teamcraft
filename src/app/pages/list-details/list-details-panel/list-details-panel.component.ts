@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {SettingsService} from '../../settings/settings.service';
@@ -6,7 +6,8 @@ import {SettingsService} from '../../settings/settings.service';
 @Component({
     selector: 'app-list-details-panel',
     templateUrl: './list-details-panel.component.html',
-    styleUrls: ['./list-details-panel.component.scss']
+    styleUrls: ['./list-details-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -43,12 +44,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
      * each tier is a list of rows.
      */
     public generateTiers(): void {
-        this.tiers = [[]];
-        this.data.forEach(row => {
-            if (row.requires !== undefined) {
-                this.tiers = this.setTier(row, this.tiers);
-            }
-        });
+        if (this.data !== null) {
+            this.tiers = [[]];
+            this.data.forEach(row => {
+                if (row.requires !== undefined) {
+                    this.tiers = this.setTier(row, this.tiers);
+                }
+            });
+        }
     }
 
     private setTier(row: ListRow, result: ListRow[][], tier = 0): ListRow[][] {

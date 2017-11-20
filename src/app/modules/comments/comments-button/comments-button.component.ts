@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {CommentsPopupComponent} from '../comments-popup/comments-popup.component';
 import {ListRow} from '../../../model/list/list-row';
@@ -9,7 +9,8 @@ import {SettingsService} from '../../../pages/settings/settings.service';
 @Component({
     selector: 'app-comments-button',
     templateUrl: './comments-button.component.html',
-    styleUrls: ['./comments-button.component.scss']
+    styleUrls: ['./comments-button.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommentsButtonComponent implements OnInit {
 

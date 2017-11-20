@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
@@ -30,41 +30,10 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
-    styleUrls: ['./item.component.scss']
+    styleUrls: ['./item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class ItemComponent extends ComponentWithSubscriptions implements OnInit {
-
-    @Input()
-    item: ListRow;
-
-    @ViewChild('doneInput')
-    doneInput: ElementRef;
-
-    @Output()
-    update: EventEmitter<void> = new EventEmitter<void>();
-
-    @Output()
-    done: EventEmitter<any> = new EventEmitter<any>();
-
-    @Input()
-    recipe = false;
-
-    @Input()
-    list: List;
-
-    @Input()
-    showTimer = false;
-
-    @Input()
-    even = false;
-
-    user: AppUser;
-
-    itemUri: string;
-
-    slot: number;
-
-    timerColor = '';
 
     private static TRADE_SOURCES_PRIORITIES = {
         // MGP, just in case
@@ -114,6 +83,36 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         7731: 2
     };
 
+    @Input()
+    item: ListRow;
+
+    @ViewChild('doneInput')
+    doneInput: ElementRef;
+
+    @Output()
+    update: EventEmitter<void> = new EventEmitter<void>();
+
+    @Output()
+    done: EventEmitter<any> = new EventEmitter<any>();
+
+    @Input()
+    recipe = false;
+
+    @Input()
+    list: List;
+
+    @Input()
+    showTimer = false;
+
+    @Input()
+    even = false;
+
+    user: AppUser;
+
+    slot: number;
+
+    timerColor = '';
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -159,12 +158,6 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
                     this.timerColor = '';
                 }
             }));
-
-        // TODO update this for betetr management for comments.
-        const listUri = `/lists/${this.list.$key}`;
-        const listCategory = this.list.getCategory(this.item);
-        const index = this.list[listCategory].indexOf(this.item);
-        this.itemUri = `${listUri}/${listCategory}/${index}`;
     }
 
     toggleAlarm(): void {

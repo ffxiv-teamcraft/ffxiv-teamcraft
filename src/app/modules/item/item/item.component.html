@@ -16,7 +16,7 @@
             <span [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.$key === list.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
@@ -171,7 +171,7 @@
     <div class="item-name" matLine>
         <span class="{{item.done >= item.amount?'strike':null}}">{{item.id | itemName | i18n}}</span>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.$key === list.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
         <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
                   color="warn">
             warning
