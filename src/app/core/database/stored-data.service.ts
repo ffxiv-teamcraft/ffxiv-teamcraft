@@ -31,8 +31,7 @@ export abstract class StoredDataService<T extends DataModel> {
                     if (!doc.payload.exists) {
                         throw new Error('Not found');
                     }
-                    const obj = doc.payload.data();
-                    const res: T = this.serializer.deserialize<T>(obj, this.getClass());
+                    const res: T = this.serializer.deserialize<T>(doc.payload.data(), this.getClass());
                     res.$key = doc.payload.id;
                     return res;
                 });
