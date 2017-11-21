@@ -29,17 +29,7 @@ export class ListService extends FirestoreListStorage {
      * @returns {Observable<List[]>}
      */
     public getUserLists(userId: string): Observable<List[]> {
-        return this.firestore
-            .collection('lists', ref => ref.where('authorId', '==', userId))
-            .snapshotChanges()
-            .map((snap: DocumentChangeAction[]) => {
-                const obj = snap.map(snapRow => snapRow.payload.doc.data());
-                const res: List[] = this.serializer.deserialize<List>(obj, [this.getClass()]);
-                res.forEach((row, index) => {
-                    row.$key = snap[index].payload.doc.id;
-                });
-                return res;
-            });
+        return this.getAll(ref => ref.where('authorId', '==', userId));
     }
 
     /**

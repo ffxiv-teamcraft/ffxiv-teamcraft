@@ -212,7 +212,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
-        this.listService.update(this.listUid, list).first().subscribe();
+        this.listService.update(this.listUid, list).first().subscribe(() => {});
     }
 
     toggleFavorite(): void {
