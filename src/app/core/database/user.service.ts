@@ -6,11 +6,11 @@ import {Observable} from 'rxjs/Observable';
 import {DataService} from '../api/data.service';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {ListService} from './list.service';
-import {StoredDataService} from './stored-data.service';
+import {FirestoreStorage} from './storage/firestore/firestore-storage';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 
 @Injectable()
-export class UserService extends StoredDataService<AppUser> {
+export class UserService extends FirestoreStorage<AppUser> {
 
     public loggingIn = false;
 
@@ -80,7 +80,7 @@ export class UserService extends StoredDataService<AppUser> {
         return new Promise<void>(resolve => {
             this.listService.getUserLists(uid).subscribe(lists => {
                 if (lists === []) {
-                    return this.remove(uid).then(resolve);
+                    return this.remove(uid).first().subscribe(resolve);
                 } else {
                     return this.listService.deleteUserLists(uid);
                 }

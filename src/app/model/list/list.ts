@@ -5,17 +5,30 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
+import {SubCollection} from '../../core/database/storage/firestore/decorator/subcollection';
 
 declare const ga: Function;
 
 export class List extends DataModel {
     name: string;
+
+    @SubCollection(ListRow)
     recipes: ListRow[] = [];
+
+    @SubCollection(ListRow)
     preCrafts: ListRow[] = [];
+
+    @SubCollection(ListRow)
     gathers: ListRow[] = [];
+
+    @SubCollection(ListRow)
     others: ListRow[] = [];
+
+    @SubCollection(ListRow)
     crystals: ListRow[] = [];
+
     createdAt: string = new Date().toISOString();
+
     version: string;
 
     authorId: string;
@@ -116,7 +129,7 @@ export class List extends DataModel {
         if (added < 0 && recipe) {
             const previousDone = row.done;
             if (previousDone > row.amount_needed) {
-                this.setDone(row, row.amount_needed - previousDone, recipe);
+                this.setDone(row, row.amount_needed - previousDone);
             }
         }
 
@@ -161,7 +174,7 @@ export class List extends DataModel {
         return undefined;
     }
 
-    public setDone(pitem: ListRow, amount: number, recipe: boolean = false): void {
+    public setDone(pitem: ListRow, amount: number): void {
         const item = this.getItemById(pitem.id, pitem.addedAt);
         item.done += amount;
         if (item.done > item.amount) {
@@ -273,31 +286,5 @@ export class List extends DataModel {
             return this.addCraft(nextIteration, gt, i18n);
         }
         return this;
-    }
-
-    /**
-     * Returns the name of the category where you can find a given row.
-     * Useful for routing in database database.
-     * @param {ListRow} row
-     * @returns {string}
-     */
-    public getCategory(row: ListRow): string {
-        if (this.recipes.indexOf(row) > -1) {
-            return 'recipes';
-        }
-        if (this.gathers.indexOf(row) > -1) {
-            return 'gathers';
-        }
-        if (this.others.indexOf(row) > -1) {
-            return 'others';
-        }
-        if (this.preCrafts.indexOf(row) > -1) {
-            return 'preCrafts';
-        }
-        if (this.crystals.indexOf(row) > -1) {
-            return 'crystals';
-        }
-        // Should never happen, but still needs an exception just in case.
-        throw new Error('Row not in list');
     }
 }

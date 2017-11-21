@@ -94,7 +94,7 @@ export class LoginPopupComponent {
                                 this.af.auth.signInAnonymously().then(user => {
                                     listsBackup.forEach(list => {
                                         list.authorId = user.uid;
-                                        this.listService.push(list);
+                                        this.listService.add(list);
                                     });
                                     this.notVerified = true;
                                 });
@@ -116,7 +116,7 @@ export class LoginPopupComponent {
             this.af.auth.signInAnonymously().then(user => {
                 lists.forEach(list => {
                     list.authorId = user.uid;
-                    this.listService.push(list);
+                    this.listService.add(list);
                 });
                 this.error = true;
             });

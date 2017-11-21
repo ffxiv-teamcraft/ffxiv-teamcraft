@@ -63,8 +63,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     zoneBreakdown: ZoneBreakdown;
 
-    blockUpdates = false;
-
     notFound = false;
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
@@ -78,7 +76,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.initFilters();
     }
 
-    public trackByItem(index:number, item:ListRow):any{
+    public trackByItem(index: number, item: ListRow): any {
         return trackByItem(index, item);
     }
 
@@ -213,11 +211,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         super.ngOnDestroy();
     }
 
-    update(list: List): Promise<void> {
-        if (!this.blockUpdates) {
-            return this.listService.update(this.listUid, list);
-        }
-        return Promise.resolve();
+    update(list: List): void {
+        this.listService.update(this.listUid, list).first().subscribe();
     }
 
     toggleFavorite(): void {
@@ -242,9 +237,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
     }
 
-    public setDone(data: { row: ListRow, amount: number }, recipe: boolean = false): void {
+    public setDone(data: { row: ListRow, amount: number }): void {
         this.subscriptions.push(this.list.first().subscribe(l => {
-            l.setDone(data.row, data.amount, recipe);
+            l.setDone(data.row, data.amount);
             this.update(l);
         }));
     }
@@ -253,7 +248,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.list.first().subscribe(l => {
             // Little trick to clone an object using JS.
             const fork = l.clone();
-            this.listService.push(fork).then((id) => {
+            this.listService.add(fork).first().subscribe((id) => {
                 this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                     this.translate.instant('Open')).onAction()
                     .subscribe(() => {
@@ -327,8 +322,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     for (const recipe of list.recipes) {
                         list.resetDone(recipe);
                     }
-                    this.blockUpdates = true;
-                    this.update(list).then(() => this.blockUpdates = false);
+                    this.update(list);
                 }));
     }
 

@@ -1,13 +1,13 @@
-import {StoredDataService} from './stored-data.service';
 import {List} from '../../model/list/list';
 import {Injectable} from '@angular/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {Observable} from 'rxjs/Observable';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
+import {FirestoreListStorage} from 'app/core/database/storage/firestore/firestore-list-storage';
 
 @Injectable()
-export class ListService extends StoredDataService<List> {
+export class ListService extends FirestoreListStorage {
 
     constructor(protected firestore: AngularFirestore,
                 protected serializer: NgSerializerService) {
@@ -47,33 +47,23 @@ export class ListService extends StoredDataService<List> {
      * @param {string} uid
      * @returns {Promise<void>}
      */
-    public deleteUserLists(uid: string): Promise<void> {
-        return new Promise<void>(resolve => {
-            this.firestore
-                .collection('lists', ref => ref.where('authorId', '==', uid))
-                .snapshotChanges()
-                .map((snap: DocumentChangeAction[]) => {
-                    const batch: Promise<void>[] = [];
-                    snap.forEach(row => {
-                        batch.push(this.remove(row.payload.doc.id));
-                    });
-                    return Promise.all(batch).then(() => resolve());
+    public deleteUserLists(uid: string): Observable<void[]> {
+        return this.firestore
+            .collection('lists', ref => ref.where('authorId', '==', uid))
+            .snapshotChanges()
+            .switchMap((snap: DocumentChangeAction[]) => {
+                const batch: Observable<void>[] = [];
+                snap.forEach(row => {
+                    batch.push(this.remove(row.payload.doc.id));
                 });
-        });
+                return Observable.combineLatest(batch);
+            });
     }
 
-    push(list: List, params?: any): Promise<string> {
+    add(list: List, params?: any): Observable<string> {
         if (list.authorId === undefined) {
             throw new Error('Tried to persist a list with no author ID');
         }
-        return super.push(list, params);
-    }
-
-    getBaseUri(params?: any): Observable<string> {
-        return Observable.of('lists');
-    }
-
-    getClass(): any {
-        return List;
+        return super.add(list, params);
     }
 }

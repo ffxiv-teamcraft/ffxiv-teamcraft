@@ -30,7 +30,7 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                 const cart = decoded.split(';');
                 const importObservables = [];
                 // We create the list
-                listService.push(list).then((id) => {
+                listService.add(list).first().subscribe((id) => {
                     // Then we prepare the list creation Observable
                     cart.forEach(row => {
                         const parsed = row.split(',');
@@ -42,7 +42,7 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                     // We can now execute the observable
                     Observable.concat(...importObservables)
                         .subscribe(() => {
-                            listService.update(id, list).then(() => {
+                            listService.update(id, list).first().subscribe(() => {
                                 done++;
                                 // Update progression
                                 this.progress = Math.ceil(100 * done / cart.length);

@@ -1,16 +1,16 @@
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {DataModel} from '../../model/list/data-model';
+import {DataModel} from '../../../../model/list/data-model';
 import * as firebase from 'firebase/app';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/first';
+import {DataStore} from 'app/core/database/storage/data-store';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
-export abstract class StoredDataService<T extends DataModel> {
+export abstract class FirestoreStorage<T extends DataModel> implements DataStore<T> {
 
-    protected cache: { [id: string]: ReplaySubject<T> } = {};
+    protected cache: { [id: string]: BehaviorSubject<T> } = {};
 
     constructor(protected afdb: AngularFirestore, protected serializer: NgSerializerService) {
     }
@@ -28,7 +28,7 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public get(uid: string, params?: any): Observable<T> {
         if (this.cache[uid] === undefined) {
-            this.cache[uid] = new ReplaySubject<T>(1);
+            this.cache[uid] = new BehaviorSubject<T>(null);
             this.getBaseUri(params).switchMap(uri => {
                 return this.oneRef(uri, uid)
                     .snapshotChanges()
@@ -45,27 +45,7 @@ export abstract class StoredDataService<T extends DataModel> {
                 this.cache[uid].next(res);
             });
         }
-        return this.cache[uid].asObservable();
-    }
-
-    /**
-     * Gets the list-details of items in this base uri.
-     *
-     * @returns {Observable<R>}
-     */
-    public getAll(params?: any): Observable<T[]> {
-        return this.getBaseUri(params).switchMap(uri => {
-            return this.listRef(uri)
-                .snapshotChanges()
-                .map((snap: DocumentChangeAction[]) => {
-                    const obj = snap.map(snapRow => snapRow.payload.doc.data());
-                    const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
-                    res.forEach((row, index) => {
-                        row.$key = snap[index].payload.doc.id;
-                    });
-                    return res;
-                });
-        });
+        return this.cache[uid].asObservable().filter(data => data !== null);
     }
 
     /**
@@ -75,11 +55,9 @@ export abstract class StoredDataService<T extends DataModel> {
      * @param params
      * @returns {firebase.database.ThenableReference}
      */
-    public push(item: T, params?: any): Promise<string> {
-        return new Promise<any>(resolve => {
-            return this.getBaseUri(params).first().subscribe(uri => {
-                return this.listRef(`${uri}`).add(<T>item.getData()).then(ref => resolve(ref.id));
-            });
+    public add(item: T, params?: any): Observable<string> {
+        return this.getBaseUri(params).switchMap(uri => {
+            return Observable.fromPromise(this.listRef(`${uri}`).add(<T>item.getData())).map(ref => ref.id);
         });
     }
 
@@ -89,15 +67,17 @@ export abstract class StoredDataService<T extends DataModel> {
      * @param uid
      * @param value
      * @param params
-     * @returns {firebase.Promise<void>}
+     * @returns {Observable<void>}
      */
-    public update(uid: string, value: T, params?: any): Promise<void> {
-        return new Promise<void>(resolve => {
-            return this.getBaseUri(params).subscribe(uri => {
-                this.cache[uid].next(value);
-                delete value.$key;
-                this.oneRef(uri, uid).set(<T>value.getData()).then(resolve);
-            });
+    public update(uid: string, value: T, params?: any): Observable<void> {
+        return this.getBaseUri(params).switchMap(uri => {
+            // If the value is the same as the value cached, don't update it
+            if (this.cache[uid].getValue() === value) {
+                return Observable.of(null);
+            }
+            this.cache[uid].next(value);
+            delete value.$key;
+            return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value.getData()));
         });
     }
 
@@ -106,13 +86,11 @@ export abstract class StoredDataService<T extends DataModel> {
      *
      * @param uid
      * @param params
-     * @returns {firebase.Promise<void>}
+     * @returns {Observable<void>}
      */
-    public remove(uid: string, params?: any): Promise<void> {
-        return new Promise<void>(resolve => {
-            return this.getBaseUri(params).first().subscribe(uri => {
-                return this.oneRef(uri, uid).delete().then(resolve);
-            });
+    public remove(uid: string, params?: any): Observable<void> {
+        return this.getBaseUri(params).switchMap(uri => {
+            return Observable.fromPromise(this.oneRef(uri, uid).delete());
         });
     }
 

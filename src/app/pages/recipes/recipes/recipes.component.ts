@@ -187,7 +187,7 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
     addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
         this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
             .subscribe(updatedList => {
-                this.listService.update(key, updatedList).then(() => {
+                this.listService.update(key, updatedList).first().subscribe(() => {
                     this.snackBar.open(
                         this.translator.instant('Recipe_Added',
                             {itemname: this.i18n.getName(this.localizedData.getItem(recipe.itemId)), listname: list.name}),
@@ -271,7 +271,7 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
                     ga('send', 'event', 'List', 'creation');
                     list.name = res.listName;
                     list.authorId = res.authorId;
-                    this.listService.push(list).then(id => {
+                    this.listService.add(list).first().subscribe(id => {
                         resolve({id: id, list: list});
                     });
                 }));

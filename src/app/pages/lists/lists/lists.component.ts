@@ -43,7 +43,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             const list = new List();
             list.name = this.newListFormControl.value;
             list.authorId = this.user.uid;
-            this.listService.push(list).then(() => {
+            this.listService.add(list).first().subscribe(() => {
                 this.newListFormControl.reset();
                 this.myNgForm.resetForm();
             });
@@ -67,7 +67,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                         this.alarmService.unregister(row.id);
                     }
                 });
-                this.listService.remove(list.$key).then(() => {
+                this.listService.remove(list.$key).first().subscribe(() => {
                     ga('send', 'event', 'List', 'deletion');
                     this.title.setTitle('Teamcraft');
                 });

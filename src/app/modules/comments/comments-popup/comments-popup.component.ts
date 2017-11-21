@@ -41,7 +41,7 @@ export class CommentsPopupComponent implements OnInit {
         comment.authorId = this.userId;
         this.comments.push(comment);
         this.data.row.comments = this.comments;
-        this.service.update(this.data.list.$key, this.data.list).then(() => {
+        this.service.update(this.data.list.$key, this.data.list).first().subscribe(() => {
             this.control.reset();
             this.myNgForm.resetForm();
         });
