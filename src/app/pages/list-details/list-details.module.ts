@@ -14,7 +14,7 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatProgressSpinnerModule,
     MatSelectModule,
     MatSliderModule,
     MatTooltipModule
@@ -55,6 +55,7 @@ const routes: Routes = [
         MatInputModule,
         MatSelectModule,
         MatSliderModule,
+        MatProgressSpinnerModule,
 
         CoreModule,
         PricingModule,

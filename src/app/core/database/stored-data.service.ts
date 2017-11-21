@@ -28,7 +28,7 @@ export abstract class StoredDataService<T extends DataModel> {
      */
     public get(uid: string, params?: any): Observable<T> {
         if (this.cache[uid] === undefined) {
-            this.cache[uid] = new ReplaySubject<T>();
+            this.cache[uid] = new ReplaySubject<T>(1);
             this.getBaseUri(params).switchMap(uri => {
                 return this.oneRef(uri, uid)
                     .snapshotChanges()
@@ -94,7 +94,6 @@ export abstract class StoredDataService<T extends DataModel> {
     public update(uid: string, value: T, params?: any): Promise<void> {
         return new Promise<void>(resolve => {
             return this.getBaseUri(params).subscribe(uri => {
-                console.log('uid', uid);
                 this.cache[uid].next(value);
                 delete value.$key;
                 this.oneRef(uri, uid).set(<T>value.getData()).then(resolve);

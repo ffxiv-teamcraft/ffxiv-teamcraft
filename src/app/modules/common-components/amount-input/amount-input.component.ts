@@ -1,13 +1,14 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-amount-input',
     templateUrl: './amount-input.component.html',
     styleUrls: ['./amount-input.component.scss']
 })
-export class AmountInputComponent implements OnInit {
+export class AmountInputComponent extends ComponentWithSubscriptions implements OnInit {
 
     @Input()
     value: number;
@@ -34,6 +35,7 @@ export class AmountInputComponent implements OnInit {
     onchange: EventEmitter<number> = new EventEmitter<number>();
 
     constructor() {
+        super();
     }
 
     ngOnInit(): void {
@@ -52,7 +54,7 @@ export class AmountInputComponent implements OnInit {
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        observable
+        this.subscriptions.push(observable
             .map(value => +value)
             .subscribe(value => {
                 if (value > this.max) {
@@ -63,7 +65,7 @@ export class AmountInputComponent implements OnInit {
                 }
                 this.value = value;
                 this.onchange.emit(value);
-            });
+            }));
     }
 
     public getWidth(): number {

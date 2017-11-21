@@ -25,6 +25,7 @@ import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import {SettingsService} from '../../settings/settings.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {trackByItem} from '../../../core/tools/track-by-item';
 
 declare const ga: Function;
 
@@ -75,6 +76,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private data: LocalizedDataService, public settings: SettingsService) {
         super();
         this.initFilters();
+    }
+
+    public trackByItem(index:number, item:ListRow):any{
+        return trackByItem(index, item);
     }
 
     public getUser(): Observable<User> {
@@ -133,7 +138,13 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
         this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.list = this.listService.get(this.listUid);
+            this.list = this.listService.get(this.listUid).do(l => {
+                let count = 0;
+                l.forEachItem(() => {
+                    count++;
+                });
+                count += l.recipes.length;
+            });
             Observable.combineLatest(
                 this.filterTrigger,
                 this.list,
@@ -204,7 +215,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     update(list: List): Promise<void> {
         if (!this.blockUpdates) {
-            return this.listService.update(list.$key, list);
+            return this.listService.update(this.listUid, list);
         }
         return Promise.resolve();
     }

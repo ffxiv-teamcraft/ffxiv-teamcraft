@@ -178,7 +178,7 @@
                 <mat-list dense>
                     <div *ngFor="let row of zoneBreakdown?.rows; let i = index">
                         <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
-                        <div *ngFor="let item of row.items">
+                        <div *ngFor="let item of row.items; trackBy: trackByItem">
                             <app-item [list]="list | async" (update)="update()" (done)="setDone($event)" *ngIf="!item.hidden"
                                       [item]="item" [showTimer]="true"
                             [even]="i%2!=0"></app-item>
@@ -206,4 +206,5 @@
 
     </div>
     <h4 class="not-found" *ngIf="(list | async) === null && notFound">{{"List_not_found" | translate}}</h4>
+    <div class="loader" *ngIf="(list | async) === null && !notFound"><mat-spinner></mat-spinner></div>
 </div>

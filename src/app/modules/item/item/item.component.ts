@@ -107,6 +107,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     @Input()
     even = false;
 
+    @Input()
     user: AppUser;
 
     slot: number;
@@ -117,7 +118,6 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
                 private dialog: MatDialog,
                 private media: ObservableMedia,
                 private localizedData: LocalizedDataService,
-                private userService: UserService,
                 private snackBar: MatSnackBar,
                 private translator: TranslateService,
                 private alarmService: AlarmService,
@@ -142,22 +142,22 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     }
 
     ngOnInit(): void {
-        this.subscriptions.push(this.userService.getUserData().subscribe(user => {
-            this.user = user;
-        }));
-
-        this.subscriptions.push(Observable.combineLatest(this.alarmService.isSpawned(this.item), this.alarmService.isAlerted(this.item.id))
-            .subscribe((result) => {
-                const spawned = result[0];
-                const alerted = result[1];
-                if (spawned) {
-                    this.timerColor = 'primary';
-                } else if (alerted) {
-                    this.timerColor = 'accent';
-                } else {
-                    this.timerColor = '';
-                }
-            }));
+        if (this.hasTimers()) {
+            this.subscriptions.push(Observable.combineLatest(this.alarmService.isSpawned(this.item),
+                this.alarmService.isAlerted(this.item.id))
+                .subscribe((result) => {
+                    const spawned = result[0];
+                    const alerted = result[1];
+                    if (spawned) {
+                        this.timerColor = 'primary';
+                    } else if (alerted) {
+                        this.timerColor = 'accent';
+                    } else {
+                        this.timerColor = '';
+                    }
+                })
+            );
+        }
     }
 
     toggleAlarm(): void {

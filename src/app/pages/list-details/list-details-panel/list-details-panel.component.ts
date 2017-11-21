@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnIn
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {SettingsService} from '../../settings/settings.service';
+import {trackByItem} from '../../../core/tools/track-by-item';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -37,6 +38,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     tierBreakdownToggle = false;
 
     constructor(public settings: SettingsService) {
+    }
+
+    public trackByItem(index: number, item: ListRow): any {
+        return trackByItem(index, item);
     }
 
     /**
