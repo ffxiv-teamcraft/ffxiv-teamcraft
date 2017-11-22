@@ -44,15 +44,15 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
                         row.$key = snap[index].payload.doc.id;
                         if (this.cache[row.$key] === undefined) {
                             this.cache[row.$key] = new BehaviorSubject<T>(null);
-                            detailedDataResult.push(this.fetchSubCollections(uri, row));
                         }
+                        detailedDataResult.push(this.fetchSubCollections(uri, row));
                     });
                     return Observable.combineLatest(detailedDataResult);
                 }).do(results => {
-                results.forEach(result => {
-                    this.cache[result.$key].next(result);
+                    results.forEach(result => {
+                        this.cache[result.$key].next(result);
+                    });
                 });
-            });
         })
     }
 
@@ -128,6 +128,7 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
             const previousValue = this.cache[uid].getValue();
             // If the value is the same as the value cached, don't update it
             if (previousValue === value) {
+                console.log(previousValue, value);
                 return Observable.of(null);
             }
             this.cache[uid].next(value);
@@ -143,14 +144,17 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
                                 return;
                             }
                             if (newRow === undefined) {
+                                console.log('DELETE', previousRow.$key);
                                 operations.push(Observable.fromPromise(subCollectionRef.doc(previousRow.$key).delete()));
                                 return;
                             }
                             if (newRow !== previousRow) {
+                                console.log('UPDATE', previousRow.$key);
                                 operations.push(Observable.fromPromise(subCollectionRef.doc(previousRow.$key).update(newRow)));
                                 return;
                             }
                             if (previousRow === undefined) {
+                                console.log('ADD', previousRow.$key);
                                 operations.push(Observable.fromPromise(subCollectionRef.add(newRow)));
                             }
                         });
