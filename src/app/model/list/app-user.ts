@@ -1,4 +1,4 @@
-import {DataModel} from './data-model';
+import {DataModel} from '../../core/database/storage/data-model';
 
 export class AppUser extends DataModel {
     name?: string;

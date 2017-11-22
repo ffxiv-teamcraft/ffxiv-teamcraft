@@ -1,4 +1,4 @@
-import {DataModel} from '../../model/list/data-model';
+import {DataModel} from '../../core/database/storage/data-model';
 
 export class ResourceComment extends DataModel {
     authorId = -1;

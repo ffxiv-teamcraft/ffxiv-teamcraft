@@ -1,11 +1,12 @@
 import {ListRow} from './list-row';
-import {DataModel} from './data-model';
+import {DataModel} from '../../core/database/storage/data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
 import {SubCollection} from '../../core/database/storage/firestore/decorator/subcollection';
+import {DataState} from '../../core/database/storage/data-state.enum';
 
 declare const ga: Function;
 
@@ -132,15 +133,17 @@ export class List extends DataModel {
                 this.setDone(row, row.amount_needed - previousDone);
             }
         }
-
+        row.state = DataState.MODIFIED;
         return added;
     }
 
     public clean(): List {
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
-                this[prop] = this[prop].filter(row => {
-                    return row.amount > 0;
+                this[prop].forEach(row => {
+                    if (row.amount <= 0) {
+                        row.state = DataState.DELETED;
+                    }
                 });
             }
         }
@@ -197,6 +200,7 @@ export class List extends DataModel {
                 }
             }
         }
+        item.state = DataState.MODIFIED;
     }
 
     /**

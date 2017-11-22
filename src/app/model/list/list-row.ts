@@ -8,7 +8,7 @@ import {Vendor} from './vendor';
 import {Ingredient} from '../garland-tools/ingredient';
 import {ResourceComment} from '../../modules/comments/resource-comment';
 import {DeserializeAs} from '@kaiu/serializer';
-import {DataModel} from './data-model';
+import {DataModel} from '../../core/database/storage/data-model';
 
 export class ListRow extends DataModel {
     addedAt?: number;

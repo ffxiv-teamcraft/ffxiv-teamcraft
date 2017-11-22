@@ -205,6 +205,6 @@
                                 [title]="'Items'| translate"></app-list-details-panel>
 
     </div>
-    <h4 class="not-found" *ngIf="(list | async) === null && notFound">{{"List_not_found" | translate}}</h4>
+    <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
     <div class="loader" *ngIf="(list | async) === null && !notFound"><mat-spinner></mat-spinner></div>
 </div>

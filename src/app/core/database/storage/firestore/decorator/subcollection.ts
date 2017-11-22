@@ -1,5 +1,5 @@
 import {Class} from '@kaiu/serializer';
-import {DataModel} from '../../../../../model/list/data-model';
+import {DataModel} from '../../data-model';
 
 export const METADATA_SUBCOLLECTION = 'teamcraft:subcollection';
 

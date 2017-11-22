@@ -1,27 +1,37 @@
 import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {DataModel} from '../../../../model/list/data-model';
+import {DataModel} from '../data-model';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/first';
 import {DataStore} from 'app/core/database/storage/data-store';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {METADATA_SUBCOLLECTION} from './decorator/subcollection';
 import {Class} from '@kaiu/serializer';
 import {DocumentChangeAction, QueryFn} from 'angularfire2/firestore/interfaces';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {DataState} from '../data-state.enum';
 
 export abstract class FirestoreStorage<T extends DataModel> implements DataStore<T> {
 
-    protected cache: { [id: string]: BehaviorSubject<T> } = {};
+    protected cache: { [id: string]: ReplaySubject<T> } = {};
 
     private static generateObject(data: any): object {
-        const clone = JSON.parse(JSON.stringify(data));
+        const clone: DataModel = JSON.parse(JSON.stringify(data));
         // If any of the field inside our item is a subcollection, remove it from the clone.
         Object.keys(data).forEach(key => {
             if (Reflect.hasMetadata(METADATA_SUBCOLLECTION, data, key)) {
                 delete clone[key];
             }
         });
+        if (clone instanceof Array) {
+            clone.forEach(row => {
+                delete row.$key;
+                delete row.state;
+            });
+        } else {
+            delete clone.$key;
+            delete clone.state;
+        }
         return clone;
     }
 
@@ -38,19 +48,14 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
                 .snapshotChanges()
                 .switchMap((snap: DocumentChangeAction[]) => {
                     const detailedDataResult: Observable<T>[] = [];
-                    const obj = snap.map(snapRow => snapRow.payload.doc.data());
-                    const res: T[] = this.serializer.deserialize<T>(obj, [this.getClass()]);
-                    res.forEach((row, index) => {
-                        row.$key = snap[index].payload.doc.id;
-                        if (this.cache[row.$key] === undefined) {
-                            this.cache[row.$key] = new BehaviorSubject<T>(null);
-                        }
-                        detailedDataResult.push(this.fetchSubCollections(uri, row));
-                    });
-                    return Observable.combineLatest(detailedDataResult);
-                }).do(results => {
-                    results.forEach(result => {
-                        this.cache[result.$key].next(result);
+                    // Get only the ids.
+                    snap.map(row => row.payload.doc.id)
+                        .forEach(uid => {
+                            // Push a new request to the cache using the get method.
+                            detailedDataResult.push(this.get(uid, params));
+                        });
+                    return Observable.combineLatest(detailedDataResult, (...results: T[]) => {
+                        return results.filter(row => row.state !== DataState.DELETED);
                     });
                 });
         })
@@ -65,7 +70,7 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
      */
     public get(uid: string, params?: any): Observable<T> {
         if (this.cache[uid] === undefined) {
-            this.cache[uid] = new BehaviorSubject<T>(null);
+            this.cache[uid] = new ReplaySubject<T>(1);
             this.getBaseUri(params).switchMap(uri => {
                 return this.oneRef(uri, uid)
                     .snapshotChanges()
@@ -82,9 +87,18 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
                     });
             }).subscribe(res => {
                 this.cache[uid].next(res);
-            });
+            }, error => this.cache[uid].error(error));
         }
-        return this.cache[uid].asObservable().filter(data => data !== null);
+        return this.cache[uid].asObservable()
+            .filter(data => data.state !== DataState.DELETED)
+            .switchMap(filteredData => {
+                return this.forEachSubcollection(filteredData, (data, key) => {
+                    data[key] = data[key].filter(row => {
+                        return row.state !== DataState.DELETED;
+                    });
+                    return Observable.of(data);
+                });
+            });
     }
 
     /**
@@ -124,47 +138,41 @@ export abstract class FirestoreStorage<T extends DataModel> implements DataStore
      * @returns {Observable<void>}
      */
     public update(uid: string, value: T, params?: any): Observable<void> {
+        const start = Date.now();
         return this.getBaseUri(params).switchMap(uri => {
-            const previousValue = this.cache[uid].getValue();
-            // If the value is the same as the value cached, don't update it
-            if (previousValue === value) {
-                console.log(previousValue, value);
-                return Observable.of(null);
-            }
             this.cache[uid].next(value);
-            delete value.$key;
-            return Observable.fromPromise(this.oneRef(uri, uid).set(<T>value))
+            return Observable.fromPromise(
+                this.oneRef(uri, uid)
+                    .set(<T>FirestoreStorage.generateObject(value)))
                 .switchMap(() => {
                     return this.forEachSubcollection(value, (data, key) => {
-                        const subCollectionRef = this.collectionRef(`${uri}/${uid}/${key}`);
+                        const subCollectionRef = this.collectionRef<any>(`${uri}/${uid}/${key}`);
                         const operations: Observable<any>[] = [];
-                        previousValue[key].forEach(previousRow => {
-                            const newRow = value[key].filter(row => row.$key === previousRow.$key);
-                            if (newRow === previousRow) {
-                                return;
-                            }
-                            if (newRow === undefined) {
-                                console.log('DELETE', previousRow.$key);
-                                operations.push(Observable.fromPromise(subCollectionRef.doc(previousRow.$key).delete()));
-                                return;
-                            }
-                            if (newRow !== previousRow) {
-                                console.log('UPDATE', previousRow.$key);
-                                operations.push(Observable.fromPromise(subCollectionRef.doc(previousRow.$key).update(newRow)));
-                                return;
-                            }
-                            if (previousRow === undefined) {
-                                console.log('ADD', previousRow.$key);
-                                operations.push(Observable.fromPromise(subCollectionRef.add(newRow)));
+                        value[key].forEach(row => {
+                            if (row.$key === undefined) {
+                                operations.push(
+                                    Observable.fromPromise(subCollectionRef
+                                        .add(FirestoreStorage.generateObject(row))));
+                            } else {
+                                if (row.state === DataState.MODIFIED) {
+                                    operations.push(
+                                        Observable.fromPromise(subCollectionRef.doc(row.$key)
+                                            .update(FirestoreStorage.generateObject(row))));
+                                }
+                                if (row.state === DataState.DELETED) {
+                                    operations.push(
+                                        Observable.fromPromise(subCollectionRef.doc(row.$key)
+                                            .delete()));
+                                }
                             }
                         });
                         if (operations.length === 0) {
                             return Observable.of(null);
                         }
                         return Observable.combineLatest(...operations);
-                    });
+                    }).map(() => null);
                 });
-        });
+        }).do(() => console.log('UPDATE', Date.now() - start));
     }
 
     /**
