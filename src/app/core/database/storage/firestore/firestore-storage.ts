@@ -11,6 +11,9 @@ import {DocumentChangeAction, QueryFn} from 'angularfire2/firestore/interfaces';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {DataState} from '../data-state.enum';
 
+/**
+ * @deprecated Not finished, don't use for production
+ */
 export abstract class FirestoreStorage<T extends DataModel> implements DataStore<T> {
 
     protected cache: { [id: string]: ReplaySubject<T> } = {};

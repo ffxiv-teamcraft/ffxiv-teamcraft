@@ -116,9 +116,11 @@ export class List extends DataModel {
     private add(array: ListRow[], data: ListRow, recipe = false): number {
         let previousAmount = 0;
         let row = array.find(r => {
+            console.log(r.id, data.id);
             return r.id === data.id;
         });
         if (row === undefined) {
+            console.log('row undefined', data.id, array);
             array.push(data);
             row = array[array.length - 1];
         } else {
@@ -239,7 +241,6 @@ export class List extends DataModel {
             for (const element of addition.item.craft[0].ingredients) {
                 // If this is a crystal
                 if (element.id < 20 && element.id > 1) {
-
                     const crystal = gt.getCrystalDetails(element.id);
                     this.addToCrystals({
                         id: element.id,
