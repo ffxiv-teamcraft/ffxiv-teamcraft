@@ -9,6 +9,16 @@
     min-width: 120px;
 }
 
+.description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    overflow: hidden;
+    &.mobile {
+        max-width: 100px;
+    }
+}
+
 .mat-expansion-panel {
     background: inherit;
     color: inherit;

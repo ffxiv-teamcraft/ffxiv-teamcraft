@@ -30,6 +30,7 @@ import {LoginPopupComponent} from './login-popup/login-popup.component';
 import {NameEditPopupComponent} from './name-edit-popup/name-edit-popup.component';
 import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
 import {RegisterPopupComponent} from './register-popup/register-popup.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -38,6 +39,8 @@ import {RegisterPopupComponent} from './register-popup/register-popup.component'
         FormsModule,
         ReactiveFormsModule,
         TranslateModule,
+
+        FlexLayoutModule,
 
         MatInputModule,
         MatTooltipModule,

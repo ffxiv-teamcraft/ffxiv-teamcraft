@@ -3,7 +3,11 @@
         <mat-panel-title>
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </mat-panel-title>
-        <div class="spacer"></div>
+        <mat-panel-description>
+            <p class="description" fxShow fxHide.lt-sm>I'm the description
+                aaaaaaaaaaaadzokdnazofbazipfbapzifbazpifbazpfivazpifazvipfaizufvpiagudddddddddddddddddddddddddddd
+            </p>
+        </mat-panel-description>
         <div class="buttons">
             <button mat-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"
                     matTooltip="{{'Share' | translate}}" matTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
