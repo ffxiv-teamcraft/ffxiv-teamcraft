@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -21,11 +21,12 @@ import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-p
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
 import {User, UserInfo} from 'firebase';
-import 'rxjs/add/observable/combineLatest';
-import 'rxjs/add/operator/do';
 import {SettingsService} from '../../settings/settings.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {trackByItem} from '../../../core/tools/track-by-item';
+import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/first';
 
 declare const ga: Function;
 
@@ -70,7 +71,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
-                private eorzeanTimeService: EorzeanTimeService,
+                private eorzeanTimeService: EorzeanTimeService, private cd: ChangeDetectorRef,
                 private data: LocalizedDataService, public settings: SettingsService) {
         super();
         this.initFilters();
@@ -136,13 +137,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
         this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.list = this.listService.get(this.listUid).do(l => {
-                let count = 0;
-                l.forEachItem(() => {
-                    count++;
-                });
-                count += l.recipes.length;
-            });
+            this.list = this.listService.get(this.listUid).debounceTime(50).do(() => console.log('list update !'));
             Observable.combineLatest(
                 this.filterTrigger,
                 this.list,
@@ -212,7 +207,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
-        this.listService.update(this.listUid, list).first().subscribe(() => {});
+        this.listService.update(this.listUid, list).first().subscribe(() => {
+            // Ignored.
+        });
     }
 
     toggleFavorite(): void {
@@ -245,9 +242,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public forkList(): void {
-        this.subscriptions.push(this.list.first().subscribe(l => {
+        this.subscriptions.push(this.list.first().subscribe((l: List) => {
             // Little trick to clone an object using JS.
-            const fork = l.clone();
+            const fork: List = l.clone();
             this.listService.add(fork).first().subscribe((id) => {
                 this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                     this.translate.instant('Open')).onAction()

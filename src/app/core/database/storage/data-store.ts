@@ -1,12 +1,16 @@
 import {Observable} from 'rxjs/Observable';
 
-export interface DataStore<T> {
+export abstract class DataStore<T> {
 
-    add(data: T): Observable<string>;
+    protected abstract getBaseUri(): string;
 
-    get(uid: string): Observable<T>;
+    protected abstract getClass(): any;
 
-    update(uid: string, data: T): Observable<void>;
+    public abstract add(data: T): Observable<string>;
 
-    remove(uid: string): Observable<void>;
+    public abstract get(uid: string): Observable<T>;
+
+    public abstract update(uid: string, data: T): Observable<void>;
+
+    public abstract remove(uid: string): Observable<void>;
 }

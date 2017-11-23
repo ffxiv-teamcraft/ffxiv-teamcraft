@@ -5,29 +5,18 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
-import {SubCollection} from '../../core/database/storage/firestore/decorator/subcollection';
-import {DataState} from '../../core/database/storage/data-state.enum';
 
 declare const ga: Function;
 
 export class List extends DataModel {
     name: string;
-
-    @SubCollection(ListRow)
     recipes: ListRow[] = [];
-
-    @SubCollection(ListRow)
     preCrafts: ListRow[] = [];
-
-    @SubCollection(ListRow)
     gathers: ListRow[] = [];
-
-    @SubCollection(ListRow)
     others: ListRow[] = [];
-
-    @SubCollection(ListRow)
     crystals: ListRow[] = [];
 
+    // noinspection JSUnusedGlobalSymbols
     createdAt: string = new Date().toISOString();
 
     version: string;
@@ -116,11 +105,9 @@ export class List extends DataModel {
     private add(array: ListRow[], data: ListRow, recipe = false): number {
         let previousAmount = 0;
         let row = array.find(r => {
-            console.log(r.id, data.id);
             return r.id === data.id;
         });
         if (row === undefined) {
-            console.log('row undefined', data.id, array);
             array.push(data);
             row = array[array.length - 1];
         } else {
@@ -135,21 +122,24 @@ export class List extends DataModel {
                 this.setDone(row, row.amount_needed - previousDone);
             }
         }
-        row.state = DataState.MODIFIED;
         return added;
     }
 
     public clean(): List {
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
-                this[prop].forEach(row => {
-                    if (row.amount <= 0) {
-                        row.state = DataState.DELETED;
-                    }
-                });
+                this[prop] = this[prop].filter(row => row.amount > 0);
             }
         }
         return this;
+    }
+
+    public isLarge(): boolean {
+        let items = 0;
+        this.forEach(() => {
+            items++;
+        });
+        return items > 100;
     }
 
     public isEmpty(): boolean {
@@ -202,7 +192,6 @@ export class List extends DataModel {
                 }
             }
         }
-        item.state = DataState.MODIFIED;
     }
 
     /**

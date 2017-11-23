@@ -1,7 +1,7 @@
 <!--Layout for desktop browsers-->
 <mat-list-item *ngIf="!isMobile" [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
     <div class="item-col-left">
-        <app-tooltip [id]="item.id" [disabled]="isDraft()">
+        <app-tooltip [id]="item.id" [disabled]="isDraft()" (change)="cd.markForCheck()">
             <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}">
                 <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
                     <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
@@ -161,6 +161,7 @@
     </div>
 </mat-list-item>
 
+<!--Layout for mobile browsers-->
 <mat-list-item *ngIf="isMobile" [ngClass]="{'even':even, 'auto-height':true, 'mobile':true}">
     <div matListAvatar class="icon">
         <a matListAvatar href="{{item.id | itemLink | i18n}}" target="_blank">

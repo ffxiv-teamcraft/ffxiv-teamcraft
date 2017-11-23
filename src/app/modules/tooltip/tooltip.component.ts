@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {TooltipDataService} from './tooltip-data.service';
 
 @Component({
@@ -15,6 +15,9 @@ export class TooltipComponent {
 
     @Input()
     disabled = false;
+
+    @Output()
+    change: EventEmitter<void> = new EventEmitter<void>();
 
     displayed = false;
 
@@ -34,7 +37,9 @@ export class TooltipComponent {
     }
 
     loadData(): void {
-        this.tooltipData.getTooltipData(this.id).subscribe(data => this.template = data);
+        this.tooltipData.getTooltipData(this.id)
+            .do(() => this.change.emit())
+            .subscribe(data => this.template = data);
     }
 
 }

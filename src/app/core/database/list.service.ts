@@ -1,16 +1,15 @@
 import {List} from '../../model/list/list';
-import {Inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {Observable} from 'rxjs/Observable';
-import {LIST_STORE, ListStore} from './storage/list/list-store';
+import {ListStore} from './storage/list/list-store';
 
 @Injectable()
 export class ListService {
 
-    constructor(@Inject(LIST_STORE) protected store: ListStore,
+    constructor(protected store: ListStore,
                 protected serializer: NgSerializerService) {
     }
-
 
     /**
      * Gets a list by its uid.
@@ -63,7 +62,7 @@ export class ListService {
      * @param {string} uid
      * @returns {Promise<void>}
      */
-    public deleteUserLists(uid: string): Observable<void[]> {
+    public deleteUserLists(uid: string): Observable<void | void[]> {
         return this.store.deleteByAuthor(uid);
     }
 

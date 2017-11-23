@@ -1,4 +1,7 @@
-import {ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {
+    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output,
+    ViewChild
+} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
@@ -24,14 +27,13 @@ import {Observable} from 'rxjs/Observable';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
-import {UserService} from '../../../core/database/user.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
     selector: 'app-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent extends ComponentWithSubscriptions implements OnInit {
 
@@ -121,7 +123,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
                 private snackBar: MatSnackBar,
                 private translator: TranslateService,
                 private alarmService: AlarmService,
-                public settings: SettingsService) {
+                public settings: SettingsService,
+                public cd: ChangeDetectorRef) {
         super();
     }
 

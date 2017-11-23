@@ -1,13 +1,10 @@
 import {DataStore} from '../data-store';
 import {List} from '../../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
-import {InjectionToken} from '@angular/core';
 
-export const LIST_STORE = new InjectionToken('list store');
+export abstract class ListStore extends DataStore<List> {
 
-export interface ListStore extends DataStore<List> {
+    public abstract byAuthor(uid: string): Observable<List[]>;
 
-    byAuthor(uid: string): Observable<List[]>;
-
-    deleteByAuthor(uid: string): Observable<void[]>;
+    public abstract deleteByAuthor(uid: string): Observable<void | void[]>;
 }

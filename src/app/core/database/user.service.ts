@@ -4,20 +4,20 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {AppUser} from '../../model/list/app-user';
 import {Observable} from 'rxjs/Observable';
 import {DataService} from '../api/data.service';
-import {AngularFirestore} from 'angularfire2/firestore';
 import {ListService} from './list.service';
-import {FirestoreStorage} from './storage/firestore/firestore-storage';
 import {NgSerializerService} from '@kaiu/ng-serializer';
+import {FirebaseStorage} from './storage/firebase/firebase-storage';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Injectable()
-export class UserService extends FirestoreStorage<AppUser> {
+export class UserService extends FirebaseStorage<AppUser> {
 
     public loggingIn = false;
 
     private reloader: BehaviorSubject<void> = new BehaviorSubject(null);
 
     constructor(private af: AngularFireAuth,
-                protected database: AngularFirestore,
+                protected database: AngularFireDatabase,
                 private dataService: DataService,
                 private listService: ListService,
                 protected serializer: NgSerializerService) {
@@ -88,8 +88,8 @@ export class UserService extends FirestoreStorage<AppUser> {
         });
     }
 
-    protected getBaseUri(params?: any): Observable<string> {
-        return Observable.of('users');
+    protected getBaseUri(params?: any): string {
+        return 'users';
     }
 
     protected getClass(): any {
