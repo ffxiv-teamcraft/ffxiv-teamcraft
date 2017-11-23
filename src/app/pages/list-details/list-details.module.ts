@@ -25,6 +25,7 @@ import {SettingsModule} from '../settings/settings.module';
 import {ItemModule} from '../../modules/item/item.module';
 import {RegenerationPopupComponent} from './regeneration-popup/regeneration-popup.component';
 import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-popup.component';
+import { ListNoteComponent } from './list-note/list-note.component';
 
 const routes: Routes = [
     {
@@ -69,6 +70,7 @@ const routes: Routes = [
         ListDetailsPanelComponent,
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
+        ListNoteComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,

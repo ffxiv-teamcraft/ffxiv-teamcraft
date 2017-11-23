@@ -1,0 +1,18 @@
+<div class="note-container" [ngSwitch]="editNote">
+    <div *ngSwitchCase="false" class="note">
+        <p *ngIf="list.note !== ''">{{list.note}}</p>
+        <p *ngIf="list.note === ''">{{"LIST_DETAILS.No_note" | translate}}</p>
+        <button mat-raised-button *ngIf="!readonly" (click)="editNote = true">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+    <div *ngSwitchCase="true" class="edit-note">
+        <mat-input-container class="edit-note-input">
+            <textarea #input matInput [(ngModel)]="list.note"
+                      placeholder="{{'LIST_DETAILS.Note_placeholder' | translate}}"></textarea>
+            <mat-hint align="end">{{input.value?.length || 0}}/1000</mat-hint>
+        </mat-input-container>
+        <button mat-raised-button (click)="save()" [disabled]="input.value?.length > 1000">{{"Save" | translate}}
+        </button>
+    </div>
+</div>

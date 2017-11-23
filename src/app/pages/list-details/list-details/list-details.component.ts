@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -71,8 +71,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
-                private eorzeanTimeService: EorzeanTimeService, private cd: ChangeDetectorRef,
-                private data: LocalizedDataService, public settings: SettingsService) {
+                private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
+                public settings: SettingsService) {
         super();
         this.initFilters();
     }

@@ -4,9 +4,7 @@
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </mat-panel-title>
         <mat-panel-description>
-            <p class="description" fxShow fxHide.lt-sm>I'm the description
-                aaaaaaaaaaaadzokdnazofbazipfbapzifbazpifbazpfivazpifazvipfaizufvpiagudddddddddddddddddddddddddddd
-            </p>
+            <p class="description" fxShow fxHide.lt-sm>{{list.note}}</p>
         </mat-panel-description>
         <div class="buttons">
             <button mat-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"

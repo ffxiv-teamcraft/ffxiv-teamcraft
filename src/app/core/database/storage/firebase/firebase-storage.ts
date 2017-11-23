@@ -32,8 +32,11 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
     }
 
     update(uid: string, data: T): Observable<void> {
-        delete data.$key;
-        return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).update(data));
+        // Clone data.
+        const dataCopy = Object.assign({}, data);
+        // Delete the key because we don't want to persist it.
+        delete dataCopy.$key;
+        return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).set(dataCopy));
     }
 
     remove(uid: string): Observable<void> {

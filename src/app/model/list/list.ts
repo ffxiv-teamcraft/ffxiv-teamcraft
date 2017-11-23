@@ -16,7 +16,7 @@ export class List extends DataModel {
     others: ListRow[] = [];
     crystals: ListRow[] = [];
 
-    note: string;
+    note = '';
 
     // noinspection JSUnusedGlobalSymbols
     createdAt: string = new Date().toISOString();

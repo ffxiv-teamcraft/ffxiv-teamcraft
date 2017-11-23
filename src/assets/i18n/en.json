@@ -176,7 +176,9 @@
         "Patreon_supporter": "Patreon Supporter"
     },
     "LIST_DETAILS": {
-        "No_book": "Missing book"
+        "No_book": "Missing book",
+        "No_note": "No note",
+        "Note_placeholder": "Note"
     },
     "adapt_to_character": "Adapt to Character",
     "reset_filters": "Reset Filters"

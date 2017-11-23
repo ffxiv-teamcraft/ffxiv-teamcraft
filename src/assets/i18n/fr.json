@@ -168,7 +168,9 @@
         "Patreon_supporter": "Supporter Patreon"
     },
     "LIST_DETAILS": {
-        "No_book": "Livre manquant"
+        "No_book": "Livre manquant",
+        "No_note": "Aucune note",
+        "Note_placeholder": "Note"
     },
     "adapt_to_character": "Adapter au personnage",
     "reset_filters": "Remettre les filtres à zero"
