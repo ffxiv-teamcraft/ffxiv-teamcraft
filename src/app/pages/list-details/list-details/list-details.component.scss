@@ -13,6 +13,14 @@
     }
 }
 
+.loader-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
 .listError {
     font-size: 30px;
     text-align: center;

@@ -132,7 +132,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel" expanded="true">
+        <mat-expansion-panel class="panel" [expanded]="!(list | async)?.isLarge()">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
             </mat-expansion-panel-header>
@@ -149,7 +149,7 @@
         <section *ngIf="!zoneBreakdownToggle">
 
             <!--We need a specific one for gatherings because it will have some specific features-->
-            <mat-expansion-panel expanded="true">
+            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()">
                 <mat-expansion-panel-header>
                     <mat-panel-title>{{'Gathering'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
@@ -162,8 +162,8 @@
                 </mat-list>
             </mat-expansion-panel>
 
-
-            <app-list-details-panel [list]="list | async"
+            <app-list-details-panel [expanded]="!((list | async)?.isLarge())"
+                                    [list]="list | async"
                                     (update)="update()"
                                     (done)="setDone($event)"
                                     [data]="(list | async)?.others"
@@ -171,7 +171,7 @@
         </section>
 
         <section *ngIf="zoneBreakdownToggle">
-            <mat-expansion-panel expanded="true">
+            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()">
                 <mat-expansion-panel-header>
                     <mat-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
@@ -189,7 +189,8 @@
             </mat-expansion-panel>
         </section>
 
-        <app-list-details-panel *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
+        <app-list-details-panel [expanded]="!((list | async)?.isLarge())"
+                                *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
                                 [showTier]="true"
                                 (update)="update()"
                                 (done)="setDone($event)"
@@ -197,7 +198,8 @@
                                 [title]="'Pre_crafts'| translate"
                                 [recipe]="true"></app-list-details-panel>
 
-        <app-list-details-panel [list]="list | async"
+        <app-list-details-panel
+                                [list]="list | async"
                                 (update)="update()"
                                 (done)="setDone($event)"
                                 [data]="(list | async)?.recipes"
@@ -206,5 +208,7 @@
 
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
-    <div class="loader" *ngIf="(list | async) === null && !notFound"><mat-spinner></mat-spinner></div>
+    <div class="loader-container" *ngIf="(list | async) === null && !notFound">
+        <mat-spinner></mat-spinner>
+    </div>
 </div>

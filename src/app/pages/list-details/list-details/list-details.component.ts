@@ -5,7 +5,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
@@ -27,6 +26,7 @@ import {trackByItem} from '../../../core/tools/track-by-item';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 declare const ga: Function;
 
@@ -60,7 +60,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
-    private filterTrigger = new Subject<void>();
+    private filterTrigger = new BehaviorSubject<void>(null);
 
     zoneBreakdown: ZoneBreakdown;
 
@@ -123,7 +123,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public triggerFilter(): void {
-        this.filterTrigger.next();
+        this.filterTrigger.next(null);
     }
 
     public checkAll(checked: boolean): void {
@@ -137,10 +137,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
         this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.list = this.listService.get(this.listUid).debounceTime(50).do(() => console.log('list update !'));
-            Observable.combineLatest(
+            this.list = Observable.combineLatest(
                 this.filterTrigger,
-                this.list,
+                this.listService.get(this.listUid),
                 (ignored, list) => {
                     this.authorUid = list.authorId;
                     list.forEachItem(item => {
@@ -164,6 +163,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     });
                     return list;
                 })
+                .catch(() => {
+                    this.notFound = true;
+                    return Observable.of(null);
+                })
                 .distinctUntilChanged()
                 .do(l => {
                     if (l.name !== undefined) {
@@ -171,11 +174,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     } else {
                         this.title.setTitle(this.translate.instant('List_not_found'));
                     }
-                }).subscribe(l => {
-                this.zoneBreakdown = new ZoneBreakdown(l);
-            }, err => this.notFound = true);
+                    this.zoneBreakdown = new ZoneBreakdown(l);
+                });
         }));
-        this.triggerFilter();
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
         }));

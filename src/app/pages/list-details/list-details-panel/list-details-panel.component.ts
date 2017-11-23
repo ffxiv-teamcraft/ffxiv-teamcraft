@@ -33,6 +33,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     @Output()
     update: EventEmitter<void> = new EventEmitter<void>();
 
+    @Input()
+    expanded = true;
+
     tiers: ListRow[][] = [[]];
 
     tierBreakdownToggle = false;
