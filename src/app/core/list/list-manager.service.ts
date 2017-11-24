@@ -120,6 +120,7 @@ export class ListManagerService {
                         listRow.comments = row.item.comments;
                     }
                     listRow.done = row.item.done;
+                    listRow.used = row.item.used;
                     if (row.array === 'recipes') {
                         if (listRow.done > listRow.amount) {
                             listRow.done = listRow.amount;
