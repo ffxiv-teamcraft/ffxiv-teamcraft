@@ -152,27 +152,19 @@ export class List extends DataModel {
             this.crystals.length === 0;
     }
 
-    public getItemById(id: number, addedAt?: number): ListRow {
-        for (const prop of Object.keys(this)) {
-            if (prop !== 'name') {
-                for (const row of this[prop]) {
-                    if (row.id === id) {
-                        if (addedAt !== undefined) {
-                            if (addedAt === row.addedAt) {
-                                return row;
-                            }
-                        } else {
-                            return row;
-                        }
-                    }
+    public getItemById(id: number, excludeRecipes: boolean = false): ListRow {
+        for (const array of Object.keys(this).filter(key => excludeRecipes ? key !== 'recipes' : true)) {
+            for (const row of this[array]) {
+                if (row.id === id) {
+                    return row;
                 }
             }
         }
         return undefined;
     }
 
-    public setDone(pitem: ListRow, amount: number): void {
-        const item = this.getItemById(pitem.id, pitem.addedAt);
+    public setDone(pitem: ListRow, amount: number, excludeRecipes = false): void {
+        const item = this.getItemById(pitem.id, excludeRecipes);
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
@@ -183,14 +175,14 @@ export class List extends DataModel {
         amount = MathTools.absoluteCeil(amount / pitem.yield);
         if (item.requires !== undefined) {
             for (const requirement of item.requires) {
-                const requirementItem = this.getItemById(requirement.id);
+                const requirementItem = this.getItemById(requirement.id, excludeRecipes);
                 if (requirementItem !== undefined) {
                     let nextAmount = requirement.amount * amount;
                     // If this is not a precraft, we have to take yields in consideration.
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    this.setDone(requirementItem, nextAmount);
+                    this.setDone(requirementItem, nextAmount, true);
                 }
             }
         }

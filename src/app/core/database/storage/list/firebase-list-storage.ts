@@ -16,7 +16,8 @@ export class FirebaseListStorage extends FirebaseStorage<List> implements ListSt
     byAuthor(uid: string): Observable<List[]> {
         return this.listsByAuthorRef(uid)
             .snapshotChanges()
-            .map(snaps => snaps.map(snap => ({$key: snap.payload.key, ...snap.payload.val()})));
+            .map(snaps => snaps.map(snap => ({$key: snap.payload.key, ...snap.payload.val()})))
+            .map(lists => this.serializer.deserialize<List>(lists, [List]));
     }
 
     deleteByAuthor(uid: string): Observable<void> {
