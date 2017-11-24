@@ -42,8 +42,7 @@ export class ListManagerService {
                     yield: craft.yield || 1,
                     recipeId: recipeId,
                     requires: craft.ingredients,
-                    craftedBy: crafted,
-                    addedAt: Date.now()
+                    craftedBy: crafted
                 };
                 // We add the row to recipes.
                 const added = addition.addToRecipes(toAdd);

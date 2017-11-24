@@ -5,7 +5,7 @@ import {DataType} from '../data-type';
 import {Item} from '../../../../model/garland-tools/item';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
-    
+
     protected canExtract(item: Item): boolean {
         return item !== undefined && item.drops !== undefined;
     }

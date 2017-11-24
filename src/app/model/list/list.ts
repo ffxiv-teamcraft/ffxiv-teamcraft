@@ -242,8 +242,7 @@ export class List extends DataModel {
                             amount: element.amount * addition.amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
-                            yield: yields,
-                            addedAt: Date.now()
+                            yield: yields
                         });
                         nextIteration.push({
                             item: elementDetails,

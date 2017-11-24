@@ -10,7 +10,7 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent extends ComponentWithSubscriptions{
+export class ProfileComponent extends ComponentWithSubscriptions {
 
     static craftingJobs = [
         {abbr: 'ALC', name: 'alchemist'},

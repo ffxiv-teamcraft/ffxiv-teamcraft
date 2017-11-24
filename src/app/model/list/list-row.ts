@@ -11,7 +11,6 @@ import {DeserializeAs} from '@kaiu/serializer';
 import {DataModel} from '../../core/database/storage/data-model';
 
 export class ListRow extends DataModel {
-    addedAt?: number;
     icon?: number;
     id: number;
     amount: number;

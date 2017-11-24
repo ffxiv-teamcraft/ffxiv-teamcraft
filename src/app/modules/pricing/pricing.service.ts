@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {ListRow} from '../../model/list/list-row';
 import {Price} from './model/price';
 import {ItemAmount} from './model/item-amount';
-import {Ingredient} from '../../model/garland-tools/ingredient';
 
 @Injectable()
 export class PricingService {

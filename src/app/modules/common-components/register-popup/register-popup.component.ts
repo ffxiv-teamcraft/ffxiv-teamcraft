@@ -27,7 +27,6 @@ export class RegisterPopupComponent {
 
     constructor(private af: AngularFireAuth,
                 public dialogRef: MatDialogRef<RegisterPopupComponent>,
-                public firestore: AngularFirestore,
                 private userService: UserService,
                 private dialog: MatDialog,
                 private translate: TranslateService,

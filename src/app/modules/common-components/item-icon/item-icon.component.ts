@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {I18nName} from '../../../model/list/i18n-name';
 
 @Component({
     selector: 'app-item-icon',

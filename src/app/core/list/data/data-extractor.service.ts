@@ -4,7 +4,6 @@ import {ItemData} from '../../../model/garland-tools/item-data';
 import {DataType} from './data-type';
 import {CraftedBy} from '../../../model/list/crafted-by';
 import {TradeSource} from '../../../model/list/trade-source';
-import {Observable} from 'rxjs/Observable';
 import {Vendor} from '../../../model/list/vendor';
 import {Instance} from '../../../model/list/instance';
 import {GatheredBy} from '../../../model/list/gathered-by';
