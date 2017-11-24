@@ -1,5 +1,12 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
     ViewChild
 } from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
@@ -101,6 +108,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     recipe = false;
 
     @Input()
+    preCraft = false;
+
+    @Input()
     list: List;
 
     @Input()
@@ -161,6 +171,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
                 })
             );
         }
+    }
+
+    canBeCrafted(): boolean {
+        return this.list.canBeCrafted(this.item);
     }
 
     toggleAlarm(): void {
@@ -225,7 +239,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     }
 
     public setDone(row: ListRow, amount: number, done: number) {
-        this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done)});
+        this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done), preCraft: this.preCraft});
     }
 
     public getTimer(): Observable<Timer> {

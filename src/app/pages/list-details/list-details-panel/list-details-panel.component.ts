@@ -25,6 +25,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     recipe = false;
 
     @Input()
+    preCraft = false;
+
+    @Input()
     showTier = false;
 
     @Output()

@@ -235,9 +235,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
     }
 
-    public setDone(data: { row: ListRow, amount: number }): void {
+    public setDone(data: { row: ListRow, amount: number, preCraft: boolean }): void {
         this.subscriptions.push(this.list.first().subscribe(l => {
-            l.setDone(data.row, data.amount);
+            l.setDone(data.row, data.amount, data.preCraft);
             this.update(l);
         }));
     }
@@ -314,7 +314,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             this.dialog.open(ConfirmationPopupComponent).afterClosed()
                 .filter(r => r)
                 .switchMap(() => {
-                    return this.list;
+                    return this.list.first();
                 })
                 .subscribe(list => {
                     for (const recipe of list.recipes) {

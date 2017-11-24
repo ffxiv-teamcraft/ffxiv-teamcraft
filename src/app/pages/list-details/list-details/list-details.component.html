@@ -209,6 +209,7 @@
             *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
             [showTier]="true"
             (update)="update()"
+            [preCraft]="true"
             (done)="setDone($event)"
             [data]="orderPreCrafts((list | async)?.preCrafts)"
             [title]="'Pre_crafts'| translate"

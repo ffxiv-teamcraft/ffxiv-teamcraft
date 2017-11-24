@@ -39,6 +39,7 @@ export class ListManagerService {
                     icon: data.item.icon,
                     amount: amount,
                     done: 0,
+                    used: 0,
                     yield: craft.yield || 1,
                     recipeId: recipeId,
                     requires: craft.ingredients,

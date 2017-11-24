@@ -163,7 +163,18 @@ export class List extends DataModel {
         return undefined;
     }
 
-    public setDone(pitem: ListRow, amount: number, excludeRecipes = false): void {
+    /**
+     * Adds items to a given row and tags them as used if they're "done" from another craft.
+     *
+     * For instance, if you already have Iron ingots, you'll check them into the list, and it'll check the ores needed for the craft,
+     * it will also mark them as used as you aren't supposed to have them in your inventory as you used them for the craft.
+     *
+     * @param {ListRow} pitem
+     * @param {number} amount
+     * @param {boolean} setUsed
+     * @param {boolean} excludeRecipes
+     */
+    public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
         item.done += amount;
         if (item.done > item.amount) {
@@ -171,6 +182,15 @@ export class List extends DataModel {
         }
         if (item.done < 0) {
             item.done = 0;
+        }
+        if (setUsed) {
+            item.used += amount;
+            if (item.used > item.amount) {
+                item.used = item.amount;
+            }
+            if (item.used < 0) {
+                item.used = 0;
+            }
         }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
         if (item.requires !== undefined) {
@@ -182,10 +202,28 @@ export class List extends DataModel {
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    this.setDone(requirementItem, nextAmount, true);
+                    this.setDone(requirementItem, nextAmount, true, true);
                 }
             }
         }
+    }
+
+    canBeCrafted(item: ListRow): boolean {
+        if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+            return false;
+        }
+        let canCraft = true;
+        for (const requirement of item.requires) {
+            // If the requirement is a crystal, don't mind it.
+            if (requirement.id < 20 && requirement.id > 1) {
+                continue;
+            }
+            const requirementItem = this.getItemById(requirement.id, true);
+            // While each requirement has enough items remaining, you can craft the item.
+            // If only one misses, then this will turn false for the rest of the loop
+            canCraft = canCraft && (requirementItem.done - requirementItem.used) >= requirement.amount * item.amount_needed;
+        }
+        return canCraft;
     }
 
     /**
@@ -210,9 +248,10 @@ export class List extends DataModel {
 
     public resetDone(item: ListRow): void {
         item.done = 0;
+        item.used = 0;
         if (item.requires !== undefined) {
             item.requires.forEach(requirement => {
-                const requirementItem = this.getItemById(requirement.id);
+                const requirementItem = this.getItemById(requirement.id, true);
                 this.resetDone(requirementItem);
             });
         }
@@ -230,6 +269,7 @@ export class List extends DataModel {
                         icon: crystal.icon,
                         amount: element.amount * addition.amount,
                         done: 0,
+                        used: 0,
                         yield: 1
                     });
                 } else {
@@ -242,6 +282,7 @@ export class List extends DataModel {
                             amount: element.amount * addition.amount,
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
+                            used: 0,
                             yield: yields
                         });
                         nextIteration.push({
@@ -255,6 +296,7 @@ export class List extends DataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
+                            used: 0,
                             yield: 1
                         });
                     } else {
@@ -263,6 +305,7 @@ export class List extends DataModel {
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
                             done: 0,
+                            used: 0,
                             yield: 1
                         });
                     }

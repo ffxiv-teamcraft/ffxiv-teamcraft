@@ -16,6 +16,7 @@ export class ListRow extends DataModel {
     amount: number;
     amount_needed?: number;
     done: number;
+    used: number;
     requires?: Ingredient[];
     recipeId?: string;
     yield: number;
