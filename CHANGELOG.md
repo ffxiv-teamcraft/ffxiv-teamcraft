@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.4"></a>
+# [3.0.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2017-11-25)
+
+
+### Bug Fixes
+
+* bad uri for garlandtools api ([bc68c3c](https://github.com/Supamiu/ffxiv-teamcraft/commit/bc68c3c))
+* count mixup beween same Pre crafts and final items ([8360918](https://github.com/Supamiu/ffxiv-teamcraft/commit/8360918))
+* missing data in recipes ([20bd1ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/20bd1ed)), closes [#105](https://github.com/Supamiu/ffxiv-teamcraft/issues/105)
+* missing icon for trades on mobile ([65aea76](https://github.com/Supamiu/ffxiv-teamcraft/commit/65aea76))
+
+
+### Features
+
+* item name color set to blue when ready to craft ([317614b](https://github.com/Supamiu/ffxiv-teamcraft/commit/317614b)), closes [#92](https://github.com/Supamiu/ffxiv-teamcraft/issues/92)
+* lists are now ordered by creation date (youngest first) ([e5acd4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/e5acd4b)), closes [#100](https://github.com/Supamiu/ffxiv-teamcraft/issues/100)
+* possibility to add a text note to a list ([ddb4dab](https://github.com/Supamiu/ffxiv-teamcraft/commit/ddb4dab)), closes [#99](https://github.com/Supamiu/ffxiv-teamcraft/issues/99)
+* show how much of an item should be in inventory ([643c4b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/643c4b4)), closes [#89](https://github.com/Supamiu/ffxiv-teamcraft/issues/89)
+
+
+### Performance Improvements
+
+* add trackBy for ngFor performance ([509f17d](https://github.com/Supamiu/ffxiv-teamcraft/commit/509f17d))
+* changeDetection improvements ([1413dc3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1413dc3))
+* large lists are now collapsed by default, except for items panel ([33a62d5](https://github.com/Supamiu/ffxiv-teamcraft/commit/33a62d5))
+* remove intermediate variable ([9fdb474](https://github.com/Supamiu/ffxiv-teamcraft/commit/9fdb474))
+* unsubscribe once component is destroyed ([121fdfc](https://github.com/Supamiu/ffxiv-teamcraft/commit/121fdfc))
+
+
+
 <a name="3.0.0-beta.3"></a>
 # [3.0.0-beta.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2017-11-18)
 
