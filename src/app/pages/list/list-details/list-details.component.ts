@@ -335,7 +335,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public rename(): void {
         this.subscriptions.push(
-            this.list.switchMap(list => {
+            this.list.first().switchMap(list => {
                 const dialog = this.dialog.open(NameEditPopupComponent, {data: list.name});
                 return dialog.afterClosed().map(value => {
                     if (value !== undefined && value.length > 0) {
