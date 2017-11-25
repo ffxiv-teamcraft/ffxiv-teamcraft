@@ -14,6 +14,8 @@ export class FavoritesComponent extends ComponentWithSubscriptions {
 
     favorites: { authorUid: string, list: List }[];
 
+    notFound = false;
+
     constructor(private userService: UserService, private listService: ListService) {
         super();
         this.subscriptions.push(this.userService.getUserData()
@@ -25,13 +27,13 @@ export class FavoritesComponent extends ComponentWithSubscriptions {
                     const listUid = favData[1];
                     lists
                         .push(this.listService.get(listUid)
-                        .map(list => {
-                            list.$key = listUid;
-                            return {authorUid: authorUid, list: list};
-                        }));
+                            .map(list => {
+                                list.$key = listUid;
+                                return {authorUid: authorUid, list: list};
+                            }));
                 });
                 return Observable.combineLatest(lists);
             })
-            .subscribe(favs => this.favorites = favs));
+            .subscribe(favs => this.favorites = favs, err => this.notFound = true));
     }
 }

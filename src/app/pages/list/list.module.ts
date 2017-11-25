@@ -30,6 +30,7 @@ import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-po
 import {ListNoteComponent} from './list-note/list-note.component';
 import {ListInventoryComponent} from './list-inventory/list-inventory.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ListTagsPopupComponent } from './list-tags-popup/list-tags-popup.component';
 
 const routes: Routes = [
     {
@@ -84,10 +85,12 @@ const routes: Routes = [
         TimerOptionsPopupComponent,
         ListNoteComponent,
         ListInventoryComponent,
+        ListTagsPopupComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
+        ListTagsPopupComponent
     ]
 })
 export class ListModule {

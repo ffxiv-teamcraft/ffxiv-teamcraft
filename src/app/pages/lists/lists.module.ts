@@ -5,7 +5,7 @@ import {CoreModule} from '../../core/core.module';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatInputModule, MatSelectModule} from '@angular/material';
 
 const routes: Routes = [
     {
@@ -24,6 +24,8 @@ const routes: Routes = [
 
         MatInputModule,
         MatButtonModule,
+        MatSelectModule,
+        MatIconModule,
 
         CoreModule,
         CommonComponentsModule,

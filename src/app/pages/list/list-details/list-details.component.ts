@@ -27,6 +27,7 @@ import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 
 declare const ga: Function;
 
@@ -346,6 +347,21 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             }).subscribe((list) => {
                 this.update(list);
             })
+        );
+    }
+
+    public openTagsPopup(): void {
+        this.subscriptions.push(
+            this.list.first().switchMap(list => {
+                return this.dialog.open(ListTagsPopupComponent, {data: list}).afterClosed().map(tags => {
+                    list.tags = tags;
+                    return list;
+                });
+            })
+                .filter(list => list.tags !== undefined)
+                .subscribe(list => {
+                    this.update(list);
+                })
         );
     }
 

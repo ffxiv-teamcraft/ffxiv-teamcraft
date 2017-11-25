@@ -6,12 +6,17 @@
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
 
-        <button mat-mini-fab color="accent" class="inventory-toggle" [routerLink]="['/list-inventory', listUid]"
-        matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}"
-        matTooltipPosition="left">
-            <mat-icon>apps</mat-icon>
-        </button>
+        <div class="right-fabs">
+            <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
+                    (click)="openTagsPopup()">
+                <mat-icon>label_outline</mat-icon>
+            </button>
 
+            <button mat-mini-fab color="accent" [routerLink]="['/list-inventory', listUid]"
+                    matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}">
+                <mat-icon>apps</mat-icon>
+            </button>
+        </div>
         <div class="header">
             <h3>{{(list | async)?.name}}</h3>
             <button mat-icon-button *ngIf="isOwnList()" (click)="rename()">

@@ -11,6 +11,19 @@
 </form>
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
+<div class="filter">
+    <mat-form-field>
+        <mat-select (selectionChange)="tagFilter.next($event.value)"
+                    multiple="true" #tagFilterSelect
+                    placeholder="{{'Tag_filter' | translate}}">
+            <mat-option *ngFor="let tag of tags" value="{{tag}}">{{"LIST_TAGS."+tag | translate}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-icon-button (click)="tagFilterSelect.value = []; tagFilter.next([])">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</div>
+
 <div class="row" *ngFor="let list of lists | async">
     <app-list-panel
         [list]="list"
