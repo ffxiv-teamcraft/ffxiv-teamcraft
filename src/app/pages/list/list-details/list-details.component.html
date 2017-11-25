@@ -5,6 +5,13 @@
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
+
+        <button mat-mini-fab color="accent" class="inventory-toggle" [routerLink]="['/list-inventory', listUid]"
+        matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}"
+        matTooltipPosition="left">
+            <mat-icon>apps</mat-icon>
+        </button>
+
         <div class="header">
             <h3>{{(list | async)?.name}}</h3>
             <button mat-icon-button *ngIf="isOwnList()" (click)="rename()">
@@ -23,7 +30,6 @@
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
             </button>
-
             <div class="spacer"></div>
 
             <button mat-mini-fab color="accent" matTooltip="{{'Reset_progression' | translate}}"
