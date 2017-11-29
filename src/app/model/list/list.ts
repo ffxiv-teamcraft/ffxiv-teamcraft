@@ -30,6 +30,8 @@ export class List extends DataModel {
 
     tags: ListTag[] = [];
 
+    public: boolean;
+
     constructor() {
         super();
     }
@@ -37,7 +39,7 @@ export class List extends DataModel {
     public clone(): List {
         const clone = new List();
         for (const prop of Object.keys(this)) {
-            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
+            if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals', 'note'].indexOf(prop) > -1) {
                 clone[prop] = this[prop];
             }
         }

@@ -13,6 +13,14 @@ export class FirebaseListStorage extends FirebaseStorage<List> implements ListSt
         super(firebase, serializer);
     }
 
+    getPublicLists(): Observable<List[]> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('public').equalTo(true))
+            .snapshotChanges()
+            .map(snaps => snaps.map(snap => ({$key: snap.payload.key, ...snap.payload.val()})))
+            .map(lists => this.serializer.deserialize<List>(lists, [List]))
+            .map(lists => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+    }
+
     byAuthor(uid: string): Observable<List[]> {
         return this.listsByAuthorRef(uid)
             .snapshotChanges()

@@ -21,6 +21,14 @@ export class ListService {
     }
 
     /**
+     * Gets all public lists in the database.
+     * @returns {Observable<List[]>}
+     */
+    public getPublicLists(): Observable<List[]> {
+        return this.store.getPublicLists();
+    }
+
+    /**
      * Updates a list in the database.
      * @param {string} uid
      * @param {List} data

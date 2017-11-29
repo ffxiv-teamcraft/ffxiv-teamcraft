@@ -45,6 +45,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
 import {ProfileModule} from './pages/profile/profile.module';
+import {PublicListsModule} from './pages/public-lists/public-lists.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -112,6 +113,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FeaturesModule,
         RecipesModule,
         ListsModule,
+        PublicListsModule,
         ListModule,
         AlarmsModule,
         FavoritesModule,

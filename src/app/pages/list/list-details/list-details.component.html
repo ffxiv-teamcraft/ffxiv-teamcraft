@@ -250,6 +250,12 @@
 
         <mat-divider></mat-divider>
 
+        <mat-checkbox [checked]="(list | async)?.public" (change)="togglePublic()" class="public-list-toggle">
+            {{'Public_list' | translate}}
+        </mat-checkbox>
+
+        <mat-divider></mat-divider>
+
         <app-list-note [list]="list | async" [readonly]="!isOwnList()"></app-list-note>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>

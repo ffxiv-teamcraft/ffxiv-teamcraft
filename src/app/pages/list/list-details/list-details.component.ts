@@ -3,7 +3,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
-import {MatDialog, MatExpansionPanelState, MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/database/user.service';
@@ -86,7 +86,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.initFilters();
     }
 
-    public toggleExpansion(panel: string, event: MatExpansionPanelState): void {
+    togglePublic(): void {
+        this.subscriptions.push(this.list.first().subscribe(list =>{
+            list.public = !list.public;
+            this.update(list);
+        }));
     }
 
     public trackByItem(index: number, item: ListRow): any {

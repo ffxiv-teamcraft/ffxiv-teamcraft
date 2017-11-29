@@ -1,0 +1,5 @@
+<h2>{{'Public_lists' | translate}}</h2>
+<app-list-panel *ngFor="let list of lists | async" [list]="list" [authorUid]="list.authorId" [readonly]="true"
+                [buttons]="false" (opened)="opened(list.$key)" (closed)="closed(list.$key)"
+                [expanded]="expanded.indexOf(list.$key) > -1" [copyButton]="true">
+</app-list-panel>

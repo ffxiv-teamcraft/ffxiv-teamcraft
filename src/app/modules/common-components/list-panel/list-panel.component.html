@@ -7,15 +7,19 @@
             <p class="description" fxShow fxHide.lt-sm>{{list.note}}</p>
         </mat-panel-description>
         <div class="buttons">
-            <button mat-icon-button ngxClipboard [cbContent]="getLink()" (click)="$event.stopPropagation()"
+            <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()">
+                <mat-icon>content_copy</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
+                    (click)="$event.stopPropagation()"
                     matTooltip="{{'Share' | translate}}" matTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
                 <mat-icon>share</mat-icon>
             </button>
             <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
-            <button mat-icon-button routerLink="/list/{{list.$key}}" (click)="$event.stopPropagation()">
+            <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}" (click)="$event.stopPropagation()">
                 <mat-icon>open_in_new</mat-icon>
             </button>
-            <button mat-icon-button *ngIf="!readonly" (click)="ondelete.emit(); $event.stopPropagation()">
+            <button mat-icon-button *ngIf="!readonly && buttons" (click)="ondelete.emit(); $event.stopPropagation()">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
