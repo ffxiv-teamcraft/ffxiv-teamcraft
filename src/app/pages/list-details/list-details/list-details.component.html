@@ -136,7 +136,9 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel" [expanded]="!(list | async)?.isLarge()">
+        <mat-expansion-panel class="panel" [expanded]="!(list | async)?.isLarge()?accordionState['Crystals']:true"
+                             (opened)="accordionState['Crystals'] = true"
+                             (closed)="accordionState['Crystals'] = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
             </mat-expansion-panel-header>
@@ -154,7 +156,9 @@
         <section *ngIf="!zoneBreakdownToggle">
 
             <!--We need a specific one for gatherings because it will have some specific features-->
-            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()">
+            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()?accordionState['Gathering']:true"
+                                 (opened)="accordionState['Gathering'] = true"
+                                 (closed)="accordionState['Gathering'] = false">
                 <mat-expansion-panel-header>
                     <mat-panel-title>{{'Gathering'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
@@ -173,16 +177,21 @@
             </mat-expansion-panel>
 
             <app-list-details-panel
-                [expanded]="!((list | async)?.isLarge())"
+                [expanded]="!((list | async)?.isLarge())?accordionState['Other']:true"
                 [list]="list | async"
                 (update)="update()"
                 (done)="setDone($event)"
                 [data]="(list | async)?.others"
-                [title]="'Other'| translate"></app-list-details-panel>
+                [title]="'Other'| translate"
+                (opened)="accordionState['Other'] = true"
+
+                (closed)="accordionState['Other'] = false"></app-list-details-panel>
         </section>
 
         <section *ngIf="zoneBreakdownToggle">
-            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()">
+            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()?accordionState['Other']:true"
+                                 (opened)="accordionState['Other'] = true"
+                                 (closed)="accordionState['Other'] = false">
                 <mat-expansion-panel-header>
                     <mat-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
@@ -205,7 +214,7 @@
         </section>
 
         <app-list-details-panel
-            [expanded]="!((list | async)?.isLarge())"
+            [expanded]="!((list | async)?.isLarge())?accordionState['Pre_crafts']:true"
             *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
             [showTier]="true"
             (update)="update()"
@@ -213,15 +222,20 @@
             (done)="setDone($event)"
             [data]="orderPreCrafts((list | async)?.preCrafts)"
             [title]="'Pre_crafts'| translate"
-            [recipe]="true"></app-list-details-panel>
+            [recipe]="true"
+            (opened)="accordionState['Pre_crafts'] = true"
+            (closed)="accordionState['Pre_crafts'] = false"></app-list-details-panel>
 
         <app-list-details-panel
+            [expanded]="!((list | async)?.isLarge())?accordionState['Items']:true"
             [list]="list | async"
             (update)="update()"
             (done)="setDone($event)"
             [data]="(list | async)?.recipes"
             [recipe]="true"
-            [title]="'Items'| translate"></app-list-details-panel>
+            [title]="'Items'| translate"
+            (opened)="accordionState['Items'] = true"
+            (closed)="accordionState['Items'] = false"></app-list-details-panel>
 
         <mat-divider></mat-divider>
 

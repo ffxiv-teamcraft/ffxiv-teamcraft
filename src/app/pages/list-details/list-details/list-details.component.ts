@@ -3,7 +3,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
-import {MatDialog, MatSnackBar} from '@angular/material';
+import {MatDialog, MatExpansionPanelState, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/database/user.service';
@@ -66,6 +66,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     notFound = false;
 
+    accordionState: { [index: string]: boolean } = {
+        'Crystals': false,
+        'Gathering': false,
+        'Other': false,
+        'Pre_crafts': false,
+        'Items': true
+    };
+
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 private dialog: MatDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
@@ -75,6 +83,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 public settings: SettingsService) {
         super();
         this.initFilters();
+    }
+
+    public toggleExpansion(panel: string, event: MatExpansionPanelState): void {
     }
 
     public trackByItem(index: number, item: ListRow): any {
