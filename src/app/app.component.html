@@ -1,4 +1,4 @@
-<div class="app-container {{settings.lightTheme?'light-theme':''}}">
+<div class="app-container {{settings.lightTheme?'light-theme':''}} mat-typography">
     <mat-toolbar color="primary">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
@@ -52,40 +52,40 @@
             <mat-nav-list>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>home</mat-icon>
-                    <h3 matLine>{{'Home' | translate}}</h3>
+                    <span matLine>{{'Home' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="!(authState | async)?.isAnonymous">
                     <mat-icon matListIcon>person</mat-icon>
-                    <h3 matLine>{{'Profile' | translate}}</h3>
+                    <span matLine>{{'Profile' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>help_outline</mat-icon>
-                    <h3 matLine>{{'HOME_PAGE.features' | translate}}</h3>
+                    <span matLine>{{'HOME_PAGE.features' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>
-                    <h3 matLine>{{'Recipes' | translate}}</h3>
+                    <span matLine>{{'Recipes' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>view_list</mat-icon>
-                    <h3 matLine>{{'Lists' | translate}}</h3>
+                    <span matLine>{{'Lists' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>public</mat-icon>
-                    <h3 matLine>{{'Public_lists' | translate}}</h3>
+                    <span matLine>{{'Public_lists' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>alarm</mat-icon>
-                    <h3 matLine>{{'Alarms' | translate}}</h3>
+                    <span matLine>{{'Alarms' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
-                    <h3 matLine>{{'Favorites' | translate}}</h3>
+                    <span matLine>{{'Favorites' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>settings</mat-icon>
-                    <h3 matLine>{{'SETTINGS.title' | translate}}</h3>
+                    <span matLine>{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
             </mat-nav-list>
 

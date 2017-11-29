@@ -4,7 +4,7 @@
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </mat-panel-title>
         <mat-panel-description>
-            <p class="description" fxShow fxHide.lt-sm>{{list.note}}</p>
+            <span class="description" fxShow fxHide.lt-sm>{{list.note}}</span>
         </mat-panel-description>
         <div class="buttons">
             <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()">
