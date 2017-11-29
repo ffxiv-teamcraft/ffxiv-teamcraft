@@ -52,8 +52,8 @@
     }
 }
 
-$primary: mat-palette($mat-teal, 300);
-$accent: mat-palette($mat-indigo, 100);
+$primary: mat-palette($mat-orange, 700);
+$accent: mat-palette($mat-teal, 500);
 $warn: mat-palette($mat-red, 600);
 $dark-theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($dark-theme);
