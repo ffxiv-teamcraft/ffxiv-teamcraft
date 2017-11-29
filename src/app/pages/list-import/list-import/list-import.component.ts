@@ -9,9 +9,9 @@ import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
-    selector: 'app-cart-import',
-    templateUrl: './cart-import.component.html',
-    styleUrls: ['./cart-import.component.scss']
+    selector: 'app-list-import',
+    templateUrl: './list-import.component.html',
+    styleUrls: ['./list-import.component.scss']
 })
 export class CartImportComponent extends ComponentWithSubscriptions {
 

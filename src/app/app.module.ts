@@ -32,7 +32,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {PipesModule} from './pipes/pipes.module';
 import {DonationModule} from './modules/donation/donation.module';
 import {SettingsModule} from './pages/settings/settings.module';
-import {CartImportModule} from './pages/cart-import/cart-import.module';
+import {CartImportModule} from './pages/list-import/list-import.module';
 import {CommonComponentsModule} from './modules/common-components/common-components.module';
 import {HomeModule} from './pages/home/home.module';
 import {ItemModule} from './modules/item/item.module';
