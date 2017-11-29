@@ -23,7 +23,7 @@ export class ListManagerService {
         list.version = environment.version;
         return this.db.getItem(itemId)
             .map((data: ItemData) => {
-                const crafted = this.extractor.extractCraftedBy(itemId, data);
+                const crafted = this.extractor.extractCraftedBy(+itemId, data);
                 const addition = new List();
                 const craft = data.getCraft(recipeId);
                 // We have to remove unused ingredient properties.
@@ -120,6 +120,7 @@ export class ListManagerService {
                         listRow.comments = row.item.comments;
                     }
                     listRow.done = row.item.done;
+                    listRow.used = row.item.used;
                     if (row.array === 'recipes') {
                         if (listRow.done > listRow.amount) {
                             listRow.done = listRow.amount;

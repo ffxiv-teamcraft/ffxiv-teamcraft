@@ -174,7 +174,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     }
 
     canBeCrafted(): boolean {
-        return this.list.canBeCrafted(this.item);
+        // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
+        return this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
     }
 
     toggleAlarm(): void {

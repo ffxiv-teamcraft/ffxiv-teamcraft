@@ -12,9 +12,11 @@ import {
     MatCheckboxModule,
     MatDialogModule,
     MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatListModule, MatProgressSpinnerModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     MatSelectModule,
     MatSliderModule,
     MatTooltipModule
@@ -25,7 +27,10 @@ import {SettingsModule} from '../settings/settings.module';
 import {ItemModule} from '../../modules/item/item.module';
 import {RegenerationPopupComponent} from './regeneration-popup/regeneration-popup.component';
 import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-popup.component';
-import { ListNoteComponent } from './list-note/list-note.component';
+import {ListNoteComponent} from './list-note/list-note.component';
+import {ListInventoryComponent} from './list-inventory/list-inventory.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { ListTagsPopupComponent } from './list-tags-popup/list-tags-popup.component';
 
 const routes: Routes = [
     {
@@ -36,6 +41,10 @@ const routes: Routes = [
         path: 'list/:listId',
         component: ListDetailsComponent
     },
+    {
+        path: 'list-inventory/:listId',
+        component: ListInventoryComponent
+    }
 ];
 
 @NgModule({
@@ -57,6 +66,10 @@ const routes: Routes = [
         MatSelectModule,
         MatSliderModule,
         MatProgressSpinnerModule,
+        MatGridListModule,
+        MatTooltipModule,
+
+        FlexLayoutModule,
 
         CoreModule,
         PricingModule,
@@ -71,11 +84,14 @@ const routes: Routes = [
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
         ListNoteComponent,
+        ListInventoryComponent,
+        ListTagsPopupComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
+        ListTagsPopupComponent
     ]
 })
-export class ListDetailsModule {
+export class ListModule {
 }

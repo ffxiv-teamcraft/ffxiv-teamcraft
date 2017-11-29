@@ -12,6 +12,8 @@ import {MathTools} from '../../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {ListTag} from '../../../model/list/list-tag.enum';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 declare const ga: Function;
 
@@ -23,6 +25,10 @@ declare const ga: Function;
 export class ListsComponent extends ComponentWithSubscriptions implements OnInit {
 
     lists: Observable<List[]>;
+
+    tags: string[] = Object.keys(ListTag);
+
+    tagFilter: BehaviorSubject<string[]> = new BehaviorSubject([]);
 
     user: UserInfo;
 
@@ -88,15 +94,27 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
-        this.subscriptions.push(this.auth.authState.subscribe(user => {
-            if (user === null) {
-                this.lists = Observable.of([]);
-                this.user = undefined;
-            } else {
-                this.user = user;
-                this.lists = this.listService.getUserLists(user.uid);
-            }
-        }));
+        this.subscriptions.push(
+            this.auth.authState.subscribe(user => {
+                if (user === null) {
+                    this.lists = Observable.of([]);
+                    this.user = undefined;
+                } else {
+                    this.user = user;
+                    this.lists = Observable.combineLatest(this.listService.getUserLists(user.uid), this.tagFilter, (lists, tagFilter) => {
+                        if (tagFilter.length === 0) {
+                            return lists;
+                        }
+                        return lists.filter(list => {
+                            let match = true;
+                            tagFilter.forEach(tag => {
+                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                            });
+                            return match;
+                        });
+                    });
+                }
+            }));
     }
 
 }

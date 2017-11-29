@@ -5,6 +5,7 @@ import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
+import {ListTag} from './list-tag.enum';
 
 declare const ga: Function;
 
@@ -26,6 +27,8 @@ export class List extends DataModel {
     authorId: string;
 
     favorites: string[] = [];
+
+    tags: ListTag[] = [];
 
     constructor() {
         super();

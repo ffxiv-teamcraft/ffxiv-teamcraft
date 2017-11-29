@@ -37,7 +37,7 @@ import {CommonComponentsModule} from './modules/common-components/common-compone
 import {HomeModule} from './pages/home/home.module';
 import {ItemModule} from './modules/item/item.module';
 import {FavoritesModule} from './pages/favorites/favorites.module';
-import {ListDetailsModule} from './pages/list-details/list-details.module';
+import {ListModule} from './pages/list/list.module';
 import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
 import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
@@ -104,7 +104,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         CartImportModule,
         CommonComponentsModule,
         ItemModule,
-        ListDetailsModule,
         BetaDisclaimerModule,
 
         // Pages
@@ -113,6 +112,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FeaturesModule,
         RecipesModule,
         ListsModule,
+        ListModule,
         AlarmsModule,
         FavoritesModule,
         SettingsModule,
