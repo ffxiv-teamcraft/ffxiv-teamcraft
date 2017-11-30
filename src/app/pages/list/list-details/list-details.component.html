@@ -18,7 +18,7 @@
             </button>
         </div>
         <div class="header">
-            <h3>{{(list | async)?.name}}</h3>
+            <span class="list-name">{{(list | async)?.name}}</span>
             <button mat-icon-button *ngIf="isOwnList()" (click)="rename()">
                 <mat-icon>mode_edit</mat-icon>
             </button>
@@ -147,7 +147,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel" [expanded]="!(list | async)?.isLarge()?accordionState['Crystals']:true"
+        <mat-expansion-panel class="panel" [expanded]="(list | async)?.isLarge()?accordionState['Crystals']:true"
                              (opened)="accordionState['Crystals'] = true"
                              (closed)="accordionState['Crystals'] = false">
             <mat-expansion-panel-header>
@@ -167,7 +167,7 @@
         <section *ngIf="!zoneBreakdownToggle">
 
             <!--We need a specific one for gatherings because it will have some specific features-->
-            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()?accordionState['Gathering']:true"
+            <mat-expansion-panel [expanded]="(list | async)?.isLarge()?accordionState['Gathering']:true"
                                  (opened)="accordionState['Gathering'] = true"
                                  (closed)="accordionState['Gathering'] = false">
                 <mat-expansion-panel-header>
@@ -188,7 +188,7 @@
             </mat-expansion-panel>
 
             <app-list-details-panel
-                [expanded]="!((list | async)?.isLarge())?accordionState['Other']:true"
+                [expanded]="(list | async)?.isLarge()?accordionState['Other']:true"
                 [list]="list | async"
                 (update)="update()"
                 (done)="setDone($event)"
@@ -200,7 +200,7 @@
         </section>
 
         <section *ngIf="zoneBreakdownToggle">
-            <mat-expansion-panel [expanded]="!(list | async)?.isLarge()?accordionState['Other']:true"
+            <mat-expansion-panel [expanded]="(list | async)?.isLarge()?accordionState['Other']:true"
                                  (opened)="accordionState['Other'] = true"
                                  (closed)="accordionState['Other'] = false">
                 <mat-expansion-panel-header>
@@ -225,7 +225,7 @@
         </section>
 
         <app-list-details-panel
-            [expanded]="!((list | async)?.isLarge())?accordionState['Pre_crafts']:true"
+            [expanded]="(list | async)?.isLarge()?accordionState['Pre_crafts']:true"
             *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
             [showTier]="true"
             (update)="update()"
@@ -238,7 +238,7 @@
             (closed)="accordionState['Pre_crafts'] = false"></app-list-details-panel>
 
         <app-list-details-panel
-            [expanded]="!((list | async)?.isLarge())?accordionState['Items']:true"
+            [expanded]="(list | async)?.isLarge()?accordionState['Items']:true"
             [list]="list | async"
             (update)="update()"
             (done)="setDone($event)"
@@ -250,7 +250,7 @@
 
         <mat-divider></mat-divider>
 
-        <mat-checkbox [checked]="(list | async)?.public" (change)="togglePublic()" class="public-list-toggle">
+        <mat-checkbox [checked]="(list | async)?.public" *ngIf="isOwnList()" (change)="togglePublic()" class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>
 
