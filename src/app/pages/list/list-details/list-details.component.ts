@@ -87,7 +87,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     togglePublic(): void {
-        this.subscriptions.push(this.list.first().subscribe(list =>{
+        this.subscriptions.push(this.list.first().subscribe(list => {
             list.public = !list.public;
             this.update(list);
         }));

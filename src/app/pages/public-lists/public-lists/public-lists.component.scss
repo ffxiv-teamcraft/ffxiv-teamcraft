@@ -1,3 +1,10 @@
 .filter {
     display: flex;
 }
+
+.search {
+    width: 100%;
+    mat-input-container {
+        width: 100%;
+    }
+}

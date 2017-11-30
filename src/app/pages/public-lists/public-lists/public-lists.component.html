@@ -1,5 +1,11 @@
 <h2>{{'Public_lists' | translate}}</h2>
 
+<div class="search">
+    <mat-input-container>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput type="text" placeholder="{{'List_name' | translate}}" #nameFilter [(ngModel)]="nameFilterValue">
+    </mat-input-container>
+</div>
 <div class="filter">
     <mat-form-field>
         <mat-select (selectionChange)="tagFilter.next($event.value)"
