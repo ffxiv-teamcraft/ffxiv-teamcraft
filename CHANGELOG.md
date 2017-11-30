@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.5"></a>
+# [3.0.0-beta.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2017-11-30)
+
+
+### Bug Fixes
+
+* list details panels closed upon large list modifications ([2a9aa92](https://github.com/Supamiu/ffxiv-teamcraft/commit/2a9aa92))
+* rename popup opened each time you edit the list in certain conditions ([a070ea1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a070ea1))
+
+
+### Features
+
+* ability to add an item to a list from external website ([7e3707d](https://github.com/Supamiu/ffxiv-teamcraft/commit/7e3707d)), closes [#107](https://github.com/Supamiu/ffxiv-teamcraft/issues/107)
+* add avatar next to list description ([e4bcfda](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4bcfda))
+* add list tags (gear, leves, glamour, etc) ([fe9dace](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe9dace))
+* public list name search ([5029db4](https://github.com/Supamiu/ffxiv-teamcraft/commit/5029db4))
+* public lists ([14f3e10](https://github.com/Supamiu/ffxiv-teamcraft/commit/14f3e10))
+* tag filter for public lists ([a5a56a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/a5a56a8))
+
+
+
 <a name="3.0.0-beta.4"></a>
 # [3.0.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2017-11-25)
 
