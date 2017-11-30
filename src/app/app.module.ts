@@ -46,6 +46,7 @@ import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {PublicListsModule} from './pages/public-lists/public-lists.module';
+import {AddItemModule} from './pages/add-item/add-item.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -118,6 +119,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AlarmsModule,
         FavoritesModule,
         SettingsModule,
+        AddItemModule,
     ],
     bootstrap: [AppComponent]
 })

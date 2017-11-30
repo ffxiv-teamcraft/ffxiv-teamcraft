@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>
+        {{'ADD_ITEM.Title' | translate}}
+    </mat-card-title>
+    <mat-card-content>
+        <div class="item">
+            <img [src]="(itemData | async)?.item.icon | icon">
+            <p class="mat-body-2">{{(itemData | async)?.item.id | itemName | i18n}}</p>
+        </div>
+        <div class="amount-container">
+            <mat-input-container>
+                <input matInput type="number" [(ngModel)]="quantity" placeholder="{{'Quantity' | translate}}">
+            </mat-input-container>
+        </div>
+        <div class="lists">
+            <mat-input-container>
+                <mat-select class="lists-menu" placeholder="{{'List' | translate}}" name="list"
+                            [(ngModel)]="selectedList">
+                    <mat-option [value]="newList()">
+                        <span>{{'New_List' | translate}}</span>
+                    </mat-option>
+                    <mat-option *ngFor="let list of lists | async" [value]="list">
+                        <span>{{list.name}}</span></mat-option>
+                </mat-select>
+            </mat-input-container>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addItem()">
+            {{'Confirm' | translate}}
+        </button>
+    </mat-card-actions>
+</mat-card>
