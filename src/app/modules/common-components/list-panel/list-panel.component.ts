@@ -1,19 +1,20 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {Router} from '@angular/router';
-import {UserService} from '../../../core/database/user.service';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {Observable} from 'rxjs/Observable';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
     styleUrls: ['./list-panel.component.scss']
 })
-export class ListPanelComponent extends ComponentWithSubscriptions {
+export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
 
     @Input()
     public list: List;
@@ -48,9 +49,11 @@ export class ListPanelComponent extends ComponentWithSubscriptions {
     @Input()
     public copyButton = false;
 
+    author: Observable<any>;
+
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService,
-                private router: Router, private auth: AngularFireAuth) {
+                private router: Router, private auth: AngularFireAuth, private userService: UserService) {
         super();
     }
 
@@ -80,5 +83,9 @@ export class ListPanelComponent extends ComponentWithSubscriptions {
                         });
                 }));
         });
+    }
+
+    ngOnInit(): void {
+        this.author = this.userService.getCharacter(this.list.authorId);
     }
 }

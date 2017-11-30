@@ -28,8 +28,14 @@ export class UserService extends FirebaseStorage<AppUser> {
      * Gets user ingame informations.
      * @returns {Observable<any>}
      */
-    public getCharacter(): Observable<any> {
-        return this.getUserData()
+    public getCharacter(uid?: string): Observable<any> {
+        let userData: Observable<AppUser>;
+        if (uid === undefined) {
+            userData = this.getUserData();
+        } else {
+            userData = this.get(uid);
+        }
+        return userData
             .switchMap(u => {
                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
                     return this.dataService.getCharacter(u.lodestoneId).map(c => {

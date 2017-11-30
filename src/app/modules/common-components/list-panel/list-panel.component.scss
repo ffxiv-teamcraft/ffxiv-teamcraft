@@ -9,11 +9,25 @@
     min-width: 120px;
 }
 
+mat-panel-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+}
+
 .description {
+    display: flex;
+    align-items: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 400px;
     overflow: hidden;
+    .author-avatar {
+        border-radius: 50%;
+        height: 30px;
+        margin-right: 5px;
+    }
     &.mobile {
         max-width: 100px;
     }
@@ -27,4 +41,3 @@
 .mat-list .mat-list-item {
     color: inherit;
 }
-

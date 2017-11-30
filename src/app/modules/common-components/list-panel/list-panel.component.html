@@ -4,12 +4,13 @@
             {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
         </mat-panel-title>
         <mat-panel-description>
-            <span class="description" fxShow fxHide.lt-sm>{{list.note}}</span>
+            <div class="description" fxShow fxHide.lt-sm>
+                <img [src]="(author | async)?.avatar" class="author-avatar" [matTooltip]="(author | async)?.name"
+                     matTooltipPosition="above">
+                {{list.note}}
+            </div>
         </mat-panel-description>
         <div class="buttons">
-            <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()">
-                <mat-icon>content_copy</mat-icon>
-            </button>
             <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
                     (click)="$event.stopPropagation()"
                     matTooltip="{{'Share' | translate}}" matTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
@@ -21,6 +22,9 @@
             </button>
             <button mat-icon-button *ngIf="!readonly && buttons" (click)="ondelete.emit(); $event.stopPropagation()">
                 <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()">
+                <mat-icon>content_copy</mat-icon>
             </button>
         </div>
     </mat-expansion-panel-header>
