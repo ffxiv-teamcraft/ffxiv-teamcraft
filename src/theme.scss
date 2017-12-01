@@ -52,6 +52,16 @@
     }
 }
 
+@mixin color-fixes($theme) {
+    a {
+        @if map-get($theme, is-dark) {
+            color: white;
+        } @else {
+            color: black;
+        }
+    }
+}
+
 $primary: mat-palette($mat-orange, 700);
 $accent: mat-palette($mat-teal, 500);
 $warn: mat-palette($mat-red, 600);
@@ -60,6 +70,7 @@ $dark-theme: mat-dark-theme($primary, $accent, $warn);
 @include theme-background($dark-theme);
 @include expansion-panel-accent($dark-theme);
 @include card-accent($dark-theme);
+@include color-fixes($dark-theme);
 
 $light-theme: mat-light-theme($primary, $accent, $warn);
 
@@ -69,6 +80,7 @@ $light-theme: mat-light-theme($primary, $accent, $warn);
     @include theme-background($light-theme);
     @include expansion-panel-accent($light-theme);
     @include card-accent($light-theme);
+    @include color-fixes($light-theme);
 }
 
 // Responsive breakpoint mixin/definitions
