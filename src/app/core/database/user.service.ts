@@ -8,6 +8,7 @@ import {ListService} from './list.service';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {DiffService} from './diff/diff.service';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -20,8 +21,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                 protected database: AngularFireDatabase,
                 private dataService: DataService,
                 private listService: ListService,
-                protected serializer: NgSerializerService) {
-        super(database, serializer);
+                protected serializer: NgSerializerService,
+                protected diffService: DiffService) {
+        super(database, serializer, diffService);
     }
 
     /**
