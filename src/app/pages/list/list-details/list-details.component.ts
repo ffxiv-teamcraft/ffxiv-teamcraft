@@ -22,12 +22,12 @@ import {NameEditPopupComponent} from '../../../modules/common-components/name-ed
 import {User, UserInfo} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
-import {trackByItem} from '../../../core/tools/track-by-item';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 declare const ga: Function;
 
@@ -93,10 +93,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         }));
     }
 
-    public trackByItem(index: number, item: ListRow): any {
-        return trackByItem(index, item);
-    }
-
     public getUser(): Observable<User> {
         return this.auth.authState;
     }
@@ -153,7 +149,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
         this.subscriptions.push(this.route.params.subscribe(params => {
             this.listUid = params.listId;
-            this.list = Observable.combineLatest(
+            this.list =
+                Observable.combineLatest(
                 this.filterTrigger,
                 this.listService.get(this.listUid),
                 (ignored, list) => {
@@ -191,7 +188,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         this.title.setTitle(this.translate.instant('List_not_found'));
                     }
                     this.zoneBreakdown = new ZoneBreakdown(l);
-                });
+                })
+                .map((list: List) => {
+                    list.crystals = this.orderCrystals(list.crystals);
+                    list.gathers = this.orderGatherings(list.gathers);
+                    list.preCrafts = this.orderPreCrafts(list.preCrafts);
+                    return list;
+                })
+                    .distinctUntilChanged();
         }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;

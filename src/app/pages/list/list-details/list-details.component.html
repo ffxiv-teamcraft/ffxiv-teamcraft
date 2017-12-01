@@ -1,7 +1,7 @@
 <app-pricing [list]="list | async" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="(list | async) !== null && !notFound">
+    <div *ngIf="list | async as listData">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
@@ -18,19 +18,19 @@
             </button>
         </div>
         <div class="header">
-            <span class="list-name">{{(list | async)?.name}}</span>
+            <span class="list-name">{{listData?.name}}</span>
             <button mat-icon-button *ngIf="isOwnList()" (click)="rename()">
                 <mat-icon>mode_edit</mat-icon>
             </button>
             <button mat-mini-fab color="accent"
-                    *ngIf="(list | async) !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
+                    *ngIf="listData !== undefined && !isOwnList() && user !== undefined && !(getUser() | async)?.isAnonymous"
                     matTooltip="{{'Favorite' | translate}}"
                     (click)="toggleFavorite()">
                 <mat-icon *ngIf="!isFavorite()">favorite_border</mat-icon>
                 <mat-icon *ngIf="isFavorite()">favorite</mat-icon>
             </button>
 
-            <button mat-mini-fab *ngIf="(list | async) !== undefined && user !== undefined"
+            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined"
                     (click)="forkList()"
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
@@ -49,10 +49,10 @@
             </button>
         </div>
 
-        <mat-error *ngIf="(list| async)?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"|
+        <mat-error *ngIf="listData?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"|
             translate}}
         </mat-error>
-        <mat-error *ngIf="(list| async)?.isOutDated() && isOwnList()" class="listError">
+        <mat-error *ngIf="listData?.isOutDated() && isOwnList()" class="listError">
             {{"Own_list_outdated_before_button"|
             translate}}
             <mat-icon>update</mat-icon>
@@ -147,13 +147,13 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel" [expanded]="(list | async)?.isLarge()?accordionState['Crystals']:true"
+        <mat-expansion-panel class="panel" [expanded]="listData?.isLarge()?accordionState['Crystals']:true"
                              (opened)="accordionState['Crystals'] = true"
                              (closed)="accordionState['Crystals'] = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <div class="crystal-row" *ngFor="let crystal of orderCrystals((list | async)?.crystals)">
+            <div class="crystal-row" *ngFor="let crystal of listData?.crystals">
                 <div *ngIf="crystal.amount > crystal.done">
                     <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}"
                          matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
@@ -167,40 +167,39 @@
         <section *ngIf="!zoneBreakdownToggle">
 
             <!--We need a specific one for gatherings because it will have some specific features-->
-            <mat-expansion-panel [expanded]="(list | async)?.isLarge()?accordionState['Gathering']:true"
+            <mat-expansion-panel [expanded]="listData?.isLarge()?accordionState['Gathering']:true"
                                  (opened)="accordionState['Gathering'] = true"
                                  (closed)="accordionState['Gathering'] = false">
                 <mat-expansion-panel-header>
                     <mat-panel-title>{{'Gathering'| translate}}</mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list dense>
-                    <div *ngFor="let gather of orderGatherings((list | async)?.gathers); let i = index">
+                    <div *ngFor="let gather of listData?.gathers; let i = index">
                         <app-item
                             (update)="update()"
                             (done)="setDone($event)"
                             *ngIf="!gather.hidden"
                             [item]="gather"
                             [showTimer]="true"
-                            [list]="list | async"
+                            [list]="listData"
                             [even]="i%2!=0"></app-item>
                     </div>
                 </mat-list>
             </mat-expansion-panel>
 
             <app-list-details-panel
-                [expanded]="(list | async)?.isLarge()?accordionState['Other']:true"
-                [list]="list | async"
+                [expanded]="listData?.isLarge()?accordionState['Other']:true"
+                [list]="listData"
                 (update)="update()"
                 (done)="setDone($event)"
-                [data]="(list | async)?.others"
+                [data]="listData?.others"
                 [title]="'Other'| translate"
                 (opened)="accordionState['Other'] = true"
-
                 (closed)="accordionState['Other'] = false"></app-list-details-panel>
         </section>
 
         <section *ngIf="zoneBreakdownToggle">
-            <mat-expansion-panel [expanded]="(list | async)?.isLarge()?accordionState['Other']:true"
+            <mat-expansion-panel [expanded]="listData?.isLarge()?accordionState['Other']:true"
                                  (opened)="accordionState['Other'] = true"
                                  (closed)="accordionState['Other'] = false">
                 <mat-expansion-panel-header>
@@ -209,13 +208,14 @@
                 <mat-list dense>
                     <div *ngFor="let row of zoneBreakdown?.rows; let i = index">
                         <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
-                        <div *ngFor="let item of row.items; trackBy: trackByItem">
+                        <div *ngFor="let item of row.items">
                             <app-item
-                                [list]="list | async"
+                                [list]="listData"
                                 (update)="update()"
                                 (done)="setDone($event)"
                                 *ngIf="!item.hidden"
-                                [item]="item" [showTimer]="true"
+                                [item]="item"
+                                [showTimer]="true"
                                 [even]="i%2!=0"></app-item>
                         </div>
                         <mat-divider class="zone-divider"></mat-divider>
@@ -225,24 +225,25 @@
         </section>
 
         <app-list-details-panel
-            [expanded]="(list | async)?.isLarge()?accordionState['Pre_crafts']:true"
-            *ngIf="(list | async)?.preCrafts.length > 0" [list]="list | async"
+            [expanded]="listData?.isLarge()?accordionState['Pre_crafts']:true"
+            *ngIf="listData?.preCrafts.length > 0"
+            [list]="listData"
             [showTier]="true"
             (update)="update()"
             [preCraft]="true"
             (done)="setDone($event)"
-            [data]="orderPreCrafts((list | async)?.preCrafts)"
+            [data]="listData?.preCrafts"
             [title]="'Pre_crafts'| translate"
             [recipe]="true"
             (opened)="accordionState['Pre_crafts'] = true"
             (closed)="accordionState['Pre_crafts'] = false"></app-list-details-panel>
 
         <app-list-details-panel
-            [expanded]="(list | async)?.isLarge()?accordionState['Items']:true"
-            [list]="list | async"
+            [expanded]="listData?.isLarge()?accordionState['Items']:true"
+            [list]="listData"
             (update)="update()"
             (done)="setDone($event)"
-            [data]="(list | async)?.recipes"
+            [data]="listData?.recipes"
             [recipe]="true"
             [title]="'Items'| translate"
             (opened)="accordionState['Items'] = true"
@@ -250,13 +251,13 @@
 
         <mat-divider></mat-divider>
 
-        <mat-checkbox [checked]="(list | async)?.public" *ngIf="isOwnList()" (change)="togglePublic()" class="public-list-toggle">
+        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList()" (change)="togglePublic()" class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>
 
         <mat-divider></mat-divider>
 
-        <app-list-note [list]="list | async" [readonly]="!isOwnList()"></app-list-note>
+        <app-list-note [list]="listData" [readonly]="!isOwnList()"></app-list-note>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
     <div class="loader-container" *ngIf="(list | async) === null && !notFound">
