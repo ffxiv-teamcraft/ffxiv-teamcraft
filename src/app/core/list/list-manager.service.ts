@@ -7,8 +7,9 @@ import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {I18nToolsService} from '../tools/i18n-tools.service';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
-import 'rxjs/add/operator/debounceTime';
 import {DataExtractorService} from './data/data-extractor.service';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/combineLatest';
 
 @Injectable()
 export class ListManagerService {

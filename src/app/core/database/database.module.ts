@@ -4,6 +4,7 @@ import {UserService} from './user.service';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {ListStore} from './storage/list/list-store';
 import {FirebaseListStorage} from './storage/list/firebase-list-storage';
+import {DiffService} from './diff/diff.service';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {FirebaseListStorage} from './storage/list/firebase-list-storage';
     providers: [
         ListService,
         UserService,
-        {provide: ListStore, useClass: FirebaseListStorage}
+        {provide: ListStore, useClass: FirebaseListStorage},
+        DiffService,
     ]
 })
 export class DatabaseModule {
