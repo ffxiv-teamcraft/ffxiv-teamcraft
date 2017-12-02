@@ -207,6 +207,7 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
 
     quickList(recipe: Recipe, amount: string): void {
         const list = new List();
+        ga('send', 'event', 'List', 'creation');
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
         list.ephemeral = true;
         this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)

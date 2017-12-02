@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../../core/database/user.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-list-panel',
@@ -52,7 +53,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     author: Observable<any>;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
-                private listService: ListService, private translate: TranslateService,
+                private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
                 private router: Router, private auth: AngularFireAuth, private userService: UserService) {
         super();
     }
@@ -87,5 +88,9 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     ngOnInit(): void {
         this.author = this.userService.getCharacter(this.list.authorId);
+    }
+
+    public isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }
