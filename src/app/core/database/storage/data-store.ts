@@ -12,5 +12,7 @@ export abstract class DataStore<T> {
 
     public abstract update(uid: string, data: T): Observable<void>;
 
+    public abstract set(uid: string, data: T): Observable<void>;
+
     public abstract remove(uid: string): Observable<void>;
 }

@@ -233,6 +233,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         });
     }
 
+    set(list: List): void {
+        this.listService.set(this.listUid, list).first().subscribe(() => {
+            // Ignored.
+        });
+    }
+
     toggleFavorite(): void {
         if (this.userData.favorites === null || this.userData.favorites === undefined) {
             this.userData.favorites = [];
@@ -340,7 +346,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     for (const recipe of list.recipes) {
                         list.resetDone(recipe);
                     }
-                    this.update(list);
+                    this.set(list);
                 }));
     }
 

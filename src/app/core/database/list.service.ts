@@ -39,6 +39,16 @@ export class ListService {
     }
 
     /**
+     * Sets a list in the database, overriding all previous data.
+     * @param {string} uid
+     * @param {List} data
+     * @returns {Observable<void>}
+     */
+    public set(uid: string, data: List): Observable<void> {
+        return this.store.set(uid, data);
+    }
+
+    /**
      * Removes a given list.
      * @param {string} uid
      * @returns {Observable<void>}

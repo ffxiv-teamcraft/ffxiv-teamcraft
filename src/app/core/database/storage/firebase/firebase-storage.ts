@@ -69,6 +69,12 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
         });
     }
 
+    set(uid: string, data: T): Observable<void> {
+        const clone = JSON.parse(JSON.stringify(data));
+        delete clone.$key;
+        return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).set(clone));
+    }
+
     remove(uid: string): Observable<void> {
         return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).remove())
             .do(() => {
