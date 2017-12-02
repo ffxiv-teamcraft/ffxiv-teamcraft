@@ -20,11 +20,13 @@ import {PipesModule} from '../../pipes/pipes.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {BulkAdditionPopupComponent} from './bulk-addition-popup/bulk-addition-popup.component';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
         path: 'recipes',
-        component: RecipesComponent
+        component: RecipesComponent,
+        canActivate: [MaintenanceGuard]
     },
 ];
 

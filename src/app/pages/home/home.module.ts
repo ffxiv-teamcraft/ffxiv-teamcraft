@@ -5,6 +5,7 @@ import {HomeComponent} from './home/home.component';
 import {CoreModule} from '../../core/core.module';
 import {DonationModule} from '../../modules/donation/donation.module';
 import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule} from '@angular/material';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
@@ -14,7 +15,8 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [MaintenanceGuard]
     },
 ];
 

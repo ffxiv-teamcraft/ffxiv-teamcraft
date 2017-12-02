@@ -17,11 +17,12 @@ import {MasterbookService} from './masterbook.service';
 import {MasterbooksPopupComponent} from './masterbooks-popup/masterbooks-popup.component';
 import {PipesModule} from '../../pipes/pipes.module';
 import {CoreModule} from '../../core/core.module';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [ProfileGuard]
+    canActivate: [ProfileGuard, MaintenanceGuard]
 }];
 
 @NgModule({

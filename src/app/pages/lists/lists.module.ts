@@ -6,11 +6,13 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule, MatIconModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
         path: 'lists',
-        component: ListsComponent
+        component: ListsComponent,
+        canActivate: [MaintenanceGuard]
     },
 ];
 

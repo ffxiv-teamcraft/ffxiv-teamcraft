@@ -4,11 +4,13 @@ import {FeaturesComponent} from './features/features.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MatExpansionModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
         path: 'features',
-        component: FeaturesComponent
+        component: FeaturesComponent,
+        canActivate: [MaintenanceGuard]
     },
 ];
 

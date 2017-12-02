@@ -48,6 +48,7 @@ import {ProfileModule} from './pages/profile/profile.module';
 import {PublicListsModule} from './pages/public-lists/public-lists.module';
 import {AddItemModule} from './pages/add-item/add-item.module';
 import {AboutModule} from './pages/about/about.module';
+import {MaintenanceModule} from './pages/maintenance/maintenance.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -122,6 +123,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         SettingsModule,
         AddItemModule,
         AboutModule,
+        MaintenanceModule,
     ],
     bootstrap: [AppComponent]
 })

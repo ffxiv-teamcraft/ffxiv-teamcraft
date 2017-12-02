@@ -30,7 +30,8 @@ import {TimerOptionsPopupComponent} from './timer-options-popup/timer-options-po
 import {ListNoteComponent} from './list-note/list-note.component';
 import {ListInventoryComponent} from './list-inventory/list-inventory.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { ListTagsPopupComponent } from './list-tags-popup/list-tags-popup.component';
+import {ListTagsPopupComponent} from './list-tags-popup/list-tags-popup.component';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
@@ -39,11 +40,13 @@ const routes: Routes = [
     },
     {
         path: 'list/:listId',
-        component: ListDetailsComponent
+        component: ListDetailsComponent,
+        canActivate: [MaintenanceGuard]
     },
     {
         path: 'list-inventory/:listId',
-        component: ListInventoryComponent
+        component: ListInventoryComponent,
+        canActivate: [MaintenanceGuard]
     }
 ];
 

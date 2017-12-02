@@ -6,6 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {MatProgressBarModule} from '@angular/material';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {CoreModule} from '../../core/core.module';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
@@ -14,7 +15,8 @@ const routes: Routes = [
     },
     {
         path: 'list-import/:importString',
-        component: CartImportComponent
+        component: CartImportComponent,
+        canActivate: [MaintenanceGuard]
     }
 ];
 

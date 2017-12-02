@@ -4,11 +4,13 @@ import {FavoritesComponent} from './favorites/favorites.component';
 import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
         path: 'favorites',
-        component: FavoritesComponent
+        component: FavoritesComponent,
+        canActivate: [MaintenanceGuard]
     },
 ];
 

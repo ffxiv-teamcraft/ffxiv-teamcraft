@@ -67,6 +67,12 @@ export class AppComponent implements OnInit {
 
         });
 
+        this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
+            if (maintenance) {
+                this.router.navigate(['maintenance']);
+            }
+        });
+
         // Google Analytics
         router.events.distinctUntilChanged((previous: any, current: any) => {
             if (current instanceof NavigationEnd) {

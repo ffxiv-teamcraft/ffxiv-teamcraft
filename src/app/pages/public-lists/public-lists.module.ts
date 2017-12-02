@@ -7,10 +7,12 @@ import {CoreModule} from '../../core/core.module';
 import {DatabaseModule} from '../../core/database/database.module';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {FormsModule} from '@angular/forms';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
     path: 'public-lists',
-    component: PublicListsComponent
+    component: PublicListsComponent,
+    canActivate: [MaintenanceGuard]
 }];
 
 @NgModule({

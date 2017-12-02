@@ -17,10 +17,12 @@ import {
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
     path: 'add-item/:importString',
-    component: AddItemComponent
+    component: AddItemComponent,
+    canActivate: [MaintenanceGuard]
 }];
 
 @NgModule({
