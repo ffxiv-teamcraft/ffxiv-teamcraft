@@ -30,7 +30,7 @@
                 <mat-icon *ngIf="isFavorite()">favorite</mat-icon>
             </button>
 
-            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined"
+            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined && !listData.ephemeral"
                     (click)="forkList()"
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
@@ -59,7 +59,7 @@
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
 
-        <mat-divider></mat-divider>
+        <mat-divider class="top-divider"></mat-divider>
         <div class="options">
             <mat-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
                 {{"Zone_breakdown" | translate}}
@@ -251,13 +251,13 @@
 
         <mat-divider></mat-divider>
 
-        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList()" (change)="togglePublic()" class="public-list-toggle">
+        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData.ephemeral" (change)="togglePublic()" class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>
 
         <mat-divider></mat-divider>
 
-        <app-list-note [list]="listData" [readonly]="!isOwnList()"></app-list-note>
+        <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData.ephemeral"></app-list-note>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
     <div class="loader-container" *ngIf="(list | async) === null && !notFound">

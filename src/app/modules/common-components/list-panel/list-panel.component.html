@@ -1,19 +1,24 @@
 <mat-expansion-panel #panel [expanded]="expanded">
     <mat-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
         <mat-panel-title>
-            {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span style="margin-left: 4px;">{{'items' | translate}}</span>
+            <span class="title">{{list.name}} - {{list.recipes===undefined?0:list.recipes.length}} <span
+                style="margin-left: 4px;">{{'items' | translate}}</span></span>
+            <mat-icon *ngIf="list.ephemeral" matTooltip="{{'Ephemeral_list' | translate}}" matTooltipPosition="above">
+                access_time
+            </mat-icon>
         </mat-panel-title>
-        <mat-panel-description>
-            <div class="description" fxShow fxHide.lt-sm>
-                <img [src]="(author | async)?.avatar" class="author-avatar" [matTooltip]="(author | async)?.name"
-                     matTooltipPosition="above">
+        <mat-panel-description fxShow fxHide.lt-sm>
+            <div class="description">
+                <img *ngIf="author | async as authorData" [src]="authorData?.avatar" class="author-avatar"
+                     [matTooltip]="authorData?.name" matTooltipPosition="above">
                 {{list.note}}
             </div>
         </mat-panel-description>
         <div class="buttons">
             <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
                     (click)="$event.stopPropagation()"
-                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above" (cbOnSuccess)="showCopiedNotification()">
+                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
                 <mat-icon>share</mat-icon>
             </button>
             <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->

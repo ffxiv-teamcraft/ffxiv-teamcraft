@@ -151,50 +151,51 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             this.listUid = params.listId;
             this.list =
                 Observable.combineLatest(
-                this.filterTrigger,
-                this.listService.get(this.listUid),
-                (ignored, list) => {
-                    this.authorUid = list.authorId;
-                    list.forEachItem(item => {
-                        if (item.gatheredBy !== undefined) {
-                            const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                            if (filter !== undefined) {
-                                item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                    this.filterTrigger,
+                    this.listService.get(this.listUid),
+                    (ignored, list) => {
+                        this.authorUid = list.authorId;
+                        list.forEachItem(item => {
+                            if (item.gatheredBy !== undefined) {
+                                const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                                if (filter !== undefined) {
+                                    item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                                }
+                            } else if (item.craftedBy !== undefined) {
+                                for (const craft of item.craftedBy) {
+                                    const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
+                                    item.hidden = !filter.checked || craft.level > filter.level;
+                                }
+                            } else {
+                                // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
+                                item.hidden = false;
                             }
-                        } else if (item.craftedBy !== undefined) {
-                            for (const craft of item.craftedBy) {
-                                const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
-                                item.hidden = !filter.checked || craft.level > filter.level;
+                            if (item.done >= item.amount && this.hideCompleted) {
+                                item.hidden = true;
                             }
+                        });
+                        return list;
+                    })
+                    .catch(() => {
+                        this.notFound = true;
+                        return Observable.of(null);
+                    })
+                    .distinctUntilChanged()
+                    .filter(list => list !== null)
+                    .do(l => {
+                        if (l.name !== undefined) {
+                            this.title.setTitle(`${l.name}`);
                         } else {
-                            // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
-                            item.hidden = false;
+                            this.title.setTitle(this.translate.instant('List_not_found'));
                         }
-                        if (item.done >= item.amount && this.hideCompleted) {
-                            item.hidden = true;
-                        }
-                    });
-                    return list;
-                })
-                .catch(() => {
-                    this.notFound = true;
-                    return Observable.of(null);
-                })
-                .distinctUntilChanged()
-                .do(l => {
-                    if (l.name !== undefined) {
-                        this.title.setTitle(`${l.name}`);
-                    } else {
-                        this.title.setTitle(this.translate.instant('List_not_found'));
-                    }
-                    this.zoneBreakdown = new ZoneBreakdown(l);
-                })
-                .map((list: List) => {
-                    list.crystals = this.orderCrystals(list.crystals);
-                    list.gathers = this.orderGatherings(list.gathers);
-                    list.preCrafts = this.orderPreCrafts(list.preCrafts);
-                    return list;
-                })
+                        this.zoneBreakdown = new ZoneBreakdown(l);
+                    })
+                    .map((list: List) => {
+                        list.crystals = this.orderCrystals(list.crystals);
+                        list.gathers = this.orderGatherings(list.gathers);
+                        list.preCrafts = this.orderPreCrafts(list.preCrafts);
+                        return list;
+                    })
                     .distinctUntilChanged();
         }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
@@ -262,9 +263,16 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public setDone(data: { row: ListRow, amount: number, preCraft: boolean }): void {
-        this.subscriptions.push(this.list.first().subscribe(l => {
+        this.subscriptions.push(this.list.first().switchMap(l => {
             l.setDone(data.row, data.amount, data.preCraft);
-            this.update(l);
+            return this.listService.update(l.$key, l).map(() => l);
+        }).do(list => {
+            if (list.ephemeral && list.isComplete()) {
+                this.listService.remove(list.$key).first().subscribe(() => {
+                    this.router.navigate(['recipes']);
+                });
+            }
+        }).subscribe(() => {
         }));
     }
 

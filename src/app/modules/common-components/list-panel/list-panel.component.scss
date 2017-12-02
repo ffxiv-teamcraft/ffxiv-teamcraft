@@ -6,14 +6,23 @@
 .buttons {
     margin-right: 10px;
     display: inline-flex !important;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 mat-panel-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 160px;
+        display: inline-block;
+    }
+    mat-icon {
+        margin-left: 5px;
+    }
 }
 
 .description {

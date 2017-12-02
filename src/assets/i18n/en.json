@@ -8,6 +8,8 @@
         "Patreon_supporters": "Patreon supporters",
         "Contributors": "Contributors"
     },
+    "Ephemeral_list": "Will be deleted once completed",
+    "Quick_list_create": "Create quick list (deleted once completed)",
     "Tag_filter": "Tags",
     "Public_lists": "Public lists",
     "Public_list": "Public list",

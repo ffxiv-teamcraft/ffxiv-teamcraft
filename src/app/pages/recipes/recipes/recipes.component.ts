@@ -205,6 +205,30 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
             }, err => console.error(err)));
     }
 
+    quickList(recipe: Recipe, amount: string): void {
+        const list = new List();
+        list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
+        list.ephemeral = true;
+        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
+            .switchMap((l) => {
+                return this.userService.getUserData().map(u => {
+                    l.authorId = u.$key;
+                    return l;
+                });
+            })
+            .switchMap(quickList => {
+                return this.listService.add(quickList).map(uid => {
+                    list.$key = uid;
+                    return list;
+                });
+            })
+            .subscribe((l) => {
+                this.listService.getRouterPath(l.$key).subscribe(path => {
+                    this.router.navigate(path);
+                });
+            });
+    }
+
     /**
      * Adds the current resultSet to a given list.
      * @param {List} list

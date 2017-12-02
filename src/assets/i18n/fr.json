@@ -8,6 +8,8 @@
         "Patreon_supporters": "Supporters Patreon",
         "Contributors": "Contributeurs"
     },
+    "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
+    "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
     "Tag_filter": "Tags",
     "Public_lists": "Listes publiques",
     "Public_list": "Listes publique",

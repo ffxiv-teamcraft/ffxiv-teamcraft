@@ -12,7 +12,7 @@ import {
     MatListModule,
     MatMenuModule,
     MatProgressBarModule, MatProgressSpinnerModule,
-    MatRadioModule
+    MatRadioModule, MatTooltipModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SettingsModule} from '../settings/settings.module';
@@ -45,6 +45,7 @@ const routes: Routes = [
         MatInputModule,
         MatProgressBarModule,
         MatProgressSpinnerModule,
+        MatTooltipModule,
 
         CoreModule,
         SettingsModule,

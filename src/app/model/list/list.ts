@@ -32,8 +32,14 @@ export class List extends DataModel {
 
     public: boolean;
 
+    ephemeral: boolean;
+
     constructor() {
         super();
+    }
+
+    public isComplete(): boolean {
+        return this.recipes.filter(recipe => recipe.done < recipe.amount).length === 0;
     }
 
     public clone(): List {
@@ -247,7 +253,7 @@ export class List extends DataModel {
             }
         });
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '2.3.0');
+        res = res || semver.ltr(this.version, '3.0.0');
         return res;
     }
 

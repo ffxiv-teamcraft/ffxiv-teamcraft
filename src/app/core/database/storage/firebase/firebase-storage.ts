@@ -7,8 +7,6 @@ import {DiffService} from 'app/core/database/diff/diff.service';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {
 
-    private static UPDATE_START;
-
     protected cache: { [index: string]: T } = {};
 
     constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService,
@@ -42,9 +40,6 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
             .do(data => {
                 // Cache a clone of the data.
                 this.cache[data.$key] = JSON.parse(JSON.stringify(data));
-                if (FirebaseStorage.UPDATE_START !== undefined) {
-                    console.log(Date.now() - FirebaseStorage.UPDATE_START);
-                }
             })
             .publishReplay(1)
             .refCount();
@@ -64,7 +59,6 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
             batch.push(Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}${deletion.path}`).remove()));
         });
         // We map the result of the combine to a void function, because we want to convert void[] to void.
-        FirebaseStorage.UPDATE_START = Date.now();
         return Observable.combineLatest(batch, () => {
         });
     }
