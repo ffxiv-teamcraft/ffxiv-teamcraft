@@ -13,11 +13,6 @@ export class MaintenanceGuard implements CanActivate {
         // We want to block the route if the maintenance mode is on, meaning that we want to allow it if it's not.
         return this.firebase.object('maintenance')
             .valueChanges()
-            .map(maintenance => !maintenance)
-            .do(maintenance => {
-                if (maintenance) {
-                    this.router.navigate(['maintenance']);
-                }
-            });
+            .map(maintenance => !maintenance);
     }
 }
