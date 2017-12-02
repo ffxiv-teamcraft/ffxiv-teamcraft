@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0-beta.6"></a>
+# [3.0.0-beta.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2017-12-02)
+
+
+### Bug Fixes
+
+* issue with vendors with undefined price ([62c6195](https://github.com/Supamiu/ffxiv-teamcraft/commit/62c6195))
+
+
+### Features
+
+* new about page ([c3384b0](https://github.com/Supamiu/ffxiv-teamcraft/commit/c3384b0))
+* quick list (deleted once completed) ([4393e80](https://github.com/Supamiu/ffxiv-teamcraft/commit/4393e80))
+
+
+### Performance Improvements
+
+* big list save optimization ([cc5fb61](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc5fb61))
+* change data pipes for pure ones ([f2d6853](https://github.com/Supamiu/ffxiv-teamcraft/commit/f2d6853))
+* large lists display optimization ([66b3a52](https://github.com/Supamiu/ffxiv-teamcraft/commit/66b3a52)), closes [#110](https://github.com/Supamiu/ffxiv-teamcraft/issues/110)
+
+
+
 <a name="3.0.0-beta.5"></a>
 # [3.0.0-beta.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2017-11-30)
 
