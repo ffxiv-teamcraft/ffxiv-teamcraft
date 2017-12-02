@@ -143,6 +143,10 @@
     "HOME_PAGE.FEATURES.comments_content": "Add informations on your list items easily !",
     "HOME_PAGE.FEATURES.pricing_title": "Pricing",
     "HOME_PAGE.FEATURES.pricing_content": "Easily get the benefits you'll make from a given list !",
+    "HOME_PAGE.FEATURES.inventory_title": "Inventory breakdown",
+    "HOME_PAGE.FEATURES.inventory_content": "Know how much of each item you're supposed to have at anytime !",
+    "HOME_PAGE.FEATURES.alarms_title": "Alarms",
+    "HOME_PAGE.FEATURES.alarms_content": "Easily track every alarm you added accross multiple lists !",
 
     "HOME_PAGE.support_title": "Support",
     "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
