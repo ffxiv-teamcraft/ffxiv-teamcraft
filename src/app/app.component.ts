@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
         });
 
         this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
-            if (maintenance) {
+            if (maintenance && environment.production) {
                 this.router.navigate(['maintenance']);
             }
         });
