@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.6...v3.0.0) (2017-12-02)
+
+
+
 <a name="3.0.0-beta.6"></a>
 # [3.0.0-beta.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2017-12-02)
 
