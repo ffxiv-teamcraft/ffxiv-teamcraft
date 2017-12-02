@@ -1,4 +1,25 @@
 {
+    "ABOUT": {
+        "title": "About",
+        "Copyright_notice_title": "Copyright notice",
+        "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+        "Thanks_title": "Thanks",
+        "Data_sources": "Data sources",
+        "Patreon_supporters": "Patreon supporters",
+        "Contributors": "Contributors"
+    },
+    "Ephemeral_list": "Will be deleted once completed",
+    "Quick_list_create": "Create quick list (deleted once completed)",
+    "Tag_filter": "Tags",
+    "Public_lists": "Public lists",
+    "Public_list": "Public list",
+    "Profile": "Profile",
+    "COMMON": {
+        "Save": "Save"
+    },
+    "ALARMS": {
+        "No_alarm": "No alarm set"
+    },
     "Confirmation": "Confirmation",
     "Yes": "Yes",
     "No": "No",
@@ -92,8 +113,6 @@
     "Email_enter": "Email",
     "Email_not_found": "Email not found",
     "Email_sent": "An email has been sent with instructions to change your password.",
-
-
     "HOME_PAGE.title": "Create lists, share, contribute, craft",
     "HOME_PAGE.count": "lists currently stored",
     "HOME_PAGE.lists_created_count": "lists created using FFXIV Teamcraft",
@@ -122,14 +141,16 @@
     "HOME_PAGE.FEATURES.comments_content": "Add informations on your list items easily !",
     "HOME_PAGE.FEATURES.pricing_title": "Pricing",
     "HOME_PAGE.FEATURES.pricing_content": "Easily get the benefits you'll make from a given list !",
-
     "HOME_PAGE.support_title": "Support",
     "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
     "HOME_PAGE.support_comtent_facebook": "You can also find us on facebook",
     "HOME_PAGE.contribute_title": "Contribute",
     "HOME_PAGE.contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
     "HOME_PAGE.changelog": "To get every news about the website, each changes, please refer to the changelog.",
-
+    "ALARM": {
+        "Spawned": "{{itemName}} will spawn !",
+        "See_on_map": "Location"
+    },
     "Pricing_mode": "Pricing mode",
     "Back_to_list": "Back to list",
     "Spending": "Spending",
@@ -137,7 +158,6 @@
     "Earning": "Earning",
     "Benefits": "Benefits",
     "Minimal_craft_cost": "Minimal craft cost",
-
     "Used_for": "Used for",
     "xivdb_cart_import": "Importing from xivdb shopping cart",
     "Or": "or",
@@ -149,14 +169,59 @@
     "Requires": "Requires",
     "Copy_item_name_to_clipboard": "Copy item name to clipboard",
     "Item_name_copied": "{{itemname}} copied to clipboard",
-
     "Tier_display_toggle": "Display crafting tiers",
     "Precraft_tier": "Tier",
-
     "SETTINGS": {
         "title": "Settings",
-        "link_base": "Item links"
+        "link_base": "Item links",
+        "compact_lists": "Compact list display",
+        "theme": "Theme"
+    },
+    "PROFILE": {
+        "Masterbooks": "Masterbooks",
+        "Patreon_supporter": "Patreon Supporter"
+    },
+    "LIST_DETAILS": {
+        "No_book": "Missing book",
+        "No_note": "No note",
+        "Note_placeholder": "Note",
+        "Tags_popup": "Tags",
+        "Inventory_breakdown": "Inventory"
     },
     "adapt_to_character": "Adapt to Character",
-    "reset_filters": "Reset Filters"
+    "reset_filters": "Reset Filters",
+    "LIST_TAGS": {
+        "LEVE": "LEVE",
+        "GLAMOUR": "GLAMOUR",
+        "HOUSING": "HOUSING",
+        "GEAR": "GEAR",
+        "CONSUMABLES": "CONSUMABLES",
+        "MISC": "MISC",
+        "PLD": "PLD",
+        "WAR": "WAR",
+        "DRK": "DRK",
+        "WHM": "WHM",
+        "SCH": "SCH",
+        "AST": "AST",
+        "MNK": "MNK",
+        "DRG": "DRG",
+        "NIN": "NIN",
+        "SAM": "SAM",
+        "BRD": "BRD",
+        "MCH": "MCH",
+        "BLM": "BLM",
+        "SMN": "SMN",
+        "RDM": "RDM",
+        "MIN": "MIN",
+        "BOT": "BOT",
+        "FSH": "FSH",
+        "ALC": "ALC",
+        "ARM": "ARM",
+        "BSM": "BSM",
+        "CRP": "CRP",
+        "CUL": "CUL",
+        "GSM": "GSM",
+        "LTW": "LTW",
+        "WVR": "WVR"
+    }
 }

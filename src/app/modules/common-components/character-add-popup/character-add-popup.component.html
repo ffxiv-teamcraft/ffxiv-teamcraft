@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>{{"Character_informations" | translate}}</h3>
+<div mat-dialog-content>
+    <form [formGroup]="form" (submit)="submit()">
+        <mat-input-container>
+            <input matInput placeholder="{{'Character_name' | translate}}" formControlName="character" type="text" required>
+            <mat-error>Required</mat-error>
+        </mat-input-container>
+        <mat-input-container>
+            <input matInput placeholder="{{'Server_name' | translate}}" formControlName="server" type="text" required>
+            <mat-error>Required</mat-error>
+        </mat-input-container>
+        <mat-error *ngIf="!form.valid">{{'Character_not_found' | translate}}</mat-error>
+        <button mat-raised-button type="submit" [disabled]="!form.valid" color="primary">Confirm</button>
+    </form>
+</div>

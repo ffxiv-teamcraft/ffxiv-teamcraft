@@ -1,0 +1,13 @@
+<div class="etime-container">
+    <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
+</div>
+<div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
+<mat-grid-list cols="3" rowHeight="600px">
+    <mat-grid-tile *ngFor="let alarm of getAlarms() | async">
+        <app-alarm-card [alarm]="alarm"
+                        [alerted]="alarmService.isAlerted(alarm.itemId) | async"
+                        [spawned]="alarmService.isAlarmSpawned(alarm, time)"
+                        [timer]="alarmService.getAlarmTimerString(alarm, time)"
+                        (delete)="deleteAlarm(alarm)"></app-alarm-card>
+    </mat-grid-tile>
+</mat-grid-list>

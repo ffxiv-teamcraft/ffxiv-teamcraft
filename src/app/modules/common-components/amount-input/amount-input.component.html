@@ -1,0 +1,6 @@
+<mat-input-container>
+    <input matInput type="number" #input min="{{min}}" max="{{max}}" [style.width]="getWidth()+'px'"
+           disabled="{{readonly}}" [value]="value">
+    <span matSuffix *ngIf="max">/{{max}}<span *ngIf="craftAmount" matTooltip="{{'Required_crafts_amount' | translate}}"
+                                             matTooltipPosition="above"> ({{craftAmount}})</span></span>
+</mat-input-container>

@@ -1,0 +1,37 @@
+<form (submit)="createNewList()" #f="ngForm">
+    <mat-input-container>
+        <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
+               [formControl]="newListFormControl" required>
+        <mat-error
+            *ngIf="newListFormControl.hasError('required')">
+            {{'Please_enter_a_name' | translate}}
+        </mat-error>
+    </mat-input-container>
+    <button type="submit" mat-raised-button color="accent">{{'Add_a_list' | translate}}</button>
+</form>
+<h3 class="mat-h3">{{'Lists' | translate}}</h3>
+
+<div class="filter">
+    <mat-form-field>
+        <mat-select (selectionChange)="tagFilter.next($event.value)"
+                    multiple="true" #tagFilterSelect
+                    placeholder="{{'Tag_filter' | translate}}">
+            <mat-option *ngFor="let tag of tags" value="{{tag}}">{{"LIST_TAGS."+tag | translate}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-icon-button (click)="tagFilterSelect.value = []; tagFilter.next([])">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</div>
+
+<div class="row" *ngFor="let list of lists | async">
+    <app-list-panel
+        [list]="list"
+        [expanded]="expanded.indexOf(list.$key) > -1"
+        (opened)="opened(list.$key)"
+        (closed)="closed(list.$key)"
+        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+        (ondelete)="delete(list)"
+        [authorUid]="user.uid"></app-list-panel>
+</div>

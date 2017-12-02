@@ -2,8 +2,8 @@ import {Trade} from './trade';
 
 export interface TradeSource {
     npcId: number;
-    zoneId: number;
+    zoneId?: number;
+    areaId?: number;
     trades: Trade[];
-    currencyAmount: number;
-    itemAmount: number;
+    coords?: { x: number; y: number; };
 }

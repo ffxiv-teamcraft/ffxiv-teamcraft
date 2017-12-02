@@ -1,0 +1,12 @@
+export enum DataType {
+    CRAFTED_BY,
+    TRADE_SOURCES,
+    VENDORS,
+    REDUCED_FROM,
+    DESYNTHS,
+    INSTANCES,
+    GATHERED_BY,
+    GARDENING,
+    VOYAGES,
+    DROPS
+}

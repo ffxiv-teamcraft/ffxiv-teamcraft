@@ -1,0 +1,53 @@
+<span class="mat-display-2">{{"HOME_PAGE.title" | translate}}</span>
+
+<h3 class="list-count">{{lists_created | async}} {{"HOME_PAGE.lists_created_count" | translate}}</h3>
+
+<h3 class="list-count">{{list_count | async}} {{"HOME_PAGE.count" | translate}}</h3>
+
+<p>{{"HOME_PAGE.p1" | translate}}</p>
+
+<p>{{"HOME_PAGE.p2" | translate}}</p>
+
+<p>{{"HOME_PAGE.p3" | translate}}</p>
+
+<a href="https://www.patreon.com/bePatron?u=702160" mat-raised-button class="patreon"> <img
+    src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
+    class="patreon-logo">{{"HOME_PAGE.support_patreon" | translate}}</a>
+
+<app-donation-button></app-donation-button>
+
+<mat-grid-list cols="2" gutterSize="10" rowHeight="300px" class="bottom-cards">
+    <mat-grid-tile>
+        <mat-card class="bottom-card">
+            <mat-card-header>
+                <mat-card-title><h2>{{"HOME_PAGE.support_title" | translate}}</h2></mat-card-title>
+            </mat-card-header>
+
+            <p>{{"HOME_PAGE.support_content_discord" | translate}}</p>
+
+            <a mat-raised-button href="https://discord.gg/r6qxt6P" target="_blank" color="accent">Discord</a>
+
+            <p>{{"HOME_PAGE.support_comtent_facebook" | translate}}</p>
+
+            <a mat-raised-button href="https://facebook.com/FFXIVTeamcraft" target="_blank" color="accent">Facebook</a>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="bottom-card">
+            <mat-card-header>
+                <mat-card-title><h2>{{"HOME_PAGE.contribute_title" | translate}}</h2></mat-card-title>
+            </mat-card-header>
+
+            <p>{{"HOME_PAGE.contribute_content" | translate}}</p>
+
+            <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank"
+               color="accent">Github</a>
+
+            <p>{{"HOME_PAGE.changelog" | translate}}</p>
+
+            <a mat-raised-button href="https://github.com/Supamiu/ffxiv-teamcraft/blob/master/CHANGELOG.md"
+               target="_blank"
+               color="accent">Changelog</a>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

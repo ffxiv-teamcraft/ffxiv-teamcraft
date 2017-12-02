@@ -1,11 +1,12 @@
-import {List} from './list';
+import {DataModel} from '../../core/database/storage/data-model';
 
-export interface AppUser {
-    name: string;
-    lists: { [key: string]: List };
+export class AppUser extends DataModel {
+    name?: string;
     email: string;
-    lodestoneId: number;
+    masterbooks?: number[];
+    lodestoneId?: number;
     avatar?: string;
-    favorites: string[];
+    favorites?: string[];
     patron?: boolean;
+    anonymous?: boolean;
 }

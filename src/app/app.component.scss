@@ -1,9 +1,5 @@
 @import "../theme.scss";
 
-.spacer {
-    flex: 1 1 auto;
-}
-
 .app-container {
     top: 0;
     left: 0;
@@ -12,10 +8,10 @@
     width: 100%;
     min-height: 100%;
     display: inline;
-    md-toolbar {
+    mat-toolbar {
         display: flex;
         min-height: 64px;
-        md-menu {
+        mat-menu {
             margin-left: 20px;
         }
         .version {
@@ -31,10 +27,10 @@
             color: green;
         }
     }
-    md-sidenav-container {
+    mat-sidenav-container {
         display: block;
         height: calc(100% - 64px);
-        md-sidenav {
+        mat-sidenav {
             width: 20%;
             min-width: 200px;
             display: flex;
@@ -75,7 +71,7 @@
             overflow: auto;
             .content-middle {
                 padding: 10px;
-                width: 70%;
+                width: 90%;
                 margin: auto;
                 min-height: 20%;
 

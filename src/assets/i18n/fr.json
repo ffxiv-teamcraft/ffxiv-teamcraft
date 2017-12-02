@@ -1,4 +1,25 @@
 {
+    "ABOUT": {
+        "title": "À Propos",
+        "Copyright_notice_title": "Copyright",
+        "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.\nFINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.\nFFXIV Teamcraft is not affiliated with Square Enix.",
+        "Thanks_title": "Remerciements",
+        "Data_sources": "Bases de données",
+        "Patreon_supporters": "Supporters Patreon",
+        "Contributors": "Contributeurs"
+    },
+    "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
+    "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
+    "Tag_filter": "Tags",
+    "Public_lists": "Listes publiques",
+    "Public_list": "Listes publique",
+    "Profile": "Profil",
+    "COMMON": {
+        "Save": "Sauvegarder"
+    },
+    "ALARMS": {
+        "No_alarm": "Aucune alarme définie"
+    },
     "Confirmation": "Confirmation",
     "Yes": "Oui",
     "No": "Non",
@@ -92,8 +113,6 @@
     "Email_enter": "Email",
     "Email_not_found": "Email non trouvé",
     "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
-
-
     "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
     "HOME_PAGE.count": "listes actuellement stockées",
     "HOME_PAGE.lists_created_count": "listes créées avec FFXIV Teamcraft",
@@ -128,8 +147,10 @@
     "HOME_PAGE.contribute_title": "Contribuer",
     "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
     "HOME_PAGE.changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
-
-
+    "ALARM": {
+        "Spawned": "{{itemName}} va apparaître !",
+        "See_on_map": "Emplacement"
+    },
     "Pricing_mode": "Calculer les bénéfices",
     "Back_to_list": "Retour à la liste",
     "Spending": "Dépenses",
@@ -137,11 +158,10 @@
     "Earning": "Gains",
     "Benefits": "Bénéfice",
     "Minimal_craft_cost": "Coût minimal de fabrication",
-
     "Used_for": "Utilisé pour",
     "xivdb_cart_import": "Import depuis xivdb shopping cart",
-    "Or":"ou",
-    "Make_donation":"Faire un don",
+    "Or": "ou",
+    "Make_donation": "Faire un don",
     "Data_from_gt": "Données fournies par garlandtools.org",
     "Hide_completed": "Masquer les éléments complétés",
     "Your_comment": "Votre commentaire",
@@ -149,14 +169,59 @@
     "Requires": "Nécessite",
     "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
     "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
-
     "Tier_display_toggle": "Voir les étapes de craft",
     "Precraft_tier": "Étape",
-
     "SETTINGS": {
         "title": "Options",
-        "link_base": "Liens des objets"
+        "link_base": "Liens des objets",
+        "compact_lists": "Affichage compact des listes",
+        "theme": "Thème"
+    },
+    "PROFILE": {
+        "Masterbooks": "Livres",
+        "Patreon_supporter": "Supporter Patreon"
+    },
+    "LIST_DETAILS": {
+        "No_book": "Livre manquant",
+        "No_note": "Aucune note",
+        "Note_placeholder": "Note",
+        "Tags_popup": "Tags",
+        "Inventory_breakdown": "Inventaire"
     },
     "adapt_to_character": "Adapter au personnage",
-    "reset_filters": "Remettre les filtres à zero"
+    "reset_filters": "Remettre les filtres à zero",
+    "LIST_TAGS":{
+        "LEVE": "MANDATS",
+        "GLAMOUR": "GLAMOUR",
+        "HOUSING": "HOUSING",
+        "GEAR": "ÉQUIPEMENT",
+        "CONSUMABLES": "CONSOMABLES",
+        "MISC": "AUTRE",
+        "PLD": "PLD",
+        "WAR": "GUE",
+        "DRK": "CHN",
+        "WHM": "MBL",
+        "SCH": "ÉRU",
+        "AST": "AST",
+        "MNK": "MOI",
+        "DRG": "DRG",
+        "NIN": "NIN",
+        "SAM": "SAM",
+        "BRD": "BRD",
+        "MCH": "MCH",
+        "BLM": "MNO",
+        "SMN": "INV",
+        "RDM": "MRG",
+        "MIN": "MIN",
+        "BOT": "BOT",
+        "FSH": "PEC",
+        "ALC": "ALC",
+        "ARM": "ARM",
+        "BSM": "FOR",
+        "CRP": "MEN",
+        "CUL": "CUI",
+        "GSM": "ORF",
+        "LTW": "TAN",
+        "WVR": "COU"
+    }
 }

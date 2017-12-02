@@ -1,0 +1,25 @@
+<h2>{{'Public_lists' | translate}}</h2>
+
+<div class="search">
+    <mat-input-container>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput type="text" placeholder="{{'List_name' | translate}}" #nameFilter [(ngModel)]="nameFilterValue">
+    </mat-input-container>
+</div>
+<div class="filter">
+    <mat-form-field>
+        <mat-select (selectionChange)="tagFilter.next($event.value)"
+                    multiple="true" #tagFilterSelect
+                    placeholder="{{'Tag_filter' | translate}}">
+            <mat-option *ngFor="let tag of tags" value="{{tag}}">{{"LIST_TAGS."+tag | translate}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-icon-button (click)="tagFilterSelect.value = []; tagFilter.next([])">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</div>
+
+<app-list-panel *ngFor="let list of lists | async" [list]="list" [authorUid]="list.authorId" [readonly]="true"
+                [buttons]="false" (opened)="opened(list.$key)" (closed)="closed(list.$key)"
+                [expanded]="expanded.indexOf(list.$key) > -1" [copyButton]="true">
+</app-list-panel>

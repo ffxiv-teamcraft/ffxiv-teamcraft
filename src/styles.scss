@@ -11,6 +11,11 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+// Helper class
+.spacer {
+    flex: 1 1 auto;
+}
+
 .snack {
     background-color: mat-color(map-get($dark-theme, accent)) !important;
 }
@@ -20,10 +25,36 @@ body {
 }
 
 .auto-height {
+    min-height: 54px;
     .mat-list-item-content {
-        height: inherit !important;
-        min-height: 54px;
+        height: 100% !important;
     }
+}
+
+// This has to be done here, because of an override error in component's style
+.mat-mini-fab.compact {
+    .mat-button-wrapper {
+        padding: 1px 1px !important;
+        line-height: inherit;
+    }
+}
+
+.mat-icon-button.compact {
+    line-height: inherit;
+    .mat-button-wrapper {
+        padding: 1px 1px !important;
+    }
+}
+
+.compact {
+    .mat-icon {
+        font-size: 20px;
+    }
+}
+
+// We set the max height for menus at 300 px for better UX.
+.mat-menu-panel {
+    max-height: 300px !important;
 }
 
 .mat-content {
@@ -36,8 +67,15 @@ body {
     }
 }
 
-.mat-expansion-panel-content.mat-expanded {
-    overflow: visible !important;
+.mat-expansion-panel-content {
+    &.mat-expanded {
+        overflow: visible !important;
+    }
+    .mat-expansion-panel-body {
+        padding: 0 24px 16px;
+        margin: 0;
+        overflow: inherit;
+    }
 }
 
 .compact {
@@ -50,6 +88,10 @@ body {
     .mat-form-field-infix {
         border-top: none !important;
     }
+}
+
+.mat-form-field-infix {
+    width: auto !important;
 }
 
 // We have to set this here otherwise it doesn't apply, strange behavior

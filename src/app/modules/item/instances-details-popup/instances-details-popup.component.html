@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{data | i18n}}</h2>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item *ngFor="let instance of data.instances">
+            <img src="https://www.garlandtools.org/db/images/{{instance.type | i18n}}.png"
+                 mat-list-avatar
+                 alt="{{instance.type | i18n}}">
+            <b mat-line>{{instance.name | i18n}}</b>
+        </mat-list-item>
+    </mat-list>
+</div>

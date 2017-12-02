@@ -4,10 +4,10 @@ import {ListManagerService} from './list-manager.service';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslateFakeLoader, TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
-import {I18nToolsService} from '../i18n-tools.service';
+import {I18nToolsService} from '../tools/i18n-tools.service';
 import {GarlandToolsService} from '../api/garland-tools.service';
 import {DataService} from '../api/data.service';
-import {HtmlToolsService} from '../html-tools.service';
+import {HtmlToolsService} from '../tools/html-tools.service';
 import {EorzeanTimeService} from '../time/eorzean-time.service';
 
 describe('ListManagerService', () => {

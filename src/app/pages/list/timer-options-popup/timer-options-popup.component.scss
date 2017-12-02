@@ -1,0 +1,8 @@
+div {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    mat-select {
+        margin: 20px 0;
+    }
+}

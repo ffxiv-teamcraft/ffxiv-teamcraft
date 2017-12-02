@@ -1,0 +1,113 @@
+.etime-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.top-divider {
+    margin: 10px 0;
+}
+
+.public-list-toggle {
+    margin: 20px;
+    height: 20px;
+    display: block;
+}
+
+.right-fabs {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    button {
+        margin-left: 10px;
+    }
+    .list-name {
+        font-size: large;
+    }
+}
+
+.loader-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.listError {
+    font-size: 30px;
+    text-align: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.crystal-row {
+    display: inline-block;
+    text-align: center;
+    .crystal {
+        margin: 0 5px;
+        width: 40px;
+        border-radius: 50%;
+        &.compact {
+            width: 25px;
+        }
+    }
+}
+
+.panel {
+    margin: 10px 0;
+}
+
+.options {
+    padding: 15px 0;
+    display: flex;
+    button {
+        margin: 0 5px;
+    }
+}
+
+.zone-divider {
+    margin: 10px 0;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    mat-input-container {
+        width: auto !important;
+    }
+    .class-filters {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+
+        // Wrapper around each individual filter
+        .class-filter {
+            min-width: 96px;
+        }
+
+        // Checkbox
+        .filter {
+            margin: 0 5px;
+        }
+        .filter_icons {
+            height: 30px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.not-found {
+    text-align: center;
+    font-size: 40px;
+    opacity: 0.6;
+}

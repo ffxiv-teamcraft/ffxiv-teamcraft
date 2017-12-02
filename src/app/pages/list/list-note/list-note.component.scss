@@ -1,0 +1,16 @@
+.note-container {
+    width: 100%;
+    padding-top: 10px;
+    .edit-note {
+        width: 100%;
+        .edit-note-input {
+            width: 100%;
+        }
+    }
+    .note {
+        opacity: .6;
+    }
+    button {
+        width: 100%;
+    }
+}

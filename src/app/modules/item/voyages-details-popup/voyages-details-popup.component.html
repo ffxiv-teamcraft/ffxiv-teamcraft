@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>{{data | i18n}}</h2>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item *ngFor="let voyage of data.voyages">
+            <mat-icon mat-list-icon>location_on</mat-icon>
+            <b mat-line>{{voyage | i18n}}</b>
+        </mat-list-item>
+    </mat-list>
+</div>

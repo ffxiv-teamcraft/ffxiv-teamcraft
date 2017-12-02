@@ -2,50 +2,40 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {I18nName} from '../../model/list/i18n-name';
 import {Observable} from 'rxjs/Observable';
+import {items} from './sources/items';
+import {places} from './sources/places';
+import {mobs} from './sources/mobs';
+import {weathers} from './sources/weathers';
+import {npcs} from './sources/npcs';
 
 @Injectable()
 export class LocalizedDataService {
 
-    private items: { [index: number]: I18nName };
-
-    private places: { [index: number]: I18nName };
-
-    private npcs: { [index: number]: I18nName };
-
-    private mobs: { [index: number]: I18nName };
-
-    private weathers: { [index: number]: I18nName };
-
     constructor(private http: HttpClient) {
-        this.load('items').subscribe(items => this.items = items);
-        this.load('places').subscribe(places => this.places = places);
-        this.load('npcs').subscribe(npcs => this.npcs = npcs);
-        this.load('mobs').subscribe(mobs => this.mobs = mobs);
-        this.load('weathers').subscribe(weathers => this.weathers = weathers);
     }
 
     public getItem(id: number): I18nName {
-        return this.getRow(this.items, id);
+        return this.getRow(items, id);
     }
 
     public getPlace(id: number): I18nName {
-        return this.getRow(this.places, id);
+        return this.getRow(places, id);
     }
 
     public getNpc(id: number): I18nName {
-        return this.getRow(this.npcs, id);
+        return this.getRow(npcs, id);
     }
 
     public getMob(id: number): I18nName {
-        return this.getRow(this.mobs, id);
+        return this.getRow(mobs, id);
     }
 
     public getWeather(name: string): I18nName {
-        return this.getRowByENName(this.weathers, name);
+        return this.getRowByENName(weathers, name);
     }
 
     public getAreaIdByENName(name: string): number {
-        return this.getIndexByENName(this.places, name);
+        return this.getIndexByENName(places, name);
     }
 
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {

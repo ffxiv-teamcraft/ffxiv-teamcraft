@@ -1,0 +1,68 @@
+<h3>{{list?.name}} - {{"Pricing" | translate}}</h3>
+
+<button mat-button color="accent" (click)="close.emit()">
+    <mat-icon>arrow_back</mat-icon>
+    {{"Back_to_list" | translate}}
+</button>
+
+<mat-card *ngIf="list" [class]="isMobile()?'mobile':null">
+    <mat-card-title>
+        {{"Spending" | translate}}
+    </mat-card-title>
+    <mat-card-subtitle>{{getSpendingTotal().toLocaleString()}} gils</mat-card-subtitle>
+
+    <mat-expansion-panel [expanded]="true" *ngIf="list.crystals.length > 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{"Crystals" | translate}}</mat-panel-title>
+            <mat-panel-description>{{getTotalPrice(list.crystals)}} gils</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list dense>
+            <app-pricing-row *ngFor="let item of list.crystals" [item]="item" [listId]="list.$key"></app-pricing-row>
+        </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true" *ngIf="list.gathers.length > 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{"Gathering" | translate}}</mat-panel-title>
+            <mat-panel-description>{{getTotalPrice(list.gathers).toLocaleString()}} gils</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list dense>
+            <app-pricing-row *ngFor="let item of list.gathers" [item]="item" [listId]="list.$key"></app-pricing-row>
+        </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true" *ngIf="list.others.length > 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{"Other" | translate}}</mat-panel-title>
+            <mat-panel-description>{{getTotalPrice(list.others).toLocaleString()}} gils</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list dense>
+            <app-pricing-row *ngFor="let item of list.others" [item]="item" [listId]="list.$key"></app-pricing-row>
+        </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="true" *ngIf="list.preCrafts.length > 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{"Pre_crafts" | translate}}</mat-panel-title>
+            <mat-panel-description>{{getTotalPrice(list.preCrafts).toLocaleString()}} gils</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list dense>
+            <app-pricing-row *ngFor="let item of list.preCrafts" [item]="item" [listId]="list.$key"
+                             [craftCost]="getCraftCost(item)"></app-pricing-row>
+        </mat-list>
+    </mat-expansion-panel>
+
+</mat-card>
+
+<mat-card *ngIf="list" [ngClass]="{'mobile':isMobile()}">
+    <mat-card-title>{{"Earning" | translate}}</mat-card-title>
+    <mat-card-subtitle>{{getTotalPrice(list.recipes).toLocaleString()}} gils</mat-card-subtitle>
+    <mat-list dense>
+        <app-pricing-row *ngFor="let item of list.recipes" [item]="item" [listId]="list.$key"
+                         [craftCost]="getCraftCost(item)"></app-pricing-row>
+    </mat-list>
+</mat-card>
+
+<mat-card *ngIf="list" class="accent">
+    <mat-card-title>{{"Benefits" | translate}}: {{getBenefits().toLocaleString()}} gils</mat-card-title>
+</mat-card>

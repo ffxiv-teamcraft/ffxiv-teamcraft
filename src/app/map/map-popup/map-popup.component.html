@@ -1,8 +1,0 @@
-<div md-dialog-content class="map-container">
-    <img src="{{(mapData|async)?.image}}" alt="" class="map-image">
-    <md-icon
-        class="marker"
-        [ngStyle]="{top:(getPosition() | async)?.y+'%', left:(getPosition() | async)?.x+'%'}">
-        location_on
-    </md-icon>
-</div>

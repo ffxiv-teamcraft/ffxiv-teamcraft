@@ -1,4 +1,25 @@
 {
+    "ABOUT": {
+        "title": "About",
+        "Copyright_notice_title": "Copyright notice",
+        "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+        "Thanks_title": "Thanks",
+        "Data_sources": "Data sources",
+        "Patreon_supporters": "Patreon supporters",
+        "Contributors": "Contributors"
+    },
+    "Ephemeral_list": "Will be deleted once completed",
+    "Quick_list_create": "Create quick list (deleted once completed)",
+    "Tag_filter": "Tags",
+    "Public_lists": "Public lists",
+    "Public_list": "Public list",
+    "Profile": "Profil",
+    "COMMON": {
+        "Save": "Speichern"
+    },
+    "ALARMS": {
+        "No_alarm": "No alarm set"
+    },
     "Confirmation": "Bestätigung",
     "Yes": "Ja",
     "No": "Nein",
@@ -92,8 +113,6 @@
     "Email_enter": "E-Mail",
     "Email_not_found": "E-Mail nicht gefunden",
     "Email_sent": "Eine E-Mail mit Anweisungen, wie du dein Passwort ändern kannst, wurde verschickt",
-
-
     "HOME_PAGE.title": "Erstelle Listen, teile, trage bei, stelle her",
     "HOME_PAGE.count": "Listen derzeit gespeichert",
     "HOME_PAGE.lists_created_count": "Listen erstellt mit FFXIV Teamcraft",
@@ -128,7 +147,10 @@
     "HOME_PAGE.contribute_title": "Beitragen",
     "HOME_PAGE.contribute_content": "Wenn du zu dem Tool beitragen möchtest, schau dir einfach den Quellcode an uns schick einen Pull-Request mit deinen Änderungen!",
     "HOME_PAGE.changelog": "Um alle Neuigkeiten über das Tool und die Änderungen an ihm zu erfahren, schaue einfach in den Change-Log.",
-
+    "ALARM": {
+        "Spawned": "{{itemName}} will spawn !",
+        "See_on_map": "Location"
+    },
     "Pricing_mode": "Wert-Modus",
     "Back_to_list": "Zurück zur Liste",
     "Spending": "Ausgaben",
@@ -136,11 +158,10 @@
     "Earning": "Einnahmen",
     "Benefits": "Gewinn",
     "Minimal_craft_cost": "Minimum Herstellungskosten",
-
     "Used_for": "Benutzt für",
     "xivdb_cart_import": "Importiere aus dem XIVDB-Einkaufswagen",
-    "Or":"oder",
-    "Make_donation":"Spende",
+    "Or": "oder",
+    "Make_donation": "Spende",
     "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
     "Hide_completed": "Verstecke komplettierte Reihen",
     "Your_comment": "Dein Kommentar",
@@ -148,17 +169,59 @@
     "Requires": "Erfordert",
     "Copy_item_name_to_clipboard": "Copy item name to clipboard",
     "Item_name_copied": "{{itemname}} copied to clipboard",
-
     "Tier_display_toggle": "Display crafting tiers",
     "Precraft_tier": "Tier",
-
     "SETTINGS": {
         "title": "Einstellungen",
-        "link_base": "Gegenstandslink-Quelle"
+        "link_base": "Gegenstandslink-Quelle",
+        "compact_lists": "Compact list display",
+        "theme": "Theme"
     },
-
-
+    "PROFILE": {
+        "Masterbooks": "Masterbooks",
+        "Patreon_supporter": "Patreon Supporter"
+    },
+    "LIST_DETAILS": {
+        "No_book": "Missing book",
+        "No_note": "No note",
+        "Note_placeholder": "Note",
+        "Tags_popup": "Tags",
+        "Inventory_breakdown": "Inventory"
+    },
     "adapt_to_character": "Adapt to Character",
-    "reset_filters": "Reset Filters"
-
+    "reset_filters": "Reset Filters",
+    "LIST_TAGS":{
+        "LEVE": "LEVE",
+        "GLAMOUR": "GLAMOUR",
+        "HOUSING": "HOUSING",
+        "GEAR": "GEAR",
+        "CONSUMABLES": "CONSUMABLES",
+        "MISC": "MISC",
+        "PLD": "PLD",
+        "WAR": "WAR",
+        "DRK": "DRK",
+        "WHM": "WHM",
+        "SCH": "SCH",
+        "AST": "AST",
+        "MNK": "MNK",
+        "DRG": "DRG",
+        "NIN": "NIN",
+        "SAM": "SAM",
+        "BRD": "BRD",
+        "MCH": "MCH",
+        "BLM": "BLM",
+        "SMN": "SMN",
+        "RDM": "RDM",
+        "MIN": "MIN",
+        "BOT": "BOT",
+        "FSH": "FSH",
+        "ALC": "ALC",
+        "ARM": "ARM",
+        "BSM": "BSM",
+        "CRP": "CRP",
+        "CUL": "CUL",
+        "GSM": "GSM",
+        "LTW": "LTW",
+        "WVR": "WVR"
+    }
 }

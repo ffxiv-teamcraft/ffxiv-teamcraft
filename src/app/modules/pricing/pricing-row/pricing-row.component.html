@@ -1,0 +1,42 @@
+<mat-list-item>
+
+    <div mat-list-avatar class="icon" *ngIf="!isMobile()">
+        <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+    </div>
+    <p mat-line class="item-name">
+        {{item.id | itemName | i18n}}
+        <mat-icon *ngIf="craftCost !== undefined" matTooltip="{{'Minimal_craft_cost' | translate}}: {{craftCost}} gils"
+                 matTooltipPosition="above">
+            attach_money
+        </mat-icon>
+        <mat-icon color="warn" *ngIf="craftCost < (price.nq * amount.nq + price.hq * amount.hq)"
+        matTooltip="{{'PRICING.Craft_cheaper'}}" matTooltipPosition="above">error_outline</mat-icon>
+    </p>
+
+    <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
+              matTooltipPosition="above">group
+    </mat-icon>
+
+    <div>
+        <div mat-line>
+            <mat-form-field class="nofix price">
+                <span matPrefix>NQ &nbsp;</span>
+                <input matInput type="number" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+            </mat-form-field>
+            <mat-form-field class="nofix amount">
+                <span matPrefix>x &nbsp;</span>
+                <input matInput type="number" [(ngModel)]="amount.nq" (ngModelChange)="saveAmount()">
+            </mat-form-field>
+        </div>
+        <div mat-line *ngIf="!isCrystal()">
+            <mat-form-field class="nofix price">
+                <span matPrefix>HQ &nbsp;</span>
+                <input matInput type="number" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+            </mat-form-field>
+            <mat-form-field class="nofix amount">
+                <span matPrefix>x &nbsp;</span>
+                <input matInput type="number" [(ngModel)]="amount.hq" (ngModelChange)="saveAmount()">
+            </mat-form-field>
+        </div>
+    </div>
+</mat-list-item>

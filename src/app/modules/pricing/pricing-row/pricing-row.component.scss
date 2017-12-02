@@ -1,0 +1,22 @@
+:host {
+    margin: 0 20px;
+
+    .price {
+        width: 100px;
+    }
+
+    .amount {
+        width: 60px;
+    }
+
+    .item-name {
+        .mat-icon {
+            vertical-align: middle;
+            cursor: default;
+        }
+    }
+
+    .from-vendor {
+        margin: 0 15px;
+    }
+}
