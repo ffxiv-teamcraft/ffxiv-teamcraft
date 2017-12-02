@@ -62,25 +62,58 @@
     }
 }
 
-$primary: mat-palette($mat-orange, 700);
-$accent: mat-palette($mat-teal, 500);
+$primary-orange: mat-palette($mat-orange, 700);
+$accent-orange: mat-palette($mat-teal, 500);
+$primary-teal: mat-palette($mat-teal, 300);
+$accent-teal: mat-palette($mat-indigo, 100);
 $warn: mat-palette($mat-red, 600);
-$dark-theme: mat-dark-theme($primary, $accent, $warn);
+
+$dark-theme: mat-dark-theme($primary-orange, $accent-orange, $warn);
+$light-orange-theme: mat-light-theme($primary-orange, $accent-orange, $warn);
+$light-teal-theme: mat-light-theme($primary-teal, $accent-teal, $warn);
+$dark-teal-theme: mat-dark-theme($primary-teal, $accent-teal, $warn);
+
+// Default theme is dark orange, we have to apply it here.
 @include angular-material-theme($dark-theme);
 @include theme-background($dark-theme);
 @include expansion-panel-accent($dark-theme);
 @include card-accent($dark-theme);
 @include color-fixes($dark-theme);
 
-$light-theme: mat-light-theme($primary, $accent, $warn);
+
+.dark-orange-theme {
+    @include angular-material-theme($dark-theme);
+    @include theme-background($dark-theme);
+    @include expansion-panel-accent($dark-theme);
+    @include card-accent($dark-theme);
+    @include color-fixes($dark-theme);
+}
 
 // Light theme class
-.light-theme {
-    @include angular-material-theme($light-theme);
-    @include theme-background($light-theme);
-    @include expansion-panel-accent($light-theme);
-    @include card-accent($light-theme);
-    @include color-fixes($light-theme);
+.light-orange-theme {
+    @include angular-material-theme($light-orange-theme);
+    @include theme-background($light-orange-theme);
+    @include expansion-panel-accent($light-orange-theme);
+    @include card-accent($light-orange-theme);
+    @include color-fixes($light-orange-theme);
+}
+
+// Light theme class
+.light-teal-theme {
+    @include angular-material-theme($light-teal-theme);
+    @include theme-background($light-teal-theme);
+    @include expansion-panel-accent($light-teal-theme);
+    @include card-accent($light-teal-theme);
+    @include color-fixes($light-teal-theme);
+}
+
+// Light theme class
+.dark-teal-theme {
+    @include angular-material-theme($dark-teal-theme);
+    @include theme-background($dark-teal-theme);
+    @include expansion-panel-accent($dark-teal-theme);
+    @include card-accent($dark-teal-theme);
+    @include color-fixes($dark-teal-theme);
 }
 
 // Responsive breakpoint mixin/definitions

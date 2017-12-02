@@ -183,7 +183,7 @@
         "title": "Settings",
         "link_base": "Item links",
         "compact_lists": "Compact list display",
-        "light_theme": "Light theme"
+        "theme": "Theme"
     },
     "PROFILE": {
         "Masterbooks": "Masterbooks",

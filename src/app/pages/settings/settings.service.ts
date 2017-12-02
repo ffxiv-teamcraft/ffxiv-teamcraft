@@ -25,12 +25,12 @@ export class SettingsService {
         this.setSetting('compact-lists', compact.toString());
     }
 
-    public get lightTheme(): boolean {
-        return this.getSetting('light-theme', 'false') === 'true';
+    public get theme(): string {
+        return this.getSetting('theme', 'dark-orange');
     }
 
-    public set lightTheme(light: boolean) {
-        this.setSetting('light-theme', light.toString());
+    public set theme(theme: string) {
+        this.setSetting('theme', theme);
     }
 
     public get alarmHoursBefore(): number {

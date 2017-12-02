@@ -15,6 +15,8 @@ export class SettingsComponent {
         // {name: 'Lodestone', value: 'LODESTONE'}, TODO
     ];
 
+    themes = ['dark-orange', 'light-orange', 'dark-teal', 'light-teal'];
+
     constructor(public settings: SettingsService) {
     }
 }

@@ -175,7 +175,7 @@
         "title": "Options",
         "link_base": "Liens des objets",
         "compact_lists": "Affichage compact des listes",
-        "light_theme": "Thème lumineux"
+        "theme": "Thème"
     },
     "PROFILE": {
         "Masterbooks": "Livres",

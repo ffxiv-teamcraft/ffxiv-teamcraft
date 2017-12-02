@@ -175,7 +175,7 @@
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
         "compact_lists": "Compact list display",
-        "light_theme": "Light theme"
+        "theme": "Theme"
     },
     "PROFILE": {
         "Masterbooks": "Masterbooks",
