@@ -46,6 +46,9 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
     }
 
     update(uid: string, data: T): Observable<void> {
+        if (uid === undefined || uid === null || uid === '') {
+            throw new Error('Empty uid');
+        }
         const before = this.cache[uid];
         const diff = this.diffService.diff(before, data);
         const batch: Observable<void>[] = [];
@@ -64,12 +67,18 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
     }
 
     set(uid: string, data: T): Observable<void> {
+        if (uid === undefined || uid === null || uid === '') {
+            throw new Error('Empty uid');
+        }
         const clone = JSON.parse(JSON.stringify(data));
         delete clone.$key;
         return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).set(clone));
     }
 
     remove(uid: string): Observable<void> {
+        if (uid === undefined || uid === null || uid === '') {
+            throw new Error('Empty uid');
+        }
         return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).remove())
             .do(() => {
                 delete this.cache[uid];
