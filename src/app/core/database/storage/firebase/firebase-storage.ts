@@ -47,6 +47,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
 
     update(uid: string, data: T): Observable<void> {
         if (uid === undefined || uid === null || uid === '') {
+            this.firebase.list('logs').push('Empty uid');
             throw new Error('Empty uid');
         }
         const before = this.cache[uid];
@@ -68,6 +69,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
 
     set(uid: string, data: T): Observable<void> {
         if (uid === undefined || uid === null || uid === '') {
+            this.firebase.list('logs').push('Empty uid');
             throw new Error('Empty uid');
         }
         const clone = JSON.parse(JSON.stringify(data));
@@ -77,6 +79,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
 
     remove(uid: string): Observable<void> {
         if (uid === undefined || uid === null || uid === '') {
+            this.firebase.list('logs').push('Empty uid');
             throw new Error('Empty uid');
         }
         return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).remove())

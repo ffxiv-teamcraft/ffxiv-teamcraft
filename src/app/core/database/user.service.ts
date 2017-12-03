@@ -57,7 +57,7 @@ export class UserService extends FirebaseStorage<AppUser> {
     public getUserData(): Observable<AppUser> {
         return this.reloader
             .switchMap(() => {
-                return this.af.authState.switchMap(user => {
+                return this.af.authState.first().switchMap(user => {
                     if (user === null && !this.loggingIn) {
                         this.af.auth.signInAnonymously();
                         return Observable.of({name: 'Anonymous', anonymous: true});
@@ -90,7 +90,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                 if (lists === []) {
                     return this.remove(uid).first().subscribe(resolve);
                 } else {
-                    return this.listService.deleteUserLists(uid);
+                    return this.listService.deleteUserLists(uid).subscribe(resolve);
                 }
             });
         });

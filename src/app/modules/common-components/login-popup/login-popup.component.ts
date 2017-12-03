@@ -48,9 +48,11 @@ export class LoginPopupComponent {
             return this.userService.get(user.uid)
                 .subscribe(() => {
                     this.userService.loggingIn = false;
+                    this.userService.reload();
                     resolve();
                 }, err => {
                     this.userService.loggingIn = false;
+                    this.userService.reload();
                     reject(err);
                 });
         });

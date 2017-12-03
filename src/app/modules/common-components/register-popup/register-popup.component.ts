@@ -74,7 +74,7 @@ export class RegisterPopupComponent {
             const u = new AppUser();
             u.$key = user.uid;
             u.email = user.email;
-            this.userService.update(user.uid, u).first().subscribe(() => {
+            this.userService.set(user.uid, u).first().subscribe(() => {
                 this.dialog.open(CharacterAddPopupComponent, {disableClose: true}).afterClosed().subscribe(() => {
                     this.dialogRef.close();
                     this.userService.reload();

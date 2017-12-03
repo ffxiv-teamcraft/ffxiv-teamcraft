@@ -33,7 +33,16 @@ export class FirebaseListStorage extends FirebaseStorage<List> implements ListSt
     }
 
     deleteByAuthor(uid: string): Observable<void> {
-        return Observable.fromPromise(this.listsByAuthorRef(uid).remove());
+        return this.listsByAuthorRef(uid).snapshotChanges()
+            .first()
+            .map(snaps => snaps.map(snap => snap.payload.key))
+            .switchMap(listIds => {
+                const deletion = listIds.map(id => {
+                    return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${id}`).remove());
+                });
+                return Observable.combineLatest(deletion, () => {
+                });
+            });
     }
 
     private listsByAuthorRef(uid: string): AngularFireList<List> {

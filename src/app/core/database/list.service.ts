@@ -80,7 +80,7 @@ export class ListService {
      * @param {string} uid
      * @returns {Promise<void>}
      */
-    public deleteUserLists(uid: string): Observable<void | void[]> {
+    public deleteUserLists(uid: string): Observable<void> {
         return this.store.deleteByAuthor(uid);
     }
 

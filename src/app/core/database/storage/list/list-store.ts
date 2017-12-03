@@ -8,5 +8,5 @@ export abstract class ListStore extends DataStore<List> {
 
     public abstract byAuthor(uid: string): Observable<List[]>;
 
-    public abstract deleteByAuthor(uid: string): Observable<void | void[]>;
+    public abstract deleteByAuthor(uid: string): Observable<void>;
 }
