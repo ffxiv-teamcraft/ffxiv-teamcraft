@@ -45,51 +45,40 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 export class ItemComponent extends ComponentWithSubscriptions implements OnInit {
 
     private static TRADE_SOURCES_PRIORITIES = {
-        // MGP, just in case
-        5752: 20,
+        // Just in case
+        25: 20, // Wolf Mark
+        29: 20, // MGP
         // Seals
-        20: 18,
-        21: 18,
-        22: 18,
-        27: 18,
-        7550: 18,
+        20: 18, // Storm
+        21: 18, // Serpent
+        22: 18, // Flame
+        27: 18, // Allied
+        10307: 18, // Centurio
         // Tomestones
-        23: 15,
-        24: 15,
-        26: 15,
-        28: 15,
-        10972: 15,
-        11252: 15,
-        7548: 15,
-        7549: 15,
-        8285: 15,
-        9053: 15,
+        28: 15, // Poetics
+        34: 15, // Verity
+        35: 15, // Creation
         // Scripts
-        7553: 13,
-        7554: 13,
-        11090: 13,
-        11091: 13,
-        // Beast tribe currencies
-        8477: 10,
-        8267: 10,
-        3455: 10,
-        3456: 10,
-        3457: 10,
-        3458: 10,
-        3459: 10,
-        3460: 10,
-        3461: 10,
-        3462: 10,
-        3463: 10,
-        3464: 10,
-        3465: 10,
-        3466: 10,
-        3467: 10,
-        3468: 10,
-        3469: 10,
-        7812: 10,
+        10309: 13, // Red crafter
+        10311: 13, // Red gatherer
+        17833: 13, // Yellow crafter
+        17834: 13, // Yellow gatherer
+        // Beast tribes
+        21073: 10, // Ixali
+        21074: 10, // Vanu Vanu
+        21075: 10, // Sylph
+        21076: 10, // Amalj'aa
+        21077: 10, // Sahagin
+        21078: 10, // Kobold
+        21079: 10, // Vath
+        21080: 10, // Moogle
+        21081: 10, // Kojins
+        // Gardening
+        15857: 5, // Althyk Lavender
+        15858: 5, // Voidrake
         // Spoils
-        7731: 2
+        13630: 2, // Brass
+        13631: 2 // Steel
     };
 
     @Input()
