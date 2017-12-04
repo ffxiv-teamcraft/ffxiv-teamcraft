@@ -2,8 +2,8 @@ export enum ListTag {
     // Theme tags
     GEAR = 'Gear',
     CONSUMABLE = 'Consumable',
-    LEVE = 'Leve',
     LOG = 'Log',
+    LEVE = 'Leve',
     GLAMOUR = 'Glamour',
     HOUSING = 'Housing',
     MISC = 'Misc',
