@@ -195,37 +195,53 @@
     "adapt_to_character": "Adapter au personnage",
     "reset_filters": "Remettre les filtres à zero",
     "LIST_TAGS":{
-        "LEVE": "MANDATS",
-        "GLAMOUR": "GLAMOUR",
-        "HOUSING": "HOUSING",
-        "GEAR": "ÉQUIPEMENT",
-        "CONSUMABLES": "CONSOMABLES",
-        "MISC": "AUTRE",
+        "GEAR": "Équipement",
+        "CONSUMABLE": "Consommable",
+        "LOG": "Carnet",
+        "LEVE": "Mandat",
+        "GLAMOUR": "Mirage",
+        "HOUSING": "Logement",
+        "MISC": "Autre",
+        
+        "TANK": "Tank",
+        "HEALER": "Soigneur",
+        "MELEE": "Mêlée",
+        "RANGED": "Distance",
+        "CASTER": "Magique",
+        "CRAFTER": "Artisan",
+        "GATHERER": "Récolteur",
+        
         "PLD": "PLD",
         "WAR": "GUE",
         "DRK": "CHN",
+        
         "WHM": "MBL",
         "SCH": "ÉRU",
         "AST": "AST",
+        
         "MNK": "MOI",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
+        
         "BRD": "BRD",
         "MCH": "MCH",
+        
         "BLM": "MNO",
         "SMN": "INV",
         "RDM": "MRG",
-        "MIN": "MIN",
-        "BOT": "BOT",
-        "FSH": "PEC",
-        "ALC": "ALC",
-        "ARM": "ARM",
-        "BSM": "FOR",
+        
         "CRP": "MEN",
-        "CUL": "CUI",
+        "BSM": "FOR",
+        "ARM": "ARM",
         "GSM": "ORF",
         "LTW": "TAN",
-        "WVR": "COU"
+        "WVR": "COU",
+        "ALC": "ALC",
+        "CUL": "CUI",
+        
+        "MIN": "MIN",
+        "BOT": "BOT",
+        "FSH": "PEC"
     }
 }
