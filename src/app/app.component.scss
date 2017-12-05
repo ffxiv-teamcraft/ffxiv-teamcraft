@@ -28,25 +28,13 @@
         }
     }
     mat-sidenav-container {
-        display: block;
         height: calc(100% - 64px);
-        mat-sidenav {
+        .mat-sidenav {
             width: 20%;
             min-width: 200px;
+            max-width: 350px;
             display: flex;
             flex-direction: column;
-            .sidebar-element {
-                padding: 20px;
-                margin: 10px 0;
-            }
-            .social-icons {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                .icon {
-                    width: 32px;
-                }
-            }
             .accent-background {
                 padding: 15px 16px;
                 font-size: 16px;
