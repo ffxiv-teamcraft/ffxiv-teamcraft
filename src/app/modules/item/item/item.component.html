@@ -206,7 +206,7 @@
                          matTooltipPosition="above" src="{{craft.icon}}">
                 </div>
             </div>
-            <button mat-icon-button *ngIf="item.gatheredBy !== undefined && item.gatheredBy.length > 0"
+            <button mat-icon-button *ngIf="item.gatheredBy !== undefined"
                     (click)="openGatheredByDetails(item)">
                 <img class="crafted-by"
                      matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
