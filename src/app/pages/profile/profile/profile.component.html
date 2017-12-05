@@ -16,7 +16,7 @@
                          alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"
                          class="patreon-badge" matTooltipPosition="above" *ngIf="character.patron">
                 </mat-card-header>
-                <mat-grid-list cols="8">
+                <mat-grid-list cols="8" rowHeight="100px">
                     <mat-grid-tile *ngFor="let job of getJobs()">
                         <div class="job-container">
                             <div>
