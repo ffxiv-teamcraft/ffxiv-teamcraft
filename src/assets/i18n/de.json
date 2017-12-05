@@ -192,40 +192,56 @@
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventar"
     },
-    "adapt_to_character": "An Character anpassen",
-    "reset_filters": "Filter zurücksetzen",
-    "LIST_TAGS":{
-        "LEVE": "FREIBRIEF",
-        "GLAMOUR": "PROJEKTION",
-        "HOUSING": "MÖBILIAR",
-        "GEAR": "AUSRÜSTUNG",
-        "CONSUMABLES": "BENUTZBARES",
-        "MISC": "VERSCHIEDENES",
+    "adapt_to_character": "Adapt to Character",
+    "reset_filters": "Reset Filters",
+    "LIST_TAGS": {
+        "GEAR": "Ausrüstung",
+        "CONSUMABLE": "Benutzbares",
+        "LOG": "Log",
+        "LEVE": "Freibrief",
+        "GLAMOUR": "Projektion",
+        "HOUSING": "Möbeliar",
+        "MISC": "Verschiedenes",
+
+        "TANK": "Verteidiger",
+        "HEALER": "Heiler",
+        "MELEE": "Nahkämpfer",
+        "RANGED": "Fernkämpfer",
+        "CASTER": "Zauberer",
+        "CRAFTER": "Handwerker",
+        "GATHERER": "Sammler",
+
         "PLD": "PLD",
         "WAR": "KRG",
         "DRK": "DKR",
+
         "WHM": "WMA",
         "SCH": "GLT",
         "AST": "AST",
+
         "MNK": "MÖN",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
+
         "BRD": "BRD",
         "MCH": "MCH",
+
         "BLM": "SMA",
         "SMN": "BSW",
         "RDM": "RMA",
-        "MIN": "MIN",
-        "BOT": "GÄR",
-        "FSH": "FSH",
-        "ALC": "ALC",
-        "ARM": "PLA",
-        "BSM": "GRS",
+
         "CRP": "ZMR",
-        "CUL": "GRM",
+        "BSM": "GRS",
+        "ARM": "PLA",
         "GSM": "GSM",
         "LTW": "GER",
-        "WVR": "WEB"
+        "WVR": "WEB",
+        "ALC": "ALC",
+        "CUL": "GRM",
+ 
+        "MIN": "MIN",
+        "BOT": "GÄR",
+        "FSH": "FSH"
     }
 }
