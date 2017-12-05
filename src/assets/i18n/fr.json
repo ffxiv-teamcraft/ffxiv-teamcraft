@@ -20,6 +20,7 @@
     "ALARMS": {
         "No_alarm": "Aucune alarme définie"
     },
+    "Select_all":"Tout cocher",
     "Confirmation": "Confirmation",
     "Yes": "Oui",
     "No": "Non",
@@ -202,7 +203,7 @@
         "GLAMOUR": "Mirage",
         "HOUSING": "Logement",
         "MISC": "Autre",
-        
+
         "TANK": "Tank",
         "HEALER": "Soigneur",
         "MELEE": "Mêlée",
@@ -210,27 +211,27 @@
         "CASTER": "Magique",
         "CRAFTER": "Artisan",
         "GATHERER": "Récolteur",
-        
+
         "PLD": "PLD",
         "WAR": "GUE",
         "DRK": "CHN",
-        
+
         "WHM": "MBL",
         "SCH": "ÉRU",
         "AST": "AST",
-        
+
         "MNK": "MOI",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
-        
+
         "BRD": "BRD",
         "MCH": "MCH",
-        
+
         "BLM": "MNO",
         "SMN": "INV",
         "RDM": "MRG",
-        
+
         "CRP": "MEN",
         "BSM": "FOR",
         "ARM": "ARM",
