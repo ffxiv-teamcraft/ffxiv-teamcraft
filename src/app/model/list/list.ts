@@ -32,6 +32,8 @@ export class List extends DataModel {
 
     public: boolean;
 
+    forks = 0;
+
     ephemeral: boolean;
 
     constructor() {
@@ -54,6 +56,7 @@ export class List extends DataModel {
         delete clone.$key;
         ga('send', 'event', 'List', 'creation');
         ga('send', 'event', 'List', 'clone');
+        this.forks++;
         return clone;
     }
 
