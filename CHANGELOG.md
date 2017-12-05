@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0...v3.0.1) (2017-12-05)
+
+
+### Bug Fixes
+
+* can't login using email and password ([3ab56b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ab56b5))
+* mobile design display issue, missing BOT icon in some cases ([010f7d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/010f7d8)), closes [#124](https://github.com/Supamiu/ffxiv-teamcraft/issues/124)
+* sidebar displayed over the list in some cases ([36f47b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/36f47b9)), closes [#125](https://github.com/Supamiu/ffxiv-teamcraft/issues/125)
+* wrong slot for Chromite ore ([3b96e46](https://github.com/Supamiu/ffxiv-teamcraft/commit/3b96e46)), closes [#121](https://github.com/Supamiu/ffxiv-teamcraft/issues/121)
+
+
+### Features
+
+* addition and correction of de translations ([8e2a724](https://github.com/Supamiu/ffxiv-teamcraft/commit/8e2a724))
+* addition and correction of en translations ([af62d58](https://github.com/Supamiu/ffxiv-teamcraft/commit/af62d58))
+* addition and correction of fr translations ([7f09074](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f09074))
+* addition and correction of ja translations ([a33a7c4](https://github.com/Supamiu/ffxiv-teamcraft/commit/a33a7c4))
+* addition and correction of translations ([5168f19](https://github.com/Supamiu/ffxiv-teamcraft/commit/5168f19))
+* reordering ([6e70bc6](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e70bc6))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0-beta.6...v3.0.0) (2017-12-02)
 
