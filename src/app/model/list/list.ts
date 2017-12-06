@@ -190,6 +190,7 @@ export class List extends DataModel {
      */
     public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
+        const previousDone = item.done;
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
@@ -198,7 +199,6 @@ export class List extends DataModel {
             item.done = 0;
         }
         if (setUsed) {
-            console.log('set used', item.id, amount);
             item.used += amount;
             if (item.used > item.amount) {
                 item.used = item.amount;
@@ -217,7 +217,9 @@ export class List extends DataModel {
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    this.setDone(requirementItem, nextAmount, true, true);
+                    // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
+                    // as we didn't use more.
+                    this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
                 }
             }
         }
@@ -234,9 +236,6 @@ export class List extends DataModel {
                 continue;
             }
             const requirementItem = this.getItemById(requirement.id, true);
-            if (item.id === 18260) {
-                console.log(requirementItem.id, requirementItem.done, requirementItem.used, requirement.amount * item.amount_needed);
-            }
             // While each requirement has enough items remaining, you can craft the item.
             // If only one misses, then this will turn false for the rest of the loop
             canCraft = canCraft && (requirementItem.done - requirementItem.used) >= requirement.amount * item.amount_needed;
