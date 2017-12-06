@@ -190,6 +190,7 @@ export class List extends DataModel {
      */
     public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
+        const previousDone = item.done;
         item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
@@ -216,7 +217,9 @@ export class List extends DataModel {
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    this.setDone(requirementItem, nextAmount, true, true);
+                    // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
+                    // as we didn't use more.
+                    this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
                 }
             }
         }

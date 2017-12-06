@@ -20,6 +20,7 @@
     "ALARMS": {
         "No_alarm": "Kein Alarm gesetzt"
     },
+    "Select_all": "Alle auswählen",
     "Confirmation": "Bestätigung",
     "Yes": "Ja",
     "No": "Nein",
@@ -239,7 +240,7 @@
         "WVR": "WEB",
         "ALC": "ALC",
         "CUL": "GRM",
- 
+
         "MIN": "MIN",
         "BOT": "GÄR",
         "FSH": "FSH"
