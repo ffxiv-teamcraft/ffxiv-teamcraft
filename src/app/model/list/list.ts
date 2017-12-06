@@ -198,6 +198,7 @@ export class List extends DataModel {
             item.done = 0;
         }
         if (setUsed) {
+            console.log('set used', item.id, amount);
             item.used += amount;
             if (item.used > item.amount) {
                 item.used = item.amount;
@@ -234,7 +235,7 @@ export class List extends DataModel {
             }
             const requirementItem = this.getItemById(requirement.id, true);
             if (item.id === 18260) {
-                console.log(requirementItem.id, requirementItem.done - requirementItem.used, requirement.amount * item.amount_needed);
+                console.log(requirementItem.id, requirementItem.done, requirementItem.used, requirement.amount * item.amount_needed);
             }
             // While each requirement has enough items remaining, you can craft the item.
             // If only one misses, then this will turn false for the rest of the loop
