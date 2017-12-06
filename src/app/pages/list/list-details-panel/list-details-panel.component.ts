@@ -63,7 +63,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public generateTiers(): void {
         if (this.data !== null) {
             this.tiers = [[]];
-            this.data.forEach(row => {
+            this.data.sort((a: ListRow, b: ListRow) => {
+                if (a.requires !== undefined && a.requires.find(requirement => requirement.id === b.id) !== undefined) {
+                    return 1;
+                }
+                return -1;
+            }).forEach(row => {
                 if (row.requires !== undefined) {
                     this.tiers = this.setTier(row, this.tiers);
                 }
@@ -71,16 +76,24 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
     }
 
-    private setTier(row: ListRow, result: ListRow[][], tier = 0): ListRow[][] {
-        if (result[tier] === undefined) {
-            result[tier] = [];
+    private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {
+        if (result[0] === undefined) {
+            result[0] = [];
         }
+        // Default tier is -1, because we want to do +1 to the last requirement tier to define the tier of the current item.
+        let requirementsTier = -1;
         for (const requirement of row.requires) {
-            if (result[tier].find(r => r.id === requirement.id) !== undefined) {
-                return this.setTier(row, result, tier + 1);
+            for (let tier = 0; tier < result.length; tier++) {
+                if (result[tier].find(r => r.id === requirement.id) !== undefined) {
+                    requirementsTier = requirementsTier > tier ? requirementsTier : tier;
+                }
             }
         }
-        result[tier].push(row);
+        const itemTier = requirementsTier + 1;
+        if (result[itemTier] === undefined) {
+            result[itemTier] = [];
+        }
+        result[itemTier].push(row);
         return result;
     }
 
