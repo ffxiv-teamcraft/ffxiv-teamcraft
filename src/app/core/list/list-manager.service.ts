@@ -79,9 +79,7 @@ export class ListManagerService {
                 return addition;
             })
             // merge the addition list with the list we want to add items in.
-            .map(addition => list.merge(addition))
-            // Clear the result list, removing useless properties.
-            .map(addition => addition.clean());
+            .map(addition => list.merge(addition));
     }
 
     public upgradeList(list: List): Observable<List> {
