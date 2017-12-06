@@ -280,7 +280,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.list.first().subscribe((l: List) => {
             // Little trick to clone an object using JS.
             const fork: List = l.clone();
-            fork.authorId = this.authorUid;
+            fork.authorId = this.user.uid;
             this.listService.add(fork).first().subscribe((id) => {
                 this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                     this.translate.instant('Open')).onAction()
