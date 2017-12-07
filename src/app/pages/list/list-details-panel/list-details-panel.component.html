@@ -3,14 +3,14 @@
         <mat-panel-title>{{title}}</mat-panel-title>
     </mat-expansion-panel-header>
     <mat-list dense *ngIf="!tierBreakdownToggle">
-        <div *ngFor="let row of data; let i = index;trackBy: trackByItem">
+        <div *ngFor="let row of data; let i = index">
             <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
                       [item]="row" [list]="list" [recipe]="recipe"
                       [even]="i%2!=0" [preCraft]="preCraft"></app-item>
         </div>
     </mat-list>
     <mat-list dense *ngIf="tierBreakdownToggle">
-        <mat-list *ngFor="let tier of tiers; let tierNumber = index; trackBy: trackByItem">
+        <mat-list *ngFor="let tier of tiers; let tierNumber = index;">
             <h3 mat-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
             <mat-divider></mat-divider>
             <div *ngFor="let row of tier; let i = index">
