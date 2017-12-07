@@ -191,9 +191,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         this.zoneBreakdown = new ZoneBreakdown(l);
                     })
                     .map((list: List) => {
-                        list.crystals = this.orderCrystals(list.crystals);
-                        list.gathers = this.orderGatherings(list.gathers);
-                        list.preCrafts = this.orderPreCrafts(list.preCrafts);
+                        list.crystals = list.orderCrystals();
+                        list.gathers = list.orderGatherings(this.data);
+                        list.preCrafts = list.orderPreCrafts();
                         return list;
                     });
         }));
@@ -291,56 +291,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     }));
             });
         }));
-    }
-
-    orderCrystals(crystals: ListRow[]): ListRow[] {
-        if (crystals === null) {
-            return [];
-        }
-        return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
-    }
-
-    orderPreCrafts(preCrafts: ListRow[]): ListRow[] {
-        if (preCrafts === null) {
-            return [];
-        }
-        return preCrafts === null ? null : preCrafts.sort((a: ListRow, b: ListRow) => {
-            let aRequiredItems = 0;
-            let bRequiredItems = 0;
-            a.requires.forEach(requirement => {
-                aRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
-            });
-            b.requires.forEach(requirement => {
-                bRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
-            });
-            const result = aRequiredItems - bRequiredItems;
-            // If we get 0 as result, the template will act in a strange way, moving items as we hover them, so we need a failsafe.
-            if (result === 0) {
-                return this.data.getItem(a.id).en > this.data.getItem(b.id).en ? 1 : -1;
-            }
-            return result;
-        });
-    }
-
-    orderGatherings(gatherings: ListRow[]): ListRow[] {
-        if (gatherings === null) {
-            return [];
-        }
-        return gatherings.sort((a, b) => {
-            if (this.data.getItem(b.id).en > this.data.getItem(a.id).en) {
-                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            } else {
-                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-        });
     }
 
     public resetProgression(): void {

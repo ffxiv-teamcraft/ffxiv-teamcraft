@@ -47,8 +47,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     tiers: ListRow[][] = [[]];
 
-    tierBreakdownToggle = false;
-
     constructor(public settings: SettingsService) {
     }
 
@@ -66,6 +64,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
             this.data.sort((a: ListRow, b: ListRow) => {
                 if (a.requires !== undefined && a.requires.find(requirement => requirement.id === b.id) !== undefined) {
                     return 1;
+                } else if (b.requires !== undefined && b.requires.find(requirement => requirement.id === a.id) !== undefined) {
+                    return -1;
                 }
                 return -1;
             }).forEach(row => {
@@ -95,10 +95,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
         result[itemTier].push(row);
         return result;
-    }
-
-    public toggleTierBreakdown(): void {
-        this.tierBreakdownToggle = !this.tierBreakdownToggle;
     }
 
     ngOnChanges(changes: SimpleChanges): void {

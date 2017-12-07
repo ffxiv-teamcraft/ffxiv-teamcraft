@@ -6,6 +6,7 @@ import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
 import {ListTag} from './list-tag.enum';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 declare const ga: Function;
 
@@ -225,6 +226,49 @@ export class List extends DataModel {
             }
         }
         return undefined;
+    }
+
+
+    orderCrystals(): ListRow[] {
+        if (this.crystals === null) {
+            return [];
+        }
+        return this.crystals === null ? null : this.crystals.sort((a, b) => a.id - b.id);
+    }
+
+    orderPreCrafts(): ListRow[] {
+        if (this.preCrafts === null) {
+            return [];
+        }
+        return this.preCrafts === null ? null : this.preCrafts.sort((a: ListRow, b: ListRow) => {
+            if (a.requires !== undefined && a.requires.find(requirement => requirement.id === b.id) !== undefined) {
+                return 1;
+            } else if (b.requires !== undefined && b.requires.find(requirement => requirement.id === a.id) !== undefined) {
+                return -1;
+            }
+            return a.id > b.id ? 1 : -1;
+        });
+    }
+
+    orderGatherings(dataService: LocalizedDataService): ListRow[] {
+        if (this.gathers === null) {
+            return [];
+        }
+        return this.gathers.sort((a, b) => {
+            if (dataService.getItem(b.id).en > dataService.getItem(a.id).en) {
+                if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            } else {
+                if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
     }
 
     /**
