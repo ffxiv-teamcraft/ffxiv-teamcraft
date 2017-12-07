@@ -195,8 +195,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         list.gathers = this.orderGatherings(list.gathers);
                         list.preCrafts = this.orderPreCrafts(list.preCrafts);
                         return list;
-                    })
-                    .distinctUntilChanged();
+                    });
         }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
