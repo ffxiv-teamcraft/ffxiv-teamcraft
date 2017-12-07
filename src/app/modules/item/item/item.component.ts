@@ -294,7 +294,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         const res = {priority: 0, icon: 0};
         item.tradeSources.forEach(ts => {
             ts.trades.forEach(trade => {
-                const id = trade.currencyIcon;
+                const id = trade.currencyId;
                 if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined && ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
                     res.icon = trade.currencyIcon;
                     res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
