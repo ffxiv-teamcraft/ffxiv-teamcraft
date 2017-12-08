@@ -169,7 +169,12 @@ export class List extends DataModel {
                 // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
                 if (prop !== 'recipes') {
                     this[prop].forEach(row => {
-                        row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+                        if (prop !== 'preCrafts') {
+                            row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+                        } else {
+                            row.amount = this.totalAmountRequired(<ListRow>row);
+                            row.amount_needed = Math.ceil(row.amount / row.yield);
+                        }
                     });
                 }
                 this[prop] = this[prop].filter(row => row.amount > 0);

@@ -67,7 +67,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 } else if (b.requires !== undefined && b.requires.find(requirement => requirement.id === a.id) !== undefined) {
                     return -1;
                 }
-                return -1;
+                return a.id > b.id ? 1 : -1;
             }).forEach(row => {
                 if (row.requires !== undefined) {
                     this.tiers = this.setTier(row, this.tiers);
