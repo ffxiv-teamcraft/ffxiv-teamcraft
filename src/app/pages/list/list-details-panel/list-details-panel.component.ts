@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnIn
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {SettingsService} from '../../settings/settings.service';
-import {trackByItem} from '../../../core/tools/track-by-item';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -50,10 +49,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     constructor(public settings: SettingsService) {
     }
 
-    public trackByItem(index: number, item: ListRow): any {
-        return trackByItem(index, item);
-    }
-
     /**
      * Returns a list of tiers based on dependencies between each list row.
      * each tier is a list of rows.
@@ -98,12 +93,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.showTier && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
             this.generateTiers();
         }
     }
 
     ngOnInit(): void {
-        this.generateTiers();
+        if (this.showTier) {
+            this.generateTiers();
+        }
     }
 }

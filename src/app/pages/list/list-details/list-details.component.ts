@@ -261,36 +261,32 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
     }
 
-    public setDone(data: { row: ListRow, amount: number, preCraft: boolean }): void {
-        this.subscriptions.push(this.list.first().switchMap(l => {
-            l.setDone(data.row, data.amount, data.preCraft);
-            return this.listService.update(l.$key, l).map(() => l);
-        }).do(list => {
-            if (list.ephemeral && list.isComplete()) {
-                this.listService.remove(list.$key).first().subscribe(() => {
-                    this.router.navigate(['recipes']);
-                });
-            }
-        }).subscribe(() => {
-        }));
+    public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
+        list.setDone(data.row, data.amount, data.preCraft);
+        this.listService.update(list.$key, list).map(() => list)
+            .do(l => {
+                if (l.ephemeral && l.isComplete()) {
+                    this.listService.remove(list.$key).first().subscribe(() => {
+                        this.router.navigate(['recipes']);
+                    });
+                }
+            }).subscribe(() => {
+        });
     }
 
-    public forkList(): void {
-        this.subscriptions.push(this.list.first().subscribe((l: List) => {
-            // Little trick to clone an object using JS.
-            const fork: List = l.clone();
-            fork.authorId = this.user.uid;
-            this.listService.add(fork).first().subscribe((id) => {
-                this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
-                    this.translate.instant('Open')).onAction()
-                    .subscribe(() => {
-                        this.listService.getRouterPath(id)
-                            .subscribe(path => {
-                                this.router.navigate(path);
-                            });
-                    }));
-            });
-        }));
+    public forkList(list: List): void {
+        const fork: List = list.clone();
+        fork.authorId = this.user.uid;
+        this.listService.add(fork).first().subscribe((id) => {
+            this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
+                this.translate.instant('Open')).onAction()
+                .subscribe(() => {
+                    this.listService.getRouterPath(id)
+                        .subscribe(path => {
+                            this.router.navigate(path);
+                        });
+                }));
+        });
     }
 
     public resetProgression(): void {
