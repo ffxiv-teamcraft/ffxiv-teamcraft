@@ -16,7 +16,7 @@
 
 <app-donation-button></app-donation-button>
 
-<mat-grid-list cols="2" gutterSize="10" rowHeight="300px" class="bottom-cards">
+<mat-grid-list [cols]="isMobile()?1:2" gutterSize="10" rowHeight="300px" class="bottom-cards">
     <mat-grid-tile>
         <mat-card class="bottom-card">
             <mat-card-header>
