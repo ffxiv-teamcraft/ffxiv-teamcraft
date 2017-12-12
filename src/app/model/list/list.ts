@@ -241,20 +241,6 @@ export class List extends DataModel {
         return this.crystals === null ? null : this.crystals.sort((a, b) => a.id - b.id);
     }
 
-    orderPreCrafts(): ListRow[] {
-        if (this.preCrafts === null) {
-            return [];
-        }
-        return this.preCrafts === null ? null : this.preCrafts.sort((a: ListRow, b: ListRow) => {
-            if (a.requires !== undefined && a.requires.find(requirement => requirement.id === b.id) !== undefined) {
-                return 1;
-            } else if (b.requires !== undefined && b.requires.find(requirement => requirement.id === a.id) !== undefined) {
-                return -1;
-            }
-            return a.id > b.id ? 1 : -1;
-        });
-    }
-
     orderGatherings(dataService: LocalizedDataService): ListRow[] {
         if (this.gathers === null) {
             return [];

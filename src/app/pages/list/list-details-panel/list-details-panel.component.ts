@@ -55,20 +55,48 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
      */
     public generateTiers(): void {
         if (this.data !== null) {
+
             this.tiers = [[]];
-            this.data.sort((a: ListRow, b: ListRow) => {
-                if (a.requires !== undefined && a.requires.find(requirement => requirement.id === b.id) !== undefined) {
-                    return 1;
-                } else if (b.requires !== undefined && b.requires.find(requirement => requirement.id === a.id) !== undefined) {
-                    return -1;
-                }
-                return a.id > b.id ? 1 : -1;
-            }).forEach(row => {
+            this.topologicalSort(this.data).forEach(row => {
                 if (row.requires !== undefined) {
                     this.tiers = this.setTier(row, this.tiers);
                 }
             });
         }
+    }
+
+    private topologicalSort(data: ListRow[]): ListRow[] {
+        const res: ListRow[] = [];
+        const doneList: boolean[] = [];
+        while (data.length > res.length) {
+            let resolved = false;
+
+            for (const item of data) {
+                if (res.indexOf(item) > -1) {
+                    // item already in resultset
+                    continue;
+                }
+                resolved = true;
+
+                if (item.requires !== undefined) {
+                    for (const dep of item.requires) {
+                        // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
+                        const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
+                        if (!doneList[dep.id] && depIsInArray) {
+                            // there is a dependency that is not met:
+                            resolved = false;
+                            break;
+                        }
+                    }
+                }
+                if (resolved) {
+                    // All dependencies are met:
+                    doneList[item.id] = true;
+                    res.push(item);
+                }
+            }
+        }
+        return res;
     }
 
     private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {

@@ -193,7 +193,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     .map((list: List) => {
                         list.crystals = list.orderCrystals();
                         list.gathers = list.orderGatherings(this.data);
-                        list.preCrafts = list.orderPreCrafts();
                         return list;
                     });
         }));
