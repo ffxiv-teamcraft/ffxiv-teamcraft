@@ -1,47 +1,55 @@
-
-.spacer {
-    flex: 1 1 auto;
-}
-
-.buttons {
-    margin-right: 10px;
-    display: inline-flex !important;
-    min-width: 100px;
-}
-
-mat-panel-title {
+.header-container {
     display: flex;
     align-items: center;
-    max-width: 350px;
-    .title {
+    justify-content: space-between;
+    width: 100%;
+
+    .title-and-desc {
+        display: flex;
+        align-items: center;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 330px;
-        &.mobile {
-            width: 160px;
-        }
-        display: inline-block;
-    }
-    mat-icon {
-        margin-left: 5px;
-    }
-}
+        flex: 1;
 
-.description {
-    display: flex;
-    align-items: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 400px;
-    overflow: hidden;
-    .author-avatar {
-        border-radius: 50%;
-        height: 30px;
-        margin-right: 5px;
+        mat-panel-title {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                &.mobile {
+                    font-size: .8em;
+                }
+            }
+            mat-icon {
+                margin-left: 5px;
+            }
+        }
+
+        .description {
+            display: flex;
+            align-items: center;
+            span{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .author-avatar {
+                border-radius: 50%;
+                height: 30px;
+                margin-right: 5px;
+            }
+        }
     }
-    &.mobile {
-        max-width: 100px;
+
+    .buttons {
+        margin-right: 10px;
+        display: inline-flex !important;
     }
 }
 
