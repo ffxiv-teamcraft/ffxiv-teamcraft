@@ -91,6 +91,6 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     }
 
     public isMobile(): boolean {
-        return this.media.isActive('xs') || this.media.isActive('sm');
+        return this.media.isActive('xs');
     }
 }

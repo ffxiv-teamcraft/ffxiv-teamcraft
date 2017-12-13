@@ -2,8 +2,8 @@
     <mat-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
         <div class="header-container">
             <div class="title-and-desc">
-                <mat-panel-title>
-                    <span [ngClass]="{'title':true, 'mobile': isMobile()}">
+                <mat-panel-title [ngClass]="{'mobile': isMobile()}">
+                    <span [ngClass]="{'title':true}">
                         {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}}&nbsp;{{'items' | translate}}
                     </span>
                     <mat-icon *ngIf="list.ephemeral" matTooltip="{{'Ephemeral_list' | translate}}"
