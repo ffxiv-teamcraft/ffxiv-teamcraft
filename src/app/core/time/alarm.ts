@@ -3,7 +3,7 @@ export interface Alarm {
     icon: number;
     spawn: number;
     duration: number;
-    slot?: number;
+    slot?: number | string;
     zoneId?: number;
     areaId?: number;
     coords?: number[];

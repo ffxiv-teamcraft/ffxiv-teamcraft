@@ -93,7 +93,8 @@ export class AlarmService {
             if (node.time !== undefined) {
                 node.time.forEach(spawn => {
                     alarms.push({
-                        spawn: spawn, duration: node.uptime / 60,
+                        spawn: spawn,
+                        duration: node.uptime / 60,
                         itemId: item.id,
                         icon: item.icon,
                         slot: node.slot,

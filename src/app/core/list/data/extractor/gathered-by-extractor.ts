@@ -50,7 +50,8 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                         areaid: this.localized.getAreaIdByENName(partial.n),
                     };
                     if (details !== undefined) {
-                        storedNode.slot = details.items.find(i => i.id === item.id).slot;
+                        const detailsItem = details.items.find(i => i.id === item.id);
+                        storedNode.slot = detailsItem !== undefined ? detailsItem.slot : '?';
                         storedNode.time = details.time;
                         storedNode.uptime = details.uptime;
                         storedNode.limitType = {en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt};

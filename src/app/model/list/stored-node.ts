@@ -7,5 +7,5 @@ export interface StoredNode {
     coords?: number[];
     time?: number[];
     uptime?: number;
-    slot?: number;
+    slot?: number | string;
 }
