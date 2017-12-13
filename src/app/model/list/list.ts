@@ -194,9 +194,12 @@ export class List extends DataModel {
         }
         let count = 0;
         this.forEachCraft(craft => {
-            const requirement = craft.requires.find(req => req.id === item.id);
-            if (requirement !== undefined) {
-                count += craft.amount_needed * requirement.amount;
+            // We have to use filter because some items (airships) might require twice the same item.
+            const requirements = craft.requires.filter(req => req.id === item.id);
+            if (requirements.length > 0) {
+                requirements.forEach(requirement => {
+                    count += craft.amount_needed * requirement.amount;
+                });
             }
         });
         return count;
