@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-home',
@@ -12,7 +13,11 @@ export class HomeComponent {
 
     lists_created = this.firebase.object('lists_created').valueChanges();
 
-    constructor(private firebase: AngularFireDatabase) {
+    constructor(private firebase: AngularFireDatabase, private media: ObservableMedia) {
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 
 }

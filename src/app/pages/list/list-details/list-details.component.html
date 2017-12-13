@@ -31,7 +31,7 @@
             </button>
 
             <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined && !listData.ephemeral"
-                    (click)="forkList()"
+                    (click)="forkList(listData)"
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
             </button>
@@ -177,7 +177,7 @@
                     <div *ngFor="let gather of listData?.gathers; let i = index">
                         <app-item
                             (update)="update()"
-                            (done)="setDone($event)"
+                            (done)="setDone(listData, $event)"
                             *ngIf="!gather.hidden"
                             [item]="gather"
                             [showTimer]="true"
@@ -191,7 +191,7 @@
                 [expanded]="listData?.isLarge()?accordionState['Other']:true"
                 [list]="listData"
                 (update)="update()"
-                (done)="setDone($event)"
+                (done)="setDone(listData, $event)"
                 [data]="listData?.others"
                 [title]="'Other'| translate"
                 (opened)="accordionState['Other'] = true"
@@ -212,7 +212,7 @@
                             <app-item
                                 [list]="listData"
                                 (update)="update()"
-                                (done)="setDone($event)"
+                                (done)="setDone(listData, $event)"
                                 *ngIf="!item.hidden"
                                 [item]="item"
                                 [showTimer]="true"
@@ -231,7 +231,7 @@
             [showTier]="true"
             (update)="update()"
             [preCraft]="true"
-            (done)="setDone($event)"
+            (done)="setDone(listData, $event)"
             [data]="listData?.preCrafts"
             [title]="'Pre_crafts'| translate"
             [recipe]="true"
@@ -242,7 +242,7 @@
             [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"
             (update)="update()"
-            (done)="setDone($event)"
+            (done)="setDone(listData, $event)"
             [data]="listData?.recipes"
             [recipe]="true"
             [title]="'Items'| translate"

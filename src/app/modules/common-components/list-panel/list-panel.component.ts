@@ -87,10 +87,10 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     }
 
     ngOnInit(): void {
-        this.author = this.userService.getCharacter(this.list.authorId);
+        this.author = this.userService.getCharacter(this.list.authorId).catch(err => Observable.of(null));
     }
 
     public isMobile(): boolean {
-        return this.media.isActive('xs') || this.media.isActive('sm');
+        return this.media.isActive('xs');
     }
 }

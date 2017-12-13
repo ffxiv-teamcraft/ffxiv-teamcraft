@@ -191,12 +191,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         this.zoneBreakdown = new ZoneBreakdown(l);
                     })
                     .map((list: List) => {
-                        list.crystals = this.orderCrystals(list.crystals);
-                        list.gathers = this.orderGatherings(list.gathers);
-                        list.preCrafts = this.orderPreCrafts(list.preCrafts);
+                        list.crystals = list.orderCrystals();
+                        list.gathers = list.orderGatherings(this.data);
                         return list;
-                    })
-                    .distinctUntilChanged();
+                    });
         }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
@@ -262,85 +260,31 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
     }
 
-    public setDone(data: { row: ListRow, amount: number, preCraft: boolean }): void {
-        this.subscriptions.push(this.list.first().switchMap(l => {
-            l.setDone(data.row, data.amount, data.preCraft);
-            return this.listService.update(l.$key, l).map(() => l);
-        }).do(list => {
-            if (list.ephemeral && list.isComplete()) {
-                this.listService.remove(list.$key).first().subscribe(() => {
-                    this.router.navigate(['recipes']);
-                });
-            }
-        }).subscribe(() => {
-        }));
-    }
-
-    public forkList(): void {
-        this.subscriptions.push(this.list.first().subscribe((l: List) => {
-            // Little trick to clone an object using JS.
-            const fork: List = l.clone();
-            fork.authorId = this.user.uid;
-            this.listService.add(fork).first().subscribe((id) => {
-                this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
-                    this.translate.instant('Open')).onAction()
-                    .subscribe(() => {
-                        this.listService.getRouterPath(id)
-                            .subscribe(path => {
-                                this.router.navigate(path);
-                            });
-                    }));
-            });
-        }));
-    }
-
-    orderCrystals(crystals: ListRow[]): ListRow[] {
-        if (crystals === null) {
-            return [];
-        }
-        return crystals === null ? null : crystals.sort((a, b) => a.id - b.id);
-    }
-
-    orderPreCrafts(preCrafts: ListRow[]): ListRow[] {
-        if (preCrafts === null) {
-            return [];
-        }
-        return preCrafts === null ? null : preCrafts.sort((a: ListRow, b: ListRow) => {
-            let aRequiredItems = 0;
-            let bRequiredItems = 0;
-            a.requires.forEach(requirement => {
-                aRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
-            });
-            b.requires.forEach(requirement => {
-                bRequiredItems += preCrafts.filter(pc => pc.id === requirement.id).length;
-            });
-            const result = aRequiredItems - bRequiredItems;
-            // If we get 0 as result, the template will act in a strange way, moving items as we hover them, so we need a failsafe.
-            if (result === 0) {
-                return this.data.getItem(a.id).en > this.data.getItem(b.id).en ? 1 : -1;
-            }
-            return result;
+    public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
+        list.setDone(data.row, data.amount, data.preCraft);
+        this.listService.update(list.$key, list).map(() => list)
+            .do(l => {
+                if (l.ephemeral && l.isComplete()) {
+                    this.listService.remove(list.$key).first().subscribe(() => {
+                        this.router.navigate(['recipes']);
+                    });
+                }
+            }).subscribe(() => {
         });
     }
 
-    orderGatherings(gatherings: ListRow[]): ListRow[] {
-        if (gatherings === null) {
-            return [];
-        }
-        return gatherings.sort((a, b) => {
-            if (this.data.getItem(b.id).en > this.data.getItem(a.id).en) {
-                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            } else {
-                if (this.data.getItem(a.id).en > this.data.getItem(b.id).en) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
+    public forkList(list: List): void {
+        const fork: List = list.clone();
+        fork.authorId = this.user.uid;
+        this.listService.add(fork).first().subscribe((id) => {
+            this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
+                this.translate.instant('Open')).onAction()
+                .subscribe(() => {
+                    this.listService.getRouterPath(id)
+                        .subscribe(path => {
+                            this.router.navigate(path);
+                        });
+                }));
         });
     }
 

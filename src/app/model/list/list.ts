@@ -6,6 +6,7 @@ import {I18nToolsService} from '../../core/tools/i18n-tools.service';
 import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
 import {ListTag} from './list-tag.enum';
+import {LocalizedDataService} from '../../core/data/localized-data.service';
 
 declare const ga: Function;
 
@@ -60,16 +61,33 @@ export class List extends DataModel {
         return clone;
     }
 
+    /**
+     * Iterates on others, gathers and preCrafts.
+     * @param {(arg: ListRow) => void} method
+     */
     public forEachItem(method: (arg: ListRow) => void): void {
         (this.others || []).forEach(method);
         (this.gathers || []).forEach(method);
         (this.preCrafts || []).forEach(method);
     }
 
+    /**
+     * Iterates on every item in the list, from recipes to crystals.
+     * @param {(arg: ListRow) => void} method
+     */
     public forEach(method: (arg: ListRow) => void): void {
         (this.crystals || []).forEach(method);
         (this.others || []).forEach(method);
         (this.gathers || []).forEach(method);
+        (this.preCrafts || []).forEach(method);
+        (this.recipes || []).forEach(method);
+    }
+
+    /**
+     * Iterates on recipes and preCrafts.
+     * @param {(arg: ListRow) => void} method
+     */
+    public forEachCraft(method: (arg: ListRow) => void): void {
         (this.preCrafts || []).forEach(method);
         (this.recipes || []).forEach(method);
     }
@@ -115,7 +133,7 @@ export class List extends DataModel {
         otherList.recipes.forEach(recipe => {
             this.add(this.recipes, recipe, true);
         });
-        return this;
+        return this.clean();
     }
 
     private add(array: ListRow[], data: ListRow, recipe = false): number {
@@ -127,10 +145,10 @@ export class List extends DataModel {
             array.push(data);
             row = array[array.length - 1];
         } else {
-            row.amount = MathTools.round(row.amount + data.amount);
+            row.amount = MathTools.absoluteCeil(row.amount + data.amount);
             previousAmount = row.amount_needed;
         }
-        row.amount_needed = MathTools.absoluteCeil(row.amount / row.yield);
+        row.amount_needed = Math.ceil(row.amount / row.yield);
         const added = row.amount_needed - previousAmount;
         if (added < 0 && recipe) {
             const previousDone = row.done;
@@ -141,15 +159,53 @@ export class List extends DataModel {
         return added;
     }
 
+    /**
+     * Cleans the list, checking amounts and removing useless rows (with amount <= 0).
+     * @returns {List}
+     */
     public clean(): List {
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
+                // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
+                if (prop !== 'recipes') {
+                    this[prop].forEach(row => {
+                        if (prop !== 'preCrafts') {
+                            row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+                        } else {
+                            row.amount = this.totalAmountRequired(<ListRow>row);
+                            row.amount_needed = Math.ceil(row.amount / row.yield);
+                        }
+                    });
+                }
                 this[prop] = this[prop].filter(row => row.amount > 0);
             }
         }
         return this;
     }
 
+    /**
+     * Gets the total amount needed for a given item based on requirements of the crafts in the list.
+     * @param {ListRow} item
+     * @returns {number}
+     */
+    private totalAmountRequired(item: ListRow): number {
+        if (this.getItemById(item.id) === undefined) {
+            return 0;
+        }
+        let count = 0;
+        this.forEachCraft(craft => {
+            const requirement = craft.requires.find(req => req.id === item.id);
+            if (requirement !== undefined) {
+                count += craft.amount_needed * requirement.amount;
+            }
+        });
+        return count;
+    }
+
+    /**
+     * Checks if a list is large or not, mostly used for display purpose.
+     * @returns {boolean}
+     */
     public isLarge(): boolean {
         let items = 0;
         this.forEach(() => {
@@ -175,6 +231,35 @@ export class List extends DataModel {
             }
         }
         return undefined;
+    }
+
+
+    orderCrystals(): ListRow[] {
+        if (this.crystals === null) {
+            return [];
+        }
+        return this.crystals === null ? null : this.crystals.sort((a, b) => a.id - b.id);
+    }
+
+    orderGatherings(dataService: LocalizedDataService): ListRow[] {
+        if (this.gathers === null) {
+            return [];
+        }
+        return this.gathers.sort((a, b) => {
+            if (dataService.getItem(b.id).en > dataService.getItem(a.id).en) {
+                if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            } else {
+                if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
     }
 
     /**
