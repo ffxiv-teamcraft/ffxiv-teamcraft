@@ -59,6 +59,10 @@
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
 
+        <div *ngIf="listData.note !== undefined && listData.node !== '' || isOwnList()">
+            <mat-divider class="top-divider"></mat-divider>
+            <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData.ephemeral"></app-list-note>
+        </div>
         <mat-divider class="top-divider"></mat-divider>
         <div class="options">
             <mat-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
@@ -254,10 +258,6 @@
         <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData.ephemeral" (change)="togglePublic()" class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>
-
-        <mat-divider></mat-divider>
-
-        <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData.ephemeral"></app-list-note>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
     <div class="loader-container" *ngIf="(list | async) === null && !notFound">
