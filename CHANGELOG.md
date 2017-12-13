@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.4"></a>
+## [3.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.3...v3.0.4) (2017-12-13)
+
+
+### Bug Fixes
+
+* bad mobile layout for home page on mobile ([532fe97](https://github.com/Supamiu/ffxiv-teamcraft/commit/532fe97))
+* crafts requiring equipment as materials show equipment in the wrong tier. ([bdc4d4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/bdc4d4b)), closes [#143](https://github.com/Supamiu/ffxiv-teamcraft/issues/143)
+* item with undefined slot cause the app to crash ([5116238](https://github.com/Supamiu/ffxiv-teamcraft/commit/5116238)), closes [#96](https://github.com/Supamiu/ffxiv-teamcraft/issues/96)
+* missing materials in some FC crafts ([5120337](https://github.com/Supamiu/ffxiv-teamcraft/commit/5120337)), closes [#147](https://github.com/Supamiu/ffxiv-teamcraft/issues/147)
+
+
+### Features
+
+* addition of currencies for non-craftable gear ([b1840af](https://github.com/Supamiu/ffxiv-teamcraft/commit/b1840af))
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.2...v3.0.3) (2017-12-09)
 
