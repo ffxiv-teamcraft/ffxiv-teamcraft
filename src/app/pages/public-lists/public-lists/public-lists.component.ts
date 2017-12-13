@@ -42,6 +42,7 @@ export class PublicListsComponent implements OnInit {
                         return match;
                     });
                 }
+                lists = lists.filter(list => list.recipes.length > 0);
                 return lists;
         });
     }

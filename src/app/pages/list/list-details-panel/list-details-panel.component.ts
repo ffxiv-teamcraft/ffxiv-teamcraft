@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnIn
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {SettingsService} from '../../settings/settings.service';
-import {trackByItem} from '../../../core/tools/track-by-item';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -47,13 +46,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     tiers: ListRow[][] = [[]];
 
-    tierBreakdownToggle = false;
-
     constructor(public settings: SettingsService) {
-    }
-
-    public trackByItem(index: number, item: ListRow): any {
-        return trackByItem(index, item);
     }
 
     /**
@@ -62,8 +55,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
      */
     public generateTiers(): void {
         if (this.data !== null) {
+
             this.tiers = [[]];
-            this.data.forEach(row => {
+            this.topologicalSort(this.data).forEach(row => {
                 if (row.requires !== undefined) {
                     this.tiers = this.setTier(row, this.tiers);
                 }
@@ -71,30 +65,70 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
     }
 
-    private setTier(row: ListRow, result: ListRow[][], tier = 0): ListRow[][] {
-        if (result[tier] === undefined) {
-            result[tier] = [];
-        }
-        for (const requirement of row.requires) {
-            if (result[tier].find(r => r.id === requirement.id) !== undefined) {
-                return this.setTier(row, result, tier + 1);
+    private topologicalSort(data: ListRow[]): ListRow[] {
+        const res: ListRow[] = [];
+        const doneList: boolean[] = [];
+        while (data.length > res.length) {
+            let resolved = false;
+
+            for (const item of data) {
+                if (res.indexOf(item) > -1) {
+                    // item already in resultset
+                    continue;
+                }
+                resolved = true;
+
+                if (item.requires !== undefined) {
+                    for (const dep of item.requires) {
+                        // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
+                        const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
+                        if (!doneList[dep.id] && depIsInArray) {
+                            // there is a dependency that is not met:
+                            resolved = false;
+                            break;
+                        }
+                    }
+                }
+                if (resolved) {
+                    // All dependencies are met:
+                    doneList[item.id] = true;
+                    res.push(item);
+                }
             }
         }
-        result[tier].push(row);
+        return res;
+    }
+
+    private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {
+        if (result[0] === undefined) {
+            result[0] = [];
+        }
+        // Default tier is -1, because we want to do +1 to the last requirement tier to define the tier of the current item.
+        let requirementsTier = -1;
+        for (const requirement of row.requires) {
+            for (let tier = 0; tier < result.length; tier++) {
+                if (result[tier].find(r => r.id === requirement.id) !== undefined) {
+                    requirementsTier = requirementsTier > tier ? requirementsTier : tier;
+                }
+            }
+        }
+        const itemTier = requirementsTier + 1;
+        if (result[itemTier] === undefined) {
+            result[itemTier] = [];
+        }
+        result[itemTier].push(row);
         return result;
     }
 
-    public toggleTierBreakdown(): void {
-        this.tierBreakdownToggle = !this.tierBreakdownToggle;
-    }
-
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.showTier && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
             this.generateTiers();
         }
     }
 
     ngOnInit(): void {
-        this.generateTiers();
+        if (this.showTier) {
+            this.generateTiers();
+        }
     }
 }

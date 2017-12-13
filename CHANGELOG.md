@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.3"></a>
+## [3.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.2...v3.0.3) (2017-12-09)
+
+
+### Bug Fixes
+
+* amounts interactions being replicated on the item below ([b491ec6](https://github.com/Supamiu/ffxiv-teamcraft/commit/b491ec6))
+* empty lists shown in public lists ([3277350](https://github.com/Supamiu/ffxiv-teamcraft/commit/3277350))
+* error when public list author is anonymous ([d051c93](https://github.com/Supamiu/ffxiv-teamcraft/commit/d051c93))
+* fixed the currency icons not being displayed ([1cb1adf](https://github.com/Supamiu/ffxiv-teamcraft/commit/1cb1adf))
+* items moving when quantity are updated ([f090813](https://github.com/Supamiu/ffxiv-teamcraft/commit/f090813))
+* list elements moving when applying amount ([b019770](https://github.com/Supamiu/ffxiv-teamcraft/commit/b019770))
+* list elements moving when applying amount ([0eb12ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/0eb12ac))
+* refresh issues in some cases ([4881fd8](https://github.com/Supamiu/ffxiv-teamcraft/commit/4881fd8))
+* wrong amount for ingredients in some cases ([c9dab43](https://github.com/Supamiu/ffxiv-teamcraft/commit/c9dab43))
+
+
+
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.1...v3.0.2) (2017-12-06)
+
+
+### Bug Fixes
+
+* bad count for used items ([d145c8a](https://github.com/Supamiu/ffxiv-teamcraft/commit/d145c8a))
+* broken image links on features page ([be5c32d](https://github.com/Supamiu/ffxiv-teamcraft/commit/be5c32d))
+* can't copy a list in list-details view ([a3e387a](https://github.com/Supamiu/ffxiv-teamcraft/commit/a3e387a))
+* job icon size in profile page ([dc20b48](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc20b48))
+* sidebar sometimes overlaps the content, again ([6bed623](https://github.com/Supamiu/ffxiv-teamcraft/commit/6bed623))
+* wrong amount in some requirements informations ([8ae4781](https://github.com/Supamiu/ffxiv-teamcraft/commit/8ae4781))
+* wrong tier for precrafts in some cases ([7a1e0ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a1e0ef))
+
+
+### Features
+
+* new select all button for masterbooks ([c46d28f](https://github.com/Supamiu/ffxiv-teamcraft/commit/c46d28f))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.0...v3.0.1) (2017-12-05)
 
