@@ -34,9 +34,6 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
                 delete snap.payload;
                 return this.serializer.deserialize<T>(valueWithKey, this.getClass());
             })
-            .distinctUntilChanged((a, b) => {
-                return !this.diffService.diff(a, b).isEmpty();
-            })
             .do(data => {
                 // Cache a clone of the data.
                 this.cache[data.$key] = JSON.parse(JSON.stringify(data));
