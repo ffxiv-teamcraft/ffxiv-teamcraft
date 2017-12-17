@@ -16,6 +16,9 @@
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>
+        <button mat-icon-button [disabled]="helpService.currentHelp === undefined" (click)="openHelp()">
+            <mat-icon>help</mat-icon>
+        </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
     <mat-card class="announcement" *ngIf="showAnnouncement()">
@@ -100,10 +103,10 @@
             <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </mat-sidenav>
-            <div class="content">
-                <div class="content-middle">
-                    <router-outlet></router-outlet>
-                </div>
+        <div class="content">
+            <div class="content-middle">
+                <router-outlet></router-outlet>
             </div>
+        </div>
     </mat-sidenav-container>
 </div>
