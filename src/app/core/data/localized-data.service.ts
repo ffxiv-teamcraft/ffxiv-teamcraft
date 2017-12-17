@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {I18nName} from '../../model/list/i18n-name';
-import {Observable} from 'rxjs/Observable';
 import {items} from './sources/items';
 import {places} from './sources/places';
 import {mobs} from './sources/mobs';
 import {weathers} from './sources/weathers';
 import {npcs} from './sources/npcs';
+import {craftingActions} from './sources/crafting-actions';
 
 @Injectable()
 export class LocalizedDataService {
 
-    constructor(private http: HttpClient) {
+    constructor() {
     }
 
     public getItem(id: number): I18nName {
@@ -31,11 +31,15 @@ export class LocalizedDataService {
     }
 
     public getWeather(name: string): I18nName {
-        return this.getRowByENName(weathers, name);
+        return this.getRowByName(weathers, name, 'en');
     }
 
     public getAreaIdByENName(name: string): number {
-        return this.getIndexByENName(places, name);
+        return this.getIndexByName(places, name, 'en');
+    }
+
+    public getCraftingActionByName(name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
+        return this.getRowByName(craftingActions, name, language);
     }
 
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
@@ -55,10 +59,11 @@ export class LocalizedDataService {
      * Specific case for weather, might be usefule for other data.
      * @param array
      * @param name
+     * @param language
      * @returns {I18nName}
      */
-    private getRowByENName(array: { [index: number]: I18nName }, name: string): I18nName {
-        const res = this.getIndexByENName(array, name);
+    private getRowByName(array: { [index: number]: I18nName }, name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
+        const res = this.getIndexByName(array, name, language);
         if (res === -1) {
             // I18n strings (comment used for search matching)
             return {
@@ -71,22 +76,18 @@ export class LocalizedDataService {
         return array[res];
     }
 
-    private getIndexByENName(array: { [index: number]: I18nName }, name: string): number {
+    private getIndexByName(array: { [index: number]: I18nName }, name: string, language: string): number {
         if (array === undefined) {
             return -1;
         }
         let res = -1;
         const keys = Object.keys(array);
         for (const key of keys) {
-            if (array[key].en === name) {
+            if (array[key][language] === name) {
                 res = +key;
                 break;
             }
         }
         return res;
-    }
-
-    private load(fileName: string): Observable<{ [index: number]: I18nName }> {
-        return this.http.get<{ [index: number]: I18nName }>(`/assets/data/${fileName}.json`);
     }
 }
