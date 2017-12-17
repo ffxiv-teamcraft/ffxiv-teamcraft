@@ -244,5 +244,14 @@
         "MIN": "MIN",
         "BOT": "GÄR",
         "FSH": "FSH"
+    },
+    "RECIPES": {
+        "HELP":{
+            "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
+            "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
+            "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
+            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
+            "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
+        }
     }
 }
