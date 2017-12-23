@@ -247,11 +247,11 @@
     },
     "RECIPES": {
         "HELP":{
-            "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
-            "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
-            "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
-            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
-            "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
+            "Welcome": "Bienvenue dans la page de recherche des recettes",
+            "Filter": "Lorsque vous ouvrez le paneau des filtres, beaucoup de filtres deviennent disponibles, vous pouvez les cocher et en changer la valeur poure trouver ce que vous cherchez.",
+            "Add_to_list": "Une fois que vous avez trouvé la recette que vous cherchez, vous pouvez simplement l'ajouter sur une liste en cliquant sur l'icône associée, un choix de liste s'affichera, ajoutant l'objet à la liste sélectionnée à la quaitité spécifiée.",
+            "Quick_list":"Vous pouvez créer une liste rapide en cliquant sur le bouton associé, ceci crééra une liste portant le nom de l'objet qui sera supprimée lorsque celle-ci sera complétée.",
+            "Add_results": "Le bouton 'Ajouter les résultats à une liste' ajoute tous les objets trouvés à une liste donnée cependant, attention, TOUTES LES QUANTITÉS SONT IGNORÉES."
         }
     }
 }
