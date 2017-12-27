@@ -25,6 +25,10 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     @Input()
     max: number;
 
+    get missingAmount() {
+        return this.max - this.value
+    }
+
     @Input()
     craftAmount: number;
 
