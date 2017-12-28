@@ -171,7 +171,7 @@
     "Hide_completed": "Verstecke komplettierte Reihen",
     "Your_comment": "Dein Kommentar",
     "Required_crafts_amount": "Menge an Herstellungen",
-    "Missing_crafts_amount": "{{amount}} to reach total",
+    "Missing_crafts_amount": "{{amount}} um Ziel-Menge zu erreichen",
     "Requires": "Erfordert",
     "Copy_item_name_to_clipboard": "Kopiere den Gegenstandsnamen zur Zwischenablage",
     "Item_name_copied": "{{itemname}} zur Zwischenablage hinzugefügt",
