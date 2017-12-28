@@ -24,6 +24,11 @@
     </button>
 </div>
 
+<button mat-icon-button (click)="openMergeListsPopup()" [disabled]="(lists | async)?.length < 2" class="merge-button"
+        matTooltip="{{'LISTS.Merge_lists' | translate}}" matTooltipPosition="above">
+        <mat-icon>call_merge</mat-icon>
+</button>
+
 <div class="row" *ngFor="let list of lists | async">
     <app-list-panel
         [list]="list"
