@@ -187,6 +187,9 @@
         "Masterbooks": "Livres",
         "Patreon_supporter": "Supporter Patreon"
     },
+    "LISTS": {
+        "Merge_lists": "Fusionner des listes"
+    },
     "LIST_DETAILS": {
         "No_book": "Livre manquant",
         "No_note": "Aucune note",

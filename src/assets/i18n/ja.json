@@ -195,6 +195,9 @@
         "Masterbooks": "Masterbooks",
         "Patreon_supporter": "Patreon Supporter"
     },
+    "LISTS": {
+        "Merge_lists": "Merge lists"
+    },
     "LIST_DETAILS": {
         "No_book": "Missing book",
         "No_note": "No note",

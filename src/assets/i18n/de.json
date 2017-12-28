@@ -187,6 +187,9 @@
         "Masterbooks": "Meisterbücher",
         "Patreon_supporter": "Patreon-Unterstützer"
     },
+    "LISTS": {
+        "Merge_lists": "Listen zusammenfassen"
+    },
     "LIST_DETAILS": {
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",

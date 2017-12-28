@@ -14,6 +14,7 @@ import {AlarmService} from '../../../core/time/alarm.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {MergeListsPopupComponent} from '../merge-lists-popup/merge-lists-popup.component';
 
 declare const ga: Function;
 
@@ -79,6 +80,12 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 });
             }
         }));
+    }
+
+    openMergeListsPopup(): void {
+        this.lists.first().subscribe(lists => {
+            this.dialog.open(MergeListsPopupComponent, {data: {lists: lists, authorId: this.user.uid}}).afterClosed();
+        })
     }
 
     removeRecipe(recipe: any, list: List, key: string): void {
