@@ -1,14 +1,13 @@
 <!--Layout for desktop browsers-->
 <mat-list-item *ngIf="!(isMobile | async); else mobileLayout" [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
     <div class="item-col-left">
-        <app-tooltip [id]="item.id" [disabled]="isDraft()" (change)="cd.markForCheck()">
-            <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}">
-                <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
-                    <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
-                </a>
-                <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
-            </div>
-        </app-tooltip>
+        <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+             [appXivdbTooltip]="item.id" [appXivdbTooltipDisabled]="isDraft()">
+            <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
+                <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+            </a>
+            <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+        </div>
         <div class="item-name" matLine matTooltipPosition="above"
              matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
