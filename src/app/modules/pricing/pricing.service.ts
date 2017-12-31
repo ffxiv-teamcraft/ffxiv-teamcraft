@@ -90,7 +90,7 @@ export class PricingService {
     }
 
     /**
-     * Gets the gils value of an item, looking on local storage first, then looks for vendors informations.
+     * Gets the gil value of an item, looking on local storage first, then looks for vendors informations.
      *
      * If nothing is found, returns 0.
      * @param {ListRow} item
