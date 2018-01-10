@@ -35,7 +35,9 @@
                         (click)="ondelete.emit(); $event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>
-                <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()">
+                <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()"
+                        [matTooltip]="'LIST.Copied_x_times' | translate:{'count': list.forks}"
+                        matTooltipPosition="above">
                     <mat-icon>content_copy</mat-icon>
                 </button>
             </div>

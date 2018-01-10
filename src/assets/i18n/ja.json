@@ -198,6 +198,9 @@
     "LISTS": {
         "Merge_lists": "Merge lists"
     },
+    "LIST": {
+        "Copied_x_times": "Copied {{count}} times"
+    },
     "LIST_DETAILS": {
         "No_book": "Missing book",
         "No_note": "No note",

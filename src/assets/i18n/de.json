@@ -190,6 +190,9 @@
     "LISTS": {
         "Merge_lists": "Listen zusammenfassen"
     },
+    "LIST": {
+        "Copied_x_times": "Copied {{count}} times"
+    },
     "LIST_DETAILS": {
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",
