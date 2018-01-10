@@ -96,6 +96,17 @@ export class UserService extends FirebaseStorage<AppUser> {
         });
     }
 
+    /**
+     * Signs out the current user.
+     * @returns {Observable<void>}
+     */
+    public signOut(): Observable<void> {
+        return Observable.concat(
+            Observable.fromPromise(this.af.auth.signOut()),
+            Observable.fromPromise(this.af.auth.signInAnonymously()))
+            .do(() => this.reload());
+    }
+
     protected getBaseUri(params?: any): string {
         return 'users';
     }

@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
-import {MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import 'rxjs/add/operator/catch';
 import {UserService} from '../../../core/database/user.service';
 
@@ -13,56 +12,49 @@ import {UserService} from '../../../core/database/user.service';
 })
 export class CharacterAddPopupComponent implements OnInit {
 
-    form: FormGroup;
+    @ViewChild('name') nameInput: ElementRef;
 
-    validateTimeout: any;
+    @ViewChild('server') serverInput: ElementRef;
+
+    serverName = '';
+
+    characterName: string;
+
+    search: Observable<any[]>;
+
+    loading = false;
 
     constructor(private data: DataService,
-                private fb: FormBuilder,
                 private userService: UserService,
-                public dialogRef: MatDialogRef<CharacterAddPopupComponent>) {
+                public dialogRef: MatDialogRef<CharacterAddPopupComponent>,
+                @Inject(MAT_DIALOG_DATA) public disconnectButton = false) {
     }
 
-    validateData(group: FormGroup): Promise<any> {
-        const delay = 300;
-        clearTimeout(this.validateTimeout);
-        return new Promise((resolve) => {
-            this.validateTimeout = setTimeout(() => {
-                return this.data
-                    .searchCharacter(group.controls.character.value, group.controls.server.value)
-                    .catch(() => {
-                        return Observable.of([]);
-                    }).subscribe(result => {
-                        if (result.length !== 1) {
-                            resolve({invalid: true});
-                        } else {
-                            resolve();
-                        }
-                    });
-            }, delay);
-        });
+    select(id: number): void {
+        this.userService.getUserData()
+            .map(user => {
+                if (user !== null && !user.anonymous) {
+                    user.lodestoneId = id;
+                    this.userService.update(user.$key, user);
+                }
+            }).subscribe(() => this.dialogRef.close());
     }
 
-    submit(): void {
-        this.data
-            .searchCharacter(this.form.value.character, this.form.value.server)
-            .switchMap(results => {
-                return this.userService.getUserData()
-                    .map(user => {
-                        if (user !== null && !user.anonymous) {
-                            user.lodestoneId = results[0].id;
-                            this.userService.update(user.$key, user);
-                        }
-                    });
-            }).subscribe(() => {
-            this.dialogRef.close();
-        });
+    logOut(): void {
+        this.userService.signOut().subscribe(() => this.dialogRef.close());
     }
 
     ngOnInit(): void {
-        this.form = this.fb.group({
-            character: ['', Validators.required],
-            server: ['', Validators.required],
-        }, {asyncValidator: this.validateData.bind(this)});
+        // Create observables from navite input elements.
+        const name$ = Observable.fromEvent(this.nameInput.nativeElement, 'keyup').debounceTime(250).map(() => this.characterName);
+        const server$ = Observable.fromEvent(this.serverInput.nativeElement, 'keyup').debounceTime(250).map(() => this.serverName);
+        // Combine them to observe the result.
+        this.search = Observable.combineLatest(name$, server$)
+            .do(() => this.loading = true)
+            // Replace the Observable with a search query.
+            .switchMap(data => {
+                return this.data.searchCharacter(data[0], data[1]);
+            })
+            .do(() => this.loading = false)
     }
 }

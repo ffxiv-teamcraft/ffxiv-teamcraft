@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
             .getUserData()
             .subscribe(u => {
                 if (u.lodestoneId === undefined && !u.anonymous) {
-                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
+                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
                 }
             });
 
@@ -206,8 +206,7 @@ export class AppComponent implements OnInit {
 
     disconnect(): void {
         this.router.navigate(['recipes']);
-        this.auth.auth.signOut();
-        this.auth.auth.signInAnonymously();
+        this.userService.signOut();
     }
 
     use(lang: string): void {
