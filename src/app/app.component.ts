@@ -16,6 +16,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
 import {SettingsService} from './pages/settings/settings.service';
+import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 
 declare const ga: Function;
 
@@ -45,6 +46,8 @@ export class AppComponent implements OnInit {
     patreonPopupDisplayed = false;
 
     mobile = true;
+
+    givewayRunning = false;
 
     watcher: Subscription;
     activeMediaQuery = '';
@@ -124,6 +127,13 @@ export class AppComponent implements OnInit {
             });
         }
 
+        this.firebase.object('/giveway').valueChanges().subscribe((givewayActivated: boolean) => {
+            if (localStorage.getItem('giveway') === null && givewayActivated) {
+                this.showGiveway();
+            }
+            this.givewayRunning = givewayActivated;
+        });
+
         // Patreon popup.
         if (this.router.url.indexOf('home') === -1) {
             this.firebase
@@ -178,6 +188,13 @@ export class AppComponent implements OnInit {
                 this.username = character.name;
                 this.userIcon = character.avatar;
             });
+    }
+
+    showGiveway(): void {
+        this.dialog.open(GivewayPopupComponent).afterClosed().subscribe(() => {
+            // Once it's closed, set the storage value to say it has been displayed.
+            localStorage.setItem('giveway', 'true');
+        });
     }
 
     /**

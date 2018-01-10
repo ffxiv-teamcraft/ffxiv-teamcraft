@@ -8,6 +8,11 @@
         "Patreon_supporters": "Supporters Patreon",
         "Contributors": "Contributeurs"
     },
+    "GIVEWAY": {
+        "Title": "Concours 10 000 listes",
+        "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
+        "Access": "Accéder au concours"
+    },
     "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
     "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
     "Tag_filter": "Tags",
