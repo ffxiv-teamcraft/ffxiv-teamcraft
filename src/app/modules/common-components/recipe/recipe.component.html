@@ -1,12 +1,10 @@
 <mat-list-item [ngClass]="{'compact': settings.compactLists}">
-    <div mat-list-avatar>
-        <app-tooltip [id]="recipe.id">
-            <a mat-list-avatar href="{{recipe.id | itemLink | i18n}}">
-                <img mat-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
-            </a>
-        </app-tooltip>
+    <div mat-list-avatar [appXivdbTooltip]="recipe.id">
+        <a mat-list-avatar href="{{recipe.id | itemLink | i18n}}">
+            <img mat-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
+        </a>
     </div>
-    <h3 mat-line >{{recipe.id | itemName | i18n}}</h3>
+    <h3 mat-line>{{recipe.id | itemName | i18n}}</h3>
     <app-amount-input class="amount"
                       [value]="recipe.amount"
                       min="1"
