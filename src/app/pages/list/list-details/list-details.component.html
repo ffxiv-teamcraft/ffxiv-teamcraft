@@ -65,7 +65,7 @@
         </div>
         <mat-divider class="top-divider"></mat-divider>
         <div class="options">
-            <mat-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
+            <mat-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown(listData)">
                 {{"Zone_breakdown" | translate}}
             </mat-button-toggle>
             <button mat-icon-button color="accent" (click)="pricingMode = true" *ngIf="isOwnList()"

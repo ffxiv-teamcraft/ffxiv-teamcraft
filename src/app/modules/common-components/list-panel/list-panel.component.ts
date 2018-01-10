@@ -73,6 +73,8 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public forkList(): void {
         const fork: List = this.list.clone();
+        // Update the forks count.
+        this.listService.update(this.list.$key, this.list).first().subscribe();
         fork.authorId = this.auth.auth.currentUser.uid;
         this.listService.add(fork).first().subscribe(key => {
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
