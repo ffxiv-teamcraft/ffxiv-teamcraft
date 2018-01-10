@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Recipe} from '../../../model/list/recipe';
+import {SettingsService} from '../../../pages/settings/settings.service';
 
 @Component({
     selector: 'app-recipe',
@@ -23,7 +24,7 @@ export class RecipeComponent {
     @Input()
     readonly = false;
 
-    constructor() {
+    constructor(public settings: SettingsService) {
     }
 
     public delete(): void {
