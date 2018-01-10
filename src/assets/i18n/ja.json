@@ -8,6 +8,11 @@
         "Patreon_supporters": "Patreon supporters",
         "Contributors": "Contributors"
     },
+    "GIVEWAY": {
+        "Title": "10k lists Giveway",
+        "Body": "In order to thank you properly for the 10k lists created on the app, a 60 days timecard giveway has been created, it will last until Feb. 09.\n Thank you for using this app, I hope it helped you a lot, the app is what it is thanks to you.",
+        "Access": "Access giveway"
+    },
     "Ephemeral_list": "Will be deleted once completed",
     "Quick_list_create": "Create quick list (deleted once completed)",
     "Tag_filter": "Tags",
