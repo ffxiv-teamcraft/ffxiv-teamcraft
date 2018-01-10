@@ -7,6 +7,7 @@ export enum ListTag {
     GLAMOUR = 'Glamour',
     HOUSING = 'Housing',
     MISC = 'Misc',
+    QUEST = 'Quest',
 
     // EQUIPPED BY tags
     TANK = 'Tank',
@@ -45,7 +46,7 @@ export enum ListTag {
     WVR = 'WVR',
     ALC = 'ALC',
     CUL = 'CUL',
-  
+
     MIN = 'MIN',
     BOT = 'BOT',
     FSH = 'FSH'
