@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material';
 import {MasterbooksPopupComponent} from '../masterbooks-popup/masterbooks-popup.component';
 import {AppUser} from '../../../model/list/app-user';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {CharacterAddPopupComponent} from '../../../modules/common-components/character-add-popup/character-add-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -51,5 +52,9 @@ export class ProfileComponent extends ComponentWithSubscriptions {
 
     public openMasterbooksPopup(jobAbbr: string): void {
         this.dialog.open(MasterbooksPopupComponent, {data: {jobAbbr: jobAbbr, user: this.user}});
+    }
+
+    changeCharacter(): void {
+        this.dialog.open(CharacterAddPopupComponent);
     }
 }

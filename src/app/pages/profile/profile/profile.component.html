@@ -4,6 +4,9 @@
 <div *ngIf="character !== undefined && user !== undefined">
     <mat-grid-list cols="3" rowHeight="600px">
         <mat-grid-tile class="portrait-container">
+            <button mat-icon-button (click)="changeCharacter()" class="change-character">
+                <mat-icon>edit</mat-icon>
+            </button>
             <img src="{{character.portrait}}" alt="portrait" class="portrait">
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
