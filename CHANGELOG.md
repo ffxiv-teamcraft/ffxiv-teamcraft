@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.4...v3.1.0) (2018-01-11)
+
+
+### Bug Fixes
+
+* **item:** use observable with AsyncPipe to react to ObservableMedia change ([f227143](https://github.com/Supamiu/ffxiv-teamcraft/commit/f227143)), closes [#153](https://github.com/Supamiu/ffxiv-teamcraft/issues/153)
+* **tooltip:** replace custom tooltip implementation by angular/cdk overlay ([6d219a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/6d219a6)), closes [#152](https://github.com/Supamiu/ffxiv-teamcraft/issues/152)
+* e.gatheredBy.nodes.forEach is not a function in some cases ([c0cc015](https://github.com/Supamiu/ffxiv-teamcraft/commit/c0cc015))
+* list not updated for other users on it in realtime ([fe4661e](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe4661e)), closes [#148](https://github.com/Supamiu/ffxiv-teamcraft/issues/148)
+* unable to import list using import links ([79210c3](https://github.com/Supamiu/ffxiv-teamcraft/commit/79210c3))
+
+
+### Features
+
+* **item:** add tooltip showing the amount of missing items ([cf28444](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf28444)), closes [#145](https://github.com/Supamiu/ffxiv-teamcraft/issues/145)
+* 10k lists giveway popup ([13f1e86](https://github.com/Supamiu/ffxiv-teamcraft/commit/13f1e86))
+* add list merging ([eae87fb](https://github.com/Supamiu/ffxiv-teamcraft/commit/eae87fb)), closes [#116](https://github.com/Supamiu/ffxiv-teamcraft/issues/116)
+* add possibility to change associated character on profile page ([cd5daaf](https://github.com/Supamiu/ffxiv-teamcraft/commit/cd5daaf)), closes [#118](https://github.com/Supamiu/ffxiv-teamcraft/issues/118)
+* add QUEST tag for public lists ([1402957](https://github.com/Supamiu/ffxiv-teamcraft/commit/1402957)), closes [#157](https://github.com/Supamiu/ffxiv-teamcraft/issues/157)
+* improve character association dialog ([1d29ce9](https://github.com/Supamiu/ffxiv-teamcraft/commit/1d29ce9)), closes [#140](https://github.com/Supamiu/ffxiv-teamcraft/issues/140) [#150](https://github.com/Supamiu/ffxiv-teamcraft/issues/150)
+* track how many times a given list has been cloned ([9160a44](https://github.com/Supamiu/ffxiv-teamcraft/commit/9160a44)), closes [#114](https://github.com/Supamiu/ffxiv-teamcraft/issues/114)
+
+
+### BREAKING CHANGES
+
+* **tooltip:** deprecate the old TooltipComponent
+
+
+
 <a name="3.0.4"></a>
 ## [3.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.3...v3.0.4) (2017-12-13)
 
