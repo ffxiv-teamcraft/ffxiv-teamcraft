@@ -23,8 +23,11 @@
         "Save": "Sauvegarder"
     },
     "ALARMS": {
-        "No_alarm": "Aucune alarme définie"
+        "No_alarm": "Aucune alarme définie",
+        "Add_alarm": "Ajouter une alarme"
     },
+    "Item_name": "Nom de l'objet",
+    "No_items_found": "Aucun objet trouvé",
     "Select_all":"Tout cocher",
     "Confirmation": "Confirmation",
     "Yes": "Oui",
