@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.1.0...v3.1.1) (2018-01-12)
+
+
+### Features
+
+* add possibility to create node alarms without any list ([b1d8cbb](https://github.com/Supamiu/ffxiv-teamcraft/commit/b1d8cbb)), closes [#132](https://github.com/Supamiu/ffxiv-teamcraft/issues/132)
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.0.4...v3.1.0) (2018-01-11)
 
