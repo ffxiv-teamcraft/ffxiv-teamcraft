@@ -23,8 +23,11 @@
         "Save": "Speichern"
     },
     "ALARMS": {
-        "No_alarm": "Kein Alarm gesetzt"
+        "No_alarm": "Kein Alarm gesetzt",
+        "Add_alarm": "Alarm hinzufügen"
     },
+    "Item_name": "Gegenstandsname",
+    "No_items_found": "Kein Gegenstand gefunden",
     "Select_all": "Alle auswählen",
     "Confirmation": "Bestätigung",
     "Yes": "Ja",
@@ -205,8 +208,8 @@
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventar"
     },
-    "adapt_to_character": "Adapt to Character",
-    "reset_filters": "Reset Filters",
+    "adapt_to_character": "An Character anpassen",
+    "reset_filters": "Filter zurücksetzen",
     "LIST_TAGS": {
         "GEAR": "Ausrüstung",
         "CONSUMABLE": "Benutzbares",

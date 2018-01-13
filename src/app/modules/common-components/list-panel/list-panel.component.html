@@ -1,4 +1,4 @@
-<mat-expansion-panel #panel [expanded]="expanded">
+<mat-expansion-panel #panel [expanded]="expanded" [ngClass]="{'odd': odd}">
     <mat-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
         <div class="header-container">
             <div class="title-and-desc">

@@ -188,7 +188,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         } else {
                             this.title.setTitle(this.translate.instant('List_not_found'));
                         }
-                        this.zoneBreakdown = undefined;
+                        delete this.zoneBreakdown;
+                        if (this.zoneBreakdownToggle) {
+                            this.zoneBreakdown = new ZoneBreakdown(l);
+                        }
                     })
                     .map((list: List) => {
                         list.crystals = list.orderCrystals();

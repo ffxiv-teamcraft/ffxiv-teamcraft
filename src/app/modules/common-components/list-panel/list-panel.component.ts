@@ -50,6 +50,9 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     @Input()
     public copyButton = false;
 
+    @Input()
+    public odd: boolean;
+
     author: Observable<any>;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
