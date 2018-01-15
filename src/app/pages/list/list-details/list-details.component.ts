@@ -214,14 +214,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
-        this.subscriptions.push(this.list.switchMap(l => {
+        this.list.switchMap(l => {
             return this.listManager.upgradeList(l)
                 .switchMap(list => this.listService.update(this.listUid, list))
-        }).subscribe(() => {
+        }).first().subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
-        }));
+        });
     }
 
     ngOnDestroy(): void {
