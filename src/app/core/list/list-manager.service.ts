@@ -10,6 +10,7 @@ import {environment} from '../../../environments/environment';
 import {DataExtractorService} from './data/data-extractor.service';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/combineLatest';
+import {Ingredient} from '../../model/garland-tools/ingredient';
 
 @Injectable()
 export class ListManagerService {
@@ -27,12 +28,21 @@ export class ListManagerService {
                 const crafted = this.extractor.extractCraftedBy(+itemId, data);
                 const addition = new List();
                 const craft = data.getCraft(recipeId);
+                const ingredients: Ingredient[] = [];
                 // We have to remove unused ingredient properties.
                 craft.ingredients.forEach(i => {
                     delete i.quality;
                     delete i.stepid;
                     delete i.part;
                     delete i.phase;
+                });
+                craft.ingredients.forEach(req => {
+                    const requirementsRow = ingredients.find(row => row.id === req.id);
+                    if (requirementsRow === undefined) {
+                        ingredients.push(req);
+                    } else {
+                        requirementsRow.amount += req.amount;
+                    }
                 });
                 // Then we prepare the list row to add.
                 const toAdd: ListRow = {
@@ -43,7 +53,7 @@ export class ListManagerService {
                     used: 0,
                     yield: craft.yield || 1,
                     recipeId: recipeId,
-                    requires: craft.ingredients,
+                    requires: ingredients,
                     craftedBy: crafted
                 };
                 // We add the row to recipes.
