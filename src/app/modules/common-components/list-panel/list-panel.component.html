@@ -1,5 +1,5 @@
 <mat-expansion-panel #panel [expanded]="expanded" [ngClass]="{'odd': odd}">
-    <mat-expansion-panel-header (click)="panel.expanded?opened.emit():closed.emit()">
+    <mat-expansion-panel-header (click)="handleClick(panel)">
         <div class="header-container">
             <div class="title-and-desc">
                 <mat-panel-title [ngClass]="{'mobile': isMobile()}">

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
-import {MatSnackBar} from '@angular/material';
+import {MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
@@ -21,10 +21,10 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     public list: List;
 
     @Input()
-    public expanded: boolean;
+    public expanded = false;
 
     @Input()
-    public authorUid: number;
+    public authorUid: string;
 
     @Output()
     opened: EventEmitter<void> = new EventEmitter<void>();
@@ -89,6 +89,11 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
                         });
                 }));
         });
+    }
+
+    public handleClick(panel: MatExpansionPanel): void {
+        panel.expanded ? this.opened.emit() : this.closed.emit();
+        this.expanded = !this.expanded;
     }
 
     ngOnInit(): void {
