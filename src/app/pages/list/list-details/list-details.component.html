@@ -8,7 +8,7 @@
 
         <div class="right-fabs">
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
-                    (click)="openTagsPopup()">
+                    (click)="openTagsPopup()" *ngIf="isOwnList()">
                 <mat-icon>label_outline</mat-icon>
             </button>
 
