@@ -1,6 +1,6 @@
 {
   "name": "teamcraft",
-  "version": "3.0.4",
+  "version": "3.1.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -24,14 +24,14 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.1",
-    "@angular/cdk": "^5.0.0-rc0",
+    "@angular/cdk": "^5.0.1",
     "@angular/common": "^5.0.1",
     "@angular/compiler": "^5.0.1",
     "@angular/core": "^5.0.1",
     "@angular/flex-layout": "2.0.0-beta.10",
     "@angular/forms": "^5.0.1",
     "@angular/http": "^5.0.1",
-    "@angular/material": "^5.0.0-rc0",
+    "@angular/material": "^5.0.1",
     "@angular/platform-browser": "^5.0.1",
     "@angular/platform-browser-dynamic": "^5.0.1",
     "@angular/router": "^5.0.1",

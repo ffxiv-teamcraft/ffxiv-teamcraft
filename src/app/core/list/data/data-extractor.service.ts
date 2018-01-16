@@ -89,7 +89,7 @@ export class DataExtractorService {
     }
 
     /**
-     * Extracts informations about the vendors of an item (trades for gils).
+     * Extracts informations about the vendors of an item (trades for gil).
      * @param {number} id
      * @param {ItemData} data
      * @returns {CraftedBy}

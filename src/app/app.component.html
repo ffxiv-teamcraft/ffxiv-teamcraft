@@ -80,7 +80,7 @@
                 </mat-list-item>
                 <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>alarm</mat-icon>
-                    <span matLine>{{'Alarms' | translate}}</span>
+                    <span matLine>{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
@@ -100,6 +100,9 @@
                 {{locale | uppercase}}
             </button>
             <div class="spacer"></div>
+            <button mat-raised-button color="primary" (click)="showGiveway()" *ngIf="givewayRunning" class="giveway-button">{{"GIVEWAY.Title" |
+                translate}}
+            </button>
             <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
                class="report-bug">Report a bug</a>
         </mat-sidenav>

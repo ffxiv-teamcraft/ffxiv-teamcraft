@@ -9,7 +9,7 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatProgressSpinnerModule,
     MatTooltipModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -49,6 +49,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         MatButtonModule,
         MatListModule,
         MatDialogModule,
+        MatProgressSpinnerModule,
 
         ClipboardModule,
 

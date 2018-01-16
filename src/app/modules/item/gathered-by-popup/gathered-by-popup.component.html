@@ -19,7 +19,7 @@
             <span>
             <b mat-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
             <span mat-line *ngIf="node.time !== undefined">
-                <i mat-line *ngFor="let time of node.time">{{time}} - {{time + (node.uptime / 60)}}</i>
+                <i mat-line *ngFor="let time of node.time">{{time}} - {{getDespawnTime(time, node.uptime)}}</i>
             </span>
         </span>
         </mat-list-item>

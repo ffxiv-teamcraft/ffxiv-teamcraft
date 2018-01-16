@@ -188,7 +188,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         } else {
                             this.title.setTitle(this.translate.instant('List_not_found'));
                         }
-                        this.zoneBreakdown = new ZoneBreakdown(l);
+                        delete this.zoneBreakdown;
+                        if (this.zoneBreakdownToggle) {
+                            this.zoneBreakdown = new ZoneBreakdown(l);
+                        }
                     })
                     .map((list: List) => {
                         list.crystals = list.orderCrystals();
@@ -211,14 +214,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
-        this.subscriptions.push(this.list.switchMap(l => {
+        this.list.switchMap(l => {
             return this.listManager.upgradeList(l)
                 .switchMap(list => this.listService.update(this.listUid, list))
-        }).subscribe(() => {
+        }).first().subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
-        }));
+        });
     }
 
     ngOnDestroy(): void {
@@ -275,6 +278,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public forkList(list: List): void {
         const fork: List = list.clone();
+        // Update the forks count.
+        this.listService.update(list.$key, list).first().subscribe();
         fork.authorId = this.user.uid;
         this.listService.add(fork).first().subscribe((id) => {
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
@@ -303,7 +308,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 }));
     }
 
-    public toggleZoneBreakdown(): void {
+    public toggleZoneBreakdown(list: List): void {
+        if (this.zoneBreakdown === undefined) {
+            this.zoneBreakdown = new ZoneBreakdown(list);
+        }
         this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
     }
 

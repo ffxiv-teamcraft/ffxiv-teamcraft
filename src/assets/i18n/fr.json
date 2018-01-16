@@ -8,6 +8,12 @@
         "Patreon_supporters": "Supporters Patreon",
         "Contributors": "Contributeurs"
     },
+    "GIVEWAY": {
+        "Title": "Concours 10 000 listes",
+        "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
+        "Access": "Accéder au concours"
+    },
+    "No_favorites": "Aucun favoris",
     "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
     "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
     "Tag_filter": "Tags",
@@ -18,8 +24,11 @@
         "Save": "Sauvegarder"
     },
     "ALARMS": {
-        "No_alarm": "Aucune alarme définie"
+        "No_alarm": "Aucune alarme définie",
+        "Add_alarm": "Ajouter une alarme"
     },
+    "Item_name": "Nom de l'objet",
+    "No_items_found": "Aucun objet trouvé",
     "Select_all":"Tout cocher",
     "Confirmation": "Confirmation",
     "Yes": "Oui",
@@ -164,13 +173,14 @@
     "Benefits": "Bénéfice",
     "Minimal_craft_cost": "Coût minimal de fabrication",
     "Used_for": "Utilisé pour",
-    "xivdb_cart_import": "Import depuis xivdb shopping cart",
+    "xivdb_cart_import": "Import de la liste",
     "Or": "ou",
     "Make_donation": "Faire un don",
     "Data_from_gt": "Données fournies par garlandtools.org",
     "Hide_completed": "Masquer les éléments complétés",
     "Your_comment": "Votre commentaire",
     "Required_crafts_amount": "Nombre de crafts à faire",
+    "Missing_crafts_amount": "{{amount}} pour atteindre le total",
     "Requires": "Nécessite",
     "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
     "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
@@ -185,6 +195,12 @@
     "PROFILE": {
         "Masterbooks": "Livres",
         "Patreon_supporter": "Supporter Patreon"
+    },
+    "LISTS": {
+        "Merge_lists": "Fusionner des listes"
+    },
+    "LIST": {
+        "Copied_x_times": "Copiée {{count}} fois"
     },
     "LIST_DETAILS": {
         "No_book": "Livre manquant",
@@ -203,6 +219,7 @@
         "GLAMOUR": "Mirage",
         "HOUSING": "Logement",
         "MISC": "Autre",
+        "QUEST": "Quête",
 
         "TANK": "Tank",
         "HEALER": "Soigneur",

@@ -1,6 +1,9 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {TooltipDataService} from './tooltip-data.service';
 
+/**
+ * @deprecated Prefer using the XivdbTooltipDirective.
+ */
 @Component({
     selector: 'app-tooltip',
     templateUrl: './tooltip.component.html',

@@ -32,7 +32,7 @@ export class AlarmService {
             return;
         }
         this.generateAlarms(item).forEach(alarm => {
-            this._register(alarm);
+            this.registerAlarms(alarm);
         });
     }
 
@@ -68,7 +68,7 @@ export class AlarmService {
      * @param {Alarm} alarms
      * @private
      */
-    private _register(...alarms: Alarm[]): void {
+    public registerAlarms(...alarms: Alarm[]): void {
         alarms.forEach(alarm => {
             this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
                 if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) && time.getUTCMinutes() === 0) {
@@ -299,7 +299,7 @@ export class AlarmService {
      * Loads alarms fro the local storage of the browser.
      */
     private loadAlarms(): void {
-        this._register(...(JSON.parse(localStorage.getItem(AlarmService.LOCALSTORAGE_KEY)) || []));
+        this.registerAlarms(...(JSON.parse(localStorage.getItem(AlarmService.LOCALSTORAGE_KEY)) || []));
     }
 
     /**

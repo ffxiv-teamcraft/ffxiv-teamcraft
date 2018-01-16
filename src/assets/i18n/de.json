@@ -8,6 +8,12 @@
         "Patreon_supporters": "Patreon-Unterstützer",
         "Contributors": "Mitwirkende"
     },
+    "GIVEWAY": {
+        "Title": "10k Listen Giveaway!",
+        "Body": "Um die Erstellung von 10000 Listen zu feiern, wird eine Spielzeitkarte über 60 Tage verlost! Die Verlosung läuft bis zum 09.Februar . \n Ein großes dankeschön dass ihr die App benutzt. Ohne euch wäre Sie nicht das gleiche und ich hoffe dass sie euch sehr hilft.",
+        "Access": "Für das Giveaway anmelden"
+    },
+    "No_favorites": "No Favorite",
     "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
     "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
     "Tag_filter": "Tags",
@@ -18,8 +24,11 @@
         "Save": "Speichern"
     },
     "ALARMS": {
-        "No_alarm": "Kein Alarm gesetzt"
+        "No_alarm": "Kein Alarm gesetzt",
+        "Add_alarm": "Alarm hinzufügen"
     },
+    "Item_name": "Gegenstandsname",
+    "No_items_found": "Kein Gegenstand gefunden",
     "Select_all": "Alle auswählen",
     "Confirmation": "Bestätigung",
     "Yes": "Ja",
@@ -164,13 +173,14 @@
     "Benefits": "Gewinn",
     "Minimal_craft_cost": "Minimum Herstellungskosten",
     "Used_for": "Benutzt für",
-    "xivdb_cart_import": "Importiere aus dem XIVDB-Einkaufswagen",
+    "xivdb_cart_import": "Importiere Liste",
     "Or": "oder",
     "Make_donation": "Spende",
     "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
     "Hide_completed": "Verstecke komplettierte Reihen",
     "Your_comment": "Dein Kommentar",
     "Required_crafts_amount": "Menge an Herstellungen",
+    "Missing_crafts_amount": "{{amount}} um Ziel-Menge zu erreichen",
     "Requires": "Erfordert",
     "Copy_item_name_to_clipboard": "Kopiere den Gegenstandsnamen zur Zwischenablage",
     "Item_name_copied": "{{itemname}} zur Zwischenablage hinzugefügt",
@@ -186,6 +196,12 @@
         "Masterbooks": "Meisterbücher",
         "Patreon_supporter": "Patreon-Unterstützer"
     },
+    "LISTS": {
+        "Merge_lists": "Listen zusammenfassen"
+    },
+    "LIST": {
+        "Copied_x_times": "{{count}} mal kopiert"
+    },
     "LIST_DETAILS": {
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",
@@ -193,8 +209,8 @@
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventar"
     },
-    "adapt_to_character": "Adapt to Character",
-    "reset_filters": "Reset Filters",
+    "adapt_to_character": "An Character anpassen",
+    "reset_filters": "Filter zurücksetzen",
     "LIST_TAGS": {
         "GEAR": "Ausrüstung",
         "CONSUMABLE": "Benutzbares",
@@ -211,6 +227,7 @@
         "CASTER": "Zauberer",
         "CRAFTER": "Handwerker",
         "GATHERER": "Sammler",
+        "QUEST": "Quest",
 
         "PLD": "PLD",
         "WAR": "KRG",

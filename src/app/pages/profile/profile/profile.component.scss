@@ -7,8 +7,16 @@
         padding-top: 200px;
     }
 
-    .portrait {
-        height: 100%;
+    .portrait-container {
+        position: relative;
+        .change-character {
+            position: absolute;
+            top: 5px;
+            right: 32px;
+        }
+        .portrait {
+            height: 100%;
+        }
     }
 
     .profile-card {

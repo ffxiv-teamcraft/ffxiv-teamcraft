@@ -26,6 +26,7 @@ import {DropsExtractor} from './list/data/extractor/drops-extractor';
 import {InstancesExtractor} from './list/data/extractor/instances-extractor';
 import {AlarmService} from './time/alarm.service';
 import {HelpService} from './component/help.service';
+import {BellNodesService} from './data/bell-nodes.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -61,6 +62,7 @@ const dataExtractorProviders: Provider[] = [
         EorzeanTimeService,
         LocalizedDataService,
         AlarmService,
+        BellNodesService,
         HelpService,
     ],
     declarations: [

@@ -8,7 +8,7 @@ export class ZoneBreakdown {
 
     constructor(list: List) {
         list.gathers.forEach(gather => {
-            if (gather.gatheredBy.nodes === undefined) {
+            if (gather.gatheredBy.nodes === undefined || gather.gatheredBy.nodes.length === 0) {
                 return;
             }
             gather.gatheredBy.nodes.forEach(node => {

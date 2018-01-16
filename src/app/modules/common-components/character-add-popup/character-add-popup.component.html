@@ -1,15 +1,28 @@
-<h3 mat-dialog-title>{{"Character_informations" | translate}}</h3>
+<h3 mat-dialog-title>{{'Character_informations' | translate}}</h3>
 <div mat-dialog-content>
-    <form [formGroup]="form" (submit)="submit()">
-        <mat-input-container>
-            <input matInput placeholder="{{'Character_name' | translate}}" formControlName="character" type="text" required>
-            <mat-error>Required</mat-error>
-        </mat-input-container>
-        <mat-input-container>
-            <input matInput placeholder="{{'Server_name' | translate}}" formControlName="server" type="text" required>
-            <mat-error>Required</mat-error>
-        </mat-input-container>
-        <mat-error *ngIf="!form.valid">{{'Character_not_found' | translate}}</mat-error>
-        <button mat-raised-button type="submit" [disabled]="!form.valid" color="primary">Confirm</button>
-    </form>
+    <mat-input-container>
+        <input matInput #name [(ngModel)]="characterName" placeholder="{{'Character_name' | translate}}" type="text" required>
+        <mat-error>Required</mat-error>
+    </mat-input-container>
+    <mat-input-container>
+        <input matInput #server [(ngModel)]="serverName" placeholder="{{'Server_name' | translate}}" type="text" required>
+        <mat-error>Required</mat-error>
+    </mat-input-container>
+    <div class="loader-container" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <mat-list dense>
+        <mat-list-item *ngFor="let character of search | async">
+            <img mat-list-avatar src="{{character.avatar}}" alt="">
+            <h3 matLine>{{character.name}}</h3>
+            <span matLine>{{character.server}}</span>
+            <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}</button>
+        </mat-list-item>
+    </mat-list>
+    <div *ngIf="(search | async)?.length === 0">
+        <mat-error>{{'Character_not_found' | translate}}</mat-error>
+    </div>
 </div>
+<mat-dialog-actions>
+    <button color="warn" (click)="logOut()" mat-raised-button *ngIf="disconnectButton">{{'Disconnect' | translate}}</button>
+</mat-dialog-actions>

@@ -42,6 +42,7 @@
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+                    margin-bottom: 10px;
                     .name {
                         margin-left: 5px;
                     }
@@ -50,6 +51,9 @@
                         border-radius: 48px;
                     }
                 }
+            }
+            .giveway-button {
+                margin-bottom: 10px;
             }
             .report-bug {
                 margin-bottom: 10px;

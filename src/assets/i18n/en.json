@@ -8,6 +8,12 @@
         "Patreon_supporters": "Patreon supporters",
         "Contributors": "Contributors"
     },
+    "GIVEWAY": {
+        "Title": "10k lists Giveway",
+        "Body": "In order to thank you properly for the 10k lists created on the app, a 60 days timecard giveway has been created, it will last until Feb. 09.\n Thank you for using this app, I hope it helped you a lot, the app is what it is thanks to you.",
+        "Access": "Access giveway"
+    },
+    "No_favorites": "No Favorite",
     "Ephemeral_list": "Will be deleted once completed",
     "Quick_list_create": "Create quick list (deleted once completed)",
     "Tag_filter": "Tags",
@@ -18,9 +24,12 @@
         "Save": "Save"
     },
     "ALARMS": {
-        "No_alarm": "No alarm set"
+        "No_alarm": "No alarm set",
+        "Add_alarm": "Add alarm"
     },
-    "Select_all":"Select all",
+    "Item_name": "Item name",
+    "No_items_found": "No item found",
+    "Select_all": "Select all",
     "Confirmation": "Confirmation",
     "Yes": "Yes",
     "No": "No",
@@ -131,7 +140,7 @@
     "HOME_PAGE.FEATURES.node_timers_title": "Timer node alerts",
     "HOME_PAGE.FEATURES.node_timers_content": "Never miss a timed node !",
     "HOME_PAGE.FEATURES.area_breakdown_title": "Area breakdown",
-    "HOME_PAGE.FEATURES.area_breakdown_content": "Reduce your gils and your time spent for farming !",
+    "HOME_PAGE.FEATURES.area_breakdown_content": "Reduce your gil and your time spent for farming !",
     "HOME_PAGE.FEATURES.search_filters_title": "Search filters",
     "HOME_PAGE.FEATURES.search_filters_content": "Easily find what you're looking for with powerful filters !",
     "HOME_PAGE.FEATURES.bulk_import_title": "Bulk import",
@@ -164,13 +173,14 @@
     "Benefits": "Benefits",
     "Minimal_craft_cost": "Minimal craft cost",
     "Used_for": "Used for",
-    "xivdb_cart_import": "Importing from xivdb shopping cart",
+    "xivdb_cart_import": "Importing list",
     "Or": "or",
     "Make_donation": "Make a donation",
     "Data_from_gt": "Data provided by garlandtools.org",
     "Hide_completed": "Hide completed rows",
     "Your_comment": "Your comment",
     "Required_crafts_amount": "Required amount of crafts",
+    "Missing_crafts_amount": "{{amount}} to reach total",
     "Requires": "Requires",
     "Copy_item_name_to_clipboard": "Copy item name to clipboard",
     "Item_name_copied": "{{itemname}} copied to clipboard",
@@ -185,6 +195,12 @@
     "PROFILE": {
         "Masterbooks": "Masterbooks",
         "Patreon_supporter": "Patreon Supporter"
+    },
+    "LISTS": {
+        "Merge_lists": "Merge lists"
+    },
+    "LIST": {
+        "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
         "No_book": "Missing book",
@@ -203,7 +219,7 @@
         "GLAMOUR": "Glamour",
         "HOUSING": "Housing",
         "MISC": "Misc",
-
+        "QUEST": "Quest",
         "TANK": "Tank",
         "HEALER": "Healer",
         "MELEE": "Melee",
@@ -211,27 +227,21 @@
         "CASTER": "Caster",
         "CRAFTER": "Crafter",
         "GATHERER": "Gatherer",
-
         "PLD": "PLD",
         "WAR": "WAR",
         "DRK": "DRK",
-
         "WHM": "WHM",
         "SCH": "SCH",
         "AST": "AST",
-
         "MNK": "MNK",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
-
         "BRD": "BRD",
         "MCH": "MCH",
-
         "BLM": "BLM",
         "SMN": "SMN",
         "RDM": "RDM",
-
         "CRP": "CRP",
         "BSM": "BSM",
         "ARM": "ARM",
@@ -240,7 +250,6 @@
         "WVR": "WVR",
         "ALC": "ALC",
         "CUL": "CUL",
-
         "MIN": "MIN",
         "BOT": "BOT",
         "FSH": "FSH"

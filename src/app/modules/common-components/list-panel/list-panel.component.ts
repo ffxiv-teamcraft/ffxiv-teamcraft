@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
-import {MatSnackBar} from '@angular/material';
+import {MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
@@ -21,10 +21,10 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     public list: List;
 
     @Input()
-    public expanded: boolean;
+    public expanded = false;
 
     @Input()
-    public authorUid: number;
+    public authorUid: string;
 
     @Output()
     opened: EventEmitter<void> = new EventEmitter<void>();
@@ -50,6 +50,9 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     @Input()
     public copyButton = false;
 
+    @Input()
+    public odd: boolean;
+
     author: Observable<any>;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
@@ -73,6 +76,8 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public forkList(): void {
         const fork: List = this.list.clone();
+        // Update the forks count.
+        this.listService.update(this.list.$key, this.list).first().subscribe();
         fork.authorId = this.auth.auth.currentUser.uid;
         this.listService.add(fork).first().subscribe(key => {
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
@@ -84,6 +89,11 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
                         });
                 }));
         });
+    }
+
+    public handleClick(panel: MatExpansionPanel): void {
+        panel.expanded ? this.opened.emit() : this.closed.emit();
+        this.expanded = !this.expanded;
     }
 
     ngOnInit(): void {

@@ -12,28 +12,27 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 })
 export class FavoritesComponent extends ComponentWithSubscriptions {
 
-    favorites: { authorUid: string, list: List }[];
-
-    notFound = false;
+    favorites: Observable<List[]>;
 
     constructor(private userService: UserService, private listService: ListService) {
         super();
-        this.subscriptions.push(this.userService.getUserData()
+        this.favorites = this.userService.getUserData()
             .switchMap(userData => {
-                const lists: Observable<{ authorUid: string, list: List }>[] = [];
+                const lists: Observable<List>[] = [];
                 (userData.favorites || []).forEach(fav => {
                     const favData = fav.split('/');
                     const authorUid = favData[0];
                     const listUid = favData[1];
-                    lists
-                        .push(this.listService.get(listUid)
-                            .map(list => {
-                                list.$key = listUid;
-                                return {authorUid: authorUid, list: list};
-                            }));
+                    lists.push(this.listService.get(listUid)
+                        .catch(() => {
+                            // If there's an error, that's because the list doesn't exist anymore.
+                            return Observable.of(null);
+                        })
+                    );
                 });
                 return Observable.combineLatest(lists);
             })
-            .subscribe(favs => this.favorites = favs, err => this.notFound = true));
+            // We need to remove null rows in order to keep the display safe.
+            .map(favorites => favorites.filter(row => row !== null));
     }
 }
