@@ -347,7 +347,7 @@ export class List extends DataModel {
             }
         });
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '3.0.0');
+        res = res || semver.ltr(this.version, '3.2.0');
         return res;
     }
 

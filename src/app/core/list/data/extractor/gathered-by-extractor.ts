@@ -7,6 +7,7 @@ import {HtmlToolsService} from '../../../tools/html-tools.service';
 import {GarlandToolsService} from '../../../api/garland-tools.service';
 import {StoredNode} from 'app/model/list/stored-node';
 import {Item} from '../../../../model/garland-tools/item';
+import {nodePositions} from '../../../data/sources/node-positions';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
@@ -56,6 +57,10 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                         storedNode.uptime = details.uptime;
                         storedNode.limitType = {en: partial.lt, de: partial.lt, fr: partial.lt, ja: partial.lt};
                         storedNode.coords = details.coords;
+                    }
+                    // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.
+                    if (storedNode.coords === undefined && nodePositions[node] !== undefined) {
+                        storedNode.coords = [nodePositions[node].x, nodePositions[node].y];
                     }
                     // We need to cleanup the node object to avoid database issues with undefined value.
                     Object.keys(storedNode).forEach(key => {
