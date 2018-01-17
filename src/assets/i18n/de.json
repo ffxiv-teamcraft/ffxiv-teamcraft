@@ -186,6 +186,7 @@
     "Item_name_copied": "{{itemname}} zur Zwischenablage hinzugefügt",
     "Tier_display_toggle": "Zeige Herstellungs-Meilensteine",
     "Precraft_tier": "Meilenstein",
+    "Regenerating_lists": "Neugenerierende Liste",
     "SETTINGS": {
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
@@ -202,6 +203,7 @@
         }
     },
     "LISTS": {
+        "Regenerate_all": "Alle Listen neugenerieren",
         "Merge_lists": "Listen zusammenfassen"
     },
     "LIST": {

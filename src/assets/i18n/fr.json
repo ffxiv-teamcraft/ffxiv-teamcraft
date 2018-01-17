@@ -186,6 +186,7 @@
     "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
     "Tier_display_toggle": "Voir les étapes de craft",
     "Precraft_tier": "Étape",
+    "Regenerating_lists": "Régénération des listes en cours",
     "SETTINGS": {
         "title": "Options",
         "link_base": "Liens des objets",
@@ -202,6 +203,7 @@
         }
     },
     "LISTS": {
+        "Regenerate_all": "Régénérer toutes les listes",
         "Merge_lists": "Fusionner des listes"
     },
     "LIST": {

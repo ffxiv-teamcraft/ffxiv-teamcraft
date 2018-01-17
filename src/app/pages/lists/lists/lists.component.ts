@@ -15,6 +15,7 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MergeListsPopupComponent} from '../merge-lists-popup/merge-lists-popup.component';
+import {BulkRegeneratePopupComponent} from '../bulk-regenerate-popup/bulk-regenerate-popup.component';
 
 declare const ga: Function;
 
@@ -55,6 +56,12 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 this.myNgForm.resetForm();
             });
         }
+    }
+
+    regenerateAllLists(): void {
+        this.lists.first().subscribe(lists => {
+            this.dialog.open(BulkRegeneratePopupComponent, {data: lists, disableClose: true});
+        });
     }
 
     closed(key: string): void {

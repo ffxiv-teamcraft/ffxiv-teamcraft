@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {List} from '../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListRow} from '../../model/list/list-row';
@@ -18,7 +18,8 @@ export class ListManagerService {
     constructor(protected db: DataService,
                 private gt: GarlandToolsService,
                 protected i18n: I18nToolsService,
-                private extractor: DataExtractorService) {
+                private extractor: DataExtractorService,
+                private zone: NgZone) {
     }
 
     public addToList(itemId: number, list: List, recipeId: string, amount = 1): Observable<List> {
@@ -93,55 +94,57 @@ export class ListManagerService {
     }
 
     public upgradeList(list: List): Observable<List> {
-        const backup = [];
-        list.crystals.forEach(item => {
-            backup.push({array: 'crystals', item: item});
-        });
-        list.gathers.forEach(item => {
-            backup.push({array: 'gathers', item: item});
-        });
-        list.preCrafts.forEach(item => {
-            backup.push({array: 'preCrafts', item: item});
-        });
-        list.others.forEach(item => {
-            backup.push({array: 'others', item: item});
-        });
-        list.recipes.forEach(item => {
-            backup.push({array: 'recipes', item: item});
-        });
-        const add = [];
-        list.recipes.forEach((recipe) => {
-            add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
-        });
-        list.crystals = [];
-        list.gathers = [];
-        list.preCrafts = [];
-        list.others = [];
-        list.recipes = [];
-        return Observable.combineLatest(...add, (...additions: List[]) => {
-            // Because list is passed by reference, we can simply return the first one.
-            return additions[0];
-        }).map((resultList: List) => {
-            backup.forEach(row => {
-                const listRow = resultList[row.array].find(item => item.id === row.item.id);
-                if (listRow !== undefined) {
-                    if (row.item.comments !== undefined) {
-                        listRow.comments = row.item.comments;
-                    }
-                    listRow.done = row.item.done;
-                    listRow.used = row.item.used || 0;
-                    if (row.array === 'recipes') {
-                        if (listRow.done > listRow.amount) {
-                            listRow.done = listRow.amount;
-                        }
-                    } else {
-                        if (listRow.done > listRow.amount_needed) {
-                            listRow.done = listRow.amount_needed;
-                        }
-                    }
-                }
+        return this.zone.runOutsideAngular(() => {
+            const backup = [];
+            list.crystals.forEach(item => {
+                backup.push({array: 'crystals', item: item});
             });
-            return resultList;
+            list.gathers.forEach(item => {
+                backup.push({array: 'gathers', item: item});
+            });
+            list.preCrafts.forEach(item => {
+                backup.push({array: 'preCrafts', item: item});
+            });
+            list.others.forEach(item => {
+                backup.push({array: 'others', item: item});
+            });
+            list.recipes.forEach(item => {
+                backup.push({array: 'recipes', item: item});
+            });
+            const add = [];
+            list.recipes.forEach((recipe) => {
+                add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
+            });
+            list.crystals = [];
+            list.gathers = [];
+            list.preCrafts = [];
+            list.others = [];
+            list.recipes = [];
+            return Observable.concat(...add, (...additions: List[]) => {
+                // Because list is passed by reference, we can simply return the first one.
+                return additions[0];
+            }).map((resultList: List) => {
+                backup.forEach(row => {
+                    const listRow = resultList[row.array].find(item => item.id === row.item.id);
+                    if (listRow !== undefined) {
+                        if (row.item.comments !== undefined) {
+                            listRow.comments = row.item.comments;
+                        }
+                        listRow.done = row.item.done;
+                        listRow.used = row.item.used || 0;
+                        if (row.array === 'recipes') {
+                            if (listRow.done > listRow.amount) {
+                                listRow.done = listRow.amount;
+                            }
+                        } else {
+                            if (listRow.done > listRow.amount_needed) {
+                                listRow.done = listRow.amount_needed;
+                            }
+                        }
+                    }
+                });
+                return resultList;
+            });
         });
     }
 }

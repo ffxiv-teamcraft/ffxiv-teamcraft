@@ -1,14 +1,23 @@
-<form (submit)="createNewList()" #f="ngForm">
-    <mat-input-container>
-        <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
-               [formControl]="newListFormControl" required>
-        <mat-error
-            *ngIf="newListFormControl.hasError('required')">
-            {{'Please_enter_a_name' | translate}}
-        </mat-error>
-    </mat-input-container>
-    <button type="submit" mat-raised-button color="accent">{{'Add_a_list' | translate}}</button>
-</form>
+<div class="top-section">
+    <form (submit)="createNewList()" #f="ngForm">
+        <mat-input-container>
+            <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
+                   [formControl]="newListFormControl" required>
+            <mat-error
+                *ngIf="newListFormControl.hasError('required')">
+                {{'Please_enter_a_name' | translate}}
+            </mat-error>
+        </mat-input-container>
+        <button type="submit" mat-raised-button color="accent">{{'Add_a_list' | translate}}</button>
+    </form>
+
+    <div class="spacer"></div>
+
+    <button mat-button color="accent" (click)="regenerateAllLists()" class="regenerate-all-button">
+        <mat-icon>update</mat-icon>{{"LISTS.Regenerate_all" | translate}}
+    </button>
+</div>
+
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="filter">
@@ -26,7 +35,7 @@
 
 <button mat-icon-button (click)="openMergeListsPopup()" [disabled]="(lists | async)?.length < 2" class="merge-button"
         matTooltip="{{'LISTS.Merge_lists' | translate}}" matTooltipPosition="above">
-        <mat-icon>call_merge</mat-icon>
+    <mat-icon>call_merge</mat-icon>
 </button>
 
 <div class="row" *ngFor="let list of lists | async; let i = index">

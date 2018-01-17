@@ -1,6 +1,6 @@
 import {FirebaseStorage} from '../firebase/firebase-storage';
 import {List} from '../../../../model/list/list';
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {ListStore} from './list-store';
 import {Observable} from 'rxjs/Observable';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
@@ -10,8 +10,9 @@ import {DiffService} from '../../diff/diff.service';
 @Injectable()
 export class FirebaseListStorage extends FirebaseStorage<List> implements ListStore {
 
-    constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService, protected diffService: DiffService) {
-        super(firebase, serializer, diffService);
+    constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService, protected diffService: DiffService,
+                protected zone: NgZone) {
+        super(firebase, serializer, diffService, zone);
     }
 
     getPublicLists(): Observable<List[]> {

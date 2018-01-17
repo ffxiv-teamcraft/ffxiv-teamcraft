@@ -186,6 +186,7 @@
     "Item_name_copied": "{{itemname}} copied to clipboard",
     "Tier_display_toggle": "Display crafting tiers",
     "Precraft_tier": "Tier",
+    "Regenerating_lists": "Regenerating lists",
     "SETTINGS": {
         "title": "Settings",
         "link_base": "Item links",
@@ -202,6 +203,7 @@
         }
     },
     "LISTS": {
+        "Regenerate_all": "Regenerate all lists",
         "Merge_lists": "Merge lists"
     },
     "LIST": {
