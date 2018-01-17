@@ -32,6 +32,7 @@ import {ListInventoryComponent} from './list-inventory/list-inventory.component'
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListTagsPopupComponent} from './list-tags-popup/list-tags-popup.component';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import { ListHelpComponent } from './list-help/list-help.component';
 
 const routes: Routes = [
     {
@@ -89,11 +90,13 @@ const routes: Routes = [
         ListNoteComponent,
         ListInventoryComponent,
         ListTagsPopupComponent,
+        ListHelpComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
-        ListTagsPopupComponent
+        ListTagsPopupComponent,
+        ListHelpComponent,
     ]
 })
 export class ListModule {

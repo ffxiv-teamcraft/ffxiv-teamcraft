@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -28,6 +28,10 @@ import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/distinctUntilChanged';
+import {PageComponent} from '../../../core/component/page-component';
+import {ComponentType} from '@angular/cdk/portal';
+import {HelpService} from '../../../core/component/help.service';
+import {ListHelpComponent} from '../list-help/list-help.component';
 
 declare const ga: Function;
 
@@ -37,7 +41,7 @@ declare const ga: Function;
     styleUrls: ['./list-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListDetailsComponent extends ComponentWithSubscriptions implements OnInit, OnDestroy {
+export class ListDetailsComponent extends PageComponent implements OnInit, OnDestroy {
 
     list: Observable<List>;
 
@@ -76,14 +80,18 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     };
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
-                private dialog: MatDialog, private userService: UserService,
+                protected dialog: MatDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
-                public settings: SettingsService) {
-        super();
+                public settings: SettingsService, help: HelpService) {
+        super(dialog, help);
         this.initFilters();
+    }
+
+    getHelpDialog(): ComponentType<any> | TemplateRef<any> {
+        return ListHelpComponent;
     }
 
     togglePublic(): void {
@@ -145,6 +153,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnInit() {
+        super.ngOnInit();
+
         this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
 
         this.subscriptions.push(this.route.params.subscribe(params => {
