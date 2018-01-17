@@ -25,7 +25,10 @@ import {VoyagesExtractor} from './list/data/extractor/voyages-extractor';
 import {DropsExtractor} from './list/data/extractor/drops-extractor';
 import {InstancesExtractor} from './list/data/extractor/instances-extractor';
 import {AlarmService} from './time/alarm.service';
+import {HelpService} from './component/help.service';
 import {BellNodesService} from './data/bell-nodes.service';
+import { HelpDialogComponent } from './component/help-dialog/help-dialog.component';
+import {MatButtonModule, MatDialogModule} from '@angular/material';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -47,6 +50,8 @@ const dataExtractorProviders: Provider[] = [
         NgSerializerModule,
         TranslateModule,
         AngularFireModule,
+        MatDialogModule,
+        MatButtonModule,
     ],
     providers: [
         // Data Extraction
@@ -62,12 +67,15 @@ const dataExtractorProviders: Provider[] = [
         LocalizedDataService,
         AlarmService,
         BellNodesService,
+        HelpService,
     ],
     declarations: [
         I18nPipe,
+        HelpDialogComponent,
     ],
     exports: [
         I18nPipe,
+        HelpDialogComponent,
         TranslateModule,
         AngularFireModule,
         AngularFireDatabaseModule,

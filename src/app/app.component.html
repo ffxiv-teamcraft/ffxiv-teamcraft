@@ -16,6 +16,9 @@
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>
+        <button mat-icon-button [disabled]="helpService.currentHelp === undefined" (click)="openHelp()">
+            <mat-icon>help</mat-icon>
+        </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
     <mat-card class="announcement" *ngIf="showAnnouncement()">

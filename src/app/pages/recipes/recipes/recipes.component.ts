@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
@@ -16,7 +16,10 @@ import {SearchFilter} from '../../../model/search/search-filter.interface';
 import {BulkAdditionPopupComponent} from '../bulk-addition-popup/bulk-addition-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {UserService} from '../../../core/database/user.service';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {PageComponent} from '../../../core/component/page-component';
+import {ComponentType} from '@angular/cdk/portal';
+import {RecipesHelpComponent} from '../recipes-help/recipes-help.component';
+import {HelpService} from '../../../core/component/help.service';
 
 declare const ga: Function;
 
@@ -25,7 +28,7 @@ declare const ga: Function;
     templateUrl: './recipes.component.html',
     styleUrls: ['./recipes.component.scss']
 })
-export class RecipesComponent extends ComponentWithSubscriptions implements OnInit {
+export class RecipesComponent extends PageComponent implements OnInit {
 
     recipes: Recipe[] = [];
 
@@ -98,15 +101,17 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
     loading = false;
 
     constructor(private resolver: ListManagerService, private db: DataService,
-                private snackBar: MatSnackBar, private dialog: MatDialog,
+                private snackBar: MatSnackBar, protected dialog: MatDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,
-                private localizedData: LocalizedDataService, private userService: UserService) {
-        super();
+                private localizedData: LocalizedDataService, private userService: UserService,
+                protected helpService: HelpService) {
+        super(dialog, helpService);
     }
 
     ngOnInit() {
+        super.ngOnInit();
         // Load user's lists
         this.subscriptions.push(this.userService.getUserData().switchMap((user) => {
             if (user.$key !== undefined) {
@@ -301,6 +306,11 @@ export class RecipesComponent extends ComponentWithSubscriptions implements OnIn
                     });
                 }));
         });
+    }
+
+
+    getHelpDialog(): ComponentType<any> | TemplateRef<any> {
+        return RecipesHelpComponent;
     }
 
 }

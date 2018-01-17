@@ -16,6 +16,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
 import {SettingsService} from './pages/settings/settings.service';
+import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 
 declare const ga: Function;
@@ -61,13 +62,13 @@ export class AppComponent implements OnInit {
                 private userService: UserService,
                 private snack: MatSnackBar,
                 media: ObservableMedia,
-                public settings: SettingsService) {
+                public settings: SettingsService,
+                private helpService: HelpService) {
 
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
             this.mobile = (change.mqAlias === 'xs') || (change.mqAlias === 'sm');
-
         });
 
         this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
@@ -77,15 +78,17 @@ export class AppComponent implements OnInit {
         });
 
         // Google Analytics
-        router.events.distinctUntilChanged((previous: any, current: any) => {
-            if (current instanceof NavigationEnd) {
-                return previous.url === current.url;
-            }
-            return true;
-        }).subscribe((x: any) => {
-            ga('set', 'page', x.url);
-            ga('send', 'pageview');
-        });
+        router.events
+            .distinctUntilChanged((previous: any, current: any) => {
+                if (current instanceof NavigationEnd) {
+                    return previous.url === current.url;
+                }
+                return true;
+            })
+            .subscribe((event: any) => {
+                ga('set', 'page', event.url);
+                ga('send', 'pageview');
+            });
 
         // Firebase Auth
         this.authState = this.auth.authState;
@@ -115,6 +118,10 @@ export class AppComponent implements OnInit {
         if (this.registrationSnackRef !== undefined) {
             this.registrationSnackRef.dismiss();
         }
+    }
+
+    openHelp(): void {
+        this.dialog.open(this.helpService.currentHelp);
     }
 
     ngOnInit(): void {

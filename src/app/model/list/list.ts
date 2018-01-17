@@ -7,6 +7,7 @@ import {MathTools} from 'app/tools/math-tools';
 import * as semver from 'semver';
 import {ListTag} from './list-tag.enum';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
+import {ResourceComment} from '../../modules/comments/resource-comment';
 
 declare const ga: Function;
 
@@ -36,6 +37,8 @@ export class List extends DataModel {
     forks = 0;
 
     ephemeral: boolean;
+
+    comments: ResourceComment[];
 
     constructor() {
         super();

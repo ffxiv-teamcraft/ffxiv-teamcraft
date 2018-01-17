@@ -194,7 +194,12 @@
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
-        "Patreon_supporter": "Patreon-Unterstützer"
+        "Patreon_supporter": "Patreon-Unterstützer",
+        "HELP": {
+            "Welcome": "Welcome to profile page, this is the place where you can see and edit your own profile.",
+            "Edit": "By clicking on the edit icon, you can edit the character linked to your FFXIV Teamcraft account.",
+            "Masterbooks": "You can put your unlocked masterbooks on your profile, this will allow for warnings in the future when you can't craft an item because you don't have the masterbook."
+        }
     },
     "LISTS": {
         "Merge_lists": "Listen zusammenfassen"
@@ -207,7 +212,28 @@
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
-        "Inventory_breakdown": "Inventar"
+        "Inventory_breakdown": "Inventar",
+        "HELP": {
+            "Title" : "List details",
+            "List_category" : "List",
+            "Inventory" : "You can switch to inventory view, where the app simulates an inventory to show you what you're supposed to have, it removes items  already used for crafts you've already done.",
+            "Reset_progression" : "You can reset the progression of the list entirely using the refresh button, upon confirmation this will set all progression to 0.",
+            "Upgrade" : "You can upgrade your list to the latest version using this button, it recreates the list entirely and keeps progression. You'll be asked to upgrade if your list is outdated.",
+            "Fork" : "You can fork a list, which means creating a copy of it in its actual state to your account, this works for any list.",
+            "Filters" : "You can filter list items, using your account you can apply filters to see only what you can do, you can also hide items that are already done in this panel.",
+            "Area_breakdown" : "By toggling Area Breakdown, you can order data based on the area they are obtainable in order to lower the teleport fees.",
+            "Pricing_mode" : "When entering pricing mode, you can enter the price of each item you bought, and enter the expected sell price in order to know how much benefits you get from a list.",
+            "Item_category" : "Items (rows)",
+            "Requirements" : "By clicking on the requirements icon, you can open a dialog showing what is required by a given item, or what it is required for.",
+            "Alarms" : "When an item is a timed node, you can click on the alarm button to setup a sound alarm when it spawns, the alarm will be played even if you're not on the list, you just need to be on the website.",
+            "Comments" : "You can add comments to any item row, allowing you to provide more informations (not linked to the item, only to the list row) or discuss on it. Comments are limited to 140 characters and 10 comments per item.",
+            "Colors":"Item name colors have a signification, <span class=\"craftable\">this one is for items ready to be crafted</span>, which means that you have everything to craft the item. <span class=\"strike\">This one is for items crafted</span> which means that you have already done this item",
+            "Misc_category" : "Other",
+            "Map_markers" : "Whenever you see this icon, click on it to get a map marker, which is way easier to read than X,Y coordinates.",
+            "Public_list" : "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
+            "Obtention_details" : "Each item row has icons in the top-right section of the row, clicking on each icon will give you more details on how to obtain the corresponding item.",
+            "Labels" : "When adding a list to public lists, don't forget to add proper labels to it"
+        }
     },
     "adapt_to_character": "An Character anpassen",
     "reset_filters": "Filter zurücksetzen",
@@ -261,5 +287,14 @@
         "MIN": "MIN",
         "BOT": "GÄR",
         "FSH": "FSH"
+    },
+    "RECIPES": {
+        "HELP":{
+            "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
+            "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
+            "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
+            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
+            "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
+        }
     }
 }
