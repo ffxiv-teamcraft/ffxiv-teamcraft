@@ -15,7 +15,6 @@ import {SettingsModule} from '../../pages/settings/settings.module';
     imports: [
         CommonModule,
         AngularFireDatabaseModule,
-        MatDialogModule,
 
         CoreModule,
         PipesModule,
@@ -25,8 +24,10 @@ import {SettingsModule} from '../../pages/settings/settings.module';
         MatButtonModule,
         MatInputModule,
         MatTooltipModule,
-        TranslateModule,
         MatListModule,
+        MatDialogModule,
+
+        TranslateModule,
         ReactiveFormsModule,
     ],
     declarations: [

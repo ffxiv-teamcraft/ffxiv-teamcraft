@@ -35,6 +35,9 @@
                         (click)="ondelete.emit(); $event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>
+                <app-comments-button *ngIf="list.public" [name]="list.name" [list]="list" [isOwnList]="list.authorId === authorUid"
+                                     color="null" (click)="$event.stopPropagation()">
+                </app-comments-button>
                 <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()"
                         [matTooltip]="'LIST.Copied_x_times' | translate:{'count': list.forks}"
                         matTooltipPosition="above">
