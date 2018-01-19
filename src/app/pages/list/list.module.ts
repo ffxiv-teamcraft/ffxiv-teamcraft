@@ -33,6 +33,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListTagsPopupComponent} from './list-tags-popup/list-tags-popup.component';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import { ListHelpComponent } from './list-help/list-help.component';
+import { ListLayoutPopupComponent } from './list-layout-popup/list-layout-popup.component';
+import { ListLayoutRowComponent } from './list-layout-popup/list-layout-row/list-layout-row.component';
+import { ImportInputBoxComponent } from './list-layout-popup/import-input-box/import-input-box.component';
+import {ClipboardModule} from 'ngx-clipboard/dist';
 
 const routes: Routes = [
     {
@@ -74,6 +78,7 @@ const routes: Routes = [
         MatTooltipModule,
 
         FlexLayoutModule,
+        ClipboardModule,
 
         CoreModule,
         PricingModule,
@@ -91,12 +96,17 @@ const routes: Routes = [
         ListInventoryComponent,
         ListTagsPopupComponent,
         ListHelpComponent,
+        ListLayoutPopupComponent,
+        ListLayoutRowComponent,
+        ImportInputBoxComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
         TimerOptionsPopupComponent,
         ListTagsPopupComponent,
         ListHelpComponent,
+        ListLayoutPopupComponent,
+        ImportInputBoxComponent,
     ]
 })
 export class ListModule {

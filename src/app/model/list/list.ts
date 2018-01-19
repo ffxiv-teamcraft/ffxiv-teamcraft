@@ -95,6 +95,14 @@ export class List extends DataModel {
         (this.recipes || []).forEach(method);
     }
 
+    /**
+     * Returns all items, which means everything except final recipes and crystals.
+     * @returns {ListRow[]}
+     */
+    public get items(): ListRow[] {
+        return (this.others || []).concat(this.gathers || []).concat(this.preCrafts || []);
+    }
+
     public addToRecipes(data: ListRow): number {
         return this.add(this.recipes, data, true);
     }

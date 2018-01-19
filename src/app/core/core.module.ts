@@ -29,6 +29,8 @@ import {HelpService} from './component/help.service';
 import {BellNodesService} from './data/bell-nodes.service';
 import { HelpDialogComponent } from './component/help-dialog/help-dialog.component';
 import {MatButtonModule, MatDialogModule} from '@angular/material';
+import {LayoutService} from './layout/layout.service';
+import {LayoutOrderService} from './layout/layout-order.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -68,6 +70,8 @@ const dataExtractorProviders: Provider[] = [
         AlarmService,
         BellNodesService,
         HelpService,
+        LayoutService,
+        LayoutOrderService,
     ],
     declarations: [
         I18nPipe,

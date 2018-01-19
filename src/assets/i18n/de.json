@@ -89,6 +89,7 @@
     "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
     "Own_list_outdated_after_button": "Schaltfläche",
     "Home": "Startseite",
+    "Import": "Import",
     "Favorites": "Favoriten",
     "Favorite": "Favorit",
     "filters/ilvl": "Gegenstandsstufe",
@@ -215,6 +216,18 @@
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventar",
+        "LAYOUT_DIALOG": {
+            "Title": "Layout",
+            "Add_panel": "Add Panel",
+            "Import_layout": "Import a layout",
+            "Import_string": "Import string"
+        },
+        "LAYOUT": {
+            "Filter": "Filter",
+            "Panel_name": "Panel name",
+            "Order_by": "Order by",
+            "Order": "Order"
+        },
         "HELP": {
             "Title" : "Listendetails",
             "List_category" : "Liste",
@@ -234,7 +247,8 @@
             "Map_markers" : "Immer wenn du dieses Symbol siehst, kannst du es benutzen um dir auf der KArte eine Markierung anzeigen zu lassen, was einfacher ist als X/Y-Koordinaten zu lesen.",
             "Public_list" : "Wenn du eine Liste auf öffentlich setzt, wird es zum Öffentliche Listen-Bereich hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN.",
             "Obtention_details" : "Jeder Gegenstand hat oben-rechts in der Ecke Symbole die dir verraten wie du sie erlangen kannst",
-            "Labels" : "Wenn du eine Liste zu den öffentlichen Listen hinzufügst vergiss nicht aussagekräftige Schlagwörter zu setzen"
+            "Labels" : "Wenn du eine Liste zu den öffentlichen Listen hinzufügst vergiss nicht aussagekräftige Schlagwörter zu setzen",
+            "Custom_layout": "You can fully customize your layout, export it and import the layout of a friend. This layout is only for you and stored in your browser, it will be applied to every list you see using this browser"
         }
     },
     "adapt_to_character": "An Character anpassen",

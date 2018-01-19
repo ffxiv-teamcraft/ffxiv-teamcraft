@@ -5,6 +5,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {DiffService} from 'app/core/database/diff/diff.service';
 import {NgZone} from '@angular/core';
+import 'rxjs/add/operator/takeWhile';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {
 
@@ -39,7 +40,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
                 // Cache a clone of the data.
                 this.cache[data.$key] = JSON.parse(JSON.stringify(data));
             })
-            .publishReplay(1)
+            .publishReplay()
             .refCount();
     }
 

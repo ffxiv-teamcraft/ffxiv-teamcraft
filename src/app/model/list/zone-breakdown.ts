@@ -1,4 +1,3 @@
-import {List} from './list';
 import {ZoneBreakdownRow} from './zone-breakdown-row';
 import {ListRow} from './list-row';
 
@@ -6,22 +5,20 @@ export class ZoneBreakdown {
 
     private _rows: ZoneBreakdownRow[] = [];
 
-    constructor(list: List) {
-        list.gathers.forEach(gather => {
-            if (gather.gatheredBy.nodes === undefined || gather.gatheredBy.nodes.length === 0) {
+    constructor(rows: ListRow[]) {
+        rows.forEach(row => {
+            if (row.gatheredBy.nodes === undefined || row.gatheredBy.nodes.length === 0) {
                 return;
             }
-            gather.gatheredBy.nodes.forEach(node => {
-                this.addToBreakdown(node.zoneid, gather);
+            row.gatheredBy.nodes.forEach(node => {
+                this.addToBreakdown(node.zoneid, row);
             });
-        });
-        list.others.forEach(other => {
-            if (other.drops !== undefined) {
-                other.drops.forEach(drop => {
-                    this.addToBreakdown(drop.zoneid, other);
+            if (row.drops !== undefined) {
+                row.drops.forEach(drop => {
+                    this.addToBreakdown(drop.zoneid, row);
                 });
             } else {
-                this.addToBreakdown(-1, other);
+                this.addToBreakdown(-1, row);
             }
         });
     }

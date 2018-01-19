@@ -1,0 +1,34 @@
+<div class="container">
+    <h3 mat-dialog-title>{{"LIST_DETAILS.LAYOUT_DIALOG.Title" | translate}}</h3>
+    <div mat-dialog-content>
+        <div class="import-export">
+            <button mat-icon-button ngxClipboard [cbContent]="export()" (cbOnSuccess)="afterCopy()" matTooltip="Export"
+                    matTooltipPosition="above">
+                <mat-icon>file_upload</mat-icon>
+            </button>
+            <button mat-icon-button (click)="import()" matTooltip="Import" matTooltipPosition="above">
+                <mat-icon>file_download</mat-icon>
+            </button>
+        </div>
+        <div class="rows">
+            <div *ngFor="let row of rows; let i = index" [ngClass]="{'odd': i%2>0}"
+                 class="mat-elevation-z10">
+                <app-list-layout-row [(row)]="rows[i]"
+                                     (up)="updateIndex(i, -1)"
+                                     (down)="updateIndex(i, 1)"
+                                     (delete)="deleteRow(row)"
+                                     [first]="i === 0"
+                                     [last]="i === rows.length - 1"
+                                     readonly="{{row.filterName === 'ANYTHING'}}"></app-list-layout-row>
+            </div>
+            <button mat-raised-button color="accent" (click)="addRow()">
+                <mat-icon>add</mat-icon>
+                {{"LIST_DETAILS.LAYOUT_DIALOG.Add_panel" | translate}}
+            </button>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" (click)="save()">{{"Save" | translate}}</button>
+        <button mat-button color="warn" mat-dialog-close>{{"Cancel" | translate}}</button>
+    </div>
+</div>

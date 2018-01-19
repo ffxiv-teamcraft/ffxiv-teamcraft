@@ -9,7 +9,7 @@ import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
 import {DataExtractorService} from './data/data-extractor.service';
 import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/observable/concat';
 import {Ingredient} from '../../model/garland-tools/ingredient';
 
 @Injectable()

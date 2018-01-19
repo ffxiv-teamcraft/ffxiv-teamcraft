@@ -21,7 +21,6 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
 import {User, UserInfo} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
@@ -32,6 +31,9 @@ import {PageComponent} from '../../../core/component/page-component';
 import {ComponentType} from '@angular/cdk/portal';
 import {HelpService} from '../../../core/component/help.service';
 import {ListHelpComponent} from '../list-help/list-help.component';
+import {LayoutService} from '../../../core/layout/layout.service';
+import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
+import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 
 declare const ga: Function;
 
@@ -45,6 +47,10 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     list: Observable<List>;
 
+    listDisplay: Observable<LayoutRowDisplay[]>;
+
+    private reload$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
     user: UserInfo;
 
     listUid: string;
@@ -52,8 +58,6 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     authorUid: string;
 
     userData: AppUser;
-
-    zoneBreakdownToggle = false;
 
     pricingMode = false;
 
@@ -66,8 +70,6 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
     private filterTrigger = new BehaviorSubject<void>(null);
-
-    zoneBreakdown: ZoneBreakdown;
 
     notFound = false;
 
@@ -85,7 +87,7 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
-                public settings: SettingsService, help: HelpService) {
+                public settings: SettingsService, help: HelpService, private layoutService: LayoutService) {
         super(dialog, help);
         this.initFilters();
     }
@@ -103,13 +105,6 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     public getUser(): Observable<User> {
         return this.auth.authState;
-    }
-
-    public getLocation(id: number): I18nName {
-        if (id === -1) {
-            return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
-        }
-        return this.data.getPlace(id);
     }
 
     public openTimerOptionsPopup(): void {
@@ -157,58 +152,60 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
         this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
 
-        this.subscriptions.push(this.route.params.subscribe(params => {
-            this.listUid = params.listId;
-            this.list =
-                Observable.combineLatest(
-                    this.filterTrigger,
-                    this.listService.get(this.listUid),
-                    (ignored, list) => {
-                        this.authorUid = list.authorId;
-                        list.forEachItem(item => {
-                            if (item.gatheredBy !== undefined) {
-                                const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                                if (filter !== undefined) {
-                                    item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+        this.subscriptions.push(
+            this.route.params.subscribe(params => {
+                this.listUid = params.listId;
+                this.list =
+                    Observable.combineLatest(
+                        this.filterTrigger,
+                        this.listService.get(this.listUid),
+                        (ignored, list) => {
+                            this.authorUid = list.authorId;
+                            list.forEachItem(item => {
+                                if (item.gatheredBy !== undefined) {
+                                    const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                                    if (filter !== undefined) {
+                                        item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                                    }
+                                } else if (item.craftedBy !== undefined) {
+                                    for (const craft of item.craftedBy) {
+                                        const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
+                                        item.hidden = !filter.checked || craft.level > filter.level;
+                                    }
+                                } else {
+                                    // If the item can't be filtered based on a gathering/crafting job level,
+                                    // we want to reset its hidden state.
+                                    item.hidden = false;
                                 }
-                            } else if (item.craftedBy !== undefined) {
-                                for (const craft of item.craftedBy) {
-                                    const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
-                                    item.hidden = !filter.checked || craft.level > filter.level;
+                                if (item.done >= item.amount && this.hideCompleted) {
+                                    item.hidden = true;
                                 }
+                            });
+                            return list;
+                        })
+                        .catch(() => {
+                            this.notFound = true;
+                            return Observable.of(null);
+                        })
+                        .distinctUntilChanged()
+                        .filter(list => list !== null)
+                        .do(l => {
+                            if (l.name !== undefined) {
+                                this.title.setTitle(`${l.name}`);
                             } else {
-                                // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
-                                item.hidden = false;
+                                this.title.setTitle(this.translate.instant('List_not_found'));
                             }
-                            if (item.done >= item.amount && this.hideCompleted) {
-                                item.hidden = true;
-                            }
+                        })
+                        .map((list: List) => {
+                            list.crystals = list.orderCrystals();
+                            list.gathers = list.orderGatherings(this.data);
+                            return list;
                         });
-                        return list;
-                    })
-                    .catch(() => {
-                        this.notFound = true;
-                        return Observable.of(null);
-                    })
-                    .distinctUntilChanged()
-                    .filter(list => list !== null)
-                    .do(l => {
-                        if (l.name !== undefined) {
-                            this.title.setTitle(`${l.name}`);
-                        } else {
-                            this.title.setTitle(this.translate.instant('List_not_found'));
-                        }
-                        delete this.zoneBreakdown;
-                        if (this.zoneBreakdownToggle) {
-                            this.zoneBreakdown = new ZoneBreakdown(l);
-                        }
-                    })
-                    .map((list: List) => {
-                        list.crystals = list.orderCrystals();
-                        list.gathers = list.orderGatherings(this.data);
-                        return list;
-                    });
-        }));
+                this.listDisplay = this.reload$.switchMap(() =>
+                    this.list.map((list: List) => {
+                        return this.layoutService.getDisplay(list);
+                    }));
+            }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
         }));
@@ -231,6 +228,12 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
             ga('send', 'event', 'List', 'regenerate');
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
+        });
+    }
+
+    openLayoutOptions(): void {
+        this.dialog.open(ListLayoutPopupComponent).afterClosed().subscribe(() => {
+            this.reload$.next(null);
         });
     }
 
@@ -316,13 +319,6 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                     }
                     this.set(list);
                 }));
-    }
-
-    public toggleZoneBreakdown(list: List): void {
-        if (this.zoneBreakdown === undefined) {
-            this.zoneBreakdown = new ZoneBreakdown(list);
-        }
-        this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
     }
 
     public toggleHideCompleted(): void {
