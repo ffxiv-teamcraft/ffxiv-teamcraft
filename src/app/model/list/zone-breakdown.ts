@@ -7,13 +7,12 @@ export class ZoneBreakdown {
 
     constructor(rows: ListRow[]) {
         rows.forEach(row => {
-            if (row.gatheredBy.nodes === undefined || row.gatheredBy.nodes.length === 0) {
-                return;
-            }
-            row.gatheredBy.nodes.forEach(node => {
-                this.addToBreakdown(node.zoneid, row);
-            });
-            if (row.drops !== undefined) {
+            if (row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
+                row.gatheredBy.nodes.forEach(node => {
+                    console.log(node.zoneid, row.id);
+                    this.addToBreakdown(node.zoneid, row);
+                });
+            } else if (row.drops !== undefined) {
                 row.drops.forEach(drop => {
                     this.addToBreakdown(drop.zoneid, row);
                 });
