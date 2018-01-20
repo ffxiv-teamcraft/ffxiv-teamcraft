@@ -7,10 +7,10 @@ import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {I18nToolsService} from '../tools/i18n-tools.service';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
-import {DataExtractorService} from './data/data-extractor.service';
 import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/observable/concat';
+import 'rxjs/add/operator/skip';
 import {Ingredient} from '../../model/garland-tools/ingredient';
+import {DataExtractorService} from './data/data-extractor.service';
 
 @Injectable()
 export class ListManagerService {
@@ -111,7 +111,7 @@ export class ListManagerService {
             list.recipes.forEach(item => {
                 backup.push({array: 'recipes', item: item});
             });
-            const add = [];
+            const add: Observable<List>[] = [];
             list.recipes.forEach((recipe) => {
                 add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
             });
@@ -120,31 +120,36 @@ export class ListManagerService {
             list.preCrafts = [];
             list.others = [];
             list.recipes = [];
-            return Observable.concat(...add, (...additions: List[]) => {
-                // Because list is passed by reference, we can simply return the first one.
-                return additions[0];
-            }).map((resultList: List) => {
-                backup.forEach(row => {
-                    const listRow = resultList[row.array].find(item => item.id === row.item.id);
-                    if (listRow !== undefined) {
-                        if (row.item.comments !== undefined) {
-                            listRow.comments = row.item.comments;
-                        }
-                        listRow.done = row.item.done;
-                        listRow.used = row.item.used || 0;
-                        if (row.array === 'recipes') {
-                            if (listRow.done > listRow.amount) {
-                                listRow.done = listRow.amount;
+            return Observable.combineLatest(...add, (...additions: List[]) => {
+                const res = additions[0];
+                // Delete the other lists right now to avoid memory explosion.
+                for (const index of additions) {
+                    delete additions[additions.indexOf(index)];
+                }
+                return res;
+            })
+                .map((resultList: List) => {
+                    backup.forEach(row => {
+                        const listRow = resultList[row.array].find(item => item.id === row.item.id);
+                        if (listRow !== undefined) {
+                            if (row.item.comments !== undefined) {
+                                listRow.comments = row.item.comments;
                             }
-                        } else {
-                            if (listRow.done > listRow.amount_needed) {
-                                listRow.done = listRow.amount_needed;
+                            listRow.done = row.item.done;
+                            listRow.used = row.item.used || 0;
+                            if (row.array === 'recipes') {
+                                if (listRow.done > listRow.amount) {
+                                    listRow.done = listRow.amount;
+                                }
+                            } else {
+                                if (listRow.done > listRow.amount_needed) {
+                                    listRow.done = listRow.amount_needed;
+                                }
                             }
                         }
-                    }
+                    });
+                    return resultList;
                 });
-                return resultList;
-            });
         });
     }
 }

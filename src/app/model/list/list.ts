@@ -79,11 +79,11 @@ export class List extends DataModel {
      * @param {(arg: ListRow) => void} method
      */
     public forEach(method: (arg: ListRow) => void): void {
-        (this.crystals || []).forEach(method);
-        (this.others || []).forEach(method);
-        (this.gathers || []).forEach(method);
-        (this.preCrafts || []).forEach(method);
-        (this.recipes || []).forEach(method);
+        this.crystals.forEach(method);
+        this.others.forEach(method);
+        this.gathers.forEach(method);
+        this.preCrafts.forEach(method);
+        this.recipes.forEach(method);
     }
 
     /**
@@ -222,9 +222,11 @@ export class List extends DataModel {
      */
     public isLarge(): boolean {
         let items = 0;
-        this.forEach(() => {
-            items++;
-        });
+        items += this.crystals.length;
+        items += this.gathers.length;
+        items += this.preCrafts.length;
+        items += this.recipes.length;
+        items += this.others.length;
         return items > 100;
     }
 
@@ -239,6 +241,9 @@ export class List extends DataModel {
     public getItemById(id: number, excludeRecipes: boolean = false): ListRow {
         for (const array of Object.keys(this).filter(key => excludeRecipes ? key !== 'recipes' : true)) {
             for (const row of this[array]) {
+                if (row === undefined) {
+                    continue;
+                }
                 if (row.id === id) {
                     return row;
                 }
@@ -335,9 +340,11 @@ export class List extends DataModel {
                 continue;
             }
             const requirementItem = this.getItemById(requirement.id, true);
-            // While each requirement has enough items remaining, you can craft the item.
-            // If only one misses, then this will turn false for the rest of the loop
-            canCraft = canCraft && (requirementItem.done - requirementItem.used) >= requirement.amount * item.amount_needed;
+            if (requirementItem !== undefined) {
+                // While each requirement has enough items remaining, you can craft the item.
+                // If only one misses, then this will turn false for the rest of the loop
+                canCraft = canCraft && (requirementItem.done - requirementItem.used) >= requirement.amount * item.amount_needed;
+            }
         }
         return canCraft;
     }

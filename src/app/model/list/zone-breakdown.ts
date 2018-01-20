@@ -9,7 +9,6 @@ export class ZoneBreakdown {
         rows.forEach(row => {
             if (row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
                 row.gatheredBy.nodes.forEach(node => {
-                    console.log(node.zoneid, row.id);
                     this.addToBreakdown(node.zoneid, row);
                 });
             } else if (row.drops !== undefined) {

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -13,8 +13,6 @@ import {ListManagerService} from '../../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
-import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
-import {I18nName} from '../../../model/list/i18n-name';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
@@ -87,7 +85,8 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
-                public settings: SettingsService, help: HelpService, private layoutService: LayoutService) {
+                public settings: SettingsService, help: HelpService, private layoutService: LayoutService,
+                private cd: ChangeDetectorRef) {
         super(dialog, help);
         this.initFilters();
     }
@@ -221,11 +220,13 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
+        this.cd.detach();
         this.list.switchMap(l => {
             return this.listManager.upgradeList(l)
                 .switchMap(list => this.listService.update(this.listUid, list))
         }).first().subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
+            this.cd.reattach();
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
         });
@@ -249,8 +250,9 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     }
 
     set(list: List): void {
+        this.cd.detach();
         this.listService.set(this.listUid, list).first().subscribe(() => {
-            // Ignored.
+            this.cd.reattach();
         });
     }
 
@@ -278,23 +280,30 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         list.setDone(data.row, data.amount, data.preCraft);
-        this.listService.update(list.$key, list).map(() => list)
-            .do(l => {
-                if (l.ephemeral && l.isComplete()) {
-                    this.listService.remove(list.$key).first().subscribe(() => {
-                        this.router.navigate(['recipes']);
-                    });
-                }
-            }).subscribe(() => {
-        });
+        // Wait just a bit for CD to make its changes before detaching it.
+        setTimeout(() => {
+            this.cd.detach();
+            this.listService.update(list.$key, list).map(() => list)
+                .do(l => {
+                    if (l.ephemeral && l.isComplete()) {
+                        this.listService.remove(list.$key).first().subscribe(() => {
+                            this.router.navigate(['recipes']);
+                        });
+                    }
+                }).subscribe(() => {
+                this.cd.reattach();
+            });
+        }, 10);
     }
 
     public forkList(list: List): void {
         const fork: List = list.clone();
+        this.cd.detach();
         // Update the forks count.
         this.listService.update(list.$key, list).first().subscribe();
         fork.authorId = this.user.uid;
         this.listService.add(fork).first().subscribe((id) => {
+            this.cd.reattach();
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
                 .subscribe(() => {

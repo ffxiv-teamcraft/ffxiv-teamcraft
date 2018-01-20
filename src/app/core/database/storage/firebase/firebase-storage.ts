@@ -40,14 +40,14 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
                 // Cache a clone of the data.
                 this.cache[data.$key] = JSON.parse(JSON.stringify(data));
             })
-            .publishReplay()
+            .debounceTime(50)
+            .publishReplay(1)
             .refCount();
     }
 
     update(uid: string, data: T): Observable<void> {
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {
-                this.firebase.list('logs').push('Empty uid');
                 throw new Error('Empty uid');
             }
             const before = this.cache[uid];
