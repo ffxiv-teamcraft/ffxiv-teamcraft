@@ -5,6 +5,8 @@ import {CraftedBy} from '../../model/list/crafted-by';
 
 export class LayoutRowFilter {
 
+    static NONE = new LayoutRowFilter(() => false, 'NONE');
+
     static IS_CRAFT = new LayoutRowFilter(row => row.craftedBy !== undefined, 'IS_CRAFT');
 
     static IS_GATHERING = new LayoutRowFilter(row => row.gatheredBy !== undefined, 'IS_GATHERING');
@@ -100,8 +102,6 @@ export class LayoutRowFilter {
         }, 'IS_GATHERED_BY_FSH'));
 
     static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING');
-
-    static NONE = new LayoutRowFilter(() => false, 'NONE');
 
     static get ALL(): LayoutRowFilter[] {
         return LayoutRowFilter.ALL_NAMES.map(key => LayoutRowFilter[key]);
