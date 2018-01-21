@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {I18nName} from '../../model/list/i18n-name';
 import {items} from './sources/items';
 import {places} from './sources/places';
@@ -7,6 +6,7 @@ import {mobs} from './sources/mobs';
 import {weathers} from './sources/weathers';
 import {npcs} from './sources/npcs';
 import {craftingActions} from './sources/crafting-actions';
+import {actions} from './sources/actions';
 
 @Injectable()
 export class LocalizedDataService {
@@ -39,12 +39,16 @@ export class LocalizedDataService {
     }
 
     public getCraftingActionByName(name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
-        return this.getRowByName(craftingActions, name, language);
+        const result = this.getRowByName(craftingActions, name, language) || this.getRowByName(actions, name, language);
+        if (result === undefined) {
+            throw new Error('Data row not found.');
+        }
+        return result;
     }
 
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
         if (array === undefined) {
-            throw new Error('Data row not found.');
+            return undefined;
         }
         return array[id];
     }
@@ -59,7 +63,7 @@ export class LocalizedDataService {
     private getRowByName(array: { [index: number]: I18nName }, name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
         const res = this.getIndexByName(array, name, language);
         if (res === -1) {
-            throw new Error('Data row not found.');
+            return undefined;
         }
         return array[res];
     }
