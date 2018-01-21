@@ -1,0 +1,22 @@
+<h2>{{'Macro' | translate}}</h2>
+
+<div class="input-container compact">
+    <mat-form-field>
+        <textarea matInput matTextareaAutosize matAutosizeMinRows="2"
+                  [(ngModel)]="macroToTranslate"
+                  placeholder="{{'Macro à traduire' | translate}}"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select [(value)]="macroLanguage" placeholder="{{'Langue de la macro' | translate}}">
+            <mat-option *ngFor="let language of languages" [value]="language.id">{{language.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-button (click)="translateMacro()">Translate !</button>
+
+    <mat-tab-group>
+        <mat-tab *ngFor="let language of languages" [label]="language.name">
+            {{language.id}}
+        </mat-tab>
+    </mat-tab-group>
+</div>
