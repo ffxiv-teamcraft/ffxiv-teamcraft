@@ -59,13 +59,7 @@ export class LocalizedDataService {
     private getRowByName(array: { [index: number]: I18nName }, name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
         const res = this.getIndexByName(array, name, language);
         if (res === -1) {
-            // I18n strings (comment used for search matching)
-            return {
-                'en': 'Loading',
-                'fr': 'Chargement en cours',
-                'ja': 'ロード中',
-                'de': 'Laden'
-            };
+            throw new Error('Data row not found.');
         }
         return array[res];
     }
