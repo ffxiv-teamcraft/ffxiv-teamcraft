@@ -11,7 +11,7 @@
             </button>
         </div>
         <div class="rows">
-            <div *ngFor="let row of rows; let i = index" [ngClass]="{'odd': i%2>0}"
+            <div *ngFor="let row of rows; let i = index"
                  class="mat-elevation-z10">
                 <app-list-layout-row [(row)]="rows[i]"
                                      (up)="updateIndex(i, -1)"
