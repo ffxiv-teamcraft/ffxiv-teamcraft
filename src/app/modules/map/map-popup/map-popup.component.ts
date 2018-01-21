@@ -17,7 +17,7 @@ export class MapPopupComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.mapData = this.mapService.getMapById(this.data.id);
+        this.mapData = this.mapService.getMapById(this.data.id).publishReplay(1).refCount();
     }
 
     getPosition(): Observable<{ x: number, y: number }> {
