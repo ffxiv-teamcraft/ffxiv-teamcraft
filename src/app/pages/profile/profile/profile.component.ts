@@ -1,16 +1,20 @@
-import {Component} from '@angular/core';
+import {Component, TemplateRef} from '@angular/core';
 import {UserService} from '../../../core/database/user.service';
 import {MatDialog} from '@angular/material';
 import {MasterbooksPopupComponent} from '../masterbooks-popup/masterbooks-popup.component';
 import {AppUser} from '../../../model/list/app-user';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {CharacterAddPopupComponent} from '../../../modules/common-components/character-add-popup/character-add-popup.component';
+import {PageComponent} from '../../../core/component/page-component';
+import {ComponentType} from '@angular/cdk/portal';
+import {HelpService} from '../../../core/component/help.service';
+import {ProfileHelpComponent} from '../profile-help/profile-help.component';
 
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent extends ComponentWithSubscriptions {
+export class ProfileComponent extends PageComponent {
 
     static craftingJobs = [
         {abbr: 'ALC', name: 'alchemist'},
@@ -30,8 +34,8 @@ export class ProfileComponent extends ComponentWithSubscriptions {
     public user: AppUser;
 
 
-    constructor(userService: UserService, private dialog: MatDialog) {
-        super();
+    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService) {
+        super(dialog, help);
         this.subscriptions.push(userService.getCharacter().subscribe(character => {
             this.character = character;
         }));
@@ -51,5 +55,13 @@ export class ProfileComponent extends ComponentWithSubscriptions {
 
     public openMasterbooksPopup(jobAbbr: string): void {
         this.dialog.open(MasterbooksPopupComponent, {data: {jobAbbr: jobAbbr, user: this.user}});
+    }
+
+    changeCharacter(): void {
+        this.dialog.open(CharacterAddPopupComponent);
+    }
+
+    getHelpDialog(): ComponentType<any> | TemplateRef<any> {
+        return ProfileHelpComponent;
     }
 }

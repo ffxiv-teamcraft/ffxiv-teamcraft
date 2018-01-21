@@ -3,6 +3,10 @@ import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
 import {Observable} from 'rxjs/Observable';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
+import {MatDialog} from '@angular/material';
+import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.component';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
 
 @Component({
     selector: 'app-alarms',
@@ -13,11 +17,13 @@ export class AlarmsComponent {
 
     time: Date = new Date();
 
-    constructor(public alarmService: AlarmService, public etime: EorzeanTimeService) {
+    private reloader: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
+    constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog) {
     }
 
     public getAlarms(): Observable<Alarm[]> {
-        return this.etime.getEorzeanTime()
+        return this.reloader.switchMap(() => this.etime.getEorzeanTime())
             .do(time => this.time = time)
             .map(time => {
                 const alarms: Alarm[] = [];
@@ -34,6 +40,34 @@ export class AlarmsComponent {
 
     deleteAlarm(alarm: Alarm): void {
         this.alarmService.unregister(alarm.itemId);
+    }
+
+    openOptionsPopup(): void {
+        this.dialog.open(TimerOptionsPopupComponent);
+    }
+
+    openAddAlarmPopup(): void {
+        this.dialog.open(AddAlarmPopupComponent).afterClosed()
+            .filter(result => result !== undefined)
+            .subscribe((node: any) => {
+                const alarms: Alarm[] = [];
+                if (node.time !== undefined) {
+                    node.time.forEach(spawn => {
+                        alarms.push({
+                            spawn: spawn,
+                            duration: node.uptime / 60,
+                            itemId: node.itemId,
+                            icon: node.icon,
+                            slot: node.slot,
+                            areaId: node.areaid,
+                            coords: node.coords,
+                            zoneId: node.zoneid
+                        });
+                    });
+                }
+                this.alarmService.registerAlarms(...alarms);
+                this.reloader.next(null);
+            });
     }
 
 }

@@ -8,6 +8,12 @@
         "Patreon_supporters": "Supporters Patreon",
         "Contributors": "Contributeurs"
     },
+    "GIVEWAY": {
+        "Title": "Concours 10 000 listes",
+        "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
+        "Access": "Accéder au concours"
+    },
+    "No_favorites": "Aucun favoris",
     "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
     "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
     "Tag_filter": "Tags",
@@ -18,8 +24,11 @@
         "Save": "Sauvegarder"
     },
     "ALARMS": {
-        "No_alarm": "Aucune alarme définie"
+        "No_alarm": "Aucune alarme définie",
+        "Add_alarm": "Ajouter une alarme"
     },
+    "Item_name": "Nom de l'objet",
+    "No_items_found": "Aucun objet trouvé",
     "Select_all":"Tout cocher",
     "Confirmation": "Confirmation",
     "Yes": "Oui",
@@ -80,6 +89,7 @@
     "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
     "Own_list_outdated_after_button": "",
     "Home": "Accueil",
+    "Import": "Importer",
     "Favorites": "Favoris",
     "Favorite": "Favoris",
     "filters/ilvl": "Niveau d'objet",
@@ -164,18 +174,20 @@
     "Benefits": "Bénéfice",
     "Minimal_craft_cost": "Coût minimal de fabrication",
     "Used_for": "Utilisé pour",
-    "xivdb_cart_import": "Import depuis xivdb shopping cart",
+    "xivdb_cart_import": "Import de la liste",
     "Or": "ou",
     "Make_donation": "Faire un don",
     "Data_from_gt": "Données fournies par garlandtools.org",
     "Hide_completed": "Masquer les éléments complétés",
     "Your_comment": "Votre commentaire",
     "Required_crafts_amount": "Nombre de crafts à faire",
+    "Missing_crafts_amount": "{{amount}} pour atteindre le total",
     "Requires": "Nécessite",
     "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
     "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
     "Tier_display_toggle": "Voir les étapes de craft",
     "Precraft_tier": "Étape",
+    "Regenerating_lists": "Régénération des listes en cours",
     "SETTINGS": {
         "title": "Options",
         "link_base": "Liens des objets",
@@ -184,14 +196,60 @@
     },
     "PROFILE": {
         "Masterbooks": "Livres",
-        "Patreon_supporter": "Supporter Patreon"
+        "Patreon_supporter": "Supporter Patreon",
+        "HELP": {
+            "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
+            "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
+            "Masterbooks": "Vous pouvez attribuer des livres de recette à votre compte pour activer des filtres spécifiques qui alertent en cas d'objet impossible à crafter pour vous à cause d'un livre manquant."
+        }
+    },
+    "LISTS": {
+        "Regenerate_all": "Régénérer toutes les listes",
+        "Merge_lists": "Fusionner des listes"
+    },
+    "LIST": {
+        "Copied_x_times": "Copiée {{count}} fois"
     },
     "LIST_DETAILS": {
         "No_book": "Livre manquant",
         "No_note": "Aucune note",
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
-        "Inventory_breakdown": "Inventaire"
+        "Inventory_breakdown": "Inventaire",
+        "LAYOUT_DIALOG": {
+            "Title": "Affichage",
+            "Add_panel": "Ajouter une catégorie",
+            "Import_layout": "Importer un affichage",
+            "Import_string": "Chaîne d'importation de l'affichage"
+        },
+        "LAYOUT": {
+            "Filter": "Filtre",
+            "Panel_name": "Nom de la catégorie",
+            "Order_by": "Trier par",
+            "Order": "Ordre"
+        },
+        "HELP": {
+            "Title" : "Détails d'une liste",
+            "List_category" : "Liste",
+            "Inventory" : "Vous pouvez paser en mode inventaire, où un inventaire est simulé pour permettre de suivre plus facilement ce que vous avez à disposition pour être sûr d'être raccord avec la liste.",
+            "Reset_progression" : "Le bouton rafraîchir permet de remettre à 0 toute la progression de la liste, à utiliser avec précaution.",
+            "Upgrade" : "Le bouton de mise à jour recréé la liste avec la dernière evrsion du site, ajoutant parfois des informations ou résolvant des soucis de listes cassées, le tout en préservant la progression. Il vous sera parfois demandé de mettre une liste à jour via ce bouton si celle-ci ne l'est pas.",
+            "Fork" : "Vous pouvez créer une copie de n'importe quelle liste sur votre compte via le bouton de copie.",
+            "Filters" : "Les objets d'une liste peuvent être filtrés pour l'affichage afin de ne montrer que les objets non complétés ou encore les objets que vous pouvez faire (en se basant sur les niveaux de vos crafteurs), voir le paneau \"Filtres\"",
+            "Area_breakdown" : "En utilisant le bouton de résumé par zone, les objets sont rangés par zone afin d'économiser les frais de téléport, vous pouvez ainsi compléter votre liste zone par zone.",
+            "Pricing_mode" : "Le mode profits vous permet de saisir le prix de chaque ingrédient et le prix de vente attendu afin de calculer les bénéfices d'une liste.",
+            "Item_category" : "Objets (lignes de liste)",
+            "Requirements" : "En cliquant sur l'icône de prérequis, une popup affiche les détails d'un objet, ce dont il a besoin et les recettes qui en ont besoin au sein de la liste.",
+            "Alarms" : "Si un objet est une récolte timée, alors un bouton apparaît afin de pouvoir créer une alarme sonore reliée à ce noeud de récolte. L'alarme retentira même si vous n'êtes pas sur la liste, du moment que vous êtes sur le site.",
+            "Comments" : "Vous pouvez ajouter des commentaires à chaque objet d'une liste, dans la limite de 10 commentaires de 140 caractères afin de préciser des éléments sur chaque objet, dire qui a contribué de combien, etc.",
+            "Colors":"Les noms d'objets ont différentes couleurs, <span class=\"craftable\">cette couleur pour les objets prêts à être craftés</span>, ce sont les objets pour lesquels vous avez tous les matériaux requis disponibles. <span class=\"strike\">Les objets de cette couleur</span> sont ceux que vous avez déjà obtenu/crafté, ils sont considérés comme complétés.",
+            "Misc_category" : "Autre",
+            "Map_markers" : "Dès que vous voyez cette icône à coté de coordonnées, vous pouvez cliquer dessus afin d'ouvrir une mini map qui affiche un marqueur en jeu, bien plus lisible que les coordonées.",
+            "Public_list" : "Vous pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
+            "Obtention_details" : "Chaque objet a des détails sur son obtention dans la partie droite de sa ligne, penseez à cliquer sur les icônes afin de voir plus de détails sur l'objet en question.",
+            "Labels" : "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels.",
+            "Custom_layout": "Vous pouvez pleinement personnaliser votre affichage, l'exporter et importer celui d'un ami. Cet affichage ne concerne que vous et est sauvegardé dans votre navigateur internet, il sera ainsi appliqué à toutes les listes que vous ouvrirez en l'utilisant."
+        }
     },
     "adapt_to_character": "Adapter au personnage",
     "reset_filters": "Remettre les filtres à zero",
@@ -203,6 +261,7 @@
         "GLAMOUR": "Mirage",
         "HOUSING": "Logement",
         "MISC": "Autre",
+        "QUEST": "Quête",
 
         "TANK": "Tank",
         "HEALER": "Soigneur",
@@ -247,11 +306,11 @@
     },
     "RECIPES": {
         "HELP":{
-            "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
-            "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
-            "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
-            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
-            "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
+            "Welcome": "Bienvenue dans la page de recherche des recettes",
+            "Filter": "Lorsque vous ouvrez le paneau des filtres, beaucoup de filtres deviennent disponibles, vous pouvez les cocher et en changer la valeur poure trouver ce que vous cherchez.",
+            "Add_to_list": "Une fois que vous avez trouvé la recette que vous cherchez, vous pouvez simplement l'ajouter sur une liste en cliquant sur l'icône associée, un choix de liste s'affichera, ajoutant l'objet à la liste sélectionnée à la quaitité spécifiée.",
+            "Quick_list":"Vous pouvez créer une liste rapide en cliquant sur le bouton associé, ceci crééra une liste portant le nom de l'objet qui sera supprimée lorsque celle-ci sera complétée.",
+            "Add_results": "Le bouton 'Ajouter les résultats à une liste' ajoute tous les objets trouvés à une liste donnée cependant, attention, TOUTES LES QUANTITÉS SONT IGNORÉES."
         }
     }
 }

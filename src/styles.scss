@@ -31,6 +31,14 @@ body {
     }
 }
 
+.strike {
+    color: #00E676;
+}
+
+.craftable {
+    color: #13a8ff;
+}
+
 // This has to be done here, because of an override error in component's style
 .mat-mini-fab.compact {
     .mat-button-wrapper {
@@ -50,6 +58,16 @@ body {
     .mat-icon {
         font-size: 20px;
     }
+    span.mat-button-wrapper{
+        padding: 0 !important;
+        line-height: 29px;
+        span {
+            padding: 1px 1px !important;
+            mat-icon {
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 // We set the max height for menus at 300 px for better UX.
@@ -68,9 +86,6 @@ body {
 }
 
 .mat-expansion-panel-content {
-    &.mat-expanded {
-        overflow: visible !important;
-    }
     .mat-expansion-panel-body {
         padding: 0 24px 16px;
         margin: 0;

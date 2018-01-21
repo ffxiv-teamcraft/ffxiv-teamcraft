@@ -8,6 +8,12 @@
         "Patreon_supporters": "Patreon-Unterstützer",
         "Contributors": "Mitwirkende"
     },
+    "GIVEWAY": {
+        "Title": "10k Listen Giveaway!",
+        "Body": "Um die Erstellung von 10000 Listen zu feiern, wird eine Spielzeitkarte über 60 Tage verlost! Die Verlosung läuft bis zum 09.Februar . \n Ein großes dankeschön dass ihr die App benutzt. Ohne euch wäre Sie nicht das gleiche und ich hoffe dass sie euch sehr hilft.",
+        "Access": "Für das Giveaway anmelden"
+    },
+    "No_favorites": "No Favorite",
     "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
     "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
     "Tag_filter": "Tags",
@@ -18,8 +24,11 @@
         "Save": "Speichern"
     },
     "ALARMS": {
-        "No_alarm": "Kein Alarm gesetzt"
+        "No_alarm": "Kein Alarm gesetzt",
+        "Add_alarm": "Alarm hinzufügen"
     },
+    "Item_name": "Gegenstandsname",
+    "No_items_found": "Kein Gegenstand gefunden",
     "Select_all": "Alle auswählen",
     "Confirmation": "Bestätigung",
     "Yes": "Ja",
@@ -80,6 +89,7 @@
     "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
     "Own_list_outdated_after_button": "Schaltfläche",
     "Home": "Startseite",
+    "Import": "Import",
     "Favorites": "Favoriten",
     "Favorite": "Favorit",
     "filters/ilvl": "Gegenstandsstufe",
@@ -164,18 +174,20 @@
     "Benefits": "Gewinn",
     "Minimal_craft_cost": "Minimum Herstellungskosten",
     "Used_for": "Benutzt für",
-    "xivdb_cart_import": "Importiere aus dem XIVDB-Einkaufswagen",
+    "xivdb_cart_import": "Importiere Liste",
     "Or": "oder",
     "Make_donation": "Spende",
     "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
     "Hide_completed": "Verstecke komplettierte Reihen",
     "Your_comment": "Dein Kommentar",
     "Required_crafts_amount": "Menge an Herstellungen",
+    "Missing_crafts_amount": "{{amount}} um Ziel-Menge zu erreichen",
     "Requires": "Erfordert",
     "Copy_item_name_to_clipboard": "Kopiere den Gegenstandsnamen zur Zwischenablage",
     "Item_name_copied": "{{itemname}} zur Zwischenablage hinzugefügt",
     "Tier_display_toggle": "Zeige Herstellungs-Meilensteine",
     "Precraft_tier": "Meilenstein",
+    "Regenerating_lists": "Neugenerierende Liste",
     "SETTINGS": {
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
@@ -184,17 +196,63 @@
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
-        "Patreon_supporter": "Patreon-Unterstützer"
+        "Patreon_supporter": "Patreon-Unterstützer",
+        "HELP": {
+            "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",
+            "Edit": "Wenn du auf den Bearbeiten-Knopf drückst, kannst du den Character, der mit deinem Teamcraft-Account verknüpft ist, bearbeiten",
+            "Masterbooks": "Du kannst deine freigeschalteten Meisterbücher hier hinterlegen, damit du eine Warnung erhältst wenn dir für eine Herstellung ein Meisterbuch fehlt."
+        }
+    },
+    "LISTS": {
+        "Regenerate_all": "Alle Listen neugenerieren",
+        "Merge_lists": "Listen zusammenfassen"
+    },
+    "LIST": {
+        "Copied_x_times": "{{count}} mal kopiert"
     },
     "LIST_DETAILS": {
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
-        "Inventory_breakdown": "Inventar"
+        "Inventory_breakdown": "Inventar",
+        "LAYOUT_DIALOG": {
+            "Title": "Layout",
+            "Add_panel": "Add Panel",
+            "Import_layout": "Import a layout",
+            "Import_string": "Import string"
+        },
+        "LAYOUT": {
+            "Filter": "Filter",
+            "Panel_name": "Panel name",
+            "Order_by": "Order by",
+            "Order": "Order"
+        },
+        "HELP": {
+            "Title" : "Listendetails",
+            "List_category" : "Liste",
+            "Inventory" : "Du kannst zur Inventaransicht wechseln, wo du siehst was du zu jeder Zeit im Inventar haben solltest. Die App berechnet automatisch welche Gegenstände du schon für Herstellungen benutzt hast und zeigt die dementsprechend an.",
+            "Reset_progression" : "Du kannst den ganzen Fortschritt einer Liste zurücksetzen. Nach einem Bestätigungsdialog werden alle Gegenstände wieder auf 0 gesetzt.",
+            "Upgrade" : "Du kannst deine Liste mit diesem Knopf auf die aktuellste Version der App aktualisieren, ohne deinen Fortschritt zu verlieren. Du wirst gefragt ob du aktualisieren möchtest, wenn deine Liste nicht mehr aktuell ist.",
+            "Fork" : "Du kannst eine Liste kopieren, womit du eine exakte Kopie einer Liste inklusive Fortschritt in deinem Account hast.",
+            "Filters" : "Du kannst Filter benutzen um beispielsweise nur Dinge anzeigen zu lassen die du selber herstellen kannst oder um Dinge auszublenden die bereits fertig sind.",
+            "Area_breakdown" : "Wenn du die Gebietsübersicht nutzt kannst du dir die Gebiete anzeigen lassen wo du Dinge bekommen kannst, sortiert nach der Höhe der Teleportkosten.",
+            "Pricing_mode" : "Mit Hilfe der Kostenübersicht kannst du für alle Gegenstände die Preise angeben und dir ausrechnen lassen wie viel Gewinn oder Verlust du machst.",
+            "Item_category" : "Gegenstände (Reihen)",
+            "Requirements" : "Wenn du auf den Bedingungen-Knopf drückst, kannst du dir anzeigen lassen wofür ein Gegenstand benötigt wird oder was dieser Gegenstand benötigt.",
+            "Alarms" : "Für eine zeitabhängige Abbaustelle kannst du auf den Alarm-Knopf drücken, um dir automatisch ein Geräusch abspielen zu lassen wenn die Stelle erscheint. Du musst dafür nicht auf der Liste sein, nur auf der Website.",
+            "Comments" : "Du kannst Kommentare zu einzelnen Reihen hinzufügen um mehr Informationen zu hinterlegen oder eine Diskussion zu starten. Kommentare sind auf 140 Zeichen und 10 Kommentar pro Reihe begrenzt.",
+            "Colors":"Gegenstandsfarben haben alle eine Bedeutung , <span class=\"craftable\">so sehen Gegenstände aus die hergestellt werden können</span>, was bedeutet das du alle Gegenstände besitzt die zur Herstellung nötig sind. <span class=\"strike\">So sehen bereits hergestellte Gegenstände aus</span>, was bedeutet das dieser Gegenstand bereits erledigt ist.",
+            "Misc_category" : "Anderes",
+            "Map_markers" : "Immer wenn du dieses Symbol siehst, kannst du es benutzen um dir auf der KArte eine Markierung anzeigen zu lassen, was einfacher ist als X/Y-Koordinaten zu lesen.",
+            "Public_list" : "Wenn du eine Liste auf öffentlich setzt, wird es zum Öffentliche Listen-Bereich hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN.",
+            "Obtention_details" : "Jeder Gegenstand hat oben-rechts in der Ecke Symbole die dir verraten wie du sie erlangen kannst",
+            "Labels" : "Wenn du eine Liste zu den öffentlichen Listen hinzufügst vergiss nicht aussagekräftige Schlagwörter zu setzen",
+            "Custom_layout": "You can fully customize your layout, export it and import the layout of a friend. This layout is only for you and stored in your browser, it will be applied to every list you see using this browser"
+        }
     },
-    "adapt_to_character": "Adapt to Character",
-    "reset_filters": "Reset Filters",
+    "adapt_to_character": "An Character anpassen",
+    "reset_filters": "Filter zurücksetzen",
     "LIST_TAGS": {
         "GEAR": "Ausrüstung",
         "CONSUMABLE": "Benutzbares",
@@ -211,6 +269,7 @@
         "CASTER": "Zauberer",
         "CRAFTER": "Handwerker",
         "GATHERER": "Sammler",
+        "QUEST": "Quest",
 
         "PLD": "PLD",
         "WAR": "KRG",
@@ -247,11 +306,11 @@
     },
     "RECIPES": {
         "HELP":{
-            "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
-            "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
-            "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
-            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
-            "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
+            "Welcome": "Willkommen auf der Rezepte-Seite, wo du Rezepte suchen und zu Listen hinzufügen kannst oder von Ihnen löschen kannst",
+            "Filter": "Wenn du den Filter-Bereich öffnest, kannst du Filter anwenden und konfigurieren um nur das zu sehen, was du möchtest.",
+            "Add_to_list": "Sowie du den Gegenstand gefunden hast den du suchst, kannst du die Menge eingeben und auf den Knopf drücken, wo du dann gefragt wirst zu welcher Liste du den Gegenstand in der gewünschten Menge hinzufügen möchtest.",
+            "Quick_list":"Du kannst Sofort-Listen erstellen, was automatisch eine Liste mit dem Namen des Gegenstands erstellt und die gelöscht wird sowie sie abgearbeitet ist,",
+            "Add_results": "Der Alle Ergebnisse zur Liste hinzufügen-Knopf fügt alle Ergebnisse der aktuellen Suche zu einer Liste hinzu. VORSICHT: Die Menge beträgt immer 1 auf diesem Weg."
         }
     }
 }

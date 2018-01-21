@@ -7,6 +7,7 @@ import {weathers} from './sources/weathers';
 import {npcs} from './sources/npcs';
 import {craftingActions} from './sources/crafting-actions';
 import {actions} from './sources/actions';
+import {Language} from './language';
 
 @Injectable()
 export class LocalizedDataService {
@@ -16,6 +17,19 @@ export class LocalizedDataService {
 
     public getItem(id: number): I18nName {
         return this.getRow(items, id);
+    }
+
+    public getItemIdsByName(name: string, language: Language): number[] {
+        const regex = new RegExp(`${name}`, 'gi');
+        const res = [];
+        const keys = Object.keys(items);
+        for (const key of keys) {
+            if (regex.test(items[key][language])) {
+                res.push(key);
+            }
+        }
+        // Return a number array with the keys as values, so we have to convert them to numbers.
+        return res.map(id => +id);
     }
 
     public getPlace(id: number): I18nName {
@@ -60,7 +74,7 @@ export class LocalizedDataService {
      * @param language
      * @returns {I18nName}
      */
-    private getRowByName(array: { [index: number]: I18nName }, name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
+    private getRowByName(array: { [index: number]: I18nName }, name: string, language: Language): I18nName {
         const res = this.getIndexByName(array, name, language);
         if (res === -1) {
             return undefined;
@@ -68,6 +82,13 @@ export class LocalizedDataService {
         return array[res];
     }
 
+    /**
+     * Gets the id of a row by english name.
+     * @param  array
+     * @param {string} name
+     * @param language
+     * @returns {number}
+     */
     private getIndexByName(array: { [index: number]: I18nName }, name: string, language: string): number {
         if (array === undefined) {
             return -1;

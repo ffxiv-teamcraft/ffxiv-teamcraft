@@ -17,6 +17,7 @@ import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
 import {SettingsService} from './pages/settings/settings.service';
 import {HelpService} from './core/component/help.service';
+import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 
 declare const ga: Function;
 
@@ -47,6 +48,8 @@ export class AppComponent implements OnInit {
 
     mobile = true;
 
+    givewayRunning = false;
+
     watcher: Subscription;
     activeMediaQuery = '';
 
@@ -60,7 +63,7 @@ export class AppComponent implements OnInit {
                 private snack: MatSnackBar,
                 media: ObservableMedia,
                 public settings: SettingsService,
-                private helpService: HelpService) {
+                public helpService: HelpService) {
 
 
         this.watcher = media.subscribe((change: MediaChange) => {
@@ -131,6 +134,13 @@ export class AppComponent implements OnInit {
             });
         }
 
+        this.firebase.object('/giveway').valueChanges().subscribe((givewayActivated: boolean) => {
+            if (localStorage.getItem('giveway') === null && givewayActivated) {
+                this.showGiveway();
+            }
+            this.givewayRunning = givewayActivated;
+        });
+
         // Patreon popup.
         if (this.router.url.indexOf('home') === -1) {
             this.firebase
@@ -174,7 +184,7 @@ export class AppComponent implements OnInit {
             .getUserData()
             .subscribe(u => {
                 if (u.lodestoneId === undefined && !u.anonymous) {
-                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true});
+                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
                 }
             });
 
@@ -185,6 +195,13 @@ export class AppComponent implements OnInit {
                 this.username = character.name;
                 this.userIcon = character.avatar;
             });
+    }
+
+    showGiveway(): void {
+        this.dialog.open(GivewayPopupComponent).afterClosed().subscribe(() => {
+            // Once it's closed, set the storage value to say it has been displayed.
+            localStorage.setItem('giveway', 'true');
+        });
     }
 
     /**
@@ -213,8 +230,7 @@ export class AppComponent implements OnInit {
 
     disconnect(): void {
         this.router.navigate(['recipes']);
-        this.auth.auth.signOut();
-        this.auth.auth.signInAnonymously();
+        this.userService.signOut();
     }
 
     use(lang: string): void {

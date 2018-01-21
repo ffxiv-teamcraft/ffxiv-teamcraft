@@ -18,6 +18,7 @@ import {MasterbooksPopupComponent} from './masterbooks-popup/masterbooks-popup.c
 import {PipesModule} from '../../pipes/pipes.module';
 import {CoreModule} from '../../core/core.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import { ProfileHelpComponent } from './profile-help/profile-help.component';
 
 const routes: Routes = [{
     path: 'profile',
@@ -47,14 +48,16 @@ const routes: Routes = [{
     ],
     declarations: [
         ProfileComponent,
-        MasterbooksPopupComponent
+        MasterbooksPopupComponent,
+        ProfileHelpComponent,
     ],
     providers: [
         ProfileGuard,
         MasterbookService,
     ],
     entryComponents: [
-        MasterbooksPopupComponent
+        MasterbooksPopupComponent,
+        ProfileHelpComponent,
     ]
 })
 export class ProfileModule {

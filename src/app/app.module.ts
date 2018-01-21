@@ -49,6 +49,7 @@ import {PublicListsModule} from './pages/public-lists/public-lists.module';
 import {AddItemModule} from './pages/add-item/add-item.module';
 import {AboutModule} from './pages/about/about.module';
 import {MaintenanceModule} from './pages/maintenance/maintenance.module';
+import {GivewayPopupModule} from './modules/giveway-popup/giveway-popup.module';
 import {MacroTranslationModule} from './pages/macro-translation/macro-translation.module';
 
 
@@ -110,6 +111,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CommonComponentsModule,
         ItemModule,
         BetaDisclaimerModule,
+        GivewayPopupModule,
 
         // Pages
         HomeModule,

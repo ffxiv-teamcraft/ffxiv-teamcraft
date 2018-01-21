@@ -223,6 +223,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
 
     timerColor = '';
 
+    isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -418,7 +420,4 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         });
     }
 
-    public get isMobile(): boolean {
-        return this.media.isActive('xs') || this.media.isActive('sm');
-    }
 }

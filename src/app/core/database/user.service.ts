@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {AppUser} from '../../model/list/app-user';
@@ -22,8 +22,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                 private dataService: DataService,
                 private listService: ListService,
                 protected serializer: NgSerializerService,
-                protected diffService: DiffService) {
-        super(database, serializer, diffService);
+                protected diffService: DiffService,
+                protected zone: NgZone) {
+        super(database, serializer, diffService, zone);
     }
 
     /**
@@ -94,6 +95,17 @@ export class UserService extends FirebaseStorage<AppUser> {
                 }
             });
         });
+    }
+
+    /**
+     * Signs out the current user.
+     * @returns {Observable<void>}
+     */
+    public signOut(): Observable<void> {
+        return Observable.concat(
+            Observable.fromPromise(this.af.auth.signOut()),
+            Observable.fromPromise(this.af.auth.signInAnonymously()))
+            .do(() => this.reload());
     }
 
     protected getBaseUri(params?: any): string {

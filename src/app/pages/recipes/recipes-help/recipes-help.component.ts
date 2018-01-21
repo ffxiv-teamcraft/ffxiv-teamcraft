@@ -8,11 +8,7 @@ import {MatDialogRef} from '@angular/material';
 })
 export class RecipesHelpComponent {
 
-    constructor(private dialogRef: MatDialogRef<RecipesHelpComponent>) {
-    }
-
-    close() {
-        this.dialogRef.close();
+    constructor() {
     }
 
 }

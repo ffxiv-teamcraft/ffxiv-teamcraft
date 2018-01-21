@@ -6,9 +6,14 @@
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
 
+        <div class="left-fabs">
+            <button mat-mini-fab (click)="openLayoutOptions()">
+                <mat-icon>dashboard</mat-icon>
+            </button>
+        </div>
         <div class="right-fabs">
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
-                    (click)="openTagsPopup()">
+                    (click)="openTagsPopup()" *ngIf="isOwnList()">
                 <mat-icon>label_outline</mat-icon>
             </button>
 
@@ -65,9 +70,6 @@
         </div>
         <mat-divider class="top-divider"></mat-divider>
         <div class="options">
-            <mat-button-toggle [checked]="zoneBreakdownToggle" (change)="toggleZoneBreakdown()">
-                {{"Zone_breakdown" | translate}}
-            </mat-button-toggle>
             <button mat-icon-button color="accent" (click)="pricingMode = true" *ngIf="isOwnList()"
                     matTooltip="{{'Pricing_mode' | translate}}" matTooltipPosition="above">
                 <mat-icon>attach_money</mat-icon>
@@ -167,80 +169,17 @@
             </div>
         </mat-expansion-panel>
 
-        <!--If we don't want to see the zone-breakdown for gathering and others-->
-        <section *ngIf="!zoneBreakdownToggle">
-
-            <!--We need a specific one for gatherings because it will have some specific features-->
-            <mat-expansion-panel [expanded]="listData?.isLarge()?accordionState['Gathering']:true"
-                                 (opened)="accordionState['Gathering'] = true"
-                                 (closed)="accordionState['Gathering'] = false">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>{{'Gathering'| translate}}</mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-list dense>
-                    <div *ngFor="let gather of listData?.gathers; let i = index">
-                        <app-item
-                            (update)="update()"
-                            (done)="setDone(listData, $event)"
-                            *ngIf="!gather.hidden"
-                            [item]="gather"
-                            [showTimer]="true"
-                            [list]="listData"
-                            [even]="i%2!=0"></app-item>
-                    </div>
-                </mat-list>
-            </mat-expansion-panel>
-
-            <app-list-details-panel
-                [expanded]="listData?.isLarge()?accordionState['Other']:true"
-                [list]="listData"
-                (update)="update()"
-                (done)="setDone(listData, $event)"
-                [data]="listData?.others"
-                [title]="'Other'| translate"
-                (opened)="accordionState['Other'] = true"
-                (closed)="accordionState['Other'] = false"></app-list-details-panel>
-        </section>
-
-        <section *ngIf="zoneBreakdownToggle">
-            <mat-expansion-panel [expanded]="listData?.isLarge()?accordionState['Other']:true"
-                                 (opened)="accordionState['Other'] = true"
-                                 (closed)="accordionState['Other'] = false">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>{{'Gathering'| translate}} & {{'Other'| translate}}</mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-list dense>
-                    <div *ngFor="let row of zoneBreakdown?.rows; let i = index">
-                        <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
-                        <div *ngFor="let item of row.items">
-                            <app-item
+        <app-list-details-panel *ngFor="let displayRow of listDisplay | async"
+                                [expanded]="listData?.isLarge()?accordionState[displayRow.title]:true"
                                 [list]="listData"
                                 (update)="update()"
                                 (done)="setDone(listData, $event)"
-                                *ngIf="!item.hidden"
-                                [item]="item"
-                                [showTimer]="true"
-                                [even]="i%2!=0"></app-item>
-                        </div>
-                        <mat-divider class="zone-divider"></mat-divider>
-                    </div>
-                </mat-list>
-            </mat-expansion-panel>
-        </section>
-
-        <app-list-details-panel
-            [expanded]="listData?.isLarge()?accordionState['Pre_crafts']:true"
-            *ngIf="listData?.preCrafts.length > 0"
-            [list]="listData"
-            [showTier]="true"
-            (update)="update()"
-            [preCraft]="true"
-            (done)="setDone(listData, $event)"
-            [data]="listData?.preCrafts"
-            [title]="'Pre_crafts'| translate"
-            [recipe]="true"
-            (opened)="accordionState['Pre_crafts'] = true"
-            (closed)="accordionState['Pre_crafts'] = false"></app-list-details-panel>
+                                [data]="displayRow.rows"
+                                [title]="displayRow.title | translate"
+                                (opened)="accordionState[displayRow.title] = true"
+                                (closed)="accordionState[displayRow.title] = false"
+                                [zoneBreakdown]="displayRow.zoneBreakdown"
+                                [showTier]="displayRow.tiers"></app-list-details-panel>
 
         <app-list-details-panel
             [expanded]="listData?.isLarge()?accordionState['Items']:true"
@@ -255,7 +194,8 @@
 
         <mat-divider></mat-divider>
 
-        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData.ephemeral" (change)="togglePublic()" class="public-list-toggle">
+        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData.ephemeral" (change)="togglePublic()"
+                      class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>
     </div>

@@ -1,6 +1,14 @@
 <div class="etime-container">
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
+<div class="buttons">
+    <button mat-mini-fab (click)="openAddAlarmPopup()">
+        <mat-icon>add_alert</mat-icon>
+    </button>
+    <button mat-mini-fab (click)="openOptionsPopup()">
+        <mat-icon>settings</mat-icon>
+    </button>
+</div>
 <div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
 <mat-grid-list cols="3" rowHeight="600px">
     <mat-grid-tile *ngFor="let alarm of getAlarms() | async">

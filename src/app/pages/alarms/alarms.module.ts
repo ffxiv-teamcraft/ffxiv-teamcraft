@@ -4,11 +4,18 @@ import {AlarmsComponent} from './alarms/alarms.component';
 import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {AlarmCardComponent} from './alarm-card/alarm-card.component';
-import {MatButtonModule, MatCardModule, MatGridListModule, MatIconModule} from '@angular/material';
+import {
+    MatButtonModule, MatCardModule, MatDialogModule, MatGridListModule, MatIconModule, MatInputModule,
+    MatListModule
+} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {PipesModule} from '../../pipes/pipes.module';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import {AddAlarmPopupComponent} from './add-alarm-popup/add-alarm-popup.component';
+import {FormsModule} from '@angular/forms';
+import {TooltipModule} from '../../modules/tooltip/tooltip.module';
+import {ListModule} from '../list/list.module';
 
 const routes: Routes = [{
     path: 'alarms',
@@ -19,6 +26,7 @@ const routes: Routes = [{
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
 
         RouterModule.forChild(routes),
         TranslateModule,
@@ -28,13 +36,22 @@ const routes: Routes = [{
         MatGridListModule,
         MatIconModule,
         MatButtonModule,
+        MatDialogModule,
+        MatInputModule,
+        MatListModule,
 
         CoreModule,
         CommonComponentsModule,
+        TooltipModule,
+        ListModule
     ],
     declarations: [
         AlarmsComponent,
-        AlarmCardComponent
+        AlarmCardComponent,
+        AddAlarmPopupComponent
+    ],
+    entryComponents: [
+        AddAlarmPopupComponent
     ]
 })
 export class AlarmsModule {

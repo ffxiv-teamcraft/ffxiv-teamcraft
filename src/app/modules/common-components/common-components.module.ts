@@ -9,7 +9,7 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatProgressSpinnerModule,
     MatTooltipModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -31,6 +31,7 @@ import {NameEditPopupComponent} from './name-edit-popup/name-edit-popup.componen
 import {ListNamePopupComponent} from './list-name-popup/list-name-popup.component';
 import {RegisterPopupComponent} from './register-popup/register-popup.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {CommentsModule} from '../comments/comments.module';
 
 @NgModule({
     imports: [
@@ -49,6 +50,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         MatButtonModule,
         MatListModule,
         MatDialogModule,
+        MatProgressSpinnerModule,
 
         ClipboardModule,
 
@@ -56,6 +58,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         PipesModule,
         SettingsModule,
         TooltipModule,
+        CommentsModule,
     ],
     declarations: [
         AmountInputComponent,

@@ -11,4 +11,12 @@ export class GatheredByPopupComponent {
 
     constructor(@Inject(MAT_DIALOG_DATA) public data: ListRow) {
     }
+
+    getDespawnTime(time: number, uptime: number): string {
+        const res = time + (uptime / 60);
+        if (res === 24) {
+            return '00';
+        }
+        return res.toString();
+    }
 }
