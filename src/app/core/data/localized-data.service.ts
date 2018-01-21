@@ -44,13 +44,7 @@ export class LocalizedDataService {
 
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
         if (array === undefined) {
-            // I18n strings (comment used for search matching)
-            return {
-                'en': 'Loading',
-                'fr': 'Chargement en cours',
-                'ja': 'ロード中',
-                'de': 'Laden'
-            };
+            throw new Error('Data row not found.');
         }
         return array[id];
     }
