@@ -312,5 +312,12 @@
             "Quick_list":"Du kannst Sofort-Listen erstellen, was automatisch eine Liste mit dem Namen des Gegenstands erstellt und die gelöscht wird sowie sie abgearbeitet ist,",
             "Add_results": "Der Alle Ergebnisse zur Liste hinzufügen-Knopf fügt alle Ergebnisse der aktuellen Suche zu einer Liste hinzu. VORSICHT: Die Menge beträgt immer 1 auf diesem Weg."
         }
+    },
+    "MACRO_TRANSLATION": {
+        "Title": "Macro translation",
+        "Macro_language": "Macro language",
+        "Macro_to_translate": "Macro to translate",
+        "Do_translate": "Translate !",
+        "Invalid_macro_or_language": "Invalid macro or language"
     }
 }

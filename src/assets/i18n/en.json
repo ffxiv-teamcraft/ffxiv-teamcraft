@@ -304,5 +304,12 @@
             "Quick_list": "You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
             "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
         }
+    },
+    "MACRO_TRANSLATION": {
+        "Title": "Macro translation",
+        "Macro_language": "Macro language",
+        "Macro_to_translate": "Macro to translate",
+        "Do_translate": "Translate !",
+        "Invalid_macro_or_language": "Invalid macro or language"
     }
 }

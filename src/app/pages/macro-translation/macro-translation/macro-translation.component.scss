@@ -1,7 +1,17 @@
 mat-form-field {
-  width: 60%;
+    width: 60%;
 }
 
 mat-tab-group {
-  display: inline-block;
+    display: inline-block;
+}
+
+.macro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button {
+        margin: 10px 0;
+        width: 300px;
+    }
 }
