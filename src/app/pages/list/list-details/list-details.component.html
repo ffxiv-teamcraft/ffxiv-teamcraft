@@ -54,17 +54,17 @@
             </button>
         </div>
 
-        <mat-error *ngIf="listData?.isOutDated() && !isOwnList()" class="listError">{{"Not_own_list_outdated"|
+        <mat-error *ngIf="outdated && !isOwnList()" class="listError">{{"Not_own_list_outdated"|
             translate}}
         </mat-error>
-        <mat-error *ngIf="listData?.isOutDated() && isOwnList()" class="listError">
+        <mat-error *ngIf="outdated && isOwnList()" class="listError">
             {{"Own_list_outdated_before_button"|
             translate}}
             <mat-icon>update</mat-icon>
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
 
-        <div *ngIf="listData.note !== undefined && listData.node !== '' || isOwnList()">
+        <div *ngIf="listData.note !== undefined && listData.note !== '' || isOwnList()">
             <mat-divider class="top-divider"></mat-divider>
             <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData.ephemeral"></app-list-note>
         </div>

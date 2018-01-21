@@ -1,12 +1,5 @@
 import {
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    ElementRef,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
+    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges,
     ViewChild
 } from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
@@ -42,7 +35,7 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
     styleUrls: ['./item.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemComponent extends ComponentWithSubscriptions implements OnInit {
+export class ItemComponent extends ComponentWithSubscriptions implements OnInit, OnChanges {
 
     private static TRADE_SOURCES_PRIORITIES = {
         // Just in case
@@ -223,6 +216,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
 
     timerColor = '';
 
+    canBeCrafted = false;
+
+    hasTimers = false;
+
+    masterBooks: CompactMasterbook[] = [];
+
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
 
     constructor(private i18n: I18nToolsService,
@@ -254,7 +253,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
     }
 
     ngOnInit(): void {
-        if (this.hasTimers()) {
+        this.updateCanBeCrafted();
+        this.updateHasTimers();
+        this.updateMasterBooks();
+        if (this.hasTimers) {
             this.subscriptions.push(Observable.combineLatest(this.alarmService.isSpawned(this.item),
                 this.alarmService.isAlerted(this.item.id))
                 .subscribe((result) => {
@@ -272,9 +274,15 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         }
     }
 
-    canBeCrafted(): boolean {
+    ngOnChanges(changes: SimpleChanges): void {
+        this.updateCanBeCrafted();
+        this.updateHasTimers();
+        this.updateMasterBooks();
+    }
+
+    updateCanBeCrafted(): void {
         // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
-        return this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
+        this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
     }
 
     toggleAlarm(): void {
@@ -289,8 +297,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         return this.alarmService.hasAlarm(this.item);
     }
 
-    hasTimers(): boolean {
-        return this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
+    updateHasTimers(): void {
+        this.hasTimers = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
     }
 
@@ -302,16 +310,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         return this.recipe ? this.item.amount : this.item.amount_needed;
     }
 
-    public getMasterBooks(item: ListRow): CompactMasterbook[] {
+    public updateMasterBooks(): void {
         const res: CompactMasterbook[] = [];
-        for (const craft of item.craftedBy) {
-            if (craft.masterbook !== undefined) {
-                if (res.find(m => m.id === craft.masterbook.id) === undefined) {
-                    res.push(craft.masterbook);
+        if (this.item.craftedBy !== undefined) {
+            for (const craft of this.item.craftedBy) {
+                if (craft.masterbook !== undefined) {
+                    if (res.find(m => m.id === craft.masterbook.id) === undefined) {
+                        res.push(craft.masterbook);
+                    }
                 }
             }
         }
-        return res;
+        this.masterBooks = res;
     }
 
     public hasBook(): boolean {
@@ -321,7 +331,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit 
         }
         // If this is a craft
         if (this.item.craftedBy !== undefined) {
-            const books = this.getMasterBooks(this.item);
+            const books = this.masterBooks;
             // If there's no book for this item, it means that the user can craft it for sure.
             if (books.length === 0) {
                 return true;

@@ -71,6 +71,8 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     notFound = false;
 
+    outdated = false;
+
     accordionState: { [index: string]: boolean } = {
         'Crystals': false,
         'Gathering': false,
@@ -188,12 +190,13 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                         })
                         .distinctUntilChanged()
                         .filter(list => list !== null)
-                        .do(l => {
+                        .do((l: List) => {
                             if (l.name !== undefined) {
                                 this.title.setTitle(`${l.name}`);
                             } else {
                                 this.title.setTitle(this.translate.instant('List_not_found'));
                             }
+                            this.outdated = l.isOutDated();
                         })
                         .map((list: List) => {
                             list.crystals = list.orderCrystals();

@@ -12,7 +12,7 @@
              matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
              (cbOnSuccess)="afterNameCopy(item.id)">
-            <span [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted()}">{{item.id | itemName | i18n}}</span>
+            <span [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
@@ -28,7 +28,7 @@
         </mat-icon>
     </div>
 
-    <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngIf="hasTimers()">
+    <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngIf="hasTimers">
         <button mat-raised-button
                 [color]="timerColor"
                 (click)="toggleAlarm()"
@@ -42,7 +42,7 @@
 
     <div class="item-col-right">
         <div *ngIf="item.craftedBy !== undefined" [ngClass]="{'masterbook':true, 'compact': settings.compactLists}">
-            <img *ngFor="let masterbook of getMasterBooks(item)"
+            <img *ngFor="let masterbook of masterbooks"
                  matListAvatar
                  src="{{masterbook.icon | icon}}"
                  matTooltip="{{masterbook.id | itemName | i18n}}"
@@ -170,7 +170,7 @@
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
         <div class="item-name" matLine>
-            <span [ngClass]="{'strike':item.done >= item.amount, 'craftable': canBeCrafted()}">{{item.id | itemName | i18n}}</span>
+            <span [ngClass]="{'strike':item.done >= item.amount, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
             <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                                  [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
             <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
@@ -179,7 +179,7 @@
             </mat-icon>
         </div>
         <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0" class="masterbook">
-            <img *ngFor="let masterbook of getMasterBooks(item)"
+            <img *ngFor="let masterbook of masterbooks"
                  matListAvatar
                  src="{{masterbook.icon | icon}}"
                  matTooltip="{{masterbook.id | itemName | i18n}}"
@@ -272,7 +272,7 @@
             </div>
         </div>
 
-        <div class="timer" *ngIf="hasTimers()">
+        <div class="timer" *ngIf="hasTimers">
             <span>{{(getTimer() | async)?.zoneId | placeName | i18n}} - {{(getTimer() | async)?.areaId | placeName | i18n}}</span><br>
             <button mat-raised-button [color]="timerColor" (click)="toggleAlarm()">
                 <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
