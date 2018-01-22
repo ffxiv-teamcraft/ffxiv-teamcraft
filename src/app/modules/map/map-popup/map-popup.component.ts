@@ -13,17 +13,11 @@ export class MapPopupComponent implements OnInit {
 
     mapData: Observable<MapData>;
 
-    constructor(@Inject(MAT_DIALOG_DATA) private data: { coords: { x: number, y: number }, id: number }, private mapService: MapService) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: { coords: { x: number, y: number }, id: number }, private mapService: MapService) {
     }
 
     ngOnInit() {
         this.mapData = this.mapService.getMapById(this.data.id).publishReplay(1).refCount();
-    }
-
-    getPosition(): Observable<{ x: number, y: number }> {
-        return this.mapData.map(map => {
-            return this.mapService.getPositionOnMap(map, this.data.coords);
-        });
     }
 
 }

@@ -31,17 +31,11 @@ export class AlarmCardComponent implements OnInit {
     constructor(private mapService: MapService) {
     }
 
-    getPosition(): Observable<{ x: number, y: number }> {
-        return this.map.map(map => {
-            return this.mapService.getPositionOnMap(map, {x: this.alarm.coords[0], y: this.alarm.coords[1]});
-        });
-    }
-
     deleteAlarm(): void {
         this.delete.emit();
     }
 
     ngOnInit(): void {
-        this.map = this.mapService.getMapById(this.alarm.zoneId)
+        this.map = this.mapService.getMapById(this.alarm.zoneId);
     }
 }
