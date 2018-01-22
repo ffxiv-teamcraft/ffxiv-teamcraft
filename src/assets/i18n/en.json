@@ -306,10 +306,10 @@
         }
     },
     "MACRO_TRANSLATION": {
-        "Title": "Macro translation",
+        "Title": "Macro translator",
         "Macro_language": "Macro language",
         "Macro_to_translate": "Macro to translate",
         "Do_translate": "Translate !",
-        "Invalid_macro_or_language": "Invalid macro or language"
+        "Invalid_macro_or_language": "Invalid macro or language."
     }
 }
