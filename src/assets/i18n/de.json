@@ -314,10 +314,10 @@
         }
     },
     "MACRO_TRANSLATION": {
-        "Title": "Macro translation",
-        "Macro_language": "Macro language",
-        "Macro_to_translate": "Macro to translate",
-        "Do_translate": "Translate !",
-        "Invalid_macro_or_language": "Invalid macro or language"
+        "Title": "Makro-Übersetzung",
+        "Macro_language": "Makro-Sprache",
+        "Macro_to_translate": "Zu übersetzendes Makro",
+        "Do_translate": "Übersetzen !",
+        "Invalid_macro_or_language": "Ungültiges Makro oder ungültige Sprache"
     }
 }
