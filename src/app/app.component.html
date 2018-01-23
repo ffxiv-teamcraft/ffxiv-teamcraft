@@ -82,6 +82,10 @@
                     <mat-icon matListIcon>alarm</mat-icon>
                     <span matLine>{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null">
+                    <mat-icon matListIcon>translate</mat-icon>
+                    <span matLine>{{'MACRO_TRANSLATION.Title' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
                     <span matLine>{{'Favorites' | translate}}</span>
