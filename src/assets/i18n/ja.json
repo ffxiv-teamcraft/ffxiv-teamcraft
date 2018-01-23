@@ -89,6 +89,7 @@
     "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
     "Own_list_outdated_after_button": "button",
     "Home": "Home",
+    "Import": "Import",
     "Favorites": "Favorites",
     "Favorite": "Favorite",
     "filters/ilvl": "Item level",
@@ -223,6 +224,18 @@
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventory",
+        "LAYOUT_DIALOG": {
+            "Title": "Layout",
+            "Add_panel": "Add Panel",
+            "Import_layout": "Import a layout",
+            "Import_string": "Import string"
+        },
+        "LAYOUT": {
+            "Filter": "Filter",
+            "Panel_name": "Panel name",
+            "Order_by": "Sort by",
+            "Order": "Order"
+        },
         "HELP": {
             "Title" : "List details",
             "List_category" : "List",
@@ -242,7 +255,8 @@
             "Map_markers" : "Whenever you see this icon, click on it to get a map marker, which is way easier to read than X,Y coordinates.",
             "Public_list" : "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
             "Obtention_details" : "Each item row has icons in the top-right section of the row, clicking on each icon will give you more details on how to obtain the corresponding item.",
-            "Labels" : "When adding a list to public lists, don't forget to add proper labels to it"
+            "Labels" : "When adding a list to public lists, don't forget to add proper labels to it",
+            "Custom_layout": "You can fully customize your layout, export it and import the layout of a friend. This layout is only for you and stored in your browser, it will be applied to every list you see using this browser"
         }
     },
     "adapt_to_character": "Adapt to Character",

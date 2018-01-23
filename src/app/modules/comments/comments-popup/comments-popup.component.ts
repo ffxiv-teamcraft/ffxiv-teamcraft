@@ -51,11 +51,11 @@ export class CommentsPopupComponent {
         this.service.update(this.data.list.$key, this.data.list);
     }
 
-    private get comments(): ResourceComment[] {
+    public get comments(): ResourceComment[] {
         return (this.data.row === undefined ? this.data.list.comments : this.data.row.comments) || [];
     }
 
-    private set comments(comments: ResourceComment[]) {
+    public set comments(comments: ResourceComment[]) {
         if (this.data.row === undefined) {
             this.data.list.comments = comments
         } else {

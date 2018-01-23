@@ -89,6 +89,7 @@
     "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
     "Own_list_outdated_after_button": "",
     "Home": "Accueil",
+    "Import": "Importer",
     "Favorites": "Favoris",
     "Favorite": "Favoris",
     "filters/ilvl": "Niveau d'objet",
@@ -215,6 +216,18 @@
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
         "Inventory_breakdown": "Inventaire",
+        "LAYOUT_DIALOG": {
+            "Title": "Affichage",
+            "Add_panel": "Ajouter une catégorie",
+            "Import_layout": "Importer un affichage",
+            "Import_string": "Chaîne d'importation de l'affichage"
+        },
+        "LAYOUT": {
+            "Filter": "Filtre",
+            "Panel_name": "Nom de la catégorie",
+            "Order_by": "Trier par",
+            "Order": "Ordre"
+        },
         "HELP": {
             "Title" : "Détails d'une liste",
             "List_category" : "Liste",
@@ -232,9 +245,10 @@
             "Colors":"Les noms d'objets ont différentes couleurs, <span class=\"craftable\">cette couleur pour les objets prêts à être craftés</span>, ce sont les objets pour lesquels vous avez tous les matériaux requis disponibles. <span class=\"strike\">Les objets de cette couleur</span> sont ceux que vous avez déjà obtenu/crafté, ils sont considérés comme complétés.",
             "Misc_category" : "Autre",
             "Map_markers" : "Dès que vous voyez cette icône à coté de coordonnées, vous pouvez cliquer dessus afin d'ouvrir une mini map qui affiche un marqueur en jeu, bien plus lisible que les coordonées.",
-            "Public_list" : "VOus pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
+            "Public_list" : "Vous pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
             "Obtention_details" : "Chaque objet a des détails sur son obtention dans la partie droite de sa ligne, penseez à cliquer sur les icônes afin de voir plus de détails sur l'objet en question.",
-            "Labels" : "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels."
+            "Labels" : "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels.",
+            "Custom_layout": "Vous pouvez pleinement personnaliser votre affichage, l'exporter et importer celui d'un ami. Cet affichage ne concerne que vous et est sauvegardé dans votre navigateur internet, il sera ainsi appliqué à toutes les listes que vous ouvrirez en l'utilisant."
         }
     },
     "adapt_to_character": "Adapter au personnage",

@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
                 private snack: MatSnackBar,
                 media: ObservableMedia,
                 public settings: SettingsService,
-                private helpService: HelpService) {
+                public helpService: HelpService) {
 
 
         this.watcher = media.subscribe((change: MediaChange) => {
