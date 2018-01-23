@@ -5,6 +5,8 @@ import {places} from './sources/places';
 import {mobs} from './sources/mobs';
 import {weathers} from './sources/weathers';
 import {npcs} from './sources/npcs';
+import {craftingActions} from './sources/crafting-actions';
+import {actions} from './sources/actions';
 import {Language} from './language';
 
 @Injectable()
@@ -50,15 +52,17 @@ export class LocalizedDataService {
         return this.getIndexByName(places, name, 'en');
     }
 
+    public getCraftingActionByName(name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
+        const result = this.getRowByName(craftingActions, name, language) || this.getRowByName(actions, name, language);
+        if (result === undefined) {
+            throw new Error('Data row not found.');
+        }
+        return result;
+    }
+
     private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
         if (array === undefined) {
-            // I18n strings (comment used for search matching)
-            return {
-                'en': 'Loading',
-                'fr': 'Chargement en cours',
-                'ja': 'ロード中',
-                'de': 'Laden'
-            };
+            return undefined;
         }
         return array[id];
     }
@@ -73,13 +77,7 @@ export class LocalizedDataService {
     private getRowByName(array: { [index: number]: I18nName }, name: string, language: Language): I18nName {
         const res = this.getIndexByName(array, name, language);
         if (res === -1) {
-            // I18n strings (comment used for search matching)
-            return {
-                'en': 'Loading',
-                'fr': 'Chargement en cours',
-                'ja': 'ロード中',
-                'de': 'Laden'
-            };
+            return undefined;
         }
         return array[res];
     }
@@ -91,7 +89,7 @@ export class LocalizedDataService {
      * @param language
      * @returns {number}
      */
-    private getIndexByName(array: { [index: number]: I18nName }, name: string, language: Language): number {
+    private getIndexByName(array: { [index: number]: I18nName }, name: string, language: string): number {
         if (array === undefined) {
             return -1;
         }
