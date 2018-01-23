@@ -16,6 +16,7 @@ import {AddAlarmPopupComponent} from './add-alarm-popup/add-alarm-popup.componen
 import {FormsModule} from '@angular/forms';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {ListModule} from '../list/list.module';
+import {MapModule} from '../../modules/map/map.module';
 
 const routes: Routes = [{
     path: 'alarms',
@@ -39,6 +40,7 @@ const routes: Routes = [{
         MatDialogModule,
         MatInputModule,
         MatListModule,
+        MapModule,
 
         CoreModule,
         CommonComponentsModule,

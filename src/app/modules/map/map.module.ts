@@ -3,10 +3,11 @@ import {CommonModule} from '@angular/common';
 import {MapService} from './map.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MapPopupComponent} from './map-popup/map-popup.component';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import {MapPositionComponent} from './map-position/map-position.component';
 import {PipesModule} from '../../pipes/pipes.module';
 import {CoreModule} from '../../core/core.module';
+import {MapComponent} from './map/map.component';
 
 @NgModule({
     imports: [
@@ -14,18 +15,21 @@ import {CoreModule} from '../../core/core.module';
         HttpClientModule,
         MatIconModule,
         MatButtonModule,
+        MatTooltipModule,
         PipesModule,
         CoreModule,
     ],
     declarations: [
         MapPopupComponent,
-        MapPositionComponent
+        MapPositionComponent,
+        MapComponent,
     ],
     providers: [
         MapService
     ],
     exports: [
-        MapPositionComponent
+        MapPositionComponent,
+        MapComponent,
     ],
     entryComponents: [
         MapPopupComponent
