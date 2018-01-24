@@ -24,9 +24,12 @@
             }
             .filter {
                 display: inline-flex;
-                .filter-name {
-                    margin-right: 10px;
-                    max-width: 200px;
+                .filter-block {
+                    align-items: center;
+                    .filter-name {
+                        margin-right: 10px;
+                        max-width: 200px;
+                    }
                 }
                 .logic-gate {
                     max-width: 100px;

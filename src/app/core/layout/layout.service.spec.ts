@@ -6,6 +6,9 @@ import {mockList} from '../../../test/mock-list';
 import {LayoutRowFilter} from './layout-row-filter';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
 import {LayoutRowDisplay} from './layout-row-display';
+import {LayoutOrderService} from './layout-order.service';
+import {TranslateService} from '@ngx-translate/core';
+import {CoreModule} from '../core.module';
 
 const mockRows: ListRow[] = mockList.items;
 
@@ -16,11 +19,22 @@ function testFilter(filter: LayoutRowFilter, ...args: any[]): void {
     expect(filter.filter(result.rejected, ...args).accepted.length).toBe(0);
 }
 
+class MockTranslate extends TranslateService {
+    currentLang = 'en';
+}
+
 describe('LayoutService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [LayoutService],
-            imports: [NgSerializerModule.forRoot()]
+            providers: [
+                LayoutService,
+                LayoutOrderService,
+                {provide: TranslateService, useValue: MockTranslate}
+            ],
+            imports: [
+                NgSerializerModule.forRoot(),
+                CoreModule
+            ]
         });
     });
 
@@ -58,11 +72,19 @@ describe('LayoutService', () => {
             .toEqual('IS_CRAFT:and:IS_GATHERING:or:IS_CRAFT');
     });
 
+    it('should be able to support NOT logic gate', () => {
+        const filterChain = LayoutRowFilter.IS_GATHERING.and(LayoutRowFilter.not(LayoutRowFilter.CAN_BE_BOUGHT));
+        const opposedFilterChain = LayoutRowFilter.not(LayoutRowFilter.IS_GATHERING).or(LayoutRowFilter.CAN_BE_BOUGHT);
+        expect(filterChain.name).toEqual('IS_GATHERING:and:!CAN_BE_BOUGHT');
+
+        expect(filterChain.filter(mockRows).accepted.length).toEqual(opposedFilterChain.filter(mockRows).rejected.length);
+    });
+
     it('should be able to provide proper display with default layoutRows', inject([LayoutService], (service: LayoutService) => {
         const display: LayoutRowDisplay[] = service.getDisplay(mockList);
         expect(display.length).toBe(3);
         expect(display[0].title).toBe('Gathering');
-        expect(display[1].title).toBe('Other_items');
+        expect(display[1].title).toBe('Other');
         expect(display[2].title).toBe('Pre_crafts');
     }));
 });

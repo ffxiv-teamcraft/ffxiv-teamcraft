@@ -8,6 +8,7 @@ import {I18nToolsService} from '../tools/i18n-tools.service';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/skip';
 import {Ingredient} from '../../model/garland-tools/ingredient';
 import {DataExtractorService} from './data/data-extractor.service';

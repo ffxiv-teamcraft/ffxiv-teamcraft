@@ -18,13 +18,21 @@
         </button>
         <div class="filter">
             <mat-form-field *ngFor="let fragment of filter">
-                <mat-select [disabled]="readonly" class="filter-name"
-                            placeholder="{{'LIST_DETAILS.LAYOUT.Filter' | translate}}" required
-                            [(value)]="fragment.value"
-                            (valueChange)="filterChange()"
-                            *ngIf="!fragment.isBooleanGate">
-                    <mat-option *ngFor="let filter of getAllFilters()" value="{{filter}}">{{filter}}</mat-option>
-                </mat-select>
+                <div *ngIf="!fragment.isBooleanGate" class="filter-block">
+                    <mat-checkbox [disabled]="readonly" color="accent"
+                                  (click)="$event.stopPropagation();"
+                                  [(ngModel)]="fragment.reversed"
+                                  (change)="filterChange()">
+                        NOT
+                    </mat-checkbox>
+                    <mat-select [disabled]="readonly" class="filter-name"
+                                placeholder="{{'LIST_DETAILS.LAYOUT.Filter' | translate}}" required
+                                [(value)]="fragment.value"
+                                (valueChange)="filterChange()">
+                        <mat-option *ngFor="let filter of getAllFilters()" value="{{filter}}">{{filter}}</mat-option>
+                        <mat-option *ngIf="readonly" selected>{{fragment.value}}</mat-option>
+                    </mat-select>
+                </div>
                 <mat-select [disabled]="readonly" class="logic-gate"
                             placeholder="{{'LIST_DETAILS.LAYOUT.Logic_gate' | translate}}" required
                             [(value)]="fragment.value"
@@ -58,8 +66,10 @@
             </mat-form-field>
         </div>
         <div class="toggles">
-            <mat-checkbox [(ngModel)]="row.zoneBreakdown" [disabled]="row.tiers">{{"Zone_breakdown" | translate}}</mat-checkbox>
-            <mat-checkbox [(ngModel)]="row.tiers" [disabled]="row.zoneBreakdown">{{"Tier_display_toggle" | translate}}</mat-checkbox>
+            <mat-checkbox [(ngModel)]="row.zoneBreakdown" [disabled]="row.tiers">{{"Zone_breakdown" | translate}}
+            </mat-checkbox>
+            <mat-checkbox [(ngModel)]="row.tiers" [disabled]="row.zoneBreakdown">{{"Tier_display_toggle" | translate}}
+            </mat-checkbox>
         </div>
     </div>
 </div>

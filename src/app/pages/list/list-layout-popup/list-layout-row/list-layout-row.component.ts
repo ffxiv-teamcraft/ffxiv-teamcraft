@@ -33,7 +33,7 @@ export class ListLayoutRowComponent implements OnInit {
     @Output()
     down: EventEmitter<void> = new EventEmitter<void>();
 
-    public filter: { isBooleanGate: boolean, value: string }[] = [];
+    public filter: { isBooleanGate: boolean, reversed: boolean, value: string }[] = [];
 
     constructor() {
     }
@@ -48,7 +48,7 @@ export class ListLayoutRowComponent implements OnInit {
     }
 
     private filterToName(): string {
-        return this.filter.map(fragment => fragment.value).join(':');
+        return this.filter.map(fragment => `${fragment.reversed ? '!' : ''}${fragment.value}`).join(':');
     }
 
     public getAllFilters(): string[] {
@@ -56,7 +56,7 @@ export class ListLayoutRowComponent implements OnInit {
     }
 
     public addFragment(): void {
-        this.filter.push({isBooleanGate: true, value: 'or'}, {isBooleanGate: false, value: 'NONE'});
+        this.filter.push({isBooleanGate: true, reversed: false, value: 'or'}, {isBooleanGate: false, reversed: false, value: 'NONE'});
     }
 
     public removeFragment(): void {
@@ -67,10 +67,15 @@ export class ListLayoutRowComponent implements OnInit {
 
     ngOnInit(): void {
         this.filter = this.row.filterName.split(':').map(fragment => {
-            return {
+            const result = {
                 isBooleanGate: fragment === 'or' || fragment === 'and',
-                value: fragment
+                value: fragment,
+                reversed: fragment.charAt(0) === '!'
+            };
+            if (result.reversed) {
+                result.value = result.value.substr(1);
             }
+            return result;
         });
     }
 

@@ -109,7 +109,7 @@ export class LayoutRowFilter {
 
     static get ALL_NAMES(): string[] {
         return Object.keys(LayoutRowFilter)
-            .filter(key => ['ALL', 'ALL_NAMES', 'ANYTHING', 'fromString', 'processRows'].indexOf(key) === -1);
+            .filter(key => ['ALL', 'ALL_NAMES', 'ANYTHING', 'fromString', 'processRows', 'not'].indexOf(key) === -1);
     }
 
     static fromString(filterString: string): LayoutRowFilter {
@@ -124,12 +124,26 @@ export class LayoutRowFilter {
 
     private static processRows(stringRows: string[], filter: LayoutRowFilter): LayoutRowFilter {
         const operator = stringRows.shift();
-        const filterString = stringRows.shift();
+        let filterString = stringRows.shift();
         if (operator !== undefined && filterString !== undefined) {
-            filter = filter[operator](LayoutRowFilter[filterString]);
+            const notGate = filterString.charAt(0) === '!';
+            if (notGate) {
+                filterString = filterString.substr(1);
+            }
+            let nextFilter: LayoutRowFilter = LayoutRowFilter[filterString];
+            if (notGate) {
+                nextFilter = LayoutRowFilter.not(nextFilter);
+            }
+            filter = filter[operator](nextFilter);
             return LayoutRowFilter.processRows(stringRows, filter);
         }
         return filter;
+    }
+
+    public static not(baseFilter: LayoutRowFilter): LayoutRowFilter {
+        return new LayoutRowFilter((row: ListRow) => {
+            return !baseFilter._filter(row);
+        }, `!${baseFilter.name}`);
     }
 
     /**
