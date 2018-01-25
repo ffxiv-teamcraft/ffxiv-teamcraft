@@ -21,7 +21,7 @@ export class MacroTranslationComponent implements OnInit {
         {id: 'ja', name: 'JA'}
     ];
 
-    private findActionsRegex: RegExp = new RegExp(/\/ac[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
+    private findActionsRegex: RegExp = new RegExp(/\/(?=ac|action|gaction|generalaction)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
 
     constructor(private localizedDataService: LocalizedDataService) {
     }
