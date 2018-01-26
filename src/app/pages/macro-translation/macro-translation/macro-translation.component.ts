@@ -22,7 +22,7 @@ export class MacroTranslationComponent implements OnInit {
     ];
 
     private findActionsRegex: RegExp =
-        new RegExp(/\/(?=ac|action|aaction|gaction|generalaction)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
+        new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
 
     constructor(private localizedDataService: LocalizedDataService) {
     }
@@ -43,13 +43,14 @@ export class MacroTranslationComponent implements OnInit {
         this.invalidInputs = false;
         for (const line of this.macroToTranslate.split('\n')) {
             if ((match = this.findActionsRegex.exec(line)) !== null) {
+                const skillName = match[2].replace(/"/g, '');
                 // Get translated skill
                 try {
-                    const translatedSkill = this.localizedDataService.getCraftingActionByName(match[3], this.macroLanguage);
+                    const translatedSkill = this.localizedDataService.getCraftingActionByName(skillName, this.macroLanguage);
 
                     // Push translated line to each language
                     Object.keys(macroTranslated).forEach(key => {
-                        macroTranslated[key].push(line.replace(match[3], translatedSkill[key]));
+                        macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
                     });
                 } catch (ignored) {
                     this.invalidInputs = true;
