@@ -26,6 +26,9 @@ export class CommentsButtonComponent implements OnInit {
     @Input()
     isOwnList = false;
 
+    @Input()
+    color = 'accent';
+
     amount: number;
 
     constructor(private dialog: MatDialog, private media: ObservableMedia, public settings: SettingsService) {
@@ -36,7 +39,13 @@ export class CommentsButtonComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.amount = this.row.comments === undefined ? 0 : this.row.comments.length;
+        // If we don't have a row defined, that's because it's a list comments button.
+        if (this.row !== undefined) {
+            this.amount = this.row.comments === undefined ? 0 : this.row.comments.length;
+        } else {
+            this.amount = this.list.comments === undefined ? 0 : this.list.comments.length;
+        }
+
     }
 
     isMobile(): boolean {

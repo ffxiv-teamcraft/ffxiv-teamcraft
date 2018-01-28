@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {FormControl, Validators} from '@angular/forms';
@@ -15,6 +15,7 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MergeListsPopupComponent} from '../merge-lists-popup/merge-lists-popup.component';
+import {BulkRegeneratePopupComponent} from '../bulk-regenerate-popup/bulk-regenerate-popup.component';
 
 declare const ga: Function;
 
@@ -41,7 +42,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
-                private listService: ListService, private title: Title) {
+                private listService: ListService, private title: Title, private cd: ChangeDetectorRef) {
         super();
     }
 
@@ -57,6 +58,12 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         }
     }
 
+    regenerateAllLists(): void {
+        this.lists.first().subscribe(lists => {
+            this.dialog.open(BulkRegeneratePopupComponent, {data: lists, disableClose: true});
+        });
+    }
+
     closed(key: string): void {
         this.expanded = this.expanded.filter(i => i !== key);
     }
@@ -69,6 +76,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         this.subscriptions.push(dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
+                this.cd.detach();
                 list.forEachItem(row => {
                     if (this.alarmService.hasAlarm(row)) {
                         this.alarmService.unregister(row.id);
@@ -76,6 +84,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 });
                 this.listService.remove(list.$key).first().subscribe(() => {
                     ga('send', 'event', 'List', 'deletion');
+                    this.cd.reattach();
                     this.title.setTitle('Teamcraft');
                 });
             }
@@ -89,15 +98,23 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     removeRecipe(recipe: any, list: List, key: string): void {
+        this.cd.detach();
         this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, -recipe.amount)
-            .subscribe(resultList => this.listService.update(key, resultList)));
+            .subscribe(resultList => {
+                this.listService.update(key, resultList);
+                this.cd.reattach();
+            }));
     }
 
     updateAmount(recipe: any, list: List, key: string, amount: number): void {
+        this.cd.detach();
         this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, MathTools.round(amount - recipe.amount))
-            .subscribe(resultList => this.listService.update(key, resultList)));
+            .subscribe(resultList => {
+                this.listService.update(key, resultList);
+                this.cd.reattach();
+            }));
     }
 
     ngOnInit() {

@@ -31,6 +31,14 @@ body {
     }
 }
 
+.strike {
+    color: #00E676;
+}
+
+.craftable {
+    color: #13a8ff;
+}
+
 // This has to be done here, because of an override error in component's style
 .mat-mini-fab.compact {
     .mat-button-wrapper {

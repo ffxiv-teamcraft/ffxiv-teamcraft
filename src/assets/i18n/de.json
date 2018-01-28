@@ -13,7 +13,7 @@
         "Body": "Um die Erstellung von 10000 Listen zu feiern, wird eine Spielzeitkarte über 60 Tage verlost! Die Verlosung läuft bis zum 09.Februar . \n Ein großes dankeschön dass ihr die App benutzt. Ohne euch wäre Sie nicht das gleiche und ich hoffe dass sie euch sehr hilft.",
         "Access": "Für das Giveaway anmelden"
     },
-    "No_favorites": "No Favorite",
+    "No_favorites": "Keine Favoriten",
     "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
     "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
     "Tag_filter": "Tags",
@@ -89,6 +89,7 @@
     "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
     "Own_list_outdated_after_button": "Schaltfläche",
     "Home": "Startseite",
+    "Import": "Import",
     "Favorites": "Favoriten",
     "Favorite": "Favorit",
     "filters/ilvl": "Gegenstandsstufe",
@@ -186,6 +187,7 @@
     "Item_name_copied": "{{itemname}} zur Zwischenablage hinzugefügt",
     "Tier_display_toggle": "Zeige Herstellungs-Meilensteine",
     "Precraft_tier": "Meilenstein",
+    "Regenerating_lists": "Neugenerierende Liste",
     "SETTINGS": {
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
@@ -194,9 +196,15 @@
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
-        "Patreon_supporter": "Patreon-Unterstützer"
+        "Patreon_supporter": "Patreon-Unterstützer",
+        "HELP": {
+            "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",
+            "Edit": "Wenn du auf den Bearbeiten-Knopf drückst, kannst du den Character, der mit deinem Teamcraft-Account verknüpft ist, bearbeiten",
+            "Masterbooks": "Du kannst deine freigeschalteten Meisterbücher hier hinterlegen, damit du eine Warnung erhältst wenn dir für eine Herstellung ein Meisterbuch fehlt."
+        }
     },
     "LISTS": {
+        "Regenerate_all": "Alle Listen neugenerieren",
         "Merge_lists": "Listen zusammenfassen"
     },
     "LIST": {
@@ -207,7 +215,41 @@
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
-        "Inventory_breakdown": "Inventar"
+        "Inventory_breakdown": "Inventar",
+        "LAYOUT_DIALOG": {
+            "Title": "Layout",
+            "Add_panel": "Bereich hinzufügen",
+            "Import_layout": "Ein Layout importieren",
+            "Import_string": "Einen Text importieren"
+        },
+        "LAYOUT": {
+            "Filter": "Filter",
+            "Panel_name": "Bereichsname",
+            "Order_by": "Sortiere nach",
+            "Order": "Sortierung"
+        },
+        "HELP": {
+            "Title" : "Listendetails",
+            "List_category" : "Liste",
+            "Inventory" : "Du kannst zur Inventaransicht wechseln, wo du siehst was du zu jeder Zeit im Inventar haben solltest. Die App berechnet automatisch welche Gegenstände du schon für Herstellungen benutzt hast und zeigt die dementsprechend an.",
+            "Reset_progression" : "Du kannst den ganzen Fortschritt einer Liste zurücksetzen. Nach einem Bestätigungsdialog werden alle Gegenstände wieder auf 0 gesetzt.",
+            "Upgrade" : "Du kannst deine Liste mit diesem Knopf auf die aktuellste Version der App aktualisieren, ohne deinen Fortschritt zu verlieren. Du wirst gefragt ob du aktualisieren möchtest, wenn deine Liste nicht mehr aktuell ist.",
+            "Fork" : "Du kannst eine Liste kopieren, womit du eine exakte Kopie einer Liste inklusive Fortschritt in deinem Account hast.",
+            "Filters" : "Du kannst Filter benutzen um beispielsweise nur Dinge anzeigen zu lassen die du selber herstellen kannst oder um Dinge auszublenden die bereits fertig sind.",
+            "Area_breakdown" : "Wenn du die Gebietsübersicht nutzt kannst du dir die Gebiete anzeigen lassen wo du Dinge bekommen kannst, sortiert nach der Höhe der Teleportkosten.",
+            "Pricing_mode" : "Mit Hilfe der Kostenübersicht kannst du für alle Gegenstände die Preise angeben und dir ausrechnen lassen wie viel Gewinn oder Verlust du machst.",
+            "Item_category" : "Gegenstände (Reihen)",
+            "Requirements" : "Wenn du auf den Bedingungen-Knopf drückst, kannst du dir anzeigen lassen wofür ein Gegenstand benötigt wird oder was dieser Gegenstand benötigt.",
+            "Alarms" : "Für eine zeitabhängige Abbaustelle kannst du auf den Alarm-Knopf drücken, um dir automatisch ein Geräusch abspielen zu lassen wenn die Stelle erscheint. Du musst dafür nicht auf der Liste sein, nur auf der Website.",
+            "Comments" : "Du kannst Kommentare zu einzelnen Reihen hinzufügen um mehr Informationen zu hinterlegen oder eine Diskussion zu starten. Kommentare sind auf 140 Zeichen und 10 Kommentar pro Reihe begrenzt.",
+            "Colors":"Gegenstandsfarben haben alle eine Bedeutung , <span class=\"craftable\">so sehen Gegenstände aus die hergestellt werden können</span>, was bedeutet das du alle Gegenstände besitzt die zur Herstellung nötig sind. <span class=\"strike\">So sehen bereits hergestellte Gegenstände aus</span>, was bedeutet das dieser Gegenstand bereits erledigt ist.",
+            "Misc_category" : "Anderes",
+            "Map_markers" : "Immer wenn du dieses Symbol siehst, kannst du es benutzen um dir auf der KArte eine Markierung anzeigen zu lassen, was einfacher ist als X/Y-Koordinaten zu lesen.",
+            "Public_list" : "Wenn du eine Liste auf öffentlich setzt, wird es zum Öffentliche Listen-Bereich hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN.",
+            "Obtention_details" : "Jeder Gegenstand hat oben-rechts in der Ecke Symbole die dir verraten wie du sie erlangen kannst",
+            "Labels" : "Wenn du eine Liste zu den öffentlichen Listen hinzufügst vergiss nicht aussagekräftige Schlagwörter zu setzen",
+            "Custom_layout": "Du kannst dein Layout komplett anpassen, es exportieren und das eines Freundes importieren. Das Layout kannst nur du sehen und es wird in deinem Browser gespeichert und auf jede Liste angewendet die du mit diesem Browser siehst."
+        }
     },
     "adapt_to_character": "An Character anpassen",
     "reset_filters": "Filter zurücksetzen",
@@ -261,5 +303,21 @@
         "MIN": "MIN",
         "BOT": "GÄR",
         "FSH": "FSH"
+    },
+    "RECIPES": {
+        "HELP":{
+            "Welcome": "Willkommen auf der Rezepte-Seite, wo du Rezepte suchen und zu Listen hinzufügen kannst oder von Ihnen löschen kannst",
+            "Filter": "Wenn du den Filter-Bereich öffnest, kannst du Filter anwenden und konfigurieren um nur das zu sehen, was du möchtest.",
+            "Add_to_list": "Sowie du den Gegenstand gefunden hast den du suchst, kannst du die Menge eingeben und auf den Knopf drücken, wo du dann gefragt wirst zu welcher Liste du den Gegenstand in der gewünschten Menge hinzufügen möchtest.",
+            "Quick_list":"Du kannst Sofort-Listen erstellen, was automatisch eine Liste mit dem Namen des Gegenstands erstellt und die gelöscht wird sowie sie abgearbeitet ist,",
+            "Add_results": "Der Alle Ergebnisse zur Liste hinzufügen-Knopf fügt alle Ergebnisse der aktuellen Suche zu einer Liste hinzu. VORSICHT: Die Menge beträgt immer 1 auf diesem Weg."
+        }
+    },
+    "MACRO_TRANSLATION": {
+        "Title": "Makro-Übersetzung",
+        "Macro_language": "Makro-Sprache",
+        "Macro_to_translate": "Zu übersetzendes Makro",
+        "Do_translate": "Übersetzen !",
+        "Invalid_macro_or_language": "Ungültiges Makro oder ungültige Sprache"
     }
 }

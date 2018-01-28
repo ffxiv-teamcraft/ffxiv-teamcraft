@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {MapData} from './map-data';
+import {Aetheryte} from '../../core/data/aetheryte';
+import {aetherytes} from '../../core/data/sources/aetherytes';
 
 @Injectable()
 export class MapService {
@@ -13,6 +15,12 @@ export class MapService {
             .map(res => {
                 return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
             })
+            .map(mapData => {
+                return mapData.map(row => {
+                    row.aetherytes = this.getAetherytes(row.placename_id);
+                    return row;
+                });
+            })
             .publishReplay(1)
             .refCount();
     }
@@ -21,6 +29,10 @@ export class MapService {
         return this.data.map(data => {
             return data.find(row => row.placename_id === id);
         });
+    }
+
+    private getAetherytes(id: number): Aetheryte[] {
+        return aetherytes.filter(aetheryte => aetheryte.placenameid === id);
     }
 
     getPositionOnMap(map: MapData, position: { x: number, y: number }): { x: number, y: number } {

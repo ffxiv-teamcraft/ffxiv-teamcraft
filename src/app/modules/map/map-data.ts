@@ -1,3 +1,5 @@
+import {Aetheryte} from '../../core/data/aetheryte';
+
 export interface MapData {
     id: number;
     folder: string;
@@ -16,4 +18,5 @@ export interface MapData {
     layer_count: number;
     placename_id: number;
     region_id: number;
+    aetherytes: Aetheryte[];
 }

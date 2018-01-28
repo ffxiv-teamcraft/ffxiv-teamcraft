@@ -2,6 +2,9 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnIn
 import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {SettingsService} from '../../settings/settings.service';
+import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {I18nName} from '../../../model/list/i18n-name';
+import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -29,6 +32,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     @Input()
     showTier = false;
 
+    @Input()
+    zoneBreakdown = false;
+
     @Output()
     done: EventEmitter<number> = new EventEmitter<number>();
 
@@ -46,7 +52,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     tiers: ListRow[][] = [[]];
 
-    constructor(public settings: SettingsService) {
+    zoneBreakdownData: ZoneBreakdown;
+
+    constructor(public settings: SettingsService, private dataService: LocalizedDataService) {
     }
 
     /**
@@ -55,7 +63,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
      */
     public generateTiers(): void {
         if (this.data !== null) {
-
             this.tiers = [[]];
             this.topologicalSort(this.data).forEach(row => {
                 if (row.requires !== undefined) {
@@ -63,6 +70,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 }
             });
         }
+    }
+
+    public getLocation(id: number): I18nName {
+        if (id === -1) {
+            return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
+        }
+        return this.dataService.getPlace(id);
     }
 
     private topologicalSort(data: ListRow[]): ListRow[] {
@@ -124,11 +138,17 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         if (this.showTier && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
             this.generateTiers();
         }
+        if (this.zoneBreakdown && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+            this.zoneBreakdownData = new ZoneBreakdown(this.data);
+        }
     }
 
     ngOnInit(): void {
         if (this.showTier) {
             this.generateTiers();
+        }
+        if (this.zoneBreakdown) {
+            this.zoneBreakdownData = new ZoneBreakdown(this.data);
         }
     }
 }

@@ -6,11 +6,12 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
-    MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatSelectModule,
+    MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatProgressBarModule, MatSelectModule,
     MatTooltipModule
 } from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.component';
+import { BulkRegeneratePopupComponent } from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 
 const routes: Routes = [
     {
@@ -35,16 +36,19 @@ const routes: Routes = [
         MatDialogModule,
         MatListModule,
         MatTooltipModule,
+        MatProgressBarModule,
 
         CoreModule,
         CommonComponentsModule,
     ],
     declarations: [
         ListsComponent,
-        MergeListsPopupComponent
+        MergeListsPopupComponent,
+        BulkRegeneratePopupComponent,
     ],
     entryComponents: [
-        MergeListsPopupComponent
+        MergeListsPopupComponent,
+        BulkRegeneratePopupComponent,
     ]
 })
 export class ListsModule {

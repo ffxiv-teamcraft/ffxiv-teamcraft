@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.1.1...v3.2.0) (2018-01-28)
+
+
+### Bug Fixes
+
+* display 00 instead of 24 for node despawn time ([f04314e](https://github.com/Supamiu/ffxiv-teamcraft/commit/f04314e))
+* favorites panel always empty ([4d86b05](https://github.com/Supamiu/ffxiv-teamcraft/commit/4d86b05)), closes [#170](https://github.com/Supamiu/ffxiv-teamcraft/issues/170)
+* Multi-stage fc crafts show as ready-to-build too early ([f0a7f98](https://github.com/Supamiu/ffxiv-teamcraft/commit/f0a7f98)), closes [#166](https://github.com/Supamiu/ffxiv-teamcraft/issues/166)
+* regenerating the list caused the whole page to be reloaded after each modification ([c411166](https://github.com/Supamiu/ffxiv-teamcraft/commit/c411166))
+* users can tag list without being the author of them ([d003732](https://github.com/Supamiu/ffxiv-teamcraft/commit/d003732))
+* zone breakdown gathering panel empty after modification ([5b4256f](https://github.com/Supamiu/ffxiv-teamcraft/commit/5b4256f))
+
+
+### Features
+
+* add aetheryte location on map dialog boxes ([8203eed](https://github.com/Supamiu/ffxiv-teamcraft/commit/8203eed)), closes [#178](https://github.com/Supamiu/ffxiv-teamcraft/issues/178)
+* add comment threads to public lists ([19d2d73](https://github.com/Supamiu/ffxiv-teamcraft/commit/19d2d73)), closes [#115](https://github.com/Supamiu/ffxiv-teamcraft/issues/115)
+* add name to map in map dialog box ([cb6e1b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/cb6e1b5))
+* add profile page help dialog ([1666c35](https://github.com/Supamiu/ffxiv-teamcraft/commit/1666c35))
+* custom layout for list details ([3fca33b](https://github.com/Supamiu/ffxiv-teamcraft/commit/3fca33b)), closes [#168](https://github.com/Supamiu/ffxiv-teamcraft/issues/168)
+* implement /list/<id> help dialog ([07da241](https://github.com/Supamiu/ffxiv-teamcraft/commit/07da241)), closes [#151](https://github.com/Supamiu/ffxiv-teamcraft/issues/151) [#136](https://github.com/Supamiu/ffxiv-teamcraft/issues/136)
+* implement a NOT logic gate for layout filters ([b0eab7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/b0eab7c)), closes [#181](https://github.com/Supamiu/ffxiv-teamcraft/issues/181)
+* macro translation page ([1466656](https://github.com/Supamiu/ffxiv-teamcraft/commit/1466656)), closes [#142](https://github.com/Supamiu/ffxiv-teamcraft/issues/142)
+* new help dialog system for main pages ([5a00590](https://github.com/Supamiu/ffxiv-teamcraft/commit/5a00590))
+* node position for non-timed nodes ([f629f88](https://github.com/Supamiu/ffxiv-teamcraft/commit/f629f88)), closes [#171](https://github.com/Supamiu/ffxiv-teamcraft/issues/171)
+* regenerate all lists button ([36991a4](https://github.com/Supamiu/ffxiv-teamcraft/commit/36991a4)), closes [#174](https://github.com/Supamiu/ffxiv-teamcraft/issues/174)
+* update About page ([7ad7816](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ad7816))
+
+
+### Performance Improvements
+
+* display optimization ([39471ba](https://github.com/Supamiu/ffxiv-teamcraft/commit/39471ba))
+* list details view performance optimizations ([b30a753](https://github.com/Supamiu/ffxiv-teamcraft/commit/b30a753))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.1.0...v3.1.1) (2018-01-12)
 

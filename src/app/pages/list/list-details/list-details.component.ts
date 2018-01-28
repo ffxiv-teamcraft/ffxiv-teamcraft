@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -13,21 +13,25 @@ import {ListManagerService} from '../../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
-import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
-import {I18nName} from '../../../model/list/i18n-name';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-popup.component';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
 import {User, UserInfo} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/distinctUntilChanged';
+import {PageComponent} from '../../../core/component/page-component';
+import {ComponentType} from '@angular/cdk/portal';
+import {HelpService} from '../../../core/component/help.service';
+import {ListHelpComponent} from '../list-help/list-help.component';
+import {LayoutService} from '../../../core/layout/layout.service';
+import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
+import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 
 declare const ga: Function;
 
@@ -37,9 +41,13 @@ declare const ga: Function;
     styleUrls: ['./list-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListDetailsComponent extends ComponentWithSubscriptions implements OnInit, OnDestroy {
+export class ListDetailsComponent extends PageComponent implements OnInit, OnDestroy {
 
     list: Observable<List>;
+
+    listDisplay: Observable<LayoutRowDisplay[]>;
+
+    private reload$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
     user: UserInfo;
 
@@ -48,8 +56,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     authorUid: string;
 
     userData: AppUser;
-
-    zoneBreakdownToggle = false;
 
     pricingMode = false;
 
@@ -63,9 +69,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private filterTrigger = new BehaviorSubject<void>(null);
 
-    zoneBreakdown: ZoneBreakdown;
-
     notFound = false;
+
+    outdated = false;
 
     accordionState: { [index: string]: boolean } = {
         'Crystals': false,
@@ -76,14 +82,19 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     };
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
-                private dialog: MatDialog, private userService: UserService,
+                protected dialog: MatDialog, private userService: UserService,
                 private listService: ListService, private title: Title,
                 private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router,
                 private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
-                public settings: SettingsService) {
-        super();
+                public settings: SettingsService, help: HelpService, private layoutService: LayoutService,
+                private cd: ChangeDetectorRef) {
+        super(dialog, help);
         this.initFilters();
+    }
+
+    getHelpDialog(): ComponentType<any> | TemplateRef<any> {
+        return ListHelpComponent;
     }
 
     togglePublic(): void {
@@ -95,13 +106,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public getUser(): Observable<User> {
         return this.auth.authState;
-    }
-
-    public getLocation(id: number): I18nName {
-        if (id === -1) {
-            return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
-        }
-        return this.data.getPlace(id);
     }
 
     public openTimerOptionsPopup(): void {
@@ -145,60 +149,65 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnInit() {
+        super.ngOnInit();
+
         this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
 
-        this.subscriptions.push(this.route.params.subscribe(params => {
-            this.listUid = params.listId;
-            this.list =
-                Observable.combineLatest(
-                    this.filterTrigger,
-                    this.listService.get(this.listUid),
-                    (ignored, list) => {
-                        this.authorUid = list.authorId;
-                        list.forEachItem(item => {
-                            if (item.gatheredBy !== undefined) {
-                                const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                                if (filter !== undefined) {
-                                    item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+        this.subscriptions.push(
+            this.route.params.subscribe(params => {
+                this.listUid = params.listId;
+                this.list =
+                    Observable.combineLatest(
+                        this.filterTrigger,
+                        this.listService.get(this.listUid),
+                        (ignored, list) => {
+                            this.authorUid = list.authorId;
+                            list.forEachItem(item => {
+                                if (item.gatheredBy !== undefined) {
+                                    const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                                    if (filter !== undefined) {
+                                        item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                                    }
+                                } else if (item.craftedBy !== undefined) {
+                                    for (const craft of item.craftedBy) {
+                                        const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
+                                        item.hidden = !filter.checked || craft.level > filter.level;
+                                    }
+                                } else {
+                                    // If the item can't be filtered based on a gathering/crafting job level,
+                                    // we want to reset its hidden state.
+                                    item.hidden = false;
                                 }
-                            } else if (item.craftedBy !== undefined) {
-                                for (const craft of item.craftedBy) {
-                                    const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
-                                    item.hidden = !filter.checked || craft.level > filter.level;
+                                if (item.done >= item.amount && this.hideCompleted) {
+                                    item.hidden = true;
                                 }
+                            });
+                            return list;
+                        })
+                        .catch(() => {
+                            this.notFound = true;
+                            return Observable.of(null);
+                        })
+                        .distinctUntilChanged()
+                        .filter(list => list !== null)
+                        .do((l: List) => {
+                            if (l.name !== undefined) {
+                                this.title.setTitle(`${l.name}`);
                             } else {
-                                // If the item can't be filtered based on a gathering/crafting job level, we want to reset its hidden state.
-                                item.hidden = false;
+                                this.title.setTitle(this.translate.instant('List_not_found'));
                             }
-                            if (item.done >= item.amount && this.hideCompleted) {
-                                item.hidden = true;
-                            }
+                            this.outdated = l.isOutDated();
+                        })
+                        .map((list: List) => {
+                            list.crystals = list.orderCrystals();
+                            list.gathers = list.orderGatherings(this.data);
+                            return list;
                         });
-                        return list;
-                    })
-                    .catch(() => {
-                        this.notFound = true;
-                        return Observable.of(null);
-                    })
-                    .distinctUntilChanged()
-                    .filter(list => list !== null)
-                    .do(l => {
-                        if (l.name !== undefined) {
-                            this.title.setTitle(`${l.name}`);
-                        } else {
-                            this.title.setTitle(this.translate.instant('List_not_found'));
-                        }
-                        delete this.zoneBreakdown;
-                        if (this.zoneBreakdownToggle) {
-                            this.zoneBreakdown = new ZoneBreakdown(l);
-                        }
-                    })
-                    .map((list: List) => {
-                        list.crystals = list.orderCrystals();
-                        list.gathers = list.orderGatherings(this.data);
-                        return list;
-                    });
-        }));
+                this.listDisplay = this.reload$.switchMap(() =>
+                    this.list.map((list: List) => {
+                        return this.layoutService.getDisplay(list);
+                    }));
+            }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
         }));
@@ -214,14 +223,22 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
-        this.subscriptions.push(this.list.switchMap(l => {
+        this.cd.detach();
+        this.list.switchMap(l => {
             return this.listManager.upgradeList(l)
                 .switchMap(list => this.listService.update(this.listUid, list))
-        }).subscribe(() => {
+        }).first().subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
+            this.cd.reattach();
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
-        }));
+        });
+    }
+
+    openLayoutOptions(): void {
+        this.dialog.open(ListLayoutPopupComponent).afterClosed().subscribe(() => {
+            this.reload$.next(null);
+        });
     }
 
     ngOnDestroy(): void {
@@ -236,8 +253,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     set(list: List): void {
+        this.cd.detach();
         this.listService.set(this.listUid, list).first().subscribe(() => {
-            // Ignored.
+            this.cd.reattach();
         });
     }
 
@@ -265,23 +283,30 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         list.setDone(data.row, data.amount, data.preCraft);
-        this.listService.update(list.$key, list).map(() => list)
-            .do(l => {
-                if (l.ephemeral && l.isComplete()) {
-                    this.listService.remove(list.$key).first().subscribe(() => {
-                        this.router.navigate(['recipes']);
-                    });
-                }
-            }).subscribe(() => {
-        });
+        // Wait just a bit for CD to make its changes before detaching it.
+        setTimeout(() => {
+            this.cd.detach();
+            this.listService.update(list.$key, list).map(() => list)
+                .do(l => {
+                    if (l.ephemeral && l.isComplete()) {
+                        this.listService.remove(list.$key).first().subscribe(() => {
+                            this.router.navigate(['recipes']);
+                        });
+                    }
+                }).subscribe(() => {
+                this.cd.reattach();
+            });
+        }, 10);
     }
 
     public forkList(list: List): void {
         const fork: List = list.clone();
+        this.cd.detach();
         // Update the forks count.
         this.listService.update(list.$key, list).first().subscribe();
         fork.authorId = this.user.uid;
         this.listService.add(fork).first().subscribe((id) => {
+            this.cd.reattach();
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
                 .subscribe(() => {
@@ -306,13 +331,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     }
                     this.set(list);
                 }));
-    }
-
-    public toggleZoneBreakdown(list: List): void {
-        if (this.zoneBreakdown === undefined) {
-            this.zoneBreakdown = new ZoneBreakdown(list);
-        }
-        this.zoneBreakdownToggle = !this.zoneBreakdownToggle;
     }
 
     public toggleHideCompleted(): void {

@@ -16,6 +16,9 @@
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>
+        <button mat-icon-button [disabled]="helpService.currentHelp === undefined" (click)="openHelp()">
+            <mat-icon>help</mat-icon>
+        </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
     <mat-card class="announcement" *ngIf="showAnnouncement()">
@@ -78,6 +81,10 @@
                 <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>alarm</mat-icon>
                     <span matLine>{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null">
+                    <mat-icon matListIcon>translate</mat-icon>
+                    <span matLine>{{'MACRO_TRANSLATION.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>

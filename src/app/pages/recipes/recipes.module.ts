@@ -21,6 +21,7 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {BulkAdditionPopupComponent} from './bulk-addition-popup/bulk-addition-popup.component';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import { RecipesHelpComponent } from './recipes-help/recipes-help.component';
 
 const routes: Routes = [
     {
@@ -58,9 +59,11 @@ const routes: Routes = [
     declarations: [
         RecipesComponent,
         BulkAdditionPopupComponent,
+        RecipesHelpComponent,
     ],
     entryComponents: [
         BulkAdditionPopupComponent,
+        RecipesHelpComponent,
     ]
 })
 export class RecipesModule {
