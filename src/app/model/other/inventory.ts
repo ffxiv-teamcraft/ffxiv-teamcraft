@@ -14,7 +14,7 @@ export class Inventory {
         if (this.isFull()) {
             return;
         }
-        const stackSize = 99;
+        const stackSize = 999;
         const stacks = Math.ceil(amount / stackSize);
         for (let stack = 1; stack <= stacks; stack++) {
             let stackAmount = stackSize;
