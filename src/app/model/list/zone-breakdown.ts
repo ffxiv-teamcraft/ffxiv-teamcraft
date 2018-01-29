@@ -7,7 +7,7 @@ export class ZoneBreakdown {
 
     constructor(rows: ListRow[]) {
         rows.forEach(row => {
-            if (row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
+            if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
                 row.gatheredBy.nodes.forEach(node => {
                     this.addToBreakdown(node.zoneid, row);
                 });
