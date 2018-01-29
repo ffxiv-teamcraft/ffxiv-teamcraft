@@ -104,11 +104,15 @@
                 {{locale | uppercase}}
             </button>
             <div class="spacer"></div>
-            <button mat-raised-button color="primary" (click)="showGiveway()" *ngIf="givewayRunning" class="giveway-button">{{"GIVEWAY.Title" |
-                translate}}
-            </button>
-            <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" color="warn"
-               class="report-bug">Report a bug</a>
+            <div class="sidebar-bottom">
+                <button  class="bottom-button"mat-raised-button color="primary" (click)="showGiveway()" *ngIf="givewayRunning">
+                    {{"GIVEWAY.Title" |
+                    translate}}
+                </button>
+                <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" class="bottom-button"
+                   color="warn">Report
+                    a bug</a>
+            </div>
         </mat-sidenav>
         <div class="content">
             <div class="content-middle">

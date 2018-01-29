@@ -52,11 +52,14 @@
                     }
                 }
             }
-            .giveway-button {
-                margin-bottom: 10px;
-            }
-            .report-bug {
-                margin-bottom: 10px;
+            .sidebar-bottom {
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                .bottom-button {
+                    flex: 1 1 auto;
+                    margin-bottom: 5px;
+                }
             }
         }
         .content {
