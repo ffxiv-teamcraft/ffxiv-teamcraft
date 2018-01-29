@@ -23,12 +23,12 @@ export class BulkRegeneratePopupComponent extends ComponentWithSubscriptions imp
 
     ngOnInit(): void {
         let done = 0;
-        const regenerations: Observable<List>[] = this.data.map(list => this.listManager.upgradeList(list));
+        const regenerations: Observable<List>[] = this.data.map(list => {
+            return this.listManager.upgradeList(list)
+                .switchMap((l: List) => this.listService.set(l.$key, l));
+        });
         this.subscriptions.push(
             Observable.concat(...regenerations)
-                .switchMap((list: List) => {
-                    return this.listService.update(list.$key, list).first();
-                })
                 .do(() => {
                     done++;
                     this.progress = Math.ceil(100 * done / this.data.length);
