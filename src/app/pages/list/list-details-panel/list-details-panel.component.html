@@ -6,8 +6,8 @@
     <mat-list dense *ngIf="!showTier && !zoneBreakdown">
         <div *ngFor="let row of data; let i = index">
             <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
-                      [item]="row" [list]="list" [recipe]="recipe"
-                      [even]="i%2!=0" [preCraft]="preCraft"></app-item>
+                      [item]="row" [list]="list" [recipe]="row.craftedBy !== undefined"
+                      [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined"></app-item>
         </div>
     </mat-list>
     <!--ZONE BREAKDOWN LIST-->
@@ -23,7 +23,9 @@
                               *ngIf="!item.hidden"
                               [item]="item"
                               [showTimer]="true"
-                              [even]="i%2!=0"></app-item>
+                              [even]="i%2!=0"
+                              [recipe]="item.craftedBy !== undefined"
+                              [preCraft]="item.craftedBy !== undefined"></app-item>
                 </div>
             </div>
         </div>
@@ -36,8 +38,8 @@
                 <mat-divider></mat-divider>
                 <div *ngFor="let row of tier; let i = index">
                     <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
-                              [item]="row" [list]="list" [recipe]="recipe"
-                              [even]="i%2!=0" [preCraft]="preCraft"></app-item>
+                              [item]="row" [list]="list" [recipe]="row.craftedBy !== undefined"
+                              [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined"></app-item>
                 </div>
             </div>
         </mat-list>
