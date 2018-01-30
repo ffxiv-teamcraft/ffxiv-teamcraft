@@ -307,7 +307,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     getAmount(): number {
-        return this.recipe ? this.item.amount : this.item.amount_needed;
+        return this.item.craftedBy !== undefined ? this.item.amount : this.item.amount_needed;
     }
 
     public updateMasterBooks(): void {
