@@ -280,4 +280,4 @@ export const craftingActions = {
     '100280': {'en': 'Specialty: Reflect', 'ja': 'マイスターの切札：真価', 'de': 'Ass des Spezialisten: Einkehr', 'fr': 'Atout : Sérénité'},
     '100281': {'en': 'Specialty: Reflect', 'ja': 'マイスターの切札：真価', 'de': 'Ass des Spezialisten: Einkehr', 'fr': 'Atout : Sérénité'},
     '100282': {'en': 'Specialty: Reflect', 'ja': 'マイスターの切札：真価', 'de': 'Ass des Spezialisten: Einkehr', 'fr': 'Atout : Sérénité'}
-}
+};

@@ -87,5 +87,10 @@ export const weathers = {
     87: {'en': 'Quicklevin', 'ja': '迅雷', 'de': 'Blitzsturm', 'fr': 'Vif-orage'},
     88: {'en': 'Thunder', 'ja': '雷', 'de': 'Gewittrig', 'fr': 'Orages'},
     89: {'en': 'Dimensional Disruption', 'ja': '次元', 'de': 'Dimensionsspaltend', 'fr': 'Perturbation dimensionnelle'},
-    90: {'en': 'Fair Skies', 'ja': '晴れ', 'de': 'Heiter', 'fr': 'Clair'}
+    90: {'en': 'Fair Skies', 'ja': '晴れ', 'de': 'Heiter', 'fr': 'Clair'},
+    91: {'en': 'Clear Skies', 'ja': '快晴', 'de': 'Klar', 'fr': 'Dégagé'},
+    92: {'en': 'White Cyclone', 'ja': '白嵐', 'de': 'Weißer Zyklon', 'fr': 'Tempête blanche'},
+    93: {'en': 'White Cyclone', 'ja': '白嵐', 'de': 'Weißer Zyklon', 'fr': 'Tempête blanche'},
+    94: {'en': 'White Cyclone', 'ja': '白嵐', 'de': 'Weißer Zyklon', 'fr': 'Tempête blanche'},
+    96: {'en': 'White Cyclone', 'ja': '白嵐', 'de': 'Weißer Zyklon', 'fr': 'Tempête blanche'}
 };

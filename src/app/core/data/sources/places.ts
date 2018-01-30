@@ -605,7 +605,12 @@ export const places = {
         'de': 'Zelle von Bergand dem Tollpatsch',
         'fr': 'Cachot de Bergand le benêt'
     },
-    531: {'en': 'Tatabi Tenfingers\' Cell', 'ja': '十本指のタタビの独房', 'de': 'Zelle von Strauchritter Tatabi', 'fr': 'Cachot de Tatabi Dixdoigts'},
+    531: {
+        'en': 'Tatabi Tenfingers\' Cell',
+        'ja': '十本指のタタビの独房',
+        'de': 'Zelle von Strauchritter Tatabi',
+        'fr': 'Cachot de Tatabi Dixdoigts'
+    },
     532: {'en': 'Joukil Halfmoor\'s Cell', 'ja': '沼人ユーキルの独房', 'de': 'Zelle von Joukil Halbmoor', 'fr': 'Cachot de Joukil le fangeux'},
     533: {
         'en': 'Lady Cliaie d\'Arlendre\'s Cell',
@@ -1388,7 +1393,12 @@ export const places = {
     1100: {'en': 'Private Cottage - Mist', 'ja': 'ミスト・ヴィレッジ：コテージ', 'de': 'Privathütte (Dorf des Nebels)', 'fr': 'Maisonnette - Brumée'},
     1101: {'en': 'Private House - Mist', 'ja': 'ミスト・ヴィレッジ：ハウス', 'de': 'Privathaus (Dorf des Nebels)', 'fr': 'Pavillon - Brumée'},
     1102: {'en': 'Private Mansion - Mist', 'ja': 'ミスト・ヴィレッジ：レジデンス', 'de': 'Privatresidenz (Dorf des Nebels)', 'fr': 'Villa - Brumée'},
-    1103: {'en': 'Private Cottage - The Goblet', 'ja': 'ゴブレットビュート：コテージ', 'de': 'Privathütte (Kelchkuppe)', 'fr': 'Maisonnette - La Coupe'},
+    1103: {
+        'en': 'Private Cottage - The Goblet',
+        'ja': 'ゴブレットビュート：コテージ',
+        'de': 'Privathütte (Kelchkuppe)',
+        'fr': 'Maisonnette - La Coupe'
+    },
     1104: {'en': 'Private House - The Goblet', 'ja': 'ゴブレットビュート：ハウス', 'de': 'Privathaus (Kelchkuppe)', 'fr': 'Pavillon - La Coupe'},
     1105: {'en': 'Private Mansion - The Goblet', 'ja': 'ゴブレットビュート：レジデンス', 'de': 'Privatresidenz (Kelchkuppe)', 'fr': 'Villa - La Coupe'},
     1106: {
@@ -1415,6 +1425,36 @@ export const places = {
     1112: {'en': 'Ground Floor', 'ja': '1F', 'de': 'Erdgeschoss', 'fr': 'Rez-de-chaussée'},
     1113: {'en': 'Second Floor', 'ja': '2F', 'de': 'Erster Stock', 'fr': '1er étage'},
     1114: {'en': 'Cellarage', 'ja': 'B1F', 'de': 'Keller', 'fr': 'Cave'},
+    1115: {'en': 1, 'ja': 1, 'de': 1, 'fr': 1},
+    1116: {'en': 2, 'ja': 2, 'de': 2, 'fr': 2},
+    1117: {'en': 3, 'ja': 3, 'de': 3, 'fr': 3},
+    1118: {'en': 4, 'ja': 4, 'de': 4, 'fr': 4},
+    1119: {'en': 5, 'ja': 5, 'de': 5, 'fr': 5},
+    1120: {'en': 6, 'ja': 6, 'de': 6, 'fr': 6},
+    1121: {'en': 7, 'ja': 7, 'de': 7, 'fr': 7},
+    1122: {'en': 8, 'ja': 8, 'de': 8, 'fr': 8},
+    1123: {'en': 9, 'ja': 9, 'de': 9, 'fr': 9},
+    1124: {'en': 10, 'ja': 10, 'de': 10, 'fr': 10},
+    1125: {'en': 11, 'ja': 11, 'de': 11, 'fr': 11},
+    1126: {'en': 12, 'ja': 12, 'de': 12, 'fr': 12},
+    1127: {'en': 13, 'ja': 13, 'de': 13, 'fr': 13},
+    1128: {'en': 14, 'ja': 14, 'de': 14, 'fr': 14},
+    1129: {'en': 15, 'ja': 15, 'de': 15, 'fr': 15},
+    1130: {'en': 16, 'ja': 16, 'de': 16, 'fr': 16},
+    1131: {'en': 17, 'ja': 17, 'de': 17, 'fr': 17},
+    1132: {'en': 18, 'ja': 18, 'de': 18, 'fr': 18},
+    1133: {'en': 19, 'ja': 19, 'de': 19, 'fr': 19},
+    1134: {'en': 20, 'ja': 20, 'de': 20, 'fr': 20},
+    1135: {'en': 21, 'ja': 21, 'de': 21, 'fr': 21},
+    1136: {'en': 22, 'ja': 22, 'de': 22, 'fr': 22},
+    1137: {'en': 23, 'ja': 23, 'de': 23, 'fr': 23},
+    1138: {'en': 24, 'ja': 24, 'de': 24, 'fr': 24},
+    1139: {'en': 25, 'ja': 25, 'de': 25, 'fr': 25},
+    1140: {'en': 26, 'ja': 26, 'de': 26, 'fr': 26},
+    1141: {'en': 27, 'ja': 27, 'de': 27, 'fr': 27},
+    1142: {'en': 28, 'ja': 28, 'de': 28, 'fr': 28},
+    1143: {'en': 29, 'ja': 29, 'de': 29, 'fr': 29},
+    1144: {'en': 30, 'ja': 30, 'de': 30, 'fr': 30},
     1145: {
         'en': 'Estate Hall (Free Company)',
         'ja': 'ハウス（フリーカンパニー）',
@@ -1432,12 +1472,17 @@ export const places = {
     1154: {
         'en': 'Residential Area Guide',
         'ja': '案内人：ゴブレットビュート',
-        'de': 'Wohngebiet-Führer (nach Ul\'dah - Thal-Kreuzgang)',
+        'de': 'Wohngebietführer (nach Ul\'dah - Thal-Kreuzgang)',
         'fr': 'Garde de La Coupe'
     },
     1155: {'en': 'Mist South', 'ja': 'ミスト・ヴィレッジ南', 'de': 'Süd-Nebeldorf', 'fr': 'Brumée sud'},
     1156: {'en': 'Mist South (Docks)', 'ja': 'ミスト・ヴィレッジ南（船着場）', 'de': 'Süd-Nebeldorf - Fähranleger', 'fr': 'Brumée sud (quai)'},
-    1157: {'en': 'Private Chambers - Mist', 'ja': 'ミスト・ヴィレッジ：プライベートルーム', 'de': 'Nebeldorf - Zimmer', 'fr': 'Chambre individuelle - Brumée'},
+    1157: {
+        'en': 'Private Chambers - Mist',
+        'ja': 'ミスト・ヴィレッジ：プライベートルーム',
+        'de': 'Nebeldorf - Zimmer',
+        'fr': 'Chambre individuelle - Brumée'
+    },
     1158: {
         'en': 'Private Chambers - The Goblet',
         'ja': 'ゴブレットビュート：プライベートルーム',
@@ -1456,7 +1501,12 @@ export const places = {
     1163: {'en': 'The Goblet', 'ja': 'ゴブレットビュート', 'de': 'Kelchkuppe', 'fr': 'La Coupe'},
     1164: {'en': 'The Goblet Subdivision', 'ja': '[拡張街]ゴブレットビュート', 'de': '[Erweiterung] Kelchkuppe', 'fr': 'La Coupe [Annexe]'},
     1165: {'en': 'The Lavender Beds', 'ja': 'ラベンダーベッド', 'de': 'Lavendelbeete', 'fr': 'Lavandière'},
-    1166: {'en': 'The Lavender Beds Subdivision', 'ja': '[拡張街]ラベンダーベッド', 'de': '[Erweiterung] Lavendelbeete', 'fr': 'Lavandière [Annexe]'},
+    1166: {
+        'en': 'The Lavender Beds Subdivision',
+        'ja': '[拡張街]ラベンダーベッド',
+        'de': '[Erweiterung] Lavendelbeete',
+        'fr': 'Lavandière [Annexe]'
+    },
     1167: {'en': 'Mist Beach Subdivision', 'ja': '[拡張街]ミストビーチ', 'de': '[Erweiterung] Strand', 'fr': 'L\'Azuréenne [Annexe]'},
     1168: {
         'en': 'Mistgate Square Subdivision',
@@ -1616,7 +1666,12 @@ export const places = {
         'de': '[Erweiterung] Kelchkuppe Südost',
         'fr': 'La Coupe sud-est [Annexe]'
     },
-    1196: {'en': 'Goblet South Subdivision', 'ja': '[拡張街]ゴブレットビュート南', 'de': '[Erweiterung] Kelchkuppe Süd', 'fr': 'La Coupe sud [Annexe]'},
+    1196: {
+        'en': 'Goblet South Subdivision',
+        'ja': '[拡張街]ゴブレットビュート南',
+        'de': '[Erweiterung] Kelchkuppe Süd',
+        'fr': 'La Coupe sud [Annexe]'
+    },
     1197: {
         'en': 'Goblet Southwest Subdivision',
         'ja': '[拡張街]ゴブレットビュート南西',
@@ -1755,6 +1810,7 @@ export const places = {
     1297: {'en': 'Khloe Aliapoh', 'ja': 'クロ・アリアポー', 'de': 'Khloe Aliapoh', 'fr': 'Khloe Aliapoh'},
     1298: {'en': 'Custom Deliveries', 'ja': 'お得意様取引', 'de': 'Wunschlieferungen', 'fr': 'Commandes spéciales'},
     1299: {'en': 'Trader', 'ja': 'トレーダー', 'de': 'Händler', 'fr': 'Échangeur'},
+    1300: {'en': 'Island Aetheryte', 'ja': '島内エーテライト', 'de': 'Insel-Ätheryt', 'fr': 'Éthérite insulaire'},
     1301: {'en': 'Dalamud\'s Shadow', 'ja': 'メテオの陰地', 'de': 'Meteoritenkrater', 'fr': 'Ombrage du Météore'},
     1302: {'en': 'The Outer Coil', 'ja': 'バインディングコイル', 'de': 'Äußere Schächte', 'fr': 'L\'Écheveau'},
     1303: {'en': 'Central Decks', 'ja': 'ラグナロク級三番艦：艦体中央部', 'de': 'Zentrale Decks', 'fr': 'Secteur central RCI-03'},
@@ -1811,7 +1867,12 @@ export const places = {
         'de': 'Brüllvolx\' Langrast',
         'fr': 'Bivouac de Brayflox (brutal)'
     },
-    1352: {'en': 'Residential Area Guide', 'ja': '案内人：ザル回廊', 'de': 'Wohngebiet-Führer (zur Kelchkuppe)', 'fr': 'Garde du faubourg de Thal'},
+    1352: {
+        'en': 'Residential Area Guide',
+        'ja': '案内人：ザル回廊',
+        'de': 'Wohngebietführer (zur Kelchkuppe)',
+        'fr': 'Garde du faubourg de Thal'
+    },
     1353: {'en': 'Incubation Bay', 'ja': '培養層', 'de': 'Inkubatorstation', 'fr': 'Zone d\'incubation'},
     1354: {'en': 'Monitoring Station ', 'ja': '管理層', 'de': 'Monitorstation', 'fr': 'Zone de contrôle'},
     1355: {'en': 'Main Storage Vault', 'ja': '主格納庫', 'de': 'Hauptvorratskammer', 'fr': 'Fenil'},
@@ -1866,8 +1927,12 @@ export const places = {
     1389: {'en': 'The Sultana\'s Lap', 'ja': '隠れ桟橋', 'de': 'Seemanns-Tor', 'fr': 'Le Giron de la Sultane'},
     1390: {'en': 'The Chrysalis', 'ja': '戒律の殻', 'de': 'Chrysalis', 'fr': 'La Chrysalide'},
     1391: {'en': 'The Ivory Chapel', 'ja': '久遠の聖堂', 'de': 'Elfenbein-Kapelle', 'fr': 'Chapelle d\'ivoire'},
-    1392: {'en': 'Rowena\'s House of Splendors', 'ja': 'ロウェナ記念会館', 'de': 'Rowenas Haus der Wunder',
-        'fr': 'Maison des splendeurs de Rowena'},
+    1392: {
+        'en': 'Rowena\'s House of Splendors',
+        'ja': 'ロウェナ記念会館',
+        'de': 'Rowenas Haus der Wunder',
+        'fr': 'Maison des splendeurs de Rowena'
+    },
     1393: {'en': 'The Diamond Forge', 'ja': '工房「ダイヤモンドフォージ」', 'de': 'Die Diamantschmiede', 'fr': 'La Forge de diamant'},
     1394: {'en': 'Corruption', 'ja': '異端の隧道', 'de': 'Häretiker-Steig', 'fr': 'Tunnel de l\'hérésie'},
     1395: {'en': 'Silence', 'ja': '静かなる氷洞', 'de': 'Stille Firnhöhle', 'fr': 'Baume de la Sérénité'},
@@ -1973,6 +2038,36 @@ export const places = {
         'de': 'Schwestern von Edelweiß\r\n(Schurkengilde)',
         'fr': 'Société de négoce de l\'Edelweiss\r\nGuilde des surineurs'
     },
+    1454: {'en': 31, 'ja': 31, 'de': 31, 'fr': 31},
+    1455: {'en': 32, 'ja': 32, 'de': 32, 'fr': 32},
+    1456: {'en': 33, 'ja': 33, 'de': 33, 'fr': 33},
+    1457: {'en': 34, 'ja': 34, 'de': 34, 'fr': 34},
+    1458: {'en': 35, 'ja': 35, 'de': 35, 'fr': 35},
+    1459: {'en': 36, 'ja': 36, 'de': 36, 'fr': 36},
+    1460: {'en': 37, 'ja': 37, 'de': 37, 'fr': 37},
+    1461: {'en': 38, 'ja': 38, 'de': 38, 'fr': 38},
+    1462: {'en': 39, 'ja': 39, 'de': 39, 'fr': 39},
+    1463: {'en': 40, 'ja': 40, 'de': 40, 'fr': 40},
+    1464: {'en': 41, 'ja': 41, 'de': 41, 'fr': 41},
+    1465: {'en': 42, 'ja': 42, 'de': 42, 'fr': 42},
+    1466: {'en': 43, 'ja': 43, 'de': 43, 'fr': 43},
+    1467: {'en': 44, 'ja': 44, 'de': 44, 'fr': 44},
+    1468: {'en': 45, 'ja': 45, 'de': 45, 'fr': 45},
+    1469: {'en': 46, 'ja': 46, 'de': 46, 'fr': 46},
+    1470: {'en': 47, 'ja': 47, 'de': 47, 'fr': 47},
+    1471: {'en': 48, 'ja': 48, 'de': 48, 'fr': 48},
+    1472: {'en': 49, 'ja': 49, 'de': 49, 'fr': 49},
+    1473: {'en': 50, 'ja': 50, 'de': 50, 'fr': 50},
+    1474: {'en': 51, 'ja': 51, 'de': 51, 'fr': 51},
+    1475: {'en': 52, 'ja': 52, 'de': 52, 'fr': 52},
+    1476: {'en': 53, 'ja': 53, 'de': 53, 'fr': 53},
+    1477: {'en': 54, 'ja': 54, 'de': 54, 'fr': 54},
+    1478: {'en': 55, 'ja': 55, 'de': 55, 'fr': 55},
+    1479: {'en': 56, 'ja': 56, 'de': 56, 'fr': 56},
+    1480: {'en': 57, 'ja': 57, 'de': 57, 'fr': 57},
+    1481: {'en': 58, 'ja': 58, 'de': 58, 'fr': 58},
+    1482: {'en': 59, 'ja': 59, 'de': 59, 'fr': 59},
+    1483: {'en': 60, 'ja': 60, 'de': 60, 'fr': 60},
     1484: {'en': 'The Gold Saucer', 'ja': 'ゴールドソーサー', 'de': 'Gold Saucer', 'fr': 'Gold Saucer'},
     1485: {'en': 'Entrance Square', 'ja': 'エントランススクウェア', 'de': 'Foyer', 'fr': 'Hall d\'accueil'},
     1486: {
@@ -2317,6 +2412,12 @@ export const places = {
         'de': '[Erweiterung] Lavendelbeet-Pier',
         'fr': 'Quai de Lavandière [Annexe]'
     },
+    1759: {
+        'en': 'The Binding Coil of Bahamut',
+        'ja': '大迷宮バハムート',
+        'de': 'Die Verschlungenen Schatten von Bahamut',
+        'fr': 'Abîme infini de Bahamut'
+    },
     1760: {'en': 'The Queen\'s Room', 'ja': '蜘蛛女の狩場', 'de': 'Spinnenfalle', 'fr': 'Domaine de la Tisseuse'},
     1761: {'en': 'Cessair Lawns', 'ja': 'クェーサル公園', 'de': 'Cessair-Garten', 'fr': 'Promenade de Cessair'},
     1762: {'en': 'Shatotto Memorial', 'ja': 'シャトト記念広場', 'de': 'Shatotto-Platz', 'fr': 'Mémorial de Shatotto'},
@@ -2352,7 +2453,12 @@ export const places = {
     1792: {'en': 'Xelphatol', 'ja': 'ゼルファトル', 'de': 'Xelphatol', 'fr': 'Xelphatol'},
     1793: {'en': 'The Palace of the Dead', 'ja': '死者の宮殿', 'de': 'Palast der Toten', 'fr': 'Palais des morts'},
     1794: {'en': 'Dueling Circle', 'ja': '個人演習場', 'de': 'Duellierplatz', 'fr': 'Ponton d\'entraînement'},
-    1795: {'en': 'Rare Tomes Desk', 'ja': '稀覯書庫受付', 'de': 'Ausleihe seltener Schriften', 'fr': 'Accueil du bâtiment des manuscrits rares'},
+    1795: {
+        'en': 'Rare Tomes Desk',
+        'ja': '稀覯書庫受付',
+        'de': 'Ausleihe seltener Schriften',
+        'fr': 'Accueil du bâtiment des manuscrits rares'
+    },
     1796: {'en': 'School of Nihility', 'ja': '断想閲覧室', 'de': 'Lesesaal der Distraktion', 'fr': 'Salle de lecture des divagations'},
     1797: {'en': 'The Last Lamp', 'ja': '司書長室', 'de': 'Kammer des Bibliotheksvorstehers', 'fr': 'Chambre du Maître des livres'},
     1798: {'en': 'Rare Tomes Room', 'ja': '思想稀覯書庫', 'de': 'Abteilung für seltene Schriften', 'fr': 'Dôme des manuscrits rares'},
@@ -2509,7 +2615,12 @@ export const places = {
         'de': '[Erweiterung] Nord-Shirogane',
         'fr': 'Shirogane nord [Annexe]'
     },
-    1917: {'en': 'Eastern Shirogane Subdivision', 'ja': '[拡張街]シロガネ東', 'de': '[Erweiterung] Ost-Shirogane', 'fr': 'Shirogane est [Annexe]'},
+    1917: {
+        'en': 'Eastern Shirogane Subdivision',
+        'ja': '[拡張街]シロガネ東',
+        'de': '[Erweiterung] Ost-Shirogane',
+        'fr': 'Shirogane est [Annexe]'
+    },
     1918: {
         'en': 'Akanegumo Bridge Subdivision',
         'ja': '[拡張街]茜雲桟橋(居住区担当官)',
@@ -2535,7 +2646,12 @@ export const places = {
         'de': '[Erweiterung] Südwest-Shirogane',
         'fr': 'Shirogane sud-ouest [Annexe]'
     },
-    1923: {'en': 'Southern Shirogane Subdivision', 'ja': '[拡張街]シロガネ南', 'de': '[Erweiterung] Süd-Shirogane', 'fr': 'Shirogane sud [Annexe]'},
+    1923: {
+        'en': 'Southern Shirogane Subdivision',
+        'ja': '[拡張街]シロガネ南',
+        'de': '[Erweiterung] Süd-Shirogane',
+        'fr': 'Shirogane sud [Annexe]'
+    },
     1924: {'en': 'The Temple of the Fist', 'ja': '星導山寺院　　　コンテンツ名は「壊神修行 星導山寺院」', 'de': 'Tempel der Faust', 'fr': 'Temple du Poing'},
     1925: {'en': 'Rhalgr\'s Shoulder', 'ja': 'ラールガーの肩', 'de': 'Rhalgrs Schulter', 'fr': 'Épaule de Rhalgr'},
     1926: {'en': 'The Way of Enlightenment', 'ja': '星導の参道', 'de': 'Pfad der Erleuchtung', 'fr': 'Voie de l\'Illumination'},
@@ -2629,8 +2745,12 @@ export const places = {
     },
     1985: {'en': 'The Third Armory', 'ja': '第III兵器庫', 'de': 'Dritte Waffenkammer', 'fr': 'Arsenal A3'},
     1986: {'en': 'Training Grounds', 'ja': '練兵場', 'de': 'Exerzierplatz', 'fr': 'Terrain de manœuvres'},
-    1987: {'en': 'Hall of the Scarlet Swallow', 'ja': '赤燕の間', 'de': 'Halle der Blutroten Schwalbe',
-        'fr': 'Salle de l\'Hirondelle écarlate'},
+    1987: {
+        'en': 'Hall of the Scarlet Swallow',
+        'ja': '赤燕の間',
+        'de': 'Halle der Blutroten Schwalbe',
+        'fr': 'Salle de l\'Hirondelle écarlate'
+    },
     1988: {'en': 'Ni-no-Kuruwa', 'ja': '二の曲輪', 'de': 'Ninokuruwa', 'fr': 'Ninokuruwa'},
     1989: {'en': 'Ichi-no-Kuruwa', 'ja': '一の曲輪', 'de': 'Ichinokuruwa', 'fr': 'Ichinokuruwa'},
     1990: {'en': 'Tenshu', 'ja': 'ドマ城天守', 'de': 'Tenshu', 'fr': 'Donjon du Château de Doma'},
@@ -3005,11 +3125,26 @@ export const places = {
     2332: {'en': 'Edyn', 'ja': 'エディン小広場', 'de': 'Edyn', 'fr': 'Édyn'},
     2333: {'en': 'West Colonnade', 'ja': 'ウェスト・コロネード', 'de': 'Westlicher Säulengang', 'fr': 'Colonnade ouest'},
     2334: {'en': 'East Colonnade', 'ja': 'イースト・コロネード', 'de': 'Östlicher Säulengang', 'fr': 'Colonnade est'},
-    2335: {'en': 'Seat of the Lord Commander', 'ja': '神殿騎士団総長室', 'de': 'Kommandantur des Großmeisters', 'fr': 'Siège du capitaine général'},
+    2335: {
+        'en': 'Seat of the Lord Commander',
+        'ja': '神殿騎士団総長室',
+        'de': 'Kommandantur des Großmeisters',
+        'fr': 'Siège du capitaine général'
+    },
     2336: {'en': 'Ruling Chamber', 'ja': '決闘裁判場', 'de': 'Gerichtssaal', 'fr': 'Salle des sentences'},
-    2337: {'en': 'Saint Endalim\'s Scholasticate', 'ja': '聖アンダリム神学院', 'de': 'Sankt Endalim-Theologikum', 'fr': 'Scolasticat Saint-Endalim'},
+    2337: {
+        'en': 'Saint Endalim\'s Scholasticate',
+        'ja': '聖アンダリム神学院',
+        'de': 'Sankt Endalim-Theologikum',
+        'fr': 'Scolasticat Saint-Endalim'
+    },
     2338: {'en': 'The Lightfeather Proving Grounds', 'ja': 'ライトフェザー闘技場', 'de': 'Leichtfeder-Arena', 'fr': 'Carrière de Lesteplume'},
-    2339: {'en': 'The First Altar of Djanan Qhat', 'ja': 'ジャナン・カット地下祭壇', 'de': 'Altar von Djanan Qhat', 'fr': 'Grand autel de Djanan Qhat'},
+    2339: {
+        'en': 'The First Altar of Djanan Qhat',
+        'ja': 'ジャナン・カット地下祭壇',
+        'de': 'Altar von Djanan Qhat',
+        'fr': 'Grand autel de Djanan Qhat'
+    },
     2340: {'en': 'The Lost Canals of Uznair', 'ja': 'ウズネアカナル', 'de': 'Kanäle von Uznair', 'fr': 'Canaux perdus d\'Uznair'},
     2341: {'en': 'Shirogane', 'ja': 'シロガネ', 'de': 'Shirogane', 'fr': 'Shirogane'},
     2342: {'en': 'Shirogane Subdivision', 'ja': '[拡張街]シロガネ', 'de': '[Erweiterung] Shirogane', 'fr': 'Shirogane [Annexe]'},
@@ -3024,6 +3159,9 @@ export const places = {
     2351: {'en': 'South Raven Tower', 'ja': 'サウス・レイヴンタワー', 'de': 'Rabenturm Süd', 'fr': 'Tour sud des Corbeaux'},
     2352: {'en': 'The Generator', 'ja': 'ジェネレーターベース', 'de': 'Generator', 'fr': 'Générateur d\'énergie'},
     2353: {'en': 'Airship Landing', 'ja': 'クガネ・ランディング', 'de': 'Luftschiff-Landeplatz', 'fr': 'Aérodrome de Kugane'},
+    2354: {'en': 'The Jade Stoa', 'ja': '白帝の竹林', 'de': 'Jadelichtung', 'fr': 'Clairière de Jade'},
+    2355: {'en': 'Point IV', 'ja': 'ポイントIV', 'de': 'Testebene IV', 'fr': 'Quatrième épreuve'},
+    2356: {'en': 'Valentione\'s Ceremony', 'ja': 'ヴァレンティオンセレモニー', 'de': 'Valentionzeremonie', 'fr': 'Cérémonie de la Valention'},
     2357: {'en': 'Deltascape V1.0', 'ja': '被検世界「デルタ」V1.0', 'de': 'Deltametrie 1.0', 'fr': 'Deltastice v1.0'},
     2358: {'en': 'Deltascape V2.0', 'ja': '被検世界「デルタ」V2.0', 'de': 'Deltametrie 2.0', 'fr': 'Deltastice v2.0'},
     2359: {'en': 'Deltascape V3.0', 'ja': '被検世界「デルタ」V3.0', 'de': 'Deltametrie 3.0', 'fr': 'Deltastice v3.0'},
@@ -3060,6 +3198,28 @@ export const places = {
     2380: {'en': 'Palace Square', 'ja': '王宮前広場', 'de': 'Palasthof', 'fr': 'Place du palais'},
     2381: {'en': 'Lesalia Garden Ruins', 'ja': 'ルザリア円庭跡', 'de': 'Verfallene Gärten', 'fr': 'Jardins ravagés de Lesalia'},
     2382: {'en': 'Lesalia Temple Ruins', 'ja': 'ルザリア神殿跡', 'de': 'Tempelruine', 'fr': 'Ruines du temple de Lesalia'},
+    2383: {'en': 'Crystal Tower Training Grounds', 'ja': 'クリスタルタワー演習場', 'de': 'Kristallturm-Arena', 'fr': 'Arène de la Tour de Cristal'},
+    2384: {'en': 'Fang Cage', 'ja': 'ファングケージ', 'de': 'Käfig der Fänge', 'fr': 'Cage des Crocs'},
+    2385: {'en': 'Claw Cage', 'ja': 'クロウケージ', 'de': 'Käfig der Klauen', 'fr': 'Cage des Griffes'},
+    2386: {'en': 'Lid Crater', 'ja': '獄之蓋火口', 'de': 'Spundkrater', 'fr': 'Cratère du Couvercle'},
+    2387: {'en': 'Lava Pool', 'ja': '獄之蓋溶岩湖', 'de': 'Lavasee', 'fr': 'Étang de lave'},
+    2388: {'en': 'Demonsgate', 'ja': '鬼之門', 'de': 'Dämonentor', 'fr': 'Porte des Oni'},
+    2389: {'en': 'Lava Tube', 'ja': '獄之蓋溶岩洞', 'de': 'Lavagrotte', 'fr': 'Grotte de lave'},
+    2390: {'en': 'The Furnace', 'ja': '獄之釜', 'de': 'Höllenkessel', 'fr': 'Chaudron des enfers'},
+    2391: {'en': 'Reisen Temple Road', 'ja': '醴泉神社山道', 'de': 'Reisen-Schreinweg', 'fr': 'Chemin du sanctuaire Reisen'},
+    2392: {'en': 'Reisen Temple', 'ja': '醴泉神社境内', 'de': 'Reisen-Schrein', 'fr': 'Sanctuaire Reisen'},
+    2393: {'en': 'The Polished Shell', 'ja': '亀甲舞台', 'de': 'Schildpanzer', 'fr': 'Vénérable Carapace'},
+    2394: {
+        'en': 'The Fractal Continuum (Hard)',
+        'ja': 'フラクタル・コンティニアム (Hard)',
+        'de': 'Fraktal-Kontinuum (schwer)',
+        'fr': 'Le Continuum fractal (brutal)'
+    },
+    2395: {'en': 'Arsenal', 'ja': '兵器実演デッキ', 'de': 'Waffenkammer', 'fr': 'Arsenal'},
+    2396: {'en': 'Maintenance Deck', 'ja': '管理補修デッキ', 'de': 'Wartungsdeck', 'fr': 'Pont de maintenance'},
+    2397: {'en': 'Exhibit Level VIII', 'ja': '第VIII展示区', 'de': 'Ausstellungssektor VIII', 'fr': 'Secteur d\'exposition VIII'},
+    2398: {'en': 'Genesis Engine', 'ja': '起動試験室', 'de': 'Testkammer', 'fr': 'Salle d\'expérimentation'},
+    2399: {'en': 'Rear Complex', 'ja': '艦尾構造群', 'de': 'Heckbereich', 'fr': 'Groupe structural de la poupe'},
     2400: {'en': 'Gyr Abania', 'ja': 'ギラバニア', 'de': 'Gyr Abania', 'fr': 'Gyr Abania'},
     2401: {'en': 'Othard', 'ja': 'オサード', 'de': 'Othard', 'fr': 'Othard'},
     2402: {'en': 'Hingashi', 'ja': 'ひんがしの国', 'de': 'Hingashi', 'fr': 'Hingashi'},
@@ -3074,6 +3234,15 @@ export const places = {
     2411: {'en': 'The Azim Steppe', 'ja': 'アジムステップ', 'de': 'Azim-Steppe', 'fr': 'Steppe d\'Azim'},
     2412: {'en': 'Shirogane', 'ja': 'シロガネ', 'de': 'Shirogane', 'fr': 'Shirogane'},
     2413: {'en': 'Bokairo Inn', 'ja': '望海楼', 'de': 'Badehaus Bokairo', 'fr': 'Auberge du Bokairo'},
+    2432: {'en': 'The Hall of Congress', 'ja': '十二神大聖堂：特別式場', 'de': 'Festhalle', 'fr': 'Jardin d\'agrément du Sanctuaire des Douze'},
+    2433: {'en': 'Freight Car', 'ja': '貨車', 'de': 'Frachtwaggon', 'fr': 'Wagon de marchandises'},
+    2434: {
+        'en': 'The Phantom Train Freight Car',
+        'ja': '魔列車：貨車',
+        'de': 'Phantomzug-Frachtwaggon',
+        'fr': 'Wagon de marchandises du train fantôme'
+    },
+    2435: {'en': 'The Phantom Train', 'ja': '魔列車', 'de': 'Phantomzug', 'fr': 'Train fantôme'},
     2500: {'en': 'Hak Khaal', 'ja': 'ハク・カール', 'de': 'Hak Khaal', 'fr': 'Hak Khaal'},
     2501: {'en': 'Kugane Piers', 'ja': '波止場全体', 'de': 'Hafen Kugane', 'fr': 'Jetées de Kugane'},
     2502: {'en': 'Upper Mirage Creek', 'ja': 'ミラージュクリーク上流', 'de': 'Oberer Trugfluss', 'fr': 'Ruisseau aux Mirages (aval)'},
@@ -3087,7 +3256,12 @@ export const places = {
     2514: {'en': 'The Adventure', 'ja': 'アドヴェンチャー号周辺', 'de': 'Die Adventure', 'fr': 'L\'Aventure'},
     2515: {'en': 'Shisui of the Violet Tides', 'ja': '紫水宮周辺', 'de': 'Shisui-Palast', 'fr': 'Palais aux Marées violettes'},
     2516: {'en': 'The Kobayashi Maru', 'ja': '小林丸周辺', 'de': 'Die Kobayashi-maru', 'fr': 'Le Kobayashi Maru'},
-    2517: {'en': 'The One River Southwestern Riverbeds', 'ja': '無二江川底南西', 'de': 'Der Einzig (Südwest)', 'fr': 'Lit de la Muni (sud-ouest)'},
+    2517: {
+        'en': 'The One River Southwestern Riverbeds',
+        'ja': '無二江川底南西',
+        'de': 'Der Einzig (Südwest)',
+        'fr': 'Lit de la Muni (sud-ouest)'
+    },
     2518: {'en': 'The One River Southern Riverbeds', 'ja': '無二江川底南', 'de': 'Der Einzig (Süd)', 'fr': 'Lit de la Muni (sud)'},
     2519: {
         'en': 'Imperial Hypersonic Assault Craft L-XXIII',
@@ -3102,6 +3276,7 @@ export const places = {
     2524: {'en': 'Loch Seld Northwestern Lakebed', 'ja': 'ロッホ・セル湖底北西', 'de': 'Seldsee (Nordwest)', 'fr': 'Fond du lac Seld (nord-ouest)'},
     2525: {'en': 'Loch Seld Central Lakebed', 'ja': 'ロッホ・セル湖底中央', 'de': 'Seldsee (Mitte)', 'fr': 'Fond du lac Seld (centre)'},
     2526: {'en': 'Loch Seld Southeastern Lakebed', 'ja': 'ロッホ・セル湖底南東', 'de': 'Seldsee (Nordost)', 'fr': 'Fond du lac Seld (sud-est)'},
+    2550: {'en': 'Masked Rose', 'ja': 'ファッションチェック', 'de': 'Kleiderkritik', 'fr': 'Revue de mode'},
     2600: {'en': 'East End', 'ja': 'イーストエンド混交林', 'de': 'Ostend-Mischwald', 'fr': 'Confins est'},
     2601: {'en': 'Pike Falls', 'ja': 'パイクフォールズ', 'de': 'Pikensturz', 'fr': 'Chutes de la Pique'},
     2602: {'en': 'The Striped Hills', 'ja': 'ストライプヒルズ', 'de': 'Die Gestreiften Hügel', 'fr': 'Roches rayées'},
@@ -3224,6 +3399,14 @@ export const places = {
     2714: {'en': 'Chakra Falls', 'ja': 'チャクラ大滝', 'de': 'Chakra-Wasserfall', 'fr': 'Chutes du Chakra'},
     2715: {'en': 'Transparency', 'ja': '結晶化空間', 'de': 'Raum der Transparenz', 'fr': 'Transparence'},
     2716: {'en': 'Myth', 'ja': '神話空間', 'de': 'Mythos', 'fr': 'Mythe'},
+    2717: {'en': 'Sigmascape V1.0', 'ja': '被検世界「シグマ」V1.0', 'de': 'Sigmametrie 1.0', 'fr': 'Sigmastice v1.0'},
+    2718: {'en': 'Sigmascape V2.0', 'ja': '被検世界「シグマ」V2.0', 'de': 'Sigmametrie 2.0', 'fr': 'Sigmastice v2.0'},
+    2719: {'en': 'Sigmascape V3.0', 'ja': '被検世界「シグマ」V3.0', 'de': 'Sigmametrie 3.0', 'fr': 'Sigmastice v3.0'},
+    2720: {'en': 'Sigmascape V4.0', 'ja': '被検世界「シグマ」V4.0', 'de': 'Sigmametrie 4.0', 'fr': 'Sigmastice v4.0'},
+    2721: {'en': 'Phantom Forest', 'ja': '迷いの森', 'de': 'Phantomwald', 'fr': 'Forêt des illusions'},
+    2722: {'en': 'Mansion Cellar', 'ja': '屋敷の地下室', 'de': 'Herrenhauskeller', 'fr': 'Cave de la maison'},
+    2723: {'en': 'Lower Tower of Ruin', 'ja': '瓦礫の塔：中層', 'de': 'Unterer Turm des Ruins', 'fr': 'Tour de Kefka'},
+    2724: {'en': 'Upper Tower of Ruin ', 'ja': '瓦礫の塔：最上層', 'de': 'Oberer Turm des Ruins', 'fr': 'Sommet de la tour de Kefka'},
     2750: {'en': 'Rasen Kaikyo', 'ja': '螺旋海峡', 'de': 'Rasen Kaikyo', 'fr': 'Rasen Kaikyo'},
     2751: {'en': 'East Othard Coastline', 'ja': 'オサード小大陸東岸', 'de': 'Ostküste Othards', 'fr': 'Côte orientale d\'Othard'},
     2752: {'en': 'The Gensui Chain', 'ja': '玄水連山', 'de': 'Gensui-Gipfelkette', 'fr': 'Chaîne du Gensui'},
@@ -3331,6 +3514,9 @@ export const places = {
         'de': '[Erweiterung] Fähranleger - Akanegumo-Steg',
         'fr': 'Quai d\'Akanegumo [Annexe]'
     },
+    2847: {'en': 'Kienkan', 'ja': '帰燕館', 'de': 'Kienkan', 'fr': 'Kienkan'},
+    2848: {'en': 'Shazenkai', 'ja': '車前会所', 'de': 'Shazenkai', 'fr': 'Shazenkai'},
+    2849: {'en': 'Doman Enclave Aetheryte Plaza', 'ja': 'エーテライト・プラザ', 'de': 'Ätherytenplatz', 'fr': 'Place de l\'Éthérite'},
     2900: {'en': 'Pier #2', 'ja': '第二波止場', 'de': 'Pier 2', 'fr': 'Jetée n°2'},
     2901: {'en': 'Rakuza District', 'ja': '楽座街', 'de': 'Rakuza-Bezirk', 'fr': 'Quartier de Rakuza'},
     2902: {'en': 'The Short Pier', 'ja': '小波止場', 'de': 'Kleiner Pier', 'fr': 'Petite jetée'},
