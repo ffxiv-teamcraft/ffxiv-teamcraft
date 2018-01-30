@@ -102,7 +102,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, -recipe.amount)
             .subscribe(resultList => {
-                this.listService.update(key, resultList);
+                this.listService.set(key, resultList);
                 this.cd.reattach();
             }));
     }
@@ -112,7 +112,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         this.subscriptions.push(this.listManager
             .addToList(recipe.id, list, recipe.recipeId, MathTools.round(amount - recipe.amount))
             .subscribe(resultList => {
-                this.listService.update(key, resultList);
+                this.listService.set(key, resultList);
                 this.cd.reattach();
             }));
     }
