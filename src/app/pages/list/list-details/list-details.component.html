@@ -170,7 +170,7 @@
         </mat-expansion-panel>
 
         <app-list-details-panel *ngFor="let displayRow of listDisplay | async"
-                                [expanded]="listData?.isLarge()?accordionState[displayRow.title]:true"
+                                [expanded]="accordionState[displayRow.title]"
                                 [list]="listData"
                                 (update)="update()"
                                 (done)="setDone(listData, $event)"

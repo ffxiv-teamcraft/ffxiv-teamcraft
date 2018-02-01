@@ -73,13 +73,7 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     outdated = false;
 
-    accordionState: { [index: string]: boolean } = {
-        'Crystals': false,
-        'Gathering': false,
-        'Other': false,
-        'Pre_crafts': false,
-        'Items': true
-    };
+    accordionState: { [index: string]: boolean };
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 protected dialog: MatDialog, private userService: UserService,
@@ -148,6 +142,17 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
         this.triggerFilter();
     }
 
+    private initAccordion(list: List): void {
+        const listIsLarge = list.isLarge();
+        this.accordionState = {
+            'Crystals': !listIsLarge,
+            'Gathering': !listIsLarge,
+            'Other': !listIsLarge,
+            'Pre_crafts': !listIsLarge,
+            'Items': listIsLarge
+        };
+    }
+
     ngOnInit() {
         super.ngOnInit();
 
@@ -203,10 +208,17 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                             list.gathers = list.orderGatherings(this.data);
                             return list;
                         });
-                this.listDisplay = this.reload$.switchMap(() =>
-                    this.list.map((list: List) => {
-                        return this.layoutService.getDisplay(list);
-                    }));
+                this.listDisplay = this.reload$
+                    .switchMap(() =>
+                        this.list
+                            .do(list => {
+                                if (this.accordionState === undefined) {
+                                    this.initAccordion(list);
+                                }
+                            })
+                            .map((list: List) => {
+                                return this.layoutService.getDisplay(list);
+                            }));
             }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
