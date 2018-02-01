@@ -34,7 +34,7 @@
         </mat-grid-list>
     </mat-card>
     <mat-sidenav-container>
-        <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav>
+        <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile">
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
