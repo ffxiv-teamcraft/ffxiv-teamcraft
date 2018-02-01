@@ -153,7 +153,8 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel" [expanded]="listData?.isLarge()?accordionState['Crystals']:true"
+        <mat-expansion-panel class="panel"
+                             [expanded]="listData?.isLarge()&&accordionState !== undefined ? accordionState['Crystals']:true"
                              (opened)="accordionState['Crystals'] = true"
                              (closed)="accordionState['Crystals'] = false">
             <mat-expansion-panel-header>
@@ -170,7 +171,7 @@
         </mat-expansion-panel>
 
         <app-list-details-panel *ngFor="let displayRow of listDisplay | async"
-                                [expanded]="accordionState[displayRow.title]"
+                                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
                                 [list]="listData"
                                 (update)="update()"
                                 (done)="setDone(listData, $event)"

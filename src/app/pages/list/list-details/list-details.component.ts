@@ -73,7 +73,13 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     outdated = false;
 
-    accordionState: { [index: string]: boolean };
+    accordionState: { [index: string]: boolean } = {
+        'Crystals': true,
+        'Gathering': true,
+        'Other': true,
+        'Pre_crafts': true,
+        'Items': false
+    };
 
     constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
                 protected dialog: MatDialog, private userService: UserService,
