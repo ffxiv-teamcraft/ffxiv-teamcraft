@@ -20,7 +20,7 @@ export class LocalizedDataService {
     }
 
     public getItemIdsByName(name: string, language: Language): number[] {
-        const regex = new RegExp(`${name}`, 'gi');
+        const regex = new RegExp(`${name}`, 'i');
         const res = [];
         const keys = Object.keys(items);
         for (const key of keys) {
