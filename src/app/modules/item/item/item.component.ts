@@ -1,5 +1,13 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
     ViewChild
 } from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
@@ -28,6 +36,7 @@ import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {BellNodesService} from '../../../core/data/bell-nodes.service';
 
 @Component({
     selector: 'app-item',
@@ -232,7 +241,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private translator: TranslateService,
                 private alarmService: AlarmService,
                 public settings: SettingsService,
-                public cd: ChangeDetectorRef) {
+                private bellNodesService: BellNodesService) {
         super();
     }
 
@@ -298,8 +307,11 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     updateHasTimers(): void {
-        this.hasTimers = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
+        const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+        const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
+            .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
+        this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
     }
 
     openRequirementsPopup(): void {

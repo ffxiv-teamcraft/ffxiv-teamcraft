@@ -36,7 +36,7 @@
                 matTooltipPosition="above">
             <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
             <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-            {{(getTimer() | async)?.display}} <span>({{(getTimer() | async)?.slot}})</span>
+            {{(getTimer() | async)?.display}} <span *ngIf="(getTimer() | async)?.slot as slot">({{slot}})</span>
         </button>
     </div>
 
@@ -277,7 +277,7 @@
             <button mat-raised-button [color]="timerColor" (click)="toggleAlarm()">
                 <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
                 <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-                {{(getTimer() | async)?.display}} <span>({{(getTimer() | async)?.slot}})</span>
+                {{(getTimer() | async)?.display}} <span *ngIf="(getTimer() | async)?.slot as slot">({{slot}})</span>
             </button>
         </div>
 

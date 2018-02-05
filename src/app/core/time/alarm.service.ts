@@ -10,6 +10,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Observable} from 'rxjs/Observable';
 import {Timer} from 'app/core/time/timer';
 import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
+import {BellNodesService} from '../data/bell-nodes.service';
 
 @Injectable()
 export class AlarmService {
@@ -19,7 +20,8 @@ export class AlarmService {
     private _alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
-                private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog) {
+                private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
+                private bellNodesService: BellNodesService) {
         this.loadAlarms();
     }
 
@@ -87,6 +89,28 @@ export class AlarmService {
     private generateAlarms(item: ListRow): Alarm[] {
         const alarms: Alarm[] = [];
         if (item.gatheredBy === undefined) {
+            if (item.reducedFrom !== undefined) {
+                // If there's a way to get the item via reduction, use the item as base
+                const nodes = [].concat
+                    .apply([], item.reducedFrom.map(reduction => this.bellNodesService.getNodesByItemId(reduction)));
+
+                nodes.filter(node => node.time !== undefined)
+                    .forEach(node => {
+                        node.time.forEach(spawn => {
+                            alarms.push({
+                                spawn: spawn,
+                                duration: node.uptime / 60,
+                                itemId: node.itemId,
+                                icon: node.icon,
+                                slot: node.slot,
+                                areaId: node.areaid,
+                                coords: node.coords,
+                                zoneId: node.zoneid
+                            });
+                        });
+                    });
+                return alarms;
+            }
             return [];
         }
         item.gatheredBy.nodes.forEach(node => {
@@ -117,7 +141,6 @@ export class AlarmService {
             {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
             this.translator.instant('ALARM.See_on_map'),
             {duration: 5000})
-
             .onAction().subscribe(() => {
             this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
         });
