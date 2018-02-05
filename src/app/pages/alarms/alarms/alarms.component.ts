@@ -61,7 +61,8 @@ export class AlarmsComponent {
                             slot: node.slot,
                             areaId: node.areaid,
                             coords: node.coords,
-                            zoneId: node.zoneid
+                            zoneId: node.zoneid,
+                            type: this.alarmService.getType(node),
                         });
                     });
                 }

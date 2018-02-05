@@ -1,5 +1,13 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
     ViewChild
 } from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
@@ -28,6 +36,9 @@ import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {BellNodesService} from '../../../core/data/bell-nodes.service';
+import {Alarm} from '../../../core/time/alarm';
+import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 
 @Component({
     selector: 'app-item',
@@ -224,6 +235,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
 
+    public timers: Observable<Timer[]>;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -232,7 +245,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private translator: TranslateService,
                 private alarmService: AlarmService,
                 public settings: SettingsService,
-                public cd: ChangeDetectorRef) {
+                private bellNodesService: BellNodesService,
+                private etime: EorzeanTimeService) {
         super();
     }
 
@@ -256,28 +270,36 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateCanBeCrafted();
         this.updateHasTimers();
         this.updateMasterBooks();
-        if (this.hasTimers) {
-            this.subscriptions.push(Observable.combineLatest(this.alarmService.isSpawned(this.item),
-                this.alarmService.isAlerted(this.item.id))
-                .subscribe((result) => {
-                    const spawned = result[0];
-                    const alerted = result[1];
-                    if (spawned) {
-                        this.timerColor = 'primary';
-                    } else if (alerted) {
-                        this.timerColor = 'accent';
-                    } else {
-                        this.timerColor = '';
-                    }
-                })
-            );
-        }
+        this.updateTimers();
+    }
+
+    public getTimerIcon(type: number): string {
+        return [
+            '/assets/icons/Mineral_Deposit.png',
+            '/assets/icons/MIN.png',
+            '/assets/icons/Mature_Tree.png',
+            '/assets/icons/BTN.png',
+            'https://garlandtools.org/db/images/FSH.png'
+        ][type];
+    }
+
+    public getTimerColor(alarm: Alarm): Observable<string> {
+        return this.etime.getEorzeanTime().map(time => {
+            if (this.alarmService.isAlarmSpawned(alarm, time)) {
+                return 'primary';
+            }
+            if (this.alarmService.isAlarmAlerted(alarm, time)) {
+                return 'accent';
+            }
+            return '';
+        })
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateCanBeCrafted();
         this.updateHasTimers();
         this.updateMasterBooks();
+        this.updateTimers();
     }
 
     updateCanBeCrafted(): void {
@@ -285,21 +307,29 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
     }
 
-    toggleAlarm(): void {
-        if (this.alarmService.hasAlarm(this.item)) {
-            this.alarmService.unregister(this.item.id);
+    toggleAlarm(id: number, type?: number): void {
+        if (this.alarmService.hasAlarm(id)) {
+            this.alarmService.unregister(id);
         } else {
-            this.alarmService.register(this.item);
+            if (type > 0) {
+                const alarms = this.alarmService.generateAlarms(this.item).filter(alarm => alarm.type === type);
+                this.alarmService.registerAlarms(...alarms);
+            } else {
+                this.alarmService.register(this.item);
+            }
         }
     }
 
-    public get spawnAlarm(): boolean {
-        return this.alarmService.hasAlarm(this.item);
+    public hasAlarm(itemId: number): boolean {
+        return this.alarmService.hasAlarm(itemId);
     }
 
     updateHasTimers(): void {
-        this.hasTimers = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
+        const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+        const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
+            .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
+        this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
     }
 
     openRequirementsPopup(): void {
@@ -352,8 +382,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done), preCraft: this.preCraft});
     }
 
-    public getTimer(): Observable<Timer> {
-        return this.alarmService.getTimer(this.item);
+    public updateTimers(): void {
+        if (this.hasTimers) {
+            this.timers = this.alarmService.getTimers(this.item);
+        }
     }
 
     public getI18n(name: I18nName) {

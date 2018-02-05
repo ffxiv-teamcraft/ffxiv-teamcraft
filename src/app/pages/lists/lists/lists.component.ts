@@ -78,7 +78,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             if (result === true) {
                 this.cd.detach();
                 list.forEachItem(row => {
-                    if (this.alarmService.hasAlarm(row)) {
+                    if (this.alarmService.hasAlarm(row.id)) {
                         this.alarmService.unregister(row.id);
                     }
                 });

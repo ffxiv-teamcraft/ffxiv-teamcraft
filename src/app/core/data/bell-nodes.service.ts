@@ -16,17 +16,19 @@ export class BellNodesService {
 
     getNodesByItemName(name: string): any[] {
         const itemIds = this.localizedDataService.getItemIdsByName(name, <Language>this.i18n.currentLang);
+        return itemIds.map(id => this.getNodesByItemId(id));
+    }
+
+    getNodesByItemId(id: number): any[] {
         return this.nodes.filter(node => {
-            for (const itemId of itemIds) {
-                const match = node.items.find(item => item.id === itemId);
-                if (match !== undefined) {
-                    node.icon = match.icon;
-                    node.itemId = itemId;
-                    node.slot = +match.slot;
-                    node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
-                    node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
-                    return true;
-                }
+            const match = node.items.find(item => item.id === id);
+            if (match !== undefined) {
+                node.icon = match.icon;
+                node.itemId = id;
+                node.slot = +match.slot;
+                node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
+                node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+                return true;
             }
             return false;
         });
