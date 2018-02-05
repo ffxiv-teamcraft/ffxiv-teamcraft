@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {LocalizedDataService} from './localized-data.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from './language';
+import {reductions} from './sources/reductions';
 
 @Injectable()
 export class BellNodesService {
@@ -15,8 +16,14 @@ export class BellNodesService {
     }
 
     getNodesByItemName(name: string): any[] {
-        const itemIds = this.localizedDataService.getItemIdsByName(name, <Language>this.i18n.currentLang);
-        return itemIds.map(id => this.getNodesByItemId(id));
+        let itemIds = this.localizedDataService.getItemIdsByName(name, <Language>this.i18n.currentLang);
+        for (const id of itemIds) {
+            if (reductions[id] !== undefined) {
+                itemIds = itemIds.splice(itemIds.indexOf(id), 1);
+                itemIds.push(...reductions[id]);
+            }
+        }
+        return [].concat.apply([], itemIds.map(id => this.getNodesByItemId(id)));
     }
 
     getNodesByItemId(id: number): any[] {

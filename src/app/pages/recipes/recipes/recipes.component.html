@@ -93,9 +93,8 @@
     <div *ngIf="recipes.length > 0 && !loading">
         <mat-list-item *ngFor="let recipe of recipes">
             <a mat-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
-                <app-tooltip [id]="recipe.itemId">
-                    <img mat-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.itemId | itemName | i18n}}">
-                </app-tooltip>
+                <img mat-list-avatar [appXivdbTooltip]="recipe.itemId" src="{{recipe.icon | icon}}"
+                     alt="{{recipe.itemId | itemName | i18n}}">
             </a>
             <h4 mat-line>{{recipe.itemId | itemName | i18n}}</h4>
             <p mat-line *ngIf="getJob(recipe.job).abbreviation !== 'ADV'">
@@ -118,7 +117,8 @@
             <button mat-icon-button [matMenuTriggerFor]="appMenu">
                 <mat-icon>playlist_add</mat-icon>
             </button>
-            <button mat-icon-button (click)="quickList(recipe, amount.value)" matTooltip="{{'Quick_list_create' | translate}}"
+            <button mat-icon-button (click)="quickList(recipe, amount.value)"
+                    matTooltip="{{'Quick_list_create' | translate}}"
                     matTooltipPosition="above">
                 <mat-icon>access_time</mat-icon>
             </button>
