@@ -37,7 +37,9 @@ export class CommentsPopupComponent {
         comment.date = new Date().toISOString();
         comment.content = this.control.value.comment;
         comment.authorId = this.userId;
-        this.comments.push(comment);
+        const comments = this.comments;
+        comments.push(comment);
+        this.comments = comments;
         this.service.update(this.data.list.$key, this.data.list).first().subscribe(() => {
             this.control.reset();
             this.myNgForm.resetForm();
