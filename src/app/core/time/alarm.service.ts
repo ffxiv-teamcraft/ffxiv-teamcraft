@@ -30,9 +30,6 @@ export class AlarmService {
      * @param {ListRow} item
      */
     public register(item: ListRow): void {
-        if (!this.itemHasTimedNodes(item)) {
-            return;
-        }
         this.generateAlarms(item).forEach(alarm => {
             this.registerAlarms(alarm);
         });
@@ -40,13 +37,13 @@ export class AlarmService {
 
     /**
      * Determines if a given item has an activated alarm or not.
-     * @param {ListRow} item
      * @returns {boolean}
+     * @param itemId
      */
-    public hasAlarm(item: ListRow): boolean {
+    public hasAlarm(itemId: number): boolean {
         let res = false;
         this._alarms.forEach((value, key) => {
-            if (key.itemId === item.id) {
+            if (key.itemId === itemId) {
                 res = true;
             }
         });
@@ -86,7 +83,7 @@ export class AlarmService {
      * @param {ListRow} item
      * @private
      */
-    private generateAlarms(item: ListRow): Alarm[] {
+    public generateAlarms(item: ListRow): Alarm[] {
         const alarms: Alarm[] = [];
         if (item.gatheredBy === undefined) {
             if (item.reducedFrom !== undefined) {
@@ -138,6 +135,7 @@ export class AlarmService {
     getType(node: any): number {
         return ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
     }
+
     /**
      * Plays the alarm (audio + snack).
      * @param {Alarm} alarm
@@ -161,33 +159,41 @@ export class AlarmService {
      * @param {ListRow} item
      * @returns {Observable<number>}
      */
-    public getTimers(item: ListRow): Observable<Timer | Timer[]> {
+    public getTimers(item: ListRow): Observable<Timer[]> {
         return this.etime.getEorzeanTime().map(time => {
             const alarms = this.generateAlarms(item).reduce(function (rv, x) {
                 (rv[x.type] = rv[x.type] || []).push(x);
                 return rv;
             }, {});
-            const result = Object.keys(alarms).map(key => {
+            return Object.keys(alarms).map(key => {
                 const alarm = this.closestAlarm(alarms[key], time);
                 if (this._isSpawned(alarm, time)) {
                     const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
                     return {
-                        display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
-                        zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
+                        itemId: alarm.itemId,
+                        display: this.getTimerString(this.etime.toEarthTime(timer)),
+                        time: timer,
+                        slot: alarm.slot,
+                        zoneId: alarm.zoneId,
+                        coords: alarm.coords, areaId: alarm.areaId,
+                        type: alarm.type,
+                        alarm: alarm,
                     };
                 } else {
                     const timer = this.getMinutesBefore(time, alarm.spawn);
                     return {
-                        display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
-                        zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
+                        itemId: alarm.itemId,
+                        display: this.getTimerString(this.etime.toEarthTime(timer)),
+                        time: timer,
+                        slot: alarm.slot,
+                        zoneId: alarm.zoneId,
+                        coords: alarm.coords,
+                        areaId: alarm.areaId,
+                        type: alarm.type,
+                        alarm: alarm,
                     };
                 }
             });
-            // If the result length is 1, return the first item so it's not handled like an array.
-            if (result.length === 1) {
-                return result[0];
-            }
-            return result;
         });
     }
 
@@ -256,7 +262,7 @@ export class AlarmService {
      * @returns {boolean}
      * @private
      */
-    private _isSpawned(alarm: Alarm, time: Date): boolean {
+    public _isSpawned(alarm: Alarm, time: Date): boolean {
         return time.getUTCHours() >= alarm.spawn && time.getUTCHours() < (alarm.spawn + alarm.duration) % 24;
     }
 
@@ -286,13 +292,14 @@ export class AlarmService {
         return this.etime.getEorzeanTime().map(time => {
             let alerted = false;
             this.getAlarms(id).forEach(alarm => {
-                if (time.getUTCHours() >= this.substractHours(alarm.spawn,
-                        this.settings.alarmHoursBefore) && time.getUTCHours() < alarm.spawn) {
-                    alerted = true;
-                }
+                alerted = alerted || this.isAlarmAlerted(alarm, time);
             });
             return alerted;
         })
+    }
+
+    public isAlarmAlerted(alarm: Alarm, time: Date) {
+        return time.getUTCHours() >= this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) && time.getUTCHours() < alarm.spawn;
     }
 
     /**
@@ -323,16 +330,6 @@ export class AlarmService {
             resMinutes += 1440;
         }
         return resMinutes;
-    }
-
-    /**
-     * Checks wether an item has timers or not, should never return false but still here as a security.
-     * @param {ListRow} item
-     * @returns {boolean}
-     */
-    private itemHasTimedNodes(item: ListRow): boolean {
-        return item.gatheredBy !== undefined && item.gatheredBy.nodes !== undefined &&
-            item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
     }
 
     /**

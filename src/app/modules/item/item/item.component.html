@@ -1,5 +1,6 @@
 <!--Layout for desktop browsers-->
-<mat-list-item *ngIf="!(isMobile | async); else mobileLayout" [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
+<mat-list-item *ngIf="!(isMobile | async); else mobileLayout"
+               [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
     <div class="item-col-left">
         <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}"
              [appXivdbTooltip]="item.id" [appXivdbTooltipDisabled]="isDraft()">
@@ -12,7 +13,8 @@
              matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
              (cbOnSuccess)="afterNameCopy(item.id)">
-            <span [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
+            <span
+                [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
@@ -28,16 +30,19 @@
         </mat-icon>
     </div>
 
-    <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngIf="hasTimers">
-        <button mat-raised-button
-                [color]="timerColor"
-                (click)="toggleAlarm()"
-                matTooltip="{{(getTimer() | async)?.zoneId | placeName | i18n}} - {{(getTimer() | async)?.areaId | placeName | i18n}}"
-                matTooltipPosition="above">
-            <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
-            <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-            {{(getTimer() | async)?.display}} <span *ngIf="(getTimer() | async)?.slot as slot">({{slot}})</span>
-        </button>
+    <div *ngIf="hasTimers" class="timers-container">
+        <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngFor="let timer of timers | async">
+            <button mat-raised-button
+                    [color]="getTimerColor(timer.alarm) | async"
+                    (click)="toggleAlarm(timer.itemId, timer.type)"
+                    matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
+                    matTooltipPosition="above">
+                <mat-icon *ngIf="!hasAlarm(timer.itemId)">alarm_add</mat-icon>
+                <mat-icon *ngIf="hasAlarm(timer.itemId)">alarm_on</mat-icon>
+                {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+                <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+            </button>
+        </div>
     </div>
 
     <div class="item-col-right">
@@ -272,13 +277,16 @@
             </div>
         </div>
 
-        <div class="timer" *ngIf="hasTimers">
-            <span>{{(getTimer() | async)?.zoneId | placeName | i18n}} - {{(getTimer() | async)?.areaId | placeName | i18n}}</span><br>
-            <button mat-raised-button [color]="timerColor" (click)="toggleAlarm()">
-                <mat-icon *ngIf="!spawnAlarm">alarm_add</mat-icon>
-                <mat-icon *ngIf="spawnAlarm">alarm_on</mat-icon>
-                {{(getTimer() | async)?.display}} <span *ngIf="(getTimer() | async)?.slot as slot">({{slot}})</span>
-            </button>
+        <div *ngIf="hasTimers" class="timers-container">
+            <div class="timer" *ngFor="let timer of timers | async">
+                <span>{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}</span><br>
+                <button mat-raised-button [color]="getTimerColor(timer.alarm) | async" (click)="toggleAlarm(timer.itemId)">
+                    <mat-icon *ngIf="!hasAlarm(timer.itemId)">alarm_add</mat-icon>
+                    <mat-icon *ngIf="hasAlarm(timer.itemId)">alarm_on</mat-icon>
+                    {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+                    <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+                </button>
+            </div>
         </div>
 
 
