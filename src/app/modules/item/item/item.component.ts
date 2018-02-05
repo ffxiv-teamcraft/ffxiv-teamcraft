@@ -364,8 +364,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.done.emit({row: row, amount: MathTools.absoluteCeil(amount - done), preCraft: this.preCraft});
     }
 
-    public getTimer(): Observable<Timer> {
-        return this.alarmService.getTimer(this.item);
+    public getTimer(): Observable<Timer| Timer[]> {
+        return this.alarmService.getTimers(this.item);
     }
 
     public getI18n(name: I18nName) {

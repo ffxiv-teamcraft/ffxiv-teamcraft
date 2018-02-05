@@ -105,7 +105,8 @@ export class AlarmService {
                                 slot: node.slot,
                                 areaId: node.areaid,
                                 coords: node.coords,
-                                zoneId: node.zoneid
+                                zoneId: node.zoneid,
+                                type: this.getType(node),
                             });
                         });
                     });
@@ -124,7 +125,8 @@ export class AlarmService {
                         slot: node.slot,
                         areaId: node.areaid,
                         coords: node.coords,
-                        zoneId: node.zoneid
+                        zoneId: node.zoneid,
+                        type: this.getType(node),
                     });
                 });
             }
@@ -132,6 +134,10 @@ export class AlarmService {
         return alarms;
     }
 
+
+    getType(node: any): number {
+        return ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
+    }
     /**
      * Plays the alarm (audio + snack).
      * @param {Alarm} alarm
@@ -155,22 +161,33 @@ export class AlarmService {
      * @param {ListRow} item
      * @returns {Observable<number>}
      */
-    public getTimer(item: ListRow): Observable<Timer> {
+    public getTimers(item: ListRow): Observable<Timer | Timer[]> {
         return this.etime.getEorzeanTime().map(time => {
-            const alarm = this.closestAlarm(this.generateAlarms(item), time);
-            if (this._isSpawned(alarm, time)) {
-                const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
-                return {
-                    display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
-                    zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
-                };
-            } else {
-                const timer = this.getMinutesBefore(time, alarm.spawn);
-                return {
-                    display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
-                    zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
-                };
+            const alarms = this.generateAlarms(item).reduce(function (rv, x) {
+                (rv[x.type] = rv[x.type] || []).push(x);
+                return rv;
+            }, {});
+            const result = Object.keys(alarms).map(key => {
+                const alarm = this.closestAlarm(alarms[key], time);
+                if (this._isSpawned(alarm, time)) {
+                    const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
+                    return {
+                        display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
+                        zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
+                    };
+                } else {
+                    const timer = this.getMinutesBefore(time, alarm.spawn);
+                    return {
+                        display: this.getTimerString(this.etime.toEarthTime(timer)), time: timer, slot: alarm.slot,
+                        zoneId: alarm.zoneId, coords: alarm.coords, areaId: alarm.areaId
+                    };
+                }
+            });
+            // If the result length is 1, return the first item so it's not handled like an array.
+            if (result.length === 1) {
+                return result[0];
             }
+            return result;
         });
     }
 
