@@ -13,7 +13,7 @@
                 {{trade.itemAmount}}
             </div>
             <div class="trade-part">
-                ({{'X_for_total' | translate: {amount: (trade.currencyAmount / trade.itemAmount) * data.amount_needed} }})
+                ({{'X_for_total' | translate: {amount: (trade.currencyAmount / trade.itemAmount) * (data.amount_needed - data.done)} }})
             </div>
         </mat-list-item>
     </mat-list>
