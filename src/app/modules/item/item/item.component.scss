@@ -132,16 +132,23 @@
             height: 20px;
         }
     }
-    .timer {
-        margin-right: 10px;
-        text-align: center;
-        span {
-            opacity: .8;
-        }
-        &.compact {
-            height: 25px;
-            > button {
-                line-height: 25px;
+    .timers-container {
+        display: flex;
+        .timer {
+            margin-right: 10px;
+            text-align: center;
+            span {
+                opacity: .8;
+            }
+            &.compact {
+                height: 25px;
+                > button {
+                    line-height: 25px;
+                }
+            }
+            .type-icon {
+                height: 24px;
+                width: 24px;
             }
         }
     }
@@ -165,9 +172,30 @@
 
     // Mobile specific classes
     .mobile {
+        box-sizing: content-box;
+        height: unset !important;
+        min-height: 60px !important;
+
         .item-name {
             font-size: 14px;
             margin-top: 10px;
+        }
+
+        .timers-container {
+            display: flex;
+            flex-direction: column;
+            .timer {
+                margin-bottom: 5px;
+                text-align: center;
+                span {
+                    opacity: .8;
+                }
+                line-height: 25px;
+                .type-icon {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
         }
         .done {
             .amount {

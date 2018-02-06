@@ -7,4 +7,11 @@ export interface Alarm {
     zoneId?: number;
     areaId?: number;
     coords?: number[];
+    /**
+     * Type of the node.
+     * 0,1 = MIN
+     * 2,3 = BOT
+     * 4 = FSH (Spearfishing)
+     */
+    type: number;
 }
