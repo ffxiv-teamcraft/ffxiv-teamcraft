@@ -60,13 +60,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         10307: 23, // Centurio
         // Tomestones
         28: 20, // Poetics
-        34: 20, // Verity
         35: 20, // Creation
+        36: 20, // Mendacity
         7811: 20, // Rowena's Token (Soldiery)
         9383: 20, // Rowena's Token (Poetics)
         14298: 20, // Rowena's Token (Lore)
         16928: 20, // Rowena's Token (Scripture)
         19107: 20, // Rowena's Token (Creation)
+        21789: 20, // Rowena's Token (Mendacity)
         // Scripts
         10309: 18, // Red crafter
         10311: 18, // Red gatherer
@@ -89,7 +90,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         21078: 13, // Kobold
         21079: 13, // Vath
         21080: 13, // Moogle
-        21081: 13, // Kojins
+        21081: 13, // Kojin
+        21935: 13, // Ananta
         // Primals
         7004: 10, // Weekly quest Garuda/Titan/Ifrit
         7850: 10, // Leviathan
@@ -104,6 +106,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         19109: 10, // Susano
         19110: 10, // Lakshmi
         21196: 10, // Shinryu
+        21773: 10, // Byakko
         // Raids
         7577: 8, // Sands of Time
         7578: 8, // Oil of Time
@@ -178,6 +181,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         19122: 8, // Deltascape Crystalloid
         21197: 8, // Dreadwyrm Totem
         21198: 8, // Rabanastran Coin
+        21774: 8, // Sigmascape Lens
+        21775: 8, // Sigmascape Shaft
+        21776: 8, // Sigmascape Crank
+        21777: 8, // Sigmascape Spring
+        21778: 8, // Sigmascape Pedal
+        21779: 8, // Sigmascape Chain
+        21780: 8, // Sigmascape Bolt
+        21781: 8, // Sigmascape Datalog v1.0
+        21782: 8, // Sigmascape Datalog v2.0
+        21783: 8, // Sigmascape Datalog v3.0
+        21784: 8, // Sigmascape Datalog v4.0
+        21785: 8, // Sigmascape Crystalloid
         // World bosses
         6155: 5, // Behemoth
         6164: 5, // Odin
