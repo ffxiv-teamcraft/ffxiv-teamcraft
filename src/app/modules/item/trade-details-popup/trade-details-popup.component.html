@@ -12,6 +12,9 @@
                 <app-item-icon [item]="{icon: trade.itemIcon, HQ: trade.itemHQ, id: trade.itemId}"></app-item-icon>
                 {{trade.itemAmount}}
             </div>
+            <div class="trade-part">
+                ({{'X_for_total' | translate: {amount: (trade.currencyAmount / trade.itemAmount) * data.amount_needed} }})
+            </div>
         </mat-list-item>
     </mat-list>
 </div>
