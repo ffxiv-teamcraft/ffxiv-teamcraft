@@ -20,8 +20,17 @@ export class LayoutRowFilter {
     static IS_FOLKLORE = LayoutRowFilter.IS_GATHERING
         ._and(new LayoutRowFilter(row => row.gatheredBy.legend !== undefined, 'IS_FOLKLORE'));
 
-    static IS_TIMED = LayoutRowFilter.IS_GATHERING
-        ._and(new LayoutRowFilter(row => row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0, 'IS_TIMED'));
+    static IS_TIMED = new LayoutRowFilter(row => {
+        const isTimedGathering = row.gatheredBy !== undefined &&
+            row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+        const isTimedReduction = row.reducedFrom !== undefined &&
+            row.reducedFrom.filter(reduction => {
+                return (<any>window).gt.bell.nodes.find(node => {
+                    return node.items.find(item => item.id === reduction) !== undefined;
+                }) !== undefined;
+            }).length > 0;
+        return isTimedGathering || isTimedReduction;
+    }, 'IS_TIMED');
 
     /**
      * CRAFTED BY FILTERS
