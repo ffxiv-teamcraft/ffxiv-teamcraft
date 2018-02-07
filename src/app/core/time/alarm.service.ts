@@ -323,7 +323,11 @@ export class AlarmService {
      * @param minutes
      * @returns {number}
      */
-    private getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
+    public getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
+        // Convert 0 to 24 for spawn timers
+        if (hours === 0) {
+            hours = 24;
+        }
         const resHours = hours - currentTime.getUTCHours();
         let resMinutes = resHours * 60 + minutes - currentTime.getUTCMinutes();
         if (resMinutes < 0) {

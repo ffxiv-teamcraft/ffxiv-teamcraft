@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node ./build/prebuild.js && ng serve --host 0.0.0.0",
+    "start": "node ./build/prebuild.js && ng serve",
     "build:prod": "node ./build/prebuild.js && ng build -prod",
     "build:beta": "node ./build/prebuild.js && ng build --aot --target=production --env=beta",
     "standard-version": "standard-version",
