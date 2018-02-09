@@ -6,9 +6,14 @@
     <mat-list dense>
         <mat-list-item *ngFor="let node of results | async">
             <img mat-list-avatar src="{{node.icon | icon}}" alt="" [appXivdbTooltip]="node.itemId">
-            <span matLine>{{node.itemId | itemName | i18n}}</span>
-            <span matLine>lvl {{node.lvl}}</span>
-            <button mat-mini-fab (click)="close(node)"><mat-icon>alarm_add</mat-icon></button>
+            <span matLine>{{node.itemId | itemName | i18n}} - lvl {{node.lvl}}</span>
+            <span matLine>{{node.zoneId | placeName | i18n}} - {{node.placeId | placeName | i18n}}
+                <span *ngIf="node.slot">({{node.slot}})</span>
+            </span>
+            <span matLine>X: {{node.coords[0]}} - Y: {{node.coords[1]}}</span>
+            <button mat-mini-fab (click)="close(node)">
+                <mat-icon>alarm_add</mat-icon>
+            </button>
         </mat-list-item>
     </mat-list>
     <mat-error *ngIf="(results | async)?.length === 0">{{"No_items_found" | translate}}</mat-error>

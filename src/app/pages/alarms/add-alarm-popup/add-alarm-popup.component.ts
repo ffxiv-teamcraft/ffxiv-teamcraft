@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {Observable} from 'rxjs/Observable';
 import {MatDialogRef} from '@angular/material';
+import {LocalizedDataService} from '../../../core/data/localized-data.service';
 
 @Component({
     selector: 'app-add-alarm-popup',
@@ -17,7 +18,8 @@ export class AddAlarmPopupComponent implements OnInit {
 
     results: Observable<any[]>;
 
-    constructor(private bellNodesService: BellNodesService, private dialogRef: MatDialogRef<AddAlarmPopupComponent>) {
+    constructor(private bellNodesService: BellNodesService, private dialogRef: MatDialogRef<AddAlarmPopupComponent>,
+                private localizedDataService: LocalizedDataService) {
     }
 
     close(node: any): void {
@@ -29,6 +31,13 @@ export class AddAlarmPopupComponent implements OnInit {
             .debounceTime(250)
             .map(() => {
                 return this.bellNodesService.getNodesByItemName(this.itemName);
+            })
+            .map((nodes) => {
+                return nodes.map(node => {
+                    node.zoneId = this.localizedDataService.getAreaIdByENName(node.zone);
+                    node.placeId = this.localizedDataService.getAreaIdByENName(node.title);
+                    return node;
+                })
             });
     }
 
