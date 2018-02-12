@@ -225,8 +225,6 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     slot: number;
 
-    timerColor = '';
-
     canBeCrafted = false;
 
     hasTimers = false;
