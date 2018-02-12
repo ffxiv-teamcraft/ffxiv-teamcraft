@@ -23,7 +23,8 @@ export class AlarmsComponent {
     }
 
     public getAlarms(): Observable<Alarm[]> {
-        return this.reloader.switchMap(() => this.etime.getEorzeanTime())
+        return this.reloader
+            .switchMap(() => this.etime.getEorzeanTime())
             .do(time => this.time = time)
             .map(time => {
                 const alarms: Alarm[] = [];
@@ -34,7 +35,15 @@ export class AlarmsComponent {
                     const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
                     alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
                 });
-                return alarms;
+                return alarms.sort((a, b) => {
+                    if (this.alarmService.isAlarmSpawned(a, time)) {
+                        return -1;
+                    }
+                    if (this.alarmService.isAlarmSpawned(b, time)) {
+                        return 1;
+                    }
+                    return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
+                });
             });
     }
 
