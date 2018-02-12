@@ -22,8 +22,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     byAuthor(uid: string): Observable<List[]> {
-        return this.listsByAuthorRef(uid)
-            .map(lists => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+        return this.listsByAuthorRef(uid);
     }
 
     deleteByAuthor(uid: string): Observable<void> {
@@ -41,10 +40,12 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
 
     private listsByAuthorRef(uid: string): Observable<List[]> {
         return this.firestore
-            .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid))
+            .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt'))
             .snapshotChanges()
             .map(snaps => snaps.map(snap => (<List>{$key: snap.payload.doc.id, ...snap.payload.doc.data()})))
-            .map(lists => this.serializer.deserialize<List>(lists, [List]));
+            .map(lists => this.serializer.deserialize<List>(lists, [List]))
+            .publishReplay(1)
+            .refCount();
     }
 
     protected getBaseUri(): string {

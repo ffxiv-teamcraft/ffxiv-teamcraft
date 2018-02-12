@@ -56,12 +56,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }
 
     remove(uid: string): Observable<void> {
-        return this.zone.runOutsideAngular(() => {
-            if (uid === undefined || uid === null || uid === '') {
-                throw new Error('Empty uid');
-            }
-            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).delete());
-        });
+        if (uid === undefined || uid === null || uid === '') {
+            throw new Error('Empty uid');
+        }
+        return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).delete());
     }
 
 }
