@@ -13,6 +13,10 @@ export class LayoutRowFilter {
 
     static CAN_BE_BOUGHT = new LayoutRowFilter(row => row.vendors !== undefined, 'CAN_BE_BOUGHT');
 
+    static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources
+        .find(source => source.trades
+            .find(trade => [20, 21, 22].indexOf(trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
+
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,
             'IS_MASTERCRAFT'));
