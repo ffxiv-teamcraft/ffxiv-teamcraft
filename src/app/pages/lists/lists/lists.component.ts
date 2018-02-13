@@ -76,15 +76,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
         this.subscriptions.push(dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
-                this.cd.detach();
                 list.forEachItem(row => {
                     if (this.alarmService.hasAlarm(row.id)) {
                         this.alarmService.unregister(row.id);
                     }
                 });
-                this.listService.remove(list.$key).first().subscribe(() => {
+                this.listService.remove(list.$key).subscribe(() => {
                     ga('send', 'event', 'List', 'deletion');
-                    this.cd.reattach();
                     this.title.setTitle('Teamcraft');
                 });
             }
