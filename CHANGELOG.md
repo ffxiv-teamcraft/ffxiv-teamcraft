@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.3"></a>
+## [3.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.2...v3.2.3) (2018-02-13)
+
+
+### Bug Fixes
+
+* layout filter not updated in some cases ([a0737af](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0737af))
+* masterbook icons missing ([933f150](https://github.com/Supamiu/ffxiv-teamcraft/commit/933f150)), closes [#207](https://github.com/Supamiu/ffxiv-teamcraft/issues/207)
+* no alert for Email already used ([7818cd0](https://github.com/Supamiu/ffxiv-teamcraft/commit/7818cd0)), closes [#204](https://github.com/Supamiu/ffxiv-teamcraft/issues/204)
+* vendors filter matches non-vendor items ([c5fbbe4](https://github.com/Supamiu/ffxiv-teamcraft/commit/c5fbbe4))
+
+
+### Features
+
+* addition of 4.2 book/currencies ([9de8ff7](https://github.com/Supamiu/ffxiv-teamcraft/commit/9de8ff7))
+* layout filter for GC seals ([6f588d5](https://github.com/Supamiu/ffxiv-teamcraft/commit/6f588d5))
+
+
+
 <a name="3.2.2"></a>
 ## [3.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.0...v3.2.2) (2018-02-13)
 
