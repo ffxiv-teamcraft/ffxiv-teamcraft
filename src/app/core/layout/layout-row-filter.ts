@@ -13,7 +13,7 @@ export class LayoutRowFilter {
 
     static CAN_BE_BOUGHT = new LayoutRowFilter(row => row.vendors !== undefined, 'CAN_BE_BOUGHT');
 
-    static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources
+    static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
         .find(source => source.trades
             .find(trade => [20, 21, 22].indexOf(trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
 
