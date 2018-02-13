@@ -225,13 +225,11 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     slot: number;
 
-    timerColor = '';
-
     canBeCrafted = false;
 
     hasTimers = false;
 
-    masterBooks: CompactMasterbook[] = [];
+    masterbooks: CompactMasterbook[] = [];
 
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
 
@@ -351,7 +349,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 }
             }
         }
-        this.masterBooks = res;
+        this.masterbooks = res;
     }
 
     public hasBook(): boolean {
@@ -361,7 +359,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         }
         // If this is a craft
         if (this.item.craftedBy !== undefined) {
-            const books = this.masterBooks;
+            const books = this.masterbooks;
             // If there's no book for this item, it means that the user can craft it for sure.
             if (books.length === 0) {
                 return true;
