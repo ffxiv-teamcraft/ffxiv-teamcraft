@@ -15,7 +15,7 @@ export class LayoutRowFilter {
 
     static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
         .find(source => source.trades
-            .find(trade => [20, 21, 22].indexOf(trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
+            .find(trade => [20, 21, 22].indexOf(+trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
 
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,
