@@ -8,9 +8,9 @@ import * as firebase from 'firebase';
 import {Action} from 'angularfire2/firestore/interfaces';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 import DocumentReference = firebase.firestore.DocumentReference;
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
@@ -56,7 +56,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
     update(uid: string, data: T): Observable<void> {
         // Optimistic update for better UX with large lists
-        this.cache[uid].subject.next(data);
+        if (this.cache[uid] !== undefined) {
+            this.cache[uid].subject.next(data);
+        }
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
@@ -67,7 +69,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
     set(uid: string, data: T): Observable<void> {
         // Optimistic update for better UX with large lists
-        this.cache[uid].subject.next(data);
+        if (this.cache[uid] !== undefined) {
+            this.cache[uid].subject.next(data);
+        }
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
