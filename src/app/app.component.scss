@@ -60,6 +60,31 @@
                     flex: 1 1 auto;
                     margin-bottom: 5px;
                 }
+                .social-fabs {
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 10px;
+                    .fab-container {
+                        display: flex;
+                        flex-grow: 1;
+                        justify-content: center;
+                        .social-fab {
+                            font-size: 18px;
+                            &.facebook {
+                                background: #3b5998;
+                            }
+                            &.github {
+                                background: #000;
+                            }
+                            &.discord {
+                                background: #7289da;
+                            }
+                            &.patreon {
+                                background: #F96854;
+                            }
+                        }
+                    }
+                }
             }
         }
         .content {

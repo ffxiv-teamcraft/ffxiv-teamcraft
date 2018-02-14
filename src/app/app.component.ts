@@ -18,6 +18,8 @@ import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-discl
 import {SettingsService} from './pages/settings/settings.service';
 import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
+import fontawesome from '@fortawesome/fontawesome';
+import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
 
 declare const ga: Function;
 
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit {
     givewayRunning = false;
 
     watcher: Subscription;
+
     activeMediaQuery = '';
 
     constructor(private auth: AngularFireAuth,
@@ -65,6 +68,7 @@ export class AppComponent implements OnInit {
                 public settings: SettingsService,
                 public helpService: HelpService) {
 
+        fontawesome.library.add(faDiscord, faFacebookF, faGithub);
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';

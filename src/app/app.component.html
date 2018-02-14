@@ -105,11 +105,27 @@
             </button>
             <div class="spacer"></div>
             <div class="sidebar-bottom">
-                <button  class="bottom-button"mat-raised-button color="primary" (click)="showGiveway()" *ngIf="givewayRunning">
+                <button class="bottom-button" mat-raised-button color="primary" (click)="showGiveway()"
+                        *ngIf="givewayRunning">
                     {{"GIVEWAY.Title" |
                     translate}}
                 </button>
-                <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank" class="bottom-button"
+                <div class="social-fabs bottom-button">
+                    <div class="fab-container"><a href="https://facebook.com/ffxivteamcraft" mat-mini-fab
+                                                  class="social-fab facebook" target="
+                       _blank"><i class="fab fa-facebook-f"></i></a></div>
+                    <div class="fab-container"><a href="https://discord.gg/r6qxt6P" mat-mini-fab
+                                                  class="social-fab discord" target="_blank"><i
+                        class="fab fa-discord"></i></a></div>
+                    <div class="fab-container"><a href="https://github.com/supamiu/ffxiv-teamcraft" mat-mini-fab
+                                                  class="social-fab github"
+                                                  target="_blank"><i class="fab fa-github"></i></a></div>
+                    <div class="fab-container"><a href="https://www.patreon.com/ffxivteamcraft" mat-mini-fab
+                                                  class="social-fab patreon"
+                                                  target="_blank"><i class="fab fa-patreon"></i></a></div>
+                </div>
+                <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank"
+                   class="bottom-button"
                    color="warn">Report
                     a bug</a>
             </div>
