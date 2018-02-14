@@ -62,10 +62,6 @@
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine>{{'Profile' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
-                    <mat-icon matListIcon>help_outline</mat-icon>
-                    <span matLine>{{'HOME_PAGE.features' | translate}}</span>
-                </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>
                     <span matLine>{{'Recipes' | translate}}</span>
@@ -93,6 +89,10 @@
                 <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>settings</mat-icon>
                     <span matLine>{{'SETTINGS.title' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
+                    <mat-icon matListIcon>help_outline</mat-icon>
+                    <span matLine>{{'HOME_PAGE.features' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>info_outline</mat-icon>

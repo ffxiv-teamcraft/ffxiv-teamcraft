@@ -26,5 +26,5 @@
         <button mat-raised-button color="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
         <button mat-raised-button color="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
     </div>
-    <mat-error *ngIf="error">{{error}}</mat-error>
+    <mat-error *ngIf="error !== undefined">{{error | translate}}</mat-error>
 </div>

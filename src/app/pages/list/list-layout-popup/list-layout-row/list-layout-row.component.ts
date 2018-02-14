@@ -63,6 +63,7 @@ export class ListLayoutRowComponent implements OnInit {
         if (this.filter.length > 1) {
             this.filter.splice(-2, 2);
         }
+        this.filterChange();
     }
 
     ngOnInit(): void {

@@ -7,11 +7,17 @@ export class LayoutRowFilter {
 
     static NONE = new LayoutRowFilter(() => false, 'NONE');
 
-    static IS_CRAFT = new LayoutRowFilter(row => row.craftedBy !== undefined, 'IS_CRAFT');
+    static IS_CRAFT = new LayoutRowFilter(row => row.craftedBy !== undefined && row.craftedBy.length > 0, 'IS_CRAFT');
 
     static IS_GATHERING = new LayoutRowFilter(row => row.gatheredBy !== undefined, 'IS_GATHERING');
 
-    static CAN_BE_BOUGHT = new LayoutRowFilter(row => row.vendors !== undefined, 'CAN_BE_BOUGHT');
+    static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
+        return row.vendors !== undefined && row.vendors.length > 0;
+    }, 'CAN_BE_BOUGHT');
+
+    static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
+        .find(source => source.trades
+            .find(trade => [20, 21, 22].indexOf(+trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
 
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
@@ -17,7 +17,8 @@ declare const ga: Function;
 @Component({
     selector: 'app-register-popup',
     templateUrl: './register-popup.component.html',
-    styleUrls: ['./register-popup.component.scss']
+    styleUrls: ['./register-popup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class RegisterPopupComponent {
 
@@ -91,7 +92,7 @@ export class RegisterPopupComponent {
     googleOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new GoogleAuthProvider()).then((oauth) => {
             this.register(oauth.user);
-        }).catch((error: any) => this.error = this.translate.instant(error.code));
+        }).catch((error: any) => this.error = error.code);
     }
 
     /**
@@ -100,7 +101,7 @@ export class RegisterPopupComponent {
     facebookOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new FacebookAuthProvider()).then((oauth) => {
             this.register(oauth.user);
-        }).catch((error: any) => this.error = this.translate.instant(error.code));
+        }).catch((error: any) => this.error = error.code);
     }
 
     /**
@@ -116,7 +117,7 @@ export class RegisterPopupComponent {
                         this.af.auth.signInAnonymously();
                     });
                 });
-            });
-        });
+            })
+        }).catch((error: any) => this.error = error.code);
     }
 }

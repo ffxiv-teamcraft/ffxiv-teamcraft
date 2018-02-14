@@ -271,9 +271,7 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     }
 
     set(list: List): void {
-        this.cd.detach();
         this.listService.set(this.listUid, list).first().subscribe(() => {
-            this.cd.reattach();
         });
     }
 
@@ -301,20 +299,15 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         list.setDone(data.row, data.amount, data.preCraft);
-        // Wait just a bit for CD to make its changes before detaching it.
-        setTimeout(() => {
-            this.cd.detach();
-            this.listService.update(list.$key, list).map(() => list)
-                .do(l => {
-                    if (l.ephemeral && l.isComplete()) {
-                        this.listService.remove(list.$key).first().subscribe(() => {
-                            this.router.navigate(['recipes']);
-                        });
-                    }
-                }).subscribe(() => {
-                this.cd.reattach();
-            });
-        }, 10);
+        this.listService.update(list.$key, list).map(() => list)
+            .do(l => {
+                if (l.ephemeral && l.isComplete()) {
+                    this.listService.remove(list.$key).first().subscribe(() => {
+                        this.router.navigate(['recipes']);
+                    });
+                }
+            }).subscribe(() => {
+        });
     }
 
     public forkList(list: List): void {

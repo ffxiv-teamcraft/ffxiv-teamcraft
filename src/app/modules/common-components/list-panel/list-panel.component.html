@@ -32,7 +32,7 @@
                 <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
                 <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
                         (click)="$event.stopPropagation()">
-                    <mat-icon>open_in_new</mat-icon>
+                    <mat-icon>playlist_play</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="!readonly && buttons"
                         (click)="ondelete.emit(); $event.stopPropagation()">

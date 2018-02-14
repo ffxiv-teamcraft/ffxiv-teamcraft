@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.3"></a>
+## [3.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.2...v3.2.3) (2018-02-13)
+
+
+### Bug Fixes
+
+* layout filter not updated in some cases ([a0737af](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0737af))
+* masterbook icons missing ([933f150](https://github.com/Supamiu/ffxiv-teamcraft/commit/933f150)), closes [#207](https://github.com/Supamiu/ffxiv-teamcraft/issues/207)
+* no alert for Email already used ([7818cd0](https://github.com/Supamiu/ffxiv-teamcraft/commit/7818cd0)), closes [#204](https://github.com/Supamiu/ffxiv-teamcraft/issues/204)
+* vendors filter matches non-vendor items ([c5fbbe4](https://github.com/Supamiu/ffxiv-teamcraft/commit/c5fbbe4))
+
+
+### Features
+
+* addition of 4.2 book/currencies ([9de8ff7](https://github.com/Supamiu/ffxiv-teamcraft/commit/9de8ff7))
+* layout filter for GC seals ([6f588d5](https://github.com/Supamiu/ffxiv-teamcraft/commit/6f588d5))
+
+
+
+<a name="3.2.2"></a>
+## [3.2.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.0...v3.2.2) (2018-02-13)
+
+
+### Bug Fixes
+
+* accordion state reset at each list amount modification ([2bb970e](https://github.com/Supamiu/ffxiv-teamcraft/commit/2bb970e))
+* broken list display ([c1b83ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/c1b83ee))
+* comments dialog box not working ([3c19a78](https://github.com/Supamiu/ffxiv-teamcraft/commit/3c19a78)), closes [#190](https://github.com/Supamiu/ffxiv-teamcraft/issues/190)
+* disable ability to close sidenav with ESC ([fa5f6fb](https://github.com/Supamiu/ffxiv-teamcraft/commit/fa5f6fb))
+* error when validating a craft on final recipes ([b44d3c4](https://github.com/Supamiu/ffxiv-teamcraft/commit/b44d3c4))
+* item not found in alarms page ([057b613](https://github.com/Supamiu/ffxiv-teamcraft/commit/057b613)), closes [#193](https://github.com/Supamiu/ffxiv-teamcraft/issues/193)
+* layout zone breakdown breaking display in some cases ([c53445e](https://github.com/Supamiu/ffxiv-teamcraft/commit/c53445e))
+* preCraft amounts sometimes wrong ([1196358](https://github.com/Supamiu/ffxiv-teamcraft/commit/1196358))
+* precraft ingredients sometimes has bad values upon checking "done" ([396f5ab](https://github.com/Supamiu/ffxiv-teamcraft/commit/396f5ab))
+* sands not filtered by IS_TIMED filter ([d827d64](https://github.com/Supamiu/ffxiv-teamcraft/commit/d827d64))
+
+
+### Features
+
+* add timers support for sands ([73542a2](https://github.com/Supamiu/ffxiv-teamcraft/commit/73542a2))
+* currency total for currency-traded items ([47e611d](https://github.com/Supamiu/ffxiv-teamcraft/commit/47e611d)), closes [#199](https://github.com/Supamiu/ffxiv-teamcraft/issues/199)
+* display coords, place and slot in alarm search results ([0d0e295](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d0e295))
+* find items that reduce into a sand when looking for it in alarms ([892f3b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/892f3b9)), closes [#191](https://github.com/Supamiu/ffxiv-teamcraft/issues/191)
+* order alarms based on remaining time before spawn ([7dda37f](https://github.com/Supamiu/ffxiv-teamcraft/commit/7dda37f))
+* update stack size to 999 for 4.2 release ([9c7ab97](https://github.com/Supamiu/ffxiv-teamcraft/commit/9c7ab97))
+
+
+### Performance Improvements
+
+* change update for set in lists modification event ([68491d3](https://github.com/Supamiu/ffxiv-teamcraft/commit/68491d3))
+* improve performance for the "regenerate all lists" button in /lists view ([8b475b2](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b475b2))
+
+
+
 <a name="3.2.1"></a>
 ## [3.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.0...v3.2.1) (2018-02-06)
 
