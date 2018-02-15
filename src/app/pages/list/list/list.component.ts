@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
 import {PageComponent} from '../../../core/component/page-component';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MatDialog} from '@angular/material';
@@ -16,7 +16,8 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.scss']
+    styleUrls: ['./list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 

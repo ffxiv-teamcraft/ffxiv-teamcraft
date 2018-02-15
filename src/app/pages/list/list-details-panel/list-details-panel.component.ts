@@ -136,18 +136,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     trackByFn(index: number, item: ListRow) {
-        return {
-            amount: item.amount,
-            amount_needed: item.amount_needed,
-            done: item.done,
-            used: item.used,
-            comments: item.comments,
-            hidden: item.hidden
-        }
+        return item.id;
     }
 
     trackByZoneFn(index: number, item: ZoneBreakdownRow) {
-        return {id: item.zoneId, length: item.items.length};
+        return item.zoneId;
+    }
+
+    trackByTierFn(index: number, item: ListRow[]) {
+        return item.length;
     }
 
     ngOnChanges(changes: SimpleChanges): void {

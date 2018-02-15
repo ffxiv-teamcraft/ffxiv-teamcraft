@@ -32,7 +32,7 @@
     </mat-list>
     <!--TIER LIST-->
     <mat-list dense *ngIf="showTier && !zoneBreakdown">
-        <mat-list *ngFor="let tier of tiers; let tierNumber = index;">
+        <mat-list *ngFor="let tier of tiers; trackBy: trackByTierFn; let tierNumber = index;">
             <div *ngIf="tier.length > 0">
                 <h3 mat-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
                 <mat-divider></mat-divider>
