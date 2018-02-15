@@ -4,7 +4,7 @@
     </mat-expansion-panel-header>
     <!--DEFAULT LIST-->
     <mat-list dense *ngIf="!showTier && !zoneBreakdown">
-        <div *ngFor="let row of data; let i = index">
+        <div *ngFor="let row of data; trackBy: trackByFn; let i = index">
             <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
                       [item]="row" [list]="list" [recipe]="recipe"
                       [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"></app-item>
@@ -12,11 +12,11 @@
     </mat-list>
     <!--ZONE BREAKDOWN LIST-->
     <mat-list dense *ngIf="zoneBreakdown && !showTier">
-        <div *ngFor="let row of zoneBreakdownData?.rows">
+        <div *ngFor="let row of zoneBreakdownData?.rows; trackBy: trackByZoneFn">
             <div *ngIf="row.items.length > 0">
                 <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
                 <mat-divider class="zone-divider"></mat-divider>
-                <div *ngFor="let item of row.items; let i = index">
+                <div *ngFor="let item of row.items; trackBy: trackByFn; let i = index">
                     <app-item [list]="list"
                               (update)="update.emit()"
                               (done)="done.emit($event)"
@@ -32,11 +32,11 @@
     </mat-list>
     <!--TIER LIST-->
     <mat-list dense *ngIf="showTier && !zoneBreakdown">
-        <mat-list *ngFor="let tier of tiers; let tierNumber = index;">
+        <mat-list *ngFor="let tier of tiers; trackBy: trackByTierFn; let tierNumber = index;">
             <div *ngIf="tier.length > 0">
                 <h3 mat-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
                 <mat-divider></mat-divider>
-                <div *ngFor="let row of tier; let i = index">
+                <div *ngFor="let row of tier; trackBy: trackByFn; let i = index">
                     <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
                               [item]="row" [list]="list" [recipe]="recipe"
                               [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"></app-item>

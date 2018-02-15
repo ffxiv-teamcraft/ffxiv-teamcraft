@@ -30,7 +30,14 @@ export class LayoutService {
             const result: FilterResult = row.filter.filter(unfilteredRows);
             unfilteredRows = result.rejected;
             const orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
-            return {title: row.name, rows: orderedAccepted, index: row.index, zoneBreakdown: row.zoneBreakdown, tiers: row.tiers};
+            return {
+                title: row.name,
+                rows: orderedAccepted,
+                index: row.index,
+                zoneBreakdown: row.zoneBreakdown,
+                tiers: row.tiers,
+                filterChain: row.filter.name
+            };
         }).sort((a, b) => a.index - b.index);
     }
 

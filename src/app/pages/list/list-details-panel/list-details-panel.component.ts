@@ -5,6 +5,7 @@ import {SettingsService} from '../../settings/settings.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {I18nName} from '../../../model/list/i18n-name';
 import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
+import {ZoneBreakdownRow} from '../../../model/list/zone-breakdown-row';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -132,6 +133,18 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
         result[itemTier].push(row);
         return result;
+    }
+
+    trackByFn(index: number, item: ListRow) {
+        return item.id;
+    }
+
+    trackByZoneFn(index: number, item: ZoneBreakdownRow) {
+        return item.zoneId;
+    }
+
+    trackByTierFn(index: number, item: ListRow[]) {
+        return item.length;
     }
 
     ngOnChanges(changes: SimpleChanges): void {

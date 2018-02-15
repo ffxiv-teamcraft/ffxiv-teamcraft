@@ -37,6 +37,7 @@ import { ListLayoutPopupComponent } from './list-layout-popup/list-layout-popup.
 import { ListLayoutRowComponent } from './list-layout-popup/list-layout-row/list-layout-row.component';
 import { ImportInputBoxComponent } from './list-layout-popup/import-input-box/import-input-box.component';
 import {ClipboardModule} from 'ngx-clipboard/dist';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
     {
@@ -45,7 +46,7 @@ const routes: Routes = [
     },
     {
         path: 'list/:listId',
-        component: ListDetailsComponent,
+        component: ListComponent,
         canActivate: [MaintenanceGuard]
     },
     {
@@ -99,6 +100,7 @@ const routes: Routes = [
         ListLayoutPopupComponent,
         ListLayoutRowComponent,
         ImportInputBoxComponent,
+        ListComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
