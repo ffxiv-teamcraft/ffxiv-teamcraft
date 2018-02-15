@@ -9,7 +9,7 @@ import {Item} from '../../../../model/garland-tools/item';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
-    constructor(private gt: GarlandToolsService, private htmlTools: HtmlToolsService, private db: DataService) {
+    constructor(private gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
         super();
     }
 

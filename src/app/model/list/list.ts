@@ -380,10 +380,11 @@ export class List extends DataModel {
         }
     }
 
-    public addCraft(additions: CraftAddition[], gt: GarlandToolsService, i18n: I18nToolsService): List {
+    public addCraft(additions: CraftAddition[], gt: GarlandToolsService, i18n: I18nToolsService, recipeId?: string): List {
         const nextIteration: CraftAddition[] = [];
         for (const addition of additions) {
-            for (const element of addition.item.craft[0].ingredients) {
+            const craft = addition.item.craft.find(c => c.id.toString() === recipeId.toString());
+            for (const element of craft.ingredients) {
                 // If this is a crystal
                 if (element.id < 20 && element.id > 1) {
                     const crystal = gt.getCrystalDetails(element.id);
@@ -398,12 +399,12 @@ export class List extends DataModel {
                 } else {
                     const elementDetails = addition.data.getIngredient(element.id);
                     if (elementDetails.isCraft()) {
-                        const yields = elementDetails.craft[0].yield || 1;
+                        const yields = craft.yield || 1;
                         const added = this.addToPreCrafts({
                             id: elementDetails.id,
                             icon: elementDetails.icon,
                             amount: element.amount * addition.amount,
-                            requires: elementDetails.craft[0].ingredients,
+                            requires: craft.ingredients,
                             done: 0,
                             used: 0,
                             yield: yields

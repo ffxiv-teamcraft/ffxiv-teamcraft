@@ -65,7 +65,7 @@ export class ListManagerService {
                     item: data.item,
                     data: data,
                     amount: added
-                }], this.gt, this.i18n);
+                }], this.gt, this.i18n, recipeId);
                 // Process precrafts to add crafter details.
                 addition.preCrafts.forEach(preCraft => {
                     preCraft.craftedBy = this.extractor.extractCraftedBy(preCraft.id, data);
