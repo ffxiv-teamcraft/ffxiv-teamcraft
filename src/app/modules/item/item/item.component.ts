@@ -280,6 +280,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     ngOnInit(): void {
+        console.log('ITEM INIT');
         this.updateCanBeCrafted();
         this.updateHasTimers();
         this.updateMasterBooks();

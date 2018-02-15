@@ -5,5 +5,6 @@ export interface LayoutRowDisplay {
     rows: ListRow[];
     index: number;
     zoneBreakdown: boolean;
-    tiers: boolean
+    tiers: boolean;
+    filterChain: string;
 }

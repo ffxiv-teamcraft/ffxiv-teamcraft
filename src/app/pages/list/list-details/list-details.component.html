@@ -1,7 +1,7 @@
-<app-pricing [list]="list | async" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
+<app-pricing [list]="listData" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="list | async as listData">
+    <div *ngIf="listData">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
@@ -170,7 +170,7 @@
             </div>
         </mat-expansion-panel>
 
-        <app-list-details-panel *ngFor="let displayRow of listDisplay | async"
+        <app-list-details-panel *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn"
                                 [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
                                 [list]="listData"
                                 (update)="update()"
@@ -201,7 +201,7 @@
         </mat-checkbox>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
-    <div class="loader-container" *ngIf="(list | async) === null && !notFound">
+    <div class="loader-container" *ngIf="listData === null && !notFound">
         <mat-spinner></mat-spinner>
     </div>
 </div>

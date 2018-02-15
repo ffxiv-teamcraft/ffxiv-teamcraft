@@ -1,57 +1,62 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Output,
+    SimpleChanges
+} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {List} from '../../../model/list/list';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from 'app/core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-import {Title} from '@angular/platform-browser';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {TranslateService} from '@ngx-translate/core';
 import {RegenerationPopupComponent} from '../regeneration-popup/regeneration-popup.component';
 import {AppUser} from 'app/model/list/app-user';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-popup.component';
-import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
 import {User, UserInfo} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/distinctUntilChanged';
-import {PageComponent} from '../../../core/component/page-component';
-import {ComponentType} from '@angular/cdk/portal';
-import {HelpService} from '../../../core/component/help.service';
-import {ListHelpComponent} from '../list-help/list-help.component';
 import {LayoutService} from '../../../core/layout/layout.service';
 import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
+import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 declare const ga: Function;
 
 @Component({
-    selector: 'app-list',
+    selector: 'app-list-details',
     templateUrl: './list-details.component.html',
     styleUrls: ['./list-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListDetailsComponent extends PageComponent implements OnInit, OnDestroy {
+export class ListDetailsComponent extends ComponentWithSubscriptions implements OnInit, OnDestroy, OnChanges {
 
-    list: Observable<List>;
+    @Input()
+    listData: List;
 
-    listDisplay: Observable<LayoutRowDisplay[]>;
+    @Input()
+    notFound = false;
 
-    private reload$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+    listDisplay: LayoutRowDisplay[];
 
     user: UserInfo;
-
-    listUid: string;
 
     authorUid: string;
 
@@ -67,10 +72,6 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
-    private filterTrigger = new BehaviorSubject<void>(null);
-
-    notFound = false;
-
     outdated = false;
 
     accordionState: { [index: string]: boolean } = {
@@ -81,27 +82,67 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
         'Items': false
     };
 
-    constructor(private auth: AngularFireAuth, private route: ActivatedRoute,
-                protected dialog: MatDialog, private userService: UserService,
-                private listService: ListService, private title: Title,
-                private listManager: ListManagerService, private snack: MatSnackBar,
-                private translate: TranslateService, private router: Router,
-                private eorzeanTimeService: EorzeanTimeService, private data: LocalizedDataService,
-                public settings: SettingsService, help: HelpService, private layoutService: LayoutService,
-                private cd: ChangeDetectorRef) {
-        super(dialog, help);
+    @Output()
+    reload: EventEmitter<void> = new EventEmitter<void>();
+
+    constructor(private auth: AngularFireAuth, private userService: UserService, protected dialog: MatDialog,
+                private listService: ListService, private listManager: ListManagerService, private snack: MatSnackBar,
+                private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
+                public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef) {
+        super();
         this.initFilters();
     }
 
-    getHelpDialog(): ComponentType<any> | TemplateRef<any> {
-        return ListHelpComponent;
+    displayTrackByFn(index: number, item: LayoutRowDisplay) {
+        return item.filterChain;
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (this.listData !== undefined && this.listData !== null) {
+            this.listData.forEachItem(item => {
+                if (item.gatheredBy !== undefined) {
+                    const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                    if (filter !== undefined) {
+                        item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                    }
+                } else if (item.craftedBy !== undefined) {
+                    for (const craft of item.craftedBy) {
+                        const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
+                        item.hidden = !filter.checked || craft.level > filter.level;
+                    }
+                } else {
+                    // If the item can't be filtered based on a gathering/crafting job level,
+                    // we want to reset its hidden state.
+                    item.hidden = false;
+                }
+                if (item.done >= item.amount && this.hideCompleted) {
+                    item.hidden = true;
+                }
+            });
+            if (this.accordionState === undefined) {
+                this.initAccordion(this.listData);
+            }
+            this.listDisplay = this.layoutService.getDisplay(this.listData);
+        }
+        if (changes.list !== undefined && changes.listData.isFirstChange()) {
+            this.outdated = this.listData.isOutDated();
+        }
+    }
+
+    private initAccordion(list: List): void {
+        const listIsLarge = list.isLarge();
+        this.accordionState = {
+            'Crystals': !listIsLarge,
+            'Gathering': !listIsLarge,
+            'Other': !listIsLarge,
+            'Pre_crafts': !listIsLarge,
+            'Items': listIsLarge
+        };
     }
 
     togglePublic(): void {
-        this.subscriptions.push(this.list.first().subscribe(list => {
-            list.public = !list.public;
-            this.update(list);
-        }));
+        this.listData.public = !this.listData.public;
+        this.update(this.listData);
     }
 
     public getUser(): Observable<User> {
@@ -113,7 +154,8 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     }
 
     public adaptFilters(): void {
-        this.subscriptions.push(this.userService.getCharacter()
+        this.userService.getCharacter()
+            .first()
             .map(u => <any>u)
             .subscribe(u => {
                 this.craftFilters.forEach(filter => {
@@ -135,11 +177,11 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
                     }
                 });
                 this.triggerFilter();
-            }));
+            });
     }
 
     public triggerFilter(): void {
-        this.filterTrigger.next(null);
+        this.reloadList();
     }
 
     public checkAll(checked: boolean): void {
@@ -148,84 +190,13 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
         this.triggerFilter();
     }
 
-    private initAccordion(list: List): void {
-        const listIsLarge = list.isLarge();
-        this.accordionState = {
-            'Crystals': !listIsLarge,
-            'Gathering': !listIsLarge,
-            'Other': !listIsLarge,
-            'Pre_crafts': !listIsLarge,
-            'Items': listIsLarge
-        };
+    private reloadList(): void {
+        this.reload.emit();
     }
 
     ngOnInit() {
-        super.ngOnInit();
-
         this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
 
-        this.subscriptions.push(
-            this.route.params.subscribe(params => {
-                this.listUid = params.listId;
-                this.list =
-                    Observable.combineLatest(
-                        this.filterTrigger,
-                        this.listService.get(this.listUid),
-                        (ignored, list) => {
-                            this.authorUid = list.authorId;
-                            list.forEachItem(item => {
-                                if (item.gatheredBy !== undefined) {
-                                    const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                                    if (filter !== undefined) {
-                                        item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
-                                    }
-                                } else if (item.craftedBy !== undefined) {
-                                    for (const craft of item.craftedBy) {
-                                        const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
-                                        item.hidden = !filter.checked || craft.level > filter.level;
-                                    }
-                                } else {
-                                    // If the item can't be filtered based on a gathering/crafting job level,
-                                    // we want to reset its hidden state.
-                                    item.hidden = false;
-                                }
-                                if (item.done >= item.amount && this.hideCompleted) {
-                                    item.hidden = true;
-                                }
-                            });
-                            return list;
-                        })
-                        .catch(() => {
-                            this.notFound = true;
-                            return Observable.of(null);
-                        })
-                        .distinctUntilChanged()
-                        .filter(list => list !== null)
-                        .do((l: List) => {
-                            if (l.name !== undefined) {
-                                this.title.setTitle(`${l.name}`);
-                            } else {
-                                this.title.setTitle(this.translate.instant('List_not_found'));
-                            }
-                            this.outdated = l.isOutDated();
-                        })
-                        .map((list: List) => {
-                            list.crystals = list.orderCrystals();
-                            list.gathers = list.orderGatherings(this.data);
-                            return list;
-                        });
-                this.listDisplay = this.reload$
-                    .switchMap(() =>
-                        this.list
-                            .do(list => {
-                                if (this.accordionState === undefined) {
-                                    this.initAccordion(list);
-                                }
-                            })
-                            .map((list: List) => {
-                                return this.layoutService.getDisplay(list);
-                            }));
-            }));
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
         }));
@@ -242,10 +213,8 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     upgradeList(): void {
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.cd.detach();
-        this.list.switchMap(l => {
-            return this.listManager.upgradeList(l)
-                .switchMap(list => this.listService.update(this.listUid, list))
-        }).first().subscribe(() => {
+        this.listManager.upgradeList(this.listData)
+            .switchMap(list => this.listService.update(this.listData.$key, list)).first().subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
             this.cd.reattach();
             dialogRef.close();
@@ -255,23 +224,18 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     openLayoutOptions(): void {
         this.dialog.open(ListLayoutPopupComponent).afterClosed().subscribe(() => {
-            this.reload$.next(null);
+            this.reload.emit();
         });
     }
 
-    ngOnDestroy(): void {
-        this.title.setTitle('Teamcraft');
-        super.ngOnDestroy();
-    }
-
     update(list: List): void {
-        this.listService.update(this.listUid, list).first().subscribe(() => {
+        this.listService.update(this.listData.$key, list).first().subscribe(() => {
             // Ignored.
         });
     }
 
     set(list: List): void {
-        this.listService.set(this.listUid, list).first().subscribe(() => {
+        this.listService.set(this.listData.$key, list).first().subscribe(() => {
         });
     }
 
@@ -280,10 +244,10 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
             this.userData.favorites = [];
         }
         if (!this.isFavorite()) {
-            this.userData.favorites.push(`${this.authorUid}/${this.listUid}`);
+            this.userData.favorites.push(`${this.authorUid}/${this.listData.$key}`);
         } else {
             this.userData.favorites =
-                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listUid}`);
+                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listData.$key}`);
         }
         this.userService.update(this.user.uid, this.userData);
     }
@@ -294,7 +258,7 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
         }
         return Object.keys(this.userData.favorites)
             .map(key => this.userData.favorites[key])
-            .indexOf(`${this.authorUid}/${this.listUid}`) > -1;
+            .indexOf(`${this.authorUid}/${this.listData.$key}`) > -1;
     }
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
@@ -333,8 +297,8 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
         this.subscriptions.push(
             this.dialog.open(ConfirmationPopupComponent).afterClosed()
                 .filter(r => r)
-                .switchMap(() => {
-                    return this.list.first();
+                .map(() => {
+                    return this.listData;
                 })
                 .subscribe(list => {
                     for (const recipe of list.recipes) {
@@ -350,15 +314,12 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
     }
 
     public rename(): void {
-        this.subscriptions.push(
-            this.list.first().switchMap(list => {
-                const dialog = this.dialog.open(NameEditPopupComponent, {data: list.name});
-                return dialog.afterClosed().map(value => {
+        const dialog = this.dialog.open(NameEditPopupComponent, {data: this.listData.name});
+        this.subscriptions.push(dialog.afterClosed().map(value => {
                     if (value !== undefined && value.length > 0) {
-                        list.name = value;
+                        this.listData.name = value;
                     }
-                    return list;
-                });
+            return this.listData;
             }).subscribe((list) => {
                 this.update(list);
             })
@@ -367,11 +328,9 @@ export class ListDetailsComponent extends PageComponent implements OnInit, OnDes
 
     public openTagsPopup(): void {
         this.subscriptions.push(
-            this.list.first().switchMap(list => {
-                return this.dialog.open(ListTagsPopupComponent, {data: list}).afterClosed().map(tags => {
-                    list.tags = tags;
-                    return list;
-                });
+            this.dialog.open(ListTagsPopupComponent, {data: this.listData}).afterClosed().map(tags => {
+                this.listData.tags = tags;
+                return this.listData;
             })
                 .filter(list => list.tags !== undefined)
                 .subscribe(list => {
