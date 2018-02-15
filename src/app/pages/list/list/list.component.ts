@@ -39,32 +39,26 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.route.params.subscribe(params => {
-            this.list =
-                Observable.combineLatest(
-                    this.reload$,
-                    this.listService.get(params.listId),
-                    (ignored, list) => {
-                        return list;
-                    })
-                    .catch(() => {
-                        this.notFound = true;
-                        return Observable.of(null);
-                    })
-                    .distinctUntilChanged()
-                    .filter(list => list !== null)
-                    .do((l: List) => {
-                        if (l.name !== undefined) {
-                            this.title.setTitle(`${l.name}`);
-                        } else {
-                            this.title.setTitle(this.translate.instant('List_not_found'));
-                        }
-                    })
-                    .map((list: List) => {
-                        list.crystals = list.orderCrystals();
-                        list.gathers = list.orderGatherings(this.data);
-                        return list;
-                    });
+        this.list = this.route.params.switchMap(params => {
+            return this.reload$.switchMap(() => this.listService.get(params.listId))
+                .catch(() => {
+                    this.notFound = true;
+                    return Observable.of(null);
+                })
+                .distinctUntilChanged()
+                .filter(list => list !== null)
+                .do((l: List) => {
+                    if (l.name !== undefined) {
+                        this.title.setTitle(`${l.name}`);
+                    } else {
+                        this.title.setTitle(this.translate.instant('List_not_found'));
+                    }
+                })
+                .map((list: List) => {
+                    list.crystals = list.orderCrystals();
+                    list.gathers = list.orderGatherings(this.data);
+                    return list;
+                });
         });
     }
 
