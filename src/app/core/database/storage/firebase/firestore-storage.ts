@@ -14,7 +14,7 @@ import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
-    private cache: { [index: string]: { subject: Subject<T>, subscription: Subscription } } = {};
+    protected cache: { [index: string]: { subject: Subject<T>, subscription: Subscription } } = {};
 
     constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone) {
         super();

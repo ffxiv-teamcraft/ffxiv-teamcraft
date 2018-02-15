@@ -4,9 +4,9 @@
         <mat-tab label="{{'Requires' | translate}}" *ngIf="data.item.requires !== undefined">
             <mat-list>
                 <mat-list-item *ngFor="let requirement of data.item.requires">
-                    <img mat-list-avatar [src]="getRequirementDetails(requirement).icon | icon"
-                         alt="{{getRequirementDetails(requirement).id | itemName | i18n}}">
-                    <div mat-line>{{getRequirementDetails(requirement).id | itemName | i18n}}</div>
+                    <img mat-list-avatar [src]="getRequirementDetails(requirement)?.icon | icon"
+                         alt="{{getRequirementDetails(requirement)?.id | itemName | i18n}}">
+                    <div mat-line>{{getRequirementDetails(requirement)?.id | itemName | i18n}}</div>
                     <p mat-line>x{{requirement.amount * (data.item.amount_needed - data.item.done)}}</p>
                 </mat-list-item>
             </mat-list>

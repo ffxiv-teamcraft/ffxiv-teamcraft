@@ -58,8 +58,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     user: UserInfo;
 
-    authorUid: string;
-
     userData: AppUser;
 
     pricingMode = false;
@@ -207,7 +205,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     isOwnList(): boolean {
-        return this.user !== undefined && this.user !== null && this.user.uid === this.authorUid;
+        return this.user !== undefined && this.user !== null && this.user.uid === this.listData.authorId;
     }
 
     upgradeList(): void {
@@ -244,10 +242,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             this.userData.favorites = [];
         }
         if (!this.isFavorite()) {
-            this.userData.favorites.push(`${this.authorUid}/${this.listData.$key}`);
+            this.userData.favorites.push(`${this.listData.authorId}/${this.listData.$key}`);
         } else {
             this.userData.favorites =
-                this.userData.favorites.filter(row => row !== `${this.authorUid}/${this.listData.$key}`);
+                this.userData.favorites.filter(row => row !== `${this.listData.authorId}/${this.listData.$key}`);
         }
         this.userService.update(this.user.uid, this.userData);
     }
@@ -258,7 +256,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         }
         return Object.keys(this.userData.favorites)
             .map(key => this.userData.favorites[key])
-            .indexOf(`${this.authorUid}/${this.listData.$key}`) > -1;
+            .indexOf(`${this.listData.authorId}/${this.listData.$key}`) > -1;
     }
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
