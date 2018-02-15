@@ -40,7 +40,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
 
     private listsByAuthorRef(uid: string): Observable<List[]> {
         return this.firestore
-            .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt'))
+            .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
             .snapshotChanges()
             .map(snaps => snaps.map(snap => (<List>{$key: snap.payload.doc.id, ...snap.payload.doc.data()})))
             .map(lists => this.serializer.deserialize<List>(lists, [List]))
