@@ -21,7 +21,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 })
 export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 
-    private reload$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+    public reload$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
     public list: Observable<List>;
 
