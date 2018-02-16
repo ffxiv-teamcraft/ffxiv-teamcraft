@@ -11,7 +11,7 @@ export class ZoneBreakdown {
                 row.gatheredBy.nodes.forEach(node => {
                     this.addToBreakdown(node.zoneid, row);
                 });
-            } else if (row.drops !== undefined) {
+            } else if (row.drops !== undefined && row.drops.length > 0) {
                 row.drops.forEach(drop => {
                     this.addToBreakdown(drop.zoneid, row);
                 });
