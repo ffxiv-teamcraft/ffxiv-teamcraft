@@ -45,6 +45,7 @@ export class AddItemComponent implements OnInit {
         // If this is a new list;
         if (this.selectedList.name === undefined) {
             list = this.dialog.open(ListNamePopupComponent).afterClosed()
+                .filter(name => name !== undefined && name.length > 0)
                 .switchMap(name => {
                     this.selectedList.name = name;
                     return this.listService.add(this.selectedList).switchMap(listId => this.listService.get(listId));

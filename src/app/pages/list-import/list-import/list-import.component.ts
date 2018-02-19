@@ -27,7 +27,7 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                 list.authorId = u.$key;
             }).switchMap(() => {
                 return dialog.open(ListNamePopupComponent).afterClosed();
-            }).subscribe(name => {
+            }).filter(name => name !== undefined && name.length > 0).subscribe(name => {
                 let done = 0;
                 list.name = name;
                 route.params.subscribe(params => {

@@ -291,6 +291,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
     createNewList(): Promise<{ id: string, list: List }> {
         return new Promise<{ id: string, list: List }>(resolve => {
             this.subscriptions.push(this.dialog.open(ListNamePopupComponent).afterClosed()
+                .filter(name => name !== undefined && name.length > 0)
                 .switchMap(res => {
                     return this.userService.getUserData().map(u => {
                         return {authorId: u.$key, listName: res};
