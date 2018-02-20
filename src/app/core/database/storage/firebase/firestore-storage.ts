@@ -48,6 +48,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                     .refCount()
                     .subscribe(data => {
                         this.cache[uid].subject.next(data)
+                    }, err => {
+                        this.cache[uid].subject.error(err)
                     })
             };
         }
