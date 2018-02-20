@@ -169,19 +169,20 @@
                 </div>
             </div>
         </mat-expansion-panel>
-
-        <app-list-details-panel *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn"
-                                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
-                                [list]="listData"
-                                (update)="update()"
-                                (done)="setDone(listData, $event)"
-                                [data]="displayRow.rows"
-                                [title]="displayRow.title | translate"
-                                (opened)="accordionState[displayRow.title] = true"
-                                (closed)="accordionState[displayRow.title] = false"
-                                [zoneBreakdown]="displayRow.zoneBreakdown"
-                                [showTier]="displayRow.tiers"></app-list-details-panel>
-
+        <div *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn">
+            <app-list-details-panel
+                *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
+                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
+                [list]="listData"
+                (update)="update()"
+                (done)="setDone(listData, $event)"
+                [data]="displayRow.rows"
+                [title]="displayRow.title | translate"
+                (opened)="accordionState[displayRow.title] = true"
+                (closed)="accordionState[displayRow.title] = false"
+                [zoneBreakdown]="displayRow.zoneBreakdown"
+                [showTier]="displayRow.tiers"></app-list-details-panel>
+        </div>
         <app-list-details-panel
             [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"

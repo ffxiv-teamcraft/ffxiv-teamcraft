@@ -7,4 +7,5 @@ export interface LayoutRowDisplay {
     zoneBreakdown: boolean;
     tiers: boolean;
     filterChain: string;
+    hideIfEmpty: boolean;
 }

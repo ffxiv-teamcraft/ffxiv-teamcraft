@@ -36,7 +36,8 @@ export class LayoutService {
                 index: row.index,
                 zoneBreakdown: row.zoneBreakdown,
                 tiers: row.tiers,
-                filterChain: row.filter.name
+                filterChain: row.filter.name,
+                hideIfEmpty: row.hideIfEmpty,
             };
         }).sort((a, b) => a.index - b.index);
     }
