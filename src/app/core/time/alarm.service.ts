@@ -11,6 +11,7 @@ import {Observable} from 'rxjs/Observable';
 import {Timer} from 'app/core/time/timer';
 import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
 import {BellNodesService} from '../data/bell-nodes.service';
+import {PushNotificationsService} from 'ng-push';
 
 @Injectable()
 export class AlarmService {
@@ -21,7 +22,7 @@ export class AlarmService {
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
-                private bellNodesService: BellNodesService) {
+                private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService) {
         this.loadAlarms();
     }
 
@@ -152,6 +153,19 @@ export class AlarmService {
         audio.loop = false;
         audio.volume = this.settings.alarmVolume;
         audio.play();
+        this.pushNotificationsService.create(this.translator.instant('ALARM.Spawned',
+            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+            {
+                icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
+                sticky: false,
+                body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
+                `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
+                (alarm.slot !== null ? `(${alarm.slot})` : '')
+            }
+        ).subscribe(() => {
+        }, err => {
+            // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
+        })
     }
 
     /**
