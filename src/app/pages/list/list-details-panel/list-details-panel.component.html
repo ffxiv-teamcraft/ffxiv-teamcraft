@@ -16,7 +16,8 @@
             <div *ngIf="row.items.length > 0">
                 <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
                 <mat-divider class="zone-divider"></mat-divider>
-                <div *ngFor="let item of row.items; trackBy: trackByFn; let i = index">
+                <div *ngFor="let item of row.items; trackBy: trackByFn; let i = index"
+                     [ngClass]="{compact: settings.compactLists}">
                     <app-item [list]="list"
                               (update)="update.emit()"
                               (done)="done.emit($event)"
@@ -36,7 +37,8 @@
             <div *ngIf="tier.length > 0">
                 <h3 mat-subheader>{{'Precraft_tier' | translate}} {{tierNumber + 1}}</h3>
                 <mat-divider></mat-divider>
-                <div *ngFor="let row of tier; trackBy: trackByFn; let i = index">
+                <div *ngFor="let row of tier; trackBy: trackByFn; let i = index"
+                     [ngClass]="{compact: settings.compactLists}">
                     <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
                               [item]="row" [list]="list" [recipe]="recipe"
                               [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"></app-item>
