@@ -88,9 +88,12 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         }
         return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).delete())
             .do(() => {
-                this.cache[uid].subscription.unsubscribe();
-                this.cache[uid].subject.next(null);
-                this.cache[uid] = undefined;
+                // If there's cache information, delete it.
+                if (this.cache[uid] !== undefined) {
+                    this.cache[uid].subscription.unsubscribe();
+                    this.cache[uid].subject.next(null);
+                    delete this.cache[uid];
+                }
             });
     }
 
