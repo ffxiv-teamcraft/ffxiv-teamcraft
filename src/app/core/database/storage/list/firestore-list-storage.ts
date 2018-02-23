@@ -42,7 +42,14 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
         return this.firestore
             .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
             .snapshotChanges()
-            .map(snaps => snaps.map(snap => (<List>{$key: snap.payload.doc.id, ...snap.payload.doc.data()})))
+            .map(snaps => snaps.map(snap => {
+                // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
+                // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
+                // Resulting on an unreadable, undeletable list.
+                const data = snap.payload.doc.data();
+                delete data.$key;
+                return (<List>{$key: snap.payload.doc.id, ...data})
+            }))
             .map(lists => this.serializer.deserialize<List>(lists, [List]))
             .publishReplay(1)
             .refCount();
