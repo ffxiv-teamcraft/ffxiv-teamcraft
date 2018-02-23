@@ -59,11 +59,15 @@
                 <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
                         matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
                 </button>
-                <app-amount-input class="amount"
+                <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                                [total]="getAmount()" [item]="item"
+                                                (onchange)="setDone(item, $event, item.done)">
+                </app-ffxivcrafting-amount-input>
+                <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
                                   max="{{getAmount()}}"
                                   min="0"
                                   [value]="item.done | ceil"
-                                  [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
+                                  [craftAmount]="(getAmount() > 0 && getAmount() !== item.amount_needed) ? item.amount_needed : null"
                                   (onchange)="setDone(item, $event, item.done)"></app-amount-input>
             </div>
             <div class="addition-row" *ngIf="expanded">
@@ -213,12 +217,16 @@
             <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
                     matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
             </button>
-            <app-amount-input class="amount"
+            <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                            [total]="getAmount()" [item]="item"
+                                            (onchange)="setDone(item, $event, item.done)">
+            </app-ffxivcrafting-amount-input>
+            <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
                               max="{{getAmount()}}"
                               maxlength="{{getAmount()?.toString().length}}"
                               min="0"
                               [value]="item.done | ceil"
-                              [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
+                              [craftAmount]="(getAmount() > 0 && getAmount() !== item.amount_needed) ? item.amount_needed : null"
                               (onchange)="setDone(item, $event, item.done)"></app-amount-input>
             <button mat-icon-button class="requirements" (click)="openRequirementsPopup()">
                 <mat-icon color="accent">assignment</mat-icon>

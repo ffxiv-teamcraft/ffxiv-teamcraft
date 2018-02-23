@@ -32,6 +32,7 @@ import {ListNamePopupComponent} from './list-name-popup/list-name-popup.componen
 import {RegisterPopupComponent} from './register-popup/register-popup.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
+import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
 
 @NgModule({
     imports: [
@@ -74,6 +75,7 @@ import {CommentsModule} from '../comments/comments.module';
         NameEditPopupComponent,
         ListNamePopupComponent,
         RegisterPopupComponent,
+        FfxivcraftingAmountInputComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -82,6 +84,7 @@ import {CommentsModule} from '../comments/comments.module';
         EorzeanTimeComponent,
         AmountInputComponent,
         ItemIconComponent,
+        FfxivcraftingAmountInputComponent,
     ],
     entryComponents: [
         AmountInputComponent,

@@ -57,6 +57,14 @@ export class SettingsService {
         this.setSetting('alarm:volume', volume.toString());
     }
 
+    public get ffxivcraftingDisplay(): boolean {
+        return this.getSetting('ffxivcrafting-display', 'false') === 'true';
+    }
+
+    public set ffxivcraftingDisplay(display: boolean) {
+        this.setSetting('ffxivcrafting-display', display.toString())
+    }
+
     private getSetting(name: string, defaultValue: string): string {
         return this.cache[name] || defaultValue;
     }

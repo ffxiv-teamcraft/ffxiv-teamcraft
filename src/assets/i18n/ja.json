@@ -24,7 +24,8 @@
     "X_for_total": "{{amount}} for total",
     "COMMON": {
         "Save": "Save",
-        "Reset": "Reset"
+        "Reset": "Reset",
+        "Total": "Total"
     },
     "ALARMS": {
         "No_alarm": "No alarm set",
@@ -203,7 +204,8 @@
         "title": "Settings",
         "link_base": "Item links",
         "compact_lists": "Compact list display",
-        "theme": "Theme"
+        "theme": "Theme",
+        "ffxivcrafting_display": "FFXIVcrafting.com-like amounts"
     },
     "PROFILE": {
         "Masterbooks": "Masterbooks",

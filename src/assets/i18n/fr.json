@@ -24,7 +24,8 @@
     "X_for_total": "{{amount}} pour le tout",
     "COMMON": {
         "Save": "Sauvegarder",
-        "Reset": "Remettre à 0"
+        "Reset": "Remettre à 0",
+        "Total": "Total"
     },
     "ALARMS": {
         "No_alarm": "Aucune alarme définie",
@@ -195,7 +196,8 @@
         "title": "Options",
         "link_base": "Liens des objets",
         "compact_lists": "Affichage compact des listes",
-        "theme": "Thème"
+        "theme": "Thème",
+        "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com"
     },
     "PROFILE": {
         "Masterbooks": "Livres",

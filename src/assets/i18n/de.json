@@ -24,7 +24,8 @@
     "X_for_total": "{{amount}} insgesamt",
     "COMMON": {
         "Save": "Speichern",
-        "Reset": "Neustart"
+        "Reset": "Neustart",
+        "Total": "Total"
     },
     "ALARMS": {
         "No_alarm": "Kein Alarm gesetzt",
@@ -195,7 +196,8 @@
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
         "compact_lists": "Kompaktlisten-Ansicht",
-        "theme": "Design"
+        "theme": "Design",
+        "ffxivcrafting_display": "FFXIVcrafting.com-like amounts"
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
