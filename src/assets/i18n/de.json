@@ -23,7 +23,8 @@
     "Profile": "Profil",
     "X_for_total": "{{amount}} insgesamt",
     "COMMON": {
-        "Save": "Speichern"
+        "Save": "Speichern",
+        "Reset": "Neustart"
     },
     "ALARMS": {
         "No_alarm": "Kein Alarm gesetzt",

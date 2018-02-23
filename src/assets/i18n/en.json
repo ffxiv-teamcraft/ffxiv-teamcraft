@@ -23,7 +23,8 @@
     "Profile": "Profile",
     "X_for_total": "{{amount}} for total",
     "COMMON": {
-        "Save": "Save"
+        "Save": "Save",
+        "Reset": "Reset"
     },
     "ALARMS": {
         "No_alarm": "No alarm set",
