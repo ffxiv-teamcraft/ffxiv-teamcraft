@@ -223,6 +223,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     openLayoutOptions(): void {
         this.dialog.open(ListLayoutPopupComponent).afterClosed().subscribe(() => {
             this.reload.emit();
+            this.listDisplay = this.layoutService.getDisplay(this.listData);
         });
     }
 
@@ -314,10 +315,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     public rename(): void {
         const dialog = this.dialog.open(NameEditPopupComponent, {data: this.listData.name});
         this.subscriptions.push(dialog.afterClosed().map(value => {
-                    if (value !== undefined && value.length > 0) {
-                        this.listData.name = value;
-                    }
-            return this.listData;
+                if (value !== undefined && value.length > 0) {
+                    this.listData.name = value;
+                }
+                return this.listData;
             }).subscribe((list) => {
                 this.update(list);
             })

@@ -40,8 +40,8 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.list = this.route.params.switchMap(params => {
-            return this.reload$.switchMap(() => this.listService.get(params.listId))
-                .distinctUntilChanged()
+            return this.reload$
+                .mergeMap(() => this.listService.get(params.listId))
                 .filter(list => list !== null)
                 .do((l: List) => {
                     if (l.name !== undefined) {
