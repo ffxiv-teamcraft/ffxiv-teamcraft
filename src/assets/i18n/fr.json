@@ -213,6 +213,7 @@
         "Copied_x_times": "Copiée {{count}} fois"
     },
     "LIST_DETAILS": {
+        "Add_remove_amount": "Ajouter/enlever un montant donné",
         "No_book": "Livre manquant",
         "No_note": "Aucune note",
         "Note_placeholder": "Note",

@@ -213,6 +213,7 @@
         "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
+        "Add_remove_amount": "Add/remove a given amount",
         "No_book": "Missing book",
         "No_note": "No note",
         "Note_placeholder": "Note",

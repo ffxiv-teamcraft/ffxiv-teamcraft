@@ -55,13 +55,32 @@
                  alt="{{masterbook.id | itemName | i18n}}">
         </div>
         <div class="done">
-            <app-amount-input class="amount"
-                              max="{{getAmount()}}"
-                              maxlength="{{getAmount()?.toString().length}}"
-                              min="0"
-                              [value]="item.done | ceil"
-                              [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
-                              (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+            <div class="done-first-row">
+                <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
+                        matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
+                </button>
+                <app-amount-input class="amount"
+                                  max="{{getAmount()}}"
+                                  min="0"
+                                  [value]="item.done | ceil"
+                                  [craftAmount]="getAmount() !== item.amount_needed ? item.amount_needed : null"
+                                  (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+            </div>
+            <div class="addition-row" *ngIf="expanded">
+                <button mat-icon-button color="accent" (click)="addAddition()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <app-amount-input class="amount"
+                                  min="0"
+                                  max="{{getAmount()}}"
+                                  value="{{addition}}"
+                                  [hideMax]="true"
+                                  [hideMissingAmount]="true"
+                                  (onchange)="addition = $event"></app-amount-input>
+                <button mat-icon-button color="warn" (click)="removeAddition()">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            </div>
         </div>
         <div [ngClass]="{'done-check':true, 'compact': settings.compactLists}">
             <a mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
@@ -191,6 +210,9 @@
                  alt="{{masterbook.id | itemName | i18n}}">
         </div>
         <div class="done" matLine>
+            <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
+                    matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
+            </button>
             <app-amount-input class="amount"
                               max="{{getAmount()}}"
                               maxlength="{{getAmount()?.toString().length}}"
@@ -274,12 +296,28 @@
                     </button>
                 </div>
             </div>
+            <div class="addition-row" *ngIf="expanded">
+                <button mat-icon-button color="accent" (click)="addAddition()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <app-amount-input class="amount"
+                                  min="0"
+                                  max="{{getAmount()}}"
+                                  value="{{addition}}"
+                                  [hideMax]="true"
+                                  [hideMissingAmount]="true"
+                                  (onchange)="addition = $event"></app-amount-input>
+                <button mat-icon-button color="warn" (click)="removeAddition()">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            </div>
         </div>
 
         <div *ngIf="hasTimers" class="timers-container">
             <div class="timer" *ngFor="let timer of timers | async">
                 <span>{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}</span><br>
-                <button mat-raised-button [color]="getTimerColor(timer.alarm) | async" (click)="toggleAlarm(timer.itemId)">
+                <button mat-raised-button [color]="getTimerColor(timer.alarm) | async"
+                        (click)="toggleAlarm(timer.itemId)">
                     <mat-icon *ngIf="!hasAlarm(timer.itemId)">alarm_add</mat-icon>
                     <mat-icon *ngIf="hasAlarm(timer.itemId)">alarm_on</mat-icon>
                     {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>

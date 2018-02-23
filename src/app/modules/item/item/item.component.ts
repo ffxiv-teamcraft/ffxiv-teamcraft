@@ -244,6 +244,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     hasTimers = false;
 
+    /**
+     * Expansion is the state of the "add amount" input field (shown or not).
+     */
+    expanded = false;
+
+    addition = 0;
+
     masterbooks: CompactMasterbook[] = [];
 
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
@@ -294,6 +301,25 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '/assets/icons/BTN.png',
             'https://garlandtools.org/db/images/FSH.png'
         ][type];
+    }
+
+    /**
+     * Adds addition value to current done amount.
+     */
+    public addAddition() {
+
+        this.setDone(this.item, this.item.done + this.addition, this.item.done);
+        this.expanded = !this.expanded;
+        this.addition = 0;
+    }
+
+    /**
+     * Removes addition value to current done amount.
+     */
+    public removeAddition() {
+        this.setDone(this.item, this.item.done - this.addition, this.item.done);
+        this.expanded = !this.expanded;
+        this.addition = 0;
     }
 
     public getTimerColor(alarm: Alarm): Observable<string> {

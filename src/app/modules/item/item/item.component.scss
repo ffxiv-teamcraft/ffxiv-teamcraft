@@ -1,9 +1,13 @@
 @import "../../../../theme";
 
 :host {
-    mat-list-item.compact {
-        min-height: 0;
-        height: 35px !important;
+
+    mat-list-item {
+        height: auto !important;
+        min-height: 48px;
+        &.compact {
+            min-height: 35px !important;
+        }
     }
 
     .even {
@@ -167,6 +171,14 @@
             position: absolute;
             bottom: -2px;
             right: -8px;
+        }
+    }
+    .done {
+        display: flex;
+        flex-direction: column !important;
+        .done-first-row {
+            align-items: center;
+            display: flex;
         }
     }
 
