@@ -277,7 +277,8 @@ export class AlarmService {
      * @private
      */
     public _isSpawned(alarm: Alarm, time: Date): boolean {
-        return time.getUTCHours() >= alarm.spawn && time.getUTCHours() < (alarm.spawn + alarm.duration) % 24;
+        const spawn = alarm.spawn === 0 ? 24 : alarm.spawn;
+        return time.getUTCHours() >= spawn && time.getUTCHours() < (spawn + alarm.duration) % 24;
     }
 
     /**

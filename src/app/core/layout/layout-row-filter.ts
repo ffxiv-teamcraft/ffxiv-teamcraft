@@ -24,7 +24,7 @@ export class LayoutRowFilter {
             'IS_MASTERCRAFT'));
 
     static IS_FOLKLORE = LayoutRowFilter.IS_GATHERING
-        ._and(new LayoutRowFilter(row => row.gatheredBy.legend !== undefined, 'IS_FOLKLORE'));
+        ._and(new LayoutRowFilter(row => row.gatheredBy.nodes.find(node => node.limitType !== undefined) !== undefined, 'IS_FOLKLORE'));
 
     static IS_TIMED = new LayoutRowFilter(row => {
         const isTimedGathering = row.gatheredBy !== undefined &&
