@@ -41,10 +41,6 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.list = this.route.params.switchMap(params => {
             return this.reload$.switchMap(() => this.listService.get(params.listId))
-                .catch(() => {
-                    this.notFound = true;
-                    return Observable.of(null);
-                })
                 .distinctUntilChanged()
                 .filter(list => list !== null)
                 .do((l: List) => {
@@ -58,6 +54,10 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
                     list.crystals = list.orderCrystals();
                     list.gathers = list.orderGatherings(this.data);
                     return list;
+                })
+                .catch(() => {
+                    this.notFound = true;
+                    return Observable.of(null);
                 });
         });
     }
