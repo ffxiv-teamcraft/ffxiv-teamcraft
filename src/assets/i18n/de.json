@@ -216,7 +216,7 @@
         "Copied_x_times": "{{count}} mal kopiert"
     },
     "LIST_DETAILS": {
-        "Add_remove_amount": "Add/remove a given amount",
+        "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
