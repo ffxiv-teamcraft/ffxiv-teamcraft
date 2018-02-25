@@ -345,9 +345,14 @@ export class AlarmService {
         }
         const resHours = hours - currentTime.getUTCHours();
         let resMinutes = resHours * 60 + minutes - currentTime.getUTCMinutes();
+        let resSeconds = resHours * 3600 + minutes * 60 - currentTime.getUTCSeconds();
         if (resMinutes < 0) {
             resMinutes += 1440;
         }
+        if (resSeconds < 0) {
+            resSeconds += 360;
+        }
+        resMinutes += (resSeconds % 60) / 60;
         return resMinutes;
     }
 

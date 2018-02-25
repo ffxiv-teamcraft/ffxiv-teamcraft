@@ -11,7 +11,7 @@ export class EorzeanTimeService {
 
 
     constructor() {
-        setInterval(() => this.tick(), 60000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
+        setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
     }
 
     /**
