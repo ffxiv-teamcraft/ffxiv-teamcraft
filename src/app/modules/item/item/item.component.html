@@ -31,7 +31,8 @@
     </div>
 
     <div *ngIf="hasTimers" class="timers-container">
-        <div [ngClass]="{'timer':true, 'compact': settings.compactLists}" *ngFor="let timer of timers | async">
+        <div [ngClass]="{'timer':true, 'compact': settings.compactLists}"
+             *ngFor="let timer of timers | async; trackBy: trackByTimers">
             <button mat-raised-button
                     [color]="getTimerColor(timer.alarm) | async"
                     (click)="toggleAlarm(timer.itemId, timer.type)"

@@ -427,6 +427,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         }
     }
 
+    public trackByTimers(index: number, timer: Timer) {
+        return timer.itemId;
+    }
+
     public getI18n(name: I18nName) {
         return this.i18n.getName(name);
     }
