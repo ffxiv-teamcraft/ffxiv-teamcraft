@@ -23,6 +23,7 @@ import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {ProfileHelpComponent} from './profile-help/profile-help.component';
 import {PublicProfileComponent} from './public-profile/public-profile.component';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const routes: Routes = [{
     path: 'profile',
@@ -49,6 +50,8 @@ const routes: Routes = [{
         MatIconModule,
         MatDialogModule,
         MatListModule,
+
+        FlexLayoutModule,
 
         DatabaseModule,
         PipesModule,

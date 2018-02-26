@@ -12,7 +12,7 @@
              class="patreon-badge" matTooltipPosition="above" *ngIf="character.patron">
     </mat-card-header>
     <div class="card-body">
-        <div><img src="{{character.portrait}}" alt="portrait" class="portrait"></div>
+        <div fxShow fxHide.lt-md><img src="{{character.portrait}}" alt="portrait" class="portrait"></div>
         <div *ngIf="publicLists | async as lists" class="lists">
             <mat-list>
                 <h3>{{'Public_lists' | translate}}</h3>

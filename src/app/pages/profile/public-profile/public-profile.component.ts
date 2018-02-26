@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {List} from '../../../model/list/list';
 import {ListService} from '../../../core/database/list.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-public-profile',
@@ -19,10 +20,15 @@ export class PublicProfileComponent {
 
     public publicLists: Observable<List[]>;
 
-    constructor(route: ActivatedRoute, dataService: DataService, userService: UserService, listService: ListService) {
+    constructor(route: ActivatedRoute, dataService: DataService, userService: UserService, listService: ListService,
+                private media: ObservableMedia) {
         this.ingameCharacter = route.params.mergeMap(params => userService.get(params.id))
             .mergeMap(user => dataService.getCharacter(user.lodestoneId));
         this.freeCompany = this.ingameCharacter.mergeMap(character => dataService.getFreeCompany(character.free_company));
         this.publicLists = route.params.mergeMap(params => listService.getPublicListsByAuthor(params.id));
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }

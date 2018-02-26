@@ -10,6 +10,9 @@
         height: 100%;
         width: 300px;
         margin-right: 20px;
+        &.mobile {
+            width: 100px;
+        }
     }
 
     .patreon-badge {
@@ -18,7 +21,6 @@
 
     .card-body {
         display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: start;
     }
