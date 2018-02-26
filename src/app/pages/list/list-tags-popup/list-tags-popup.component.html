@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>{{"LIST_DETAILS.Tags_popup" | translate}}</h2>
 <div mat-dialog-content>
     <mat-selection-list>
-        <mat-list-option [selected]="tags.indexOf(tag) > -1"
+        <mat-list-option [selected]="isChecked(tag)"
                          *ngFor="let tag of possibleTags"
         (selectionChange)="setTag(tag, $event.selected)">{{"LIST_TAGS."+tag |
             translate}}

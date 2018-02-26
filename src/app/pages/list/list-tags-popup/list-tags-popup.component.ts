@@ -25,4 +25,8 @@ export class ListTagsPopupComponent {
             this.tags = this.tags.filter(t => t !== ListTag[tag]);
         }
     }
+
+    public isChecked(tag: string) {
+        return this.tags.map(t => t.toUpperCase()).indexOf(tag.toUpperCase()) > -1;
+    }
 }
