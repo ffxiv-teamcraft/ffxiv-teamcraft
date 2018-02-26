@@ -4,6 +4,7 @@ import {List} from '../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {PageEvent} from '@angular/material';
 
 @Component({
     selector: 'app-public-lists',
@@ -27,6 +28,12 @@ export class PublicListsComponent implements OnInit {
 
     tags: string[] = Object.keys(ListTag);
 
+    publicListsLength = 0;
+
+    pageSize = 25;
+
+    paginator: BehaviorSubject<PageEvent> = new BehaviorSubject<PageEvent>({pageIndex: 0, pageSize: 25, length: 0});
+
     constructor(private listService: ListService) {
         this.lists = Observable.combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
             (lists, tagFilter, nameFilter) => {
@@ -44,7 +51,15 @@ export class PublicListsComponent implements OnInit {
                 }
                 lists = lists.filter(list => list.recipes.length > 0);
                 return lists;
-        });
+            })
+            .do(lists => {
+                this.publicListsLength = lists.length;
+            })
+            .switchMap(lists => {
+                return this.paginator
+                    .map(pagination => lists.slice(pagination.pageSize * pagination.pageIndex,
+                        pagination.pageSize * pagination.pageIndex + pagination.pageSize))
+            });
     }
 
     closed(key: string): void {
