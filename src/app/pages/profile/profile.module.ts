@@ -6,9 +6,11 @@ import {ProfileGuard} from './profile.guard';
 import {DatabaseModule} from '../../core/database/database.module';
 import {
     MatButtonModule,
-    MatCardModule, MatDialogModule,
+    MatCardModule,
+    MatDialogModule,
     MatGridListModule,
-    MatIconModule, MatListModule,
+    MatIconModule,
+    MatListModule,
     MatProgressSpinnerModule,
     MatTooltipModule
 } from '@angular/material';
@@ -18,12 +20,18 @@ import {MasterbooksPopupComponent} from './masterbooks-popup/masterbooks-popup.c
 import {PipesModule} from '../../pipes/pipes.module';
 import {CoreModule} from '../../core/core.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
-import { ProfileHelpComponent } from './profile-help/profile-help.component';
+import {ProfileHelpComponent} from './profile-help/profile-help.component';
+import {PublicProfileComponent} from './public-profile/public-profile.component';
+import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 
 const routes: Routes = [{
     path: 'profile',
     component: ProfileComponent,
     canActivate: [ProfileGuard, MaintenanceGuard]
+}, {
+    path: 'profile/:id',
+    component: PublicProfileComponent,
+    canActivate: [MaintenanceGuard]
 }];
 
 @NgModule({
@@ -45,11 +53,13 @@ const routes: Routes = [{
         DatabaseModule,
         PipesModule,
         CoreModule,
+        CommonComponentsModule,
     ],
     declarations: [
         ProfileComponent,
         MasterbooksPopupComponent,
         ProfileHelpComponent,
+        PublicProfileComponent,
     ],
     providers: [
         ProfileGuard,

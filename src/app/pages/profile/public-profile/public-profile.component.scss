@@ -1,0 +1,29 @@
+:host {
+    .loader-container {
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 200px;
+    }
+    .portrait {
+        height: 100%;
+        width: 300px;
+        margin-right: 20px;
+    }
+
+    .patreon-badge {
+        height: 40px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .lists {
+        width: 100%;
+    }
+}

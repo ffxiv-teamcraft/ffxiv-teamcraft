@@ -21,6 +21,10 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
             .map(lists => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
     }
 
+    getPublicListsByAuthor(uid: string): Observable<List[]> {
+        return this.listsByAuthorRef(uid).map(lists => lists.filter(list => list.public === true));
+    }
+
     byAuthor(uid: string): Observable<List[]> {
         return this.listsByAuthorRef(uid);
     }
