@@ -216,6 +216,8 @@
         "Copied_x_times": "{{count}} mal kopiert"
     },
     "LIST_DETAILS": {
+        "Missing_tags_before_button":"Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
+        "Missing_tags_after_button":" hinzu.",
         "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",

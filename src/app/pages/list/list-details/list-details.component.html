@@ -63,6 +63,11 @@
             <mat-icon>update</mat-icon>
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
+        <mat-error *ngIf="listData.public && (listData.tags === undefined || listData.tags.length === 0)">
+            {{"LIST_DETAILS.Missing_tags_before_button" | translate}}
+            <mat-icon>label_outline</mat-icon>
+            {{"LIST_DETAILS.Missing_tags_after_button" | translate}}
+        </mat-error>
 
         <div *ngIf="listData.note !== undefined && listData.note !== '' || isOwnList()">
             <mat-divider class="top-divider"></mat-divider>

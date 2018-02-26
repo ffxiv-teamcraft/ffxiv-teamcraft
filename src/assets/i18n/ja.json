@@ -224,6 +224,8 @@
         "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
+        "Missing_tags_before_button":"Your list is shown as community list but has no tags, please add some tags using ",
+        "Missing_tags_after_button":" button",
         "Add_remove_amount": "Add/remove a given amount",
         "No_book": "Missing book",
         "No_note": "No note",
