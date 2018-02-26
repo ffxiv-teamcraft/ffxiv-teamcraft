@@ -5,18 +5,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {DatabaseModule} from '../../core/database/database.module';
 import {CoreModule} from '../../core/core.module';
 import {TranslateModule} from '@ngx-translate/core';
-import {PipesModule} from '../../pipes/pipes.module';
-import {
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatIconModule,
-    MatInputModule,
-    MatSelectModule,
-    MatSnackBarModule
-} from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
@@ -36,16 +26,8 @@ const routes: Routes = [{
 
         DatabaseModule,
         CoreModule,
-        PipesModule,
-        CommonComponentsModule,
 
-        MatSelectModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        MatInputModule,
-        MatCardModule,
+        MatProgressSpinnerModule,
     ],
     declarations: [
         AddItemComponent
