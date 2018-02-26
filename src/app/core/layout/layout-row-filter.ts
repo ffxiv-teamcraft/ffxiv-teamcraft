@@ -15,6 +15,8 @@ export class LayoutRowFilter {
         return row.vendors !== undefined && row.vendors.length > 0;
     }, 'CAN_BE_BOUGHT');
 
+    static IS_MONSTER_DROP = new LayoutRowFilter(row => row.drops !== undefined && row.drops.length > 0, 'IS_MONSTER_DROP');
+
     static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
         .find(source => source.trades
             .find(trade => [20, 21, 22].indexOf(+trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
