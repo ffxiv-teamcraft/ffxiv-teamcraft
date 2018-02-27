@@ -39,13 +39,11 @@
     <mat-icon>call_merge</mat-icon>
 </button>
 
-<div class="lists-container" *ngIf="lists | async as listsData">
-    <div class="row" *ngFor="let list of listsData; let i = index">
+<div class="lists-container" *ngIf="lists | async as display">
+    <div class="row" *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index; ">
         <app-list-panel
             [list]="list"
             [expanded]="expanded.indexOf(list.$key) > -1"
-            (opened)="opened(list.$key)"
-            (closed)="closed(list.$key)"
             (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
             (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
             (ondelete)="delete(list)"
@@ -55,8 +53,41 @@
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
-        <div *ngFor="let workshop of workshops | async">
-            <app-workshop-panel [workshop]="workshop"></app-workshop-panel>
+        <div *ngFor="let workshop of workshops | async; let i = index">
+            <mat-expansion-panel [ngClass]="{odd: i%2>0}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{workshop.name}}
+                    </mat-panel-title>
+                    <div class="buttons">
+                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
+                                (click)="$event.stopPropagation()"
+                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                                (cbOnSuccess)="showCopiedNotification()">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+                        <button mat-icon-button routerLink="/workshop/{{workshop.$key}}"
+                                (click)="$event.stopPropagation()">
+                            <mat-icon>playlist_play</mat-icon>
+                        </button>
+                        <button mat-icon-button
+                                (click)="deleteWorkshop(workshop); $event.stopPropagation()">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </mat-expansion-panel-header>
+
+                <app-list-panel
+                    *ngFor="let list of display.rows[workshop.$key]; trackBy: trackByListsFn; let i = index"
+                    [list]="list"
+                    [expanded]="expanded.indexOf(list.$key) > -1"
+                    (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                    (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                    (ondelete)="delete(list)"
+                    [authorUid]="user.uid"
+                    [odd]="i%2>0"></app-list-panel>
+            </mat-expansion-panel>
         </div>
         <button mat-button (click)="newWorkshop()" class="new-workshop" color="accent">{{'WORKSHOP.Add_workshop' |
             translate}}

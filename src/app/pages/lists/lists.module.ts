@@ -7,19 +7,20 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
     MatButtonModule,
-    MatDialogModule,
+    MatDialogModule, MatExpansionModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatSelectModule,
+    MatSelectModule, MatSnackBarModule,
     MatTooltipModule
 } from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.component';
 import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 import {WorkshopModule} from '../workshop/workshop.module';
+import {ClipboardModule} from 'ngx-clipboard/dist';
 
 const routes: Routes = [
     {
@@ -35,6 +36,8 @@ const routes: Routes = [
         ReactiveFormsModule,
         FormsModule,
 
+        ClipboardModule,
+
         RouterModule.forChild(routes),
 
         MatInputModule,
@@ -46,6 +49,8 @@ const routes: Routes = [
         MatTooltipModule,
         MatProgressBarModule,
         MatProgressSpinnerModule,
+        MatSnackBarModule,
+        MatExpansionModule,
 
         CoreModule,
         CommonComponentsModule,

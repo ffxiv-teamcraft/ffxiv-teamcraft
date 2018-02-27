@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {WorkshopPanelComponent} from './workshop-panel/workshop-panel.component';
 import {MatButtonModule, MatExpansionModule, MatIconModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
 import {CoreModule} from '../../core/core.module';
 import {ClipboardModule} from 'ngx-clipboard/dist';
 import {RouterModule} from '@angular/router';
+import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 
 @NgModule({
     imports: [
@@ -20,9 +20,10 @@ import {RouterModule} from '@angular/router';
         MatButtonModule,
 
         CoreModule,
+        CommonComponentsModule,
     ],
-    declarations: [WorkshopPanelComponent],
-    exports: [WorkshopPanelComponent]
+    declarations: [],
+    exports: []
 })
 export class WorkshopModule {
 }

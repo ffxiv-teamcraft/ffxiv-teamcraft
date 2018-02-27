@@ -4,5 +4,5 @@ export class Workshop extends DataModel {
     name?: string;
     authorId?: string;
     fcId?: string;
-    listIds: string[];
+    listIds: string[] = [];
 }
