@@ -116,7 +116,7 @@
             <div *ngIf="item.gardening === true">
                 <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                      matTooltip="{{'Gardening' | translate}}"
-                     matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
+                     matTooltipPosition="above" src="/assets/icons/Gardening.png">
             </div>
             <div>
                 <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
@@ -250,7 +250,7 @@
                 <div *ngIf="item.gardening === true">
                     <img class="crafted-by"
                          matTooltip="{{'Gardening' | translate}}"
-                         matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Leveling.png">
+                         matTooltipPosition="above" src="/assets/icons/Gardening.png">
                 </div>
                 <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0"
                         (click)="openDropsDetails(item)">
