@@ -1,4 +1,6 @@
 {
+    "Is_working_on_it": "{{name}} travaille dessus",
+    "Work_on_it": "Je m'en occupe",
     "ABOUT": {
         "title": "À Propos",
         "Copyright_notice_title": "Copyright",

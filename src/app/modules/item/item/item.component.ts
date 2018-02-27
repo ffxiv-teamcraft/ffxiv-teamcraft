@@ -39,6 +39,8 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
+import {DataService} from '../../../core/api/data.service';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-item',
@@ -257,6 +259,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public timers: Observable<Timer[]>;
 
+    worksOnIt: any;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -266,7 +270,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private alarmService: AlarmService,
                 public settings: SettingsService,
                 private bellNodesService: BellNodesService,
-                private etime: EorzeanTimeService) {
+                private etime: EorzeanTimeService,
+                private dataService: DataService,
+                private userService: UserService) {
         super();
     }
 
@@ -291,6 +297,20 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+        }
+    }
+
+    public workOnIt(): void {
+        this.item.workingOnIt = this.user.$key;
+        this.update.emit();
+    }
+
+    public removeWorkingOnIt(): void {
+        delete this.item.workingOnIt;
+        this.update.emit();
     }
 
     public getTimerIcon(type: number): string {
@@ -339,6 +359,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined && this.worksOnIt === undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+        }
     }
 
     updateCanBeCrafted(): void {

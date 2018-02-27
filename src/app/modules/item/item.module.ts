@@ -25,10 +25,12 @@ import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-deta
 import {VoyagesDetailsPopupComponent} from './voyages-details-popup/voyages-details-popup.component';
 import {MapModule} from '../map/map.module';
 import {DatabaseModule} from '../../core/database/database.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
 
         MatListModule,
         MatTooltipModule,

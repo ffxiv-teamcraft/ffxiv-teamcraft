@@ -28,6 +28,25 @@
                   color="warn">
             warning
         </mat-icon>
+        <div *ngIf="item.workingOnIt">
+            <div *ngIf="worksOnIt as character" class="working-on-it">
+                <img src="{{character.avatar}}" alt=""
+                     matTooltip="{{'Is_working_on_it' | translate:{name: character.name} }}"
+                     matTooltipPosition="above" class="avatar" routerLink="/profile/{{item.workingOnIt}}">
+                <button mat-icon-button color="warn" *ngIf="item.workingOnIt === user.$key"
+                        (click)="removeWorkingOnIt()">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div *ngIf="!item.workingOnIt && !user?.anonymous">
+            <button mat-icon-button matTooltip="{{'Work_on_it' | translate}}"
+                    matTooltipPosition="above"
+                    [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+                    (click)="workOnIt()">
+                <mat-icon color="accent">work</mat-icon>
+            </button>
+        </div>
     </div>
 
     <div *ngIf="hasTimers" class="timers-container">
