@@ -6,12 +6,19 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
-    MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatProgressBarModule, MatSelectModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
     MatTooltipModule
 } from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.component';
-import { BulkRegeneratePopupComponent } from './bulk-regenerate-popup/bulk-regenerate-popup.component';
+import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 
 const routes: Routes = [
     {
@@ -37,6 +44,7 @@ const routes: Routes = [
         MatListModule,
         MatTooltipModule,
         MatProgressBarModule,
+        MatProgressSpinnerModule,
 
         CoreModule,
         CommonComponentsModule,

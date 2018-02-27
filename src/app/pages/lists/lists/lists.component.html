@@ -50,3 +50,7 @@
         [authorUid]="user.uid"
         [odd]="i%2>0"></app-list-panel>
 </div>
+
+<div *ngIf="(lists | async) === null && loading" class="loader-container">
+    <mat-spinner></mat-spinner>
+</div>

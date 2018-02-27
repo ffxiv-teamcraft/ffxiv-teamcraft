@@ -40,6 +40,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     expanded: string[] = [];
 
+    loading = true;
+
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef) {
@@ -134,7 +136,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                             });
                             return match;
                         });
-                    });
+                    }).do(() => this.loading = false);
                 }
             }));
     }

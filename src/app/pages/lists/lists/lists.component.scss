@@ -19,3 +19,11 @@ mat-slide-toggle {
 .top-section {
     display: flex;
 }
+
+.loader-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
