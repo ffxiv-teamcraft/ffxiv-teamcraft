@@ -89,6 +89,20 @@ export class DataService {
     }
 
     /**
+     * Searches for gathering items based on a given name.
+     * @param {string} name
+     * @returns {Observable<ItemData[]>}
+     */
+    public searchGathering(name: string): Observable<ItemData[]> {
+        const params = new HttpParams()
+            .set('gatherable', '1')
+            .set('text', name)
+            .set('lang', this.i18n.currentLang);
+        return this.getGarlandSearch(params)
+            .map(items => this.serializer.deserialize<ItemData>(items, [ItemData]));
+    }
+
+    /**
      * Searchs for a character using a lodestone id.
      * @param {string} name
      * @param {string} server

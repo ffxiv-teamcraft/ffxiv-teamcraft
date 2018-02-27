@@ -1,0 +1,18 @@
+<div class="input-container compact">
+    <mat-input-container>
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="filter" [(ngModel)]="query" matInput placeholder="{{'Gathering_name' | translate}}" #filter>
+        <mat-hint align="end">
+            <small>{{'Data_from_gt' | translate}}</small>
+        </mat-hint>
+    </mat-input-container>
+</div>
+<mat-grid-list [cols]="4" *ngIf="result | async as results">
+    <mat-grid-tile *ngFor="let row of results">
+        <mat-card-header>
+            <img mat-card-avatar [appXivdbTooltip]="row.obj.i" src="{{row.obj.c | icon}}" alt="">
+            <mat-card-title>{{row.obj.i | itemName | i18n}}</mat-card-title>
+        </mat-card-header>
+        <!--<app-map [mapId]="alarm.zoneId" [markers]="[{x: alarm.coords[0], y:alarm.coords[1]}]"></app-map>-->
+    </mat-grid-tile>
+</mat-grid-list>
