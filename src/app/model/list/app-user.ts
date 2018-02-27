@@ -9,4 +9,5 @@ export class AppUser extends DataModel {
     favorites?: string[];
     patron?: boolean;
     anonymous?: boolean;
+    providerId?: string;
 }

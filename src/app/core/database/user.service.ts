@@ -66,7 +66,10 @@ export class UserService extends FirebaseStorage<AppUser> {
                     if (user === null || user.isAnonymous) {
                         return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
                     } else {
-                        return this.get(user.uid);
+                        return this.get(user.uid).map(u => {
+                            u.providerId = user.providerId;
+                            return u;
+                        } );
                     }
                 });
             });
@@ -94,6 +97,20 @@ export class UserService extends FirebaseStorage<AppUser> {
                     return this.listService.deleteUserLists(uid).subscribe(resolve);
                 }
             });
+        });
+    }
+
+    /**
+     * Updates email associated with a given account.
+     * @param {string} currentMail
+     * @param {string} password
+     * @param {string} newMail
+     * @returns {Promise<void>}
+     */
+    public changeEmail(currentMail: string, password: string, newMail: string): Promise<void> {
+        return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(user => {
+            user.updateEmail(newMail)
+                .then(() => user.sendEmailVerification());
         });
     }
 

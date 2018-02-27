@@ -8,6 +8,7 @@ import {PageComponent} from '../../../core/component/page-component';
 import {ComponentType} from '@angular/cdk/portal';
 import {HelpService} from '../../../core/component/help.service';
 import {ProfileHelpComponent} from '../profile-help/profile-help.component';
+import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -59,6 +60,10 @@ export class ProfileComponent extends PageComponent {
 
     changeCharacter(): void {
         this.dialog.open(CharacterAddPopupComponent);
+    }
+
+    changeEmail(): void {
+        this.dialog.open(ChangeEmailPopupComponent);
     }
 
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {
