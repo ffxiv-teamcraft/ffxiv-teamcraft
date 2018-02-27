@@ -38,7 +38,7 @@ export class PublicListsComponent implements OnInit {
         this.lists = Observable.combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
             (lists, tagFilter, nameFilter) => {
                 if (nameFilter !== '') {
-                    lists = lists.filter(list => list.name.indexOf(nameFilter) > -1);
+                    lists = lists.filter(list => list.name.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1);
                 }
                 if (tagFilter.length > 0) {
                     lists = lists.filter(list => {
