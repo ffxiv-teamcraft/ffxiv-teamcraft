@@ -16,6 +16,8 @@ import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MergeListsPopupComponent} from '../merge-lists-popup/merge-lists-popup.component';
 import {BulkRegeneratePopupComponent} from '../bulk-regenerate-popup/bulk-regenerate-popup.component';
+import {WorkshopService} from '../../../core/database/workshop.service';
+import {Workshop} from '../../../model/other/workshop';
 
 declare const ga: Function;
 
@@ -42,9 +44,12 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     loading = true;
 
+    workshops: Observable<Workshop[]>;
+
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
-                private listService: ListService, private title: Title, private cd: ChangeDetectorRef) {
+                private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
+                private workshopService: WorkshopService) {
         super();
     }
 
@@ -58,6 +63,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 this.myNgForm.resetForm();
             });
         }
+    }
+
+    newWorkshop(): void {
+        const workshop = new Workshop();
+        workshop.name = 'Test workshop';
+        workshop.authorId = this.user.uid;
+        this.workshopService.add(workshop);
     }
 
     regenerateAllLists(): void {
@@ -123,6 +135,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 if (user === null) {
                     this.lists = Observable.of([]);
                     this.user = undefined;
+                    this.workshops = Observable.of([]);
                 } else {
                     this.user = user;
                     this.lists = Observable.combineLatest(this.listService.getUserLists(user.uid), this.tagFilter, (lists, tagFilter) => {
@@ -137,6 +150,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                             return match;
                         });
                     }).do(() => this.loading = false);
+                    this.workshops = this.workshopService.getUserWorkshops(user.uid);
                 }
             }));
     }

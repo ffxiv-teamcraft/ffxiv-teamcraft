@@ -32,6 +32,7 @@ import {MatButtonModule, MatDialogModule} from '@angular/material';
 import {LayoutService} from './layout/layout.service';
 import {LayoutOrderService} from './layout/layout-order.service';
 import {PushNotificationsModule} from 'ng-push';
+import {WorkshopService} from './database/workshop.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -74,6 +75,7 @@ const dataExtractorProviders: Provider[] = [
         HelpService,
         LayoutService,
         LayoutOrderService,
+        WorkshopService,
     ],
     declarations: [
         I18nPipe,

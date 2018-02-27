@@ -19,6 +19,7 @@ import {
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.component';
 import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
+import {WorkshopModule} from '../workshop/workshop.module';
 
 const routes: Routes = [
     {
@@ -48,6 +49,7 @@ const routes: Routes = [
 
         CoreModule,
         CommonComponentsModule,
+        WorkshopModule,
     ],
     declarations: [
         ListsComponent,

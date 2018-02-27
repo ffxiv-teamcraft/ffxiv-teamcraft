@@ -14,7 +14,8 @@
     <div class="spacer"></div>
 
     <button mat-button color="accent" (click)="regenerateAllLists()" class="regenerate-all-button">
-        <mat-icon>update</mat-icon>{{"LISTS.Regenerate_all" | translate}}
+        <mat-icon>update</mat-icon>
+        {{"LISTS.Regenerate_all" | translate}}
     </button>
 </div>
 
@@ -38,17 +39,29 @@
     <mat-icon>call_merge</mat-icon>
 </button>
 
-<div class="row" *ngFor="let list of lists | async; let i = index">
-    <app-list-panel
-        [list]="list"
-        [expanded]="expanded.indexOf(list.$key) > -1"
-        (opened)="opened(list.$key)"
-        (closed)="closed(list.$key)"
-        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
-        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
-        (ondelete)="delete(list)"
-        [authorUid]="user.uid"
-        [odd]="i%2>0"></app-list-panel>
+<div class="lists-container" *ngIf="lists | async as listsData">
+    <div class="row" *ngFor="let list of listsData; let i = index">
+        <app-list-panel
+            [list]="list"
+            [expanded]="expanded.indexOf(list.$key) > -1"
+            (opened)="opened(list.$key)"
+            (closed)="closed(list.$key)"
+            (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+            (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+            (ondelete)="delete(list)"
+            [authorUid]="user.uid"
+            [odd]="i%2>0"></app-list-panel>
+    </div>
+    <div class="workshops">
+        <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div *ngFor="let workshop of workshops | async">
+            <app-workshop-panel [workshop]="workshop"></app-workshop-panel>
+        </div>
+        <button mat-button (click)="newWorkshop()" class="new-workshop" color="accent">{{'WORKSHOP.Add_workshop' |
+            translate}}
+        </button>
+    </div>
 </div>
 
 <div *ngIf="(lists | async) === null && loading" class="loader-container">
