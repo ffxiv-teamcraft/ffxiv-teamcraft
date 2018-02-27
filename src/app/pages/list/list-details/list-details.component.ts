@@ -121,8 +121,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 this.initAccordion(this.listData);
             }
             this.listDisplay = this.layoutService.getDisplay(this.listData);
-        }
-        if (changes.list !== undefined && changes.listData.isFirstChange()) {
             this.outdated = this.listData.isOutDated();
         }
     }

@@ -360,12 +360,6 @@ export class List extends DataModel {
             return false;
         }
         let res = false;
-        this.forEachItem(i => {
-            res = res || (i.amount_needed === undefined);
-            if (i.gatheredBy !== undefined) {
-                res = res || (i.gatheredBy.type === undefined);
-            }
-        });
         res = res || (this.version === undefined);
         res = res || semver.ltr(this.version, '3.3.0');
         return res;
