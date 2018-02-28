@@ -25,6 +25,14 @@ export class MasterbooksPopupComponent {
         }
     }
 
+    checkAll(ids: number[]): void {
+        ids.forEach(id => {
+            if (this.data.user.masterbooks.indexOf(id) === -1) {
+                this.data.user.masterbooks.push(id);
+            }
+        })
+    }
+
     /**
      * Submits the data to save masterbooks in database.
      */
