@@ -39,6 +39,8 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
+import {DataService} from '../../../core/api/data.service';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-item',
@@ -244,11 +246,20 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     hasTimers = false;
 
+    /**
+     * Expansion is the state of the "add amount" input field (shown or not).
+     */
+    expanded = false;
+
+    addition = 0;
+
     masterbooks: CompactMasterbook[] = [];
 
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
 
     public timers: Observable<Timer[]>;
+
+    worksOnIt: any;
 
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
@@ -259,7 +270,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private alarmService: AlarmService,
                 public settings: SettingsService,
                 private bellNodesService: BellNodesService,
-                private etime: EorzeanTimeService) {
+                private etime: EorzeanTimeService,
+                private dataService: DataService,
+                private userService: UserService) {
         super();
     }
 
@@ -284,6 +297,20 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+        }
+    }
+
+    public workOnIt(): void {
+        this.item.workingOnIt = this.user.$key;
+        this.update.emit();
+    }
+
+    public removeWorkingOnIt(): void {
+        delete this.item.workingOnIt;
+        this.update.emit();
     }
 
     public getTimerIcon(type: number): string {
@@ -294,6 +321,25 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '/assets/icons/BTN.png',
             'https://garlandtools.org/db/images/FSH.png'
         ][type];
+    }
+
+    /**
+     * Adds addition value to current done amount.
+     */
+    public addAddition() {
+
+        this.setDone(this.item, this.item.done + this.addition, this.item.done);
+        this.expanded = !this.expanded;
+        this.addition = 0;
+    }
+
+    /**
+     * Removes addition value to current done amount.
+     */
+    public removeAddition() {
+        this.setDone(this.item, this.item.done - this.addition, this.item.done);
+        this.expanded = !this.expanded;
+        this.addition = 0;
     }
 
     public getTimerColor(alarm: Alarm): Observable<string> {
@@ -313,6 +359,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined && this.worksOnIt === undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+        }
     }
 
     updateCanBeCrafted(): void {
@@ -399,6 +449,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         if (this.hasTimers) {
             this.timers = this.alarmService.getTimers(this.item);
         }
+    }
+
+    public trackByTimers(index: number, timer: Timer) {
+        return timer.itemId;
     }
 
     public getI18n(name: I18nName) {

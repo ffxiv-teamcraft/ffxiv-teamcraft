@@ -14,7 +14,8 @@
     <div class="spacer"></div>
 
     <button mat-button color="accent" (click)="regenerateAllLists()" class="regenerate-all-button">
-        <mat-icon>update</mat-icon>{{"LISTS.Regenerate_all" | translate}}
+        <mat-icon>update</mat-icon>
+        {{"LISTS.Regenerate_all" | translate}}
     </button>
 </div>
 
@@ -38,15 +39,71 @@
     <mat-icon>call_merge</mat-icon>
 </button>
 
-<div class="row" *ngFor="let list of lists | async; let i = index">
-    <app-list-panel
-        [list]="list"
-        [expanded]="expanded.indexOf(list.$key) > -1"
-        (opened)="opened(list.$key)"
-        (closed)="closed(list.$key)"
-        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
-        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
-        (ondelete)="delete(list)"
-        [authorUid]="user.uid"
-        [odd]="i%2>0"></app-list-panel>
+<div class="lists-container" *ngIf="lists | async as display">
+    <div class="row" *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index; ">
+        <app-list-panel
+            [list]="list"
+            [expanded]="expanded.indexOf(list.$key) > -1"
+            (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+            (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+            (ondelete)="delete(list)"
+            [authorUid]="user.uid"
+            [odd]="i%2>0"></app-list-panel>
+    </div>
+    <div class="workshops">
+        <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div *ngFor="let workshop of workshops | async; trackBy: trackByWorkshopFn; let i = index" class="row">
+            <mat-expansion-panel [ngClass]="{odd: i%2>0}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{workshop.name}}
+                    </mat-panel-title>
+                    <div class="buttons">
+                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
+                                (click)="$event.stopPropagation()"
+                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                                (cbOnSuccess)="showCopiedNotification()">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+                        <button mat-icon-button routerLink="/workshop/{{workshop.$key}}"
+                                (click)="$event.stopPropagation()">
+                            <mat-icon>playlist_play</mat-icon>
+                        </button>
+                        <button mat-icon-button
+                                (click)="deleteWorkshop(workshop); $event.stopPropagation()">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </mat-expansion-panel-header>
+                <div class="row workshop-row"
+                     *ngFor="let list of display.rows[workshop.$key]; trackBy: trackByListsFn; let i = index">
+                    <button mat-icon-button color="warn" (click)="removeListFromWorkshop(workshop, list.$key)">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <app-list-panel
+                        [list]="list"
+                        [expanded]="expanded.indexOf(list.$key) > -1"
+                        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                        (ondelete)="delete(list)"
+                        [authorUid]="user.uid"
+                        [odd]="i%2>0"></app-list-panel>
+                </div>
+                <button mat-button class="full-width-button" color="accent" (click)="addListsToWorkhop(workshop, display.basicLists)">
+                    <mat-icon>add</mat-icon>
+                    {{'WORKSHOP.Add_lists' | translate}}
+                </button>
+            </mat-expansion-panel>
+        </div>
+        <button mat-button (click)="newWorkshop()" class="full-width-button" color="accent">
+            <mat-icon>add</mat-icon>
+            {{'WORKSHOP.Add_workshop' | translate}}
+        </button>
+    </div>
+</div>
+
+<div *ngIf="(lists | async) === null && loading" class="loader-container">
+    <mat-spinner></mat-spinner>
 </div>

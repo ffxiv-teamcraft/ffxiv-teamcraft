@@ -1,0 +1,18 @@
+<form [formGroup]="form" (submit)="changeEmail()">
+    <mat-input-container>
+        <input type="text" required matInput placeholder="Email" formControlName="currentEmail">
+        <mat-error></mat-error>
+    </mat-input-container>
+    <mat-input-container>
+        <input type="password" required matInput placeholder="Password" formControlName="password">
+        <mat-error></mat-error>
+    </mat-input-container>
+    <mat-input-container>
+        <input type="text" required matInput placeholder="Email" formControlName="newEmail">
+        <mat-error></mat-error>
+    </mat-input-container>
+</form>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent">{{'Confirm' | translate}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>{{'Cancel' | translate}}</button>
+</div>

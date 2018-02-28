@@ -36,7 +36,8 @@ export class LayoutService {
                 index: row.index,
                 zoneBreakdown: row.zoneBreakdown,
                 tiers: row.tiers,
-                filterChain: row.filter.name
+                filterChain: row.filter.name,
+                hideIfEmpty: row.hideIfEmpty,
             };
         }).sort((a, b) => a.index - b.index);
     }
@@ -67,7 +68,7 @@ export class LayoutService {
         }
     }
 
-    private get defaultLayout(): LayoutRow[] {
+    public get defaultLayout(): LayoutRow[] {
         return [
             new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name, 0),
             new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name, 3),

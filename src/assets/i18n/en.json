@@ -1,4 +1,16 @@
 {
+    "Is_working_on_it": "{{name}} is working on it",
+    "Work_on_it": "I'm working on it",
+    "WORKSHOP": {
+        "Workshops": "Workshops",
+        "Add_lists": "Add lists",
+        "Add_workshop": "Add workshop",
+        "Delete_message": "Deleting a workshop won't delete the lists in it, they will only be brought back to workshop-less lists",
+        "List_selection_title": "Select lists to add to workshop {{workshopName}}",
+        "Name_dialog": "Workshop name",
+        "Created_by": "Created by {{name}}",
+        "Share_link_copied": "Workshop share link copied"
+    },
     "ABOUT": {
         "title": "About",
         "Copyright_notice_title": "Copyright notice",
@@ -13,16 +25,19 @@
         "Body": "In order to thank you properly for the 10k lists created on the app, a 60 days timecard giveway has been created, it will last until Feb. 09.\n Thank you for using this app, I hope it helped you a lot, the app is what it is thanks to you.",
         "Access": "Access giveway"
     },
+    "Hide_if_empty": "Hide if empty",
     "No_favorites": "No Favorite",
     "Ephemeral_list": "Will be deleted once completed",
     "Quick_list_create": "Create quick list (deleted once completed)",
     "Tag_filter": "Tags",
-    "Public_lists": "Public lists",
-    "Public_list": "Public list",
+    "Public_lists": "Community lists",
+    "Public_list": "Community list",
     "Profile": "Profile",
     "X_for_total": "{{amount}} for total",
     "COMMON": {
-        "Save": "Save"
+        "Save": "Save",
+        "Reset": "Reset",
+        "Total": "Total"
     },
     "ALARMS": {
         "No_alarm": "No alarm set",
@@ -129,7 +144,7 @@
     "HOME_PAGE.count": "lists currently stored",
     "HOME_PAGE.lists_created_count": "lists created using FFXIV Teamcraft",
     "HOME_PAGE.p1": "Hi, I'm Miu Asakura on Louisoix. I'm the creator of FFXIV Teamcraft, a tool that allows you to create crafting lists online, share them with your friend and contribute together in realtime. Because we were struggling to manage big lists using actual tools, I wanted to have a way to create lists that are stored, on which every could say \"I have that, I can provide it\". So I started creating FFXIV Teamcraft.",
-    "HOME_PAGE.p2": "Then I thought \"If my FC finds the app useful, why would others not find it useful too?\". So I bought a domain name, I made a reddit topic and started adding more features. At the moment the app is able to store your crafting lists, show you what you can gather/craft by yourself, all of this in your language (some translated assets are still missing but they will be available in the future) with a single link. Wether you are French, English or Deutch speaker, the app will show you a version of the list that you can understand. That's the main goal of the application.",
+    "HOME_PAGE.p2": "Then I thought \"If my FC finds the app useful, why would others not find it useful too?\". So I bought a domain name, I made a reddit topic and started adding more features. At the moment the app is able to store your crafting lists, show you what you can gather/craft by yourself, all of this in your language (some translated assets are still missing but they will be available in the future) with a single link. Wether you are French, English or Deutsch speaker, the app will show you a version of the list that you can understand. That's the main goal of the application.",
     "HOME_PAGE.p3": "FFXIV Teamcraft is here do to the maths, so you can focus on the essential part of crafting and forget your calc sheets and your paper with everything written on it. Simply add a recipe to a list, give the link to your friends and start creating awesome stuff together !",
     "HOME_PAGE.support_patreon": "Support us on patreon",
     "HOME_PAGE.features": "Features",
@@ -193,7 +208,8 @@
         "title": "Settings",
         "link_base": "Item links",
         "compact_lists": "Compact list display",
-        "theme": "Theme"
+        "theme": "Theme",
+        "ffxivcrafting_display": "FFXIVcrafting.com-like amounts"
     },
     "PROFILE": {
         "Masterbooks": "Masterbooks",
@@ -212,6 +228,9 @@
         "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
+        "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
+        "Missing_tags_after_button": " button",
+        "Add_remove_amount": "Add/remove a given amount",
         "No_book": "Missing book",
         "No_note": "No note",
         "Note_placeholder": "Note",

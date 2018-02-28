@@ -12,10 +12,42 @@ mat-slide-toggle {
     margin: 10px 0;
 }
 
+.odd {
+    background-color: rgba(123, 123, 123, .2);
+}
+
 .row {
     margin: 5px 0;
 }
 
+.workshop-row {
+    display: flex;
+    app-list-panel {
+        flex-grow: 1;
+    }
+}
+
 .top-section {
     display: flex;
+}
+
+.loader-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.full-width-button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.workshops {
+    margin-top: 40px;
+}
+
+.divider {
+    margin-bottom: 15px;
 }

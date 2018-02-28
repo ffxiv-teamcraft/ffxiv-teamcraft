@@ -1,8 +1,11 @@
-.settings-row {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    .select-box {
-        width: 200px !important;
+:host {
+    width: 100%;
+    .settings-row {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        .select-box {
+            width: 200px !important;
+        }
     }
 }

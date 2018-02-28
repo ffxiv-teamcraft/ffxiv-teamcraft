@@ -29,6 +29,15 @@ export class ListService {
     }
 
     /**
+     * Gets all public lists for a given author id.
+     * @param {string} uid
+     * @returns {Observable<List[]>}
+     */
+    public getPublicListsByAuthor(uid: string): Observable<List[]> {
+        return this.store.getPublicListsByAuthor(uid);
+    }
+
+    /**
      * Updates a list in the database.
      * @param {string} uid
      * @param {List} data

@@ -20,6 +20,7 @@ import {PageComponent} from '../../../core/component/page-component';
 import {ComponentType} from '@angular/cdk/portal';
 import {RecipesHelpComponent} from '../recipes-help/recipes-help.component';
 import {HelpService} from '../../../core/component/help.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 declare const ga: Function;
 
@@ -106,8 +107,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService,
-                protected helpService: HelpService) {
-        super(dialog, helpService);
+                protected helpService: HelpService, protected media: ObservableMedia) {
+        super(dialog, helpService, media);
     }
 
     ngOnInit() {

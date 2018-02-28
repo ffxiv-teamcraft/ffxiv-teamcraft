@@ -1,4 +1,16 @@
 {
+    "Is_working_on_it": "{{name}} travaille dessus",
+    "Work_on_it": "Je m'en occupe",
+    "WORKSHOP": {
+        "Workshops": "Ateliers",
+        "Add_lists": "Ajouter des listes",
+        "Add_workshop": "Ajouter un atelier",
+        "Delete_message": "Supprimer un aterlier ne supprimera pas les listes qui y sont rattachées, elles seront simplement renvoyées dans les listes sans atelier",
+        "List_selection_title": "Choisissez les listes à ajouter à l'atelier {{workshopName}}",
+        "Name_dialog": "Nom de l'atelier",
+        "Created_by": "Créé par {{name}}",
+        "Share_link_copied": "Lien de partage de l'atelier copié"
+    },
     "ABOUT": {
         "title": "À Propos",
         "Copyright_notice_title": "Copyright",
@@ -13,16 +25,19 @@
         "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
         "Access": "Accéder au concours"
     },
+    "Hide_if_empty": "Masquer si vide",
     "No_favorites": "Aucun favoris",
     "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
     "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
     "Tag_filter": "Tags",
-    "Public_lists": "Listes publiques",
-    "Public_list": "Liste publique",
+    "Public_lists": "Listes Communautaires",
+    "Public_list": "Liste Communautaire",
     "Profile": "Profil",
     "X_for_total": "{{amount}} pour le tout",
     "COMMON": {
-        "Save": "Sauvegarder"
+        "Save": "Sauvegarder",
+        "Reset": "Remettre à 0",
+        "Total": "Total"
     },
     "ALARMS": {
         "No_alarm": "Aucune alarme définie",
@@ -193,7 +208,8 @@
         "title": "Options",
         "link_base": "Liens des objets",
         "compact_lists": "Affichage compact des listes",
-        "theme": "Thème"
+        "theme": "Thème",
+        "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com"
     },
     "PROFILE": {
         "Masterbooks": "Livres",
@@ -212,6 +228,9 @@
         "Copied_x_times": "Copiée {{count}} fois"
     },
     "LIST_DETAILS": {
+        "Missing_tags_before_button":"Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
+        "Missing_tags_after_button":"",
+        "Add_remove_amount": "Ajouter/enlever un montant donné",
         "No_book": "Livre manquant",
         "No_note": "Aucune note",
         "Note_placeholder": "Note",

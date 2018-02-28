@@ -6,7 +6,6 @@ import {LayoutRowOrder} from '../../../core/layout/layout-row-order.enum';
 import {ImportInputBoxComponent} from './import-input-box/import-input-box.component';
 import {TranslateService} from '@ngx-translate/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {ListRow} from '../../../model/list/list-row';
 
 @Component({
     selector: 'app-list-layout-popup',
@@ -56,6 +55,10 @@ export class ListLayoutPopupComponent {
                 extraClasses: ['snack']
             }
         );
+    }
+
+    public reset(): void {
+        this.rows = this.layoutService.defaultLayout.slice().sort((a, b) => a.index - b.index);
     }
 
     public import(): void {

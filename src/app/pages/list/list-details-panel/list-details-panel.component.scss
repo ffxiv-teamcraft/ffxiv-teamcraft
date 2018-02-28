@@ -1,3 +1,14 @@
 mat-expansion-panel {
     margin: 10px 0;
 }
+
+.mat-list .mat-subheader, .mat-nav-list .mat-subheader, .mat-selection-list .mat-subheader {
+    font-size: 15px;
+}
+
+.mat-list > div:not(:first-child) {
+    margin-top: 10px;
+    &.compact {
+        margin-top: 5px;
+    }
+}

@@ -344,7 +344,8 @@ export class List extends DataModel {
             if (requirementItem !== undefined) {
                 // While each requirement has enough items remaining, you can craft the item.
                 // If only one misses, then this will turn false for the rest of the loop
-                canCraft = canCraft && (requirementItem.done - requirementItem.used) >= requirement.amount * item.amount_needed;
+                canCraft = canCraft &&
+                    (requirementItem.done - requirementItem.used) >= requirement.amount * (item.amount_needed - item.done);
             }
         }
         return canCraft;
@@ -359,14 +360,8 @@ export class List extends DataModel {
             return false;
         }
         let res = false;
-        this.forEachItem(i => {
-            res = res || (i.amount_needed === undefined);
-            if (i.gatheredBy !== undefined) {
-                res = res || (i.gatheredBy.type === undefined);
-            }
-        });
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '3.2.0');
+        res = res || semver.ltr(this.version, '3.3.0');
         return res;
     }
 

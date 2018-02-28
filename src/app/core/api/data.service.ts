@@ -117,6 +117,17 @@ export class DataService {
     }
 
     /**
+     * Gets details about a free company.
+     * @param {number} id
+     * @returns {Observable<any>}
+     */
+    public getFreeCompany(id: number): Observable<any> {
+        return this.http.get<any>(`https://xivsync.com/freecompany/parse/${id}`).map(result => result.data)
+            .publishReplay(1)
+            .refCount()
+    }
+
+    /**
      * Creates a request to garlandtools.org.
      * @param {string} uri
      * @returns {Observable<any>}

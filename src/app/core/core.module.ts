@@ -27,10 +27,12 @@ import {InstancesExtractor} from './list/data/extractor/instances-extractor';
 import {AlarmService} from './time/alarm.service';
 import {HelpService} from './component/help.service';
 import {BellNodesService} from './data/bell-nodes.service';
-import { HelpDialogComponent } from './component/help-dialog/help-dialog.component';
+import {HelpDialogComponent} from './component/help-dialog/help-dialog.component';
 import {MatButtonModule, MatDialogModule} from '@angular/material';
 import {LayoutService} from './layout/layout.service';
 import {LayoutOrderService} from './layout/layout-order.service';
+import {PushNotificationsModule} from 'ng-push';
+import {WorkshopService} from './database/workshop.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -54,6 +56,7 @@ const dataExtractorProviders: Provider[] = [
         AngularFireModule,
         MatDialogModule,
         MatButtonModule,
+        PushNotificationsModule,
     ],
     providers: [
         // Data Extraction
@@ -72,6 +75,7 @@ const dataExtractorProviders: Provider[] = [
         HelpService,
         LayoutService,
         LayoutOrderService,
+        WorkshopService,
     ],
     declarations: [
         I18nPipe,
@@ -83,7 +87,8 @@ const dataExtractorProviders: Provider[] = [
         TranslateModule,
         AngularFireModule,
         AngularFireDatabaseModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        PushNotificationsModule,
     ]
 })
 export class CoreModule {

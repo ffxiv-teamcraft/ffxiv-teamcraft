@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ItemComponent} from './item/item.component';
 import {
-    MatButtonModule, MatChipsModule, MatDialogModule, MatIconModule, MatListModule, MatProgressSpinnerModule, MatTabsModule,
+    MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatProgressSpinnerModule,
+    MatTabsModule,
     MatTooltipModule
 } from '@angular/material';
 import {TooltipModule} from '../tooltip/tooltip.module';
@@ -24,10 +25,12 @@ import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-deta
 import {VoyagesDetailsPopupComponent} from './voyages-details-popup/voyages-details-popup.component';
 import {MapModule} from '../map/map.module';
 import {DatabaseModule} from '../../core/database/database.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
 
         MatListModule,
         MatTooltipModule,
@@ -37,6 +40,8 @@ import {DatabaseModule} from '../../core/database/database.module';
         MatChipsModule,
         MatTabsModule,
         MatProgressSpinnerModule,
+        MatInputModule,
+        MatCardModule,
 
         ClipboardModule,
 

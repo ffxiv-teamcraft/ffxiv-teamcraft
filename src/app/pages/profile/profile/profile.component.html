@@ -12,7 +12,13 @@
         <mat-grid-tile colspan="2">
             <mat-card class="profile-card">
                 <mat-card-header>
-                    <mat-card-title>{{character.name}}</mat-card-title>
+                    <mat-card-title>{{character.name}}
+                        <span *ngIf="user.providerId === 'firebase'"> - {{user.email}}
+                        <button (click)="changeEmail()" mat-icon-button>
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        </span>
+                    </mat-card-title>
                     <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
                     <div class="spacer"></div>
                     <img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png"

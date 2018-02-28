@@ -1,4 +1,16 @@
 {
+    "Is_working_on_it": "{{name}} arbeitet dran",
+    "Work_on_it": "Als 'in Arbeit' markieren",
+    "WORKSHOP": {
+        "Workshops": "Workshops",
+        "Add_lists": "Liste hinzufügen",
+        "Add_workshop": "Workshop hinzufügen",
+        "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
+        "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
+        "Name_dialog": "Workshopname",
+        "Created_by": "Erstellt von {{name}}",
+        "Share_link_copied": "Workshoplink wurde kopiert"
+    },
     "ABOUT": {
         "title": "Über FFXIVTeamcraft",
         "Copyright_notice_title": "Urheberrechtsschutz",
@@ -13,16 +25,19 @@
         "Body": "Um die Erstellung von 10000 Listen zu feiern, wird eine Spielzeitkarte über 60 Tage verlost! Die Verlosung läuft bis zum 09.Februar . \n Ein großes dankeschön dass ihr die App benutzt. Ohne euch wäre Sie nicht das gleiche und ich hoffe dass sie euch sehr hilft.",
         "Access": "Für das Giveaway anmelden"
     },
+    "Hide_if_empty": "Verstecken, wenn leer",
     "No_favorites": "Keine Favoriten",
     "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
     "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
     "Tag_filter": "Tags",
-    "Public_lists": "Öffentliche Listen",
-    "Public_list": "Öffentliche Liste",
+    "Public_lists": "Communitylisten",
+    "Public_list": "Communityliste",
     "Profile": "Profil",
     "X_for_total": "{{amount}} insgesamt",
     "COMMON": {
-        "Save": "Speichern"
+        "Save": "Speichern",
+        "Reset": "Neustart",
+        "Total": "Gesamtsumme"
     },
     "ALARMS": {
         "No_alarm": "Kein Alarm gesetzt",
@@ -193,7 +208,8 @@
         "title": "Einstellungen",
         "link_base": "Gegenstandslink-Quelle",
         "compact_lists": "Kompaktlisten-Ansicht",
-        "theme": "Design"
+        "theme": "Design",
+        "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge"
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
@@ -212,6 +228,9 @@
         "Copied_x_times": "{{count}} mal kopiert"
     },
     "LIST_DETAILS": {
+        "Missing_tags_before_button":"Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
+        "Missing_tags_after_button":" hinzu.",
+        "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
         "No_book": "Fehlendes Buch",
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",

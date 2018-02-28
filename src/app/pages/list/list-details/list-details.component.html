@@ -63,6 +63,11 @@
             <mat-icon>update</mat-icon>
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
+        <mat-error *ngIf="listData.public && (listData.tags === undefined || listData.tags.length === 0)">
+            {{"LIST_DETAILS.Missing_tags_before_button" | translate}}
+            <mat-icon>label_outline</mat-icon>
+            {{"LIST_DETAILS.Missing_tags_after_button" | translate}}
+        </mat-error>
 
         <div *ngIf="listData.note !== undefined && listData.note !== '' || isOwnList()">
             <mat-divider class="top-divider"></mat-divider>
@@ -169,23 +174,26 @@
                 </div>
             </div>
         </mat-expansion-panel>
-
-        <app-list-details-panel *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn"
-                                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
-                                [list]="listData"
-                                (update)="update()"
-                                (done)="setDone(listData, $event)"
-                                [data]="displayRow.rows"
-                                [title]="displayRow.title | translate"
-                                (opened)="accordionState[displayRow.title] = true"
-                                (closed)="accordionState[displayRow.title] = false"
-                                [zoneBreakdown]="displayRow.zoneBreakdown"
-                                [showTier]="displayRow.tiers"></app-list-details-panel>
-
+        <div *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn">
+            <app-list-details-panel
+                [user]="userData"
+                *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
+                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
+                [list]="listData"
+                (update)="update(listData)"
+                (done)="setDone(listData, $event)"
+                [data]="displayRow.rows"
+                [title]="displayRow.title | translate"
+                (opened)="accordionState[displayRow.title] = true"
+                (closed)="accordionState[displayRow.title] = false"
+                [zoneBreakdown]="displayRow.zoneBreakdown"
+                [showTier]="displayRow.tiers"></app-list-details-panel>
+        </div>
         <app-list-details-panel
+            [user]="userData"
             [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"
-            (update)="update()"
+            (update)="update(listData)"
             (done)="setDone(listData, $event)"
             [data]="listData?.recipes"
             [recipe]="true"

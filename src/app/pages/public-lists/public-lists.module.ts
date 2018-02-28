@@ -2,7 +2,15 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PublicListsComponent} from './public-lists/public-lists.component';
 import {RouterModule, Routes} from '@angular/router';
-import {MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatProgressSpinnerModule, MatSelectModule} from '@angular/material';
+import {
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
+} from '@angular/material';
 import {CoreModule} from '../../core/core.module';
 import {DatabaseModule} from '../../core/database/database.module';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
@@ -32,6 +40,7 @@ const routes: Routes = [{
         MatIconModule,
         MatInputModule,
         MatProgressSpinnerModule,
+        MatPaginatorModule,
     ],
     declarations: [PublicListsComponent]
 })

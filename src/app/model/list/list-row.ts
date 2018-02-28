@@ -32,6 +32,11 @@ export class ListRow extends DataModel {
     vendors?: Vendor[];
     voyages?: I18nName[];
 
+    /**
+     * Is someone working on it?
+     */
+    workingOnIt?: string;
+
     @DeserializeAs([ResourceComment])
     comments?: ResourceComment[];
 

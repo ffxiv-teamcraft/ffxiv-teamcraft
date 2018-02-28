@@ -20,6 +20,8 @@ import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 import fontawesome from '@fortawesome/fontawesome';
 import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
+import {faCalculator} from '@fortawesome/fontawesome-free-solid';
+import {PushNotificationsService} from 'ng-push';
 
 declare const ga: Function;
 
@@ -66,9 +68,10 @@ export class AppComponent implements OnInit {
                 private snack: MatSnackBar,
                 media: ObservableMedia,
                 public settings: SettingsService,
-                public helpService: HelpService) {
+                public helpService: HelpService,
+                private push: PushNotificationsService) {
 
-        fontawesome.library.add(faDiscord, faFacebookF, faGithub);
+        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator);
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
@@ -129,6 +132,10 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        if (localStorage.getItem('push:authorization:asked') === null) {
+            this.push.requestPermission();
+            localStorage.setItem('push:authorization:asked', 'true');
+        }
         // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
         if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
             // Open beta disclaimer popup.

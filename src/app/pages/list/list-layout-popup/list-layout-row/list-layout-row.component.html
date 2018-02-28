@@ -70,6 +70,8 @@
             </mat-checkbox>
             <mat-checkbox [(ngModel)]="row.tiers" [disabled]="row.zoneBreakdown">{{"Tier_display_toggle" | translate}}
             </mat-checkbox>
+            <mat-checkbox [(ngModel)]="row.hideIfEmpty">{{"Hide_if_empty" | translate}}
+            </mat-checkbox>
         </div>
     </div>
 </div>

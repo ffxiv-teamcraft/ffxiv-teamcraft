@@ -25,6 +25,12 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     @Input()
     max: number;
 
+    @Input()
+    hideMax = false;
+
+    @Input()
+    hideMissingAmount = false;
+
     get missingAmount() {
         return this.max - this.value
     }
@@ -73,7 +79,7 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     }
 
     public getWidth(): number {
-        return (this.max || this.value || 0).toString().length * 12 + 20;
+        return (this.maxlength || (this.max || this.value || 0).toString().length) * 12 + 20;
     }
 
 }
