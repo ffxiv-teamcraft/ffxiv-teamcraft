@@ -17,7 +17,7 @@
             <mat-list>
                 <h3>{{'Public_lists' | translate}}</h3>
                 <app-list-panel *ngFor="let list of lists; let i = index" [list]="list" [odd]="i%2>0"
-                                [readonly]="true"></app-list-panel>
+                                [buttons]="false" [readonly]="true"></app-list-panel>
             </mat-list>
         </div>
     </div>

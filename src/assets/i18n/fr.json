@@ -5,7 +5,7 @@
         "Workshops": "Ateliers",
         "Add_lists": "Ajouter des listes",
         "Add_workshop": "Ajouter un atelier",
-        "Delete_message": "Supprimer un aterlier ne supprimera pas les listes qui y sont rattachées, elles seront simplement renvoyées dans les listes sans atelier",
+        "Delete_message": "Supprimer un atelier ne supprimera pas les listes qui y sont rattachées, elles seront simplement renvoyées dans les listes sans atelier",
         "List_selection_title": "Choisissez les listes à ajouter à l'atelier {{workshopName}}",
         "Name_dialog": "Nom de l'atelier",
         "Created_by": "Créé par {{name}}",
