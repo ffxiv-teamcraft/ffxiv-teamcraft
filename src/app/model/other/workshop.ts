@@ -5,4 +5,5 @@ export class Workshop extends DataModel {
     authorId?: string;
     fcId?: string;
     listIds: string[] = [];
+    createdAt = new Date().toISOString();
 }

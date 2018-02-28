@@ -68,6 +68,18 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         }
     }
 
+    updateWorkshop(workshop: Workshop): Observable<void> {
+        return this.workshopService.update(workshop.$key, workshop);
+    }
+
+    removeListFromWorkshop(workshop: Workshop, listKey: string): void {
+        workshop.listIds = workshop.listIds.filter(key => key !== listKey);
+        this.updateWorkshop(workshop).subscribe(() => {
+            // Force reload just in case.
+            this.reloader$.next(null);
+        });
+    }
+
     newWorkshop(): void {
         const workshop = new Workshop();
         workshop.name = 'Test workshop';
@@ -89,7 +101,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     regenerateAllLists(): void {
-        this.lists.first().subscribe(lists => {
+        this.lists.first().map(display => {
+            let res = display.basicLists;
+            Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
+                res = [...res, ...row];
+            });
+            return res;
+        }).subscribe(lists => {
             this.dialog.open(BulkRegeneratePopupComponent, {data: lists, disableClose: true});
         });
     }
@@ -118,7 +136,14 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     openMergeListsPopup(): void {
-        this.lists.first().subscribe(lists => {
+        this.lists.first()
+            .map(display => {
+                let res = display.basicLists;
+                Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
+                    res = [...res, ...row];
+                });
+                return res;
+            }).subscribe(lists => {
             this.dialog.open(MergeListsPopupComponent, {data: {lists: lists, authorId: this.user.uid}}).afterClosed();
         });
     }
@@ -147,47 +172,57 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         return item.$key;
     }
 
+    trackByWorkshopFn(index: number, workshop: Workshop) {
+        return workshop.$key;
+    }
+
     ngOnInit() {
-        this.subscriptions.push(
-            this.auth.authState.subscribe(user => {
-                if (user === null) {
-                    this.lists = this.reloader$.switchMap(() => Observable.of({basicLists: []}));
-                    this.user = undefined;
-                    this.workshops = this.reloader$.switchMap(() => Observable.of([]));
-                } else {
+        this.workshops = this.auth.authState.mergeMap(user => {
+            if (user === null) {
+                return this.reloader$.mergeMap(() => Observable.of([]));
+            } else {
+                return this.reloader$.mergeMap(() => this.workshopService.getUserWorkshops(user.uid));
+            }
+        });
+        this.lists =
+            this.auth.authState.mergeMap(user => {
                     this.user = user;
-                    this.workshops = this.workshopService.getUserWorkshops(user.uid);
-                    this.lists = this.reloader$.switchMap(() => Observable.combineLatest(this.listService.getUserLists(user.uid),
-                        this.tagFilter, (lists, tagFilter) => {
-                            if (tagFilter.length === 0) {
-                                return lists;
-                            }
-                            return lists.filter(list => {
-                                let match = true;
-                                tagFilter.forEach(tag => {
-                                    match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                    if (user === null) {
+                        return this.reloader$.mergeMap(() => Observable.of({basicLists: []}));
+                    } else {
+                        return this.reloader$.mergeMap(() =>
+                            this.workshops.mergeMap(workshops => {
+                                return Observable.combineLatest(this.listService.getUserLists(user.uid),
+                                    this.tagFilter, (lists, tagFilter) => {
+                                        if (tagFilter.length === 0) {
+                                            return lists;
+                                        }
+                                        return lists.filter(list => {
+                                            let match = true;
+                                            tagFilter.forEach(tag => {
+                                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                                            });
+                                            return match;
+                                        });
+                                    }).map(lists => {
+                                    const result = {basicLists: JSON.parse(JSON.stringify(lists)), rows: {}};
+                                    workshops.forEach(workshop => {
+                                        result.rows[workshop.$key] = [];
+                                        lists.forEach((list, index) => {
+                                            // If this list is in this workshop.
+                                            if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
+                                                result.rows[workshop.$key].push(list);
+                                                // Remove the list from basicLists.
+                                                result.basicLists.splice(index, 1);
+                                            }
+                                        });
+                                    });
+                                    return result;
                                 });
-                                return match;
-                            });
-                        })).mergeMap(lists => {
-                        return this.workshops.map(workshops => {
-                            const result = {basicLists: lists, rows: {}};
-                            workshops.forEach(workshop => {
-                                result.rows[workshop.$key] = [];
-                                result.basicLists.forEach((list, index) => {
-                                    // If this list is in this workshop.
-                                    if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
-                                        result.rows[workshop.$key].push(list);
-                                        // Remove the list from basicLists.
-                                        result.basicLists.splice(index, 1);
-                                    }
-                                });
-                            });
-                            return result;
-                        });
-                    }).do(() => this.loading = false);
+                            }));
+                    }
                 }
-            }));
+            ).do(() => this.loading = false);
     }
 
 }

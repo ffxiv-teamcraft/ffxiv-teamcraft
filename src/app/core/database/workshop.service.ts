@@ -23,10 +23,7 @@ export class WorkshopService extends FirestoreStorage<Workshop> {
                     return valueWithKey;
                 });
                 return this.serializer.deserialize<Workshop>(workshops, [this.getClass()]);
-            })
-            .debounceTime(50)
-            .publishReplay(1)
-            .refCount()
+            });
     }
 
     protected getBaseUri(): string {
