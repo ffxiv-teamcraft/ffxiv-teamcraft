@@ -21,6 +21,9 @@ import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.co
 import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 import {WorkshopModule} from '../workshop/workshop.module';
 import {ClipboardModule} from 'ngx-clipboard/dist';
+import { ListsSelectionPopupComponent } from './lists-selection-popup/lists-selection-popup.component';
+import { WorkshopNamePopupComponent } from './workshop-name-popup/workshop-name-popup.component';
+import { WorkshopDeleteConfirmationPopupComponent } from './workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
 
 const routes: Routes = [
     {
@@ -60,10 +63,16 @@ const routes: Routes = [
         ListsComponent,
         MergeListsPopupComponent,
         BulkRegeneratePopupComponent,
+        ListsSelectionPopupComponent,
+        WorkshopNamePopupComponent,
+        WorkshopDeleteConfirmationPopupComponent,
     ],
     entryComponents: [
         MergeListsPopupComponent,
         BulkRegeneratePopupComponent,
+        ListsSelectionPopupComponent,
+        WorkshopNamePopupComponent,
+        WorkshopDeleteConfirmationPopupComponent,
     ]
 })
 export class ListsModule {

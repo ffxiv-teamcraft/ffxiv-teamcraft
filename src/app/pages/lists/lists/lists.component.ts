@@ -19,6 +19,9 @@ import {BulkRegeneratePopupComponent} from '../bulk-regenerate-popup/bulk-regene
 import {WorkshopService} from '../../../core/database/workshop.service';
 import {Workshop} from '../../../model/other/workshop';
 import {TranslateService} from '@ngx-translate/core';
+import {ListsSelectionPopupComponent} from '../lists-selection-popup/lists-selection-popup.component';
+import {WorkshopDeleteConfirmationPopupComponent} from '../workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
+import {WorkshopNamePopupComponent} from '../workshop-name-popup/workshop-name-popup.component';
 
 declare const ga: Function;
 
@@ -80,11 +83,34 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         });
     }
 
+    addListsToWorkhop(workshop: Workshop, availableLists: List[]): void {
+        this.dialog.open(ListsSelectionPopupComponent, {data: {workshop: workshop, lists: availableLists}})
+            .afterClosed()
+            .map(selections => selections.map(s => s.value))
+            .mergeMap(resultListIds => {
+                if (resultListIds !== undefined && resultListIds.length > 0) {
+                    workshop.listIds = [...workshop.listIds, ...resultListIds];
+                    return this.updateWorkshop(workshop);
+                }
+                return Observable.of();
+            })
+            .subscribe(() => {
+                // Force reload just in case.
+                this.reloader$.next(null)
+            });
+    }
+
     newWorkshop(): void {
-        const workshop = new Workshop();
-        workshop.name = 'Test workshop';
-        workshop.authorId = this.user.uid;
-        this.workshopService.add(workshop);
+        this.dialog.open(WorkshopNamePopupComponent).afterClosed().filter(name => name !== undefined && name.length > 0)
+            .mergeMap(name => {
+                const workshop = new Workshop();
+                workshop.name = name;
+                workshop.authorId = this.user.uid;
+                return this.workshopService.add(workshop);
+            })
+            .subscribe(() => {
+                this.reloader$.next(null);
+            });
     }
 
     public showCopiedNotification(): void {
@@ -113,9 +139,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     deleteWorkshop(workshop: Workshop): void {
-        this.workshopService.remove(workshop.$key).subscribe(() => {
-            this.reloader$.next(null);
-        });
+        this.dialog.open(WorkshopDeleteConfirmationPopupComponent).afterClosed()
+        // Checking just in case we get something not boolean which would evaluate to true.
+            .filter(result => result === true)
+            .switchMap(() => this.workshopService.remove(workshop.$key))
+            .subscribe(() => {
+                this.reloader$.next(null);
+            });
     }
 
     delete(list: List): void {
@@ -205,15 +235,15 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                             return match;
                                         });
                                     }).map(lists => {
-                                    const result = {basicLists: JSON.parse(JSON.stringify(lists)), rows: {}};
+                                    const result = {basicLists: lists, rows: {}};
                                     workshops.forEach(workshop => {
                                         result.rows[workshop.$key] = [];
-                                        lists.forEach((list, index) => {
+                                        lists.forEach((list) => {
                                             // If this list is in this workshop.
                                             if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
                                                 result.rows[workshop.$key].push(list);
                                                 // Remove the list from basicLists.
-                                                result.basicLists.splice(index, 1);
+                                                result.basicLists = result.basicLists.filter(l => l.$key !== list.$key);
                                             }
                                         });
                                     });
