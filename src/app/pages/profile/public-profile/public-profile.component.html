@@ -3,7 +3,7 @@
 </div>
 <mat-card *ngIf="ingameCharacter | async as character">
     <mat-card-header>
-        <mat-card-title>{{character.name}} <span *ngIf="freeCompany | async as fc">«{{fc.name}}»</span>
+        <mat-card-title>{{character.name}} <span *ngIf="freeCompany | async as fc">«{{fc.name}}»</span> - {{character.server}}
         </mat-card-title>
         <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
         <div class="spacer"></div>
