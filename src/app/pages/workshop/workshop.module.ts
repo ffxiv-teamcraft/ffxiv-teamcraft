@@ -1,28 +1,29 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatExpansionModule, MatIconModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule} from '@angular/material';
 import {CoreModule} from '../../core/core.module';
-import {ClipboardModule} from 'ngx-clipboard/dist';
 import {RouterModule} from '@angular/router';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {WorkshopComponent} from './workshop/workshop.component';
+
+const routes = [{
+    path: 'workshop/:id',
+    component: WorkshopComponent,
+}];
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule,
+        RouterModule.forChild(routes),
 
-        MatExpansionModule,
-        MatSnackBarModule,
-
-        ClipboardModule,
-        MatTooltipModule,
         MatIconModule,
         MatButtonModule,
+        MatCardModule,
 
         CoreModule,
         CommonComponentsModule,
     ],
-    declarations: [],
+    declarations: [WorkshopComponent],
     exports: []
 })
 export class WorkshopModule {
