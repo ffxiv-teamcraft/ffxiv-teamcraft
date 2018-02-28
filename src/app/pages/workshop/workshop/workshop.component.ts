@@ -27,7 +27,7 @@ export class WorkshopComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.workshop = this.route.params.mergeMap(params => this.workshopService.get(params.id)).do(console.log);
+        this.workshop = this.route.params.mergeMap(params => this.workshopService.get(params.id));
         this.lists = this.workshop.mergeMap(workshop => Observable.combineLatest(...workshop.listIds.map(id => this.listService.get(id))));
         this.author = this.workshop.mergeMap(workshop => this.userService.getCharacter(workshop.authorId))
     }

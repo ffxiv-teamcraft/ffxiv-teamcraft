@@ -1,6 +1,16 @@
 {
     "Is_working_on_it": "{{name}} arbeitet dran",
     "Work_on_it": "Als 'in Arbeit' markieren",
+    "WORKSHOP": {
+        "Workshops": "Workshops",
+        "Add_lists": "Liste hinzufügen",
+        "Add_workshop": "Workshop hinzufügen",
+        "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
+        "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
+        "Name_dialog": "Workshopname",
+        "Created_by": "Erstellt von {{name}}",
+        "Share_link_copied": "Workshoplink wurde kopiert"
+    },
     "ABOUT": {
         "title": "Über FFXIVTeamcraft",
         "Copyright_notice_title": "Urheberrechtsschutz",

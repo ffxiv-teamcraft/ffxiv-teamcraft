@@ -5,11 +5,12 @@
         <mat-card-subtitle>{{'WORKSHOP.Created_by' | translate : {name: authorCharacter.name} }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="lists | async as listsData">
-        <app-list-panel
-            *ngFor="let list of listsData; trackBy: trackByListsFn; let odd = odd"
-            [list]="list"
-            [readonly]="true"
-            [authorUid]="list.authorId"
-            [odd]="odd"></app-list-panel>
+        <div class="row" *ngFor="let list of listsData; trackBy: trackByListsFn; let odd = odd">
+            <app-list-panel
+                [list]="list"
+                [readonly]="true"
+                [authorUid]="list.authorId"
+                [odd]="odd"></app-list-panel>
+        </div>
     </mat-card-content>
 </mat-card>
