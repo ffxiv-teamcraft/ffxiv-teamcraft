@@ -9,6 +9,7 @@ import {ComponentType} from '@angular/cdk/portal';
 import {HelpService} from '../../../core/component/help.service';
 import {ProfileHelpComponent} from '../profile-help/profile-help.component';
 import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popup.component';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-profile',
@@ -35,8 +36,8 @@ export class ProfileComponent extends PageComponent {
     public user: AppUser;
 
 
-    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService) {
-        super(dialog, help);
+    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService, protected media: ObservableMedia) {
+        super(dialog, help, media);
         this.subscriptions.push(userService.getCharacter().subscribe(character => {
             this.character = character;
         }));

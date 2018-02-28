@@ -51,6 +51,7 @@ import {AboutModule} from './pages/about/about.module';
 import {MaintenanceModule} from './pages/maintenance/maintenance.module';
 import {GivewayPopupModule} from './modules/giveway-popup/giveway-popup.module';
 import {MacroTranslationModule} from './pages/macro-translation/macro-translation.module';
+import {WorkshopModule} from './pages/workshop/workshop.module';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -127,7 +128,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         AddItemModule,
         AboutModule,
         MaintenanceModule,
-        MacroTranslationModule
+        MacroTranslationModule,
+        WorkshopModule,
     ],
     bootstrap: [AppComponent]
 })

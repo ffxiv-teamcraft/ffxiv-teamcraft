@@ -4,6 +4,7 @@ import {ComponentType} from '@angular/cdk/portal';
 import {OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {HelpService} from './help.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 /**
  * This is the component every page component (which needs a help dialog) should implement.
@@ -14,7 +15,7 @@ import {HelpService} from './help.service';
  */
 export abstract class PageComponent extends ComponentWithSubscriptions implements OnInit {
 
-    constructor(protected dialog: MatDialog, protected helpService: HelpService) {
+    constructor(protected dialog: MatDialog, protected helpService: HelpService, protected media: ObservableMedia) {
         super();
     }
 
@@ -32,7 +33,8 @@ export abstract class PageComponent extends ComponentWithSubscriptions implement
         // (https://github.com/angular/angular/issues/15634)
         setTimeout(() => {
             this.helpService.currentHelp = this.getHelpDialog();
-            if (localStorage.getItem(`${this.constructor.name}:help`) !== 'true') {
+            if (localStorage.getItem(`${this.constructor.name}:help`) !== 'true' &&
+                !this.media.isActive('print and (max-width: 600px)')) {
                 this.dialog.open(this.getHelpDialog()).afterClosed().subscribe(() => {
                     localStorage.setItem(`${this.constructor.name}:help`, 'true');
                 });
