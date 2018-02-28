@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.3...v3.3.0) (2018-02-28)
+
+
+### Bug Fixes
+
+* black social fabs ([#221](https://github.com/Supamiu/ffxiv-teamcraft/issues/221)) ([deebdaf](https://github.com/Supamiu/ffxiv-teamcraft/commit/deebdaf))
+* can't clone public lists ([8412c1c](https://github.com/Supamiu/ffxiv-teamcraft/commit/8412c1c))
+* community list search not case-sensitive anymore ([d47d6b7](https://github.com/Supamiu/ffxiv-teamcraft/commit/d47d6b7))
+* favorites feature broken (fav page always empty) ([aee31e9](https://github.com/Supamiu/ffxiv-teamcraft/commit/aee31e9)), closes [#223](https://github.com/Supamiu/ffxiv-teamcraft/issues/223)
+* folklore filter doesn't work properly ([517ea8f](https://github.com/Supamiu/ffxiv-teamcraft/commit/517ea8f))
+* gardening icon always present in some viewports ([063cf58](https://github.com/Supamiu/ffxiv-teamcraft/commit/063cf58)), closes [#224](https://github.com/Supamiu/ffxiv-teamcraft/issues/224)
+* inventory breakdown broken ([aaebae4](https://github.com/Supamiu/ffxiv-teamcraft/commit/aaebae4)), closes [#225](https://github.com/Supamiu/ffxiv-teamcraft/issues/225)
+* item marked as not craftable while every requirement is met ([332f246](https://github.com/Supamiu/ffxiv-teamcraft/commit/332f246))
+* items with multiple recipes have wrong shards or none at all ([ea62f7b](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea62f7b)), closes [#214](https://github.com/Supamiu/ffxiv-teamcraft/issues/214)
+* items without zone data hidden in zone breakdown ([76be67d](https://github.com/Supamiu/ffxiv-teamcraft/commit/76be67d))
+* list layout not reloaded after edition ([e693bcb](https://github.com/Supamiu/ffxiv-teamcraft/commit/e693bcb)), closes [#234](https://github.com/Supamiu/ffxiv-teamcraft/issues/234)
+* lists can be created without names and can't be renamed afterwards ([b95840f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b95840f)), closes [#216](https://github.com/Supamiu/ffxiv-teamcraft/issues/216)
+* lists not deleting after account creation (lists migration) ([2ca5bc3](https://github.com/Supamiu/ffxiv-teamcraft/commit/2ca5bc3)), closes [#227](https://github.com/Supamiu/ffxiv-teamcraft/issues/227)
+* lists not found are loading forever ([98fa4a2](https://github.com/Supamiu/ffxiv-teamcraft/commit/98fa4a2)), closes [#232](https://github.com/Supamiu/ffxiv-teamcraft/issues/232)
+* nodes despawning at midnight aren't shown as spawned ([77c12a4](https://github.com/Supamiu/ffxiv-teamcraft/commit/77c12a4))
+* regenerate button not present ([43926df](https://github.com/Supamiu/ffxiv-teamcraft/commit/43926df))
+* some tags aren't saved properly ([efaeac8](https://github.com/Supamiu/ffxiv-teamcraft/commit/efaeac8)), closes [#238](https://github.com/Supamiu/ffxiv-teamcraft/issues/238)
+* timers in list details view are re-created at each ET tick ([f2a2c39](https://github.com/Supamiu/ffxiv-teamcraft/commit/f2a2c39)), closes [#237](https://github.com/Supamiu/ffxiv-teamcraft/issues/237)
+* typo in front page ([48d54af](https://github.com/Supamiu/ffxiv-teamcraft/commit/48d54af))
+* wrong DE translation ([9580d37](https://github.com/Supamiu/ffxiv-teamcraft/commit/9580d37))
+* wrong order for lists page ([ba07ae9](https://github.com/Supamiu/ffxiv-teamcraft/commit/ba07ae9))
+
+
+### Features
+
+* ability to change email associated with an account (experimental) ([2b5235f](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b5235f)), closes [#243](https://github.com/Supamiu/ffxiv-teamcraft/issues/243)
+* add "hide if empty" option on layout panels ([e1d13bf](https://github.com/Supamiu/ffxiv-teamcraft/commit/e1d13bf)), closes [#209](https://github.com/Supamiu/ffxiv-teamcraft/issues/209)
+* add an addition toggle (click to add a given amount) ([11f0ad1](https://github.com/Supamiu/ffxiv-teamcraft/commit/11f0ad1)), closes [#231](https://github.com/Supamiu/ffxiv-teamcraft/issues/231)
+* add pagination on public lists page ([d3584f4](https://github.com/Supamiu/ffxiv-teamcraft/commit/d3584f4)), closes [#241](https://github.com/Supamiu/ffxiv-teamcraft/issues/241)
+* add windows tray notifications for alarms ([b498794](https://github.com/Supamiu/ffxiv-teamcraft/commit/b498794)), closes [#220](https://github.com/Supamiu/ffxiv-teamcraft/issues/220)
+* change xivdb import (add-item) for an ephemeral list generation ([f3d0f89](https://github.com/Supamiu/ffxiv-teamcraft/commit/f3d0f89)), closes [#245](https://github.com/Supamiu/ffxiv-teamcraft/issues/245)
+* ffxivcrafting.com-like amount display (as a setting) ([5b5aa16](https://github.com/Supamiu/ffxiv-teamcraft/commit/5b5aa16)), closes [#200](https://github.com/Supamiu/ffxiv-teamcraft/issues/200)
+* make node countdown tick every second ([46d7fc6](https://github.com/Supamiu/ffxiv-teamcraft/commit/46d7fc6)), closes [#236](https://github.com/Supamiu/ffxiv-teamcraft/issues/236)
+* mark items as "working on it" ([41d12b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/41d12b5)), closes [#205](https://github.com/Supamiu/ffxiv-teamcraft/issues/205)
+* new layout filter: IS_MONSTER_DROP ([211fcc0](https://github.com/Supamiu/ffxiv-teamcraft/commit/211fcc0))
+* position for reduction items ([c5e27b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/c5e27b9)), closes [#239](https://github.com/Supamiu/ffxiv-teamcraft/issues/239)
+* public profile page ([e136095](https://github.com/Supamiu/ffxiv-teamcraft/commit/e136095)), closes [#218](https://github.com/Supamiu/ffxiv-teamcraft/issues/218)
+* reset layout to default via a button ([f7ab942](https://github.com/Supamiu/ffxiv-teamcraft/commit/f7ab942)), closes [#229](https://github.com/Supamiu/ffxiv-teamcraft/issues/229)
+* show warning message on public lists without tags ([feae02d](https://github.com/Supamiu/ffxiv-teamcraft/commit/feae02d)), closes [#240](https://github.com/Supamiu/ffxiv-teamcraft/issues/240)
+* workshops (list folders that can be shared) ([7e703d4](https://github.com/Supamiu/ffxiv-teamcraft/commit/7e703d4)), closes [#228](https://github.com/Supamiu/ffxiv-teamcraft/issues/228)
+
+
+### Performance Improvements
+
+* better change detection to avoid freezes on large list interactions ([b54d42b](https://github.com/Supamiu/ffxiv-teamcraft/commit/b54d42b))
+
+
+
 <a name="3.2.3"></a>
 ## [3.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.2...v3.2.3) (2018-02-13)
 
