@@ -40,6 +40,8 @@ export class LayoutRowFilter {
         return isTimedGathering || isTimedReduction;
     }, 'IS_TIMED');
 
+    static IS_REDUCTION = new LayoutRowFilter(row => row.reducedFrom !== undefined && row.reducedFrom.length > 0, 'IS_REDUCTION');
+
     /**
      * CRAFTED BY FILTERS
      */
