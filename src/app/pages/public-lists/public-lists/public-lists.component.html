@@ -33,5 +33,6 @@
                [pageSize]="pageSize"
                [pageSizeOptions]="[10, 25, 50, 100]"
                (page)="paginator.next($event)"
-               class="paginator">
+               class="paginator"
+               #paginatorRef>
 </mat-paginator>
