@@ -27,7 +27,7 @@ export class ListRow extends DataModel {
     drops?: Drop[];
     tradeSources?: TradeSource[];
     instances?: Instance[];
-    reducedFrom?: number[];
+    reducedFrom?: any[];
     desynths?: number[];
     vendors?: Vendor[];
     voyages?: I18nName[];

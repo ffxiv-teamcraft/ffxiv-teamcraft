@@ -302,8 +302,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
                 .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
-                    this.worksOnIt = char;
-                    this.cd.detectChanges();
+                this.worksOnIt = char;
+                this.cd.detectChanges();
             });
         }
     }
@@ -313,8 +313,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
             .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
+            this.worksOnIt = char;
+            this.cd.detectChanges();
         });
     }
 
@@ -401,6 +401,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
+            .map(reduction => reduction.obj.i)
             .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
         this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
     }

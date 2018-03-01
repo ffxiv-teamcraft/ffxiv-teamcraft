@@ -90,7 +90,9 @@ export class AlarmService {
             if (item.reducedFrom !== undefined) {
                 // If there's a way to get the item via reduction, use the item as base
                 const nodes = [].concat
-                    .apply([], item.reducedFrom.map(reduction => this.bellNodesService.getNodesByItemId(reduction)));
+                    .apply([], item.reducedFrom
+                        .map(reduction => reduction.obj.i)
+                        .map(reduction => this.bellNodesService.getNodesByItemId(reduction)));
 
                 nodes.filter(node => node.time !== undefined)
                     .forEach(node => {
