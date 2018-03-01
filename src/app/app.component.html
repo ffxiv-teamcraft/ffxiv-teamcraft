@@ -12,7 +12,7 @@
             <button mat-menu-item (click)="use('ja')">JA</button>
         </mat-menu>
 
-        <button mat-button [matMenuTriggerFor]="langMenu" fxShow fxHide.lt-md>
+        <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.gt-sm>
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>

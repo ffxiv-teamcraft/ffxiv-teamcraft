@@ -1,5 +1,6 @@
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     EventEmitter,
@@ -272,7 +273,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private bellNodesService: BellNodesService,
                 private etime: EorzeanTimeService,
                 private dataService: DataService,
-                private userService: UserService) {
+                private userService: UserService,
+                public cd: ChangeDetectorRef) {
         super();
     }
 
@@ -306,11 +308,17 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     public workOnIt(): void {
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
+        setTimeout(() => {
+            this.cd.markForCheck();
+        }, 250);
     }
 
     public removeWorkingOnIt(): void {
         delete this.item.workingOnIt;
         this.update.emit();
+        setTimeout(() => {
+            this.cd.markForCheck();
+        }, 250);
     }
 
     public getTimerIcon(type: number): string {
