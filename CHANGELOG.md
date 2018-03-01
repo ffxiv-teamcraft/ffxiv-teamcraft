@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.0...v3.3.1) (2018-03-01)
+
+
+### Bug Fixes
+
+* check all masterbooks not checking them all ([8053e65](https://github.com/Supamiu/ffxiv-teamcraft/commit/8053e65))
+* drafts considered as mastercraft book not owned ([4e5d03b](https://github.com/Supamiu/ffxiv-teamcraft/commit/4e5d03b))
+* profile not loading picture ([6765790](https://github.com/Supamiu/ffxiv-teamcraft/commit/6765790))
+* public lists search resetting page ([b892272](https://github.com/Supamiu/ffxiv-teamcraft/commit/b892272))
+
+
+### Features
+
+* add collectible switch for item addition ([2c80ba5](https://github.com/Supamiu/ffxiv-teamcraft/commit/2c80ba5)), closes [#189](https://github.com/Supamiu/ffxiv-teamcraft/issues/189)
+* new IS_REDUCTION filter ([1861b27](https://github.com/Supamiu/ffxiv-teamcraft/commit/1861b27))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.2.3...v3.3.0) (2018-02-28)
 
