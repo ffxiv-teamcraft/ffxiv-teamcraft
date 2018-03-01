@@ -1,14 +1,14 @@
 <form [formGroup]="form" (submit)="changeEmail()">
     <mat-input-container>
-        <input type="text" required matInput placeholder="Email" formControlName="currentEmail">
+        <input type="text" required matInput placeholder="Current" formControlName="currentEmail">
+        <mat-error></mat-error>
+    </mat-input-container>
+    <mat-input-container>
+        <input type="text" required matInput placeholder="New Email" formControlName="newEmail">
         <mat-error></mat-error>
     </mat-input-container>
     <mat-input-container>
         <input type="password" required matInput placeholder="Password" formControlName="password">
-        <mat-error></mat-error>
-    </mat-input-container>
-    <mat-input-container>
-        <input type="text" required matInput placeholder="Email" formControlName="newEmail">
         <mat-error></mat-error>
     </mat-input-container>
 </form>
