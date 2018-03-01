@@ -32,7 +32,9 @@ export class LayoutRowFilter {
         const isTimedGathering = row.gatheredBy !== undefined &&
             row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const isTimedReduction = row.reducedFrom !== undefined &&
-            row.reducedFrom.filter(reduction => {
+            row.reducedFrom
+                .map(reduction => reduction.obj.i)
+                .filter(reduction => {
                 return (<any>window).gt.bell.nodes.find(node => {
                     return node.items.find(item => item.id === reduction) !== undefined;
                 }) !== undefined;
