@@ -301,24 +301,26 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateTimers();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+                    this.worksOnIt = char;
+                    this.cd.detectChanges();
+            });
         }
     }
 
     public workOnIt(): void {
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
-        setTimeout(() => {
-            this.cd.markForCheck();
-        }, 250);
+        this.userService.get(this.item.workingOnIt)
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+                this.worksOnIt = char;
+                this.cd.detectChanges();
+        });
     }
 
     public removeWorkingOnIt(): void {
         delete this.item.workingOnIt;
         this.update.emit();
-        setTimeout(() => {
-            this.cd.markForCheck();
-        }, 250);
     }
 
     public getTimerIcon(type: number): string {

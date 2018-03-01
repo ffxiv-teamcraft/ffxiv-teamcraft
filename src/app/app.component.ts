@@ -108,6 +108,9 @@ export class AppComponent implements OnInit {
         } else {
             this.use(translate.getBrowserLang());
         }
+        translate.onLangChange.subscribe(change => {
+            this.locale = change.lang;
+        });
 
         // Annoucement
         data.object('/announcement')
