@@ -142,30 +142,35 @@ export class AlarmService {
      * @param {Alarm} alarm
      */
     private playAlarm(alarm: Alarm): void {
-        this.snack.open(this.translator.instant('ALARM.Spawned',
-            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-            this.translator.instant('ALARM.See_on_map'),
-            {duration: 5000})
-            .onAction().subscribe(() => {
-            this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
-        });
-        const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
-        audio.loop = false;
-        audio.volume = this.settings.alarmVolume;
-        audio.play();
-        this.pushNotificationsService.create(this.translator.instant('ALARM.Spawned',
-            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-            {
-                icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
-                sticky: false,
-                body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
-                `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
-                (alarm.slot !== null ? `(${alarm.slot})` : '')
-            }
-        ).subscribe(() => {
-        }, err => {
-            // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
-        })
+        const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
+        // Don't play the alarm if it was played less than a minute ago
+        if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {
+            this.snack.open(this.translator.instant('ALARM.Spawned',
+                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+                this.translator.instant('ALARM.See_on_map'),
+                {duration: 5000})
+                .onAction().subscribe(() => {
+                this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
+            });
+            const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
+            audio.loop = false;
+            audio.volume = this.settings.alarmVolume;
+            audio.play();
+            this.pushNotificationsService.create(this.translator.instant('ALARM.Spawned',
+                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+                {
+                    icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
+                    sticky: false,
+                    body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
+                    `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
+                    (alarm.slot !== null ? `(${alarm.slot})` : '')
+                }
+            ).subscribe(() => {
+            }, err => {
+                // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
+            });
+            localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
+        }
     }
 
     /**
