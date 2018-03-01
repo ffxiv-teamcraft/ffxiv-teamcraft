@@ -431,7 +431,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             }
             // If the user has at least one of the required books, it's okay.
             for (const book of books) {
-                if ((this.user.masterbooks || []).indexOf(book.id) > -1) {
+                if ((this.user.masterbooks || []).indexOf(book.id) > -1 || book.id.toString().indexOf('draft') > -1) {
                     return true;
                 }
             }
