@@ -67,6 +67,10 @@ export class PublicListsComponent implements OnInit {
             });
     }
 
+    trackByListsFn(index: number, item: List) {
+        return item.$key;
+    }
+
     closed(key: string): void {
         this.expanded = this.expanded.filter(i => i !== key);
     }

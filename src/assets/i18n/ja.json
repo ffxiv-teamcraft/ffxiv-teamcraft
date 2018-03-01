@@ -1,6 +1,7 @@
 {
     "Is_working_on_it": "{{name}} is working on it",
     "Work_on_it": "I'm working on it",
+    "Add_as_collectible": "Add as collectable",
     "WORKSHOP": {
         "Workshops": "Workshops",
         "Add_lists": "Add lists",

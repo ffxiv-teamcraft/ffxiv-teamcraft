@@ -80,7 +80,8 @@ export class DataService {
                         job: recipe.job,
                         stars: recipe.stars,
                         lvl: recipe.lvl,
-                        icon: item.obj.c
+                        icon: item.obj.c,
+                        collectible: item.obj.o === 1
                     });
                 });
             });

@@ -102,22 +102,25 @@
                      alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span
                 [innerHtml]="getStars(recipe.stars)"></span>
             </p>
-            <mat-input-container>
+            <mat-checkbox #collectible [style.display]="recipe.collectible?'block':'none'">
+                {{"Add_as_collectible" | translate}}
+            </mat-checkbox>
+            <mat-input-container class="amount with-infix">
                 <input matInput type="number" min="1" value="1" #amount>
             </mat-input-container>
             <mat-menu #appMenu="matMenu" class="lists-menu">
-                <button mat-menu-item (click)="addToNewList(recipe, amount.value)">
+                <button mat-menu-item (click)="addToNewList(recipe, amount.value, collectible.checked)">
                     <mat-icon>add</mat-icon>
                     <span>{{'New_List' | translate}}</span></button>
                 <button mat-menu-item *ngFor="let list of lists"
-                        (click)="addRecipe(recipe, list, list.$key, amount.value)">
+                        (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
                     <mat-icon>playlist_play</mat-icon>
                     <span>{{list.name}}</span></button>
             </mat-menu>
             <button mat-icon-button [matMenuTriggerFor]="appMenu">
                 <mat-icon>playlist_add</mat-icon>
             </button>
-            <button mat-icon-button (click)="quickList(recipe, amount.value)"
+            <button mat-icon-button (click)="quickList(recipe, amount.value, collectible.checked)"
                     matTooltip="{{'Quick_list_create' | translate}}"
                     matTooltipPosition="above">
                 <mat-icon>access_time</mat-icon>

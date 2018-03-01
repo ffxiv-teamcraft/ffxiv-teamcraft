@@ -6,6 +6,10 @@ mat-slide-toggle {
 
 .filter {
     display: flex;
+    width: 100%;
+    .mat-input-container {
+        width: 100%;
+    }
 }
 
 .merge-button {

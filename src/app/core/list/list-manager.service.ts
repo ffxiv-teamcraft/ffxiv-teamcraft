@@ -23,7 +23,7 @@ export class ListManagerService {
                 private zone: NgZone) {
     }
 
-    public addToList(itemId: number, list: List, recipeId: string, amount = 1): Observable<List> {
+    public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
         list.version = environment.version;
         return this.db.getItem(itemId)
             .map((data: ItemData) => {
@@ -46,6 +46,7 @@ export class ListManagerService {
                         requirementsRow.amount += req.amount;
                     }
                 });
+                const yields = collectible ? 1 : (craft.yield || 1);
                 // Then we prepare the list row to add.
                 const toAdd: ListRow = {
                     id: data.item.id,

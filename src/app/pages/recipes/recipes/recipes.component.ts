@@ -189,9 +189,10 @@ export class RecipesComponent extends PageComponent implements OnInit {
      * @param {List} list The list we want to add the recipe to
      * @param {string} key The database key of the list
      * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
+     * @param collectible
      */
-    addRecipe(recipe: Recipe, list: List, key: string, amount: string): void {
-        this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
+    addRecipe(recipe: Recipe, list: List, key: string, amount: string, collectible: boolean): void {
+        this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .subscribe(updatedList => {
                 this.listService.update(key, updatedList).first().subscribe(() => {
                     this.snackBar.open(
@@ -211,12 +212,12 @@ export class RecipesComponent extends PageComponent implements OnInit {
             }, err => console.error(err)));
     }
 
-    quickList(recipe: Recipe, amount: string): void {
+    quickList(recipe: Recipe, amount: string, collectible: boolean): void {
         const list = new List();
         ga('send', 'event', 'List', 'creation');
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
         list.ephemeral = true;
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount)
+        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .switchMap((l) => {
                 return this.userService.getUserData().map(u => {
                     l.authorId = u.$key;
@@ -278,10 +279,11 @@ export class RecipesComponent extends PageComponent implements OnInit {
      * Adds a given recipe to a new list.
      * @param recipe
      * @param {string} amount
+     * @param collectible
      */
-    addToNewList(recipe: any, amount: string): void {
+    addToNewList(recipe: any, amount: string, collectible: boolean): void {
         this.createNewList().then(res => {
-            this.addRecipe(recipe, res.list, res.id, amount);
+            this.addRecipe(recipe, res.list, res.id, amount, collectible);
         });
     }
 
