@@ -28,7 +28,7 @@
                   color="warn">
             warning
         </mat-icon>
-        <div *ngIf="item.workingOnIt">
+        <div *ngIf="item.workingOnIt && getAmount() > (item.done | ceil)">
             <div *ngIf="worksOnIt as character" class="working-on-it">
                 <img src="{{character.avatar}}" alt=""
                      matTooltip="{{'Is_working_on_it' | translate:{name: character.name} }}"
@@ -39,7 +39,7 @@
                 </button>
             </div>
         </div>
-        <div *ngIf="!item.workingOnIt && !user?.anonymous">
+        <div *ngIf="!item.workingOnIt && !user?.anonymous && getAmount() > (item.done | ceil)">
             <button mat-icon-button matTooltip="{{'Work_on_it' | translate}}"
                     matTooltipPosition="above"
                     [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
