@@ -168,6 +168,7 @@ export class AlarmService {
                 {
                     icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
                     sticky: false,
+                    renotify: false,
                     body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
                     `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
                     (alarm.slot !== null ? `(${alarm.slot})` : '')
