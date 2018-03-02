@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
     templateUrl: './macro-translation.component.html',
     styleUrls: ['./macro-translation.component.scss']
 })
-export class MacroTranslationComponent implements OnInit {
+export class MacroTranslationComponent {
     macroToTranslate: string;
     macroLanguage: 'en' | 'fr' | 'de' | 'ja';
     macroTranslatedTabs: { label: string, content: string[] }[];
@@ -24,10 +24,10 @@ export class MacroTranslationComponent implements OnInit {
     private findActionsRegex: RegExp =
         new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
 
-    constructor(private localizedDataService: LocalizedDataService) {
-    }
+    private findActionsAutoTranslatedRegex: RegExp =
+        new RegExp(/\/(ac|action|aaction|gaction|generalaction)[\s]+([^<]+)?.*/, 'i');
 
-    ngOnInit() {
+    constructor(private localizedDataService: LocalizedDataService) {
     }
 
     translateMacro() {
@@ -42,7 +42,7 @@ export class MacroTranslationComponent implements OnInit {
         this.translationDone = false;
         this.invalidInputs = false;
         for (const line of this.macroToTranslate.split('\n')) {
-            if ((match = this.findActionsRegex.exec(line)) !== null) {
+            if ((match = this.findActionsRegex.exec(line)) !== null !== null) {
                 const skillName = match[2].replace(/"/g, '');
                 // Get translated skill
                 try {
@@ -53,8 +53,19 @@ export class MacroTranslationComponent implements OnInit {
                         macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
                     });
                 } catch (ignored) {
-                    this.invalidInputs = true;
-                    break;
+                    // Ugly implementation but it's a specific case we don't want to refactor for.
+                    try {
+                        // If there's no skill match with the first regex, try the second one (for auto translated skills)
+                        match = this.findActionsAutoTranslatedRegex.exec(line);
+                        const translatedSkill = this.localizedDataService.getCraftingActionByName(match[2], this.macroLanguage);
+                        // Push translated line to each language
+                        Object.keys(macroTranslated).forEach(key => {
+                            macroTranslated[key].push(line.replace(match[2], `"${translatedSkill[key]}" `));
+                        });
+                    } catch (ignoredAgain) {
+                        this.invalidInputs = true;
+                        break;
+                    }
                 }
             } else {
                 // Push the line without translation
