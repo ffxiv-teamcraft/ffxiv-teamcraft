@@ -284,7 +284,7 @@ export class AlarmService {
      * @private
      */
     public _isSpawned(alarm: Alarm, time: Date): boolean {
-        const spawn = alarm.spawn === 0 ? 24 : alarm.spawn;
+        const spawn = alarm.spawn;
         let despawn = (spawn + alarm.duration) % 24;
         despawn = despawn === 0 ? 24 : despawn;
         return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
