@@ -96,6 +96,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        this.updateDisplay();
+    }
+
+    private updateDisplay(): void {
         if (this.listData !== undefined && this.listData !== null) {
             this.listData.forEachItem(item => {
                 if (item.gatheredBy !== undefined) {
@@ -178,6 +182,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public triggerFilter(): void {
         this.reloadList();
+        this.updateDisplay();
     }
 
     public checkAll(checked: boolean): void {
