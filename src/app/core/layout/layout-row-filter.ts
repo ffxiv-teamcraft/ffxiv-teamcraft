@@ -33,12 +33,17 @@ export class LayoutRowFilter {
             row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const isTimedReduction = row.reducedFrom !== undefined &&
             row.reducedFrom
-                .map(reduction => reduction.obj.i)
+                .map(reduction => {
+                    if (reduction.obj !== undefined) {
+                        return reduction.obj.i;
+                    }
+                    return reduction;
+                })
                 .filter(reduction => {
-                return (<any>window).gt.bell.nodes.find(node => {
-                    return node.items.find(item => item.id === reduction) !== undefined;
-                }) !== undefined;
-            }).length > 0;
+                    return (<any>window).gt.bell.nodes.find(node => {
+                        return node.items.find(item => item.id === reduction) !== undefined;
+                    }) !== undefined;
+                }).length > 0;
         return isTimedGathering || isTimedReduction;
     }, 'IS_TIMED');
 

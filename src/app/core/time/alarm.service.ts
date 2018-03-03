@@ -91,7 +91,12 @@ export class AlarmService {
                 // If there's a way to get the item via reduction, use the item as base
                 const nodes = [].concat
                     .apply([], item.reducedFrom
-                        .map(reduction => reduction.obj.i)
+                        .map(reduction => {
+                            if (reduction.obj !== undefined) {
+                                return reduction.obj.i;
+                            }
+                            return reduction;
+                        })
                         .map(reduction => this.bellNodesService.getNodesByItemId(reduction)));
 
                 nodes.filter(node => node.time !== undefined)
@@ -163,6 +168,7 @@ export class AlarmService {
                 {
                     icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
                     sticky: false,
+                    renotify: false,
                     body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
                     `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
                     (alarm.slot !== null ? `(${alarm.slot})` : '')

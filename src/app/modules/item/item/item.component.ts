@@ -401,7 +401,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
-            .map(reduction => reduction.obj.i)
+            .map(reduction => {
+                if (reduction.obj !== undefined) {
+                    return reduction.obj.i;
+                }
+                return reduction;
+            })
             .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
         this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
     }
