@@ -79,7 +79,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                 if (details.areaid !== undefined) {
                     gatheredBy.nodes.push(details);
                 }
-                gatheredBy.level = details.lvl;
+                gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > details.lvl) ? details.lvl : gatheredBy.level;
             }
         }
         return gatheredBy;
