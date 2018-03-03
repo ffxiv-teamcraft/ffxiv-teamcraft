@@ -2,6 +2,7 @@
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
 <div class="buttons">
+    <mat-checkbox [(ngModel)]="compact" (change)="saveCompact()">{{"Compact_display" | translate}}</mat-checkbox>
     <button mat-mini-fab (click)="openAddAlarmPopup()">
         <mat-icon>add_alert</mat-icon>
     </button>
@@ -10,9 +11,10 @@
     </button>
 </div>
 <div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
-<mat-grid-list cols="3" rowHeight="600px">
+<mat-grid-list cols="3" rowHeight="{{compact?'200px':'600px'}}">
     <mat-grid-tile *ngFor="let alarm of getAlarms() | async">
         <app-alarm-card [alarm]="alarm"
+                        [compact]="compact"
                         [alerted]="alarmService.isAlerted(alarm.itemId) | async"
                         [spawned]="alarmService.isAlarmSpawned(alarm, time)"
                         [timer]="alarmService.getAlarmTimerString(alarm, time)"

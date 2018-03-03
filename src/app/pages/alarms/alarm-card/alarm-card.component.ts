@@ -23,6 +23,9 @@ export class AlarmCardComponent implements OnInit {
     @Input()
     timer: string;
 
+    @Input()
+    compact: boolean;
+
     @Output()
     delete: EventEmitter<void> = new EventEmitter<void>();
 
