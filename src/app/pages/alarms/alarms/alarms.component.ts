@@ -7,6 +7,7 @@ import {MatDialog} from '@angular/material';
 import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.component';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
+import {SettingsService} from '../../settings/settings.service';
 
 @Component({
     selector: 'app-alarms',
@@ -15,11 +16,14 @@ import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-o
 })
 export class AlarmsComponent {
 
+    compact: boolean = this.settings.compactAlarms;
+
     time: Date = new Date();
 
     private reloader: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-    constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog) {
+    constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog,
+                private settings: SettingsService) {
     }
 
     public getAlarms(): Observable<Alarm[]> {
@@ -45,6 +49,10 @@ export class AlarmsComponent {
                     return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
                 });
             });
+    }
+
+    saveCompact(): void {
+        this.settings.compactAlarms = this.compact;
     }
 
     deleteAlarm(alarm: Alarm): void {

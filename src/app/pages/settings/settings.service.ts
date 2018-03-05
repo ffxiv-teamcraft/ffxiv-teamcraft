@@ -25,6 +25,14 @@ export class SettingsService {
         this.setSetting('compact-lists', compact.toString());
     }
 
+    public get compactAlarms(): boolean {
+        return this.getSetting('compact-alarms', 'false') === 'true';
+    }
+
+    public set compactAlarms(compact: boolean) {
+        this.setSetting('compact-alarms', compact.toString());
+    }
+
     public get theme(): string {
         return this.getSetting('theme', 'dark-orange');
     }

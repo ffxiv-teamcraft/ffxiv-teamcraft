@@ -6,7 +6,8 @@
             {{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}} <span *ngIf="alarm.slot">({{alarm.slot}})</span>
         </mat-card-subtitle>
     </mat-card-header>
-    <app-map [mapId]="alarm.zoneId" [markers]="[{x: alarm.coords[0], y:alarm.coords[1]}]"></app-map>
+    <app-map *ngIf="!compact" [mapId]="alarm.zoneId" [markers]="[{x: alarm.coords[0], y:alarm.coords[1]}]"></app-map>
+    <div class="coords" *ngIf="compact">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</div>
     <mat-card-content>
         <p>{{timer}}</p>
     </mat-card-content>

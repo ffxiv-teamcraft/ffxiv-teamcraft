@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.2"></a>
+## [3.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.1...v3.3.2) (2018-03-03)
+
+
+### Bug Fixes
+
+* : weird alarm behavior with timers around 12AM ([a0add09](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0add09)), closes [#194](https://github.com/Supamiu/ffxiv-teamcraft/issues/194)
+* aethersands not filtered by IS_TIMED ([71b2806](https://github.com/Supamiu/ffxiv-teamcraft/commit/71b2806))
+* alarms played 3 times on each spawn ([3a6a329](https://github.com/Supamiu/ffxiv-teamcraft/commit/3a6a329))
+* filters not working anymore ([aa6d514](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa6d514))
+* fish level sometimes wrong ([f3cc02f](https://github.com/Supamiu/ffxiv-teamcraft/commit/f3cc02f))
+* sands timers missing ([da742a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/da742a8))
+* working on it not tagging immediately ([8167f7b](https://github.com/Supamiu/ffxiv-teamcraft/commit/8167f7b))
+
+
+### Features
+
+* new language button in settings ([ceb14ae](https://github.com/Supamiu/ffxiv-teamcraft/commit/ceb14ae))
+
+
+
 <a name="3.3.1"></a>
 ## [3.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.0...v3.3.1) (2018-03-01)
 
