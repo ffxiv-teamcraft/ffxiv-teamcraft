@@ -3,11 +3,13 @@
 </div>
 <div *ngIf="character !== undefined && user !== undefined">
     <mat-grid-list cols="3" rowHeight="600px">
-        <mat-grid-tile class="portrait-container">
-            <button mat-icon-button (click)="changeCharacter()" class="change-character">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <img src="{{character.portrait}}" alt="portrait" class="portrait">
+        <mat-grid-tile class="portrait-parent">
+            <div class="portrait-container">
+                <button mat-icon-button (click)="changeCharacter()" class="change-character">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <img src="{{character.portrait}}" alt="portrait" class="portrait">
+            </div>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
             <mat-card class="profile-card">
@@ -25,7 +27,7 @@
                          alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"
                          class="patreon-badge" matTooltipPosition="above" *ngIf="character.patron">
                 </mat-card-header>
-                <mat-grid-list cols="8" rowHeight="100px">
+                <mat-grid-list cols="{{getClassesCols()}}" rowHeight="100px">
                     <mat-grid-tile *ngFor="let job of getJobs()">
                         <div class="job-container">
                             <div>

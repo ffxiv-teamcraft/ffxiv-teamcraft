@@ -67,6 +67,16 @@ export class ProfileComponent extends PageComponent {
         this.dialog.open(ChangeEmailPopupComponent);
     }
 
+    getClassesCols(): number {
+        if (this.media.isActive('xs') || this.media.isActive('sm')) {
+            return 3;
+        }
+        if (this.media.isActive('md')) {
+            return 4;
+        }
+        return 8;
+    }
+
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {
         return ProfileHelpComponent;
     }
