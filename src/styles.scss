@@ -75,6 +75,16 @@ body {
     width: 100%;
 }
 
+.mat-list-item.recipes-list-row {
+    .mat-list-text {
+        width: auto !important;
+        margin-right: auto !important;
+    }
+    .mat-list-item-content{
+        flex-wrap: wrap;
+    }
+}
+
 // We set the max height for menus at 300 px for better UX.
 .mat-menu-panel {
     max-height: 300px !important;

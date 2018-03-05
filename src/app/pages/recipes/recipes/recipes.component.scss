@@ -10,7 +10,20 @@
 
 .amount {
     margin-left: 20px;
-    width: 145px;
+    width: 80px;
+    display: inline-block;
+}
+
+.right-side {
+    margin-left: auto;
+}
+
+.mat-list .mat-list-item {
+    height: auto;
+}
+
+.mat-list-item-content {
+    flex-wrap: wrap;
 }
 
 .filters {
