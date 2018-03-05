@@ -1,4 +1,4 @@
-<div class="etime-container">
+<div class="etime-container" [ngClass]="{mobiletimer: isMobile()}">
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
 <div class="buttons">
@@ -11,7 +11,7 @@
     </button>
 </div>
 <div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
-<mat-grid-list cols="3" rowHeight="{{compact?'200px':'600px'}}">
+<mat-grid-list cols="{{getCols()}}" rowHeight="3:4" class="grid">
     <mat-grid-tile *ngFor="let alarm of getAlarms() | async">
         <app-alarm-card [alarm]="alarm"
                         [compact]="compact"

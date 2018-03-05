@@ -1,11 +1,38 @@
-.card {
-    width: 400px;
-    mat-card-content {
-        text-align: center;
-        font-weight: 600;
-    }
-    .coords {
+:host {
+    width: 100%;
+    padding: 5px;
+    .card {
         width: 100%;
-        text-align: center;
+        mat-card-content {
+            text-align: center;
+            font-weight: 600;
+        }
+        .coords {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .card-header {
+        white-space: nowrap;
+        width: 100%;
+        padding-right: 45px;
+    }
+
+    .mat-card-subtitle {
+        position: relative;
+    }
+
+    .mat-card-subtitle .place {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        margin-right: 25px;
+    }
+
+    .mat-card-subtitle .slot {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }

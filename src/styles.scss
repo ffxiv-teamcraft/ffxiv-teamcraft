@@ -70,6 +70,11 @@ body {
     }
 }
 
+// Little cheat for cards
+.mat-card-header-text {
+    width: 100%;
+}
+
 // We set the max height for menus at 300 px for better UX.
 .mat-menu-panel {
     max-height: 300px !important;

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {Alarm} from '../../../core/time/alarm';
 import {MapService} from '../../../modules/map/map.service';
 import {MapData} from '../../../modules/map/map-data';

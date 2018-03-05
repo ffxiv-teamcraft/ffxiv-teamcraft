@@ -2,6 +2,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    &.mobiletimer {
+        justify-content: flex-start;
+    }
+}
+
+.grid {
+    margin-top: 15px;
 }
 
 .no-alarm {

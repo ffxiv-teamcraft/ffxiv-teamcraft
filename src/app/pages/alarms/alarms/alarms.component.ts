@@ -8,6 +8,7 @@ import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.compone
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
 import {SettingsService} from '../../settings/settings.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-alarms',
@@ -23,7 +24,7 @@ export class AlarmsComponent {
     private reloader: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
     constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog,
-                private settings: SettingsService) {
+                private settings: SettingsService, private media: ObservableMedia) {
     }
 
     public getAlarms(): Observable<Alarm[]> {
@@ -86,6 +87,20 @@ export class AlarmsComponent {
                 this.alarmService.registerAlarms(...alarms);
                 this.reloader.next(null);
             });
+    }
+
+    getCols(): number {
+        if (this.media.isActive('xs') || this.media.isActive('sm')) {
+            return 1;
+        }
+        if (this.media.isActive('md')) {
+            return 2;
+        }
+        return 3;
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 
 }
