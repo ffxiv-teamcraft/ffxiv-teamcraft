@@ -8,6 +8,7 @@ import {ListService} from '../../../core/database/list.service';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/combineLatest';
 import {UserService} from '../../../core/database/user.service';
+import 'rxjs/add/observable/empty';
 
 @Component({
     selector: 'app-workshop',
@@ -28,7 +29,15 @@ export class WorkshopComponent implements OnInit {
 
     ngOnInit() {
         this.workshop = this.route.params.mergeMap(params => this.workshopService.get(params.id));
-        this.lists = this.workshop.mergeMap(workshop => Observable.combineLatest(...workshop.listIds.map(id => this.listService.get(id))));
+        this.lists = this.workshop
+            .mergeMap(workshop =>
+                Observable.combineLatest(...workshop.listIds
+                    .map(id =>
+                        this.listService.get(id)
+                            .catch((notfound) => Observable.of(null))
+                    )
+                )
+            ).map(lists => lists.filter(l => l !== null));
         this.author = this.workshop.mergeMap(workshop => this.userService.getCharacter(workshop.authorId))
     }
 
