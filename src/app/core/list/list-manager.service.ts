@@ -54,7 +54,7 @@ export class ListManagerService {
                     amount: amount,
                     done: 0,
                     used: 0,
-                    yield: craft.yield || 1,
+                    yield: yields,
                     recipeId: recipeId,
                     requires: ingredients,
                     craftedBy: crafted
