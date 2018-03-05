@@ -42,6 +42,7 @@ import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {DataService} from '../../../core/api/data.service';
 import {UserService} from '../../../core/database/user.service';
+import {folklores} from '../../../core/data/sources/folklores';
 
 @Component({
     selector: 'app-item',
@@ -453,6 +454,19 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             }
             // Else, he can't craft the item, put a warning on it.
             return false;
+        }
+        // If this is a gathering
+        if (this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes.length > 0) {
+            // For each node
+            for (const node of this.item.gatheredBy.nodes) {
+                // If it has a limit set to legendary
+                if (node.limitType !== undefined) {
+                    const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
+                    if (folkloreId !== undefined) {
+                        return (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                    }
+                }
+            }
         }
         return true;
     }
