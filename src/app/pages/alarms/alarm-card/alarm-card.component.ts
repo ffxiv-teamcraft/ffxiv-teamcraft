@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Alarm} from '../../../core/time/alarm';
 import {MapService} from '../../../modules/map/map.service';
 import {MapData} from '../../../modules/map/map-data';
@@ -7,9 +7,17 @@ import {Observable} from 'rxjs/Observable';
 @Component({
     selector: 'app-alarm-card',
     templateUrl: './alarm-card.component.html',
-    styleUrls: ['./alarm-card.component.scss']
+    styleUrls: ['./alarm-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlarmCardComponent implements OnInit {
+
+    static icons = [
+        '/assets/icons/Mineral_Deposit.png',
+        '/assets/icons/MIN.png',
+        '/assets/icons/Mature_Tree.png',
+        '/assets/icons/BTN.png',
+        'https://garlandtools.org/db/images/FSH.png'];
 
     @Input()
     alarm: Alarm;
@@ -36,6 +44,10 @@ export class AlarmCardComponent implements OnInit {
 
     deleteAlarm(): void {
         this.delete.emit();
+    }
+
+    getClassIcon(): string {
+        return AlarmCardComponent.icons[this.alarm.type];
     }
 
     ngOnInit(): void {

@@ -14,6 +14,7 @@
     }
 
     .card-header {
+        position: relative;
         white-space: nowrap;
         width: 100%;
         padding-right: 45px;
@@ -21,6 +22,14 @@
 
     .mat-card-subtitle {
         position: relative;
+    }
+
+    .class-icon {
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        top: -10px;
+        right: -5px;
     }
 
     .mat-card-subtitle .place {

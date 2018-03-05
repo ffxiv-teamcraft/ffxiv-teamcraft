@@ -1,6 +1,7 @@
 <mat-card [ngClass]="{'card': true, 'primary-background': spawned, 'accent-background': !spawned && alerted}">
     <mat-card-header class="card-header">
         <img mat-card-avatar [appXivdbTooltip]="alarm.itemId" src="{{alarm.icon | icon}}" alt="">
+        <img class="class-icon" src="{{getClassIcon()}}" alt="">
         <mat-card-title>{{alarm.itemId | itemName | i18n}}</mat-card-title>
         <mat-card-subtitle>
             <span class="place">{{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}}</span>
