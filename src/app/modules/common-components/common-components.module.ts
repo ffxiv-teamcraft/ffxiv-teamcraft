@@ -4,7 +4,7 @@ import {AmountInputComponent} from './amount-input/amount-input.component';
 import {ItemIconComponent} from './item-icon/item-icon.component';
 import {RandomGifComponent} from './random-gif/random-gif.component';
 import {
-    MatButtonModule,
+    MatButtonModule, MatChipsModule,
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
@@ -52,6 +52,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         MatListModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        MatChipsModule,
 
         ClipboardModule,
 

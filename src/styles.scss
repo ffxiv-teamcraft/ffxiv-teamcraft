@@ -80,7 +80,7 @@ body {
         width: auto !important;
         margin-right: auto !important;
     }
-    .mat-list-item-content{
+    .mat-list-item-content {
         flex-wrap: wrap;
     }
 }
@@ -123,6 +123,12 @@ body {
 mat-input-container:not(.with-infix) {
     .mat-form-field-infix {
         width: auto !important;
+    }
+}
+
+.inline-chips {
+    .mat-chip-list-wrapper {
+        flex-wrap: nowrap;
     }
 }
 

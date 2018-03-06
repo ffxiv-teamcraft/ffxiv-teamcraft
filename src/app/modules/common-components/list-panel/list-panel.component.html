@@ -16,6 +16,11 @@
                         <img *ngIf="author | async as authorData" [src]="authorData?.avatar" class="author-avatar"
                              [matTooltip]="authorData?.name" matTooltipPosition="above"
                              routerLink="/profile/{{list.authorId}}">
+                        <div class="tags">
+                            <mat-chip-list class="inline-chips">
+                                <mat-chip *ngFor="let tag of list.tags">{{tag}}</mat-chip>
+                            </mat-chip-list>
+                        </div>
                         <span>{{list.note}}</span>
                     </div>
                 </mat-panel-description>
