@@ -5,6 +5,7 @@ import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import {MatListModule} from '@angular/material';
 
 const routes: Routes = [
     {
@@ -19,6 +20,8 @@ const routes: Routes = [
         CommonModule,
 
         RouterModule.forChild(routes),
+
+        MatListModule,
 
         CoreModule,
         CommonComponentsModule,

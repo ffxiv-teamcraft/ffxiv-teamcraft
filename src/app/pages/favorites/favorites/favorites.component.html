@@ -2,6 +2,8 @@
 <div *ngIf="(favorites | async)?.length === 0" class="not-found">
     <h3>{{"No_favorites" | translate}}</h3>
 </div>
+<h3 *ngIf="favorites | async">{{'Lists' | translate}}</h3>
+<mat-divider class="divider"></mat-divider>
 <app-list-panel *ngFor="let list of favorites | async"
                 [list]="list"
                 [expanded]="false"
