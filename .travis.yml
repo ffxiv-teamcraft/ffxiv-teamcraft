@@ -11,7 +11,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - if [ "$TRAVIS_BRANCH" = "beta" ]; then npm run build:beta else npm run build:prod fi
+  - if [ "$TRAVIS_BRANCH" = "beta" ]; then npm run build:beta; else npm run build:prod; fi
 
 deploy:
   - provider: firebase
