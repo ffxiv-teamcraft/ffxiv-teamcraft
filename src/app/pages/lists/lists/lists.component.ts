@@ -92,7 +92,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                     workshop.listIds = [...workshop.listIds, ...resultListIds];
                     return this.updateWorkshop(workshop);
                 }
-                return Observable.of();
+                return Observable.of(null);
             })
             .subscribe(() => {
                 // Force reload just in case.
