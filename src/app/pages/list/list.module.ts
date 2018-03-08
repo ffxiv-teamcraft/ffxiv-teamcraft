@@ -36,7 +36,7 @@ import { ListHelpComponent } from './list-help/list-help.component';
 import { ListLayoutPopupComponent } from './list-layout-popup/list-layout-popup.component';
 import { ListLayoutRowComponent } from './list-layout-popup/list-layout-row/list-layout-row.component';
 import { ImportInputBoxComponent } from './list-layout-popup/import-input-box/import-input-box.component';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import { ListComponent } from './list/list.component';
 
 const routes: Routes = [

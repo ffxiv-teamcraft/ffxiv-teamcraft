@@ -19,7 +19,7 @@ import {CoreModule} from '../../core/core.module';
 import {EorzeanTimeComponent} from './eorzean-time/eorzean-time.component';
 import {ListPanelComponent} from './list-panel/list-panel.component';
 import {RecipeComponent} from './recipe/recipe.component';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import {RouterModule} from '@angular/router';
 import {SettingsModule} from '../../pages/settings/settings.module';
 import {TooltipModule} from '../tooltip/tooltip.module';
