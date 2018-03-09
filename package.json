@@ -1,6 +1,6 @@
 {
   "name": "teamcraft",
-  "version": "3.3.2",
+  "version": "3.4.0-beta.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -9,10 +9,8 @@
     "build:beta": "node ./build/prebuild.js && ng build --aot --target=production --env=beta",
     "standard-version": "standard-version",
     "standard-version:dry": "standard-version --dry-run",
-    "release:git": "npm run standard-version && git push --follow-tags origin master",
+    "release:prod": "npm run standard-version && git push --follow-tags origin master",
     "release:beta": "npm run standard-version -- --prerelease beta && git push --follow-tags origin beta",
-    "deploy": "npm run release:git && npm run build:prod && firebase deploy",
-    "deploy:beta": "npm run release:beta && npm run build:beta && firebase deploy -P beta",
     "test": "node ./build/prebuild.js && ng test --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.0"></a>
+# [3.4.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.1...v3.4.0-beta.0) (2018-03-09)
+
+
+### Bug Fixes
+
+* : weird alarm behavior with timers around 12AM ([a0add09](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0add09)), closes [#194](https://github.com/Supamiu/ffxiv-teamcraft/issues/194)
+* aethersands not filtered by IS_TIMED ([71b2806](https://github.com/Supamiu/ffxiv-teamcraft/commit/71b2806))
+* alarms played 3 times on each spawn ([3a6a329](https://github.com/Supamiu/ffxiv-teamcraft/commit/3a6a329))
+* auto translated macro invalid in macro translator ([b46435e](https://github.com/Supamiu/ffxiv-teamcraft/commit/b46435e)), closes [#252](https://github.com/Supamiu/ffxiv-teamcraft/issues/252)
+* collectible switch not working properly ([c2eef95](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2eef95))
+* copy to clipboard not available in small viewports ([ee2f2dc](https://github.com/Supamiu/ffxiv-teamcraft/commit/ee2f2dc))
+* filters not working anymore ([aa6d514](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa6d514))
+* fish level sometimes wrong ([f3cc02f](https://github.com/Supamiu/ffxiv-teamcraft/commit/f3cc02f))
+* push notifications queued for next call if not closed manually ([635095a](https://github.com/Supamiu/ffxiv-teamcraft/commit/635095a)), closes [#257](https://github.com/Supamiu/ffxiv-teamcraft/issues/257)
+* sands timers missing ([da742a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/da742a8))
+* template broken on outdated lists with reductions ([e6d304d](https://github.com/Supamiu/ffxiv-teamcraft/commit/e6d304d)), closes [#258](https://github.com/Supamiu/ffxiv-teamcraft/issues/258)
+* working on it not tagging immediately ([8167f7b](https://github.com/Supamiu/ffxiv-teamcraft/commit/8167f7b))
+* workshop broken in some cases ([ac85600](https://github.com/Supamiu/ffxiv-teamcraft/commit/ac85600))
+
+
+### Features
+
+* class icon in alarms panel ([67eadad](https://github.com/Supamiu/ffxiv-teamcraft/commit/67eadad)), closes [#263](https://github.com/Supamiu/ffxiv-teamcraft/issues/263)
+* compact view in alarm panel ([c710021](https://github.com/Supamiu/ffxiv-teamcraft/commit/c710021)), closes [#262](https://github.com/Supamiu/ffxiv-teamcraft/issues/262)
+* new language button in settings ([ceb14ae](https://github.com/Supamiu/ffxiv-teamcraft/commit/ceb14ae))
+* show warning if missing book on gatherings ([17eb72b](https://github.com/Supamiu/ffxiv-teamcraft/commit/17eb72b))
+* tags on list should appear in list listing ([29c0b96](https://github.com/Supamiu/ffxiv-teamcraft/commit/29c0b96)), closes [#265](https://github.com/Supamiu/ffxiv-teamcraft/issues/265)
+
+
+
 <a name="3.3.2"></a>
 ## [3.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.1...v3.3.2) (2018-03-03)
 
