@@ -69,7 +69,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                         return this.get(user.uid).map(u => {
                             u.providerId = user.providerId;
                             return u;
-                        } );
+                        });
                     }
                 });
             });
@@ -80,6 +80,17 @@ export class UserService extends FirebaseStorage<AppUser> {
      */
     public reload(): void {
         this.reloader.next(null);
+    }
+
+    /**
+     * Checks if a given email is available for patreon account linking.
+     * @param {string} email
+     * @returns {Observable<boolean>}
+     */
+    checkPatreonEmailAvailability(email: string): Observable<boolean> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+            .valueChanges()
+            .map(res => res.length === 0);
     }
 
 
