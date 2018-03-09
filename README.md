@@ -8,6 +8,9 @@ Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6
 
 ## Development
 
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
+
 ### Prepare your environment
 * Install [Node.js](http://nodejs.org/) (>= 8.2) and NPM (>=5.3)
 * Install local dev dependencies: `npm install` while current directory is this repo
