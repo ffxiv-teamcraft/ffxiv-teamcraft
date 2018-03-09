@@ -7,7 +7,7 @@
                     <img mat-list-avatar [src]="getRequirementDetails(requirement)?.icon | icon"
                          alt="{{getRequirementDetails(requirement)?.id | itemName | i18n}}">
                     <div mat-line>{{getRequirementDetails(requirement)?.id | itemName | i18n}}</div>
-                    <p mat-line>x{{requirement.amount * (data.item.amount_needed - data.item.done)}}</p>
+                    <p mat-line>x{{requirement.amount * (data.item.amount_needed - data.item.done / data.item.yield)}}</p>
                 </mat-list-item>
             </mat-list>
         </mat-tab>
