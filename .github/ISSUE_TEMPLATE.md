@@ -1,8 +1,8 @@
 
 ## I'm submitting a...
-- [ ] Bug report *- please add **bug:** before the title*
-- [ ] Feature request *- please add **feat:** before the title*
-- [ ] Support request *- please come on [our discord](https://discord.gg/r6qxt6P) instead*
+* [_] Bug report *- please add **bug:** before the title*
+* [_] Feature request *- please add **feat:** before the title*
+* [_] Support request *- please come on [our discord](https://discord.gg/r6qxt6P) instead*
 
 <!-- Fill in for bug reports only -->
 ## Environment
