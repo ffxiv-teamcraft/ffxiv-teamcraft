@@ -6,9 +6,17 @@
 
 <!-- Fill in for bug reports only -->
 ## Environment
+### Browser
+*Please state your browser and version. Go [here](https://ipchicken.com/) and copy everything after "Browser:".*
 
-Please state your browser and version. Go [here](https://ipchicken.com/) and copy everything after "Browser:".
 Have you disabled script-/adblockers before submitting?
+### Teamcraft Link
+*If the bug appeared on a list (i.e. layout issues), please put a link here.*
+### Layout code
+If you're reporting a layout issue, please give us the layout code
+```
+Paste your Export code here
+```
 
 ## Current behavior
 
