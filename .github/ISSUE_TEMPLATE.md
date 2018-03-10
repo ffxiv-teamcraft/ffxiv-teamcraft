@@ -1,41 +1,33 @@
 
 ## I'm submitting a...
-<!-- Check one of the following options with "x" -->
-<pre><code>
-[ ] Bug report
-[ ] Feature request
-[ ] Support request => Please do not submit support request here, come on our discord (https://discord.gg/r6qxt6P in #bugs channel) to ask for support
-</code></pre>
+- [ ] Bug report *- please add **bug:** before the title*
+- [ ] Feature request *- please add **feat:** before the title*
+- [ ] Support request *- please come on [our discord](https://discord.gg/r6qxt6P) instead*
 
-<!-- If you're submitting a bug, use this section, instead delete everything until "What is the use case for this feature?" -->
+<!-- Fill in for bug reports only -->
+## Environment
+### Browser
+*Please state your browser and version. Go [here](https://ipchicken.com/) and copy everything after "Browser:".*
+
+Have you disabled script-/adblockers before submitting?
+### Teamcraft Link
+*If the bug appeared on a list (i.e. layout issues), please put a link here.*
+### Layout code
+If you're reporting a layout issue, please give us the layout code
+```
+Paste your Export code here
+```
+
 ## Current behavior
-<!-- Describe how the issue manifests. -->
-
 
 ## Expected behavior
-<!-- Describe what the desired behavior would be. -->
-
 
 ## Steps to reproduce
-<!--
-For bug reports please provide the *STEPS TO REPRODUCE* so we can investigate
--->
+1. Do stuff
+2. Do more stuff
+3. profit (or no profit)
 
-<!-- If you're submitting a feature request, is starts here for you :) -->
+<!-- Fill in for feature requests only -->
+## What feature are you proposing
+
 ## What is the use case for this feature?
-<!-- Describe the motivation or the concrete use case. -->
-
-
-## Environment
-
-<pre><code>
-Browser:
-- [ ] Chrome (desktop) version XX
-- [ ] Chrome (Android) version XX
-- [ ] Chrome (iOS) version XX
-- [ ] Firefox version XX
-- [ ] Safari (desktop) version XX
-- [ ] Safari (iOS) version XX
-- [ ] IE version XX
-- [ ] Edge version XX
-</code></pre>
