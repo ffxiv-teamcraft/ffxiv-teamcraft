@@ -248,19 +248,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                             return match;
                                         });
                                     }).map(lists => {
-                                    const result = {basicLists: lists, rows: {}};
-                                    workshops.forEach(workshop => {
-                                        result.rows[workshop.$key] = [];
-                                        lists.forEach((list) => {
-                                            // If this list is in this workshop.
-                                            if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
-                                                result.rows[workshop.$key].push(list);
-                                                // Remove the list from basicLists.
-                                                result.basicLists = result.basicLists.filter(l => l.$key !== list.$key);
-                                            }
-                                        });
-                                    });
-                                    return result;
+                                    return this.workshopService.getListsByWorkshop(lists, workshops);
                                 });
                             }));
                     }

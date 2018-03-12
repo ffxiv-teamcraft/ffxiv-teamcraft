@@ -21,6 +21,8 @@ import {ComponentType} from '@angular/cdk/portal';
 import {RecipesHelpComponent} from '../recipes-help/recipes-help.component';
 import {HelpService} from '../../../core/component/help.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {WorkshopService} from 'app/core/database/workshop.service';
+import {Workshop} from '../../../model/other/workshop';
 
 declare const ga: Function;
 
@@ -97,7 +99,9 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     query: string;
 
-    lists: List[];
+    lists: { basicLists: List[], rows: { [index: string]: List[] } } = {basicLists: [], rows: {}};
+
+    workshops: Observable<Workshop[]>;
 
     loading = false;
 
@@ -107,19 +111,34 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private translator: TranslateService, private router: Router,
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService,
-                protected helpService: HelpService, protected media: ObservableMedia) {
+                protected helpService: HelpService, protected media: ObservableMedia,
+                private workshopService: WorkshopService) {
         super(dialog, helpService, media);
     }
 
     ngOnInit() {
         super.ngOnInit();
-        // Load user's lists
-        this.subscriptions.push(this.userService.getUserData().switchMap((user) => {
+        this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user.$key !== undefined) {
-                return this.listService.getUserLists(user.$key);
+                return this.workshopService.getUserWorkshops(user.$key);
+            } else {
+                return Observable.of([]);
             }
-            return Observable.of([]);
-        }).subscribe(lists => this.lists = lists));
+        });
+        // Load user's lists
+        this.subscriptions.push(this.userService.getUserData()
+            .mergeMap((user) => {
+                if (user.$key !== undefined) {
+                    return this.listService.getUserLists(user.$key)
+                        .mergeMap(lists => {
+                            return this.workshopService.getUserWorkshops(user.$key)
+                                .map(workshops => this.workshopService.getListsByWorkshop(lists, workshops));
+                        });
+                }
+                return Observable.of({basicLists: [], rows: {}});
+            }).subscribe(lists => {
+                this.lists = lists;
+            }));
 
         // Connect debounce listener on recipe search field
         this.subscriptions.push(Observable.fromEvent(this.filterElement.nativeElement, 'keyup')

@@ -5,6 +5,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {Observable} from 'rxjs/Observable';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
+import {List} from '../../model/list/list';
 
 @Injectable()
 export class WorkshopService extends FirestoreStorage<Workshop> {
@@ -24,6 +25,22 @@ export class WorkshopService extends FirestoreStorage<Workshop> {
                 });
                 return this.serializer.deserialize<Workshop>(workshops, [this.getClass()]);
             });
+    }
+
+    getListsByWorkshop(lists: List[], workshops: Workshop[]): { basicLists: List[], rows: { [index: string]: List[] } } {
+        const result = {basicLists: lists, rows: {}};
+        workshops.forEach(workshop => {
+            result.rows[workshop.$key] = [];
+            lists.forEach((list) => {
+                // If this list is in this workshop.
+                if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
+                    result.rows[workshop.$key].push(list);
+                    // Remove the list from basicLists.
+                    result.basicLists = result.basicLists.filter(l => l.$key !== list.$key);
+                }
+            });
+        });
+        return result;
     }
 
     protected getBaseUri(): string {
