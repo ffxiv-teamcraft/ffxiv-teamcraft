@@ -65,6 +65,14 @@ export class SettingsService {
         this.setSetting('alarm:volume', volume.toString());
     }
 
+    public get alarmsMuted(): boolean {
+        return this.getSetting('alarms:muted', 'false') === 'true';
+    }
+
+    public set alarmsMuted(compact: boolean) {
+        this.setSetting('alarms:muted', compact.toString());
+    }
+
     public get ffxivcraftingDisplay(): boolean {
         return this.getSetting('ffxivcrafting-display', 'false') === 'true';
     }

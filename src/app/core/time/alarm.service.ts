@@ -149,6 +149,9 @@ export class AlarmService {
      * @param {Alarm} alarm
      */
     private playAlarm(alarm: Alarm): void {
+        if (this.settings.alarmsMuted) {
+            return;
+        }
         const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
         // Don't play the alarm if it was played less than a minute ago
         if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {

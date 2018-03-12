@@ -19,6 +19,8 @@ export class AlarmsComponent {
 
     compact: boolean = this.settings.compactAlarms;
 
+    muted: boolean = this.settings.compactAlarms;
+
     time: Date = new Date();
 
     private reloader: BehaviorSubject<void> = new BehaviorSubject<void>(null);
@@ -54,6 +56,10 @@ export class AlarmsComponent {
 
     saveCompact(): void {
         this.settings.compactAlarms = this.compact;
+    }
+
+    saveMuted(): void {
+        this.settings.alarmsMuted = this.muted;
     }
 
     deleteAlarm(alarm: Alarm): void {
