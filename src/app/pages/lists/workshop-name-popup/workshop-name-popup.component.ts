@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-workshop-name-popup',
@@ -11,7 +11,8 @@ export class WorkshopNamePopupComponent {
 
     public form: FormControl = new FormControl('', Validators.required);
 
-    constructor(private ref: MatDialogRef<WorkshopNamePopupComponent>) {
+    constructor(private ref: MatDialogRef<WorkshopNamePopupComponent>, @Inject(MAT_DIALOG_DATA) data: string) {
+        this.form.setValue(data === undefined ? '' : data);
     }
 
     submit() {

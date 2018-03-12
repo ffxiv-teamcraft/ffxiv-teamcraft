@@ -56,8 +56,9 @@
         <div *ngFor="let workshop of workshops | async; trackBy: trackByWorkshopFn; let i = index" class="row">
             <mat-expansion-panel [ngClass]="{odd: i%2>0}">
                 <mat-expansion-panel-header>
-                    <mat-panel-title>
+                    <mat-panel-title class="workshop-name">
                         {{workshop.name}}
+                        <button mat-icon-button (click)="changeWorkshopName(workshop)"><mat-icon>edit</mat-icon></button>
                     </mat-panel-title>
                     <div class="buttons">
                         <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
@@ -66,7 +67,6 @@
                                 (cbOnSuccess)="showCopiedNotification()">
                             <mat-icon>share</mat-icon>
                         </button>
-                        <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
                         <button mat-icon-button routerLink="/workshop/{{workshop.$key}}"
                                 (click)="$event.stopPropagation()">
                             <mat-icon>playlist_play</mat-icon>

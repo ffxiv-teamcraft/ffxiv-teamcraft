@@ -75,6 +75,19 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         return this.workshopService.update(workshop.$key, workshop);
     }
 
+    changeWorkshopName(workshop: Workshop): void {
+        this.dialog.open(WorkshopNamePopupComponent, {data: workshop.name})
+            .afterClosed()
+            .filter(name => name !== undefined && name.length > 0)
+            .mergeMap(name => {
+                workshop.name = name;
+                return this.updateWorkshop(workshop);
+            })
+            .subscribe(() => {
+                this.reloader$.next(null);
+            });
+    }
+
     removeListFromWorkshop(workshop: Workshop, listKey: string): void {
         workshop.listIds = workshop.listIds.filter(key => key !== listKey);
         this.updateWorkshop(workshop).subscribe(() => {

@@ -12,6 +12,14 @@ mat-slide-toggle {
     }
 }
 
+.workshop-name {
+    display: inline-flex;
+    align-items: center;
+    button {
+        margin-left: 10px;
+    }
+}
+
 .merge-button {
     margin: 10px 0;
 }
