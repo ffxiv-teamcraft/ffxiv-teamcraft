@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.1"></a>
+# [3.4.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.0...v3.4.0-beta.1) (2018-03-12)
+
+
+### Bug Fixes
+
+* wrong amount used in some crafts for canBeCrafted flag ([fc4524c](https://github.com/Supamiu/ffxiv-teamcraft/commit/fc4524c))
+* wrong item amount in requirements dialog box ([cabe973](https://github.com/Supamiu/ffxiv-teamcraft/commit/cabe973))
+
+
+### Features
+
+* alarm notification sound switch ([3dccf0e](https://github.com/Supamiu/ffxiv-teamcraft/commit/3dccf0e)), closes [#274](https://github.com/Supamiu/ffxiv-teamcraft/issues/274)
+* rename workshops ([d6e706b](https://github.com/Supamiu/ffxiv-teamcraft/commit/d6e706b)), closes [#268](https://github.com/Supamiu/ffxiv-teamcraft/issues/268)
+* workshops in "add item to list" dialog ([bb6b6b2](https://github.com/Supamiu/ffxiv-teamcraft/commit/bb6b6b2)), closes [#272](https://github.com/Supamiu/ffxiv-teamcraft/issues/272)
+
+
+
 <a name="3.4.0-beta.0"></a>
 # [3.4.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.3.1...v3.4.0-beta.0) (2018-03-09)
 
