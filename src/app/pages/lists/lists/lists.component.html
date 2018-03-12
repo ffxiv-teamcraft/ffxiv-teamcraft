@@ -58,7 +58,7 @@
                 <mat-expansion-panel-header>
                     <mat-panel-title class="workshop-name">
                         {{workshop.name}}
-                        <button mat-icon-button (click)="changeWorkshopName(workshop)"><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button (click)="$event.stopPropagation();changeWorkshopName(workshop)"><mat-icon>edit</mat-icon></button>
                     </mat-panel-title>
                     <div class="buttons">
                         <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
