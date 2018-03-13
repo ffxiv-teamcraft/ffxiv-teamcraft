@@ -62,7 +62,12 @@ export class List extends DataModel {
         ga('send', 'event', 'List', 'creation');
         ga('send', 'event', 'List', 'clone');
         this.forks++;
+        clone.reset();
         return clone;
+    }
+
+    public reset(): void {
+        this.recipes.forEach(recipe => this.resetDone(recipe));
     }
 
     /**
