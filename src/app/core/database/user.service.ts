@@ -27,6 +27,10 @@ export class UserService extends FirebaseStorage<AppUser> {
         super(database, serializer, diffService, zone);
     }
 
+    public set(uid: string, user: AppUser): Observable<void> {
+        return super.set(uid, user).do(() => this.reload());
+    }
+
     /**
      * Gets user ingame informations.
      * @returns {Observable<any>}
@@ -64,7 +68,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                         return Observable.of({name: 'Anonymous', anonymous: true});
                     }
                     if (user === null || user.isAnonymous) {
-                        return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
+                        return this.get(user.uid).catch(() => {
+                            return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
+                        });
                     } else {
                         return this.get(user.uid).map(u => {
                             u.providerId = user.providerId;

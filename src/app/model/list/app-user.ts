@@ -7,6 +7,7 @@ export class AppUser extends DataModel {
     lodestoneId?: number;
     avatar?: string;
     favorites?: string[];
+    favoriteWorkshops?: string[];
     patron?: boolean;
     anonymous?: boolean;
     providerId?: string;
