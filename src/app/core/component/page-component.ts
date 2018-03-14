@@ -33,8 +33,7 @@ export abstract class PageComponent extends ComponentWithSubscriptions implement
         // (https://github.com/angular/angular/issues/15634)
         setTimeout(() => {
             this.helpService.currentHelp = this.getHelpDialog();
-            if (localStorage.getItem(`${this.constructor.name}:help`) !== 'true' &&
-                !this.media.isActive('print and (max-width: 600px)')) {
+            if (localStorage.getItem(`${this.constructor.name}:help`) !== 'true') {
                 this.dialog.open(this.getHelpDialog()).afterClosed().subscribe(() => {
                     localStorage.setItem(`${this.constructor.name}:help`, 'true');
                 });
