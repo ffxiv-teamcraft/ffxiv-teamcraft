@@ -203,6 +203,16 @@
                          src="https://www.garlandtools.org/db/images/Voyage.png">
                 </button>
             </div>
+
+            <div *ngIf="item.ventures !== undefined && item.ventures.length > 0">
+                <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                        matTooltip="{{'Retainer_ventures' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="openVentureDetails(item)">
+                    <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+                         src="https://garlandtools.org/db/icons/item/3503.png">
+                </button>
+            </div>
         </div>
     </div>
 </mat-list-item>

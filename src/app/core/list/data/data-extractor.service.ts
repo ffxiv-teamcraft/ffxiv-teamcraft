@@ -119,6 +119,16 @@ export class DataExtractorService {
     }
 
     /**
+     * Extracts informations about which retainer venture can find a given item.
+     * @param {number} id
+     * @param {ItemData} data
+     * @returns {number[]}
+     */
+    extractVentures(id: number, data: ItemData): number[] {
+        return this.extract<number[]>(DataType.VENTURE, id, data);
+    }
+
+    /**
      * Extracts data using the proper extractor.
      * @param {DataType} type
      * @param {number} id

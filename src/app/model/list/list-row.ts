@@ -31,6 +31,7 @@ export class ListRow extends DataModel {
     desynths?: number[];
     vendors?: Vendor[];
     voyages?: I18nName[];
+    ventures?: number[];
 
     /**
      * Is someone working on it?
