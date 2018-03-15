@@ -43,6 +43,7 @@ import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {DataService} from '../../../core/api/data.service';
 import {UserService} from '../../../core/database/user.service';
 import {folklores} from '../../../core/data/sources/folklores';
+import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -517,6 +518,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public openVoyagesDetails(item: ListRow): void {
         this.dialog.open(VoyagesDetailsPopupComponent, {
+            data: item
+        });
+    }
+
+    public openVentureDetails(item: ListRow): void {
+        this.dialog.open(VentureDetailsPopupComponent, {
             data: item
         });
     }

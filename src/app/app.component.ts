@@ -20,7 +20,7 @@ import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 import fontawesome from '@fortawesome/fontawesome';
 import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
-import {faCalculator} from '@fortawesome/fontawesome-free-solid';
+import {faBell, faCalculator} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
 
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
             overlayContainer.getContainerElement().classList.add(`${change.next}-theme`);
         });
 
-        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator);
+        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell);
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
