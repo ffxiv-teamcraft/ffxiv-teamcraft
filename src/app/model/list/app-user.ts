@@ -12,4 +12,5 @@ export class AppUser extends DataModel {
     anonymous?: boolean;
     providerId?: string;
     patreonEmail?: string;
+    admin?:boolean;
 }

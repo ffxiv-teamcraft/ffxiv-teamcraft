@@ -59,6 +59,8 @@ export class AppComponent implements OnInit {
 
     activeMediaQuery = '';
 
+    customLinksEnabled = false;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -204,6 +206,7 @@ export class AppComponent implements OnInit {
         this.userService
             .getUserData()
             .subscribe(u => {
+                this.customLinksEnabled = u.patron || u.admin;
                 if (u.lodestoneId === undefined && !u.anonymous) {
                     this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
                 }

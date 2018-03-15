@@ -38,7 +38,8 @@
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
-                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" routerLink="/profile/{{(authState | async)?.uid}}">
+                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
+                         routerLink="/profile/{{(authState | async)?.uid}}">
                     <span class="name" *ngIf="username === undefined">Loading...</span>
                     <span class="name">{{username}}</span>
                 </div>
@@ -47,8 +48,7 @@
                     <button mat-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
                 </div>
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
-                    {{'Disconnect'
-                    | translate}}
+                    {{'Disconnect' | translate}}
                 </button>
             </div>
             <mat-divider></mat-divider>
@@ -61,6 +61,11 @@
                                *ngIf="!(authState | async)?.isAnonymous">
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine>{{'Profile' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
+                               *ngIf="customLinksEnabled">
+                    <mat-icon matListIcon>link</mat-icon>
+                    <span matLine>{{'CUSTOM_LINKS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>

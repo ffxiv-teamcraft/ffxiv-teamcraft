@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{"CUSTOM_LINKS.Dialog_title"}}</h2>
+<div mat-dialog-content class="selects-container">
+    <mat-form-field>
+        <input required type="text" matInput placeholder="{{'CUSTOM_LINKS.Link_name' | translate}}" [(ngModel)]="uri">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select required placeholder="{{'CUSTOM_LINKS.Link_type' | translate}}" [(ngModel)]="selectedType">
+            <mat-option value="workshop">{{"WORKSHOP.Workshops" | translate}}</mat-option>
+            <mat-option value="list">{{"Lists" | translate}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="selectedType !== undefined">
+        <mat-select required placeholder="{{'CUSTOM_LINKS.target' | translate}}" [(ngModel)]="selectedUid">
+            <mat-option *ngFor="let row of types[selectedType] | async" value="{{row.$key}}">
+                {{row.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="confirm()" [disabled]="!canConfirm()">{{'Ok' | translate}}
+    </button>
+    <button mat-button color="warn" mat-dialog-close>{{'Cancel' | translate}}</button>
+</div>

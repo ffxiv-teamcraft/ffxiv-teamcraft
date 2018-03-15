@@ -45,6 +45,30 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
             .refCount();
     }
 
+    getAll(): Observable<T[]> {
+        return this.firebase.list(this.getBaseUri())
+            .snapshotChanges()
+            .map(snaps => {
+                return snaps.map(snap => {
+                    const valueWithKey: T = {$key: snap.payload.key, ...snap.payload.val()};
+                    if (!snap.payload.exists()) {
+                        throw new Error('Not found');
+                    }
+                    delete snap.payload;
+                    return this.serializer.deserialize<T>(valueWithKey, this.getClass());
+                });
+            })
+            .do(datas => {
+                datas.forEach(data => {
+                    // Cache a clone of the data.
+                    this.cache[data.$key] = JSON.parse(JSON.stringify(data));
+                })
+            })
+            .debounceTime(50)
+            .publishReplay(1)
+            .refCount();
+    }
+
     update(uid: string, data: T): Observable<void> {
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {

@@ -35,6 +35,7 @@ import {PushNotificationsModule} from 'ng-push';
 import {WorkshopService} from './database/workshop.service';
 import {VenturesExtractor} from './list/data/extractor/ventures-extractor';
 import {CustomLinksService} from './database/custom-links/custom-links.service';
+import {PatreonGuard} from './guard/patreon.guard';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -80,6 +81,7 @@ const dataExtractorProviders: Provider[] = [
         LayoutOrderService,
         WorkshopService,
         CustomLinksService,
+        PatreonGuard,
     ],
     declarations: [
         I18nPipe,
