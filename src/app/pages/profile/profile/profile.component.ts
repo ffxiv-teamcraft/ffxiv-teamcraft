@@ -10,6 +10,7 @@ import {HelpService} from '../../../core/component/help.service';
 import {ProfileHelpComponent} from '../profile-help/profile-help.component';
 import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popup.component';
 import {ObservableMedia} from '@angular/flex-layout';
+import {PatreonLinkPopupComponent} from '../patreon-link-popup/patreon-link-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -75,6 +76,10 @@ export class ProfileComponent extends PageComponent {
             return 4;
         }
         return 8;
+    }
+
+    openPatreonLinkPopup(): void {
+        this.dialog.open(PatreonLinkPopupComponent, {data: this.user});
     }
 
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {

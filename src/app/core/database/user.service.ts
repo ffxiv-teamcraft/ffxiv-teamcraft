@@ -43,10 +43,21 @@ export class UserService extends FirebaseStorage<AppUser> {
             userData = this.get(uid);
         }
         return userData
-            .switchMap(u => {
+            .mergeMap(u => {
+                u.patron = false;
+                if (u.patreonEmail === undefined) {
+                    return Observable.of(u);
+                }
+                return this.firebase.list('/patreon/supporters').valueChanges().map((supporters: { email: string }[]) => {
+                    u.patron = supporters.find(s => s.email === u.patreonEmail) !== undefined;
+                    return u;
+                });
+            })
+            .mergeMap(u => {
                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
                     return this.dataService.getCharacter(u.lodestoneId).map(c => {
                         c.patron = u.patron;
+                        c.patreonEmail = u.patreonEmail;
                         return c;
                     });
                 } else {
@@ -94,7 +105,7 @@ export class UserService extends FirebaseStorage<AppUser> {
      * @returns {Observable<boolean>}
      */
     checkPatreonEmailAvailability(email: string): Observable<boolean> {
-        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('patreonEmail').equalTo(email))
             .valueChanges()
             .map(res => res.length === 0);
     }

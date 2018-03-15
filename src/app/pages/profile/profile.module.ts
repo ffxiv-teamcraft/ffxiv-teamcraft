@@ -26,6 +26,7 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChangeEmailPopupComponent} from './change-email-popup/change-email-popup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PatreonLinkPopupComponent } from './patreon-link-popup/patreon-link-popup.component';
 
 const routes: Routes = [{
     path: 'profile',
@@ -69,6 +70,7 @@ const routes: Routes = [{
         ProfileHelpComponent,
         PublicProfileComponent,
         ChangeEmailPopupComponent,
+        PatreonLinkPopupComponent,
     ],
     providers: [
         ProfileGuard,
@@ -78,6 +80,7 @@ const routes: Routes = [{
         MasterbooksPopupComponent,
         ProfileHelpComponent,
         ChangeEmailPopupComponent,
+        PatreonLinkPopupComponent,
     ]
 })
 export class ProfileModule {

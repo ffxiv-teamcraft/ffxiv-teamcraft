@@ -1,0 +1,13 @@
+<h3 mat-dialog-title>{{"Patreon_link_email" | translate}}</h3>
+<div mat-dialog-content>
+    <form (submit)="submit()">
+        <mat-input-container>
+            <input type="text" [formControl]="email" matInput placeholder="{{'Patreon_email' | translate}}">
+        </mat-input-container>
+        <mat-error *ngIf="alreadyUsed">{{'Email_already_used' | translate}}</mat-error>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button type="submit" color="accent" [disabled]="!email.valid" (click)="submit()">{{'Confirm' | translate}}
+    </button>
+</div>
