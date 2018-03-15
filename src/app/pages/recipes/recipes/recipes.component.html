@@ -121,15 +121,30 @@
                 <mat-input-container class="amount with-infix">
                     <input matInput type="number" min="1" value="1" #amount>
                 </mat-input-container>
+
                 <mat-menu #appMenu="matMenu" class="lists-menu">
                     <button mat-menu-item (click)="addToNewList(recipe, amount.value, collectible.checked)">
                         <mat-icon>add</mat-icon>
                         <span>{{'New_List' | translate}}</span></button>
                     <button mat-menu-item *ngFor="let list of lists.basicLists"
-                            (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
+                            (click)="addAllRecipes(list, list.$key)">
                         <mat-icon>playlist_play</mat-icon>
-                        <span>{{list.name}}</span></button>
+                        <span>{{list.name}}</span>
+                    </button>
+                    <div *ngFor="let workshop of workshops | async">
+                        <span mat-menu-item (click)="$event.stopPropagation();">
+                            <mat-icon>folder_open</mat-icon>
+                            {{workshop.name}}
+                        </span>
+                        <button mat-menu-item *ngFor="let list of lists.rows[workshop.$key]"
+                                class="workshop-list"
+                                (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
+                            <mat-icon>playlist_play</mat-icon>
+                            <span>{{list.name}}</span>
+                        </button>
+                    </div>
                 </mat-menu>
+
                 <button mat-icon-button [matMenuTriggerFor]="appMenu">
                     <mat-icon>playlist_add</mat-icon>
                 </button>
