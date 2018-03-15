@@ -10,6 +10,10 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+//Dialog background darker opacity
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.81);
+}
 
 // Helper class
 .spacer {

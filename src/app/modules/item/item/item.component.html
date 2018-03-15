@@ -22,7 +22,7 @@
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
                 (click)="openRequirementsPopup()">
-            <mat-icon color="accent">assignment</mat-icon>
+            <mat-icon color="primary">assignment</mat-icon>
         </button>
         <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
                   color="warn">
