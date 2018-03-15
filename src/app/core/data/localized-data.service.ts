@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {I18nName} from '../../model/list/i18n-name';
-import {items} from './sources/items';
-import {places} from './sources/places';
-import {mobs} from './sources/mobs';
-import {weathers} from './sources/weathers';
-import {npcs} from './sources/npcs';
-import {craftingActions} from './sources/crafting-actions';
-import {actions} from './sources/actions';
+import * as items from './sources/items.json';
+import * as places from './sources/places.json';
+import * as mobs from './sources/mobs.json';
+import * as weathers from './sources/weathers.json';
+import * as npcs from './sources/npcs.json';
+import * as craftingActions from './sources/craft-actions.json';
+import * as actions from './sources/actions.json';
+import * as ventures from './sources/ventures.json';
 import {Language} from './language';
 
 @Injectable()
@@ -44,6 +45,10 @@ export class LocalizedDataService {
         return this.getRow(mobs, id);
     }
 
+    public getVenture(id: number): I18nName {
+        return this.getRow(ventures, id);
+    }
+
     public getWeather(name: string): I18nName {
         return this.getRowByName(weathers, name, 'en');
     }
@@ -60,7 +65,7 @@ export class LocalizedDataService {
         return result;
     }
 
-    private getRow(array: { [index: number]: I18nName }, id: number): I18nName {
+    private getRow(array: any, id: number | string): I18nName {
         if (array === undefined) {
             return undefined;
         }
@@ -74,7 +79,7 @@ export class LocalizedDataService {
      * @param language
      * @returns {I18nName}
      */
-    private getRowByName(array: { [index: number]: I18nName }, name: string, language: Language): I18nName {
+    private getRowByName(array: any, name: string, language: Language): I18nName {
         const res = this.getIndexByName(array, name, language);
         if (res === -1) {
             return undefined;
@@ -89,7 +94,7 @@ export class LocalizedDataService {
      * @param language
      * @returns {number}
      */
-    private getIndexByName(array: { [index: number]: I18nName }, name: string, language: string): number {
+    private getIndexByName(array: any, name: string, language: string): number {
         if (array === undefined) {
             return -1;
         }

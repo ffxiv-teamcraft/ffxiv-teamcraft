@@ -12,7 +12,7 @@
             <button mat-menu-item (click)="use('ja')">JA</button>
         </mat-menu>
 
-        <button mat-button [matMenuTriggerFor]="langMenu" fxShow fxHide.lt-md>
+        <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.gt-sm>
             {{locale | uppercase}}
         </button>
         <div class="spacer"></div>
@@ -38,7 +38,7 @@
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
-                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}">
+                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" routerLink="/profile/{{(authState | async)?.uid}}">
                     <span class="name" *ngIf="username === undefined">Loading...</span>
                     <span class="name">{{username}}</span>
                 </div>

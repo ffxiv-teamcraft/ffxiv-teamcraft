@@ -4,11 +4,14 @@
         <mat-list-option *ngFor="let book of masterbookService.getBooks(data.jobAbbr)"
                          selected="{{data.user.masterbooks !== undefined && data.user.masterbooks.indexOf(book) > -1}}"
                          value="{{book}}"
-        (selectionChange)="setMasterbook(book, $event.selected)">
+                         (selectionChange)="setMasterbook(book, $event.selected)">
             {{book | itemName | i18n}}
         </mat-list-option>
     </mat-selection-list>
-    <button mat-button color="accent" (click)="selectionList.selectAll()">{{"Select_all" | translate}}</button>
+    <button mat-button color="accent"
+            (click)="selectionList.selectAll(); checkAll(masterbookService.getBooks(data.jobAbbr))">{{"Select_all" |
+        translate}}
+    </button>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close color="primary" (click)="submit()">{{'COMMON.Save' | translate}}</button>

@@ -11,6 +11,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {DataResponse} from '../data-response';
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/throw';
 import DocumentReference = firebase.firestore.DocumentReference;
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 
@@ -23,7 +24,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }
 
     add(data: T): Observable<string> {
-        return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).add(JSON.parse(JSON.stringify(data))))
+        const toAdd = JSON.parse(JSON.stringify(data));
+        delete toAdd.$key;
+        return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).add(toAdd))
             .map((ref: DocumentReference) => {
                 return ref.id;
             }).do((uid: string) => {
@@ -65,6 +68,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }
 
     update(uid: string, data: T): Observable<void> {
+        const toUpdate = JSON.parse(JSON.stringify(data));
+        delete toUpdate.$key;
         // Optimistic update for better UX with large lists
         if (this.cache[uid] !== undefined) {
             this.cache[uid].subject.next({data: data});
@@ -73,11 +78,13 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
             }
-            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).update(JSON.parse(JSON.stringify(data))));
+            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).update(toUpdate));
         });
     }
 
     set(uid: string, data: T): Observable<void> {
+        const toSet = JSON.parse(JSON.stringify(data));
+        delete toSet.$key;
         // Optimistic update for better UX with large lists
         if (this.cache[uid] !== undefined) {
             this.cache[uid].subject.next({data: data});
@@ -86,7 +93,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
             }
-            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).set(JSON.parse(JSON.stringify(data))));
+            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).set(toSet));
         });
     }
 

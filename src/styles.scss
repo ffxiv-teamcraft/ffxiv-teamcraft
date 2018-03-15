@@ -58,7 +58,7 @@ body {
     .mat-icon {
         font-size: 20px;
     }
-    span.mat-button-wrapper{
+    span.mat-button-wrapper {
         padding: 0 !important;
         line-height: 29px;
         span {
@@ -67,6 +67,21 @@ body {
                 font-size: 20px;
             }
         }
+    }
+}
+
+// Little cheat for cards
+.mat-card-header-text {
+    width: 100%;
+}
+
+.mat-list-item.recipes-list-row {
+    .mat-list-text {
+        width: auto !important;
+        margin-right: auto !important;
+    }
+    .mat-list-item-content {
+        flex-wrap: wrap;
     }
 }
 
@@ -105,8 +120,16 @@ body {
     }
 }
 
-.mat-form-field-infix {
-    width: auto !important;
+mat-input-container:not(.with-infix) {
+    .mat-form-field-infix {
+        width: auto !important;
+    }
+}
+
+.inline-chips {
+    .mat-chip-list-wrapper {
+        flex-wrap: nowrap;
+    }
 }
 
 // We have to set this here otherwise it doesn't apply, strange behavior

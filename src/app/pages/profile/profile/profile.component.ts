@@ -8,6 +8,8 @@ import {PageComponent} from '../../../core/component/page-component';
 import {ComponentType} from '@angular/cdk/portal';
 import {HelpService} from '../../../core/component/help.service';
 import {ProfileHelpComponent} from '../profile-help/profile-help.component';
+import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popup.component';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-profile',
@@ -34,8 +36,8 @@ export class ProfileComponent extends PageComponent {
     public user: AppUser;
 
 
-    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService) {
-        super(dialog, help);
+    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService, protected media: ObservableMedia) {
+        super(dialog, help, media);
         this.subscriptions.push(userService.getCharacter().subscribe(character => {
             this.character = character;
         }));
@@ -59,6 +61,20 @@ export class ProfileComponent extends PageComponent {
 
     changeCharacter(): void {
         this.dialog.open(CharacterAddPopupComponent);
+    }
+
+    changeEmail(): void {
+        this.dialog.open(ChangeEmailPopupComponent);
+    }
+
+    getClassesCols(): number {
+        if (this.media.isActive('xs') || this.media.isActive('sm')) {
+            return 3;
+        }
+        if (this.media.isActive('md')) {
+            return 4;
+        }
+        return 8;
     }
 
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {

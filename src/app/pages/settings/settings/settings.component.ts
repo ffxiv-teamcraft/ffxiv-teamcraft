@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {SettingsService} from '../settings.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-settings',
@@ -17,6 +18,22 @@ export class SettingsComponent {
 
     themes = ['dark-orange', 'light-orange', 'dark-teal', 'light-teal'];
 
-    constructor(public settings: SettingsService) {
+    locale: string;
+
+    constructor(public settings: SettingsService,
+                private translate: TranslateService) {
+        this.locale = this.translate.currentLang;
+        translate.onLangChange.subscribe(change => {
+            this.locale = change.lang;
+        });
+    }
+
+    use(lang: string): void {
+        if (['en', 'de', 'fr', 'ja'].indexOf(lang) === -1) {
+            lang = 'en';
+        }
+        this.locale = lang;
+        localStorage.setItem('locale', lang);
+        this.translate.use(lang);
     }
 }

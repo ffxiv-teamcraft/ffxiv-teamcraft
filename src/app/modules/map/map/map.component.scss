@@ -1,8 +1,8 @@
 .map-container {
     position: relative;
+    max-width: 700px;
     .map-image {
         width: 100%;
-        max-width: 700px;
     }
     .marker {
         position: absolute;

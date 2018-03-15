@@ -1,0 +1,24 @@
+<mat-card *ngIf="workshop | async as workshopData">
+    <mat-card-header>
+        <img *ngIf="author | async as authorCharacter" src="{{authorCharacter.avatar}}" alt="" mat-card-avatar
+             routerLink="/profile/{{workshopData.authorId}}">
+        <mat-card-title>{{workshopData.name}}</mat-card-title>
+        <mat-card-subtitle *ngIf="author | async as authorCharacter">{{'WORKSHOP.Created_by' | translate : {name: authorCharacter.name} }}</mat-card-subtitle>
+        <button mat-mini-fab color="accent"
+                class="favorite-fab"
+                matTooltip="{{'Favorite' | translate}}"
+                (click)="toggleFavorite(workshopData)">
+            <mat-icon *ngIf="!(favorite | async)">favorite_border</mat-icon>
+            <mat-icon *ngIf="favorite | async">favorite</mat-icon>
+        </button>
+    </mat-card-header>
+    <mat-card-content *ngIf="lists | async as listsData">
+        <div class="row" *ngFor="let list of listsData; trackBy: trackByListsFn; let odd = odd">
+            <app-list-panel
+                [list]="list"
+                [readonly]="true"
+                [authorUid]="list.authorId"
+                [odd]="odd"></app-list-panel>
+        </div>
+    </mat-card-content>
+</mat-card>

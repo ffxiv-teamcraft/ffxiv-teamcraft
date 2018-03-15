@@ -1,6 +1,6 @@
 <mat-list-item [ngClass]="{'compact': settings.compactLists}">
     <div mat-list-avatar [appXivdbTooltip]="recipe.id">
-        <a mat-list-avatar href="{{recipe.id | itemLink | i18n}}">
+        <a mat-list-avatar href="{{recipe.id | itemLink | i18n}}" target="_blank">
             <img mat-list-avatar src="{{recipe.icon | icon}}" alt="{{recipe.id | itemName | i18n}}">
         </a>
     </div>

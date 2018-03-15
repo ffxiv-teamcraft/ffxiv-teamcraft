@@ -68,6 +68,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     hideCompleted = false;
 
+    hideUsed = false;
+
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
     outdated = false;
@@ -96,6 +98,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        this.updateDisplay();
+    }
+
+    private updateDisplay(): void {
         if (this.listData !== undefined && this.listData !== null) {
             this.listData.forEachItem(item => {
                 if (item.gatheredBy !== undefined) {
@@ -116,13 +122,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 if (item.done >= item.amount && this.hideCompleted) {
                     item.hidden = true;
                 }
+                // Hide when used
+                if (item.used >= item.amount_needed && this.hideUsed) {
+                    item.hidden = true;
+                }
             });
             if (this.accordionState === undefined) {
                 this.initAccordion(this.listData);
             }
             this.listDisplay = this.layoutService.getDisplay(this.listData);
-        }
-        if (changes.list !== undefined && changes.listData.isFirstChange()) {
             this.outdated = this.listData.isOutDated();
         }
     }
@@ -180,6 +188,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public triggerFilter(): void {
         this.reloadList();
+        this.updateDisplay();
     }
 
     public checkAll(checked: boolean): void {
@@ -309,6 +318,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
+        this.triggerFilter();
+    }
+
+    public toggleHideUsed(): void {
+        this.hideUsed = !this.hideUsed;
         this.triggerFilter();
     }
 

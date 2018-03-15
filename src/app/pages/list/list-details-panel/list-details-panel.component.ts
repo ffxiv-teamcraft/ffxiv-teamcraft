@@ -6,6 +6,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {I18nName} from '../../../model/list/i18n-name';
 import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
 import {ZoneBreakdownRow} from '../../../model/list/zone-breakdown-row';
+import {AppUser} from '../../../model/list/app-user';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -50,6 +51,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     @Output()
     closed: EventEmitter<void> = new EventEmitter<void>();
+
+    @Input()
+    user: AppUser;
 
     tiers: ListRow[][] = [[]];
 

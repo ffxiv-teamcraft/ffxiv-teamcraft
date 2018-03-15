@@ -68,10 +68,22 @@
     <button mat-menu-item (click)="addAllToNewList()">
         <mat-icon>add</mat-icon>
         <span>{{'New_List' | translate}}</span></button>
-    <button mat-menu-item *ngFor="let list of lists"
+    <button mat-menu-item *ngFor="let list of lists.basicLists"
             (click)="addAllRecipes(list, list.$key)">
         <mat-icon>playlist_play</mat-icon>
-        <span>{{list.name}}</span></button>
+        <span>{{list.name}}</span>
+    </button>
+    <div *ngFor="let workshop of workshops | async">
+        <span mat-menu-item (click)="$event.stopPropagation();">
+            <mat-icon>folder_open</mat-icon>
+            {{workshop.name}}</span>
+        <button mat-menu-item *ngFor="let list of lists.rows[workshop.$key]"
+                class="workshop-list"
+                (click)="addAllRecipes(list, list.$key)">
+            <mat-icon>playlist_play</mat-icon>
+            <span>{{list.name}}</span>
+        </button>
+    </div>
 </mat-menu>
 
 <div class="add-all-wrapper">
@@ -91,7 +103,7 @@
     </div>
 
     <div *ngIf="recipes.length > 0 && !loading">
-        <mat-list-item *ngFor="let recipe of recipes">
+        <mat-list-item *ngFor="let recipe of recipes" class="recipes-list-row">
             <a mat-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
                 <img mat-list-avatar [appXivdbTooltip]="recipe.itemId" src="{{recipe.icon | icon}}"
                      alt="{{recipe.itemId | itemName | i18n}}">
@@ -102,26 +114,31 @@
                      alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span
                 [innerHtml]="getStars(recipe.stars)"></span>
             </p>
-            <mat-input-container>
-                <input matInput type="number" min="1" value="1" #amount>
-            </mat-input-container>
-            <mat-menu #appMenu="matMenu" class="lists-menu">
-                <button mat-menu-item (click)="addToNewList(recipe, amount.value)">
-                    <mat-icon>add</mat-icon>
-                    <span>{{'New_List' | translate}}</span></button>
-                <button mat-menu-item *ngFor="let list of lists"
-                        (click)="addRecipe(recipe, list, list.$key, amount.value)">
-                    <mat-icon>playlist_play</mat-icon>
-                    <span>{{list.name}}</span></button>
-            </mat-menu>
-            <button mat-icon-button [matMenuTriggerFor]="appMenu">
-                <mat-icon>playlist_add</mat-icon>
-            </button>
-            <button mat-icon-button (click)="quickList(recipe, amount.value)"
-                    matTooltip="{{'Quick_list_create' | translate}}"
-                    matTooltipPosition="above">
-                <mat-icon>access_time</mat-icon>
-            </button>
+            <div class="right-side">
+                <mat-checkbox #collectible [style.visibility]="recipe.collectible?'unset':'hidden'">
+                    {{"Add_as_collectible" | translate}}
+                </mat-checkbox>
+                <mat-input-container class="amount with-infix">
+                    <input matInput type="number" min="1" value="1" #amount>
+                </mat-input-container>
+                <mat-menu #appMenu="matMenu" class="lists-menu">
+                    <button mat-menu-item (click)="addToNewList(recipe, amount.value, collectible.checked)">
+                        <mat-icon>add</mat-icon>
+                        <span>{{'New_List' | translate}}</span></button>
+                    <button mat-menu-item *ngFor="let list of lists.basicLists"
+                            (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
+                        <mat-icon>playlist_play</mat-icon>
+                        <span>{{list.name}}</span></button>
+                </mat-menu>
+                <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                    <mat-icon>playlist_add</mat-icon>
+                </button>
+                <button mat-icon-button (click)="quickList(recipe, amount.value, collectible.checked)"
+                        matTooltip="{{'Quick_list_create' | translate}}"
+                        matTooltipPosition="above">
+                    <mat-icon>access_time</mat-icon>
+                </button>
+            </div>
         </mat-list-item>
     </div>
 </mat-list>

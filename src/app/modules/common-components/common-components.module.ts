@@ -4,7 +4,7 @@ import {AmountInputComponent} from './amount-input/amount-input.component';
 import {ItemIconComponent} from './item-icon/item-icon.component';
 import {RandomGifComponent} from './random-gif/random-gif.component';
 import {
-    MatButtonModule,
+    MatButtonModule, MatChipsModule,
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
@@ -19,7 +19,7 @@ import {CoreModule} from '../../core/core.module';
 import {EorzeanTimeComponent} from './eorzean-time/eorzean-time.component';
 import {ListPanelComponent} from './list-panel/list-panel.component';
 import {RecipeComponent} from './recipe/recipe.component';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import {RouterModule} from '@angular/router';
 import {SettingsModule} from '../../pages/settings/settings.module';
 import {TooltipModule} from '../tooltip/tooltip.module';
@@ -52,6 +52,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         MatListModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        MatChipsModule,
 
         ClipboardModule,
 

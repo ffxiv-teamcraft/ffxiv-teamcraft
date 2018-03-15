@@ -1,5 +1,6 @@
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     EventEmitter,
@@ -39,6 +40,10 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
+import {DataService} from '../../../core/api/data.service';
+import {UserService} from '../../../core/database/user.service';
+import {folklores} from '../../../core/data/sources/folklores';
+import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 
 @Component({
     selector: 'app-item',
@@ -257,6 +262,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public timers: Observable<Timer[]>;
 
+    worksOnIt: any;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -266,7 +273,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private alarmService: AlarmService,
                 public settings: SettingsService,
                 private bellNodesService: BellNodesService,
-                private etime: EorzeanTimeService) {
+                private etime: EorzeanTimeService,
+                private dataService: DataService,
+                private userService: UserService,
+                public cd: ChangeDetectorRef) {
         super();
     }
 
@@ -291,6 +301,28 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+                this.worksOnIt = char;
+                this.cd.detectChanges();
+            });
+        }
+    }
+
+    public workOnIt(): void {
+        this.item.workingOnIt = this.user.$key;
+        this.update.emit();
+        this.userService.get(this.item.workingOnIt)
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+            this.worksOnIt = char;
+            this.cd.detectChanges();
+        });
+    }
+
+    public removeWorkingOnIt(): void {
+        delete this.item.workingOnIt;
+        this.update.emit();
     }
 
     public getTimerIcon(type: number): string {
@@ -339,6 +371,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        if (this.item.workingOnIt !== undefined && this.worksOnIt === undefined) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+        }
     }
 
     updateCanBeCrafted(): void {
@@ -367,6 +403,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
             this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
+            .map(reduction => {
+                if (reduction.obj !== undefined) {
+                    return reduction.obj.i;
+                }
+                return reduction;
+            })
             .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
         this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
     }
@@ -407,12 +449,25 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             }
             // If the user has at least one of the required books, it's okay.
             for (const book of books) {
-                if ((this.user.masterbooks || []).indexOf(book.id) > -1) {
+                if ((this.user.masterbooks || []).indexOf(book.id) > -1 || book.id.toString().indexOf('draft') > -1) {
                     return true;
                 }
             }
             // Else, he can't craft the item, put a warning on it.
             return false;
+        }
+        // If this is a gathering
+        if (this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes.length > 0) {
+            // For each node
+            for (const node of this.item.gatheredBy.nodes) {
+                // If it has a limit set to legendary
+                if (node.limitType !== undefined) {
+                    const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
+                    if (folkloreId !== undefined) {
+                        return (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                    }
+                }
+            }
         }
         return true;
     }
@@ -463,6 +518,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public openVoyagesDetails(item: ListRow): void {
         this.dialog.open(VoyagesDetailsPopupComponent, {
+            data: item
+        });
+    }
+
+    public openVentureDetails(item: ListRow): void {
+        this.dialog.open(VentureDetailsPopupComponent, {
             data: item
         });
     }

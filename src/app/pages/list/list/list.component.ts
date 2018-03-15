@@ -12,6 +12,7 @@ import {ListService} from '../../../core/database/list.service';
 import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-list',
@@ -29,8 +30,8 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 
     constructor(protected dialog: MatDialog, help: HelpService, private route: ActivatedRoute,
                 private listService: ListService, private title: Title, private translate: TranslateService,
-                private data: LocalizedDataService) {
-        super(dialog, help);
+                private data: LocalizedDataService, protected media: ObservableMedia) {
+        super(dialog, help, media);
     }
 
     ngOnDestroy(): void {
@@ -39,6 +40,7 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        super.ngOnInit();
         this.list = this.route.params.switchMap(params => {
             return this.reload$
                 .mergeMap(() => this.listService.get(params.listId))

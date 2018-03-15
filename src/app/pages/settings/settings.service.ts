@@ -1,9 +1,12 @@
 import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class SettingsService {
 
     private cache: { [id: string]: string };
+
+    public themeChange$ = new Subject<{ previous: string, next: string }>();
 
     constructor() {
         this.cache = JSON.parse(localStorage.getItem('settings')) || {};
@@ -25,11 +28,20 @@ export class SettingsService {
         this.setSetting('compact-lists', compact.toString());
     }
 
+    public get compactAlarms(): boolean {
+        return this.getSetting('compact-alarms', 'false') === 'true';
+    }
+
+    public set compactAlarms(compact: boolean) {
+        this.setSetting('compact-alarms', compact.toString());
+    }
+
     public get theme(): string {
         return this.getSetting('theme', 'dark-orange');
     }
 
     public set theme(theme: string) {
+        this.themeChange$.next({previous: this.theme, next: theme});
         this.setSetting('theme', theme);
     }
 
@@ -55,6 +67,14 @@ export class SettingsService {
 
     public set alarmVolume(volume: number) {
         this.setSetting('alarm:volume', volume.toString());
+    }
+
+    public get alarmsMuted(): boolean {
+        return this.getSetting('alarms:muted', 'false') === 'true';
+    }
+
+    public set alarmsMuted(compact: boolean) {
+        this.setSetting('alarms:muted', compact.toString());
     }
 
     public get ffxivcraftingDisplay(): boolean {

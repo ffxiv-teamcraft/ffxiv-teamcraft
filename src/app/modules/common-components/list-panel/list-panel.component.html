@@ -1,4 +1,4 @@
-<mat-expansion-panel #panel [expanded]="expanded" [ngClass]="{'odd': odd}">
+<mat-expansion-panel #panel [ngClass]="{'odd': odd}">
     <mat-expansion-panel-header (click)="handleClick(panel)">
         <div class="header-container">
             <div class="title-and-desc">
@@ -15,7 +15,13 @@
                     <div class="description">
                         <img *ngIf="author | async as authorData" [src]="authorData?.avatar" class="author-avatar"
                              [matTooltip]="authorData?.name" matTooltipPosition="above"
+                             hidden="{{authorData?.name === 'Anonymous'}}"
                              routerLink="/profile/{{list.authorId}}">
+                        <div class="tags">
+                            <mat-chip-list class="inline-chips">
+                                <mat-chip *ngFor="let tag of list.tags">{{tag}}</mat-chip>
+                            </mat-chip-list>
+                        </div>
                         <span>{{list.note}}</span>
                     </div>
                 </mat-panel-description>

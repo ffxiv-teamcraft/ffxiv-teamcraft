@@ -9,8 +9,8 @@ export class ReducedFromExtractor extends AbstractExtractor<number[]> {
         return item.reducedFrom !== undefined && item.reducedFrom.length > 0;
     }
 
-    protected doExtract(item: Item, itemData: ItemData): number[] {
-        return item.reducedFrom;
+    protected doExtract(item: Item, itemData: ItemData): any[] {
+        return item.reducedFrom.map(reduction => itemData.getPartial(reduction.toString(), 'item'));
     }
 
     isAsync(): boolean {

@@ -2,14 +2,22 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ItemComponent} from './item/item.component';
 import {
-    MatButtonModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatProgressSpinnerModule, MatTabsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
     MatTooltipModule
 } from '@angular/material';
 import {TooltipModule} from '../tooltip/tooltip.module';
 import {CoreModule} from '../../core/core.module';
 import {PipesModule} from '../../pipes/pipes.module';
 import {SettingsModule} from '../../pages/settings/settings.module';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import {CommentsModule} from '../comments/comments.module';
 import {CommonComponentsModule} from '../common-components/common-components.module';
 import {DesynthPopupComponent} from './desynth-popup/desynth-popup.component';
@@ -24,10 +32,13 @@ import {VendorsDetailsPopupComponent} from './vendors-details-popup/vendors-deta
 import {VoyagesDetailsPopupComponent} from './voyages-details-popup/voyages-details-popup.component';
 import {MapModule} from '../map/map.module';
 import {DatabaseModule} from '../../core/database/database.module';
+import {RouterModule} from '@angular/router';
+import {VentureDetailsPopupComponent} from './venture-details-popup/venture-details-popup.component';
 
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
 
         MatListModule,
         MatTooltipModule,
@@ -38,6 +49,7 @@ import {DatabaseModule} from '../../core/database/database.module';
         MatTabsModule,
         MatProgressSpinnerModule,
         MatInputModule,
+        MatCardModule,
 
         ClipboardModule,
 
@@ -62,6 +74,7 @@ import {DatabaseModule} from '../../core/database/database.module';
         TradeDetailsPopupComponent,
         VendorsDetailsPopupComponent,
         VoyagesDetailsPopupComponent,
+        VentureDetailsPopupComponent,
     ],
     exports: [
         ItemComponent
@@ -77,6 +90,7 @@ import {DatabaseModule} from '../../core/database/database.module';
         TradeDetailsPopupComponent,
         VendorsDetailsPopupComponent,
         VoyagesDetailsPopupComponent,
+        VentureDetailsPopupComponent,
     ]
 })
 export class ItemModule {

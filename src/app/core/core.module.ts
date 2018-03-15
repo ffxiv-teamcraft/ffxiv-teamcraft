@@ -32,6 +32,8 @@ import {MatButtonModule, MatDialogModule} from '@angular/material';
 import {LayoutService} from './layout/layout.service';
 import {LayoutOrderService} from './layout/layout-order.service';
 import {PushNotificationsModule} from 'ng-push';
+import {WorkshopService} from './database/workshop.service';
+import {VenturesExtractor} from './list/data/extractor/ventures-extractor';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -45,6 +47,7 @@ const dataExtractorProviders: Provider[] = [
     {provide: EXTRACTORS, useClass: GardeningExtractor, multi: true},
     {provide: EXTRACTORS, useClass: VoyagesExtractor, multi: true},
     {provide: EXTRACTORS, useClass: DropsExtractor, multi: true},
+    {provide: EXTRACTORS, useClass: VenturesExtractor, multi: true},
 ];
 
 @NgModule({
@@ -74,6 +77,7 @@ const dataExtractorProviders: Provider[] = [
         HelpService,
         LayoutService,
         LayoutOrderService,
+        WorkshopService,
     ],
     declarations: [
         I18nPipe,

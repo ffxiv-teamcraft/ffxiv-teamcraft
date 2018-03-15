@@ -32,6 +32,14 @@
             }
         }
     }
+    .working-on-it {
+        display: flex;
+        .avatar {
+            border-radius: 50%;
+            height: 30px;
+            margin-top: 5px;
+        }
+    }
 
     .requirements-button {
         &.compact {

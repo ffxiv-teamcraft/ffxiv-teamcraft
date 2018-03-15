@@ -55,8 +55,6 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
                 return (<List>{$key: snap.payload.doc.id, ...data})
             }))
             .map(lists => this.serializer.deserialize<List>(lists, [List]))
-            .publishReplay(1)
-            .refCount();
     }
 
     protected getBaseUri(): string {

@@ -1,12 +1,15 @@
 <mat-card [ngClass]="{'card': true, 'primary-background': spawned, 'accent-background': !spawned && alerted}">
-    <mat-card-header>
+    <mat-card-header class="card-header">
         <img mat-card-avatar [appXivdbTooltip]="alarm.itemId" src="{{alarm.icon | icon}}" alt="">
+        <img class="class-icon" src="{{getClassIcon()}}" alt="">
         <mat-card-title>{{alarm.itemId | itemName | i18n}}</mat-card-title>
         <mat-card-subtitle>
-            {{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}} <span *ngIf="alarm.slot">({{alarm.slot}})</span>
+            <span class="place">{{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}}</span>
+            <span *ngIf="alarm.slot" class="slot">({{alarm.slot}})</span>
         </mat-card-subtitle>
     </mat-card-header>
-    <app-map [mapId]="alarm.zoneId" [markers]="[{x: alarm.coords[0], y:alarm.coords[1]}]"></app-map>
+    <app-map *ngIf="!compact" [mapId]="alarm.zoneId" [markers]="[{x: alarm.coords[0], y:alarm.coords[1]}]"></app-map>
+    <div class="coords" *ngIf="compact">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</div>
     <mat-card-content>
         <p>{{timer}}</p>
     </mat-card-content>

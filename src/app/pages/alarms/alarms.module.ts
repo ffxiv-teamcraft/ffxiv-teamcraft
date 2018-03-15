@@ -5,7 +5,13 @@ import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {AlarmCardComponent} from './alarm-card/alarm-card.component';
 import {
-    MatButtonModule, MatCardModule, MatDialogModule, MatGridListModule, MatIconModule, MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
     MatListModule
 } from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
@@ -40,6 +46,8 @@ const routes: Routes = [{
         MatDialogModule,
         MatInputModule,
         MatListModule,
+        MatCheckboxModule,
+
         MapModule,
 
         CoreModule,

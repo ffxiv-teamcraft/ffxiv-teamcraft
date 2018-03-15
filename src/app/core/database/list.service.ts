@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {Observable} from 'rxjs/Observable';
 import {ListStore} from './storage/list/list-store';
+import {Workshop} from '../../model/other/workshop';
 
 @Injectable()
 export class ListService {
@@ -91,6 +92,15 @@ export class ListService {
      */
     public deleteUserLists(uid: string): Observable<void> {
         return this.store.deleteByAuthor(uid);
+    }
+
+    /**
+     * Fetches all lists of a given workshop.
+     * @param {Workshop} workshop
+     * @returns {Observable<List[]>}
+     */
+    public fetchWorkshop(workshop: Workshop): Observable<List[]> {
+        return Observable.combineLatest(workshop.listIds.map(listId => this.get(listId)));
     }
 
     public add(list: List): Observable<string> {

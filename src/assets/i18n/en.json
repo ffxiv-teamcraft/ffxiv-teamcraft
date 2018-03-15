@@ -1,4 +1,21 @@
 {
+    "Is_working_on_it": "{{name}} is working on it",
+    "Work_on_it": "I'm working on it",
+    "Add_as_collectible": "Add as collectable",
+    "Compact_display": "Compact display",
+    "Mute_alarms": "Mute alarms",
+    "Hide_used": "Hide used rows",
+    "Retainer_ventures": "Retainer ventures",
+    "WORKSHOP": {
+        "Workshops": "Workshops",
+        "Add_lists": "Add lists",
+        "Add_workshop": "Add workshop",
+        "Delete_message": "Deleting a workshop won't delete the lists in it, they will only be brought back to workshop-less lists",
+        "List_selection_title": "Select lists to add to workshop {{workshopName}}",
+        "Name_dialog": "Workshop name",
+        "Created_by": "Created by {{name}}",
+        "Share_link_copied": "Workshop share link copied"
+    },
     "ABOUT": {
         "title": "About",
         "Copyright_notice_title": "Copyright notice",
@@ -216,8 +233,8 @@
         "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
-        "Missing_tags_before_button":"This list is shown as community list but has no tags, please add some tags using ",
-        "Missing_tags_after_button":" button",
+        "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
+        "Missing_tags_after_button": " button",
         "Add_remove_amount": "Add/remove a given amount",
         "No_book": "Missing book",
         "No_note": "No note",

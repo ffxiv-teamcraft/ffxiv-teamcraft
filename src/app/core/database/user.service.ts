@@ -27,6 +27,10 @@ export class UserService extends FirebaseStorage<AppUser> {
         super(database, serializer, diffService, zone);
     }
 
+    public set(uid: string, user: AppUser): Observable<void> {
+        return super.set(uid, user).do(() => this.reload());
+    }
+
     /**
      * Gets user ingame informations.
      * @returns {Observable<any>}
@@ -64,9 +68,14 @@ export class UserService extends FirebaseStorage<AppUser> {
                         return Observable.of({name: 'Anonymous', anonymous: true});
                     }
                     if (user === null || user.isAnonymous) {
-                        return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
+                        return this.get(user.uid).catch(() => {
+                            return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
+                        });
                     } else {
-                        return this.get(user.uid);
+                        return this.get(user.uid).map(u => {
+                            u.providerId = user.providerId;
+                            return u;
+                        });
                     }
                 });
             });
@@ -77,6 +86,17 @@ export class UserService extends FirebaseStorage<AppUser> {
      */
     public reload(): void {
         this.reloader.next(null);
+    }
+
+    /**
+     * Checks if a given email is available for patreon account linking.
+     * @param {string} email
+     * @returns {Observable<boolean>}
+     */
+    checkPatreonEmailAvailability(email: string): Observable<boolean> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+            .valueChanges()
+            .map(res => res.length === 0);
     }
 
 
@@ -94,6 +114,20 @@ export class UserService extends FirebaseStorage<AppUser> {
                     return this.listService.deleteUserLists(uid).subscribe(resolve);
                 }
             });
+        });
+    }
+
+    /**
+     * Updates email associated with a given account.
+     * @param {string} currentMail
+     * @param {string} password
+     * @param {string} newMail
+     * @returns {Promise<void>}
+     */
+    public changeEmail(currentMail: string, password: string, newMail: string): Promise<void> {
+        return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(user => {
+            user.updateEmail(newMail)
+                .then(() => user.sendEmailVerification());
         });
     }
 

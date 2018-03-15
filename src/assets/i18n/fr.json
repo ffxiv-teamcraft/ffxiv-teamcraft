@@ -1,4 +1,21 @@
 {
+    "Is_working_on_it": "{{name}} travaille dessus",
+    "Work_on_it": "Je m'en occupe",
+    "Add_as_collectible": "Ajouter en collectionnable",
+    "Compact_display": "Affichage compact",
+    "Mute_alarms": "Mettre en sourdine",
+    "Hide_used": "Masquer les éléments utilisés",
+    "Retainer_ventures": "Tâches de servant",
+    "WORKSHOP": {
+        "Workshops": "Ateliers",
+        "Add_lists": "Ajouter des listes",
+        "Add_workshop": "Ajouter un atelier",
+        "Delete_message": "Supprimer un atelier ne supprimera pas les listes qui y sont rattachées, elles seront simplement renvoyées dans les listes sans atelier",
+        "List_selection_title": "Choisissez les listes à ajouter à l'atelier {{workshopName}}",
+        "Name_dialog": "Nom de l'atelier",
+        "Created_by": "Créé par {{name}}",
+        "Share_link_copied": "Lien de partage de l'atelier copié"
+    },
     "ABOUT": {
         "title": "À Propos",
         "Copyright_notice_title": "Copyright",

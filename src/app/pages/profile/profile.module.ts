@@ -9,7 +9,7 @@ import {
     MatCardModule,
     MatDialogModule,
     MatGridListModule,
-    MatIconModule,
+    MatIconModule, MatInputModule,
     MatListModule,
     MatProgressSpinnerModule,
     MatTooltipModule
@@ -24,6 +24,8 @@ import {ProfileHelpComponent} from './profile-help/profile-help.component';
 import {PublicProfileComponent} from './public-profile/public-profile.component';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {ChangeEmailPopupComponent} from './change-email-popup/change-email-popup.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [{
     path: 'profile',
@@ -38,6 +40,8 @@ const routes: Routes = [{
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
 
         RouterModule.forChild(routes),
         TranslateModule,
@@ -50,6 +54,7 @@ const routes: Routes = [{
         MatIconModule,
         MatDialogModule,
         MatListModule,
+        MatInputModule,
 
         FlexLayoutModule,
 
@@ -63,6 +68,7 @@ const routes: Routes = [{
         MasterbooksPopupComponent,
         ProfileHelpComponent,
         PublicProfileComponent,
+        ChangeEmailPopupComponent,
     ],
     providers: [
         ProfileGuard,
@@ -71,6 +77,7 @@ const routes: Routes = [{
     entryComponents: [
         MasterbooksPopupComponent,
         ProfileHelpComponent,
+        ChangeEmailPopupComponent,
     ]
 })
 export class ProfileModule {

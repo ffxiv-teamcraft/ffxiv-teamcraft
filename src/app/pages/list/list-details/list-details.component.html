@@ -153,6 +153,9 @@
                     <mat-button-toggle [checked]="hideCompleted" (change)="toggleHideCompleted()">
                         {{"Hide_completed" | translate}}
                     </mat-button-toggle>
+                    <mat-button-toggle [checked]="hideUsed" (change)="toggleHideUsed()">
+                        {{"Hide_used" | translate}}
+                    </mat-button-toggle>
                     <div class="spacer"></div>
                 </div>
             </div>
@@ -176,10 +179,11 @@
         </mat-expansion-panel>
         <div *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn">
             <app-list-details-panel
+                [user]="userData"
                 *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
                 [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
                 [list]="listData"
-                (update)="update()"
+                (update)="update(listData)"
                 (done)="setDone(listData, $event)"
                 [data]="displayRow.rows"
                 [title]="displayRow.title | translate"
@@ -189,9 +193,10 @@
                 [showTier]="displayRow.tiers"></app-list-details-panel>
         </div>
         <app-list-details-panel
+            [user]="userData"
             [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"
-            (update)="update()"
+            (update)="update(listData)"
             (done)="setDone(listData, $event)"
             [data]="listData?.recipes"
             [recipe]="true"

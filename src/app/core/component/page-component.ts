@@ -4,6 +4,7 @@ import {ComponentType} from '@angular/cdk/portal';
 import {OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {HelpService} from './help.service';
+import {ObservableMedia} from '@angular/flex-layout';
 
 /**
  * This is the component every page component (which needs a help dialog) should implement.
@@ -14,7 +15,7 @@ import {HelpService} from './help.service';
  */
 export abstract class PageComponent extends ComponentWithSubscriptions implements OnInit {
 
-    constructor(protected dialog: MatDialog, protected helpService: HelpService) {
+    constructor(protected dialog: MatDialog, protected helpService: HelpService, protected media: ObservableMedia) {
         super();
     }
 

@@ -28,6 +28,25 @@
                   color="warn">
             warning
         </mat-icon>
+        <div *ngIf="item.workingOnIt && getAmount() > (item.done | ceil)">
+            <div *ngIf="worksOnIt as character" class="working-on-it">
+                <img src="{{character.avatar}}" alt=""
+                     matTooltip="{{'Is_working_on_it' | translate:{name: character.name} }}"
+                     matTooltipPosition="above" class="avatar" routerLink="/profile/{{item.workingOnIt}}">
+                <button mat-icon-button color="warn" *ngIf="item.workingOnIt === user.$key"
+                        (click)="removeWorkingOnIt()">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div *ngIf="!item.workingOnIt && !user?.anonymous && getAmount() > (item.done | ceil)">
+            <button mat-icon-button matTooltip="{{'Work_on_it' | translate}}"
+                    matTooltipPosition="above"
+                    [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+                    (click)="workOnIt()">
+                <mat-icon color="accent">work</mat-icon>
+            </button>
+        </div>
     </div>
 
     <div *ngIf="hasTimers" class="timers-container">
@@ -184,6 +203,16 @@
                          src="https://www.garlandtools.org/db/images/Voyage.png">
                 </button>
             </div>
+
+            <div *ngIf="item.ventures !== undefined && item.ventures.length > 0">
+                <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                        matTooltip="{{'Retainer_ventures' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="openVentureDetails(item)">
+                    <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+                         src="https://garlandtools.org/db/icons/item/3503.png">
+                </button>
+            </div>
         </div>
     </div>
 </mat-list-item>
@@ -198,7 +227,10 @@
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
         <div class="item-name" matLine>
-            <span [ngClass]="{'strike':item.done >= item.amount, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
+            <span [ngClass]="{'strike':item.done >= item.amount, 'craftable': canBeCrafted}" matTooltipPosition="above"
+                  matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
+                  mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
+                  (cbOnSuccess)="afterNameCopy(item.id)">{{item.id | itemName | i18n}}</span>
             <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                                  [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
             <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"

@@ -25,6 +25,16 @@ export class MasterbooksPopupComponent {
         }
     }
 
+    checkAll(ids: number[]): void {
+        // We set a default value if it's currently undefined.
+        this.data.user.masterbooks = this.data.user.masterbooks || [];
+        ids.forEach(id => {
+            if (this.data.user.masterbooks.indexOf(id) === -1) {
+                this.data.user.masterbooks.push(id);
+            }
+        })
+    }
+
     /**
      * Submits the data to save masterbooks in database.
      */

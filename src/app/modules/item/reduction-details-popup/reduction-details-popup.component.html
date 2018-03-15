@@ -1,8 +1,37 @@
 <h2 mat-dialog-title>{{data.id | itemName | i18n}}</h2>
 <div mat-dialog-content>
-    <mat-list>
-        <mat-list-item *ngFor="let reduction of data.reducedFrom">
-            <h3>{{reduction | itemName | i18n}}</h3>
-        </mat-list-item>
-    </mat-list>
+    <mat-card *ngFor="let reduction of data.reducedFrom" class="reduction-card">
+        <mat-card-header>
+            <img src="{{reduction.obj.c | icon}}" alt="" mat-card-avatar>
+            <h3 mat-card-title>{{reduction.obj.i | itemName | i18n}}</h3>
+        </mat-card-header>
+        <div *ngIf="getNodes(reduction) as nodes">
+            <mat-list>
+                <mat-list-item *ngFor="let node of nodes">
+                    <mat-icon mat-list-icon>location_on</mat-icon>
+                    <b mat-line>
+                        {{node.zoneid | placeName | i18n}}
+                    </b>
+                    <p mat-line>
+                        {{node.areaid | placeName | i18n}}
+                    </p>
+                    <mat-chip-list>
+                        <mat-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
+                            {{node.limitType | i18n}}
+                        </mat-chip>
+                    </mat-chip-list>
+                    <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
+                                      [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
+                    <span>
+                        <b mat-line *ngIf="node.slot !== undefined && +node.slot === node.slot" selected="true"
+                           color="accent">Slot:{{node.slot}}</b>
+                        <span mat-line *ngIf="node.time !== undefined">
+                            <span mat-line
+                               *ngFor="let time of node.time">{{time}} - {{getDespawnTime(time, node.uptime)}}</span>
+                        </span>
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </mat-card>
 </div>

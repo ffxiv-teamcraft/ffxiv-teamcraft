@@ -13,4 +13,5 @@ export interface Recipe {
     lvl: number;
     icon: string;
     url_xivdb?: I18nName;
+    collectible: boolean;
 }

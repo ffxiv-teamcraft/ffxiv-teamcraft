@@ -7,7 +7,7 @@ import {HtmlToolsService} from '../../../tools/html-tools.service';
 import {GarlandToolsService} from '../../../api/garland-tools.service';
 import {StoredNode} from 'app/model/list/stored-node';
 import {Item} from '../../../../model/garland-tools/item';
-import {nodePositions} from '../../../data/sources/node-positions';
+import * as nodePositions from '../../../data/sources/node-positions.json';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
@@ -79,7 +79,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                 if (details.areaid !== undefined) {
                     gatheredBy.nodes.push(details);
                 }
-                gatheredBy.level = details.lvl;
+                gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > details.lvl) ? details.lvl : gatheredBy.level;
             }
         }
         return gatheredBy;

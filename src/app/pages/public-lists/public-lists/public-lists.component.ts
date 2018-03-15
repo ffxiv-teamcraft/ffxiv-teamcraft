@@ -4,7 +4,7 @@ import {List} from '../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {PageEvent} from '@angular/material';
+import {MatPaginator, PageEvent} from '@angular/material';
 
 @Component({
     selector: 'app-public-lists',
@@ -34,11 +34,14 @@ export class PublicListsComponent implements OnInit {
 
     paginator: BehaviorSubject<PageEvent> = new BehaviorSubject<PageEvent>({pageIndex: 0, pageSize: 25, length: 0});
 
+    @ViewChild('paginatorRef')
+    paginatorRef: MatPaginator;
+
     constructor(private listService: ListService) {
         this.lists = Observable.combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
             (lists, tagFilter, nameFilter) => {
                 if (nameFilter !== '') {
-                    lists = lists.filter(list => list.name.indexOf(nameFilter) > -1);
+                    lists = lists.filter(list => list.name.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1);
                 }
                 if (tagFilter.length > 0) {
                     lists = lists.filter(list => {
@@ -54,12 +57,18 @@ export class PublicListsComponent implements OnInit {
             })
             .do(lists => {
                 this.publicListsLength = lists.length;
+                this.paginatorRef.pageIndex = 0;
+                this.paginator.next({pageIndex: 0, pageSize: this.paginatorRef.pageSize, length: this.publicListsLength});
             })
             .switchMap(lists => {
                 return this.paginator
                     .map(pagination => lists.slice(pagination.pageSize * pagination.pageIndex,
                         pagination.pageSize * pagination.pageIndex + pagination.pageSize))
             });
+    }
+
+    trackByListsFn(index: number, item: List) {
+        return item.$key;
     }
 
     closed(key: string): void {

@@ -8,6 +8,28 @@
     }
 }
 
+.workshop-list {
+    padding-left: 50px;
+}
+
+.amount {
+    margin-left: 20px;
+    width: 80px;
+    display: inline-block;
+}
+
+.right-side {
+    margin-left: auto;
+}
+
+.mat-list .mat-list-item {
+    height: auto;
+}
+
+.mat-list-item-content {
+    flex-wrap: wrap;
+}
+
 .filters {
     display: inline-block;
     width: 100%;

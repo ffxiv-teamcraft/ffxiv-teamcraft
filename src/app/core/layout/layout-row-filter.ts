@@ -21,6 +21,22 @@ export class LayoutRowFilter {
         .find(source => source.trades
             .find(trade => [20, 21, 22].indexOf(+trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
 
+    static IS_TOKEN_TRADE = new LayoutRowFilter(row => {
+        if (row.tradeSources !== undefined) {
+            // These ids are for voidrake and Althyk lavender.
+            for (const tokenId of [15858, 15857]) {
+                if (row.tradeSources
+                        .find(source => source.trades
+                            .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }, 'IS_TOKEN_TRADE');
+
+    static IS_VENTURE = new LayoutRowFilter(row => row.ventures !== undefined && row.ventures.length > 0, 'IS_VENTURE');
+
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,
             'IS_MASTERCRAFT'));
@@ -32,13 +48,22 @@ export class LayoutRowFilter {
         const isTimedGathering = row.gatheredBy !== undefined &&
             row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
         const isTimedReduction = row.reducedFrom !== undefined &&
-            row.reducedFrom.filter(reduction => {
-                return (<any>window).gt.bell.nodes.find(node => {
-                    return node.items.find(item => item.id === reduction) !== undefined;
-                }) !== undefined;
-            }).length > 0;
+            row.reducedFrom
+                .map(reduction => {
+                    if (reduction.obj !== undefined) {
+                        return reduction.obj.i;
+                    }
+                    return reduction;
+                })
+                .filter(reduction => {
+                    return (<any>window).gt.bell.nodes.find(node => {
+                        return node.items.find(item => item.id === reduction) !== undefined;
+                    }) !== undefined;
+                }).length > 0;
         return isTimedGathering || isTimedReduction;
     }, 'IS_TIMED');
+
+    static IS_REDUCTION = new LayoutRowFilter(row => row.reducedFrom !== undefined && row.reducedFrom.length > 0, 'IS_REDUCTION');
 
     /**
      * CRAFTED BY FILTERS
