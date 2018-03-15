@@ -34,6 +34,7 @@ import {LayoutOrderService} from './layout/layout-order.service';
 import {PushNotificationsModule} from 'ng-push';
 import {WorkshopService} from './database/workshop.service';
 import {VenturesExtractor} from './list/data/extractor/ventures-extractor';
+import {CustomLinksService} from './database/custom-links/custom-links.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -78,6 +79,7 @@ const dataExtractorProviders: Provider[] = [
         LayoutService,
         LayoutOrderService,
         WorkshopService,
+        CustomLinksService,
     ],
     declarations: [
         I18nPipe,
