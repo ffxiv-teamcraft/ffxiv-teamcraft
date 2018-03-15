@@ -51,6 +51,7 @@ import {AboutModule} from './pages/about/about.module';
 import {MaintenanceModule} from './pages/maintenance/maintenance.module';
 import {GivewayPopupModule} from './modules/giveway-popup/giveway-popup.module';
 import {MacroTranslationModule} from './pages/macro-translation/macro-translation.module';
+import {GatheringLocationModule} from './pages/gathering-location/gathering-location.module';
 import {WorkshopModule} from './pages/workshop/workshop.module';
 
 
@@ -129,6 +130,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AboutModule,
         MaintenanceModule,
         MacroTranslationModule,
+        GatheringLocationModule,
         WorkshopModule,
     ],
     bootstrap: [AppComponent]
