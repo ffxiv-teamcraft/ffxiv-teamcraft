@@ -251,7 +251,8 @@
             "Filter": "Filtre",
             "Panel_name": "Nom de la catégorie",
             "Order_by": "Trier par",
-            "Order": "Ordre"
+            "Order": "Ordre",
+            "Logic_gate": "Porte logique"
         },
         "HELP": {
             "Title" : "Détails d'une liste",

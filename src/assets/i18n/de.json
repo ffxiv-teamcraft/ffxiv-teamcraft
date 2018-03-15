@@ -251,7 +251,8 @@
             "Filter": "Filter",
             "Panel_name": "Bereichsname",
             "Order_by": "Sortiere nach",
-            "Order": "Sortierung"
+            "Order": "Sortierung",
+            "Logic_gate": "Logic gate"
         },
         "HELP": {
             "Title" : "Listendetails",

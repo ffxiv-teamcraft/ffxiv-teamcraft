@@ -251,7 +251,8 @@
             "Filter": "Filter",
             "Panel_name": "Panel name",
             "Order_by": "Sort by",
-            "Order": "Order"
+            "Order": "Order",
+            "Logic_gate": "Logic gate"
         },
         "HELP": {
             "Title": "List details",
