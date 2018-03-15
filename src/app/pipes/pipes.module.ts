@@ -5,6 +5,7 @@ import {ItemNamePipe} from './item-name.pipe';
 import {CeilPipe} from './ceil.pipe';
 import { IconPipe } from './icon.pipe';
 import { MobNamePipe } from './mob-name.pipe';
+import {VentureNamePipe} from './venture-name.pipe';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { MobNamePipe } from './mob-name.pipe';
         CeilPipe,
         IconPipe,
         MobNamePipe,
+        VentureNamePipe,
     ],
     exports: [
         ItemNamePipe,
@@ -22,6 +24,7 @@ import { MobNamePipe } from './mob-name.pipe';
         CeilPipe,
         IconPipe,
         MobNamePipe,
+        VentureNamePipe,
     ]
 })
 export class PipesModule {

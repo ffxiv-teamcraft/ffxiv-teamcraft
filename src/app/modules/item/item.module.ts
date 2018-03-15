@@ -2,7 +2,14 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ItemComponent} from './item/item.component';
 import {
-    MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatProgressSpinnerModule,
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     MatTabsModule,
     MatTooltipModule
 } from '@angular/material';
@@ -26,6 +33,7 @@ import {VoyagesDetailsPopupComponent} from './voyages-details-popup/voyages-deta
 import {MapModule} from '../map/map.module';
 import {DatabaseModule} from '../../core/database/database.module';
 import {RouterModule} from '@angular/router';
+import {VentureDetailsPopupComponent} from './venture-details-popup/venture-details-popup.component';
 
 @NgModule({
     imports: [
@@ -66,6 +74,7 @@ import {RouterModule} from '@angular/router';
         TradeDetailsPopupComponent,
         VendorsDetailsPopupComponent,
         VoyagesDetailsPopupComponent,
+        VentureDetailsPopupComponent,
     ],
     exports: [
         ItemComponent
@@ -81,6 +90,7 @@ import {RouterModule} from '@angular/router';
         TradeDetailsPopupComponent,
         VendorsDetailsPopupComponent,
         VoyagesDetailsPopupComponent,
+        VentureDetailsPopupComponent,
     ]
 })
 export class ItemModule {

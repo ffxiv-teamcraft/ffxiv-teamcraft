@@ -35,6 +35,8 @@ export class LayoutRowFilter {
         return false;
     }, 'IS_TOKEN_TRADE');
 
+    static IS_VENTURE = new LayoutRowFilter(row => row.ventures !== undefined && row.ventures.length > 0, 'IS_VENTURE');
+
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,
             'IS_MASTERCRAFT'));

@@ -68,6 +68,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     hideCompleted = false;
 
+    hideUsed = false;
+
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
     outdated = false;
@@ -118,6 +120,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     item.hidden = false;
                 }
                 if (item.done >= item.amount && this.hideCompleted) {
+                    item.hidden = true;
+                }
+                // Hide when used
+                if (item.used >= item.amount_needed && this.hideUsed) {
                     item.hidden = true;
                 }
             });
@@ -312,6 +318,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
+        this.triggerFilter();
+    }
+
+    public toggleHideUsed(): void {
+        this.hideUsed = !this.hideUsed;
         this.triggerFilter();
     }
 

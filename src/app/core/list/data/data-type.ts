@@ -8,5 +8,6 @@ export enum DataType {
     GATHERED_BY,
     GARDENING,
     VOYAGES,
-    DROPS
+    DROPS,
+    VENTURE
 }

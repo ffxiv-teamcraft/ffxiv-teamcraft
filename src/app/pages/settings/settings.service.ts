@@ -1,9 +1,12 @@
 import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class SettingsService {
 
     private cache: { [id: string]: string };
+
+    public themeChange$ = new Subject<{ previous: string, next: string }>();
 
     constructor() {
         this.cache = JSON.parse(localStorage.getItem('settings')) || {};
@@ -38,6 +41,7 @@ export class SettingsService {
     }
 
     public set theme(theme: string) {
+        this.themeChange$.next({previous: this.theme, next: theme});
         this.setSetting('theme', theme);
     }
 
