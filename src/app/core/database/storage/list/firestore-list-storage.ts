@@ -35,7 +35,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
             .map(lists => lists.map(list => list.$key))
             .switchMap(listIds => {
                 const deletion = listIds.map(id => {
-                    return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(id).delete());
+                    return this.remove(id);
                 });
                 return Observable.combineLatest(deletion, () => {
                 });

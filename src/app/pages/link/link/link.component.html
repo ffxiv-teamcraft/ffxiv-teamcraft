@@ -1,3 +1,4 @@
-<p>
-  link works!
-</p>
+<div class="container" *ngIf="!notFound">
+    <mat-spinner></mat-spinner>
+</div>
+<h4 class="not-found" *ngIf="notFound">{{"CUSTOM_LINKS.Not_found" | translate}}</h4>

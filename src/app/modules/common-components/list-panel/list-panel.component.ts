@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
-import {MatExpansionPanel, MatSnackBar} from '@angular/material';
+import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
@@ -9,6 +9,8 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';
+import {CustomLink} from '../../../core/database/custom-links/costum-link';
 
 @Component({
     selector: 'app-list-panel',
@@ -53,12 +55,22 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     @Input()
     public odd: boolean;
 
+    @Input()
+    public linkButton = false;
+
     author: Observable<any>;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
-                private router: Router, private auth: AngularFireAuth, private userService: UserService) {
+                private router: Router, private auth: AngularFireAuth, private userService: UserService,
+                private dialog: MatDialog) {
         super();
+    }
+
+    public openLinkPopup(list: List): void {
+        const link = new CustomLink();
+        link.redirectTo = `list/${list.$key}`;
+        this.dialog.open(CustomLinkPopupComponent, {data: link});
     }
 
     public getLink(): string {

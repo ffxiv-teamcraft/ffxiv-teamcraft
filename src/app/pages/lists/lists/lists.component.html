@@ -48,7 +48,8 @@
             (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
             (ondelete)="delete(list)"
             [authorUid]="user.uid"
-            [odd]="i%2>0"></app-list-panel>
+            [odd]="i%2>0"
+            [linkButton]="userData?.patron || userData?.admin"></app-list-panel>
     </div>
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
@@ -61,6 +62,11 @@
                         <button mat-icon-button (click)="$event.stopPropagation();changeWorkshopName(workshop)"><mat-icon>edit</mat-icon></button>
                     </mat-panel-title>
                     <div class="buttons">
+                        <button mat-icon-button *ngIf="userData?.patron || userData?.admin"
+                                matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                                (click)="$event.stopPropagation(); openLinkPopup(workshop)">
+                            <mat-icon>link</mat-icon>
+                        </button>
                         <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
                                 (click)="$event.stopPropagation()"
                                 matTooltip="{{'Share' | translate}}" matTooltipPosition="above"

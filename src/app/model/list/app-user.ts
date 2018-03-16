@@ -12,5 +12,7 @@ export class AppUser extends DataModel {
     anonymous?: boolean;
     providerId?: string;
     patreonEmail?: string;
-    admin?:boolean;
+    // Patron-only feature, nickname internal to teamcraft, must be unique.
+    nickname?: string;
+    admin?: boolean;
 }

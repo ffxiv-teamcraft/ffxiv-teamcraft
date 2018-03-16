@@ -8,11 +8,20 @@
             <span mat-line class="link-row">
                 {{link.uri}}
                 <mat-icon>arrow_forward</mat-icon>
-                {{getName(link.redirectTo) | async}}
+                {{getName(link) | async}}
                 <mat-chip-list>
                     <mat-chip color="accent" selected>{{link.getType()}}</mat-chip>
                 </mat-chip-list>
             </span>
+            <button mat-icon-button ngxClipboard
+                    [cbContent]="link.getUrl()"
+                    color="accent"
+                    (click)="$event.stopPropagation()"
+                    matTooltip="{{'Share' | translate}}"
+                    matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
+            </button>
             <button mat-icon-button color="accent" routerLink="/{{link.redirectTo}}">
                 <mat-icon>open_in_new</mat-icon>
             </button>

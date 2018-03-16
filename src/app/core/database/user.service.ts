@@ -48,6 +48,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                     return this.dataService.getCharacter(u.lodestoneId).map(c => {
                         c.patron = u.patron;
                         c.patreonEmail = u.patreonEmail;
+                        c.nickname = u.nickname;
                         return c;
                     });
                 } else {
@@ -105,8 +106,19 @@ export class UserService extends FirebaseStorage<AppUser> {
      * @param {string} email
      * @returns {Observable<boolean>}
      */
-    checkPatreonEmailAvailability(email: string): Observable<boolean> {
+    public checkPatreonEmailAvailability(email: string): Observable<boolean> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('patreonEmail').equalTo(email))
+            .valueChanges()
+            .map(res => res.length === 0);
+    }
+
+    /**
+     * Checks if a given nickname is available.
+     * @param {string} nickname
+     * @returns {Observable<boolean>}
+     */
+    public checkNicknameAvailability(nickname: string): Observable<boolean> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('nickname').equalTo(nickname))
             .valueChanges()
             .map(res => res.length === 0);
     }

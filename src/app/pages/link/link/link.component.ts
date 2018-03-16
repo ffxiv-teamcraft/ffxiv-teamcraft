@@ -11,14 +11,19 @@ import {CustomLink} from '../../../core/database/custom-links/costum-link';
 })
 export class LinkComponent implements OnInit {
 
+    notFound = false;
+
     constructor(private activeRoute: ActivatedRoute, private userService: UserService, private customLinksService: CustomLinksService,
                 private router: Router) {
     }
 
     ngOnInit() {
         this.activeRoute.params.switchMap(params => {
-            return this.customLinksService.getByUri(params.uri);
+            return this.customLinksService.getByUriAndNickname(decodeURI(params.uri), decodeURI(params.nickName));
         }).subscribe((link: CustomLink) => {
+            if (link === undefined) {
+                this.notFound = true;
+            }
             this.router.navigate(link.redirectTo.split('/'));
         });
     }

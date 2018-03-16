@@ -219,6 +219,9 @@
     "PROFILE": {
         "Masterbooks": "Livres",
         "Patreon_supporter": "Supporter Patreon",
+        "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
+        "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
+        "Nickname": "Pseudonyme",
         "HELP": {
             "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
             "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
@@ -345,5 +348,15 @@
         "Macro_to_translate": "Macro à traduire",
         "Do_translate": "Traduire!",
         "Invalid_macro_or_language": "Macro ou langue invalide."
+    },
+    "CUSTOM_LINKS": {
+        "Title": "Liens",
+        "Not_found": "Lien introuvable",
+        "Add_link": "Créer un lien",
+        "Dialog_title": "Lien",
+        "Link_type": "Type de lien",
+        "Link_name": "Nom du lien",
+        "target": "Cible du lien",
+        "Share_link_copied": "Lien copié dans le presse-papiers"
     }
 }

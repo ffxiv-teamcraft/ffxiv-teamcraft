@@ -9,7 +9,8 @@ import {
     MatIconModule,
     MatInputModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule, MatTooltipModule
 } from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
@@ -17,6 +18,8 @@ import {PatreonGuard} from '../../core/guard/patreon.guard';
 import {CustomLinkPopupComponent} from './custom-link-popup/custom-link-popup.component';
 import {FormsModule} from '@angular/forms';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
+import {TranslateModule} from '@ngx-translate/core';
+import {ClipboardModule} from 'ngx-clipboard/dist';
 
 const routes: Routes = [{
     path: 'custom-links',
@@ -30,6 +33,9 @@ const routes: Routes = [{
         RouterModule.forChild(routes),
         FormsModule,
 
+        TranslateModule,
+        ClipboardModule,
+
         MatListModule,
         MatIconModule,
         MatButtonModule,
@@ -37,6 +43,8 @@ const routes: Routes = [{
         MatDialogModule,
         MatInputModule,
         MatChipsModule,
+        MatSnackBarModule,
+        MatTooltipModule,
 
         CoreModule,
         CommonComponentsModule,

@@ -11,6 +11,7 @@ import {ProfileHelpComponent} from '../profile-help/profile-help.component';
 import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popup.component';
 import {ObservableMedia} from '@angular/flex-layout';
 import {PatreonLinkPopupComponent} from '../patreon-link-popup/patreon-link-popup.component';
+import {NicknamePopupComponent} from '../nickname-popup/nickname-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -43,6 +44,10 @@ export class ProfileComponent extends PageComponent {
             this.character = character;
         }));
         this.subscriptions.push(userService.getUserData().subscribe(user => this.user = user));
+    }
+
+    public openNicknamePopup(): void {
+        this.dialog.open(NicknamePopupComponent, {data: {user: this.user}});
     }
 
     public getJobs(): any[] {

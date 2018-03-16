@@ -25,14 +25,15 @@ export class CustomLinksService extends FirebaseStorage<CustomLink> {
             );
     }
 
-    public getByUri(name: string): Observable<CustomLink> {
-        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('uri').equalTo(name))
+    public getByUriAndNickname(uri: string, nickName: string): Observable<CustomLink> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('uri').equalTo(uri))
             .snapshotChanges()
             .first()
             .map(snaps => snaps
                 .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
                 .map(l => this.serializer.deserialize<CustomLink>(l, CustomLink))
             )
+            .map(res => res.filter(link => link.authorNickname === nickName))
             .map(res => res[0]);
     }
 
