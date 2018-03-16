@@ -1,5 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
+import {Trade} from '../../../model/list/trade';
 
 @Component({
     selector: 'app-trade-details-popup',
@@ -9,5 +10,9 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 export class TradeDetailsPopupComponent {
 
     constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    }
+
+    getTotal(trade: Trade): number {
+        return Math.ceil((trade.currencyAmount / trade.itemAmount) * (this.data.amount_needed - this.data.done));
     }
 }
