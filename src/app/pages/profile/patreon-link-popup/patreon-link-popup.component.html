@@ -1,10 +1,10 @@
-<h3 mat-dialog-title>{{"Patreon_link_email" | translate}}</h3>
+<h3 mat-dialog-title>{{"PROFILE.Patreon_link_email" | translate}}</h3>
 <div mat-dialog-content>
     <form (submit)="submit()">
         <mat-input-container>
-            <input type="text" [formControl]="email" matInput placeholder="{{'Patreon_email' | translate}}">
+            <input type="text" [formControl]="email" matInput placeholder="{{'PROFILE.Patreon_email' | translate}}">
         </mat-input-container>
-        <mat-error *ngIf="alreadyUsed">{{'Email_already_used' | translate}}</mat-error>
+        <mat-error *ngIf="alreadyUsed">{{'PROFILE.Email_already_used' | translate}}</mat-error>
     </form>
 </div>
 <div mat-dialog-actions>

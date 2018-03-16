@@ -222,6 +222,9 @@
         "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
         "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
         "Nickname": "Pseudonyme",
+        "Patreon_link_email": "Lier mon email patreon",
+        "Email_already_used": "Email déjà lié à un autre compte",
+        "Patreon_email": "Email Patreon",
         "HELP": {
             "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
             "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",

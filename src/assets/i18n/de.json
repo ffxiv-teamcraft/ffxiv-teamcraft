@@ -221,6 +221,9 @@
         "Patreon_supporter": "Patreon-Unterstützer",
         "Patreon_features": "Patreon-Unterstützer Features",
         "Nickname": "Nickname",
+        "Patreon_link_email": "Mit Patreon-Email verknüpfen",
+        "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
+        "Patreon_email": "Patreon-Email",
         "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
         "HELP": {
             "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",

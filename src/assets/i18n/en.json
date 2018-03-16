@@ -222,6 +222,9 @@
         "Patreon_features": "Patreon supporter features",
         "Feature_requires_nickname": "This feature requires you to set a nickname",
         "Nickname": "Nickname",
+        "Patreon_link_email": "Link patreon email",
+        "Email_already_used": "Email already linked to another account",
+        "Patreon_email": "Patreon Email",
         "HELP": {
             "Welcome": "Welcome to profile page, this is the place where you can see and edit your own profile.",
             "Edit": "By clicking on the edit icon, you can edit the character linked to your FFXIV Teamcraft account.",
