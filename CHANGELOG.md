@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.2"></a>
+# [3.4.0-beta.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.1...v3.4.0-beta.2) (2018-03-16)
+
+
+### Bug Fixes
+
+* add ceil to trade details total amount ([a78888d](https://github.com/Supamiu/ffxiv-teamcraft/commit/a78888d))
+* error in select all button when user has no masterbooks ([90e7d5c](https://github.com/Supamiu/ffxiv-teamcraft/commit/90e7d5c))
+* missing help dialog box for list details page ([16c7ecd](https://github.com/Supamiu/ffxiv-teamcraft/commit/16c7ecd))
+* missing translation in list layout dialog box ([6a40cbe](https://github.com/Supamiu/ffxiv-teamcraft/commit/6a40cbe))
+* progression kept in list clones ([0ad5729](https://github.com/Supamiu/ffxiv-teamcraft/commit/0ad5729))
+
+
+### Features
+
+* add filter for tradeable items ([f0bd572](https://github.com/Supamiu/ffxiv-teamcraft/commit/f0bd572)), closes [#267](https://github.com/Supamiu/ffxiv-teamcraft/issues/267)
+* add ventures data extractor ([208562e](https://github.com/Supamiu/ffxiv-teamcraft/commit/208562e)), closes [#161](https://github.com/Supamiu/ffxiv-teamcraft/issues/161)
+* custom list link (patreon supporters only) ([5f897cd](https://github.com/Supamiu/ffxiv-teamcraft/commit/5f897cd)), closes [#217](https://github.com/Supamiu/ffxiv-teamcraft/issues/217)
+* hide when used ([dc74170](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc74170)), closes [#247](https://github.com/Supamiu/ffxiv-teamcraft/issues/247)
+* link patreon email to your profile for automatic patreon recognition ([e6e1cb2](https://github.com/Supamiu/ffxiv-teamcraft/commit/e6e1cb2))
+* mark workshops as favourite ([0fa9d22](https://github.com/Supamiu/ffxiv-teamcraft/commit/0fa9d22)), closes [#255](https://github.com/Supamiu/ffxiv-teamcraft/issues/255)
+
+
+
 <a name="3.4.0-beta.1"></a>
 # [3.4.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.0...v3.4.0-beta.1) (2018-03-12)
 
