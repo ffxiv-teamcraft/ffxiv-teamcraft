@@ -9,7 +9,8 @@
                       [value]="recipe.amount"
                       min="1"
                       readonly="{{readonly}}"
-                      (onchange)="onedit.emit($event)">
+                      (onchange)="onedit.emit($event)"
+                      [hideMissingAmount]="true">
     </app-amount-input>
     <button mat-mini-fab *ngIf="!readonly" (click)="delete()">
         <mat-icon>delete</mat-icon>
