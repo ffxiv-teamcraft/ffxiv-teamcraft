@@ -17,7 +17,7 @@ export class NicknamePopupComponent {
 
     constructor(private linkService: CustomLinksService, private userService: UserService,
                 private dialogRef: MatDialogRef<NicknamePopupComponent>,
-                @Inject(MAT_DIALOG_DATA) private data: { user: AppUser, hintTextKey: string, canCancel: boolean }) {
+                @Inject(MAT_DIALOG_DATA) public data: { user: AppUser, hintTextKey: string, canCancel: boolean }) {
         this.nickname = data.user.nickname;
     }
 
