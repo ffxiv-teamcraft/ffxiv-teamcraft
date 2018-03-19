@@ -29,10 +29,13 @@ export class NicknamePopupComponent {
         const user = this.data.user;
         user.nickname = this.nickname;
         this.linkService.getAllByAuthor(user.$key).mergeMap(links => {
-            return Observable.combineLatest(links.map(link => {
-                link.authorNickname = user.nickname;
-                return this.linkService.set(link.$key, link);
-            }));
+            if (links.length > 0) {
+                return Observable.combineLatest(links.map(link => {
+                    link.authorNickname = user.nickname;
+                    return this.linkService.set(link.$key, link);
+                }));
+            }
+            return Observable.of(null);
         })
             .mergeMap(() => this.userService.set(user.$key, user))
             .first()
