@@ -4,13 +4,15 @@ import {Observable} from 'rxjs/Observable';
 import {MapData} from './map-data';
 import {Aetheryte} from '../../core/data/aetheryte';
 import {aetherytes} from '../../core/data/sources/aetherytes';
+import {Vector2} from '../../core/tools/vector2';
+import {MathToolsService} from '../../core/tools/math-tools';
 
 @Injectable()
 export class MapService {
 
     data: Observable<MapData[]>;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private mathService: MathToolsService) {
         this.data = this.http.get<any>('https://api.xivdb.com/maps/get/layers/id')
             .map(res => {
                 return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
@@ -35,7 +37,17 @@ export class MapService {
         return aetherytes.filter(aetheryte => aetheryte.placenameid === id);
     }
 
-    getPositionOnMap(map: MapData, position: { x: number, y: number }): { x: number, y: number } {
+    public getNearestAetheryte(map: MapData, coords: Vector2): Aetheryte {
+        let nearest = map.aetherytes[0];
+        for (const aetheryte of map.aetherytes.filter(ae => ae.type === 0)) {
+            if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
+                nearest = aetheryte;
+            }
+        }
+        return nearest;
+    }
+
+    getPositionOnMap(map: MapData, position: Vector2): Vector2 {
         const scale = map.size_factor / 100;
 
         const offset = 1;
