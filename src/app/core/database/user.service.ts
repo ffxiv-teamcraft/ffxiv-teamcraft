@@ -88,7 +88,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                     return Observable.of(u);
                 }
                 return this.firebase.list('/patreon/supporters').valueChanges().map((supporters: { email: string }[]) => {
-                    u.patron = supporters.find(s => s.email === u.patreonEmail) !== undefined;
+                    u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
                     return u;
                 });
             });
