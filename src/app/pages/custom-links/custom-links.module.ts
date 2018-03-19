@@ -19,7 +19,7 @@ import {CustomLinkPopupComponent} from './custom-link-popup/custom-link-popup.co
 import {FormsModule} from '@angular/forms';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {TranslateModule} from '@ngx-translate/core';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 
 const routes: Routes = [{
     path: 'custom-links',
