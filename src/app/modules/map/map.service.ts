@@ -6,9 +6,16 @@ import {Aetheryte} from '../../core/data/aetheryte';
 import {aetherytes} from '../../core/data/sources/aetherytes';
 import {Vector2} from '../../core/tools/vector2';
 import {MathToolsService} from '../../core/tools/math-tools';
+import {NavigationStep} from './navigation-step';
 
 @Injectable()
 export class MapService {
+
+    // Flying mount speed, used as reference for TP over mount comparison, needs a precise recording.
+    private static readonly MOUNT_SPEED = 5;
+
+    // TP duration on the same map, this is an average.
+    private static readonly TP_DURATION = 8;
 
     data: Observable<MapData[]>;
 
@@ -45,6 +52,99 @@ export class MapService {
             }
         }
         return nearest;
+    }
+
+    public getOptimizedPath(mapId: number, points: Vector2[]): Observable<NavigationStep[]> {
+        return this.getMapById(mapId)
+            .map(mapData => {
+                // We only want big aetherytes.
+                const bigAetherytes = mapData.aetherytes.filter(ae => ae.type === 0);
+                const paths = bigAetherytes.map(aetheryte => this.getShortestPath(aetheryte, points, bigAetherytes));
+                return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
+            });
+    }
+
+    private totalDuration(path: NavigationStep[]): number {
+        let duration = 0;
+        path.forEach((step, index) => {
+            // Don't take the first tp into consideration.
+            if (index === 0) {
+                return;
+            }
+            if (step.isTeleport) {
+                duration += MapService.TP_DURATION;
+            } else {
+                const previousStep = path[index - 1];
+                duration += this.mathService.distance(previousStep, step) / MapService.MOUNT_SPEED;
+            }
+        });
+        return duration;
+    }
+
+    private getShortestPath(start: Aetheryte, points: Vector2[], availableAetherytes: Aetheryte[]): NavigationStep[] {
+        // First of all, compile all steps we have available
+        let availablePoints: NavigationStep[] =
+            points.map(point => ({
+                x: point.x,
+                y: point.y,
+                isTeleport: false
+            }));
+        const availableAetherytesPoints: NavigationStep[] = availableAetherytes.map(aetheryte => ({
+            x: aetheryte.x,
+            y: aetheryte.y,
+            isTeleport: true
+        }));
+        const steps: NavigationStep[] = [];
+        steps.push({x: start.x, y: start.y, isTeleport: true});
+        // While there's more steps to add
+        while (availablePoints.length > 0) {
+            // First of all, fill with dummy values to start the comparison
+            let closestTpPlusMove = {tp: availableAetherytesPoints[0], moveTo: availablePoints[0]};
+            // First of all, compute teleport + travel times
+            for (const tp of availableAetherytesPoints) {
+                let closest = availablePoints[0];
+                let closestDistance = this.mathService.distance(tp, closest);
+                for (const step of availablePoints) {
+                    if (this.mathService.distance(tp, step) < closestDistance) {
+                        closest = step;
+                        closestDistance = this.mathService.distance(tp, closest);
+                    }
+                }
+                if (closestDistance < this.mathService.distance(closestTpPlusMove.tp, closestTpPlusMove.moveTo)) {
+                    closestTpPlusMove = {tp: tp, moveTo: closest};
+                }
+            }
+            // This is the fastest tp + move combination duration.
+            const tpPlusMoveDuration = MapService.TP_DURATION +
+                (this.mathService.distance(closestTpPlusMove.tp, closestTpPlusMove.moveTo) / MapService.MOUNT_SPEED);
+
+            // Now check the closest point without TP.
+            // Use our current position as reference
+            const currentPosition = steps[steps.length - 1];
+            // Fill with the first value to start the comparison.
+            let closestPoint = availablePoints[0];
+            let closestPointDistance = this.mathService.distance(currentPosition, closestPoint);
+            for (const point of availablePoints) {
+                if (this.mathService.distance(currentPosition, point) < closestPointDistance) {
+                    closestPoint = point;
+                    closestPointDistance = this.mathService.distance(currentPosition, closestPoint);
+                }
+            }
+
+            // This is the fastest mount travel duration to any of the points.
+            const closestPointMountDuration = closestPointDistance / MapService.MOUNT_SPEED;
+
+            // If the closest point can be reached using a mount (or is equal to TP, but in this case we'll use mount).
+            if (closestPointMountDuration <= tpPlusMoveDuration) {
+                steps.push(closestPoint);
+                availablePoints = availablePoints.filter(point => point !== closestPoint);
+            } else {
+                // Else, add aetheryte step plus move step
+                steps.push(closestTpPlusMove.tp, closestTpPlusMove.moveTo);
+                availablePoints = availablePoints.filter(point => point !== closestTpPlusMove.moveTo);
+            }
+        }
+        return steps;
     }
 
     getPositionOnMap(map: MapData, position: Vector2): Vector2 {
