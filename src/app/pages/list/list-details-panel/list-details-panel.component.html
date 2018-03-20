@@ -26,7 +26,7 @@
                     </button>
                 </div>
                 <mat-divider class="zone-divider"></mat-divider>
-                <div *ngFor="let item of row.items; trackBy: trackByFn; let i = index"
+                <div *ngFor="let item of uniquify(row.items); trackBy: trackByFn; let i = index"
                      [ngClass]="{compact: settings.compactLists}">
                     <app-item [list]="list"
                               [user]="user"

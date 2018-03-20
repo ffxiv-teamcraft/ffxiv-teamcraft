@@ -81,6 +81,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
     }
 
+    public uniquify(items: ListRow[]): ListRow[] {
+        return items.filter((value, index, array) => array.filter(row => row.id === value.id).length === 1);
+    }
+
     public getLocation(id: number): I18nName {
         if (id === -1) {
             return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};

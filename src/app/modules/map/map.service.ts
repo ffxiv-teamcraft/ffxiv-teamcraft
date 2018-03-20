@@ -14,7 +14,7 @@ import {NavigationObjective} from './navigation-objective';
 export class MapService {
 
     // Flying mount speed, used as reference for TP over mount comparison, needs a precise recording.
-    private static readonly MOUNT_SPEED = 5;
+    private static readonly MOUNT_SPEED = 2.5;
 
     // TP duration on the same map, this is an average.
     private static readonly TP_DURATION = 8;
