@@ -222,6 +222,7 @@
         "Patreon_features": "Patreon supporter features",
         "Feature_requires_nickname": "This feature requires you to set a nickname",
         "Nickname": "Nickname",
+        "No_nickname": "No nickname set",
         "Patreon_link_email": "Link patreon email",
         "Email_already_used": "Email already linked to another account",
         "Patreon_email": "Patreon Email",
@@ -352,6 +353,7 @@
         "Link_type": "Link type",
         "Link_name": "Link name",
         "target": "Link target",
-        "Share_link_copied": "Custom link copied to clipboard"
+        "Share_link_copied": "Custom link copied to clipboard",
+        "No_links": "No custom links"
     }
 }

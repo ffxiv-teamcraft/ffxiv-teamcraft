@@ -221,6 +221,7 @@
         "Patreon_supporter": "Patreon-Unterstützer",
         "Patreon_features": "Patreon-Unterstützer Features",
         "Nickname": "Nickname",
+        "No_nickname": "Kein Nickname vergeben",
         "Patreon_link_email": "Mit Patreon-Email verknüpfen",
         "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
         "Patreon_email": "Patreon-Email",
@@ -352,6 +353,7 @@
         "Link_type": "Linkart",
         "Link_name": "Linkname",
         "target": "Linkziel",
-        "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert"
+        "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert",
+        "No_links": "Keine benutzerdefinierten Links vorhanden"
     }
 }

@@ -222,6 +222,7 @@
         "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
         "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
         "Nickname": "Pseudonyme",
+        "No_nickname": "No nickname set",
         "Patreon_link_email": "Lier mon email patreon",
         "Email_already_used": "Email déjà lié à un autre compte",
         "Patreon_email": "Email Patreon",
@@ -360,6 +361,7 @@
         "Link_type": "Type de lien",
         "Link_name": "Nom du lien",
         "target": "Cible du lien",
-        "Share_link_copied": "Lien copié dans le presse-papiers"
+        "Share_link_copied": "Lien copié dans le presse-papiers",
+        "No_links": "Aucun lien défini"
     }
 }
