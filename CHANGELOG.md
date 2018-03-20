@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.3"></a>
+# [3.4.0-beta.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.2...v3.4.0-beta.3) (2018-03-20)
+
+
+### Bug Fixes
+
+* "NaN to reach total" sometimes shown on amount input fields ([1f05c42](https://github.com/Supamiu/ffxiv-teamcraft/commit/1f05c42))
+* **beta:** patreon email linking is case-sensitive (not anymore) ([8fc3077](https://github.com/Supamiu/ffxiv-teamcraft/commit/8fc3077))
+* **beta:** unable to link nickname to profile ([eea0aa3](https://github.com/Supamiu/ffxiv-teamcraft/commit/eea0aa3)), closes [#280](https://github.com/Supamiu/ffxiv-teamcraft/issues/280)
+* list author avatar hidden in list panel ([ae0b5e6](https://github.com/Supamiu/ffxiv-teamcraft/commit/ae0b5e6))
+* little issue with the recipe addition to a list not in workshop ([b13add1](https://github.com/Supamiu/ffxiv-teamcraft/commit/b13add1))
+
+
+### Features
+
+* optimized navigation map for zone breakdown ([fe1438b](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe1438b)), closes [#185](https://github.com/Supamiu/ffxiv-teamcraft/issues/185)
+* show closest aetheryte to TP in the same map for gatherable items ([5d35b8f](https://github.com/Supamiu/ffxiv-teamcraft/commit/5d35b8f)), closes [#185](https://github.com/Supamiu/ffxiv-teamcraft/issues/185)
+
+
+
 <a name="3.4.0-beta.2"></a>
 # [3.4.0-beta.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.1...v3.4.0-beta.2) (2018-03-16)
 
