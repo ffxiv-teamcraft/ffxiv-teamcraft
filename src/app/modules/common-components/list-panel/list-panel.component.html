@@ -15,7 +15,7 @@
                     <div class="description">
                         <img *ngIf="author | async as authorData" [src]="authorData?.avatar" class="author-avatar"
                              [matTooltip]="authorData?.name" matTooltipPosition="above"
-                             hidden="{{authorData?.name === 'Anonymous'}}"
+                             [hidden]="authorData?.name === 'Anonymous'"
                              routerLink="/profile/{{list.authorId}}">
                         <div class="tags">
                             <mat-chip-list class="inline-chips">
