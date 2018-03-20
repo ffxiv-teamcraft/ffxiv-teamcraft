@@ -150,7 +150,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
         const data: { mapId: number, points: NavigationObjective[] } = {
             mapId: zoneBreakdownRow.zoneId,
-            points: zoneBreakdownRow.items
+            points: this.uniquify(zoneBreakdownRow.items)
                 .map(item => {
                     if (item.coords === undefined) {
                         return undefined;
@@ -163,7 +163,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
-        return zoneBreakdownRow.items
+        return this.uniquify(zoneBreakdownRow.items)
             .map(item => {
                 if (item.coords === undefined) {
                     return undefined;
