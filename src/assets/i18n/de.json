@@ -358,6 +358,11 @@
     },
     "NAVIGATION": {
         "Title": "Optimierte Navigationsroute",
-        "Steps": "Treppe"
+        "Steps": "Stationen"
+    },
+    "GATHERING_LOCATIONS":{
+        "Title": "Sammelgegenstand-Suche",
+        "No_items": "Nichts zum Sammeln gefunden",
+        "Gathering_name": "Sammelgegenstand eingeben"
     }
 }

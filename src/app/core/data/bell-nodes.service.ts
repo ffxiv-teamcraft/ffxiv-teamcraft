@@ -40,4 +40,8 @@ export class BellNodesService {
             return false;
         });
     }
+
+    getNode(id: number): any {
+        return this.nodes.find(node => node.id === id);
+    }
 }

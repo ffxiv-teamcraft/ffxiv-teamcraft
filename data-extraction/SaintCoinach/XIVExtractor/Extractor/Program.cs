@@ -15,18 +15,16 @@ namespace Extractor
             const string GameDirectory = @"F:\SquareEnix\FINAL FANTASY XIV - A Realm Reborn";
             ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
             Localize localize = new Localize(realm);
-            /**
             ExtractItemNames(localize, realm);
             ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(),"Singular", "npcs");
             ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
             ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers");
             ExtractMobNames(localize, realm);
-            ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
             ExtractNames(localize, realm.GameData.GetSheet<CraftAction>(), "Name", "craft-actions");
             ExtractNames(localize, realm.GameData.GetSheet<SaintCoinach.Xiv.Action>(), "Name", "actions");
             ExtractAetheryteNames(localize, realm);
-            **/
             ExtractVentureNames(localize, realm);
+            ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
         }
 
         static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)
@@ -34,7 +32,7 @@ namespace Extractor
             JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\..\xivdb-mapper\output\aetherytes.json"));
             JArray res = new JArray();
             var sheet = realm.GameData.GetSheet("Aetheryte");
-            foreach(var row in aetherytes)
+            foreach (var row in aetherytes)
             {
                 JObject jRow = row.Value<JObject>();
                 jRow.Add("nameid", ((SaintCoinach.Xiv.PlaceName)sheet[Int32.Parse(jRow.GetValue("id").ToString())]["PlaceName"]).Key);
@@ -47,10 +45,25 @@ namespace Extractor
         {
             JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\..\xivdb-mapper\output\nodes-position.json"));
             JObject res = new JObject();
-            foreach(var row in rows)
+            foreach (var row in rows)
             {
-                if (positions.GetValue(row.Key.ToString()) != null && res.GetValue(row.Base.Key.ToString()) == null) { 
-                    res.Add(row.Base.Key.ToString(), positions.GetValue(row.Key.ToString()));
+                if (positions.GetValue(row.Key.ToString()) != null && res.GetValue(row.Base.Key.ToString()) == null && row.TerritoryType != null)
+                {
+                    JToken nodeInformations = positions.GetValue(row.Key.ToString());
+                    JObject node = new JObject();
+                    node.Merge(nodeInformations);
+                    JArray items = new JArray();
+                    foreach (var item in row.Base.Items)
+                    {
+                        if (item.Key > 0)
+                        {
+                            items.Add(item.Item.Key);
+                        }
+                    }
+                    node.Add("level", row.Base.GatheringLevel);
+                    node.Add("type", row.Base.Type.Key);
+                    node.Add("items", items);
+                    res.Add(row.Base.Key.ToString(), node);
                 }
             }
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\node-positions.json", res.ToString());
@@ -74,7 +87,7 @@ namespace Extractor
                 JObject itemName = localize.Strings(draft, "Name");
                 if (itemName != null)
                 {
-                    res.Add("draft"+draft.Key.ToString(), itemName);
+                    res.Add("draft" + draft.Key.ToString(), itemName);
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
@@ -102,7 +115,7 @@ namespace Extractor
             JObject res = new JObject();
             foreach (var task in realm.GameData.GetSheet<RetainerTask>())
             {
-                if(task.Task is RetainerTaskNormal)
+                if (task.Task is RetainerTaskNormal)
                 {
                     Item item = null;
                     using (IEnumerator<Item> enumer = task.Task.Items.GetEnumerator())
@@ -126,7 +139,7 @@ namespace Extractor
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\ventures.json", json);
-            
+
         }
 
         static void ExtractNames(Localize localize, IEnumerable<IXivRow> rows, string col, string fileName)
@@ -141,7 +154,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory  + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\" + fileName + ".json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\" + fileName + ".json", json);
         }
 
     }

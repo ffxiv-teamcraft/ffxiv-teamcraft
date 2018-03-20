@@ -94,13 +94,12 @@ export class DataService {
      * @param {string} name
      * @returns {Observable<ItemData[]>}
      */
-    public searchGathering(name: string): Observable<ItemData[]> {
+    public searchGathering(name: string): Observable<any[]> {
         const params = new HttpParams()
             .set('gatherable', '1')
             .set('text', name)
             .set('lang', this.i18n.currentLang);
-        return this.getGarlandSearch(params)
-            .map(items => this.serializer.deserialize<ItemData>(items, [ItemData]));
+        return this.getGarlandSearch(params);
     }
 
     /**

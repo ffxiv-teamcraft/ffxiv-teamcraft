@@ -7,3 +7,77 @@
         display: block;
     }
 }
+
+mat-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.no-gathering {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0.6;
+}
+
+.loader-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.timed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .spawns {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .spawn-row {
+            margin: 2px 0;
+        }
+    }
+}
+
+.coords {
+    width: 100%;
+    text-align: center;
+}
+
+.class-icon {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+}
+
+.card-header {
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    padding-right: 45px;
+}
+
+.mat-card-subtitle {
+    position: relative;
+}
+
+.mat-card-subtitle .place {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-right: 25px;
+}
+
+.mat-card-subtitle .slot {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

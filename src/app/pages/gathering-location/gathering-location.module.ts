@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {RouterModule} from '@angular/router';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import {MapModule} from '../../modules/map/map.module';
 
 const routes = [{
     path: 'gathering-location',
@@ -53,6 +54,7 @@ const routes = [{
         PipesModule,
         TooltipModule,
         CommonComponentsModule,
+        MapModule,
     ],
     declarations: [
         GatheringLocationComponent,

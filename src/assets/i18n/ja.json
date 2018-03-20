@@ -375,5 +375,10 @@
     "NAVIGATION": {
         "Title": "Optimized navigation route",
         "Steps": "Steps"
+    },
+    "GATHERING_LOCATIONS":{
+        "Title": "Récoltes",
+        "No_items": "Aucun objet trouvé",
+        "Gathering_name": "Nom de l'objet"
     }
 }

@@ -359,5 +359,10 @@
     "NAVIGATION": {
         "Title": "Optimized navigation route",
         "Steps": "Steps"
+    },
+    "GATHERING_LOCATIONS":{
+        "Title": "Gathering items",
+        "No_items": "No gathering node found",
+        "Gathering_name": "Enter item name"
     }
 }

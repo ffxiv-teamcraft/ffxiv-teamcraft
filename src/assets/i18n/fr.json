@@ -367,5 +367,10 @@
     "NAVIGATION": {
         "Title": "Parcours optimisé",
         "Steps": "Étapes"
+    },
+    "GATHERING_LOCATIONS":{
+        "Title": "Récoltes",
+        "No_items": "Aucune récolte trouvée",
+        "Gathering_name": "Nom de l'objet"
     }
 }
