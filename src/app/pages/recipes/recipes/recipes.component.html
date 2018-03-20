@@ -127,7 +127,7 @@
                         <mat-icon>add</mat-icon>
                         <span>{{'New_List' | translate}}</span></button>
                     <button mat-menu-item *ngFor="let list of lists.basicLists"
-                            (click)="addAllRecipes(list, list.$key)">
+                            (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
                         <mat-icon>playlist_play</mat-icon>
                         <span>{{list.name}}</span>
                     </button>
