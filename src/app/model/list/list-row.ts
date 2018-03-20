@@ -9,6 +9,7 @@ import {Ingredient} from '../garland-tools/ingredient';
 import {ResourceComment} from '../../modules/comments/resource-comment';
 import {DeserializeAs} from '@kaiu/serializer';
 import {DataModel} from '../../core/database/storage/data-model';
+import {Vector2} from '../../core/tools/vector2';
 
 export class ListRow extends DataModel {
     icon?: number;
@@ -42,4 +43,7 @@ export class ListRow extends DataModel {
     comments?: ResourceComment[];
 
     hidden?: boolean;
+
+    // Property used and set by zoneBreakdown
+    coords?: Vector2;
 }

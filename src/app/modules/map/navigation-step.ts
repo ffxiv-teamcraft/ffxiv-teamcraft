@@ -1,5 +1,5 @@
-import {Vector2} from '../../core/tools/vector2';
+import {NavigationObjective} from './navigation-objective';
 
-export interface NavigationStep extends Vector2 {
+export interface NavigationStep extends NavigationObjective {
     isTeleport: boolean;
 }

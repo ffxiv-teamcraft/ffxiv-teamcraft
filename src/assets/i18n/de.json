@@ -355,5 +355,9 @@
         "target": "Linkziel",
         "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert",
         "No_links": "Keine benutzerdefinierten Links vorhanden"
+    },
+    "NAVIGATION": {
+        "Title": "Optimierte Navigationsroute",
+        "Steps": "Treppe"
     }
 }

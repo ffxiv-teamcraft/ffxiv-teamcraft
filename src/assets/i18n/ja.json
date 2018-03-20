@@ -371,5 +371,9 @@
         "target": "Link target",
         "Share_link_copied": "Custom link copied to clipboard",
         "No_links": "No custom links"
+    },
+    "NAVIGATION": {
+        "Title": "Optimized navigation route",
+        "Steps": "Steps"
     }
 }

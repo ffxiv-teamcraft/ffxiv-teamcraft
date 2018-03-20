@@ -7,6 +7,9 @@ import {I18nName} from '../../../model/list/i18n-name';
 import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
 import {ZoneBreakdownRow} from '../../../model/list/zone-breakdown-row';
 import {AppUser} from '../../../model/list/app-user';
+import {MatDialog} from '@angular/material';
+import {NavigationMapPopupComponent} from '../navigation-map-popup/navigation-map-popup.component';
+import {NavigationObjective} from '../../../modules/map/navigation-objective';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -59,7 +62,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     zoneBreakdownData: ZoneBreakdown;
 
-    constructor(public settings: SettingsService, private dataService: LocalizedDataService) {
+    constructor(public settings: SettingsService, private dataService: LocalizedDataService, private dialog: MatDialog,
+                private l12n: LocalizedDataService) {
     }
 
     /**
@@ -137,6 +141,32 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
         result[itemTier].push(row);
         return result;
+    }
+
+    public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
+        const data: { mapId: number, points: NavigationObjective[] } = {
+            mapId: zoneBreakdownRow.zoneId,
+            points: zoneBreakdownRow.items
+                .map(item => {
+                    if (item.coords === undefined) {
+                        return undefined;
+                    }
+                    return {x: item.coords.x, y: item.coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                })
+                .filter(row => row !== undefined)
+        };
+        this.dialog.open(NavigationMapPopupComponent, {data: data});
+    }
+
+    public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
+        return zoneBreakdownRow.items
+            .map(item => {
+                if (item.coords === undefined) {
+                    return undefined;
+                }
+                return {x: item.coords.x, y: item.coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+            })
+            .filter(row => row !== undefined).length >= 2;
     }
 
     trackByFn(index: number, item: ListRow) {

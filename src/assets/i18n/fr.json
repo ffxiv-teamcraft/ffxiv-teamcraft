@@ -363,5 +363,9 @@
         "target": "Cible du lien",
         "Share_link_copied": "Lien copié dans le presse-papiers",
         "No_links": "Aucun lien défini"
+    },
+    "NAVIGATION": {
+        "Title": "Parcours optimisé",
+        "Steps": "Étapes"
     }
 }
