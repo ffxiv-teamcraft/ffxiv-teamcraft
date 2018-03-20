@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.4"></a>
+# [3.4.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.3...v3.4.0-beta.4) (2018-03-20)
+
+
+### Features
+
+* ability to search for a gathering to see its position on the map ([cd60ae1](https://github.com/Supamiu/ffxiv-teamcraft/commit/cd60ae1)), closes [#203](https://github.com/Supamiu/ffxiv-teamcraft/issues/203)
+
+
+
 <a name="3.4.0-beta.3"></a>
 # [3.4.0-beta.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.2...v3.4.0-beta.3) (2018-03-20)
 
