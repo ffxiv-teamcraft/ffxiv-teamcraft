@@ -18,7 +18,7 @@ export class SettingsComponent {
 
     themes = ['dark-orange', 'light-orange', 'light-teal', 'dark-teal', 'light-brown',
         'light-amber', 'dark-amber', 'light-green', 'dark-lime', 'light-lime',
-        'dark-cyan', 'light-cyan', 'dark-indigo', 'dark-indigo', 'dark-blue', 'light-blue',
+        'dark-cyan', 'light-cyan', 'dark-indigo', 'light-indigo', 'dark-blue', 'light-blue',
         'dark-deep-purple', 'light-deep-purple', 'dark-red', 'light-red', 'dark-pink', 'light-pink'];
 
     locale: string;

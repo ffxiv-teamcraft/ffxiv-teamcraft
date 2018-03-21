@@ -274,7 +274,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
 }
 
 // Light indigo theme class
-.dark-indigo-theme {
+.light-indigo-theme {
     @include angular-material-theme($light-indigo-theme);
     @include theme-background($light-indigo-theme);
     @include expansion-panel-accent($light-indigo-theme);
