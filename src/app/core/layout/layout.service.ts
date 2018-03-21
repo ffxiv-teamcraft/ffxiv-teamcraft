@@ -48,7 +48,7 @@ export class LayoutService {
             if (a.filter.name === 'ANYTHING') {
                 return 10000;
             }
-            return a.order - b.order;
+            return a.index - b.index;
         });
     }
 
