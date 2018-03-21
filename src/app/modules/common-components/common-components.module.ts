@@ -33,6 +33,7 @@ import {RegisterPopupComponent} from './register-popup/register-popup.component'
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
 import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
+import { AnnouncementPopupComponent } from './announcement-popup/announcement-popup.component';
 
 @NgModule({
     imports: [
@@ -77,6 +78,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         ListNamePopupComponent,
         RegisterPopupComponent,
         FfxivcraftingAmountInputComponent,
+        AnnouncementPopupComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -101,6 +103,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         NameEditPopupComponent,
         ListNamePopupComponent,
         RegisterPopupComponent,
+        AnnouncementPopupComponent,
     ]
 })
 export class CommonComponentsModule {

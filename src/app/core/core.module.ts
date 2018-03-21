@@ -34,6 +34,9 @@ import {LayoutOrderService} from './layout/layout-order.service';
 import {PushNotificationsModule} from 'ng-push';
 import {WorkshopService} from './database/workshop.service';
 import {VenturesExtractor} from './list/data/extractor/ventures-extractor';
+import {CustomLinksService} from './database/custom-links/custom-links.service';
+import {PatreonGuard} from './guard/patreon.guard';
+import {MathToolsService} from './tools/math-tools';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -78,6 +81,9 @@ const dataExtractorProviders: Provider[] = [
         LayoutService,
         LayoutOrderService,
         WorkshopService,
+        CustomLinksService,
+        PatreonGuard,
+        MathToolsService,
     ],
     declarations: [
         I18nPipe,

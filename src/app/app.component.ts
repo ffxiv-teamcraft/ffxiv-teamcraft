@@ -20,9 +20,11 @@ import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 import fontawesome from '@fortawesome/fontawesome';
 import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
-import {faBell, faCalculator} from '@fortawesome/fontawesome-free-solid';
+import {faBell, faCalculator, faMap} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
+import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
+import {Announcement} from './modules/common-components/announcement-popup/announcement';
 
 declare const ga: Function;
 
@@ -59,6 +61,8 @@ export class AppComponent implements OnInit {
 
     activeMediaQuery = '';
 
+    customLinksEnabled = false;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -79,7 +83,7 @@ export class AppComponent implements OnInit {
         });
         overlayContainer.getContainerElement().classList.add(`${settings.theme}-theme`);
 
-        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell);
+        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap);
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
@@ -123,12 +127,15 @@ export class AppComponent implements OnInit {
         // Annoucement
         data.object('/announcement')
             .valueChanges()
-            .subscribe((announcement: string) => {
-                if (announcement !== localStorage.getItem('announcement:last')) {
-                    localStorage.setItem('announcement:last', announcement);
-                    localStorage.setItem('announcement:hide', 'false');
+            .subscribe((announcement: Announcement) => {
+                if (JSON.stringify(announcement) !== localStorage.getItem('announcement:last')) {
+                    this.dialog.open(AnnouncementPopupComponent, {data: announcement})
+                        .afterClosed()
+                        .first()
+                        .subscribe(() => {
+                            localStorage.setItem('announcement:last', JSON.stringify(announcement));
+                        });
                 }
-                this.announcement = announcement;
             });
     }
 
@@ -205,6 +212,7 @@ export class AppComponent implements OnInit {
         this.userService
             .getUserData()
             .subscribe(u => {
+                this.customLinksEnabled = u.patron || u.admin;
                 if (u.lodestoneId === undefined && !u.anonymous) {
                     this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
                 }
@@ -224,21 +232,6 @@ export class AppComponent implements OnInit {
             // Once it's closed, set the storage value to say it has been displayed.
             localStorage.setItem('giveway', 'true');
         });
-    }
-
-    /**
-     * Returns a boolean which is linked to announcement display.
-     * @returns {boolean}
-     */
-    showAnnouncement(): boolean {
-        return this.announcement !== undefined && localStorage.getItem('announcement:hide') !== 'true';
-    }
-
-    /**
-     * Persists the dismissed announcement into localstorage.
-     */
-    dismissAnnouncement(): void {
-        localStorage.setItem('announcement:hide', 'true');
     }
 
     openRegistrationPopup(): void {

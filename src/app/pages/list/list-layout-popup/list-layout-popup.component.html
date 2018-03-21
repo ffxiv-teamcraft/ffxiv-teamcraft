@@ -1,7 +1,28 @@
 <div class="container">
     <h3 mat-dialog-title>{{"LIST_DETAILS.LAYOUT_DIALOG.Title" | translate}}</h3>
-    <div mat-dialog-content>
-        <div class="import-export">
+    <div class="content" *ngIf="availableLayouts !== undefined">
+        <div class="selection">
+            <mat-form-field>
+                <mat-select [placeholder]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate"
+                            [(value)]="selectedIndex">
+                    <mat-option
+                        *ngFor="let layout of availableLayouts; trackBy: trackByLayout; let i = index"
+                        [value]="i">{{layout.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="controls">
+            <mat-form-field>
+                <input type="text" matInput [(ngModel)]="availableLayouts[selectedIndex].name"
+                       [placeholder]="'LIST_DETAILS.LAYOUT_DIALOG.Layout_name' | translate">
+            </mat-form-field>
+            <button mat-icon-button color="accent" (click)="newLayout()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteLayout()" [disabled]="availableLayouts.length <= 1">
+                <mat-icon>delete</mat-icon>
+            </button>
             <button mat-icon-button ngxClipboard [cbContent]="export()" (cbOnSuccess)="afterCopy()" matTooltip="Export"
                     matTooltipPosition="above">
                 <mat-icon>file_upload</mat-icon>
@@ -10,27 +31,27 @@
                 <mat-icon>file_download</mat-icon>
             </button>
         </div>
-        <div class="rows">
-            <div *ngFor="let row of rows; let i = index"
-                 class="mat-elevation-z10">
-                <app-list-layout-row [(row)]="rows[i]"
-                                     (up)="updateIndex(i, -1)"
-                                     (down)="updateIndex(i, 1)"
-                                     (delete)="deleteRow(row)"
-                                     [first]="i === 0"
-                                     [last]="i === rows.length - 1"
-                                     readonly="{{row.filterName === 'ANYTHING'}}"></app-list-layout-row>
+        <div mat-dialog-content>
+            <div class="rows">
+                <div *ngFor="let row of availableLayouts[selectedIndex].rows; let i = index"
+                     class="mat-elevation-z10">
+                    <app-list-layout-row [(row)]="availableLayouts[selectedIndex].rows[i]"
+                                         (up)="updateIndex(i, -1)"
+                                         (down)="updateIndex(i, 1)"
+                                         (delete)="deleteRow(row)"
+                                         [first]="i === 0"
+                                         [last]="i === availableLayouts[selectedIndex].rows.length - 1"
+                                         readonly="{{row.filterName === 'ANYTHING'}}"></app-list-layout-row>
+                </div>
+                <button mat-raised-button color="accent" (click)="addRow()">
+                    <mat-icon>add</mat-icon>
+                    {{"LIST_DETAILS.LAYOUT_DIALOG.Add_panel" | translate}}
+                </button>
             </div>
-            <button mat-raised-button color="accent" (click)="addRow()">
-                <mat-icon>add</mat-icon>
-                {{"LIST_DETAILS.LAYOUT_DIALOG.Add_panel" | translate}}
-            </button>
         </div>
     </div>
     <div mat-dialog-actions>
         <button mat-raised-button color="primary" (click)="save()">{{"Save" | translate}}</button>
         <button mat-button color="warn" mat-dialog-close>{{"Cancel" | translate}}</button>
-        <div class="spacer"></div>
-        <button mat-raised-button color="warn" (click)="reset()">{{"COMMON.Reset" | translate}}</button>
     </div>
 </div>

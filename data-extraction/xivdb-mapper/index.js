@@ -7,7 +7,7 @@ fs.createReadStream('nodes.csv')
     .pipe(csv())
     .on('data', function (row) {
         var position = JSON.parse(row.position);
-        nodes[row.id] = {zoneid: +row.map, x: position.ingame.x, y: position.ingame.y};
+        nodes[row.id] = {zoneid: +row.placename, x: position.ingame.x, y: position.ingame.y};
     })
     .on('end', function () {
         var res = JSON.stringify(nodes);

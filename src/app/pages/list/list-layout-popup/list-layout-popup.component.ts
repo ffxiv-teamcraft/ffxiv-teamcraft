@@ -6,6 +6,8 @@ import {LayoutRowOrder} from '../../../core/layout/layout-row-order.enum';
 import {ImportInputBoxComponent} from './import-input-box/import-input-box.component';
 import {TranslateService} from '@ngx-translate/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
+import {ListLayout} from '../../../core/layout/list-layout';
+import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 
 @Component({
     selector: 'app-list-layout-popup',
@@ -14,36 +16,62 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 })
 export class ListLayoutPopupComponent {
 
-    public rows: LayoutRow[] = [];
+    public availableLayouts: ListLayout[];
+
+    public get selectedIndex(): number {
+        return +(localStorage.getItem('layout:selected') || 0);
+    }
+
+    public set selectedIndex(index: number) {
+        localStorage.setItem('layout:selected', index.toString());
+    }
 
     constructor(public layoutService: LayoutService, private dialogRef: MatDialogRef<ListLayoutPopupComponent>,
                 private dialog: MatDialog, private snackBar: MatSnackBar, private translator: TranslateService,
                 private serializer: NgSerializerService) {
-        this.rows = layoutService.layout.rows.slice().sort((a, b) => a.index - b.index);
+        this.layoutService.layouts.subscribe(layouts => {
+            this.availableLayouts = layouts;
+        });
+    }
+
+    public newLayout(): void {
+        this.availableLayouts.push(new ListLayout('New layout', this.layoutService.defaultLayout));
+        this.selectedIndex = this.availableLayouts.length - 1;
+    }
+
+    public deleteLayout(): void {
+        this.dialog.open(ConfirmationPopupComponent)
+            .afterClosed()
+            .filter(res => res === true)
+            .subscribe(() => {
+                this.availableLayouts.splice(this.selectedIndex, 1);
+                this.selectedIndex = 0;
+            });
     }
 
     public save(): void {
-        this.layoutService.layout.rows = this.rows;
-        this.layoutService.persist();
-        this.dialogRef.close();
+        this.layoutService.persist(this.availableLayouts).subscribe(() => {
+            this.dialogRef.close();
+        });
     }
 
     updateIndex(index: number, modifier: -1 | 1): void {
-        this.rows[index + modifier].index -= modifier;
-        this.rows[index].index += modifier;
-        this.rows = this.rows.sort((a, b) => a.index - b.index);
+        this.availableLayouts[this.selectedIndex].rows[index + modifier].index -= modifier;
+        this.availableLayouts[this.selectedIndex].rows[index].index += modifier;
+        this.availableLayouts[this.selectedIndex].rows = this.availableLayouts[this.selectedIndex].rows.sort((a, b) => a.index - b.index);
     }
 
     deleteRow(row: LayoutRow): void {
-        this.rows = this.rows.filter(r => r !== row);
+        this.availableLayouts[this.selectedIndex].rows = this.availableLayouts[this.selectedIndex].rows.filter(r => r !== row);
     }
 
     addRow(): void {
-        this.rows.push(new LayoutRow('', 'NAME', LayoutRowOrder.DESC, 'NONE', this.rows.length));
+        this.availableLayouts[this.selectedIndex].rows
+            .push(new LayoutRow('', 'NAME', LayoutRowOrder.DESC, 'NONE', this.availableLayouts[this.selectedIndex].rows.length));
     }
 
     public export(): string {
-        return btoa(JSON.stringify(this.rows));
+        return btoa(JSON.stringify(this.availableLayouts[this.selectedIndex].rows));
     }
 
     public afterCopy(): void {
@@ -57,16 +85,19 @@ export class ListLayoutPopupComponent {
         );
     }
 
-    public reset(): void {
-        this.rows = this.layoutService.defaultLayout.slice().sort((a, b) => a.index - b.index);
-    }
-
     public import(): void {
         this.dialog.open(ImportInputBoxComponent).afterClosed().subscribe(importString => {
             if (importString !== undefined) {
-                this.rows = this.serializer.deserialize<LayoutRow>(JSON.parse(atob(importString)), [LayoutRow]);
+                const newLayout = new ListLayout('Imported layout',
+                    this.serializer.deserialize<LayoutRow>(JSON.parse(atob(importString)), [LayoutRow]));
+                this.availableLayouts.push(newLayout);
+                this.selectedIndex = this.availableLayouts.length - 1;
             }
         });
+    }
+
+    public trackByLayout(index: number, layout: ListLayout): string {
+        return layout.base64;
     }
 
 }

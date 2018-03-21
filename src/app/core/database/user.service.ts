@@ -43,10 +43,12 @@ export class UserService extends FirebaseStorage<AppUser> {
             userData = this.get(uid);
         }
         return userData
-            .switchMap(u => {
+            .mergeMap(u => {
                 if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
                     return this.dataService.getCharacter(u.lodestoneId).map(c => {
                         c.patron = u.patron;
+                        c.patreonEmail = u.patreonEmail;
+                        c.nickname = u.nickname;
                         return c;
                     });
                 } else {
@@ -62,21 +64,32 @@ export class UserService extends FirebaseStorage<AppUser> {
     public getUserData(): Observable<AppUser> {
         return this.reloader
             .switchMap(() => {
-                return this.af.authState.first().switchMap(user => {
-                    if (user === null && !this.loggingIn) {
-                        this.af.auth.signInAnonymously();
-                        return Observable.of({name: 'Anonymous', anonymous: true});
-                    }
-                    if (user === null || user.isAnonymous) {
-                        return this.get(user.uid).catch(() => {
-                            return Observable.of({$key: user.uid, name: 'Anonymous', anonymous: true});
-                        });
-                    } else {
-                        return this.get(user.uid).map(u => {
-                            u.providerId = user.providerId;
-                            return u;
-                        });
-                    }
+                return this.af.authState.first()
+                    .mergeMap(user => {
+                        if (user === null && !this.loggingIn) {
+                            this.af.auth.signInAnonymously();
+                            return Observable.of(<AppUser>{name: 'Anonymous', anonymous: true});
+                        }
+                        if (user === null || user.isAnonymous) {
+                            return this.get(user.uid).catch(() => {
+                                return Observable.of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
+                            });
+                        } else {
+                            return this.get(user.uid).map(u => {
+                                u.providerId = user.providerId;
+                                return u;
+                            });
+                        }
+                    });
+            })
+            .mergeMap(u => {
+                u.patron = false;
+                if (u.patreonEmail === undefined) {
+                    return Observable.of(u);
+                }
+                return this.firebase.list('/patreon/supporters').valueChanges().map((supporters: { email: string }[]) => {
+                    u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
+                    return u;
                 });
             });
     }
@@ -93,8 +106,19 @@ export class UserService extends FirebaseStorage<AppUser> {
      * @param {string} email
      * @returns {Observable<boolean>}
      */
-    checkPatreonEmailAvailability(email: string): Observable<boolean> {
-        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+    public checkPatreonEmailAvailability(email: string): Observable<boolean> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('patreonEmail').equalTo(email))
+            .valueChanges()
+            .map(res => res.length === 0);
+    }
+
+    /**
+     * Checks if a given nickname is available.
+     * @param {string} nickname
+     * @returns {Observable<boolean>}
+     */
+    public checkNicknameAvailability(nickname: string): Observable<boolean> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('nickname').equalTo(nickname))
             .valueChanges()
             .map(res => res.length === 0);
     }

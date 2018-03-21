@@ -1,0 +1,40 @@
+<h2>{{'CUSTOM_LINKS.Title' | translate}}</h2>
+<div *ngIf="links | async as linksData">
+    <div class="no-links" *ngIf="linksData.length === 0">
+        <h3>{{"CUSTOM_LINKS.No_links"}}</h3>
+    </div>
+    <mat-list *ngIf="linksData.length > 0">
+        <mat-list-item *ngFor="let link of linksData; trackBy: trackByLink" class="mat-elevation-z2 list-row">
+            <span mat-line class="link-row">
+                {{link.uri}}
+                <mat-icon>arrow_forward</mat-icon>
+                {{getName(link) | async}}
+                <mat-chip-list>
+                    <mat-chip color="accent" selected>{{link.getType()}}</mat-chip>
+                </mat-chip-list>
+            </span>
+            <button mat-icon-button ngxClipboard
+                    [cbContent]="link.getUrl()"
+                    color="accent"
+                    (click)="$event.stopPropagation()"
+                    matTooltip="{{'Share' | translate}}"
+                    matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" routerLink="/{{link.redirectTo}}">
+                <mat-icon>open_in_new</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" (click)="editLink(link)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteLink(link)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-list-item>
+    </mat-list>
+    <button mat-raised-button (click)="openAdditionPopup()" class="add-link">
+        <mat-icon>add</mat-icon>
+        {{"CUSTOM_LINKS.Add_link" | translate}}
+    </button>
+</div>

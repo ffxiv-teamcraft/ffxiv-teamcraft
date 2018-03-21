@@ -2,7 +2,7 @@
     <mat-spinner></mat-spinner>
 </div>
 <div *ngIf="character !== undefined && user !== undefined">
-    <mat-grid-list cols="3" rowHeight="600px">
+    <mat-grid-list cols="3" rowHeight="540px" gutterSize="10px">
         <mat-grid-tile class="portrait-parent">
             <div class="portrait-container">
                 <button mat-icon-button (click)="changeCharacter()" class="change-character">
@@ -26,6 +26,11 @@
                     <img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png"
                          alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"
                          class="patreon-badge" matTooltipPosition="above" *ngIf="character.patron">
+                    <button mat-button color="accent" class="patreon-badge patreon-button"
+                            (click)="openPatreonLinkPopup()" *ngIf="!character.patreon &&
+                             character.patreonEmail === undefined">
+                        {{"PROFILE.Patreon_link_email" | translate}}
+                    </button>
                 </mat-card-header>
                 <mat-grid-list cols="{{getClassesCols()}}" rowHeight="100px">
                     <mat-grid-tile *ngFor="let job of getJobs()">
@@ -42,6 +47,22 @@
                     </mat-grid-tile>
                 </mat-grid-list>
             </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" *ngIf="user.patron || user.admin">
+            <div class="patreon-card-container">
+                <mat-card>
+                    <h3 mat-card-title>{{"PROFILE.Patreon_features" | translate}}</h3>
+                    <div>
+                        {{'PROFILE.Nickname' | translate}}: {{user.nickname}}
+                        <span *ngIf="user.nickname === undefined || user.nickname.length === 0">
+                        {{'PROFILE.No_nickname' | translate}}
+                    </span>
+                        <button mat-icon-button (click)="openNicknamePopup()">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>
+                </mat-card>
+            </div>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

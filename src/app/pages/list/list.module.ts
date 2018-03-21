@@ -38,6 +38,8 @@ import { ListLayoutRowComponent } from './list-layout-popup/list-layout-row/list
 import { ImportInputBoxComponent } from './list-layout-popup/import-input-box/import-input-box.component';
 import {ClipboardModule} from 'ngx-clipboard';
 import { ListComponent } from './list/list.component';
+import { NavigationMapPopupComponent } from './navigation-map-popup/navigation-map-popup.component';
+import {MapModule} from '../../modules/map/map.module';
 
 const routes: Routes = [
     {
@@ -87,6 +89,7 @@ const routes: Routes = [
         PipesModule,
         SettingsModule,
         ItemModule,
+        MapModule,
     ],
     declarations: [
         ListDetailsComponent,
@@ -101,6 +104,7 @@ const routes: Routes = [
         ListLayoutRowComponent,
         ImportInputBoxComponent,
         ListComponent,
+        NavigationMapPopupComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
@@ -109,6 +113,7 @@ const routes: Routes = [
         ListHelpComponent,
         ListLayoutPopupComponent,
         ImportInputBoxComponent,
+        NavigationMapPopupComponent,
     ]
 })
 export class ListModule {
