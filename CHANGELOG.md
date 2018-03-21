@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.0-beta.5"></a>
+# [3.4.0-beta.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.4...v3.4.0-beta.5) (2018-03-21)
+
+
+### Bug Fixes
+
+* comments amount not updated when commenting an item ([00d5939](https://github.com/Supamiu/ffxiv-teamcraft/commit/00d5939))
+* comments not working in zone breakdown ([0d5b4a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d5b4a6)), closes [#281](https://github.com/Supamiu/ffxiv-teamcraft/issues/281)
+* instance returned by gathering search causing strange results ([b025547](https://github.com/Supamiu/ffxiv-teamcraft/commit/b025547))
+* items filtered and shown on wrong panel ([c6480aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/c6480aa)), closes [#270](https://github.com/Supamiu/ffxiv-teamcraft/issues/270)
+
+
+### Features
+
+* multiple list layout system ([709138c](https://github.com/Supamiu/ffxiv-teamcraft/commit/709138c)), closes [#244](https://github.com/Supamiu/ffxiv-teamcraft/issues/244) [#230](https://github.com/Supamiu/ffxiv-teamcraft/issues/230)
+* new announcement box ([f697d96](https://github.com/Supamiu/ffxiv-teamcraft/commit/f697d96)), closes [#256](https://github.com/Supamiu/ffxiv-teamcraft/issues/256)
+
+
+
 <a name="3.4.0-beta.4"></a>
 # [3.4.0-beta.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.3...v3.4.0-beta.4) (2018-03-20)
 
