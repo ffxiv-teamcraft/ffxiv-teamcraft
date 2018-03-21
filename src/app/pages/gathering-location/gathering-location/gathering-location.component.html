@@ -25,7 +25,10 @@
                 <div class="timed" *ngIf="node.timed">
                     <mat-icon>access_alarm</mat-icon>
                     <div class="spawns">
-                        <span *ngFor="let spawn of getSpawns(node)">{{spawn}}</span>
+                        <span *ngFor="let spawn of getSpawns(node); let first = first">
+                            <span *ngIf="!first"> / </span>
+                            {{spawn}}
+                        </span>
                     </div>
                 </div>
                 <div class="spacer" *ngIf="!node.timed"></div>

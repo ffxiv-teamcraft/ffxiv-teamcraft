@@ -34,7 +34,9 @@ export class GatheringLocationComponent implements OnInit {
             .mergeMap(name => this.dataService.searchGathering(name))
             .map(items => {
                 return items
-                // First of all, add node informations
+                    //  Only use item results
+                    .filter(item => item.type === 'item')
+                    // First of all, add node informations
                     .map(item => {
                         item.nodes = Object.keys(nodePositions)
                             .map(key => {

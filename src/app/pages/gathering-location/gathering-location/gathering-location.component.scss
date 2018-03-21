@@ -33,12 +33,10 @@ mat-card {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 5px 0;
     .spawns {
         flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
         .spawn-row {
             margin: 2px 0;
         }
