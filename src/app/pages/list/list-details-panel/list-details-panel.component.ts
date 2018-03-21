@@ -10,6 +10,7 @@ import {AppUser} from '../../../model/list/app-user';
 import {MatDialog} from '@angular/material';
 import {NavigationMapPopupComponent} from '../navigation-map-popup/navigation-map-popup.component';
 import {NavigationObjective} from '../../../modules/map/navigation-objective';
+import {Vector2} from '../../../core/tools/vector2';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -152,23 +153,33 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
             mapId: zoneBreakdownRow.zoneId,
             points: this.uniquify(zoneBreakdownRow.items)
                 .map(item => {
-                    if (item.coords === undefined) {
-                        return undefined;
+                    const coords = this.getCoords(item, zoneBreakdownRow);
+                    if (coords !== undefined) {
+                        return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
                     }
-                    return {x: item.coords.x, y: item.coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                    return undefined;
                 })
                 .filter(row => row !== undefined)
         };
         this.dialog.open(NavigationMapPopupComponent, {data: data});
     }
 
+    public getCoords(item: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Vector2 {
+        if (item.gatheredBy !== undefined) {
+            const node = item.gatheredBy.nodes.find(n => n.zoneid === zoneBreakdownRow.zoneId);
+            return {x: node.coords[0], y: node.coords[1]};
+        }
+        return undefined;
+    }
+
     public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
         return this.uniquify(zoneBreakdownRow.items)
             .map(item => {
-                if (item.coords === undefined) {
+                const coords = this.getCoords(item, zoneBreakdownRow);
+                if (coords === undefined) {
                     return undefined;
                 }
-                return {x: item.coords.x, y: item.coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
             })
             .filter(row => row !== undefined).length >= 2;
     }

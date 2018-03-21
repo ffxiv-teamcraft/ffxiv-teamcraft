@@ -43,7 +43,4 @@ export class ListRow extends DataModel {
     comments?: ResourceComment[];
 
     hidden?: boolean;
-
-    // Property used and set by zoneBreakdown
-    coords?: Vector2;
 }

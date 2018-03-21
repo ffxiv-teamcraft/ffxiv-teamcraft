@@ -9,13 +9,7 @@ export class ZoneBreakdown {
         rows.forEach(row => {
             if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
                 row.gatheredBy.nodes.forEach(node => {
-                    if (node.coords !== undefined) {
-                        const rowClone = JSON.parse(JSON.stringify(row));
-                        rowClone.coords = {x: node.coords[0], y: node.coords[1]};
-                        this.addToBreakdown(node.zoneid, rowClone);
-                    } else {
-                        this.addToBreakdown(node.zoneid, row);
-                    }
+                    this.addToBreakdown(node.zoneid, row);
                 });
             } else if (row.drops !== undefined && row.drops.length > 0) {
                 row.drops.forEach(drop => {
