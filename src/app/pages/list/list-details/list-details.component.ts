@@ -237,8 +237,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
+        console.log('update', list);
         this.listService.update(this.listData.$key, list).first().subscribe(() => {
-            // Ignored.
+            this.reload.emit();
         });
     }
 

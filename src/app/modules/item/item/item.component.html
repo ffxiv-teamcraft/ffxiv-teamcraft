@@ -17,7 +17,7 @@
                 [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list?.authorId" (updated)="update.emit()"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"

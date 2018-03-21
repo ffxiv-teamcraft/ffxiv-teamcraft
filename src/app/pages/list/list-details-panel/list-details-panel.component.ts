@@ -197,10 +197,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (this.showTier && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.showTier) {
             this.generateTiers();
         }
-        if (this.zoneBreakdown && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.zoneBreakdown) {
             this.zoneBreakdownData = new ZoneBreakdown(this.data);
         }
     }
