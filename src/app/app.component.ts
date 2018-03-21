@@ -128,7 +128,12 @@ export class AppComponent implements OnInit {
         data.object('/announcement')
             .valueChanges()
             .subscribe((announcement: Announcement) => {
-                if (JSON.stringify(announcement) !== localStorage.getItem('announcement:last')) {
+                let lastLS = localStorage.getItem('announcement:last');
+                if (!lastLS.startsWith('{')) {
+                    lastLS = '{}';
+                }
+                const last = JSON.parse(lastLS || '{}');
+                if (last.text !== announcement.text && last.link !== announcement.link) {
                     this.dialog.open(AnnouncementPopupComponent, {data: announcement})
                         .afterClosed()
                         .first()
