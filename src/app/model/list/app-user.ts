@@ -1,4 +1,6 @@
 import {DataModel} from '../../core/database/storage/data-model';
+import {ListLayout} from '../../core/layout/list-layout';
+import {DeserializeAs} from '@kaiu/serializer';
 
 export class AppUser extends DataModel {
     name?: string;
@@ -15,4 +17,7 @@ export class AppUser extends DataModel {
     // Patron-only feature, nickname internal to teamcraft, must be unique.
     nickname?: string;
     admin?: boolean;
+    // List layouts are now stored inside firebase
+    @DeserializeAs([ListLayout])
+    layouts?: ListLayout[];
 }

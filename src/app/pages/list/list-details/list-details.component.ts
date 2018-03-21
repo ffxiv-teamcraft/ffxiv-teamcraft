@@ -37,6 +37,8 @@ import {LayoutService} from '../../../core/layout/layout.service';
 import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {Subject} from 'rxjs/Subject';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 declare const ga: Function;
 
@@ -54,7 +56,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Input()
     notFound = false;
 
-    listDisplay: LayoutRowDisplay[];
+    listData$: ReplaySubject<List> = new ReplaySubject<List>();
+
+    listDisplay: Observable<LayoutRowDisplay[]>;
 
     user: UserInfo;
 
@@ -85,12 +89,21 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
 
+    public get selectedIndex(): number {
+        return +(localStorage.getItem('layout:selected') || 0);
+    }
+
     constructor(private auth: AngularFireAuth, private userService: UserService, protected dialog: MatDialog,
                 private listService: ListService, private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef) {
         super();
         this.initFilters();
+        this.listDisplay = this.listData$
+            .filter(data => data !== null)
+            .mergeMap(data => {
+            return this.layoutService.getDisplay(data, this.selectedIndex);
+        });
     }
 
     displayTrackByFn(index: number, item: LayoutRowDisplay) {
@@ -99,6 +112,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateDisplay();
+        this.listData$.next(this.listData);
     }
 
     private updateDisplay(): void {
@@ -130,7 +144,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             if (this.accordionState === undefined) {
                 this.initAccordion(this.listData);
             }
-            this.listDisplay = this.layoutService.getDisplay(this.listData);
             this.outdated = this.listData.isOutDated();
         }
     }
@@ -211,6 +224,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .subscribe(user => {
                 this.userData = user;
             }));
+        this.listData$.next(this.listData);
     }
 
     isOwnList(): boolean {
@@ -232,7 +246,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     openLayoutOptions(): void {
         this.dialog.open(ListLayoutPopupComponent).afterClosed().subscribe(() => {
             this.reload.emit();
-            this.listDisplay = this.layoutService.getDisplay(this.listData);
+            this.listDisplay = this.layoutService.getDisplay(this.listData, this.selectedIndex);
         });
     }
 

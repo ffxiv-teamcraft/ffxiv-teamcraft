@@ -260,7 +260,10 @@
             "Title": "Layout",
             "Add_panel": "Add Panel",
             "Import_layout": "Import a layout",
-            "Import_string": "Import string"
+            "Import_string": "Import string",
+            "Import_string_copied": "Layout import string copied !",
+            "Layout_name": "Layout name",
+            "Invalid_import": "Invalid import code"
         },
         "LAYOUT": {
             "Filter": "Filter",
