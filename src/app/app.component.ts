@@ -23,6 +23,8 @@ import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-br
 import {faBell, faCalculator, faMap} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
+import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
+import {Announcement} from './modules/common-components/announcement-popup/announcement';
 
 declare const ga: Function;
 
@@ -124,12 +126,15 @@ export class AppComponent implements OnInit {
         // Annoucement
         data.object('/announcement')
             .valueChanges()
-            .subscribe((announcement: string) => {
-                if (announcement !== localStorage.getItem('announcement:last')) {
-                    localStorage.setItem('announcement:last', announcement);
-                    localStorage.setItem('announcement:hide', 'false');
+            .subscribe((announcement: Announcement) => {
+                if (JSON.stringify(announcement) !== localStorage.getItem('announcement:last')) {
+                    this.dialog.open(AnnouncementPopupComponent, {data: announcement})
+                        .afterClosed()
+                        .first()
+                        .subscribe(() => {
+                            localStorage.setItem('announcement:last', JSON.stringify(announcement));
+                        });
                 }
-                this.announcement = announcement;
             });
     }
 
@@ -226,21 +231,6 @@ export class AppComponent implements OnInit {
             // Once it's closed, set the storage value to say it has been displayed.
             localStorage.setItem('giveway', 'true');
         });
-    }
-
-    /**
-     * Returns a boolean which is linked to announcement display.
-     * @returns {boolean}
-     */
-    showAnnouncement(): boolean {
-        return this.announcement !== undefined && localStorage.getItem('announcement:hide') !== 'true';
-    }
-
-    /**
-     * Persists the dismissed announcement into localstorage.
-     */
-    dismissAnnouncement(): void {
-        localStorage.setItem('announcement:hide', 'true');
     }
 
     openRegistrationPopup(): void {

@@ -21,18 +21,6 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-card class="announcement" *ngIf="showAnnouncement()">
-        <mat-grid-list cols="5" rowHeight="35px">
-            <mat-grid-tile colspan="4">
-                <p [innerHTML]="announcement"></p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <button mat-icon-button color="accent" (click)="dismissAnnouncement()">
-                    <mat-icon>clear</mat-icon>
-                </button>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card>
     <mat-sidenav-container>
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile">
             <div class="accent-background">

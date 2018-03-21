@@ -380,5 +380,9 @@
         "Title": "Récoltes",
         "No_items": "Aucun objet trouvé",
         "Gathering_name": "Nom de l'objet"
+    },
+    "ANNOUNCEMENT":{
+        "Title": "Announcement",
+        "Read_more": "Read more"
     }
 }

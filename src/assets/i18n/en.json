@@ -364,5 +364,9 @@
         "Title": "Gathering items",
         "No_items": "No gathering node found",
         "Gathering_name": "Enter item name"
+    },
+    "ANNOUNCEMENT":{
+        "Title": "Announcement",
+        "Read_more": "Read more"
     }
 }

@@ -1,0 +1,12 @@
+<h3 mat-dialog-title>{{'ANNOUNCEMENT.Title' | translate}}</h3>
+<div mat-dialog-content>
+    <p>{{data.text}}</p>
+    <a mat-raised-button color="accent" [href]="data.link" target="_blank"
+       *ngIf="data.link !== undefined && data.link.length > 0">
+        {{"ANNOUNCEMENT.Read_more" | translate}}
+    </a>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>{{"Close" | translate}}</button>
+</div>
+

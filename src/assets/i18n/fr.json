@@ -372,5 +372,9 @@
         "Title": "Récoltes",
         "No_items": "Aucune récolte trouvée",
         "Gathering_name": "Nom de l'objet"
+    },
+    "ANNOUNCEMENT":{
+        "Title": "Annonce",
+        "Read_more": "Plus d'informations"
     }
 }
