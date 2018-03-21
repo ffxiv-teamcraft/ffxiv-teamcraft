@@ -81,6 +81,7 @@ export class AppComponent implements OnInit {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
             overlayContainer.getContainerElement().classList.add(`${change.next}-theme`);
         });
+        overlayContainer.getContainerElement().classList.add(`${settings.theme}-theme`);
 
         fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap);
 
