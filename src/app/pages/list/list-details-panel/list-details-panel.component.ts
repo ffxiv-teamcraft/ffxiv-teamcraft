@@ -167,7 +167,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public getCoords(item: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Vector2 {
         if (item.gatheredBy !== undefined) {
             const node = item.gatheredBy.nodes.find(n => n.zoneid === zoneBreakdownRow.zoneId);
-            if (node !== undefined) {
+            if (node !== undefined && node.coords !== undefined) {
                 return {x: node.coords[0], y: node.coords[1]};
             }
         }
