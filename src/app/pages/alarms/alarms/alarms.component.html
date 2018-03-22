@@ -2,6 +2,7 @@
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
 <div class="buttons">
+    <mat-checkbox [(ngModel)]="muted" (change)="saveMuted()">{{"Mute_alarms" | translate}}</mat-checkbox>
     <mat-checkbox [(ngModel)]="compact" (change)="saveCompact()">{{"Compact_display" | translate}}</mat-checkbox>
     <button mat-mini-fab (click)="openAddAlarmPopup()">
         <mat-icon>add_alert</mat-icon>

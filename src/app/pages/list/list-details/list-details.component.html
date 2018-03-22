@@ -1,7 +1,7 @@
 <app-pricing [list]="listData" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
 <div *ngIf="!pricingMode">
-    <div *ngIf="listData">
+    <div *ngIf="listDisplay | async as display; else loading">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
         </div>
@@ -153,6 +153,9 @@
                     <mat-button-toggle [checked]="hideCompleted" (change)="toggleHideCompleted()">
                         {{"Hide_completed" | translate}}
                     </mat-button-toggle>
+                    <mat-button-toggle [checked]="hideUsed" (change)="toggleHideUsed()">
+                        {{"Hide_used" | translate}}
+                    </mat-button-toggle>
                     <div class="spacer"></div>
                 </div>
             </div>
@@ -174,7 +177,7 @@
                 </div>
             </div>
         </mat-expansion-panel>
-        <div *ngFor="let displayRow of listDisplay; trackBy:displayTrackByFn">
+        <div *ngFor="let displayRow of display; trackBy:displayTrackByFn">
             <app-list-details-panel
                 [user]="userData"
                 *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
@@ -209,7 +212,9 @@
         </mat-checkbox>
     </div>
     <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
-    <div class="loader-container" *ngIf="listData === null && !notFound">
-        <mat-spinner></mat-spinner>
-    </div>
+    <ng-template #loading>
+        <div class="loader-container" *ngIf="!notFound">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
 </div>

@@ -17,12 +17,12 @@
                 [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
         </div>
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
+                             [isOwnList]="user?.$key === list?.authorId" (updated)="update.emit()"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
                 (click)="openRequirementsPopup()">
-            <mat-icon color="accent">assignment</mat-icon>
+            <mat-icon color="primary">assignment</mat-icon>
         </button>
         <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
                   color="warn">
@@ -201,6 +201,16 @@
                          matTooltip="{{'Voyages' | translate}}"
                          matTooltipPosition="above"
                          src="https://www.garlandtools.org/db/images/Voyage.png">
+                </button>
+            </div>
+
+            <div *ngIf="item.ventures !== undefined && item.ventures.length > 0">
+                <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                        matTooltip="{{'Retainer_ventures' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="openVentureDetails(item)">
+                    <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+                         src="https://garlandtools.org/db/icons/item/3503.png">
                 </button>
             </div>
         </div>

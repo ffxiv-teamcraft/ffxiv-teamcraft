@@ -12,7 +12,12 @@ export class HelpService {
     constructor(private router: Router) {
         router.events
             .filter(event => event instanceof NavigationEnd)
-            .subscribe((event: any) => this.currentRoute = event.url);
+            .subscribe((event: any) => {
+                this.currentRoute = event.url;
+                if (this.currentRoute.indexOf('/list') > -1) {
+                    this.currentRoute = '/list';
+                }
+            });
     }
 
     public set currentHelp(dialog: ComponentType<any> | TemplateRef<any>) {

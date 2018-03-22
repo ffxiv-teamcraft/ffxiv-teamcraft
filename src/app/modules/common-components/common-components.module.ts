@@ -4,7 +4,7 @@ import {AmountInputComponent} from './amount-input/amount-input.component';
 import {ItemIconComponent} from './item-icon/item-icon.component';
 import {RandomGifComponent} from './random-gif/random-gif.component';
 import {
-    MatButtonModule,
+    MatButtonModule, MatChipsModule,
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
@@ -19,7 +19,7 @@ import {CoreModule} from '../../core/core.module';
 import {EorzeanTimeComponent} from './eorzean-time/eorzean-time.component';
 import {ListPanelComponent} from './list-panel/list-panel.component';
 import {RecipeComponent} from './recipe/recipe.component';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import {RouterModule} from '@angular/router';
 import {SettingsModule} from '../../pages/settings/settings.module';
 import {TooltipModule} from '../tooltip/tooltip.module';
@@ -33,6 +33,7 @@ import {RegisterPopupComponent} from './register-popup/register-popup.component'
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
 import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
+import { AnnouncementPopupComponent } from './announcement-popup/announcement-popup.component';
 
 @NgModule({
     imports: [
@@ -52,6 +53,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         MatListModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        MatChipsModule,
 
         ClipboardModule,
 
@@ -76,6 +78,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         ListNamePopupComponent,
         RegisterPopupComponent,
         FfxivcraftingAmountInputComponent,
+        AnnouncementPopupComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -100,6 +103,7 @@ import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/
         NameEditPopupComponent,
         ListNamePopupComponent,
         RegisterPopupComponent,
+        AnnouncementPopupComponent,
     ]
 })
 export class CommonComponentsModule {

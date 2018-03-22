@@ -4,7 +4,6 @@ import {ItemData} from '../../../../model/garland-tools/item-data';
 import {DataType} from '../data-type';
 import {GarlandToolsService} from '../../../api/garland-tools.service';
 import {HtmlToolsService} from '../../../tools/html-tools.service';
-import {DataService} from '../../../api/data.service';
 import {Item} from '../../../../model/garland-tools/item';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {

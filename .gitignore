@@ -20,6 +20,7 @@ src/environments/version.ts
 *.sublime-workspace
 
 # IDE - VSCode
+.vs
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

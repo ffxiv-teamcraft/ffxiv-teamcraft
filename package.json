@@ -1,6 +1,6 @@
 {
   "name": "teamcraft",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -9,10 +9,8 @@
     "build:beta": "node ./build/prebuild.js && ng build --aot --target=production --env=beta",
     "standard-version": "standard-version",
     "standard-version:dry": "standard-version --dry-run",
-    "release:git": "npm run standard-version && git push --follow-tags origin master",
+    "release:prod": "npm run standard-version && git push --follow-tags origin master",
     "release:beta": "npm run standard-version -- --prerelease beta && git push --follow-tags origin beta",
-    "deploy": "npm run release:git && npm run build:prod && firebase deploy",
-    "deploy:beta": "npm run release:beta && npm run build:beta && firebase deploy -P beta",
     "test": "node ./build/prebuild.js && ng test --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -54,14 +52,14 @@
     "intl": "^1.2.5",
     "jwt-decode": "^2.2.0",
     "ng-push": "^0.2.1",
-    "ngx-clipboard": "^8.1.1",
+    "ngx-clipboard": "10.0.0",
     "rxjs": "^5.4.3",
     "semver": "^5.4.1",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.0-beta.3",
+    "@angular/cli": "^1.7.3",
     "@angular/compiler-cli": "^5.0.1",
     "@biesbjerg/ngx-translate-extract": "^2.3.4",
     "@types/jasmine": "2.5.38",

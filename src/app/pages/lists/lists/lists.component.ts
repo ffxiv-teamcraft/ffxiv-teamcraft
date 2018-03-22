@@ -22,6 +22,10 @@ import {TranslateService} from '@ngx-translate/core';
 import {ListsSelectionPopupComponent} from '../lists-selection-popup/lists-selection-popup.component';
 import {WorkshopDeleteConfirmationPopupComponent} from '../workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
 import {WorkshopNamePopupComponent} from '../workshop-name-popup/workshop-name-popup.component';
+import {UserService} from '../../../core/database/user.service';
+import {AppUser} from '../../../model/list/app-user';
+import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
+import {CustomLink} from '../../../core/database/custom-links/costum-link';
 
 declare const ga: Function;
 
@@ -52,11 +56,15 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     workshops: Observable<Workshop[]>;
 
+    userData: AppUser;
+
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
-                private workshopService: WorkshopService, private snack: MatSnackBar, private translator: TranslateService) {
+                private workshopService: WorkshopService, private snack: MatSnackBar,
+                private translator: TranslateService, private userService: UserService) {
         super();
+        this.subscriptions.push(userService.getUserData().subscribe(userData => this.userData = userData))
     }
 
     createNewList(): void {
@@ -71,8 +79,27 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         }
     }
 
+    public openLinkPopup(workshop: Workshop): void {
+        const link = new CustomLink();
+        link.redirectTo = `workshop/${workshop.$key}`;
+        this.dialog.open(CustomLinkPopupComponent, {data: link});
+    }
+
     updateWorkshop(workshop: Workshop): Observable<void> {
         return this.workshopService.update(workshop.$key, workshop);
+    }
+
+    changeWorkshopName(workshop: Workshop): void {
+        this.dialog.open(WorkshopNamePopupComponent, {data: workshop.name})
+            .afterClosed()
+            .filter(name => name !== undefined && name.length > 0)
+            .mergeMap(name => {
+                workshop.name = name;
+                return this.updateWorkshop(workshop);
+            })
+            .subscribe(() => {
+                this.reloader$.next(null);
+            });
     }
 
     removeListFromWorkshop(workshop: Workshop, listKey: string): void {
@@ -92,7 +119,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                     workshop.listIds = [...workshop.listIds, ...resultListIds];
                     return this.updateWorkshop(workshop);
                 }
-                return Observable.of();
+                return Observable.of(null);
             })
             .subscribe(() => {
                 // Force reload just in case.
@@ -235,19 +262,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                             return match;
                                         });
                                     }).map(lists => {
-                                    const result = {basicLists: lists, rows: {}};
-                                    workshops.forEach(workshop => {
-                                        result.rows[workshop.$key] = [];
-                                        lists.forEach((list) => {
-                                            // If this list is in this workshop.
-                                            if (workshop.listIds !== undefined && workshop.listIds.indexOf(list.$key) > -1) {
-                                                result.rows[workshop.$key].push(list);
-                                                // Remove the list from basicLists.
-                                                result.basicLists = result.basicLists.filter(l => l.$key !== list.$key);
-                                            }
-                                        });
-                                    });
-                                    return result;
+                                    return this.workshopService.getListsByWorkshop(lists, workshops);
                                 });
                             }));
                     }

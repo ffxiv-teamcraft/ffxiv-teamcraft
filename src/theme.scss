@@ -2,27 +2,48 @@
 
 @include mat-core();
 
+@mixin text-color($theme) {
+    @if map-get($theme, is-dark) {
+        color: white;
+    } @else {
+        color: black;
+    }
+}
+
 // Custom mixins for theming
 @mixin theme-background($theme) {
     $accent: map-get($theme, accent);
     $primary: map-get($theme, primary);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
 
     .accent-background {
         background: mat-color($accent);
-        color: black;
+        @include text-color($theme);
         .mat-card-subtitle {
-            color: black;
+            @include text-color($theme);
         }
     }
 
     .primary-background {
         background: mat-color($primary);
-        color: black;
+        @include text-color($theme);
         .mat-card-subtitle {
-            color: black;
+            @include text-color($theme);
+        }
+    }
+
+    .warn-background {
+        background: mat-color($warn);
+        @include text-color($theme);
+        .mat-card-subtitle {
+            @include text-color($theme);
         }
     }
 }
+
+
 
 @mixin expansion-panel-accent($theme) {
     mat-expansion-panel.accent {
@@ -30,14 +51,14 @@
         $foreground: map-get($theme, foreground);
         background: mat-color($accent);
         .mat-expansion-panel-header-title {
-            color: black;
+            @include text-color($theme);
         }
         .mat-expansion-panel-header-description {
-            color: black;
+            @include text-color($theme);
             opacity: .7;
         }
         .mat-expansion-indicator::after {
-            color: black;
+            @include text-color($theme);
             opacity: .7;
         }
     }
@@ -54,33 +75,88 @@
 
 @mixin color-fixes($theme) {
     a {
-        @if map-get($theme, is-dark) {
-            color: white;
-        } @else {
-            color: black;
-        }
+        @include text-color($theme);
     }
 }
-
+// Palette
+// orange
 $primary-orange: mat-palette($mat-orange, 700);
 $accent-orange: mat-palette($mat-teal, 500);
+// teal
 $primary-teal: mat-palette($mat-teal, 300);
 $accent-teal: mat-palette($mat-indigo, 100);
+// brown
+$primary-brown: mat-palette($mat-brown, 500);
+$accent-brown: mat-palette($mat-brown, 200);
+// amber
+$primary-amber: mat-palette($mat-amber, 500);
+$accent-amber: mat-palette($mat-brown, 400);
+// green
+$primary-green: mat-palette($mat-green, 800);
+$accent-green: mat-palette($mat-green, 400);
+// lime
+$primary-lime: mat-palette($mat-lime, 800);
+$accent-lime: mat-palette($mat-brown, 300);
+// cyan
+$primary-cyan: mat-palette($mat-cyan, 700);
+$accent-cyan: mat-palette($mat-cyan, 300);
+// indigo
+$primary-indigo: mat-palette($mat-indigo, 500);
+$accent-indigo: mat-palette($mat-indigo, 200);
+// blue
+$primary-blue: mat-palette($mat-blue, 600);
+$accent-blue: mat-palette($mat-blue, 200);
+// deep-purple
+$primary-deep-purple: mat-palette($mat-deep-purple, 500);
+$accent-deep-purple: mat-palette($mat-deep-purple, 200);
+// red
+$primary-red: mat-palette($mat-red, 900);
+$accent-red: mat-palette($mat-red, 600);
+$warn-red: mat-palette($mat-light-blue, 500);
+// pink
+$primary-pink: mat-palette($mat-pink, 500);
+$accent-pink: mat-palette($mat-pink, 300);
+
 $warn: mat-palette($mat-red, 600);
 
+
+// Dark or Light theme
+// orange
 $dark-theme: mat-dark-theme($primary-orange, $accent-orange, $warn);
 $light-orange-theme: mat-light-theme($primary-orange, $accent-orange, $warn);
+// teal
 $light-teal-theme: mat-light-theme($primary-teal, $accent-teal, $warn);
 $dark-teal-theme: mat-dark-theme($primary-teal, $accent-teal, $warn);
+// brown
+$light-brown-theme: mat-light-theme($primary-brown, $accent-brown, $warn);
+// amber
+$dark-amber-theme: mat-dark-theme($primary-amber, $accent-amber, $warn);
+$light-amber-theme: mat-light-theme($primary-amber, $accent-amber, $warn);
+// green
+$light-green-theme: mat-light-theme($primary-green, $accent-green, $warn);
+// lime
+$dark-lime-theme: mat-dark-theme($primary-lime, $accent-lime, $warn);
+$light-lime-theme: mat-light-theme($primary-lime, $accent-lime, $warn);
+// cyan
+$dark-cyan-theme: mat-dark-theme($primary-cyan, $accent-cyan, $warn);
+$light-cyan-theme: mat-light-theme($primary-cyan, $accent-cyan, $warn);
+// indigo
+$dark-indigo-theme: mat-dark-theme($primary-indigo, $accent-indigo, $warn);
+$light-indigo-theme: mat-light-theme($primary-indigo, $accent-indigo, $warn);
+// blue
+$dark-blue-theme: mat-dark-theme($primary-blue, $accent-blue, $warn);
+$light-blue-theme: mat-light-theme($primary-blue, $accent-blue, $warn);
+// deep-purple
+$dark-deep-purple-theme: mat-dark-theme($primary-deep-purple, $accent-deep-purple, $warn);
+$light-deep-purple-theme: mat-light-theme($primary-deep-purple, $accent-deep-purple, $warn);
+// red
+$dark-red-theme: mat-dark-theme($primary-red, $accent-red, $warn-red);
+$light-red-theme: mat-light-theme($primary-red, $accent-red, $warn-red);
+// pink
+$dark-pink-theme: mat-dark-theme($primary-pink, $accent-pink, $warn);
+$light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
 
-// Default theme is dark orange, we have to apply it here.
-@include angular-material-theme($dark-theme);
-@include theme-background($dark-theme);
-@include expansion-panel-accent($dark-theme);
-@include card-accent($dark-theme);
-@include color-fixes($dark-theme);
-
-
+// Dark orange theme class
 .dark-orange-theme {
     @include angular-material-theme($dark-theme);
     @include theme-background($dark-theme);
@@ -89,7 +165,7 @@ $dark-teal-theme: mat-dark-theme($primary-teal, $accent-teal, $warn);
     @include color-fixes($dark-theme);
 }
 
-// Light theme class
+// Light orange theme class
 .light-orange-theme {
     @include angular-material-theme($light-orange-theme);
     @include theme-background($light-orange-theme);
@@ -98,7 +174,7 @@ $dark-teal-theme: mat-dark-theme($primary-teal, $accent-teal, $warn);
     @include color-fixes($light-orange-theme);
 }
 
-// Light theme class
+// Light teal theme class
 .light-teal-theme {
     @include angular-material-theme($light-teal-theme);
     @include theme-background($light-teal-theme);
@@ -107,13 +183,175 @@ $dark-teal-theme: mat-dark-theme($primary-teal, $accent-teal, $warn);
     @include color-fixes($light-teal-theme);
 }
 
-// Light theme class
+// Dark teal theme class
 .dark-teal-theme {
     @include angular-material-theme($dark-teal-theme);
     @include theme-background($dark-teal-theme);
     @include expansion-panel-accent($dark-teal-theme);
     @include card-accent($dark-teal-theme);
     @include color-fixes($dark-teal-theme);
+}
+
+// Light brown theme class
+.light-brown-theme {
+    @include angular-material-theme($light-brown-theme);
+    @include theme-background($light-brown-theme);
+    @include expansion-panel-accent($light-brown-theme);
+    @include card-accent($light-brown-theme);
+    @include color-fixes($light-brown-theme);
+}
+
+// Light amber theme class
+.light-amber-theme {
+    @include angular-material-theme($light-amber-theme);
+    @include theme-background($light-amber-theme);
+    @include expansion-panel-accent($light-amber-theme);
+    @include card-accent($light-amber-theme);
+    @include color-fixes($light-amber-theme);
+}
+
+// Dark amber theme class
+.dark-amber-theme {
+    @include angular-material-theme($dark-amber-theme);
+    @include theme-background($dark-amber-theme);
+    @include expansion-panel-accent($dark-amber-theme);
+    @include card-accent($dark-amber-theme);
+    @include color-fixes($dark-amber-theme);
+}
+
+// Light green theme class
+.light-green-theme {
+    @include angular-material-theme($light-green-theme);
+    @include theme-background($light-green-theme);
+    @include expansion-panel-accent($light-green-theme);
+    @include card-accent($light-green-theme);
+    @include color-fixes($light-green-theme);
+}
+
+// Dark lime theme class
+.dark-lime-theme {
+    @include angular-material-theme($dark-lime-theme);
+    @include theme-background($dark-lime-theme);
+    @include expansion-panel-accent($dark-lime-theme);
+    @include card-accent($dark-lime-theme);
+    @include color-fixes($dark-lime-theme);
+}
+
+// Light lime theme class
+.light-lime-theme {
+    @include angular-material-theme($light-lime-theme);
+    @include theme-background($light-lime-theme);
+    @include expansion-panel-accent($light-lime-theme);
+    @include card-accent($light-lime-theme);
+    @include color-fixes($light-lime-theme);
+}
+
+// Dark cyan theme class
+.dark-cyan-theme {
+    @include angular-material-theme($dark-cyan-theme);
+    @include theme-background($dark-cyan-theme);
+    @include expansion-panel-accent($dark-cyan-theme);
+    @include card-accent($dark-cyan-theme);
+    @include color-fixes($dark-cyan-theme);
+}
+
+// Light cyan theme class
+.light-cyan-theme {
+    @include angular-material-theme($light-cyan-theme);
+    @include theme-background($light-cyan-theme);
+    @include expansion-panel-accent($light-cyan-theme);
+    @include card-accent($light-cyan-theme);
+    @include color-fixes($light-cyan-theme);
+}
+
+// Dark indigo theme class
+.dark-indigo-theme {
+    @include angular-material-theme($dark-indigo-theme);
+    @include theme-background($dark-indigo-theme);
+    @include expansion-panel-accent($dark-indigo-theme);
+    @include card-accent($dark-indigo-theme);
+    @include color-fixes($dark-indigo-theme);
+}
+
+// Light indigo theme class
+.light-indigo-theme {
+    @include angular-material-theme($light-indigo-theme);
+    @include theme-background($light-indigo-theme);
+    @include expansion-panel-accent($light-indigo-theme);
+    @include card-accent($light-indigo-theme);
+    @include color-fixes($light-indigo-theme);
+}
+
+// Dark blue theme class
+.dark-blue-theme {
+    @include angular-material-theme($dark-blue-theme);
+    @include theme-background($dark-blue-theme);
+    @include expansion-panel-accent($dark-blue-theme);
+    @include card-accent($dark-blue-theme);
+    @include color-fixes($dark-blue-theme);
+}
+
+// Light blue theme class
+.light-blue-theme {
+    @include angular-material-theme($light-blue-theme);
+    @include theme-background($light-blue-theme);
+    @include expansion-panel-accent($light-blue-theme);
+    @include card-accent($light-blue-theme);
+    @include color-fixes($light-blue-theme);
+}
+
+// Dark deep-purple theme class
+.dark-deep-purple-theme {
+    @include angular-material-theme($dark-deep-purple-theme);
+    @include theme-background($dark-deep-purple-theme);
+    @include expansion-panel-accent($dark-deep-purple-theme);
+    @include card-accent($dark-deep-purple-theme);
+    @include color-fixes($dark-deep-purple-theme);
+}
+
+// Light deep-purple theme class
+.light-deep-purple-theme {
+    @include angular-material-theme($light-deep-purple-theme);
+    @include theme-background($light-deep-purple-theme);
+    @include expansion-panel-accent($light-deep-purple-theme);
+    @include card-accent($light-deep-purple-theme);
+    @include color-fixes($light-deep-purple-theme);
+}
+
+// Dark red theme class
+.dark-red-theme {
+    @include angular-material-theme($dark-red-theme);
+    @include theme-background($dark-red-theme);
+    @include expansion-panel-accent($dark-red-theme);
+    @include card-accent($dark-red-theme);
+    @include color-fixes($dark-red-theme);
+}
+
+// Light red theme class
+.light-red-theme {
+    @include angular-material-theme($light-red-theme);
+    @include theme-background($light-red-theme);
+    @include expansion-panel-accent($light-red-theme);
+    @include card-accent($light-red-theme);
+    @include color-fixes($light-red-theme);
+}
+
+// Dark pink theme class
+.dark-pink-theme {
+    @include angular-material-theme($dark-pink-theme);
+    @include theme-background($dark-pink-theme);
+    @include expansion-panel-accent($dark-pink-theme);
+    @include card-accent($dark-pink-theme);
+    @include color-fixes($dark-pink-theme);
+}
+
+// Light pink theme class
+.light-pink-theme {
+    @include angular-material-theme($light-pink-theme);
+    @include theme-background($light-pink-theme);
+    @include expansion-panel-accent($light-pink-theme);
+    @include card-accent($light-pink-theme);
+    @include color-fixes($light-pink-theme);
 }
 
 // Responsive breakpoint mixin/definitions

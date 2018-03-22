@@ -21,6 +21,22 @@ export class LayoutRowFilter {
         .find(source => source.trades
             .find(trade => [20, 21, 22].indexOf(+trade.currencyId) > -1) !== undefined) !== undefined, 'IS_GC_TRADE');
 
+    static IS_TOKEN_TRADE = new LayoutRowFilter(row => {
+        if (row.tradeSources !== undefined) {
+            // These ids are for voidrake and Althyk lavender.
+            for (const tokenId of [15858, 15857]) {
+                if (row.tradeSources
+                        .find(source => source.trades
+                            .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }, 'IS_TOKEN_TRADE');
+
+    static IS_VENTURE = new LayoutRowFilter(row => row.ventures !== undefined && row.ventures.length > 0, 'IS_VENTURE');
+
     static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
         ._and(new LayoutRowFilter(row => row.craftedBy.find(craft => craft.masterbook !== undefined) !== undefined,
             'IS_MASTERCRAFT'));

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatCardModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import {CoreModule} from '../../core/core.module';
 import {RouterModule} from '@angular/router';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
@@ -19,6 +19,7 @@ const routes = [{
         MatIconModule,
         MatButtonModule,
         MatCardModule,
+        MatTooltipModule,
 
         CoreModule,
         CommonComponentsModule,

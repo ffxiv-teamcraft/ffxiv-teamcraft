@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {MapPopupComponent} from '../map-popup/map-popup.component';
+import {Vector2} from '../../../core/tools/vector2';
 
 @Component({
     selector: 'app-map-position',
@@ -10,7 +11,7 @@ import {MapPopupComponent} from '../map-popup/map-popup.component';
 export class MapPositionComponent {
 
     @Input()
-    marker: { x: number, y: number };
+    marker: Vector2;
 
     @Input()
     zoneId: number;
@@ -18,7 +19,7 @@ export class MapPositionComponent {
     constructor(private dialog: MatDialog) {
     }
 
-    getMarker(): { x: number, y: number } {
+    getMarker(): Vector2 {
         return {
             x: Math.round(this.marker.x),
             y: Math.round(this.marker.y)

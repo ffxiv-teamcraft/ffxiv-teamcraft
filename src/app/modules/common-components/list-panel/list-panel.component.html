@@ -15,7 +15,13 @@
                     <div class="description">
                         <img *ngIf="author | async as authorData" [src]="authorData?.avatar" class="author-avatar"
                              [matTooltip]="authorData?.name" matTooltipPosition="above"
+                             [hidden]="authorData?.name === 'Anonymous'"
                              routerLink="/profile/{{list.authorId}}">
+                        <div class="tags">
+                            <mat-chip-list class="inline-chips">
+                                <mat-chip *ngFor="let tag of list.tags">{{tag}}</mat-chip>
+                            </mat-chip-list>
+                        </div>
                         <span>{{list.note}}</span>
                     </div>
                 </mat-panel-description>
@@ -25,6 +31,11 @@
                                      [isOwnList]="list.authorId === authorUid"
                                      color="null" (click)="$event.stopPropagation()">
                 </app-comments-button>
+                <button mat-icon-button *ngIf="buttons && linkButton"
+                        matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                        (click)="$event.stopPropagation(); openLinkPopup(list)">
+                    <mat-icon>link</mat-icon>
+                </button>
                 <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
                         (click)="$event.stopPropagation()"
                         matTooltip="{{'Share' | translate}}" matTooltipPosition="above"

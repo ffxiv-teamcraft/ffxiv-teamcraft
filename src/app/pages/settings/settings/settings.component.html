@@ -31,6 +31,10 @@
     </mat-checkbox>
 </div>
 
+<div class="settings-row" fxHide fxShow.gt-sm>
+    <mat-checkbox [(ngModel)]="settings.alarmsMuted">{{'Mute_alarms' | translate}}</mat-checkbox>
+</div>
+
 <mat-menu #langMenu="matMenu" yPosition="above">
     <button mat-menu-item (click)="use('fr')">FR</button>
     <button mat-menu-item (click)="use('en')">EN</button>

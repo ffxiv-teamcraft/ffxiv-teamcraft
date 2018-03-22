@@ -1,7 +1,18 @@
 mat-expansion-panel {
     margin-bottom: 10px;
+    mat-panel-description {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+        font-size: 14px;
+    }
+    mat-expansion-panel-header.mat-expanded mat-panel-description{
+        white-space: normal;
+    }
     img {
         height: auto;
         width: 100%;
     }
 }
+

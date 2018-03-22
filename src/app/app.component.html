@@ -21,24 +21,13 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-card class="announcement" *ngIf="showAnnouncement()">
-        <mat-grid-list cols="5" rowHeight="35px">
-            <mat-grid-tile colspan="4">
-                <p [innerHTML]="announcement"></p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <button mat-icon-button color="accent" (click)="dismissAnnouncement()">
-                    <mat-icon>clear</mat-icon>
-                </button>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card>
     <mat-sidenav-container>
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile">
             <div class="accent-background">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
-                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}" routerLink="/profile/{{(authState | async)?.uid}}">
+                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
+                         routerLink="/profile/{{(authState | async)?.uid}}">
                     <span class="name" *ngIf="username === undefined">Loading...</span>
                     <span class="name">{{username}}</span>
                 </div>
@@ -47,8 +36,7 @@
                     <button mat-raised-button (click)="openRegistrationPopup()">{{'Registration' | translate}}</button>
                 </div>
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
-                    {{'Disconnect'
-                    | translate}}
+                    {{'Disconnect' | translate}}
                 </button>
             </div>
             <mat-divider></mat-divider>
@@ -61,6 +49,11 @@
                                *ngIf="!(authState | async)?.isAnonymous">
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine>{{'Profile' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
+                               *ngIf="customLinksEnabled">
+                    <mat-icon matListIcon>link</mat-icon>
+                    <span matLine>{{'CUSTOM_LINKS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>
@@ -77,6 +70,10 @@
                 <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>alarm</mat-icon>
                     <span matLine>{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/gathering-location" (click)="mobile ? sidenav.close() :  null">
+                    <mat-icon matListIcon>location_on</mat-icon>
+                    <span matLine>{{'GATHERING_LOCATIONS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null">
                     <mat-icon matListIcon>translate</mat-icon>

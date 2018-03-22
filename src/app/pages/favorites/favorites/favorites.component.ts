@@ -4,6 +4,8 @@ import {List} from '../../../model/list/list';
 import {Observable} from 'rxjs/Observable';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {Workshop} from '../../../model/other/workshop';
+import {WorkshopService} from '../../../core/database/workshop.service';
 
 @Component({
     selector: 'app-favorites',
@@ -14,7 +16,9 @@ export class FavoritesComponent extends ComponentWithSubscriptions {
 
     favorites: Observable<List[]>;
 
-    constructor(private userService: UserService, private listService: ListService) {
+    favoriteWorkshops: Observable<Workshop[]>;
+
+    constructor(private userService: UserService, private listService: ListService, private workshopService: WorkshopService) {
         super();
         this.favorites = this.userService.getUserData()
             .switchMap(userData => {
@@ -34,5 +38,10 @@ export class FavoritesComponent extends ComponentWithSubscriptions {
             })
             // We need to remove null rows in order to keep the display safe.
             .map(favorites => favorites.filter(row => row !== null));
+        this.favoriteWorkshops = this.userService.getUserData().switchMap(userData => {
+            return Observable.combineLatest((userData.favoriteWorkshops || []).map(favWs => this.workshopService.get(favWs).catch(() => {
+                return Observable.of(null);
+            })));
+        });
     }
 }

@@ -9,6 +9,8 @@
     min-height: 100%;
     display: inline;
     mat-toolbar {
+        position: fixed;
+        top: 0;
         display: flex;
         min-height: 64px;
         mat-menu {
@@ -28,7 +30,7 @@
         }
     }
     mat-sidenav-container {
-        height: calc(100% - 64px);
+        height: calc(100vh - 64px);
         .mat-sidenav {
             width: 10%;
             min-width: 250px;
@@ -56,7 +58,7 @@
                 flex-shrink: 0;
                 display: flex;
                 flex-direction: column;
-                margin-top: 80px;
+                margin-top: 20px;
                 .bottom-button {
                     flex: 1 1 auto;
                     margin-bottom: 5px;

@@ -15,9 +15,18 @@
     <mat-list dense *ngIf="zoneBreakdown && !showTier">
         <div *ngFor="let row of zoneBreakdownData?.rows; trackBy: trackByZoneFn">
             <div *ngIf="row.items.length > 0">
-                <h3 mat-subheader>{{getLocation(row.zoneId) | i18n}}</h3>
+                <div class="subheader">
+                    <span mat-subheader>{{getLocation(row.zoneId) | i18n}}</span>
+                    <button mat-icon-button
+                            *ngIf="hasNavigationMap(row)"
+                            (click)="openNavigationMap(row)"
+                            matTooltip="{{'NAVIGATION.Title' | translate}}"
+                            matTooltipPosition="above">
+                        <i class="fas fa-map"></i>
+                    </button>
+                </div>
                 <mat-divider class="zone-divider"></mat-divider>
-                <div *ngFor="let item of row.items; trackBy: trackByFn; let i = index"
+                <div *ngFor="let item of uniquify(row.items); trackBy: trackByFn; let i = index"
                      [ngClass]="{compact: settings.compactLists}">
                     <app-item [list]="list"
                               [user]="user"

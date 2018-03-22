@@ -7,6 +7,10 @@ import {I18nName} from '../../../model/list/i18n-name';
 import {ZoneBreakdown} from '../../../model/list/zone-breakdown';
 import {ZoneBreakdownRow} from '../../../model/list/zone-breakdown-row';
 import {AppUser} from '../../../model/list/app-user';
+import {MatDialog} from '@angular/material';
+import {NavigationMapPopupComponent} from '../navigation-map-popup/navigation-map-popup.component';
+import {NavigationObjective} from '../../../modules/map/navigation-objective';
+import {Vector2} from '../../../core/tools/vector2';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -59,7 +63,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     zoneBreakdownData: ZoneBreakdown;
 
-    constructor(public settings: SettingsService, private dataService: LocalizedDataService) {
+    constructor(public settings: SettingsService, private dataService: LocalizedDataService, private dialog: MatDialog,
+                private l12n: LocalizedDataService) {
     }
 
     /**
@@ -75,6 +80,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 }
             });
         }
+    }
+
+    public uniquify(items: ListRow[]): ListRow[] {
+        return items.filter((value, index, array) => array.filter(row => row.id === value.id).length === 1);
     }
 
     public getLocation(id: number): I18nName {
@@ -139,6 +148,42 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         return result;
     }
 
+    public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
+        const data: { mapId: number, points: NavigationObjective[] } = {
+            mapId: zoneBreakdownRow.zoneId,
+            points: this.uniquify(zoneBreakdownRow.items)
+                .map(item => {
+                    const coords = this.getCoords(item, zoneBreakdownRow);
+                    if (coords !== undefined) {
+                        return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                    }
+                    return undefined;
+                })
+                .filter(row => row !== undefined)
+        };
+        this.dialog.open(NavigationMapPopupComponent, {data: data});
+    }
+
+    public getCoords(item: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Vector2 {
+        if (item.gatheredBy !== undefined) {
+            const node = item.gatheredBy.nodes.find(n => n.zoneid === zoneBreakdownRow.zoneId);
+            return {x: node.coords[0], y: node.coords[1]};
+        }
+        return undefined;
+    }
+
+    public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
+        return this.uniquify(zoneBreakdownRow.items)
+            .map(item => {
+                const coords = this.getCoords(item, zoneBreakdownRow);
+                if (coords === undefined) {
+                    return undefined;
+                }
+                return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+            })
+            .filter(row => row !== undefined).length >= 2;
+    }
+
     trackByFn(index: number, item: ListRow) {
         return item.id;
     }
@@ -152,10 +197,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (this.showTier && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.showTier) {
             this.generateTiers();
         }
-        if (this.zoneBreakdown && changes.list !== undefined && changes.list.previousValue !== changes.list.currentValue) {
+        if (this.zoneBreakdown) {
             this.zoneBreakdownData = new ZoneBreakdown(this.data);
         }
     }

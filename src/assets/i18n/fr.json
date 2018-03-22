@@ -3,6 +3,9 @@
     "Work_on_it": "Je m'en occupe",
     "Add_as_collectible": "Ajouter en collectionnable",
     "Compact_display": "Affichage compact",
+    "Mute_alarms": "Mettre en sourdine",
+    "Hide_used": "Masquer les éléments utilisés",
+    "Retainer_ventures": "Tâches de servant",
     "WORKSHOP": {
         "Workshops": "Ateliers",
         "Add_lists": "Ajouter des listes",
@@ -216,6 +219,13 @@
     "PROFILE": {
         "Masterbooks": "Livres",
         "Patreon_supporter": "Supporter Patreon",
+        "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
+        "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
+        "Nickname": "Pseudonyme",
+        "No_nickname": "No nickname set",
+        "Patreon_link_email": "Lier mon email patreon",
+        "Email_already_used": "Email déjà lié à un autre compte",
+        "Patreon_email": "Email Patreon",
         "HELP": {
             "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
             "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
@@ -242,13 +252,17 @@
             "Title": "Affichage",
             "Add_panel": "Ajouter une catégorie",
             "Import_layout": "Importer un affichage",
-            "Import_string": "Chaîne d'importation de l'affichage"
+            "Import_string": "Chaîne d'import de l'affichage",
+            "Import_string_copied": "Chaîne d'import de l'affichage copiée !",
+            "Layout_name": "Nom de l'affichage",
+            "Invalid_import": "Code d'import invalide"
         },
         "LAYOUT": {
             "Filter": "Filtre",
             "Panel_name": "Nom de la catégorie",
             "Order_by": "Trier par",
-            "Order": "Ordre"
+            "Order": "Ordre",
+            "Logic_gate": "Porte logique"
         },
         "HELP": {
             "Title" : "Détails d'une liste",
@@ -341,5 +355,29 @@
         "Macro_to_translate": "Macro à traduire",
         "Do_translate": "Traduire!",
         "Invalid_macro_or_language": "Macro ou langue invalide."
+    },
+    "CUSTOM_LINKS": {
+        "Title": "Liens",
+        "Not_found": "Lien introuvable",
+        "Add_link": "Créer un lien",
+        "Dialog_title": "Lien",
+        "Link_type": "Type de lien",
+        "Link_name": "Nom du lien",
+        "target": "Cible du lien",
+        "Share_link_copied": "Lien copié dans le presse-papiers",
+        "No_links": "Aucun lien défini"
+    },
+    "NAVIGATION": {
+        "Title": "Parcours optimisé",
+        "Steps": "Étapes"
+    },
+    "GATHERING_LOCATIONS":{
+        "Title": "Récoltes",
+        "No_items": "Aucune récolte trouvée",
+        "Gathering_name": "Nom de l'objet"
+    },
+    "ANNOUNCEMENT":{
+        "Title": "Annonce",
+        "Read_more": "Plus d'informations"
     }
 }

@@ -16,7 +16,10 @@ export class SettingsComponent {
         // {name: 'Lodestone', value: 'LODESTONE'}, TODO
     ];
 
-    themes = ['dark-orange', 'light-orange', 'dark-teal', 'light-teal'];
+    themes = ['dark-orange', 'light-orange', 'light-teal', 'dark-teal', 'light-brown',
+        'light-amber', 'dark-amber', 'light-green', 'dark-lime', 'light-lime',
+        'dark-cyan', 'light-cyan', 'dark-indigo', 'light-indigo', 'dark-blue', 'light-blue',
+        'dark-deep-purple', 'light-deep-purple', 'dark-red', 'light-red', 'dark-pink', 'light-pink'];
 
     locale: string;
 

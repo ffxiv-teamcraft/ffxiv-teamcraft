@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MapData} from '../map-data';
 import {Observable} from 'rxjs/Observable';
 import {MapService} from '../map.service';
-import {MathTools} from '../../../tools/math-tools';
+import {Vector2} from '../../../core/tools/vector2';
 
 @Component({
     selector: 'app-map',
@@ -15,7 +15,7 @@ export class MapComponent implements OnInit {
     mapId: number;
 
     @Input()
-    markers: { x: number, y: number }[] = [];
+    markers: Vector2[] = [];
 
     mapData: Observable<MapData>;
 
@@ -26,7 +26,7 @@ export class MapComponent implements OnInit {
         this.mapData = this.mapService.getMapById(this.mapId)
     }
 
-    getPosition(map: MapData, marker: { x: number, y: number }, offset = { x: 0, y: 0 }): { top: string, left: string } {
+    getPosition(map: MapData, marker: Vector2, offset = {x: 0, y: 0}): { top: string, left: string } {
         const positionPercents = this.mapService.getPositionOnMap(map, marker);
         return {top: `${positionPercents.y + offset.y}%`, left: `${positionPercents.x + offset.y}%`};
     }

@@ -12,7 +12,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class AlarmCardComponent implements OnInit {
 
-    static icons = [
+    public static icons = [
         '/assets/icons/Mineral_Deposit.png',
         '/assets/icons/MIN.png',
         '/assets/icons/Mature_Tree.png',

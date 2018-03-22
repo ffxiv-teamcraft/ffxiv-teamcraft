@@ -20,7 +20,7 @@ import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.component';
 import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 import {WorkshopModule} from '../workshop/workshop.module';
-import {ClipboardModule} from 'ngx-clipboard/dist';
+import {ClipboardModule} from 'ngx-clipboard';
 import { ListsSelectionPopupComponent } from './lists-selection-popup/lists-selection-popup.component';
 import { WorkshopNamePopupComponent } from './workshop-name-popup/workshop-name-popup.component';
 import { WorkshopDeleteConfirmationPopupComponent } from './workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
