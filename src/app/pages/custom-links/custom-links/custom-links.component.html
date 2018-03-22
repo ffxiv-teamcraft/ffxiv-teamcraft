@@ -1,7 +1,7 @@
 <h2>{{'CUSTOM_LINKS.Title' | translate}}</h2>
 <div *ngIf="links | async as linksData">
     <div class="no-links" *ngIf="linksData.length === 0">
-        <h3>{{"CUSTOM_LINKS.No_links"}}</h3>
+        <h3>{{"CUSTOM_LINKS.No_links" | translate}}</h3>
     </div>
     <mat-list *ngIf="linksData.length > 0">
         <mat-list-item *ngFor="let link of linksData; trackBy: trackByLink" class="mat-elevation-z2 list-row">
