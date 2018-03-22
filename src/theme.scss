@@ -90,13 +90,13 @@ $primary-brown: mat-palette($mat-brown, 500);
 $accent-brown: mat-palette($mat-brown, 200);
 // amber
 $primary-amber: mat-palette($mat-amber, 500);
-$accent-amber: mat-palette($mat-amber, 100);
+$accent-amber: mat-palette($mat-brown, 400);
 // green
 $primary-green: mat-palette($mat-green, 800);
 $accent-green: mat-palette($mat-green, 400);
 // lime
 $primary-lime: mat-palette($mat-lime, 800);
-$accent-lime: mat-palette($mat-lime, 500);
+$accent-lime: mat-palette($mat-brown, 300);
 // cyan
 $primary-cyan: mat-palette($mat-cyan, 700);
 $accent-cyan: mat-palette($mat-cyan, 300);
@@ -112,7 +112,7 @@ $accent-deep-purple: mat-palette($mat-deep-purple, 200);
 // red
 $primary-red: mat-palette($mat-red, 900);
 $accent-red: mat-palette($mat-red, 600);
-$warn-red: mat-palette($mat-deep-purple, 900);
+$warn-red: mat-palette($mat-light-blue, 500);
 // pink
 $primary-pink: mat-palette($mat-pink, 500);
 $accent-pink: mat-palette($mat-pink, 300);
