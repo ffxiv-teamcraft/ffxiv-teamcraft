@@ -37,7 +37,6 @@ import {LayoutService} from '../../../core/layout/layout.service';
 import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
-import {Subject} from 'rxjs/Subject';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 declare const ga: Function;
@@ -102,8 +101,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.listDisplay = this.listData$
             .filter(data => data !== null)
             .mergeMap(data => {
-            return this.layoutService.getDisplay(data, this.selectedIndex);
-        });
+                return this.layoutService.getDisplay(data, this.selectedIndex);
+            });
     }
 
     displayTrackByFn(index: number, item: LayoutRowDisplay) {
@@ -229,7 +228,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     isOwnList(): boolean {
-        if(this.listData === null){
+        if (this.listData === null) {
             return false;
         }
         return this.user !== undefined && this.user !== null && this.user.uid === this.listData.authorId;
@@ -280,7 +279,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     isFavorite(): boolean {
-        if (this.userData === undefined || this.userData.favorites === undefined) {
+        if (this.userData === undefined || this.userData.favorites === undefined || this.listData === null) {
             return false;
         }
         return Object.keys(this.userData.favorites)
