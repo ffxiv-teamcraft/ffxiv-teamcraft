@@ -82,10 +82,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
     }
 
-    public uniquify(items: ListRow[]): ListRow[] {
-        return items.filter((value, index, array) => array.filter(row => row.id === value.id).length === 1);
-    }
-
     public getLocation(id: number): I18nName {
         if (id === -1) {
             return {fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other'};
@@ -151,7 +147,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
         const data: { mapId: number, points: NavigationObjective[] } = {
             mapId: zoneBreakdownRow.zoneId,
-            points: this.uniquify(zoneBreakdownRow.items)
+            points: zoneBreakdownRow.items
                 .map(item => {
                     const coords = this.getCoords(item, zoneBreakdownRow);
                     if (coords !== undefined) {
@@ -175,7 +171,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
-        return this.uniquify(zoneBreakdownRow.items)
+        return zoneBreakdownRow.items
             .map(item => {
                 const coords = this.getCoords(item, zoneBreakdownRow);
                 if (coords === undefined) {
