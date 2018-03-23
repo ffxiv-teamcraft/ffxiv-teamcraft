@@ -1,6 +1,6 @@
 <app-pricing [list]="listData" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
-<div *ngIf="!pricingMode">
+<div *ngIf="!pricingMode && listData !== null">
     <div *ngIf="listDisplay | async as display; else loading">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>

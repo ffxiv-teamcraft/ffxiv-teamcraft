@@ -64,7 +64,7 @@ Raven
 
 export class RavenErrorHandler implements ErrorHandler {
     handleError(err: any): void {
-        if (err.message !== 'Not found' && err.message.indexOf('permissions') === -1 && err.message.indexOf('is null') === -1) {
+        if (err.message !== 'Not found' && err.message.indexOf('permission') === -1 && err.message.indexOf('is null') === -1) {
             Raven.captureException(err);
         }
         console.error(err);

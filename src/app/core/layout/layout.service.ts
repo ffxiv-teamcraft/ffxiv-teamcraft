@@ -38,6 +38,7 @@ export class LayoutService {
 
     public getDisplay(list: List, index: number): Observable<LayoutRowDisplay[]> {
         return this.getLayoutRows(index)
+            .catch(() => Observable.of(this.defaultLayout))
             .map(layoutRows => {
                 if (layoutRows.find(row => row.filter.name === 'ANYTHING') === undefined) {
                     throw new Error('List layoutRows has to contain an ANYTHING category');
@@ -62,6 +63,9 @@ export class LayoutService {
 
     public getLayoutRows(index: number): Observable<LayoutRow[]> {
         return this.getLayout(index).map(layout => {
+            if (layout === undefined) {
+                layout = new ListLayout('Default layout', this.defaultLayout);
+            }
             return layout.rows.sort((a, b) => {
                 // ANYTHING has to be last filter applied, as it rejects nothing.
                 if (a.filter.name === 'ANYTHING') {
