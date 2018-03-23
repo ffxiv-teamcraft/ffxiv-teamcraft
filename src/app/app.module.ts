@@ -64,7 +64,10 @@ Raven
 
 export class RavenErrorHandler implements ErrorHandler {
     handleError(err: any): void {
-        Raven.captureException(err);
+        if (err.message !== 'Not found') {
+            Raven.captureException(err);
+        }
+        console.error(err);
     }
 }
 

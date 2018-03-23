@@ -229,6 +229,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     isOwnList(): boolean {
+        if(this.listData === null){
+            return false;
+        }
         return this.user !== undefined && this.user !== null && this.user.uid === this.listData.authorId;
     }
 
