@@ -75,7 +75,7 @@ export class LoginPopupComponent {
             const prevUser = this.af.auth.currentUser;
             this.listService.getUserLists(prevUser.uid).subscribe(listsBackup => {
                 // Delete the previous anonymous user
-                if (this.af.auth.currentUser.isAnonymous) {
+                if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
                     this.userService.deleteUser(prevUser.uid);
                     this.af.auth.currentUser.delete();
                 }
