@@ -197,7 +197,7 @@ export class AppComponent implements OnInit {
             }
             // Anonymous sign in with "please register" snack.
             this.auth.authState.debounceTime(1000).subscribe(state => {
-                if (state ! == null && state.isAnonymous && !this.isRegistering) {
+                if (state !== null && state.isAnonymous && !this.isRegistering) {
                     this.registrationSnackRef = this.snack.open(
                         this.translate.instant('Anonymous_Warning'),
                         this.translate.instant('Registration'),
