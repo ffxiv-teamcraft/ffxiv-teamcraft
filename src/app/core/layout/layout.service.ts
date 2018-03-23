@@ -42,7 +42,7 @@ export class LayoutService {
                 if (layoutRows.find(row => row.filter.name === 'ANYTHING') === undefined) {
                     throw new Error('List layoutRows has to contain an ANYTHING category');
                 }
-                let unfilteredRows = list.items;
+                let unfilteredRows = list.items.filter(row => row.hidden !== true);
                 return layoutRows.map(row => {
                     const result: FilterResult = row.filter.filter(unfilteredRows);
                     unfilteredRows = result.rejected;

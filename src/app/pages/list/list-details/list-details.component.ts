@@ -141,6 +141,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     item.hidden = true;
                 }
             });
+            this.listData$.next(this.listData);
             if (this.accordionState === undefined) {
                 this.initAccordion(this.listData);
             }
