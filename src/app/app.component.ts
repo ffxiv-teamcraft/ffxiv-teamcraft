@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
             .valueChanges()
             .subscribe((announcement: Announcement) => {
                 let lastLS = localStorage.getItem('announcement:last');
-                if (!lastLS.startsWith('{')) {
+                if (lastLS !== null && !lastLS.startsWith('{')) {
                     lastLS = '{}';
                 }
                 const last = JSON.parse(lastLS || '{}');
@@ -159,77 +159,81 @@ export class AppComponent implements OnInit {
             this.push.requestPermission();
             localStorage.setItem('push:authorization:asked', 'true');
         }
-        // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
-        if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
-            // Open beta disclaimer popup.
-            this.dialog.open(BetaDisclaimerPopupComponent).afterClosed().subscribe(() => {
-                // Once it's closed, set the storage value to say it has been displayed.
-                localStorage.setItem('beta-disclaimer', 'true');
+        // Do this later to avoid change detection conflict
+        setTimeout(() => {
+            this.firebase.object('/giveway').valueChanges().subscribe((givewayActivated: boolean) => {
+                if (localStorage.getItem('giveway') === null && givewayActivated) {
+                    this.showGiveway();
+                }
+                this.givewayRunning = givewayActivated;
             });
-        }
 
-        this.firebase.object('/giveway').valueChanges().subscribe((givewayActivated: boolean) => {
-            if (localStorage.getItem('giveway') === null && givewayActivated) {
-                this.showGiveway();
-            }
-            this.givewayRunning = givewayActivated;
-        });
-
-        // Patreon popup.
-        if (this.router.url.indexOf('home') === -1) {
-            this.firebase
-                .object('/patreon')
-                .valueChanges()
-                .subscribe((patreon: any) => {
-                    this.userService.getUserData()
-                    // We want to make sure that we get a boolean in there.
-                        .map(user => user.patron || false)
-                        // Display patreon popup is goal isn't reached and the user isn't a registered patron.
-                        .subscribe(isPatron => {
-                            if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && !isPatron) {
-                                this.dialog.open(PatreonPopupComponent, {data: patreon});
-                                this.patreonPopupDisplayed = true;
-                            }
-                        });
+            // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
+            if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
+                // Open beta disclaimer popup.
+                this.dialog.open(BetaDisclaimerPopupComponent).afterClosed().subscribe(() => {
+                    // Once it's closed, set the storage value to say it has been displayed.
+                    localStorage.setItem('beta-disclaimer', 'true');
                 });
-        }
-        // Anonymous sign in with "please register" snack.
-        this.auth.authState.debounceTime(1000).subscribe(state => {
-            if (state ! == null && state.isAnonymous && !this.isRegistering) {
-                this.registrationSnackRef = this.snack.open(
-                    this.translate.instant('Anonymous_Warning'),
-                    this.translate.instant('Registration'),
-                    {
-                        duration: 5000,
-                        extraClasses: ['snack-warn']
-                    }
-                );
-                this.registrationSnackRef.onAction().subscribe(() => {
-                    this.openRegistrationPopup();
-                });
-                return;
-            } else {
-                this.closeSnack();
             }
-        });
 
-        // Character addition popup.
-        this.userService
-            .getUserData()
-            .subscribe(u => {
-                this.customLinksEnabled = u.patron || u.admin;
-                if (u.lodestoneId === undefined && !u.anonymous) {
-                    this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
+            // Patreon popup.
+            if (this.router.url.indexOf('home') === -1) {
+                this.firebase
+                    .object('/patreon')
+                    .valueChanges()
+                    .subscribe((patreon: any) => {
+                        this.userService.getUserData()
+                        // We want to make sure that we get a boolean in there.
+                            .map(user => user.patron || false)
+                            // Display patreon popup is goal isn't reached and the user isn't a registered patron.
+                            .subscribe(isPatron => {
+                                if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && !isPatron) {
+                                    this.dialog.open(PatreonPopupComponent, {data: patreon});
+                                    this.patreonPopupDisplayed = true;
+                                }
+                            });
+                    });
+            }
+            // Anonymous sign in with "please register" snack.
+            this.auth.authState.debounceTime(1000).subscribe(state => {
+                if (state ! == null && state.isAnonymous && !this.isRegistering) {
+                    this.registrationSnackRef = this.snack.open(
+                        this.translate.instant('Anonymous_Warning'),
+                        this.translate.instant('Registration'),
+                        {
+                            duration: 5000,
+                            extraClasses: ['snack-warn']
+                        }
+                    );
+                    this.registrationSnackRef.onAction().subscribe(() => {
+                        this.openRegistrationPopup();
+                    });
+                    return;
+                } else {
+                    this.closeSnack();
                 }
             });
 
-        // Character informations for side menu.
-        this.userService
-            .getCharacter()
-            .subscribe(character => {
-                this.username = character.name;
-                this.userIcon = character.avatar;
-            });
+            // Character addition popup.
+            this.userService
+                .getUserData()
+                .subscribe(u => {
+                    this.customLinksEnabled = u.patron || u.admin;
+                    if (u.lodestoneId === undefined && !u.anonymous) {
+                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
+                    }
+                });
+
+            // Character informations for side menu.
+            this.userService
+                .getCharacter()
+                .subscribe(character => {
+                    this.username = character.name;
+                    this.userIcon = character.avatar;
+                });
+        }, 15);
+
     }
 
     showGiveway(): void {
