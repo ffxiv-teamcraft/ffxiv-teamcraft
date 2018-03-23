@@ -99,10 +99,12 @@ export class LoginPopupComponent {
                                         this.listService.add(list);
                                     });
                                     this.notVerified = true;
+                                    this.userService.reload();
                                 });
                             });
                         } else {
                             this.login(auth).then(() => {
+                                this.userService.reload();
                                 this.dialogRef.close();
                             }).catch(() => {
                                 this.errorState(listsBackup);
@@ -121,6 +123,7 @@ export class LoginPopupComponent {
                     this.listService.add(list);
                 });
                 this.error = true;
+                this.userService.reload();
             });
         });
     }
@@ -134,10 +137,15 @@ export class LoginPopupComponent {
             }
             this.af.auth.signInWithPopup(provider).then((oauth) => {
                 this.login(oauth.user).then(() => {
+                    this.userService.reload();
                     this.dialogRef.close();
                 }).catch(() => {
+                    this.userService.reload();
                     this.errorState(lists);
                 });
+                this.userService.reload();
+            }).catch(() => {
+                this.userService.reload();
             });
         });
     }
