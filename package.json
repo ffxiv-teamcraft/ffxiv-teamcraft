@@ -53,6 +53,7 @@
     "jwt-decode": "^2.2.0",
     "ng-push": "^0.2.1",
     "ngx-clipboard": "10.0.0",
+    "raven-js": "^3.24.0",
     "rxjs": "^5.4.3",
     "semver": "^5.4.1",
     "web-animations-js": "^2.3.1",
