@@ -364,13 +364,24 @@
         "Title": "Optimierte Navigationsroute",
         "Steps": "Stationen"
     },
-    "GATHERING_LOCATIONS":{
+    "GATHERING_LOCATIONS": {
         "Title": "Sammelgegenstand-Suche",
         "No_items": "Nichts zum Sammeln gefunden",
         "Gathering_name": "Sammelgegenstand eingeben"
     },
-    "ANNOUNCEMENT":{
+    "ANNOUNCEMENT": {
         "Title": "Ankündigung",
         "Read_more": "Weiterlesen"
+    },
+    "LIST_TEMPLATE": {
+        "Create_template": "Eine Vorlage für diese Liste erstellen",
+        "Dialog_title": "Vorlagenerstellung",
+        "Link_name": "Vorlagenname",
+        "target": "Zielliste",
+        "Share_link_copied": "Vorlagenverknüpfung wurde in die Zwischenablage kopiert",
+        "Copy_template_url": "Vorlagen-URL kopieren",
+        "Cloning_list": "Eine Kopie der Liste wird deinem Account hinzugefügt",
+        "Redirect_notice": "Du wirst zu der Liste weitergeleitet, sobald die Kopie erstellt ist",
+        "Not_found": "Vorlage nicht gefunden"
     }
 }
