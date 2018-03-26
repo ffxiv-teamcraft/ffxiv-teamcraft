@@ -11,6 +11,9 @@ import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {ListTemplate} from '../../../core/database/list-template/list-template';
+import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
+import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 
 @Component({
     selector: 'app-list-panel',
@@ -58,12 +61,21 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     @Input()
     public linkButton = false;
 
+    @Input()
+    public templateButton = false;
+
+    public templateUrl: string;
+
     author: Observable<any>;
+
+    private userUid: string;
+
+    private userNickname: string;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
                 private router: Router, private auth: AngularFireAuth, private userService: UserService,
-                private dialog: MatDialog) {
+                private dialog: MatDialog, private templateService: ListTemplateService) {
         super();
     }
 
@@ -77,9 +89,27 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
         return `${window.location.protocol}//${window.location.host}/list/${this.list.$key}`;
     }
 
+    openTemplatePopup(list: List): void {
+        const template = new ListTemplate();
+        template.originalListId = list.$key;
+        template.author = this.userUid;
+        template.uri = list.name;
+        template.authorNickname = this.userNickname;
+        this.dialog.open(TemplatePopupComponent, {data: template});
+    }
+
     public showCopiedNotification(): void {
         this.snack.open(
             this.translator.instant('Share_link_copied'),
+            '', {
+                duration: 10000,
+                extraClasses: ['snack']
+            });
+    }
+
+    public showTemplateCopiedNotification(): void {
+        this.snack.open(
+            this.translator.instant('LIST_TEMPLATE.Share_link_copied'),
             '', {
                 duration: 10000,
                 extraClasses: ['snack']
@@ -114,6 +144,17 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
                 console.error(err);
                 return Observable.of(null);
             });
+
+        this.templateService.getByListId(this.list.$key).subscribe(res => {
+            if (res !== undefined) {
+                this.templateUrl = res.getUrl();
+            }
+        });
+
+        this.userService.getUserData().subscribe(u => {
+            this.userUid = u.$key;
+            this.userNickname = u.nickname;
+        });
     }
 
     public isMobile(): boolean {

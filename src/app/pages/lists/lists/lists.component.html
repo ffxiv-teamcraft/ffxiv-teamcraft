@@ -49,7 +49,9 @@
             (ondelete)="delete(list)"
             [authorUid]="user.uid"
             [odd]="i%2>0"
-            [linkButton]="userData?.patron || userData?.admin"></app-list-panel>
+            [linkButton]="userData?.patron || userData?.admin"
+            [templateButton]="userData?.patron || userData?.admin"
+        ></app-list-panel>
     </div>
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
@@ -95,7 +97,9 @@
                         (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
                         (ondelete)="delete(list)"
                         [authorUid]="user.uid"
-                        [odd]="i%2>0"></app-list-panel>
+                        [odd]="i%2>0"
+                        [linkButton]="userData?.patron || userData?.admin"
+                        [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
                 <button mat-button class="full-width-button" color="accent" (click)="addListsToWorkhop(workshop, display.basicLists)">
                     <mat-icon>add</mat-icon>

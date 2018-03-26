@@ -26,6 +26,7 @@ import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 
 declare const ga: Function;
 
@@ -62,7 +63,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
                 private workshopService: WorkshopService, private snack: MatSnackBar,
-                private translator: TranslateService, private userService: UserService) {
+                private translator: TranslateService, private userService: UserService,
+                private templateService: ListTemplateService) {
         super();
         this.subscriptions.push(userService.getUserData().subscribe(userData => this.userData = userData))
     }

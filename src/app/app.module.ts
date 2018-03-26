@@ -56,6 +56,7 @@ import {WorkshopModule} from './pages/workshop/workshop.module';
 import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
 import * as Raven from 'raven-js';
+import {TemplateModule} from './pages/template/template.module';
 
 
 Raven
@@ -150,6 +151,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MacroTranslationModule,
         GatheringLocationModule,
         WorkshopModule,
+        TemplateModule,
     ],
     providers: [{provide: ErrorHandler, useClass: RavenErrorHandler}],
     bootstrap: [AppComponent]

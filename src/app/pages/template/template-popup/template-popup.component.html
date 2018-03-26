@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>{{"LIST_TEMPLATE.Dialog_title" | translate}}</h2>
+<div mat-dialog-content class="selects-container">
+    <mat-form-field>
+        <input required type="text" matInput placeholder="{{'LIST_TEMPLATE.Link_name' | translate}}"
+               [(ngModel)]="template.uri">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select required placeholder="{{'LIST_TEMPLATE.target' | translate}}" [(ngModel)]="template.originalListId">
+            <mat-option *ngFor="let row of lists | async" value="{{row.$key}}">
+                {{row.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!canConfirm()"
+            ngxClipboard [cbContent]="template.getUrl()">{{'Ok' | translate}}
+    </button>
+    <button mat-button color="warn" mat-dialog-close>{{'Cancel' | translate}}</button>
+</div>

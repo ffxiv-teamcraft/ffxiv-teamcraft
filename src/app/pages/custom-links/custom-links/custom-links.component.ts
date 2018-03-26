@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {Observable} from 'rxjs/Observable';
@@ -10,11 +10,15 @@ import {WorkshopService} from '../../../core/database/workshop.service';
 import {ListService} from '../../../core/database/list.service';
 import {TranslateService} from '@ngx-translate/core';
 import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popup.component';
+import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
+import {ListTemplate} from '../../../core/database/list-template/list-template';
+import {TemplatePopupComponent} from '../../template/template-popup/template-popup.component';
 
 @Component({
     selector: 'app-custom-links',
     templateUrl: './custom-links.component.html',
-    styleUrls: ['./custom-links.component.scss']
+    styleUrls: ['./custom-links.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomLinksComponent implements OnInit {
 
@@ -22,9 +26,11 @@ export class CustomLinksComponent implements OnInit {
 
     constructor(public customLinkService: CustomLinksService, private userService: UserService, private dialog: MatDialog,
                 private listService: ListService, private workshopService: WorkshopService, private snack: MatSnackBar,
-                private translator: TranslateService) {
+                private translator: TranslateService, private templateService: ListTemplateService) {
         this.links = this.userService.getUserData().mergeMap(user => {
-            return this.customLinkService.getAllByAuthor(user.$key);
+            return this.customLinkService.getAllByAuthor(user.$key).mergeMap(links => {
+                return this.templateService.getAllByAuthor(user.$key).map(templates => links.concat(templates));
+            });
         });
     }
 
@@ -37,11 +43,18 @@ export class CustomLinksComponent implements OnInit {
     }
 
     editLink(link: CustomLink): void {
-        this.dialog.open(CustomLinkPopupComponent, {data: link});
+        if (link.template) {
+            this.dialog.open(TemplatePopupComponent, {data: link});
+        } else {
+            this.dialog.open(CustomLinkPopupComponent, {data: link});
+        }
     }
 
     deleteLink(link: CustomLink): void {
         this.dialog.open(ConfirmationPopupComponent).afterClosed().filter(res => res).mergeMap(() => {
+            if (link.template) {
+                return this.templateService.remove(link.$key);
+            }
             return this.customLinkService.remove(link.$key);
         }).subscribe();
     }
@@ -55,18 +68,33 @@ export class CustomLinksComponent implements OnInit {
             });
     }
 
-    getName(link: CustomLink): Observable<string> {
-        return Observable.of(link.redirectTo)
-            .mergeMap(uri => {
-                if (uri.startsWith('list/')) {
-                    return this.listService.get(uri.replace('list/', ''));
-                } else if (uri.startsWith('workshop/')) {
-                    return this.workshopService.get(uri.replace('workshop/', ''));
+    showTemplateCopiedNotification(): void {
+        this.snack.open(
+            this.translator.instant('LIST_TEMPLATE.Share_link_copied'),
+            '', {
+                duration: 10000,
+                extraClasses: ['snack']
+            });
+    }
+
+    getName(plink: CustomLink): Observable<string> {
+        return Observable.of(plink)
+            .mergeMap(link => {
+                if (link.template) {
+                    return this.listService.get((<ListTemplate>link).originalListId)
+                } else if (link.redirectTo.startsWith('list/')) {
+                    return this.listService.get(link.redirectTo.replace('list/', ''));
+                } else if (link.redirectTo.startsWith('workshop/')) {
+                    return this.workshopService.get(link.redirectTo.replace('workshop/', ''));
                 }
                 return Observable.of(null)
             })
             .catch(() => {
-                return this.customLinkService.remove(link.$key).map(() => null);
+                if (!plink.template) {
+                    return this.customLinkService.remove(plink.$key).map(() => null);
+                } else {
+                    return this.templateService.remove(plink.$key).map(() => null);
+                }
             })
             .filter(val => val !== null)
             .map(element => element.name);

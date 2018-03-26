@@ -98,7 +98,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                     u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
                     return u;
                 });
-            });
+            })
+            .publishReplay(1)
+            .refCount();
     }
 
     /**

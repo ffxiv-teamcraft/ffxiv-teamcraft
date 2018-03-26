@@ -1,6 +1,7 @@
 import {DataModel} from '../storage/data-model';
 
 export class CustomLink extends DataModel {
+    template = false;
     authorNickname: string;
     uri: string;
     redirectTo: string;
