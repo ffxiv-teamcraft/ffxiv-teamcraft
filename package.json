@@ -1,6 +1,6 @@
 {
   "name": "teamcraft",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -8,6 +8,8 @@
     "build:prod": "node ./build/prebuild.js && ng build -prod",
     "build:beta": "node ./build/prebuild.js && ng build --aot --target=production --env=beta",
     "standard-version": "standard-version",
+    "standard-version:patch": "standard-version --release-as patch",
+    "standard-version:minor": "standard-version --release-as minor",
     "standard-version:dry": "standard-version --dry-run",
     "release:prod": "npm run standard-version && git push --follow-tags origin master",
     "release:beta": "npm run standard-version -- --prerelease beta && git push --follow-tags origin beta",

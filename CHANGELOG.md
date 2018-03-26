@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.2"></a>
+## [3.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.1...v3.4.2) (2018-03-26)
+
+
+### Bug Fixes
+
+* list layout broken with listData is null ([2f14904](https://github.com/Supamiu/ffxiv-teamcraft/commit/2f14904))
+* long list notes no longer pushing buttons off screen ([34bbdb9](https://github.com/Supamiu/ffxiv-teamcraft/commit/34bbdb9))
+* various minor bugs reported by sentry ([7ed7f4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ed7f4b))
+
+
+### Features
+
+* Made 'Reset progression' more user-friendly ([2b5b68a](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b5b68a))
+* new list template feature (link that produces a copy of a given list) ([bac004e](https://github.com/Supamiu/ffxiv-teamcraft/commit/bac004e)), closes [#301](https://github.com/Supamiu/ffxiv-teamcraft/issues/301)
+
+
+
 <a name="3.4.1"></a>
 ## [3.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0...v3.4.1) (2018-03-23)
 
