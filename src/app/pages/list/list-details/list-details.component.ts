@@ -321,7 +321,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public resetProgression(): void {
         this.subscriptions.push(
-            this.dialog.open(ConfirmationPopupComponent).afterClosed()
+            this.dialog.open(ConfirmationPopupComponent, {data: 'Do you really want to reset the list?'}).afterClosed()
                 .filter(r => r)
                 .map(() => {
                     return this.listData;
