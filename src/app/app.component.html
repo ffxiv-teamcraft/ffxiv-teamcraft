@@ -59,58 +59,97 @@
                         <mat-icon>keyboard_arrow_right</mat-icon>
                     </button>
                 </mat-list-item>
-                <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'Home' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>home</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Home' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
-                               *ngIf="!(authState | async)?.isAnonymous">
+                               *ngIf="!(authState | async)?.isAnonymous"
+                               matTooltipPosition="right"
+                               matTooltip="{{'Profile' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Profile' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
-                               *ngIf="customLinksEnabled">
+                               *ngIf="customLinksEnabled"
+                               matTooltipPosition="right"
+                               matTooltip="{{'CUSTOM_LINKS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>link</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'CUSTOM_LINKS.Title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'CUSTOM_LINKS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>search</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Recipes' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'Lists' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>view_list</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Lists' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'Public_lists' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>public</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Public_lists' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'HOME_PAGE.FEATURES.alarms_title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>alarm</mat-icon>
                     <span matLine
                           *ngIf="!settings.compactSidebar">{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/gathering-location" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/gathering-location" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'GATHERING_LOCATIONS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>location_on</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null">
+                <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'MACRO_TRANSLATION.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>translate</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'MACRO_TRANSLATION.Title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'Favorites' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>favorite</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Favorites' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'SETTINGS.title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>settings</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'HOME_PAGE.features' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>help_outline</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.features' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null">
+                <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'ABOUT.title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>info_outline</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'ABOUT.title' | translate}}</span>
                 </mat-list-item>
