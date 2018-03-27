@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.3"></a>
+## [3.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.2...v3.4.3) (2018-03-27)
+
+
+### Features
+
+* compact view for sidebar menu ([52c59f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/52c59f1)), closes [#294](https://github.com/Supamiu/ffxiv-teamcraft/issues/294)
+
+
+
 <a name="3.4.2"></a>
 ## [3.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.1...v3.4.2) (2018-03-26)
 
