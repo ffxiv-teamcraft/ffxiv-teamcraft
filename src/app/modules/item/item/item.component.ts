@@ -306,7 +306,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasBook();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
                 this.worksOnIt = char;
                 this.cd.detectChanges();
             });
@@ -319,9 +319,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateMasterBooks();
         this.updateTimers();
         this.updateHasBook();
-        if (this.item.workingOnIt !== undefined && this.worksOnIt === undefined) {
+        if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
         }
     }
 
@@ -329,7 +329,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
             this.worksOnIt = char;
             this.cd.detectChanges();
         });
