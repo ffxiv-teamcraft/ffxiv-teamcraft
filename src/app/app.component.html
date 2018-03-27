@@ -84,7 +84,7 @@
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'CUSTOM_LINKS.Title' | translate}}"
+                               matTooltip="{{'Recipes' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>search</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Recipes' | translate}}</span>
