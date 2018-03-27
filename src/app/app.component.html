@@ -21,9 +21,10 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container>
-        <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile">
-            <div class="accent-background">
+    <mat-sidenav-container [autosize]="true">
+        <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
+                     [ngClass]="{'compact': settings.compactSidebar}">
+            <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
@@ -38,66 +39,84 @@
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
                     {{'Disconnect' | translate}}
                 </button>
+                <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
+                        matTooltipPosition="right" (click)="settings.compactSidebar = true; detectChanges()">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+            </div>
+            <div class="accent-background" *ngIf="settings.compactSidebar">
+                <div class="user">
+                    <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
+                    <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
+                         routerLink="/profile/{{(authState | async)?.uid}}">
+                </div>
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
+                <mat-list-item *ngIf="settings.compactSidebar">
+                    <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
+                            matTooltipPosition="right" (click)="settings.compactSidebar = false; detectChanges()">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                </mat-list-item>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>home</mat-icon>
-                    <span matLine>{{'Home' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Home' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="!(authState | async)?.isAnonymous">
                     <mat-icon matListIcon>person</mat-icon>
-                    <span matLine>{{'Profile' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Profile' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="customLinksEnabled">
                     <mat-icon matListIcon>link</mat-icon>
-                    <span matLine>{{'CUSTOM_LINKS.Title' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'CUSTOM_LINKS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>search</mat-icon>
-                    <span matLine>{{'Recipes' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Recipes' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>view_list</mat-icon>
-                    <span matLine>{{'Lists' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Lists' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>public</mat-icon>
-                    <span matLine>{{'Public_lists' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Public_lists' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/alarms" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>alarm</mat-icon>
-                    <span matLine>{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
+                    <span matLine
+                          *ngIf="!settings.compactSidebar">{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/gathering-location" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>location_on</mat-icon>
-                    <span matLine>{{'GATHERING_LOCATIONS.Title' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/macro-translation" (click)="mobile ? sidenav.close() : null">
                     <mat-icon matListIcon>translate</mat-icon>
-                    <span matLine>{{'MACRO_TRANSLATION.Title' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'MACRO_TRANSLATION.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/favorites" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>favorite</mat-icon>
-                    <span matLine>{{'Favorites' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'Favorites' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/settings" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>settings</mat-icon>
-                    <span matLine>{{'SETTINGS.title' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>help_outline</mat-icon>
-                    <span matLine>{{'HOME_PAGE.features' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.features' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null">
                     <mat-icon matListIcon>info_outline</mat-icon>
-                    <span matLine>{{'ABOUT.title' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'ABOUT.title' | translate}}</span>
                 </mat-list-item>
             </mat-nav-list>
 
-            <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md>
+            <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md *ngIf="!settings.compactSidebar">
                 {{locale | uppercase}}
             </button>
             <div class="spacer"></div>
@@ -107,7 +126,7 @@
                     {{"GIVEWAY.Title" |
                     translate}}
                 </button>
-                <div class="social-fabs bottom-button">
+                <div class="social-fabs bottom-button" *ngIf="!settings.compactSidebar">
                     <div class="fab-container"><a href="https://facebook.com/ffxivteamcraft" mat-mini-fab
                                                   class="social-fab facebook" target="
                        _blank"><i class="fab fa-facebook-f"></i></a></div>
@@ -123,8 +142,8 @@
                 </div>
                 <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft/issues" target="_blank"
                    class="bottom-button"
-                   color="warn">Report
-                    a bug</a>
+                   color="warn" *ngIf="!settings.compactSidebar">Report a bug
+                </a>
             </div>
         </mat-sidenav>
         <div class="content">

@@ -28,6 +28,14 @@ export class SettingsService {
         this.setSetting('compact-lists', compact.toString());
     }
 
+    public get compactSidebar(): boolean {
+        return this.getSetting('compact-sidebar', 'false') === 'true';
+    }
+
+    public set compactSidebar(compact: boolean) {
+        this.setSetting('compact-sidebar', compact.toString());
+    }
+
     public get compactAlarms(): boolean {
         return this.getSetting('compact-alarms', 'false') === 'true';
     }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -75,7 +75,8 @@ export class AppComponent implements OnInit {
                 public settings: SettingsService,
                 public helpService: HelpService,
                 private push: PushNotificationsService,
-                overlayContainer: OverlayContainer) {
+                overlayContainer: OverlayContainer,
+                public cd: ChangeDetectorRef) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -142,6 +143,10 @@ export class AppComponent implements OnInit {
                         });
                 }
             });
+    }
+
+    detectChanges(): void {
+        this.cd.detectChanges();
     }
 
     closeSnack(): void {
