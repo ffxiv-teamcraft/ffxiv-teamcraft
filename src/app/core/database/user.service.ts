@@ -9,7 +9,6 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from './diff/diff.service';
-import * as Raven from 'raven-js';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -73,16 +72,10 @@ export class UserService extends FirebaseStorage<AppUser> {
                         }
                         if (user === null || user.isAnonymous) {
                             return this.get(user.uid).catch(() => {
-                                Raven.setUserContext({
-                                    id: user.uid
-                                });
                                 return Observable.of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
                             });
                         } else {
                             return this.get(user.uid).map(u => {
-                                Raven.setUserContext({
-                                    id: user.uid
-                                });
                                 u.providerId = user.providerId;
                                 return u;
                             });

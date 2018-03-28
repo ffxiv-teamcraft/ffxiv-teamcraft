@@ -55,22 +55,7 @@ import {GatheringLocationModule} from './pages/gathering-location/gathering-loca
 import {WorkshopModule} from './pages/workshop/workshop.module';
 import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
-import * as Raven from 'raven-js';
 import {TemplateModule} from './pages/template/template.module';
-
-
-Raven
-    .config(environment.production ? 'https://759388ec3a3a4868b36832ea92a5afac@sentry.io/481146' : '')
-    .install();
-
-export class RavenErrorHandler implements ErrorHandler {
-    handleError(err: any): void {
-        if (err.message !== 'Not found' && err.message.indexOf('permission') === -1 && err.message.indexOf('is null') === -1) {
-            Raven.captureException(err);
-        }
-        console.error(err);
-    }
-}
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -153,7 +138,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         WorkshopModule,
         TemplateModule,
     ],
-    providers: [{provide: ErrorHandler, useClass: RavenErrorHandler}],
     bootstrap: [AppComponent]
 })
 export class AppModule {

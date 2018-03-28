@@ -38,11 +38,11 @@ export class MacroTranslationComponent {
             ja: [],
         };
 
-        let match;
         this.translationDone = false;
         this.invalidInputs = false;
         for (const line of this.macroToTranslate.split('\n')) {
-            if ((match = this.findActionsRegex.exec(line)) !== null !== null) {
+            let match = this.findActionsRegex.exec(line);
+            if (match !== null && match !== undefined) {
                 const skillName = match[2].replace(/"/g, '');
                 // Get translated skill
                 try {
