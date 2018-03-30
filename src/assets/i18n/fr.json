@@ -1,4 +1,7 @@
 {
+    "Required_for_final_craft": "{{amount}} nécessaire pour un craft final",
+    "Compact_sidebar_toggle": "Activer/Désactiver le menu compact",
+    "Confirmation": "Confirmation",
     "Is_working_on_it": "{{name}} travaille dessus",
     "Work_on_it": "Je m'en occupe",
     "Add_as_collectible": "Ajouter en collectionnable",
@@ -51,7 +54,7 @@
     "Item_name": "Nom de l'objet",
     "No_items_found": "Aucun objet trouvé",
     "Select_all":"Tout cocher",
-    "Confirmation": "Confirmation",
+    "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
     "Yes": "Oui",
     "No": "Non",
     "Crystals": "Cristaux",
@@ -379,5 +382,16 @@
     "ANNOUNCEMENT":{
         "Title": "Annonce",
         "Read_more": "Plus d'informations"
+    },
+    "LIST_TEMPLATE": {
+        "Create_template": "Créer un modèle de liste pour cette liste",
+        "Dialog_title": "Création du modèle",
+        "Link_name": "Nom du modèle",
+        "target": "Liste cible",
+        "Share_link_copied": "Lien de partage du modèle copié dans le presse-papiers",
+        "Copy_template_url": "Copier l'url du modèle",
+        "Cloning_list": "Création d'une copie de la liste sur votre compte",
+        "Redirect_notice": "Vous serez redirigé vers la liste une fois celle-ci créée",
+        "Not_found": "Modèle introuvable"
     }
 }

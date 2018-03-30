@@ -38,11 +38,12 @@ export class LayoutService {
 
     public getDisplay(list: List, index: number): Observable<LayoutRowDisplay[]> {
         return this.getLayoutRows(index)
+            .catch(() => Observable.of(this.defaultLayout))
             .map(layoutRows => {
                 if (layoutRows.find(row => row.filter.name === 'ANYTHING') === undefined) {
                     throw new Error('List layoutRows has to contain an ANYTHING category');
                 }
-                let unfilteredRows = list.items;
+                let unfilteredRows = list.items.filter(row => row.hidden !== true);
                 return layoutRows.map(row => {
                     const result: FilterResult = row.filter.filter(unfilteredRows);
                     unfilteredRows = result.rejected;
@@ -62,6 +63,9 @@ export class LayoutService {
 
     public getLayoutRows(index: number): Observable<LayoutRow[]> {
         return this.getLayout(index).map(layout => {
+            if (layout === undefined) {
+                layout = new ListLayout('Default layout', this.defaultLayout);
+            }
             return layout.rows.sort((a, b) => {
                 // ANYTHING has to be last filter applied, as it rejects nothing.
                 if (a.filter.name === 'ANYTHING') {
@@ -94,7 +98,7 @@ export class LayoutService {
 
     public get defaultLayout(): LayoutRow[] {
         return [
-            new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name, 0),
+            new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name, 0, true),
             new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name, 3),
             new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name, 2),
         ]

@@ -38,11 +38,11 @@ export class MacroTranslationComponent {
             ja: [],
         };
 
-        let match;
         this.translationDone = false;
         this.invalidInputs = false;
         for (const line of this.macroToTranslate.split('\n')) {
-            if ((match = this.findActionsRegex.exec(line)) !== null !== null) {
+            let match = this.findActionsRegex.exec(line);
+            if (match !== null && match !== undefined) {
                 const skillName = match[2].replace(/"/g, '');
                 // Get translated skill
                 try {
@@ -57,11 +57,13 @@ export class MacroTranslationComponent {
                     try {
                         // If there's no skill match with the first regex, try the second one (for auto translated skills)
                         match = this.findActionsAutoTranslatedRegex.exec(line);
-                        const translatedSkill = this.localizedDataService.getCraftingActionByName(match[2], this.macroLanguage);
-                        // Push translated line to each language
-                        Object.keys(macroTranslated).forEach(key => {
-                            macroTranslated[key].push(line.replace(match[2], `"${translatedSkill[key]}" `));
-                        });
+                        if (match !== null) {
+                            const translatedSkill = this.localizedDataService.getCraftingActionByName(match[2], this.macroLanguage);
+                            // Push translated line to each language
+                            Object.keys(macroTranslated).forEach(key => {
+                                macroTranslated[key].push(line.replace(match[2], `"${translatedSkill[key]}" `));
+                            });
+                        }
                     } catch (ignoredAgain) {
                         this.invalidInputs = true;
                         break;

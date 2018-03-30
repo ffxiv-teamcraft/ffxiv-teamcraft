@@ -32,6 +32,19 @@
     mat-sidenav-container {
         height: calc(100vh - 64px);
         .mat-sidenav {
+            &.compact {
+                width: 68px;
+                min-width: unset;
+                .mat-list-item-content {
+                    padding-right: 0;
+                }
+                .accent-background {
+                    padding: 10px;
+                    .user {
+                        margin-bottom: 0;
+                    }
+                }
+            }
             width: 10%;
             min-width: 250px;
             max-width: 350px;
@@ -58,6 +71,8 @@
                 flex-shrink: 0;
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 margin-top: 20px;
                 .bottom-button {
                     flex: 1 1 auto;

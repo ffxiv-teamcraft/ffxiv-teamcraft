@@ -14,17 +14,23 @@
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
              (cbOnSuccess)="afterNameCopy(item.id)">
             <span
-                [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">{{item.id | itemName | i18n}}</span>
+                [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">
+                {{item.id | itemName | i18n}}
+            </span>
         </div>
+        <img src="https://ffxiv.gamerescape.com/w/images/thumb/1/18/HQ_Icon.png/14px-HQ_Icon.png" alt=""
+             matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
+             matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
-                             [isOwnList]="user?.$key === list?.authorId" (updated)="update.emit()"></app-comments-button>
+                             [isOwnList]="user?.$key === list?.authorId"
+                             (updated)="update.emit()"></app-comments-button>
         <button mat-icon-button
                 matTooltip="{{'Requirements_for_craft' | translate}}"
                 matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
                 (click)="openRequirementsPopup()">
-            <mat-icon color="primary">assignment</mat-icon>
+            <mat-icon color="accent">assignment</mat-icon>
         </button>
-        <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+        <mat-icon *ngIf="!hasBook" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
                   color="warn">
             warning
         </mat-icon>
@@ -233,7 +239,7 @@
                   (cbOnSuccess)="afterNameCopy(item.id)">{{item.id | itemName | i18n}}</span>
             <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                                  [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
-            <mat-icon *ngIf="!hasBook()" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+            <mat-icon *ngIf="!hasBook" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
                       color="warn">
                 warning
             </mat-icon>

@@ -1,6 +1,6 @@
 <app-pricing [list]="listData" *ngIf="pricingMode" (close)="pricingMode = false"></app-pricing>
 
-<div *ngIf="!pricingMode">
+<div *ngIf="!pricingMode && listData !== null">
     <div *ngIf="listDisplay | async as display; else loading">
         <div class="etime-container">
             <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
@@ -17,7 +17,7 @@
                 <mat-icon>label_outline</mat-icon>
             </button>
 
-            <button mat-mini-fab color="accent" [routerLink]="['/list-inventory', listData.$key]"
+            <button mat-mini-fab color="accent" *ngIf="listData !== null" [routerLink]="['/list-inventory', listData?.$key]"
                     matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}">
                 <mat-icon>apps</mat-icon>
             </button>
@@ -35,7 +35,7 @@
                 <mat-icon *ngIf="isFavorite()">favorite</mat-icon>
             </button>
 
-            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined && !listData.ephemeral"
+            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined && !listData?.ephemeral"
                     (click)="forkList(listData)"
                     matTooltip="{{'List_fork' | translate}}">
                 <mat-icon>content_copy</mat-icon>
@@ -44,7 +44,7 @@
 
             <button mat-mini-fab color="accent" matTooltip="{{'Reset_progression' | translate}}"
                     (click)="resetProgression()">
-                <mat-icon>refresh</mat-icon>
+                <mat-icon>replay</mat-icon>
             </button>
 
             <button mat-mini-fab color="accent" *ngIf="isOwnList()"
@@ -63,15 +63,15 @@
             <mat-icon>update</mat-icon>
             {{"Own_list_outdated_after_button"| translate}}
         </mat-error>
-        <mat-error *ngIf="listData.public && (listData.tags === undefined || listData.tags.length === 0)">
+        <mat-error *ngIf="listData?.public && (listData?.tags === undefined || listData?.tags.length === 0)">
             {{"LIST_DETAILS.Missing_tags_before_button" | translate}}
             <mat-icon>label_outline</mat-icon>
             {{"LIST_DETAILS.Missing_tags_after_button" | translate}}
         </mat-error>
 
-        <div *ngIf="listData.note !== undefined && listData.note !== '' || isOwnList()">
+        <div *ngIf="listData?.note !== undefined && listData?.note !== '' || isOwnList()">
             <mat-divider class="top-divider"></mat-divider>
-            <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData.ephemeral"></app-list-note>
+            <app-list-note [list]="listData" [readonly]="!isOwnList()" *ngIf="!listData?.ephemeral"></app-list-note>
         </div>
         <mat-divider class="top-divider"></mat-divider>
         <div class="options">
@@ -206,7 +206,7 @@
 
         <mat-divider></mat-divider>
 
-        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData.ephemeral" (change)="togglePublic()"
+        <mat-checkbox [checked]="listData?.public" *ngIf="isOwnList() && !listData?.ephemeral" (change)="togglePublic()"
                       class="public-list-toggle">
             {{'Public_list' | translate}}
         </mat-checkbox>

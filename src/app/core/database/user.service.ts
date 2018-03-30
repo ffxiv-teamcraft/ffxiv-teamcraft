@@ -66,7 +66,7 @@ export class UserService extends FirebaseStorage<AppUser> {
             .switchMap(() => {
                 return this.af.authState.first()
                     .mergeMap(user => {
-                        if (user === null && !this.loggingIn) {
+                        if ((user === null && !this.loggingIn) || user.uid === undefined) {
                             this.af.auth.signInAnonymously();
                             return Observable.of(<AppUser>{name: 'Anonymous', anonymous: true});
                         }
@@ -91,7 +91,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                     u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
                     return u;
                 });
-            });
+            })
+            .publishReplay(1)
+            .refCount();
     }
 
     /**

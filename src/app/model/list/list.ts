@@ -53,11 +53,12 @@ export class List extends DataModel {
         const clone = new List();
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals', 'note'].indexOf(prop) > -1) {
-                clone[prop] = this[prop];
+                clone[prop] = JSON.parse(JSON.stringify(this[prop]));
             }
         }
         clone.name = this.name;
         clone.version = this.version || '1.0.0';
+        clone.tags = this.tags;
         delete clone.$key;
         ga('send', 'event', 'List', 'creation');
         ga('send', 'event', 'List', 'clone');

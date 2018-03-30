@@ -140,7 +140,7 @@ export class LayoutRowFilter {
 
     static IS_GATHERED_BY_FSH = LayoutRowFilter.IS_GATHERING
         ._and(new LayoutRowFilter((row: ListRow) => {
-            return row.gatheredBy.type === 4;
+            return row.gatheredBy.icon.indexOf('FSH') > -1;
         }, 'IS_GATHERED_BY_FSH'));
 
     static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING');

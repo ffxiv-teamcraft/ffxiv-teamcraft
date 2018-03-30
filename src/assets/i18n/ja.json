@@ -1,4 +1,7 @@
 {
+    "Required_for_final_craft": "{{amount}} needed for final items",
+    "Compact_sidebar_toggle": "Toggle compact sidebar",
+    "Confirmation": "Confirmation",
     "Is_working_on_it": "{{name}} is working on it",
     "Work_on_it": "I'm working on it",
     "Add_as_collectible": "Add as collectable",
@@ -51,9 +54,9 @@
     "Item_name": "Item name",
     "No_items_found": "No item found",
     "Select_all":"Select all",
-    "Confirmation": "Confirmation",
-    "Yes": "Yes",
-    "No": "No",
+    "Do you really want to reset the list?": "本当にリストをリセットしますか？",
+    "Yes": "はい",
+    "No": "いいえ",
     "Crystals": "Crystals",
     "Gathering": "Gathering",
     "Other": "Other",
@@ -387,5 +390,16 @@
     "ANNOUNCEMENT":{
         "Title": "Announcement",
         "Read_more": "Read more"
+    },
+    "LIST_TEMPLATE": {
+        "Create_template": "Create a list template for this list",
+        "Dialog_title": "Template creation",
+        "Link_name": "Template name",
+        "target": "Target list",
+        "Share_link_copied": "Template share link copied to the clipboard",
+        "Copy_template_url": "Copy template url",
+        "Cloning_list": "Creating a copy of the list to your account",
+        "Redirect_notice": "You'll be redirected to the list once the clone is created",
+        "Not_found": "Template not found"
     }
 }

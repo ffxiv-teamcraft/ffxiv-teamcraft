@@ -243,11 +243,15 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     @Input()
     user: AppUser;
 
+    requiredForFinalCraft = 0;
+
     slot: number;
 
     canBeCrafted = false;
 
     hasTimers = false;
+
+    hasBook = true;
 
     /**
      * Expansion is the state of the "add amount" input field (shown or not).
@@ -301,12 +305,27 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
+        this.updateHasBook();
+        this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
                 this.worksOnIt = char;
                 this.cd.detectChanges();
             });
+        }
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.updateCanBeCrafted();
+        this.updateHasTimers();
+        this.updateMasterBooks();
+        this.updateTimers();
+        this.updateHasBook();
+        this.updateRequiredForEndCraft();
+        if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
+            this.userService.get(this.item.workingOnIt)
+                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
         }
     }
 
@@ -314,7 +333,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => {
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
             this.worksOnIt = char;
             this.cd.detectChanges();
         });
@@ -339,7 +358,6 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
      * Adds addition value to current done amount.
      */
     public addAddition() {
-
         this.setDone(this.item, this.item.done + this.addition, this.item.done);
         this.expanded = !this.expanded;
         this.addition = 0;
@@ -366,20 +384,23 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         })
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        this.updateCanBeCrafted();
-        this.updateHasTimers();
-        this.updateMasterBooks();
-        this.updateTimers();
-        if (this.item.workingOnIt !== undefined && this.worksOnIt === undefined) {
-            this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).subscribe(char => this.worksOnIt = char);
-        }
-    }
-
     updateCanBeCrafted(): void {
         // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
         this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
+    }
+
+    updateRequiredForEndCraft(): void {
+        const recipesNeedingItem = this.list.recipes
+            .filter(recipe => recipe.requires.find(req => req.id === this.item.id) !== undefined);
+        if (recipesNeedingItem.length === 0) {
+            this.requiredForFinalCraft = 0;
+        } else {
+            let count = 0;
+            recipesNeedingItem.forEach(recipe => {
+                count += recipe.requires.find(req => req.id === this.item.id).amount * recipe.amount;
+            });
+            this.requiredForFinalCraft = count;
+        }
     }
 
     toggleAlarm(id: number, type?: number): void {
@@ -435,26 +456,30 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.masterbooks = res;
     }
 
-    public hasBook(): boolean {
+    public updateHasBook(): boolean {
         // If we're loading the user or he's undefined, we can't provide this service so we assume he can craft it.
         if (this.user === undefined || this.user.anonymous) {
-            return true;
+            this.hasBook = true;
+            return;
         }
         // If this is a craft
         if (this.item.craftedBy !== undefined) {
             const books = this.masterbooks;
             // If there's no book for this item, it means that the user can craft it for sure.
             if (books.length === 0) {
-                return true;
+                this.hasBook = true;
+                return;
             }
             // If the user has at least one of the required books, it's okay.
             for (const book of books) {
                 if ((this.user.masterbooks || []).indexOf(book.id) > -1 || book.id.toString().indexOf('draft') > -1) {
-                    return true;
+                    this.hasBook = true;
+                    return;
                 }
             }
             // Else, he can't craft the item, put a warning on it.
-            return false;
+            this.hasBook = false;
+            return;
         }
         // If this is a gathering
         if (this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes.length > 0) {
@@ -464,12 +489,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 if (node.limitType !== undefined) {
                     const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
                     if (folkloreId !== undefined) {
-                        return (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                        this.hasBook = (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                        return;
                     }
                 }
             }
         }
-        return true;
+        this.hasBook = true;
+        return;
     }
 
     public setDone(row: ListRow, amount: number, done: number) {

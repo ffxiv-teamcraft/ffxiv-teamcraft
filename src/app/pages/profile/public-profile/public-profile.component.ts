@@ -23,8 +23,10 @@ export class PublicProfileComponent {
     constructor(route: ActivatedRoute, dataService: DataService, userService: UserService, listService: ListService,
                 private media: ObservableMedia) {
         this.ingameCharacter = route.params.mergeMap(params => userService.get(params.id))
-            .mergeMap(user => dataService.getCharacter(user.lodestoneId));
-        this.freeCompany = this.ingameCharacter.mergeMap(character => dataService.getFreeCompany(character.free_company));
+            .mergeMap(user => dataService.getCharacter(user.lodestoneId))
+            .catch(() => Observable.of(1));
+        this.freeCompany = this.ingameCharacter.filter(val => val !== null)
+            .mergeMap(character => dataService.getFreeCompany(character.free_company));
         this.publicLists = route.params.mergeMap(params => listService.getPublicListsByAuthor(params.id));
     }
 

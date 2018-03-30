@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.3"></a>
+## [3.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.2...v3.4.3) (2018-03-27)
+
+
+### Features
+
+* compact view for sidebar menu ([52c59f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/52c59f1)), closes [#294](https://github.com/Supamiu/ffxiv-teamcraft/issues/294)
+
+
+
+<a name="3.4.2"></a>
+## [3.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.1...v3.4.2) (2018-03-26)
+
+
+### Bug Fixes
+
+* list layout broken with listData is null ([2f14904](https://github.com/Supamiu/ffxiv-teamcraft/commit/2f14904))
+* long list notes no longer pushing buttons off screen ([34bbdb9](https://github.com/Supamiu/ffxiv-teamcraft/commit/34bbdb9))
+* various minor bugs reported by sentry ([7ed7f4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ed7f4b))
+
+
+### Features
+
+* Made 'Reset progression' more user-friendly ([2b5b68a](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b5b68a))
+* new list template feature (link that produces a copy of a given list) ([bac004e](https://github.com/Supamiu/ffxiv-teamcraft/commit/bac004e)), closes [#301](https://github.com/Supamiu/ffxiv-teamcraft/issues/301)
+
+
+
+<a name="3.4.1"></a>
+## [3.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0...v3.4.1) (2018-03-23)
+
+
+### Bug Fixes
+
+* alternating line colours do not work as expected when lines are hidden by a filter. ([b0e449a](https://github.com/Supamiu/ffxiv-teamcraft/commit/b0e449a)), closes [#288](https://github.com/Supamiu/ffxiv-teamcraft/issues/288) [#287](https://github.com/Supamiu/ffxiv-teamcraft/issues/287)
+* cloning a list resets its progression ([f0a31c6](https://github.com/Supamiu/ffxiv-teamcraft/commit/f0a31c6))
+* error when canceling login oauth dialog box ([2595228](https://github.com/Supamiu/ffxiv-teamcraft/commit/2595228))
+* error when creating a new layout and cancelling the dialog box ([0e72803](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e72803))
+* error when logging out ([c405537](https://github.com/Supamiu/ffxiv-teamcraft/commit/c405537))
+* errors in the console on a fresh new session ([87068dc](https://github.com/Supamiu/ffxiv-teamcraft/commit/87068dc))
+* IS_GATHERED_BY_FSH doesn't do anything ([6c4bb9a](https://github.com/Supamiu/ffxiv-teamcraft/commit/6c4bb9a)), closes [#290](https://github.com/Supamiu/ffxiv-teamcraft/issues/290)
+* list page slower with zone breakdown ([d97bc19](https://github.com/Supamiu/ffxiv-teamcraft/commit/d97bc19))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.0-beta.5...v3.4.0) (2018-03-22)
 

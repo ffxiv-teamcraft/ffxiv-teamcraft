@@ -18,13 +18,7 @@ export class ListLayoutPopupComponent {
 
     public availableLayouts: ListLayout[];
 
-    public get selectedIndex(): number {
-        return +(localStorage.getItem('layout:selected') || 0);
-    }
-
-    public set selectedIndex(index: number) {
-        localStorage.setItem('layout:selected', index.toString());
-    }
+    public selectedIndex = 0;
 
     constructor(public layoutService: LayoutService, private dialogRef: MatDialogRef<ListLayoutPopupComponent>,
                 private dialog: MatDialog, private snackBar: MatSnackBar, private translator: TranslateService,
@@ -32,6 +26,7 @@ export class ListLayoutPopupComponent {
         this.layoutService.layouts.subscribe(layouts => {
             this.availableLayouts = layouts;
         });
+        this.selectedIndex = +(localStorage.getItem('layout:selected') || 0);
     }
 
     public newLayout(): void {
@@ -50,6 +45,7 @@ export class ListLayoutPopupComponent {
     }
 
     public save(): void {
+        localStorage.setItem('layout:selected', this.selectedIndex.toString());
         this.layoutService.persist(this.availableLayouts).subscribe(() => {
             this.dialogRef.close();
         });

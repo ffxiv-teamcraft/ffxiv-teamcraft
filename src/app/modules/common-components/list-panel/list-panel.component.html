@@ -36,6 +36,20 @@
                         (click)="$event.stopPropagation(); openLinkPopup(list)">
                     <mat-icon>link</mat-icon>
                 </button>
+                <button mat-icon-button
+                        *ngIf="!list.ephemeral && buttons && templateButton && templateUrl === undefined"
+                        matTooltip="{{'LIST_TEMPLATE.Create_template' | translate}}" matTooltipPosition="above"
+                        (click)="$event.stopPropagation(); openTemplatePopup(list)">
+                    <mat-icon>description</mat-icon>
+                </button>
+                <button mat-icon-button
+                        *ngIf="!list.ephemeral && buttons && templateButton && templateUrl !== undefined" ngxClipboard
+                        [cbContent]="templateUrl"
+                        (click)="$event.stopPropagation()"
+                        matTooltip="{{'LIST_TEMPLATE.Copy_template_url' | translate}}" matTooltipPosition="above"
+                        (cbOnSuccess)="showTemplateCopiedNotification()">
+                    <mat-icon>content_paste</mat-icon>
+                </button>
                 <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
                         (click)="$event.stopPropagation()"
                         matTooltip="{{'Share' | translate}}" matTooltipPosition="above"

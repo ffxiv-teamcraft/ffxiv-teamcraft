@@ -75,7 +75,7 @@ export class LoginPopupComponent {
             const prevUser = this.af.auth.currentUser;
             this.listService.getUserLists(prevUser.uid).subscribe(listsBackup => {
                 // Delete the previous anonymous user
-                if (this.af.auth.currentUser.isAnonymous) {
+                if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
                     this.userService.deleteUser(prevUser.uid);
                     this.af.auth.currentUser.delete();
                 }
@@ -99,10 +99,12 @@ export class LoginPopupComponent {
                                         this.listService.add(list);
                                     });
                                     this.notVerified = true;
+                                    this.userService.reload();
                                 });
                             });
                         } else {
                             this.login(auth).then(() => {
+                                this.userService.reload();
                                 this.dialogRef.close();
                             }).catch(() => {
                                 this.errorState(listsBackup);
@@ -121,6 +123,7 @@ export class LoginPopupComponent {
                     this.listService.add(list);
                 });
                 this.error = true;
+                this.userService.reload();
             });
         });
     }
@@ -128,16 +131,21 @@ export class LoginPopupComponent {
     private oauth(provider: AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid).subscribe(lists => {
-            if (this.af.auth.currentUser.isAnonymous) {
+            if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
                 this.userService.deleteUser(prevUser.uid);
                 this.af.auth.currentUser.delete();
             }
             this.af.auth.signInWithPopup(provider).then((oauth) => {
                 this.login(oauth.user).then(() => {
+                    this.userService.reload();
                     this.dialogRef.close();
                 }).catch(() => {
+                    this.userService.reload();
                     this.errorState(lists);
                 });
+                this.userService.reload();
+            }).catch(() => {
+                this.userService.reload();
             });
         });
     }

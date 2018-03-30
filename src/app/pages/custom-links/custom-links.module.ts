@@ -20,6 +20,7 @@ import {FormsModule} from '@angular/forms';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {ClipboardModule} from 'ngx-clipboard';
+import {TemplateModule} from '../template/template.module';
 
 const routes: Routes = [{
     path: 'custom-links',
@@ -47,6 +48,7 @@ const routes: Routes = [{
         MatTooltipModule,
 
         CoreModule,
+        TemplateModule,
         CommonComponentsModule,
     ],
     declarations: [

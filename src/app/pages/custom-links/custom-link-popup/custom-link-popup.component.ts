@@ -1,6 +1,6 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
-import {MAT_DIALOG_DATA, MatDialogRef, MatSnackBar} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {WorkshopService} from '../../../core/database/workshop.service';
 import {ListService} from '../../../core/database/list.service';
@@ -9,13 +9,14 @@ import {Observable} from 'rxjs/Observable';
 import {List} from '../../../model/list/list';
 import {UserService} from '../../../core/database/user.service';
 import {TranslateService} from '@ngx-translate/core';
+import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popup.component';
 
 @Component({
     selector: 'app-custom-link-popup',
     templateUrl: './custom-link-popup.component.html',
     styleUrls: ['./custom-link-popup.component.scss']
 })
-export class CustomLinkPopupComponent {
+export class CustomLinkPopupComponent implements OnInit {
 
     types: {
         workshop: Observable<Workshop[]>,
@@ -33,8 +34,9 @@ export class CustomLinkPopupComponent {
     uri: string;
 
     constructor(private customLinksService: CustomLinksService, @Inject(MAT_DIALOG_DATA) private data: CustomLink,
-                workshopService: WorkshopService, listService: ListService, userService: UserService,
-                private dialogRef: MatDialogRef<CustomLinkPopupComponent>, private snack: MatSnackBar, private translator: TranslateService) {
+                workshopService: WorkshopService, listService: ListService, private userService: UserService,
+                private dialogRef: MatDialogRef<CustomLinkPopupComponent>, private snack: MatSnackBar,
+                private translator: TranslateService, private dialog: MatDialog) {
         if (this.data !== null) {
             const parsedLink = this.data.redirectTo.split('/');
             this.selectedType = parsedLink[0];
@@ -49,6 +51,24 @@ export class CustomLinkPopupComponent {
             workshop: userService.getUserData().mergeMap(user => workshopService.getUserWorkshops(user.$key)),
             list: userService.getUserData().mergeMap(user => listService.getUserLists(user.$key))
         };
+    }
+
+    ngOnInit(): void {
+        this.userService.getUserData()
+            .mergeMap(user => {
+                if (user.nickname === undefined || user.nickname.length === 0) {
+                    return this.dialog.open(NicknamePopupComponent, {
+                        data: {
+                            user: user,
+                            hintTextKey: 'PROFILE.Feature_requires_nickname',
+                            canCancel: false
+                        },
+                        disableClose: true,
+                    }).afterClosed();
+                }
+                return Observable.empty();
+            })
+            .subscribe();
     }
 
     canConfirm(): boolean {

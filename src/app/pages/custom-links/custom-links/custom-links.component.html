@@ -19,10 +19,11 @@
                     (click)="$event.stopPropagation()"
                     matTooltip="{{'Share' | translate}}"
                     matTooltipPosition="above"
-                    (cbOnSuccess)="showCopiedNotification()">
+                    (cbOnSuccess)="link.template?showTemplateCopiedNotification():showCopiedNotification()">
                 <mat-icon>share</mat-icon>
             </button>
-            <button mat-icon-button color="accent" routerLink="/{{link.redirectTo}}">
+            <button mat-icon-button color="accent"
+                    routerLink="{{link.template?'/list/'+link.originalListId:'/'+link.redirectTo}}">
                 <mat-icon>open_in_new</mat-icon>
             </button>
             <button mat-icon-button color="accent" (click)="editLink(link)">

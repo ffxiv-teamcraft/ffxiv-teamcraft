@@ -7,7 +7,7 @@ import {DiffService} from '../diff/diff.service';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class CustomLinksService extends FirebaseStorage<CustomLink> {
+export class CustomLinksService<T extends CustomLink = CustomLink> extends FirebaseStorage<T> {
 
     constructor(protected database: AngularFireDatabase,
                 protected serializer: NgSerializerService,
@@ -16,22 +16,22 @@ export class CustomLinksService extends FirebaseStorage<CustomLink> {
         super(database, serializer, diffService, zone);
     }
 
-    public getAllByAuthor(userKey: string): Observable<CustomLink[]> {
+    public getAllByAuthor(userKey: string): Observable<T[]> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('author').equalTo(userKey))
             .snapshotChanges()
             .map(snaps => snaps
                 .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
-                .map(l => this.serializer.deserialize<CustomLink>(l, CustomLink))
+                .map(l => this.serializer.deserialize<T>(l, this.getClass()))
             );
     }
 
-    public getByUriAndNickname(uri: string, nickName: string): Observable<CustomLink> {
+    public getByUriAndNickname(uri: string, nickName: string): Observable<T> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('uri').equalTo(uri))
             .snapshotChanges()
             .first()
             .map(snaps => snaps
                 .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
-                .map(l => this.serializer.deserialize<CustomLink>(l, CustomLink))
+                .map(l => this.serializer.deserialize<T>(l, this.getClass()))
             )
             .map(res => res.filter(link => link.authorNickname === nickName))
             .map(res => res[0]);

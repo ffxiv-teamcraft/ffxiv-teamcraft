@@ -36,6 +36,7 @@ mat-slide-toggle {
     display: flex;
     app-list-panel {
         flex-grow: 1;
+        max-width: calc(100% - 40px);
     }
 }
 
