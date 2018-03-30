@@ -1,4 +1,5 @@
 {
+    "Required_for_final_craft": "{{amount}} needed for final items",
     "Compact_sidebar_toggle": "Toggle compact sidebar",
     "Confirmation": "Confirmation",
     "Is_working_on_it": "{{name}} is working on it",

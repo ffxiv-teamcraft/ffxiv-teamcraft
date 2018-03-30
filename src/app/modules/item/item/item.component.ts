@@ -243,6 +243,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     @Input()
     user: AppUser;
 
+    requiredForFinalCraft = 0;
+
     slot: number;
 
     canBeCrafted = false;
@@ -304,6 +306,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateMasterBooks();
         this.updateTimers();
         this.updateHasBook();
+        this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
                 .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
@@ -319,6 +322,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateMasterBooks();
         this.updateTimers();
         this.updateHasBook();
+        this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
                 .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
@@ -383,6 +387,20 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     updateCanBeCrafted(): void {
         // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
         this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
+    }
+
+    updateRequiredForEndCraft(): void {
+        const recipesNeedingItem = this.list.recipes
+            .filter(recipe => recipe.requires.find(req => req.id === this.item.id) !== undefined);
+        if (recipesNeedingItem.length === 0) {
+            this.requiredForFinalCraft = 0;
+        } else {
+            let count = 0;
+            recipesNeedingItem.forEach(recipe => {
+                count += recipe.requires.find(req => req.id === this.item.id).amount * recipe.amount;
+            });
+            this.requiredForFinalCraft = count;
+        }
     }
 
     toggleAlarm(id: number, type?: number): void {
