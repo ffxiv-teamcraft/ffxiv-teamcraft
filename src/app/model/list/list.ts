@@ -58,6 +58,7 @@ export class List extends DataModel {
         }
         clone.name = this.name;
         clone.version = this.version || '1.0.0';
+        clone.tags = this.tags;
         delete clone.$key;
         ga('send', 'event', 'List', 'creation');
         ga('send', 'event', 'List', 'clone');
