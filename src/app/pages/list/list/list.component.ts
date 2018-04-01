@@ -13,6 +13,7 @@ import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {SeoService} from '../../../core/seo/seo.service';
 
 @Component({
     selector: 'app-list',
@@ -30,7 +31,7 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 
     constructor(protected dialog: MatDialog, help: HelpService, private route: ActivatedRoute,
                 private listService: ListService, private title: Title, private translate: TranslateService,
-                private data: LocalizedDataService, protected media: ObservableMedia) {
+                private data: LocalizedDataService, protected media: ObservableMedia, private seo: SeoService) {
         super(dialog, help, media);
     }
 
@@ -61,6 +62,13 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
                     this.notFound = true;
                     return Observable.of(null);
                 });
+        }).do(list => {
+            this.seo.setConfig({
+                title: 'FFXIV Teamcraft',
+                description: list.name,
+                image: '/assets/branding/logo.png',
+                slug: '/list/' + list.$key
+            })
         });
     }
 
