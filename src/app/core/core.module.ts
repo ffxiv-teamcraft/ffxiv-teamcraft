@@ -37,6 +37,7 @@ import {VenturesExtractor} from './list/data/extractor/ventures-extractor';
 import {CustomLinksService} from './database/custom-links/custom-links.service';
 import {PatreonGuard} from './guard/patreon.guard';
 import {MathToolsService} from './tools/math-tools';
+import {SeoService} from './seo/seo.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -84,6 +85,7 @@ const dataExtractorProviders: Provider[] = [
         CustomLinksService,
         PatreonGuard,
         MathToolsService,
+        SeoService,
     ],
     declarations: [
         I18nPipe,
