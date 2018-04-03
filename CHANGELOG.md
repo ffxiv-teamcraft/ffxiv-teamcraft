@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.4"></a>
+## [3.4.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.3...v3.4.4) (2018-04-03)
+
+
+### Bug Fixes
+
+* "working on it" avatar no longer wrong after some manipulations ([e91ba36](https://github.com/Supamiu/ffxiv-teamcraft/commit/e91ba36))
+* macro translation is now working properly with non-skill lines ([f456443](https://github.com/Supamiu/ffxiv-teamcraft/commit/f456443))
+* tags now copy over lists ([85fba38](https://github.com/Supamiu/ffxiv-teamcraft/commit/85fba38)), closes [#304](https://github.com/Supamiu/ffxiv-teamcraft/issues/304)
+
+
+### Features
+
+* new right-side drawer to show alarm timers no matter which page you're on ([ebaa7fe](https://github.com/Supamiu/ffxiv-teamcraft/commit/ebaa7fe))
+* show indicator for items used for final crafts ([1e11c8c](https://github.com/Supamiu/ffxiv-teamcraft/commit/1e11c8c))
+* you can now copy isearch macros for items using the new magnifying glass icon ([9b206cb](https://github.com/Supamiu/ffxiv-teamcraft/commit/9b206cb)), closes [#276](https://github.com/Supamiu/ffxiv-teamcraft/issues/276)
+
+
+
 <a name="3.4.3"></a>
 ## [3.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.2...v3.4.3) (2018-03-27)
 
