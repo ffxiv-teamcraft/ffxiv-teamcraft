@@ -137,7 +137,7 @@ export class AppComponent implements OnInit {
                     lastLS = '{}';
                 }
                 const last = JSON.parse(lastLS || '{}');
-                if (last.text !== announcement.text && last.link !== announcement.link) {
+                if (last.text !== announcement.text) {
                     this.dialog.open(AnnouncementPopupComponent, {data: announcement})
                         .afterClosed()
                         .first()
