@@ -24,7 +24,7 @@
 
         <button matTooltipPosition="above"
                 matTooltip="{{'Copy_isearch' | translate}}"
-                mat-icon-button ngxClipboard cbContent="/isearch {{item.id | itemName | i18n}}"
+                mat-icon-button ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
                 (cbOnSuccess)="afterNameCopy(item.id)"><mat-icon>search</mat-icon></button>
 
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
