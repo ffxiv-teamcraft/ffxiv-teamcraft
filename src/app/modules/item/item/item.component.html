@@ -18,9 +18,15 @@
                 {{item.id | itemName | i18n}}
             </span>
         </div>
-        <img src="https://ffxiv.gamerescape.com/w/images/thumb/1/18/HQ_Icon.png/14px-HQ_Icon.png" alt=""
+        <img src="/assets/icons/HQ.png" alt=""
              matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
              matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
+
+        <button matTooltipPosition="above"
+                matTooltip="{{'Copy_isearch' | translate}}"
+                mat-icon-button ngxClipboard cbContent="/isearch {{item.id | itemName | i18n}}"
+                (cbOnSuccess)="afterNameCopy(item.id)"><mat-icon>search</mat-icon></button>
+
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.$key === list?.authorId"
                              (updated)="update.emit()"></app-comments-button>

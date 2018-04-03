@@ -1,4 +1,6 @@
 {
+    "Copy_isearch": "Copy isearch macro",
+    "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
     "Required_for_final_craft": "{{amount}} needed for final items",
     "Compact_sidebar_toggle": "Toggle compact sidebar",
     "Confirmation": "Confirmation",
@@ -366,12 +368,12 @@
         "Title": "Optimized navigation route",
         "Steps": "Steps"
     },
-    "GATHERING_LOCATIONS":{
+    "GATHERING_LOCATIONS": {
         "Title": "Gathering items",
         "No_items": "No gathering node found",
         "Gathering_name": "Enter item name"
     },
-    "ANNOUNCEMENT":{
+    "ANNOUNCEMENT": {
         "Title": "Announcement",
         "Read_more": "Read more"
     },

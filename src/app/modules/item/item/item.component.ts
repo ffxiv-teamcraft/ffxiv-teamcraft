@@ -300,6 +300,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         );
     }
 
+    public afterIsearchCopy(id: number): void {
+        this.snackBar.open(
+            this.translator.instant('Isearch_copied',
+                {itemname: this.localizedData.getItem(id)[this.translator.currentLang]}),
+            '',
+            {
+                duration: 2000,
+                extraClasses: ['snack']
+            }
+        );
+    }
+
     ngOnInit(): void {
         this.updateCanBeCrafted();
         this.updateHasTimers();
