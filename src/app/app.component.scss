@@ -108,6 +108,16 @@
         }
         .content {
             overflow: auto;
+            position: relative;
+            .alarms-sidebar-trigger {
+                position: fixed;
+                right: 5px;
+                bottom: 5px;
+                transition: right .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                &.opened {
+                    right: 255px;
+                }
+            }
             .content-middle {
                 padding: 10px;
                 width: 90%;

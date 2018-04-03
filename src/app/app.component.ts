@@ -1,11 +1,11 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {User} from 'firebase/app';
-import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
+import {MatDialog, MatSidenav, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
 import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
@@ -34,6 +34,9 @@ declare const ga: Function;
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+    @ViewChild('timers')
+    timersSidebar: MatSidenav;
 
     locale: string;
 

@@ -1,4 +1,5 @@
 {
+    "Timers": "Alarmes",
     "Copy_isearch": "Copier la macro de recherche en jeu",
     "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
     "Required_for_final_craft": "{{amount}} nécessaire pour un craft final",
