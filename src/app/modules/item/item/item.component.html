@@ -25,7 +25,9 @@
         <button matTooltipPosition="above"
                 matTooltip="{{'Copy_isearch' | translate}}"
                 mat-icon-button ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
-                (cbOnSuccess)="afterNameCopy(item.id)"><mat-icon>search</mat-icon></button>
+                (cbOnSuccess)="afterNameCopy(item.id)">
+            <mat-icon>search</mat-icon>
+        </button>
 
         <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                              [isOwnList]="user?.$key === list?.authorId"
@@ -128,13 +130,11 @@
         </div>
 
         <div class="classes">
-            <div *ngIf="item.craftedBy !== undefined">
-                <div *ngFor="let craft of item.craftedBy">
-                    <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
-                         *ngIf="craft.icon !== ''"
-                         matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                         matTooltipPosition="above" src="{{craft.icon}}">
-                </div>
+            <div *ngFor="let craft of item.craftedBy">
+                <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                     *ngIf="craft.icon !== ''"
+                     matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                     matTooltipPosition="above" src="{{craft.icon}}">
             </div>
             <div>
                 <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
