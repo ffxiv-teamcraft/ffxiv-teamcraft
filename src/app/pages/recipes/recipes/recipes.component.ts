@@ -236,7 +236,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
         ga('send', 'event', 'List', 'creation');
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
         list.ephemeral = true;
-        this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
+        this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .switchMap((l) => {
                 return this.userService.getUserData().map(u => {
                     l.authorId = u.$key;
@@ -253,7 +253,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 this.listService.getRouterPath(l.$key).subscribe(path => {
                     this.router.navigate(path);
                 });
-            });
+            }));
     }
 
     /**
