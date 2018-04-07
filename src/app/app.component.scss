@@ -111,7 +111,7 @@
             position: relative;
             .alarms-sidebar-trigger {
                 position: fixed;
-                right: 5px;
+                right: 25px;
                 bottom: 5px;
                 transition: right .4s cubic-bezier(0.25, 0.8, 0.25, 1);
                 &.opened {
