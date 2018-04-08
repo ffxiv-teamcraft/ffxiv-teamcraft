@@ -345,10 +345,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
-            this.worksOnIt = char;
-            this.cd.detectChanges();
-        });
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId))
+            .first()
+            .subscribe(char => {
+                this.worksOnIt = char;
+                this.cd.detectChanges();
+            });
     }
 
     public removeWorkingOnIt(): void {

@@ -5,12 +5,14 @@ import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirestoreStorage} from '../firebase/firestore-storage';
 import {AngularFirestore} from 'angularfire2/firestore';
+import {PendingChangesService} from '../../pending-changes/pending-changes.service';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
 
-    constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone) {
-        super(firestore, serializer, zone);
+    constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
+        super(firestore, serializer, zone, pendingChangesService);
     }
 
     getPublicLists(): Observable<List[]> {

@@ -6,12 +6,14 @@ import {AngularFirestore} from 'angularfire2/firestore';
 import {Observable} from 'rxjs/Observable';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import {List} from '../../model/list/list';
+import {PendingChangesService} from './pending-changes/pending-changes.service';
 
 @Injectable()
 export class WorkshopService extends FirestoreStorage<Workshop> {
 
-    constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone) {
-        super(firestore, serializer, zone);
+    constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
+        super(firestore, serializer, zone, pendingChangesService);
     }
 
     getUserWorkshops(uid: string): Observable<Workshop[]> {

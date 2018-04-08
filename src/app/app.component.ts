@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -25,6 +25,7 @@ import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
+import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 
 declare const ga: Function;
 
@@ -79,7 +80,8 @@ export class AppComponent implements OnInit {
                 public helpService: HelpService,
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
-                public cd: ChangeDetectorRef) {
+                public cd: ChangeDetectorRef,
+                private pendingChangesService: PendingChangesService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -160,6 +162,13 @@ export class AppComponent implements OnInit {
 
     openHelp(): void {
         this.dialog.open(this.helpService.currentHelp);
+    }
+
+    @HostListener('window:beforeunload', ['$event'])
+    onBeforeUnload($event) {
+        if (this.pendingChangesService.hasPendingChanges()) {
+            $event.returnValue = true;
+        }
     }
 
     ngOnInit(): void {

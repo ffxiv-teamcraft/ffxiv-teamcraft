@@ -9,6 +9,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from './diff/diff.service';
+import {PendingChangesService} from './pending-changes/pending-changes.service';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -23,8 +24,9 @@ export class UserService extends FirebaseStorage<AppUser> {
                 private listService: ListService,
                 protected serializer: NgSerializerService,
                 protected diffService: DiffService,
-                protected zone: NgZone) {
-        super(database, serializer, diffService, zone);
+                protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
+        super(database, serializer, diffService, zone, pendingChangesService);
     }
 
     public set(uid: string, user: AppUser): Observable<void> {
