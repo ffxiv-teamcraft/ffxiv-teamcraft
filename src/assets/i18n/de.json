@@ -229,6 +229,7 @@
         "Nickname": "Nickname",
         "No_nickname": "Kein Nickname vergeben",
         "Patreon_link_email": "Mit Patreon-Email verknüpfen",
+        "Patreon_edit_email": "Patreon-Email bearbeiten",
         "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
         "Patreon_email": "Patreon-Email",
         "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",

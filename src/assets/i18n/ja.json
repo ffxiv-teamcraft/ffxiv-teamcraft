@@ -237,7 +237,8 @@
         "Feature_requires_nickname": "This feature requires you to set a nickname",
         "Nickname": "Nickname",
         "No_nickname": "No nickname set",
-        "Patreon_link_email": "Link patreon email",
+        "Patreon_link_email": "Link patreon email",,
+        "Patreon_edit_email": "Edit patreon email",
         "Email_already_used": "Email already linked to another account",
         "Patreon_email": "Patreon Email",
         "HELP": {
