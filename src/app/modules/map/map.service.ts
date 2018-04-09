@@ -101,7 +101,9 @@ export class MapService {
                 y: point.y,
                 isTeleport: false,
                 name: point.name,
-                iconid: point.iconid
+                iconid: point.iconid,
+                item_amount: point.item_amount,
+                type: point.type
             }));
         const availableAetherytesPoints: NavigationStep[] = availableAetherytes.map(aetheryte => ({
             x: aetheryte.x,

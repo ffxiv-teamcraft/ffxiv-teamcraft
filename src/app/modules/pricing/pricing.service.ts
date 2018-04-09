@@ -76,7 +76,7 @@ export class PricingService {
     }
 
     /**
-     * Saves a given amount to the storage system
+     * Saves a given item_amount to the storage system
      * @param listUid
      * @param {ListRow} item
      * @param {Price} amount
@@ -112,8 +112,8 @@ export class PricingService {
     }
 
     /**
-     * Gets the amount of nq and hq items used for a given list, if nothing is found in localStorage, returns a default object
-     * with item.amount as nq amount and 0 as hq amount.
+     * Gets the item_amount of nq and hq items used for a given list, if nothing is found in localStorage, returns a default object
+     * with item.item_amount as nq item_amount and 0 as hq item_amount.
      *
      * @param listUid
      * @param {ListRow} item

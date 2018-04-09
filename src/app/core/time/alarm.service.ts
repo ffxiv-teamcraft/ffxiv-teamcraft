@@ -185,7 +185,7 @@ export class AlarmService {
     }
 
     /**
-     * Return the amount of minutes before the next alarm of the item.
+     * Return the item_amount of minutes before the next alarm of the item.
      * @param {ListRow} item
      * @returns {Observable<number>}
      */
@@ -350,7 +350,7 @@ export class AlarmService {
     }
 
     /**
-     * Returns the amount of minutes before a given alarm.
+     * Returns the item_amount of minutes before a given alarm.
      * @param {number} currentTime
      * @param hours
      * @param minutes

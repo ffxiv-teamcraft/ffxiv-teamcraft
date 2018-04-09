@@ -367,7 +367,8 @@
     },
     "NAVIGATION": {
         "Title": "Optimierte Navigationsroute",
-        "Steps": "Stationen"
+        "Steps": "Stationen",
+        "Gather_x": "Sammel {{amount}}"
     },
     "GATHERING_LOCATIONS": {
         "Title": "Sammelgegenstand-Suche",

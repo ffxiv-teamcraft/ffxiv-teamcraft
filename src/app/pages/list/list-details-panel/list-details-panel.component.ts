@@ -147,11 +147,19 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
         const data: { mapId: number, points: NavigationObjective[] } = {
             mapId: zoneBreakdownRow.zoneId,
-            points: zoneBreakdownRow.items
+            points: <NavigationObjective[]>zoneBreakdownRow.items
+                .filter(item => item.done <= item.amount_needed)
                 .map(item => {
                     const coords = this.getCoords(item, zoneBreakdownRow);
                     if (coords !== undefined) {
-                        return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                        return <NavigationObjective>{
+                            x: coords.x,
+                            y: coords.y,
+                            name: this.l12n.getItem(item.id),
+                            iconid: item.icon,
+                            item_amount: item.amount_needed - item.done,
+                            type: 'Gathering'
+                        }
                     }
                     return undefined;
                 })
@@ -172,6 +180,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
         return zoneBreakdownRow.items
+            .filter(item => item.done <= item.amount)
             .map(item => {
                 const coords = this.getCoords(item, zoneBreakdownRow);
                 if (coords === undefined) {

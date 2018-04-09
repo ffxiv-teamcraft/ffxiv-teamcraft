@@ -25,7 +25,7 @@ export class EorzeanTimeService {
     }
 
     /**
-     * Converts an eorzean minutes amount to an earth seconds amount.
+     * Converts an eorzean minutes item_amount to an earth seconds item_amount.
      * @returns {Date}
      * @param minutes
      */

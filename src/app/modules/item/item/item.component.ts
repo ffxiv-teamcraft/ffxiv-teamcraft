@@ -254,7 +254,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     hasBook = true;
 
     /**
-     * Expansion is the state of the "add amount" input field (shown or not).
+     * Expansion is the state of the "add item_amount" input field (shown or not).
      */
     expanded = false;
 
@@ -369,7 +369,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     /**
-     * Adds addition value to current done amount.
+     * Adds addition value to current done item_amount.
      */
     public addAddition() {
         this.setDone(this.item, this.item.done + this.addition, this.item.done);
@@ -378,7 +378,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     /**
-     * Removes addition value to current done amount.
+     * Removes addition value to current done item_amount.
      */
     public removeAddition() {
         this.setDone(this.item, this.item.done - this.addition, this.item.done);
@@ -399,7 +399,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     updateCanBeCrafted(): void {
-        // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
+        // this.item.done < this.item.item_amount check is made to avoid item being cmarked as craftable while you already crafted it.
         this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
     }
 

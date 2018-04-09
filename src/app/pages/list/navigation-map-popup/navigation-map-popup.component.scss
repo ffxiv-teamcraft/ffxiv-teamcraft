@@ -1,5 +1,9 @@
 mat-list-item {
     margin: 5px 0;
+    .step-type {
+        text-align: end;
+        width: 100%;
+    }
 }
 
 .navigation-container {

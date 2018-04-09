@@ -4,4 +4,6 @@ import {I18nName} from '../../model/list/i18n-name';
 export interface NavigationObjective extends Vector2 {
     name: I18nName;
     iconid?: number;
+    item_amount?: number;
+    type?: 'Gathering' | 'Hunting';
 }

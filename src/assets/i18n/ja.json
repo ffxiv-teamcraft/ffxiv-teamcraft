@@ -383,7 +383,8 @@
     },
     "NAVIGATION": {
         "Title": "Optimized navigation route",
-        "Steps": "Steps"
+        "Steps": "Steps",
+        "Gather_x": "Gather {{amount}}"
     },
     "GATHERING_LOCATIONS":{
         "Title": "Récoltes",

@@ -375,7 +375,8 @@
     },
     "NAVIGATION": {
         "Title": "Parcours optimisé",
-        "Steps": "Étapes"
+        "Steps": "Étapes",
+        "Gather_x": "Récolter {{amount}}"
     },
     "GATHERING_LOCATIONS":{
         "Title": "Récoltes",

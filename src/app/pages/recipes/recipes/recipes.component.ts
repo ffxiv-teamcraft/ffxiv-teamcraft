@@ -207,7 +207,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
      * @param {Recipe} recipe The recipe we want to add
      * @param {List} list The list we want to add the recipe to
      * @param {string} key The database key of the list
-     * @param {string} amount The amount of items we want to add, this is handled as a string because a string is expected from the template
+     * @param {string} amount The item_amount of items we want to add, this is handled as a string because a string is expected from the template
      * @param collectible
      */
     addRecipe(recipe: Recipe, list: List, key: string, amount: string, collectible: boolean): void {

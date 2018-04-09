@@ -36,6 +36,10 @@
             <img mat-list-avatar src="{{step.iconid | icon}}" *ngIf="!step.isTeleport && step.iconid !== undefined">
             <b mat-line>{{step.name | i18n}}</b>
             <span mat-line>X: {{step.x}} - Y: {{step.y}}</span>
+            <div class="step-type" *ngIf="step.type === 'Gathering'">{{'NAVIGATION.Gather_x' | translate:{amount: step.item_amount} }}
+            </div>
+            <div class="step-type" *ngIf="step.type === 'Hunting'">{{'NAVIGATION.Gather_x' | translate:{amount: step.item_amount} }}
+            </div>
         </mat-list-item>
     </mat-list>
 </div>
