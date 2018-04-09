@@ -178,19 +178,19 @@ export class List extends DataModel {
     }
 
     /**
-     * Cleans the list, checking amounts and removing useless rows (with item_amount <= 0).
+     * Cleans the list, checking amounts and removing useless rows (with amount <= 0).
      * @returns {List}
      */
     public clean(): List {
         for (const prop of Object.keys(this)) {
             if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
-                // We don't want to check the item_amount of items required for recipes, as they can't be wrong (provided by the user only).
+                // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
                 if (prop !== 'recipes') {
                     this[prop].forEach(row => {
                         if (prop !== 'preCrafts') {
-                            row.item_amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
+                            row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
                         } else {
-                            row.item_amount = this.totalAmountRequired(<ListRow>row);
+                            row.amount = this.totalAmountRequired(<ListRow>row);
                             row.amount_needed = Math.ceil(row.amount / row.yield);
                         }
                     });
@@ -202,7 +202,7 @@ export class List extends DataModel {
     }
 
     /**
-     * Gets the total item_amount needed for a given item based on requirements of the crafts in the list.
+     * Gets the total amount needed for a given item based on requirements of the crafts in the list.
      * @param {ListRow} item
      * @returns {number}
      */
@@ -328,7 +328,7 @@ export class List extends DataModel {
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    // If the item_amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
+                    // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
                     // as we didn't use more.
                     this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
                 }

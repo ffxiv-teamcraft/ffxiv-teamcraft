@@ -40,7 +40,7 @@ describe('PricingService', () => {
         expect(service.getPrice(row).hq).toBe(0);
     }));
 
-    it('should be able to store item_amount', inject([PricingService], (service: PricingService) => {
+    it('should be able to store amount', inject([PricingService], (service: PricingService) => {
         const row = new ListRow();
         row.id = 546898;
         service.saveAmount('foo', row, {nq: 123, hq: 456});
@@ -48,7 +48,7 @@ describe('PricingService', () => {
         expect(service.getAmount('foo', row).hq).toBe(456);
     }));
 
-    it('should be able to return default item_amount', inject([PricingService], (service: PricingService) => {
+    it('should be able to return default amount', inject([PricingService], (service: PricingService) => {
         const row = new ListRow();
         row.id = 546898;
         row.amount = 123456;

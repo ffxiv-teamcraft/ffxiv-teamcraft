@@ -46,7 +46,7 @@ export class PricingComponent {
         let total = 0;
         // For each row of the list
         rows.forEach(row => {
-            // Get the item_amount of items required.
+            // Get the amount of items required.
             const amount = this.pricingService.getAmount(this.list.$key, row);
             // Get the price of the item.
             const price = this.pricingService.getPrice(row);
