@@ -29,15 +29,6 @@ export abstract class PageComponent extends ComponentWithSubscriptions implement
      * On Init, check if dialog has already been opened, if not, open it and add informations to the localstorage that it has been opened.
      */
     public ngOnInit(): void {
-        // setTimeout is here as a hotfix to an error happening if we create the dialog right on change detection timing
-        // (https://github.com/angular/angular/issues/15634)
-        setTimeout(() => {
-            this.helpService.currentHelp = this.getHelpDialog();
-            if (localStorage.getItem(`${this.constructor.name}:help`) !== 'true') {
-                this.dialog.open(this.getHelpDialog()).afterClosed().subscribe(() => {
-                    localStorage.setItem(`${this.constructor.name}:help`, 'true');
-                });
-            }
-        }, 100);
+        this.helpService.currentHelp = this.getHelpDialog();
     }
 }
