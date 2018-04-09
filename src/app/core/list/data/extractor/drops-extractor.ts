@@ -3,6 +3,7 @@ import {Drop} from '../../../../model/list/drop';
 import {ItemData} from '../../../../model/garland-tools/item-data';
 import {DataType} from '../data-type';
 import {Item} from '../../../../model/garland-tools/item';
+import * as monsters from '../../../data/sources/monsters.json';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
@@ -15,10 +16,12 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         item.drops.forEach(d => {
             const partial = itemData.getPartial(d.toString(), 'mob');
             if (partial !== undefined) {
+                const monsterId: string = Math.floor(d % 1000000).toString();
                 const drop: Drop = {
                     id: d,
                     zoneid: partial.obj.z,
-                    lvl: partial.obj.l
+                    lvl: partial.obj.l,
+                    position: monsters[monsterId]
                 };
                 drops.push(drop);
             }
