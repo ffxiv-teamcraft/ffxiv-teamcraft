@@ -13,11 +13,15 @@ import {Language} from './language';
 @Injectable()
 export class LocalizedDataService {
 
+    indentRegexp = new RegExp('<Indent/>', 'i');
+
     constructor() {
     }
 
     public getItem(id: number): I18nName {
-        return this.getRow(items, id);
+        const row = this.getRow(items, id);
+        row.fr = row.fr.replace(this.indentRegexp, '');
+        return row;
     }
 
     public getItemIdsByName(name: string, language: Language): number[] {
