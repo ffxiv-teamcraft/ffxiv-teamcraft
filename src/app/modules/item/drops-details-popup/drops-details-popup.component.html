@@ -10,9 +10,11 @@
             <app-map-position mat-line *ngIf="drop.position !== undefined"
                               [zoneId]="drop.position.zoneid"
                               [marker]="drop.position"></app-map-position>
-            <span mat-line *ngIf="getClosestAetheryte(drop) | async as aetheryte" class="closest-tp">
-                <img src="/assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
-                {{aetheryte.nameid | placeName | i18n}}
+            <span *ngIf="drop.position !== undefined">
+                <span mat-line *ngIf="getClosestAetheryte(drop) | async as aetheryte" class="closest-tp">
+                    <img src="/assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
+                    {{aetheryte.nameid | placeName | i18n}}
+                </span>
             </span>
         </mat-list-item>
     </mat-list>

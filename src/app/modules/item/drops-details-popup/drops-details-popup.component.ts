@@ -18,7 +18,11 @@ export class DropsDetailsPopupComponent {
 
     getClosestAetheryte(drop: Drop): Observable<Aetheryte> {
         return this.mapService.getMapById(drop.position.zoneid).map((map) => {
-            return this.mapService.getNearestAetheryte(map, drop.position);
+            if (map !== undefined) {
+                return this.mapService.getNearestAetheryte(map, drop.position);
+            } else {
+                return undefined;
+            }
         });
     }
 }
