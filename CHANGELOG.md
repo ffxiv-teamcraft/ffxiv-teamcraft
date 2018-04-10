@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.5"></a>
+## [3.4.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.4...v3.4.5) (2018-04-10)
+
+
+### Bug Fixes
+
+* "Timers" icon on list details not under scroll bar anymore ([be39c00](https://github.com/Supamiu/ffxiv-teamcraft/commit/be39c00)), closes [#310](https://github.com/Supamiu/ffxiv-teamcraft/issues/310)
+* editing masterbooks on profile sometimes creates a new quick list ([3831674](https://github.com/Supamiu/ffxiv-teamcraft/commit/3831674))
+* help dialog is no longer opened at first page visit ([1cb8f6a](https://github.com/Supamiu/ffxiv-teamcraft/commit/1cb8f6a))
+* isearch value quotes ([9e5001a](https://github.com/Supamiu/ffxiv-teamcraft/commit/9e5001a))
+* no more <Indent/> in french item names ([1b11ed9](https://github.com/Supamiu/ffxiv-teamcraft/commit/1b11ed9))
+* You can now edit patreon email in your profile page ([2e71b70](https://github.com/Supamiu/ffxiv-teamcraft/commit/2e71b70)), closes [#291](https://github.com/Supamiu/ffxiv-teamcraft/issues/291)
+
+
+### Features
+
+* a dialog box will now show if you leave/reload the page while changes are saving ([3b918f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/3b918f5)), closes [#309](https://github.com/Supamiu/ffxiv-teamcraft/issues/309)
+* amount of items to get is now displayed in navigation map steps ([33aa31e](https://github.com/Supamiu/ffxiv-teamcraft/commit/33aa31e)), closes [#314](https://github.com/Supamiu/ffxiv-teamcraft/issues/314)
+* you can now see monsters location in drop details popup ([b19be3d](https://github.com/Supamiu/ffxiv-teamcraft/commit/b19be3d)), closes [#246](https://github.com/Supamiu/ffxiv-teamcraft/issues/246)
+
+
+
 <a name="3.4.4"></a>
 ## [3.4.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.3...v3.4.4) (2018-04-03)
 
