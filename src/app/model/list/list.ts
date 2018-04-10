@@ -367,7 +367,7 @@ export class List extends DataModel {
         }
         let res = false;
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '3.3.0');
+        res = res || semver.ltr(this.version, '3.4.5');
         return res;
     }
 

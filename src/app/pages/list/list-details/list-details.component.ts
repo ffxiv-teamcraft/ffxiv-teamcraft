@@ -88,6 +88,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
 
+    private upgradingList = false;
+
     public get selectedIndex(): number {
         return +(localStorage.getItem('layout:selected') || 0);
     }
@@ -116,6 +118,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private updateDisplay(): void {
         if (this.listData !== undefined && this.listData !== null) {
+            // We are using setTimeout here to avoid creating a new dialog box during change detection cycle.
+            setTimeout(() => {
+                if (!this.upgradingList && this.listData.isOutDated() && this.listData.authorId === this.userData.$key) {
+                    this.upgradeList();
+                }
+            }, 50);
             this.listData.forEachItem(item => {
                 if (item.gatheredBy !== undefined) {
                     const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
@@ -235,6 +243,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     upgradeList(): void {
+        this.upgradingList = true;
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.cd.detach();
         this.listManager.upgradeList(this.listData)
@@ -243,6 +252,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             this.cd.reattach();
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
+            this.upgradingList = false;
+            this.reload.emit();
         });
     }
 
