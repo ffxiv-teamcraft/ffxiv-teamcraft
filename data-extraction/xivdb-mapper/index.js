@@ -47,6 +47,7 @@ fs.createReadStream('monsters.csv')
             zoneid: +row.placename,
             x: position.ingame.x,
             y: position.ingame.y,
+            level: JSON.parse(row.data).level
         };
     })
     .on('end', function () {
