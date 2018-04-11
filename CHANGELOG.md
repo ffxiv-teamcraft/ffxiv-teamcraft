@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.4.6"></a>
+## [3.4.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.5...v3.4.6) (2018-04-11)
+
+
+### Features
+
+* monster details now include level ([b5aa600](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5aa600))
+* outdated lists are now automatically regenerated when opened by the author ([bc915d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/bc915d8))
+* you can now import lists from external websites ([36f34e7](https://github.com/Supamiu/ffxiv-teamcraft/commit/36f34e7)), closes [#311](https://github.com/Supamiu/ffxiv-teamcraft/issues/311)
+
+
+
 <a name="3.4.5"></a>
 ## [3.4.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.4...v3.4.5) (2018-04-10)
 
