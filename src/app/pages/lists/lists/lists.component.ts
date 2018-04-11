@@ -234,7 +234,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 {
                     listName: this.newListFormControl.value,
                     userId: this.userData.$key
-                }
+                },
             disableClose: true
         });
     }
