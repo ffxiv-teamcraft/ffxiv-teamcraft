@@ -241,7 +241,20 @@
     },
     "LISTS": {
         "Regenerate_all": "Regenerate all lists",
-        "Merge_lists": "Merge lists"
+        "Merge_lists": "Merge lists",
+        "IMPORT": {
+            "Title": "Import list from external website",
+            "Paste_link_step_title": "Paste your link to the external list",
+            "Paste_link_step_placeholder": "List link",
+            "Link_not_supported": "This link can't be imported",
+            "Next": "Next",
+            "Back": "Back",
+            "Give_list_name": "Give your new list a name",
+            "Final_step": "Validation",
+            "Choices_needed": "Some recipe choices are pending",
+            "Creating_list": "Creating the list",
+            "Loading_items": "Loading items informations"
+        }
     },
     "LIST": {
         "Copied_x_times": "Copied {{count}} times"

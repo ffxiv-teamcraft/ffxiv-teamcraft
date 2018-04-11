@@ -241,7 +241,20 @@
     },
     "LISTS": {
         "Regenerate_all": "Régénérer toutes les listes",
-        "Merge_lists": "Fusionner des listes"
+        "Merge_lists": "Fusionner des listes",
+        "IMPORT": {
+            "Title": "Importer depuis un site externe",
+            "Paste_link_step_title": "Coller votre lien vers la liste externe",
+            "Paste_link_step_placeholder": "Lien de la liste",
+            "Link_not_supported": "Ce lien ne peut être importé",
+            "Next": "Suivant",
+            "Back": "Précédent",
+            "Give_list_name": "Donnez un nom à la liste",
+            "Final_step": "Validation",
+            "Choices_needed": "Certains objets nécessitent un choix de recette",
+            "Creating_list": "Création de la liste en cours",
+            "Loading_items": "Chargement des informations sur les objets"
+        }
     },
     "LIST": {
         "Copied_x_times": "Copiée {{count}} fois"

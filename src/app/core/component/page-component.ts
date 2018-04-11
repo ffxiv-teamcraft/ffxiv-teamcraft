@@ -29,6 +29,9 @@ export abstract class PageComponent extends ComponentWithSubscriptions implement
      * On Init, check if dialog has already been opened, if not, open it and add informations to the localstorage that it has been opened.
      */
     public ngOnInit(): void {
-        this.helpService.currentHelp = this.getHelpDialog();
+        // Putting a setTimeout to avoid CD issues here.
+        setTimeout(() => {
+            this.helpService.currentHelp = this.getHelpDialog();
+        }, 20);
     }
 }

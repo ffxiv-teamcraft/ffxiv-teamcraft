@@ -44,6 +44,7 @@ import {DataService} from '../../../core/api/data.service';
 import {UserService} from '../../../core/database/user.service';
 import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
+import {CraftedBy} from '../../../model/list/crafted-by';
 
 @Component({
     selector: 'app-item',
@@ -286,6 +287,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     isDraft(): boolean {
         return this.item.id.toString().indexOf('draft') > -1;
+    }
+
+    getCraft(recipeId: string): CraftedBy {
+        return this.item.craftedBy.find(craft => {
+            return craft.recipeId === recipeId
+        });
     }
 
     public afterNameCopy(id: number): void {

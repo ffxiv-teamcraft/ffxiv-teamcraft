@@ -5,5 +5,6 @@ export interface CraftedBy {
     level: number;
     stars_tooltip: string;
     stars_html?: string;
+    recipeId: string;
     masterbook?: CompactMasterbook;
 }

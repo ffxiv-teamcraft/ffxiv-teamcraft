@@ -1,0 +1,89 @@
+<h3 mat-dialog-title>{{'LISTS.IMPORT.Title' | translate}}</h3>
+<div mat-dialog-content>
+    <mat-vertical-stepper #stepper="matVerticalStepper" [linear]="true">
+        <mat-step [stepControl]="externalLinkGroup">
+            <form [formGroup]="externalLinkGroup">
+                <ng-template matStepLabel>{{'LISTS.IMPORT.Paste_link_step_title' | translate}}</ng-template>
+                <mat-form-field>
+                    <textarea matInput placeholder="{{'LISTS.IMPORT.Paste_link_step_placeholder' | translate}}"
+                              formControlName="externalLink" required rows="6"></textarea>
+                    <mat-error
+                        *ngIf="externalLinkGroup.controls.externalLink.invalid">
+                        {{'LISTS.IMPORT.Link_not_supported' | translate}}
+                    </mat-error>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button matStepperNext (click)="parseImportLink()">{{'LISTS.IMPORT.Next' |
+                        translate}}
+                    </button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="listNameGroup">
+            <form [formGroup]="listNameGroup">
+                <ng-template matStepLabel>{{'LISTS.IMPORT.Give_list_name' | translate}}</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="{{'List_name' | translate}}" formControlName="listName" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button matStepperPrevious>{{'LISTS.IMPORT.Back' | translate}}</button>
+                    <button mat-raised-button matStepperNext>{{'LISTS.IMPORT.Next' | translate}}</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>{{'LISTS.IMPORT.Final_step' | translate}}</ng-template>
+            <div *ngIf="!creatingList; else creationInProgress">
+                <mat-list *ngIf="listEntries | async as entries; else loading" class="items-list">
+                    <mat-list-item *ngFor="let entry of entries" [ngClass]="{'item-error' : itemNeedsChoice(entry.itemData.item.id)}">
+                        <img mat-list-avatar src="{{entry.itemData.item.icon | icon}}"
+                             [appXivdbTooltip]="entry.itemData.item.id" alt="">
+                        <p mat-line>{{entry.itemData.item.id | itemName | i18n}}</p>
+                        <div mat-line>
+                        <span *ngIf="entry.itemData.item.craft.length === 1">
+                                <img
+                                    src="https://www.garlandtools.org/db/images/{{getJob(entry.itemData.item.craft[0].job).abbreviation}}.png"
+                                    [alt]="getJob(entry.itemData.item.craft[0].job)?.abbreviation" class="crafted-by">
+                            {{entry.itemData.item.craft[0].lvl}}
+                            <span [innerHtml]="getStars(entry.itemData.item.craft[0].stars)"></span>
+                        </span>
+                            <mat-radio-group *ngIf="entry.itemData.item.craft.length > 1"
+                                             (change)="setChoice(entry.itemData.item.id, $event)"
+                                             required="true" class="radio-group">
+                                <mat-radio-button *ngFor="let recipe of entry.itemData.item.craft" [value]="recipe.id">
+                                    <img
+                                        src="https://www.garlandtools.org/db/images/{{getJob(recipe.job).abbreviation}}.png"
+                                        [alt]="getJob(recipe.job)?.abbreviation" class="crafted-by">
+                                    {{recipe.lvl}}
+                                    <span [innerHtml]="getStars(recipe.stars)"></span>
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="quantity">x{{entry.quantity}}</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <mat-error *ngIf="needsChoices()" class="choices-needed">{{'LISTS.IMPORT.Choices_needed' | translate}}
+            </mat-error>
+            <ng-template #creationInProgress>
+                <mat-spinner></mat-spinner>
+                <span class="loading-message">{{'LISTS.IMPORT.Creating_list' | translate}}</span>
+            </ng-template>
+            <ng-template #loading>
+                <mat-spinner></mat-spinner>
+                <span class="loading-message">{{'LISTS.IMPORT.Loading_items' | translate}}</span>
+            </ng-template>
+            <div class="end-buttons" *ngIf="!creatingList">
+                <button mat-raised-button color="accent" [disabled]="needsChoices()"
+                        (click)="createList()">{{'Confirm' | translate}}
+                </button>
+                <button mat-raised-button matStepperPrevious>{{'LISTS.IMPORT.Back' |
+                    translate}}
+                </button>
+                <button mat-button mat-dialog-close color="warn">{{'Cancel' |
+                    translate}}
+                </button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>

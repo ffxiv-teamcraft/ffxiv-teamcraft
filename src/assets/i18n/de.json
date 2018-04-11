@@ -241,7 +241,20 @@
     },
     "LISTS": {
         "Regenerate_all": "Alle Listen neugenerieren",
-        "Merge_lists": "Listen zusammenfassen"
+        "Merge_lists": "Listen zusammenfassen",
+        "IMPORT": {
+            "Title": "Liste von externer Website importieren",
+            "Paste_link_step_title": "Füge deinen link der externen Liste ein",
+            "Paste_link_step_placeholder": "Link der Liste",
+            "Link_not_supported": "Dieser Link kann nicht importiert werden.",
+            "Next": "Weiter",
+            "Back": "Zurück",
+            "Give_list_name": "Gib deiner neuen Liste einen Namen",
+            "Final_step": "Validieren",
+            "Choices_needed": "Für einige Rezepte muss eine Auswahl getroffen werden.",
+            "Creating_list": "Liste wird angelegt.",
+            "Loading_items": "Lade Gegenstandsinformationen"
+        }
     },
     "LIST": {
         "Copied_x_times": "{{count}} mal kopiert"

@@ -27,6 +27,7 @@ import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
+import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 
 declare const ga: Function;
 
@@ -225,6 +226,17 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 this.listService.set(key, resultList);
                 this.cd.reattach();
             }));
+    }
+
+    openExternalListImportPopup(): void {
+        this.dialog.open(ExternalListImportPopupComponent, {
+            data:
+                {
+                    listName: this.newListFormControl.value,
+                    userId: this.userData.$key
+                }
+            disableClose: true
+        });
     }
 
     trackByListsFn(index: number, item: List) {
