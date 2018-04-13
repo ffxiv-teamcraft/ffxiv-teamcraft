@@ -38,7 +38,6 @@ import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
-import {LayoutOrderService} from '../../../core/layout/layout-order.service';
 
 declare const ga: Function;
 
@@ -239,6 +238,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.userService.getUserData()
             .subscribe(user => {
                 this.userData = user;
+                this.hideUsed = user.listDetailsFilters.hideUsed;
+                this.hideCompleted = user.listDetailsFilters.hideCompleted;
+                this.triggerFilter();
             }));
         this.listData$.next(this.listData);
     }
@@ -355,11 +357,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
+        this.userData.listDetailsFilters.hideCompleted = this.hideCompleted;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
     public toggleHideUsed(): void {
         this.hideUsed = !this.hideUsed;
+        this.userData.listDetailsFilters.hideUsed = this.hideUsed;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
