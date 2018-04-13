@@ -263,7 +263,7 @@
         "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
         "Missing_tags_after_button": " button",
         "Add_remove_amount": "Add/remove a given amount",
-        "No_book": "Missing book",
+        "No_book": "Missing book, click to navigate to profile",
         "No_note": "No note",
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",

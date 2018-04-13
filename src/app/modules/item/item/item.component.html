@@ -38,10 +38,12 @@
                 (click)="openRequirementsPopup()">
             <mat-icon color="accent">assignment</mat-icon>
         </button>
-        <mat-icon *ngIf="!hasBook" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
-                  color="warn">
-            warning
-        </mat-icon>
+        <button mat-icon-button *ngIf="!hasBook" routerLink="/profile">
+            <mat-icon matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+                      color="warn">
+                warning
+            </mat-icon>
+        </button>
         <div *ngIf="item.workingOnIt && getAmount() > (item.done | ceil)">
             <div *ngIf="worksOnIt as character" class="working-on-it">
                 <img src="{{character.avatar}}" alt=""
