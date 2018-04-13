@@ -38,6 +38,7 @@ import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {LayoutOrderService} from '../../../core/layout/layout-order.service';
 
 declare const ga: Function;
 
@@ -58,6 +59,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     listData$: ReplaySubject<List> = new ReplaySubject<List>();
 
     listDisplay: Observable<LayoutRowDisplay[]>;
+
+    recipes: Observable<ListRow[]>;
 
     user: UserInfo;
 
@@ -104,6 +107,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .filter(data => data !== null)
             .mergeMap(data => {
                 return this.layoutService.getDisplay(data, this.selectedIndex);
+            });
+        this.recipes = this.listData$
+            .filter(data => data !== null)
+            .mergeMap(data => {
+                return this.layoutService.getRecipes(data, this.selectedIndex);
             });
     }
 

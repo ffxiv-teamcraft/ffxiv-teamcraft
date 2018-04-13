@@ -161,10 +161,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel"
-                             [expanded]="listData?.isLarge()&&accordionState !== undefined ? accordionState['Crystals']:true"
-                             (opened)="accordionState['Crystals'] = true"
-                             (closed)="accordionState['Crystals'] = false">
+        <mat-expansion-panel class="panel">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
             </mat-expansion-panel-header>
@@ -181,28 +178,22 @@
             <app-list-details-panel
                 [user]="userData"
                 *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
-                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
                 [list]="listData"
                 (update)="update(listData)"
                 (done)="setDone(listData, $event)"
                 [data]="displayRow.rows"
                 [title]="displayRow.title | translate"
-                (opened)="accordionState[displayRow.title] = true"
-                (closed)="accordionState[displayRow.title] = false"
                 [zoneBreakdown]="displayRow.zoneBreakdown"
                 [showTier]="displayRow.tiers"></app-list-details-panel>
         </div>
         <app-list-details-panel
             [user]="userData"
-            [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"
             (update)="update(listData)"
             (done)="setDone(listData, $event)"
-            [data]="listData?.recipes"
+            [data]="recipes | async"
             [recipe]="true"
-            [title]="'Items'| translate"
-            (opened)="accordionState['Items'] = true"
-            (closed)="accordionState['Items'] = false"></app-list-details-panel>
+            [title]="'Items'| translate"></app-list-details-panel>
 
         <mat-divider></mat-divider>
 

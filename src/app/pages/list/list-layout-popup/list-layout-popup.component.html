@@ -47,6 +47,32 @@
                     <mat-icon>add</mat-icon>
                     {{"LIST_DETAILS.LAYOUT_DIALOG.Add_panel" | translate}}
                 </button>
+                <div class="items-panel mat-elevation-z10">
+                    <mat-input-container>
+                        <input [disabled]="true" type="text" matInput
+                               placeholder="{{'LIST_DETAILS.LAYOUT.Panel_name' | translate}}"
+                               value="{{'Items' | translate}}">
+                    </mat-input-container>
+                    <div class="order">
+                        <mat-form-field>
+                            <mat-select class="order-row" placeholder="{{'LIST_DETAILS.LAYOUT.Order_by' | translate}}"
+                                        required
+                                        [(value)]="availableLayouts[selectedIndex].recipeOrderBy">
+                                <mat-option value="NONE">NONE</mat-option>
+                                <mat-option value="NAME">NAME</mat-option>
+                                <mat-option value="LEVEL">LEVEL</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select class="order-row" placeholder="{{'LIST_DETAILS.LAYOUT.Order' | translate}}"
+                                        required
+                                        [(value)]="availableLayouts[selectedIndex].recipeOrder">
+                                <mat-option [value]="0">ASC</mat-option>
+                                <mat-option [value]="1">DESC</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
