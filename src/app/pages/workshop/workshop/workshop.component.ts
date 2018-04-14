@@ -9,9 +9,6 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/combineLatest';
 import {UserService} from '../../../core/database/user.service';
 import 'rxjs/add/observable/empty';
-import {SeoService} from '../../../core/seo/seo.service';
-import 'rxjs/add/observable/zip';
-import {SeoConfig} from '../../../core/seo/seo-config';
 
 @Component({
     selector: 'app-workshop',
@@ -29,7 +26,7 @@ export class WorkshopComponent implements OnInit {
     favorite: Observable<boolean>;
 
     constructor(private route: ActivatedRoute, private workshopService: WorkshopService, private listService: ListService,
-                private userService: UserService, private seo: SeoService) {
+                private userService: UserService) {
     }
 
     toggleFavorite(workshop: Workshop): void {
@@ -67,14 +64,6 @@ export class WorkshopComponent implements OnInit {
             ).map(lists => lists.filter(l => l !== null));
         this.author = this.workshop.mergeMap(workshop => this.userService.getCharacter(workshop.authorId))
             .catch(() => Observable.of(null));
-        Observable.zip(this.author, this.workshop, (author, ws) => {
-            return <SeoConfig>{
-                title: ws.name,
-                description: 'Created by ' + author.name,
-                image: 'assets/branding/logo.png',
-                slug: 'workshop/' + ws.$key,
-            };
-        }).subscribe(this.seo.setConfig);
     }
 
     trackByListsFn(index: number, item: List) {
