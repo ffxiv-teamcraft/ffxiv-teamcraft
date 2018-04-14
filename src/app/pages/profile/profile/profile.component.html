@@ -31,6 +31,11 @@
                              character.patreonEmail === undefined">
                         {{"PROFILE.Patreon_link_email" | translate}}
                     </button>
+                    <button mat-button color="accent" class="patreon-badge patreon-button"
+                            (click)="openPatreonLinkPopup()" *ngIf="!character.patreon &&
+                             character.patreonEmail !== undefined">
+                        {{"PROFILE.Patreon_edit_email" | translate}}
+                    </button>
                 </mat-card-header>
                 <mat-grid-list cols="{{getClassesCols()}}" rowHeight="100px">
                     <mat-grid-tile *ngFor="let job of getJobs()">

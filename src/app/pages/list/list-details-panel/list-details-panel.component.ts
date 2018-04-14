@@ -11,6 +11,7 @@ import {MatDialog} from '@angular/material';
 import {NavigationMapPopupComponent} from '../navigation-map-popup/navigation-map-popup.component';
 import {NavigationObjective} from '../../../modules/map/navigation-objective';
 import {Vector2} from '../../../core/tools/vector2';
+import {Permissions} from '../../../core/database/permissions/permissions';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -62,6 +63,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     tiers: ListRow[][] = [[]];
 
     zoneBreakdownData: ZoneBreakdown;
+
+    permissions: Permissions;
 
     constructor(public settings: SettingsService, private dataService: LocalizedDataService, private dialog: MatDialog,
                 private l12n: LocalizedDataService) {
@@ -147,11 +150,19 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
         const data: { mapId: number, points: NavigationObjective[] } = {
             mapId: zoneBreakdownRow.zoneId,
-            points: zoneBreakdownRow.items
+            points: <NavigationObjective[]>zoneBreakdownRow.items
+                .filter(item => item.done <= item.amount_needed)
                 .map(item => {
                     const coords = this.getCoords(item, zoneBreakdownRow);
                     if (coords !== undefined) {
-                        return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
+                        return <NavigationObjective>{
+                            x: coords.x,
+                            y: coords.y,
+                            name: this.l12n.getItem(item.id),
+                            iconid: item.icon,
+                            item_amount: item.amount_needed - item.done,
+                            type: 'Gathering'
+                        }
                     }
                     return undefined;
                 })
@@ -172,6 +183,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     public hasNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): boolean {
         return zoneBreakdownRow.items
+            .filter(item => item.done <= item.amount)
             .map(item => {
                 const coords = this.getCoords(item, zoneBreakdownRow);
                 if (coords === undefined) {
@@ -195,6 +207,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        this.permissions = this.list.getPermissions(this.user.$key);
         if (this.showTier) {
             this.generateTiers();
         }
@@ -204,6 +217,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnInit(): void {
+        this.permissions = this.list.getPermissions(this.user.$key);
         if (this.showTier) {
             this.generateTiers();
         }

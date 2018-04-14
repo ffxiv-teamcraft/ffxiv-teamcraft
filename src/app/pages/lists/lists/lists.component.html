@@ -19,6 +19,11 @@
     </button>
 </div>
 
+<button mat-raised-button color="accent" class="import-external" (click)="openExternalListImportPopup()">
+    <mat-icon>file_download</mat-icon>
+    {{'LISTS.IMPORT.Title' | translate}}
+</button>
+
 <h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="filter">
@@ -53,6 +58,23 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
+    <div class="shared-lists">
+        <h2>{{"LISTS.Shared_lists" | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div class="row" *ngFor="let list of sharedLists | async;trackBy: trackByListsFn; let i = index;">
+            <app-list-panel
+                [list]="list"
+                [expanded]="expanded.indexOf(list.$key) > -1"
+                (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                (ondelete)="delete(list)"
+                [authorUid]="user.uid"
+                [odd]="i%2>0"
+                [linkButton]="userData?.patron || userData?.admin"
+                [templateButton]="userData?.patron || userData?.admin"
+            ></app-list-panel>
+        </div>
+    </div>
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
@@ -61,7 +83,9 @@
                 <mat-expansion-panel-header>
                     <mat-panel-title class="workshop-name">
                         {{workshop.name}}
-                        <button mat-icon-button (click)="$event.stopPropagation();changeWorkshopName(workshop)"><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button (click)="$event.stopPropagation();changeWorkshopName(workshop)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
                     </mat-panel-title>
                     <div class="buttons">
                         <button mat-icon-button *ngIf="userData?.patron || userData?.admin"
@@ -101,7 +125,8 @@
                         [linkButton]="userData?.patron || userData?.admin"
                         [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
-                <button mat-button class="full-width-button" color="accent" (click)="addListsToWorkhop(workshop, display.basicLists)">
+                <button mat-button class="full-width-button" color="accent"
+                        (click)="addListsToWorkhop(workshop, display.basicLists)">
                     <mat-icon>add</mat-icon>
                     {{'WORKSHOP.Add_lists' | translate}}
                 </button>

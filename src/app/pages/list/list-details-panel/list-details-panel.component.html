@@ -8,7 +8,8 @@
             <app-item (update)="update.emit()"
                       [user]="user" (done)="done.emit($event)" *ngIf="!row.hidden"
                       [item]="row" [list]="list" [recipe]="recipe"
-                      [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"></app-item>
+                      [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"
+                      [permissions]="permissions"></app-item>
         </div>
     </mat-list>
     <!--ZONE BREAKDOWN LIST-->
@@ -37,7 +38,8 @@
                               [showTimer]="true"
                               [even]="i%2!=0"
                               [recipe]="recipe"
-                              [preCraft]="item.craftedBy !== undefined && !recipe"></app-item>
+                              [preCraft]="item.craftedBy !== undefined && !recipe"
+                              [permissions]="permissions"></app-item>
                 </div>
             </div>
         </div>
@@ -53,7 +55,8 @@
                     <app-item (update)="update.emit()" (done)="done.emit($event)" *ngIf="!row.hidden"
                               [user]="user"
                               [item]="row" [list]="list" [recipe]="recipe"
-                              [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"></app-item>
+                              [even]="i%2!=0" [preCraft]="row.craftedBy !== undefined && !recipe"
+                              [permissions]="permissions"></app-item>
                 </div>
             </div>
         </mat-list>

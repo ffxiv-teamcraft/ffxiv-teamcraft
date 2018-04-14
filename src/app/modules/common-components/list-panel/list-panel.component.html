@@ -50,6 +50,16 @@
                         (cbOnSuccess)="showTemplateCopiedNotification()">
                     <mat-icon>content_paste</mat-icon>
                 </button>
+                <span *ngIf="list.authorId === userUid"
+                      [matTooltipDisabled]="!anonymous"
+                      [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                    <button mat-icon-button
+                            (click)="$event.stopPropagation();openPermissions(list)"
+                            [disabled]="anonymous"
+                            [matTooltip]="'PERMISSIONS.Title' | translate">
+                        <mat-icon>security</mat-icon>
+                    </button>
+                </span>
                 <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
                         (click)="$event.stopPropagation()"
                         matTooltip="{{'Share' | translate}}" matTooltipPosition="above"

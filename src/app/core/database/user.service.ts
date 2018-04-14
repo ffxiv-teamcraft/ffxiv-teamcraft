@@ -9,6 +9,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from './diff/diff.service';
+import {PendingChangesService} from './pending-changes/pending-changes.service';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -23,12 +24,27 @@ export class UserService extends FirebaseStorage<AppUser> {
                 private listService: ListService,
                 protected serializer: NgSerializerService,
                 protected diffService: DiffService,
-                protected zone: NgZone) {
-        super(database, serializer, diffService, zone);
+                protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
+        super(database, serializer, diffService, zone, pendingChangesService);
     }
 
     public set(uid: string, user: AppUser): Observable<void> {
         return super.set(uid, user).do(() => this.reload());
+    }
+
+    public getUserByEmail(email: string): Observable<AppUser> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+            .snapshotChanges()
+            .map(snaps => snaps[0])
+            .map(snap => {
+            const valueWithKey: AppUser = {$key: snap.payload.key, ...snap.payload.val()};
+            if (!snap.payload.exists()) {
+                throw new Error('Not found');
+            }
+            delete snap.payload;
+            return this.serializer.deserialize<AppUser>(valueWithKey, this.getClass());
+        })
     }
 
     /**

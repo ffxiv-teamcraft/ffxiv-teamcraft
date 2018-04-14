@@ -9,7 +9,6 @@ import {Ingredient} from '../garland-tools/ingredient';
 import {ResourceComment} from '../../modules/comments/resource-comment';
 import {DeserializeAs} from '@kaiu/serializer';
 import {DataModel} from '../../core/database/storage/data-model';
-import {Vector2} from '../../core/tools/vector2';
 
 export class ListRow extends DataModel {
     icon?: number;
@@ -18,21 +17,21 @@ export class ListRow extends DataModel {
     amount_needed?: number;
     done: number;
     used: number;
-    requires?: Ingredient[];
+    requires?: Ingredient[] = [];
     recipeId?: string;
     yield: number;
 
-    craftedBy?: CraftedBy[];
+    craftedBy?: CraftedBy[] = [];
     gatheredBy?: GatheredBy;
     gardening?: boolean;
-    drops?: Drop[];
-    tradeSources?: TradeSource[];
+    drops?: Drop[] = [];
+    tradeSources?: TradeSource[] = [];
     instances?: Instance[];
-    reducedFrom?: any[];
-    desynths?: number[];
-    vendors?: Vendor[];
-    voyages?: I18nName[];
-    ventures?: number[];
+    reducedFrom?: any[] = [];
+    desynths?: number[] = [];
+    vendors?: Vendor[] = [];
+    voyages?: I18nName[] = [];
+    ventures?: number[] = [];
 
     /**
      * Is someone working on it?

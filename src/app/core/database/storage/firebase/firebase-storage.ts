@@ -6,22 +6,26 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {DiffService} from 'app/core/database/diff/diff.service';
 import {NgZone} from '@angular/core';
 import 'rxjs/add/operator/takeWhile';
+import {PendingChangesService} from '../../pending-changes/pending-changes.service';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {
 
     protected cache: { [index: string]: T } = {};
 
     constructor(protected firebase: AngularFireDatabase, protected serializer: NgSerializerService,
-                protected diffService: DiffService, protected zone: NgZone) {
+                protected diffService: DiffService, protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
         super();
     }
 
     add(data: T): Observable<string> {
+        this.pendingChangesService.addPendingChange(`add ${this.getBaseUri()}`);
         delete data.$key;
         return Observable.fromPromise(this.firebase.list<T>(this.getBaseUri()).push(data))
             .map(pushResult => pushResult.key)
             .do(key => {
                 this.cache[key] = JSON.parse(JSON.stringify(data));
+                this.pendingChangesService.removePendingChange(`add ${this.getBaseUri()}`);
             });
     }
 
@@ -70,6 +74,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
     }
 
     update(uid: string, data: T): Observable<void> {
+        this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${uid}`);
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
@@ -88,11 +93,14 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
             });
             // We map the result of the combine to a void function, because we want to convert void[] to void.
             return Observable.combineLatest(batch, () => {
+            }).do(() => {
+                this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${uid}`);
             });
         });
     }
 
     set(uid: string, data: T): Observable<void> {
+        this.pendingChangesService.addPendingChange(`set ${this.getBaseUri()}/${uid}`);
         return this.zone.runOutsideAngular(() => {
             if (uid === undefined || uid === null || uid === '') {
                 this.firebase.list('logs').push('Empty uid');
@@ -100,11 +108,14 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
             }
             const clone = JSON.parse(JSON.stringify(data));
             delete clone.$key;
-            return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).set(clone));
+            return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).set(clone)).do(() => {
+                this.pendingChangesService.removePendingChange(`set ${this.getBaseUri()}/${uid}`);
+            });
         });
     }
 
     remove(uid: string): Observable<void> {
+        this.pendingChangesService.addPendingChange(`remove ${this.getBaseUri()}/${uid}`);
         if (uid === undefined || uid === null || uid === '') {
             this.firebase.list('logs').push('Empty uid');
             throw new Error('Empty uid');
@@ -112,6 +123,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
         return Observable.fromPromise(this.firebase.object(`${this.getBaseUri()}/${uid}`).remove())
             .do(() => {
                 delete this.cache[uid];
+                this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${uid}`);
             });
     }
 

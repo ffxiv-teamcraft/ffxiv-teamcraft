@@ -62,6 +62,8 @@
 
         .classes {
             width: 150px;
+            display: flex;
+            flex-flow: row wrap;
         }
 
         // Second column

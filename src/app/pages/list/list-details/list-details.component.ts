@@ -26,7 +26,7 @@ import {AppUser} from 'app/model/list/app-user';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-popup.component';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
-import {User, UserInfo} from 'firebase';
+import {User} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
@@ -38,6 +38,7 @@ import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 
 declare const ga: Function;
 
@@ -59,7 +60,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     listDisplay: Observable<LayoutRowDisplay[]>;
 
-    user: UserInfo;
+    recipes: Observable<ListRow[]>;
+
+    user: User;
 
     userData: AppUser;
 
@@ -75,6 +78,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
 
+    clock: Observable<Date>;
+
     outdated = false;
 
     accordionState: { [index: string]: boolean } = {
@@ -87,6 +92,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
+
+    private upgradingList = false;
 
     public get selectedIndex(): number {
         return +(localStorage.getItem('layout:selected') || 0);
@@ -103,6 +110,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .mergeMap(data => {
                 return this.layoutService.getDisplay(data, this.selectedIndex);
             });
+        this.recipes = this.listData$
+            .filter(data => data !== null)
+            .mergeMap(data => {
+                return this.layoutService.getRecipes(data, this.selectedIndex);
+            });
     }
 
     displayTrackByFn(index: number, item: LayoutRowDisplay) {
@@ -116,6 +128,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private updateDisplay(): void {
         if (this.listData !== undefined && this.listData !== null) {
+            // We are using setTimeout here to avoid creating a new dialog box during change detection cycle.
+            setTimeout(() => {
+                if (!this.upgradingList && this.listData.isOutDated() && this.listData.authorId === this.userData.$key) {
+                    this.upgradeList();
+                }
+            }, 50);
             this.listData.forEachItem(item => {
                 if (item.gatheredBy !== undefined) {
                     const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
@@ -215,7 +233,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnInit() {
-        this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
+        this.clock = this.eorzeanTimeService.getEorzeanTime();
 
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
@@ -223,6 +241,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.userService.getUserData()
             .subscribe(user => {
                 this.userData = user;
+                this.hideUsed = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideUsed : false;
+                this.hideCompleted = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideCompleted : false;
+                this.triggerFilter();
             }));
         this.listData$.next(this.listData);
     }
@@ -235,6 +256,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     upgradeList(): void {
+        this.upgradingList = true;
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.cd.detach();
         this.listManager.upgradeList(this.listData)
@@ -243,6 +265,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             this.cd.reattach();
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
+            this.upgradingList = false;
+            this.reload.emit();
         });
     }
 
@@ -254,7 +278,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
-        console.log('update', list);
         this.listService.update(this.listData.$key, list).first().subscribe(() => {
             this.reload.emit();
         });
@@ -262,6 +285,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     set(list: List): void {
         this.listService.set(this.listData.$key, list).first().subscribe(() => {
+            this.reload.emit();
         });
     }
 
@@ -336,11 +360,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
+        this.userData.listDetailsFilters.hideCompleted = this.hideCompleted;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
     public toggleHideUsed(): void {
         this.hideUsed = !this.hideUsed;
+        this.userData.listDetailsFilters.hideUsed = this.hideUsed;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
@@ -368,6 +396,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     this.update(list);
                 })
         );
+    }
+
+    public openPermissionsPopup(): void {
+        this.dialog.open(PermissionsPopupComponent, {data: this.listData})
+            .afterClosed()
+            .filter(list => list !== '')
+            .subscribe((list) => {
+                this.update(list);
+            });
     }
 
     protected resetFilters(): void {

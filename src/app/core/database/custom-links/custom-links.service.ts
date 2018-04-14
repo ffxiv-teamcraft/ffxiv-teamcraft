@@ -5,6 +5,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from '../diff/diff.service';
 import {Observable} from 'rxjs/Observable';
+import {PendingChangesService} from '../pending-changes/pending-changes.service';
 
 @Injectable()
 export class CustomLinksService<T extends CustomLink = CustomLink> extends FirebaseStorage<T> {
@@ -12,8 +13,9 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fireb
     constructor(protected database: AngularFireDatabase,
                 protected serializer: NgSerializerService,
                 protected diffService: DiffService,
-                protected zone: NgZone) {
-        super(database, serializer, diffService, zone);
+                protected zone: NgZone,
+                protected pendingChangesService: PendingChangesService) {
+        super(database, serializer, diffService, zone, pendingChangesService);
     }
 
     public getAllByAuthor(userKey: string): Observable<T[]> {

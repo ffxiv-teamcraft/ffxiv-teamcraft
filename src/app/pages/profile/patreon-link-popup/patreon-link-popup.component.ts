@@ -14,12 +14,13 @@ export class PatreonLinkPopupComponent {
 
     patreonEmail: string;
 
-    email: FormControl = new FormControl('', [Validators.required, Validators.email]);
+    email: FormControl;
 
     alreadyUsed = false;
 
     constructor(private userService: UserService, private dialogRef: MatDialogRef<PatreonLinkPopupComponent>,
                 @Inject(MAT_DIALOG_DATA) private user: AppUser) {
+        this.email = new FormControl(user.patreonEmail, [Validators.required, Validators.email]);
     }
 
     submit(): void {

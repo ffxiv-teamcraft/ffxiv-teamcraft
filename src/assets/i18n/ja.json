@@ -1,4 +1,7 @@
 {
+    "Timers": "Timers",
+    "Copy_isearch": "Copy isearch macro",
+    "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
     "Required_for_final_craft": "{{amount}} needed for final items",
     "Compact_sidebar_toggle": "Toggle compact sidebar",
     "Confirmation": "Confirmation",
@@ -234,7 +237,8 @@
         "Feature_requires_nickname": "This feature requires you to set a nickname",
         "Nickname": "Nickname",
         "No_nickname": "No nickname set",
-        "Patreon_link_email": "Link patreon email",
+        "Patreon_link_email": "Link patreon email",,
+        "Patreon_edit_email": "Edit patreon email",
         "Email_already_used": "Email already linked to another account",
         "Patreon_email": "Patreon Email",
         "HELP": {
@@ -245,7 +249,21 @@
     },
     "LISTS": {
         "Regenerate_all": "Regenerate all lists",
-        "Merge_lists": "Merge lists"
+        "Merge_lists": "Merge lists",
+        "IMPORT": {
+            "Title": "Import list from external website",
+            "Paste_link_step_title": "Paste your link to the external list",
+            "Paste_link_step_placeholder": "List link",
+            "Link_not_supported": "This link can't be imported",
+            "Next": "Next",
+            "Back": "Back",
+            "Give_list_name": "Give your new list a name",
+            "Final_step": "Validation",
+            "Choices_needed": "Some recipe choices are pending",
+            "Creating_list": "Creating the list",
+            "Loading_items": "Loading items informations"
+
+        }
     },
     "LIST": {
         "Copied_x_times": "Copied {{count}} times"
@@ -254,7 +272,7 @@
         "Missing_tags_before_button":"Your list is shown as community list but has no tags, please add some tags using ",
         "Missing_tags_after_button":" button",
         "Add_remove_amount": "Add/remove a given amount",
-        "No_book": "Missing book",
+        "No_book": "Missing book, click to navigate to profile",
         "No_note": "No note",
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
@@ -380,7 +398,8 @@
     },
     "NAVIGATION": {
         "Title": "Optimized navigation route",
-        "Steps": "Steps"
+        "Steps": "Steps",
+        "Gather_x": "Gather {{amount}}"
     },
     "GATHERING_LOCATIONS":{
         "Title": "Récoltes",

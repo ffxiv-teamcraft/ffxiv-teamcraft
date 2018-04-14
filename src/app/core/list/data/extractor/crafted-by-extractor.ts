@@ -23,7 +23,8 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
                 itemId: item.id,
                 icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
                 level: craft.lvl,
-                stars_tooltip: this.htmlTools.generateStars(craft.stars)
+                stars_tooltip: this.htmlTools.generateStars(craft.stars),
+                recipeId: craft.id
             };
             if (craft.job === 0) {
                 craftedBy.icon = '';

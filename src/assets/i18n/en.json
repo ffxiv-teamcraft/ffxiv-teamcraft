@@ -1,4 +1,7 @@
 {
+    "Timers": "Timers",
+    "Copy_isearch": "Copy isearch macro",
+    "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
     "Required_for_final_craft": "{{amount}} needed for final items",
     "Compact_sidebar_toggle": "Toggle compact sidebar",
     "Confirmation": "Confirmation",
@@ -48,7 +51,7 @@
         "Total": "Total"
     },
     "ALARMS": {
-        "No_alarm": "No alarm set",
+        "No_alarm": "No alarms set",
         "Add_alarm": "Add alarm"
     },
     "Item_name": "Item name",
@@ -227,6 +230,7 @@
         "Nickname": "Nickname",
         "No_nickname": "No nickname set",
         "Patreon_link_email": "Link patreon email",
+        "Patreon_edit_email": "Edit patreon email",
         "Email_already_used": "Email already linked to another account",
         "Patreon_email": "Patreon Email",
         "HELP": {
@@ -237,7 +241,21 @@
     },
     "LISTS": {
         "Regenerate_all": "Regenerate all lists",
-        "Merge_lists": "Merge lists"
+        "Merge_lists": "Merge lists",
+        "Shared_lists": "Lists shared with you",
+        "IMPORT": {
+            "Title": "Import list from external website",
+            "Paste_link_step_title": "Paste your link to the external list",
+            "Paste_link_step_placeholder": "List link",
+            "Link_not_supported": "This link can't be imported",
+            "Next": "Next",
+            "Back": "Back",
+            "Give_list_name": "Give your new list a name",
+            "Final_step": "Validation",
+            "Choices_needed": "Some recipe choices are pending",
+            "Creating_list": "Creating the list",
+            "Loading_items": "Loading items informations"
+        }
     },
     "LIST": {
         "Copied_x_times": "Copied {{count}} times"
@@ -246,7 +264,7 @@
         "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
         "Missing_tags_after_button": " button",
         "Add_remove_amount": "Add/remove a given amount",
-        "No_book": "Missing book",
+        "No_book": "Missing book, click to navigate to profile",
         "No_note": "No note",
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
@@ -364,14 +382,15 @@
     },
     "NAVIGATION": {
         "Title": "Optimized navigation route",
-        "Steps": "Steps"
+        "Steps": "Steps",
+        "Gather_x": "Gather {{amount}}"
     },
-    "GATHERING_LOCATIONS":{
+    "GATHERING_LOCATIONS": {
         "Title": "Gathering items",
         "No_items": "No gathering node found",
         "Gathering_name": "Enter item name"
     },
-    "ANNOUNCEMENT":{
+    "ANNOUNCEMENT": {
         "Title": "Announcement",
         "Read_more": "Read more"
     },
@@ -385,5 +404,15 @@
         "Cloning_list": "Creating a copy of the list to your account",
         "Redirect_notice": "You'll be redirected to the list once the clone is created",
         "Not_found": "Template not found"
+    },
+    "PERMISSIONS": {
+        "Read": "Read",
+        "Title": "Permissions management",
+        "Participate": "Participate",
+        "Write": "Write",
+        "Everyone": "Everyone",
+        "You": "You",
+        "Add_new": "Add a user",
+        "Placeholder": "Email or User ID"
     }
 }

@@ -7,13 +7,16 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
     MatButtonModule,
-    MatDialogModule, MatExpansionModule,
+    MatDialogModule,
+    MatExpansionModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSelectModule, MatSnackBarModule,
+    MatProgressSpinnerModule, MatRadioModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatStepperModule,
     MatTooltipModule
 } from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
@@ -21,9 +24,12 @@ import {MergeListsPopupComponent} from './merge-lists-popup/merge-lists-popup.co
 import {BulkRegeneratePopupComponent} from './bulk-regenerate-popup/bulk-regenerate-popup.component';
 import {WorkshopModule} from '../workshop/workshop.module';
 import {ClipboardModule} from 'ngx-clipboard';
-import { ListsSelectionPopupComponent } from './lists-selection-popup/lists-selection-popup.component';
-import { WorkshopNamePopupComponent } from './workshop-name-popup/workshop-name-popup.component';
-import { WorkshopDeleteConfirmationPopupComponent } from './workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
+import {ListsSelectionPopupComponent} from './lists-selection-popup/lists-selection-popup.component';
+import {WorkshopNamePopupComponent} from './workshop-name-popup/workshop-name-popup.component';
+import {WorkshopDeleteConfirmationPopupComponent} from './workshop-delete-confirmation-popup/workshop-delete-confirmation-popup.component';
+import {ExternalListImportPopupComponent} from './external-list-import-popup/external-list-import-popup.component';
+import {PipesModule} from 'app/pipes/pipes.module';
+import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 
 const routes: Routes = [
     {
@@ -54,9 +60,13 @@ const routes: Routes = [
         MatProgressSpinnerModule,
         MatSnackBarModule,
         MatExpansionModule,
+        MatStepperModule,
+        MatRadioModule,
 
         CoreModule,
         CommonComponentsModule,
+        PipesModule,
+        TooltipModule,
         WorkshopModule,
     ],
     declarations: [
@@ -66,6 +76,7 @@ const routes: Routes = [
         ListsSelectionPopupComponent,
         WorkshopNamePopupComponent,
         WorkshopDeleteConfirmationPopupComponent,
+        ExternalListImportPopupComponent,
     ],
     entryComponents: [
         MergeListsPopupComponent,
@@ -73,6 +84,7 @@ const routes: Routes = [
         ListsSelectionPopupComponent,
         WorkshopNamePopupComponent,
         WorkshopDeleteConfirmationPopupComponent,
+        ExternalListImportPopupComponent,
     ]
 })
 export class ListsModule {

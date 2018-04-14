@@ -12,18 +12,18 @@ import {Timer} from 'app/core/time/timer';
 import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
+import {UserService} from '../database/user.service';
 
 @Injectable()
 export class AlarmService {
-
-    private static LOCALSTORAGE_KEY = 'alarms';
 
     private _alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
-                private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService) {
-        this.loadAlarms();
+                private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
+                private userService: UserService) {
+        this.userService.getUserData().map(user => user.alarms || []).subscribe(alarms => this.loadAlarms(...alarms));
     }
 
     /**
@@ -69,14 +69,26 @@ export class AlarmService {
      * @private
      */
     public registerAlarms(...alarms: Alarm[]): void {
-        alarms.forEach(alarm => {
-            this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
-                if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) && time.getUTCMinutes() === 0) {
-                    this.playAlarm(alarm);
-                }
-            }));
-        });
+        this.loadAlarms(...alarms);
         this.persistAlarms();
+    }
+
+    /**
+     * loads the alarms into the current alarms map
+     * @param {Alarm} alarms
+     */
+    public loadAlarms(...alarms: Alarm[]): void {
+        alarms.forEach(alarm => {
+            if (Array.from(this._alarms.keys()).find(key => key.itemId === alarm.itemId
+                && key.spawn === alarm.spawn) === undefined) {
+                this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
+                    if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) &&
+                        time.getUTCMinutes() === 0) {
+                        this.playAlarm(alarm);
+                    }
+                }));
+            }
+        });
     }
 
     /**
@@ -375,17 +387,13 @@ export class AlarmService {
     }
 
     /**
-     * Loads alarms fro the local storage of the browser.
-     */
-    private loadAlarms(): void {
-        this.registerAlarms(...(JSON.parse(localStorage.getItem(AlarmService.LOCALSTORAGE_KEY)) || []));
-    }
-
-    /**
      * Persist the current alarms into browser's localstorage.
      */
     private persistAlarms(): void {
-        localStorage.setItem(AlarmService.LOCALSTORAGE_KEY, JSON.stringify(Array.from(this._alarms.keys())));
+        this.userService.getUserData().first().mergeMap(user => {
+            user.alarms = Array.from(this._alarms.keys());
+            return this.userService.set(user.$key, user);
+        }).first().subscribe();
     }
 
     /**

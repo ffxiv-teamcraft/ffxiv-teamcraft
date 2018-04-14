@@ -19,6 +19,9 @@ export class FfxivcraftingAmountInputComponent extends ComponentWithSubscription
     @Output()
     onchange: EventEmitter<number> = new EventEmitter<number>();
 
+    @Input()
+    readonly = false;
+
     @ViewChild('input')
     private input: ElementRef;
 

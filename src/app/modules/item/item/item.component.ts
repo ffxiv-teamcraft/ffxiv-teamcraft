@@ -44,6 +44,8 @@ import {DataService} from '../../../core/api/data.service';
 import {UserService} from '../../../core/database/user.service';
 import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
+import {CraftedBy} from '../../../model/list/crafted-by';
+import {Permissions} from '../../../core/database/permissions/permissions';
 
 @Component({
     selector: 'app-item',
@@ -243,6 +245,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     @Input()
     user: AppUser;
 
+    @Input()
+    permissions: Permissions;
+
     requiredForFinalCraft = 0;
 
     slot: number;
@@ -288,9 +293,27 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         return this.item.id.toString().indexOf('draft') > -1;
     }
 
+    getCraft(recipeId: string): CraftedBy {
+        return this.item.craftedBy.find(craft => {
+            return craft.recipeId === recipeId
+        });
+    }
+
     public afterNameCopy(id: number): void {
         this.snackBar.open(
             this.translator.instant('Item_name_copied',
+                {itemname: this.localizedData.getItem(id)[this.translator.currentLang]}),
+            '',
+            {
+                duration: 2000,
+                extraClasses: ['snack']
+            }
+        );
+    }
+
+    public afterIsearchCopy(id: number): void {
+        this.snackBar.open(
+            this.translator.instant('Isearch_copied',
                 {itemname: this.localizedData.getItem(id)[this.translator.currentLang]}),
             '',
             {
@@ -333,10 +356,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
-            this.worksOnIt = char;
-            this.cd.detectChanges();
-        });
+            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId))
+            .first()
+            .subscribe(char => {
+                this.worksOnIt = char;
+                this.cd.detectChanges();
+            });
     }
 
     public removeWorkingOnIt(): void {

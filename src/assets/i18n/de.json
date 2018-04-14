@@ -1,4 +1,7 @@
 {
+    "Timers": "Timers",
+    "Copy_isearch": "isearch Makro kopieren",
+    "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
     "Required_for_final_craft": "{{amount}} für das finale Item erforderlich",
     "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
     "Confirmation": "Bestätigung",
@@ -226,6 +229,7 @@
         "Nickname": "Nickname",
         "No_nickname": "Kein Nickname vergeben",
         "Patreon_link_email": "Mit Patreon-Email verknüpfen",
+        "Patreon_edit_email": "Patreon-Email ändern",
         "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
         "Patreon_email": "Patreon-Email",
         "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
@@ -237,7 +241,20 @@
     },
     "LISTS": {
         "Regenerate_all": "Alle Listen neugenerieren",
-        "Merge_lists": "Listen zusammenfassen"
+        "Merge_lists": "Listen zusammenfassen",
+        "IMPORT": {
+            "Title": "Liste von externer Website importieren",
+            "Paste_link_step_title": "Füge deinen link der externen Liste ein",
+            "Paste_link_step_placeholder": "Link der Liste",
+            "Link_not_supported": "Dieser Link kann nicht importiert werden.",
+            "Next": "Weiter",
+            "Back": "Zurück",
+            "Give_list_name": "Gib deiner neuen Liste einen Namen",
+            "Final_step": "Validieren",
+            "Choices_needed": "Für einige Rezepte muss eine Auswahl getroffen werden.",
+            "Creating_list": "Liste wird angelegt.",
+            "Loading_items": "Lade Gegenstandsinformationen"
+        }
     },
     "LIST": {
         "Copied_x_times": "{{count}} mal kopiert"
@@ -246,7 +263,7 @@
         "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
         "Missing_tags_after_button": " hinzu.",
         "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
-        "No_book": "Fehlendes Buch",
+        "No_book": "Fehlendes Buch! Klicken um zum Profil zu gelangen",
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
@@ -364,7 +381,8 @@
     },
     "NAVIGATION": {
         "Title": "Optimierte Navigationsroute",
-        "Steps": "Stationen"
+        "Steps": "Stationen",
+        "Gather_x": "Sammel {{amount}}"
     },
     "GATHERING_LOCATIONS": {
         "Title": "Sammelgegenstand-Suche",

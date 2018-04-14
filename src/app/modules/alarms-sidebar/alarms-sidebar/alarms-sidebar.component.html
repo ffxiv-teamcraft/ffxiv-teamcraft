@@ -1,0 +1,20 @@
+<div class="title">
+    <h3>{{'Timers' | translate}}</h3>
+</div>
+<mat-list dense *ngIf="alarms$ | async as alarms; else noalarms">
+    <div *ngIf="alarms.length > 0; else noalarms">
+        <div *ngFor="let alarm of alarms; trackBy: trackByAlarm; let last = last">
+            <mat-divider></mat-divider>
+            <app-alarm-sidebar-row [alarm]="alarm"
+                                   [alerted]="alarmService.isAlerted(alarm.itemId) | async"
+                                   [spawned]="alarmService.isAlarmSpawned(alarm, time)"
+                                   [timer]="alarmService.getAlarmTimerString(alarm, time)"></app-alarm-sidebar-row>
+            <mat-divider *ngIf="last"></mat-divider>
+        </div>
+    </div>
+</mat-list>
+<ng-template #noalarms>
+    <div class="no_alarms">
+        <h4>{{'ALARMS.No_alarm' | translate}}</h4>
+    </div>
+</ng-template>

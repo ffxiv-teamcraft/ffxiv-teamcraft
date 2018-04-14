@@ -21,7 +21,7 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container [autosize]="true">
+    <mat-sidenav-container autosize="true">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
                      [ngClass]="{'compact': settings.compactSidebar}">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
@@ -186,9 +186,20 @@
             </div>
         </mat-sidenav>
         <div class="content">
+            <button mat-mini-fab class="alarms-sidebar-trigger"
+                    matTooltip="{{'Timers' | translate}}"
+                    matTooltipPosition="left"
+                    *ngIf="!mobile" (click)="timersSidebar.toggle()"
+            [ngClass]="{'opened': timersSidebar?.opened}">
+                <mat-icon *ngIf="!timersSidebar?.opened">alarm</mat-icon>
+                <mat-icon *ngIf="timersSidebar?.opened">keyboard_arrow_right</mat-icon>
+            </button>
             <div class="content-middle">
                 <router-outlet></router-outlet>
             </div>
         </div>
+        <mat-sidenav mode="side" position="end" *ngIf="!mobile" #timers>
+            <app-alarms-sidebar></app-alarms-sidebar>
+        </mat-sidenav>
     </mat-sidenav-container>
 </div>

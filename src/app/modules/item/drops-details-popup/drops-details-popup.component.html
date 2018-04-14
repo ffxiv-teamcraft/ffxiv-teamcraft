@@ -3,10 +3,19 @@
     <mat-list>
         <mat-list-item *ngFor="let drop of data.drops">
             <mat-icon mat-list-icon>location_on</mat-icon>
-            <b mat-line>{{drop.id | mobName | i18n}}</b>
-            <i mat-line>
+            <b mat-line>{{drop.id | mobName | i18n}} - <span *ngIf="drop.position">lvl {{drop.position.level}}</span></b>
+            <p mat-line>
                 {{drop.zoneid | placeName | i18n}}
-            </i>
+            </p>
+            <app-map-position mat-line *ngIf="drop.position !== undefined"
+                              [zoneId]="drop.position.zoneid"
+                              [marker]="drop.position"></app-map-position>
+            <span mat-line *ngIf="drop.position !== undefined">
+                <span mat-line *ngIf="getClosestAetheryte(drop) | async as aetheryte" class="closest-tp">
+                    <img src="/assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
+                    {{aetheryte.nameid | placeName | i18n}}
+                </span>
+            </span>
         </mat-list-item>
     </mat-list>
 </div>

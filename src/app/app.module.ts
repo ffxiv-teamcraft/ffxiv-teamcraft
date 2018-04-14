@@ -56,6 +56,7 @@ import {WorkshopModule} from './pages/workshop/workshop.module';
 import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
 import {TemplateModule} from './pages/template/template.module';
+import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -116,6 +117,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ItemModule,
         BetaDisclaimerModule,
         GivewayPopupModule,
+        AlarmsSidebarModule,
 
         // Pages
         HomeModule,

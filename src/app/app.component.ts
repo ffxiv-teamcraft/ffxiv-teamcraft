@@ -1,11 +1,11 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {User} from 'firebase/app';
-import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
+import {MatDialog, MatSidenav, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
 import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
@@ -25,6 +25,7 @@ import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
+import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 
 declare const ga: Function;
 
@@ -34,6 +35,9 @@ declare const ga: Function;
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+    @ViewChild('timers')
+    timersSidebar: MatSidenav;
 
     locale: string;
 
@@ -76,7 +80,8 @@ export class AppComponent implements OnInit {
                 public helpService: HelpService,
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
-                public cd: ChangeDetectorRef) {
+                public cd: ChangeDetectorRef,
+                private pendingChangesService: PendingChangesService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -134,7 +139,7 @@ export class AppComponent implements OnInit {
                     lastLS = '{}';
                 }
                 const last = JSON.parse(lastLS || '{}');
-                if (last.text !== announcement.text && last.link !== announcement.link) {
+                if (last.text !== announcement.text) {
                     this.dialog.open(AnnouncementPopupComponent, {data: announcement})
                         .afterClosed()
                         .first()
@@ -157,6 +162,13 @@ export class AppComponent implements OnInit {
 
     openHelp(): void {
         this.dialog.open(this.helpService.currentHelp);
+    }
+
+    @HostListener('window:beforeunload', ['$event'])
+    onBeforeUnload($event) {
+        if (this.pendingChangesService.hasPendingChanges()) {
+            $event.returnValue = true;
+        }
     }
 
     ngOnInit(): void {

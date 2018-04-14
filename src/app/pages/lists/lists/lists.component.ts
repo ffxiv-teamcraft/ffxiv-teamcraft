@@ -27,6 +27,7 @@ import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
+import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 
 declare const ga: Function;
 
@@ -40,6 +41,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     reloader$ = new BehaviorSubject<void>(null);
 
     lists: Observable<{ basicLists: List[], rows?: { [index: string]: List[] } }>;
+
+    sharedLists: Observable<List[]>;
 
     tags: string[] = Object.keys(ListTag);
 
@@ -227,6 +230,17 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             }));
     }
 
+    openExternalListImportPopup(): void {
+        this.dialog.open(ExternalListImportPopupComponent, {
+            data:
+                {
+                    listName: this.newListFormControl.value,
+                    userId: this.userData.$key
+                },
+            disableClose: true
+        });
+    }
+
     trackByListsFn(index: number, item: List) {
         return item.$key;
     }
@@ -236,6 +250,9 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
+        this.sharedLists = this.userService.getUserData().mergeMap(user => {
+            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)));
+        })
         this.workshops = this.auth.authState.mergeMap(user => {
             if (user === null) {
                 return this.reloader$.mergeMap(() => Observable.of([]));

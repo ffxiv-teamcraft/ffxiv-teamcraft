@@ -5,7 +5,8 @@
         {{total - item.done}}
     </span>
     <mat-input-container>
-        <input type="number" #input matInput [value]="item.done - item.used" [style.width]="getWidth() + 'px'" min="0">
+        <input type="number" #input matInput [value]="item.done - item.used" [readonly]="readonly"
+               [style.width]="getWidth() + 'px'" min="0">
     </mat-input-container>
     <span matTooltipPosition="above"
           matTooltip="{{'COMMON.Total' | translate}}">
