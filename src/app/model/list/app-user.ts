@@ -26,4 +26,6 @@ export class AppUser extends DataModel {
     alarms: Alarm[];
     // Default filters (#289)
     listDetailsFilters: ListDetailsFilters = ListDetailsFilters.DEFAULT;
+    // List ids user has write access to
+    sharedLists: string[] = [];
 }

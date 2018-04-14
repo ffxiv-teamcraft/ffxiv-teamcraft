@@ -1,0 +1,32 @@
+<h3 mat-dialog-title>{{'PERMISSIONS.Title' | translate}}</h3>
+<div mat-dialog-content *ngIf="!saving">
+    <mat-list *ngIf="rows | async as rowsData; else loading">
+        <app-permissions-row *ngFor="let row of rowsData"
+                             [permissions]="row.permissions"
+                             (permissionsChange)="handlePermissionsChange($event, row.userId)"
+                             [avatar]="row.character.avatar"
+                             [name]="row.character.name"
+                             [isAuthor]="row.userId === data.authorId"
+                             (delete)="deleteRow(row.userId)"></app-permissions-row>
+        <app-permissions-row [permissions]="registry.everyone"
+                             (permissionsChange)="handlePermissionsChange($event)"
+                             isEveryone="true"></app-permissions-row>
+    </mat-list>
+    <ng-template #loading>
+        <div class="loading-container">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
+    <button mat-raised-button color="accent" class="add-row" (click)="addNewRow()">
+        <mat-icon>add</mat-icon>
+        {{'PERMISSIONS.Add_new' | translate}}
+    </button>
+</div>
+<div mat-dialog-actions *ngIf="!saving">
+    <button mat-raised-button (click)="save()" color="primary">{{'Save' | translate}}</button>
+    <button mat-button mat-dialog-close color="warn">{{'Cancel' | translate}}</button>
+</div>
+<div *ngIf="saving">
+    <app-random-gif></app-random-gif>
+    <p>{{'PERMISSIONS.Saving' | translate}}</p>
+</div>

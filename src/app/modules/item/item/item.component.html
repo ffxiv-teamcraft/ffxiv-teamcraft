@@ -29,7 +29,9 @@
             <mat-icon>search</mat-icon>
         </button>
 
-        <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
+        <app-comments-button [name]="item.id | itemName | i18n"
+                             [row]="item"
+                             [list]="list"
                              [isOwnList]="user?.$key === list?.authorId"
                              (updated)="update.emit()"></app-comments-button>
         <button mat-icon-button
@@ -55,7 +57,8 @@
                 </button>
             </div>
         </div>
-        <div *ngIf="!item.workingOnIt && !user?.anonymous && getAmount() > (item.done | ceil)">
+        <div
+            *ngIf="!item.workingOnIt && !user?.anonymous && getAmount() > (item.done | ceil) && permissions?.participate">
             <button mat-icon-button matTooltip="{{'Work_on_it' | translate}}"
                     matTooltipPosition="above"
                     [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
@@ -93,13 +96,16 @@
         <div class="done">
             <div class="done-first-row">
                 <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
-                        matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
+                        matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"
+                        [disabled]="!permissions?.participate"><i class="fas fa-calculator"></i>
                 </button>
                 <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
                                                 [total]="getAmount()" [item]="item"
-                                                (onchange)="setDone(item, $event, item.done)">
+                                                (onchange)="setDone(item, $event, item.done)"
+                                                [readonly]="!permissions?.participate">
                 </app-ffxivcrafting-amount-input>
                 <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
+                                  [readonly]="!permissions?.participate"
                                   max="{{getAmount()}}"
                                   min="0"
                                   [value]="item.done | ceil"
@@ -107,10 +113,11 @@
                                   (onchange)="setDone(item, $event, item.done)"></app-amount-input>
             </div>
             <div class="addition-row" *ngIf="expanded">
-                <button mat-icon-button color="accent" (click)="addAddition()">
+                <button mat-icon-button color="accent" (click)="addAddition()" [disabled]="!permissions?.participate">
                     <mat-icon>add</mat-icon>
                 </button>
                 <app-amount-input class="amount"
+                                  [readonly]="!permissions?.participate"
                                   min="0"
                                   max="{{getAmount()}}"
                                   value="{{addition}}"
@@ -123,11 +130,13 @@
             </div>
         </div>
         <div [ngClass]="{'done-check':true, 'compact': settings.compactLists}">
-            <a mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
+            <button mat-mini-fab
+               [disabled]="!permissions?.participate"
+               *ngIf="getAmount() > (item.done | ceil)"
                [ngClass]="{'done-button':true, 'compact': settings.compactLists}"
                (click)="setDone(item, getAmount(), item.done)">
                 <mat-icon>playlist_add_check</mat-icon>
-            </a>
+            </button>
             <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
         </div>
 
@@ -270,11 +279,13 @@
         </div>
         <div class="done" matLine>
             <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
+                    [disabled]="!permissions?.participate"
                     matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
             </button>
             <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
                                             [total]="getAmount()" [item]="item"
-                                            (onchange)="setDone(item, $event, item.done)">
+                                            (onchange)="setDone(item, $event, item.done)"
+                                            [readonly]="!permissions?.participate">
             </app-ffxivcrafting-amount-input>
             <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
                               max="{{getAmount()}}"
@@ -364,6 +375,7 @@
                     <mat-icon>add</mat-icon>
                 </button>
                 <app-amount-input class="amount"
+                                  [readonly]="!permissions?.participate"
                                   min="0"
                                   max="{{getAmount()}}"
                                   value="{{addition}}"
@@ -391,10 +403,11 @@
 
 
         <div class="done-check">
-            <a mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
+            <button mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
+               [disabled]="!permissions?.participate"
                (click)="setDone(item, getAmount(), item.done)">
                 <mat-icon>playlist_add_check</mat-icon>
-            </a>
+            </button>
             <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
         </div>
     </mat-list-item>

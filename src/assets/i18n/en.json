@@ -242,6 +242,7 @@
     "LISTS": {
         "Regenerate_all": "Regenerate all lists",
         "Merge_lists": "Merge lists",
+        "Shared_lists": "Lists shared with you",
         "IMPORT": {
             "Title": "Import list from external website",
             "Paste_link_step_title": "Paste your link to the external list",
@@ -403,5 +404,15 @@
         "Cloning_list": "Creating a copy of the list to your account",
         "Redirect_notice": "You'll be redirected to the list once the clone is created",
         "Not_found": "Template not found"
+    },
+    "PERMISSIONS": {
+        "Read": "Read",
+        "Title": "Permissions management",
+        "Participate": "Participate",
+        "Write": "Write",
+        "Everyone": "Everyone",
+        "You": "You",
+        "Add_new": "Add a user",
+        "Placeholder": "Email or User ID"
     }
 }

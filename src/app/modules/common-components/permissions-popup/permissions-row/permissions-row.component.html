@@ -1,0 +1,29 @@
+<mat-list-item>
+    <img mat-list-avatar src="{{avatar}}" alt="" matTooltip="{{name}}" matTooltipPosition="above" *ngIf="!isEveryone">
+    <mat-icon mat-list-icon class="list-icon" *ngIf="isEveryone" matTooltip="{{'PERMISSIONS.Everyone' | translate}}"
+              matTooltipPosition="above">group
+    </mat-icon>
+    <div matLine class="row-content">
+        <span class="row-name" *ngIf="!isMobile() && !isEveryone && !isAuthor">{{name}}</span>
+        <span class="row-name"
+              *ngIf="!isMobile() && isEveryone && !isAuthor">{{'PERMISSIONS.Everyone' | translate}}</span>
+        <span class="row-name" *ngIf="!isMobile() && !isEveryone && isAuthor">{{'PERMISSIONS.You' | translate}}</span>
+        <span class="checkboxes">
+            <mat-checkbox [(ngModel)]="permissions.read" [disabled]="isAuthor" (change)="handleChanges()">
+                {{'PERMISSIONS.Read' | translate}}
+            </mat-checkbox>
+            <mat-checkbox disabled="{{!permissions.read || isAuthor}}" [(ngModel)]="permissions.participate"
+                          (change)="handleChanges()">
+                {{'PERMISSIONS.Participate' | translate}}
+            </mat-checkbox>
+            <mat-checkbox [(ngModel)]="permissions.write" disabled="{{isEveryone || !permissions.read || isAuthor}}"
+                          (change)="handleChanges()">
+                {{'PERMISSIONS.Write' | translate}}
+            </mat-checkbox>
+        </span>
+        <button mat-icon-button color="warn" [disabled]="isEveryone || isAuthor"
+                (click)="!(isEveryone || isAuthor)?delete.emit():''">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</mat-list-item>

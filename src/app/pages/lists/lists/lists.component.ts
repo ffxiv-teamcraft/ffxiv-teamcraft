@@ -42,6 +42,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     lists: Observable<{ basicLists: List[], rows?: { [index: string]: List[] } }>;
 
+    sharedLists: Observable<List[]>;
+
     tags: string[] = Object.keys(ListTag);
 
     tagFilter: BehaviorSubject<string[]> = new BehaviorSubject([]);
@@ -248,6 +250,9 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
+        this.sharedLists = this.userService.getUserData().mergeMap(user => {
+            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)));
+        })
         this.workshops = this.auth.authState.mergeMap(user => {
             if (user === null) {
                 return this.reloader$.mergeMap(() => Observable.of([]));

@@ -3,13 +3,23 @@
 <div *ngIf="!pricingMode && listData !== null">
     <div *ngIf="listDisplay | async as display; else loading">
         <div class="etime-container">
-            <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
+            <app-eorzean-time class="etime" [date]="clock | async"></app-eorzean-time>
         </div>
 
         <div class="left-fabs">
             <button mat-mini-fab (click)="openLayoutOptions()">
                 <mat-icon>dashboard</mat-icon>
             </button>
+            <span *ngIf="isOwnList()"
+                  [matTooltipDisabled]="!user.isAnonymous"
+                  [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                <button mat-mini-fab
+                        [disabled]="user.isAnonymous"
+                        [matTooltip]="'PERMISSIONS.Title' | translate"
+                        (click)="openPermissionsPopup()" *ngIf="listData.authorId === userData.$key">
+                    <mat-icon>security</mat-icon>
+                </button>
+            </span>
         </div>
         <div class="right-fabs">
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
@@ -17,7 +27,8 @@
                 <mat-icon>label_outline</mat-icon>
             </button>
 
-            <button mat-mini-fab color="accent" *ngIf="listData !== null" [routerLink]="['/list-inventory', listData?.$key]"
+            <button mat-mini-fab color="accent" *ngIf="listData !== null"
+                    [routerLink]="['/list-inventory', listData?.$key]"
                     matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}">
                 <mat-icon>apps</mat-icon>
             </button>
@@ -42,7 +53,9 @@
             </button>
             <div class="spacer"></div>
 
-            <button mat-mini-fab color="accent" matTooltip="{{'Reset_progression' | translate}}"
+            <button mat-mini-fab color="accent"
+                    [disabled]="!listData.getPermissions(userData?.$key)?.participate"
+                    matTooltip="{{'Reset_progression' | translate}}"
                     (click)="resetProgression()">
                 <mat-icon>replay</mat-icon>
             </button>

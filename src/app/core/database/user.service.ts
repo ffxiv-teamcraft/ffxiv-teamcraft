@@ -33,6 +33,20 @@ export class UserService extends FirebaseStorage<AppUser> {
         return super.set(uid, user).do(() => this.reload());
     }
 
+    public getUserByEmail(email: string): Observable<AppUser> {
+        return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+            .snapshotChanges()
+            .map(snaps => snaps[0])
+            .map(snap => {
+            const valueWithKey: AppUser = {$key: snap.payload.key, ...snap.payload.val()};
+            if (!snap.payload.exists()) {
+                throw new Error('Not found');
+            }
+            delete snap.payload;
+            return this.serializer.deserialize<AppUser>(valueWithKey, this.getClass());
+        })
+    }
+
     /**
      * Gets user ingame informations.
      * @returns {Observable<any>}

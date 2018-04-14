@@ -58,6 +58,23 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
+    <div class="shared-lists">
+        <h2>{{"LISTS.Shared_lists" | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div class="row" *ngFor="let list of sharedLists | async;trackBy: trackByListsFn; let i = index;">
+            <app-list-panel
+                [list]="list"
+                [expanded]="expanded.indexOf(list.$key) > -1"
+                (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                (ondelete)="delete(list)"
+                [authorUid]="user.uid"
+                [odd]="i%2>0"
+                [linkButton]="userData?.patron || userData?.admin"
+                [templateButton]="userData?.patron || userData?.admin"
+            ></app-list-panel>
+        </div>
+    </div>
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>

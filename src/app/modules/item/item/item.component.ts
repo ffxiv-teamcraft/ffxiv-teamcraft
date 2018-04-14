@@ -45,6 +45,7 @@ import {UserService} from '../../../core/database/user.service';
 import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 import {CraftedBy} from '../../../model/list/crafted-by';
+import {Permissions} from '../../../core/database/permissions/permissions';
 
 @Component({
     selector: 'app-item',
@@ -243,6 +244,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     @Input()
     user: AppUser;
+
+    @Input()
+    permissions: Permissions;
 
     requiredForFinalCraft = 0;
 
