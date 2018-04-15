@@ -8,6 +8,8 @@ import {PermissionsRegistry} from '../../../core/database/permissions/permission
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {UserService} from '../../../core/database/user.service';
 import {NgSerializerService} from '@kaiu/ng-serializer';
+import {List} from '../../../model/list/list';
+import {Workshop} from '../../../model/other/workshop';
 
 @Component({
     selector: 'app-permissions-popup',
@@ -44,9 +46,11 @@ export class PermissionsPopupComponent {
                             .map(character => {
                                 return {userId: userId, character: character, permissions: data.getPermissions(userId)};
                             })
+                            .catch(() => Observable.of(null))
                     );
                 });
-                return Observable.combineLatest(observables);
+                return Observable.combineLatest(observables)
+                    .map(results => results.filter(res => res !== null));
             });
     }
 
@@ -99,13 +103,21 @@ export class PermissionsPopupComponent {
             Observable.combineLatest(
                 ...usersSharedDeletions.map(deletion => {
                     return this.userService.get(deletion).first().map(user => {
-                        user.sharedLists = user.sharedLists.filter(listId => listId !== this.data.$key);
+                        if (this.data instanceof List) {
+                            user.sharedLists = user.sharedLists.filter(listId => listId !== this.data.$key);
+                        } else if (this.data instanceof Workshop) {
+                            user.sharedWorkshops = user.sharedLists.filter(listId => listId !== this.data.$key);
+                        }
                         return user;
                     }).mergeMap(user => this.userService.set(deletion, user));
                 }),
                 ...usersSharedAdditions.map(addition => {
                     return this.userService.get(addition).first().map(user => {
-                        user.sharedLists.push(this.data.$key);
+                        if (this.data instanceof List) {
+                            user.sharedLists.push(this.data.$key);
+                        } else if (this.data instanceof Workshop) {
+                            user.sharedWorkshops.push(this.data.$key);
+                        }
                         return user;
                     }).mergeMap(user => this.userService.set(addition, user));
                 })).first().subscribe(() => {

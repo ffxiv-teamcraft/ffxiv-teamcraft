@@ -71,7 +71,7 @@
                         (click)="$event.stopPropagation()">
                     <mat-icon>playlist_play</mat-icon>
                 </button>
-                <button mat-icon-button *ngIf="!readonly && buttons"
+                <button mat-icon-button *ngIf="!readonly && buttons && list.authorId === userUid"
                         (click)="ondelete.emit(); $event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>
