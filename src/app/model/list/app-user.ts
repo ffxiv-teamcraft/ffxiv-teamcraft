@@ -28,4 +28,6 @@ export class AppUser extends DataModel {
     listDetailsFilters: ListDetailsFilters = ListDetailsFilters.DEFAULT;
     // List ids user has write access to
     sharedLists: string[] = [];
+    // Workshop ids user has write access to
+    sharedWorkshops: string[] = [];
 }
