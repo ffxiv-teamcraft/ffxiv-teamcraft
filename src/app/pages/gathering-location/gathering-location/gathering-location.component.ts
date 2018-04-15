@@ -90,7 +90,7 @@ export class GatheringLocationComponent implements OnInit {
                 alarms.push({
                     spawn: spawn,
                     duration: node.uptime / 60,
-                    itemId: node.itemId,
+                    itemId: nodeInput.itemId,
                     icon: node.icon,
                     slot: node.slot,
                     areaId: node.areaid,

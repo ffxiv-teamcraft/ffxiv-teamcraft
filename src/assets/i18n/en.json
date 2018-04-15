@@ -21,7 +21,8 @@
         "Name_dialog": "Workshop name",
         "Created_by": "Created by {{name}}",
         "Share_link_copied": "Workshop share link copied",
-        "Not_found": "Workshop not found or you don't have access to it"
+        "Not_found": "Workshop not found or you don't have access to it",
+        "Shared_workshops": "Workshops shared with you"
     },
     "ABOUT": {
         "title": "About",
