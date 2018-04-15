@@ -23,7 +23,10 @@
                     </mat-card-subtitle>
                 </mat-card-header>
                 <div class="timed" *ngIf="node.timed">
-                    <mat-icon>access_alarm</mat-icon>
+                    <button mat-raised-button color="accent" (click)="createAlarm(node, row)">
+                        <mat-icon>access_alarm</mat-icon>
+                        {{'ALARMS.Add_alarm' | translate}}
+                    </button>
                     <div class="spawns">
                         <span *ngFor="let spawn of getSpawns(node); let first = first">
                             <span *ngIf="!first"> / </span>

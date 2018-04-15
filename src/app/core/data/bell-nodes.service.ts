@@ -42,6 +42,10 @@ export class BellNodesService {
     }
 
     getNode(id: number): any {
-        return this.nodes.find(node => node.id === id);
+        const node = this.nodes.find(n => n.id === id);
+        node.itemId = id;
+        node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
+        node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+        return node;
     }
 }

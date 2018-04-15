@@ -53,7 +53,8 @@
     },
     "ALARMS": {
         "No_alarm": "No alarms set",
-        "Add_alarm": "Add alarm"
+        "Add_alarm": "Add alarm",
+        "Alarm_created": "Alarm created"
     },
     "Item_name": "Item name",
     "No_items_found": "No item found",
