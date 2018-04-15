@@ -93,9 +93,10 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     }
 
     public openPermissions(list: List): void {
-        this.dialog.open(PermissionsPopupComponent, {data: list}).afterClosed().filter(res => res !== '')
+        this.dialog.open(PermissionsPopupComponent, {data: list})
+            .afterClosed()
+            .filter(res => res !== '')
             .mergeMap(res => this.listService.set(res.$key, res))
-            .first()
             .subscribe();
     }
 

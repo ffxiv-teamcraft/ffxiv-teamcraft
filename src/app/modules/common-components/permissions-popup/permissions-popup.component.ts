@@ -44,9 +44,11 @@ export class PermissionsPopupComponent {
                             .map(character => {
                                 return {userId: userId, character: character, permissions: data.getPermissions(userId)};
                             })
+                            .catch(() => Observable.of(null))
                     );
                 });
-                return Observable.combineLatest(observables);
+                return Observable.combineLatest(observables)
+                    .map(results => results.filter(res => res !== null));
             });
     }
 
