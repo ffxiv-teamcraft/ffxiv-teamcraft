@@ -77,6 +77,15 @@ export class SettingsService {
         this.setSetting('alarm:hours-before', hours.toString());
     }
 
+    public get preferredStartingPint(): number {
+        // Default value is Rhalgr's reach, 2403
+        return +this.getSetting('preferred-starting-point', '2403');
+    }
+
+    public set preferredStartingPint(id: number) {
+        this.setSetting('preferred-starting-point', id.toString());
+    }
+
     public get alarmSound(): string {
         return this.getSetting('alarm:sound', 'Notification');
     }
