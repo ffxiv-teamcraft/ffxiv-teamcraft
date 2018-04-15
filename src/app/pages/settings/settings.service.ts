@@ -20,6 +20,14 @@ export class SettingsService {
         this.setSetting('base-link', base);
     }
 
+    public get baseSimulatorLink(): string {
+        return this.getSetting('base-simulator-link', 'http://ffxiv-beta.lokyst.net');
+    }
+
+    public set baseSimulatorLink(base: string) {
+        this.setSetting('base-simulator-link', base);
+    }
+
     public get compactLists(): boolean {
         return this.getSetting('compact-lists', 'false') === 'true';
     }

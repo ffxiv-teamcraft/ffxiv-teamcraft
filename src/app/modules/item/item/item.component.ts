@@ -273,6 +273,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     worksOnIt: any;
 
+    public tradeIcon: number;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -325,6 +327,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     ngOnInit(): void {
         this.updateCanBeCrafted();
+        this.updateTradeIcon();
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
@@ -341,6 +344,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateCanBeCrafted();
+        this.updateTradeIcon();
         this.updateHasTimers();
         this.updateMasterBooks();
         this.updateTimers();
@@ -598,18 +602,21 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         });
     }
 
-    public getTradeIcon(item: ListRow): number {
-        const res = {priority: 0, icon: 0};
-        item.tradeSources.forEach(ts => {
-            ts.trades.forEach(trade => {
-                const id = trade.currencyId;
-                if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined && ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
-                    res.icon = trade.currencyIcon;
-                    res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
-                }
+    public updateTradeIcon(): void {
+        if (this.item.tradeSources !== undefined) {
+            const res = {priority: 0, icon: 0};
+            this.item.tradeSources.forEach(ts => {
+                ts.trades.forEach(trade => {
+                    const id = trade.currencyId;
+                    if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined &&
+                        ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
+                        res.icon = trade.currencyIcon;
+                        res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
+                    }
+                });
             });
-        });
-        return res.icon;
+            this.tradeIcon = res.icon;
+        }
     }
 
     public openTradeDetails(item: ListRow): void {

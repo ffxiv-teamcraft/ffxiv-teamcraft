@@ -14,6 +14,16 @@
         </mat-select>
     </mat-form-field>
 </div>
+
+<div class="settings-row">
+    <mat-form-field>
+        <mat-select [(ngModel)]="settings.baseSimulatorLink" class="select-box"
+                    placeholder="{{'SETTINGS.simulator_link_base' | translate}}">
+            <mat-option *ngFor="let row of simulatorLinkBases" [value]="row.value">{{row.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
 <div class="settings-row" fxHide fxShow.gt-sm>
     <mat-checkbox [(ngModel)]="settings.compactLists">{{'SETTINGS.compact_lists' | translate}}</mat-checkbox>
 </div>
