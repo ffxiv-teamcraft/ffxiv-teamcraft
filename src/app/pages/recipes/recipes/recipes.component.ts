@@ -101,6 +101,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     lists: { basicLists: List[], rows: { [index: string]: List[] } } = {basicLists: [], rows: {}};
 
+    sharedLists: Observable<List[]>;
+
     workshops: Observable<Workshop[]>;
 
     loading = false;
@@ -118,6 +120,11 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     ngOnInit() {
         super.ngOnInit();
+
+        this.sharedLists = this.userService.getUserData().mergeMap(user => {
+            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)));
+        }).publishReplay(1).refCount();
+
         this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user.$key !== undefined) {
                 return this.workshopService.getUserWorkshops(user.$key);
