@@ -56,17 +56,28 @@
     flex: 1 1 auto;
 }
 
-.crystal-row {
+.crystals {
     display: inline-block;
     text-align: center;
-    .crystal {
-        margin: 0 5px;
-        width: 40px;
-        border-radius: 50%;
-        &.compact {
-            width: 25px;
+    .crystal-row {
+        &.tracked{
+            padding: 10px;
+            margin: 0 10px;
+        }
+        .crystal {
+            margin: 0 5px;
+            width: 40px;
+            border-radius: 50%;
+            &.compact {
+                width: 25px;
+            }
         }
     }
+
+}
+
+.crystals-toggle {
+    margin-right: 10px;
 }
 
 .panel {

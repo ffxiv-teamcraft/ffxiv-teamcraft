@@ -131,10 +131,10 @@
         </div>
         <div [ngClass]="{'done-check':true, 'compact': settings.compactLists}">
             <button mat-mini-fab
-               [disabled]="!permissions?.participate"
-               *ngIf="getAmount() > (item.done | ceil)"
-               [ngClass]="{'done-button':true, 'compact': settings.compactLists}"
-               (click)="setDone(item, getAmount(), item.done)">
+                    [disabled]="!permissions?.participate"
+                    *ngIf="getAmount() > (item.done | ceil)"
+                    [ngClass]="{'done-button':true, 'compact': settings.compactLists}"
+                    (click)="setDone(item, getAmount(), item.done)">
                 <mat-icon>playlist_add_check</mat-icon>
             </button>
             <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
@@ -142,17 +142,20 @@
 
         <div class="classes">
             <div *ngIf="recipe">
-                <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
-                     *ngIf="getCraft(item.recipeId) as craft"
-                     matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                     matTooltipPosition="above" src="{{craft.icon}}">
+                <a *ngIf="getCraft(item.recipeId) as craft" href="{{craft | simulatorLink | i18n}}" target="_blank">
+                    <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                         matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                         matTooltipPosition="above" src="{{craft.icon}}">
+                </a>
             </div>
             <div *ngIf="!recipe">
                 <div *ngFor="let craft of item.craftedBy">
-                    <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
-                         *ngIf="craft.icon !== ''"
-                         matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                         matTooltipPosition="above" src="{{craft.icon}}">
+                    <a href="{{craft | simulatorLink: item.id | i18n}}" target="_blank">
+                        <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                             *ngIf="craft.icon !== ''"
+                             matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
+                             matTooltipPosition="above" src="{{craft.icon}}">
+                    </a>
                 </div>
             </div>
             <div>
@@ -185,7 +188,7 @@
                     <img [ngClass]="{'currency':true, 'compact': settings.compactLists}"
                          matTooltip="{{'Trade' | translate}}"
                          matTooltipPosition="above"
-                         src="{{getTradeIcon(item) | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
+                         src="{{tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
                 </button>
             </div>
             <div *ngIf="item.instances !== undefined && item.instances.length > 0">
@@ -329,7 +332,7 @@
                         <img class="currency"
                              matTooltip="{{'Trade' | translate}}"
                              matTooltipPosition="above"
-                             src="{{getTradeIcon(item) | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
+                             src="{{tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
                     </button>
                 </div>
                 <div *ngIf="item.instances !== undefined && item.instances.length > 0">
@@ -404,8 +407,8 @@
 
         <div class="done-check">
             <button mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
-               [disabled]="!permissions?.participate"
-               (click)="setDone(item, getAmount(), item.done)">
+                    [disabled]="!permissions?.participate"
+                    (click)="setDone(item, getAmount(), item.done)">
                 <mat-icon>playlist_add_check</mat-icon>
             </button>
             <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>

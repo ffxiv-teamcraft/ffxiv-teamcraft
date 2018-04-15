@@ -20,7 +20,8 @@
         "List_selection_title": "Select lists to add to workshop {{workshopName}}",
         "Name_dialog": "Workshop name",
         "Created_by": "Created by {{name}}",
-        "Share_link_copied": "Workshop share link copied"
+        "Share_link_copied": "Workshop share link copied",
+        "Not_found": "Workshop not found or you don't have access to it"
     },
     "ABOUT": {
         "title": "About",
@@ -52,7 +53,8 @@
     },
     "ALARMS": {
         "No_alarm": "No alarms set",
-        "Add_alarm": "Add alarm"
+        "Add_alarm": "Add alarm",
+        "Alarm_created": "Alarm created"
     },
     "Item_name": "Item name",
     "No_items_found": "No item found",
@@ -134,7 +136,7 @@
     "Character_not_found": "Character not found",
     "List_forked": "List copied to your account",
     "List_fork": "Copy this list to your account",
-    "List_not_found": "List not found",
+    "List_not_found": "List not found or you don't have access to it",
     "Requirements_for_craft": "See requirements",
     "Zone_breakdown": "Area breakdown",
     "Timer_options": "Timer options",
@@ -220,7 +222,8 @@
         "link_base": "Item links",
         "compact_lists": "Compact list display",
         "theme": "Theme",
-        "ffxivcrafting_display": "FFXIVcrafting.com-like amounts"
+        "ffxivcrafting_display": "FFXIVcrafting.com-like amounts",
+        "Simulator_link_base": "Simulator link"
     },
     "PROFILE": {
         "Masterbooks": "Masterbooks",
@@ -258,7 +261,8 @@
         }
     },
     "LIST": {
-        "Copied_x_times": "Copied {{count}} times"
+        "Copied_x_times": "Copied {{count}} times",
+        "Enable_crystals_tracking": "Enable crystals tracking"
     },
     "LIST_DETAILS": {
         "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
@@ -407,12 +411,17 @@
     },
     "PERMISSIONS": {
         "Read": "Read",
-        "Title": "Permissions management",
+        "Read_description": "The ability to see the list",
         "Participate": "Participate",
+        "Participate_description": "This gives you permission to tick items and modify amounts done",
         "Write": "Write",
+        "Write_description": "This gives you the permission to add items, add lists (for workshops)",
+        "Title": "Permissions management",
         "Everyone": "Everyone",
         "You": "You",
         "Add_new": "Add a user",
-        "Placeholder": "Email or User ID"
+        "Placeholder": "Email or User ID",
+        "Bind_free_company": "Bind some permissions to your Free Company",
+        "User_not_found": "User not found"
     }
 }
