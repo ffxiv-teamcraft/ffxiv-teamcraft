@@ -38,6 +38,7 @@ import { AnnouncementPopupComponent } from './announcement-popup/announcement-po
 import { PermissionsPopupComponent } from './permissions-popup/permissions-popup.component';
 import { PermissionsRowComponent } from './permissions-popup/permissions-row/permissions-row.component';
 import { AddNewRowPopupComponent } from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
+import { FcCrestComponent } from './fc-crest/fc-crest.component';
 
 @NgModule({
     imports: [
@@ -87,6 +88,7 @@ import { AddNewRowPopupComponent } from './permissions-popup/add-new-row-popup/a
         PermissionsPopupComponent,
         PermissionsRowComponent,
         AddNewRowPopupComponent,
+        FcCrestComponent,
     ],
     exports: [
         RandomGifComponent,

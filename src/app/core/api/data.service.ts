@@ -135,7 +135,7 @@ export class DataService {
      * @param {number} id
      * @returns {Observable<any>}
      */
-    public getFreeCompany(id: number): Observable<any> {
+    public getFreeCompany(id: string): Observable<any> {
         return this.http.get<any>(`https://xivsync.com/freecompany/parse/${id}`).map(result => result.data)
             .publishReplay(1)
             .refCount()

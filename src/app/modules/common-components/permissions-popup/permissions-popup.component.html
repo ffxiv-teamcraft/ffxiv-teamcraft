@@ -1,6 +1,16 @@
 <h3 mat-dialog-title>{{'PERMISSIONS.Title' | translate}}</h3>
 <div mat-dialog-content *ngIf="!saving">
     <mat-list *ngIf="rows | async as rowsData; else loading">
+        <span *ngIf="isWorkshop() && registry.freeCompanyId !== undefined && freeCompany !== undefined">
+            <app-permissions-row *ngIf="freeCompany | async as fc"
+                                 [name]="fc.name"
+                                 [fcCrest]="fc.crest"
+                                 [permissions]="registry.freeCompany"
+                                 (permissionsChange)="handleFcPermissionsChange($event)"
+                                 (delete)="unbindFreeCompany()">
+            </app-permissions-row>
+        </span>
+
         <app-permissions-row *ngFor="let row of rowsData"
                              [permissions]="row.permissions"
                              (permissionsChange)="handlePermissionsChange($event, row.userId)"
@@ -8,6 +18,7 @@
                              [name]="row.character.name"
                              [isAuthor]="row.userId === data.authorId"
                              (delete)="deleteRow(row.userId)"></app-permissions-row>
+
         <app-permissions-row [permissions]="registry.everyone"
                              (permissionsChange)="handlePermissionsChange($event)"
                              isEveryone="true"></app-permissions-row>
@@ -20,6 +31,10 @@
     <button mat-raised-button color="accent" class="add-row" (click)="addNewRow()">
         <mat-icon>add</mat-icon>
         {{'PERMISSIONS.Add_new' | translate}}
+    </button>
+    <button mat-raised-button color="primary" class="add-row" (click)="bindFreeCompany()"
+            *ngIf="isWorkshop() && registry.freeCompanyId === undefined">
+        {{'PERMISSIONS.Bind_free_company' | translate}}
     </button>
 </div>
 <div mat-dialog-actions *ngIf="!saving">

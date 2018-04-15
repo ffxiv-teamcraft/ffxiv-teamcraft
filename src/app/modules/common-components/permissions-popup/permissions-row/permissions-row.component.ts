@@ -23,6 +23,9 @@ export class PermissionsRowComponent {
     avatar: string;
 
     @Input()
+    fcCrest: [string, string, string];
+
+    @Input()
     name: string;
 
     @Input()
