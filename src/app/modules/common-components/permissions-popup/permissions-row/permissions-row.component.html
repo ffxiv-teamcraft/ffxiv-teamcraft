@@ -1,5 +1,10 @@
 <mat-list-item>
-    <img mat-list-avatar src="{{avatar}}" alt="" matTooltip="{{name}}" matTooltipPosition="above" *ngIf="!isEveryone">
+    <img mat-list-avatar src="{{avatar}}" alt="" matTooltip="{{name}}" matTooltipPosition="above"
+         *ngIf="!isEveryone && fcCrest === undefined">
+
+    <app-fc-crest mat-list-avatar [crest]="fcCrest" *ngIf="fcCrest !== undefined" matTooltip="{{name}}"
+                  matTooltipPosition="above"></app-fc-crest>
+
     <mat-icon mat-list-icon class="list-icon" *ngIf="isEveryone" matTooltip="{{'PERMISSIONS.Everyone' | translate}}"
               matTooltipPosition="above">group
     </mat-icon>
@@ -16,7 +21,8 @@
                           (change)="handleChanges()">
                 {{'PERMISSIONS.Participate' | translate}}
             </mat-checkbox>
-            <mat-checkbox [(ngModel)]="permissions.write" disabled="{{isEveryone || !permissions.read || isAuthor}}"
+            <mat-checkbox [(ngModel)]="permissions.write" disabled="{{isEveryone || !permissions.read || isAuthor
+            || fcCrest !== undefined}}"
                           (change)="handleChanges()">
                 {{'PERMISSIONS.Write' | translate}}
             </mat-checkbox>

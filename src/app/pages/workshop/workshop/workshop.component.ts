@@ -49,17 +49,24 @@ export class WorkshopComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.workshop = this.userService.getUserData().mergeMap(user => {
-            return this.route.params
-                .mergeMap(params => this.workshopService.get(params.id))
-                .do(workshop => {
-                    this.notFound = !workshop.getPermissions(user.$key).read;
-                })
-                .catch(() => {
-                    this.notFound = true;
-                    return Observable.of(null);
-                });
-        });
+        this.workshop = this.userService.getUserData()
+            .mergeMap(user => this.userService.getCharacter(user.$key)
+                .catch(() => Observable.of(user))
+                .map(char => {
+                    char.$key = user.$key;
+                    return char;
+                }))
+            .mergeMap(character => {
+                return this.route.params
+                    .mergeMap(params => this.workshopService.get(params.id))
+                    .do(workshop => {
+                        this.notFound = !workshop.getPermissions(character.$key, character.free_company).read;
+                    })
+                    .catch(() => {
+                        this.notFound = true;
+                        return Observable.of(null);
+                    });
+            });
         this.favorite = this.workshop.switchMap(workshop => {
             return this.userService.getUserData().map(user => {
                 return (user.favoriteWorkshops || []).indexOf(workshop.$key) > -1;

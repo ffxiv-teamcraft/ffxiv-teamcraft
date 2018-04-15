@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DataWithPermissions} from '../../../core/database/permissions/data-with-permissions';
 import {AddNewRowPopupComponent} from './add-new-row-popup/add-new-row-popup.component';
@@ -10,11 +10,13 @@ import {UserService} from '../../../core/database/user.service';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {List} from '../../../model/list/list';
 import {Workshop} from '../../../model/other/workshop';
+import {DataService} from '../../../core/api/data.service';
 
 @Component({
     selector: 'app-permissions-popup',
     templateUrl: './permissions-popup.component.html',
-    styleUrls: ['./permissions-popup.component.scss']
+    styleUrls: ['./permissions-popup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PermissionsPopupComponent {
 
@@ -26,10 +28,18 @@ export class PermissionsPopupComponent {
 
     saving = false;
 
+    freeCompany: Observable<any>;
+
     constructor(@Inject(MAT_DIALOG_DATA) public data: DataWithPermissions, private dialog: MatDialog, private userService: UserService,
-                private dialogRef: MatDialogRef<PermissionsPopupComponent>, serializer: NgSerializerService) {
+                private dialogRef: MatDialogRef<PermissionsPopupComponent>, serializer: NgSerializerService,
+                private dataService: DataService) {
         // Create a copy to work on.
         this.registry = serializer.deserialize(JSON.parse(JSON.stringify(data.permissionsRegistry)), PermissionsRegistry);
+
+        if (this.registry.freeCompanyId !== undefined) {
+            this.freeCompany = this.dataService.getFreeCompany(this.registry.freeCompanyId);
+        }
+
         this.registrySubject = new BehaviorSubject<PermissionsRegistry>(this.registry);
         this.rows = this.registrySubject
             .mergeMap(registry => {
@@ -60,6 +70,29 @@ export class PermissionsPopupComponent {
         } else {
             this.registry.everyone = after;
         }
+    }
+
+    handleFcPermissionsChange(after: Permissions): void {
+        this.registry.freeCompany = after;
+    }
+
+    isWorkshop(): boolean {
+        return this.data instanceof Workshop;
+    }
+
+    bindFreeCompany(): void {
+        this.userService.getUserData()
+            .mergeMap(user => this.userService.getCharacter(user.$key))
+            .first()
+            .subscribe(character => {
+                this.registry.freeCompanyId = character.free_company;
+                this.freeCompany = this.dataService.getFreeCompany(this.registry.freeCompanyId);
+            });
+    }
+
+    unbindFreeCompany(): void {
+        delete this.registry.freeCompanyId;
+        this.freeCompany = undefined;
     }
 
     addNewRow(): void {
