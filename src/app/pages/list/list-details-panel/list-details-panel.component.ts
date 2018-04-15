@@ -207,7 +207,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        this.permissions = this.list.getPermissions(this.user.$key);
+        if (this.user !== undefined) {
+            this.permissions = this.list.getPermissions(this.user.$key);
+        }
         if (this.showTier) {
             this.generateTiers();
         }
@@ -217,7 +219,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
 
     ngOnInit(): void {
-        this.permissions = this.list.getPermissions(this.user.$key);
+        if (this.user !== undefined) {
+            this.permissions = this.list.getPermissions(this.user.$key);
+        }
         if (this.showTier) {
             this.generateTiers();
         }

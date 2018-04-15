@@ -13,6 +13,7 @@ import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {UserService} from '../../../core/database/user.service';
 
 @Component({
     selector: 'app-list',
@@ -30,7 +31,7 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
 
     constructor(protected dialog: MatDialog, help: HelpService, private route: ActivatedRoute,
                 private listService: ListService, private title: Title, private translate: TranslateService,
-                private data: LocalizedDataService, protected media: ObservableMedia) {
+                private data: LocalizedDataService, protected media: ObservableMedia, private userService: UserService) {
         super(dialog, help, media);
     }
 
@@ -42,25 +43,30 @@ export class ListComponent extends PageComponent implements OnInit, OnDestroy {
     ngOnInit() {
         super.ngOnInit();
         this.list = this.route.params.switchMap(params => {
-            return this.reload$
-                .mergeMap(() => this.listService.get(params.listId))
-                .filter(list => list !== null)
-                .do((l: List) => {
-                    if (l.name !== undefined) {
-                        this.title.setTitle(`${l.name}`);
-                    } else {
-                        this.title.setTitle(this.translate.instant('List_not_found'));
-                    }
-                })
-                .map((list: List) => {
-                    list.crystals = list.orderCrystals();
-                    list.gathers = list.orderGatherings(this.data);
-                    return list;
-                })
-                .catch(() => {
-                    this.notFound = true;
-                    return Observable.of(null);
-                });
+            return this.userService.getUserData().mergeMap(user => {
+                return this.reload$
+                    .mergeMap(() => this.listService.get(params.listId))
+                    .do(list => {
+                        this.notFound = !list.getPermissions(user.$key).read;
+                    })
+                    .filter(list => list !== null)
+                    .do((l: List) => {
+                        if (!this.notFound && l.name !== undefined) {
+                            this.title.setTitle(`${l.name}`);
+                        } else {
+                            this.title.setTitle(this.translate.instant('List_not_found'));
+                        }
+                    })
+                    .map((list: List) => {
+                        list.crystals = list.orderCrystals();
+                        list.gathers = list.orderGatherings(this.data);
+                        return list;
+                    })
+                    .catch(() => {
+                        this.notFound = true;
+                        return Observable.of(null);
+                    });
+            });
         });
     }
 
