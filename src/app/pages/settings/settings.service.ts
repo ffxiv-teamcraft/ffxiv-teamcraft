@@ -28,6 +28,14 @@ export class SettingsService {
         this.setSetting('base-simulator-link', base);
     }
 
+    public get crystalsTracking(): boolean {
+        return this.getSetting('crystals-tracking', 'false') === 'true';
+    }
+
+    public set crystalsTracking(enabled: boolean) {
+        this.setSetting('crystals-tracking', enabled.toString());
+    }
+
     public get compactLists(): boolean {
         return this.getSetting('compact-lists', 'false') === 'true';
     }

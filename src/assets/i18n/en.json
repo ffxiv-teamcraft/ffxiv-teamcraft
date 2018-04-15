@@ -260,7 +260,8 @@
         }
     },
     "LIST": {
-        "Copied_x_times": "Copied {{count}} times"
+        "Copied_x_times": "Copied {{count}} times",
+        "Enable_crystals_tracking": "Enable crystals tracking"
     },
     "LIST_DETAILS": {
         "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",

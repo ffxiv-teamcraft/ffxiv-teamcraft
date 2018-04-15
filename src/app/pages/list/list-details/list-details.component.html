@@ -177,13 +177,26 @@
         <mat-expansion-panel class="panel">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
+                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
+                    {{'LIST.Enable_crystals_tracking' | translate}}
+                </mat-checkbox>
             </mat-expansion-panel-header>
-            <div class="crystal-row" *ngFor="let crystal of listData?.crystals">
-                <div *ngIf="crystal.amount > crystal.done">
+            <div *ngFor="let crystal of listData?.crystals" class="crystals">
+                <div *ngIf="crystal.amount > crystal.done" class="crystal-row"
+                     [class.mat-elevation-z8]="settings.crystalsTracking" [class.tracked]="settings.crystalsTracking">
                     <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}"
                          matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
                          src="{{crystal.icon | icon}}" alt="{{crystal.id | itemName | i18n}}">
-                    <div>{{(crystal.amount - crystal.done) | ceil}}</div>
+                    <div *ngIf="!settings.crystalsTracking">
+                        {{(crystal.amount - crystal.done) | ceil}}
+                    </div>
+                    <div *ngIf="settings.crystalsTracking">
+                        <app-amount-input max="{{crystal.amount}}"
+                                          maxlength="{{crystal.amount?.toString().length}}"
+                                          min="0"
+                                          (onchange)="setDone(listData, {row: crystal, preCraft: false, amount: $event - crystal.done})"
+                                          [value]="crystal.done | ceil"></app-amount-input>
+                    </div>
                 </div>
             </div>
         </mat-expansion-panel>
