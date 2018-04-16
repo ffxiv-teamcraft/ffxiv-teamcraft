@@ -10,7 +10,8 @@ import {
     MatIconModule,
     MatInputModule,
     MatListModule, MatProgressSpinnerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCheckboxModule,
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
@@ -34,6 +35,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
 import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
 import { AnnouncementPopupComponent } from './announcement-popup/announcement-popup.component';
+import { PermissionsPopupComponent } from './permissions-popup/permissions-popup.component';
+import { PermissionsRowComponent } from './permissions-popup/permissions-row/permissions-row.component';
+import { AddNewRowPopupComponent } from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
+import { FcCrestComponent } from './fc-crest/fc-crest.component';
 
 @NgModule({
     imports: [
@@ -54,6 +59,7 @@ import { AnnouncementPopupComponent } from './announcement-popup/announcement-po
         MatDialogModule,
         MatProgressSpinnerModule,
         MatChipsModule,
+        MatCheckboxModule,
 
         ClipboardModule,
 
@@ -79,6 +85,10 @@ import { AnnouncementPopupComponent } from './announcement-popup/announcement-po
         RegisterPopupComponent,
         FfxivcraftingAmountInputComponent,
         AnnouncementPopupComponent,
+        PermissionsPopupComponent,
+        PermissionsRowComponent,
+        AddNewRowPopupComponent,
+        FcCrestComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -104,6 +114,8 @@ import { AnnouncementPopupComponent } from './announcement-popup/announcement-po
         ListNamePopupComponent,
         RegisterPopupComponent,
         AnnouncementPopupComponent,
+        PermissionsPopupComponent,
+        AddNewRowPopupComponent,
     ]
 })
 export class CommonComponentsModule {

@@ -9,10 +9,11 @@ import {ListTag} from './list-tag.enum';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {ResourceComment} from '../../modules/comments/resource-comment';
 import {Craft} from '../garland-tools/craft';
+import {DataWithPermissions} from '../../core/database/permissions/data-with-permissions';
 
 declare const ga: Function;
 
-export class List extends DataModel {
+export class List extends DataWithPermissions {
     name: string;
     recipes: ListRow[] = [];
     preCrafts: ListRow[] = [];
@@ -26,8 +27,6 @@ export class List extends DataModel {
     createdAt: string = new Date().toISOString();
 
     version: string;
-
-    authorId: string;
 
     favorites: string[] = [];
 

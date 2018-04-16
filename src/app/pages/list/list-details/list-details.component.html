@@ -3,13 +3,23 @@
 <div *ngIf="!pricingMode && listData !== null">
     <div *ngIf="listDisplay | async as display; else loading">
         <div class="etime-container">
-            <app-eorzean-time class="etime" [date]="etime"></app-eorzean-time>
+            <app-eorzean-time class="etime" [date]="clock | async"></app-eorzean-time>
         </div>
 
         <div class="left-fabs">
             <button mat-mini-fab (click)="openLayoutOptions()">
                 <mat-icon>dashboard</mat-icon>
             </button>
+            <span *ngIf="isOwnList()"
+                  [matTooltipDisabled]="!user.isAnonymous"
+                  [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                <button mat-mini-fab
+                        [disabled]="user.isAnonymous"
+                        [matTooltip]="'PERMISSIONS.Title' | translate"
+                        (click)="openPermissionsPopup()" *ngIf="listData.authorId === userData.$key">
+                    <mat-icon>security</mat-icon>
+                </button>
+            </span>
         </div>
         <div class="right-fabs">
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
@@ -17,7 +27,8 @@
                 <mat-icon>label_outline</mat-icon>
             </button>
 
-            <button mat-mini-fab color="accent" *ngIf="listData !== null" [routerLink]="['/list-inventory', listData?.$key]"
+            <button mat-mini-fab color="accent" *ngIf="listData !== null"
+                    [routerLink]="['/list-inventory', listData?.$key]"
                     matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}">
                 <mat-icon>apps</mat-icon>
             </button>
@@ -42,7 +53,9 @@
             </button>
             <div class="spacer"></div>
 
-            <button mat-mini-fab color="accent" matTooltip="{{'Reset_progression' | translate}}"
+            <button mat-mini-fab color="accent"
+                    [disabled]="!listData.getPermissions(userData?.$key)?.participate"
+                    matTooltip="{{'Reset_progression' | translate}}"
                     (click)="resetProgression()">
                 <mat-icon>replay</mat-icon>
             </button>
@@ -161,19 +174,29 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel"
-                             [expanded]="listData?.isLarge()&&accordionState !== undefined ? accordionState['Crystals']:true"
-                             (opened)="accordionState['Crystals'] = true"
-                             (closed)="accordionState['Crystals'] = false">
+        <mat-expansion-panel class="panel">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
+                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
+                    {{'LIST.Enable_crystals_tracking' | translate}}
+                </mat-checkbox>
             </mat-expansion-panel-header>
-            <div class="crystal-row" *ngFor="let crystal of listData?.crystals">
-                <div *ngIf="crystal.amount > crystal.done">
+            <div *ngFor="let crystal of listData?.crystals" class="crystals">
+                <div *ngIf="crystal.amount > crystal.done" class="crystal-row"
+                     [class.mat-elevation-z8]="settings.crystalsTracking" [class.tracked]="settings.crystalsTracking">
                     <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}"
                          matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"
                          src="{{crystal.icon | icon}}" alt="{{crystal.id | itemName | i18n}}">
-                    <div>{{(crystal.amount - crystal.done) | ceil}}</div>
+                    <div *ngIf="!settings.crystalsTracking">
+                        {{(crystal.amount - crystal.done) | ceil}}
+                    </div>
+                    <div *ngIf="settings.crystalsTracking">
+                        <app-amount-input max="{{crystal.amount}}"
+                                          maxlength="{{crystal.amount?.toString().length}}"
+                                          min="0"
+                                          (onchange)="setDone(listData, {row: crystal, preCraft: false, amount: $event - crystal.done})"
+                                          [value]="crystal.done | ceil"></app-amount-input>
+                    </div>
                 </div>
             </div>
         </mat-expansion-panel>
@@ -181,28 +204,22 @@
             <app-list-details-panel
                 [user]="userData"
                 *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
-                [expanded]="accordionState[displayRow.title] === true || accordionState[displayRow.title] === undefined"
                 [list]="listData"
                 (update)="update(listData)"
                 (done)="setDone(listData, $event)"
                 [data]="displayRow.rows"
                 [title]="displayRow.title | translate"
-                (opened)="accordionState[displayRow.title] = true"
-                (closed)="accordionState[displayRow.title] = false"
                 [zoneBreakdown]="displayRow.zoneBreakdown"
                 [showTier]="displayRow.tiers"></app-list-details-panel>
         </div>
         <app-list-details-panel
             [user]="userData"
-            [expanded]="listData?.isLarge()?accordionState['Items']:true"
             [list]="listData"
             (update)="update(listData)"
             (done)="setDone(listData, $event)"
-            [data]="listData?.recipes"
+            [data]="recipes | async"
             [recipe]="true"
-            [title]="'Items'| translate"
-            (opened)="accordionState['Items'] = true"
-            (closed)="accordionState['Items'] = false"></app-list-details-panel>
+            [title]="'Items'| translate"></app-list-details-panel>
 
         <mat-divider></mat-divider>
 
@@ -211,7 +228,6 @@
             {{'Public_list' | translate}}
         </mat-checkbox>
     </div>
-    <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
     <ng-template #loading>
         <div class="loader-container" *ngIf="!notFound">
             <mat-spinner></mat-spinner>

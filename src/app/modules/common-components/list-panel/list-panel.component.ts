@@ -14,6 +14,7 @@ import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
+import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
 
 @Component({
     selector: 'app-list-panel',
@@ -68,9 +69,11 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     author: Observable<any>;
 
-    private userUid: string;
+    public userUid: string;
 
     private userNickname: string;
+
+    public anonymous: boolean;
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
@@ -87,6 +90,14 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public getLink(): string {
         return `${window.location.protocol}//${window.location.host}/list/${this.list.$key}`;
+    }
+
+    public openPermissions(list: List): void {
+        this.dialog.open(PermissionsPopupComponent, {data: list})
+            .afterClosed()
+            .filter(res => res !== '')
+            .mergeMap(res => this.listService.set(res.$key, res))
+            .subscribe();
     }
 
     openTemplatePopup(list: List): void {
@@ -154,6 +165,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
         this.userService.getUserData().subscribe(u => {
             this.userUid = u.$key;
             this.userNickname = u.nickname;
+            this.anonymous = u.anonymous;
         });
     }
 

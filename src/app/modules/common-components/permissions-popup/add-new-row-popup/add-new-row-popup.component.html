@@ -1,0 +1,25 @@
+<h2 mat-dialog-title> {{'PERMISSIONS.Add_new' | translate}}</h2>
+<div mat-dialog-content class="container">
+    <mat-input-container class="search-field">
+        <input type="email" matInput #inputField [(ngModel)]="input"
+               [placeholder]="'PERMISSIONS.Placeholder' | translate">
+        <mat-hint>{{'PERMISSIONS.User_id_tip' | translate}}</mat-hint>
+    </mat-input-container>
+    <mat-error *ngIf="notFound">{{'PERMISSIONS.User_not_found' | translate}}</mat-error>
+    <mat-list *ngIf="result && !notFound">
+        <mat-list-item>
+            <img mat-list-avatar src="{{result.character.avatar}}" alt="">
+            <b matLine>{{result.character.name}}</b>
+        </mat-list-item>
+    </mat-list>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="result?.user" color="primary"
+            [disabled]="notFound || result === undefined">
+        {{'Confirm' | translate}}
+    </button>
+    <button mat-button mat-dialog-close color="warn">
+        {{'Cancel' | translate}}
+    </button>
+</div>

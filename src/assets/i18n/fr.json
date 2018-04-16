@@ -20,7 +20,9 @@
         "List_selection_title": "Choisissez les listes à ajouter à l'atelier {{workshopName}}",
         "Name_dialog": "Nom de l'atelier",
         "Created_by": "Créé par {{name}}",
-        "Share_link_copied": "Lien de partage de l'atelier copié"
+        "Share_link_copied": "Lien de partage de l'atelier copié",
+        "Not_found": "Atelier introuvable ou vous n'avez pas les droits accès",
+        "Shared_workshops": "Ateliers partagés avec vous"
     },
     "ABOUT": {
         "title": "À Propos",
@@ -48,11 +50,13 @@
     "COMMON": {
         "Save": "Sauvegarder",
         "Reset": "Remettre à 0",
-        "Total": "Total"
+        "Total": "Total",
+        "User_id": "ID Utilisateur"
     },
     "ALARMS": {
         "No_alarm": "Aucune alarme définie",
-        "Add_alarm": "Ajouter une alarme"
+        "Add_alarm": "Ajouter une alarme",
+        "Alarm_created": "Alarme créée"
     },
     "Item_name": "Nom de l'objet",
     "No_items_found": "Aucun objet trouvé",
@@ -135,7 +139,7 @@
     "Requirements_for_craft": "Voir les prérequis",
     "List_forked": "Liste copiée sur votre compte",
     "List_fork": "Copier cette liste sur votre compte",
-    "List_not_found": "Liste introuvable",
+    "List_not_found": "Liste introuvable ou vous n'avez pas les droits d'accès",
     "Zone_breakdown": "Résumé par zone",
     "Timer_options": "Options des alarmes",
     "Early_by": "Prévenir en avance (heures éorzéennes)",
@@ -220,7 +224,8 @@
         "link_base": "Liens des objets",
         "compact_lists": "Affichage compact des listes",
         "theme": "Thème",
-        "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com"
+        "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com",
+        "Simulator_link_base": "Lien vers le simulateur"
     },
     "PROFILE": {
         "Masterbooks": "Livres",
@@ -257,13 +262,14 @@
         }
     },
     "LIST": {
-        "Copied_x_times": "Copiée {{count}} fois"
+        "Copied_x_times": "Copiée {{count}} fois",
+        "Enable_crystals_tracking": "Activer le suivi des cristaux"
     },
     "LIST_DETAILS": {
         "Missing_tags_before_button":"Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
         "Missing_tags_after_button":"",
         "Add_remove_amount": "Ajouter/enlever un montant donné",
-        "No_book": "Livre manquant",
+        "No_book": "Livre manquant, cliquer pour aller sur la page de profil",
         "No_note": "Aucune note",
         "Note_placeholder": "Note",
         "Tags_popup": "Tags",
@@ -411,5 +417,21 @@
         "Cloning_list": "Création d'une copie de la liste sur votre compte",
         "Redirect_notice": "Vous serez redirigé vers la liste une fois celle-ci créée",
         "Not_found": "Modèle introuvable"
+    },
+    "PERMISSIONS": {
+        "Read": "Lire",
+        "Read_description": "Permission de voir la liste",
+        "Participate": "Participer",
+        "Participate_description": "Permission de cocher des objets dans la liste",
+        "Write": "Écrire",
+        "Write_description": "Permission d'ajouter des objets à la liste ou des listes au workshop",
+        "Title": "Gestion des permissions",
+        "Everyone": "Tout le monde",
+        "You": "Vous",
+        "Add_new": "Ajouter un utilisateur",
+        "Placeholder": "Email ou ID utilisateur",
+        "Bind_free_company": "Lier des permissions à la Compagnie Libre",
+        "User_not_found": "Utilisateur introuvable",
+        "User_id_tip": "L'ID Utilisateur peut être trouvé dans la page de profil, dans le coin en bas à droite."
     }
 }

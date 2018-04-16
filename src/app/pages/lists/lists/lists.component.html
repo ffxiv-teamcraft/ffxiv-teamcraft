@@ -58,6 +58,23 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
+    <div class="shared-lists">
+        <h2>{{"LISTS.Shared_lists" | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div class="row" *ngFor="let list of sharedLists | async;trackBy: trackByListsFn; let i = index;">
+            <app-list-panel
+                [list]="list"
+                [expanded]="expanded.indexOf(list.$key) > -1"
+                (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                (ondelete)="delete(list)"
+                [authorUid]="user.uid"
+                [odd]="i%2>0"
+                [linkButton]="userData?.patron || userData?.admin"
+                [templateButton]="userData?.patron || userData?.admin"
+            ></app-list-panel>
+        </div>
+    </div>
     <div class="workshops">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
@@ -76,6 +93,16 @@
                                 (click)="$event.stopPropagation(); openLinkPopup(workshop)">
                             <mat-icon>link</mat-icon>
                         </button>
+                        <span *ngIf="workshop.authorId === userData.$key"
+                              [matTooltipDisabled]="!anonymous"
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                            <button mat-icon-button
+                                    (click)="$event.stopPropagation();openPermissions(workshop)"
+                                    [disabled]="anonymous"
+                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                <mat-icon>security</mat-icon>
+                            </button>
+                        </span>
                         <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
                                 (click)="$event.stopPropagation()"
                                 matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
@@ -98,6 +125,7 @@
                         <mat-icon>remove</mat-icon>
                     </button>
                     <app-list-panel
+                        [readonly]="!list.getPermissions(userData.$key).write"
                         [list]="list"
                         [expanded]="expanded.indexOf(list.$key) > -1"
                         (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
@@ -119,6 +147,73 @@
             <mat-icon>add</mat-icon>
             {{'WORKSHOP.Add_workshop' | translate}}
         </button>
+    </div>
+    <div class="workshops">
+        <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <div *ngFor="let workshopData of sharedWorkshops | async; trackBy: trackByWorkshopFn; let i = index"
+             class="row">
+            <mat-expansion-panel [ngClass]="{odd: i%2>0}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="workshop-name">
+                        {{workshopData.workshop.name}}
+                        <button mat-icon-button (click)="$event.stopPropagation();changeWorkshopName(workshop)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </mat-panel-title>
+                    <div class="buttons">
+                        <button mat-icon-button *ngIf="userData?.patron || userData?.admin"
+                                matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                                (click)="$event.stopPropagation(); openLinkPopup(workshopData.workshop)">
+                            <mat-icon>link</mat-icon>
+                        </button>
+                        <span *ngIf="workshopData.workshop.authorId === userData.$key"
+                              [matTooltipDisabled]="!anonymous"
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                            <button mat-icon-button
+                                    (click)="$event.stopPropagation();openPermissions(workshopData.workshop)"
+                                    [disabled]="anonymous"
+                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                <mat-icon>security</mat-icon>
+                            </button>
+                        </span>
+                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshopData.workshop)"
+                                (click)="$event.stopPropagation()"
+                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                                (cbOnSuccess)="showCopiedNotification()">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button mat-icon-button routerLink="/workshop/{{workshopData.workshop.$key}}"
+                                (click)="$event.stopPropagation()">
+                            <mat-icon>playlist_play</mat-icon>
+                        </button>
+                    </div>
+                </mat-expansion-panel-header>
+                <div class="row workshop-row"
+                     *ngFor="let list of workshopData.lists; trackBy: trackByListsFn; let i = index">
+                    <button mat-icon-button color="warn"
+                            (click)="removeListFromWorkshop(workshopData.workshop, list.$key)">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <app-list-panel
+                        [readonly]="!list.getPermissions(userData.$key).write"
+                        [list]="list"
+                        [expanded]="expanded.indexOf(list.$key) > -1"
+                        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                        (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                        (ondelete)="delete(list)"
+                        [authorUid]="user.uid"
+                        [odd]="i%2>0"
+                        [linkButton]="userData?.patron || userData?.admin"
+                        [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
+                </div>
+                <button mat-button class="full-width-button" color="accent"
+                        (click)="addListsToWorkhop(workshopData.workshop, display.basicLists)">
+                    <mat-icon>add</mat-icon>
+                    {{'WORKSHOP.Add_lists' | translate}}
+                </button>
+            </mat-expansion-panel>
+        </div>
     </div>
 </div>
 

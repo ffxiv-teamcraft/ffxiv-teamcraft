@@ -28,6 +28,7 @@ import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/cus
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
+import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 
 declare const ga: Function;
 
@@ -41,6 +42,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     reloader$ = new BehaviorSubject<void>(null);
 
     lists: Observable<{ basicLists: List[], rows?: { [index: string]: List[] } }>;
+
+    sharedLists: Observable<List[]>;
 
     tags: string[] = Object.keys(ListTag);
 
@@ -57,6 +60,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     loading = true;
 
     workshops: Observable<Workshop[]>;
+
+    sharedWorkshops: Observable<{ workshop: Workshop, lists: List[] }[]>;
 
     userData: AppUser;
 
@@ -239,6 +244,14 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         });
     }
 
+    openPermissions(workshop: Workshop): void {
+        this.dialog.open(PermissionsPopupComponent, {data: workshop})
+            .afterClosed()
+            .filter(res => res !== '')
+            .mergeMap(result => this.workshopService.set(result.$key, result))
+            .subscribe();
+    }
+
     trackByListsFn(index: number, item: List) {
         return item.$key;
     }
@@ -248,11 +261,42 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
+        this.sharedLists = this.userService.getUserData().mergeMap(user => {
+            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)
+                .catch(() => {
+                    user.sharedLists = user.sharedLists.filter(id => id !== listId);
+                    return this.userService.set(user.$key, user).map(() => null);
+                })))
+                .map(lists => lists.filter(l => l !== null));
+        });
         this.workshops = this.auth.authState.mergeMap(user => {
             if (user === null) {
                 return this.reloader$.mergeMap(() => Observable.of([]));
             } else {
                 return this.reloader$.mergeMap(() => this.workshopService.getUserWorkshops(user.uid));
+            }
+        });
+        this.sharedWorkshops = this.userService.getUserData().mergeMap(user => {
+            if (user === null) {
+                return this.reloader$.mergeMap(() => Observable.of([]));
+            } else {
+                return this.reloader$.mergeMap(() => {
+                    return Observable.combineLatest(user.sharedWorkshops.map(workshopId => {
+                        return this.workshopService.get(workshopId)
+                            .catch(() => {
+                                user.sharedWorkshops = user.sharedWorkshops.filter(id => id !== workshopId);
+                                return this.userService.set(user.$key, user).map(() => null);
+                            })
+                            .mergeMap(workshop => {
+                                if (workshop !== null) {
+                                    return this.listService.fetchWorkshop(workshop).map(lists => {
+                                        return {workshop: workshop, lists: lists};
+                                    });
+                                }
+                                return Observable.of(null);
+                            });
+                    })).map(workshops => workshops.filter(w => w !== null));
+                });
             }
         });
         this.lists =
@@ -275,9 +319,27 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                             });
                                             return match;
                                         });
-                                    }).map(lists => {
-                                    return this.workshopService.getListsByWorkshop(lists, workshops);
-                                });
+                                    })
+                                    .mergeMap(lists => {
+                                        const additionalLists = [];
+                                        for (const workshop of workshops) {
+                                            for (const wsListId of workshop.listIds) {
+                                                // If this list is not one of the user's lists, it won't be loaded
+                                                if (lists.find(list => list.$key === wsListId) === undefined) {
+                                                    additionalLists.push(wsListId);
+                                                }
+                                            }
+                                        }
+                                        if (additionalLists.length > 0) {
+                                            return Observable.combineLatest(additionalLists.map(listId => this.listService.get(listId)))
+                                                .map(externalLists => lists.concat(externalLists));
+                                        } else {
+                                            return Observable.of(lists);
+                                        }
+                                    })
+                                    .map(lists => {
+                                        return this.workshopService.getListsByWorkshop(lists, workshops);
+                                    });
                             }));
                     }
                 }

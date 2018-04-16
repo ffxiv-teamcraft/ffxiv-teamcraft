@@ -9,7 +9,7 @@
     "Work_on_it": "Als 'in Arbeit' markieren",
     "Add_as_collectible": "Als Sammlerstück hinzufügen",
     "Compact_display": "Komptaktansicht",
-    "Mute_alarms": "Alarme stummschalten",
+    "Mute_alarms": "Benachrichtigung stummschalten",
     "Hide_used": "Verwendete Reihen ausblenden",
     "Retainer_ventures": "Gehilfen-Unternehmungen",
     "WORKSHOP": {
@@ -20,7 +20,9 @@
         "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
         "Name_dialog": "Workshopname",
         "Created_by": "Erstellt von {{name}}",
-        "Share_link_copied": "Workshoplink wurde kopiert"
+        "Share_link_copied": "Workshoplink wurde kopiert",
+        "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
+        "Shared_workshops": "Mit dir geteilte Workshops"
     },
     "ABOUT": {
         "title": "Über FFXIVTeamcraft",
@@ -48,11 +50,13 @@
     "COMMON": {
         "Save": "Speichern",
         "Reset": "Neustart",
-        "Total": "Gesamtsumme"
+        "Total": "Gesamtsumme",
+        "User_id": "Nutzer-ID"
     },
     "ALARMS": {
-        "No_alarm": "Kein Alarm gesetzt",
-        "Add_alarm": "Alarm hinzufügen"
+        "No_alarm": "Kein Benachrichtigung gesetzt",
+        "Add_alarm": "Benachrichtigung hinzufügen",
+        "Alarm_created": "Benachrichtigung erstellt"
     },
     "Item_name": "Gegenstandsname",
     "No_items_found": "Kein Gegenstand gefunden",
@@ -135,7 +139,7 @@
     "Requirements_for_craft": "Bedingungen ansehen",
     "List_forked": "Liste zu deinem Account kopiert",
     "List_fork": "Kopiere diese Liste zu deinem Account",
-    "List_not_found": "Liste nicht gefunden",
+    "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
     "Zone_breakdown": "Gebietsübersicht",
     "Timer_options": "Zeitoptionen",
     "Early_by": "Frühzeitig (in Eorzäischen Stunden)",
@@ -181,8 +185,8 @@
     "HOME_PAGE.FEATURES.pricing_content": "Sieh auf einen Blick wieviel deine Liste kostet!",
     "HOME_PAGE.FEATURES.inventory_title": "Inventar-Übersicht",
     "HOME_PAGE.FEATURES.inventory_content": "Behalte die Übersicht wieviele Gegenstände in deinem Inventar sein müssen, zu jeder Zeit!",
-    "HOME_PAGE.FEATURES.alarms_title": "Alarme",
-    "HOME_PAGE.FEATURES.alarms_content": "Behalte deine Alarme von mehreren Listen im Auge",
+    "HOME_PAGE.FEATURES.alarms_title": "Benachrichtigung",
+    "HOME_PAGE.FEATURES.alarms_content": "Behalte deine Benachrichtigung von mehreren Listen im Auge",
     "HOME_PAGE.support_title": "Hilfe",
     "HOME_PAGE.support_content_discord": "Falls du Probleme mit dem Tool hast, schau einfach bei uns im Discord vorbei!",
     "HOME_PAGE.support_comtent_facebook": "Du findest uns auch auf Facebook",
@@ -220,7 +224,8 @@
         "link_base": "Gegenstandslink-Quelle",
         "compact_lists": "Kompaktlisten-Ansicht",
         "theme": "Design",
-        "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge"
+        "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge",
+        "Simulator_link_base": "Link zum Simulator"
     },
     "PROFILE": {
         "Masterbooks": "Meisterbücher",
@@ -257,13 +262,14 @@
         }
     },
     "LIST": {
-        "Copied_x_times": "{{count}} mal kopiert"
+        "Copied_x_times": "{{count}} mal kopiert",
+        "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren"
     },
     "LIST_DETAILS": {
         "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
         "Missing_tags_after_button": " hinzu.",
         "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
-        "No_book": "Fehlendes Buch",
+        "No_book": "Fehlendes Buch! Klicken um zum Profil zu gelangen",
         "No_note": "Keine Notiz",
         "Note_placeholder": "Notiz",
         "Tags_popup": "Tags",
@@ -403,5 +409,21 @@
         "Cloning_list": "Eine Kopie der Liste wird deinem Account hinzugefügt",
         "Redirect_notice": "Du wirst zu der Liste weitergeleitet, sobald die Kopie erstellt ist",
         "Not_found": "Vorlage nicht gefunden"
+    },
+    "PERMISSIONS": {
+        "Read": "Anzeigen",
+        "Read_description": "Ermöglicht es, die Liste zu sehen",
+        "Participate": "Beitragen",
+        "Participate_description": "Ermöglicht es, zu der Liste beizutragen",
+        "Write": "Ändern",
+        "Write_description": "Ermöglicht es, die Liste oder den Workshop um neue Gegenstände oder Listen zu ergänzen",
+        "Title": "Rechteverwaltung",
+        "Everyone": "Jeder",
+        "You": "Du",
+        "Add_new": "Benutzer hinzufügen",
+        "Placeholder": "E-Mail oder Nutzer ID",
+        "Bind_free_company": "Ändere Rechte für alle Mitglieder deiner freien Gesellschaft",
+        "User_not_found": "Nutzer nicht gefunden",
+        "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden."
     }
 }

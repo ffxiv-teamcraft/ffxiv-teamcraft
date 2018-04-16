@@ -5,7 +5,8 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {LinkBase} from '../link-base/link-base.enum';
 
 @Pipe({
-    name: 'itemLink'
+    name: 'itemLink',
+    pure: true
 })
 export class ItemLinkPipe implements PipeTransform {
 

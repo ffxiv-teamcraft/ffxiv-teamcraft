@@ -20,6 +20,22 @@ export class SettingsService {
         this.setSetting('base-link', base);
     }
 
+    public get baseSimulatorLink(): string {
+        return this.getSetting('base-simulator-link', 'http://ffxiv-beta.lokyst.net');
+    }
+
+    public set baseSimulatorLink(base: string) {
+        this.setSetting('base-simulator-link', base);
+    }
+
+    public get crystalsTracking(): boolean {
+        return this.getSetting('crystals-tracking', 'false') === 'true';
+    }
+
+    public set crystalsTracking(enabled: boolean) {
+        this.setSetting('crystals-tracking', enabled.toString());
+    }
+
     public get compactLists(): boolean {
         return this.getSetting('compact-lists', 'false') === 'true';
     }
@@ -59,6 +75,15 @@ export class SettingsService {
 
     public set alarmHoursBefore(hours: number) {
         this.setSetting('alarm:hours-before', hours.toString());
+    }
+
+    public get preferredStartingPint(): number {
+        // Default value is Rhalgr's reach, 2403
+        return +this.getSetting('preferred-starting-point', '2403');
+    }
+
+    public set preferredStartingPint(id: number) {
+        this.setSetting('preferred-starting-point', id.toString());
     }
 
     public get alarmSound(): string {

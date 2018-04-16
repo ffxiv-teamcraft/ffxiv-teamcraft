@@ -26,7 +26,7 @@ import {AppUser} from 'app/model/list/app-user';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {TimerOptionsPopupComponent} from '../timer-options-popup/timer-options-popup.component';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
-import {User, UserInfo} from 'firebase';
+import {User} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
 import 'rxjs/add/observable/combineLatest';
@@ -38,6 +38,7 @@ import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 
 declare const ga: Function;
 
@@ -59,7 +60,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     listDisplay: Observable<LayoutRowDisplay[]>;
 
-    user: UserInfo;
+    recipes: Observable<ListRow[]>;
+
+    user: User;
 
     userData: AppUser;
 
@@ -74,6 +77,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     hideUsed = false;
 
     etime: Date = this.eorzeanTimeService.toEorzeanDate(new Date());
+
+    clock: Observable<Date>;
 
     outdated = false;
 
@@ -104,6 +109,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .filter(data => data !== null)
             .mergeMap(data => {
                 return this.layoutService.getDisplay(data, this.selectedIndex);
+            });
+        this.recipes = this.listData$
+            .filter(data => data !== null)
+            .mergeMap(data => {
+                return this.layoutService.getRecipes(data, this.selectedIndex);
             });
     }
 
@@ -223,7 +233,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnInit() {
-        this.subscriptions.push(this.eorzeanTimeService.getEorzeanTime().subscribe(date => this.etime = date));
+        this.clock = this.eorzeanTimeService.getEorzeanTime();
 
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
@@ -231,6 +241,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.userService.getUserData()
             .subscribe(user => {
                 this.userData = user;
+                this.hideUsed = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideUsed : false;
+                this.hideCompleted = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideCompleted : false;
+                this.triggerFilter();
             }));
         this.listData$.next(this.listData);
     }
@@ -347,11 +360,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
+        this.userData.listDetailsFilters.hideCompleted = this.hideCompleted;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
     public toggleHideUsed(): void {
         this.hideUsed = !this.hideUsed;
+        this.userData.listDetailsFilters.hideUsed = this.hideUsed;
+        this.userService.set(this.userData.$key, this.userData).first().subscribe();
         this.triggerFilter();
     }
 
@@ -379,6 +396,15 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     this.update(list);
                 })
         );
+    }
+
+    public openPermissionsPopup(): void {
+        this.dialog.open(PermissionsPopupComponent, {data: this.listData})
+            .afterClosed()
+            .filter(list => list !== '')
+            .subscribe((list) => {
+                this.update(list);
+            });
     }
 
     protected resetFilters(): void {

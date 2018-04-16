@@ -1,8 +1,7 @@
-import {DataModel} from '../../core/database/storage/data-model';
+import {DataWithPermissions} from '../../core/database/permissions/data-with-permissions';
 
-export class Workshop extends DataModel {
+export class Workshop extends DataWithPermissions {
     name: string;
-    authorId?: string;
     fcId?: string;
     listIds: string[] = [];
     createdAt = new Date().toISOString();

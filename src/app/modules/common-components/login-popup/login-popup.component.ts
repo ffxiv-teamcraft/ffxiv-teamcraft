@@ -46,6 +46,7 @@ export class LoginPopupComponent {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
+                .first()
                 .subscribe(() => {
                     this.userService.loggingIn = false;
                     this.userService.reload();

@@ -10,6 +10,7 @@ import {ListLayout} from './list-layout';
 import {LayoutOrderService} from './layout-order.service';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from '../database/user.service';
+import {ListRow} from '../../model/list/list-row';
 
 @Injectable()
 export class LayoutService {
@@ -59,6 +60,12 @@ export class LayoutService {
                     };
                 }).sort((a, b) => a.index - b.index);
             });
+    }
+
+    public getRecipes(list: List, index: number): Observable<ListRow[]> {
+        return this.getLayout(index).map(layout => {
+            return this.layoutOrder.order(list.recipes, layout.recipeOrderBy, layout.recipeOrder);
+        });
     }
 
     public getLayoutRows(index: number): Observable<LayoutRow[]> {
