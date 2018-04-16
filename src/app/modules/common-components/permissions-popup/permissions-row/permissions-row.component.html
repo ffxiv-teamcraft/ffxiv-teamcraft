@@ -14,14 +14,22 @@
               *ngIf="!isMobile() && isEveryone && !isAuthor">{{'PERMISSIONS.Everyone' | translate}}</span>
         <span class="row-name" *ngIf="!isMobile() && !isEveryone && isAuthor">{{'PERMISSIONS.You' | translate}}</span>
         <span class="checkboxes">
-            <mat-checkbox [(ngModel)]="permissions.read" [disabled]="isAuthor" (change)="handleChanges()">
+            <mat-checkbox matTooltip="{{'PERMISSIONS.Read_description' | translate}}"
+                          matTooltipPosition="above"
+                [(ngModel)]="permissions.read" [disabled]="isAuthor" (change)="handleChanges()">
                 {{'PERMISSIONS.Read' | translate}}
             </mat-checkbox>
-            <mat-checkbox disabled="{{!permissions.read || isAuthor}}" [(ngModel)]="permissions.participate"
+            <mat-checkbox matTooltip="{{'PERMISSIONS.Participate_description' | translate}}"
+                          matTooltipPosition="above"
+                disabled="{{!permissions.read || isAuthor}}"
+                          *ngIf="!isWorkshop()"
+                          [(ngModel)]="permissions.participate"
                           (change)="handleChanges()">
                 {{'PERMISSIONS.Participate' | translate}}
             </mat-checkbox>
-            <mat-checkbox [(ngModel)]="permissions.write" disabled="{{isEveryone || !permissions.read || isAuthor
+            <mat-checkbox matTooltip="{{'PERMISSIONS.Write_description' | translate}}"
+                          matTooltipPosition="above"
+                [(ngModel)]="permissions.write" disabled="{{isEveryone || !permissions.read || isAuthor
             || fcCrest !== undefined}}"
                           (change)="handleChanges()">
                 {{'PERMISSIONS.Write' | translate}}
