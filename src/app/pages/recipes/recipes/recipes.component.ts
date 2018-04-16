@@ -122,7 +122,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
         super.ngOnInit();
 
         this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)));
+            return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)));
         }).publishReplay(1).refCount();
 
         this.workshops = this.userService.getUserData().mergeMap(user => {

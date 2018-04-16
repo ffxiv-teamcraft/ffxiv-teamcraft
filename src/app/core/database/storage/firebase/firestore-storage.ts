@@ -47,7 +47,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                     .map((snap: Action<DocumentSnapshot>) => {
                         const valueWithKey: T = <T>{$key: snap.payload.id, ...snap.payload.data()};
                         if (!snap.payload.exists) {
-                            throw new Error('Not found');
+                            throw new Error(`${this.getBaseUri()}/${uid} Not found`);
                         }
                         delete snap.payload;
                         return this.serializer.deserialize<T>(valueWithKey, this.getClass());
