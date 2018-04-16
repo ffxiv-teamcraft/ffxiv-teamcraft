@@ -424,6 +424,8 @@
         "Placeholder": "E-Mail oder Nutzer ID",
         "Bind_free_company": "Ändere Rechte für alle Mitglieder deiner freien Gesellschaft",
         "User_not_found": "Nutzer nicht gefunden",
-        "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden."
+        "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden.",
+        "Saving": "Rechte werden gespeichert",
+        "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten"
     }
 }

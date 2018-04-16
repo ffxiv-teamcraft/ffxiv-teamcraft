@@ -52,11 +52,13 @@
                 </button>
                 <span *ngIf="list.authorId === userUid"
                       [matTooltipDisabled]="!anonymous"
-                      [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                      [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                      matTooltipPosition="above">
                     <button mat-icon-button
                             (click)="$event.stopPropagation();openPermissions(list)"
                             [disabled]="anonymous"
-                            [matTooltip]="'PERMISSIONS.Title' | translate">
+                            [matTooltip]="'PERMISSIONS.Title' | translate"
+                            matTooltipPosition="above">
                         <mat-icon>security</mat-icon>
                     </button>
                 </span>

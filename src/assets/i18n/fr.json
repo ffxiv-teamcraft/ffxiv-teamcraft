@@ -433,6 +433,8 @@
         "Placeholder": "Email ou ID utilisateur",
         "Bind_free_company": "Lier des permissions à la Compagnie Libre",
         "User_not_found": "Utilisateur introuvable",
-        "User_id_tip": "L'ID Utilisateur peut être trouvé dans la page de profil, dans le coin en bas à droite."
+        "User_id_tip": "L'ID Utilisateur peut être trouvé dans la page de profil, dans le coin en bas à droite.",
+        "Saving": "Sauvegarde des permissions",
+        "No_anonymous": "Vous devez créer un compte pour gérer les permissions"
     }
 }

@@ -95,11 +95,13 @@
                         </button>
                         <span *ngIf="workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
-                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                              matTooltipPosition="above">
                             <button mat-icon-button
                                     (click)="$event.stopPropagation();openPermissions(workshop)"
                                     [disabled]="anonymous"
-                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                    [matTooltip]="'PERMISSIONS.Title' | translate"
+                                    matTooltipPosition="above">
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
@@ -169,11 +171,13 @@
                         </button>
                         <span *ngIf="workshopData.workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
-                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                              matTooltipPosition="above">
                             <button mat-icon-button
                                     (click)="$event.stopPropagation();openPermissions(workshopData.workshop)"
                                     [disabled]="anonymous"
-                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                    [matTooltip]="'PERMISSIONS.Title' | translate"
+                                    matTooltipPosition="above">
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
