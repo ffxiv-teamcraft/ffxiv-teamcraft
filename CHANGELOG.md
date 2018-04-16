@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.5.0"></a>
+# [3.5.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.6...v3.5.0) (2018-04-16)
+
+
+### Bug Fixes
+
+* external list import dialog box now has a cancel button in each step to close the dialog ([616898a](https://github.com/Supamiu/ffxiv-teamcraft/commit/616898a))
+* fixed a bug with list regeneration sometimes settings the wrong amount done ([bfc857c](https://github.com/Supamiu/ffxiv-teamcraft/commit/bfc857c)), closes [#318](https://github.com/Supamiu/ffxiv-teamcraft/issues/318)
+
+
+### Features
+
+* added a link to profile page on missing book warning icon ([1921fa6](https://github.com/Supamiu/ffxiv-teamcraft/commit/1921fa6)), closes [#312](https://github.com/Supamiu/ffxiv-teamcraft/issues/312)
+* alarms are now stored in your account so they are now cross-platform ([a5efca7](https://github.com/Supamiu/ffxiv-teamcraft/commit/a5efca7)), closes [#275](https://github.com/Supamiu/ffxiv-teamcraft/issues/275)
+* better seo configuration ([d288a84](https://github.com/Supamiu/ffxiv-teamcraft/commit/d288a84)), closes [#198](https://github.com/Supamiu/ffxiv-teamcraft/issues/198)
+* **permissions:** FC-only workshops are now a thing ([0f1da89](https://github.com/Supamiu/ffxiv-teamcraft/commit/0f1da89)), closes [#251](https://github.com/Supamiu/ffxiv-teamcraft/issues/251) [#277](https://github.com/Supamiu/ffxiv-teamcraft/issues/277)
+* craft icons now have a link to simulator ([4eb4b3c](https://github.com/Supamiu/ffxiv-teamcraft/commit/4eb4b3c))
+* display filters (hide when used/completed) are now saved to your account ([f617655](https://github.com/Supamiu/ffxiv-teamcraft/commit/f617655)), closes [#289](https://github.com/Supamiu/ffxiv-teamcraft/issues/289)
+* it's now possible to enable tracking on crystals ([1de6208](https://github.com/Supamiu/ffxiv-teamcraft/commit/1de6208)), closes [#254](https://github.com/Supamiu/ffxiv-teamcraft/issues/254)
+* you can now create alarms from the gathering location finder ([b8dccc9](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8dccc9)), closes [#286](https://github.com/Supamiu/ffxiv-teamcraft/issues/286)
+* you can now manage permissions on lists ([f6f24bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/f6f24bd)), closes [#277](https://github.com/Supamiu/ffxiv-teamcraft/issues/277) [#316](https://github.com/Supamiu/ffxiv-teamcraft/issues/316)
+* you can now order "Items" panel based on level or localized name in your layout ([530fe94](https://github.com/Supamiu/ffxiv-teamcraft/commit/530fe94)), closes [#296](https://github.com/Supamiu/ffxiv-teamcraft/issues/296)
+
+
+### Reverts
+
+* add proper tag settings in some main pages ([03cf2e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/03cf2e4))
+* better seo configuration ([ff3ddca](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff3ddca))
+
+
+
 <a name="3.4.6"></a>
 ## [3.4.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.5...v3.4.6) (2018-04-11)
 
