@@ -7,7 +7,8 @@
                                  [fcCrest]="fc.crest"
                                  [permissions]="registry.freeCompany"
                                  (permissionsChange)="handleFcPermissionsChange($event)"
-                                 (delete)="unbindFreeCompany()">
+                                 (delete)="unbindFreeCompany()"
+                                 [isWorkshop]="isWorkshop()">
             </app-permissions-row>
         </span>
 
@@ -17,11 +18,13 @@
                              [avatar]="row.character.avatar"
                              [name]="row.character.name"
                              [isAuthor]="row.userId === data.authorId"
-                             (delete)="deleteRow(row.userId)"></app-permissions-row>
+                             (delete)="deleteRow(row.userId)"
+                             [isWorkshop]="isWorkshop()"></app-permissions-row>
 
         <app-permissions-row [permissions]="registry.everyone"
                              (permissionsChange)="handlePermissionsChange($event)"
-                             isEveryone="true"></app-permissions-row>
+                             isEveryone="true"
+                             [isWorkshop]="isWorkshop()"></app-permissions-row>
     </mat-list>
     <ng-template #loading>
         <div class="loading-container">

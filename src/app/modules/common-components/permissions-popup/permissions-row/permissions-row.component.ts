@@ -34,6 +34,9 @@ export class PermissionsRowComponent {
     @Input()
     isAuthor = false;
 
+    @Input()
+    isWorkshop = false;
+
     constructor(private media: ObservableMedia) {
     }
 

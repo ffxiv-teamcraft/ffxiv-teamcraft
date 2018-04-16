@@ -22,7 +22,7 @@
             <mat-checkbox matTooltip="{{'PERMISSIONS.Participate_description' | translate}}"
                           matTooltipPosition="above"
                 disabled="{{!permissions.read || isAuthor}}"
-                          *ngIf="!isWorkshop()"
+                          *ngIf="!isWorkshop"
                           [(ngModel)]="permissions.participate"
                           (change)="handleChanges()">
                 {{'PERMISSIONS.Participate' | translate}}
