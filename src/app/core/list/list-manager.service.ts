@@ -140,7 +140,7 @@ export class ListManagerService {
                             }
                             listRow.done = row.item.done;
                             listRow.used = row.item.used || 0;
-                            if (row.array === 'recipes') {
+                            if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
                                 if (listRow.done > listRow.amount) {
                                     listRow.done = listRow.amount;
                                 }
