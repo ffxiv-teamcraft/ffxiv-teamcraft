@@ -152,7 +152,6 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     ngOnInit(): void {
         this.author = this.userService.getCharacter(this.list.authorId)
             .catch(err => {
-                console.error(err);
                 return Observable.of(null);
             });
 
