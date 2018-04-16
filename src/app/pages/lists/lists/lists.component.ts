@@ -269,11 +269,11 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 })))
                 .map(lists => lists.filter(l => l !== null));
         });
-        this.workshops = this.auth.authState.mergeMap(user => {
+        this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user === null) {
                 return this.reloader$.mergeMap(() => Observable.of([]));
             } else {
-                return this.reloader$.mergeMap(() => this.workshopService.getUserWorkshops(user.uid));
+                return this.reloader$.mergeMap(() => this.workshopService.getUserWorkshops(user.$key));
             }
         });
         this.sharedWorkshops = this.userService.getUserData().mergeMap(user => {
@@ -331,7 +331,9 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                             }
                                         }
                                         if (additionalLists.length > 0) {
-                                            return Observable.combineLatest(additionalLists.map(listId => this.listService.get(listId)))
+                                            return Observable.combineLatest(additionalLists.map(listId => this.listService.get(listId)
+                                                .catch(() => Observable.of(null))))
+                                                .map(ls => ls.filter(l => l !== null))
                                                 .map(externalLists => lists.concat(externalLists));
                                         } else {
                                             return Observable.of(lists);
