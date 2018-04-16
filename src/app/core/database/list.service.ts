@@ -100,6 +100,9 @@ export class ListService {
      * @returns {Observable<List[]>}
      */
     public fetchWorkshop(workshop: Workshop): Observable<List[]> {
+        if (workshop.listIds.length === 0) {
+            return Observable.of([]);
+        }
         return Observable.combineLatest(workshop.listIds.map(listId => this.get(listId)));
     }
 

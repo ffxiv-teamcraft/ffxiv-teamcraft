@@ -262,7 +262,12 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     ngOnInit() {
         this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)));
+            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)
+                .catch(() => {
+                    user.sharedLists = user.sharedLists.filter(id => id !== listId);
+                    return this.userService.set(user.$key, user).map(() => null);
+                })))
+                .map(lists => lists.filter(l => l !== null));
         });
         this.workshops = this.auth.authState.mergeMap(user => {
             if (user === null) {
@@ -277,12 +282,20 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             } else {
                 return this.reloader$.mergeMap(() => {
                     return Observable.combineLatest(user.sharedWorkshops.map(workshopId => {
-                        return this.workshopService.get(workshopId).mergeMap(workshop => {
-                            return this.listService.fetchWorkshop(workshop).map(lists => {
-                                return {workshop: workshop, lists: lists};
+                        return this.workshopService.get(workshopId)
+                            .catch(() => {
+                                user.sharedWorkshops = user.sharedWorkshops.filter(id => id !== workshopId);
+                                return this.userService.set(user.$key, user).map(() => null);
+                            })
+                            .mergeMap(workshop => {
+                                if (workshop !== null) {
+                                    return this.listService.fetchWorkshop(workshop).map(lists => {
+                                        return {workshop: workshop, lists: lists};
+                                    });
+                                }
+                                return Observable.of(null);
                             });
-                        });
-                    }));
+                    })).map(workshops => workshops.filter(w => w !== null));
                 });
             }
         });
