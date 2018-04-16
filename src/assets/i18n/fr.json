@@ -50,7 +50,8 @@
     "COMMON": {
         "Save": "Sauvegarder",
         "Reset": "Remettre à 0",
-        "Total": "Total"
+        "Total": "Total",
+        "User_id": "ID Utilisateur"
     },
     "ALARMS": {
         "No_alarm": "Aucune alarme définie",
@@ -430,6 +431,7 @@
         "Add_new": "Ajouter un utilisateur",
         "Placeholder": "Email ou ID utilisateur",
         "Bind_free_company": "Lier des permissions à la Compagnie Libre",
-        "User_not_found": "Utilisateur introuvable"
+        "User_not_found": "Utilisateur introuvable",
+        "User_id_tip": "L'ID Utilisateur peut être trouvé dans la page de profil, dans le coin en bas à droite."
     }
 }

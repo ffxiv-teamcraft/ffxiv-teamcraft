@@ -51,6 +51,9 @@
                         </div>
                     </mat-grid-tile>
                 </mat-grid-list>
+                <div class="user-id">
+                    <i>{{"COMMON.User_id" | translate}} : {{user.$key}}</i>
+                </div>
             </mat-card>
         </mat-grid-tile>
         <mat-grid-tile colspan="3" *ngIf="user.patron || user.admin">

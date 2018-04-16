@@ -50,7 +50,8 @@
     "COMMON": {
         "Save": "Save",
         "Reset": "Reset",
-        "Total": "Total"
+        "Total": "Total",
+        "User_id": "User ID"
     },
     "ALARMS": {
         "No_alarm": "No alarms set",
@@ -423,6 +424,7 @@
         "Add_new": "Add a user",
         "Placeholder": "Email or User ID",
         "Bind_free_company": "Bind some permissions to your Free Company",
-        "User_not_found": "User not found"
+        "User_not_found": "User not found",
+        "User_id_tip": "The user ID can be found in profile page in bottom-right corner"
     }
 }

@@ -21,7 +21,8 @@
         "Name_dialog": "Workshopname",
         "Created_by": "Erstellt von {{name}}",
         "Share_link_copied": "Workshoplink wurde kopiert",
-        "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf"
+        "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
+        "Shared_workshops": "Mit dir geteilte Workshops"
     },
     "ABOUT": {
         "title": "Über FFXIVTeamcraft",
@@ -49,7 +50,8 @@
     "COMMON": {
         "Save": "Speichern",
         "Reset": "Neustart",
-        "Total": "Gesamtsumme"
+        "Total": "Gesamtsumme",
+        "User_id": "Nutzer-ID"
     },
     "ALARMS": {
         "No_alarm": "Kein Benachrichtigung gesetzt",
@@ -421,6 +423,7 @@
         "Add_new": "Benutzer hinzufügen",
         "Placeholder": "E-Mail oder Nutzer ID",
         "Bind_free_company": "Ändere Rechte für alle Mitglieder deiner freien Gesellschaft",
-        "User_not_found": "Nutzer nicht gefunden"
+        "User_not_found": "Nutzer nicht gefunden",
+        "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden."
     }
 }
