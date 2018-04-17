@@ -79,6 +79,7 @@ export class UserService extends FirebaseStorage<AppUser> {
      */
     public getUserData(): Observable<AppUser> {
         return this.reloader
+            .filter(() => !this.loggingIn)
             .switchMap(() => {
                 return this.af.authState.first()
                     .mergeMap(user => {
@@ -107,9 +108,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                     u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
                     return u;
                 });
-            })
-            .publishReplay(1)
-            .refCount();
+            });
     }
 
     /**

@@ -267,7 +267,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                     user.sharedLists = user.sharedLists.filter(id => id !== listId);
                     return this.userService.set(user.$key, user).map(() => null);
                 })))
-                .map(lists => lists.filter(l => l !== null));
+                .map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true));
         });
         this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user === null) {
@@ -295,7 +295,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                 }
                                 return Observable.of(null);
                             });
-                    })).map(workshops => workshops.filter(w => w !== null));
+                    })).map(workshops => workshops.filter(w => w !== null)
+                        .filter(row => row.workshop.getPermissions(user.$key).write === true));
                 });
             }
         });

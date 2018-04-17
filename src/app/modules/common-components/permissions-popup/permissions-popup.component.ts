@@ -47,14 +47,20 @@ export class PermissionsPopupComponent {
                 observables.push(
                     this.userService.getCharacter(data.authorId)
                         .map(character => {
-                            return {userId: data.authorId, character: character, permissions: data.getPermissions(data.authorId)};
+                            return {
+                                userId: data.authorId, character: character, permissions:
+                                    this.getPermissions(data, this.registry, data.authorId)
+                            };
                         })
                 );
                 registry.forEach((userId, permissions) => {
                     observables.push(
                         this.userService.getCharacter(userId)
                             .map(character => {
-                                return {userId: userId, character: character, permissions: data.getPermissions(userId)};
+                                return {
+                                    userId: userId, character: character, permissions:
+                                        this.getPermissions(data, this.registry, userId)
+                                };
                             })
                             .catch(() => Observable.of(null))
                     );
@@ -107,6 +113,17 @@ export class PermissionsPopupComponent {
             });
     }
 
+    public getPermissions(data: DataWithPermissions, permissionsRegistry: PermissionsRegistry, userId: string,
+                          freeCompanyId?: string): Permissions {
+        if (userId === data.authorId) {
+            return {read: true, participate: true, write: true};
+        }
+        if (freeCompanyId !== undefined && permissionsRegistry.freeCompanyId === freeCompanyId) {
+            return permissionsRegistry.freeCompany;
+        }
+        return permissionsRegistry.registry[userId] || permissionsRegistry.everyone;
+    }
+
     deleteRow(userId: string): void {
         delete this.registry.registry[userId];
         this.registrySubject.next(this.registry);
@@ -119,9 +136,12 @@ export class PermissionsPopupComponent {
         this.data.permissionsRegistry.forEach((userId, permissions) => {
             // If user has been deleted from permissions and had write permissions, remove the list from shared lists, same if write
             // permission has been removed
+            if (this.registry.registry[userId] !== undefined) {
+                console.log(permissions.write, this.registry.registry[userId].write, userId);
+            }
             if (permissions.write && (this.registry.registry[userId] === undefined || this.registry.registry[userId].write === false)) {
                 usersSharedDeletions.push(userId)
-            } else if (!permissions.write && this.registry.registry[userId].write) {
+            } else if (!permissions.write && this.registry.registry[userId] !== undefined && this.registry.registry[userId].write) {
                 // If write permission has been granted
                 usersSharedAdditions.push(userId);
             }
@@ -154,10 +174,12 @@ export class PermissionsPopupComponent {
                         return user;
                     }).mergeMap(user => this.userService.set(addition, user));
                 })).first().subscribe(() => {
+                this.registry.everyone.write = false; // Always force write to false for everyone.
                 this.data.permissionsRegistry = this.registry;
                 this.dialogRef.close(this.data);
             });
         } else {
+            this.registry.everyone.write = false; // Always force write to false for everyone.
             this.data.permissionsRegistry = this.registry;
             this.dialogRef.close(this.data);
         }

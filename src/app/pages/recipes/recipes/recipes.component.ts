@@ -122,8 +122,9 @@ export class RecipesComponent extends PageComponent implements OnInit {
         super.ngOnInit();
 
         this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)));
-        }).publishReplay(1).refCount();
+            return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)))
+                .map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true));
+        });
 
         this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user.$key !== undefined) {
