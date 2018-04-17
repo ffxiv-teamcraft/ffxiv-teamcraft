@@ -43,9 +43,11 @@ export class BellNodesService {
 
     getNode(id: number): any {
         const node = this.nodes.find(n => n.id === id);
-        node.itemId = id;
-        node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
-        node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+        if (node !== undefined) {
+            node.itemId = id;
+            node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
+            node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+        }
         return node;
     }
 }
