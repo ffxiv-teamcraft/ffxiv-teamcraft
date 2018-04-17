@@ -103,7 +103,8 @@ export class ListService {
         if (workshop.listIds.length === 0) {
             return Observable.of([]);
         }
-        return Observable.combineLatest(workshop.listIds.map(listId => this.get(listId)));
+        return Observable.combineLatest(workshop.listIds.map(listId => this.get(listId).catch(() => Observable.of(null))))
+            .map(lists => lists.filter(l => l !== null));
     }
 
     public add(list: List): Observable<string> {
