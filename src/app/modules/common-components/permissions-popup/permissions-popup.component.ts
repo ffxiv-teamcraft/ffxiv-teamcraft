@@ -33,6 +33,10 @@ export class PermissionsPopupComponent {
     constructor(@Inject(MAT_DIALOG_DATA) public data: DataWithPermissions, private dialog: MatDialog, private userService: UserService,
                 private dialogRef: MatDialogRef<PermissionsPopupComponent>, serializer: NgSerializerService,
                 private dataService: DataService) {
+        // If this permissions registry is bugged, rebuild it.
+        if (data.permissionsRegistry.everyone.write === true) {
+            this.registry = new PermissionsRegistry();
+        }
         // Create a copy to work on.
         this.registry = serializer.deserialize(JSON.parse(JSON.stringify(data.permissionsRegistry)), PermissionsRegistry);
 
@@ -107,7 +111,7 @@ export class PermissionsPopupComponent {
             .subscribe(user => {
                 if (this.registry.registry[user.$key] === undefined && this.data.authorId !== user.$key) {
                     // By default, a new row has the same permissions as everyone.
-                    this.registry.registry[user.$key] = this.registry.everyone;
+                    this.registry.registry[user.$key] = JSON.parse(JSON.stringify(this.registry.everyone));
                     this.registrySubject.next(this.registry);
                 }
             });
@@ -130,15 +134,13 @@ export class PermissionsPopupComponent {
     }
 
     save(): void {
+        console.log(this.registry);
         this.saving = true;
         const usersSharedDeletions: string[] = [];
         const usersSharedAdditions: string[] = [];
         this.data.permissionsRegistry.forEach((userId, permissions) => {
             // If user has been deleted from permissions and had write permissions, remove the list from shared lists, same if write
             // permission has been removed
-            if (this.registry.registry[userId] !== undefined) {
-                console.log(permissions.write, this.registry.registry[userId].write, userId);
-            }
             if (permissions.write && (this.registry.registry[userId] === undefined || this.registry.registry[userId].write === false)) {
                 usersSharedDeletions.push(userId)
             } else if (!permissions.write && this.registry.registry[userId] !== undefined && this.registry.registry[userId].write) {

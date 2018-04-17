@@ -261,14 +261,15 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
-        this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)
-                .catch(() => {
-                    user.sharedLists = user.sharedLists.filter(id => id !== listId);
-                    return this.userService.set(user.$key, user).map(() => null);
-                })))
-                .map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true));
-        });
+        this.sharedLists = this.userService.getUserData()
+            .mergeMap(user => {
+                return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)
+                    .catch(() => {
+                        user.sharedLists = user.sharedLists.filter(id => id !== listId);
+                        return this.userService.set(user.$key, user).map(() => null);
+                    })))
+                    .map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true));
+            });
         this.workshops = this.userService.getUserData().mergeMap(user => {
             if (user === null) {
                 return this.reloader$.mergeMap(() => Observable.of([]));

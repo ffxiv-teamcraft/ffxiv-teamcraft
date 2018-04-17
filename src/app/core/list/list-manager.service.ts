@@ -98,6 +98,7 @@ export class ListManagerService {
 
     public upgradeList(list: List): Observable<List> {
         return this.zone.runOutsideAngular(() => {
+            const permissions = list.permissionsRegistry;
             const backup = [];
             list.crystals.forEach(item => {
                 backup.push({array: 'crystals', item: item});
@@ -151,6 +152,7 @@ export class ListManagerService {
                             }
                         }
                     });
+                    resultList.permissionsRegistry = permissions;
                     return resultList;
                 });
         });
