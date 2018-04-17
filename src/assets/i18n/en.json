@@ -22,7 +22,7 @@
         "Created_by": "Created by {{name}}",
         "Share_link_copied": "Workshop share link copied",
         "Not_found": "Workshop not found or you don't have access to it",
-        "Shared_workshops": "Workshops shared with you"
+        "Shared_workshops": "Workshops you have write access to"
     },
     "ABOUT": {
         "title": "About",
@@ -247,7 +247,7 @@
     "LISTS": {
         "Regenerate_all": "Regenerate all lists",
         "Merge_lists": "Merge lists",
-        "Shared_lists": "Lists shared with you",
+        "Shared_lists": "Lists you have write access to",
         "IMPORT": {
             "Title": "Import list from external website",
             "Paste_link_step_title": "Paste your link to the external list",

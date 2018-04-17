@@ -22,7 +22,7 @@
         "Created_by": "Créé par {{name}}",
         "Share_link_copied": "Lien de partage de l'atelier copié",
         "Not_found": "Atelier introuvable ou vous n'avez pas les droits accès",
-        "Shared_workshops": "Ateliers partagés avec vous"
+        "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture"
     },
     "ABOUT": {
         "title": "À Propos",
@@ -247,7 +247,7 @@
     "LISTS": {
         "Regenerate_all": "Régénérer toutes les listes",
         "Merge_lists": "Fusionner des listes",
-        "Shared_lists": "Listes partagées avec vous",
+        "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
         "IMPORT": {
             "Title": "Importer depuis un site externe",
             "Paste_link_step_title": "Coller votre lien vers la liste externe",

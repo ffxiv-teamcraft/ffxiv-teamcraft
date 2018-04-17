@@ -22,7 +22,7 @@
         "Created_by": "Erstellt von {{name}}",
         "Share_link_copied": "Workshoplink wurde kopiert",
         "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
-        "Shared_workshops": "Mit dir geteilte Workshops"
+        "Shared_workshops": "Workshops du hast Schreibzugriff für"
     },
     "ABOUT": {
         "title": "Über FFXIVTeamcraft",
@@ -247,6 +247,7 @@
     "LISTS": {
         "Regenerate_all": "Alle Listen neugenerieren",
         "Merge_lists": "Listen zusammenfassen",
+        "Shared_lists": "Listen du hast Schreibzugriff für",
         "IMPORT": {
             "Title": "Liste von externer Website importieren",
             "Paste_link_step_title": "Füge deinen link der externen Liste ein",
