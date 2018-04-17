@@ -58,10 +58,10 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
-    <div class="shared-lists" *ngIf="let list of sharedLists | async as sharedListsData">
+    <div class="shared-lists" *ngIf="sharedLists | async as sharedListsData">
         <h2>{{"LISTS.Shared_lists" | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
-        <div class="row" *ngFor="sharedListsData;trackBy: trackByListsFn; let i = index;">
+        <div class="row" *ngFor="let list of sharedListsData;trackBy: trackByListsFn; let i = index;">
             <app-list-panel
                 [list]="list"
                 [expanded]="expanded.indexOf(list.$key) > -1"
@@ -150,10 +150,10 @@
             {{'WORKSHOP.Add_workshop' | translate}}
         </button>
     </div>
-    <div class="workshops" *ngIf="let workshopData of sharedWorkshops as sharedWorkshopsData">
+    <div class="workshops" *ngIf="sharedWorkshops as sharedWorkshopsData">
         <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
-        <div *ngFor="sharedWorkshopsData | async; trackBy: trackByWorkshopFn; let i = index"
+        <div *ngFor="let workshopData of sharedWorkshopsData | async; trackBy: trackByWorkshopFn; let i = index"
              class="row">
             <mat-expansion-panel [ngClass]="{odd: i%2>0}">
                 <mat-expansion-panel-header>
