@@ -19,7 +19,8 @@
     "extract": "ngx-translate-extract -i ./src --output ./src/assets/i18n/fr.json --output ./src/assets/i18n/de.json --output ./src/assets/i18n/en.json --output ./src/assets/i18n/ja.json --clean --sort --format namespaced-json",
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "translations:clean":"node tools/translations-cleaner.js"
   },
   "private": true,
   "dependencies": {

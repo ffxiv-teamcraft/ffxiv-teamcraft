@@ -42,7 +42,6 @@ import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
 import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {PublicListsModule} from './pages/public-lists/public-lists.module';
@@ -124,7 +123,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProfileModule,
         CustomLinksModule,
         LinkModule,
-        FeaturesModule,
         RecipesModule,
         ListsModule,
         PublicListsModule,
