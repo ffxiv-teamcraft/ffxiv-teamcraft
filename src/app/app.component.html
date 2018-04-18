@@ -6,10 +6,7 @@
         <h1>FFXIV Teamcraft</h1>
 
         <mat-menu #langMenu="matMenu" yPosition="above">
-            <button mat-menu-item (click)="use('fr')">FR</button>
-            <button mat-menu-item (click)="use('en')">EN</button>
-            <button mat-menu-item (click)="use('de')">DE</button>
-            <button mat-menu-item (click)="use('ja')">JA</button>
+            <button mat-menu-item *ngFor="let locale of locales" (click)="use(locale)">{{locale.toUpperCase()}}</button>
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.gt-sm>
@@ -190,7 +187,7 @@
                     matTooltip="{{'Timers' | translate}}"
                     matTooltipPosition="left"
                     *ngIf="!mobile" (click)="timersSidebar.toggle()"
-            [ngClass]="{'opened': timersSidebar?.opened}">
+                    [ngClass]="{'opened': timersSidebar?.opened}">
                 <mat-icon *ngIf="!timersSidebar?.opened">alarm</mat-icon>
                 <mat-icon *ngIf="timersSidebar?.opened">keyboard_arrow_right</mat-icon>
             </button>
