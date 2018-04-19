@@ -144,7 +144,7 @@
                                matTooltip="{{'HOME_PAGE.Wiki' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>find_in_page</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.Wiki' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'WIKI.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"

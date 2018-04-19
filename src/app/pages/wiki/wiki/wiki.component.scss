@@ -1,0 +1,32 @@
+.not-found {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0.6;
+}
+
+div.wiki-container {
+    div.markdown {
+        width: 70%;
+        img {
+            max-width: 100%;
+        }
+        blockquote {
+            color: inherit;
+            opacity: .7;
+        }
+    }
+
+    div.toc {
+        width: 18%;
+        position: fixed;
+        top: 72px;
+        right: 0;
+        li {
+            cursor: pointer;
+            &.toc-active {
+                color: red;
+            }
+        }
+    }
+}

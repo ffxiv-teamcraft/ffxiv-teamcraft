@@ -56,6 +56,8 @@ import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
 import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
+import {MarkdownModule} from 'ngx-markdown';
+import {WikiModule} from './pages/wiki/wiki.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -67,6 +69,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         FlexLayoutModule,
+
+        MarkdownModule.forRoot(),
 
         TranslateModule.forRoot({
             loader: {
@@ -123,6 +127,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProfileModule,
         CustomLinksModule,
         LinkModule,
+        WikiModule,
         RecipesModule,
         ListsModule,
         PublicListsModule,

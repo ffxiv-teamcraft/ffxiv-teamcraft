@@ -10,4 +10,4 @@
 4. Hit **Save**
 5. Do this for each class.
 
-[Profile]:https://ffxivteamcraft.com/profile
+[Profile]:/profile

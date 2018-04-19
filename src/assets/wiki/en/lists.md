@@ -11,5 +11,5 @@
 3. Congratulations you have created your list.
 4. Created lists can be found in **[Lists]** on the sidebar.
 
-[Recipes]: https://ffxivteamcraft.com/recipes
-[Lists]: https://ffxivteamcraft.com/lists
+[Recipes]: /recipes
+[Lists]: /lists
