@@ -44,7 +44,6 @@ export class WikiComponent implements OnInit {
             this.reloader$.next(null);
             this.tocReloader$.next(null);
         });
-        this.activeSectionIndex.subscribe(console.log);
     }
 
     interceptLinks(event: MouseEvent): void {
@@ -55,8 +54,12 @@ export class WikiComponent implements OnInit {
         }
     }
 
-    scrollTo(element: Element): void {
+    scrollTo(element: Element, index: number): void {
         this.scrollService.scrollToElement(element);
+        // Wait a bit before emitting index
+        setTimeout(() => {
+            this.activeSectionIndex.next(index);
+        }, 50);
     }
 
     ngOnInit(): void {
@@ -104,22 +107,24 @@ export class WikiComponent implements OnInit {
                             return {
                                 title: node.innerText,
                                 element: node,
+                                level: node.localName,
                                 active: false
                             };
                         });
                 })
                 .do((sections) => {
                     this.spyInfo = this.scrollSpyService.spyOn(sections.map(section => section.element));
-                    this.spyInfo.active.subscribe(item => {
-                        this.activeSectionIndex.next(item && item.index)
-                    });
+                    this.spyInfo.active
+                        .filter(item => item !== null)
+                        .subscribe(item => {
+                            this.activeSectionIndex.next(item && item.index)
+                        });
                 })
                 .mergeMap((sections) => {
-                    return this.spyInfo.active
-                        .filter(item => item !== null)
+                    return this.activeSectionIndex
                         .map((activeItem) => {
                             sections.forEach((section, index) => {
-                                section.active = index === activeItem.index;
+                                section.active = index === activeItem;
                             });
                             return sections;
                         });

@@ -22,10 +22,27 @@ div.wiki-container {
         position: fixed;
         top: 72px;
         right: 0;
-        li {
-            cursor: pointer;
-            &.toc-active {
-                color: red;
+        ul {
+            list-style-type: none;
+            li {
+                cursor: pointer;
+                &.toc-h1 {
+                    font-size: 110%;
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 1px;
+                        width: 40%;
+                        margin: 7px 0 4px 0;
+                        background: #dbdbdb;
+                        clear: both;
+                    }
+                }
+                &.toc-h2 {
+                }
+                &.toc-h3 {
+                    padding-left: 24px;
+                }
             }
         }
     }

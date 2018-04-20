@@ -1,13 +1,12 @@
-<h2 *ngIf="!notFound">{{'WIKI.Title' | translate}}</h2>
 <mat-error *ngIf="notFoundInCurrentLang && !notFound">{{'WIKI.Not_found_in_current_lang' | translate}}</mat-error>
 <h4 class="not-found" *ngIf="notFound">{{"WIKI.Not_found" | translate}}</h4>
 <div class="wiki-container" #markdown>
     <div markdown class="markdown" (click)="interceptLinks($event)" [data]="markdownContent | async"></div>
     <div class="toc">
         <ul>
-            <li *ngFor="let row of tableOfContent | async"
-                (click)="scrollTo(row.element)"
-                [ngClass]="{'toc-active': row.active}">{{row.title}}</li>
+            <li *ngFor="let row of tableOfContent | async; let i = index"
+                (click)="scrollTo(row.element, i)"
+                [ngClass]="{'toc-active': row.active}" class="toc-{{row.level}}">{{row.title}}</li>
         </ul>
     </div>
 </div>

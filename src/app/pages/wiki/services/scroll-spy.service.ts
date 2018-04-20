@@ -51,7 +51,7 @@ export class ScrollSpiedElement implements ScrollItem {
      * @param {number} topOffset - The distance from the top at which the element becomes active.
      */
     calculateTop(scrollTop: number, topOffset: number) {
-        this.top = scrollTop + this.element.getBoundingClientRect().top - topOffset;
+        this.top = scrollTop + (<any>this.element).offsetTop - topOffset;
     }
 }
 
@@ -105,8 +105,8 @@ export class ScrollSpiedElementGroup {
      */
     onScroll(scrollTop: number, maxScrollTop: number) {
         let activeItem: ScrollItem | undefined;
-        if (scrollTop + 1 >= maxScrollTop) {
-            activeItem = this.spiedElements[0];
+        if (maxScrollTop === 0) {
+            activeItem = this.spiedElements[this.spiedElements.length - 1];
         } else {
             this.spiedElements.some(spiedElem => {
                 if (spiedElem.top <= scrollTop) {
@@ -186,7 +186,7 @@ export class ScrollSpyService {
     }
 
     private getTopOffset() {
-        return this.scrollService.topOffset + 50;
+        return 10;
     }
 
     private getViewportHeight() {

@@ -4,7 +4,7 @@ import {fromEvent} from 'rxjs/observable/fromEvent';
 
 // https://github.com/angular/angular/blob/master/aio/src/app/shared/scroll.service.ts
 
-export const topMargin = 16;
+export const topMargin = 20;
 
 /**
  * A service that scrolls document elements into view
