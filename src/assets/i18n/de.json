@@ -428,5 +428,10 @@
         "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden.",
         "Saving": "Rechte werden gespeichert",
         "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten"
+    },
+    "WIKI": {
+        "Title": "Wiki",
+        "Not_found_in_current_lang": "Diese Seite wurde nicht in deiner Sprache gefunden, deshalb wird die englische Version angezeigt.",
+        "Not_found": "Seite nicht gefunden"
     }
 }

@@ -428,5 +428,10 @@
         "User_id_tip": "The user ID can be found in profile page in bottom-right corner",
         "Saving": "Saving permissions",
         "No_anonymous": "You need an account to manage permissions"
+    },
+    "WIKI": {
+        "Title": "Wiki",
+        "Not_found_in_current_lang": "This page isn't found in your current language, english version will be shown",
+        "Not_found": "Page not found"
     }
 }

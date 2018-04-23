@@ -1,5 +1,5 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="app-toolbar">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -36,10 +36,6 @@
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
                     {{'Disconnect' | translate}}
                 </button>
-                <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                        matTooltipPosition="right" (click)="settings.compactSidebar = true; detectChanges()">
-                    <mat-icon>keyboard_arrow_left</mat-icon>
-                </button>
             </div>
             <div class="accent-background" *ngIf="settings.compactSidebar">
                 <div class="user">
@@ -50,10 +46,14 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item *ngIf="settings.compactSidebar">
+                <mat-list-item>
                     <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                            matTooltipPosition="right" (click)="settings.compactSidebar = false; detectChanges()">
-                        <mat-icon>keyboard_arrow_right</mat-icon>
+                            matTooltipPosition="right"
+                            [matTooltipDisabled]="!settings.compactSidebar"
+                            (click)="settings.compactSidebar = !settings.compactSidebar; detectChanges()">
+                        <mat-icon *ngIf="settings.compactSidebar">keyboard_arrow_right</mat-icon>
+                        <mat-icon *ngIf="!settings.compactSidebar">keyboard_arrow_left</mat-icon>
+                        <span *ngIf="!settings.compactSidebar">{{'Compact_sidebar_toggle' | translate}}</span>
                     </button>
                 </mat-list-item>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null"
@@ -136,12 +136,12 @@
                     <mat-icon matListIcon>settings</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null"
+                <mat-list-item routerLink="/wiki" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'HOME_PAGE.features' | translate}}"
+                               matTooltip="{{'WIKI.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>help_outline</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.features' | translate}}</span>
+                    <mat-icon matListIcon>library_books</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'WIKI.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
