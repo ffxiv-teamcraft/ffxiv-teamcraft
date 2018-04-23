@@ -8,6 +8,7 @@ import {ScrollService} from '../services/scroll.service';
 import {MarkdownSection} from '../markdown-section';
 import {ScrollSpyInfo, ScrollSpyService} from '../services/scroll-spy.service';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {ObservableMedia} from '@angular/flex-layout';
 
 @Component({
     selector: 'app-wiki',
@@ -39,7 +40,7 @@ export class WikiComponent implements OnInit {
     private activeSectionIndex = new ReplaySubject<number | null>(1);
 
     constructor(private translator: TranslateService, private route: ActivatedRoute, private http: HttpClient, private router: Router,
-                private scrollService: ScrollService, private scrollSpyService: ScrollSpyService) {
+                private scrollService: ScrollService, private scrollSpyService: ScrollSpyService, private media: ObservableMedia) {
         translator.onLangChange.subscribe(() => {
             this.reloader$.next(null);
             this.tocReloader$.next(null);
@@ -132,5 +133,9 @@ export class WikiComponent implements OnInit {
                             return sections;
                         });
                 });
+    }
+
+    isMobile(): boolean {
+        return this.media.isActive('xs') || this.media.isActive('sm');
     }
 }
