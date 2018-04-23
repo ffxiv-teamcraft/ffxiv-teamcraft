@@ -1,15 +1,12 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="app-toolbar">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
         <h1>FFXIV Teamcraft</h1>
 
         <mat-menu #langMenu="matMenu" yPosition="above">
-            <button mat-menu-item (click)="use('fr')">FR</button>
-            <button mat-menu-item (click)="use('en')">EN</button>
-            <button mat-menu-item (click)="use('de')">DE</button>
-            <button mat-menu-item (click)="use('ja')">JA</button>
+            <button mat-menu-item *ngFor="let locale of locales" (click)="use(locale)">{{locale.toUpperCase()}}</button>
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.gt-sm>
@@ -139,12 +136,12 @@
                     <mat-icon matListIcon>settings</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null"
+                <mat-list-item routerLink="/wiki" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'HOME_PAGE.features' | translate}}"
+                               matTooltip="{{'WIKI.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>help_outline</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.features' | translate}}</span>
+                    <mat-icon matListIcon>library_books</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'WIKI.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"

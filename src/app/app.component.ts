@@ -26,6 +26,7 @@ import {OverlayContainer} from '@angular/cdk/overlay';
 import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
+import {ScrollSpyService} from './pages/wiki/services/scroll-spy.service';
 
 declare const ga: Function;
 
@@ -67,6 +68,8 @@ export class AppComponent implements OnInit {
 
     customLinksEnabled = false;
 
+    public locales: string[] = ['en', 'de', 'fr', 'ja', 'pt'];
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -81,7 +84,8 @@ export class AppComponent implements OnInit {
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
-                private pendingChangesService: PendingChangesService) {
+                private pendingChangesService: PendingChangesService,
+                private scrollSpy: ScrollSpyService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -276,7 +280,7 @@ export class AppComponent implements OnInit {
     }
 
     use(lang: string): void {
-        if (['en', 'de', 'fr', 'ja'].indexOf(lang) === -1) {
+        if (this.locales.indexOf(lang) === -1) {
             lang = 'en';
         }
         this.locale = lang;

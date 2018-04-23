@@ -42,7 +42,6 @@ import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
 import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {PublicListsModule} from './pages/public-lists/public-lists.module';
@@ -57,6 +56,8 @@ import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
 import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
+import {MarkdownModule} from 'ngx-markdown';
+import {WikiModule} from './pages/wiki/wiki.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -68,6 +69,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         FlexLayoutModule,
+
+        MarkdownModule.forRoot(),
 
         TranslateModule.forRoot({
             loader: {
@@ -124,7 +127,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProfileModule,
         CustomLinksModule,
         LinkModule,
-        FeaturesModule,
+        WikiModule,
         RecipesModule,
         ListsModule,
         PublicListsModule,
