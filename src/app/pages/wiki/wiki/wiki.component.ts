@@ -28,7 +28,7 @@ export class WikiComponent implements OnInit {
 
     private readonly reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-    private readonly tocReloader$: ReplaySubject<void> = new ReplaySubject<void>(1);
+    private readonly tocReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
     public markdownContent: Observable<string>;
 
@@ -48,7 +48,7 @@ export class WikiComponent implements OnInit {
 
     interceptLinks(event: MouseEvent): void {
         if (event.srcElement.tagName === 'A' && (event.srcElement.baseURI.indexOf('ffxivteamcraft.com') > -1 ||
-            event.srcElement.baseURI.indexOf('localhost') > -1 )) {
+            event.srcElement.baseURI.indexOf('localhost') > -1)) {
             // If that's an anchor, intercept the click and handle it properly with router
             event.preventDefault();
             this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
@@ -89,7 +89,9 @@ export class WikiComponent implements OnInit {
                 })
                 .filter(markdown => markdown !== null)
                 .do(() => {
-                    this.tocReloader$.next(null);
+                    setTimeout(() => {
+                        this.tocReloader$.next(null);
+                    }, 100);
                 });
 
         this.tableOfContent =

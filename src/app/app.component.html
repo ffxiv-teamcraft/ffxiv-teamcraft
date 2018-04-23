@@ -138,7 +138,7 @@
                 </mat-list-item>
                 <mat-list-item routerLink="/wiki" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'HOME_PAGE.Wiki' | translate}}"
+                               matTooltip="{{'WIKI.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>library_books</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'WIKI.Title' | translate}}</span>
