@@ -13,7 +13,7 @@ export class I18nToolsService {
         if (i18nName === undefined) {
             return 'missing name';
         }
-        return i18nName[this.translator.currentLang] || 'missing name';
+        return i18nName[this.translator.currentLang] || i18nName.en || 'missing name';
     }
 
     public createI18nName(item: I18nData): I18nName {
