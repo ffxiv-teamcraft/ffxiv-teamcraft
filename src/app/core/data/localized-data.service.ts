@@ -20,7 +20,9 @@ export class LocalizedDataService {
 
     public getItem(id: number): I18nName {
         const row = this.getRow(items, id);
-        row.fr = row.fr.replace(this.indentRegexp, '');
+        if (row !== undefined) {
+            row.fr = row.fr.replace(this.indentRegexp, '');
+        }
         return row;
     }
 
