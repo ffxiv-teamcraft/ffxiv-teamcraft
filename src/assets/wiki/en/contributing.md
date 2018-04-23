@@ -25,7 +25,7 @@ First of all, come on [Discord] and poke @Miu to tell him that you would like to
 
 ## Without github
 
- 1. Create a file using one of the editors linked below.
+ 1. Create a file using one of the editors linked above.
  2. Send me the file on discord.
  
 ## Credits
