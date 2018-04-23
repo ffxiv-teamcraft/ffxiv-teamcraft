@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.5.1"></a>
+## [3.5.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.5.0...v3.5.1) (2018-04-23)
+
+
+### Bug Fixes
+
+* final permissions system fix, thanks javascript references ([358e81f](https://github.com/Supamiu/ffxiv-teamcraft/commit/358e81f))
+* gathering item location can't find non-timed nodes ([b893772](https://github.com/Supamiu/ffxiv-teamcraft/commit/b893772))
+* login sometimes triggers an email spam and a temporary ban from logging in from firebase ([3f5e310](https://github.com/Supamiu/ffxiv-teamcraft/commit/3f5e310)), closes [#316](https://github.com/Supamiu/ffxiv-teamcraft/issues/316)
+* map name was sometimes incorrect ([3739e36](https://github.com/Supamiu/ffxiv-teamcraft/commit/3739e36)), closes [#325](https://github.com/Supamiu/ffxiv-teamcraft/issues/325)
+* permissions fixes with workshops ([a0236be](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0236be))
+* updated translations to avoid confusion with shared items (which are only write access items) ([3d213ca](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d213ca))
+
+
+### Features
+
+* features page has been removed for a new wiki system ([ea7226a](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea7226a))
+* features page is now replaced with the wiki ([14fa86c](https://github.com/Supamiu/ffxiv-teamcraft/commit/14fa86c))
+* folklore book now shown (to know which book to buy) ([531d5f9](https://github.com/Supamiu/ffxiv-teamcraft/commit/531d5f9))
+* portuguese translation ([fa56ea4](https://github.com/Supamiu/ffxiv-teamcraft/commit/fa56ea4))
+* two new layout filters: IS_TOME_TRADE and IS_SCRIPT_TRADE ([85e2494](https://github.com/Supamiu/ffxiv-teamcraft/commit/85e2494))
+
+
+
 <a name="3.5.0"></a>
 # [3.5.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.4.6...v3.5.0) (2018-04-16)
 
