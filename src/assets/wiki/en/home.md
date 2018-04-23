@@ -23,8 +23,7 @@ Below you'll find a summary of all pages you can find on this wiki.
 
 ## I want to contribute to the wiki
 
-To contribute to this wiki, you can either fork the [github repository] or simply whisp Miu on [Discord] to talk about it.
-Each page is shown in english if it doesn't exist in your current language.
+To contribute to this wiki, check [contributing](/wiki/contributing) page.
 
 ### Requirements
 
