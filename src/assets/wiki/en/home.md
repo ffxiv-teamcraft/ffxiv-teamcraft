@@ -14,6 +14,7 @@ Below you'll find a summary of all pages you can find on this wiki.
  * [Lists](/wiki/lists), how to create a list, add items to it.
  * [Favourites](/wiki/favourites), describing how favourite list/workshop system works
  * [Books](/wiki/books), how to link your ingame mastercraft books (and folklore books) to your profile.
+ * [List details](/wiki/list-details), how to get all the details you need on a list view.
 
 ## Advanced features
 
@@ -28,3 +29,6 @@ Each page is shown in english if it doesn't exist in your current language.
 ### Requirements
 
 To contribute to this wiki, there isn't a lot of requirements, a basic knowledge of Markdown is required, and some rules have to be followed to ensure the format fits this wiki system.
+
+[github repository]:https://github.com/supamiu/ffxiv-teamcraft
+[Discord]:https://discord.gg/r6qxt6P
