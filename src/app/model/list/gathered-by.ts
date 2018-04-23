@@ -6,4 +6,5 @@ export interface GatheredBy {
     level: number;
     nodes: StoredNode[];
     stars_tooltip: string;
+    folklore?: number;
 }

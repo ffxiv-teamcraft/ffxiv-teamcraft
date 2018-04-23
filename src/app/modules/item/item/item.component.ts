@@ -267,6 +267,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     masterbooks: CompactMasterbook[] = [];
 
+    folkloreId: number;
+
     isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
 
     public timers: Observable<Timer[]>;
@@ -510,18 +512,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             this.hasBook = false;
             return;
         }
-        // If this is a gathering
+        // If this is a gathering (BTN/MIN)
         if (this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes.length > 0) {
-            // For each node
-            for (const node of this.item.gatheredBy.nodes) {
-                // If it has a limit set to legendary
-                if (node.limitType !== undefined) {
-                    const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
-                    if (folkloreId !== undefined) {
-                        this.hasBook = (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
-                        return;
-                    }
-                }
+            // If it has a limit set to legendary
+            const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
+            if (folkloreId !== undefined) {
+                this.hasBook = (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                this.folkloreId = +folkloreId;
+                return;
             }
         }
         this.hasBook = true;
