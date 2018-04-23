@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -74,45 +73,47 @@ export class LoginPopupComponent {
     classicLogin(): void {
         this.router.navigate(['home']).then(() => {
             const prevUser = this.af.auth.currentUser;
-            this.listService.getUserLists(prevUser.uid).subscribe(listsBackup => {
-                // Delete the previous anonymous user
-                if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
-                    this.userService.deleteUser(prevUser.uid);
-                    this.af.auth.currentUser.delete();
-                }
-                // Try to log in
-                this.af.auth
-                    .signInWithEmailAndPassword(this.form.value.email, this.form.value.password)
-                    .catch((err) => {
-                        console.error(err);
-                        this.errorState(listsBackup);
-                    })
-                    .then((auth) => {
-                        if (auth !== null && auth !== undefined && !auth.emailVerified) {
-                            // If the user didn't verify his email, send him a new one.
-                            this.af.auth.currentUser.sendEmailVerification();
-                            // Log out from this user, as his email isn't verified yet.
-                            this.af.auth.signOut().then(() => {
-                                // Sign in anonymously again, then restore list backup to the newly created user.
-                                this.af.auth.signInAnonymously().then(user => {
-                                    listsBackup.forEach(list => {
-                                        list.authorId = user.uid;
-                                        this.listService.add(list);
+            this.listService.getUserLists(prevUser.uid)
+                .first()
+                .subscribe(listsBackup => {
+                    // Delete the previous anonymous user
+                    if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
+                        this.userService.deleteUser(prevUser.uid);
+                        this.af.auth.currentUser.delete();
+                    }
+                    // Try to log in
+                    this.af.auth
+                        .signInWithEmailAndPassword(this.form.value.email, this.form.value.password)
+                        .catch((err) => {
+                            console.error(err);
+                            this.errorState(listsBackup);
+                        })
+                        .then((auth) => {
+                            if (auth !== null && auth !== undefined && !auth.emailVerified) {
+                                // If the user didn't verify his email, send him a new one.
+                                this.af.auth.currentUser.sendEmailVerification();
+                                // Log out from this user, as his email isn't verified yet.
+                                this.af.auth.signOut().then(() => {
+                                    // Sign in anonymously again, then restore list backup to the newly created user.
+                                    this.af.auth.signInAnonymously().then(user => {
+                                        listsBackup.forEach(list => {
+                                            list.authorId = user.uid;
+                                            this.listService.add(list);
+                                        });
+                                        this.notVerified = true;
+                                        this.userService.reload();
                                     });
-                                    this.notVerified = true;
-                                    this.userService.reload();
                                 });
-                            });
-                        } else {
-                            this.login(auth).then(() => {
-                                this.userService.reload();
-                                this.dialogRef.close();
-                            }).catch(() => {
-                                this.errorState(listsBackup);
-                            });
-                        }
-                    });
-            });
+                            } else {
+                                this.login(auth).then(() => {
+                                    this.userService.reload();
+                                    this.dialogRef.close();
+                                }).catch(() => {
+                                    this.errorState(listsBackup);
+                                });
+                            }
+                        });
+                });
         });
     }
 
@@ -131,24 +132,26 @@ export class LoginPopupComponent {
 
     private oauth(provider: AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
-        this.listService.getUserLists(prevUser.uid).subscribe(lists => {
-            if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
-                this.userService.deleteUser(prevUser.uid);
-                this.af.auth.currentUser.delete();
-            }
-            this.af.auth.signInWithPopup(provider).then((oauth) => {
-                this.login(oauth.user).then(() => {
+        this.listService.getUserLists(prevUser.uid)
+            .first()
+            .subscribe(lists => {
+                if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
+                    this.userService.deleteUser(prevUser.uid);
+                    this.af.auth.currentUser.delete();
+                }
+                this.af.auth.signInWithPopup(provider).then((oauth) => {
+                    this.login(oauth.user).then(() => {
+                        this.userService.reload();
+                        this.dialogRef.close();
+                    }).catch(() => {
+                        this.userService.reload();
+                        this.errorState(lists);
+                    });
                     this.userService.reload();
-                    this.dialogRef.close();
                 }).catch(() => {
                     this.userService.reload();
-                    this.errorState(lists);
                 });
-                this.userService.reload();
-            }).catch(() => {
-                this.userService.reload();
             });
-        });
     }
 
 }
