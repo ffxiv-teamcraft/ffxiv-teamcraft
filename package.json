@@ -19,7 +19,8 @@
     "extract": "ngx-translate-extract -i ./src --output ./src/assets/i18n/fr.json --output ./src/assets/i18n/de.json --output ./src/assets/i18n/en.json --output ./src/assets/i18n/ja.json --clean --sort --format namespaced-json",
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "translations:clean": "node tools/translations-cleaner.js"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +56,7 @@
     "jwt-decode": "^2.2.0",
     "ng-push": "^0.2.1",
     "ngx-clipboard": "10.0.0",
+    "ngx-markdown": "^1.5.2",
     "rxjs": "^5.4.3",
     "semver": "^5.4.1",
     "web-animations-js": "^2.3.1",

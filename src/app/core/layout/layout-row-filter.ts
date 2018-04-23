@@ -26,14 +26,59 @@ export class LayoutRowFilter {
             // These ids are for voidrake and Althyk lavender.
             for (const tokenId of [15858, 15857]) {
                 if (row.tradeSources
-                        .find(source => source.trades
-                            .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                    .find(source => source.trades
+                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
                     return true;
                 }
             }
         }
         return false;
     }, 'IS_TOKEN_TRADE');
+
+    static IS_TOME_TRADE = new LayoutRowFilter(row => {
+        if (row.tradeSources !== undefined) {
+            const tomeIds = [
+                28,
+                35,
+                36,
+                7811,
+                9383,
+                14298,
+                16928,
+                19107,
+                21789,
+            ];
+
+            for (const tokenId of tomeIds) {
+                if (row.tradeSources
+                    .find(source => source.trades
+                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }, 'IS_TOME_TRADE');
+
+    static IS_SCRIPT_TRADE = new LayoutRowFilter(row => {
+        if (row.tradeSources !== undefined) {
+            const scriptIds = [
+                10309,
+                10311,
+                17833,
+                17834,
+            ];
+
+            for (const tokenId of scriptIds) {
+                if (row.tradeSources
+                    .find(source => source.trades
+                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }, 'IS_SCRIPT_TRADE');
 
     static IS_VENTURE = new LayoutRowFilter(row => row.ventures !== undefined && row.ventures.length > 0, 'IS_VENTURE');
 
