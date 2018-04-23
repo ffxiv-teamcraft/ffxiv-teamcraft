@@ -39,10 +39,6 @@
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
                     {{'Disconnect' | translate}}
                 </button>
-                <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                        matTooltipPosition="right" (click)="settings.compactSidebar = true; detectChanges()">
-                    <mat-icon>keyboard_arrow_left</mat-icon>
-                </button>
             </div>
             <div class="accent-background" *ngIf="settings.compactSidebar">
                 <div class="user">
@@ -53,10 +49,14 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item *ngIf="settings.compactSidebar">
+                <mat-list-item>
                     <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                            matTooltipPosition="right" (click)="settings.compactSidebar = false; detectChanges()">
-                        <mat-icon>keyboard_arrow_right</mat-icon>
+                            matTooltipPosition="right"
+                            [matTooltipDisabled]="!settings.compactSidebar"
+                            (click)="settings.compactSidebar = !settings.compactSidebar; detectChanges()">
+                        <mat-icon *ngIf="settings.compactSidebar">keyboard_arrow_right</mat-icon>
+                        <mat-icon *ngIf="!settings.compactSidebar">keyboard_arrow_left</mat-icon>
+                        <span *ngIf="!settings.compactSidebar">{{'Compact_sidebar_toggle' | translate}}</span>
                     </button>
                 </mat-list-item>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null"
@@ -190,7 +190,7 @@
                     matTooltip="{{'Timers' | translate}}"
                     matTooltipPosition="left"
                     *ngIf="!mobile" (click)="timersSidebar.toggle()"
-            [ngClass]="{'opened': timersSidebar?.opened}">
+                    [ngClass]="{'opened': timersSidebar?.opened}">
                 <mat-icon *ngIf="!timersSidebar?.opened">alarm</mat-icon>
                 <mat-icon *ngIf="timersSidebar?.opened">keyboard_arrow_right</mat-icon>
             </button>

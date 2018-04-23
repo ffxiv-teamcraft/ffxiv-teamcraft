@@ -272,6 +272,7 @@ export class AppComponent implements OnInit {
     disconnect(): void {
         this.router.navigate(['recipes']);
         this.userService.signOut();
+        this.username = 'Anonymous';
     }
 
     use(lang: string): void {

@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
+// noinspection ES6UnusedImports
+import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;

@@ -32,6 +32,7 @@ export class CharacterAddPopupComponent implements OnInit {
 
     select(id: number): void {
         this.userService.getUserData()
+            .first()
             .map(user => {
                 if (user !== null && !user.anonymous) {
                     user.lodestoneId = id;
