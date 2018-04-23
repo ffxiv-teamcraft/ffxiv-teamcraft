@@ -376,5 +376,10 @@
 	"filters/worn_by": "Usado por",
 	"items": "itens",
 	"reset_filters": "Resetar filtros",
-	"xivdb_cart_import": "Importar lista"
+	"xivdb_cart_import": "Importar lista",
+    "WIKI": {
+        "Title": "Wiki",
+        "Not_found_in_current_lang": "Se essa página não for encontrada em sua linguagem, a versão em inglês será apresentada.",
+        "Not_found": "Página não encontrada"
+    }
 }
