@@ -48,8 +48,8 @@ export class WikiComponent implements OnInit {
     }
 
     interceptLinks(event: MouseEvent): void {
-        if (event.srcElement.tagName === 'A' && (event.srcElement.baseURI.indexOf('ffxivteamcraft.com') > -1 ||
-            event.srcElement.baseURI.indexOf('localhost') > -1)) {
+        if (event.srcElement.tagName === 'A' && ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
+            (<any>event.srcElement).href.indexOf('localhost') > -1)) {
             // If that's an anchor, intercept the click and handle it properly with router
             event.preventDefault();
             this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
