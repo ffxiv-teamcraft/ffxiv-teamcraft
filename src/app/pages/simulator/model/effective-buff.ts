@@ -1,11 +1,11 @@
 import {Buff} from './buff.enum';
 import {Simulation} from '../simulation/simulation';
 
-export abstract class EffectiveBuff {
+export interface EffectiveBuff {
     duration: number;
     stacks: number;
     buff: Buff;
 
-    abstract tick(simulationState: Simulation): void;
+    tick: (simulationState: Simulation) => void;
 }
 

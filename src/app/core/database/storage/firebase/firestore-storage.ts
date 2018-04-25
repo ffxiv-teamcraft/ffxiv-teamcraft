@@ -12,6 +12,7 @@ import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {DataResponse} from '../data-response';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/do';
 import DocumentReference = firebase.firestore.DocumentReference;
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';

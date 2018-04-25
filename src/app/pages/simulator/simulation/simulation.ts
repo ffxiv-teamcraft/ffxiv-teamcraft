@@ -23,7 +23,7 @@ export class Simulation {
 
     public steps: ActionResult[] = [];
 
-    constructor(private recipe: Craft, private actions: CraftingAction[], private _crafterStats: CrafterStats,
+    constructor(public readonly recipe: Craft, private actions: CraftingAction[], private _crafterStats: CrafterStats,
                 hqIngredients: { id: number, amount: number }[] = []) {
         this.solidity = recipe.durability;
         this.availableCP = this._crafterStats.cp;
@@ -41,7 +41,7 @@ export class Simulation {
     public run(): ActionResult[] {
         for (const action of this.actions) {
             // If we can use the action
-            if (this.success === undefined && action.getCPCost(this) >= this.availableCP && action.canBeUsed(this)) {
+            if (this.success === undefined && action.getCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
                 // The roll for the current action's success rate
                 const probabilityRoll = Math.random() * 100;
                 const qualityBefore = this.quality;
@@ -86,7 +86,10 @@ export class Simulation {
 
     private tickBuffs(): void {
         for (const effectiveBuff of this.buffs) {
-            effectiveBuff.tick(this);
+            // If the buff has something to do, let it do it
+            if (effectiveBuff.tick !== undefined) {
+                effectiveBuff.tick(this);
+            }
             effectiveBuff.duration--;
         }
         this.buffs = this.buffs.filter(buff => buff.duration > 0);

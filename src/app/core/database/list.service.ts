@@ -4,6 +4,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {Observable} from 'rxjs/Observable';
 import {ListStore} from './storage/list/list-store';
 import {Workshop} from '../../model/other/workshop';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ListService {
