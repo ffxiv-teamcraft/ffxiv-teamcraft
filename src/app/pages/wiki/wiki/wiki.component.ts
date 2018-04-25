@@ -78,14 +78,15 @@ export class WikiComponent implements OnInit {
                 })
                 .mergeMap(markdownUrl => {
                     return this.http.get(markdownUrl, {responseType: 'text'})
+                        .mergeMap(res => {
+                            if (res.indexOf('<!doctype html>') > -1) {
+                                // If page isn't found, return the english one
+                                // This has to be done because of firebase not handling redirection properly for not found pages.
+                                return this.getEnglishFallback(markdownUrl);
+                            }
+                        })
                         .catch(() => {
-                            // If page isn't found, return the english one
-                            const englishUrl = markdownUrl.replace(`/${this.translator.currentLang}/`, '/en/');
-                            this.notFoundInCurrentLang = true;
-                            return this.http.get(englishUrl, {responseType: 'text'}).catch(() => {
-                                this.notFound = true;
-                                return Observable.of(null);
-                            });
+                            return this.getEnglishFallback(markdownUrl);
                         });
                 })
                 .filter(markdown => markdown !== null)
@@ -133,6 +134,16 @@ export class WikiComponent implements OnInit {
                             return sections;
                         });
                 });
+    }
+
+    getEnglishFallback(markdownUrl: string): Observable<string> {
+        // If page isn't found, return the english one
+        const englishUrl = markdownUrl.replace(`/${this.translator.currentLang}/`, '/en/');
+        this.notFoundInCurrentLang = true;
+        return this.http.get(englishUrl, {responseType: 'text'}).catch(() => {
+            this.notFound = true;
+            return Observable.of(null);
+        });
     }
 
     isMobile(): boolean {
