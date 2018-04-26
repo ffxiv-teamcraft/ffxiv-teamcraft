@@ -6,6 +6,8 @@ export interface EffectiveBuff {
     stacks: number;
     buff: Buff;
 
-    tick: (simulationState: Simulation) => void;
+    tick?: (simulationState: Simulation) => void;
+
+    appliedStep: number;
 }
 

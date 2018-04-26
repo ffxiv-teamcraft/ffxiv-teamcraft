@@ -1,33 +1,30 @@
 import {BuffAction} from '../buff-action';
-import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {Simulation} from '../../../simulation/simulation';
 
-export class SteadyHand extends BuffAction {
+export class InnerQuiet extends BuffAction {
 
     protected getBuff(): Buff {
-        return Buff.STEADY_HAND;
+        return Buff.INNER_QUIET;
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 22;
+        return 0;
     }
 
     protected getDuration(simulation: Simulation): number {
-        return 5;
+        return Infinity;
     }
 
     getIds(): number[] {
-        return [244, 245, 246, 247, 248, 249, 250, 251];
+        return [252, 253, 254, 255, 256, 257, 258, 259];
     }
 
     protected getInitialStacks(): number {
-        return 5;
+        return 1;
     }
 
-    // Steady hand has no tick.
     protected getTick(): (simulation: Simulation) => void {
         return undefined;
     }
-
-
 }

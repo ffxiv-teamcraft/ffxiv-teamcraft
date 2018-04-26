@@ -8,11 +8,11 @@ export class SteadyHandII extends BuffAction {
         return Buff.STEADY_HAND_II;
     }
 
-    getCPCost(simulationState: Simulation): number {
+    getBaseCPCost(simulationState: Simulation): number {
         return 25;
     }
 
-    protected getDuration(): number {
+    protected getDuration(simulation: Simulation): number {
         return 5;
     }
 

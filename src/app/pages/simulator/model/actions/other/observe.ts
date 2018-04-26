@@ -11,7 +11,7 @@ export class Observe extends CraftingAction {
         // Nothing happens
     }
 
-    getCPCost(simulationState: Simulation): number {
+    getBaseCPCost(simulationState: Simulation): number {
         return 7;
     }
 

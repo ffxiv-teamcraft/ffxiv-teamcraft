@@ -39,9 +39,22 @@ export class Simulation {
     }
 
     public run(): ActionResult[] {
-        for (const action of this.actions) {
+        this.actions.forEach((action: CraftingAction, index: number) => {
+            // If we're starting and the crafter is specialist
+            if (index === 0 && this.crafterStats.specialist) {
+                // Push stroke of genius buff
+                this.buffs.push({
+                    buff: Buff.STROKE_OF_GENIUS,
+                    stacks: 0,
+                    duration: Infinity,
+                    appliedStep: -1
+                });
+                // Apply stroke of genius manually in the stats
+                this.availableCP += 15;
+                this.maxCP += 15;
+            }
             // If we can use the action
-            if (this.success === undefined && action.getCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
+            if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
                 // The roll for the current action's success rate
                 const probabilityRoll = Math.random() * 100;
                 const qualityBefore = this.quality;
@@ -51,6 +64,8 @@ export class Simulation {
                 }
                 // Even if the action failed, we have to remove the durability cost
                 this.solidity -= action.getDurabilityCost(this);
+                // Even if the action failed, CP has to be consumed too
+                this.availableCP -= action.getCPCost(this);
                 // Push the result to the result array
                 this.steps.push({
                     success: action.getSuccessRate(this) >= probabilityRoll,
@@ -64,7 +79,6 @@ export class Simulation {
                 if (this.solidity <= 0) {
                     this.success = false;
                 }
-                this.tickBuffs();
             } else {
                 // If we can't, add the step to the result but skip it.
                 this.steps.push({
@@ -76,7 +90,9 @@ export class Simulation {
                     solidityDifference: 0
                 });
             }
-        }
+            // Tick buffs after checking synth result, so if we reach 0 solidity, synth fails.
+            this.tickBuffs();
+        });
         return this.steps;
     }
 
@@ -84,13 +100,25 @@ export class Simulation {
         return this.buffs.find(row => row.buff === buff) !== undefined;
     }
 
+    public getBuff(buff: Buff): EffectiveBuff {
+        return this.buffs.find(row => row.buff === buff);
+    }
+
+    public removeBuff(buff: Buff): void {
+        this.buffs = this.buffs.filter(row => row.buff !== buff);
+    }
+
     private tickBuffs(): void {
         for (const effectiveBuff of this.buffs) {
-            // If the buff has something to do, let it do it
-            if (effectiveBuff.tick !== undefined) {
-                effectiveBuff.tick(this);
+            // We are checking the appliedStep because ticks only happen at the beginning of the second turn after the application,
+            // For instance, Great strides launched at turn 1 will start to loose duration at the beginning of turn 3
+            if (effectiveBuff.appliedStep + 1 < this.steps.length) {
+                // If the buff has something to do, let it do it
+                if (effectiveBuff.tick !== undefined) {
+                    effectiveBuff.tick(this);
+                }
+                effectiveBuff.duration--;
             }
-            effectiveBuff.duration--;
         }
         this.buffs = this.buffs.filter(buff => buff.duration > 0);
     }

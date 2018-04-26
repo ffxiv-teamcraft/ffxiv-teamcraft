@@ -15,7 +15,7 @@ export class BasicTouch extends QualityAction {
         return 70;
     }
 
-    getCPCost(simulationState: Simulation): number {
+    getBaseCPCost(simulationState: Simulation): number {
         return 0;
     }
 

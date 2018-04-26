@@ -5,16 +5,17 @@ import {Buff} from '../buff.enum';
 
 export abstract class BuffAction extends CraftingAction {
 
-    private getAppliedBuff(): EffectiveBuff {
+    private getAppliedBuff(simulation: Simulation): EffectiveBuff {
         return {
-            duration: this.getDuration(),
+            duration: this.getDuration(simulation),
             tick: this.getTick(),
             stacks: this.getInitialStacks(),
-            buff: this.getBuff()
+            buff: this.getBuff(),
+            appliedStep: simulation.steps.length
         }
     }
 
-    protected abstract getDuration(): number;
+    protected abstract getDuration(simulation: Simulation): number;
 
     protected abstract getBuff(): Buff;
 
@@ -23,7 +24,7 @@ export abstract class BuffAction extends CraftingAction {
     protected abstract getTick(): (simulation: Simulation) => void;
 
     execute(simulation: Simulation): void {
-        simulation.buffs.push(this.getAppliedBuff());
+        simulation.buffs.push(this.getAppliedBuff(simulation));
     }
 
     canBeUsed(simulationState: Simulation): boolean {

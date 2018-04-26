@@ -1,10 +1,14 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
 
-export class BasicSynthesis extends ProgressAction {
+export class StandardSynthesis extends ProgressAction {
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;
+    }
+
+    getBaseCPCost(simulationState: Simulation): number {
+        return 15;
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
@@ -15,16 +19,12 @@ export class BasicSynthesis extends ProgressAction {
         return 90;
     }
 
-    getBaseCPCost(simulationState: Simulation): number {
-        return 0;
-    }
-
     getIds(): number[] {
-        return [10001, 10015, 10030, 10045, 10060, 10075, 10090, 10105];
+        return [100007, 100021, 100037, 100051, 100067, 100080, 100096, 100111];
     }
 
     getPotency(): number {
-        return 100;
+        return 150;
     }
 
 }
