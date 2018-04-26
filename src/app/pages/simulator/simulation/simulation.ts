@@ -68,6 +68,7 @@ export class Simulation {
                 this.availableCP -= action.getCPCost(this);
                 // Push the result to the result array
                 this.steps.push({
+                    action: action,
                     success: action.getSuccessRate(this) >= probabilityRoll,
                     addedQuality: this.quality - qualityBefore,
                     addedProgression: this.progression - progressionBefore,
@@ -82,6 +83,7 @@ export class Simulation {
             } else {
                 // If we can't, add the step to the result but skip it.
                 this.steps.push({
+                    action: action,
                     success: null,
                     addedQuality: 0,
                     addedProgression: 0,
@@ -106,6 +108,10 @@ export class Simulation {
 
     public removeBuff(buff: Buff): void {
         this.buffs = this.buffs.filter(row => row.buff !== buff);
+    }
+
+    public get lastStep(): ActionResult {
+        return this.steps[this.steps.length - 1];
     }
 
     private tickBuffs(): void {

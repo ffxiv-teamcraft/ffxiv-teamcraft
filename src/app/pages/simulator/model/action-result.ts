@@ -1,4 +1,9 @@
+import {CraftingAction} from './actions/crafting-action';
+
 export interface ActionResult {
+    // Action used
+    action: CraftingAction;
+    // Did the success hit?
     success: boolean;
     // Amount of progression added to the craft
     addedProgression: number;

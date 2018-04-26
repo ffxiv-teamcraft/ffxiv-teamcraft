@@ -13,7 +13,7 @@ export class MakersMark extends BuffAction {
     }
 
     protected getDuration(simulation: Simulation): number {
-        return Math.round(simulation.recipe.progress / 200);
+        return Math.round(simulation.recipe.progress / 100);
     }
 
     getIds(): number[] {

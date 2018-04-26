@@ -1,6 +1,9 @@
 import {Simulation} from '../../simulation/simulation';
 import {Buff} from '../buff.enum';
 
+/**
+ * This is the parent class of all actions in the simulator.
+ */
 export abstract class CraftingAction {
 
     abstract getIds(): number[];
@@ -28,4 +31,8 @@ export abstract class CraftingAction {
     abstract getDurabilityCost(simulationState: Simulation): number;
 
     abstract execute(simulation: Simulation): void;
+
+    public getName(): string {
+        return this.constructor.name;
+    }
 }

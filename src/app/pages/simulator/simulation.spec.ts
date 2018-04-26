@@ -14,6 +14,8 @@ import {WasteNotII} from './model/actions/buff/waste-not-ii';
 import {Ingenuity} from './model/actions/buff/ingenuity';
 import {IngenuityII} from './model/actions/buff/ingenuity-ii';
 import {InitialPreparations} from './model/actions/buff/initial-preparations';
+import {MakersMark} from './model/actions/buff/makers-mark';
+import {FlawlessSynthesis} from './model/actions/progression/flawless-synthesis';
 
 const infusionOfMind_Recipe: Craft = {
     'id': '3595',
@@ -212,6 +214,27 @@ describe('Craft simulator tests', () => {
                 // Expect around 2k procs with a precision of +/- 100
                 expect(results.filter(res => res).length).toBeGreaterThan(1900);
                 expect(results.filter(res => res).length).toBeLessThan(2100);
+            });
+        });
+
+        describe('Maker\'s Mark', () => {
+            it('should compute correct stacks amount', () => {
+                const simulation = new Simulation(infusionOfMind_Recipe,
+                    [new MakersMark()],
+                    alc_70_350_stats);
+                simulation.run();
+                expect(simulation.getBuff(Buff.MAKERS_MARK).duration).toBe(29);
+            });
+
+            it('should affect Flawless Synthesis as it has to', () => {
+                const simulation = new Simulation(infusionOfMind_Recipe,
+                    [new MakersMark(), new SteadyHand(), new FlawlessSynthesis()],
+                    alc_70_350_stats);
+                simulation.run();
+                expect(simulation.getBuff(Buff.MAKERS_MARK).duration).toBe(27);
+                expect(simulation.progression).toBe(40);
+                expect(simulation.availableCP).toBe(447);
+                expect(simulation.solidity).toBe(80);
             });
         });
     });
