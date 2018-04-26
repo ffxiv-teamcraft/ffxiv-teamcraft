@@ -1,7 +1,7 @@
-import {ProgressAction} from '../progress-action';
+import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 
-export class FocusedSynthesis extends ProgressAction {
+export class HastyTouchII extends QualityAction {
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;
@@ -16,15 +16,15 @@ export class FocusedSynthesis extends ProgressAction {
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return simulationState.lastStep.action.getName() === 'Observe' ? 100 : 50;
+        return 60;
     }
 
     getIds(): number[] {
-        return [100235, 100236, 100237, 100238, 100239, 100240, 100241, 100242];
+        return [100195, 100196, 100197, 100198, 100199, 100200, 100201, 100202];
     }
 
     getPotency(simulation: Simulation): number {
-        return 200;
+        return 100;
     }
 
 }

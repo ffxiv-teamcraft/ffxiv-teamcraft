@@ -23,7 +23,7 @@ export class CarefulSynthesis extends ProgressAction {
         return [100063];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 90;
     }
 

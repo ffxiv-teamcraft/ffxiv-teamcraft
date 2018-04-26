@@ -61,6 +61,8 @@ export class Simulation {
                 const progressionBefore = this.progression;
                 if (action.getSuccessRate(this) >= probabilityRoll) {
                     action.execute(this);
+                } else {
+                    action.onFail(this);
                 }
                 // Even if the action failed, we have to remove the durability cost
                 this.solidity -= action.getDurabilityCost(this);

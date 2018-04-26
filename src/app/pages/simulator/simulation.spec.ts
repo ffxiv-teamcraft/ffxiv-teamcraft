@@ -16,6 +16,8 @@ import {IngenuityII} from './model/actions/buff/ingenuity-ii';
 import {InitialPreparations} from './model/actions/buff/initial-preparations';
 import {MakersMark} from './model/actions/buff/makers-mark';
 import {FlawlessSynthesis} from './model/actions/progression/flawless-synthesis';
+import {Observe} from './model/actions/other/observe';
+import {FocusedSynthesis} from './model/actions/progression/focused-synthesis';
 
 const infusionOfMind_Recipe: Craft = {
     'id': '3595',
@@ -98,6 +100,17 @@ describe('Craft simulator tests', () => {
             const simulation = new Simulation(infusionOfMind_Recipe, [new SteadyHand(), new BasicSynthesis()], alc_70_350_stats);
             simulation.run();
             expect(simulation.availableCP).toBe(467);
+        });
+
+        it('should take Observe combo into account', () => {
+            const results = [];
+            // Run simulation 10k times, to be sure with probability
+            for (let i = 0; i < 10000; i++) {
+                const simulation = new Simulation(infusionOfMind_Recipe, [new Observe(), new FocusedSynthesis()], alc_70_350_stats);
+                simulation.run();
+                results.push(simulation.steps[0].success);
+            }
+            expect(results.filter(row => !row).length).toBe(0);
         });
     });
 

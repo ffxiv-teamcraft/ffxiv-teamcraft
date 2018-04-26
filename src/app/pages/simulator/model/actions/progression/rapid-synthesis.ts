@@ -23,7 +23,7 @@ export class RapidSynthesis extends ProgressAction {
         return [100033];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 250;
     }
 

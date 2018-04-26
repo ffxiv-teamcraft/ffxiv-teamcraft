@@ -50,7 +50,7 @@ export abstract class QualityAction extends GeneralAction {
     }
 
     execute(simulation: Simulation): void {
-        let qualityIncrease = this.getBaseQuality(simulation) * this.getPotency() / 100;
+        let qualityIncrease = this.getBaseQuality(simulation) * this.getPotency(simulation) / 100;
         if (simulation.hasBuff(Buff.INNER_QUIET) && simulation.getBuff(Buff.INNER_QUIET).stacks < 11) {
             simulation.getBuff(Buff.INNER_QUIET).stacks++;
         }

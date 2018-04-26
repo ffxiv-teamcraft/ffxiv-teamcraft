@@ -1,30 +1,29 @@
-import {ProgressAction} from '../progress-action';
+import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 
-export class CarefulSynthesisII extends ProgressAction {
+export class PrudentTouch extends QualityAction {
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 0;
+        return 21;
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
-        return 10;
+        return 5;
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return 100;
+        return 70;
     }
 
     getIds(): number[] {
-        return [100069];
+        return [100227, 100228, 100229, 100230, 100231, 100232, 100233, 100234];
     }
 
-    getPotency(): number {
-        return 120;
+    getPotency(simulation: Simulation): number {
+        return 100;
     }
-
 }

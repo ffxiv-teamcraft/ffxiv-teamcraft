@@ -1,14 +1,20 @@
-import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
+import {Buff} from '../../buff.enum';
+import {QualityAction} from '../quality-action';
 
-export class StandardSynthesis extends ProgressAction {
+export class ByregotsBlessing extends QualityAction {
 
     canBeUsed(simulationState: Simulation): boolean {
-        return true;
+        return simulationState.hasBuff(Buff.INNER_QUIET);
+    }
+
+    execute(simulation: Simulation): void {
+        super.execute(simulation);
+        simulation.removeBuff(Buff.INNER_QUIET);
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 15;
+        return 24;
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
@@ -20,11 +26,11 @@ export class StandardSynthesis extends ProgressAction {
     }
 
     getIds(): number[] {
-        return [100007, 100021, 100037, 100051, 100067, 100080, 100096, 100111];
+        return [100009];
     }
 
     getPotency(simulation: Simulation): number {
-        return 150;
+        return 100 + simulation.getBuff(Buff.INNER_QUIET).stacks * 20;
     }
 
 }

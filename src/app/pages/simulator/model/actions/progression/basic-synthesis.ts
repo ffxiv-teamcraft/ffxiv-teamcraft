@@ -23,7 +23,7 @@ export class BasicSynthesis extends ProgressAction {
         return [10001, 10015, 10030, 10045, 10060, 10075, 10090, 10105];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 100;
     }
 

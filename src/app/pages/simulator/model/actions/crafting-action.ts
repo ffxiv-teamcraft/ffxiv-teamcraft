@@ -32,6 +32,10 @@ export abstract class CraftingAction {
 
     abstract execute(simulation: Simulation): void;
 
+    public onFail(simulation: Simulation): void {
+        // Base onFail does nothing, override to implement it, as it wont be used in most cases.
+    }
+
     public getName(): string {
         return this.constructor.name;
     }

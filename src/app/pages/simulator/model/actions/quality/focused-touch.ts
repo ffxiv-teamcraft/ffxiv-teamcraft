@@ -1,14 +1,14 @@
-import {ProgressAction} from '../progress-action';
+import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 
-export class CarefulSynthesisIII extends ProgressAction {
+export class FocusedTouch extends QualityAction {
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 7;
+        return 18;
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
@@ -16,15 +16,14 @@ export class CarefulSynthesisIII extends ProgressAction {
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return 100;
+        return simulationState.lastStep.action.getName() === 'Observe' ? 100 : 50;
     }
 
     getIds(): number[] {
-        return [100203, 100204, 100205, 100206, 100207, 100208, 100209, 100210];
+        return [100243, 100244, 100245, 100246, 100247, 100248, 100249, 100250];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 150;
     }
-
 }

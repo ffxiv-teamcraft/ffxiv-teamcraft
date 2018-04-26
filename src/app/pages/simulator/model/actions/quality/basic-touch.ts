@@ -23,7 +23,7 @@ export class BasicTouch extends QualityAction {
         return [10002, 10016, 10031, 10046, 10061, 10076, 10091, 10106];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 100;
     }
 

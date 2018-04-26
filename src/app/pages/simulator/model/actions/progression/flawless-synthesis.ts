@@ -33,7 +33,7 @@ export class FlawlessSynthesis extends GeneralAction {
         return [100083];
     }
 
-    getPotency(): number {
+    getPotency(simulation: Simulation): number {
         return 0;
     }
 

@@ -63,6 +63,6 @@ export abstract class ProgressAction extends GeneralAction {
     }
 
     execute(simulation: Simulation): void {
-        simulation.progression += Math.round(this.getBaseProgression(simulation) * this.getPotency() / 100);
+        simulation.progression += Math.round(this.getBaseProgression(simulation) * this.getPotency(simulation) / 100);
     }
 }
