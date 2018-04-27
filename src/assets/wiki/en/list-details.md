@@ -7,10 +7,10 @@ explaining why they are here and how to use them properly
 
 When filtering (see [Layouts]) for gatherings, you can see items with different icons in the right side of the item row, these icons are:
 
- * ![](/assets/icons/MIN.png) For rocky outcroping.
- * ![](/assets/icons/Mineral_Deposit.png) For mineral deposit. 
- * ![](/assets/icons/BTN.png) For lush vegetation patch.
- * ![](/assets/icons/Mature_Tree.png) Foor mature tree.
+ * ![](./assets/icons/MIN.png) For rocky outcroping.
+ * ![](./assets/icons/Mineral_Deposit.png) For mineral deposit. 
+ * ![](./assets/icons/BTN.png) For lush vegetation patch.
+ * ![](./assets/icons/Mature_Tree.png) Foor mature tree.
  
 ### Gathering details
 

@@ -278,18 +278,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     public tradeIcon: number;
 
     constructor(private i18n: I18nToolsService,
-                private dialog: MatDialog,
-                private media: ObservableMedia,
-                private localizedData: LocalizedDataService,
-                private snackBar: MatSnackBar,
-                private translator: TranslateService,
-                private alarmService: AlarmService,
-                public settings: SettingsService,
-                private bellNodesService: BellNodesService,
-                private etime: EorzeanTimeService,
-                private dataService: DataService,
-                private userService: UserService,
-                public cd: ChangeDetectorRef) {
+        private dialog: MatDialog,
+        private media: ObservableMedia,
+        private localizedData: LocalizedDataService,
+        private snackBar: MatSnackBar,
+        private translator: TranslateService,
+        private alarmService: AlarmService,
+        public settings: SettingsService,
+        private bellNodesService: BellNodesService,
+        private etime: EorzeanTimeService,
+        private dataService: DataService,
+        private userService: UserService,
+        public cd: ChangeDetectorRef) {
         super();
     }
 
@@ -338,9 +338,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
                 .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
-            });
+                    this.worksOnIt = char;
+                    this.cd.detectChanges();
+                });
         }
     }
 
@@ -377,10 +377,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public getTimerIcon(type: number): string {
         return [
-            '/assets/icons/Mineral_Deposit.png',
-            '/assets/icons/MIN.png',
-            '/assets/icons/Mature_Tree.png',
-            '/assets/icons/BTN.png',
+            './assets/icons/Mineral_Deposit.png',
+            './assets/icons/MIN.png',
+            './assets/icons/Mature_Tree.png',
+            './assets/icons/BTN.png',
             'https://garlandtools.org/db/images/FSH.png'
         ][type];
     }

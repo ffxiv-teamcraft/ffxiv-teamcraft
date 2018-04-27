@@ -17,13 +17,13 @@ export class NavigationMapPopupComponent extends ComponentWithSubscriptions impl
 
     public navigationMap: Observable<NavigationStep[]>;
 
-    private map: MapData;
+    public map: MapData;
 
     @ViewChild('container')
     public containerRef: ElementRef;
 
-    constructor(@Inject(MAT_DIALOG_DATA) public data: { mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective },
-                private mapService: MapService) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: {mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective},
+        private mapService: MapService) {
         super();
     }
 

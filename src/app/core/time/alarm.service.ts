@@ -20,9 +20,9 @@ export class AlarmService {
     private _alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
-                private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
-                private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
-                private userService: UserService) {
+        private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
+        private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
+        private userService: UserService) {
         this.userService.getUserData().map(user => user.alarms || []).subscribe(alarms => this.loadAlarms(...alarms));
     }
 
@@ -172,9 +172,9 @@ export class AlarmService {
                 this.translator.instant('ALARM.See_on_map'),
                 {duration: 5000})
                 .onAction().subscribe(() => {
-                this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
-            });
-            const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
+                    this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
+                });
+            const audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
             audio.loop = false;
             audio.volume = this.settings.alarmVolume;
             audio.play();
@@ -185,8 +185,8 @@ export class AlarmService {
                     sticky: false,
                     renotify: false,
                     body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
-                    `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
-                    (alarm.slot !== null ? `(${alarm.slot})` : '')
+                        `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
+                        (alarm.slot !== null ? `(${alarm.slot})` : '')
                 }
             ).subscribe(() => {
             }, err => {
