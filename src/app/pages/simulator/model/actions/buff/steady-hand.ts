@@ -12,7 +12,7 @@ export class SteadyHand extends BuffAction {
         return 22;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return 5;
     }
 

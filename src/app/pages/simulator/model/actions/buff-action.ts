@@ -15,7 +15,7 @@ export abstract class BuffAction extends CraftingAction {
         }
     }
 
-    protected abstract getDuration(simulation: Simulation): number;
+    abstract getDuration(simulation: Simulation): number;
 
     protected abstract getBuff(): Buff;
 

@@ -2,14 +2,14 @@ import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 
-export class Manipulation extends BuffAction {
+export class Innovation extends BuffAction {
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 88;
+        return 18;
     }
 
-    protected getBuff(): Buff {
-        return Buff.MANIPULATION;
+    getBuff(): Buff {
+        return Buff.INNOVATION;
     }
 
     getDuration(simulation: Simulation): number {
@@ -17,17 +17,15 @@ export class Manipulation extends BuffAction {
     }
 
     getIds(): number[] {
-        return [278];
+        return [284];
     }
 
-    protected getInitialStacks(): number {
+    getInitialStacks(): number {
         return 0;
     }
 
-    protected getTick(): (simulation: Simulation) => void {
-        return (simulation: Simulation) => {
-            simulation.repair(10);
-        };
+    getTick(): (simulation: Simulation) => void {
+        return undefined;
     }
 
 }

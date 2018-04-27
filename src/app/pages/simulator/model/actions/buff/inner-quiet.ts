@@ -12,7 +12,7 @@ export class InnerQuiet extends BuffAction {
         return 0;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return Infinity;
     }
 

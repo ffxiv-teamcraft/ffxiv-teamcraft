@@ -12,7 +12,7 @@ export class Ingenuity extends BuffAction {
         return Buff.INGENUITY;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return 5;
     }
 

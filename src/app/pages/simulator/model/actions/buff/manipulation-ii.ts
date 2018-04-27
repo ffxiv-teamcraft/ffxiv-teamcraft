@@ -12,7 +12,7 @@ export class ManipulationII extends BuffAction {
         return Buff.MANIPULATION_II;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return 8;
     }
 

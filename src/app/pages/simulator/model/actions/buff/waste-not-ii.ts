@@ -12,7 +12,7 @@ export class WasteNotII extends BuffAction {
         return 98;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return 8;
     }
 

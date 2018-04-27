@@ -12,7 +12,7 @@ export class InitialPreparations extends BuffAction {
         return 50;
     }
 
-    protected getDuration(simulation: Simulation): number {
+    getDuration(simulation: Simulation): number {
         return Infinity;
     }
 
