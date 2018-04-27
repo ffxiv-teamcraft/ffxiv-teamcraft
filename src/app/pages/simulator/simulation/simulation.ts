@@ -43,19 +43,41 @@ export class Simulation {
     }
 
     public getReliabilityReport(): SimulationReliabilityReport {
-        const results = [];
+        const results: SimulationResult[] = [];
         // Let's run the simulation 1000 times.
         for (let i = 0; i < 1000; i++) {
             results.push(this.run(false));
             this.reset();
         }
         const successPercent = (results.filter(res => res.success).length / results.length) * 100;
+        const hqPercent = results.reduce((p, c) => p + c.hqPercent, 0) / results.length;
+        let hqMedian = 0;
+        results.map(res => res.hqPercent).sort((a, b) => a - b);
+        if (results.length % 2) {
+            hqMedian = results[results.length / 2].hqPercent;
+        } else {
+            hqMedian = (results[Math.floor(results.length / 2)].hqPercent + results[Math.ceil(results.length / 2)].hqPercent) / 2;
+        }
         return {
             rawData: results,
             successPercent: successPercent,
-            averageHQPercent: 0,
-            medianHQPercent: 0
+            averageHQPercent: hqPercent,
+            medianHQPercent: hqMedian
         }
+    }
+
+    private medianHQ(values) {
+
+        values.sort(function (a, b) {
+            return a - b;
+        });
+
+        var half = Math.floor(values.length / 2);
+
+        if (values.length % 2)
+            return values[half];
+        else
+            return (values[half - 1] + values[half]) / 2.0;
     }
 
     public reset(): void {
@@ -134,12 +156,21 @@ export class Simulation {
             // Tick buffs after checking synth result, so if we reach 0 solidity, synth fails.
             this.tickBuffs();
         });
+        // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
+        const qualityPercent = Math.min(this.quality / this.recipe.quality, 100);
+        let hqPercent = -5.6604E-6 * Math.pow(qualityPercent, 4)
+            + 0.0015369705 * Math.pow(qualityPercent, 3)
+            - 0.1426469573 * Math.pow(qualityPercent, 2)
+            + 5.6122722959 * qualityPercent - 5.5950384565;
+        if (hqPercent < 1) {
+            hqPercent = 1;
+        }
         return {
             progressionValue: this.progression,
             qualityValue: this.quality,
             finalCP: this.availableCP,
             steps: this.steps,
-            hqPercent: 0, // TODO
+            hqPercent: hqPercent,
             success: this.progression >= this.recipe.progress
         };
     }
