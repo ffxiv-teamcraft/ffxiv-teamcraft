@@ -49,8 +49,10 @@ export class Simulation {
             results.push(this.run(false));
             this.reset();
         }
+        const successPercent = (results.filter(res => res.success).length / results.length) * 100;
         return {
-            successPercent: (results.filter(res => res.success).length / results.length) * 100,
+            rawData: results,
+            successPercent: successPercent,
             averageHQPercent: 0,
             medianHQPercent: 0
         }
@@ -58,6 +60,7 @@ export class Simulation {
 
     public reset(): void {
         this.progression = 0;
+        this.solidity = this.recipe.durability;
         this.quality = this.startingQuality;
         this.buffs = [];
         this.steps = [];
@@ -132,6 +135,9 @@ export class Simulation {
             this.tickBuffs();
         });
         return {
+            progressionValue: this.progression,
+            qualityValue: this.quality,
+            finalCP: this.availableCP,
             steps: this.steps,
             hqPercent: 0, // TODO
             success: this.progression >= this.recipe.progress

@@ -288,7 +288,8 @@ describe('Craft simulator tests', () => {
             const simulation = new Simulation(infusionOfMind_Recipe,
                 [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], alc_70_350_stats);
             const report = simulation.getReliabilityReport();
-            expect(report.successPercent).toBe(20);
+            expect(report.successPercent).toBeGreaterThan(15);
+            expect(report.successPercent).toBeLessThan(25);
         });
     });
 });
