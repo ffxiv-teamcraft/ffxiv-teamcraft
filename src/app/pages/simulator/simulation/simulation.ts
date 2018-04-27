@@ -4,6 +4,8 @@ import {ActionResult} from '../model/action-result';
 import {CrafterStats} from '../model/crafter-stats';
 import {EffectiveBuff} from '../model/effective-buff';
 import {Buff} from '../model/buff.enum';
+import {SimulationResult} from './simulation-result';
+import {SimulationReliabilityReport} from './simulation-reliability-report';
 
 export class Simulation {
 
@@ -38,7 +40,25 @@ export class Simulation {
         }
     }
 
-    public run(): ActionResult[] {
+    public getReliability(): SimulationReliabilityReport {
+        const results = [];
+        // Let's run the simulation 1000 times.
+        for (let i = 0; i < 1000; i++) {
+            results.push(this.run(false));
+        }
+        return {
+            successPercent: (results.filter(res => res.success).length / results.length) * 100,
+            averageHQPercent: 0,
+            medianHQPercent: 0
+        }
+    }
+
+    /**
+     * Run the simulation.
+     * @param {boolean} linear should everything be linear (aka no fail on actions, Initial preparations never procs)
+     * @returns {ActionResult[]}
+     */
+    public run(linear = false): SimulationResult {
         this.actions.forEach((action: CraftingAction, index: number) => {
             // If we're starting and the crafter is specialist
             if (index === 0 && this.crafterStats.specialist) {
@@ -55,8 +75,8 @@ export class Simulation {
             }
             // If we can use the action
             if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
-                // The roll for the current action's success rate
-                const probabilityRoll = Math.random() * 100;
+                // The roll for the current action's success rate, 0 if ideal mode, as 0 will even match a 1% chances.
+                const probabilityRoll = linear ? 0 : Math.random() * 100;
                 const qualityBefore = this.quality;
                 const progressionBefore = this.progression;
                 if (action.getSuccessRate(this) >= probabilityRoll) {
@@ -66,15 +86,16 @@ export class Simulation {
                 }
                 // Even if the action failed, we have to remove the durability cost
                 this.solidity -= action.getDurabilityCost(this);
+                const CPCost = action.getCPCost(this, linear);
                 // Even if the action failed, CP has to be consumed too
-                this.availableCP -= action.getCPCost(this);
+                this.availableCP -= CPCost;
                 // Push the result to the result array
                 this.steps.push({
                     action: action,
                     success: action.getSuccessRate(this) >= probabilityRoll,
                     addedQuality: this.quality - qualityBefore,
                     addedProgression: this.progression - progressionBefore,
-                    cpDifference: action.getCPCost(this),
+                    cpDifference: CPCost,
                     skipped: false,
                     solidityDifference: action.getDurabilityCost(this)
                 });
@@ -97,7 +118,11 @@ export class Simulation {
             // Tick buffs after checking synth result, so if we reach 0 solidity, synth fails.
             this.tickBuffs();
         });
-        return this.steps;
+        return {
+            steps: this.steps,
+            hqPercent: 0, // TODO
+            success: this.progression >= this.recipe.progress
+        };
     }
 
     public hasBuff(buff: Buff): boolean {

@@ -18,6 +18,7 @@ import {MakersMark} from './model/actions/buff/makers-mark';
 import {FlawlessSynthesis} from './model/actions/progression/flawless-synthesis';
 import {Observe} from './model/actions/other/observe';
 import {FocusedSynthesis} from './model/actions/progression/focused-synthesis';
+import {HastyTouch} from './model/actions/quality/hasty-touch';
 
 const infusionOfMind_Recipe: Craft = {
     'id': '3595',
@@ -266,6 +267,20 @@ describe('Craft simulator tests', () => {
             // Expect around 10k failure, with a precision of +/-400.
             expect(results.filter(res => !res).length).toBeGreaterThan(9600);
             expect(results.filter(res => !res).length).toBeLessThan(10400);
+        });
+
+        it('should be able to run in linear mode properly', () => {
+            const results = [];
+            // Run simulation 10k times, to be sure with probability
+            for (let i = 0; i < 10000; i++) {
+                // Hasty Touch has 50% probability, with linear mode this should never fail.
+                const simulation = new Simulation(infusionOfMind_Recipe,
+                    [new HastyTouch(), new HastyTouch(), new HastyTouch()], alc_70_350_stats);
+                simulation.run(true);
+                results.push(...simulation.steps.map(step => step.success));
+            }
+            // Expect no failure at all
+            expect(results.filter(res => !res).length).toBe(0);
         });
     });
 });
