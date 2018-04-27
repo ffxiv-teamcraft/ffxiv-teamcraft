@@ -11,6 +11,7 @@ export class Simulation {
 
     public progression = 0;
     public quality = 0;
+    public startingQuality = 0;
     // Solidity of the craft
     public solidity: number;
 
@@ -25,7 +26,7 @@ export class Simulation {
 
     public steps: ActionResult[] = [];
 
-    constructor(public readonly recipe: Craft, private actions: CraftingAction[], private _crafterStats: CrafterStats,
+    constructor(public readonly recipe: Craft, public readonly actions: CraftingAction[], private _crafterStats: CrafterStats,
                 hqIngredients: { id: number, amount: number }[] = []) {
         this.solidity = recipe.durability;
         this.availableCP = this._crafterStats.cp;
@@ -38,19 +39,31 @@ export class Simulation {
                 this.quality += ingredientDetails.quality * ingredient.amount;
             }
         }
+        this.startingQuality = this.quality;
     }
 
-    public getReliability(): SimulationReliabilityReport {
+    public getReliabilityReport(): SimulationReliabilityReport {
         const results = [];
         // Let's run the simulation 1000 times.
         for (let i = 0; i < 1000; i++) {
             results.push(this.run(false));
+            this.reset();
         }
         return {
             successPercent: (results.filter(res => res.success).length / results.length) * 100,
             averageHQPercent: 0,
             medianHQPercent: 0
         }
+    }
+
+    public reset(): void {
+        this.progression = 0;
+        this.quality = this.startingQuality;
+        this.buffs = [];
+        this.steps = [];
+        this.maxCP = this.crafterStats.cp;
+        this.availableCP = this.maxCP;
+        this.state = 'NORMAL';
     }
 
     /**

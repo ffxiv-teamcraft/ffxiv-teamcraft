@@ -19,6 +19,7 @@ import {FlawlessSynthesis} from './model/actions/progression/flawless-synthesis'
 import {Observe} from './model/actions/other/observe';
 import {FocusedSynthesis} from './model/actions/progression/focused-synthesis';
 import {HastyTouch} from './model/actions/quality/hasty-touch';
+import {RapidSynthesisII} from './model/actions/progression/rapid-synthesis-ii';
 
 const infusionOfMind_Recipe: Craft = {
     'id': '3595',
@@ -281,6 +282,13 @@ describe('Craft simulator tests', () => {
             }
             // Expect no failure at all
             expect(results.filter(res => !res).length).toBe(0);
+        });
+
+        it('should be able to provide proper reliability report', () => {
+            const simulation = new Simulation(infusionOfMind_Recipe,
+                [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], alc_70_350_stats);
+            const report = simulation.getReliabilityReport();
+            expect(report.successPercent).toBe(20);
         });
     });
 });
