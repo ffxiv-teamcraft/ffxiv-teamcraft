@@ -454,6 +454,7 @@
             "Other": "Other"
         },
         "CONFIGURATION": {
+            "Job": "Job",
             "Custom_set": "Enable custom set",
             "Select_job": "Select a job",
             "Craftsmanship": "Craftsmanship",

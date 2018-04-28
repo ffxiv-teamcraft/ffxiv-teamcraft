@@ -15,6 +15,8 @@ import {GearSet} from '../../model/gear-set';
 import {UserService} from '../../../../core/database/user.service';
 import {DataService} from '../../../../core/api/data.service';
 import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
+import {EffectiveBuff} from '../../model/effective-buff';
+import {Buff} from 'app/pages/simulator/model/buff.enum';
 
 @Component({
     selector: 'app-simulator',
@@ -107,6 +109,10 @@ export class SimulatorComponent implements OnInit {
 
     getStars(nb: number): string {
         return this.htmlTools.generateStars(nb);
+    }
+
+    getBuffIcon(effBuff: EffectiveBuff): string {
+        return `./assets/icons/status/${Buff[effBuff.buff].toLowerCase()}.png`;
     }
 
     applyStats(set: GearSet): void {

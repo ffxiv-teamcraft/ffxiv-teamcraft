@@ -21,7 +21,7 @@ export class SteadyHand extends BuffAction {
     }
 
     protected getInitialStacks(): number {
-        return 5;
+        return 0;
     }
 
     // Steady hand has no tick.

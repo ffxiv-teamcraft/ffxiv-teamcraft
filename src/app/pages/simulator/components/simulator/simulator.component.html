@@ -176,6 +176,15 @@
             </mat-card-content>
         </mat-card>
         <mat-card>
+            <div class="buffs">
+                <div class="buff-container" *ngFor="let buff of resultData.simulation.buffs">
+                    <span class="stacks" *ngIf="buff.stacks > 0">{{buff.stacks}}</span>
+                    <img [src]="getBuffIcon(buff)" class="buff-icon" alt="">
+                    <span class="duration" *ngIf="buff.duration.toString() !== 'Infinity'">{{buff.duration}}</span>
+                </div>
+            </div>
+        </mat-card>
+        <mat-card>
             <div class="actions">
                 <app-action *ngFor="let step of resultData.simulation.steps; let index = index"
                             (actionclick)="removeAction(index)"
