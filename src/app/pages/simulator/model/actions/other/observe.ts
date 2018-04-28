@@ -1,7 +1,12 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
+import {ActionType} from '../action-type';
 
 export class Observe extends CraftingAction {
+
+    public getType(): ActionType {
+        return ActionType.OTHER;
+    }
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;

@@ -1,11 +1,16 @@
 import {CraftingAction} from './crafting-action';
 import {Simulation} from '../../simulation/simulation';
 import {Buff} from '../buff.enum';
+import {ActionType} from './action-type';
 
 /**
  * SpecialtyAction is for the three R's, the actions that stop Initial preparation and add an effect.
  */
 export abstract class SpecialtyAction extends CraftingAction {
+
+    public getType(): ActionType {
+        return ActionType.SPECIALTY;
+    }
 
     canBeUsed(simulationState: Simulation): boolean {
         return simulationState.hasBuff(Buff.INITIAL_PREPARATIONS) && simulationState.crafterStats.specialist;

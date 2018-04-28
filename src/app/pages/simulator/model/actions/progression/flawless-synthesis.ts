@@ -1,11 +1,16 @@
 import {GeneralAction} from '../general-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {ActionType} from '../action-type';
 
 /**
  * Because the amount provided by Flawless Synthesis is fixed, we won't use ProgressAction as parent for it.
  */
 export class FlawlessSynthesis extends GeneralAction {
+
+    public getType(): ActionType {
+        return ActionType.PROGRESSION;
+    }
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;

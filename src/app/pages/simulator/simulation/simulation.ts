@@ -12,8 +12,8 @@ export class Simulation {
     public progression = 0;
     public quality = 0;
     public startingQuality = 0;
-    // Solidity of the craft
-    public solidity: number;
+    // Durability of the craft
+    public durability: number;
 
     public state: 'NORMAL' | 'EXCELLENT' | 'GOOD' | 'POOR';
 
@@ -28,7 +28,7 @@ export class Simulation {
 
     constructor(public readonly recipe: Craft, public readonly actions: CraftingAction[], private _crafterStats: CrafterStats,
                 hqIngredients: { id: number, amount: number }[] = []) {
-        this.solidity = recipe.durability;
+        this.durability = recipe.durability;
         this.availableCP = this._crafterStats.cp;
         this.maxCP = this.availableCP;
         for (const ingredient of hqIngredients) {
@@ -66,23 +66,9 @@ export class Simulation {
         }
     }
 
-    private medianHQ(values) {
-
-        values.sort(function (a, b) {
-            return a - b;
-        });
-
-        var half = Math.floor(values.length / 2);
-
-        if (values.length % 2)
-            return values[half];
-        else
-            return (values[half - 1] + values[half]) / 2.0;
-    }
-
     public reset(): void {
         this.progression = 0;
-        this.solidity = this.recipe.durability;
+        this.durability = this.recipe.durability;
         this.quality = this.startingQuality;
         this.buffs = [];
         this.steps = [];
@@ -123,7 +109,7 @@ export class Simulation {
                     action.onFail(this);
                 }
                 // Even if the action failed, we have to remove the durability cost
-                this.solidity -= action.getDurabilityCost(this);
+                this.durability -= action.getDurabilityCost(this);
                 const CPCost = action.getCPCost(this, linear);
                 // Even if the action failed, CP has to be consumed too
                 this.availableCP -= CPCost;
@@ -137,8 +123,10 @@ export class Simulation {
                     skipped: false,
                     solidityDifference: action.getDurabilityCost(this)
                 });
-                // Check solidity to see if the craft is failed or not
-                if (this.solidity <= 0) {
+                if (this.progression >= this.recipe.progress) {
+                    this.success = true;
+                } else if (this.durability <= 0) {
+                    // Check durability to see if the craft is failed or not
                     this.success = false;
                 }
             } else {
@@ -153,26 +141,39 @@ export class Simulation {
                     solidityDifference: 0
                 });
             }
-            // Tick buffs after checking synth result, so if we reach 0 solidity, synth fails.
+            // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
             this.tickBuffs();
         });
         // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
-        const qualityPercent = Math.min(this.quality / this.recipe.quality, 100);
-        let hqPercent = -5.6604E-6 * Math.pow(qualityPercent, 4)
-            + 0.0015369705 * Math.pow(qualityPercent, 3)
-            - 0.1426469573 * Math.pow(qualityPercent, 2)
-            + 5.6122722959 * qualityPercent - 5.5950384565;
-        if (hqPercent < 1) {
-            hqPercent = 1;
-        }
+
         return {
-            progressionValue: this.progression,
-            qualityValue: this.quality,
-            finalCP: this.availableCP,
             steps: this.steps,
-            hqPercent: hqPercent,
-            success: this.progression >= this.recipe.progress
+            hqPercent: this.getHQPercent(),
+            success: this.progression >= this.recipe.progress,
+            simulation: this,
         };
+    }
+
+    private qualityPercentFromHqPercent(hqPercent: number): number {
+        return -5.6604E-6 * Math.pow(hqPercent, 4)
+            + 0.0015369705 * Math.pow(hqPercent, 3)
+            - 0.1426469573 * Math.pow(hqPercent, 2)
+            + 5.6122722959 * hqPercent - 5.5950384565;
+    }
+
+    private getHQPercent(): number {
+        const qualityPercent = Math.min(this.quality / this.recipe.quality, 1) * 100;
+        let hqPercent = 0;
+        if (qualityPercent === 0) {
+            return 1;
+        } else if (qualityPercent >= 100) {
+            return 100;
+        } else {
+            while (this.qualityPercentFromHqPercent(hqPercent) < qualityPercent && hqPercent < 100) {
+                hqPercent += 1;
+            }
+        }
+        return hqPercent;
     }
 
     public hasBuff(buff: Buff): boolean {
@@ -207,9 +208,9 @@ export class Simulation {
     }
 
     public repair(amount: number): void {
-        this.solidity += amount;
-        if (this.solidity > this.recipe.durability) {
-            this.solidity = this.recipe.durability;
+        this.durability += amount;
+        if (this.durability > this.recipe.durability) {
+            this.durability = this.recipe.durability;
         }
     }
 

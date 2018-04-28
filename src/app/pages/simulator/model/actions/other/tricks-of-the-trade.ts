@@ -1,9 +1,17 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
+import {ActionType} from '../action-type';
 
 export class TricksOfTheTrade extends CraftingAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    public getType(): ActionType {
+        return ActionType.CP_RECOVERY;
+    }
+
+    canBeUsed(simulationState: Simulation, linear = false): boolean {
+        if (linear) {
+            return true
+        }
         return simulationState.state === 'GOOD' || simulationState.state === 'EXCELLENT';
     }
 

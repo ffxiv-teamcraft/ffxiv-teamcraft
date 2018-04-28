@@ -1,10 +1,9 @@
 import {ActionResult} from '../model/action-result';
+import {Simulation} from './simulation';
 
 export interface SimulationResult {
-    progressionValue: number;
-    qualityValue: number;
-    finalCP: number;
     steps: ActionResult[];
     hqPercent: number;
     success: boolean;
+    simulation: Simulation;
 }

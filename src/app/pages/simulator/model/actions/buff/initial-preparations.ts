@@ -17,7 +17,7 @@ export class InitialPreparations extends BuffAction {
     }
 
     getIds(): number[] {
-        return [10251, 10252, 10253, 10254, 10255, 10256, 10257, 10258];
+        return [100251, 100252, 100253, 100254, 100255, 100256, 100257, 100258];
     }
 
     canBeUsed(simulation: Simulation): boolean {

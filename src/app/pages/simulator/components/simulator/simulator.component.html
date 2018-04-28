@@ -1,0 +1,194 @@
+<div *ngIf="simulation$ | async as simulation" [class.mobile]="isMobile()">
+    <div *ngIf="result$ | async as resultData">
+        <mat-card *ngIf="!isMobile()">
+            <mat-card-header>
+                <mat-card-title>
+                    Item Name
+                </mat-card-title>
+                <mat-card-subtitle>
+                    70 ***
+                </mat-card-subtitle>
+                <span class="steps">
+                    {{'SIMULATOR.Step_counter' | translate}} {{resultData.simulation.steps.length}}
+                </span>
+            </mat-card-header>
+            <mat-card-content class="result">
+                <div class="durability">
+                    <h3>{{'SIMULATOR.Durability' | translate}}</h3>
+                    <span class="durability-value">{{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
+                </div>
+                <div class="right-part">
+                    <div class="progress right-row">
+                        <h3>{{'SIMULATOR.Progress' | translate}}</h3>
+                        <div class="value-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.progression/resultData.simulation.recipe.progress"
+                                              color="primary"></mat-progress-bar>
+                            <span
+                                class="value-amount">{{resultData.simulation.progression}}/{{resultData.simulation.recipe.progress}}</span>
+                        </div>
+                    </div>
+                    <div class="quality right-row">
+                        <h3>{{'SIMULATOR.Quality' | translate}}</h3>
+                        <div class="value-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                                              color="accent"></mat-progress-bar>
+                            <span class="value-amount">{{resultData.simulation.quality}}/{{resultData.simulation.recipe.quality}}</span>
+                        </div>
+                    </div>
+                    <div class="bottom-part">
+                        <div class="hq-chances">
+                            {{'SIMULATOR.Hq' | translate}}:
+                            <span class="hq-chances-value">
+                                {{resultData.hqPercent}}%
+                            </span>
+                        </div>
+                        <div class="cp-progress">
+                            <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
+                            <div class="cp-bar">
+                                <mat-progress-bar mode="determinate"
+                                                  [value]="100*resultData.simulation.availableCP/resultData.simulation.maxCP"
+                                                  color="accent"></mat-progress-bar>
+                                <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card *ngIf="isMobile()">
+            <mat-card-header>
+                <mat-card-title>
+                    Item Name
+                </mat-card-title>
+                <mat-card-subtitle>
+                    70 ***
+                </mat-card-subtitle>
+                <span class="steps">
+                    {{'SIMULATOR.Step_counter' | translate}} {{resultData.simulation.steps.length}}
+                </span>
+            </mat-card-header>
+            <mat-card-content class="mobile-result">
+                <span class="durability-value">{{'SIMULATOR.Durability' | translate}} : {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
+
+                <div class="progress right-row">
+                    <b>{{'SIMULATOR.Progress' | translate}}</b>
+                    <div class="value-bar">
+                        <mat-progress-bar mode="determinate"
+                                          [value]="100*resultData.simulation.progression/resultData.simulation.recipe.progress"
+                                          color="primary"></mat-progress-bar>
+                        <span
+                            class="value-amount">{{resultData.simulation.progression}}/{{resultData.simulation.recipe.progress}}</span>
+                    </div>
+                </div>
+                <div class="quality right-row">
+                    <b>{{'SIMULATOR.Quality' | translate}}</b>
+                    <div class="value-bar">
+                        <mat-progress-bar mode="determinate"
+                                          [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                                          color="accent"></mat-progress-bar>
+                        <span class="value-amount">{{resultData.simulation.quality}}/{{resultData.simulation.recipe.quality}}</span>
+                    </div>
+                </div>
+                <div class="bottom-part">
+                    <div class="hq-chances">
+                        {{'SIMULATOR.Hq' | translate}}:
+                        <span class="hq-chances-value">
+                                {{resultData.hqPercent}}%
+                            </span>
+                    </div>
+                    <div class="cp-progress">
+                        <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
+                        <div class="cp-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.availableCP/resultData.simulation.maxCP"
+                                              color="accent"></mat-progress-bar>
+                            <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <div class="actions">
+                <app-action *ngFor="let step of resultData.simulation.steps; let index = index"
+                            (actionclick)="removeAction(index)"
+                            [action]="step.action"
+                            [simulation]="resultData.simulation"></app-action>
+            </div>
+        </mat-card>
+        <mat-card>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getProgressActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getQualityActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getCpRecoveryActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getBuffActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getRepairActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getSpecialtyActions()"></app-action>
+                </div>
+            </div>
+            <div>
+                <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
+                <div class="actions-row">
+                    <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                    || resultData.simulation.success !== undefined"
+                                [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                [action]="action" [simulation]="resultData.simulation"
+                                *ngFor="let action of getOtherActions()"></app-action>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

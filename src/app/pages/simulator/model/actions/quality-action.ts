@@ -3,8 +3,13 @@ import {GeneralAction} from './general-action';
 import {CrafterStats} from '../crafter-stats';
 import {Tables} from '../tables';
 import {Buff} from '../buff.enum';
+import {ActionType} from './action-type';
 
 export abstract class QualityAction extends GeneralAction {
+
+    public getType(): ActionType {
+        return ActionType.QUALITY;
+    }
 
     private getBaseQuality(simulation: Simulation): number {
         let recipeLevel = simulation.recipe.rlvl;

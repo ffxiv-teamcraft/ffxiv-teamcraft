@@ -433,5 +433,13 @@
         "Title": "Wiki",
         "Not_found_in_current_lang": "This page isn't found in your current language, english version will be shown",
         "Not_found": "Page not found"
+    },
+    "SIMULATOR": {
+        "Progress": "Progress",
+        "Quality": "Quality",
+        "Step_counter": "Step",
+        "Durability": "Durability",
+        "Hq": "HQ",
+        "Cp_amount": "CP"
     }
 }

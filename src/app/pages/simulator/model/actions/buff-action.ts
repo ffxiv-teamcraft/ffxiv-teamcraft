@@ -2,8 +2,13 @@ import {CraftingAction} from './crafting-action';
 import {Simulation} from '../../simulation/simulation';
 import {EffectiveBuff} from '../effective-buff';
 import {Buff} from '../buff.enum';
+import {ActionType} from './action-type';
 
 export abstract class BuffAction extends CraftingAction {
+
+    public getType(): ActionType {
+        return ActionType.BUFF;
+    }
 
     private getAppliedBuff(simulation: Simulation): EffectiveBuff {
         return {

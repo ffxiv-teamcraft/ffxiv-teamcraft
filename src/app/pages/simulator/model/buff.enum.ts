@@ -11,6 +11,8 @@ export enum Buff {
 
     INITIAL_PREPARATIONS,
 
+    COMFORT_ZONE,
+
     WHISTLE_WHILE_YOU_WORK,
 
     HEART_OF_CRAFTER,

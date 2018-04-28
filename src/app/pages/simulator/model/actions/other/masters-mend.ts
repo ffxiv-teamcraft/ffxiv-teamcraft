@@ -1,7 +1,12 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
+import {ActionType} from '../action-type';
 
 export class MastersMend extends CraftingAction {
+
+    public getType(): ActionType {
+        return ActionType.REPAIR;
+    }
 
     canBeUsed(simulationState: Simulation): boolean {
         return true;

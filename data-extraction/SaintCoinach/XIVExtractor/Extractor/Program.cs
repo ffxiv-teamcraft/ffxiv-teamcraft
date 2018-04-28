@@ -16,7 +16,7 @@ namespace Extractor
             ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
             Localize localize = new Localize(realm);
             ExtractItemNames(localize, realm);
-            ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(),"Singular", "npcs");
+            ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(), "Singular", "npcs");
             ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
             ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers");
             ExtractMobNames(localize, realm);

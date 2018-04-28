@@ -1,8 +1,13 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {ActionType} from '../action-type';
 
 export class Rumination extends CraftingAction {
+
+    public getType(): ActionType {
+        return ActionType.CP_RECOVERY;
+    }
 
     canBeUsed(simulationState: Simulation): boolean {
         return simulationState.hasBuff(Buff.INNER_QUIET);
@@ -15,6 +20,7 @@ export class Rumination extends CraftingAction {
         if (simulation.availableCP > simulation.maxCP) {
             simulation.availableCP = simulation.maxCP;
         }
+        simulation.removeBuff(Buff.INNER_QUIET);
     }
 
     getBaseCPCost(simulationState: Simulation): number {

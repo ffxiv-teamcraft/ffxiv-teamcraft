@@ -16,7 +16,7 @@ export class SpecialtyReflect extends SpecialtyAction {
     }
 
     getIds(): number[] {
-        return [100267, 100268, 100269, 100270, 100271, 100272, 100273, 100274];
+        return [100275, 100276, 100277, 100278, 100279, 100280, 100281, 100282];
     }
 
 }

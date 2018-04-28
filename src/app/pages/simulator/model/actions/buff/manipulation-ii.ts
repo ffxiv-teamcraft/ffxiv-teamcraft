@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {ActionType} from '../action-type';
 
 export class ManipulationII extends BuffAction {
+
+    public getType(): ActionType {
+        return ActionType.REPAIR;
+    }
 
     getBaseCPCost(simulationState: Simulation): number {
         return 96;

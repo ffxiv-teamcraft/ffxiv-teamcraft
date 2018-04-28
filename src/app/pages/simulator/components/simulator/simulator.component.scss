@@ -1,0 +1,122 @@
+
+.steps {
+    white-space: nowrap;
+    font-size: 2.1rem;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+mat-progress-bar {
+    height: 16px;
+}
+
+.result {
+    display: flex;
+    .durability {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .durability-value {
+            font-size: 3rem;
+        }
+    }
+    .right-part {
+        flex-grow: 1;
+        padding: 0 10px;
+        .right-row {
+            padding: 20px 0;
+            .value-bar {
+                display: flex;
+                align-items: center;
+                mat-progress-bar {
+                    flex: 1 1 auto;
+                }
+                .value-amount {
+                    width: 130px;
+                    margin-left: 50px;
+                }
+            }
+        }
+        .bottom-part {
+            display: flex;
+            justify-content: space-between;
+            .hq-chances {
+                display: flex;
+                justify-content: space-between;
+                width: 150px;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.7);
+                margin-right: 40px;
+            }
+            .cp-progress {
+                flex: 1 1 auto;
+                .cp-bar {
+                    display: flex;
+                    align-items: center;
+                    mat-progress-bar {
+                        opacity: .7;
+                        height: 8px;
+                        flex: 0 1 300px;
+                    }
+                    .cp-amount {
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-result {
+    .right-row {
+        padding: 10px 0;
+    }
+    .bottom-part {
+        display: flex;
+        justify-content: space-between;
+        .hq-chances {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80px;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-right: 10px;
+        }
+        .cp-progress {
+            flex: 1 1 auto;
+            .cp-bar {
+                display: flex;
+                align-items: center;
+                mat-progress-bar {
+                    opacity: .7;
+                    height: 8px;
+                    flex: 0 1 300px;
+                }
+                .cp-amount {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 50px;
+}
+
+.actions-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+mat-card {
+    margin: 10px 0;
+}

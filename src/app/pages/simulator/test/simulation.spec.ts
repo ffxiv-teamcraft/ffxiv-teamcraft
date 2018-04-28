@@ -1,80 +1,28 @@
-import {SteadyHandII} from './model/actions/buff/steady-hand-ii';
-import {BasicTouch} from './model/actions/quality/basic-touch';
-import {Simulation} from './simulation/simulation';
-import {Craft} from '../../model/garland-tools/craft';
-import {CrafterStats} from './model/crafter-stats';
-import {BasicSynthesis} from './model/actions/progression/basic-synthesis';
-import {SteadyHand} from './model/actions/buff/steady-hand';
-import {InnerQuiet} from './model/actions/buff/inner-quiet';
-import {Buff} from './model/buff.enum';
-import {Manipulation} from './model/actions/buff/manipulation';
-import {ManipulationII} from './model/actions/buff/manipulation-ii';
-import {WasteNot} from './model/actions/buff/waste-not';
-import {WasteNotII} from './model/actions/buff/waste-not-ii';
-import {Ingenuity} from './model/actions/buff/ingenuity';
-import {IngenuityII} from './model/actions/buff/ingenuity-ii';
-import {InitialPreparations} from './model/actions/buff/initial-preparations';
-import {MakersMark} from './model/actions/buff/makers-mark';
-import {FlawlessSynthesis} from './model/actions/progression/flawless-synthesis';
-import {Observe} from './model/actions/other/observe';
-import {FocusedSynthesis} from './model/actions/progression/focused-synthesis';
-import {HastyTouch} from './model/actions/quality/hasty-touch';
-import {RapidSynthesisII} from './model/actions/progression/rapid-synthesis-ii';
+import {SteadyHandII} from '../model/actions/buff/steady-hand-ii';
+import {BasicTouch} from '../model/actions/quality/basic-touch';
+import {Simulation} from '../simulation/simulation';
+import {Craft} from '../../../model/garland-tools/craft';
+import {CrafterStats} from '../model/crafter-stats';
+import {BasicSynthesis} from '../model/actions/progression/basic-synthesis';
+import {SteadyHand} from '../model/actions/buff/steady-hand';
+import {InnerQuiet} from '../model/actions/buff/inner-quiet';
+import {Buff} from '../model/buff.enum';
+import {Manipulation} from '../model/actions/buff/manipulation';
+import {ManipulationII} from '../model/actions/buff/manipulation-ii';
+import {WasteNot} from '../model/actions/buff/waste-not';
+import {WasteNotII} from '../model/actions/buff/waste-not-ii';
+import {Ingenuity} from '../model/actions/buff/ingenuity';
+import {IngenuityII} from '../model/actions/buff/ingenuity-ii';
+import {InitialPreparations} from '../model/actions/buff/initial-preparations';
+import {MakersMark} from '../model/actions/buff/makers-mark';
+import {FlawlessSynthesis} from '../model/actions/progression/flawless-synthesis';
+import {Observe} from '../model/actions/other/observe';
+import {FocusedSynthesis} from '../model/actions/progression/focused-synthesis';
+import {HastyTouch} from '../model/actions/quality/hasty-touch';
+import {RapidSynthesisII} from '../model/actions/progression/rapid-synthesis-ii';
+import {alc_70_350_stats, infusionOfMind_Recipe} from './mocks';
 
-const infusionOfMind_Recipe: Craft = {
-    'id': '3595',
-    'job': 14,
-    'rlvl': 288,
-    'durability': 80,
-    'quality': 12913,
-    'progress': 2854,
-    'lvl': 69,
-    'yield': 3,
-    'hq': 1,
-    'quickSynth': 1,
-    'ingredients': [
-        {
-            'id': 19872,
-            'amount': 1,
-            'quality': 1244
-        },
-        {
-            'id': 19907,
-            'amount': 1,
-            'quality': 1313
-        },
-        {
-            'id': 19915,
-            'amount': 2,
-            'quality': 1313
-        },
-        {
-            'id': 20013,
-            'amount': 1,
-            'quality': 1272
-        },
-        {
-            'id': 19,
-            'amount': 2
-        },
-        {
-            'id': 18,
-            'amount': 1
-        }
-    ],
-    'complexity': {
-        'nq': 155,
-        'hq': 160
-    }
-};
 
-const alc_70_350_stats: CrafterStats = new CrafterStats(
-    14,
-    1467,
-    1468,
-    474,
-    true,
-    70);
 
 describe('Craft simulator tests', () => {
 
@@ -168,7 +116,7 @@ describe('Craft simulator tests', () => {
                     [new Manipulation(), new BasicSynthesis(), new BasicSynthesis(), new BasicSynthesis(), new BasicSynthesis()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.solidity).toBe(70);
+                expect(simulation.durability).toBe(70);
             });
 
             it('should repair properly with Manupilation II', () => {
@@ -176,7 +124,7 @@ describe('Craft simulator tests', () => {
                     [new ManipulationII(), new BasicSynthesis(), new BasicSynthesis(), new BasicSynthesis()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.solidity).toBe(65);
+                expect(simulation.durability).toBe(65);
             });
         });
 
@@ -186,7 +134,7 @@ describe('Craft simulator tests', () => {
                     [new WasteNot(), new BasicSynthesis()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.solidity).toBe(75);
+                expect(simulation.durability).toBe(75);
             });
 
             it('should take waste not II into account', () => {
@@ -194,7 +142,7 @@ describe('Craft simulator tests', () => {
                     [new WasteNotII(), new BasicSynthesis()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.solidity).toBe(75);
+                expect(simulation.durability).toBe(75);
             });
         });
 
@@ -249,7 +197,7 @@ describe('Craft simulator tests', () => {
                 expect(simulation.getBuff(Buff.MAKERS_MARK).duration).toBe(27);
                 expect(simulation.progression).toBe(40);
                 expect(simulation.availableCP).toBe(447);
-                expect(simulation.solidity).toBe(80);
+                expect(simulation.durability).toBe(80);
             });
         });
     });

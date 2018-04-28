@@ -1,16 +1,19 @@
 import {Simulation} from '../../simulation/simulation';
 import {Buff} from '../buff.enum';
+import {ActionType} from './action-type';
 
 /**
  * This is the parent class of all actions in the simulator.
  */
 export abstract class CraftingAction {
 
+    abstract getType(): ActionType;
+
     abstract getIds(): number[];
 
     abstract getSuccessRate(simulationState: Simulation): number;
 
-    abstract canBeUsed(simulationState: Simulation): boolean;
+    abstract canBeUsed(simulationState: Simulation, linear?: boolean): boolean;
 
     public getCPCost(simulationState: Simulation, linear = false): number {
         const baseCPCost = this.getBaseCPCost(simulationState);

@@ -3,8 +3,14 @@ import {GeneralAction} from './general-action';
 import {CrafterStats} from '../crafter-stats';
 import {Buff} from '../buff.enum';
 import {Tables} from '../tables';
+import {ActionType} from './action-type';
 
 export abstract class ProgressAction extends GeneralAction {
+
+    public getType(): ActionType {
+        return ActionType.PROGRESSION;
+    }
+
     /**
      * Gets base progression, implementation is from ermad's fork
      * (https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js)

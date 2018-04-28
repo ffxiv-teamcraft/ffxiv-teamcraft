@@ -11,7 +11,10 @@ export class PreciseTouch extends QualityAction {
         }
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    canBeUsed(simulationState: Simulation, linear = false): boolean {
+        if (linear) {
+            return true
+        }
         return simulationState.state === 'GOOD' || simulationState.state === 'EXCELLENT';
     }
 
@@ -28,7 +31,7 @@ export class PreciseTouch extends QualityAction {
     }
 
     getIds(): number[] {
-        return [100129, 100130, 100131, 100132, 100133, 100134, 100135];
+        return [100128, 100129, 100130, 100131, 100132, 100133, 100134, 100135];
     }
 
     getPotency(simulation: Simulation): number {

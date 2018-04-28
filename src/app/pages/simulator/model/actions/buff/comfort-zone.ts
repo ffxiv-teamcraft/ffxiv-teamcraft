@@ -3,26 +3,26 @@ import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {ActionType} from '../action-type';
 
-export class Manipulation extends BuffAction {
+export class ComfortZone extends BuffAction {
 
     public getType(): ActionType {
-        return ActionType.REPAIR;
+        return ActionType.CP_RECOVERY;
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 88;
+        return 66;
     }
 
     protected getBuff(): Buff {
-        return Buff.MANIPULATION;
+        return Buff.COMFORT_ZONE;
     }
 
     getDuration(simulation: Simulation): number {
-        return 3;
+        return 10;
     }
 
     getIds(): number[] {
-        return [278];
+        return [286];
     }
 
     protected getInitialStacks(): number {
@@ -30,9 +30,12 @@ export class Manipulation extends BuffAction {
     }
 
     protected getTick(): (simulation: Simulation) => void {
-        return (simulation: Simulation) => {
-            simulation.repair(10);
-        };
+        return (simulation) => {
+            simulation.availableCP += 8;
+            if (simulation.availableCP > simulation.maxCP) {
+                simulation.availableCP = simulation.maxCP;
+            }
+        }
     }
 
 }
