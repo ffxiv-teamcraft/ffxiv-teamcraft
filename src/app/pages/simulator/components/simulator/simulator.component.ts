@@ -61,7 +61,7 @@ export class SimulatorComponent implements OnInit {
         this.hqIngredients$.next(ingredients);
     }
 
-    private simulation$: Observable<Simulation>;
+    public simulation$: Observable<Simulation>;
 
     public result$: Observable<SimulationResult>;
 
