@@ -8,6 +8,36 @@
     align-items: flex-end;
 }
 
+.configuration {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .config-row {
+        flex: 1 1 25%;
+        padding: 25px;
+        mat-select {
+            margin: 15px 0;
+        }
+    }
+    .set-details {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 120px;
+        }
+        .details-row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        margin-bottom: 20px;
+    }
+    .set-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
 mat-progress-bar {
     height: 16px;
 }
@@ -111,10 +141,20 @@ mat-progress-bar {
     min-height: 50px;
 }
 
-.actions-row {
+.category-row {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    h4 {
+        padding-left: 15px;
+    }
+    .actions-row {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 5px;
+        background: rgba(0, 0, 0, .3);
+        margin: 10px;
+    }
 }
 
 mat-card {

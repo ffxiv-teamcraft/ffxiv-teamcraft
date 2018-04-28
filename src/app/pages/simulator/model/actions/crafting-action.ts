@@ -7,6 +7,11 @@ import {ActionType} from './action-type';
  */
 export abstract class CraftingAction {
 
+    public getId(jobId: number): number {
+        // Crafter ids are 8 to 15, we want indexes from 0 to 7, so...
+        return this.getIds()[jobId - 8] || this.getIds()[0];
+    }
+
     abstract getType(): ActionType;
 
     abstract getIds(): number[];

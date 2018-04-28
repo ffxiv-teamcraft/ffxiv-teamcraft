@@ -25,6 +25,37 @@ namespace Extractor
             ExtractAetheryteNames(localize, realm);
             ExtractVentureNames(localize, realm);
             ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
+            ExtractActionIcons(realm.GameData);
+            ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
+            ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
+        }
+
+        static void ExtractActionIcons(XivCollection gameData)
+        {
+            JObject res = new JObject();
+            foreach (var action in gameData.GetSheet<CraftAction>())
+            {
+                int iconId = GetIconId(action.Icon);
+                if (iconId != 405 && iconId > 0)
+                {
+                    res.Add(action.Key.ToString(), iconId);
+                }
+            }
+            foreach (var action in gameData.GetSheet<SaintCoinach.Xiv.Action>())
+            {
+                int iconId = GetIconId(action.Icon);
+                if (iconId != 405 && iconId > 0)
+                {
+                    res.Add(action.Key.ToString(), iconId);
+                }
+            }
+            string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\action-icons.json", json);
+        }
+
+        public static int GetIconId(SaintCoinach.Imaging.ImageFile icon)
+        {
+            return int.Parse(System.IO.Path.GetFileNameWithoutExtension(icon.Path));
         }
 
         static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)

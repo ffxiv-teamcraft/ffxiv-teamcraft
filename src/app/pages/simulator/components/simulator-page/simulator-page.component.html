@@ -1,1 +1,4 @@
-<app-simulator></app-simulator>
+<div *ngIf="recipe$ | async as recipe; else loading">
+    <app-simulator [recipe]="recipe" [itemId]="itemId" [itemIcon]="itemIcon"></app-simulator>
+</div>
+<ng-template #loading>TODO PROPER LOADER</ng-template>

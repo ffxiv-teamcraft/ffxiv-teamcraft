@@ -440,6 +440,28 @@
         "Step_counter": "Step",
         "Durability": "Durability",
         "Hq": "HQ",
-        "Cp_amount": "CP"
+        "Cp_amount": "CP",
+        "Simulate_tooltip": "Craft in simulator",
+        "Configuration": "Configuration",
+        "Level": "Level",
+        "CATEGORY": {
+            "Progression": "Progression",
+            "Quality": "Quality",
+            "Cp_recovery": "CP Recovery",
+            "Buff": "Buff",
+            "Specialty": "Specialty",
+            "Repair": "Repair",
+            "Other": "Other"
+        },
+        "CONFIGURATION": {
+            "Custom_set": "Enable custom set",
+            "Select_job": "Select a job",
+            "Craftsmanship": "Craftsmanship",
+            "Control": "Control",
+            "Specialist": "Specialist",
+            "Ingredients": "Ingredients",
+            "Consumables": "Consumables",
+            "Apply_stats": "Apply stats"
+        }
     }
 }

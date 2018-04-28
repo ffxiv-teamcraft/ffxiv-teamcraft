@@ -173,6 +173,12 @@
                         matTooltipPosition="above">
                     <mat-icon>access_time</mat-icon>
                 </button>
+                <button mat-icon-button
+                        matTooltip="{{'SIMULATOR.Simulate_tooltip' | translate}}"
+                        matTooltipPosition="above"
+                        routerLink="/simulator/{{recipe.itemId}}">
+                    <i class="fas fa-gavel"></i>
+                </button>
             </div>
         </mat-list-item>
     </div>

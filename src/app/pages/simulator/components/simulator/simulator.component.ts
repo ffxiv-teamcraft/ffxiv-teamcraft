@@ -11,6 +11,10 @@ import {SimulationResult} from '../../simulation/simulation-result';
 import {ActionType} from '../../model/actions/action-type';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {ObservableMedia} from '@angular/flex-layout';
+import {GearSet} from '../../model/gear-set';
+import {UserService} from '../../../../core/database/user.service';
+import {DataService} from '../../../../core/api/data.service';
+import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
 
 @Component({
     selector: 'app-simulator',
@@ -18,6 +22,15 @@ import {ObservableMedia} from '@angular/flex-layout';
     styleUrls: ['./simulator.component.scss']
 })
 export class SimulatorComponent implements OnInit {
+
+    @Input()
+    itemId: number;
+
+    @Input()
+    itemIcon: number;
+
+    @Input()
+    public customMode = false;
 
     private recipe$: ReplaySubject<Craft> = new ReplaySubject<Craft>(1);
 
@@ -54,7 +67,22 @@ export class SimulatorComponent implements OnInit {
 
     public report$: Observable<SimulationReliabilityReport>;
 
-    constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia) {
+    public gearsets$: Observable<GearSet[]>;
+
+    public customSet = false;
+
+    public selectedSet: GearSet;
+
+    constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
+                private dataService: DataService, private htmlTools: HtmlToolsService) {
+        this.gearsets$ = this.userService.getUserData()
+            .mergeMap(user => {
+                if (user.anonymous) {
+                    return Observable.of([])
+                }
+                return this.dataService.getGearsets(user.lodestoneId);
+            });
+
         this.simulation$ = Observable.combineLatest(
             this.recipe$,
             this.actions$,
@@ -63,9 +91,32 @@ export class SimulatorComponent implements OnInit {
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
         );
 
+        if (!this.customMode) {
+            Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
+                return gearsets.find(set => set.jobId === recipe.job);
+            }).subscribe(set => {
+                this.selectedSet = set;
+                this.applyStats(set);
+            });
+        }
+
         this.report$ = this.simulation$.map(simulation => simulation.getReliabilityReport());
 
         this.result$ = this.simulation$.map(simulation => simulation.run(true));
+    }
+
+    getStars(nb: number): string {
+        return this.htmlTools.generateStars(nb);
+    }
+
+    applyStats(set: GearSet): void {
+        this.crafterStats = new CrafterStats(
+            set.jobId,
+            set.craftsmanship,
+            set.control,
+            set.cp,
+            set.specialist,
+            set.level);
     }
 
     addAction(action: CraftingAction): void {
@@ -111,59 +162,6 @@ export class SimulatorComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.recipe = {
-            'id': '3595',
-            'job': 14,
-            'rlvl': 288,
-            'durability': 80,
-            'quality': 12913,
-            'progress': 2854,
-            'lvl': 69,
-            'yield': 3,
-            'hq': 1,
-            'quickSynth': 1,
-            'ingredients': [
-                {
-                    'id': 19872,
-                    'amount': 1,
-                    'quality': 1244
-                },
-                {
-                    'id': 19907,
-                    'amount': 1,
-                    'quality': 1313
-                },
-                {
-                    'id': 19915,
-                    'amount': 2,
-                    'quality': 1313
-                },
-                {
-                    'id': 20013,
-                    'amount': 1,
-                    'quality': 1272
-                },
-                {
-                    'id': 19,
-                    'amount': 2
-                },
-                {
-                    'id': 18,
-                    'amount': 1
-                }
-            ],
-            'complexity': {
-                'nq': 155,
-                'hq': 160
-            }
-        };
-        this.crafterStats = new CrafterStats(
-            14,
-            1467,
-            1468,
-            474,
-            true,
-            70);
         this.actions = [];
         this.hqIngredients = [];
     }
