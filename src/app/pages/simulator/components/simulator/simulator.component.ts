@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {Observable} from 'rxjs/Observable';
@@ -23,7 +23,7 @@ import {Buff} from 'app/pages/simulator/model/buff.enum';
     templateUrl: './simulator.component.html',
     styleUrls: ['./simulator.component.scss']
 })
-export class SimulatorComponent implements OnInit {
+export class SimulatorComponent {
 
     @Input()
     itemId: number;
@@ -75,8 +75,16 @@ export class SimulatorComponent implements OnInit {
 
     public selectedSet: GearSet;
 
+    public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService) {
+        this.recipe$.subscribe(recipe => {
+            this.hqIngredientsData = recipe.ingredients
+                .filter(i => i.id > 20)
+                .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
+        });
+
         this.gearsets$ = this.userService.getUserData()
             .mergeMap(user => {
                 if (user.anonymous) {
@@ -171,10 +179,5 @@ export class SimulatorComponent implements OnInit {
 
     isMobile(): boolean {
         return this.media.isActive('xs') || this.media.isActive('sm');
-    }
-
-    ngOnInit(): void {
-        this.actions = [];
-        this.hqIngredients = [];
     }
 }

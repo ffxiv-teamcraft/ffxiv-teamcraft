@@ -51,7 +51,19 @@
         </div>
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}</h3>
-            TODO HQ ingredients
+            <mat-list>
+                <mat-list-item *ngFor="let ingredient of hqIngredientsData">
+                    <span matLine [appXivdbTooltip]="ingredient.id">{{ingredient.id | itemName | i18n}}</span>
+                    <i matLine>{{ingredient.quality}}</i>
+                    <mat-input-container>
+                        <input matInput type="number" [(ngModel)]="ingredient.amount" min="0" max="{{ingredient.max}}">
+                        <span matSuffix>/{{ingredient.max}}</span>
+                    </mat-input-container>
+                </mat-list-item>
+            </mat-list>
+            <button mat-raised-button color="accent" (click)="hqIngredients = hqIngredientsData">
+                {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
+            </button>
         </div>
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>

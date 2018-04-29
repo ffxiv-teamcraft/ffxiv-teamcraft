@@ -462,7 +462,8 @@
             "Specialist": "Specialist",
             "Ingredients": "Ingredients",
             "Consumables": "Consumables",
-            "Apply_stats": "Apply stats"
+            "Apply_stats": "Apply stats",
+            "Apply_ingredients": "Apply HQ ingredients"
         }
     }
 }
