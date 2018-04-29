@@ -139,6 +139,30 @@ mat-progress-bar {
     justify-content: flex-start;
     flex-wrap: wrap;
     min-height: 50px;
+    app-action {
+        display: flex;
+        &.drag-over::before {
+            content: " ";
+            display: block;
+            margin-top: 5px;
+            width: 40px;
+            height: 40px;
+            border: 2px dashed rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+    }
+    .end-drag-zone {
+        display: block;
+        margin-top: 5px;
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        &.drag-over {
+            opacity: 1;
+            border: 2px dashed rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+    }
 }
 
 .buffs {
@@ -148,6 +172,7 @@ mat-progress-bar {
     min-height: 38px;
     .buff-container {
         position: relative;
+        margin: 0 2px;
         .stacks {
             position: absolute;
             top: 0;

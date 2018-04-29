@@ -22,6 +22,7 @@ import {CoreModule} from 'app/core/core.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SettingsModule} from 'app/pages/settings/settings.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
+import {NgDragDropModule} from 'ng-drag-drop';
 
 const routes: Routes = [
     {
@@ -38,6 +39,7 @@ const routes: Routes = [
         RouterModule.forChild(routes),
 
         TranslateModule,
+        NgDragDropModule,
 
         MatProgressBarModule,
         MatCardModule,

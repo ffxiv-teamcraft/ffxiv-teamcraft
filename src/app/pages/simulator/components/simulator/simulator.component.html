@@ -186,10 +186,18 @@
         </mat-card>
         <mat-card>
             <div class="actions">
-                <app-action *ngFor="let step of resultData.simulation.steps; let index = index"
+                <app-action draggable
+                            droppable
+                            dragOverClass="drag-over"
+                            (onDrop)="moveSkill($event.dragData, index)"
+                            [dragData]="index"
+                            *ngFor="let step of resultData.simulation.steps; let index = index"
                             (actionclick)="removeAction(index)"
                             [action]="step.action"
                             [simulation]="resultData.simulation"></app-action>
+                <div class="end-drag-zone" droppable
+                     dragOverClass="drag-over"
+                     (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
             </div>
         </mat-card>
         <mat-card>

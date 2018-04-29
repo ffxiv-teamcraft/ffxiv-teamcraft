@@ -115,6 +115,12 @@ export class SimulatorComponent implements OnInit {
         return `./assets/icons/status/${Buff[effBuff.buff].toLowerCase()}.png`;
     }
 
+    moveSkill(originIndex: number, targetIndex: number): void {
+        const actions = this.actions$.getValue();
+        actions.splice(targetIndex, 0, actions.splice(originIndex, 1)[0]);
+        this.actions$.next(actions);
+    }
+
     applyStats(set: GearSet): void {
         this.crafterStats = new CrafterStats(
             set.jobId,
