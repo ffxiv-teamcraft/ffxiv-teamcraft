@@ -9,8 +9,14 @@ export class ByregotsMiracle extends QualityAction {
     }
 
     execute(simulation: Simulation): void {
-        super.execute(simulation);
+        // Divides stacks by 2, but adds one because it increased progression (done by QualityAction implementation)
         simulation.getBuff(Buff.INNER_QUIET).stacks = Math.floor(simulation.getBuff(Buff.INNER_QUIET).stacks / 2);
+        super.execute(simulation);
+    }
+
+    onFail(simulation: Simulation): void {
+        // Stacks are still reduces upon failing.
+        simulation.getBuff(Buff.INNER_QUIET).stacks = Math.floor(simulation.getBuff(Buff.INNER_QUIET).stacks / 2)
     }
 
     getBaseCPCost(simulationState: Simulation): number {

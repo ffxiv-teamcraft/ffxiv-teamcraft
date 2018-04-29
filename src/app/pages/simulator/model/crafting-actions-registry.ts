@@ -43,6 +43,8 @@ import {SpecialtyReinforce} from './actions/other/specialty-reinforce';
 import {SpecialtyReflect} from './actions/other/specialty-reflect';
 import {Observe} from './actions/other/observe';
 import {Injectable} from '@angular/core';
+import {ByregotsMiracle} from './actions/quality/byregots-miracle';
+import {ByregotsBrow} from './actions/quality/byregots-brow';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -68,7 +70,8 @@ export class CraftingActionsRegistry {
         new HastyTouch(),
         new HastyTouchII(),
         new ByregotsBlessing(),
-        // TODO Byregot's brow
+        new ByregotsBrow(),
+        new ByregotsMiracle(),
         new PreciseTouch(),
         new FocusedTouch(),
         new PatientTouch(),

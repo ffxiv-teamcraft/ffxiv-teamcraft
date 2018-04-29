@@ -16,4 +16,8 @@ export class ByregotsBrow extends ByregotsBlessing {
     getPotency(simulation: Simulation): number {
         return 150 + simulation.getBuff(Buff.INNER_QUIET).stacks * 10;
     }
+
+    getIds(): number[] {
+        return [100120, 100121, 100122, 100123, 100124, 100125, 100126, 100127];
+    }
 }

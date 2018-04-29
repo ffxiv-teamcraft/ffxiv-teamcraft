@@ -8,6 +8,11 @@ export class InnerQuiet extends BuffAction {
         return Buff.INNER_QUIET;
     }
 
+    canBeUsed(simulationState: Simulation): boolean {
+        // You can't use IQ if it's already there
+        return super.canBeUsed(simulationState) && !simulationState.hasBuff(this.getBuff());
+    }
+
     getBaseCPCost(simulationState: Simulation): number {
         return 18;
     }

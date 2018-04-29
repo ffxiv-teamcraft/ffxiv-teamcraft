@@ -29,12 +29,14 @@ export abstract class BuffAction extends CraftingAction {
     protected abstract getTick(): (simulation: Simulation) => void;
 
     execute(simulation: Simulation): void {
+        if (simulation.hasBuff(this.getBuff())) {
+            simulation.removeBuff(this.getBuff());
+        }
         simulation.buffs.push(this.getAppliedBuff(simulation));
     }
 
     canBeUsed(simulationState: Simulation): boolean {
-        // You can't use a buff twice
-        return !simulationState.hasBuff(this.getBuff());
+        return true;
     }
 
     getDurabilityCost(simulationState: Simulation): number {
