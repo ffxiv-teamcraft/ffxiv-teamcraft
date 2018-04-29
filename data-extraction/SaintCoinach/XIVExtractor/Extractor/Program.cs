@@ -30,12 +30,48 @@ namespace Extractor
             ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
             ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
             */
-            ExtractCraftFoods(realm.GameData);
+            ExtractConsumables(realm.GameData);
         }
 
-        static void ExtractCraftFoods(XivCollection gameData)
+        static void ExtractConsumables(XivCollection gameData)
         {
-
+            JArray res = new JArray();
+            foreach (var item in gameData.GetSheet<Item>())
+            {
+                if (item.ItemAction.Type == 844 || item.ItemAction.Type == 845)
+                {
+                    try
+                    {
+                        if (gameData.GetSheet<ItemFood>().ContainsRow(item.ItemAction.GetData(1)))
+                        {
+                            var food = gameData.GetSheet<ItemFood>()[item.ItemAction.GetData(1)];
+                            if (food != null)
+                            {
+                                JObject foodRow = new JObject();
+                                foreach (var param in food.Parameters)
+                                {
+                                    if (param.BaseParam.DefaultValue.ToString() == "CP" || param.BaseParam.DefaultValue.ToString() == "Control" || param.BaseParam.DefaultValue.ToString() == "Craftsmanship")
+                                    {
+                                        Console.WriteLine(param.BaseParam.DefaultValue.ToString());
+                                        JArray paramRow = new JArray();
+                                        foreach (var value in param.Values)
+                                        {
+                                            paramRow.Add(value);
+                                        }
+                                        Console.WriteLine("Adding row");
+                                        foodRow.Add("itemId", item.Key);
+                                        foodRow.Add(param.BaseParam.DefaultValue.ToString(), paramRow);
+                                    }
+                                }
+                                res.Add(foodRow);
+                            }
+                        }
+                    }
+                    catch (Exception ex) { }
+                }
+            }
+            string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\consumables.json", json);
         }
 
         static void ExtractActionIcons(XivCollection gameData)
