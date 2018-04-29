@@ -12,18 +12,11 @@ export abstract class QualityAction extends GeneralAction {
     }
 
     private getBaseQuality(simulation: Simulation): number {
-        let recipeLevel = simulation.recipe.rlvl;
+        const recipeLevel = simulation.recipe.rlvl;
         const stats: CrafterStats = simulation.crafterStats;
         let recipeLevelPenalty = 0;
         let levelCorrectionFactor = 0;
-        const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
-        // If ingenuity
-        if (simulation.hasBuff(Buff.INGENUITY)) {
-            recipeLevel = Tables.INGENUITY_RLVL_TABLE[simulation.recipe.rlvl] || simulation.recipe.rlvl - 5;
-        } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
-            recipeLevel = Tables.INGENUITY_II_RLVL_TABLE[simulation.recipe.rlvl] || simulation.recipe.rlvl - 5;
-        }
-        const levelDifference = Math.max(crafterLevel - recipeLevel, -6);
+        const levelDifference = this.getLevelDifference(simulation);
 
         const baseQuality = 3.46e-5 * stats.getControl(simulation) * stats.getControl(simulation)
             + 0.3514 * stats.getControl(simulation)
@@ -54,11 +47,8 @@ export abstract class QualityAction extends GeneralAction {
         return baseQuality * (1 + levelCorrectionFactor) * (1 + recipeLevelPenalty);
     }
 
-    execute(simulation: Simulation): void {
+    execute(simulation: Simulation, skipStackAddition = false): void {
         let qualityIncrease = this.getBaseQuality(simulation) * this.getPotency(simulation) / 100;
-        if (simulation.hasBuff(Buff.INNER_QUIET) && simulation.getBuff(Buff.INNER_QUIET).stacks < 11) {
-            simulation.getBuff(Buff.INNER_QUIET).stacks++;
-        }
         switch (simulation.state) {
             case 'EXCELLENT':
                 qualityIncrease *= 4;
@@ -76,7 +66,10 @@ export abstract class QualityAction extends GeneralAction {
             qualityIncrease *= 2;
             simulation.removeBuff(Buff.GREAT_STRIDES);
         }
-        simulation.quality += Math.floor(qualityIncrease);
+        simulation.quality += Math.ceil(qualityIncrease);
+        if (simulation.hasBuff(Buff.INNER_QUIET) && simulation.getBuff(Buff.INNER_QUIET).stacks < 11 && !skipStackAddition) {
+            simulation.getBuff(Buff.INNER_QUIET).stacks++;
+        }
     }
 
 }

@@ -26,7 +26,7 @@ export class InnerQuiet extends BuffAction {
     }
 
     protected getInitialStacks(): number {
-        return 1;
+        return 0;
     }
 
     protected getTick(): (simulation: Simulation) => void {

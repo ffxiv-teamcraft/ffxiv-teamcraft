@@ -9,9 +9,11 @@ export class ByregotsMiracle extends QualityAction {
     }
 
     execute(simulation: Simulation): void {
+        // Don't add stack now, We'll add it manually after the reduction is done.
+        super.execute(simulation, true);
         // Divides stacks by 2, but adds one because it increased progression (done by QualityAction implementation)
         simulation.getBuff(Buff.INNER_QUIET).stacks = Math.floor(simulation.getBuff(Buff.INNER_QUIET).stacks / 2);
-        super.execute(simulation);
+        simulation.getBuff(Buff.INNER_QUIET).stacks++;
     }
 
     onFail(simulation: Simulation): void {
@@ -36,6 +38,6 @@ export class ByregotsMiracle extends QualityAction {
     }
 
     getPotency(simulation: Simulation): number {
-        return 100 + simulation.getBuff(Buff.INNER_QUIET).stacks * 20;
+        return 100 + (simulation.getBuff(Buff.INNER_QUIET).stacks - 1) * 15;
     }
 }

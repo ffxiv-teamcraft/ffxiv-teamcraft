@@ -1,8 +1,6 @@
 import {SteadyHandII} from '../model/actions/buff/steady-hand-ii';
 import {BasicTouch} from '../model/actions/quality/basic-touch';
 import {Simulation} from '../simulation/simulation';
-import {Craft} from '../../../model/garland-tools/craft';
-import {CrafterStats} from '../model/crafter-stats';
 import {BasicSynthesis} from '../model/actions/progression/basic-synthesis';
 import {SteadyHand} from '../model/actions/buff/steady-hand';
 import {InnerQuiet} from '../model/actions/buff/inner-quiet';
@@ -20,8 +18,17 @@ import {Observe} from '../model/actions/other/observe';
 import {FocusedSynthesis} from '../model/actions/progression/focused-synthesis';
 import {HastyTouch} from '../model/actions/quality/hasty-touch';
 import {RapidSynthesisII} from '../model/actions/progression/rapid-synthesis-ii';
-import {alc_70_350_stats, infusionOfMind_Recipe} from './mocks';
-
+import {acchan_stats, alc_70_350_stats, gradeII_infusion_of_str_Recipe, infusionOfMind_Recipe} from './mocks';
+import {ComfortZone} from '../model/actions/buff/comfort-zone';
+import {SpecialtyReflect} from '../model/actions/other/specialty-reflect';
+import {PieceByPiece} from '../model/actions/progression/piece-by-piece';
+import {PrudentTouch} from '../model/actions/quality/prudent-touch';
+import {FocusedTouch} from '../model/actions/quality/focused-touch';
+import {GreatStrides} from '../model/actions/buff/great-strides';
+import {Innovation} from '../model/actions/buff/innovation';
+import {ByregotsMiracle} from '../model/actions/quality/byregots-miracle';
+import {Rumination} from '../model/actions/other/rumination';
+import {CarefulSynthesisIII} from '../model/actions/progression/careful-synthesis-iii';
 
 
 describe('Craft simulator tests', () => {
@@ -33,10 +40,16 @@ describe('Craft simulator tests', () => {
             expect(simulation.progression).toBeCloseTo(352, 1);
         });
 
+        it('should be able to predict correct progression on action for high level crafts', () => {
+            const simulation = new Simulation(gradeII_infusion_of_str_Recipe, [new BasicSynthesis()], acchan_stats);
+            simulation.run(true);
+            expect(simulation.progression).toBe(237);
+        });
+
         it('should be able to predict correct quality increase on action', () => {
-            const simulation = new Simulation(infusionOfMind_Recipe, [new SteadyHandII(), new BasicTouch()], alc_70_350_stats);
-            simulation.run();
-            expect(simulation.quality).toBeCloseTo(569, 1);
+            const simulation = new Simulation(gradeII_infusion_of_str_Recipe, [new BasicTouch()], acchan_stats);
+            simulation.run(true);
+            expect(simulation.quality).toBe(292);
         });
 
         it('should apply stroke of genius on specialist craft start', () => {
@@ -106,7 +119,7 @@ describe('Craft simulator tests', () => {
                     [new InnerQuiet(), new SteadyHandII(), new BasicTouch(), new BasicTouch()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.quality).toBeCloseTo(1262, 1);
+                expect(simulation.quality).toBeCloseTo(1264, 1);
             });
         });
 
@@ -152,7 +165,7 @@ describe('Craft simulator tests', () => {
                     [new SteadyHand(), new Ingenuity(), new BasicSynthesis()],
                     alc_70_350_stats);
                 simulation.run();
-                expect(simulation.progression).toBe(452);
+                expect(simulation.progression).toBe(451);
             });
 
             it('should properly reduce recipe level with Ingenuity II, influencing progression', () => {
@@ -232,14 +245,29 @@ describe('Craft simulator tests', () => {
             expect(results.filter(res => !res).length).toBe(0);
         });
 
-        it('should be able to provide proper reliability report', () => {
+        xit('should be able to provide proper reliability report', () => {
             const simulation = new Simulation(infusionOfMind_Recipe,
-                [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], alc_70_350_stats);
+                [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], acchan_stats);
             const report = simulation.getReliabilityReport();
             expect(report.successPercent).toBeGreaterThan(15);
             expect(report.successPercent).toBeLessThan(25);
             expect(report.averageHQPercent).toBe(1);
             expect(report.medianHQPercent).toBe(1);
+        });
+
+        it('should be consistent with current rotations', () => {
+            const acchan_macro = [new InitialPreparations(), new ComfortZone(), new InnerQuiet(), new SpecialtyReflect(),
+                new SteadyHandII(), new PieceByPiece(), new PrudentTouch(), new PrudentTouch(), new PrudentTouch(), new PrudentTouch(),
+                new Observe(), new FocusedTouch(), new ManipulationII(), new ComfortZone(), new Ingenuity(), new Observe(),
+                new FocusedTouch(), new GreatStrides(), new Observe(), new FocusedTouch(), new IngenuityII(), new SteadyHandII(),
+                new Innovation(), new PrudentTouch(), new GreatStrides(), new ByregotsMiracle(), new PieceByPiece(),
+                new Rumination(), new Ingenuity(), new Observe(), new FocusedSynthesis(), new Observe(), new FocusedSynthesis(),
+                new CarefulSynthesisIII()];
+            const simulation = new Simulation(gradeII_infusion_of_str_Recipe, acchan_macro, acchan_stats);
+            simulation.run(true);
+            expect(simulation.progression).toBe(3557);
+            expect(simulation.quality).toBe(24839);
+            expect(simulation.availableCP).toBe(0);
         });
     });
 });

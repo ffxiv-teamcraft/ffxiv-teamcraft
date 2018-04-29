@@ -15,8 +15,8 @@ export class Rumination extends CraftingAction {
 
     execute(simulation: Simulation): void {
         // Formulae from https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L594
-        simulation.availableCP += (simulation.getBuff(Buff.INNER_QUIET).stacks * 21 -
-            Math.pow(simulation.getBuff(Buff.INNER_QUIET).stacks, 2) + 10) / 2;
+        simulation.availableCP += ((simulation.getBuff(Buff.INNER_QUIET).stacks - 1) * 21 -
+            Math.pow((simulation.getBuff(Buff.INNER_QUIET).stacks - 1), 2) + 10) / 2;
         if (simulation.availableCP > simulation.maxCP) {
             simulation.availableCP = simulation.maxCP;
         }

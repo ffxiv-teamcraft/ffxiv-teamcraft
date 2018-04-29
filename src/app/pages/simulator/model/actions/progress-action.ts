@@ -1,7 +1,6 @@
 import {Simulation} from '../../simulation/simulation';
 import {GeneralAction} from './general-action';
 import {CrafterStats} from '../crafter-stats';
-import {Buff} from '../buff.enum';
 import {Tables} from '../tables';
 import {ActionType} from './action-type';
 
@@ -18,23 +17,16 @@ export abstract class ProgressAction extends GeneralAction {
      * @returns {number}
      */
     private getBaseProgression(simulation: Simulation): number {
-        let recipeLevel = simulation.recipe.rlvl;
+        const recipeLevel = simulation.recipe.rlvl;
         const stats: CrafterStats = simulation.crafterStats;
         const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
-        // If ingenuity
-        if (simulation.hasBuff(Buff.INGENUITY)) {
-            recipeLevel = Tables.INGENUITY_RLVL_TABLE[simulation.recipe.rlvl] || simulation.recipe.rlvl - 5;
-        } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
-            recipeLevel = Tables.INGENUITY_II_RLVL_TABLE[simulation.recipe.rlvl] || simulation.recipe.rlvl - 5;
-        }
-        const levelDifference = Math.max(crafterLevel - recipeLevel, -6);
+        const levelDifference = this.getLevelDifference(simulation);
         let baseProgress = 0;
         let levelCorrectionFactor = 0;
         let recipeLevelPenalty = 0;
-
-        if (crafterLevel > 60) {
+        if (crafterLevel > 250) {
             baseProgress = 1.834712812e-5 * stats.craftsmanship * stats.craftsmanship + 1.904074773e-1 * stats.craftsmanship + 1.544103837;
-        } else if (crafterLevel > 50) {
+        } else if (crafterLevel > 110) {
             baseProgress = 2.09860e-5 * stats.craftsmanship * stats.craftsmanship + 0.196184 * stats.craftsmanship + 2.68452;
         } else {
             baseProgress = 0.214959 * stats.craftsmanship + 1.6;
@@ -69,6 +61,6 @@ export abstract class ProgressAction extends GeneralAction {
     }
 
     execute(simulation: Simulation): void {
-        simulation.progression += Math.round(this.getBaseProgression(simulation) * this.getPotency(simulation) / 100);
+        simulation.progression += Math.floor(this.getBaseProgression(simulation) * this.getPotency(simulation) / 100);
     }
 }
