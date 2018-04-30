@@ -11,7 +11,8 @@ export class NymeiasWheel extends CraftingAction {
     }
 
     execute(simulation: Simulation): void {
-        simulation.repair(Tables.NYMEIAS_WHEEL_TABLE[simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks])
+        simulation.repair(Tables.NYMEIAS_WHEEL_TABLE[simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks]);
+        simulation.removeBuff(Buff.WHISTLE_WHILE_YOU_WORK);
     }
 
     getBaseCPCost(simulationState: Simulation): number {

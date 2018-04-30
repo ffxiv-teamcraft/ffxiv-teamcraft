@@ -18,8 +18,11 @@ export class TrainedHand extends GeneralAction {
         if (simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks % 3 === 0) {
             progressPotency += 50;
         }
-        simulation.quality += baseQualityIncrease * qualityPotency / 100;
-        simulation.progression += baseProgressIncrease * progressPotency / 100;
+        simulation.quality += Math.floor(baseQualityIncrease * qualityPotency / 100);
+        simulation.progression += Math.floor(baseProgressIncrease * progressPotency / 100);
+        if (simulation.getBuff(Buff.INNER_QUIET).stacks < 11) {
+            simulation.getBuff(Buff.INNER_QUIET).stacks++;
+        }
     }
 
     getBaseCPCost(simulationState: Simulation): number {
