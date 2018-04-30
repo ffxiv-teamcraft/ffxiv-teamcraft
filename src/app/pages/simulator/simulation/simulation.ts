@@ -116,6 +116,10 @@ export class Simulation {
             }
             // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
             this.tickBuffs(linear);
+            // Tick state to change it for next turn if not in linear mode
+            if (!linear) {
+                this.tickState();
+            }
         });
         // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
@@ -217,6 +221,60 @@ export class Simulation {
             }
         }
         this.buffs = this.buffs.filter(buff => buff.duration > 0);
+    }
+
+    /**
+     * Changes the state of the craft,
+     * source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L255
+     */
+    private tickState(): void {
+        // If current state is EXCELLENT, then next one is poor
+        if (this.state === 'EXCELLENT') {
+            this.state = 'POOR';
+            return;
+        }
+
+        // Good
+        const recipeLevel = this.recipe.rlvl;
+        const qualityAssurance = this.crafterStats.level >= 63;
+        let goodChances = 0;
+        if (recipeLevel >= 300) { // 70*+
+            goodChances = qualityAssurance ? 0.11 : 0.10;
+        } else if (recipeLevel >= 276) { // 65+
+            goodChances = qualityAssurance ? 0.17 : 0.15;
+        } else if (recipeLevel >= 255) { // 61+
+            goodChances = qualityAssurance ? 0.22 : 0.20;
+        } else if (recipeLevel >= 150) { // 60+
+            goodChances = qualityAssurance ? 0.11 : 0.10;
+        } else if (recipeLevel >= 136) { // 55+
+            goodChances = qualityAssurance ? 0.17 : 0.15;
+        } else {
+            goodChances = qualityAssurance ? 0.27 : 0.25;
+        }
+
+        // Excellent
+        let excellentChances = 0;
+        if (recipeLevel >= 300) { // 70*+
+            excellentChances = 0.01;
+        } else if (recipeLevel >= 255) { // 61+
+            excellentChances = 0.02;
+        } else if (recipeLevel >= 150) { // 60+
+            excellentChances = 0.01;
+        } else {
+            excellentChances = 0.02;
+        }
+
+        const exRandom = Math.random();
+        if (exRandom <= excellentChances) {
+            this.state = 'EXCELLENT';
+        } else {
+            const goodRandom = Math.random();
+            if (goodRandom <= goodChances) {
+                this.state = 'GOOD';
+            } else {
+                this.state = 'NORMAL';
+            }
+        }
     }
 
     public repair(amount: number): void {
