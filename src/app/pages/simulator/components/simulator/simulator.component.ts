@@ -125,6 +125,7 @@ export class SimulatorComponent {
         this.result$ = this.simulation$.map(simulation => simulation.run(true));
 
         this.report$ = this.result$
+            .filter(res => res.success)
             .mergeMap(() => this.simulation$)
             .map(simulation => simulation.getReliabilityReport());
     }
