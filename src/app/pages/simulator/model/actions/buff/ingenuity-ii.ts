@@ -4,6 +4,10 @@ import {Buff} from '../../buff.enum';
 
 export class IngenuityII extends BuffAction {
 
+    protected getOverrides(): Buff[] {
+        return super.getOverrides().concat(Buff.INGENUITY);
+    }
+
     getBaseCPCost(simulationState: Simulation): number {
         return 32;
     }

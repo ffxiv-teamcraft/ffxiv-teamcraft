@@ -45,6 +45,10 @@ import {Observe} from './actions/other/observe';
 import {Injectable} from '@angular/core';
 import {ByregotsMiracle} from './actions/quality/byregots-miracle';
 import {ByregotsBrow} from './actions/quality/byregots-brow';
+import {WhistleWhileYouWork} from './actions/buff/whistle-while-you-work';
+import {Satisfaction} from './actions/other/satisfaction';
+import {NymeiasWheel} from './actions/other/nymeias-wheel';
+import {TrainedHand} from './actions/other/trained-hand';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -82,12 +86,14 @@ export class CraftingActionsRegistry {
         new ComfortZone(),
         new Rumination(),
         new TricksOfTheTrade(),
+        new Satisfaction(),
 
         // Repair
         new MastersMend(),
         new MastersMendII(),
         new Manipulation(),
         new ManipulationII(),
+        new NymeiasWheel(),
 
         // Buffs
         new InnerQuiet(),
@@ -99,6 +105,7 @@ export class CraftingActionsRegistry {
         new Innovation(),
         new MakersMark(),
         new InitialPreparations(),
+        new WhistleWhileYouWork(),
 
         // Specialties
         new SpecialtyRefurbish(),
@@ -107,6 +114,7 @@ export class CraftingActionsRegistry {
 
         // Other
         new Observe(),
+        new TrainedHand(),
     ];
 
     public getActionsByType(type: ActionType): CraftingAction[] {

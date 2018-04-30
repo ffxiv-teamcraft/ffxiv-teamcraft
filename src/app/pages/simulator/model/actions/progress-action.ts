@@ -1,8 +1,7 @@
 import {Simulation} from '../../simulation/simulation';
 import {GeneralAction} from './general-action';
-import {CrafterStats} from '../crafter-stats';
-import {Tables} from '../tables';
 import {ActionType} from './action-type';
+import {Buff} from '../buff.enum';
 
 export abstract class ProgressAction extends GeneralAction {
 
@@ -10,57 +9,14 @@ export abstract class ProgressAction extends GeneralAction {
         return ActionType.PROGRESSION;
     }
 
-    /**
-     * Gets base progression, implementation is from ermad's fork
-     * (https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js)
-     * @param {Simulation} simulation
-     * @returns {number}
-     */
-    private getBaseProgression(simulation: Simulation): number {
-        const recipeLevel = simulation.recipe.rlvl;
-        const stats: CrafterStats = simulation.crafterStats;
-        const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
-        const levelDifference = this.getLevelDifference(simulation);
-        let baseProgress = 0;
-        let levelCorrectionFactor = 0;
-        let recipeLevelPenalty = 0;
-        if (crafterLevel > 250) {
-            baseProgress = 1.834712812e-5 * stats.craftsmanship * stats.craftsmanship + 1.904074773e-1 * stats.craftsmanship + 1.544103837;
-        } else if (crafterLevel > 110) {
-            baseProgress = 2.09860e-5 * stats.craftsmanship * stats.craftsmanship + 0.196184 * stats.craftsmanship + 2.68452;
-        } else {
-            baseProgress = 0.214959 * stats.craftsmanship + 1.6;
-        }
-
-        // Level boost for recipes below crafter level
-        if (levelDifference > 0) {
-            levelCorrectionFactor += (0.25 / 5) * Math.min(levelDifference, 5);
-        }
-        if (levelDifference > 5) {
-            levelCorrectionFactor += (0.10 / 5) * Math.min(levelDifference - 5, 10);
-        }
-        if (levelDifference > 15) {
-            levelCorrectionFactor += (0.05 / 5) * Math.min(levelDifference - 15, 5);
-        }
-        if (levelDifference > 20) {
-            levelCorrectionFactor += 0.0006 * (levelDifference - 20);
-        }
-
-        // Level penalty for recipes above crafter level
-        if (levelDifference < 0) {
-            levelCorrectionFactor += 0.025 * Math.max(levelDifference, -10);
-            if (Tables.PROGRESS_PENALTY_TABLE[recipeLevel] !== undefined) {
-                recipeLevelPenalty += Tables.PROGRESS_PENALTY_TABLE[recipeLevel];
-            }
-        }
-
-        // Level factor is rounded to nearest percent
-        levelCorrectionFactor = Math.round(levelCorrectionFactor * 100) / 100;
-
-        return baseProgress * (1 + levelCorrectionFactor) * (1 + recipeLevelPenalty);
-    }
-
     execute(simulation: Simulation): void {
-        simulation.progression += Math.floor(this.getBaseProgression(simulation) * this.getPotency(simulation) / 100);
+        let potency = this.getPotency(simulation);
+        // If we have WwyW running and its stacks are %3, add 50 potency.
+        // Source: https://www.reddit.com/r/ffxiv/comments/3bwr7n/crafting_specialist_actions_thoughts_and_findings/
+        if (simulation.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK) && simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks > 0
+            && simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks % 3 === 0) {
+            potency += 50;
+        }
+        simulation.progression += Math.floor(this.getBaseProgression(simulation) * potency / 100);
     }
 }

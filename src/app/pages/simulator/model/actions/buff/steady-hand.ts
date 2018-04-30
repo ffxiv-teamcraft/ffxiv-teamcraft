@@ -4,6 +4,10 @@ import {Buff} from '../../buff.enum';
 
 export class SteadyHand extends BuffAction {
 
+    protected getOverrides(): Buff[] {
+        return super.getOverrides().concat(Buff.STEADY_HAND_II);
+    }
+
     protected getBuff(): Buff {
         return Buff.STEADY_HAND;
     }

@@ -99,36 +99,7 @@ export class Simulation {
             }
             // If we can use the action
             if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
-                // The roll for the current action's success rate, 0 if ideal mode, as 0 will even match a 1% chances.
-                const probabilityRoll = linear ? 0 : Math.random() * 100;
-                const qualityBefore = this.quality;
-                const progressionBefore = this.progression;
-                if (action.getSuccessRate(this) >= probabilityRoll) {
-                    action.execute(this);
-                } else {
-                    action.onFail(this);
-                }
-                // Even if the action failed, we have to remove the durability cost
-                this.durability -= action.getDurabilityCost(this);
-                const CPCost = action.getCPCost(this, linear);
-                // Even if the action failed, CP has to be consumed too
-                this.availableCP -= CPCost;
-                // Push the result to the result array
-                this.steps.push({
-                    action: action,
-                    success: action.getSuccessRate(this) >= probabilityRoll,
-                    addedQuality: this.quality - qualityBefore,
-                    addedProgression: this.progression - progressionBefore,
-                    cpDifference: CPCost,
-                    skipped: false,
-                    solidityDifference: action.getDurabilityCost(this)
-                });
-                if (this.progression >= this.recipe.progress) {
-                    this.success = true;
-                } else if (this.durability <= 0) {
-                    // Check durability to see if the craft is failed or not
-                    this.success = false;
-                }
+                this.runAction(action, linear);
             } else {
                 // If we can't, add the step to the result but skip it.
                 this.steps.push({
@@ -142,7 +113,7 @@ export class Simulation {
                 });
             }
             // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
-            this.tickBuffs();
+            this.tickBuffs(linear);
         });
         // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
@@ -152,6 +123,44 @@ export class Simulation {
             success: this.progression >= this.recipe.progress,
             simulation: this,
         };
+    }
+
+    /**
+     * Runs an action, can be called from external class (Whistle for instance).
+     * @param {CraftingAction} action
+     * @param {boolean} linear
+     */
+    public runAction(action: CraftingAction, linear = false): void {
+        // The roll for the current action's success rate, 0 if ideal mode, as 0 will even match a 1% chances.
+        const probabilityRoll = linear ? 0 : Math.random() * 100;
+        const qualityBefore = this.quality;
+        const progressionBefore = this.progression;
+        if (action.getSuccessRate(this) >= probabilityRoll) {
+            action.execute(this);
+        } else {
+            action.onFail(this);
+        }
+        // Even if the action failed, we have to remove the durability cost
+        this.durability -= action.getDurabilityCost(this);
+        const CPCost = action.getCPCost(this, linear);
+        // Even if the action failed, CP has to be consumed too
+        this.availableCP -= CPCost;
+        // Push the result to the result array
+        this.steps.push({
+            action: action,
+            success: action.getSuccessRate(this) >= probabilityRoll,
+            addedQuality: this.quality - qualityBefore,
+            addedProgression: this.progression - progressionBefore,
+            cpDifference: CPCost,
+            skipped: false,
+            solidityDifference: action.getDurabilityCost(this)
+        });
+        if (this.progression >= this.recipe.progress) {
+            this.success = true;
+        } else if (this.durability <= 0) {
+            // Check durability to see if the craft is failed or not
+            this.success = false;
+        }
     }
 
     private qualityPercentFromHqPercent(hqPercent: number): number {

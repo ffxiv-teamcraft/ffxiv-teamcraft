@@ -200,6 +200,7 @@
             <div class="actions">
                 <app-action draggable
                             droppable
+                            (onDragStart)="step.action.canBeMoved()?null:$event.preventDefault()"
                             dragOverClass="drag-over"
                             (onDrop)="moveSkill($event.dragData, index)"
                             [dragData]="index"

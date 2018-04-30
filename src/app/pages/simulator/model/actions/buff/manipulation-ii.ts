@@ -5,6 +5,10 @@ import {ActionType} from '../action-type';
 
 export class ManipulationII extends BuffAction {
 
+    protected getOverrides(): Buff[] {
+        return super.getOverrides().concat(Buff.MANIPULATION);
+    }
+
     public getType(): ActionType {
         return ActionType.REPAIR;
     }

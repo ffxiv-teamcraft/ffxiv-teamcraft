@@ -4,6 +4,10 @@ import {Simulation} from '../../../simulation/simulation';
 
 export class WasteNotII extends BuffAction {
 
+    protected getOverrides(): Buff[] {
+        return super.getOverrides().concat(Buff.WASTE_NOT);
+    }
+
     protected getBuff(): Buff {
         return Buff.WASTE_NOT_II;
     }

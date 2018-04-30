@@ -6,6 +6,15 @@ import {ActionType} from './action-type';
 
 export abstract class BuffAction extends CraftingAction {
 
+    /**
+     * Override this method if the buff overrides other buffs (steady hands for instance).
+     * Don't forget to add super.getOverrides() to the array you'll return
+     * @returns {Buff | null}
+     */
+    protected getOverrides(): Buff[] {
+        return [this.getBuff()];
+    }
+
     public getType(): ActionType {
         return ActionType.BUFF;
     }
@@ -29,8 +38,8 @@ export abstract class BuffAction extends CraftingAction {
     protected abstract getTick(): (simulation: Simulation, linear?: boolean) => void;
 
     execute(simulation: Simulation): void {
-        if (simulation.hasBuff(this.getBuff())) {
-            simulation.removeBuff(this.getBuff());
+        for (const buffToOverride of this.getOverrides()) {
+            simulation.removeBuff(buffToOverride);
         }
         simulation.buffs.push(this.getAppliedBuff(simulation));
     }

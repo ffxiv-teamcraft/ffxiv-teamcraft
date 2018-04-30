@@ -36,9 +36,9 @@ export class DataService {
                             ilvl: set.item_level_avg,
                             jobId: set.classjob_id,
                             level: set.level,
-                            control: set.stats !== undefined ? set.stats.mental.Control : 0,
-                            craftsmanship: set.stats !== undefined ? set.stats.mental.Craftsmanship : 0,
-                            cp: set.stats !== undefined ? set.stats.core.CP : 0,
+                            control: set.stats.mental !== undefined ? set.stats.mental.Control : 0,
+                            craftsmanship: set.stats.mental !== undefined ? set.stats.mental.Craftsmanship : 0,
+                            cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
                             specialist: set.slot_soulcrystal !== null
                         }
                     });

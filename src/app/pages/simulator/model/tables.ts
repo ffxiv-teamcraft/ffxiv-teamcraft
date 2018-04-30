@@ -1,5 +1,20 @@
 export class Tables {
 
+    // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1942
+    public static readonly NYMEIAS_WHEEL_TABLE = {
+        1: 30,
+        2: 30,
+        3: 30,
+        4: 20,
+        5: 20,
+        6: 20,
+        7: 10,
+        8: 10,
+        9: 10,
+        10: 10,
+        11: 10
+    };
+
     // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1823
     public static readonly LEVEL_TABLE = {
         51: 120, // 120
