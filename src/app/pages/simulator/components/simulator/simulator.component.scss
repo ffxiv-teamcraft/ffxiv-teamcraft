@@ -76,7 +76,8 @@ mat-progress-bar {
         }
         .bottom-part {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center;
             .hq-chances {
                 display: flex;
                 justify-content: space-between;
@@ -86,7 +87,7 @@ mat-progress-bar {
                 margin-right: 40px;
             }
             .cp-progress {
-                flex: 1 1 auto;
+                flex: 0 1 400px;
                 .cp-bar {
                     display: flex;
                     align-items: center;
@@ -99,6 +100,13 @@ mat-progress-bar {
                         margin-left: 15px;
                     }
                 }
+            }
+            .report {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex: 0 1 300px;
+                height: 40px;
             }
         }
     }
@@ -135,6 +143,13 @@ mat-progress-bar {
                 }
             }
         }
+    }
+    .report {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex: 1 1 auto;
+        height: 40px;
     }
 }
 

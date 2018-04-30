@@ -103,16 +103,31 @@ export class SimulatorComponent {
 
         if (!this.customMode) {
             Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-                return gearsets.find(set => set.jobId === recipe.job);
+                let userSet = gearsets.find(set => set.jobId === recipe.job);
+                if (userSet === undefined) {
+                    userSet = {
+                        ilvl: 0,
+                        control: 1000,
+                        craftsmanship: 1000,
+                        cp: 450,
+                        jobId: 10,
+                        level: 70,
+                        specialist: false
+                    };
+                }
+                return userSet;
             }).subscribe(set => {
                 this.selectedSet = set;
                 this.applyStats(set);
             });
         }
 
-        this.report$ = this.simulation$.map(simulation => simulation.getReliabilityReport());
-
         this.result$ = this.simulation$.map(simulation => simulation.run(true));
+
+        this.report$ = this.result$
+            .filter(res => res.success === true)
+            .mergeMap(() => this.simulation$)
+            .map(simulation => simulation.getReliabilityReport());
     }
 
     getStars(nb: number): string {

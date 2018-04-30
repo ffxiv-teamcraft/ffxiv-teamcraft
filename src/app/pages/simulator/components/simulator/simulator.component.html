@@ -71,7 +71,7 @@
         </div>
     </div>
 </mat-expansion-panel>
-<div *ngIf="simulation$ | async as simulation" [class.mobile]="isMobile()">
+<div *ngIf="simulation$ | async as simulation">
     <div *ngIf="result$ | async as resultData">
         <mat-card *ngIf="!isMobile()">
             <mat-card-header>
@@ -130,6 +130,14 @@
                                 <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
                             </div>
                         </div>
+                        <div class="report" *ngIf="report$ | async as report">
+                            <span class="report-row">
+                                {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
+                            </span>
+                            <span class="report-row">
+                                {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+                            </span>
+                        </div>
                     </div>
                 </div>
             </mat-card-content>
@@ -184,6 +192,14 @@
                             <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
                         </div>
                     </div>
+                </div>
+                <div class="report" *ngIf="report$ | async as report">
+                            <span class="report-row">
+                                {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
+                            </span>
+                    <span class="report-row">
+                                {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+                            </span>
                 </div>
             </mat-card-content>
         </mat-card>

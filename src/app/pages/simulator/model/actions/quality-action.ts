@@ -1,7 +1,5 @@
 import {Simulation} from '../../simulation/simulation';
 import {GeneralAction} from './general-action';
-import {CrafterStats} from '../crafter-stats';
-import {Tables} from '../tables';
 import {Buff} from '../buff.enum';
 import {ActionType} from './action-type';
 
