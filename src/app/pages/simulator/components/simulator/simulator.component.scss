@@ -36,6 +36,17 @@
         width: 32px;
         height: 32px;
     }
+    .consumables-cols {
+        display: flex;
+        min-height: 150px;
+        > div {
+            margin: 10px;
+        }
+    }
+}
+
+.apply-button {
+    width: 100%;
 }
 
 mat-progress-bar {

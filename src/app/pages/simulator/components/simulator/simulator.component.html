@@ -21,18 +21,23 @@
             </div>
             <div class="set-details" *ngIf="selectedSet !== undefined">
                 <div class="details-row">
-                    <mat-form-field>
-                        <input matInput type="number" [readonly]="!customSet"
-                               [(ngModel)]="selectedSet.craftsmanship"
+                    <mat-form-field matTooltip="{{selectedSet.craftsmanship + this.getBonusValue('Craftsmanship', selectedSet.craftsmanship)}}"
+                        matTooltipPosition="above">
+                        <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.craftsmanship"
                                [placeholder]="'SIMULATOR.CONFIGURATION.Craftsmanship' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('Craftsmanship', selectedSet.craftsmanship)}})</span>
                     </mat-form-field>
-                    <mat-form-field>
+                    <mat-form-field matTooltip="{{selectedSet.control + this.getBonusValue('Control', selectedSet.control)}}"
+                        matTooltipPosition="above">
                         <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.control"
                                [placeholder]="'SIMULATOR.CONFIGURATION.Control' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('Control', selectedSet.control)}})</span>
                     </mat-form-field>
-                    <mat-form-field>
+                    <mat-form-field matTooltip="{{selectedSet.cp + this.getBonusValue('CP', selectedSet.cp)}}"
+                        matTooltipPosition="above">
                         <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.cp"
-                               [placeholder]="'SIMULATOR.Cp' | translate">
+                               [placeholder]="'SIMULATOR.Cp_amount' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('CP', selectedSet.cp)}})</span>
                     </mat-form-field>
                 </div>
                 <div class="details-row">
@@ -61,13 +66,48 @@
                     </mat-input-container>
                 </mat-list-item>
             </mat-list>
-            <button mat-raised-button color="accent" (click)="hqIngredients = hqIngredientsData">
+            <button mat-raised-button class="apply-button" color="accent" (click)="hqIngredients = hqIngredientsData">
                 {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
             </button>
         </div>
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
-            TODO Food & potions
+            <div class="consumables-cols">
+                <div class="foods">
+                    <mat-select [(ngModel)]="selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
+                        <mat-option [value]="undefined"></mat-option>
+                        <mat-option *ngFor="let food of foods.reverse()" [value]="food">
+                            {{food.itemId | itemName | i18n}}
+                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
+                        </mat-option>
+                    </mat-select>
+                    <div class="consumable-details" *ngIf="selectedFood !== undefined">
+                        <div class="details-row" *ngFor="let bonus of selectedFood.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                            ({{bonus.max}})
+                        </div>
+                    </div>
+                </div>
+                <div class="medicines">
+                    <mat-select [(ngModel)]="selectedMedicine"
+                                placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
+                        <mat-option [value]="undefined"></mat-option>
+                        <mat-option *ngFor="let medicine of medicines.reverse()" [value]="medicine">
+                            {{medicine.itemId | itemName | i18n}}
+                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
+                        </mat-option>
+                    </mat-select>
+                    <div class="consumable-details" *ngIf="selectedMedicine !== undefined">
+                        <div class="details-row" *ngFor="let bonus of selectedMedicine.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                            ({{bonus.max}})
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button class="apply-button" color="accent" (click)="applyStats(selectedSet)">
+                {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+            </button>
         </div>
     </div>
 </mat-expansion-panel>

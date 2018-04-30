@@ -13,9 +13,10 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatListModule,
+    MatTooltipModule,
 } from '@angular/material';
 import {ActionComponent} from './components/action/action.component';
 import {CraftingActionsRegistry} from './model/crafting-actions-registry';
@@ -51,6 +52,7 @@ const routes: Routes = [
         MatCheckboxModule,
         MatInputModule,
         MatListModule,
+        MatTooltipModule,
 
         CommonComponentsModule,
         TooltipModule,

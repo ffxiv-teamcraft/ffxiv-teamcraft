@@ -15,7 +15,6 @@ namespace Extractor
             const string GameDirectory = @"F:\SquareEnix\FINAL FANTASY XIV - A Realm Reborn";
             ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
             Localize localize = new Localize(realm);
-            /*
             ExtractItemNames(localize, realm);
             ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(), "Singular", "npcs");
             ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
@@ -29,18 +28,30 @@ namespace Extractor
             ExtractActionIcons(realm.GameData);
             ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
             ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
-            */
             ExtractConsumables(realm.GameData);
         }
 
         static void ExtractConsumables(XivCollection gameData)
         {
+            int[] foods = { 844, 845 };
+            JArray foodsArray = ExtractFoodTypes(gameData, foods);
+            string foodsJson = Regex.Replace(foodsArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\foods.json", foodsJson);
+
+            int[] medicines = { 846 };
+            JArray medicinesArray = ExtractFoodTypes(gameData, medicines);
+            string medicinesJson = Regex.Replace(medicinesArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\medicines.json", medicinesJson);
+        }
+
+        static JArray ExtractFoodTypes(XivCollection gameData, int[] types)
+        {
             JArray res = new JArray();
             foreach (var item in gameData.GetSheet<Item>())
             {
-                if (item.ItemAction.Type == 844 || item.ItemAction.Type == 845)
+                foreach (int type in types)
                 {
-                    try
+                    if (item.ItemAction.Type == type)
                     {
                         if (gameData.GetSheet<ItemFood>().ContainsRow(item.ItemAction.GetData(1)))
                         {
@@ -52,26 +63,31 @@ namespace Extractor
                                 {
                                     if (param.BaseParam.DefaultValue.ToString() == "CP" || param.BaseParam.DefaultValue.ToString() == "Control" || param.BaseParam.DefaultValue.ToString() == "Craftsmanship")
                                     {
-                                        Console.WriteLine(param.BaseParam.DefaultValue.ToString());
+                                        if (foodRow.GetValue("itemId") == null)
+                                        {
+                                            foodRow.Add("itemId", item.Key);
+                                        }
                                         JArray paramRow = new JArray();
                                         foreach (var value in param.Values)
                                         {
-                                            paramRow.Add(value);
+                                            var valueRow = new JObject();
+                                            valueRow.Add("amount", ((ParameterValueRelativeLimited)value).Amount);
+                                            valueRow.Add("max", ((ParameterValueRelativeLimited)value).Maximum);
+                                            paramRow.Add(valueRow);
                                         }
-                                        Console.WriteLine("Adding row");
-                                        foodRow.Add("itemId", item.Key);
                                         foodRow.Add(param.BaseParam.DefaultValue.ToString(), paramRow);
                                     }
                                 }
-                                res.Add(foodRow);
+                                if (foodRow.HasValues)
+                                {
+                                    res.Add(foodRow);
+                                }
                             }
                         }
                     }
-                    catch (Exception ex) { }
                 }
             }
-            string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\consumables.json", json);
+            return res;
         }
 
         static void ExtractActionIcons(XivCollection gameData)

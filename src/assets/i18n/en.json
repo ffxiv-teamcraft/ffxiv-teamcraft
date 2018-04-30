@@ -465,7 +465,15 @@
             "Ingredients": "HQ Ingredients",
             "Consumables": "Consumables",
             "Apply_stats": "Apply stats",
-            "Apply_ingredients": "Apply HQ ingredients"
+            "Apply_ingredients": "Apply HQ ingredients",
+            "Apply_foods": "Apply consumables",
+            "Food": "Choose a food",
+            "Medicine": "Choose a medicine",
+            "STATS": {
+                "CP": "CP",
+                "Craftsmanship": "Craftsmanship",
+                "Control": "Control"
+            }
         }
     }
 }

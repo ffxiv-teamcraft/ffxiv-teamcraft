@@ -17,6 +17,10 @@ import {DataService} from '../../../../core/api/data.service';
 import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
 import {EffectiveBuff} from '../../model/effective-buff';
 import {Buff} from 'app/pages/simulator/model/buff.enum';
+import {Consumable} from '../../model/consumable';
+import {foods} from '../../../../core/data/sources/foods';
+import {medicines} from '../../../../core/data/sources/medicines';
+import {BonusType} from '../../model/consumable-bonus';
 
 @Component({
     selector: 'app-simulator',
@@ -77,8 +81,22 @@ export class SimulatorComponent {
 
     public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
 
+    public foods: Consumable[] = [];
+
+    public selectedFood: Consumable;
+
+    public medicines: Consumable[] = [];
+
+    public selectedMedicine: Consumable;
+
+    private consumables$: BehaviorSubject<Consumable[]> = new BehaviorSubject<Consumable[]>([]);
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService) {
+
+        this.foods = Consumable.fromData(foods);
+        this.medicines = Consumable.fromData(medicines);
+
         this.recipe$.subscribe(recipe => {
             this.hqIngredientsData = recipe.ingredients
                 .filter(i => i.id > 20)
@@ -144,12 +162,36 @@ export class SimulatorComponent {
         this.actions$.next(actions);
     }
 
+    getBonusValue(bonusType: BonusType, baseValue: number): number {
+        let bonusFromFood = 0;
+        let bonusFromMedicine = 0;
+        if (this.selectedFood !== undefined) {
+            const foodBonus = this.selectedFood.getBonus(bonusType);
+            if (foodBonus !== undefined) {
+                bonusFromFood = Math.ceil(baseValue * foodBonus.value);
+                if (bonusFromFood > foodBonus.max) {
+                    bonusFromFood = foodBonus.max;
+                }
+            }
+        }
+        if (this.selectedMedicine !== undefined) {
+            const medicineBonus = this.selectedMedicine.getBonus(bonusType);
+            if (medicineBonus !== undefined) {
+                bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
+                if (bonusFromMedicine > medicineBonus.max) {
+                    bonusFromMedicine = medicineBonus.max;
+                }
+            }
+        }
+        return bonusFromFood + bonusFromMedicine;
+    }
+
     applyStats(set: GearSet): void {
         this.crafterStats = new CrafterStats(
             set.jobId,
-            set.craftsmanship,
-            set.control,
-            set.cp,
+            set.craftsmanship + this.getBonusValue('Craftsmanship', set.craftsmanship),
+            set.control + this.getBonusValue('Control', set.control),
+            set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
             set.level);
     }
