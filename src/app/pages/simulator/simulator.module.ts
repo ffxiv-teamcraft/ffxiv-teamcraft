@@ -25,8 +25,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SettingsModule} from 'app/pages/settings/settings.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {NgDragDropModule} from 'ng-drag-drop';
+import {CustomSimulatorPageComponent} from './components/custom-simulator-page/custom-simulator-page.component';
 
 const routes: Routes = [
+    {
+        path: 'simulator/custom',
+        component: CustomSimulatorPageComponent
+    },
     {
         path: 'simulator/:itemId',
         component: SimulatorPageComponent
@@ -61,6 +66,7 @@ const routes: Routes = [
         SettingsModule,
     ],
     declarations: [
+        CustomSimulatorPageComponent,
         SimulatorPageComponent,
         SimulatorComponent,
         ActionComponent

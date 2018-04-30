@@ -446,6 +446,14 @@
         "Level": "Level",
         "Reliability": "Reliability",
         "Average_hq": "Average HQ",
+        "Specialist": "Specialist",
+        "CUSTOM": {
+            "Recipe_configuration": "Recipe configuration",
+            "Recipe_level": "Recipe level",
+            "Recipe_progress": "Max progress",
+            "Recipe_quality": "Max quality",
+            "Recipe_durability": "Durability"
+        },
         "CATEGORY": {
             "Progression": "Progression",
             "Quality": "Quality",
