@@ -31,9 +31,10 @@ export class WhistleWhileYouWork extends BuffAction {
 
     protected getTick(): (simulation: Simulation, linear?: boolean) => void {
         return (simulation, linear) => {
-            // If we're in linear mode, consider each even turn as matching the condition, as you can't have each turn GOOD, ever.
-            if ((linear && simulation.steps.length % 2 === 0 && simulation.steps.length > 0)
-                || simulation.state === 'GOOD' || simulation.state === 'EXCELLENT') {
+            const stepsForGood = simulation.hasBuff(Buff.HEART_OF_CRAFTER) ? 2 : 4;
+            // If we're in linear mode, consider one out of 4 steps as matching the condition, as you can't have each turn GOOD, ever.
+            if ((linear && simulation.steps.length % stepsForGood === 0 && simulation.steps.length > 0)
+                || simulation.lastStep.state === 'GOOD' || simulation.lastStep.state === 'EXCELLENT') {
                 simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks--;
             }
             // When it reaches the end, progress is increased

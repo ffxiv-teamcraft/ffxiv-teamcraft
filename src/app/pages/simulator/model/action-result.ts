@@ -15,4 +15,6 @@ export interface ActionResult {
     solidityDifference: number;
     // If the action is skipped because the craft is finished
     skipped: boolean;
+    // State of the step
+    state: 'NORMAL' | 'EXCELLENT' | 'GOOD' | 'POOR';
 }

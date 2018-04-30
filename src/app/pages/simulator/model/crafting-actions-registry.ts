@@ -49,6 +49,7 @@ import {WhistleWhileYouWork} from './actions/buff/whistle-while-you-work';
 import {Satisfaction} from './actions/other/satisfaction';
 import {NymeiasWheel} from './actions/other/nymeias-wheel';
 import {TrainedHand} from './actions/other/trained-hand';
+import {HeartOfTheCrafter} from './actions/buff/heart-of-the-crafter';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -106,6 +107,7 @@ export class CraftingActionsRegistry {
         new MakersMark(),
         new InitialPreparations(),
         new WhistleWhileYouWork(),
+        new HeartOfTheCrafter(),
 
         // Specialties
         new SpecialtyRefurbish(),
@@ -121,4 +123,12 @@ export class CraftingActionsRegistry {
         return CraftingActionsRegistry.ALL_ACTIONS.filter(action => action.getType() === type);
     }
 
+    public serializeRotation(rotation: CraftingAction[]): string[] {
+        return rotation.map(action => action.getName());
+    }
+
+    public deserializeRotation(rotation: string[]): CraftingAction[] {
+        return rotation.map(actionName => CraftingActionsRegistry.ALL_ACTIONS.find(el => el.getName() === actionName))
+            .filter(action => action !== undefined);
+    }
 }

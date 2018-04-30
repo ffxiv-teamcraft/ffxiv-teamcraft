@@ -109,7 +109,8 @@ export class Simulation {
                     addedProgression: 0,
                     cpDifference: 0,
                     skipped: true,
-                    solidityDifference: 0
+                    solidityDifference: 0,
+                    state: this.state,
                 });
             }
             // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
@@ -153,7 +154,8 @@ export class Simulation {
             addedProgression: this.progression - progressionBefore,
             cpDifference: CPCost,
             skipped: false,
-            solidityDifference: action.getDurabilityCost(this)
+            solidityDifference: action.getDurabilityCost(this),
+            state: this.state
         });
         if (this.progression >= this.recipe.progress) {
             this.success = true;
