@@ -67,6 +67,7 @@ export class Simulation {
     }
 
     public reset(): void {
+        delete this.success;
         this.progression = 0;
         this.durability = this.recipe.durability;
         this.quality = this.startingQuality;

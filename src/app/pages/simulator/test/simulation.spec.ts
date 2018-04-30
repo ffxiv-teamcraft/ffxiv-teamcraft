@@ -110,7 +110,7 @@ describe('Craft simulator tests', () => {
                 const simulation = new Simulation(infusionOfMind_Recipe,
                     [new InnerQuiet(), new SteadyHandII(), new BasicTouch()],
                     alc_70_350_stats);
-                simulation.run();
+                simulation.run(true);
                 expect(simulation.getBuff(Buff.INNER_QUIET).stacks).toBe(2);
             });
 
@@ -118,7 +118,7 @@ describe('Craft simulator tests', () => {
                 const simulation = new Simulation(infusionOfMind_Recipe,
                     [new InnerQuiet(), new SteadyHandII(), new BasicTouch(), new BasicTouch()],
                     alc_70_350_stats);
-                simulation.run();
+                simulation.run(true);
                 expect(simulation.quality).toBeCloseTo(1264, 1);
             });
         });
@@ -245,7 +245,7 @@ describe('Craft simulator tests', () => {
             expect(results.filter(res => !res).length).toBe(0);
         });
 
-        xit('should be able to provide proper reliability report', () => {
+        it('should be able to provide proper reliability report', () => {
             const simulation = new Simulation(infusionOfMind_Recipe,
                 [new RapidSynthesisII(), new RapidSynthesisII(), new RapidSynthesisII()], acchan_stats);
             const report = simulation.getReliabilityReport();
