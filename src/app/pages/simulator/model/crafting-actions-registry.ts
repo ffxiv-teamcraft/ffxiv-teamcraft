@@ -50,6 +50,18 @@ import {Satisfaction} from './actions/other/satisfaction';
 import {NymeiasWheel} from './actions/other/nymeias-wheel';
 import {TrainedHand} from './actions/other/trained-hand';
 import {HeartOfTheCrafter} from './actions/buff/heart-of-the-crafter';
+import {BrandOfFire} from './actions/progression/brand-of-fire';
+import {BrandOfWind} from './actions/progression/brand-of-wind';
+import {BrandOfEarth} from './actions/progression/brand-of-earth';
+import {BrandOfIce} from './actions/progression/brand-of-ice';
+import {BrandOfLightning} from './actions/progression/brand-of-lightning';
+import {BrandOfWater} from './actions/progression/brand-of-water';
+import {NameOfEarth} from './actions/buff/name-of-earth';
+import {NameOfIce} from './actions/buff/name-of-ice';
+import {NameOfFire} from './actions/buff/name-of-fire';
+import {NameOfTheWind} from './actions/buff/name-of-the-wind';
+import {NameOfLightning} from './actions/buff/name-of-lightning';
+import {NameOfWater} from './actions/buff/name-of-water';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -67,6 +79,12 @@ export class CraftingActionsRegistry {
         new RapidSynthesisII(),
         new FocusedSynthesis(),
         new MuscleMemory(),
+        new BrandOfWind(),
+        new BrandOfFire(),
+        new BrandOfIce(),
+        new BrandOfEarth(),
+        new BrandOfLightning(),
+        new BrandOfWater(),
 
         // Quality actions
         new BasicTouch(),
@@ -108,6 +126,12 @@ export class CraftingActionsRegistry {
         new InitialPreparations(),
         new WhistleWhileYouWork(),
         new HeartOfTheCrafter(),
+        new NameOfTheWind(),
+        new NameOfFire(),
+        new NameOfIce(),
+        new NameOfEarth(),
+        new NameOfLightning(),
+        new NameOfWater(),
 
         // Specialties
         new SpecialtyRefurbish(),
