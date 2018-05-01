@@ -99,7 +99,7 @@ export class Simulation {
                 this.maxCP += 15;
             }
             // If we can use the action
-            if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this)) {
+            if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)) {
                 this.runAction(action, linear);
             } else {
                 // If we can't, add the step to the result but skip it.

@@ -1,9 +1,17 @@
-<button mat-mini-fab class="save-button"
-        matTooltip="{{'SIMULATOR.Persist' | translate}}"
-        matTooltipPosition="right"
-        *ngIf="(actions$ | async).length > 0 && rotationId === undefined" (click)="save()">
-    <mat-icon>save</mat-icon>
-</button>
+<div class="top-buttons" [class.mobile]="isMobile()">
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Persist' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="(actions$ | async).length > 0 && rotationId === undefined" (click)="save()">
+        <mat-icon>save</mat-icon>
+    </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Reset' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="(actions$ | async).length > 0" (click)="clearRotation()">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
     <mat-expansion-panel-header>
         <mat-panel-title>
@@ -272,7 +280,8 @@
                             *ngFor="let step of resultData.simulation.steps; let index = index"
                             (actionclick)="removeAction(index)"
                             [action]="step.action"
-                            [simulation]="resultData.simulation"></app-action>
+                            [simulation]="resultData.simulation"
+                            [ignoreDisabled]="true"></app-action>
                 <div class="end-drag-zone" droppable
                      dragOverClass="drag-over"
                      (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>

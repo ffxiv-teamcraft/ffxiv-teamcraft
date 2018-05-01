@@ -451,6 +451,7 @@
         "Rotations": "Crafting rotations",
         "No_rotations": "No rotations",
         "New_custom_rotation": "New custom rotation",
+        "Reset": "Reset rotation",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",

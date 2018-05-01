@@ -34,6 +34,9 @@ export class ActionComponent {
     @Input()
     hideCost = false;
 
+    @Input()
+    ignoreDisabled = false;
+
     getJobId(): number {
         return this.simulation !== undefined ? this.simulation.crafterStats.jobId : this.jobId;
     }

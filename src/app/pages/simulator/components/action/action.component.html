@@ -1,4 +1,4 @@
-<div class="action-container" (click)="!disabled && !notEnoughCp?actionclick.emit():null"
+<div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
      [appXivdbActionTooltip]="action.getId(getJobId())">
     <div class="action"
          [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp, 'not-enough-cp': notEnoughCp}">

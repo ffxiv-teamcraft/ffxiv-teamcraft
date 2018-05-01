@@ -1,8 +1,17 @@
 
-.save-button {
+.top-buttons {
     position: absolute;
     top: 5px;
     left: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &.mobile {
+        flex-direction: row;
+    }
+    > button {
+        margin: 5px;
+    }
 }
 
 .steps {

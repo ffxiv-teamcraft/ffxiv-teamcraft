@@ -138,8 +138,8 @@ export class SimulatorComponent implements OnInit {
             });
 
         this.simulation$ = Observable.combineLatest(
-            this.recipe$.distinctUntilChanged(),
-            this.actions$.distinctUntilChanged(),
+            this.recipe$,
+            this.actions$,
             this.crafterStats$,
             this.hqIngredients$,
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
@@ -261,6 +261,14 @@ export class SimulatorComponent implements OnInit {
         const rotation = this.actions$.getValue();
         rotation.splice(index, 1);
         this.actions$.next(rotation);
+        // If we can edit this rotation and it's a persisted one, autosave on edit
+        if (this.canSave && this.rotationId !== undefined) {
+            this.save();
+        }
+    }
+
+    clearRotation(): void {
+        this.actions = [];
         // If we can edit this rotation and it's a persisted one, autosave on edit
         if (this.canSave && this.rotationId !== undefined) {
             this.save();
