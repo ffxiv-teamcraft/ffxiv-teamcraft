@@ -127,7 +127,7 @@ export class SimulatorComponent implements OnInit {
         this.recipe$.subscribe(recipe => {
             this.recipeSync = recipe;
             this.hqIngredientsData = recipe.ingredients
-                .filter(i => i.id > 20)
+                .filter(i => i.id > 20 && i.quality !== undefined)
                 .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
         });
 
