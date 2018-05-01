@@ -1,4 +1,7 @@
 <div *ngIf="recipe$ | async as recipe; else loading">
-    <app-simulator [recipe]="recipe" [itemId]="itemId" [itemIcon]="itemIcon"></app-simulator>
+    <app-simulator [recipe]="recipe" [actions]="actions" [itemId]="itemId" [itemIcon]="itemIcon" [canSave]="canSave"
+                   [rotationId]="rotationId" (onsave)="save($event)"></app-simulator>
 </div>
-<ng-template #loading>TODO PROPER LOADER</ng-template>
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>

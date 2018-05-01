@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {Observable} from 'rxjs/Observable';
@@ -21,13 +21,15 @@ import {Consumable} from '../../model/consumable';
 import {foods} from '../../../../core/data/sources/foods';
 import {medicines} from '../../../../core/data/sources/medicines';
 import {BonusType} from '../../model/consumable-bonus';
+import {CraftingRotation} from '../../../../model/other/crafting-rotation';
+import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
 
 @Component({
     selector: 'app-simulator',
     templateUrl: './simulator.component.html',
     styleUrls: ['./simulator.component.scss']
 })
-export class SimulatorComponent {
+export class SimulatorComponent implements OnInit {
 
     @Input()
     itemId: number;
@@ -52,7 +54,7 @@ export class SimulatorComponent {
         this.crafterStats$.next(stats);
     }
 
-    private actions$: BehaviorSubject<CraftingAction[]> = new BehaviorSubject<CraftingAction[]>([]);
+    public actions$: BehaviorSubject<CraftingAction[]> = new BehaviorSubject<CraftingAction[]>([]);
 
     @Input()
     public set actions(actions: CraftingAction[]) {
@@ -67,6 +69,12 @@ export class SimulatorComponent {
         this.hqIngredients$.next(ingredients);
     }
 
+    @Input()
+    canSave = true;
+
+    @Output()
+    public onsave: EventEmitter<Partial<CraftingRotation>> = new EventEmitter<Partial<CraftingRotation>>();
+
     public simulation$: Observable<Simulation>;
 
     public result$: Observable<SimulationResult>;
@@ -79,6 +87,17 @@ export class SimulatorComponent {
 
     public selectedSet: GearSet;
 
+    @Input()
+    public set inputGearSet(set: GearSet) {
+        if (set !== undefined) {
+            this.selectedSet = set;
+            this.applyStats(set);
+        }
+    }
+
+    @Input()
+    public rotationId: string;
+
     public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
 
     public foods: Consumable[] = [];
@@ -89,7 +108,9 @@ export class SimulatorComponent {
 
     public selectedMedicine: Consumable;
 
-    private consumables$: BehaviorSubject<Consumable[]> = new BehaviorSubject<Consumable[]>([]);
+    private serializedRotation: string[];
+
+    private recipeSync: Craft;
 
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService) {
@@ -97,7 +118,12 @@ export class SimulatorComponent {
         this.foods = Consumable.fromData(foods);
         this.medicines = Consumable.fromData(medicines);
 
+        this.actions$.subscribe(actions => {
+            this.serializedRotation = this.registry.serializeRotation(actions);
+        });
+
         this.recipe$.subscribe(recipe => {
+            this.recipeSync = recipe;
             this.hqIngredientsData = recipe.ingredients
                 .filter(i => i.id > 20)
                 .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
@@ -112,17 +138,30 @@ export class SimulatorComponent {
             });
 
         this.simulation$ = Observable.combineLatest(
-            this.recipe$,
-            this.actions$,
+            this.recipe$.distinctUntilChanged(),
+            this.actions$.distinctUntilChanged(),
             this.crafterStats$,
             this.hqIngredients$,
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
         );
 
+        this.result$ = this.simulation$.map(simulation => {
+            simulation.reset();
+            return simulation.run(true);
+        });
+
+        this.report$ = this.result$
+            .debounceTime(500)
+            .filter(res => res.success)
+            .mergeMap(() => this.simulation$)
+            .map(simulation => simulation.getReliabilityReport());
+    }
+
+    ngOnInit(): void {
         if (!this.customMode) {
             Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
                 let userSet = gearsets.find(set => set.jobId === recipe.job);
-                if (userSet === undefined) {
+                if (userSet === undefined && this.selectedSet === undefined) {
                     userSet = {
                         ilvl: 0,
                         control: 1000,
@@ -139,13 +178,23 @@ export class SimulatorComponent {
                 this.applyStats(set);
             });
         }
+    }
 
-        this.result$ = this.simulation$.map(simulation => simulation.run(true));
-
-        this.report$ = this.result$
-            .filter(res => res.success)
-            .mergeMap(() => this.simulation$)
-            .map(simulation => simulation.getReliabilityReport());
+    save(): void {
+        if (!this.customMode) {
+            this.onsave.emit({
+                $key: this.rotationId,
+                rotation: this.serializedRotation,
+                recipe: this.recipeSync
+            });
+        } else {
+            this.onsave.emit(<CustomCraftingRotation>{
+                $key: this.rotationId,
+                stats: this.selectedSet,
+                rotation: this.serializedRotation,
+                recipe: this.recipeSync
+            });
+        }
     }
 
     getStars(nb: number): string {
@@ -160,6 +209,10 @@ export class SimulatorComponent {
         const actions = this.actions$.getValue();
         actions.splice(targetIndex, 0, actions.splice(originIndex, 1)[0]);
         this.actions$.next(actions);
+        // If we can edit this rotation and it's a persisted one, autosave on edit
+        if (this.canSave && this.rotationId !== undefined) {
+            this.save();
+        }
     }
 
     getBonusValue(bonusType: BonusType, baseValue: number): number {
@@ -198,12 +251,20 @@ export class SimulatorComponent {
 
     addAction(action: CraftingAction): void {
         this.actions$.next(this.actions$.getValue().concat(action));
+        // If we can edit this rotation and it's a persisted one, autosave on edit
+        if (this.canSave && this.rotationId !== undefined) {
+            this.save();
+        }
     }
 
     removeAction(index: number): void {
         const rotation = this.actions$.getValue();
         rotation.splice(index, 1);
         this.actions$.next(rotation);
+        // If we can edit this rotation and it's a persisted one, autosave on edit
+        if (this.canSave && this.rotationId !== undefined) {
+            this.save();
+        }
     }
 
     getProgressActions(): CraftingAction[] {

@@ -27,4 +27,14 @@ export class ActionComponent {
 
     @Input()
     notEnoughCp = false;
+
+    @Input()
+    jobId: number;
+
+    @Input()
+    hideCost = false;
+
+    getJobId(): number {
+        return this.simulation !== undefined ? this.simulation.crafterStats.jobId : this.jobId;
+    }
 }

@@ -165,6 +165,13 @@
                     </button>
                 </mat-menu>
 
+                <mat-menu #simulatorMenu="matMenu">
+                    <button mat-menu-item routerLink="/simulator/{{recipe.itemId}}">{{'SIMULATOR.New_rotation' | translate}}</button>
+                    <button mat-menu-item
+                            *ngFor="let rotation of rotations$ | async"
+                            routerLink="/simulator/{{recipe.itemId}}/{{rotation.$key}}">{{rotation.getName()}}</button>
+                </mat-menu>
+
                 <button mat-icon-button [matMenuTriggerFor]="appMenu">
                     <mat-icon>playlist_add</mat-icon>
                 </button>
@@ -176,7 +183,7 @@
                 <button mat-icon-button
                         matTooltip="{{'SIMULATOR.Simulate_tooltip' | translate}}"
                         matTooltipPosition="above"
-                        routerLink="/simulator/{{recipe.itemId}}">
+                        [matMenuTriggerFor]="simulatorMenu">
                     <i class="fas fa-gavel"></i>
                 </button>
             </div>

@@ -44,8 +44,8 @@ export class Simulation {
 
     public getReliabilityReport(): SimulationReliabilityReport {
         const results: SimulationResult[] = [];
-        // Let's run the simulation 1000 times.
-        for (let i = 0; i < 1000; i++) {
+        // Let's run the simulation 500 times.
+        for (let i = 0; i < 500; i++) {
             results.push(this.run(false));
             this.reset();
         }
@@ -60,8 +60,8 @@ export class Simulation {
         }
         return {
             rawData: results,
-            successPercent: successPercent,
-            averageHQPercent: hqPercent,
+            successPercent: Math.round(successPercent),
+            averageHQPercent: Math.round(hqPercent),
             medianHQPercent: hqMedian
         }
     }

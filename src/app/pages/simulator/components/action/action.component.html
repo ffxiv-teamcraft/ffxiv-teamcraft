@@ -1,9 +1,9 @@
 <div class="action-container" (click)="!disabled && !notEnoughCp?actionclick.emit():null"
-     [appXivdbActionTooltip]="action.getId(simulation.crafterStats.jobId)">
+     [appXivdbActionTooltip]="action.getId(getJobId())">
     <div class="action"
          [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp, 'not-enough-cp': notEnoughCp}">
-        <img src="{{action.getId(simulation.crafterStats.jobId) | actionIcon}}" alt="">
+        <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
         <span class="cost"
-              *ngIf="action.getBaseCPCost(simulation) > 0">{{action.getBaseCPCost(simulation)}}</span>
+              *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0">{{action.getBaseCPCost(simulation)}}</span>
     </div>
 </div>

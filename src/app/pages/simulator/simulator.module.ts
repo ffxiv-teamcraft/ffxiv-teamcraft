@@ -15,6 +15,7 @@ import {
     MatInputModule,
     MatListModule,
     MatProgressBarModule,
+    MatProgressSpinnerModule,
     MatSelectModule,
     MatTooltipModule,
 } from '@angular/material';
@@ -26,15 +27,28 @@ import {SettingsModule} from 'app/pages/settings/settings.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {CustomSimulatorPageComponent} from './components/custom-simulator-page/custom-simulator-page.component';
+import {RotationsPageComponent} from './components/rotations-page/rotations-page.component';
 
 const routes: Routes = [
+    {
+        path: 'simulator/custom/:rotationId',
+        component: CustomSimulatorPageComponent
+    },
     {
         path: 'simulator/custom',
         component: CustomSimulatorPageComponent
     },
     {
+        path: 'simulator/:itemId/:rotationId',
+        component: SimulatorPageComponent
+    },
+    {
         path: 'simulator/:itemId',
         component: SimulatorPageComponent
+    },
+    {
+        path: 'rotations',
+        component: RotationsPageComponent
     }
 ];
 
@@ -58,6 +72,7 @@ const routes: Routes = [
         MatInputModule,
         MatListModule,
         MatTooltipModule,
+        MatProgressSpinnerModule,
 
         CommonComponentsModule,
         TooltipModule,
@@ -69,7 +84,8 @@ const routes: Routes = [
         CustomSimulatorPageComponent,
         SimulatorPageComponent,
         SimulatorComponent,
-        ActionComponent
+        ActionComponent,
+        RotationsPageComponent
     ],
     providers: [
         CraftingActionsRegistry,

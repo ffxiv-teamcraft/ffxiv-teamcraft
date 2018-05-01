@@ -62,7 +62,7 @@ export class TrainedHand extends GeneralAction {
     }
 
     getIds(): number[] {
-        return [100161, 100162, 100163, 100164, 100165, 1001666, 100167, 100168];
+        return [100161, 100162, 100163, 100164, 100165, 100166, 100167, 100168];
     }
 
     // Potency is the same for both quality and progression so let's use this.

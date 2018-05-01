@@ -86,6 +86,13 @@
                     <mat-icon matListIcon>search</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Recipes' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/rotations" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'SIMULATOR.Rotations' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>chrome_reader_mode</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'SIMULATOR.Rotations' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
                                matTooltip="{{'Lists' | translate}}"

@@ -447,6 +447,10 @@
         "Reliability": "Reliability",
         "Average_hq": "Average HQ",
         "Specialist": "Specialist",
+        "New_rotation": "New rotation",
+        "Rotations": "Crafting rotations",
+        "No_rotations": "No rotations",
+        "New_custom_rotation": "New custom rotation",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",

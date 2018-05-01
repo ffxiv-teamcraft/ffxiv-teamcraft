@@ -24,4 +24,5 @@
     </div>
 </mat-expansion-panel>
 
-<app-simulator [recipe]="recipe" [customMode]="true"></app-simulator>
+<app-simulator [recipe]="recipe" [inputGearSet]="stats" [actions]="actions"
+               [customMode]="true" [canSave]="canSave" [rotationId]="rotationId" (onsave)="save($event)"></app-simulator>
