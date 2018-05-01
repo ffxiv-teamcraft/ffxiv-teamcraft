@@ -6,19 +6,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {PipesModule} from '../../pipes/pipes.module';
-import {
-    MatButtonModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatExpansionModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSelectModule,
-    MatTooltipModule,
-} from '@angular/material';
 import {ActionComponent} from './components/action/action.component';
 import {CraftingActionsRegistry} from './model/crafting-actions-registry';
 import {CoreModule} from 'app/core/core.module';
@@ -28,6 +15,21 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {CustomSimulatorPageComponent} from './components/custom-simulator-page/custom-simulator-page.component';
 import {RotationsPageComponent} from './components/rotations-page/rotations-page.component';
+import {ImportRotationPopupComponent} from './components/import-rotation-popup/import-rotation-popup.component';
+import {
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatTooltipModule,
+} from '@angular/material';
 
 const routes: Routes = [
     {
@@ -73,6 +75,7 @@ const routes: Routes = [
         MatListModule,
         MatTooltipModule,
         MatProgressSpinnerModule,
+        MatDialogModule,
 
         CommonComponentsModule,
         TooltipModule,
@@ -85,7 +88,11 @@ const routes: Routes = [
         SimulatorPageComponent,
         SimulatorComponent,
         ActionComponent,
-        RotationsPageComponent
+        RotationsPageComponent,
+        ImportRotationPopupComponent
+    ],
+    entryComponents: [
+        ImportRotationPopupComponent
     ],
     providers: [
         CraftingActionsRegistry,

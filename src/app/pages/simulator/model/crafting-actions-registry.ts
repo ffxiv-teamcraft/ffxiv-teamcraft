@@ -66,6 +66,73 @@ import {NameOfWater} from './actions/buff/name-of-water';
 @Injectable()
 export class CraftingActionsRegistry {
 
+    private static ACTION_IMPORT_NAMES: { short: string, full: string }[] = [
+        {short: 'observe', full: 'Observe'},
+        {short: 'basicSynth', full: 'BasicSynth'},
+        {short: 'standardSynthesis', full: 'StandardSynthesis'},
+        {short: 'carefulSynthesis', full: 'CarefulSynthesis'},
+        {short: 'carefulSynthesis2', full: 'CarefulSynthesisII'},
+        {short: 'rapidSynthesis', full: 'RapidSynthesis'},
+        {short: 'flawlessSynthesis', full: 'FlawlessSynthesis'},
+        {short: 'pieceByPiece', full: 'PieceByPiece'},
+        {short: 'basicTouch', full: 'BasicTouch'},
+        {short: 'standardTouch', full: 'StandardTouch'},
+        {short: 'advancedTouch', full: 'AdvancedTouch'},
+        {short: 'hastyTouch', full: 'HastyTouch'},
+        {short: 'byregotsBlessing', full: 'ByregotsBlessing'},
+        {short: 'mastersMend', full: 'MastersMend'},
+        {short: 'mastersMend2', full: 'MastersMendII'},
+        {short: 'rumination', full: 'Rumination'},
+        {short: 'tricksOfTheTrade', full: 'TricksOfTheTrade'},
+        {short: 'innerQuiet', full: 'InnerQuiet'},
+        {short: 'manipulation', full: 'Manipulation'},
+        {short: 'comfortZone', full: 'ComfortZone'},
+        {short: 'steadyHand', full: 'SteadyHand'},
+        {short: 'steadyHand2', full: 'SteadyHandII'},
+        {short: 'wasteNot', full: 'WasteNot'},
+        {short: 'wasteNot2', full: 'WasteNotII'},
+        {short: 'innovation', full: 'Innovation'},
+        {short: 'greatStrides', full: 'GreatStrides'},
+        {short: 'ingenuity', full: 'Ingenuity'},
+        {short: 'ingenuity2', full: 'Ingenuity2'},
+        {short: 'byregotsBrow', full: 'ByregotsBrow'},
+        {short: 'preciseTouch', full: 'PreciseTouch'},
+        {short: 'makersMark', full: 'MakersMark'},
+        {short: 'muscleMemory', full: 'MuscleMemory'},
+        {short: 'whistle', full: 'WhistleWhileYouWork'},
+        {short: 'satisfaction', full: 'Satisfaction'},
+        {short: 'innovativeTouch', full: 'InnovativeTouch'},
+        {short: 'nymeiasWheel', full: 'NymeiasWheel'},
+        {short: 'byregotsMiracle', full: 'ByregotsMiracle'},
+        {short: 'trainedHand', full: 'TrainedHand'},
+        {short: 'brandOfEarth', full: 'BrandOfEarth'},
+        {short: 'brandOfFire', full: 'BrandOfFire'},
+        {short: 'brandOfIce', full: 'BrandOfIce'},
+        {short: 'brandOfLightning', full: 'BrandOfLightning'},
+        {short: 'brandOfWater', full: 'BrandOfWater'},
+        {short: 'brandOfWind', full: 'BrandOfWind'},
+        {short: 'nameOfEarth', full: 'NameOfEarth'},
+        {short: 'nameOfFire', full: 'NameOfFire'},
+        {short: 'nameOfIce', full: 'NameOfIce'},
+        {short: 'nameOfLightning', full: 'NameOfLightning'},
+        {short: 'nameOfWater', full: 'NameOfWater'},
+        {short: 'nameOfWind', full: 'NameOfTheWind'},
+        {short: 'hastyTouch2', full: 'HastyTouchII'},
+        {short: 'carefulSynthesis3', full: 'CarefulSynthesisIII'},
+        {short: 'rapidSynthesis2', full: 'RapidSynthesisII'},
+        {short: 'patientTouch', full: 'PatientTouch'},
+        {short: 'manipulation2', full: 'ManipulationII'},
+        {short: 'prudentTouch', full: 'PrudentTouch'},
+        {short: 'focusedSynthesis', full: 'FocusedSynthesis'},
+        {short: 'focusedTouch', full: 'FocusedTouch'},
+        {short: 'initialPreparations', full: 'InitialPreparations'},
+        {short: 'specialtyReinforce', full: 'SpecialtyReinforce'},
+        {short: 'specialtyRefurbish', full: 'SpecialtyRefurbish'},
+        {short: 'specialtyReflect', full: 'SpecialtyReflect'},
+        {short: 'strokeOfGenius', full: 'StrokeOfGenius'},
+        {short: 'finishingTouches', full: 'FinishingTouches'},
+    ];
+
     private static readonly ALL_ACTIONS: CraftingAction[] = [
         // Progress actions
         new BasicSynthesis(),
@@ -145,6 +212,20 @@ export class CraftingActionsRegistry {
 
     public getActionsByType(type: ActionType): CraftingAction[] {
         return CraftingActionsRegistry.ALL_ACTIONS.filter(action => action.getType() === type);
+    }
+
+    public importFromCraftOpt(importArray: string[]): CraftingAction[] {
+        return importArray.map(row => {
+            const found = CraftingActionsRegistry.ACTION_IMPORT_NAMES
+                .find(action => action.short === row);
+            if (found === undefined) {
+                return undefined
+            }
+            return CraftingActionsRegistry.ALL_ACTIONS
+                .find(el => {
+                    return el.getName() === found.full;
+                });
+        }).filter(action => action !== undefined);
     }
 
     public serializeRotation(rotation: CraftingAction[]): string[] {

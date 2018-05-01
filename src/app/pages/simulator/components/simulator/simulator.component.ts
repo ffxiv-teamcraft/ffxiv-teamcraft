@@ -23,6 +23,8 @@ import {medicines} from '../../../../core/data/sources/medicines';
 import {BonusType} from '../../model/consumable-bonus';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
+import {MatDialog} from '@angular/material';
+import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
 
 @Component({
     selector: 'app-simulator',
@@ -113,7 +115,7 @@ export class SimulatorComponent implements OnInit {
     private recipeSync: Craft;
 
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
-                private dataService: DataService, private htmlTools: HtmlToolsService) {
+                private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog) {
 
         this.foods = Consumable.fromData(foods);
         this.medicines = Consumable.fromData(medicines);
@@ -178,6 +180,15 @@ export class SimulatorComponent implements OnInit {
                 this.applyStats(set);
             });
         }
+    }
+
+    importRotation(): void {
+        this.dialog.open(ImportRotationPopupComponent)
+            .afterClosed()
+            .filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1)
+            .map(importString => <string[]>JSON.parse(importString))
+            .map(importArray => this.registry.importFromCraftOpt(importArray))
+            .subscribe(rotation => this.actions = rotation);
     }
 
     save(): void {

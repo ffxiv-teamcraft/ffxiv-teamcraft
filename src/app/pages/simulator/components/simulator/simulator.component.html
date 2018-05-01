@@ -11,6 +11,12 @@
             *ngIf="(actions$ | async).length > 0" (click)="clearRotation()">
         <mat-icon>refresh</mat-icon>
     </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="importRotation()">
+        <mat-icon>file_download</mat-icon>
+    </button>
 </div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
     <mat-expansion-panel-header>
