@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Observable} from 'rxjs/Observable';
@@ -9,6 +9,7 @@ import {GearSet} from '../../model/gear-set';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {UserService} from '../../../../core/database/user.service';
+import {Consumable} from '../../model/consumable';
 
 @Component({
     selector: 'app-simulator-page',
@@ -32,6 +33,10 @@ export class SimulatorPageComponent {
     public canSave = false;
 
     public rotationId: string;
+
+    public selectedFood: Consumable;
+
+    public selectedMedicine: Consumable;
 
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
@@ -61,6 +66,8 @@ export class SimulatorPageComponent {
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
+            this.selectedFood = res.rotation.consumables.food;
+            this.selectedMedicine = res.rotation.consumables.medicine;
         });
     }
 
@@ -74,6 +81,7 @@ export class SimulatorPageComponent {
             result.recipe = rotation.recipe;
             result.description = '';
             result.name = '';
+            result.consumables = rotation.consumables;
             return result;
         }).mergeMap(preparedRotation => {
             if (preparedRotation.$key === undefined) {

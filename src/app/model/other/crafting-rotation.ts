@@ -1,5 +1,7 @@
 import {DataModel} from '../../core/database/storage/data-model';
 import {Craft} from '../garland-tools/craft';
+import {SavedConsumables} from './saved-consumables';
+import {DeserializeAs} from '@kaiu/serializer';
 
 export class CraftingRotation extends DataModel {
 
@@ -14,6 +16,9 @@ export class CraftingRotation extends DataModel {
     public description: string;
 
     public defaultItemId?: number;
+
+    @DeserializeAs(SavedConsumables)
+    public consumables: SavedConsumables = new SavedConsumables();
 
     public getName(): string {
         return `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps`;

@@ -1,6 +1,7 @@
 <div *ngIf="recipe$ | async as recipe; else loading">
     <app-simulator [recipe]="recipe" [actions]="actions" [itemId]="itemId" [itemIcon]="itemIcon" [canSave]="canSave"
-                   [rotationId]="rotationId" (onsave)="save($event)"></app-simulator>
+                   [rotationId]="rotationId" (onsave)="save($event)" [selectedFood]="selectedFood"
+    [selectedMedicine]="selectedMedicine"></app-simulator>
 </div>
 <ng-template #loading>
     <mat-spinner></mat-spinner>

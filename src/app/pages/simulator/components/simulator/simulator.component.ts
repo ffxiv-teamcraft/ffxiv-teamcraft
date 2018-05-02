@@ -105,10 +105,12 @@ export class SimulatorComponent implements OnInit {
 
     public foods: Consumable[] = [];
 
+    @Input()
     public selectedFood: Consumable;
 
     public medicines: Consumable[] = [];
 
+    @Input()
     public selectedMedicine: Consumable;
 
     private serializedRotation: string[];
@@ -201,14 +203,16 @@ export class SimulatorComponent implements OnInit {
             this.onsave.emit({
                 $key: this.rotationId,
                 rotation: this.serializedRotation,
-                recipe: this.recipeSync
+                recipe: this.recipeSync,
+                consumables: {food: this.selectedFood, medicine: this.selectedMedicine}
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
                 $key: this.rotationId,
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
-                recipe: this.recipeSync
+                recipe: this.recipeSync,
+                consumables: {food: this.selectedFood, medicine: this.selectedMedicine}
             });
         }
     }
@@ -263,6 +267,10 @@ export class SimulatorComponent implements OnInit {
             set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
             set.level);
+        // If we can edit this rotation and it's a persisted one, autosave on edit
+        if (this.canSave && this.rotationId !== undefined) {
+            this.save();
+        }
     }
 
     addAction(action: CraftingAction): void {
