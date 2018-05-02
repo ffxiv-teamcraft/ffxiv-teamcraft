@@ -116,8 +116,10 @@ export class Simulation {
                     state: this.state,
                 });
             }
-            // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
-            this.tickBuffs(linear);
+            if (this.steps.length < maxTurns) {
+                // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
+                this.tickBuffs(linear);
+            }
             // Tick state to change it for next turn if not in linear mode
             if (!linear) {
                 this.tickState();

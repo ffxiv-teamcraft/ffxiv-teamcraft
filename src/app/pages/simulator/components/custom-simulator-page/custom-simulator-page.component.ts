@@ -4,7 +4,6 @@ import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-ro
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {Observable} from 'rxjs/Observable';
-import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';
@@ -35,6 +34,8 @@ export class CustomSimulatorPageComponent {
 
     public rotationId: string;
 
+    public notFound = false;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
 
@@ -49,12 +50,13 @@ export class CustomSimulatorPageComponent {
                 .map(res => <CustomCraftingRotation>res),
             (userId, rotation) => ({userId: userId, rotation: rotation})
         ).subscribe((res) => {
+            this.notFound = false;
             this.recipe = res.rotation.recipe;
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.stats = res.rotation.stats;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
-        });
+        }, () => this.notFound = true);
     }
 
     save(rotation: Partial<CustomCraftingRotation>): void {

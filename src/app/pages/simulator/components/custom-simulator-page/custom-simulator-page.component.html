@@ -1,28 +1,37 @@
-<mat-expansion-panel expanded="true">
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-            {{'SIMULATOR.CUSTOM.Recipe_configuration' | translate}}
-        </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="details-form">
-        <mat-input-container>
-            <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_level' | translate}}"
-                   [(ngModel)]="recipe.rlvl">
-        </mat-input-container>
-        <mat-input-container>
-            <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_progress' | translate}}"
-                   [(ngModel)]="recipe.progress">
-        </mat-input-container>
-        <mat-input-container>
-            <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_quality' | translate}}"
-                   [(ngModel)]="recipe.quality">
-        </mat-input-container>
-        <mat-input-container>
-            <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_durability' | translate}}"
-                   [(ngModel)]="recipe.durability">
-        </mat-input-container>
-    </div>
-</mat-expansion-panel>
+<div *ngIf="!notFound; else notFoundTemplate">
+    <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{'SIMULATOR.CUSTOM.Recipe_configuration' | translate}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="details-form">
+            <mat-input-container>
+                <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_level' | translate}}"
+                       [(ngModel)]="recipe.rlvl">
+            </mat-input-container>
+            <mat-input-container>
+                <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_progress' | translate}}"
+                       [(ngModel)]="recipe.progress">
+            </mat-input-container>
+            <mat-input-container>
+                <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_quality' | translate}}"
+                       [(ngModel)]="recipe.quality">
+            </mat-input-container>
+            <mat-input-container>
+                <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_durability' | translate}}"
+                       [(ngModel)]="recipe.durability">
+            </mat-input-container>
+        </div>
+    </mat-expansion-panel>
 
-<app-simulator [recipe]="recipe" [inputGearSet]="stats" [actions]="actions"
-               [customMode]="true" [canSave]="canSave" [rotationId]="rotationId" (onsave)="save($event)"></app-simulator>
+    <app-simulator [recipe]="recipe" [inputGearSet]="stats" [actions]="actions"
+                   [customMode]="true" [canSave]="canSave" [rotationId]="rotationId"
+                   (onsave)="save($event)"></app-simulator>
+
+</div>
+<ng-template #notFoundTemplate>
+    <div class="not-found">
+        {{'SIMULATOR.Rotation_not_found' | translate}}
+    </div>
+</ng-template>

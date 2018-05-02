@@ -2,7 +2,7 @@
     <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Persist' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
-            *ngIf="(actions$ | async).length > 0 && rotationId === undefined" (click)="save()">
+            *ngIf="(actions$ | async).length > 0 && ((dirty && canSave) || rotationId === undefined)" (click)="save()">
         <mat-icon>save</mat-icon>
     </button>
     <button mat-mini-fab
@@ -229,9 +229,20 @@
                 <mat-card-subtitle *ngIf="itemId !== undefined">
                     <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
                 </mat-card-subtitle>
-                <span class="steps">
-                    {{'SIMULATOR.Step_counter' | translate}} {{resultData.simulation.steps.length}}
-                </span>
+                <div class="steps mobile">
+                    {{'SIMULATOR.Step_counter' | translate}}
+                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input mobile">
+                        <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
+                               [ngModel]="resultData.simulation.steps.length"
+                               (ngModelChange)="snapshotStep$.next($event)"
+                               matInput>
+                    </mat-input-container>
+                    <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
+                    <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
+                            matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">
+                        <mat-icon>camera_roll</mat-icon>
+                    </button>
+                </div>
             </mat-card-header>
             <mat-card-content class="mobile-result">
                 <span class="durability-value">{{'SIMULATOR.Durability' | translate}} : {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>

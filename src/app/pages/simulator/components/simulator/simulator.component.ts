@@ -121,6 +121,8 @@ export class SimulatorComponent implements OnInit {
 
     public snapshotMode = false;
 
+    public dirty = false;
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog) {
 
@@ -128,6 +130,7 @@ export class SimulatorComponent implements OnInit {
         this.medicines = Consumable.fromData(medicines);
 
         this.actions$.subscribe(actions => {
+            this.dirty = false;
             this.serializedRotation = this.registry.serializeRotation(actions);
         });
 
@@ -148,7 +151,7 @@ export class SimulatorComponent implements OnInit {
 
         this.simulation$ = Observable.combineLatest(
             this.recipe$,
-            this.actions$.debounceTime(300),
+            this.actions$,
             this.crafterStats$,
             this.hqIngredients$,
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
@@ -163,7 +166,7 @@ export class SimulatorComponent implements OnInit {
         });
 
         this.report$ = this.result$
-            .debounceTime(500)
+            .debounceTime(250)
             .filter(res => res.success)
             .mergeMap(() => this.simulation$)
             .map(simulation => simulation.getReliabilityReport());
@@ -200,7 +203,10 @@ export class SimulatorComponent implements OnInit {
             .filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1)
             .map(importString => <string[]>JSON.parse(importString))
             .map(importArray => this.registry.importFromCraftOpt(importArray))
-            .subscribe(rotation => this.actions = rotation);
+            .subscribe(rotation => {
+                this.actions = rotation;
+                this.dirty = true;
+            });
     }
 
     generateMacro(): void {
@@ -238,10 +244,7 @@ export class SimulatorComponent implements OnInit {
         const actions = this.actions$.getValue();
         actions.splice(targetIndex, 0, actions.splice(originIndex, 1)[0]);
         this.actions$.next(actions);
-        // If we can edit this rotation and it's a persisted one, autosave on edit
-        if (this.canSave && this.rotationId !== undefined) {
-            this.save();
-        }
+        this.dirty = true;
     }
 
     getBonusValue(bonusType: BonusType, baseValue: number): number {
@@ -276,36 +279,24 @@ export class SimulatorComponent implements OnInit {
             set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
             set.level);
-        // If we can edit this rotation and it's a persisted one, autosave on edit
-        if (this.canSave && this.rotationId !== undefined) {
-            this.save();
-        }
+        this.dirty = true;
     }
 
     addAction(action: CraftingAction): void {
         this.actions$.next(this.actions$.getValue().concat(action));
-        // If we can edit this rotation and it's a persisted one, autosave on edit
-        if (this.canSave && this.rotationId !== undefined) {
-            this.save();
-        }
+        this.dirty = true;
     }
 
     removeAction(index: number): void {
         const rotation = this.actions$.getValue();
         rotation.splice(index, 1);
         this.actions$.next(rotation);
-        // If we can edit this rotation and it's a persisted one, autosave on edit
-        if (this.canSave && this.rotationId !== undefined) {
-            this.save();
-        }
+        this.dirty = true;
     }
 
     clearRotation(): void {
         this.actions = [];
-        // If we can edit this rotation and it's a persisted one, autosave on edit
-        if (this.canSave && this.rotationId !== undefined) {
-            this.save();
-        }
+        this.dirty = true;
     }
 
     getProgressActions(): CraftingAction[] {

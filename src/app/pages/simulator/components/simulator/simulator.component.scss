@@ -19,6 +19,9 @@
 .snapshot-input {
     margin: 0 10px;
     min-width: 50px;
+    &.mobile {
+        min-width: 30px;
+    }
 }
 
 .steps {
@@ -28,6 +31,10 @@
     padding-bottom: 10px;
     display: flex;
     align-items: center;
+    &.mobile{
+        font-size: .8rem;
+        margin-right: 0;
+    }
 }
 
 .configuration {

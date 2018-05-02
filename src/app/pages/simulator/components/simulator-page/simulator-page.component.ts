@@ -69,12 +69,13 @@ export class SimulatorPageComponent {
                 .map(res => res),
             (userId, rotation) => ({userId: userId, rotation: rotation})
         ).subscribe((res) => {
+            this.notFound = false;
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
             this.selectedFood = res.rotation.consumables.food;
             this.selectedMedicine = res.rotation.consumables.medicine;
-        });
+        }, () => this.notFound = true);
     }
 
     save(rotation: Partial<CraftingRotation>): void {
