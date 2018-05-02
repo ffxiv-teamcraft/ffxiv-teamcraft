@@ -1,7 +1,7 @@
 <h1>{{'SIMULATOR.Rotations' | translate}}</h1>
 <div *ngIf="rotations$ | async as rotations">
     <div *ngIf="rotations.length > 0; else noRotations">
-        <mat-expansion-panel *ngFor="let rotation of rotations; trackBy: trackByRotation">
+        <mat-expansion-panel *ngFor="let rotation of rotations; trackBy: trackByRotation" class="rotation-panel">
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{rotation.getName()}}

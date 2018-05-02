@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {Observable} from 'rxjs/Observable';
@@ -26,13 +26,14 @@ import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-ro
 import {MatDialog} from '@angular/material';
 import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
 import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
+import {PendingChangesService} from 'app/core/database/pending-changes/pending-changes.service';
 
 @Component({
     selector: 'app-simulator',
     templateUrl: './simulator.component.html',
     styleUrls: ['./simulator.component.scss']
 })
-export class SimulatorComponent implements OnInit {
+export class SimulatorComponent implements OnInit, OnDestroy {
 
     @Input()
     itemId: number;
@@ -124,13 +125,15 @@ export class SimulatorComponent implements OnInit {
     public dirty = false;
 
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
-                private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog) {
+                private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
+                private pendingChanges: PendingChangesService) {
 
         this.foods = Consumable.fromData(foods);
         this.medicines = Consumable.fromData(medicines);
 
         this.actions$.subscribe(actions => {
             this.dirty = false;
+            this.pendingChanges.removePendingChange('rotation');
             this.serializedRotation = this.registry.serializeRotation(actions);
         });
 
@@ -191,7 +194,7 @@ export class SimulatorComponent implements OnInit {
             }).subscribe(set => {
                 setTimeout(() => {
                     this.selectedSet = set;
-                    this.applyStats(set);
+                    this.applyStats(set, false);
                 }, 500);
             });
         }
@@ -205,12 +208,17 @@ export class SimulatorComponent implements OnInit {
             .map(importArray => this.registry.importFromCraftOpt(importArray))
             .subscribe(rotation => {
                 this.actions = rotation;
-                this.dirty = true;
+                this.markAsDirty();
             });
     }
 
     generateMacro(): void {
         this.dialog.open(MacroPopupComponent, {data: this.actions$.getValue()});
+    }
+
+    private markAsDirty(): void {
+        this.pendingChanges.addPendingChange('rotation');
+        this.dirty = true;
     }
 
     save(): void {
@@ -244,7 +252,7 @@ export class SimulatorComponent implements OnInit {
         const actions = this.actions$.getValue();
         actions.splice(targetIndex, 0, actions.splice(originIndex, 1)[0]);
         this.actions$.next(actions);
-        this.dirty = true;
+        this.markAsDirty();
     }
 
     getBonusValue(bonusType: BonusType, baseValue: number): number {
@@ -271,7 +279,7 @@ export class SimulatorComponent implements OnInit {
         return bonusFromFood + bonusFromMedicine;
     }
 
-    applyStats(set: GearSet): void {
+    applyStats(set: GearSet, markDirty = true): void {
         this.crafterStats = new CrafterStats(
             set.jobId,
             set.craftsmanship + this.getBonusValue('Craftsmanship', set.craftsmanship),
@@ -279,24 +287,26 @@ export class SimulatorComponent implements OnInit {
             set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
             set.level);
-        this.dirty = true;
+        if (markDirty) {
+            this.markAsDirty();
+        }
     }
 
     addAction(action: CraftingAction): void {
         this.actions$.next(this.actions$.getValue().concat(action));
-        this.dirty = true;
+        this.markAsDirty();
     }
 
     removeAction(index: number): void {
         const rotation = this.actions$.getValue();
         rotation.splice(index, 1);
         this.actions$.next(rotation);
-        this.dirty = true;
+        this.markAsDirty();
     }
 
     clearRotation(): void {
         this.actions = [];
-        this.dirty = true;
+        this.markAsDirty();
     }
 
     getProgressActions(): CraftingAction[] {
@@ -329,5 +339,9 @@ export class SimulatorComponent implements OnInit {
 
     isMobile(): boolean {
         return this.media.isActive('xs') || this.media.isActive('sm');
+    }
+
+    ngOnDestroy(): void {
+        this.pendingChanges.removePendingChange('rotation');
     }
 }
