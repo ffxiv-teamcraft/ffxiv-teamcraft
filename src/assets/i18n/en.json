@@ -454,6 +454,8 @@
         "Reset": "Reset rotation",
         "Import_from_crafting_optimizer": "Import from crafting optimizer",
         "Crafting_optimizer_code": "Crafting optimizer import code",
+        "Generated_macro": "Ingame Macro",
+        "Generate_ingame_macro": "Generate ingame macro",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",

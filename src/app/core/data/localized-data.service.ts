@@ -71,6 +71,14 @@ export class LocalizedDataService {
         return result;
     }
 
+    public getCraftingAction(id: number): I18nName {
+        const result = this.getRow(craftingActions, id) || this.getRow(actions, id);
+        if (result === undefined) {
+            throw new Error('Data row not found.');
+        }
+        return result;
+    }
+
     private getRow(array: any, id: number | string): I18nName {
         if (array === undefined) {
             return undefined;

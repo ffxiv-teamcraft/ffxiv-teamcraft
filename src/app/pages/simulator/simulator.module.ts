@@ -30,6 +30,7 @@ import {
     MatSelectModule,
     MatTooltipModule,
 } from '@angular/material';
+import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
 
 const routes: Routes = [
     {
@@ -89,10 +90,12 @@ const routes: Routes = [
         SimulatorComponent,
         ActionComponent,
         RotationsPageComponent,
-        ImportRotationPopupComponent
+        ImportRotationPopupComponent,
+        MacroPopupComponent
     ],
     entryComponents: [
-        ImportRotationPopupComponent
+        ImportRotationPopupComponent,
+        MacroPopupComponent
     ],
     providers: [
         CraftingActionsRegistry,

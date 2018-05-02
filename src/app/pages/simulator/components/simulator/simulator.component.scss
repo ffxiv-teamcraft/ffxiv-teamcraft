@@ -1,13 +1,15 @@
 
 .top-buttons {
-    position: absolute;
-    top: 5px;
-    left: 5px;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    transform: translateX(-145%);
     &.mobile {
         flex-direction: row;
+        position: relative;
+        transform: none;
+        margin-bottom: 10px;
+        justify-content: space-evenly;
     }
     > button {
         margin: 5px;
@@ -44,6 +46,7 @@
         .details-row {
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
         }
         margin-bottom: 20px;
     }

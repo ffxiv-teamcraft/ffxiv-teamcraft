@@ -25,6 +25,7 @@ import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
 import {MatDialog} from '@angular/material';
 import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
+import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
 
 @Component({
     selector: 'app-simulator',
@@ -189,6 +190,10 @@ export class SimulatorComponent implements OnInit {
             .map(importString => <string[]>JSON.parse(importString))
             .map(importArray => this.registry.importFromCraftOpt(importArray))
             .subscribe(rotation => this.actions = rotation);
+    }
+
+    generateMacro(): void {
+        this.dialog.open(MacroPopupComponent, {data: this.actions$.getValue()});
     }
 
     save(): void {
