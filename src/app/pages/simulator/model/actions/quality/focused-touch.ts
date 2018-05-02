@@ -17,7 +17,8 @@ export class FocusedTouch extends QualityAction {
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return simulationState.lastStep !== undefined && simulationState.lastStep.action.getIds() === new Observe().getIds() ? 100 : 50;
+        return simulationState.lastStep !== undefined
+        && simulationState.lastStep.action.getIds()[0] === new Observe().getIds()[0] ? 100 : 50;
     }
 
     getIds(): number[] {

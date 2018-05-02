@@ -81,9 +81,10 @@ export class Simulation {
     /**
      * Run the simulation.
      * @param {boolean} linear should everything be linear (aka no fail on actions, Initial preparations never procs)
+     * @param maxTurns
      * @returns {ActionResult[]}
      */
-    public run(linear = false): SimulationResult {
+    public run(linear = false, maxTurns = Infinity): SimulationResult {
         this.actions.forEach((action: CraftingAction, index: number) => {
             // If we're starting and the crafter is specialist
             if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
@@ -99,7 +100,8 @@ export class Simulation {
                 this.maxCP += 15;
             }
             // If we can use the action
-            if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)) {
+            if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
+                && this.steps.length < maxTurns) {
                 this.runAction(action, linear);
             } else {
                 // If we can't, add the step to the result but skip it.

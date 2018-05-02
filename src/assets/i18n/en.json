@@ -459,6 +459,7 @@
         "Share_link_copied": "Rotation share link copied to clipboard",
         "Persist": "Save this rotation",
         "Rotation_not_found": "Rotation not found",
+        "Confirm_delete": "Do you really want to delete this rotation?",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",

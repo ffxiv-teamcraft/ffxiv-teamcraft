@@ -153,9 +153,20 @@
                 <mat-card-subtitle *ngIf="itemId !== undefined">
                     <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
                 </mat-card-subtitle>
-                <span class="steps">
-                    {{'SIMULATOR.Step_counter' | translate}} {{resultData.simulation.steps.length}}
-                </span>
+                <div class="steps">
+                    {{'SIMULATOR.Step_counter' | translate}}
+                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input">
+                        <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
+                               [ngModel]="resultData.simulation.steps.length"
+                               (ngModelChange)="snapshotStep$.next($event)"
+                               matInput>
+                    </mat-input-container>
+                    <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
+                    <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
+                            matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">
+                        <mat-icon>camera_roll</mat-icon>
+                    </button>
+                </div>
             </mat-card-header>
             <mat-card-content class="result">
                 <div class="durability">
@@ -304,7 +315,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -314,7 +325,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -326,7 +337,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -336,7 +347,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -348,7 +359,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -358,7 +369,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -368,7 +379,7 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true)
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"

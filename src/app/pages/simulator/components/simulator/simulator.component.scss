@@ -16,13 +16,18 @@
     }
 }
 
+.snapshot-input {
+    margin: 0 10px;
+    min-width: 50px;
+}
+
 .steps {
     white-space: nowrap;
     font-size: 1.2rem;
     margin-right: 20px;
     padding-bottom: 10px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .configuration {

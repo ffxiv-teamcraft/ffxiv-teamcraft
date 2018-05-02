@@ -117,6 +117,10 @@ export class SimulatorComponent implements OnInit {
 
     private recipeSync: Craft;
 
+    public snapshotStep$: BehaviorSubject<number> = new BehaviorSubject<number>(Infinity);
+
+    public snapshotMode = false;
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog) {
 
@@ -144,14 +148,17 @@ export class SimulatorComponent implements OnInit {
 
         this.simulation$ = Observable.combineLatest(
             this.recipe$,
-            this.actions$.debounceTime(200),
+            this.actions$.debounceTime(300),
             this.crafterStats$,
             this.hqIngredients$,
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
         );
 
-        this.result$ = this.simulation$.map(simulation => {
+        this.result$ = Observable.combineLatest(this.snapshotStep$, this.simulation$, (step, simulation) => {
             simulation.reset();
+            if (this.snapshotMode) {
+                return simulation.run(true, step);
+            }
             return simulation.run(true);
         });
 
@@ -179,8 +186,10 @@ export class SimulatorComponent implements OnInit {
                 }
                 return userSet;
             }).subscribe(set => {
-                this.selectedSet = set;
-                this.applyStats(set);
+                setTimeout(() => {
+                    this.selectedSet = set;
+                    this.applyStats(set);
+                }, 500);
             });
         }
     }
