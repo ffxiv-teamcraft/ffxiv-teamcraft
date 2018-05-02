@@ -1,10 +1,11 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
+import {Buff} from '../../buff.enum';
 
 export class PrudentTouch extends QualityAction {
 
     canBeUsed(simulationState: Simulation): boolean {
-        return true;
+        return !simulationState.hasBuff(Buff.WASTE_NOT_II) && !simulationState.hasBuff(Buff.WASTE_NOT);
     }
 
     getBaseCPCost(simulationState: Simulation): number {

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Observable} from 'rxjs/Observable';
@@ -38,6 +38,8 @@ export class SimulatorPageComponent {
 
     public selectedMedicine: Consumable;
 
+    public notFound = false;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
                 private data: DataService) {
@@ -50,6 +52,10 @@ export class SimulatorPageComponent {
                         // Because only crystals change between recipes, we take the first one.
                         return item.item.craft[0];
                     });
+            })
+            .catch(() => {
+                this.notFound = true;
+                return Observable.of(null);
             });
 
         this.userId$ = this.userService.getUserData()

@@ -9,7 +9,7 @@ export class CraftingRotation extends DataModel {
 
     public recipe: Partial<Craft>;
 
-    public rotation: string[];
+    public rotation: string[] = [];
 
     public authorId: string;
 

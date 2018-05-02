@@ -457,6 +457,8 @@
         "Generated_macro": "Ingame Macro",
         "Generate_ingame_macro": "Generate ingame macro",
         "Share_link_copied": "Rotation share link copied to clipboard",
+        "Persist": "Save this rotation",
+        "Rotation_not_found": "Rotation not found",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",
