@@ -62,6 +62,8 @@ import {NameOfFire} from './actions/buff/name-of-fire';
 import {NameOfTheWind} from './actions/buff/name-of-the-wind';
 import {NameOfLightning} from './actions/buff/name-of-lightning';
 import {NameOfWater} from './actions/buff/name-of-water';
+import {WasteNot} from './actions/buff/waste-not';
+import {WasteNotII} from './actions/buff/waste-not-ii';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -185,6 +187,8 @@ export class CraftingActionsRegistry {
         new InnerQuiet(),
         new SteadyHand(),
         new SteadyHandII(),
+        new WasteNot(),
+        new WasteNotII(),
         new Ingenuity(),
         new IngenuityII(),
         new GreatStrides(),
