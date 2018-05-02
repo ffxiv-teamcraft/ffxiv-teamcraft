@@ -90,7 +90,7 @@
                                matTooltipPosition="right"
                                matTooltip="{{'SIMULATOR.Rotations' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>chrome_reader_mode</mat-icon>
+                    <mat-icon matListIcon>widgets</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'SIMULATOR.Rotations' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null"

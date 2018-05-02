@@ -6,8 +6,14 @@
                 <mat-panel-title>
                     {{rotation.getName()}}
                 </mat-panel-title>
+                <button mat-icon-button ngxClipboard [cbContent]="getLink(rotation)"
+                        (click)="$event.stopPropagation()"
+                        matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                        (cbOnSuccess)="showCopiedNotification()">
+                    <mat-icon>share</mat-icon>
+                </button>
                 <button mat-icon-button
-                        routerLink="{{rotation.itemId?'/simulator/'+rotation.itemId+'/'+rotation.$key:'/simulator/custom/'+rotation.$key}}"
+                        routerLink="{{rotation.defaultItemId?'/simulator/'+rotation.defaultItemId+'/'+rotation.$key:'/simulator/custom/'+rotation.$key}}"
                         (click)="$event.stopPropagation()">
                     <mat-icon>playlist_play</mat-icon>
                 </button>

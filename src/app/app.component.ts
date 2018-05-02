@@ -37,6 +37,8 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
+    public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
+
     @ViewChild('timers')
     timersSidebar: MatSidenav;
 
@@ -68,7 +70,7 @@ export class AppComponent implements OnInit {
 
     customLinksEnabled = false;
 
-    public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
+    public locales = AppComponent.LOCALES;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,

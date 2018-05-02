@@ -27,10 +27,11 @@ import {
     MatListModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatSelectModule,
+    MatSelectModule, MatSnackBarModule,
     MatTooltipModule,
 } from '@angular/material';
 import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
+import {ClipboardModule} from 'ngx-clipboard';
 
 const routes: Routes = [
     {
@@ -77,6 +78,9 @@ const routes: Routes = [
         MatTooltipModule,
         MatProgressSpinnerModule,
         MatDialogModule,
+        MatSnackBarModule,
+
+        ClipboardModule,
 
         CommonComponentsModule,
         TooltipModule,
