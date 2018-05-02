@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {SettingsService} from '../settings.service';
 import {TranslateService} from '@ngx-translate/core';
+import {AppComponent} from '../../../app.component';
 
 @Component({
     selector: 'app-settings',
@@ -29,6 +30,8 @@ export class SettingsComponent {
 
     locale: string;
 
+    public locales: string[] = AppComponent.LOCALES;
+
     constructor(public settings: SettingsService,
                 private translate: TranslateService) {
         this.locale = this.translate.currentLang;
@@ -38,7 +41,7 @@ export class SettingsComponent {
     }
 
     use(lang: string): void {
-        if (['en', 'de', 'fr', 'ja'].indexOf(lang) === -1) {
+        if (AppComponent.LOCALES.indexOf(lang) === -1) {
             lang = 'en';
         }
         this.locale = lang;

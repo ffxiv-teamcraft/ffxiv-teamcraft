@@ -46,9 +46,6 @@
 </div>
 
 <mat-menu #langMenu="matMenu" yPosition="above">
-    <button mat-menu-item (click)="use('fr')">FR</button>
-    <button mat-menu-item (click)="use('en')">EN</button>
-    <button mat-menu-item (click)="use('de')">DE</button>
-    <button mat-menu-item (click)="use('ja')">JA</button>
+    <button mat-menu-item (click)="use(locale)" *ngFor="let locale of locales">{{locale.toUpperCase()}}</button>
 </mat-menu>
 

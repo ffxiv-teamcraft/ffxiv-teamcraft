@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
 
     customLinksEnabled = false;
 
-    public locales: string[] = ['en', 'de', 'fr', 'ja', 'pt'];
+    public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -280,7 +280,7 @@ export class AppComponent implements OnInit {
     }
 
     use(lang: string): void {
-        if (this.locales.indexOf(lang) === -1) {
+        if (AppComponent.LOCALES.indexOf(lang) === -1) {
             lang = 'en';
         }
         this.locale = lang;
