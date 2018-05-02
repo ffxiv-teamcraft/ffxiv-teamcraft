@@ -135,87 +135,88 @@ export class CraftingActionsRegistry {
         {short: 'finishingTouches', full: 'FinishingTouches'},
     ];
 
-    private static readonly ALL_ACTIONS: CraftingAction[] = [
+    private static readonly ALL_ACTIONS: { name: string, action: CraftingAction }[] = [
         // Progress actions
-        new BasicSynthesis(),
-        new StandardSynthesis(),
-        new FlawlessSynthesis(),
-        new CarefulSynthesis(),
-        new CarefulSynthesisII(),
-        new CarefulSynthesisIII(),
-        new PieceByPiece(),
-        new RapidSynthesis(),
-        new RapidSynthesisII(),
-        new FocusedSynthesis(),
-        new MuscleMemory(),
-        new BrandOfWind(),
-        new BrandOfFire(),
-        new BrandOfIce(),
-        new BrandOfEarth(),
-        new BrandOfLightning(),
-        new BrandOfWater(),
+        {name: 'BasicSynthesis', action: new BasicSynthesis()},
+        {name: 'StandardSynthesis', action: new StandardSynthesis()},
+        {name: 'FlawlessSynthesis', action: new FlawlessSynthesis()},
+        {name: 'CarefulSynthesis', action: new CarefulSynthesis()},
+        {name: 'CarefulSynthesisII', action: new CarefulSynthesisII()},
+        {name: 'CarefulSynthesisIII', action: new CarefulSynthesisIII()},
+        {name: 'PieceByPiece', action: new PieceByPiece()},
+        {name: 'RapidSynthesis', action: new RapidSynthesis()},
+        {name: 'RapidSynthesisII', action: new RapidSynthesisII()},
+        {name: 'FocusedSynthesis', action: new FocusedSynthesis()},
+        {name: 'MuscleMemory', action: new MuscleMemory()},
+        {name: 'BrandOfWind', action: new BrandOfWind()},
+        {name: 'BrandOfFire', action: new BrandOfFire()},
+        {name: 'BrandOfIce', action: new BrandOfIce()},
+        {name: 'BrandOfEarth', action: new BrandOfEarth()},
+        {name: 'BrandOfLightning', action: new BrandOfLightning()},
+        {name: 'BrandOfWater', action: new BrandOfWater()},
 
         // Quality actions
-        new BasicTouch(),
-        new StandardTouch(),
-        new AdvancedTouch(),
-        new HastyTouch(),
-        new HastyTouchII(),
-        new ByregotsBlessing(),
-        new ByregotsBrow(),
-        new ByregotsMiracle(),
-        new PreciseTouch(),
-        new FocusedTouch(),
-        new PatientTouch(),
-        new PrudentTouch(),
-        new InnovativeTouch(),
+        {name: 'BasicTouch', action: new BasicTouch()},
+        {name: 'StandardTouch', action: new StandardTouch()},
+        {name: 'AdvancedTouch', action: new AdvancedTouch()},
+        {name: 'HastyTouch', action: new HastyTouch()},
+        {name: 'HastyTouchII', action: new HastyTouchII()},
+        {name: 'ByregotsBlessing', action: new ByregotsBlessing()},
+        {name: 'ByregotsBrow', action: new ByregotsBrow()},
+        {name: 'ByregotsMiracle', action: new ByregotsMiracle()},
+        {name: 'PreciseTouch', action: new PreciseTouch()},
+        {name: 'FocusedTouch', action: new FocusedTouch()},
+        {name: 'PatientTouch', action: new PatientTouch()},
+        {name: 'PrudentTouch', action: new PrudentTouch()},
+        {name: 'InnovativeTouch', action: new InnovativeTouch()},
 
         // CP recovery
-        new ComfortZone(),
-        new Rumination(),
-        new TricksOfTheTrade(),
-        new Satisfaction(),
+        {name: 'ComfortZone', action: new ComfortZone()},
+        {name: 'Rumination', action: new Rumination()},
+        {name: 'TricksOfTheTrade', action: new TricksOfTheTrade()},
+        {name: 'Satisfaction', action: new Satisfaction()},
 
         // Repair
-        new MastersMend(),
-        new MastersMendII(),
-        new Manipulation(),
-        new ManipulationII(),
-        new NymeiasWheel(),
+        {name: 'MastersMend', action: new MastersMend()},
+        {name: 'MastersMendII', action: new MastersMendII()},
+        {name: 'Manipulation', action: new Manipulation()},
+        {name: 'ManipulationII', action: new ManipulationII()},
+        {name: 'NymeiasWheel', action: new NymeiasWheel()},
 
         // Buffs
-        new InnerQuiet(),
-        new SteadyHand(),
-        new SteadyHandII(),
-        new WasteNot(),
-        new WasteNotII(),
-        new Ingenuity(),
-        new IngenuityII(),
-        new GreatStrides(),
-        new Innovation(),
-        new MakersMark(),
-        new InitialPreparations(),
-        new WhistleWhileYouWork(),
-        new HeartOfTheCrafter(),
-        new NameOfTheWind(),
-        new NameOfFire(),
-        new NameOfIce(),
-        new NameOfEarth(),
-        new NameOfLightning(),
-        new NameOfWater(),
+        {name: 'InnerQuiet', action: new InnerQuiet()},
+        {name: 'SteadyHand', action: new SteadyHand()},
+        {name: 'SteadyHandII', action: new SteadyHandII()},
+        {name: 'WasteNot', action: new WasteNot()},
+        {name: 'WasteNotII', action: new WasteNotII()},
+        {name: 'Ingenuity', action: new Ingenuity()},
+        {name: 'IngenuityII', action: new IngenuityII()},
+        {name: 'GreatStrides', action: new GreatStrides()},
+        {name: 'Innovation', action: new Innovation()},
+        {name: 'MakersMark', action: new MakersMark()},
+        {name: 'InitialPreparations', action: new InitialPreparations()},
+        {name: 'WhistleWhileYouWork', action: new WhistleWhileYouWork()},
+        {name: 'HeartOfTheCrafter', action: new HeartOfTheCrafter()},
+        {name: 'NameOfTheWind', action: new NameOfTheWind()},
+        {name: 'NameOfFire', action: new NameOfFire()},
+        {name: 'NameOfIce', action: new NameOfIce()},
+        {name: 'NameOfEarth', action: new NameOfEarth()},
+        {name: 'NameOfLightning', action: new NameOfLightning()},
+        {name: 'NameOfWater', action: new NameOfWater()},
 
         // Specialties
-        new SpecialtyRefurbish(),
-        new SpecialtyReinforce(),
-        new SpecialtyReflect(),
+        {name: 'SpecialtyRefurbish', action: new SpecialtyRefurbish()},
+        {name: 'SpecialtyReinforce', action: new SpecialtyReinforce()},
+        {name: 'SpecialtyReflect', action: new SpecialtyReflect()},
 
         // Other
-        new Observe(),
-        new TrainedHand(),
+        {name: 'Observe', action: new Observe()},
+        {name: 'TrainedHand', action: new TrainedHand()},
     ];
 
     public getActionsByType(type: ActionType): CraftingAction[] {
-        return CraftingActionsRegistry.ALL_ACTIONS.filter(action => action.getType() === type);
+        return CraftingActionsRegistry.ALL_ACTIONS.filter(row => row.action.getType() === type)
+            .map(row => row.action);
     }
 
     public importFromCraftOpt(importArray: string[]): CraftingAction[] {
@@ -227,17 +228,26 @@ export class CraftingActionsRegistry {
             }
             return CraftingActionsRegistry.ALL_ACTIONS
                 .find(el => {
-                    return el.getName() === found.full;
+                    return el.name === found.full;
                 });
-        }).filter(action => action !== undefined);
+        })
+            .filter(action => action !== undefined)
+            .map(row => row.action);
     }
 
     public serializeRotation(rotation: CraftingAction[]): string[] {
-        return rotation.map(action => action.getName());
+        return rotation.map(action => {
+            const actionRow = CraftingActionsRegistry.ALL_ACTIONS.find(row => row.action === action);
+            if (actionRow !== undefined) {
+                return actionRow.name;
+            }
+            return undefined;
+        }).filter(action => action !== undefined);
     }
 
     public deserializeRotation(rotation: string[]): CraftingAction[] {
-        return rotation.map(actionName => CraftingActionsRegistry.ALL_ACTIONS.find(el => el.getName() === actionName))
-            .filter(action => action !== undefined);
+        return rotation.map(actionName => CraftingActionsRegistry.ALL_ACTIONS.find(row => row.name === actionName))
+            .filter(action => action !== undefined)
+            .map(row => row.action);
     }
 }

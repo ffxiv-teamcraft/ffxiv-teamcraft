@@ -1,5 +1,6 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
+import {Observe} from '../other/observe';
 
 export class FocusedTouch extends QualityAction {
 
@@ -16,7 +17,7 @@ export class FocusedTouch extends QualityAction {
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return simulationState.lastStep !== undefined && simulationState.lastStep.action.getName() === 'Observe' ? 100 : 50;
+        return simulationState.lastStep !== undefined && simulationState.lastStep.action.getIds() === new Observe().getIds() ? 100 : 50;
     }
 
     getIds(): number[] {

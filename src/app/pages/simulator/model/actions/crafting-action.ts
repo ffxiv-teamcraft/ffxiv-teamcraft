@@ -165,8 +165,4 @@ export abstract class CraftingAction {
         }
         return baseQuality * (1 + levelCorrectionFactor) * (1 + recipeLevelPenalty);
     }
-
-    public getName(): string {
-        return this.constructor.name;
-    }
 }

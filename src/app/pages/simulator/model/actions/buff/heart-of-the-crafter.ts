@@ -4,6 +4,10 @@ import {Buff} from '../../buff.enum';
 
 export class HeartOfTheCrafter extends BuffAction {
 
+    canBeUsed(simulation: Simulation): boolean {
+        return simulation.crafterStats.specialist;
+    }
+
     getBaseCPCost(simulationState: Simulation): number {
         return 45;
     }

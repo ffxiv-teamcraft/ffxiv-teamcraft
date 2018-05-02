@@ -5,8 +5,9 @@ import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
-import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
+import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 
 @Component({
     selector: 'app-rotations-page',
@@ -20,7 +21,7 @@ export class RotationsPageComponent {
 
     constructor(private rotationsService: CraftingRotationService, private userService: UserService,
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
-                private translator: TranslateService) {
+                private translator: TranslateService, private dialog: MatDialog) {
         this.rotations$ = this.userService.getUserData().mergeMap(user => {
             return this.rotationsService.getUserRotations(user.$key);
         });
@@ -30,8 +31,16 @@ export class RotationsPageComponent {
         return this.craftingActionsRegistry.deserializeRotation(rotation.rotation);
     }
 
+    trackByRotation(index: number, rotation: CraftingRotation): string {
+        return rotation.$key;
+    }
+
     public deleteRotation(rotationId: string): void {
-        this.rotationsService.remove(rotationId).subscribe();
+        this.dialog.open(ConfirmationPopupComponent, {data: 'SIMULATOR.Confirm_delete'})
+            .afterClosed()
+            .filter(res => res)
+            .mergeMap(() => this.rotationsService.remove(rotationId))
+            .subscribe();
     }
 
     public getLink(rotation: CraftingRotation): string {

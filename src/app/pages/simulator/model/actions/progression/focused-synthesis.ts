@@ -1,5 +1,6 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
+import {Observe} from '../other/observe';
 
 export class FocusedSynthesis extends ProgressAction {
 
@@ -16,7 +17,7 @@ export class FocusedSynthesis extends ProgressAction {
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
-        return simulationState.lastStep !== undefined && simulationState.lastStep.action.getName() === 'Observe' ? 100 : 50;
+        return simulationState.lastStep !== undefined && simulationState.lastStep.action.getIds() === new Observe().getIds() ? 100 : 50;
     }
 
     getIds(): number[] {

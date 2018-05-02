@@ -144,7 +144,7 @@ export class SimulatorComponent implements OnInit {
 
         this.simulation$ = Observable.combineLatest(
             this.recipe$,
-            this.actions$,
+            this.actions$.debounceTime(200),
             this.crafterStats$,
             this.hqIngredients$,
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
