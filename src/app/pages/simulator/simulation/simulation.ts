@@ -86,7 +86,7 @@ export class Simulation {
     public run(linear = false): SimulationResult {
         this.actions.forEach((action: CraftingAction, index: number) => {
             // If we're starting and the crafter is specialist
-            if (index === 0 && this.crafterStats.specialist) {
+            if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
                 // Push stroke of genius buff
                 this.buffs.push({
                     buff: Buff.STROKE_OF_GENIUS,

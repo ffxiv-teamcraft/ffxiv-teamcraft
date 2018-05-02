@@ -6,7 +6,7 @@ export class PreciseTouch extends QualityAction {
 
     execute(simulation: Simulation): void {
         super.execute(simulation);
-        if (simulation.getBuff(Buff.INNER_QUIET).stacks < 11) {
+        if (simulation.hasBuff(Buff.INNER_QUIET) && simulation.getBuff(Buff.INNER_QUIET).stacks < 11) {
             simulation.getBuff(Buff.INNER_QUIET).stacks++;
         }
     }
