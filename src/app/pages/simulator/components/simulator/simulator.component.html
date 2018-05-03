@@ -315,7 +315,8 @@
                             (actionclick)="removeAction(index)"
                             [action]="step.action"
                             [simulation]="resultData.simulation"
-                            [ignoreDisabled]="true"></app-action>
+                            [ignoreDisabled]="true"
+                            [cpCost]="step.cpDifference"></app-action>
                 <div class="end-drag-zone" droppable
                      dragOverClass="drag-over"
                      (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
