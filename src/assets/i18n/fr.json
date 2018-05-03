@@ -441,5 +441,69 @@
         "Title": "Wiki",
         "Not_found_in_current_lang": "Page non disponible en français, la version anglaise est donc affichée",
         "Not_found": "Page introuvable"
+    },
+    "SIMULATOR": {
+        "Progress": "Progression",
+        "Quality": "Qualité",
+        "Step_counter": "Tour",
+        "Durability": "Solidité",
+        "Hq": "HQ",
+        "Cp_amount": "PS",
+        "Simulate_tooltip": "Fabriquer dans le simulateur",
+        "Configuration": "Configuration",
+        "Level": "Niveau",
+        "Reliability": "Fiabilité",
+        "Average_hq": "HQ moyen",
+        "Specialist": "Specialiste",
+        "New_rotation": "Nouvelle rotation",
+        "Rotations": "Rotations de craft",
+        "No_rotations": "Aucune rotation",
+        "New_custom_rotation": "Nouvelle rotation personnalisée",
+        "Reset": "Remettre à zéro la rotation",
+        "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
+        "Crafting_optimizer_code": "Code d'import de crafting optimizer",
+        "Generated_macro": "Macro en jeu",
+        "Generate_ingame_macro": "Générer une macro en jeu",
+        "Share_link_copied": "Lien de rotation copié dans le presse-papiers",
+        "Persist": "Sauvegarder cette rotation",
+        "Rotation_not_found": "Rotation non trouvée",
+        "Confirm_delete": "Voulez-vous vraiment supprimer cette rotation?",
+        "Toggle_snapshot_mode": "Passer en mode pas à pas",
+        "CUSTOM": {
+            "Recipe_configuration": "Configuration de la recette",
+            "Recipe_level": "Niveau de la recette",
+            "Recipe_progress": "Progression maximum",
+            "Recipe_quality": "Qualité maximum",
+            "Recipe_durability": "Solidité"
+        },
+        "CATEGORY": {
+            "Progression": "Progression",
+            "Quality": "Qualité",
+            "Cp_recovery": "Récupération de PS",
+            "Buff": "Buff",
+            "Specialty": "Atout",
+            "Repair": "Réparation",
+            "Other": "Autres"
+        },
+        "CONFIGURATION": {
+            "Job": "Job",
+            "Custom_set": "Activer les stats personnalisées",
+            "Select_job": "Selectionner un job",
+            "Craftsmanship": "Habileté",
+            "Control": "Contrôle",
+            "Specialist": "Specialiste",
+            "Ingredients": "Ingrédients HQ",
+            "Consumables": "Consommables",
+            "Apply_stats": "Appliquer les stats",
+            "Apply_ingredients": "Appliquer les ingrédients HQ",
+            "Apply_foods": "Appliquer les consommables",
+            "Food": "Choisir un plat",
+            "Medicine": "Choisir un médicament",
+            "STATS": {
+                "CP": "PS",
+                "Craftsmanship": "Habileté",
+                "Control": "Contrôle"
+            }
+        }
     }
 }
