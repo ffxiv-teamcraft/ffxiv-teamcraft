@@ -57,6 +57,11 @@ This will redirect you to the newly persisted rotation and the save button will 
 The share link can either be copied from your URL address bar in your browser when you're in a rotation details or you can copy it from the share icon 
 located inside each rotation panel in [rotations] page. 
 
+### Permissions
+
+Rotations can only be saved by their creator, meaning that someone can use your rotation and modify it, 
+but they won't be able to save it to your rotation, saving it will result in a new rotation being created with you as the author.
+
 ## Import from crafting optimizer
 
 You can import rotations from Crafting Optimizer using a very simple process:

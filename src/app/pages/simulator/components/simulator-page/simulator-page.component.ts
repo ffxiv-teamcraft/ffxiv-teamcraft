@@ -89,9 +89,10 @@ export class SimulatorPageComponent {
             result.description = '';
             result.name = '';
             result.consumables = rotation.consumables;
-            return result;
-        }).mergeMap(preparedRotation => {
-            if (preparedRotation.$key === undefined) {
+            return {rotation: result, userId: userId};
+        }).mergeMap(data => {
+            const preparedRotation = data.rotation;
+            if (preparedRotation.$key === undefined || data.userId !== data.rotation.authorId) {
                 // If the rotation has no key, it means that it's a new one, so let's create a rotation entry in the database.
                 return this.rotationsService.add(preparedRotation);
             } else {
