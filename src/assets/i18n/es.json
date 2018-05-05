@@ -428,5 +428,69 @@
         "User_id_tip": "El ID de usuario puede ser encontrado en la esquina inferior derecha",
         "Saving": "Guardando permisos",
         "No_anonymous": "Necesita una cuenta para administrar permisos"
+    },
+    "SIMULATOR": {
+        "Progress": "Progreso",
+        "Quality": "Calidad",
+        "Step_counter": "Paso",
+        "Durability": "Durabilidad",
+        "Hq": "HQ",
+        "Cp_amount": "CP",
+        "Simulate_tooltip": "Crear en simulador",
+        "Configuration": "Configuración",
+        "Level": "Nivel",
+        "Reliability": "Confiabilidad",
+        "Average_hq": "Promedio de HQ",
+        "Specialist": "Especialista",
+        "New_rotation": "Rotación nueva",
+        "Rotations": "Rotaciones de artesanías",
+        "No_rotations": "No hay rotaciones",
+        "New_custom_rotation": "Nueva rotación personalizada",
+        "Reset": "Reiniciar rotación",
+        "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
+        "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
+        "Generated_macro": "Macro para el juego",
+        "Generate_ingame_macro": "Generar macro para el juego",
+        "Share_link_copied": "Vínculo para compartir rotación copiado al portapapeles",
+        "Persist": "Guardar esta rotación",
+        "Rotation_not_found": "Rotación no encontrada",
+        "Confirm_delete": "¿Realmente quiere borrar esta rotación?",
+        "Toggle_snapshot_mode": "Activar modo pasos",
+        "CUSTOM": {
+            "Recipe_configuration": "Configuración de receta",
+            "Recipe_level": "Nivel de receta",
+            "Recipe_progress": "Progreso máximo",
+            "Recipe_quality": "Calidad máxima",
+            "Recipe_durability": "Durabilidad"
+        },
+        "CATEGORY": {
+            "Progression": "Progresión",
+            "Quality": "Calidad",
+            "Cp_recovery": "Recuperación de CP",
+            "Buff": "Mejora",
+            "Specialty": "Especialidad",
+            "Repair": "Reparar",
+            "Other": "Otros"
+        },
+        "CONFIGURATION": {
+            "Job": "Profesión",
+            "Custom_set": "Activar atributos personalizados",
+            "Select_job": "Seleccione una profesión",
+            "Craftsmanship": "Artesanía",
+            "Control": "Control",
+            "Specialist": "Especialista",
+            "Ingredients": "Ingredientes HQ",
+            "Consumables": "Consumibles",
+            "Apply_stats": "Aplicar atributos",
+            "Apply_ingredients": "Aplicar ingredientes HQ",
+            "Apply_foods": "Aplicar consumibles",
+            "Food": "Escoja una comida",
+            "Medicine": "Escoja una medicina",
+            "STATS": {
+                "CP": "CP",
+                "Craftsmanship": "Artesanía",
+                "Control": "Control"
+            }
+        }
     }
 }
