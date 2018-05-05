@@ -21,6 +21,6 @@ export class CraftingRotation extends DataModel {
     public consumables: SavedConsumables = new SavedConsumables();
 
     public getName(): string {
-        return `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps`;
+        return `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
     }
 }
