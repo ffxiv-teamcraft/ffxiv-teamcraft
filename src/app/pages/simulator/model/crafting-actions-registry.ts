@@ -96,7 +96,7 @@ export class CraftingActionsRegistry {
         {short: 'innovation', full: 'Innovation'},
         {short: 'greatStrides', full: 'GreatStrides'},
         {short: 'ingenuity', full: 'Ingenuity'},
-        {short: 'ingenuity2', full: 'Ingenuity2'},
+        {short: 'ingenuity2', full: 'IngenuityII'},
         {short: 'byregotsBrow', full: 'ByregotsBrow'},
         {short: 'preciseTouch', full: 'PreciseTouch'},
         {short: 'makersMark', full: 'MakersMark'},
