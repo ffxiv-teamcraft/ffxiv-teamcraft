@@ -84,6 +84,7 @@ export class WikiComponent implements OnInit {
                                 // This has to be done because of firebase not handling redirection properly for not found pages.
                                 return this.getEnglishFallback(markdownUrl);
                             }
+                            return Observable.of(res);
                         })
                         .catch(() => {
                             return this.getEnglishFallback(markdownUrl);
