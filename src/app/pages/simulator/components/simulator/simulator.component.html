@@ -139,7 +139,7 @@
         </div>
     </div>
 </mat-expansion-panel>
-<div *ngIf="simulation$ | async as simulation">
+<div *ngIf="simulation$ | async as simulation; else loading">
     <div *ngIf="result$ | async as resultData">
         <mat-card *ngIf="!isMobile()">
             <mat-card-header>
@@ -402,3 +402,8 @@
         </mat-card>
     </div>
 </div>
+<ng-template #loading>
+    <div class="loading-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
