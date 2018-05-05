@@ -48,11 +48,15 @@ export class WikiComponent implements OnInit {
     }
 
     interceptLinks(event: MouseEvent): void {
-        if (event.srcElement.tagName === 'A' && ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
-            (<any>event.srcElement).href.indexOf('localhost') > -1)) {
-            // If that's an anchor, intercept the click and handle it properly with router
+        if (event.srcElement.tagName === 'A') {
             event.preventDefault();
-            this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
+            if (((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
+                (<any>event.srcElement).href.indexOf('localhost') > -1)) {
+                // If that's an anchor, intercept the click and handle it properly with router
+                this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
+            } else {
+                window.open((<any>event.srcElement).href, '_blank');
+            }
         }
     }
 
