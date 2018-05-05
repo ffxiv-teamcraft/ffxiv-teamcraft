@@ -2,7 +2,7 @@
     <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Persist' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
-            *ngIf="(actions$ | async).length > 0 && (dirty  || rotationId === undefined)" (click)="save()">
+            *ngIf="(actions$ | async).length > 0" (click)="save()">
         <mat-icon>save</mat-icon>
     </button>
     <button mat-mini-fab

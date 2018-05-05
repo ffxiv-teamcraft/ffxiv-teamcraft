@@ -20,7 +20,7 @@
     </mat-toolbar>
     <mat-sidenav-container autosize="true">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar}">
+                     [ngClass]="{'compact': settings.compactSidebar}" class="nav-sidebar">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
@@ -46,15 +46,13 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item>
-                    <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                            matTooltipPosition="right"
-                            [matTooltipDisabled]="!settings.compactSidebar"
-                            (click)="settings.compactSidebar = !settings.compactSidebar; detectChanges()">
-                        <mat-icon *ngIf="settings.compactSidebar">keyboard_arrow_right</mat-icon>
-                        <mat-icon *ngIf="!settings.compactSidebar">keyboard_arrow_left</mat-icon>
-                        <span *ngIf="!settings.compactSidebar">{{'Compact_sidebar_toggle' | translate}}</span>
-                    </button>
+                <mat-list-item matTooltip="{{'Compact_sidebar_toggle' | translate}}"
+                               matTooltipPosition="right"
+                               [matTooltipDisabled]="!settings.compactSidebar"
+                               (click)="settings.compactSidebar = !settings.compactSidebar; detectChanges()">
+                    <mat-icon *ngIf="settings.compactSidebar" matListIcon>keyboard_arrow_right</mat-icon>
+                    <mat-icon *ngIf="!settings.compactSidebar" matListIcon>keyboard_arrow_left</mat-icon>
+                    <span *ngIf="!settings.compactSidebar" matLine>{{'Compact_sidebar_toggle' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"

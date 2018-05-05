@@ -56,7 +56,7 @@
     },
     "Item_name": "Item name",
     "No_items_found": "No item found",
-    "Select_all":"Select all",
+    "Select_all": "Select all",
     "Do you really want to reset the list?": "本当にリストをリセットしますか？",
     "Yes": "はい",
     "No": "いいえ",
@@ -151,53 +151,10 @@
     "Email_enter": "Email",
     "Email_not_found": "Email not found",
     "Email_sent": "An email has been sent with instructions to change your password.",
-
-
-    "HOME_PAGE.title": "Create lists, share, contribute, craft",
-    "HOME_PAGE.count": "lists currently stored",
-    "HOME_PAGE.lists_created_count": "lists created using FFXIV Teamcraft",
-    "HOME_PAGE.p1": "Hi, I'm Miu Asakura on Louisoix. I'm the creator of FFXIV Teamcraft, a tool that allows you to create crafting lists online, share them with your friend and contribute together in realtime. Because we were struggling to manage big lists using actual tools, I wanted to have a way to create lists that are stored, on which every could say \"I have that, I can provide it\". So I started creating FFXIV Teamcraft.",
-    "HOME_PAGE.p2": "Then I thought \"If my FC finds the app useful, why would others not find it useful too?\". So I bought a domain name, I made a reddit topic and started adding more features. At the moment the app is able to store your crafting lists, show you what you can gather/craft by yourself, all of this in your language (some translated assets are still missing but they will be available in the future) with a single link. Wether you are French, English or Deutch speaker, the app will show you a version of the list that you can understand. That's the main goal of the application.",
-    "HOME_PAGE.p3": "FFXIV Teamcraft is here do to the maths, so you can focus on the essential part of crafting and forget your calc sheets and your paper with everything written on it. Simply add a recipe to a list, give the link to your friends and start creating awesome stuff together !",
-    "HOME_PAGE.support_patreon": "Support us on patreon",
-    "HOME_PAGE.features": "Features",
-    "HOME_PAGE.FEATURES.list_creation_title": "List creation",
-    "HOME_PAGE.FEATURES.list_creation_content": "Simply search for a recipe, add it to a list, and it's done !",
-    "HOME_PAGE.FEATURES.realtime_translations_title": "Realtime translation",
-    "HOME_PAGE.FEATURES.realtime_translations_content": "Recipes are language-independant, they can be seen in any language !",
-    "HOME_PAGE.FEATURES.item_details_title": "Item details",
-    "HOME_PAGE.FEATURES.item_details_content": "Get details on how to obtain each item of your recipe, no more endless searchs !",
-    "HOME_PAGE.FEATURES.node_timers_title": "Timer node alerts",
-    "HOME_PAGE.FEATURES.node_timers_content": "Never miss a timed node !",
-    "HOME_PAGE.FEATURES.area_breakdown_title": "Area breakdown",
-    "HOME_PAGE.FEATURES.area_breakdown_content": "Reduce your gil and your time spent for farming !",
-    "HOME_PAGE.FEATURES.search_filters_title": "Search filters",
-    "HOME_PAGE.FEATURES.search_filters_content": "Easily find what you're looking for with powerful filters !",
-    "HOME_PAGE.FEATURES.bulk_import_title": "Bulk import",
-    "HOME_PAGE.FEATURES.bulk_import_content": "Add multiple items at the same time !",
-    "HOME_PAGE.FEATURES.map_markers_title": "Map markers",
-    "HOME_PAGE.FEATURES.map_markers_content": "Don't look for coordinates ingame again !",
-    "HOME_PAGE.FEATURES.comments_title": "Comments",
-    "HOME_PAGE.FEATURES.comments_content": "Add informations on your list items easily !",
-    "HOME_PAGE.FEATURES.pricing_title": "Pricing",
-    "HOME_PAGE.FEATURES.pricing_content": "Easily get the benefits you'll make from a given list !",
-    "HOME_PAGE.FEATURES.inventory_title": "Inventory breakdown",
-    "HOME_PAGE.FEATURES.inventory_content": "Know how much of each item you're supposed to have at anytime !",
-    "HOME_PAGE.FEATURES.alarms_title": "Alarms",
-    "HOME_PAGE.FEATURES.alarms_content": "Easily track every alarm you added accross multiple lists !",
-
-    "HOME_PAGE.support_title": "Support",
-    "HOME_PAGE.support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
-    "HOME_PAGE.support_comtent_facebook": "You can also find us on facebook",
-    "HOME_PAGE.contribute_title": "Contribute",
-    "HOME_PAGE.contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
-    "HOME_PAGE.changelog": "To get every news about the website, each changes, please refer to the changelog.",
-
     "ALARM": {
         "Spawned": "{{itemName}} will spawn !",
         "See_on_map": "Location"
     },
-
     "Pricing_mode": "Pricing mode",
     "Back_to_list": "Back to list",
     "Spending": "Spending",
@@ -205,7 +162,6 @@
     "Earning": "Earning",
     "Benefits": "Benefits",
     "Minimal_craft_cost": "Minimal craft cost",
-
     "Used_for": "Used for",
     "xivdb_cart_import": "Importing list",
     "Or": "or",
@@ -218,11 +174,9 @@
     "Requires": "Requires",
     "Copy_item_name_to_clipboard": "Copy item name to clipboard",
     "Item_name_copied": "{{itemname}} copied to clipboard",
-
     "Tier_display_toggle": "Display crafting tiers",
     "Precraft_tier": "Tier",
     "Regenerating_lists": "Regenerating lists",
-
     "SETTINGS": {
         "title": "Settings",
         "link_base": "Item links",
@@ -262,15 +216,14 @@
             "Choices_needed": "Some recipe choices are pending",
             "Creating_list": "Creating the list",
             "Loading_items": "Loading items informations"
-
         }
     },
     "LIST": {
         "Copied_x_times": "Copied {{count}} times"
     },
     "LIST_DETAILS": {
-        "Missing_tags_before_button":"Your list is shown as community list but has no tags, please add some tags using ",
-        "Missing_tags_after_button":" button",
+        "Missing_tags_before_button": "Your list is shown as community list but has no tags, please add some tags using ",
+        "Missing_tags_after_button": " button",
         "Add_remove_amount": "Add/remove a given amount",
         "No_book": "Missing book, click to navigate to profile",
         "No_note": "No note",
@@ -294,25 +247,25 @@
             "Logic_gate": "Logic gate"
         },
         "HELP": {
-            "Title" : "List details",
-            "List_category" : "List",
-            "Inventory" : "You can switch to inventory view, where the app simulates an inventory to show you what you're supposed to have, it removes items  already used for crafts you've already done.",
-            "Reset_progression" : "You can reset the progression of the list entirely using the refresh button, upon confirmation this will set all progression to 0.",
-            "Upgrade" : "You can upgrade your list to the latest version using this button, it recreates the list entirely and keeps progression. You'll be asked to upgrade if your list is outdated.",
-            "Fork" : "You can fork a list, which means creating a copy of it in its actual state to your account, this works for any list.",
-            "Filters" : "You can filter list items, using your account you can apply filters to see only what you can do, you can also hide items that are already done in this panel.",
-            "Area_breakdown" : "By toggling Area Breakdown, you can order data based on the area they are obtainable in order to lower the teleport fees.",
-            "Pricing_mode" : "When entering pricing mode, you can enter the price of each item you bought, and enter the expected sell price in order to know how much benefits you get from a list.",
-            "Item_category" : "Items (rows)",
-            "Requirements" : "By clicking on the requirements icon, you can open a dialog showing what is required by a given item, or what it is required for.",
-            "Alarms" : "When an item is a timed node, you can click on the alarm button to setup a sound alarm when it spawns, the alarm will be played even if you're not on the list, you just need to be on the website.",
-            "Comments" : "You can add comments to any item row, allowing you to provide more informations (not linked to the item, only to the list row) or discuss on it. Comments are limited to 140 characters and 10 comments per item.",
-            "Colors":"Item name colors have a signification, <span class=\"craftable\">this one is for items ready to be crafted</span>, which means that you have everything to craft the item. <span class=\"strike\">This one is for items crafted</span> which means that you have already done this item",
-            "Misc_category" : "Other",
-            "Map_markers" : "Whenever you see this icon, click on it to get a map marker, which is way easier to read than X,Y coordinates.",
-            "Public_list" : "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-            "Obtention_details" : "Each item row has icons in the top-right section of the row, clicking on each icon will give you more details on how to obtain the corresponding item.",
-            "Labels" : "When adding a list to public lists, don't forget to add proper labels to it",
+            "Title": "List details",
+            "List_category": "List",
+            "Inventory": "You can switch to inventory view, where the app simulates an inventory to show you what you're supposed to have, it removes items  already used for crafts you've already done.",
+            "Reset_progression": "You can reset the progression of the list entirely using the refresh button, upon confirmation this will set all progression to 0.",
+            "Upgrade": "You can upgrade your list to the latest version using this button, it recreates the list entirely and keeps progression. You'll be asked to upgrade if your list is outdated.",
+            "Fork": "You can fork a list, which means creating a copy of it in its actual state to your account, this works for any list.",
+            "Filters": "You can filter list items, using your account you can apply filters to see only what you can do, you can also hide items that are already done in this panel.",
+            "Area_breakdown": "By toggling Area Breakdown, you can order data based on the area they are obtainable in order to lower the teleport fees.",
+            "Pricing_mode": "When entering pricing mode, you can enter the price of each item you bought, and enter the expected sell price in order to know how much benefits you get from a list.",
+            "Item_category": "Items (rows)",
+            "Requirements": "By clicking on the requirements icon, you can open a dialog showing what is required by a given item, or what it is required for.",
+            "Alarms": "When an item is a timed node, you can click on the alarm button to setup a sound alarm when it spawns, the alarm will be played even if you're not on the list, you just need to be on the website.",
+            "Comments": "You can add comments to any item row, allowing you to provide more informations (not linked to the item, only to the list row) or discuss on it. Comments are limited to 140 characters and 10 comments per item.",
+            "Colors": "Item name colors have a signification, <span class=\"craftable\">this one is for items ready to be crafted</span>, which means that you have everything to craft the item. <span class=\"strike\">This one is for items crafted</span> which means that you have already done this item",
+            "Misc_category": "Other",
+            "Map_markers": "Whenever you see this icon, click on it to get a map marker, which is way easier to read than X,Y coordinates.",
+            "Public_list": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
+            "Obtention_details": "Each item row has icons in the top-right section of the row, clicking on each icon will give you more details on how to obtain the corresponding item.",
+            "Labels": "When adding a list to public lists, don't forget to add proper labels to it",
             "Custom_layout": "You can fully customize your layout, export it and import the layout of a friend. This layout is only for you and stored in your browser, it will be applied to every list you see using this browser"
         }
     },
@@ -326,7 +279,6 @@
         "GLAMOUR": "Glamour",
         "HOUSING": "Housing",
         "MISC": "Misc",
-
         "TANK": "Tank",
         "HEALER": "Healer",
         "MELEE": "Melee",
@@ -335,27 +287,21 @@
         "CRAFTER": "Crafter",
         "GATHERER": "Gatherer",
         "QUEST": "Quest",
-
         "PLD": "PLD",
         "WAR": "WAR",
         "DRK": "DRK",
-
         "WHM": "WHM",
         "SCH": "SCH",
         "AST": "AST",
-
         "MNK": "MNK",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
-
         "BRD": "BRD",
         "MCH": "MCH",
-
         "BLM": "BLM",
         "SMN": "SMN",
         "RDM": "RDM",
-
         "CRP": "CRP",
         "BSM": "BSM",
         "ARM": "ARM",
@@ -364,17 +310,16 @@
         "WVR": "WVR",
         "ALC": "ALC",
         "CUL": "CUL",
-
         "MIN": "MIN",
         "BOT": "BOT",
         "FSH": "FSH"
     },
     "RECIPES": {
-        "HELP":{
+        "HELP": {
             "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
             "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
             "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
-            "Quick_list":"You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
+            "Quick_list": "You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
             "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
         }
     },
@@ -401,12 +346,12 @@
         "Steps": "Steps",
         "Gather_x": "Gather {{amount}}"
     },
-    "GATHERING_LOCATIONS":{
+    "GATHERING_LOCATIONS": {
         "Title": "Récoltes",
         "No_items": "Aucun objet trouvé",
         "Gathering_name": "Nom de l'objet"
     },
-    "ANNOUNCEMENT":{
+    "ANNOUNCEMENT": {
         "Title": "Announcement",
         "Read_more": "Read more"
     },
