@@ -20,14 +20,6 @@ export class SettingsService {
         this.setSetting('base-link', base);
     }
 
-    public get baseSimulatorLink(): string {
-        return this.getSetting('base-simulator-link', 'http://ffxiv-beta.lokyst.net');
-    }
-
-    public set baseSimulatorLink(base: string) {
-        this.setSetting('base-simulator-link', base);
-    }
-
     public get crystalsTracking(): boolean {
         return this.getSetting('crystals-tracking', 'false') === 'true';
     }

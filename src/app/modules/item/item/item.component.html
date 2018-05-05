@@ -1,3 +1,10 @@
+<mat-menu #simulatorMenu="matMenu">
+    <button mat-menu-item routerLink="/simulator/{{item.id}}">{{'SIMULATOR.New_rotation' | translate}}</button>
+    <button mat-menu-item
+            *ngFor="let rotation of rotations$ | async"
+            routerLink="/simulator/{{item.id}}/{{rotation.$key}}">{{rotation.getName()}}</button>
+</mat-menu>
+
 <!--Layout for desktop browsers-->
 <mat-list-item *ngIf="!(isMobile | async); else mobileLayout"
                [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
@@ -149,20 +156,20 @@
 
         <div class="classes">
             <div *ngIf="recipe">
-                <a *ngIf="getCraft(item.recipeId) as craft" href="{{craft | simulatorLink | i18n}}" target="_blank">
+                <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft">
                     <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                          matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
                          matTooltipPosition="above" src="{{craft.icon}}">
-                </a>
+                </button>
             </div>
             <div *ngIf="!recipe">
                 <div *ngFor="let craft of item.craftedBy">
-                    <a href="{{craft | simulatorLink: item.id | i18n}}" target="_blank">
+                    <button mat-icon-button [matMenuTriggerFor]="simulatorMenu">
                         <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                              *ngIf="craft.icon !== ''"
                              matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
                              matTooltipPosition="above" src="{{craft.icon}}">
-                    </a>
+                    </button>
                 </div>
             </div>
             <div>
@@ -309,12 +316,12 @@
             </button>
             <div class="classes">
                 <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
-                    <div *ngFor="let craft of item.craftedBy">
+                    <button *ngFor="let craft of item.craftedBy" [matMenuTriggerFor]="simulatorMenu">
                         <img class="crafted-by"
                              *ngIf="craft.icon !== ''"
                              matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
                              matTooltipPosition="above" src="{{craft.icon}}">
-                    </div>
+                    </button>
                 </div>
                 <button mat-icon-button *ngIf="item.gatheredBy !== undefined"
                         (click)="openGatheredByDetails(item)">

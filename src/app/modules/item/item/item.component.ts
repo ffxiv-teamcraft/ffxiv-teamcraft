@@ -46,6 +46,8 @@ import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 import {CraftedBy} from '../../../model/list/crafted-by';
 import {Permissions} from '../../../core/database/permissions/permissions';
+import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
+import {CraftingRotation} from '../../../model/other/crafting-rotation';
 
 @Component({
     selector: 'app-item',
@@ -277,6 +279,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public tradeIcon: number;
 
+    rotations$: Observable<CraftingRotation[]>;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -289,8 +293,12 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private etime: EorzeanTimeService,
                 private dataService: DataService,
                 private userService: UserService,
-                public cd: ChangeDetectorRef) {
+                public cd: ChangeDetectorRef,
+                private rotationsService: CraftingRotationService) {
         super();
+        this.rotations$ = this.userService.getUserData().mergeMap(user => {
+            return this.rotationsService.getUserRotations(user.$key);
+        }).publishReplay(1).refCount().do(console.log);
     }
 
     isDraft(): boolean {
