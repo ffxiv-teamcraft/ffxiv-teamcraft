@@ -399,6 +399,7 @@
         "Not_found": "Page introuvable"
     },
     "SIMULATOR": {
+        "Min_stats": "Stats minimum",
         "Progress": "Progression",
         "Quality": "Qualité",
         "Step_counter": "Tour",

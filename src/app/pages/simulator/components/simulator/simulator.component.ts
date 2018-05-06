@@ -27,6 +27,7 @@ import {MatDialog} from '@angular/material';
 import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
 import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
 import {PendingChangesService} from 'app/core/database/pending-changes/pending-changes.service';
+import {SimulationMinStatsPopupComponent} from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
 
 @Component({
     selector: 'app-simulator',
@@ -173,6 +174,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             .filter(res => res.success)
             .mergeMap(() => this.simulation$)
             .map(simulation => simulation.getReliabilityReport());
+    }
+
+    public showMinStats(simulation: Simulation): void {
+        this.dialog.open(SimulationMinStatsPopupComponent, {data: simulation});
     }
 
     ngOnInit(): void {

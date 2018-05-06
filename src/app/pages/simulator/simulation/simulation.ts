@@ -66,6 +66,27 @@ export class Simulation {
         }
     }
 
+    public getMinStats(): { control: number, craftsmanship: number, cp: number } {
+        // Three loops, one per stat
+        while (this.run(true).success) {
+            this.crafterStats.craftsmanship--;
+            this.reset();
+        }
+        while (this.run(true).success) {
+            this.crafterStats._control--;
+            this.reset();
+        }
+        while (this.run(true).success) {
+            this.crafterStats.cp--;
+            this.reset();
+        }
+        return {
+            control: this.crafterStats.getControl(this),
+            craftsmanship: this.crafterStats.craftsmanship,
+            cp: this.crafterStats.cp
+        };
+    }
+
     public reset(): void {
         delete this.success;
         this.progression = 0;

@@ -35,6 +35,7 @@ import {ClipboardModule} from 'ngx-clipboard';
 import {CustomLinksModule} from '../custom-links/custom-links.module';
 import {PatreonGuard} from '../../core/guard/patreon.guard';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
 
 const routes: Routes = [
     {
@@ -104,11 +105,13 @@ const routes: Routes = [
         ActionComponent,
         RotationsPageComponent,
         ImportRotationPopupComponent,
-        MacroPopupComponent
+        MacroPopupComponent,
+        SimulationMinStatsPopupComponent
     ],
     entryComponents: [
         ImportRotationPopupComponent,
-        MacroPopupComponent
+        MacroPopupComponent,
+        SimulationMinStatsPopupComponent
     ],
     providers: [
         CraftingActionsRegistry,

@@ -5,9 +5,9 @@ export class CrafterStats {
 
     constructor(
         public readonly jobId: number,
-        public readonly craftsmanship: number,
-        private _control: number,
-        public readonly cp: number,
+        public craftsmanship: number,
+        public _control: number,
+        public cp: number,
         public readonly specialist: boolean,
         public readonly level: number,
     ) {

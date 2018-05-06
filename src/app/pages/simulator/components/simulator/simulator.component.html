@@ -23,6 +23,13 @@
             (click)="generateMacro()">
         <span class="fab-xiv-label">XIV</span>
     </button>
+    <button mat-mini-fab
+            *ngIf="simulation$ | async as simulation"
+            matTooltip="{{'SIMULATOR.Min_stats' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="showMinStats(simulation)">
+        <mat-icon>offline_pin</mat-icon>
+    </button>
 </div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
     <mat-expansion-panel-header>

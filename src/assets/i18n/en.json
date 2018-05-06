@@ -399,6 +399,7 @@
         "Not_found": "Page not found"
     },
     "SIMULATOR": {
+        "Min_stats": "Minimum stats",
         "Progress": "Progress",
         "Quality": "Quality",
         "Step_counter": "Step",
