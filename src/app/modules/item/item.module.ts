@@ -8,7 +8,7 @@ import {
     MatDialogModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     MatTooltipModule
@@ -50,6 +50,7 @@ import {VentureDetailsPopupComponent} from './venture-details-popup/venture-deta
         MatProgressSpinnerModule,
         MatInputModule,
         MatCardModule,
+        MatMenuModule,
 
         ClipboardModule,
 

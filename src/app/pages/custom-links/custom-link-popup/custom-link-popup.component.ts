@@ -10,6 +10,8 @@ import {List} from '../../../model/list/list';
 import {UserService} from '../../../core/database/user.service';
 import {TranslateService} from '@ngx-translate/core';
 import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popup.component';
+import {CraftingRotation} from '../../../model/other/crafting-rotation';
+import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
 
 @Component({
     selector: 'app-custom-link-popup',
@@ -21,6 +23,7 @@ export class CustomLinkPopupComponent implements OnInit {
     types: {
         workshop: Observable<Workshop[]>,
         list: Observable<List[]>,
+        simulator: Observable<CraftingRotation[]>,
     };
 
     selectedType: string;
@@ -31,16 +34,23 @@ export class CustomLinkPopupComponent implements OnInit {
 
     userNickname: string;
 
+    selectedRotation: CraftingRotation;
+
     uri: string;
 
     constructor(private customLinksService: CustomLinksService, @Inject(MAT_DIALOG_DATA) private data: CustomLink,
                 workshopService: WorkshopService, listService: ListService, private userService: UserService,
                 private dialogRef: MatDialogRef<CustomLinkPopupComponent>, private snack: MatSnackBar,
-                private translator: TranslateService, private dialog: MatDialog) {
+                private translator: TranslateService, private dialog: MatDialog, rotationService: CraftingRotationService) {
         if (this.data !== null) {
             const parsedLink = this.data.redirectTo.split('/');
             this.selectedType = parsedLink[0];
-            this.selectedUid = parsedLink[1];
+            // Special case for crafting rotations
+            if (this.selectedType === 'simulator') {
+                this.selectedUid = parsedLink[2];
+            } else {
+                this.selectedUid = parsedLink[1];
+            }
             this.uri = this.data.uri;
         }
         userService.getUserData().subscribe(u => {
@@ -49,7 +59,8 @@ export class CustomLinkPopupComponent implements OnInit {
         });
         this.types = {
             workshop: userService.getUserData().mergeMap(user => workshopService.getUserWorkshops(user.$key)),
-            list: userService.getUserData().mergeMap(user => listService.getUserLists(user.$key))
+            list: userService.getUserData().mergeMap(user => listService.getUserLists(user.$key)),
+            simulator: userService.getUserData().mergeMap(user => rotationService.getUserRotations(user.$key))
         };
     }
 
@@ -82,7 +93,7 @@ export class CustomLinkPopupComponent implements OnInit {
             link.author = this.userUid;
             link.authorNickname = this.userNickname;
             link.uri = this.uri;
-            link.redirectTo = `${this.selectedType}/${this.selectedUid}`;
+            link.redirectTo = this.getRedirectTo();
             this.customLinksService.add(link).subscribe(() => {
                 this.openSnack();
                 this.dialogRef.close();
@@ -92,11 +103,21 @@ export class CustomLinkPopupComponent implements OnInit {
             link.author = this.userUid;
             link.authorNickname = this.userNickname;
             link.uri = this.uri;
-            link.redirectTo = `${this.selectedType}/${this.selectedUid}`;
+            link.redirectTo = this.getRedirectTo();
             this.customLinksService.set(link.$key, link).subscribe(() => {
                 this.openSnack();
                 this.dialogRef.close();
             })
+        }
+    }
+
+    getRedirectTo(): string {
+        if (this.data !== undefined) {
+            return this.data.redirectTo;
+        } else if (this.selectedType === 'simulator') {
+            return `${this.selectedType}/custom/${this.selectedUid}`;
+        } else {
+            return `${this.selectedType}/${this.selectedUid}`
         }
     }
 

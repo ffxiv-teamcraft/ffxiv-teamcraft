@@ -8,7 +8,6 @@ import {FormsModule} from '@angular/forms';
 import {SettingsService} from './settings.service';
 import {ItemLinkPipe} from './pipe/item-link.pipe';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {SimulatorLinkPipe} from './pipe/simulator-link.pipe';
 
 const routing: Routes = [
     {
@@ -36,14 +35,12 @@ const routing: Routes = [
     declarations: [
         SettingsComponent,
         ItemLinkPipe,
-        SimulatorLinkPipe,
     ],
     providers: [
         SettingsService,
     ],
     exports: [
         ItemLinkPipe,
-        SimulatorLinkPipe,
     ]
 })
 export class SettingsModule {

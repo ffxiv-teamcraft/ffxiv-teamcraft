@@ -1,4 +1,5 @@
 {
+    "Delete": "Supprimer",
     "Timers": "Alarmes",
     "Copy_isearch": "Copier la macro de recherche en jeu",
     "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
@@ -60,7 +61,7 @@
     },
     "Item_name": "Nom de l'objet",
     "No_items_found": "Aucun objet trouvé",
-    "Select_all":"Tout cocher",
+    "Select_all": "Tout cocher",
     "Do you really want to reset the list?": "Voulez-vous vraiment réinitialiser la liste ?",
     "Yes": "Oui",
     "No": "Non",
@@ -155,44 +156,6 @@
     "Email_enter": "Email",
     "Email_not_found": "Email non trouvé",
     "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
-    "HOME_PAGE.title": "Créez des listes, partagez-les, contribuez, craftez",
-    "HOME_PAGE.count": "listes actuellement stockées",
-    "HOME_PAGE.lists_created_count": "listes créées avec FFXIV Teamcraft",
-    "HOME_PAGE.p1": "Bonjour, je suis Miu Asakura sur Louisoix. Je suis le créateur de FFXIV Teamcraft, un outil qui permet de créer des listes de craft en ligne, les partager avec ses amis et y contribuer en temps réel. À cause du fait que nous avions des soucis avec la gestion de grandes listes de craft avec ma Compagnie Libre en utilisant les outils actuels, j'ai voulu trouver un moyen de créer des listes qui sont stockées sur lesquelles chacun pourait dire \"J'ai cet  objet, je peux le donner pour la recette\". J'ai donc commencé à développer FFXIV Teamcraft.",
-    "HOME_PAGE.p2": "Puis je me suis dit, \"Si ma Compagnie Libre trouve cet outil utile, pourquoi les autres n'en penseraient-ils pas de même?\". Alors j'ai acheté un nom de domaine, j'ai créé un topic sur reddit et j'ai commencé à ajouter des fonctionnalités. Actuallement l'application est capable de stocker vos listes, montrer ce que vous pouvez obtenir par vous même et tout cela dans votre langue (certaines traductions sont manquantes mais elles seront ajoutées dès que possible) avec un seul lien. Que vous soyez francophone, anglophone ou germanophone, l'application vous montrera une version de la liste que vous pouvez comprendre. C'est le but premier de celle-ci.",
-    "HOME_PAGE.p3": "FFXIV Teamcraft est là pour faire les calculs, pour que vous puissiez vous concentrer sur la partie essentielle du craft et que vous oubliiez vos tableurs et vos feuilles avec tous les composants écrits dessus. Ajoutez simplement une recette à une liste, donnez le lien à vos amis et commencez à crafter ensemble !",
-    "HOME_PAGE.support_patreon": "Soutenez-nous sur patreon",
-    "HOME_PAGE.features": "Fonctionnalités",
-    "HOME_PAGE.FEATURES.list_creation_title": "Création de listes",
-    "HOME_PAGE.FEATURES.list_creation_content": "Cherchez une recette, ajoutez-là à une liste, et c'est fait !",
-    "HOME_PAGE.FEATURES.realtime_translations_title": "Traduction en temps réel",
-    "HOME_PAGE.FEATURES.realtime_translations_content": "Les listes sont indépendantes de la langue, elles peuvent être vues dans n'importe quelle langue !",
-    "HOME_PAGE.FEATURES.item_details_title": "Détails des objets",
-    "HOME_PAGE.FEATURES.item_details_content": "Trouvez comment obtenir les composants de votre liste en un clic !",
-    "HOME_PAGE.FEATURES.node_timers_title": "Alarmes pour les récoltes timées",
-    "HOME_PAGE.FEATURES.node_timers_content": "Ne ratez jamais une récolte de votre liste !",
-    "HOME_PAGE.FEATURES.area_breakdown_title": "Résumé par zone",
-    "HOME_PAGE.FEATURES.area_breakdown_content": "Optimisez vos récoltes et votre chasse en triant par zone !",
-    "HOME_PAGE.FEATURES.search_filters_title": "Filtres de recherche",
-    "HOME_PAGE.FEATURES.search_filters_content": "Trouvez rapidement ce que vous cherchez, plus de recherches multiples !",
-    "HOME_PAGE.FEATURES.bulk_import_title": "Import multiple",
-    "HOME_PAGE.FEATURES.bulk_import_content": "Ajoutez plusieurs objets à la fois !",
-    "HOME_PAGE.FEATURES.map_markers_title": "Marqueurs de position",
-    "HOME_PAGE.FEATURES.map_markers_content": "Ne cherchez plus les coordonnées sur la map en jeu !",
-    "HOME_PAGE.FEATURES.comments_title": "Commentaires",
-    "HOME_PAGE.FEATURES.comments_content": "Ajoutez des informations et échangez à propos d'une liste!",
-    "HOME_PAGE.FEATURES.pricing_title": "Calcul de bénéfice",
-    "HOME_PAGE.FEATURES.pricing_content": "Calculez facilement les bénéfices d'une liste !",
-    "HOME_PAGE.FEATURES.inventory_title": "Résumé d'inventaire",
-    "HOME_PAGE.FEATURES.inventory_content": "Suivez le nombre d'objets que vous devez posséder à n'importe quel moment !",
-    "HOME_PAGE.FEATURES.alarms_title": "Alarmes",
-    "HOME_PAGE.FEATURES.alarms_content": "Suivez vos alarmes à travers plusieurs listes facilement !",
-    "HOME_PAGE.support_title": "Support",
-    "HOME_PAGE.support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
-    "HOME_PAGE.support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
-    "HOME_PAGE.contribute_title": "Contribuer",
-    "HOME_PAGE.contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
-    "HOME_PAGE.changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
     "ALARM": {
         "Spawned": "{{itemName}} va apparaître !",
         "See_on_map": "Emplacement"
@@ -267,8 +230,9 @@
         "Enable_crystals_tracking": "Activer le suivi des cristaux"
     },
     "LIST_DETAILS": {
-        "Missing_tags_before_button":"Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
-        "Missing_tags_after_button":"",
+        "List_finished": "Liste terminée",
+        "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
+        "Missing_tags_after_button": "",
         "Add_remove_amount": "Ajouter/enlever un montant donné",
         "No_book": "Livre manquant, cliquer pour aller sur la page de profil",
         "No_note": "Aucune note",
@@ -292,31 +256,31 @@
             "Logic_gate": "Porte logique"
         },
         "HELP": {
-            "Title" : "Détails d'une liste",
-            "List_category" : "Liste",
-            "Inventory" : "Vous pouvez paser en mode inventaire, où un inventaire est simulé pour permettre de suivre plus facilement ce que vous avez à disposition pour être sûr d'être raccord avec la liste.",
-            "Reset_progression" : "Le bouton rafraîchir permet de remettre à 0 toute la progression de la liste, à utiliser avec précaution.",
-            "Upgrade" : "Le bouton de mise à jour recréé la liste avec la dernière evrsion du site, ajoutant parfois des informations ou résolvant des soucis de listes cassées, le tout en préservant la progression. Il vous sera parfois demandé de mettre une liste à jour via ce bouton si celle-ci ne l'est pas.",
-            "Fork" : "Vous pouvez créer une copie de n'importe quelle liste sur votre compte via le bouton de copie.",
-            "Filters" : "Les objets d'une liste peuvent être filtrés pour l'affichage afin de ne montrer que les objets non complétés ou encore les objets que vous pouvez faire (en se basant sur les niveaux de vos crafteurs), voir le paneau \"Filtres\"",
-            "Area_breakdown" : "En utilisant le bouton de résumé par zone, les objets sont rangés par zone afin d'économiser les frais de téléport, vous pouvez ainsi compléter votre liste zone par zone.",
-            "Pricing_mode" : "Le mode profits vous permet de saisir le prix de chaque ingrédient et le prix de vente attendu afin de calculer les bénéfices d'une liste.",
-            "Item_category" : "Objets (lignes de liste)",
-            "Requirements" : "En cliquant sur l'icône de prérequis, une popup affiche les détails d'un objet, ce dont il a besoin et les recettes qui en ont besoin au sein de la liste.",
-            "Alarms" : "Si un objet est une récolte timée, alors un bouton apparaît afin de pouvoir créer une alarme sonore reliée à ce noeud de récolte. L'alarme retentira même si vous n'êtes pas sur la liste, du moment que vous êtes sur le site.",
-            "Comments" : "Vous pouvez ajouter des commentaires à chaque objet d'une liste, dans la limite de 10 commentaires de 140 caractères afin de préciser des éléments sur chaque objet, dire qui a contribué de combien, etc.",
-            "Colors":"Les noms d'objets ont différentes couleurs, <span class=\"craftable\">cette couleur pour les objets prêts à être craftés</span>, ce sont les objets pour lesquels vous avez tous les matériaux requis disponibles. <span class=\"strike\">Les objets de cette couleur</span> sont ceux que vous avez déjà obtenu/crafté, ils sont considérés comme complétés.",
-            "Misc_category" : "Autre",
-            "Map_markers" : "Dès que vous voyez cette icône à coté de coordonnées, vous pouvez cliquer dessus afin d'ouvrir une mini map qui affiche un marqueur en jeu, bien plus lisible que les coordonées.",
-            "Public_list" : "Vous pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
-            "Obtention_details" : "Chaque objet a des détails sur son obtention dans la partie droite de sa ligne, penseez à cliquer sur les icônes afin de voir plus de détails sur l'objet en question.",
-            "Labels" : "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels.",
+            "Title": "Détails d'une liste",
+            "List_category": "Liste",
+            "Inventory": "Vous pouvez paser en mode inventaire, où un inventaire est simulé pour permettre de suivre plus facilement ce que vous avez à disposition pour être sûr d'être raccord avec la liste.",
+            "Reset_progression": "Le bouton rafraîchir permet de remettre à 0 toute la progression de la liste, à utiliser avec précaution.",
+            "Upgrade": "Le bouton de mise à jour recréé la liste avec la dernière evrsion du site, ajoutant parfois des informations ou résolvant des soucis de listes cassées, le tout en préservant la progression. Il vous sera parfois demandé de mettre une liste à jour via ce bouton si celle-ci ne l'est pas.",
+            "Fork": "Vous pouvez créer une copie de n'importe quelle liste sur votre compte via le bouton de copie.",
+            "Filters": "Les objets d'une liste peuvent être filtrés pour l'affichage afin de ne montrer que les objets non complétés ou encore les objets que vous pouvez faire (en se basant sur les niveaux de vos crafteurs), voir le paneau \"Filtres\"",
+            "Area_breakdown": "En utilisant le bouton de résumé par zone, les objets sont rangés par zone afin d'économiser les frais de téléport, vous pouvez ainsi compléter votre liste zone par zone.",
+            "Pricing_mode": "Le mode profits vous permet de saisir le prix de chaque ingrédient et le prix de vente attendu afin de calculer les bénéfices d'une liste.",
+            "Item_category": "Objets (lignes de liste)",
+            "Requirements": "En cliquant sur l'icône de prérequis, une popup affiche les détails d'un objet, ce dont il a besoin et les recettes qui en ont besoin au sein de la liste.",
+            "Alarms": "Si un objet est une récolte timée, alors un bouton apparaît afin de pouvoir créer une alarme sonore reliée à ce noeud de récolte. L'alarme retentira même si vous n'êtes pas sur la liste, du moment que vous êtes sur le site.",
+            "Comments": "Vous pouvez ajouter des commentaires à chaque objet d'une liste, dans la limite de 10 commentaires de 140 caractères afin de préciser des éléments sur chaque objet, dire qui a contribué de combien, etc.",
+            "Colors": "Les noms d'objets ont différentes couleurs, <span class=\"craftable\">cette couleur pour les objets prêts à être craftés</span>, ce sont les objets pour lesquels vous avez tous les matériaux requis disponibles. <span class=\"strike\">Les objets de cette couleur</span> sont ceux que vous avez déjà obtenu/crafté, ils sont considérés comme complétés.",
+            "Misc_category": "Autre",
+            "Map_markers": "Dès que vous voyez cette icône à coté de coordonnées, vous pouvez cliquer dessus afin d'ouvrir une mini map qui affiche un marqueur en jeu, bien plus lisible que les coordonées.",
+            "Public_list": "Vous pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
+            "Obtention_details": "Chaque objet a des détails sur son obtention dans la partie droite de sa ligne, penseez à cliquer sur les icônes afin de voir plus de détails sur l'objet en question.",
+            "Labels": "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels.",
             "Custom_layout": "Vous pouvez pleinement personnaliser votre affichage, l'exporter et importer celui d'un ami. Cet affichage ne concerne que vous et est sauvegardé dans votre navigateur internet, il sera ainsi appliqué à toutes les listes que vous ouvrirez en l'utilisant."
         }
     },
     "adapt_to_character": "Adapter au personnage",
     "reset_filters": "Remettre les filtres à zero",
-    "LIST_TAGS":{
+    "LIST_TAGS": {
         "GEAR": "Équipement",
         "CONSUMABLE": "Consommable",
         "LOG": "Carnet",
@@ -325,7 +289,6 @@
         "HOUSING": "Logement",
         "MISC": "Autre",
         "QUEST": "Quête",
-
         "TANK": "Tank",
         "HEALER": "Soigneur",
         "MELEE": "Mêlée",
@@ -333,27 +296,21 @@
         "CASTER": "Magique",
         "CRAFTER": "Artisan",
         "GATHERER": "Récolteur",
-
         "PLD": "PLD",
         "WAR": "GUE",
         "DRK": "CHN",
-
         "WHM": "MBL",
         "SCH": "ÉRU",
         "AST": "AST",
-
         "MNK": "MOI",
         "DRG": "DRG",
         "NIN": "NIN",
         "SAM": "SAM",
-
         "BRD": "BRD",
         "MCH": "MCH",
-
         "BLM": "MNO",
         "SMN": "INV",
         "RDM": "MRG",
-
         "CRP": "MEN",
         "BSM": "FOR",
         "ARM": "ARM",
@@ -362,17 +319,16 @@
         "WVR": "COU",
         "ALC": "ALC",
         "CUL": "CUI",
-
         "MIN": "MIN",
         "BOT": "BOT",
         "FSH": "PEC"
     },
     "RECIPES": {
-        "HELP":{
+        "HELP": {
             "Welcome": "Bienvenue dans la page de recherche des recettes",
             "Filter": "Lorsque vous ouvrez le paneau des filtres, beaucoup de filtres deviennent disponibles, vous pouvez les cocher et en changer la valeur poure trouver ce que vous cherchez.",
             "Add_to_list": "Une fois que vous avez trouvé la recette que vous cherchez, vous pouvez simplement l'ajouter sur une liste en cliquant sur l'icône associée, un choix de liste s'affichera, ajoutant l'objet à la liste sélectionnée à la quaitité spécifiée.",
-            "Quick_list":"Vous pouvez créer une liste rapide en cliquant sur le bouton associé, ceci crééra une liste portant le nom de l'objet qui sera supprimée lorsque celle-ci sera complétée.",
+            "Quick_list": "Vous pouvez créer une liste rapide en cliquant sur le bouton associé, ceci crééra une liste portant le nom de l'objet qui sera supprimée lorsque celle-ci sera complétée.",
             "Add_results": "Le bouton 'Ajouter les résultats à une liste' ajoute tous les objets trouvés à une liste donnée cependant, attention, TOUTES LES QUANTITÉS SONT IGNORÉES."
         }
     },
@@ -399,12 +355,12 @@
         "Steps": "Étapes",
         "Gather_x": "Récolter {{amount}}"
     },
-    "GATHERING_LOCATIONS":{
+    "GATHERING_LOCATIONS": {
         "Title": "Récoltes",
         "No_items": "Aucune récolte trouvée",
         "Gathering_name": "Nom de l'objet"
     },
-    "ANNOUNCEMENT":{
+    "ANNOUNCEMENT": {
         "Title": "Annonce",
         "Read_more": "Plus d'informations"
     },
@@ -441,5 +397,103 @@
         "Title": "Wiki",
         "Not_found_in_current_lang": "Page non disponible en français, la version anglaise est donc affichée",
         "Not_found": "Page introuvable"
+    },
+    "SIMULATOR": {
+        "Import_macro": "Importer une macro du jeu",
+        "Ingame_macro": "Macro",
+        "Min_stats": "Stats minimum",
+        "Progress": "Progression",
+        "Quality": "Qualité",
+        "Step_counter": "Tour",
+        "Durability": "Solidité",
+        "Hq": "HQ",
+        "Cp_amount": "PS",
+        "Simulate_tooltip": "Fabriquer dans le simulateur",
+        "Configuration": "Configuration",
+        "Level": "Niveau",
+        "Reliability": "Fiabilité",
+        "Average_hq": "HQ moyen",
+        "Specialist": "Specialiste",
+        "New_rotation": "Nouvelle rotation",
+        "Rotations": "Rotations de craft",
+        "No_rotations": "Aucune rotation",
+        "New_custom_rotation": "Nouvelle rotation personnalisée",
+        "Reset": "Remettre à zéro la rotation",
+        "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
+        "Crafting_optimizer_code": "Code d'import de crafting optimizer",
+        "Generated_macro": "Macro en jeu",
+        "Generate_ingame_macro": "Générer une macro en jeu",
+        "Share_link_copied": "Lien de rotation copié dans le presse-papiers",
+        "Persist": "Sauvegarder cette rotation",
+        "Rotation_not_found": "Rotation non trouvée",
+        "Confirm_delete": "Voulez-vous vraiment supprimer cette rotation?",
+        "Toggle_snapshot_mode": "Passer en mode pas à pas",
+        "CUSTOM": {
+            "Recipe_configuration": "Configuration de la recette",
+            "Recipe_level": "Niveau de la recette",
+            "Recipe_progress": "Progression maximum",
+            "Recipe_quality": "Qualité maximum",
+            "Recipe_durability": "Solidité"
+        },
+        "CATEGORY": {
+            "Progression": "Progression",
+            "Quality": "Qualité",
+            "Cp_recovery": "Récupération de PS",
+            "Buff": "Buff",
+            "Specialty": "Atout",
+            "Repair": "Réparation",
+            "Other": "Autres"
+        },
+        "CONFIGURATION": {
+            "Job": "Job",
+            "Custom_set": "Activer les stats personnalisées",
+            "Select_job": "Selectionner un job",
+            "Craftsmanship": "Habileté",
+            "Control": "Contrôle",
+            "Specialist": "Specialiste",
+            "Ingredients": "Ingrédients HQ",
+            "Consumables": "Consommables",
+            "Apply_stats": "Appliquer les stats",
+            "Apply_ingredients": "Appliquer les ingrédients HQ",
+            "Apply_foods": "Appliquer les consommables",
+            "Food": "Choisir un plat",
+            "Medicine": "Choisir un médicament",
+            "STATS": {
+                "CP": "PS",
+                "Craftsmanship": "Habileté",
+                "Control": "Contrôle"
+            }
+        }
+    },
+    "HOME_PAGE": {
+        "title": "Créez des listes, partagez-les, contribuez, craftez",
+        "count": "listes actuellement stockées",
+        "lists_created_count": "listes créées avec FFXIV Teamcraft",
+        "support_patreon": "Soutenez-nous sur patreon",
+        "features": "Fonctionnalités",
+        "support_title": "Support",
+        "support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
+        "support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
+        "contribute_title": "Contribuer",
+        "contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
+        "changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
+        "FEATURES": {
+            "alarms_title": "Alarmes"
+        },
+        "GET_STARTED": {
+            "Title": "Par où commencer",
+            "First_list_title": "Créer une première liste",
+            "First_list_content": "Dirigez-vous vers la page de recettes pour créer votre première liste de recettes !",
+            "First_list_link": "Allez à la page des recettes",
+            "Create_alarm_title": "Créer une alarme de récolte",
+            "Create_alarm_content": "Naviguez vers la page des alarmes pour créer une notification à l'apparition d'un objet timé !",
+            "Create_alarm_link": "Aller à la page des alarmes",
+            "Create_rotations_title": "Créer une rotation de craft",
+            "Create_rotations_content": "Dirigez-vous vers le simulateur de craft pour créer et tester vos propres rotations, avec vos stats en jeu, des ingrédients HQ si vous le souhaitez et la nourriture de votre choix",
+            "Create_rotations_link": "Aller vers la page des rotations",
+            "Access_wiki_title": "En apprendre plus",
+            "Access_wiki_content": "Le wiki est là pour vous guider à travers le site, vous pouvez le consulter pour apprendre à utiliser chacune des fonctionnalités de FFXIV Teamcraft",
+            "Access_wiki_link": "Aller vers le wiki"
+        }
     }
 }

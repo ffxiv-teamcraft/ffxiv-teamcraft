@@ -6,6 +6,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from '../diff/diff.service';
 import {Observable} from 'rxjs/Observable';
 import {PendingChangesService} from '../pending-changes/pending-changes.service';
+import 'rxjs/add/operator/first';
 
 @Injectable()
 export class CustomLinksService<T extends CustomLink = CustomLink> extends FirebaseStorage<T> {

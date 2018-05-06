@@ -54,6 +54,7 @@
     "hammerjs": "^2.0.8",
     "intl": "^1.2.5",
     "jwt-decode": "^2.2.0",
+    "ng-drag-drop": "^4.0.1",
     "ng-push": "^0.2.1",
     "ngx-clipboard": "10.0.0",
     "ngx-markdown": "^1.5.2",

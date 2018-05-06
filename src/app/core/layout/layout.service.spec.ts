@@ -79,12 +79,4 @@ describe('LayoutService', () => {
 
         expect(filterChain.filter(mockRows).accepted.length).toEqual(opposedFilterChain.filter(mockRows).rejected.length);
     });
-
-    it('should be able to provide proper display with default layoutRows', inject([LayoutService], (service: LayoutService) => {
-        const display: LayoutRowDisplay[] = service.getDisplay(mockList);
-        expect(display.length).toBe(3);
-        expect(display[0].title).toBe('Gathering');
-        expect(display[1].title).toBe('Other');
-        expect(display[2].title).toBe('Pre_crafts');
-    }));
 });

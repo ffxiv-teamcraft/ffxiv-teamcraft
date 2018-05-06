@@ -1,0 +1,422 @@
+<div class="top-buttons" [class.mobile]="isMobile()">
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Persist' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="(actions$ | async).length > 0" (click)="save()">
+        <mat-icon>save</mat-icon>
+    </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Reset' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="(actions$ | async).length > 0" (click)="clearRotation()">
+        <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="importRotation()">
+        <mat-icon>file_download</mat-icon>
+    </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Import_macro' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="importMacro()">
+        <mat-icon>input</mat-icon>
+    </button>
+    <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="generateMacro()">
+        <span class="fab-xiv-label">XIV</span>
+    </button>
+    <button mat-mini-fab
+            *ngIf="simulation$ | async as simulation"
+            matTooltip="{{'SIMULATOR.Min_stats' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="showMinStats(simulation)">
+        <mat-icon>offline_pin</mat-icon>
+    </button>
+</div>
+<mat-expansion-panel [expanded]="customMode" #configPanel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{'SIMULATOR.Configuration' | translate}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="configuration">
+        <div class="config-row">
+            <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
+            <mat-checkbox [(ngModel)]="customSet">
+                {{'SIMULATOR.CONFIGURATION.Custom_set' | translate}}
+            </mat-checkbox>
+            <div *ngIf="gearsets$ | async as gearsets">
+                <mat-select *ngIf="customMode"
+                            [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
+                            [(ngModel)]="selectedSet">
+                    <mat-option *ngFor="let set of gearsets" [value]="set">
+                        {{set.jobId | jobName | i18n}} ({{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
+                    </mat-option>
+                </mat-select>
+            </div>
+            <div class="set-details" *ngIf="selectedSet !== undefined">
+                <div class="details-row">
+                    <mat-form-field
+                        matTooltip="{{selectedSet.craftsmanship + this.getBonusValue('Craftsmanship', selectedSet.craftsmanship)}}"
+                        matTooltipPosition="above">
+                        <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.craftsmanship"
+                               [placeholder]="'SIMULATOR.CONFIGURATION.Craftsmanship' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('Craftsmanship', selectedSet.craftsmanship)}})</span>
+                    </mat-form-field>
+                    <mat-form-field
+                        matTooltip="{{selectedSet.control + this.getBonusValue('Control', selectedSet.control)}}"
+                        matTooltipPosition="above">
+                        <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.control"
+                               [placeholder]="'SIMULATOR.CONFIGURATION.Control' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('Control', selectedSet.control)}})</span>
+                    </mat-form-field>
+                    <mat-form-field matTooltip="{{selectedSet.cp + this.getBonusValue('CP', selectedSet.cp)}}"
+                                    matTooltipPosition="above">
+                        <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.cp"
+                               [placeholder]="'SIMULATOR.Cp_amount' | translate">
+                        <span matSuffix>(+{{this.getBonusValue('CP', selectedSet.cp)}})</span>
+                    </mat-form-field>
+                </div>
+                <div class="details-row">
+                    <mat-form-field>
+                        <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.level"
+                               [placeholder]="'SIMULATOR.Level' | translate">
+                    </mat-form-field>
+                    <mat-checkbox [disabled]="!customSet" [(ngModel)]="selectedSet.specialist">
+                        {{'SIMULATOR.CONFIGURATION.Specialist' | translate}}
+                    </mat-checkbox>
+                </div>
+                <button mat-raised-button color="accent" (click)="applyStats(selectedSet)">
+                    {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+                </button>
+            </div>
+        </div>
+        <div class="config-row" *ngIf="!customMode">
+            <h3>{{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}</h3>
+            <mat-list>
+                <mat-list-item *ngFor="let ingredient of hqIngredientsData">
+                    <span matLine [appXivdbTooltip]="ingredient.id">{{ingredient.id | itemName | i18n}}</span>
+                    <i matLine>{{ingredient.quality}}</i>
+                    <mat-input-container>
+                        <input matInput type="number" [(ngModel)]="ingredient.amount" min="0" max="{{ingredient.max}}">
+                        <span matSuffix>/{{ingredient.max}}</span>
+                    </mat-input-container>
+                </mat-list-item>
+            </mat-list>
+            <button mat-raised-button class="apply-button" color="accent" (click)="hqIngredients = hqIngredientsData">
+                {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
+            </button>
+        </div>
+        <div class="config-row">
+            <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
+            <div class="consumables-cols">
+                <div class="foods">
+                    <mat-select [(ngModel)]="selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
+                        <mat-option [value]="undefined"></mat-option>
+                        <mat-option *ngFor="let food of foods.reverse()" [value]="food">
+                            {{food.itemId | itemName | i18n}}
+                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
+                        </mat-option>
+                    </mat-select>
+                    <div class="consumable-details" *ngIf="selectedFood !== undefined">
+                        <div class="details-row" *ngFor="let bonus of selectedFood.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                            ({{bonus.max}})
+                        </div>
+                    </div>
+                </div>
+                <div class="medicines">
+                    <mat-select [(ngModel)]="selectedMedicine"
+                                placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
+                        <mat-option [value]="undefined"></mat-option>
+                        <mat-option *ngFor="let medicine of medicines.reverse()" [value]="medicine">
+                            {{medicine.itemId | itemName | i18n}}
+                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
+                        </mat-option>
+                    </mat-select>
+                    <div class="consumable-details" *ngIf="selectedMedicine !== undefined">
+                        <div class="details-row" *ngFor="let bonus of selectedMedicine.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                            ({{bonus.max}})
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button class="apply-button" color="accent" (click)="applyStats(selectedSet)">
+                {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+            </button>
+        </div>
+    </div>
+</mat-expansion-panel>
+<div *ngIf="simulation$ | async as simulation; else loading">
+    <div *ngIf="result$ | async as resultData">
+        <mat-card *ngIf="!isMobile()">
+            <mat-card-header>
+                <a *ngIf="itemId !== undefined" mat-card-avatar href="{{itemId | itemLink | i18n}}" target="_blank">
+                    <img mat-card-avatar [appXivdbTooltip]="itemId" src="{{itemIcon | icon}}"
+                         alt="{{itemId | itemName | i18n}}">
+                </a>
+                <mat-card-title *ngIf="itemId !== undefined">
+                    {{itemId | itemName | i18n}}
+                </mat-card-title>
+                <mat-card-subtitle *ngIf="itemId !== undefined">
+                    <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
+                </mat-card-subtitle>
+                <div class="steps">
+                    {{'SIMULATOR.Step_counter' | translate}}
+                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input">
+                        <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
+                               [ngModel]="resultData.simulation.steps.length"
+                               (ngModelChange)="snapshotStep$.next($event)"
+                               matInput>
+                    </mat-input-container>
+                    <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
+                    <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
+                            matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">
+                        <mat-icon>camera_roll</mat-icon>
+                    </button>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="result">
+                <div class="durability">
+                    <h3>{{'SIMULATOR.Durability' | translate}}</h3>
+                    <span class="durability-value">{{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
+                </div>
+                <div class="right-part">
+                    <div class="progress right-row">
+                        <h3>{{'SIMULATOR.Progress' | translate}}</h3>
+                        <div class="value-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.progression/resultData.simulation.recipe.progress"
+                                              color="primary"></mat-progress-bar>
+                            <span
+                                class="value-amount">{{resultData.simulation.progression}}/{{resultData.simulation.recipe.progress}}</span>
+                        </div>
+                    </div>
+                    <div class="quality right-row">
+                        <h3>{{'SIMULATOR.Quality' | translate}}</h3>
+                        <div class="value-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                                              color="accent"></mat-progress-bar>
+                            <span class="value-amount">{{resultData.simulation.quality}}/{{resultData.simulation.recipe.quality}}</span>
+                        </div>
+                    </div>
+                    <div class="bottom-part">
+                        <div class="hq-chances">
+                            {{'SIMULATOR.Hq' | translate}}:
+                            <span class="hq-chances-value">
+                                {{resultData.hqPercent}}%
+                            </span>
+                        </div>
+                        <div class="cp-progress">
+                            <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
+                            <div class="cp-bar">
+                                <mat-progress-bar mode="determinate"
+                                                  [value]="100*resultData.simulation.availableCP/resultData.simulation.maxCP"
+                                                  color="accent"></mat-progress-bar>
+                                <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
+                            </div>
+                        </div>
+                        <div class="report" *ngIf="report$ | async as report">
+                            <span class="report-row">
+                                {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
+                            </span>
+                            <span class="report-row">
+                                {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card *ngIf="isMobile()">
+            <mat-card-header>
+                <mat-card-title *ngIf="itemId !== undefined">
+                    {{itemId | itemName | i18n}}
+                </mat-card-title>
+                <mat-card-subtitle *ngIf="itemId !== undefined">
+                    <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
+                </mat-card-subtitle>
+                <div class="steps mobile">
+                    {{'SIMULATOR.Step_counter' | translate}}
+                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input mobile">
+                        <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
+                               [ngModel]="resultData.simulation.steps.length"
+                               (ngModelChange)="snapshotStep$.next($event)"
+                               matInput>
+                    </mat-input-container>
+                    <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
+                    <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
+                            matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">
+                        <mat-icon>camera_roll</mat-icon>
+                    </button>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="mobile-result">
+                <span class="durability-value">{{'SIMULATOR.Durability' | translate}} : {{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
+
+                <div class="progress right-row">
+                    <b>{{'SIMULATOR.Progress' | translate}}</b>
+                    <div class="value-bar">
+                        <mat-progress-bar mode="determinate"
+                                          [value]="100*resultData.simulation.progression/resultData.simulation.recipe.progress"
+                                          color="primary"></mat-progress-bar>
+                        <span
+                            class="value-amount">{{resultData.simulation.progression}}/{{resultData.simulation.recipe.progress}}</span>
+                    </div>
+                </div>
+                <div class="quality right-row">
+                    <b>{{'SIMULATOR.Quality' | translate}}</b>
+                    <div class="value-bar">
+                        <mat-progress-bar mode="determinate"
+                                          [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                                          color="accent"></mat-progress-bar>
+                        <span class="value-amount">{{resultData.simulation.quality}}/{{resultData.simulation.recipe.quality}}</span>
+                    </div>
+                </div>
+                <div class="bottom-part">
+                    <div class="hq-chances">
+                        {{'SIMULATOR.Hq' | translate}}:
+                        <span class="hq-chances-value">
+                                {{resultData.hqPercent}}%
+                            </span>
+                    </div>
+                    <div class="cp-progress">
+                        <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
+                        <div class="cp-bar">
+                            <mat-progress-bar mode="determinate"
+                                              [value]="100*resultData.simulation.availableCP/resultData.simulation.maxCP"
+                                              color="accent"></mat-progress-bar>
+                            <span class="cp-amount">{{resultData.simulation.availableCP}}/{{resultData.simulation.maxCP}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report" *ngIf="report$ | async as report">
+                            <span class="report-row">
+                                {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
+                            </span>
+                    <span class="report-row">
+                                {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+                            </span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <div class="buffs">
+                <div class="buff-container" *ngFor="let buff of resultData.simulation.buffs">
+                    <span class="stacks" *ngIf="buff.stacks > 0">{{buff.stacks}}</span>
+                    <img [src]="getBuffIcon(buff)" class="buff-icon" alt="">
+                    <span class="duration" *ngIf="buff.duration.toString() !== 'Infinity'">{{buff.duration}}</span>
+                </div>
+            </div>
+        </mat-card>
+        <mat-card>
+            <div class="actions">
+                <app-action draggable
+                            droppable
+                            (onDragStart)="step.action.canBeMoved()?null:$event.preventDefault()"
+                            dragOverClass="drag-over"
+                            [disabled]="!step.success || step.skipped"
+                            (onDrop)="moveSkill($event.dragData, index)"
+                            [dragData]="index"
+                            *ngFor="let step of resultData.simulation.steps; let index = index"
+                            (actionclick)="removeAction(index)"
+                            [action]="step.action"
+                            [simulation]="resultData.simulation"
+                            [ignoreDisabled]="true"
+                            [cpCost]="step.cpDifference"></app-action>
+                <div class="end-drag-zone" droppable
+                     dragOverClass="drag-over"
+                     (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
+            </div>
+        </mat-card>
+        <mat-card>
+            <div class="category-row">
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getProgressActions()"></app-action>
+                    </div>
+                </div>
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getQualityActions()"></app-action>
+                    </div>
+                </div>
+            </div>
+            <div class="category-row">
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getCpRecoveryActions()"></app-action>
+                    </div>
+                </div>
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getBuffActions()"></app-action>
+                    </div>
+                </div>
+            </div>
+            <div class="category-row">
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getRepairActions()"></app-action>
+                    </div>
+                </div>
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getSpecialtyActions()"></app-action>
+                    </div>
+                </div>
+                <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
+                    <div class="actions-row">
+                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                                    [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                    [action]="action" [simulation]="resultData.simulation"
+                                    *ngFor="let action of getOtherActions()"></app-action>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="loading-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

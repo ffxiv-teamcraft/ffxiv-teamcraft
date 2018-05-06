@@ -23,6 +23,8 @@ import {HelpService} from '../../../core/component/help.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {WorkshopService} from 'app/core/database/workshop.service';
 import {Workshop} from '../../../model/other/workshop';
+import {CraftingRotationService} from 'app/core/database/crafting-rotation.service';
+import {CraftingRotation} from '../../../model/other/crafting-rotation';
 
 declare const ga: Function;
 
@@ -107,6 +109,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     loading = false;
 
+    rotations$: Observable<CraftingRotation[]>;
+
     constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MatSnackBar, protected dialog: MatDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
@@ -114,12 +118,16 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService,
                 protected helpService: HelpService, protected media: ObservableMedia,
-                private workshopService: WorkshopService) {
+                private workshopService: WorkshopService, private rotationsService: CraftingRotationService) {
         super(dialog, helpService, media);
     }
 
     ngOnInit() {
         super.ngOnInit();
+
+        this.rotations$ = this.userService.getUserData().mergeMap(user => {
+            return this.rotationsService.getUserRotations(user.$key);
+        }).publishReplay(1).refCount();
 
         this.sharedLists = this.userService.getUserData().mergeMap(user => {
             return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)))

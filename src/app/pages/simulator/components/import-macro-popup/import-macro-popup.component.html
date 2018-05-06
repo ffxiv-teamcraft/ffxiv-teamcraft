@@ -1,0 +1,12 @@
+<h3 mat-dialog-title>{{'SIMULATOR.Import_macro' | translate}}</h3>
+<div mat-dialog-content>
+    <mat-input-container>
+        <textarea matInput placeholder="{{'SIMULATOR.Ingame_macro' | translate}}" [(ngModel)]="importString"
+        rows="8" cols="50">
+        </textarea>
+    </mat-input-container>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent" mat-dialog-close="{{importString}}">{{'Ok' | translate}}</button>
+    <button mat-button color="warn" mat-dialog-close>{{'Cancel' | translate}}</button>
+</div>

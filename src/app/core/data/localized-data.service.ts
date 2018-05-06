@@ -63,8 +63,27 @@ export class LocalizedDataService {
         return this.getIndexByName(places, name, 'en');
     }
 
-    public getCraftingActionByName(name: string, language: 'en' | 'fr' | 'de' | 'ja'): I18nName {
+    public getCraftingActionIdByName(name: string, language: Language): number {
+        let res = this.getIndexByName(craftingActions, name, language);
+        if (res === -1) {
+            res = this.getIndexByName(actions, name, language);
+        }
+        if (res === -1) {
+            throw new Error('Data row not found.');
+        }
+        return res;
+    }
+
+    public getCraftingActionByName(name: string, language: Language): I18nName {
         const result = this.getRowByName(craftingActions, name, language) || this.getRowByName(actions, name, language);
+        if (result === undefined) {
+            throw new Error('Data row not found.');
+        }
+        return result;
+    }
+
+    public getCraftingAction(id: number): I18nName {
+        const result = this.getRow(craftingActions, id) || this.getRow(actions, id);
         if (result === undefined) {
             throw new Error('Data row not found.');
         }

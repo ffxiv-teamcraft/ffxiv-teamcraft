@@ -10,6 +10,10 @@ import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from './diff/diff.service';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/observable/concat';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {

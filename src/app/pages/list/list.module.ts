@@ -40,6 +40,7 @@ import {ClipboardModule} from 'ngx-clipboard';
 import { ListComponent } from './list/list.component';
 import { NavigationMapPopupComponent } from './navigation-map-popup/navigation-map-popup.component';
 import {MapModule} from '../../modules/map/map.module';
+import { ListFinishedPopupComponent } from './list-finished-popup/list-finished-popup.component';
 
 const routes: Routes = [
     {
@@ -105,6 +106,7 @@ const routes: Routes = [
         ImportInputBoxComponent,
         ListComponent,
         NavigationMapPopupComponent,
+        ListFinishedPopupComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
@@ -114,6 +116,7 @@ const routes: Routes = [
         ListLayoutPopupComponent,
         ImportInputBoxComponent,
         NavigationMapPopupComponent,
+        ListFinishedPopupComponent,
     ]
 })
 export class ListModule {

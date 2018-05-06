@@ -16,7 +16,10 @@ export class LayoutOrderService {
         'LEVEL': (a, b) => {
             const aLevel = this.getLevel(a);
             const bLevel = this.getLevel(b);
-            return aLevel - bLevel;
+            const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
+            const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
+            // If same level, order by name for these two
+            return aLevel === bLevel ? aName > bName ? 1 : -1 : aLevel - bLevel;
         }
     };
 
