@@ -6,6 +6,11 @@
                 <mat-panel-title>
                     {{rotation.getName()}}
                 </mat-panel-title>
+                <button mat-icon-button *ngIf="linkButton"
+                        matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                        (click)="$event.stopPropagation(); openLinkPopup(rotation)">
+                    <mat-icon>link</mat-icon>
+                </button>
                 <button mat-icon-button ngxClipboard [cbContent]="getLink(rotation)"
                         (click)="$event.stopPropagation()"
                         matTooltip="{{'Share' | translate}}" matTooltipPosition="above"

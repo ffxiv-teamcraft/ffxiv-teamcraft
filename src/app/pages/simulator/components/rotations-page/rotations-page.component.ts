@@ -8,6 +8,8 @@ import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {CustomLink} from '../../../../core/database/custom-links/costum-link';
+import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
 
 @Component({
     selector: 'app-rotations-page',
@@ -19,12 +21,16 @@ export class RotationsPageComponent {
 
     rotations$: Observable<CraftingRotation[]>;
 
+    linkButton = false;
+
     constructor(private rotationsService: CraftingRotationService, private userService: UserService,
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
                 private translator: TranslateService, private dialog: MatDialog) {
-        this.rotations$ = this.userService.getUserData().mergeMap(user => {
-            return this.rotationsService.getUserRotations(user.$key);
-        });
+        this.rotations$ = this.userService.getUserData()
+            .do(user => this.linkButton = user.admin || user.patron)
+            .mergeMap(user => {
+                return this.rotationsService.getUserRotations(user.$key);
+            });
     }
 
     public getSteps(rotation: CraftingRotation): CraftingAction[] {
@@ -43,8 +49,16 @@ export class RotationsPageComponent {
             .subscribe();
     }
 
+    public openLinkPopup(rotation: CraftingRotation): void {
+        const link = new CustomLink();
+        link.redirectTo = `${rotation.defaultItemId ? 'simulator/' +
+            rotation.defaultItemId + '/' + rotation.$key : 'simulator/custom/' + rotation.$key}`;
+        this.dialog.open(CustomLinkPopupComponent, {data: link});
+    }
+
     public getLink(rotation: CraftingRotation): string {
-        return `${window.location.protocol}//${window.location.host}${rotation.defaultItemId ? '/simulator/' + rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`;
+        return `${window.location.protocol}//${window.location.host}${rotation.defaultItemId ? '/simulator/' +
+            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`;
     }
 
     public showCopiedNotification(): void {

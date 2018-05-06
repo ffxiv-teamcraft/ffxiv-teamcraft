@@ -32,27 +32,35 @@ import {
 } from '@angular/material';
 import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
 import {ClipboardModule} from 'ngx-clipboard';
+import {CustomLinksModule} from '../custom-links/custom-links.module';
+import {PatreonGuard} from '../../core/guard/patreon.guard';
+import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
     {
         path: 'simulator/custom/:rotationId',
-        component: CustomSimulatorPageComponent
+        component: CustomSimulatorPageComponent,
+        canActivate: [MaintenanceGuard]
     },
     {
         path: 'simulator/custom',
-        component: CustomSimulatorPageComponent
+        component: CustomSimulatorPageComponent,
+        canActivate: [MaintenanceGuard]
     },
     {
         path: 'simulator/:itemId/:rotationId',
-        component: SimulatorPageComponent
+        component: SimulatorPageComponent,
+        canActivate: [MaintenanceGuard]
     },
     {
         path: 'simulator/:itemId',
-        component: SimulatorPageComponent
+        component: SimulatorPageComponent,
+        canActivate: [MaintenanceGuard]
     },
     {
         path: 'rotations',
-        component: RotationsPageComponent
+        component: RotationsPageComponent,
+        canActivate: [MaintenanceGuard]
     }
 ];
 
@@ -83,6 +91,7 @@ const routes: Routes = [
         ClipboardModule,
 
         CommonComponentsModule,
+        CustomLinksModule,
         TooltipModule,
         PipesModule,
         CoreModule,
