@@ -1,4 +1,5 @@
 {
+    "Delete": "Gelöscht",
     "Timers": "Timers",
     "Copy_isearch": "isearch Makro kopieren",
     "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
@@ -229,6 +230,7 @@
         "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren"
     },
     "LIST_DETAILS": {
+        "List_finished": "Liste erfolgreich abgeschlossen",
         "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
         "Missing_tags_after_button": " hinzu.",
         "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
