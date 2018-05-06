@@ -191,16 +191,16 @@
             <button mat-mini-fab class="alarms-sidebar-trigger"
                     matTooltip="{{'Timers' | translate}}"
                     matTooltipPosition="left"
-                    *ngIf="!mobile" (click)="timersSidebar.toggle()"
-                    [ngClass]="{'opened': timersSidebar?.opened}">
-                <mat-icon *ngIf="!timersSidebar?.opened">alarm</mat-icon>
-                <mat-icon *ngIf="timersSidebar?.opened">keyboard_arrow_right</mat-icon>
+                    *ngIf="!mobile" (click)="timers.toggle()"
+                    [ngClass]="{'opened': timers?.opened}">
+                <mat-icon *ngIf="!timers?.opened">alarm</mat-icon>
+                <mat-icon *ngIf="timers?.opened">keyboard_arrow_right</mat-icon>
             </button>
             <div class="content-middle">
                 <router-outlet></router-outlet>
             </div>
         </div>
-        <mat-sidenav mode="side" position="end" *ngIf="!mobile" #timers>
+        <mat-sidenav mode="side" position="end" #timers>
             <app-alarms-sidebar></app-alarms-sidebar>
         </mat-sidenav>
     </mat-sidenav-container>

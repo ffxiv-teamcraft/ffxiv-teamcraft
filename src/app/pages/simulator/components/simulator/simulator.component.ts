@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ChangeDetectionStrategy, OnChanges, SimpleChanges} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {Observable} from 'rxjs/Observable';
@@ -32,13 +32,15 @@ import {ImportMacroPopupComponent} from '../import-macro-popup/import-macro-popu
 import {LocalizedDataService} from '../../../../core/data/localized-data.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from 'app/core/data/language';
+import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 
 @Component({
     selector: 'app-simulator',
     templateUrl: './simulator.component.html',
-    styleUrls: ['./simulator.component.scss']
+    styleUrls: ['./simulator.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SimulatorComponent implements OnInit, OnDestroy {
+export class SimulatorComponent implements OnInit, OnDestroy, OnChanges {
 
     @Input()
     itemId: number;
@@ -138,10 +140,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
-                private translate: TranslateService) {
+                private translate: TranslateService, consumablesService: ConsumablesService) {
 
-        this.foods = Consumable.fromData(foods);
-        this.medicines = Consumable.fromData(medicines);
+        this.foods = consumablesService.fromData(foods).reverse();
+        this.medicines = consumablesService.fromData(medicines).reverse();
 
         this.actions$.subscribe(actions => {
             this.dirty = false;
@@ -398,5 +400,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.pendingChanges.removePendingChange('rotation');
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('changes !', changes);
     }
 }

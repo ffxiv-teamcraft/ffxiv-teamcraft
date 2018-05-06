@@ -117,7 +117,7 @@
                 <div class="foods">
                     <mat-select [(ngModel)]="selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
                         <mat-option [value]="undefined"></mat-option>
-                        <mat-option *ngFor="let food of foods.reverse()" [value]="food">
+                        <mat-option *ngFor="let food of foods" [value]="food">
                             {{food.itemId | itemName | i18n}}
                             <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
                         </mat-option>
@@ -133,7 +133,7 @@
                     <mat-select [(ngModel)]="selectedMedicine"
                                 placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
                         <mat-option [value]="undefined"></mat-option>
-                        <mat-option *ngFor="let medicine of medicines.reverse()" [value]="medicine">
+                        <mat-option *ngFor="let medicine of medicines" [value]="medicine">
                             {{medicine.itemId | itemName | i18n}}
                             <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
                         </mat-option>

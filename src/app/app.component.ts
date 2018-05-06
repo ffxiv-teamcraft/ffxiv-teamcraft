@@ -39,9 +39,6 @@ export class AppComponent implements OnInit {
 
     public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
 
-    @ViewChild('timers')
-    timersSidebar: MatSidenav;
-
     locale: string;
 
     announcement: string;
@@ -86,8 +83,7 @@ export class AppComponent implements OnInit {
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
-                private pendingChangesService: PendingChangesService,
-                private scrollSpy: ScrollSpyService) {
+                private pendingChangesService: PendingChangesService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);

@@ -37,6 +37,7 @@ import {PatreonGuard} from '../../core/guard/patreon.guard';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
 import {ImportMacroPopupComponent} from './components/import-macro-popup/import-macro-popup.component';
+import {ConsumablesService} from './model/consumables.service';
 
 const routes: Routes = [
     {
@@ -118,6 +119,7 @@ const routes: Routes = [
     ],
     providers: [
         CraftingActionsRegistry,
+        ConsumablesService
     ]
 })
 export class SimulatorModule {
