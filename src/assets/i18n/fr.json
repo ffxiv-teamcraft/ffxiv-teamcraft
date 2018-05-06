@@ -1,4 +1,5 @@
 {
+    "Delete": "Supprimer",
     "Timers": "Alarmes",
     "Copy_isearch": "Copier la macro de recherche en jeu",
     "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
@@ -229,6 +230,7 @@
         "Enable_crystals_tracking": "Activer le suivi des cristaux"
     },
     "LIST_DETAILS": {
+        "List_finished": "Liste terminée",
         "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
         "Missing_tags_after_button": "",
         "Add_remove_amount": "Ajouter/enlever un montant donné",
@@ -458,6 +460,37 @@
                 "Craftsmanship": "Habileté",
                 "Control": "Contrôle"
             }
+        }
+    },
+    "HOME_PAGE": {
+        "title": "Créez des listes, partagez-les, contribuez, craftez",
+        "count": "listes actuellement stockées",
+        "lists_created_count": "listes créées avec FFXIV Teamcraft",
+        "support_patreon": "Soutenez-nous sur patreon",
+        "features": "Fonctionnalités",
+        "support_title": "Support",
+        "support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
+        "support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
+        "contribute_title": "Contribuer",
+        "contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
+        "changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
+        "FEATURES": {
+            "alarms_title": "Alarmes"
+        },
+        "GET_STARTED": {
+            "Title": "Par où commencer",
+            "First_list_title": "Créer une première liste",
+            "First_list_content": "Dirigez-vous vers la page de recettes pour créer votre première liste de recettes !",
+            "First_list_link": "Allez à la page des recettes",
+            "Create_alarm_title": "Créer une alarme de récolte",
+            "Create_alarm_content": "Naviguez vers la page des alarmes pour créer une notification à l'apparition d'un objet timé !",
+            "Create_alarm_link": "Aller à la page des alarmes",
+            "Create_rotations_title": "Créer une rotation de craft",
+            "Create_rotations_content": "Dirigez-vous vers le simulateur de craft pour créer et tester vos propres rotations, avec vos stats en jeu, des ingrédients HQ si vous le souhaitez et la nourriture de votre choix",
+            "Create_rotations_link": "Aller vers la page des rotations",
+            "Access_wiki_title": "En apprendre plus",
+            "Access_wiki_content": "Le wiki est là pour vous guider à travers le site, vous pouvez le consulter pour apprendre à utiliser chacune des fonctionnalités de FFXIV Teamcraft",
+            "Access_wiki_link": "Aller vers le wiki"
         }
     }
 }

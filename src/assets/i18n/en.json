@@ -475,17 +475,6 @@
         "contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
         "changelog": "To get every news about the website, each changes, please refer to the changelog.",
         "FEATURES": {
-            "list_creation_title": "List creation",
-            "realtime_translations_title": "Realtime translation",
-            "item_details_title": "Item details",
-            "node_timers_title": "Timer node alerts",
-            "area_breakdown_title": "Area breakdown",
-            "search_filters_title": "Search filters",
-            "bulk_import_title": "Bulk import",
-            "map_markers_title": "Map markers",
-            "comments_title": "Comments",
-            "pricing_title": "Pricing",
-            "inventory_title": "Inventory breakdown",
             "alarms_title": "Alarms"
         },
         "GET_STARTED": {

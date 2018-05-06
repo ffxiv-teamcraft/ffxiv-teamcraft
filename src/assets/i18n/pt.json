@@ -343,5 +343,36 @@
         "Title": "Wiki",
         "Not_found_in_current_lang": "Se essa página não for encontrada em sua linguagem, a versão em inglês será apresentada.",
         "Not_found": "Página não encontrada"
+    },
+    "HOME_PAGE": {
+        "title": "Create lists, share, contribute, craft",
+        "count": "lists currently stored",
+        "lists_created_count": "lists created using FFXIV Teamcraft",
+        "support_patreon": "Support us on patreon",
+        "features": "Features",
+        "support_title": "Support",
+        "support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
+        "support_comtent_facebook": "You can also find us on facebook",
+        "contribute_title": "Contribute",
+        "contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
+        "changelog": "To get every news about the website, each changes, please refer to the changelog.",
+        "FEATURES": {
+            "alarms_title": "Alarms"
+        },
+        "GET_STARTED": {
+            "Title": "Get started",
+            "First_list_title": "Create your first list",
+            "First_list_content": "Navigate to the recipes page by clicking the link below and create your first list !",
+            "First_list_link": "Go to recipes page",
+            "Create_alarm_title": "Create node alarms",
+            "Create_alarm_content": "Navigate to the alarms page by clicking the link below and create your first node notification to never miss a spawn !",
+            "Create_alarm_link": "Go to alarms page",
+            "Create_rotations_title": "Create crafting rotations",
+            "Create_rotations_content": "Navigate to the rotations page by clicking the link below and create rotations for ingame crafting, to test with your own stats, foods, and HQ ingredients !",
+            "Create_rotations_link": "Go to rotations page",
+            "Access_wiki_title": "Learn more",
+            "Access_wiki_content": "Navigate to the wiki page by clicking the link below. This page has some documentation for the general website usage, to guide you to make the most out of it and help you as much as possible",
+            "Access_wiki_link": "Go to wiki page"
+        }
     }
 }
