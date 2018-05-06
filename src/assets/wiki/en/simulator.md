@@ -72,6 +72,18 @@ You can import rotations from Crafting Optimizer using a very simple process:
  4. Click Ok.
  5. Profit, your rotation is now imported.
 
+## Import from ingame macro
+
+You can import crafting rotations from ingame macros, simply follow the gif below:
+
+![](https://i.imgur.com/Madc7mA.gif)
+
+## Find minimum stats
+
+You can find minimum stats required for your rotation (only if it completes, else you'll see actual stats) using the minimum stats popup, here is a demo:
+
+![](https://i.imgur.com/UedLw7m.gif)
+
 ## Ingame macro creation
 
 You can generate ingame macros for an easy simulator => game transition of your rotations.

@@ -399,6 +399,8 @@
         "Not_found": "Page not found"
     },
     "SIMULATOR": {
+        "Import_macro": "Import from ingame macro",
+        "Ingame_macro": "Ingame macro",
         "Min_stats": "Minimum stats",
         "Progress": "Progress",
         "Quality": "Quality",

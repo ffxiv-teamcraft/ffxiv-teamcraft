@@ -18,6 +18,12 @@
         <mat-icon>file_download</mat-icon>
     </button>
     <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Import_macro' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="importMacro()">
+        <mat-icon>input</mat-icon>
+    </button>
+    <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
             (click)="generateMacro()">

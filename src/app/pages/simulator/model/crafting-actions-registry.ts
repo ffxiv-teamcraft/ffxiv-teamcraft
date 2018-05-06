@@ -235,6 +235,17 @@ export class CraftingActionsRegistry {
             .map(row => row.action);
     }
 
+    public createFromIds(ids: number[]): CraftingAction[] {
+        return ids.map(id => {
+            const found = CraftingActionsRegistry.ALL_ACTIONS.find(row => row.action.getIds().indexOf(id) > -1);
+            if (found !== undefined) {
+                return found.action;
+            }
+            return undefined;
+        })
+            .filter(action => action !== undefined)
+    }
+
     public serializeRotation(rotation: CraftingAction[]): string[] {
         return rotation.map(action => {
             const actionRow = CraftingActionsRegistry.ALL_ACTIONS.find(row => row.action === action);

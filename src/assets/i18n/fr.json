@@ -399,6 +399,8 @@
         "Not_found": "Page introuvable"
     },
     "SIMULATOR": {
+        "Import_macro": "Importer une macro du jeu",
+        "Ingame_macro": "Macro",
         "Min_stats": "Stats minimum",
         "Progress": "Progression",
         "Quality": "Qualité",

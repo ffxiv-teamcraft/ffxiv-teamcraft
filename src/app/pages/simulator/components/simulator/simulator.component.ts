@@ -28,6 +28,10 @@ import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rota
 import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
 import {PendingChangesService} from 'app/core/database/pending-changes/pending-changes.service';
 import {SimulationMinStatsPopupComponent} from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
+import {ImportMacroPopupComponent} from '../import-macro-popup/import-macro-popup.component';
+import {LocalizedDataService} from '../../../../core/data/localized-data.service';
+import {TranslateService} from '@ngx-translate/core';
+import {Language} from 'app/core/data/language';
 
 @Component({
     selector: 'app-simulator',
@@ -125,9 +129,16 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     public dirty = false;
 
+    private findActionsRegex: RegExp =
+        new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
+
+    private findActionsAutoTranslatedRegex: RegExp =
+        new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
-                private pendingChanges: PendingChangesService) {
+                private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
+                private translate: TranslateService) {
 
         this.foods = Consumable.fromData(foods);
         this.medicines = Consumable.fromData(medicines);
@@ -211,6 +222,45 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             .filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1)
             .map(importString => <string[]>JSON.parse(importString))
             .map(importArray => this.registry.importFromCraftOpt(importArray))
+            .subscribe(rotation => {
+                this.actions = rotation;
+                this.markAsDirty();
+            });
+    }
+
+    importMacro(): void {
+        this.dialog.open(ImportMacroPopupComponent)
+            .afterClosed()
+            .filter(res => res !== undefined && res.length > 0 && res.indexOf('/ac') > -1)
+            .map(macro => {
+                const actionIds: number[] = [];
+                for (const line of macro.split('\n')) {
+                    let match = this.findActionsRegex.exec(line);
+                    if (match !== null && match !== undefined) {
+                        const skillName = match[2].replace(/"/g, '');
+                        // Get translated skill
+                        try {
+                            actionIds
+                                .push(this.localizedDataService.getCraftingActionIdByName(skillName, <Language>this.translate.currentLang));
+                        } catch (ignored) {
+                            // Ugly implementation but it's a specific case we don't want to refactor for.
+                            try {
+                                // If there's no skill match with the first regex, try the second one (for auto translated skills)
+                                match = this.findActionsAutoTranslatedRegex.exec(line);
+                                if (match !== null) {
+                                    actionIds
+                                        .push(this.localizedDataService.getCraftingActionIdByName(match[2],
+                                            <Language>this.translate.currentLang));
+                                }
+                            } catch (ignoredAgain) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                return actionIds;
+            })
+            .map(actionIds => this.registry.createFromIds(actionIds))
             .subscribe(rotation => {
                 this.actions = rotation;
                 this.markAsDirty();

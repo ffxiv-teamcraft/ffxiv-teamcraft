@@ -25,7 +25,7 @@ export class Observe extends CraftingAction {
     }
 
     getIds(): number[] {
-        return [100113];
+        return [100010, 100023, 100040, 100053, 100070, 100082, 100099, 100113];
     }
 
     getSuccessRate(simulationState: Simulation): number {

@@ -36,6 +36,7 @@ import {CustomLinksModule} from '../custom-links/custom-links.module';
 import {PatreonGuard} from '../../core/guard/patreon.guard';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
+import {ImportMacroPopupComponent} from './components/import-macro-popup/import-macro-popup.component';
 
 const routes: Routes = [
     {
@@ -105,11 +106,13 @@ const routes: Routes = [
         ActionComponent,
         RotationsPageComponent,
         ImportRotationPopupComponent,
+        ImportMacroPopupComponent,
         MacroPopupComponent,
         SimulationMinStatsPopupComponent
     ],
     entryComponents: [
         ImportRotationPopupComponent,
+        ImportMacroPopupComponent,
         MacroPopupComponent,
         SimulationMinStatsPopupComponent
     ],
