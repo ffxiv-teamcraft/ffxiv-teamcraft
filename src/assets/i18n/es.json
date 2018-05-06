@@ -456,34 +456,34 @@
         }
     },
     "HOME_PAGE": {
-        "title": "Create lists, share, contribute, craft",
-        "count": "lists currently stored",
-        "lists_created_count": "lists created using FFXIV Teamcraft",
-        "support_patreon": "Support us on patreon",
-        "features": "Features",
-        "support_title": "Support",
-        "support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
-        "support_comtent_facebook": "You can also find us on facebook",
-        "contribute_title": "Contribute",
-        "contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
-        "changelog": "To get every news about the website, each changes, please refer to the changelog.",
+        "title": "Cree listas, comparta, contribuya, cree artesanías",
+        "count": "listas actualmente almacenadas",
+        "lists_created_count": "listas creadas usando FFXIV Teamcraft",
+        "support_patreon": "Apóyenos en patreon",
+        "features": "Características",
+        "support_title": "Soporte",
+        "support_content_discord": "Si tiene algún problema usando la herramienta, no sea tímido, ¡visítenos en discord!",
+        "support_comtent_facebook": "También puede encontrarnos en facebook",
+        "contribute_title": "Contribuya",
+        "contribute_content": "Si quiere contribuir a la herramienta, ¡puede revisar el código en github y crear Pull Requests!",
+        "changelog": "Para estar al tanto de lo nuevo en el sitio, cada cambio, favor de referir al registro de cambios.",
         "FEATURES": {
-            "alarms_title": "Alarms"
+            "alarms_title": "Alarmas"
         },
         "GET_STARTED": {
-            "Title": "Get started",
-            "First_list_title": "Create your first list",
-            "First_list_content": "Navigate to the recipes page by clicking the link below and create your first list !",
-            "First_list_link": "Go to recipes page",
-            "Create_alarm_title": "Create node alarms",
-            "Create_alarm_content": "Navigate to the alarms page by clicking the link below and create your first node notification to never miss a spawn !",
-            "Create_alarm_link": "Go to alarms page",
-            "Create_rotations_title": "Create crafting rotations",
-            "Create_rotations_content": "Navigate to the rotations page by clicking the link below and create rotations for ingame crafting, to test with your own stats, foods, and HQ ingredients !",
-            "Create_rotations_link": "Go to rotations page",
-            "Access_wiki_title": "Learn more",
-            "Access_wiki_content": "Navigate to the wiki page by clicking the link below. This page has some documentation for the general website usage, to guide you to make the most out of it and help you as much as possible",
-            "Access_wiki_link": "Go to wiki page"
+            "Title": "Como empezar",
+            "First_list_title": "Cree su primer lista",
+            "First_list_content": "Navegue a la página de recetas dando clic al vínculo inferior y ¡cree su primer lista!",
+            "First_list_link": "Ir a la página de recetas",
+            "Create_alarm_title": "Cree alarmas de nodo",
+            "Create_alarm_content": "Navegue a la página de alarmas dando clic al vínculo inferior y ¡cree su primer notificación de nodo para nunca perderse una aparición!",
+            "Create_alarm_link": "Ir a la página de alarmas",
+            "Create_rotations_title": "Cree rotaciones de creación de artesanías",
+            "Create_rotations_content": "Navegue a la página de rotaciones dando clic al vínculo inferior y ¡cree rotaciones para crear artesanías en el juego, pruebe sus propios atributos, comidas, e ingredientes HQ!",
+            "Create_rotations_link": "Ir a la página de rotaciones",
+            "Access_wiki_title": "Aprenda más",
+            "Access_wiki_content": "Navegue a la página de wiki dando clic al vínculo inferior. Esta página tiene documentación de cómo usar el sitio en general, para guiarlo y sacarle el mayor provecho y beneficiarlo lo más posible",
+            "Access_wiki_link": "Ir a la página de wiki"
         }
     }
 }
