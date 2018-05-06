@@ -1,4 +1,5 @@
 {
+    "Delete": "Delete",
     "Timers": "Timers",
     "Copy_isearch": "Copy isearch macro",
     "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
@@ -229,6 +230,7 @@
         "Enable_crystals_tracking": "Enable crystals tracking"
     },
     "LIST_DETAILS": {
+        "List_finished": "List completed",
         "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
         "Missing_tags_after_button": " button",
         "Add_remove_amount": "Add/remove a given amount",
