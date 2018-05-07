@@ -194,29 +194,27 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        if (!this.customMode) {
-            Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-                let userSet = gearsets.find(set => set.jobId === recipe.job);
-                if (userSet === undefined && this.selectedSet === undefined) {
-                    userSet = {
-                        ilvl: 0,
-                        control: 1000,
-                        craftsmanship: 1000,
-                        cp: 450,
-                        jobId: 10,
-                        level: 70,
-                        specialist: false
-                    };
-                }
-                return userSet;
-            }).subscribe(set => {
-                this.selectedSet = set;
-                this.applyStats(set, false);
-            });
-            this.crafterStats$.take(2).subscribe(() => {
-                this.applyStats(this.selectedSet, false);
-            });
-        }
+        Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
+            let userSet = gearsets.find(set => set.jobId === recipe.job);
+            if (userSet === undefined && this.selectedSet === undefined) {
+                userSet = {
+                    ilvl: 0,
+                    control: 1500,
+                    craftsmanship: 1350,
+                    cp: 474,
+                    jobId: 8,
+                    level: 70,
+                    specialist: false
+                };
+            }
+            return userSet;
+        }).subscribe(set => {
+            this.selectedSet = set;
+            this.applyStats(set, false);
+        });
+        this.crafterStats$.take(2).subscribe(() => {
+            this.applyStats(this.selectedSet, false);
+        });
     }
 
     importRotation(): void {
