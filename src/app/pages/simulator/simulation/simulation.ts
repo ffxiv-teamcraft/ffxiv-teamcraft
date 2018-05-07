@@ -137,7 +137,7 @@ export class Simulation {
                     state: this.state,
                 });
             }
-            if (this.steps.length < maxTurns) {
+            if (this.steps.length <= maxTurns) {
                 // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
                 this.tickBuffs(linear);
             }
