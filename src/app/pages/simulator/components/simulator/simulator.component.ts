@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ChangeDetectionStrategy, OnChanges, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {Observable} from 'rxjs/Observable';
@@ -40,7 +40,7 @@ import {ConsumablesService} from 'app/pages/simulator/model/consumables.service'
     styleUrls: ['./simulator.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SimulatorComponent implements OnInit, OnDestroy, OnChanges {
+export class SimulatorComponent implements OnInit, OnDestroy {
 
     @Input()
     itemId: number;
@@ -210,10 +210,11 @@ export class SimulatorComponent implements OnInit, OnDestroy, OnChanges {
                 }
                 return userSet;
             }).subscribe(set => {
-                setTimeout(() => {
-                    this.selectedSet = set;
-                    this.applyStats(set, false);
-                }, 500);
+                this.selectedSet = set;
+                this.applyStats(set, false);
+            });
+            this.crafterStats$.take(2).subscribe(() => {
+                this.applyStats(this.selectedSet, false);
             });
         }
     }
@@ -400,9 +401,5 @@ export class SimulatorComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnDestroy(): void {
         this.pendingChanges.removePendingChange('rotation');
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log('changes !', changes);
     }
 }
