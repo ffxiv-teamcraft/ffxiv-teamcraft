@@ -4,6 +4,9 @@ import {Buff} from '../../buff.enum';
 
 export class ByregotsBrow extends ByregotsBlessing {
 
+    canBeUsed(simulation: Simulation): boolean {
+        return super.canBeUsed(simulation) && simulation.getBuff(Buff.INNER_QUIET).stacks >= 2;
+    }
 
     getBaseCPCost(simulationState: Simulation): number {
         return 18;
