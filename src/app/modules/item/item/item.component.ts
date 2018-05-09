@@ -281,6 +281,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     rotations$: Observable<CraftingRotation[]>;
 
+    hasAlarm: { [index: number]: boolean } = {};
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -336,13 +338,6 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     ngOnInit(): void {
-        this.updateCanBeCrafted();
-        this.updateTradeIcon();
-        this.updateHasTimers();
-        this.updateMasterBooks();
-        this.updateTimers();
-        this.updateHasBook();
-        this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
                 .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
@@ -420,7 +415,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 return 'accent';
             }
             return '';
-        })
+        });
     }
 
     updateCanBeCrafted(): void {
@@ -455,8 +450,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         }
     }
 
-    public hasAlarm(itemId: number): boolean {
-        return this.alarmService.hasAlarm(itemId);
+    updateHasAlarm(itemId): void {
+        this.hasAlarm[itemId] = this.alarmService.hasAlarm(itemId);
     }
 
     updateHasTimers(): void {
@@ -540,7 +535,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public updateTimers(): void {
         if (this.hasTimers) {
-            this.timers = this.alarmService.getTimers(this.item);
+            this.timers = this.alarmService.getTimers(this.item)
+                .do(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)));
         }
     }
 

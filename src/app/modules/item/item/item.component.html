@@ -83,8 +83,8 @@
                     (click)="toggleAlarm(timer.itemId, timer.type)"
                     matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
                     matTooltipPosition="above">
-                <mat-icon *ngIf="!hasAlarm(timer.itemId)">alarm_add</mat-icon>
-                <mat-icon *ngIf="hasAlarm(timer.itemId)">alarm_on</mat-icon>
+                <mat-icon *ngIf="!hasAlarm[timer.itemId]">alarm_add</mat-icon>
+                <mat-icon *ngIf="hasAlarm[timer.itemId]">alarm_on</mat-icon>
                 {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
                 <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
             </button>
@@ -410,8 +410,8 @@
                 <span>{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}</span><br>
                 <button mat-raised-button [color]="getTimerColor(timer.alarm) | async"
                         (click)="toggleAlarm(timer.itemId)">
-                    <mat-icon *ngIf="!hasAlarm(timer.itemId)">alarm_add</mat-icon>
-                    <mat-icon *ngIf="hasAlarm(timer.itemId)">alarm_on</mat-icon>
+                    <mat-icon *ngIf="!hasAlarm[timer.itemId]">alarm_add</mat-icon>
+                    <mat-icon *ngIf="hasAlarm[timer.itemId]">alarm_on</mat-icon>
                     {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
                     <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
                 </button>
