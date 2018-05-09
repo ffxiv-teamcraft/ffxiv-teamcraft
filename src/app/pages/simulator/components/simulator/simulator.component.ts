@@ -33,6 +33,7 @@ import {LocalizedDataService} from '../../../../core/data/localized-data.service
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
+import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 
 @Component({
     selector: 'app-simulator',
@@ -140,10 +141,20 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
-                private translate: TranslateService, consumablesService: ConsumablesService) {
+                private translate: TranslateService, consumablesService: ConsumablesService, i18nTools: I18nToolsService) {
 
-        this.foods = consumablesService.fromData(foods).reverse();
-        this.medicines = consumablesService.fromData(medicines).reverse();
+        this.foods = consumablesService.fromData(foods)
+            .sort((a, b) => {
+                const aName = i18nTools.getName(this.localizedDataService.getItem(a.itemId));
+                const bName = i18nTools.getName(this.localizedDataService.getItem(b.itemId));
+                return aName > bName || !a.hq ? 1 : -1;
+            });
+        this.medicines = consumablesService.fromData(medicines)
+            .sort((a, b) => {
+                const aName = i18nTools.getName(this.localizedDataService.getItem(a.itemId));
+                const bName = i18nTools.getName(this.localizedDataService.getItem(b.itemId));
+                return aName > bName || !a.hq ? 1 : -1;
+            });
 
         this.actions$.subscribe(actions => {
             this.dirty = false;
