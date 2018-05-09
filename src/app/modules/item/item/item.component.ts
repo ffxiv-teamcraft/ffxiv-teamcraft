@@ -298,7 +298,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         super();
         this.rotations$ = this.userService.getUserData().mergeMap(user => {
             return this.rotationsService.getUserRotations(user.$key);
-        }).publishReplay(1).refCount().do(console.log);
+        }).publishReplay(1).refCount();
     }
 
     isDraft(): boolean {
