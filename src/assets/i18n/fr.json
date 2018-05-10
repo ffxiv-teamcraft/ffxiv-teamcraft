@@ -458,6 +458,8 @@
             "Apply_foods": "Appliquer les consommables",
             "Food": "Choisir un plat",
             "Medicine": "Choisir un médicament",
+            "Save_set": "Sauvegarder les stats pour cette classe",
+            "Reset_set": "Remettre les stats à 0",
             "STATS": {
                 "CP": "PS",
                 "Craftsmanship": "Habileté",

@@ -34,6 +34,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
+import {AppUser} from 'app/model/list/app-user';
 
 @Component({
     selector: 'app-simulator',
@@ -103,7 +104,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public set inputGearSet(set: GearSet) {
         if (set !== undefined) {
             this.selectedSet = set;
-            this.applyStats(set);
+            this.applyStats(set, false);
         }
     }
 
@@ -115,12 +116,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public foods: Consumable[] = [];
 
     @Input()
-    public selectedFood: Consumable;
+    public set selectedFood(food: Consumable) {
+        this._selectedFood = food;
+        this.applyStats(this.selectedSet, false);
+    }
+
+    public _selectedFood: Consumable;
 
     public medicines: Consumable[] = [];
 
     @Input()
-    public selectedMedicine: Consumable;
+    public set selectedMedicine(medicine: Consumable) {
+        this._selectedMedicine = medicine;
+        this.applyStats(this.selectedSet, false);
+    }
+
+    public _selectedMedicine: Consumable;
 
     private serializedRotation: string[];
 
@@ -137,6 +148,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     private findActionsAutoTranslatedRegex: RegExp =
         new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
+
+    private userData: AppUser;
 
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
@@ -170,11 +183,21 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         });
 
         this.gearsets$ = this.userService.getUserData()
+            .do(user => this.userData = user)
             .mergeMap(user => {
                 if (user.anonymous) {
-                    return Observable.of([])
+                    return Observable.of(user.gearSets)
                 }
-                return this.dataService.getGearsets(user.lodestoneId);
+                return this.dataService.getGearsets(user.lodestoneId)
+                    .map(gearsets => {
+                        return gearsets.map(set => {
+                            const customSet = user.gearSets.find(s => s.jobId === set.jobId);
+                            if (customSet !== undefined) {
+                                return customSet;
+                            }
+                            return set;
+                        });
+                    });
             });
 
         this.simulation$ = Observable.combineLatest(
@@ -222,9 +245,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }).subscribe(set => {
             this.selectedSet = set;
             this.applyStats(set, false);
-        });
-        this.crafterStats$.take(2).subscribe(() => {
-            this.applyStats(this.selectedSet, false);
         });
     }
 
@@ -294,7 +314,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 $key: this.rotationId,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
-                consumables: {food: this.selectedFood, medicine: this.selectedMedicine}
+                consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
@@ -302,7 +322,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
-                consumables: {food: this.selectedFood, medicine: this.selectedMedicine}
+                consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
             });
         }
     }
@@ -325,8 +345,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     getBonusValue(bonusType: BonusType, baseValue: number): number {
         let bonusFromFood = 0;
         let bonusFromMedicine = 0;
-        if (this.selectedFood !== undefined) {
-            const foodBonus = this.selectedFood.getBonus(bonusType);
+        if (this._selectedFood !== undefined) {
+            const foodBonus = this._selectedFood.getBonus(bonusType);
             if (foodBonus !== undefined) {
                 bonusFromFood = Math.ceil(baseValue * foodBonus.value);
                 if (bonusFromFood > foodBonus.max) {
@@ -334,8 +354,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 }
             }
         }
-        if (this.selectedMedicine !== undefined) {
-            const medicineBonus = this.selectedMedicine.getBonus(bonusType);
+        if (this._selectedMedicine !== undefined) {
+            const medicineBonus = this._selectedMedicine.getBonus(bonusType);
             if (medicineBonus !== undefined) {
                 bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
                 if (bonusFromMedicine > medicineBonus.max) {
@@ -357,6 +377,20 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         if (markDirty) {
             this.markAsDirty();
         }
+    }
+
+    saveSet(set: GearSet): void {
+        // First of all, remove old gearset in userData for this job.
+        this.userData.gearSets = this.userData.gearSets.filter(s => s.jobId !== set.jobId);
+        // Then add this set to custom sets
+        set.custom = true;
+        this.userData.gearSets.push(set);
+        this.userService.set(this.userData.$key, this.userData).subscribe();
+    }
+
+    resetSet(set: GearSet): void {
+        this.userData.gearSets = this.userData.gearSets.filter(s => s.jobId !== set.jobId);
+        this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 
     addAction(action: CraftingAction): void {

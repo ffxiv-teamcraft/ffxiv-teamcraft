@@ -31,7 +31,7 @@
     padding-bottom: 10px;
     display: flex;
     align-items: center;
-    &.mobile{
+    &.mobile {
         font-size: .8rem;
         margin-right: 0;
     }
@@ -53,6 +53,12 @@
     .config-row {
         flex: 1 1 25%;
         padding: 25px;
+        position: relative;
+        .save-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
         mat-select {
             margin: 15px 0;
         }

@@ -49,6 +49,20 @@
             <mat-checkbox [(ngModel)]="customSet">
                 {{'SIMULATOR.CONFIGURATION.Custom_set' | translate}}
             </mat-checkbox>
+            <div class="save-button">
+                <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined && !selectedSet.custom"
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set'}}"
+                        color="accent"
+                        (click)="saveSet(selectedSet)">
+                    <mat-icon>save</mat-icon>
+                </button>
+                <button mat-mini-fab *ngIf="selectedSet !== undefined && selectedSet.custom"
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Reset_set'}}"
+                        color="accent"
+                        (click)="resetSet(selectedSet)">
+                    <mat-icon>refresh</mat-icon>
+                </button>
+            </div>
             <div *ngIf="gearsets$ | async as gearsets">
                 <mat-select *ngIf="customMode"
                             [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
@@ -115,22 +129,22 @@
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
             <div class="consumables-cols">
                 <div class="foods">
-                    <mat-select [(ngModel)]="selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
+                    <mat-select [(ngModel)]="_selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let food of foods" [value]="food">
                             {{food.itemId | itemName | i18n}}
                             <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
                         </mat-option>
                     </mat-select>
-                    <div class="consumable-details" *ngIf="selectedFood !== undefined">
-                        <div class="details-row" *ngFor="let bonus of selectedFood.bonuses">
+                    <div class="consumable-details" *ngIf="_selectedFood !== undefined">
+                        <div class="details-row" *ngFor="let bonus of _selectedFood.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
                         </div>
                     </div>
                 </div>
                 <div class="medicines">
-                    <mat-select [(ngModel)]="selectedMedicine"
+                    <mat-select [(ngModel)]="_selectedMedicine"
                                 placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let medicine of medicines" [value]="medicine">
@@ -138,8 +152,8 @@
                             <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
                         </mat-option>
                     </mat-select>
-                    <div class="consumable-details" *ngIf="selectedMedicine !== undefined">
-                        <div class="details-row" *ngFor="let bonus of selectedMedicine.bonuses">
+                    <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
+                        <div class="details-row" *ngFor="let bonus of _selectedMedicine.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
                         </div>
@@ -340,7 +354,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"

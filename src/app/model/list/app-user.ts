@@ -3,6 +3,7 @@ import {ListLayout} from '../../core/layout/list-layout';
 import {DeserializeAs} from '@kaiu/serializer';
 import {Alarm} from '../../core/time/alarm';
 import {ListDetailsFilters} from '../other/list-details-filters';
+import {GearSet} from '../../pages/simulator/model/gear-set';
 
 export class AppUser extends DataModel {
     name?: string;
@@ -30,4 +31,6 @@ export class AppUser extends DataModel {
     sharedLists: string[] = [];
     // Workshop ids user has write access to
     sharedWorkshops: string[] = [];
+    // Saved overriden gearsets
+    gearSets: GearSet[] = [];
 }

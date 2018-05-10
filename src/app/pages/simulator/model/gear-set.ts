@@ -6,4 +6,5 @@ export interface GearSet {
     craftsmanship: number;
     cp: number;
     specialist: boolean;
+    custom?: boolean;
 }
