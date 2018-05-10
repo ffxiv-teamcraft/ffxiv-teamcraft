@@ -176,10 +176,10 @@
                         {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
                     </a>
                 </mat-menu>
-                <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft">
+                <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft">
                     <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
-                         matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                         matTooltipPosition="above" src="{{craft.icon}}">
+                         src="{{craft.icon}}">
+                    <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
                 </button>
             </div>
             <div *ngIf="!recipe">
@@ -209,11 +209,11 @@
                             {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
                         </a>
                     </mat-menu>
-                    <button mat-icon-button [matMenuTriggerFor]="simulatorMenu">
+                    <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu">
                         <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                              *ngIf="craft.icon !== ''"
-                             matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                             matTooltipPosition="above" src="{{craft.icon}}">
+                             src="{{craft.icon}}">
+                        <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
                     </button>
                 </div>
             </div>
