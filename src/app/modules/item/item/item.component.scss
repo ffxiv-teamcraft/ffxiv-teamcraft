@@ -140,10 +140,21 @@
         }
         text-align: center;
     }
+
     .crafted-by {
         height: 30px;
         &.compact {
             height: 20px;
+        }
+    }
+
+    .crafter-button {
+        position: relative;
+        .crafter-level {
+            font-size: 90%;
+            position: absolute;
+            bottom: -22px;
+            left: 30%;
         }
     }
     .timers-container {
@@ -237,6 +248,16 @@
                 .crafted-by {
                     height: 24px;
                 }
+                .crafter-button {
+                    position: relative;
+                    .crafter-level {
+                        font-size: 90%;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 6px;
+                    }
+                }
+
                 .currency {
                     width: 24px;
                     margin: 0;

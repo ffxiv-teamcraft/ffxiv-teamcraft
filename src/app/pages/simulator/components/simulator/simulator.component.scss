@@ -1,0 +1,290 @@
+
+.top-buttons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-145%);
+    &.mobile {
+        flex-direction: row;
+        position: relative;
+        transform: none;
+        margin-bottom: 10px;
+        justify-content: space-evenly;
+    }
+    > button {
+        margin: 5px;
+    }
+}
+
+.snapshot-input {
+    margin: 0 10px;
+    min-width: 50px;
+    &.mobile {
+        min-width: 30px;
+    }
+}
+
+.steps {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    &.mobile {
+        font-size: .8rem;
+        margin-right: 0;
+    }
+}
+
+.loading-container {
+    margin-top: 10%;
+    margin-left: 45%;
+    margin-right: 55%;
+    align-content: center;
+    min-height: 300px;
+    overflow: visible;
+}
+
+.configuration {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .config-row {
+        flex: 1 1 25%;
+        padding: 25px;
+        position: relative;
+        .save-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        mat-select {
+            margin: 15px 0;
+        }
+    }
+    .set-details {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 120px;
+        }
+        .details-row {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        margin-bottom: 20px;
+    }
+    .set-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .consumables-cols {
+        display: flex;
+        min-height: 150px;
+        > div {
+            margin: 10px;
+        }
+    }
+}
+
+.apply-button {
+    width: 100%;
+}
+
+mat-progress-bar {
+    height: 16px;
+}
+
+.result {
+    display: flex;
+    .durability {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 10px;
+        .durability-value {
+            font-size: 2rem;
+        }
+    }
+    .right-part {
+        flex-grow: 1;
+        padding: 0 5px;
+        .right-row {
+            padding: 5px 0;
+            h3 {
+                margin-bottom: 5px;
+            }
+            .value-bar {
+                display: flex;
+                align-items: center;
+                mat-progress-bar {
+                    flex: 1 1 auto;
+                }
+                .value-amount {
+                    width: 130px;
+                    margin-left: 50px;
+                }
+            }
+        }
+        .bottom-part {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .hq-chances {
+                display: flex;
+                justify-content: space-between;
+                width: 150px;
+                padding: 10px;
+                background: rgba(0, 0, 0, 0.7);
+                margin-right: 40px;
+            }
+            .cp-progress {
+                flex: 0 1 400px;
+                .cp-bar {
+                    display: flex;
+                    align-items: center;
+                    mat-progress-bar {
+                        opacity: .7;
+                        height: 5px;
+                        flex: 0 1 300px;
+                    }
+                    .cp-amount {
+                        margin-left: 15px;
+                    }
+                }
+            }
+            .report {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex: 0 1 300px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+.mobile-result {
+    .right-row {
+        padding: 10px 0;
+    }
+    .bottom-part {
+        display: flex;
+        justify-content: space-between;
+        .hq-chances {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80px;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-right: 10px;
+        }
+        .cp-progress {
+            flex: 1 1 auto;
+            .cp-bar {
+                display: flex;
+                align-items: center;
+                mat-progress-bar {
+                    opacity: .7;
+                    height: 5px;
+                    flex: 0 1 300px;
+                }
+                .cp-amount {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .report {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex: 1 1 auto;
+        height: 40px;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 50px;
+    app-action {
+        display: flex;
+        &.drag-over::before {
+            content: " ";
+            display: block;
+            margin-top: 5px;
+            width: 40px;
+            height: 40px;
+            border: 2px dashed rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+    }
+    .end-drag-zone {
+        display: block;
+        margin-top: 5px;
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        &.drag-over {
+            opacity: 1;
+            border: 2px dashed rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+    }
+}
+
+.buffs {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 38px;
+    .buff-container {
+        position: relative;
+        margin: 0 2px;
+        .stacks {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+        }
+        .duration {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: white;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+        }
+    }
+}
+
+.category-row {
+    display: flex;
+    flex-wrap: wrap;
+    h4 {
+        padding-left: 15px;
+    }
+    .actions-row {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 5px;
+        background: rgba(0, 0, 0, .3);
+        margin: 10px;
+    }
+}
+
+mat-card {
+    margin: 5px 0;
+    padding: 16px;
+    mat-card-subtitle {
+        margin-bottom: 0;
+    }
+}

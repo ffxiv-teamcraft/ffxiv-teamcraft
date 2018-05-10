@@ -39,6 +39,7 @@ import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.c
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
+import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
 
 declare const ga: Function;
 
@@ -92,6 +93,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
+
+    private completionDialogOpen = false;
 
     private upgradingList = false;
 
@@ -319,9 +322,32 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     this.listService.remove(list.$key).first().subscribe(() => {
                         this.router.navigate(['recipes']);
                     });
+                } else if (l.isComplete()) {
+                    this.onCompletion(list);
                 }
             }).subscribe(() => {
         });
+    }
+
+    private onCompletion(list: List): void {
+        if (!this.completionDialogOpen) {
+            this.completionDialogOpen = true;
+            this.dialog.open(ListFinishedPopupComponent)
+                .afterClosed()
+                .do(() => this.completionDialogOpen = false)
+                .filter(res => res !== undefined)
+                .mergeMap(res => {
+                    switch (res) {
+                        case 'reset':
+                            this.resetProgression();
+                            return Observable.of(null);
+                        case'delete':
+                            return this.listService.remove(list.$key).first().do(() => {
+                                this.router.navigate(['recipes']);
+                            });
+                    }
+                }).subscribe();
+        }
     }
 
     public forkList(list: List): void {

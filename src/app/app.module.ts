@@ -58,6 +58,8 @@ import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
 import {MarkdownModule} from 'ngx-markdown';
 import {WikiModule} from './pages/wiki/wiki.module';
+import {SimulatorModule} from './pages/simulator/simulator.module';
+import {NgDragDropModule} from 'ng-drag-drop';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -71,6 +73,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         FlexLayoutModule,
 
         MarkdownModule.forRoot(),
+
+        NgDragDropModule.forRoot(),
 
         TranslateModule.forRoot({
             loader: {
@@ -142,6 +146,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         GatheringLocationModule,
         WorkshopModule,
         TemplateModule,
+        SimulatorModule,
     ],
     bootstrap: [AppComponent]
 })

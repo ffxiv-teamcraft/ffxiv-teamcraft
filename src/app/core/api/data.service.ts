@@ -8,6 +8,7 @@ import {ItemData} from '../../model/garland-tools/item-data';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {SearchFilter} from '../../model/search/search-filter.interface';
 import 'rxjs/add/operator/publishReplay';
+import {GearSet} from '../../pages/simulator/model/gear-set';
 
 @Injectable()
 export class DataService {
@@ -22,6 +23,26 @@ export class DataService {
                 private i18n: TranslateService,
                 private gt: GarlandToolsService,
                 private serializer: NgSerializerService) {
+    }
+
+    public getGearsets(lodestoneId: number): Observable<GearSet[]> {
+        return this.http.get(`https://api.xivdb.com/character/${lodestoneId}?data=gearsets`)
+            .map((response: any[]) => {
+                return response
+                // We want only crafter sets
+                    .filter(row => row.classjob_id >= 8 && row.classjob_id <= 15)
+                    .map(set => {
+                        return {
+                            ilvl: set.item_level_avg,
+                            jobId: set.classjob_id,
+                            level: set.level,
+                            control: set.stats.mental !== undefined ? set.stats.mental.Control : 0,
+                            craftsmanship: set.stats.mental !== undefined ? set.stats.mental.Craftsmanship : 0,
+                            cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
+                            specialist: set.slot_soulcrystal !== null
+                        }
+                    });
+            });
     }
 
     /**

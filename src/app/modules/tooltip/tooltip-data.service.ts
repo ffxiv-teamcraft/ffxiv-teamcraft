@@ -13,6 +13,10 @@ export class TooltipDataService {
         return this.loadFromXivdb(id);
     }
 
+    getActionTooltipData(id: number): Observable<string> {
+        return this.loadActionFromXivdb(id);
+    }
+
     loadFromXivdb(id: number): Observable<string> {
         const params = new HttpParams()
             .set('list[item]', id.toString())
@@ -22,4 +26,12 @@ export class TooltipDataService {
             .map(res => res.item[0].html);
     }
 
+    loadActionFromXivdb(id: number): Observable<string> {
+        const params = new HttpParams()
+            .set('list[action]', id.toString())
+            .set('language', this.translator.currentLang);
+
+        return this.http.get<any>('https://secure.xivdb.com/tooltip', {params})
+            .map(res => res.action[0].html);
+    }
 }

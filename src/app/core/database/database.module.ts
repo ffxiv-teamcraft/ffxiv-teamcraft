@@ -6,6 +6,7 @@ import {ListStore} from './storage/list/list-store';
 import {DiffService} from './diff/diff.service';
 import {FirestoreListStorage} from './storage/list/firestore-list-storage';
 import {ListTemplateService} from './list-template/list-template.service';
+import {CraftingRotationService} from './crafting-rotation.service';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {ListTemplateService} from './list-template/list-template.service';
         {provide: ListStore, useClass: FirestoreListStorage},
         DiffService,
         ListTemplateService,
+        CraftingRotationService,
     ]
 })
 export class DatabaseModule {

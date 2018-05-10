@@ -134,7 +134,6 @@ export class PermissionsPopupComponent {
     }
 
     save(): void {
-        console.log(this.registry);
         this.saving = true;
         const usersSharedDeletions: string[] = [];
         const usersSharedAdditions: string[] = [];

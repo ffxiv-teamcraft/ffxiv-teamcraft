@@ -13,6 +13,7 @@ import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popu
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {TemplatePopupComponent} from '../../template/template-popup/template-popup.component';
+import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
 
 @Component({
     selector: 'app-custom-links',
@@ -26,7 +27,8 @@ export class CustomLinksComponent implements OnInit {
 
     constructor(public customLinkService: CustomLinksService, private userService: UserService, private dialog: MatDialog,
                 private listService: ListService, private workshopService: WorkshopService, private snack: MatSnackBar,
-                private translator: TranslateService, private templateService: ListTemplateService) {
+                private translator: TranslateService, private templateService: ListTemplateService,
+                private rotationsService: CraftingRotationService) {
         this.links = this.userService.getUserData().mergeMap(user => {
             return this.customLinkService.getAllByAuthor(user.$key).mergeMap(links => {
                 return this.templateService.getAllByAuthor(user.$key).map(templates => links.concat(templates));
@@ -86,6 +88,8 @@ export class CustomLinksComponent implements OnInit {
                     return this.listService.get(link.redirectTo.replace('list/', ''));
                 } else if (link.redirectTo.startsWith('workshop/')) {
                     return this.workshopService.get(link.redirectTo.replace('workshop/', ''));
+                } else if (link.redirectTo.startsWith('simulator/')) {
+                    return this.rotationsService.get(link.redirectTo.split('/')[2]);
                 }
                 return Observable.of(null)
             })
@@ -97,7 +101,7 @@ export class CustomLinksComponent implements OnInit {
                 }
             })
             .filter(val => val !== null)
-            .map(element => element.name);
+            .map(element => element.name || element.getName());
     }
 
     ngOnInit(): void {

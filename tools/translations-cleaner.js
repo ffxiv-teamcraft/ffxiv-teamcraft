@@ -21,6 +21,7 @@ function cleanTranslation(translation, codeBulk, exclusions = [], parent = '') {
             const excluded = exclusions.find(exclusion => fullKey.indexOf(exclusion) > -1) !== undefined;
             if (!excluded && codeBulk.indexOf(fullKey) === -1) {
                 const propertyToDelete = fullKey.split('.').pop();
+                console.log(propertyToDelete);
                 delete parentObject[propertyToDelete];
             }
         }
@@ -58,8 +59,13 @@ const bulkSourceCode = sourceFiles.reduce(reducer, '');
 
 
 translations.forEach(translation => {
-    const cleaned = cleanTranslation(translation.content, bulkSourceCode, ['LIST_TAGS', 'auth/']);
-    fs.writeFileSync(translation.path + '.clean.json', JSON.stringify(cleaned));
+    console.log('**********************');
+    console.log(translation.path);
+    console.log('**********************');
+    console.log('');
+    console.log('');
+    cleanTranslation(translation.content, bulkSourceCode, ['LIST_TAGS', 'auth/']);
+    // fs.writeFileSync(translation.path + '.clean.json', JSON.stringify(cleaned));
 });
 
 

@@ -1,0 +1,9 @@
+<h3 mat-dialog-title>{{'SIMULATOR.Generated_macro' | translate}}</h3>
+<div class="macro" mat-dialog-content>
+    <pre *ngFor="let macroFragment of macro" class="macro-fragment">
+        <span class="macro-line" *ngFor="let line of macroFragment">{{line}}</span>
+    </pre>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="accent">{{'Close' | translate}}</button>
+</div>
