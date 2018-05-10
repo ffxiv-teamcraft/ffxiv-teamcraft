@@ -335,9 +335,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return `./assets/icons/status/${Buff[effBuff.buff].toLowerCase()}.png`;
     }
 
-    moveSkill(originIndex: number, targetIndex: number): void {
+    moveSkill(dragData: number | CraftingAction, targetIndex: number): void {
         const actions = this.actions$.getValue();
-        actions.splice(targetIndex, 0, actions.splice(originIndex, 1)[0]);
+        // If the data is a number, use it as index
+        if (+dragData === dragData) {
+            actions.splice(targetIndex, 0, actions.splice(dragData, 1)[0]);
+        } else if (dragData instanceof CraftingAction) {
+            actions.splice(targetIndex, 0, dragData);
+        }
         this.actions$.next(actions);
         this.markAsDirty();
     }

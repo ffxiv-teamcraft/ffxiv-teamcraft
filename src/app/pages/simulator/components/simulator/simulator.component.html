@@ -365,7 +365,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -377,7 +378,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -387,7 +389,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -399,7 +402,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -409,7 +413,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
@@ -419,7 +424,8 @@
                 <div>
                     <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
                     <div class="actions-row">
-                        <app-action (actionclick)="addAction(action)" [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                        <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                                    [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
