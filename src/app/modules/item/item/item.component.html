@@ -360,13 +360,73 @@
                 <mat-icon color="accent">assignment</mat-icon>
             </button>
             <div class="classes">
-                <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0">
-                    <button *ngFor="let craft of item.craftedBy" [matMenuTriggerFor]="simulatorMenu">
-                        <img class="crafted-by"
-                             *ngIf="craft.icon !== ''"
-                             matTooltip="{{craft.level}} {{craft.stars_tooltip}}"
-                             matTooltipPosition="above" src="{{craft.icon}}">
+                <div *ngIf="recipe">
+                    <mat-menu #simulatorMenu="matMenu">
+                        <button mat-menu-item routerLink="/simulator/{{item.id}}">{{'SIMULATOR.New_rotation' | translate}}
+                        </button>
+                        <button mat-menu-item
+                                *ngFor="let rotation of rotations$ | async"
+                                routerLink="/simulator/{{item.id}}/{{rotation.$key}}">{{rotation.getName()}}
+                        </button>
+                        <mat-divider></mat-divider>
+                        <a *ngIf="getCraft(item.recipeId) as craft"
+                           href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+                           target="_blank"
+                           mat-menu-item>
+                            {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+                        </a>
+                        <a *ngIf="getCraft(item.recipeId) as craft"
+                           href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+                           target="_blank"
+                           mat-menu-item>
+                            {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+                        </a>
+                        <a *ngIf="getCraft(item.recipeId) as craft"
+                           href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+                           target="_blank"
+                           mat-menu-item>
+                            {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+                        </a>
+                    </mat-menu>
+                    <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft" class="crafter-button">
+                        <img [ngClass]="{'crafted-by':true}" src="{{craft.icon}}">
+                        <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
                     </button>
+                </div>
+                <div *ngIf="!recipe">
+                    <div *ngFor="let craft of item.craftedBy">
+                        <mat-menu #simulatorMenu="matMenu">
+                            <button mat-menu-item routerLink="/simulator/{{item.id}}">{{'SIMULATOR.New_rotation' |
+                                translate}}
+                            </button>
+                            <button mat-menu-item
+                                    *ngFor="let rotation of rotations$ | async"
+                                    routerLink="/simulator/{{item.id}}/{{rotation.$key}}">{{rotation.getName()}}
+                            </button>
+                            <mat-divider></mat-divider>
+                            <a href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+                               target="_blank"
+                               mat-menu-item>
+                                {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+                            </a>
+                            <a href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+                               target="_blank"
+                               mat-menu-item>
+                                {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+                            </a>
+                            <a href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+                               target="_blank"
+                               mat-menu-item>
+                                {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+                            </a>
+                        </mat-menu>
+                        <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" class="crafter-button">
+                            <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                                 *ngIf="craft.icon !== ''"
+                                 src="{{craft.icon}}">
+                            <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
+                        </button>
+                    </div>
                 </div>
                 <button mat-icon-button *ngIf="item.gatheredBy !== undefined"
                         (click)="openGatheredByDetails(item)">

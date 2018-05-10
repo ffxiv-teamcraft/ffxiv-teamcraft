@@ -234,9 +234,19 @@
                     width: 24px;
                     height: 24px;
                 }
-                .crafted-by {
-                    height: 24px;
+                .crafter-button {
+                    position: relative;
+                    .crafted-by {
+                        height: 24px;
+                    }
+                    .crafter-level {
+                        font-size: 90%;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 6px;
+                    }
                 }
+
                 .currency {
                     width: 24px;
                     margin: 0;
