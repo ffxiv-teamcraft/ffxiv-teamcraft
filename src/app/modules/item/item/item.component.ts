@@ -308,6 +308,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     getCraft(recipeId: string): CraftedBy {
+        if (this.item.craftedBy === undefined) {
+            return undefined;
+        }
         return this.item.craftedBy.find(craft => {
             return craft.recipeId === recipeId
         });

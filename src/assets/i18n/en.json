@@ -428,6 +428,7 @@
         "Rotation_not_found": "Rotation not found",
         "Confirm_delete": "Do you really want to delete this rotation?",
         "Toggle_snapshot_mode": "Toggle snapshot mode",
+        "Open_in_external": "Open in {{name}}'s sim",
         "CUSTOM": {
             "Recipe_configuration": "Recipe configuration",
             "Recipe_level": "Recipe level",
