@@ -372,6 +372,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     applyStats(set: GearSet, markDirty = true): void {
+        if (set === undefined) {
+            return;
+        }
         this.crafterStats = new CrafterStats(
             set.jobId,
             set.craftsmanship + this.getBonusValue('Craftsmanship', set.craftsmanship),

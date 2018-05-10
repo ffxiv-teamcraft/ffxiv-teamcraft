@@ -209,6 +209,10 @@ mat-progress-bar {
     }
 }
 
+.drag-border {
+    display: none !important;
+}
+
 .actions {
     display: flex;
     justify-content: flex-start;
