@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.6.1"></a>
+## [3.6.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.0...v3.6.1) (2018-05-10)
+
+
+### Bug Fixes
+
+* **simulator:** fixed buffs duration not handled properly in snapshot mode ([d6835b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/d6835b9))
+* **simulator:** you don't need an account anymore for custom mode ([aa81872](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa81872))
+* byregot's brow can now only be used with 2 or more Inner Quiet stacks ([c87285e](https://github.com/Supamiu/ffxiv-teamcraft/commit/c87285e))
+
+
+### Features
+
+* **simulator:** actions can now be dragged inside rotation (https://i.imgur.com/68jTydA.gifv) ([48b6eee](https://github.com/Supamiu/ffxiv-teamcraft/commit/48b6eee))
+* **simulator:** added links to external simulators inside crafting menu ([1edc7a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/1edc7a6))
+* **simulator:** food names are now sorted alphabetically, hq first ([40ddb37](https://github.com/Supamiu/ffxiv-teamcraft/commit/40ddb37))
+* **simulator:** you can now save custom stats for your crafting jobs ([3784e1f](https://github.com/Supamiu/ffxiv-teamcraft/commit/3784e1f))
+
+
+### Performance Improvements
+
+* improved display performances on large lists ([a96a51c](https://github.com/Supamiu/ffxiv-teamcraft/commit/a96a51c))
+
+
+
 <a name="3.6.0"></a>
 # [3.6.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.5.1...v3.6.0) (2018-05-06)
 
