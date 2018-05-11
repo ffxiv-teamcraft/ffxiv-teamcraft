@@ -31,6 +31,9 @@
     }
     mat-sidenav-container {
         height: calc(100vh - 64px);
+        mat-list-item {
+            touch-action: auto !important;
+        }
         .mat-sidenav {
             transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
             &.compact {
