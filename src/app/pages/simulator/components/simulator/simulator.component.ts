@@ -233,8 +233,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             if (userSet === undefined && this.selectedSet === undefined) {
                 userSet = {
                     ilvl: 0,
-                    control: 1500,
-                    craftsmanship: 1350,
+                    control: 1350,
+                    craftsmanship: 1500,
                     cp: 474,
                     jobId: 8,
                     level: 70,
