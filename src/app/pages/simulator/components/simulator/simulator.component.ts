@@ -177,7 +177,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
         this.recipe$.subscribe(recipe => {
             this.recipeSync = recipe;
-            this.hqIngredientsData = recipe.ingredients
+            this.hqIngredientsData = (recipe.ingredients || [])
                 .filter(i => i.id > 20 && i.quality !== undefined)
                 .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
         });
@@ -229,7 +229,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-            let userSet = gearsets.find(set => set.jobId === recipe.job);
+            let userSet = (gearsets || []).find(set => set.jobId === recipe.job);
             if (userSet === undefined && this.selectedSet === undefined) {
                 userSet = {
                     ilvl: 0,
