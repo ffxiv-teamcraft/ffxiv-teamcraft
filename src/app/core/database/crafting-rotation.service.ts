@@ -2,7 +2,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {FirestoreStorage} from './storage/firebase/firestore-storage';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {CraftingRotation} from '../../model/other/crafting-rotation';

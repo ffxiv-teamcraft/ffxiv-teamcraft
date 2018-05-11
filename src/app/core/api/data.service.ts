@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
 import {Recipe} from '../../model/list/recipe';
 import {ItemData} from '../../model/garland-tools/item-data';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {SearchFilter} from '../../model/search/search-filter.interface';
-import 'rxjs/add/operator/publishReplay';
+
 import {GearSet} from '../../pages/simulator/model/gear-set';
 
 @Injectable()

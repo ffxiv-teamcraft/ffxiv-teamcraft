@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Aetheryte} from '../../../core/data/aetheryte';
 import {MapService} from '../../map/map.service';
 import {Drop} from '../../../model/list/drop';

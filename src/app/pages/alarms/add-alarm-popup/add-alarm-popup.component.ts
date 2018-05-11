@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MatDialogRef} from '@angular/material';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 

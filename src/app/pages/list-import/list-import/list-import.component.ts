@@ -4,7 +4,7 @@ import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
 import {MatDialog} from '@angular/material/dialog';
 import {ListNamePopupComponent} from '../../../modules/common-components/list-name-popup/list-name-popup.component';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {UserService} from '../../../core/database/user.service';

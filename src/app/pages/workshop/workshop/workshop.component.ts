@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Workshop} from '../../../model/other/workshop';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {List} from '../../../model/list/list';
 import {WorkshopService} from '../../../core/database/workshop.service';
 import {ListService} from '../../../core/database/list.service';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/combineLatest';
+
+
 import {UserService} from '../../../core/database/user.service';
-import 'rxjs/add/observable/empty';
+
 
 @Component({
     selector: 'app-workshop',

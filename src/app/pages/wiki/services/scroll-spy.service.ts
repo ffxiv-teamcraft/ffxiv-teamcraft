@@ -3,11 +3,9 @@ import {DOCUMENT} from '@angular/common';
 import {auditTime, distinctUntilChanged, takeUntil, tap} from 'rxjs/operators';
 
 import {ScrollService} from './scroll.service';
-import {Observable} from 'rxjs/Observable';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
-import {Subject} from 'rxjs/Subject';
-import {fromEvent} from 'rxjs/observable/fromEvent';
+import {fromEvent, Observable, ReplaySubject, Subject} from 'rxjs';
 import {CdkScrollable, ScrollDispatcher} from '@angular/cdk/scrolling';
+import {filter, map} from 'rxjs/internal/operators';
 
 // https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/app/shared/scroll-spy.service.ts
 
@@ -135,9 +133,11 @@ export class ScrollSpyService {
 
     constructor(@Inject(DOCUMENT) private doc: any, private scrollService: ScrollService, cdkScroll: ScrollDispatcher) {
         this.scrollEvents = cdkScroll.scrolled()
-            .filter(scroll => scroll !== null)
-            .map(scroll => <CdkScrollable>scroll)
-            .filter(scroll => scroll.getElementRef().nativeElement.localName === 'mat-sidenav-content')
+            .pipe(
+                filter(scroll => scroll !== null),
+                map(scroll => <CdkScrollable>scroll),
+                filter(scroll => scroll.getElementRef().nativeElement.localName === 'mat-sidenav-content')
+            )
             .pipe(auditTime(10), takeUntil(this.onStopListening))
             .pipe(tap(scroll => this.scrollTop = scroll.getElementRef().nativeElement.scrollTop));
     }

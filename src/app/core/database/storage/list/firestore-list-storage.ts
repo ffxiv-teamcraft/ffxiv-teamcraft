@@ -1,7 +1,7 @@
 import {List} from '../../../../model/list/list';
 import {Injectable, NgZone} from '@angular/core';
 import {ListStore} from './list-store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirestoreStorage} from '../firebase/firestore-storage';
 import {AngularFirestore} from 'angularfire2/firestore';

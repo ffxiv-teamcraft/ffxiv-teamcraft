@@ -1,10 +1,11 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
-import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject, combineLatest, Observable, fromEvent} from 'rxjs';
 import {ListTag} from '../../../model/list/list-tag.enum';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MatPaginator, PageEvent} from '@angular/material';
+import {tap} from 'rxjs/operators';
+import {debounceTime, map, switchMap} from 'rxjs/internal/operators';
 
 @Component({
     selector: 'app-public-lists',
@@ -38,7 +39,7 @@ export class PublicListsComponent implements OnInit {
     paginatorRef: MatPaginator;
 
     constructor(private listService: ListService) {
-        this.lists = Observable.combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
+        this.lists = combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
             (lists, tagFilter, nameFilter) => {
                 if (nameFilter !== '') {
                     lists = lists.filter(list => list.name.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1);
@@ -55,16 +56,18 @@ export class PublicListsComponent implements OnInit {
                 lists = lists.filter(list => list.recipes.length > 0);
                 return lists;
             })
-            .do(lists => {
-                this.publicListsLength = lists.length;
-                this.paginatorRef.pageIndex = 0;
-                this.paginator.next({pageIndex: 0, pageSize: this.paginatorRef.pageSize, length: this.publicListsLength});
-            })
-            .switchMap(lists => {
-                return this.paginator
-                    .map(pagination => lists.slice(pagination.pageSize * pagination.pageIndex,
-                        pagination.pageSize * pagination.pageIndex + pagination.pageSize))
-            });
+            .pipe(
+                tap(lists => {
+                    this.publicListsLength = lists.length;
+                    this.paginatorRef.pageIndex = 0;
+                    this.paginator.next({pageIndex: 0, pageSize: this.paginatorRef.pageSize, length: this.publicListsLength});
+                }),
+                switchMap(lists => {
+                    return this.paginator
+                        .pipe(map(pagination => lists.slice(pagination.pageSize * pagination.pageIndex,
+                            pagination.pageSize * pagination.pageIndex + pagination.pageSize)));
+                })
+            );
     }
 
     trackByListsFn(index: number, item: List) {
@@ -80,8 +83,8 @@ export class PublicListsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        Observable.fromEvent(this.nameFilterInput.nativeElement, 'keyup')
-            .debounceTime(200)
+        fromEvent(this.nameFilterInput.nativeElement, 'keyup')
+            .pipe(debounceTime(200))
             .subscribe(() => {
                 this.nameFilter.next(this.nameFilterValue);
             })

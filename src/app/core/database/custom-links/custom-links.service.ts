@@ -4,9 +4,9 @@ import {CustomLink} from './costum-link';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from '../diff/diff.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {PendingChangesService} from '../pending-changes/pending-changes.service';
-import 'rxjs/add/operator/first';
+
 
 @Injectable()
 export class CustomLinksService<T extends CustomLink = CustomLink> extends FirebaseStorage<T> {

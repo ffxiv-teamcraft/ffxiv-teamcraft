@@ -1,21 +1,16 @@
+import {Observable, of, ReplaySubject, Subject, Subscription, throwError as observableThrowError} from 'rxjs';
 import {DataModel} from '../data-model';
 import {DataStore} from '../data-store';
-import {Observable} from 'rxjs/Observable';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {NgZone} from '@angular/core';
 import {AngularFirestore} from 'angularfire2/firestore';
-import * as firebase from 'firebase';
 import {Action} from 'angularfire2/firestore/interfaces';
-import {Subject} from 'rxjs/Subject';
-import {Subscription} from 'rxjs/Subscription';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {DataResponse} from '../data-response';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/do';
-import DocumentReference = firebase.firestore.DocumentReference;
-import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
+
+
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';
+import {fromPromise} from 'rxjs/internal/observable/fromPromise';
+import {map, mergeMap, tap} from 'rxjs/internal/operators';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
@@ -30,14 +25,16 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         this.pendingChangesService.addPendingChange(`add ${this.getBaseUri()}`);
         const toAdd = JSON.parse(JSON.stringify(data));
         delete toAdd.$key;
-        return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).add(toAdd))
-            .map((ref: DocumentReference) => {
-                return ref.id;
-            }).do((uid: string) => {
-                // In order to enable cache for this newly created element.
-                this.get(uid);
-                this.pendingChangesService.removePendingChange(`add ${this.getBaseUri()}`);
-            });
+        return fromPromise(this.firestore.collection(this.getBaseUri()).add(toAdd))
+            .pipe(
+                map((ref: any) => {
+                    return ref.id;
+                }),
+                tap((uid: string) => {
+                    // In order to enable cache for this newly created element.
+                    this.get(uid);
+                    this.pendingChangesService.removePendingChange(`add ${this.getBaseUri()}`);
+                }));
     }
 
     get(uid: string): Observable<T> {
@@ -45,7 +42,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             this.cache[uid] = {
                 subject: new ReplaySubject<DataResponse<T>>(1),
                 subscription: this.firestore.collection(this.getBaseUri()).doc(uid).snapshotChanges()
-                    .map((snap: Action<DocumentSnapshot>) => {
+                    .map((snap: Action<any>) => {
                         const valueWithKey: T = <T>{$key: snap.payload.id, ...snap.payload.data()};
                         if (!snap.payload.exists) {
                             throw new Error(`${this.getBaseUri()}/${uid} Not found`);
@@ -63,13 +60,14 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                     })
             };
         }
-        return this.cache[uid].subject.mergeMap(response => {
-            if (response.error === undefined) {
-                return Observable.of(response.data);
-            } else {
-                return Observable.throw(response.error)
-            }
-        });
+        return this.cache[uid].subject.pipe(
+            mergeMap(response => {
+                if (response.error === undefined) {
+                    return of(response.data);
+                } else {
+                    return observableThrowError(response.error)
+                }
+            }));
     }
 
     update(uid: string, data: T): Observable<void> {
@@ -84,9 +82,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
             }
-            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).update(toUpdate)).do(() => {
-                this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${uid}`);
-            });
+            return fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).update(toUpdate)).pipe(
+                tap(() => {
+                    this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${uid}`);
+                }));
         });
     }
 
@@ -102,9 +101,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             if (uid === undefined || uid === null || uid === '') {
                 throw new Error('Empty uid');
             }
-            return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).set(toSet)).do(() => {
-                this.pendingChangesService.removePendingChange(`set ${this.getBaseUri()}/${uid}`);
-            });
+            return fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).set(toSet)).pipe(
+                tap(() => {
+                    this.pendingChangesService.removePendingChange(`set ${this.getBaseUri()}/${uid}`);
+                }));
         });
     }
 
@@ -113,8 +113,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         if (uid === undefined || uid === null || uid === '') {
             throw new Error('Empty uid');
         }
-        return Observable.fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).delete())
-            .do(() => {
+        return fromPromise(this.firestore.collection(this.getBaseUri()).doc(uid).delete())
+            .pipe(tap(() => {
                 // If there's cache information, delete it.
                 if (this.cache[uid] !== undefined) {
                     this.cache[uid].subscription.unsubscribe();
@@ -122,7 +122,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                     delete this.cache[uid];
                 }
                 this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${uid}`);
-            });
+            }));
     }
 
 }

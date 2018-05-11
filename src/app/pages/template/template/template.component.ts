@@ -3,12 +3,12 @@ import {UserService} from '../../../core/database/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
 import {AppUser} from 'app/model/list/app-user';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/observable/zip';
+
+
 
 @Component({
     selector: 'app-template',

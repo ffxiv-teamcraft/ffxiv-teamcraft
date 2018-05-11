@@ -8,7 +8,7 @@ import {List} from '../../model/list/list';
 import {FilterResult} from './filter-result';
 import {ListLayout} from './list-layout';
 import {LayoutOrderService} from './layout-order.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../database/user.service';
 import {ListRow} from '../../model/list/list-row';
 

@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
 import {MatCheckboxChange, MatDialog, MatSnackBar} from '@angular/material';

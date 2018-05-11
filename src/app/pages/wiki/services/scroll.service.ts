@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {DOCUMENT, PlatformLocation} from '@angular/common';
-import {fromEvent} from 'rxjs/observable/fromEvent';
+import {fromEvent} from 'rxjs';
 
 // https://github.com/angular/angular/blob/master/aio/src/app/shared/scroll.service.ts
 

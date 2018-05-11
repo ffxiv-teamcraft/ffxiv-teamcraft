@@ -1,15 +1,15 @@
 import {Injectable, NgZone} from '@angular/core';
 import {List} from '../../model/list/list';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {DataService} from '../api/data.service';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
 import {I18nToolsService} from '../tools/i18n-tools.service';
 import {ItemData} from 'app/model/garland-tools/item-data';
 import {environment} from '../../../environments/environment';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/observable/combineLatest';
-import 'rxjs/add/operator/skip';
+
+
+
 import {Ingredient} from '../../model/garland-tools/ingredient';
 import {DataExtractorService} from './data/data-extractor.service';
 

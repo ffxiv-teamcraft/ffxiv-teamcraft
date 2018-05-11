@@ -2,7 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {UserService} from '../../../core/database/user.service';
 import {FormControl, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import 'rxjs/add/observable/timer';
+
 import {AppUser} from 'app/model/list/app-user';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MapData} from './map-data';
 import {Aetheryte} from '../../core/data/aetheryte';
 import {aetherytes} from '../../core/data/sources/aetherytes';

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {List} from '../../../model/list/list';

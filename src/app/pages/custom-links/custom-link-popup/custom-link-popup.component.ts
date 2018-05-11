@@ -5,7 +5,7 @@ import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {WorkshopService} from '../../../core/database/workshop.service';
 import {ListService} from '../../../core/database/list.service';
 import {Workshop} from '../../../model/other/workshop';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {List} from '../../../model/list/list';
 import {UserService} from '../../../core/database/user.service';
 import {TranslateService} from '@ngx-translate/core';

@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {ListRow} from '../../../model/list/list-row';
 import {Aetheryte} from '../../../core/data/aetheryte';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {StoredNode} from '../../../model/list/stored-node';
 import {MapService} from '../../map/map.service';
 

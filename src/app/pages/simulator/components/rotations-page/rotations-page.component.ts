@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';

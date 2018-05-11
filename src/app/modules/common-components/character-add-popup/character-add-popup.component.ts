@@ -1,8 +1,8 @@
 import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import 'rxjs/add/operator/catch';
+
 import {UserService} from '../../../core/database/user.service';
 
 @Component({

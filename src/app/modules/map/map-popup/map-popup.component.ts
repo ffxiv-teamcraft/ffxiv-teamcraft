@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MapService} from '../map.service';
 import {MapData} from '../map-data';
 import {MAT_DIALOG_DATA} from '@angular/material';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Vector2} from '../../../core/tools/vector2';
 
 @Component({

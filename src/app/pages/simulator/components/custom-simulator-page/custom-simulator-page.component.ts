@@ -3,7 +3,7 @@ import {Craft} from '../../../../model/garland-tools/craft';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';

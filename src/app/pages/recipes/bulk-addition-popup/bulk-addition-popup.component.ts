@@ -1,9 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
-import 'rxjs/add/observable/concat';
+
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {CustomLinkPopupComponent} from 'app/pages/custom-links/custom-link-popup/custom-link-popup.component';

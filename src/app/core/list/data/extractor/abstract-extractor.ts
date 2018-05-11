@@ -1,7 +1,7 @@
 import {ItemData} from '../../../../model/garland-tools/item-data';
 import {Injectable} from '@angular/core';
 import {DataType} from 'app/core/list/data/data-type';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Item} from '../../../../model/garland-tools/item';
 
 @Injectable()

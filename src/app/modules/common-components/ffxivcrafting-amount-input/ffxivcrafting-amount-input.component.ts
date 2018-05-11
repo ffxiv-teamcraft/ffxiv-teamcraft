@@ -1,6 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({

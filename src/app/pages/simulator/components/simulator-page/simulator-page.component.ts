@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Craft} from '../../../../model/garland-tools/craft';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DataService} from '../../../../core/api/data.service';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {CraftingAction} from '../../model/actions/crafting-action';

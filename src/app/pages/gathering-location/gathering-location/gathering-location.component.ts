@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import * as nodePositions from '../../../core/data/sources/node-positions.json';
-import 'rxjs/add/observable/fromEvent';
+
 import {ObservableMedia} from '@angular/flex-layout';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {AlarmCardComponent} from '../../alarms/alarm-card/alarm-card.component';

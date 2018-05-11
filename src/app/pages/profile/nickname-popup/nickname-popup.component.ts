@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from 'app/model/list/app-user';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 
 @Component({

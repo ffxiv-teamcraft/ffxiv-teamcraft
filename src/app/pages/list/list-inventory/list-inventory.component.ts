@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ListService} from '../../../core/database/list.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {List} from '../../../model/list/list';
 import {Inventory} from '../../../model/other/inventory';
 

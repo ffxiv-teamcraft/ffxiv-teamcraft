@@ -3,7 +3,7 @@ import {FirestoreStorage} from './storage/firebase/firestore-storage';
 import {Workshop} from '../../model/other/workshop';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import {List} from '../../model/list/list';
 import {PendingChangesService} from './pending-changes/pending-changes.service';

@@ -32,7 +32,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {FishDetailsPopupComponent} from '../fish-details-popup/fish-details-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';

@@ -1,12 +1,12 @@
 import {DataModel} from '../data-model';
 import {DataStore} from '../data-store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {DiffService} from 'app/core/database/diff/diff.service';
 import {NgZone} from '@angular/core';
-import 'rxjs/add/operator/takeWhile';
-import 'rxjs/add/operator/do';
+
+
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {

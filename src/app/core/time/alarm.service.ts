@@ -1,18 +1,19 @@
 import {Injectable} from '@angular/core';
 import {EorzeanTimeService} from './eorzean-time.service';
 import {Alarm} from './alarm';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable, Subscription} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {SettingsService} from '../../pages/settings/settings.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {LocalizedDataService} from '../data/localized-data.service';
 import {TranslateService} from '@ngx-translate/core';
-import {Observable} from 'rxjs/Observable';
 import {Timer} from 'app/core/time/timer';
 import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
+import {first, map, mergeMap} from 'rxjs/internal/operators';
+import {AppUser} from '../../model/list/app-user';
 
 @Injectable()
 export class AlarmService {
@@ -23,7 +24,8 @@ export class AlarmService {
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
                 private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
                 private userService: UserService) {
-        this.userService.getUserData().map(user => user.alarms || []).subscribe(alarms => this.loadAlarms(...alarms));
+        this.userService.getUserData().pipe(map((user: AppUser) => user.alarms || []))
+            .subscribe(alarms => this.loadAlarms(...alarms));
     }
 
     /**
@@ -202,41 +204,42 @@ export class AlarmService {
      * @returns {Observable<number>}
      */
     public getTimers(item: ListRow): Observable<Timer[]> {
-        return this.etime.getEorzeanTime().map(time => {
-            const alarms = this.generateAlarms(item).reduce(function (rv, x) {
-                (rv[x.type] = rv[x.type] || []).push(x);
-                return rv;
-            }, {});
-            return Object.keys(alarms).map(key => {
-                const alarm = this.closestAlarm(alarms[key], time);
-                if (this._isSpawned(alarm, time)) {
-                    const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
-                    return {
-                        itemId: alarm.itemId,
-                        display: this.getTimerString(this.etime.toEarthTime(timer)),
-                        time: timer,
-                        slot: alarm.slot,
-                        zoneId: alarm.zoneId,
-                        coords: alarm.coords, areaId: alarm.areaId,
-                        type: alarm.type,
-                        alarm: alarm,
-                    };
-                } else {
-                    const timer = this.getMinutesBefore(time, alarm.spawn);
-                    return {
-                        itemId: alarm.itemId,
-                        display: this.getTimerString(this.etime.toEarthTime(timer)),
-                        time: timer,
-                        slot: alarm.slot,
-                        zoneId: alarm.zoneId,
-                        coords: alarm.coords,
-                        areaId: alarm.areaId,
-                        type: alarm.type,
-                        alarm: alarm,
-                    };
-                }
-            });
-        });
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                const alarms = this.generateAlarms(item).reduce(function (rv, x) {
+                    (rv[x.type] = rv[x.type] || []).push(x);
+                    return rv;
+                }, {});
+                return Object.keys(alarms).map(key => {
+                    const alarm = this.closestAlarm(alarms[key], time);
+                    if (this._isSpawned(alarm, time)) {
+                        const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
+                        return {
+                            itemId: alarm.itemId,
+                            display: this.getTimerString(this.etime.toEarthTime(timer)),
+                            time: timer,
+                            slot: alarm.slot,
+                            zoneId: alarm.zoneId,
+                            coords: alarm.coords, areaId: alarm.areaId,
+                            type: alarm.type,
+                            alarm: alarm,
+                        };
+                    } else {
+                        const timer = this.getMinutesBefore(time, alarm.spawn);
+                        return {
+                            itemId: alarm.itemId,
+                            display: this.getTimerString(this.etime.toEarthTime(timer)),
+                            time: timer,
+                            slot: alarm.slot,
+                            zoneId: alarm.zoneId,
+                            coords: alarm.coords,
+                            areaId: alarm.areaId,
+                            type: alarm.type,
+                            alarm: alarm,
+                        };
+                    }
+                });
+            }));
     }
 
     public getAlarmTimerString(alarm: Alarm, time: Date): string {
@@ -317,15 +320,16 @@ export class AlarmService {
      * @returns {Observable<boolean>}
      */
     public isSpawned(item: ListRow): Observable<boolean> {
-        return this.etime.getEorzeanTime().map(time => {
-            let spawned = false;
-            this.generateAlarms(item).forEach(alarm => {
-                if (this._isSpawned(alarm, time)) {
-                    spawned = true;
-                }
-            });
-            return spawned;
-        });
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                let spawned = false;
+                this.generateAlarms(item).forEach(alarm => {
+                    if (this._isSpawned(alarm, time)) {
+                        spawned = true;
+                    }
+                });
+                return spawned;
+            }));
     }
 
     /**
@@ -334,13 +338,14 @@ export class AlarmService {
      * @param id
      */
     public isAlerted(id: number): Observable<boolean> {
-        return this.etime.getEorzeanTime().map(time => {
-            let alerted = false;
-            this.getAlarms(id).forEach(alarm => {
-                alerted = alerted || this.isAlarmAlerted(alarm, time);
-            });
-            return alerted;
-        })
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                let alerted = false;
+                this.getAlarms(id).forEach(alarm => {
+                    alerted = alerted || this.isAlarmAlerted(alarm, time);
+                });
+                return alerted;
+            }));
     }
 
     public isAlarmAlerted(alarm: Alarm, time: Date) {
@@ -390,10 +395,14 @@ export class AlarmService {
      * Persist the current alarms into browser's localstorage.
      */
     private persistAlarms(): void {
-        this.userService.getUserData().first().mergeMap(user => {
-            user.alarms = Array.from(this._alarms.keys());
-            return this.userService.set(user.$key, user);
-        }).first().subscribe();
+        this.userService.getUserData().pipe(
+            first(),
+            mergeMap((user: AppUser) => {
+                user.alarms = Array.from(this._alarms.keys());
+                return this.userService.set(user.$key, user);
+            }),
+            first()
+        ).subscribe();
     }
 
     /**

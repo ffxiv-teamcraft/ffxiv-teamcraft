@@ -1,10 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
-import {Observable} from 'rxjs/Observable';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {BehaviorSubject, combineLatest, Observable, of, ReplaySubject} from 'rxjs';
 import {CraftingAction} from '../../model/actions/crafting-action';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {CrafterStats} from '../../model/crafter-stats';
 import {SimulationReliabilityReport} from '../../simulation/simulation-reliability-report';
 import {SimulationResult} from '../../simulation/simulation-result';
@@ -35,6 +33,8 @@ import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
+import {filter, map, mergeMap, tap} from 'rxjs/internal/operators';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
     selector: 'app-simulator',
@@ -183,24 +183,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         });
 
         this.gearsets$ = this.userService.getUserData()
-            .do(user => this.userData = user)
-            .mergeMap(user => {
-                if (user.anonymous) {
-                    return Observable.of(user.gearSets)
-                }
-                return this.dataService.getGearsets(user.lodestoneId)
-                    .map(gearsets => {
-                        return gearsets.map(set => {
-                            const customSet = user.gearSets.find(s => s.jobId === set.jobId);
-                            if (customSet !== undefined) {
-                                return customSet;
-                            }
-                            return set;
-                        });
-                    });
-            });
+            .pipe(
+                tap(user => this.userData = user),
+                mergeMap(user => {
+                    if (user.anonymous) {
+                        return of(user.gearSets)
+                    }
+                    return this.dataService.getGearsets(user.lodestoneId)
+                        .pipe(
+                            map(gearsets => {
+                                return gearsets.map(set => {
+                                    const customSet = user.gearSets.find(s => s.jobId === set.jobId);
+                                    if (customSet !== undefined) {
+                                        return customSet;
+                                    }
+                                    return set;
+                                });
+                            })
+                        );
+                })
+            );
 
-        this.simulation$ = Observable.combineLatest(
+        this.simulation$ = combineLatest(
             this.recipe$,
             this.actions$,
             this.crafterStats$,
@@ -208,7 +212,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
         );
 
-        this.result$ = Observable.combineLatest(this.snapshotStep$, this.simulation$, (step, simulation) => {
+        this.result$ = combineLatest(this.snapshotStep$, this.simulation$, (step, simulation) => {
             simulation.reset();
             if (this.snapshotMode) {
                 return simulation.run(true, step);
@@ -217,10 +221,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         });
 
         this.report$ = this.result$
-            .debounceTime(250)
-            .filter(res => res.success)
-            .mergeMap(() => this.simulation$)
-            .map(simulation => simulation.getReliabilityReport());
+            .pipe(
+                debounceTime(250),
+                filter(res => res.success),
+                mergeMap(() => this.simulation$),
+                map(simulation => simulation.getReliabilityReport())
+            );
     }
 
     public showMinStats(simulation: Simulation): void {
@@ -228,7 +234,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        Observable.combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
+        combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
             let userSet = gearsets.find(set => set.jobId === recipe.job);
             if (userSet === undefined && this.selectedSet === undefined) {
                 userSet = {
@@ -251,9 +257,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     importRotation(): void {
         this.dialog.open(ImportRotationPopupComponent)
             .afterClosed()
-            .filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1)
-            .map(importString => <string[]>JSON.parse(importString))
-            .map(importArray => this.registry.importFromCraftOpt(importArray))
+            .pipe(
+                filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1),
+                map(importString => <string[]>JSON.parse(importString)),
+                map(importArray => this.registry.importFromCraftOpt(importArray))
+            )
             .subscribe(rotation => {
                 this.actions = rotation;
                 this.markAsDirty();
@@ -263,36 +271,39 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     importMacro(): void {
         this.dialog.open(ImportMacroPopupComponent)
             .afterClosed()
-            .filter(res => res !== undefined && res.length > 0 && res.indexOf('/ac') > -1)
-            .map(macro => {
-                const actionIds: number[] = [];
-                for (const line of macro.split('\n')) {
-                    let match = this.findActionsRegex.exec(line);
-                    if (match !== null && match !== undefined) {
-                        const skillName = match[2].replace(/"/g, '');
-                        // Get translated skill
-                        try {
-                            actionIds
-                                .push(this.localizedDataService.getCraftingActionIdByName(skillName, <Language>this.translate.currentLang));
-                        } catch (ignored) {
-                            // Ugly implementation but it's a specific case we don't want to refactor for.
+            .pipe(
+                filter(res => res !== undefined && res.length > 0 && res.indexOf('/ac') > -1),
+                map(macro => {
+                    const actionIds: number[] = [];
+                    for (const line of macro.split('\n')) {
+                        let match = this.findActionsRegex.exec(line);
+                        if (match !== null && match !== undefined) {
+                            const skillName = match[2].replace(/"/g, '');
+                            // Get translated skill
                             try {
-                                // If there's no skill match with the first regex, try the second one (for auto translated skills)
-                                match = this.findActionsAutoTranslatedRegex.exec(line);
-                                if (match !== null) {
-                                    actionIds
-                                        .push(this.localizedDataService.getCraftingActionIdByName(match[2],
-                                            <Language>this.translate.currentLang));
+                                actionIds
+                                    .push(this.localizedDataService.getCraftingActionIdByName(skillName,
+                                        <Language>this.translate.currentLang));
+                            } catch (ignored) {
+                                // Ugly implementation but it's a specific case we don't want to refactor for.
+                                try {
+                                    // If there's no skill match with the first regex, try the second one (for auto translated skills)
+                                    match = this.findActionsAutoTranslatedRegex.exec(line);
+                                    if (match !== null) {
+                                        actionIds
+                                            .push(this.localizedDataService.getCraftingActionIdByName(match[2],
+                                                <Language>this.translate.currentLang));
+                                    }
+                                } catch (ignoredAgain) {
+                                    break;
                                 }
-                            } catch (ignoredAgain) {
-                                break;
                             }
                         }
                     }
-                }
-                return actionIds;
-            })
-            .map(actionIds => this.registry.createFromIds(actionIds))
+                    return actionIds;
+                }),
+                map(actionIds => this.registry.createFromIds(actionIds))
+            )
             .subscribe(rotation => {
                 this.actions = rotation;
                 this.markAsDirty();

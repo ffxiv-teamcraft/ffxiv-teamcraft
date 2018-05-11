@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 
 @Component({

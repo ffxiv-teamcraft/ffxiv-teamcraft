@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {ItemData} from '../../../model/garland-tools/item-data';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ExternalListLinkParser} from './external-list-link-parser';
 import {FfxivCraftingLinkParser} from './ffxiv-crafting-link-parser';
 import {DataService} from '../../../core/api/data.service';

@@ -6,7 +6,7 @@ import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';

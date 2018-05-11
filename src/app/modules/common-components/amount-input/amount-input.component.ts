@@ -1,6 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
+import {Observable} from 'rxjs';
+
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 
 @Component({
