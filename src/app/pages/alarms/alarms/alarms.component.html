@@ -40,9 +40,8 @@
                           class="map-marker"
                           [marker]="{x:alarm.coords[0], y:alarm.coords[1]}"></app-map-position>
         <span>{{alarmService.getAlarmTimerString(alarm, time)}}</span>
-        <button mat-button (click)="deleteAlarm(alarm)" color="warn">
+        <button mat-icon-button (click)="deleteAlarm(alarm)" color="warn">
             <mat-icon>delete</mat-icon>
-            {{'Delete' | translate}}
         </button>
     </mat-list-item>
 </mat-list>
