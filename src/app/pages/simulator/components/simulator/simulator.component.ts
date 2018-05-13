@@ -186,7 +186,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             .do(user => this.userData = user)
             .mergeMap(user => {
                 if (user.anonymous) {
-                    return Observable.of(user.gearSets)
+                    return Observable.of([])
                 }
                 return this.dataService.getGearsets(user.lodestoneId)
                     .map(gearsets => {
