@@ -1,11 +1,11 @@
 <div class="input-container compact">
-    <mat-input-container>
+    <mat-form-field>
         <mat-icon matPrefix>search</mat-icon>
         <input class="filter" matInput placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" #filter>
         <mat-hint align="end">
             <small>{{'Data_from_gt' | translate}}</small>
         </mat-hint>
-    </mat-input-container>
+    </mat-form-field>
 </div>
 <mat-grid-list [cols]="getCols()" *ngIf="result | async as results; else loading" rowHeight="4:5" gutterSize="5px">
     <div *ngFor="let row of results">

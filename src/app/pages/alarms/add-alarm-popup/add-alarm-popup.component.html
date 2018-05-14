@@ -1,8 +1,8 @@
 <h3 mat-dialog-title>{{"ALARMS.Add_alarm" | translate}}</h3>
 <div mat-dialog-content>
-    <mat-input-container>
+    <mat-form-field>
         <input type="text" matInput #searchInput [(ngModel)]="itemName" placeholder="{{'Item_name' | translate}}">
-    </mat-input-container>
+    </mat-form-field>
     <mat-list dense>
         <mat-list-item *ngFor="let node of results | async">
             <img mat-list-avatar src="{{node.icon | icon}}" alt="" [appXivdbTooltip]="node.itemId">

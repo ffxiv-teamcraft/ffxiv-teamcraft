@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, ElementRef, Inject, OnInit, ViewChild} fro
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {Vector2} from '../../../core/tools/vector2';
 import {NavigationStep} from '../../../modules/map/navigation-step';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MapService} from '../../../modules/map/map.service';
 import {MapData} from '../../../modules/map/map-data';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';

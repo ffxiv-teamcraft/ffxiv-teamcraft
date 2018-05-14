@@ -3,8 +3,9 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from 'app/model/list/app-user';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
-import {Observable} from 'rxjs/Observable';
+import {combineLatest, concat, of} from 'rxjs';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
+import {first, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-nickname-popup',
@@ -30,30 +31,35 @@ export class NicknamePopupComponent {
         const user = this.data.user;
         user.nickname = this.nickname;
         const renameLinks = this.linkService.getAllByAuthor(user.$key)
-            .mergeMap(links => {
-                if (links.length > 0) {
-                    return Observable.combineLatest(links.map(link => {
-                        link.authorNickname = user.nickname;
-                        return this.linkService.set(link.$key, link);
-                    }));
-                }
-                return Observable.of(null);
-            });
+            .pipe(
+                mergeMap(links => {
+                    if (links.length > 0) {
+                        return combineLatest(links.map(link => {
+                            link.authorNickname = user.nickname;
+                            return this.linkService.set(link.$key, link);
+                        }));
+                    }
+                    return of(null);
+                })
+            );
         const renameTemplates = this.templateService.getAllByAuthor(user.$key)
-            .mergeMap(templates => {
-                if (templates.length > 0) {
-                    return Observable.combineLatest(templates.map(template => {
-                        template.authorNickname = user.nickname;
-                        return this.templateService.set(template.$key, template);
-                    }));
-                }
-                return Observable.of(null);
-            });
-        Observable.concat(renameLinks, renameTemplates)
-            .mergeMap(() => this.userService.set(user.$key, user))
-            .first()
-            .subscribe(() => {
-                this.dialogRef.close();
-            });
+            .pipe(
+                mergeMap(templates => {
+                    if (templates.length > 0) {
+                        return combineLatest(templates.map(template => {
+                            template.authorNickname = user.nickname;
+                            return this.templateService.set(template.$key, template);
+                        }));
+                    }
+                    return of(null);
+                })
+            );
+        concat(renameLinks, renameTemplates)
+            .pipe(
+                mergeMap(() => this.userService.set(user.$key, user)),
+                first()
+            ).subscribe(() => {
+            this.dialogRef.close();
+        });
     }
 }

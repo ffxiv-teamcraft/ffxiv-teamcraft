@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-login-popup',
@@ -47,7 +48,7 @@ export class LoginPopupComponent {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
-                .first()
+                .pipe(first())
                 .subscribe(() => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
@@ -76,7 +77,7 @@ export class LoginPopupComponent {
         this.router.navigate(['home']).then(() => {
             const prevUser = this.af.auth.currentUser;
             this.listService.getUserLists(prevUser.uid)
-                .first()
+                .pipe(first())
                 .subscribe(listsBackup => {
                     // Delete the previous anonymous user
                     if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
@@ -135,7 +136,7 @@ export class LoginPopupComponent {
     private oauth(provider: AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid)
-            .first()
+            .pipe(first())
             .subscribe(lists => {
                 if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
                     this.userService.deleteUser(prevUser.uid);

@@ -5,13 +5,14 @@ import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {WorkshopService} from '../../../core/database/workshop.service';
 import {ListService} from '../../../core/database/list.service';
 import {Workshop} from '../../../model/other/workshop';
-import {Observable} from 'rxjs/Observable';
+import {Observable, empty, EMPTY} from 'rxjs';
 import {List} from '../../../model/list/list';
 import {UserService} from '../../../core/database/user.service';
 import {TranslateService} from '@ngx-translate/core';
 import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popup.component';
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
 import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-custom-link-popup',
@@ -58,15 +59,16 @@ export class CustomLinkPopupComponent implements OnInit {
             this.userNickname = u.nickname;
         });
         this.types = {
-            workshop: userService.getUserData().mergeMap(user => workshopService.getUserWorkshops(user.$key)),
-            list: userService.getUserData().mergeMap(user => listService.getUserLists(user.$key)),
-            simulator: userService.getUserData().mergeMap(user => rotationService.getUserRotations(user.$key))
+            workshop: userService.getUserData().pipe(mergeMap(user => workshopService.getUserWorkshops(user.$key))),
+            list: userService.getUserData().pipe(mergeMap(user => listService.getUserLists(user.$key))),
+            simulator: userService.getUserData().pipe(mergeMap(user => rotationService.getUserRotations(user.$key)))
         };
     }
 
     ngOnInit(): void {
         this.userService.getUserData()
-            .mergeMap(user => {
+            .pipe(
+                mergeMap(user => {
                 if (user.nickname === undefined || user.nickname.length === 0) {
                     return this.dialog.open(NicknamePopupComponent, {
                         data: {
@@ -77,8 +79,9 @@ export class CustomLinkPopupComponent implements OnInit {
                         disableClose: true,
                     }).afterClosed();
                 }
-                return Observable.empty();
+                return EMPTY;
             })
+            )
             .subscribe();
     }
 
@@ -126,7 +129,7 @@ export class CustomLinkPopupComponent implements OnInit {
             this.translator.instant('Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 

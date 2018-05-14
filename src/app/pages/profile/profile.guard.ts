@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../../core/database/user.service';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class ProfileGuard implements CanActivate {
@@ -11,8 +12,10 @@ export class ProfileGuard implements CanActivate {
 
     canActivate(next: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        return this.userService.getUserData().map(user => {
-            return !user.anonymous && user.lodestoneId !== undefined;
-        });
+        return this.userService.getUserData().pipe(
+            map(user => {
+                return !user.anonymous && user.lodestoneId !== undefined;
+            })
+        );
     }
 }

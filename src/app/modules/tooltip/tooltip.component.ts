@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {TooltipDataService} from './tooltip-data.service';
+import {tap} from 'rxjs/operators';
 
 /**
  * @deprecated Prefer using the XivdbTooltipDirective.
@@ -41,7 +42,7 @@ export class TooltipComponent {
 
     loadData(): void {
         this.tooltipData.getTooltipData(this.id)
-            .do(() => this.change.emit())
+            .pipe(tap(() => this.change.emit()))
             .subscribe(data => this.template = data);
     }
 

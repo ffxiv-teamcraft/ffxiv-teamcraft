@@ -3,7 +3,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {DiffService} from '../diff/diff.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ListTemplate} from './list-template';
 import {PendingChangesService} from '../pending-changes/pending-changes.service';
 

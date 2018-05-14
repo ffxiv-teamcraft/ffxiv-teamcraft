@@ -4,9 +4,10 @@ import {CustomLink} from './costum-link';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from '../diff/diff.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {PendingChangesService} from '../pending-changes/pending-changes.service';
-import 'rxjs/add/operator/first';
+import {first, map} from 'rxjs/operators';
+
 
 @Injectable()
 export class CustomLinksService<T extends CustomLink = CustomLink> extends FirebaseStorage<T> {
@@ -31,13 +32,15 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fireb
     public getByUriAndNickname(uri: string, nickName: string): Observable<T> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('uri').equalTo(uri))
             .snapshotChanges()
-            .first()
-            .map(snaps => snaps
-                .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
-                .map(l => this.serializer.deserialize<T>(l, this.getClass()))
-            )
-            .map(res => res.filter(link => link.authorNickname === nickName))
-            .map(res => res[0]);
+            .pipe(
+                first(),
+                map(snaps => snaps
+                    .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
+                    .map(l => this.serializer.deserialize<T>(l, this.getClass()))
+                ),
+                map(res => res.filter(link => link.authorNickname === nickName)),
+                map(res => res[0])
+            );
     }
 
     protected getBaseUri(): string {

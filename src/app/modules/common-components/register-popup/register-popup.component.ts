@@ -1,13 +1,13 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {UserService} from '../../../core/database/user.service';
 import {CharacterAddPopupComponent} from 'app/modules/common-components/character-add-popup/character-add-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AngularFirestore} from 'angularfire2/firestore';
 import {AppUser} from '../../../model/list/app-user';
+import {first} from 'rxjs/operators';
+import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import EmailAuthProvider = firebase.auth.EmailAuthProvider;
@@ -75,7 +75,7 @@ export class RegisterPopupComponent {
             const u = new AppUser();
             u.$key = user.uid;
             u.email = user.email;
-            this.userService.set(user.uid, u).first().subscribe(() => {
+            this.userService.set(user.uid, u).pipe(first()).subscribe(() => {
                 this.dialog.open(CharacterAddPopupComponent, {disableClose: true}).afterClosed().subscribe(() => {
                     this.dialogRef.close();
                     this.userService.reload();

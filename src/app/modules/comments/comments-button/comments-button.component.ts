@@ -5,6 +5,7 @@ import {ListRow} from '../../../model/list/list-row';
 import {List} from '../../../model/list/list';
 import {ObservableMedia} from '@angular/flex-layout';
 import {SettingsService} from '../../../pages/settings/settings.service';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-comments-button',
@@ -41,7 +42,7 @@ export class CommentsButtonComponent implements OnInit, OnChanges {
         this.dialog
             .open(CommentsPopupComponent, {data: {name: this.name, row: this.row, list: this.list, isOwnList: this.isOwnList}})
             .afterClosed()
-            .first()
+            .pipe(first())
             .subscribe(() => this.updated.emit());
     }
 

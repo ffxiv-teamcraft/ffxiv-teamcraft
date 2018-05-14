@@ -1,11 +1,11 @@
 <div class="input-container compact">
-    <mat-input-container>
+    <mat-form-field>
         <mat-icon matPrefix>search</mat-icon>
         <input class="filter" [(ngModel)]="query" matInput placeholder="{{'Recipe_name' | translate}}" #filter>
         <mat-hint align="end">
             <small>{{'Data_from_gt' | translate}}</small>
         </mat-hint>
-    </mat-input-container>
+    </mat-form-field>
 </div>
 <mat-expansion-panel class="filters" #filtersPanel>
     <mat-expansion-panel-header>
@@ -45,16 +45,16 @@
                     <mat-checkbox [(ngModel)]="filter.enabled"></mat-checkbox>
                     <span>{{filter.name | translate}}</span>
                 </div>
-                <mat-input-container>
+                <mat-form-field>
                     <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.min">
                     <span matSuffix>Min</span>
-                </mat-input-container>
-                <mat-input-container>
+                </mat-form-field>
+                <mat-form-field>
                     <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.max">
                     <span matSuffix>Max</span>
-                </mat-input-container>
+                </mat-form-field>
             </li>
         </div>
     </ul>
@@ -127,9 +127,9 @@
                 <mat-checkbox #collectible [style.visibility]="recipe.collectible?'unset':'hidden'">
                     {{"Add_as_collectible" | translate}}
                 </mat-checkbox>
-                <mat-input-container class="amount with-infix">
+                <mat-form-field class="amount with-infix">
                     <input matInput type="number" min="1" value="1" #amount>
-                </mat-input-container>
+                </mat-form-field>
 
                 <mat-menu #appMenu="matMenu" class="lists-menu">
                     <button mat-menu-item (click)="addToNewList(recipe, amount.value, collectible.checked)">

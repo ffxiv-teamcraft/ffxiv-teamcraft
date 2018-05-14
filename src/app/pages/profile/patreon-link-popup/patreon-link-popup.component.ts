@@ -2,8 +2,9 @@ import {Component, Inject} from '@angular/core';
 import {UserService} from '../../../core/database/user.service';
 import {FormControl, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import 'rxjs/add/observable/timer';
+
 import {AppUser} from 'app/model/list/app-user';
+import {filter, first, mergeMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-patreon-link-popup',
@@ -26,17 +27,18 @@ export class PatreonLinkPopupComponent {
     submit(): void {
         this.user.patreonEmail = this.email.value;
         this.userService.checkPatreonEmailAvailability(this.email.value)
-            .first()
-            .do(res => {
-                if (!res) {
-                    this.alreadyUsed = true;
-                }
-            })
-            .filter(res => res)
-            .mergeMap(() => {
-                return this.userService.set(this.user.$key, this.user)
-            })
-            .subscribe(() => {
+            .pipe(
+                first(),
+                tap(res => {
+                    if (!res) {
+                        this.alreadyUsed = true;
+                    }
+                }),
+                filter(res => res),
+                mergeMap(() => {
+                    return this.userService.set(this.user.$key, this.user)
+                })
+            )            .subscribe(() => {
                 this.dialogRef.close();
             });
     }

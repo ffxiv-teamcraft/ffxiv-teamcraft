@@ -1,13 +1,13 @@
 <div class="top-section">
     <form (submit)="createNewList()" #f="ngForm">
-        <mat-input-container>
+        <mat-form-field>
             <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
                    [formControl]="newListFormControl" required>
             <mat-error
                 *ngIf="newListFormControl.hasError('required')">
                 {{'Please_enter_a_name' | translate}}
             </mat-error>
-        </mat-input-container>
+        </mat-form-field>
         <button type="submit" mat-raised-button color="accent">{{'Add_a_list' | translate}}</button>
     </form>
 

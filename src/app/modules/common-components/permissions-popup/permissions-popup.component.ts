@@ -2,15 +2,16 @@ import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DataWithPermissions} from '../../../core/database/permissions/data-with-permissions';
 import {AddNewRowPopupComponent} from './add-new-row-popup/add-new-row-popup.component';
-import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {Permissions} from '../../../core/database/permissions/permissions';
 import {PermissionsRegistry} from '../../../core/database/permissions/permissions-registry';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {UserService} from '../../../core/database/user.service';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {List} from '../../../model/list/list';
 import {Workshop} from '../../../model/other/workshop';
 import {DataService} from '../../../core/api/data.service';
+import {catchError, filter, first, map, mergeMap} from 'rxjs/operators';
+import {AppUser} from '../../../model/list/app-user';
 
 @Component({
     selector: 'app-permissions-popup',
@@ -46,32 +47,35 @@ export class PermissionsPopupComponent {
 
         this.registrySubject = new BehaviorSubject<PermissionsRegistry>(this.registry);
         this.rows = this.registrySubject
-            .mergeMap(registry => {
-                const observables: Observable<{ userId: string, character: any, permissions: Permissions }>[] = [];
-                observables.push(
-                    this.userService.getCharacter(data.authorId)
-                        .map(character => {
-                            return {
-                                userId: data.authorId, character: character, permissions:
-                                    this.getPermissions(data, this.registry, data.authorId)
-                            };
-                        })
-                );
-                registry.forEach((userId, permissions) => {
+            .pipe(
+                mergeMap(registry => {
+                    const observables: Observable<{ userId: string, character: any, permissions: Permissions }>[] = [];
                     observables.push(
-                        this.userService.getCharacter(userId)
-                            .map(character => {
-                                return {
-                                    userId: userId, character: character, permissions:
-                                        this.getPermissions(data, this.registry, userId)
-                                };
-                            })
-                            .catch(() => Observable.of(null))
-                    );
-                });
-                return Observable.combineLatest(observables)
-                    .map(results => results.filter(res => res !== null));
-            });
+                        this.userService.getCharacter(data.authorId)
+                            .pipe(
+                                map(character => {
+                                    return {
+                                        userId: data.authorId, character: character, permissions:
+                                            this.getPermissions(data, this.registry, data.authorId)
+                                    };
+                                })
+                            ));
+                    registry.forEach((userId) => {
+                        observables.push(
+                            this.userService.getCharacter(userId)
+                                .pipe(
+                                    map(character => {
+                                        return {
+                                            userId: userId, character: character, permissions:
+                                                this.getPermissions(data, this.registry, userId)
+                                        };
+                                    }),
+                                    catchError(() => of(null)))
+                        );
+                    });
+                    return combineLatest(observables)
+                        .pipe(map(results => results.filter(res => res !== null)));
+                }));
     }
 
     handlePermissionsChange(after: Permissions, userId?: string): void {
@@ -92,8 +96,10 @@ export class PermissionsPopupComponent {
 
     bindFreeCompany(): void {
         this.userService.getUserData()
-            .mergeMap(user => this.userService.getCharacter(user.$key))
-            .first()
+            .pipe(
+                mergeMap((user: AppUser) => this.userService.getCharacter(user.$key)),
+                first()
+            )
             .subscribe(character => {
                 this.registry.freeCompanyId = character.free_company;
                 this.freeCompany = this.dataService.getFreeCompany(this.registry.freeCompanyId);
@@ -107,7 +113,7 @@ export class PermissionsPopupComponent {
 
     addNewRow(): void {
         this.dialog.open(AddNewRowPopupComponent).afterClosed()
-            .filter(u => u !== '')
+            .pipe(filter(u => u !== ''))
             .subscribe(user => {
                 if (this.registry.registry[user.$key] === undefined && this.data.authorId !== user.$key) {
                     // By default, a new row has the same permissions as everyone.
@@ -154,27 +160,36 @@ export class PermissionsPopupComponent {
             }
         });
         if (usersSharedDeletions.length > 0 || usersSharedAdditions.length > 0) {
-            Observable.combineLatest(
+            combineLatest(
                 ...usersSharedDeletions.map(deletion => {
-                    return this.userService.get(deletion).first().map(user => {
-                        if (this.data instanceof List) {
-                            user.sharedLists = user.sharedLists.filter(listId => listId !== this.data.$key);
-                        } else if (this.data instanceof Workshop) {
-                            user.sharedWorkshops = user.sharedLists.filter(listId => listId !== this.data.$key);
-                        }
-                        return user;
-                    }).mergeMap(user => this.userService.set(deletion, user));
+                    return this.userService.get(deletion).pipe(
+                        first(),
+                        map(user => {
+                            if (this.data instanceof List) {
+                                user.sharedLists = user.sharedLists.filter(listId => listId !== this.data.$key);
+                            } else if (this.data instanceof Workshop) {
+                                user.sharedWorkshops = user.sharedLists.filter(listId => listId !== this.data.$key);
+                            }
+                            return user;
+                        }),
+                        mergeMap(user => this.userService.set(deletion, user))
+                    );
                 }),
                 ...usersSharedAdditions.map(addition => {
-                    return this.userService.get(addition).first().map(user => {
-                        if (this.data instanceof List) {
-                            user.sharedLists.push(this.data.$key);
-                        } else if (this.data instanceof Workshop) {
-                            user.sharedWorkshops.push(this.data.$key);
-                        }
-                        return user;
-                    }).mergeMap(user => this.userService.set(addition, user));
-                })).first().subscribe(() => {
+                    return this.userService.get(addition).pipe(
+                        first(),
+                        map(user => {
+                            if (this.data instanceof List) {
+                                user.sharedLists.push(this.data.$key);
+                            } else if (this.data instanceof Workshop) {
+                                user.sharedWorkshops.push(this.data.$key);
+                            }
+                            return user;
+                        }),
+                        mergeMap(user => this.userService.set(addition, user))
+                    );
+                }),
+            ).pipe(first()).subscribe(() => {
                 this.registry.everyone.write = false; // Always force write to false for everyone.
                 this.data.permissionsRegistry = this.registry;
                 this.dialogRef.close(this.data);

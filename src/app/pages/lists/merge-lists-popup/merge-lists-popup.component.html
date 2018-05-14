@@ -1,8 +1,8 @@
 <h3 mat-dialog-title>{{"LISTS.Merge_lists" | translate}}</h3>
 <div mat-dialog-content>
-    <mat-input-container>
+    <mat-form-field>
         <input type="text" matInput [(ngModel)]="listName" required placeholder="{{'List_name' | translate}}">
-    </mat-input-container>
+    </mat-form-field>
     <mat-selection-list #selectedLists>
         <mat-list-option *ngFor="let list of data.lists" checkboxPosition="before" [value]="list">
             {{list.name}}

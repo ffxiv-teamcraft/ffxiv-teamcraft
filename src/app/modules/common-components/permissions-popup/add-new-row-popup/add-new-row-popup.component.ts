@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../../../core/database/user.service';
-import {Observable} from 'rxjs/Observable';
+import {fromEvent} from 'rxjs';
+import {debounceTime, distinctUntilChanged, first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-add-new-row-popup',
@@ -29,8 +30,11 @@ export class AddNewRowPopupComponent implements OnInit {
         // If this is an email
         if (this.input.indexOf('@') > -1) {
             this.userService.getUserByEmail(this.input)
-                .first()
-                .mergeMap(user => this.userService.getCharacter(user.$key).map(character => ({character: character, user: user})))
+                .pipe(
+                    first(),
+                    mergeMap(user => this.userService.getCharacter(user.$key)
+                        .pipe(map(character => ({character: character, user: user}))))
+                )
                 .subscribe(data => {
                     this.notFound = false;
                     this.result = data;
@@ -42,8 +46,11 @@ export class AddNewRowPopupComponent implements OnInit {
         } else {
             // Else, handle it as a user id
             this.userService.get(this.input)
-                .first()
-                .mergeMap(user => this.userService.getCharacter(user.$key).map(character => ({character: character, user: user})))
+                .pipe(
+                    first(),
+                    mergeMap(user => this.userService.getCharacter(user.$key)
+                        .pipe(map(character => ({character: character, user: user}))))
+                )
                 .subscribe(data => {
                     this.notFound = false;
                     this.result = data;
@@ -56,9 +63,11 @@ export class AddNewRowPopupComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        Observable.fromEvent(this.inputField.nativeElement, 'keyup')
-            .debounceTime(500)
-            .distinctUntilChanged()
+        fromEvent(this.inputField.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(500),
+                distinctUntilChanged()
+            )
             .subscribe(() => this.doSearch());
     }
 

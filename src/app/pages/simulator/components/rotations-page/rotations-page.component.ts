@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
@@ -10,6 +10,8 @@ import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {CustomLink} from '../../../../core/database/custom-links/costum-link';
 import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
+import {filter, tap} from 'rxjs/operators';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-rotations-page',
@@ -27,10 +29,12 @@ export class RotationsPageComponent {
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
                 private translator: TranslateService, private dialog: MatDialog) {
         this.rotations$ = this.userService.getUserData()
-            .do(user => this.linkButton = user.admin || user.patron)
-            .mergeMap(user => {
-                return this.rotationsService.getUserRotations(user.$key);
-            });
+            .pipe(
+                tap(user => this.linkButton = user.admin || user.patron),
+                mergeMap(user => {
+                    return this.rotationsService.getUserRotations(user.$key);
+                })
+            );
     }
 
     public getSteps(rotation: CraftingRotation): CraftingAction[] {
@@ -44,9 +48,10 @@ export class RotationsPageComponent {
     public deleteRotation(rotationId: string): void {
         this.dialog.open(ConfirmationPopupComponent, {data: 'SIMULATOR.Confirm_delete'})
             .afterClosed()
-            .filter(res => res)
-            .mergeMap(() => this.rotationsService.remove(rotationId))
-            .subscribe();
+            .pipe(
+                filter(res => res),
+                mergeMap(() => this.rotationsService.remove(rotationId))
+            ).subscribe();
     }
 
     public openLinkPopup(rotation: CraftingRotation): void {
@@ -66,7 +71,7 @@ export class RotationsPageComponent {
             this.translator.instant('SIMULATOR.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 }

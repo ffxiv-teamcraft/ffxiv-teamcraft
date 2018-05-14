@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
-import {Observable} from 'rxjs/Observable';
+import {Observable, BehaviorSubject} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {MatDialog} from '@angular/material';
 import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.component';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
 import {SettingsService} from '../../settings/settings.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {filter, map, switchMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-alarms',
@@ -30,10 +30,10 @@ export class AlarmsComponent {
     }
 
     public getAlarms(): Observable<Alarm[]> {
-        return this.reloader
-            .switchMap(() => this.etime.getEorzeanTime())
-            .do(time => this.time = time)
-            .map(time => {
+        return this.reloader.pipe(
+            switchMap(() => this.etime.getEorzeanTime()),
+            tap(time => this.time = time),
+            map(time => {
                 const alarms: Alarm[] = [];
                 this.alarmService.alarms.forEach(alarm => {
                     if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
@@ -51,7 +51,7 @@ export class AlarmsComponent {
                     }
                     return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
                 });
-            });
+            }));
     }
 
     saveCompact(): void {
@@ -72,7 +72,7 @@ export class AlarmsComponent {
 
     openAddAlarmPopup(): void {
         this.dialog.open(AddAlarmPopupComponent).afterClosed()
-            .filter(result => result !== undefined)
+            .pipe(filter(result => result !== undefined))
             .subscribe((node: any) => {
                 const alarms: Alarm[] = [];
                 if (node.time !== undefined) {

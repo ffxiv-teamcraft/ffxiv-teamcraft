@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 import {Alarm} from '../../../core/time/alarm';
 import {MapService} from '../../../modules/map/map.service';
 import {MapData} from '../../../modules/map/map-data';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
     selector: 'app-alarm-card',

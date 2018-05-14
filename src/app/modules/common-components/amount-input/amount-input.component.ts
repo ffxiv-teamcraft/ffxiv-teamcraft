@@ -1,7 +1,8 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
+import {fromEvent, Observable} from 'rxjs';
+
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-amount-input',
@@ -49,33 +50,37 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     }
 
     ngOnInit(): void {
-        const focusOutObservable = Observable.fromEvent(this.input.nativeElement, 'focusout')
-            .distinctUntilChanged()
-            .map(() => {
-                return this.input.nativeElement.value;
-            });
-        const keyUpObservable = Observable.fromEvent(this.input.nativeElement, 'keyup')
-            .filter((e: KeyboardEvent) => e.keyCode === 13)
-            .map(() => {
-                return this.input.nativeElement.value;
-            });
+        const focusOutObservable = fromEvent(this.input.nativeElement, 'focusout')
+            .pipe(
+                distinctUntilChanged(),
+                map(() => {
+                    return this.input.nativeElement.value;
+                })
+            );
+        const keyUpObservable = fromEvent(this.input.nativeElement, 'keyup')
+            .pipe(
+                filter((e: KeyboardEvent) => e.keyCode === 13),
+                map(() => {
+                    return this.input.nativeElement.value;
+                })
+            );
         this.registerOnChange(focusOutObservable);
         this.registerOnChange(keyUpObservable);
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        this.subscriptions.push(observable
-            .map(value => +value)
-            .subscribe(value => {
-                if (value > this.max) {
-                    value = this.max;
-                }
-                if (value < this.min) {
-                    value = this.min;
-                }
-                this.value = value;
-                this.onchange.emit(value);
-            }));
+        this.subscriptions.push(
+            observable.pipe(map(value => +value))
+                .subscribe(value => {
+                    if (value > this.max) {
+                        value = this.max;
+                    }
+                    if (value < this.min) {
+                        value = this.min;
+                    }
+                    this.value = value;
+                    this.onchange.emit(value);
+                }));
     }
 
     public getWidth(): number {

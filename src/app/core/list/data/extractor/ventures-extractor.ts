@@ -1,7 +1,7 @@
 import {AbstractExtractor} from './abstract-extractor';
 import {Item} from '../../../../model/garland-tools/item';
 import {ItemData} from '../../../../model/garland-tools/item-data';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {DataType} from '../data-type';
 
 export class VenturesExtractor extends AbstractExtractor<number[]> {
