@@ -369,10 +369,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                                                 return combineLatest(additionalLists
                                                                     .map(listId => this.listService.get(listId)
                                                                         .pipe(
-                                                                            catchError(() => of(null)),
-                                                                            map(ls => ls.filter(l => l !== null)),
-                                                                            map(externalLists => lists.concat(externalLists))
-                                                                        )));
+                                                                            catchError(() => of(null))
+                                                                        )
+                                                                    )
+                                                                ).pipe(
+                                                                    map(ls => ls.filter(l => l !== null)),
+                                                                    map(externalLists => lists.concat(externalLists))
+                                                                );
                                                             } else {
                                                                 return of(lists);
                                                             }
