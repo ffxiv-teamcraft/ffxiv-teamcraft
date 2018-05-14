@@ -322,8 +322,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                         })
                                     );
                             })).pipe(
-                                map(workshops => workshops.filter(w => w !== null)),
-                                filter((row: any) => row.workshop.getPermissions(user.$key).write === true)
+                                map(workshops => workshops.filter(w => w !== null && w !== undefined)
+                                    .filter(row => row.workshop.getPermissions(user.$key).write === true))
                             );
                         })
                     );
