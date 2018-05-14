@@ -88,7 +88,7 @@
     <mat-list *ngIf="expanded">
         <app-recipe *ngFor="let recipe of list.recipes"
                     [recipe]="recipe"
-                    (ondelete)="onrecipedelete.emit({recipe: recipe})"
+                    (ondelete)="onrecipedelete.emit()"
                     (onedit)="onedit.emit({recipe: recipe, amount:$event})"
                     [readonly]="readonly">
         </app-recipe>

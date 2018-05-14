@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
@@ -20,7 +20,8 @@ import {catchError, filter, first, mergeMap} from 'rxjs/operators';
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
-    styleUrls: ['./list-panel.component.scss']
+    styleUrls: ['./list-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
 
@@ -148,7 +149,14 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public handleClick(panel: MatExpansionPanel): void {
         panel.expanded ? this.opened.emit() : this.closed.emit();
-        this.expanded = !this.expanded;
+        if (!panel.expanded) {
+            // Once the panel is closed, destroy its content from the DOM.
+            setTimeout(() => {
+                this.expanded = false;
+            }, 500);
+        } else {
+            this.expanded = true;
+        }
     }
 
     ngOnInit(): void {
