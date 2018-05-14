@@ -46,33 +46,34 @@
     <div class="configuration">
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
-            <mat-checkbox [(ngModel)]="customSet">
-                {{'SIMULATOR.CONFIGURATION.Custom_set' | translate}}
-            </mat-checkbox>
             <div class="save-button">
-                <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined && !selectedSet.custom"
-                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set'}}"
-                        color="accent"
-                        (click)="saveSet(selectedSet)">
-                    <mat-icon>save</mat-icon>
-                </button>
                 <button mat-mini-fab *ngIf="selectedSet !== undefined && selectedSet.custom"
                         matTooltip="{{'SIMULATOR.CONFIGURATION.Reset_set'}}"
                         color="accent"
                         (click)="resetSet(selectedSet)">
                     <mat-icon>refresh</mat-icon>
                 </button>
+                <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined"
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set'}}"
+                        color="accent"
+                        (click)="saveSet(selectedSet)">
+                    <mat-icon>save</mat-icon>
+                </button>
             </div>
             <div *ngIf="gearsets$ | async as gearsets">
                 <mat-select *ngIf="customMode"
                             [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
-                            [(ngModel)]="selectedSet">
+                            [(ngModel)]="selectedSet"
+                            (ngModelChange)="applyStats(selectedSet)">
                     <mat-option *ngFor="let set of gearsets" [value]="set">
-                        {{set.jobId | jobName | i18n}} ({{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
+                        {{set.jobId | jobName | i18n}} (ilvl {{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
                     </mat-option>
                 </mat-select>
             </div>
             <div class="set-details" *ngIf="selectedSet !== undefined">
+                <mat-checkbox [(ngModel)]="customSet">
+                    {{'SIMULATOR.CONFIGURATION.Custom_set' | translate}}
+                </mat-checkbox>
                 <div class="details-row">
                     <mat-form-field
                         matTooltip="{{selectedSet.craftsmanship + this.getBonusValue('Craftsmanship', selectedSet.craftsmanship)}}"
@@ -437,7 +438,10 @@
     </div>
 </div>
 <ng-template #loading>
-    <div class="loading-container">
+    <div class="loading-container" *ngIf="selectedSet !== undefined">
         <mat-spinner></mat-spinner>
+    </div>
+    <div class="select-job" *ngIf="selectedSet === undefined">
+        <p>{{'SIMULATOR.Select_job_please' | translate}}</p>
     </div>
 </ng-template>

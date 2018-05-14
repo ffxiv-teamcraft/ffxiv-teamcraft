@@ -71,6 +71,7 @@
             width: 120px;
         }
         .details-row {
+            margin-top: 10px;
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
@@ -87,6 +88,17 @@
         > div {
             margin: 10px;
         }
+    }
+}
+
+.select-job {
+    width: 100%;
+    height: 300px;
+    padding-top: 150px;
+    p {
+        font-size: 40px;
+        opacity: .7;
+        text-align: center;
     }
 }
 

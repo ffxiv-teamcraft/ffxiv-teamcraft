@@ -36,7 +36,7 @@ import {ConsumablesService} from 'app/pages/simulator/model/consumables.service'
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
 import {combineLatest} from 'rxjs/observable/combineLatest';
-import {filter, map, mergeMap, tap, debounceTime} from 'rxjs/operators';
+import {debounceTime, filter, map, mergeMap, tap} from 'rxjs/operators';
 import {of} from 'rxjs/observable/of';
 
 @Component({
@@ -46,6 +46,81 @@ import {of} from 'rxjs/observable/of';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimulatorComponent implements OnInit, OnDestroy {
+
+    private defaultGearSets: GearSet[] = [
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 8,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 9,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 10,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 11,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 12,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 13,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 14,
+            level: 70,
+            specialist: false
+        },
+        {
+            ilvl: 0,
+            control: 1350,
+            craftsmanship: 1500,
+            cp: 474,
+            jobId: 15,
+            level: 70,
+            specialist: false
+        }
+    ];
 
     @Input()
     itemId: number;
@@ -190,18 +265,23 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 tap(user => this.userData = user),
                 mergeMap(user => {
                     if (user.anonymous) {
-                        return of(user.gearSets || [])
+                        return of(this.populateMissingSets(user.gearSets || this.defaultGearSets));
                     }
                     return this.dataService.getGearsets(user.lodestoneId)
                         .pipe(
                             map(gearsets => {
-                                return gearsets.map(set => {
+                                const resultSets = gearsets.map(set => {
                                     const customSet = user.gearSets.find(s => s.jobId === set.jobId);
                                     if (customSet !== undefined) {
                                         return customSet;
                                     }
                                     return set;
                                 });
+                                // If there's some missing sets, populate them.
+                                if (resultSets.length < 8) {
+                                    return this.populateMissingSets(resultSets);
+                                }
+                                return resultSets;
                             })
                         );
                 })
@@ -232,25 +312,19 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             );
     }
 
+    private populateMissingSets(sets: GearSet[]): GearSet[] {
+        // Get missing sets and concat to the input array, then return the result.
+        return this.defaultGearSets.filter(row => sets.find(set => row.jobId === set.jobId) === undefined)
+            .concat(sets);
+    }
+
     public showMinStats(simulation: Simulation): void {
         this.dialog.open(SimulationMinStatsPopupComponent, {data: simulation});
     }
 
     ngOnInit(): void {
         combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-            let userSet = (gearsets || []).find(set => set.jobId === recipe.job);
-            if (userSet === undefined && this.selectedSet === undefined) {
-                userSet = {
-                    ilvl: 0,
-                    control: 1350,
-                    craftsmanship: 1500,
-                    cp: 474,
-                    jobId: 8,
-                    level: 70,
-                    specialist: false
-                };
-            }
-            return userSet;
+            return gearsets.find(set => set.jobId === recipe.job);
         }).subscribe(set => {
             this.selectedSet = set;
             this.applyStats(set, false);
@@ -400,7 +474,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     saveSet(set: GearSet): void {
         // First of all, remove old gearset in userData for this job.
-        this.userData.gearSets = this.userData.gearSets.filter(s => s.jobId !== set.jobId);
+        this.userData.gearSets = (this.userData.gearSets || []).filter(s => s.jobId !== set.jobId);
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);

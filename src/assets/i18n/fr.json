@@ -429,6 +429,7 @@
         "Confirm_delete": "Voulez-vous vraiment supprimer cette rotation?",
         "Toggle_snapshot_mode": "Passer en mode pas à pas",
         "Open_in_external": "Ouvrir dans le simulateur de {{name}}",
+        "Select_job_please": "Merci de sélectionner un job",
         "CUSTOM": {
             "Recipe_configuration": "Configuration de la recette",
             "Recipe_level": "Niveau de la recette",
