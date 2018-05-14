@@ -9,7 +9,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {SearchFilter} from '../../model/search/search-filter.interface';
 
 import {GearSet} from '../../pages/simulator/model/gear-set';
-import {map, publishReplay, refCount, take} from 'rxjs/operators';
+import {map, mergeMap, publishReplay, refCount, take} from 'rxjs/operators';
 
 @Injectable()
 export class DataService {
@@ -27,25 +27,36 @@ export class DataService {
     }
 
     public getGearsets(lodestoneId: number): Observable<GearSet[]> {
-        return this.http.get(`https://api.xivdb.com/character/${lodestoneId}?data=gearsets`)
+        return this.getCharacter(lodestoneId)
             .pipe(
-                map((response: any[]) => {
-                    return response
-                    // We want only crafter sets
-                        .filter(row => row.classjob_id >= 8 && row.classjob_id <= 15)
-                        .map(set => {
-                            return {
-                                ilvl: set.item_level_avg,
-                                jobId: set.classjob_id,
-                                level: set.level,
-                                control: set.stats.mental !== undefined ? set.stats.mental.Control : 0,
-                                craftsmanship: set.stats.mental !== undefined ? set.stats.mental.Craftsmanship : 0,
-                                cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
-                                specialist: set.slot_soulcrystal !== null
-                            }
-                        });
+                mergeMap(character => {
+                    return this.http.get(`https://api.xivdb.com/character/${lodestoneId}?data=gearsets`)
+                        .pipe(
+                            map((response: any[]) => {
+                                return response
+                                // We want only crafter sets
+                                    .filter(row => row.classjob_id >= 8 && row.classjob_id <= 15)
+                                    .map(set => {
+                                        // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
+                                        // default to set level.
+                                        const setLevel = Object.keys(character.classjobs)
+                                            .map(key => character.classjobs[key])
+                                            .find(job => job.name === set.role.name) || set.level;
+                                        return {
+                                            ilvl: set.item_level_avg,
+                                            jobId: set.classjob_id,
+                                            level: setLevel,
+                                            control: set.stats.mental !== undefined ? set.stats.mental.Control : 0,
+                                            craftsmanship: set.stats.mental !== undefined ? set.stats.mental.Craftsmanship : 0,
+                                            cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
+                                            specialist: set.slot_soulcrystal !== null
+                                        }
+                                    });
+                            })
+                        );
                 })
-            );
+            )
+
     }
 
     /**
