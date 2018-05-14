@@ -88,7 +88,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                     return this.af.authState
                         .pipe(
                             first(),
-                            mergeMap((user: firebase.User) => {
+                            mergeMap((user) => {
                                 if ((user === null && !this.loggingIn) || user.uid === undefined) {
                                     this.af.auth.signInAnonymously();
                                     return of(<AppUser>{name: 'Anonymous', anonymous: true});
@@ -99,11 +99,13 @@ export class UserService extends FirebaseStorage<AppUser> {
                                             return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
                                         }));
                                 } else {
-                                    return this.get(user.uid).pipe(
-                                        map(u => {
-                                            u.providerId = user.providerId;
-                                            return u;
-                                        }));
+                                    return this.get(user.uid)
+                                        .pipe(
+                                            map(u => {
+                                                u.providerId = user.providerId;
+                                                return u;
+                                            })
+                                        );
                                 }
                             })
                         );
