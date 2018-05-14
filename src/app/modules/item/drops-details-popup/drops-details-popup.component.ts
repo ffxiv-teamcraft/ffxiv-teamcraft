@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Aetheryte} from '../../../core/data/aetheryte';
 import {MapService} from '../../map/map.service';
 import {Drop} from '../../../model/list/drop';
+import {map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-drops-details-popup',
@@ -17,12 +18,14 @@ export class DropsDetailsPopupComponent {
     }
 
     getClosestAetheryte(drop: Drop): Observable<Aetheryte> {
-        return this.mapService.getMapById(drop.position.zoneid).map((map) => {
-            if (map !== undefined) {
-                return this.mapService.getNearestAetheryte(map, drop.position);
-            } else {
-                return undefined;
-            }
-        });
+        return this.mapService.getMapById(drop.position.zoneid)
+            .pipe(map((mapData) => {
+                    if (mapData !== undefined) {
+                        return this.mapService.getNearestAetheryte(mapData, drop.position);
+                    } else {
+                        return undefined;
+                    }
+                })
+            );
     }
 }

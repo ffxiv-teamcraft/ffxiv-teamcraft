@@ -1,9 +1,9 @@
 <h3 mat-dialog-title>{{"LIST_DETAILS.LAYOUT_DIALOG.Import_layout" | translate}}</h3>
 <div mat-dialog-content>
-    <mat-input-container>
+    <mat-form-field>
         <textarea type="text" matInput placeholder="{{'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate}}"
                   [(ngModel)]="importString"></textarea>
-    </mat-input-container>
+    </mat-form-field>
     <mat-error *ngIf="!importValid() && importString !== undefined && importString.length > 0">
         {{'LIST_DETAILS.LAYOUT_DIALOG.Invalid_import' | translate }}
     </mat-error>

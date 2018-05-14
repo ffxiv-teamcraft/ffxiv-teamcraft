@@ -8,7 +8,7 @@ import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.compone
 import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
 import {SettingsService} from '../../settings/settings.service';
 import {ObservableMedia} from '@angular/flex-layout';
-import {filter, map, switchMap, tap} from 'rxjs/internal/operators';
+import {filter, map, switchMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-alarms',

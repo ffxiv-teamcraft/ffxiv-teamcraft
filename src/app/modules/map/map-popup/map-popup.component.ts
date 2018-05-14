@@ -4,6 +4,7 @@ import {MapData} from '../map-data';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {Observable} from 'rxjs';
 import {Vector2} from '../../../core/tools/vector2';
+import {publishReplay, refCount} from 'rxjs/operators';
 
 @Component({
     selector: 'app-map-popup',
@@ -18,7 +19,10 @@ export class MapPopupComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.mapData = this.mapService.getMapById(this.data.id).publishReplay(1).refCount();
+        this.mapData = this.mapService.getMapById(this.data.id).pipe(
+            publishReplay(1),
+            refCount()
+        );
     }
 
 }

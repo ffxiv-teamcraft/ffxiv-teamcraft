@@ -1,10 +1,11 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ListService} from '../../../core/database/list.service';
-import {Observable} from 'rxjs';
+import {concat, Observable} from 'rxjs';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
+import {filter, switchMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-bulk-regenerate-popup',
@@ -25,18 +26,23 @@ export class BulkRegeneratePopupComponent extends ComponentWithSubscriptions imp
         let done = 0;
         const regenerations: Observable<List>[] = this.data.map(list => {
             return this.listManager.upgradeList(list)
-                .switchMap((l: List) => this.listService.set(l.$key, l));
+                .pipe(
+                    switchMap((l: List) => this.listService.set(l.$key, l))
+                );
         });
         this.subscriptions.push(
-            Observable.concat(...regenerations)
-                .do(() => {
-                    done++;
-                    this.progress = Math.ceil(100 * done / this.data.length);
-                })
-                .filter(() => this.progress >= 100)
-                .subscribe(() => {
-                    this.dialogRef.close();
-                }));
+            concat(...regenerations)
+                .pipe(
+                    tap(() => {
+                        done++;
+                        this.progress = Math.ceil(100 * done / this.data.length);
+                    }),
+                    filter(() => this.progress >= 100)
+                ).subscribe(() => {
+                this.dialogRef.close();
+            })
+        )
+        ;
     }
 
 }

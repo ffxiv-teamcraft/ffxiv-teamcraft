@@ -33,7 +33,7 @@ import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {filter, map, mergeMap, tap} from 'rxjs/internal/operators';
+import {filter, map, mergeMap, tap} from 'rxjs/operators';
 import {debounceTime} from 'rxjs/operators';
 
 @Component({

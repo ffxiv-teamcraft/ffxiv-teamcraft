@@ -5,7 +5,7 @@ import {auditTime, distinctUntilChanged, takeUntil, tap} from 'rxjs/operators';
 import {ScrollService} from './scroll.service';
 import {fromEvent, Observable, ReplaySubject, Subject} from 'rxjs';
 import {CdkScrollable, ScrollDispatcher} from '@angular/cdk/scrolling';
-import {filter, map} from 'rxjs/internal/operators';
+import {filter, map} from 'rxjs/operators';
 
 // https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/app/shared/scroll-spy.service.ts
 

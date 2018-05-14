@@ -5,7 +5,7 @@ import {BehaviorSubject, combineLatest, Observable, fromEvent} from 'rxjs';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {MatPaginator, PageEvent} from '@angular/material';
 import {tap} from 'rxjs/operators';
-import {debounceTime, map, switchMap} from 'rxjs/internal/operators';
+import {debounceTime, map, switchMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-public-lists',

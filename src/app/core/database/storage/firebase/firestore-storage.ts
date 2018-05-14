@@ -10,7 +10,7 @@ import {DataResponse} from '../data-response';
 
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
-import {map, mergeMap, tap} from 'rxjs/internal/operators';
+import {debounceTime, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
@@ -42,18 +42,19 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             this.cache[uid] = {
                 subject: new ReplaySubject<DataResponse<T>>(1),
                 subscription: this.firestore.collection(this.getBaseUri()).doc(uid).snapshotChanges()
-                    .map((snap: Action<any>) => {
-                        const valueWithKey: T = <T>{$key: snap.payload.id, ...snap.payload.data()};
-                        if (!snap.payload.exists) {
-                            throw new Error(`${this.getBaseUri()}/${uid} Not found`);
-                        }
-                        delete snap.payload;
-                        return this.serializer.deserialize<T>(valueWithKey, this.getClass());
-                    })
-                    .debounceTime(50)
-                    .publishReplay(1)
-                    .refCount()
-                    .subscribe(data => {
+                    .pipe(
+                        map((snap: Action<any>) => {
+                            const valueWithKey: T = <T>{$key: snap.payload.id, ...snap.payload.data()};
+                            if (!snap.payload.exists) {
+                                throw new Error(`${this.getBaseUri()}/${uid} Not found`);
+                            }
+                            delete snap.payload;
+                            return this.serializer.deserialize<T>(valueWithKey, this.getClass());
+                        }),
+                        debounceTime(50),
+                        publishReplay(1),
+                        refCount()
+                    ).subscribe(data => {
                         this.cache[uid].subject.next({data: data})
                     }, err => {
                         this.cache[uid].subject.next({data: undefined, error: err})

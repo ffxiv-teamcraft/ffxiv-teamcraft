@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {EMPTY, Observable} from 'rxjs';
 import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
@@ -8,6 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {List} from 'app/model/list/list';
 import {ListService} from '../../../core/database/list.service';
+import {mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-template-popup',
@@ -22,7 +23,7 @@ export class TemplatePopupComponent implements OnInit {
                 private templateService: ListTemplateService, private dialogRef: MatDialogRef<TemplatePopupComponent>,
                 private snack: MatSnackBar, private translator: TranslateService, private dialog: MatDialog,
                 listService: ListService) {
-        this.lists = userService.getUserData().mergeMap(user => listService.getUserLists(user.$key));
+        this.lists = userService.getUserData().pipe(mergeMap(user => listService.getUserLists(user.$key)));
     }
 
     submit(): void {
@@ -43,7 +44,7 @@ export class TemplatePopupComponent implements OnInit {
             this.translator.instant('LIST_TEMPLATE.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
@@ -54,19 +55,21 @@ export class TemplatePopupComponent implements OnInit {
 
     ngOnInit(): void {
         this.userService.getUserData()
-            .mergeMap(user => {
-                if (user.nickname === undefined || user.nickname.length === 0) {
-                    return this.dialog.open(NicknamePopupComponent, {
-                        data: {
-                            user: user,
-                            hintTextKey: 'PROFILE.Feature_requires_nickname',
-                            canCancel: false
-                        },
-                        disableClose: true,
-                    }).afterClosed();
-                }
-                return Observable.empty();
-            })
+            .pipe(
+                mergeMap(user => {
+                    if (user.nickname === undefined || user.nickname.length === 0) {
+                        return this.dialog.open(NicknamePopupComponent, {
+                            data: {
+                                user: user,
+                                hintTextKey: 'PROFILE.Feature_requires_nickname',
+                                canCancel: false
+                            },
+                            disableClose: true,
+                        }).afterClosed();
+                    }
+                    return EMPTY;
+                })
+            )
             .subscribe();
     }
 

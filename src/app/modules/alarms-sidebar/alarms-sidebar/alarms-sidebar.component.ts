@@ -3,6 +3,7 @@ import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
 import {Observable} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
+import {map, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-alarms-sidebar',
@@ -24,26 +25,29 @@ export class AlarmsSidebarComponent implements OnInit {
 
     ngOnInit() {
         this.alarms$ = this.etime.getEorzeanTime()
-            .do(time => this.time = time)
-            .map(time => {
-                const alarms: Alarm[] = [];
-                this.alarmService.alarms.forEach(alarm => {
-                    if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
-                        return;
-                    }
-                    const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
-                    alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
-                });
-                return alarms.sort((a, b) => {
-                    if (this.alarmService.isAlarmSpawned(a, time)) {
-                        return -1;
-                    }
-                    if (this.alarmService.isAlarmSpawned(b, time)) {
-                        return 1;
-                    }
-                    return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
-                });
-            });
+            .pipe(
+                tap(time => this.time = time),
+                map(time => {
+                    const alarms: Alarm[] = [];
+                    this.alarmService.alarms.forEach(alarm => {
+                        if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
+                            return;
+                        }
+                        const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
+                        alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
+                    });
+                    return alarms.sort((a, b) => {
+                        if (this.alarmService.isAlarmSpawned(a, time)) {
+                            return -1;
+                        }
+                        if (this.alarmService.isAlarmSpawned(b, time)) {
+                            return 1;
+                        }
+                        return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn)
+                            ? -1 : 1;
+                    });
+                })
+            );
     }
 
 }

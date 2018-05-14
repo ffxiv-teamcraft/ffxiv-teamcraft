@@ -4,10 +4,11 @@ import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
 import {MatDialog} from '@angular/material/dialog';
 import {ListNamePopupComponent} from '../../../modules/common-components/list-name-popup/list-name-popup.component';
-import {Observable} from 'rxjs';
+import {concat} from 'rxjs';
 import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {UserService} from '../../../core/database/user.service';
+import {filter, first, map, switchMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-list-import',
@@ -23,11 +24,16 @@ export class CartImportComponent extends ComponentWithSubscriptions {
         super();
         const list = new List();
         this.subscriptions.push(
-            userService.getUserData().map(u => {
-                list.authorId = u.$key;
-            }).switchMap(() => {
-                return dialog.open(ListNamePopupComponent).afterClosed();
-            }).filter(name => name !== undefined && name.length > 0).subscribe(name => {
+            userService.getUserData()
+                .pipe(
+                    map(u => {
+                        list.authorId = u.$key;
+                    }),
+                    switchMap(() => {
+                        return dialog.open(ListNamePopupComponent).afterClosed();
+                    }),
+                    filter(name => name !== undefined && name.length > 0)
+                ).subscribe(name => {
                 let done = 0;
                 list.name = name;
                 route.params.subscribe(params => {
@@ -36,7 +42,7 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                     const cart = decoded.split(';');
                     const importObservables = [];
                     // We create the list
-                    listService.add(list).first().subscribe((id) => {
+                    listService.add(list).pipe(first()).subscribe((id) => {
                         // Then we prepare the list creation Observable
                         cart.forEach(row => {
                             const parsed = row.split(',');
@@ -46,9 +52,9 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                             importObservables.push(listManager.addToList(itemId, list, recipeId, quantity));
                         });
                         // We can now execute the observable
-                        Observable.concat(...importObservables)
+                        concat(...importObservables)
                             .subscribe(() => {
-                                listService.update(id, list).first().subscribe(() => {
+                                listService.update(id, list).pipe(first()).subscribe(() => {
                                     done++;
                                     // Update progression
                                     this.progress = Math.ceil(100 * done / cart.length);

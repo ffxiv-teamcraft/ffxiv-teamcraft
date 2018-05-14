@@ -13,7 +13,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {UserService} from '../../../core/database/user.service';
-import {catchError, filter, mergeMap, switchMap, tap} from 'rxjs/internal/operators';
+import {catchError, filter, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 
 @Component({

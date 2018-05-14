@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {List} from '../../../model/list/list';
 import {ListService} from '../../../core/database/list.service';
 import {ObservableMedia} from '@angular/flex-layout';
+import {catchError, filter, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-public-profile',
@@ -22,12 +23,18 @@ export class PublicProfileComponent {
 
     constructor(route: ActivatedRoute, dataService: DataService, userService: UserService, listService: ListService,
                 private media: ObservableMedia) {
-        this.ingameCharacter = route.params.mergeMap(params => userService.get(params.id))
-            .mergeMap(user => dataService.getCharacter(user.lodestoneId))
-            .catch(() => Observable.of(1));
-        this.freeCompany = this.ingameCharacter.filter(val => val !== null)
-            .mergeMap(character => dataService.getFreeCompany(character.free_company));
-        this.publicLists = route.params.mergeMap(params => listService.getPublicListsByAuthor(params.id));
+        this.ingameCharacter = route.params
+            .pipe(
+                mergeMap(params => userService.get(params.id)),
+                mergeMap(user => dataService.getCharacter(user.lodestoneId)),
+                catchError(() => of(1))
+            );
+        this.freeCompany = this.ingameCharacter
+            .pipe(
+                filter(val => val !== null),
+                mergeMap(character => dataService.getFreeCompany(character.free_company))
+            );
+        this.publicLists = route.params.pipe(mergeMap(params => listService.getPublicListsByAuthor(params.id)));
     }
 
     isMobile(): boolean {

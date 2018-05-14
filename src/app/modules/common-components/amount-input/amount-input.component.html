@@ -1,8 +1,8 @@
-<mat-input-container>
+<mat-form-field>
     <input matInput type="number" #input min="{{min}}" max="{{max}}" [style.width]="getWidth()+'px'"
            disabled="{{readonly}}" [value]="value"
            [matTooltip]="'Missing_crafts_amount' | translate:{'amount': missingAmount}"
            matTooltipPosition="above" [matTooltipDisabled]="missingAmount === 0 || hideMissingAmount">
     <span matSuffix *ngIf="max && !hideMax">/{{max}}<span *ngIf="craftAmount" matTooltip="{{'Required_crafts_amount' | translate}}"
                                              matTooltipPosition="above"> ({{craftAmount}})</span></span>
-</mat-input-container>
+</mat-form-field>

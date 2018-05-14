@@ -11,6 +11,7 @@ import {DiffService} from './diff/diff.service';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {catchError, filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -84,25 +85,28 @@ export class UserService extends FirebaseStorage<AppUser> {
             .pipe(
                 filter(() => !this.loggingIn),
                 switchMap(() => {
-                    return this.af.authState.first()
-                        .mergeMap(user => {
-                            if ((user === null && !this.loggingIn) || user.uid === undefined) {
-                                this.af.auth.signInAnonymously();
-                                return of(<AppUser>{name: 'Anonymous', anonymous: true});
-                            }
-                            if (user === null || user.isAnonymous) {
-                                return this.get(user.uid).pipe(
-                                    catchError(() => {
-                                        return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
-                                    }));
-                            } else {
-                                return this.get(user.uid).pipe(
-                                    map(u => {
-                                        u.providerId = user.providerId;
-                                        return u;
-                                    }));
-                            }
-                        });
+                    return this.af.authState
+                        .pipe(
+                            first(),
+                            mergeMap((user: firebase.User) => {
+                                if ((user === null && !this.loggingIn) || user.uid === undefined) {
+                                    this.af.auth.signInAnonymously();
+                                    return of(<AppUser>{name: 'Anonymous', anonymous: true});
+                                }
+                                if (user === null || user.isAnonymous) {
+                                    return this.get(user.uid).pipe(
+                                        catchError(() => {
+                                            return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
+                                        }));
+                                } else {
+                                    return this.get(user.uid).pipe(
+                                        map(u => {
+                                            u.providerId = user.providerId;
+                                            return u;
+                                        }));
+                                }
+                            })
+                        );
                 }),
                 mergeMap((u: AppUser) => {
                     u.patron = false;
@@ -184,8 +188,10 @@ export class UserService extends FirebaseStorage<AppUser> {
     public signOut(): Observable<void> {
         return concat(
             fromPromise(this.af.auth.signOut()),
-            fromPromise(this.af.auth.signInAnonymously()))
-            .pipe(tap(() => this.reload()));
+            fromPromise(this.af.auth.signInAnonymously())
+        ).pipe(
+            map(() => this.reload())
+        );
     }
 
     protected getBaseUri(params?: any): string {

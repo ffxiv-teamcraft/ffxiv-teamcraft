@@ -36,7 +36,7 @@ import {ComponentWithSubscriptions} from '../../../core/component/component-with
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
 import {filter} from 'rxjs/operators';
-import {first, map, mergeMap, switchMap, tap} from 'rxjs/internal/operators';
+import {first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 
 declare const ga: Function;
 

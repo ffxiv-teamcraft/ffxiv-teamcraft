@@ -10,7 +10,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {List} from '../../../model/list/list';
 import {Workshop} from '../../../model/other/workshop';
 import {DataService} from '../../../core/api/data.service';
-import {catchError, filter, first, map, mergeMap} from 'rxjs/internal/operators';
+import {catchError, filter, first, map, mergeMap} from 'rxjs/operators';
 import {AppUser} from '../../../model/list/app-user';
 
 @Component({

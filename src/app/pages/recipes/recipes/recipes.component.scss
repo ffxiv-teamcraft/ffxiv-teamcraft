@@ -1,6 +1,6 @@
 .input-container {
     width: 100%;
-    mat-input-container {
+    mat-form-field {
         font-size: 20px;
         width: 60%;
         margin: auto;
@@ -39,7 +39,7 @@
             margin-top: 20px;
             display: flex;
             align-items: baseline;
-            mat-input-container {
+            mat-form-field {
                 width: auto !important;
                 margin-right: 10px;
                 min-width: 60px;

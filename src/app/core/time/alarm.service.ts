@@ -12,7 +12,7 @@ import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
-import {first, map, mergeMap} from 'rxjs/internal/operators';
+import {first, map, mergeMap} from 'rxjs/operators';
 import {AppUser} from '../../model/list/app-user';
 
 @Injectable()

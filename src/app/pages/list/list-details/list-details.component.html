@@ -105,7 +105,7 @@
                 <div class="category-header">{{'Game_Term/DoL' | translate}}</div>
                 <div class="class-filters">
                     <div *ngFor="let filter of gatheringFilters">
-                        <mat-input-container class="class-filter">
+                        <mat-form-field class="class-filter">
                             <mat-checkbox matPrefix class="filter"
                                           [(ngModel)]="filter.checked"
                                           (change)="triggerFilter()">
@@ -117,13 +117,13 @@
                             <img matSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
                                  alt="{{filter.job}}"
                                  class="filter_icons">
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="category-header">{{'Game_Term/DoH' | translate}}</div>
                 <div class="class-filters">
                     <div *ngFor="let filter of craftFilters">
-                        <mat-input-container class="class-filter">
+                        <mat-form-field class="class-filter">
                             <mat-checkbox matPrefix class="filter"
                                           [(ngModel)]="filter.checked"
                                           (change)="triggerFilter()">
@@ -135,7 +135,7 @@
                             <img matSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
                                  alt="{{filter.job}}"
                                  class="filter_icons">
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="class-filters">

@@ -25,7 +25,8 @@ import {AnnouncementPopupComponent} from './modules/common-components/announceme
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs/index';
-import {distinctUntilChanged, first, map} from 'rxjs/internal/operators';
+import {distinctUntilChanged, first, map} from 'rxjs/operators';
+import {debounceTime} from 'rxjs/operators';
 
 declare const ga: Function;
 
@@ -105,16 +106,17 @@ export class AppComponent implements OnInit {
 
         // Google Analytics
         router.events
-            .pipe(distinctUntilChanged((previous: any, current: any) => {
-                if (current instanceof NavigationEnd) {
-                    return previous.url === current.url;
-                }
-                return true;
-            }))
-            .subscribe((event: any) => {
-                ga('set', 'page', event.url);
-                ga('send', 'pageview');
-            });
+            .pipe(
+                distinctUntilChanged((previous: any, current: any) => {
+                    if (current instanceof NavigationEnd) {
+                        return previous.url === current.url;
+                    }
+                    return true;
+                })
+            ).subscribe((event: any) => {
+            ga('set', 'page', event.url);
+            ga('send', 'pageview');
+        });
 
         // Firebase Auth
         this.authState = this.auth.authState;
@@ -216,7 +218,7 @@ export class AppComponent implements OnInit {
                     });
             }
             // Anonymous sign in with "please register" snack.
-            this.auth.authState.debounceTime(1000).subscribe(state => {
+            this.auth.authState.pipe(debounceTime(1000)).subscribe(state => {
                 if (state !== null && state.isAnonymous && !this.isRegistering) {
                     this.registrationSnackRef = this.snack.open(
                         this.translate.instant('Anonymous_Warning'),

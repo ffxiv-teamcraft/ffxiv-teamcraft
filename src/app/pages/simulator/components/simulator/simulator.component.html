@@ -115,10 +115,10 @@
                 <mat-list-item *ngFor="let ingredient of hqIngredientsData">
                     <span matLine [appXivdbTooltip]="ingredient.id">{{ingredient.id | itemName | i18n}}</span>
                     <i matLine>{{ingredient.quality}}</i>
-                    <mat-input-container>
+                    <mat-form-field>
                         <input matInput type="number" [(ngModel)]="ingredient.amount" min="0" max="{{ingredient.max}}">
                         <span matSuffix>/{{ingredient.max}}</span>
-                    </mat-input-container>
+                    </mat-form-field>
                 </mat-list-item>
             </mat-list>
             <button mat-raised-button class="apply-button" color="accent" (click)="hqIngredients = hqIngredientsData">
@@ -182,12 +182,12 @@
                 </mat-card-subtitle>
                 <div class="steps">
                     {{'SIMULATOR.Step_counter' | translate}}
-                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input">
+                    <mat-form-field *ngIf="snapshotMode" class="snapshot-input">
                         <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
                                [ngModel]="resultData.simulation.steps.length"
                                (ngModelChange)="snapshotStep$.next($event)"
                                matInput>
-                    </mat-input-container>
+                    </mat-form-field>
                     <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
                     <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
                             matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">
@@ -258,12 +258,12 @@
                 </mat-card-subtitle>
                 <div class="steps mobile">
                     {{'SIMULATOR.Step_counter' | translate}}
-                    <mat-input-container *ngIf="snapshotMode" class="snapshot-input mobile">
+                    <mat-form-field *ngIf="snapshotMode" class="snapshot-input mobile">
                         <input type="number" min="0" max="{{resultData.simulation.steps.length}}"
                                [ngModel]="resultData.simulation.steps.length"
                                (ngModelChange)="snapshotStep$.next($event)"
                                matInput>
-                    </mat-input-container>
+                    </mat-form-field>
                     <span *ngIf="!snapshotMode">{{resultData.simulation.steps.length}}</span>
                     <button mat-icon-button (click)="snapshotMode = !snapshotMode; snapshotStep$.next(Infinity)"
                             matTooltip="{{'SIMULATOR.Toggle_snapshot_mode' | translate}}">

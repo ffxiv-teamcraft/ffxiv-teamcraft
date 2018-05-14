@@ -28,7 +28,8 @@ import {CustomLink} from '../../../core/database/custom-links/costum-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
-import {catchError, filter, first, map, mergeMap, switchMap} from 'rxjs/internal/operators';
+import {catchError, filter, first, map, mergeMap, switchMap} from 'rxjs/operators';
+import {tap} from 'rxjs/internal/operators';
 
 declare const ga: Function;
 
@@ -329,60 +330,65 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 }
             }));
         this.lists =
-            this.auth.authState.mergeMap(user => {
-                    this.user = user;
-                    if (user === null) {
-                        return this.reloader$.pipe(mergeMap(() => of({basicLists: []})));
-                    } else {
-                        return this.reloader$.pipe(
-                            mergeMap(() =>
-                                this.workshops.pipe(
-                                    mergeMap(workshops => {
-                                        return combineLatest(this.listService.getUserLists(user.uid),
-                                            this.tagFilter, (lists, tagFilter) => {
-                                                if (tagFilter.length === 0) {
-                                                    return lists;
-                                                }
-                                                return lists.filter(list => {
-                                                    let match = true;
-                                                    tagFilter.forEach(tag => {
-                                                        match = match && list.tags.indexOf(ListTag[tag]) > -1;
-                                                    });
-                                                    return match;
-                                                });
-                                            })
-                                            .pipe(
-                                                mergeMap(lists => {
-                                                    const additionalLists = [];
-                                                    for (const workshop of workshops) {
-                                                        for (const wsListId of workshop.listIds) {
-                                                            // If this list is not one of the user's lists, it won't be loaded
-                                                            if (lists.find(list => list.$key === wsListId) === undefined) {
-                                                                additionalLists.push(wsListId);
-                                                            }
+            this.auth.authState
+                .pipe(
+                    mergeMap(user => {
+                            this.user = user;
+                            if (user === null) {
+                                return this.reloader$.pipe(mergeMap(() => of({basicLists: []})));
+                            } else {
+                                return this.reloader$.pipe(
+                                    mergeMap(() =>
+                                        this.workshops.pipe(
+                                            mergeMap(workshops => {
+                                                return combineLatest(this.listService.getUserLists(user.uid),
+                                                    this.tagFilter, (lists, tagFilter) => {
+                                                        if (tagFilter.length === 0) {
+                                                            return lists;
                                                         }
-                                                    }
-                                                    if (additionalLists.length > 0) {
-                                                        return combineLatest(additionalLists.map(listId => this.listService.get(listId)
-                                                            .pipe(
-                                                                catchError(() => of(null)),
-                                                                map(ls => ls.filter(l => l !== null)),
-                                                                map(externalLists => lists.concat(externalLists))
-                                                            )));
-                                                    } else {
-                                                        return of(lists);
-                                                    }
-                                                }),
-                                                map(lists => {
-                                                    return this.workshopService.getListsByWorkshop(lists, workshops);
-                                                })
-                                            );
-                                    }))
-                            )
-                        );
-                    }
-                }
-            ).do(() => this.loading = false);
+                                                        return lists.filter(list => {
+                                                            let match = true;
+                                                            tagFilter.forEach(tag => {
+                                                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                                                            });
+                                                            return match;
+                                                        });
+                                                    })
+                                                    .pipe(
+                                                        mergeMap(lists => {
+                                                            const additionalLists = [];
+                                                            for (const workshop of workshops) {
+                                                                for (const wsListId of workshop.listIds) {
+                                                                    // If this list is not one of the user's lists, it won't be loaded
+                                                                    if (lists.find(list => list.$key === wsListId) === undefined) {
+                                                                        additionalLists.push(wsListId);
+                                                                    }
+                                                                }
+                                                            }
+                                                            if (additionalLists.length > 0) {
+                                                                return combineLatest(additionalLists
+                                                                    .map(listId => this.listService.get(listId)
+                                                                        .pipe(
+                                                                            catchError(() => of(null)),
+                                                                            map(ls => ls.filter(l => l !== null)),
+                                                                            map(externalLists => lists.concat(externalLists))
+                                                                        )));
+                                                            } else {
+                                                                return of(lists);
+                                                            }
+                                                        }),
+                                                        map(lists => {
+                                                            return this.workshopService.getListsByWorkshop(lists, workshops);
+                                                        })
+                                                    );
+                                            }))
+                                    )
+                                );
+                            }
+                        }
+                    ),
+                    tap(() => this.loading = false)
+                );
     }
 
 }

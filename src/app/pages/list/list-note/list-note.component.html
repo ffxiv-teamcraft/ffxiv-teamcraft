@@ -7,11 +7,11 @@
         </button>
     </div>
     <div *ngSwitchCase="true" class="edit-note">
-        <mat-input-container class="edit-note-input">
+        <mat-form-field class="edit-note-input">
             <textarea #input matInput [(ngModel)]="list.note"
                       placeholder="{{'LIST_DETAILS.Note_placeholder' | translate}}"></textarea>
             <mat-hint align="end">{{input.value?.length || 0}}/1000</mat-hint>
-        </mat-input-container>
+        </mat-form-field>
         <button mat-raised-button (click)="save()" [disabled]="input.value?.length > 1000">{{"Save" | translate}}
         </button>
     </div>

@@ -48,6 +48,7 @@ import {CraftedBy} from '../../../model/list/crafted-by';
 import {Permissions} from '../../../core/database/permissions/permissions';
 import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
+import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-item',
@@ -271,7 +272,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     folkloreId: number;
 
-    isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
+    isMobile = this.media.asObservable().pipe(map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm'));
 
     public timers: Observable<Timer[]>;
 
@@ -298,9 +299,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 public cd: ChangeDetectorRef,
                 private rotationsService: CraftingRotationService) {
         super();
-        this.rotations$ = this.userService.getUserData().mergeMap(user => {
-            return this.rotationsService.getUserRotations(user.$key);
-        }).publishReplay(1).refCount();
+        this.rotations$ = this.userService.getUserData().pipe(
+            mergeMap(user => {
+                return this.rotationsService.getUserRotations(user.$key);
+            }),
+            publishReplay(1),
+            refCount()
+        );
     }
 
     isDraft(): boolean {
@@ -323,7 +328,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
@@ -335,7 +340,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
@@ -343,7 +348,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     ngOnInit(): void {
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
+                .pipe(
+                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                    first()
+                ).subscribe(char => {
                 this.worksOnIt = char;
                 this.cd.detectChanges();
             });
@@ -360,7 +368,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
+                .pipe(
+                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                    first()
+                ).subscribe(char => this.worksOnIt = char);
         }
     }
 
@@ -368,12 +379,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId))
-            .first()
-            .subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
-            });
+            .pipe(
+                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                first()
+            ).subscribe(char => {
+            this.worksOnIt = char;
+            this.cd.detectChanges();
+        });
     }
 
     public removeWorkingOnIt(): void {
@@ -410,15 +422,17 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     public getTimerColor(alarm: Alarm): Observable<string> {
-        return this.etime.getEorzeanTime().map(time => {
-            if (this.alarmService.isAlarmSpawned(alarm, time)) {
-                return 'primary';
-            }
-            if (this.alarmService.isAlarmAlerted(alarm, time)) {
-                return 'accent';
-            }
-            return '';
-        });
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                if (this.alarmService.isAlarmSpawned(alarm, time)) {
+                    return 'primary';
+                }
+                if (this.alarmService.isAlarmAlerted(alarm, time)) {
+                    return 'accent';
+                }
+                return '';
+            })
+        );
     }
 
     updateCanBeCrafted(): void {
@@ -539,7 +553,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     public updateTimers(): void {
         if (this.hasTimers) {
             this.timers = this.alarmService.getTimers(this.item)
-                .do(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)));
+                .pipe(
+                    tap(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)))
+                );
         }
     }
 

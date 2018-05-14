@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {ItemData} from '../../../model/garland-tools/item-data';
-import {Observable} from 'rxjs';
+import {combineLatest, concat, Observable} from 'rxjs';
 import {ExternalListLinkParser} from './external-list-link-parser';
 import {FfxivCraftingLinkParser} from './ffxiv-crafting-link-parser';
 import {DataService} from '../../../core/api/data.service';
@@ -12,6 +12,7 @@ import {MAT_DIALOG_DATA, MatDialogRef, MatRadioChange} from '@angular/material';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
+import {filter, map, mergeMap, tap} from 'rxjs/operators';
 
 declare const ga: Function;
 
@@ -71,21 +72,23 @@ export class ExternalListImportPopupComponent implements OnInit {
                 entries = parser.parse(url);
             }
         }
-        this.listEntries = Observable.combineLatest(
-            entries.map(entry => this.dataService.getItem(entry.itemId)
-                .map(itemData => ({itemData: itemData, quantity: entry.quantity}))),
-        ).do(entriesResult => {
-            this.recipeChoices = {};
-            for (const entry of entriesResult) {
-                const crafts = entry.itemData.item.craft;
-                // Prepare choices for each row that has only one recipe available
-                if (crafts.length === 1) {
-                    this.recipeChoices[entry.itemData.item.id] = {recipeId: crafts[0].id, quantity: entry.quantity};
-                } else {
-                    this.recipeChoices[entry.itemData.item.id] = {recipeId: null, quantity: entry.quantity};
-                }
-            }
-        });
+        this.listEntries = combineLatest(entries.map(entry => this.dataService.getItem(entry.itemId)
+            .pipe(map(itemData => ({itemData: itemData, quantity: entry.quantity})))),
+        )
+            .pipe(
+                tap(entriesResult => {
+                    this.recipeChoices = {};
+                    for (const entry of entriesResult) {
+                        const crafts = entry.itemData.item.craft;
+                        // Prepare choices for each row that has only one recipe available
+                        if (crafts.length === 1) {
+                            this.recipeChoices[entry.itemData.item.id] = {recipeId: crafts[0].id, quantity: entry.quantity};
+                        } else {
+                            this.recipeChoices[entry.itemData.item.id] = {recipeId: null, quantity: entry.quantity};
+                        }
+                    }
+                })
+            );
     }
 
     /**
@@ -136,19 +139,20 @@ export class ExternalListImportPopupComponent implements OnInit {
         list.authorId = this.data.userId;
         list.name = this.listNameGroup.controls.listName.value;
         const entries = Object.keys(this.recipeChoices).map(key => ({itemId: key, ...this.recipeChoices[key]}));
-        Observable.concat(...entries.map(entry => {
+        concat(...entries.map(entry => {
             return this.listManager.addToList(entry.itemId, list, entry.recipeId, entry.quantity);
         }))
-            .do(() => {
-                done++;
-                this.progress = Math.ceil(100 * done / Object.keys(this.recipeChoices).length);
-            })
-            .filter(() => this.progress >= 100)
-            .mergeMap(resultList => this.listService.add(resultList))
-            .subscribe(() => {
-                this.dialogRef.close();
-                this.creatingList = false;
-            });
+            .pipe(
+                tap(() => {
+                    done++;
+                    this.progress = Math.ceil(100 * done / Object.keys(this.recipeChoices).length);
+                }),
+                filter(() => this.progress >= 100),
+                mergeMap(resultList => this.listService.add(resultList))
+            ).subscribe(() => {
+            this.dialogRef.close();
+            this.creatingList = false;
+        });
     }
 
     ngOnInit(): void {

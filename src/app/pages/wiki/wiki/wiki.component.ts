@@ -7,7 +7,7 @@ import {ScrollService} from '../services/scroll.service';
 import {MarkdownSection} from '../markdown-section';
 import {ScrollSpyInfo, ScrollSpyService} from '../services/scroll-spy.service';
 import {ObservableMedia} from '@angular/flex-layout';
-import {catchError, filter, map, mergeMap, tap} from 'rxjs/internal/operators';
+import {catchError, filter, map, mergeMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-wiki',
