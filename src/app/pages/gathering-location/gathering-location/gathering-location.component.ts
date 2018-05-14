@@ -52,6 +52,7 @@ export class GatheringLocationComponent implements OnInit {
                                     node.itemId = item.obj.i;
                                     return node;
                                 })
+                                .filter(row => row.items !== undefined)
                                 .filter(row => {
                                     return row.items.indexOf(item.obj.i) > -1;
                                 });
