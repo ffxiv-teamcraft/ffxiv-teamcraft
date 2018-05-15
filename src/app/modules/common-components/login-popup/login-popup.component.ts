@@ -104,7 +104,7 @@ export class LoginPopupComponent {
                             this.errorState(listsBackup);
                         })
                         .then((authData) => {
-                            if (authData !== null && authData !== undefined && !authData.emailVerified) {
+                            if (authData.user !== null && authData.user !== undefined && !authData.user.emailVerified) {
                                 // If the user didn't verify his email, send him a new one.
                                 this.af.auth.currentUser.sendEmailVerification();
                                 // Log out from this user, as his email isn't verified yet.
@@ -120,7 +120,7 @@ export class LoginPopupComponent {
                                     });
                                 });
                             } else {
-                                this.login(authData).then(() => {
+                                this.login(authData.user).then(() => {
                                     this.userService.reload();
                                     this.dialogRef.close();
                                 }).catch(() => {

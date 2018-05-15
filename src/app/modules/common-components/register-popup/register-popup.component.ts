@@ -7,8 +7,10 @@ import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AppUser} from '../../../model/list/app-user';
 import {first} from 'rxjs/operators';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import {firebase} from '@firebase/app';
+import '@firebase/auth';
+import '@firebase/database';
+import '@firebase/firestore';
 
 declare const ga: Function;
 
