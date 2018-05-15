@@ -2,12 +2,12 @@
   "name": "teamcraft",
   "version": "3.6.1",
   "license": "MIT",
-    "build": {
-        "appId": "ffxivteamcraft",
-        "mac": {
-            "category": ""
-        }
-    },
+  "build": {
+    "appId": "ffxivteamcraft",
+    "mac": {
+      "category": ""
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "node ./build/prebuild.js && ng serve",
@@ -26,11 +26,11 @@
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",
     "commit": "git-cz",
-      "translations:clean": "node tools/translations-cleaner.js",
-      "build:watch": "node ./build/prebuild.js && ng build --watch",
-      "electron:start:dev": "electron ./main.js --serve",
-      "electron:start:prod": "node ./build/prebuild.js && ng build --prod && electron ./main.js --serve",
-      "electron:build": "node ./build/prebuild.js && ng build --prod && electron-builder"
+    "translations:clean": "node tools/translations-cleaner.js",
+    "build:watch": "node ./build/prebuild.js && ng build --watch --target=production --env=prod",
+    "electron:start:dev": "electron ./main.js --serve",
+    "electron:start:prod": "node ./build/prebuild.js && ng build --prod && electron ./main.js",
+    "electron:build": "node ./build/prebuild.js && ng build --prod && electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -56,11 +56,11 @@
     "@ngx-translate/http-loader": "^3.0.1",
     "@types/jwt-decode": "^2.2.1",
     "@types/semver": "^5.4.0",
-      "angularfire2": "5.0.0-rc.8",
+    "angularfire2": "5.0.0-rc.8",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.6",
-      "electron-oauth-helper": "^2.0.3",
-      "firebase": "^5.0.2",
+    "electron-oauth2": "^3.0.0",
+    "firebase": "^5.0.2",
     "grpc": "^1.11.3",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
@@ -78,16 +78,18 @@
     "@angular/cli": "^6.0.1",
     "@angular/compiler-cli": "6.0.1",
     "@biesbjerg/ngx-translate-extract": "^2.3.4",
-      "@firebase/auth-types": "^0.3.2",
+    "@firebase/auth-types": "^0.3.2",
+    "@types/electron": "^1.6.10",
     "@types/jasmine": "2.8.7",
     "@types/node": "^10.0.8",
     "codelyzer": "^4.3.0",
     "colors": "latest",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-      "electron": "^2.0.0",
-      "electron-builder": "^20.13.3",
-      "electron-reload": "^1.2.2",
+    "electron": "^2.0.0",
+    "electron-builder": "^20.13.3",
+    "electron-reload": "^1.2.2",
+    "express": "^4.16.3",
     "husky": "^0.14.3",
     "jasmine": "^3.1.0",
     "jasmine-core": "~3.1.0",

@@ -12,8 +12,7 @@ import '@firebase/database';
 import '@firebase/firestore';
 import {first} from 'rxjs/operators';
 import {List} from '../../../model/list/list';
-import * as querystring from 'querystring';
-import {OAuth2Provider} from 'electron-oauth-helper';
+import {IpcRenderer} from 'electron';
 
 @Component({
     selector: 'app-login-popup',
@@ -21,6 +20,8 @@ import {OAuth2Provider} from 'electron-oauth-helper';
     styleUrls: ['./login-popup.component.scss']
 })
 export class LoginPopupComponent {
+
+    private _ipc: IpcRenderer | undefined = void 0;
 
     form: FormGroup;
 
@@ -40,6 +41,15 @@ export class LoginPopupComponent {
             email: ['', Validators.email],
             password: ['', Validators.required],
         });
+        if (window.require) {
+            try {
+                this._ipc = window.require('electron').ipcRenderer;
+            } catch (e) {
+                throw e;
+            }
+        } else {
+            console.warn('Electron\'s IPC was not loaded');
+        }
     }
 
     openForgotPasswordPopup(): void {
@@ -93,8 +103,8 @@ export class LoginPopupComponent {
                             console.error(err);
                             this.errorState(listsBackup);
                         })
-                        .then((auth) => {
-                            if (auth !== null && auth !== undefined && !auth.emailVerified) {
+                        .then((authData) => {
+                            if (authData !== null && authData !== undefined && !authData.emailVerified) {
                                 // If the user didn't verify his email, send him a new one.
                                 this.af.auth.currentUser.sendEmailVerification();
                                 // Log out from this user, as his email isn't verified yet.
@@ -110,7 +120,7 @@ export class LoginPopupComponent {
                                     });
                                 });
                             } else {
-                                this.login(auth).then(() => {
+                                this.login(authData).then(() => {
                                     this.userService.reload();
                                     this.dialogRef.close();
                                 }).catch(() => {
@@ -135,7 +145,7 @@ export class LoginPopupComponent {
         });
     }
 
-    private oauth(provider: firebase.auth.AuthProvider): void {
+    private oauth(provider: any): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid)
             .pipe(first())
@@ -148,48 +158,35 @@ export class LoginPopupComponent {
             });
     }
 
-    private doOauthSignIn(provider: firebase.auth.AuthProvider, fallbackLists: List[]): void {
+    private doOauthSignIn(provider: any, fallbackLists: List[]): void {
+        let signInPromise: Promise<any>;
         // If we're running inside electron, we need a special implementation.
         if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
-            console.log(provider);
-            console.log('Let\'s login with electron !');
-            const config = {
-                client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
-                client_secret: 'oNcqhKZkutLQq8Ecd6r6P5wl',
-                redirect_uri: 'your redirect uri',
-                authorize_url: 'https://accounts.google.com/o/oauth2/v2/auth',
-                response_type: 'token',
-                scope: 'https://www.googleapis.com/auth/userinfo.profile',
-            };
-            const oauth2Provider = new OAuth2Provider(config);
-            oauth2Provider.perform(window)
-                .then(resp => {
-                    const query = querystring.parse(resp);
-                    const credential = firebase.auth.GithubAuthProvider.credential(query.access_token);
-                    firebase.auth().signInWithCredential(credential)
-                        .then(user => {
-                            console.log(user)
-                        })
-                        .catch(error => console.error(error))
-                })
-                .catch(error => console.error(error))
+            signInPromise = new Promise((resolve) => {
+                this._ipc.on('google-oauth-reply', (event, {access_token}) => {
+                    this.af.auth
+                        .signInAndRetrieveDataWithCredential(firebase.auth.GoogleAuthProvider.credential(null, access_token))
+                        .then(result => resolve(result));
+                });
+            });
+            this._ipc.send('google-oauth', 'getToken');
         } else {
-            this.af.auth.signInWithRedirect(provider)
-                .then((oauth) => {
-                    this.login(oauth.user).then(() => {
-                        this.userService.reload();
-                        this.dialogRef.close();
-                    }).catch((error) => {
-                        console.error(error);
-                        this.userService.reload();
-                        this.errorState(fallbackLists);
-                    });
-                    this.userService.reload();
-                }).catch((error) => {
+            signInPromise = this.af.auth.signInWithRedirect(provider);
+        }
+        signInPromise.then((oauth) => {
+            this.login(oauth.user).then(() => {
+                this.userService.reload();
+                this.dialogRef.close();
+            }).catch((error) => {
                 console.error(error);
                 this.userService.reload();
+                this.errorState(fallbackLists);
             });
-        }
+            this.userService.reload();
+        }).catch((error) => {
+            console.error(error);
+            this.userService.reload();
+        });
     }
 
 }
