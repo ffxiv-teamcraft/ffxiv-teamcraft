@@ -39,7 +39,7 @@ export class WikiComponent implements OnInit {
     private activeSectionIndex = new ReplaySubject<number | null>(1);
 
     constructor(private translator: TranslateService, private route: ActivatedRoute, private http: HttpClient, private router: Router,
-        private scrollService: ScrollService, private scrollSpyService: ScrollSpyService, private media: ObservableMedia) {
+                private scrollService: ScrollService, private scrollSpyService: ScrollSpyService, private media: ObservableMedia) {
         translator.onLangChange.subscribe(() => {
             this.reloader$.next(null);
             this.tocReloader$.next(null);
@@ -49,10 +49,14 @@ export class WikiComponent implements OnInit {
     interceptLinks(event: MouseEvent): void {
         if (event.srcElement.tagName === 'A') {
             event.preventDefault();
-            if (((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
-                (<any>event.srcElement).href.indexOf('localhost') > -1)) {
+            if ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
+                (<any>event.srcElement).href.indexOf('localhost') > -1) {
                 // If that's an anchor, intercept the click and handle it properly with router
                 this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
+            } else if ((<any>event.srcElement).href.indexOf('file:///') > -1) {
+                console.log(event);
+                // If that's a link to inner wiki page inside electron build
+                this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname.replace(/\w:/, ''));
             } else {
                 window.open((<any>event.srcElement).href, '_blank');
             }

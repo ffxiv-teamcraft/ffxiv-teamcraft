@@ -1,6 +1,12 @@
-const { app, BrowserWindow } = require('electron')
+const {app, BrowserWindow} = require('electron');
 
-let win;
+let win, serve;
+const args = process.argv.slice(1);
+serve = args.some(val => val === '--serve');
+
+if (serve) {
+    require('electron-reload')(__dirname, {});
+}
 
 function createWindow() {
     // Create the browser window.

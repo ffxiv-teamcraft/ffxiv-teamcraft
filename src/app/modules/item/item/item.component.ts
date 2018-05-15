@@ -46,6 +46,7 @@ import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 import {CraftedBy} from '../../../model/list/crafted-by';
 import {Permissions} from '../../../core/database/permissions/permissions';
+import {first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-item',
@@ -269,7 +270,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     folkloreId: number;
 
-    isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
+    isMobile = this.media.asObservable().pipe(map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm'));
 
     public timers: Observable<Timer[]>;
 
@@ -278,18 +279,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     public tradeIcon: number;
 
     constructor(private i18n: I18nToolsService,
-        private dialog: MatDialog,
-        private media: ObservableMedia,
-        private localizedData: LocalizedDataService,
-        private snackBar: MatSnackBar,
-        private translator: TranslateService,
-        private alarmService: AlarmService,
-        public settings: SettingsService,
-        private bellNodesService: BellNodesService,
-        private etime: EorzeanTimeService,
-        private dataService: DataService,
-        private userService: UserService,
-        public cd: ChangeDetectorRef) {
+                private dialog: MatDialog,
+                private media: ObservableMedia,
+                private localizedData: LocalizedDataService,
+                private snackBar: MatSnackBar,
+                private translator: TranslateService,
+                private alarmService: AlarmService,
+                public settings: SettingsService,
+                private bellNodesService: BellNodesService,
+                private etime: EorzeanTimeService,
+                private dataService: DataService,
+                private userService: UserService,
+                public cd: ChangeDetectorRef) {
         super();
     }
 
@@ -310,7 +311,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
@@ -322,7 +323,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
@@ -337,10 +338,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
-                    this.worksOnIt = char;
-                    this.cd.detectChanges();
-                });
+                .pipe(
+                    mergeMap(user => {
+                        return this.dataService.getCharacter(user.lodestoneId).pipe(first())
+                    })
+                ).subscribe(char => {
+                this.worksOnIt = char;
+                this.cd.detectChanges();
+            });
         }
     }
 
@@ -354,7 +359,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
+                .pipe(
+                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)
+                        .pipe(
+                            first()
+                        )
+                    )
+                ).subscribe(char => this.worksOnIt = char);
         }
     }
 
@@ -362,12 +373,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId))
-            .first()
-            .subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
-            });
+            .pipe(
+                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                first()
+            ).subscribe(char => {
+            this.worksOnIt = char;
+            this.cd.detectChanges();
+        });
     }
 
     public removeWorkingOnIt(): void {
@@ -404,15 +416,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     public getTimerColor(alarm: Alarm): Observable<string> {
-        return this.etime.getEorzeanTime().map(time => {
-            if (this.alarmService.isAlarmSpawned(alarm, time)) {
-                return 'primary';
-            }
-            if (this.alarmService.isAlarmAlerted(alarm, time)) {
-                return 'accent';
-            }
-            return '';
-        })
+        return this.etime.getEorzeanTime()
+            .pipe(
+                map(time => {
+                    if (this.alarmService.isAlarmSpawned(alarm, time)) {
+                        return 'primary';
+                    }
+                    if (this.alarmService.isAlarmAlerted(alarm, time)) {
+                        return 'accent';
+                    }
+                    return '';
+                })
+            );
     }
 
     updateCanBeCrafted(): void {
