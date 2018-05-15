@@ -11,8 +11,8 @@ if (serve) {
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 600,
-        height: 600,
+        width: 1280,
+        height: 720,
         backgroundColor: '#ffffff',
         icon: `file://${__dirname}/dist/assets/logo.png`
     });
@@ -21,7 +21,7 @@ function createWindow() {
     win.loadURL(`file://${__dirname}/dist/index.html`);
 
     //// uncomment below to open the DevTools.
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools();
 
     // Event when the window is closed.
     win.on('closed', function () {

@@ -6,9 +6,14 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-import * as firebase from 'firebase';
-import 'firebase/auth';
+import {firebase} from '@firebase/app';
+import '@firebase/auth';
+import '@firebase/database';
+import '@firebase/firestore';
 import {first} from 'rxjs/operators';
+import {List} from '../../../model/list/list';
+import * as querystring from 'querystring';
+import {OAuth2Provider} from 'electron-oauth-helper';
 
 @Component({
     selector: 'app-login-popup',
@@ -139,19 +144,52 @@ export class LoginPopupComponent {
                     this.userService.deleteUser(prevUser.uid);
                     this.af.auth.currentUser.delete();
                 }
-                this.af.auth.signInWithPopup(provider).then((oauth) => {
+                this.doOauthSignIn(provider, lists);
+            });
+    }
+
+    private doOauthSignIn(provider: firebase.auth.AuthProvider, fallbackLists: List[]): void {
+        // If we're running inside electron, we need a special implementation.
+        if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
+            console.log(provider);
+            console.log('Let\'s login with electron !');
+            const config = {
+                client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
+                client_secret: 'oNcqhKZkutLQq8Ecd6r6P5wl',
+                redirect_uri: 'your redirect uri',
+                authorize_url: 'https://accounts.google.com/o/oauth2/v2/auth',
+                response_type: 'token',
+                scope: 'https://www.googleapis.com/auth/userinfo.profile',
+            };
+            const oauth2Provider = new OAuth2Provider(config);
+            oauth2Provider.perform(window)
+                .then(resp => {
+                    const query = querystring.parse(resp);
+                    const credential = firebase.auth.GithubAuthProvider.credential(query.access_token);
+                    firebase.auth().signInWithCredential(credential)
+                        .then(user => {
+                            console.log(user)
+                        })
+                        .catch(error => console.error(error))
+                })
+                .catch(error => console.error(error))
+        } else {
+            this.af.auth.signInWithRedirect(provider)
+                .then((oauth) => {
                     this.login(oauth.user).then(() => {
                         this.userService.reload();
                         this.dialogRef.close();
-                    }).catch(() => {
+                    }).catch((error) => {
+                        console.error(error);
                         this.userService.reload();
-                        this.errorState(lists);
+                        this.errorState(fallbackLists);
                     });
                     this.userService.reload();
-                }).catch(() => {
-                    this.userService.reload();
-                });
+                }).catch((error) => {
+                console.error(error);
+                this.userService.reload();
             });
+        }
     }
 
 }
