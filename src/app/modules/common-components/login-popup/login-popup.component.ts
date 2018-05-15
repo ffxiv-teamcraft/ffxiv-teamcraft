@@ -6,11 +6,8 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-// noinspection ES6UnusedImports
 import * as firebase from 'firebase';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-import AuthProvider = firebase.auth.AuthProvider;
+import 'firebase/auth';
 import {first} from 'rxjs/operators';
 
 @Component({
@@ -63,13 +60,13 @@ export class LoginPopupComponent {
 
     googleOauth(): void {
         this.router.navigate(['home']).then(() => {
-            return this.oauth(new GoogleAuthProvider());
+            return this.oauth(new firebase.auth.GoogleAuthProvider());
         });
     }
 
     facebookOauth(): void {
         this.router.navigate(['home']).then(() => {
-            return this.oauth(new FacebookAuthProvider());
+            return this.oauth(new firebase.auth.FacebookAuthProvider());
         });
     }
 
@@ -133,7 +130,7 @@ export class LoginPopupComponent {
         });
     }
 
-    private oauth(provider: AuthProvider): void {
+    private oauth(provider: firebase.auth.AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid)
             .pipe(first())

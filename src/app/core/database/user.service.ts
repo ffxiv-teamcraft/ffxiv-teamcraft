@@ -11,7 +11,6 @@ import {DiffService} from './diff/diff.service';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {catchError, filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
-import * as firebase from 'firebase';
 
 @Injectable()
 export class UserService extends FirebaseStorage<AppUser> {
@@ -38,15 +37,17 @@ export class UserService extends FirebaseStorage<AppUser> {
     public getUserByEmail(email: string): Observable<AppUser> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
             .snapshotChanges()
-            .map(snaps => snaps[0])
-            .map(snap => {
-                const valueWithKey: AppUser = {$key: snap.payload.key, ...snap.payload.val()};
-                if (!snap.payload.exists()) {
-                    throw new Error('Not found');
-                }
-                delete snap.payload;
-                return this.serializer.deserialize<AppUser>(valueWithKey, this.getClass());
-            })
+            .pipe(
+                map(snaps => snaps[0]),
+                map(snap => {
+                    const valueWithKey: AppUser = {$key: snap.payload.key, ...snap.payload.val()};
+                    if (!snap.payload.exists()) {
+                        throw new Error('Not found');
+                    }
+                    delete snap.payload;
+                    return this.serializer.deserialize<AppUser>(valueWithKey, this.getClass());
+                })
+            );
     }
 
     /**
@@ -115,10 +116,13 @@ export class UserService extends FirebaseStorage<AppUser> {
                     if (u.patreonEmail === undefined) {
                         return of(u);
                     }
-                    return this.firebase.list('/patreon/supporters').valueChanges().map((supporters: { email: string }[]) => {
-                        u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
-                        return u;
-                    });
+                    return this.firebase.list('/patreon/supporters').valueChanges()
+                        .pipe(
+                            map((supporters: { email: string }[]) => {
+                                u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
+                                return u;
+                            })
+                        );
                 }));
     }
 
@@ -137,7 +141,9 @@ export class UserService extends FirebaseStorage<AppUser> {
     public checkPatreonEmailAvailability(email: string): Observable<boolean> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('patreonEmail').equalTo(email))
             .valueChanges()
-            .map(res => res.length === 0);
+            .pipe(
+                map(res => res.length === 0)
+            );
     }
 
     /**
@@ -148,7 +154,9 @@ export class UserService extends FirebaseStorage<AppUser> {
     public checkNicknameAvailability(nickname: string): Observable<boolean> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('nickname').equalTo(nickname))
             .valueChanges()
-            .map(res => res.length === 0);
+            .pipe(
+                map(res => res.length === 0)
+            );
     }
 
 

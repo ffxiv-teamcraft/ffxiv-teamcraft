@@ -7,10 +7,8 @@ import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AppUser} from '../../../model/list/app-user';
 import {first} from 'rxjs/operators';
-import * as firebase from 'firebase';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-import EmailAuthProvider = firebase.auth.EmailAuthProvider;
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 declare const ga: Function;
 
@@ -90,7 +88,7 @@ export class RegisterPopupComponent {
      * Creates a user from google's oauth.
      */
     googleOauth(): void {
-        this.af.auth.currentUser.linkWithPopup(new GoogleAuthProvider()).then((oauth) => {
+        this.af.auth.currentUser.linkWithPopup(new firebase.auth.GoogleAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = error.code);
     }
@@ -99,7 +97,7 @@ export class RegisterPopupComponent {
      * Creates a user from facebook's oauth.
      */
     facebookOauth(): void {
-        this.af.auth.currentUser.linkWithPopup(new FacebookAuthProvider()).then((oauth) => {
+        this.af.auth.currentUser.linkWithPopup(new firebase.auth.FacebookAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = error.code);
     }
@@ -108,7 +106,7 @@ export class RegisterPopupComponent {
      * Creates a user from a classic email/password pair.
      */
     classicRegister(): void {
-        const credential = EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
+        const credential = firebase.auth.EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
         this.af.auth.currentUser.linkWithCredential(credential).then((auth) => {
             this.register(auth).then(() => {
                 this.af.auth.currentUser.sendEmailVerification().then(() => {

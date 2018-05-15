@@ -16,6 +16,7 @@ import {ListTemplateService} from '../../../core/database/list-template/list-tem
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
 import {catchError, filter, first, mergeMap} from 'rxjs/operators';
+import {ListRow} from '../../../model/list/list-row';
 
 @Component({
     selector: 'app-list-panel',
@@ -41,7 +42,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     closed: EventEmitter<void> = new EventEmitter<void>();
 
     @Output()
-    onrecipedelete: EventEmitter<void> = new EventEmitter<void>();
+    onrecipedelete: EventEmitter<ListRow> = new EventEmitter<ListRow>();
 
     @Output()
     ondelete: EventEmitter<void> = new EventEmitter<void>();

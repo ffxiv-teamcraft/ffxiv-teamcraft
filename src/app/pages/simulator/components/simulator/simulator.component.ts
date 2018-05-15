@@ -1,10 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
-import {Observable} from 'rxjs/Observable';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {BehaviorSubject, combineLatest, Observable, of, ReplaySubject} from 'rxjs';
 import {CraftingAction} from '../../model/actions/crafting-action';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {CrafterStats} from '../../model/crafter-stats';
 import {SimulationReliabilityReport} from '../../simulation/simulation-reliability-report';
 import {SimulationResult} from '../../simulation/simulation-result';
@@ -35,9 +33,7 @@ import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {combineLatest} from 'rxjs/observable/combineLatest';
 import {debounceTime, filter, map, mergeMap, tap} from 'rxjs/operators';
-import {of} from 'rxjs/observable/of';
 
 @Component({
     selector: 'app-simulator',
@@ -334,13 +330,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     importRotation(): void {
         this.dialog.open(ImportRotationPopupComponent)
             .afterClosed()
-            .filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1)
-            .map(importString => <string[]>JSON.parse(importString))
-            .map(importArray => this.registry.importFromCraftOpt(importArray))
-            .subscribe(rotation => {
-                this.actions = rotation;
-                this.markAsDirty();
-            });
+            .pipe(
+                filter(res => res !== undefined && res.length > 0 && res.indexOf('[') > -1),
+                map(importString => <string[]>JSON.parse(importString)),
+                map(importArray => this.registry.importFromCraftOpt(importArray))
+            ).subscribe(rotation => {
+            this.actions = rotation;
+            this.markAsDirty();
+        });
     }
 
     importMacro(): void {

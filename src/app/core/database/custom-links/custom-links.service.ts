@@ -23,9 +23,11 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fireb
     public getAllByAuthor(userKey: string): Observable<T[]> {
         return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('author').equalTo(userKey))
             .snapshotChanges()
-            .map(snaps => snaps
-                .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
-                .map(l => this.serializer.deserialize<T>(l, this.getClass()))
+            .pipe(
+                map(snaps => snaps
+                    .map(snap => ({$key: snap.payload.key, ...snap.payload.val()}))
+                    .map(l => this.serializer.deserialize<T>(l, this.getClass()))
+                )
             );
     }
 

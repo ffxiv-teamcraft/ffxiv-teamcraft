@@ -19,7 +19,7 @@ import {
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
-import {AngularFireModule} from 'angularfire2';
+import {FirebaseOptionsToken} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
@@ -69,6 +69,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [
         AppComponent,
     ],
+    providers: [
+        {provide: FirebaseOptionsToken, useValue: environment.firebase}
+    ],
     imports: [
         FlexLayoutModule,
 
@@ -84,7 +87,6 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
 
-        AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
         AngularFirestoreModule,

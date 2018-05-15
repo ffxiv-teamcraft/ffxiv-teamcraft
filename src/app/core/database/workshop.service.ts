@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {DocumentChangeAction} from 'angularfire2/firestore/interfaces';
 import {List} from '../../model/list/list';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
+import {map} from 'rxjs/internal/operators';
 
 @Injectable()
 export class WorkshopService extends FirestoreStorage<Workshop> {
@@ -19,14 +20,16 @@ export class WorkshopService extends FirestoreStorage<Workshop> {
     getUserWorkshops(uid: string): Observable<Workshop[]> {
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid))
             .snapshotChanges()
-            .map((snaps: DocumentChangeAction[]) => {
-                const workshops = snaps.map(snap => {
-                    const valueWithKey: Workshop = <Workshop>{$key: snap.payload.doc.id, ...snap.payload.doc.data()};
-                    delete snap.payload;
-                    return valueWithKey;
-                });
-                return this.serializer.deserialize<Workshop>(workshops, [this.getClass()]);
-            });
+            .pipe(
+                map((snaps: DocumentChangeAction[]) => {
+                    const workshops = snaps.map(snap => {
+                        const valueWithKey: Workshop = <Workshop>{$key: snap.payload.doc.id, ...snap.payload.doc.data()};
+                        delete snap.payload;
+                        return valueWithKey;
+                    });
+                    return this.serializer.deserialize<Workshop>(workshops, [this.getClass()]);
+                })
+            );
     }
 
     getListsByWorkshop(lists: List[], workshops: Workshop[]): { basicLists: List[], rows: { [index: string]: List[] } } {
