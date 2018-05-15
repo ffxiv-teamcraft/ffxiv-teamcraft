@@ -1,6 +1,6 @@
 import {ChangeDetectorRef, Directive, ElementRef, HostListener, Input, OnDestroy, Optional, ViewContainerRef} from '@angular/core';
 import {TooltipDataService} from '../tooltip-data.service';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {Overlay, OverlayRef} from '@angular/cdk/overlay';
 import {ComponentPortal} from '@angular/cdk/portal';
 import {XivdbTooltipComponent} from './xivdb-tooltip.component';

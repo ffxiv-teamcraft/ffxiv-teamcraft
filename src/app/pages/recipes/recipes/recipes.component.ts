@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {combineLatest, fromEvent, Observable, of} from 'rxjs';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {List} from '../../../model/list/list';
 import {MatCheckboxChange, MatDialog, MatSnackBar} from '@angular/material';
@@ -23,6 +23,10 @@ import {HelpService} from '../../../core/component/help.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {WorkshopService} from 'app/core/database/workshop.service';
 import {Workshop} from '../../../model/other/workshop';
+import {CraftingRotationService} from 'app/core/database/crafting-rotation.service';
+import {CraftingRotation} from '../../../model/other/crafting-rotation';
+import {debounceTime, distinctUntilChanged, filter, map, mergeMap, publishReplay, refCount} from 'rxjs/operators';
+import {first, switchMap} from 'rxjs/operators';
 
 declare const ga: Function;
 
@@ -107,6 +111,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     loading = false;
 
+    rotations$: Observable<CraftingRotation[]>;
+
     constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MatSnackBar, protected dialog: MatDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
@@ -114,48 +120,72 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService,
                 protected helpService: HelpService, protected media: ObservableMedia,
-                private workshopService: WorkshopService) {
+                private workshopService: WorkshopService, private rotationsService: CraftingRotationService) {
         super(dialog, helpService, media);
     }
 
     ngOnInit() {
         super.ngOnInit();
 
-        this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)))
-                .map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true));
-        });
+        this.rotations$ = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return this.rotationsService.getUserRotations(user.$key);
+                }),
+                publishReplay(1),
+                refCount()
+            );
 
-        this.workshops = this.userService.getUserData().mergeMap(user => {
-            if (user.$key !== undefined) {
-                return this.workshopService.getUserWorkshops(user.$key);
-            } else {
-                return Observable.of([]);
-            }
-        });
+        this.sharedLists = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)))
+                        .pipe(
+                            map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true))
+                        );
+                })
+            );
+
+        this.workshops = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    if (user.$key !== undefined) {
+                        return this.workshopService.getUserWorkshops(user.$key);
+                    } else {
+                        return of([]);
+                    }
+                })
+            );
         // Load user's lists
         this.subscriptions.push(this.userService.getUserData()
-            .mergeMap((user) => {
-                if (user.$key !== undefined) {
-                    return this.listService.getUserLists(user.$key)
-                        .mergeMap(lists => {
-                            return this.workshopService.getUserWorkshops(user.$key)
-                                .map(workshops => this.workshopService.getListsByWorkshop(lists, workshops));
-                        });
-                }
-                return Observable.of({basicLists: [], rows: {}});
-            }).subscribe(lists => {
+            .pipe(
+                mergeMap((user) => {
+                    if (user.$key !== undefined) {
+                        return this.listService.getUserLists(user.$key)
+                            .pipe(
+                                mergeMap(lists => {
+                                    return this.workshopService.getUserWorkshops(user.$key)
+                                        .pipe(
+                                            map(workshops => this.workshopService.getListsByWorkshop(lists, workshops))
+                                        );
+                                })
+                            );
+                    }
+                    return of({basicLists: [], rows: {}});
+                })
+            ).subscribe(lists => {
                 this.lists = lists;
             }));
 
         // Connect debounce listener on recipe search field
-        this.subscriptions.push(Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
-            .debounceTime(500)
-            .distinctUntilChanged()
-            .subscribe(() => {
+        this.subscriptions.push(fromEvent(this.filterElement.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(500),
+                distinctUntilChanged()
+            ).subscribe(() => {
                 this.doSearch();
-            }));
-
+            })
+        );
     }
 
     /**
@@ -164,7 +194,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
      * @param {MatCheckboxChange} event
      */
     checkJobCategory(id: number, event: MatCheckboxChange): void {
-        const jobCategories = this.filters.find(filter => filter.filterName === 'jobCategories');
+        const jobCategories = this.filters.find(recipeFilter => recipeFilter.filterName === 'jobCategories');
         if (event.checked) {
             jobCategories.value.push(id);
         } else {
@@ -221,14 +251,14 @@ export class RecipesComponent extends PageComponent implements OnInit {
     addRecipe(recipe: Recipe, list: List, key: string, amount: string, collectible: boolean): void {
         this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .subscribe(updatedList => {
-                this.listService.update(key, updatedList).first().subscribe(() => {
+                this.listService.update(key, updatedList).pipe(first()).subscribe(() => {
                     this.snackBar.open(
                         this.translator.instant('Recipe_Added',
                             {itemname: this.i18n.getName(this.localizedData.getItem(recipe.itemId)), listname: list.name}),
                         this.translator.instant('Open'),
                         {
                             duration: 10000,
-                            extraClasses: ['snack']
+                            panelClass: ['snack']
                         }
                     ).onAction().subscribe(() => {
                         this.listService.getRouterPath(key).subscribe(path => {
@@ -245,19 +275,26 @@ export class RecipesComponent extends PageComponent implements OnInit {
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
         list.ephemeral = true;
         this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
-            .switchMap((l) => {
-                return this.userService.getUserData().map(u => {
-                    l.authorId = u.$key;
-                    return l;
-                });
-            })
-            .switchMap(quickList => {
-                return this.listService.add(quickList).map(uid => {
-                    list.$key = uid;
-                    return list;
-                });
-            })
-            .subscribe((l) => {
+            .pipe(
+                switchMap((l) => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            map(u => {
+                                l.authorId = u.$key;
+                                return l;
+                            })
+                        );
+                }),
+                switchMap(quickList => {
+                    return this.listService.add(quickList)
+                        .pipe(
+                            map(uid => {
+                                list.$key = uid;
+                                return list;
+                            })
+                        );
+                })
+            ).subscribe((l) => {
                 this.listService.getRouterPath(l.$key).subscribe(path => {
                     this.router.navigate(path);
                 });
@@ -283,7 +320,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 this.translator.instant('Open'),
                 {
                     duration: 10000,
-                    extraClasses: ['snack']
+                    panelClass: ['snack']
                 }
             ).onAction().subscribe(() => {
                 this.listService.getRouterPath(key).subscribe(path => {
@@ -321,21 +358,27 @@ export class RecipesComponent extends PageComponent implements OnInit {
     createNewList(): Promise<{ id: string, list: List }> {
         return new Promise<{ id: string, list: List }>(resolve => {
             this.subscriptions.push(this.dialog.open(ListNamePopupComponent).afterClosed()
-                .filter(name => name !== undefined && name.length > 0)
-                .switchMap(res => {
-                    return this.userService.getUserData().map(u => {
-                        return {authorId: u.$key, listName: res};
+                .pipe(
+                    filter(name => name !== undefined && name.length > 0),
+                    switchMap(res => {
+                        return this.userService.getUserData()
+                            .pipe(
+                                map(u => {
+                                    return {authorId: u.$key, listName: res};
+                                })
+                            )
                     })
-                })
-                .subscribe(res => {
+                ).subscribe(res => {
                     const list = new List();
                     ga('send', 'event', 'List', 'creation');
                     list.name = res.listName;
                     list.authorId = res.authorId;
-                    this.listService.add(list).first().subscribe(id => {
+                    this.listService.add(list).pipe(first()).subscribe(id => {
                         resolve({id: id, list: list});
                     });
-                }));
+                })
+            )
+            ;
         });
     }
 

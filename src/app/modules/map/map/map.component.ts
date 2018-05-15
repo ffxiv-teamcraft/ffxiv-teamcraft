@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MapData} from '../map-data';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MapService} from '../map.service';
 import {Vector2} from '../../../core/tools/vector2';
 

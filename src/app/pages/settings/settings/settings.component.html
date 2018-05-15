@@ -15,15 +15,6 @@
     </mat-form-field>
 </div>
 
-<div class="settings-row">
-    <mat-form-field>
-        <mat-select [(ngModel)]="settings.baseSimulatorLink" class="select-box"
-                    placeholder="{{'SETTINGS.Simulator_link_base' | translate}}">
-            <mat-option *ngFor="let row of simulatorLinkBases" [value]="row.value">{{row.name}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-</div>
-
 <div class="settings-row" fxHide fxShow.gt-sm>
     <mat-checkbox [(ngModel)]="settings.compactLists">{{'SETTINGS.compact_lists' | translate}}</mat-checkbox>
 </div>
@@ -46,9 +37,6 @@
 </div>
 
 <mat-menu #langMenu="matMenu" yPosition="above">
-    <button mat-menu-item (click)="use('fr')">FR</button>
-    <button mat-menu-item (click)="use('en')">EN</button>
-    <button mat-menu-item (click)="use('de')">DE</button>
-    <button mat-menu-item (click)="use('ja')">JA</button>
+    <button mat-menu-item (click)="use(locale)" *ngFor="let locale of locales">{{locale.toUpperCase()}}</button>
 </mat-menu>
 

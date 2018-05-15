@@ -6,6 +6,7 @@ import {UserService} from '../../../core/database/user.service';
 import {ListRow} from '../../../model/list/list-row';
 import {ListService} from '../../../core/database/list.service';
 import {List} from 'app/model/list/list';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-comments-popup',
@@ -40,7 +41,7 @@ export class CommentsPopupComponent {
         const comments = this.comments;
         comments.push(comment);
         this.comments = comments;
-        this.service.update(this.data.list.$key, this.data.list).first().subscribe(() => {
+        this.service.update(this.data.list.$key, this.data.list).pipe(first()).subscribe(() => {
             this.control.reset();
             this.myNgForm.resetForm();
         });

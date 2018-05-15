@@ -8,7 +8,7 @@ import {
     MatDialogModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     MatTooltipModule
@@ -34,6 +34,7 @@ import {MapModule} from '../map/map.module';
 import {DatabaseModule} from '../../core/database/database.module';
 import {RouterModule} from '@angular/router';
 import {VentureDetailsPopupComponent} from './venture-details-popup/venture-details-popup.component';
+import {SimulatorLinkPipe} from 'app/modules/item/simulator-link.pipe';
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import {VentureDetailsPopupComponent} from './venture-details-popup/venture-deta
         MatProgressSpinnerModule,
         MatInputModule,
         MatCardModule,
+        MatMenuModule,
 
         ClipboardModule,
 
@@ -75,6 +77,7 @@ import {VentureDetailsPopupComponent} from './venture-details-popup/venture-deta
         VendorsDetailsPopupComponent,
         VoyagesDetailsPopupComponent,
         VentureDetailsPopupComponent,
+        SimulatorLinkPipe,
     ],
     exports: [
         ItemComponent

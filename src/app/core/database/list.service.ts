@@ -1,9 +1,11 @@
 import {List} from '../../model/list/list';
 import {Injectable} from '@angular/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
-import {Observable} from 'rxjs/Observable';
+import {combineLatest, Observable, of} from 'rxjs';
 import {ListStore} from './storage/list/list-store';
 import {Workshop} from '../../model/other/workshop';
+import {catchError, map} from 'rxjs/operators';
+
 
 @Injectable()
 export class ListService {
@@ -73,7 +75,7 @@ export class ListService {
      * @returns {Observable<R>}
      */
     public getRouterPath(uid: string): Observable<string[]> {
-        return Observable.of(['list', uid]);
+        return of(['list', uid]);
     }
 
     /**
@@ -101,10 +103,10 @@ export class ListService {
      */
     public fetchWorkshop(workshop: Workshop): Observable<List[]> {
         if (workshop.listIds.length === 0) {
-            return Observable.of([]);
+            return of([]);
         }
-        return Observable.combineLatest(workshop.listIds.map(listId => this.get(listId).catch(() => Observable.of(null))))
-            .map(lists => lists.filter(l => l !== null));
+        return combineLatest(workshop.listIds.map(listId => this.get(listId).pipe(catchError(() => of(null)))))
+            .pipe(map(lists => lists.filter(l => l !== null)));
     }
 
     public add(list: List): Observable<string> {

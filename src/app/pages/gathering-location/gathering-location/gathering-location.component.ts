@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs/Observable';
+import {fromEvent, Observable} from 'rxjs';
 import * as nodePositions from '../../../core/data/sources/node-positions.json';
-import 'rxjs/add/observable/fromEvent';
+
 import {ObservableMedia} from '@angular/flex-layout';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {AlarmCardComponent} from '../../alarms/alarm-card/alarm-card.component';
@@ -10,7 +10,7 @@ import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
 import {MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
-import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {debounceTime, distinctUntilChanged, map, mergeMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-gathering-location',
@@ -28,55 +28,57 @@ export class GatheringLocationComponent implements OnInit {
     searching = false;
 
     constructor(private dataService: DataService, private media: ObservableMedia, private bell: BellNodesService,
-                private alarmService: AlarmService, private snack: MatSnackBar, private translator: TranslateService,
-                private localizedDataService: LocalizedDataService) {
+                private alarmService: AlarmService, private snack: MatSnackBar, private translator: TranslateService) {
     }
 
     ngOnInit() {
-        this.result = Observable.fromEvent(this.filterElement.nativeElement, 'keyup')
-            .map(() => this.filterElement.nativeElement.value)
-            .debounceTime(500)
-            .distinctUntilChanged()
-            .do(() => this.searching = true)
-            .mergeMap(name => this.dataService.searchGathering(name))
-            .map(items => {
-                return items
-                //  Only use item results
-                    .filter(item => item.type === 'item')
-                    // First of all, add node informations
-                    .map(item => {
-                        item.nodes = Object.keys(nodePositions)
-                            .map(key => {
-                                const node = nodePositions[key];
-                                node.id = +key;
-                                node.itemId = item.obj.i;
-                                return node;
-                            })
-                            .filter(row => {
-                                return row.items.indexOf(item.obj.i) > -1;
-                            });
-                        if (item.nodes.length === 0) {
-                            return undefined;
-                        }
-                        return item;
-                    })
-                    // Remove items with no nodes
-                    .filter(item => item !== undefined)
-                    // Add timers if the node has some
-                    .map(item => {
-                        item.nodes = item.nodes.map(node => {
-                            const bellNode = this.bell.getNode(+node.id);
-                            node.timed = bellNode !== undefined;
-                            if (node.timed) {
-                                node.time = bellNode.time;
-                                node.uptime = bellNode.uptime;
+        this.result = fromEvent(this.filterElement.nativeElement, 'keyup')
+            .pipe(
+                map(() => this.filterElement.nativeElement.value),
+                debounceTime(500),
+                distinctUntilChanged(),
+                tap(() => this.searching = true),
+                mergeMap(name => this.dataService.searchGathering(name)),
+                map(items => {
+                    return items
+                    //  Only use item results
+                        .filter(item => item.type === 'item')
+                        // First of all, add node informations
+                        .map(item => {
+                            item.nodes = Object.keys(nodePositions)
+                                .map(key => {
+                                    const node = nodePositions[key];
+                                    node.id = +key;
+                                    node.itemId = item.obj.i;
+                                    return node;
+                                })
+                                .filter(row => row.items !== undefined)
+                                .filter(row => {
+                                    return row.items.indexOf(item.obj.i) > -1;
+                                });
+                            if (item.nodes.length === 0) {
+                                return undefined;
                             }
-                            return node;
+                            return item;
+                        })
+                        // Remove items with no nodes
+                        .filter(item => item !== undefined)
+                        // Add timers if the node has some
+                        .map(item => {
+                            item.nodes = item.nodes.map(node => {
+                                const bellNode = this.bell.getNode(+node.id);
+                                node.timed = bellNode !== undefined;
+                                if (node.timed) {
+                                    node.time = bellNode.time;
+                                    node.uptime = bellNode.uptime;
+                                }
+                                return node;
+                            });
+                            return item;
                         });
-                        return item;
-                    });
-            })
-            .do(() => this.searching = false);
+                }),
+                tap(() => this.searching = false)
+            );
     }
 
     createAlarm(nodeInput: any): void {

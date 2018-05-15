@@ -12,7 +12,7 @@
     </button>
 </div>
 <div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
-<mat-grid-list cols="{{getCols()}}" rowHeight="{{compact?'7:3':'3:4'}}" class="grid">
+<mat-grid-list cols="{{getCols()}}" rowHeight="3:4" class="grid" *ngIf="!compact">
     <mat-grid-tile *ngFor="let alarm of getAlarms() | async">
         <app-alarm-card [alarm]="alarm"
                         [compact]="compact"
@@ -22,3 +22,26 @@
                         (delete)="deleteAlarm(alarm)"></app-alarm-card>
     </mat-grid-tile>
 </mat-grid-list>
+<mat-list *ngIf="compact" dense>
+    <mat-list-item *ngFor="let alarm of getAlarms() | async"
+                   class="compact-alarm"
+                   [ngClass]="{
+                   'mat-elevation-z2': alarmService.isAlerted(alarm.itemId) | async,
+                   'mat-elevation-z8': alarmService.isAlarmSpawned(alarm, time),
+                   'primary-background': alarmService.isAlarmSpawned(alarm, time),
+                   'accent-background': alarmService.isAlerted(alarm.itemId) | async
+                   }">
+        <img mat-list-avatar [appXivdbTooltip]="alarm.itemId" [src]="alarm.icon | icon" alt="">
+        <span matLine>{{alarm.itemId | itemName | i18n}}</span>
+        <i matLine>{{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}}  -
+            <span class="coords" *ngIf="compact">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
+            <span *ngIf="alarm.slot">({{alarm.slot}})</span></i>
+        <app-map-position [zoneId]="alarm.zoneId"
+                          class="map-marker"
+                          [marker]="{x:alarm.coords[0], y:alarm.coords[1]}"></app-map-position>
+        <span>{{alarmService.getAlarmTimerString(alarm, time)}}</span>
+        <button mat-icon-button (click)="deleteAlarm(alarm)" color="warn">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-list>

@@ -136,7 +136,7 @@ body::-webkit-scrollbar-thumb, mat-sidenav::-webkit-scrollbar-thumb, .mat-sidena
     }
 }
 
-mat-input-container:not(.with-infix) {
+mat-form-field:not(.with-infix) {
     .mat-form-field-infix {
         width: auto !important;
     }

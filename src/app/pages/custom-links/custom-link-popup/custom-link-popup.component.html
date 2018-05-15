@@ -7,12 +7,13 @@
         <mat-select required placeholder="{{'CUSTOM_LINKS.Link_type' | translate}}" [(ngModel)]="selectedType">
             <mat-option value="workshop">{{"WORKSHOP.Workshops" | translate}}</mat-option>
             <mat-option value="list">{{"Lists" | translate}}</mat-option>
+            <mat-option value="simulator">{{"SIMULATOR.Rotations" | translate}}</mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field *ngIf="selectedType !== undefined">
         <mat-select required placeholder="{{'CUSTOM_LINKS.target' | translate}}" [(ngModel)]="selectedUid">
             <mat-option *ngFor="let row of types[selectedType] | async" value="{{row.$key}}">
-                {{row.name}}
+                {{row.name || row.getName()}}
             </mat-option>
         </mat-select>
     </mat-form-field>

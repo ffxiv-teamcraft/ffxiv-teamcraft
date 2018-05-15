@@ -1,10 +1,10 @@
 <h2 mat-dialog-title> {{'PERMISSIONS.Add_new' | translate}}</h2>
 <div mat-dialog-content class="container">
-    <mat-input-container class="search-field">
+    <mat-form-field class="search-field">
         <input type="email" matInput #inputField [(ngModel)]="input"
                [placeholder]="'PERMISSIONS.Placeholder' | translate">
         <mat-hint>{{'PERMISSIONS.User_id_tip' | translate}}</mat-hint>
-    </mat-input-container>
+    </mat-form-field>
     <mat-error *ngIf="notFound">{{'PERMISSIONS.User_not_found' | translate}}</mat-error>
     <mat-list *ngIf="result && !notFound">
         <mat-list-item>

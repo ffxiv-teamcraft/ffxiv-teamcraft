@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
 import {GarlandToolsService} from './garland-tools.service';
 import {Recipe} from '../../model/list/recipe';
 import {ItemData} from '../../model/garland-tools/item-data';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {SearchFilter} from '../../model/search/search-filter.interface';
-import 'rxjs/add/operator/publishReplay';
+
+import {GearSet} from '../../pages/simulator/model/gear-set';
+import {map, mergeMap, publishReplay, refCount, take} from 'rxjs/operators';
 
 @Injectable()
 export class DataService {
@@ -24,6 +26,39 @@ export class DataService {
                 private serializer: NgSerializerService) {
     }
 
+    public getGearsets(lodestoneId: number): Observable<GearSet[]> {
+        return this.getCharacter(lodestoneId)
+            .pipe(
+                mergeMap(character => {
+                    return this.http.get(`https://api.xivdb.com/character/${lodestoneId}?data=gearsets`)
+                        .pipe(
+                            map((response: any[]) => {
+                                return response
+                                // We want only crafter sets
+                                    .filter(row => row.classjob_id >= 8 && row.classjob_id <= 15)
+                                    .map(set => {
+                                        // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
+                                        // default to set level.
+                                        const setLevel = Object.keys(character.classjobs)
+                                            .map(key => character.classjobs[key])
+                                            .find(job => job.name === set.role.name) || set.level;
+                                        return {
+                                            ilvl: set.item_level_avg,
+                                            jobId: set.classjob_id,
+                                            level: setLevel,
+                                            control: set.stats.mental !== undefined ? set.stats.mental.Control : 0,
+                                            craftsmanship: set.stats.mental !== undefined ? set.stats.mental.Craftsmanship : 0,
+                                            cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
+                                            specialist: set.slot_soulcrystal !== null
+                                        }
+                                    });
+                            })
+                        );
+                })
+            )
+
+    }
+
     /**
      * Gets an item based on its id.
      * @param {number} id
@@ -31,7 +66,7 @@ export class DataService {
      */
     public getItem(id: number): Observable<ItemData> {
         return this.getGarlandData(`/item/en/${this.garlandtoolsVersion}/${id}`)
-            .map(item => this.serializer.deserialize<ItemData>(item, ItemData));
+            .pipe(map(item => this.serializer.deserialize<ItemData>(item, ItemData)));
     }
 
     /**
@@ -67,26 +102,29 @@ export class DataService {
             }
         });
 
-        return this.getGarlandSearch(params).map(garlandResults => {
-            const recipes: Recipe[] = [];
-            garlandResults.forEach(item => {
-                item.obj.f.forEach(recipe => {
-                    if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
-                        return;
-                    }
-                    recipes.push({
-                        recipeId: recipe.id,
-                        itemId: item.id,
-                        job: recipe.job,
-                        stars: recipe.stars,
-                        lvl: recipe.lvl,
-                        icon: item.obj.c,
-                        collectible: item.obj.o === 1
+        return this.getGarlandSearch(params)
+            .pipe(
+                map(garlandResults => {
+                    const recipes: Recipe[] = [];
+                    garlandResults.forEach(item => {
+                        item.obj.f.forEach(recipe => {
+                            if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
+                                return;
+                            }
+                            recipes.push({
+                                recipeId: recipe.id,
+                                itemId: item.id,
+                                job: recipe.job,
+                                stars: recipe.stars,
+                                lvl: recipe.lvl,
+                                icon: item.obj.c,
+                                collectible: item.obj.o === 1
+                            });
+                        });
                     });
-                });
-            });
-            return recipes;
-        });
+                    return recipes;
+                })
+            );
     }
 
     /**
@@ -110,8 +148,10 @@ export class DataService {
      */
     public searchCharacter(name: string, server: string): Observable<any[]> {
         return this.http.get<any>(`https://xivsync.com/character/search?name=${name}&server=${server}`)
-            .map(res => res.data.results)
-            .map(res => res.filter(char => char.name.toLowerCase() === name.toLowerCase()));
+            .pipe(
+                map(res => res.data.results),
+                map(res => res.filter(char => char.name.toLowerCase() === name.toLowerCase()))
+            );
     }
 
     /**
@@ -121,10 +161,13 @@ export class DataService {
      */
     public getCharacter(id: number): Observable<any> {
         if (!this.characterCache.get(id)) {
-            const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`).map(result => result.data)
-                .publishReplay(1)
-                .refCount()
-                .take(1);
+            const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`)
+                .pipe(
+                    map(result => result.data),
+                    publishReplay(1),
+                    refCount(),
+                    take(1)
+                );
             this.characterCache.set(id, request);
         }
         return this.characterCache.get(id);
@@ -136,9 +179,12 @@ export class DataService {
      * @returns {Observable<any>}
      */
     public getFreeCompany(id: string): Observable<any> {
-        return this.http.get<any>(`https://xivsync.com/freecompany/parse/${id}`).map(result => result.data)
-            .publishReplay(1)
-            .refCount()
+        return this.http.get<any>(`https://xivsync.com/freecompany/parse/${id}`)
+            .pipe(
+                map(result => result.data),
+                publishReplay(1),
+                refCount()
+            );
     }
 
     /**

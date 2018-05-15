@@ -2,6 +2,7 @@ import {Component, Inject, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef, MatSelectionList} from '@angular/material';
 import {List} from '../../../model/list/list';
 import {ListService} from '../../../core/database/list.service';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-merge-lists-popup',
@@ -28,7 +29,7 @@ export class MergeListsPopupComponent {
         this.selectionList.selectedOptions.selected.forEach(option => {
             resultList.merge(option.value);
         });
-        this.listService.add(resultList).first().subscribe(() => {
+        this.listService.add(resultList).pipe(first()).subscribe(() => {
             this.dialogRef.close();
         });
     }

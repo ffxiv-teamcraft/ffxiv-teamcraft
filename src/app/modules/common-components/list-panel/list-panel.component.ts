@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
@@ -6,7 +6,7 @@ import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';
@@ -15,11 +15,14 @@ import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
+import {catchError, filter, first, mergeMap} from 'rxjs/operators';
+import {ListRow} from '../../../model/list/list-row';
 
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
-    styleUrls: ['./list-panel.component.scss']
+    styleUrls: ['./list-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
 
@@ -39,7 +42,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     closed: EventEmitter<void> = new EventEmitter<void>();
 
     @Output()
-    onrecipedelete: EventEmitter<void> = new EventEmitter<void>();
+    onrecipedelete: EventEmitter<ListRow> = new EventEmitter<ListRow>();
 
     @Output()
     ondelete: EventEmitter<void> = new EventEmitter<void>();
@@ -95,9 +98,10 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     public openPermissions(list: List): void {
         this.dialog.open(PermissionsPopupComponent, {data: list})
             .afterClosed()
-            .filter(res => res !== '')
-            .mergeMap(res => this.listService.set(res.$key, res))
-            .subscribe();
+            .pipe(
+                filter(res => res !== ''),
+                mergeMap(res => this.listService.set(res.$key, res)),
+            ).subscribe();
     }
 
     openTemplatePopup(list: List): void {
@@ -114,7 +118,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
             this.translator.instant('Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
@@ -123,16 +127,16 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
             this.translator.instant('LIST_TEMPLATE.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
     public forkList(): void {
         const fork: List = this.list.clone();
         // Update the forks count.
-        this.listService.update(this.list.$key, this.list).first().subscribe();
+        this.listService.update(this.list.$key, this.list).pipe(first()).subscribe();
         fork.authorId = this.auth.auth.currentUser.uid;
-        this.listService.add(fork).first().subscribe(key => {
+        this.listService.add(fork).pipe(first()).subscribe(key => {
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
                 .subscribe(() => {
@@ -146,14 +150,23 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public handleClick(panel: MatExpansionPanel): void {
         panel.expanded ? this.opened.emit() : this.closed.emit();
-        this.expanded = !this.expanded;
+        if (!panel.expanded) {
+            // Once the panel is closed, destroy its content from the DOM.
+            setTimeout(() => {
+                this.expanded = false;
+            }, 500);
+        } else {
+            this.expanded = true;
+        }
     }
 
     ngOnInit(): void {
         this.author = this.userService.getCharacter(this.list.authorId)
-            .catch(err => {
-                return Observable.of(null);
-            });
+            .pipe(
+                catchError(err => {
+                    return of(null);
+                })
+            );
 
         this.templateService.getByListId(this.list.$key).subscribe(res => {
             if (res !== undefined) {

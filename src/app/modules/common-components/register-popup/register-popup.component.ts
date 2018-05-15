@@ -1,16 +1,14 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {UserService} from '../../../core/database/user.service';
 import {CharacterAddPopupComponent} from 'app/modules/common-components/character-add-popup/character-add-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AngularFirestore} from 'angularfire2/firestore';
 import {AppUser} from '../../../model/list/app-user';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-import EmailAuthProvider = firebase.auth.EmailAuthProvider;
+import {first} from 'rxjs/operators';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 declare const ga: Function;
 
@@ -75,7 +73,7 @@ export class RegisterPopupComponent {
             const u = new AppUser();
             u.$key = user.uid;
             u.email = user.email;
-            this.userService.set(user.uid, u).first().subscribe(() => {
+            this.userService.set(user.uid, u).pipe(first()).subscribe(() => {
                 this.dialog.open(CharacterAddPopupComponent, {disableClose: true}).afterClosed().subscribe(() => {
                     this.dialogRef.close();
                     this.userService.reload();
@@ -90,7 +88,7 @@ export class RegisterPopupComponent {
      * Creates a user from google's oauth.
      */
     googleOauth(): void {
-        this.af.auth.currentUser.linkWithPopup(new GoogleAuthProvider()).then((oauth) => {
+        this.af.auth.currentUser.linkWithPopup(new firebase.auth.GoogleAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = error.code);
     }
@@ -99,7 +97,7 @@ export class RegisterPopupComponent {
      * Creates a user from facebook's oauth.
      */
     facebookOauth(): void {
-        this.af.auth.currentUser.linkWithPopup(new FacebookAuthProvider()).then((oauth) => {
+        this.af.auth.currentUser.linkWithPopup(new firebase.auth.FacebookAuthProvider()).then((oauth) => {
             this.register(oauth.user);
         }).catch((error: any) => this.error = error.code);
     }
@@ -108,7 +106,7 @@ export class RegisterPopupComponent {
      * Creates a user from a classic email/password pair.
      */
     classicRegister(): void {
-        const credential = EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
+        const credential = firebase.auth.EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
         this.af.auth.currentUser.linkWithCredential(credential).then((auth) => {
             this.register(auth).then(() => {
                 this.af.auth.currentUser.sendEmailVerification().then(() => {

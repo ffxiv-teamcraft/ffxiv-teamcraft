@@ -1,6 +1,7 @@
 <mat-list-item [ngClass]="{'primary-background': spawned, 'accent-background': !spawned && alerted}">
     <img mat-list-avatar src="{{alarm.icon | icon}}" alt="">
-    <b mat-line>{{alarm.itemId | itemName | i18n}} <span *ngIf="alarm.slot">({{alarm.slot}})</span> </b>
+    <b mat-line>{{alarm.itemId | itemName | i18n}}</b>
+    <span *ngIf="alarm.slot">Slot {{alarm.slot}}</span>
     <p mat-line>{{timer}}</p>
     <button mat-icon-button (click)="openMap()"
             matTooltipPosition="above"

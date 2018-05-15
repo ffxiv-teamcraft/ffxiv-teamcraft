@@ -19,7 +19,7 @@ import {
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
-import {AngularFireModule} from 'angularfire2';
+import {FirebaseOptionsToken} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
@@ -58,6 +58,8 @@ import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
 import {MarkdownModule} from 'ngx-markdown';
 import {WikiModule} from './pages/wiki/wiki.module';
+import {SimulatorModule} from './pages/simulator/simulator.module';
+import {NgDragDropModule} from 'ng-drag-drop';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -67,10 +69,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [
         AppComponent,
     ],
+    providers: [
+        {provide: FirebaseOptionsToken, useValue: environment.firebase}
+    ],
     imports: [
         FlexLayoutModule,
 
         MarkdownModule.forRoot(),
+
+        NgDragDropModule.forRoot(),
 
         TranslateModule.forRoot({
             loader: {
@@ -80,7 +87,6 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
 
-        AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
         AngularFirestoreModule,
@@ -142,6 +148,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         GatheringLocationModule,
         WorkshopModule,
         TemplateModule,
+        SimulatorModule,
     ],
     bootstrap: [AppComponent]
 })

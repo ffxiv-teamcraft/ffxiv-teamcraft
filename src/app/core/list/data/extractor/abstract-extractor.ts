@@ -1,7 +1,7 @@
 import {ItemData} from '../../../../model/garland-tools/item-data';
 import {Injectable} from '@angular/core';
 import {DataType} from 'app/core/list/data/data-type';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of} from 'rxjs';
 import {Item} from '../../../../model/garland-tools/item';
 
 @Injectable()
@@ -30,7 +30,7 @@ export abstract class AbstractExtractor<T> {
         if (this.extractsArray()) {
             fallback = [];
         }
-        return this.isAsync() ? Observable.of(fallback) : fallback;
+        return this.isAsync() ? of(fallback) : fallback;
     }
 
     /**

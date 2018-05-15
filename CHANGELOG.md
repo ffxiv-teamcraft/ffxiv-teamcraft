@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.6.1"></a>
+## [3.6.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.0...v3.6.1) (2018-05-10)
+
+
+### Bug Fixes
+
+* **simulator:** fixed buffs duration not handled properly in snapshot mode ([d6835b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/d6835b9))
+* **simulator:** you don't need an account anymore for custom mode ([aa81872](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa81872))
+* byregot's brow can now only be used with 2 or more Inner Quiet stacks ([c87285e](https://github.com/Supamiu/ffxiv-teamcraft/commit/c87285e))
+
+
+### Features
+
+* **simulator:** actions can now be dragged inside rotation (https://i.imgur.com/68jTydA.gifv) ([48b6eee](https://github.com/Supamiu/ffxiv-teamcraft/commit/48b6eee))
+* **simulator:** added links to external simulators inside crafting menu ([1edc7a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/1edc7a6))
+* **simulator:** food names are now sorted alphabetically, hq first ([40ddb37](https://github.com/Supamiu/ffxiv-teamcraft/commit/40ddb37))
+* **simulator:** you can now save custom stats for your crafting jobs ([3784e1f](https://github.com/Supamiu/ffxiv-teamcraft/commit/3784e1f))
+
+
+### Performance Improvements
+
+* improved display performances on large lists ([a96a51c](https://github.com/Supamiu/ffxiv-teamcraft/commit/a96a51c))
+
+
+
+<a name="3.6.0"></a>
+# [3.6.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.5.1...v3.6.0) (2018-05-06)
+
+
+### Bug Fixes
+
+* fixed a bug with xivdb links in non-EN languages ([ece88f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/ece88f5)), closes [#332](https://github.com/Supamiu/ffxiv-teamcraft/issues/332)
+* folklore icon missing in some cases ([40a2d16](https://github.com/Supamiu/ffxiv-teamcraft/commit/40a2d16))
+* inventory view was broken ([4ff8397](https://github.com/Supamiu/ffxiv-teamcraft/commit/4ff8397))
+* material amount now properly updated when adding crafts that uses them ([d6cfd2b](https://github.com/Supamiu/ffxiv-teamcraft/commit/d6cfd2b)), closes [#330](https://github.com/Supamiu/ffxiv-teamcraft/issues/330)
+* wiki page fallback to english wasn't working properly ([1cf1f78](https://github.com/Supamiu/ffxiv-teamcraft/commit/1cf1f78))
+* **simulator:** Ingenuity II not imported properly from a crafting optimizer export ([70382d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/70382d1)), closes [#333](https://github.com/Supamiu/ffxiv-teamcraft/issues/333)
+* **wiki:** links for external tools weren't working properly ([e012884](https://github.com/Supamiu/ffxiv-teamcraft/commit/e012884))
+* **wiki:** page considered not found while it was when in english ([95e4b79](https://github.com/Supamiu/ffxiv-teamcraft/commit/95e4b79))
+* **wiki:** wiki external links now open in new tab ([81bfef1](https://github.com/Supamiu/ffxiv-teamcraft/commit/81bfef1))
+
+
+### Features
+
+* add ES language support ([690ac68](https://github.com/Supamiu/ffxiv-teamcraft/commit/690ac68))
+* **patrons:** custom links available for crafting rotations ([1c36ac4](https://github.com/Supamiu/ffxiv-teamcraft/commit/1c36ac4))
+* **wiki:** new wiki page for crafting simulator ([c1411e0](https://github.com/Supamiu/ffxiv-teamcraft/commit/c1411e0))
+* new compact mode for alarms page ([5eee2d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/5eee2d8))
+* new simulator page to create and share rotations ([9a5bd3a](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a5bd3a)), closes [#335](https://github.com/Supamiu/ffxiv-teamcraft/issues/335)
+* pop-up for reset or delete list once it's completed ([bb202b6](https://github.com/Supamiu/ffxiv-teamcraft/commit/bb202b6)), closes [#321](https://github.com/Supamiu/ffxiv-teamcraft/issues/321)
+
+
+
 <a name="3.5.1"></a>
 ## [3.5.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.5.0...v3.5.1) (2018-04-23)
 

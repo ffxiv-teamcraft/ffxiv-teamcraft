@@ -15,6 +15,7 @@ Below you'll find a summary of all pages you can find on this wiki.
  * [Favourites](/wiki/favourites), describing how favourite list/workshop system works
  * [Books](/wiki/books), how to link your ingame mastercraft books (and folklore books) to your profile.
  * [List details](/wiki/list-details), how to get all the details you need on a list view.
+ * [Crafting Simulator](/wiki/simulator), how to use the simulator, share rotations, etc.
 
 ## Advanced features
 

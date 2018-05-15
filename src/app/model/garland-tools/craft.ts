@@ -9,10 +9,12 @@ export interface Craft {
     quality: number;
     progress: number;
     lvl: number;
-    stars: number;
-    controlReq: number;
-    craftsmanshipReq: number;
-    unlockId: number;
+    stars?: number;
+    hq: 1 | 0;
+    quickSynth: 1 | 0;
+    controlReq?: number;
+    craftsmanshipReq?: number;
+    unlockId?: number;
     ingredients: Ingredient[];
     complexity: Complexity;
     fc?: number;

@@ -1,11 +1,12 @@
 import {List} from '../../../../model/list/list';
 import {Injectable, NgZone} from '@angular/core';
 import {ListStore} from './list-store';
-import {Observable} from 'rxjs/Observable';
+import {combineLatest, Observable} from 'rxjs';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {FirestoreStorage} from '../firebase/firestore-storage';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';
+import {first, map, switchMap} from 'rxjs/operators';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
@@ -18,13 +19,15 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     getPublicLists(): Observable<List[]> {
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
             .snapshotChanges()
-            .map(snaps => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()})))
-            .map(lists => this.serializer.deserialize<List>(lists, [List]))
-            .map(lists => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
+            .pipe(
+                map((snaps: any[]) => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()}))),
+                map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
+                map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()))
+            );
     }
 
     getPublicListsByAuthor(uid: string): Observable<List[]> {
-        return this.listsByAuthorRef(uid).map(lists => lists.filter(list => list.public === true));
+        return this.listsByAuthorRef(uid).pipe(map(lists => lists.filter(list => list.public === true)));
     }
 
     byAuthor(uid: string): Observable<List[]> {
@@ -33,30 +36,33 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
 
     deleteByAuthor(uid: string): Observable<void> {
         return this.listsByAuthorRef(uid)
-            .first()
-            .map(lists => lists.map(list => list.$key))
-            .switchMap(listIds => {
-                const deletion = listIds.map(id => {
-                    return this.remove(id);
-                });
-                return Observable.combineLatest(deletion, () => {
-                });
-            });
+            .pipe(
+                first(),
+                map(lists => lists.map(list => list.$key)),
+                switchMap(listIds => {
+                    const deletion = listIds.map(id => {
+                        return this.remove(id);
+                    });
+                    return combineLatest(deletion).pipe(map(() => null));
+                })
+            );
     }
 
     private listsByAuthorRef(uid: string): Observable<List[]> {
         return this.firestore
             .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
             .snapshotChanges()
-            .map(snaps => snaps.map(snap => {
-                // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
-                // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
-                // Resulting on an unreadable, undeletable list.
-                const data = snap.payload.doc.data();
-                delete data.$key;
-                return (<List>{$key: snap.payload.doc.id, ...data})
-            }))
-            .map(lists => this.serializer.deserialize<List>(lists, [List]))
+            .pipe(
+                map(snaps => snaps.map(snap => {
+                    // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
+                    // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
+                    // Resulting on an unreadable, undeletable list.
+                    const data = snap.payload.doc.data();
+                    delete data.$key;
+                    return (<List>{$key: snap.payload.doc.id, ...data})
+                })),
+                map(lists => this.serializer.deserialize<List>(lists, [List]))
+            );
     }
 
     protected getBaseUri(): string {

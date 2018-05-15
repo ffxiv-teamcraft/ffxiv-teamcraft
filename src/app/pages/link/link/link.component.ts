@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
 import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-link',
@@ -18,9 +19,11 @@ export class LinkComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.activeRoute.params.switchMap(params => {
-            return this.customLinksService.getByUriAndNickname(decodeURI(params.uri), decodeURI(params.nickName));
-        }).subscribe((link: CustomLink) => {
+        this.activeRoute.params
+            .pipe(switchMap(params => {
+                    return this.customLinksService.getByUriAndNickname(decodeURI(params.uri), decodeURI(params.nickName));
+                })
+            ).subscribe((link: CustomLink) => {
             if (link === undefined) {
                 this.notFound = true;
             }

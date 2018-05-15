@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs/Subject';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class SettingsService {
@@ -18,14 +18,6 @@ export class SettingsService {
 
     public set baseLink(base: string) {
         this.setSetting('base-link', base);
-    }
-
-    public get baseSimulatorLink(): string {
-        return this.getSetting('base-simulator-link', 'http://ffxiv-beta.lokyst.net');
-    }
-
-    public set baseSimulatorLink(base: string) {
-        this.setSetting('base-simulator-link', base);
     }
 
     public get crystalsTracking(): boolean {

@@ -1,13 +1,13 @@
 <h3 mat-dialog-title>{{'Character_informations' | translate}}</h3>
 <div mat-dialog-content>
-    <mat-input-container>
+    <mat-form-field>
         <input matInput #name [(ngModel)]="characterName" placeholder="{{'Character_name' | translate}}" type="text" required>
         <mat-error>Required</mat-error>
-    </mat-input-container>
-    <mat-input-container>
+    </mat-form-field>
+    <mat-form-field>
         <input matInput #server [(ngModel)]="serverName" placeholder="{{'Server_name' | translate}}" type="text" required>
         <mat-error>Required</mat-error>
-    </mat-input-container>
+    </mat-form-field>
     <div class="loader-container" *ngIf="loading">
         <mat-spinner></mat-spinner>
     </div>

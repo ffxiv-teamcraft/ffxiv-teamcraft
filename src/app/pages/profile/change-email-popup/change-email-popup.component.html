@@ -1,16 +1,16 @@
 <form [formGroup]="form" (submit)="changeEmail()">
-    <mat-input-container>
+    <mat-form-field>
         <input type="text" required matInput placeholder="Current" formControlName="currentEmail">
         <mat-error></mat-error>
-    </mat-input-container>
-    <mat-input-container>
+    </mat-form-field>
+    <mat-form-field>
         <input type="text" required matInput placeholder="New Email" formControlName="newEmail">
         <mat-error></mat-error>
-    </mat-input-container>
-    <mat-input-container>
+    </mat-form-field>
+    <mat-form-field>
         <input type="password" required matInput placeholder="Password" formControlName="password">
         <mat-error></mat-error>
-    </mat-input-container>
+    </mat-form-field>
 </form>
 <div mat-dialog-actions>
     <button mat-raised-button color="accent">{{'Confirm' | translate}}</button>

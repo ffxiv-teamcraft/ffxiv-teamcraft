@@ -4,10 +4,10 @@
     class="needed">
         {{total - item.done}}
     </span>
-    <mat-input-container>
+    <mat-form-field>
         <input type="number" #input matInput [value]="item.done - item.used" [readonly]="readonly"
                [style.width]="getWidth() + 'px'" min="0">
-    </mat-input-container>
+    </mat-form-field>
     <span matTooltipPosition="above"
           matTooltip="{{'COMMON.Total' | translate}}">
         {{total - item.used}}

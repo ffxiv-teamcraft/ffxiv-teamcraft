@@ -16,7 +16,7 @@ namespace Extractor
             ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
             Localize localize = new Localize(realm);
             ExtractItemNames(localize, realm);
-            ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(),"Singular", "npcs");
+            ExtractNames(localize, realm.GameData.GetSheet<ENpcResident>(), "Singular", "npcs");
             ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
             ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers");
             ExtractMobNames(localize, realm);
@@ -25,6 +25,97 @@ namespace Extractor
             ExtractAetheryteNames(localize, realm);
             ExtractVentureNames(localize, realm);
             ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
+            ExtractActionIcons(realm.GameData);
+            ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
+            ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
+            ExtractConsumables(realm.GameData);
+        }
+
+        static void ExtractConsumables(XivCollection gameData)
+        {
+            int[] foods = { 844, 845 };
+            JArray foodsArray = ExtractFoodTypes(gameData, foods);
+            string foodsJson = Regex.Replace(foodsArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\foods.json", foodsJson);
+
+            int[] medicines = { 846 };
+            JArray medicinesArray = ExtractFoodTypes(gameData, medicines);
+            string medicinesJson = Regex.Replace(medicinesArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\medicines.json", medicinesJson);
+        }
+
+        static JArray ExtractFoodTypes(XivCollection gameData, int[] types)
+        {
+            JArray res = new JArray();
+            foreach (var item in gameData.GetSheet<Item>())
+            {
+                foreach (int type in types)
+                {
+                    if (item.ItemAction.Type == type)
+                    {
+                        if (gameData.GetSheet<ItemFood>().ContainsRow(item.ItemAction.GetData(1)))
+                        {
+                            var food = gameData.GetSheet<ItemFood>()[item.ItemAction.GetData(1)];
+                            if (food != null)
+                            {
+                                JObject foodRow = new JObject();
+                                foreach (var param in food.Parameters)
+                                {
+                                    if (param.BaseParam.DefaultValue.ToString() == "CP" || param.BaseParam.DefaultValue.ToString() == "Control" || param.BaseParam.DefaultValue.ToString() == "Craftsmanship")
+                                    {
+                                        if (foodRow.GetValue("itemId") == null)
+                                        {
+                                            foodRow.Add("itemId", item.Key);
+                                        }
+                                        JArray paramRow = new JArray();
+                                        foreach (var value in param.Values)
+                                        {
+                                            var valueRow = new JObject();
+                                            valueRow.Add("amount", ((ParameterValueRelativeLimited)value).Amount);
+                                            valueRow.Add("max", ((ParameterValueRelativeLimited)value).Maximum);
+                                            paramRow.Add(valueRow);
+                                        }
+                                        foodRow.Add(param.BaseParam.DefaultValue.ToString(), paramRow);
+                                    }
+                                }
+                                if (foodRow.HasValues)
+                                {
+                                    res.Add(foodRow);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return res;
+        }
+
+        static void ExtractActionIcons(XivCollection gameData)
+        {
+            JObject res = new JObject();
+            foreach (var action in gameData.GetSheet<CraftAction>())
+            {
+                int iconId = GetIconId(action.Icon);
+                if (iconId != 405 && iconId > 0)
+                {
+                    res.Add(action.Key.ToString(), iconId);
+                }
+            }
+            foreach (var action in gameData.GetSheet<SaintCoinach.Xiv.Action>())
+            {
+                int iconId = GetIconId(action.Icon);
+                if (iconId != 405 && iconId > 0)
+                {
+                    res.Add(action.Key.ToString(), iconId);
+                }
+            }
+            string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\action-icons.json", json);
+        }
+
+        public static int GetIconId(SaintCoinach.Imaging.ImageFile icon)
+        {
+            return int.Parse(System.IO.Path.GetFileNameWithoutExtension(icon.Path));
         }
 
         static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)

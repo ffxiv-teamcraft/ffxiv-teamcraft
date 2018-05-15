@@ -6,11 +6,9 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-// noinspection ES6UnusedImports
 import * as firebase from 'firebase';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-import AuthProvider = firebase.auth.AuthProvider;
+import 'firebase/auth';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-login-popup',
@@ -47,7 +45,7 @@ export class LoginPopupComponent {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
-                .first()
+                .pipe(first())
                 .subscribe(() => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
@@ -62,13 +60,13 @@ export class LoginPopupComponent {
 
     googleOauth(): void {
         this.router.navigate(['home']).then(() => {
-            return this.oauth(new GoogleAuthProvider());
+            return this.oauth(new firebase.auth.GoogleAuthProvider());
         });
     }
 
     facebookOauth(): void {
         this.router.navigate(['home']).then(() => {
-            return this.oauth(new FacebookAuthProvider());
+            return this.oauth(new firebase.auth.FacebookAuthProvider());
         });
     }
 
@@ -76,7 +74,7 @@ export class LoginPopupComponent {
         this.router.navigate(['home']).then(() => {
             const prevUser = this.af.auth.currentUser;
             this.listService.getUserLists(prevUser.uid)
-                .first()
+                .pipe(first())
                 .subscribe(listsBackup => {
                     // Delete the previous anonymous user
                     if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
@@ -132,10 +130,10 @@ export class LoginPopupComponent {
         });
     }
 
-    private oauth(provider: AuthProvider): void {
+    private oauth(provider: firebase.auth.AuthProvider): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid)
-            .first()
+            .pipe(first())
             .subscribe(lists => {
                 if (this.af.auth.currentUser !== null && this.af.auth.currentUser.isAnonymous) {
                     this.userService.deleteUser(prevUser.uid);

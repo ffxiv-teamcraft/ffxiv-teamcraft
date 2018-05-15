@@ -1,5 +1,4 @@
 import {ListRow} from './list-row';
-import {DataModel} from '../../core/database/storage/data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
@@ -301,21 +300,26 @@ export class List extends DataWithPermissions {
     public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
         const previousDone = item.done;
-        item.done += amount;
-        if (item.done > item.amount) {
-            item.done = item.amount;
-        }
-        if (item.done < 0) {
-            item.done = 0;
-        }
         if (setUsed) {
+            // Save previous used amount
+            const previousUsed = item.used;
+            // Update used amount
             item.used += amount;
+            // Set amount to the amount of items to add to the total, nothing can be removed so min is 0.
+            amount = Math.max(0, amount - (item.done - previousUsed));
             if (item.used > item.amount) {
                 item.used = item.amount;
             }
             if (item.used < 0) {
                 item.used = 0;
             }
+        }
+        item.done += amount;
+        if (item.done > item.amount) {
+            item.done = item.amount;
+        }
+        if (item.done < 0) {
+            item.done = 0;
         }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
         if (item.requires !== undefined) {

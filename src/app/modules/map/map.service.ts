@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MapData} from './map-data';
 import {Aetheryte} from '../../core/data/aetheryte';
 import {aetherytes} from '../../core/data/sources/aetherytes';
@@ -9,6 +9,7 @@ import {MathToolsService} from '../../core/tools/math-tools';
 import {NavigationStep} from './navigation-step';
 import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {NavigationObjective} from './navigation-objective';
+import {map, publishReplay, refCount} from 'rxjs/operators';
 
 @Injectable()
 export class MapService {
@@ -23,32 +24,36 @@ export class MapService {
 
     constructor(private http: HttpClient, private mathService: MathToolsService, private l12n: LocalizedDataService) {
         this.data = this.http.get<any>('https://api.xivdb.com/maps/get/layers/id')
-            .map(res => {
-                return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
-            })
-            .map(mapData => {
-                return mapData.map(row => {
-                    row.aetherytes = this.getAetherytes(row.placename_id);
-                    return row;
-                });
-            })
-            .publishReplay(1)
-            .refCount();
+            .pipe(
+                map(res => {
+                    return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
+                }),
+                map(mapData => {
+                    return mapData.map(row => {
+                        row.aetherytes = this.getAetherytes(row.placename_id);
+                        return row;
+                    });
+                }),
+                publishReplay(1),
+                refCount()
+            );
     }
 
     getMapById(id: number): Observable<MapData> {
-        return this.data.map(data => {
-            return data.find(row => row.placename_id === id);
-        });
+        return this.data.pipe(
+            map(data => {
+                return data.find(row => row.placename_id === id);
+            })
+        );
     }
 
     private getAetherytes(id: number): Aetheryte[] {
         return aetherytes.filter(aetheryte => aetheryte.placenameid === id);
     }
 
-    public getNearestAetheryte(map: MapData, coords: Vector2): Aetheryte {
-        let nearest = map.aetherytes[0];
-        for (const aetheryte of map.aetherytes.filter(ae => ae.type === 0)) {
+    public getNearestAetheryte(mapData: MapData, coords: Vector2): Aetheryte {
+        let nearest = mapData.aetherytes[0];
+        for (const aetheryte of mapData.aetherytes.filter(ae => ae.type === 0)) {
             if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
                 nearest = aetheryte;
             }
@@ -58,21 +63,23 @@ export class MapService {
 
     public getOptimizedPath(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
         return this.getMapById(mapId)
-            .map(mapData => {
-                // We only want big aetherytes.
-                const bigAetherytes = mapData.aetherytes.filter(ae => ae.type === 0);
-                // If theres no start point, check from each aetheryte to fidn the shortest path
-                if (startPoint === undefined) {
-                    const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
-                        x: aetheryte.x,
-                        y: aetheryte.y,
-                        name: this.l12n.getPlace(aetheryte.nameid)
-                    }, points, bigAetherytes));
-                    return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
-                } else {
-                    return this.getShortestPath(startPoint, points, bigAetherytes);
-                }
-            });
+            .pipe(
+                map(mapData => {
+                    // We only want big aetherytes.
+                    const bigAetherytes = mapData.aetherytes.filter(ae => ae.type === 0);
+                    // If theres no start point, check from each aetheryte to fidn the shortest path
+                    if (startPoint === undefined) {
+                        const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
+                            x: aetheryte.x,
+                            y: aetheryte.y,
+                            name: this.l12n.getPlace(aetheryte.nameid)
+                        }, points, bigAetherytes));
+                        return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
+                    } else {
+                        return this.getShortestPath(startPoint, points, bigAetherytes);
+                    }
+                })
+            );
     }
 
     private totalDuration(path: NavigationStep[]): number {
@@ -176,8 +183,8 @@ export class MapService {
         return steps;
     }
 
-    getPositionOnMap(map: MapData, position: Vector2): Vector2 {
-        const scale = map.size_factor / 100;
+    getPositionOnMap(mapData: MapData, position: Vector2): Vector2 {
+        const scale = mapData.size_factor / 100;
 
         const offset = 1;
 

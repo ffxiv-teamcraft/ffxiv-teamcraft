@@ -99,7 +99,7 @@
 .filters {
     display: flex;
     flex-direction: column;
-    mat-input-container {
+    mat-form-field {
         width: auto !important;
     }
     .class-filters {
