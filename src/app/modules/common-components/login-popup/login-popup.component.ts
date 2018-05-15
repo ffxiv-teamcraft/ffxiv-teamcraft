@@ -6,8 +6,10 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-import * as firebase from 'firebase';
-import 'firebase/auth';
+import {firebase} from '@firebase/app';
+import '@firebase/auth';
+import '@firebase/database';
+import '@firebase/firestore';
 import {first} from 'rxjs/operators';
 
 @Component({
@@ -89,7 +91,7 @@ export class LoginPopupComponent {
                             this.errorState(listsBackup);
                         })
                         .then((auth) => {
-                            if (auth !== null && auth !== undefined && !auth.emailVerified) {
+                            if (auth.user !== null && auth.user !== undefined && !auth.user.emailVerified) {
                                 // If the user didn't verify his email, send him a new one.
                                 this.af.auth.currentUser.sendEmailVerification();
                                 // Log out from this user, as his email isn't verified yet.
@@ -105,7 +107,7 @@ export class LoginPopupComponent {
                                     });
                                 });
                             } else {
-                                this.login(auth).then(() => {
+                                this.login(auth.user).then(() => {
                                     this.userService.reload();
                                     this.dialogRef.close();
                                 }).catch(() => {
@@ -130,7 +132,7 @@ export class LoginPopupComponent {
         });
     }
 
-    private oauth(provider: firebase.auth.AuthProvider): void {
+    private oauth(provider: any): void {
         const prevUser = this.af.auth.currentUser;
         this.listService.getUserLists(prevUser.uid)
             .pipe(first())
