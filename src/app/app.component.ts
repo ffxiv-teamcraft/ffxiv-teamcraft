@@ -25,8 +25,7 @@ import {AnnouncementPopupComponent} from './modules/common-components/announceme
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs/index';
-import {distinctUntilChanged, first, map} from 'rxjs/operators';
-import {debounceTime} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, first, map} from 'rxjs/operators';
 
 declare const ga: Function;
 
@@ -68,6 +67,8 @@ export class AppComponent implements OnInit {
     customLinksEnabled = false;
 
     public locales = AppComponent.LOCALES;
+
+    private characterAddPopupOpened = false;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -242,8 +243,11 @@ export class AppComponent implements OnInit {
                 .getUserData()
                 .subscribe(u => {
                     this.customLinksEnabled = u.patron || u.admin;
-                    if (u.lodestoneId === undefined && !u.anonymous) {
-                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
+                    if (u.lodestoneId === undefined && !u.anonymous && !this.characterAddPopupOpened) {
+                        this.characterAddPopupOpened = true;
+                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true})
+                            .afterClosed()
+                            .subscribe(() => this.characterAddPopupOpened = false);
                     }
                 });
 

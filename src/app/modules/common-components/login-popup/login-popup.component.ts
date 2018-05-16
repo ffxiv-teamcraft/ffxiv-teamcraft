@@ -11,8 +11,7 @@ import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
 import {first} from 'rxjs/operators';
-import {List} from '../../../model/list/list';
-import {IpcRenderer} from 'electron';
+import {OauthService} from '../../../core/auth/oauth.service';
 
 @Component({
     selector: 'app-login-popup',
@@ -20,8 +19,6 @@ import {IpcRenderer} from 'electron';
     styleUrls: ['./login-popup.component.scss']
 })
 export class LoginPopupComponent {
-
-    private _ipc: IpcRenderer | undefined = void 0;
 
     form: FormGroup;
 
@@ -35,32 +32,26 @@ export class LoginPopupComponent {
                 private fb: FormBuilder,
                 private router: Router,
                 private dialog: MatDialog,
-                private listService: ListService) {
+                private listService: ListService,
+                private oauthService: OauthService) {
 
         this.form = fb.group({
             email: ['', Validators.email],
             password: ['', Validators.required],
         });
-        if (window.require) {
-            try {
-                this._ipc = window.require('electron').ipcRenderer;
-            } catch (e) {
-                throw e;
-            }
-        } else {
-            console.warn('Electron\'s IPC was not loaded');
-        }
     }
 
     openForgotPasswordPopup(): void {
         this.dialog.open(ForgotPasswordPopupComponent);
     }
 
-    login(user: any): Promise<void> {
+    afterLogin(user: any, oauth = true): Promise<void> {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
-                .pipe(first())
+                .pipe(
+                    first()
+                )
                 .subscribe(() => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
@@ -68,7 +59,11 @@ export class LoginPopupComponent {
                 }, err => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
-                    reject(err);
+                    if (oauth && err.message === 'Not found') {
+                        this.oauthService.register(user);
+                    } else {
+                        reject(err);
+                    }
                 });
         });
     }
@@ -120,7 +115,7 @@ export class LoginPopupComponent {
                                     });
                                 });
                             } else {
-                                this.login(authData).then(() => {
+                                this.afterLogin(authData).then(() => {
                                     this.userService.reload();
                                     this.dialogRef.close();
                                 }).catch(() => {
@@ -154,39 +149,17 @@ export class LoginPopupComponent {
                     this.userService.deleteUser(prevUser.uid);
                     this.af.auth.currentUser.delete();
                 }
-                this.doOauthSignIn(provider, lists);
-            });
-    }
-
-    private doOauthSignIn(provider: any, fallbackLists: List[]): void {
-        let signInPromise: Promise<any>;
-        // If we're running inside electron, we need a special implementation.
-        if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
-            signInPromise = new Promise((resolve) => {
-                this._ipc.on('google-oauth-reply', (event, {access_token}) => {
-                    this.af.auth
-                        .signInAndRetrieveDataWithCredential(firebase.auth.GoogleAuthProvider.credential(null, access_token))
-                        .then(result => resolve(result));
+                this.oauthService.login(provider).then(oauth => {
+                    this.afterLogin(oauth.user).then(() => {
+                        this.userService.reload();
+                        this.dialogRef.close();
+                    }).catch((error) => {
+                        console.error(error);
+                        this.userService.reload();
+                        this.errorState(lists);
+                    });
                 });
             });
-            this._ipc.send('google-oauth', 'getToken');
-        } else {
-            signInPromise = this.af.auth.signInWithRedirect(provider);
-        }
-        signInPromise.then((oauth) => {
-            this.login(oauth.user).then(() => {
-                this.userService.reload();
-                this.dialogRef.close();
-            }).catch((error) => {
-                console.error(error);
-                this.userService.reload();
-                this.errorState(fallbackLists);
-            });
-            this.userService.reload();
-        }).catch((error) => {
-            console.error(error);
-            this.userService.reload();
-        });
     }
 
 }

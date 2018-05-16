@@ -38,6 +38,7 @@ import {CustomLinksService} from './database/custom-links/custom-links.service';
 import {PatreonGuard} from './guard/patreon.guard';
 import {MathToolsService} from './tools/math-tools';
 import {PendingChangesService} from './database/pending-changes/pending-changes.service';
+import {OauthService} from './auth/oauth.service';
 
 
 const dataExtractorProviders: Provider[] = [
@@ -86,6 +87,7 @@ const dataExtractorProviders: Provider[] = [
         PatreonGuard,
         MathToolsService,
         PendingChangesService,
+        OauthService,
     ],
     declarations: [
         I18nPipe,
