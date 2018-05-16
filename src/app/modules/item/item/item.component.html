@@ -227,7 +227,7 @@
                 </div>
                 <button mat-icon-button *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
                     <img class="crafted-by" matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}" matTooltipPosition="above"
-                        src="{{item.gatheredBy.icon}}">
+                        [src]="item.gatheredBy.icon">
                 </button>
                 <div *ngIf="item.gardening === true">
                     <img class="crafted-by" matTooltip="{{'Gardening' | translate}}" matTooltipPosition="above" src="./assets/icons/Gardening.png">

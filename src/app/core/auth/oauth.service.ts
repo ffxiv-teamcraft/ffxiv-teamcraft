@@ -32,7 +32,6 @@ export class OauthService {
     }
 
     public login(provider: any): Promise<any> {
-        console.log(provider);
         return new Promise((resolve, reject) => {
             let signInPromise: Promise<any>;
             // If we're running inside electron, we need a special implementation.

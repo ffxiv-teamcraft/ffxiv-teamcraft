@@ -10,8 +10,8 @@ import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {CustomLink} from '../../../../core/database/custom-links/costum-link';
 import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
-import {filter, tap} from 'rxjs/operators';
-import {mergeMap} from 'rxjs/operators';
+import {filter, mergeMap, tap} from 'rxjs/operators';
+import {LinkToolsService} from '../../../../core/tools/link-tools.service';
 
 @Component({
     selector: 'app-rotations-page',
@@ -27,7 +27,7 @@ export class RotationsPageComponent {
 
     constructor(private rotationsService: CraftingRotationService, private userService: UserService,
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
-                private translator: TranslateService, private dialog: MatDialog) {
+                private translator: TranslateService, private dialog: MatDialog, private linkTools: LinkToolsService) {
         this.rotations$ = this.userService.getUserData()
             .pipe(
                 tap(user => this.linkButton = user.admin || user.patron),
@@ -62,8 +62,8 @@ export class RotationsPageComponent {
     }
 
     public getLink(rotation: CraftingRotation): string {
-        return `${window.location.protocol}//${window.location.host}${rotation.defaultItemId ? '/simulator/' +
-            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`;
+        return this.linkTools.getLink(`${rotation.defaultItemId ? '/simulator/' +
+            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`);
     }
 
     public showCopiedNotification(): void {

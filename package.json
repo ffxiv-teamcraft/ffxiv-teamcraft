@@ -2,14 +2,15 @@
   "name": "teamcraft",
   "version": "3.6.1",
   "license": "MIT",
+  "main": "main.js",
   "build": {
     "appId": "ffxivteamcraft",
-      "files": [
-          "main.js",
-          "dist"
-      ],
+    "files": [
+      "main.js",
+      "dist"
+    ],
     "mac": {
-        "category": "public.app-category.games"
+      "category": "public.app-category.games"
     }
   },
   "scripts": {
@@ -34,10 +35,10 @@
     "build:watch": "node ./build/prebuild.js && ng build --watch --target=production --env=prod",
     "electron:start:dev": "electron ./main.js --serve",
     "electron:start:prod": "node ./build/prebuild.js && ng build --prod && electron ./main.js",
-      "electron:build": "node ./build/prebuild.js && ng build --prod && npm run dist",
-      "pack": "electron-builder --dir",
-      "dist": "electron-builder",
-      "postinstall": "electron-builder install-app-deps"
+    "electron:build": "node ./build/prebuild.js && ng build --prod && npm run dist",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "private": true,
   "dependencies": {
@@ -92,7 +93,7 @@
     "colors": "latest",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-    "electron": "^2.0.0",
+    "electron": "^1.8.7",
     "electron-builder": "^20.13.3",
     "electron-reload": "^1.2.2",
     "express": "^4.16.3",

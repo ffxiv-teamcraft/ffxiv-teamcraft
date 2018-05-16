@@ -17,12 +17,12 @@ import {TemplatePopupComponent} from '../../../pages/template/template-popup/tem
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
 import {catchError, filter, first, mergeMap} from 'rxjs/operators';
 import {ListRow} from '../../../model/list/list-row';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
 
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
-    styleUrls: ['./list-panel.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./list-panel.component.scss']
 })
 export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
 
@@ -81,7 +81,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
                 private router: Router, private auth: AngularFireAuth, private userService: UserService,
-                private dialog: MatDialog, private templateService: ListTemplateService) {
+                private dialog: MatDialog, private templateService: ListTemplateService, private linkTools: LinkToolsService) {
         super();
     }
 
@@ -92,7 +92,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     }
 
     public getLink(): string {
-        return `${window.location.protocol}//${window.location.host}/list/${this.list.$key}`;
+        return this.linkTools.getLink(`/list/${this.list.$key}`);
     }
 
     public openPermissions(list: List): void {
