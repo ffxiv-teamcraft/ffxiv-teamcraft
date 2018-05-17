@@ -10,6 +10,11 @@ export class ListTemplate extends CustomLink {
     }
 
     getUrl(): string {
-        return `${window.location.protocol}//${window.location.host}/template/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
+        // If we're inside Electron, create a direct Teamcraft link.
+        if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
+            return `https://ffxivteamcraft.com/template/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
+        } else {
+            return `${window.location.protocol}//${window.location.host}/template/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
+        }
     }
 }
