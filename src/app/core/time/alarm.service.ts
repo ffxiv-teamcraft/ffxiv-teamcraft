@@ -14,6 +14,10 @@ import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
 import {first, map, mergeMap} from 'rxjs/operators';
 import {AppUser} from '../../model/list/app-user';
+import {PlatformService} from '../tools/platform.service';
+import {IpcService} from '../electron/ipc.service';
+import {MapService} from '../../modules/map/map.service';
+import {I18nToolsService} from '../tools/i18n-tools.service';
 
 @Injectable()
 export class AlarmService {
@@ -23,7 +27,8 @@ export class AlarmService {
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
                 private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
-                private userService: UserService) {
+                private userService: UserService, private platform: PlatformService, private ipc: IpcService,
+                private mapService: MapService, private i18nTools: I18nToolsService) {
         this.userService.getUserData().pipe(map((user: AppUser) => user.alarms || []))
             .subscribe(alarms => this.loadAlarms(...alarms));
     }
@@ -174,22 +179,38 @@ export class AlarmService {
                 this.translator.instant('ALARM.See_on_map'),
                 {duration: 5000})
                 .onAction().subscribe(() => {
-                    this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
-                });
+                this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
+            });
             const audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
             audio.loop = false;
             audio.volume = this.settings.alarmVolume;
             audio.play();
-            this.pushNotificationsService.create(this.translator.instant('ALARM.Spawned',
-                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-                {
-                    icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
-                    sticky: false,
-                    renotify: false,
-                    body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
-                        `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
-                        (alarm.slot !== null ? `(${alarm.slot})` : '')
-                }
+            this.mapService.getMapById(alarm.zoneId).pipe(
+                map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
+                map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
+                mergeMap(closestAetheryteName => {
+                    const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
+                    const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
+                        `${closestAetheryteName}` +
+                        (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+                    if (this.platform.isDesktop()) {
+                        this.ipc.send('notification', {
+                            title: notificationTitle,
+                            content: notificationBody,
+                            icon: notificationIcon
+                        });
+                    } else {
+                        return this.pushNotificationsService.create(notificationTitle,
+                            {
+                                icon: notificationIcon,
+                                sticky: false,
+                                renotify: false,
+                                body: notificationBody
+                            }
+                        )
+                    }
+                })
             ).subscribe(() => {
             }, err => {
                 // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.

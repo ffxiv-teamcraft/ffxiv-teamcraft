@@ -1,5 +1,7 @@
 {
-  "name": "teamcraft",
+  "name": "FFXIV-Teamcraft",
+  "description": "Collaborative crafting made easy",
+  "author": "Flavien Normand <contact@flavien-normand.fr>",
   "version": "3.6.1",
   "license": "MIT",
   "main": "main.js",
@@ -11,6 +13,9 @@
     ],
     "mac": {
       "category": "public.app-category.games"
+    },
+    "win": {
+      "icon": "build/icon.ico"
     }
   },
   "scripts": {
@@ -32,9 +37,9 @@
     "prerelease": "npm test",
     "commit": "git-cz",
     "translations:clean": "node tools/translations-cleaner.js",
-    "build:watch": "node ./build/prebuild.js && ng build --watch --target=production --env=prod",
+    "build:watch": "node ./build/prebuild.js && ng build --watch --prod",
     "electron:start:dev": "electron ./main.js --serve",
-    "electron:start:prod": "node ./build/prebuild.js && ng build --prod && electron ./main.js",
+    "electron:start:prod": "electron ./main.js",
     "electron:build": "node ./build/prebuild.js && ng build --prod && npm run dist",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",

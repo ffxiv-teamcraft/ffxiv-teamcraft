@@ -1,41 +1,29 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {UserService} from '../database/user.service';
-import {IpcRenderer} from 'electron';
 import {firebase} from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
 import {AppUser} from '../../model/list/app-user';
 import {first} from 'rxjs/operators';
+import {PlatformService} from '../tools/platform.service';
+import {IpcService} from '../electron/ipc.service';
 
 declare const ga: Function;
 
 @Injectable()
 export class OauthService {
 
-    private _ipc: IpcRenderer | undefined = void 0;
-
-    constructor(private af: AngularFireAuth, private userService: UserService) {
-        // Only load ipc if we're running inside electron
-        if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
-            if (window.require) {
-                try {
-                    this._ipc = window.require('electron').ipcRenderer;
-                } catch (e) {
-                    throw e;
-                }
-            } else {
-                console.warn('Electron\'s IPC was not loaded');
-            }
-        }
+    constructor(private af: AngularFireAuth, private userService: UserService, private platformService: PlatformService,
+                private _ipc: IpcService) {
     }
 
     public login(provider: any): Promise<any> {
         return new Promise((resolve, reject) => {
             let signInPromise: Promise<any>;
             // If we're running inside electron, we need a special implementation.
-            if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
+            if (this.platformService.isDesktop()) {
                 signInPromise = new Promise((innerResolve) => {
                     this._ipc.on('oauth-reply', (event, {access_token}) => {
                         this.af.auth

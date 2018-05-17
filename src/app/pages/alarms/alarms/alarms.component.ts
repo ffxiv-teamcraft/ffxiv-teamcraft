@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
-import {Observable, BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {MatDialog} from '@angular/material';
 import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.component';
@@ -19,7 +19,7 @@ export class AlarmsComponent {
 
     compact: boolean = this.settings.compactAlarms;
 
-    muted: boolean = this.settings.compactAlarms;
+    muted: boolean = this.settings.alarmsMuted;
 
     time: Date = new Date();
 

@@ -26,6 +26,7 @@ import {Announcement} from './modules/common-components/announcement-popup/annou
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs/index';
 import {debounceTime, distinctUntilChanged, first, map} from 'rxjs/operators';
+import {PlatformService} from './core/tools/platform.service';
 
 declare const ga: Function;
 
@@ -84,7 +85,8 @@ export class AppComponent implements OnInit {
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
-                private pendingChangesService: PendingChangesService) {
+                private pendingChangesService: PendingChangesService,
+                private platformService: PlatformService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -170,7 +172,7 @@ export class AppComponent implements OnInit {
 
     @HostListener('window:beforeunload', ['$event'])
     onBeforeUnload($event) {
-        if (this.pendingChangesService.hasPendingChanges()) {
+        if (this.pendingChangesService.hasPendingChanges() && !this.platformService.isDesktop()) {
             $event.returnValue = true;
         }
     }

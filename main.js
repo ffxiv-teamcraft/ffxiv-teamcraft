@@ -1,4 +1,5 @@
-const {app, ipcMain, BrowserWindow} = require('electron');
+const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
+const path = require('path');
 
 const electronOauth2 = require('electron-oauth2');
 
@@ -9,6 +10,9 @@ serve = args.some(val => val === '--serve');
 if (serve) {
     require('electron-reload')(__dirname, {});
 }
+
+let tray;
+let nativeIcon;
 
 function createWindow() {
     // Create the browser window.
@@ -28,6 +32,24 @@ function createWindow() {
     // Event when the window is closed.
     win.on('closed', function () {
         win = null
+    });
+
+    const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
+    nativeIcon = nativeImage.createFromPath(iconPath);
+    const trayIcon = nativeIcon.resize({width: 16, height: 16});
+    tray = new Tray(trayIcon);
+
+    tray.on('click', () => {
+        win.isVisible() ? win.hide() : win.show()
+    });
+    win.on('show', () => {
+        tray.setHighlightMode('always')
+    });
+    win.on('hide', () => {
+        tray.setHighlightMode('never')
+    });
+    tray.on('balloon-click', () => {
+        !win.isVisible() ? win.show() : null;
     });
 }
 
@@ -87,11 +109,17 @@ ipcMain.on('oauth', (event, providerType) => {
             });
     }
     if (providerType === 'facebook.com') {
-        facebookOauth.getAccessToken({scope: 'https://www.googleapis.com/auth/userinfo.profile'})
+        facebookOauth.getAccessToken({})
             .then(token => {
                 event.sender.send('google-oauth-reply', token);
             }, err => {
                 console.log('Error while getting token', err);
             });
     }
+});
+
+ipcMain.on('notification', (event, config) => {
+    // Override icon for now, as getting the icon from url doesn't seem to be working properly.
+    config.icon = nativeIcon;
+    tray.displayBalloon(config);
 });

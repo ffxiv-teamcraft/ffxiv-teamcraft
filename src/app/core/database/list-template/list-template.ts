@@ -1,4 +1,4 @@
-import {CustomLink} from '../custom-links/costum-link';
+import {CustomLink} from '../custom-links/custom-link';
 
 export class ListTemplate extends CustomLink {
     public readonly template = true;

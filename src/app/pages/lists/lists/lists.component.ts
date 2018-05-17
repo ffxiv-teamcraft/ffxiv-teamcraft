@@ -24,7 +24,7 @@ import {WorkshopNamePopupComponent} from '../workshop-name-popup/workshop-name-p
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';

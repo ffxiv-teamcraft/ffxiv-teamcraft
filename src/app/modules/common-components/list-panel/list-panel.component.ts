@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
@@ -10,7 +10,7 @@ import {Observable, of} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';

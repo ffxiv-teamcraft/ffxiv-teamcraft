@@ -33,6 +33,7 @@ export class TimerOptionsPopupComponent {
     }
 
     public setHoursBefore(hours: number): void {
+        console.log(hours);
         this.settings.alarmHoursBefore = hours;
     }
 

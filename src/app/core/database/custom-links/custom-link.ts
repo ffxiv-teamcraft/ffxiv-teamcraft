@@ -11,7 +11,8 @@ export class CustomLink extends DataModel {
         return this.redirectTo.split('/')[0];
     }
 
-    getUrl(): string {// If we're inside Electron, create a direct Teamcraft link.
+    getUrl(): string {
+        // If we're inside Electron, create a direct Teamcraft link.
         if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
             return `https://ffxivteamcraft.com/link/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
         } else {
