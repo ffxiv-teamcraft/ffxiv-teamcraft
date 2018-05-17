@@ -71,6 +71,8 @@ export class AppComponent implements OnInit {
 
     private characterAddPopupOpened = false;
 
+    public overlay = false;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -117,9 +119,11 @@ export class AppComponent implements OnInit {
                     return true;
                 })
             ).subscribe((event: any) => {
+            this.overlay = event.url.indexOf('?overlay');
             ga('set', 'page', event.url);
             ga('send', 'pageview');
         });
+
 
         // Firebase Auth
         this.authState = this.auth.authState;

@@ -1,5 +1,5 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary" class="app-toolbar">
+    <mat-toolbar color="primary" class="app-toolbar" *ngIf="!overlay">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -20,7 +20,7 @@
     </mat-toolbar>
     <mat-sidenav-container autosize="true">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar}" class="nav-sidebar">
+                     [ngClass]="{'compact': settings.compactSidebar}" class="nav-sidebar" *ngIf="!overlay">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
@@ -191,7 +191,7 @@
             <button mat-mini-fab class="alarms-sidebar-trigger"
                     matTooltip="{{'Timers' | translate}}"
                     matTooltipPosition="left"
-                    *ngIf="!mobile" (click)="timers.toggle()"
+                    *ngIf="!mobile && !overlay" (click)="timers.toggle()"
                     [ngClass]="{'opened': timers?.opened}">
                 <mat-icon *ngIf="!timers?.opened">alarm</mat-icon>
                 <mat-icon *ngIf="timers?.opened">keyboard_arrow_right</mat-icon>
