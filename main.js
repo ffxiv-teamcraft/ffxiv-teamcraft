@@ -1,4 +1,4 @@
-const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
+const {app, ipcMain, BrowserWindow, Tray, nativeImage, shell} = require('electron');
 const path = require('path');
 
 const electronOauth2 = require('electron-oauth2');
@@ -52,6 +52,10 @@ function createWindow() {
     });
     tray.on('balloon-click', () => {
         !win.isVisible() ? win.show() : null;
+    });
+    win.on('new-window', function (event, url) {
+        event.preventDefault();
+        shell.openExternal(url);
     });
 }
 
