@@ -51,9 +51,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                             delete snap.payload;
                             return this.serializer.deserialize<T>(valueWithKey, this.getClass());
                         }),
-                        debounceTime(50),
-                        publishReplay(1),
-                        refCount()
+                        debounceTime(50)
                     ).subscribe(data => {
                         this.cache[uid].subject.next({data: data})
                     }, err => {
@@ -68,7 +66,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                 } else {
                     return observableThrowError(response.error)
                 }
-            }));
+            })
+        );
     }
 
     update(uid: string, data: T): Observable<void> {

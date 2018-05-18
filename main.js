@@ -1,4 +1,5 @@
-const {app, ipcMain, BrowserWindow, Tray, nativeImage, shell} = require('electron');
+const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
+const open = require('open');
 const path = require('path');
 
 const electronOauth2 = require('electron-oauth2');
@@ -24,7 +25,6 @@ function createWindow() {
         backgroundColor: '#ffffff',
         icon: `file://${__dirname}/dist/assets/logo.png`
     });
-
 
     win.loadURL(`file://${__dirname}/dist/index.html`);
 
@@ -55,7 +55,7 @@ function createWindow() {
     });
     win.on('new-window', function (event, url) {
         event.preventDefault();
-        shell.openExternal(url);
+        open(url);
     });
 }
 
@@ -142,6 +142,7 @@ ipcMain.on('overlay', (event, url) => {
             nodeIntegration: false
         }
     };
+    console.log(__dirname);
     const overlay = new BrowserWindow(overlayWindowConfig);
     overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
     openedOverlays[url] = overlay;

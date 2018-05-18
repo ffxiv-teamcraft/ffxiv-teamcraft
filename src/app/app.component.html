@@ -20,7 +20,7 @@
     </mat-toolbar>
     <mat-sidenav-container autosize="true" [class.overlay]="overlay">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar}" class="nav-sidebar" *ngIf="!overlay">
+                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>

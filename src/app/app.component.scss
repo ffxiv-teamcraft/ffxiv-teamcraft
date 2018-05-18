@@ -44,6 +44,9 @@
         }
         .mat-sidenav {
             transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            &.overlay {
+                display: none;
+            }
             &.compact {
                 transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
                 width: 68px;

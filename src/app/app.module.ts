@@ -61,9 +61,8 @@ import {WikiModule} from './pages/wiki/wiki.module';
 import {SimulatorModule} from './pages/simulator/simulator.module';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {IS_ELECTRON} from './core/tools/platform.service';
-import {APP_BASE_HREF} from '@angular/common';
 
-export function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
@@ -72,8 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppComponent,
     ],
     providers: [
-        {provide: FirebaseOptionsToken, useValue: environment.firebase},
-        {provide: APP_BASE_HREF, useValue: IS_ELECTRON ? '' : '/'}
+        {provide: FirebaseOptionsToken, useValue: environment.firebase}
     ],
     imports: [
         FlexLayoutModule,
