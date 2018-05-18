@@ -88,6 +88,11 @@ export class AlarmService {
         alarms.forEach(alarm => {
             if (Array.from(this._alarms.keys()).find(key => key.itemId === alarm.itemId
                 && key.spawn === alarm.spawn) === undefined) {
+                alarm.aetheryte$ = this.mapService.getMapById(alarm.zoneId).pipe(
+                    map(mapData => this.mapService
+                        .getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})
+                    )
+                );
                 this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
                     if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) &&
                         time.getUTCMinutes() === 0) {
@@ -130,7 +135,7 @@ export class AlarmService {
                                 areaId: node.areaid,
                                 coords: node.coords,
                                 zoneId: node.zoneid,
-                                type: this.getType(node),
+                                type: this.getType(node)
                             });
                         });
                     });
@@ -150,7 +155,7 @@ export class AlarmService {
                         areaId: node.areaid,
                         coords: node.coords,
                         zoneId: node.zoneid,
-                        type: this.getType(node),
+                        type: this.getType(node)
                     });
                 });
             }

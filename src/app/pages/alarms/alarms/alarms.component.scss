@@ -7,6 +7,28 @@
     }
 }
 
+mat-list.overlay {
+    margin-top: 14px;
+}
+
+.overlay-bar {
+    width: 100%;
+    -webkit-app-region: drag;
+    position: fixed;
+    top: 0;
+    background-color: rgba(123, 123, 123, .7);
+    display: flex;
+    justify-content: flex-end;
+    .close-icon {
+        cursor: pointer;
+        -webkit-app-region: no-drag;
+    }
+}
+
+.compact-timer {
+    text-align: right;
+}
+
 .compact-alarm {
     margin: 5px 0;
 }

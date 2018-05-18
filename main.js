@@ -14,6 +14,8 @@ if (serve) {
 let tray;
 let nativeIcon;
 
+let openedOverlays = {};
+
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
@@ -122,4 +124,27 @@ ipcMain.on('notification', (event, config) => {
     // Override icon for now, as getting the icon from url doesn't seem to be working properly.
     config.icon = nativeIcon;
     tray.displayBalloon(config);
+});
+
+ipcMain.on('overlay', (event, url) => {
+    const overlayWindowConfig = {
+        height: 400,
+        width: 280,
+        resizable: true,
+        frame: false,
+        alwaysOnTop: true,
+        autoHideMenuBar: true,
+        webPreferences: {
+            nodeIntegration: false
+        }
+    };
+    const overlay = new BrowserWindow(overlayWindowConfig);
+    overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
+    openedOverlays[url] = overlay;
+});
+
+ipcMain.on('overlay-close', (event, url) => {
+    if (openedOverlays[url] !== undefined) {
+        openedOverlays[url].close();
+    }
 });

@@ -25,7 +25,7 @@ import {AnnouncementPopupComponent} from './modules/common-components/announceme
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs/index';
-import {debounceTime, distinctUntilChanged, first, map} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, first, map} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
 
 declare const ga: Function;
@@ -119,7 +119,7 @@ export class AppComponent implements OnInit {
                     return true;
                 })
             ).subscribe((event: any) => {
-            this.overlay = event.url.indexOf('?overlay');
+            this.overlay = event.url.indexOf('?overlay') > -1;
             ga('set', 'page', event.url);
             ga('send', 'pageview');
         });
@@ -143,6 +143,9 @@ export class AppComponent implements OnInit {
         // Annoucement
         data.object('/announcement')
             .valueChanges()
+            .pipe(
+                filter(() => !this.overlay)
+            )
             .subscribe((announcement: Announcement) => {
                 let lastLS = localStorage.getItem('announcement:last');
                 if (lastLS !== null && !lastLS.startsWith('{')) {
@@ -226,7 +229,7 @@ export class AppComponent implements OnInit {
             }
             // Anonymous sign in with "please register" snack.
             this.auth.authState.pipe(debounceTime(1000)).subscribe(state => {
-                if (state !== null && state.isAnonymous && !this.isRegistering) {
+                if (state !== null && state.isAnonymous && !this.isRegistering && !this.overlay) {
                     this.registrationSnackRef = this.snack.open(
                         this.translate.instant('Anonymous_Warning'),
                         this.translate.instant('Registration'),

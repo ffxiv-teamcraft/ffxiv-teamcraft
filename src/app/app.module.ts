@@ -60,6 +60,8 @@ import {MarkdownModule} from 'ngx-markdown';
 import {WikiModule} from './pages/wiki/wiki.module';
 import {SimulatorModule} from './pages/simulator/simulator.module';
 import {NgDragDropModule} from 'ng-drag-drop';
+import {IS_ELECTRON} from './core/tools/platform.service';
+import {APP_BASE_HREF} from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -70,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppComponent,
     ],
     providers: [
-        {provide: FirebaseOptionsToken, useValue: environment.firebase}
+        {provide: FirebaseOptionsToken, useValue: environment.firebase},
+        {provide: APP_BASE_HREF, useValue: IS_ELECTRON ? '' : '/'}
     ],
     imports: [
         FlexLayoutModule,
@@ -91,7 +94,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AngularFireAuthModule,
         AngularFirestoreModule,
 
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], {useHash: IS_ELECTRON}),
 
         HttpClientModule,
         // Animations for material.

@@ -13,6 +13,9 @@
         top: 0;
         display: flex;
         min-height: 64px;
+        &.overlay {
+            display: none;
+        }
         mat-menu {
             margin-left: 20px;
         }
@@ -31,6 +34,11 @@
     }
     mat-sidenav-container {
         height: calc(100vh - 64px);
+        &.overlay {
+            height: 100%;
+            margin-top: -64px;
+            -webkit-app-region: no-drag;
+        }
         mat-list-item {
             touch-action: auto !important;
         }
@@ -128,6 +136,10 @@
                 width: 90%;
                 margin: auto;
                 min-height: 20%;
+
+                &.overlay {
+                    padding: 0;
+                }
 
                 @include client-width('large') {
                     width: 90%;

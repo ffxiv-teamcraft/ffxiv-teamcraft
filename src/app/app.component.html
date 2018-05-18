@@ -1,5 +1,5 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary" class="app-toolbar" *ngIf="!overlay">
+    <mat-toolbar color="primary" class="app-toolbar" [class.overlay]="overlay">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -18,7 +18,7 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container autosize="true">
+    <mat-sidenav-container autosize="true" [class.overlay]="overlay">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
                      [ngClass]="{'compact': settings.compactSidebar}" class="nav-sidebar" *ngIf="!overlay">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
@@ -196,7 +196,7 @@
                 <mat-icon *ngIf="!timers?.opened">alarm</mat-icon>
                 <mat-icon *ngIf="timers?.opened">keyboard_arrow_right</mat-icon>
             </button>
-            <div class="content-middle">
+            <div class="content-middle" [class.overlay]="overlay">
                 <router-outlet></router-outlet>
             </div>
         </div>

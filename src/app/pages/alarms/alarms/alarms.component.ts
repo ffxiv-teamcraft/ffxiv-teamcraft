@@ -9,6 +9,9 @@ import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-o
 import {SettingsService} from '../../settings/settings.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {filter, map, switchMap, tap} from 'rxjs/operators';
+import {IpcService} from '../../../core/electron/ipc.service';
+import {PlatformService} from '../../../core/tools/platform.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-alarms',
@@ -25,8 +28,17 @@ export class AlarmsComponent {
 
     private reloader: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
+    desktop = false;
+
+    overlay = false;
+
     constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog,
-                private settings: SettingsService, private media: ObservableMedia) {
+                private settings: SettingsService, private media: ObservableMedia, private platformService: PlatformService,
+                private ipc: IpcService, private route: ActivatedRoute) {
+        this.desktop = platformService.isDesktop();
+        route.queryParams.subscribe(params => {
+            this.overlay = params.overlay === 'true';
+        })
     }
 
     public getAlarms(): Observable<Alarm[]> {
@@ -93,6 +105,14 @@ export class AlarmsComponent {
                 this.alarmService.registerAlarms(...alarms);
                 this.reloader.next(null);
             });
+    }
+
+    showOverlay(): void {
+        this.ipc.send('overlay', '/alarms');
+    }
+
+    closeOverlay(): void {
+        window.close();
     }
 
     getCols(): number {
