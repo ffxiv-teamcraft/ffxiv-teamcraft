@@ -1,6 +1,8 @@
 const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
+const {autoUpdater} = require('electron-updater');
 const open = require('open');
 const path = require('path');
+const windowStateKeeper = require('electron-window-state');
 
 const electronOauth2 = require('electron-oauth2');
 
@@ -18,13 +20,28 @@ let nativeIcon;
 let openedOverlays = {};
 
 function createWindow() {
-    // Create the browser window.
+
+    // Load the previous state with fallback to defaults
+    let mainWindowState = windowStateKeeper({
+        id: 'main',
+        defaultWidth: 1280,
+        defaultHeight: 720
+    });
+
+    // Create the window using the state information
     win = new BrowserWindow({
-        width: 1280,
-        height: 720,
+        x: mainWindowState.x,
+        y: mainWindowState.y,
+        width: mainWindowState.width,
+        height: mainWindowState.height,
         backgroundColor: '#ffffff',
         icon: `file://${__dirname}/dist/assets/logo.png`
     });
+
+    // Let us register listeners on the window, so we can update the state
+    // automatically (the listeners will be removed when the window is closed)
+    // and restore the maximized or full screen state
+    mainWindowState.manage(win);
 
     win.loadURL(`file://${__dirname}/dist/index.html`);
 
@@ -57,6 +74,8 @@ function createWindow() {
         event.preventDefault();
         open(url);
     });
+
+    autoUpdater.checkForUpdatesAndNotify();
 }
 
 // Create window on electron intialization
@@ -131,9 +150,18 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('overlay', (event, url) => {
+    let overlayWindowState = windowStateKeeper({
+        id: url,
+        defaultWidth: 280,
+        defaultHeight: 400
+    });
+
+    // Create the window using the state information
     const overlayWindowConfig = {
-        height: 400,
-        width: 280,
+        height: overlayWindowState.height,
+        width: overlayWindowState.width,
+        x: overlayWindowState.x,
+        y: overlayWindowState.y,
         resizable: true,
         frame: false,
         alwaysOnTop: true,
@@ -142,10 +170,12 @@ ipcMain.on('overlay', (event, url) => {
             nodeIntegration: false
         }
     };
-    console.log(__dirname);
+
     const overlay = new BrowserWindow(overlayWindowConfig);
     overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
     openedOverlays[url] = overlay;
+
+    overlayWindowState.manage(overlay);
 });
 
 ipcMain.on('overlay-close', (event, url) => {
