@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-beta.0"></a>
+# [4.0.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.1...v4.0.0-beta.0) (2018-05-19)
+
+
+### Bug Fixes
+
+* **angular6:** lists page sometimes stuck on loading ([d19c3b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/d19c3b4))
+* **mobile:** fixed a bug with sidebar not scrollable on mobile view ([1a9b989](https://github.com/Supamiu/ffxiv-teamcraft/commit/1a9b989))
+* **simulator:** fixed an issue with users having no gearsets ([cb718aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/cb718aa))
+* **simulator:** it's no longer possible to edit stats without a job selected ([e0022e8](https://github.com/Supamiu/ffxiv-teamcraft/commit/e0022e8)), closes [#338](https://github.com/Supamiu/ffxiv-teamcraft/issues/338)
+* classic login considering email as not verified ([89a8254](https://github.com/Supamiu/ffxiv-teamcraft/commit/89a8254))
+* crafter levels are now taken from lodestone profile, will be more reactive to changes ([010e76c](https://github.com/Supamiu/ffxiv-teamcraft/commit/010e76c))
+* fixed issues with firebase SDK 5 migration ([1167078](https://github.com/Supamiu/ffxiv-teamcraft/commit/1167078))
+* gathering location search broken with some strange nodes ([33bc01a](https://github.com/Supamiu/ffxiv-teamcraft/commit/33bc01a))
+* slot is now shown ([b3e6b5f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b3e6b5f))
+
+
+### Features
+
+* **desktop:** new overlay window for alarms ([14cde5a](https://github.com/Supamiu/ffxiv-teamcraft/commit/14cde5a))
+
+
+
 <a name="3.6.1"></a>
 ## [3.6.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.0...v3.6.1) (2018-05-10)
 
