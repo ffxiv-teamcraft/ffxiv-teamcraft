@@ -4,6 +4,7 @@
 src/environments/version.ts
 
 # compiled output
+/release
 /dist
 /tmp
 /out-tsc

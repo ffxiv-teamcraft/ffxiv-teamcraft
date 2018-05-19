@@ -7,6 +7,9 @@
   "main": "main.js",
   "build": {
     "appId": "ffxivteamcraft",
+    "directories": {
+      "output": "release"
+    },
     "files": [
       "main.js",
       "dist"
@@ -16,6 +19,10 @@
     },
     "win": {
       "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
     }
   },
   "scripts": {
