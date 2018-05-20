@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-rc.2"></a>
+# [4.0.0-rc.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.1...v4.0.0-rc.2) (2018-05-20)
+
+
+### Bug Fixes
+
+* better approach for gatherings page alarm creation button ([0685a6f](https://github.com/Supamiu/ffxiv-teamcraft/commit/0685a6f)), closes [#346](https://github.com/Supamiu/ffxiv-teamcraft/issues/346)
+* broken HQ icons in simulator page ([f10186f](https://github.com/Supamiu/ffxiv-teamcraft/commit/f10186f))
+* classic login considering email as not verified ([89a8254](https://github.com/Supamiu/ffxiv-teamcraft/commit/89a8254))
+* community lists sometimes reloading with no reason ([17e63e6](https://github.com/Supamiu/ffxiv-teamcraft/commit/17e63e6))
+* crafter levels are now taken from lodestone profile, will be more reactive to changes ([010e76c](https://github.com/Supamiu/ffxiv-teamcraft/commit/010e76c))
+* fixed a bug that was blocking items in workshop lists ([7717364](https://github.com/Supamiu/ffxiv-teamcraft/commit/7717364))
+* fixed an issue with alarms persistence ([922a39b](https://github.com/Supamiu/ffxiv-teamcraft/commit/922a39b))
+* fixed an issue with ffxivcrafting amount in mobile layouts ([3be1005](https://github.com/Supamiu/ffxiv-teamcraft/commit/3be1005))
+* fixed issues with firebase SDK 5 migration ([1167078](https://github.com/Supamiu/ffxiv-teamcraft/commit/1167078))
+* Food and medicine names are now shown in loaded rotation configuration ([b5d70f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5d70f1))
+* gathering location search broken with some strange nodes ([33bc01a](https://github.com/Supamiu/ffxiv-teamcraft/commit/33bc01a))
+* masterbooks not saving in some cases ([ad2c245](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad2c245))
+* slot is now shown ([b3e6b5f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b3e6b5f))
+* sometimes some or all lists don't show until page refresh ([8b053c1](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b053c1)), closes [#344](https://github.com/Supamiu/ffxiv-teamcraft/issues/344)
+* tags not saved properly ([ad8e9c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad8e9c9))
+* wrong level for crafters fetched from xivdb ([122ab11](https://github.com/Supamiu/ffxiv-teamcraft/commit/122ab11))
+* **angular6:** lists page sometimes stuck on loading ([d19c3b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/d19c3b4))
+* **mobile:** fixed a bug with sidebar not scrollable on mobile view ([1a9b989](https://github.com/Supamiu/ffxiv-teamcraft/commit/1a9b989))
+* **simulator:** fixed an issue with users having no gearsets ([cb718aa](https://github.com/Supamiu/ffxiv-teamcraft/commit/cb718aa))
+* **simulator:** it's no longer possible to edit stats without a job selected ([e0022e8](https://github.com/Supamiu/ffxiv-teamcraft/commit/e0022e8)), closes [#338](https://github.com/Supamiu/ffxiv-teamcraft/issues/338)
+
+
+### Features
+
+* **desktop:** new overlay window for alarms ([14cde5a](https://github.com/Supamiu/ffxiv-teamcraft/commit/14cde5a))
+* **desktop:** new topbar for better UX ([0d35da3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d35da3))
+* **simulator:** you can now rename your rotations ([aaa80af](https://github.com/Supamiu/ffxiv-teamcraft/commit/aaa80af))
+
+
+
 <a name="4.0.0-rc.1"></a>
 # [4.0.0-rc.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.0-beta.1...v4.0.0-rc.1) (2018-05-20)
 
