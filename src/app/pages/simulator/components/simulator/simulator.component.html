@@ -138,6 +138,10 @@
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedFood !== undefined">
+                        <div class="details-row">
+                            <b>{{_selectedFood.itemId | itemName | i18n}}</b>
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedFood.hq">
+                        </div>
                         <div class="details-row" *ngFor="let bonus of _selectedFood.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
@@ -154,6 +158,10 @@
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
+                        <div class="details-row">
+                            <b>{{_selectedMedicine.itemId | itemName | i18n}}</b>
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedMedicine.hq">
+                        </div>
                         <div class="details-row" *ngFor="let bonus of _selectedMedicine.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
