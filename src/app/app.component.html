@@ -1,6 +1,8 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
     <div class="desktop-bar" *ngIf="platformService.isDesktop()">
-        <mat-icon *ngIf="mobile" (click)="sidenav.toggle()" class="theme-text-color desktop-bar-button">menu</mat-icon>
+        <mat-icon *ngIf="mobile && !overlay" (click)="sidenav.toggle()" class="theme-text-color desktop-bar-button">
+            menu
+        </mat-icon>
         <div class="title theme-text-color draggable">FFXIV Teamcraft</div>
         <div class="version theme-text-color draggable" *ngIf="!overlay"><i>v{{version}}</i></div>
         <div class="desktop-bar-button theme-text-color lang-button" [matMenuTriggerFor]="langMenu" *ngIf="!overlay">

@@ -80,7 +80,10 @@ function createWindow() {
 }
 
 // Create window on electron intialization
-app.on('ready', createWindow);
+app.on('ready', () => {
+    autoUpdater.checkForUpdatesAndNotify();
+    createWindow();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -97,6 +100,7 @@ app.on('activate', function () {
         createWindow()
     }
 });
+
 const googleOauthConfig = {
     clientId: '1082504004791-u79p0kbo22kqn07b97qjsskllgro50o6.apps.googleusercontent.com',
     clientSecret: 'VNQtDrv0NQbMqxjQ2o8ZTtai',
