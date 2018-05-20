@@ -39,9 +39,9 @@ export class DataService {
                                     .map(set => {
                                         // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
                                         // default to set level.
-                                        const setLevel = Object.keys(character.classjobs)
+                                        const setLevel = (Object.keys(character.classjobs)
                                             .map(key => character.classjobs[key])
-                                            .find(job => job.name === set.role.name) || set.level;
+                                            .find(job => job.name === set.role.name) || set).level;
                                         return {
                                             ilvl: set.item_level_avg,
                                             jobId: set.classjob_id,
