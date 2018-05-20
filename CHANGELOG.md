@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-rc.0"></a>
+# [4.0.0-rc.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.0-beta.1...v4.0.0-rc.0) (2018-05-20)
+
+
+### Bug Fixes
+
+* community lists sometimes reloading with no reason ([17e63e6](https://github.com/Supamiu/ffxiv-teamcraft/commit/17e63e6))
+* masterbooks not saving in some cases ([ad2c245](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad2c245))
+* sometimes some or all lists don't show until page refresh ([8b053c1](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b053c1)), closes [#344](https://github.com/Supamiu/ffxiv-teamcraft/issues/344)
+* tags not saved properly ([ad8e9c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/ad8e9c9))
+
+
+
 <a name="4.0.0-beta.1"></a>
 # [4.0.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.0-beta.0...v4.0.0-beta.1) (2018-05-20)
 
