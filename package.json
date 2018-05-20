@@ -2,7 +2,7 @@
   "name": "FFXIV-Teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "4.0.0-beta.0",
+  "version": "4.0.0-beta.1",
   "license": "MIT",
   "main": "main.js",
   "build": {
@@ -135,6 +135,11 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "skip": {
+      "tag": true
     }
   }
 }

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-beta.1"></a>
+# [4.0.0-beta.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.0-beta.0...v4.0.0-beta.1) (2018-05-20)
+
+
+### Bug Fixes
+
+* fixed a bug that was blocking items in workshop lists ([7717364](https://github.com/Supamiu/ffxiv-teamcraft/commit/7717364))
+
+
+### Features
+
+* **desktop:** new topbar for better UX ([0d35da3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d35da3))
+
+
+
 <a name="4.0.0-beta.0"></a>
 # [4.0.0-beta.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v3.6.1...v4.0.0-beta.0) (2018-05-19)
 
