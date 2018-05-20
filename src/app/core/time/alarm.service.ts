@@ -424,7 +424,10 @@ export class AlarmService {
         this.userService.getUserData().pipe(
             first(),
             mergeMap((user: AppUser) => {
-                user.alarms = Array.from(this._alarms.keys());
+                user.alarms = Array.from(this._alarms.keys()).map(alarm => {
+                    delete alarm.aetheryte$;
+                    return alarm;
+                });
                 return this.userService.set(user.$key, user);
             }),
             first()

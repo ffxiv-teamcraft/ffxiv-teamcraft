@@ -428,6 +428,7 @@
     "Rotation_not_found": "Rotation nicht gefunden",
     "Confirm_delete": "Willst du diese Rotation wirklich löschen?",
     "Toggle_snapshot_mode": "Snapshot-Modus umschalten",
+    "Rename_rotation": "Rotation umbenennen",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",
       "Recipe_level": "Level für Rezept",
