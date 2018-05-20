@@ -5,6 +5,9 @@
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{rotation.getName()}}
+                    <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
+                        <mat-icon>mode_edit</mat-icon>
+                    </button>
                 </mat-panel-title>
                 <button mat-icon-button *ngIf="linkButton"
                         matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"

@@ -433,6 +433,7 @@
     "Toggle_snapshot_mode": "Toggle snapshot mode",
     "Open_in_external": "Open in {{name}}'s sim",
     "Select_job_please": "Please select a job",
+    "Rename_rotation": "Rename Rotation",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",

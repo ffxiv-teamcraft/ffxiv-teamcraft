@@ -10,8 +10,9 @@ import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {CustomLink} from '../../../../core/database/custom-links/custom-link';
 import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
-import {filter, mergeMap, tap} from 'rxjs/operators';
+import {filter, map, mergeMap, tap} from 'rxjs/operators';
 import {LinkToolsService} from '../../../../core/tools/link-tools.service';
+import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
 
 @Component({
     selector: 'app-rotations-page',
@@ -35,6 +36,19 @@ export class RotationsPageComponent {
                     return this.rotationsService.getUserRotations(user.$key);
                 })
             );
+    }
+
+    editRotationName(rotation: CraftingRotation): void {
+        this.dialog.open(RotationNamePopupComponent, {data: rotation})
+            .afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res.length > 0),
+                map(name => {
+                    rotation.name = name;
+                    return rotation;
+                }),
+                mergeMap(renamedRotation => this.rotationsService.set(renamedRotation.$key, renamedRotation))
+            ).subscribe();
     }
 
     public getSteps(rotation: CraftingRotation): CraftingAction[] {
