@@ -17,6 +17,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     getPublicLists(): Observable<List[]> {
+        this.clearCache();
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
             .snapshotChanges()
             .pipe(
@@ -28,6 +29,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     getPublicListsByAuthor(uid: string): Observable<List[]> {
+        this.clearCache();
         return this.listsByAuthorRef(uid).pipe(map(lists => lists.filter(list => list.public === true)));
     }
 
@@ -50,6 +52,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     private listsByAuthorRef(uid: string): Observable<List[]> {
+        this.clearCache();
         return this.firestore
             .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
             .snapshotChanges()
