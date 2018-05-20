@@ -17,7 +17,7 @@ export class MasterbooksPopupComponent {
 
     setMasterbook(id: number, active: boolean): void {
         // We set a default value if it's currently undefined.
-        this.data.user.masterbooks = this.data.user.masterbooks || [];
+        // this.data.user.masterbooks = this.data.user.masterbooks || [];
         if (active) {
             this.data.user.masterbooks.push(id);
         } else {
@@ -39,6 +39,6 @@ export class MasterbooksPopupComponent {
      * Submits the data to save masterbooks in database.
      */
     submit(): void {
-        this.userService.update(this.data.user.$key, this.data.user);
+        this.userService.update(this.data.user.$key, this.data.user).subscribe();
     }
 }
