@@ -1,5 +1,32 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary" class="app-toolbar" [class.overlay]="overlay">
+    <div class="desktop-bar" *ngIf="platformService.isDesktop()">
+        <div class="title theme-text-color draggable">FFXIV Teamcraft</div>
+        <div class="version theme-text-color draggable" *ngIf="!overlay"><i>v{{version}}</i></div>
+        <div class="desktop-bar-button theme-text-color lang-button" [matMenuTriggerFor]="langMenu" *ngIf="!overlay">
+            {{locale | uppercase}}
+        </div>
+        <div class="spacer draggable"></div>
+        <mat-icon (click)="openingUrl = true" class="desktop-bar-button open-url theme-text-color" *ngIf="!overlay"
+                  matTooltip="{{'COMMON.Open_url' | translate}}">
+            open_in_browser
+        </mat-icon>
+        <div class="spacer draggable"></div>
+        <mat-icon class="desktop-bar-button theme-text-color" (click)="minimize()" *ngIf="!overlay">minimize</mat-icon>
+        <mat-icon class="desktop-bar-button theme-text-color" (click)="toggleFullscreen()" *ngIf="!overlay">fullscreen
+        </mat-icon>
+        <mat-icon class="desktop-bar-button theme-text-color close-button" (click)="closeApp()">close</mat-icon>
+    </div>
+    <div class="url-box mat-elevation-z10 theme-background" [class.hidden]="!openingUrl">
+        <mat-form-field>
+            <input type="text" matInput
+                   [(ngModel)]="url"
+                   [placeholder]="'COMMON.Open_url_placeholder' | translate"
+                   (keydown.enter)="openUrl()">
+            <mat-icon matSuffix (click)="openUrl()" class="box-icon">arrow_forward</mat-icon>
+        </mat-form-field>
+        <mat-icon matSuffix (click)="openingUrl = false" class="box-icon">close</mat-icon>
+    </div>
+    <mat-toolbar color="primary" class="app-toolbar" [class.overlay]="overlay || platformService.isDesktop()">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -18,7 +45,7 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container autosize="true" [class.overlay]="overlay">
+    <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
                      [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
             <div class="accent-background" *ngIf="!settings.compactSidebar">

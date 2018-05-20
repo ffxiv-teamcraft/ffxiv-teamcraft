@@ -18,7 +18,10 @@
       "category": "public.app-category.games"
     },
     "win": {
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "publish": [
+        "github"
+      ]
     },
     "nsis": {
       "allowToChangeInstallationDirectory": true,
@@ -31,11 +34,11 @@
     "build:prod": "node ./build/prebuild.js && ng build --prod",
     "build:electron-prod": "node ./build/prebuild.js && ng build --configuration=electron",
     "build:beta": "node ./build/prebuild.js && ng build --configuration=beta",
-    "standard-version": "standard-version",
-    "standard-version:patch": "standard-version --release-as patch",
-    "standard-version:minor": "standard-version --release-as minor",
+    "standard-version": "standard-version -a",
+    "standard-version:patch": "standard-version -a --release-as patch",
+    "standard-version:minor": "standard-version -a --release-as minor",
     "standard-version:dry": "standard-version --dry-run",
-    "release:prod": "npm run standard-version && git push --follow-tags origin master",
+    "release:prod": "git push --follow-tags origin master",
     "release:beta": "npm run standard-version -- --prerelease beta && git push --follow-tags origin beta",
     "test": "node ./build/prebuild.js && ng test --single-run",
     "lint": "ng lint",

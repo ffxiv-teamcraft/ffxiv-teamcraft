@@ -10,6 +10,14 @@
     }
 }
 
+@mixin background-color($theme){
+    @if map-get($theme, is-dark) {
+        background-color: #303030;
+    } @else {
+        background-color: #fafafa;
+    }
+}
+
 // Custom mixins for theming
 @mixin theme-background($theme) {
     $accent: map-get($theme, accent);
@@ -17,6 +25,15 @@
     $warn: map-get($theme, warn);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+
+    .theme-background {
+        @include background-color($theme);
+        @include text-color($theme);
+    }
+
+    .theme-text-color {
+        @include text-color($theme);
+    }
 
     .accent-background {
         background: mat-color($accent);

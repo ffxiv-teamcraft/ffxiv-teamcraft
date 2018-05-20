@@ -1,5 +1,47 @@
 @import "../theme.scss";
 
+.desktop-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 24px;
+    display: flex;
+    background-color: rgba(0, 0, 0, .2);
+    align-items: center;
+    -webkit-app-region: drag;
+    .title {
+        margin-left: 5px;
+        font-weight: bold;
+        opacity: .8;
+    }
+    .version {
+        margin-right: 3px;
+        opacity: .7;
+        font-size: small;
+    }
+    .lang-button {
+        padding: 0 10px;
+        margin-left: 10px;
+    }
+    .open-url {
+        width: 60px;
+        text-align: center;
+    }
+    .desktop-bar-button {
+        cursor: pointer;
+        -webkit-app-region: no-drag;
+        opacity: .7;
+        &:hover {
+            background-color: rgba(255, 255, 255, .2);
+        }
+    }
+    .close-button {
+        &:hover {
+            background-color: rgba(255, 0, 0, .6);
+        }
+    }
+}
+
 .app-container {
     top: 0;
     left: 0;
@@ -8,7 +50,20 @@
     width: 100%;
     min-height: 100%;
     display: inline;
-    mat-toolbar {
+    .url-box {
+        padding: 5px 25px;
+        position: absolute;
+        top: 50px;
+        left: 45%;
+        z-index: 2;
+        &.hidden {
+            display: none;
+        }
+        .box-icon {
+            cursor: pointer;
+        }
+    }
+    .app-toolbar {
         position: fixed;
         top: 0;
         display: flex;
@@ -34,9 +89,9 @@
     }
     mat-sidenav-container {
         height: calc(100vh - 64px);
-        &.overlay {
-            height: 100%;
-            margin-top: -64px;
+        &.desktop {
+            height: calc(100vh - 24px);
+            margin-top: -40px;
             -webkit-app-region: no-drag;
         }
         mat-list-item {

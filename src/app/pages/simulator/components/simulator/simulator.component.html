@@ -54,7 +54,7 @@
                     <mat-icon>refresh</mat-icon>
                 </button>
                 <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined"
-                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set'}}"
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set' | translate}}"
                         color="accent"
                         (click)="saveSet(selectedSet)">
                     <mat-icon>save</mat-icon>

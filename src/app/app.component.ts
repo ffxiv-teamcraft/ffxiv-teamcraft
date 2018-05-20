@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
@@ -24,9 +24,10 @@ import {OverlayContainer} from '@angular/cdk/overlay';
 import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
-import {Observable, Subscription} from 'rxjs/index';
+import {Observable, Subscription} from 'rxjs';
 import {debounceTime, distinctUntilChanged, filter, first, map} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
+import {IpcService} from './core/electron/ipc.service';
 
 declare const ga: Function;
 
@@ -73,6 +74,13 @@ export class AppComponent implements OnInit {
 
     public overlay = false;
 
+    public url: string;
+
+    public openingUrl = false;
+
+    @ViewChild('urlBox')
+    urlBox: ElementRef;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -88,7 +96,8 @@ export class AppComponent implements OnInit {
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
                 private pendingChangesService: PendingChangesService,
-                private platformService: PlatformService) {
+                private platformService: PlatformService,
+                private ipc: IpcService) {
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -182,6 +191,12 @@ export class AppComponent implements OnInit {
         if (this.pendingChangesService.hasPendingChanges() && !this.platformService.isDesktop()) {
             $event.returnValue = true;
         }
+    }
+
+    openUrl(): void {
+        const uri = this.url.replace('https://ffxivteamcraft.com/', '');
+        this.router.navigate(uri.split('/'));
+        this.openingUrl = false;
     }
 
     ngOnInit(): void {
@@ -302,5 +317,19 @@ export class AppComponent implements OnInit {
         this.translate.use(lang);
     }
 
+    /**
+     * Desktop-specific methods
+     */
+    closeApp(): void {
+        window.close();
+    }
+
+    toggleFullscreen(): void {
+        this.ipc.send('fullscreen-toggle');
+    }
+
+    minimize(): void {
+        this.ipc.send('minimize');
+    }
 
 }

@@ -35,6 +35,7 @@ function createWindow() {
         width: mainWindowState.width,
         height: mainWindowState.height,
         backgroundColor: '#ffffff',
+        frame: false,
         icon: `file://${__dirname}/dist/assets/logo.png`
     });
 
@@ -182,4 +183,16 @@ ipcMain.on('overlay-close', (event, url) => {
     if (openedOverlays[url] !== undefined) {
         openedOverlays[url].close();
     }
+});
+
+ipcMain.on('fullscreen-toggle', () => {
+    if (win.isMaximized()) {
+        win.unmaximize();
+    } else {
+        win.maximize();
+    }
+});
+
+ipcMain.on('minimize', () => {
+    win.minimize();
 });

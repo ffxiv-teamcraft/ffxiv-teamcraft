@@ -1,6 +1,3 @@
-<div class="overlay-bar" *ngIf="overlay">
-    <mat-icon class="close-icon" (click)="closeOverlay()">close</mat-icon>
-</div>
 <div class="etime-container" [ngClass]="{mobiletimer: isMobile()}" *ngIf="!overlay">
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
