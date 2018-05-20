@@ -63,6 +63,7 @@
               ]
             },
             "electron-dev": {
+              "baseHref": "",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

@@ -345,6 +345,7 @@
                     matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
             </button>
             <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                            class="amount"
                                             [total]="getAmount()" [item]="item"
                                             (onchange)="setDone(item, $event, item.done)"
                                             [readonly]="!permissions?.participate">
