@@ -134,7 +134,7 @@
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let food of foods" [value]="food">
                             {{food.itemId | itemName | i18n}}
-                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedFood !== undefined">
@@ -150,7 +150,7 @@
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let medicine of medicines" [value]="medicine">
                             {{medicine.itemId | itemName | i18n}}
-                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
