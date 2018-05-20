@@ -22,7 +22,8 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
             .pipe(
                 map((snaps: any[]) => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()}))),
                 map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
-                map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()))
+                map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
+                first()
             );
     }
 
