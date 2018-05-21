@@ -12,6 +12,10 @@ import {ChangeEmailPopupComponent} from '../change-email-popup/change-email-popu
 import {ObservableMedia} from '@angular/flex-layout';
 import {PatreonLinkPopupComponent} from '../patreon-link-popup/patreon-link-popup.component';
 import {NicknamePopupComponent} from '../nickname-popup/nickname-popup.component';
+import {GearSet} from '../../simulator/model/gear-set';
+import {DataService} from '../../../core/api/data.service';
+import {first, map, mergeMap} from 'rxjs/operators';
+import {StatsEditPopupComponent} from '../stats-edit-popup/stats-edit-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -21,48 +25,65 @@ import {NicknamePopupComponent} from '../nickname-popup/nickname-popup.component
 export class ProfileComponent extends PageComponent {
 
     static craftingJobs = [
-        {abbr: 'ALC', name: 'alchemist'},
-        {abbr: 'ARM', name: 'armorer'},
-        {abbr: 'BSM', name: 'blacksmith'},
         {abbr: 'CRP', name: 'carpenter'},
-        {abbr: 'CUL', name: 'culinarian'},
-        {abbr: 'GSM', name: 'goldsmith'},
+        {abbr: 'BSM', name: 'blacksmith'},
+        {abbr: 'ARM', name: 'armorer'},
         {abbr: 'LTW', name: 'leatherworker'},
         {abbr: 'WVR', name: 'weaver'},
-        {abbr: 'BTN', name: 'botanist'},
+        {abbr: 'GSM', name: 'goldsmith'},
+        {abbr: 'ALC', name: 'alchemist'},
+        {abbr: 'CUL', name: 'culinarian'},
         {abbr: 'MIN', name: 'miner'},
+        {abbr: 'BTN', name: 'botanist'},
         {abbr: 'FSH', name: 'fisher'}];
 
     public character: any;
 
     public user: AppUser;
 
+    public jobs: GearSet[] = [];
 
-    constructor(userService: UserService, protected dialog: MatDialog, private help: HelpService, protected media: ObservableMedia) {
+
+    constructor(private userService: UserService, protected dialog: MatDialog, private help: HelpService, protected media: ObservableMedia,
+                private dataService: DataService) {
         super(dialog, help, media);
         this.subscriptions.push(userService.getCharacter().subscribe(character => {
             this.character = character;
         }));
         this.subscriptions.push(userService.getUserData().subscribe(user => this.user = user));
+        this.subscriptions.push(this.userService.getUserData()
+            .pipe(
+                mergeMap(user => this.dataService.getGearsets(user.lodestoneId, false)
+                    .pipe(
+                        map(sets => sets.map(set => {
+                            set.abbr = ProfileComponent.craftingJobs[set.jobId - 8].abbr;
+                            set.name = ProfileComponent.craftingJobs[set.jobId - 8].name;
+                            return set;
+                        })),
+                        map(gearsets => {
+                            return gearsets.map(set => {
+                                const customSet = user.gearSets.find(s => s.jobId === set.jobId);
+                                if (customSet !== undefined) {
+                                    return customSet;
+                                }
+                                return set;
+                            });
+                        })
+                    )
+                )
+            ).subscribe(jobs => this.jobs = jobs));
     }
 
     public openNicknamePopup(): void {
         this.dialog.open(NicknamePopupComponent, {data: {user: this.user}});
     }
 
-    public getJobs(): any[] {
-        return Object.keys(this.character.classjobs)
-            .map(key => this.character.classjobs[key])
-            .filter(job => {
-                return ProfileComponent.craftingJobs.filter(j => j.name === job.name.toLowerCase()).length > 0;
-            }).map(job => {
-                job.abbr = ProfileComponent.craftingJobs.find(j => j.name === job.name.toLowerCase()).abbr;
-                return job;
-            })
-    }
-
     public openMasterbooksPopup(jobAbbr: string): void {
         this.dialog.open(MasterbooksPopupComponent, {data: {jobAbbr: jobAbbr, user: this.user}});
+    }
+
+    public openStatsPopup(set: GearSet): void {
+        this.dialog.open(StatsEditPopupComponent, {data: set});
     }
 
     changeCharacter(): void {
@@ -71,16 +92,6 @@ export class ProfileComponent extends PageComponent {
 
     changeEmail(): void {
         this.dialog.open(ChangeEmailPopupComponent);
-    }
-
-    getClassesCols(): number {
-        if (this.media.isActive('xs') || this.media.isActive('sm')) {
-            return 3;
-        }
-        if (this.media.isActive('md')) {
-            return 4;
-        }
-        return 8;
     }
 
     openPatreonLinkPopup(): void {

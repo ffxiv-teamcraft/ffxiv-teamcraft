@@ -32,14 +32,18 @@
     .patreon-button {
         width: auto;
     }
-
-    .job-container {
+    .jobs {
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        .job-icon {
-            height: 40px;
-            width: 40px;
+        flex-wrap: wrap;
+        .job-container {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .job-icon {
+                height: 40px;
+                width: 40px;
+            }
         }
     }
 

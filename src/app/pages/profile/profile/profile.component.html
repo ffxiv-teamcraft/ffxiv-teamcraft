@@ -37,20 +37,21 @@
                         {{"PROFILE.Patreon_edit_email" | translate}}
                     </button>
                 </mat-card-header>
-                <mat-grid-list cols="{{getClassesCols()}}" rowHeight="100px">
-                    <mat-grid-tile *ngFor="let job of getJobs()">
-                        <div class="job-container">
-                            <div>
-                                <img src="https://www.garlandtools.org/db/images/{{job.abbr}}.png"
-                                     alt="{{job.name.toLowerCase()}}" class="job-icon">
-                            </div>
-                            <div class="job-level">{{job.level}}</div>
-                            <button mat-button (click)="openMasterbooksPopup(job.abbr)">
-                                <mat-icon>book</mat-icon>
-                            </button>
+                <div class="jobs">
+                    <div class="job-container" *ngFor="let job of jobs">
+                        <div>
+                            <img src="https://www.garlandtools.org/db/images/{{job.abbr}}.png"
+                                 alt="{{job.name.toLowerCase()}}" class="job-icon">
                         </div>
-                    </mat-grid-tile>
-                </mat-grid-list>
+                        <div class="job-level">{{job.level}}</div>
+                        <button mat-button (click)="openMasterbooksPopup(job.abbr)">
+                            <mat-icon>book</mat-icon>
+                        </button>
+                        <button mat-button (click)="openStatsPopup(job)">
+                            <mat-icon>mode_edit</mat-icon>
+                        </button>
+                    </div>
+                </div>
                 <div class="user-id">
                     <i>{{"COMMON.User_id" | translate}} : {{user.$key}}</i>
                 </div>
