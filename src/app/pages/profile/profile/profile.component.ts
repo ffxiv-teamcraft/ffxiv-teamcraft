@@ -14,8 +14,10 @@ import {PatreonLinkPopupComponent} from '../patreon-link-popup/patreon-link-popu
 import {NicknamePopupComponent} from '../nickname-popup/nickname-popup.component';
 import {GearSet} from '../../simulator/model/gear-set';
 import {DataService} from '../../../core/api/data.service';
-import {first, map, mergeMap} from 'rxjs/operators';
+import {catchError, filter, map, mergeMap} from 'rxjs/operators';
 import {StatsEditPopupComponent} from '../stats-edit-popup/stats-edit-popup.component';
+import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {combineLatest, of} from 'rxjs';
 
 @Component({
     selector: 'app-profile',
@@ -43,6 +45,7 @@ export class ProfileComponent extends PageComponent {
 
     public jobs: GearSet[] = [];
 
+    public contacts: any[] = [];
 
     constructor(private userService: UserService, protected dialog: MatDialog, private help: HelpService, protected media: ObservableMedia,
                 private dataService: DataService) {
@@ -72,6 +75,26 @@ export class ProfileComponent extends PageComponent {
                     )
                 )
             ).subscribe(jobs => this.jobs = jobs));
+        this.subscriptions.push(
+            userService.getUserData()
+                .pipe(
+                    mergeMap(user => {
+                        return combineLatest(
+                            user.contacts.map(contactId => {
+                                return this.userService.getCharacter(contactId)
+                                    .pipe(
+                                        map(details => {
+                                            details.$key = contactId;
+                                            return details;
+                                        }),
+                                        catchError(() => {
+                                            return of(null);
+                                        })
+                                    );
+                            })
+                        ).pipe(map(res => res.filter(row => row !== null)));
+                    })
+                ).subscribe(res => this.contacts = res));
     }
 
     public openNicknamePopup(): void {
@@ -96,6 +119,22 @@ export class ProfileComponent extends PageComponent {
 
     openPatreonLinkPopup(): void {
         this.dialog.open(PatreonLinkPopupComponent, {data: this.user});
+    }
+
+    addContact(contactId: string): void {
+        this.user.contacts = this.user.contacts.filter(contact => contact !== contactId);
+        this.user.contacts.push(contactId);
+        this.userService.set(this.user.$key, this.user);
+    }
+
+    removeContact(contactId: string): void {
+        this.dialog.open(ConfirmationPopupComponent)
+            .afterClosed()
+            .pipe(filter(res => res))
+            .subscribe(() => {
+                this.user.contacts = this.user.contacts.filter(contact => contact !== contactId);
+                this.userService.set(this.user.$key, this.user);
+            });
     }
 
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {

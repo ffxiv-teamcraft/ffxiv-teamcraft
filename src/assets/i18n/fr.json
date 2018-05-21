@@ -204,6 +204,8 @@
     "Patreon_edit_email": "Editer mon email patreon",
     "Email_already_used": "Email déjà lié à un autre compte",
     "Patreon_email": "Email Patreon",
+    "Contacts": "Contacts",
+    "New_contact": "ID Utilisateur du nouveau contact",
     "HELP": {
       "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
       "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",

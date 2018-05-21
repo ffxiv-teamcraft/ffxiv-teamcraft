@@ -1,7 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../../../core/database/user.service';
 import {fromEvent} from 'rxjs';
-import {debounceTime, distinctUntilChanged, first, map, mergeMap} from 'rxjs/operators';
+import {catchError, debounceTime, distinctUntilChanged, first, map, mergeMap} from 'rxjs/operators';
+import {Observable} from 'rxjs/Observable';
+import {combineLatest, of} from 'rxjs/index';
 
 @Component({
     selector: 'app-add-new-row-popup',
@@ -22,7 +24,28 @@ export class AddNewRowPopupComponent implements OnInit {
 
     public loading = false;
 
+    public contacts$: Observable<any[]>;
+
     constructor(private userService: UserService) {
+        this.contacts$ = userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return combineLatest(
+                        user.contacts.map(contactId => {
+                            return this.userService.getCharacter(contactId)
+                                .pipe(
+                                    map(details => {
+                                        details.$key = contactId;
+                                        return details;
+                                    }),
+                                    catchError(() => {
+                                        return of(null);
+                                    })
+                                );
+                        })
+                    ).pipe(map(res => res.filter(row => row !== null)));
+                })
+            )
     }
 
     private doSearch(): void {

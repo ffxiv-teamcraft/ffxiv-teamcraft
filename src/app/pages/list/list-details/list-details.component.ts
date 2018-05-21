@@ -349,12 +349,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                             case 'reset':
                                 this.resetProgression();
                                 return of(null);
-                            case'delete':
+                            case 'delete':
                                 return this.listService.remove(list.$key).pipe(first(),
                                     tap(() => {
                                         this.router.navigate(['recipes']);
                                     })
                                 );
+                            default:
+                                return of(null)
                         }
                     })
                 ).subscribe();

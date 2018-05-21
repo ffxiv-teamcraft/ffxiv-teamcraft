@@ -57,7 +57,7 @@
                 </div>
             </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile colspan="3" *ngIf="user.patron || user.admin">
+        <mat-grid-tile *ngIf="user.patron || user.admin">
             <div class="patreon-card-container">
                 <mat-card>
                     <h3 mat-card-title>{{"PROFILE.Patreon_features" | translate}}</h3>
@@ -70,6 +70,37 @@
                             <mat-icon>edit</mat-icon>
                         </button>
                     </div>
+                </mat-card>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+            <div class="contacts-card-container">
+                <mat-card class="contacts-card">
+                    <h3 mat-card-title>{{"PROFILE.Contacts" | translate}}</h3>
+                    <mat-card-content>
+                        <mat-list>
+                            <div *ngFor="let contact of contacts">
+                                <mat-list-item class="mat-elevation-z5 contact">
+                                    <img src="{{contact.avatar}}" alt="" mat-list-avatar>
+                                    <span matLine>{{contact.name}}</span>
+                                    <button mat-icon-button color="warn" (click)="removeContact(contact.$key)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </mat-list-item>
+                            </div>
+                        </mat-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="add-contact">
+                            <mat-form-field>
+                                <input type="text" matInput #newContact
+                                       placeholder="{{'PROFILE.New_contact' | translate}}">
+                            </mat-form-field>
+                            <button mat-icon-button (click)="addContact(newContact.value); newContact.value = ''">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </mat-card-actions>
                 </mat-card>
             </div>
         </mat-grid-tile>

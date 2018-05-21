@@ -201,6 +201,8 @@
     "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
     "Patreon_email": "Patreon-Email",
     "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
+    "Contacts": "Kontakte",
+    "New_contact": "User-ID des neuen Kontakts",
     "HELP": {
       "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",
       "Edit": "Wenn du auf den Bearbeiten-Knopf drückst, kannst du den Character, der mit deinem Teamcraft-Account verknüpft ist, bearbeiten",
@@ -391,7 +393,9 @@
     "User_not_found": "Nutzer nicht gefunden",
     "User_id_tip": "Die Nutzer-ID kann in der unteren rechten Ecke auf der Profilseite eingesehen werden.",
     "Saving": "Rechte werden gespeichert",
-    "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten"
+    "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
+    "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
+    "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet"
   },
   "WIKI": {
     "Title": "Wiki",
