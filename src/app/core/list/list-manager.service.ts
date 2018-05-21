@@ -1,6 +1,6 @@
 import {Injectable, NgZone} from '@angular/core';
 import {List} from '../../model/list/list';
-import {combineLatest, Observable} from 'rxjs';
+import {concat, Observable} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {DataService} from '../api/data.service';
 import {GarlandToolsService} from 'app/core/api/garland-tools.service';
@@ -126,38 +126,32 @@ export class ListManagerService {
             list.preCrafts = [];
             list.others = [];
             list.recipes = [];
-            return combineLatest(...add, (...additions: List[]) => {
-                const res = additions[0];
-                // Delete the other lists right now to avoid memory explosion.
-                for (const index of additions) {
-                    delete additions[additions.indexOf(index)];
-                }
-                return res;
-            }).pipe(
-                map((resultList: List) => {
-                    backup.forEach(row => {
-                        const listRow = resultList[row.array].find(item => item.id === row.item.id);
-                        if (listRow !== undefined) {
-                            if (row.item.comments !== undefined) {
-                                listRow.comments = row.item.comments;
-                            }
-                            listRow.done = row.item.done;
-                            listRow.used = row.item.used || 0;
-                            if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
-                                if (listRow.done > listRow.amount) {
-                                    listRow.done = listRow.amount;
+            return concat(...add)
+                .pipe(
+                    map((resultList: List) => {
+                        backup.forEach(row => {
+                            const listRow = resultList[row.array].find(item => item.id === row.item.id);
+                            if (listRow !== undefined) {
+                                if (row.item.comments !== undefined) {
+                                    listRow.comments = row.item.comments;
                                 }
-                            } else {
-                                if (listRow.done > listRow.amount_needed) {
-                                    listRow.done = listRow.amount_needed;
+                                listRow.done = row.item.done;
+                                listRow.used = row.item.used || 0;
+                                if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
+                                    if (listRow.done > listRow.amount) {
+                                        listRow.done = listRow.amount;
+                                    }
+                                } else {
+                                    if (listRow.done > listRow.amount_needed) {
+                                        listRow.done = listRow.amount_needed;
+                                    }
                                 }
                             }
-                        }
-                    });
-                    resultList.permissionsRegistry = permissions;
-                    return resultList;
-                })
-            );
+                        });
+                        resultList.permissionsRegistry = permissions;
+                        return resultList;
+                    })
+                );
         });
     }
 }

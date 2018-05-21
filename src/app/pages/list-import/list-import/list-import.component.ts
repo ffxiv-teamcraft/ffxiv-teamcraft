@@ -54,7 +54,7 @@ export class CartImportComponent extends ComponentWithSubscriptions {
                         // We can now execute the observable
                         concat(...importObservables)
                             .subscribe(() => {
-                                listService.update(id, list).pipe(first()).subscribe(() => {
+                                listService.set(id, list).pipe(first()).subscribe(() => {
                                     done++;
                                     // Update progression
                                     this.progress = Math.ceil(100 * done / cart.length);

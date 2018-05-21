@@ -32,7 +32,7 @@ export class BulkAdditionPopupComponent extends ComponentWithSubscriptions imple
                 }),
                 filter(() => this.progress >= 100)
             ).subscribe((resultList: List) => {
-                this.listService.update(this.data.key, resultList).pipe(first()).subscribe(() => {
+                this.listService.set(this.data.key, resultList).pipe(first()).subscribe(() => {
                     this.dialogRef.close();
                 });
             }));
