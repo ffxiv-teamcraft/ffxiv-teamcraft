@@ -394,7 +394,9 @@
     "User_not_found": "User not found",
     "User_id_tip": "The user ID can be found in profile page in bottom-right corner",
     "Saving": "Saving permissions",
-    "No_anonymous": "You need an account to manage permissions"
+    "No_anonymous": "You need an account to manage permissions",
+    "Propagate_changes": "Propagate permissions to lists inside the workshop",
+    "Propagate_changes_done": "Changes propagated to lists inside the workshop"
   },
   "WIKI": {
     "Title": "Wiki",
