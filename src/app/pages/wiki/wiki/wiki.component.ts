@@ -54,7 +54,6 @@ export class WikiComponent implements OnInit {
                 // If that's an anchor, intercept the click and handle it properly with router
                 this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
             } else if ((<any>event.srcElement).href.indexOf('file:///') > -1) {
-                console.log(event);
                 // If that's a link to inner wiki page inside electron build
                 this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname.replace(/\w:/, ''));
             } else {
@@ -88,7 +87,7 @@ export class WikiComponent implements OnInit {
                         return this.http.get(markdownUrl, {responseType: 'text'})
                             .pipe(
                                 mergeMap(res => {
-                                    if (res.indexOf('<!doctype html>') > -1) {
+                                    if (res.indexOf('<!DOCTYPE html>') > -1) {
                                         // If page isn't found, return the english one
                                         // This has to be done because of firebase not handling redirection properly for not found pages.
                                         return this.getEnglishFallback(markdownUrl);
