@@ -41,13 +41,13 @@
                     <div class="job-container" *ngFor="let job of jobs">
                         <div>
                             <img src="https://www.garlandtools.org/db/images/{{job.abbr}}.png"
-                                 alt="{{job.name.toLowerCase()}}" class="job-icon">
+                                 alt="{{job.name}}" class="job-icon">
                         </div>
                         <div class="job-level">{{job.level}}</div>
                         <button mat-button (click)="openMasterbooksPopup(job.abbr)">
                             <mat-icon>book</mat-icon>
                         </button>
-                        <button mat-button (click)="openStatsPopup(job)">
+                        <button mat-button (click)="openStatsPopup(job)" *ngIf="job.jobId < 16">
                             <mat-icon>mode_edit</mat-icon>
                         </button>
                     </div>

@@ -37,7 +37,8 @@ export class ProfileComponent extends PageComponent {
         {abbr: 'CUL', name: 'culinarian'},
         {abbr: 'MIN', name: 'miner'},
         {abbr: 'BTN', name: 'botanist'},
-        {abbr: 'FSH', name: 'fisher'}];
+        {abbr: 'FSH', name: 'fisher'}
+    ];
 
     public character: any;
 
@@ -58,11 +59,6 @@ export class ProfileComponent extends PageComponent {
             .pipe(
                 mergeMap(user => this.dataService.getGearsets(user.lodestoneId, false)
                     .pipe(
-                        map(sets => sets.map(set => {
-                            set.abbr = ProfileComponent.craftingJobs[set.jobId - 8].abbr;
-                            set.name = ProfileComponent.craftingJobs[set.jobId - 8].name;
-                            return set;
-                        })),
                         map(gearsets => {
                             return gearsets.map(set => {
                                 const customSet = user.gearSets.find(s => s.jobId === set.jobId);
@@ -71,7 +67,16 @@ export class ProfileComponent extends PageComponent {
                                 }
                                 return set;
                             });
-                        })
+                        }),
+                        map(sets => sets.map(set => {
+                                const job = ProfileComponent.craftingJobs[set.jobId - 8];
+                                if (job !== undefined) {
+                                    set.abbr = job.abbr;
+                                    set.name = job.name;
+                                    return set;
+                                }
+                            }).filter(row => row !== null)
+                        )
                     )
                 )
             ).subscribe(jobs => this.jobs = jobs));
