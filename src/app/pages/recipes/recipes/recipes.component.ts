@@ -251,7 +251,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
     addRecipe(recipe: Recipe, list: List, key: string, amount: string, collectible: boolean): void {
         this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .subscribe(updatedList => {
-                this.listService.update(key, updatedList).pipe(first()).subscribe(() => {
+                this.listService.set(key, updatedList).pipe(first()).subscribe(() => {
                     this.snackBar.open(
                         this.translator.instant('Recipe_Added',
                             {itemname: this.i18n.getName(this.localizedData.getItem(recipe.itemId)), listname: list.name}),

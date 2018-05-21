@@ -6,9 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     MatButtonModule,
     MatCardModule,
-    MatExpansionModule,
+    MatExpansionModule, MatFormFieldModule,
     MatGridListModule,
-    MatIconModule,
+    MatIconModule, MatInputModule,
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
@@ -60,9 +60,10 @@ import {MarkdownModule} from 'ngx-markdown';
 import {WikiModule} from './pages/wiki/wiki.module';
 import {SimulatorModule} from './pages/simulator/simulator.module';
 import {NgDragDropModule} from 'ng-drag-drop';
+import {IS_ELECTRON} from './core/tools/platform.service';
 
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+    return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -91,7 +92,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AngularFireAuthModule,
         AngularFirestoreModule,
 
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], {useHash: IS_ELECTRON}),
 
         HttpClientModule,
         // Animations for material.
@@ -109,6 +110,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatListModule,
         MatGridListModule,
         MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
 
         BrowserModule,
         FormsModule,

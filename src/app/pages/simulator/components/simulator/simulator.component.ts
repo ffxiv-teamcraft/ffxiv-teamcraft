@@ -3,7 +3,7 @@ import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {BehaviorSubject, combineLatest, Observable, of, ReplaySubject} from 'rxjs';
 import {CraftingAction} from '../../model/actions/crafting-action';
-import {CrafterStats} from '../../model/crafter-stats';
+import {CrafterLevels, CrafterStats} from '../../model/crafter-stats';
 import {SimulationReliabilityReport} from '../../simulation/simulation-reliability-report';
 import {SimulationResult} from '../../simulation/simulation-result';
 import {ActionType} from '../../model/actions/action-type';
@@ -178,7 +178,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public set inputGearSet(set: GearSet) {
         if (set !== undefined) {
             this.selectedSet = set;
-            this.applyStats(set, false);
+            // Custom mode assumes you have everything.
+            this.applyStats(set, this.levels, false);
         }
     }
 
@@ -190,9 +191,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public foods: Consumable[] = [];
 
     @Input()
+    public levels: CrafterLevels = [70, 70, 70, 70, 70, 70, 70, 70];
+
+    @Input()
     public set selectedFood(food: Consumable) {
         this._selectedFood = food;
-        this.applyStats(this.selectedSet, false);
+        this.applyStats(this.selectedSet, this.levels, false);
     }
 
     public _selectedFood: Consumable;
@@ -202,7 +206,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     @Input()
     public set selectedMedicine(medicine: Consumable) {
         this._selectedMedicine = medicine;
-        this.applyStats(this.selectedSet, false);
+        this.applyStats(this.selectedSet, this.levels, false);
     }
 
     public _selectedMedicine: Consumable;
@@ -277,7 +281,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                                 if (resultSets.length < 8) {
                                     return this.populateMissingSets(resultSets);
                                 }
-                                return resultSets;
+                                return resultSets.sort((a, b) => a.jobId - b.jobId);
                             })
                         );
                 })
@@ -320,10 +324,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-            return gearsets.find(set => set.jobId === recipe.job);
-        }).subscribe(set => {
-            this.selectedSet = set;
-            this.applyStats(set, false);
+            return {
+                set: gearsets.find(set => set.jobId === recipe.job),
+                levels: <CrafterLevels>gearsets.map(set => set.level)
+            };
+        }).subscribe(res => {
+            this.selectedSet = res.set;
+            this.applyStats(res.set, res.levels, false);
         });
     }
 
@@ -453,7 +460,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return bonusFromFood + bonusFromMedicine;
     }
 
-    applyStats(set: GearSet, markDirty = true): void {
+    applyStats(set: GearSet, levels: CrafterLevels, markDirty = true): void {
         if (set === undefined) {
             return;
         }
@@ -463,7 +470,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             set.control + this.getBonusValue('Control', set.control),
             set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
-            set.level);
+            set.level,
+            levels);
         if (markDirty) {
             this.markAsDirty();
         }

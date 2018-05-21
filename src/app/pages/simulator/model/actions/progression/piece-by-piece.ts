@@ -1,17 +1,22 @@
 import {GeneralAction} from '../general-action';
 import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 /**
  * PbP is not considered as a progression action as it isn't afected by progression buffs (Ingenuity, Ingenuity II, etc)
  */
 export class PieceByPiece extends GeneralAction {
 
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ARM, level: 50};
+    }
+
     public getType(): ActionType {
         return ActionType.PROGRESSION;
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

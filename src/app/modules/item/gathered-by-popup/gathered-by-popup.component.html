@@ -9,11 +9,9 @@
             <p mat-line>
                 {{node.areaid | placeName | i18n}}
             </p>
-            <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
-                              [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
+            <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid" [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
             <span mat-line *ngIf="getClosestAetheryte(node) | async as aetheryte" class="closest-tp">
-                <img src="/assets/icons/Aetheryte.png" alt="" class="aetheryte-icon">
-                {{aetheryte.nameid | placeName | i18n}}
+                <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
             </span>
             <mat-chip-list>
                 <mat-chip *ngIf="node.limitType !== undefined" selected="true" color="primary">
@@ -21,11 +19,11 @@
                 </mat-chip>
             </mat-chip-list>
             <span>
-            <b mat-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
-            <span mat-line *ngIf="node.time !== undefined">
-                <i mat-line *ngFor="let time of node.time">{{time}} - {{getDespawnTime(time, node.uptime)}}</i>
+                <b mat-line *ngIf="node.slot !== undefined" selected="true" color="accent">Slot:{{node.slot}}</b>
+                <span mat-line *ngIf="node.time !== undefined">
+                    <i mat-line *ngFor="let time of node.time">{{time}} - {{getDespawnTime(time, node.uptime)}}</i>
+                </span>
             </span>
-        </span>
         </mat-list-item>
     </mat-list>
 </div>

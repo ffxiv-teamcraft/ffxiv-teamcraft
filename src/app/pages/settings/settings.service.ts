@@ -69,12 +69,12 @@ export class SettingsService {
         this.setSetting('alarm:hours-before', hours.toString());
     }
 
-    public get preferredStartingPint(): number {
+    public get preferredStartingPoint(): number {
         // Default value is Rhalgr's reach, 2403
         return +this.getSetting('preferred-starting-point', '2403');
     }
 
-    public set preferredStartingPint(id: number) {
+    public set preferredStartingPoint(id: number) {
         this.setSetting('preferred-starting-point', id.toString());
     }
 
@@ -98,8 +98,8 @@ export class SettingsService {
         return this.getSetting('alarms:muted', 'false') === 'true';
     }
 
-    public set alarmsMuted(compact: boolean) {
-        this.setSetting('alarms:muted', compact.toString());
+    public set alarmsMuted(muted: boolean) {
+        this.setSetting('alarms:muted', muted.toString());
     }
 
     public get ffxivcraftingDisplay(): boolean {

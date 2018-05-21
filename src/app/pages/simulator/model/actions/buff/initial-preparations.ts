@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Buff} from '../../buff.enum';
 import {Simulation} from '../../../simulation/simulation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class InitialPreparations extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 69};
+    }
 
     protected getBuff(): Buff {
         return Buff.INITIAL_PREPARATIONS;
@@ -20,9 +25,9 @@ export class InitialPreparations extends BuffAction {
         return [100251, 100252, 100253, 100254, 100255, 100256, 100257, 100258];
     }
 
-    canBeUsed(simulation: Simulation): boolean {
+    _canBeUsed(simulation: Simulation): boolean {
         // Can only be used at first turn
-        return super.canBeUsed(simulation) && simulation.steps.length === 0;
+        return super._canBeUsed(simulation) && simulation.steps.length === 0;
     }
 
     protected getInitialStacks(): number {

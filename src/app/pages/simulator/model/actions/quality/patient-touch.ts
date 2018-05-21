@@ -1,8 +1,13 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class PatientTouch extends QualityAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 64};
+    }
 
     execute(simulation: Simulation): void {
         super.execute(simulation);
@@ -15,7 +20,7 @@ export class PatientTouch extends QualityAction {
         simulation.getBuff(Buff.INNER_QUIET).stacks = Math.floor(simulation.getBuff(Buff.INNER_QUIET).stacks / 2);
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

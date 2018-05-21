@@ -1,9 +1,14 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class StandardTouch extends QualityAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 18};
+    }
+
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

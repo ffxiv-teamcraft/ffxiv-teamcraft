@@ -2,10 +2,15 @@ import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {WhistleEndProgressionTick} from '../progression/whistle-end-progression-tick';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class WhistleWhileYouWork extends BuffAction {
 
-    canBeUsed(simulation: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 55};
+    }
+
+    _canBeUsed(simulation: Simulation): boolean {
         return simulation.crafterStats.specialist && !simulation.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK);
     }
 

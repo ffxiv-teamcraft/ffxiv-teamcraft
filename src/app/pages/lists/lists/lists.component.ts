@@ -24,12 +24,13 @@ import {WorkshopNamePopupComponent} from '../workshop-name-popup/workshop-name-p
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 import {catchError, filter, first, map, mergeMap, switchMap} from 'rxjs/operators';
 import {tap} from 'rxjs/internal/operators';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
 
 declare const ga: Function;
 
@@ -71,7 +72,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
                 private workshopService: WorkshopService, private snack: MatSnackBar,
                 private translator: TranslateService, private userService: UserService,
-                private templateService: ListTemplateService) {
+                private templateService: ListTemplateService, private linkTools: LinkToolsService) {
         super();
         this.subscriptions.push(userService.getUserData().subscribe(userData => this.userData = userData))
     }
@@ -166,7 +167,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     getLink(workshop: Workshop): string {
-        return `${window.location.protocol}//${window.location.host}/workshop/${workshop.$key}`;
+        return this.linkTools.getLink(`/workshop/${workshop.$key}`);
     }
 
     regenerateAllLists(): void {

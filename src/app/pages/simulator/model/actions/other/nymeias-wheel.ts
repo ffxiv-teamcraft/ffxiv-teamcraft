@@ -3,10 +3,15 @@ import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
 import {Tables} from '../../tables';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class NymeiasWheel extends CraftingAction {
 
-    canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 57};
+    }
+
+    _canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
         return simulationState.crafterStats.specialist && simulationState.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK);
     }
 

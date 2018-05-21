@@ -1,7 +1,7 @@
-<div class="etime-container" [ngClass]="{mobiletimer: isMobile()}">
+<div class="etime-container" [ngClass]="{mobiletimer: isMobile()}" *ngIf="!overlay">
     <app-eorzean-time [date]="etime.getEorzeanTime() | async"></app-eorzean-time>
 </div>
-<div class="buttons">
+<div class="buttons" *ngIf="!overlay">
     <mat-checkbox [(ngModel)]="muted" (change)="saveMuted()">{{"Mute_alarms" | translate}}</mat-checkbox>
     <mat-checkbox [(ngModel)]="compact" (change)="saveCompact()">{{"Compact_display" | translate}}</mat-checkbox>
     <button mat-mini-fab (click)="openAddAlarmPopup()">
@@ -10,9 +10,12 @@
     <button mat-mini-fab (click)="openOptionsPopup()">
         <mat-icon>settings</mat-icon>
     </button>
+    <button mat-mini-fab (click)="showOverlay()" *ngIf="desktop">
+        <mat-icon>screen_share</mat-icon>
+    </button>
 </div>
 <div *ngIf="(getAlarms() | async)?.length === 0"><h4 class="no-alarm">{{'ALARMS.No_alarm' | translate}}</h4></div>
-<mat-grid-list cols="{{getCols()}}" rowHeight="3:4" class="grid" *ngIf="!compact">
+<mat-grid-list cols="{{getCols()}}" rowHeight="3:4" class="grid" *ngIf="!compact && !overlay">
     <mat-grid-tile *ngFor="let alarm of getAlarms() | async">
         <app-alarm-card [alarm]="alarm"
                         [compact]="compact"
@@ -22,7 +25,7 @@
                         (delete)="deleteAlarm(alarm)"></app-alarm-card>
     </mat-grid-tile>
 </mat-grid-list>
-<mat-list *ngIf="compact" dense>
+<mat-list *ngIf="compact || overlay" dense [class.overlay]="overlay">
     <mat-list-item *ngFor="let alarm of getAlarms() | async"
                    class="compact-alarm"
                    [ngClass]="{
@@ -31,16 +34,19 @@
                    'primary-background': alarmService.isAlarmSpawned(alarm, time),
                    'accent-background': alarmService.isAlerted(alarm.itemId) | async
                    }">
-        <img mat-list-avatar [appXivdbTooltip]="alarm.itemId" [src]="alarm.icon | icon" alt="">
-        <span matLine>{{alarm.itemId | itemName | i18n}}</span>
-        <i matLine>{{alarm.zoneId | placeName | i18n}} - {{alarm.areaId | placeName | i18n}}  -
-            <span class="coords" *ngIf="compact">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
-            <span *ngIf="alarm.slot">({{alarm.slot}})</span></i>
-        <app-map-position [zoneId]="alarm.zoneId"
+        <img mat-list-avatar [appXivdbTooltip]="alarm.itemId" [src]="alarm.icon | icon" alt="" *ngIf="!overlay">
+        <span matLine>{{alarm.itemId | itemName | i18n}} <span *ngIf="alarm.slot">({{alarm.slot}})</span></span>
+        <i matLine>{{alarm.zoneId | placeName | i18n}} </i>
+        <span class="coords" matLine *ngIf="compact || overlay">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
+        <app-map-position *ngIf="!overlay"
+                          [zoneId]="alarm.zoneId"
                           class="map-marker"
                           [marker]="{x:alarm.coords[0], y:alarm.coords[1]}"></app-map-position>
-        <span>{{alarmService.getAlarmTimerString(alarm, time)}}</span>
-        <button mat-icon-button (click)="deleteAlarm(alarm)" color="warn">
+        <div>
+            <span matLine *ngIf="alarm.aetheryte$">{{(alarm.aetheryte$ | async)?.nameid | placeName | i18n}}</span>
+            <span matLine class="compact-timer">{{alarmService.getAlarmTimerString(alarm, time)}}</span>
+        </div>
+        <button mat-icon-button (click)="deleteAlarm(alarm)" color="warn" *ngIf="!overlay">
             <mat-icon>delete</mat-icon>
         </button>
     </mat-list-item>

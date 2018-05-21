@@ -2,8 +2,13 @@ import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class ComfortZone extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ALC, level: 50};
+    }
 
     public getType(): ActionType {
         return ActionType.CP_RECOVERY;

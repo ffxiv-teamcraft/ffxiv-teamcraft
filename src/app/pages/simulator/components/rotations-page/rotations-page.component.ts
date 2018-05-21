@@ -8,10 +8,11 @@ import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {CustomLink} from '../../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../../core/database/custom-links/custom-link';
 import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
-import {filter, tap} from 'rxjs/operators';
-import {mergeMap} from 'rxjs/operators';
+import {filter, map, mergeMap, tap} from 'rxjs/operators';
+import {LinkToolsService} from '../../../../core/tools/link-tools.service';
+import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
 
 @Component({
     selector: 'app-rotations-page',
@@ -27,7 +28,7 @@ export class RotationsPageComponent {
 
     constructor(private rotationsService: CraftingRotationService, private userService: UserService,
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
-                private translator: TranslateService, private dialog: MatDialog) {
+                private translator: TranslateService, private dialog: MatDialog, private linkTools: LinkToolsService) {
         this.rotations$ = this.userService.getUserData()
             .pipe(
                 tap(user => this.linkButton = user.admin || user.patron),
@@ -35,6 +36,19 @@ export class RotationsPageComponent {
                     return this.rotationsService.getUserRotations(user.$key);
                 })
             );
+    }
+
+    editRotationName(rotation: CraftingRotation): void {
+        this.dialog.open(RotationNamePopupComponent, {data: rotation})
+            .afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res.length > 0),
+                map(name => {
+                    rotation.name = name;
+                    return rotation;
+                }),
+                mergeMap(renamedRotation => this.rotationsService.set(renamedRotation.$key, renamedRotation))
+            ).subscribe();
     }
 
     public getSteps(rotation: CraftingRotation): CraftingAction[] {
@@ -62,8 +76,8 @@ export class RotationsPageComponent {
     }
 
     public getLink(rotation: CraftingRotation): string {
-        return `${window.location.protocol}//${window.location.host}${rotation.defaultItemId ? '/simulator/' +
-            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`;
+        return this.linkTools.getLink(`${rotation.defaultItemId ? '/simulator/' +
+            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`);
     }
 
     public showCopiedNotification(): void {

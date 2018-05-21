@@ -1,11 +1,16 @@
 import {ByregotsBlessing} from './byregots-blessing';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class ByregotsBrow extends ByregotsBlessing {
 
-    canBeUsed(simulation: Simulation): boolean {
-        return super.canBeUsed(simulation) && simulation.getBuff(Buff.INNER_QUIET).stacks >= 2;
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 51};
+    }
+
+    _canBeUsed(simulation: Simulation): boolean {
+        return super._canBeUsed(simulation) && simulation.getBuff(Buff.INNER_QUIET).stacks >= 2;
     }
 
     getBaseCPCost(simulationState: Simulation): number {

@@ -33,4 +33,6 @@ export class AppUser extends DataModel {
     sharedWorkshops: string[] = [];
     // Saved overriden gearsets
     gearSets: GearSet[] = [];
+    // Contact ids
+    contacts: string[] = [];
 }

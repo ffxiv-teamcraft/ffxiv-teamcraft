@@ -11,6 +11,7 @@ import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
 import {first} from 'rxjs/operators';
+import {OauthService} from '../../../core/auth/oauth.service';
 
 @Component({
     selector: 'app-login-popup',
@@ -31,7 +32,8 @@ export class LoginPopupComponent {
                 private fb: FormBuilder,
                 private router: Router,
                 private dialog: MatDialog,
-                private listService: ListService) {
+                private listService: ListService,
+                private oauthService: OauthService) {
 
         this.form = fb.group({
             email: ['', Validators.email],
@@ -43,11 +45,13 @@ export class LoginPopupComponent {
         this.dialog.open(ForgotPasswordPopupComponent);
     }
 
-    login(user: any): Promise<void> {
+    afterLogin(user: any, oauth = true): Promise<void> {
         this.userService.loggingIn = true;
         return new Promise<void>((resolve, reject) => {
             return this.userService.get(user.uid)
-                .pipe(first())
+                .pipe(
+                    first()
+                )
                 .subscribe(() => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
@@ -55,7 +59,11 @@ export class LoginPopupComponent {
                 }, err => {
                     this.userService.loggingIn = false;
                     this.userService.reload();
-                    reject(err);
+                    if (oauth && err.message === 'Not found') {
+                        this.oauthService.register(user);
+                    } else {
+                        reject(err);
+                    }
                 });
         });
     }
@@ -90,8 +98,8 @@ export class LoginPopupComponent {
                             console.error(err);
                             this.errorState(listsBackup);
                         })
-                        .then((auth) => {
-                            if (auth.user !== null && auth.user !== undefined && !auth.user.emailVerified) {
+                        .then((authData) => {
+                            if (authData.user !== null && authData.user !== undefined && !authData.user.emailVerified) {
                                 // If the user didn't verify his email, send him a new one.
                                 this.af.auth.currentUser.sendEmailVerification();
                                 // Log out from this user, as his email isn't verified yet.
@@ -107,7 +115,7 @@ export class LoginPopupComponent {
                                     });
                                 });
                             } else {
-                                this.login(auth.user).then(() => {
+                                this.afterLogin(authData.user).then(() => {
                                     this.userService.reload();
                                     this.dialogRef.close();
                                 }).catch(() => {
@@ -141,17 +149,15 @@ export class LoginPopupComponent {
                     this.userService.deleteUser(prevUser.uid);
                     this.af.auth.currentUser.delete();
                 }
-                this.af.auth.signInWithPopup(provider).then((oauth) => {
-                    this.login(oauth.user).then(() => {
+                this.oauthService.login(provider).then(oauth => {
+                    this.afterLogin(oauth.user).then(() => {
                         this.userService.reload();
                         this.dialogRef.close();
-                    }).catch(() => {
+                    }).catch((error) => {
+                        console.error(error);
                         this.userService.reload();
                         this.errorState(lists);
                     });
-                    this.userService.reload();
-                }).catch(() => {
-                    this.userService.reload();
                 });
             });
     }

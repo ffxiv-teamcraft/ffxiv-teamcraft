@@ -26,13 +26,13 @@ export class MapComponent implements OnInit {
         this.mapData = this.mapService.getMapById(this.mapId)
     }
 
-    getPosition(map: MapData, marker: Vector2, offset = {x: 0, y: 0}): { top: string, left: string } {
+    getPosition(map: MapData, marker: Vector2, offset = {x: 0, y: 0}): {top: string, left: string} {
         const positionPercents = this.mapService.getPositionOnMap(map, marker);
         return {top: `${positionPercents.y + offset.y}%`, left: `${positionPercents.x + offset.y}%`};
     }
 
     getIcon(type: 0 | 1): string {
-        return `/assets/icons/Aetheryte${type === 1 ? '_Shard' : ''}.png`;
+        return `./assets/icons/Aetheryte${type === 1 ? '_Shard' : ''}.png`;
     }
 
 }

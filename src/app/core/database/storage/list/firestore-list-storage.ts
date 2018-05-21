@@ -17,16 +17,19 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     getPublicLists(): Observable<List[]> {
+        this.clearCache();
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
             .snapshotChanges()
             .pipe(
                 map((snaps: any[]) => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()}))),
                 map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
-                map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()))
+                map((lists: List[]) => lists.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())),
+                first()
             );
     }
 
     getPublicListsByAuthor(uid: string): Observable<List[]> {
+        this.clearCache();
         return this.listsByAuthorRef(uid).pipe(map(lists => lists.filter(list => list.public === true)));
     }
 
@@ -49,6 +52,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
     }
 
     private listsByAuthorRef(uid: string): Observable<List[]> {
+        this.clearCache();
         return this.firestore
             .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
             .snapshotChanges()

@@ -132,7 +132,7 @@
                         [readonly]="!list.getPermissions(userData.$key).write"
                         [list]="list"
                         [expanded]="expanded.indexOf(list.$key) > -1"
-                        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                        (onrecipedelete)="removeRecipe($event, list, list.$key)"
                         (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
                         (ondelete)="delete(list)"
                         [authorUid]="user.uid"

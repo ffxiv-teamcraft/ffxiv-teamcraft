@@ -18,7 +18,7 @@
                 {{item.id | itemName | i18n}}
             </span>
         </div>
-        <img src="/assets/icons/HQ.png" alt=""
+        <img src="./assets/icons/HQ.png" alt=""
              matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
              matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
 
@@ -95,7 +95,7 @@
         </div>
         <div *ngIf="folkloreId" [ngClass]="{'masterbook':true, 'compact': settings.compactLists}">
             <img matListAvatar
-                 src="/assets/icons/FSH_folklore.png"
+                 src="./assets/icons/FSH_folklore.png"
                  matTooltip="{{folkloreId | itemName | i18n}}"
                  matTooltipPosition="above"
                  alt="{{folkloreId | itemName | i18n}}">
@@ -228,7 +228,7 @@
             <div *ngIf="item.gardening === true">
                 <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                      matTooltip="{{'Gardening' | translate}}"
-                     matTooltipPosition="above" src="/assets/icons/Gardening.png">
+                     matTooltipPosition="above" src="./assets/icons/Gardening.png">
             </div>
             <div>
                 <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
@@ -345,6 +345,7 @@
                     matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
             </button>
             <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                            class="amount"
                                             [total]="getAmount()" [item]="item"
                                             (onchange)="setDone(item, $event, item.done)"
                                             [readonly]="!permissions?.participate">
@@ -437,7 +438,7 @@
                 <div *ngIf="item.gardening === true">
                     <img class="crafted-by"
                          matTooltip="{{'Gardening' | translate}}"
-                         matTooltipPosition="above" src="/assets/icons/Gardening.png">
+                         matTooltipPosition="above" src="./assets/icons/Gardening.png">
                 </div>
                 <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0"
                         (click)="openDropsDetails(item)">
@@ -534,4 +535,3 @@
         </div>
     </mat-list-item>
 </ng-template>
-

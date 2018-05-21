@@ -1,9 +1,14 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class CarefulSynthesisIII extends ProgressAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 62};
+    }
+
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

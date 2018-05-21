@@ -395,10 +395,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public getTimerIcon(type: number): string {
         return [
-            '/assets/icons/Mineral_Deposit.png',
-            '/assets/icons/MIN.png',
-            '/assets/icons/Mature_Tree.png',
-            '/assets/icons/BTN.png',
+            './assets/icons/Mineral_Deposit.png',
+            './assets/icons/MIN.png',
+            './assets/icons/Mature_Tree.png',
+            './assets/icons/BTN.png',
             'https://garlandtools.org/db/images/FSH.png'
         ][type];
     }

@@ -41,16 +41,6 @@ export class ListService {
     }
 
     /**
-     * Updates a list in the database.
-     * @param {string} uid
-     * @param {List} data
-     * @returns {Observable<void>}
-     */
-    public update(uid: string, data: List): Observable<void> {
-        return this.store.update(uid, data);
-    }
-
-    /**
      * Sets a list in the database, overriding all previous data.
      * @param {string} uid
      * @param {List} data

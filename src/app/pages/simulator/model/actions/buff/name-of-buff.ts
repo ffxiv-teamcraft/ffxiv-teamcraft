@@ -1,10 +1,15 @@
 import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export abstract class NameOfBuff extends BuffAction {
 
-    canBeUsed(simulation: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 54};
+    }
+
+    _canBeUsed(simulation: Simulation): boolean {
         return !simulation.hasBuff(Buff.NAME_OF_FIRE)
         && !simulation.hasBuff(Buff.NAME_OF_LIGHTNING)
         && !simulation.hasBuff(Buff.NAME_OF_WATER)

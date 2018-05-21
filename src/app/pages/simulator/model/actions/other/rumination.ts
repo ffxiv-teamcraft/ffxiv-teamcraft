@@ -2,14 +2,19 @@ import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class Rumination extends CraftingAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.CRP, level: 15};
+    }
 
     public getType(): ActionType {
         return ActionType.CP_RECOVERY;
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return simulationState.hasBuff(Buff.INNER_QUIET);
     }
 

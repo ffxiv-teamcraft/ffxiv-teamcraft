@@ -1,6 +1,8 @@
 import {Simulation} from '../simulation/simulation';
 import {Buff} from './buff.enum';
 
+export type CrafterLevels = [number, number, number, number, number, number, number, number];
+
 export class CrafterStats {
 
     constructor(
@@ -10,6 +12,7 @@ export class CrafterStats {
         public cp: number,
         public readonly specialist: boolean,
         public readonly level: number,
+        public readonly levels: CrafterLevels
     ) {
     }
 

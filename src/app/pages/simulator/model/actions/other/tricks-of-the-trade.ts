@@ -1,14 +1,19 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class TricksOfTheTrade extends CraftingAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ALC, level: 15};
+    }
 
     public getType(): ActionType {
         return ActionType.CP_RECOVERY;
     }
 
-    canBeUsed(simulationState: Simulation, linear = false): boolean {
+    _canBeUsed(simulationState: Simulation, linear = false): boolean {
         if (linear) {
             return true
         }

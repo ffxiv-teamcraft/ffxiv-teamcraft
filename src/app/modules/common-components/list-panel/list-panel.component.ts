@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
@@ -10,19 +10,19 @@ import {Observable, of} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {ObservableMedia} from '@angular/flex-layout';
 import {CustomLinkPopupComponent} from '../../../pages/custom-links/custom-link-popup/custom-link-popup.component';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
 import {catchError, filter, first, mergeMap} from 'rxjs/operators';
 import {ListRow} from '../../../model/list/list-row';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
 
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
-    styleUrls: ['./list-panel.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./list-panel.component.scss']
 })
 export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
 
@@ -81,7 +81,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
                 private router: Router, private auth: AngularFireAuth, private userService: UserService,
-                private dialog: MatDialog, private templateService: ListTemplateService) {
+                private dialog: MatDialog, private templateService: ListTemplateService, private linkTools: LinkToolsService) {
         super();
     }
 
@@ -92,7 +92,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     }
 
     public getLink(): string {
-        return `${window.location.protocol}//${window.location.host}/list/${this.list.$key}`;
+        return this.linkTools.getLink(`/list/${this.list.$key}`);
     }
 
     public openPermissions(list: List): void {
@@ -134,7 +134,7 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     public forkList(): void {
         const fork: List = this.list.clone();
         // Update the forks count.
-        this.listService.update(this.list.$key, this.list).pipe(first()).subscribe();
+        this.listService.set(this.list.$key, this.list).pipe(first()).subscribe();
         fork.authorId = this.auth.auth.currentUser.uid;
         this.listService.add(fork).pipe(first()).subscribe(key => {
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),

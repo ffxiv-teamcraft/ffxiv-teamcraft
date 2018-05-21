@@ -1,6 +1,6 @@
 import {Injectable, NgZone} from '@angular/core';
 import {FirebaseStorage} from '../storage/firebase/firebase-storage';
-import {CustomLink} from './costum-link';
+import {CustomLink} from './custom-link';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from '../diff/diff.service';

@@ -10,7 +10,7 @@ import {DataResponse} from '../data-response';
 
 import {PendingChangesService} from '../../pending-changes/pending-changes.service';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
-import {debounceTime, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
+import {debounceTime, map, mergeMap, tap} from 'rxjs/operators';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 
@@ -51,9 +51,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                             delete snap.payload;
                             return this.serializer.deserialize<T>(valueWithKey, this.getClass());
                         }),
-                        debounceTime(50),
-                        publishReplay(1),
-                        refCount()
+                        debounceTime(50)
                     ).subscribe(data => {
                         this.cache[uid].subject.next({data: data})
                     }, err => {
@@ -68,7 +66,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                 } else {
                     return observableThrowError(response.error)
                 }
-            }));
+            })
+        );
     }
 
     update(uid: string, data: T): Observable<void> {
@@ -124,6 +123,13 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
                 }
                 this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${uid}`);
             }));
+    }
+
+    clearCache(): void {
+        Object.keys(this.cache).forEach(uid => {
+            this.cache[uid].subscription.unsubscribe();
+            delete this.cache[uid];
+        });
     }
 
 }

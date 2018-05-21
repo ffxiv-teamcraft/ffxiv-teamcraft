@@ -26,7 +26,7 @@ export class DataService {
                 private serializer: NgSerializerService) {
     }
 
-    public getGearsets(lodestoneId: number): Observable<GearSet[]> {
+    public getGearsets(lodestoneId: number, onlyCraft = true): Observable<GearSet[]> {
         return this.getCharacter(lodestoneId)
             .pipe(
                 mergeMap(character => {
@@ -35,13 +35,13 @@ export class DataService {
                             map((response: any[]) => {
                                 return response
                                 // We want only crafter sets
-                                    .filter(row => row.classjob_id >= 8 && row.classjob_id <= 15)
+                                    .filter(row => row.classjob_id >= 8 && row.classjob_id <= (onlyCraft ? 15 : 18))
                                     .map(set => {
                                         // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
                                         // default to set level.
-                                        const setLevel = Object.keys(character.classjobs)
+                                        const setLevel = (Object.keys(character.classjobs)
                                             .map(key => character.classjobs[key])
-                                            .find(job => job.name === set.role.name) || set.level;
+                                            .find(job => job.name === set.role.name) || set).level;
                                         return {
                                             ilvl: set.item_level_avg,
                                             jobId: set.classjob_id,
@@ -51,7 +51,8 @@ export class DataService {
                                             cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
                                             specialist: set.slot_soulcrystal !== null
                                         }
-                                    });
+                                    })
+                                    .sort((a, b) => a.jobId - b.jobId);
                             })
                         );
                 })

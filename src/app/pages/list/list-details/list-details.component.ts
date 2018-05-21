@@ -267,7 +267,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.cd.detach();
         this.listManager.upgradeList(this.listData)
             .pipe(
-                switchMap(list => this.listService.update(this.listData.$key, list)),
+                switchMap(list => this.listService.set(this.listData.$key, list)),
                 first()
             ).subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
@@ -287,7 +287,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
-        this.listService.update(this.listData.$key, list).pipe(first()).subscribe(() => {
+        this.listService.set(this.listData.$key, list).pipe(first()).subscribe(() => {
             this.reload.emit();
         });
     }
@@ -322,7 +322,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         list.setDone(data.row, data.amount, data.preCraft);
-        this.listService.update(list.$key, list).pipe(
+        this.listService.set(list.$key, list).pipe(
             map(() => list),
             tap((l: List) => {
                 if (l.ephemeral && l.isComplete()) {
@@ -349,12 +349,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                             case 'reset':
                                 this.resetProgression();
                                 return of(null);
-                            case'delete':
+                            case 'delete':
                                 return this.listService.remove(list.$key).pipe(first(),
                                     tap(() => {
                                         this.router.navigate(['recipes']);
                                     })
                                 );
+                            default:
+                                return of(null)
                         }
                     })
                 ).subscribe();
@@ -365,7 +367,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         const fork: List = list.clone();
         this.cd.detach();
         // Update the forks count.
-        this.listService.update(list.$key, list).pipe(first()).subscribe();
+        this.listService.set(list.$key, list).pipe(first()).subscribe();
         fork.authorId = this.user.uid;
         this.listService.add(fork).pipe(first()).subscribe((id) => {
             this.cd.reattach();

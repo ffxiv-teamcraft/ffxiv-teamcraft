@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {switchMap} from 'rxjs/operators';
 
 @Component({

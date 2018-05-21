@@ -13,6 +13,19 @@
         </mat-list-item>
     </mat-list>
     <mat-spinner *ngIf="loading"></mat-spinner>
+    <div *ngIf="contacts$ | async as contacts">
+        <mat-divider></mat-divider>
+        <h3>{{'PROFILE.Contacts' | translate}}</h3>
+        <mat-list dense *ngIf="contacts.length > 0">
+            <mat-list-item *ngFor="let contact of contacts">
+                <img src="{{contact.avatar}}" alt="" mat-list-avatar>
+                <span matLine>{{contact.name}}</span>
+                <button mat-icon-button color="primary" [mat-dialog-close]="contact">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </div>
 </div>
 <div mat-dialog-actions>
     <button mat-raised-button [mat-dialog-close]="result?.user" color="primary"

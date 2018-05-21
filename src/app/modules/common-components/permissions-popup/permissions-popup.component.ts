@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {DataWithPermissions} from '../../../core/database/permissions/data-with-permissions';
 import {AddNewRowPopupComponent} from './add-new-row-popup/add-new-row-popup.component';
-import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
+import {BehaviorSubject, combineLatest, concat, Observable, of} from 'rxjs';
 import {Permissions} from '../../../core/database/permissions/permissions';
 import {PermissionsRegistry} from '../../../core/database/permissions/permissions-registry';
 import {UserService} from '../../../core/database/user.service';
@@ -12,6 +12,8 @@ import {Workshop} from '../../../model/other/workshop';
 import {DataService} from '../../../core/api/data.service';
 import {catchError, filter, first, map, mergeMap} from 'rxjs/operators';
 import {AppUser} from '../../../model/list/app-user';
+import {ListService} from '../../../core/database/list.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-permissions-popup',
@@ -33,7 +35,8 @@ export class PermissionsPopupComponent {
 
     constructor(@Inject(MAT_DIALOG_DATA) public data: DataWithPermissions, private dialog: MatDialog, private userService: UserService,
                 private dialogRef: MatDialogRef<PermissionsPopupComponent>, serializer: NgSerializerService,
-                private dataService: DataService) {
+                private dataService: DataService, private listService: ListService, private snack: MatSnackBar,
+                private translator: TranslateService) {
         // If this permissions registry is bugged, rebuild it.
         if (data.permissionsRegistry.everyone.write === true) {
             this.registry = new PermissionsRegistry();
@@ -137,6 +140,33 @@ export class PermissionsPopupComponent {
     deleteRow(userId: string): void {
         delete this.registry.registry[userId];
         this.registrySubject.next(this.registry);
+    }
+
+    propagate(): void {
+        const workshop = <Workshop>this.data;
+        this.listService.fetchWorkshop(workshop)
+            .pipe(
+                first(),
+                map(lists => {
+                    console.log(lists);
+                    return lists.map(list => {
+                        // Copy workshop permissions
+                        list.permissionsRegistry = workshop.permissionsRegistry;
+                        // Delete free company-related permissions for list,as  they won't be used.
+                        delete list.permissionsRegistry.freeCompanyId;
+                        delete list.permissionsRegistry.freeCompany;
+                        return list;
+                    });
+                }),
+                mergeMap(lists => {
+                    return concat(lists.map(list => this.listService.set(list.$key, list)));
+                })
+            ).subscribe(() => {
+            this.snack.open(this.translator.instant('PERMISSIONS.Propagate_changes_done'), null, {
+                duration: 10000,
+                panelClass: ['snack']
+            });
+        });
     }
 
     save(): void {

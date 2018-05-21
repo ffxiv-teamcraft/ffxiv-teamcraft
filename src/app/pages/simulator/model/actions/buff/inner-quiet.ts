@@ -1,16 +1,21 @@
 import {BuffAction} from '../buff-action';
 import {Buff} from '../../buff.enum';
 import {Simulation} from '../../../simulation/simulation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class InnerQuiet extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 11};
+    }
 
     protected getBuff(): Buff {
         return Buff.INNER_QUIET;
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         // You can't use IQ if it's already there
-        return super.canBeUsed(simulationState) && !simulationState.hasBuff(this.getBuff());
+        return super._canBeUsed(simulationState) && !simulationState.hasBuff(this.getBuff());
     }
 
     getBaseCPCost(simulationState: Simulation): number {

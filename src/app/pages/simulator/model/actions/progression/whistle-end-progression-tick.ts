@@ -1,14 +1,19 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class WhistleEndProgressionTick extends ProgressAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 55};
+    }
 
     canBeMoved(): boolean {
         return false;
     }
 
-    canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
+    _canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
         return simulationState.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK) &&
             simulationState.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks === 0;
     }

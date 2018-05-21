@@ -2,17 +2,22 @@ import {GeneralAction} from '../general-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 /**
  * Because the amount provided by Flawless Synthesis is fixed, we won't use ProgressAction as parent for it.
  */
 export class FlawlessSynthesis extends GeneralAction {
 
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.GSM, level: 37};
+    }
+
     public getType(): ActionType {
         return ActionType.PROGRESSION;
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

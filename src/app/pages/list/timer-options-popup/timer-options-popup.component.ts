@@ -14,7 +14,7 @@ export class TimerOptionsPopupComponent {
     }
 
     public previewSound(): void {
-        const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
+        const audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
         audio.loop = false;
         audio.volume = this.settings.alarmVolume;
         audio.play();
@@ -33,6 +33,7 @@ export class TimerOptionsPopupComponent {
     }
 
     public setHoursBefore(hours: number): void {
+        console.log(hours);
         this.settings.alarmHoursBefore = hours;
     }
 

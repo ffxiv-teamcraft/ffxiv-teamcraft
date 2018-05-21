@@ -2,8 +2,13 @@ import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {Innovation} from '../buff/innovation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class InnovativeTouch extends QualityAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 56};
+    }
 
     execute(simulation: Simulation): void {
         super.execute(simulation);
@@ -22,7 +27,7 @@ export class InnovativeTouch extends QualityAction {
         }
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return simulationState.crafterStats.specialist;
     }
 

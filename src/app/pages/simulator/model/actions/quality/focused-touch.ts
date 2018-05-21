@@ -1,10 +1,15 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Observe} from '../other/observe';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class FocusedTouch extends QualityAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 68};
+    }
+
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

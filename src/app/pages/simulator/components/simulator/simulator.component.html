@@ -54,7 +54,7 @@
                     <mat-icon>refresh</mat-icon>
                 </button>
                 <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined"
-                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set'}}"
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set' | translate}}"
                         color="accent"
                         (click)="saveSet(selectedSet)">
                     <mat-icon>save</mat-icon>
@@ -134,10 +134,14 @@
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let food of foods" [value]="food">
                             {{food.itemId | itemName | i18n}}
-                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedFood !== undefined">
+                        <div class="details-row">
+                            <b>{{_selectedFood.itemId | itemName | i18n}}</b>
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedFood.hq">
+                        </div>
                         <div class="details-row" *ngFor="let bonus of _selectedFood.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
@@ -150,10 +154,14 @@
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let medicine of medicines" [value]="medicine">
                             {{medicine.itemId | itemName | i18n}}
-                            <img src="/assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
                         </mat-option>
                     </mat-select>
                     <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
+                        <div class="details-row">
+                            <b>{{_selectedMedicine.itemId | itemName | i18n}}</b>
+                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedMedicine.hq">
+                        </div>
                         <div class="details-row" *ngFor="let bonus of _selectedMedicine.bonuses">
                             {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
                             ({{bonus.max}})
