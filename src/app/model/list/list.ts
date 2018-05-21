@@ -370,7 +370,7 @@ export class List extends DataWithPermissions {
         }
         let res = false;
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '3.4.6');
+        res = res || semver.ltr(this.version, '3.9.0');
         return res;
     }
 
