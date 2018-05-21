@@ -1,10 +1,15 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Observe} from '../other/observe';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class FocusedSynthesis extends ProgressAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 67};
+    }
+
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

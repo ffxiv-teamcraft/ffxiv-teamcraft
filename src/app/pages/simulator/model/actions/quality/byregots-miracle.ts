@@ -1,10 +1,15 @@
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
 import {QualityAction} from '../quality-action';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class ByregotsMiracle extends QualityAction {
 
-    canBeUsed(simulationState: Simulation): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 58};
+    }
+
+    _canBeUsed(simulationState: Simulation): boolean {
         return simulationState.hasBuff(Buff.INNER_QUIET) && simulationState.crafterStats.specialist;
     }
 

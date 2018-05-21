@@ -4,8 +4,8 @@ import {Buff} from '../../buff.enum';
 
 export class SpecialtyReflect extends SpecialtyAction {
 
-    canBeUsed(simulation: Simulation): boolean {
-        return super.canBeUsed(simulation) && simulation.hasBuff(Buff.INNER_QUIET);
+    _canBeUsed(simulation: Simulation): boolean {
+        return super._canBeUsed(simulation) && simulation.hasBuff(Buff.INNER_QUIET);
     }
 
     applyReflect(simulation: Simulation): void {

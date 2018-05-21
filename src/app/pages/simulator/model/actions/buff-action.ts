@@ -44,7 +44,7 @@ export abstract class BuffAction extends CraftingAction {
         simulation.buffs.push(this.getAppliedBuff(simulation));
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

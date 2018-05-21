@@ -1,14 +1,19 @@
 import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class Observe extends CraftingAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 13};
+    }
 
     public getType(): ActionType {
         return ActionType.OTHER;
     }
 
-    canBeUsed(simulationState: Simulation): boolean {
+    _canBeUsed(simulationState: Simulation): boolean {
         return true;
     }
 

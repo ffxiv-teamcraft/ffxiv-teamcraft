@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Buff} from '../../buff.enum';
 import {Simulation} from '../../../simulation/simulation';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class WasteNotII extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.LTW, level: 50};
+    }
 
     protected getOverrides(): Buff[] {
         return super.getOverrides().concat(Buff.WASTE_NOT);

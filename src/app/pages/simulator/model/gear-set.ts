@@ -7,4 +7,6 @@ export interface GearSet {
     cp: number;
     specialist: boolean;
     custom?: boolean;
+    abbr?: string;
+    name?: string;
 }

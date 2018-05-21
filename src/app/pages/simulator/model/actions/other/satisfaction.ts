@@ -2,10 +2,15 @@ import {CraftingAction} from '../crafting-action';
 import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class Satisfaction extends CraftingAction {
 
-    canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 55};
+    }
+
+    _canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
         return simulationState.crafterStats.specialist && simulationState.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK)
             && simulationState.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks % 3 === 0;
     }

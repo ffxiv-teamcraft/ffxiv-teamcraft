@@ -105,7 +105,17 @@ export const alc_70_350_stats: CrafterStats = new CrafterStats(
     1468,
     474,
     true,
-    70);
+    70,
+    [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+    ]);
 
 export const acchan_stats: CrafterStats = new CrafterStats(
     14,
@@ -113,4 +123,14 @@ export const acchan_stats: CrafterStats = new CrafterStats(
     1536,
     539,
     true,
-    70);
+    70,
+    [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+    ]);

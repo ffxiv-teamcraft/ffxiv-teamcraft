@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class MakersMark extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.GSM, level: 54};
+    }
 
     getBaseCPCost(simulationState: Simulation): number {
         return 20;
@@ -24,8 +29,8 @@ export class MakersMark extends BuffAction {
         return 0;
     }
 
-    canBeUsed(simulation: Simulation): boolean {
-        return super.canBeUsed(simulation) && simulation.steps.length === 0;
+    _canBeUsed(simulation: Simulation): boolean {
+        return super._canBeUsed(simulation) && simulation.steps.length === 0;
     }
 
     protected getTick(): (simulation: Simulation) => void {

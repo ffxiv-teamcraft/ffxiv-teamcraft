@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class Ingenuity extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.BSM, level: 15};
+    }
 
     protected getOverrides(): Buff[] {
         return super.getOverrides().concat(Buff.INGENUITY_II);

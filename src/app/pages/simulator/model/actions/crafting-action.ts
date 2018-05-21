@@ -3,6 +3,7 @@ import {Buff} from '../buff.enum';
 import {ActionType} from './action-type';
 import {Tables} from '../tables';
 import {CrafterStats} from '../crafter-stats';
+import {CraftingJob} from '../crafting-job.enum';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -23,13 +24,24 @@ export abstract class CraftingAction {
         return this.getIds()[jobId - 8] || this.getIds()[0];
     }
 
+    abstract getLevelRequirement(): { job: CraftingJob, level: number };
+
     abstract getType(): ActionType;
 
     abstract getIds(): number[];
 
     abstract getSuccessRate(simulationState: Simulation): number;
 
-    abstract canBeUsed(simulationState: Simulation, linear?: boolean): boolean;
+    canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
+        const levelRequirement = this.getLevelRequirement();
+        if (levelRequirement.job !== CraftingJob.ANY) {
+            return simulationState.crafterStats.levels[levelRequirement.job] >= levelRequirement.level
+                && this._canBeUsed(simulationState, linear);
+        }
+        return simulationState.crafterStats.level >= levelRequirement.level && this._canBeUsed(simulationState, linear);
+    }
+
+    abstract _canBeUsed(simulationState: Simulation, linear?: boolean): boolean;
 
     public getCPCost(simulationState: Simulation, linear = false): number {
         const baseCPCost = this.getBaseCPCost(simulationState);

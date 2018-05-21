@@ -2,10 +2,15 @@ import {GeneralAction} from '../general-action';
 import {Simulation} from '../../../simulation/simulation';
 import {ActionType} from '../action-type';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class TrainedHand extends GeneralAction {
 
-    canBeUsed(simulation: Simulation, linear?: boolean): boolean {
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 59};
+    }
+
+    _canBeUsed(simulation: Simulation, linear?: boolean): boolean {
         return simulation.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK) && simulation.hasBuff(Buff.INNER_QUIET) &&
             simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks === simulation.getBuff(Buff.INNER_QUIET).stacks;
     }

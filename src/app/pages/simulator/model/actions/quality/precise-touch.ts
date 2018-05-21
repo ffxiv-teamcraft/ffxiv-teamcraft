@@ -1,8 +1,13 @@
 import {QualityAction} from '../quality-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class PreciseTouch extends QualityAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.ANY, level: 53};
+    }
 
     execute(simulation: Simulation): void {
         super.execute(simulation);
@@ -11,7 +16,7 @@ export class PreciseTouch extends QualityAction {
         }
     }
 
-    canBeUsed(simulationState: Simulation, linear = false): boolean {
+    _canBeUsed(simulationState: Simulation, linear = false): boolean {
         if (linear) {
             return true
         }

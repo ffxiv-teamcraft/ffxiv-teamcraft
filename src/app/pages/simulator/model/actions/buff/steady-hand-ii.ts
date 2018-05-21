@@ -1,8 +1,13 @@
 import {BuffAction} from '../buff-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
+import {CraftingJob} from '../../crafting-job.enum';
 
 export class SteadyHandII extends BuffAction {
+
+    getLevelRequirement(): { job: CraftingJob; level: number } {
+        return {job: CraftingJob.CUL, level: 37};
+    }
 
     protected getOverrides(): Buff[] {
         return super.getOverrides().concat(Buff.STEADY_HAND);
