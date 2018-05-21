@@ -22,6 +22,12 @@
             </span>
         </div>
         <div class="right-fabs">
+            <button mat-mini-fab *ngIf="platform.isDesktop()" ngxClipboard [cbContent]="getLink()"
+                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
+            </button>
+
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
                     (click)="openTagsPopup()" *ngIf="isOwnList()">
                 <mat-icon>label_outline</mat-icon>

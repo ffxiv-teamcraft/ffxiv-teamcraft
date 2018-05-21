@@ -18,12 +18,18 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    button {
+        margin: 0 5px;
+    }
 }
 
 .left-fabs {
     position: absolute;
     top: 10px;
     left: 10px;
+    button {
+        margin: 0 5px;
+    }
 }
 
 .header {
@@ -60,7 +66,7 @@
     display: inline-block;
     text-align: center;
     .crystal-row {
-        &.tracked{
+        &.tracked {
             padding: 10px;
             margin: 0 10px;
         }

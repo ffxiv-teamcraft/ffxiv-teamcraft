@@ -37,6 +37,8 @@ import {PermissionsPopupComponent} from '../../../modules/common-components/perm
 import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
 import {filter} from 'rxjs/operators';
 import {first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {PlatformService} from '../../../core/tools/platform.service';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
 
 declare const ga: Function;
 
@@ -102,7 +104,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     constructor(private auth: AngularFireAuth, private userService: UserService, protected dialog: MatDialog,
                 private listService: ListService, private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
-                public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef) {
+                public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
+                public platform: PlatformService, private linkTools: LinkToolsService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -119,6 +122,19 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     return this.layoutService.getRecipes(data, this.selectedIndex);
                 })
             );
+    }
+
+    public getLink(): string {
+        return this.linkTools.getLink(`/list/${this.listData.$key}`);
+    }
+
+    public showCopiedNotification(): void {
+        this.snack.open(
+            this.translate.instant('Share_link_copied'),
+            '', {
+                duration: 10000,
+                panelClass: ['snack']
+            });
     }
 
     displayTrackByFn(index: number, item: LayoutRowDisplay) {
