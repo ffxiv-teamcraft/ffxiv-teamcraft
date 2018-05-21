@@ -200,6 +200,8 @@
     "Patreon_edit_email": "Edite correo electrónico de patreon",
     "Email_already_used": "Correo electrónico vinculado a otra cuenta",
     "Patreon_email": "Correo electrónico de Patreon",
+    "Contacts": "Contactos",
+    "New_contact": "ID del usuario a agregar",
     "HELP": {
       "Welcome": "Bienvenido a la página de perfil, aquí es donde puede ver y editar su perfil.",
       "Edit": "Apretar el botón de editar le permite editar el personaje vinculado a su cuenta de FFXIV Teamcraft.",
@@ -389,7 +391,9 @@
     "User_not_found": "Usuario no encontrado",
     "User_id_tip": "El ID de usuario puede ser encontrado en la esquina inferior derecha",
     "Saving": "Guardando permisos",
-    "No_anonymous": "Necesita una cuenta para administrar permisos"
+    "No_anonymous": "Necesita una cuenta para administrar permisos",
+    "Propagate_changes": "Propagar permisos a las listas dentro del taller",
+    "Propagate_changes_done": "Cambios propagados a las listas dentro del taller"
   },
   "SIMULATOR": {
     "Progress": "Progreso",
