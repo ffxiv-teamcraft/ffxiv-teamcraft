@@ -14,6 +14,20 @@ import {map, mergeMap, publishReplay, refCount, take} from 'rxjs/operators';
 @Injectable()
 export class DataService {
 
+    static craftingJobs = [
+        {abbr: 'CRP', name: 'carpenter'},
+        {abbr: 'BSM', name: 'blacksmith'},
+        {abbr: 'ARM', name: 'armorer'},
+        {abbr: 'LTW', name: 'leatherworker'},
+        {abbr: 'WVR', name: 'weaver'},
+        {abbr: 'GSM', name: 'goldsmith'},
+        {abbr: 'ALC', name: 'alchemist'},
+        {abbr: 'CUL', name: 'culinarian'},
+        {abbr: 'MIN', name: 'miner'},
+        {abbr: 'BTN', name: 'botanist'},
+        {abbr: 'FSH', name: 'fisher'}
+    ];
+
     private garlandUrl = 'https://www.garlandtools.org/db/doc';
     private garlandtoolsVersion = 2;
     private garlandApiUrl = 'https://www.garlandtools.org/api';
@@ -53,6 +67,25 @@ export class DataService {
                                         }
                                     })
                                     .sort((a, b) => a.jobId - b.jobId);
+                            }),
+                            map(sets => {
+                                const jobIds = onlyCraft ?
+                                    [8, 9, 10, 11, 12, 13, 14, 15] :
+                                    [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+                                jobIds.forEach(jobId => {
+                                    if (sets.find(set => set.jobId === jobId) === undefined) {
+                                        sets.push({
+                                            ilvl: 0,
+                                            control: 1350,
+                                            craftsmanship: 1500,
+                                            cp: 474,
+                                            jobId: jobId,
+                                            level: character.classjobs[DataService.craftingJobs[jobId - 8].name].level,
+                                            specialist: false
+                                        });
+                                    }
+                                });
+                                return sets;
                             })
                         );
                 })
