@@ -59,6 +59,16 @@ function createWindow() {
     const trayIcon = nativeIcon.resize({width: 16, height: 16});
     tray = new Tray(trayIcon);
 
+    const handleRedirect = (e, url) => {
+        if(url !== win.webContents.getURL()) {
+            e.preventDefault();
+            require('electron').shell.openExternal(url);
+        }
+    };
+
+    win.webContents.on('will-navigate', handleRedirect);
+    win.webContents.on('new-window', handleRedirect);
+
     tray.on('click', () => {
         win.isVisible() ? win.hide() : win.show()
     });
@@ -70,10 +80,6 @@ function createWindow() {
     });
     tray.on('balloon-click', () => {
         !win.isVisible() ? win.show() : null;
-    });
-    win.on('new-window', function (event, url) {
-        event.preventDefault();
-        open(url);
     });
 
     autoUpdater.checkForUpdatesAndNotify();
