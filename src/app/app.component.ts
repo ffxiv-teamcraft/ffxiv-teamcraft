@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
                 private pendingChangesService: PendingChangesService,
-                private platformService: PlatformService,
+                public platformService: PlatformService,
                 private ipc: IpcService) {
 
         settings.themeChange$.subscribe(change => {

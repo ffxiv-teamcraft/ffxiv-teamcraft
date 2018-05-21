@@ -282,7 +282,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                                     return this.populateMissingSets(resultSets);
                                 }
                                 return resultSets.sort((a, b) => a.jobId - b.jobId);
-                            })
+                            }),
+                            tap(sets => this.levels = <CrafterLevels>sets.map(set => set.level))
                         );
                 })
             );
