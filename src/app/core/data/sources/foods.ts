@@ -81,4 +81,8 @@ export const foods = [{'itemId': 4666, 'Control': [{'amount': 0.08, 'max': 4}, {
     'itemId': 19837,
     'Control': [{'amount': 0.1, 'max': 99}, {'amount': 0.12, 'max': 124}],
     'Craftsmanship': [{'amount': 0.04, 'max': 42}, {'amount': 0.05, 'max': 53}]
+}, {
+    'itemId': 23187,
+    'CP': [{'amount': 0.12, 'max': 45}, {'amount': 0.15, 'max': 56}],
+    'Control': [{'amount': 0.04, 'max': 49}, {'amount': 0.05, 'max': 61}]
 }];
