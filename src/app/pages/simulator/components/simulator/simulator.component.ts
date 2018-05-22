@@ -191,7 +191,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public foods: Consumable[] = [];
 
     @Input()
-    public levels: CrafterLevels = [70, 70, 70, 70, 70, 70, 70, 70];
+    public levels: CrafterLevels;
 
     @Input()
     public set selectedFood(food: Consumable) {
@@ -472,7 +472,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             set.cp + this.getBonusValue('CP', set.cp),
             set.specialist,
             set.level,
-            levels);
+            (levels || [70, 70, 70, 70, 70, 70, 70, 70]));
         if (markDirty) {
             this.markAsDirty();
         }

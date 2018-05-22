@@ -34,7 +34,7 @@ export abstract class CraftingAction {
 
     canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
         const levelRequirement = this.getLevelRequirement();
-        if (levelRequirement.job !== CraftingJob.ANY) {
+        if (levelRequirement.job !== CraftingJob.ANY && simulationState.crafterStats.levels[levelRequirement.job] !== undefined) {
             return simulationState.crafterStats.levels[levelRequirement.job] >= levelRequirement.level
                 && this._canBeUsed(simulationState, linear);
         }
