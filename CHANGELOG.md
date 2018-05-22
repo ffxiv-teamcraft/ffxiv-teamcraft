@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.4"></a>
+## [4.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.3...v4.0.4) (2018-05-22)
+
+
+### Features
+
+* new foods added to simulator ([0a18197](https://github.com/Supamiu/ffxiv-teamcraft/commit/0a18197))
+
+
+
 <a name="4.0.3"></a>
 ## [4.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.1...v4.0.3) (2018-05-22)
 
