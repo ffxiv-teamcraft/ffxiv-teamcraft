@@ -53,7 +53,8 @@ export class DataService {
                                     .map(set => {
                                         // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
                                         // default to set level.
-                                        const setLevel = (Object.keys(character.classjobs)
+                                        const setLevel = (
+                                            (Object.keys(character.classjobs || {}))
                                             .map(key => character.classjobs[key])
                                             .find(job => job.name === set.role.name) || set).level;
                                         return {
@@ -200,7 +201,8 @@ export class DataService {
                     map(result => result.data),
                     publishReplay(1),
                     refCount(),
-                    take(1)
+                    take(1),
+                    map(res => res !== false ? res : {name: 'Lodestone under maintenance'})
                 );
             this.characterCache.set(id, request);
         }
