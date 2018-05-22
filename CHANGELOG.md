@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.2"></a>
+## [4.0.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.1...v4.0.2) (2018-05-22)
+
+
+### Bug Fixes
+
+* external links are now opened inside OS default browser ([b42bcf2](https://github.com/Supamiu/ffxiv-teamcraft/commit/b42bcf2))
+* fixed an issue with profile component and custom sets ([6b4c55d](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b4c55d))
+* **simulator:** fixed an issue with stats not being loaded properly, causing a crash ([3544e0c](https://github.com/Supamiu/ffxiv-teamcraft/commit/3544e0c))
+* simulator is now working even with lodestone maintenance ([68cd942](https://github.com/Supamiu/ffxiv-teamcraft/commit/68cd942))
+
+
+### Features
+
+* **desktop:** new share button inside list details page ([92b83e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/92b83e1))
+* 4.3 data: item names, new npcs, new places, new weather ([83aa499](https://github.com/Supamiu/ffxiv-teamcraft/commit/83aa499))
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.0-beta.1...v4.0.1) (2018-05-21)
 
