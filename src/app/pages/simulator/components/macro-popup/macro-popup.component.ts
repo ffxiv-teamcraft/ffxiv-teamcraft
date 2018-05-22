@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {LocalizedDataService} from '../../../../core/data/localized-data.service';
-import {ActionType} from '../../model/actions/action-type';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 
 @Component({
@@ -32,7 +31,7 @@ export class MacroPopupComponent implements OnInit {
             if (actionName.indexOf(' ') > -1) {
                 actionName = `"${actionName}"`;
             }
-            macroFragment.push(`/ac ${actionName} <wait.${action.getType() === ActionType.BUFF ? 2 : 3}>`);
+            macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration()}>`);
         });
     }
 

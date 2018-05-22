@@ -24,6 +24,10 @@ export abstract class CraftingAction {
         return this.getIds()[jobId - 8] || this.getIds()[0];
     }
 
+    public getWaitDuration(): number {
+        return this.getType() === ActionType.BUFF ? 2 : 3;
+    }
+
     abstract getLevelRequirement(): { job: CraftingJob, level: number };
 
     abstract getType(): ActionType;
