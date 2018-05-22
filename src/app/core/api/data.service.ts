@@ -51,12 +51,15 @@ export class DataService {
                                 // We want only crafter sets
                                     .filter(row => row.classjob_id >= 8 && row.classjob_id <= (onlyCraft ? 15 : 18))
                                     .map(set => {
-                                        // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
-                                        // default to set level.
-                                        const setLevel = (
-                                            (Object.keys(character.classjobs || {}))
-                                            .map(key => character.classjobs[key])
-                                            .find(job => job.name === set.role.name) || set).level;
+                                        let setLevel = 70;
+                                        if (character.classjobs !== undefined) {
+                                            // Get real level from lodestone profile as it's way more accurate and up to date, if not found,
+                                            // default to set level.
+                                            setLevel = (
+                                                (Object.keys(character.classjobs || {}))
+                                                    .map(key => character.classjobs[key])
+                                                    .find(job => job.name === set.role.name) || set).level;
+                                        }
                                         return {
                                             ilvl: set.item_level_avg,
                                             jobId: set.classjob_id,
@@ -75,13 +78,17 @@ export class DataService {
                                     [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
                                 jobIds.forEach(jobId => {
                                     if (sets.find(set => set.jobId === jobId) === undefined) {
+                                        let level = 70;
+                                        if (character.classjobs !== undefined) {
+                                            level = character.classjobs[DataService.craftingJobs[jobId - 8].name].level
+                                        }
                                         sets.push({
                                             ilvl: 0,
                                             control: 1350,
                                             craftsmanship: 1500,
                                             cp: 474,
                                             jobId: jobId,
-                                            level: character.classjobs[DataService.craftingJobs[jobId - 8].name].level,
+                                            level: level,
                                             specialist: false
                                         });
                                     }
