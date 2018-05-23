@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.5"></a>
+## [4.0.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.4...v4.0.5) (2018-05-23)
+
+
+### Bug Fixes
+
+* **desktop:** only one instance can run at a given time now ([6860273](https://github.com/Supamiu/ffxiv-teamcraft/commit/6860273)), closes [#353](https://github.com/Supamiu/ffxiv-teamcraft/issues/353)
+* **simulator:** consumables are now order by name, hq first ([fc17369](https://github.com/Supamiu/ffxiv-teamcraft/commit/fc17369))
+* facebook oauth (mainly config on fb side) ([d7628b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/d7628b9))
+* **simulator:** fixed a bug with rotations being renamed upon saving ([c2b8c96](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2b8c96))
+
+
+
 <a name="4.0.4"></a>
 ## [4.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.3...v4.0.4) (2018-05-22)
 
