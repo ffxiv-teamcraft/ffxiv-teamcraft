@@ -229,23 +229,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     private userData: AppUser;
 
+    private consumablesSortFn = (a, b) => {
+        const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
+        const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
+        if (aName > bName) {
+            return 1
+        } else if (aName < bName) {
+            return -1
+        } else {
+            // If they're both the same item, HQ first
+            return a.hq ? -1 : 1;
+        }
+    };
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
-                private translate: TranslateService, consumablesService: ConsumablesService, i18nTools: I18nToolsService) {
+                private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService) {
 
         this.foods = consumablesService.fromData(foods)
-            .sort((a, b) => {
-                const aName = i18nTools.getName(this.localizedDataService.getItem(a.itemId));
-                const bName = i18nTools.getName(this.localizedDataService.getItem(b.itemId));
-                return aName > bName || !a.hq ? 1 : -1;
-            });
+            .sort(this.consumablesSortFn);
         this.medicines = consumablesService.fromData(medicines)
-            .sort((a, b) => {
-                const aName = i18nTools.getName(this.localizedDataService.getItem(a.itemId));
-                const bName = i18nTools.getName(this.localizedDataService.getItem(b.itemId));
-                return aName > bName || !a.hq ? 1 : -1;
-            });
+            .sort(this.consumablesSortFn);
 
         this.actions$.subscribe(actions => {
             this.dirty = false;
