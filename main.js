@@ -19,6 +19,19 @@ let nativeIcon;
 
 let openedOverlays = {};
 
+const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+    // Someone tried to run a second instance, we should focus our window.
+    if (win) {
+        if (win.isMinimized()) win.restore();
+        win.focus();
+    }
+});
+
+if (shouldQuit) {
+    app.quit();
+    return;
+}
+
 function createWindow() {
 
     // Load the previous state with fallback to defaults

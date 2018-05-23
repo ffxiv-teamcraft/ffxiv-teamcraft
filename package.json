@@ -52,7 +52,8 @@
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder -p always",
     "postinstall": "electron-builder install-app-deps",
-    "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish"
+    "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
+    "pack": "electron-builder --dir"
   },
   "private": true,
   "dependencies": {
