@@ -1,19 +1,11 @@
 const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
 const {autoUpdater} = require('electron-updater');
-const open = require('open');
 const path = require('path');
 const windowStateKeeper = require('electron-window-state');
 
 const electronOauth2 = require('electron-oauth2');
 
-let win, serve;
-const args = process.argv.slice(1);
-serve = args.some(val => val === '--serve');
-
-if (serve) {
-    require('electron-reload')(__dirname, {});
-}
-
+let win;
 let tray;
 let nativeIcon;
 
