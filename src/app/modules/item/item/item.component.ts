@@ -102,6 +102,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         21080: 13, // Moogle
         21081: 13, // Kojin
         21935: 13, // Ananta
+        22525: 13, // Namazu
         // Primals
         7004: 10, // Weekly quest Garuda/Titan/Ifrit
         7850: 10, // Leviathan
@@ -117,6 +118,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         19110: 10, // Lakshmi
         21196: 10, // Shinryu
         21773: 10, // Byakko
+        23043: 10, // Tsukuyomi
         // Raids
         7577: 8, // Sands of Time
         7578: 8, // Oil of Time
@@ -203,6 +205,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         21783: 8, // Sigmascape Datalog v3.0
         21784: 8, // Sigmascape Datalog v4.0
         21785: 8, // Sigmascape Crystalloid
+        23174: 8, // Gougan Coin
         // World bosses
         6155: 5, // Behemoth
         6164: 5, // Odin
