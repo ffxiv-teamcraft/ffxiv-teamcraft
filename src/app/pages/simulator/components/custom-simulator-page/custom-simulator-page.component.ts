@@ -37,6 +37,8 @@ export class CustomSimulatorPageComponent {
 
     public notFound = false;
 
+    public rotationName: string;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
 
@@ -58,6 +60,7 @@ export class CustomSimulatorPageComponent {
             this.stats = res.rotation.stats;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
+            this.rotationName = res.rotation.getName();
         }, () => this.notFound = true);
     }
 
@@ -72,7 +75,7 @@ export class CustomSimulatorPageComponent {
                     result.authorId = userId;
                     result.recipe = rotation.recipe;
                     result.description = '';
-                    result.name = '';
+                    result.name = rotation.name;
                     return result;
                 }),
                 mergeMap(preparedRotation => {

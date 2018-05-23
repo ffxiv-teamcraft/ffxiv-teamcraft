@@ -186,6 +186,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     @Input()
     public rotationId: string;
 
+    @Input()
+    public rotationName: string;
+
     public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
 
     public foods: Consumable[] = [];
@@ -407,6 +410,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         if (!this.customMode) {
             this.onsave.emit({
                 $key: this.rotationId,
+                name: this.rotationName,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
@@ -414,6 +418,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
                 $key: this.rotationId,
+                name: this.rotationName,
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,

@@ -2,7 +2,7 @@
     <div *ngIf="recipe$ | async as recipe; else loading">
         <app-simulator [recipe]="recipe" [actions]="actions" [itemId]="itemId" [itemIcon]="itemIcon" [canSave]="canSave"
                        [rotationId]="rotationId" (onsave)="save($event)" [selectedFood]="selectedFood"
-                       [selectedMedicine]="selectedMedicine"></app-simulator>
+                       [selectedMedicine]="selectedMedicine" [rotationName]="rotationName"></app-simulator>
     </div>
 </div>
 <ng-template #loading>
