@@ -11,8 +11,7 @@ import {LayoutOrderService} from './layout-order.service';
 import {Observable, of} from 'rxjs';
 import {UserService} from '../database/user.service';
 import {ListRow} from '../../model/list/list-row';
-import {catchError, map} from 'rxjs/operators';
-import {first, mergeMap} from 'rxjs/operators';
+import {catchError, first, map, mergeMap} from 'rxjs/operators';
 
 @Injectable()
 export class LayoutService {
@@ -25,7 +24,7 @@ export class LayoutService {
                 .pipe(
                     map(userData => {
                         const layouts = userData.layouts;
-                        if (layouts === undefined || layouts === null || layouts.length === 0) {
+                        if (layouts === undefined || layouts === null || layouts.length === 0 || layouts[0].name === 'Default layout') {
                             return [new ListLayout('Default layout', this.defaultLayout)];
                         }
                         return layouts;
@@ -119,9 +118,15 @@ export class LayoutService {
 
     public get defaultLayout(): LayoutRow[] {
         return [
-            new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name, 0, true),
-            new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name, 3),
-            new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name, 2),
+            new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name, 0, true, false, true),
+            new LayoutRow('Vendors ', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.CAN_BE_BOUGHT.name, 1, false, true, true),
+            new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name, 2, false, false, true),
+            new LayoutRow('Tomes/Tokens/Scripts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TOKEN_TRADE.name, 3, false, false, true),
+            new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name, 4, false, false, true),
+            new LayoutRow('Gatherings', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name, 5, true, false, true),
+            new LayoutRow('Dungeons/Drops or GC', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name, 6, false, false, true),
+            new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name, 8, false, true, true),
+            new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name, 7, true, false, true),
         ]
     }
 
