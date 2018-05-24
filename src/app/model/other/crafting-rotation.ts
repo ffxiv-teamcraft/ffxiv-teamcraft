@@ -17,6 +17,8 @@ export class CraftingRotation extends DataModel {
 
     public defaultItemId?: number;
 
+    public defaultRecipeId?: number;
+
     @DeserializeAs(SavedConsumables)
     public consumables: SavedConsumables = new SavedConsumables();
 

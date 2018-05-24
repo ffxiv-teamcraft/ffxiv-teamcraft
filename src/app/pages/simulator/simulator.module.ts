@@ -57,6 +57,11 @@ const routes: Routes = [
         canActivate: [MaintenanceGuard]
     },
     {
+        path: 'simulator/:itemId/:recipeId/:rotationId',
+        component: SimulatorPageComponent,
+        canActivate: [MaintenanceGuard]
+    },
+    {
         path: 'simulator/:itemId',
         component: SimulatorPageComponent,
         canActivate: [MaintenanceGuard]

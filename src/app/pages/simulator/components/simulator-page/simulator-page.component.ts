@@ -45,6 +45,8 @@ export class SimulatorPageComponent {
 
     public authorId: string;
 
+    private recipeId: string;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
                 private data: DataService) {
@@ -56,6 +58,14 @@ export class SimulatorPageComponent {
                             map(item => {
                                 this.itemId = params.itemId;
                                 this.itemIcon = item.item.icon;
+                                // If rotationId is only numbers, it's a recipeId
+                                if (params.rotationId !== undefined && /^\d+$/.test(params.rotationId)) {
+                                    this.recipeId = params.rotationId;
+                                    return item.item.craft.find(craft => +craft.id === +this.recipeId);
+                                } else if (params.recipeId !== undefined) {
+                                    this.recipeId = params.recipeId;
+                                    return item.item.craft.find(craft => +craft.id === +this.recipeId);
+                                }
                                 // Because only crystals change between recipes, we take the first one.
                                 return item.item.craft[0];
                             })
@@ -75,7 +85,13 @@ export class SimulatorPageComponent {
         combineLatest(this.userId$,
             activeRoute.params
                 .pipe(
-                    map(params => params.rotationId),
+                    map(params => {
+                        // If rotationId is a number only, it means that it's a recipeId.
+                        if (/^\d+$/.test(params.rotationId)) {
+                            return undefined;
+                        }
+                        return params.rotationId;
+                    }),
                     filter(rotation => rotation !== undefined),
                     mergeMap(id => this.rotationsService.get(id).pipe(distinctUntilChanged())),
                     map(res => res))
@@ -94,7 +110,6 @@ export class SimulatorPageComponent {
     }
 
     save(rotation: Partial<CraftingRotation>): void {
-        console.log('save', rotation);
         this.userId$
             .pipe(
                 first(),
@@ -108,12 +123,12 @@ export class SimulatorPageComponent {
                     result.description = '';
                     result.name = rotation.name;
                     result.consumables = rotation.consumables;
+                    result.defaultRecipeId = +this.recipeId;
                     return {rotation: result, userId: userId};
                 }),
                 mergeMap(data => {
                     const preparedRotation = data.rotation;
                     if (preparedRotation.$key === undefined || !this.canSave) {
-                        console.log('userId', data.userId);
                         // Set new authorId for the newly created rotation
                         preparedRotation.authorId = data.userId;
                         // If the rotation has no key, it means that it's a new one, so let's create a rotation entry in the database.
@@ -124,7 +139,11 @@ export class SimulatorPageComponent {
                     }
                 })
             ).subscribe((rotationKey) => {
-            this.router.navigate(['simulator', this.itemId, rotationKey]);
+            if (this.recipeId !== undefined) {
+                this.router.navigate(['simulator', this.itemId, this.recipeId, rotationKey]);
+            } else {
+                this.router.navigate(['simulator', this.itemId, rotationKey]);
+            }
         });
     }
 

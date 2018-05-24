@@ -70,14 +70,25 @@ export class RotationsPageComponent {
 
     public openLinkPopup(rotation: CraftingRotation): void {
         const link = new CustomLink();
-        link.redirectTo = `${rotation.defaultItemId ? 'simulator/' +
-            rotation.defaultItemId + '/' + rotation.$key : 'simulator/custom/' + rotation.$key}`;
+        link.redirectTo = this.getLocalLink(rotation);
         this.dialog.open(CustomLinkPopupComponent, {data: link});
     }
 
     public getLink(rotation: CraftingRotation): string {
-        return this.linkTools.getLink(`${rotation.defaultItemId ? '/simulator/' +
-            rotation.defaultItemId + '/' + rotation.$key : '/simulator/custom/' + rotation.$key}`);
+        return this.linkTools.getLink(this.getLocalLink(rotation));
+    }
+
+    private getLocalLink(rotation: CraftingRotation): string {
+        let link = '/simulator';
+        if (rotation.defaultItemId) {
+            link += `/${rotation.defaultItemId}`;
+            if (rotation.defaultRecipeId) {
+                link += `/${rotation.defaultRecipeId}`;
+            }
+        } else {
+            link += `/custom`;
+        }
+        return `${link}/${rotation.$key}`;
     }
 
     public showCopiedNotification(): void {

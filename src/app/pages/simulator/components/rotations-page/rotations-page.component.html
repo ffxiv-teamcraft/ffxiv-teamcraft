@@ -21,7 +21,7 @@
                     <mat-icon>share</mat-icon>
                 </button>
                 <button mat-icon-button
-                        routerLink="{{rotation.defaultItemId?'/simulator/'+rotation.defaultItemId+'/'+rotation.$key:'/simulator/custom/'+rotation.$key}}"
+                        routerLink="{{getLocalLink(rotation)}}"
                         (click)="$event.stopPropagation()">
                     <mat-icon>playlist_play</mat-icon>
                 </button>

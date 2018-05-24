@@ -166,10 +166,14 @@
                 </mat-menu>
 
                 <mat-menu #simulatorMenu="matMenu">
-                    <button mat-menu-item routerLink="/simulator/{{recipe.itemId}}">{{'SIMULATOR.New_rotation' | translate}}</button>
+                    <button mat-menu-item routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}">
+                        {{'SIMULATOR.New_rotation' | translate}}
+                    </button>
                     <button mat-menu-item
                             *ngFor="let rotation of rotations$ | async"
-                            routerLink="/simulator/{{recipe.itemId}}/{{rotation.$key}}">{{rotation.getName()}}</button>
+                            routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotation.$key}}">
+                        {{rotation.getName()}}
+                    </button>
                 </mat-menu>
 
                 <button mat-icon-button [matMenuTriggerFor]="appMenu">
