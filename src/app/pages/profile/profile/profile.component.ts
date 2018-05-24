@@ -127,9 +127,11 @@ export class ProfileComponent extends PageComponent {
     }
 
     addContact(contactId: string): void {
-        this.user.contacts = this.user.contacts.filter(contact => contact !== contactId);
-        this.user.contacts.push(contactId);
-        this.userService.set(this.user.$key, this.user);
+        if (contactId !== undefined && contactId.length > 0 || contactId.indexOf(' ') > -1) {
+            this.user.contacts = this.user.contacts.filter(contact => contact !== contactId);
+            this.user.contacts.push(contactId);
+            this.userService.set(this.user.$key, this.user);
+        }
     }
 
     removeContact(contactId: string): void {
