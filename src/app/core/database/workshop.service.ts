@@ -32,7 +32,8 @@ export class WorkshopService extends FirestoreStorage<Workshop> {
             );
     }
 
-    getListsByWorkshop(lists: List[], workshops: Workshop[]): { basicLists: List[], rows: { [index: string]: List[] } } {
+    getListsByWorkshop(lists: List[], workshops: Workshop[]):
+        { basicLists: List[], publicLists?: List[], rows: { [index: string]: List[] } } {
         const result = {basicLists: lists, rows: {}};
         workshops.forEach(workshop => {
             result.rows[workshop.$key] = [];

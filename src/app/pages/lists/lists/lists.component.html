@@ -58,6 +58,31 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
+    <div *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
+        <h2>{{'Public_lists' | translate}}</h2>
+        <mat-divider class="divider"></mat-divider>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{'Public_lists' | translate}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let list of display.publicLists;trackBy: trackByListsFn; let i = index;">
+                <app-list-panel
+                    [list]="list"
+                    [expanded]="expanded.indexOf(list.$key) > -1"
+                    (onrecipedelete)="removeRecipe($event, list, list.$key)"
+                    (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                    (ondelete)="delete(list)"
+                    [authorUid]="user.uid"
+                    [odd]="i%2>0"
+                    [linkButton]="userData?.patron || userData?.admin"
+                    [templateButton]="userData?.patron || userData?.admin"
+                ></app-list-panel>
+            </div>
+        </mat-expansion-panel>
+    </div>
+
     <div class="shared-lists" *ngIf="sharedLists | async as sharedListsData">
         <div *ngIf="sharedListsData.length > 0">
             <h2>{{"LISTS.Shared_lists" | translate}}</h2>

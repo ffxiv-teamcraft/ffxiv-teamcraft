@@ -43,7 +43,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     reloader$ = new BehaviorSubject<void>(null);
 
-    lists: Observable<{ basicLists: List[], rows?: { [index: string]: List[] } }>;
+    lists: Observable<{ basicLists: List[], publicLists?: List[], rows?: { [index: string]: List[] } }>;
 
     sharedLists: Observable<List[]>;
 
@@ -382,7 +382,19 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                                             }
                                                         }),
                                                         map(lists => {
-                                                            return this.workshopService.getListsByWorkshop(lists, workshops);
+                                                            const layout = this.workshopService.getListsByWorkshop(lists, workshops);
+                                                            const publicLists = [];
+                                                            const basicLists = [];
+                                                            layout.basicLists.forEach(list => {
+                                                                if (list.public) {
+                                                                    publicLists.push(list);
+                                                                } else {
+                                                                    basicLists.push(list);
+                                                                }
+                                                            });
+                                                            layout.basicLists = basicLists;
+                                                            layout.publicLists = publicLists;
+                                                            return layout;
                                                         })
                                                     );
                                             }))
