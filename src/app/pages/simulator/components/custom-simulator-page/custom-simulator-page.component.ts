@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {GearSet} from '../../model/gear-set';
-import {filter, map, mergeMap} from 'rxjs/operators';
+import {filter, first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-custom-simulator-page',
@@ -70,6 +70,7 @@ export class CustomSimulatorPageComponent {
     save(rotation: Partial<CustomCraftingRotation>): void {
         this.userId$
             .pipe(
+                first(),
                 mergeMap(userId => {
                     const result = new CustomCraftingRotation();
                     result.$key = rotation.$key;

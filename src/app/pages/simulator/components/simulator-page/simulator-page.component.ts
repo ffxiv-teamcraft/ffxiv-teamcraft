@@ -10,7 +10,7 @@ import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {UserService} from '../../../../core/database/user.service';
 import {Consumable} from '../../model/consumable';
-import {catchError, distinctUntilChanged, filter, map, mergeMap} from 'rxjs/operators';
+import {catchError, distinctUntilChanged, filter, first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-simulator-page',
@@ -97,6 +97,7 @@ export class SimulatorPageComponent {
         console.log('save', rotation);
         this.userId$
             .pipe(
+                first(),
                 map(userId => {
                     const result = new CraftingRotation();
                     result.$key = rotation.$key;
