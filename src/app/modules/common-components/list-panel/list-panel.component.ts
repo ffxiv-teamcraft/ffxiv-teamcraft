@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {List} from '../../../model/list/list';
 import {MatDialog, MatExpansionPanel, MatSnackBar} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
@@ -18,13 +18,14 @@ import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.
 import {catchError, filter, first, mergeMap} from 'rxjs/operators';
 import {ListRow} from '../../../model/list/list-row';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
+import {ListTag} from '../../../model/list/list-tag.enum';
 
 @Component({
     selector: 'app-list-panel',
     templateUrl: './list-panel.component.html',
     styleUrls: ['./list-panel.component.scss']
 })
-export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit {
+export class ListPanelComponent extends ComponentWithSubscriptions implements OnInit, OnChanges {
 
     @Input()
     public list: List;
@@ -77,6 +78,8 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     private userNickname: string;
 
     public anonymous: boolean;
+
+    public tags: ListTag[];
 
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
@@ -183,5 +186,13 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public isMobile(): boolean {
         return this.media.isActive('xs');
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (this.list !== undefined && this.list.tags !== undefined && this.list.tags.length > 0) {
+            this.tags = this.list.tags.filter((value, index, self) => {
+                return self.indexOf(value) === index;
+            });
+        }
     }
 }
