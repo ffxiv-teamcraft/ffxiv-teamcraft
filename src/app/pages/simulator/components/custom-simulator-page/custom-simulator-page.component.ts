@@ -63,7 +63,7 @@ export class CustomSimulatorPageComponent {
             this.authorId = res.rotation.authorId;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
-            this.rotationName = res.rotation.getName();
+            this.rotationName = res.rotation.name;
         }, () => this.notFound = true);
     }
 

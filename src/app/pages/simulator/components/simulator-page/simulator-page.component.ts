@@ -105,7 +105,7 @@ export class SimulatorPageComponent {
             this.rotationId = res.rotation.$key;
             this.selectedFood = res.rotation.consumables.food;
             this.selectedMedicine = res.rotation.consumables.medicine;
-            this.rotationName = res.rotation.getName();
+            this.rotationName = res.rotation.name;
         }, () => this.notFound = true);
     }
 
