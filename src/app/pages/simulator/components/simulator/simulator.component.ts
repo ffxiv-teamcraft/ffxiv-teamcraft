@@ -212,6 +212,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.applyStats(this.selectedSet, this.levels, false);
     }
 
+    @Input()
+    authorId: string;
+
     public _selectedMedicine: Consumable;
 
     private serializedRotation: string[];
@@ -413,6 +416,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 name: this.rotationName,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
+                authorId: this.authorId,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
             });
         } else {
@@ -422,6 +426,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
+                authorId: this.authorId,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
             });
         }

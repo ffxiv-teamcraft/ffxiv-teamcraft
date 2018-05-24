@@ -39,6 +39,8 @@ export class CustomSimulatorPageComponent {
 
     public rotationName: string;
 
+    public authorId;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
 
@@ -58,6 +60,7 @@ export class CustomSimulatorPageComponent {
             this.recipe = res.rotation.recipe;
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.stats = res.rotation.stats;
+            this.authorId = res.rotation.authorId;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotationId = res.rotation.$key;
             this.rotationName = res.rotation.getName();
@@ -67,25 +70,23 @@ export class CustomSimulatorPageComponent {
     save(rotation: Partial<CustomCraftingRotation>): void {
         this.userId$
             .pipe(
-                map(userId => {
+                mergeMap(userId => {
                     const result = new CustomCraftingRotation();
                     result.$key = rotation.$key;
                     result.rotation = rotation.rotation;
                     result.stats = rotation.stats;
-                    result.authorId = userId;
                     result.recipe = rotation.recipe;
+                    result.authorId = rotation.authorId;
                     result.description = '';
                     result.name = rotation.name;
-                    return result;
-                }),
-                mergeMap(preparedRotation => {
-                    if (preparedRotation.$key === undefined) {
+                    if (result.$key === undefined || !this.canSave) {
+                        result.authorId = userId;
                         // If the rotation has no key, it means that it's a new one, so let's create a rotation entry in the database.
-                        return this.rotationsService.add(preparedRotation);
+                        return this.rotationsService.add(result);
                     } else {
-                        return this.rotationsService.set(preparedRotation.$key, preparedRotation)
+                        return this.rotationsService.set(result.$key, result)
                             .pipe(
-                                map(() => preparedRotation.$key)
+                                map(() => result.$key)
                             )
                     }
                 })

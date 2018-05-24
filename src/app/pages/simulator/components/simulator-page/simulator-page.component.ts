@@ -43,6 +43,8 @@ export class SimulatorPageComponent {
 
     public notFound = false;
 
+    public authorId: string;
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
                 private data: DataService) {
@@ -83,6 +85,7 @@ export class SimulatorPageComponent {
             this.notFound = false;
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.canSave = res.userId === res.rotation.authorId;
+            this.authorId = res.rotation.authorId;
             this.rotationId = res.rotation.$key;
             this.selectedFood = res.rotation.consumables.food;
             this.selectedMedicine = res.rotation.consumables.medicine;
@@ -91,6 +94,7 @@ export class SimulatorPageComponent {
     }
 
     save(rotation: Partial<CraftingRotation>): void {
+        console.log('save', rotation);
         this.userId$
             .pipe(
                 map(userId => {
@@ -98,7 +102,7 @@ export class SimulatorPageComponent {
                     result.$key = rotation.$key;
                     result.rotation = rotation.rotation;
                     result.defaultItemId = this.itemId;
-                    result.authorId = userId;
+                    result.authorId = rotation.authorId;
                     result.recipe = rotation.recipe;
                     result.description = '';
                     result.name = rotation.name;
@@ -107,9 +111,10 @@ export class SimulatorPageComponent {
                 }),
                 mergeMap(data => {
                     const preparedRotation = data.rotation;
-                    if (preparedRotation.$key === undefined || data.userId !== data.rotation.authorId) {
+                    if (preparedRotation.$key === undefined || !this.canSave) {
+                        console.log('userId', data.userId);
                         // Set new authorId for the newly created rotation
-                        data.rotation.authorId = data.userId;
+                        preparedRotation.authorId = data.userId;
                         // If the rotation has no key, it means that it's a new one, so let's create a rotation entry in the database.
                         return this.rotationsService.add(preparedRotation);
                     } else {
