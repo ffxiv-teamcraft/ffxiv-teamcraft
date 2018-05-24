@@ -24,6 +24,7 @@
       ]
     },
     "nsis": {
+      "include": "./build/nsis/include.nsh",
       "allowToChangeInstallationDirectory": true,
       "oneClick": false
     }
