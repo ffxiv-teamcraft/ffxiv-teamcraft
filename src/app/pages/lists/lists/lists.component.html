@@ -24,8 +24,6 @@
     {{'LISTS.IMPORT.Title' | translate}}
 </button>
 
-<h3 class="mat-h3">{{'Lists' | translate}}</h3>
-
 <div class="filter">
     <mat-form-field>
         <mat-select (selectionChange)="tagFilter.next($event.value)"
@@ -44,7 +42,9 @@
     <mat-icon>call_merge</mat-icon>
 </button>
 
-<div class="lists-container" *ngIf="lists | async as display">
+<div *ngIf="lists | async as display">
+    <h2>{{'Lists' | translate}}</h2>
+    <mat-divider class="divider"></mat-divider>
     <div class="row" *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index; ">
         <app-list-panel
             [list]="list"
@@ -58,7 +58,7 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
-    <div *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
+    <div class="category" *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
         <h2>{{'Public_lists' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
         <mat-expansion-panel>
@@ -82,8 +82,7 @@
             </div>
         </mat-expansion-panel>
     </div>
-
-    <div class="shared-lists" *ngIf="sharedLists | async as sharedListsData">
+    <div class="category" *ngIf="sharedLists | async as sharedListsData">
         <div *ngIf="sharedListsData.length > 0">
             <h2>{{"LISTS.Shared_lists" | translate}}</h2>
             <mat-divider class="divider"></mat-divider>
@@ -102,7 +101,7 @@
             ></app-list-panel>
         </div>
     </div>
-    <div class="workshops">
+    <div class="category">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
         <div *ngFor="let workshop of workshops | async; trackBy: trackByWorkshopFn; let i = index" class="row">
@@ -177,7 +176,7 @@
             {{'WORKSHOP.Add_workshop' | translate}}
         </button>
     </div>
-    <div class="workshops" *ngIf="sharedWorkshops | async as sharedWorkshopsData">
+    <div class="category" *ngIf="sharedWorkshops | async as sharedWorkshopsData">
         <div *ngIf="sharedWorkshopsData.length > 0">
             <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
             <mat-divider class="divider"></mat-divider>
