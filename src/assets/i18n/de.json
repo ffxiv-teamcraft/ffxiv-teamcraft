@@ -434,6 +434,8 @@
     "Confirm_delete": "Willst du diese Rotation wirklich löschen?",
     "Toggle_snapshot_mode": "Snapshot-Modus umschalten",
     "Rename_rotation": "Rotation umbenennen",
+    "Cross_class_setup": "Makro für klassenübergreifende Fähigkeiten erstellen",
+    "Include_sound_end": "Klangeffekt am Makroende hinzufügen",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",
       "Recipe_level": "Level für Rezept",

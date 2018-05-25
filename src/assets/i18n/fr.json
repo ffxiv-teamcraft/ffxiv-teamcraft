@@ -440,6 +440,7 @@
     "Select_job_please": "Merci de sélectionner un job",
     "Rename_rotation": "Renommer la rotation",
     "Cross_class_setup": "Macro de sélection des talents",
+    "Include_sound_end": "Inclure un son en fin de macro",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",

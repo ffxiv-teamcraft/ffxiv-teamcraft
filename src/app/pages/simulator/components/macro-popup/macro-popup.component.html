@@ -1,5 +1,8 @@
 <h3 mat-dialog-title>{{'SIMULATOR.Generated_macro' | translate}}</h3>
-<div mat-dialog-content>
+<div mat-dialog-content class="content">
+    <mat-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
+        {{'SIMULATOR.Include_sound_end' | translate}}
+    </mat-checkbox>
     <div class="macro">
         <pre *ngFor="let macroFragment of macro" class="macro-fragment">
             <span class="macro-line" *ngFor="let line of macroFragment">{{line}}</span>

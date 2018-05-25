@@ -18,11 +18,15 @@ export class MacroPopupComponent implements OnInit {
 
     private readonly maxMacroLines = 15;
 
+    public addEcho = true;
+
     constructor(@Inject(MAT_DIALOG_DATA) private data: { rotation: CraftingAction[], job: CraftingJob }, private l12n: LocalizedDataService,
                 private i18n: I18nToolsService) {
     }
 
-    ngOnInit() {
+    private generateMacros(): void {
+        this.macro = [[]];
+        this.aactionsMacro = [];
         this.data.rotation.forEach((action) => {
             let macroFragment = this.macro[this.macro.length - 1];
             // One macro is 15 lines, if this one is full, create another one.
@@ -40,7 +44,17 @@ export class MacroPopupComponent implements OnInit {
                 }
             }
             macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration()}>`);
+            if (macroFragment.length === 14 && this.addEcho) {
+                macroFragment.push(`/echo Macro #${this.macro.length} finished <se.${this.macro.length}>`);
+            }
         });
+        if (this.macro[this.macro.length - 1].length < 15 && this.addEcho) {
+            this.macro[this.macro.length - 1].push('/echo Craft finished <se.4>')
+        }
+    }
+
+    ngOnInit() {
+        this.generateMacros();
     }
 
 }

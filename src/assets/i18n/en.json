@@ -440,6 +440,7 @@
     "Select_job_please": "Please select a job",
     "Rename_rotation": "Rename Rotation",
     "Cross_class_setup": "Cross-class skills setup",
+    "Include_sound_end": "Include end of macro sound",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",
