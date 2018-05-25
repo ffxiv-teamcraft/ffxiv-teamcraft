@@ -69,8 +69,7 @@ export class DataService {
                                             cp: set.stats.core !== undefined ? set.stats.core.CP : 0,
                                             specialist: set.slot_soulcrystal !== null
                                         }
-                                    })
-                                    .sort((a, b) => a.jobId - b.jobId);
+                                    });
                             }),
                             map(sets => {
                                 const jobIds = onlyCraft ?
@@ -93,7 +92,7 @@ export class DataService {
                                         });
                                     }
                                 });
-                                return sets;
+                                return sets.sort((a, b) => a.jobId - b.jobId);
                             })
                         );
                 })

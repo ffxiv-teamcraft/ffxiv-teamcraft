@@ -299,7 +299,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                             }),
                             tap(sets => this.levels = <CrafterLevels>sets.map(set => set.level))
                         );
-                })
+                }),
             );
 
         this.simulation$ = combineLatest(

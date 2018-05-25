@@ -64,7 +64,7 @@
                 <mat-select *ngIf="customMode"
                             [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
                             [(ngModel)]="selectedSet"
-                            (ngModelChange)="applyStats(selectedSet)">
+                            (ngModelChange)="applyStats(selectedSet, levels)">
                     <mat-option *ngFor="let set of gearsets" [value]="set">
                         {{set.jobId | jobName | i18n}} (ilvl {{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
                     </mat-option>
@@ -105,7 +105,7 @@
                         {{'SIMULATOR.CONFIGURATION.Specialist' | translate}}
                     </mat-checkbox>
                 </div>
-                <button mat-raised-button color="accent" (click)="applyStats(selectedSet)">
+                <button mat-raised-button color="accent" (click)="applyStats(selectedSet, levels)">
                     {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
                 </button>
             </div>
