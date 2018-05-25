@@ -439,6 +439,7 @@
     "Open_in_external": "Open in {{name}}'s sim",
     "Select_job_please": "Please select a job",
     "Rename_rotation": "Rename Rotation",
+    "Cross_class_setup": "Cross-class skills setup",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",

@@ -3,6 +3,7 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {LocalizedDataService} from '../../../../core/data/localized-data.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
+import {CraftingJob} from '../../model/crafting-job.enum';
 
 @Component({
     selector: 'app-macro-popup',
@@ -13,14 +14,16 @@ export class MacroPopupComponent implements OnInit {
 
     public macro: string[][] = [[]];
 
+    public aactionsMacro: string[] = [];
+
     private readonly maxMacroLines = 15;
 
-    constructor(@Inject(MAT_DIALOG_DATA) private rotation: CraftingAction[], private l12n: LocalizedDataService,
+    constructor(@Inject(MAT_DIALOG_DATA) private data: { rotation: CraftingAction[], job: CraftingJob }, private l12n: LocalizedDataService,
                 private i18n: I18nToolsService) {
     }
 
     ngOnInit() {
-        this.rotation.forEach((action, index) => {
+        this.data.rotation.forEach((action) => {
             let macroFragment = this.macro[this.macro.length - 1];
             // One macro is 15 lines, if this one is full, create another one.
             if (macroFragment.length >= this.maxMacroLines) {
@@ -30,6 +33,11 @@ export class MacroPopupComponent implements OnInit {
             let actionName = this.i18n.getName(this.l12n.getCraftingAction(action.getIds()[0]));
             if (actionName.indexOf(' ') > -1) {
                 actionName = `"${actionName}"`;
+            }
+            if (action.getLevelRequirement().job !== CraftingJob.ANY && action.getLevelRequirement().job !== this.data.job) {
+                if (this.aactionsMacro.indexOf(`/aaction ${actionName}`) === -1) {
+                    this.aactionsMacro.push(`/aaction ${actionName}`);
+                }
             }
             macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration()}>`);
         });

@@ -1,8 +1,17 @@
 <h3 mat-dialog-title>{{'SIMULATOR.Generated_macro' | translate}}</h3>
-<div class="macro" mat-dialog-content>
-    <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-        <span class="macro-line" *ngFor="let line of macroFragment">{{line}}</span>
-    </pre>
+<div mat-dialog-content>
+    <div class="macro">
+        <pre *ngFor="let macroFragment of macro" class="macro-fragment">
+            <span class="macro-line" *ngFor="let line of macroFragment">{{line}}</span>
+        </pre>
+    </div>
+    <b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
+    <mat-divider></mat-divider>
+    <div class="macro">
+        <pre class="macro-fragment">
+            <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}</span>
+        </pre>
+    </div>
 </div>
 <div mat-dialog-actions>
     <button mat-raised-button mat-dialog-close color="accent">{{'Close' | translate}}</button>

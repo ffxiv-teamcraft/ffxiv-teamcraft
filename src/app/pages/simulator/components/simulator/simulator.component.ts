@@ -33,7 +33,8 @@ import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {debounceTime, filter, map, mergeMap, tap} from 'rxjs/operators';
+import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
+import {CraftingJob} from '../../model/crafting-job.enum';
 
 @Component({
     selector: 'app-simulator',
@@ -407,7 +408,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     generateMacro(): void {
-        this.dialog.open(MacroPopupComponent, {data: this.actions$.getValue()});
+        this.crafterStats$
+            .pipe(
+                first()
+            ).subscribe(crafterStats => {
+            this.dialog.open(MacroPopupComponent, {
+                data:
+                    {
+                        rotation: this.actions$.getValue(),
+                        job: CraftingJob[crafterStats.jobId - 8]
+                    }
+            });
+        });
     }
 
     private markAsDirty(): void {

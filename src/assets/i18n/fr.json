@@ -439,6 +439,7 @@
     "Open_in_external": "Ouvrir dans le simulateur de {{name}}",
     "Select_job_please": "Merci de sélectionner un job",
     "Rename_rotation": "Renommer la rotation",
+    "Cross_class_setup": "Macro de sélection des talents",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",
