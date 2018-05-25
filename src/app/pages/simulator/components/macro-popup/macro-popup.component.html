@@ -5,7 +5,7 @@
     </mat-checkbox>
     <div class="macro">
         <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-            <span class="macro-line" *ngFor="let line of macroFragment">{{line}}</span>
+            <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
         </pre>
     </div>
     <b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
