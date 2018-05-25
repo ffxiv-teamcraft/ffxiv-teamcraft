@@ -26,7 +26,7 @@ export class MacroPopupComponent implements OnInit {
 
     private generateMacros(): void {
         this.macro = [[]];
-        this.aactionsMacro = [];
+        this.aactionsMacro = ['/aaction clear'];
         this.data.rotation.forEach((action) => {
             let macroFragment = this.macro[this.macro.length - 1];
             // One macro is 15 lines, if this one is full, create another one.
