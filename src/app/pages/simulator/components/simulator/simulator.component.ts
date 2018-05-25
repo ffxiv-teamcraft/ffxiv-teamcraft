@@ -174,6 +174,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     public selectedSet: GearSet;
 
+    public actionFailed = false;
+
     @Input()
     public set inputGearSet(set: GearSet) {
         if (set !== undefined) {
@@ -313,7 +315,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 return simulation.run(true, step);
             }
             return simulation.run(true);
-        });
+        }).pipe(
+            tap(result => {
+                this.actionFailed = result.steps.find(step => !step.success) !== undefined;
+            })
+        );
 
         this.report$ = this.result$
             .pipe(

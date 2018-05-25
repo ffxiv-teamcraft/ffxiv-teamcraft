@@ -225,6 +225,10 @@ mat-progress-bar {
     display: none !important;
 }
 
+.failed {
+    background-color: rgba(255, 0, 0, .3);
+}
+
 .actions {
     display: flex;
     justify-content: flex-start;

@@ -338,7 +338,7 @@
                 </div>
             </div>
         </mat-card>
-        <mat-card>
+        <mat-card [class.failed]="actionFailed">
             <div class="actions">
                 <app-action draggable
                             droppable
@@ -352,7 +352,8 @@
                             [action]="step.action"
                             [simulation]="resultData.simulation"
                             [ignoreDisabled]="true"
-                            [cpCost]="step.cpDifference"></app-action>
+                            [cpCost]="step.cpDifference"
+                            [failed]="!step.success"></app-action>
                 <div class="end-drag-zone" droppable
                      dragOverClass="drag-over"
                      (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
