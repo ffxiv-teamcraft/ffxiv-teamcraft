@@ -24,7 +24,7 @@ export class MacroPopupComponent implements OnInit {
                 private i18n: I18nToolsService) {
     }
 
-    private generateMacros(): void {
+    public generateMacros(): void {
         this.macro = [[]];
         this.aactionsMacro = ['/aaction clear'];
         this.data.rotation.forEach((action) => {
