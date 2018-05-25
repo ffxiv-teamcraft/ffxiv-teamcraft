@@ -24,7 +24,7 @@ export class LayoutService {
                 .pipe(
                     map(userData => {
                         const layouts = userData.layouts;
-                        if (layouts === undefined || layouts === null || layouts.length === 0 || layouts[0].name === 'Default layout') {
+                        if (layouts === undefined || layouts === null || layouts.length === 0 || (layouts.length === 1 && layouts[0].name === 'Default layout')) {
                             return [new ListLayout('Default layout', this.defaultLayout)];
                         }
                         return layouts;
