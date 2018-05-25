@@ -5,7 +5,7 @@ export class SpecialtyRefurbish extends SpecialtyAction {
 
     applyReflect(simulation: Simulation): void {
         simulation.availableCP += 65;
-        if (simulation.availableCP < simulation.maxCP) {
+        if (simulation.availableCP > simulation.maxCP) {
             simulation.availableCP = simulation.maxCP;
         }
     }
