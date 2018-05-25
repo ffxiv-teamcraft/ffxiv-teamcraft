@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.7"></a>
+## [4.0.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.6...v4.0.7) (2018-05-25)
+
+
+### Bug Fixes
+
+* better auto-update flow for "all users" installation ([f2b6462](https://github.com/Supamiu/ffxiv-teamcraft/commit/f2b6462)), closes [#359](https://github.com/Supamiu/ffxiv-teamcraft/issues/359)
+* crafting rotations no longer reappearing out of nowhere ([3e09500](https://github.com/Supamiu/ffxiv-teamcraft/commit/3e09500)), closes [#355](https://github.com/Supamiu/ffxiv-teamcraft/issues/355)
+* **simulator:** custom stats now save properly ([fdfb4c6](https://github.com/Supamiu/ffxiv-teamcraft/commit/fdfb4c6)), closes [#365](https://github.com/Supamiu/ffxiv-teamcraft/issues/365)
+* **simulator:** way better design for failed actions, thanks to Aurora Phoenix ([3f7bcad](https://github.com/Supamiu/ffxiv-teamcraft/commit/3f7bcad))
+* fixed an issue with shared lists not being visible ([f6eca9f](https://github.com/Supamiu/ffxiv-teamcraft/commit/f6eca9f))
+* multi-crafter items now using correct stats in simulator ([fe9f0f1](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe9f0f1)), closes [#361](https://github.com/Supamiu/ffxiv-teamcraft/issues/361)
+* no more duplicated tags in lists ([461cdad](https://github.com/Supamiu/ffxiv-teamcraft/commit/461cdad)), closes [#357](https://github.com/Supamiu/ffxiv-teamcraft/issues/357)
+* rotations name generation now properly done (not retroactive) ([adf4c8f](https://github.com/Supamiu/ffxiv-teamcraft/commit/adf4c8f))
+* rotations now save/copy properly, no more lost rotations ! ([6797621](https://github.com/Supamiu/ffxiv-teamcraft/commit/6797621)), closes [#363](https://github.com/Supamiu/ffxiv-teamcraft/issues/363)
+* you can no longer add an empty id as contact ([6e074e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/6e074e4)), closes [#358](https://github.com/Supamiu/ffxiv-teamcraft/issues/358)
+
+
+### Features
+
+* added timers for duskglow aethersand in alarms page ([c9ceb8a](https://github.com/Supamiu/ffxiv-teamcraft/commit/c9ceb8a))
+* **simulator:** added possibility to have end of macro sound ([d521342](https://github.com/Supamiu/ffxiv-teamcraft/commit/d521342))
+* **simulator:** generated macro now includes /aaction setup ([ea71447](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea71447)), closes [#368](https://github.com/Supamiu/ffxiv-teamcraft/issues/368)
+* alarms page now adds all spawns of an item at once ([4536352](https://github.com/Supamiu/ffxiv-teamcraft/commit/4536352))
+* default layout is now the one made by tataru taru ! ([6188914](https://github.com/Supamiu/ffxiv-teamcraft/commit/6188914))
+* new collapsible panel in lists for community lists ([3d7f2d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d7f2d6))
+* **simulator:** new step by step report popup ([9095c3d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9095c3d)), closes [#364](https://github.com/Supamiu/ffxiv-teamcraft/issues/364)
+
+
+
 <a name="4.0.6"></a>
 ## [4.0.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.5...v4.0.6) (2018-05-24)
 
