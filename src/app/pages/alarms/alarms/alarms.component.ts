@@ -85,23 +85,25 @@ export class AlarmsComponent {
     openAddAlarmPopup(): void {
         this.dialog.open(AddAlarmPopupComponent).afterClosed()
             .pipe(filter(result => result !== undefined))
-            .subscribe((node: any) => {
+            .subscribe((nodes: any[]) => {
                 const alarms: Alarm[] = [];
-                if (node.time !== undefined) {
-                    node.time.forEach(spawn => {
-                        alarms.push({
-                            spawn: spawn,
-                            duration: node.uptime / 60,
-                            itemId: node.itemId,
-                            icon: node.icon,
-                            slot: node.slot,
-                            areaId: node.areaid,
-                            coords: node.coords,
-                            zoneId: node.zoneid,
-                            type: this.alarmService.getType(node),
+                nodes.forEach(node => {
+                    if (node.time !== undefined) {
+                        node.time.forEach(spawn => {
+                            alarms.push({
+                                spawn: spawn,
+                                duration: node.uptime / 60,
+                                itemId: node.itemId,
+                                icon: node.icon,
+                                slot: node.slot,
+                                areaId: node.areaid,
+                                coords: node.coords,
+                                zoneId: node.zoneid,
+                                type: this.alarmService.getType(node),
+                            });
                         });
-                    });
-                }
+                    }
+                });
                 this.alarmService.registerAlarms(...alarms);
                 this.reloader.next(null);
             });

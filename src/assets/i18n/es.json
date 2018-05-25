@@ -423,6 +423,8 @@
     "Rotation_not_found": "Rotación no encontrada",
     "Confirm_delete": "¿Realmente quiere borrar esta rotación?",
     "Toggle_snapshot_mode": "Activar modo pasos",
+    "Cross_class_setup": "Crear macro para activar habilidades de clase cruzada",
+    "Include_sound_end": "Incluir sonido al final de la macro",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",

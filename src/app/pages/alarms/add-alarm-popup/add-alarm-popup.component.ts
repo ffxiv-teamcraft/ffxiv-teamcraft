@@ -23,8 +23,12 @@ export class AddAlarmPopupComponent implements OnInit {
                 private localizedDataService: LocalizedDataService) {
     }
 
-    close(node: any): void {
-        this.dialogRef.close(node);
+    close(nodes: any[]): void {
+        this.dialogRef.close(nodes.map(node => {
+            node.zoneId = this.localizedDataService.getAreaIdByENName(node.zone);
+            node.placeId = this.localizedDataService.getAreaIdByENName(node.title);
+            return node;
+        }));
     }
 
     ngOnInit() {
@@ -35,11 +39,16 @@ export class AddAlarmPopupComponent implements OnInit {
                     return this.bellNodesService.getNodesByItemName(this.itemName);
                 }),
                 map((nodes) => {
-                    return nodes.map(node => {
-                        node.zoneId = this.localizedDataService.getAreaIdByENName(node.zone);
-                        node.placeId = this.localizedDataService.getAreaIdByENName(node.title);
-                        return node;
-                    })
+                    const res = [];
+                    nodes.forEach((node) => {
+                        const resRow = res.find(n => n.itemId === node.itemId);
+                        if (resRow === undefined) {
+                            res.push({itemId: node.itemId, icon: node.icon, nodes: [node]});
+                        } else {
+                            resRow.nodes.push(node);
+                        }
+                    });
+                    return res;
                 })
             );
     }

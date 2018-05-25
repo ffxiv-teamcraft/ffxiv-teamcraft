@@ -4,14 +4,10 @@
         <input type="text" matInput #searchInput [(ngModel)]="itemName" placeholder="{{'Item_name' | translate}}">
     </mat-form-field>
     <mat-list dense>
-        <mat-list-item *ngFor="let node of results | async">
-            <img mat-list-avatar src="{{node.icon | icon}}" alt="" [appXivdbTooltip]="node.itemId">
-            <span matLine>{{node.itemId | itemName | i18n}} - lvl {{node.lvl}}</span>
-            <span matLine>{{node.zoneId | placeName | i18n}} - {{node.placeId | placeName | i18n}}
-                <span *ngIf="node.slot">({{node.slot}})</span>
-            </span>
-            <span matLine>X: {{node.coords[0]}} - Y: {{node.coords[1]}}</span>
-            <button mat-mini-fab (click)="close(node)">
+        <mat-list-item *ngFor="let row of results | async">
+            <img mat-list-avatar src="{{row.icon | icon}}" alt="" [appXivdbTooltip]="row.itemId">
+            <span matLine>{{row.itemId | itemName | i18n}}</span>
+            <button mat-mini-fab (click)="close(row.nodes)">
                 <mat-icon>alarm_add</mat-icon>
             </button>
         </mat-list-item>
