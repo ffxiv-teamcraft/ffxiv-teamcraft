@@ -279,15 +279,20 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     ngOnInit() {
         this.sharedLists = this.userService.getUserData().pipe(
             mergeMap(user => {
-                return combineLatest((user.sharedLists || [])
-                    .map(listId => this.listService.get(listId)
+                return combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)
                         .pipe(
                             catchError(() => {
                                 user.sharedLists = user.sharedLists.filter(id => id !== listId);
                                 return this.userService.set(user.$key, user).pipe(map(() => null));
-                            }),
-                            map(lists => lists.filter(l => l !== null).filter(l => l.getPermissions(user.$key).write === true))
-                        )));
+                            })
+                        )
+                    )
+                )
+                    .pipe(
+                        map(lists => lists.filter(l => l !== null).filter(l => {
+                            return l.getPermissions(user.$key).write === true
+                        }))
+                    );
             })
         );
         this.workshops = this.userService.getUserData().pipe(
