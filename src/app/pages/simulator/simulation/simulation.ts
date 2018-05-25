@@ -166,6 +166,7 @@ export class Simulation {
         const probabilityRoll = linear ? 0 : Math.random() * 100;
         const qualityBefore = this.quality;
         const progressionBefore = this.progression;
+        const durabilityBefore = this.durability;
         if (action.getSuccessRate(this) >= probabilityRoll) {
             action.execute(this);
         } else {
@@ -184,7 +185,7 @@ export class Simulation {
             addedProgression: this.progression - progressionBefore,
             cpDifference: CPCost,
             skipped: false,
-            solidityDifference: action.getDurabilityCost(this),
+            solidityDifference: this.durability - durabilityBefore,
             state: this.state
         });
         if (this.progression >= this.recipe.progress) {

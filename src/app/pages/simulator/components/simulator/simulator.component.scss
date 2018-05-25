@@ -3,6 +3,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     transform: translateX(-145%);
     &.mobile {
         flex-direction: row;

@@ -35,6 +35,7 @@ import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
 import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
+import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 
 @Component({
     selector: 'app-simulator',
@@ -405,6 +406,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.actions = rotation;
             this.markAsDirty();
         });
+    }
+
+    showStepByStepReport(result: SimulationResult): void {
+        this.dialog.open(StepByStepReportPopupComponent, {data: result});
     }
 
     generateMacro(): void {

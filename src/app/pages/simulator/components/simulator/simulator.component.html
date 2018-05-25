@@ -36,6 +36,13 @@
             (click)="showMinStats(simulation)">
         <mat-icon>offline_pin</mat-icon>
     </button>
+    <button mat-mini-fab
+            *ngIf="result$ | async as result"
+            matTooltip="{{'SIMULATOR.Step_by_step_report' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            (click)="showStepByStepReport(result)">
+        <mat-icon>format_list_numbered</mat-icon>
+    </button>
 </div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
     <mat-expansion-panel-header>

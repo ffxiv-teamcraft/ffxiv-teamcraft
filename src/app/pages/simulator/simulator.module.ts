@@ -29,6 +29,7 @@ import {
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
     MatTooltipModule,
 } from '@angular/material';
 import {MacroPopupComponent} from './components/macro-popup/macro-popup.component';
@@ -39,6 +40,7 @@ import {SimulationMinStatsPopupComponent} from './components/simulation-min-stat
 import {ImportMacroPopupComponent} from './components/import-macro-popup/import-macro-popup.component';
 import {ConsumablesService} from './model/consumables.service';
 import {RotationNamePopupComponent} from './components/rotation-name-popup/rotation-name-popup.component';
+import {StepByStepReportPopupComponent} from './components/step-by-step-report-popup/step-by-step-report-popup.component';
 
 const routes: Routes = [
     {
@@ -96,6 +98,7 @@ const routes: Routes = [
         MatProgressSpinnerModule,
         MatDialogModule,
         MatSnackBarModule,
+        MatTableModule,
 
         ClipboardModule,
 
@@ -116,14 +119,16 @@ const routes: Routes = [
         ImportMacroPopupComponent,
         MacroPopupComponent,
         SimulationMinStatsPopupComponent,
-        RotationNamePopupComponent
+        RotationNamePopupComponent,
+        StepByStepReportPopupComponent
     ],
     entryComponents: [
         ImportRotationPopupComponent,
         ImportMacroPopupComponent,
         MacroPopupComponent,
         SimulationMinStatsPopupComponent,
-        RotationNamePopupComponent
+        RotationNamePopupComponent,
+        StepByStepReportPopupComponent
     ],
     providers: [
         CraftingActionsRegistry,
