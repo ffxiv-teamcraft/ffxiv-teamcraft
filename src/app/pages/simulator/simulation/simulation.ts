@@ -167,6 +167,7 @@ export class Simulation {
         const qualityBefore = this.quality;
         const progressionBefore = this.progression;
         const durabilityBefore = this.durability;
+        const cpBefore = this.availableCP;
         if (action.getSuccessRate(this) >= probabilityRoll) {
             action.execute(this);
         } else {
@@ -174,16 +175,15 @@ export class Simulation {
         }
         // Even if the action failed, we have to remove the durability cost
         this.durability -= action.getDurabilityCost(this);
-        const CPCost = action.getCPCost(this, linear);
         // Even if the action failed, CP has to be consumed too
-        this.availableCP -= CPCost;
+        this.availableCP -= action.getCPCost(this, linear);
         // Push the result to the result array
         this.steps.push({
             action: action,
             success: action.getSuccessRate(this) >= probabilityRoll,
             addedQuality: this.quality - qualityBefore,
             addedProgression: this.progression - progressionBefore,
-            cpDifference: CPCost,
+            cpDifference: this.availableCP - cpBefore,
             skipped: false,
             solidityDifference: this.durability - durabilityBefore,
             state: this.state
