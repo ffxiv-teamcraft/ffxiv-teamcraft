@@ -54,12 +54,6 @@
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
             <div class="save-button">
-                <button mat-mini-fab *ngIf="selectedSet !== undefined && selectedSet.custom"
-                        matTooltip="{{'SIMULATOR.CONFIGURATION.Reset_set'}}"
-                        color="accent"
-                        (click)="resetSet(selectedSet)">
-                    <mat-icon>refresh</mat-icon>
-                </button>
                 <button mat-mini-fab *ngIf="customSet && selectedSet !== undefined"
                         matTooltip="{{'SIMULATOR.CONFIGURATION.Save_set' | translate}}"
                         color="accent"
