@@ -1,13 +1,8 @@
 import {ProgressAction} from '../progress-action';
 import {Simulation} from '../../../simulation/simulation';
 import {Buff} from '../../buff.enum';
-import {CraftingJob} from '../../crafting-job.enum';
 
 export abstract class BrandAction extends ProgressAction {
-
-    getLevelRequirement(): { job: CraftingJob; level: number } {
-        return {job: CraftingJob.ANY, level: 37};
-    }
 
     abstract getBuffedBy(): Buff;
 
