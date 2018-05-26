@@ -5,6 +5,10 @@ import {CraftingJob} from '../../crafting-job.enum';
 
 export class MakersMark extends BuffAction {
 
+    getWaitDuration(): number {
+        return 3;
+    }
+
     getLevelRequirement(): { job: CraftingJob; level: number } {
         return {job: CraftingJob.GSM, level: 54};
     }
@@ -18,7 +22,7 @@ export class MakersMark extends BuffAction {
     }
 
     getDuration(simulation: Simulation): number {
-        return Math.round(simulation.recipe.progress / 100);
+        return Math.ceil(simulation.recipe.progress / 100);
     }
 
     getIds(): number[] {
