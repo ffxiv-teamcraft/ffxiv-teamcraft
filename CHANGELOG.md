@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.8"></a>
+## [4.0.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.7...v4.0.8) (2018-05-26)
+
+
+### Bug Fixes
+
+* fixes missing linebreaks when copying macro from firefox ([a571ef6](https://github.com/Supamiu/ffxiv-teamcraft/commit/a571ef6))
+* **simulator:** better report amounts for step by step report ([2b29f97](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b29f97))
+* **simulator:** brand/name actions no longer taken as cross class action ([ceca859](https://github.com/Supamiu/ffxiv-teamcraft/commit/ceca859)), closes [#373](https://github.com/Supamiu/ffxiv-teamcraft/issues/373)
+* **simulator:** fixed an issue with Specialty: Refurbish ([7432a9a](https://github.com/Supamiu/ffxiv-teamcraft/commit/7432a9a)), closes [#371](https://github.com/Supamiu/ffxiv-teamcraft/issues/371)
+
+
+### Features
+
+* **layout:** you can now order by job in layout panels ([283f01d](https://github.com/Supamiu/ffxiv-teamcraft/commit/283f01d))
+* **simulator:** added audio signal for end of cross class setup ([f868827](https://github.com/Supamiu/ffxiv-teamcraft/commit/f868827)), closes [#373](https://github.com/Supamiu/ffxiv-teamcraft/issues/373)
+
+
+
 <a name="4.0.7"></a>
 ## [4.0.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.6...v4.0.7) (2018-05-25)
 
