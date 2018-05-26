@@ -70,10 +70,12 @@
                 </button>
                 <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
                 <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
+                        matTooltip="{{'LIST.BUTTONS.Open' | translate}}" matTooltipPosition="above"
                         (click)="$event.stopPropagation()">
                     <mat-icon>playlist_play</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="!readonly && buttons && list.authorId === userUid"
+                        matTooltip="{{'LIST.BUTTONS.Delete' | translate}}" matTooltipPosition="above"
                         (click)="ondelete.emit(); $event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>

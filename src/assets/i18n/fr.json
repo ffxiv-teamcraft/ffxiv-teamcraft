@@ -233,7 +233,18 @@
   },
   "LIST": {
     "Copied_x_times": "Copiée {{count}} fois",
-    "Enable_crystals_tracking": "Activer le suivi des cristaux"
+    "Enable_crystals_tracking": "Activer le suivi des cristaux",
+    "BUTTONS": {
+      "Add_link_description": "Créé un lien personnalisé pour la liste",
+      "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
+      "Copy_template_url_description": "Copie le lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
+      "Share_description": "Copie le lien de partage dans le presse-papiers",
+      "Open": "Ouvrir la liste",
+      "Open_description": "Accède à la liste",
+      "Delete": "Supprimer la liste",
+      "Delete_description": "Supprime la liste",
+      "Delete_warning": "La suppression d'une liste n'est pas réversible"
+    }
   },
   "LIST_DETAILS": {
     "List_finished": "Liste terminée",
