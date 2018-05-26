@@ -51,6 +51,9 @@ export class MacroPopupComponent implements OnInit {
         if (this.macro[this.macro.length - 1].length < 15 && this.addEcho) {
             this.macro[this.macro.length - 1].push('/echo Craft finished <se.4>')
         }
+        if (this.aactionsMacro.length > 0) {
+            this.aactionsMacro.push('/echo Cross class setup finished <se.4>');
+        }
     }
 
     ngOnInit() {
