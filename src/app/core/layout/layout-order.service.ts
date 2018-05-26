@@ -42,7 +42,20 @@ export class LayoutOrderService {
             // If same job, order by level for these two
             const aLevel = this.getLevel(a);
             const bLevel = this.getLevel(b);
-            return aJobId === bJobId ? aLevel > bLevel ? 1 : -1 : aJobId - bJobId;
+            // If same level, order by name
+            const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
+            const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
+            if (aJobId === bJobId) {
+                if (aLevel > bLevel) {
+                    return 1;
+                } else if (aLevel > bLevel) {
+                    return -1;
+                } else {
+                    return aName > bName ? 1 : -1;
+                }
+            } else {
+                return aJobId - bJobId;
+            }
         }
     };
 
