@@ -32,6 +32,9 @@ export class Inventory {
     }
 
     getDisplay(): { id: number, icon: number, amount: number }[][] {
-        return [this.grid.slice(0, 100), this.grid.slice(101, Inventory.INTENTORY_SIZE)]
+        return [this.grid.slice(0, 35),
+                this.grid.slice(35, 70),
+                this.grid.slice(70, 105),
+                this.grid.slice(105, Inventory.INTENTORY_SIZE)];
     }
 }
