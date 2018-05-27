@@ -8,7 +8,7 @@
 <mat-divider></mat-divider>
 
 <div class="container" fxLayout="row" fxLayout.lt-sm="column">
-    <mat-grid-list rowHeight="40px" cols="10" class="inventory-tab" gutterSize="5px"
+    <mat-grid-list rowHeight="40px" cols="5" class="inventory-tab" gutterSize="5px"
                    *ngFor="let tab of inventory | async">
         <mat-grid-tile *ngFor="let slot of tab"
                        matTooltip="{{slot?.id | itemName | i18n}}"
