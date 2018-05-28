@@ -231,7 +231,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     private findActionsAutoTranslatedRegex: RegExp =
         new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
 
-    private userData: AppUser;
+    public userData: AppUser;
 
     @Input()
     public rotation: CraftingRotation;
