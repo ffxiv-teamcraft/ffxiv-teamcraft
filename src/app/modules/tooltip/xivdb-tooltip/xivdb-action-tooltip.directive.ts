@@ -59,6 +59,8 @@ export class XivdbActionTooltipDirective implements OnDestroy {
         this._subscription = this._tooltipData.getActionTooltipData(this.actionId).subscribe(this._createTooltip);
     }
 
+
+    @HostListener('mousedown')
     @HostListener('mouseleave')
     hide() {
         // Unsubscribe from the XivDB request if needed.
