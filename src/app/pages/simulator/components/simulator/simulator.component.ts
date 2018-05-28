@@ -431,10 +431,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     save(asNew = false): void {
+        let key = undefined;
+        if (!asNew && this.rotation !== undefined) {
+            key = this.rotation.$key;
+        }
         if (!this.customMode) {
             this.onsave.emit({
-                $key: asNew ? undefined : this.rotation.$key,
-                name: this.rotation.name,
+                $key: key,
+                name: this.rotation === undefined ? '' : this.rotation.name,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
@@ -442,8 +446,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
-                $key: asNew ? undefined : this.rotation.$key,
-                name: this.rotation.name,
+                $key: key,
+                name: this.rotation === undefined ? '' : this.rotation.name,
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
