@@ -6,8 +6,8 @@
         <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
         <mat-icon class="failed" *ngIf="failed">close</mat-icon>
         <span class="cost"
-              *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost > 0)">
-            {{cpCost === undefined ? action.getBaseCPCost(simulation) : cpCost}}
+              *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)">
+            {{(cpCost === undefined ? action.getBaseCPCost(simulation) : cpCost) | absolute}}
         </span>
     </div>
 </div>
