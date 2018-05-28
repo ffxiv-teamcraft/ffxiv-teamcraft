@@ -21,7 +21,7 @@ import {medicines} from '../../../../core/data/sources/medicines';
 import {BonusType} from '../../model/consumable-bonus';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
 import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
 import {PendingChangesService} from 'app/core/database/pending-changes/pending-changes.service';
@@ -187,12 +187,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
     }
 
-    @Input()
-    public rotationId: string;
-
-    @Input()
-    public rotationName: string;
-
     public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
 
     public foods: Consumable[] = [];
@@ -239,6 +233,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     private userData: AppUser;
 
+    @Input()
+    public rotation: CraftingRotation;
+
     private consumablesSortFn = (a, b) => {
         const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
         const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
@@ -255,7 +252,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
-                private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService) {
+                private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService,
+                private snack: MatSnackBar) {
 
         this.foods = consumablesService.fromData(foods)
             .sort(this.consumablesSortFn);
@@ -432,11 +430,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.dirty = true;
     }
 
-    save(): void {
+    save(asNew = false): void {
         if (!this.customMode) {
             this.onsave.emit({
-                $key: this.rotationId,
-                name: this.rotationName,
+                $key: asNew ? undefined : this.rotation.$key,
+                name: this.rotation.name,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
@@ -444,14 +442,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
-                $key: this.rotationId,
-                name: this.rotationName,
+                $key: asNew ? undefined : this.rotation.$key,
+                name: this.rotation.name,
                 stats: this.selectedSet,
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
             });
+        }
+        if (asNew) {
+            this.snack.open(this.translate.instant('SIMULATOR.Save_as_new_done'), null, {duration: 3000});
         }
     }
 

@@ -33,10 +33,6 @@ export class SimulatorPageComponent {
 
     public canSave = false;
 
-    public rotationId: string;
-
-    public rotationName: string;
-
     public selectedFood: Consumable;
 
     public selectedMedicine: Consumable;
@@ -46,6 +42,8 @@ export class SimulatorPageComponent {
     public authorId: string;
 
     private recipeId: string;
+
+    public rotation: CraftingRotation;
 
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
@@ -102,10 +100,9 @@ export class SimulatorPageComponent {
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.canSave = res.userId === res.rotation.authorId;
             this.authorId = res.rotation.authorId;
-            this.rotationId = res.rotation.$key;
             this.selectedFood = res.rotation.consumables.food;
             this.selectedMedicine = res.rotation.consumables.medicine;
-            this.rotationName = res.rotation.name;
+            this.rotation = res.rotation;
         }, () => this.notFound = true);
     }
 

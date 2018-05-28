@@ -26,8 +26,8 @@
     </mat-expansion-panel>
 
     <app-simulator [recipe]="recipe" [inputGearSet]="stats" [actions]="actions"
-                   [customMode]="true" [canSave]="canSave" [rotationId]="rotationId"
-                   (onsave)="save($event)" [rotationName]="rotationName" [authorId]="authorId"></app-simulator>
+                   [customMode]="true" [canSave]="canSave"
+                   (onsave)="save($event)" [authorId]="authorId" [rotation]="rotation"></app-simulator>
 
 </div>
 <ng-template #notFoundTemplate>

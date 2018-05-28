@@ -5,7 +5,7 @@ import {DeserializeAs} from '@kaiu/serializer';
 
 export class CraftingRotation extends DataModel {
 
-    name: string;
+    public name: string;
 
     public recipe: Partial<Craft>;
 

@@ -1,9 +1,9 @@
 <div *ngIf="!notFound; else notFoundTemplate">
     <div *ngIf="recipe$ | async as recipe; else loading">
         <app-simulator [recipe]="recipe" [actions]="actions" [itemId]="itemId" [itemIcon]="itemIcon" [canSave]="canSave"
-                       [rotationId]="rotationId" (onsave)="save($event)" [selectedFood]="selectedFood"
-                       [selectedMedicine]="selectedMedicine" [rotationName]="rotationName"
-                       [authorId]="authorId"></app-simulator>
+                       (onsave)="save($event)" [selectedFood]="selectedFood"
+                       [selectedMedicine]="selectedMedicine"
+                       [authorId]="authorId" [rotation]="rotation"></app-simulator>
     </div>
 </div>
 <ng-template #loading>

@@ -9,6 +9,7 @@ import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {GearSet} from '../../model/gear-set';
 import {filter, first, map, mergeMap} from 'rxjs/operators';
+import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 
 @Component({
     selector: 'app-custom-simulator-page',
@@ -33,13 +34,11 @@ export class CustomSimulatorPageComponent {
 
     public canSave = false;
 
-    public rotationId: string;
-
     public notFound = false;
 
-    public rotationName: string;
-
     public authorId;
+
+    public rotation: CraftingRotation;
 
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
@@ -62,8 +61,7 @@ export class CustomSimulatorPageComponent {
             this.stats = res.rotation.stats;
             this.authorId = res.rotation.authorId;
             this.canSave = res.userId === res.rotation.authorId;
-            this.rotationId = res.rotation.$key;
-            this.rotationName = res.rotation.name;
+            this.rotation = res.rotation;
         }, () => this.notFound = true);
     }
 

@@ -453,6 +453,8 @@
     "Cross_class_setup": "Macro de sélection des talents",
     "Include_sound_end": "Inclure un son en fin de macro",
     "Step_by_step_report": "Rapport étape par étape",
+    "Save_as_new": "Sauvergarder une copie (navigue sur la copie de la rotation)",
+    "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",
