@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.10"></a>
+## [4.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.9...v4.0.10) (2018-05-28)
+
+
+### Bug Fixes
+
+* **simulator:** fixed a bug with new rotation save ([ce3e091](https://github.com/Supamiu/ffxiv-teamcraft/commit/ce3e091))
+
+
+
 <a name="4.0.9"></a>
 ## [4.0.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.8...v4.0.9) (2018-05-28)
 
