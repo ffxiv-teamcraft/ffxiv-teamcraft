@@ -166,16 +166,17 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
     ngOnInit(): void {
         this.author = this.userService.getCharacter(this.list.authorId)
             .pipe(
-                catchError(err => {
+                catchError(() => {
                     return of(null);
                 })
             );
-
-        this.templateService.getByListId(this.list.$key).subscribe(res => {
-            if (res !== undefined) {
-                this.templateUrl = res.getUrl();
-            }
-        });
+        if (!this.list.public) {
+            this.templateService.getByListId(this.list.$key).subscribe(res => {
+                if (res !== undefined) {
+                    this.templateUrl = res.getUrl();
+                }
+            });
+        }
 
         this.userService.getUserData().subscribe(u => {
             this.userUid = u.$key;

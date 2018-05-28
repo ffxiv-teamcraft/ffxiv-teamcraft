@@ -1,11 +1,10 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
-import {BehaviorSubject, combineLatest, Observable, fromEvent} from 'rxjs';
+import {BehaviorSubject, combineLatest, fromEvent, Observable} from 'rxjs';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {MatPaginator, PageEvent} from '@angular/material';
-import {tap} from 'rxjs/operators';
-import {debounceTime, map, switchMap} from 'rxjs/operators';
+import {debounceTime, map, switchMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-public-lists',
@@ -39,24 +38,28 @@ export class PublicListsComponent implements OnInit {
     paginatorRef: MatPaginator;
 
     constructor(private listService: ListService) {
-        this.lists = combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter,
-            (lists, tagFilter, nameFilter) => {
-                if (nameFilter !== '') {
-                    lists = lists.filter(list => list.name.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1);
-                }
-                if (tagFilter.length > 0) {
-                    lists = lists.filter(list => {
-                        let match = true;
-                        tagFilter.forEach(tag => {
-                            match = match && list.tags.indexOf(ListTag[tag]) > -1;
-                        });
-                        return match;
-                    });
-                }
-                lists = lists.filter(list => list.recipes.length > 0);
-                return lists;
-            })
+        this.lists = combineLatest(this.listService.getPublicLists(), this.tagFilter, this.nameFilter)
             .pipe(
+                map(args => {
+                    let lists = args[0];
+                    const tagFilter = args[1];
+                    const nameFilter = args[2];
+                    if (nameFilter !== '') {
+                        lists = lists.filter(list => list.name.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1);
+                    }
+                    if (tagFilter.length > 0) {
+                        lists = lists.filter(list => {
+                            let match = true;
+                            tagFilter.forEach(tag => {
+                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                            });
+                            return match;
+                        });
+                    }
+                    return lists
+                        .filter(list => list.recipes.length > 0)
+                        .filter(list => list.tags !== undefined && list.tags.length > 0);
+                }),
                 tap(lists => {
                     this.publicListsLength = lists.length;
                     this.paginatorRef.pageIndex = 0;
