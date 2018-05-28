@@ -27,18 +27,20 @@ export class BellNodesService {
     }
 
     getNodesByItemId(id: number): any[] {
-        return this.nodes.filter(node => {
+        const results = [];
+        this.nodes.forEach(node => {
             const match = node.items.find(item => item.id === id);
             if (match !== undefined) {
-                node.icon = match.icon;
-                node.itemId = id;
-                node.slot = +match.slot;
-                node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
-                node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
-                return true;
+                const nodeCopy = JSON.parse(JSON.stringify(node));
+                nodeCopy.icon = match.icon;
+                nodeCopy.itemId = id;
+                nodeCopy.slot = +match.slot;
+                nodeCopy.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
+                nodeCopy.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+                results.push(nodeCopy);
             }
-            return false;
         });
+        return results;
     }
 
     getNode(id: number): any {
