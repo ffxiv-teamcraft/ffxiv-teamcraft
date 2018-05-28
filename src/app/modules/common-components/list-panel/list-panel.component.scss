@@ -60,11 +60,15 @@
             }
         }
     }
+}
 
-    .buttons {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        display: inline-flex !important;
+.buttons {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    display: flex !important;
+    &.mobile {
+        justify-content: center;
+        margin: 5px 0;
     }
 }
 
