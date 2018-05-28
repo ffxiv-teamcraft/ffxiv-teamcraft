@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.9"></a>
+## [4.0.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.8...v4.0.9) (2018-05-28)
+
+
+### Bug Fixes
+
+* layout order by job is no longer flickering ([4c6755b](https://github.com/Supamiu/ffxiv-teamcraft/commit/4c6755b))
+* removed reset set button in simulator ([73acaea](https://github.com/Supamiu/ffxiv-teamcraft/commit/73acaea))
+* **alarms:** fixed a bug with items search and their seeds (old world fig, etc) ([353a92a](https://github.com/Supamiu/ffxiv-teamcraft/commit/353a92a))
+* **mobile:** fixed list panel buttons layout, they're now in the panel content ([fdfd2ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/fdfd2ed)), closes [#360](https://github.com/Supamiu/ffxiv-teamcraft/issues/360)
+* **simulator:** fixed a bug that was making simulation action costs hidden ([07576c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/07576c9))
+* **simulator:** tooltip now hidden upon drag ([2febfa2](https://github.com/Supamiu/ffxiv-teamcraft/commit/2febfa2))
+
+
+### Features
+
+* **simulator:** new "Save as new" button on rotations, creates a clone of the current rotation ([03d0548](https://github.com/Supamiu/ffxiv-teamcraft/commit/03d0548))
+
+
+### Performance Improvements
+
+* performance improvements for community lists ([55e3573](https://github.com/Supamiu/ffxiv-teamcraft/commit/55e3573))
+
+
+
 <a name="4.0.8"></a>
 ## [4.0.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.7...v4.0.8) (2018-05-26)
 
