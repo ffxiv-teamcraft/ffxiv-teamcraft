@@ -15,10 +15,11 @@ import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
-import {catchError, filter, first, mergeMap} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap} from 'rxjs/operators';
 import {ListRow} from '../../../model/list/list-row';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {ListTag} from '../../../model/list/list-tag.enum';
+import {ListTagsPopupComponent} from '../../../pages/list/list-tags-popup/list-tags-popup.component';
 
 @Component({
     selector: 'app-list-panel',
@@ -132,6 +133,19 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
                 duration: 10000,
                 panelClass: ['snack']
             });
+    }
+
+    public openTagsPopup(): void {
+        this.dialog.open(ListTagsPopupComponent, {data: this.list}).afterClosed()
+            .pipe(
+                map(tags => {
+                    this.list.tags = tags;
+                    return this.list;
+                }),
+                mergeMap(list => {
+                    return this.listService.set(list.$key, list);
+                })
+            ).subscribe();
     }
 
     public forkList(): void {

@@ -68,7 +68,13 @@
                         (cbOnSuccess)="showCopiedNotification()">
                     <mat-icon>share</mat-icon>
                 </button>
-                <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+
+                <button mat-icon-button matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="$event.stopPropagation();openTagsPopup()" *ngIf="list.authorId === userUid">
+                    <mat-icon>label_outline</mat-icon>
+                </button>
+
                 <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
                         matTooltip="{{'LIST.BUTTONS.Open' | translate}}" matTooltipPosition="above"
                         (click)="$event.stopPropagation()">
@@ -130,7 +136,13 @@
                     (cbOnSuccess)="showCopiedNotification()">
                 <mat-icon>share</mat-icon>
             </button>
-            <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+
+            <button mat-icon-button matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
+                    matTooltipPosition="above"
+                    (click)="openTagsPopup()" *ngIf="list.authorId === userUid">
+                <mat-icon>label_outline</mat-icon>
+            </button>
+
             <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
                     matTooltip="{{'LIST.BUTTONS.Open' | translate}}" matTooltipPosition="above"
                     (click)="$event.stopPropagation()">
