@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.11"></a>
+## [4.0.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.10...v4.0.11) (2018-05-29)
+
+
+### Bug Fixes
+
+* fixed an issue with gathering search in some languages (pt, es) ([dbbdc19](https://github.com/Supamiu/ffxiv-teamcraft/commit/dbbdc19))
+* fixed an issue with pricing mode showing wrong values for precrafts ([11272b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/11272b5))
+
+
+### Features
+
+* tags button now present inside list panel header ([e442cf9](https://github.com/Supamiu/ffxiv-teamcraft/commit/e442cf9))
+
+
+
 <a name="4.0.10"></a>
 ## [4.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.9...v4.0.10) (2018-05-28)
 
