@@ -73,6 +73,14 @@ export class PricingComponent {
         return total;
     }
 
+    getTotalEarnings(rows: ListRow[]): number {
+        return rows.reduce((total, row) => {
+            const price = this.pricingService.getPrice(row);
+            const amount = this.pricingService.getAmount(this.list.$key, row);
+            return total + amount.nq * price.nq + amount.hq * price.hq;
+        }, 0);
+    }
+
     /**
      * Gets the minimum crafting cost of a given item.
      * @param {ListRow} row
@@ -113,6 +121,6 @@ export class PricingComponent {
      * @returns {number}
      */
     getBenefits(): number {
-        return this.getTotalPrice(this.list.recipes) - this.getSpendingTotal();
+        return this.getTotalEarnings(this.list.recipes) - this.getSpendingTotal();
     }
 }
