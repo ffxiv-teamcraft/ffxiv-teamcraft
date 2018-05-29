@@ -174,10 +174,14 @@ export class DataService {
      * @returns {Observable<ItemData[]>}
      */
     public searchGathering(name: string): Observable<any[]> {
+        let lang = this.i18n.currentLang;
+        if (['en', 'fr', 'de', 'ja'].indexOf(lang) === -1) {
+            lang = 'en';
+        }
         const params = new HttpParams()
             .set('gatherable', '1')
             .set('text', name)
-            .set('lang', this.i18n.currentLang);
+            .set('lang', lang);
         return this.getGarlandSearch(params);
     }
 

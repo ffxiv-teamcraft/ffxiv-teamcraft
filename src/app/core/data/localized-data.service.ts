@@ -27,6 +27,9 @@ export class LocalizedDataService {
     }
 
     public getItemIdsByName(name: string, language: Language): number[] {
+        if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+            language = 'en';
+        }
         const regex = new RegExp(`${name}`, 'i');
         const res = [];
         const keys = Object.keys(items);
@@ -113,7 +116,7 @@ export class LocalizedDataService {
     }
 
     /**
-     * Gets the id of a row by english name.
+     * Gets the id of a row by name.
      * @param  array
      * @param {string} name
      * @param language
@@ -122,6 +125,9 @@ export class LocalizedDataService {
     private getIndexByName(array: any, name: string, language: string): number {
         if (array === undefined) {
             return -1;
+        }
+        if (['en', 'fr', 'de', 'ja'].indexOf(language) === -1) {
+            language = 'en';
         }
         let res = -1;
         const keys = Object.keys(array);
