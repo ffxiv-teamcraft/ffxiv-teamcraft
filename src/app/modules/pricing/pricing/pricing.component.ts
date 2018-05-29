@@ -56,8 +56,8 @@ export class PricingComponent {
             if (row.requires !== undefined) {
                 // Compute the price of the craft
                 const craftingPrice = this.getCraftCost(row);
-                // If it's cheaper
-                if (craftingPrice < addition) {
+                // If it's cheaper or it can't be bought
+                if (craftingPrice < addition || addition === 0) {
                     // If the crafting price is cheaper than the item itself,
                     // don't add the price because mats are already used in the price.
                     total += 0;
