@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Craft} from '../../../../model/garland-tools/craft';
 import {Simulation} from '../../simulation/simulation';
 import {BehaviorSubject, combineLatest, Observable, of, ReplaySubject} from 'rxjs';
@@ -36,6 +36,7 @@ import {AppUser} from 'app/model/list/app-user';
 import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
+import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
 
 @Component({
     selector: 'app-simulator',
@@ -253,7 +254,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
                 private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService,
-                private snack: MatSnackBar) {
+                private snack: MatSnackBar, private cd: ChangeDetectorRef) {
 
         this.foods = consumablesService.fromData(foods)
             .sort(this.consumablesSortFn);
@@ -521,17 +522,23 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
     }
 
+    editRotationName(rotation: CraftingRotation): void {
+        this.dialog.open(RotationNamePopupComponent, {data: rotation})
+            .afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res.length > 0 && res !== this.rotation.getName())
+            ).subscribe(name => {
+            this.rotation.name = name;
+            this.cd.detectChanges();
+        });
+    }
+
     saveSet(set: GearSet): void {
         // First of all, remove old gearset in userData for this job.
         this.userData.gearSets = (this.userData.gearSets || []).filter(s => s.jobId !== set.jobId);
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);
-        this.userService.set(this.userData.$key, this.userData).subscribe();
-    }
-
-    resetSet(set: GearSet): void {
-        this.userData.gearSets = this.userData.gearSets.filter(s => s.jobId !== set.jobId);
         this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 

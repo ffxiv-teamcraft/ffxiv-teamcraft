@@ -51,6 +51,12 @@
         <mat-icon>format_list_numbered</mat-icon>
     </button>
 </div>
+<div class="rotation-name" *ngIf="rotation !== undefined">
+    {{rotation.getName()}}
+    <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
+        <mat-icon>mode_edit</mat-icon>
+    </button>
+</div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
     <mat-expansion-panel-header>
         <mat-panel-title>
