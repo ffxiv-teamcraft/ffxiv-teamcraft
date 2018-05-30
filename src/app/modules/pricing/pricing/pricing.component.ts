@@ -61,9 +61,6 @@ export class PricingComponent {
                     // If the crafting price is cheaper than the item itself,
                     // don't add the price because mats are already used in the price.
                     total += 0;
-                } else {
-                    // Else, remove the price of the craft because the user won't craft the item, he'll buy it.
-                    total -= craftingPrice;
                 }
             } else {
                 // If this is not a craft, simply add its price.
@@ -71,6 +68,14 @@ export class PricingComponent {
             }
         });
         return total;
+    }
+
+    getTotalEarnings(rows: ListRow[]): number {
+        return rows.reduce((total, row) => {
+            const price = this.pricingService.getPrice(row);
+            const amount = this.pricingService.getAmount(this.list.$key, row);
+            return total + amount.nq * price.nq + amount.hq * price.hq;
+        }, 0);
     }
 
     /**
@@ -113,6 +118,6 @@ export class PricingComponent {
      * @returns {number}
      */
     getBenefits(): number {
-        return this.getTotalPrice(this.list.recipes) - this.getSpendingTotal();
+        return this.getTotalEarnings(this.list.recipes) - this.getSpendingTotal();
     }
 }

@@ -26,6 +26,9 @@ export class ListLayoutPopupComponent {
                 private serializer: NgSerializerService) {
         this.layoutService.layouts.subscribe(layouts => {
             this.availableLayouts = layouts;
+            if (this.availableLayouts[this.selectedIndex] === undefined) {
+                this.selectedIndex = 0;
+            }
         });
         this.selectedIndex = +(localStorage.getItem('layout:selected') || 0);
     }

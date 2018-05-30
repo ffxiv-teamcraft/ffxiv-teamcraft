@@ -12,6 +12,8 @@ export class BellNodesService {
      */
     private nodes: any[] = (<any>window).gt.bell.nodes;
 
+    private cache: { [index: number]: any[] } = {};
+
     constructor(private localizedDataService: LocalizedDataService, private i18n: TranslateService) {
     }
 
@@ -27,20 +29,23 @@ export class BellNodesService {
     }
 
     getNodesByItemId(id: number): any[] {
-        const results = [];
-        this.nodes.forEach(node => {
-            const match = node.items.find(item => item.id === id);
-            if (match !== undefined) {
-                const nodeCopy = JSON.parse(JSON.stringify(node));
-                nodeCopy.icon = match.icon;
-                nodeCopy.itemId = id;
-                nodeCopy.slot = +match.slot;
-                nodeCopy.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
-                nodeCopy.areaid = this.localizedDataService.getAreaIdByENName(node.title);
-                results.push(nodeCopy);
-            }
-        });
-        return results;
+        if (this.cache[id] === undefined) {
+            const results = [];
+            this.nodes.forEach(node => {
+                const match = node.items.find(item => item.id === id);
+                if (match !== undefined) {
+                    const nodeCopy = JSON.parse(JSON.stringify(node));
+                    nodeCopy.icon = match.icon;
+                    nodeCopy.itemId = id;
+                    nodeCopy.slot = +match.slot;
+                    nodeCopy.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
+                    nodeCopy.areaid = this.localizedDataService.getAreaIdByENName(node.title);
+                    results.push(nodeCopy);
+                }
+            });
+            this.cache[id] = results;
+        }
+        return this.cache[id];
     }
 
     getNode(id: number): any {

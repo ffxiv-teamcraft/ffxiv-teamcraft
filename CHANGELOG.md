@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.12"></a>
+## [4.0.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.11...v4.0.12) (2018-05-29)
+
+
+### Bug Fixes
+
+* fixed an issue with custom layouts panel sometimes broken ([a9a2868](https://github.com/Supamiu/ffxiv-teamcraft/commit/a9a2868))
+* fixed an issue with masterbooks popup in profile page ([83dee12](https://github.com/Supamiu/ffxiv-teamcraft/commit/83dee12))
+* fixed an issue with precrafts inside pricing view ([768093b](https://github.com/Supamiu/ffxiv-teamcraft/commit/768093b))
+* fixed an issue with pricing view not computing benefits properly ([e3b3459](https://github.com/Supamiu/ffxiv-teamcraft/commit/e3b3459))
+* fixed an issue with reduction details popup freezing the app ([6865b77](https://github.com/Supamiu/ffxiv-teamcraft/commit/6865b77)), closes [#383](https://github.com/Supamiu/ffxiv-teamcraft/issues/383)
+
+
+
+<a name="4.0.11"></a>
+## [4.0.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.10...v4.0.11) (2018-05-29)
+
+
+### Bug Fixes
+
+* fixed an issue with gathering search in some languages (pt, es) ([dbbdc19](https://github.com/Supamiu/ffxiv-teamcraft/commit/dbbdc19))
+* fixed an issue with pricing mode showing wrong values for precrafts ([11272b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/11272b5))
+
+
+### Features
+
+* tags button now present inside list panel header ([e442cf9](https://github.com/Supamiu/ffxiv-teamcraft/commit/e442cf9))
+
+
+
 <a name="4.0.10"></a>
 ## [4.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.9...v4.0.10) (2018-05-28)
 

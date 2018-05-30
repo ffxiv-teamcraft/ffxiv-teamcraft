@@ -9,7 +9,7 @@
                  matTooltipPosition="above">
             attach_money
         </mat-icon>
-        <mat-icon color="warn" *ngIf="craftCost < (price.nq * amount.nq + price.hq * amount.hq)"
+        <mat-icon color="warn" *ngIf="craftCost < (price.nq * amount.nq + price.hq * amount.hq) && !earning"
         matTooltip="{{'PRICING.Craft_cheaper'}}" matTooltipPosition="above">error_outline</mat-icon>
     </p>
 
@@ -21,21 +21,21 @@
         <div mat-line>
             <mat-form-field class="nofix price">
                 <span matPrefix>NQ &nbsp;</span>
-                <input matInput type="number" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" [(ngModel)]="amount.nq" (ngModelChange)="saveAmount()">
+                <input matInput type="number" lang="en-150" [(ngModel)]="amount.nq" (ngModelChange)="saveAmount()">
             </mat-form-field>
         </div>
         <div mat-line *ngIf="!isCrystal()">
             <mat-form-field class="nofix price">
                 <span matPrefix>HQ &nbsp;</span>
-                <input matInput type="number" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" [(ngModel)]="amount.hq" (ngModelChange)="saveAmount()">
+                <input matInput type="number" lang="en-150" [(ngModel)]="amount.hq" (ngModelChange)="saveAmount()">
             </mat-form-field>
         </div>
     </div>
