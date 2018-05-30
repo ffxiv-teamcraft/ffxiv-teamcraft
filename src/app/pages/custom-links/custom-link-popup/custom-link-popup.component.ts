@@ -115,7 +115,7 @@ export class CustomLinkPopupComponent implements OnInit {
     }
 
     getRedirectTo(): string {
-        if (this.data !== undefined) {
+        if (this.data !== undefined && this.data !== null) {
             return this.data.redirectTo;
         } else if (this.selectedType === 'simulator') {
             return `${this.selectedType}/custom/${this.selectedUid}`;
