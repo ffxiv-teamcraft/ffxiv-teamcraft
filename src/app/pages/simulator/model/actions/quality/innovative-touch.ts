@@ -36,7 +36,7 @@ export class InnovativeTouch extends QualityAction {
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
-        return 0;
+        return 10;
     }
 
     getBaseSuccessRate(simulationState: Simulation): number {
