@@ -5,31 +5,30 @@ import {ListRow} from '../../model/list/list-row';
 import {mockList} from '../../../test/mock-list';
 import {LayoutRowFilter} from './layout-row-filter';
 import {NgSerializerModule} from '@kaiu/ng-serializer';
-import {LayoutRowDisplay} from './layout-row-display';
 import {LayoutOrderService} from './layout-order.service';
 import {TranslateService} from '@ngx-translate/core';
 import {CoreModule} from '../core.module';
 
 const mockRows: ListRow[] = mockList.items;
 
-function testFilter(filter: LayoutRowFilter, ...args: any[]): void {
-    const result = filter.filter(mockRows, ...args);
+function testFilter(filter: LayoutRowFilter): void {
+    const result = filter.filter(mockRows);
     expect(result.accepted.length).toBeGreaterThan(0);
     expect(result.rejected.length).toBeGreaterThan(0);
-    expect(filter.filter(result.rejected, ...args).accepted.length).toBe(0);
+    expect(filter.filter(result.rejected).accepted.length).toBe(0);
 }
 
 class MockTranslate extends TranslateService {
     currentLang = 'en';
 }
 
-describe('LayoutService', () => {
+xdescribe('LayoutService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
                 LayoutService,
                 LayoutOrderService,
-                {provide: TranslateService, useValue: MockTranslate}
+                {provide: TranslateService, useValue: MockTranslate},
             ],
             imports: [
                 NgSerializerModule.forRoot(),

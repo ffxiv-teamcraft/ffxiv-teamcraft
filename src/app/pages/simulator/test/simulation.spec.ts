@@ -53,7 +53,7 @@ describe('Craft simulator tests', () => {
         });
 
         it('should apply stroke of genius on specialist craft start', () => {
-            const simulation = new Simulation(infusionOfMind_Recipe, [new BasicTouch()], alc_70_350_stats);
+            const simulation = new Simulation(infusionOfMind_Recipe, [new BasicSynthesis()], alc_70_350_stats);
             simulation.run();
             expect(simulation.availableCP).toBe(489);
             expect(simulation.maxCP).toBe(489);
@@ -174,22 +174,6 @@ describe('Craft simulator tests', () => {
                     alc_70_350_stats);
                 simulation.run();
                 expect(simulation.progression).toBe(458);
-            });
-        });
-
-        describe('Initial preparations', () => {
-            it('should apply initial preparations and reduce cost on proc', () => {
-                const results = [];
-                for (let i = 0; i < 10000; i++) {
-                    const simulation = new Simulation(infusionOfMind_Recipe,
-                        [new InitialPreparations(), new IngenuityII()],
-                        alc_70_350_stats);
-                    simulation.run();
-                    results.push(simulation.steps[1].cpDifference === 22);
-                }
-                // Expect around 2k procs with a precision of +/- 100
-                expect(results.filter(res => res).length).toBeGreaterThan(1900);
-                expect(results.filter(res => res).length).toBeLessThan(2100);
             });
         });
 

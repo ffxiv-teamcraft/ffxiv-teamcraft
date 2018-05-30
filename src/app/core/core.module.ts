@@ -44,7 +44,7 @@ import {PlatformService} from './tools/platform.service';
 import {IpcService} from './electron/ipc.service';
 
 
-const dataExtractorProviders: Provider[] = [
+export const DATA_EXTRACTORS: Provider[] = [
     {provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService, DataService], multi: true},
     {provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService], multi: true},
     {provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [DataService], multi: true},
@@ -70,7 +70,7 @@ const dataExtractorProviders: Provider[] = [
     ],
     providers: [
         // Data Extraction
-        ...dataExtractorProviders,
+        ...DATA_EXTRACTORS,
         DataExtractorService,
         // Other services
         GarlandToolsService,
