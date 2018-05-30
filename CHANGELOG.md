@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.13"></a>
+## [4.0.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.12...v4.0.13) (2018-05-30)
+
+
+### Bug Fixes
+
+* custom links popup now creates links properly ([ef547c7](https://github.com/Supamiu/ffxiv-teamcraft/commit/ef547c7)), closes [#385](https://github.com/Supamiu/ffxiv-teamcraft/issues/385)
+* **simulator:** fixed an issue with Innovative Touch not decreasing durability ([7220dcc](https://github.com/Supamiu/ffxiv-teamcraft/commit/7220dcc)), closes [#386](https://github.com/Supamiu/ffxiv-teamcraft/issues/386)
+
+
+### Features
+
+* **desktop:** way better window state management (position and size saving properly) ([373cafd](https://github.com/Supamiu/ffxiv-teamcraft/commit/373cafd))
+* **simulator:** you can now see & edit rotation name inside simulator ([0d7d435](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d7d435)), closes [#380](https://github.com/Supamiu/ffxiv-teamcraft/issues/380)
+* current list shown inside bulk regeneration popup ([c4577b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/c4577b4)), closes [#384](https://github.com/Supamiu/ffxiv-teamcraft/issues/384)
+* new button to copy macro fragments to clipboard ([1f4e9cc](https://github.com/Supamiu/ffxiv-teamcraft/commit/1f4e9cc)), closes [#382](https://github.com/Supamiu/ffxiv-teamcraft/issues/382)
+
+
+
 <a name="4.0.12"></a>
 ## [4.0.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.11...v4.0.12) (2018-05-29)
 
