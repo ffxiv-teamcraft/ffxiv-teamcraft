@@ -56,6 +56,10 @@ export class MacroPopupComponent implements OnInit {
         }
     }
 
+    getText(macro: string[]): string {
+        return macro.join('\n');
+    }
+
     ngOnInit() {
         this.generateMacros();
     }
