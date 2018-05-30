@@ -11,7 +11,7 @@ import {environment} from '../../../environments/environment';
 
 import {Ingredient} from '../../model/garland-tools/ingredient';
 import {DataExtractorService} from './data/data-extractor.service';
-import {map} from 'rxjs/operators';
+import {map, skip} from 'rxjs/operators';
 
 @Injectable()
 export class ListManagerService {
@@ -128,6 +128,8 @@ export class ListManagerService {
             list.recipes = [];
             return concat(...add)
                 .pipe(
+                    // Only apply backup at last iteration, to avoid unnecessary slow process.
+                    skip(add.length - 1),
                     map((resultList: List) => {
                         backup.forEach(row => {
                             const listRow = resultList[row.array].find(item => item.id === row.item.id);
