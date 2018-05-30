@@ -1,5 +1,6 @@
 <h2 mat-dialog-title>{{'Regenerating_lists' | translate }}</h2>
 <div mat-dialog-content>
+    <div class="current-list">{{currentList}}</div>
     <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
     <app-random-gif></app-random-gif>
 </div>
