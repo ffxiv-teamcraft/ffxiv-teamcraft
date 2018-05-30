@@ -1,7 +1,8 @@
 const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
 const {autoUpdater} = require('electron-updater');
 const path = require('path');
-const windowStateKeeper = require('electron-window-state');
+const Config = require('electron-config');
+const config = new Config();
 
 const electronOauth2 = require('electron-oauth2');
 
@@ -25,29 +26,14 @@ if (shouldQuit) {
 }
 
 function createWindow() {
-
-    // Load the previous state with fallback to defaults
-    let mainWindowState = windowStateKeeper({
-        id: 'main',
-        defaultWidth: 1280,
-        defaultHeight: 720
-    });
-
-    // Create the window using the state information
-    win = new BrowserWindow({
-        x: mainWindowState.x,
-        y: mainWindowState.y,
-        width: mainWindowState.width,
-        height: mainWindowState.height,
+    let opts = {
+        show: false,
         backgroundColor: '#ffffff',
         frame: false,
         icon: `file://${__dirname}/dist/assets/logo.png`
-    });
-
-    // Let us register listeners on the window, so we can update the state
-    // automatically (the listeners will be removed when the window is closed)
-    // and restore the maximized or full screen state
-    mainWindowState.manage(win);
+    };
+    Object.assign(opts, config.get('win:bounds'));
+    win = new BrowserWindow(opts);
 
     win.loadURL(`file://${__dirname}/dist/index.html`);
 
@@ -59,13 +45,20 @@ function createWindow() {
         win = null
     });
 
+    win.once('ready-to-show', win.show);
+
+    // save window size and position
+    win.on('close', () => {
+        config.set('win:bounds', win.getBounds());
+    });
+
     const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
     nativeIcon = nativeImage.createFromPath(iconPath);
     const trayIcon = nativeIcon.resize({width: 16, height: 16});
     tray = new Tray(trayIcon);
 
     const handleRedirect = (e, url) => {
-        if(url !== win.webContents.getURL()) {
+        if (url !== win.webContents.getURL()) {
             e.preventDefault();
             require('electron').shell.openExternal(url);
         }
@@ -166,18 +159,8 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('overlay', (event, url) => {
-    let overlayWindowState = windowStateKeeper({
-        id: url,
-        defaultWidth: 280,
-        defaultHeight: 400
-    });
-
-    // Create the window using the state information
-    const overlayWindowConfig = {
-        height: overlayWindowState.height,
-        width: overlayWindowState.width,
-        x: overlayWindowState.x,
-        y: overlayWindowState.y,
+    let opts = {
+        show: false,
         resizable: true,
         frame: false,
         alwaysOnTop: true,
@@ -186,12 +169,20 @@ ipcMain.on('overlay', (event, url) => {
             nodeIntegration: false
         }
     };
+    Object.assign(opts, config.get(`overlay:${url}:bounds`));
+    const overlay = new BrowserWindow(opts);
 
-    const overlay = new BrowserWindow(overlayWindowConfig);
+    overlay.once('ready-to-show', overlay.show);
+
+
+    // save window size and position
+    overlay.on('close', () => {
+        config.set(`overlay:${url}:bounds`, overlay.getBounds());
+    });
+
+
     overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
     openedOverlays[url] = overlay;
-
-    overlayWindowState.manage(overlay);
 });
 
 ipcMain.on('overlay-close', (event, url) => {
