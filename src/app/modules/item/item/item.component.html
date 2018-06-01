@@ -1,6 +1,7 @@
 <!--Layout for desktop browsers-->
 <mat-list-item *ngIf="!(isMobile | async); else mobileLayout"
-               [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists}">
+               [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists,
+               'done-row': item.done >= item.amount, 'craftable-row': canBeCrafted}">
     <div class="item-col-left">
         <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}"
              [appXivdbTooltip]="item.id" [appXivdbTooltipDisabled]="isDraft()">
