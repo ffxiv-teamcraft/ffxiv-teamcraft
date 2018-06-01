@@ -286,7 +286,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 return exportString + displayRow.rows.reduce((rowExportString, row) => {
                     return rowExportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
                 }, `${this.translate.instant(displayRow.title)}:\n`) + '\n';
-            }, `${this.listData.name}: \n\n${this.getCrystalsTextExport(this.translate.instant('Crystals'), this.listData.crystals)}`);
+            }, `${this.linkTools.getLink(`list/${this.listData.$key}`)
+            }\n\n${this.listData.name}: \n\n${
+                this.getCrystalsTextExport(this.translate.instant('Crystals'), this.listData.crystals)}`);
     }
 
     public getCrystalsTextExport(title: string, crystals: ListRow[]): string {
