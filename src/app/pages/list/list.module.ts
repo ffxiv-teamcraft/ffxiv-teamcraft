@@ -19,6 +19,7 @@ import {
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSliderModule,
+    MatSlideToggleModule,
     MatTooltipModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
@@ -32,15 +33,15 @@ import {ListInventoryComponent} from './list-inventory/list-inventory.component'
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ListTagsPopupComponent} from './list-tags-popup/list-tags-popup.component';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
-import { ListHelpComponent } from './list-help/list-help.component';
-import { ListLayoutPopupComponent } from './list-layout-popup/list-layout-popup.component';
-import { ListLayoutRowComponent } from './list-layout-popup/list-layout-row/list-layout-row.component';
-import { ImportInputBoxComponent } from './list-layout-popup/import-input-box/import-input-box.component';
+import {ListHelpComponent} from './list-help/list-help.component';
+import {ListLayoutPopupComponent} from './list-layout-popup/list-layout-popup.component';
+import {ListLayoutRowComponent} from './list-layout-popup/list-layout-row/list-layout-row.component';
+import {ImportInputBoxComponent} from './list-layout-popup/import-input-box/import-input-box.component';
 import {ClipboardModule} from 'ngx-clipboard';
-import { ListComponent } from './list/list.component';
-import { NavigationMapPopupComponent } from './navigation-map-popup/navigation-map-popup.component';
+import {ListComponent} from './list/list.component';
+import {NavigationMapPopupComponent} from './navigation-map-popup/navigation-map-popup.component';
 import {MapModule} from '../../modules/map/map.module';
-import { ListFinishedPopupComponent } from './list-finished-popup/list-finished-popup.component';
+import {ListFinishedPopupComponent} from './list-finished-popup/list-finished-popup.component';
 
 const routes: Routes = [
     {
@@ -80,6 +81,7 @@ const routes: Routes = [
         MatProgressSpinnerModule,
         MatGridListModule,
         MatTooltipModule,
+        MatSlideToggleModule,
 
         FlexLayoutModule,
         ClipboardModule,

@@ -165,7 +165,7 @@
                         [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
                 <button mat-button class="full-width-button" color="accent"
-                        (click)="addListsToWorkhop(workshop, display.basicLists)">
+                        (click)="addListsToWorkhop(workshop, display.basicLists.concat(display.publicLists))">
                     <mat-icon>add</mat-icon>
                     {{'WORKSHOP.Add_lists' | translate}}
                 </button>
@@ -240,7 +240,7 @@
                         [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
                 <button mat-button class="full-width-button" color="accent"
-                        (click)="addListsToWorkhop(workshopData.workshop, display.basicLists)">
+                        (click)="addListsToWorkhop(workshopData.workshop, display.basicLists.concat(display.publicLists))">
                     <mat-icon>add</mat-icon>
                     {{'WORKSHOP.Add_lists' | translate}}
                 </button>

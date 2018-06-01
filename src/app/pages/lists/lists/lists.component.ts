@@ -216,7 +216,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         this.lists.pipe(
             first(),
             map(display => {
-                let res = display.basicLists;
+                let res = display.basicLists.concat(display.publicLists);
                 Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
                     res = [...res, ...row];
                 });
