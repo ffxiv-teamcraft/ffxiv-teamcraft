@@ -1,6 +1,9 @@
 <h2 mat-dialog-title>Timer options</h2>
 <div mat-dialog-content>
-    <mat-form-field>
+    <mat-slide-toggle *ngIf="platform.isDesktop()" [(ngModel)]="enableCustomSound">
+        {{'ALARMS.Custom_sound' | translate}}
+    </mat-slide-toggle>
+    <mat-form-field *ngIf="!enableCustomSound">
         <mat-select placeholder="{{'Sound' | translate}}" [ngModel]="settings.alarmSound"
                     (ngModelChange)="setSound($event)">
             <mat-option *ngFor="let sound of sounds" [value]="sound">
@@ -8,6 +11,9 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
+    <div *ngIf="enableCustomSound">
+        <input type="file" (change)="setSound($event.target.files[0].path)">
+    </div>
     <mat-form-field>
         <mat-select placeholder="{{'Early_by' | translate}}" [ngModel]="settings.alarmHoursBefore"
                     (ngModelChange)="setHoursBefore($event)">

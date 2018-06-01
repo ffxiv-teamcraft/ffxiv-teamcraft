@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {SettingsService} from '../../settings/settings.service';
+import {PlatformService} from '../../../core/tools/platform.service';
 
 @Component({
     selector: 'app-timer-options-popup',
@@ -10,11 +11,22 @@ export class TimerOptionsPopupComponent {
 
     public sounds = ['Wondrous_tales', 'LB_charged', 'Notification'];
 
-    constructor(public settings: SettingsService) {
+    enableCustomSound = false;
+
+    public customSound: File;
+
+    constructor(public settings: SettingsService, public platform: PlatformService) {
     }
 
     public previewSound(): void {
-        const audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+        let audio: HTMLAudioElement;
+        if (this.settings.alarmSound.indexOf('file://') === -1) {
+            // If this is not a custom alarm sound, create the audio element from assets
+            audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+        } else {
+            // Else, create it from the custom file path
+            audio = new Audio(this.settings.alarmSound);
+        }
         audio.loop = false;
         audio.volume = this.settings.alarmVolume;
         audio.play();
@@ -23,17 +35,15 @@ export class TimerOptionsPopupComponent {
     public setVolume(volume: number): void {
         this.settings.alarmVolume = volume;
         this.previewSound();
-
     }
 
     public setSound(sound: string): void {
+        console.log(sound);
         this.settings.alarmSound = sound;
         this.previewSound();
-
     }
 
     public setHoursBefore(hours: number): void {
-        console.log(hours);
         this.settings.alarmHoursBefore = hours;
     }
 
