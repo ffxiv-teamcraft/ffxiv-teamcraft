@@ -61,7 +61,8 @@
     "No_alarm": "Aucune alarme définie",
     "Add_alarm": "Ajouter une alarme",
     "Alarm_created": "Alarme créée",
-    "Alarm_already_created": "Alarm déjà définie"
+    "Alarm_already_created": "Alarm déjà définie",
+    "Custom_sound": "Son d'alarme personnalisé"
   },
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",

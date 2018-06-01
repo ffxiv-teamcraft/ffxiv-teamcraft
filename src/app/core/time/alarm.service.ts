@@ -186,7 +186,12 @@ export class AlarmService {
                 .onAction().subscribe(() => {
                 this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
             });
-            const audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+            let audio: HTMLAudioElement;
+            if (this.settings.alarmSound.indexOf(':') === -1) {
+                audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+            } else {
+                audio = new Audio(this.settings.alarmSound);
+            }
             audio.loop = false;
             audio.volume = this.settings.alarmVolume;
             audio.play();
@@ -334,9 +339,10 @@ export class AlarmService {
      * @private
      */
     public _isSpawned(alarm: Alarm, time: Date): boolean {
-        const spawn = alarm.spawn;
+        let spawn = alarm.spawn;
         let despawn = (spawn + alarm.duration) % 24;
         despawn = despawn === 0 ? 24 : despawn;
+        spawn = spawn === 0 ? 24 : spawn;
         return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
     }
 

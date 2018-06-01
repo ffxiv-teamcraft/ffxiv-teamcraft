@@ -11,8 +11,13 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <div *ngIf="enableCustomSound">
-        <input type="file" (change)="setSound($event.target.files[0].path)">
+    <div *ngIf="enableCustomSound" class="custom-alarm">
+        <div class="sound-preview">{{settings.alarmSound}}
+            <button mat-icon-button (click)="previewSound()">
+                <mat-icon>play_circle_outline</mat-icon>
+            </button>
+        </div>
+        <input type="file" (change)="setSound($event.target.files[0].path)" accept="audio/*">
     </div>
     <mat-form-field>
         <mat-select placeholder="{{'Early_by' | translate}}" [ngModel]="settings.alarmHoursBefore"
