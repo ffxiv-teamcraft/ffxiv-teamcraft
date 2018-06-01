@@ -12,6 +12,7 @@ import {NavigationMapPopupComponent} from '../navigation-map-popup/navigation-ma
 import {NavigationObjective} from '../../../modules/map/navigation-objective';
 import {Vector2} from '../../../core/tools/vector2';
 import {Permissions} from '../../../core/database/permissions/permissions';
+import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -67,7 +68,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     permissions: Permissions;
 
     constructor(public settings: SettingsService, private dataService: LocalizedDataService, private dialog: MatDialog,
-                private l12n: LocalizedDataService) {
+                private l12n: LocalizedDataService, private i18nTools: I18nToolsService) {
     }
 
     /**
@@ -190,6 +191,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 return {x: coords.x, y: coords.y, name: this.l12n.getItem(item.id), iconid: item.icon}
             })
             .filter(row => row !== undefined).length >= 2;
+    }
+
+    public getTextExport(): string {
+        return this.data.reduce((exportString, row) => {
+            return exportString + `${row.amount}x ${this.i18nTools.getName(this.dataService.getItem(row.id))}\n`
+        }, `${this.title} :\n`);
     }
 
     trackByFn(index: number, item: ListRow) {

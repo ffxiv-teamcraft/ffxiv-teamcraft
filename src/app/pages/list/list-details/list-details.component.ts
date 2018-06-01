@@ -35,10 +35,11 @@ import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.c
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
-import {filter} from 'rxjs/operators';
-import {first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {PlatformService} from '../../../core/tools/platform.service';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
+import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
+import {LocalizedDataService} from '../../../core/data/localized-data.service';
 
 declare const ga: Function;
 
@@ -105,7 +106,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private listService: ListService, private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
-                public platform: PlatformService, private linkTools: LinkToolsService) {
+                public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
+                private i18nTools: I18nToolsService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -275,6 +277,22 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             return false;
         }
         return this.user !== undefined && this.user !== null && this.user.uid === this.listData.authorId;
+    }
+
+    public getTextExport(display: LayoutRowDisplay[]): string {
+        return display
+            .filter(displayRow => displayRow.rows.length > 0)
+            .reduce((exportString, displayRow) => {
+                return exportString + displayRow.rows.reduce((rowExportString, row) => {
+                    return rowExportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
+                }, `${this.translate.instant(displayRow.title)}:\n`) + '\n';
+            }, `${this.listData.name}: \n\n${this.getCrystalsTextExport(this.translate.instant('Crystals'), this.listData.crystals)}`);
+    }
+
+    public getCrystalsTextExport(title: string, crystals: ListRow[]): string {
+        return crystals.reduce((exportString, row) => {
+            return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
+        }, `${title} :\n`);
     }
 
     upgradeList(): void {

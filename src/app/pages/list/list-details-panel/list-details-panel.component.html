@@ -1,6 +1,15 @@
 <mat-expansion-panel [expanded]="expanded" (opened)="opened.emit()" (closed)="closed.emit()">
     <mat-expansion-panel-header>
         <mat-panel-title>{{title}}</mat-panel-title>
+        <button mat-icon-button ngxClipboard
+                *ngIf="data !== null"
+                matTooltip="{{'LIST.Copy_as_text' | translate}}"
+                matTooltipPosition="above"
+                (click)="$event.stopPropagation()"
+                [cbContent]="getTextExport()"
+                class="export-button">
+            <mat-icon>content_copy</mat-icon>
+        </button>
     </mat-expansion-panel-header>
     <!--DEFAULT LIST-->
     <mat-list dense *ngIf="!showTier && !zoneBreakdown">
