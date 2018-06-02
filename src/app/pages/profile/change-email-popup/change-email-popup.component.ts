@@ -15,9 +15,9 @@ export class ChangeEmailPopupComponent {
     constructor(private userService: UserService, fb: FormBuilder, private dialogRef: MatDialogRef<ChangeEmailPopupComponent>) {
 
         this.form = fb.group({
-            currentEmail: ['', Validators.email, Validators.required],
-            password: ['', Validators.required],
-            newEmail: ['', Validators.email, Validators.required],
+            currentEmail: ['', [Validators.email, Validators.required]],
+            password: ['', [Validators.required]],
+            newEmail: ['', [Validators.email, Validators.required]],
         });
     }
 
