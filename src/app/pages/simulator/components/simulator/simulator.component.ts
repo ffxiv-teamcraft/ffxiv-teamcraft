@@ -37,6 +37,7 @@ import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
+import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 
 @Component({
     selector: 'app-simulator',
@@ -237,6 +238,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     @Input()
     public rotation: CraftingRotation;
 
+    private availableRotations$: Observable<CraftingRotation[]>;
+
     private consumablesSortFn = (a, b) => {
         const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
         const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
@@ -254,7 +257,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
                 private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService,
-                private snack: MatSnackBar, private cd: ChangeDetectorRef) {
+                private snack: MatSnackBar, private cd: ChangeDetectorRef, rotationsService: CraftingRotationService) {
+
+        this.availableRotations$ = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return rotationsService.getUserRotations(user.$key);
+                })
+            );
 
         this.foods = consumablesService.fromData(foods)
             .sort(this.consumablesSortFn);
@@ -329,6 +339,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 mergeMap(() => this.simulation$),
                 map(simulation => simulation.getReliabilityReport())
             );
+    }
+
+    useRotation(rotation: CraftingRotation): void {
+        this.rotation = rotation;
+        this.authorId = rotation.authorId;
+        this.actions = this.registry.deserializeRotation(rotation.rotation);
+        this.canSave = this.userData.$key === rotation.authorId;
     }
 
     private populateMissingSets(sets: GearSet[]): GearSet[] {

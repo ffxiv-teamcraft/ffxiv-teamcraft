@@ -51,11 +51,22 @@
         <mat-icon>format_list_numbered</mat-icon>
     </button>
 </div>
+
+<mat-menu #rotationsMenu="matMenu">
+    <button mat-menu-item *ngFor="let availableRotation of availableRotations$ | async"
+            (click)="useRotation(availableRotation)">{{availableRotation.getName()}}
+    </button>
+</mat-menu>
+
 <div class="rotation-name" *ngIf="rotation !== undefined">
     {{rotation.getName()}}
     <span *ngIf="dirty">*</span>
     <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
         <mat-icon>mode_edit</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="rotationsMenu" matTooltip="{{'SIMULATOR.Change_rotation' | translate}}"
+            matTooltipPosition="above">
+        <mat-icon>swap_horiz</mat-icon>
     </button>
 </div>
 <mat-expansion-panel [expanded]="customMode" #configPanel>
@@ -145,7 +156,8 @@
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
             <div class="consumables-cols">
                 <div class="foods">
-                    <mat-select [(ngModel)]="_selectedFood" placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
+                    <mat-select [(ngModel)]="_selectedFood"
+                                placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
                         <mat-option [value]="undefined"></mat-option>
                         <mat-option *ngFor="let food of foods" [value]="food">
                             {{food.itemId | itemName | i18n}}

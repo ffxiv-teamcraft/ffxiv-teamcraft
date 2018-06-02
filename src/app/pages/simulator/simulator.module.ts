@@ -24,7 +24,7 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatMenuModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSelectModule,
@@ -99,6 +99,7 @@ const routes: Routes = [
         MatDialogModule,
         MatSnackBarModule,
         MatTableModule,
+        MatMenuModule,
 
         ClipboardModule,
 
