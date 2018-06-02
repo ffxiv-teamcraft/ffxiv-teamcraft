@@ -150,7 +150,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         const data: { mapId: number, points: NavigationObjective[] } = {
             mapId: zoneBreakdownRow.zoneId,
             points: <NavigationObjective[]>zoneBreakdownRow.items
-                .filter(item => item.done <= item.amount_needed)
+                .filter(item => item.done <= item.amount)
                 .map(item => {
                     const coords = this.getCoords(item, zoneBreakdownRow);
                     if (coords !== undefined) {
