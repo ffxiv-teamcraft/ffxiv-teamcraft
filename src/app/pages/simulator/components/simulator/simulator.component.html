@@ -53,6 +53,7 @@
 </div>
 <div class="rotation-name" *ngIf="rotation !== undefined">
     {{rotation.getName()}}
+    <span *ngIf="dirty">*</span>
     <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
         <mat-icon>mode_edit</mat-icon>
     </button>

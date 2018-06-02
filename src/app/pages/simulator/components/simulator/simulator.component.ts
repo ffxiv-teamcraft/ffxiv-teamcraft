@@ -530,6 +530,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             ).subscribe(name => {
             this.rotation.name = name;
             this.cd.detectChanges();
+            this.markAsDirty();
         });
     }
 
