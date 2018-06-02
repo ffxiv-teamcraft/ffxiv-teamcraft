@@ -2,7 +2,7 @@
     <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Save_as_new' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
-            *ngIf="(actions$ | async).length > 0 && authorId === userData.$key" (click)="save(true)">
+            *ngIf="(actions$ | async).length > 0 && authorId === userData?.$key" (click)="save(true)">
         <mat-icon>content_copy</mat-icon>
     </button>
     <button mat-mini-fab
