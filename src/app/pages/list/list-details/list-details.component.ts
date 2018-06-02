@@ -365,7 +365,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     this.listService.remove(list.$key).pipe(first()).subscribe(() => {
                         this.router.navigate(['recipes']);
                     });
-                } else if (l.isComplete()) {
+                } else if (l.isComplete() && !l.public) {
                     this.onCompletion(list);
                 }
             })
