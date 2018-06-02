@@ -34,7 +34,7 @@
                    'primary-background': alarmService.isAlarmSpawned(alarm, time),
                    'accent-background': alarmService.isAlerted(alarm.itemId) | async
                    }">
-        <img mat-list-avatar [appXivdbTooltip]="alarm.itemId" [src]="alarm.icon | icon" alt="" *ngIf="!overlay">
+        <img mat-list-avatar [appXivdbTooltip]="alarm.itemId" [src]="alarm.icon | icon" alt="">
         <span matLine>{{alarm.itemId | itemName | i18n}} <span *ngIf="alarm.slot">({{alarm.slot}})</span></span>
         <i matLine>{{alarm.zoneId | placeName | i18n}} </i>
         <span class="coords" matLine *ngIf="compact || overlay">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
