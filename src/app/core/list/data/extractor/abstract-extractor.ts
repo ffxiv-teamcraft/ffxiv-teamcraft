@@ -26,7 +26,7 @@ export abstract class AbstractExtractor<T> {
      * @returns {any}
      */
     private fallback(): any {
-        let fallback = null;
+        let fallback = undefined;
         if (this.extractsArray()) {
             fallback = [];
         }

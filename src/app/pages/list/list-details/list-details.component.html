@@ -189,7 +189,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel">
+        <mat-expansion-panel class="panel" *ngIf="listData.crystals?.length > 0">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
                 <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">

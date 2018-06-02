@@ -96,8 +96,8 @@ export class List extends DataWithPermissions {
      * @param {(arg: ListRow) => void} method
      */
     public forEachCraft(method: (arg: ListRow) => void): void {
-        (this.preCrafts || []).forEach(method);
-        (this.recipes || []).forEach(method);
+        (this.preCrafts || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+        (this.recipes || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
     }
 
     /**
@@ -108,7 +108,7 @@ export class List extends DataWithPermissions {
         return (this.others || []).concat(this.gathers || []).concat(this.preCrafts || []);
     }
 
-    public addToRecipes(data: ListRow): number {
+    public addToItems(data: ListRow): number {
         return this.add(this.recipes, data, true);
     }
 

@@ -1,4 +1,9 @@
 {
+  "ITEMS": {
+    "Title": "Objets",
+    "No_match": "Aucun objet trouvé",
+    "Item_name": "Nom de l'objet"
+  },
   "Download_desktop_app": "Télécharger l'application",
   "Delete": "Supprimer",
   "Timers": "Alarmes",
@@ -78,15 +83,15 @@
   "New_List": "Nouvelle Liste",
   "Please_enter_a_name": "Merci d'entrer un nom",
   "Lists": "Listes",
-  "Recipes": "Recettes",
+
   "items": "objets",
   "Confirm": "Confirmer",
   "Cancel": "Annuler",
   "Edit": "Éditer",
   "Add_a_list": "Ajouter une liste",
   "List_name": "Nom de la liste",
-  "Recipe_name": "Chercher une recette",
-  "No_matching_recipe": "Aucune recette correspondante",
+
+
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",

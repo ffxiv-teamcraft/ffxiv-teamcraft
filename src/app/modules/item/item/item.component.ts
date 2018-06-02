@@ -316,7 +316,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     getCraft(recipeId: string): CraftedBy {
-        if (this.item.craftedBy === undefined || this.item.craftedBy[0].icon === '') {
+        if (this.item.craftedBy === undefined || this.item.craftedBy.length === 0 || this.item.craftedBy[0].icon === '') {
             return undefined;
         }
         return this.item.craftedBy.find(craft => {
@@ -445,6 +445,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     updateRequiredForEndCraft(): void {
         const recipesNeedingItem = this.list.recipes
+            .filter(recipe => recipe.requires !== undefined)
             .filter(recipe => recipe.requires.find(req => req.id === this.item.id) !== undefined);
         if (recipesNeedingItem.length === 0) {
             this.requiredForFinalCraft = 0;

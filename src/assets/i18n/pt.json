@@ -221,7 +221,7 @@
   "No": "Não",
   "No_favorites": "Não favorito",
   "No_items_found": "Nenhum item encontrado",
-  "No_matching_recipe": "Nenhuma receita encontrada",
+
   "Not_own_list_outdated": "Essa lista é antiga, por favor peça para o dono gerá-la novamente",
   "Not_verified": "Seu email ainda não foi verificado, por favor cheque sua caixa de entrada",
   "Open": "Abrir",
@@ -282,8 +282,8 @@
   "RECIPES.HELP.Quick_list": "Você pode criar listas rápidas no botão \"Lista Rápida\", isso vai criar uma lista instantânea com o nome do item, que será removida assim que completa.",
   "RECIPES.HELP.Welcome": "Bem vindo a página de receitas, essa página é feita para buscar, filtrar e adicionar receitas a lista de craft.",
   "Recipe_Added": "{{itemname}} adicionado a lista {{listname}}",
-  "Recipe_name": "Nome da receita",
-  "Recipes": "Receitas",
+
+
   "Recipes_Added": "Resultados adicionados a lista  {{listname}}",
   "Reduction": "Redução",
   "Regenerating_lists": "Recriando listas",

@@ -73,15 +73,15 @@
   "New_List": "Nueva Lista",
   "Please_enter_a_name": "Por favor introduzca un nombre",
   "Lists": "Listas",
-  "Recipes": "Recetas",
+
   "items": "artículos",
   "Confirm": "Confirmar",
   "Cancel": "Cancelar",
   "Edit": "Editar",
   "Add_a_list": "Agregar a lista",
   "List_name": "Nombre de la lista",
-  "Recipe_name": "Nombre de la receta",
-  "No_matching_recipe": "No se encontró receta",
+
+
   "Reset_progression": "Reiniciar progreso",
   "Gardening": "Jardinería",
   "Hunting": "Caza",
