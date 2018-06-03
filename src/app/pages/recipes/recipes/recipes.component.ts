@@ -310,9 +310,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
     addAllRecipes(list: List, key: string): void {
         const additions = [];
         this.results
-            .filter(row => (<Recipe>row).recipeId !== undefined)
-            .forEach(recipe => {
-            additions.push(this.resolver.addToList(recipe.itemId, list, (<Recipe>recipe).recipeId, 1));
+            .forEach(item => {
+            additions.push(this.resolver.addToList(item.itemId, list, (<Recipe>item).recipeId, 1));
         });
         this.subscriptions.push(this.dialog.open(BulkAdditionPopupComponent, {
             data: {additions: additions, key: key, listname: list.name},
