@@ -72,7 +72,7 @@ export class LayoutOrderService {
     }
 
     private getJobId(row: ListRow): number {
-        if (row.craftedBy !== undefined) {
+        if (row.craftedBy !== undefined && row.craftedBy.length > 0) {
             // Returns the lowest level available for the craft.
             const jobName = LayoutOrderService.JOBS.find(job => row.craftedBy[0].icon.indexOf(job) > -1);
             if (jobName !== undefined) {
