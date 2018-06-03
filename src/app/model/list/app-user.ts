@@ -4,6 +4,7 @@ import {DeserializeAs} from '@kaiu/serializer';
 import {Alarm} from '../../core/time/alarm';
 import {ListDetailsFilters} from '../other/list-details-filters';
 import {GearSet} from '../../pages/simulator/model/gear-set';
+import {AlarmGroup} from '../other/alarm-group';
 
 export class AppUser extends DataModel {
     name?: string;
@@ -35,4 +36,6 @@ export class AppUser extends DataModel {
     gearSets: GearSet[] = [];
     // Contact ids
     contacts: string[] = [];
+    // Alarm groups for the user
+    alarmGroups: AlarmGroup[] = [{name: 'Default group', enabled: true}];
 }

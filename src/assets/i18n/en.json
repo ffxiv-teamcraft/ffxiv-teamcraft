@@ -1,4 +1,9 @@
 {
+  "ITEMS": {
+    "Title": "Items",
+    "No_match": "No matching items",
+    "Item_name": "Item name"
+  },
   "Download_desktop_app": "Download desktop app",
   "Delete": "Delete",
   "Timers": "Timers",
@@ -61,7 +66,9 @@
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
-    "Alarm_already_created": "Alarm already set"
+    "Alarm_already_created": "Alarm already set",
+    "Custom_sound": "Custom alarm sound",
+    "New_group": "New alarm group"
   },
   "Item_name": "Item name",
   "No_items_found": "No item found",
@@ -77,15 +84,15 @@
   "New_List": "New List",
   "Please_enter_a_name": "Please enter a name",
   "Lists": "Lists",
-  "Recipes": "Recipes",
+
   "items": "items",
   "Confirm": "Confirm",
   "Cancel": "Cancel",
   "Edit": "Edit",
   "Add_a_list": "Add a list",
   "List_name": "List name",
-  "Recipe_name": "Recipe name",
-  "No_matching_recipe": "No matching recipe",
+
+
   "Reset_progression": "Reset progression",
   "Gardening": "Gardening",
   "Hunting": "Hunting",
@@ -234,6 +241,7 @@
   "LIST": {
     "Copied_x_times": "Copied {{count}} times",
     "Enable_crystals_tracking": "Enable crystals tracking",
+    "Copy_as_text": "Copy as text",
     "BUTTONS": {
       "Add_link_description": "Create a custom link for this list",
       "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
@@ -455,6 +463,7 @@
     "Step_by_step_report": "Step by step report",
     "Save_as_new": "Save as new (navigates to the newly created rotation)",
     "Save_as_new_done": "You're now on a copy of your rotation",
+    "Change_rotation": "Change rotation",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",

@@ -98,6 +98,15 @@
                     matTooltip="{{'Pricing_mode' | translate}}" matTooltipPosition="above">
                 <mat-icon>attach_money</mat-icon>
             </button>
+            <button mat-icon-button ngxClipboard
+                    matTooltip="{{'LIST.Copy_as_text' | translate}}"
+                    matTooltipPosition="above"
+                    *ngIf="listData !== null"
+                    (click)="$event.stopPropagation()"
+                    [cbContent]="getTextExport(display)"
+                    class="export-button">
+                <mat-icon>content_copy</mat-icon>
+            </button>
             <div class="spacer"></div>
             <button mat-button (click)="openTimerOptionsPopup()">{{"Timer_options" | translate}}</button>
         </div>
@@ -180,12 +189,21 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel">
+        <mat-expansion-panel class="panel" *ngIf="listData.crystals?.length > 0">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
                 <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
                     {{'LIST.Enable_crystals_tracking' | translate}}
                 </mat-checkbox>
+                <button mat-icon-button ngxClipboard
+                        *ngIf="listData?.crystals !== null"
+                        matTooltip="{{'LIST.Copy_as_text' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="$event.stopPropagation()"
+                        [cbContent]="getCrystalsTextExport('Crystals'| translate, listData?.crystals)"
+                        class="export-button">
+                    <mat-icon>content_copy</mat-icon>
+                </button>
             </mat-expansion-panel-header>
             <div *ngFor="let crystal of listData?.crystals" class="crystals">
                 <div *ngIf="crystal.amount > crystal.done" class="crystal-row"

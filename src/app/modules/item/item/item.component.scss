@@ -12,6 +12,20 @@
 
     .even {
         background-color: rgba(123, 123, 123, .2);
+        &.done-row {
+            background-color: rgba(0, 255, 0, .1);
+        }
+        &.craftable-row {
+            background-color: rgba(19, 168, 255, .2);
+        }
+    }
+
+    .done-row {
+        background-color: rgba(94, 255, 91, 0.15);
+    }
+
+    .craftable-row {
+        background-color: rgba(19, 168, 255, .3);
     }
 
     .strike {

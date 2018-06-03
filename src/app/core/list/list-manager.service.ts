@@ -30,44 +30,76 @@ export class ListManagerService {
                 map((data: ItemData) => {
                     const crafted = this.extractor.extractCraftedBy(+itemId, data);
                     const addition = new List();
-                    const craft = data.getCraft(recipeId);
-                    const ingredients: Ingredient[] = [];
-                    // We have to remove unused ingredient properties.
-                    craft.ingredients.forEach(i => {
-                        delete i.quality;
-                        delete i.stepid;
-                        delete i.part;
-                        delete i.phase;
-                    });
-                    craft.ingredients.forEach(req => {
-                        const requirementsRow = ingredients.find(row => row.id === req.id);
-                        if (requirementsRow === undefined) {
-                            ingredients.push(req);
-                        } else {
-                            requirementsRow.amount += req.amount;
-                        }
-                    });
-                    const yields = collectible ? 1 : (craft.yield || 1);
-                    // Then we prepare the list row to add.
-                    const toAdd: ListRow = {
-                        id: data.item.id,
-                        icon: data.item.icon,
-                        amount: amount,
-                        done: 0,
-                        used: 0,
-                        yield: yields,
-                        recipeId: recipeId,
-                        requires: ingredients,
-                        craftedBy: crafted
-                    };
+                    let toAdd: ListRow;
+
+                    // If this is a craft
+                    if (data.isCraft()) {
+                        const craft = data.getCraft(recipeId);
+                        const ingredients: Ingredient[] = [];
+                        // We have to remove unused ingredient properties.
+                        craft.ingredients.forEach(i => {
+                            delete i.quality;
+                            delete i.stepid;
+                            delete i.part;
+                            delete i.phase;
+                        });
+                        craft.ingredients.forEach(req => {
+                            const requirementsRow = ingredients.find(row => row.id === req.id);
+                            if (requirementsRow === undefined) {
+                                ingredients.push(req);
+                            } else {
+                                requirementsRow.amount += req.amount;
+                            }
+                        });
+                        const yields = collectible ? 1 : (craft.yield || 1);
+                        // Then we prepare the list row to add.
+                        toAdd = {
+                            id: data.item.id,
+                            icon: data.item.icon,
+                            amount: amount,
+                            done: 0,
+                            used: 0,
+                            yield: yields,
+                            recipeId: recipeId,
+                            requires: ingredients,
+                            craftedBy: crafted
+                        };
+                    } else {
+                        // If it's not a recipe, add as item
+                        toAdd = {
+                            id: data.item.id,
+                            icon: data.item.icon,
+                            amount: amount,
+                            done: 0,
+                            used: 0,
+                            yield: 1,
+                        };
+                    }
                     // We add the row to recipes.
-                    const added = addition.addToRecipes(toAdd);
-                    // Then we add the craft to the addition list.
-                    addition.addCraft([{
-                        item: data.item,
-                        data: data,
-                        amount: added
-                    }], this.gt, this.i18n, recipeId);
+                    const added = addition.addToItems(toAdd);
+
+                    if (data.isCraft()) {
+                        // Then we add the craft to the addition list.
+                        addition.addCraft([{
+                            item: data.item,
+                            data: data,
+                            amount: added
+                        }], this.gt, this.i18n, recipeId);
+                    }
+                    // Process items to add details.
+                    addition.recipes.forEach(item => {
+                        item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
+                        item.vendors = this.extractor.extractVendors(item.id, data);
+                        item.tradeSources = this.extractor.extractTradeSources(item.id, data);
+                        item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);
+                        item.desynths = this.extractor.extractDesynths(item.id, data);
+                        item.instances = this.extractor.extractInstances(item.id, data);
+                        item.gardening = this.extractor.extractGardening(item.id, data);
+                        item.voyages = this.extractor.extractVoyages(item.id, data);
+                        item.drops = this.extractor.extractDrops(item.id, data);
+                        item.ventures = this.extractor.extractVentures(item.id, data);
+                        item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
+                    });
                     // Process precrafts to add crafter details.
                     addition.preCrafts.forEach(preCraft => {
                         preCraft.craftedBy = this.extractor.extractCraftedBy(preCraft.id, data);

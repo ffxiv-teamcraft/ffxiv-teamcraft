@@ -13,14 +13,13 @@ export class TimerOptionsPopupComponent {
 
     enableCustomSound = false;
 
-    public customSound: File;
-
     constructor(public settings: SettingsService, public platform: PlatformService) {
+        this.enableCustomSound = this.settings.alarmSound.indexOf(':') > -1;
     }
 
     public previewSound(): void {
         let audio: HTMLAudioElement;
-        if (this.settings.alarmSound.indexOf('file://') === -1) {
+        if (this.settings.alarmSound.indexOf(':') === -1) {
             // If this is not a custom alarm sound, create the audio element from assets
             audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
         } else {
@@ -38,7 +37,6 @@ export class TimerOptionsPopupComponent {
     }
 
     public setSound(sound: string): void {
-        console.log(sound);
         this.settings.alarmSound = sound;
         this.previewSound();
     }

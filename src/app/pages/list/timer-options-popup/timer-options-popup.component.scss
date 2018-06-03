@@ -6,3 +6,12 @@ div {
         margin: 20px 0;
     }
 }
+
+.custom-alarm {
+    margin: 20px 0;
+    .sound-preview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}

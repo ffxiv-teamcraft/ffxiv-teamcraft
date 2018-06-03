@@ -10,6 +10,7 @@ import {SearchFilter} from '../../model/search/search-filter.interface';
 
 import {GearSet} from '../../pages/simulator/model/gear-set';
 import {map, mergeMap, publishReplay, refCount, take} from 'rxjs/operators';
+import {SearchResult} from '../../model/list/search-result';
 
 @Injectable()
 export class DataService {
@@ -116,9 +117,9 @@ export class DataService {
      * @param {SearchFilter[]} filters
      * @returns {Observable<Recipe[]>}
      */
-    public searchRecipe(query: string, filters: SearchFilter[]): Observable<Recipe[]> {
+    public searchRecipe(query: string, filters: SearchFilter[]): Observable<SearchResult[]> {
         let params = new HttpParams()
-            .set('craftable', '1')
+            .set('type', 'item')
             .set('lang', this.i18n.currentLang);
 
         let craftedByFilter: SearchFilter;
@@ -146,24 +147,31 @@ export class DataService {
         return this.getGarlandSearch(params)
             .pipe(
                 map(garlandResults => {
-                    const recipes: Recipe[] = [];
+                    const results: SearchResult[] = [];
                     garlandResults.forEach(item => {
-                        item.obj.f.forEach(recipe => {
-                            if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
-                                return;
-                            }
-                            recipes.push({
-                                recipeId: recipe.id,
-                                itemId: item.id,
-                                job: recipe.job,
-                                stars: recipe.stars,
-                                lvl: recipe.lvl,
-                                icon: item.obj.c,
-                                collectible: item.obj.o === 1
+                        if (item.obj.f !== undefined) {
+                            item.obj.f.forEach(recipe => {
+                                if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
+                                    return;
+                                }
+                                results.push(<Recipe>{
+                                    recipeId: recipe.id,
+                                    itemId: item.id,
+                                    job: recipe.job,
+                                    stars: recipe.stars,
+                                    lvl: recipe.lvl,
+                                    icon: item.obj.c,
+                                    collectible: item.obj.o === 1
+                                });
                             });
-                        });
+                        } else {
+                            results.push({
+                                itemId: item.id,
+                                icon: item.obj.c
+                            });
+                        }
                     });
-                    return recipes;
+                    return results;
                 })
             );
     }

@@ -13,6 +13,10 @@ export class ItemData {
 
     partials: any[];
 
+    public isCraft(): boolean {
+        return this.item.craft !== undefined;
+    }
+
     public getIngredient(id: number): Item {
         return this.ingredients
             .find(item => id.toString().indexOf(item.id.toString()) > -1 || item.id.toString().indexOf(id.toString()) > -1);

@@ -1,4 +1,9 @@
 {
+  "ITEMS": {
+    "Title": "Objets",
+    "No_match": "Aucun objet trouvé",
+    "Item_name": "Nom de l'objet"
+  },
   "Download_desktop_app": "Télécharger l'application",
   "Delete": "Supprimer",
   "Timers": "Alarmes",
@@ -61,7 +66,9 @@
     "No_alarm": "Aucune alarme définie",
     "Add_alarm": "Ajouter une alarme",
     "Alarm_created": "Alarme créée",
-    "Alarm_already_created": "Alarm déjà définie"
+    "Alarm_already_created": "Alarm déjà définie",
+    "Custom_sound": "Son d'alarme personnalisé",
+    "New_group": "New alarm group"
   },
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
@@ -77,15 +84,15 @@
   "New_List": "Nouvelle Liste",
   "Please_enter_a_name": "Merci d'entrer un nom",
   "Lists": "Listes",
-  "Recipes": "Recettes",
+
   "items": "objets",
   "Confirm": "Confirmer",
   "Cancel": "Annuler",
   "Edit": "Éditer",
   "Add_a_list": "Ajouter une liste",
   "List_name": "Nom de la liste",
-  "Recipe_name": "Chercher une recette",
-  "No_matching_recipe": "Aucune recette correspondante",
+
+
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",
@@ -234,6 +241,7 @@
   "LIST": {
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
+    "Copy_as_text": "Copier au format texte",
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
@@ -455,6 +463,7 @@
     "Step_by_step_report": "Rapport étape par étape",
     "Save_as_new": "Sauvergarder une copie (navigue sur la copie de la rotation)",
     "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
+    "Change_rotation": "Changer de rotation",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",

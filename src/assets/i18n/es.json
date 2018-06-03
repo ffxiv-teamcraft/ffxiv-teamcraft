@@ -1,4 +1,9 @@
 {
+  "ITEMS": {
+    "Title": "Artículos",
+    "No_match": "No se encontró el artículo",
+    "Item_name": "Nombre del artículo"
+  },
   "Download_desktop_app": "Descargar aplicación para PC",
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
@@ -73,15 +78,15 @@
   "New_List": "Nueva Lista",
   "Please_enter_a_name": "Por favor introduzca un nombre",
   "Lists": "Listas",
-  "Recipes": "Recetas",
+
   "items": "artículos",
   "Confirm": "Confirmar",
   "Cancel": "Cancelar",
   "Edit": "Editar",
   "Add_a_list": "Agregar a lista",
   "List_name": "Nombre de la lista",
-  "Recipe_name": "Nombre de la receta",
-  "No_matching_recipe": "No se encontró receta",
+
+
   "Reset_progression": "Reiniciar progreso",
   "Gardening": "Jardinería",
   "Hunting": "Caza",
@@ -426,6 +431,7 @@
     "Cross_class_setup": "Crear macro para activar habilidades de clase cruzada",
     "Include_sound_end": "Incluir sonido al final de la macro",
     "Step_by_step_report": "Reporte paso a paso",
+    "Change_rotation": "Escoger rotación",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",

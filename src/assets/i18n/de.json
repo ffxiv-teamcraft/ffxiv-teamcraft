@@ -1,4 +1,9 @@
 {
+  "ITEMS": {
+    "Title": "Gegenstände",
+    "No_match": "Keine passenden Gegenstände",
+    "Item_name": "Name des Gegenstands"
+  },
   "Download_desktop_app": "Desktopanwendung herunterladen",
   "Delete": "Löschen",
   "Timers": "Timers",
@@ -74,15 +79,12 @@
   "New_List": "Neue Liste",
   "Please_enter_a_name": "Bitte gib einen Namen ein",
   "Lists": "Liste",
-  "Recipes": "Rezepte",
   "items": "Gegenstände",
   "Confirm": "Bestätigen",
   "Cancel": "abbrechen",
   "Edit": "bearbeiten",
   "Add_a_list": "Eine Liste hinzufügen",
   "List_name": "Listenname",
-  "Recipe_name": "Rezeptname",
-  "No_matching_recipe": "Kein passendes Rezept",
   "Reset_progression": "Fortschritt zurücksetzen",
   "Gardening": "Haus/Wohnungs-Gärtnerei",
   "Hunting": "Monsterjagd",

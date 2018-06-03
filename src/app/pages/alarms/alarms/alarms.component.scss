@@ -7,6 +7,49 @@
     }
 }
 
+mat-panel-title {
+    display: flex;
+    align-items: center;
+    mat-button-toggle {
+        margin-left: 15px;
+    }
+}
+
+.drag-hint-border {
+    border: 2px dashed;
+}
+
+mat-expansion-panel.disabled {
+    opacity: .5;
+}
+
+.drop-zone {
+    min-height: 50px;
+    position: relative;
+    .drop-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: .6;
+        .mat-icon {
+            font-size: 45px;
+            height: 45px;
+            width: 45px;
+        }
+    }
+    &.drag-over-border {
+        .drop-overlay {
+            visibility: visible;
+        }
+    }
+}
+
 .compact-timer {
     text-align: right;
 }

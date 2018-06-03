@@ -96,8 +96,8 @@ export class List extends DataWithPermissions {
      * @param {(arg: ListRow) => void} method
      */
     public forEachCraft(method: (arg: ListRow) => void): void {
-        (this.preCrafts || []).forEach(method);
-        (this.recipes || []).forEach(method);
+        (this.preCrafts || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+        (this.recipes || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
     }
 
     /**
@@ -108,7 +108,7 @@ export class List extends DataWithPermissions {
         return (this.others || []).concat(this.gathers || []).concat(this.preCrafts || []);
     }
 
-    public addToRecipes(data: ListRow): number {
+    public addToItems(data: ListRow): number {
         return this.add(this.recipes, data, true);
     }
 
@@ -299,7 +299,7 @@ export class List extends DataWithPermissions {
      */
     public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
-        const previousDone = item.done;
+        const previousDone = MathTools.absoluteCeil(item.done / item.yield);
         if (setUsed) {
             // Save previous used amount
             const previousUsed = item.used;
@@ -322,7 +322,7 @@ export class List extends DataWithPermissions {
             item.done = 0;
         }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
-        if (item.requires !== undefined) {
+        if (item.requires !== undefined && MathTools.absoluteCeil(item.done / item.yield) > previousDone) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id, excludeRecipes);
                 if (requirementItem !== undefined) {

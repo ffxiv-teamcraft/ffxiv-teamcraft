@@ -6,6 +6,7 @@ import {EffectiveBuff} from '../model/effective-buff';
 import {Buff} from '../model/buff.enum';
 import {SimulationResult} from './simulation-result';
 import {SimulationReliabilityReport} from './simulation-reliability-report';
+import {Tables} from '../model/tables';
 
 export class Simulation {
 
@@ -72,7 +73,7 @@ export class Simulation {
             this.crafterStats.craftsmanship--;
             this.reset();
         }
-        while (this.run(true).success) {
+        while (this.run(true).hqPercent >= 100) {
             this.crafterStats._control--;
             this.reset();
         }
@@ -196,26 +197,15 @@ export class Simulation {
         }
     }
 
-    private qualityPercentFromHqPercent(hqPercent: number): number {
-        return -5.6604E-6 * Math.pow(hqPercent, 4)
-            + 0.0015369705 * Math.pow(hqPercent, 3)
-            - 0.1426469573 * Math.pow(hqPercent, 2)
-            + 5.6122722959 * hqPercent - 5.5950384565;
-    }
-
     private getHQPercent(): number {
         const qualityPercent = Math.min(this.quality / this.recipe.quality, 1) * 100;
-        let hqPercent = 0;
         if (qualityPercent === 0) {
             return 1;
         } else if (qualityPercent >= 100) {
             return 100;
         } else {
-            while (this.qualityPercentFromHqPercent(hqPercent) < qualityPercent && hqPercent < 100) {
-                hqPercent += 1;
-            }
+            return Tables.HQ_TABLE[Math.floor(qualityPercent)];
         }
-        return hqPercent;
     }
 
     public hasBuff(buff: Buff): boolean {

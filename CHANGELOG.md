@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.14...v4.1.0) (2018-06-03)
+
+
+### Bug Fixes
+
+* **alarms:** you can now properly change sound, delay and volume of your alarms ([6ce2a37](https://github.com/Supamiu/ffxiv-teamcraft/commit/6ce2a37))
+* change email popup is now loading properly ([39a877a](https://github.com/Supamiu/ffxiv-teamcraft/commit/39a877a)), closes [#387](https://github.com/Supamiu/ffxiv-teamcraft/issues/387)
+* completion dialog is no longer shown for public lists ([1c55018](https://github.com/Supamiu/ffxiv-teamcraft/commit/1c55018))
+* fixed an error with crafts yielding more than one item ([f772456](https://github.com/Supamiu/ffxiv-teamcraft/commit/f772456))
+* fixed an issue that was preventing to add community lists in a workshop ([769c06d](https://github.com/Supamiu/ffxiv-teamcraft/commit/769c06d))
+* navigation map no longer takes completed items into account ([fb765dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/fb765dd))
+
+
+### Features
+
+* **desktop:** you can now use custom sounds as alarm ([e647689](https://github.com/Supamiu/ffxiv-teamcraft/commit/e647689)), closes [#350](https://github.com/Supamiu/ffxiv-teamcraft/issues/350)
+* **simulator:** rotation name is suffixed by "*" if there's some unsaved changes ([527f60c](https://github.com/Supamiu/ffxiv-teamcraft/commit/527f60c))
+* **simulator:** you can now change the current rotation inside simulator ([21af5d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/21af5d6)), closes [#389](https://github.com/Supamiu/ffxiv-teamcraft/issues/389)
+* added the icon of the item in alarms overlay view ([6048ef0](https://github.com/Supamiu/ffxiv-teamcraft/commit/6048ef0))
+* control is now properly handled in min stats popup ([dadf1bf](https://github.com/Supamiu/ffxiv-teamcraft/commit/dadf1bf))
+* new "Copy as text" button to copy a panel or the whole list as text ([3d9aebb](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d9aebb)), closes [#342](https://github.com/Supamiu/ffxiv-teamcraft/issues/342)
+* you can now add almost any item in the game to a list, even if it's not craftable ([fe72840](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe72840)), closes [#336](https://github.com/Supamiu/ffxiv-teamcraft/issues/336)
+* you can now organize alarms on groups, mute them by group and reorder using drag & drop ([1017091](https://github.com/Supamiu/ffxiv-teamcraft/commit/1017091)), closes [#366](https://github.com/Supamiu/ffxiv-teamcraft/issues/366)
+
+
+
+<a name="4.0.14"></a>
+## [4.0.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.13...v4.0.14) (2018-05-31)
+
+
+### Performance Improvements
+
+* **list:** huge performance improvement on lists regeneration ([90feec1](https://github.com/Supamiu/ffxiv-teamcraft/commit/90feec1))
+
+
+
 <a name="4.0.13"></a>
 ## [4.0.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.12...v4.0.13) (2018-05-30)
 

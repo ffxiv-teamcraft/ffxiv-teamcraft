@@ -39,6 +39,7 @@ import { PermissionsPopupComponent } from './permissions-popup/permissions-popup
 import { PermissionsRowComponent } from './permissions-popup/permissions-row/permissions-row.component';
 import { AddNewRowPopupComponent } from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
 import { FcCrestComponent } from './fc-crest/fc-crest.component';
+import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-group-name-popup.component';
 
 @NgModule({
     imports: [
@@ -89,6 +90,7 @@ import { FcCrestComponent } from './fc-crest/fc-crest.component';
         PermissionsRowComponent,
         AddNewRowPopupComponent,
         FcCrestComponent,
+        AlarmGroupNamePopupComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -116,6 +118,7 @@ import { FcCrestComponent } from './fc-crest/fc-crest.component';
         AnnouncementPopupComponent,
         PermissionsPopupComponent,
         AddNewRowPopupComponent,
+        AlarmGroupNamePopupComponent,
     ]
 })
 export class CommonComponentsModule {

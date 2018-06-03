@@ -1,17 +1,20 @@
 import {Component} from '@angular/core';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {MatDialog} from '@angular/material';
 import {AddAlarmPopupComponent} from '../add-alarm-popup/add-alarm-popup.component';
 import {TimerOptionsPopupComponent} from '../../list/timer-options-popup/timer-options-popup.component';
 import {SettingsService} from '../../settings/settings.service';
 import {ObservableMedia} from '@angular/flex-layout';
-import {filter, map, switchMap, tap} from 'rxjs/operators';
+import {filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {IpcService} from '../../../core/electron/ipc.service';
 import {PlatformService} from '../../../core/tools/platform.service';
 import {ActivatedRoute} from '@angular/router';
+import {UserService} from '../../../core/database/user.service';
+import {AlarmGroupNamePopupComponent} from '../../../modules/common-components/alarm-group-name-popup/alarm-group-name-popup.component';
+import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 
 @Component({
     selector: 'app-alarms',
@@ -32,17 +35,26 @@ export class AlarmsComponent {
 
     overlay = false;
 
+    alarmGroups$: Observable<{ groupName: string, alarms: Alarm[] }[]>;
+
+    overlayAlarms$: Observable<Alarm[]>;
+
     constructor(public alarmService: AlarmService, public etime: EorzeanTimeService, private dialog: MatDialog,
                 private settings: SettingsService, private media: ObservableMedia, private platformService: PlatformService,
-                private ipc: IpcService, private route: ActivatedRoute) {
+                private ipc: IpcService, private route: ActivatedRoute, private userService: UserService) {
         this.desktop = platformService.isDesktop();
         route.queryParams.subscribe(params => {
             this.overlay = params.overlay === 'true';
-        })
-    }
+        });
 
-    public getAlarms(): Observable<Alarm[]> {
-        return this.reloader.pipe(
+        const timer$ = this.reloader.pipe(
+            switchMap(() => this.etime.getEorzeanTime()),
+            tap(time => this.time = time)
+        );
+
+        const user$ = this.userService.getUserData();
+
+        this.overlayAlarms$ = this.reloader.pipe(
             switchMap(() => this.etime.getEorzeanTime()),
             tap(time => this.time = time),
             map(time => {
@@ -63,7 +75,161 @@ export class AlarmsComponent {
                     }
                     return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
                 });
-            }));
+            })
+        );
+
+        this.alarmGroups$ = combineLatest(timer$, user$)
+            .pipe(
+                map(data => {
+                    const time = data[0];
+                    const user = data[1];
+                    const result = user.alarmGroups.map(group => {
+                        return {groupName: group.name, enabled: group.enabled, alarms: []};
+                    });
+                    const alarms: Alarm[] = [];
+                    this.alarmService.alarms.forEach(alarm => {
+                        if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
+                            return;
+                        }
+                        const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
+                        alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
+                    });
+                    alarms.forEach(alarm => {
+                        const group = result.find(row => row.groupName === alarm.groupName);
+                        if (alarm.groupName === undefined || group === undefined) {
+                            const defaultGroup = result.find(row => row.groupName === 'Default group');
+                            defaultGroup.alarms.push(alarm);
+                        } else {
+                            group.alarms.push(alarm);
+                        }
+                    });
+                    result.forEach(group => {
+                        group.alarms = group.alarms.sort((a, b) => {
+                            if (this.alarmService.isAlarmSpawned(a, time)) {
+                                return -1;
+                            }
+                            if (this.alarmService.isAlarmSpawned(b, time)) {
+                                return 1;
+                            }
+                            return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn)
+                                ? -1 : 1;
+                        });
+                    });
+                    return result;
+                })
+            )
+    }
+
+    setGroupIndex(groupData: any, index: number): void {
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                map(user => {
+                    user.alarmGroups = user.alarmGroups.filter(group => group.name !== groupData.groupName);
+                    user.alarmGroups.splice(index, 0, {name: groupData.groupName, enabled: groupData.enabled});
+                    return user;
+                }),
+                mergeMap(user => {
+                    return this.userService.set(user.$key, user);
+                })
+            ).subscribe()
+    }
+
+    onGroupDrop(group: any, alarm: Alarm): void {
+        this.alarmService.setAlarmGroupName(alarm, group.groupName);
+    }
+
+    renameGroup(group: any): void {
+        this.dialog.open(AlarmGroupNamePopupComponent, {data: group.groupName})
+            .afterClosed()
+            .pipe(
+                filter(name => name !== '' && name !== undefined && name !== null && name !== 'Default group'),
+                mergeMap(groupName => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            first(),
+                            map(user => {
+                                const userGroup = user.alarmGroups.find(g => g.name === group.groupName);
+                                userGroup.name = groupName;
+                                group.alarms.forEach(alarm => {
+                                    this.alarmService.setAlarmGroupName(alarm, groupName);
+                                });
+                                return user;
+                            }),
+                            mergeMap(user => {
+                                return this.userService.set(user.$key, user);
+                            })
+                        )
+                })
+            )
+            .subscribe();
+    }
+
+    trackByGroupFn(index: number, group: any): string {
+        return group.groupName;
+    }
+
+    trackByAlarmFn(index: number, alarm: Alarm): number {
+        return alarm.itemId;
+    }
+
+    addGroup(): void {
+        this.dialog.open(AlarmGroupNamePopupComponent)
+            .afterClosed()
+            .pipe(
+                filter(name => name !== '' && name !== undefined && name !== null && name !== 'Default group'),
+                mergeMap(groupName => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            first(),
+                            map(user => {
+                                if (user.alarmGroups.find(group => group.name === groupName) === undefined) {
+                                    user.alarmGroups.push({name: groupName, enabled: true});
+                                }
+                                return user;
+                            }),
+                            mergeMap(user => {
+                                return this.userService.set(user.$key, user);
+                            })
+                        )
+                })
+            ).subscribe();
+    }
+
+    toggleGroupEnabled(groupName: string): void {
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                map(user => {
+                    const group = user.alarmGroups.find(g => g.name === groupName);
+                    group.enabled = !group.enabled;
+                    return user;
+                }),
+                mergeMap(user => {
+                    return this.userService.set(user.$key, user);
+                })
+            ).subscribe()
+    }
+
+    deleteGroup(groupName: string): void {
+        this.dialog.open(ConfirmationPopupComponent)
+            .afterClosed()
+            .pipe(
+                filter(res => res),
+                mergeMap(() => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            first(),
+                            map(user => {
+                                user.alarmGroups = user.alarmGroups.filter(group => group.name !== groupName);
+                                return user;
+                            }),
+                            mergeMap(user => {
+                                return this.userService.set(user.$key, user);
+                            })
+                        )
+                })
+            ).subscribe();
     }
 
     saveCompact(): void {
@@ -111,10 +277,6 @@ export class AlarmsComponent {
 
     showOverlay(): void {
         this.ipc.send('overlay', '/alarms');
-    }
-
-    closeOverlay(): void {
-        window.close();
     }
 
     getCols(): number {

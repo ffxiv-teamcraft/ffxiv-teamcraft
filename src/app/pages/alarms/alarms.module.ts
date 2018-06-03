@@ -5,14 +5,15 @@ import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {AlarmCardComponent} from './alarm-card/alarm-card.component';
 import {
-    MatButtonModule,
+    MatButtonModule, MatButtonToggleModule,
     MatCardModule,
     MatCheckboxModule,
-    MatDialogModule,
+    MatDialogModule, MatExpansionModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule
 } from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {PipesModule} from '../../pipes/pipes.module';
@@ -23,6 +24,7 @@ import {FormsModule} from '@angular/forms';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {ListModule} from '../list/list.module';
 import {MapModule} from '../../modules/map/map.module';
+import {NgDragDropModule} from 'ng-drag-drop';
 
 const routes: Routes = [{
     path: 'alarms',
@@ -47,8 +49,12 @@ const routes: Routes = [{
         MatInputModule,
         MatListModule,
         MatCheckboxModule,
+        MatTooltipModule,
+        MatExpansionModule,
+        MatButtonToggleModule,
 
         MapModule,
+        NgDragDropModule,
 
         CoreModule,
         CommonComponentsModule,
