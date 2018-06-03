@@ -15,7 +15,7 @@
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
              (cbOnSuccess)="afterNameCopy(item.id)">
             <span
-                [ngClass]="{'strike': item.done >= item.amount, 'compact': settings.compactLists, 'craftable': canBeCrafted}">
+                [ngClass]="{'compact': settings.compactLists">
                 {{item.id | itemName | i18n}}
             </span>
         </div>
@@ -321,7 +321,7 @@
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
         <div class="item-name" matLine>
-            <span [ngClass]="{'strike':item.done >= item.amount, 'craftable': canBeCrafted}" matTooltipPosition="above"
+            <span matTooltipPosition="above"
                   matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
                   mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
                   (cbOnSuccess)="afterNameCopy(item.id)">{{item.id | itemName | i18n}}</span>
