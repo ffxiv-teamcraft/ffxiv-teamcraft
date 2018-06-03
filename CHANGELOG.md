@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.2"></a>
+## [4.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.0...v4.1.2) (2018-06-03)
+
+
+### Bug Fixes
+
+* fixed a bug that prevented alarms from playing ([5bf2273](https://github.com/Supamiu/ffxiv-teamcraft/commit/5bf2273))
+* fixed an issue with vendors extractor ([8c50f6c](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c50f6c))
+
+
+
 <a name="4.1.1"></a>
 ## [4.1.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.0.14...v4.1.1) (2018-06-03)
 
