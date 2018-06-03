@@ -238,7 +238,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     @Input()
     public rotation: CraftingRotation;
 
-    private availableRotations$: Observable<CraftingRotation[]>;
+    availableRotations$: Observable<CraftingRotation[]>;
 
     private consumablesSortFn = (a, b) => {
         const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
