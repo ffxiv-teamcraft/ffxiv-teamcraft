@@ -15,7 +15,7 @@
              mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
              (cbOnSuccess)="afterNameCopy(item.id)">
             <span
-                [ngClass]="{'compact': settings.compactLists">
+                [ngClass]="{'compact': settings.compactLists}">
                 {{item.id | itemName | i18n}}
             </span>
         </div>
