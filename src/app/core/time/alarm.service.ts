@@ -186,7 +186,10 @@ export class AlarmService {
             .pipe(
                 first(),
                 mergeMap(user => {
-                    const alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
+                    let alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
+                    if (alarmGroup === undefined) {
+                        alarmGroup = user.alarmGroups.find(group => group.name === 'Default group')
+                    }
                     // If the group of this alarm is disabled, don't play the alarm.
                     if (alarmGroup !== undefined && !alarmGroup.enabled) {
                         return of(null);
@@ -246,14 +249,15 @@ export class AlarmService {
                                     }
                                 })
                             )
+                    } else {
+                        return of(null);
                     }
-                    return of(null);
                 })
             ).subscribe(() => {
+            localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
         }, err => {
             // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
         });
-        localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
     }
 
     /**
