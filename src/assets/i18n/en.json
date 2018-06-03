@@ -67,7 +67,8 @@
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
     "Alarm_already_created": "Alarm already set",
-    "Custom_sound": "Custom alarm sound"
+    "Custom_sound": "Custom alarm sound",
+    "New_group": "New alarm group"
   },
   "Item_name": "Item name",
   "No_items_found": "No item found",

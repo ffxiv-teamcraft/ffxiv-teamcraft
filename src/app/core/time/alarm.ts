@@ -19,4 +19,6 @@ export interface Alarm {
     type: number;
 
     aetheryte$?: Observable<Aetheryte>;
+
+    groupName?: string;
 }

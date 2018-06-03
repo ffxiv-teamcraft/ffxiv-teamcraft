@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {EorzeanTimeService} from './eorzean-time.service';
 import {Alarm} from './alarm';
-import {Observable, Subscription} from 'rxjs';
+import {Observable, of, Subscription} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {SettingsService} from '../../pages/settings/settings.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
@@ -168,6 +168,12 @@ export class AlarmService {
         return ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
     }
 
+    public setAlarmGroupName(alarm: Alarm, groupName: string): void {
+        this.alarms.filter(a => a.itemId === alarm.itemId)
+            .forEach(a => a.groupName = groupName);
+        this.persistAlarms();
+    }
+
     /**
      * Plays the alarm (audio + snack).
      * @param {Alarm} alarm
@@ -176,57 +182,78 @@ export class AlarmService {
         if (this.settings.alarmsMuted) {
             return;
         }
-        const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
-        // Don't play the alarm if it was played less than a minute ago
-        if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {
-            this.snack.open(this.translator.instant('ALARM.Spawned',
-                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-                this.translator.instant('ALARM.See_on_map'),
-                {duration: 5000})
-                .onAction().subscribe(() => {
-                this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
-            });
-            let audio: HTMLAudioElement;
-            if (this.settings.alarmSound.indexOf(':') === -1) {
-                audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
-            } else {
-                audio = new Audio(this.settings.alarmSound);
-            }
-            audio.loop = false;
-            audio.volume = this.settings.alarmVolume;
-            audio.play();
-            this.mapService.getMapById(alarm.zoneId).pipe(
-                map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
-                map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
-                mergeMap(closestAetheryteName => {
-                    const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
-                    const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
-                        `${closestAetheryteName}` +
-                        (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
-                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
-                    if (this.platform.isDesktop()) {
-                        this.ipc.send('notification', {
-                            title: notificationTitle,
-                            content: notificationBody,
-                            icon: notificationIcon
-                        });
-                    } else {
-                        return this.pushNotificationsService.create(notificationTitle,
-                            {
-                                icon: notificationIcon,
-                                sticky: false,
-                                renotify: false,
-                                body: notificationBody
-                            }
-                        )
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                mergeMap(user => {
+                    const alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
+                    // If the group of this alarm is disabled, don't play the alarm.
+                    if (alarmGroup !== undefined && !alarmGroup.enabled) {
+                        return of(null);
                     }
+                    const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
+                    // Don't play the alarm if it was played less than a minute ago
+                    if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {
+                        this.snack.open(this.translator.instant('ALARM.Spawned',
+                            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+                            this.translator.instant('ALARM.See_on_map'),
+                            {duration: 5000})
+                            .onAction().subscribe(() => {
+                            this.dialog.open(MapPopupComponent, {
+                                data: {
+                                    coords: {
+                                        x: alarm.coords[0],
+                                        y: alarm.coords[1]
+                                    },
+                                    id: alarm.zoneId
+                                }
+                            });
+                        });
+                        let audio: HTMLAudioElement;
+                        if (this.settings.alarmSound.indexOf(':') === -1) {
+                            audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+                        } else {
+                            audio = new Audio(this.settings.alarmSound);
+                        }
+                        audio.loop = false;
+                        audio.volume = this.settings.alarmVolume;
+                        audio.play();
+                        return this.mapService.getMapById(alarm.zoneId)
+                            .pipe(
+                                map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
+                                map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
+                                mergeMap(closestAetheryteName => {
+                                    const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
+                                    const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - `
+                                        + `${closestAetheryteName}` +
+                                        (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+                                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+                                    if (this.platform.isDesktop()) {
+                                        this.ipc.send('notification', {
+                                            title: notificationTitle,
+                                            content: notificationBody,
+                                            icon: notificationIcon
+                                        });
+                                    } else {
+                                        return this.pushNotificationsService.create(notificationTitle,
+                                            {
+                                                icon: notificationIcon,
+                                                sticky: false,
+                                                renotify: false,
+                                                body: notificationBody
+                                            }
+                                        )
+                                    }
+                                })
+                            )
+                    }
+                    return of(null);
                 })
             ).subscribe(() => {
-            }, err => {
-                // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
-            });
-            localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
-        }
+        }, err => {
+            // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
+        });
+        localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
     }
 
     /**
