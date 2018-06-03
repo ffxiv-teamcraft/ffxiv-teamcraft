@@ -34,7 +34,7 @@
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{group.groupName}}
-                    <button mat-icon-button (click)="renameGroup(group)"
+                    <button mat-icon-button (click)="$event.stopPropagation();renameGroup(group)"
                             [disabled]="group.groupName === 'Default group'">
                         <mat-icon>edit</mat-icon>
                     </button>
@@ -90,7 +90,7 @@
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     {{group.groupName}}
-                    <button mat-icon-button (click)="renameGroup(group)"
+                    <button mat-icon-button (click)="$event.stopPropagation();renameGroup(group)"
                             [disabled]="group.groupName === 'Default group'">
                         <mat-icon>edit</mat-icon>
                     </button>
