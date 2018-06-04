@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.3"></a>
+## [4.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.2...v4.1.3) (2018-06-04)
+
+
+### Bug Fixes
+
+* fixed an issue that prevented addition of some items ([d387ee3](https://github.com/Supamiu/ffxiv-teamcraft/commit/d387ee3)), closes [#396](https://github.com/Supamiu/ffxiv-teamcraft/issues/396)
+* no more sound spam with some items ([b65a44f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b65a44f)), closes [#397](https://github.com/Supamiu/ffxiv-teamcraft/issues/397)
+
+
+### Features
+
+* new checkbox to search for recipes only in items search page ([9455a4e](https://github.com/Supamiu/ffxiv-teamcraft/commit/9455a4e))
+
+
+
 <a name="4.1.2"></a>
 ## [4.1.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.0...v4.1.2) (2018-06-03)
 
