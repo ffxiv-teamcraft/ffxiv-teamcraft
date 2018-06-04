@@ -5,6 +5,9 @@
         <mat-hint align="end">
             <small>{{'Data_from_gt' | translate}}</small>
         </mat-hint>
+        <mat-checkbox matSuffix [(ngModel)]="onlyCraftable" (ngModelChange)="doSearch()" class="only-recipes">
+            {{'ITEMS.Only_recipes' | translate}}
+        </mat-checkbox>
     </mat-form-field>
 </div>
 <mat-expansion-panel class="filters" #filtersPanel>

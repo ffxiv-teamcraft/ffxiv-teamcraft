@@ -2,7 +2,8 @@
   "ITEMS": {
     "Title": "Objets",
     "No_match": "Aucun objet trouvé",
-    "Item_name": "Nom de l'objet"
+    "Item_name": "Nom de l'objet",
+    "Only_recipes": "Recettes uniquement"
   },
   "Download_desktop_app": "Télécharger l'application",
   "Delete": "Supprimer",

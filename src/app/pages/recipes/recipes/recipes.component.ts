@@ -25,8 +25,7 @@ import {WorkshopService} from 'app/core/database/workshop.service';
 import {Workshop} from '../../../model/other/workshop';
 import {CraftingRotationService} from 'app/core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
-import {debounceTime, distinctUntilChanged, filter, map, mergeMap, publishReplay, refCount} from 'rxjs/operators';
-import {first, switchMap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap, publishReplay, refCount, switchMap} from 'rxjs/operators';
 import {SearchResult} from '../../../model/list/search-result';
 
 declare const ga: Function;
@@ -42,6 +41,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     @ViewChild('filter')
     filterElement: ElementRef;
+
+    onlyCraftable = false;
 
     filters: SearchFilter[] = [
         {
@@ -215,7 +216,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
             this.loading = false;
             return;
         }
-        this.subscriptions.push(this.db.searchRecipe(this.query, this.filters).subscribe(results => {
+        this.subscriptions.push(this.db.searchItem(this.query, this.filters, this.onlyCraftable).subscribe(results => {
             this.results = results;
             this.loading = false;
         }));
@@ -311,8 +312,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
         const additions = [];
         this.results
             .forEach(item => {
-            additions.push(this.resolver.addToList(item.itemId, list, (<Recipe>item).recipeId, 1));
-        });
+                additions.push(this.resolver.addToList(item.itemId, list, (<Recipe>item).recipeId, 1));
+            });
         this.subscriptions.push(this.dialog.open(BulkAdditionPopupComponent, {
             data: {additions: additions, key: key, listname: list.name},
             disableClose: true

@@ -2,7 +2,8 @@
   "ITEMS": {
     "Title": "Items",
     "No_match": "No matching items",
-    "Item_name": "Item name"
+    "Item_name": "Item name",
+    "Only_recipes": "Only recipes"
   },
   "Download_desktop_app": "Download desktop app",
   "Delete": "Delete",

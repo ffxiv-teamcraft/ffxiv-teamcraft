@@ -115,12 +115,17 @@ export class DataService {
      * Fires a search request to the search api in order to get results based on filters.
      * @param {string} query
      * @param {SearchFilter[]} filters
+     * @param onlyCraftable
      * @returns {Observable<Recipe[]>}
      */
-    public searchRecipe(query: string, filters: SearchFilter[]): Observable<SearchResult[]> {
+    public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean): Observable<SearchResult[]> {
         let params = new HttpParams()
             .set('type', 'item')
             .set('lang', this.i18n.currentLang);
+
+        if (onlyCraftable) {
+            params = params.set('craftable', '1');
+        }
 
         let craftedByFilter: SearchFilter;
 
