@@ -194,9 +194,9 @@ export class AlarmService {
                     if (alarmGroup !== undefined && !alarmGroup.enabled) {
                         return of(null);
                     }
-                    const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
-                    // Don't play the alarm if it was played less than a minute ago
-                    if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {
+                    const lastPlayed = localStorage.getItem('alarms:lastPlayed');
+                    // Don't play the alarm if it was played less than half a minute ago
+                    if (lastPlayed === null || Date.now() - +lastPlayed > 30000) {
                         this.snack.open(this.translator.instant('ALARM.Spawned',
                             {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
                             this.translator.instant('ALARM.See_on_map'),
@@ -221,6 +221,7 @@ export class AlarmService {
                         audio.loop = false;
                         audio.volume = this.settings.alarmVolume;
                         audio.play();
+                        localStorage.setItem('alarms:lastPlayed', Date.now().toString());
                         return this.mapService.getMapById(alarm.zoneId)
                             .pipe(
                                 map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
@@ -254,7 +255,6 @@ export class AlarmService {
                     }
                 })
             ).subscribe(() => {
-            localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
         }, err => {
             // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
         });
