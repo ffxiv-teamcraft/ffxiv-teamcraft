@@ -21,6 +21,10 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
             let itemPartial = itemData.getPartial(item.id.toString(), 'item');
             // If we didn't find the item in partials, get it from ingredients
             if (itemPartial === undefined) {
+                if (itemData.ingredients === undefined) {
+                    // if this has no partial nor ingredients, we can go to the next one.
+                    break;
+                }
                 itemPartial = itemData.getIngredient(item.id);
             } else {
                 // Else, simply bind the obj property to the effective partial
