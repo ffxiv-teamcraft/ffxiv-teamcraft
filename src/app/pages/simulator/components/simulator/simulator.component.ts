@@ -38,6 +38,8 @@ import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
+import {RecipeChoicePopupComponent} from '../recipe-choice-popup/recipe-choice-popup.component';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-simulator',
@@ -257,7 +259,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
                 private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService,
-                private snack: MatSnackBar, private cd: ChangeDetectorRef, rotationsService: CraftingRotationService) {
+                private snack: MatSnackBar, private cd: ChangeDetectorRef, rotationsService: CraftingRotationService,
+                private router: Router) {
 
         this.availableRotations$ = this.userService.getUserData()
             .pipe(
@@ -537,6 +540,15 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         if (markDirty) {
             this.markAsDirty();
         }
+    }
+
+    changeRecipe(): void {
+        this.dialog.open(RecipeChoicePopupComponent).afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res !== null && res !== '')
+            ).subscribe(result => {
+            this.router.navigate(['simulator', result.itemId, result.recipeId, this.rotation.$key]);
+        });
     }
 
     editRotationName(rotation: CraftingRotation): void {

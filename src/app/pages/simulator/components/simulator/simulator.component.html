@@ -212,6 +212,9 @@
                 </a>
                 <mat-card-title *ngIf="itemId !== undefined">
                     {{itemId | itemName | i18n}}
+                    <button mat-icon-button (click)="changeRecipe()">
+                        <mat-icon>swap_horiz</mat-icon>
+                    </button>
                 </mat-card-title>
                 <mat-card-subtitle *ngIf="itemId !== undefined">
                     <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>

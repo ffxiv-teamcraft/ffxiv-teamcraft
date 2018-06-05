@@ -24,7 +24,8 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule, MatMenuModule,
+    MatListModule,
+    MatMenuModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSelectModule,
@@ -41,6 +42,7 @@ import {ImportMacroPopupComponent} from './components/import-macro-popup/import-
 import {ConsumablesService} from './model/consumables.service';
 import {RotationNamePopupComponent} from './components/rotation-name-popup/rotation-name-popup.component';
 import {StepByStepReportPopupComponent} from './components/step-by-step-report-popup/step-by-step-report-popup.component';
+import {RecipeChoicePopupComponent} from './components/recipe-choice-popup/recipe-choice-popup.component';
 
 const routes: Routes = [
     {
@@ -121,7 +123,8 @@ const routes: Routes = [
         MacroPopupComponent,
         SimulationMinStatsPopupComponent,
         RotationNamePopupComponent,
-        StepByStepReportPopupComponent
+        StepByStepReportPopupComponent,
+        RecipeChoicePopupComponent
     ],
     entryComponents: [
         ImportRotationPopupComponent,
@@ -129,7 +132,8 @@ const routes: Routes = [
         MacroPopupComponent,
         SimulationMinStatsPopupComponent,
         RotationNamePopupComponent,
-        StepByStepReportPopupComponent
+        StepByStepReportPopupComponent,
+        RecipeChoicePopupComponent
     ],
     providers: [
         CraftingActionsRegistry,
