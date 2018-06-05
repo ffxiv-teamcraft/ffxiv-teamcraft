@@ -216,6 +216,11 @@
                 <mat-card-subtitle *ngIf="itemId !== undefined">
                     <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
                 </mat-card-subtitle>
+                <div class="stats">
+                    {{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{simulation.crafterStats.craftsmanship}}
+                    {{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{simulation.crafterStats._control}}
+
+                </div>
                 <div class="steps">
                     {{'SIMULATOR.Step_counter' | translate}}
                     <mat-form-field *ngIf="snapshotMode" class="snapshot-input">
