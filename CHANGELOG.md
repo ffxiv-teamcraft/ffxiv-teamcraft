@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.4"></a>
+## [4.1.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.3...v4.1.4) (2018-06-05)
+
+
+### Bug Fixes
+
+* fixed a missing translation in sidebar ([22d5e95](https://github.com/Supamiu/ffxiv-teamcraft/commit/22d5e95))
+
+
+### Features
+
+* **simulator:** crafter stats now shown in main panel, for easier screenshots ([9db17c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/9db17c9))
+* you can now change recipe from the simulator page ([87a2a28](https://github.com/Supamiu/ffxiv-teamcraft/commit/87a2a28)), closes [#395](https://github.com/Supamiu/ffxiv-teamcraft/issues/395)
+
+
+
 <a name="4.1.3"></a>
 ## [4.1.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.2...v4.1.3) (2018-06-04)
 
