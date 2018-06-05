@@ -547,7 +547,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             .pipe(
                 filter(res => res !== undefined && res !== null && res !== '')
             ).subscribe(result => {
-            this.router.navigate(['simulator', result.itemId, result.recipeId, this.rotation.$key]);
+            const path = ['simulator', result.itemId, result.recipeId];
+            if (this.rotation.$key !== undefined) {
+                path.push(this.rotation.$key);
+            }
+            this.router.navigate(path);
         });
     }
 

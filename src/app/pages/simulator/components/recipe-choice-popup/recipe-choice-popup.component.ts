@@ -1,14 +1,17 @@
-import {Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
-import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {debounceTime, distinctUntilChanged, first, takeUntil} from 'rxjs/operators';
 import {fromEvent, Subject} from 'rxjs/index';
 import {Recipe} from '../../../../model/list/recipe';
+import {DataService} from '../../../../core/api/data.service';
+import {GarlandToolsService} from '../../../../core/api/garland-tools.service';
+import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
 
 @Component({
     selector: 'app-recipe-choice-popup',
     templateUrl: './recipe-choice-popup.component.html',
     styleUrls: ['./recipe-choice-popup.component.scss']
 })
-export class RecipeChoicePopupComponent implements OnDestroy {
+export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
 
     results: Recipe[] = [];
 
@@ -17,9 +20,42 @@ export class RecipeChoicePopupComponent implements OnDestroy {
 
     onDestroy$: Subject<void> = new Subject<void>();
 
-    filterValue: string;
+    query: string;
 
-    constructor() {
+    constructor(private dataService: DataService, private gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
+    }
+
+    private doSearch(): void {
+        this.dataService.searchItem(this.query, [], true)
+            .pipe(first())
+            .subscribe(results => {
+                this.results = <Recipe[]>results;
+            })
+    }
+
+    /**
+     * Gets job informations from a given job id.
+     * @param {number} id
+     * @returns {any}
+     */
+    getJob(id: number): any {
+        return this.gt.getJob(id);
+    }
+
+    /**
+     * Generates star html string for recipes with stars.
+     * @param {number} nb
+     * @returns {string}
+     */
+    getStars(nb: number): string {
+        return this.htmlTools.generateStars(nb);
+    }
+
+    ngOnDestroy(): void {
+        this.onDestroy$.next();
+    }
+
+    ngOnInit(): void {
         fromEvent(this.filterElement.nativeElement, 'keyup')
             .pipe(
                 takeUntil(this.onDestroy$),
@@ -27,15 +63,7 @@ export class RecipeChoicePopupComponent implements OnDestroy {
                 distinctUntilChanged()
             ).subscribe(() => {
             this.doSearch();
-        })
-    }
-
-    private doSearch(): void {
-
-    }
-
-    ngOnDestroy(): void {
-        this.onDestroy$.next();
+        });
     }
 
 }
