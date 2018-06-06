@@ -1,14 +1,17 @@
-const {app, ipcMain, BrowserWindow, Tray, nativeImage} = require('electron');
+const {app, ipcMain, BrowserWindow, Tray, nativeImage, dialog} = require('electron');
 const {autoUpdater} = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
+const isDev = require('electron-is-dev');
 
 const electronOauth2 = require('electron-oauth2');
 
 let win;
 let tray;
 let nativeIcon;
+
+let updateInterval;
 
 let openedOverlays = {};
 
@@ -19,6 +22,10 @@ const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirector
         win.focus();
     }
 });
+
+if (isDev) {
+    autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+}
 
 if (shouldQuit) {
     app.quit();
@@ -45,7 +52,13 @@ function createWindow() {
         win = null
     });
 
-    win.once('ready-to-show', win.show);
+    win.once('ready-to-show', () => {
+        win.show();
+        autoUpdater.checkForUpdates();
+        updateInterval = setInterval(() => {
+            autoUpdater.checkForUpdates();
+        }, 300000);
+    });
 
     // save window size and position
     win.on('close', () => {
@@ -79,13 +92,10 @@ function createWindow() {
     tray.on('balloon-click', () => {
         !win.isVisible() ? win.show() : null;
     });
-
-    autoUpdater.checkForUpdatesAndNotify();
 }
 
 // Create window on electron intialization
 app.on('ready', () => {
-    autoUpdater.checkForUpdatesAndNotify();
     createWindow();
 });
 
@@ -103,6 +113,21 @@ app.on('activate', function () {
     if (win === null) {
         createWindow()
     }
+});
+
+autoUpdater.on('update-downloaded', () => {
+    dialog.showMessageBox({
+        type: 'info',
+        title: 'Update available',
+        message: 'An update is available and downloaded, install now?',
+        buttons: ['Yes', 'No']
+    }, (buttonIndex) => {
+        if (buttonIndex === 0) {
+            autoUpdater.quitAndInstall();
+        } else {
+            clearInterval(updateInterval);
+        }
+    });
 });
 
 const googleOauthConfig = {
@@ -158,6 +183,10 @@ ipcMain.on('notification', (event, config) => {
     tray.displayBalloon(config);
 });
 
+ipcMain.on('run-update', () => {
+    autoUpdater.quitAndInstall();
+});
+
 ipcMain.on('overlay', (event, url) => {
     let opts = {
         show: false,
@@ -173,7 +202,6 @@ ipcMain.on('overlay', (event, url) => {
     const overlay = new BrowserWindow(opts);
 
     overlay.once('ready-to-show', overlay.show);
-
 
     // save window size and position
     overlay.on('close', () => {
