@@ -28,6 +28,7 @@ import {Observable, Subscription} from 'rxjs';
 import {debounceTime, distinctUntilChanged, filter, first, map} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
+import {GarlandToolsService} from './core/api/garland-tools.service';
 
 declare const ga: Function;
 
@@ -97,7 +98,10 @@ export class AppComponent implements OnInit {
                 public cd: ChangeDetectorRef,
                 private pendingChangesService: PendingChangesService,
                 public platformService: PlatformService,
-                private ipc: IpcService) {
+                private ipc: IpcService,
+                private gt: GarlandToolsService) {
+
+        this.gt.preload();
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
