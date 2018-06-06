@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.6"></a>
+## [4.1.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.4...v4.1.6) (2018-06-06)
+
+
+### Bug Fixes
+
+* fixed a critical which was breaking recipes search in production ([8ae4db8](https://github.com/Supamiu/ffxiv-teamcraft/commit/8ae4db8))
+* only show recipe swap button if a rotation is set and pure (saved) ([36d77b2](https://github.com/Supamiu/ffxiv-teamcraft/commit/36d77b2))
+
+
+### Features
+
+* **desktop:** better flow for auto updater ([68ad385](https://github.com/Supamiu/ffxiv-teamcraft/commit/68ad385))
+
+
+
 <a name="4.1.5"></a>
 ## [4.1.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.4...v4.1.5) (2018-06-06)
 
