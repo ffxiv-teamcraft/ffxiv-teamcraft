@@ -12,8 +12,8 @@
                  alt="{{item.itemId | itemName | i18n}}">
         </a>
         <h4 mat-line>{{item.itemId | itemName | i18n}}</h4>
-        <p mat-line *ngIf="item.job !== undefined && getJob(item.job).abbreviation !== 'ADV'">
-            <img src="https://www.garlandtools.org/db/images/{{getJob(item.job).abbreviation}}.png"
+        <p mat-line *ngIf="item.job !== undefined && getJob(item.job)?.abbreviation !== 'ADV'">
+            <img src="https://www.garlandtools.org/db/images/{{getJob(item.job)?.abbreviation}}.png"
                  alt="getJob(item.job)?.abbreviation" class="crafted-by"> {{item.lvl}} <span
             [innerHtml]="getStars(item.stars)"></span>
         </p>
