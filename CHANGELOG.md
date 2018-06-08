@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.7"></a>
+## [4.1.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.6...v4.1.7) (2018-06-08)
+
+
+### Bug Fixes
+
+* dungeon and trial icons are now properly displayed ([7c8f7eb](https://github.com/Supamiu/ffxiv-teamcraft/commit/7c8f7eb)), closes [#400](https://github.com/Supamiu/ffxiv-teamcraft/issues/400)
+* fixed a critical which was breaking recipes search in production ([8ae4db8](https://github.com/Supamiu/ffxiv-teamcraft/commit/8ae4db8))
+* fixed an error with wrong amount in trade popup in some cases ([9cb553d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9cb553d)), closes [#403](https://github.com/Supamiu/ffxiv-teamcraft/issues/403)
+* fixed an issue with simulator link on items that have multiple recipes ([059bc9f](https://github.com/Supamiu/ffxiv-teamcraft/commit/059bc9f)), closes [#401](https://github.com/Supamiu/ffxiv-teamcraft/issues/401)
+
+
+### Features
+
+* updated the /about page ([ccd6250](https://github.com/Supamiu/ffxiv-teamcraft/commit/ccd6250))
+
+
+
 <a name="4.1.6"></a>
 ## [4.1.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.4...v4.1.6) (2018-06-06)
 
