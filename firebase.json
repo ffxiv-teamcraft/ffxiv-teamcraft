@@ -12,12 +12,23 @@
         "destination": "/index.html"
       }
     ],
-      "headers": [{
-          "source": "**",
-          "headers": [{
-              "key": "Cache-control",
-              "value": "no-cache, must-revalidate"
-          }]
-      }]
+    "redirects": [
+      {
+        "source": "/desktop",
+        "destination": "https://github.com/Supamiu/ffxiv-teamcraft/releases/latest",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-control",
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      }
+    ]
   }
 }
