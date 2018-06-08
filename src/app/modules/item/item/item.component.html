@@ -254,9 +254,9 @@
             <div *ngIf="item.instances !== undefined && item.instances.length > 0">
                 <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
                         (click)="openInstancesDetails(item)">
-                    <img matTooltip="{{getI18n(item.instances[0].type)}}"
+                    <img matTooltip="{{item.instances[0].name | i18n}}"
                          matTooltipPosition="above"
-                         src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png"
+                         [src]="item.instances[0].icon | instanceIcon"
                          [ngClass]="{'currency':true, 'compact': settings.compactLists}">
                 </button>
             </div>
@@ -462,9 +462,9 @@
                 </div>
                 <div *ngIf="item.instances !== undefined && item.instances.length > 0">
                     <button mat-icon-button (click)="openInstancesDetails(item)">
-                        <img matTooltip="{{getI18n(item.instances[0].type)}}"
+                        <img matTooltip="{{item.instances[0].name | i18n}}"
                              matTooltipPosition="above"
-                             src="https://www.garlandtools.org/db/images/{{getI18n(item.instances[0].type)}}.png"
+                             [src]="item.instances[0].icon | instanceIcon"
                              class="currency">
                     </button>
                 </div>
