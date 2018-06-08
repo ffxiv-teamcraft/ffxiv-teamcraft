@@ -115,7 +115,7 @@
     </div>
 
     <div *ngIf="results.length > 0 && !loading">
-        <mat-list-item *ngFor="let item of results" class="recipes-list-row">
+        <mat-list-item *ngFor="let item of results; let even = even" class="recipes-list-row" [class.even]="even">
             <a mat-list-avatar href="{{item.itemId | itemLink | i18n}}" target="_blank">
                 <img mat-list-avatar [appXivdbTooltip]="item.itemId" src="{{item.icon | icon}}"
                      alt="{{item.itemId | itemName | i18n}}">
