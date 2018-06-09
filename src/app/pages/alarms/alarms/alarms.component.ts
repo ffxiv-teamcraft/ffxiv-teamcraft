@@ -35,7 +35,7 @@ export class AlarmsComponent {
 
     overlay = false;
 
-    alarmGroups$: Observable<{ groupName: string, alarms: Alarm[] }[]>;
+    alarmGroups$: Observable<{ groupName: string, enabled: boolean, alarms: Alarm[] }[]>;
 
     overlayAlarms$: Observable<Alarm[]>;
 
@@ -53,30 +53,6 @@ export class AlarmsComponent {
         );
 
         const user$ = this.userService.getUserData();
-
-        this.overlayAlarms$ = this.reloader.pipe(
-            switchMap(() => this.etime.getEorzeanTime()),
-            tap(time => this.time = time),
-            map(time => {
-                const alarms: Alarm[] = [];
-                this.alarmService.alarms.forEach(alarm => {
-                    if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
-                        return;
-                    }
-                    const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
-                    alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
-                });
-                return alarms.sort((a, b) => {
-                    if (this.alarmService.isAlarmSpawned(a, time)) {
-                        return -1;
-                    }
-                    if (this.alarmService.isAlarmSpawned(b, time)) {
-                        return 1;
-                    }
-                    return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn) ? -1 : 1;
-                });
-            })
-        );
 
         this.alarmGroups$ = combineLatest(timer$, user$)
             .pipe(
@@ -117,7 +93,18 @@ export class AlarmsComponent {
                     });
                     return result;
                 })
-            )
+            );
+
+        this.overlayAlarms$ = this.alarmGroups$.pipe(
+            map(groups => {
+                return groups.reduce((overlayAlarms, currentGroup) => {
+                    if (currentGroup.enabled) {
+                        overlayAlarms.push(...currentGroup.alarms);
+                    }
+                    return overlayAlarms;
+                }, []);
+            })
+        );
     }
 
     setGroupIndex(groupData: any, index: number): void {
