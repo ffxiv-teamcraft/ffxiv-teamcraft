@@ -116,6 +116,7 @@ app.on('activate', function () {
 });
 
 autoUpdater.on('update-downloaded', () => {
+    clearInterval(updateInterval);
     dialog.showMessageBox({
         type: 'info',
         title: 'Update available',
@@ -124,8 +125,6 @@ autoUpdater.on('update-downloaded', () => {
     }, (buttonIndex) => {
         if (buttonIndex === 0) {
             autoUpdater.quitAndInstall();
-        } else {
-            clearInterval(updateInterval);
         }
     });
 });
