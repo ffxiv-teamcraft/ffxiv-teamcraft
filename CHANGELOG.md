@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.8"></a>
+## [4.1.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.7...v4.1.8) (2018-06-09)
+
+
+### Bug Fixes
+
+* **desktop:** alarms overlay no longer shows muted groups ([b3a6900](https://github.com/Supamiu/ffxiv-teamcraft/commit/b3a6900))
+
+
+### Features
+
+* new /desktop page that redirects to github latest release ([581f278](https://github.com/Supamiu/ffxiv-teamcraft/commit/581f278))
+
+
+
 <a name="4.1.7"></a>
 ## [4.1.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.6...v4.1.7) (2018-06-08)
 
