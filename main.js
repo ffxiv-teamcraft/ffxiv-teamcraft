@@ -119,7 +119,7 @@ autoUpdater.on('update-downloaded', () => {
     clearInterval(updateInterval);
     dialog.showMessageBox({
         type: 'info',
-        title: 'Update available',
+        title: 'FFXIV Teamcraft - Update available',
         message: 'An update is available and downloaded, install now?',
         buttons: ['Yes', 'No']
     }, (buttonIndex) => {
