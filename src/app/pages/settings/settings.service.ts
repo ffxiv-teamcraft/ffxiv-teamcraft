@@ -44,6 +44,14 @@ export class SettingsService {
         this.setSetting('compact-sidebar', compact.toString());
     }
 
+    public get recipesOnlySearch(): boolean {
+        return this.getSetting('search-only-recipes', 'false') === 'true';
+    }
+
+    public set recipesOnlySearch(compact: boolean) {
+        this.setSetting('search-only-recipes', compact.toString());
+    }
+
     public get compactAlarms(): boolean {
         return this.getSetting('compact-alarms', 'false') === 'true';
     }

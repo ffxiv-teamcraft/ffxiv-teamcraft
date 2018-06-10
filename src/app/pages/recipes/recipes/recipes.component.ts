@@ -27,6 +27,7 @@ import {CraftingRotationService} from 'app/core/database/crafting-rotation.servi
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
 import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap, publishReplay, refCount, switchMap} from 'rxjs/operators';
 import {SearchResult} from '../../../model/list/search-result';
+import {SettingsService} from '../../settings/settings.service';
 
 declare const ga: Function;
 
@@ -41,8 +42,6 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     @ViewChild('filter')
     filterElement: ElementRef;
-
-    onlyCraftable = false;
 
     filters: SearchFilter[] = [
         {
@@ -122,7 +121,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private htmlTools: HtmlToolsService, private listService: ListService,
                 private localizedData: LocalizedDataService, private userService: UserService,
                 protected helpService: HelpService, protected media: ObservableMedia,
-                private workshopService: WorkshopService, private rotationsService: CraftingRotationService) {
+                private workshopService: WorkshopService, private rotationsService: CraftingRotationService,
+                public settings: SettingsService) {
         super(dialog, helpService, media);
     }
 
@@ -216,7 +216,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
             this.loading = false;
             return;
         }
-        this.subscriptions.push(this.db.searchItem(this.query, this.filters, this.onlyCraftable).subscribe(results => {
+        this.subscriptions.push(this.db.searchItem(this.query, this.filters, this.settings.recipesOnlySearch).subscribe(results => {
             this.results = results;
             this.loading = false;
         }));
