@@ -10,9 +10,11 @@ import {TranslateService} from '@ngx-translate/core';
 import {ConfirmationPopupComponent} from '../../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {CustomLink} from '../../../../core/database/custom-links/custom-link';
 import {CustomLinkPopupComponent} from '../../../custom-links/custom-link-popup/custom-link-popup.component';
-import {filter, map, mergeMap, tap} from 'rxjs/operators';
+import {filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {LinkToolsService} from '../../../../core/tools/link-tools.service';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
+import {NewFolderPopupComponent} from '../new-folder-popup/new-folder-popup.component';
+import {CraftingRotationFolder} from './crafting-rotation-folder';
 
 @Component({
     selector: 'app-rotations-page',
@@ -22,7 +24,7 @@ import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-p
 })
 export class RotationsPageComponent {
 
-    rotations$: Observable<CraftingRotation[]>;
+    rotations$: Observable<{ nofolder: CraftingRotation[], folders: CraftingRotationFolder[] }>;
 
     linkButton = false;
 
@@ -34,6 +36,22 @@ export class RotationsPageComponent {
                 tap(user => this.linkButton = user.admin || user.patron),
                 mergeMap(user => {
                     return this.rotationsService.getUserRotations(user.$key);
+                }),
+                map(rotations => {
+                    // Order rotations per folder
+                    return rotations.reduce((result, rotation) => {
+                        if (rotation.folder === undefined) {
+                            result.nofolder.push(rotation);
+                        } else {
+                            let folder = result.folders.find(f => f.name === rotation.folder);
+                            if (folder === undefined) {
+                                result.folders.push({name: rotation.folder, rotations: []});
+                                folder = result.folders[result.folders.length];
+                            }
+                            folder.rotations.push(rotation);
+                        }
+                        return result;
+                    }, {nofolder: [], folders: []});
                 })
             );
     }
@@ -89,6 +107,34 @@ export class RotationsPageComponent {
             link += `/custom`;
         }
         return `${link}/${rotation.$key}`;
+    }
+
+    nelder(): void {
+        this.dialog.open(NewFolderPopupComponent)
+            .afterClosed()
+            .pipe(
+                filter(name => name !== '' && name !== undefined && name !== null),
+                mergeMap(folderName => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            first(),
+                            map(user => {
+                                if (user.rotationFolders.find(folder => folder === folderName) === undefined) {
+                                    user.rotationFolders.push(folderName);
+                                }
+                                return user;
+                            }),
+                            mergeMap(user => {
+                                return this.userService.set(user.$key, user);
+                            })
+                        )
+                })
+            ).subscribe();
+    }
+
+    setFolder(rotation: CraftingRotation, folder: string): void {
+        rotation.folder = folder;
+        this.rotationsService.set(rotation.$key, rotation).subscribe();
     }
 
     public showCopiedNotification(): void {
