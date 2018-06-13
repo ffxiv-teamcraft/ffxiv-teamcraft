@@ -1,0 +1,33 @@
+<mat-expansion-panel class="rotation-panel">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{rotation.getName()}}
+            <button mat-icon-button (click)="$event.stopPropagation(); editNameClick.emit()">
+                <mat-icon>mode_edit</mat-icon>
+            </button>
+        </mat-panel-title>
+        <button mat-icon-button *ngIf="linkButton"
+                matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                (click)="$event.stopPropagation(); linkClick.emit()">
+            <mat-icon>link</mat-icon>
+        </button>
+        <button mat-icon-button ngxClipboard [cbContent]="getLink(rotation)"
+                (click)="$event.stopPropagation()"
+                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                (cbOnSuccess)="showCopiedNotification()">
+            <mat-icon>share</mat-icon>
+        </button>
+        <button mat-icon-button
+                routerLink="{{getLocalLink(rotation)}}"
+                (click)="$event.stopPropagation()">
+            <mat-icon>playlist_play</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteClick.emit()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-expansion-panel-header>
+    <div class="content">
+        <app-action *ngFor="let step of getSteps(rotation)" [action]="step" [hideCost]="true"
+                    [jobId]="rotation.recipe.job"></app-action>
+    </div>
+</mat-expansion-panel>

@@ -1,12 +1,7 @@
-
-mat-panel-title {
+.topbar {
+    width: 100%;
     display: flex;
     align-items: center;
-}
-
-.content {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .no-rotations {
@@ -21,6 +16,51 @@ mat-panel-title {
     width: 100%;
 }
 
-.rotation-panel {
-    margin: 10px 0;
+mat-panel-title {
+    display: flex;
+    align-items: center;
+}
+
+.folder {
+    .folder-icon {
+        margin-right: 10px;
+    }
+}
+
+.drag-hint-border {
+    border: 2px dashed;
+}
+
+.drop-zone {
+    min-height: 50px;
+    position: relative;
+    .drop-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: .6;
+        .mat-icon {
+            font-size: 45px;
+            height: 45px;
+            width: 45px;
+        }
+    }
+    &.drag-over-border {
+        .drop-overlay {
+            visibility: visible;
+        }
+    }
+}
+
+.folder-zone {
+    min-height: 20px;
+    .mat-icon {
+        font-size: 20px;
+    }
 }

@@ -1,39 +1,77 @@
-<h1>{{'SIMULATOR.Rotations' | translate}}</h1>
+<div class="topbar">
+    <h1>{{'SIMULATOR.Rotations' | translate}}</h1>
+    <div class="spacer"></div>
+    <div class="buttons">
+        <button mat-mini-fab (click)="newFolder()" matTooltip="{{'SIMULATOR.New_rotation_folder' | translate}}">
+            <mat-icon>create_new_folder</mat-icon>
+        </button>
+    </div>
+</div>
 <div *ngIf="rotations$ | async as rotations">
-    <div *ngIf="rotations.length > 0; else noRotations">
-        <mat-expansion-panel *ngFor="let rotation of rotations; trackBy: trackByRotation" class="rotation-panel">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{rotation.getName()}}
-                    <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
-                        <mat-icon>mode_edit</mat-icon>
-                    </button>
-                </mat-panel-title>
-                <button mat-icon-button *ngIf="linkButton"
-                        matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
-                        (click)="$event.stopPropagation(); openLinkPopup(rotation)">
-                    <mat-icon>link</mat-icon>
-                </button>
-                <button mat-icon-button ngxClipboard [cbContent]="getLink(rotation)"
-                        (click)="$event.stopPropagation()"
-                        matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
-                        (cbOnSuccess)="showCopiedNotification()">
-                    <mat-icon>share</mat-icon>
-                </button>
-                <button mat-icon-button
-                        routerLink="{{getLocalLink(rotation)}}"
-                        (click)="$event.stopPropagation()">
-                    <mat-icon>playlist_play</mat-icon>
-                </button>
-                <button mat-icon-button (click)="deleteRotation(rotation.$key)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </mat-expansion-panel-header>
-            <div class="content">
-                <app-action *ngFor="let step of getSteps(rotation)" [action]="step" [hideCost]="true"
-                            [jobId]="rotation.recipe.job"></app-action>
+    <div *ngIf="rotations.nofolder.length > 0 || rotations.folders.length > 0; else noRotations">
+        <div class="drop-zone" droppable (onDrop)="removeFolder($event.dragData)" [dropScope]="'rotation'">
+            <div class="drop-overlay accent-background">
+                <mat-icon>save_alt</mat-icon>
             </div>
-        </mat-expansion-panel>
+            <div *ngFor="let rotation of rotations.nofolder; trackBy: trackByRotation"
+                 draggable
+                 [dragScope]="'rotation'"
+                 [dragData]="rotation">
+                <app-rotation-panel [rotation]="rotation"
+                                    (editNameClick)="editRotationName(rotation)"
+                                    (deleteClick)="deleteRotation(rotation.$key)"
+                                    (linkClick)="openLinkPopup(rotation)"></app-rotation-panel>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+        <div *ngFor="let folder of rotations.folders; trackBy: trackByFolder; let i = index">
+            <div class="drop-zone folder-zone" droppable (onDrop)="setFolderIndex($event.dragData, i)"
+                 [dropScope]="'folder'">
+                <div class="drop-overlay accent-background">
+                    <mat-icon>save_alt</mat-icon>
+                </div>
+            </div>
+            <mat-expansion-panel class="folder" draggable [dragData]="folder.name" [dragScope]="'folder'">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon class="folder-icon">folder</mat-icon>
+                        {{folder.name}}
+                        <button mat-icon-button
+                                (click)="$event.stopPropagation();renameFolder(folder.name, folder.rotations)">
+                            <mat-icon>mode_edit</mat-icon>
+                        </button>
+                    </mat-panel-title>
+                    <button mat-icon-button
+                            (click)="$event.stopPropagation();deleteFolder(folder.name, folder.rotations)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-expansion-panel-header>
+                <div class="drop-zone" droppable (onDrop)="onFolderDrop(folder.name, $event.dragData)"
+                     [dropScope]="'rotation'">
+                    <div class="drop-overlay accent-background">
+                        <mat-icon>save_alt</mat-icon>
+                    </div>
+                    <div *ngFor="let rotation of folder.rotations; trackBy: trackByRotation"
+                         draggable
+                         [dragScope]="'rotation'"
+                         [dragData]="rotation">
+                        <app-rotation-panel
+                            [rotation]="rotation"
+                            (editNameClick)="editRotationName(rotation)"
+                            (deleteClick)="deleteRotation(rotation.$key)"
+                            (linkClick)="openLinkPopup(rotation)"></app-rotation-panel>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+        <div class="drop-zone folder-zone" droppable
+             (onDrop)="setFolderIndex($event.dragData, rotations.folders.length - 1)"
+             [dropScope]="'folder'">
+            <div class="drop-overlay accent-background">
+                <mat-icon>save_alt</mat-icon>
+            </div>
+        </div>
     </div>
     <ng-template #noRotations>
         <span class="no-rotations">{{'SIMULATOR.No_rotations' | translate}}</span>
