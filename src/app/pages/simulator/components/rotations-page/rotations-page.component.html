@@ -18,6 +18,7 @@
                  [dragScope]="'rotation'"
                  [dragData]="rotation">
                 <app-rotation-panel [rotation]="rotation"
+                                    [linkButton]="linkButton"
                                     (editNameClick)="editRotationName(rotation)"
                                     (deleteClick)="deleteRotation(rotation.$key)"
                                     (linkClick)="openLinkPopup(rotation)"></app-rotation-panel>
@@ -57,6 +58,7 @@
                          [dragScope]="'rotation'"
                          [dragData]="rotation">
                         <app-rotation-panel
+                            [linkButton]="linkButton"
                             [rotation]="rotation"
                             (editNameClick)="editRotationName(rotation)"
                             (deleteClick)="deleteRotation(rotation.$key)"

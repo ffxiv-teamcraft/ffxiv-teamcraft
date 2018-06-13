@@ -25,6 +25,9 @@ export class RotationPanelComponent {
     @Output()
     deleteClick: EventEmitter<void> = new EventEmitter<void>();
 
+    @Input()
+    linkButton = false;
+
     constructor(private linkTools: LinkToolsService, private snack: MatSnackBar, private translator: TranslateService,
                 private craftingActionsRegistry: CraftingActionsRegistry) {
     }
@@ -33,7 +36,7 @@ export class RotationPanelComponent {
         return this.linkTools.getLink(this.getLocalLink(rotation));
     }
 
-    private getLocalLink(rotation: CraftingRotation): string {
+    public getLocalLink(rotation: CraftingRotation): string {
         let link = '/simulator';
         if (rotation.defaultItemId) {
             link += `/${rotation.defaultItemId}`;
