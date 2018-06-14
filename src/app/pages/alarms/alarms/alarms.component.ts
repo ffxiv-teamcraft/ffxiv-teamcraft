@@ -45,6 +45,9 @@ export class AlarmsComponent {
         this.desktop = platformService.isDesktop();
         route.queryParams.subscribe(params => {
             this.overlay = params.overlay === 'true';
+            if (this.overlay) {
+                this.ipc.overlayUri = '/alarms';
+            }
         });
 
         const timer$ = this.reloader.pipe(

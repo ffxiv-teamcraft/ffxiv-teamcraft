@@ -3,7 +3,6 @@ const {autoUpdater} = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
-const isDev = require('electron-is-dev');
 
 const electronOauth2 = require('electron-oauth2');
 
@@ -23,10 +22,6 @@ const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirector
     }
 });
 
-if (isDev) {
-    autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
-}
-
 if (shouldQuit) {
     app.quit();
     return;
@@ -40,6 +35,7 @@ function createWindow() {
         icon: `file://${__dirname}/dist/assets/logo.png`
     };
     Object.assign(opts, config.get('win:bounds'));
+    opts.fullscreen = config.get('win:fullscreen') || false;
     win = new BrowserWindow(opts);
 
     win.loadURL(`file://${__dirname}/dist/index.html`);
@@ -63,6 +59,7 @@ function createWindow() {
     // save window size and position
     win.on('close', () => {
         config.set('win:bounds', win.getBounds());
+        config.set('win:fullscreen', win.isFullScreen());
     });
 
     const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
@@ -192,24 +189,39 @@ ipcMain.on('overlay', (event, url) => {
         resizable: true,
         frame: false,
         alwaysOnTop: true,
-        autoHideMenuBar: true,
-        webPreferences: {
-            nodeIntegration: false
-        }
+        autoHideMenuBar: true
     };
     Object.assign(opts, config.get(`overlay:${url}:bounds`));
+    opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
     const overlay = new BrowserWindow(opts);
 
-    overlay.once('ready-to-show', overlay.show);
+    overlay.once('ready-to-show', () => {
+        overlay.show();
+    });
 
     // save window size and position
     overlay.on('close', () => {
         config.set(`overlay:${url}:bounds`, overlay.getBounds());
+        config.set(`overlay:${url}:opacity`, overlay.getOpacity());
     });
 
 
     overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
     openedOverlays[url] = overlay;
+});
+
+ipcMain.on('overlay:set-opacity', (event, data) => {
+    const overlayWindow = openedOverlays[data.uri];
+    if (overlayWindow !== undefined) {
+        overlayWindow.setOpacity(data.opacity);
+    }
+});
+
+ipcMain.on('overlay:get-opacity', (event, data) => {
+    const overlayWindow = openedOverlays[data.uri];
+    if (overlayWindow !== undefined) {
+        event.sender.send(`overlay:${data.uri}:opacity`, overlayWindow.getOpacity());
+    }
 });
 
 ipcMain.on('overlay-close', (event, url) => {

@@ -240,4 +240,8 @@
             <app-alarms-sidebar></app-alarms-sidebar>
         </mat-sidenav>
     </mat-sidenav-container>
+    <div class="opacity-slider" *ngIf="overlay">
+        <mat-slider [min]="0.2" [max]="1" [step]="0.05" [value]="overlayOpacity"
+                    (change)="setOverlayOpacity($event.value)"></mat-slider>
+    </div>
 </div>

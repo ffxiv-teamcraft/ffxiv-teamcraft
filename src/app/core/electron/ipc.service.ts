@@ -9,6 +9,16 @@ export class IpcService {
 
     private readonly _ipc: IpcRenderer | undefined = undefined;
 
+    private _overlayUri: string;
+
+    public get overlayUri(): string {
+        return this._overlayUri;
+    }
+
+    public set overlayUri(uri: string) {
+        this._overlayUri = uri;
+    }
+
     constructor(private platformService: PlatformService, private router: Router) {
         // Only load ipc if we're running inside electron
         if (platformService.isDesktop()) {
