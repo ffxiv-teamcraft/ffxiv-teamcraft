@@ -458,17 +458,30 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         }
     }
 
-    toggleAlarm(id: number, type?: number): void {
+    toggleAlarm(id: number, type: number = 0, groupName?: string): void {
         if (this.alarmService.hasAlarm(id)) {
-            this.alarmService.unregister(id);
+            this.removeAlarm(id);
         } else {
-            if (type > 0) {
-                const alarms = this.alarmService.generateAlarms(this.item).filter(alarm => alarm.type === type);
-                this.alarmService.registerAlarms(...alarms);
-            } else {
-                this.alarmService.register(this.item);
-            }
+            this.addAlarm(id, type, groupName);
         }
+    }
+
+    addAlarm(id: number, type: number = 0, groupName?: string): void {
+        if (type > 0) {
+            const alarms = this.alarmService.generateAlarms(this.item).filter(alarm => alarm.type === type).map(alarm => {
+                if (groupName !== undefined) {
+                    alarm.groupName = groupName;
+                }
+                return alarm;
+            });
+            this.alarmService.registerAlarms(...alarms);
+        } else {
+            this.alarmService.register(this.item, groupName);
+        }
+    }
+
+    removeAlarm(id: number): void {
+        this.alarmService.unregister(id);
     }
 
     updateHasAlarm(itemId): void {

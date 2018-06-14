@@ -72,13 +72,29 @@
     <div *ngIf="hasTimers" class="timers-container">
         <div [ngClass]="{'timer':true, 'compact': settings.compactLists}"
              *ngFor="let timer of timers | async; trackBy: trackByTimers">
+            <mat-menu #addAlarmMenu="matMenu">
+                <button (click)="addAlarm(timer.itemId, timer.type, group.name)" mat-menu-item
+                        *ngFor="let group of user.alarmGroups">{{group.name}}
+                </button>
+            </mat-menu>
             <button mat-raised-button
+                    *ngIf="!hasAlarm[timer.itemId]"
+                    [matMenuTriggerFor]="addAlarmMenu"
                     [color]="getTimerColor(timer.alarm) | async"
-                    (click)="toggleAlarm(timer.itemId, timer.type)"
                     matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
                     matTooltipPosition="above">
-                <mat-icon *ngIf="!hasAlarm[timer.itemId]">alarm_add</mat-icon>
-                <mat-icon *ngIf="hasAlarm[timer.itemId]">alarm_on</mat-icon>
+                <mat-icon>alarm_add</mat-icon>
+                {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+                <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+            </button>
+
+            <button mat-raised-button
+                    *ngIf="hasAlarm[timer.itemId]"
+                    (click)="removeAlarm(timer.itemId)"
+                    [color]="getTimerColor(timer.alarm) | async"
+                    matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
+                    matTooltipPosition="above">
+                <mat-icon>alarm_on</mat-icon>
                 {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
                 <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
             </button>
@@ -177,7 +193,8 @@
                         {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
                     </a>
                 </mat-menu>
-                <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft">
+                <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu"
+                        *ngIf="getCraft(item.recipeId) as craft">
                     <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
                          src="{{craft.icon}}">
                     <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
@@ -394,7 +411,8 @@
                             {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
                         </a>
                     </mat-menu>
-                    <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft" class="crafter-button">
+                    <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft"
+                            class="crafter-button">
                         <img [ngClass]="{'crafted-by':true}" src="{{craft.icon}}">
                         <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
                     </button>

@@ -36,9 +36,13 @@ export class AlarmService {
     /**
      * Registers a given item and creates an alarm for it.
      * @param {ListRow} item
+     * @param groupName
      */
-    public register(item: ListRow): void {
+    public register(item: ListRow, groupName?: string): void {
         this.generateAlarms(item).forEach(alarm => {
+            if (groupName !== undefined) {
+                alarm.groupName = groupName;
+            }
             this.registerAlarms(alarm);
         });
     }
