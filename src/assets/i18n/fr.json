@@ -243,6 +243,7 @@
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
+    "Total_price": "Prix total (échanges et gils)",
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",

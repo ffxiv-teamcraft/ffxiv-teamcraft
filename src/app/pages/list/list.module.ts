@@ -42,6 +42,7 @@ import {ListComponent} from './list/list.component';
 import {NavigationMapPopupComponent} from './navigation-map-popup/navigation-map-popup.component';
 import {MapModule} from '../../modules/map/map.module';
 import {ListFinishedPopupComponent} from './list-finished-popup/list-finished-popup.component';
+import {TotalPricePopupComponent} from './total-price-popup/total-price-popup.component';
 
 const routes: Routes = [
     {
@@ -109,6 +110,7 @@ const routes: Routes = [
         ListComponent,
         NavigationMapPopupComponent,
         ListFinishedPopupComponent,
+        TotalPricePopupComponent,
     ],
     entryComponents: [
         RegenerationPopupComponent,
@@ -119,6 +121,7 @@ const routes: Routes = [
         ImportInputBoxComponent,
         NavigationMapPopupComponent,
         ListFinishedPopupComponent,
+        TotalPricePopupComponent,
     ]
 })
 export class ListModule {

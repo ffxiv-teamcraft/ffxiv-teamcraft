@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>{{'LIST.Total_price' | translate}}</h3>
+<div mat-dialog-content>
+    <mat-list dense>
+        <mat-list-item *ngFor="let row of totalPrice">
+            <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="" *ngIf="row.currencyId === -1"
+                 mat-list-avatar>
+            <app-item-icon [item]="{icon: row.currencyIcon, id: row.currencyId}" mat-list-avatar></app-item-icon>
+            <p matLine>{{row.amount}}</p>
+        </mat-list-item>
+    </mat-list>
+</div>

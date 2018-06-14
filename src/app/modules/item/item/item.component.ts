@@ -58,7 +58,7 @@ import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators
 })
 export class ItemComponent extends ComponentWithSubscriptions implements OnInit, OnChanges {
 
-    private static TRADE_SOURCES_PRIORITIES = {
+    public static TRADE_SOURCES_PRIORITIES = {
         // Just in case
         25: 25, // Wolf Mark
         29: 25, // MGP

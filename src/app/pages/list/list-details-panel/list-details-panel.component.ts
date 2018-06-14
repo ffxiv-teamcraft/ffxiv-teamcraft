@@ -13,6 +13,7 @@ import {NavigationObjective} from '../../../modules/map/navigation-objective';
 import {Vector2} from '../../../core/tools/vector2';
 import {Permissions} from '../../../core/database/permissions/permissions';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
+import {TotalPricePopupComponent} from '../total-price-popup/total-price-popup.component';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -67,8 +68,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
     permissions: Permissions;
 
+    hasVendors = false;
+
     constructor(public settings: SettingsService, private dataService: LocalizedDataService, private dialog: MatDialog,
                 private l12n: LocalizedDataService, private i18nTools: I18nToolsService) {
+    }
+
+    showTotalPrice(): void {
+        this.dialog.open(TotalPricePopupComponent, {data: this.data});
     }
 
     /**
@@ -220,6 +227,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         }
         if (this.zoneBreakdown) {
             this.zoneBreakdownData = new ZoneBreakdown(this.data);
+        }
+        if (this.data) {
+            this.hasVendors = this.data.find(row => {
+                return (row.tradeSources !== undefined && row.tradeSources !== null && row.tradeSources.length > 0)
+                    || (row.vendors !== undefined && row.vendors !== null && row.vendors.length > 0);
+            }) !== undefined;
         }
     }
 
