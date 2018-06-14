@@ -9,10 +9,12 @@
             {{locale | uppercase}}
         </div>
         <div class="spacer draggable"></div>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="previousPage()">arrow_back</mat-icon>
         <mat-icon (click)="openingUrl = true" class="desktop-bar-button open-url theme-text-color" *ngIf="!overlay"
                   matTooltip="{{'COMMON.Open_url' | translate}}">
             open_in_browser
         </mat-icon>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="nextPage()">arrow_forward</mat-icon>
         <div class="spacer draggable"></div>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="minimize()" *ngIf="!overlay">minimize</mat-icon>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="toggleFullscreen()" *ngIf="!overlay">fullscreen

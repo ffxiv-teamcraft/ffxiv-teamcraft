@@ -348,4 +348,12 @@ export class AppComponent implements OnInit {
         this.ipc.send('overlay:set-opacity', {uri: this.ipc.overlayUri, opacity: opacity});
     }
 
+    previousPage(): void {
+        window.history.back();
+    }
+
+    nextPage(): void {
+        window.history.forward();
+    }
+
 }
