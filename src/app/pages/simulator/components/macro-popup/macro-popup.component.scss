@@ -1,5 +1,9 @@
 .content {
     padding-top: 15px;
+    .config {
+        display: flex;
+        flex-direction: column;
+    }
     .macro-fragment {
         display: flex;
         flex-direction: column;

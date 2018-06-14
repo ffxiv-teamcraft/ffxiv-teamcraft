@@ -20,6 +20,10 @@ export class MacroPopupComponent implements OnInit {
 
     public addEcho = true;
 
+    public echoSeNumber = 1;
+
+    public fixedEcho = false;
+
     constructor(@Inject(MAT_DIALOG_DATA) private data: { rotation: CraftingAction[], job: CraftingJob }, private l12n: LocalizedDataService,
                 private i18n: I18nToolsService) {
     }
@@ -45,11 +49,23 @@ export class MacroPopupComponent implements OnInit {
             }
             macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration()}>`);
             if (macroFragment.length === 14 && this.addEcho) {
-                macroFragment.push(`/echo Macro #${this.macro.length} finished <se.${this.macro.length}>`);
+                let seNumber: number;
+                if (this.fixedEcho) {
+                    seNumber = this.echoSeNumber;
+                } else {
+                    seNumber = this.echoSeNumber - 1 + this.macro.length;
+                }
+                macroFragment.push(`/echo Macro #${this.macro.length} finished <se.${seNumber}>`);
             }
         });
         if (this.macro[this.macro.length - 1].length < 15 && this.addEcho) {
-            this.macro[this.macro.length - 1].push('/echo Craft finished <se.4>')
+            let seNumber: number;
+            if (this.fixedEcho) {
+                seNumber = this.echoSeNumber;
+            } else {
+                seNumber = this.echoSeNumber + this.macro.length;
+            }
+            this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`)
         }
         if (this.aactionsMacro.length > 0) {
             this.aactionsMacro.push('/echo Cross class setup finished <se.4>');

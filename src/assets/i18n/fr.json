@@ -428,6 +428,8 @@
     "Not_found": "Page introuvable"
   },
   "SIMULATOR": {
+    "Fixed_notification_number": "Notification fixe",
+    "Starting_echo_number": "Numéro de référence",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Stats minimum",

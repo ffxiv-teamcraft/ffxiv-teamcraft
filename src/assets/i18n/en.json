@@ -428,6 +428,8 @@
     "Not_found": "Page not found"
   },
   "SIMULATOR": {
+    "Fixed_notification_number": "Fixed notification",
+    "Starting_echo_number": "Notification #",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
     "Min_stats": "Minimum stats",
