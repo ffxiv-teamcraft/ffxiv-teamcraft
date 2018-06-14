@@ -331,7 +331,7 @@ export class AlarmService {
             } else if (this._isSpawned(b, time)) {
                 return 1;
             } else {
-                return this.getMinutesBefore(time, a.spawn) > this.getMinutesBefore(time, b.spawn) ? 1 : -1;
+                return this.getMinutesBefore(time, (a.spawn || 24)) > this.getMinutesBefore(time, (b.spawn || 24)) ? 1 : -1;
             }
         })[0]
     }

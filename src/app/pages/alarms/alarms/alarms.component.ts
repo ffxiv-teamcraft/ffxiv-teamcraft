@@ -90,8 +90,8 @@ export class AlarmsComponent {
                             if (this.alarmService.isAlarmSpawned(b, time)) {
                                 return 1;
                             }
-                            return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn)
-                                ? -1 : 1;
+                            return this.alarmService.getMinutesBefore(time, (a.spawn || 24)) <
+                            this.alarmService.getMinutesBefore(time, (b.spawn || 24)) ? -1 : 1;
                         });
                     });
                     return result;
