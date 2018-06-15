@@ -378,7 +378,13 @@ export class AlarmService {
         let despawn = (spawn + alarm.duration) % 24;
         despawn = despawn === 0 ? 24 : despawn;
         spawn = spawn === 0 ? 24 : spawn;
-        return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
+        // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
+        const despawnsNextDay = spawn > despawn;
+        if (!despawnsNextDay) {
+            return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
+        } else {
+            return time.getUTCHours() >= spawn || time.getUTCHours() < despawn;
+        }
     }
 
     /**
