@@ -32,8 +32,17 @@ mat-slide-toggle {
     background-color: rgba(123, 123, 123, .2);
 }
 
-.row {
-    margin: 5px 0;
+.drop-zone {
+    min-height: 5px;
+}
+
+.drag-hint-border {
+    min-height: 50px;
+    border: 2px dashed;
+}
+
+.drag-handle {
+    border: 1px solid red;
 }
 
 .shared-lists {

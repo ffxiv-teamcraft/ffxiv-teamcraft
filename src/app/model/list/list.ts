@@ -39,6 +39,9 @@ export class List extends DataWithPermissions {
 
     comments: ResourceComment[];
 
+    // For ordering purpose.
+    index = 0;
+
     constructor() {
         super();
     }

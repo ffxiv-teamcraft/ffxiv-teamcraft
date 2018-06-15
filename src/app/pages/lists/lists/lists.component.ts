@@ -276,6 +276,14 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         return workshop.$key;
     }
 
+    setListIndex(index: number, list: List): void {
+        console.log(index, list.name);
+    }
+
+    dragStart(event: any): void {
+        console.log(event);
+    }
+
     ngOnInit() {
         this.sharedLists = this.userService.getUserData().pipe(
             mergeMap(user => {
