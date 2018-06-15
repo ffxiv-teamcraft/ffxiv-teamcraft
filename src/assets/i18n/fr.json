@@ -149,6 +149,8 @@
   "Server_name": "Nom du serveur",
   "Add_all_recipes": "Ajouter les résultats à une liste",
   "Character_not_found": "Personnage non trouvé",
+  "Use_lodestoneId": "Utiliser l'ID lodestone",
+  "LodestoneId": "ID lodestone",
   "Requirements_for_craft": "Voir les prérequis",
   "List_forked": "Liste copiée sur votre compte",
   "List_fork": "Copier cette liste sur votre compte",

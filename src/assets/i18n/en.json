@@ -149,6 +149,8 @@
   "Server_name": "Server Name",
   "Add_all_recipes": "Add results to a list",
   "Character_not_found": "Character not found",
+  "Use_lodestoneId": "Use lodestone ID",
+  "LodestoneId": "Lodestone ID",
   "List_forked": "List copied to your account",
   "List_fork": "Copy this list to your account",
   "List_not_found": "List not found or you don't have access to it",
