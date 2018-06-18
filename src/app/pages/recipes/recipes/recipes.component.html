@@ -5,7 +5,8 @@
         <mat-hint align="end">
             <small>{{'Data_from_gt' | translate}}</small>
         </mat-hint>
-        <mat-checkbox matSuffix [(ngModel)]="settings.recipesOnlySearch" (ngModelChange)="doSearch()" class="only-recipes">
+        <mat-checkbox matSuffix [(ngModel)]="settings.recipesOnlySearch" (ngModelChange)="doSearch()"
+                      class="only-recipes">
             {{'ITEMS.Only_recipes' | translate}}
         </mat-checkbox>
     </mat-form-field>
@@ -98,8 +99,43 @@
     </button>
 </mat-menu>
 
+<mat-menu #addSelectedMenu="matMenu" class="lists-menu">
+    <button mat-menu-item (click)="addSelectedToNewList()">
+        <mat-icon>add</mat-icon>
+        <span>{{'New_List' | translate}}</span></button>
+    <button mat-menu-item *ngFor="let list of lists.basicLists"
+            (click)="addSelected(list, list.$key)">
+        <mat-icon>playlist_play</mat-icon>
+        <span>{{list.name}}</span>
+    </button>
+    <div *ngFor="let workshop of workshops | async">
+        <span mat-menu-item (click)="$event.stopPropagation();">
+            <mat-icon>folder_open</mat-icon>
+            {{workshop.name}}</span>
+        <button mat-menu-item *ngFor="let list of lists.rows[workshop.$key]"
+                class="workshop-list"
+                (click)="addSelected(list, list.$key)">
+            <mat-icon>playlist_play</mat-icon>
+            <span>{{list.name}}</span>
+        </button>
+    </div>
+    <span mat-menu-item (click)="$event.stopPropagation();">
+            <mat-icon>folder_shared</mat-icon>
+            {{"LISTS.Shared_lists" | translate}}</span>
+    <button mat-menu-item *ngFor="let list of sharedLists | async"
+            class="workshop-list"
+            (click)="addSelected(list, list.$key)">
+        <mat-icon>playlist_play</mat-icon>
+        <span>{{list.name}}</span>
+    </button>
+</mat-menu>
+
 <div class="add-all-wrapper">
-    <button mat-raised-button [matMenuTriggerFor]="addAllMenu" class="add-all-recipes"
+    <button mat-raised-button *ngIf="selectedItems.length > 0" [matMenuTriggerFor]="addSelectedMenu"
+            class="add-all-recipes selection-button">
+        {{"LISTS.Add_selection" | translate}}
+    </button>
+    <button mat-raised-button [matMenuTriggerFor]="addAllMenu" class="add-all-recipes recipes-button"
             [disabled]="results.length === 0">
         {{'Add_all_recipes' | translate}}
     </button>
@@ -116,6 +152,9 @@
 
     <div *ngIf="results.length > 0 && !loading">
         <mat-list-item *ngFor="let item of results; let even = even" class="recipes-list-row" [class.even]="even">
+            <mat-checkbox [checked]="selectedItems.indexOf(item) > -1"
+                          (change)="resultChecked(item, $event.checked)"
+                          class="selection-box"></mat-checkbox>
             <a mat-list-avatar href="{{item.itemId | itemLink | i18n}}" target="_blank">
                 <img mat-list-avatar [appXivdbTooltip]="item.itemId" src="{{item.icon | icon}}"
                      alt="{{item.itemId | itemName | i18n}}">
