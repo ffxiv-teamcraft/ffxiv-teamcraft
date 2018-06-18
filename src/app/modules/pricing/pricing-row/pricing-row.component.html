@@ -1,5 +1,4 @@
-<mat-list-item>
-
+<mat-list-item [class.odd]="odd">
     <div mat-list-avatar class="icon" *ngIf="!isMobile()">
         <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>

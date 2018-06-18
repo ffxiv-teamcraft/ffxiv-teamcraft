@@ -85,7 +85,7 @@ export class PricingComponent {
      */
     getCraftCost(row: ListRow): number {
         let total = 0;
-        row.requires.forEach(requirement => {
+        (row.requires || []).forEach(requirement => {
             const listRow = this.list.getItemById(requirement.id);
             const price = this.pricingService.getPrice(listRow);
             const amount = this.pricingService.getAmount(this.list.$key, listRow);
