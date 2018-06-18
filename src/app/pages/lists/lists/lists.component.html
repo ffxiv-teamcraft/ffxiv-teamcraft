@@ -45,34 +45,18 @@
 <div *ngIf="lists | async as display">
     <h2>{{'Lists' | translate}}</h2>
     <mat-divider class="divider"></mat-divider>
-    <div *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index;">
-        <div class="drop-zone" droppable (onDrop)="setListIndex(i, $event.dragData)" [dropScope]="'list'">
-            <div class="drop-overlay accent-background">
-                <mat-icon>save_alt</mat-icon>
-            </div>
-        </div>
-        <div draggable
-             [dragData]="list"
-             [dragScope]="'list'"
-             (onDragStart)="dragStart($event)">
-            <app-list-panel
-                [list]="list"
-                [expanded]="expanded.indexOf(list.$key) > -1"
-                (onrecipedelete)="removeRecipe($event, list, list.$key)"
-                (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
-                (ondelete)="delete(list)"
-                [authorUid]="user.uid"
-                [odd]="i%2>0"
-                [linkButton]="userData?.patron || userData?.admin"
-                [templateButton]="userData?.patron || userData?.admin"
-            ></app-list-panel>
-        </div>
-    </div>
-    <div class="drop-zone" droppable (onDrop)="setListIndex(display.basicLists.length, $event.dragData)"
-         [dropScope]="'list'">
-        <div class="drop-overlay accent-background">
-            <mat-icon>save_alt</mat-icon>
-        </div>
+    <div class="row" *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index; ">
+        <app-list-panel
+            [list]="list"
+            [expanded]="expanded.indexOf(list.$key) > -1"
+            (onrecipedelete)="removeRecipe($event, list, list.$key)"
+            (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+            (ondelete)="delete(list)"
+            [authorUid]="user.uid"
+            [odd]="i%2>0"
+            [linkButton]="userData?.patron || userData?.admin"
+            [templateButton]="userData?.patron || userData?.admin"
+        ></app-list-panel>
     </div>
     <div class="category" *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
         <h2>{{'Public_lists' | translate}}</h2>

@@ -13,8 +13,7 @@ import {
     MatInputModule,
     MatListModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
+    MatProgressSpinnerModule, MatRadioModule,
     MatSelectModule,
     MatSnackBarModule,
     MatStepperModule,
@@ -31,7 +30,6 @@ import {WorkshopDeleteConfirmationPopupComponent} from './workshop-delete-confir
 import {ExternalListImportPopupComponent} from './external-list-import-popup/external-list-import-popup.component';
 import {PipesModule} from 'app/pipes/pipes.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
-import {NgDragDropModule} from 'ng-drag-drop';
 
 const routes: Routes = [
     {
@@ -48,7 +46,6 @@ const routes: Routes = [
         FormsModule,
 
         ClipboardModule,
-        NgDragDropModule,
 
         RouterModule.forChild(routes),
 
