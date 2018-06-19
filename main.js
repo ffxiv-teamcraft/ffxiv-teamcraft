@@ -6,6 +6,8 @@ const config = new Config();
 
 const electronOauth2 = require('electron-oauth2');
 
+const argv = process.argv.slice(1);
+
 let win;
 let tray;
 let nativeIcon;
@@ -14,17 +16,29 @@ let updateInterval;
 
 let openedOverlays = {};
 
-const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
-    // Someone tried to run a second instance, we should focus our window.
-    if (win) {
-        if (win.isMinimized()) win.restore();
-        win.focus();
-    }
-});
+const options = {
+    multi: false
+};
 
-if (shouldQuit) {
-    app.quit();
-    return;
+for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === '--multi' || argv[i] === '-m') {
+        options.multi = true;
+    }
+}
+
+if (!options.multi) {
+    const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+        // Someone tried to run a second instance, we should focus our window.
+        if (win && !options.multi) {
+            if (win.isMinimized()) win.restore();
+            win.focus();
+        }
+    });
+
+    if (shouldQuit) {
+        app.quit();
+        return;
+    }
 }
 
 function createWindow() {
@@ -35,8 +49,10 @@ function createWindow() {
         icon: `file://${__dirname}/dist/assets/logo.png`
     };
     Object.assign(opts, config.get('win:bounds'));
-    opts.fullscreen = config.get('win:fullscreen') || false;
     win = new BrowserWindow(opts);
+    if (config.get('win:fullscreen')) {
+        win.maximize();
+    }
 
     win.loadURL(`file://${__dirname}/dist/index.html`);
 
@@ -59,7 +75,7 @@ function createWindow() {
     // save window size and position
     win.on('close', () => {
         config.set('win:bounds', win.getBounds());
-        config.set('win:fullscreen', win.isFullScreen());
+        config.set('win:fullscreen', win.isMaximized());
     });
 
     const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
