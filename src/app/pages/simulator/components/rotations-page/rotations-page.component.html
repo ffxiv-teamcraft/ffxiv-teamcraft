@@ -1,0 +1,44 @@
+<h1>{{'SIMULATOR.Rotations' | translate}}</h1>
+<div *ngIf="rotations$ | async as rotations">
+    <div *ngIf="rotations.length > 0; else noRotations">
+        <mat-expansion-panel *ngFor="let rotation of rotations; trackBy: trackByRotation" class="rotation-panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{rotation.getName()}}
+                    <button mat-icon-button (click)="$event.preventDefault();editRotationName(rotation)">
+                        <mat-icon>mode_edit</mat-icon>
+                    </button>
+                </mat-panel-title>
+                <button mat-icon-button *ngIf="linkButton"
+                        matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                        (click)="$event.stopPropagation(); openLinkPopup(rotation)">
+                    <mat-icon>link</mat-icon>
+                </button>
+                <button mat-icon-button ngxClipboard [cbContent]="getLink(rotation)"
+                        (click)="$event.stopPropagation()"
+                        matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                        (cbOnSuccess)="showCopiedNotification()">
+                    <mat-icon>share</mat-icon>
+                </button>
+                <button mat-icon-button
+                        routerLink="{{getLocalLink(rotation)}}"
+                        (click)="$event.stopPropagation()">
+                    <mat-icon>playlist_play</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteRotation(rotation.$key)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <app-action *ngFor="let step of getSteps(rotation)" [action]="step" [hideCost]="true"
+                            [jobId]="rotation.recipe.job"></app-action>
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <ng-template #noRotations>
+        <span class="no-rotations">{{'SIMULATOR.No_rotations' | translate}}</span>
+    </ng-template>
+    <button class="new-rotation" routerLink="/simulator/custom" mat-raised-button color="accent">
+        {{'SIMULATOR.New_custom_rotation' | translate}}
+    </button>
+</div>

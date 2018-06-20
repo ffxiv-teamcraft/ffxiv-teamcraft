@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{'ALARMS.New_group' | translate}}</h2>
+<div mat-dialog-content>
+    <form (submit)="submit()">
+        <mat-form-field>
+            <input matInput type="text" [formControl]="form" required>
+            <mat-error *ngIf="form.hasError('required')">
+                {{'Please_enter_a_name' | translate}}
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="accent">{{'Confirm' | translate}}</button>
+    </form>
+</div>

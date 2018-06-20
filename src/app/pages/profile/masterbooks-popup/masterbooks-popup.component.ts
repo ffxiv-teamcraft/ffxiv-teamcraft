@@ -39,6 +39,6 @@ export class MasterbooksPopupComponent {
      * Submits the data to save masterbooks in database.
      */
     submit(): void {
-        this.userService.update(this.data.user.$key, this.data.user);
+        this.userService.update(this.data.user.$key, this.data.user).subscribe();
     }
 }

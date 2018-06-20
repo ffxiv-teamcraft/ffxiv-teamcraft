@@ -1,9 +1,10 @@
 import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {DataService} from '../../../core/api/data.service';
-import {Observable} from 'rxjs/Observable';
+import {combineLatest, fromEvent, Observable} from 'rxjs';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import 'rxjs/add/operator/catch';
+
 import {UserService} from '../../../core/database/user.service';
+import {debounceTime, first, map, switchMap, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-character-add-popup',
@@ -32,12 +33,15 @@ export class CharacterAddPopupComponent implements OnInit {
 
     select(id: number): void {
         this.userService.getUserData()
-            .map(user => {
-                if (user !== null && !user.anonymous) {
-                    user.lodestoneId = id;
-                    this.userService.update(user.$key, user);
-                }
-            }).subscribe(() => this.dialogRef.close());
+            .pipe(
+                first(),
+                map(user => {
+                    if (user !== null && !user.anonymous) {
+                        user.lodestoneId = id;
+                        this.userService.update(user.$key, user);
+                    }
+                })
+            ).subscribe(() => this.dialogRef.close());
     }
 
     logOut(): void {
@@ -46,15 +50,25 @@ export class CharacterAddPopupComponent implements OnInit {
 
     ngOnInit(): void {
         // Create observables from navite input elements.
-        const name$ = Observable.fromEvent(this.nameInput.nativeElement, 'keyup').debounceTime(250).map(() => this.characterName);
-        const server$ = Observable.fromEvent(this.serverInput.nativeElement, 'keyup').debounceTime(250).map(() => this.serverName);
+        const name$ = fromEvent(this.nameInput.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(250),
+                map(() => this.characterName)
+            );
+        const server$ = fromEvent(this.serverInput.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(250),
+                map(() => this.serverName)
+            );
         // Combine them to observe the result.
-        this.search = Observable.combineLatest(name$, server$)
-            .do(() => this.loading = true)
-            // Replace the Observable with a search query.
-            .switchMap(data => {
-                return this.data.searchCharacter(data[0], data[1]);
-            })
-            .do(() => this.loading = false)
+        this.search = combineLatest(name$, server$)
+            .pipe(
+                tap(() => this.loading = true),
+                // Replace the Observable with a search query.
+                switchMap(data => {
+                    return this.data.searchCharacter(data[0], data[1]);
+                }),
+                tap(() => this.loading = false)
+            );
     }
 }

@@ -1,3 +1,6 @@
+import {Aetheryte} from '../data/aetheryte';
+import {Observable} from 'rxjs/index';
+
 export interface Alarm {
     itemId: number;
     icon: number;
@@ -14,4 +17,8 @@ export interface Alarm {
      * 4 = FSH (Spearfishing)
      */
     type: number;
+
+    aetheryte$?: Observable<Aetheryte>;
+
+    groupName?: string;
 }

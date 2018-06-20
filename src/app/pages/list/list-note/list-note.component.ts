@@ -23,7 +23,7 @@ export class ListNoteComponent {
     public save(): void {
         if (this.list.note.length <= 1000) {
             this.editNote = false;
-            this.listService.update(this.list.$key, this.list).subscribe(() => {
+            this.listService.set(this.list.$key, this.list).subscribe(() => {
             });
         }
     }

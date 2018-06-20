@@ -9,22 +9,7 @@ before_install:
   - npm i -g firebase-functions
 
 script:
-  - if [ $TRAVIS_BRANCH = "beta" ]; then npm run build:beta; else npm run build:prod; fi
-
-deploy:
-  - provider: firebase
-    skip_cleanup: true
-    on:
-      branch: master
-    token:
-      secure: m+OWcJipxF84Awq3rW3GZ+kH5WMOYYvYjn5Pj82Y+k9MRSA6MPqsk6bviOTcHK6R3hgif907ANnoqnDWLlF+AGh5F+eMfv4B/BFbqpKHkUUNz2FMgYRK+enSdovvvJQvm4EExOsrUA5jdZt0rPwXf5G3I3x3ZkFZb6c77UYjN7Kr/MoLNidGiDI7egkymRIkHSgfh8MWkZ4+QFAbHZER+DxRkQrMwvlVEbBSpY5OqPdaCflSL5MIFrRyXN4qWnPAyrx5dSegMTr5l6NWWS65Avk0fUucux7U2kRIkCnZ+11oE2qTjlE6U65zMxF9IU3VAqtOnt3KObQBO4WvPccLOev2tbg03t3bWC2TK4I/HkNPKwyqV6+iou9os6JSn7BEDCJiPmL9IGVzyzfwUyFSSMrNxjpZwUWvCkAxZbq5vMX5J+F4uhnPEIE1ZsuFlaKHn0NxQAgoFeH4cmTY3FPqtRb1vO/ndRlc/Z0IHY/UeEdS2aUVyb24xinudRXfqmZMZGVze2vzA5KEzY6tGqT23IKfWaRWY6imDiW7iDei6yvA70cz49veIHdxgVPNdqjjUtpt+oT5OtG7lxAGQJMjwyMKu52ARCuoP/spCxRrxudtVsxnzp8JynJgqDLydtKW5pn0lTAM/6u5Z+ga3DnIstrI0tuh+VXYT4ZztMH6j+Q=
-  - provider: firebase
-    skip_cleanup: true
-    project: "ffxiv-teamcraft-beta"
-    on:
-      branch: beta
-    token:
-      secure: m+OWcJipxF84Awq3rW3GZ+kH5WMOYYvYjn5Pj82Y+k9MRSA6MPqsk6bviOTcHK6R3hgif907ANnoqnDWLlF+AGh5F+eMfv4B/BFbqpKHkUUNz2FMgYRK+enSdovvvJQvm4EExOsrUA5jdZt0rPwXf5G3I3x3ZkFZb6c77UYjN7Kr/MoLNidGiDI7egkymRIkHSgfh8MWkZ4+QFAbHZER+DxRkQrMwvlVEbBSpY5OqPdaCflSL5MIFrRyXN4qWnPAyrx5dSegMTr5l6NWWS65Avk0fUucux7U2kRIkCnZ+11oE2qTjlE6U65zMxF9IU3VAqtOnt3KObQBO4WvPccLOev2tbg03t3bWC2TK4I/HkNPKwyqV6+iou9os6JSn7BEDCJiPmL9IGVzyzfwUyFSSMrNxjpZwUWvCkAxZbq5vMX5J+F4uhnPEIE1ZsuFlaKHn0NxQAgoFeH4cmTY3FPqtRb1vO/ndRlc/Z0IHY/UeEdS2aUVyb24xinudRXfqmZMZGVze2vzA5KEzY6tGqT23IKfWaRWY6imDiW7iDei6yvA70cz49veIHdxgVPNdqjjUtpt+oT5OtG7lxAGQJMjwyMKu52ARCuoP/spCxRrxudtVsxnzp8JynJgqDLydtKW5pn0lTAM/6u5Z+ga3DnIstrI0tuh+VXYT4ZztMH6j+Q=
+  - npm test && npm run build:prod
 
 notifications:
   email:

@@ -1,8 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
-import {Observable} from 'rxjs/Observable';
+import {fromEvent, Observable} from 'rxjs';
 import {MatDialogRef} from '@angular/material';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {debounceTime, map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-add-alarm-popup',
@@ -22,23 +23,34 @@ export class AddAlarmPopupComponent implements OnInit {
                 private localizedDataService: LocalizedDataService) {
     }
 
-    close(node: any): void {
-        this.dialogRef.close(node);
+    close(nodes: any[]): void {
+        this.dialogRef.close(nodes.map(node => {
+            node.zoneId = this.localizedDataService.getAreaIdByENName(node.zone);
+            node.placeId = this.localizedDataService.getAreaIdByENName(node.title);
+            return node;
+        }));
     }
 
     ngOnInit() {
-        this.results = Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
-            .debounceTime(250)
-            .map(() => {
-                return this.bellNodesService.getNodesByItemName(this.itemName);
-            })
-            .map((nodes) => {
-                return nodes.map(node => {
-                    node.zoneId = this.localizedDataService.getAreaIdByENName(node.zone);
-                    node.placeId = this.localizedDataService.getAreaIdByENName(node.title);
-                    return node;
+        this.results = fromEvent(this.searchInput.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(250),
+                map(() => {
+                    return this.bellNodesService.getNodesByItemName(this.itemName);
+                }),
+                map((nodes) => {
+                    const res = [];
+                    nodes.forEach((node) => {
+                        const resRow = res.find(n => n.itemId === node.itemId);
+                        if (resRow === undefined) {
+                            res.push({itemId: node.itemId, icon: node.icon, nodes: [node]});
+                        } else {
+                            resRow.nodes.push(node);
+                        }
+                    });
+                    return res;
                 })
-            });
+            );
     }
 
 }

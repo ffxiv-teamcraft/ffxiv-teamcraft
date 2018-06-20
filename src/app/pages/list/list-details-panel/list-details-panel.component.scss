@@ -13,7 +13,11 @@ mat-expansion-panel {
     }
 }
 
-.subheader{
+.subheader {
     display: flex;
     align-items: center;
+}
+
+.export-button {
+    margin-right: 10px;
 }

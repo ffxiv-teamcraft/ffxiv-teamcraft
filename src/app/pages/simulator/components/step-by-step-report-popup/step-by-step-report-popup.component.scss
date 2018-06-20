@@ -1,0 +1,14 @@
+.table-container {
+    min-width: 500px;
+    padding-bottom: 20px;
+    &.mobile {
+        min-width: 250px;
+        padding-bottom: 10px;
+    }
+    table {
+        width: 100%;
+        .action {
+            width: 40px;
+        }
+    }
+}

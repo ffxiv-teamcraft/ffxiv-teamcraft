@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {CustomLinksService} from '../../../core/database/custom-links/custom-links.service';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
-import {Observable} from 'rxjs/Observable';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
+import {EMPTY, Observable, of} from 'rxjs';
 import {UserService} from '../../../core/database/user.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {CustomLinkPopupComponent} from 'app/pages/custom-links/custom-link-popup/custom-link-popup.component';
@@ -13,6 +13,8 @@ import {NicknamePopupComponent} from '../../profile/nickname-popup/nickname-popu
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {TemplatePopupComponent} from '../../template/template-popup/template-popup.component';
+import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
+import {catchError, filter, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-custom-links',
@@ -26,12 +28,22 @@ export class CustomLinksComponent implements OnInit {
 
     constructor(public customLinkService: CustomLinksService, private userService: UserService, private dialog: MatDialog,
                 private listService: ListService, private workshopService: WorkshopService, private snack: MatSnackBar,
-                private translator: TranslateService, private templateService: ListTemplateService) {
-        this.links = this.userService.getUserData().mergeMap(user => {
-            return this.customLinkService.getAllByAuthor(user.$key).mergeMap(links => {
-                return this.templateService.getAllByAuthor(user.$key).map(templates => links.concat(templates));
-            });
-        });
+                private translator: TranslateService, private templateService: ListTemplateService,
+                private rotationsService: CraftingRotationService) {
+        this.links = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return this.customLinkService.getAllByAuthor(user.$key)
+                        .pipe(
+                            mergeMap(links => {
+                                return this.templateService.getAllByAuthor(user.$key)
+                                    .pipe(
+                                        map(templates => links.concat(templates))
+                                    );
+                            })
+                        );
+                })
+            );
     }
 
     trackByLink(index: number, link: CustomLink) {
@@ -51,12 +63,16 @@ export class CustomLinksComponent implements OnInit {
     }
 
     deleteLink(link: CustomLink): void {
-        this.dialog.open(ConfirmationPopupComponent).afterClosed().filter(res => res).mergeMap(() => {
-            if (link.template) {
-                return this.templateService.remove(link.$key);
-            }
-            return this.customLinkService.remove(link.$key);
-        }).subscribe();
+        this.dialog.open(ConfirmationPopupComponent).afterClosed()
+            .pipe(
+                filter(res => res),
+                mergeMap(() => {
+                    if (link.template) {
+                        return this.templateService.remove(link.$key);
+                    }
+                    return this.customLinkService.remove(link.$key);
+                })
+            ).subscribe();
     }
 
     showCopiedNotification(): void {
@@ -64,7 +80,7 @@ export class CustomLinksComponent implements OnInit {
             this.translator.instant('CUSTOM_LINKS.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
@@ -73,48 +89,54 @@ export class CustomLinksComponent implements OnInit {
             this.translator.instant('LIST_TEMPLATE.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
     getName(plink: CustomLink): Observable<string> {
-        return Observable.of(plink)
-            .mergeMap(link => {
-                if (link.template) {
-                    return this.listService.get((<ListTemplate>link).originalListId)
-                } else if (link.redirectTo.startsWith('list/')) {
-                    return this.listService.get(link.redirectTo.replace('list/', ''));
-                } else if (link.redirectTo.startsWith('workshop/')) {
-                    return this.workshopService.get(link.redirectTo.replace('workshop/', ''));
-                }
-                return Observable.of(null)
-            })
-            .catch(() => {
-                if (!plink.template) {
-                    return this.customLinkService.remove(plink.$key).map(() => null);
-                } else {
-                    return this.templateService.remove(plink.$key).map(() => null);
-                }
-            })
-            .filter(val => val !== null)
-            .map(element => element.name);
+        return of(plink)
+            .pipe(
+                mergeMap(link => {
+                    if (link.template) {
+                        return this.listService.get((<ListTemplate>link).originalListId)
+                    } else if (link.redirectTo.startsWith('list/')) {
+                        return this.listService.get(link.redirectTo.replace('list/', ''));
+                    } else if (link.redirectTo.startsWith('workshop/')) {
+                        return this.workshopService.get(link.redirectTo.replace('workshop/', ''));
+                    } else if (link.redirectTo.startsWith('simulator/')) {
+                        return this.rotationsService.get(link.redirectTo.split('/')[2]);
+                    }
+                    return of(null)
+                }),
+                catchError(() => {
+                    if (!plink.template) {
+                        return this.customLinkService.remove(plink.$key).pipe(map(() => null));
+                    } else {
+                        return this.templateService.remove(plink.$key).pipe(map(() => null));
+                    }
+                }),
+                filter(val => val !== null),
+                map(element => element.name || element.getName())
+            );
     }
 
     ngOnInit(): void {
         this.userService.getUserData()
-            .mergeMap(user => {
-                if (user.nickname === undefined || user.nickname.length === 0) {
-                    return this.dialog.open(NicknamePopupComponent, {
-                        data: {
-                            user: user,
-                            hintTextKey: 'PROFILE.Feature_requires_nickname',
-                            canCancel: false
-                        },
-                        disableClose: true,
-                    }).afterClosed();
-                }
-                return Observable.empty();
-            })
+            .pipe(
+                mergeMap(user => {
+                    if (user.nickname === undefined || user.nickname.length === 0) {
+                        return this.dialog.open(NicknamePopupComponent, {
+                            data: {
+                                user: user,
+                                hintTextKey: 'PROFILE.Feature_requires_nickname',
+                                canCancel: false
+                            },
+                            disableClose: true,
+                        }).afterClosed();
+                    }
+                    return EMPTY;
+                })
+            )
             .subscribe();
     }
 

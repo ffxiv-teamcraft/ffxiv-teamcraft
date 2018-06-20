@@ -1,22 +1,33 @@
 <h2 mat-dialog-title>Timer options</h2>
 <div mat-dialog-content>
-    <mat-form-field>
-        <mat-select placeholder="{{'Sound' | translate}}" [value]="settings.alarmSound"
-                    (change)="setSound($event.value)">
+    <mat-slide-toggle *ngIf="platform.isDesktop()" [(ngModel)]="enableCustomSound">
+        {{'ALARMS.Custom_sound' | translate}}
+    </mat-slide-toggle>
+    <mat-form-field *ngIf="!enableCustomSound">
+        <mat-select placeholder="{{'Sound' | translate}}" [ngModel]="settings.alarmSound"
+                    (ngModelChange)="setSound($event)">
             <mat-option *ngFor="let sound of sounds" [value]="sound">
                 {{ sound }}
             </mat-option>
         </mat-select>
     </mat-form-field>
+    <div *ngIf="enableCustomSound" class="custom-alarm">
+        <div class="sound-preview">{{settings.alarmSound}}
+            <button mat-icon-button (click)="previewSound()">
+                <mat-icon>play_circle_outline</mat-icon>
+            </button>
+        </div>
+        <input type="file" (change)="setSound($event.target.files[0].path)" accept="audio/*">
+    </div>
     <mat-form-field>
-        <mat-select placeholder="{{'Early_by' | translate}}" [value]="settings.alarmHoursBefore"
-                    (change)="setHoursBefore($event.value)">
+        <mat-select placeholder="{{'Early_by' | translate}}" [ngModel]="settings.alarmHoursBefore"
+                    (ngModelChange)="setHoursBefore($event)">
             <mat-option *ngFor="let value of [0,1,2,5]" [value]="value">
                 {{ value }}
             </mat-option>
         </mat-select>
     </mat-form-field>
     <p>Volume</p>
-    <mat-slider min="1" max="100" step="1" [value]="settings.alarmVolume * 100"
-                (change)="setVolume($event.value/100)"></mat-slider>
+    <mat-slider min="1" max="100" step="1" [ngModel]="settings.alarmVolume * 100"
+                (ngModelChange)="setVolume($event/100)"></mat-slider>
 </div>

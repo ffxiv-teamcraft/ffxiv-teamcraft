@@ -38,9 +38,13 @@ import {CustomLinksService} from './database/custom-links/custom-links.service';
 import {PatreonGuard} from './guard/patreon.guard';
 import {MathToolsService} from './tools/math-tools';
 import {PendingChangesService} from './database/pending-changes/pending-changes.service';
+import {OauthService} from './auth/oauth.service';
+import {LinkToolsService} from './tools/link-tools.service';
+import {PlatformService} from './tools/platform.service';
+import {IpcService} from './electron/ipc.service';
 
 
-const dataExtractorProviders: Provider[] = [
+export const DATA_EXTRACTORS: Provider[] = [
     {provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService, DataService], multi: true},
     {provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService], multi: true},
     {provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [DataService], multi: true},
@@ -66,7 +70,7 @@ const dataExtractorProviders: Provider[] = [
     ],
     providers: [
         // Data Extraction
-        ...dataExtractorProviders,
+        ...DATA_EXTRACTORS,
         DataExtractorService,
         // Other services
         GarlandToolsService,
@@ -86,6 +90,10 @@ const dataExtractorProviders: Provider[] = [
         PatreonGuard,
         MathToolsService,
         PendingChangesService,
+        OauthService,
+        LinkToolsService,
+        PlatformService,
+        IpcService,
     ],
     declarations: [
         I18nPipe,

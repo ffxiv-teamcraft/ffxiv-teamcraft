@@ -6,7 +6,7 @@ import {ProfileGuard} from './profile.guard';
 import {DatabaseModule} from '../../core/database/database.module';
 import {
     MatButtonModule,
-    MatCardModule,
+    MatCardModule, MatCheckboxModule,
     MatDialogModule,
     MatGridListModule,
     MatIconModule, MatInputModule,
@@ -28,6 +28,7 @@ import {ChangeEmailPopupComponent} from './change-email-popup/change-email-popup
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PatreonLinkPopupComponent } from './patreon-link-popup/patreon-link-popup.component';
 import { NicknamePopupComponent } from './nickname-popup/nickname-popup.component';
+import { StatsEditPopupComponent } from './stats-edit-popup/stats-edit-popup.component';
 
 const routes: Routes = [{
     path: 'profile',
@@ -57,6 +58,7 @@ const routes: Routes = [{
         MatDialogModule,
         MatListModule,
         MatInputModule,
+        MatCheckboxModule,
 
         FlexLayoutModule,
 
@@ -73,6 +75,7 @@ const routes: Routes = [{
         ChangeEmailPopupComponent,
         PatreonLinkPopupComponent,
         NicknamePopupComponent,
+        StatsEditPopupComponent,
     ],
     providers: [
         ProfileGuard,
@@ -84,6 +87,7 @@ const routes: Routes = [{
         ChangeEmailPopupComponent,
         PatreonLinkPopupComponent,
         NicknamePopupComponent,
+        StatsEditPopupComponent,
     ]
 })
 export class ProfileModule {

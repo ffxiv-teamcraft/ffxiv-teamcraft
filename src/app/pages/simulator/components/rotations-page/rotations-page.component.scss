@@ -1,0 +1,26 @@
+
+mat-panel-title {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-rotations {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    opacity: .7;
+}
+
+.new-rotation {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.rotation-panel {
+    margin: 10px 0;
+}

@@ -6,9 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     MatButtonModule,
     MatCardModule,
-    MatExpansionModule,
+    MatExpansionModule, MatFormFieldModule,
     MatGridListModule,
-    MatIconModule,
+    MatIconModule, MatInputModule,
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
@@ -19,7 +19,7 @@ import {
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
-import {AngularFireModule} from 'angularfire2';
+import {FirebaseOptionsToken} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {RouterModule} from '@angular/router';
@@ -42,7 +42,6 @@ import {RecipesModule} from './pages/recipes/recipes.module';
 import {ListsModule} from 'app/pages/lists/lists.module';
 import {BetaDisclaimerModule} from './modules/beta-disclaimer/beta-disclaimer.module';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {FeaturesModule} from './pages/features/features.module';
 import {AlarmsModule} from './pages/alarms/alarms.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {PublicListsModule} from './pages/public-lists/public-lists.module';
@@ -57,17 +56,29 @@ import {CustomLinksModule} from './pages/custom-links/custom-links.module';
 import {LinkModule} from './pages/link/link.module';
 import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
+import {MarkdownModule} from 'ngx-markdown';
+import {WikiModule} from './pages/wiki/wiki.module';
+import {SimulatorModule} from './pages/simulator/simulator.module';
+import {NgDragDropModule} from 'ng-drag-drop';
+import {IS_ELECTRON} from './core/tools/platform.service';
 
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+    return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
+    providers: [
+        {provide: FirebaseOptionsToken, useValue: environment.firebase}
+    ],
     imports: [
         FlexLayoutModule,
+
+        MarkdownModule.forRoot(),
+
+        NgDragDropModule.forRoot(),
 
         TranslateModule.forRoot({
             loader: {
@@ -77,12 +88,11 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
 
-        AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
         AngularFirestoreModule,
 
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], {useHash: IS_ELECTRON}),
 
         HttpClientModule,
         // Animations for material.
@@ -100,6 +110,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatListModule,
         MatGridListModule,
         MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
 
         BrowserModule,
         FormsModule,
@@ -124,7 +136,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProfileModule,
         CustomLinksModule,
         LinkModule,
-        FeaturesModule,
+        WikiModule,
         RecipesModule,
         ListsModule,
         PublicListsModule,
@@ -139,6 +151,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         GatheringLocationModule,
         WorkshopModule,
         TemplateModule,
+        SimulatorModule,
     ],
     bootstrap: [AppComponent]
 })

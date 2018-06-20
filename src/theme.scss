@@ -10,6 +10,14 @@
     }
 }
 
+@mixin background-color($theme){
+    @if map-get($theme, is-dark) {
+        background-color: #303030;
+    } @else {
+        background-color: #fafafa;
+    }
+}
+
 // Custom mixins for theming
 @mixin theme-background($theme) {
     $accent: map-get($theme, accent);
@@ -17,6 +25,15 @@
     $warn: map-get($theme, warn);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+
+    .theme-background {
+        @include background-color($theme);
+        @include text-color($theme);
+    }
+
+    .theme-text-color {
+        @include text-color($theme);
+    }
 
     .accent-background {
         background: mat-color($accent);
@@ -42,8 +59,6 @@
         }
     }
 }
-
-
 
 @mixin expansion-panel-accent($theme) {
     mat-expansion-panel.accent {
@@ -78,6 +93,30 @@
         @include text-color($theme);
     }
 }
+
+@mixin toc-theme($theme) {
+    div.toc {
+        $accent: map-get($theme, accent);
+        $primary: map-get($theme, primary);
+        border-left: solid 4px mat-color($primary);
+        li {
+            opacity: .8;
+            &.toc-active {
+                color: mat-color($accent);
+                opacity: 1;
+                &:hover {
+                    color: mat-color($accent);
+                    opacity: 1;
+                }
+            }
+            &:hover {
+                color: mat-color($accent);
+                opacity: .6;
+            }
+        }
+    }
+}
+
 // Palette
 // orange
 $primary-orange: mat-palette($mat-orange, 700);
@@ -118,7 +157,6 @@ $primary-pink: mat-palette($mat-pink, 500);
 $accent-pink: mat-palette($mat-pink, 300);
 
 $warn: mat-palette($mat-red, 600);
-
 
 // Dark or Light theme
 // orange
@@ -163,6 +201,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-theme);
     @include card-accent($dark-theme);
     @include color-fixes($dark-theme);
+    @include toc-theme($dark-theme);
 }
 
 // Light orange theme class
@@ -172,6 +211,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-orange-theme);
     @include card-accent($light-orange-theme);
     @include color-fixes($light-orange-theme);
+    @include toc-theme($light-orange-theme);
 }
 
 // Light teal theme class
@@ -181,6 +221,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-teal-theme);
     @include card-accent($light-teal-theme);
     @include color-fixes($light-teal-theme);
+    @include toc-theme($light-teal-theme);
 }
 
 // Dark teal theme class
@@ -190,6 +231,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-teal-theme);
     @include card-accent($dark-teal-theme);
     @include color-fixes($dark-teal-theme);
+    @include toc-theme($dark-teal-theme);
 }
 
 // Light brown theme class
@@ -199,6 +241,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-brown-theme);
     @include card-accent($light-brown-theme);
     @include color-fixes($light-brown-theme);
+    @include toc-theme($light-brown-theme);
 }
 
 // Light amber theme class
@@ -208,6 +251,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-amber-theme);
     @include card-accent($light-amber-theme);
     @include color-fixes($light-amber-theme);
+    @include toc-theme($light-amber-theme);
 }
 
 // Dark amber theme class
@@ -217,6 +261,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-amber-theme);
     @include card-accent($dark-amber-theme);
     @include color-fixes($dark-amber-theme);
+    @include toc-theme($dark-amber-theme);
 }
 
 // Light green theme class
@@ -226,6 +271,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-green-theme);
     @include card-accent($light-green-theme);
     @include color-fixes($light-green-theme);
+    @include toc-theme($light-green-theme);
 }
 
 // Dark lime theme class
@@ -235,6 +281,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-lime-theme);
     @include card-accent($dark-lime-theme);
     @include color-fixes($dark-lime-theme);
+    @include toc-theme($dark-lime-theme);
 }
 
 // Light lime theme class
@@ -244,6 +291,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-lime-theme);
     @include card-accent($light-lime-theme);
     @include color-fixes($light-lime-theme);
+    @include toc-theme($light-lime-theme);
 }
 
 // Dark cyan theme class
@@ -253,6 +301,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-cyan-theme);
     @include card-accent($dark-cyan-theme);
     @include color-fixes($dark-cyan-theme);
+    @include toc-theme($dark-cyan-theme);
 }
 
 // Light cyan theme class
@@ -262,6 +311,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-cyan-theme);
     @include card-accent($light-cyan-theme);
     @include color-fixes($light-cyan-theme);
+    @include toc-theme($light-cyan-theme);
 }
 
 // Dark indigo theme class
@@ -271,6 +321,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-indigo-theme);
     @include card-accent($dark-indigo-theme);
     @include color-fixes($dark-indigo-theme);
+    @include toc-theme($dark-indigo-theme);
 }
 
 // Light indigo theme class
@@ -280,6 +331,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-indigo-theme);
     @include card-accent($light-indigo-theme);
     @include color-fixes($light-indigo-theme);
+    @include toc-theme($light-indigo-theme);
 }
 
 // Dark blue theme class
@@ -289,6 +341,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-blue-theme);
     @include card-accent($dark-blue-theme);
     @include color-fixes($dark-blue-theme);
+    @include toc-theme($dark-blue-theme);
 }
 
 // Light blue theme class
@@ -298,6 +351,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-blue-theme);
     @include card-accent($light-blue-theme);
     @include color-fixes($light-blue-theme);
+    @include toc-theme($light-blue-theme);
 }
 
 // Dark deep-purple theme class
@@ -307,6 +361,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-deep-purple-theme);
     @include card-accent($dark-deep-purple-theme);
     @include color-fixes($dark-deep-purple-theme);
+    @include toc-theme($dark-deep-purple-theme);
 }
 
 // Light deep-purple theme class
@@ -316,6 +371,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-deep-purple-theme);
     @include card-accent($light-deep-purple-theme);
     @include color-fixes($light-deep-purple-theme);
+    @include toc-theme($light-deep-purple-theme);
 }
 
 // Dark red theme class
@@ -325,6 +381,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-red-theme);
     @include card-accent($dark-red-theme);
     @include color-fixes($dark-red-theme);
+    @include toc-theme($dark-red-theme);
 }
 
 // Light red theme class
@@ -334,6 +391,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-red-theme);
     @include card-accent($light-red-theme);
     @include color-fixes($light-red-theme);
+    @include toc-theme($light-red-theme);
 }
 
 // Dark pink theme class
@@ -343,6 +401,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($dark-pink-theme);
     @include card-accent($dark-pink-theme);
     @include color-fixes($dark-pink-theme);
+    @include toc-theme($dark-pink-theme);
 }
 
 // Light pink theme class
@@ -352,6 +411,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include expansion-panel-accent($light-pink-theme);
     @include card-accent($light-pink-theme);
     @include color-fixes($light-pink-theme);
+    @include toc-theme($light-pink-theme);
 }
 
 // Responsive breakpoint mixin/definitions

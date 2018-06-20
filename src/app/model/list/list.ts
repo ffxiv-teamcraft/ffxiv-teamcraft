@@ -1,5 +1,4 @@
 import {ListRow} from './list-row';
-import {DataModel} from '../../core/database/storage/data-model';
 import {CraftAddition} from './craft-addition';
 import {GarlandToolsService} from '../../core/api/garland-tools.service';
 import {I18nToolsService} from '../../core/tools/i18n-tools.service';
@@ -97,8 +96,8 @@ export class List extends DataWithPermissions {
      * @param {(arg: ListRow) => void} method
      */
     public forEachCraft(method: (arg: ListRow) => void): void {
-        (this.preCrafts || []).forEach(method);
-        (this.recipes || []).forEach(method);
+        (this.preCrafts || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+        (this.recipes || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
     }
 
     /**
@@ -109,7 +108,7 @@ export class List extends DataWithPermissions {
         return (this.others || []).concat(this.gathers || []).concat(this.preCrafts || []);
     }
 
-    public addToRecipes(data: ListRow): number {
+    public addToItems(data: ListRow): number {
         return this.add(this.recipes, data, true);
     }
 
@@ -300,16 +299,14 @@ export class List extends DataWithPermissions {
      */
     public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
-        const previousDone = item.done;
-        item.done += amount;
-        if (item.done > item.amount) {
-            item.done = item.amount;
-        }
-        if (item.done < 0) {
-            item.done = 0;
-        }
+        const previousDone = MathTools.absoluteCeil(item.done / item.yield);
         if (setUsed) {
+            // Save previous used amount
+            const previousUsed = item.used;
+            // Update used amount
             item.used += amount;
+            // Set amount to the amount of items to add to the total, nothing can be removed so min is 0.
+            amount = Math.max(0, amount - (item.done - previousUsed));
             if (item.used > item.amount) {
                 item.used = item.amount;
             }
@@ -317,8 +314,15 @@ export class List extends DataWithPermissions {
                 item.used = 0;
             }
         }
+        item.done += amount;
+        if (item.done > item.amount) {
+            item.done = item.amount;
+        }
+        if (item.done < 0) {
+            item.done = 0;
+        }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
-        if (item.requires !== undefined) {
+        if (item.requires !== undefined && MathTools.absoluteCeil(item.done / item.yield) > previousDone) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id, excludeRecipes);
                 if (requirementItem !== undefined) {
@@ -366,7 +370,7 @@ export class List extends DataWithPermissions {
         }
         let res = false;
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '3.4.6');
+        res = res || semver.ltr(this.version, '4.1.7');
         return res;
     }
 

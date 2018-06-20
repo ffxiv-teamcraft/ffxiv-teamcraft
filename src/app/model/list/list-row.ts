@@ -13,7 +13,9 @@ import {DataModel} from '../../core/database/storage/data-model';
 export class ListRow extends DataModel {
     icon?: number;
     id: number;
+    // The amount of items needed for the craft.
     amount: number;
+    // The amount of crafts needed to get the amount of items needed.
     amount_needed?: number;
     done: number;
     used: number;

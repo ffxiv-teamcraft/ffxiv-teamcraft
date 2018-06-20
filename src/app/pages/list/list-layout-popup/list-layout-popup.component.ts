@@ -8,6 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {ListLayout} from '../../../core/layout/list-layout';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {filter} from 'rxjs/operators';
 
 @Component({
     selector: 'app-list-layout-popup',
@@ -25,6 +26,9 @@ export class ListLayoutPopupComponent {
                 private serializer: NgSerializerService) {
         this.layoutService.layouts.subscribe(layouts => {
             this.availableLayouts = layouts;
+            if (this.availableLayouts[this.selectedIndex] === undefined) {
+                this.selectedIndex = 0;
+            }
         });
         this.selectedIndex = +(localStorage.getItem('layout:selected') || 0);
     }
@@ -37,7 +41,7 @@ export class ListLayoutPopupComponent {
     public deleteLayout(): void {
         this.dialog.open(ConfirmationPopupComponent)
             .afterClosed()
-            .filter(res => res === true)
+            .pipe(filter(res => res === true))
             .subscribe(() => {
                 this.availableLayouts.splice(this.selectedIndex, 1);
                 this.selectedIndex = 0;
@@ -76,7 +80,7 @@ export class ListLayoutPopupComponent {
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }

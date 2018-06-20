@@ -4,25 +4,78 @@
 
 <h3 class="list-count">{{list_count | async}} {{"HOME_PAGE.count" | translate}}</h3>
 
-<p>{{"HOME_PAGE.p1" | translate}}</p>
-
-<p>{{"HOME_PAGE.p2" | translate}}</p>
-
-<p>{{"HOME_PAGE.p3" | translate}}</p>
-
-<a href="https://www.patreon.com/bePatron?u=702160" mat-raised-button class="patreon"> <img
+<a href="https://www.patreon.com/bePatron?u=702160" target="_blank" mat-raised-button class="patreon"> <img
     src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
     class="patreon-logo">{{"HOME_PAGE.support_patreon" | translate}}</a>
 
 <app-donation-button></app-donation-button>
 
-<mat-grid-list [cols]="isMobile()?1:2" gutterSize="10" rowHeight="300px" class="bottom-cards">
-    <mat-grid-tile>
-        <mat-card class="bottom-card">
-            <mat-card-header>
-                <mat-card-title><h2>{{"HOME_PAGE.support_title" | translate}}</h2></mat-card-title>
-            </mat-card-header>
+<h2 class="mat-display-1">{{'HOME_PAGE.GET_STARTED.Title' | translate}}</h2>
+<div class="get-started">
+    <mat-card class="get-started-card">
+        <mat-card-title>
+            {{'HOME_PAGE.GET_STARTED.First_list_title' | translate}}
+        </mat-card-title>
+        <mat-card-content>
+            {{'HOME_PAGE.GET_STARTED.First_list_content' | translate}}
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/recipes" mat-button color="primary">
+                <mat-icon>search</mat-icon>
+                {{'HOME_PAGE.GET_STARTED.First_list_link' |
+                translate}}</a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="get-started-card">
+        <mat-card-title>
+            {{'HOME_PAGE.GET_STARTED.Create_alarm_title' | translate}}
+        </mat-card-title>
+        <mat-card-content>
+            {{'HOME_PAGE.GET_STARTED.Create_alarm_content' | translate}}
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/alarms" mat-button color="primary">
+                <mat-icon>alarm</mat-icon>
+                {{'HOME_PAGE.GET_STARTED.Create_alarm_link' |
+                translate}}</a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="get-started-card">
+        <mat-card-title>
+            {{'HOME_PAGE.GET_STARTED.Create_rotations_title' | translate}}
+        </mat-card-title>
+        <mat-card-content>
+            {{'HOME_PAGE.GET_STARTED.Create_rotations_content' | translate}}
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/rotations" mat-button color="primary">
+                <mat-icon>widgets</mat-icon>
+                {{'HOME_PAGE.GET_STARTED.Create_rotations_link' |
+                translate}}</a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="get-started-card">
+        <mat-card-title>
+            {{'HOME_PAGE.GET_STARTED.Access_wiki_title' | translate}}
+        </mat-card-title>
+        <mat-card-content>
+            {{'HOME_PAGE.GET_STARTED.Access_wiki_content' | translate}}
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/wiki/home" mat-button color="primary">
+                <mat-icon>library_books</mat-icon>
+                {{'HOME_PAGE.GET_STARTED.Access_wiki_link' |
+                translate}}</a>
+        </mat-card-actions>
+    </mat-card>
+</div>
 
+<div class="cards">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title><h2>{{"HOME_PAGE.support_title" | translate}}</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
             <p>{{"HOME_PAGE.support_content_discord" | translate}}</p>
 
             <a mat-raised-button href="https://discord.gg/r6qxt6P" target="_blank" color="accent">Discord</a>
@@ -30,14 +83,13 @@
             <p>{{"HOME_PAGE.support_comtent_facebook" | translate}}</p>
 
             <a mat-raised-button href="https://facebook.com/FFXIVTeamcraft" target="_blank" color="accent">Facebook</a>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="bottom-card">
-            <mat-card-header>
-                <mat-card-title><h2>{{"HOME_PAGE.contribute_title" | translate}}</h2></mat-card-title>
-            </mat-card-header>
-
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title><h2>{{"HOME_PAGE.contribute_title" | translate}}</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
             <p>{{"HOME_PAGE.contribute_content" | translate}}</p>
 
             <a mat-raised-button href="https://github.com/supamiu/ffxiv-teamcraft" target="_blank"
@@ -48,6 +100,6 @@
             <a mat-raised-button href="https://github.com/Supamiu/ffxiv-teamcraft/blob/master/CHANGELOG.md"
                target="_blank"
                color="accent">Changelog</a>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>

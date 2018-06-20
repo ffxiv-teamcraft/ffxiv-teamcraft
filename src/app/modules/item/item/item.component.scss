@@ -12,6 +12,20 @@
 
     .even {
         background-color: rgba(123, 123, 123, .2);
+        &.done-row {
+            background-color: rgba(0, 255, 0, .1);
+        }
+        &.craftable-row {
+            background-color: rgba(19, 168, 255, .2);
+        }
+    }
+
+    .done-row {
+        background-color: rgba(94, 255, 91, 0.15);
+    }
+
+    .craftable-row {
+        background-color: rgba(19, 168, 255, .3);
     }
 
     .strike {
@@ -140,10 +154,21 @@
         }
         text-align: center;
     }
+
     .crafted-by {
         height: 30px;
         &.compact {
             height: 20px;
+        }
+    }
+
+    .crafter-button {
+        position: relative;
+        .crafter-level {
+            font-size: 90%;
+            position: absolute;
+            bottom: -22px;
+            left: 30%;
         }
     }
     .timers-container {
@@ -237,6 +262,16 @@
                 .crafted-by {
                     height: 24px;
                 }
+                .crafter-button {
+                    position: relative;
+                    .crafter-level {
+                        font-size: 90%;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 6px;
+                    }
+                }
+
                 .currency {
                     width: 24px;
                     margin: 0;

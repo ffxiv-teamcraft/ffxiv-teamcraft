@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {CoreModule} from '../../core/core.module';
 import {DonationModule} from '../../modules/donation/donation.module';
-import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatIconModule} from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
@@ -32,6 +32,7 @@ const routes: Routes = [
         MatButtonModule,
         MatGridListModule,
         MatCardModule,
+        MatIconModule,
     ],
     declarations: [
         HomeComponent

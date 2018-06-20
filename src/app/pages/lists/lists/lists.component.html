@@ -1,13 +1,13 @@
 <div class="top-section">
     <form (submit)="createNewList()" #f="ngForm">
-        <mat-input-container>
+        <mat-form-field>
             <input matInput type="text" name="listname" placeholder="{{'List_name' | translate}}"
                    [formControl]="newListFormControl" required>
             <mat-error
                 *ngIf="newListFormControl.hasError('required')">
                 {{'Please_enter_a_name' | translate}}
             </mat-error>
-        </mat-input-container>
+        </mat-form-field>
         <button type="submit" mat-raised-button color="accent">{{'Add_a_list' | translate}}</button>
     </form>
 
@@ -23,8 +23,6 @@
     <mat-icon>file_download</mat-icon>
     {{'LISTS.IMPORT.Title' | translate}}
 </button>
-
-<h3 class="mat-h3">{{'Lists' | translate}}</h3>
 
 <div class="filter">
     <mat-form-field>
@@ -44,12 +42,14 @@
     <mat-icon>call_merge</mat-icon>
 </button>
 
-<div class="lists-container" *ngIf="lists | async as display">
+<div *ngIf="lists | async as display">
+    <h2>{{'Lists' | translate}}</h2>
+    <mat-divider class="divider"></mat-divider>
     <div class="row" *ngFor="let list of display.basicLists;trackBy: trackByListsFn; let i = index; ">
         <app-list-panel
             [list]="list"
             [expanded]="expanded.indexOf(list.$key) > -1"
-            (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+            (onrecipedelete)="removeRecipe($event, list, list.$key)"
             (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
             (ondelete)="delete(list)"
             [authorUid]="user.uid"
@@ -58,10 +58,36 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
-    <div class="shared-lists">
-        <h2>{{"LISTS.Shared_lists" | translate}}</h2>
+    <div class="category" *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
+        <h2>{{'Public_lists' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
-        <div class="row" *ngFor="let list of sharedLists | async;trackBy: trackByListsFn; let i = index;">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{'Public_lists' | translate}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let list of display.publicLists;trackBy: trackByListsFn; let i = index;">
+                <app-list-panel
+                    [list]="list"
+                    [expanded]="expanded.indexOf(list.$key) > -1"
+                    (onrecipedelete)="removeRecipe($event, list, list.$key)"
+                    (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
+                    (ondelete)="delete(list)"
+                    [authorUid]="user.uid"
+                    [odd]="i%2>0"
+                    [linkButton]="userData?.patron || userData?.admin"
+                    [templateButton]="userData?.patron || userData?.admin"
+                ></app-list-panel>
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <div class="category" *ngIf="sharedLists | async as sharedListsData">
+        <div *ngIf="sharedListsData.length > 0">
+            <h2>{{"LISTS.Shared_lists" | translate}}</h2>
+            <mat-divider class="divider"></mat-divider>
+        </div>
+        <div class="row" *ngFor="let list of sharedListsData;trackBy: trackByListsFn; let i = index;">
             <app-list-panel
                 [list]="list"
                 [expanded]="expanded.indexOf(list.$key) > -1"
@@ -75,7 +101,7 @@
             ></app-list-panel>
         </div>
     </div>
-    <div class="workshops">
+    <div class="category">
         <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>
         <div *ngFor="let workshop of workshops | async; trackBy: trackByWorkshopFn; let i = index" class="row">
@@ -95,11 +121,13 @@
                         </button>
                         <span *ngIf="workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
-                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                              matTooltipPosition="above">
                             <button mat-icon-button
                                     (click)="$event.stopPropagation();openPermissions(workshop)"
                                     [disabled]="anonymous"
-                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                    [matTooltip]="'PERMISSIONS.Title' | translate"
+                                    matTooltipPosition="above">
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
@@ -128,7 +156,7 @@
                         [readonly]="!list.getPermissions(userData.$key).write"
                         [list]="list"
                         [expanded]="expanded.indexOf(list.$key) > -1"
-                        (onrecipedelete)="removeRecipe($event.recipe, list, list.$key)"
+                        (onrecipedelete)="removeRecipe($event, list, list.$key)"
                         (onedit)="updateAmount($event.recipe, list, list.$key, $event.amount)"
                         (ondelete)="delete(list)"
                         [authorUid]="user.uid"
@@ -137,7 +165,7 @@
                         [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
                 <button mat-button class="full-width-button" color="accent"
-                        (click)="addListsToWorkhop(workshop, display.basicLists)">
+                        (click)="addListsToWorkhop(workshop, display.basicLists.concat(display.publicLists))">
                     <mat-icon>add</mat-icon>
                     {{'WORKSHOP.Add_lists' | translate}}
                 </button>
@@ -148,10 +176,12 @@
             {{'WORKSHOP.Add_workshop' | translate}}
         </button>
     </div>
-    <div class="workshops">
-        <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
-        <mat-divider class="divider"></mat-divider>
-        <div *ngFor="let workshopData of sharedWorkshops | async; trackBy: trackByWorkshopFn; let i = index"
+    <div class="category" *ngIf="sharedWorkshops | async as sharedWorkshopsData">
+        <div *ngIf="sharedWorkshopsData.length > 0">
+            <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
+            <mat-divider class="divider"></mat-divider>
+        </div>
+        <div *ngFor="let workshopData of sharedWorkshopsData; trackBy: trackByWorkshopFn; let i = index"
              class="row">
             <mat-expansion-panel [ngClass]="{odd: i%2>0}">
                 <mat-expansion-panel-header>
@@ -169,11 +199,13 @@
                         </button>
                         <span *ngIf="workshopData.workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
-                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                              [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                              matTooltipPosition="above">
                             <button mat-icon-button
                                     (click)="$event.stopPropagation();openPermissions(workshopData.workshop)"
                                     [disabled]="anonymous"
-                                    [matTooltip]="'PERMISSIONS.Title' | translate">
+                                    [matTooltip]="'PERMISSIONS.Title' | translate"
+                                    matTooltipPosition="above">
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
@@ -208,7 +240,7 @@
                         [templateButton]="userData?.patron || userData?.admin"></app-list-panel>
                 </div>
                 <button mat-button class="full-width-button" color="accent"
-                        (click)="addListsToWorkhop(workshopData.workshop, display.basicLists)">
+                        (click)="addListsToWorkhop(workshopData.workshop, display.basicLists.concat(display.publicLists))">
                     <mat-icon>add</mat-icon>
                     {{'WORKSHOP.Add_lists' | translate}}
                 </button>

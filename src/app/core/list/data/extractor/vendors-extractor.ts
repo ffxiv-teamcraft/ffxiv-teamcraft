@@ -21,28 +21,34 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
             let itemPartial = itemData.getPartial(item.id.toString(), 'item');
             // If we didn't find the item in partials, get it from ingredients
             if (itemPartial === undefined) {
+                if (itemData.ingredients === undefined) {
+                    // if this has no partial nor ingredients, we can go to the next one.
+                    break;
+                }
                 itemPartial = itemData.getIngredient(item.id);
             } else {
                 // Else, simply bind the obj property to the effective partial
                 itemPartial = itemPartial.obj;
             }
-            // If we have an undefined price, this is not what we want
-            if (itemPartial.p === undefined) {
-                continue;
-            }
-            const vendor: Vendor = {
-                npcId: vendorId,
-                price: itemPartial.p
-            };
-            if (npcPartial.c !== undefined && npcPartial.i !== undefined && npcPartial.a !== undefined) {
-                vendor.coords = {
-                    x: npcPartial.c[0],
-                    y: npcPartial.c[1]
+            if (itemPartial !== undefined) {
+                // If we have an undefined price, this is not what we want
+                if (itemPartial.p === undefined) {
+                    continue;
+                }
+                const vendor: Vendor = {
+                    npcId: vendorId,
+                    price: itemPartial.p
                 };
-                vendor.zoneId = npcPartial.l;
-                vendor.areaId = npcPartial.a;
+                if (npcPartial.c !== undefined && npcPartial.i !== undefined && npcPartial.a !== undefined) {
+                    vendor.coords = {
+                        x: npcPartial.c[0],
+                        y: npcPartial.c[1]
+                    };
+                    vendor.zoneId = npcPartial.l;
+                    vendor.areaId = npcPartial.a;
+                }
+                vendors.push(vendor);
             }
-            vendors.push(vendor);
         }
         return vendors
     }

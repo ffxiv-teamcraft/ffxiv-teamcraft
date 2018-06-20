@@ -22,6 +22,12 @@
             </span>
         </div>
         <div class="right-fabs">
+            <button mat-mini-fab *ngIf="platform.isDesktop()" ngxClipboard [cbContent]="getLink()"
+                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
+            </button>
+
             <button mat-mini-fab color="accent" matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
                     (click)="openTagsPopup()" *ngIf="isOwnList()">
                 <mat-icon>label_outline</mat-icon>
@@ -92,6 +98,15 @@
                     matTooltip="{{'Pricing_mode' | translate}}" matTooltipPosition="above">
                 <mat-icon>attach_money</mat-icon>
             </button>
+            <button mat-icon-button ngxClipboard
+                    matTooltip="{{'LIST.Copy_as_text' | translate}}"
+                    matTooltipPosition="above"
+                    *ngIf="listData !== null"
+                    (click)="$event.stopPropagation()"
+                    [cbContent]="getTextExport(display)"
+                    class="export-button">
+                <mat-icon>content_copy</mat-icon>
+            </button>
             <div class="spacer"></div>
             <button mat-button (click)="openTimerOptionsPopup()">{{"Timer_options" | translate}}</button>
         </div>
@@ -105,7 +120,7 @@
                 <div class="category-header">{{'Game_Term/DoL' | translate}}</div>
                 <div class="class-filters">
                     <div *ngFor="let filter of gatheringFilters">
-                        <mat-input-container class="class-filter">
+                        <mat-form-field class="class-filter">
                             <mat-checkbox matPrefix class="filter"
                                           [(ngModel)]="filter.checked"
                                           (change)="triggerFilter()">
@@ -117,13 +132,13 @@
                             <img matSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
                                  alt="{{filter.job}}"
                                  class="filter_icons">
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="category-header">{{'Game_Term/DoH' | translate}}</div>
                 <div class="class-filters">
                     <div *ngFor="let filter of craftFilters">
-                        <mat-input-container class="class-filter">
+                        <mat-form-field class="class-filter">
                             <mat-checkbox matPrefix class="filter"
                                           [(ngModel)]="filter.checked"
                                           (change)="triggerFilter()">
@@ -135,7 +150,7 @@
                             <img matSuffix src="https://www.garlandtools.org/db/images/{{filter.job}}.png"
                                  alt="{{filter.job}}"
                                  class="filter_icons">
-                        </mat-input-container>
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="class-filters">
@@ -174,12 +189,21 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="panel">
+        <mat-expansion-panel class="panel" *ngIf="listData.crystals?.length > 0">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
                 <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
                     {{'LIST.Enable_crystals_tracking' | translate}}
                 </mat-checkbox>
+                <button mat-icon-button ngxClipboard
+                        *ngIf="listData?.crystals !== null"
+                        matTooltip="{{'LIST.Copy_as_text' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="$event.stopPropagation()"
+                        [cbContent]="getCrystalsTextExport('Crystals'| translate, listData?.crystals)"
+                        class="export-button">
+                    <mat-icon>content_copy</mat-icon>
+                </button>
             </mat-expansion-panel-header>
             <div *ngFor="let crystal of listData?.crystals" class="crystals">
                 <div *ngIf="crystal.amount > crystal.done" class="crystal-row"

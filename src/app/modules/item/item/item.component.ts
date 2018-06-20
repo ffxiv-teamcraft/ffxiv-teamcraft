@@ -32,7 +32,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {FishDetailsPopupComponent} from '../fish-details-popup/fish-details-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
@@ -46,6 +46,9 @@ import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 import {CraftedBy} from '../../../model/list/crafted-by';
 import {Permissions} from '../../../core/database/permissions/permissions';
+import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
+import {CraftingRotation} from '../../../model/other/crafting-rotation';
+import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-item',
@@ -99,6 +102,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         21080: 13, // Moogle
         21081: 13, // Kojin
         21935: 13, // Ananta
+        22525: 13, // Namazu
         // Primals
         7004: 10, // Weekly quest Garuda/Titan/Ifrit
         7850: 10, // Leviathan
@@ -114,6 +118,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         19110: 10, // Lakshmi
         21196: 10, // Shinryu
         21773: 10, // Byakko
+        23043: 10, // Tsukuyomi
         // Raids
         7577: 8, // Sands of Time
         7578: 8, // Oil of Time
@@ -200,6 +205,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         21783: 8, // Sigmascape Datalog v3.0
         21784: 8, // Sigmascape Datalog v4.0
         21785: 8, // Sigmascape Crystalloid
+        23174: 8, // Gougan Coin
         // World bosses
         6155: 5, // Behemoth
         6164: 5, // Odin
@@ -267,13 +273,19 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     masterbooks: CompactMasterbook[] = [];
 
-    isMobile = this.media.asObservable().map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm');
+    folkloreId: number;
+
+    isMobile = this.media.asObservable().pipe(map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm'));
 
     public timers: Observable<Timer[]>;
 
     worksOnIt: any;
 
     public tradeIcon: number;
+
+    rotations$: Observable<CraftingRotation[]>;
+
+    hasAlarm: { [index: number]: boolean } = {};
 
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
@@ -287,8 +299,16 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private etime: EorzeanTimeService,
                 private dataService: DataService,
                 private userService: UserService,
-                public cd: ChangeDetectorRef) {
+                public cd: ChangeDetectorRef,
+                private rotationsService: CraftingRotationService) {
         super();
+        this.rotations$ = this.userService.getUserData().pipe(
+            mergeMap(user => {
+                return this.rotationsService.getUserRotations(user.$key);
+            }),
+            publishReplay(1),
+            refCount()
+        );
     }
 
     isDraft(): boolean {
@@ -296,6 +316,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     getCraft(recipeId: string): CraftedBy {
+        if (this.item.craftedBy === undefined || this.item.craftedBy.length === 0 || this.item.craftedBy[0].icon === '') {
+            return undefined;
+        }
         return this.item.craftedBy.find(craft => {
             return craft.recipeId === recipeId
         });
@@ -308,7 +331,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
@@ -320,22 +343,18 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             '',
             {
                 duration: 2000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             }
         );
     }
 
     ngOnInit(): void {
-        this.updateCanBeCrafted();
-        this.updateTradeIcon();
-        this.updateHasTimers();
-        this.updateMasterBooks();
-        this.updateTimers();
-        this.updateHasBook();
-        this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => {
+                .pipe(
+                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                    first()
+                ).subscribe(char => {
                 this.worksOnIt = char;
                 this.cd.detectChanges();
             });
@@ -352,7 +371,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateRequiredForEndCraft();
         if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
-                .mergeMap(user => this.dataService.getCharacter(user.lodestoneId)).first().subscribe(char => this.worksOnIt = char);
+                .pipe(
+                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                    first()
+                ).subscribe(char => this.worksOnIt = char);
         }
     }
 
@@ -360,12 +382,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
         this.userService.get(this.item.workingOnIt)
-            .mergeMap(user => this.dataService.getCharacter(user.lodestoneId))
-            .first()
-            .subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
-            });
+            .pipe(
+                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                first()
+            ).subscribe(char => {
+            this.worksOnIt = char;
+            this.cd.detectChanges();
+        });
     }
 
     public removeWorkingOnIt(): void {
@@ -375,10 +398,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public getTimerIcon(type: number): string {
         return [
-            '/assets/icons/Mineral_Deposit.png',
-            '/assets/icons/MIN.png',
-            '/assets/icons/Mature_Tree.png',
-            '/assets/icons/BTN.png',
+            './assets/icons/Mineral_Deposit.png',
+            './assets/icons/MIN.png',
+            './assets/icons/Mature_Tree.png',
+            './assets/icons/BTN.png',
             'https://garlandtools.org/db/images/FSH.png'
         ][type];
     }
@@ -402,15 +425,17 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     public getTimerColor(alarm: Alarm): Observable<string> {
-        return this.etime.getEorzeanTime().map(time => {
-            if (this.alarmService.isAlarmSpawned(alarm, time)) {
-                return 'primary';
-            }
-            if (this.alarmService.isAlarmAlerted(alarm, time)) {
-                return 'accent';
-            }
-            return '';
-        })
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                if (this.alarmService.isAlarmSpawned(alarm, time)) {
+                    return 'primary';
+                }
+                if (this.alarmService.isAlarmAlerted(alarm, time)) {
+                    return 'accent';
+                }
+                return '';
+            })
+        );
     }
 
     updateCanBeCrafted(): void {
@@ -420,6 +445,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     updateRequiredForEndCraft(): void {
         const recipesNeedingItem = this.list.recipes
+            .filter(recipe => recipe.requires !== undefined)
             .filter(recipe => recipe.requires.find(req => req.id === this.item.id) !== undefined);
         if (recipesNeedingItem.length === 0) {
             this.requiredForFinalCraft = 0;
@@ -445,8 +471,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         }
     }
 
-    public hasAlarm(itemId: number): boolean {
-        return this.alarmService.hasAlarm(itemId);
+    updateHasAlarm(itemId): void {
+        this.hasAlarm[itemId] = this.alarmService.hasAlarm(itemId);
     }
 
     updateHasTimers(): void {
@@ -510,18 +536,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
             this.hasBook = false;
             return;
         }
-        // If this is a gathering
+        // If this is a gathering (BTN/MIN)
         if (this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes.length > 0) {
-            // For each node
-            for (const node of this.item.gatheredBy.nodes) {
-                // If it has a limit set to legendary
-                if (node.limitType !== undefined) {
-                    const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
-                    if (folkloreId !== undefined) {
-                        this.hasBook = (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
-                        return;
-                    }
-                }
+            // If it has a limit set to legendary
+            const folkloreId = Object.keys(folklores).find(id => folklores[id].indexOf(this.item.id) > -1);
+            if (folkloreId !== undefined) {
+                this.hasBook = (this.user.masterbooks || []).indexOf(+folkloreId) > -1;
+                this.folkloreId = +folkloreId;
+                return;
             }
         }
         this.hasBook = true;
@@ -534,7 +556,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public updateTimers(): void {
         if (this.hasTimers) {
-            this.timers = this.alarmService.getTimers(this.item);
+            this.timers = this.alarmService.getTimers(this.item)
+                .pipe(
+                    tap(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)))
+                );
         }
     }
 

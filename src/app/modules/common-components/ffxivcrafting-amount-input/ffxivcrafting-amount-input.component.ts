@@ -1,7 +1,8 @@
 import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
-import {Observable} from 'rxjs/Observable';
+import {fromEvent, Observable} from 'rxjs';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+import {distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-ffxivcrafting-amount-input',
@@ -36,16 +37,20 @@ export class FfxivcraftingAmountInputComponent extends ComponentWithSubscription
     ngOnInit(): void {
         this.updateCraftingAmountRequired();
         this.updateCraftingAmount();
-        const focusOutObservable = Observable.fromEvent(this.input.nativeElement, 'focusout')
-            .distinctUntilChanged()
-            .map(() => {
-                return this.input.nativeElement.value;
-            });
-        const keyUpObservable = Observable.fromEvent(this.input.nativeElement, 'keyup')
-            .filter((e: KeyboardEvent) => e.keyCode === 13)
-            .map(() => {
-                return this.input.nativeElement.value;
-            });
+        const focusOutObservable = fromEvent(this.input.nativeElement, 'focusout')
+            .pipe(
+                distinctUntilChanged(),
+                map(() => {
+                    return this.input.nativeElement.value;
+                })
+            );
+        const keyUpObservable = fromEvent(this.input.nativeElement, 'keyup')
+            .pipe(
+                filter((e: KeyboardEvent) => e.keyCode === 13),
+                map(() => {
+                    return this.input.nativeElement.value;
+                })
+            );
         this.registerOnChange(focusOutObservable);
         this.registerOnChange(keyUpObservable);
     }
@@ -56,17 +61,17 @@ export class FfxivcraftingAmountInputComponent extends ComponentWithSubscription
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        this.subscriptions.push(observable
-            .map(value => +value)
-            .subscribe(value => {
-                if (value > this.total - this.item.used) {
-                    value = this.total - this.item.used;
-                }
-                if (value < 0) {
-                    value = 0;
-                }
-                this.onchange.emit(value + this.item.used);
-            }));
+        this.subscriptions.push(
+            observable.pipe(map(value => +value))
+                .subscribe(value => {
+                    if (value > this.total - this.item.used) {
+                        value = this.total - this.item.used;
+                    }
+                    if (value < 0) {
+                        value = 0;
+                    }
+                    this.onchange.emit(value + this.item.used);
+                }));
     }
 
     public updateCraftingAmountRequired(): void {

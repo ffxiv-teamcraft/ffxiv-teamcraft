@@ -1,11 +1,14 @@
 <div class="input-container compact">
-    <mat-input-container>
+    <mat-form-field>
         <mat-icon matPrefix>search</mat-icon>
-        <input class="filter" [(ngModel)]="query" matInput placeholder="{{'Recipe_name' | translate}}" #filter>
+        <input class="filter" [(ngModel)]="query" matInput placeholder="{{'ITEMS.Item_name' | translate}}" #filter>
         <mat-hint align="end">
             <small>{{'Data_from_gt' | translate}}</small>
         </mat-hint>
-    </mat-input-container>
+        <mat-checkbox matSuffix [(ngModel)]="settings.recipesOnlySearch" (ngModelChange)="doSearch()" class="only-recipes">
+            {{'ITEMS.Only_recipes' | translate}}
+        </mat-checkbox>
+    </mat-form-field>
 </div>
 <mat-expansion-panel class="filters" #filtersPanel>
     <mat-expansion-panel-header>
@@ -45,16 +48,16 @@
                     <mat-checkbox [(ngModel)]="filter.enabled"></mat-checkbox>
                     <span>{{filter.name | translate}}</span>
                 </div>
-                <mat-input-container>
+                <mat-form-field>
                     <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.min">
                     <span matSuffix>Min</span>
-                </mat-input-container>
-                <mat-input-container>
+                </mat-form-field>
+                <mat-form-field>
                     <input matInput type="number" min="0" max="999" disabled="{{!filter.enabled}}"
                            [(ngModel)]="filter.value.max">
                     <span matSuffix>Max</span>
-                </mat-input-container>
+                </mat-form-field>
             </li>
         </div>
     </ul>
@@ -97,46 +100,46 @@
 
 <div class="add-all-wrapper">
     <button mat-raised-button [matMenuTriggerFor]="addAllMenu" class="add-all-recipes"
-            [disabled]="recipes.length === 0">
+            [disabled]="results.length === 0">
         {{'Add_all_recipes' | translate}}
     </button>
 </div>
 
 <mat-list>
-    <div *ngIf="(recipes.length === 0 || recipes === null) && !loading">
-        <h4 class="no-recipe">{{'No_matching_recipe' | translate}}</h4>
+    <div *ngIf="(results.length === 0 || results === null) && !loading">
+        <h4 class="no-recipe">{{'ITEMS.No_match' | translate}}</h4>
     </div>
 
     <div *ngIf="loading" class="loading">
         <mat-spinner></mat-spinner>
     </div>
 
-    <div *ngIf="recipes.length > 0 && !loading">
-        <mat-list-item *ngFor="let recipe of recipes" class="recipes-list-row">
-            <a mat-list-avatar href="{{recipe.itemId | itemLink | i18n}}" target="_blank">
-                <img mat-list-avatar [appXivdbTooltip]="recipe.itemId" src="{{recipe.icon | icon}}"
-                     alt="{{recipe.itemId | itemName | i18n}}">
+    <div *ngIf="results.length > 0 && !loading">
+        <mat-list-item *ngFor="let item of results; let even = even" class="recipes-list-row" [class.even]="even">
+            <a mat-list-avatar href="{{item.itemId | itemLink | i18n}}" target="_blank">
+                <img mat-list-avatar [appXivdbTooltip]="item.itemId" src="{{item.icon | icon}}"
+                     alt="{{item.itemId | itemName | i18n}}">
             </a>
-            <h4 mat-line>{{recipe.itemId | itemName | i18n}}</h4>
-            <p mat-line *ngIf="getJob(recipe.job).abbreviation !== 'ADV'">
-                <img src="https://www.garlandtools.org/db/images/{{getJob(recipe.job).abbreviation}}.png"
-                     alt="getJob(recipe.job)?.abbreviation" class="crafted-by"> {{recipe.lvl}} <span
-                [innerHtml]="getStars(recipe.stars)"></span>
+            <h4 mat-line>{{item.itemId | itemName | i18n}}</h4>
+            <p mat-line *ngIf="item.job !== undefined && getJob(item.job)?.abbreviation !== 'ADV'">
+                <img src="https://www.garlandtools.org/db/images/{{getJob(item.job)?.abbreviation}}.png"
+                     alt="getJob(item.job)?.abbreviation" class="crafted-by"> {{item.lvl}} <span
+                [innerHtml]="getStars(item.stars)"></span>
             </p>
             <div class="right-side">
-                <mat-checkbox #collectible [style.visibility]="recipe.collectible?'unset':'hidden'">
+                <mat-checkbox #collectible [style.visibility]="item.collectible?'unset':'hidden'">
                     {{"Add_as_collectible" | translate}}
                 </mat-checkbox>
-                <mat-input-container class="amount with-infix">
+                <mat-form-field class="amount with-infix">
                     <input matInput type="number" min="1" value="1" #amount>
-                </mat-input-container>
+                </mat-form-field>
 
                 <mat-menu #appMenu="matMenu" class="lists-menu">
-                    <button mat-menu-item (click)="addToNewList(recipe, amount.value, collectible.checked)">
+                    <button mat-menu-item (click)="addToNewList(item, amount.value, collectible.checked)">
                         <mat-icon>add</mat-icon>
                         <span>{{'New_List' | translate}}</span></button>
                     <button mat-menu-item *ngFor="let list of lists.basicLists"
-                            (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
+                            (click)="addRecipe(item, list, list.$key, amount.value, collectible.checked)">
                         <mat-icon>playlist_play</mat-icon>
                         <span>{{list.name}}</span>
                     </button>
@@ -147,7 +150,7 @@
                         </span>
                         <button mat-menu-item *ngFor="let list of lists.rows[workshop.$key]"
                                 class="workshop-list"
-                                (click)="addRecipe(recipe, list, list.$key, amount.value, collectible.checked)">
+                                (click)="addRecipe(item, list, list.$key, amount.value, collectible.checked)">
                             <mat-icon>playlist_play</mat-icon>
                             <span>{{list.name}}</span>
                         </button>
@@ -159,19 +162,37 @@
                     </span>
                     <button mat-menu-item *ngFor="let list of sharedLists | async"
                             class="workshop-list"
-                            (click)="addRecipe(recipe, list, list.$key,amount.value, collectible.checked)">
+                            (click)="addRecipe(item, list, list.$key,amount.value, collectible.checked)">
                         <mat-icon>playlist_play</mat-icon>
                         <span>{{list.name}}</span>
+                    </button>
+                </mat-menu>
+
+                <mat-menu #simulatorMenu="matMenu">
+                    <button mat-menu-item routerLink="/simulator/{{item.itemId}}/{{item.recipeId}}">
+                        {{'SIMULATOR.New_rotation' | translate}}
+                    </button>
+                    <button mat-menu-item
+                            *ngFor="let rotation of rotations$ | async"
+                            routerLink="/simulator/{{item.itemId}}/{{item.recipeId}}/{{rotation.$key}}">
+                        {{rotation.getName()}}
                     </button>
                 </mat-menu>
 
                 <button mat-icon-button [matMenuTriggerFor]="appMenu">
                     <mat-icon>playlist_add</mat-icon>
                 </button>
-                <button mat-icon-button (click)="quickList(recipe, amount.value, collectible.checked)"
+                <button mat-icon-button (click)="quickList(item, amount.value, collectible.checked)"
                         matTooltip="{{'Quick_list_create' | translate}}"
                         matTooltipPosition="above">
                     <mat-icon>access_time</mat-icon>
+                </button>
+                <button mat-icon-button
+                        *ngIf="item.recipeId !== undefined"
+                        matTooltip="{{'SIMULATOR.Simulate_tooltip' | translate}}"
+                        matTooltipPosition="above"
+                        [matMenuTriggerFor]="simulatorMenu">
+                    <i class="fas fa-gavel"></i>
                 </button>
             </div>
         </mat-list-item>

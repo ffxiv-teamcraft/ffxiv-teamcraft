@@ -1,0 +1,28 @@
+<div class="input-container compact">
+    <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="filter" [(ngModel)]="query" matInput placeholder="{{'ITEMS.Item_name' | translate}}" #filter>
+    </mat-form-field>
+</div>
+
+<mat-list *ngIf="results.length > 0">
+    <mat-list-item *ngFor="let item of results" class="recipes-list-row">
+        <a mat-list-avatar href="{{item.itemId | itemLink | i18n}}" target="_blank">
+            <img mat-list-avatar [appXivdbTooltip]="item.itemId" src="{{item.icon | icon}}"
+                 alt="{{item.itemId | itemName | i18n}}">
+        </a>
+        <h4 mat-line>{{item.itemId | itemName | i18n}}</h4>
+        <p mat-line *ngIf="item.job !== undefined && getJob(item.job)?.abbreviation !== 'ADV'">
+            <img src="https://www.garlandtools.org/db/images/{{getJob(item.job)?.abbreviation}}.png"
+                 alt="getJob(item.job)?.abbreviation" class="crafted-by"> {{item.lvl}} <span
+            [innerHtml]="getStars(item.stars)"></span>
+        </p>
+        <button mat-mini-fab [mat-dialog-close]="{itemId: item.itemId, recipeId: item.recipeId}" class="gavel-button">
+            <mat-icon>gavel</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-list>
+
+<div *ngIf="results.length === 0 || results === null">
+    <h4 class="no-recipe">{{'ITEMS.No_match' | translate}}</h4>
+</div>

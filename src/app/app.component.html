@@ -1,15 +1,42 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <mat-toolbar color="primary">
+    <div class="desktop-bar" *ngIf="platformService.isDesktop()">
+        <mat-icon *ngIf="mobile && !overlay" (click)="sidenav.toggle()" class="theme-text-color desktop-bar-button">
+            menu
+        </mat-icon>
+        <div class="title theme-text-color draggable">FFXIV Teamcraft</div>
+        <div class="version theme-text-color draggable" *ngIf="!overlay"><i>v{{version}}</i></div>
+        <div class="desktop-bar-button theme-text-color lang-button" [matMenuTriggerFor]="langMenu" *ngIf="!overlay">
+            {{locale | uppercase}}
+        </div>
+        <div class="spacer draggable"></div>
+        <mat-icon (click)="openingUrl = true" class="desktop-bar-button open-url theme-text-color" *ngIf="!overlay"
+                  matTooltip="{{'COMMON.Open_url' | translate}}">
+            open_in_browser
+        </mat-icon>
+        <div class="spacer draggable"></div>
+        <mat-icon class="desktop-bar-button theme-text-color" (click)="minimize()" *ngIf="!overlay">minimize</mat-icon>
+        <mat-icon class="desktop-bar-button theme-text-color" (click)="toggleFullscreen()" *ngIf="!overlay">fullscreen
+        </mat-icon>
+        <mat-icon class="desktop-bar-button theme-text-color close-button" (click)="closeApp()">close</mat-icon>
+    </div>
+    <div class="url-box mat-elevation-z10 theme-background" [class.hidden]="!openingUrl">
+        <mat-form-field>
+            <input type="text" matInput
+                   [(ngModel)]="url"
+                   [placeholder]="'COMMON.Open_url_placeholder' | translate"
+                   (keydown.enter)="openUrl()">
+            <mat-icon matSuffix (click)="openUrl()" class="box-icon">arrow_forward</mat-icon>
+        </mat-form-field>
+        <mat-icon matSuffix (click)="openingUrl = false" class="box-icon">close</mat-icon>
+    </div>
+    <mat-toolbar color="primary" class="app-toolbar" [class.overlay]="overlay || platformService.isDesktop()">
         <button *ngIf="mobile" mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
         <h1>FFXIV Teamcraft</h1>
 
         <mat-menu #langMenu="matMenu" yPosition="above">
-            <button mat-menu-item (click)="use('fr')">FR</button>
-            <button mat-menu-item (click)="use('en')">EN</button>
-            <button mat-menu-item (click)="use('de')">DE</button>
-            <button mat-menu-item (click)="use('ja')">JA</button>
+            <button mat-menu-item *ngFor="let locale of locales" (click)="use(locale)">{{locale.toUpperCase()}}</button>
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.gt-sm>
@@ -21,9 +48,9 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container autosize="true">
+    <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar}">
+                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
@@ -39,10 +66,6 @@
                 <button mat-raised-button *ngIf="!(authState | async)?.isAnonymous" (click)="disconnect()">
                     {{'Disconnect' | translate}}
                 </button>
-                <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                        matTooltipPosition="right" (click)="settings.compactSidebar = true; detectChanges()">
-                    <mat-icon>keyboard_arrow_left</mat-icon>
-                </button>
             </div>
             <div class="accent-background" *ngIf="settings.compactSidebar">
                 <div class="user">
@@ -53,11 +76,13 @@
             </div>
             <mat-divider></mat-divider>
             <mat-nav-list>
-                <mat-list-item *ngIf="settings.compactSidebar">
-                    <button mat-icon-button matTooltip="{{'Compact_sidebar_toggle' | translate}}"
-                            matTooltipPosition="right" (click)="settings.compactSidebar = false; detectChanges()">
-                        <mat-icon>keyboard_arrow_right</mat-icon>
-                    </button>
+                <mat-list-item matTooltip="{{'Compact_sidebar_toggle' | translate}}"
+                               matTooltipPosition="right"
+                               [matTooltipDisabled]="!settings.compactSidebar"
+                               (click)="settings.compactSidebar = !settings.compactSidebar; detectChanges()">
+                    <mat-icon *ngIf="settings.compactSidebar" matListIcon>keyboard_arrow_right</mat-icon>
+                    <mat-icon *ngIf="!settings.compactSidebar" matListIcon>keyboard_arrow_left</mat-icon>
+                    <span *ngIf="!settings.compactSidebar" matLine>{{'Compact_sidebar_toggle' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/home" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
@@ -84,10 +109,17 @@
                 </mat-list-item>
                 <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'Recipes' | translate}}"
+                               matTooltip="{{'ITEMS.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>search</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'Recipes' | translate}}</span>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'ITEMS.Title' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/rotations" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'SIMULATOR.Rotations' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>widgets</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'SIMULATOR.Rotations' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/lists" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
@@ -139,12 +171,12 @@
                     <mat-icon matListIcon>settings</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'SETTINGS.title' | translate}}</span>
                 </mat-list-item>
-                <mat-list-item routerLink="/features" (click)="mobile ? sidenav.close() :  null"
+                <mat-list-item routerLink="/wiki" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
-                               matTooltip="{{'HOME_PAGE.features' | translate}}"
+                               matTooltip="{{'WIKI.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>help_outline</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'HOME_PAGE.features' | translate}}</span>
+                    <mat-icon matListIcon>library_books</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'WIKI.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/about" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
@@ -172,6 +204,12 @@
                     <div class="fab-container"><a href="https://discord.gg/r6qxt6P" mat-mini-fab
                                                   class="social-fab discord" target="_blank"><i
                         class="fab fa-discord"></i></a></div>
+                    <div class="fab-container" matTooltip="{{'Download_desktop_app' | translate}}"
+                         matTooltipPosition="above" *ngIf="!mobile && !platformService.isDesktop()">
+                        <a href="https://github.com/Supamiu/ffxiv-teamcraft/releases" mat-mini-fab target="_blank">
+                            <mat-icon>get_app</mat-icon>
+                        </a>
+                    </div>
                     <div class="fab-container"><a href="https://github.com/supamiu/ffxiv-teamcraft" mat-mini-fab
                                                   class="social-fab github"
                                                   target="_blank"><i class="fab fa-github"></i></a></div>
@@ -189,16 +227,16 @@
             <button mat-mini-fab class="alarms-sidebar-trigger"
                     matTooltip="{{'Timers' | translate}}"
                     matTooltipPosition="left"
-                    *ngIf="!mobile" (click)="timersSidebar.toggle()"
-            [ngClass]="{'opened': timersSidebar?.opened}">
-                <mat-icon *ngIf="!timersSidebar?.opened">alarm</mat-icon>
-                <mat-icon *ngIf="timersSidebar?.opened">keyboard_arrow_right</mat-icon>
+                    *ngIf="!mobile && !overlay" (click)="timers.toggle()"
+                    [ngClass]="{'opened': timers?.opened}">
+                <mat-icon *ngIf="!timers?.opened">alarm</mat-icon>
+                <mat-icon *ngIf="timers?.opened">keyboard_arrow_right</mat-icon>
             </button>
-            <div class="content-middle">
+            <div class="content-middle" [class.overlay]="overlay">
                 <router-outlet></router-outlet>
             </div>
         </div>
-        <mat-sidenav mode="side" position="end" *ngIf="!mobile" #timers>
+        <mat-sidenav mode="side" position="end" #timers>
             <app-alarms-sidebar></app-alarms-sidebar>
         </mat-sidenav>
     </mat-sidenav-container>

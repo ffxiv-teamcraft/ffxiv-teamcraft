@@ -21,6 +21,9 @@ export class PricingRowComponent implements OnInit {
     @Input()
     craftCost: number;
 
+    @Input()
+    earning = false;
+
     price: Price;
 
     amount: ItemAmount;

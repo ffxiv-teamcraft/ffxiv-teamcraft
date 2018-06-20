@@ -7,13 +7,12 @@ import {ConfirmationPopupComponent} from '../../../modules/common-components/con
 import {UserInfo} from 'firebase/app';
 import {ListManagerService} from '../../../core/list/list-manager.service';
 import {ListService} from '../../../core/database/list.service';
-import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
 import {MathTools} from '../../../tools/math-tools';
 import {Title} from '@angular/platform-browser';
 import {AlarmService} from '../../../core/time/alarm.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {ListTag} from '../../../model/list/list-tag.enum';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MergeListsPopupComponent} from '../merge-lists-popup/merge-lists-popup.component';
 import {BulkRegeneratePopupComponent} from '../bulk-regenerate-popup/bulk-regenerate-popup.component';
 import {WorkshopService} from '../../../core/database/workshop.service';
@@ -25,10 +24,13 @@ import {WorkshopNamePopupComponent} from '../workshop-name-popup/workshop-name-p
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
 import {CustomLinkPopupComponent} from '../../custom-links/custom-link-popup/custom-link-popup.component';
-import {CustomLink} from '../../../core/database/custom-links/costum-link';
+import {CustomLink} from '../../../core/database/custom-links/custom-link';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {ExternalListImportPopupComponent} from '../external-list-import-popup/external-list-import-popup.component';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
+import {catchError, filter, first, map, mergeMap, switchMap} from 'rxjs/operators';
+import {tap} from 'rxjs/internal/operators';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
 
 declare const ga: Function;
 
@@ -41,7 +43,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     reloader$ = new BehaviorSubject<void>(null);
 
-    lists: Observable<{ basicLists: List[], rows?: { [index: string]: List[] } }>;
+    lists: Observable<{ basicLists: List[], publicLists?: List[], rows?: { [index: string]: List[] } }>;
 
     sharedLists: Observable<List[]>;
 
@@ -70,7 +72,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
                 private workshopService: WorkshopService, private snack: MatSnackBar,
                 private translator: TranslateService, private userService: UserService,
-                private templateService: ListTemplateService) {
+                private templateService: ListTemplateService, private linkTools: LinkToolsService) {
         super();
         this.subscriptions.push(userService.getUserData().subscribe(userData => this.userData = userData))
     }
@@ -80,7 +82,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             const list = new List();
             list.name = this.newListFormControl.value;
             list.authorId = this.user.uid;
-            this.listService.add(list).first().subscribe(() => {
+            this.listService.add(list).pipe(first()).subscribe(() => {
                 this.newListFormControl.reset();
                 this.myNgForm.resetForm();
             });
@@ -100,11 +102,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     changeWorkshopName(workshop: Workshop): void {
         this.dialog.open(WorkshopNamePopupComponent, {data: workshop.name})
             .afterClosed()
-            .filter(name => name !== undefined && name.length > 0)
-            .mergeMap(name => {
-                workshop.name = name;
-                return this.updateWorkshop(workshop);
-            })
+            .pipe(
+                filter(name => name !== undefined && name.length > 0),
+                mergeMap(name => {
+                    workshop.name = name;
+                    return this.updateWorkshop(workshop);
+                })
+            )
             .subscribe(() => {
                 this.reloader$.next(null);
             });
@@ -121,14 +125,16 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     addListsToWorkhop(workshop: Workshop, availableLists: List[]): void {
         this.dialog.open(ListsSelectionPopupComponent, {data: {workshop: workshop, lists: availableLists}})
             .afterClosed()
-            .map(selections => selections.map(s => s.value))
-            .mergeMap(resultListIds => {
-                if (resultListIds !== undefined && resultListIds.length > 0) {
-                    workshop.listIds = [...workshop.listIds, ...resultListIds];
-                    return this.updateWorkshop(workshop);
-                }
-                return Observable.of(null);
-            })
+            .pipe(
+                map(selections => selections.map(s => s.value)),
+                mergeMap(resultListIds => {
+                    if (resultListIds !== undefined && resultListIds.length > 0) {
+                        workshop.listIds = [...workshop.listIds, ...resultListIds];
+                        return this.updateWorkshop(workshop);
+                    }
+                    return of(null);
+                })
+            )
             .subscribe(() => {
                 // Force reload just in case.
                 this.reloader$.next(null)
@@ -136,13 +142,16 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     newWorkshop(): void {
-        this.dialog.open(WorkshopNamePopupComponent).afterClosed().filter(name => name !== undefined && name.length > 0)
-            .mergeMap(name => {
-                const workshop = new Workshop();
-                workshop.name = name;
-                workshop.authorId = this.user.uid;
-                return this.workshopService.add(workshop);
-            })
+        this.dialog.open(WorkshopNamePopupComponent).afterClosed()
+            .pipe(
+                filter(name => name !== undefined && name.length > 0),
+                mergeMap(name => {
+                    const workshop = new Workshop();
+                    workshop.name = name;
+                    workshop.authorId = this.user.uid;
+                    return this.workshopService.add(workshop);
+                })
+            )
             .subscribe(() => {
                 this.reloader$.next(null);
             });
@@ -153,34 +162,37 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
             this.translator.instant('WORKSHOP.Share_link_copied'),
             '', {
                 duration: 10000,
-                extraClasses: ['snack']
+                panelClass: ['snack']
             });
     }
 
     getLink(workshop: Workshop): string {
-        return `${window.location.protocol}//${window.location.host}/workshop/${workshop.$key}`;
+        return this.linkTools.getLink(`/workshop/${workshop.$key}`);
     }
 
     regenerateAllLists(): void {
-        this.lists.first().map(display => {
-            let res = display.basicLists;
-            Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
-                res = [...res, ...row];
-            });
-            return res;
-        }).subscribe(lists => {
+        this.lists.pipe(
+            first(),
+            map(display => {
+                let res = display.basicLists;
+                Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
+                    res = [...res, ...row];
+                });
+                return res;
+            })
+        ).subscribe(lists => {
             this.dialog.open(BulkRegeneratePopupComponent, {data: lists, disableClose: true});
         });
     }
 
     deleteWorkshop(workshop: Workshop): void {
-        this.dialog.open(WorkshopDeleteConfirmationPopupComponent).afterClosed()
-        // Checking just in case we get something not boolean which would evaluate to true.
-            .filter(result => result === true)
-            .switchMap(() => this.workshopService.remove(workshop.$key))
-            .subscribe(() => {
-                this.reloader$.next(null);
-            });
+        this.dialog.open(WorkshopDeleteConfirmationPopupComponent).afterClosed().pipe(
+            // Checking just in case we get something not boolean which would evaluate to true.
+            filter(result => result === true),
+            switchMap(() => this.workshopService.remove(workshop.$key))
+        ).subscribe(() => {
+            this.reloader$.next(null);
+        });
     }
 
     delete(list: List): void {
@@ -201,14 +213,16 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     openMergeListsPopup(): void {
-        this.lists.first()
-            .map(display => {
-                let res = display.basicLists;
+        this.lists.pipe(
+            first(),
+            map(display => {
+                let res = display.basicLists.concat(display.publicLists);
                 Object.keys(display.rows).map(key => display.rows[key]).forEach(row => {
                     res = [...res, ...row];
                 });
                 return res;
-            }).subscribe(lists => {
+            })
+        ).subscribe(lists => {
             this.dialog.open(MergeListsPopupComponent, {data: {lists: lists, authorId: this.user.uid}}).afterClosed();
         });
     }
@@ -247,8 +261,10 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     openPermissions(workshop: Workshop): void {
         this.dialog.open(PermissionsPopupComponent, {data: workshop})
             .afterClosed()
-            .filter(res => res !== '')
-            .mergeMap(result => this.workshopService.set(result.$key, result))
+            .pipe(
+                filter(res => res !== ''),
+                mergeMap(result => this.workshopService.set(result.$key, result))
+            )
             .subscribe();
     }
 
@@ -261,89 +277,139 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
     }
 
     ngOnInit() {
-        this.sharedLists = this.userService.getUserData().mergeMap(user => {
-            return Observable.combineLatest(user.sharedLists.map(listId => this.listService.get(listId)
-                .catch(() => {
-                    user.sharedLists = user.sharedLists.filter(id => id !== listId);
-                    return this.userService.set(user.$key, user).map(() => null);
-                })))
-                .map(lists => lists.filter(l => l !== null));
-        });
-        this.workshops = this.auth.authState.mergeMap(user => {
-            if (user === null) {
-                return this.reloader$.mergeMap(() => Observable.of([]));
-            } else {
-                return this.reloader$.mergeMap(() => this.workshopService.getUserWorkshops(user.uid));
-            }
-        });
-        this.sharedWorkshops = this.userService.getUserData().mergeMap(user => {
-            if (user === null) {
-                return this.reloader$.mergeMap(() => Observable.of([]));
-            } else {
-                return this.reloader$.mergeMap(() => {
-                    return Observable.combineLatest(user.sharedWorkshops.map(workshopId => {
-                        return this.workshopService.get(workshopId)
-                            .catch(() => {
-                                user.sharedWorkshops = user.sharedWorkshops.filter(id => id !== workshopId);
-                                return this.userService.set(user.$key, user).map(() => null);
+        this.sharedLists = this.userService.getUserData().pipe(
+            mergeMap(user => {
+                return combineLatest((user.sharedLists || []).map(listId => this.listService.get(listId)
+                        .pipe(
+                            catchError(() => {
+                                user.sharedLists = user.sharedLists.filter(id => id !== listId);
+                                return this.userService.set(user.$key, user).pipe(map(() => null));
                             })
-                            .mergeMap(workshop => {
-                                if (workshop !== null) {
-                                    return this.listService.fetchWorkshop(workshop).map(lists => {
-                                        return {workshop: workshop, lists: lists};
-                                    });
-                                }
-                                return Observable.of(null);
-                            });
-                    })).map(workshops => workshops.filter(w => w !== null));
-                });
-            }
-        });
-        this.lists =
-            this.auth.authState.mergeMap(user => {
-                    this.user = user;
-                    if (user === null) {
-                        return this.reloader$.mergeMap(() => Observable.of({basicLists: []}));
-                    } else {
-                        return this.reloader$.mergeMap(() =>
-                            this.workshops.mergeMap(workshops => {
-                                return Observable.combineLatest(this.listService.getUserLists(user.uid),
-                                    this.tagFilter, (lists, tagFilter) => {
-                                        if (tagFilter.length === 0) {
-                                            return lists;
-                                        }
-                                        return lists.filter(list => {
-                                            let match = true;
-                                            tagFilter.forEach(tag => {
-                                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
-                                            });
-                                            return match;
-                                        });
-                                    })
-                                    .mergeMap(lists => {
-                                        const additionalLists = [];
-                                        for (const workshop of workshops) {
-                                            for (const wsListId of workshop.listIds) {
-                                                // If this list is not one of the user's lists, it won't be loaded
-                                                if (lists.find(list => list.$key === wsListId) === undefined) {
-                                                    additionalLists.push(wsListId);
-                                                }
-                                            }
-                                        }
-                                        if (additionalLists.length > 0) {
-                                            return Observable.combineLatest(additionalLists.map(listId => this.listService.get(listId)))
-                                                .map(externalLists => lists.concat(externalLists));
-                                        } else {
-                                            return Observable.of(lists);
-                                        }
-                                    })
-                                    .map(lists => {
-                                        return this.workshopService.getListsByWorkshop(lists, workshops);
-                                    });
-                            }));
-                    }
+                        )
+                    )
+                )
+                    .pipe(
+                        map(lists => lists.filter(l => l !== null).filter(l => {
+                            return l.getPermissions(user.$key).write === true
+                        }))
+                    );
+            })
+        );
+        this.workshops = this.userService.getUserData().pipe(
+            mergeMap(user => {
+                if (user === null) {
+                    return this.reloader$.pipe(mergeMap(() => of([])));
+                } else {
+                    return this.reloader$.pipe(mergeMap(() => this.workshopService.getUserWorkshops(user.$key)));
                 }
-            ).do(() => this.loading = false);
+            })
+        );
+        this.sharedWorkshops = this.userService.getUserData().pipe(
+            mergeMap(user => {
+                if (user === null) {
+                    return this.reloader$.pipe(mergeMap(() => of([])));
+                } else {
+                    return this.reloader$.pipe(
+                        mergeMap(() => {
+                            return combineLatest((user.sharedWorkshops || []).map(workshopId => {
+                                return this.workshopService.get(workshopId)
+                                    .pipe(
+                                        catchError(() => {
+                                            user.sharedWorkshops = user.sharedWorkshops.filter(id => id !== workshopId);
+                                            return this.userService.set(user.$key, user).pipe(map(() => null));
+                                        }),
+                                        mergeMap(workshop => {
+                                            if (workshop !== null) {
+                                                return this.listService.fetchWorkshop(workshop).pipe(map(lists => {
+                                                    return {workshop: workshop, lists: lists};
+                                                }));
+                                            }
+                                            return of(null);
+                                        })
+                                    );
+                            })).pipe(
+                                map(workshops => workshops.filter(w => w !== null && w !== undefined)
+                                    .filter(row => row.workshop.getPermissions(user.$key).write === true))
+                            );
+                        })
+                    );
+                }
+            }));
+        this.lists =
+            this.auth.authState
+                .pipe(
+                    mergeMap(user => {
+                            this.user = user;
+                            if (user === null) {
+                                return this.reloader$.pipe(mergeMap(() => of({basicLists: []})));
+                            } else {
+                                return this.reloader$.pipe(
+                                    mergeMap(() =>
+                                        this.workshops.pipe(
+                                            mergeMap(workshops => {
+                                                return combineLatest(this.listService.getUserLists(user.uid),
+                                                    this.tagFilter, (lists, tagFilter) => {
+                                                        if (tagFilter.length === 0) {
+                                                            return lists;
+                                                        }
+                                                        return lists.filter(list => {
+                                                            let match = true;
+                                                            tagFilter.forEach(tag => {
+                                                                match = match && list.tags.indexOf(ListTag[tag]) > -1;
+                                                            });
+                                                            return match;
+                                                        });
+                                                    })
+                                                    .pipe(
+                                                        mergeMap(lists => {
+                                                            const additionalLists = [];
+                                                            for (const workshop of workshops) {
+                                                                for (const wsListId of workshop.listIds) {
+                                                                    // If this list is not one of the user's lists, it won't be loaded
+                                                                    if (lists.find(list => list.$key === wsListId) === undefined) {
+                                                                        additionalLists.push(wsListId);
+                                                                    }
+                                                                }
+                                                            }
+                                                            if (additionalLists.length > 0) {
+                                                                return combineLatest(additionalLists
+                                                                    .map(listId => this.listService.get(listId)
+                                                                        .pipe(
+                                                                            catchError(() => of(null))
+                                                                        )
+                                                                    )
+                                                                ).pipe(
+                                                                    map(ls => ls.filter(l => l !== null)),
+                                                                    map(externalLists => lists.concat(externalLists))
+                                                                );
+                                                            } else {
+                                                                return of(lists);
+                                                            }
+                                                        }),
+                                                        map(lists => {
+                                                            const layout = this.workshopService.getListsByWorkshop(lists, workshops);
+                                                            const publicLists = [];
+                                                            const basicLists = [];
+                                                            layout.basicLists.forEach(list => {
+                                                                if (list.public) {
+                                                                    publicLists.push(list);
+                                                                } else {
+                                                                    basicLists.push(list);
+                                                                }
+                                                            });
+                                                            layout.basicLists = basicLists;
+                                                            layout.publicLists = publicLists;
+                                                            return layout;
+                                                        })
+                                                    );
+                                            }))
+                                    )
+                                );
+                            }
+                        }
+                    ),
+                    tap(() => this.loading = false)
+                );
     }
 
 }

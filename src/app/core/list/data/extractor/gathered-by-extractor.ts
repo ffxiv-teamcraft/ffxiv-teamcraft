@@ -37,10 +37,10 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
                 }
                 gatheredBy.type = partial.t;
                 gatheredBy.icon = [
-                    '/assets/icons/Mineral_Deposit.png',
-                    '/assets/icons/MIN.png',
-                    '/assets/icons/Mature_Tree.png',
-                    '/assets/icons/BTN.png',
+                    './assets/icons/Mineral_Deposit.png',
+                    './assets/icons/MIN.png',
+                    './assets/icons/Mature_Tree.png',
+                    './assets/icons/BTN.png',
                     'https://garlandtools.org/db/images/FSH.png'
                 ][partial.t];
                 gatheredBy.stars_tooltip = this.htmlTools.generateStars(partial.s);

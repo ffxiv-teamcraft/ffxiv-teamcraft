@@ -1,11 +1,19 @@
 .input-container {
     width: 100%;
-    mat-input-container {
+    mat-form-field {
         font-size: 20px;
         width: 60%;
         margin: auto;
         display: block;
     }
+}
+
+.even {
+    background: rgba(0, 0, 0, .3);
+}
+
+.only-recipes {
+    font-size: 14px;
 }
 
 .workshop-list {
@@ -39,7 +47,7 @@
             margin-top: 20px;
             display: flex;
             align-items: baseline;
-            mat-input-container {
+            mat-form-field {
                 width: auto !important;
                 margin-right: 10px;
                 min-width: 60px;

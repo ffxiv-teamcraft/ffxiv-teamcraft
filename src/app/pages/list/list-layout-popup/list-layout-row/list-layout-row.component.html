@@ -8,11 +8,11 @@
         </button>
     </div>
     <div class="right-part">
-        <mat-input-container class="name">
+        <mat-form-field class="name">
             <input [disabled]="readonly" type="text" matInput
                    placeholder="{{'LIST_DETAILS.LAYOUT.Panel_name' | translate}}"
                    [(ngModel)]="row.name" (change)="rowChanged()">
-        </mat-input-container>
+        </mat-form-field>
         <button mat-icon-button (click)="delete.emit()" [disabled]="readonly" color="warn" class="delete-button">
             <mat-icon>delete</mat-icon>
         </button>
@@ -55,6 +55,7 @@
                             [(value)]="row.orderBy" (change)="rowChanged()">
                     <mat-option value="NAME">NAME</mat-option>
                     <mat-option value="LEVEL">LEVEL</mat-option>
+                    <mat-option value="JOB">JOB</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field>

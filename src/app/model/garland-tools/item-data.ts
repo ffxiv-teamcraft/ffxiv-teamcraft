@@ -13,6 +13,10 @@ export class ItemData {
 
     partials: any[];
 
+    public isCraft(): boolean {
+        return this.item.craft !== undefined;
+    }
+
     public getIngredient(id: number): Item {
         return this.ingredients
             .find(item => id.toString().indexOf(item.id.toString()) > -1 || item.id.toString().indexOf(id.toString()) > -1);
@@ -32,8 +36,6 @@ export class ItemData {
         if (raw === undefined) {
             return undefined;
         }
-        const type = [undefined, 'Raid', 'Dungeon', 'Guildhest', 'Trial', 'PvP', 'PvP', undefined, undefined, 'Deep Dungeons',
-            'Treasure Hunt', 'Seasonal Event'][raw.obj.t];
         return {
             id: raw.obj.i,
             name: {
@@ -42,12 +44,7 @@ export class ItemData {
                 fr: raw.obj.n,
                 ja: raw.obj.n,
             },
-            type: {
-                fr: type,
-                en: type,
-                de: type,
-                ja: type
-            }
+            icon: +raw.obj.c
         };
     }
 }

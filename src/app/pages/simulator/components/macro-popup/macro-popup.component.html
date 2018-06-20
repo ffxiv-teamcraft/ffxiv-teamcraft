@@ -1,0 +1,27 @@
+<h3 mat-dialog-title>{{'SIMULATOR.Generated_macro' | translate}}</h3>
+<div mat-dialog-content class="content">
+    <mat-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
+        {{'SIMULATOR.Include_sound_end' | translate}}
+    </mat-checkbox>
+    <div class="macro">
+        <pre *ngFor="let macroFragment of macro" class="macro-fragment">
+            <button mat-icon-button class="copy-macro" ngxClipboard [cbContent]="getText(macroFragment)">
+                <mat-icon>content_copy</mat-icon>
+            </button>
+            <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
+        </pre>
+    </div>
+    <b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
+    <mat-divider></mat-divider>
+    <div class="macro">
+        <pre class="macro-fragment">
+            <button mat-icon-button class="copy-macro" ngxClipboard [cbContent]="getText(aactionsMacro)">
+                <mat-icon>content_copy</mat-icon>
+            </button>
+            <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}<br></span>
+        </pre>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="accent">{{'Close' | translate}}</button>
+</div>

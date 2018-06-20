@@ -2,9 +2,8 @@
 <div mat-dialog-content>
     <mat-list>
         <mat-list-item *ngFor="let instance of data.instances">
-            <img src="https://www.garlandtools.org/db/images/{{instance.type | i18n}}.png"
-                 mat-list-avatar
-                 alt="{{instance.type | i18n}}">
+            <img [src]="instance.icon | instanceIcon"
+                 mat-list-avatar>
             <b mat-line>{{instance.name | i18n}}</b>
         </mat-list-item>
     </mat-list>

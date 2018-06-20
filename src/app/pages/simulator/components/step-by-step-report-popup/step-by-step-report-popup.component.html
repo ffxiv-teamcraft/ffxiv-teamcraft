@@ -1,0 +1,44 @@
+<h3>{{'SIMULATOR.Step_by_step_report' | translate}}</h3>
+<div mat-dialog-content class="table-container" [class.mobile]="isMobile()">
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Step</th>
+            <td mat-cell *matCellDef="let element"> {{element.position}}</td>
+        </ng-container>
+        <ng-container matColumnDef="action" *ngIf="!isMobile()">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element" class="action">
+                <app-action [action]="element.action" [hideCost]="true" [simulation]="data.simulation"></app-action>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="cpDifference">
+            <th mat-header-cell *matHeaderCellDef>CP</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.cpDifference >= 0?'+':''}}{{element.cpDifference}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="solidityDifference">
+            <th mat-header-cell *matHeaderCellDef>Durability</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.solidityDifference >= 0?'+':''}}{{element.solidityDifference}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="addedQuality">
+            <th mat-header-cell *matHeaderCellDef>Quality</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.addedQuality}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="addedProgression">
+            <th mat-header-cell *matHeaderCellDef>Progress</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.addedProgression}}
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="accent">{{'Close' | translate}}</button>
+</div>

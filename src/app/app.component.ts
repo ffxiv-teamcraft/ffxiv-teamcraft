@@ -1,18 +1,16 @@
-import {ChangeDetectorRef, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {Observable} from 'rxjs/Observable';
 import {User} from 'firebase/app';
-import {MatDialog, MatSidenav, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
 import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
 import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
 import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
 import {UserService} from './core/database/user.service';
 import {environment} from '../environments/environment';
 import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
-import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
 import {SettingsService} from './pages/settings/settings.service';
@@ -20,12 +18,17 @@ import {HelpService} from './core/component/help.service';
 import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 import fontawesome from '@fortawesome/fontawesome';
 import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
-import {faBell, faCalculator, faMap} from '@fortawesome/fontawesome-free-solid';
+import {faBell, faCalculator, faGavel, faMap} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
+import {Observable, Subscription} from 'rxjs';
+import {debounceTime, distinctUntilChanged, filter, first, map} from 'rxjs/operators';
+import {PlatformService} from './core/tools/platform.service';
+import {IpcService} from './core/electron/ipc.service';
+import {GarlandToolsService} from './core/api/garland-tools.service';
 
 declare const ga: Function;
 
@@ -36,8 +39,7 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
-    @ViewChild('timers')
-    timersSidebar: MatSidenav;
+    public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
 
     locale: string;
 
@@ -67,6 +69,19 @@ export class AppComponent implements OnInit {
 
     customLinksEnabled = false;
 
+    public locales = AppComponent.LOCALES;
+
+    private characterAddPopupOpened = false;
+
+    public overlay = false;
+
+    public url: string;
+
+    public openingUrl = false;
+
+    @ViewChild('urlBox')
+    urlBox: ElementRef;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -81,7 +96,12 @@ export class AppComponent implements OnInit {
                 private push: PushNotificationsService,
                 overlayContainer: OverlayContainer,
                 public cd: ChangeDetectorRef,
-                private pendingChangesService: PendingChangesService) {
+                private pendingChangesService: PendingChangesService,
+                public platformService: PlatformService,
+                private ipc: IpcService,
+                private gt: GarlandToolsService) {
+
+        this.gt.preload();
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -89,7 +109,7 @@ export class AppComponent implements OnInit {
         });
         overlayContainer.getContainerElement().classList.add(`${settings.theme}-theme`);
 
-        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap);
+        fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap, faGavel);
 
         this.watcher = media.subscribe((change: MediaChange) => {
             this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
@@ -104,16 +124,19 @@ export class AppComponent implements OnInit {
 
         // Google Analytics
         router.events
-            .distinctUntilChanged((previous: any, current: any) => {
-                if (current instanceof NavigationEnd) {
-                    return previous.url === current.url;
-                }
-                return true;
-            })
-            .subscribe((event: any) => {
-                ga('set', 'page', event.url);
-                ga('send', 'pageview');
-            });
+            .pipe(
+                distinctUntilChanged((previous: any, current: any) => {
+                    if (current instanceof NavigationEnd) {
+                        return previous.url === current.url;
+                    }
+                    return true;
+                })
+            ).subscribe((event: any) => {
+            this.overlay = event.url.indexOf('?overlay') > -1;
+            ga('set', 'page', event.url);
+            ga('send', 'pageview');
+        });
+
 
         // Firebase Auth
         this.authState = this.auth.authState;
@@ -133,6 +156,9 @@ export class AppComponent implements OnInit {
         // Annoucement
         data.object('/announcement')
             .valueChanges()
+            .pipe(
+                filter(() => !this.overlay)
+            )
             .subscribe((announcement: Announcement) => {
                 let lastLS = localStorage.getItem('announcement:last');
                 if (lastLS !== null && !lastLS.startsWith('{')) {
@@ -142,7 +168,7 @@ export class AppComponent implements OnInit {
                 if (last.text !== announcement.text) {
                     this.dialog.open(AnnouncementPopupComponent, {data: announcement})
                         .afterClosed()
-                        .first()
+                        .pipe(first())
                         .subscribe(() => {
                             localStorage.setItem('announcement:last', JSON.stringify(announcement));
                         });
@@ -166,9 +192,15 @@ export class AppComponent implements OnInit {
 
     @HostListener('window:beforeunload', ['$event'])
     onBeforeUnload($event) {
-        if (this.pendingChangesService.hasPendingChanges()) {
+        if (this.pendingChangesService.hasPendingChanges() && !this.platformService.isDesktop()) {
             $event.returnValue = true;
         }
+    }
+
+    openUrl(): void {
+        const uri = this.url.replace('https://ffxivteamcraft.com/', '');
+        this.router.navigate(uri.split('/'));
+        this.openingUrl = false;
     }
 
     ngOnInit(): void {
@@ -201,8 +233,10 @@ export class AppComponent implements OnInit {
                     .valueChanges()
                     .subscribe((patreon: any) => {
                         this.userService.getUserData()
-                        // We want to make sure that we get a boolean in there.
-                            .map(user => user.patron || false)
+                            .pipe(
+                                // We want to make sure that we get a boolean in there.
+                                map(user => user.patron || false)
+                            )
                             // Display patreon popup is goal isn't reached and the user isn't a registered patron.
                             .subscribe(isPatron => {
                                 if (!this.patreonPopupDisplayed && patreon.current < patreon.goal && !isPatron) {
@@ -213,14 +247,14 @@ export class AppComponent implements OnInit {
                     });
             }
             // Anonymous sign in with "please register" snack.
-            this.auth.authState.debounceTime(1000).subscribe(state => {
-                if (state !== null && state.isAnonymous && !this.isRegistering) {
+            this.auth.authState.pipe(debounceTime(1000)).subscribe(state => {
+                if (state !== null && state.isAnonymous && !this.isRegistering && !this.overlay) {
                     this.registrationSnackRef = this.snack.open(
                         this.translate.instant('Anonymous_Warning'),
                         this.translate.instant('Registration'),
                         {
                             duration: 5000,
-                            extraClasses: ['snack-warn']
+                            panelClass: ['snack-warn']
                         }
                     );
                     this.registrationSnackRef.onAction().subscribe(() => {
@@ -237,8 +271,11 @@ export class AppComponent implements OnInit {
                 .getUserData()
                 .subscribe(u => {
                     this.customLinksEnabled = u.patron || u.admin;
-                    if (u.lodestoneId === undefined && !u.anonymous) {
-                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true});
+                    if (u.lodestoneId === undefined && !u.anonymous && !this.characterAddPopupOpened) {
+                        this.characterAddPopupOpened = true;
+                        this.dialog.open(CharacterAddPopupComponent, {disableClose: true, data: true})
+                            .afterClosed()
+                            .subscribe(() => this.characterAddPopupOpened = false);
                     }
                 });
 
@@ -272,10 +309,11 @@ export class AppComponent implements OnInit {
     disconnect(): void {
         this.router.navigate(['recipes']);
         this.userService.signOut();
+        this.username = 'Anonymous';
     }
 
     use(lang: string): void {
-        if (['en', 'de', 'fr', 'ja'].indexOf(lang) === -1) {
+        if (AppComponent.LOCALES.indexOf(lang) === -1) {
             lang = 'en';
         }
         this.locale = lang;
@@ -283,5 +321,19 @@ export class AppComponent implements OnInit {
         this.translate.use(lang);
     }
 
+    /**
+     * Desktop-specific methods
+     */
+    closeApp(): void {
+        window.close();
+    }
+
+    toggleFullscreen(): void {
+        this.ipc.send('fullscreen-toggle');
+    }
+
+    minimize(): void {
+        this.ipc.send('minimize');
+    }
 
 }

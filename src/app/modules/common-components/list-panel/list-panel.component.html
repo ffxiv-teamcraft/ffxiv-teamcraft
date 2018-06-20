@@ -19,14 +19,14 @@
                              routerLink="/profile/{{list.authorId}}">
                         <div class="tags">
                             <mat-chip-list class="inline-chips">
-                                <mat-chip *ngFor="let tag of list.tags">{{tag}}</mat-chip>
+                                <mat-chip *ngFor="let tag of tags">{{tag}}</mat-chip>
                             </mat-chip-list>
                         </div>
                         <span>{{list.note}}</span>
                     </div>
                 </mat-panel-description>
             </div>
-            <div class="buttons">
+            <div class="buttons" *ngIf="!isMobile()">
                 <app-comments-button *ngIf="list.public" [name]="list.name" [list]="list"
                                      [isOwnList]="list.authorId === authorUid"
                                      color="null" (click)="$event.stopPropagation()">
@@ -52,11 +52,13 @@
                 </button>
                 <span *ngIf="list.authorId === userUid"
                       [matTooltipDisabled]="!anonymous"
-                      [matTooltip]="'PERMISSIONS.No_anonymous' | translate">
+                      [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                      matTooltipPosition="above">
                     <button mat-icon-button
                             (click)="$event.stopPropagation();openPermissions(list)"
                             [disabled]="anonymous"
-                            [matTooltip]="'PERMISSIONS.Title' | translate">
+                            [matTooltip]="'PERMISSIONS.Title' | translate"
+                            matTooltipPosition="above">
                         <mat-icon>security</mat-icon>
                     </button>
                 </span>
@@ -66,12 +68,20 @@
                         (cbOnSuccess)="showCopiedNotification()">
                     <mat-icon>share</mat-icon>
                 </button>
-                <!--<input type="text" #uri readonly hidden value="{{getLink()}}">-->
+
+                <button mat-icon-button matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
+                        matTooltipPosition="above"
+                        (click)="$event.stopPropagation();openTagsPopup()" *ngIf="list.authorId === userUid">
+                    <mat-icon>label_outline</mat-icon>
+                </button>
+
                 <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
+                        matTooltip="{{'LIST.BUTTONS.Open' | translate}}" matTooltipPosition="above"
                         (click)="$event.stopPropagation()">
                     <mat-icon>playlist_play</mat-icon>
                 </button>
                 <button mat-icon-button *ngIf="!readonly && buttons && list.authorId === userUid"
+                        matTooltip="{{'LIST.BUTTONS.Delete' | translate}}" matTooltipPosition="above"
                         (click)="ondelete.emit(); $event.stopPropagation()">
                     <mat-icon>delete</mat-icon>
                 </button>
@@ -84,9 +94,74 @@
         </div>
     </mat-expansion-panel-header>
     <mat-list *ngIf="expanded">
+        <div class="buttons mobile mat-elevation-z2" mat-list-item *ngIf="isMobile()">
+            <app-comments-button *ngIf="list.public" [name]="list.name" [list]="list"
+                                 [isOwnList]="list.authorId === authorUid"
+                                 color="null" (click)="$event.stopPropagation()">
+            </app-comments-button>
+            <button mat-icon-button *ngIf="buttons && linkButton"
+                    matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
+                    (click)="$event.stopPropagation(); openLinkPopup(list)">
+                <mat-icon>link</mat-icon>
+            </button>
+            <button mat-icon-button
+                    *ngIf="!list.ephemeral && buttons && templateButton && templateUrl === undefined"
+                    matTooltip="{{'LIST_TEMPLATE.Create_template' | translate}}" matTooltipPosition="above"
+                    (click)="$event.stopPropagation(); openTemplatePopup(list)">
+                <mat-icon>description</mat-icon>
+            </button>
+            <button mat-icon-button
+                    *ngIf="!list.ephemeral && buttons && templateButton && templateUrl !== undefined" ngxClipboard
+                    [cbContent]="templateUrl"
+                    (click)="$event.stopPropagation()"
+                    matTooltip="{{'LIST_TEMPLATE.Copy_template_url' | translate}}" matTooltipPosition="above"
+                    (cbOnSuccess)="showTemplateCopiedNotification()">
+                <mat-icon>content_paste</mat-icon>
+            </button>
+            <span *ngIf="list.authorId === userUid"
+                  [matTooltipDisabled]="!anonymous"
+                  [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
+                  matTooltipPosition="above">
+                    <button mat-icon-button
+                            (click)="$event.stopPropagation();openPermissions(list)"
+                            [disabled]="anonymous"
+                            [matTooltip]="'PERMISSIONS.Title' | translate"
+                            matTooltipPosition="above">
+                        <mat-icon>security</mat-icon>
+                    </button>
+                </span>
+            <button mat-icon-button *ngIf="buttons" ngxClipboard [cbContent]="getLink()"
+                    (click)="$event.stopPropagation()"
+                    matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                    (cbOnSuccess)="showCopiedNotification()">
+                <mat-icon>share</mat-icon>
+            </button>
+
+            <button mat-icon-button matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
+                    matTooltipPosition="above"
+                    (click)="openTagsPopup()" *ngIf="list.authorId === userUid">
+                <mat-icon>label_outline</mat-icon>
+            </button>
+
+            <button mat-icon-button *ngIf="buttons" routerLink="/list/{{list.$key}}"
+                    matTooltip="{{'LIST.BUTTONS.Open' | translate}}" matTooltipPosition="above"
+                    (click)="$event.stopPropagation()">
+                <mat-icon>playlist_play</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!readonly && buttons && list.authorId === userUid"
+                    matTooltip="{{'LIST.BUTTONS.Delete' | translate}}" matTooltipPosition="above"
+                    (click)="ondelete.emit(); $event.stopPropagation()">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="copyButton" (click)="$event.stopPropagation();forkList()"
+                    [matTooltip]="'LIST.Copied_x_times' | translate:{'count': list.forks}"
+                    matTooltipPosition="above">
+                <mat-icon>content_copy</mat-icon>
+            </button>
+        </div>
         <app-recipe *ngFor="let recipe of list.recipes"
                     [recipe]="recipe"
-                    (ondelete)="onrecipedelete.emit({recipe: recipe})"
+                    (ondelete)="onrecipedelete.emit(recipe)"
                     (onedit)="onedit.emit({recipe: recipe, amount:$event})"
                     [readonly]="readonly">
         </app-recipe>

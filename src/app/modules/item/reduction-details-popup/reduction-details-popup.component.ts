@@ -1,11 +1,12 @@
-import {Component, Inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 
 @Component({
     selector: 'app-reduction-details-popup',
     templateUrl: './reduction-details-popup.component.html',
-    styleUrls: ['./reduction-details-popup.component.scss']
+    styleUrls: ['./reduction-details-popup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReductionDetailsPopupComponent {
 

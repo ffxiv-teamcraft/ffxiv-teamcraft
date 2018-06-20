@@ -17,13 +17,34 @@
     a {
         align-self: center;
     }
-    .bottom-cards {
-        margin-top: 50px;
-        .bottom-card {
-            height: 100%;
-            p {
-                margin-top: 10px;
-            }
+}
+
+app-donation-button {
+    margin-bottom: 25px;
+}
+
+.get-started {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .get-started-card {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-bottom: 50px;
+        mat-card-content {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    mat-card {
+        a {
+            margin-bottom: 25px;
         }
     }
 }

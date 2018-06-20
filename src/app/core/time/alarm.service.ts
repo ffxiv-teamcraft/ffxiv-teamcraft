@@ -1,18 +1,23 @@
 import {Injectable} from '@angular/core';
 import {EorzeanTimeService} from './eorzean-time.service';
 import {Alarm} from './alarm';
-import {Subscription} from 'rxjs/Subscription';
+import {Observable, of, Subscription} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {SettingsService} from '../../pages/settings/settings.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {LocalizedDataService} from '../data/localized-data.service';
 import {TranslateService} from '@ngx-translate/core';
-import {Observable} from 'rxjs/Observable';
 import {Timer} from 'app/core/time/timer';
 import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
+import {first, map, mergeMap} from 'rxjs/operators';
+import {AppUser} from '../../model/list/app-user';
+import {PlatformService} from '../tools/platform.service';
+import {IpcService} from '../electron/ipc.service';
+import {MapService} from '../../modules/map/map.service';
+import {I18nToolsService} from '../tools/i18n-tools.service';
 
 @Injectable()
 export class AlarmService {
@@ -22,8 +27,10 @@ export class AlarmService {
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
                 private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
-                private userService: UserService) {
-        this.userService.getUserData().map(user => user.alarms || []).subscribe(alarms => this.loadAlarms(...alarms));
+                private userService: UserService, private platform: PlatformService, private ipc: IpcService,
+                private mapService: MapService, private i18nTools: I18nToolsService) {
+        this.userService.getUserData().pipe(map((user: AppUser) => user.alarms || []))
+            .subscribe(alarms => this.loadAlarms(...alarms));
     }
 
     /**
@@ -81,6 +88,11 @@ export class AlarmService {
         alarms.forEach(alarm => {
             if (Array.from(this._alarms.keys()).find(key => key.itemId === alarm.itemId
                 && key.spawn === alarm.spawn) === undefined) {
+                alarm.aetheryte$ = this.mapService.getMapById(alarm.zoneId).pipe(
+                    map(mapData => this.mapService
+                        .getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})
+                    )
+                );
                 this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
                     if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) &&
                         time.getUTCMinutes() === 0) {
@@ -123,7 +135,7 @@ export class AlarmService {
                                 areaId: node.areaid,
                                 coords: node.coords,
                                 zoneId: node.zoneid,
-                                type: this.getType(node),
+                                type: this.getType(node)
                             });
                         });
                     });
@@ -143,7 +155,7 @@ export class AlarmService {
                         areaId: node.areaid,
                         coords: node.coords,
                         zoneId: node.zoneid,
-                        type: this.getType(node),
+                        type: this.getType(node)
                     });
                 });
             }
@@ -156,6 +168,12 @@ export class AlarmService {
         return ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
     }
 
+    public setAlarmGroupName(alarm: Alarm, groupName: string): void {
+        this.alarms.filter(a => a.itemId === alarm.itemId)
+            .forEach(a => a.groupName = groupName);
+        this.persistAlarms();
+    }
+
     /**
      * Plays the alarm (audio + snack).
      * @param {Alarm} alarm
@@ -164,36 +182,82 @@ export class AlarmService {
         if (this.settings.alarmsMuted) {
             return;
         }
-        const lastPlayed = localStorage.getItem('alarms:' + alarm.itemId);
-        // Don't play the alarm if it was played less than a minute ago
-        if (lastPlayed === null || Date.now() - +lastPlayed > 60000) {
-            this.snack.open(this.translator.instant('ALARM.Spawned',
-                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-                this.translator.instant('ALARM.See_on_map'),
-                {duration: 5000})
-                .onAction().subscribe(() => {
-                this.dialog.open(MapPopupComponent, {data: {coords: {x: alarm.coords[0], y: alarm.coords[1]}, id: alarm.zoneId}});
-            });
-            const audio = new Audio(`/assets/audio/${this.settings.alarmSound}.mp3`);
-            audio.loop = false;
-            audio.volume = this.settings.alarmVolume;
-            audio.play();
-            this.pushNotificationsService.create(this.translator.instant('ALARM.Spawned',
-                {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-                {
-                    icon: `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`,
-                    sticky: false,
-                    renotify: false,
-                    body: `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - ` +
-                    `${this.localizedData.getPlace(alarm.areaId)[this.translator.currentLang]} ` +
-                    (alarm.slot !== null ? `(${alarm.slot})` : '')
-                }
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                mergeMap(user => {
+                    let alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
+                    if (alarmGroup === undefined) {
+                        alarmGroup = user.alarmGroups.find(group => group.name === 'Default group')
+                    }
+                    // If the group of this alarm is disabled, don't play the alarm.
+                    if (alarmGroup !== undefined && !alarmGroup.enabled) {
+                        return of(null);
+                    }
+                    const lastPlayed = localStorage.getItem('alarms:lastPlayed');
+                    // Don't play the alarm if it was played less than half a minute ago
+                    if (lastPlayed === null || Date.now() - +lastPlayed > 30000) {
+                        this.snack.open(this.translator.instant('ALARM.Spawned',
+                            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+                            this.translator.instant('ALARM.See_on_map'),
+                            {duration: 5000})
+                            .onAction().subscribe(() => {
+                            this.dialog.open(MapPopupComponent, {
+                                data: {
+                                    coords: {
+                                        x: alarm.coords[0],
+                                        y: alarm.coords[1]
+                                    },
+                                    id: alarm.zoneId
+                                }
+                            });
+                        });
+                        let audio: HTMLAudioElement;
+                        if (this.settings.alarmSound.indexOf(':') === -1) {
+                            audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+                        } else {
+                            audio = new Audio(this.settings.alarmSound);
+                        }
+                        audio.loop = false;
+                        audio.volume = this.settings.alarmVolume;
+                        audio.play();
+                        localStorage.setItem('alarms:lastPlayed', Date.now().toString());
+                        return this.mapService.getMapById(alarm.zoneId)
+                            .pipe(
+                                map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
+                                map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
+                                mergeMap(closestAetheryteName => {
+                                    const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
+                                    const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - `
+                                        + `${closestAetheryteName}` +
+                                        (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+                                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+                                    if (this.platform.isDesktop()) {
+                                        this.ipc.send('notification', {
+                                            title: notificationTitle,
+                                            content: notificationBody,
+                                            icon: notificationIcon
+                                        });
+                                    } else {
+                                        return this.pushNotificationsService.create(notificationTitle,
+                                            {
+                                                icon: notificationIcon,
+                                                sticky: false,
+                                                renotify: false,
+                                                body: notificationBody
+                                            }
+                                        )
+                                    }
+                                })
+                            )
+                    } else {
+                        return of(null);
+                    }
+                })
             ).subscribe(() => {
-            }, err => {
-                // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
-            });
-            localStorage.setItem('alarms:' + alarm.itemId, Date.now().toString());
-        }
+        }, err => {
+            // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
+        });
     }
 
     /**
@@ -202,41 +266,42 @@ export class AlarmService {
      * @returns {Observable<number>}
      */
     public getTimers(item: ListRow): Observable<Timer[]> {
-        return this.etime.getEorzeanTime().map(time => {
-            const alarms = this.generateAlarms(item).reduce(function (rv, x) {
-                (rv[x.type] = rv[x.type] || []).push(x);
-                return rv;
-            }, {});
-            return Object.keys(alarms).map(key => {
-                const alarm = this.closestAlarm(alarms[key], time);
-                if (this._isSpawned(alarm, time)) {
-                    const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
-                    return {
-                        itemId: alarm.itemId,
-                        display: this.getTimerString(this.etime.toEarthTime(timer)),
-                        time: timer,
-                        slot: alarm.slot,
-                        zoneId: alarm.zoneId,
-                        coords: alarm.coords, areaId: alarm.areaId,
-                        type: alarm.type,
-                        alarm: alarm,
-                    };
-                } else {
-                    const timer = this.getMinutesBefore(time, alarm.spawn);
-                    return {
-                        itemId: alarm.itemId,
-                        display: this.getTimerString(this.etime.toEarthTime(timer)),
-                        time: timer,
-                        slot: alarm.slot,
-                        zoneId: alarm.zoneId,
-                        coords: alarm.coords,
-                        areaId: alarm.areaId,
-                        type: alarm.type,
-                        alarm: alarm,
-                    };
-                }
-            });
-        });
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                const alarms = this.generateAlarms(item).reduce(function (rv, x) {
+                    (rv[x.type] = rv[x.type] || []).push(x);
+                    return rv;
+                }, {});
+                return Object.keys(alarms).map(key => {
+                    const alarm = this.closestAlarm(alarms[key], time);
+                    if (this._isSpawned(alarm, time)) {
+                        const timer = this.getMinutesBefore(time, (alarm.spawn + alarm.duration) % 24);
+                        return {
+                            itemId: alarm.itemId,
+                            display: this.getTimerString(this.etime.toEarthTime(timer)),
+                            time: timer,
+                            slot: alarm.slot,
+                            zoneId: alarm.zoneId,
+                            coords: alarm.coords, areaId: alarm.areaId,
+                            type: alarm.type,
+                            alarm: alarm,
+                        };
+                    } else {
+                        const timer = this.getMinutesBefore(time, alarm.spawn);
+                        return {
+                            itemId: alarm.itemId,
+                            display: this.getTimerString(this.etime.toEarthTime(timer)),
+                            time: timer,
+                            slot: alarm.slot,
+                            zoneId: alarm.zoneId,
+                            coords: alarm.coords,
+                            areaId: alarm.areaId,
+                            type: alarm.type,
+                            alarm: alarm,
+                        };
+                    }
+                });
+            }));
     }
 
     public getAlarmTimerString(alarm: Alarm, time: Date): string {
@@ -305,9 +370,10 @@ export class AlarmService {
      * @private
      */
     public _isSpawned(alarm: Alarm, time: Date): boolean {
-        const spawn = alarm.spawn;
+        let spawn = alarm.spawn;
         let despawn = (spawn + alarm.duration) % 24;
         despawn = despawn === 0 ? 24 : despawn;
+        spawn = spawn === 0 ? 24 : spawn;
         return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
     }
 
@@ -317,15 +383,16 @@ export class AlarmService {
      * @returns {Observable<boolean>}
      */
     public isSpawned(item: ListRow): Observable<boolean> {
-        return this.etime.getEorzeanTime().map(time => {
-            let spawned = false;
-            this.generateAlarms(item).forEach(alarm => {
-                if (this._isSpawned(alarm, time)) {
-                    spawned = true;
-                }
-            });
-            return spawned;
-        });
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                let spawned = false;
+                this.generateAlarms(item).forEach(alarm => {
+                    if (this._isSpawned(alarm, time)) {
+                        spawned = true;
+                    }
+                });
+                return spawned;
+            }));
     }
 
     /**
@@ -334,13 +401,14 @@ export class AlarmService {
      * @param id
      */
     public isAlerted(id: number): Observable<boolean> {
-        return this.etime.getEorzeanTime().map(time => {
-            let alerted = false;
-            this.getAlarms(id).forEach(alarm => {
-                alerted = alerted || this.isAlarmAlerted(alarm, time);
-            });
-            return alerted;
-        })
+        return this.etime.getEorzeanTime().pipe(
+            map(time => {
+                let alerted = false;
+                this.getAlarms(id).forEach(alarm => {
+                    alerted = alerted || this.isAlarmAlerted(alarm, time);
+                });
+                return alerted;
+            }));
     }
 
     public isAlarmAlerted(alarm: Alarm, time: Date) {
@@ -390,10 +458,17 @@ export class AlarmService {
      * Persist the current alarms into browser's localstorage.
      */
     private persistAlarms(): void {
-        this.userService.getUserData().first().mergeMap(user => {
-            user.alarms = Array.from(this._alarms.keys());
-            return this.userService.set(user.$key, user);
-        }).first().subscribe();
+        this.userService.getUserData().pipe(
+            first(),
+            mergeMap((user: AppUser) => {
+                user.alarms = Array.from(this._alarms.keys()).map(alarm => {
+                    delete alarm.aetheryte$;
+                    return alarm;
+                });
+                return this.userService.set(user.$key, user);
+            }),
+            first()
+        ).subscribe();
     }
 
     /**

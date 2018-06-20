@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {Observable} from 'rxjs/Observable';
+import {Observable, of, ReplaySubject} from 'rxjs';
 import {UserService} from 'app/core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
 import {ListManagerService} from '../../../core/list/list-manager.service';
@@ -29,16 +29,17 @@ import {NameEditPopupComponent} from '../../../modules/common-components/name-ed
 import {User} from 'firebase';
 import {SettingsService} from '../../settings/settings.service';
 import {ListTagsPopupComponent} from '../list-tags-popup/list-tags-popup.component';
-import 'rxjs/add/observable/combineLatest';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/first';
-import 'rxjs/add/operator/distinctUntilChanged';
 import {LayoutService} from '../../../core/layout/layout.service';
 import {LayoutRowDisplay} from '../../../core/layout/layout-row-display';
 import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.component';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
+import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
+import {filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {PlatformService} from '../../../core/tools/platform.service';
+import {LinkToolsService} from '../../../core/tools/link-tools.service';
+import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
+import {LocalizedDataService} from '../../../core/data/localized-data.service';
 
 declare const ga: Function;
 
@@ -93,6 +94,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
 
+    private completionDialogOpen = false;
+
     private upgradingList = false;
 
     public get selectedIndex(): number {
@@ -102,18 +105,37 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     constructor(private auth: AngularFireAuth, private userService: UserService, protected dialog: MatDialog,
                 private listService: ListService, private listManager: ListManagerService, private snack: MatSnackBar,
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
-                public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef) {
+                public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
+                public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
+                private i18nTools: I18nToolsService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
-            .filter(data => data !== null)
-            .mergeMap(data => {
-                return this.layoutService.getDisplay(data, this.selectedIndex);
-            });
+            .pipe(
+                filter(data => data !== null),
+                mergeMap(data => {
+                    return this.layoutService.getDisplay(data, this.selectedIndex);
+                })
+            );
         this.recipes = this.listData$
-            .filter(data => data !== null)
-            .mergeMap(data => {
-                return this.layoutService.getRecipes(data, this.selectedIndex);
+            .pipe(
+                filter(data => data !== null),
+                mergeMap(data => {
+                    return this.layoutService.getRecipes(data, this.selectedIndex);
+                })
+            );
+    }
+
+    public getLink(): string {
+        return this.linkTools.getLink(`/list/${this.listData.$key}`);
+    }
+
+    public showCopiedNotification(): void {
+        this.snack.open(
+            this.translate.instant('Share_link_copied'),
+            '', {
+                duration: 10000,
+                panelClass: ['snack']
             });
     }
 
@@ -136,14 +158,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             }, 50);
             this.listData.forEachItem(item => {
                 if (item.gatheredBy !== undefined) {
-                    const filter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
-                    if (filter !== undefined) {
-                        item.hidden = !filter.checked || item.gatheredBy.level > filter.level;
+                    const gatheringFilter = this.gatheringFilters.find(f => f.types.indexOf(item.gatheredBy.type) > -1);
+                    if (gatheringFilter !== undefined) {
+                        item.hidden = !gatheringFilter.checked || item.gatheredBy.level > gatheringFilter.level;
                     }
                 } else if (item.craftedBy !== undefined) {
                     for (const craft of item.craftedBy) {
-                        const filter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
-                        item.hidden = !filter.checked || craft.level > filter.level;
+                        const craftFilter = this.craftFilters.find(f => craft.icon.indexOf(f.name) > -1);
+                        item.hidden = !craftFilter.checked || craft.level > craftFilter.level;
                     }
                 } else {
                     // If the item can't be filtered based on a gathering/crafting job level,
@@ -192,25 +214,27 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public adaptFilters(): void {
         this.userService.getCharacter()
-            .first()
-            .map(u => <any>u)
+            .pipe(
+                first(),
+                map(u => <any>u),
+            )
             .subscribe(u => {
-                this.craftFilters.forEach(filter => {
-                    const userJob = u.classjobs[filter.name];
+                this.craftFilters.forEach(craftFilter => {
+                    const userJob = u.classjobs[craftFilter.name];
                     if (userJob === undefined) {
-                        filter.checked = false;
+                        craftFilter.checked = false;
                     } else {
-                        filter.checked = true;
-                        filter.level = userJob.level;
+                        craftFilter.checked = true;
+                        craftFilter.level = userJob.level;
                     }
                 });
-                this.gatheringFilters.forEach(filter => {
-                    const userJob = u.classjobs[filter.name];
+                this.gatheringFilters.forEach(gatheringFilter => {
+                    const userJob = u.classjobs[gatheringFilter.name];
                     if (userJob === undefined) {
-                        filter.checked = false;
+                        gatheringFilter.checked = false;
                     } else {
-                        filter.checked = true;
-                        filter.level = userJob.level;
+                        gatheringFilter.checked = true;
+                        gatheringFilter.level = userJob.level;
                     }
                 });
                 this.triggerFilter();
@@ -255,12 +279,33 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         return this.user !== undefined && this.user !== null && this.user.uid === this.listData.authorId;
     }
 
+    public getTextExport(display: LayoutRowDisplay[]): string {
+        return display
+            .filter(displayRow => displayRow.rows.length > 0)
+            .reduce((exportString, displayRow) => {
+                return exportString + displayRow.rows.reduce((rowExportString, row) => {
+                    return rowExportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
+                }, `${this.translate.instant(displayRow.title)}:\n`) + '\n';
+            }, `${this.linkTools.getLink(`list/${this.listData.$key}`)
+            }\n\n${this.listData.name}: \n\n${
+                this.getCrystalsTextExport(this.translate.instant('Crystals'), this.listData.crystals)}`);
+    }
+
+    public getCrystalsTextExport(title: string, crystals: ListRow[]): string {
+        return crystals.reduce((exportString, row) => {
+            return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
+        }, `${title} :\n`);
+    }
+
     upgradeList(): void {
         this.upgradingList = true;
         const dialogRef = this.dialog.open(RegenerationPopupComponent, {disableClose: true});
         this.cd.detach();
         this.listManager.upgradeList(this.listData)
-            .switchMap(list => this.listService.update(this.listData.$key, list)).first().subscribe(() => {
+            .pipe(
+                switchMap(list => this.listService.set(this.listData.$key, list)),
+                first()
+            ).subscribe(() => {
             ga('send', 'event', 'List', 'regenerate');
             this.cd.reattach();
             dialogRef.close();
@@ -278,13 +323,13 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     update(list: List): void {
-        this.listService.update(this.listData.$key, list).first().subscribe(() => {
+        this.listService.set(this.listData.$key, list).pipe(first()).subscribe(() => {
             this.reload.emit();
         });
     }
 
     set(list: List): void {
-        this.listService.set(this.listData.$key, list).first().subscribe(() => {
+        this.listService.set(this.listData.$key, list).pipe(first()).subscribe(() => {
             this.reload.emit();
         });
     }
@@ -313,24 +358,54 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         list.setDone(data.row, data.amount, data.preCraft);
-        this.listService.update(list.$key, list).map(() => list)
-            .do(l => {
+        this.listService.set(list.$key, list).pipe(
+            map(() => list),
+            tap((l: List) => {
                 if (l.ephemeral && l.isComplete()) {
-                    this.listService.remove(list.$key).first().subscribe(() => {
+                    this.listService.remove(list.$key).pipe(first()).subscribe(() => {
                         this.router.navigate(['recipes']);
                     });
+                } else if (l.isComplete() && !l.public) {
+                    this.onCompletion(list);
                 }
-            }).subscribe(() => {
-        });
+            })
+        ).subscribe();
+    }
+
+    private onCompletion(list: List): void {
+        if (!this.completionDialogOpen) {
+            this.completionDialogOpen = true;
+            this.dialog.open(ListFinishedPopupComponent)
+                .afterClosed()
+                .pipe(
+                    tap(() => this.completionDialogOpen = false),
+                    filter(res => res !== undefined),
+                    mergeMap(res => {
+                        switch (res) {
+                            case 'reset':
+                                this.resetProgression();
+                                return of(null);
+                            case 'delete':
+                                return this.listService.remove(list.$key).pipe(first(),
+                                    tap(() => {
+                                        this.router.navigate(['recipes']);
+                                    })
+                                );
+                            default:
+                                return of(null)
+                        }
+                    })
+                ).subscribe();
+        }
     }
 
     public forkList(list: List): void {
         const fork: List = list.clone();
         this.cd.detach();
         // Update the forks count.
-        this.listService.update(list.$key, list).first().subscribe();
+        this.listService.set(list.$key, list).pipe(first()).subscribe();
         fork.authorId = this.user.uid;
-        this.listService.add(fork).first().subscribe((id) => {
+        this.listService.add(fork).pipe(first()).subscribe((id) => {
             this.cd.reattach();
             this.subscriptions.push(this.snack.open(this.translate.instant('List_forked'),
                 this.translate.instant('Open')).onAction()
@@ -346,40 +421,47 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     public resetProgression(): void {
         this.subscriptions.push(
             this.dialog.open(ConfirmationPopupComponent, {data: 'Do you really want to reset the list?'}).afterClosed()
-                .filter(r => r)
-                .map(() => {
-                    return this.listData;
-                })
+                .pipe(
+                    filter(r => r),
+                    map(() => {
+                        return this.listData;
+                    })
+                )
                 .subscribe(list => {
                     for (const recipe of list.recipes) {
                         list.resetDone(recipe);
                     }
                     this.set(list);
-                }));
+                })
+        )
+        ;
     }
 
     public toggleHideCompleted(): void {
         this.hideCompleted = !this.hideCompleted;
         this.userData.listDetailsFilters.hideCompleted = this.hideCompleted;
-        this.userService.set(this.userData.$key, this.userData).first().subscribe();
+        this.userService.set(this.userData.$key, this.userData).pipe(first()).subscribe();
         this.triggerFilter();
     }
 
     public toggleHideUsed(): void {
         this.hideUsed = !this.hideUsed;
         this.userData.listDetailsFilters.hideUsed = this.hideUsed;
-        this.userService.set(this.userData.$key, this.userData).first().subscribe();
+        this.userService.set(this.userData.$key, this.userData).pipe(first()).subscribe();
         this.triggerFilter();
     }
 
     public rename(): void {
         const dialog = this.dialog.open(NameEditPopupComponent, {data: this.listData.name});
-        this.subscriptions.push(dialog.afterClosed().map(value => {
-                if (value !== undefined && value.length > 0) {
-                    this.listData.name = value;
-                }
-                return this.listData;
-            }).subscribe((list) => {
+        this.subscriptions.push(dialog.afterClosed()
+            .pipe(
+                map(value => {
+                    if (value !== undefined && value.length > 0) {
+                        this.listData.name = value;
+                    }
+                    return this.listData;
+                })
+            ).subscribe((list) => {
                 this.update(list);
             })
         );
@@ -387,21 +469,22 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     public openTagsPopup(): void {
         this.subscriptions.push(
-            this.dialog.open(ListTagsPopupComponent, {data: this.listData}).afterClosed().map(tags => {
-                this.listData.tags = tags;
-                return this.listData;
+            this.dialog.open(ListTagsPopupComponent, {data: this.listData}).afterClosed().pipe(
+                map(tags => {
+                    this.listData.tags = tags;
+                    return this.listData;
+                }),
+                filter(list => list.tags !== undefined)
+            ).subscribe(list => {
+                this.update(list);
             })
-                .filter(list => list.tags !== undefined)
-                .subscribe(list => {
-                    this.update(list);
-                })
         );
     }
 
     public openPermissionsPopup(): void {
         this.dialog.open(PermissionsPopupComponent, {data: this.listData})
             .afterClosed()
-            .filter(list => list !== '')
+            .pipe(filter(list => list !== ''))
             .subscribe((list) => {
                 this.update(list);
             });
