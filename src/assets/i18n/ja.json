@@ -346,11 +346,6 @@
     "Steps": "Steps",
     "Gather_x": "Gather {{amount}}"
   },
-  "GATHERING_LOCATIONS": {
-    "Title": "Récoltes",
-    "No_items": "Aucun objet trouvé",
-    "Gathering_name": "Nom de l'objet"
-  },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
     "Read_more": "Read more"
