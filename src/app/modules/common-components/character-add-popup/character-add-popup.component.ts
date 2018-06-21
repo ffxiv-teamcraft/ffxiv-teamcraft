@@ -17,13 +17,21 @@ export class CharacterAddPopupComponent implements OnInit {
 
     @ViewChild('server') serverInput: ElementRef;
 
+    @ViewChild('lodestoneIdInput') lodestoneIdInput: ElementRef;
+
     serverName = '';
 
     characterName: string;
 
+    lodestoneId: string;
+
     search: Observable<any[]>;
 
+    characterFromLodestone$: Observable<any>;
+
     loading = false;
+
+    customId = false;
 
     constructor(private data: DataService,
                 private userService: UserService,
@@ -59,6 +67,18 @@ export class CharacterAddPopupComponent implements OnInit {
             .pipe(
                 debounceTime(250),
                 map(() => this.serverName)
+            );
+        this.characterFromLodestone$ = fromEvent(this.lodestoneIdInput.nativeElement, 'keyup')
+            .pipe(
+                debounceTime(250),
+                map(() => this.lodestoneId),
+                tap(() => this.loading = true),
+                switchMap(lodestoneId => {
+                    return this.data.getCharacter(+lodestoneId).pipe(
+                        map(res => res.name === 'Lodestone under maintenance' ? null : res)
+                    );
+                }),
+                tap(() => this.loading = false)
             );
         // Combine them to observe the result.
         this.search = combineLatest(name$, server$)

@@ -51,29 +51,15 @@ export class PricingComponent {
             // Get the price of the item.
             const price = this.pricingService.getPrice(row);
             // Compute the price of this row.
-            const addition = amount.nq * price.nq + amount.hq * price.hq;
-            // If the row is a craft
-            if (row.requires !== undefined) {
-                // Compute the price of the craft
-                const craftingPrice = this.getCraftCost(row);
-                // If it's cheaper or it can't be bought
-                if (craftingPrice < addition || addition === 0) {
-                    // If the crafting price is cheaper than the item itself,
-                    // don't add the price because mats are already used in the price.
-                    total += 0;
-                }
-            } else {
-                // If this is not a craft, simply add its price.
-                total += addition;
-            }
+            total += amount.nq * price.nq + amount.hq * price.hq;
         });
         return total;
     }
 
     getTotalEarnings(rows: ListRow[]): number {
         return rows.reduce((total, row) => {
-            const price = this.pricingService.getPrice(row);
-            const amount = this.pricingService.getAmount(this.list.$key, row);
+            const price = this.pricingService.getEarnings(row);
+            const amount = this.pricingService.getAmount(this.list.$key, row, true);
             return total + amount.nq * price.nq + amount.hq * price.hq;
         }, 0);
     }
@@ -85,7 +71,7 @@ export class PricingComponent {
      */
     getCraftCost(row: ListRow): number {
         let total = 0;
-        row.requires.forEach(requirement => {
+        (row.requires || []).forEach(requirement => {
             const listRow = this.list.getItemById(requirement.id);
             const price = this.pricingService.getPrice(listRow);
             const amount = this.pricingService.getAmount(this.list.$key, listRow);

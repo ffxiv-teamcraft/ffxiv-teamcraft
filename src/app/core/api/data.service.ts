@@ -193,6 +193,7 @@ export class DataService {
         }
         const params = new HttpParams()
             .set('gatherable', '1')
+            .set('type', 'item')
             .set('text', name)
             .set('lang', lang);
         return this.getGarlandSearch(params);

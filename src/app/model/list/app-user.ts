@@ -38,4 +38,6 @@ export class AppUser extends DataModel {
     contacts: string[] = [];
     // Alarm groups for the user
     alarmGroups: AlarmGroup[] = [{name: 'Default group', enabled: true}];
+    // Rotation folders
+    rotationFolders: string[] = [];
 }

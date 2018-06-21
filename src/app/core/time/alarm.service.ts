@@ -36,9 +36,13 @@ export class AlarmService {
     /**
      * Registers a given item and creates an alarm for it.
      * @param {ListRow} item
+     * @param groupName
      */
-    public register(item: ListRow): void {
+    public register(item: ListRow, groupName?: string): void {
         this.generateAlarms(item).forEach(alarm => {
+            if (groupName !== undefined) {
+                alarm.groupName = groupName;
+            }
             this.registerAlarms(alarm);
         });
     }
@@ -327,7 +331,7 @@ export class AlarmService {
             } else if (this._isSpawned(b, time)) {
                 return 1;
             } else {
-                return this.getMinutesBefore(time, a.spawn) > this.getMinutesBefore(time, b.spawn) ? 1 : -1;
+                return this.getMinutesBefore(time, (a.spawn || 24)) > this.getMinutesBefore(time, (b.spawn || 24)) ? 1 : -1;
             }
         })[0]
     }
@@ -374,7 +378,13 @@ export class AlarmService {
         let despawn = (spawn + alarm.duration) % 24;
         despawn = despawn === 0 ? 24 : despawn;
         spawn = spawn === 0 ? 24 : spawn;
-        return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
+        // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
+        const despawnsNextDay = spawn > despawn;
+        if (!despawnsNextDay) {
+            return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
+        } else {
+            return time.getUTCHours() >= spawn || time.getUTCHours() < despawn;
+        }
     }
 
     /**

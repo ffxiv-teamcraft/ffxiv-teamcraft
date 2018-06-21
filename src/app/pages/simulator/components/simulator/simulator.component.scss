@@ -25,6 +25,15 @@
     }
 }
 
+.stats {
+    display: flex;
+    align-items: center;
+    > span {
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+}
+
 .steps {
     white-space: nowrap;
     font-size: 1.2rem;

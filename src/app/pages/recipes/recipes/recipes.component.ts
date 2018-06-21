@@ -40,6 +40,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     results: SearchResult[] = [];
 
+    selectedItems: SearchResult[] = [];
+
     @ViewChild('filter')
     filterElement: ElementRef;
 
@@ -238,6 +240,46 @@ export class RecipesComponent extends PageComponent implements OnInit {
      */
     getStars(nb: number): string {
         return this.htmlTools.generateStars(nb);
+    }
+
+    resultChecked(item: SearchResult, checked: boolean): void {
+        if (checked) {
+            this.selectedItems.push(item);
+        } else {
+            this.selectedItems = this.selectedItems.filter(row => row !== item);
+        }
+    }
+
+    addSelected(list: List, key: string): void {
+        const additions = [];
+        this.selectedItems
+            .forEach(item => {
+                additions.push(this.resolver.addToList(item.itemId, list, (<Recipe>item).recipeId, 1));
+            });
+        this.subscriptions.push(this.dialog.open(BulkAdditionPopupComponent, {
+            data: {additions: additions, key: key, listname: list.name},
+            disableClose: true
+        }).afterClosed().subscribe(() => {
+            this.selectedItems = [];
+            this.snackBar.open(
+                this.translator.instant('Recipes_Added', {listname: list.name}),
+                this.translator.instant('Open'),
+                {
+                    duration: 10000,
+                    panelClass: ['snack']
+                }
+            ).onAction().subscribe(() => {
+                this.listService.getRouterPath(key).subscribe(path => {
+                    this.router.navigate(path);
+                });
+            });
+        }));
+    }
+
+    addSelectedToNewList(): void {
+        this.createNewList().then(res => {
+            this.addSelected(res.list, res.id);
+        });
     }
 
 

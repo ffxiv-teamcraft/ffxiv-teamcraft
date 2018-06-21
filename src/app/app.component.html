@@ -9,10 +9,12 @@
             {{locale | uppercase}}
         </div>
         <div class="spacer draggable"></div>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="previousPage()">arrow_back</mat-icon>
         <mat-icon (click)="openingUrl = true" class="desktop-bar-button open-url theme-text-color" *ngIf="!overlay"
                   matTooltip="{{'COMMON.Open_url' | translate}}">
             open_in_browser
         </mat-icon>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="nextPage()">arrow_forward</mat-icon>
         <div class="spacer draggable"></div>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="minimize()" *ngIf="!overlay">minimize</mat-icon>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="toggleFullscreen()" *ngIf="!overlay">fullscreen
@@ -206,7 +208,7 @@
                         class="fab fa-discord"></i></a></div>
                     <div class="fab-container" matTooltip="{{'Download_desktop_app' | translate}}"
                          matTooltipPosition="above" *ngIf="!mobile && !platformService.isDesktop()">
-                        <a href="https://github.com/Supamiu/ffxiv-teamcraft/releases" mat-mini-fab target="_blank">
+                        <a href="https://ffxivteamcraft.com/desktop" mat-mini-fab target="_blank">
                             <mat-icon>get_app</mat-icon>
                         </a>
                     </div>
@@ -240,4 +242,8 @@
             <app-alarms-sidebar></app-alarms-sidebar>
         </mat-sidenav>
     </mat-sidenav-container>
+    <div class="opacity-slider" *ngIf="overlay">
+        <mat-slider [min]="0.2" [max]="1" [step]="0.05" [value]="overlayOpacity"
+                    (change)="setOverlayOpacity($event.value)"></mat-slider>
+    </div>
 </div>

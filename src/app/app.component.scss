@@ -214,3 +214,14 @@
         }
     }
 }
+
+.opacity-slider {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 0 15px;
+    mat-slider {
+        width: 100%;
+    }
+}

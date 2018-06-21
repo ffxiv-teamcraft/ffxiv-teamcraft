@@ -24,6 +24,9 @@ export class PricingRowComponent implements OnInit {
     @Input()
     earning = false;
 
+    @Input()
+    odd = false;
+
     price: Price;
 
     amount: ItemAmount;
@@ -44,8 +47,12 @@ export class PricingRowComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.price = this.pricingService.getPrice(this.item);
-        this.amount = this.pricingService.getAmount(this.listId, this.item);
+        if (this.earning) {
+            this.price = this.pricingService.getEarnings(this.item);
+        } else {
+            this.price = this.pricingService.getPrice(this.item);
+        }
+        this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
     }
 
     isMobile(): boolean {

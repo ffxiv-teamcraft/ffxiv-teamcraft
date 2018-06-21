@@ -68,6 +68,23 @@
     }
 }
 
+.selection-button {
+    justify-self: flex-start;
+    margin-right: 20px;
+}
+
+.recipes-button {
+    justify-self: center;
+}
+
+.recipes-list-row {
+    position: relative;
+    .selection-box {
+        position: absolute;
+        left: -30px;
+    }
+}
+
 .add-all-wrapper {
     display: flex;
     justify-content: center;

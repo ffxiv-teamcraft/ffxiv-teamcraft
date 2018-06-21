@@ -42,6 +42,7 @@ import {OauthService} from './auth/oauth.service';
 import {LinkToolsService} from './tools/link-tools.service';
 import {PlatformService} from './tools/platform.service';
 import {IpcService} from './electron/ipc.service';
+import {SharedEntityService} from './database/shared-entity/shared-entity.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -94,6 +95,7 @@ export const DATA_EXTRACTORS: Provider[] = [
         LinkToolsService,
         PlatformService,
         IpcService,
+        SharedEntityService,
     ],
     declarations: [
         I18nPipe,

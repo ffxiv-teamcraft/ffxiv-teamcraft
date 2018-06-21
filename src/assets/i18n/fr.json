@@ -149,6 +149,8 @@
   "Server_name": "Nom du serveur",
   "Add_all_recipes": "Ajouter les résultats à une liste",
   "Character_not_found": "Personnage non trouvé",
+  "Use_lodestoneId": "Utiliser l'ID lodestone",
+  "LodestoneId": "ID lodestone",
   "Requirements_for_craft": "Voir les prérequis",
   "List_forked": "Liste copiée sur votre compte",
   "List_fork": "Copier cette liste sur votre compte",
@@ -225,6 +227,7 @@
     "Regenerate_all": "Régénérer toutes les listes",
     "Merge_lists": "Fusionner des listes",
     "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
+    "Add_selection": "Ajouter la sélection à une liste",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -243,6 +246,7 @@
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
+    "Total_price": "Prix total (échanges et gils)",
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
@@ -427,6 +431,8 @@
     "Not_found": "Page introuvable"
   },
   "SIMULATOR": {
+    "Fixed_notification_number": "Notification fixe",
+    "Starting_echo_number": "Numéro de référence",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Stats minimum",
@@ -465,6 +471,7 @@
     "Save_as_new": "Sauvergarder une copie (navigue sur la copie de la rotation)",
     "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
     "Change_rotation": "Changer de rotation",
+    "New_rotation_folder": "Nouveau dossier",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",
@@ -534,5 +541,9 @@
       "Access_wiki_content": "Le wiki est là pour vous guider à travers le site, vous pouvez le consulter pour apprendre à utiliser chacune des fonctionnalités de FFXIV Teamcraft",
       "Access_wiki_link": "Aller vers le wiki"
     }
+  },
+  "PRICING": {
+    "From_vendor": "Prix au vendeur",
+    "Materials_have_cost": "Des matériaux pour ce craft ont un prix supérieur à 0, soyez sûr de ne pas les compter deux fois"
   }
 }

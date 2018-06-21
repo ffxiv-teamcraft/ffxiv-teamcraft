@@ -1,8 +1,17 @@
 <h3 mat-dialog-title>{{'SIMULATOR.Generated_macro' | translate}}</h3>
 <div mat-dialog-content class="content">
-    <mat-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
-        {{'SIMULATOR.Include_sound_end' | translate}}
-    </mat-checkbox>
+    <div class="config">
+        <mat-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
+            {{'SIMULATOR.Include_sound_end' | translate}}
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="fixedEcho" [disabled]="!addEcho" (ngModelChange)="generateMacros()">
+            {{'SIMULATOR.Fixed_notification_number' | translate}}
+        </mat-checkbox>
+        <mat-form-field>
+            <input type="number" [(ngModel)]="echoSeNumber" [disabled]="!addEcho" (ngModelChange)="generateMacros()"
+                   placeholder="{{'SIMULATOR.Starting_echo_number' | translate}}" matInput>
+        </mat-form-field>
+    </div>
     <div class="macro">
         <pre *ngFor="let macroFragment of macro" class="macro-fragment">
             <button mat-icon-button class="copy-macro" ngxClipboard [cbContent]="getText(macroFragment)">

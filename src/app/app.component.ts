@@ -79,6 +79,8 @@ export class AppComponent implements OnInit {
 
     public openingUrl = false;
 
+    public overlayOpacity = 1;
+
     @ViewChild('urlBox')
     urlBox: ElementRef;
 
@@ -133,6 +135,12 @@ export class AppComponent implements OnInit {
                 })
             ).subscribe((event: any) => {
             this.overlay = event.url.indexOf('?overlay') > -1;
+            if (this.overlay) {
+                this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
+                    this.overlayOpacity = value;
+                });
+                this.ipc.send('overlay:get-opacity', {uri: this.ipc.overlayUri});
+            }
             ga('set', 'page', event.url);
             ga('send', 'pageview');
         });
@@ -334,6 +342,18 @@ export class AppComponent implements OnInit {
 
     minimize(): void {
         this.ipc.send('minimize');
+    }
+
+    setOverlayOpacity(opacity: number): void {
+        this.ipc.send('overlay:set-opacity', {uri: this.ipc.overlayUri, opacity: opacity});
+    }
+
+    previousPage(): void {
+        window.history.back();
+    }
+
+    nextPage(): void {
+        window.history.forward();
     }
 
 }

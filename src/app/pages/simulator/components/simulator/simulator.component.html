@@ -220,8 +220,10 @@
                     <span *ngIf="recipe$ | async as recipeData">{{recipeData.lvl}} {{getStars(recipeData.stars)}}</span>
                 </mat-card-subtitle>
                 <div class="stats">
-                    {{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{simulation.crafterStats.craftsmanship}}
-                    {{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{simulation.crafterStats._control}}
+                    <span><b>{{simulation.crafterStats.jobId | jobName | i18n}}</b></span>
+                    <span>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{simulation.crafterStats.craftsmanship}}
+                        <br>
+                    {{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{simulation.crafterStats._control}}</span>
                 </div>
                 <div class="steps">
                     {{'SIMULATOR.Step_counter' | translate}}

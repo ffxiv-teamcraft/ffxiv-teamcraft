@@ -1,12 +1,11 @@
 :host {
-    margin: 0 20px;
 
     .price {
-        width: 100px;
+        width: 80px;
     }
 
     .amount {
-        width: 60px;
+        width: 40px;
     }
 
     .item-name {
@@ -18,5 +17,20 @@
 
     .from-vendor {
         margin: 0 15px;
+    }
+
+    .list-item {
+        height: 50px !important;
+    }
+
+    .odd {
+        background-color: rgba(123, 123, 123, .2);
+    }
+
+    .amount-group {
+        display: flex;
+        .field-group {
+            margin-left: 20px;
+        }
     }
 }

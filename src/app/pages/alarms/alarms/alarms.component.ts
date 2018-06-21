@@ -45,6 +45,9 @@ export class AlarmsComponent {
         this.desktop = platformService.isDesktop();
         route.queryParams.subscribe(params => {
             this.overlay = params.overlay === 'true';
+            if (this.overlay) {
+                this.ipc.overlayUri = '/alarms';
+            }
         });
 
         const timer$ = this.reloader.pipe(
@@ -87,8 +90,8 @@ export class AlarmsComponent {
                             if (this.alarmService.isAlarmSpawned(b, time)) {
                                 return 1;
                             }
-                            return this.alarmService.getMinutesBefore(time, a.spawn) < this.alarmService.getMinutesBefore(time, b.spawn)
-                                ? -1 : 1;
+                            return this.alarmService.getMinutesBefore(time, (a.spawn || 24)) <
+                            this.alarmService.getMinutesBefore(time, (b.spawn || 24)) ? -1 : 1;
                         });
                     });
                     return result;

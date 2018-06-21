@@ -305,8 +305,8 @@ export class List extends DataWithPermissions {
             const previousUsed = item.used;
             // Update used amount
             item.used += amount;
-            // Set amount to the amount of items to add to the total, nothing can be removed so min is 0.
-            amount = Math.max(0, amount - (item.done - previousUsed));
+            // Set amount to the amount of items to add to the total.
+            amount = amount - (item.done - previousUsed);
             if (item.used > item.amount) {
                 item.used = item.amount;
             }
@@ -322,7 +322,7 @@ export class List extends DataWithPermissions {
             item.done = 0;
         }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
-        if (item.requires !== undefined && MathTools.absoluteCeil(item.done / item.yield) > previousDone) {
+        if (item.requires !== undefined && MathTools.absoluteCeil(item.done / item.yield) !== previousDone) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id, excludeRecipes);
                 if (requirementItem !== undefined) {

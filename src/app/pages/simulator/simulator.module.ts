@@ -43,6 +43,8 @@ import {ConsumablesService} from './model/consumables.service';
 import {RotationNamePopupComponent} from './components/rotation-name-popup/rotation-name-popup.component';
 import {StepByStepReportPopupComponent} from './components/step-by-step-report-popup/step-by-step-report-popup.component';
 import {RecipeChoicePopupComponent} from './components/recipe-choice-popup/recipe-choice-popup.component';
+import {NewFolderPopupComponent} from './components/new-folder-popup/new-folder-popup.component';
+import {RotationPanelComponent} from './components/rotation-panel/rotation-panel.component';
 
 const routes: Routes = [
     {
@@ -124,7 +126,9 @@ const routes: Routes = [
         SimulationMinStatsPopupComponent,
         RotationNamePopupComponent,
         StepByStepReportPopupComponent,
-        RecipeChoicePopupComponent
+        RecipeChoicePopupComponent,
+        NewFolderPopupComponent,
+        RotationPanelComponent
     ],
     entryComponents: [
         ImportRotationPopupComponent,
@@ -133,7 +137,8 @@ const routes: Routes = [
         SimulationMinStatsPopupComponent,
         RotationNamePopupComponent,
         StepByStepReportPopupComponent,
-        RecipeChoicePopupComponent
+        RecipeChoicePopupComponent,
+        NewFolderPopupComponent
     ],
     providers: [
         CraftingActionsRegistry,

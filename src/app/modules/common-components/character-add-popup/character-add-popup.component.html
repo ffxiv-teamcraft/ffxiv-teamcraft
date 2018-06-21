@@ -1,28 +1,59 @@
 <h3 mat-dialog-title>{{'Character_informations' | translate}}</h3>
 <div mat-dialog-content>
-    <mat-form-field>
-        <input matInput #name [(ngModel)]="characterName" placeholder="{{'Character_name' | translate}}" type="text" required>
-        <mat-error>Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput #server [(ngModel)]="serverName" placeholder="{{'Server_name' | translate}}" type="text" required>
-        <mat-error>Required</mat-error>
-    </mat-form-field>
-    <div class="loader-container" *ngIf="loading">
-        <mat-spinner></mat-spinner>
+    <mat-checkbox [(ngModel)]="customId">
+        {{'Use_lodestoneId' | translate}}
+    </mat-checkbox>
+    <div class="search" [style.display]="customId?'none':'block'">
+        <mat-form-field>
+            <input matInput #name [(ngModel)]="characterName" placeholder="{{'Character_name' | translate}}" type="text"
+                   required>
+            <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput #server [(ngModel)]="serverName" placeholder="{{'Server_name' | translate}}" type="text"
+                   required>
+            <mat-error>Required</mat-error>
+        </mat-form-field>
+        <div class="loader-container" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+        </div>
+        <mat-list dense>
+            <mat-list-item *ngFor="let character of search | async">
+                <img mat-list-avatar src="{{character.avatar}}" alt="">
+                <h3 matLine>{{character.name}}</h3>
+                <span matLine>{{character.server}}</span>
+                <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}
+                </button>
+            </mat-list-item>
+        </mat-list>
+        <div *ngIf="(search | async)?.length === 0">
+            <mat-error>{{'Character_not_found' | translate}}</mat-error>
+        </div>
     </div>
-    <mat-list dense>
-        <mat-list-item *ngFor="let character of search | async">
-            <img mat-list-avatar src="{{character.avatar}}" alt="">
-            <h3 matLine>{{character.name}}</h3>
-            <span matLine>{{character.server}}</span>
-            <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}</button>
-        </mat-list-item>
-    </mat-list>
-    <div *ngIf="(search | async)?.length === 0">
-        <mat-error>{{'Character_not_found' | translate}}</mat-error>
+    <div class="lodestoneId" [style.display]="customId?'block':'none'">
+        <mat-form-field>
+            <input matInput #lodestoneIdInput [(ngModel)]="lodestoneId" placeholder="{{'Lodestone ID' | translate}}"
+                   type="text" required>
+            <mat-error>Required</mat-error>
+        </mat-form-field>
+        <div class="loader-container" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+        </div>
+        <mat-list dense>
+            <mat-list-item *ngIf="characterFromLodestone$ | async as character; else notFound">
+                <img mat-list-avatar src="{{character.avatar}}" alt="">
+                <h3 matLine>{{character.name}}</h3>
+                <span matLine>{{character.server}}</span>
+                <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}
+                </button>
+            </mat-list-item>
+        </mat-list>
+        <ng-template #notFound>
+            <mat-error>{{'Character_not_found' | translate}}</mat-error>
+        </ng-template>
     </div>
 </div>
 <mat-dialog-actions>
-    <button color="warn" (click)="logOut()" mat-raised-button *ngIf="disconnectButton">{{'Disconnect' | translate}}</button>
+    <button color="warn" (click)="logOut()" mat-raised-button *ngIf="disconnectButton">{{'Disconnect' | translate}}
+    </button>
 </mat-dialog-actions>

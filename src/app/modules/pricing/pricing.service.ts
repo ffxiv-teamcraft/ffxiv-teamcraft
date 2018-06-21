@@ -112,20 +112,33 @@ export class PricingService {
     }
 
     /**
+     * Gets the earning price of an item, doesn't need crafting computing so it's easier to implmeent and faster to execute.
+     * @param {ListRow} item
+     * @returns {Price}
+     */
+    getEarnings(item: ListRow): Price {
+        return this.prices[item.id] || {nq: 0, hq: 0, fromVendor: false};
+    }
+
+    /**
      * Gets the amount of nq and hq items used for a given list, if nothing is found in localStorage, returns a default object
      * with item.amount as nq amount and 0 as hq amount.
      *
      * @param listUid
      * @param {ListRow} item
+     * @param hq so we wawnt default value in nq or hq?
      * @returns {ItemAmount}
      */
-    getAmount(listUid: string, item: ListRow): ItemAmount {
+    getAmount(listUid: string, item: ListRow, hq = false): ItemAmount {
         const listStore = this.amounts[listUid];
         if (listStore !== undefined) {
             const storedValue = listStore[item.id];
             if (storedValue !== undefined) {
                 return storedValue;
             }
+        }
+        if (hq) {
+            return {nq: 0, hq: item.amount};
         }
         return {nq: item.amount, hq: 0};
     }
