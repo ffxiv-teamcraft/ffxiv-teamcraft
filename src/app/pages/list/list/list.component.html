@@ -1,4 +1,4 @@
+<h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
 <div *ngIf="list | async as listData">
     <app-list-details [listData]="listData" (reload)="reload$.next(null)" *ngIf="!notFound"></app-list-details>
-    <h4 class="not-found" *ngIf="notFound">{{"List_not_found" | translate}}</h4>
 </div>
