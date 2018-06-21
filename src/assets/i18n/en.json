@@ -544,6 +544,6 @@
   },
   "PRICING": {
     "From_vendor": "Price from vendor",
-    "Craft_cheaper": "Crafting this item is cheaper"
+    "Materials_have_cost": "Materials for this craft have cost > 0, make sure you're not counting them twice"
   }
 }

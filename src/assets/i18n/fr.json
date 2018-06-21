@@ -541,5 +541,9 @@
       "Access_wiki_content": "Le wiki est là pour vous guider à travers le site, vous pouvez le consulter pour apprendre à utiliser chacune des fonctionnalités de FFXIV Teamcraft",
       "Access_wiki_link": "Aller vers le wiki"
     }
+  },
+  "PRICING": {
+    "From_vendor": "Prix au vendeur",
+    "Materials_have_cost": "Des matériaux pour ce craft ont un prix supérieur à 0, soyez sûr de ne pas les compter deux fois"
   }
 }

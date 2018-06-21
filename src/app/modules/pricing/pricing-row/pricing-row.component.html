@@ -8,8 +8,8 @@
                  matTooltipPosition="above">
             attach_money
         </mat-icon>
-        <mat-icon color="warn" *ngIf="craftCost < (price.nq * amount.nq + price.hq * amount.hq) && !earning"
-        matTooltip="{{'PRICING.Craft_cheaper'}}" matTooltipPosition="above">error_outline</mat-icon>
+        <mat-icon color="warn" *ngIf="craftCost > 0 && (price.nq * amount.nq + price.hq * amount.hq) > 0 && !earning"
+        matTooltip="{{'PRICING.Materials_have_cost' | translate}}" matTooltipPosition="above">error_outline</mat-icon>
     </p>
 
     <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
