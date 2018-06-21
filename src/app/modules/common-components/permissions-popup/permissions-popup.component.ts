@@ -148,7 +148,6 @@ export class PermissionsPopupComponent {
             .pipe(
                 first(),
                 map(lists => {
-                    console.log(lists);
                     return lists.map(list => {
                         // Copy workshop permissions
                         list.permissionsRegistry = workshop.permissionsRegistry;
