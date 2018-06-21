@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.8...v4.2.0) (2018-06-21)
+
+
+### Bug Fixes
+
+* fixed an issue with alarms not showing proper location ([9ada75d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9ada75d)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* fixed an issue with gathering-location page not able to create alarm for Rhea ([fcfaed0](https://github.com/Supamiu/ffxiv-teamcraft/commit/fcfaed0))
+* fixed an issue with recipe amounts reduction not being applied to ingredients ([68804bb](https://github.com/Supamiu/ffxiv-teamcraft/commit/68804bb)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* **alarms:** fixed an issue with nodes despawning the day after the spawn ([95b8f0d](https://github.com/Supamiu/ffxiv-teamcraft/commit/95b8f0d))
+* **desktop:** auto update popup won't open duplicates anymore ([35b6e61](https://github.com/Supamiu/ffxiv-teamcraft/commit/35b6e61))
+* removed french translations inside the japanese file ([1a46064](https://github.com/Supamiu/ffxiv-teamcraft/commit/1a46064))
+* show list completion dialog only for author only ([b2a8425](https://github.com/Supamiu/ffxiv-teamcraft/commit/b2a8425))
+
+
+### Features
+
+* "recipes only" filter is now persistent accross the platform (not account-bound) ([65ec2a0](https://github.com/Supamiu/ffxiv-teamcraft/commit/65ec2a0))
+* added new checkboxes near recipe search results to add part of a result ([e407626](https://github.com/Supamiu/ffxiv-teamcraft/commit/e407626)), closes [#410](https://github.com/Supamiu/ffxiv-teamcraft/issues/410)
+* different color for odd rows in list panels ([355f538](https://github.com/Supamiu/ffxiv-teamcraft/commit/355f538))
+* new dialog box to show total cost of a list section (gils and trades) ([13b7eed](https://github.com/Supamiu/ffxiv-teamcraft/commit/13b7eed)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* you can now associate character using lodestoneId, useful for short names ([14a9d5f](https://github.com/Supamiu/ffxiv-teamcraft/commit/14a9d5f)), closes [#392](https://github.com/Supamiu/ffxiv-teamcraft/issues/392)
+* you can now choose in which group you create your alarms from lists ([6998eb4](https://github.com/Supamiu/ffxiv-teamcraft/commit/6998eb4))
+* **desktop:** added navigation arrows in topbar ([06635ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/06635ee)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* **desktop:** new --multi (or -m) option to open multiple instances ([3575161](https://github.com/Supamiu/ffxiv-teamcraft/commit/3575161)), closes [#411](https://github.com/Supamiu/ffxiv-teamcraft/issues/411)
+* **desktop:** you can now set an opacity on overlay ([5df0290](https://github.com/Supamiu/ffxiv-teamcraft/commit/5df0290)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* **simulator:** it is now possible to create folders to organize rotations ([76261c5](https://github.com/Supamiu/ffxiv-teamcraft/commit/76261c5)), closes [#404](https://github.com/Supamiu/ffxiv-teamcraft/issues/404)
+* you can now customize echo notification in craft macros ([8a7d164](https://github.com/Supamiu/ffxiv-teamcraft/commit/8a7d164)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+* you can now see the job used for the craft in simulator result panel ([25deaa1](https://github.com/Supamiu/ffxiv-teamcraft/commit/25deaa1)), closes [#407](https://github.com/Supamiu/ffxiv-teamcraft/issues/407)
+
+
+
 <a name="4.1.8"></a>
 ## [4.1.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.7...v4.1.8) (2018-06-09)
 
