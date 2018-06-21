@@ -72,8 +72,8 @@ export class PricingComponent {
 
     getTotalEarnings(rows: ListRow[]): number {
         return rows.reduce((total, row) => {
-            const price = this.pricingService.getPrice(row);
-            const amount = this.pricingService.getAmount(this.list.$key, row);
+            const price = this.pricingService.getEarnings(row);
+            const amount = this.pricingService.getAmount(this.list.$key, row, true);
             return total + amount.nq * price.nq + amount.hq * price.hq;
         }, 0);
     }

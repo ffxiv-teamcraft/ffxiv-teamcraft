@@ -541,5 +541,9 @@
       "Access_wiki_content": "Navigate to the wiki page by clicking the link below. This page has some documentation for the general website usage, to guide you to make the most out of it and help you as much as possible",
       "Access_wiki_link": "Go to wiki page"
     }
+  },
+  "PRICING": {
+    "From_vendor": "Price from vendor",
+    "Craft_cheaper": "Crafting this item is cheaper"
   }
 }

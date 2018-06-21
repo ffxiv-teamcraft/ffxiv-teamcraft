@@ -152,7 +152,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         if (this.listData !== undefined && this.listData !== null) {
             // We are using setTimeout here to avoid creating a new dialog box during change detection cycle.
             setTimeout(() => {
-                if (!this.upgradingList && this.listData.isOutDated() && this.listData.authorId === this.userData.$key) {
+                if (!this.upgradingList && this.listData.isOutDated() && this.userData !== undefined
+                    && this.listData.authorId === this.userData.$key) {
                     this.upgradeList();
                 }
             }, 50);
@@ -287,7 +288,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     return rowExportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`
                 }, `${this.translate.instant(displayRow.title)}:\n`) + '\n';
             }, `${this.linkTools.getLink(`list/${this.listData.$key}`)
-            }\n\n${this.listData.name}: \n\n${
+                }\n\n${this.listData.name}: \n\n${
                 this.getCrystalsTextExport(this.translate.instant('Crystals'), this.listData.crystals)}`);
     }
 
