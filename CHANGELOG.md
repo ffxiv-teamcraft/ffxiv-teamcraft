@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.1"></a>
+## [4.2.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.2.0...v4.2.1) (2018-06-22)
+
+
+### Bug Fixes
+
+* fixed an undefined icon being displayed in total trades popup with gil ([b1cc8bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/b1cc8bd))
+* no message on list not found ([0a9ebd3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0a9ebd3)), closes [#412](https://github.com/Supamiu/ffxiv-teamcraft/issues/412)
+
+
+
 <a name="4.2.0"></a>
 # [4.2.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.1.8...v4.2.0) (2018-06-21)
 
