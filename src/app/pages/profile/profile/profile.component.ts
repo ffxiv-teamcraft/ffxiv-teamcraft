@@ -26,7 +26,7 @@ import {combineLatest, of} from 'rxjs';
 })
 export class ProfileComponent extends PageComponent {
 
-    static craftingJobs = [
+    private craftingJobs: any[] = [
         {abbr: 'CRP', name: 'carpenter'},
         {abbr: 'BSM', name: 'blacksmith'},
         {abbr: 'ARM', name: 'armorer'},
@@ -69,7 +69,7 @@ export class ProfileComponent extends PageComponent {
                             });
                         }),
                         map(sets => sets.map(set => {
-                                const job = ProfileComponent.craftingJobs[set.jobId - 8];
+                                const job = this.craftingJobs[set.jobId - 8];
                                 if (job !== undefined) {
                                     set.abbr = job.abbr;
                                     set.name = job.name;
@@ -111,7 +111,7 @@ export class ProfileComponent extends PageComponent {
     }
 
     public openStatsPopup(set: GearSet): void {
-        this.dialog.open(StatsEditPopupComponent, {data: set});
+        this.dialog.open(StatsEditPopupComponent, {data: {set: set, jobs: this.craftingJobs.slice(0, 8)}});
     }
 
     changeCharacter(): void {

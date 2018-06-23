@@ -23,11 +23,8 @@
     </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="saveSet(set)">{{'SIMULATOR.CONFIGURATION.Save_set' |
-        translate}}
-    </button>
-    <button mat-raised-button color="accent" (click)="resetSet(set)">{{'SIMULATOR.CONFIGURATION.Reset_set' |
-        translate}}
-    </button>
-    <button mat-button mat-dialog-close color="warn">{{'Cancel' | translate}}</button>
+    <button mat-raised-button color="primary" (click)="saveSet(set)">{{'COMMON.Save' | translate}}</button>
+    <button mat-raised-button color="primary" (click)="saveAllSets(set)">{{'PROFILE.Save_for_all' | translate}}</button>
+    <button mat-raised-button color="accent" (click)="resetSet(set)">{{'COMMON.Reset' | translate}}</button>
+    <button mat-raised-button mat-dialog-close color="warn">{{'Cancel' | translate}}</button>
 </mat-dialog-actions>
