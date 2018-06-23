@@ -222,6 +222,7 @@
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
       "Validate": "Validate"
     },
+    "Save_for_all": "Save for all",
     "HELP": {
       "Welcome": "Welcome to profile page, this is the place where you can see and edit your own profile.",
       "Edit": "By clicking on the edit icon, you can edit the character linked to your FFXIV Teamcraft account.",
