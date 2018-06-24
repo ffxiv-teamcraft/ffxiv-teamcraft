@@ -331,7 +331,8 @@ export class List extends DataWithPermissions {
             item.done = 0;
         }
         amount = MathTools.absoluteCeil(amount / pitem.yield);
-        if (item.requires !== undefined && MathTools.absoluteCeil(item.done / item.yield) !== previousDone) {
+        const newDone = MathTools.absoluteCeil(item.done / item.yield);
+        if (item.requires !== undefined && newDone !== previousDone) {
             for (const requirement of item.requires) {
                 const requirementItem = this.getItemById(requirement.id, excludeRecipes);
                 if (requirementItem !== undefined) {
@@ -340,9 +341,14 @@ export class List extends DataWithPermissions {
                     if (requirementItem.requires === undefined) {
                         nextAmount = MathTools.absoluteCeil(nextAmount / requirementItem.yield);
                     }
-                    // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
-                    // as we didn't use more.
-                    this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
+                    // If both nextAmount and the addition to used are same sign, we can propagate changes, else we don't want to go further
+                    // because it's probably because we added items but the requirements is not only for this item,
+                    // so we do'nt want to reduce the amount.
+                    if ((nextAmount < 0) === (newDone - previousDone < 0)) {
+                        // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
+                        // as we didn't use more.
+                        this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
+                    }
                 }
             }
         }
