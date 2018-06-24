@@ -389,7 +389,10 @@
                             [simulation]="resultData.simulation"
                             [ignoreDisabled]="true"
                             [cpCost]="step.cpDifference"
-                            [failed]="!step.success"></app-action>
+                            [failed]="!step.success"
+                            (onDragStart)="tooltipsDisabled = true"
+                            (onDragEnd)="tooltipsDisabled = false"
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
                 <div class="end-drag-zone" droppable
                      dragOverClass="drag-over"
                      (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
@@ -405,7 +408,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getProgressActions()"></app-action>
+                                    *ngFor="let action of getProgressActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
                 <div>
@@ -416,7 +422,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getQualityActions()"></app-action>
+                                    *ngFor="let action of getQualityActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
             </div>
@@ -429,7 +438,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getCpRecoveryActions()"></app-action>
+                                    *ngFor="let action of getCpRecoveryActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
                 <div>
@@ -440,7 +452,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getBuffActions()"></app-action>
+                                    *ngFor="let action of getBuffActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
             </div>
@@ -453,7 +468,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getRepairActions()"></app-action>
+                                    *ngFor="let action of getRepairActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
                 <div>
@@ -464,7 +482,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getSpecialtyActions()"></app-action>
+                                    *ngFor="let action of getSpecialtyActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
                 <div>
@@ -475,7 +496,10 @@
                     || resultData.simulation.success !== undefined"
                                     [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                                     [action]="action" [simulation]="resultData.simulation"
-                                    *ngFor="let action of getOtherActions()"></app-action>
+                                    *ngFor="let action of getOtherActions()"
+                                    (onDragStart)="tooltipsDisabled = true"
+                                    (onDragEnd)="tooltipsDisabled = false"
+                                    [tooltipDisabled]="tooltipsDisabled"></app-action>
                     </div>
                 </div>
             </div>

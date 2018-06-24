@@ -1,5 +1,5 @@
 <div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
-     [appXivdbActionTooltip]="action.getId(getJobId())">
+     [appXivdbActionTooltip]="action.getId(getJobId())" [appXivdbActionTooltipDisabled]="tooltipDisabled">
     <div class="action"
          [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp, 'not-enough-cp': notEnoughCp}">
         <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
