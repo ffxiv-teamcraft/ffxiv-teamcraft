@@ -82,7 +82,7 @@
   "Lists": "Liste",
   "items": "Gegenstände",
   "Confirm": "Bestätigen",
-  "Cancel": "abbrechen",
+  "Cancel": "Abbrechen",
   "Edit": "bearbeiten",
   "Add_a_list": "Eine Liste hinzufügen",
   "List_name": "Listenname",
@@ -206,6 +206,7 @@
     "Patreon_email": "Patreon-Email",
     "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
     "Contacts": "Kontakte",
+    "Save_for_all": "Für alle speichern",
     "New_contact": "User-ID des neuen Kontakts",
     "HELP": {
       "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",

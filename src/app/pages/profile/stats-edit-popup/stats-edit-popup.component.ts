@@ -14,9 +14,12 @@ export class StatsEditPopupComponent {
 
     public userData: AppUser;
 
-    constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) public set: GearSet,
+    public set: GearSet;
+
+    constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) public data: { set: GearSet, jobs: any[] },
                 private ref: MatDialogRef<StatsEditPopupComponent>) {
         this.userService.getUserData().pipe(first()).subscribe(data => this.userData = data);
+        this.set = this.data.set;
     }
 
     saveSet(set: GearSet): void {
@@ -25,6 +28,20 @@ export class StatsEditPopupComponent {
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);
+        this.userService.set(this.userData.$key, this.userData).subscribe(() => {
+            this.ref.close();
+        });
+    }
+
+    saveAllSets(set: GearSet): void {
+        // Clear out all of the existing custom sets
+        this.userData.gearSets = [];
+
+        // Then create a custom set for each job using the provided set data
+        this.data.jobs.forEach((job, i) => {
+            this.userData.gearSets.push({ ...set, jobId: i + 8, abbr: job.abbr, name: job.name });
+        });
+
         this.userService.set(this.userData.$key, this.userData).subscribe(() => {
             this.ref.close();
         });
