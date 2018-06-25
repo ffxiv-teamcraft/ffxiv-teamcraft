@@ -1,4 +1,11 @@
-<div *ngIf="commissions$ | async as commissions">
-    <mat-expansion-panel *ngFor="let commission of commissions">
-    </mat-expansion-panel>
+<div *ngIf="commissions$ | async as commissions; else loading">
+    <div *ngIf="commissions.length === 0" class="no-commissions">
+        {{'COMMISSION_BOARD.No_commissions' | translate}}
+    </div>
+    <app-commission-panel [commission]="commission" *ngFor="let commission of commissions"></app-commission-panel>
 </div>
+<ng-template #loading>
+    <div class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

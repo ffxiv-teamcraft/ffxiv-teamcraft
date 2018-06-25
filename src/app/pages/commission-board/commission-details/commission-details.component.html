@@ -1,0 +1,37 @@
+<div *ngIf="commission$ | async as commission; else loader">
+    <mat-card *ngIf="author$ | async as author; else loader">
+        <mat-card-header>
+            <img src="{{author.avatar}}" alt="" mat-card-avatar>
+            <mat-card-title>
+                {{commission.list.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{author.name}} - {{commission.server}}
+            </mat-card-subtitle>
+            <mat-chip-list>
+                <mat-chip selectable="false">{{'COMMISSION_BOARD.STATUS.'+getStatus(commission) | translate}}</mat-chip>
+            </mat-chip-list>
+        </mat-card-header>
+        <mat-list dense>
+            <mat-list-item *ngFor="let item of commission.list.recipes">
+                <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
+                    <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
+                </a>
+                <span matLine>{{item.id | itemName | i18n}}</span>
+                <span matLine>x {{item.amount}}</span>
+            </mat-list-item>
+        </mat-list>
+        <mat-card-actions *ngIf="user$ | async as user">
+            <a mat-raised-button color="accent"
+               *ngIf="commission.authorId === user.$key && commission.discussions.length > 0" routerLink="chat">
+                <mat-icon>forum</mat-icon>
+                {{'COMMISSION_BOARD.Go_to_chat' | translate}}
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<ng-template #loader>
+    <div class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

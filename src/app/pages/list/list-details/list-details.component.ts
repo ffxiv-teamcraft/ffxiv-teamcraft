@@ -40,6 +40,7 @@ import {PlatformService} from '../../../core/tools/platform.service';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 
 declare const ga: Function;
 
@@ -124,6 +125,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     return this.layoutService.getRecipes(data, this.selectedIndex);
                 })
             );
+    }
+
+    public createCommission(list: List): void {
+        this.dialog.open(CommissionCreationPopupComponent, {data: list});
     }
 
     public getLink(): string {

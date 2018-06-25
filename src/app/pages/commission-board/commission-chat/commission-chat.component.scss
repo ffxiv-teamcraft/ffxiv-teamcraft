@@ -1,0 +1,9 @@
+.send-button {
+    height: 100%;
+}
+
+.chat-container {
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, .5);
+    height: calc(80vh - 100px);
+}

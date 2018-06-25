@@ -1,5 +1,5 @@
 export class CommissionMessage {
-    authorId: number;
+    authorId: string;
     content: string;
     date: string = new Date().toISOString();
 }

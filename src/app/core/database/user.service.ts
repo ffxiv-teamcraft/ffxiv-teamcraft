@@ -69,6 +69,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                             c.patron = u.patron;
                             c.patreonEmail = u.patreonEmail;
                             c.nickname = u.nickname;
+                            c.userId = u.$key;
                             return c;
                         }));
                 } else {
@@ -123,7 +124,8 @@ export class UserService extends FirebaseStorage<AppUser> {
                                 return u;
                             })
                         );
-                }));
+                })
+            );
     }
 
     /**

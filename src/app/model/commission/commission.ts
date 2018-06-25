@@ -12,6 +12,12 @@ export class Commission extends DataModel {
     list: List;
 
     /**
+     * The price that the buyer is willing to pay, defaults to 0 if he wants to negotiate the price or doesn't know which one to set.
+     * @type {number}
+     */
+    price = 0;
+
+    /**
      * The id of the request's author.
      */
     authorId: string;
@@ -43,15 +49,22 @@ export class Commission extends DataModel {
      */
     crafterId?: string;
 
+    constructor(authorId: string, list: List, server: string) {
+        super();
+        this.list = list;
+        this.server = server;
+        this.authorId = authorId;
+    }
+
     public isGathering(): boolean {
         return this.list.recipes.find(item => item.gatheredBy !== undefined) !== undefined;
     }
 
     public isCrafting(): boolean {
-        return this.list.recipes.find(item => item.craftedBy !== undefined) !== undefined;
+        return this.list.recipes.find(item => item.craftedBy !== undefined && item.craftedBy.length > 0) !== undefined;
     }
 
     public isHunting(): boolean {
-        return this.list.recipes.find(item => item.drops !== undefined) !== undefined;
+        return this.list.recipes.find(item => item.drops !== undefined && item.drops.length > 0) !== undefined;
     }
 }

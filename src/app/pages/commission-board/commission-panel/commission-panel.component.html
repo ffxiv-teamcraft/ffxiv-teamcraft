@@ -1,0 +1,49 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{commission.list.name}}
+        </mat-panel-title>
+        <mat-chip-list>
+            <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
+                translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.isGathering()">{{'COMMISSION_BOARD.TAGS.Gathering' |
+                translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.isHunting()">{{'COMMISSION_BOARD.TAGS.Hunting' |
+                translate}}
+            </mat-chip>
+        </mat-chip-list>
+        <mat-panel-description *ngIf="author$ | async as author">
+            {{author.name}}
+        </mat-panel-description>
+        <div class="price" *ngIf="commission.price > 0">
+            <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+            {{commission.price | number}}
+        </div>
+        <div class="actions">
+            <a mat-icon-button (click)="$event.stopPropagation()"
+               routerLink="/commission/{{commission.server}}/{{commission.$key}}">
+                <mat-icon>open_in_new</mat-icon>
+            </a>
+        </div>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+        <mat-list dense>
+            <mat-list-item *ngFor="let item of commission.list.recipes">
+                <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
+                    <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
+                </a>
+                <span matLine>{{item.id | itemName | i18n}}</span>
+                <span matLine>x {{item.amount}}</span>
+            </mat-list-item>
+        </mat-list>
+        <div *ngIf="user$ | async as user">
+            <mat-action-row *ngIf="user.$key !== commission.authorId">
+                <a mat-raised-button color="accent" routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{user.$key}}">
+                    {{'COMMISSION_BOARD.Contact_buyer' | translate}}
+                </a>
+            </mat-action-row>
+        </div>
+    </ng-template>
+</mat-expansion-panel>

@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>{{'COMMISSION_BOARD.New_commission' | translate: {listName: list.name} }}</h3>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput type="number" [(ngModel)]="price">
+        <mat-hint>{{'COMMISSION_BOARD.Price_hint' | translate}}</mat-hint>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="createCommission()" color="primary">{{'Confirm' | translate}}</button>
+    <button mat-button mat-dialog-close color="warn">{{'Cancel' | translate}}</button>
+</div>
