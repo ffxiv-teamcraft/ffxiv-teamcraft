@@ -8,6 +8,7 @@ import * as npcs from './sources/npcs.json';
 import * as craftingActions from './sources/craft-actions.json';
 import * as actions from './sources/actions.json';
 import * as ventures from './sources/ventures.json';
+import * as freeCompanyActions from './sources/free-company-actions.json';
 import {Language} from './language';
 
 @Injectable()
@@ -64,6 +65,10 @@ export class LocalizedDataService {
 
     public getAreaIdByENName(name: string): number {
         return this.getIndexByName(places, name, 'en');
+    }
+
+    public getFreeCompanyAction(id: number): I18nName {
+        return this.getRow(freeCompanyActions, id);
     }
 
     public getCraftingActionIdByName(name: string, language: Language): number {

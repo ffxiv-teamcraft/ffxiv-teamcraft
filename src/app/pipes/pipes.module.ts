@@ -11,6 +11,7 @@ import {JobAbbrIconPipe} from './job-abbr.pipe';
 import {JobNameIconPipe} from './job-name.pipe';
 import {AbsolutePipe} from './absolute.pipe';
 import {InstanceIconPipe} from './instance-icon.pipe';
+import {FreeCompanyActionNamePipe} from './free-company-action-name.pipe';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import {InstanceIconPipe} from './instance-icon.pipe';
         JobNameIconPipe,
         AbsolutePipe,
         InstanceIconPipe,
+        FreeCompanyActionNamePipe
     ],
     exports: [
         ItemNamePipe,
@@ -40,6 +42,7 @@ import {InstanceIconPipe} from './instance-icon.pipe';
         JobNameIconPipe,
         AbsolutePipe,
         InstanceIconPipe,
+        FreeCompanyActionNamePipe
     ]
 })
 export class PipesModule {
