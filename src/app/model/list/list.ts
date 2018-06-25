@@ -305,8 +305,9 @@ export class List extends DataWithPermissions {
      * @param {number} amount
      * @param {boolean} setUsed
      * @param {boolean} excludeRecipes
+     * @param initialAddition
      */
-    public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false): void {
+    public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false, initialAddition = amount): void {
         const item = this.getItemById(pitem.id, excludeRecipes);
         const previousDone = MathTools.absoluteCeil(item.done / item.yield);
         if (setUsed) {
@@ -316,14 +317,19 @@ export class List extends DataWithPermissions {
             item.used += amount;
             // Set amount to the amount of items to add to the total.
             amount = amount - (item.done - previousUsed);
+            // Only add more if used > done
+            if (amount > 0) {
+                item.done += amount;
+            }
             if (item.used > item.amount) {
                 item.used = item.amount;
             }
             if (item.used < 0) {
                 item.used = 0;
             }
+        } else {
+            item.done += amount;
         }
-        item.done += amount;
         if (item.done > item.amount) {
             item.done = item.amount;
         }
@@ -343,11 +349,13 @@ export class List extends DataWithPermissions {
                     }
                     // If both nextAmount and the addition to used are same sign, we can propagate changes, else we don't want to go further
                     // because it's probably because we added items but the requirements is not only for this item,
-                    // so we do'nt want to reduce the amount.
-                    if ((nextAmount < 0) === (newDone - previousDone < 0)) {
+                    // so we don't want to reduce the amount.
+                    if ((nextAmount < 0) === (newDone - previousDone < 0)
+                        && (nextAmount < 0) === (initialAddition < 0)
+                        && (newDone - previousDone < 0) === (initialAddition < 0)) {
                         // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
                         // as we didn't use more.
-                        this.setDone(requirementItem, nextAmount, true, previousDone !== item.done);
+                        this.setDone(requirementItem, nextAmount, true, previousDone !== item.done, initialAddition);
                     }
                 }
             }
