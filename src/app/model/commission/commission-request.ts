@@ -1,6 +1,6 @@
 import {List} from '../list/list';
-import {CommissionMessage} from './commission-message';
 import {CommissionStatus} from './commission-status';
+import {CommissionDiscussion} from './commission-discussion';
 
 export class CommissionRequest {
     /**
@@ -19,9 +19,9 @@ export class CommissionRequest {
     server: string;
 
     /**
-     * The discussion of the request.
+     * The discussions of the request, one per crafter.
      */
-    discussion: CommissionMessage[] = [];
+    discussions: CommissionDiscussion[] = [];
 
 
     /**
