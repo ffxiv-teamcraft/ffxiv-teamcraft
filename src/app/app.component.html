@@ -130,6 +130,13 @@
                     <mat-icon matListIcon>view_list</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Lists' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/commissions/board" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'COMMISSION_BOARD.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>how_to_vote</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'COMMISSION_BOARD.Title' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
                                matTooltip="{{'Public_lists' | translate}}"

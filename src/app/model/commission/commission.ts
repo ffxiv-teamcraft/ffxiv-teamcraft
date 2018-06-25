@@ -1,11 +1,14 @@
 import {List} from '../list/list';
 import {CommissionStatus} from './commission-status';
 import {CommissionDiscussion} from './commission-discussion';
+import {DataModel} from '../../core/database/storage/data-model';
+import {DeserializeAs} from '@kaiu/serializer';
 
-export class CommissionRequest {
+export class Commission extends DataModel {
     /**
      * The list requested.
      */
+    @DeserializeAs(List)
     list: List;
 
     /**
@@ -21,8 +24,14 @@ export class CommissionRequest {
     /**
      * The discussions of the request, one per crafter.
      */
+    @DeserializeAs([CommissionDiscussion])
     discussions: CommissionDiscussion[] = [];
 
+    /**
+     * The date of the commissio creation.
+     * @type {string}
+     */
+    createdAt: string = new Date().toISOString();
 
     /**
      * The status of the request.

@@ -1,6 +1,9 @@
 import {CommissionMessage} from './commission-message';
+import {DeserializeAs} from '@kaiu/serializer';
 
-export interface CommissionDiscussion {
+export class CommissionDiscussion {
     crafterId: string;
-    messages: CommissionMessage[];
+
+    @DeserializeAs([CommissionMessage])
+    messages: CommissionMessage[] = [];
 }
