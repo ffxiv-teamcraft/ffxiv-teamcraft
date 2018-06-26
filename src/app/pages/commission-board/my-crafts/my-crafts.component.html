@@ -2,7 +2,8 @@
     <div *ngIf="commissions.length === 0" class="no-commissions">
         {{'COMMISSION_BOARD.No_crafts' | translate}}
     </div>
-    <app-commission-panel [commission]="commission" *ngFor="let commission of commissions"></app-commission-panel>
+    <app-commission-panel [commission]="commission"
+                          *ngFor="let commission of commissions; trackBy: trackByCommissionFn"></app-commission-panel>
 </div>
 <ng-template #loading>
     <div class="loader-container">

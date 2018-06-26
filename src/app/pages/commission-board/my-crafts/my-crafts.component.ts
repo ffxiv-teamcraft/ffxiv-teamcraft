@@ -23,4 +23,8 @@ export class MyCraftsComponent {
             );
     }
 
+    trackByCommissionFn(index: number, commission: Commission): string {
+        return commission.$key;
+    }
+
 }

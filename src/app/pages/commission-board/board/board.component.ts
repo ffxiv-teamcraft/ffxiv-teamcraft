@@ -24,4 +24,8 @@ export class BoardComponent {
             );
     }
 
+    trackByCommissionFn(index: number, commission: Commission): string {
+        return commission.$key;
+    }
+
 }

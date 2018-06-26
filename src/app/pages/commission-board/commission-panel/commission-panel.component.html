@@ -40,7 +40,13 @@
         </mat-list>
         <div *ngIf="user$ | async as user">
             <mat-action-row *ngIf="user.$key !== commission.authorId">
-                <a mat-raised-button color="accent" routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{user.$key}}">
+                <button mat-raised-button color="primary"
+                        *ngIf="commission.candidateIds.indexOf(user.$key) === -1"
+                        (click)="apply(commission, user.$key)">
+                    {{'COMMISSION_BOARD.Apply' | translate}}
+                </button>
+                <a mat-button color="accent"
+                   routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{user.$key}}">
                     {{'COMMISSION_BOARD.Contact_buyer' | translate}}
                 </a>
             </mat-action-row>

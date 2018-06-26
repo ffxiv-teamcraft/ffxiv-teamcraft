@@ -3,6 +3,7 @@ import {Commission} from '../../../model/commission/commission';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
+import {CommissionService} from '../../../core/database/commission/commission.service';
 
 @Component({
     selector: 'app-commission-panel',
@@ -18,7 +19,12 @@ export class CommissionPanelComponent implements OnInit {
 
     public author$: Observable<any>;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private commissionService: CommissionService) {
+    }
+
+    public apply(commission: Commission, userId: string): void {
+        commission.candidateIds.push(userId);
+        this.commissionService.set(commission.$key, commission).subscribe();
     }
 
     ngOnInit(): void {

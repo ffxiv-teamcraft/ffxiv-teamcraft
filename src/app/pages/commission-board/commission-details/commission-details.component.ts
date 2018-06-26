@@ -24,6 +24,11 @@ export class CommissionDetailsComponent implements OnInit {
     constructor(private activeRoute: ActivatedRoute, private commissionService: CommissionService, private userService: UserService) {
     }
 
+    public apply(commission: Commission, userId: string): void {
+        commission.candidateIds.push(userId);
+        this.commissionService.set(commission.$key, commission).subscribe();
+    }
+
     public getStatus(commission: Commission): string {
         return CommissionStatus[commission.status];
     }

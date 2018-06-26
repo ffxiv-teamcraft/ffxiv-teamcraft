@@ -23,4 +23,8 @@ export class MyRequestsComponent {
             );
     }
 
+    trackByCommissionFn(index: number, commission: Commission): string {
+        return commission.$key;
+    }
+
 }

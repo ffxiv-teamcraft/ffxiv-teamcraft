@@ -42,6 +42,11 @@ export class Commission extends DataModel {
     discussions: CommissionDiscussion[] = [];
 
     /**
+     * The ids of all the crafters who said "I want to do that"
+     */
+    candidateIds: string[] = [];
+
+    /**
      * The date of the commissio creation.
      * @type {string}
      */
