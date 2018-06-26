@@ -6,7 +6,13 @@
        class="tab-element"
        #rla="routerLinkActive"
        [active]="rla.isActive">
-        {{link.label}}
+        <span matBadge=""
+              [matBadgeHidden]="!(link.hasNewThings | async)"
+              matBadgeColor="accent"
+              matBadgeOverlap="false"
+              matBadgeSize="small">
+            {{link.label}}
+            </span>
     </a>
 </nav>
 <router-outlet></router-outlet>

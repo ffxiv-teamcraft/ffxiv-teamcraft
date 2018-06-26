@@ -1,20 +1,21 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
 import {UserService} from '../../../core/database/user.service';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {ActivatedRoute} from '@angular/router';
-import {map, mergeMap, shareReplay, tap} from 'rxjs/operators';
+import {map, mergeMap, shareReplay, takeUntil, tap} from 'rxjs/operators';
 import {AppUser} from '../../../model/list/app-user';
 import {Observable} from 'rxjs/Observable';
 import {Commission} from '../../../model/commission/commission';
 import {CommissionDiscussion} from '../../../model/commission/commission-discussion';
-import {combineLatest} from 'rxjs/index';
+import {combineLatest, Subject} from 'rxjs/index';
 
 @Component({
     selector: 'app-commission-chat',
     templateUrl: './commission-chat.component.html',
-    styleUrls: ['./commission-chat.component.scss']
+    styleUrls: ['./commission-chat.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CommissionChatComponent {
+export class CommissionChatComponent implements OnDestroy {
 
     public commission$: Observable<Commission>;
 
@@ -27,6 +28,8 @@ export class CommissionChatComponent {
     private crafterId: string;
 
     public chatMembers: { [index: string]: Observable<any> } = {};
+
+    private onDestroy$ = new Subject<void>();
 
     constructor(private activeRoute: ActivatedRoute, private commissionService: CommissionService, public userService: UserService) {
         this.commission$ = this.activeRoute.paramMap
@@ -45,7 +48,13 @@ export class CommissionChatComponent {
                     return discussion || new CommissionDiscussion(crafterId);
                 }),
                 shareReplay()
-            )
+            );
+        combineLatest(this.character$, this.commission$)
+            .pipe(
+                takeUntil(this.onDestroy$)
+            ).subscribe(res => {
+            this.clearNewThings(res[0], res[1]);
+        });
     }
 
     getCharacter(userId: string): Observable<any> {
@@ -54,7 +63,6 @@ export class CommissionChatComponent {
         }
         return this.chatMembers[userId];
     }
-
 
     sendMessage(commission: Commission, authorId: string): void {
         let index = commission.discussions.findIndex(d => d.crafterId === this.crafterId);
@@ -68,6 +76,8 @@ export class CommissionChatComponent {
             date: new Date().toISOString()
         });
         this.message = '';
+        const notificationTargetId = authorId === commission.authorId ? commission.discussions[index].crafterId : commission.authorId;
+        commission.addNewThing(`message:${notificationTargetId}:from:${authorId.substr(0, 5)}`);
         this.commissionService.set(commission.$key, commission).subscribe();
     }
 
@@ -75,12 +85,22 @@ export class CommissionChatComponent {
         this.sendMessage(commission, authorId);
     }
 
+    clearNewThings(character: any, commission: Commission): void {
+        if (commission.hasNewThing(`message:${character.userId}`)) {
+            commission.removeNewThing(`message:${character.userId}`);
+            this.commissionService.set(commission.$key, commission).subscribe();
+        }
+    }
+
     getTextAreaHeight(): string {
         const match = this.message.match(/\n/gi);
-        console.log(match);
         if (match === null) {
             return 'auto';
         }
         return `${match.length * 20 + 20}px`;
+    }
+
+    ngOnDestroy(): void {
+        this.onDestroy$.next(null);
     }
 }

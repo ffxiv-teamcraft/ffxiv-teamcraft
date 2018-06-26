@@ -9,7 +9,7 @@ import {FirebaseStorage} from './storage/firebase/firebase-storage';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {DiffService} from './diff/diff.service';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
-import {catchError, filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay, switchMap, tap} from 'rxjs/operators';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
 
 @Injectable()
@@ -62,20 +62,24 @@ export class UserService extends FirebaseStorage<AppUser> {
             userData = this.get(uid);
         }
         return userData
-            .pipe(mergeMap(u => {
-                if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
-                    return this.dataService.getCharacter(u.lodestoneId).pipe(
-                        map(c => {
-                            c.patron = u.patron;
-                            c.patreonEmail = u.patreonEmail;
-                            c.nickname = u.nickname;
-                            c.userId = u.$key;
-                            return c;
-                        }));
-                } else {
-                    return of({name: 'Anonymous'});
-                }
-            }));
+            .pipe(
+                mergeMap(u => {
+                    if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
+                        return this.dataService.getCharacter(u.lodestoneId).pipe(
+                            map(c => {
+                                c.patron = u.patron;
+                                c.patreonEmail = u.patreonEmail;
+                                c.nickname = u.nickname;
+                                c.userId = u.$key;
+                                c.user = u;
+                                return c;
+                            }));
+                    } else {
+                        return of({name: 'Anonymous'});
+                    }
+                }),
+                shareReplay()
+            );
     }
 
     /**

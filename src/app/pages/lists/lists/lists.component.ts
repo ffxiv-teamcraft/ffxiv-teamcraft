@@ -69,6 +69,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     userData: AppUser;
 
+    commissions$: Observable<List[]>;
+
     constructor(private auth: AngularFireAuth, private alarmService: AlarmService,
                 private dialog: MatDialog, private listManager: ListManagerService,
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
@@ -364,6 +366,13 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                     );
                 }
             }));
+
+        this.commissions$ = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => this.listService.getUserLists(user.$key)),
+                map(lists => lists.filter(list => list.isCommissionList && !list.isComplete()))
+            );
+
         this.lists =
             this.auth.authState
                 .pipe(

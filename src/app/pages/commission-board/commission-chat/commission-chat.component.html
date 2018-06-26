@@ -5,16 +5,6 @@
         </div>
         <mat-divider></mat-divider>
         <div class="chat-container">
-            <div class="sidebar" *ngIf="commission.authorId === character.userId">
-                <mat-list>
-                    <mat-list-item *ngFor="let discussion of commission.discussions">
-                        <div *ngIf="userService.getCharacter(discussion.crafterId) | async as crafter">
-                            <img [src]="crafter.avatar" alt="" mat-list-avatar>
-                            <span matLine>{{crafter.name}}</span>
-                        </div>
-                    </mat-list-item>
-                </mat-list>
-            </div>
             <div class="chat-content" *ngIf="discussion$ | async as discussion">
                 <div class="chat-message" [class.own-message]="message.authorId === character.userId"
                      *ngFor="let message of discussion.messages">

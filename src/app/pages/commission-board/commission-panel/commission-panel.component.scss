@@ -1,5 +1,11 @@
 mat-expansion-panel {
     margin: 5px 0;
+    mat-panel-title {
+        flex: 0 0 200px;
+        span {
+            text-overflow: ellipsis;
+        }
+    }
 }
 
 .actions {

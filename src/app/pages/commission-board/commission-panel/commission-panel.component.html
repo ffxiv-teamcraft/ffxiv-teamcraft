@@ -1,7 +1,13 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
+            <span matBadge=""
+                  [matBadgeHidden]="!commission.hasNewThing((user$ | async)?.$key)"
+                  matBadgeColor="accent"
+                  matBadgeOverlap="false"
+                  matBadgeSize="small">
             {{commission.name}}
+            </span>
         </mat-panel-title>
         <mat-chip-list>
             <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
@@ -14,15 +20,25 @@
                 translate}}
             </mat-chip>
         </mat-chip-list>
-        <mat-panel-description *ngIf="author$ | async as author">
-            {{author.name}}
+        <mat-panel-description>
+            <span *ngIf="author$ | async as author">
+                {{author.name}}
+            </span>
         </mat-panel-description>
         <div class="price" *ngIf="commission.price > 0">
             <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
             {{commission.price | number}}
         </div>
         <div class="actions">
+            <button mat-icon-button color="warn" (click)="$event.stopPropagation();delete()"
+                    *ngIf="commission.status === 0 && commission.authorId === (user$ | async)?.$key">
+                <mat-icon>delete</mat-icon>
+            </button>
             <a mat-icon-button (click)="$event.stopPropagation()"
+               matBadge=""
+               [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key)"
+               matBadgeColor="accent"
+               matBadgeSize="small"
                routerLink="/commission/{{commission.server}}/{{commission.$key}}">
                 <mat-icon>open_in_new</mat-icon>
             </a>
@@ -39,13 +55,43 @@
             </mat-list-item>
         </mat-list>
         <div *ngIf="user$ | async as user">
-            <mat-action-row *ngIf="user.$key !== commission.authorId">
+            <mat-action-row>
+                <div *ngIf="user.$key === commission.authorId">
+                    <mat-menu #chatSelectionMenu="matMenu">
+                        <div *ngFor="let discussion of commission.discussions">
+                            <a mat-menu-item
+                               routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{discussion.crafterId}}"
+                               *ngIf="getCharacter(discussion.crafterId) | async as crafter">
+                                <span matBadge=""
+                                      [matBadgeHidden]="!commission.hasNewThing('message:' + user.$key + ':from:' + discussion.crafterId.substr(0, 5))"
+                                      matBadgeColor="accent"
+                                      matBadgeSize="small">{{crafter.name}}</span>
+                            </a>
+                        </div>
+                    </mat-menu>
+                    <button mat-raised-button color="accent"
+                            *ngIf="commission.discussions.length > 0"
+                            matBadge=""
+                            [matBadgeHidden]="!hasChatBadge(commission, user)"
+                            matBadgeColor="accent"
+                            matBadgeOverlap="false"
+                            matBadgeSize="small"
+                            [matMenuTriggerFor]="chatSelectionMenu">
+                        <mat-icon>forum</mat-icon>
+                        {{'COMMISSION_BOARD.Go_to_chat' | translate}}
+                    </button>
+                </div>
                 <button mat-raised-button color="primary"
-                        *ngIf="commission.candidateIds.indexOf(user.$key) === -1"
+                        *ngIf="user.$key !== commission.authorId && commission.candidateIds.indexOf(user.$key) === -1 && commission.status === 0"
                         (click)="apply(commission, user.$key)">
                     {{'COMMISSION_BOARD.Apply' | translate}}
                 </button>
                 <a mat-button color="accent"
+                   *ngIf="user.$key !== commission.authorId"
+                   matBadge=""
+                   [matBadgeHidden]="!hasChatBadge(commission, user)"
+                   matBadgeColor="accent"
+                   matBadgeSize="small"
                    routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{user.$key}}">
                     {{'COMMISSION_BOARD.Contact_buyer' | translate}}
                 </a>

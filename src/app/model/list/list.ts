@@ -39,6 +39,15 @@ export class List extends DataWithPermissions {
 
     comments: ResourceComment[];
 
+    // Related to commissions
+    commissionId?: string;
+
+    commissionServer?: string;
+
+    public get isCommissionList(): boolean {
+        return this.commissionId !== undefined && this.commissionServer !== undefined;
+    }
+
     constructor() {
         super();
     }

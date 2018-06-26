@@ -40,4 +40,22 @@ export class AppUser extends DataModel {
     alarmGroups: AlarmGroup[] = [{name: 'Default group', enabled: true}];
     // Rotation folders
     rotationFolders: string[] = [];
+    // Is the character link verified?
+    verified = false;
+    // Evaluations for the commission board, by id of the person who gave the evaluation.
+    ratings: { [index: string]: number } = {};
+
+    get rating(): number {
+        if (Object.keys(this.ratings).length === 0) {
+            // Base rating is 2.5.
+            return 2.5;
+        }
+        return Object.keys(this.ratings)
+            .map(key => this.ratings[key])
+            .reduce((total, rating) => total + rating, 0) / this.ratings.length;
+    }
+
+    get ratingsLength(): number {
+        return Object.keys(this.ratings).length;
+    }
 }

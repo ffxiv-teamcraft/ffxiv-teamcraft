@@ -7,6 +7,7 @@ import {CommissionService} from '../../../core/database/commission/commission.se
 import {UserService} from '../../../core/database/user.service';
 import {first, map, mergeMap} from 'rxjs/operators';
 import {ListService} from '../../../core/database/list.service';
+import {PermissionsRegistry} from '../../../core/database/permissions/permissions-registry';
 
 @Component({
     selector: 'app-commission-creation-popup',
@@ -42,6 +43,8 @@ export class CommissionCreationPopupComponent {
                 mergeMap((res) => {
                     // Delete list author id to detach it from the author, keeping it attached to the commission.
                     delete this.list.authorId;
+                    this.list.permissionsRegistry = new PermissionsRegistry();
+                    this.list.permissionsRegistry.everyone = {read: true, write: false, participate: false};
                     // Save the list
                     return this.listService.set(this.list.$key, this.list)
                         .pipe(
@@ -50,7 +53,7 @@ export class CommissionCreationPopupComponent {
                 })
             )
             .subscribe(res => {
-                this.router.navigate(['commission', res.server, res.uid]);
+                this.router.navigate(['commissions', 'my-requests']);
                 this.ref.close()
             });
     }

@@ -1,0 +1,46 @@
+.candidates-card {
+    margin-top: 10px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    .price {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+}
+
+.hire-button {
+    width: auto;
+    margin-left: 10px;
+}
+
+.mat-card-header-text {
+    width: auto !important;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.crafter-container {
+    flex: 1 1 auto;
+    .crafter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .crafter-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            margin-left: 5px;
+        }
+        .crafter-name {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

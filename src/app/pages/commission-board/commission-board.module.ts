@@ -6,6 +6,7 @@ import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {CoreModule} from '../../core/core.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {
+    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatChipsModule,
@@ -13,7 +14,7 @@ import {
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     MatTooltipModule
@@ -56,11 +57,6 @@ const routes: Routes = [
         canActivate: [MaintenanceGuard]
     },
     {
-        path: 'commission/:serverName/:id/chat',
-        component: CommissionChatComponent,
-        canActivate: [MaintenanceGuard]
-    },
-    {
         path: 'commission/:serverName/:id/chat/:crafterId',
         component: CommissionChatComponent,
         canActivate: [MaintenanceGuard]
@@ -87,6 +83,8 @@ const routes: Routes = [
         MatListModule,
         MatIconModule,
         MatTooltipModule,
+        MatMenuModule,
+        MatBadgeModule,
 
         CoreModule,
         PipesModule,

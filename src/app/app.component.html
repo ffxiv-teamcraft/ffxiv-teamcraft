@@ -134,7 +134,11 @@
                                matTooltipPosition="right"
                                matTooltip="{{'COMMISSION_BOARD.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>how_to_vote</mat-icon>
+                    <mat-icon matListIcon
+                              matBadge=""
+                              [matBadgeHidden]="!(hasCommissionBadge$ | async)"
+                              matBadgeColor="accent"
+                              matBadgeSize="small">how_to_vote</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'COMMISSION_BOARD.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/public-lists" (click)="mobile ? sidenav.close() :  null"

@@ -1,14 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Commission} from '../../../model/commission/commission';
 import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../../core/database/user.service';
 import {AppUser} from '../../../model/list/app-user';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {MatDialog} from '@angular/material';
+import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {filter, mergeMap} from 'rxjs/operators';
+import {ListService} from '../../../core/database/list.service';
 
 @Component({
     selector: 'app-commission-panel',
     templateUrl: './commission-panel.component.html',
-    styleUrls: ['./commission-panel.component.scss']
+    styleUrls: ['./commission-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommissionPanelComponent implements OnInit {
 
@@ -19,12 +24,53 @@ export class CommissionPanelComponent implements OnInit {
 
     public author$: Observable<any>;
 
-    constructor(private userService: UserService, private commissionService: CommissionService) {
+    private characters: { [index: string]: Observable<any> } = {};
+
+    /**
+     * We keep a backup of the user here;
+     */
+    user: AppUser;
+
+    public chatBadge: boolean;
+
+    constructor(private userService: UserService, private commissionService: CommissionService, private dialog: MatDialog,
+                private listService: ListService) {
     }
 
     public apply(commission: Commission, userId: string): void {
         commission.candidateIds.push(userId);
+        commission.addNewThing(`application:${commission.authorId}`);
         this.commissionService.set(commission.$key, commission).subscribe();
+    }
+
+    public delete(): void {
+        this.dialog.open(ConfirmationPopupComponent)
+            .afterClosed()
+            .pipe(
+                filter(res => res),
+                mergeMap(() => {
+                    return this.listService.remove(this.commission.listId);
+                }),
+                mergeMap(() => {
+                    return this.commissionService.remove(this.commission.$key, this.commission.server);
+                })
+            ).subscribe();
+    }
+
+    public getCharacter(uid: string): Observable<any> {
+        if (this.characters[uid] === undefined) {
+            this.characters[uid] = this.userService.getCharacter(uid);
+        }
+        return this.characters[uid];
+    }
+
+    public hasChatBadge(commission: Commission, user: AppUser): boolean {
+        if (user !== null) {
+            if (this.chatBadge === undefined) {
+                this.chatBadge = commission.hasNewThing(`message:${user.$key}`);
+            }
+        }
+        return this.chatBadge;
     }
 
     ngOnInit(): void {

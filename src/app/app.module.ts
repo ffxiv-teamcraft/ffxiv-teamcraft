@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
@@ -18,7 +19,7 @@ import {
     MatSlideToggleModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
@@ -117,6 +118,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         MatFormFieldModule,
         MatInputModule,
         MatSliderModule,
+        MatBadgeModule,
 
         BrowserModule,
         FormsModule,

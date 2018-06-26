@@ -62,6 +62,19 @@ export class Commission extends DataModel {
      */
     crafterId?: string;
 
+    /**
+     * Boolean to show if there's something new to see.
+     * @type {boolean}
+     */
+    get hasNewThings(): boolean {
+        return this.newThings.length > 0;
+    }
+
+    /**
+     * Array to store new things on the list, identified by string to have a nice way to find where to put badges.
+     */
+    public newThings: string[] = [];
+
     constructor(authorId?: string, list?: List, server?: string) {
         super();
         // Only use constructor logic if we're creating a new commission, else it means we're deserializing the object, meaning that
@@ -73,6 +86,18 @@ export class Commission extends DataModel {
             this.authorId = authorId;
             this.name = list.name;
         }
+    }
+
+    public addNewThing(description: string): void {
+        this.newThings.push(description);
+    }
+
+    public removeNewThing(matcher: string): void {
+        this.newThings = this.newThings.filter(thing => thing.indexOf(matcher) === -1);
+    }
+
+    public hasNewThing(matcher: string): boolean {
+        return this.newThings.find(thing => thing.indexOf(matcher) > -1) !== undefined;
     }
 
     public isGathering(): boolean {
