@@ -7,16 +7,16 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
-body::-webkit-scrollbar, mat-sidenav::-webkit-scrollbar, .mat-sidenav-content::-webkit-scrollbar {
+*::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
     height: 6px;
     width: 6px;
 }
 
-body::-webkit-scrollbar-track, mat-sidenav::-webkit-scrollbar-trac, .mat-sidenav-content::-webkit-scrollbar-trac {
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-trac, *::-webkit-scrollbar-trac {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-body::-webkit-scrollbar-thumb, mat-sidenav::-webkit-scrollbar-thumb, .mat-sidenav-content::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb {
     background-color: #6e6e6e;
     outline: 1px solid #333;
 }

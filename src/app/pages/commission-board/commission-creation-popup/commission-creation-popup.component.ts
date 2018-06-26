@@ -6,6 +6,7 @@ import {Commission} from '../../../model/commission/commission';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {UserService} from '../../../core/database/user.service';
 import {first, map, mergeMap} from 'rxjs/operators';
+import {ListService} from '../../../core/database/list.service';
 
 @Component({
     selector: 'app-commission-creation-popup',
@@ -17,7 +18,8 @@ export class CommissionCreationPopupComponent {
     public price = 0;
 
     constructor(@Inject(MAT_DIALOG_DATA) public list: List, private router: Router, private commissionService: CommissionService,
-                private ref: MatDialogRef<CommissionCreationPopupComponent>, private userService: UserService) {
+                private ref: MatDialogRef<CommissionCreationPopupComponent>, private userService: UserService,
+                private listService: ListService) {
     }
 
     public createCommission(): void {
@@ -35,6 +37,15 @@ export class CommissionCreationPopupComponent {
                                     server: character.server
                                 }
                             })
+                        );
+                }),
+                mergeMap((res) => {
+                    // Delete list author id to detach it from the author, keeping it attached to the commission.
+                    delete this.list.authorId;
+                    // Save the list
+                    return this.listService.set(this.list.$key, this.list)
+                        .pipe(
+                            map(() => res)
                         );
                 })
             )

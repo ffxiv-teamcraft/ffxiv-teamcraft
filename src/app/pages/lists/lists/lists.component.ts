@@ -31,6 +31,8 @@ import {PermissionsPopupComponent} from '../../../modules/common-components/perm
 import {catchError, filter, first, map, mergeMap, switchMap} from 'rxjs/operators';
 import {tap} from 'rxjs/internal/operators';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
+import {CommissionService} from '../../../core/database/commission/commission.service';
+import {CommissionStatus} from '../../../model/commission/commission-status';
 
 declare const ga: Function;
 
@@ -72,7 +74,8 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 private listService: ListService, private title: Title, private cd: ChangeDetectorRef,
                 private workshopService: WorkshopService, private snack: MatSnackBar,
                 private translator: TranslateService, private userService: UserService,
-                private templateService: ListTemplateService, private linkTools: LinkToolsService) {
+                private templateService: ListTemplateService, private linkTools: LinkToolsService,
+                private commissionService: CommissionService) {
         super();
         this.subscriptions.push(userService.getUserData().subscribe(userData => this.userData = userData))
     }
@@ -197,19 +200,45 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
 
     delete(list: List): void {
         const dialogRef = this.dialog.open(ConfirmationPopupComponent);
-        this.subscriptions.push(dialogRef.afterClosed().subscribe(result => {
-            if (result === true) {
-                list.forEachItem(row => {
-                    if (this.alarmService.hasAlarm(row.id)) {
-                        this.alarmService.unregister(row.id);
-                    }
-                });
-                this.listService.remove(list.$key).subscribe(() => {
-                    ga('send', 'event', 'List', 'deletion');
-                    this.title.setTitle('Teamcraft');
-                });
-            }
-        }));
+        dialogRef.afterClosed()
+            .pipe(
+                filter(result => result),
+                mergeMap(() => {
+                    return this.userService.getCharacter()
+                        .pipe(
+                            mergeMap(char => {
+                                // Let's delete all the open commissions with this list that are in CREATED state.
+                                return this.commissionService
+                                    .getAll(char.server, ref => ref.where('status', '==', CommissionStatus.CREATED))
+                                    .pipe(
+                                        mergeMap(commissions => {
+                                            if (commissions.length > 0) {
+                                                return combineLatest(
+                                                    commissions.map(com => {
+                                                        return this.commissionService.remove(com.$key, char.server)
+                                                    })
+                                                )
+                                            } else {
+                                                return of(null)
+                                            }
+                                        })
+                                    );
+                            }),
+                        )
+                }),
+                mergeMap(() => {
+                    list.forEachItem(row => {
+                        if (this.alarmService.hasAlarm(row.id)) {
+                            this.alarmService.unregister(row.id);
+                        }
+                    });
+                    return this.listService.remove(list.$key)
+                })
+            )
+            .subscribe(() => {
+                ga('send', 'event', 'List', 'deletion');
+                this.title.setTitle('Teamcraft');
+            });
     }
 
     openMergeListsPopup(): void {

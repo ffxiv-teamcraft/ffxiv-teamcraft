@@ -3,13 +3,21 @@ import {CommissionStatus} from './commission-status';
 import {CommissionDiscussion} from './commission-discussion';
 import {DataModel} from '../../core/database/storage/data-model';
 import {DeserializeAs} from '@kaiu/serializer';
+import {ListRow} from '../list/list-row';
 
 export class Commission extends DataModel {
+
     /**
-     * The list requested.
+     * The name of the list used for the commission
      */
-    @DeserializeAs(List)
-    list: List;
+    name: string;
+
+    /**
+     * The id of the list linked to the commission
+     */
+    listId: string;
+
+    items: ListRow[] = [];
 
     /**
      * The price that the buyer is willing to pay, defaults to 0 if he wants to negotiate the price or doesn't know which one to set.
@@ -49,22 +57,28 @@ export class Commission extends DataModel {
      */
     crafterId?: string;
 
-    constructor(authorId: string, list: List, server: string) {
+    constructor(authorId?: string, list?: List, server?: string) {
         super();
-        this.list = list;
-        this.server = server;
-        this.authorId = authorId;
+        // Only use constructor logic if we're creating a new commission, else it means we're deserializing the object, meaning that
+        // everything we need is already in the object itself.
+        if (list !== undefined) {
+            this.items = list.recipes;
+            this.listId = list.$key;
+            this.server = server;
+            this.authorId = authorId;
+            this.name = list.name;
+        }
     }
 
     public isGathering(): boolean {
-        return this.list.recipes.find(item => item.gatheredBy !== undefined) !== undefined;
+        return this.items.find(item => item.gatheredBy !== undefined) !== undefined;
     }
 
     public isCrafting(): boolean {
-        return this.list.recipes.find(item => item.craftedBy !== undefined && item.craftedBy.length > 0) !== undefined;
+        return this.items.find(item => item.craftedBy !== undefined && item.craftedBy.length > 0) !== undefined;
     }
 
     public isHunting(): boolean {
-        return this.list.recipes.find(item => item.drops !== undefined && item.drops.length > 0) !== undefined;
+        return this.items.find(item => item.drops !== undefined && item.drops.length > 0) !== undefined;
     }
 }

@@ -29,9 +29,9 @@ export class CommissionDetailsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.commission$ = this.activeRoute.params
+        this.commission$ = this.activeRoute.paramMap
             .pipe(
-                mergeMap(params => this.commissionService.get(params.id, params.server)),
+                mergeMap(params => this.commissionService.get(params.get('id'), params.get('serverName'))),
                 shareReplay()
             );
         this.author$ = this.commission$

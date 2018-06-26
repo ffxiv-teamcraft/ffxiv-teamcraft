@@ -3,7 +3,7 @@
         <mat-card-header>
             <img src="{{author.avatar}}" alt="" mat-card-avatar>
             <mat-card-title>
-                {{commission.list.name}}
+                {{commission.name}}
             </mat-card-title>
             <mat-card-subtitle>
                 {{author.name}} - {{commission.server}}
@@ -13,7 +13,7 @@
             </mat-chip-list>
         </mat-card-header>
         <mat-list dense>
-            <mat-list-item *ngFor="let item of commission.list.recipes">
+            <mat-list-item *ngFor="let item of commission.items">
                 <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
                     <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
                 </a>

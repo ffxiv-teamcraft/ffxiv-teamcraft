@@ -10,7 +10,7 @@
     }
 }
 
-@mixin background-color($theme){
+@mixin background-color($theme) {
     @if map-get($theme, is-dark) {
         background-color: #303030;
     } @else {
@@ -117,6 +117,71 @@
     }
 }
 
+@mixin chat-theme($theme) {
+    $accent: map-get($theme, accent);
+    $primary: map-get($theme, primary);
+    .chat-content {
+        overflow-y: auto;
+        width: 100%;
+        .chat-message {
+            display: flex;
+            width: 100%;
+            margin: 5px 0;
+            &.own-message {
+                flex-direction: row-reverse;
+                .message-container {
+                    &::after {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent transparent mat-color($primary);
+                        position: absolute;
+                        top: 0;
+                        right: -9px;
+                    }
+                    &::before {
+                        content: none;
+                    }
+                }
+            }
+            .character {
+                padding: 5px;
+                .character-avatar {
+                    width: 48px;
+                    border-radius: 48px;
+                }
+            }
+            .message-container {
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                position: relative;
+                height: 100%;
+                &::before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 10px 10px 0;
+                    border-color: transparent mat-color($accent) transparent transparent;
+                    position: absolute;
+                    top: 0;
+                    left: -9px;
+                }
+                .message-content {
+                }
+                .message-date {
+                    align-self: flex-end;
+                    font-size: 11px;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+
 // Palette
 // orange
 $primary-orange: mat-palette($mat-orange, 700);
@@ -202,6 +267,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-theme);
     @include color-fixes($dark-theme);
     @include toc-theme($dark-theme);
+    @include chat-theme($dark-theme);
 }
 
 // Light orange theme class
@@ -212,6 +278,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-orange-theme);
     @include color-fixes($light-orange-theme);
     @include toc-theme($light-orange-theme);
+    @include chat-theme($light-orange-theme);
 }
 
 // Light teal theme class
@@ -222,6 +289,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-teal-theme);
     @include color-fixes($light-teal-theme);
     @include toc-theme($light-teal-theme);
+    @include chat-theme($light-teal-theme);
 }
 
 // Dark teal theme class
@@ -232,6 +300,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-teal-theme);
     @include color-fixes($dark-teal-theme);
     @include toc-theme($dark-teal-theme);
+    @include chat-theme($dark-teal-theme);
 }
 
 // Light brown theme class
@@ -242,6 +311,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-brown-theme);
     @include color-fixes($light-brown-theme);
     @include toc-theme($light-brown-theme);
+    @include chat-theme($light-brown-theme);
 }
 
 // Light amber theme class
@@ -252,6 +322,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-amber-theme);
     @include color-fixes($light-amber-theme);
     @include toc-theme($light-amber-theme);
+    @include chat-theme($light-amber-theme);
 }
 
 // Dark amber theme class
@@ -262,6 +333,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-amber-theme);
     @include color-fixes($dark-amber-theme);
     @include toc-theme($dark-amber-theme);
+    @include chat-theme($dark-amber-theme);
 }
 
 // Light green theme class
@@ -272,6 +344,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-green-theme);
     @include color-fixes($light-green-theme);
     @include toc-theme($light-green-theme);
+    @include chat-theme($light-green-theme);
 }
 
 // Dark lime theme class
@@ -282,6 +355,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-lime-theme);
     @include color-fixes($dark-lime-theme);
     @include toc-theme($dark-lime-theme);
+    @include chat-theme($dark-lime-theme);
 }
 
 // Light lime theme class
@@ -292,6 +366,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-lime-theme);
     @include color-fixes($light-lime-theme);
     @include toc-theme($light-lime-theme);
+    @include chat-theme($light-lime-theme);
 }
 
 // Dark cyan theme class
@@ -302,6 +377,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-cyan-theme);
     @include color-fixes($dark-cyan-theme);
     @include toc-theme($dark-cyan-theme);
+    @include chat-theme($dark-cyan-theme);
 }
 
 // Light cyan theme class
@@ -312,6 +388,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-cyan-theme);
     @include color-fixes($light-cyan-theme);
     @include toc-theme($light-cyan-theme);
+    @include chat-theme($light-cyan-theme);
 }
 
 // Dark indigo theme class
@@ -322,6 +399,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-indigo-theme);
     @include color-fixes($dark-indigo-theme);
     @include toc-theme($dark-indigo-theme);
+    @include chat-theme($dark-indigo-theme);
 }
 
 // Light indigo theme class
@@ -332,6 +410,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-indigo-theme);
     @include color-fixes($light-indigo-theme);
     @include toc-theme($light-indigo-theme);
+    @include chat-theme($light-indigo-theme);
 }
 
 // Dark blue theme class
@@ -342,6 +421,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-blue-theme);
     @include color-fixes($dark-blue-theme);
     @include toc-theme($dark-blue-theme);
+    @include chat-theme($dark-blue-theme);
 }
 
 // Light blue theme class
@@ -352,6 +432,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-blue-theme);
     @include color-fixes($light-blue-theme);
     @include toc-theme($light-blue-theme);
+    @include chat-theme($light-blue-theme);
 }
 
 // Dark deep-purple theme class
@@ -362,6 +443,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-deep-purple-theme);
     @include color-fixes($dark-deep-purple-theme);
     @include toc-theme($dark-deep-purple-theme);
+    @include chat-theme($dark-deep-purple-theme);
 }
 
 // Light deep-purple theme class
@@ -372,6 +454,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-deep-purple-theme);
     @include color-fixes($light-deep-purple-theme);
     @include toc-theme($light-deep-purple-theme);
+    @include chat-theme($light-deep-purple-theme);
 }
 
 // Dark red theme class
@@ -382,6 +465,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-red-theme);
     @include color-fixes($dark-red-theme);
     @include toc-theme($dark-red-theme);
+    @include chat-theme($dark-red-theme);
 }
 
 // Light red theme class
@@ -392,6 +476,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-red-theme);
     @include color-fixes($light-red-theme);
     @include toc-theme($light-red-theme);
+    @include chat-theme($light-red-theme);
 }
 
 // Dark pink theme class
@@ -402,6 +487,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($dark-pink-theme);
     @include color-fixes($dark-pink-theme);
     @include toc-theme($dark-pink-theme);
+    @include chat-theme($dark-pink-theme);
 }
 
 // Light pink theme class
@@ -412,6 +498,7 @@ $light-pink-theme: mat-light-theme($primary-pink, $accent-pink, $warn);
     @include card-accent($light-pink-theme);
     @include color-fixes($light-pink-theme);
     @include toc-theme($light-pink-theme);
+    @include chat-theme($light-pink-theme);
 }
 
 // Responsive breakpoint mixin/definitions

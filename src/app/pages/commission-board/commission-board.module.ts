@@ -15,7 +15,8 @@ import {
     MatInputModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
 } from '@angular/material';
 import {MyRequestsComponent} from './my-requests/my-requests.component';
 import {MyCraftsComponent} from './my-crafts/my-crafts.component';
@@ -50,17 +51,17 @@ const routes: Routes = [
         ]
     },
     {
-        path: 'commission/:server/:id',
+        path: 'commission/:serverName/:id',
         component: CommissionDetailsComponent,
         canActivate: [MaintenanceGuard]
     },
     {
-        path: 'commission/:server/:id/chat',
+        path: 'commission/:serverName/:id/chat',
         component: CommissionChatComponent,
         canActivate: [MaintenanceGuard]
     },
     {
-        path: 'commission/:server/:id/chat/:crafterId',
+        path: 'commission/:serverName/:id/chat/:crafterId',
         component: CommissionChatComponent,
         canActivate: [MaintenanceGuard]
     }
@@ -85,6 +86,7 @@ const routes: Routes = [
         MatChipsModule,
         MatListModule,
         MatIconModule,
+        MatTooltipModule,
 
         CoreModule,
         PipesModule,

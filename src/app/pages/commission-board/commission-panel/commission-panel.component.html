@@ -1,7 +1,7 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
-            {{commission.list.name}}
+            {{commission.name}}
         </mat-panel-title>
         <mat-chip-list>
             <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
@@ -30,7 +30,7 @@
     </mat-expansion-panel-header>
     <ng-template matExpansionPanelContent>
         <mat-list dense>
-            <mat-list-item *ngFor="let item of commission.list.recipes">
+            <mat-list-item *ngFor="let item of commission.items">
                 <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
                     <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
                 </a>
