@@ -1,6 +1,7 @@
 import {DataModel} from '../../core/database/storage/data-model';
 import {Craft} from '../garland-tools/craft';
 import {SavedConsumables} from './saved-consumables';
+import {FreeCompanyAction} from '../../pages/simulator/model/free-company-action'
 import {DeserializeAs} from '@kaiu/serializer';
 
 export class CraftingRotation extends DataModel {
@@ -23,6 +24,8 @@ export class CraftingRotation extends DataModel {
 
     @DeserializeAs(SavedConsumables)
     public consumables: SavedConsumables = new SavedConsumables();
+
+    public freeCompanyActions: FreeCompanyAction[];
 
     public getName(): string {
         return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;

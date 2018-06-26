@@ -502,6 +502,7 @@
       "Apply_foods": "Apply consumables",
       "Food": "Choose a food",
       "Medicine": "Choose a medicine",
+      "Action": "Choose free company actions",
       "Save_set": "Save these stats for this job",
       "Reset_set": "Reset these stats",
       "STATS": {

@@ -154,44 +154,70 @@
         </div>
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
-            <div class="consumables-cols">
-                <div class="foods">
-                    <mat-select [(ngModel)]="_selectedFood"
-                                placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
-                        <mat-option [value]="undefined"></mat-option>
-                        <mat-option *ngFor="let food of foods" [value]="food">
-                            {{food.itemId | itemName | i18n}}
-                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
-                        </mat-option>
-                    </mat-select>
-                    <div class="consumable-details" *ngIf="_selectedFood !== undefined">
-                        <div class="details-row">
-                            <b>{{_selectedFood.itemId | itemName | i18n}}</b>
-                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedFood.hq">
+            <div class="consumables">
+                <div layout="row">
+                    <div class="foods" flex="50">
+                        <mat-select [(ngModel)]="_selectedFood"
+                                    placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
+                            <mat-option [value]="undefined"></mat-option>
+                            <mat-option *ngFor="let food of foods" [value]="food">
+                                {{food.itemId | itemName | i18n}}
+                                <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="food.hq">
+                            </mat-option>
+                        </mat-select>
+                        <div class="consumable-details" *ngIf="_selectedFood !== undefined">
+                            <div class="details-row">
+                                <b>{{_selectedFood.itemId | itemName | i18n}}</b>
+                                <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedFood.hq">
+                            </div>
+                            <div class="details-row" *ngFor="let bonus of _selectedFood.bonuses">
+                                {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                                ({{bonus.max}})
+                            </div>
                         </div>
-                        <div class="details-row" *ngFor="let bonus of _selectedFood.bonuses">
-                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
-                            ({{bonus.max}})
+                    </div>
+                    <div class="medicines" flex="50">
+                        <mat-select [(ngModel)]="_selectedMedicine"
+                                    placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
+                            <mat-option [value]="undefined"></mat-option>
+                            <mat-option *ngFor="let medicine of medicines" [value]="medicine">
+                                {{medicine.itemId | itemName | i18n}}
+                                <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
+                            </mat-option>
+                        </mat-select>
+                        <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
+                            <div class="details-row">
+                                <b>{{_selectedMedicine.itemId | itemName | i18n}}</b>
+                                <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedMedicine.hq">
+                            </div>
+                            <div class="details-row" *ngFor="let bonus of _selectedMedicine.bonuses">
+                                {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                                ({{bonus.max}})
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="medicines">
-                    <mat-select [(ngModel)]="_selectedMedicine"
-                                placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
-                        <mat-option [value]="undefined"></mat-option>
-                        <mat-option *ngFor="let medicine of medicines" [value]="medicine">
-                            {{medicine.itemId | itemName | i18n}}
-                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="medicine.hq">
-                        </mat-option>
-                    </mat-select>
-                    <div class="consumable-details" *ngIf="_selectedMedicine !== undefined">
-                        <div class="details-row">
-                            <b>{{_selectedMedicine.itemId | itemName | i18n}}</b>
-                            <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="_selectedMedicine.hq">
-                        </div>
-                        <div class="details-row" *ngFor="let bonus of _selectedMedicine.bonuses">
-                            {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
-                            ({{bonus.max}})
+                <div layout="row">
+                    <div class="free-company-actions">
+                        <mat-select [(ngModel)]="_selectedFreeCompanyActions" [compareWith]="compareFreeCompanyActionsFn"
+                                    placeholder="{{'SIMULATOR.CONFIGURATION.Action' | translate}}" multiple>
+                            <mat-optgroup *ngFor="let type of ['Control', 'Craftsmanship']"
+                                          [label]="('SIMULATOR.CONFIGURATION.'+type) | translate">
+                                <mat-option *ngFor="let action of getFreeCompanyActions(type)" [value]="action"
+                                            [disabled]="isFreeCompanyActionOptionDisabled(type, action.actionId)">
+                                    {{action.actionId | freeCompanyActionName | i18n}}
+                                </mat-option>
+                            </mat-optgroup>
+                        </mat-select>
+                        <div class="action-details" *ngIf="_selectedFreeCompanyActions !== []">
+                            <div *ngFor="let action of _selectedFreeCompanyActions">
+                                <div class="">
+                                    <b>{{action.actionId | freeCompanyActionName | i18n}}</b>
+                                </div>
+                                <div class="">
+                                    {{('SIMULATOR.CONFIGURATION.STATS.'+action.type) | translate}}: {{action.value}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

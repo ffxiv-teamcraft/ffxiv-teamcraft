@@ -10,6 +10,7 @@ import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
 import {UserService} from '../../../../core/database/user.service';
 import {Consumable} from '../../model/consumable';
+import {FreeCompanyAction} from '../../model/free-company-action';
 import {catchError, distinctUntilChanged, filter, first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
@@ -36,6 +37,8 @@ export class SimulatorPageComponent {
     public selectedFood: Consumable;
 
     public selectedMedicine: Consumable;
+
+    public selectedFreeCompanyActions: FreeCompanyAction[];
 
     public notFound = false;
 
@@ -102,6 +105,7 @@ export class SimulatorPageComponent {
             this.authorId = res.rotation.authorId;
             this.selectedFood = res.rotation.consumables.food;
             this.selectedMedicine = res.rotation.consumables.medicine;
+            this.selectedFreeCompanyActions = res.rotation.freeCompanyActions;
             this.rotation = res.rotation;
         }, () => this.notFound = true);
     }
@@ -120,6 +124,7 @@ export class SimulatorPageComponent {
                     result.description = '';
                     result.name = rotation.name;
                     result.consumables = rotation.consumables;
+                    result.freeCompanyActions = rotation.freeCompanyActions;
                     result.defaultRecipeId = +this.recipeId;
                     return {rotation: result, userId: userId};
                 }),

@@ -40,6 +40,7 @@ import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {SimulationMinStatsPopupComponent} from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
 import {ImportMacroPopupComponent} from './components/import-macro-popup/import-macro-popup.component';
 import {ConsumablesService} from './model/consumables.service';
+import {FreeCompanyActionsService} from './model/free-company-actions.service';
 import {RotationNamePopupComponent} from './components/rotation-name-popup/rotation-name-popup.component';
 import {StepByStepReportPopupComponent} from './components/step-by-step-report-popup/step-by-step-report-popup.component';
 import {RecipeChoicePopupComponent} from './components/recipe-choice-popup/recipe-choice-popup.component';
@@ -142,7 +143,8 @@ const routes: Routes = [
     ],
     providers: [
         CraftingActionsRegistry,
-        ConsumablesService
+        ConsumablesService,
+        FreeCompanyActionsService
     ]
 })
 export class SimulatorModule {
