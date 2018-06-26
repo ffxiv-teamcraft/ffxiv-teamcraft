@@ -92,11 +92,19 @@
         width: 32px;
         height: 32px;
     }
-    .consumables-cols {
-        display: flex;
+    .consumables {
         min-height: 150px;
         > div {
-            margin: 10px;
+            display: flex;
+            > div {
+                margin: 10px;
+            }
+        }
+    }
+    .action-details {
+        display: flex;
+        > div {
+            margin-right: 20px;
         }
     }
 }
