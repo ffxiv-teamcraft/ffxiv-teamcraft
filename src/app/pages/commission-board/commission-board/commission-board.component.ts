@@ -50,7 +50,24 @@ export class CommissionBoardComponent {
                             );
                     }),
                 )
-        }
+        },
+        {
+            path: 'history',
+            label: 'COMMISSION_BOARD.History',
+            hasNewThings: this.userService.getCharacter()
+                .pipe(
+                    mergeMap(character => {
+                        return this.commissionService.getAll(character.server, ref => ref.where('status', '==', 2))
+                            .pipe(
+                                map(commissions => {
+                                    return commissions.reduce((hasNewThings, commission) => {
+                                        return hasNewThings || commission.hasNewThing(character.userId);
+                                    }, false);
+                                })
+                            );
+                    }),
+                )
+        },
     ];
 
     constructor(private userService: UserService, private commissionService: CommissionService) {

@@ -33,6 +33,7 @@ import {SettingsModule} from '../settings/settings.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {CommissionChatComponent} from './commission-chat/commission-chat.component';
 import {RatingPopupComponent} from './rating-popup/rating-popup.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
     {
@@ -51,6 +52,10 @@ const routes: Routes = [
             {
                 path: 'my-crafts',
                 component: MyCraftsComponent,
+            },
+            {
+                path: 'history',
+                component: HistoryComponent,
             }
         ]
     },
@@ -104,7 +109,8 @@ const routes: Routes = [
         CommissionPanelComponent,
         CommissionDetailsComponent,
         CommissionChatComponent,
-        RatingPopupComponent
+        RatingPopupComponent,
+        HistoryComponent
     ],
     entryComponents: [
         CommissionCreationPopupComponent,

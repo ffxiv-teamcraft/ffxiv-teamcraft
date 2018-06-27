@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/index';
 import {UserService} from '../../../core/database/user.service';
-import {mergeMap} from 'rxjs/operators';
+import {map, mergeMap} from 'rxjs/operators';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {Commission} from '../../../model/commission/commission';
+import {CommissionStatus} from '../../../model/commission/commission-status';
 
 @Component({
     selector: 'app-my-requests',
@@ -18,7 +19,10 @@ export class MyRequestsComponent {
         this.commissions$ = this.userService.getCharacter()
             .pipe(
                 mergeMap(character => {
-                    return this.commissionService.getAll(character.server, ref => ref.where('authorId', '==', character.userId));
+                    return this.commissionService.getAll(character.server, ref => ref.where('authorId', '==', character.userId))
+                        .pipe(
+                            map(commissions => commissions.filter(com => com.status !== CommissionStatus.DONE))
+                        );
                 })
             );
     }

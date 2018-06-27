@@ -39,7 +39,7 @@
             </button>
             <a mat-icon-button (click)="$event.stopPropagation()"
                matBadge=""
-               [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key)"
+               [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key) || !commission.hasNewThing('rate:'+(user$ | async)?.$key)"
                matBadgeColor="accent"
                matBadgeSize="small"
                routerLink="/commission/{{commission.server}}/{{commission.$key}}">
@@ -73,7 +73,7 @@
                         </div>
                     </mat-menu>
                     <button mat-raised-button color="accent"
-                            *ngIf="commission.discussions.length > 0"
+                            *ngIf="commission.discussions.length > 0 && commission.status < 2"
                             matBadge=""
                             [matBadgeHidden]="!hasChatBadge(commission, user)"
                             matBadgeColor="accent"
@@ -90,7 +90,7 @@
                     {{'COMMISSION_BOARD.Apply' | translate}}
                 </button>
                 <a mat-button color="accent"
-                   *ngIf="user.$key !== commission.authorId"
+                   *ngIf="user.$key !== commission.authorId && commission.status < 2"
                    matBadge=""
                    [matBadgeHidden]="!hasChatBadge(commission, user)"
                    matBadgeColor="accent"
