@@ -87,40 +87,42 @@
                 </mat-list>
                 <div class="payment-block" *ngIf="commission.status === 1">
                     <div *ngIf="user$ | async as user" class="payment-history">
-                        <mat-list dense *ngIf="user.$key === commission.authorId || user.$key === commission.crafterId">
-                            <mat-list-item *ngFor="let payment of commission.payments">
-                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon"
-                                     mat-list-avatar>
-                                <span matLine>{{payment.amount | number}}</span>
-                                <span matLine class="payment-date">{{payment.date | date:'medium'}}</span>
-                                <button mat-icon-button color="warn"
-                                        matTooltip="{{'COMMISSION_BOARD.Delete_payment' | translate}}"
-                                        (click)="deletePayment(commission, payment)">
-                                    <mat-icon>clear</mat-icon>
-                                </button>
-                            </mat-list-item>
-                        </mat-list>
-                        <div class="total">
-                            <div class="total-row">
-                                {{'COMMISSION_BOARD.Deposit' | translate}}
-                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
-                                {{commission.totalPaid | number}}
+                        <div *ngIf="user.$key === commission.authorId || user.$key === commission.crafterId">
+                            <mat-list dense>
+                                <mat-list-item *ngFor="let payment of commission.payments">
+                                    <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon"
+                                         mat-list-avatar>
+                                    <span matLine>{{payment.amount | number}}</span>
+                                    <span matLine class="payment-date">{{payment.date | date:'medium'}}</span>
+                                    <button mat-icon-button color="warn"
+                                            matTooltip="{{'COMMISSION_BOARD.Delete_payment' | translate}}"
+                                            (click)="deletePayment(commission, payment)">
+                                        <mat-icon>clear</mat-icon>
+                                    </button>
+                                </mat-list-item>
+                            </mat-list>
+                            <div class="total">
+                                <div class="total-row">
+                                    {{'COMMISSION_BOARD.Deposit' | translate}}
+                                    <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+                                    {{commission.totalPaid | number}}
+                                </div>
+                                <div class="total-row">
+                                    {{'COMMISSION_BOARD.Owing' | translate}}
+                                    <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+                                    {{(commission.price - commission.totalPaid) | number}}
+                                </div>
+                                <form (submit)="addPayment(commission)">
+                                    <mat-form-field>
+                                        <input type="number" lang="en-150" [(ngModel)]="payment"
+                                               [ngModelOptions]="{standalone: true}" matInput
+                                               placeholder="{{'COMMISSION_BOARD.Add_payment' | translate}}">
+                                    </mat-form-field>
+                                    <button mat-icon-button type="submit">
+                                        <mat-icon>add_box</mat-icon>
+                                    </button>
+                                </form>
                             </div>
-                            <div class="total-row">
-                                {{'COMMISSION_BOARD.Owing' | translate}}
-                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
-                                {{(commission.price - commission.totalPaid) | number}}
-                            </div>
-                            <form (submit)="addPayment(commission)">
-                                <mat-form-field>
-                                    <input type="number" lang="en-150" [(ngModel)]="payment"
-                                           [ngModelOptions]="{standalone: true}" matInput
-                                           placeholder="{{'COMMISSION_BOARD.Add_payment'}}">
-                                </mat-form-field>
-                                <button mat-icon-button type="submit">
-                                    <mat-icon>add_box</mat-icon>
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </div>
