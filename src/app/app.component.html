@@ -132,6 +132,7 @@
                 </mat-list-item>
                 <mat-list-item routerLink="/commissions/board" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
+                               *ngIf="!(authState | async)?.isAnonymous"
                                matTooltip="{{'COMMISSION_BOARD.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon
