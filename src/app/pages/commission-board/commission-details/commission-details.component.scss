@@ -1,5 +1,9 @@
 .candidates-card {
     margin-top: 10px;
+    .no-candidates {
+        font-size: 25px;
+        opacity: .7;
+    }
 }
 
 .right-header {
@@ -22,6 +26,40 @@
 }
 
 .rating {
+    display: flex;
+    align-items: center;
+}
+
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .payment-block {
+        display: flex;
+        flex-direction: column;
+        .payment-history {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            .payment-date {
+                opacity: .8;
+            }
+            .total {
+                align-self: flex-end;
+                .total-row {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.item-name {
     display: flex;
     align-items: center;
 }

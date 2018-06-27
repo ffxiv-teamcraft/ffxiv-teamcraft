@@ -58,7 +58,8 @@
                 <mat-icon>content_copy</mat-icon>
             </button>
 
-            <button mat-mini-fab *ngIf="listData !== undefined && user !== undefined && !listData?.ephemeral && !listData?.isCommissionList"
+            <button mat-mini-fab
+                    *ngIf="listData !== undefined && user !== undefined && !listData?.ephemeral && !listData?.isCommissionList && !listData.public"
                     (click)="createCommission(listData)"
                     matTooltip="{{'COMMISSION_BOARD.Create_commission' | translate}}">
                 <mat-icon>drafts</mat-icon>

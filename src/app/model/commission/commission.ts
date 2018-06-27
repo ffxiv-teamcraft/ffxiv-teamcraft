@@ -63,6 +63,20 @@ export class Commission extends DataModel {
     crafterId?: string;
 
     /**
+     * The history of payments done.
+     * @type {any[]}
+     */
+    payments: { date: string, amount: number }[] = [];
+
+    /**
+     * Gets the total paid for this commission so far.
+     * @returns {number}
+     */
+    public get totalPaid(): number {
+        return this.payments.reduce((total, payment) => total + payment.amount, 0);
+    }
+
+    /**
      * Boolean to show if there's something new to see.
      * @type {boolean}
      */
@@ -110,5 +124,18 @@ export class Commission extends DataModel {
 
     public isHunting(): boolean {
         return this.items.find(item => item.drops !== undefined && item.drops.length > 0) !== undefined;
+    }
+
+    public isCompleted(): boolean {
+        return this.items.reduce((completed, item) => item.done >= item.amount && completed, true);
+    }
+
+    /**
+     * Gets commission craft progress from 0 to 100.
+     * @returns {number}
+     */
+    public getProgress(): number {
+        const done = this.items.filter(item => item.done >= item.amount).length;
+        return 100 * done / this.items.length;
     }
 }

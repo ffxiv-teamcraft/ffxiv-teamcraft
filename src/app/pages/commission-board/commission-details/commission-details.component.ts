@@ -29,8 +29,16 @@ export class CommissionDetailsComponent implements OnInit {
 
     private characters: { [index: string]: Observable<any> } = {};
 
+    editPrice = false;
+
+    payment: number;
+
     constructor(private activeRoute: ActivatedRoute, private commissionService: CommissionService, private userService: UserService,
                 private dialog: MatDialog, private listService: ListService) {
+    }
+
+    public save(commission: Commission): void {
+        this.commissionService.set(commission.$key, commission).subscribe();
     }
 
     public apply(commission: Commission, userId: string): void {
@@ -48,6 +56,17 @@ export class CommissionDetailsComponent implements OnInit {
             this.characters[uid] = this.userService.getCharacter(uid);
         }
         return this.characters[uid];
+    }
+
+    public addPayment(commission: Commission): void {
+        commission.payments.push({date: new Date().toISOString(), amount: this.payment});
+        delete this.payment;
+        this.save(commission);
+    }
+
+    public deletePayment(commission: Commission, payment: { date: string, amount: number }): void {
+        commission.payments = commission.payments.filter(p => p.date !== payment.date && p.amount !== payment.amount);
+        this.save(commission);
     }
 
     /**
@@ -97,6 +116,7 @@ export class CommissionDetailsComponent implements OnInit {
                             map(list => {
                                 list.authorId = com.crafterId;
                                 list.commissionId = com.$key;
+                                list.commissionServer = com.server;
                                 return list;
                             }),
                             mergeMap(list => {

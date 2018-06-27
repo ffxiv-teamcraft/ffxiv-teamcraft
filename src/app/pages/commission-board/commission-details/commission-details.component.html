@@ -36,6 +36,7 @@
                         </div>
                         <button mat-icon-button
                                 color="warn"
+                                *ngIf="(user$ | async)?.$key === commission.authorId"
                                 matTooltip="{{'COMMISSION_BOARD.Fire' | translate}}"
                                 (click)="fireCrafter(commission)">
                             <mat-icon>clear</mat-icon>
@@ -47,21 +48,83 @@
                         <mat-chip selectable="false">{{'COMMISSION_BOARD.STATUS.'+getStatus(commission) | translate}}
                         </mat-chip>
                     </mat-chip-list>
-                    <div class="price" *ngIf="commission.price > 0">
+                    <div class="price" *ngIf="!editPrice">
                         <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
                         {{commission.price | number}}
+                        <button mat-icon-button
+                                *ngIf="commission.authorId === (user$ | async)?.$key && commission.status === 0"
+                                (click)="editPrice = true">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>
+                    <div class="price" *ngIf="editPrice">
+                        <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+                        <mat-form-field>
+                            <input type="number" matInput [(ngModel)]="commission.price" lang="en-150">
+                        </mat-form-field>
+                        <button mat-icon-button (click)="editPrice = false; save(commission)">
+                            <mat-icon>save</mat-icon>
+                        </button>
                     </div>
                 </div>
             </mat-card-header>
-            <mat-list dense>
-                <mat-list-item *ngFor="let item of commission.items">
-                    <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
-                        <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
-                    </a>
-                    <span matLine>{{item.id | itemName | i18n}}</span>
-                    <span matLine>x {{item.amount}}</span>
-                </mat-list-item>
-            </mat-list>
+
+            <mat-progress-bar [value]="commission.getProgress()" *ngIf="commission.status === 1"></mat-progress-bar>
+
+            <div class="card-content">
+                <mat-list dense>
+                    <mat-list-item *ngFor="let item of commission.items">
+                        <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar
+                           [appXivdbTooltip]="item.id">
+                            <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
+                        </a>
+                        <span class="item-name" matLine>{{item.id | itemName | i18n}} <mat-icon color="primary"
+                                                                                                *ngIf="item.done >= item.amount">check</mat-icon>
+                    </span>
+                        <span matLine>x {{item.amount}}</span>
+                    </mat-list-item>
+                </mat-list>
+                <div class="payment-block" *ngIf="commission.status === 1">
+                    <div *ngIf="user$ | async as user" class="payment-history">
+                        <mat-list dense *ngIf="user.$key === commission.authorId || user.$key === commission.crafterId">
+                            <mat-list-item *ngFor="let payment of commission.payments">
+                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon"
+                                     mat-list-avatar>
+                                <span matLine>{{payment.amount | number}}</span>
+                                <span matLine class="payment-date">{{payment.date | date:'medium'}}</span>
+                                <button mat-icon-button color="warn"
+                                        matTooltip="{{'COMMISSION_BOARD.Delete_payment' | translate}}"
+                                        (click)="deletePayment(commission, payment)">
+                                    <mat-icon>clear</mat-icon>
+                                </button>
+                            </mat-list-item>
+                        </mat-list>
+                        <div class="total">
+                            <div class="total-row">
+                                {{'COMMISSION_BOARD.Deposit' | translate}}
+                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+                                {{commission.totalPaid | number}}
+                            </div>
+                            <div class="total-row">
+                                {{'COMMISSION_BOARD.Owing' | translate}}
+                                <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+                                {{(commission.price - commission.totalPaid) | number}}
+                            </div>
+                            <form (submit)="addPayment(commission)">
+                                <mat-form-field>
+                                    <input type="number" lang="en-150" [(ngModel)]="payment"
+                                           [ngModelOptions]="{standalone: true}" matInput
+                                           placeholder="{{'COMMISSION_BOARD.Add_payment'}}">
+                                </mat-form-field>
+                                <button mat-icon-button type="submit">
+                                    <mat-icon>add_box</mat-icon>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <mat-card-actions *ngIf="user$ | async as user">
                 <mat-menu #chatSelectionMenu="matMenu">
                     <div *ngFor="let discussion of commission.discussions">
@@ -85,6 +148,10 @@
                     <mat-icon>forum</mat-icon>
                     {{'COMMISSION_BOARD.Go_to_chat' | translate}}
                 </button>
+                <a mat-raised-button color="accent" routerLink="/list/{{commission.listId}}">
+                    <mat-icon>playlist_play</mat-icon>
+                    {{'COMMISSION_BOARD.Go_to_list' | translate}}
+                </a>
             </mat-card-actions>
         </mat-card>
         <div *ngIf="user$ | async as user">
@@ -94,7 +161,10 @@
                         {{'COMMISSION_BOARD.Candidates' | translate}}
                     </mat-card-title>
                 </mat-card-header>
-                <mat-list dense>
+                <div *ngIf="commission.candidateIds.length === 0">
+                    <span class="no-candidates">{{'COMMISSION_BOARD.No_candidates' | translate}}</span>
+                </div>
+                <mat-list dense *ngIf="commission.candidateIds.length > 0">
                     <div *ngFor="let candidateId of commission.candidateIds">
                         <mat-list-item *ngIf="getCharacter(candidateId) | async as candidate">
                             <img mat-list-avatar src="{{candidate.avatar}}" alt="">
@@ -115,10 +185,12 @@
                                 </span>
                                 <span>({{candidate.user.ratingsLength}})</span>
                             </span>
-                            <a mat-mini-fab routerLink="chat/{{candidateId}}">
+                            <a mat-mini-fab routerLink="chat/{{candidateId}}"
+                               *ngIf="commission.authorId === user.$key">
                                 <mat-icon>forum</mat-icon>
                             </a>
                             <button class="hire-button" mat-raised-button color="primary"
+                                    *ngIf="commission.authorId === user.$key"
                                     (click)="hire(commission, candidateId)">
                                 {{'COMMISSION_BOARD.Hire' | translate}}
                             </button>
