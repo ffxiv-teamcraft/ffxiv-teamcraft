@@ -390,7 +390,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     private onCompletion(list: List): void {
-        if (!this.completionDialogOpen && this.userData.$key === this.listData.authorId) {
+        if (!this.completionDialogOpen && this.userData.$key === this.listData.authorId && !this.listData.isCommissionList) {
             this.completionDialogOpen = true;
             this.dialog.open(ListFinishedPopupComponent)
                 .afterClosed()

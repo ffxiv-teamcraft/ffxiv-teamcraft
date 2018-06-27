@@ -10,6 +10,9 @@ mat-expansion-panel {
 
 .actions {
     margin-right: 10px;
+    width: 88px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .price {

@@ -8,6 +8,7 @@ import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {filter, mergeMap} from 'rxjs/operators';
 import {ListService} from '../../../core/database/list.service';
+import {CommissionStatus} from '../../../model/commission/commission-status';
 
 @Component({
     selector: 'app-commission-panel',
@@ -71,6 +72,10 @@ export class CommissionPanelComponent implements OnInit {
             }
         }
         return this.chatBadge;
+    }
+
+    public getStatus(commission: Commission): string {
+        return CommissionStatus[commission.status];
     }
 
     ngOnInit(): void {

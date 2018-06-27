@@ -45,7 +45,8 @@
                 </div>
                 <div class="right-header">
                     <mat-chip-list>
-                        <mat-chip selectable="false">{{'COMMISSION_BOARD.STATUS.'+getStatus(commission) | translate}}
+                        <mat-chip selectable="false">
+                            {{('COMMISSION_BOARD.STATUS.' + getStatus(commission)) | translate}}
                         </mat-chip>
                     </mat-chip-list>
                     <div class="price" *ngIf="!editPrice">
@@ -125,7 +126,7 @@
                 </div>
             </div>
 
-            <mat-card-actions *ngIf="user$ | async as user">
+            <mat-card-actions *ngIf="user$ | async as user" class="card-actions">
                 <mat-menu #chatSelectionMenu="matMenu">
                     <div *ngFor="let discussion of commission.discussions">
                         <a mat-menu-item routerLink="chat/{{discussion.crafterId}}"
@@ -152,6 +153,12 @@
                     <mat-icon>playlist_play</mat-icon>
                     {{'COMMISSION_BOARD.Go_to_list' | translate}}
                 </a>
+                <button mat-raised-button
+                        color="accent"
+                        [disabled]="!commission.isCompleted() || commission.price > commission.totalPaid">
+                    <mat-icon>check</mat-icon>
+                    {{'COMMISSION_BOARD.Mark_as_finished' | translate}}
+                </button>
             </mat-card-actions>
         </mat-card>
         <div *ngIf="user$ | async as user">

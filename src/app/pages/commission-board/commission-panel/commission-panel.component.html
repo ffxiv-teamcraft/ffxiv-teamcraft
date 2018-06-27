@@ -9,7 +9,15 @@
             {{commission.name}}
             </span>
         </mat-panel-title>
+        <mat-panel-description>
+            <span *ngIf="author$ | async as author">
+                {{author.name}}
+            </span>
+        </mat-panel-description>
         <mat-chip-list>
+            <mat-chip selectable="false" color="accent" selected>{{('COMMISSION_BOARD.STATUS.' + getStatus(commission))
+                | translate}}
+            </mat-chip>
             <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
                 translate}}
             </mat-chip>
@@ -20,11 +28,6 @@
                 translate}}
             </mat-chip>
         </mat-chip-list>
-        <mat-panel-description>
-            <span *ngIf="author$ | async as author">
-                {{author.name}}
-            </span>
-        </mat-panel-description>
         <div class="price" *ngIf="commission.price > 0">
             <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
             {{commission.price | number}}
