@@ -3,11 +3,11 @@ import {ActivatedRoute} from '@angular/router';
 import {Commission} from '../../../model/commission/commission';
 import {Observable} from 'rxjs/Observable';
 import {CommissionService} from '../../../core/database/commission/commission.service';
-import {filter, first, map, mergeMap, shareReplay} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay} from 'rxjs/operators';
 import {UserService} from '../../../core/database/user.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 import {AppUser} from '../../../model/list/app-user';
-import {combineLatest} from 'rxjs';
+import {combineLatest, of} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {ListService} from '../../../core/database/list.service';
@@ -221,9 +221,11 @@ export class CommissionDetailsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.commission$ = this.activeRoute.paramMap
+        this.commission$ = this.activeRoute.params
             .pipe(
-                mergeMap(params => this.commissionService.get(params.get('id'), params.get('serverName'))),
+                mergeMap(params => this.commissionService.get(params['id'], params['serverName'])),
+                catchError(() => of(null)),
+                filter(res => res !== null),
                 shareReplay()
             );
         this.author$ = this.commission$

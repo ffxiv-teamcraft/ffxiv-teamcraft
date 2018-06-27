@@ -5,7 +5,7 @@ import {PendingChangesService} from '../pending-changes/pending-changes.service'
 import {AngularFirestore, QueryFn} from 'angularfire2/firestore';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {Observable} from 'rxjs/index';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +19,7 @@ export class CommissionService extends FirestoreStorage<Commission> {
 
 
     public add(data: Commission): Observable<string> {
-        return super.add(data, data.server);
+        return super.add(data, data.server).pipe(tap(() => this.clearCache()));
     }
 
     public get(uid: string, server: string): Observable<Commission> {

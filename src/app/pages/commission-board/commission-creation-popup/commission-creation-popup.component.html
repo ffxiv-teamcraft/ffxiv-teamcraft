@@ -1,5 +1,8 @@
 <h3 mat-dialog-title>{{'COMMISSION_BOARD.New_commission' | translate: {listName: list.name} }}</h3>
 <div mat-dialog-content>
+    <p>
+        {{'COMMISSION_BOARD.New_commission_warning' | translate}}
+    </p>
     <mat-form-field>
         <input matInput type="number" [(ngModel)]="price">
         <mat-hint>{{'COMMISSION_BOARD.Price_hint' | translate}}</mat-hint>
