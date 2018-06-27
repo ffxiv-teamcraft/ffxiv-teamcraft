@@ -158,7 +158,7 @@
                 <button mat-raised-button
                         color="accent"
                         [disabled]="!commission.isDone()"
-                        *ngIf="commission.status !== 2"
+                        *ngIf="commission.status !== 2 && commission.authorId === user.$key"
                         (click)="markAsFinished(commission)">
                     <mat-icon>check</mat-icon>
                     {{'COMMISSION_BOARD.Mark_as_finished' | translate}}
