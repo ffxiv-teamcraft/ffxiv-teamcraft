@@ -38,7 +38,7 @@
                                 color="warn"
                                 *ngIf="(user$ | async)?.$key === commission.authorId"
                                 matTooltip="{{'COMMISSION_BOARD.Fire' | translate}}"
-                                (click)="fireCrafter(commission)">
+                                (click)="fireCrafter(commission, crafter.user)">
                             <mat-icon>clear</mat-icon>
                         </button>
                     </div>
@@ -155,7 +155,9 @@
                 </a>
                 <button mat-raised-button
                         color="accent"
-                        [disabled]="!commission.isCompleted() || commission.price > commission.totalPaid">
+                        [disabled]="!commission.isDone()"
+                        *ngIf="commission.status !== 2"
+                        (click)="markAsFinished(commission)">
                     <mat-icon>check</mat-icon>
                     {{'COMMISSION_BOARD.Mark_as_finished' | translate}}
                 </button>

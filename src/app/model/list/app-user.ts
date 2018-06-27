@@ -52,7 +52,7 @@ export class AppUser extends DataModel {
         }
         return Object.keys(this.ratings)
             .map(key => this.ratings[key])
-            .reduce((total, rating) => total + rating, 0) / this.ratings.length;
+            .reduce((total, rating) => total + rating, 0) / this.ratingsLength;
     }
 
     get ratingsLength(): number {

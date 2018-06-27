@@ -17,6 +17,8 @@ export class Commission extends DataModel {
      */
     listId: string;
 
+    ratedBy: { [index: string]: boolean } = {};
+
     items: ListRow[] = [];
 
     /**
@@ -128,6 +130,10 @@ export class Commission extends DataModel {
 
     public isCompleted(): boolean {
         return this.items.reduce((completed, item) => item.done >= item.amount && completed, true);
+    }
+
+    public isDone(): boolean {
+        return this.isCompleted() && this.totalPaid >= this.price;
     }
 
     /**

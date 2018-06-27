@@ -11,6 +11,7 @@ import {combineLatest} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {ListService} from '../../../core/database/list.service';
+import {RatingPopupComponent} from '../rating-popup/rating-popup.component';
 
 @Component({
     selector: 'app-commission-details',
@@ -77,7 +78,7 @@ export class CommissionDetailsComponent implements OnInit {
     getRating(user: AppUser): 1 | .5 | 0 [] {
         let rating = user.rating;
         const result = [];
-        while (rating > 1) {
+        while (rating >= 1) {
             rating--;
             result.push(1);
         }
@@ -127,40 +128,45 @@ export class CommissionDetailsComponent implements OnInit {
             ).subscribe()
     }
 
-    fireCrafter(commission: Commission, userId: string): void {
+    fireCrafter(commission: Commission, crafter: AppUser): void {
         this.dialog.open(ConfirmationPopupComponent, {data: 'COMMISSION_BOARD.Confirm_fire'})
             .afterClosed()
             .pipe(
                 filter(res => res),
-                map(() => {
-                    commission.status = CommissionStatus.CREATED;
-                    delete commission.crafterId;
-                    commission.addNewThing(`application:${userId}`);
-                    return commission;
+                mergeMap(() => {
+                    return this.dialog.open(RatingPopupComponent, {data: crafter}).afterClosed();
                 }),
-                mergeMap(com => {
-                    return this.commissionService.set(com.$key, com)
-                        .pipe(
-                            map(() => {
-                                return com;
-                            })
-                        )
-                }),
-                mergeMap(com => {
-                    return this.listService.get(com.listId)
-                        .pipe(
-                            first(),
-                            map(list => {
-                                delete list.authorId;
-                                delete list.commissionId;
-                                return list;
-                            }),
-                            mergeMap(list => {
-                                return this.listService.set(list.$key, list);
-                            })
-                        )
-                })
-            ).subscribe()
+                filter(closed => closed !== 'cancel')
+            ).pipe(
+            map(() => {
+                commission.status = CommissionStatus.CREATED;
+                delete commission.crafterId;
+                commission.addNewThing(`application:${crafter.$key}`);
+                return commission;
+            }),
+            mergeMap(com => {
+                return this.commissionService.set(com.$key, com)
+                    .pipe(
+                        map(() => {
+                            return com;
+                        })
+                    )
+            }),
+            mergeMap(com => {
+                return this.listService.get(com.listId)
+                    .pipe(
+                        first(),
+                        map(list => {
+                            delete list.authorId;
+                            delete list.commissionId;
+                            return list;
+                        }),
+                        mergeMap(list => {
+                            return this.listService.set(list.$key, list);
+                        })
+                    )
+            })
+        ).subscribe()
     }
 
     removeApplicationNewThing(): void {
@@ -185,6 +191,35 @@ export class CommissionDetailsComponent implements OnInit {
         return false;
     }
 
+    public markAsFinished(commission: Commission): void {
+        this.dialog.open(ConfirmationPopupComponent)
+            .afterClosed()
+            .pipe(
+                filter(res => res),
+                mergeMap(() => {
+                    return this.listService.get(commission.listId)
+                        .pipe(
+                            first(),
+                            map(list => {
+                                delete list.authorId;
+                                return list;
+                            }),
+                            mergeMap(list => {
+                                return this.listService.set(list.$key, list);
+                            })
+                        )
+                }),
+                mergeMap(() => {
+                    commission.status = CommissionStatus.DONE;
+                    commission.addNewThing(`rate:${commission.authorId}`);
+                    commission.addNewThing(`rate:${commission.crafterId}`);
+                    return this.commissionService.set(commission.$key, commission);
+                })
+            )
+            .subscribe(() => {
+            });
+    }
+
     ngOnInit(): void {
         this.commission$ = this.activeRoute.paramMap
             .pipe(
@@ -207,6 +242,31 @@ export class CommissionDetailsComponent implements OnInit {
             })
         );
         this.removeApplicationNewThing();
+        combineLatest(this.commission$, this.user$)
+            .pipe(
+                filter(data => data[0].status === CommissionStatus.DONE && data[0].ratedBy[data[1].$key] === undefined),
+                first(),
+                mergeMap(data => {
+                    return this.getCharacter(data[0].crafterId)
+                        .pipe(
+                            mergeMap(character => {
+                                return this.dialog.open(RatingPopupComponent, {data: character.user})
+                                    .afterClosed()
+                                    .pipe(
+                                        filter(res => res !== 'cancel'),
+                                        mergeMap(() => {
+                                            const commission = data[0];
+                                            commission.removeNewThing(`rate:${data[1].$key}`);
+                                            commission.ratedBy[data[1].$key] = true;
+                                            return this.commissionService.set(commission.$key, commission);
+                                        })
+                                    );
+                            })
+                        );
+                })
+            )
+            .subscribe(() => {
+            })
     }
 
 }

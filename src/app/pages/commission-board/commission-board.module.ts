@@ -32,6 +32,7 @@ import {PipesModule} from '../../pipes/pipes.module';
 import {SettingsModule} from '../settings/settings.module';
 import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {CommissionChatComponent} from './commission-chat/commission-chat.component';
+import {RatingPopupComponent} from './rating-popup/rating-popup.component';
 
 const routes: Routes = [
     {
@@ -102,10 +103,12 @@ const routes: Routes = [
         CommissionCreationPopupComponent,
         CommissionPanelComponent,
         CommissionDetailsComponent,
-        CommissionChatComponent
+        CommissionChatComponent,
+        RatingPopupComponent
     ],
     entryComponents: [
-        CommissionCreationPopupComponent
+        CommissionCreationPopupComponent,
+        RatingPopupComponent
     ]
 })
 export class CommissionBoardModule {
