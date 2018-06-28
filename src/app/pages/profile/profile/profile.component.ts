@@ -18,6 +18,7 @@ import {catchError, filter, map, mergeMap} from 'rxjs/operators';
 import {StatsEditPopupComponent} from '../stats-edit-popup/stats-edit-popup.component';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {combineLatest, of} from 'rxjs';
+import {UserVerificationPopupComponent} from '../../../modules/common-components/user-verification-popup/user-verification-popup.component';
 
 @Component({
     selector: 'app-profile',
@@ -100,6 +101,10 @@ export class ProfileComponent extends PageComponent {
                         ).pipe(map(res => res.filter(row => row !== null)));
                     })
                 ).subscribe(res => this.contacts = res));
+    }
+
+    public openVerificationPopup(): void {
+        this.dialog.open(UserVerificationPopupComponent, {data: this.user});
     }
 
     public openNicknamePopup(): void {

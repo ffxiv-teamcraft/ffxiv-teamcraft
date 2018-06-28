@@ -88,6 +88,10 @@
         .crafter-name {
             display: flex;
             flex-direction: column;
+            .name-and-badge {
+                display: flex;
+                align-items: center;
+            }
         }
     }
 }

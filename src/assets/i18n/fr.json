@@ -217,6 +217,11 @@
     "Patreon_email": "Email Patreon",
     "Contacts": "Contacts",
     "New_contact": "ID Utilisateur du nouveau contact",
+    "User_not_verified": "User non vérifié, cliquez pour vérifier",
+    "VERIFICATION": {
+      "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
+      "Validate": "Valider"
+    },
     "HELP": {
       "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
       "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
