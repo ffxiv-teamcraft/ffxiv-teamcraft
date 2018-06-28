@@ -83,7 +83,7 @@ export class Commission extends DataModel {
      * @type {boolean}
      */
     get hasNewThings(): boolean {
-        return this.newThings.length > 0 && this.status !== CommissionStatus.DONE;
+        return this.newThings.length > 0;
     }
 
     /**
@@ -113,7 +113,7 @@ export class Commission extends DataModel {
     }
 
     public hasNewThing(matcher: string): boolean {
-        return this.status !== CommissionStatus.DONE && this.newThings.find(thing => thing.indexOf(matcher) > -1) !== undefined;
+        return this.newThings.find(thing => thing.indexOf(matcher) > -1) !== undefined;
     }
 
     public isGathering(): boolean {
