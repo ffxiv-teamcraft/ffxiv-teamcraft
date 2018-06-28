@@ -36,7 +36,7 @@
                         </div>
                         <button mat-icon-button
                                 color="warn"
-                                *ngIf="(user$ | async)?.$key === commission.authorId"
+                                *ngIf="(user$ | async)?.$key === commission.authorId && commission.status === 1"
                                 matTooltip="{{'COMMISSION_BOARD.Fire' | translate}}"
                                 (click)="fireCrafter(commission, crafter.user)">
                             <mat-icon>clear</mat-icon>
