@@ -40,7 +40,7 @@ export class UserService extends FirebaseStorage<AppUser> {
             .pipe(
                 map(snaps => snaps[0]),
                 map(snap => {
-                    const valueWithKey: AppUser = {$key: snap.payload.key, ...snap.payload.val()};
+                    const valueWithKey: AppUser = <AppUser>{$key: snap.payload.key, ...snap.payload.val()};
                     if (!snap.payload.exists()) {
                         throw new Error('Not found');
                     }
@@ -185,9 +185,9 @@ export class UserService extends FirebaseStorage<AppUser> {
      * @returns {Promise<void>}
      */
     public changeEmail(currentMail: string, password: string, newMail: string): Promise<void> {
-        return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(user => {
-            user.updateEmail(newMail)
-                .then(() => user.sendEmailVerification());
+        return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(auth => {
+            auth.user.updateEmail(newMail)
+                .then(() => auth.user.sendEmailVerification());
         });
     }
 

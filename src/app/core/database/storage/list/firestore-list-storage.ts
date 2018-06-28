@@ -61,7 +61,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
                     // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
                     // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
                     // Resulting on an unreadable, undeletable list.
-                    const data = snap.payload.doc.data();
+                    const data = <List>snap.payload.doc.data();
                     delete data.$key;
                     return (<List>{$key: snap.payload.doc.id, ...data})
                 })),

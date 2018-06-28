@@ -6,12 +6,13 @@ import {Router} from '@angular/router';
 import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
 import {UserService} from '../../../core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
-import {firebase} from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
 import {first} from 'rxjs/operators';
 import {OauthService} from '../../../core/auth/oauth.service';
+import * as firebase from 'firebase';
+import UserCredential = firebase.auth.UserCredential;
 
 @Component({
     selector: 'app-login-popup',
@@ -98,16 +99,19 @@ export class LoginPopupComponent {
                             console.error(err);
                             this.errorState(listsBackup);
                         })
-                        .then((authData) => {
+                        .then((authData: UserCredential) => {
+                            if (authData === null) {
+                                return;
+                            }
                             if (authData.user !== null && authData.user !== undefined && !authData.user.emailVerified) {
                                 // If the user didn't verify his email, send him a new one.
                                 this.af.auth.currentUser.sendEmailVerification();
                                 // Log out from this user, as his email isn't verified yet.
                                 this.af.auth.signOut().then(() => {
                                     // Sign in anonymously again, then restore list backup to the newly created user.
-                                    this.af.auth.signInAnonymously().then(user => {
+                                    this.af.auth.signInAnonymously().then(auth => {
                                         listsBackup.forEach(list => {
-                                            list.authorId = user.uid;
+                                            list.authorId = auth.user.uid;
                                             this.listService.add(list);
                                         });
                                         this.notVerified = true;
@@ -129,9 +133,9 @@ export class LoginPopupComponent {
 
     private errorState(lists: any): void {
         this.af.auth.signOut().then(() => {
-            this.af.auth.signInAnonymously().then(user => {
+            this.af.auth.signInAnonymously().then(auth => {
                 lists.forEach(list => {
-                    list.authorId = user.uid;
+                    list.authorId = auth.user.uid;
                     this.listService.add(list);
                 });
                 this.error = true;

@@ -21,7 +21,7 @@ export class WorkshopService extends FirestoreStorage<Workshop> {
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid))
             .snapshotChanges()
             .pipe(
-                map((snaps: DocumentChangeAction[]) => {
+                map((snaps: DocumentChangeAction<Workshop>[]) => {
                     const workshops = snaps.map(snap => {
                         const valueWithKey: Workshop = <Workshop>{$key: snap.payload.doc.id, ...snap.payload.doc.data()};
                         delete snap.payload;
