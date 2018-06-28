@@ -246,7 +246,10 @@ export class CommissionDetailsComponent implements OnInit {
         this.removeApplicationNewThing();
         combineLatest(this.commission$, this.user$)
             .pipe(
-                filter(data => data[0].status === CommissionStatus.DONE && data[0].ratedBy[data[1].$key] === undefined),
+                filter(data => {
+                    return data[0].status === CommissionStatus.DONE && data[0].ratedBy[data[1].$key] === undefined
+                        && (data[0].authorId === data[1].$key || data[0].crafterId === data[1].$key);
+                }),
                 first(),
                 mergeMap(data => {
                     return this.getCharacter(data[0].crafterId)
