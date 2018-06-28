@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "data-extraction/xivdb-mapper/package.json",
+        "functions/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
