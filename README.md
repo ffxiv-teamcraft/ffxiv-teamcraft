@@ -8,7 +8,7 @@ Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6
 
 ## Development
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Greenkeeper badge](https://badges.greenkeeper.io/Supamiu/ffxiv-teamcraft.svg)](https://greenkeeper.io/)
 
 
 ### Prepare your environment
