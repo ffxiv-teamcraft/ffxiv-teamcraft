@@ -583,6 +583,7 @@
     "Rate_user": "User rating",
     "Rating_description": "Please take a moment to rate the other user",
     "Commissions": "Commissions",
+    "Confirm_archive": "Are you sure? This can't be undone.",
     "STATUS": {
       "CREATED": "Opened",
       "ACCEPTED": "In Progress",

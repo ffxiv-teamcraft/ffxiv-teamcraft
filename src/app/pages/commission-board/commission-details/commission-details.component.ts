@@ -192,7 +192,7 @@ export class CommissionDetailsComponent implements OnInit {
     }
 
     public markAsFinished(commission: Commission): void {
-        this.dialog.open(ConfirmationPopupComponent)
+        this.dialog.open(ConfirmationPopupComponent, {data: 'CONFIRMATION_BOARD.Confirm_archive'})
             .afterClosed()
             .pipe(
                 filter(res => res),
