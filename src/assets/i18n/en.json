@@ -589,6 +589,8 @@
     "Rating_description": "Please take a moment to rate the other user",
     "Commissions": "Commissions",
     "Confirm_archive": "Are you sure? This can't be undone.",
+    "Withdraw": "Withdraw from the commission",
+    "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.",
     "STATUS": {
       "CREATED": "Opened",
       "ACCEPTED": "In Progress",
@@ -597,7 +599,8 @@
     "TAGS": {
       "Crafting": "Crafting",
       "Gathering": "Gathering",
-      "Hunting": "Hunting"
+      "Hunting": "Hunting",
+      "Only_craft": "Materials included"
     }
   }
 }

@@ -30,6 +30,8 @@ export class CommissionCreationPopupComponent {
                 mergeMap(character => {
                     const commission = new Commission(character.userId, this.list, character.server);
                     commission.price = this.price;
+                    commission.onlyNeedsCraft = this.list.onlyNeedsCrafts();
+                    console.log(commission.onlyNeedsCraft);
                     return this.commissionService.add(commission)
                         .pipe(
                             map(res => {
@@ -40,19 +42,16 @@ export class CommissionCreationPopupComponent {
                             })
                         );
                 }),
-                mergeMap((res) => {
+                mergeMap(() => {
                     // Delete list author id to detach it from the author, keeping it attached to the commission.
                     delete this.list.authorId;
                     this.list.permissionsRegistry = new PermissionsRegistry();
                     this.list.permissionsRegistry.everyone = {read: true, write: false, participate: false};
                     // Save the list
-                    return this.listService.set(this.list.$key, this.list)
-                        .pipe(
-                            map(() => res)
-                        );
+                    return this.listService.set(this.list.$key, this.list);
                 })
             )
-            .subscribe(res => {
+            .subscribe(() => {
                 this.router.navigate(['commissions', 'my-requests']);
                 this.ref.close()
             });

@@ -57,6 +57,13 @@
                                 (click)="fireCrafter(commission, crafter.user)">
                             <mat-icon>clear</mat-icon>
                         </button>
+                        <button mat-icon-button
+                                color="warn"
+                                *ngIf="(user$ | async)?.$key === commission.crafterId && commission.status === 1"
+                                matTooltip="{{'COMMISSION_BOARD.Withdraw' | translate}}"
+                                (click)="withdrawCrafter(commission, author.user)">
+                            <mat-icon>clear</mat-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="right-header">
@@ -204,8 +211,11 @@
                     <div *ngFor="let candidateId of commission.candidateIds">
                         <mat-list-item *ngIf="getCharacter(candidateId) | async as candidate">
                             <img mat-list-avatar src="{{candidate.avatar}}" alt="">
-                            <span matLine>{{candidate.name}}
-                                <mat-icon *ngIf="candidate.user.verified">verified_user</mat-icon>
+                            <span matLine>
+                                <span class="candidate-name">
+                                    {{candidate.name}}
+                                    <mat-icon *ngIf="candidate.user.verified">verified_user</mat-icon>
+                                </span>
                             </span>
                             <span matLine class="rating">
                                 <span *ngFor="let star of getRating(candidate.user)">

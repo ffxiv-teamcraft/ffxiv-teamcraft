@@ -18,6 +18,9 @@
             <mat-chip selectable="false" color="accent" selected>{{('COMMISSION_BOARD.STATUS.' + getStatus(commission))
                 | translate}}
             </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.onlyNeedsCraft">{{'COMMISSION_BOARD.TAGS.Only_craft' |
+                translate}}
+            </mat-chip>
             <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
                 translate}}
             </mat-chip>

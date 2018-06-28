@@ -73,6 +73,11 @@
     align-items: center;
 }
 
+.candidate-name {
+    display: flex;
+    align-items: center;
+}
+
 .crafter-container {
     flex: 1 1 auto;
     .crafter {

@@ -28,6 +28,11 @@ export class Commission extends DataModel {
     price = 0;
 
     /**
+     * Determines if the list has all the mats for crafts, and a crafter only can fill the commission, as he just has to craft things.
+     */
+    onlyNeedsCraft: boolean;
+
+    /**
      * The id of the request's author.
      */
     authorId: string;

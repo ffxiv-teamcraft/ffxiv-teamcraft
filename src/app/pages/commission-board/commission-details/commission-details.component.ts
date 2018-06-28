@@ -141,7 +141,48 @@ export class CommissionDetailsComponent implements OnInit {
             map(() => {
                 commission.status = CommissionStatus.CREATED;
                 delete commission.crafterId;
-                commission.addNewThing(`application:${crafter.$key}`);
+                return commission;
+            }),
+            mergeMap(com => {
+                return this.commissionService.set(com.$key, com)
+                    .pipe(
+                        map(() => {
+                            return com;
+                        })
+                    )
+            }),
+            mergeMap(com => {
+                return this.listService.get(com.listId)
+                    .pipe(
+                        first(),
+                        map(list => {
+                            delete list.authorId;
+                            delete list.commissionId;
+                            return list;
+                        }),
+                        mergeMap(list => {
+                            return this.listService.set(list.$key, list);
+                        })
+                    )
+            })
+        ).subscribe()
+    }
+
+    withdrawCrafter(commission: Commission, author: AppUser): void {
+        this.dialog.open(ConfirmationPopupComponent, {data: 'COMMISSION_BOARD.Confirm_withdraw'})
+            .afterClosed()
+            .pipe(
+                filter(res => res),
+                mergeMap(() => {
+                    return this.dialog.open(RatingPopupComponent, {data: author}).afterClosed();
+                }),
+                filter(closed => closed !== 'cancel')
+            ).pipe(
+            map(() => {
+                commission.status = CommissionStatus.CREATED;
+                commission.candidateIds = commission.candidateIds.filter(id => id !== commission.crafterId);
+                delete commission.crafterId;
+                commission.addNewThing(`application:${author.$key}`);
                 return commission;
             }),
             mergeMap(com => {
@@ -254,6 +295,7 @@ export class CommissionDetailsComponent implements OnInit {
                 mergeMap(data => {
                     return this.getCharacter(data[0].crafterId)
                         .pipe(
+                            first(),
                             mergeMap(character => {
                                 return this.dialog.open(RatingPopupComponent, {data: character.user})
                                     .afterClosed()

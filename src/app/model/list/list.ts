@@ -383,6 +383,21 @@ export class List extends DataWithPermissions {
         return res;
     }
 
+    public onlyNeedsCrafts(): boolean {
+        // We init a boolean to true for the result.
+        let onlyNeedsCrafts = true;
+        // If one of the non-craftable items is not finished, set the boolean to false
+        this.forEach((row) => {
+            if (row.id < 20 && row.id > 1) {
+                return;
+            }
+            if (row.craftedBy === undefined || row.craftedBy.length === 0) {
+                onlyNeedsCrafts = onlyNeedsCrafts && row.done >= row.amount;
+            }
+        });
+        return onlyNeedsCrafts;
+    }
+
     public resetDone(item: ListRow): void {
         item.done = 0;
         item.used = 0;
