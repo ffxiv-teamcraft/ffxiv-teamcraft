@@ -6,7 +6,7 @@ import {AppUser} from '../../../model/list/app-user';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {filter, mergeMap} from 'rxjs/operators';
+import {filter, map, mergeMap} from 'rxjs/operators';
 import {ListService} from '../../../core/database/list.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 
@@ -33,6 +33,8 @@ export class CommissionPanelComponent implements OnInit {
     user: AppUser;
 
     public chatBadge: boolean;
+
+    public canApply$: Observable<boolean>;
 
     constructor(private userService: UserService, private commissionService: CommissionService, private dialog: MatDialog,
                 private listService: ListService) {
@@ -81,6 +83,22 @@ export class CommissionPanelComponent implements OnInit {
     ngOnInit(): void {
         this.author$ = this.userService.getCharacter(this.commission.authorId);
         this.user$ = this.userService.getUserData();
+
+        this.canApply$ = this.user$.pipe(
+            mergeMap(user => this.listService.getUserLists(user.$key)
+                .pipe(
+                    map(lists => {
+                        // If the user has already made at least 10 commissions with a rating at 3 or more, he can apply to
+                        // a commission while crafting another one.
+                        if (user.ratings.length > 10 && user.rating > 3) {
+                            return lists.filter(list => list.isCommissionList).length <= 1;
+                        } else {
+                            return lists.filter(list => list.isCommissionList).length === 0;
+                        }
+                    })
+                )
+            )
+        );
     }
 
 }

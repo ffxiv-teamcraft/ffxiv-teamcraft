@@ -85,7 +85,10 @@
                     </button>
                 </div>
                 <button mat-raised-button color="primary"
-                        *ngIf="user.$key !== commission.authorId && commission.candidateIds.indexOf(user.$key) === -1 && commission.status === 0"
+                        *ngIf="user.$key !== commission.authorId
+                        && commission.candidateIds.indexOf(user.$key) === -1
+                        && commission.status === 0
+                        && canApply$ | async"
                         (click)="apply(commission, user.$key)">
                     {{'COMMISSION_BOARD.Apply' | translate}}
                 </button>

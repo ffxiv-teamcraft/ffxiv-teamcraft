@@ -370,7 +370,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
         this.commissions$ = this.userService.getUserData()
             .pipe(
                 mergeMap(user => this.listService.getUserLists(user.$key)),
-                map(lists => lists.filter(list => list.isCommissionList && !list.isComplete()))
+                map(lists => lists.filter(list => list.isCommissionList))
             );
 
         this.lists =

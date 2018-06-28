@@ -582,6 +582,7 @@
     "No_requests": "You have no commission requests",
     "Rate_user": "User rating",
     "Rating_description": "Please take a moment to rate the other user",
+    "Commissions": "Commissions",
     "STATUS": {
       "CREATED": "Opened",
       "ACCEPTED": "In Progress",
