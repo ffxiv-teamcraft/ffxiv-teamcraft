@@ -7,9 +7,25 @@
                     {{commission.name}}
                 </mat-card-title>
                 <mat-card-subtitle>
-                    {{author.name}}
-                    <mat-icon *ngIf="author.verified">verified_user</mat-icon>
-                    - {{commission.server}}
+                    <div class="buyer-name">
+                        {{author.name}}
+                        <mat-icon *ngIf="author.verified">verified_user</mat-icon>
+                        -
+                        <span class="rating">
+                                <span *ngFor="let star of getRating(author.user)">
+                                    <mat-icon *ngIf="star === 1">
+                                        star
+                                    </mat-icon>
+                                    <mat-icon *ngIf="star === .5">
+                                        star_half
+                                    </mat-icon>
+                                    <mat-icon *ngIf="star === 0">
+                                        star_border
+                                    </mat-icon>
+                                </span>
+                                <span>({{author.user.ratingsLength}})</span>
+                            </span>
+                    </div>
                 </mat-card-subtitle>
                 <div class="spacer" *ngIf="commission.status <= 0 || commission.crafterId === undefined"></div>
                 <div class="crafter-container" *ngIf="commission.status > 0 && commission.crafterId !== undefined">
