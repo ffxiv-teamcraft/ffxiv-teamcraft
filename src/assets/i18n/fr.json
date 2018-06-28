@@ -505,6 +505,7 @@
       "Action": "Choisir les bienfaits de compagnie libre",
       "Save_set": "Sauvegarder les stats pour cette classe",
       "Reset_set": "Remettre les stats à 0",
+      "Save_consumables": "Sauvegarder en tant que consommables par défaut",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",

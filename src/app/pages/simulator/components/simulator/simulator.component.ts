@@ -16,6 +16,7 @@ import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
 import {EffectiveBuff} from '../../model/effective-buff';
 import {Buff} from 'app/pages/simulator/model/buff.enum';
 import {Consumable} from '../../model/consumable';
+import {DefaultConsumables} from '../../../../model/other/default-consumables';
 import {foods} from '../../../../core/data/sources/foods';
 import {medicines} from '../../../../core/data/sources/medicines';
 import {freeCompanyActions} from '../../../../core/data/sources/free-company-actions';
@@ -395,6 +396,20 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.selectedSet = res.set;
             this.applyStats(res.set, res.levels, false);
         });
+
+        this.actions$.subscribe(actions => {
+            // Set the default consumables, overriden later if this is an existing rotation
+            if (actions.length === 0) {
+                this.userService.getUserData().pipe(
+                    tap(user => {
+                        const defaultConsumables = user.defaultConsumables;
+                        this._selectedFood = defaultConsumables.food;
+                        this._selectedMedicine = defaultConsumables.medicine;
+                        this._selectedFreeCompanyActions = defaultConsumables.freeCompanyActions;
+                    })
+                ).subscribe();
+            }
+        });
     }
 
     importRotation(): void {
@@ -634,6 +649,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);
+        this.userService.set(this.userData.$key, this.userData).subscribe();
+    }
+
+    saveDefaultConsumables(): void {
+        this.userData.defaultConsumables =
+            new DefaultConsumables(this._selectedFood, this._selectedMedicine, this._selectedFreeCompanyActions);
         this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 
