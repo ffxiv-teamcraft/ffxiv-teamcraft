@@ -11,7 +11,7 @@ import {first, mergeMap} from 'rxjs/operators';
 })
 export class UserVerificationPopupComponent {
 
-    constructor(@Inject(MAT_DIALOG_DATA) private user: AppUser, private userService: UserService,
+    constructor(@Inject(MAT_DIALOG_DATA) public user: AppUser, private userService: UserService,
                 private ref: MatDialogRef<UserVerificationPopupComponent>) {
     }
 
