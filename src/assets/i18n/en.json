@@ -510,6 +510,7 @@
       "Action": "Choose free company actions",
       "Save_set": "Save these stats for this job",
       "Reset_set": "Reset these stats",
+      "Save_consumables": "Save these consumables as default",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",

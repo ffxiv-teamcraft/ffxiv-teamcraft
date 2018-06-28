@@ -5,6 +5,7 @@ import {Alarm} from '../../core/time/alarm';
 import {ListDetailsFilters} from '../other/list-details-filters';
 import {GearSet} from '../../pages/simulator/model/gear-set';
 import {AlarmGroup} from '../other/alarm-group';
+import {DefaultConsumables} from '../other/default-consumables';
 
 export class AppUser extends DataModel {
     name?: string;
@@ -44,6 +45,9 @@ export class AppUser extends DataModel {
     verified = false;
     // Evaluations for the commission board, by id of the person who gave the evaluation.
     ratings: { [index: string]: number } = {};
+    // Default consumables used for new rotations
+    @DeserializeAs(DefaultConsumables)
+    defaultConsumables?: DefaultConsumables;
 
     get rating(): number {
         if (Object.keys(this.ratings).length === 0) {

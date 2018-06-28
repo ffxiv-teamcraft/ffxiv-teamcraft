@@ -154,6 +154,14 @@
         </div>
         <div class="config-row">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
+            <div class="save-button">
+                <button mat-mini-fab
+                        matTooltip="{{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}"
+                        color="accent"
+                        (click)="saveDefaultConsumables()">
+                    <mat-icon>save</mat-icon>
+                </button>
+            </div>
             <div class="consumables">
                 <div layout="row">
                     <div class="foods" flex="50">
