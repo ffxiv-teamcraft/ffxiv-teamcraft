@@ -546,6 +546,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         let bonusFromFood = 0;
         let bonusFromMedicine = 0;
         let bonusFromFreeCompanyAction = 0;
+        let bonusFromSpecialist = 0;
 
         if (this._selectedFood !== undefined) {
             const foodBonus = this._selectedFood.getBonus(bonusType);
@@ -570,7 +571,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType);
         }
 
-        return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction;
+        if (this.selectedSet.specialist && bonusType !== <BonusType>'CP') {
+            bonusFromSpecialist = 20;
+        }
+
+        return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction + bonusFromSpecialist;
     }
 
     getFreeCompanyActionValue(bonusType: BonusType): number {
