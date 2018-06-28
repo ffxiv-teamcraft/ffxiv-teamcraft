@@ -37,7 +37,7 @@ import {FreeCompanyAction} from 'app/pages/simulator/model/free-company-action';
 import {FreeCompanyActionsService} from 'app/pages/simulator/model/free-company-actions.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
+import {debounceTime, filter, first, map, mergeMap, tap, skip} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
@@ -397,12 +397,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.applyStats(res.set, res.levels, false);
         });
 
-        this.actions$.subscribe(actions => {
-            // Set the default consumables, overriden later if this is an existing rotation
+        this.actions$
+            .pipe(
+                // Skip first emission, as it's the default value.
+                skip(1)
+            )
+            .subscribe(actions => {
+            // Set the default consumables, overridden later if this is an existing rotation
             if (actions.length === 0) {
                 this.userService.getUserData().pipe(
                     tap(user => {
-                        const defaultConsumables = user.defaultConsumables;
+                        const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
                         this._selectedFood = defaultConsumables.food;
                         this._selectedMedicine = defaultConsumables.medicine;
                         this._selectedFreeCompanyActions = defaultConsumables.freeCompanyActions;
@@ -580,8 +585,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     getFreeCompanyActionValue(bonusType: BonusType): number {
         let value = 0;
-        let actions = this._selectedFreeCompanyActions || [];
-        let action = actions.find(action => action.type === bonusType);
+        const actions = this._selectedFreeCompanyActions || [];
+        const action = actions.find(a => a.type === bonusType);
 
         if (action !== undefined) {
             value = action.value;
@@ -591,13 +596,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     getFreeCompanyActions(type: string): FreeCompanyAction[] {
-        let actions = this._selectedFreeCompanyActions;
-
         return this.freeCompanyActions.filter(action => action.type === <BonusType> type);
     }
 
     isFreeCompanyActionOptionDisabled(type: string, actionId: number): boolean {
-        let actions = this._selectedFreeCompanyActions || [];
+        const actions = this._selectedFreeCompanyActions || [];
 
         return actions.find(action => action.type === type && action.actionId !== actionId) !== undefined;
     }
