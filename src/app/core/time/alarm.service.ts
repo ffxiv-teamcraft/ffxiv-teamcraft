@@ -198,9 +198,10 @@ export class AlarmService {
                     if (alarmGroup !== undefined && !alarmGroup.enabled) {
                         return of(null);
                     }
-                    const lastPlayed = localStorage.getItem('alarms:lastPlayed');
+                    const lastPlayed = localStorage.getItem(`alarms:lastPlayed:${alarm.itemId}`);
                     // Don't play the alarm if it was played less than half a minute ago
                     if (lastPlayed === null || Date.now() - +lastPlayed > 30000) {
+                        console.log('Playing alarm !');
                         this.snack.open(this.translator.instant('ALARM.Spawned',
                             {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
                             this.translator.instant('ALARM.See_on_map'),
@@ -225,7 +226,7 @@ export class AlarmService {
                         audio.loop = false;
                         audio.volume = this.settings.alarmVolume;
                         audio.play();
-                        localStorage.setItem('alarms:lastPlayed', Date.now().toString());
+                        localStorage.setItem(`alarms:lastPlayed:${alarm.itemId}`, Date.now().toString());
                         return this.mapService.getMapById(alarm.zoneId)
                             .pipe(
                                 map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
