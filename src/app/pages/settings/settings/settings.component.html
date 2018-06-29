@@ -40,3 +40,7 @@
     <button mat-menu-item (click)="use(locale)" *ngFor="let locale of locales">{{locale.toUpperCase()}}</button>
 </mat-menu>
 
+<mat-slide-toggle [(ngModel)]="alwaysOnTop" *ngIf="platform.isDesktop()" (change)="alwaysOnTopChange()">
+    {{'SETTINGS.Always_on_top' | translate}}
+</mat-slide-toggle>
+

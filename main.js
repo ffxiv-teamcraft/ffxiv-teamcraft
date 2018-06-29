@@ -49,6 +49,9 @@ function createWindow() {
         icon: `file://${__dirname}/dist/assets/logo.png`
     };
     Object.assign(opts, config.get('win:bounds'));
+    if (config.get('win:alwaysOnTop')) {
+        opts.alwaysOnTop = true;
+    }
     win = new BrowserWindow(opts);
     if (config.get('win:fullscreen')) {
         win.maximize();
@@ -76,6 +79,7 @@ function createWindow() {
     win.on('close', () => {
         config.set('win:bounds', win.getBounds());
         config.set('win:fullscreen', win.isMaximized());
+        config.set('win:alwaysOnTop', win.isAlwaysOnTop());
     });
 
     const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
@@ -197,6 +201,14 @@ ipcMain.on('notification', (event, config) => {
 
 ipcMain.on('run-update', () => {
     autoUpdater.quitAndInstall();
+});
+
+ipcMain.on('always-on-top', (event, onTop) => {
+    win.setAlwaysOnTop(onTop, 'floating');
+});
+
+ipcMain.on('always-on-top:get', (event) => {
+    event.sender.send('always-on-top:value', win.alwaysOnTop);
 });
 
 ipcMain.on('overlay', (event, url) => {
