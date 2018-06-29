@@ -202,7 +202,8 @@
     "compact_lists": "Compact list display",
     "theme": "Theme",
     "ffxivcrafting_display": "FFXIVcrafting.com-like amounts",
-    "Simulator_link_base": "Simulator link"
+    "Simulator_link_base": "Simulator link",
+    "Always_on_top": "Always on top"
   },
   "PROFILE": {
     "Masterbooks": "Masterbooks",

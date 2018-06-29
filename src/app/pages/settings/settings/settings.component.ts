@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {SettingsService} from '../settings.service';
 import {TranslateService} from '@ngx-translate/core';
 import {AppComponent} from '../../../app.component';
+import {IpcService} from '../../../core/electron/ipc.service';
+import {PlatformService} from '../../../core/tools/platform.service';
 
 @Component({
     selector: 'app-settings',
@@ -26,12 +28,25 @@ export class SettingsComponent {
 
     public locales: string[] = AppComponent.LOCALES;
 
+    alwaysOnTop = false;
+
     constructor(public settings: SettingsService,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private ipc: IpcService,
+                public platform: PlatformService) {
         this.locale = this.translate.currentLang;
         translate.onLangChange.subscribe(change => {
             this.locale = change.lang;
         });
+        this.ipc.on('always-on-top:value', (...args: any[]) => {
+            console.log(args);
+            // this.alwaysOnTop = value;
+        });
+        this.ipc.send('always-on-top:get');
+    }
+
+    alwaysOnTopChange(): void {
+        this.ipc.send('always-on-top', this.alwaysOnTop);
     }
 
     use(lang: string): void {
