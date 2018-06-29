@@ -217,6 +217,7 @@
     "Patreon_email": "Email Patreon",
     "Contacts": "Contacts",
     "New_contact": "ID Utilisateur du nouveau contact",
+    "Save_for_all": "Sauvegarder pour tous",
     "User_not_verified": "User non vérifié, cliquez pour vérifier",
     "VERIFICATION": {
       "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",

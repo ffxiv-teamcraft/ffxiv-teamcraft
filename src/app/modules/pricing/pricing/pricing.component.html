@@ -17,7 +17,8 @@
             <mat-panel-description>{{getTotalPrice(list.crystals)}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
-            <app-pricing-row *ngFor="let item of list.crystals; let odd = odd" [item]="item" [listId]="list.$key"
+            <app-pricing-row *ngFor="let item of list.crystals; let odd = odd" (save)="save()" [item]="item"
+                             [listId]="list.$key"
                              [odd]="odd"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
@@ -28,7 +29,8 @@
             <mat-panel-description>{{getTotalPrice(list.gathers).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
-            <app-pricing-row *ngFor="let item of list.gathers; let odd = odd" [item]="item" [listId]="list.$key"
+            <app-pricing-row *ngFor="let item of list.gathers; let odd = odd" (save)="save()" [item]="item"
+                             [listId]="list.$key"
                              [odd]="odd"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
@@ -39,7 +41,8 @@
             <mat-panel-description>{{getTotalPrice(list.others).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
-            <app-pricing-row *ngFor="let item of list.others; let odd = odd" [item]="item" [listId]="list.$key"
+            <app-pricing-row *ngFor="let item of list.others; let odd = odd" (save)="save()" [item]="item"
+                             [listId]="list.$key"
                              [odd]="odd"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
@@ -50,7 +53,8 @@
             <mat-panel-description>{{getTotalPrice(list.preCrafts).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
-            <app-pricing-row *ngFor="let item of list.preCrafts; let odd = odd" [item]="item" [listId]="list.$key"
+            <app-pricing-row *ngFor="let item of list.preCrafts; let odd = odd" (save)="save()" [item]="item"
+                             [listId]="list.$key"
                              [odd]="odd"
                              [craftCost]="getCraftCost(item)"></app-pricing-row>
         </mat-list>
@@ -62,7 +66,8 @@
     <mat-card-title>{{"Earning" | translate}}</mat-card-title>
     <mat-card-subtitle>{{getTotalEarnings(list.recipes).toLocaleString()}} gil</mat-card-subtitle>
     <mat-list dense>
-        <app-pricing-row *ngFor="let item of list.recipes; let odd = odd" [item]="item" [listId]="list.$key" [odd]="odd"
+        <app-pricing-row *ngFor="let item of list.recipes; let odd = odd" (save)="save()" [item]="item"
+                         [listId]="list.$key" [odd]="odd"
                          [craftCost]="getCraftCost(item)" [earning]="true"></app-pricing-row>
     </mat-list>
 </mat-card>

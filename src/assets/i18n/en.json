@@ -217,6 +217,7 @@
     "Patreon_email": "Patreon Email",
     "Contacts": "Contacts",
     "New_contact": "New contact's user ID",
+    "Save_for_all": "Save for all",
     "User_not_verified": "User not verified, click to verify user",
     "VERIFICATION": {
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",

@@ -51,6 +51,7 @@
       "Next": "次",
     },
   },
+  "Edit": "変更",
   "LIST_TAGS": {
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -185,4 +186,5 @@
   },
   "filters/ilvl": "アイテムLv",
   "filters/lvl": "装備Lv",
+  }
 }
