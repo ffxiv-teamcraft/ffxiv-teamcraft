@@ -50,7 +50,7 @@
                         (cbOnSuccess)="showTemplateCopiedNotification()">
                     <mat-icon>content_paste</mat-icon>
                 </button>
-                <span *ngIf="list.authorId === userUid"
+                <span *ngIf="list.authorId === userUid && !list.isCommissionList"
                       [matTooltipDisabled]="!anonymous"
                       [matTooltip]="'PERMISSIONS.No_anonymous' | translate"
                       matTooltipPosition="above">
@@ -71,7 +71,7 @@
 
                 <button mat-icon-button matTooltip="{{'LIST_DETAILS.Tags_popup' | translate}}"
                         matTooltipPosition="above"
-                        (click)="$event.stopPropagation();openTagsPopup()" *ngIf="list.authorId === userUid">
+                        (click)="$event.stopPropagation();openTagsPopup()" *ngIf="list.authorId === userUid  && !list.isCommissionList">
                     <mat-icon>label_outline</mat-icon>
                 </button>
 

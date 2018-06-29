@@ -44,4 +44,11 @@ export class ListRow extends DataModel {
     comments?: ResourceComment[];
 
     hidden?: boolean;
+
+    // noinspection TsLint
+    /**
+     * Should we ignore the price of this item for pricing mode?
+     * @type {boolean}
+     */
+    usePrice?: boolean = true;
 }

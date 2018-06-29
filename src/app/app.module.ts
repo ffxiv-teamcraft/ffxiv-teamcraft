@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+    MatBadgeModule,
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
@@ -18,7 +19,7 @@ import {
     MatSlideToggleModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
 } from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
@@ -64,6 +65,7 @@ import {WikiModule} from './pages/wiki/wiki.module';
 import {SimulatorModule} from './pages/simulator/simulator.module';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {IS_ELECTRON} from './core/tools/platform.service';
+import {CommissionBoardModule} from './pages/commission-board/commission-board.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -116,6 +118,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         MatFormFieldModule,
         MatInputModule,
         MatSliderModule,
+        MatBadgeModule,
 
         BrowserModule,
         FormsModule,
@@ -156,6 +159,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         WorkshopModule,
         TemplateModule,
         SimulatorModule,
+        CommissionBoardModule,
     ],
     bootstrap: [AppComponent]
 })

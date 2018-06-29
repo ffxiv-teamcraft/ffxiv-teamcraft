@@ -1,0 +1,14 @@
+<h3 mat-dialog-title>{{'COMMISSION_BOARD.Rate_user' | translate}}</h3>
+<div mat-dialog-content>
+    {{'COMMISSION_BOARD.Rating_description' | translate}}
+    <div class="rate">
+        <mat-icon *ngFor="let star of getRating(rating); let i = index" (click)="rating = i + 1" class="rating-star">
+            {{star ===
+            1?'star':'star_border'}}
+        </mat-icon>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="save()" color="primary">{{'Confirm' | translate}}</button>
+    <button mat-button mat-dialog-close="cancel" color="warn">{{'Cancel' | translate}}</button>
+</div>

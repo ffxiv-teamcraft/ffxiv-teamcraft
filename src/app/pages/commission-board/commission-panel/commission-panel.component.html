@@ -1,0 +1,110 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span matBadge=""
+                  [matBadgeHidden]="!commission.hasNewThing((user$ | async)?.$key)"
+                  matBadgeColor="accent"
+                  matBadgeOverlap="false"
+                  matBadgeSize="small">
+            {{commission.name}}
+            </span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span *ngIf="author$ | async as author">
+                {{author.name}}
+            </span>
+        </mat-panel-description>
+        <mat-chip-list>
+            <mat-chip selectable="false" color="accent" selected>{{('COMMISSION_BOARD.STATUS.' + getStatus(commission))
+                | translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.onlyNeedsCraft">{{'COMMISSION_BOARD.TAGS.Only_craft' |
+                translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.isCrafting()">{{'COMMISSION_BOARD.TAGS.Crafting' |
+                translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.isGathering()">{{'COMMISSION_BOARD.TAGS.Gathering' |
+                translate}}
+            </mat-chip>
+            <mat-chip selectable="false" *ngIf="commission.isHunting()">{{'COMMISSION_BOARD.TAGS.Hunting' |
+                translate}}
+            </mat-chip>
+        </mat-chip-list>
+        <div class="price" *ngIf="commission.price > 0">
+            <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
+            {{commission.price | number}}
+        </div>
+        <div class="actions">
+            <button mat-icon-button color="warn" (click)="$event.stopPropagation();delete()"
+                    *ngIf="commission.status === 0 && commission.authorId === (user$ | async)?.$key">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <a mat-icon-button (click)="$event.stopPropagation()"
+               matBadge=""
+               [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key) || !commission.hasNewThing('rate:'+(user$ | async)?.$key)"
+               matBadgeColor="accent"
+               matBadgeSize="small"
+               routerLink="/commission/{{commission.server}}/{{commission.$key}}">
+                <mat-icon>open_in_new</mat-icon>
+            </a>
+        </div>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent>
+        <mat-list dense>
+            <mat-list-item *ngFor="let item of commission.items">
+                <a href="{{item.id | itemLink | i18n}}" target="_blank" mat-list-avatar [appXivdbTooltip]="item.id">
+                    <img src="{{item.icon | icon}}" alt="" mat-list-avatar>
+                </a>
+                <span matLine>{{item.id | itemName | i18n}}</span>
+                <span matLine>x {{item.amount}}</span>
+            </mat-list-item>
+        </mat-list>
+        <div *ngIf="user$ | async as user">
+            <mat-action-row>
+                <div *ngIf="user.$key === commission.authorId">
+                    <mat-menu #chatSelectionMenu="matMenu">
+                        <div *ngFor="let discussion of commission.discussions">
+                            <a mat-menu-item
+                               routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{discussion.crafterId}}"
+                               *ngIf="getCharacter(discussion.crafterId) | async as crafter">
+                                <span matBadge=""
+                                      [matBadgeHidden]="!commission.hasNewThing('message:' + user.$key + ':from:' + discussion.crafterId.substr(0, 5))"
+                                      matBadgeColor="accent"
+                                      matBadgeSize="small">{{crafter.name}}</span>
+                            </a>
+                        </div>
+                    </mat-menu>
+                    <button mat-raised-button color="accent"
+                            *ngIf="commission.discussions.length > 0 && commission.status < 2"
+                            matBadge=""
+                            [matBadgeHidden]="!hasChatBadge(commission, user)"
+                            matBadgeColor="accent"
+                            matBadgeOverlap="false"
+                            matBadgeSize="small"
+                            [matMenuTriggerFor]="chatSelectionMenu">
+                        <mat-icon>forum</mat-icon>
+                        {{'COMMISSION_BOARD.Go_to_chat' | translate}}
+                    </button>
+                </div>
+                <button mat-raised-button color="primary"
+                        *ngIf="user.$key !== commission.authorId
+                        && commission.candidateIds.indexOf(user.$key) === -1
+                        && commission.status === 0
+                        && canApply$ | async"
+                        (click)="apply(commission, user.$key)">
+                    {{'COMMISSION_BOARD.Apply' | translate}}
+                </button>
+                <a mat-button color="accent"
+                   *ngIf="user.$key !== commission.authorId && commission.status < 2"
+                   matBadge=""
+                   [matBadgeHidden]="!hasChatBadge(commission, user)"
+                   matBadgeColor="accent"
+                   matBadgeSize="small"
+                   routerLink="/commission/{{commission.server}}/{{commission.$key}}/chat/{{user.$key}}">
+                    {{'COMMISSION_BOARD.Contact_buyer' | translate}}
+                </a>
+            </mat-action-row>
+        </div>
+    </ng-template>
+</mat-expansion-panel>

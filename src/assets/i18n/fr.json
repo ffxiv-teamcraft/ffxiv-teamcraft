@@ -218,6 +218,11 @@
     "Contacts": "Contacts",
     "New_contact": "ID Utilisateur du nouveau contact",
     "Save_for_all": "Sauvegarder pour tous",
+    "User_not_verified": "User non vérifié, cliquez pour vérifier",
+    "VERIFICATION": {
+      "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
+      "Validate": "Valider"
+    },
     "HELP": {
       "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
       "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
@@ -503,8 +508,10 @@
       "Apply_foods": "Appliquer les consommables",
       "Food": "Choisir un plat",
       "Medicine": "Choisir un médicament",
+      "Action": "Choisir les bienfaits de compagnie libre",
       "Save_set": "Sauvegarder les stats pour cette classe",
       "Reset_set": "Remettre les stats à 0",
+      "Save_consumables": "Sauvegarder en tant que consommables par défaut",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",

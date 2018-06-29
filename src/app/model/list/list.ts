@@ -39,6 +39,15 @@ export class List extends DataWithPermissions {
 
     comments: ResourceComment[];
 
+    // Related to commissions
+    commissionId?: string;
+
+    commissionServer?: string;
+
+    public get isCommissionList(): boolean {
+        return this.commissionId !== undefined && this.commissionServer !== undefined;
+    }
+
     constructor() {
         super();
     }
@@ -386,6 +395,21 @@ export class List extends DataWithPermissions {
         res = res || (this.version === undefined);
         res = res || semver.ltr(this.version, '4.1.7');
         return res;
+    }
+
+    public onlyNeedsCrafts(): boolean {
+        // We init a boolean to true for the result.
+        let onlyNeedsCrafts = true;
+        // If one of the non-craftable items is not finished, set the boolean to false
+        this.forEach((row) => {
+            if (row.id < 20 && row.id > 1) {
+                return;
+            }
+            if (row.craftedBy === undefined || row.craftedBy.length === 0) {
+                onlyNeedsCrafts = onlyNeedsCrafts && row.done >= row.amount;
+            }
+        });
+        return onlyNeedsCrafts;
     }
 
     public resetDone(item: ListRow): void {

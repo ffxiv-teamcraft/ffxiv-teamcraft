@@ -9,6 +9,7 @@ import {
     MatIconModule,
     MatInputModule,
     MatListModule,
+    MatSlideToggleModule,
     MatTooltipModule
 } from '@angular/material';
 import {CoreModule} from '../../core/core.module';
@@ -21,6 +22,7 @@ import {PipesModule} from '../../pipes/pipes.module';
     imports: [
         CoreModule,
         CommonModule,
+
         MatCardModule,
         MatExpansionModule,
         MatListModule,
@@ -28,6 +30,8 @@ import {PipesModule} from '../../pipes/pipes.module';
         MatButtonModule,
         MatIconModule,
         MatTooltipModule,
+        MatSlideToggleModule,
+
         FormsModule,
         FlexLayoutModule,
         PipesModule,

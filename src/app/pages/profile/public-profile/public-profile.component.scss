@@ -15,6 +15,11 @@
         }
     }
 
+    .character-name {
+        display: flex;
+        align-items: center;
+    }
+
     .patreon-badge {
         height: 40px;
     }

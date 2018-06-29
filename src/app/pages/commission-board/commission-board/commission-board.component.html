@@ -1,0 +1,18 @@
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive
+       class="tab-element"
+       #rla="routerLinkActive"
+       [active]="rla.isActive">
+        <span matBadge=""
+              [matBadgeHidden]="!(link.hasNewThings | async)"
+              matBadgeColor="accent"
+              matBadgeOverlap="false"
+              matBadgeSize="small">
+            {{link.label | translate}}
+            </span>
+    </a>
+</nav>
+<router-outlet></router-outlet>

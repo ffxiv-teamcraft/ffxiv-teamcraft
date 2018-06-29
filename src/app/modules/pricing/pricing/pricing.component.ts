@@ -3,6 +3,7 @@ import {List} from '../../../model/list/list';
 import {PricingService} from '../pricing.service';
 import {ListRow} from '../../../model/list/list-row';
 import {ObservableMedia} from '@angular/flex-layout';
+import {ListService} from '../../../core/database/list.service';
 
 @Component({
     selector: 'app-pricing',
@@ -17,7 +18,11 @@ export class PricingComponent {
     @Output()
     close: EventEmitter<void> = new EventEmitter<void>();
 
-    constructor(private pricingService: PricingService, private media: ObservableMedia) {
+    constructor(private pricingService: PricingService, private media: ObservableMedia, private listService: ListService) {
+    }
+
+    public save(): void {
+        this.listService.set(this.list.$key, this.list).subscribe();
     }
 
     public isMobile(): boolean {
@@ -45,7 +50,7 @@ export class PricingComponent {
     getTotalPrice(rows: ListRow[]): number {
         let total = 0;
         // For each row of the list
-        rows.forEach(row => {
+        rows.filter(row => row.usePrice).forEach(row => {
             // Get the amount of items required.
             const amount = this.pricingService.getAmount(this.list.$key, row);
             // Get the price of the item.
@@ -57,7 +62,7 @@ export class PricingComponent {
     }
 
     getTotalEarnings(rows: ListRow[]): number {
-        return rows.reduce((total, row) => {
+        return rows.filter(row => row.usePrice).reduce((total, row) => {
             const price = this.pricingService.getEarnings(row);
             const amount = this.pricingService.getAmount(this.list.$key, row, true);
             return total + amount.nq * price.nq + amount.hq * price.hq;
@@ -73,6 +78,9 @@ export class PricingComponent {
         let total = 0;
         (row.requires || []).forEach(requirement => {
             const listRow = this.list.getItemById(requirement.id);
+            if (!listRow.usePrice) {
+                return
+            }
             const price = this.pricingService.getPrice(listRow);
             const amount = this.pricingService.getAmount(this.list.$key, listRow);
             // We're gona get the lowest possible price.

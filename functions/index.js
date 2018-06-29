@@ -44,3 +44,11 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
     }).then(() => null);
 });
 
+exports.firestoreCountCommissions = functions.firestore.document('/commissions/{server}/registry/{uid}').onCreate(() => {
+    const creationsRef = admin.database().ref('/commissions_created');
+    // Increment the number of lists created using the tool.
+    return creationsRef.transaction(current => {
+        return current + 1;
+    }).then(() => null);
+});
+

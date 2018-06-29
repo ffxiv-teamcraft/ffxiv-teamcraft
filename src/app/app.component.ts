@@ -25,10 +25,11 @@ import {AnnouncementPopupComponent} from './modules/common-components/announceme
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, first, map} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
 import {GarlandToolsService} from './core/api/garland-tools.service';
+import {CommissionService} from './core/database/commission/commission.service';
 
 declare const ga: Function;
 
@@ -84,6 +85,8 @@ export class AppComponent implements OnInit {
     @ViewChild('urlBox')
     urlBox: ElementRef;
 
+    hasCommissionBadge$: Observable<boolean>;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -101,7 +104,8 @@ export class AppComponent implements OnInit {
                 private pendingChangesService: PendingChangesService,
                 public platformService: PlatformService,
                 private ipc: IpcService,
-                private gt: GarlandToolsService) {
+                private gt: GarlandToolsService,
+                private commissionService: CommissionService) {
 
         this.gt.preload();
 
@@ -182,6 +186,20 @@ export class AppComponent implements OnInit {
                         });
                 }
             });
+
+        this.hasCommissionBadge$ = this.userService.getCharacter()
+            .pipe(
+                mergeMap(character => {
+                    return this.commissionService.getAll(character.server)
+                        .pipe(
+                            map(commissions => {
+                                return commissions.reduce((hasBadge, commission) => {
+                                    return hasBadge || commission.hasNewThing(character.userId);
+                                }, false)
+                            })
+                        )
+                })
+            )
     }
 
     detectChanges(): void {

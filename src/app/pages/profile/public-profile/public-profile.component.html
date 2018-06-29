@@ -1,9 +1,11 @@
-<div *ngIf="!(publicLists | async) || !(freeCompany | async) || !(ingameCharacter | async)" class="loader-container">
-    <mat-spinner></mat-spinner>
-</div>
-<mat-card *ngIf="ingameCharacter | async as character">
+<mat-card *ngIf="ingameCharacter | async as character; else loader">
     <mat-card-header>
-        <mat-card-title>{{character.name}} <span *ngIf="freeCompany | async as fc">«{{fc.name}}»</span> - {{character.server}}
+        <mat-card-title>
+            <span class="character-name">
+                {{character.name}}
+                <mat-icon *ngIf="character.user.verified">verified_user</mat-icon>
+                <span *ngIf="freeCompany | async as fc">«{{fc.name}}»</span> - {{character.server}}
+            </span>
         </mat-card-title>
         <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
         <div class="spacer"></div>
@@ -22,3 +24,8 @@
         </div>
     </div>
 </mat-card>
+<ng-template #loader>
+    <div class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

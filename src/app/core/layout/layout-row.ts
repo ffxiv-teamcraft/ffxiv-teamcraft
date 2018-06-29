@@ -49,7 +49,7 @@ export class LayoutRow {
         return this._order;
     }
 
-    public set order(newOrder: LayoutRowOrder){
+    public set order(newOrder: LayoutRowOrder) {
         this._order = newOrder;
     }
 }

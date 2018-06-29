@@ -1,0 +1,44 @@
+<div *ngIf="commission$ | async as commission; else loader">
+    <div *ngIf="character$ | async as character; else loader">
+        <div class="chat-warning">
+            {{'COMMISSION_BOARD.Chat_warning' | translate}}
+        </div>
+        <mat-divider></mat-divider>
+        <div class="chat-container">
+            <div class="chat-content" *ngIf="discussion$ | async as discussion">
+                <div class="chat-message" [class.own-message]="message.authorId === character.userId"
+                     *ngFor="let message of discussion.messages">
+                    <div class="character" *ngIf="getCharacter(message.authorId) | async as messageAuthor">
+                        <img [src]="messageAuthor.avatar" alt="" class="character-avatar"
+                             matTooltip="{{messageAuthor.name}}">
+                    </div>
+                    <div class="message-container" [class.primary-background]="message.authorId === character.userId"
+                         [class.accent-background]="message.authorId !== character.userId">
+                        <span class="message-content">{{message.content}}</span>
+                        <span class="message-date">{{message.date | date:'medium'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box" *ngIf="discussion$ | async as discussion">
+            <form (submit)="sendMessage(commission, character.userId)" class="textarea-form">
+                <mat-form-field>
+                    <textarea matInput name="message" rows="1" [(ngModel)]="message"
+                              class="textarea-input"
+                              [style.height]="getTextAreaHeight()"
+                              (keydown.control.enter)="onTextAreaEnter($event, commission, character.userId)"
+                              placeholder="{{'COMMISSION_BOARD.Chat_placeholder' | translate}}"></textarea>
+                    <mat-hint>{{'COMMISSION_BOARD.Chat_hint' | translate}}</mat-hint>
+                </mat-form-field>
+                <button mat-button type="submit" class="send-button">
+                    <mat-icon>send</mat-icon>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template #loader>
+    <div class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PricingService} from '../pricing.service';
 import {Price} from '../model/price';
 import {ItemAmount} from '../model/item-amount';
@@ -31,6 +31,9 @@ export class PricingRowComponent implements OnInit {
 
     amount: ItemAmount;
 
+    @Output()
+    save: EventEmitter<void> = new EventEmitter<void>();
+
     constructor(private pricingService: PricingService, private media: ObservableMedia) {
     }
 
@@ -53,6 +56,9 @@ export class PricingRowComponent implements OnInit {
             this.price = this.pricingService.getPrice(this.item);
         }
         this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
+        if (this.item.usePrice === undefined) {
+            this.item.usePrice = true;
+        }
     }
 
     isMobile(): boolean {

@@ -16,8 +16,10 @@ import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
 import {EffectiveBuff} from '../../model/effective-buff';
 import {Buff} from 'app/pages/simulator/model/buff.enum';
 import {Consumable} from '../../model/consumable';
+import {DefaultConsumables} from '../../../../model/other/default-consumables';
 import {foods} from '../../../../core/data/sources/foods';
 import {medicines} from '../../../../core/data/sources/medicines';
+import {freeCompanyActions} from '../../../../core/data/sources/free-company-actions';
 import {BonusType} from '../../model/consumable-bonus';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
@@ -31,9 +33,11 @@ import {LocalizedDataService} from '../../../../core/data/localized-data.service
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from 'app/core/data/language';
 import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
+import {FreeCompanyAction} from 'app/pages/simulator/model/free-company-action';
+import {FreeCompanyActionsService} from 'app/pages/simulator/model/free-company-actions.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
+import {debounceTime, filter, first, map, mergeMap, tap, skip} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
@@ -214,6 +218,16 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.applyStats(this.selectedSet, this.levels, false);
     }
 
+    public freeCompanyActions: FreeCompanyAction[] = [];
+
+    public _selectedFreeCompanyActions: FreeCompanyAction[];
+
+    @Input()
+    public set selectedFreeCompanyActions(actions: FreeCompanyAction[]) {
+        this._selectedFreeCompanyActions = actions;
+        this.applyStats(this.selectedSet, this.levels, false);
+    }
+
     @Input()
     authorId: string;
 
@@ -257,11 +271,20 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
     };
 
+    private freeCompanyActionsSortFn = (a, b) => {
+        if (a.actionId > b.actionId) {
+            return 1;
+        } else {
+            return -1;
+        }
+    };
+
     constructor(private registry: CraftingActionsRegistry, private media: ObservableMedia, private userService: UserService,
                 private dataService: DataService, private htmlTools: HtmlToolsService, private dialog: MatDialog,
                 private pendingChanges: PendingChangesService, private localizedDataService: LocalizedDataService,
-                private translate: TranslateService, consumablesService: ConsumablesService, private i18nTools: I18nToolsService,
-                private snack: MatSnackBar, private cd: ChangeDetectorRef, rotationsService: CraftingRotationService,
+                private translate: TranslateService, public consumablesService: ConsumablesService,
+                public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
+                private snack: MatSnackBar, private cd: ChangeDetectorRef, public rotationsService: CraftingRotationService,
                 private router: Router) {
 
         this.availableRotations$ = this.userService.getUserData()
@@ -275,6 +298,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             .sort(this.consumablesSortFn);
         this.medicines = consumablesService.fromData(medicines)
             .sort(this.consumablesSortFn);
+        this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
+            .sort(this.freeCompanyActionsSortFn);
 
         this.actions$.subscribe(actions => {
             this.dirty = false;
@@ -373,6 +398,25 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.selectedSet = res.set;
             this.applyStats(res.set, res.levels, false);
         });
+
+        this.actions$
+            .pipe(
+                // Skip first emission, as it's the default value.
+                skip(1)
+            )
+            .subscribe(actions => {
+            // Set the default consumables, overridden later if this is an existing rotation
+            if (actions.length === 0) {
+                this.userService.getUserData().pipe(
+                    tap(user => {
+                        const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
+                        this._selectedFood = defaultConsumables.food;
+                        this._selectedMedicine = defaultConsumables.medicine;
+                        this._selectedFreeCompanyActions = defaultConsumables.freeCompanyActions;
+                    })
+                ).subscribe();
+            }
+        });
     }
 
     importRotation(): void {
@@ -465,7 +509,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
-                consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
+                consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
+                freeCompanyActions: this._selectedFreeCompanyActions
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
@@ -475,7 +520,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
-                consumables: {food: this._selectedFood, medicine: this._selectedMedicine}
+                consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
+                freeCompanyActions: this._selectedFreeCompanyActions
             });
         }
         if (asNew) {
@@ -506,6 +552,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     getBonusValue(bonusType: BonusType, baseValue: number): number {
         let bonusFromFood = 0;
         let bonusFromMedicine = 0;
+        let bonusFromFreeCompanyAction = 0;
+        let bonusFromSpecialist = 0;
+
         if (this._selectedFood !== undefined) {
             const foodBonus = this._selectedFood.getBonus(bonusType);
             if (foodBonus !== undefined) {
@@ -524,7 +573,42 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 }
             }
         }
-        return bonusFromFood + bonusFromMedicine;
+
+        if (this._selectedFreeCompanyActions !== undefined) {
+            bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType);
+        }
+
+        if (this.selectedSet.specialist && bonusType !== <BonusType>'CP') {
+            bonusFromSpecialist = 20;
+        }
+
+        return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction + bonusFromSpecialist;
+    }
+
+    getFreeCompanyActionValue(bonusType: BonusType): number {
+        let value = 0;
+        const actions = this._selectedFreeCompanyActions || [];
+        const action = actions.find(a => a.type === bonusType);
+
+        if (action !== undefined) {
+            value = action.value;
+        }
+
+        return value;
+    }
+
+    getFreeCompanyActions(type: string): FreeCompanyAction[] {
+        return this.freeCompanyActions.filter(action => action.type === <BonusType> type);
+    }
+
+    isFreeCompanyActionOptionDisabled(type: string, actionId: number): boolean {
+        const actions = this._selectedFreeCompanyActions || [];
+
+        return actions.find(action => action.type === type && action.actionId !== actionId) !== undefined;
+    }
+
+    compareFreeCompanyActionsFn(action1: FreeCompanyAction, action2: FreeCompanyAction): boolean {
+        return action1 && action2 && action1.actionId === action2.actionId;
     }
 
     applyStats(set: GearSet, levels: CrafterLevels, markDirty = true): void {
@@ -575,6 +659,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);
+        this.userService.set(this.userData.$key, this.userData).subscribe();
+    }
+
+    saveDefaultConsumables(): void {
+        this.userData.defaultConsumables =
+            new DefaultConsumables(this._selectedFood, this._selectedMedicine, this._selectedFreeCompanyActions);
         this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 

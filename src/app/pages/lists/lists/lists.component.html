@@ -58,6 +58,20 @@
             [templateButton]="userData?.patron || userData?.admin"
         ></app-list-panel>
     </div>
+    <div *ngIf="commissions$ | async as commissions">
+        <div class="category" *ngIf="commissions.length > 0">
+            <h2>{{'COMMISSION_BOARD.Commissions' | translate}}</h2>
+            <mat-divider class="divider"></mat-divider>
+            <app-list-panel
+                *ngFor="let list of commissions;trackBy: trackByListFn; let i = index"
+                [list]="list"
+                [expanded]="expanded.indexOf(list.$key) > -1"
+                [authorUid]="user.uid"
+                [odd]="i%2>0"
+                [readonly]="true"
+            ></app-list-panel>
+        </div>
+    </div>
     <div class="category" *ngIf="display.publicLists !== undefined && display.publicLists.length > 0">
         <h2>{{'Public_lists' | translate}}</h2>
         <mat-divider class="divider"></mat-divider>

@@ -46,6 +46,7 @@ export class CharacterAddPopupComponent implements OnInit {
                 map(user => {
                     if (user !== null && !user.anonymous) {
                         user.lodestoneId = id;
+                        user.verified = false;
                         this.userService.update(user.$key, user);
                     }
                 })

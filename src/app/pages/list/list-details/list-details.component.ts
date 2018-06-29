@@ -40,6 +40,8 @@ import {PlatformService} from '../../../core/tools/platform.service';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
+import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
+import {CommissionService} from '../../../core/database/commission/commission.service';
 
 declare const ga: Function;
 
@@ -107,7 +109,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
-                private i18nTools: I18nToolsService) {
+                private i18nTools: I18nToolsService, private commissionService: CommissionService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -124,6 +126,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     return this.layoutService.getRecipes(data, this.selectedIndex);
                 })
             );
+    }
+
+    public createCommission(list: List): void {
+        this.dialog.open(CommissionCreationPopupComponent, {data: list});
     }
 
     public getLink(): string {
@@ -371,10 +377,20 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 }
             })
         ).subscribe();
+        if (list.isCommissionList) {
+            this.commissionService.get(list.commissionId, list.commissionServer)
+                .pipe(
+                    first(),
+                    mergeMap(commission => {
+                        commission.items = list.recipes;
+                        return this.commissionService.set(commission.$key, commission)
+                    })
+                ).subscribe();
+        }
     }
 
     private onCompletion(list: List): void {
-        if (!this.completionDialogOpen && this.userData.$key === this.listData.authorId) {
+        if (!this.completionDialogOpen && this.userData.$key === this.listData.authorId && !this.listData.isCommissionList) {
             this.completionDialogOpen = true;
             this.dialog.open(ListFinishedPopupComponent)
                 .afterClosed()

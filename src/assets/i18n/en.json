@@ -218,6 +218,11 @@
     "Contacts": "Contacts",
     "New_contact": "New contact's user ID",
     "Save_for_all": "Save for all",
+    "User_not_verified": "User not verified, click to verify user",
+    "VERIFICATION": {
+      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Validate": "Validate"
+    },
     "HELP": {
       "Welcome": "Welcome to profile page, this is the place where you can see and edit your own profile.",
       "Edit": "By clicking on the edit icon, you can edit the character linked to your FFXIV Teamcraft account.",
@@ -503,8 +508,10 @@
       "Apply_foods": "Apply consumables",
       "Food": "Choose a food",
       "Medicine": "Choose a medicine",
+      "Action": "Choose free company actions",
       "Save_set": "Save these stats for this job",
       "Reset_set": "Reset these stats",
+      "Save_consumables": "Save these consumables as default",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -546,5 +553,56 @@
   "PRICING": {
     "From_vendor": "Price from vendor",
     "Materials_have_cost": "Materials for this craft have cost > 0, make sure you're not counting them twice"
+  },
+  "COMMISSION_BOARD": {
+    "Title": "Commission board",
+    "Create_commission": "Create a commission request",
+    "Board": "Board",
+    "My_requests": "My requests",
+    "My_crafts": "My ongoing commissions",
+    "History": "Archived",
+    "No_commissions": "No opened commissions on your server",
+    "Chat_warning": "Remember to never give your credentials in the chat, nobody should ask for them. Using this chat to use the platform for RMT will result in a permanent ban from the website and the case forwarded to Square Enix",
+    "Chat_placeholder": "Send new message",
+    "Chat_hint": "Tip: you can send a message by doing Ctrl + Enter",
+    "New_commission": "Create a new commission request",
+    "New_commission_warning": "Creating a commission from this list will remove it from your lists (but wont delete the list), you won't be able to add more items nor change amounts on it.",
+    "Price_hint": "The price you want to pay for this commission",
+    "Crafted_by": "Crafted by : ",
+    "Fire": "Fire",
+    "Confirm_fire": "Are you sure you want to fire this user from the commission?",
+    "Delete_payment": "Delete payment",
+    "Add_payment": "Add Payment",
+    "Deposit": "Deposit",
+    "Owing": "Owed",
+    "Go_to_chat": "Go to chat",
+    "Go_to_list": "Go to list",
+    "Mark_as_finished": "Archive the commission",
+    "Candidates": "Candidates",
+    "No_candidates": "No candidates for this commission",
+    "Hire": "Hire",
+    "Confirm_hire": "Are you sure you want to hire this user?",
+    "Apply": "Apply for this commission",
+    "Contact_buyer": "Contact the author",
+    "No_history": "You have no archived commissions",
+    "No_crafts": "You have no ongoing commission",
+    "No_requests": "You have no commission requests",
+    "Rate_user": "User rating",
+    "Rating_description": "Please take a moment to rate the other user",
+    "Commissions": "Commissions",
+    "Confirm_archive": "Are you sure? This can't be undone.",
+    "Withdraw": "Withdraw from the commission",
+    "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.",
+    "STATUS": {
+      "CREATED": "Opened",
+      "ACCEPTED": "In Progress",
+      "DONE": "Archived"
+    },
+    "TAGS": {
+      "Crafting": "Crafting",
+      "Gathering": "Gathering",
+      "Hunting": "Hunting",
+      "Only_craft": "Materials included"
+    }
   }
 }

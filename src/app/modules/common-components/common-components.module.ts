@@ -4,14 +4,16 @@ import {AmountInputComponent} from './amount-input/amount-input.component';
 import {ItemIconComponent} from './item-icon/item-icon.component';
 import {RandomGifComponent} from './random-gif/random-gif.component';
 import {
-    MatButtonModule, MatChipsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
-    MatListModule, MatProgressSpinnerModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     MatTooltipModule,
-    MatCheckboxModule,
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
@@ -33,13 +35,14 @@ import {ListNamePopupComponent} from './list-name-popup/list-name-popup.componen
 import {RegisterPopupComponent} from './register-popup/register-popup.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
-import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
-import { AnnouncementPopupComponent } from './announcement-popup/announcement-popup.component';
-import { PermissionsPopupComponent } from './permissions-popup/permissions-popup.component';
-import { PermissionsRowComponent } from './permissions-popup/permissions-row/permissions-row.component';
-import { AddNewRowPopupComponent } from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
-import { FcCrestComponent } from './fc-crest/fc-crest.component';
-import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-group-name-popup.component';
+import {FfxivcraftingAmountInputComponent} from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
+import {AnnouncementPopupComponent} from './announcement-popup/announcement-popup.component';
+import {PermissionsPopupComponent} from './permissions-popup/permissions-popup.component';
+import {PermissionsRowComponent} from './permissions-popup/permissions-row/permissions-row.component';
+import {AddNewRowPopupComponent} from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
+import {FcCrestComponent} from './fc-crest/fc-crest.component';
+import {AlarmGroupNamePopupComponent} from './alarm-group-name-popup/alarm-group-name-popup.component';
+import {UserVerificationPopupComponent} from './user-verification-popup/user-verification-popup.component';
 
 @NgModule({
     imports: [
@@ -91,6 +94,7 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
         AddNewRowPopupComponent,
         FcCrestComponent,
         AlarmGroupNamePopupComponent,
+        UserVerificationPopupComponent,
     ],
     exports: [
         RandomGifComponent,
@@ -119,6 +123,7 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
         PermissionsPopupComponent,
         AddNewRowPopupComponent,
         AlarmGroupNamePopupComponent,
+        UserVerificationPopupComponent,
     ]
 })
 export class CommonComponentsModule {
