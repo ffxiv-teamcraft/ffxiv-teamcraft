@@ -75,7 +75,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@kaiu/ng-serializer": "1.1.1",
-    "@kaiu/serializer": "1.2.0",
+    "@kaiu/serializer": "1.2.1",
     "@ngx-translate/core": "^10.0.1",
     "@ngx-translate/http-loader": "^3.0.1",
     "@types/jwt-decode": "^2.2.1",

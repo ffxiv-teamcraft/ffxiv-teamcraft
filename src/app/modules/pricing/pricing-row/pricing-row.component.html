@@ -1,4 +1,4 @@
-<mat-list-item [class.odd]="odd" class="list-item">
+<mat-list-item [class.odd]="odd" class="list-item" [class.ignored]="item.usePrice">
     <div mat-list-avatar class="icon" *ngIf="!isMobile()">
         <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>
@@ -16,6 +16,8 @@
               matTooltipPosition="above">group
     </mat-icon>
 
+    <mat-slide-toggle [(ngModel)]="item.usePrice" (change)="save.emit()">
+    </mat-slide-toggle>
     <div class="amount-group">
         <div class="field-group" matLine>
             <mat-form-field class="nofix price">
