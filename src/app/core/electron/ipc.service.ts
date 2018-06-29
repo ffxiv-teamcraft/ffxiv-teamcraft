@@ -36,7 +36,7 @@ export class IpcService {
     }
 
     private connectListeners(): void {
-        this.on('navigate', (url) => {
+        this.on('navigate', (event, url) => {
             this.router.navigateByUrl(url);
         });
     }

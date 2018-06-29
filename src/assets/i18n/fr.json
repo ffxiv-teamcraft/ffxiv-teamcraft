@@ -202,7 +202,8 @@
     "compact_lists": "Affichage compact des listes",
     "theme": "Thème",
     "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com",
-    "Simulator_link_base": "Lien vers le simulateur"
+    "Simulator_link_base": "Lien vers le simulateur",
+    "Always_on_top": "Toujours au premier plan"
   },
   "PROFILE": {
     "Masterbooks": "Livres",
