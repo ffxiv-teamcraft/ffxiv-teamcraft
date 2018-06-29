@@ -20,7 +20,7 @@ export class CraftingRotationService extends FirestoreStorage<CraftingRotation> 
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid))
             .snapshotChanges()
             .pipe(
-                map((snaps: DocumentChangeAction[]) => {
+                map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
                     const rotations = snaps.map(snap => {
                         const valueWithKey: CraftingRotation = <CraftingRotation>{$key: snap.payload.doc.id, ...snap.payload.doc.data()};
                         delete snap.payload;

@@ -39,8 +39,8 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
         return this.firebase.object(`${this.getBaseUri()}/${uid}`)
             .snapshotChanges()
             .pipe(
-                map((snap: SnapshotAction) => {
-                    const valueWithKey: T = {$key: snap.payload.key, ...snap.payload.val()};
+                map((snap: SnapshotAction<Object>) => {
+                    const valueWithKey: T = <T>{$key: snap.payload.key, ...snap.payload.val()};
                     if (!snap.payload.exists()) {
                         throw new Error('Not found');
                     }
