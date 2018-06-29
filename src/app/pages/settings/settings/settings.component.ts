@@ -38,9 +38,8 @@ export class SettingsComponent {
         translate.onLangChange.subscribe(change => {
             this.locale = change.lang;
         });
-        this.ipc.on('always-on-top:value', (...args: any[]) => {
-            console.log(args);
-            // this.alwaysOnTop = value;
+        this.ipc.on('always-on-top:value', (event, value) => {
+            this.alwaysOnTop = value;
         });
         this.ipc.send('always-on-top:get');
     }
