@@ -408,6 +408,8 @@
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
+    "Starting_echo_number": "Mitteilung #",
+    "Extra_wait": "Extra wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Werte",

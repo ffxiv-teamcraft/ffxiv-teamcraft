@@ -440,6 +440,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
+    "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Stats minimum",
