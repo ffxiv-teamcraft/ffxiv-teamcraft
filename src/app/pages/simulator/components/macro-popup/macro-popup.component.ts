@@ -24,6 +24,8 @@ export class MacroPopupComponent implements OnInit {
 
     public fixedEcho = false;
 
+    public extraWait = 0;
+
     constructor(@Inject(MAT_DIALOG_DATA) private data: { rotation: CraftingAction[], job: CraftingJob }, private l12n: LocalizedDataService,
                 private i18n: I18nToolsService) {
     }
@@ -47,13 +49,13 @@ export class MacroPopupComponent implements OnInit {
                     this.aactionsMacro.push(`/aaction ${actionName}`);
                 }
             }
-            macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration()}>`);
+            macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
             if (macroFragment.length === 14 && this.addEcho) {
                 let seNumber: number;
                 if (this.fixedEcho) {
                     seNumber = this.echoSeNumber;
                 } else {
-                    seNumber = this.echoSeNumber - 1 + this.macro.length;
+                    seNumber = Math.min(this.echoSeNumber - 1 + this.macro.length, 16);
                 }
                 macroFragment.push(`/echo Macro #${this.macro.length} finished <se.${seNumber}>`);
             }
@@ -63,7 +65,7 @@ export class MacroPopupComponent implements OnInit {
             if (this.fixedEcho) {
                 seNumber = this.echoSeNumber;
             } else {
-                seNumber = this.echoSeNumber + this.macro.length;
+                seNumber = Math.min(this.echoSeNumber + this.macro.length, 16);
             }
             this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`)
         }

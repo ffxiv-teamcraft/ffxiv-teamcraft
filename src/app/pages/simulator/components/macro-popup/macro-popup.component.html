@@ -7,10 +7,16 @@
         <mat-checkbox [(ngModel)]="fixedEcho" [disabled]="!addEcho" (ngModelChange)="generateMacros()">
             {{'SIMULATOR.Fixed_notification_number' | translate}}
         </mat-checkbox>
-        <mat-form-field>
-            <input type="number" [(ngModel)]="echoSeNumber" [disabled]="!addEcho" (ngModelChange)="generateMacros()"
-                   placeholder="{{'SIMULATOR.Starting_echo_number' | translate}}" matInput>
-        </mat-form-field>
+        <div class="fields">
+            <mat-form-field>
+                <input type="number" min="1" max="16" [(ngModel)]="echoSeNumber" [disabled]="!addEcho"
+                    (ngModelChange)="generateMacros()" placeholder="{{'SIMULATOR.Starting_echo_number' | translate}}" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" min="0" max="100" [(ngModel)]="extraWait"
+                    (ngModelChange)="generateMacros()" placeholder="{{'SIMULATOR.Extra_wait' | translate}}" matInput>
+            </mat-form-field>
+        </div>
     </div>
     <div class="macro">
         <pre *ngFor="let macroFragment of macro" class="macro-fragment">
