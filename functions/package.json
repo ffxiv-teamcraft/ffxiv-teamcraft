@@ -3,7 +3,7 @@
     "description": "Firebase cloud function to count the amount of list created",
     "private": true,
     "dependencies": {
-        "firebase": "5.1.0",
+      "firebase": "4.6.2",
         "firebase-admin": "^5.4.2",
         "firebase-functions": "^1.1.0",
         "grpc": "1.12.4",

@@ -13,6 +13,8 @@ export class HomeComponent {
 
     lists_created = this.firebase.object('lists_created').valueChanges();
 
+    commissions_created = this.firebase.object('commissions_created').valueChanges();
+
     constructor(private firebase: AngularFireDatabase, private media: ObservableMedia) {
     }
 

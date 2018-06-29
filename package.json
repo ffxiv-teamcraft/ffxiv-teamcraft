@@ -87,7 +87,7 @@
     "electron-log": "^2.2.14",
     "electron-oauth2": "^3.0.0",
     "electron-updater": "^2.21.10",
-    "firebase": "5.1.0",
+    "firebase": "5.0.2",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
     "ng-drag-drop": "^5.0.0",
@@ -113,7 +113,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "^2.0.3",
+    "electron": "^1.8.7",
     "electron-builder": "^20.13.3",
     "electron-is-dev": "^0.3.0",
     "electron-reload": "^1.2.2",
@@ -148,7 +148,9 @@
   },
   "greenkeeper": {
     "ignore": [
-      "typescript"
+      "typescript",
+      "firebase",
+      "electron"
     ]
   }
 }
