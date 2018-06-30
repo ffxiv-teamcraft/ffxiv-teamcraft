@@ -514,4 +514,56 @@
       "Access_wiki_link": "Gehe zum Wiki"
     }
   }
+  /* WIP !!! not finished - remove comments when finished !!! */
+  "COMMISSION_BOARD": {
+    "Title": "Schwarzes Brett",
+    "Create_commission": "Neues Inserat erstellen",
+    "Board": "Board", /*TODO: Where is this used?*/
+    "My_requests": "Meine Inserate", /*commission = Inserat/Anzeige/Annonce? Anfragen?*/
+    "My_crafts": "Meine aktiven Aufträge", /*TODO: I assume these are the ones the user is working on for other people*/
+    "History": "Archiviert",
+    "No_commissions": "Keine offenen Inserate auf deinem Server",
+    "Chat_warning": "Bitte gib deine Logindaten niemals im Chat weiter, niemand sollte jemals danach fragen. Die Nutzung des Chats als Platform für RMT resultiert in einer permanenten Sperre auf der Webseite und einer Weiterleitung des Falls an Square Enix.",
+    "Chat_placeholder": "Neue Nachricht senden",
+    "Chat_hint": "Tipp: Du kannst eine Nachricht mit Strg + Enter senden",
+    "New_commission": "Neues Inserat erstellen", /*TODO: same as Create_commission ?*/
+    "New_commission_warning": "Aus dieser Liste ein Inserat zu erstellen entfernt diese aus der Listenübersicht (aber löscht sie nicht), du wirst keine weiteren Items hinzufügen oder Mengen ändern können.",
+    "Price_hint": "Der Preis den du für das Inserat zahlen möchtest",
+    "Crafted_by": "Hergestellt von : ",
+    "Fire": "Entlassen",
+    "Confirm_fire": "Bist du sicher, dass du den Nutzer aus dem Inserat entfernen möchtest?",
+    "Delete_payment": "Zahlung entfernen",
+    "Add_payment": "Zahlung hinzufügen",
+    "Deposit": "Anzahlung",
+    "Owing": "Ausstehend",
+    "Go_to_chat": "Gehe zum Chat",
+    "Go_to_list": "Gehe zur Liste",
+    "Mark_as_finished": "Archiviere das Inserat",
+    "Candidates": "Kandidaten",
+    "No_candidates": "Keine Kandidaten für dieses Inserat",
+    "Hire": "Einstellen",
+    "Confirm_hire": "Bist du sicher, dass du diesen Nutzer einstellen möchtest?",
+    "Apply": "Auf dieses Inserat bewerben",
+    "Contact_buyer": "Kontaktiere den Inserenten",
+    "No_history": "Du hast keine archivierten Inserate",
+    "No_crafts": "Du hast keine aktiven Aufträge",
+    "No_requests": "Du hast keine Inserate",
+    "Rate_user": "Benutzerwertung",
+    "Rating_description": "Bitte nimm dir einen Moment um den Nutzer zu bewerten",
+    "Commissions": "Inserate",
+    "Confirm_archive": "Bist du sicher? Das kann nicht rückgängig gemacht werden.",
+    "Withdraw": "Aus dem Inserat zurückziehen", /*TODO: Not quite sure what this is... is this something I'm working on for someone else or my own commission I'm withdrawing?*/
+    "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.", /*TODO: See above*/
+    "STATUS": {
+      "CREATED": "Offene",
+      "ACCEPTED": "Laufende",
+      "DONE": "Archivierte"
+    },
+    "TAGS": {
+      "Crafting": "Herstellung",
+      "Gathering": "Sammlung",
+      "Hunting": "Jagen", /*TODO: Want a better word, sounds weird*/
+      "Only_craft": "Materialien inklusive"
+    }
+  }
 }
