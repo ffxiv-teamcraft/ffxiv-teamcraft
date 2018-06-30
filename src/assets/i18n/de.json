@@ -619,9 +619,9 @@
     "Withdraw": "Aus dem Inserat zurückziehen", /*TODO: Not quite sure what this is... is this something I'm working on for someone else or my own commission I'm withdrawing?*/
     "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.", /*TODO: See above*/
     "STATUS": {
-      "CREATED": "Offene",
-      "ACCEPTED": "Laufende",
-      "DONE": "Archivierte"
+      "CREATED": "Offen",
+      "ACCEPTED": "Laufend",
+      "DONE": "Archiviert"
     },
     "TAGS": {
       "Crafting": "Herstellung",
