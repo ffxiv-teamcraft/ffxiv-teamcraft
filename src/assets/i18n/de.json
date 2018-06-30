@@ -212,6 +212,11 @@
       "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",
       "Edit": "Wenn du auf den Bearbeiten-Knopf drückst, kannst du den Character, der mit deinem Teamcraft-Account verknüpft ist, bearbeiten",
       "Masterbooks": "Du kannst deine freigeschalteten Meisterbücher hier hinterlegen, damit du eine Warnung erhältst wenn dir für eine Herstellung ein Meisterbuch fehlt."
+    },
+    "User_not_verified": "Benutzer nicht verifiziert, klicke zum verifizieren.",
+    "VERIFICATION": {
+      "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
+      "Validate": "Verifizieren"
     }
   },
   "LISTS": {
@@ -513,29 +518,28 @@
       "Access_wiki_content": "Navigiere zum Wiki indem du den Link unten anklickst. Dort findest du Dokumentationen zur generellen Benutzung der Seite, um das beste aus dem Tool herauszuholen und dich bestmöglich zu unterstützen",
       "Access_wiki_link": "Gehe zum Wiki"
     }
-  }
-  /* WIP !!! not finished - remove comments when finished !!! */
+  },
   "COMMISSION_BOARD": {
     "Title": "Schwarzes Brett",
     "Create_commission": "Neues Inserat erstellen",
-    "Board": "Board", /*TODO: Where is this used?*/
-    "My_requests": "Meine Inserate", /*commission = Inserat/Anzeige/Annonce? Anfragen?*/
-    "My_crafts": "Meine aktiven Aufträge", /*TODO: I assume these are the ones the user is working on for other people*/
+    "Board": "Inserate",
+    "My_requests": "Meine Inserate",
+    "My_crafts": "Meine aktiven Aufträge",
     "History": "Archiviert",
     "No_commissions": "Keine offenen Inserate auf deinem Server",
     "Chat_warning": "Bitte gib deine Logindaten niemals im Chat weiter, niemand sollte jemals danach fragen. Die Nutzung des Chats als Platform für RMT resultiert in einer permanenten Sperre auf der Webseite und einer Weiterleitung des Falls an Square Enix.",
     "Chat_placeholder": "Neue Nachricht senden",
     "Chat_hint": "Tipp: Du kannst eine Nachricht mit Strg + Enter senden",
-    "New_commission": "Neues Inserat erstellen", /*TODO: same as Create_commission ?*/
-    "New_commission_warning": "Aus dieser Liste ein Inserat zu erstellen entfernt diese aus der Listenübersicht (aber löscht sie nicht), du wirst keine weiteren Items hinzufügen oder Mengen ändern können.",
-    "Price_hint": "Der Preis den du für das Inserat zahlen möchtest",
-    "Crafted_by": "Hergestellt von : ",
+    "New_commission": "Neues Inserat erstellen",
+    "New_commission_warning": "Aus dieser Liste ein Inserat zu erstellen entfernt diese aus der Listenübersicht (aber löscht sie nicht). Du wirst keine weiteren Items hinzufügen oder deren Mengen ändern können.",
+    "Price_hint": "Der Preis, den du für das Inserat zahlen möchtest",
+    "Crafted_by": "Hergestellt von: ",
     "Fire": "Entlassen",
     "Confirm_fire": "Bist du sicher, dass du den Nutzer aus dem Inserat entfernen möchtest?",
     "Delete_payment": "Zahlung entfernen",
     "Add_payment": "Zahlung hinzufügen",
     "Deposit": "Anzahlung",
-    "Owing": "Ausstehend",
+    "Owing": "Restbetrag",
     "Go_to_chat": "Gehe zum Chat",
     "Go_to_list": "Gehe zur Liste",
     "Mark_as_finished": "Archiviere das Inserat",
@@ -552,8 +556,8 @@
     "Rating_description": "Bitte nimm dir einen Moment um den Nutzer zu bewerten",
     "Commissions": "Inserate",
     "Confirm_archive": "Bist du sicher? Das kann nicht rückgängig gemacht werden.",
-    "Withdraw": "Aus dem Inserat zurückziehen", /*TODO: Not quite sure what this is... is this something I'm working on for someone else or my own commission I'm withdrawing?*/
-    "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.", /*TODO: See above*/
+    "Withdraw": "Aus dem Auftrag zurückziehen",
+    "Confirm_withdraw": "Bist du sicher dass du dich aus dem Auftrag zurückziehen möchtest? Dies kann nicht rückgängig gemacht werden.",
     "STATUS": {
       "CREATED": "Offene",
       "ACCEPTED": "Laufende",
@@ -562,7 +566,7 @@
     "TAGS": {
       "Crafting": "Herstellung",
       "Gathering": "Sammlung",
-      "Hunting": "Jagen", /*TODO: Want a better word, sounds weird*/
+      "Hunting": "Jagd",
       "Only_craft": "Materialien inklusive"
     }
   }
