@@ -568,7 +568,7 @@
     "Chat_placeholder": "Send new message",
     "Chat_hint": "Tip: you can send a message by doing Ctrl + Enter",
     "New_commission": "Create a new commission request",
-    "New_commission_warning": "Creating a commission from this list will remove it from your lists (but wont delete the list), you won't be able to add more items nor change amounts on it.",
+    "New_commission_warning": "Creating a commission from this list will remove it from your lists (but won't delete the list), you won't be able to add more items nor change amounts on it.",
     "Price_hint": "The price you want to pay for this commission",
     "Crafted_by": "Crafted by : ",
     "Fire": "Fire",
