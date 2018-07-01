@@ -595,6 +595,7 @@
     "Confirm_archive": "Êtes-vous sûr de vouloir archiver? Cette action est irréversible",
     "Withdraw": "Démissionner",
     "Confirm_withdraw": "Êtes-vous sûr de vouloir démissionner? Cette action est irréversible",
+    "New_things_notification": "Nouveaux évènements à voir dans la page des commissions pour vous",
     "STATUS": {
       "CREATED": "Ouverte",
       "ACCEPTED": "En cours",

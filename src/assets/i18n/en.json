@@ -595,6 +595,7 @@
     "Confirm_archive": "Are you sure? This can't be undone.",
     "Withdraw": "Withdraw from the commission",
     "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.",
+    "New_things_notification": "There's new things to check in your commission board",
     "STATUS": {
       "CREATED": "Opened",
       "ACCEPTED": "In Progress",

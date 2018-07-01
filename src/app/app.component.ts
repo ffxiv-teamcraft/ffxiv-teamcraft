@@ -25,7 +25,7 @@ import {AnnouncementPopupComponent} from './modules/common-components/announceme
 import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
 import {GarlandToolsService} from './core/api/garland-tools.service';
@@ -198,6 +198,14 @@ export class AppComponent implements OnInit {
                                 }, false)
                             })
                         )
+                }),
+                tap(hasCommissionBadge => {
+                    if (hasCommissionBadge && this.platformService.isDesktop()) {
+                        this.ipc.send('notification', {
+                            title: 'FFXIV Teamcraft',
+                            content: this.translate.instant('COMMISSION_BOARD.New_things_notification')
+                        })
+                    }
                 })
             )
     }
