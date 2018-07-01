@@ -21,7 +21,7 @@
                             <button mat-icon-button color="warn"
                                     (click)="openVerificationPopup()"
                                     *ngIf="!user.verified"
-                                    [matTooltip]="'PROFILE.User_not_verified'"
+                                    [matTooltip]="'PROFILE.User_not_verified' | translate"
                                     matTooltipPosition="above">
                                 <mat-icon>warning</mat-icon>
                             </button>
