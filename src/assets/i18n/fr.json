@@ -555,5 +555,56 @@
   "PRICING": {
     "From_vendor": "Prix au vendeur",
     "Materials_have_cost": "Des matériaux pour ce craft ont un prix supérieur à 0, soyez sûr de ne pas les compter deux fois"
+  },
+  "COMMISSION_BOARD": {
+    "Title": "Tableau de requêtes",
+    "Create_commission": "Créer une requête de commission",
+    "Board": "Tableau",
+    "My_requests": "Mes requêtes",
+    "My_crafts": "Mes commissions",
+    "History": "Archives",
+    "No_commissions": "Pas de requêtes sur votre serveur",
+    "Chat_warning": "Pensez bien à ne jamais donner d'identifiants par le chat. Toute utilisation afin de conclure un arrangement de type RMT sera puni d'un ban du site et d'une transmission des preuves à Square Enix.",
+    "Chat_placeholder": "Envoyer un message",
+    "Chat_hint": "Astuce: vous pouvez utiliser Ctrl + Entrée pour envoyer",
+    "New_commission": "Créer une nouvelle requête de commission",
+    "New_commission_warning": "Créer une requête de commission retirera la liste de votre profil sans la suprimer, vous ne pourrez plus la modifier.",
+    "Price_hint": "Le prix que vous souhaitez payer pour la commission",
+    "Crafted_by": "Crafté par : ",
+    "Fire": "Virer",
+    "Confirm_fire": "ëtes-vous sûr de vouloir virer cette personne de la commission?",
+    "Delete_payment": "Supprimer le paiement",
+    "Add_payment": "Ajouter un paiement",
+    "Deposit": "Payé",
+    "Owing": "Dû",
+    "Go_to_chat": "Aller sur le chat",
+    "Go_to_list": "Voir la liste",
+    "Mark_as_finished": "Archiver la commission",
+    "Candidates": "Candidats",
+    "No_candidates": "Pas de candidats pour cette commission",
+    "Hire": "Engager",
+    "Confirm_hire": "Êtes-vous sûr de vouloir engager cet utilisateur?",
+    "Apply": "Candidater pour cette commission",
+    "Contact_buyer": "Contacter l'auteur",
+    "No_history": "Vous n'avez pas de commissions archivées",
+    "No_crafts": "Vous n'avez pas de commissions en cours",
+    "No_requests": "Vous n'avez pas de requêtes de commission",
+    "Rate_user": "Notation de l'utilisateur",
+    "Rating_description": "Merci de prendre un instant pour noter votre interlocuteur.",
+    "Commissions": "Commissions",
+    "Confirm_archive": "Êtes-vous sûr de vouloir archiver? Cette action est irréversible",
+    "Withdraw": "Démissionner",
+    "Confirm_withdraw": "Êtes-vous sûr de vouloir démissionner? Cette action est irréversible",
+    "STATUS": {
+      "CREATED": "Ouverte",
+      "ACCEPTED": "En cours",
+      "DONE": "Archivée"
+    },
+    "TAGS": {
+      "Crafting": "Fabrication",
+      "Gathering": "Récolte",
+      "Hunting": "Chasse",
+      "Only_craft": "Matériaux inclus"
+    }
   }
 }
