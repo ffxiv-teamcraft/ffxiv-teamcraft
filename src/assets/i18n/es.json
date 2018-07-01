@@ -2,9 +2,11 @@
   "ITEMS": {
     "Title": "Artículos",
     "No_match": "No se encontró el artículo",
-    "Item_name": "Nombre del artículo"
+    "Item_name": "Nombre del artículo",
+    "Only_recipes": "Solo recetas"
   },
   "Download_desktop_app": "Descargar aplicación para PC",
+  "Delete": "Borrar",
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
@@ -57,12 +59,17 @@
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
-    "User_id": "ID de usuario"
+    "User_id": "ID de usuario",
+    "Open_url": "Abrir enlace de Teamcraft",
+    "Open_url_placeholder": "Enlace de Teamcraft"
   },
   "ALARMS": {
     "No_alarm": "No hay alarmas activas",
     "Add_alarm": "Agregar alarma",
-    "Alarm_created": "Alarma creada"
+    "Alarm_created": "Alarma creada",
+    "Alarm_already_created": "La alarma ya existe",
+    "Custom_sound": "Sonido de alarma personalizado",
+    "New_group": "Nuevo grupo de alarmas"
   },
   "Item_name": "Nombre del artículo",
   "No_items_found": "Artículo no encontrado",
@@ -78,15 +85,12 @@
   "New_List": "Nueva Lista",
   "Please_enter_a_name": "Por favor introduzca un nombre",
   "Lists": "Listas",
-
   "items": "artículos",
   "Confirm": "Confirmar",
   "Cancel": "Cancelar",
   "Edit": "Editar",
   "Add_a_list": "Agregar a lista",
   "List_name": "Nombre de la lista",
-
-
   "Reset_progression": "Reiniciar progreso",
   "Gardening": "Jardinería",
   "Hunting": "Caza",
@@ -142,6 +146,8 @@
   "Server_name": "Nombre del Servidor",
   "Add_all_recipes": "Agregar resultados a la lista",
   "Character_not_found": "Personaje no encontrado",
+  "Use_lodestoneId": "Usar ID de lodestone",
+  "LodestoneId": "ID de Lodestone",
   "List_forked": "Lista copiada a su cuenta",
   "List_fork": "Copie esta lista a su cuenta",
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
@@ -193,7 +199,8 @@
     "compact_lists": "desplegar lista compacta",
     "theme": "Tema",
     "ffxivcrafting_display": "Cantidades estilo FFXIVcrafting.com",
-    "Simulator_link_base": "Vínculo a simulador"
+    "Simulator_link_base": "Vínculo a simulador",
+    "Always_on_top": "Siempre arriba"
   },
   "PROFILE": {
     "Masterbooks": "Libros Maestros",
@@ -208,6 +215,12 @@
     "Patreon_email": "Correo electrónico de Patreon",
     "Contacts": "Contactos",
     "New_contact": "ID del usuario a agregar",
+    "Save_for_all": "Guardar para todos",
+    "User_not_verified": "Usuario no verificado, haga clic para verificar",
+    "VERIFICATION": {
+      "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" en la biografia de su perfil de Lodestone y haga clic en el botón de abajo.",
+      "Validate": "Validar"
+    },
     "HELP": {
       "Welcome": "Bienvenido a la página de perfil, aquí es donde puede ver y editar su perfil.",
       "Edit": "Apretar el botón de editar le permite editar el personaje vinculado a su cuenta de FFXIV Teamcraft.",
@@ -218,6 +231,7 @@
     "Regenerate_all": "Regenerar todas las listas",
     "Merge_lists": "Mezclar listas",
     "Shared_lists": "Listas compartidas con usted",
+    "Add_selection": "Agregar selección a la lista",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
@@ -234,9 +248,23 @@
   },
   "LIST": {
     "Copied_x_times": "Copiado {{count}} veces",
-    "Enable_crystals_tracking": "Habilitar rastreo de cristales"
+    "Enable_crystals_tracking": "Habilitar rastreo de cristales",
+    "Copy_as_text": "Copiar como texto",
+    "Total_price": "Total de compras (gil y otras monedas)",
+    "BUTTONS": {
+      "Add_link_description": "Crear un vínculo personalizado para esta lista",
+      "Create_template_description": "Crear un vínculo a una plantilla de esta lista, se creará una copia de esta lista para quien acceda a este vínculo",
+      "Copy_template_url_description": "Copiar el vínculo a la plantilla de esta lista, se creará una copia de esta lista para quien acceda a este vínculo",
+      "Share_description": "Copiar el vínculo para compartir al portapapeles",
+      "Open": "Abrir lista",
+      "Open_description": "Accesar a lista",
+      "Delete": "Borrar lista",
+      "Delete_description": "Borra la lista",
+      "Delete_warning": "Borrar una lista no se puede deshacer"
+    }
   },
   "LIST_DETAILS": {
+    "List_finished": "Lista completada",
     "Missing_tags_before_button": "Esta lista se muestra como una lista de la comunidad pero no tiene etiquetas, por favor agregue algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
@@ -401,7 +429,18 @@
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller"
   },
+  "WIKI": {
+    "Title": "Wiki",
+    "Not_found_in_current_lang": "Esta página no se encuentra en su idioma, se mostrará la versión en inglés",
+    "Not_found": "Pagina no encontrada"
+  },
   "SIMULATOR": {
+    "Fixed_notification_number": "Notificación fija",
+    "Starting_echo_number": "# de notificación",
+    "Extra_wait": "Espera extra",
+    "Import_macro": "Importar desde macro",
+    "Ingame_macro": "Macro para el juego",
+    "Min_stats": "Attributos mínimos",
     "Progress": "Progreso",
     "Quality": "Calidad",
     "Step_counter": "Paso",
@@ -428,10 +467,16 @@
     "Rotation_not_found": "Rotación no encontrada",
     "Confirm_delete": "¿Realmente quiere borrar esta rotación?",
     "Toggle_snapshot_mode": "Activar modo pasos",
+    "Open_in_external": "Abrir en el simulador de {{name}}",
+    "Select_job_please": "Favor de seleccionar una profesión",
+    "Rename_rotation": "Renombrar Rotación",
     "Cross_class_setup": "Crear macro para activar habilidades de clase cruzada",
     "Include_sound_end": "Incluir sonido al final de la macro",
     "Step_by_step_report": "Reporte paso a paso",
+    "Save_as_new": "Guardar como (navega a la nueva rotation creada)",
+    "Save_as_new_done": "Usted está ahora en una copia de su rotación",
     "Change_rotation": "Escoger rotación",
+    "New_rotation_folder": "Nueva carpeta",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",
@@ -462,6 +507,10 @@
       "Apply_foods": "Aplicar consumibles",
       "Food": "Escoja una comida",
       "Medicine": "Escoja una medicina",
+      "Action": "Escoja acciones de compañia",
+      "Save_set": "Guardar estos atributos para esta profesión",
+      "Reset_set": "Reiniciar estos atributos",
+      "Save_consumables": "Usar estos consumibles por defecto",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Artesanía",
@@ -498,6 +547,66 @@
       "Access_wiki_title": "Aprenda más",
       "Access_wiki_content": "Navegue a la página de wiki dando clic al vínculo inferior. Esta página tiene documentación de cómo usar el sitio en general, para guiarlo y sacarle el mayor provecho y beneficiarlo lo más posible",
       "Access_wiki_link": "Ir a la página de wiki"
+    }
+  },
+  "PRICING": {
+    "From_vendor": "Precio del vendedor",
+    "Materials_have_cost": "Los materiales para esta elaboración tienen costos > a 0, asegúrese de no estar contandolos doble"
+  },
+  "COMMISSION_BOARD": {
+    "Title": "Tablero de comisiones",
+    "Create_commission": "Crear solicitud de comisión",
+    "Board": "Tablero",
+    "My_requests": "Mis solicitudes",
+    "My_crafts": "Mis comisiones en progreso",
+    "History": "Archivadas",
+    "No_commissions": "No hay comisiones abiertas en tu servidor",
+    "Chat_warning": "Recuerde nunca dar sus credenciales en el chat, nadie debería de preguntarselas. El uso de esta plataforma de chat para RMT (intercambio con dinero real) resultará en la suspención permanenete del sitio y el caso enviado a Square Enix",
+    "Chat_placeholder": "Mandar mensaje nuevo",
+    "Chat_hint": "Tip: puede mandar mensajes usando Ctrl + Enter",
+    "New_commission": "Crear nueva solicitud de comisión",
+    "New_commission_warning": "Crear una comisión desde esta lista la removerá de sus listas (pero no la borrará), no será capaz de agregar más artículos ni cambiar las cantidades en ella.",
+    "Price_hint": "Precio que desea pagar por esta comisión",
+    "Crafted_by": "Elaborado por : ",
+    "Fire": "Despedir",
+    "Confirm_fire": "¿Está seguro que quiere despedir a este usuario de esta comisión?",
+    "Delete_payment": "Borrar pago",
+    "Add_payment": "Agregar pago",
+    "Deposit": "Pagado",
+    "Owing": "Por pagar",
+    "Go_to_chat": "Ir a chat",
+    "Go_to_list": "Ir a lista",
+    "Mark_as_finished": "Archivar comisión",
+    "Candidates": "Candidatos",
+    "No_candidates": "No hay candidatos para esta comisión",
+    "Hire": "Contratar",
+    "Confirm_hire": "¿Está seguro de que quiere contratar a este usuario?",
+    "Apply": "Aplicar para esta comisión",
+    "Contact_buyer": "Contactar al autor",
+    "No_history": "No tiene ninguna comisión archivada",
+    "No_crafts": "No tiene ninguna comisión en progreso",
+    "No_requests": "No tiene ninguna solicitud de comisión",
+    "Rate_user": "Calificación del usuario",
+    "Rating_description": "Por favor tómese un momento para calificar al usuario",
+    "Commissions": "Comisiones",
+    "Confirm_archive": "¿Está seguro? Esto no se puede deshacer.",
+    "Withdraw": "Abandonar la comisión",
+    "Confirm_withdraw": "¿Está seguro que quiere abandonar la comisión? Esto no se puede deshacer.",
+    "New_things_notification": "Hay nuevas cosas que revisar en el tablero de comisiones",
+    "STATUS": {
+      "CREATED": "Abierta",
+      "ACCEPTED": "En Progreso",
+      "DONE": "Archivada"
+    },
+    "TAGS": {
+      "Crafting": "Elaboración",
+      "Gathering": "Recolección",
+      "Hunting": "Caza",
+      "Only_craft": "Materiales incluidos"
+    ,
+    "FILTERS": {
+      "Min_price": "Precio mínimo",
+      "Max_price": "Precio máximo"
     }
   }
 }
