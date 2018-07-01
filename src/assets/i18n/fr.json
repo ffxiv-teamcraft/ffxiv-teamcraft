@@ -606,6 +606,10 @@
       "Gathering": "Récolte",
       "Hunting": "Chasse",
       "Only_craft": "Matériaux inclus"
+    },
+    "FILTERS": {
+      "Min_price": "Prix minimum",
+      "Max_price": "Prix maximum"
     }
   }
 }

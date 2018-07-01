@@ -1,3 +1,33 @@
+<mat-expansion-panel #filtersPanel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{"Filters" | translate}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="filters">
+        <div class="filter-row">
+            <mat-form-field>
+                <input type="number" matInput placeholder="{{'COMMISSION_BOARD.FILTERS.Min_price' | translate}}"
+                       [(ngModel)]="filters.minPrice">
+            </mat-form-field>
+            -
+            <mat-form-field>
+                <input type="number" matInput placeholder="{{'COMMISSION_BOARD.FILTERS.Max_price' | translate}}"
+                       [(ngModel)]="filters.maxPrice">
+            </mat-form-field>
+        </div>
+        <div class="filter-row">
+            <mat-checkbox class="tag-checkbox" [(ngModel)]="filters.onlyCraft">{{'COMMISSION_BOARD.TAGS.Only_craft' | translate}}</mat-checkbox>
+            <mat-checkbox class="tag-checkbox" [(ngModel)]="filters.crafting">{{'COMMISSION_BOARD.TAGS.Crafting' | translate}}</mat-checkbox>
+            <mat-checkbox class="tag-checkbox" [(ngModel)]="filters.gathering">{{'COMMISSION_BOARD.TAGS.Gathering' | translate}}</mat-checkbox>
+            <mat-checkbox class="tag-checkbox" [(ngModel)]="filters.hunting">{{'COMMISSION_BOARD.TAGS.Hunting' | translate}}</mat-checkbox>
+        </div>
+    </div>
+    <mat-action-row>
+        <button mat-raised-button color="accent" (click)="filtersPanel.close();applyFilters()">{{'Apply' | translate}}
+        </button>
+    </mat-action-row>
+</mat-expansion-panel>
 <div *ngIf="commissions$ | async as commissions; else loading">
     <div *ngIf="commissions.length === 0" class="no-commissions">
         {{'COMMISSION_BOARD.No_commissions' | translate}}

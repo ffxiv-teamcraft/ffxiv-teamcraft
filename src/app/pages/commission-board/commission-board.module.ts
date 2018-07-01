@@ -5,6 +5,19 @@ import {RouterModule, Routes} from '@angular/router';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {CoreModule} from '../../core/core.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {MyRequestsComponent} from './my-requests/my-requests.component';
+import {MyCraftsComponent} from './my-crafts/my-crafts.component';
+import {BoardComponent} from './board/board.component';
+import {CommissionCreationPopupComponent} from './commission-creation-popup/commission-creation-popup.component';
+import {CommissionPanelComponent} from './commission-panel/commission-panel.component';
+import {CommissionDetailsComponent} from './commission-details/commission-details.component';
+import {FormsModule} from '@angular/forms';
+import {PipesModule} from '../../pipes/pipes.module';
+import {SettingsModule} from '../settings/settings.module';
+import {TooltipModule} from '../../modules/tooltip/tooltip.module';
+import {CommissionChatComponent} from './commission-chat/commission-chat.component';
+import {RatingPopupComponent} from './rating-popup/rating-popup.component';
+import {HistoryComponent} from './history/history.component';
 import {
     MatBadgeModule,
     MatButtonModule,
@@ -19,21 +32,9 @@ import {
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCheckboxModule
 } from '@angular/material';
-import {MyRequestsComponent} from './my-requests/my-requests.component';
-import {MyCraftsComponent} from './my-crafts/my-crafts.component';
-import {BoardComponent} from './board/board.component';
-import {CommissionCreationPopupComponent} from './commission-creation-popup/commission-creation-popup.component';
-import {CommissionPanelComponent} from './commission-panel/commission-panel.component';
-import {CommissionDetailsComponent} from './commission-details/commission-details.component';
-import {FormsModule} from '@angular/forms';
-import {PipesModule} from '../../pipes/pipes.module';
-import {SettingsModule} from '../settings/settings.module';
-import {TooltipModule} from '../../modules/tooltip/tooltip.module';
-import {CommissionChatComponent} from './commission-chat/commission-chat.component';
-import {RatingPopupComponent} from './rating-popup/rating-popup.component';
-import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
     {
@@ -94,6 +95,7 @@ const routes: Routes = [
         MatMenuModule,
         MatBadgeModule,
         MatProgressBarModule,
+        MatCheckboxModule,
 
         CoreModule,
         PipesModule,
