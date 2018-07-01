@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.0"></a>
+# [4.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.2.3...v4.3.0) (2018-07-01)
+
+
+### Bug Fixes
+
+* fixed an issue with items amount reduction not being propagated ([94ddcd9](https://github.com/Supamiu/ffxiv-teamcraft/commit/94ddcd9))
+
+
+### Features
+
+* add free company crafting buffs ([da77168](https://github.com/Supamiu/ffxiv-teamcraft/commit/da77168)), closes [#425](https://github.com/Supamiu/ffxiv-teamcraft/issues/425)
+* add specialist stat bonus ([50f16da](https://github.com/Supamiu/ffxiv-teamcraft/commit/50f16da))
+* **desktop:** new toggle button in settings to always have Teamcraft on top ([52b3ff2](https://github.com/Supamiu/ffxiv-teamcraft/commit/52b3ff2))
+* **simulator:** add custom delay offset to apply to macro ([496ad73](https://github.com/Supamiu/ffxiv-teamcraft/commit/496ad73)), closes [#428](https://github.com/Supamiu/ffxiv-teamcraft/issues/428)
+* **simulator:** default consumables WIP ([681af62](https://github.com/Supamiu/ffxiv-teamcraft/commit/681af62)), closes [#426](https://github.com/Supamiu/ffxiv-teamcraft/issues/426)
+* filters for commission board ([1995c2d](https://github.com/Supamiu/ffxiv-teamcraft/commit/1995c2d))
+* multiple nodes spawning at the same time pop multiple notifications ([e25235e](https://github.com/Supamiu/ffxiv-teamcraft/commit/e25235e)), closes [#430](https://github.com/Supamiu/ffxiv-teamcraft/issues/430)
+* new commission board feature ([cdbe315](https://github.com/Supamiu/ffxiv-teamcraft/commit/cdbe315))
+* new toggle button to temporarily ignore item in pricing page ([e74767d](https://github.com/Supamiu/ffxiv-teamcraft/commit/e74767d)), closes [#427](https://github.com/Supamiu/ffxiv-teamcraft/issues/427)
+* windows tray notifications for commission board ([e9df686](https://github.com/Supamiu/ffxiv-teamcraft/commit/e9df686))
+
+
+
 <a name="4.2.3"></a>
 ## [4.2.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.2.1...v4.2.3) (2018-06-25)
 
