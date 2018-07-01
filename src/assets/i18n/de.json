@@ -558,6 +558,7 @@
     "Confirm_archive": "Bist du sicher? Das kann nicht rückgängig gemacht werden.",
     "Withdraw": "Aus dem Auftrag zurückziehen",
     "Confirm_withdraw": "Bist du sicher dass du dich aus dem Auftrag zurückziehen möchtest? Dies kann nicht rückgängig gemacht werden.",
+    "New_things_notification":  "Es gibt neue Einträge auf deinem Schwarzen Brett",
     "STATUS": {
       "CREATED": "Offen",
       "ACCEPTED": "Laufend",
@@ -568,6 +569,10 @@
       "Gathering": "Sammlung",
       "Hunting": "Jagd",
       "Only_craft": "Materialien inklusive"
+    },
+    "FILTERS": {
+      "Min_price": "Min. Preis",
+      "Max_price": "Max. Preis"
     }
   }
 }
