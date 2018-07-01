@@ -213,6 +213,10 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                                 return this.commissionService
                                     .getAll(char.server, ref => ref.where('status', '==', CommissionStatus.CREATED))
                                     .pipe(
+                                        first(),
+                                        map(commissions => {
+                                            return commissions.filter(commission => commission.listId === list.$key);
+                                        }),
                                         mergeMap(commissions => {
                                             if (commissions.length > 0) {
                                                 return combineLatest(

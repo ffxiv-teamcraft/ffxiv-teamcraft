@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {Commission} from '../../../model/commission/commission';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {UserService} from '../../../core/database/user.service';
-import {first, map, mergeMap} from 'rxjs/operators';
+import {first, map, mergeMap, tap} from 'rxjs/operators';
 import {ListService} from '../../../core/database/list.service';
 import {PermissionsRegistry} from '../../../core/database/permissions/permissions-registry';
 
@@ -31,7 +31,6 @@ export class CommissionCreationPopupComponent {
                     const commission = new Commission(character.userId, this.list, character.server);
                     commission.price = this.price;
                     commission.onlyNeedsCraft = this.list.onlyNeedsCrafts();
-                    console.log(commission.onlyNeedsCraft);
                     return this.commissionService.add(commission)
                         .pipe(
                             map(res => {
