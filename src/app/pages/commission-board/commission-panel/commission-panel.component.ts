@@ -6,7 +6,7 @@ import {AppUser} from '../../../model/list/app-user';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {filter, map, mergeMap} from 'rxjs/operators';
+import {filter, first, map, mergeMap} from 'rxjs/operators';
 import {ListService} from '../../../core/database/list.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 
@@ -52,7 +52,16 @@ export class CommissionPanelComponent implements OnInit {
             .pipe(
                 filter(res => res),
                 mergeMap(() => {
-                    return this.listService.remove(this.commission.listId);
+                    return this.listService.get(this.commission.listId)
+                        .pipe(
+                            first(),
+                            map(list => {
+                                // Give the list back to the original author.
+                                list.authorId = this.commission.authorId;
+                                return list;
+                            }),
+                            mergeMap(list => this.listService.set(list.$key, list))
+                        );
                 }),
                 mergeMap(() => {
                     return this.commissionService.remove(this.commission.$key, this.commission.server);
