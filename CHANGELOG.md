@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.1"></a>
+## [4.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.0...v4.3.1) (2018-07-01)
+
+
+### Bug Fixes
+
+* fixed a bug making commissions disappear. Needs everybody to restart to be fixed ([45f2974](https://github.com/Supamiu/ffxiv-teamcraft/commit/45f2974))
+
+
+
 <a name="4.3.0"></a>
 # [4.3.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.2.3...v4.3.0) (2018-07-01)
 
