@@ -426,6 +426,7 @@
                             [failed]="!step.success"
                             (onDragStart)="tooltipsDisabled = true"
                             (onDragEnd)="tooltipsDisabled = false"
+                            (onDrop)="tooltipsDisabled = false"
                             [tooltipDisabled]="tooltipsDisabled"></app-action>
                 <div class="end-drag-zone" droppable
                      dragOverClass="drag-over"
