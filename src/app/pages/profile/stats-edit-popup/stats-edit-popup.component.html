@@ -17,7 +17,7 @@
             <input matInput type="number" [(ngModel)]="set.level"
                    [placeholder]="'SIMULATOR.Level' | translate">
         </mat-form-field>
-        <mat-checkbox [(ngModel)]="set.specialist">
+        <mat-checkbox [(ngModel)]="set.specialist" (change)="toggleSpecialist()">
             {{'SIMULATOR.CONFIGURATION.Specialist' | translate}}
         </mat-checkbox>
     </div>

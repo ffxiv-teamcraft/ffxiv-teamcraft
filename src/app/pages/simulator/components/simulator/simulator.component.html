@@ -127,7 +127,7 @@
                         <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.level"
                                [placeholder]="'SIMULATOR.Level' | translate">
                     </mat-form-field>
-                    <mat-checkbox [disabled]="!customSet" [(ngModel)]="selectedSet.specialist">
+                    <mat-checkbox [disabled]="!customSet" [(ngModel)]="selectedSet.specialist" (change)="toggleSpecialist()">
                         {{'SIMULATOR.CONFIGURATION.Specialist' | translate}}
                     </mat-checkbox>
                 </div>

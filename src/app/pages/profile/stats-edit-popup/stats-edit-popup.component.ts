@@ -18,7 +18,7 @@ export class StatsEditPopupComponent {
 
     constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) public data: { set: GearSet, jobs: any[] },
                 private ref: MatDialogRef<StatsEditPopupComponent>) {
-        this.userService.getUserData().pipe(first()).subscribe(data => this.userData = data);
+        this.userService.getUserData().pipe(first()).subscribe(userData => this.userData = userData);
         this.set = this.data.set;
     }
 
@@ -54,4 +54,9 @@ export class StatsEditPopupComponent {
         });
     }
 
+    toggleSpecialist(): void {
+        const bonus = this.set.specialist ? 20 : -20;
+        this.set.craftsmanship += bonus;
+        this.set.control += bonus;
+    }
 }
