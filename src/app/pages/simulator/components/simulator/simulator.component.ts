@@ -547,6 +547,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
         this.actions$.next(actions);
         this.markAsDirty();
+        this.tooltipsDisabled = false;
     }
 
     getBonusValue(bonusType: BonusType, baseValue: number): number {
