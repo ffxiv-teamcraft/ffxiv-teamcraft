@@ -200,7 +200,7 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('run-update', () => {
-    autoUpdater.quitAndInstall();
+    autoUpdater.quitAndInstall(true, true);
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
