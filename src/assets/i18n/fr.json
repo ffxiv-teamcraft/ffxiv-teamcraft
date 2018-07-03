@@ -203,7 +203,10 @@
     "theme": "Thème",
     "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com",
     "Simulator_link_base": "Lien vers le simulateur",
-    "Always_on_top": "Toujours au premier plan"
+    "Always_on_top": "Toujours au premier plan",
+    "Check_for_update": "Chercher une mise à jour",
+    "Downloading_update": "Téléchargement en cours...",
+    "No_update_available": "Pas de mise à jour disponible"
   },
   "PROFILE": {
     "Masterbooks": "Livres",

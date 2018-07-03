@@ -8,6 +8,7 @@ import {
     MatCheckboxModule,
     MatFormFieldModule,
     MatMenuModule,
+    MatProgressBarModule,
     MatSelectModule,
     MatSlideToggleModule
 } from '@angular/material';
@@ -39,6 +40,7 @@ const routing: Routes = [
         MatMenuModule,
         MatButtonModule,
         MatSlideToggleModule,
+        MatProgressBarModule,
     ],
     declarations: [
         SettingsComponent,
