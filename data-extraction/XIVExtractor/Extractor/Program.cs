@@ -10,6 +10,8 @@ namespace Extractor
 {
     class Program
     {
+        static string BASE_ANGULAR_PATH = "..\\..\\..\\..\\..\\";
+
         static void Main(string[] args)
         {
             const string GameDirectory = @"F:\SquareEnix\FINAL FANTASY XIV - A Realm Reborn";
@@ -36,12 +38,12 @@ namespace Extractor
             int[] foods = { 844, 845 };
             JArray foodsArray = ExtractFoodTypes(gameData, foods);
             string foodsJson = Regex.Replace(foodsArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\foods.json", foodsJson);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\foods.json", foodsJson);
 
             int[] medicines = { 846 };
             JArray medicinesArray = ExtractFoodTypes(gameData, medicines);
             string medicinesJson = Regex.Replace(medicinesArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\medicines.json", medicinesJson);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\medicines.json", medicinesJson);
         }
 
         static JArray ExtractFoodTypes(XivCollection gameData, int[] types)
@@ -110,7 +112,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\action-icons.json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\action-icons.json", json);
         }
 
         public static int GetIconId(SaintCoinach.Imaging.ImageFile icon)
@@ -120,7 +122,7 @@ namespace Extractor
 
         static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)
         {
-            JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\..\xivdb-mapper\output\aetherytes.json"));
+            JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\xivdb-mapper\output\aetherytes.json"));
             JArray res = new JArray();
             var sheet = realm.GameData.GetSheet("Aetheryte");
             foreach (var row in aetherytes)
@@ -134,7 +136,7 @@ namespace Extractor
 
         static void ExtractNodesPosition(IEnumerable<GatheringPoint> rows)
         {
-            JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\..\xivdb-mapper\output\nodes-position.json"));
+            JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivdb-mapper\output\nodes-position.json"));
             JObject res = new JObject();
             foreach (var row in rows)
             {
@@ -157,7 +159,7 @@ namespace Extractor
                     res.Add(row.Base.Key.ToString(), node);
                 }
             }
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\node-positions.json", res.ToString());
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\node-positions.json", res.ToString());
         }
 
         static void ExtractItemNames(Localize localize, ARealmReversed realm)
@@ -182,7 +184,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\items.json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\items.json", json);
         }
 
         static void ExtractMobNames(Localize localize, ARealmReversed realm)
@@ -198,7 +200,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\mobs.json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\mobs.json", json);
         }
 
         static void ExtractVentureNames(Localize localize, ARealmReversed realm)
@@ -229,7 +231,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\ventures.json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\ventures.json", json);
 
         }
 
@@ -245,7 +247,7 @@ namespace Extractor
                 }
             }
             string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\..\\..\\..\\src\\app\\core\\data\\sources\\" + fileName + ".json", json);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\" + fileName + ".json", json);
         }
 
     }

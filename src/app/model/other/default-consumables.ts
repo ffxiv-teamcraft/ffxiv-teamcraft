@@ -16,6 +16,6 @@ export class DefaultConsumables {
     public constructor(food: Consumable, medicine: Consumable, freeCompanyActions: FreeCompanyAction[]) {
         this.food = food;
         this.medicine = medicine;
-        this.freeCompanyActions = freeCompanyActions;
+        this.freeCompanyActions = freeCompanyActions || [];
     }
 }

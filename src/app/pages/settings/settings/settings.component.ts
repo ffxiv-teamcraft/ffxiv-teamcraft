@@ -30,6 +30,17 @@ export class SettingsComponent {
 
     alwaysOnTop = false;
 
+    checkingForUpdate = false;
+
+    updateAvailable: boolean;
+
+    downloadProgress: any = {
+        bytesPerSecond: 0,
+        percent: 0,
+        total: 0,
+        transferred: 0
+    };
+
     constructor(public settings: SettingsService,
                 private translate: TranslateService,
                 private ipc: IpcService,
@@ -42,10 +53,27 @@ export class SettingsComponent {
             this.alwaysOnTop = value;
         });
         this.ipc.send('always-on-top:get');
+
+        this.ipc.on('checking-for-update', () => {
+            this.checkingForUpdate = true;
+        });
+
+        this.ipc.on('update-available', (event, available: boolean) => {
+            this.checkingForUpdate = false;
+            this.updateAvailable = available;
+        });
+
+        this.ipc.on('download-progress', (event, progress: any) => {
+            this.downloadProgress = progress;
+        });
     }
 
     alwaysOnTopChange(): void {
         this.ipc.send('always-on-top', this.alwaysOnTop);
+    }
+
+    checkForUpdate(): void {
+        this.ipc.send('update:check');
     }
 
     use(lang: string): void {

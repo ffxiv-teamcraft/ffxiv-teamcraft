@@ -192,7 +192,10 @@
     "compact_lists": "Kompaktlisten-Ansicht",
     "theme": "Design",
     "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge",
-    "Simulator_link_base": "Link zum Simulator"
+    "Simulator_link_base": "Link zum Simulator",
+    "Check_for_update": "Neues Update verfügbar?",
+    "Downloading_update": "Lade Update herunter",
+    "No_update_available": "Kein Update verfügbar"
   },
   "PROFILE": {
     "Masterbooks": "Meisterbücher",

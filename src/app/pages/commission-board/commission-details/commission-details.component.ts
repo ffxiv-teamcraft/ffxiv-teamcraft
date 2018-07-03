@@ -1,13 +1,12 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Commission} from '../../../model/commission/commission';
-import {Observable} from 'rxjs/Observable';
 import {CommissionService} from '../../../core/database/commission/commission.service';
-import {catchError, filter, first, map, mergeMap, shareReplay} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay, takeUntil} from 'rxjs/operators';
 import {UserService} from '../../../core/database/user.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 import {AppUser} from '../../../model/list/app-user';
-import {combineLatest, of} from 'rxjs';
+import {combineLatest, Observable, of, Subject} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {ListService} from '../../../core/database/list.service';
@@ -20,7 +19,7 @@ import {RatingPopupComponent} from '../rating-popup/rating-popup.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
-export class CommissionDetailsComponent implements OnInit {
+export class CommissionDetailsComponent implements OnInit, OnDestroy {
 
     public commission$: Observable<Commission>;
 
@@ -33,6 +32,8 @@ export class CommissionDetailsComponent implements OnInit {
     editPrice = false;
 
     payment: number;
+
+    private onDestroy$: Subject<void> = new Subject<void>();
 
     constructor(private activeRoute: ActivatedRoute, private commissionService: CommissionService, private userService: UserService,
                 private dialog: MatDialog, private listService: ListService) {
@@ -287,11 +288,11 @@ export class CommissionDetailsComponent implements OnInit {
         this.removeApplicationNewThing();
         combineLatest(this.commission$, this.user$)
             .pipe(
+                takeUntil(this.onDestroy$),
                 filter(data => {
                     return data[0].status === CommissionStatus.DONE && data[0].ratedBy[data[1].$key] === undefined
                         && (data[0].authorId === data[1].$key || data[0].crafterId === data[1].$key);
                 }),
-                first(),
                 mergeMap(data => {
                     return this.getCharacter(data[0].crafterId)
                         .pipe(
@@ -314,6 +315,10 @@ export class CommissionDetailsComponent implements OnInit {
             )
             .subscribe(() => {
             })
+    }
+
+    ngOnDestroy(): void {
+        this.onDestroy$.next(null);
     }
 
 }

@@ -16,11 +16,11 @@ export class UserVerificationPopupComponent {
     }
 
     public check(): void {
-        this.userService.getCharacter()
+        this.userService.getCharacterWithoutCache()
             .pipe(
                 first(),
                 mergeMap((character) => {
-                    this.user.verified = character.biography.indexOf(character.user.$key) > -1;
+                    this.user.verified = character.biography.indexOf(this.user.$key) > -1;
                     return this.userService.set(this.user.$key, this.user);
                 })
             )

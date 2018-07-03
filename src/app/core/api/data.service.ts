@@ -30,7 +30,7 @@ export class DataService {
     ];
 
     private garlandUrl = 'https://www.garlandtools.org/db/doc';
-    private garlandtoolsVersion = 2;
+    private garlandtoolsVersion = 3;
     private garlandApiUrl = 'https://www.garlandtools.org/api';
 
     private characterCache = new Map<number, Observable<any>>();
