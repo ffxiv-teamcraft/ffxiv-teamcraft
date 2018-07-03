@@ -12,26 +12,29 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
     }
 
     protected canExtract(item: Item): boolean {
-        return item.tradeSources !== undefined;
+        return item.tradeShops !== undefined;
     }
 
     protected doExtract(item: Item, itemData: ItemData): TradeSource[] {
         const tradeSources: TradeSource [] = [];
-        for (const ts of Object.keys(item.tradeSources)) {
-            const partial = itemData.getPartial(ts, 'npc');
+        for (const ts of item.tradeShops) {
             const tradeSource: TradeSource = {
                 npcId: +ts,
-                trades: []
+                trades: [],
+                shopName: ts.shop
             };
-            if (partial.c !== undefined && partial.i !== undefined && partial.a !== undefined) {
-                tradeSource.coords = {
-                    x: partial.c[0],
-                    y: partial.c[1]
-                };
-                tradeSource.zoneId = partial.i;
-                tradeSource.areaId = partial.a;
+            for (const npcId of ts.npcs) {
+                const partial = itemData.getPartial(npcId.toString(), 'npc');
+                if (partial.c !== undefined && partial.i !== undefined && partial.a !== undefined) {
+                    tradeSource.coords = {
+                        x: partial.c[0],
+                        y: partial.c[1]
+                    };
+                    tradeSource.zoneId = partial.i;
+                    tradeSource.areaId = partial.a;
+                }
             }
-            for (const row of item.tradeSources[ts]) {
+            for (const row of ts.listings) {
                 const currencyPartial = itemData.getPartial(row.currency[0].id, 'item').obj;
                 const trade: Trade = {
                     itemIcon: item.icon,

@@ -1,6 +1,5 @@
 import {Craft} from './craft';
 import {I18nData} from '../list/i18n-data';
-import {TradeData} from './trade-data';
 import {I18nDataRow} from '../list/i18n-data-row';
 import {DeserializeFieldName} from '@kaiu/serializer';
 import {Fish} from './fish';
@@ -27,7 +26,7 @@ export class Item implements I18nData {
     tradeable?: number;
     craft?: Craft[];
     vendors?: number[];
-    tradeSources?: { [index: number]: TradeData };
+    tradeShops?: any[];
     drops?: number[];
     nodes?: number[];
     ventures?: number[];
