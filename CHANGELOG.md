@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.2"></a>
+## [4.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.1...v4.3.2) (2018-07-03)
+
+
+### Bug Fixes
+
+* fixed a bug making commissions disappear. Needs everybody to restart to be fixed ([aac766d](https://github.com/Supamiu/ffxiv-teamcraft/commit/aac766d))
+* fixed a bug with user validation process ([4dcb005](https://github.com/Supamiu/ffxiv-teamcraft/commit/4dcb005))
+* fixed an issue with precrafts amount update not updating items properly ([d47d44a](https://github.com/Supamiu/ffxiv-teamcraft/commit/d47d44a)), closes [#453](https://github.com/Supamiu/ffxiv-teamcraft/issues/453)
+
+
+### Features
+
+* **desktop:** new manual update check button ([cbbfc16](https://github.com/Supamiu/ffxiv-teamcraft/commit/cbbfc16)), closes [#448](https://github.com/Supamiu/ffxiv-teamcraft/issues/448)
+* added 4.35 recipes and items ([b18454f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b18454f))
+
+
+
 <a name="4.3.1"></a>
 ## [4.3.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.0...v4.3.1) (2018-07-01)
 
