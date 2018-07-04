@@ -3368,7 +3368,15 @@
             <img src="./assets/logo.png" alt="Teamcraft logo">
             <div class="sonar-wave"></div>
         </div>
+        <div class="brought-to-you">
+            Brought to you by <span id="random-patron"></span>
+        </div>
     </div>
+    <script>
+        const patrons = ['Tataru Taru', 'Erys Night'];
+        const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
+        document.getElementById('random-patron').innerText = randomPatron;
+    </script>
 </app-root>
 </body>
 </html>

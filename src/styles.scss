@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
 *::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
     height: 6px;
@@ -197,8 +198,15 @@ mat-form-field:not(.with-infix) {
     width: 100%;
     height: calc(100vh - 64px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    .brought-to-you {
+        padding-top: 40px;
+        font-size: 20px;
+        color: darkgrey;
+        opacity: .7;
+    }
     .sonar-emitter {
         position: relative;
         width: 120px;
