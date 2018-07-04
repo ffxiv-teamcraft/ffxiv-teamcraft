@@ -15,7 +15,7 @@ export class GarlandToolsService {
 
     public preload(): void {
         if (this.gt.jobCategories === undefined) {
-            this.http.get<GarlandToolsData>('https://www.garlandtools.org/db/doc/core/en/2/data.json')
+            this.http.get<GarlandToolsData>('https://www.garlandtools.org/db/doc/core/en/3/data.json')
                 .subscribe(data => this.gt = Object.assign(this.gt, data));
         }
     }

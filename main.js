@@ -3,6 +3,7 @@ const {autoUpdater} = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
+const isDev = require('electron-is-dev');
 
 const electronOauth2 = require('electron-oauth2');
 
@@ -24,6 +25,10 @@ for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--multi' || argv[i] === '-m') {
         options.multi = true;
     }
+}
+
+if (isDev) {
+    autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
 if (!options.multi) {
@@ -132,6 +137,22 @@ app.on('activate', function () {
     }
 });
 
+autoUpdater.on('checking-for-update', () => {
+    win.webContents.send('checking-for-update', true);
+});
+
+autoUpdater.on('download-progress', (progress) => {
+    win.webContents.send('download-progress', progress);
+});
+
+autoUpdater.on('update-available', () => {
+    win.webContents.send('update-available', true);
+});
+
+autoUpdater.on('update-not-available', () => {
+    win.webContents.send('update-available', false);
+});
+
 autoUpdater.on('update-downloaded', () => {
     clearInterval(updateInterval);
     dialog.showMessageBox({
@@ -200,7 +221,7 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('run-update', () => {
-    autoUpdater.quitAndInstall();
+    autoUpdater.quitAndInstall(true, true);
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
@@ -268,4 +289,8 @@ ipcMain.on('fullscreen-toggle', () => {
 
 ipcMain.on('minimize', () => {
     win.minimize();
+});
+
+ipcMain.on('update:check', () => {
+    autoUpdater.checkForUpdates();
 });

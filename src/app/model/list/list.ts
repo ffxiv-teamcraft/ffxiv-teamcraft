@@ -315,8 +315,10 @@ export class List extends DataWithPermissions {
             const previousUsed = item.used;
             // Update used amount
             item.used += amount;
-            // Set amount to the amount of items to add to the total.
-            amount = amount - (item.done - previousUsed);
+            if (item.used > previousUsed && item.used >= Math.max(item.done + amount, item.amount)) {
+                // Set amount to the amount of items to add to the total.
+                amount = amount - (item.done - previousUsed);
+            }
             item.done += amount;
             if (item.used > item.amount) {
                 item.used = item.amount;

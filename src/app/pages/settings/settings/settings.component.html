@@ -44,3 +44,17 @@
     {{'SETTINGS.Always_on_top' | translate}}
 </mat-slide-toggle>
 
+<div class="updater" *ngIf="platform.isDesktop()">
+    <button mat-raised-button (click)="checkForUpdate()" *ngIf="!updateAvailable">{{'SETTINGS.Check_for_update' |
+        translate}}
+    </button>
+    <div *ngIf="updateAvailable === true">
+        {{'SETTINGS.Downloading_update' | translate}}
+        <mat-progress-bar [value]="downloadProgress.percent"></mat-progress-bar>
+        <span>{{downloadProgress.transferred/1000000 | number}}/{{downloadProgress.total/1000000 | number}} - {{downloadProgress.bytesPerSecond/1000000 | number}}MBps</span>
+    </div>
+    <div *ngIf="updateAvailable === false">
+        {{'SETTINGS.No_update_available' | translate}}
+    </div>
+</div>
+

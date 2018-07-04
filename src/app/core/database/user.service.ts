@@ -82,6 +82,15 @@ export class UserService extends FirebaseStorage<AppUser> {
             );
     }
 
+    public getCharacterWithoutCache(): Observable<any> {
+        return this.getUserData()
+            .pipe(
+                mergeMap(user => {
+                    return this.dataService.getCharacter(user.lodestoneId);
+                })
+            );
+    }
+
     /**
      * Returns user data informations.
      * @returns {Observable<AppUser>}

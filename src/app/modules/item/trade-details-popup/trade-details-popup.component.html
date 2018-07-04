@@ -1,7 +1,8 @@
 <h2 mat-dialog-title>{{data.id | itemName | i18n}}</h2>
 <div mat-dialog-content>
     <mat-list *ngFor="let tradeSource of data.tradeSources">
-        <h3 mat-subheader>{{tradeSource.npcId | npcName | i18n}} - {{tradeSource.zoneId | placeName | i18n}}</h3>
+        <h3 mat-subheader>{{tradeSource.npcId | npcName | i18n}} - {{tradeSource.zoneId | placeName | i18n}}
+            ({{tradeSource.shopName}})</h3>
         <mat-list-item *ngFor="let trade of tradeSource.trades">
             <div class="trade-part">
                 <app-item-icon [item]="{icon: trade.currencyIcon, id: trade.currencyId}"></app-item-icon>
