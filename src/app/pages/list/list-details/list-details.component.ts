@@ -364,7 +364,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
+        const doneBefore = data.row.done;
         list.setDone(data.row, data.amount, data.preCraft);
+        list.modificationsHistory.push({
+            amount: data.row.done - doneBefore,
+            isPreCraft: data.preCraft,
+            itemId: data.row.id,
+            userId: this.userData.$key
+        });
         this.listService.set(list.$key, list).pipe(
             map(() => list),
             tap((l: List) => {

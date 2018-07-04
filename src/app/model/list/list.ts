@@ -9,6 +9,7 @@ import {LocalizedDataService} from '../../core/data/localized-data.service';
 import {ResourceComment} from '../../modules/comments/resource-comment';
 import {Craft} from '../garland-tools/craft';
 import {DataWithPermissions} from '../../core/database/permissions/data-with-permissions';
+import {ModificationEntry} from './modification-entry';
 
 declare const ga: Function;
 
@@ -43,6 +44,8 @@ export class List extends DataWithPermissions {
     commissionId?: string;
 
     commissionServer?: string;
+
+    modificationsHistory: ModificationEntry[] = [];
 
     public get isCommissionList(): boolean {
         return this.commissionId !== undefined && this.commissionServer !== undefined;
