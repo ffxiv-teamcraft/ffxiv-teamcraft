@@ -1,7 +1,8 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
-            <span matBadge=""
+            <span class="commission-name"
+                  matBadge=""
                   [matBadgeHidden]="!commission.hasNewThing((user$ | async)?.$key)"
                   matBadgeColor="accent"
                   matBadgeOverlap="false"

@@ -20,3 +20,10 @@ mat-expansion-panel {
     display: flex;
     align-items: center;
 }
+
+.commission-name {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
