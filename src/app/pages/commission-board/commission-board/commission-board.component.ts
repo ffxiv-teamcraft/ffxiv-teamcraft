@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {UserService} from '../../../core/database/user.service';
-import {map, mergeMap, } from 'rxjs/operators';
+import {map, mergeMap} from 'rxjs/operators';
 import {of} from 'rxjs';
+import {CommissionStatus} from '../../../model/commission/commission-status';
 
 @Component({
     selector: 'app-commission-board',
@@ -44,7 +45,8 @@ export class CommissionBoardComponent {
                             .pipe(
                                 map(commissions => {
                                     return commissions.reduce((hasNewThings, commission) => {
-                                        return hasNewThings || commission.hasNewThing(character.userId);
+                                        return hasNewThings ||
+                                            (commission.hasNewThing(character.userId) && commission.status !== CommissionStatus.DONE);
                                     }, false);
                                 })
                             );

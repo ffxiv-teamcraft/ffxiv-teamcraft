@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation
 import {ActivatedRoute} from '@angular/router';
 import {Commission} from '../../../model/commission/commission';
 import {CommissionService} from '../../../core/database/commission/commission.service';
-import {catchError, filter, first, map, mergeMap, shareReplay, takeUntil} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay, take, takeUntil} from 'rxjs/operators';
 import {UserService} from '../../../core/database/user.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 import {AppUser} from '../../../model/list/app-user';
@@ -234,7 +234,7 @@ export class CommissionDetailsComponent implements OnInit, OnDestroy {
     }
 
     public markAsFinished(commission: Commission): void {
-        this.dialog.open(ConfirmationPopupComponent, {data: 'CONFIRMATION_BOARD.Confirm_archive'})
+        this.dialog.open(ConfirmationPopupComponent, {data: 'COMMISSION_BOARD.Confirm_archive'})
             .afterClosed()
             .pipe(
                 filter(res => res),
@@ -293,6 +293,7 @@ export class CommissionDetailsComponent implements OnInit, OnDestroy {
                     return data[0].status === CommissionStatus.DONE && data[0].ratedBy[data[1].$key] === undefined
                         && (data[0].authorId === data[1].$key || data[0].crafterId === data[1].$key);
                 }),
+                take(1),
                 mergeMap(data => {
                     return this.getCharacter(data[0].crafterId)
                         .pipe(
