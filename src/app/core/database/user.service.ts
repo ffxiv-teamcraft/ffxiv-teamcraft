@@ -86,7 +86,7 @@ export class UserService extends FirebaseStorage<AppUser> {
         return this.getUserData()
             .pipe(
                 mergeMap(user => {
-                    return this.dataService.getCharacter(user.lodestoneId);
+                    return this.dataService.getCharacter(user.lodestoneId, true);
                 })
             );
     }
