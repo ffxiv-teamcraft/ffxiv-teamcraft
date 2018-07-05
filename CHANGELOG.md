@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.3"></a>
+## [4.3.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.2...v4.3.3) (2018-07-05)
+
+
+### Bug Fixes
+
+* fixed profile verification process ([2e15a3b](https://github.com/Supamiu/ffxiv-teamcraft/commit/2e15a3b))
+* hidden action tooltips in simulator ([8183ed9](https://github.com/Supamiu/ffxiv-teamcraft/commit/8183ed9)), closes [#450](https://github.com/Supamiu/ffxiv-teamcraft/issues/450)
+* long commission names now handled properly ([dc868d4](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc868d4))
+
+
+### Features
+
+* commission page improvements ([ee81195](https://github.com/Supamiu/ffxiv-teamcraft/commit/ee81195)), closes [#459](https://github.com/Supamiu/ffxiv-teamcraft/issues/459) [#462](https://github.com/Supamiu/ffxiv-teamcraft/issues/462)
+* muted alarms now hidden in alarms sidebar ([c30c074](https://github.com/Supamiu/ffxiv-teamcraft/commit/c30c074)), closes [#452](https://github.com/Supamiu/ffxiv-teamcraft/issues/452)
+* new patreon tier implemented: loading message with patron names that have the tier enabled ([a616f40](https://github.com/Supamiu/ffxiv-teamcraft/commit/a616f40))
+
+
+
 <a name="4.3.2"></a>
 ## [4.3.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.1...v4.3.2) (2018-07-03)
 
