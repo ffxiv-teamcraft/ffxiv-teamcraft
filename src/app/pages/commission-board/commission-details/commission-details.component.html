@@ -74,7 +74,8 @@
                     </mat-chip-list>
                     <div class="price" *ngIf="!editPrice">
                         <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
-                        {{commission.price | number}}
+                        <span *ngIf="commission.price > 0">{{commission.price | number}}</span>
+                        <span *ngIf="commission.price <= 0">{{'COMMISSION_BOARD.Negotiable_price' | translate}}</span>
                         <button mat-icon-button
                                 *ngIf="commission.authorId === (user$ | async)?.$key && commission.status === 0"
                                 (click)="editPrice = true">

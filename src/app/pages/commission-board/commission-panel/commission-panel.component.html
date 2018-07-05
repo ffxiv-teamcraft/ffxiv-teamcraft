@@ -31,22 +31,24 @@
                 translate}}
             </mat-chip>
         </mat-chip-list>
-        <div class="price" *ngIf="commission.price > 0">
+        <div class="price">
             <img src="https://secure.xivdb.com/img/game/065000/065002.png" alt="gil icon">
-            {{commission.price | number}}
+            <span *ngIf="commission.price > 0">{{commission.price | number}}</span>
+            <span *ngIf="commission.price <= 0">{{'COMMISSION_BOARD.Negotiable_price' | translate}}</span>
         </div>
         <div class="actions">
             <button mat-icon-button color="warn" (click)="$event.stopPropagation();delete()"
                     *ngIf="commission.status === 0 && commission.authorId === (user$ | async)?.$key">
                 <mat-icon>delete</mat-icon>
             </button>
-            <a mat-icon-button (click)="$event.stopPropagation()"
-               matBadge=""
-               [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key) || !commission.hasNewThing('rate:'+(user$ | async)?.$key)"
-               matBadgeColor="accent"
-               matBadgeSize="small"
-               routerLink="/commission/{{commission.server}}/{{commission.$key}}">
-                <mat-icon>open_in_new</mat-icon>
+            <a mat-icon-button (click)="$event.stopPropagation()">
+                <mat-icon
+                    matBadge=""
+                    [matBadgeHidden]="!commission.hasNewThing('application:'+(user$ | async)?.$key) && !commission.hasNewThing('rate:'+(user$ | async)?.$key)"
+                    matBadgeColor="accent"
+                    matBadgeSize="small"
+                    routerLink="/commission/{{commission.server}}/{{commission.$key}}">open_in_new
+                </mat-icon>
             </a>
         </div>
     </mat-expansion-panel-header>

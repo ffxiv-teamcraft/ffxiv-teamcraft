@@ -200,7 +200,9 @@ export class AppComponent implements OnInit {
                         )
                 }),
                 tap(hasCommissionBadge => {
-                    if (hasCommissionBadge && this.platformService.isDesktop()) {
+                    const lastNewThingNotification = +localStorage.getItem('commission:notification') || 0;
+                    // Notification can't pop more than once per 5 minutes.
+                    if (hasCommissionBadge && this.platformService.isDesktop() && Date.now() - lastNewThingNotification > 300000) {
                         this.ipc.send('notification', {
                             title: 'FFXIV Teamcraft',
                             content: this.translate.instant('COMMISSION_BOARD.New_things_notification')
