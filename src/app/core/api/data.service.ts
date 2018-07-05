@@ -218,8 +218,8 @@ export class DataService {
      * @param {number} id
      * @returns {Observable<any>}
      */
-    public getCharacter(id: number): Observable<any> {
-        if (!this.characterCache.get(id)) {
+    public getCharacter(id: number, invalidateCache = false): Observable<any> {
+        if (!this.characterCache.get(id) || invalidateCache) {
             const request = this.http.get<any>(`https://xivsync.com/character/parse/${id}`)
                 .pipe(
                     map(result => result.data),
