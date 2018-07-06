@@ -234,6 +234,7 @@
         <div *ngFor="let displayRow of display; trackBy:displayTrackByFn">
             <app-list-details-panel
                 [user]="userData"
+                [expanded]="!listIsLarge"
                 *ngIf="displayRow.rows.length > 0 || !displayRow.hideIfEmpty"
                 [list]="listData"
                 (update)="update(listData)"

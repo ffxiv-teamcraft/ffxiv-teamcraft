@@ -87,6 +87,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     outdated = false;
 
+    listIsLarge = false;
+
     accordionState: { [index: string]: boolean } = {
         'Crystals': true,
         'Gathering': true,
@@ -117,6 +119,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.listDisplay = this.listData$
             .pipe(
                 filter(data => data !== null),
+                tap(data => {
+                    console.log(data.isLarge());
+                    this.listIsLarge = data.isLarge();
+                }),
                 mergeMap(data => {
                     return this.layoutService.getDisplay(data, this.selectedIndex);
                 })
