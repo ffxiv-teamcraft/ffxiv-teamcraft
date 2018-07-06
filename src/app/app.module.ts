@@ -66,6 +66,7 @@ import {SimulatorModule} from './pages/simulator/simulator.module';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {IS_ELECTRON} from './core/tools/platform.service';
 import {CommissionBoardModule} from './pages/commission-board/commission-board.module';
+import {TeamModule} from './pages/team/team.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -160,6 +161,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         TemplateModule,
         SimulatorModule,
         CommissionBoardModule,
+        TeamModule,
     ],
     bootstrap: [AppComponent]
 })

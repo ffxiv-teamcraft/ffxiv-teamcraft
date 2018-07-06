@@ -101,6 +101,14 @@
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Profile' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/teams" (click)="mobile ? sidenav.close() :  null"
+                               *ngIf="!(authState | async)?.isAnonymous"
+                               matTooltipPosition="right"
+                               matTooltip="{{'TEAMS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>people_outline</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'TEAMS.Title' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="customLinksEnabled"
                                matTooltipPosition="right"
