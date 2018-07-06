@@ -11,6 +11,8 @@ export class ListLayout {
 
     public recipeOrder: LayoutRowOrder = LayoutRowOrder.ASC;
 
+    public recipeZoneBreakdown = false;
+
     constructor(public name: string, rows: LayoutRow[]) {
         this.rows = rows;
     }

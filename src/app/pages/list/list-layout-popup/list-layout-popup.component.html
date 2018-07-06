@@ -72,6 +72,9 @@
                                 <mat-option [value]="1">DESC</mat-option>
                             </mat-select>
                         </mat-form-field>
+                        <mat-checkbox [(ngModel)]="availableLayouts[selectedIndex].recipeZoneBreakdown">
+                            {{"Zone_breakdown" | translate}}
+                        </mat-checkbox>
                     </div>
                 </div>
             </div>

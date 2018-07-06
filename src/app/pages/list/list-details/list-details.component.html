@@ -248,6 +248,7 @@
             [list]="listData"
             (update)="update(listData)"
             (done)="setDone(listData, $event)"
+            [zoneBreakdown]="recipesZoneBreakdown | async"
             [data]="recipes | async"
             [recipe]="true"
             [title]="'Items'| translate"></app-list-details-panel>

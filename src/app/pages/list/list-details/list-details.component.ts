@@ -65,6 +65,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     recipes: Observable<ListRow[]>;
 
+    recipesZoneBreakdown: Observable<boolean>;
+
     user: User;
 
     userData: AppUser;
@@ -125,6 +127,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 mergeMap(data => {
                     return this.layoutService.getRecipes(data, this.selectedIndex);
                 })
+            );
+
+        this.recipesZoneBreakdown = this.layoutService.getLayout(this.selectedIndex)
+            .pipe(
+                filter(data => data !== null),
+                map(layout => layout.recipeZoneBreakdown)
             );
     }
 
