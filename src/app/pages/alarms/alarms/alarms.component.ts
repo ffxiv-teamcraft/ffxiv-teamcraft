@@ -15,6 +15,7 @@ import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../core/database/user.service';
 import {AlarmGroupNamePopupComponent} from '../../../modules/common-components/alarm-group-name-popup/alarm-group-name-popup.component';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {AlarmNotePopupComponent} from '../alarm-note-popup/alarm-note-popup.component';
 
 @Component({
     selector: 'app-alarms',
@@ -263,6 +264,10 @@ export class AlarmsComponent {
                 this.alarmService.registerAlarms(...alarms);
                 this.reloader.next(null);
             });
+    }
+
+    editNote(alarm: Alarm): void {
+        this.dialog.open(AlarmNotePopupComponent, {data: alarm});
     }
 
     showOverlay(): void {

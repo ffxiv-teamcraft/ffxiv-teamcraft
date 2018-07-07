@@ -126,6 +126,13 @@
                         <i matLine>{{alarm.zoneId | placeName | i18n}} </i>
                         <span class="coords" matLine
                               *ngIf="compact">X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
+                        <div class="note-container">
+                            <i matLine>{{alarm.note}}
+                                <button mat-icon-button (click)="editNote(alarm)">
+                                    <mat-icon>comment</mat-icon>
+                                </button>
+                            </i>
+                        </div>
                         <app-map-position [zoneId]="alarm.zoneId"
                                           class="map-marker"
                                           [marker]="{x:alarm.coords[0], y:alarm.coords[1]}"></app-map-position>
@@ -163,7 +170,7 @@
             <span matLine>{{alarm.itemId | itemName | i18n}} <span
                 *ngIf="alarm.slot">({{alarm.slot}})</span></span>
             <i matLine>{{alarm.zoneId | placeName | i18n}} </i>
-            <span class="coords" matLine>X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}</span>
+            <span class="coords" matLine>X: {{alarm.coords[0]}} - Y: {{alarm.coords[1]}}   <i>{{alarm.note}}</i></span>
             <div>
                     <span matLine
                           *ngIf="alarm.aetheryte$">{{(alarm.aetheryte$ | async)?.nameid | placeName | i18n}}</span>

@@ -65,6 +65,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     recipes: Observable<ListRow[]>;
 
+    recipesZoneBreakdown: Observable<boolean>;
+
     user: User;
 
     userData: AppUser;
@@ -84,6 +86,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     clock: Observable<Date>;
 
     outdated = false;
+
+    listIsLarge = false;
 
     accordionState: { [index: string]: boolean } = {
         'Crystals': true,
@@ -115,6 +119,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.listDisplay = this.listData$
             .pipe(
                 filter(data => data !== null),
+                tap(data => {
+                    console.log(data.isLarge());
+                    this.listIsLarge = data.isLarge();
+                }),
                 mergeMap(data => {
                     return this.layoutService.getDisplay(data, this.selectedIndex);
                 })
@@ -125,6 +133,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 mergeMap(data => {
                     return this.layoutService.getRecipes(data, this.selectedIndex);
                 })
+            );
+
+        this.recipesZoneBreakdown = this.layoutService.getLayout(this.selectedIndex)
+            .pipe(
+                filter(data => data !== null),
+                map(layout => layout.recipeZoneBreakdown)
             );
     }
 

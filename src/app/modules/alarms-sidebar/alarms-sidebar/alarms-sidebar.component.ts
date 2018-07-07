@@ -3,7 +3,7 @@ import {AlarmService} from '../../../core/time/alarm.service';
 import {Alarm} from '../../../core/time/alarm';
 import {combineLatest, Observable} from 'rxjs';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {UserService} from '../../../core/database/user.service';
 
 @Component({
@@ -25,13 +25,10 @@ export class AlarmsSidebarComponent implements OnInit {
     }
 
     ngOnInit() {
-        const user$ = this.userService.getUserData();
-
-        const alarmGroups$ = combineLatest(this.etime.getEorzeanTime(), user$)
+        const alarmGroups$ = combineLatest(this.etime.getEorzeanTime(), this.userService.getUserData())
             .pipe(
-                map(data => {
-                    const time = data[0];
-                    const user = data[1];
+                tap(([time, user]) => this.time = time),
+                map(([time, user]) => {
                     const result = user.alarmGroups.map(group => {
                         return {groupName: group.name, enabled: group.enabled, alarms: []};
                     });

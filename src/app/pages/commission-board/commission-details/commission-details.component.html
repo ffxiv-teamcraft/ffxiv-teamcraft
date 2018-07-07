@@ -109,7 +109,7 @@
                         <span matLine>x {{item.amount}}</span>
                     </mat-list-item>
                 </mat-list>
-                <div class="payment-block" *ngIf="commission.status === 1">
+                <div class="payment-block" *ngIf="commission.status >= 1">
                     <div *ngIf="user$ | async as user" class="payment-history">
                         <div *ngIf="user.$key === commission.authorId || user.$key === commission.crafterId">
                             <mat-list dense>

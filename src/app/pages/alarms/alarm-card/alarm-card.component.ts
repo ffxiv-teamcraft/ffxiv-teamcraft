@@ -3,6 +3,8 @@ import {Alarm} from '../../../core/time/alarm';
 import {MapService} from '../../../modules/map/map.service';
 import {MapData} from '../../../modules/map/map-data';
 import {Observable} from 'rxjs';
+import {AlarmNotePopupComponent} from '../alarm-note-popup/alarm-note-popup.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
     selector: 'app-alarm-card',
@@ -39,7 +41,7 @@ export class AlarmCardComponent implements OnInit {
 
     map: Observable<MapData>;
 
-    constructor(private mapService: MapService) {
+    constructor(private mapService: MapService, private dialog: MatDialog) {
     }
 
     deleteAlarm(): void {
@@ -48,6 +50,10 @@ export class AlarmCardComponent implements OnInit {
 
     getClassIcon(): string {
         return AlarmCardComponent.icons[this.alarm.type];
+    }
+
+    editNote(): void {
+        this.dialog.open(AlarmNotePopupComponent, {data: this.alarm});
     }
 
     ngOnInit(): void {
