@@ -120,7 +120,6 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .pipe(
                 filter(data => data !== null),
                 tap(data => {
-                    console.log(data.isLarge());
                     this.listIsLarge = data.isLarge();
                 }),
                 mergeMap(data => {
