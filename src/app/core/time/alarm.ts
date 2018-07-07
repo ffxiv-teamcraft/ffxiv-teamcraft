@@ -21,4 +21,6 @@ export interface Alarm {
     aetheryte$?: Observable<Aetheryte>;
 
     groupName?: string;
+
+    note?: string;
 }

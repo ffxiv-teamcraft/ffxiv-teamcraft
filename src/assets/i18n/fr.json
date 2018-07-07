@@ -172,7 +172,8 @@
   "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
   "ALARM": {
     "Spawned": "{{itemName}} va apparaître !",
-    "See_on_map": "Emplacement"
+    "See_on_map": "Emplacement",
+    "Note": "Note"
   },
   "Pricing_mode": "Calculer les bénéfices",
   "Back_to_list": "Retour à la liste",
