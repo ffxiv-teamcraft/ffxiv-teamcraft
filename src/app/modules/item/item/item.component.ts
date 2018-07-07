@@ -42,6 +42,7 @@ import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
 import {DataService} from '../../../core/api/data.service';
 import {UserService} from '../../../core/database/user.service';
+import {PlatformService} from '../../../core/tools/platform.service';
 import {folklores} from '../../../core/data/sources/folklores';
 import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
 import {CraftedBy} from '../../../model/list/crafted-by';
@@ -275,7 +276,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     folkloreId: number;
 
-    isMobile = this.media.asObservable().pipe(map(mediaChange => mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm'));
+    isMobile = this.media.asObservable().pipe(map(mediaChange =>
+        (mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm') && !this.platformService.isDesktop()
+    ));
 
     public timers: Observable<Timer[]>;
 
@@ -299,6 +302,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private etime: EorzeanTimeService,
                 private dataService: DataService,
                 private userService: UserService,
+                private platformService: PlatformService,
                 public cd: ChangeDetectorRef,
                 private rotationsService: CraftingRotationService) {
         super();

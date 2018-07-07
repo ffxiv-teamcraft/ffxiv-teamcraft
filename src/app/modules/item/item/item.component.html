@@ -332,7 +332,8 @@
 
 <!--Layout for mobile browsers-->
 <ng-template #mobileLayout>
-    <mat-list-item [ngClass]="{'even':even, 'auto-height':true, 'mobile':true}">
+    <mat-list-item [ngClass]="{'even':even, 'auto-height':true, 'mobile':true,
+                   'done-row': item.done >= item.amount, 'craftable-row': canBeCrafted}">
         <div matListAvatar class="icon">
             <a matListAvatar href="{{item.id | itemLink | i18n}}" target="_blank">
                 <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
