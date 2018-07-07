@@ -178,6 +178,12 @@ export class AlarmService {
         this.persistAlarms();
     }
 
+    public setAlarmNote(alarm: Alarm, note: string): void {
+        this.alarms.filter(a => a.itemId === alarm.itemId)
+            .forEach(a => a.note = note);
+        this.persistAlarms();
+    }
+
     /**
      * Plays the alarm (audio + snack).
      * @param {Alarm} alarm

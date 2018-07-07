@@ -169,7 +169,8 @@
   "Email_sent": "An email has been sent with instructions to change your password.",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn !",
-    "See_on_map": "Location"
+    "See_on_map": "Location",
+    "Note": "Note"
   },
   "Pricing_mode": "Pricing mode",
   "Back_to_list": "Back to list",

@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{'ALARM.Note' | translate}}</h2>
+<div>
+    <form (submit)="submit()">
+        <mat-form-field>
+            <input type="text" matInput [(ngModel)]="alarm.note" name="note">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="submit()">{{'Ok' | translate}}</button>
+    <button mat-button color="warn" mat-dialog-close>{{'Cancel' | translate}}</button>
+</div>

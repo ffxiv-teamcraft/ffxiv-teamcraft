@@ -25,6 +25,7 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {ListModule} from '../list/list.module';
 import {MapModule} from '../../modules/map/map.module';
 import {NgDragDropModule} from 'ng-drag-drop';
+import { AlarmNotePopupComponent } from './alarm-note-popup/alarm-note-popup.component';
 
 const routes: Routes = [{
     path: 'alarms',
@@ -64,10 +65,12 @@ const routes: Routes = [{
     declarations: [
         AlarmsComponent,
         AlarmCardComponent,
-        AddAlarmPopupComponent
+        AddAlarmPopupComponent,
+        AlarmNotePopupComponent
     ],
     entryComponents: [
-        AddAlarmPopupComponent
+        AddAlarmPopupComponent,
+        AlarmNotePopupComponent
     ]
 })
 export class AlarmsModule {

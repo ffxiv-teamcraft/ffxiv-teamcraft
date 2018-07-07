@@ -13,6 +13,11 @@
     <mat-card-content>
         <p>{{timer}}</p>
     </mat-card-content>
+    <i matLine>{{alarm.note}}
+        <button mat-icon-button (click)="editNote()">
+            <mat-icon>comment</mat-icon>
+        </button>
+    </i>
     <mat-card-actions>
         <button mat-button (click)="deleteAlarm()" color="warn">
             <mat-icon>delete</mat-icon>

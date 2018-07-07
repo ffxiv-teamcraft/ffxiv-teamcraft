@@ -15,6 +15,10 @@ mat-panel-title {
     }
 }
 
+.note-container {
+    display: flex;
+}
+
 .drag-hint-border {
     border: 2px dashed;
 }
@@ -60,7 +64,7 @@ mat-expansion-panel.disabled {
 
 .map-marker {
     align-self: center;
-    width: 150px;
+    width: 175px;
 }
 
 .grid {
