@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.4"></a>
+## [4.3.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.3...v4.3.4) (2018-07-07)
+
+
+### Bug Fixes
+
+* fixed an issue with items amount reduction not being propagated ([822f7f4](https://github.com/Supamiu/ffxiv-teamcraft/commit/822f7f4))
+* fixed an issue with layout panel options not moving properly with arrows ([5d614ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/5d614ee))
+* fixed an issue with layout panel options not moving properly with arrows ([8c36951](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c36951))
+* fixed profile verification process ([f842631](https://github.com/Supamiu/ffxiv-teamcraft/commit/f842631))
+* fixed the alarms sidebar timer not ticking properly ([9ffd889](https://github.com/Supamiu/ffxiv-teamcraft/commit/9ffd889))
+* hidden action tooltips in simulator ([b40a034](https://github.com/Supamiu/ffxiv-teamcraft/commit/b40a034)), closes [#450](https://github.com/Supamiu/ffxiv-teamcraft/issues/450)
+* long commission names now handled properly ([697902a](https://github.com/Supamiu/ffxiv-teamcraft/commit/697902a))
+
+
+### Features
+
+* new patreon tier implemented: loading message with patron names that have the tier enabled ([73c9792](https://github.com/Supamiu/ffxiv-teamcraft/commit/73c9792))
+* **desktop:** new toggle button in settings to always have Teamcraft on top ([95e1022](https://github.com/Supamiu/ffxiv-teamcraft/commit/95e1022))
+* **simulator:** add custom delay offset to apply to macro ([a765736](https://github.com/Supamiu/ffxiv-teamcraft/commit/a765736)), closes [#428](https://github.com/Supamiu/ffxiv-teamcraft/issues/428)
+* better performances with lazy loading panels for lists ([2db9cec](https://github.com/Supamiu/ffxiv-teamcraft/commit/2db9cec))
+* commission page improvements ([3149eb5](https://github.com/Supamiu/ffxiv-teamcraft/commit/3149eb5)), closes [#459](https://github.com/Supamiu/ffxiv-teamcraft/issues/459) [#462](https://github.com/Supamiu/ffxiv-teamcraft/issues/462)
+* filters for commission board ([dc0f9d9](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc0f9d9))
+* gil transaction log now shown on archived commissions ([8799e02](https://github.com/Supamiu/ffxiv-teamcraft/commit/8799e02)), closes [#469](https://github.com/Supamiu/ffxiv-teamcraft/issues/469)
+* multiple nodes spawning at the same time pop multiple notifications ([434d9a5](https://github.com/Supamiu/ffxiv-teamcraft/commit/434d9a5)), closes [#430](https://github.com/Supamiu/ffxiv-teamcraft/issues/430)
+* muted alarms now hidden in alarms sidebar ([7e1aac7](https://github.com/Supamiu/ffxiv-teamcraft/commit/7e1aac7)), closes [#452](https://github.com/Supamiu/ffxiv-teamcraft/issues/452)
+* windows tray notifications for commission board ([dcae688](https://github.com/Supamiu/ffxiv-teamcraft/commit/dcae688))
+* you can now add notes to your alarms ([92b4f07](https://github.com/Supamiu/ffxiv-teamcraft/commit/92b4f07)), closes [#431](https://github.com/Supamiu/ffxiv-teamcraft/issues/431)
+
+
+
 <a name="4.3.3"></a>
 ## [4.3.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.2...v4.3.3) (2018-07-05)
 
