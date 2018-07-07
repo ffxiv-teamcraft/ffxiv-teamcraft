@@ -232,6 +232,14 @@ ipcMain.on('always-on-top:get', (event) => {
     event.sender.send('always-on-top:value', win.alwaysOnTop);
 });
 
+ipcMain.on('always-on-top', (event, onTop) => {
+    win.setAlwaysOnTop(onTop, 'floating');
+});
+
+ipcMain.on('always-on-top:get', (event) => {
+    event.sender.send('always-on-top:value', win.alwaysOnTop);
+});
+
 ipcMain.on('overlay', (event, url) => {
     let opts = {
         show: false,

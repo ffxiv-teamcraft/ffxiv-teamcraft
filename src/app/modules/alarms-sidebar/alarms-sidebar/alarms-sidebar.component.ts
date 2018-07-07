@@ -25,7 +25,6 @@ export class AlarmsSidebarComponent implements OnInit {
     }
 
     ngOnInit() {
-
         const alarmGroups$ = combineLatest(this.etime.getEorzeanTime(), this.userService.getUserData())
             .pipe(
                 tap(([time, user]) => this.time = time),
