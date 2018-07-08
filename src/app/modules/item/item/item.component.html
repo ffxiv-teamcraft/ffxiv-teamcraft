@@ -345,6 +345,9 @@
                   matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
                   mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
                   (cbOnSuccess)="afterNameCopy(item.id)">{{item.id | itemName | i18n}}</span>
+            <img src="./assets/icons/HQ.png" alt=""
+                 matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
+                 matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
             <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
                                  [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
             <mat-icon *ngIf="!hasBook" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
