@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.5"></a>
+## [4.3.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.4...v4.3.5) (2018-07-08)
+
+
+### Bug Fixes
+
+* HQ icon now appears properly for items required in end crafts on mobile size ([fd67088](https://github.com/Supamiu/ffxiv-teamcraft/commit/fd67088))
+* layout index changes now save properly ([395d9f3](https://github.com/Supamiu/ffxiv-teamcraft/commit/395d9f3))
+* List UI style problems on small screens ([58805c4](https://github.com/Supamiu/ffxiv-teamcraft/commit/58805c4)), closes [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473) [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473)
+
+
+
 <a name="4.3.4"></a>
 ## [4.3.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.3...v4.3.4) (2018-07-07)
 
