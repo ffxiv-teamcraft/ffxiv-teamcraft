@@ -58,6 +58,7 @@ export class ListLayoutPopupComponent {
     updateIndex(index: number, modifier: -1 | 1): void {
         this.availableLayouts[this.selectedIndex].rows.splice(index + modifier, 0,
             this.availableLayouts[this.selectedIndex].rows.splice(index, 1)[0]);
+        this.availableLayouts[this.selectedIndex].rows[index + modifier].index = index + modifier;
     }
 
     deleteRow(row: LayoutRow): void {
