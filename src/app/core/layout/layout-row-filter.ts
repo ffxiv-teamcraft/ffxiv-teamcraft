@@ -27,7 +27,7 @@ export class LayoutRowFilter {
             for (const tokenId of [15858, 15857]) {
                 if (row.tradeSources
                     .find(source => source.trades
-                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                        .find(trade => +trade.currencyId === tokenId) !== undefined) !== undefined) {
                     return true;
                 }
             }
@@ -52,7 +52,7 @@ export class LayoutRowFilter {
             for (const tokenId of tomeIds) {
                 if (row.tradeSources
                     .find(source => source.trades
-                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                        .find(trade => +trade.currencyId === tokenId) !== undefined) !== undefined) {
                     return true;
                 }
             }
@@ -72,7 +72,7 @@ export class LayoutRowFilter {
             for (const tokenId of scriptIds) {
                 if (row.tradeSources
                     .find(source => source.trades
-                        .find(trade => trade.currencyId === tokenId) !== undefined) !== undefined) {
+                        .find(trade => +trade.currencyId === tokenId) !== undefined) !== undefined) {
                     return true;
                 }
             }
