@@ -97,12 +97,13 @@ export class CommissionPanelComponent implements OnInit {
             mergeMap(user => this.listService.getUserLists(user.$key)
                 .pipe(
                     map(lists => {
-                        // If the user has already made at least 10 commissions with a rating at 3 or more, he can apply to
-                        // a commission while crafting another one.
+                        // If the user has already made at least 10 commissions with a rating at 3 or more,
+                        // he can apply 5 commissions at the same time,
+                        // else it's limited to 3.
                         if (user.ratings.length > 10 && user.rating > 3) {
-                            return lists.filter(list => list.isCommissionList).length <= 1;
+                            return lists.filter(list => list.isCommissionList).length <= 5;
                         } else {
-                            return lists.filter(list => list.isCommissionList).length === 0;
+                            return lists.filter(list => list.isCommissionList).length <= 3;
                         }
                     })
                 )
