@@ -51,29 +51,31 @@ export class AlarmsSidebarComponent implements OnInit {
                         }
                     });
                     result.forEach(group => {
-                        group.alarms = group.alarms.sort((a, b) => {
-                            if (this.alarmService.isAlarmSpawned(a, time)) {
-                                return -1;
-                            }
-                            if (this.alarmService.isAlarmSpawned(b, time)) {
-                                return 1;
-                            }
-                            return this.alarmService.getMinutesBefore(time, (a.spawn || 24)) <
-                            this.alarmService.getMinutesBefore(time, (b.spawn || 24)) ? -1 : 1;
-                        });
+                        group.alarms = group.alarms.sort();
                     });
                     return result;
                 })
             );
 
-        this.alarms$ = alarmGroups$.pipe(
-            map(groups => {
-                return groups.reduce((overlayAlarms, currentGroup) => {
-                    if (currentGroup.enabled) {
-                        overlayAlarms.push(...currentGroup.alarms);
-                    }
-                    return overlayAlarms;
-                }, []);
+        this.alarms$ = combineLatest(this.etime.getEorzeanTime(), alarmGroups$).pipe(
+            map(([time, groups]) => {
+                return groups
+                    .reduce((overlayAlarms, currentGroup) => {
+                        if (currentGroup.enabled) {
+                            overlayAlarms.push(...currentGroup.alarms);
+                        }
+                        return overlayAlarms;
+                    }, [])
+                    .sort((a, b) => {
+                        if (this.alarmService.isAlarmSpawned(a, time)) {
+                            return -1;
+                        }
+                        if (this.alarmService.isAlarmSpawned(b, time)) {
+                            return 1;
+                        }
+                        return this.alarmService.getMinutesBefore(time, (a.spawn || 24)) <
+                        this.alarmService.getMinutesBefore(time, (b.spawn || 24)) ? -1 : 1;
+                    });
             })
         );
     }
