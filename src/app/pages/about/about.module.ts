@@ -6,7 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
-        path: 'about',
+        path: '',
         component: AboutComponent
     }
 ];

@@ -9,7 +9,7 @@ import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
     {
-        path: 'macro-translation',
+        path: '',
         component: MacroTranslationComponent,
         canActivate: [MaintenanceGuard]
     },

@@ -5,10 +5,12 @@ import {CoreModule} from '../../core/core.module';
 import {RouterModule, Routes} from '@angular/router';
 import {AlarmCardComponent} from './alarm-card/alarm-card.component';
 import {
-    MatButtonModule, MatButtonToggleModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
     MatCheckboxModule,
-    MatDialogModule, MatExpansionModule,
+    MatDialogModule,
+    MatExpansionModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,
@@ -25,10 +27,10 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {ListModule} from '../list/list.module';
 import {MapModule} from '../../modules/map/map.module';
 import {NgDragDropModule} from 'ng-drag-drop';
-import { AlarmNotePopupComponent } from './alarm-note-popup/alarm-note-popup.component';
+import {AlarmNotePopupComponent} from './alarm-note-popup/alarm-note-popup.component';
 
 const routes: Routes = [{
-    path: 'alarms',
+    path: '',
     component: AlarmsComponent,
     canActivate: [MaintenanceGuard]
 }];
