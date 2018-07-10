@@ -4,6 +4,8 @@ about: Suggest an idea for this project
 
 ---
 
+*please prefix the issue with "feat:", example: "feat: commission board system"*
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
