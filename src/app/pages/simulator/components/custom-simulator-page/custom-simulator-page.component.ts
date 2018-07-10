@@ -77,6 +77,7 @@ export class CustomSimulatorPageComponent {
             this.selectedFreeCompanyActions = res.rotation.freeCompanyActions;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotation = res.rotation;
+            this.propagateRecipeChanges();
         }, () => this.notFound = true);
     }
 
