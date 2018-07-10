@@ -13,7 +13,8 @@ import {
     MatInputModule,
     MatListModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule, MatRadioModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
     MatSelectModule,
     MatSnackBarModule,
     MatStepperModule,
@@ -33,7 +34,7 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 
 const routes: Routes = [
     {
-        path: 'lists',
+        path: '',
         component: ListsComponent,
         canActivate: [MaintenanceGuard]
     },

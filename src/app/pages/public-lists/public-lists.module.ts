@@ -18,7 +18,7 @@ import {FormsModule} from '@angular/forms';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
-    path: 'public-lists',
+    path: '',
     component: PublicListsComponent,
     canActivate: [MaintenanceGuard]
 }];

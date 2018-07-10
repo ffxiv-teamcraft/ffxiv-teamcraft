@@ -11,8 +11,10 @@ import {
     MatInputModule,
     MatListModule,
     MatMenuModule,
-    MatProgressBarModule, MatProgressSpinnerModule,
-    MatRadioModule, MatTooltipModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatTooltipModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SettingsModule} from '../settings/settings.module';
@@ -21,11 +23,11 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {BulkAdditionPopupComponent} from './bulk-addition-popup/bulk-addition-popup.component';
 import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
-import { RecipesHelpComponent } from './recipes-help/recipes-help.component';
+import {RecipesHelpComponent} from './recipes-help/recipes-help.component';
 
 const routes: Routes = [
     {
-        path: 'recipes',
+        path: '',
         component: RecipesComponent,
         canActivate: [MaintenanceGuard]
     },
