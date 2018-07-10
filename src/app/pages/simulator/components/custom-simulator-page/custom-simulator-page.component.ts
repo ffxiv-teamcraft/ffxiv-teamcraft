@@ -8,6 +8,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';
 import {GearSet} from '../../model/gear-set';
+import {Consumable} from '../../model/consumable';
+import {FreeCompanyAction} from '../../model/free-company-action';
 import {filter, first, map, mergeMap} from 'rxjs/operators';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
 
@@ -33,6 +35,12 @@ export class CustomSimulatorPageComponent {
     public stats: GearSet;
 
     public canSave = false;
+
+    public selectedFood: Consumable;
+
+    public selectedMedicine: Consumable;
+
+    public selectedFreeCompanyActions: FreeCompanyAction[];
 
     public notFound = false;
 
@@ -60,6 +68,9 @@ export class CustomSimulatorPageComponent {
             this.actions = this.registry.deserializeRotation(res.rotation.rotation);
             this.stats = res.rotation.stats;
             this.authorId = res.rotation.authorId;
+            this.selectedFood = res.rotation.consumables.food;
+            this.selectedMedicine = res.rotation.consumables.medicine;
+            this.selectedFreeCompanyActions = res.rotation.freeCompanyActions;
             this.canSave = res.userId === res.rotation.authorId;
             this.rotation = res.rotation;
         }, () => this.notFound = true);
@@ -78,6 +89,8 @@ export class CustomSimulatorPageComponent {
                     result.authorId = rotation.authorId;
                     result.description = '';
                     result.name = rotation.name;
+                    result.consumables = rotation.consumables;
+                    result.freeCompanyActions = rotation.freeCompanyActions;
                     if (result.$key === undefined || !this.canSave) {
                         result.authorId = userId;
                         // If the rotation has no key, it means that it's a new one, so let's create a rotation entry in the database.
