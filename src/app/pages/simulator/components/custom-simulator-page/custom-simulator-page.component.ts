@@ -12,6 +12,9 @@ import {Consumable} from '../../model/consumable';
 import {FreeCompanyAction} from '../../model/free-company-action';
 import {filter, first, map, mergeMap} from 'rxjs/operators';
 import {CraftingRotation} from '../../../../model/other/crafting-rotation';
+import {MatDialog} from '@angular/material';
+import {RecipeChoicePopupComponent} from '../recipe-choice-popup/recipe-choice-popup.component';
+import {DataService} from '../../../../core/api/data.service';
 
 @Component({
     selector: 'app-custom-simulator-page',
@@ -51,6 +54,7 @@ export class CustomSimulatorPageComponent {
     public rotation: CraftingRotation;
 
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
+                private dialog: MatDialog, private dataService: DataService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
 
         this.userId$ = this.userService.getUserData()
@@ -117,4 +121,18 @@ export class CustomSimulatorPageComponent {
         });
     }
 
+    changeRecipe(): void {
+        this.dialog.open(RecipeChoicePopupComponent).afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res !== null && res !== '')
+            ).subscribe(result => {
+                this.dataService.getItem(result.itemId).subscribe(item => {
+                    const recipe = item.item.craft[0];
+                    this.recipe.rlvl = recipe.rlvl;
+                    this.recipe.progress = recipe.progress;
+                    this.recipe.quality = recipe.quality;
+                    this.recipe.durability = recipe.durability;
+                })
+            });
+    }
 }
