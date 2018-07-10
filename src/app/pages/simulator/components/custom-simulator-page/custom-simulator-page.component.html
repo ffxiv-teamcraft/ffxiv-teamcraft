@@ -22,6 +22,9 @@
                 <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_durability' | translate}}"
                        [(ngModel)]="recipe.durability" (ngModelChange)="propagateRecipeChanges()">
             </mat-form-field>
+            <button mat-mini-fab (click)="changeRecipe()">
+                <mat-icon>swap_horiz</mat-icon>
+            </button>
         </div>
     </mat-expansion-panel>
 
