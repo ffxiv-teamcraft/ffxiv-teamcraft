@@ -3,7 +3,7 @@ import {Craft} from '../../../../model/garland-tools/craft';
 import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
 import {UserService} from '../../../../core/database/user.service';
 import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
-import {combineLatest, Observable} from 'rxjs';
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
 import {CraftingAction} from '../../model/actions/crafting-action';
@@ -27,6 +27,8 @@ export class CustomSimulatorPageComponent {
         progress: 6500,
         ingredients: []
     };
+
+    public recipe$: BehaviorSubject<Partial<Craft>> = new BehaviorSubject<Partial<Craft>>(this.recipe);
 
     public actions: CraftingAction[] = [];
 
@@ -61,7 +63,9 @@ export class CustomSimulatorPageComponent {
                     filter(rotation => rotation !== undefined),
                     mergeMap(id => this.rotationsService.get(id)),
                     map(res => <CustomCraftingRotation>res)
-                ), (userId, rotation) => ({userId: userId, rotation: rotation})
+                )
+        ).pipe(
+            map(([userId, rotation]) => ({userId: userId, rotation: rotation}))
         ).subscribe((res) => {
             this.notFound = false;
             this.recipe = res.rotation.recipe;
@@ -74,6 +78,11 @@ export class CustomSimulatorPageComponent {
             this.canSave = res.userId === res.rotation.authorId;
             this.rotation = res.rotation;
         }, () => this.notFound = true);
+    }
+
+    propagateRecipeChanges(): void {
+        // Emit a clone of the recipe for immutable reasons.
+        this.recipe$.next(JSON.parse(JSON.stringify(this.recipe)));
     }
 
     save(rotation: Partial<CustomCraftingRotation>): void {
