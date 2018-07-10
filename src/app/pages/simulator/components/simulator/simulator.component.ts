@@ -395,7 +395,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 levels: <CrafterLevels>gearsets.map(set => set.level)
             };
         }).subscribe(res => {
-            this.selectedSet = res.set;
+            this.selectedSet = this.selectedSet || res.set;
             this.applyStats(res.set, res.levels, false);
         });
 
@@ -410,9 +410,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 this.userService.getUserData().pipe(
                     tap(user => {
                         const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
-                        this._selectedFood = defaultConsumables.food;
-                        this._selectedMedicine = defaultConsumables.medicine;
-                        this._selectedFreeCompanyActions = defaultConsumables.freeCompanyActions;
+                        this._selectedFood = this._selectedFood || defaultConsumables.food;
+                        this._selectedMedicine = this._selectedMedicine || defaultConsumables.medicine;
+                        this._selectedFreeCompanyActions = this._selectedFreeCompanyActions ||
+                            defaultConsumables.freeCompanyActions;
                     })
                 ).subscribe();
             }
@@ -611,6 +612,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     compareFreeCompanyActionsFn(action1: FreeCompanyAction, action2: FreeCompanyAction): boolean {
         return action1 && action2 && action1.actionId === action2.actionId;
+    }
+
+    compareGearSetsFn(set1: GearSet, set2: GearSet): boolean {
+        return set1 && set2 && set1.jobId === set2.jobId;
     }
 
     applyStats(set: GearSet, levels: CrafterLevels, markDirty = true): void {

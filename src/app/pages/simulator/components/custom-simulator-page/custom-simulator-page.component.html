@@ -26,7 +26,8 @@
     </mat-expansion-panel>
 
     <app-simulator [recipe]="recipe" [inputGearSet]="stats" [actions]="actions"
-                   [customMode]="true" [canSave]="canSave"
+                   [customMode]="true" [canSave]="canSave" [selectedFood]="selectedFood"
+                   [selectedMedicine]="selectedMedicine" [selectedFreeCompanyActions]="selectedFreeCompanyActions"
                    (onsave)="save($event)" [authorId]="authorId" [rotation]="rotation"></app-simulator>
 
 </div>
