@@ -10,7 +10,8 @@ import {
     MatInputModule,
     MatListModule,
     MatSelectModule,
-    MatSnackBarModule, MatTooltipModule
+    MatSnackBarModule,
+    MatTooltipModule
 } from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
@@ -23,7 +24,7 @@ import {ClipboardModule} from 'ngx-clipboard';
 import {TemplateModule} from '../template/template.module';
 
 const routes: Routes = [{
-    path: 'custom-links',
+    path: '',
     component: CustomLinksComponent,
     canActivate: [MaintenanceGuard, PatreonGuard]
 }];

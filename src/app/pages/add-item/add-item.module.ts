@@ -10,9 +10,14 @@ import {FormsModule} from '@angular/forms';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
-    path: 'add-item/:importString',
-    component: AddItemComponent,
-    canActivate: [MaintenanceGuard]
+    path: '',
+    children: [
+        {
+            path: ':importString',
+            component: AddItemComponent,
+            canActivate: [MaintenanceGuard]
+        }
+    ]
 }];
 
 @NgModule({
