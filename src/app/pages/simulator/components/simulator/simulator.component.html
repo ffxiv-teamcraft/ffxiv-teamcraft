@@ -89,8 +89,7 @@
             <div *ngIf="gearsets$ | async as gearsets">
                 <mat-select *ngIf="customMode"
                             [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
-                            [(ngModel)]="selectedSet"
-                            (ngModelChange)="applyStats(selectedSet, levels)">
+                            [(ngModel)]="selectedSet" [compareWith]="compareGearSetsFn">
                     <mat-option *ngFor="let set of gearsets" [value]="set">
                         {{set.jobId | jobName | i18n}} (ilvl {{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
                     </mat-option>
