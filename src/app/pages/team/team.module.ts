@@ -18,6 +18,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {CoreModule} from '../../core/core.module';
 import {NewTeamPopupComponent} from './new-team-popup/new-team-popup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
 
 const routing: Routes = [
     {
@@ -34,6 +35,7 @@ const routing: Routes = [
 
         TranslateModule,
         CoreModule,
+        CommonComponentsModule,
 
         RouterModule.forChild(routing),
 

@@ -6,7 +6,9 @@
                 <mat-panel-title>
                     <span class="team-name">
                         {{team.name}}
-                        <button mat-icon-button><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button (click)="$event.stopPropagation();rename(team)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
                     </span>
                 </mat-panel-title>
                 <button mat-icon-button color="warn" *ngIf="team.leader === user.$key"

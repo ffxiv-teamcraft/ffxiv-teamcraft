@@ -12,6 +12,7 @@ import {UserSelectionPopupComponent} from '../../../modules/common-components/us
 import {faPatreon} from '@fortawesome/fontawesome-free-brands';
 import fontawesome from '@fortawesome/fontawesome';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
+import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
 
 @Component({
     selector: 'app-team',
@@ -32,6 +33,20 @@ export class TeamComponent {
         this.user$ = this.userService.getUserData();
 
         fontawesome.library.add(faPatreon);
+    }
+
+    rename(team: Team): void {
+        this.dialog.open(NameEditPopupComponent, {data: team.name})
+            .afterClosed()
+            .pipe(
+                map(value => {
+                    if (value !== undefined && value.length > 0) {
+                        team.name = value;
+                    }
+                    return team;
+                }),
+                mergeMap(updatedTeam => this.teamService.set(updatedTeam.$key, updatedTeam))
+            ).subscribe();
     }
 
     addUser(team: Team): void {
