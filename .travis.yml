@@ -15,6 +15,9 @@ before_install:
 script:
   - npm test && npm run build:prod
 
+after_success:
+  - npm run codecov
+
 notifications:
   email:
     on_failure: false
