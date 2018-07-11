@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.6"></a>
+## [4.3.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.5...v4.3.6) (2018-07-11)
+
+
+### Bug Fixes
+
+* alarms in sidebar no longer ordered by group ([8047c44](https://github.com/Supamiu/ffxiv-teamcraft/commit/8047c44))
+* custom recipe params now applied as they are changed ([148c144](https://github.com/Supamiu/ffxiv-teamcraft/commit/148c144))
+* fixed an issue preventing gathering location page to create alarms ([f61d510](https://github.com/Supamiu/ffxiv-teamcraft/commit/f61d510)), closes [#478](https://github.com/Supamiu/ffxiv-teamcraft/issues/478)
+* fixed an issue that was applying rating to both users ([3cbe5f9](https://github.com/Supamiu/ffxiv-teamcraft/commit/3cbe5f9))
+* fixed an issue with trade-related filters in layouts ([56eccc8](https://github.com/Supamiu/ffxiv-teamcraft/commit/56eccc8)), closes [#477](https://github.com/Supamiu/ffxiv-teamcraft/issues/477)
+* selected job not saved in custom rotation ([9edb546](https://github.com/Supamiu/ffxiv-teamcraft/commit/9edb546)), closes [#455](https://github.com/Supamiu/ffxiv-teamcraft/issues/455)
+* you can now apply up to 3 commissions at a time without a high rate ([1ef009c](https://github.com/Supamiu/ffxiv-teamcraft/commit/1ef009c))
+
+
+### Features
+
+* recipe selection for custom rotations ([17726f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/17726f5))
+
+
+
 <a name="4.3.5"></a>
 ## [4.3.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.4...v4.3.5) (2018-07-08)
 
