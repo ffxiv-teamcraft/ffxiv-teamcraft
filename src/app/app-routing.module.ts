@@ -63,6 +63,10 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: 'app/pages/settings/settings.module#SettingsModule'
     },
+    {
+        path: 'teams',
+        loadChildren: 'app/pages/team/team.module#TeamModule'
+    },
 ];
 
 @NgModule({
