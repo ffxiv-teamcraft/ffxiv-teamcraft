@@ -2,6 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
 <a name="4.3.6"></a>
 ## [4.3.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.5...v4.3.6) (2018-07-11)
 
@@ -20,8 +21,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * recipe selection for custom rotations ([17726f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/17726f5))
-
-
 
 <a name="4.3.5"></a>
 ## [4.3.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.4...v4.3.5) (2018-07-08)
