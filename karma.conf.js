@@ -14,10 +14,17 @@ module.exports = function (config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },
         port: 9876,
+        browserNoActivityTimeout: 30000,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: process.env.TRAVIS?['Chrome_travis_ci']:['Chrome'],
+        browsers: process.env.TRAVIS?['ChromeHeadlessNoSandbox']:['Chrome'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: {
+                base: 'ChromeHeadless',
+                flags: ['--no-sandbox']
+            }
+        },
         singleRun: false
     });
 };
