@@ -20,6 +20,8 @@ src/environments/version.ts
 *.launch
 .settings/
 *.sublime-workspace
+.ignore
+.vimrc
 
 # IDE - VSCode
 .vs

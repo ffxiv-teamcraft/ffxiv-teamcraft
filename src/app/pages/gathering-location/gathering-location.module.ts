@@ -3,9 +3,11 @@ import {CommonModule} from '@angular/common';
 import {GatheringLocationComponent} from './gathering-location/gathering-location.component';
 import {CoreModule} from '../../core/core.module';
 import {
-    MatButtonModule, MatCardModule,
+    MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
-    MatExpansionModule, MatGridListModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -24,7 +26,7 @@ import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MapModule} from '../../modules/map/map.module';
 
 const routes = [{
-    path: 'gathering-location',
+    path: '',
     component: GatheringLocationComponent,
     guards: [MaintenanceGuard],
 }];

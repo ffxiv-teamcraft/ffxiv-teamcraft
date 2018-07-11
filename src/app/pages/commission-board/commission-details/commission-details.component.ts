@@ -294,8 +294,14 @@ export class CommissionDetailsComponent implements OnInit, OnDestroy {
                         && (data[0].authorId === data[1].$key || data[0].crafterId === data[1].$key);
                 }),
                 take(1),
-                mergeMap(data => {
-                    return this.getCharacter(data[0].crafterId)
+                mergeMap(([commission, user]) => {
+                    let targetUserId: string;
+                    if (user.$key === commission.authorId) {
+                        targetUserId = commission.crafterId;
+                    } else {
+                        targetUserId = commission.authorId;
+                    }
+                    return this.getCharacter(targetUserId)
                         .pipe(
                             first(),
                             mergeMap(character => {
@@ -304,9 +310,8 @@ export class CommissionDetailsComponent implements OnInit, OnDestroy {
                                     .pipe(
                                         filter(res => res !== 'cancel'),
                                         mergeMap(() => {
-                                            const commission = data[0];
-                                            commission.removeNewThing(`rate:${data[1].$key}`);
-                                            commission.ratedBy[data[1].$key] = true;
+                                            commission.removeNewThing(`rate:${user.$key}`);
+                                            commission.ratedBy[user.$key] = true;
                                             return this.commissionService.set(commission.$key, commission);
                                         })
                                     );

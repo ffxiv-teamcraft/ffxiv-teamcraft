@@ -6,10 +6,12 @@ import {ProfileGuard} from './profile.guard';
 import {DatabaseModule} from '../../core/database/database.module';
 import {
     MatButtonModule,
-    MatCardModule, MatCheckboxModule,
+    MatCardModule,
+    MatCheckboxModule,
     MatDialogModule,
     MatGridListModule,
-    MatIconModule, MatInputModule,
+    MatIconModule,
+    MatInputModule,
     MatListModule,
     MatProgressSpinnerModule,
     MatTooltipModule
@@ -26,18 +28,23 @@ import {CommonComponentsModule} from '../../modules/common-components/common-com
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChangeEmailPopupComponent} from './change-email-popup/change-email-popup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { PatreonLinkPopupComponent } from './patreon-link-popup/patreon-link-popup.component';
-import { NicknamePopupComponent } from './nickname-popup/nickname-popup.component';
-import { StatsEditPopupComponent } from './stats-edit-popup/stats-edit-popup.component';
+import {PatreonLinkPopupComponent} from './patreon-link-popup/patreon-link-popup.component';
+import {NicknamePopupComponent} from './nickname-popup/nickname-popup.component';
+import {StatsEditPopupComponent} from './stats-edit-popup/stats-edit-popup.component';
 
 const routes: Routes = [{
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [ProfileGuard, MaintenanceGuard]
-}, {
-    path: 'profile/:id',
-    component: PublicProfileComponent,
-    canActivate: [MaintenanceGuard]
+    path: '',
+    children: [
+        {
+            path: '',
+            component: ProfileComponent,
+            canActivate: [ProfileGuard, MaintenanceGuard]
+        }, {
+            path: 'profile/:id',
+            component: PublicProfileComponent,
+            canActivate: [MaintenanceGuard]
+        }
+    ]
 }];
 
 @NgModule({

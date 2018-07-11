@@ -6,11 +6,15 @@ import {CoreModule} from '../../core/core.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {MatProgressSpinnerModule} from '@angular/material';
 
-const routes: Routes = [{
-    path: 'link/:nickName/:uri',
-    component: LinkComponent,
-    canActivate: [MaintenanceGuard]
-}];
+const routes: Routes = [
+    {
+        path: '', children: [{
+            path: '/:nickName/:uri',
+            component: LinkComponent,
+            canActivate: [MaintenanceGuard]
+        }]
+    }
+];
 
 @NgModule({
     imports: [

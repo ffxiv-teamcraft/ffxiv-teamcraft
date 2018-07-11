@@ -82,26 +82,25 @@ export class GatheringLocationComponent implements OnInit {
     }
 
     createAlarm(nodeInput: any): void {
-        const node = this.bell.getNode(nodeInput.id);
-        const match = node.items.find(item => item.id === +nodeInput.itemId);
-        node.icon = match.icon;
-        node.slot = +match.slot;
+        const nodes = this.bell.getNodesByItemId(nodeInput.itemId);
         const alarms: Alarm[] = [];
-        if (node.time !== undefined) {
-            node.time.forEach(spawn => {
-                alarms.push({
-                    spawn: spawn,
-                    duration: node.uptime / 60,
-                    itemId: nodeInput.itemId,
-                    icon: node.icon,
-                    slot: node.slot,
-                    areaId: node.areaid,
-                    coords: node.coords,
-                    zoneId: node.zoneid,
-                    type: this.alarmService.getType(node),
+        nodes.forEach(node => {
+            if (node.time !== undefined) {
+                node.time.forEach(spawn => {
+                    alarms.push({
+                        spawn: spawn,
+                        duration: node.uptime / 60,
+                        itemId: node.itemId,
+                        icon: node.icon,
+                        slot: node.slot,
+                        areaId: node.areaid,
+                        coords: node.coords,
+                        zoneId: node.zoneid,
+                        type: this.alarmService.getType(node),
+                    });
                 });
-            });
-        }
+            }
+        });
         this.alarmService.registerAlarms(...alarms);
         this.snack.open(this.translator.instant('ALARMS.Alarm_created'), '', {duration: 3000});
     }
