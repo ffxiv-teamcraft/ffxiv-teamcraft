@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.7"></a>
+## [4.3.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.6...v4.3.7) (2018-07-12)
+
+
+### Bug Fixes
+
+* fixed an issue that was preventing public profile from loading ([5154951](https://github.com/Supamiu/ffxiv-teamcraft/commit/5154951))
+* HQ icon now appears properly for items required in end crafts on mobile size ([ff5b697](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff5b697))
+* layout index changes now save properly ([c049f5f](https://github.com/Supamiu/ffxiv-teamcraft/commit/c049f5f))
+* List UI style problems on small screens ([19c1efe](https://github.com/Supamiu/ffxiv-teamcraft/commit/19c1efe)), closes [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473) [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473)
+* **simulator:** fixed default consumables ([99a9c90](https://github.com/Supamiu/ffxiv-teamcraft/commit/99a9c90))
+
+
 
 <a name="4.3.6"></a>
 ## [4.3.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.5...v4.3.6) (2018-07-11)
