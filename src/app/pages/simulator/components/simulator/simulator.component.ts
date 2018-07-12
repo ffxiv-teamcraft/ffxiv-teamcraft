@@ -37,7 +37,7 @@ import {FreeCompanyAction} from 'app/pages/simulator/model/free-company-action';
 import {FreeCompanyActionsService} from 'app/pages/simulator/model/free-company-actions.service';
 import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
 import {AppUser} from 'app/model/list/app-user';
-import {debounceTime, filter, first, map, mergeMap, tap, skip} from 'rxjs/operators';
+import {bufferTime, debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {CraftingJob} from '../../model/crafting-job.enum';
 import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
@@ -401,23 +401,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
         this.actions$
             .pipe(
-                // Skip first emission, as it's the default value.
-                skip(1)
+                bufferTime(1000),
+                first(),
+                map(bufferedValues => bufferedValues[bufferedValues.length - 1]),
+                filter(actions => actions.length === 0),
+                mergeMap(() => {
+                    // Set the default consumables, overridden later if this is an existing rotation
+                    return this.userService.getUserData();
+                })
             )
-            .subscribe(actions => {
-            // Set the default consumables, overridden later if this is an existing rotation
-            if (actions.length === 0) {
-                this.userService.getUserData().pipe(
-                    tap(user => {
-                        const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
-                        this._selectedFood = this._selectedFood || defaultConsumables.food;
-                        this._selectedMedicine = this._selectedMedicine || defaultConsumables.medicine;
-                        this._selectedFreeCompanyActions = this._selectedFreeCompanyActions ||
-                            defaultConsumables.freeCompanyActions;
-                    })
-                ).subscribe();
-            }
-        });
+            .subscribe(user => {
+                const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
+                this._selectedFood = this._selectedFood || defaultConsumables.food;
+                this._selectedMedicine = this._selectedMedicine || defaultConsumables.medicine;
+                this._selectedFreeCompanyActions = this._selectedFreeCompanyActions ||
+                    defaultConsumables.freeCompanyActions;
+            });
     }
 
     importRotation(): void {

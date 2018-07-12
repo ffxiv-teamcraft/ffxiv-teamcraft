@@ -40,7 +40,7 @@ const routes: Routes = [{
             component: ProfileComponent,
             canActivate: [ProfileGuard, MaintenanceGuard]
         }, {
-            path: 'profile/:id',
+            path: ':id',
             component: PublicProfileComponent,
             canActivate: [MaintenanceGuard]
         }
