@@ -315,6 +315,11 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         );
     }
 
+    togglePriority(): void {
+        this.item.priority = !this.item.priority;
+        this.update.emit();
+    }
+
     isDraft(): boolean {
         return this.item.id.toString().indexOf('draft') > -1;
     }
