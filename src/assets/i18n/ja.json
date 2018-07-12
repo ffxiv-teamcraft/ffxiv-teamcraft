@@ -2,8 +2,56 @@
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
   "No": "いいえ",
+  "ABOUT": {
+    "Thanks_title": "ありがとう!",
+    "title": "当サイトについて"
+  },
+  "ANNOUNCEMENT": {
+    "Title": "お知らせ"
+  },
+  "COMMON": {
+    "Reset": "リセット",
+    "Save": "保存",
+    "User_id": "ユーザーID"
+  },
   "Cancel": "キャンセル",
+  "Character_name": "キャラクター名",
+  "Character_not_found": "キャラクター名を見つかりませんでした",
+  "Close": "閉じる",
+  "Crystals": "クリスタル",
+  "Desynth": "分解",
   "Edit": "変更",
+  "Email_enter": "メールアドレッス",
+  "Facebook_login": "Facebookでログイン",
+  "Facebook_register": "Facebookと新規アカウント登録はこちら",
+  "Favorites": "お気に入り",
+  "GATHERING_LOCATIONS": {
+    "Title": "ギャザラーマップ"
+  },
+  "Game_Term/DoH": "クラフター",
+  "Game_Term/DoL": "ギャザラー",
+  "Gardening": "ガーデニング",
+  "Google_login": "Googleアカウントでログイン",
+  "Google_register": "Googleと新規アカウント登録はこちら",
+  "HOME_PAGE": {
+    "FEATURES": {
+      "alarms_title": "ギャザラー時計"
+    },
+  },
+  "Home": "ホーム",
+  "Hunting": "モブハン",
+  "ITEMS": {
+    "Item_name": "アイテム名",
+    "Title": "アイテム"
+  },
+  "Import": "輸入",
+  "Item_name": "アイテム名",
+  "LISTS": {
+    "IMPORT": {
+      "Back": "昨",
+      "Next": "次",
+    },
+  },
   "LIST_TAGS": {
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -46,5 +94,33 @@
     "MIN": "採掘",
     "BOT": "園芸",
     "FSH": "漁師"
-  }
+  },
+  "Level": "レベル",
+  "Lists": "リスト",
+  "LodestoneId": "ロドストID",
+  "Login": "ログイン",
+  "MACRO_TRANSLATION": {
+    "Macro_language": "マクロの言語",
+    "Title": "マクロ翻訳"
+  },
+  "New_List": "新リスト",
+  "Other": "その他",
+  "Password": "パスワード",
+  "Profile": "プロフィール",
+  "Reduction": "精錬",
+  "Registration": "登録",
+  "SETTINGS": {
+    "title": "設定"
+  },
+  "Server_name": "ワールド名",
+  "Share": "シェア",
+  "Tag_filter": "タグ",
+  "Timers": "ギャザラー時計",
+  "Use_lodestoneId": "キャラクターIDで検索",
+  "Vendors": "NPC",
+  "WIKI": {
+    "Title": "ウィキ"
+  },
+  "filters/ilvl": "アイテムLv",
+  "filters/lvl": "装備Lv",
 }
