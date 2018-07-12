@@ -18,6 +18,7 @@ import {TooltipModule} from '../../modules/tooltip/tooltip.module';
 import {CommissionChatComponent} from './commission-chat/commission-chat.component';
 import {RatingPopupComponent} from './rating-popup/rating-popup.component';
 import {HistoryComponent} from './history/history.component';
+import {RatingComponent} from './rating/rating.component';
 import {
     MatBadgeModule,
     MatButtonModule,
@@ -112,7 +113,8 @@ const routes: Routes = [
         CommissionDetailsComponent,
         CommissionChatComponent,
         RatingPopupComponent,
-        HistoryComponent
+        HistoryComponent,
+        RatingComponent
     ],
     entryComponents: [
         CommissionCreationPopupComponent,
