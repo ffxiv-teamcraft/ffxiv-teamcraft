@@ -11,6 +11,9 @@ export class RatingComponent {
     @Input()
     public character: any;
 
+    @Input()
+    public displayAvatar = true;
+
     /**
      * Transforms the rating of a user into an array of length between 1 and 5
      * @param {AppUser} user

@@ -11,7 +11,7 @@
                 <div class="spacer" *ngIf="commission.status <= 0 || commission.crafterId === undefined"></div>
                 <div class="crafter-container" *ngIf="commission.status > 0 && commission.crafterId !== undefined">
                     <div *ngIf="getCharacter(commission.crafterId) | async as crafter" class="crafter">
-                        <div>{{'COMMISSION_BOARD.Crafted_by' | translate}}</div>
+                        <span>{{'COMMISSION_BOARD.Crafted_by' | translate}}</span>
                         <app-rating [character]="crafter"></app-rating>
                         <button mat-icon-button
                                 color="warn"

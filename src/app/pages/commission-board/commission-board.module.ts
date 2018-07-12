@@ -119,6 +119,9 @@ const routes: Routes = [
     entryComponents: [
         CommissionCreationPopupComponent,
         RatingPopupComponent
+    ],
+    exports: [
+        RatingComponent
     ]
 })
 export class CommissionBoardModule {

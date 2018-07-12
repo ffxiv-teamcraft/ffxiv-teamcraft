@@ -31,6 +31,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PatreonLinkPopupComponent} from './patreon-link-popup/patreon-link-popup.component';
 import {NicknamePopupComponent} from './nickname-popup/nickname-popup.component';
 import {StatsEditPopupComponent} from './stats-edit-popup/stats-edit-popup.component';
+import {CommissionBoardModule} from '../commission-board/commission-board.module';
 
 const routes: Routes = [{
     path: '',
@@ -73,6 +74,7 @@ const routes: Routes = [{
         PipesModule,
         CoreModule,
         CommonComponentsModule,
+        CommissionBoardModule
     ],
     declarations: [
         ProfileComponent,
