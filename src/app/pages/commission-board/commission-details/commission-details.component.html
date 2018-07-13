@@ -2,54 +2,17 @@
     <div *ngIf="author$ | async as author; else loader">
         <mat-card>
             <mat-card-header>
-                <img src="{{author.avatar}}" alt="" mat-card-avatar>
                 <mat-card-title>
                     {{commission.name}}
                 </mat-card-title>
                 <mat-card-subtitle>
-                    <div class="buyer-name">
-                        {{author.name}}
-                        <mat-icon *ngIf="author.user.verified">verified_user</mat-icon>
-                        -
-                        <span class="rating">
-                                <span *ngFor="let star of getRating(author.user)">
-                                    <mat-icon *ngIf="star === 1">
-                                        star
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === .5">
-                                        star_half
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === 0">
-                                        star_border
-                                    </mat-icon>
-                                </span>
-                                <span>({{author.user.ratingsLength}})</span>
-                            </span>
-                    </div>
+                    <app-rating [character]="author"></app-rating>
                 </mat-card-subtitle>
                 <div class="spacer" *ngIf="commission.status <= 0 || commission.crafterId === undefined"></div>
                 <div class="crafter-container" *ngIf="commission.status > 0 && commission.crafterId !== undefined">
                     <div *ngIf="getCharacter(commission.crafterId) | async as crafter" class="crafter">
-                        <div>{{'COMMISSION_BOARD.Crafted_by' | translate}}</div>
-                        <img src="{{crafter.avatar}}" alt="" class="crafter-avatar">
-                        <div class="crafter-name">
-                            <span class="name-and-badge">{{crafter.name}}
-                                <mat-icon *ngIf="crafter.user.verified">verified_user</mat-icon></span>
-                            <span class="rating">
-                                <span *ngFor="let star of getRating(crafter.user)">
-                                    <mat-icon *ngIf="star === 1">
-                                        star
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === .5">
-                                        star_half
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === 0">
-                                        star_border
-                                    </mat-icon>
-                                </span>
-                                <span>({{crafter.user.ratingsLength}})</span>
-                            </span>
-                        </div>
+                        <span>{{'COMMISSION_BOARD.Crafted_by' | translate}}</span>
+                        <app-rating [character]="crafter"></app-rating>
                         <button mat-icon-button
                                 color="warn"
                                 *ngIf="(user$ | async)?.$key === commission.authorId && commission.status === 1"
@@ -211,29 +174,10 @@
                 <mat-list dense *ngIf="commission.candidateIds.length > 0">
                     <div *ngFor="let candidateId of commission.candidateIds">
                         <mat-list-item *ngIf="getCharacter(candidateId) | async as candidate">
-                            <img mat-list-avatar src="{{candidate.avatar}}" alt="">
                             <span matLine>
-                                <span class="candidate-name">
-                                    {{candidate.name}}
-                                    <mat-icon *ngIf="candidate.user.verified">verified_user</mat-icon>
-                                </span>
+                                <app-rating [character]="candidate"></app-rating>
                             </span>
-                            <span matLine class="rating">
-                                <span *ngFor="let star of getRating(candidate.user)">
-                                    <mat-icon *ngIf="star === 1">
-                                        star
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === .5">
-                                        star_half
-                                    </mat-icon>
-                                    <mat-icon *ngIf="star === 0">
-                                        star_border
-                                    </mat-icon>
-                                </span>
-                                <span>({{candidate.user.ratingsLength}})</span>
-                            </span>
-                            <a mat-mini-fab routerLink="chat/{{candidateId}}"
-                               *ngIf="commission.authorId === user.$key">
+                            <a mat-mini-fab routerLink="chat/{{candidateId}}" *ngIf="commission.authorId === user.$key">
                                 <mat-icon>forum</mat-icon>
                             </a>
                             <button class="hire-button" mat-raised-button color="primary"

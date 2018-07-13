@@ -16,16 +16,21 @@
                 <mat-card-header>
                     <mat-card-title>
                         <span class="character-name">
-                            {{character.name}}
+                            <div *ngIf="user.ratingsLength > 0; else noRating">
+                                <app-rating [character]="character" [displayAvatar]="false"></app-rating>
+                            </div>
+                            <ng-template #noRating>
+                                {{character.name}}
+                            </ng-template>
                             <mat-icon *ngIf="user.verified">verified_user</mat-icon>
-                            <button mat-icon-button color="warn"
+                            <button mat-icon-button color="accent"
                                     (click)="openVerificationPopup()"
                                     *ngIf="!user.verified"
                                     [matTooltip]="'PROFILE.User_not_verified' | translate"
                                     matTooltipPosition="above">
                                 <mat-icon>warning</mat-icon>
                             </button>
-                            <span *ngIf="user.providerId === 'firebase'"> - {{user.email}}
+                            <span *ngIf="user.providerId === 'firebase'">{{user.email}}
                             <button (click)="changeEmail()" mat-icon-button>
                                 <mat-icon>edit</mat-icon>
                             </button>

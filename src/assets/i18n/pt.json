@@ -341,7 +341,7 @@
   "auth/credential-already-in-use": "Conta já em utilização",
   "auth/email-already-in-use": "Email já em utilização",
   "filters/craft_lvl": "Level da receita",
-  "filters/crafted_by": "Craftado por",
+  "filters/crafted_by": "Craftado por:",
   "filters/ilvl": "Level do item",
   "filters/lvl": "Level requerido",
   "filters/worn_by": "Usado por",

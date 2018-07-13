@@ -536,7 +536,7 @@
     "New_commission": "Neues Inserat erstellen",
     "New_commission_warning": "Aus dieser Liste ein Inserat zu erstellen entfernt diese aus der Listenübersicht (aber löscht sie nicht). Du wirst keine weiteren Items hinzufügen oder deren Mengen ändern können.",
     "Price_hint": "Der Preis, den du für das Inserat zahlen möchtest",
-    "Crafted_by": "Hergestellt von: ",
+    "Crafted_by": "Hergestellt von:",
     "Fire": "Entlassen",
     "Confirm_fire": "Bist du sicher, dass du den Nutzer aus dem Inserat entfernen möchtest?",
     "Delete_payment": "Zahlung entfernen",

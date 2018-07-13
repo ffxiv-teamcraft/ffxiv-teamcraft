@@ -71,27 +71,6 @@ export class CommissionDetailsComponent implements OnInit, OnDestroy {
         this.save(commission);
     }
 
-    /**
-     * Transforms the rating of a user into an array of length between 1 and 5
-     * @param {AppUser} user
-     * @returns {any[]}
-     */
-    getRating(user: AppUser): 1 | .5 | 0 [] {
-        let rating = user.rating;
-        const result = [];
-        while (rating >= 1) {
-            rating--;
-            result.push(1);
-        }
-        if (rating >= .5) {
-            result.push(.5);
-        }
-        while (result.length < 5) {
-            result.push(0);
-        }
-        return result;
-    }
-
     hire(commission: Commission, userId: string): void {
         this.dialog.open(ConfirmationPopupComponent, {data: 'COMMISSION_BOARD.Confirm_hire'})
             .afterClosed()
