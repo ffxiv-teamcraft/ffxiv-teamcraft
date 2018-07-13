@@ -28,6 +28,7 @@ import {CraftingRotation} from '../../../model/other/crafting-rotation';
 import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap, publishReplay, refCount, switchMap} from 'rxjs/operators';
 import {SearchResult} from '../../../model/list/search-result';
 import {SettingsService} from '../../settings/settings.service';
+import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 
 declare const ga: Function;
 
@@ -314,35 +315,11 @@ export class RecipesComponent extends PageComponent implements OnInit {
     }
 
     quickList(recipe: Recipe, amount: string, collectible: boolean): void {
-        const list = new List();
-        ga('send', 'event', 'List', 'creation');
-        list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
-        list.ephemeral = true;
-        this.subscriptions.push(this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
-            .pipe(
-                switchMap((l) => {
-                    return this.userService.getUserData()
-                        .pipe(
-                            map(u => {
-                                l.authorId = u.$key;
-                                return l;
-                            })
-                        );
-                }),
-                switchMap(quickList => {
-                    return this.listService.add(quickList)
-                        .pipe(
-                            map(uid => {
-                                list.$key = uid;
-                                return list;
-                            })
-                        );
-                })
-            ).subscribe((l) => {
-                this.listService.getRouterPath(l.$key).subscribe(path => {
-                    this.router.navigate(path);
-                });
-            }));
+        this.subscriptions.push(this.createQuickList(recipe, amount, collectible).subscribe(list => {
+            this.listService.getRouterPath(list.$key).subscribe(path => {
+                this.router.navigate(path);
+            });
+        }));
     }
 
     /**
@@ -427,9 +404,41 @@ export class RecipesComponent extends PageComponent implements OnInit {
         });
     }
 
+    createCommission(recipe: Recipe, amount: string): void {
+        this.subscriptions.push(this.createQuickList(recipe, amount, false).subscribe(list => {
+            this.dialog.open(CommissionCreationPopupComponent, { data: { list: list } });
+        }));
+    }
 
     getHelpDialog(): ComponentType<any> | TemplateRef<any> {
         return RecipesHelpComponent;
     }
 
+    private createQuickList(recipe: Recipe, amount: string, collectible: boolean): Observable<List> {
+        const list = new List();
+        ga('send', 'event', 'List', 'creation');
+        list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
+        list.ephemeral = true;
+        return this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
+            .pipe(
+                switchMap((l) => {
+                    return this.userService.getUserData()
+                        .pipe(
+                            map(u => {
+                                l.authorId = u.$key;
+                                return l;
+                            })
+                        );
+                }),
+                switchMap(quickList => {
+                    return this.listService.add(quickList)
+                        .pipe(
+                            map(uid => {
+                                list.$key = uid;
+                                return list;
+                            })
+                        );
+                })
+            );
+    }
 }

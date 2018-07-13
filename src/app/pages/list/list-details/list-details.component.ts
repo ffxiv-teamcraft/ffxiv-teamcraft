@@ -142,7 +142,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public createCommission(list: List): void {
-        this.dialog.open(CommissionCreationPopupComponent, {data: list});
+        this.dialog.open(CommissionCreationPopupComponent, { data: { list: list, displayWarning: true } });
     }
 
     public getLink(): string {
