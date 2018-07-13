@@ -1,10 +1,11 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {AppUser} from '../../../model/list/app-user';
 
 @Component({
     selector: 'app-rating',
     templateUrl: './rating.component.html',
-    styleUrls: ['./rating.component.scss']
+    styleUrls: ['./rating.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RatingComponent {
 
