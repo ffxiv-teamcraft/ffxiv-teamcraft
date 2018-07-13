@@ -10,11 +10,6 @@
         }
     }
 
-    .priority-toggle {
-        position: absolute;
-        left: -24px;
-    }
-
     .even {
         background-color: rgba(123, 123, 123, .2);
         &.done-row {
@@ -22,6 +17,9 @@
         }
         &.craftable-row {
             background-color: rgba(19, 168, 255, .2);
+        }
+        &.has-all-ingredients-row {
+            background-color: rgba(229, 3, 255, 0.1);
         }
     }
 
@@ -31,6 +29,10 @@
 
     .craftable-row {
         background-color: rgba(19, 168, 255, .3);
+    }
+
+    .has-all-ingredients-row {
+        background-color: rgba(229, 3, 255, 0.3);
     }
 
     .strike {
