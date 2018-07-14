@@ -53,8 +53,12 @@ export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
         return this.htmlTools.generateStars(nb);
     }
 
-    close(): void {
-        this.ref.close();
+    close(item: Recipe = undefined): void {
+        if (item === undefined) {
+            this.ref.close();
+        } else {
+            this.ref.close({ itemId: item.itemId, recipeId: item.recipeId });
+        }
     }
 
     ngOnDestroy(): void {
