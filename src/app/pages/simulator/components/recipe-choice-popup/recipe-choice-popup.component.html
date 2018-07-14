@@ -26,3 +26,11 @@
 <div *ngIf="results.length === 0 || results === null">
     <h4 class="no-recipe">{{'ITEMS.No_match' | translate}}</h4>
 </div>
+
+<div *ngIf="showCustom">
+    <mat-divider></mat-divider>
+    <p>
+        {{'SIMULATOR.Create_a' | translate}}
+        <a routerLink="/simulator/custom" (click)="close()"> {{'SIMULATOR.custom_rotation' | translate}}</a>.
+    </p>
+</div>

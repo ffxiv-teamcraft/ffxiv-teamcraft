@@ -1,4 +1,5 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {debounceTime, distinctUntilChanged, first, takeUntil} from 'rxjs/operators';
 import {fromEvent, Subject} from 'rxjs/index';
 import {Recipe} from '../../../../model/list/recipe';
@@ -22,7 +23,8 @@ export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
 
     query: string;
 
-    constructor(private dataService: DataService, private gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
+    constructor(private dataService: DataService, private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
+                @Inject(MAT_DIALOG_DATA) public showCustom: boolean, private ref: MatDialogRef<RecipeChoicePopupComponent>) {
     }
 
     private doSearch(): void {
@@ -49,6 +51,10 @@ export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
      */
     getStars(nb: number): string {
         return this.htmlTools.generateStars(nb);
+    }
+
+    close(): void {
+        this.ref.close();
     }
 
     ngOnDestroy(): void {

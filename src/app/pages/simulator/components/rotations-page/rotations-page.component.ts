@@ -13,6 +13,8 @@ import {filter, first, map, mergeMap, tap} from 'rxjs/operators';
 import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
 import {NewFolderPopupComponent} from '../new-folder-popup/new-folder-popup.component';
 import {CraftingRotationFolder} from './crafting-rotation-folder';
+import {RecipeChoicePopupComponent} from '../recipe-choice-popup/recipe-choice-popup.component';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-rotations-page',
@@ -28,7 +30,7 @@ export class RotationsPageComponent {
 
     constructor(private rotationsService: CraftingRotationService, private userService: UserService,
                 private craftingActionsRegistry: CraftingActionsRegistry, private snack: MatSnackBar,
-                private translator: TranslateService, private dialog: MatDialog) {
+                private translator: TranslateService, private dialog: MatDialog, private router: Router) {
         this.rotations$ = this.userService.getUserData()
             .pipe(
                 tap(user => this.linkButton = user.admin || user.patron),
@@ -217,5 +219,15 @@ export class RotationsPageComponent {
     setFolder(rotation: CraftingRotation, folder: string): void {
         rotation.folder = folder;
         this.rotationsService.set(rotation.$key, rotation).subscribe();
+    }
+
+    newRotation(): void {
+        this.dialog.open(RecipeChoicePopupComponent, { data: true }).afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res !== null && res !== '')
+            ).subscribe(result => {
+            const path = ['simulator', result.itemId, result.recipeId];
+            this.router.navigate(path);
+        });
     }
 }
