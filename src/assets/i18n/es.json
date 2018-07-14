@@ -602,11 +602,11 @@
       "Crafting": "Elaboración",
       "Gathering": "Recolección",
       "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos"
-    ,
-    "FILTERS": {
-      "Min_price": "Precio mínimo",
-      "Max_price": "Precio máximo"
+      "Only_craft": "Materiales incluidos",
+      "FILTERS": {
+        "Min_price": "Precio mínimo",
+        "Max_price": "Precio máximo"
+      }
     }
   }
 }
