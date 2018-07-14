@@ -315,11 +315,15 @@ export class RecipesComponent extends PageComponent implements OnInit {
     }
 
     quickList(recipe: Recipe, amount: string, collectible: boolean): void {
-        this.subscriptions.push(this.createQuickList(recipe, amount, collectible).subscribe(list => {
-            this.listService.getRouterPath(list.$key).subscribe(path => {
+        this.subscriptions.push(this.createQuickList(recipe, amount, collectible)
+            .pipe(
+                mergeMap(list => {
+                    return this.listService.getRouterPath(list.$key);
+                })
+            ).subscribe(path => {
                 this.router.navigate(path);
-            });
-        }));
+            })
+        );
     }
 
     /**
