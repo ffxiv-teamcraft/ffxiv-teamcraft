@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ItemComponent} from './item/item.component';
 import {
     MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
     MatChipsModule,
     MatDialogModule,
@@ -53,6 +54,7 @@ import {SimulatorLinkPipe} from 'app/modules/item/simulator-link.pipe';
         MatInputModule,
         MatCardModule,
         MatMenuModule,
+        MatButtonToggleModule,
 
         ClipboardModule,
 

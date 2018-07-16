@@ -10,6 +10,11 @@
         }
     }
 
+    .priority-toggle {
+        position: absolute;
+        left: -24px;
+    }
+
     .even {
         background-color: rgba(123, 123, 123, .2);
         &.done-row {
