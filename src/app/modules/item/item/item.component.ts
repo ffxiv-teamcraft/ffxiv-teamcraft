@@ -277,7 +277,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     folkloreId: number;
 
     isMobile = this.media.asObservable().pipe(map(mediaChange =>
-        (mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm') && !this.platformService.isDesktop()
+        mediaChange.mqAlias === 'xs' || (mediaChange.mqAlias === 'sm' && !this.platformService.isDesktop())
     ));
 
     public timers: Observable<Timer[]>;
