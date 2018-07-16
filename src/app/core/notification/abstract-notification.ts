@@ -10,7 +10,10 @@ import {I18nToolsService} from '../tools/i18n-tools.service';
 })
 export abstract class AbstractNotification {
 
+    public readonly date: number;
+
     protected constructor(public readonly type: NotificationType) {
+        this.date = Date.now();
     }
 
     public abstract getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string;
