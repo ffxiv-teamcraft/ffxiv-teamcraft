@@ -10,9 +10,10 @@ before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - npm i -g firebase-functions
+  - npm i -g firebase-functions jsonlint-cli
 
 script:
+  - jsonlint-cli ./src/assets/i18n/*.json
   - npm test && npm run build:prod
 
 after_success:
