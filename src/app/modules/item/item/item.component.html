@@ -3,9 +3,6 @@
                [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists,
                'done-row': item.done >= item.amount, 'craftable-row': canBeCrafted, 'has-all-ingredients-row': hasAllIngredients}">
     <div class="item-col-left">
-        <button class="priority-toggle" *ngIf="recipe" mat-icon-button (click)="togglePriority()">
-            <mat-icon color="{{item.priority?'primary':''}}" [class.inactive]="!item.priority">priority_high</mat-icon>
-        </button>
         <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}"
              [appXivdbTooltip]="item.id" [appXivdbTooltipDisabled]="isDraft()">
             <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">

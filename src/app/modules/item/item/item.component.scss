@@ -23,9 +23,6 @@
         &.craftable-row {
             background-color: rgba(19, 168, 255, .2);
         }
-        &.has-all-ingredients-row {
-            background-color: rgba(229, 3, 255, 0.1);
-        }
     }
 
     .done-row {
@@ -37,7 +34,7 @@
     }
 
     .has-all-ingredients-row {
-        background-color: rgba(229, 3, 255, 0.3);
+        border: 2px dashed rgba(19, 168, 255, .3);
     }
 
     .strike {

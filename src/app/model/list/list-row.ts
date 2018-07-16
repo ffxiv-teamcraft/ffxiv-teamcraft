@@ -51,7 +51,4 @@ export class ListRow extends DataModel {
      * @type {boolean}
      */
     usePrice?: boolean = true;
-
-    // noinspection TsLint
-    priority?: boolean = false;
 }
