@@ -346,9 +346,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.recipe$,
             this.actions$,
             this.crafterStats$,
-            this.hqIngredients$,
-            (recipe, actions, stats, hqIngredients) => new Simulation(recipe, actions, stats, hqIngredients)
-        );
+            this.hqIngredients$)
+            .pipe(
+                map(([recipe, actions, stats, hqIngredients]) => new Simulation(recipe, actions, stats, hqIngredients))
+            );
 
         this.result$ = combineLatest(this.snapshotStep$, this.simulation$, (step, simulation) => {
             simulation.reset();
@@ -389,12 +390,15 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        combineLatest(this.recipe$, this.gearsets$, (recipe, gearsets) => {
-            return {
-                set: gearsets.find(set => set.jobId === recipe.job),
-                levels: <CrafterLevels>gearsets.map(set => set.level)
-            };
-        }).subscribe(res => {
+        combineLatest(this.recipe$, this.gearsets$)
+            .pipe(
+                map(([recipe, gearsets]) => {
+                    return {
+                        set: gearsets.find(set => set.jobId === recipe.job),
+                        levels: <CrafterLevels>gearsets.map(set => set.level)
+                    };
+                })
+            ).subscribe(res => {
             this.selectedSet = this.selectedSet || res.set;
             this.applyStats(res.set, res.levels, false);
         });
@@ -643,6 +647,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             if (this.rotation.$key !== undefined) {
                 path.push(this.rotation.$key);
             }
+            this.selectedSet = undefined;
             this.router.navigate(path);
         });
     }
