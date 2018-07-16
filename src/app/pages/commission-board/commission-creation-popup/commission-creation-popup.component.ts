@@ -18,9 +18,16 @@ export class CommissionCreationPopupComponent {
 
     public price = 0;
 
-    constructor(@Inject(MAT_DIALOG_DATA) public list: List, private router: Router, private commissionService: CommissionService,
+    public list: List;
+
+    public displayWarning = false;
+
+    constructor(@Inject(MAT_DIALOG_DATA) public data: { list: List, displayWarning?: boolean },
+                private router: Router, private commissionService: CommissionService,
                 private ref: MatDialogRef<CommissionCreationPopupComponent>, private userService: UserService,
                 private listService: ListService) {
+        this.list = data.list;
+        this.displayWarning = data.displayWarning;
     }
 
     public createCommission(): void {

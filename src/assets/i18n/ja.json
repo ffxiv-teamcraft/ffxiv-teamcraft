@@ -36,7 +36,7 @@
   "HOME_PAGE": {
     "FEATURES": {
       "alarms_title": "ギャザラー時計"
-    },
+    }
   },
   "Home": "ホーム",
   "Hunting": "モブハン",
@@ -49,8 +49,8 @@
   "LISTS": {
     "IMPORT": {
       "Back": "昨",
-      "Next": "次",
-    },
+      "Next": "次"
+    }
   },
   "LIST_TAGS": {
     "GEAR": "装備",
@@ -173,7 +173,7 @@
     "Rotations": "クラフタースキル回し",
     "Select_job_please": "ジョブを選び出します",
     "Specialist": "マイスター",
-    "Step_counter": "ターン",
+    "Step_counter": "ターン"
   },
   "Server_name": "ワールド名",
   "Share": "シェア",
@@ -185,5 +185,5 @@
     "Title": "ウィキ"
   },
   "filters/ilvl": "アイテムLv",
-  "filters/lvl": "装備Lv",
+  "filters/lvl": "装備Lv"
 }

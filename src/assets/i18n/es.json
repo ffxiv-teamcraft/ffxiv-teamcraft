@@ -137,7 +137,7 @@
   "filters/lvl": "Nivel requerido",
   "filters/craft_lvl": "Nivel de la receta",
   "filters/worn_by": "Usado por",
-  "filters/crafted_by": "Creado por",
+  "filters/crafted_by": "Creado por:",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "{{itemname}} agregado a la lista {{listname}}",
   "Recipes_Added": "Resultados agregados a la lista {{listname}}",
@@ -602,11 +602,11 @@
       "Crafting": "Elaboración",
       "Gathering": "Recolección",
       "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos"
-    ,
-    "FILTERS": {
-      "Min_price": "Precio mínimo",
-      "Max_price": "Precio máximo"
+      "Only_craft": "Materiales incluidos",
+      "FILTERS": {
+        "Min_price": "Precio mínimo",
+        "Max_price": "Precio máximo"
+      }
     }
   }
 }
