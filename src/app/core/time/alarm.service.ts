@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {EorzeanTimeService} from './eorzean-time.service';
 import {Alarm} from './alarm';
-import {Observable, of, Subscription} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {ListRow} from '../../model/list/list-row';
 import {SettingsService} from '../../pages/settings/settings.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
@@ -12,7 +12,7 @@ import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
-import {first, map, mergeMap} from 'rxjs/operators';
+import {filter, first, map, mergeMap, takeUntil} from 'rxjs/operators';
 import {AppUser} from '../../model/list/app-user';
 import {PlatformService} from '../tools/platform.service';
 import {IpcService} from '../electron/ipc.service';
@@ -22,7 +22,7 @@ import {I18nToolsService} from '../tools/i18n-tools.service';
 @Injectable()
 export class AlarmService {
 
-    private _alarms: Map<Alarm, Subscription> = new Map<Alarm, Subscription>();
+    private _alarms: Map<Alarm, Subject<void>> = new Map<Alarm, Subject<void>>();
 
     constructor(private etime: EorzeanTimeService, private settings: SettingsService, private snack: MatSnackBar,
                 private localizedData: LocalizedDataService, private translator: TranslateService, private dialog: MatDialog,
@@ -68,7 +68,7 @@ export class AlarmService {
      */
     public unregister(id: number): void {
         this.getAlarms(id).forEach((alarm) => {
-            this._alarms.get(alarm).unsubscribe();
+            this._alarms.get(alarm).next();
             this._alarms.delete(alarm);
         });
         this.persistAlarms();
@@ -97,12 +97,21 @@ export class AlarmService {
                         .getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})
                     )
                 );
-                this._alarms.set(alarm, this.etime.getEorzeanTime().subscribe(time => {
-                    if (time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore) &&
-                        time.getUTCMinutes() === 0) {
+                const alarmStop$ = new Subject<void>();
+                this._alarms.set(alarm, alarmStop$);
+                this.etime.getEorzeanTime()
+                    .pipe(
+                        // Stop playing alarms for this item once the stop Subject emitted.
+                        takeUntil(alarmStop$),
+                        // Only go further if the alarm has to be played
+                        filter(time => {
+                            return time.getUTCHours() === this.substractHours(alarm.spawn, this.settings.alarmHoursBefore)
+                                && time.getUTCMinutes() === 0;
+                        })
+                    )
+                    .subscribe(() => {
                         this.playAlarm(alarm);
-                    }
-                }));
+                    });
             }
         });
     }
@@ -189,6 +198,7 @@ export class AlarmService {
      * @param {Alarm} alarm
      */
     private playAlarm(alarm: Alarm): void {
+        console.log('playing alarm for item', alarm.itemId);
         if (this.settings.alarmsMuted) {
             return;
         }
