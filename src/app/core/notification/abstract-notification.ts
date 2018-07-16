@@ -12,6 +12,8 @@ export abstract class AbstractNotification {
 
     public readonly date: number;
 
+    public read = false;
+
     protected constructor(public readonly type: NotificationType) {
         this.date = Date.now();
     }
