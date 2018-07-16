@@ -30,6 +30,7 @@ import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
 import {GarlandToolsService} from './core/api/garland-tools.service';
 import {CommissionService} from './core/database/commission/commission.service';
+import {NotificationService} from './core/notification/notification.service';
 
 declare const ga: Function;
 
@@ -105,9 +106,12 @@ export class AppComponent implements OnInit {
                 public platformService: PlatformService,
                 private ipc: IpcService,
                 private gt: GarlandToolsService,
-                private commissionService: CommissionService) {
+                private commissionService: CommissionService,
+                private notificationService: NotificationService) {
 
         this.gt.preload();
+
+        this.notificationService.init();
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);

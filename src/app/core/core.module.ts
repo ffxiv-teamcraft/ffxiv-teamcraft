@@ -45,6 +45,7 @@ import {IpcService} from './electron/ipc.service';
 import {SharedEntityService} from './database/shared-entity/shared-entity.service';
 import {AbstractNotification} from './notification/abstract-notification';
 import {ListProgressNotification} from '../model/notification/list-progress-notification';
+import {NotificationService} from './notification/notification.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -105,6 +106,7 @@ export const DATA_EXTRACTORS: Provider[] = [
         PlatformService,
         IpcService,
         SharedEntityService,
+        NotificationService,
     ],
     declarations: [
         I18nPipe,

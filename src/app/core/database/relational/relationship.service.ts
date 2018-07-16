@@ -35,6 +35,6 @@ export abstract class RelationshipService<T extends Relationship<any, any>> exte
     }
 
     public getBaseUri(): string {
-        return `relationships/${this.getRelationCollection()}`
+        return `relationships/${this.getRelationCollection()}/registry`
     }
 }
