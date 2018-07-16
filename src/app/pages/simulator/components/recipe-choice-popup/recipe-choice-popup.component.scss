@@ -3,6 +3,15 @@
     vertical-align: middle;
 }
 
-.gavel-button {
-    margin-left: 15px;
+.mat-list-item {
+    margin-bottom: 10px;
+
+    &:hover {
+        background: rgba(175, 175, 175, 0.04);
+        cursor: pointer;
+    }
+}
+
+.mat-divider {
+    margin-top: 20px;
 }
