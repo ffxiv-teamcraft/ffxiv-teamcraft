@@ -48,6 +48,7 @@ import {ListProgressNotification} from '../model/notification/list-progress-noti
 import {NotificationService} from './notification/notification.service';
 import {TeamInviteNotification} from '../model/notification/team-invite-notification';
 import {TeamExclusionNotification} from '../model/notification/team-exclusion-notification';
+import {ItemAssignedNotification} from '../model/notification/item-assigned-notification';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -74,6 +75,7 @@ export const DATA_EXTRACTORS: Provider[] = [
                     LIST_PROGRESS: ListProgressNotification,
                     TEAM_INVITE: TeamInviteNotification,
                     TEAM_EXCLUSION: TeamExclusionNotification,
+                    ITEM_ASSIGNED: ItemAssignedNotification,
                 }
             }
         ]),

@@ -620,6 +620,7 @@
     "Title": "Notifications",
     "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
     "Team_invite": "{{invitedBy}} invited you to team {{teamName}}",
+    "Item_assigned": "{{itemName}} has been assigned to you on list \"{{listName}}\"",
     "Mark_all_as_read": "Mark all as read"
   }
 }

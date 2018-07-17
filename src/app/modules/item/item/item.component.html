@@ -67,6 +67,24 @@
                 <mat-icon color="accent">work</mat-icon>
             </button>
         </div>
+        <div *ngIf="teamLeader$ | async as leader">
+            <div *ngIf="teamMembers$ | async as teamMembers">
+                <mat-menu #teamMembersMenu="matMenu">
+                    <button mat-menu-item *ngFor="let member of teamMembers" (click)="assign(member.user.$key)">
+                        {{member.name}}
+                    </button>
+                </mat-menu>
+                <div *ngIf="!item.workingOnIt && !user?.anonymous
+                && getAmount() > (item.done | ceil) && leader">
+                    <button mat-icon-button matTooltip="{{'TEAMS.Assign_item' | translate}}"
+                            matTooltipPosition="above"
+                            [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+                            [matMenuTriggerFor]="teamMembersMenu">
+                        <mat-icon color="accent">assignment_ind</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div *ngIf="hasTimers" class="timers-container">

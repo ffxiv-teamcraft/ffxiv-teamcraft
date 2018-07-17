@@ -6,7 +6,7 @@ import {AngularFirestore} from 'angularfire2/firestore';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {UserService} from './user.service';
 import {combineLatest, Observable} from 'rxjs/index';
-import {map, mergeMap} from 'rxjs/operators';
+import {map, mergeMap, shareReplay} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -40,7 +40,8 @@ export class TeamService extends FirestoreStorage<Team> {
                             delete data.$key;
                             return (<Team>{$key: snap.payload.doc.id, ...data})
                         })),
-                        map(teams => this.serializer.deserialize<Team>(teams, [Team]))
+                        map(teams => this.serializer.deserialize<Team>(teams, [Team])),
+                        shareReplay(),
                     );
             })
         );
