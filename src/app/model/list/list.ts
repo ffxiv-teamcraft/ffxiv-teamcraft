@@ -385,6 +385,27 @@ export class List extends DataWithPermissions {
         return canCraft;
     }
 
+    hasAllBaseIngredients(item: ListRow, amount = item.amount): boolean {
+        // If it's not a craft, break recursion
+        if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+            console.log(item.id, item.done, amount, item.amount);
+            // Simply return the amount of the item being equal to the amount needed.
+            return item.done >= amount;
+        }
+        // If we already have the precraft done, don't go further into the requirements.
+        if (item.done >= amount) {
+            return true
+        }
+        // Don't mind crystals
+        const requirements = item.requires.filter(req => req.id <= 1 || req.id > 20);
+        return requirements.reduce((hasAllBaseIngredients, requirement) => {
+            const requirementItem = this.getItemById(requirement.id, true);
+            if (requirementItem !== undefined) {
+                return this.hasAllBaseIngredients(requirementItem, requirement.amount * item.amount_needed) && hasAllBaseIngredients;
+            }
+        }, true);
+    }
+
     /**
      * Checks if the list is outdated, the implementation is meant to change.
      * @returns {boolean}

@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.8"></a>
+## [4.3.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.7...v4.3.8) (2018-07-17)
+
+
+### Bug Fixes
+
+* fixed an issue with alarms not deleted properly ([298eb71](https://github.com/Supamiu/ffxiv-teamcraft/commit/298eb71)), closes [#499](https://github.com/Supamiu/ffxiv-teamcraft/issues/499)
+* fixed an issue with small desktop window size hiding some buttons ([19e7500](https://github.com/Supamiu/ffxiv-teamcraft/commit/19e7500))
+* fixed an issue withr ecipe swap in simulator not updating stats properly ([943de7d](https://github.com/Supamiu/ffxiv-teamcraft/commit/943de7d))
+* fixed public profile page rendering ([3ef7435](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ef7435))
+* remove open hashes from JP localisation JSON ([7be01fa](https://github.com/Supamiu/ffxiv-teamcraft/commit/7be01fa))
+* removed navigation buttons in overlay window ([b173028](https://github.com/Supamiu/ffxiv-teamcraft/commit/b173028))
+* spanish localization ([00819b5](https://github.com/Supamiu/ffxiv-teamcraft/commit/00819b5))
+
+
+### Features
+
+* new dashed border for items with all final ingredients available ([3a71d73](https://github.com/Supamiu/ffxiv-teamcraft/commit/3a71d73)), closes [#491](https://github.com/Supamiu/ffxiv-teamcraft/issues/491)
+* quick commission button on search results ([46b999c](https://github.com/Supamiu/ffxiv-teamcraft/commit/46b999c)), closes [#490](https://github.com/Supamiu/ffxiv-teamcraft/issues/490)
+* rating shown on profile ([cf4ee18](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf4ee18)), closes [#482](https://github.com/Supamiu/ffxiv-teamcraft/issues/482)
+
+
+
 <a name="4.3.7"></a>
 ## [4.3.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.6...v4.3.7) (2018-07-12)
 
