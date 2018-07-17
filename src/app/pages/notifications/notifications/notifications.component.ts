@@ -7,6 +7,7 @@ import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {TranslateService} from '@ngx-translate/core';
 import {TeamService} from '../../../core/database/team.service';
 import {TeamInviteNotification} from '../../../model/notification/team-invite-notification';
+import {SettingsService} from '../../settings/settings.service';
 
 @Component({
     selector: 'app-notifications',
@@ -20,7 +21,8 @@ export class NotificationsComponent {
 
     constructor(private notificationService: NotificationService,
                 public l12n: LocalizedDataService, public i18nTools: I18nToolsService,
-                public translate: TranslateService, private teamService: TeamService) {
+                public translate: TranslateService, private teamService: TeamService,
+                public settings: SettingsService) {
         this.notifications$ = this.notificationService.notifications$;
     }
 

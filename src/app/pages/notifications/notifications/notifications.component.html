@@ -5,6 +5,12 @@
             <mat-icon>done_all</mat-icon>
             {{'NOTIFICATIONS.Mark_all_as_read' | translate}}
         </button>
+        <div class="spacer"></div>
+        <mat-slide-toggle [(ngModel)]="settings.notificationsMuted">
+            <mat-icon>
+                notifications_off
+            </mat-icon>
+        </mat-slide-toggle>
     </div>
     <mat-list>
         <mat-list-item *ngFor="let notification of notifications; trackBy: trackByNotificationFn"

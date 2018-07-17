@@ -5,7 +5,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {TranslateModule} from '@ngx-translate/core';
 import {CoreModule} from '../../core/core.module';
-import {MatButtonModule, MatIconModule, MatListModule, MatProgressSpinnerModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatListModule, MatProgressSpinnerModule, MatSlideToggleModule} from '@angular/material';
+import {SettingsModule} from '../settings/settings.module';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [{
     path: '',
@@ -17,6 +19,7 @@ const routes: Routes = [{
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
 
         TranslateModule,
         CoreModule,
@@ -27,6 +30,9 @@ const routes: Routes = [{
         MatListModule,
         MatIconModule,
         MatButtonModule,
+        MatSlideToggleModule,
+
+        SettingsModule,
     ],
     declarations: [NotificationsComponent]
 })

@@ -12,6 +12,7 @@ import {map, mergeMap, shareReplay} from 'rxjs/operators';
 import {I18nToolsService} from '../tools/i18n-tools.service';
 import {combineLatest, Observable} from 'rxjs';
 import {AbstractNotification} from './abstract-notification';
+import {SettingsService} from '../../pages/settings/settings.service';
 
 @Injectable({
     providedIn: 'root'
@@ -23,7 +24,7 @@ export class NotificationService extends RelationshipService<NotificationRelatio
     constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
                 protected pendingChangesService: PendingChangesService, private userService: UserService, private ipc: IpcService,
                 private translateService: TranslateService, private localizedDataService: LocalizedDataService,
-                private i18nTools: I18nToolsService) {
+                private i18nTools: I18nToolsService, private settings: SettingsService) {
         super(firestore, serializer, zone, pendingChangesService);
         this.notifications$ = this.userService.getUserData()
             .pipe(
@@ -44,17 +45,19 @@ export class NotificationService extends RelationshipService<NotificationRelatio
 
     handleNotifications(relationships: NotificationRelationship[]): void {
         const toAlert = relationships.filter(r => !r.to.alerted);
-        // If there's only one, handle it alone.
-        if (toAlert.length === 1) {
-            this.ipc.send('notification:user', {
-                title: 'FFXIV Teamcraft',
-                content: toAlert[0].to.getContent(this.translateService, this.localizedDataService, this.i18nTools),
-            });
-        } else {
-            this.ipc.send('notification:user', {
-                title: 'FFXIV Teamcraft',
-                content: this.translateService.instant('NOTIFICATIONS.You_have_x_notifications', {amount: toAlert.length})
-            });
+        if (!this.settings.notificationsMuted) {
+            // If there's only one, handle it alone.
+            if (toAlert.length === 1) {
+                this.ipc.send('notification:user', {
+                    title: 'FFXIV Teamcraft',
+                    content: toAlert[0].to.getContent(this.translateService, this.localizedDataService, this.i18nTools),
+                });
+            } else {
+                this.ipc.send('notification:user', {
+                    title: 'FFXIV Teamcraft',
+                    content: this.translateService.instant('NOTIFICATIONS.You_have_x_notifications', {amount: toAlert.length})
+                });
+            }
         }
         // Save notifications changes.
         combineLatest(
