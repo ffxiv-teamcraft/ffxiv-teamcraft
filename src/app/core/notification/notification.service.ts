@@ -8,27 +8,38 @@ import {UserService} from '../database/user.service';
 import {IpcService} from '../electron/ipc.service';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalizedDataService} from '../data/localized-data.service';
-import {map, mergeMap} from 'rxjs/operators';
+import {map, mergeMap, shareReplay} from 'rxjs/operators';
 import {I18nToolsService} from '../tools/i18n-tools.service';
-import {combineLatest} from 'rxjs';
+import {combineLatest, Observable} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class NotificationService extends RelationshipService<NotificationRelationship> {
 
+    public readonly notifications$: Observable<NotificationRelationship[]>;
+
     constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
                 protected pendingChangesService: PendingChangesService, private userService: UserService, private ipc: IpcService,
                 private translateService: TranslateService, private localizedDataService: LocalizedDataService,
                 private i18nTools: I18nToolsService) {
         super(firestore, serializer, zone, pendingChangesService);
+        this.notifications$ = this.userService.getUserData()
+            .pipe(
+                mergeMap(user => this.getByFrom(user.$key)),
+                map(relationships => {
+                    return relationships.sort((a, b) => {
+                        return a.to.date > b.to.date ? -1 : 1;
+                    })
+                }),
+                shareReplay(),
+            );
     }
 
     public init(): void {
         // Initialize notifications listener.
-        this.userService.getUserData()
+        this.notifications$
             .pipe(
-                mergeMap(user => this.getByFrom(user.$key)),
                 map(relationships => relationships.filter(r => !r.to.alerted))
             )
             .subscribe((relationships) => this.handleNotifications(relationships));
@@ -53,6 +64,19 @@ export class NotificationService extends RelationshipService<NotificationRelatio
                 relationship.to.alerted = true;
                 return this.set(relationship.$key, relationship);
             })
+        ).subscribe();
+
+        // Clean notifications.
+        combineLatest(
+            ...relationships
+                .filter(relationship => {
+                    // Get only notifications that are more than a week (8 days) old
+                    return (Date.now() - relationship.to.date) < 691200000
+                })
+                .map(relationship => {
+                    // delete these notifications
+                    return this.remove(relationship.$key);
+                })
         ).subscribe();
     }
 

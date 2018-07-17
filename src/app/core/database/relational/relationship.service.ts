@@ -16,21 +16,21 @@ export abstract class RelationshipService<T extends Relationship<any, any>> exte
 
     protected abstract getRelationCollection(): string;
 
-    public getByFrom(from: string): Observable<Relationship<any, any>[]> {
+    public getByFrom(from: string): Observable<T[]> {
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('from', '==', from))
             .snapshotChanges()
             .pipe(
                 map((snaps: any[]) => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()}))),
-                map((lists: any[]) => this.serializer.deserialize<Relationship<any, any>>(lists, [Relationship]))
+                map((lists: any[]) => this.serializer.deserialize<T>(lists, [this.getClass()]))
             );
     }
 
-    public getByTo(to: string): Observable<Relationship<any, any>[]> {
+    public getByTo(to: string): Observable<T[]> {
         return this.firestore.collection(this.getBaseUri(), ref => ref.where('to', '==', to))
             .snapshotChanges()
             .pipe(
                 map((snaps: any[]) => snaps.map(snap => ({$key: snap.payload.doc.id, ...snap.payload.doc.data()}))),
-                map((lists: any[]) => this.serializer.deserialize<Relationship<any, any>>(lists, [Relationship]))
+                map((lists: any[]) => this.serializer.deserialize<T>(lists, [this.getClass()]))
             );
     }
 

@@ -615,5 +615,10 @@
       "Min_price": "Min price",
       "Max_price": "Max price"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notifications",
+    "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
+    "Mark_all_as_read": "Mark all as read"
   }
 }

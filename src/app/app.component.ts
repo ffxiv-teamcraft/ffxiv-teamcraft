@@ -88,6 +88,8 @@ export class AppComponent implements OnInit {
 
     hasCommissionBadge$: Observable<boolean>;
 
+    hasNotifications$: Observable<boolean>;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -112,6 +114,11 @@ export class AppComponent implements OnInit {
         this.gt.preload();
 
         this.notificationService.init();
+
+        this.hasNotifications$ = this.notificationService.notifications$.pipe(
+            map(relationships => relationships.filter(r => !r.to.read)),
+            map(relationships => relationships.length > 0)
+        );
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);

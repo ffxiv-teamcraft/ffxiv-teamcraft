@@ -26,6 +26,10 @@ export class ListProgressNotification extends AbstractNotification {
     }
 
     getTargetRoute(): string[] {
-        return ['list', this.listId];
+        return ['/list', this.listId];
+    }
+
+    getIcon(): string {
+        return 'playlist_add_check';
     }
 }

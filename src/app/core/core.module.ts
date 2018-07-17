@@ -69,7 +69,7 @@ export const DATA_EXTRACTORS: Provider[] = [
             {
                 parent: AbstractNotification,
                 children: {
-                    LIST_UPDATE: ListProgressNotification,
+                    LIST_PROGRESS: ListProgressNotification,
                 }
             }
         ]),

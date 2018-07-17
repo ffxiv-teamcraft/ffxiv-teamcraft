@@ -42,6 +42,9 @@ import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {NotificationService} from '../../../core/notification/notification.service';
+import {ListProgressNotification} from '../../../model/notification/list-progress-notification';
+import {NotificationRelationship} from '../../../core/notification/notification-relationship';
 
 declare const ga: Function;
 
@@ -104,6 +107,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private upgradingList = false;
 
+    private characterData: any;
+
     public get selectedIndex(): number {
         return +(localStorage.getItem('layout:selected') || 0);
     }
@@ -113,7 +118,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
-                private i18nTools: I18nToolsService, private commissionService: CommissionService) {
+                private i18nTools: I18nToolsService, private commissionService: CommissionService,
+                private notificationService: NotificationService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -142,7 +148,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public createCommission(list: List): void {
-        this.dialog.open(CommissionCreationPopupComponent, { data: { list: list, displayWarning: true } });
+        this.dialog.open(CommissionCreationPopupComponent, {data: {list: list, displayWarning: true}});
     }
 
     public getLink(): string {
@@ -289,6 +295,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 this.hideCompleted = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideCompleted : false;
                 this.triggerFilter();
             }));
+        this.subscriptions.push(
+            this.userService.getCharacter()
+                .subscribe(character => this.characterData = character)
+        );
         this.listData$.next(this.listData);
     }
 
@@ -406,6 +416,13 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                         return this.commissionService.set(commission.$key, commission)
                     })
                 ).subscribe();
+        }
+        // If the modification isn't made by the author of the list, send him a notification.
+        if (this.userData.$key !== this.listData.authorId) {
+            const relationship = new NotificationRelationship();
+            relationship.from = this.listData.authorId;
+            relationship.to = new ListProgressNotification(list.name, this.characterData.name, data.amount, data.row.id, list.$key);
+            this.notificationService.add(relationship);
         }
     }
 

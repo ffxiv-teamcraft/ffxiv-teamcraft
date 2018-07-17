@@ -23,4 +23,6 @@ export abstract class AbstractNotification {
     public abstract getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string;
 
     public abstract getTargetRoute(): string[];
+
+    public abstract getIcon(): string;
 }
