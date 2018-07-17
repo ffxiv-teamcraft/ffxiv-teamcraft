@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {Observable, of, ReplaySubject} from 'rxjs';
+import {combineLatest, Observable, of, ReplaySubject} from 'rxjs';
 import {UserService} from 'app/core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
 import {ListManagerService} from '../../../core/list/list-manager.service';
@@ -44,7 +44,6 @@ import {CommissionCreationPopupComponent} from '../../commission-board/commissio
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {NotificationService} from '../../../core/notification/notification.service';
 import {ListProgressNotification} from '../../../model/notification/list-progress-notification';
-import {NotificationRelationship} from '../../../core/notification/notification-relationship';
 import {Team} from '../../../model/other/team';
 import {TeamService} from '../../../core/database/team.service';
 import {catchError} from 'rxjs/internal/operators';
@@ -445,12 +444,30 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     })
                 ).subscribe();
         }
-        // If the modification isn't made by the author of the list, send him a notification.
-        if (this.userData.$key !== this.listData.authorId) {
-            const relationship = new NotificationRelationship();
-            relationship.from = this.listData.authorId;
-            relationship.to = new ListProgressNotification(list.name, this.characterData.name, data.amount, data.row.id, list.$key);
-            this.notificationService.add(relationship);
+        // If this list belongs to a team
+        if (list.teamId !== undefined) {
+            this.team$
+                .pipe(
+                    first(),
+                    mergeMap(team => this.teamService.isPremium(team)
+                        .pipe(
+                            map(res => (res ? team : null))
+                        )
+                    ),
+                    filter(res => res !== null),
+                    mergeMap((team: Team) => {
+                        const notification = new ListProgressNotification(list.name,
+                            this.characterData.name, data.amount, data.row.id, list.$key);
+                        const relevantMembers = Object.keys(team.members)
+                            .filter(member => team.isConfirmed(member) && member !== this.userData.$key);
+                        return combineLatest(relevantMembers.map(userId => {
+                            const preparedNotification = this.notificationService.prepareNotification(userId, notification);
+                            return this.notificationService.add(preparedNotification);
+                        }));
+                    })
+                )
+                .subscribe();
+
         }
     }
 

@@ -13,6 +13,9 @@ import {faPatreon} from '@fortawesome/fontawesome-free-brands';
 import fontawesome from '@fortawesome/fontawesome';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
 import {NameEditPopupComponent} from '../../../modules/common-components/name-edit-popup/name-edit-popup.component';
+import {NotificationService} from '../../../core/notification/notification.service';
+import {TeamInviteNotification} from '../../../model/notification/team-invite-notification';
+import {TeamExclusionNotification} from '../../../model/notification/team-exclusion-notification';
 
 @Component({
     selector: 'app-team',
@@ -25,12 +28,12 @@ export class TeamComponent {
 
     public teamMembersObservables: { [index: string]: Observable<any[]> } = {};
 
-    public user$: Observable<AppUser>;
+    public user$: Observable<any>;
 
     constructor(private teamService: TeamService, private dialog: MatDialog, private userService: UserService,
-                private snack: MatSnackBar, private translate: TranslateService) {
+                private snack: MatSnackBar, private translate: TranslateService, private notificationService: NotificationService) {
         this.teams$ = this.teamService.getUserTeams();
-        this.user$ = this.userService.getUserData();
+        this.user$ = this.userService.getCharacter();
 
         fontawesome.library.add(faPatreon);
     }
@@ -49,15 +52,19 @@ export class TeamComponent {
             ).subscribe();
     }
 
-    addUser(team: Team): void {
+    addUser(team: Team, currentUser: any): void {
         this.dialog.open(UserSelectionPopupComponent).afterClosed()
             .pipe(
                 filter(u => u !== ''),
-                map(user => {
+                mergeMap((user) => {
                     team.addMember(user.$key);
-                    return team;
+                    const notification = new TeamInviteNotification(currentUser.name, team);
+                    return this.notificationService.add(this.notificationService.prepareNotification(user.$key, notification))
+                        .pipe(
+                            map(() => team)
+                        );
                 }),
-                mergeMap(updatedTeam => this.teamService.set(updatedTeam.$key, updatedTeam))
+                mergeMap(updatedTeam => this.teamService.set(updatedTeam.$key, updatedTeam)),
             )
             .subscribe(() => {
                 // Clear team members cache
@@ -70,6 +77,16 @@ export class TeamComponent {
             .pipe(
                 filter(res => res),
                 mergeMap(() => of(team)),
+                mergeMap((t) => {
+                    if (t.isConfirmed(user.$key)) {
+                        const notification = new TeamExclusionNotification(team.name);
+                        return this.notificationService.add(this.notificationService.prepareNotification(user.$key, notification))
+                            .pipe(
+                                map(() => t)
+                            );
+                    }
+                    return of(t);
+                }),
                 map((t) => {
                     t.removeMember(user.$key);
                     return t;
@@ -96,6 +113,7 @@ export class TeamComponent {
                                 team.name = teamName;
                                 team.leader = user.$key;
                                 team.addMember(user.$key);
+                                team.confirmMember(user.$key);
                                 return team;
                             }),
                             mergeMap(team => this.teamService.add(team)),

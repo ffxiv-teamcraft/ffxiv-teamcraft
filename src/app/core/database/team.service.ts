@@ -5,7 +5,7 @@ import {NgSerializerService} from '@kaiu/ng-serializer';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {UserService} from './user.service';
-import {Observable} from 'rxjs/index';
+import {combineLatest, Observable} from 'rxjs/index';
 import {map, mergeMap} from 'rxjs/operators';
 
 @Injectable({
@@ -18,11 +18,21 @@ export class TeamService extends FirestoreStorage<Team> {
         super(firestore, serializer, zone, pendingChangesService);
     }
 
+    public isPremium(team: Team): Observable<boolean> {
+        const members = Object.keys(team.members).filter(userId => team.isConfirmed(userId));
+        return combineLatest(members.map(member => this.userService.get(member)))
+            .pipe(
+                map(resultMembers => {
+                    return resultMembers.reduce((premium, m) => premium || m.patron || m.admin, false);
+                })
+            );
+    }
+
     public getUserTeams(): Observable<Team[]> {
         return this.userService.getUserData().pipe(
             mergeMap(user => {
                 return this.firestore
-                    .collection(this.getBaseUri(), ref => ref.where(`members.${user.$key}`, '==', true))
+                    .collection(this.getBaseUri(), ref => ref.where(`members.${user.$key}`, '>=', -1))
                     .snapshotChanges()
                     .pipe(
                         map(snaps => snaps.map(snap => {

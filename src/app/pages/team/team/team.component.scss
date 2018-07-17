@@ -7,6 +7,9 @@
     mat-icon {
         margin-left: 5px;
     }
+    &.pending {
+        opacity: .7;
+    }
 }
 
 .large-button {

@@ -11,6 +11,7 @@ import {LocalizedDataService} from '../data/localized-data.service';
 import {map, mergeMap, shareReplay} from 'rxjs/operators';
 import {I18nToolsService} from '../tools/i18n-tools.service';
 import {combineLatest, Observable} from 'rxjs';
+import {AbstractNotification} from './abstract-notification';
 
 @Injectable({
     providedIn: 'root'
@@ -38,29 +39,26 @@ export class NotificationService extends RelationshipService<NotificationRelatio
 
     public init(): void {
         // Initialize notifications listener.
-        this.notifications$
-            .pipe(
-                map(relationships => relationships.filter(r => !r.to.alerted))
-            )
-            .subscribe((relationships) => this.handleNotifications(relationships));
+        this.notifications$.subscribe((relationships) => this.handleNotifications(relationships));
     }
 
     handleNotifications(relationships: NotificationRelationship[]): void {
+        const toAlert = relationships.filter(r => !r.to.alerted);
         // If there's only one, handle it alone.
-        if (relationships.length === 1) {
+        if (toAlert.length === 1) {
             this.ipc.send('notification:user', {
                 title: 'FFXIV Teamcraft',
-                content: relationships[0].to.getContent(this.translateService, this.localizedDataService, this.i18nTools),
+                content: toAlert[0].to.getContent(this.translateService, this.localizedDataService, this.i18nTools),
             });
         } else {
             this.ipc.send('notification:user', {
                 title: 'FFXIV Teamcraft',
-                content: this.translateService.instant('NOTIFICATIONS.You_have_x_notifications', {amount: relationships.length})
+                content: this.translateService.instant('NOTIFICATIONS.You_have_x_notifications', {amount: toAlert.length})
             });
         }
         // Save notifications changes.
         combineLatest(
-            ...relationships.map(relationship => {
+            ...toAlert.map(relationship => {
                 relationship.to.alerted = true;
                 return this.set(relationship.$key, relationship);
             })
@@ -71,13 +69,20 @@ export class NotificationService extends RelationshipService<NotificationRelatio
             ...relationships
                 .filter(relationship => {
                     // Get only notifications that are more than a week (8 days) old
-                    return (Date.now() - relationship.to.date) < 691200000
+                    return (Date.now() - relationship.to.date) > 691200000
                 })
                 .map(relationship => {
                     // delete these notifications
                     return this.remove(relationship.$key);
                 })
         ).subscribe();
+    }
+
+    public prepareNotification(target: string, notification: AbstractNotification): NotificationRelationship {
+        const relationship = new NotificationRelationship();
+        relationship.from = target;
+        relationship.to = notification;
+        return relationship;
     }
 
     protected getRelationCollection(): string {

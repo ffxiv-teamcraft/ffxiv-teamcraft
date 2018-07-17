@@ -7,12 +7,25 @@
         </button>
     </div>
     <mat-list>
-        <mat-list-item *ngFor="let notification of notifications" [class.mat-elevation-z5]="!notification.to.read"
+        <mat-list-item *ngFor="let notification of notifications; trackBy: trackByNotificationFn"
+                       [class.mat-elevation-z5]="!notification.to.read"
                        (click)="notification.to.read?null:markAsRead(notification)">
             <mat-icon matListIcon>{{notification.to.getIcon()}}</mat-icon>
             <p matLine>{{notification.to.getContent(translate, l12n, i18nTools)}}</p>
             <i matLine class="date">{{notification.to.date | date:'medium'}}</i>
-            <button mat-icon-button [routerLink]="notification.to.getTargetRoute()">
+            <div *ngIf="notification.to.isQuestion === true">
+                <div matLine>
+                    <button mat-raised-button color="accent"
+                            (click)="answerQuestion(notification, true)">
+                        <mat-icon>check</mat-icon>
+                    </button>
+                    <button mat-button color="warn" (click)="answerQuestion(notification, false)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <button mat-icon-button *ngIf="notification.to.getTargetRoute() !== undefined"
+                    [routerLink]="notification.to.getTargetRoute()">
                 <mat-icon>open_in_new</mat-icon>
             </button>
         </mat-list-item>

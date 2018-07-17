@@ -46,6 +46,8 @@ import {SharedEntityService} from './database/shared-entity/shared-entity.servic
 import {AbstractNotification} from './notification/abstract-notification';
 import {ListProgressNotification} from '../model/notification/list-progress-notification';
 import {NotificationService} from './notification/notification.service';
+import {TeamInviteNotification} from '../model/notification/team-invite-notification';
+import {TeamExclusionNotification} from '../model/notification/team-exclusion-notification';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -70,6 +72,8 @@ export const DATA_EXTRACTORS: Provider[] = [
                 parent: AbstractNotification,
                 children: {
                     LIST_PROGRESS: ListProgressNotification,
+                    TEAM_INVITE: TeamInviteNotification,
+                    TEAM_EXCLUSION: TeamExclusionNotification,
                 }
             }
         ]),

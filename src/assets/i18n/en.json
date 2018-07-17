@@ -619,6 +619,7 @@
   "NOTIFICATIONS": {
     "Title": "Notifications",
     "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
+    "Team_invite": "{{invitedBy}} invited you to team {{teamName}}",
     "Mark_all_as_read": "Mark all as read"
   }
 }
