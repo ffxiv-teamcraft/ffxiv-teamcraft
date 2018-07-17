@@ -461,7 +461,8 @@
     "New_rotation": "New rotation",
     "Rotations": "Crafting rotations",
     "No_rotations": "No rotations",
-    "New_custom_rotation": "New custom rotation",
+    "Create_a": "Create a",
+    "custom_rotation": "custom rotation",
     "Reset": "Reset rotation",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
     "Crafting_optimizer_code": "Crafting optimizer import code",
@@ -572,7 +573,7 @@
     "New_commission": "Create a new commission request",
     "New_commission_warning": "Creating a commission from this list will remove it from your lists (but won't delete the list), you won't be able to add more items nor change amounts on it.",
     "Price_hint": "The price you want to pay for this commission",
-    "Crafted_by": "Fulfilled by : ",
+    "Crafted_by": "Fulfilled by:",
     "Fire": "Fire",
     "Confirm_fire": "Are you sure you want to fire this user from the commission?",
     "Delete_payment": "Delete payment",
@@ -614,5 +615,10 @@
       "Min_price": "Min price",
       "Max_price": "Max price"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notifications",
+    "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
+    "Mark_all_as_read": "Mark all as read"
   }
 }

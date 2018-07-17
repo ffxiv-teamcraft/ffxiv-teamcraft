@@ -48,6 +48,10 @@ const routes: Routes = [
         loadChildren: 'app/pages/macro-translation/macro-translation.module#MacroTranslationModule'
     },
     {
+        path: 'notifications',
+        loadChildren: 'app/pages/notifications/notifications.module#NotificationsModule'
+    },
+    {
         path: 'profile',
         loadChildren: 'app/pages/profile/profile.module#ProfileModule'
     },

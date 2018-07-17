@@ -127,6 +127,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         GivewayPopupModule,
         AlarmsSidebarModule,
 
+        AppRoutingModule,
         // Pages
         WikiModule,
         ListModule,

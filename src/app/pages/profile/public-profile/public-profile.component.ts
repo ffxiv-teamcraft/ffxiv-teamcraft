@@ -25,8 +25,7 @@ export class PublicProfileComponent {
                 private media: ObservableMedia) {
         this.ingameCharacter = route.params
             .pipe(
-                mergeMap(params => userService.get(params.id)),
-                mergeMap(user => dataService.getCharacter(user.lodestoneId)),
+                mergeMap(params => userService.getCharacter(params.id)),
                 catchError(() => of(1))
             );
         this.freeCompany = this.ingameCharacter

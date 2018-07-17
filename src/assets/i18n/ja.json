@@ -2,8 +2,56 @@
   "Do you really want to reset the list?": "本当にリストをリセットしますか？",
   "Yes": "はい",
   "No": "いいえ",
+  "ABOUT": {
+    "Thanks_title": "ありがとう!",
+    "title": "当サイトについて"
+  },
+  "ANNOUNCEMENT": {
+    "Title": "お知らせ"
+  },
+  "COMMON": {
+    "Reset": "リセット",
+    "Save": "保存",
+    "User_id": "ユーザーID"
+  },
   "Cancel": "キャンセル",
+  "Character_name": "キャラクター名",
+  "Character_not_found": "キャラクター名を見つかりませんでした",
+  "Close": "閉じる",
+  "Crystals": "クリスタル",
+  "Desynth": "分解",
   "Edit": "変更",
+  "Email_enter": "メールアドレッス",
+  "Facebook_login": "Facebookでログイン",
+  "Facebook_register": "Facebookと新規アカウント登録はこちら",
+  "Favorites": "お気に入り",
+  "GATHERING_LOCATIONS": {
+    "Title": "ギャザラーマップ"
+  },
+  "Game_Term/DoH": "クラフター",
+  "Game_Term/DoL": "ギャザラー",
+  "Gardening": "ガーデニング",
+  "Google_login": "Googleアカウントでログイン",
+  "Google_register": "Googleと新規アカウント登録はこちら",
+  "HOME_PAGE": {
+    "FEATURES": {
+      "alarms_title": "ギャザラー時計"
+    }
+  },
+  "Home": "ホーム",
+  "Hunting": "モブハン",
+  "ITEMS": {
+    "Item_name": "アイテム名",
+    "Title": "アイテム"
+  },
+  "Import": "輸入",
+  "Item_name": "アイテム名",
+  "LISTS": {
+    "IMPORT": {
+      "Back": "昨",
+      "Next": "次"
+    }
+  },
   "LIST_TAGS": {
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -46,5 +94,96 @@
     "MIN": "採掘",
     "BOT": "園芸",
     "FSH": "漁師"
-  }
+  },
+  "Level": "レベル",
+  "Lists": "リスト",
+  "LodestoneId": "ロドストID",
+  "Login": "ログイン",
+  "MACRO_TRANSLATION": {
+    "Macro_language": "マクロの言語",
+    "Title": "マクロ翻訳"
+  },
+  "New_List": "新リスト",
+  "Other": "その他",
+  "Password": "パスワード",
+  "Profile": "プロフィール",
+  "Reduction": "精錬",
+  "Registration": "登録",
+  "SETTINGS": {
+    "title": "設定"
+  },
+  "SIMULATOR": {
+    "Average_hq": "平均HQ",
+    "CATEGORY": {
+      "Buff": "バフ",
+      "Cp_recovery": "CPを回復",
+      "Other": "その他",
+      "Progression": "必要工数",
+      "Quality": "品質",
+      "Repair": "耐久を回復",
+      "Specialty": "マイスター"
+    },
+    "CONFIGURATION": {
+      "Apply_foods": "飯と薬を適用",
+      "Apply_ingredients": "HQ材料を適用",
+      "Apply_stats": "ステータスを適用",
+      "Consumables": "薬品・調理品",
+      "Control": "加工精度",
+      "Craftsmanship": "作業精度",
+      "Custom_set": "カスタムセットを可能にします",
+      "Food": "飯を選び出します",
+      "Ingredients": "HQ材料",
+      "Job": "ジョブ",
+      "Medicine": "薬を選び出します",
+      "Reset_set": "ステータスをリセット",
+      "STATS": {
+        "CP": "CP",
+        "Control": "加工精度",
+        "Craftsmanship": "作業精度"
+      },
+      "Save_set": "このジョブからギアセットを保存",
+      "Select_job": "ジョブを選び出します",
+      "Specialist": "マイスター"
+    },
+    "CUSTOM": {
+      "Recipe_configuration": "製作情報",
+      "Recipe_durability": "耐久",
+      "Recipe_level": "レシピLv",
+      "Recipe_progress": "必要工数マックス",
+      "Recipe_quality": "品質マックス"
+    },
+    "Configuration": "ジョブ設定",
+    "Cp_amount": "CP",
+    "Durability": "耐久",
+    "Generate_ingame_macro": "ゲームのマクロを作ります",
+    "Generated_macro": "ゲームのマクロ",
+    "Hq": "HQ",
+    "Import_macro": "ゲームのマクロが輸入をします",
+    "Ingame_macro": "マクロ",
+    "Level": "レベル",
+    "New_rotation": "新回し",
+    "New_rotation_folder": "新回しフォルダー",
+    "Persist": "この回しを保存",
+    "Progress": "必要工数",
+    "Quality": "品質",
+    "Reliability": "確実",
+    "Rename_rotation": "回し名を変更します",
+    "Reset": "リセット",
+    "Rotation_not_found": "スキル回しを見つかりませんでした",
+    "Rotations": "クラフタースキル回し",
+    "Select_job_please": "ジョブを選び出します",
+    "Specialist": "マイスター",
+    "Step_counter": "ターン"
+  },
+  "Server_name": "ワールド名",
+  "Share": "シェア",
+  "Tag_filter": "タグ",
+  "Timers": "ギャザラー時計",
+  "Use_lodestoneId": "キャラクターIDで検索",
+  "Vendors": "NPC",
+  "WIKI": {
+    "Title": "ウィキ"
+  },
+  "filters/ilvl": "アイテムLv",
+  "filters/lvl": "装備Lv"
 }

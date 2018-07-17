@@ -137,7 +137,7 @@
   "filters/lvl": "Nivel requerido",
   "filters/craft_lvl": "Nivel de la receta",
   "filters/worn_by": "Usado por",
-  "filters/crafted_by": "Creado por",
+  "filters/crafted_by": "Creado por:",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "{{itemname}} agregado a la lista {{listname}}",
   "Recipes_Added": "Resultados agregados a la lista {{listname}}",
@@ -456,7 +456,8 @@
     "New_rotation": "Rotación nueva",
     "Rotations": "Rotaciones de artesanías",
     "No_rotations": "No hay rotaciones",
-    "New_custom_rotation": "Nueva rotación personalizada",
+    "Create_a": "Crear una",
+    "custom_rotation": "rotación personalizada",
     "Reset": "Reiniciar rotación",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
@@ -602,11 +603,11 @@
       "Crafting": "Elaboración",
       "Gathering": "Recolección",
       "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos"
-    ,
-    "FILTERS": {
-      "Min_price": "Precio mínimo",
-      "Max_price": "Precio máximo"
+      "Only_craft": "Materiales incluidos",
+      "FILTERS": {
+        "Min_price": "Precio mínimo",
+        "Max_price": "Precio máximo"
+      }
     }
   }
 }

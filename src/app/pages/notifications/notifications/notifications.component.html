@@ -1,0 +1,25 @@
+<h2>{{'NOTIFICATIONS.Title' | translate}}</h2>
+<div *ngIf="notifications$ | async as notifications; else loading">
+    <div class="toolbar">
+        <button mat-raised-button (click)="markAllAsRead(notifications)">
+            <mat-icon>done_all</mat-icon>
+            {{'NOTIFICATIONS.Mark_all_as_read' | translate}}
+        </button>
+    </div>
+    <mat-list>
+        <mat-list-item *ngFor="let notification of notifications" [class.mat-elevation-z5]="!notification.to.read"
+                       (click)="notification.to.read?null:markAsRead(notification)">
+            <mat-icon matListIcon>{{notification.to.getIcon()}}</mat-icon>
+            <p matLine>{{notification.to.getContent(translate, l12n, i18nTools)}}</p>
+            <i matLine class="date">{{notification.to.date | date:'medium'}}</i>
+            <button mat-icon-button [routerLink]="notification.to.getTargetRoute()">
+                <mat-icon>open_in_new</mat-icon>
+            </button>
+        </mat-list-item>
+    </mat-list>
+</div>
+<ng-template #loading>
+    <div class="loader-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

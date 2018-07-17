@@ -9,12 +9,16 @@
             {{locale | uppercase}}
         </div>
         <div class="spacer draggable"></div>
-        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="previousPage()">arrow_back</mat-icon>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="previousPage()" *ngIf="!overlay">
+            arrow_back
+        </mat-icon>
         <mat-icon (click)="openingUrl = true" class="desktop-bar-button open-url theme-text-color" *ngIf="!overlay"
                   matTooltip="{{'COMMON.Open_url' | translate}}">
             open_in_browser
         </mat-icon>
-        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="nextPage()">arrow_forward</mat-icon>
+        <mat-icon class="desktop-bar-button nav-button theme-text-color" (click)="nextPage()" *ngIf="!overlay">
+            arrow_forward
+        </mat-icon>
         <div class="spacer draggable"></div>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="minimize()" *ngIf="!overlay">minimize</mat-icon>
         <mat-icon class="desktop-bar-button theme-text-color" (click)="toggleFullscreen()" *ngIf="!overlay">fullscreen
@@ -92,6 +96,18 @@
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>home</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Home' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/notifications" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'NOTIFICATIONS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon *ngIf="hasNotifications$ | async; else noNotifications">
+                        notifications_active
+                    </mat-icon>
+                    <ng-template #noNotifications>
+                        <mat-icon matListIcon>notifications_none</mat-icon>
+                    </ng-template>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'NOTIFICATIONS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="!(authState | async)?.isAnonymous"

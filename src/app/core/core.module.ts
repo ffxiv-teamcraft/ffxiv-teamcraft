@@ -43,6 +43,9 @@ import {LinkToolsService} from './tools/link-tools.service';
 import {PlatformService} from './tools/platform.service';
 import {IpcService} from './electron/ipc.service';
 import {SharedEntityService} from './database/shared-entity/shared-entity.service';
+import {AbstractNotification} from './notification/abstract-notification';
+import {ListProgressNotification} from '../model/notification/list-progress-notification';
+import {NotificationService} from './notification/notification.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -62,7 +65,14 @@ export const DATA_EXTRACTORS: Provider[] = [
 @NgModule({
     imports: [
         HttpClientModule,
-        NgSerializerModule,
+        NgSerializerModule.forChild([
+            {
+                parent: AbstractNotification,
+                children: {
+                    LIST_PROGRESS: ListProgressNotification,
+                }
+            }
+        ]),
         TranslateModule,
         AngularFireModule,
         MatDialogModule,
@@ -96,6 +106,7 @@ export const DATA_EXTRACTORS: Provider[] = [
         PlatformService,
         IpcService,
         SharedEntityService,
+        NotificationService,
     ],
     declarations: [
         I18nPipe,
