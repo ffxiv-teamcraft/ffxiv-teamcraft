@@ -1,3 +1,6 @@
+import {JobCategory} from '../garland-tools/job-category';
+import {Venture} from '../garland-tools/venture';
+
 export interface GarlandToolsData {
     patch: any;
     xp: number[];
@@ -19,7 +22,8 @@ export interface GarlandToolsData {
         ingredients: any[]
     };
     instanceTypes: string[];
-    jobCategories: any;
+    jobCategories: JobCategory[];
+    ventureIndex: Venture[];
     bell: {
         nodes: any[]
     };

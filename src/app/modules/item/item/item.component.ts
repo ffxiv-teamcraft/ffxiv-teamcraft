@@ -622,7 +622,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public openVentureDetails(item: ListRow): void {
         this.dialog.open(VentureDetailsPopupComponent, {
-            data: item
+            data: item.ventures
         });
     }
 

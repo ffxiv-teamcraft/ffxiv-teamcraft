@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {GarlandToolsData} from '../../model/list/garland-tools-data';
 import {Item} from '../../model/garland-tools/item';
+import {JobCategory} from '../../model/garland-tools/job-category';
+import {Venture} from '../../model/garland-tools/venture';
 import {NgSerializerService} from '@kaiu/ng-serializer';
 import {HttpClient} from '@angular/common/http';
 
@@ -65,6 +67,15 @@ export class GarlandToolsService {
     }
 
     /**
+     * Gets details for a given job category in garlandtools data.
+     * @param {number} id
+     * @returns {JobCategory}
+     */
+    getJobCategory(id: number): JobCategory {
+        return this.gt.jobCategories[id];
+    }
+
+    /**
      * Gets a list of category ids for a given job, useful for search filters.
      * @param {number[]} jobs
      * @returns {number[]}
@@ -82,5 +93,27 @@ export class GarlandToolsService {
             })
             // Then we convert the string array to a number array
             .map(key => +key);
+    }
+
+    /**
+     * Gets a list of ventures based on their ids in garlandtools data.
+     * @param {number[]} ids
+     * @returns {Venture[]}
+     */
+    getVentures(ids: number[]): Venture[] {
+        return ids.map(id => {
+            const venture = this.gt.ventureIndex[id];
+            const category = this.getJobCategory(venture.jobs);
+
+            // Convert the jobCategory (jobs) to a job id
+            if (category.jobs.length > 1) {
+                // Custom id to represent the DoW/M "hybrid" job
+                venture.job = 100;
+            } else {
+                venture.job = category.jobs[0];
+            }
+
+            return venture;
+        });
     }
 }
