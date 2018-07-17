@@ -42,6 +42,9 @@ import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {Team} from '../../../model/other/team';
+import {TeamService} from '../../../core/database/team.service';
+import {catchError} from 'rxjs/internal/operators';
 
 declare const ga: Function;
 
@@ -104,6 +107,11 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private upgradingList = false;
 
+    public teams$: Observable<Team[]>;
+
+    // Curren team assigned to this list.
+    public team$: Observable<Team>;
+
     public get selectedIndex(): number {
         return +(localStorage.getItem('layout:selected') || 0);
     }
@@ -113,7 +121,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
-                private i18nTools: I18nToolsService, private commissionService: CommissionService) {
+                private i18nTools: I18nToolsService, private commissionService: CommissionService, private teamService: TeamService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -139,6 +147,26 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 filter(data => data !== null),
                 map(layout => layout.recipeZoneBreakdown)
             );
+
+        this.teams$ = this.teamService.getUserTeams();
+
+        this.team$ = this.listData$
+            .pipe(
+                filter(list => list.teamId !== undefined),
+                mergeMap(list => {
+                    return this.teamService.get(list.teamId)
+                        .pipe(
+                            catchError(() => {
+                                delete list.teamId;
+                                return this.listService.set(list.$key, list)
+                                    .pipe(
+                                        map(() => null)
+                                    );
+                            })
+                        )
+                }),
+                filter(res => res !== null)
+            )
     }
 
     public createCommission(list: List): void {
@@ -525,6 +553,16 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .subscribe((list) => {
                 this.update(list);
             });
+    }
+
+    public assignTeam(list: List, team: Team): void {
+        list.teamId = team.$key;
+        this.update(list);
+    }
+
+    public removeTeam(list: List): void {
+        delete list.teamId;
+        this.update(list);
     }
 
     protected resetFilters(): void {

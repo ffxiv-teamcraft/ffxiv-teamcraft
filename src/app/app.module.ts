@@ -44,7 +44,6 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {MaintenanceModule} from './pages/maintenance/maintenance.module';
 import {GivewayPopupModule} from './modules/giveway-popup/giveway-popup.module';
 import {WorkshopModule} from './pages/workshop/workshop.module';
-import {LinkModule} from './pages/link/link.module';
 import {TemplateModule} from './pages/template/template.module';
 import {AlarmsSidebarModule} from './modules/alarms-sidebar/alarms-sidebar.module';
 import {MarkdownModule} from 'ngx-markdown';
@@ -129,7 +128,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         AlarmsSidebarModule,
 
         // Pages
-        LinkModule,
         WikiModule,
         ListModule,
         MaintenanceModule,
