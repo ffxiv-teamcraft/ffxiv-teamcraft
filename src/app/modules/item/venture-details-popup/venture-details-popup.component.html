@@ -1,9 +1,14 @@
-<h2 mat-dialog-title>{{data.id | itemName | i18n}}</h2>
-<div mat-dialog-content>
+<div mat-dialog-content class="content">
     <mat-list>
-        <mat-list-item *ngFor="let venture of data.ventures">
-            <mat-icon mat-list-icon>location_on</mat-icon>
-            <b mat-line>{{venture | ventureName | i18n}}</b>
+        <mat-list-item *ngFor="let venture of ventures" class="venture">
+            <h3 mat-line class="title">
+                Lv. {{venture.lvl}}
+                {{venture.name ? (venture.id | ventureName | i18n) : (venture.job | jobAbbr:DOWM | i18n)}}
+            </h3>
+            <div mat-line *ngFor="let amount of ventureAmounts(venture)" class="amount">
+                <div>{{amount.name | translate}} {{amount.stat}}:</div>
+                <div>x{{amount.quantity}}</div>
+            </div>
         </mat-list-item>
     </mat-list>
 </div>
