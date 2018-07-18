@@ -167,11 +167,11 @@
         <div class="classes">
             <div *ngIf="recipe">
                 <mat-menu #simulatorMenu="matMenu">
-                    <button mat-menu-item routerLink="/simulator/{{item.id}}">{{'SIMULATOR.New_rotation' | translate}}
+                    <button mat-menu-item routerLink="/simulator/{{item.id}}/{{item.recipeId}}">{{'SIMULATOR.New_rotation' | translate}}
                     </button>
                     <button mat-menu-item
                             *ngFor="let rotation of rotations$ | async"
-                            routerLink="/simulator/{{item.id}}/{{rotation.$key}}">{{rotation.getName()}}
+                            routerLink="/simulator/{{item.id}}/{{item.recipeId}}/{{rotation.$key}}">{{rotation.getName()}}
                     </button>
                     <mat-divider></mat-divider>
                     <a *ngIf="getCraft(item.recipeId) as craft"
