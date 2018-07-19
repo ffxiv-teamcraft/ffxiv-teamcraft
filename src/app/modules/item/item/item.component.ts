@@ -264,6 +264,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     canBeCrafted = false;
 
+    hasAllIngredients = false;
+
     hasTimers = false;
 
     hasBook = true;
@@ -280,7 +282,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     folkloreId: number;
 
     isMobile = this.media.asObservable().pipe(map(mediaChange =>
-        (mediaChange.mqAlias === 'xs' || mediaChange.mqAlias === 'sm') && !this.platformService.isDesktop()
+        mediaChange.mqAlias === 'xs' || (mediaChange.mqAlias === 'sm' && !this.platformService.isDesktop())
     ));
 
     public timers: Observable<Timer[]>;
@@ -376,6 +378,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateCanBeCrafted();
+        this.updateHasAllIngredients();
         this.updateTradeIcon();
         this.updateHasTimers();
         this.updateMasterBooks();
@@ -482,8 +485,15 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     updateCanBeCrafted(): void {
-        // this.item.done < this.item.amount check is made to avoid item being cmarked as craftable while you already crafted it.
+        // this.item.done < this.item.amount check is made to avoid item being marked as craftable while you already crafted it.
         this.canBeCrafted = this.list.canBeCrafted(this.item) && this.item.done < this.item.amount;
+    }
+
+    updateHasAllIngredients(): void {
+        const isCraft = this.item.craftedBy !== undefined && this.item.craftedBy.length > 0 && this.item.requires !== undefined;
+        // Don't put the all ingredients flag if it can be crafted as colors would overlap each other.
+        this.hasAllIngredients = isCraft && this.recipe && this.list.hasAllBaseIngredients(this.item)
+            && this.item.done < this.item.amount && !this.canBeCrafted;
     }
 
     updateRequiredForEndCraft(): void {
@@ -661,7 +671,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     public openVentureDetails(item: ListRow): void {
         this.dialog.open(VentureDetailsPopupComponent, {
-            data: item
+            data: item.ventures
         });
     }
 
