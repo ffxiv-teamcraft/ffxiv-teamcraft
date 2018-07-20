@@ -420,7 +420,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             amount: data.row.done - doneBefore,
             isPreCraft: data.preCraft,
             itemId: data.row.id,
-            userId: this.userData.$key
+            userId: this.userData.$key,
+            date: Date.now()
         });
         this.listService.set(list.$key, list).pipe(
             map(() => list),

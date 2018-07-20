@@ -621,6 +621,14 @@
     "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
     "Team_invite": "{{invitedBy}} invited you to team {{teamName}}",
     "Item_assigned": "{{itemName}} has been assigned to you on list \"{{listName}}\"",
+    "List_commented": "{{userName}} commented on list {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Mark all as read"
+  },
+  "TEAMS": {
+    "Title": "Teams",
+    "Create_team": "Create a team",
+    "Add_user": "Add a user",
+    "No_teams": "No Teams",
+    "Pending": "Pending"
   }
 }

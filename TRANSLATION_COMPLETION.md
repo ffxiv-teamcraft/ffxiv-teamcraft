@@ -1,10 +1,10 @@
 # Translation completion report
 
-**Global completion** : 77%
+**Global completion** : 76%
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-92% | 97% | 98% | 28% | 69% | 
+91% | 96% | 97% | 27% | 69% | 
 
 ## Categories details : 
 
@@ -38,6 +38,7 @@ HOME_PAGE | 100% | 100% | 100% | 4% | 100% |
 PRICING | 0% | 100% | 100% | 0% | 0% | 
 COMMISSION_BOARD | 98% | 94% | 98% | 0% | 0% | 
 NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% | 
+TEAMS | 0% | 0% | 0% | 0% | 0% | 
 
 ## Detailed report
 ### de : 
@@ -82,7 +83,13 @@ NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% |
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
  * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
  * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
+ * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
  * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
+ * `TEAMS.Title` : `Teams`
+ * `TEAMS.Create_team` : `Create a team`
+ * `TEAMS.Add_user` : `Add a user`
+ * `TEAMS.No_teams` : `No Teams`
+ * `TEAMS.Pending` : `Pending`
 
 
 ### es : 
@@ -102,7 +109,13 @@ NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% |
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
  * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
  * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
+ * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
  * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
+ * `TEAMS.Title` : `Teams`
+ * `TEAMS.Create_team` : `Create a team`
+ * `TEAMS.Add_user` : `Add a user`
+ * `TEAMS.No_teams` : `No Teams`
+ * `TEAMS.Pending` : `Pending`
 
 
 ### fr : 
@@ -115,7 +128,13 @@ NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% |
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
  * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
  * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
+ * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
  * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
+ * `TEAMS.Title` : `Teams`
+ * `TEAMS.Create_team` : `Create a team`
+ * `TEAMS.Add_user` : `Add a user`
+ * `TEAMS.No_teams` : `No Teams`
+ * `TEAMS.Pending` : `Pending`
 
 
 ### ja : 
@@ -508,7 +527,13 @@ NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% |
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
  * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
  * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
+ * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
  * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
+ * `TEAMS.Title` : `Teams`
+ * `TEAMS.Create_team` : `Create a team`
+ * `TEAMS.Add_user` : `Add a user`
+ * `TEAMS.No_teams` : `No Teams`
+ * `TEAMS.Pending` : `Pending`
 
 
 ### pt : 
@@ -676,6 +701,12 @@ NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% |
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
  * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
  * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
+ * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
  * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
+ * `TEAMS.Title` : `Teams`
+ * `TEAMS.Create_team` : `Create a team`
+ * `TEAMS.Add_user` : `Add a user`
+ * `TEAMS.No_teams` : `No Teams`
+ * `TEAMS.Pending` : `Pending`
 
 
