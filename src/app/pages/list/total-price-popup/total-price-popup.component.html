@@ -6,7 +6,12 @@
                  mat-list-avatar>
             <app-item-icon [item]="{icon: row.currencyIcon, id: row.currencyId}" mat-list-avatar
                            *ngIf="row.currencyId > -1"></app-item-icon>
-            <p matLine>{{row.amount}}</p>
+                       <p matLine>
+                           {{row.costs[0]}}
+                           <span *ngIf="row.costs.length > 1">
+                               (NQ) - {{row.costs[1]}} (HQ)
+                           </span>
+                       </p>
         </mat-list-item>
     </mat-list>
 </div>
