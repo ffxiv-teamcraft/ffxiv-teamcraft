@@ -74,7 +74,7 @@
              *ngFor="let timer of timers | async; trackBy: trackByTimers">
             <mat-menu #addAlarmMenu="matMenu">
                 <button (click)="addAlarm(timer.itemId, timer.type, group.name)" mat-menu-item
-                        *ngFor="let group of user.alarmGroups">{{group.name}}
+                        *ngFor="let group of user?.alarmGroups">{{group.name}}
                 </button>
             </mat-menu>
             <button mat-raised-button

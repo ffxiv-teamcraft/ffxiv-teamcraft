@@ -42,6 +42,7 @@ import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {ListHistoryPopupComponent} from '../list-history-popup/list-history-popup.component';
 
 declare const ga: Function;
 
@@ -142,7 +143,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public createCommission(list: List): void {
-        this.dialog.open(CommissionCreationPopupComponent, { data: { list: list, displayWarning: true } });
+        this.dialog.open(CommissionCreationPopupComponent, {data: {list: list, displayWarning: true}});
     }
 
     public getLink(): string {
@@ -282,8 +283,9 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
         this.subscriptions.push(this.auth.authState.subscribe(user => {
             this.user = user;
         }));
-        this.subscriptions.push(this.userService.getUserData()
-            .subscribe(user => {
+        this.subscriptions.push(this.userService.getCharacter()
+            .subscribe(character => {
+                const user = character.user;
                 this.userData = user;
                 this.hideUsed = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideUsed : false;
                 this.hideCompleted = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideCompleted : false;
@@ -379,12 +381,16 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     public setDone(list: List, data: { row: ListRow, amount: number, preCraft: boolean }): void {
         const doneBefore = data.row.done;
         list.setDone(data.row, data.amount, data.preCraft);
-        list.modificationsHistory.push({
-            amount: data.row.done - doneBefore,
-            isPreCraft: data.preCraft,
-            itemId: data.row.id,
-            userId: this.userData.$key
-        });
+        if (data.amount !== 0) {
+            list.modificationsHistory.push({
+                amount: data.row.done - doneBefore,
+                isPreCraft: data.preCraft,
+                itemId: data.row.id,
+                characterId: this.userData.lodestoneId,
+                itemIcon: data.row.icon,
+                date: Date.now()
+            });
+        }
         this.listService.set(list.$key, list).pipe(
             map(() => list),
             tap((l: List) => {
@@ -525,6 +531,13 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
             .subscribe((list) => {
                 this.update(list);
             });
+    }
+
+    public openHistoryPopup(): void {
+        this.dialog.open(ListHistoryPopupComponent, {
+            data: this.listData.modificationsHistory
+                .sort((a, b) => a.date > b.date ? -1 : 1)
+        });
     }
 
     protected resetFilters(): void {
