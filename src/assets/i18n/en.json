@@ -629,6 +629,8 @@
     "Create_team": "Create a team",
     "Add_user": "Add a user",
     "No_teams": "No Teams",
-    "Pending": "Pending"
+    "Pending": "Pending",
+    "Assign_list": "Assign this list to a team",
+    "Detach_team": "Detach team"
   }
 }

@@ -153,7 +153,12 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 map(layout => layout.recipeZoneBreakdown)
             );
 
-        this.teams$ = this.teamService.getUserTeams();
+        this.teams$ = combineLatest(this.userService.getUserData(), this.teamService.getUserTeams())
+            .pipe(
+                map(([user, teams]) => {
+                    return teams.filter(team => team.leader === user.$key)
+                })
+            );
 
         this.team$ = this.listData$
             .pipe(
