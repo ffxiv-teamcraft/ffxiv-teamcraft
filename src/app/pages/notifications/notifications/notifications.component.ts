@@ -35,6 +35,10 @@ export class NotificationsComponent {
         this.notificationService.set(notification.$key, notification);
     }
 
+    public remove(notification: NotificationRelationship): void {
+        this.notificationService.remove(notification.$key);
+    }
+
     public answerQuestion(notification: NotificationRelationship, answer: boolean): void {
         switch (notification.to.type) {
             case 'TEAM_INVITE':

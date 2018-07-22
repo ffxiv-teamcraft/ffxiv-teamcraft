@@ -34,6 +34,10 @@
                     [routerLink]="notification.to.getTargetRoute()">
                 <mat-icon>open_in_new</mat-icon>
             </button>
+            <button mat-icon-button color="warn" (click)="remove(notification)"
+                    *ngIf="!notification.to.isQuestion">
+                <mat-icon>delete</mat-icon>
+            </button>
         </mat-list-item>
     </mat-list>
 </div>
