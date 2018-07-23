@@ -8,6 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {TeamService} from '../../../core/database/team.service';
 import {TeamInviteNotification} from '../../../model/notification/team-invite-notification';
 import {SettingsService} from '../../settings/settings.service';
+import {first, map, mergeMap} from 'rxjs/operators';
 
 @Component({
     selector: 'app-notifications',
@@ -39,16 +40,24 @@ export class NotificationsComponent {
         this.notificationService.remove(notification.$key);
     }
 
-    public answerQuestion(notification: NotificationRelationship, answer: boolean): void {
+    public answerQuestion(notification: NotificationRelationship<TeamInviteNotification>, answer: boolean): void {
         switch (notification.to.type) {
             case 'TEAM_INVITE':
-                if (answer) {
-                    (<TeamInviteNotification>notification.to).team.confirmMember(notification.from);
-                } else {
-                    (<TeamInviteNotification>notification.to).team.removeMember(notification.from);
-                }
-                this.teamService.set((<TeamInviteNotification>notification.to).team.$key, (<TeamInviteNotification>notification.to).team)
-                    .subscribe();
+                this.teamService.get(notification.to.teamId)
+                    .pipe(
+                        first(),
+                        map(team => {
+                            if (answer) {
+                                team.confirmMember(notification.from);
+                            } else {
+                                team.removeMember(notification.from);
+                            }
+                            return team;
+                        }),
+                        mergeMap(team => {
+                            return this.teamService.set(team.$key, team);
+                        })
+                    ).subscribe();
                 break;
             default:
                 break;
