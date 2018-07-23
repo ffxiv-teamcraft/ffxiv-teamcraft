@@ -20,12 +20,16 @@ export class VentureDetailsPopupComponent {
     }
 
     ventureAmounts(venture: Venture): any[] {
+        let amounts = [];
+
         if (venture.amounts !== undefined) {
             const stats = venture.ilvl || venture.gathering;
             const name = venture.ilvl ? 'filters/ilvl' : 'Gathering';
-            return stats.map((stat, i) => ({ name: name, stat: stat, quantity: venture.amounts[i]}));
-        } else {
-            return [];
+            if (stats) {
+                amounts = stats.map((stat, i) => ({ name: name, stat: stat, quantity: venture.amounts[i]}));
+            }
         }
+
+        return amounts;
     }
 }

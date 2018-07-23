@@ -245,7 +245,7 @@
                 </a>
                 <mat-card-title *ngIf="itemId !== undefined">
                     {{itemId | itemName | i18n}}
-                    <button mat-icon-button (click)="changeRecipe()" *ngIf="rotation !== undefined && !dirty">
+                    <button mat-icon-button (click)="changeRecipe()" [disabled]="rotation === undefined || dirty">
                         <mat-icon>swap_horiz</mat-icon>
                     </button>
                 </mat-card-title>

@@ -388,7 +388,6 @@ export class List extends DataWithPermissions {
     hasAllBaseIngredients(item: ListRow, amount = item.amount): boolean {
         // If it's not a craft, break recursion
         if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
-            console.log(item.id, item.done, amount, item.amount);
             // Simply return the amount of the item being equal to the amount needed.
             return item.done >= amount;
         }
