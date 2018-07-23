@@ -88,7 +88,7 @@ export class AppComponent implements OnInit {
 
     hasCommissionBadge$: Observable<boolean>;
 
-    hasNotifications$: Observable<boolean>;
+    notifications$: Observable<number>;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -115,9 +115,9 @@ export class AppComponent implements OnInit {
 
         this.notificationService.init();
 
-        this.hasNotifications$ = this.notificationService.notifications$.pipe(
+        this.notifications$ = this.notificationService.notifications$.pipe(
             map(relationships => relationships.filter(r => !r.to.read)),
-            map(relationships => relationships.length > 0)
+            map(relationships => relationships.length)
         );
 
         settings.themeChange$.subscribe(change => {

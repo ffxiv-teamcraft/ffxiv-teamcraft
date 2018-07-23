@@ -101,7 +101,9 @@
                                matTooltipPosition="right"
                                matTooltip="{{'NOTIFICATIONS.Title' | translate}}"
                                [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon *ngIf="hasNotifications$ | async; else noNotifications">
+                    <mat-icon matListIcon *ngIf="notifications$ | async as notifications; else noNotifications"
+                              matBadge="{{notifications}}"
+                              matBadgeColor="accent">
                         notifications_active
                     </mat-icon>
                     <ng-template #noNotifications>
