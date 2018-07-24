@@ -50,6 +50,7 @@ import {Permissions} from '../../../core/database/permissions/permissions';
 import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
 import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
+import {ListService} from '../../../core/database/list.service';
 
 @Component({
     selector: 'app-item',
@@ -306,7 +307,8 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private userService: UserService,
                 private platformService: PlatformService,
                 public cd: ChangeDetectorRef,
-                private rotationsService: CraftingRotationService) {
+                private rotationsService: CraftingRotationService,
+                private listService: ListService) {
         super();
         this.rotations$ = this.userService.getUserData().pipe(
             mergeMap(user => {
@@ -503,17 +505,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     updateHasTimers(): void {
-        const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
-            this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
-        const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
-            .map(reduction => {
-                if (reduction.obj !== undefined) {
-                    return reduction.obj.i;
-                }
-                return reduction;
-            })
-            .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
-        this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
+        this.hasTimers = this.listService.hasTimers(this.item);
     }
 
     openRequirementsPopup(): void {

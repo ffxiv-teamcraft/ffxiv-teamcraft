@@ -42,6 +42,7 @@ import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {AlarmService} from '../../../core/time/alarm.service';
 
 declare const ga: Function;
 
@@ -100,6 +101,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
 
+    public hasTimers = false;
+
     private completionDialogOpen = false;
 
     private upgradingList = false;
@@ -113,7 +116,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
-                private i18nTools: I18nToolsService, private commissionService: CommissionService) {
+                private i18nTools: I18nToolsService, private commissionService: CommissionService,
+                private alarmService: AlarmService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -142,7 +146,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     }
 
     public createCommission(list: List): void {
-        this.dialog.open(CommissionCreationPopupComponent, { data: { list: list, displayWarning: true } });
+        this.dialog.open(CommissionCreationPopupComponent, {data: {list: list, displayWarning: true}});
     }
 
     public getLink(): string {
@@ -164,7 +168,18 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateDisplay();
+        this.updateHasTimers();
         this.listData$.next(this.listData);
+    }
+
+    private updateHasTimers(): void {
+        if (this.listData !== undefined && this.listData !== null) {
+            let hasTimers = false;
+            this.listData.forEach(row => {
+                hasTimers = hasTimers || this.listService.hasTimers(row);
+            });
+            this.hasTimers = hasTimers;
+        }
     }
 
     private updateDisplay(): void {
@@ -434,6 +449,29 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     })
                 ).subscribe();
         }
+    }
+
+    public createAllAlarms(list: List): void {
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                map(user => {
+                    if (user.alarmGroups.find(group => group.name === list.name) === undefined) {
+                        user.alarmGroups.push({name: list.name, enabled: true});
+                    }
+                    return user;
+                }),
+                mergeMap(user => {
+                    return this.userService.set(user.$key, user);
+                }),
+                map(() => {
+                    const timedRows = this.listService.getTimedRows(list);
+                    timedRows.forEach(row => this.alarmService.register(row, list.name));
+                })
+            )
+            .subscribe(() => {
+                this.snack.open(this.translate.instant('ALARM.Alarms_created'), '', {duration: 3000});
+            });
     }
 
     public forkList(list: List): void {

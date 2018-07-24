@@ -64,6 +64,14 @@
                     matTooltip="{{'COMMISSION_BOARD.Create_commission' | translate}}">
                 <mat-icon>drafts</mat-icon>
             </button>
+
+            <button mat-mini-fab
+                    *ngIf="hasTimers"
+                    (click)="createAllAlarms(listData)"
+                    [matTooltip]="'LIST.Add_all_alarms' | translate">
+                <mat-icon>alarm_add</mat-icon>
+            </button>
+
             <div class="spacer"></div>
 
             <button mat-mini-fab color="accent"
@@ -199,7 +207,8 @@
         <mat-expansion-panel class="panel" *ngIf="listData.crystals?.length > 0">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
-                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
+                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()"
+                              class="crystals-toggle">
                     {{'LIST.Enable_crystals_tracking' | translate}}
                 </mat-checkbox>
                 <button mat-icon-button ngxClipboard
