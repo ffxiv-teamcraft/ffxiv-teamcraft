@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {TradeSource} from '../../../model/list/trade-source';
@@ -7,7 +7,8 @@ import {ItemComponent} from '../../../modules/item/item/item.component';
 @Component({
     selector: 'app-total-price-popup',
     templateUrl: './total-price-popup.component.html',
-    styleUrls: ['./total-price-popup.component.scss']
+    styleUrls: ['./total-price-popup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TotalPricePopupComponent implements OnInit {
 
@@ -30,25 +31,31 @@ export class TotalPricePopupComponent implements OnInit {
                     // We'll use -1 as currencyId for gil.
                     const gilsRow = result.find(r => r.currencyId === -1);
                     if (gilsRow === undefined) {
-                        result.push({currencyId: -1, currencyIcon: -1, amount: vendor.price * (row.amount - row.done)});
+                        result.push({currencyId: -1, currencyIcon: -1, costs: [vendor.price * (row.amount - row.done)]});
                     } else {
-                        gilsRow.amount += vendor.price * (row.amount - row.done);
+                        gilsRow.costs[0] += vendor.price * (row.amount - row.done);
                     }
                 });
             } else if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
                 const tradeSource = this.getTradeSourceByPriority(row.tradeSources);
-                const trade = tradeSource.trades.sort((ta, tb) => ta.currencyAmount / ta.itemAmount - tb.currencyAmount / tb.itemAmount)[0];
+                const trade = tradeSource.trades[0];
+                const costs = tradeSource.trades.sort((ta, tb) => ta.itemHQ ? 1 : 0).map(t => {
+                    return t.currencyAmount * (row.amount - row.done);
+                });
                 const tradeRow = result.find(r => r.currencyId === trade.currencyId);
+
                 if (tradeRow === undefined) {
                     result.push({
                         currencyId: trade.currencyId,
                         currencyIcon: trade.currencyIcon,
-                        amount: trade.currencyAmount * (row.amount - row.done)
+                        costs: costs
                     });
                 } else {
-                    tradeRow.amount += trade.currencyAmount * (row.amount - row.done);
+                    tradeRow.costs[0] += costs[0];
+                    tradeRow.costs[1] += costs[1];
                 }
             }
+
             return result;
         }, []);
     }

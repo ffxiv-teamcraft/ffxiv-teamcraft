@@ -27,17 +27,17 @@ export class AlarmsSidebarComponent implements OnInit {
     ngOnInit() {
         const alarmGroups$ = combineLatest(this.etime.getEorzeanTime(), this.userService.getUserData())
             .pipe(
-                tap(([time, user]) => this.time = time),
+                tap(([time]) => this.time = time),
                 map(([time, user]) => {
-                    const result = user.alarmGroups.map(group => {
+                    const result = (user.alarmGroups || []).map(group => {
                         return {groupName: group.name, enabled: group.enabled, alarms: []};
                     });
                     const alarms: Alarm[] = [];
-                    this.alarmService.alarms.forEach(alarm => {
+                    (user.alarms || []).forEach(alarm => {
                         if (alarms.find(a => a.itemId === alarm.itemId) !== undefined) {
                             return;
                         }
-                        const itemAlarms = this.alarmService.alarms.filter(a => a.itemId === alarm.itemId);
+                        const itemAlarms = user.alarms.filter(a => a.itemId === alarm.itemId);
                         alarms.push(this.alarmService.closestAlarm(itemAlarms, time));
                     });
                     alarms.forEach(alarm => {

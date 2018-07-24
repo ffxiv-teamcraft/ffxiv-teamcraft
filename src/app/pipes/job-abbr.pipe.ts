@@ -7,8 +7,9 @@ import {I18nName} from '../model/list/i18n-name';
 })
 export class JobAbbrIconPipe implements PipeTransform {
 
+
     transform(id: number, fallback?: string): I18nName {
-        return jobAbbrs[id];
+        return jobAbbrs[id] || fallback;
     }
 
 }

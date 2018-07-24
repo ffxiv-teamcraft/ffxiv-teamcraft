@@ -48,6 +48,8 @@ export class SimulatorPageComponent {
 
     public rotation: CraftingRotation;
 
+    public thresholds: number[] = [];
+
     constructor(private userService: UserService, private rotationsService: CraftingRotationService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry,
                 private data: DataService) {
@@ -59,16 +61,31 @@ export class SimulatorPageComponent {
                             map(item => {
                                 this.itemId = params.itemId;
                                 this.itemIcon = item.item.icon;
+
+                                let recipe: Craft;
                                 // If rotationId is only numbers, it's a recipeId
                                 if (params.rotationId !== undefined && /^\d+$/.test(params.rotationId)) {
                                     this.recipeId = params.rotationId;
-                                    return item.item.craft.find(craft => +craft.id === +this.recipeId);
+                                    recipe = item.item.craft.find(craft => +craft.id === +this.recipeId);
                                 } else if (params.recipeId !== undefined) {
                                     this.recipeId = params.recipeId;
-                                    return item.item.craft.find(craft => +craft.id === +this.recipeId);
+                                    recipe = item.item.craft.find(craft => +craft.id === +this.recipeId);
+                                } else {
+                                    // Because only crystals change between recipes, we take the first one.
+                                    recipe = item.item.craft[0];
                                 }
-                                // Because only crystals change between recipes, we take the first one.
-                                return item.item.craft[0];
+
+                                // If the item is collectable, we want to get thresholds
+                                if (item.item.collectable === 1) {
+                                    // If it's a delivery item
+                                    if (item.item.satisfaction !== undefined) {
+                                        // We want thresholds on quality, not collectable score.
+                                        this.thresholds = item.item.satisfaction[0].rating.map(r => r * 10);
+                                    } else if (item.item.masterpiece !== undefined) {
+                                        this.thresholds = item.item.masterpiece.rating.map(r => r * 10);
+                                    }
+                                }
+                                return recipe;
                             })
                         );
                 }),
