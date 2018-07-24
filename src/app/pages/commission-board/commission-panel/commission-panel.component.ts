@@ -61,13 +61,7 @@ export class CommissionPanelComponent implements OnInit {
                                 return list;
                             }),
                             mergeMap(list => {
-                                if (list.ephemeral) {
-                                    // Quick commission lists are deleted
-                                    return this.listService.remove(list.$key)
-                                } else {
-                                    // Normal lists are retained
-                                    return this.listService.set(list.$key, list)
-                                }
+                                return this.listService.set(list.$key, list);
                             })
                         );
                 }),

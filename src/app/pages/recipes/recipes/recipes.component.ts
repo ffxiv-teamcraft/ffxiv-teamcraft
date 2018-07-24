@@ -409,7 +409,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
     }
 
     createCommission(recipe: Recipe, amount: string): void {
-        this.subscriptions.push(this.createQuickList(recipe, amount, false).subscribe(list => {
+        this.subscriptions.push(this.createQuickList(recipe, amount, false, false).subscribe(list => {
             this.dialog.open(CommissionCreationPopupComponent, { data: { list: list } });
         }));
     }
@@ -418,11 +418,11 @@ export class RecipesComponent extends PageComponent implements OnInit {
         return RecipesHelpComponent;
     }
 
-    private createQuickList(recipe: Recipe, amount: string, collectible: boolean): Observable<List> {
+    private createQuickList(recipe: Recipe, amount: string, collectible: boolean, ephemeral = true): Observable<List> {
         const list = new List();
         ga('send', 'event', 'List', 'creation');
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
-        list.ephemeral = true;
+        list.ephemeral = ephemeral;
         return this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)
             .pipe(
                 switchMap((l) => {
