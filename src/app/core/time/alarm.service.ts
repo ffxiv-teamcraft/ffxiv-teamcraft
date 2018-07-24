@@ -68,7 +68,7 @@ export class AlarmService {
      */
     public unregister(id: number): void {
         this.getAlarms(id).forEach((alarm) => {
-            this._alarms.get(alarm).next();
+            this._alarms.get(alarm).next(null);
             this._alarms.delete(alarm);
         });
         this.persistAlarms();
@@ -198,7 +198,6 @@ export class AlarmService {
      * @param {Alarm} alarm
      */
     private playAlarm(alarm: Alarm): void {
-        console.log('playing alarm for item', alarm.itemId);
         if (this.settings.alarmsMuted) {
             return;
         }
