@@ -4,7 +4,7 @@
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-91% | 96% | 97% | 27% | 69% | 
+91% | 95% | 97% | 27% | 68% | 
 
 ## Categories details : 
 
@@ -21,7 +21,7 @@ ALARM | 67% | 67% | 100% | 0% | 67% |
 SETTINGS | 90% | 70% | 100% | 10% | 60% | 
 PROFILE | 95% | 95% | 100% | 0% | 75% | 
 LISTS | 93% | 100% | 100% | 13% | 93% | 
-LIST | 15% | 100% | 100% | 0% | 15% | 
+LIST | 14% | 93% | 100% | 0% | 14% | 
 LIST_DETAILS | 100% | 100% | 100% | 0% | 98% | 
 LIST_TAGS | 100% | 100% | 100% | 100% | 100% | 
 RECIPES | 100% | 100% | 100% | 0% | 100% | 
@@ -56,6 +56,7 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `LISTS.Add_selection` : `Add selection to a list`
  * `LIST.Copy_as_text` : `Copy as text`
  * `LIST.Total_price` : `Total trades (gils and currencies)`
+ * `LIST.History` : `History`
  * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
  * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
  * `LIST.BUTTONS.Copy_template_url_description` : `Copy the template link for this list, which will create a copy of the list for whoever opens it`
@@ -90,6 +91,8 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `TEAMS.Add_user` : `Add a user`
  * `TEAMS.No_teams` : `No Teams`
  * `TEAMS.Pending` : `Pending`
+ * `TEAMS.Assign_list` : `Assign this list to a team`
+ * `TEAMS.Detach_team` : `Detach team`
 
 
 ### es : 
@@ -99,6 +102,7 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `SETTINGS.Downloading_update` : `Downloading update`
  * `SETTINGS.No_update_available` : `No update available`
  * `PROFILE.VERIFICATION.Title` : `Profile validation`
+ * `LIST.History` : `History`
  * `SIMULATOR.STATS.CP` : `undefined`
  * `SIMULATOR.STATS.Craftsmanship` : `undefined`
  * `SIMULATOR.STATS.Control` : `undefined`
@@ -116,6 +120,8 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `TEAMS.Add_user` : `Add a user`
  * `TEAMS.No_teams` : `No Teams`
  * `TEAMS.Pending` : `Pending`
+ * `TEAMS.Assign_list` : `Assign this list to a team`
+ * `TEAMS.Detach_team` : `Detach team`
 
 
 ### fr : 
@@ -135,6 +141,8 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `TEAMS.Add_user` : `Add a user`
  * `TEAMS.No_teams` : `No Teams`
  * `TEAMS.Pending` : `Pending`
+ * `TEAMS.Assign_list` : `Assign this list to a team`
+ * `TEAMS.Detach_team` : `Detach team`
 
 
 ### ja : 
@@ -321,6 +329,7 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `LIST.Enable_crystals_tracking` : `Enable crystals tracking`
  * `LIST.Copy_as_text` : `Copy as text`
  * `LIST.Total_price` : `Total trades (gils and currencies)`
+ * `LIST.History` : `History`
  * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
  * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
  * `LIST.BUTTONS.Copy_template_url_description` : `Copy the template link for this list, which will create a copy of the list for whoever opens it`
@@ -534,6 +543,8 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `TEAMS.Add_user` : `Add a user`
  * `TEAMS.No_teams` : `No Teams`
  * `TEAMS.Pending` : `Pending`
+ * `TEAMS.Assign_list` : `Assign this list to a team`
+ * `TEAMS.Detach_team` : `Detach team`
 
 
 ### pt : 
@@ -561,6 +572,7 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `LISTS.Add_selection` : `Add selection to a list`
  * `LIST.Copy_as_text` : `Copy as text`
  * `LIST.Total_price` : `Total trades (gils and currencies)`
+ * `LIST.History` : `History`
  * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
  * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
  * `LIST.BUTTONS.Copy_template_url_description` : `Copy the template link for this list, which will create a copy of the list for whoever opens it`
@@ -708,5 +720,7 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `TEAMS.Add_user` : `Add a user`
  * `TEAMS.No_teams` : `No Teams`
  * `TEAMS.Pending` : `Pending`
+ * `TEAMS.Assign_list` : `Assign this list to a team`
+ * `TEAMS.Detach_team` : `Detach team`
 
 
