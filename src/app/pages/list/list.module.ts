@@ -16,6 +16,7 @@ import {
     MatIconModule,
     MatInputModule,
     MatListModule,
+    MatMenuModule,
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSliderModule,
@@ -83,6 +84,7 @@ const routes: Routes = [
         MatGridListModule,
         MatTooltipModule,
         MatSlideToggleModule,
+        MatMenuModule,
 
         FlexLayoutModule,
         ClipboardModule,

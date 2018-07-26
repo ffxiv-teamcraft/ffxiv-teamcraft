@@ -86,6 +86,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
         RouterModule.forRoot([], {useHash: IS_ELECTRON}),
 
+        AppRoutingModule,
+
         HttpClientModule,
         // Animations for material.
         BrowserAnimationsModule,

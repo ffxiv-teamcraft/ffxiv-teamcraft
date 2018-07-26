@@ -1,16 +1,16 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {UserService} from '../../../../core/database/user.service';
+import {UserService} from '../../../core/database/user.service';
 import {fromEvent} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, first, map, mergeMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
 import {combineLatest, of} from 'rxjs/index';
 
 @Component({
-    selector: 'app-add-new-row-popup',
-    templateUrl: './add-new-row-popup.component.html',
-    styleUrls: ['./add-new-row-popup.component.scss']
+    selector: 'app-user-selection-popup',
+    templateUrl: './user-selection-popup.component.html',
+    styleUrls: ['./user-selection-popup.component.scss']
 })
-export class AddNewRowPopupComponent implements OnInit {
+export class UserSelectionPopupComponent implements OnInit {
 
     @ViewChild('inputField')
     inputField: ElementRef;

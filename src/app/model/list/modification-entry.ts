@@ -3,4 +3,5 @@ export interface ModificationEntry {
     amount: number;
     itemId: number;
     isPreCraft: boolean;
+    date: number;
 }

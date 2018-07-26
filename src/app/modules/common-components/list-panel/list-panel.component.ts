@@ -15,11 +15,13 @@ import {ListTemplate} from '../../../core/database/list-template/list-template';
 import {ListTemplateService} from '../../../core/database/list-template/list-template.service';
 import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import {PermissionsPopupComponent} from '../permissions-popup/permissions-popup.component';
-import {catchError, filter, first, map, mergeMap} from 'rxjs/operators';
+import {catchError, filter, first, map, mergeMap, shareReplay} from 'rxjs/operators';
 import {ListRow} from '../../../model/list/list-row';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {ListTag} from '../../../model/list/list-tag.enum';
 import {ListTagsPopupComponent} from '../../../pages/list/list-tags-popup/list-tags-popup.component';
+import {TeamService} from '../../../core/database/team.service';
+import {Team} from '../../../model/other/team';
 
 @Component({
     selector: 'app-list-panel',
@@ -82,10 +84,13 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
 
     public tags: ListTag[];
 
+    public team$: Observable<Team>;
+
     constructor(private snack: MatSnackBar, private translator: TranslateService,
                 private listService: ListService, private translate: TranslateService, private media: ObservableMedia,
                 private router: Router, private auth: AngularFireAuth, private userService: UserService,
-                private dialog: MatDialog, private templateService: ListTemplateService, private linkTools: LinkToolsService) {
+                private dialog: MatDialog, private templateService: ListTemplateService, private linkTools: LinkToolsService,
+                private teamService: TeamService) {
         super();
     }
 
@@ -197,6 +202,13 @@ export class ListPanelComponent extends ComponentWithSubscriptions implements On
             this.userNickname = u.nickname;
             this.anonymous = u.anonymous;
         });
+
+        this.team$ = of(this.list.teamId)
+            .pipe(
+                filter(teamId => teamId !== undefined),
+                mergeMap(teamId => this.teamService.get(teamId)),
+                shareReplay()
+            );
     }
 
     public isMobile(): boolean {

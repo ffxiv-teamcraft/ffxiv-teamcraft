@@ -60,6 +60,14 @@ export class SettingsService {
         this.setSetting('compact-alarms', compact.toString());
     }
 
+    public get notificationsMuted(): boolean {
+        return this.getSetting('notifications-muted', 'false') === 'true';
+    }
+
+    public set notificationsMuted(compact: boolean) {
+        this.setSetting('notifications-muted', compact.toString());
+    }
+
     public get theme(): string {
         return this.getSetting('theme', 'dark-orange');
     }

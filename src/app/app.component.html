@@ -97,6 +97,20 @@
                     <mat-icon matListIcon>home</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Home' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/notifications" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'NOTIFICATIONS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon *ngIf="notifications$ | async as notifications; else noNotifications"
+                              matBadge="{{notifications}}"
+                              matBadgeColor="accent">
+                        notifications_active
+                    </mat-icon>
+                    <ng-template #noNotifications>
+                        <mat-icon matListIcon>notifications_none</mat-icon>
+                    </ng-template>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'NOTIFICATIONS.Title' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/profile" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="!(authState | async)?.isAnonymous"
                                matTooltipPosition="right"
@@ -104,6 +118,14 @@
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>person</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Profile' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item routerLink="/teams" (click)="mobile ? sidenav.close() :  null"
+                               *ngIf="!(authState | async)?.isAnonymous"
+                               matTooltipPosition="right"
+                               matTooltip="{{'TEAMS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>people_outline</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'TEAMS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/custom-links" (click)="mobile ? sidenav.close() :  null"
                                *ngIf="customLinksEnabled"

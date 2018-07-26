@@ -1,0 +1,36 @@
+.member-name {
+    display: flex !important;
+    align-items: center;
+    .fa-patreon {
+        margin: 0 5px;
+    }
+    mat-icon {
+        margin-left: 5px;
+    }
+    &.pending {
+        opacity: .7;
+    }
+}
+
+.large-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-icon {
+    margin-right: 5px;
+}
+
+.team-panel {
+    margin: 10px 0;
+}
+
+.no-teams {
+    font-size: 40px;
+    width: 100%;
+    min-height: 200px;
+    opacity: .7;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

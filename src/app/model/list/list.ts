@@ -47,6 +47,8 @@ export class List extends DataWithPermissions {
 
     modificationsHistory: ModificationEntry[] = [];
 
+    teamId: string;
+
     public get isCommissionList(): boolean {
         return this.commissionId !== undefined && this.commissionServer !== undefined;
     }
