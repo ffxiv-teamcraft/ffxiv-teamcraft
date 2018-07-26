@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.9"></a>
+## [4.3.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.8...v4.3.9) (2018-07-24)
+
+
+### Bug Fixes
+
+* deleted alarms wont be playing anymore ([81bad1b](https://github.com/Supamiu/ffxiv-teamcraft/commit/81bad1b)), closes [#514](https://github.com/Supamiu/ffxiv-teamcraft/issues/514)
+* list recipe simulator links ([e4fafe5](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4fafe5)), closes [#401](https://github.com/Supamiu/ffxiv-teamcraft/issues/401)
+* remove ephemeral flag from quick commissions ([19feea3](https://github.com/Supamiu/ffxiv-teamcraft/commit/19feea3))
+
+
+### Features
+
+* add HQ material cost to total price popup ([f1e6547](https://github.com/Supamiu/ffxiv-teamcraft/commit/f1e6547))
+* show levels for retainer ventures ([5bd7958](https://github.com/Supamiu/ffxiv-teamcraft/commit/5bd7958)), closes [#315](https://github.com/Supamiu/ffxiv-teamcraft/issues/315)
+
+
+
 <a name="4.3.8"></a>
 ## [4.3.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.7...v4.3.8) (2018-07-17)
 

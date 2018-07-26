@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 import {ListRow} from '../../../model/list/list-row';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {ConfirmationPopupComponent} from '../../../modules/common-components/confirmation-popup/confirmation-popup.component';
-import {Observable, of, ReplaySubject} from 'rxjs';
+import {combineLatest, Observable, of, ReplaySubject} from 'rxjs';
 import {UserService} from 'app/core/database/user.service';
 import {ListService} from '../../../core/database/list.service';
 import {ListManagerService} from '../../../core/list/list-manager.service';
@@ -43,6 +43,11 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {ListHistoryPopupComponent} from '../list-history-popup/list-history-popup.component';
+import {NotificationService} from '../../../core/notification/notification.service';
+import {ListProgressNotification} from '../../../model/notification/list-progress-notification';
+import {Team} from '../../../model/other/team';
+import {TeamService} from '../../../core/database/team.service';
+import {catchError} from 'rxjs/internal/operators';
 
 declare const ga: Function;
 
@@ -105,6 +110,13 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     private upgradingList = false;
 
+    private characterData: any;
+
+    public teams$: Observable<Team[]>;
+
+    // Curren team assigned to this list.
+    public team$: Observable<Team>;
+
     public get selectedIndex(): number {
         return +(localStorage.getItem('layout:selected') || 0);
     }
@@ -114,7 +126,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 private translate: TranslateService, private router: Router, private eorzeanTimeService: EorzeanTimeService,
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
-                private i18nTools: I18nToolsService, private commissionService: CommissionService) {
+                private i18nTools: I18nToolsService, private commissionService: CommissionService,
+                private notificationService: NotificationService, private teamService: TeamService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -140,6 +153,31 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 filter(data => data !== null),
                 map(layout => layout.recipeZoneBreakdown)
             );
+
+        this.teams$ = combineLatest(this.userService.getUserData(), this.teamService.getUserTeams())
+            .pipe(
+                map(([user, teams]) => {
+                    return teams.filter(team => team.leader === user.$key)
+                })
+            );
+
+        this.team$ = this.listData$
+            .pipe(
+                filter(list => list.teamId !== undefined),
+                mergeMap(list => {
+                    return this.teamService.get(list.teamId)
+                        .pipe(
+                            catchError(() => {
+                                delete list.teamId;
+                                return this.listService.set(list.$key, list)
+                                    .pipe(
+                                        map(() => null)
+                                    );
+                            })
+                        )
+                }),
+                filter(res => res !== null)
+            )
     }
 
     public createCommission(list: List): void {
@@ -291,6 +329,10 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 this.hideCompleted = user.listDetailsFilters !== undefined ? user.listDetailsFilters.hideCompleted : false;
                 this.triggerFilter();
             }));
+        this.subscriptions.push(
+            this.userService.getCharacter()
+                .subscribe(character => this.characterData = character)
+        );
         this.listData$.next(this.listData);
     }
 
@@ -413,6 +455,31 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     })
                 ).subscribe();
         }
+        // If this list belongs to a team
+        if (list.teamId !== undefined) {
+            this.team$
+                .pipe(
+                    first(),
+                    mergeMap(team => this.teamService.isPremium(team)
+                        .pipe(
+                            map(res => (res ? team : null))
+                        )
+                    ),
+                    filter(res => res !== null),
+                    mergeMap((team: Team) => {
+                        const notification = new ListProgressNotification(list.name,
+                            this.characterData.name, data.amount, data.row.id, list.$key);
+                        const relevantMembers = Object.keys(team.members)
+                            .filter(member => team.isConfirmed(member) && member !== this.userData.$key);
+                        return combineLatest(relevantMembers.map(userId => {
+                            const preparedNotification = this.notificationService.prepareNotification(userId, notification);
+                            return this.notificationService.add(preparedNotification);
+                        }));
+                    })
+                )
+                .subscribe();
+
+        }
     }
 
     private onCompletion(list: List): void {
@@ -532,12 +599,20 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 this.update(list);
             });
     }
-
+  
     public openHistoryPopup(): void {
         this.dialog.open(ListHistoryPopupComponent, {
             data: this.listData.modificationsHistory
                 .sort((a, b) => a.date > b.date ? -1 : 1)
         });
+    public assignTeam(list: List, team: Team): void {
+        list.teamId = team.$key;
+        this.update(list);
+    }
+
+    public removeTeam(list: List): void {
+        delete list.teamId;
+        this.update(list);
     }
 
     protected resetFilters(): void {

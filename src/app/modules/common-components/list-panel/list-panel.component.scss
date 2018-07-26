@@ -20,6 +20,9 @@
             white-space: nowrap;
             flex: 0 0 auto;
             width: 25%;
+            .team-icon {
+                margin-right: 5px;
+            }
             .title {
                 overflow: hidden;
                 text-overflow: ellipsis;

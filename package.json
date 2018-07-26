@@ -2,7 +2,7 @@
   "name": "FFXIV-Teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "4.3.8",
+  "version": "4.3.9",
   "license": "MIT",
   "main": "main.js",
   "build": {
@@ -91,7 +91,7 @@
     "firebase": "^5.0.2",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
-    "ng-drag-drop": "^4.0.1",
+    "ng-drag-drop": "5.0.0",
     "ng-push": "^0.2.1",
     "ngx-clipboard": "11.0.0",
     "ngx-markdown": "^1.6.0",

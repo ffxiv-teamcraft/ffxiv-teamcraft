@@ -247,33 +247,29 @@ mat-progress-bar {
     background-color: rgba(255, 0, 0, .3);
 }
 
+.action-drag-zone {
+    display: block;
+    margin-top: 5px;
+    opacity: 0;
+    width: 10px;
+    height: 40px;
+    &.drag-over {
+        opacity: 1;
+        border: 2px dashed rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        width: 40px;
+    }
+}
+
 .actions {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     min-height: 50px;
-    app-action {
+    .action-parent {
         display: flex;
-        &.drag-over::before {
-            content: " ";
-            display: block;
-            margin-top: 5px;
-            width: 40px;
-            height: 40px;
-            border: 2px dashed rgba(0, 0, 0, 0.7);
-            border-radius: 5px;
-        }
-    }
-    .end-drag-zone {
-        display: block;
-        margin-top: 5px;
-        opacity: 0;
-        width: 40px;
-        height: 40px;
-        &.drag-over {
-            opacity: 1;
-            border: 2px dashed rgba(0, 0, 0, 0.7);
-            border-radius: 5px;
+        app-action {
+            margin: 5px 0;
         }
     }
 }
@@ -316,6 +312,9 @@ mat-progress-bar {
         padding: 5px;
         background: rgba(0, 0, 0, .3);
         margin: 10px;
+        app-action {
+            margin: 5px;
+        }
     }
 }
 

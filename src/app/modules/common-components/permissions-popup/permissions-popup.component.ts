@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {DataWithPermissions} from '../../../core/database/permissions/data-with-permissions';
-import {AddNewRowPopupComponent} from './add-new-row-popup/add-new-row-popup.component';
+import {UserSelectionPopupComponent} from '../user-selection-popup/user-selection-popup.component';
 import {BehaviorSubject, combineLatest, concat, Observable, of} from 'rxjs';
 import {Permissions} from '../../../core/database/permissions/permissions';
 import {PermissionsRegistry} from '../../../core/database/permissions/permissions-registry';
@@ -115,7 +115,7 @@ export class PermissionsPopupComponent {
     }
 
     addNewRow(): void {
-        this.dialog.open(AddNewRowPopupComponent).afterClosed()
+        this.dialog.open(UserSelectionPopupComponent).afterClosed()
             .pipe(filter(u => u !== ''))
             .subscribe(user => {
                 if (this.registry.registry[user.$key] === undefined && this.data.authorId !== user.$key) {

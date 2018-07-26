@@ -19,6 +19,31 @@
                         (click)="openPermissionsPopup()" *ngIf="listData.authorId === userData?.$key">
                     <mat-icon>security</mat-icon>
                 </button>
+                <mat-menu #teamList="matMenu">
+                    <div *ngIf="teams$ | async as teams">
+                        <button mat-menu-item *ngIf="teams.length === 0"
+                                disabled>{{'TEAMS.No_teams' | translate}}</button>
+                        <button mat-menu-item (click)="assignTeam(listData, team)"
+                                *ngFor="let team of teams">{{team.name}}</button>
+                    </div>
+                </mat-menu>
+                <button mat-mini-fab
+                        [disabled]="user.isAnonymous"
+                        [matTooltip]="'TEAMS.Assign_list' | translate"
+                        [matMenuTriggerFor]="teamList"
+                        *ngIf="listData.authorId === userData.$key && listData.teamId === undefined">
+                    <mat-icon>people_outline</mat-icon>
+                </button>
+                <span class="team-fab" *ngIf="team$ | async as team">
+                    <button *ngIf="listData.teamId !== undefined" mat-icon-button [matTooltip]="team.name">
+                        <mat-icon *ngIf="listData.teamId !== undefined">people</mat-icon>
+                    </button>
+                    <button *ngIf="listData.teamId !== undefined" mat-icon-button class="remove-button" color="warn"
+                            (click)="removeTeam(listData)"
+                            [matTooltip]="'TEAMS.Detach_team' | translate">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </span>
             </span>
         </div>
         <div class="right-fabs">
@@ -205,7 +230,8 @@
         <mat-expansion-panel class="panel" *ngIf="listData.crystals?.length > 0">
             <mat-expansion-panel-header>
                 <mat-panel-title>{{'Crystals'| translate}}</mat-panel-title>
-                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()" class="crystals-toggle">
+                <mat-checkbox [(ngModel)]="settings.crystalsTracking" (click)="$event.stopPropagation()"
+                              class="crystals-toggle">
                     {{'LIST.Enable_crystals_tracking' | translate}}
                 </mat-checkbox>
                 <button mat-icon-button ngxClipboard

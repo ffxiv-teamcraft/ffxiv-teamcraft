@@ -7,6 +7,8 @@ import {ListRow} from '../../../model/list/list-row';
 import {ListService} from '../../../core/database/list.service';
 import {List} from 'app/model/list/list';
 import {first} from 'rxjs/operators';
+import {NotificationService} from '../../../core/notification/notification.service';
+import {ListCommentNotification} from '../../../model/notification/list-comment-notification';
 
 @Component({
     selector: 'app-comments-popup',
@@ -17,18 +19,27 @@ export class CommentsPopupComponent {
 
     control: FormGroup = new FormGroup({comment: new FormControl('', [Validators.required, Validators.maxLength(140)])});
 
-    userId: number;
+    characterId: number;
+
+    userId: string;
 
     @ViewChild('f') myNgForm;
 
+    private readonly isListComment: boolean;
+
+    private userName: string;
+
     constructor(private service: ListService,
                 @Inject(MAT_DIALOG_DATA) public data: { row: ListRow, list: List, name: string, isOwnList: boolean },
-                private userService: UserService) {
-        this.userService.getUserData().subscribe(user => {
-            if (user.name === 'Anonymous') {
-                this.userId = -1;
+                private userService: UserService, private notificationService: NotificationService) {
+        this.isListComment = this.data.row === undefined;
+        this.userService.getCharacter().subscribe(character => {
+            this.userName = character.name;
+            this.userId = character.user.$key;
+            if (character.name === 'Anonymous') {
+                this.characterId = -1;
             } else {
-                this.userId = +user.lodestoneId;
+                this.characterId = +character.user.lodestoneId;
             }
         });
     }
@@ -37,10 +48,15 @@ export class CommentsPopupComponent {
         const comment: ResourceComment = new ResourceComment();
         comment.date = new Date().toISOString();
         comment.content = this.control.value.comment;
-        comment.authorId = this.userId;
+        comment.authorId = this.characterId;
         const comments = this.comments;
         comments.push(comment);
         this.comments = comments;
+        if (this.isListComment && this.userId !== this.data.list.authorId) {
+            // If this is a comment on a list, notify the author of the list.
+            const notification = new ListCommentNotification(this.userName, comment.content, this.data.list.name);
+            this.notificationService.add(this.notificationService.prepareNotification(this.data.list.authorId, notification));
+        }
         this.service.set(this.data.list.$key, this.data.list).pipe(first()).subscribe(() => {
             this.control.reset();
             this.myNgForm.resetForm();
@@ -55,11 +71,11 @@ export class CommentsPopupComponent {
     }
 
     public get comments(): ResourceComment[] {
-        return (this.data.row === undefined ? this.data.list.comments : this.data.row.comments) || [];
+        return (this.isListComment ? this.data.list.comments : this.data.row.comments) || [];
     }
 
     public set comments(comments: ResourceComment[]) {
-        if (this.data.row === undefined) {
+        if (this.isListComment) {
             this.data.list.comments = comments
         } else {
             this.data.row.comments = comments;
