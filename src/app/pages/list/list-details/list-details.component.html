@@ -16,7 +16,7 @@
                 <button mat-mini-fab
                         [disabled]="user.isAnonymous"
                         [matTooltip]="'PERMISSIONS.Title' | translate"
-                        (click)="openPermissionsPopup()" *ngIf="listData.authorId === userData.$key">
+                        (click)="openPermissionsPopup()" *ngIf="listData.authorId === userData?.$key">
                     <mat-icon>security</mat-icon>
                 </button>
                 <mat-menu #teamList="matMenu">
@@ -62,6 +62,12 @@
                     [routerLink]="['/list-inventory', listData?.$key]"
                     matTooltip="{{'LIST_DETAILS.Inventory_breakdown' | translate}}">
                 <mat-icon>apps</mat-icon>
+            </button>
+
+            <button mat-mini-fab color="accent" *ngIf="listData !== null"
+                    (click)="openHistoryPopup()"
+                    matTooltip="{{'LIST.History' | translate}}">
+                <mat-icon>history</mat-icon>
             </button>
         </div>
         <div class="header">

@@ -75,7 +75,7 @@ export class UserService extends FirebaseStorage<AppUser> {
                                 return c;
                             }));
                     } else {
-                        return of({name: 'Anonymous'});
+                        return of({name: 'Anonymous', user: u});
                     }
                 }),
                 shareReplay()

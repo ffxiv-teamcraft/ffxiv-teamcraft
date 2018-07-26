@@ -256,6 +256,7 @@
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Copy_as_text": "Copy as text",
     "Total_price": "Total trades (gils and currencies)",
+    "History": "History",
     "BUTTONS": {
       "Add_link_description": "Create a custom link for this list",
       "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
