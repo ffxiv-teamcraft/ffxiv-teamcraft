@@ -599,12 +599,14 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 this.update(list);
             });
     }
-  
+
     public openHistoryPopup(): void {
         this.dialog.open(ListHistoryPopupComponent, {
             data: this.listData.modificationsHistory
                 .sort((a, b) => a.date > b.date ? -1 : 1)
         });
+    }
+
     public assignTeam(list: List, team: Team): void {
         list.teamId = team.$key;
         this.update(list);
