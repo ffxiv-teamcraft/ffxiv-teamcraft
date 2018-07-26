@@ -1,10 +1,10 @@
 # Translation completion report
 
-**Global completion** : 76%
+**Global completion** : 77%
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-91% | 96% | 97% | 28% | 68% | 
+91% | 96% | 100% | 28% | 68% | 
 
 ## Categories details : 
 
@@ -36,9 +36,9 @@ WIKI | 100% | 100% | 100% | 33% | 100% |
 SIMULATOR | 89% | 100% | 100% | 71% | 0% | 
 HOME_PAGE | 100% | 100% | 100% | 4% | 100% | 
 PRICING | 0% | 100% | 100% | 0% | 0% | 
-COMMISSION_BOARD | 98% | 94% | 98% | 0% | 0% | 
-NOTIFICATIONS | 0% | 0% | 0% | 0% | 0% | 
-TEAMS | 0% | 0% | 0% | 0% | 0% | 
+COMMISSION_BOARD | 98% | 94% | 100% | 0% | 0% | 
+NOTIFICATIONS | 0% | 0% | 100% | 0% | 0% | 
+TEAMS | 0% | 0% | 100% | 0% | 0% | 
 
 ## Detailed report
 ### de : 
@@ -120,20 +120,6 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
 
 ### fr : 
 
- * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
- * `NOTIFICATIONS.Title` : `Notifications`
- * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
- * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
- * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
- * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
- * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
- * `TEAMS.Title` : `Teams`
- * `TEAMS.Create_team` : `Create a team`
- * `TEAMS.Add_user` : `Add a user`
- * `TEAMS.No_teams` : `No Teams`
- * `TEAMS.Pending` : `Pending`
- * `TEAMS.Assign_list` : `Assign this list to a team`
- * `TEAMS.Detach_team` : `Detach team`
 
 
 ### ja : 
