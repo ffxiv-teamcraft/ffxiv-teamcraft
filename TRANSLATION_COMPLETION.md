@@ -4,7 +4,7 @@
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-91% | 95% | 97% | 27% | 68% | 
+91% | 96% | 97% | 28% | 68% | 
 
 ## Categories details : 
 
@@ -33,7 +33,7 @@ ANNOUNCEMENT | 100% | 100% | 100% | 50% | 100% |
 LIST_TEMPLATE | 100% | 100% | 100% | 0% | 100% | 
 PERMISSIONS | 100% | 100% | 100% | 0% | 100% | 
 WIKI | 100% | 100% | 100% | 33% | 100% | 
-SIMULATOR | 85% | 96% | 96% | 67% | 0% | 
+SIMULATOR | 89% | 100% | 100% | 71% | 0% | 
 HOME_PAGE | 100% | 100% | 100% | 4% | 100% | 
 PRICING | 0% | 100% | 100% | 0% | 0% | 
 COMMISSION_BOARD | 98% | 94% | 98% | 0% | 0% | 
@@ -74,9 +74,6 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `SIMULATOR.Change_rotation` : `Change rotation`
  * `SIMULATOR.New_rotation_folder` : `New folder`
  * `SIMULATOR.CONFIGURATION.Reset_set` : `Reset these stats`
- * `SIMULATOR.STATS.CP` : `undefined`
- * `SIMULATOR.STATS.Craftsmanship` : `undefined`
- * `SIMULATOR.STATS.Control` : `undefined`
  * `PRICING.From_vendor` : `Price from vendor`
  * `PRICING.Materials_have_cost` : `Materials for this craft have cost > 0, make sure you're not counting them twice`
  * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
@@ -103,9 +100,6 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `SETTINGS.No_update_available` : `No update available`
  * `PROFILE.VERIFICATION.Title` : `Profile validation`
  * `LIST.History` : `History`
- * `SIMULATOR.STATS.CP` : `undefined`
- * `SIMULATOR.STATS.Craftsmanship` : `undefined`
- * `SIMULATOR.STATS.Control` : `undefined`
  * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
  * `COMMISSION_BOARD.FILTERS.Min_price` : `Min price`
  * `COMMISSION_BOARD.FILTERS.Max_price` : `Max price`
@@ -126,9 +120,6 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
 
 ### fr : 
 
- * `SIMULATOR.STATS.CP` : `undefined`
- * `SIMULATOR.STATS.Craftsmanship` : `undefined`
- * `SIMULATOR.STATS.Control` : `undefined`
  * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
  * `NOTIFICATIONS.Title` : `Notifications`
  * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
@@ -454,9 +445,6 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `SIMULATOR.Change_rotation` : `Change rotation`
  * `SIMULATOR.CONFIGURATION.Action` : `Choose free company actions`
  * `SIMULATOR.CONFIGURATION.Save_consumables` : `Save these consumables as default`
- * `SIMULATOR.STATS.CP` : `undefined`
- * `SIMULATOR.STATS.Craftsmanship` : `undefined`
- * `SIMULATOR.STATS.Control` : `undefined`
  * `HOME_PAGE.title` : `Create lists, share, contribute, craft`
  * `HOME_PAGE.count` : `lists currently stored`
  * `HOME_PAGE.lists_created_count` : `lists created using FFXIV Teamcraft`
@@ -655,9 +643,9 @@ TEAMS | 0% | 0% | 0% | 0% | 0% |
  * `SIMULATOR.CONFIGURATION.Save_set` : `Save these stats for this job`
  * `SIMULATOR.CONFIGURATION.Reset_set` : `Reset these stats`
  * `SIMULATOR.CONFIGURATION.Save_consumables` : `Save these consumables as default`
- * `SIMULATOR.STATS.CP` : `undefined`
- * `SIMULATOR.STATS.Craftsmanship` : `undefined`
- * `SIMULATOR.STATS.Control` : `undefined`
+ * `SIMULATOR.CONFIGURATION.STATS.CP` : `CP`
+ * `SIMULATOR.CONFIGURATION.STATS.Craftsmanship` : `Craftsmanship`
+ * `SIMULATOR.CONFIGURATION.STATS.Control` : `Control`
  * `PRICING.From_vendor` : `Price from vendor`
  * `PRICING.Materials_have_cost` : `Materials for this craft have cost > 0, make sure you're not counting them twice`
  * `COMMISSION_BOARD.Title` : `Commission board`
