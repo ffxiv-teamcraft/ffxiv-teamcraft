@@ -151,7 +151,7 @@
     </div>
 
     <div *ngIf="results.length > 0 && !loading">
-        <mat-list-item *ngFor="let item of results; let even = even" class="recipes-list-row" [class.even]="even">
+        <mat-list-item *ngFor="let item of results; let odd = odd" class="recipes-list-row" [class.odd]="odd">
             <mat-checkbox [checked]="selectedItems.indexOf(item) > -1"
                           (change)="resultChecked(item, $event.checked)"
                           class="selection-box"></mat-checkbox>
