@@ -1,27 +1,27 @@
 # Translation completion report
 
-**Global completion** : 77%
+**Global completion** : 78%
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-91% | 96% | 100% | 28% | 68% | 
+100% | 96% | 100% | 28% | 68% | 
 
 ## Categories details : 
 
 **Category** | de | es | fr | ja | pt
  :--- | :---: | :---: | :---: | :---: | :---: 
 ITEMS | 100% | 100% | 100% | 50% | 75% | 
-UNCATEGORIZED | 99% | 100% | 100% | 28% | 97% | 
+UNCATEGORIZED | 100% | 100% | 100% | 28% | 97% | 
 WORKSHOP | 100% | 100% | 100% | 0% | 100% | 
 ABOUT | 100% | 100% | 100% | 29% | 100% | 
 GIVEWAY | 100% | 100% | 100% | 0% | 100% | 
-COMMON | 67% | 100% | 100% | 50% | 67% | 
-ALARMS | 50% | 100% | 100% | 0% | 50% | 
-ALARM | 67% | 67% | 100% | 0% | 67% | 
-SETTINGS | 90% | 70% | 100% | 10% | 60% | 
-PROFILE | 95% | 95% | 100% | 0% | 75% | 
-LISTS | 93% | 100% | 100% | 13% | 93% | 
-LIST | 14% | 93% | 100% | 0% | 14% | 
+COMMON | 100% | 100% | 100% | 50% | 67% | 
+ALARMS | 100% | 100% | 100% | 0% | 50% | 
+ALARM | 100% | 67% | 100% | 0% | 67% | 
+SETTINGS | 100% | 70% | 100% | 10% | 60% | 
+PROFILE | 100% | 95% | 100% | 0% | 75% | 
+LISTS | 100% | 100% | 100% | 13% | 93% | 
+LIST | 100% | 93% | 100% | 0% | 14% | 
 LIST_DETAILS | 100% | 100% | 100% | 0% | 98% | 
 LIST_TAGS | 100% | 100% | 100% | 100% | 100% | 
 RECIPES | 100% | 100% | 100% | 0% | 100% | 
@@ -33,63 +33,16 @@ ANNOUNCEMENT | 100% | 100% | 100% | 50% | 100% |
 LIST_TEMPLATE | 100% | 100% | 100% | 0% | 100% | 
 PERMISSIONS | 100% | 100% | 100% | 0% | 100% | 
 WIKI | 100% | 100% | 100% | 33% | 100% | 
-SIMULATOR | 89% | 100% | 100% | 71% | 0% | 
+SIMULATOR | 100% | 100% | 100% | 71% | 0% | 
 HOME_PAGE | 100% | 100% | 100% | 4% | 100% | 
-PRICING | 0% | 100% | 100% | 0% | 0% | 
-COMMISSION_BOARD | 98% | 94% | 100% | 0% | 0% | 
-NOTIFICATIONS | 0% | 0% | 100% | 0% | 0% | 
-TEAMS | 0% | 0% | 100% | 0% | 0% | 
+PRICING | 100% | 100% | 100% | 0% | 0% | 
+COMMISSION_BOARD | 100% | 94% | 100% | 0% | 0% | 
+NOTIFICATIONS | 100% | 0% | 100% | 0% | 0% | 
+TEAMS | 100% | 0% | 100% | 0% | 0% | 
 
 ## Detailed report
 ### de : 
 
- * `Use_lodestoneId` : `Use lodestone ID`
- * `LodestoneId` : `Lodestone ID`
- * `COMMON.Open_url` : `Open Teamcraft link`
- * `COMMON.Open_url_placeholder` : `Teamcraft link`
- * `ALARMS.Alarm_already_created` : `Alarm already set`
- * `ALARMS.Custom_sound` : `Custom alarm sound`
- * `ALARMS.New_group` : `New alarm group`
- * `ALARM.Note` : `Note`
- * `SETTINGS.Always_on_top` : `Always on top`
- * `PROFILE.VERIFICATION.Title` : `Profile validation`
- * `LISTS.Add_selection` : `Add selection to a list`
- * `LIST.Copy_as_text` : `Copy as text`
- * `LIST.Total_price` : `Total trades (gils and currencies)`
- * `LIST.History` : `History`
- * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
- * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
- * `LIST.BUTTONS.Copy_template_url_description` : `Copy the template link for this list, which will create a copy of the list for whoever opens it`
- * `LIST.BUTTONS.Share_description` : `Copy share link to your clipboard`
- * `LIST.BUTTONS.Open` : `Open list`
- * `LIST.BUTTONS.Open_description` : `Access the list`
- * `LIST.BUTTONS.Delete` : `Delete list`
- * `LIST.BUTTONS.Delete_description` : `Deletes the list`
- * `LIST.BUTTONS.Delete_warning` : `Deleting a list can't be undone`
- * `SIMULATOR.Fixed_notification_number` : `Fixed notification`
- * `SIMULATOR.Open_in_external` : `Open in {{name}}'s sim`
- * `SIMULATOR.Select_job_please` : `Please select a job`
- * `SIMULATOR.Save_as_new` : `Save as new (navigates to the newly created rotation)`
- * `SIMULATOR.Save_as_new_done` : `You're now on a copy of your rotation`
- * `SIMULATOR.Change_rotation` : `Change rotation`
- * `SIMULATOR.New_rotation_folder` : `New folder`
- * `SIMULATOR.CONFIGURATION.Reset_set` : `Reset these stats`
- * `PRICING.From_vendor` : `Price from vendor`
- * `PRICING.Materials_have_cost` : `Materials for this craft have cost > 0, make sure you're not counting them twice`
- * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
- * `NOTIFICATIONS.Title` : `Notifications`
- * `NOTIFICATIONS.List_progress` : `{{author}} added {{amount}} {{itemName}} to list "{{listName}}"`
- * `NOTIFICATIONS.Team_invite` : `{{invitedBy}} invited you to team {{teamName}}`
- * `NOTIFICATIONS.Item_assigned` : `{{itemName}} has been assigned to you on list "{{listName}}"`
- * `NOTIFICATIONS.List_commented` : `{{userName}} commented on list {{listName}}: "{{content}}"`
- * `NOTIFICATIONS.Mark_all_as_read` : `Mark all as read`
- * `TEAMS.Title` : `Teams`
- * `TEAMS.Create_team` : `Create a team`
- * `TEAMS.Add_user` : `Add a user`
- * `TEAMS.No_teams` : `No Teams`
- * `TEAMS.Pending` : `Pending`
- * `TEAMS.Assign_list` : `Assign this list to a team`
- * `TEAMS.Detach_team` : `Detach team`
 
 
 ### es : 
