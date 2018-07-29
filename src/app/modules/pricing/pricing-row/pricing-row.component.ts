@@ -45,6 +45,16 @@ export class PricingRowComponent implements OnInit {
         this.pricingService.savePrice(this.item, this.price);
     }
 
+    changeNQ(): void {
+        this.amount.hq = this.item.amount - this.amount.nq;
+        this.saveAmount();
+    }
+
+    changeHQ(): void {
+        this.amount.nq  = this.item.amount - this.amount.hq;
+        this.saveAmount();
+    }
+
     saveAmount(): void {
         this.pricingService.saveAmount(this.listId, this.item, this.amount);
     }

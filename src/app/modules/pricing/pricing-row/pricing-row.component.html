@@ -22,21 +22,23 @@
         <div class="field-group" matLine>
             <mat-form-field class="nofix price">
                 <span matPrefix>NQ &nbsp;</span>
-                <input matInput type="number" lang="en-150" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" min="0" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" lang="en-150" [(ngModel)]="amount.nq" (ngModelChange)="saveAmount()">
+                <input matInput type="number" lang="en-150" min="0" max="{{item.amount}}" [readonly]="isCrystal()"
+                    [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()">
             </mat-form-field>
         </div>
         <div class="field-group" matLine *ngIf="!isCrystal()">
             <mat-form-field class="nofix price">
                 <span matPrefix>HQ &nbsp;</span>
-                <input matInput type="number" lang="en-150" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" min="0" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" lang="en-150" [(ngModel)]="amount.hq" (ngModelChange)="saveAmount()">
+                <input matInput type="number" lang="en-150" min="0" max="{{item.amount}}"
+                    [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()">
             </mat-form-field>
         </div>
     </div>
