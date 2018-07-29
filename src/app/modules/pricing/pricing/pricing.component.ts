@@ -70,7 +70,7 @@ export class PricingComponent {
     }
 
     /**
-     * Gets the minimum crafting cost of a given item.
+     * Gets the crafting cost of a given item.
      * @param {ListRow} row
      * @returns {number}
      */
@@ -83,26 +83,7 @@ export class PricingComponent {
             }
             const price = this.pricingService.getPrice(listRow);
             const amount = this.pricingService.getAmount(this.list.$key, listRow);
-            // We're gona get the lowest possible price.
-            let needed = row.amount_needed * requirement.amount;
-            // First of all, we get the maximum of nq items;
-            if (needed <= amount.nq) {
-                total += needed * price.nq;
-            } else {
-                // If we don't have enough nq items, we take what we already have.
-                total += amount.nq * price.nq;
-                needed -= amount.nq;
-                // Then we check for hq items
-                if (needed <= amount.hq) {
-                    // If we have enough of them, we can simply add them
-                    total += needed * price.hq;
-                } else {
-                    // Else, we assume that the crafter already has some items in his inventory,
-                    // that's why he didn't add them in the pricing.
-                    // So we'll assume the remaining items are free.
-                    total += amount.hq * price.hq;
-                }
-            }
+            total += amount.nq * price.nq + amount.hq * price.hq;
         });
         return total;
     }
