@@ -38,26 +38,6 @@ export class PricingComponent {
         return this.list.recipes.reduce((total, item) => total + this.getCraftCost(item), 0);
     }
 
-    /**
-     * Computes the total price of a given list category
-     *
-     * @param {ListRow[]} rows
-     * @returns {number}
-     */
-    getTotalPrice(rows: ListRow[]): number {
-        let total = 0;
-        // For each row of the list
-        rows.filter(row => row.usePrice).forEach(row => {
-            // Get the amount of items required.
-            const amount = this.pricingService.getAmount(this.list.$key, row);
-            // Get the price of the item.
-            const price = this.pricingService.getPrice(row);
-            // Compute the price of this row.
-            total += amount.nq * price.nq + amount.hq * price.hq;
-        });
-        return total;
-    }
-
     getTotalEarnings(rows: ListRow[]): number {
         return rows.filter(row => row.usePrice).reduce((total, row) => {
             const price = this.pricingService.getEarnings(row);
@@ -69,20 +49,21 @@ export class PricingComponent {
     /**
      * Gets the crafting cost of a given item.
      * @param {ListRow} row
+     * @param amountNeeded
      * @returns {number}
      */
-    getCraftCost(row: ListRow): number {
-        let total = 0;
-        (row.requires || []).forEach(requirement => {
-            const listRow = this.list.getItemById(requirement.id);
-            if (!listRow.usePrice) {
-                return
-            }
-            const price = this.pricingService.getPrice(listRow);
-            const amount = this.pricingService.getAmount(this.list.$key, listRow);
-            total += amount.nq * price.nq + amount.hq * price.hq;
-        });
-        return total;
+    getCraftCost(row: ListRow, amountNeeded = row.amount_needed): number {
+        if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
+            const prices = this.pricingService.getPrice(row);
+            const amounts = this.pricingService.getAmount(this.list.$key, row);
+            const avgPrice = ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
+            return avgPrice * amountNeeded;
+        }
+        return row.requires.reduce((total, requirement) => {
+            const requirementRow = this.list.getItemById(requirement.id, true);
+            const amount = Math.ceil(requirement.amount / requirementRow.yield);
+            return total + this.getCraftCost(requirementRow, amount * amountNeeded);
+        }, 0);
     }
 
     /**

@@ -56,7 +56,8 @@
                              [item]="item"
                              [listId]="list.$key"
                              [odd]="odd"
-                             [craftCost]="getCraftCost(item)" [preCraft]="true"></app-pricing-row>
+                             [craftCost]="getCraftCost(item) / item.amount_needed"
+                             [preCraft]="true"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
 

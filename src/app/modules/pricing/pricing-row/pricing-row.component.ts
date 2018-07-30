@@ -18,12 +18,14 @@ export class PricingRowComponent implements OnInit {
     @Input()
     listId: string;
 
-    private _craftCost: number;
+    public _craftCost: number;
 
     @Input()
     public set craftCost(cost: number) {
         this._craftCost = cost;
-        this.setAutoPrice();
+        if (this.preCraft && !this.customPrice) {
+            this.price.nq = this.price.hq = cost;
+        }
     }
 
     @Input()
@@ -55,12 +57,6 @@ export class PricingRowComponent implements OnInit {
         this.pricingService.savePrice(this.item, this.price);
     }
 
-    setAutoPrice(): void {
-        if (this.preCraft && !this.customPrice) {
-            this.price.nq = this.price.hq = this._craftCost / this.item.amount;
-        }
-    }
-
     saveCustomPrice(): void {
         this.pricingService.saveCustomPrice(this.item, this.customPrice);
     }
@@ -71,7 +67,7 @@ export class PricingRowComponent implements OnInit {
     }
 
     changeHQ(): void {
-        this.amount.nq  = this.item.amount - this.amount.hq;
+        this.amount.nq = this.item.amount - this.amount.hq;
         this.saveAmount();
     }
 
@@ -80,13 +76,15 @@ export class PricingRowComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.customPrice = this.pricingService.isCustomPrice(this.item);
         if (this.earning) {
             this.price = this.pricingService.getEarnings(this.item);
         } else {
             this.price = this.pricingService.getPrice(this.item);
-            this.setAutoPrice();
+            if (this.preCraft && !this.customPrice) {
+                this.price.nq = this.price.hq = this._craftCost;
+            }
         }
-        this.customPrice = this.pricingService.isCustomPrice(this.item);
         this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
         if (this.item.usePrice === undefined) {
             this.item.usePrice = true;

@@ -16,7 +16,7 @@
 
     <mat-slide-toggle [(ngModel)]="item.usePrice" (change)="save.emit()"></mat-slide-toggle>
 
-    <mat-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="setAutoPrice(); saveCustomPrice()"></mat-checkbox>
+    <mat-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></mat-checkbox>
 
     <div class="amount-group">
         <div class="field-group" matLine>
