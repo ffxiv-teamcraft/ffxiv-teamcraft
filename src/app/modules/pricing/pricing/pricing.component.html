@@ -14,7 +14,6 @@
     <mat-expansion-panel *ngIf="list.crystals.length > 0">
         <mat-expansion-panel-header>
             <mat-panel-title>{{"Crystals" | translate}}</mat-panel-title>
-            <mat-panel-description>{{getTotalPrice(list.crystals)}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
             <app-pricing-row *ngFor="let item of list.crystals; let odd = odd" (save)="save()" [item]="item"
@@ -26,7 +25,6 @@
     <mat-expansion-panel *ngIf="list.gathers.length > 0">
         <mat-expansion-panel-header>
             <mat-panel-title>{{"Gathering" | translate}}</mat-panel-title>
-            <mat-panel-description>{{getTotalPrice(list.gathers).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
             <app-pricing-row *ngFor="let item of list.gathers; let odd = odd" (save)="save()" [item]="item"
@@ -38,7 +36,6 @@
     <mat-expansion-panel *ngIf="list.others.length > 0">
         <mat-expansion-panel-header>
             <mat-panel-title>{{"Other" | translate}}</mat-panel-title>
-            <mat-panel-description>{{getTotalPrice(list.others).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
             <app-pricing-row *ngFor="let item of list.others; let odd = odd" (save)="save()" [item]="item"
@@ -50,13 +47,12 @@
     <mat-expansion-panel *ngIf="list.preCrafts.length > 0">
         <mat-expansion-panel-header>
             <mat-panel-title>{{"Pre_crafts" | translate}}</mat-panel-title>
-            <mat-panel-description>{{getTotalPrice(list.preCrafts).toLocaleString()}} gil</mat-panel-description>
         </mat-expansion-panel-header>
         <mat-list dense>
             <app-pricing-row *ngFor="let item of list.preCrafts; let odd = odd" (save)="save()" [item]="item"
                              [listId]="list.$key"
                              [odd]="odd"
-                             [craftCost]="getCraftCost(item)"></app-pricing-row>
+                             [craftCost]="getCraftCost(item)" [preCraft]="true"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
 

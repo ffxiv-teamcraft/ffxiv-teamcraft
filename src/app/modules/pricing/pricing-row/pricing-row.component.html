@@ -4,25 +4,26 @@
     </div>
     <p mat-line class="item-name">
         {{item.id | itemName | i18n}}
-        <mat-icon *ngIf="craftCost !== undefined" matTooltip="{{'Minimal_craft_cost' | translate}}: {{craftCost}} gil"
+        <mat-icon *ngIf="_craftCost !== undefined" matTooltip="{{'Minimal_craft_cost' | translate}}: {{_craftCost}} gil"
                  matTooltipPosition="above">
             attach_money
         </mat-icon>
-        <mat-icon color="warn" *ngIf="craftCost > 0 && (price.nq * amount.nq + price.hq * amount.hq) > 0 && !earning"
-        matTooltip="{{'PRICING.Materials_have_cost' | translate}}" matTooltipPosition="above">error_outline</mat-icon>
     </p>
 
     <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
               matTooltipPosition="above">group
     </mat-icon>
 
-    <mat-slide-toggle [(ngModel)]="item.usePrice" (change)="save.emit()">
-    </mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="item.usePrice" (change)="save.emit()"></mat-slide-toggle>
+
+    <mat-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="setAutoPrice(); saveCustomPrice()"></mat-checkbox>
+
     <div class="amount-group">
         <div class="field-group" matLine>
             <mat-form-field class="nofix price">
                 <span matPrefix>NQ &nbsp;</span>
-                <input matInput type="number" lang="en-150" min="0" [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
+                    [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
@@ -33,7 +34,8 @@
         <div class="field-group" matLine *ngIf="!isCrystal()">
             <mat-form-field class="nofix price">
                 <span matPrefix>HQ &nbsp;</span>
-                <input matInput type="number" lang="en-150" min="0" [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+                <input matInput type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
+                    [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>

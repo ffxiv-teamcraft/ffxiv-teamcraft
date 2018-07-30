@@ -5,6 +5,7 @@ import {PricingService} from './pricing.service';
 import {
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatIconModule,
     MatInputModule,
@@ -24,6 +25,7 @@ import {PipesModule} from '../../pipes/pipes.module';
         CommonModule,
 
         MatCardModule,
+        MatCheckboxModule,
         MatExpansionModule,
         MatListModule,
         MatInputModule,

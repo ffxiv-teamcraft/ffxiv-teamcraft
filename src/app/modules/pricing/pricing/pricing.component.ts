@@ -35,10 +35,7 @@ export class PricingComponent {
      * @returns {number}
      */
     getSpendingTotal(): number {
-        return this.getTotalPrice(this.list.crystals) +
-            this.getTotalPrice(this.list.gathers) +
-            this.getTotalPrice(this.list.others) +
-            this.getTotalPrice(this.list.preCrafts);
+        return this.list.recipes.reduce((total, item) => total + this.getCraftCost(item), 0);
     }
 
     /**

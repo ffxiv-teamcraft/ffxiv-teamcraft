@@ -18,16 +18,26 @@ export class PricingRowComponent implements OnInit {
     @Input()
     listId: string;
 
+    private _craftCost: number;
+
     @Input()
-    craftCost: number;
+    public set craftCost(cost: number) {
+        this._craftCost = cost;
+        this.setAutoPrice();
+    }
 
     @Input()
     earning = false;
 
     @Input()
+    preCraft = false;
+
+    @Input()
     odd = false;
 
     price: Price;
+
+    customPrice = false;
 
     amount: ItemAmount;
 
@@ -43,6 +53,16 @@ export class PricingRowComponent implements OnInit {
 
     savePrice(): void {
         this.pricingService.savePrice(this.item, this.price);
+    }
+
+    setAutoPrice(): void {
+        if (this.preCraft && !this.customPrice) {
+            this.price.nq = this.price.hq = this._craftCost / this.item.amount;
+        }
+    }
+
+    saveCustomPrice(): void {
+        this.pricingService.saveCustomPrice(this.item, this.customPrice);
     }
 
     changeNQ(): void {
@@ -64,7 +84,9 @@ export class PricingRowComponent implements OnInit {
             this.price = this.pricingService.getEarnings(this.item);
         } else {
             this.price = this.pricingService.getPrice(this.item);
+            this.setAutoPrice();
         }
+        this.customPrice = this.pricingService.isCustomPrice(this.item);
         this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
         if (this.item.usePrice === undefined) {
             this.item.usePrice = true;
