@@ -27,7 +27,7 @@
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" lang="en-150" min="0" max="{{item.amount}}" [readonly]="isCrystal()"
+                <input matInput type="number" min="0" [max]="item.amount" [readonly]="isCrystal()"
                     [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()">
             </mat-form-field>
         </div>
@@ -39,7 +39,7 @@
             </mat-form-field>
             <mat-form-field class="nofix amount">
                 <span matPrefix>x &nbsp;</span>
-                <input matInput type="number" lang="en-150" min="0" max="{{item.amount}}"
+                <input matInput type="number" lang="en-150" min="0" [max]="item.amount"
                     [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()">
             </mat-form-field>
         </div>

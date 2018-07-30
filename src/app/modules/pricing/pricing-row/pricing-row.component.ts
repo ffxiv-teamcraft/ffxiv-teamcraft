@@ -23,9 +23,7 @@ export class PricingRowComponent implements OnInit {
     @Input()
     public set craftCost(cost: number) {
         this._craftCost = cost;
-        if (this.preCraft && !this.customPrice) {
-            this.price.nq = this.price.hq = cost;
-        }
+        this.setAutoCost();
     }
 
     @Input()
@@ -62,11 +60,13 @@ export class PricingRowComponent implements OnInit {
     }
 
     changeNQ(): void {
+        this.amount.nq = Math.min(this.amount.nq, this.item.amount);
         this.amount.hq = this.item.amount - this.amount.nq;
         this.saveAmount();
     }
 
     changeHQ(): void {
+        this.amount.hq = Math.min(this.amount.hq, this.item.amount);
         this.amount.nq = this.item.amount - this.amount.hq;
         this.saveAmount();
     }
@@ -81,9 +81,7 @@ export class PricingRowComponent implements OnInit {
             this.price = this.pricingService.getEarnings(this.item);
         } else {
             this.price = this.pricingService.getPrice(this.item);
-            if (this.preCraft && !this.customPrice) {
-                this.price.nq = this.price.hq = this._craftCost;
-            }
+            this.setAutoCost();
         }
         this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
         if (this.item.usePrice === undefined) {
@@ -95,4 +93,9 @@ export class PricingRowComponent implements OnInit {
         return this.media.isActive('sm') || this.media.isActive('xs');
     }
 
+    private setAutoCost(): void {
+        if (this.preCraft && !this.customPrice) {
+            this.price.nq = this.price.hq = this._craftCost;
+        }
+    }
 }
