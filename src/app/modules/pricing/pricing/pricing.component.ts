@@ -61,8 +61,8 @@ export class PricingComponent {
         }
         return row.requires.reduce((total, requirement) => {
             const requirementRow = this.list.getItemById(requirement.id, true);
-            const amount = Math.ceil(requirement.amount / requirementRow.yield);
-            return total + this.getCraftCost(requirementRow, amount * amountNeeded);
+            const amount = Math.ceil((requirement.amount * amountNeeded) / requirementRow.yield);
+            return total + this.getCraftCost(requirementRow, amount);
         }, 0);
     }
 
