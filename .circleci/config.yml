@@ -1,7 +1,7 @@
 version: 2
 jobs:
     setup:
-        working_directory: ~/project/ffxiv-teamcraft
+        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -23,7 +23,6 @@ jobs:
 
 
     lint:
-        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -35,7 +34,6 @@ jobs:
 
 
     test:
-        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -50,7 +48,6 @@ jobs:
 
 
     build:
-        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -70,7 +67,6 @@ jobs:
 
 
     deploy-prod:
-        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -85,7 +81,6 @@ jobs:
 
 
     deploy-staging:
-        working_directory: ~/project
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
