@@ -1,6 +1,7 @@
 version: 2
 jobs:
     setup:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -22,15 +23,17 @@ jobs:
 
 
     lint:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
         - run:
               name: Lint code and JSON
-              command: npm lint
+              command: npm run lint
 
 
     test:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -43,6 +46,7 @@ jobs:
 
 
     build:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -60,6 +64,7 @@ jobs:
 
 
     deploy-prod:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -72,6 +77,7 @@ jobs:
 
 
     deploy-staging:
+        working_directory: ~/
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
