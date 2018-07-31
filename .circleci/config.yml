@@ -90,7 +90,7 @@ workflows:
               - setup
         - test:
               requires:
-              -setup
+              - setup
         - build:
               requires:
               - lint
@@ -103,7 +103,7 @@ workflows:
                       only: master
         - deploy-staging:
               requires:
-              -build
+              - build
               filters:
                   branches:
                       only: staging
