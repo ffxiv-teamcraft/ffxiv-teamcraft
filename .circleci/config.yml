@@ -4,9 +4,9 @@ defaults: &defaults
 
 version: 2
 jobs:
-
     setup:
         <<: *defaults
+        steps:
         - checkout
         - run:
               name: Show current branch
@@ -23,12 +23,14 @@ jobs:
               paths:
               - node_modules
 
+
     lint:
         <<: *defaults
         steps:
         - run:
               name: Lint code and JSON
               command: npm lint
+
 
     test:
         <<: *defaults
@@ -39,6 +41,8 @@ jobs:
         - run:
               name: Codecov upload
               command: npm run codecov
+
+
     build:
         <<: *defaults
         steps:
@@ -54,6 +58,7 @@ jobs:
               paths:
               - dist
 
+
     deploy-prod:
         <<: *defaults
         steps:
@@ -63,6 +68,7 @@ jobs:
         - run:
               name: Deploying desktop
               command: npm run electron:setup:publish
+
 
     deploy-staging:
         <<: *defaults
