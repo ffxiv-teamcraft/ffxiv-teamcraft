@@ -1,7 +1,7 @@
 version: 2
 jobs:
     setup:
-        working_directory: ~/project
+        working_directory: ~/project/ffxiv-teamcraft
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
@@ -27,6 +27,8 @@ jobs:
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
+        - attach_workspace:
+              at: /project
         - run:
               name: Lint code and JSON
               command: npm run lint
@@ -37,6 +39,8 @@ jobs:
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
+        - attach_workspace:
+              at: /project
         - run:
               name: Testing
               command: npm run test
@@ -50,6 +54,8 @@ jobs:
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
+        - attach_workspace:
+              at: /project
         - run:
               name: Building
               command: |
@@ -68,6 +74,8 @@ jobs:
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
+        - attach_workspace:
+              at: /project
         - run:
               name: Deploying web
               command: npm run build:prod && firebase deploy -P default
@@ -81,6 +89,8 @@ jobs:
         docker:
         - image: circleci/node:8.11.3-browsers
         steps:
+        - attach_workspace:
+              at: /project
         - run:
               name: Deploying web
               command: npm run build:beta && firebase deploy -P beta
