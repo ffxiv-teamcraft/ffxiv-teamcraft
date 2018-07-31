@@ -5,7 +5,7 @@
     <p mat-line class="item-name">
         {{item.id | itemName | i18n}}
         <mat-icon *ngIf="_craftCost !== undefined"
-            matTooltip="{{'Minimal_craft_cost' | translate}}: {{_craftCost * item.amount}} gil"
+            matTooltip="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
             matTooltipPosition="above">
             attach_money
         </mat-icon>

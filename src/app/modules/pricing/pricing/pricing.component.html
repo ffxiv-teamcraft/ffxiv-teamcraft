@@ -70,7 +70,8 @@
         <app-pricing-row *ngFor="let item of list.recipes; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
                          [item]="item"
                          [listId]="list.$key" [odd]="odd"
-                         [craftCost]="getCraftCost(item)" [earning]="true"></app-pricing-row>
+                         [craftCost]="getCraftCost(item) / item.amount"
+                         [earning]="true"></app-pricing-row>
     </mat-list>
 </mat-card>
 
