@@ -74,6 +74,10 @@ jobs:
             key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
             paths:
             - dist
+        - persist_to_workspace:
+              root: /tmp
+              paths:
+                  - ffxiv-teamcraft/*
 
 
     deploy-web:
@@ -83,7 +87,7 @@ jobs:
             at: /tmp
         - run:
             name: Deploying web
-            command: npm run build:prod && firebase deploy -P default --token "$FIREBASE_TOKEN"
+            command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
         - run:
             name: Deploying desktop
             command: npm run electron:setup:publish
@@ -105,7 +109,7 @@ jobs:
             at: /tmp
         - run:
             name: Deploying web
-            command: npm run build:beta && firebase deploy -P beta --token "$FIREBASE_TOKEN"
+            command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
 
 
 workflows:
