@@ -19,7 +19,7 @@ jobs:
             - v1-dependencies-
         - run:
             name: Install local dependencies
-            command: npm install
+            command: npm ci
         - save_cache:
             key: v1-dependencies-{{ checksum "package.json" }}
             paths:
