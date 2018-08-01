@@ -99,7 +99,7 @@ jobs:
             at: /tmp
         - run:
             name: Deploying desktop
-            command: npm run electron:setup:publish
+            command: npm i -g windows-build-tools && npm run electron:setup:publish
 
 
     deploy-staging:
