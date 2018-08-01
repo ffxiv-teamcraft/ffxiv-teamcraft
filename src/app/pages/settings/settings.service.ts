@@ -4,7 +4,7 @@ import {Subject} from 'rxjs';
 @Injectable()
 export class SettingsService {
 
-    private cache: { [id: string]: string };
+    private readonly cache: { [id: string]: string };
 
     public themeChange$ = new Subject<{ previous: string, next: string }>();
 
@@ -66,6 +66,14 @@ export class SettingsService {
 
     public set notificationsMuted(compact: boolean) {
         this.setSetting('notifications-muted', compact.toString());
+    }
+
+    public get expectToSellEverything(): boolean {
+        return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
+    }
+
+    public set expectToSellEverything(sellEverything: boolean) {
+        this.setSetting('pricing:expect-sell-all', sellEverything.toString());
     }
 
     public get theme(): string {

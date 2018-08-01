@@ -557,7 +557,8 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor"
+    "From_vendor": "Price from vendor",
+    "Expect_to_sell_everything": "Expect to sell everything"
   },
   "COMMISSION_BOARD": {
     "Title": "Commission board",

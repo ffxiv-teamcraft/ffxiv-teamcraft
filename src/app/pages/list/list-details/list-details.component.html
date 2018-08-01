@@ -31,7 +31,7 @@
                         [disabled]="user.isAnonymous"
                         [matTooltip]="'TEAMS.Assign_list' | translate"
                         [matMenuTriggerFor]="teamList"
-                        *ngIf="listData.authorId === userData.$key && listData.teamId === undefined">
+                        *ngIf="listData.authorId === userData?.$key && listData.teamId === undefined">
                     <mat-icon>people_outline</mat-icon>
                 </button>
                 <span class="team-fab" *ngIf="team$ | async as team">

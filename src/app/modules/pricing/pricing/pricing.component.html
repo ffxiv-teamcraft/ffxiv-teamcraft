@@ -5,11 +5,15 @@
     {{"Back_to_list" | translate}}
 </button>
 
+<mat-slide-toggle [(ngModel)]="settings.expectToSellEverything">
+    {{'PRICING.Expect_to_sell_everything' | translate}}
+</mat-slide-toggle>
+
 <mat-card *ngIf="list" [class]="isMobile()?'mobile':null">
     <mat-card-title>
         {{"Spending" | translate}}
     </mat-card-title>
-    <mat-card-subtitle>{{getSpendingTotal().toLocaleString()}} gil</mat-card-subtitle>
+    <mat-card-subtitle>{{getSpendingTotal() | number:'1.0-0'}} gil</mat-card-subtitle>
 
     <mat-expansion-panel *ngIf="list.crystals.length > 0">
         <mat-expansion-panel-header>
@@ -56,7 +60,7 @@
                              [item]="item"
                              [listId]="list.$key"
                              [odd]="odd"
-                             [craftCost]="getCraftCost(item) / item.amount"
+                             [craftCost]="getCraftCost(item)"
                              [preCraft]="true"></app-pricing-row>
         </mat-list>
     </mat-expansion-panel>
@@ -65,16 +69,16 @@
 
 <mat-card *ngIf="list" [ngClass]="{'mobile':isMobile()}">
     <mat-card-title>{{"Earning" | translate}}</mat-card-title>
-    <mat-card-subtitle>{{getTotalEarnings(list.recipes).toLocaleString()}} gil</mat-card-subtitle>
+    <mat-card-subtitle>{{getTotalEarnings(list.recipes) | number:'1.0-0'}} gil</mat-card-subtitle>
     <mat-list dense>
         <app-pricing-row *ngFor="let item of list.recipes; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
                          [item]="item"
                          [listId]="list.$key" [odd]="odd"
-                         [craftCost]="getCraftCost(item) / item.amount"
+                         [craftCost]="getCraftCost(item)"
                          [earning]="true"></app-pricing-row>
     </mat-list>
 </mat-card>
 
 <mat-card *ngIf="list" class="accent">
-    <mat-card-title>{{"Benefits" | translate}}: {{getBenefits().toLocaleString()}} gil</mat-card-title>
+    <mat-card-title>{{"Benefits" | translate}}: {{getBenefits() | number:'1.0-0'}} gil</mat-card-title>
 </mat-card>

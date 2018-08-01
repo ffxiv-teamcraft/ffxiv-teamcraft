@@ -4,6 +4,7 @@ import {PricingService} from '../pricing.service';
 import {ListRow} from '../../../model/list/list-row';
 import {ObservableMedia} from '@angular/flex-layout';
 import {ListService} from '../../../core/database/list.service';
+import {SettingsService} from '../../../pages/settings/settings.service';
 
 @Component({
     selector: 'app-pricing',
@@ -18,7 +19,8 @@ export class PricingComponent {
     @Output()
     close: EventEmitter<void> = new EventEmitter<void>();
 
-    constructor(private pricingService: PricingService, private media: ObservableMedia, private listService: ListService) {
+    constructor(private pricingService: PricingService, private media: ObservableMedia, private listService: ListService,
+                public settings: SettingsService) {
     }
 
     public save(): void {
@@ -35,7 +37,17 @@ export class PricingComponent {
      * @returns {number}
      */
     getSpendingTotal(): number {
-        return this.list.recipes.reduce((total, item) => total + this.getCraftCost(item), 0);
+        return this.list.recipes.reduce((total, item) => {
+            let cost = this.getCraftCost(item);
+            if (this.settings.expectToSellEverything) {
+                // If we expect to sell everything, price based on amount of items crafted
+                cost *= item.amount_needed * item.yield
+            } else {
+                // Else, price based on amount of items used
+                cost *= item.amount;
+            }
+            return total + cost;
+        }, 0);
     }
 
     getTotalEarnings(rows: ListRow[]): number {
@@ -49,20 +61,24 @@ export class PricingComponent {
     /**
      * Gets the crafting cost of a given item.
      * @param {ListRow} row
-     * @param amountNeeded
      * @returns {number}
      */
-    getCraftCost(row: ListRow, amountNeeded = row.amount_needed): number {
+    getCraftCost(row: ListRow): number {
+        // If that's a final item or the price is custom, no recursion.
         if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
             const prices = this.pricingService.getPrice(row);
             const amounts = this.pricingService.getAmount(this.list.$key, row);
-            const avgPrice = ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
-            return avgPrice * amountNeeded;
+            return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
         }
         return row.requires.reduce((total, requirement) => {
             const requirementRow = this.list.getItemById(requirement.id, true);
-            const amount = Math.ceil((requirement.amount * amountNeeded) / requirementRow.yield);
-            return total + this.getCraftCost(requirementRow, amount);
+            if (this.settings.expectToSellEverything) {
+                // If you expect to sell everything, just divide by yield.
+                return total + this.getCraftCost(requirementRow) / row.yield;
+            } else {
+                // else, divide by amount / amount_needed, aka adjusted yield for when you craft more than you sell because of yield.
+                return total + this.getCraftCost(requirementRow) / (row.amount / row.amount_needed);
+            }
         }, 0);
     }
 

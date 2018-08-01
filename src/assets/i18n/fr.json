@@ -557,7 +557,8 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Prix au vendeur"
+    "From_vendor": "Prix au vendeur",
+    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu"
   },
   "COMMISSION_BOARD": {
     "Title": "Tableau de requêtes",
