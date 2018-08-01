@@ -20,10 +20,14 @@ jobs:
         - run:
             name: Install local dependencies
             command: npm install
+        - run:
+            name: Install functions dependencies
+            command: cd functions && npm install && cd ../
         - save_cache:
             key: v1-dependencies-{{ checksum "package.json" }}
             paths:
             - node_modules
+            - functions/node_modules
         - persist_to_workspace:
             root: /tmp
             paths:
@@ -121,5 +125,5 @@ workflows:
               - build
               filters:
                   branches:
-                      only: staging
+                      only: feat/circleci
 
