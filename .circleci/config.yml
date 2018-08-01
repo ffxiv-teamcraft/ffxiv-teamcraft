@@ -1,7 +1,7 @@
 defaults: &defaults
     working_directory: /tmp/ffxiv-teamcraft
     docker:
-    - image: circleci/node:9-stretch-browsers
+    - image: circleci/node:8.11-browsers
 
 
 version: 2
