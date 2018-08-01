@@ -76,14 +76,23 @@ jobs:
             - dist
 
 
-    deploy-prod:
+    deploy-web:
         <<: *defaults
         steps:
         - attach_workspace:
             at: /tmp
         - run:
             name: Deploying web
-            command: npm run build:prod && firebase deploy -P default
+            command: npm run build:prod && firebase deploy -P default --token "$FIREBASE_TOKEN"
+        - run:
+            name: Deploying desktop
+            command: npm run electron:setup:publish
+
+    deploy-desktop:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
         - run:
             name: Deploying desktop
             command: npm run electron:setup:publish
@@ -96,7 +105,7 @@ jobs:
             at: /tmp
         - run:
             name: Deploying web
-            command: npm run build:beta && firebase deploy -P beta
+            command: npm run build:beta && firebase deploy -P beta --token "$FIREBASE_TOKEN"
 
 
 workflows:
