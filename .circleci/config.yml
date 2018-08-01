@@ -25,9 +25,9 @@ jobs:
               paths:
               - node_modules
         - persist_to_workspace:
-          root: /tmp
-          paths:
-          - ffxiv-teamcraft/*
+              root: /tmp
+              paths:
+              - ffxiv-teamcraft/*
 
 
     lint:
@@ -61,10 +61,10 @@ jobs:
         - run:
               name: Building
               command: |
-                  if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                      npm run build:prod
-                  else
-                      npm run build:beta
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run build:prod
+              else
+              npm run build:beta
         - save_cache:
               key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
               paths:
