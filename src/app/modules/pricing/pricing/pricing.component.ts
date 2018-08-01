@@ -35,30 +35,7 @@ export class PricingComponent {
      * @returns {number}
      */
     getSpendingTotal(): number {
-        return this.getTotalPrice(this.list.crystals) +
-            this.getTotalPrice(this.list.gathers) +
-            this.getTotalPrice(this.list.others) +
-            this.getTotalPrice(this.list.preCrafts);
-    }
-
-    /**
-     * Computes the total price of a given list category
-     *
-     * @param {ListRow[]} rows
-     * @returns {number}
-     */
-    getTotalPrice(rows: ListRow[]): number {
-        let total = 0;
-        // For each row of the list
-        rows.filter(row => row.usePrice).forEach(row => {
-            // Get the amount of items required.
-            const amount = this.pricingService.getAmount(this.list.$key, row);
-            // Get the price of the item.
-            const price = this.pricingService.getPrice(row);
-            // Compute the price of this row.
-            total += amount.nq * price.nq + amount.hq * price.hq;
-        });
-        return total;
+        return this.list.recipes.reduce((total, item) => total + this.getCraftCost(item), 0);
     }
 
     getTotalEarnings(rows: ListRow[]): number {
@@ -70,41 +47,23 @@ export class PricingComponent {
     }
 
     /**
-     * Gets the minimum crafting cost of a given item.
+     * Gets the crafting cost of a given item.
      * @param {ListRow} row
+     * @param amountNeeded
      * @returns {number}
      */
-    getCraftCost(row: ListRow): number {
-        let total = 0;
-        (row.requires || []).forEach(requirement => {
-            const listRow = this.list.getItemById(requirement.id);
-            if (!listRow.usePrice) {
-                return
-            }
-            const price = this.pricingService.getPrice(listRow);
-            const amount = this.pricingService.getAmount(this.list.$key, listRow);
-            // We're gona get the lowest possible price.
-            let needed = row.amount_needed * requirement.amount;
-            // First of all, we get the maximum of nq items;
-            if (needed <= amount.nq) {
-                total += needed * price.nq;
-            } else {
-                // If we don't have enough nq items, we take what we already have.
-                total += amount.nq * price.nq;
-                needed -= amount.nq;
-                // Then we check for hq items
-                if (needed <= amount.hq) {
-                    // If we have enough of them, we can simply add them
-                    total += needed * price.hq;
-                } else {
-                    // Else, we assume that the crafter already has some items in his inventory,
-                    // that's why he didn't add them in the pricing.
-                    // So we'll assume the remaining items are free.
-                    total += amount.hq * price.hq;
-                }
-            }
-        });
-        return total;
+    getCraftCost(row: ListRow, amountNeeded = row.amount_needed): number {
+        if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
+            const prices = this.pricingService.getPrice(row);
+            const amounts = this.pricingService.getAmount(this.list.$key, row);
+            const avgPrice = ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
+            return avgPrice * amountNeeded;
+        }
+        return row.requires.reduce((total, requirement) => {
+            const requirementRow = this.list.getItemById(requirement.id, true);
+            const amount = Math.ceil((requirement.amount * amountNeeded) / requirementRow.yield);
+            return total + this.getCraftCost(requirementRow, amount);
+        }, 0);
     }
 
     /**
@@ -113,5 +72,9 @@ export class PricingComponent {
      */
     getBenefits(): number {
         return this.getTotalEarnings(this.list.recipes) - this.getSpendingTotal();
+    }
+
+    public trackByItemFn(index: number, item: ListRow): number {
+        return item.id;
     }
 }

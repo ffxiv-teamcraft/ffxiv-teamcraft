@@ -557,8 +557,7 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor",
-    "Materials_have_cost": "Materials for this craft have cost > 0, make sure you're not counting them twice"
+    "From_vendor": "Price from vendor"
   },
   "COMMISSION_BOARD": {
     "Title": "Commission board",

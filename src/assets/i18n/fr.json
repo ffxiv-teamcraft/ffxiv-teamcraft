@@ -557,8 +557,7 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Prix au vendeur",
-    "Materials_have_cost": "Des matériaux pour ce craft ont un prix supérieur à 0, soyez sûr de ne pas les compter deux fois"
+    "From_vendor": "Prix au vendeur"
   },
   "COMMISSION_BOARD": {
     "Title": "Tableau de requêtes",
