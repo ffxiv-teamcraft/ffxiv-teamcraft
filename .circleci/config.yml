@@ -1,9 +1,13 @@
+defaults: &defaults
+    working_directory: ~/project
+    docker:
+    - image: circleci/node:8.11.3-browsers
+
+
 version: 2
 jobs:
     setup:
-        working_directory: ~/project
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - checkout
         - run:
@@ -23,8 +27,7 @@ jobs:
 
 
     lint:
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - run:
               name: Lint code and JSON
@@ -32,8 +35,7 @@ jobs:
 
 
     test:
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - run:
               name: Testing
@@ -44,8 +46,7 @@ jobs:
 
 
     build:
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - run:
               name: Building
@@ -61,8 +62,7 @@ jobs:
 
 
     deploy-prod:
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - run:
               name: Deploying web
@@ -73,8 +73,7 @@ jobs:
 
 
     deploy-staging:
-        docker:
-        - image: circleci/node:8.11.3-browsers
+        <<: *defaults
         steps:
         - run:
               name: Deploying web
