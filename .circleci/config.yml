@@ -1,7 +1,7 @@
 defaults: &defaults
     working_directory: /tmp/ffxiv-teamcraft
     docker:
-    - image: circleci/node:8.11.3-browsers
+    - image: circleci/node:9-stretch-browsers
 
 
 version: 2
@@ -127,16 +127,22 @@ workflows:
               requires:
               - lint
               - test
-        - deploy-prod:
+        - deploy-web:
               requires:
               - build
               filters:
                   branches:
                       only: master
+        - deploy-desktop:
+              requires:
+                  - build
+              filters:
+                  branches:
+                      only: feat/circleci
         - deploy-staging:
               requires:
               - build
               filters:
                   branches:
-                      only: feat/circleci
+                      only: staging
 
