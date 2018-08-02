@@ -67,6 +67,7 @@
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
+    "Alarms_created": "Alarms created",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group"
@@ -256,6 +257,7 @@
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Copy_as_text": "Copy as text",
     "Total_price": "Total trades (gils and currencies)",
+    "Add_all_alarms": "Add all alarms for this list",
     "History": "History",
     "BUTTONS": {
       "Add_link_description": "Create a custom link for this list",

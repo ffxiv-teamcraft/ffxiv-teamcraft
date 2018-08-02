@@ -35,19 +35,19 @@ import {ListLayoutPopupComponent} from '../list-layout-popup/list-layout-popup.c
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {PermissionsPopupComponent} from '../../../modules/common-components/permissions-popup/permissions-popup.component';
 import {ListFinishedPopupComponent} from '../list-finished-popup/list-finished-popup.component';
-import {filter, first, map, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {filter, first, map, mergeMap, switchMap, tap, catchError} from 'rxjs/operators';
 import {PlatformService} from '../../../core/tools/platform.service';
 import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 import {CommissionService} from '../../../core/database/commission/commission.service';
+import {AlarmService} from '../../../core/time/alarm.service';
 import {ListHistoryPopupComponent} from '../list-history-popup/list-history-popup.component';
 import {NotificationService} from '../../../core/notification/notification.service';
 import {ListProgressNotification} from '../../../model/notification/list-progress-notification';
 import {Team} from '../../../model/other/team';
 import {TeamService} from '../../../core/database/team.service';
-import {catchError} from 'rxjs/internal/operators';
 
 declare const ga: Function;
 
@@ -106,6 +106,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
     @Output()
     reload: EventEmitter<void> = new EventEmitter<void>();
 
+    public hasTimers = false;
+
     private completionDialogOpen = false;
 
     private upgradingList = false;
@@ -127,7 +129,8 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 public settings: SettingsService, private layoutService: LayoutService, private cd: ChangeDetectorRef,
                 public platform: PlatformService, private linkTools: LinkToolsService, private l12n: LocalizedDataService,
                 private i18nTools: I18nToolsService, private commissionService: CommissionService,
-                private notificationService: NotificationService, private teamService: TeamService) {
+                private alarmService: AlarmService, private notificationService: NotificationService,
+                 private teamService: TeamService) {
         super();
         this.initFilters();
         this.listDisplay = this.listData$
@@ -203,7 +206,18 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
 
     ngOnChanges(changes: SimpleChanges): void {
         this.updateDisplay();
+        this.updateHasTimers();
         this.listData$.next(this.listData);
+    }
+
+    private updateHasTimers(): void {
+        if (this.listData !== undefined && this.listData !== null) {
+            let hasTimers = false;
+            this.listData.forEach(row => {
+                hasTimers = hasTimers || this.listService.hasTimers(row);
+            });
+            this.hasTimers = hasTimers;
+        }
     }
 
     private updateDisplay(): void {
@@ -507,6 +521,29 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                     })
                 ).subscribe();
         }
+    }
+
+    public createAllAlarms(list: List): void {
+        this.userService.getUserData()
+            .pipe(
+                first(),
+                map(user => {
+                    if (user.alarmGroups.find(group => group.name === list.name) === undefined) {
+                        user.alarmGroups.push({name: list.name, enabled: true});
+                    }
+                    return user;
+                }),
+                mergeMap(user => {
+                    return this.userService.set(user.$key, user);
+                }),
+                map(() => {
+                    const timedRows = this.listService.getTimedRows(list);
+                    timedRows.forEach(row => this.alarmService.register(row, list.name));
+                })
+            )
+            .subscribe(() => {
+                this.snack.open(this.translate.instant('ALARM.Alarms_created'), '', {duration: 3000});
+            });
     }
 
     public forkList(list: List): void {

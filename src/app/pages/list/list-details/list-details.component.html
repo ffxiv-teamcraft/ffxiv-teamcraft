@@ -95,6 +95,14 @@
                     matTooltip="{{'COMMISSION_BOARD.Create_commission' | translate}}">
                 <mat-icon>drafts</mat-icon>
             </button>
+
+            <button mat-mini-fab
+                    *ngIf="hasTimers"
+                    (click)="createAllAlarms(listData)"
+                    [matTooltip]="'LIST.Add_all_alarms' | translate">
+                <mat-icon>alarm_add</mat-icon>
+            </button>
+
             <div class="spacer"></div>
 
             <button mat-mini-fab color="accent"
