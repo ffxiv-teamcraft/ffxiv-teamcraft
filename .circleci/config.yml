@@ -138,7 +138,7 @@ workflows:
                   - build
               filters:
                   branches:
-                      only: feat/circleci
+                      only: master
         - deploy-staging:
               requires:
               - build
