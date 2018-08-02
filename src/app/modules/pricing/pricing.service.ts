@@ -16,9 +16,15 @@ export class PricingService {
      */
     private amounts: { [index: string]: { [index: number]: ItemAmount } };
 
+    /**
+     * Array of custom prices
+     */
+    private customPrices: [number];
+
     constructor() {
         this.prices = this.parsePrices(localStorage.getItem('prices'));
         this.amounts = JSON.parse(localStorage.getItem('amounts')) || {};
+        this.customPrices = JSON.parse(localStorage.getItem('customPrices')) || [];
     }
 
     /**
@@ -73,6 +79,23 @@ export class PricingService {
     savePrice(item: ListRow, price: Price): void {
         this.prices[item.id] = price;
         this.persistPrices();
+    }
+
+    /**
+     * Saves an item as having a custom price
+     * @param {ListRow} item
+     * @param {boolean} customPrice
+     */
+    saveCustomPrice(item: ListRow, customPrice: boolean): void {
+        const index = this.customPrices.indexOf(item.id);
+
+        if (customPrice && index === -1) {
+            this.customPrices.push(item.id);
+        } else if (!customPrice && index !== -1) {
+            this.customPrices.splice(index, 1);
+        }
+
+        this.persistCustomPrice();
     }
 
     /**
@@ -144,10 +167,26 @@ export class PricingService {
     }
 
     /**
+     * Gets whether or not the item has a custom price set
+     * @param {ListRow} item
+     * @returns {boolean}
+     */
+    isCustomPrice(item: ListRow): boolean {
+        return this.customPrices.indexOf(item.id) !== -1;
+    }
+
+    /**
      * Persists the current prices to localStorage.
      */
     private persistPrices(): void {
         localStorage.setItem('prices', this.stringifyPrices(this.prices));
+    }
+
+    /**
+     * Persists the custom prices to localStorage.
+     */
+    private persistCustomPrice(): void {
+        localStorage.setItem('customPrices', JSON.stringify(this.customPrices));
     }
 
     /**

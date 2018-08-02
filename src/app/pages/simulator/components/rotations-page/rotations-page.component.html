@@ -10,9 +10,6 @@
 <div *ngIf="rotations$ | async as rotations">
     <div *ngIf="rotations.nofolder.length > 0 || rotations.folders.length > 0; else noRotations">
         <div class="drop-zone" droppable (onDrop)="removeFolder($event.dragData)" [dropScope]="'rotation'">
-            <div class="drop-overlay accent-background">
-                <mat-icon>save_alt</mat-icon>
-            </div>
             <div *ngFor="let rotation of rotations.nofolder; trackBy: trackByRotation"
                  draggable
                  [dragScope]="'rotation'"
@@ -29,9 +26,6 @@
         <div *ngFor="let folder of rotations.folders; trackBy: trackByFolder; let i = index">
             <div class="drop-zone folder-zone" droppable (onDrop)="setFolderIndex($event.dragData, i)"
                  [dropScope]="'folder'">
-                <div class="drop-overlay accent-background">
-                    <mat-icon>save_alt</mat-icon>
-                </div>
             </div>
             <mat-expansion-panel class="folder" draggable [dragData]="folder.name" [dragScope]="'folder'">
                 <mat-expansion-panel-header>
@@ -50,9 +44,6 @@
                 </mat-expansion-panel-header>
                 <div class="drop-zone" droppable (onDrop)="onFolderDrop(folder.name, $event.dragData)"
                      [dropScope]="'rotation'">
-                    <div class="drop-overlay accent-background">
-                        <mat-icon>save_alt</mat-icon>
-                    </div>
                     <div *ngFor="let rotation of folder.rotations; trackBy: trackByRotation"
                          draggable
                          [dragScope]="'rotation'"
@@ -70,9 +61,6 @@
         <div class="drop-zone folder-zone" droppable
              (onDrop)="setFolderIndex($event.dragData, rotations.folders.length - 1)"
              [dropScope]="'folder'">
-            <div class="drop-overlay accent-background">
-                <mat-icon>save_alt</mat-icon>
-            </div>
         </div>
     </div>
     <ng-template #noRotations>

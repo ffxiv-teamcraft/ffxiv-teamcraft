@@ -258,6 +258,7 @@
     "Copy_as_text": "Copy as text",
     "Total_price": "Total trades (gils and currencies)",
     "Add_all_alarms": "Add all alarms for this list",
+    "History": "History",
     "BUTTONS": {
       "Add_link_description": "Create a custom link for this list",
       "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
@@ -559,7 +560,7 @@
   },
   "PRICING": {
     "From_vendor": "Price from vendor",
-    "Materials_have_cost": "Materials for this craft have cost > 0, make sure you're not counting them twice"
+    "Expect_to_sell_everything": "Expect to sell everything"
   },
   "COMMISSION_BOARD": {
     "Title": "Commission board",
@@ -617,5 +618,22 @@
       "Min_price": "Min price",
       "Max_price": "Max price"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notifications",
+    "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
+    "Team_invite": "{{invitedBy}} invited you to team {{teamName}}",
+    "Item_assigned": "{{itemName}} has been assigned to you on list \"{{listName}}\"",
+    "List_commented": "{{userName}} commented on list {{listName}}: \"{{content}}\"",
+    "Mark_all_as_read": "Mark all as read"
+  },
+  "TEAMS": {
+    "Title": "Teams",
+    "Create_team": "Create a team",
+    "Add_user": "Add a user",
+    "No_teams": "No Teams",
+    "Pending": "Pending",
+    "Assign_list": "Assign this list to a team",
+    "Detach_team": "Detach team"
   }
 }

@@ -5,10 +5,10 @@ import {DeserializeAs} from '@kaiu/serializer';
 export class DefaultConsumables {
 
     @DeserializeAs(Consumable)
-    food: Consumable;
+    food: Consumable = null;
 
     @DeserializeAs(Consumable)
-    medicine: Consumable;
+    medicine: Consumable = null;
 
     @DeserializeAs([FreeCompanyAction])
     freeCompanyActions: FreeCompanyAction[];

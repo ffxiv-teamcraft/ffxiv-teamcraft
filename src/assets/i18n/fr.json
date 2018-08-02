@@ -85,15 +85,12 @@
   "New_List": "Nouvelle Liste",
   "Please_enter_a_name": "Merci d'entrer un nom",
   "Lists": "Listes",
-
   "items": "objets",
   "Confirm": "Confirmer",
   "Cancel": "Annuler",
   "Edit": "Éditer",
   "Add_a_list": "Ajouter une liste",
   "List_name": "Nom de la liste",
-
-
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",
@@ -259,6 +256,7 @@
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
     "Total_price": "Prix total (échanges et gils)",
+    "History": "Historique",
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
@@ -560,7 +558,7 @@
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
-    "Materials_have_cost": "Des matériaux pour ce craft ont un prix supérieur à 0, soyez sûr de ne pas les compter deux fois"
+    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu"
   },
   "COMMISSION_BOARD": {
     "Title": "Tableau de requêtes",
@@ -602,6 +600,7 @@
     "Withdraw": "Démissionner",
     "Confirm_withdraw": "Êtes-vous sûr de vouloir démissionner? Cette action est irréversible",
     "New_things_notification": "Nouveaux évènements à voir dans la page des commissions pour vous",
+    "Negotiable_price": "Prix à négocier",
     "STATUS": {
       "CREATED": "Ouverte",
       "ACCEPTED": "En cours",
@@ -617,5 +616,22 @@
       "Min_price": "Prix minimum",
       "Max_price": "Prix maximum"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notifications",
+    "List_progress": "{{author}} a ajouté {{amount}} {{itemName}} à la liste \"{{listName}}\"",
+    "Team_invite": "{{invitedBy}} vous a invité dans l'équipe {{teamName}}",
+    "Item_assigned": "{{itemName}} vous a été assigné sur la liste \"{{listName}}\"",
+    "List_commented": "{{userName}} a commenté sur la liste {{listName}}: \"{{content}}\"",
+    "Mark_all_as_read": "Tout marquer comme lu"
+  },
+  "TEAMS": {
+    "Title": "Équipes",
+    "Create_team": "Créer une équipe",
+    "Add_user": "Ajouter un utilisateur",
+    "No_teams": "Aucune équipe",
+    "Pending": "En attente d'une réponse",
+    "Assign_list": "Assigner cette liste à une équipe",
+    "Detach_team": "Détacher cette liste de son équipe"
   }
 }

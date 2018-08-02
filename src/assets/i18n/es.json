@@ -551,8 +551,7 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Precio del vendedor",
-    "Materials_have_cost": "Los materiales para esta elaboración tienen costos > a 0, asegúrese de no estar contandolos doble"
+    "From_vendor": "Precio del vendedor"
   },
   "COMMISSION_BOARD": {
     "Title": "Tablero de comisiones",
