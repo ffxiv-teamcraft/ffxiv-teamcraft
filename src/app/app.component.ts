@@ -82,6 +82,8 @@ export class AppComponent implements OnInit {
 
     public overlayOpacity = 1;
 
+    public windowDecorator = true;
+
     @ViewChild('urlBox')
     urlBox: ElementRef;
 
@@ -139,6 +141,9 @@ export class AppComponent implements OnInit {
                 })
             ).subscribe((event: any) => {
             this.overlay = event.url.indexOf('?overlay') > -1;
+            this.ipc.on('window-decorator', (event, value) => {
+               this.windowDecorator = value;
+            });
             if (this.overlay) {
                 this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
                     this.overlayOpacity = value;

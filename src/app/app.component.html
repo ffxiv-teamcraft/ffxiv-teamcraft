@@ -1,5 +1,5 @@
 <div class="app-container {{settings.theme}}-theme mat-typography">
-    <div class="desktop-bar" *ngIf="platformService.isDesktop()">
+    <div class="desktop-bar" *ngIf="platformService.isDesktop() && windowDecorator">
         <mat-icon *ngIf="mobile && !overlay" (click)="sidenav.toggle()" class="theme-text-color desktop-bar-button">
             menu
         </mat-icon>
@@ -54,7 +54,8 @@
         </button>
         <span class="version">{{version}}</span>
     </mat-toolbar>
-    <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()">
+    <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()"
+                           [class.native-decorator]="!windowDecorator">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
                      [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
