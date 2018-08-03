@@ -292,9 +292,16 @@
                     <div class="quality right-row">
                         <h3>{{'SIMULATOR.Quality' | translate}}</h3>
                         <div class="value-bar">
-                            <mat-progress-bar mode="determinate"
-                                              [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
-                                              color="accent"></mat-progress-bar>
+                            <div class="thresholds-container">
+                                <span *ngFor="let threshold of thresholds"
+                                      [ngStyle]="{left: 100 * threshold / resultData.simulation.recipe.quality + '%'}"
+                                      [matTooltip]="(threshold/10) | number: '1.0-0'"
+                                      class="threshold-marker primary-background"></span>
+
+                                <mat-progress-bar mode="determinate"
+                                                  [value]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                                                  color="accent"></mat-progress-bar>
+                            </div>
                             <span class="value-amount">{{resultData.simulation.quality}}/{{resultData.simulation.recipe.quality}}</span>
                         </div>
                     </div>

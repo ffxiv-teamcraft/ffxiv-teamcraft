@@ -158,6 +158,18 @@ mat-progress-bar {
                     width: 130px;
                     margin-left: 50px;
                 }
+                .thresholds-container {
+                    position: relative;
+                    width: 100%;
+                    flex: 1 1 auto;
+                    .threshold-marker {
+                        position: absolute;
+                        width: 3px;
+                        height: 30px;
+                        z-index: 10;
+
+                    }
+                }
             }
         }
         .bottom-part {
