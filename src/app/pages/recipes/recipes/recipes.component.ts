@@ -117,6 +117,8 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     rotations$: Observable<CraftingRotation[]>;
 
+    isAuthenticated$: Observable<boolean>;
+
     constructor(private resolver: ListManagerService, private db: DataService,
                 private snackBar: MatSnackBar, protected dialog: MatDialog,
                 private i18n: I18nToolsService, private gt: GarlandToolsService,
@@ -127,6 +129,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
                 private workshopService: WorkshopService, private rotationsService: CraftingRotationService,
                 public settings: SettingsService) {
         super(dialog, helpService, media);
+        this.isAuthenticated$ = this.userService.getUserData().pipe(map(user => !user.anonymous));
     }
 
     ngOnInit() {

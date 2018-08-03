@@ -1,0 +1,148 @@
+defaults: &defaults
+    working_directory: /tmp/ffxiv-teamcraft
+    docker:
+    - image: supamiu/circleci-node-wine
+
+
+version: 2
+jobs:
+    setup:
+        <<: *defaults
+        steps:
+        - checkout
+        - run:
+            name: Show current branch
+            command: echo ${CIRCLE_BRANCH}
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+        - run:
+            name: Install local dependencies
+            command: npm install
+        - run:
+            name: Install functions dependencies
+            command: cd functions && npm install && cd ../
+        - save_cache:
+            key: v1-dependencies-{{ checksum "package.json" }}
+            paths:
+            - node_modules
+            - functions/node_modules
+        - persist_to_workspace:
+            root: /tmp
+            paths:
+            - ffxiv-teamcraft/*
+
+
+    lint:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Lint code and JSON
+            command: npm run lint
+
+
+    test:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Testing
+            command: npm run test
+        - run:
+            name: Codecov upload
+            command: npm run codecov
+
+
+    build:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Building
+            command: |
+                if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                    npm run build:prod
+                else
+                    npm run build:beta
+                fi
+        - save_cache:
+            key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+            paths:
+            - dist
+        - persist_to_workspace:
+              root: /tmp
+              paths:
+                  - ffxiv-teamcraft/*
+
+
+    deploy-web:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Deploying web
+            command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
+        - run:
+            name: Deploying desktop
+            command: npm run electron:setup:publish
+
+    deploy-desktop:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Deploying desktop
+            command: npm run electron:setup:publish
+
+
+    deploy-staging:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Deploying web
+            command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
+
+
+workflows:
+    version: 2
+    flow:
+        jobs:
+        - setup
+        - lint:
+              requires:
+              - setup
+        - test:
+              requires:
+              - setup
+        - build:
+              requires:
+              - lint
+              - test
+        - deploy-web:
+              requires:
+              - build
+              filters:
+                  branches:
+                      only: master
+        - deploy-desktop:
+              requires:
+                  - build
+              filters:
+                  branches:
+                      only: master
+        - deploy-staging:
+              requires:
+              - build
+              filters:
+                  branches:
+                      only: staging
+

@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>{{'LIST.History' | translate}}</h3>
+<mat-list>
+    <mat-list-item *ngFor="let entry of listHistory">
+        <img src="{{entry.itemIcon | icon}}" alt="" mat-list-avatar>
+        <span matLine>{{entry.amount > 0 ? '+' : ''}}{{entry.amount}} {{entry.itemId | itemName | i18n}}</span>
+        <span matLine class="user-and-date">{{getCharacterName(entry.characterId) | async}} - {{entry.date | date: 'medium'}}</span>
+    </mat-list-item>
+</mat-list>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>{{'Ok' | translate}}</button>
+</div>

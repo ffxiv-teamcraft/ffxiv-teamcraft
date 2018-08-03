@@ -128,10 +128,20 @@
                         </button>
                     </mat-panel-title>
                     <div class="buttons">
+                        <button mat-icon-button routerLink="/workshop/{{workshop.$key}}"
+                                (click)="$event.stopPropagation()">
+                            <mat-icon>playlist_play</mat-icon>
+                        </button>
                         <button mat-icon-button *ngIf="userData?.patron || userData?.admin"
                                 matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
                                 (click)="$event.stopPropagation(); openLinkPopup(workshop)">
                             <mat-icon>link</mat-icon>
+                        </button>
+                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
+                                (click)="$event.stopPropagation()"
+                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                                (cbOnSuccess)="showCopiedNotification()">
+                            <mat-icon>share</mat-icon>
                         </button>
                         <span *ngIf="workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
@@ -145,19 +155,9 @@
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
-                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshop)"
-                                (click)="$event.stopPropagation()"
-                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
-                                (cbOnSuccess)="showCopiedNotification()">
-                            <mat-icon>share</mat-icon>
-                        </button>
-                        <button mat-icon-button routerLink="/workshop/{{workshop.$key}}"
-                                (click)="$event.stopPropagation()">
-                            <mat-icon>playlist_play</mat-icon>
-                        </button>
                         <button mat-icon-button
                                 (click)="deleteWorkshop(workshop); $event.stopPropagation()">
-                            <mat-icon>delete</mat-icon>
+                            <mat-icon color="warn">delete</mat-icon>
                         </button>
                     </div>
                 </mat-expansion-panel-header>
@@ -206,10 +206,20 @@
                         </button>
                     </mat-panel-title>
                     <div class="buttons">
+                        <button mat-icon-button routerLink="/workshop/{{workshopData.workshop.$key}}"
+                                (click)="$event.stopPropagation()">
+                            <mat-icon>playlist_play</mat-icon>
+                        </button>
                         <button mat-icon-button *ngIf="userData?.patron || userData?.admin"
                                 matTooltip="{{'CUSTOM_LINKS.Add_link' | translate}}" matTooltipPosition="above"
                                 (click)="$event.stopPropagation(); openLinkPopup(workshopData.workshop)">
                             <mat-icon>link</mat-icon>
+                        </button>
+                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshopData.workshop)"
+                                (click)="$event.stopPropagation()"
+                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
+                                (cbOnSuccess)="showCopiedNotification()">
+                            <mat-icon>share</mat-icon>
                         </button>
                         <span *ngIf="workshopData.workshop.authorId === userData.$key"
                               [matTooltipDisabled]="!anonymous"
@@ -223,16 +233,6 @@
                                 <mat-icon>security</mat-icon>
                             </button>
                         </span>
-                        <button mat-icon-button ngxClipboard [cbContent]="getLink(workshopData.workshop)"
-                                (click)="$event.stopPropagation()"
-                                matTooltip="{{'Share' | translate}}" matTooltipPosition="above"
-                                (cbOnSuccess)="showCopiedNotification()">
-                            <mat-icon>share</mat-icon>
-                        </button>
-                        <button mat-icon-button routerLink="/workshop/{{workshopData.workshop.$key}}"
-                                (click)="$event.stopPropagation()">
-                            <mat-icon>playlist_play</mat-icon>
-                        </button>
                     </div>
                 </mat-expansion-panel-header>
                 <div class="row workshop-row"

@@ -9,7 +9,7 @@ import {MatProgressSpinnerModule} from '@angular/material';
 const routes: Routes = [
     {
         path: '', children: [{
-            path: '/:nickName/:uri',
+            path: ':nickName/:uri',
             component: LinkComponent,
             canActivate: [MaintenanceGuard]
         }]

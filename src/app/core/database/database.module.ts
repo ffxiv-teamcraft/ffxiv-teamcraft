@@ -8,6 +8,7 @@ import {FirestoreListStorage} from './storage/list/firestore-list-storage';
 import {ListTemplateService} from './list-template/list-template.service';
 import {CraftingRotationService} from './crafting-rotation.service';
 import {CommissionService} from './commission/commission.service';
+import {TeamService} from './team.service';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {CommissionService} from './commission/commission.service';
         ListTemplateService,
         CraftingRotationService,
         CommissionService,
+        TeamService,
     ]
 })
 export class DatabaseModule {

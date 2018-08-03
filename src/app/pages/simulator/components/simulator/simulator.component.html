@@ -409,27 +409,27 @@
         </mat-card>
         <mat-card [class.failed]="actionFailed">
             <div class="actions">
-                <app-action draggable
-                            droppable
-                            (onDragStart)="step.action.canBeMoved()?null:$event.preventDefault()"
-                            dragOverClass="drag-over"
-                            [disabled]="!step.success || step.skipped"
-                            (onDrop)="moveSkill($event.dragData, index)"
-                            [dragData]="index"
-                            *ngFor="let step of resultData.simulation.steps; let index = index"
-                            (actionclick)="removeAction(index)"
-                            [action]="step.action"
-                            [simulation]="resultData.simulation"
-                            [ignoreDisabled]="true"
-                            [cpCost]="step.cpDifference"
-                            [failed]="!step.success"
-                            (onDragStart)="tooltipsDisabled = true"
-                            (onDragEnd)="tooltipsDisabled = false"
-                            (onDrop)="tooltipsDisabled = false"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
-                <div class="end-drag-zone" droppable
+                <div class="action-parent" *ngFor="let step of resultData.simulation.steps; let index = index">
+                    <div class="action-drag-zone" droppable
+                         dragOverClass="drag-over"
+                         (onDrop)="moveSkill($event.dragData, index); tooltipsDisabled = false"></div>
+                    <app-action draggable
+                                (onDragStart)="step.action.canBeMoved()?null:$event.preventDefault()"
+                                [disabled]="!step.success || step.skipped"
+                                [dragData]="index"
+                                (actionclick)="removeAction(index)"
+                                [action]="step.action"
+                                [simulation]="resultData.simulation"
+                                [ignoreDisabled]="true"
+                                [cpCost]="step.cpDifference"
+                                [failed]="!step.success"
+                                (onDragStart)="tooltipsDisabled = true"
+                                (onDragEnd)="tooltipsDisabled = false"
+                                [tooltipDisabled]="tooltipsDisabled"></app-action>
+                </div>
+                <div class="action-drag-zone" droppable
                      dragOverClass="drag-over"
-                     (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1)"></div>
+                     (onDrop)="moveSkill($event.dragData, resultData.simulation.steps.length - 1); tooltipsDisabled = false"></div>
             </div>
         </mat-card>
         <mat-card>

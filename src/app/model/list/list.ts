@@ -47,6 +47,8 @@ export class List extends DataWithPermissions {
 
     modificationsHistory: ModificationEntry[] = [];
 
+    teamId: string;
+
     public get isCommissionList(): boolean {
         return this.commissionId !== undefined && this.commissionServer !== undefined;
     }
@@ -464,7 +466,8 @@ export class List extends DataWithPermissions {
                         amount: element.amount * addition.amount,
                         done: 0,
                         used: 0,
-                        yield: 1
+                        yield: 1,
+                        usePrice: true
                     });
                 } else {
                     const elementDetails = addition.data.getIngredient(element.id);
@@ -477,7 +480,8 @@ export class List extends DataWithPermissions {
                             requires: elementDetails.craft[0].ingredients,
                             done: 0,
                             used: 0,
-                            yield: yields
+                            yield: yields,
+                            usePrice: true
                         });
                         nextIteration.push({
                             item: elementDetails,
@@ -491,7 +495,8 @@ export class List extends DataWithPermissions {
                             amount: element.amount * addition.amount,
                             done: 0,
                             used: 0,
-                            yield: 1
+                            yield: 1,
+                            usePrice: true
                         });
                     } else {
                         this.addToOthers({
@@ -500,7 +505,8 @@ export class List extends DataWithPermissions {
                             amount: element.amount * addition.amount,
                             done: 0,
                             used: 0,
-                            yield: 1
+                            yield: 1,
+                            usePrice: true
                         });
                     }
                 }

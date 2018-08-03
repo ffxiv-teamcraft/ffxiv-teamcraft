@@ -1,3 +1,15 @@
+
+.team-fab {
+    .remove-button {
+        visibility: hidden;
+    }
+    &:hover {
+        .remove-button {
+            visibility: visible;
+        }
+    }
+}
+
 .etime-container {
     width: 100%;
     display: flex;

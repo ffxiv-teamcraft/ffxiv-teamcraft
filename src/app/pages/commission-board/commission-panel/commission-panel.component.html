@@ -12,7 +12,7 @@
         </mat-panel-title>
         <mat-panel-description>
             <span *ngIf="author$ | async as author">
-                {{author.name}}
+                 {{author.name}} - <i>{{commission.createdAt | date: 'medium'}}</i>
             </span>
         </mat-panel-description>
         <mat-chip-list>
