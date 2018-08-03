@@ -19,24 +19,25 @@ export class HistoryComponent {
         const myRequests$ = this.userService.getCharacter()
             .pipe(
                 mergeMap(character => {
-                    return this.commissionService.getAll(character.server, ref => ref.where('authorId', '==', character.userId))
-                        .pipe(
-                            map(commissions => commissions.filter(com => com.status === CommissionStatus.DONE))
-                        );
+                    return this.commissionService.getAll(character.server, ref =>
+                        ref.where('authorId', '==', character.userId)
+                           .where('status', '==', CommissionStatus.DONE)
+                    )
                 })
             );
         const myCrafts$ = this.userService.getCharacter()
             .pipe(
                 mergeMap(character => {
-                    return this.commissionService.getAll(character.server, ref => ref.where('crafterId', '==', character.userId))
-                        .pipe(
-                            map(commissions => commissions.filter(com => com.status === CommissionStatus.DONE))
-                        );
+                    return this.commissionService.getAll(character.server, ref =>
+                        ref.where('crafterId', '==', character.userId)
+                           .where('status', '==', CommissionStatus.DONE)
+                    )
                 })
             );
         this.commissions$ = combineLatest(myRequests$, myCrafts$)
             .pipe(
-                map(results => [...results[0], ...results[1]])
+                map(results => [...results[0], ...results[1]]),
+                map(results => results.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()))
             )
     }
 
