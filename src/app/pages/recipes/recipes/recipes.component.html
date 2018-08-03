@@ -226,7 +226,7 @@
                         matTooltipPosition="above">
                     <mat-icon>access_time</mat-icon>
                 </button>
-                <button mat-icon-button (click)="createCommission(item, amount.value)"
+                <button mat-icon-button *ngIf="(isAuthenticated$ | async)" (click)="createCommission(item, amount.value)"
                         matTooltip="{{'COMMISSION_BOARD.Create_commission' | translate}}"
                         matTooltipPosition="above">
                     <mat-icon>drafts</mat-icon>
