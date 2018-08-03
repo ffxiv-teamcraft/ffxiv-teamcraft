@@ -93,6 +93,10 @@
             height: calc(100vh - 24px);
             margin-top: -40px;
             -webkit-app-region: no-drag;
+            &.native-decorator {
+                height: 100vh;
+                margin-top: -64px;
+            }
         }
         mat-list-item {
             touch-action: auto !important;
