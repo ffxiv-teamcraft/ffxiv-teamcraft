@@ -4,7 +4,7 @@
 
 de | es | fr | ja | pt | 
  :---: | :---: | :---: | :---: | :---: |
-100% | 96% | 100% | 28% | 68% | 
+99% | 95% | 99% | 27% | 68% | 
 
 ## Categories details : 
 
@@ -16,12 +16,12 @@ WORKSHOP | 100% | 100% | 100% | 0% | 100% |
 ABOUT | 100% | 100% | 100% | 29% | 100% | 
 GIVEWAY | 100% | 100% | 100% | 0% | 100% | 
 COMMON | 100% | 100% | 100% | 50% | 67% | 
-ALARMS | 100% | 100% | 100% | 0% | 50% | 
+ALARMS | 86% | 86% | 86% | 0% | 43% | 
 ALARM | 100% | 67% | 100% | 0% | 67% | 
 SETTINGS | 100% | 70% | 100% | 10% | 60% | 
 PROFILE | 100% | 95% | 100% | 0% | 75% | 
 LISTS | 100% | 100% | 100% | 13% | 93% | 
-LIST | 100% | 93% | 100% | 0% | 14% | 
+LIST | 93% | 87% | 93% | 0% | 13% | 
 LIST_DETAILS | 100% | 100% | 100% | 0% | 98% | 
 LIST_TAGS | 100% | 100% | 100% | 100% | 100% | 
 RECIPES | 100% | 100% | 100% | 0% | 100% | 
@@ -33,26 +33,33 @@ ANNOUNCEMENT | 100% | 100% | 100% | 50% | 100% |
 LIST_TEMPLATE | 100% | 100% | 100% | 0% | 100% | 
 PERMISSIONS | 100% | 100% | 100% | 0% | 100% | 
 WIKI | 100% | 100% | 100% | 33% | 100% | 
-SIMULATOR | 100% | 100% | 100% | 71% | 0% | 
+SIMULATOR | 96% | 96% | 96% | 67% | 0% | 
 HOME_PAGE | 100% | 100% | 100% | 4% | 100% | 
-PRICING | 100% | 100% | 100% | 0% | 0% | 
-COMMISSION_BOARD | 100% | 94% | 100% | 0% | 0% | 
+PRICING | 50% | 50% | 100% | 0% | 0% | 
+COMMISSION_BOARD | 100% | 92% | 100% | 0% | 0% | 
 NOTIFICATIONS | 100% | 0% | 100% | 0% | 0% | 
 TEAMS | 100% | 0% | 100% | 0% | 0% | 
 
 ## Detailed report
 ### de : 
 
+ * `ALARMS.Alarms_created` : `Alarms created`
+ * `LIST.Add_all_alarms` : `Add all alarms for this list`
+ * `PRICING.Expect_to_sell_everything` : `Expect to sell everything`
 
 
 ### es : 
 
+ * `ALARMS.Alarms_created` : `Alarms created`
  * `ALARM.Note` : `Note`
  * `SETTINGS.Check_for_update` : `Check for update`
  * `SETTINGS.Downloading_update` : `Downloading update`
  * `SETTINGS.No_update_available` : `No update available`
  * `PROFILE.VERIFICATION.Title` : `Profile validation`
+ * `LIST.Add_all_alarms` : `Add all alarms for this list`
  * `LIST.History` : `History`
+ * `PRICING.Expect_to_sell_everything` : `Expect to sell everything`
+ * `COMMISSION_BOARD.Server_history` : `Server history`
  * `COMMISSION_BOARD.Negotiable_price` : `Negotiable`
  * `COMMISSION_BOARD.FILTERS.Min_price` : `Min price`
  * `COMMISSION_BOARD.FILTERS.Max_price` : `Max price`
@@ -73,6 +80,8 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
 
 ### fr : 
 
+ * `ALARMS.Alarms_created` : `Alarms created`
+ * `LIST.Add_all_alarms` : `Add all alarms for this list`
 
 
 ### ja : 
@@ -207,6 +216,7 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `ALARMS.No_alarm` : `No alarms set`
  * `ALARMS.Add_alarm` : `Add alarm`
  * `ALARMS.Alarm_created` : `Alarm created`
+ * `ALARMS.Alarms_created` : `Alarms created`
  * `ALARMS.Alarm_already_created` : `Alarm already set`
  * `ALARMS.Custom_sound` : `Custom alarm sound`
  * `ALARMS.New_group` : `New alarm group`
@@ -259,6 +269,7 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `LIST.Enable_crystals_tracking` : `Enable crystals tracking`
  * `LIST.Copy_as_text` : `Copy as text`
  * `LIST.Total_price` : `Total trades (gils and currencies)`
+ * `LIST.Add_all_alarms` : `Add all alarms for this list`
  * `LIST.History` : `History`
  * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
  * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
@@ -409,13 +420,14 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `HOME_PAGE.GET_STARTED.Access_wiki_content` : `Navigate to the wiki page by clicking the link below. This page has some documentation for the general website usage, to guide you to make the most out of it and help you as much as possible`
  * `HOME_PAGE.GET_STARTED.Access_wiki_link` : `Go to wiki page`
  * `PRICING.From_vendor` : `Price from vendor`
- * `PRICING.Materials_have_cost` : `Materials for this craft have cost > 0, make sure you're not counting them twice`
+ * `PRICING.Expect_to_sell_everything` : `Expect to sell everything`
  * `COMMISSION_BOARD.Title` : `Commission board`
  * `COMMISSION_BOARD.Create_commission` : `Create a commission request`
  * `COMMISSION_BOARD.Board` : `Board`
  * `COMMISSION_BOARD.My_requests` : `My requests`
  * `COMMISSION_BOARD.My_crafts` : `My ongoing commissions`
  * `COMMISSION_BOARD.History` : `Archived`
+ * `COMMISSION_BOARD.Server_history` : `Server history`
  * `COMMISSION_BOARD.No_commissions` : `No opened commissions on your server`
  * `COMMISSION_BOARD.Chat_warning` : `Remember to never give your credentials in the chat, nobody should ask for them. Using this chat to use the platform for RMT will result in a permanent ban from the website and the case forwarded to Square Enix`
  * `COMMISSION_BOARD.Chat_placeholder` : `Send new message`
@@ -483,6 +495,7 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `LodestoneId` : `Lodestone ID`
  * `COMMON.Open_url` : `Open Teamcraft link`
  * `COMMON.Open_url_placeholder` : `Teamcraft link`
+ * `ALARMS.Alarms_created` : `Alarms created`
  * `ALARMS.Alarm_already_created` : `Alarm already set`
  * `ALARMS.Custom_sound` : `Custom alarm sound`
  * `ALARMS.New_group` : `New alarm group`
@@ -499,6 +512,7 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `LISTS.Add_selection` : `Add selection to a list`
  * `LIST.Copy_as_text` : `Copy as text`
  * `LIST.Total_price` : `Total trades (gils and currencies)`
+ * `LIST.Add_all_alarms` : `Add all alarms for this list`
  * `LIST.History` : `History`
  * `LIST.BUTTONS.Add_link_description` : `Create a custom link for this list`
  * `LIST.BUTTONS.Create_template_description` : `Create a template link for this list, which will create a copy of the list for whoever opens it`
@@ -582,17 +596,15 @@ TEAMS | 100% | 0% | 100% | 0% | 0% |
  * `SIMULATOR.CONFIGURATION.Save_set` : `Save these stats for this job`
  * `SIMULATOR.CONFIGURATION.Reset_set` : `Reset these stats`
  * `SIMULATOR.CONFIGURATION.Save_consumables` : `Save these consumables as default`
- * `SIMULATOR.CONFIGURATION.STATS.CP` : `CP`
- * `SIMULATOR.CONFIGURATION.STATS.Craftsmanship` : `Craftsmanship`
- * `SIMULATOR.CONFIGURATION.STATS.Control` : `Control`
  * `PRICING.From_vendor` : `Price from vendor`
- * `PRICING.Materials_have_cost` : `Materials for this craft have cost > 0, make sure you're not counting them twice`
+ * `PRICING.Expect_to_sell_everything` : `Expect to sell everything`
  * `COMMISSION_BOARD.Title` : `Commission board`
  * `COMMISSION_BOARD.Create_commission` : `Create a commission request`
  * `COMMISSION_BOARD.Board` : `Board`
  * `COMMISSION_BOARD.My_requests` : `My requests`
  * `COMMISSION_BOARD.My_crafts` : `My ongoing commissions`
  * `COMMISSION_BOARD.History` : `Archived`
+ * `COMMISSION_BOARD.Server_history` : `Server history`
  * `COMMISSION_BOARD.No_commissions` : `No opened commissions on your server`
  * `COMMISSION_BOARD.Chat_warning` : `Remember to never give your credentials in the chat, nobody should ask for them. Using this chat to use the platform for RMT will result in a permanent ban from the website and the case forwarded to Square Enix`
  * `COMMISSION_BOARD.Chat_placeholder` : `Send new message`
