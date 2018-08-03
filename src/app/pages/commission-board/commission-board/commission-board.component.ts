@@ -70,6 +70,11 @@ export class CommissionBoardComponent {
                     }),
                 )
         },
+        {
+            path: 'server-history',
+            label: 'COMMISSION_BOARD.Server_history',
+            hasNewThings: of(false)
+        }
     ];
 
     constructor(private userService: UserService, private commissionService: CommissionService) {

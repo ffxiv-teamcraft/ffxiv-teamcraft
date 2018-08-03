@@ -19,6 +19,7 @@ import {CommissionChatComponent} from './commission-chat/commission-chat.compone
 import {RatingPopupComponent} from './rating-popup/rating-popup.component';
 import {HistoryComponent} from './history/history.component';
 import {RatingComponent} from './rating/rating.component';
+import {ServerHistoryComponent} from './server-history/server-history.component';
 import {
     MatBadgeModule,
     MatButtonModule,
@@ -58,6 +59,10 @@ const routes: Routes = [
             {
                 path: 'history',
                 component: HistoryComponent,
+            },
+            {
+                path: 'server-history',
+                component: ServerHistoryComponent,
             }
         ]
     },
@@ -114,7 +119,8 @@ const routes: Routes = [
         CommissionChatComponent,
         RatingPopupComponent,
         HistoryComponent,
-        RatingComponent
+        RatingComponent,
+        ServerHistoryComponent
     ],
     entryComponents: [
         CommissionCreationPopupComponent,

@@ -91,6 +91,10 @@ export class CommissionPanelComponent implements OnInit {
         return CommissionStatus[commission.status];
     }
 
+    public isActive(commission: Commission): boolean {
+        return commission.status !== CommissionStatus.DONE;
+    }
+
     ngOnInit(): void {
         this.author$ = this.userService.getCharacter(this.commission.authorId);
         this.user$ = this.userService.getUserData();
