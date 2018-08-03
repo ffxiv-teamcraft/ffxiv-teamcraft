@@ -90,7 +90,7 @@
             </button>
 
             <button mat-mini-fab
-                    *ngIf="listData !== undefined && user !== undefined && !listData?.ephemeral && !listData?.isCommissionList && !listData.public"
+                    *ngIf="!userData.anonymous && listData !== undefined && user !== undefined && !listData?.ephemeral && !listData?.isCommissionList && !listData.public"
                     (click)="createCommission(listData)"
                     matTooltip="{{'COMMISSION_BOARD.Create_commission' | translate}}">
                 <mat-icon>drafts</mat-icon>
