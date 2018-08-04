@@ -74,10 +74,10 @@ export class PricingComponent {
             const requirementRow = this.list.getItemById(requirement.id, true);
             if (this.settings.expectToSellEverything) {
                 // If you expect to sell everything, just divide by yield.
-                return total + this.getCraftCost(requirementRow) / row.yield;
+                return total + (this.getCraftCost(requirementRow) / row.yield) * requirement.amount;
             } else {
                 // else, divide by amount / amount_needed, aka adjusted yield for when you craft more than you sell because of yield.
-                return total + this.getCraftCost(requirementRow) / (row.amount / row.amount_needed);
+                return total + (this.getCraftCost(requirementRow) / (row.amount / row.amount_needed)) * requirement.amount;
             }
         }, 0);
     }
