@@ -19,7 +19,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 const routing: Routes = [
     {
-        path: '',
+        path: 'settings',
         component: SettingsComponent
     }
 ];
