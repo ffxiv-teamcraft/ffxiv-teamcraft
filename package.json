@@ -2,7 +2,7 @@
   "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "license": "MIT",
   "main": "main.js",
   "build": {
