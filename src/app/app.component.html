@@ -98,6 +98,13 @@
                     <mat-icon matListIcon>home</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'Home' | translate}}</span>
                 </mat-list-item>
+                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null"
+                               matTooltipPosition="right"
+                               matTooltip="{{'ITEMS.Title' | translate}}"
+                               [matTooltipDisabled]="!settings.compactSidebar">
+                    <mat-icon matListIcon>search</mat-icon>
+                    <span matLine *ngIf="!settings.compactSidebar">{{'ITEMS.Title' | translate}}</span>
+                </mat-list-item>
                 <mat-list-item routerLink="/notifications" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
                                matTooltip="{{'NOTIFICATIONS.Title' | translate}}"
@@ -135,13 +142,6 @@
                                [matTooltipDisabled]="!settings.compactSidebar">
                     <mat-icon matListIcon>link</mat-icon>
                     <span matLine *ngIf="!settings.compactSidebar">{{'CUSTOM_LINKS.Title' | translate}}</span>
-                </mat-list-item>
-                <mat-list-item routerLink="/recipes" (click)="mobile ? sidenav.close() :  null"
-                               matTooltipPosition="right"
-                               matTooltip="{{'ITEMS.Title' | translate}}"
-                               [matTooltipDisabled]="!settings.compactSidebar">
-                    <mat-icon matListIcon>search</mat-icon>
-                    <span matLine *ngIf="!settings.compactSidebar">{{'ITEMS.Title' | translate}}</span>
                 </mat-list-item>
                 <mat-list-item routerLink="/rotations" (click)="mobile ? sidenav.close() :  null"
                                matTooltipPosition="right"
