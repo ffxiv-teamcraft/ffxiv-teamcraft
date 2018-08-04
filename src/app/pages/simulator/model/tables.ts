@@ -59,6 +59,7 @@ export class Tables {
         250: -0.04,
         320: -0.02,
         350: -0.035,
+        380: -0.05,
     };
 
     // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1846
@@ -108,6 +109,7 @@ export class Tables {
         300: 291,   // 70_1star
         320: 292,   // 70_2star
         350: 293,   // 70_3star
+        380: 294,   // 70_4star theory
     };
 
     // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1894
@@ -157,6 +159,7 @@ export class Tables {
         300: 290,   // 70_1star
         320: 291,   // 70_2star
         350: 292,   // 70_3star
+        380: 293,   // 70_4star theory
     };
 
     // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1965
@@ -170,5 +173,6 @@ export class Tables {
         300: -0.09,
         310: -0.10,
         340: -0.11,
+        370: -0.12,
     };
 }

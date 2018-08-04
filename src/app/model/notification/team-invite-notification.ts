@@ -13,8 +13,10 @@ export class TeamInviteNotification extends NotificationWithQuestion {
 
     public constructor(private invitedBy: string, team: Team) {
         super(NotificationType.TEAM_INVITE);
-        this.teamName = team.name;
-        this.teamId = team.$key;
+        if (team !== undefined) {
+            this.teamName = team.name;
+            this.teamId = team.$key;
+        }
     }
 
     getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string {
