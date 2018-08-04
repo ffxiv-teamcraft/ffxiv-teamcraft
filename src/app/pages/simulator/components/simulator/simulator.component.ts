@@ -173,7 +173,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     public onsave: EventEmitter<Partial<CraftingRotation>> = new EventEmitter<Partial<CraftingRotation>>();
 
     @Input()
-    public thresholds: number[];
+    public thresholds: number[] = [];
 
     public simulation$: Observable<Simulation>;
 

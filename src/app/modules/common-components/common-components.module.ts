@@ -39,7 +39,7 @@ import {FfxivcraftingAmountInputComponent} from './ffxivcrafting-amount-input/ff
 import {AnnouncementPopupComponent} from './announcement-popup/announcement-popup.component';
 import {PermissionsPopupComponent} from './permissions-popup/permissions-popup.component';
 import {PermissionsRowComponent} from './permissions-popup/permissions-row/permissions-row.component';
-import {AddNewRowPopupComponent} from './permissions-popup/add-new-row-popup/add-new-row-popup.component';
+import {UserSelectionPopupComponent} from './user-selection-popup/user-selection-popup.component';
 import {FcCrestComponent} from './fc-crest/fc-crest.component';
 import {AlarmGroupNamePopupComponent} from './alarm-group-name-popup/alarm-group-name-popup.component';
 import {UserVerificationPopupComponent} from './user-verification-popup/user-verification-popup.component';
@@ -91,7 +91,7 @@ import {UserVerificationPopupComponent} from './user-verification-popup/user-ver
         AnnouncementPopupComponent,
         PermissionsPopupComponent,
         PermissionsRowComponent,
-        AddNewRowPopupComponent,
+        UserSelectionPopupComponent,
         FcCrestComponent,
         AlarmGroupNamePopupComponent,
         UserVerificationPopupComponent,
@@ -121,7 +121,7 @@ import {UserVerificationPopupComponent} from './user-verification-popup/user-ver
         RegisterPopupComponent,
         AnnouncementPopupComponent,
         PermissionsPopupComponent,
-        AddNewRowPopupComponent,
+        UserSelectionPopupComponent,
         AlarmGroupNamePopupComponent,
         UserVerificationPopupComponent,
     ]

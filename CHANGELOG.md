@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.0"></a>
+# [4.4.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.0) (2018-08-04)
+
+
+### Bug Fixes
+
+* alarms in sidebar no longer ordered by group ([51cb94d](https://github.com/Supamiu/ffxiv-teamcraft/commit/51cb94d))
+* anonymous commissions ([2a37246](https://github.com/Supamiu/ffxiv-teamcraft/commit/2a37246)), closes [#533](https://github.com/Supamiu/ffxiv-teamcraft/issues/533)
+* custom recipe params now applied as they are changed ([10df578](https://github.com/Supamiu/ffxiv-teamcraft/commit/10df578))
+* fixed an issue preventing gathering location page to create alarms ([69ac345](https://github.com/Supamiu/ffxiv-teamcraft/commit/69ac345)), closes [#478](https://github.com/Supamiu/ffxiv-teamcraft/issues/478)
+* fixed an issue preventing users from saving their books in some conditions ([e4b7311](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4b7311))
+* fixed an issue that was applying rating to both users ([fab53c3](https://github.com/Supamiu/ffxiv-teamcraft/commit/fab53c3))
+* fixed an issue with change detection inside pricing mode ([0a9a690](https://github.com/Supamiu/ffxiv-teamcraft/commit/0a9a690))
+* fixed an issue with trade-related filters in layouts ([30374d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/30374d8)), closes [#477](https://github.com/Supamiu/ffxiv-teamcraft/issues/477)
+* fixed some drag and drop issues, including timeline jitter in simulator ([7765d9e](https://github.com/Supamiu/ffxiv-teamcraft/commit/7765d9e)), closes [#422](https://github.com/Supamiu/ffxiv-teamcraft/issues/422)
+* HQ icon now appears properly for items required in end crafts on mobile size ([5e25d22](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e25d22))
+* layout index changes now save properly ([11604a9](https://github.com/Supamiu/ffxiv-teamcraft/commit/11604a9))
+* List UI style problems on small screens ([3348300](https://github.com/Supamiu/ffxiv-teamcraft/commit/3348300)), closes [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473) [#473](https://github.com/Supamiu/ffxiv-teamcraft/issues/473)
+* selected job not saved in custom rotation ([4d15caf](https://github.com/Supamiu/ffxiv-teamcraft/commit/4d15caf)), closes [#455](https://github.com/Supamiu/ffxiv-teamcraft/issues/455)
+* you can now apply up to 3 commissions at a time without a high rate ([99912a2](https://github.com/Supamiu/ffxiv-teamcraft/commit/99912a2))
+
+
+### Features
+
+* display amount of unread notifications in sidebar ([ca9ee6a](https://github.com/Supamiu/ffxiv-teamcraft/commit/ca9ee6a))
+* **desktop:** new toggle button in settings to always have Teamcraft on top ([ddd4351](https://github.com/Supamiu/ffxiv-teamcraft/commit/ddd4351))
+* add commission creation date in the commission panel and details ([935b223](https://github.com/Supamiu/ffxiv-teamcraft/commit/935b223))
+* add new God of Hand tier patreon supporter to loading screen ([14821e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/14821e4))
+* commission board history ([d2554d6](https://github.com/Supamiu/ffxiv-teamcraft/commit/d2554d6)), closes [#519](https://github.com/Supamiu/ffxiv-teamcraft/issues/519)
+* gil transaction log now shown on archived commissions ([b5ff24d](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5ff24d)), closes [#469](https://github.com/Supamiu/ffxiv-teamcraft/issues/469)
+* multiple nodes spawning at the same time pop multiple notifications ([1e3419b](https://github.com/Supamiu/ffxiv-teamcraft/commit/1e3419b)), closes [#430](https://github.com/Supamiu/ffxiv-teamcraft/issues/430)
+* new --native-topbar (or -nt) launch flag for native window decorator ([3494ee2](https://github.com/Supamiu/ffxiv-teamcraft/commit/3494ee2)), closes [#531](https://github.com/Supamiu/ffxiv-teamcraft/issues/531)
+* new history system for lists to see who added/removed things ([41527d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/41527d7)), closes [#435](https://github.com/Supamiu/ffxiv-teamcraft/issues/435)
+* new team system with assignable items and notifications ([75ff821](https://github.com/Supamiu/ffxiv-teamcraft/commit/75ff821)), closes [#463](https://github.com/Supamiu/ffxiv-teamcraft/issues/463)
+* **pricing:** add toggle button to switch math to formulas that think you'll sell everything ([3d2495e](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d2495e))
+* notification now shown when public list is commented ([4163eb6](https://github.com/Supamiu/ffxiv-teamcraft/commit/4163eb6)), closes [#279](https://github.com/Supamiu/ffxiv-teamcraft/issues/279)
+* recipe selection for custom rotations ([cbf049c](https://github.com/Supamiu/ffxiv-teamcraft/commit/cbf049c))
+* right clicking on a timer button now creates an alarm in default group without opening menu ([4f75486](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f75486))
+* search menu moved under the home button in sidebar ([fcfd34c](https://github.com/Supamiu/ffxiv-teamcraft/commit/fcfd34c))
+* show thresholds in simulator for collectibility and satisfaction ratings ([d5ebe67](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5ebe67)), closes [#503](https://github.com/Supamiu/ffxiv-teamcraft/issues/503)
+* you can now add all alarms for a given list using a single button ([7e58675](https://github.com/Supamiu/ffxiv-teamcraft/commit/7e58675)), closes [#465](https://github.com/Supamiu/ffxiv-teamcraft/issues/465)
+* you can now add notes to your alarms ([fac1a42](https://github.com/Supamiu/ffxiv-teamcraft/commit/fac1a42)), closes [#431](https://github.com/Supamiu/ffxiv-teamcraft/issues/431)
+
+
+
 <a name="4.3.9"></a>
 ## [4.3.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.8...v4.3.9) (2018-07-24)
 

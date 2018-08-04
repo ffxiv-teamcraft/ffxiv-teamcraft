@@ -2,7 +2,7 @@
 <div mat-dialog-content>
     <mat-list>
         <app-comment-row *ngFor="let comment of comments" [comment]="comment"
-                         [canDelete]="comment.authorId === userId || data.isOwnList"
+                         [canDelete]="comment.authorId === characterId || data.isOwnList"
                          (delete)="deleteComment(comment)"></app-comment-row>
     </mat-list>
     <form (submit)="addComment()" [formGroup]="control" #f="ngForm">

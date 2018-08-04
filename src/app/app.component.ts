@@ -30,6 +30,7 @@ import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
 import {GarlandToolsService} from './core/api/garland-tools.service';
 import {CommissionService} from './core/database/commission/commission.service';
+import {NotificationService} from './core/notification/notification.service';
 
 declare const ga: Function;
 
@@ -82,10 +83,14 @@ export class AppComponent implements OnInit {
 
     public overlayOpacity = 1;
 
+    public windowDecorator = true;
+
     @ViewChild('urlBox')
     urlBox: ElementRef;
 
     hasCommissionBadge$: Observable<boolean>;
+
+    notifications$: Observable<number>;
 
     constructor(private auth: AngularFireAuth,
                 private router: Router,
@@ -105,9 +110,17 @@ export class AppComponent implements OnInit {
                 public platformService: PlatformService,
                 private ipc: IpcService,
                 private gt: GarlandToolsService,
-                private commissionService: CommissionService) {
+                private commissionService: CommissionService,
+                private notificationService: NotificationService) {
 
         this.gt.preload();
+
+        this.notificationService.init();
+
+        this.notifications$ = this.notificationService.notifications$.pipe(
+            map(relationships => relationships.filter(r => !r.to.read)),
+            map(relationships => relationships.length)
+        );
 
         settings.themeChange$.subscribe(change => {
             overlayContainer.getContainerElement().classList.remove(`${change.previous}-theme`);
@@ -139,6 +152,9 @@ export class AppComponent implements OnInit {
                 })
             ).subscribe((event: any) => {
             this.overlay = event.url.indexOf('?overlay') > -1;
+            this.ipc.on('window-decorator', (e, value) => {
+               this.windowDecorator = value;
+            });
             if (this.overlay) {
                 this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (value) => {
                     this.overlayOpacity = value;

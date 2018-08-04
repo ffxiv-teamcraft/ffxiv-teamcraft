@@ -3,7 +3,7 @@
         <mat-card>
             <mat-card-header>
                 <mat-card-title>
-                    {{commission.name}}
+                    {{commission.name}} - {{commission.createdAt | date: 'medium'}}
                 </mat-card-title>
                 <mat-card-subtitle>
                     <app-rating [character]="author"></app-rating>

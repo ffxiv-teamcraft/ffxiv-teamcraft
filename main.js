@@ -18,12 +18,17 @@ let updateInterval;
 let openedOverlays = {};
 
 const options = {
-    multi: false
+    multi: false,
+    nativeDecorator: false
 };
 
 for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--multi' || argv[i] === '-m') {
         options.multi = true;
+    }
+    if (argv[i] === '--native-titlebar' || argv[i] === '-nt') {
+        console.log('native titlebar');
+        options.nativeDecorator = true;
     }
 }
 
@@ -50,7 +55,7 @@ function createWindow() {
     let opts = {
         show: false,
         backgroundColor: '#ffffff',
-        frame: false,
+        frame: options.nativeDecorator,
         icon: `file://${__dirname}/dist/assets/logo.png`
     };
     Object.assign(opts, config.get('win:bounds'));
@@ -115,6 +120,12 @@ function createWindow() {
         !win.isVisible() ? win.show() : null;
     });
 }
+
+ipcMain.on('app-ready', (event) => {
+    if (options.nativeDecorator) {
+        event.sender.send('window-decorator', false);
+    }
+});
 
 // Create window on electron intialization
 app.on('ready', () => {

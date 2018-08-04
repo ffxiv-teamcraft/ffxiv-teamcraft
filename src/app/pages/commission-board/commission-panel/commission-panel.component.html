@@ -12,12 +12,12 @@
         </mat-panel-title>
         <mat-panel-description>
             <span *ngIf="author$ | async as author">
-                {{author.name}}
+                 {{author.name}} - <i>{{commission.createdAt | date: 'medium'}}</i>
             </span>
         </mat-panel-description>
         <mat-chip-list>
-            <mat-chip selectable="false" color="accent" selected>{{('COMMISSION_BOARD.STATUS.' + getStatus(commission))
-                | translate}}
+            <mat-chip *ngIf="isActive(commission)" selectable="false" color="accent" selected>
+                {{('COMMISSION_BOARD.STATUS.' + getStatus(commission)) | translate}}
             </mat-chip>
             <mat-chip selectable="false" *ngIf="commission.onlyNeedsCraft">{{'COMMISSION_BOARD.TAGS.Only_craft' |
                 translate}}

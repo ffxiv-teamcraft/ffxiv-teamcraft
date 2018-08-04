@@ -62,7 +62,8 @@ export class ListManagerService {
                             yield: yields,
                             recipeId: recipeId,
                             requires: ingredients,
-                            craftedBy: crafted
+                            craftedBy: crafted,
+                            usePrice: true
                         };
                     } else {
                         // If it's not a recipe, add as item
@@ -73,6 +74,7 @@ export class ListManagerService {
                             done: 0,
                             used: 0,
                             yield: 1,
+                            usePrice: true
                         };
                     }
                     // We add the row to recipes.

@@ -67,6 +67,7 @@
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
+    "Alarms_created": "Alarms created",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group"
@@ -256,6 +257,8 @@
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Copy_as_text": "Copy as text",
     "Total_price": "Total trades (gils and currencies)",
+    "Add_all_alarms": "Add all alarms for this list",
+    "History": "History",
     "BUTTONS": {
       "Add_link_description": "Create a custom link for this list",
       "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
@@ -557,7 +560,7 @@
   },
   "PRICING": {
     "From_vendor": "Price from vendor",
-    "Materials_have_cost": "Materials for this craft have cost > 0, make sure you're not counting them twice"
+    "Expect_to_sell_everything": "Expect to sell everything"
   },
   "COMMISSION_BOARD": {
     "Title": "Commission board",
@@ -566,6 +569,7 @@
     "My_requests": "My requests",
     "My_crafts": "My ongoing commissions",
     "History": "Archived",
+    "Server_history": "Server history",
     "No_commissions": "No opened commissions on your server",
     "Chat_warning": "Remember to never give your credentials in the chat, nobody should ask for them. Using this chat to use the platform for RMT will result in a permanent ban from the website and the case forwarded to Square Enix",
     "Chat_placeholder": "Send new message",
@@ -615,5 +619,22 @@
       "Min_price": "Min price",
       "Max_price": "Max price"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notifications",
+    "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",
+    "Team_invite": "{{invitedBy}} invited you to team {{teamName}}",
+    "Item_assigned": "{{itemName}} has been assigned to you on list \"{{listName}}\"",
+    "List_commented": "{{userName}} commented on list {{listName}}: \"{{content}}\"",
+    "Mark_all_as_read": "Mark all as read"
+  },
+  "TEAMS": {
+    "Title": "Teams",
+    "Create_team": "Create a team",
+    "Add_user": "Add a user",
+    "No_teams": "No Teams",
+    "Pending": "Pending",
+    "Assign_list": "Assign this list to a team",
+    "Detach_team": "Detach team"
   }
 }
