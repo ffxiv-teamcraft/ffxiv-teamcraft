@@ -5,7 +5,7 @@
     }
 
     .amount {
-        width: 40px;
+        width: 60px;
     }
 
     .item-name {
@@ -32,5 +32,9 @@
         .field-group {
             margin-left: 20px;
         }
+    }
+
+    .mat-checkbox {
+        margin-left: 10px;
     }
 }

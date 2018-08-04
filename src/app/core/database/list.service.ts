@@ -5,13 +5,45 @@ import {combineLatest, Observable, of} from 'rxjs';
 import {ListStore} from './storage/list/list-store';
 import {Workshop} from '../../model/other/workshop';
 import {catchError, map} from 'rxjs/operators';
+import {ListRow} from '../../model/list/list-row';
+import {BellNodesService} from '../data/bell-nodes.service';
 
 
 @Injectable()
 export class ListService {
 
     constructor(protected store: ListStore,
-                protected serializer: NgSerializerService) {
+                protected serializer: NgSerializerService,
+                private bellNodesService: BellNodesService) {
+    }
+
+    /**
+     * Checks if a given row in a list has timers available.
+     * @param {ListRow} row
+     * @returns {boolean}
+     */
+    public hasTimers(row: ListRow): boolean {
+        const hasTimersFromNodes = row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined &&
+            row.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
+        const hasTimersFromReductions = row.reducedFrom !== undefined && [].concat.apply([], row.reducedFrom
+            .map(reduction => {
+                if (reduction.obj !== undefined) {
+                    return reduction.obj.i;
+                }
+                return reduction;
+            })
+            .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
+        return hasTimersFromNodes || hasTimersFromReductions;
+    }
+
+    public getTimedRows(list: List): ListRow[] {
+        const timedRows = [];
+        list.forEach(row => {
+            if (this.hasTimers(row)) {
+                timedRows.push(row);
+            }
+        });
+        return timedRows;
     }
 
     /**

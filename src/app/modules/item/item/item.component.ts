@@ -32,7 +32,7 @@ import {LocalizedDataService} from '../../../core/data/localized-data.service';
 import {FishDetailsPopupComponent} from '../fish-details-popup/fish-details-popup.component';
 import {TranslateService} from '@ngx-translate/core';
 import {AlarmService} from '../../../core/time/alarm.service';
-import {Observable} from 'rxjs';
+import {combineLatest, Observable} from 'rxjs';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
@@ -50,6 +50,10 @@ import {Permissions} from '../../../core/database/permissions/permissions';
 import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
 import {CraftingRotation} from '../../../model/other/crafting-rotation';
 import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
+import {ListService} from '../../../core/database/list.service';
+import {TeamService} from '../../../core/database/team.service';
+import {NotificationService} from '../../../core/notification/notification.service';
+import {ItemAssignedNotification} from '../../../model/notification/item-assigned-notification';
 
 @Component({
     selector: 'app-item',
@@ -292,6 +296,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
 
     hasAlarm: { [index: number]: boolean } = {};
 
+    public teamMembers$: Observable<any[]>;
+
+    public teamLeader$: Observable<boolean>;
+
     constructor(private i18n: I18nToolsService,
                 private dialog: MatDialog,
                 private media: ObservableMedia,
@@ -306,7 +314,10 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private userService: UserService,
                 private platformService: PlatformService,
                 public cd: ChangeDetectorRef,
-                private rotationsService: CraftingRotationService) {
+                private rotationsService: CraftingRotationService,
+                private listService: ListService,
+                private notificationService: NotificationService,
+                private teamService: TeamService) {
         super();
         this.rotations$ = this.userService.getUserData().pipe(
             mergeMap(user => {
@@ -376,6 +387,21 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateTimers();
         this.updateHasBook();
         this.updateRequiredForEndCraft();
+        if (this.list !== undefined && this.list.teamId !== undefined
+            && this.teamMembers$ === undefined && this.teamLeader$ === undefined) {
+            this.teamMembers$ = this.teamService.get(this.list.teamId)
+                .pipe(
+                    mergeMap(team => {
+                        return combineLatest(Object.keys(team.members)
+                            .map(memberId => this.userService.getCharacter(memberId))
+                        );
+                    })
+                );
+            this.teamLeader$ = this.teamService.get(this.list.teamId)
+                .pipe(
+                    map(team => team.leader === this.user.$key)
+                );
+        }
         if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
             this.userService.get(this.item.workingOnIt)
                 .pipe(
@@ -388,6 +414,21 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     public workOnIt(): void {
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
+        this.userService.get(this.item.workingOnIt)
+            .pipe(
+                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+                first()
+            ).subscribe(char => {
+            this.worksOnIt = char;
+            this.cd.detectChanges();
+        });
+    }
+
+    public assign(userId: string): void {
+        this.item.workingOnIt = userId;
+        this.update.emit();
+        const notification = new ItemAssignedNotification(this.item.id, this.list.name, this.list.$key);
+        this.notificationService.add(this.notificationService.prepareNotification(userId, notification)).subscribe();
         this.userService.get(this.item.workingOnIt)
             .pipe(
                 mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
@@ -503,17 +544,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     updateHasTimers(): void {
-        const hasTimersFromNodes = this.item.gatheredBy !== undefined && this.item.gatheredBy.nodes !== undefined &&
-            this.item.gatheredBy.nodes.filter(node => node.time !== undefined).length > 0;
-        const hasTimersFromReductions = this.item.reducedFrom !== undefined && [].concat.apply([], this.item.reducedFrom
-            .map(reduction => {
-                if (reduction.obj !== undefined) {
-                    return reduction.obj.i;
-                }
-                return reduction;
-            })
-            .map(reduction => this.bellNodesService.getNodesByItemId(reduction))).length > 0;
-        this.hasTimers = hasTimersFromNodes || hasTimersFromReductions;
+        this.hasTimers = this.listService.hasTimers(this.item);
     }
 
     openRequirementsPopup(): void {

@@ -1,6 +1,8 @@
 export interface ModificationEntry {
-    userId: string;
+    characterId: number;
     amount: number;
     itemId: number;
     isPreCraft: boolean;
+    itemIcon: number;
+    date: number;
 }
