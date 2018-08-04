@@ -100,7 +100,8 @@
                     [matMenuTriggerFor]="addAlarmMenu"
                     [color]="getTimerColor(timer.alarm) | async"
                     matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
-                    matTooltipPosition="above">
+                    matTooltipPosition="above"
+                    (contextmenu)="$event.preventDefault();addAlarm(timer.itemId, timer.type, 'Default group')">
                 <mat-icon>alarm_add</mat-icon>
                 {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
                 <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
