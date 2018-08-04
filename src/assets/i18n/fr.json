@@ -69,7 +69,8 @@
     "Alarm_created": "Alarme créée",
     "Alarm_already_created": "Alarm déjà définie",
     "Custom_sound": "Son d'alarme personnalisé",
-    "New_group": "New alarm group"
+    "New_group": "New alarm group",
+    "Alarms_created": "Alarmes créées"
   },
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
@@ -237,6 +238,7 @@
     "Merge_lists": "Fusionner des listes",
     "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
     "Add_selection": "Ajouter la sélection à une liste",
+    "Add_all_alarms": "Ajouter toute les alarmes d'un coup pour cette liste",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
