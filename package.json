@@ -53,8 +53,8 @@
     "build:watch": "node ./build/prebuild.js && ng build --watch --configuration=electron-dev",
     "electron:start": "electron ./main.js",
     "electron:start:no-decorators": "electron ./main.js --native-titlebar",
-    "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder",
-    "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder -p always",
+    "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
+    "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
     "pack": "electron-builder --dir"
