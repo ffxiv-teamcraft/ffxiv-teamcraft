@@ -30,6 +30,23 @@ export class UserService extends FirebaseStorage<AppUser> {
         super(database, serializer, diffService, zone, pendingChangesService);
     }
 
+    public get(uid: string): Observable<AppUser> {
+        return super.get(uid)
+            .pipe(
+                map(user => {
+                    if (user.defaultConsumables !== undefined) {
+                        if (user.defaultConsumables.medicine === undefined) {
+                            delete user.defaultConsumables.medicine;
+                        }
+                        if (user.defaultConsumables.food === undefined) {
+                            delete user.defaultConsumables.food;
+                        }
+                    }
+                    return user;
+                })
+            )
+    }
+
     public set(uid: string, user: AppUser): Observable<void> {
         return super.set(uid, user).pipe(tap(() => this.reload()));
     }
