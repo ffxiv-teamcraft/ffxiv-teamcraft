@@ -4,6 +4,8 @@ import {Price} from '../model/price';
 import {ItemAmount} from '../model/item-amount';
 import {ListRow} from '../../../model/list/list-row';
 import {ObservableMedia} from '@angular/flex-layout';
+import {MatSnackBar} from '@angular/material';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-pricing-row',
@@ -44,7 +46,8 @@ export class PricingRowComponent implements OnInit {
     @Output()
     save: EventEmitter<void> = new EventEmitter<void>();
 
-    constructor(private pricingService: PricingService, private media: ObservableMedia) {
+    constructor(private pricingService: PricingService, private media: ObservableMedia, private snackBar: MatSnackBar,
+                private translator: TranslateService) {
     }
 
     isCrystal(): boolean {
@@ -73,6 +76,18 @@ export class PricingRowComponent implements OnInit {
 
     saveAmount(): void {
         this.pricingService.saveAmount(this.listId, this.item, this.amount);
+    }
+
+    public afterNameCopy(name: string): void {
+        this.snackBar.open(
+            this.translator.instant('Item_name_copied',
+                {itemname: name}),
+            '',
+            {
+                duration: 2000,
+                panelClass: ['snack']
+            }
+        );
     }
 
     ngOnInit(): void {

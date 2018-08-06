@@ -10,14 +10,11 @@
             </a>
             <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
         </div>
-        <div class="item-name" matLine matTooltipPosition="above"
-             matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
-             mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
-             (cbOnSuccess)="afterNameCopy(item.id)">
-            <span
-                [ngClass]="{'compact': settings.compactLists}">
-                {{item.id | itemName | i18n}}
-            </span>
+        <div class="item-name">
+            <app-copyable-name matLine [name]="item.id | itemName | i18n" (afterCopy)="afterNameCopy(item.id)"
+            [tooltip]="'Copy_item_name_to_clipboard' | translate">
+                <span [ngClass]="{'compact': settings.compactLists}">{{item.id | itemName | i18n}}</span>
+            </app-copyable-name>
         </div>
         <img src="./assets/icons/HQ.png" alt=""
              matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
