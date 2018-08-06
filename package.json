@@ -2,7 +2,7 @@
   "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "license": "MIT",
   "main": "main.js",
   "build": {
@@ -138,7 +138,7 @@
     "node-sass": "^4.9.0",
     "protractor": "~5.3.2",
     "rxjs-compat": "^6.1.0",
-    "standard-version": "^4.2.0",
+    "standard-version": "^4.4.0",
     "ts-node": "~6.0.3",
     "tslint": "^5.10.0",
     "typescript": ">=2.7.2 <2.8.0",
