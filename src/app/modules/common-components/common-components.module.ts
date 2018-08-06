@@ -36,7 +36,6 @@ import {RegisterPopupComponent} from './register-popup/register-popup.component'
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommentsModule} from '../comments/comments.module';
 import {FfxivcraftingAmountInputComponent} from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
-import {AnnouncementPopupComponent} from './announcement-popup/announcement-popup.component';
 import {PermissionsPopupComponent} from './permissions-popup/permissions-popup.component';
 import {PermissionsRowComponent} from './permissions-popup/permissions-row/permissions-row.component';
 import {UserSelectionPopupComponent} from './user-selection-popup/user-selection-popup.component';
@@ -88,7 +87,6 @@ import {UserVerificationPopupComponent} from './user-verification-popup/user-ver
         ListNamePopupComponent,
         RegisterPopupComponent,
         FfxivcraftingAmountInputComponent,
-        AnnouncementPopupComponent,
         PermissionsPopupComponent,
         PermissionsRowComponent,
         UserSelectionPopupComponent,
@@ -119,7 +117,6 @@ import {UserVerificationPopupComponent} from './user-verification-popup/user-ver
         NameEditPopupComponent,
         ListNamePopupComponent,
         RegisterPopupComponent,
-        AnnouncementPopupComponent,
         PermissionsPopupComponent,
         UserSelectionPopupComponent,
         AlarmGroupNamePopupComponent,
