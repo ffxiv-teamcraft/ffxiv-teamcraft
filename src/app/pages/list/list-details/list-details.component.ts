@@ -542,7 +542,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 })
             )
             .subscribe(() => {
-                this.snack.open(this.translate.instant('ALARM.Alarms_created'), '', {duration: 3000});
+                this.snack.open(this.translate.instant('ALARMS.Alarms_created'), '', {duration: 3000});
             });
     }
 
