@@ -19,7 +19,7 @@ export class PricingService {
     /**
      * Array of custom prices
      */
-    private customPrices: [number];
+    private customPrices: number[];
 
     constructor() {
         this.prices = this.parsePrices(localStorage.getItem('prices'));

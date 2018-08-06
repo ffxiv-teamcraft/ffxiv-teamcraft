@@ -64,6 +64,9 @@ export class PricingComponent {
      * @returns {number}
      */
     getCraftCost(row: ListRow): number {
+        if (!row.usePrice) {
+            return 0;
+        }
         // If that's a final item or the price is custom, no recursion.
         if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
             const prices = this.pricingService.getPrice(row);

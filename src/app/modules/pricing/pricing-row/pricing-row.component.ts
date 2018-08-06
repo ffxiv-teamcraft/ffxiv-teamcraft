@@ -94,7 +94,7 @@ export class PricingRowComponent implements OnInit {
     }
 
     private setAutoCost(): void {
-        if (this.preCraft && !this.customPrice) {
+        if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
             this.price.nq = this.price.hq = Math.ceil(this._craftCost);
         }
     }
