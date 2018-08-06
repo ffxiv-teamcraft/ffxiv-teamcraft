@@ -30,7 +30,15 @@ export class AlarmService {
                 private userService: UserService, private platform: PlatformService, private ipc: IpcService,
                 private mapService: MapService, private i18nTools: I18nToolsService) {
         this.userService.getUserData().pipe(map((user: AppUser) => user.alarms || []))
-            .subscribe(alarms => this.loadAlarms(...alarms));
+            .subscribe(alarms => {
+                this._alarms.forEach((stopSubject$, alarm) => {
+                    // For each current alarm, if it's no in the new array, remove it.
+                    if (alarms.find(loadedAlarm => loadedAlarm.itemId === alarm.itemId) === undefined) {
+                        this.unregister(alarm.itemId);
+                    }
+                });
+                this.loadAlarms(...alarms)
+            });
     }
 
     /**
