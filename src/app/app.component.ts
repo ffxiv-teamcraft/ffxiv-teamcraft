@@ -245,8 +245,9 @@ export class AppComponent implements OnInit {
                 this.givewayRunning = givewayActivated;
             });
 
-            // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
-            if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
+            // Check if it's beta mode and the disclaimer has not been displayed yet.
+            if (!environment.production && localStorage.getItem('beta-disclaimer') === null
+                && window.location.href.indexOf('localhost') === -1) {
                 // Open beta disclaimer popup.
                 this.dialog.open(BetaDisclaimerPopupComponent).afterClosed().subscribe(() => {
                     // Once it's closed, set the storage value to say it has been displayed.
