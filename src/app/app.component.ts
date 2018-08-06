@@ -21,8 +21,6 @@ import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-br
 import {faBell, faCalculator, faGavel, faMap} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
-import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map, mergeMap, tap} from 'rxjs/operators';
