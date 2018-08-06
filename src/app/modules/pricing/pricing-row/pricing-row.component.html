@@ -3,7 +3,10 @@
         <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
     </div>
     <p mat-line class="item-name">
-        {{item.id | itemName | i18n}}
+        <app-copyable-name [name]="item.id | itemName | i18n" (afterCopy)="afterNameCopy($event)"
+                           [tooltip]="'Copy_item_name_to_clipboard' | translate">
+            {{item.id | itemName | i18n}}
+        </app-copyable-name>
         <mat-icon *ngIf="_craftCost !== undefined"
             matTooltip="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
             matTooltipPosition="above">

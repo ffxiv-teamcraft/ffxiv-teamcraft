@@ -37,6 +37,7 @@ import {DatabaseModule} from '../../core/database/database.module';
 import {RouterModule} from '@angular/router';
 import {VentureDetailsPopupComponent} from './venture-details-popup/venture-details-popup.component';
 import {SimulatorLinkPipe} from 'app/modules/item/simulator-link.pipe';
+import {CopyableNameModule} from '../copyable-name/copyable-name.module';
 
 @NgModule({
     imports: [
@@ -66,6 +67,7 @@ import {SimulatorLinkPipe} from 'app/modules/item/simulator-link.pipe';
         CommentsModule,
         CommonComponentsModule,
         MapModule,
+        CopyableNameModule,
     ],
     declarations: [
         ItemComponent,

@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.2"></a>
+## [4.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.2) (2018-08-06)
+
+
+### Bug Fixes
+
+* fixed a priority issue on pricing system ([7da5c31](https://github.com/Supamiu/ffxiv-teamcraft/commit/7da5c31))
+* fixed an issue making prices a bit off in pricing mode ([08b698b](https://github.com/Supamiu/ffxiv-teamcraft/commit/08b698b))
+* fixed an issue with books not being saved in profile page ([449a353](https://github.com/Supamiu/ffxiv-teamcraft/commit/449a353))
+* fixed an issue with simulator not using proper icons for some actions ([eba5a07](https://github.com/Supamiu/ffxiv-teamcraft/commit/eba5a07))
+* no server history message ([a98605e](https://github.com/Supamiu/ffxiv-teamcraft/commit/a98605e))
+
+
+
+### Features
+
+* new $10 patreon supporter name in loading messages ([5e56e3a](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e56e3a))
+
+
 <a name="4.4.1"></a>
 ## [4.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.1) (2018-08-04)
 

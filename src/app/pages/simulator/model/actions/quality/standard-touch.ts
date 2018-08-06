@@ -25,7 +25,7 @@ export class StandardTouch extends QualityAction {
     }
 
     getIds(): number[] {
-        return [100004, 100018, 100034, 100048, 100064, 100078, 100093, 100109];
+        return [100004, 100018, 100034, 100078, 100048, 100064, 100093, 100109];
     }
 
     getPotency(simulation: Simulation): number {

@@ -1,0 +1,7 @@
+<span class="copy-wrapper" matTooltipPosition="above"
+      [matTooltip]="tooltip"
+      ngxClipboard
+      [cbContent]="name"
+      (cbOnSuccess)="afterCopy.emit(name)">
+    <ng-content></ng-content>
+</span>

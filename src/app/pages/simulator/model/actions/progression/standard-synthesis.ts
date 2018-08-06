@@ -25,7 +25,7 @@ export class StandardSynthesis extends ProgressAction {
     }
 
     getIds(): number[] {
-        return [100007, 100021, 100037, 100051, 100067, 100080, 100096, 100111];
+        return [100007, 100021, 100037, 100080, 100051, 100067, 100096, 100111];
     }
 
     getPotency(simulation: Simulation): number {

@@ -4,6 +4,8 @@ import {Price} from '../model/price';
 import {ItemAmount} from '../model/item-amount';
 import {ListRow} from '../../../model/list/list-row';
 import {ObservableMedia} from '@angular/flex-layout';
+import {MatSnackBar} from '@angular/material';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-pricing-row',
@@ -44,7 +46,8 @@ export class PricingRowComponent implements OnInit {
     @Output()
     save: EventEmitter<void> = new EventEmitter<void>();
 
-    constructor(private pricingService: PricingService, private media: ObservableMedia) {
+    constructor(private pricingService: PricingService, private media: ObservableMedia, private snackBar: MatSnackBar,
+                private translator: TranslateService) {
     }
 
     isCrystal(): boolean {
@@ -75,6 +78,18 @@ export class PricingRowComponent implements OnInit {
         this.pricingService.saveAmount(this.listId, this.item, this.amount);
     }
 
+    public afterNameCopy(name: string): void {
+        this.snackBar.open(
+            this.translator.instant('Item_name_copied',
+                {itemname: name}),
+            '',
+            {
+                duration: 2000,
+                panelClass: ['snack']
+            }
+        );
+    }
+
     ngOnInit(): void {
         this.customPrice = this.pricingService.isCustomPrice(this.item);
         if (this.earning) {
@@ -94,7 +109,7 @@ export class PricingRowComponent implements OnInit {
     }
 
     private setAutoCost(): void {
-        if (this.preCraft && !this.customPrice) {
+        if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
             this.price.nq = this.price.hq = Math.ceil(this._craftCost);
         }
     }

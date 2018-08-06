@@ -11,6 +11,7 @@ import {
     MatInputModule,
     MatListModule,
     MatSlideToggleModule,
+    MatSnackBarModule,
     MatTooltipModule
 } from '@angular/material';
 import {CoreModule} from '../../core/core.module';
@@ -18,6 +19,8 @@ import {PricingRowComponent} from './pricing-row/pricing-row.component';
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PipesModule} from '../../pipes/pipes.module';
+import {CopyableNameModule} from '../copyable-name/copyable-name.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
     imports: [
@@ -33,10 +36,14 @@ import {PipesModule} from '../../pipes/pipes.module';
         MatIconModule,
         MatTooltipModule,
         MatSlideToggleModule,
+        MatSnackBarModule,
+
+        TranslateModule,
 
         FormsModule,
         FlexLayoutModule,
         PipesModule,
+        CopyableNameModule,
     ],
     declarations: [
         PricingComponent,

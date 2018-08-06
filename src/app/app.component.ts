@@ -21,11 +21,9 @@ import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-br
 import {faBell, faCalculator, faGavel, faMap} from '@fortawesome/fontawesome-free-solid';
 import {PushNotificationsService} from 'ng-push';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {AnnouncementPopupComponent} from './modules/common-components/announcement-popup/announcement-popup.component';
-import {Announcement} from './modules/common-components/announcement-popup/announcement';
 import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
 import {Observable, Subscription} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, first, map, mergeMap, tap} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, map, mergeMap, tap} from 'rxjs/operators';
 import {PlatformService} from './core/tools/platform.service';
 import {IpcService} from './core/electron/ipc.service';
 import {GarlandToolsService} from './core/api/garland-tools.service';
@@ -181,28 +179,6 @@ export class AppComponent implements OnInit {
             this.locale = change.lang;
         });
 
-        // Annoucement
-        data.object('/announcement')
-            .valueChanges()
-            .pipe(
-                filter(() => !this.overlay)
-            )
-            .subscribe((announcement: Announcement) => {
-                let lastLS = localStorage.getItem('announcement:last');
-                if (lastLS !== null && !lastLS.startsWith('{')) {
-                    lastLS = '{}';
-                }
-                const last = JSON.parse(lastLS || '{}');
-                if (last.text !== announcement.text) {
-                    this.dialog.open(AnnouncementPopupComponent, {data: announcement})
-                        .afterClosed()
-                        .pipe(first())
-                        .subscribe(() => {
-                            localStorage.setItem('announcement:last', JSON.stringify(announcement));
-                        });
-                }
-            });
-
         this.hasCommissionBadge$ = this.userService.getCharacter()
             .pipe(
                 mergeMap(character => {
@@ -269,8 +245,9 @@ export class AppComponent implements OnInit {
                 this.givewayRunning = givewayActivated;
             });
 
-            // Check if it's beta/dev mode and the disclaimer has not been displayed yet.
-            if (!environment.production && localStorage.getItem('beta-disclaimer') === null) {
+            // Check if it's beta mode and the disclaimer has not been displayed yet.
+            if (!environment.production && localStorage.getItem('beta-disclaimer') === null
+                && window.location.href.indexOf('localhost') === -1) {
                 // Open beta disclaimer popup.
                 this.dialog.open(BetaDisclaimerPopupComponent).afterClosed().subscribe(() => {
                     // Once it's closed, set the storage value to say it has been displayed.

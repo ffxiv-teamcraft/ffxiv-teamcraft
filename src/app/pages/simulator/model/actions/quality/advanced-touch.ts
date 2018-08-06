@@ -25,7 +25,7 @@ export class AdvancedTouch extends QualityAction {
     }
 
     getIds(): number[] {
-        return [100008, 100022, 100038, 100052, 100068, 100081, 100097, 100112];
+        return [100008, 100022, 100038, 100081, 100052, 100068, 100097, 100112];
     }
 
     getPotency(simulation: Simulation): number {

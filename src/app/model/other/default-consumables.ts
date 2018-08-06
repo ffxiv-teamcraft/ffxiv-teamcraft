@@ -5,13 +5,13 @@ import {DeserializeAs} from '@kaiu/serializer';
 export class DefaultConsumables {
 
     @DeserializeAs(Consumable)
-    food: Consumable = null;
+    food: Consumable;
 
     @DeserializeAs(Consumable)
-    medicine: Consumable = null;
+    medicine: Consumable;
 
     @DeserializeAs([FreeCompanyAction])
-    freeCompanyActions: FreeCompanyAction[];
+    freeCompanyActions: FreeCompanyAction[] = [];
 
     public constructor(food: Consumable, medicine: Consumable, freeCompanyActions: FreeCompanyAction[]) {
         this.food = food;
