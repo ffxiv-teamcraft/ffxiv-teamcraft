@@ -1,6 +1,6 @@
 <div *ngIf="commissions$ | async as commissions; else loading">
     <div *ngIf="commissions.length === 0" class="no-commissions">
-        {{'COMMISSION_BOARD.No_history' | translate}}
+        {{'COMMISSION_BOARD.No_server_history' | translate}}
     </div>
     <app-commission-panel [commission]="commission"
                           *ngFor="let commission of commissions; trackBy: trackByCommissionFn"></app-commission-panel>
