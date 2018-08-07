@@ -12,7 +12,7 @@ import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component
 import {BellNodesService} from '../data/bell-nodes.service';
 import {PushNotificationsService} from 'ng-push';
 import {UserService} from '../database/user.service';
-import {filter, first, map, mergeMap, takeUntil} from 'rxjs/operators';
+import {filter, first, map, mergeMap, takeUntil, tap} from 'rxjs/operators';
 import {AppUser} from '../../model/list/app-user';
 import {PlatformService} from '../tools/platform.service';
 import {IpcService} from '../electron/ipc.service';
@@ -29,8 +29,23 @@ export class AlarmService {
                 private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
                 private userService: UserService, private platform: PlatformService, private ipc: IpcService,
                 private mapService: MapService, private i18nTools: I18nToolsService) {
-        this.userService.getUserData().pipe(map((user: AppUser) => user.alarms || []))
-            .subscribe(alarms => this.loadAlarms(...alarms));
+        this.userService.getUserData()
+            .pipe(
+                map((user: AppUser) => user.alarms || []),
+                tap(alarms => {
+                    this.resetAlarms();
+                    this.loadAlarms(...alarms);
+                }),
+            )
+            .subscribe();
+    }
+
+    private resetAlarms(): void {
+        this._alarms.forEach((value, key) => {
+            value.next(null);
+        });
+        this._alarms.clear();
+        this.persistAlarms();
     }
 
     /**
@@ -39,12 +54,13 @@ export class AlarmService {
      * @param groupName
      */
     public register(item: ListRow, groupName?: string): void {
-        this.generateAlarms(item).forEach(alarm => {
+        const alarms = this.generateAlarms(item).map(alarm => {
             if (groupName !== undefined) {
                 alarm.groupName = groupName;
             }
-            this.registerAlarms(alarm);
+            return alarm;
         });
+        this.registerAlarms(...alarms);
     }
 
     /**
@@ -71,7 +87,7 @@ export class AlarmService {
             this._alarms.get(alarm).next(null);
             this._alarms.delete(alarm);
         });
-        this.persistAlarms();
+        this.persistAlarms().subscribe();
     }
 
     /**
@@ -81,7 +97,7 @@ export class AlarmService {
      */
     public registerAlarms(...alarms: Alarm[]): void {
         this.loadAlarms(...alarms);
-        this.persistAlarms();
+        this.persistAlarms().subscribe();
     }
 
     /**
@@ -184,13 +200,13 @@ export class AlarmService {
     public setAlarmGroupName(alarm: Alarm, groupName: string): void {
         this.alarms.filter(a => a.itemId === alarm.itemId)
             .forEach(a => a.groupName = groupName);
-        this.persistAlarms();
+        this.persistAlarms().subscribe();
     }
 
     public setAlarmNote(alarm: Alarm, note: string): void {
         this.alarms.filter(a => a.itemId === alarm.itemId)
             .forEach(a => a.note = note);
-        this.persistAlarms();
+        this.persistAlarms().subscribe();
     }
 
     /**
@@ -482,8 +498,8 @@ export class AlarmService {
     /**
      * Persist the current alarms into browser's localstorage.
      */
-    private persistAlarms(): void {
-        this.userService.getUserData().pipe(
+    private persistAlarms(): Observable<void> {
+        return this.userService.getUserData().pipe(
             first(),
             mergeMap((user: AppUser) => {
                 user.alarms = Array.from(this._alarms.keys()).map(alarm => {
@@ -493,7 +509,7 @@ export class AlarmService {
                 return this.userService.set(user.$key, user);
             }),
             first()
-        ).subscribe();
+        );
     }
 
     /**

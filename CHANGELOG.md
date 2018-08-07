@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.3"></a>
+## [4.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.3) (2018-08-07)
+
+
+### Bug Fixes
+
+* fixed an issue with alarms not being deleted properly ([1b9a84d](https://github.com/Supamiu/ffxiv-teamcraft/commit/1b9a84d))
+
+
+### Features
+
+* added 4.36 update content ([981be5d](https://github.com/Supamiu/ffxiv-teamcraft/commit/981be5d))
+
+
+
 <a name="4.4.2"></a>
 ## [4.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.2) (2018-08-06)
 
