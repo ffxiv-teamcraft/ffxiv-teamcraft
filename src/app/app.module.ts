@@ -54,6 +54,11 @@ import {IS_ELECTRON} from './core/tools/platform.service';
 import {CommissionBoardModule} from './pages/commission-board/commission-board.module';
 import {AppRoutingModule} from './app-routing.module';
 import {SettingsModule} from './pages/settings/settings.module';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
+import * as fromStats from './reducers/stats.reducer';
+import {StatsEffects} from './effects/stats.effects';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -138,6 +143,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         SimulatorModule,
         CommissionBoardModule,
         SettingsModule,
+        StoreModule.forRoot({}, {}),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
+        EffectsModule.forRoot([]),
+        StoreModule.forFeature('stats', fromStats.reducer),
+        EffectsModule.forFeature([StatsEffects]),
     ],
     bootstrap: [AppComponent]
 })

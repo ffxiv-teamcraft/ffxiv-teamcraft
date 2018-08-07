@@ -1,8 +1,10 @@
 <span class="mat-display-2">{{"HOME_PAGE.title" | translate}}</span>
 
-<h3 class="list-count">{{lists_created | async}} {{"HOME_PAGE.lists_created_count" | translate}}</h3>
+<div *ngIf="stats$ | async as stats">
+    <h3 class="list-count">{{ stats.listsCreatedCount}} {{"HOME_PAGE.lists_created_count" | translate}}</h3>
 
-<h3 class="list-count">{{list_count | async}} {{"HOME_PAGE.count" | translate}}</h3>
+    <h3 class="list-count">{{stats.listsStoredCount}} {{"HOME_PAGE.count" | translate}}</h3>
+</div>
 
 <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" mat-raised-button class="patreon"> <img
     src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"

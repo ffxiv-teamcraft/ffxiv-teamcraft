@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {ObservableMedia} from '@angular/flex-layout';
+import * as fromStats from '../../../reducers/stats.reducer';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs/Observable';
+import {LoadStats} from '../../../actions/stats.actions';
 
 @Component({
     selector: 'app-home',
@@ -9,11 +12,10 @@ import {ObservableMedia} from '@angular/flex-layout';
 })
 export class HomeComponent {
 
-    list_count = this.firebase.object('list_count').valueChanges();
+    public stats$: Observable<fromStats.State> = this.store.select('stats');
 
-    lists_created = this.firebase.object('lists_created').valueChanges();
-
-    constructor(private firebase: AngularFireDatabase, private media: ObservableMedia) {
+    constructor(private store: Store<fromStats.State>, private media: ObservableMedia) {
+        this.store.dispatch(new LoadStats());
     }
 
     isMobile(): boolean {
