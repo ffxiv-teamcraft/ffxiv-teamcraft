@@ -59,6 +59,11 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from '@ngrx/effects';
 import * as fromStats from './reducers/stats.reducer';
 import {StatsEffects} from './effects/stats.effects';
+import {en_US, NgZorroAntdModule, NZ_I18N} from 'ng-zorro-antd';
+import {registerLocaleData} from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -69,7 +74,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         AppComponent,
     ],
     providers: [
-        {provide: FirebaseOptionsToken, useValue: environment.firebase}
+        {provide: FirebaseOptionsToken, useValue: environment.firebase},
+        { provide: NZ_I18N, useValue: en_US }
     ],
     imports: [
         FlexLayoutModule,
@@ -148,6 +154,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         EffectsModule.forRoot([]),
         StoreModule.forFeature('stats', fromStats.reducer),
         EffectsModule.forFeature([StatsEffects]),
+        NgZorroAntdModule,
     ],
     bootstrap: [AppComponent]
 })

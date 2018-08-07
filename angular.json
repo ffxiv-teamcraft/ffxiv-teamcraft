@@ -21,6 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.scss"
             ],
             "scripts": [
@@ -112,6 +113,7 @@
               "node_modules/marked/lib/marked.js"
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.scss"
             ],
             "assets": [
