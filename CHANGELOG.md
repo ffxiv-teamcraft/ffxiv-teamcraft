@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.4"></a>
+## [4.4.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.3...v4.4.4) (2018-08-08)
+
+
+### Bug Fixes
+
+* **simulator:** Fix actions being placed into wrong spots ([c531121](https://github.com/Supamiu/ffxiv-teamcraft/commit/c531121)), closes [#552](https://github.com/Supamiu/ffxiv-teamcraft/issues/552)
+* fixed wrong CP amount for trained hand ([118ab14](https://github.com/Supamiu/ffxiv-teamcraft/commit/118ab14))
+
+
+
 <a name="4.4.3"></a>
 ## [4.4.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.3) (2018-08-07)
 
