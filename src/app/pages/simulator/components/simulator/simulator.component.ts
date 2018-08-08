@@ -548,7 +548,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         const actions = this.actions$.getValue();
         // If the data is a number, use it as index
         if (+dragData === dragData) {
-            let movedAction = actions[dragData]
+            const movedAction = actions[dragData];
 
             if (dragData < targetIndex) {
                 for (let i = dragData; i < targetIndex - 1; i++) {
