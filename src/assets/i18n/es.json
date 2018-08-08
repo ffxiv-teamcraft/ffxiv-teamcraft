@@ -67,6 +67,7 @@
     "No_alarm": "No hay alarmas activas",
     "Add_alarm": "Agregar alarma",
     "Alarm_created": "Alarma creada",
+    "Alarms_created": "Alarmas creadas",
     "Alarm_already_created": "La alarma ya existe",
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas"
@@ -169,7 +170,8 @@
   "Email_sent": "Un correo electrónico ha sido enviado con instrucciones para cambiar su contraseña.",
   "ALARM": {
     "Spawned": "¡{{itemName}} va a aparecer!",
-    "See_on_map": "Ubicación"
+    "See_on_map": "Ubicación",
+    "Note": "Nota"
   },
   "Pricing_mode": "Modo precios",
   "Back_to_list": "Regresar a la lista",
@@ -200,7 +202,10 @@
     "theme": "Tema",
     "ffxivcrafting_display": "Cantidades estilo FFXIVcrafting.com",
     "Simulator_link_base": "Vínculo a simulador",
-    "Always_on_top": "Siempre arriba"
+    "Always_on_top": "Siempre arriba",
+    "Check_for_update": "Buscar actualizaciones",
+    "Downloading_update": "Descargando actualización",
+    "No_update_available": "No hay actualización disponible"
   },
   "PROFILE": {
     "Masterbooks": "Libros Maestros",
@@ -218,6 +223,7 @@
     "Save_for_all": "Guardar para todos",
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "VERIFICATION": {
+      "Title": "Validación de perfil",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" en la biografia de su perfil de Lodestone y haga clic en el botón de abajo.",
       "Validate": "Validar"
     },
@@ -251,6 +257,8 @@
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
     "Copy_as_text": "Copiar como texto",
     "Total_price": "Total de compras (gil y otras monedas)",
+    "Add_all_alarms": "Agregar todas las alarmas de esta lista",
+    "History": "Historial",
     "BUTTONS": {
       "Add_link_description": "Crear un vínculo personalizado para esta lista",
       "Create_template_description": "Crear un vínculo a una plantilla de esta lista, se creará una copia de esta lista para quien acceda a este vínculo",
@@ -551,7 +559,8 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Precio del vendedor"
+    "From_vendor": "Precio del vendedor",
+    "Expect_to_sell_everything": "Asumir que se vende todo"
   },
   "COMMISSION_BOARD": {
     "Title": "Tablero de comisiones",
@@ -560,6 +569,7 @@
     "My_requests": "Mis solicitudes",
     "My_crafts": "Mis comisiones en progreso",
     "History": "Archivadas",
+    "Server_history": "Historial del servidor",
     "No_commissions": "No hay comisiones abiertas en tu servidor",
     "Chat_warning": "Recuerde nunca dar sus credenciales en el chat, nadie debería de preguntarselas. El uso de esta plataforma de chat para RMT (intercambio con dinero real) resultará en la suspención permanenete del sitio y el caso enviado a Square Enix",
     "Chat_placeholder": "Mandar mensaje nuevo",
@@ -584,6 +594,7 @@
     "Apply": "Aplicar para esta comisión",
     "Contact_buyer": "Contactar al autor",
     "No_history": "No tiene ninguna comisión archivada",
+    "No_server_history": "El servidor no tiene ninguna comisión archivada",
     "No_crafts": "No tiene ninguna comisión en progreso",
     "No_requests": "No tiene ninguna solicitud de comisión",
     "Rate_user": "Calificación del usuario",
@@ -593,6 +604,7 @@
     "Withdraw": "Abandonar la comisión",
     "Confirm_withdraw": "¿Está seguro que quiere abandonar la comisión? Esto no se puede deshacer.",
     "New_things_notification": "Hay nuevas cosas que revisar en el tablero de comisiones",
+    "Negotiable_price": "Negociable",
     "STATUS": {
       "CREATED": "Abierta",
       "ACCEPTED": "En Progreso",
@@ -602,11 +614,28 @@
       "Crafting": "Elaboración",
       "Gathering": "Recolección",
       "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos",
-      "FILTERS": {
-        "Min_price": "Precio mínimo",
-        "Max_price": "Precio máximo"
-      }
+      "Only_craft": "Materiales incluidos"
+    },
+    "FILTERS": {
+      "Min_price": "Precio mínimo",
+      "Max_price": "Precio máximo"
     }
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notificaciones",
+    "List_progress": "{{author}} agregó {{amount}} {{itemName}} a la lista \"{{listName}}\"",
+    "Team_invite": "{{invitedBy}} le ha invitado a usted a su equipo {{teamName}}",
+    "Item_assigned": "{{itemName}} ha sido asignado a usted en la lista \"{{listName}}\"",
+    "List_commented": "{{userName}} comentó en la lista {{listName}}: \"{{content}}\"",
+    "Mark_all_as_read": "Marcar todo como leído"
+  },
+  "TEAMS": {
+    "Title": "Equipos",
+    "Create_team": "Crear un equipo",
+    "Add_user": "Agregar usuario",
+    "No_teams": "No hay equipos",
+    "Pending": "Pendientes",
+    "Assign_list": "Asignar esta lista a un equipo",
+    "Detach_team": "Desasignar equipo"
   }
 }
