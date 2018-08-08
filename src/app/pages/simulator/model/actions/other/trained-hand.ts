@@ -16,9 +16,7 @@ export class TrainedHand extends GeneralAction {
     }
 
     execute(simulation: Simulation): void {
-        const baseQualityIncrease = this.getBaseQuality(simulation);
         const baseProgressIncrease = this.getBaseProgression(simulation);
-        const qualityPotency = this.getPotency(simulation);
         // Progress
         let progressPotency = this.getPotency(simulation);
         if (simulation.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks % 3 === 0) {
@@ -55,7 +53,7 @@ export class TrainedHand extends GeneralAction {
     }
 
     getBaseCPCost(simulationState: Simulation): number {
-        return 32;
+        return 16;
     }
 
     getBaseDurabilityCost(simulationState: Simulation): number {
