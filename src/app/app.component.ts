@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
 
     collapsedSidebar = false;
 
+    collapsedAlarmsBar = true;
+
     constructor(private gt: GarlandToolsService, private translate: TranslateService,
                 private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase) {
 

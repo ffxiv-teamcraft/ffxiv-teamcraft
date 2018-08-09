@@ -1,26 +1,21 @@
 <nz-layout class="app-container">
     <nz-layout>
-        <nz-header>
+        <nz-header class="header">
             <span class="logo">
                 FFXIV Teamcraft <i>v{{version}}</i>
             </span>
-            <span class="notifications">
-                <nz-badge [nzDot]="true">
-                    <i class="anticon anticon-notification"></i>
-                </nz-badge>
-            </span>
-        </nz-header>
-    </nz-layout>
-    <nz-layout class="sidebar-container">
-        <nz-sider nzCollapsible
-                  [(nzCollapsed)]="collapsedSidebar"
-                  [nzCollapsedWidth]="80 | ifMobile: 0"
-                  [nzBreakpoint]="'lg'">
-            <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
+            <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
+                <li nz-menu-item>
+                    <nz-badge [nzDot]="true">
+                        <i class="anticon anticon-notification"></i>
+                    </nz-badge>
+                </li>
                 <li nz-submenu>
                     <span title>
-                        <i class="anticon anticon-user"></i>
-                        <span class="nav-text">USERNAME</span>
+                        <nz-avatar
+                            [nzSrc]="'https://img2.finalfantasyxiv.com/f/68a6d98913f9965724c62808d7e9b164_0a122616f3718d3f45cab10fd8fc1604fc0_96x96.jpg'">
+                        </nz-avatar>
+                        {{'Miu Asakura' | ifMobile:''}}
                     </span>
                     <ul>
                         <li nz-menu-item>
@@ -46,6 +41,15 @@
                         </li>
                     </ul>
                 </li>
+            </ul>
+        </nz-header>
+    </nz-layout>
+    <nz-layout class="content-container">
+        <nz-sider nzCollapsible
+                  [(nzCollapsed)]="collapsedSidebar"
+                  [nzCollapsedWidth]="80 | ifMobile: 0"
+                  [nzBreakpoint]="'lg'">
+            <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
                 <li nz-menu-item>
                     <span>
                         <i class="anticon anticon-search"></i>
@@ -128,13 +132,13 @@
                 </li>
             </ul>
         </nz-sider>
-    </nz-layout>
-    <nz-layout>
-        <nz-content class="content-container">
+        <nz-content>
             <router-outlet></router-outlet>
         </nz-content>
+        <nz-sider nzCollapsible
+                  class="right-sider"
+                  [(nzCollapsed)]="collapsedAlarmsBar"
+                  [nzCollapsedWidth]="0">
+        </nz-sider>
     </nz-layout>
 </nz-layout>
-<ng-template #trigger>
-    <i class="anticon anticon-up"></i>
-</ng-template>

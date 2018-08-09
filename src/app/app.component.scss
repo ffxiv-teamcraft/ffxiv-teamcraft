@@ -2,14 +2,27 @@
     height: 100%;
 }
 
-.logo {
-    margin-left: 7px;
+.header {
+    position: fixed;
+    width: 100%;
 }
 
-.sidebar-container {
+.content-container {
+    margin-top: 64px;
     height: 100%;
 }
 
-.notifications {
+.right-menu {
     float: right;
+    line-height: 64px;
+}
+
+.right-sider {
+    ::ng-deep .ant-layout-sider-zero-width-trigger {
+        left: -36px;
+        border-radius: 4px 0 0 4px;
+        i::before {
+            content: '\e64e';
+        }
+    }
 }

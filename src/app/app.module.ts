@@ -28,6 +28,8 @@ import en from '@angular/common/locales/en';
 import {CoreModule} from './core/core.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PipesModule} from './pipes/pipes.module';
+import * as fromAuth from './reducers/auth.reducer';
+import {AuthEffects} from './effects/auth.effects';
 
 registerLocaleData(en);
 
@@ -84,8 +86,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         EffectsModule.forRoot([]),
         StoreModule.forFeature('stats', fromStats.reducer),
-        EffectsModule.forFeature([StatsEffects]),
+        EffectsModule.forFeature([StatsEffects, AuthEffects]),
         NgZorroAntdModule,
+        StoreModule.forFeature('auth', fromAuth.reducer),
     ],
     bootstrap: [AppComponent]
 })
