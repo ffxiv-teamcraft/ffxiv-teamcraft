@@ -36,6 +36,7 @@
     "build:prod": "node ./build/prebuild.js && ng build --prod",
     "build:electron-prod": "node ./build/prebuild.js && ng build --configuration=electron",
     "build:beta": "node ./build/prebuild.js && ng build --configuration=beta",
+    "build:preview": "node ./build/prebuild.js && ng build --configuration=preview",
     "standard-version": "standard-version",
     "standard-version:patch": "standard-version --release-as patch",
     "standard-version:minor": "standard-version --release-as minor",

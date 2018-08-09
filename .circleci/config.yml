@@ -111,6 +111,15 @@ jobs:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P beta --token "$FIREBASE_TOKEN"
 
+    deploy-preview:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+              at: /tmp
+        - run:
+              name: Deploying web
+              command: ./node_modules/.bin/firebase deploy -P preview --token "$FIREBASE_TOKEN"
+
 
 workflows:
     version: 2
@@ -145,4 +154,10 @@ workflows:
               filters:
                   branches:
                       only: staging
+        - deploy-preview:
+              requires:
+              - build
+              filters:
+                  branches:
+                      only: 5.0.0
 

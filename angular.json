@@ -79,6 +79,14 @@
                   "with": "src/environments/environment.beta.ts"
                 }
               ]
+            },
+            "preview": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.preview.ts"
+                }
+              ]
             }
           }
         },
@@ -166,7 +174,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "styleExt": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

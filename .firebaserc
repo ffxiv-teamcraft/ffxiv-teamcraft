@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "ffxivteamcraft",
-    "beta": "ffxiv-teamcraft-beta"
+    "beta": "ffxiv-teamcraft-beta",
+    "preview": "ffxiv-teamcraft-5-0-preview"
   }
 }
