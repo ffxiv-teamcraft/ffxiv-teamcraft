@@ -17,7 +17,7 @@ import {MarkdownModule} from 'ngx-markdown';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {IS_ELECTRON} from './core/tools/platform.service';
 import {AppRoutingModule} from './app-routing.module';
-import {StoreModule} from '@ngrx/store';
+import {ActionReducerMap, MetaReducer, State, StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from '@ngrx/effects';
 import * as fromStats from './reducers/stats.reducer';
@@ -30,12 +30,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PipesModule} from './pipes/pipes.module';
 import * as fromAuth from './reducers/auth.reducer';
 import {AuthEffects} from './effects/auth.effects';
+import {storeFreeze} from 'ngrx-store-freeze';
 
 registerLocaleData(en);
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
+
+export const metaReducers: MetaReducer<State<any>>[] = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
     declarations: [
@@ -82,7 +85,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         CoreModule,
         PipesModule,
 
-        StoreModule.forRoot({}, {}),
+        StoreModule.forRoot(<ActionReducerMap<State<any>>>{}, {metaReducers}),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         EffectsModule.forRoot([]),
         StoreModule.forFeature('stats', fromStats.reducer),

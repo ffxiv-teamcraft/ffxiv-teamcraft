@@ -1,9 +1,9 @@
 <nz-layout class="app-container">
     <nz-layout>
         <nz-header class="header">
-            <span class="logo">
-                {{'FFXIV Teamcraft' | ifMobile:''}} <i>v{{version}}</i>
-            </span>
+            <a class="logo" routerLink="/">
+                {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
+            </a>
             <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
                 <li nz-menu-item nz-popover nzPlacement="bottom" [nzContent]="pins">
                     <i class="anticon anticon-pushpin-o"></i>

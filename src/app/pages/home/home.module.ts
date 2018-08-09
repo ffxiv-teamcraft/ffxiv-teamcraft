@@ -6,6 +6,7 @@ import {CoreModule} from '../../core/core.module';
 import {DonationModule} from '../../modules/donation/donation.module';
 import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatIconModule} from '@angular/material';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
+import {MaintenanceModule} from '../maintenance/maintenance.module';
 
 const routes: Routes = [
     {
@@ -19,6 +20,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         CoreModule,
+        MaintenanceModule,
 
         RouterModule.forChild(routes),
 
