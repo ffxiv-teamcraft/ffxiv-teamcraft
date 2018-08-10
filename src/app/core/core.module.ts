@@ -50,6 +50,7 @@ import {TeamInviteNotification} from '../model/notification/team-invite-notifica
 import {TeamExclusionNotification} from '../model/notification/team-exclusion-notification';
 import {ItemAssignedNotification} from '../model/notification/item-assigned-notification';
 import {ListCommentNotification} from '../model/notification/list-comment-notification';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -82,7 +83,8 @@ export const DATA_EXTRACTORS: Provider[] = [
             }
         ]),
         TranslateModule,
-        AngularFireModule,
+        AngularFirestoreModule,
+        AngularFireDatabaseModule,
         MatDialogModule,
         MatButtonModule,
         PushNotificationsModule,

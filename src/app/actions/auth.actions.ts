@@ -1,11 +1,97 @@
 import {Action} from '@ngrx/store';
+import {AuthState} from '../reducers/auth.reducer';
 
 export enum AuthActionTypes {
-  LoadAuths = '[Auth] Load Auths'
+    GetUser = '[Auth] Get user',
+    Authenticated = '[Auth] Authenticated',
+
+    LoginAsAnonymous = '[Auth] Login as Anonymous',
+    LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
+
+    GoogleLogin = '[Auth] Google Login attempt',
+    FacebookLogin = '[Auth] Facebook Login attempt',
+    ClassicLogin = '[Auth] Classic Login attempt',
+    Logout = '[Auth] Logout',
+
+    AuthError = '[Auth] Error',
 }
 
-export class LoadAuths implements Action {
-  readonly type = AuthActionTypes.LoadAuths;
+/// Get User AuthState
+
+export class GetUser implements Action {
+    readonly type = AuthActionTypes.GetUser;
+
+    constructor(public payload?: any) {
+    }
 }
 
-export type AuthActions = LoadAuths;
+export class Authenticated implements Action {
+    readonly type = AuthActionTypes.Authenticated;
+
+    constructor(public payload: Partial<AuthState>) {
+    }
+}
+
+export class LoginAsAnonymous implements Action {
+    readonly type = AuthActionTypes.LoginAsAnonymous;
+
+    constructor() {
+    }
+}
+
+export class LoggedInAsAnonymous implements Action {
+    readonly type = AuthActionTypes.LoggedInAsAnonymous;
+
+    constructor(public uid: string) {
+    }
+}
+
+export class AuthError implements Action {
+    readonly type = AuthActionTypes.AuthError;
+
+    constructor(public payload?: any) {
+    }
+}
+
+/// Login Actions
+
+export class GoogleLogin implements Action {
+    readonly type = AuthActionTypes.GoogleLogin;
+
+    constructor(public payload?: any) {
+    }
+}
+
+export class FacebookLogin implements Action {
+    readonly type = AuthActionTypes.FacebookLogin;
+
+    constructor(public payload?: any) {
+    }
+}
+
+export class ClassicLogin implements Action {
+    readonly type = AuthActionTypes.ClassicLogin;
+
+    constructor(public payload?: any) {
+    }
+}
+
+/// Logout Actions
+
+export class Logout implements Action {
+    readonly type = AuthActionTypes.Logout;
+
+    constructor(public payload?: any) {
+    }
+}
+
+
+export type AuthActions = GetUser
+    | Authenticated
+    | LoginAsAnonymous
+    | LoggedInAsAnonymous
+    | GoogleLogin
+    | FacebookLogin
+    | ClassicLogin
+    | AuthError
+    | Logout;

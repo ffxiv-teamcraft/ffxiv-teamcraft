@@ -33,6 +33,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node ./build/prebuild.js && ng serve",
+    "start:5.0": "node ./build/prebuild.js && ng serve --configuration=preview",
     "build:prod": "node ./build/prebuild.js && ng build --prod",
     "build:electron-prod": "node ./build/prebuild.js && ng build --configuration=electron",
     "build:beta": "node ./build/prebuild.js && ng build --configuration=beta",
@@ -90,7 +91,7 @@
     "@types/jasminewd2": "^2.0.3",
     "@types/jwt-decode": "^2.2.1",
     "@types/semver": "^5.4.0",
-    "@xivapi/angular-client": "^0.2.0",
+    "@xivapi/angular-client": "^0.3.0",
     "angularfire2": "5.0.0-rc.8",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.6",

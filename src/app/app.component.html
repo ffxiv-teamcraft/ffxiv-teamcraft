@@ -13,25 +13,30 @@
                         <i class="anticon anticon-notification"></i>
                     </nz-badge>
                 </li>
-                <li nz-submenu>
+                <li nz-submenu *ngIf="authState$ | async as authState">
                     <span title>
-                        <nz-avatar
-                            [nzSrc]="'https://img2.finalfantasyxiv.com/f/68a6d98913f9965724c62808d7e9b164_0a122616f3718d3f45cab10fd8fc1604fc0_96x96.jpg'">
-                        </nz-avatar>
-                        {{'Miu Asakura' | ifMobile:''}}
+                        <span *ngIf="!authState.loading; else loadingAuth">
+                            <nz-avatar *ngIf="!authState.loggedIn" [nzText]="'A'">
+                            </nz-avatar>
+                            <nz-avatar *ngIf="authState.loggedIn" [nzText]="authState.displayName[0]">
+                                <!--TODO user avatar instead of just first letter-->
+                            </nz-avatar>
+                            {{authState.displayName | ifMobile:''}}
+                        </span>
+                        <ng-template #loadingAuth>
+                            <nz-spin></nz-spin>
+                        </ng-template>
                     </span>
                     <ul>
-                        <li nz-menu-item>
+                        <li nz-menu-item *ngIf="authState.loggedIn">
                             <i class="anticon anticon-idcard"></i>
-                            <!--*ngIf not anonymous-->
                             {{'Profile' | translate}}
                         </li>
-                        <li nz-menu-item>
+                        <li nz-menu-item *ngIf="authState.loggedIn">
                             <i class="anticon material-icons">people_outline</i>
-                            <!--*ngIf not anonymous-->
                             {{'TEAMS.Title' | translate}}
                         </li>
-                        <li nz-menu-item>
+                        <li nz-menu-item *ngIf="authState.loggedIn">
                             <i class="anticon anticon-link"></i>
                             <!--*ngIf patreon supporter-->
                             {{'CUSTOM_LINKS.Title' | translate}}
@@ -43,10 +48,17 @@
                             </span>
                         </li>
                         <li nz-menu-divider></li>
-                        <li nz-menu-item>
+                        <li nz-menu-item *ngIf="authState.loggedIn">
                             <i class="anticon anticon-logout"></i>
-                            <!--*ngIf logged in-->
                             {{'Disconnect' | translate}}
+                        </li>
+                        <li nz-menu-item *ngIf="!authState.loggedIn">
+                            <i class="anticon anticon-form"></i>
+                            {{'Registration' | translate}}
+                        </li>
+                        <li nz-menu-item *ngIf="!authState.loggedIn">
+                            <i class="anticon anticon-login"></i>
+                            {{'Login' | translate}}
                         </li>
                     </ul>
                 </li>
@@ -75,12 +87,6 @@
                     <span>
                         <i class="anticon anticon-bell"></i>
                         <span class="nav-text">{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
-                    </span>
-                </li>
-                <li nz-menu-item>
-                    <span>
-                        <i class="anticon anticon-heart"></i>
-                        <span class="nav-text">{{'Favorites' | translate}}</span>
                     </span>
                 </li>
                 <li nz-menu-item>

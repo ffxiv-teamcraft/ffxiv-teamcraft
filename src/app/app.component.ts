@@ -9,6 +9,10 @@ import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-br
 import {faBell, faCalculator, faGavel, faMap} from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import {distinctUntilChanged} from 'rxjs/operators';
+import {Observable} from 'rxjs/Observable';
+import {AuthState} from './reducers/auth.reducer';
+import {select, Store} from '@ngrx/store';
+import {GetUser} from './actions/auth.actions';
 
 declare const ga: Function;
 
@@ -35,8 +39,17 @@ export class AppComponent implements OnInit {
 
     collapsedAlarmsBar = true;
 
+    public authState$: Observable<AuthState>;
+
     constructor(private gt: GarlandToolsService, private translate: TranslateService,
-                private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase) {
+                private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
+                private store: Store<AuthState>) {
+
+        this.authState$ = store.pipe(
+            select('auth')
+        );
+
+        this.store.dispatch(new GetUser());
 
         this.gt.preload();
         // Translation

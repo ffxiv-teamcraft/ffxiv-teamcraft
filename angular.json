@@ -101,6 +101,9 @@
             },
             "beta": {
               "browserTarget": "client:build:beta"
+            },
+            "preview": {
+              "browserTarget": "client:build:preview"
             }
           }
         },
