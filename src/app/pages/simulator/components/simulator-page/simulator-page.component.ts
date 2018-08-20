@@ -95,10 +95,10 @@ export class SimulatorPageComponent {
                 })
             );
 
-        this.userId$ = this.userService.getUserData()
-            .pipe(
-                map(user => user.$key)
-            );
+        // this.userId$ = this.userService.getUserData()
+        //     .pipe(
+        //         map(user => user.$key)
+        //     );
 
         combineLatest(this.userId$,
             activeRoute.params

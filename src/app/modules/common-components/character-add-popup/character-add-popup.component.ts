@@ -40,21 +40,21 @@ export class CharacterAddPopupComponent implements OnInit {
     }
 
     select(id: number): void {
-        this.userService.getUserData()
-            .pipe(
-                first(),
-                map(user => {
-                    if (user !== null && !user.anonymous) {
-                        user.lodestoneId = id;
-                        user.verified = false;
-                        this.userService.update(user.$key, user);
-                    }
-                })
-            ).subscribe(() => this.dialogRef.close());
+        // this.userService.getUserData()
+        //     .pipe(
+        //         first(),
+        //         map(user => {
+        //             if (user !== null && !user.anonymous) {
+        //                 user.lodestoneId = id;
+        //                 user.verified = false;
+        //                 this.userService.update(user.$key, user);
+        //             }
+        //         })
+        //     ).subscribe(() => this.dialogRef.close());
     }
 
     logOut(): void {
-        this.userService.signOut().subscribe(() => this.dialogRef.close());
+        // this.userService.signOut().subscribe(() => this.dialogRef.close());
     }
 
     ngOnInit(): void {

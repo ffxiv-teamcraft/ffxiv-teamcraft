@@ -37,10 +37,10 @@ export class OauthService {
             }
             return signInPromise.then((oauth) => {
                 resolve(oauth);
-                this.userService.reload();
+                // this.userService.reload();
             }).catch((error) => {
                 reject(error);
-                this.userService.reload();
+                // this.userService.reload();
             });
         });
     }
@@ -50,16 +50,16 @@ export class OauthService {
      * @param user
      * @returns {Promise<void>}
      */
-    register(user: any): Promise<void> {
-        return new Promise<void>((resolve) => {
-            const u = new AppUser();
-            u.$key = user.uid;
-            u.email = user.email;
-            this.userService.set(user.uid, u).pipe(first()).subscribe(() => {
-                this.userService.reload();
-                ga('send', 'event', 'Site', 'signup');
-                resolve();
-            });
-        });
-    }
+    // register(user: any): Promise<void> {
+    //     return new Promise<void>((resolve) => {
+    //         const u = new AppUser();
+    //         u.$key = user.uid;
+    //         u.email = user.email;
+    //         this.userService.set(user.uid, u).pipe(first()).subscribe(() => {
+    //             // this.userService.reload();
+    //             ga('send', 'event', 'Site', 'signup');
+    //             resolve();
+    //         });
+    //     });
+    // }
 }

@@ -1,25 +1,15 @@
-import {Component} from '@angular/core';
-import {ObservableMedia} from '@angular/flex-layout';
-import * as fromStats from '../../../reducers/stats.reducer';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {LoadStats} from '../../../actions/stats.actions';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.less']
+  selector: 'home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-    public stats$: Observable<fromStats.State> = this.store.select('stats');
+  constructor() { }
 
-    constructor(private store: Store<fromStats.State>, private media: ObservableMedia) {
-        this.store.dispatch(new LoadStats());
-    }
-
-    isMobile(): boolean {
-        return this.media.isActive('xs') || this.media.isActive('sm');
-    }
+  ngOnInit() {
+  }
 
 }

@@ -1,11 +1,13 @@
 import {AuthActions, AuthActionTypes} from '../actions/auth.actions';
 import {TeamcraftUser} from '../model/user/teamcraft-user';
+import {CharacterResponse} from '@xivapi/angular-client';
 
 export interface AuthState {
     uid: string;
     displayName: string;
     loggedIn: boolean;
-    user: TeamcraftUser | null;// TODO
+    user: TeamcraftUser | null; // TODO
+    characters: CharacterResponse[]; // TODO
     loading?: boolean;
     error?: string;
 }
@@ -14,6 +16,7 @@ export const initialState: AuthState = {
     uid: null,
     displayName: 'Anonymous',
     user: null,
+    characters: [],
     loggedIn: false
 };
 
@@ -27,7 +30,7 @@ export function reducer(state = initialState, action: AuthActions): AuthState {
             return {...state, ...action.payload, loading: false, loggedIn: true};
 
         case AuthActionTypes.LoggedInAsAnonymous:
-            return {...state, uid: action.uid, displayName: 'Anonymous', loading: false};
+            return {...state, uid: action.uid, displayName: 'Anonymous', loggedIn: false, loading: false};
 
         case AuthActionTypes.GoogleLogin:
             return {...state, loading: true};

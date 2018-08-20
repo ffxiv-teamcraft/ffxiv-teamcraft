@@ -1,7 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {fromEvent, Observable} from 'rxjs';
-
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
+// import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 @Component({
@@ -9,7 +8,7 @@ import {distinctUntilChanged, filter, map} from 'rxjs/operators';
     templateUrl: './amount-input.component.html',
     styleUrls: ['./amount-input.component.scss']
 })
-export class AmountInputComponent extends ComponentWithSubscriptions implements OnInit {
+export class AmountInputComponent implements OnInit {
 
     @Input()
     value: number;
@@ -45,10 +44,6 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     @Output()
     onchange: EventEmitter<number> = new EventEmitter<number>();
 
-    constructor() {
-        super();
-    }
-
     ngOnInit(): void {
         const focusOutObservable = fromEvent(this.input.nativeElement, 'focusout')
             .pipe(
@@ -69,18 +64,17 @@ export class AmountInputComponent extends ComponentWithSubscriptions implements 
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        this.subscriptions.push(
-            observable.pipe(map(value => +value))
-                .subscribe(value => {
-                    if (value > this.max) {
-                        value = this.max;
-                    }
-                    if (value < this.min) {
-                        value = this.min;
-                    }
-                    this.value = value;
-                    this.onchange.emit(value);
-                }));
+        observable.pipe(map(value => +value))
+            .subscribe(value => {
+                if (value > this.max) {
+                    value = this.max;
+                }
+                if (value < this.min) {
+                    value = this.min;
+                }
+                this.value = value;
+                this.onchange.emit(value);
+            });
     }
 
     public getWidth(): number {

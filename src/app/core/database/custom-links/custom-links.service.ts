@@ -14,10 +14,8 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fireb
 
     constructor(protected database: AngularFireDatabase,
                 protected serializer: NgSerializerService,
-                protected diffService: DiffService,
-                protected zone: NgZone,
                 protected pendingChangesService: PendingChangesService) {
-        super(database, serializer, diffService, zone, pendingChangesService);
+        super(database, serializer, pendingChangesService);
     }
 
     public getAllByAuthor(userKey: string): Observable<T[]> {

@@ -1,9 +1,12 @@
 import {Action} from '@ngrx/store';
 import {AuthState} from '../reducers/auth.reducer';
+import {TeamcraftUser} from '../model/user/teamcraft-user';
 
 export enum AuthActionTypes {
     GetUser = '[Auth] Get user',
     Authenticated = '[Auth] Authenticated',
+
+    UserFetched = '[Auth] User fetched',
 
     LoginAsAnonymous = '[Auth] Login as Anonymous',
     LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
@@ -21,7 +24,7 @@ export enum AuthActionTypes {
 export class GetUser implements Action {
     readonly type = AuthActionTypes.GetUser;
 
-    constructor(public payload?: any) {
+    constructor() {
     }
 }
 
@@ -29,6 +32,13 @@ export class Authenticated implements Action {
     readonly type = AuthActionTypes.Authenticated;
 
     constructor(public payload: Partial<AuthState>) {
+    }
+}
+
+export class UserFetched implements Action {
+    readonly type = AuthActionTypes.UserFetched;
+
+    constructor(public user: TeamcraftUser) {
     }
 }
 
@@ -88,6 +98,7 @@ export class Logout implements Action {
 
 export type AuthActions = GetUser
     | Authenticated
+    | UserFetched
     | LoginAsAnonymous
     | LoggedInAsAnonymous
     | GoogleLogin

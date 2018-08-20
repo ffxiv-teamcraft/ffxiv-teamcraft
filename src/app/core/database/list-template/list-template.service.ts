@@ -16,7 +16,7 @@ export class ListTemplateService extends CustomLinksService<ListTemplate> {
                 protected diffService: DiffService,
                 protected zone: NgZone,
                 protected pendingChangesService: PendingChangesService) {
-        super(database, serializer, diffService, zone, pendingChangesService);
+        super(database, serializer, pendingChangesService);
     }
 
     getByListId(listId: string): Observable<ListTemplate> {

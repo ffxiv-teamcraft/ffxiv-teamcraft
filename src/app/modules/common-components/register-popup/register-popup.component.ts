@@ -69,7 +69,7 @@ export class RegisterPopupComponent {
     googleOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new firebase.auth.GoogleAuthProvider()).then((oauth) => {
             delete this.error;
-            this.oauthService.register(oauth.user).then(() => this.dialogRef.close());
+            // this.oauthService.register(oauth.user).then(() => this.dialogRef.close());
         }).catch((error: any) => this.error = error.code);
     }
 
@@ -79,7 +79,7 @@ export class RegisterPopupComponent {
     facebookOauth(): void {
         this.af.auth.currentUser.linkWithPopup(new firebase.auth.FacebookAuthProvider()).then((oauth) => {
             delete this.error;
-            this.oauthService.register(oauth.user).then(() => this.dialogRef.close());
+            // this.oauthService.register(oauth.user).then(() => this.dialogRef.close());
         }).catch((error: any) => this.error = error.code);
     }
 
@@ -90,15 +90,15 @@ export class RegisterPopupComponent {
         const credential = firebase.auth.EmailAuthProvider.credential(this.form.value.email, this.form.value.passwords.password);
         this.af.auth.currentUser.linkWithCredential(credential).then((auth) => {
             delete this.error;
-            this.oauthService.register(auth).then(() => {
-                this.af.auth.currentUser.sendEmailVerification().then(() => {
-                    this.snack.open(this.translate.instant('Verification_mail_sent'), '', {duration: 10000});
-                    this.af.auth.signOut().then(() => {
-                        this.af.auth.signInAnonymously();
-                    });
-                    this.dialogRef.close();
-                });
-            })
+            // this.oauthService.register(auth).then(() => {
+            //     this.af.auth.currentUser.sendEmailVerification().then(() => {
+            //         this.snack.open(this.translate.instant('Verification_mail_sent'), '', {duration: 10000});
+            //         this.af.auth.signOut().then(() => {
+            //             this.af.auth.signInAnonymously();
+            //         });
+            //         this.dialogRef.close();
+            //     });
+            // })
         }).catch((error: any) => this.error = error.code);
     }
 }

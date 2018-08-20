@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
-import {AuthActionTypes, Authenticated, LoggedInAsAnonymous, LoginAsAnonymous} from '../actions/auth.actions';
+import {AuthActionTypes, Authenticated, LoggedInAsAnonymous, LoginAsAnonymous, UserFetched} from '../actions/auth.actions';
 import {map, mergeMap} from 'rxjs/operators';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {from} from 'rxjs';
 import {AuthState} from '../reducers/auth.reducer';
+import {UserService} from '../core/database/user.service';
 
 @Injectable()
 export class AuthEffects {
@@ -35,6 +36,13 @@ export class AuthEffects {
         map(result => new LoggedInAsAnonymous(result.uid))
     );
 
-    constructor(private actions$: Actions, private af: AngularFireAuth) {
+    @Effect()
+    fetchUserOnAuthenticated$ = this.actions$.pipe(
+        ofType(AuthActionTypes.Authenticated),
+        mergeMap((action: Authenticated) => this.userService.get(action.payload.uid)),
+        map(user => new UserFetched(user))
+    );
+
+    constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService) {
     }
 }

@@ -1,7 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {ListRow} from '../../../model/list/list-row';
 import {fromEvent, Observable} from 'rxjs';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 @Component({
@@ -9,7 +8,7 @@ import {distinctUntilChanged, filter, map} from 'rxjs/operators';
     templateUrl: './ffxivcrafting-amount-input.component.html',
     styleUrls: ['./ffxivcrafting-amount-input.component.scss']
 })
-export class FfxivcraftingAmountInputComponent extends ComponentWithSubscriptions implements OnInit, OnChanges {
+export class FfxivcraftingAmountInputComponent implements OnInit, OnChanges {
 
     @Input()
     total: number;
@@ -29,10 +28,6 @@ export class FfxivcraftingAmountInputComponent extends ComponentWithSubscription
     public craftingAmountRequired = false;
 
     public craftingAmount = 0;
-
-    constructor() {
-        super();
-    }
 
     ngOnInit(): void {
         this.updateCraftingAmountRequired();
@@ -61,17 +56,16 @@ export class FfxivcraftingAmountInputComponent extends ComponentWithSubscription
     }
 
     private registerOnChange(observable: Observable<number>): void {
-        this.subscriptions.push(
-            observable.pipe(map(value => +value))
-                .subscribe(value => {
-                    if (value > this.total - this.item.used) {
-                        value = this.total - this.item.used;
-                    }
-                    if (value < 0) {
-                        value = 0;
-                    }
-                    this.onchange.emit(value + this.item.used);
-                }));
+        observable.pipe(map(value => +value))
+            .subscribe(value => {
+                if (value > this.total - this.item.used) {
+                    value = this.total - this.item.used;
+                }
+                if (value < 0) {
+                    value = 0;
+                }
+                this.onchange.emit(value + this.item.used);
+            });
     }
 
     public updateCraftingAmountRequired(): void {

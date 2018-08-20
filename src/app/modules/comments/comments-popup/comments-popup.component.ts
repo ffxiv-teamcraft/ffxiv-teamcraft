@@ -33,15 +33,15 @@ export class CommentsPopupComponent {
                 @Inject(MAT_DIALOG_DATA) public data: { row: ListRow, list: List, name: string, isOwnList: boolean },
                 private userService: UserService, private notificationService: NotificationService) {
         this.isListComment = this.data.row === undefined;
-        this.userService.getCharacter().subscribe(character => {
-            this.userName = character.name;
-            this.userId = character.user.$key;
-            if (character.name === 'Anonymous') {
-                this.characterId = -1;
-            } else {
-                this.characterId = +character.user.lodestoneId;
-            }
-        });
+        // this.userService.getCharacter().subscribe(character => {
+        //     this.userName = character.name;
+        //     this.userId = character.user.$key;
+        //     if (character.name === 'Anonymous') {
+        //         this.characterId = -1;
+        //     } else {
+        //         this.characterId = +character.user.lodestoneId;
+        //     }
+        // });
     }
 
     addComment(): void {

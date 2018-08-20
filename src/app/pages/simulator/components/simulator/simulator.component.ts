@@ -290,12 +290,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 private snack: MatSnackBar, private cd: ChangeDetectorRef, public rotationsService: CraftingRotationService,
                 private router: Router) {
 
-        this.availableRotations$ = this.userService.getUserData()
-            .pipe(
-                mergeMap(user => {
-                    return rotationsService.getUserRotations(user.$key);
-                })
-            );
+        // this.availableRotations$ = this.userService.getUserData()
+        //     .pipe(
+        //         mergeMap(user => {
+        //             return rotationsService.getUserRotations(user.$key);
+        //         })
+        //     );
 
         this.foods = consumablesService.fromData(foods)
             .sort(this.consumablesSortFn);
@@ -317,33 +317,33 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
         });
 
-        this.gearsets$ = this.userService.getUserData()
-            .pipe(
-                tap(user => this.userData = user),
-                mergeMap(user => {
-                    if (user.anonymous) {
-                        return of(this.populateMissingSets(user.gearSets || this.defaultGearSets));
-                    }
-                    return this.dataService.getGearsets(user.lodestoneId)
-                        .pipe(
-                            map(gearsets => {
-                                const resultSets = gearsets.map(set => {
-                                    const customSet = user.gearSets.find(s => s.jobId === set.jobId);
-                                    if (customSet !== undefined) {
-                                        return customSet;
-                                    }
-                                    return set;
-                                });
-                                // If there's some missing sets, populate them.
-                                if (resultSets.length < 8) {
-                                    return this.populateMissingSets(resultSets);
-                                }
-                                return resultSets.sort((a, b) => a.jobId - b.jobId);
-                            }),
-                            tap(sets => this.levels = <CrafterLevels>sets.map(set => set.level))
-                        );
-                }),
-            );
+        // this.gearsets$ = this.userService.getUserData()
+        //     .pipe(
+        //         tap(user => this.userData = user),
+        //         mergeMap(user => {
+        //             if (user.anonymous) {
+        //                 return of(this.populateMissingSets(user.gearSets || this.defaultGearSets));
+        //             }
+        //             return this.dataService.getGearsets(user.lodestoneId)
+        //                 .pipe(
+        //                     map(gearsets => {
+        //                         const resultSets = gearsets.map(set => {
+        //                             const customSet = user.gearSets.find(s => s.jobId === set.jobId);
+        //                             if (customSet !== undefined) {
+        //                                 return customSet;
+        //                             }
+        //                             return set;
+        //                         });
+        //                         // If there's some missing sets, populate them.
+        //                         if (resultSets.length < 8) {
+        //                             return this.populateMissingSets(resultSets);
+        //                         }
+        //                         return resultSets.sort((a, b) => a.jobId - b.jobId);
+        //                     }),
+        //                     tap(sets => this.levels = <CrafterLevels>sets.map(set => set.level))
+        //                 );
+        //         }),
+        //     );
 
         this.simulation$ = combineLatest(
             this.recipe$,
@@ -406,24 +406,24 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.applyStats(res.set, res.levels, false);
         });
 
-        this.actions$
-            .pipe(
-                bufferTime(1000),
-                first(),
-                map(bufferedValues => bufferedValues[bufferedValues.length - 1]),
-                filter(actions => actions.length === 0),
-                mergeMap(() => {
-                    // Set the default consumables, overridden later if this is an existing rotation
-                    return this.userService.getUserData();
-                })
-            )
-            .subscribe(user => {
-                const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
-                this._selectedFood = this._selectedFood || defaultConsumables.food;
-                this._selectedMedicine = this._selectedMedicine || defaultConsumables.medicine;
-                this._selectedFreeCompanyActions = this._selectedFreeCompanyActions ||
-                    defaultConsumables.freeCompanyActions;
-            });
+        // this.actions$
+        //     .pipe(
+        //         bufferTime(1000),
+        //         first(),
+        //         map(bufferedValues => bufferedValues[bufferedValues.length - 1]),
+        //         filter(actions => actions.length === 0),
+        //         mergeMap(() => {
+        //             // Set the default consumables, overridden later if this is an existing rotation
+        //             return this.userService.getUserData();
+        //         })
+        //     )
+        //     .subscribe(user => {
+        //         const defaultConsumables = (user.defaultConsumables || <DefaultConsumables>{});
+        //         this._selectedFood = this._selectedFood || defaultConsumables.food;
+        //         this._selectedMedicine = this._selectedMedicine || defaultConsumables.medicine;
+        //         this._selectedFreeCompanyActions = this._selectedFreeCompanyActions ||
+        //             defaultConsumables.freeCompanyActions;
+        //     });
     }
 
     importRotation(): void {
@@ -673,13 +673,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         // Then add this set to custom sets
         set.custom = true;
         this.userData.gearSets.push(set);
-        this.userService.set(this.userData.$key, this.userData).subscribe();
+        // this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 
     saveDefaultConsumables(): void {
         this.userData.defaultConsumables =
             new DefaultConsumables(this._selectedFood, this._selectedMedicine, this._selectedFreeCompanyActions);
-        this.userService.set(this.userData.$key, this.userData).subscribe();
+        // this.userService.set(this.userData.$key, this.userData).subscribe();
     }
 
     addAction(action: CraftingAction): void {

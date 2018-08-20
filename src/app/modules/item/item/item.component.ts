@@ -36,7 +36,6 @@ import {combineLatest, Observable} from 'rxjs';
 import {Timer} from '../../../core/time/timer';
 import {SettingsService} from '../../../pages/settings/settings.service';
 import {AppUser} from '../../../model/list/app-user';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {BellNodesService} from '../../../core/data/bell-nodes.service';
 import {Alarm} from '../../../core/time/alarm';
 import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
@@ -61,7 +60,7 @@ import {ItemAssignedNotification} from '../../../model/notification/item-assigne
     styleUrls: ['./item.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemComponent extends ComponentWithSubscriptions implements OnInit, OnChanges {
+export class ItemComponent implements OnInit, OnChanges {
 
     public static TRADE_SOURCES_PRIORITIES = {
         // Just in case
@@ -318,14 +317,13 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
                 private listService: ListService,
                 private notificationService: NotificationService,
                 private teamService: TeamService) {
-        super();
-        this.rotations$ = this.userService.getUserData().pipe(
-            mergeMap(user => {
-                return this.rotationsService.getUserRotations(user.$key);
-            }),
-            publishReplay(1),
-            refCount()
-        );
+        // this.rotations$ = this.userService.getUserData().pipe(
+        //     mergeMap(user => {
+        //         return this.rotationsService.getUserRotations(user.$key);
+        //     }),
+        //     publishReplay(1),
+        //     refCount()
+        // );
     }
 
     isDraft(): boolean {
@@ -366,16 +364,16 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
     }
 
     ngOnInit(): void {
-        if (this.item.workingOnIt !== undefined) {
-            this.userService.get(this.item.workingOnIt)
-                .pipe(
-                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
-                    first()
-                ).subscribe(char => {
-                this.worksOnIt = char;
-                this.cd.detectChanges();
-            });
-        }
+        // if (this.item.workingOnIt !== undefined) {
+        //     this.userService.get(this.item.workingOnIt)
+        //         .pipe(
+        //             mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+        //             first()
+        //         ).subscribe(char => {
+        //         this.worksOnIt = char;
+        //         this.cd.detectChanges();
+        //     });
+        // }
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -387,41 +385,41 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.updateTimers();
         this.updateHasBook();
         this.updateRequiredForEndCraft();
-        if (this.list !== undefined && this.list.teamId !== undefined
-            && this.teamMembers$ === undefined && this.teamLeader$ === undefined) {
-            this.teamMembers$ = this.teamService.get(this.list.teamId)
-                .pipe(
-                    mergeMap(team => {
-                        return combineLatest(Object.keys(team.members)
-                            .map(memberId => this.userService.getCharacter(memberId))
-                        );
-                    })
-                );
-            this.teamLeader$ = this.teamService.get(this.list.teamId)
-                .pipe(
-                    map(team => team.leader === this.user.$key)
-                );
-        }
-        if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
-            this.userService.get(this.item.workingOnIt)
-                .pipe(
-                    mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
-                    first()
-                ).subscribe(char => this.worksOnIt = char);
-        }
+        // if (this.list !== undefined && this.list.teamId !== undefined
+        //     && this.teamMembers$ === undefined && this.teamLeader$ === undefined) {
+        //     this.teamMembers$ = this.teamService.get(this.list.teamId)
+        //         .pipe(
+        //             mergeMap(team => {
+        //                 return combineLatest(Object.keys(team.members)
+        //                     .map(memberId => this.userService.getCharacter(memberId))
+        //                 );
+        //             })
+        //         );
+        //     this.teamLeader$ = this.teamService.get(this.list.teamId)
+        //         .pipe(
+        //             map(team => team.leader === this.user.$key)
+        //         );
+        // }
+        // if (this.item.workingOnIt !== undefined && (this.worksOnIt === undefined || this.worksOnIt.id !== this.item.workingOnIt)) {
+        //     this.userService.get(this.item.workingOnIt)
+        //         .pipe(
+        //             mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+        //             first()
+        //         ).subscribe(char => this.worksOnIt = char);
+        // }
     }
 
     public workOnIt(): void {
         this.item.workingOnIt = this.user.$key;
         this.update.emit();
-        this.userService.get(this.item.workingOnIt)
-            .pipe(
-                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
-                first()
-            ).subscribe(char => {
-            this.worksOnIt = char;
-            this.cd.detectChanges();
-        });
+        // this.userService.get(this.item.workingOnIt)
+        //     .pipe(
+        //         mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+        //         first()
+        //     ).subscribe(char => {
+        //     this.worksOnIt = char;
+        //     this.cd.detectChanges();
+        // });
     }
 
     public assign(userId: string): void {
@@ -429,14 +427,14 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         this.update.emit();
         const notification = new ItemAssignedNotification(this.item.id, this.list.name, this.list.$key);
         this.notificationService.add(this.notificationService.prepareNotification(userId, notification)).subscribe();
-        this.userService.get(this.item.workingOnIt)
-            .pipe(
-                mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
-                first()
-            ).subscribe(char => {
-            this.worksOnIt = char;
-            this.cd.detectChanges();
-        });
+        // this.userService.get(this.item.workingOnIt)
+        //     .pipe(
+        //         mergeMap(user => this.dataService.getCharacter(user.lodestoneId)),
+        //         first()
+        //     ).subscribe(char => {
+        //     this.worksOnIt = char;
+        //     this.cd.detectChanges();
+        // });
     }
 
     public removeWorkingOnIt(): void {

@@ -11,44 +11,16 @@ import {DiffService} from './diff/diff.service';
 import {PendingChangesService} from './pending-changes/pending-changes.service';
 import {catchError, filter, first, map, mergeMap, shareReplay, switchMap, tap} from 'rxjs/operators';
 import {fromPromise} from 'rxjs/internal/observable/fromPromise';
+import {TeamcraftUser} from '../../model/user/teamcraft-user';
 
 @Injectable()
-export class UserService extends FirebaseStorage<AppUser> {
-
-    public loggingIn = false;
-
-    private reloader: BehaviorSubject<void> = new BehaviorSubject(null);
+export class UserService extends FirebaseStorage<TeamcraftUser> {
 
     constructor(private af: AngularFireAuth,
                 protected database: AngularFireDatabase,
-                private dataService: DataService,
-                private listService: ListService,
                 protected serializer: NgSerializerService,
-                protected diffService: DiffService,
-                protected zone: NgZone,
                 protected pendingChangesService: PendingChangesService) {
-        super(database, serializer, diffService, zone, pendingChangesService);
-    }
-
-    public get(uid: string): Observable<AppUser> {
-        return super.get(uid)
-            .pipe(
-                map(user => {
-                    if (user.defaultConsumables !== undefined) {
-                        if (user.defaultConsumables.medicine === undefined) {
-                            delete user.defaultConsumables.medicine;
-                        }
-                        if (user.defaultConsumables.food === undefined) {
-                            delete user.defaultConsumables.food;
-                        }
-                    }
-                    return user;
-                })
-            )
-    }
-
-    public set(uid: string, user: AppUser): Observable<void> {
-        return super.set(uid, user).pipe(tap(() => this.reload()));
+        super(database, serializer, pendingChangesService);
     }
 
     public getUserByEmail(email: string): Observable<AppUser> {
@@ -71,99 +43,64 @@ export class UserService extends FirebaseStorage<AppUser> {
      * Gets user ingame informations.
      * @returns {Observable<any>}
      */
-    public getCharacter(uid?: string): Observable<any> {
-        let userData: Observable<AppUser>;
-        if (uid === undefined) {
-            userData = this.getUserData();
-        } else {
-            userData = this.get(uid);
-        }
-        return userData
-            .pipe(
-                mergeMap(u => {
-                    if (u !== null && u.lodestoneId !== null && u.lodestoneId !== undefined) {
-                        return this.dataService.getCharacter(u.lodestoneId).pipe(
-                            map(c => {
-                                c.patron = u.patron;
-                                c.patreonEmail = u.patreonEmail;
-                                c.nickname = u.nickname;
-                                c.userId = u.$key;
-                                c.user = u;
-                                return c;
-                            }));
-                    } else {
-                        return of({name: 'Anonymous', user: u});
-                    }
-                }),
-                shareReplay()
-            );
-    }
 
-    public getCharacterWithoutCache(): Observable<any> {
-        return this.getUserData()
-            .pipe(
-                mergeMap(user => {
-                    return this.dataService.getCharacter(user.lodestoneId, true);
-                })
-            );
-    }
+    // public getCharacterWithoutCache(): Observable<any> {
+    //     return this.getUserData()
+    //         .pipe(
+    //             mergeMap(user => {
+    //                 return this.dataService.getCharacter(user.lodestoneId, true);
+    //             })
+    //         );
+    // }
 
     /**
      * Returns user data informations.
      * @returns {Observable<AppUser>}
      */
-    public getUserData(): Observable<AppUser> {
-        return this.reloader
-            .pipe(
-                filter(() => !this.loggingIn),
-                switchMap(() => {
-                    return this.af.authState
-                        .pipe(
-                            first(),
-                            mergeMap((user) => {
-                                if ((user === null && !this.loggingIn) || user.uid === undefined) {
-                                    this.af.auth.signInAnonymously();
-                                    return of(<AppUser>{name: 'Anonymous', anonymous: true});
-                                }
-                                if (user === null || user.isAnonymous) {
-                                    return this.get(user.uid).pipe(
-                                        catchError(() => {
-                                            return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
-                                        }));
-                                } else {
-                                    return this.get(user.uid)
-                                        .pipe(
-                                            map(u => {
-                                                u.providerId = user.providerId;
-                                                return u;
-                                            })
-                                        );
-                                }
-                            })
-                        );
-                }),
-                mergeMap((u: AppUser) => {
-                    u.patron = false;
-                    if (u.patreonEmail === undefined) {
-                        return of(u);
-                    }
-                    return this.firebase.list('/patreon/supporters').valueChanges()
-                        .pipe(
-                            map((supporters: { email: string }[]) => {
-                                u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
-                                return u;
-                            })
-                        );
-                })
-            );
-    }
-
-    /**
-     * Trigegrs subscriptions reload.
-     */
-    public reload(): void {
-        this.reloader.next(null);
-    }
+    // public getUserData(): Observable<AppUser> {
+    //     return this.reloader
+    //         .pipe(
+    //             filter(() => !this.loggingIn),
+    //             switchMap(() => {
+    //                 return this.af.authState
+    //                     .pipe(
+    //                         first(),
+    //                         mergeMap((user) => {
+    //                             if ((user === null && !this.loggingIn) || user.uid === undefined) {
+    //                                 this.af.auth.signInAnonymously();
+    //                                 return of(<AppUser>{name: 'Anonymous', anonymous: true});
+    //                             }
+    //                             if (user === null || user.isAnonymous) {
+    //                                 return this.get(user.uid).pipe(
+    //                                     catchError(() => {
+    //                                         return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
+    //                                     }));
+    //                             } else {
+    //                                 return this.get(user.uid)
+    //                                     .pipe(
+    //                                         map(u => {
+    //                                             return u;
+    //                                         })
+    //                                     );
+    //                             }
+    //                         })
+    //                     );
+    //             }),
+    //             mergeMap((u: AppUser) => {
+    //                 u.patron = false;
+    //                 if (u.patreonEmail === undefined) {
+    //                     return of(u);
+    //                 }
+    //                 return this.firebase.list('/patreon/supporters').valueChanges()
+    //                     .pipe(
+    //                         map((supporters: { email: string }[]) => {
+    //                             u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
+    //                             return u;
+    //                         })
+    //                     );
+    //             })
+    //         );
+    // }
 
     /**
      * Checks if a given email is available for patreon account linking.
@@ -197,16 +134,16 @@ export class UserService extends FirebaseStorage<AppUser> {
      * @param {string} uid
      * @returns {Promise<void>}
      */
-    public deleteUser(uid: string): Promise<void> {
-        return new Promise<void>(resolve => {
-            this.listService.getUserLists(uid).subscribe(lists => {
-                if (lists === []) {
-                    return this.remove(uid).pipe(first()).subscribe(resolve);
-                } else {
-                    return this.listService.deleteUserLists(uid).subscribe(resolve);
-                }
-            });
-        });
+    public deleteUser(uid: string): void {
+        // return new Promise<void>(resolve => {
+        //     this.listService.getUserLists(uid).subscribe(lists => {
+        //         if (lists === []) {
+        //             return this.remove(uid).pipe(first()).subscribe(resolve);
+        //         } else {
+        //             return this.listService.deleteUserLists(uid).subscribe(resolve);
+        //         }
+        //     });
+        // });
     }
 
     /**
@@ -223,24 +160,11 @@ export class UserService extends FirebaseStorage<AppUser> {
         });
     }
 
-    /**
-     * Signs out the current user.
-     * @returns {Observable<void>}
-     */
-    public signOut(): Observable<void> {
-        return concat(
-            fromPromise(this.af.auth.signOut()),
-            fromPromise(this.af.auth.signInAnonymously())
-        ).pipe(
-            map(() => this.reload())
-        );
-    }
-
     protected getBaseUri(params?: any): string {
         return 'users';
     }
 
     protected getClass(): any {
-        return AppUser;
+        return TeamcraftUser;
     }
 }

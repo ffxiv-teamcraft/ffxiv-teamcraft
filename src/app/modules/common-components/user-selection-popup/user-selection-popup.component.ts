@@ -27,62 +27,62 @@ export class UserSelectionPopupComponent implements OnInit {
     public contacts$: Observable<any[]>;
 
     constructor(private userService: UserService) {
-        this.contacts$ = userService.getUserData()
-            .pipe(
-                mergeMap(user => {
-                    return combineLatest(
-                        user.contacts.map(contactId => {
-                            return this.userService.getCharacter(contactId)
-                                .pipe(
-                                    map(details => {
-                                        details.$key = contactId;
-                                        return details;
-                                    }),
-                                    catchError(() => {
-                                        return of(null);
-                                    })
-                                );
-                        })
-                    ).pipe(map(res => res.filter(row => row !== null)));
-                })
-            )
+        // this.contacts$ = userService.getUserData()
+        //     .pipe(
+        //         mergeMap(user => {
+        //             return combineLatest(
+        //                 user.contacts.map(contactId => {
+        //                     return this.userService.getCharacter(contactId)
+        //                         .pipe(
+        //                             map(details => {
+        //                                 details.$key = contactId;
+        //                                 return details;
+        //                             }),
+        //                             catchError(() => {
+        //                                 return of(null);
+        //                             })
+        //                         );
+        //                 })
+        //             ).pipe(map(res => res.filter(row => row !== null)));
+        //         })
+        //     )
     }
 
     private doSearch(): void {
-        this.loading = true;
-        // If this is an email
-        if (this.input.indexOf('@') > -1) {
-            this.userService.getUserByEmail(this.input)
-                .pipe(
-                    first(),
-                    mergeMap(user => this.userService.getCharacter(user.$key)
-                        .pipe(map(character => ({character: character, user: user}))))
-                )
-                .subscribe(data => {
-                    this.notFound = false;
-                    this.result = data;
-                    this.loading = false;
-                }, err => {
-                    this.notFound = true;
-                    this.loading = false;
-                });
-        } else {
-            // Else, handle it as a user id
-            this.userService.get(this.input)
-                .pipe(
-                    first(),
-                    mergeMap(user => this.userService.getCharacter(user.$key)
-                        .pipe(map(character => ({character: character, user: user}))))
-                )
-                .subscribe(data => {
-                    this.notFound = false;
-                    this.result = data;
-                    this.loading = false;
-                }, err => {
-                    this.notFound = true;
-                    this.loading = false;
-                });
-        }
+        // this.loading = true;
+        // // If this is an email
+        // if (this.input.indexOf('@') > -1) {
+        //     this.userService.getUserByEmail(this.input)
+        //         .pipe(
+        //             first(),
+        //             mergeMap(user => this.userService.getCharacter(user.$key)
+        //                 .pipe(map(character => ({character: character, user: user}))))
+        //         )
+        //         .subscribe(data => {
+        //             this.notFound = false;
+        //             this.result = data;
+        //             this.loading = false;
+        //         }, err => {
+        //             this.notFound = true;
+        //             this.loading = false;
+        //         });
+        // } else {
+        //     // Else, handle it as a user id
+        //     this.userService.get(this.input)
+        //         .pipe(
+        //             first(),
+        //             mergeMap(user => this.userService.getCharacter(user.$key)
+        //                 .pipe(map(character => ({character: character, user: user}))))
+        //         )
+        //         .subscribe(data => {
+        //             this.notFound = false;
+        //             this.result = data;
+        //             this.loading = false;
+        //         }, err => {
+        //             this.notFound = true;
+        //             this.loading = false;
+        //         });
+        // }
     }
 
     public ngOnInit(): void {

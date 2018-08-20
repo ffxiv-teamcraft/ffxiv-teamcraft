@@ -19,26 +19,26 @@ export class LayoutService {
     private _layouts: Observable<ListLayout[]>;
 
     constructor(private serializer: NgSerializerService, private layoutOrder: LayoutOrderService, private userService: UserService) {
-        this._layouts =
-            this.userService.getUserData()
-                .pipe(
-                    map(userData => {
-                        const layouts = userData.layouts;
-                        if (layouts === undefined || layouts === null || layouts.length === 0 ||
-                            (layouts.length === 1 && layouts[0].name === 'Default layout')) {
-                            return [new ListLayout('Default layout', this.defaultLayout)];
-                        }
-                        return layouts;
-                    }),
-                    map(layouts => {
-                        return layouts.map(layout => {
-                            if (layout.rows.length === 0) {
-                                layout.rows = this.defaultLayout;
-                            }
-                            return layout;
-                        });
-                    })
-                );
+        this._layouts = of([]);
+            // this.userService.getUserData()
+            //     .pipe(
+            //         map(userData => {
+            //             const layouts = userData.layouts;
+            //             if (layouts === undefined || layouts === null || layouts.length === 0 ||
+            //                 (layouts.length === 1 && layouts[0].name === 'Default layout')) {
+            //                 return [new ListLayout('Default layout', this.defaultLayout)];
+            //             }
+            //             return layouts;
+            //         }),
+            //         map(layouts => {
+            //             return layouts.map(layout => {
+            //                 if (layout.rows.length === 0) {
+            //                     layout.rows = this.defaultLayout;
+            //                 }
+            //                 return layout;
+            //             });
+            //         })
+            //     );
     }
 
     public getDisplay(list: List, index: number): Observable<LayoutRowDisplay[]> {
@@ -107,14 +107,15 @@ export class LayoutService {
     }
 
     public persist(layouts: ListLayout[]): Observable<void> {
-        return this.userService.getUserData()
-            .pipe(
-                first(),
-                mergeMap(user => {
-                    user.layouts = layouts;
-                    return this.userService.set(user.$key, user);
-                })
-            );
+        return of(null);
+        // return this.userService.getUserData()
+        //     .pipe(
+        //         first(),
+        //         mergeMap(user => {
+        //             user.layouts = layouts;
+        //             return this.userService.set(user.$key, user);
+        //         })
+        //     );
     }
 
     public get defaultLayout(): LayoutRow[] {

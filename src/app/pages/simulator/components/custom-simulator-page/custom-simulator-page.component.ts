@@ -57,8 +57,8 @@ export class CustomSimulatorPageComponent {
                 private dialog: MatDialog, private dataService: DataService,
                 private router: Router, activeRoute: ActivatedRoute, private registry: CraftingActionsRegistry) {
 
-        this.userId$ = this.userService.getUserData()
-            .pipe(map(user => user.$key));
+        // this.userId$ = this.userService.getUserData()
+        //     .pipe(map(user => user.$key));
 
         combineLatest(this.userId$,
             activeRoute.params

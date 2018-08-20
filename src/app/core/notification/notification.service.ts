@@ -26,16 +26,16 @@ export class NotificationService extends RelationshipService<NotificationRelatio
                 private translateService: TranslateService, private localizedDataService: LocalizedDataService,
                 private i18nTools: I18nToolsService, private settings: SettingsService) {
         super(firestore, serializer, zone, pendingChangesService);
-        this.notifications$ = this.userService.getUserData()
-            .pipe(
-                mergeMap(user => this.getByFrom(user.$key)),
-                map(relationships => {
-                    return relationships.sort((a, b) => {
-                        return a.to.date > b.to.date ? -1 : 1;
-                    })
-                }),
-                shareReplay(),
-            );
+        // this.notifications$ = this.userService.getUserData()
+        //     .pipe(
+        //         mergeMap(user => this.getByFrom(user.$key)),
+        //         map(relationships => {
+        //             return relationships.sort((a, b) => {
+        //                 return a.to.date > b.to.date ? -1 : 1;
+        //             })
+        //         }),
+        //         shareReplay(),
+        //     );
     }
 
     public init(): void {

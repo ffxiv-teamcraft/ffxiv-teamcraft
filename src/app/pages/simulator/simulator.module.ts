@@ -35,7 +35,7 @@ import {
 } from '@angular/material';
 import {MacroPopupComponent} from './components/macro-popup/macro-popup.component';
 import {ClipboardModule} from 'ngx-clipboard';
-import {CustomLinksModule} from '../custom-links/custom-links.module';
+// import {CustomLinksModule} from '../custom-links/custom-links.module';
 import {MaintenanceGuard} from '../maintenance/maintenance.guard';
 import {SimulationMinStatsPopupComponent} from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
 import {ImportMacroPopupComponent} from './components/import-macro-popup/import-macro-popup.component';
@@ -109,7 +109,7 @@ const routes: Routes = [
         ClipboardModule,
 
         CommonComponentsModule,
-        CustomLinksModule,
+        // CustomLinksModule,
         TooltipModule,
         PipesModule,
         CoreModule,

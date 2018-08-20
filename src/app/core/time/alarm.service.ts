@@ -29,15 +29,15 @@ export class AlarmService {
                 private bellNodesService: BellNodesService, private pushNotificationsService: PushNotificationsService,
                 private userService: UserService, private platform: PlatformService, private ipc: IpcService,
                 private mapService: MapService, private i18nTools: I18nToolsService) {
-        this.userService.getUserData()
-            .pipe(
-                map((user: AppUser) => user.alarms || []),
-                tap(alarms => {
-                    this.resetAlarms();
-                    this.loadAlarms(...alarms);
-                }),
-            )
-            .subscribe();
+        // this.userService.getUserData()
+        //     .pipe(
+        //         map((user: AppUser) => user.alarms || []),
+        //         tap(alarms => {
+        //             this.resetAlarms();
+        //             this.loadAlarms(...alarms);
+        //         }),
+        //     )
+        //     .subscribe();
     }
 
     private resetAlarms(): void {
@@ -217,82 +217,83 @@ export class AlarmService {
         if (this.settings.alarmsMuted) {
             return;
         }
-        this.userService.getUserData()
-            .pipe(
-                first(),
-                mergeMap(user => {
-                    let alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
-                    if (alarmGroup === undefined) {
-                        alarmGroup = user.alarmGroups.find(group => group.name === 'Default group')
-                    }
-                    // If the group of this alarm is disabled, don't play the alarm.
-                    if (alarmGroup !== undefined && !alarmGroup.enabled) {
-                        return of(null);
-                    }
-                    const lastPlayed = localStorage.getItem(`alarms:lastPlayed:${alarm.itemId}`);
-                    // Don't play the alarm if it was played less than half a minute ago
-                    if (lastPlayed === null || Date.now() - +lastPlayed > 30000) {
-                        this.snack.open(this.translator.instant('ALARM.Spawned',
-                            {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
-                            this.translator.instant('ALARM.See_on_map'),
-                            {duration: 5000})
-                            .onAction().subscribe(() => {
-                            this.dialog.open(MapPopupComponent, {
-                                data: {
-                                    coords: {
-                                        x: alarm.coords[0],
-                                        y: alarm.coords[1]
-                                    },
-                                    id: alarm.zoneId
-                                }
-                            });
-                        });
-                        let audio: HTMLAudioElement;
-                        if (this.settings.alarmSound.indexOf(':') === -1) {
-                            audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
-                        } else {
-                            audio = new Audio(this.settings.alarmSound);
-                        }
-                        audio.loop = false;
-                        audio.volume = this.settings.alarmVolume;
-                        audio.play();
-                        localStorage.setItem(`alarms:lastPlayed:${alarm.itemId}`, Date.now().toString());
-                        return this.mapService.getMapById(alarm.zoneId)
-                            .pipe(
-                                map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
-                                map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
-                                mergeMap(closestAetheryteName => {
-                                    const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
-                                    const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - `
-                                        + `${closestAetheryteName}` +
-                                        (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
-                                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
-                                    if (this.platform.isDesktop()) {
-                                        this.ipc.send('notification', {
-                                            title: notificationTitle,
-                                            content: notificationBody,
-                                            icon: notificationIcon
-                                        });
-                                    } else {
-                                        return this.pushNotificationsService.create(notificationTitle,
-                                            {
-                                                icon: notificationIcon,
-                                                sticky: false,
-                                                renotify: false,
-                                                body: notificationBody
-                                            }
-                                        )
-                                    }
-                                })
-                            )
-                    } else {
-                        return of(null);
-                    }
-                })
-            ).subscribe(() => {
-        }, err => {
-            // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
-        });
+        // this.userService.getUserData()
+        //     .pipe(
+        //         first(),
+        //         mergeMap(user => {
+        //             let alarmGroup = user.alarmGroups.find(group => group.name === alarm.groupName);
+        //             if (alarmGroup === undefined) {
+        //                 alarmGroup = user.alarmGroups.find(group => group.name === 'Default group')
+        //             }
+        //             // If the group of this alarm is disabled, don't play the alarm.
+        //             if (alarmGroup !== undefined && !alarmGroup.enabled) {
+        //                 return of(null);
+        //             }
+        //             const lastPlayed = localStorage.getItem(`alarms:lastPlayed:${alarm.itemId}`);
+        //             // Don't play the alarm if it was played less than half a minute ago
+        //             if (lastPlayed === null || Date.now() - +lastPlayed > 30000) {
+        //                 this.snack.open(this.translator.instant('ALARM.Spawned',
+        //                     {itemName: this.localizedData.getItem(alarm.itemId)[this.translator.currentLang]}),
+        //                     this.translator.instant('ALARM.See_on_map'),
+        //                     {duration: 5000})
+        //                     .onAction().subscribe(() => {
+        //                     this.dialog.open(MapPopupComponent, {
+        //                         data: {
+        //                             coords: {
+        //                                 x: alarm.coords[0],
+        //                                 y: alarm.coords[1]
+        //                             },
+        //                             id: alarm.zoneId
+        //                         }
+        //                     });
+        //                 });
+        //                 let audio: HTMLAudioElement;
+        //                 if (this.settings.alarmSound.indexOf(':') === -1) {
+        //                     audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+        //                 } else {
+        //                     audio = new Audio(this.settings.alarmSound);
+        //                 }
+        //                 audio.loop = false;
+        //                 audio.volume = this.settings.alarmVolume;
+        //                 audio.play();
+        //                 localStorage.setItem(`alarms:lastPlayed:${alarm.itemId}`, Date.now().toString());
+        //                 return this.mapService.getMapById(alarm.zoneId)
+        //                     .pipe(
+        //                         map(mapData => this.mapService.getNearestAetheryte(mapData, {x: alarm.coords[0], y: alarm.coords[1]})),
+        //                         map(aetheryte => this.i18nTools.getName(this.localizedData.getPlace(aetheryte.nameid))),
+        //                         mergeMap(closestAetheryteName => {
+        //                             const notificationTitle = this.localizedData.getItem(alarm.itemId)[this.translator.currentLang];
+        //                             const notificationBody =
+        //                                   `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - `
+        //                                 + `${closestAetheryteName}` +
+        //                                 (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+        //                             const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+        //                             if (this.platform.isDesktop()) {
+        //                                 this.ipc.send('notification', {
+        //                                     title: notificationTitle,
+        //                                     content: notificationBody,
+        //                                     icon: notificationIcon
+        //                                 });
+        //                             } else {
+        //                                 return this.pushNotificationsService.create(notificationTitle,
+        //                                     {
+        //                                         icon: notificationIcon,
+        //                                         sticky: false,
+        //                                         renotify: false,
+        //                                         body: notificationBody
+        //                                     }
+        //                                 )
+        //                             }
+        //                         })
+        //                     )
+        //             } else {
+        //                 return of(null);
+        //             }
+        //         })
+        //     ).subscribe(() => {
+        // }, err => {
+        //     // If there's an error, it means that we don't have permission, that's not a problem but we want to catch it.
+        // });
     }
 
     /**
@@ -499,17 +500,18 @@ export class AlarmService {
      * Persist the current alarms into browser's localstorage.
      */
     private persistAlarms(): Observable<void> {
-        return this.userService.getUserData().pipe(
-            first(),
-            mergeMap((user: AppUser) => {
-                user.alarms = Array.from(this._alarms.keys()).map(alarm => {
-                    delete alarm.aetheryte$;
-                    return alarm;
-                });
-                return this.userService.set(user.$key, user);
-            }),
-            first()
-        );
+        return of(null);
+        // return this.userService.getUserData().pipe(
+        //     first(),
+        //     mergeMap((user: AppUser) => {
+        //         user.alarms = Array.from(this._alarms.keys()).map(alarm => {
+        //             delete alarm.aetheryte$;
+        //             return alarm;
+        //         });
+        //         return this.userService.set(user.$key, user);
+        //     }),
+        //     first()
+        // );
     }
 
     /**
