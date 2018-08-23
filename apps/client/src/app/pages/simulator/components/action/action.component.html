@@ -1,0 +1,13 @@
+<div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
+     [appXivdbActionTooltip]="action.getId(getJobId())" [appXivdbActionTooltipDisabled]="tooltipDisabled">
+  <div class="action"
+       [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp, 'not-enough-cp': notEnoughCp}">
+    <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
+    <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
+    <mat-icon class="failed" *ngIf="failed">close</mat-icon>
+    <span class="cost"
+          *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)">
+            {{(cpCost === undefined ? action.getBaseCPCost(simulation) : cpCost) | absolute}}
+        </span>
+  </div>
+</div>

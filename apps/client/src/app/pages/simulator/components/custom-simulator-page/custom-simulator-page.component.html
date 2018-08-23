@@ -1,0 +1,41 @@
+<div *ngIf="!notFound; else notFoundTemplate">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{'SIMULATOR.CUSTOM.Recipe_configuration' | translate}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="details-form">
+      <mat-form-field>
+        <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_level' | translate}}"
+               [(ngModel)]="recipe.rlvl" (ngModelChange)="propagateRecipeChanges()">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_progress' | translate}}"
+               [(ngModel)]="recipe.progress" (ngModelChange)="propagateRecipeChanges()">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_quality' | translate}}"
+               [(ngModel)]="recipe.quality" (ngModelChange)="propagateRecipeChanges()">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="{{'SIMULATOR.CUSTOM.Recipe_durability' | translate}}"
+               [(ngModel)]="recipe.durability" (ngModelChange)="propagateRecipeChanges()">
+      </mat-form-field>
+      <button mat-mini-fab (click)="changeRecipe()">
+        <mat-icon>swap_horiz</mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
+
+  <app-simulator [recipe]="recipe$ | async" [inputGearSet]="stats" [actions]="actions"
+                 [customMode]="true" [canSave]="canSave" [selectedFood]="selectedFood"
+                 [selectedMedicine]="selectedMedicine" [selectedFreeCompanyActions]="selectedFreeCompanyActions"
+                 (onsave)="save($event)" [authorId]="authorId" [rotation]="rotation"></app-simulator>
+
+</div>
+<ng-template #notFoundTemplate>
+  <div class="not-found">
+    {{'SIMULATOR.Rotation_not_found' | translate}}
+  </div>
+</ng-template>

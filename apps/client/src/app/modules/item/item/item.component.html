@@ -1,0 +1,583 @@
+<!--Layout for desktop browsers-->
+<mat-list-item *ngIf="!(isMobile | async); else mobileLayout"
+               [ngClass]="{'even': even, 'auto-height':true, 'compact':settings.compactLists,
+               'done-row': item.done >= item.amount, 'craftable-row': canBeCrafted, 'has-all-ingredients-row': hasAllIngredients}">
+  <div class="item-col-left">
+    <div matListAvatar [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+         [appXivdbTooltip]="item.id" [appXivdbTooltipDisabled]="isDraft()">
+      <a matListAvatar disabled="isDraft()" href="{{item.id | itemLink | i18n}}" target="_blank">
+        <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+      </a>
+      <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+    </div>
+    <div class="item-name">
+      <app-copyable-name matLine [name]="item.id | itemName | i18n" (afterCopy)="afterNameCopy(item.id)"
+                         [tooltip]="'Copy_item_name_to_clipboard' | translate">
+        <span [ngClass]="{'compact': settings.compactLists}">{{item.id | itemName | i18n}}</span>
+      </app-copyable-name>
+    </div>
+    <img src="./assets/icons/HQ.png" alt=""
+         matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
+         matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
+
+    <button matTooltipPosition="above"
+            matTooltip="{{'Copy_isearch' | translate}}"
+            mat-icon-button ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+            (cbOnSuccess)="afterNameCopy(item.id)">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <app-comments-button [name]="item.id | itemName | i18n"
+                         [row]="item"
+                         [list]="list"
+                         [isOwnList]="user?.$key === list?.authorId"
+                         (updated)="update.emit()"></app-comments-button>
+    <button mat-icon-button
+            matTooltip="{{'Requirements_for_craft' | translate}}"
+            matTooltipPosition="above" [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+            (click)="openRequirementsPopup()">
+      <mat-icon color="accent">assignment</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="!hasBook" routerLink="/profile">
+      <mat-icon matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+                color="warn">
+        warning
+      </mat-icon>
+    </button>
+    <div *ngIf="item.workingOnIt && getAmount() > (item.done | ceil)">
+      <div *ngIf="worksOnIt as character" class="working-on-it">
+        <img src="{{character.avatar}}" alt=""
+             matTooltip="{{'Is_working_on_it' | translate:{name: character.name} }}"
+             matTooltipPosition="above" class="avatar" routerLink="/profile/{{item.workingOnIt}}">
+        <button mat-icon-button color="warn" *ngIf="item.workingOnIt === user.$key"
+                (click)="removeWorkingOnIt()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div
+      *ngIf="!item.workingOnIt && !user?.anonymous && getAmount() > (item.done | ceil) && permissions?.participate">
+      <button mat-icon-button matTooltip="{{'Work_on_it' | translate}}"
+              matTooltipPosition="above"
+              [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+              (click)="workOnIt()">
+        <mat-icon color="accent">work</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="teamLeader$ | async as leader">
+      <div *ngIf="teamMembers$ | async as teamMembers">
+        <mat-menu #teamMembersMenu="matMenu">
+          <button mat-menu-item *ngFor="let member of teamMembers" (click)="assign(member.user.$key)">
+            {{member.name}}
+          </button>
+        </mat-menu>
+        <div *ngIf="!item.workingOnIt && !user?.anonymous
+                && getAmount() > (item.done | ceil) && leader">
+          <button mat-icon-button matTooltip="{{'TEAMS.Assign_item' | translate}}"
+                  matTooltipPosition="above"
+                  [ngClass]="{'requirements-button':true, 'compact': settings.compactLists}"
+                  [matMenuTriggerFor]="teamMembersMenu">
+            <mat-icon color="accent">assignment_ind</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="hasTimers" class="timers-container">
+    <div [ngClass]="{'timer':true, 'compact': settings.compactLists}"
+         *ngFor="let timer of timers | async; trackBy: trackByTimers">
+      <mat-menu #addAlarmMenu="matMenu">
+        <button (click)="addAlarm(timer.itemId, timer.type, group.name)" mat-menu-item
+                *ngFor="let group of user?.alarmGroups">{{group.name}}
+        </button>
+      </mat-menu>
+      <button mat-raised-button
+              *ngIf="!hasAlarm[timer.itemId]"
+              [matMenuTriggerFor]="addAlarmMenu"
+              [color]="getTimerColor(timer.alarm) | async"
+              matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
+              matTooltipPosition="above"
+              (contextmenu)="$event.preventDefault();addAlarm(timer.itemId, timer.type, 'Default group')">
+        <mat-icon>alarm_add</mat-icon>
+        {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+        <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+      </button>
+
+      <button mat-raised-button
+              *ngIf="hasAlarm[timer.itemId]"
+              (click)="removeAlarm(timer.itemId)"
+              [color]="getTimerColor(timer.alarm) | async"
+              matTooltip="{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}"
+              matTooltipPosition="above">
+        <mat-icon>alarm_on</mat-icon>
+        {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+        <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+      </button>
+    </div>
+  </div>
+
+  <div class="item-col-right">
+    <div *ngIf="item.craftedBy !== undefined" [ngClass]="{'masterbook':true, 'compact': settings.compactLists}">
+      <img *ngFor="let masterbook of masterbooks"
+           matListAvatar
+           src="{{masterbook.icon | icon}}"
+           matTooltip="{{masterbook.id | itemName | i18n}}"
+           matTooltipPosition="above"
+           alt="{{masterbook.id | itemName | i18n}}">
+    </div>
+    <div *ngIf="folkloreId" [ngClass]="{'masterbook':true, 'compact': settings.compactLists}">
+      <img matListAvatar
+           src="./assets/icons/FSH_folklore.png"
+           matTooltip="{{folkloreId | itemName | i18n}}"
+           matTooltipPosition="above"
+           alt="{{folkloreId | itemName | i18n}}">
+    </div>
+    <div class="done">
+      <div class="done-first-row">
+        <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
+                matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"
+                [disabled]="!permissions?.participate"><i class="fas fa-calculator"></i>
+        </button>
+        <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                        [total]="getAmount()" [item]="item"
+                                        (onchange)="setDone(item, $event, item.done)"
+                                        [readonly]="!permissions?.participate">
+        </app-ffxivcrafting-amount-input>
+        <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
+                          [readonly]="!permissions?.participate"
+                          max="{{getAmount()}}"
+                          min="0"
+                          [value]="item.done | ceil"
+                          [craftAmount]="(getAmount() > 0 && getAmount() !== item.amount_needed) ? item.amount_needed : null"
+                          (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+      </div>
+      <div class="addition-row" *ngIf="expanded">
+        <button mat-icon-button color="accent" (click)="addAddition()" [disabled]="!permissions?.participate">
+          <mat-icon>add</mat-icon>
+        </button>
+        <app-amount-input class="amount"
+                          [readonly]="!permissions?.participate"
+                          min="0"
+                          max="{{getAmount()}}"
+                          value="{{addition}}"
+                          [hideMax]="true"
+                          [hideMissingAmount]="true"
+                          (onchange)="addition = $event"></app-amount-input>
+        <button mat-icon-button color="warn" (click)="removeAddition()">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div [ngClass]="{'done-check':true, 'compact': settings.compactLists}">
+      <button mat-mini-fab
+              [disabled]="!permissions?.participate"
+              *ngIf="getAmount() > (item.done | ceil)"
+              [ngClass]="{'done-button':true, 'compact': settings.compactLists}"
+              (click)="setDone(item, getAmount(), item.done)">
+        <mat-icon>playlist_add_check</mat-icon>
+      </button>
+      <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
+    </div>
+
+    <div class="classes">
+      <div *ngIf="recipe">
+        <mat-menu #simulatorMenu="matMenu">
+          <button mat-menu-item routerLink="/simulator/{{item.id}}/{{item.recipeId}}">{{'SIMULATOR.New_rotation' |
+            translate}}
+          </button>
+          <button mat-menu-item
+                  *ngFor="let rotation of rotations$ | async"
+                  routerLink="/simulator/{{item.id}}/{{item.recipeId}}/{{rotation.$key}}">{{rotation.getName()}}
+          </button>
+          <mat-divider></mat-divider>
+          <a *ngIf="getCraft(item.recipeId) as craft"
+             href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+             target="_blank"
+             mat-menu-item>
+            {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+          </a>
+          <a *ngIf="getCraft(item.recipeId) as craft"
+             href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+             target="_blank"
+             mat-menu-item>
+            {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+          </a>
+          <a *ngIf="getCraft(item.recipeId) as craft"
+             href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+             target="_blank"
+             mat-menu-item>
+            {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+          </a>
+        </mat-menu>
+        <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu"
+                *ngIf="getCraft(item.recipeId) as craft">
+          <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+               src="{{craft.icon}}">
+          <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
+        </button>
+      </div>
+      <div *ngIf="!recipe">
+        <div *ngFor="let craft of item.craftedBy">
+          <mat-menu #simulatorMenu="matMenu">
+            <button mat-menu-item routerLink="/simulator/{{item.id}}/{{craft.recipeId}}">
+              {{'SIMULATOR.New_rotation' |
+              translate}}
+            </button>
+            <button mat-menu-item
+                    *ngFor="let rotation of rotations$ | async"
+                    routerLink="/simulator/{{item.id}}/{{craft.recipeId}}/{{rotation.$key}}">
+              {{rotation.getName()}}
+            </button>
+            <mat-divider></mat-divider>
+            <a href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+            </a>
+            <a href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+            </a>
+            <a href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+            </a>
+          </mat-menu>
+          <button mat-icon-button class="crafter-button" [matMenuTriggerFor]="simulatorMenu">
+            <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                 *ngIf="craft.icon !== ''"
+                 src="{{craft.icon}}">
+            <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
+          </button>
+        </div>
+      </div>
+      <div>
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                *ngIf="item.gatheredBy !== undefined" (click)="openGatheredByDetails(item)">
+          <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+               matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
+               matTooltipPosition="above" src="{{item.gatheredBy.icon}}">
+        </button>
+      </div>
+      <div *ngIf="item.gardening === true">
+        <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+             matTooltip="{{'Gardening' | translate}}"
+             matTooltipPosition="above" src="./assets/icons/Gardening.png">
+      </div>
+      <div>
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                *ngIf="item.drops !== undefined && item.drops.length > 0"
+                (click)="openDropsDetails(item)">
+          <img *ngIf="item.drops !== undefined"
+               [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Hunting' | translate}}"
+               matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
+        </button>
+      </div>
+      <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                matLine
+                (click)="openTradeDetails(item)">
+          <img [ngClass]="{'currency':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Trade' | translate}}"
+               matTooltipPosition="above"
+               src="{{tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
+        </button>
+      </div>
+      <div *ngIf="item.instances !== undefined && item.instances.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                (click)="openInstancesDetails(item)">
+          <img matTooltip="{{item.instances[0].name | i18n}}"
+               matTooltipPosition="above"
+               [src]="item.instances[0].icon | instanceIcon"
+               [ngClass]="{'currency':true, 'compact': settings.compactLists}">
+        </button>
+      </div>
+      <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                (click)="openReductionDetails(item)">
+          <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Reduction' | translate}}"
+               matTooltipPosition="above"
+               src="https://www.garlandtools.org/db/images/Reduce.png">
+        </button>
+      </div>
+      <div *ngIf="item.desynths !== undefined && item.desynths.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                (click)="openDesynthDetails(item)">
+          <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Desynth' | translate}}"
+               matTooltipPosition="above"
+               src="https://www.garlandtools.org/db/images/Desynth.png">
+        </button>
+      </div>
+      <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                (click)="openVendorsDetails(item)">
+          <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Vendors' | translate}}"
+               matTooltipPosition="above"
+               src="https://secure.xivdb.com/img/game/065000/065002.png">
+        </button>
+      </div>
+
+      <div *ngIf="item.voyages !== undefined && item.voyages.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                (click)="openVoyagesDetails(item)">
+          <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+               matTooltip="{{'Voyages' | translate}}"
+               matTooltipPosition="above"
+               src="https://www.garlandtools.org/db/images/Voyage.png">
+        </button>
+      </div>
+
+      <div *ngIf="item.ventures !== undefined && item.ventures.length > 0">
+        <button mat-icon-button [ngClass]="{'icon-button':true, 'compact': settings.compactLists}"
+                matTooltip="{{'Retainer_ventures' | translate}}"
+                matTooltipPosition="above"
+                (click)="openVentureDetails(item)">
+          <img [ngClass]="{'icon':true, 'compact': settings.compactLists}"
+               src="https://garlandtools.org/db/icons/item/3503.png">
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-list-item>
+
+<!--Layout for mobile browsers-->
+<ng-template #mobileLayout>
+  <mat-list-item [ngClass]="{'even':even, 'auto-height':true, 'mobile':true,
+                   'done-row': item.done >= item.amount, 'craftable-row': canBeCrafted}">
+    <div matListAvatar class="icon">
+      <a matListAvatar href="{{item.id | itemLink | i18n}}" target="_blank">
+        <img matListAvatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
+      </a>
+      <span class="yield" *ngIf="item.yield > 1">x{{item.yield}}</span>
+    </div>
+    <div class="item-name" matLine>
+            <span matTooltipPosition="above"
+                  matTooltip="{{'Copy_item_name_to_clipboard' | translate}}"
+                  mat-icon-button ngxClipboard [cbContent]="item.id | itemName | i18n"
+                  (cbOnSuccess)="afterNameCopy(item.id)">{{item.id | itemName | i18n}}</span>
+      <img src="./assets/icons/HQ.png" alt=""
+           matTooltip="{{'Required_for_final_craft' | translate: { amount: requiredForFinalCraft } }}"
+           matTooltipPosition="above" *ngIf="requiredForFinalCraft>0 && !recipe">
+      <app-comments-button [name]="item.id | itemName | i18n" [row]="item" [list]="list"
+                           [isOwnList]="user?.$key === list?.authorId"></app-comments-button>
+      <mat-icon *ngIf="!hasBook" matTooltip="{{'LIST_DETAILS.No_book' | translate}}" matTooltipPosition="above"
+                color="warn">
+        warning
+      </mat-icon>
+    </div>
+    <div *ngIf="item.craftedBy !== undefined && item.craftedBy.length > 0" class="masterbook">
+      <img *ngFor="let masterbook of masterbooks"
+           matListAvatar
+           src="{{masterbook.icon | icon}}"
+           matTooltip="{{masterbook.id | itemName | i18n}}"
+           matTooltipPosition="above"
+           alt="{{masterbook.id | itemName | i18n}}">
+    </div>
+    <div class="done" matLine>
+      <button mat-icon-button (click)="expanded=!expanded" matTooltipPosition="above"
+              [disabled]="!permissions?.participate"
+              matTooltip="{{'LIST_DETAILS.Add_remove_amount' | translate}}"><i class="fas fa-calculator"></i>
+      </button>
+      <app-ffxivcrafting-amount-input *ngIf="settings.ffxivcraftingDisplay"
+                                      class="amount"
+                                      [total]="getAmount()" [item]="item"
+                                      (onchange)="setDone(item, $event, item.done)"
+                                      [readonly]="!permissions?.participate">
+      </app-ffxivcrafting-amount-input>
+      <app-amount-input *ngIf="!settings.ffxivcraftingDisplay" class="amount"
+                        max="{{getAmount()}}"
+                        maxlength="{{getAmount()?.toString().length}}"
+                        min="0"
+                        [value]="item.done | ceil"
+                        [craftAmount]="(getAmount() > 0 && getAmount() !== item.amount_needed) ? item.amount_needed : null"
+                        (onchange)="setDone(item, $event, item.done)"></app-amount-input>
+      <button mat-icon-button class="requirements" (click)="openRequirementsPopup()">
+        <mat-icon color="accent">assignment</mat-icon>
+      </button>
+      <div class="classes">
+        <div *ngIf="recipe">
+          <mat-menu #simulatorMenu="matMenu">
+            <button mat-menu-item routerLink="/simulator/{{item.id}}/{{item.recipeId}}">
+              {{'SIMULATOR.New_rotation' | translate}}
+            </button>
+            <button mat-menu-item
+                    *ngFor="let rotation of rotations$ | async"
+                    routerLink="/simulator/{{item.id}}/{{item.recipeId}}/{{rotation.$key}}">
+              {{rotation.getName()}}
+            </button>
+            <mat-divider></mat-divider>
+            <a *ngIf="getCraft(item.recipeId) as craft"
+               href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+            </a>
+            <a *ngIf="getCraft(item.recipeId) as craft"
+               href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+            </a>
+            <a *ngIf="getCraft(item.recipeId) as craft"
+               href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+               target="_blank"
+               mat-menu-item>
+              {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+            </a>
+          </mat-menu>
+          <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" *ngIf="getCraft(item.recipeId) as craft"
+                  class="crafter-button">
+            <img [ngClass]="{'crafted-by':true}" src="{{craft.icon}}">
+            <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
+          </button>
+        </div>
+        <div *ngIf="!recipe">
+          <div *ngFor="let craft of item.craftedBy">
+            <mat-menu #simulatorMenu="matMenu">
+              <button mat-menu-item routerLink="/simulator/{{item.id}}/{{craft.recipeId}}">
+                {{'SIMULATOR.New_rotation' |
+                translate}}
+              </button>
+              <button mat-menu-item
+                      *ngFor="let rotation of rotations$ | async"
+                      routerLink="/simulator/{{item.id}}/{{craft.recipeId}}/{{rotation.$key}}">
+                {{rotation.getName()}}
+              </button>
+              <mat-divider></mat-divider>
+              <a href="{{craft | simulatorLink:'http://ffxiv-beta.lokyst.net' | i18n}}"
+                 target="_blank"
+                 mat-menu-item>
+                {{'SIMULATOR.Open_in_external' | translate: {name: 'Doxxx'} }}
+              </a>
+              <a href="{{craft | simulatorLink:'https://ermad.github.io/ffxiv-craft-opt-web/app' | i18n}}"
+                 target="_blank"
+                 mat-menu-item>
+                {{'SIMULATOR.Open_in_external' | translate: {name: 'Ermad'} }}
+              </a>
+              <a href="{{craft | simulatorLink:'https://ryan20340.github.io/app' | i18n}}"
+                 target="_blank"
+                 mat-menu-item>
+                {{'SIMULATOR.Open_in_external' | translate: {name: 'ryan20340'} }}
+              </a>
+            </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="simulatorMenu" class="crafter-button">
+              <img [ngClass]="{'crafted-by':true, 'compact': settings.compactLists}"
+                   *ngIf="craft.icon !== ''"
+                   src="{{craft.icon}}">
+              <span class="crafter-level">{{craft.level}} {{craft.stars_tooltip}}</span>
+            </button>
+          </div>
+        </div>
+        <button mat-icon-button *ngIf="item.gatheredBy !== undefined"
+                (click)="openGatheredByDetails(item)">
+          <img class="crafted-by"
+               matTooltip="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}"
+               matTooltipPosition="above" src="{{item.gatheredBy.icon}}">
+        </button>
+        <div *ngIf="item.gardening === true">
+          <img class="crafted-by"
+               matTooltip="{{'Gardening' | translate}}"
+               matTooltipPosition="above" src="./assets/icons/Gardening.png">
+        </div>
+        <button mat-icon-button *ngIf="item.drops !== undefined && item.drops.length > 0"
+                (click)="openDropsDetails(item)">
+          <img *ngIf="item.drops !== undefined" class="crafted-by"
+               matTooltip="{{'Hunting' | translate}}"
+               matTooltipPosition="above" src="https://www.garlandtools.org/db/images/Mob.png">
+        </button>
+        <div *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0">
+          <button mat-icon-button matLine
+                  (click)="openTradeDetails(item)">
+            <img class="currency"
+                 matTooltip="{{'Trade' | translate}}"
+                 matTooltipPosition="above"
+                 src="{{tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'}}">
+          </button>
+        </div>
+        <div *ngIf="item.instances !== undefined && item.instances.length > 0">
+          <button mat-icon-button (click)="openInstancesDetails(item)">
+            <img matTooltip="{{item.instances[0].name | i18n}}"
+                 matTooltipPosition="above"
+                 [src]="item.instances[0].icon | instanceIcon"
+                 class="currency">
+          </button>
+        </div>
+        <div *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0">
+          <button mat-icon-button (click)="openReductionDetails(item)">
+            <img class="icon"
+                 matTooltip="{{'Reduction' | translate}}"
+                 matTooltipPosition="above"
+                 src="https://www.garlandtools.org/db/images/Reduce.png">
+          </button>
+        </div>
+        <div *ngIf="item.desynths !== undefined && item.desynths.length > 0">
+          <button mat-icon-button (click)="openDesynthDetails(item)">
+            <img class="icon" matTooltip="{{'Desynth' | translate}}"
+                 matTooltipPosition="above"
+                 src="https://www.garlandtools.org/db/images/Desynth.png">
+          </button>
+        </div>
+        <div *ngIf="item.vendors !== undefined && item.vendors.length > 0">
+          <button mat-icon-button (click)="openVendorsDetails(item)">
+            <img class="icon" matTooltip="{{'Vendors' | translate}}"
+                 matTooltipPosition="above"
+                 src="https://secure.xivdb.com/img/game/065000/065002.png">
+          </button>
+        </div>
+        <div *ngIf="item.voyages !== undefined && item.voyages.length > 0">
+          <button mat-icon-button (click)="openVoyagesDetails(item)">
+            <img class="icon" matTooltip="{{'Voyages' | translate}}"
+                 matTooltipPosition="above"
+                 src="https://www.garlandtools.org/db/images/Voyage.png">
+          </button>
+        </div>
+      </div>
+      <div class="addition-row" *ngIf="expanded">
+        <button mat-icon-button color="accent" (click)="addAddition()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <app-amount-input class="amount"
+                          [readonly]="!permissions?.participate"
+                          min="0"
+                          max="{{getAmount()}}"
+                          value="{{addition}}"
+                          [hideMax]="true"
+                          [hideMissingAmount]="true"
+                          (onchange)="addition = $event"></app-amount-input>
+        <button mat-icon-button color="warn" (click)="removeAddition()">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="hasTimers" class="timers-container">
+      <div class="timer" *ngFor="let timer of timers | async">
+        <span>{{timer?.zoneId | placeName | i18n}} - {{timer?.areaId | placeName | i18n}}</span><br>
+        <button mat-raised-button [color]="getTimerColor(timer.alarm) | async"
+                (click)="toggleAlarm(timer.itemId)">
+          <mat-icon *ngIf="!hasAlarm[timer.itemId]">alarm_add</mat-icon>
+          <mat-icon *ngIf="hasAlarm[timer.itemId]">alarm_on</mat-icon>
+          {{timer?.display}} <span *ngIf="timer?.slot as slot">({{slot}})</span>
+          <img src="{{getTimerIcon(timer.type)}}" alt="" class="type-icon" *ngIf="timer.type > -1">
+        </button>
+      </div>
+    </div>
+
+
+    <div class="done-check">
+      <button mat-mini-fab *ngIf="getAmount() > (item.done | ceil)"
+              [disabled]="!permissions?.participate"
+              (click)="setDone(item, getAmount(), item.done)">
+        <mat-icon>playlist_add_check</mat-icon>
+      </button>
+      <mat-icon *ngIf="getAmount() <= (item.done | ceil)" color="accent">done</mat-icon>
+    </div>
+  </mat-list-item>
+</ng-template>

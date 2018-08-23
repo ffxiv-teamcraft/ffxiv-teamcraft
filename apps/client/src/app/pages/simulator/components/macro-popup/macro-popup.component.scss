@@ -1,0 +1,29 @@
+.content {
+  .config {
+    display: flex;
+    flex-direction: column;
+    .mat-checkbox {
+      margin-bottom: 10px;
+    }
+    .fields {
+      flex-direction: row;
+      .mat-form-field {
+        width: 50%;
+        padding-right: 10px;
+      }
+    }
+  }
+  .macro-fragment {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, .1);
+    border: 1px solid darkgrey;
+    padding: 20px;
+    position: relative;
+    .copy-macro {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

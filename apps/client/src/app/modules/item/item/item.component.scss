@@ -1,0 +1,290 @@
+@import "../../../../theme";
+
+:host {
+
+  mat-list-item {
+    height: auto !important;
+    min-height: 48px;
+    &.compact {
+      min-height: 35px !important;
+    }
+  }
+
+  .even {
+    background-color: rgba(123, 123, 123, .2);
+    &.done-row {
+      background-color: rgba(0, 255, 0, .1);
+    }
+    &.craftable-row {
+      background-color: rgba(19, 168, 255, .2);
+    }
+  }
+
+  .done-row {
+    background-color: rgba(94, 255, 91, 0.15);
+  }
+
+  .craftable-row {
+    background-color: rgba(19, 168, 255, .3);
+  }
+
+  .has-all-ingredients-row {
+    border: 2px dashed rgba(19, 168, 255, .3);
+  }
+
+  .strike {
+    color: #00E676;
+  }
+
+  .craftable {
+    color: #13a8ff;
+  }
+
+  .item-name {
+    display: flex !important;
+    align-items: center !important;
+    span {
+      cursor: pointer;
+      &.compact {
+        font-size: 11px;
+      }
+    }
+  }
+  .working-on-it {
+    display: flex;
+    .avatar {
+      border-radius: 50%;
+      height: 30px;
+      margin-top: 5px;
+    }
+  }
+
+  .requirements-button {
+    &.compact {
+      height: 25px;
+      width: 25px;
+      line-height: 25px;
+      margin-left: 5px;
+    }
+  }
+  // Item Column Defaults
+  [class^=item-col] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+
+    @include client-width('medium') {
+      width: 100%;
+    }
+
+    .classes {
+      width: 150px;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    // Second column
+    &.item-col-right {
+      justify-content: flex-end;
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  }
+  .done-check {
+    min-width: 40px;
+    text-align: center;
+    &.compact {
+      min-width: inherit;
+      .done-button.compact {
+        height: 25px;
+        width: 25px;
+        span {
+          padding: 1px 1px !important;
+        }
+      }
+    }
+  }
+  .masterbook {
+    text-align: center;
+    margin-right: 10px;
+    &.compact {
+      > img {
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
+  .amount {
+    margin-right: 10px;
+  }
+  .warning {
+    margin-left: 3px;
+  }
+  .classes {
+    .icon-button {
+      display: inline-block;
+      &.compact {
+        height: 25px;
+        width: 25px;
+      }
+    }
+    .currency {
+      width: 32px;
+      margin-top: 5px;
+      &.compact {
+        width: 25px;
+        border-radius: 50%;
+      }
+    }
+    div {
+      vertical-align: middle;
+      display: inline-block;
+      img {
+        margin: 0 2px;
+      }
+      .icon {
+        &.compact {
+          width: 25px;
+          border-radius: 50%;
+        }
+        width: 32px;
+        border-radius: 50%;
+      }
+    }
+    text-align: center;
+  }
+
+  .crafted-by {
+    height: 30px;
+    &.compact {
+      height: 20px;
+    }
+  }
+
+  .crafter-button {
+    position: relative;
+    .crafter-level {
+      font-size: 90%;
+      position: absolute;
+      bottom: -22px;
+      left: 30%;
+    }
+  }
+  .timers-container {
+    display: flex;
+    .timer {
+      margin-right: 10px;
+      text-align: center;
+      span {
+        opacity: .8;
+      }
+      &.compact {
+        height: 25px;
+        > button {
+          line-height: 25px;
+        }
+      }
+      .type-icon {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+  .icon {
+    position: relative;
+    margin-right: 10px;
+    &.compact {
+      width: 25px;
+      height: 25px;
+      .mat-list-avatar {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .yield {
+      position: absolute;
+      bottom: -2px;
+      right: -8px;
+    }
+  }
+  .done {
+    display: flex;
+    flex-direction: column !important;
+    .done-first-row {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  // Mobile specific classes
+  .mobile {
+    box-sizing: content-box;
+    height: unset !important;
+    min-height: 60px !important;
+
+    .item-name {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .timers-container {
+      display: flex;
+      flex-direction: column;
+      .timer {
+        margin-bottom: 5px;
+        text-align: center;
+        span {
+          opacity: .8;
+        }
+        line-height: 25px;
+        .type-icon {
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+    .done {
+      .amount {
+        margin: 0;
+      }
+      .requirements {
+        width: 32px;
+        height: 32px;
+      }
+      .classes {
+        display: inline-block;
+        margin: 0;
+        button {
+          width: 24px;
+          height: 24px;
+        }
+        .crafted-by {
+          height: 24px;
+        }
+        .crafter-button {
+          position: relative;
+          .crafter-level {
+            font-size: 90%;
+            position: absolute;
+            bottom: -20px;
+            left: 6px;
+          }
+        }
+
+        .currency {
+          width: 24px;
+          margin: 0;
+        }
+        .icon {
+          width: 24px;
+          border-radius: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="input-container">
+    <span matTooltipPosition="above"
+          matTooltip="{{'Missing_crafts_amount' | translate:{'amount': total - item.done} }}"
+          class="needed">
+        {{total - item.done}}
+    </span>
+  <mat-form-field>
+    <input type="number" #input matInput [value]="item.done - item.used" [readonly]="readonly"
+           [style.width]="getWidth() + 'px'" min="0">
+  </mat-form-field>
+  <span matTooltipPosition="above"
+        matTooltip="{{'COMMON.Total' | translate}}">
+        {{total - item.used}}
+    </span>
+  <span *ngIf="craftingAmountRequired" matTooltipPosition="above"
+        matTooltip="{{'Required_crafts_amount' | translate}}">({{craftingAmount}})</span>
+</div>

@@ -1,5 +1,0 @@
-<div matTooltip="{{(item.id | itemName | i18n) || 'missing name, please regenerate list'}}" matTooltipPosition="above" class="itemParent">
-    <img [src]="item.icon | icon" [alt]="item.id | itemName | i18n" class="item currency">
-    <img *ngIf="item.HQ" src="https://www.garlandtools.org/db/images/HQOverlay.png"
-         class="overlay currency">
-</div>

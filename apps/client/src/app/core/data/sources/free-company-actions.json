@@ -1,0 +1,38 @@
+{
+  "1": {
+    "en": "In Control",
+    "ja": "クラフターの加工精度が向上した状態",
+    "de": "Kontrolle-Bonus",
+    "fr": "Passer maître"
+  },
+  "2": {
+    "en": "In Control II",
+    "ja": "クラフターの加工精度が向上した状態 II",
+    "de": "Kontrolle-Bonus II",
+    "fr": "Passer maître II"
+  },
+  "3": {
+    "en": "In Control III",
+    "ja": "クラフターの加工精度が向上した状態 III",
+    "de": "Kontrolle-Bonus III",
+    "fr": "Passer maître III"
+  },
+  "4": {
+    "en": "Eat from the Hand",
+    "ja": "クラフターの作業精度が向上した状態",
+    "de": "Kunstfertigkeits-Bonus",
+    "fr": "La main qui nourrit"
+  },
+  "5": {
+    "en": "Eat from the Hand II",
+    "ja": "クラフターの作業精度が向上した状態 II",
+    "de": "Kunstfertigkeits-Bonus II",
+    "fr": "La main qui nourrit II"
+  },
+  "6": {
+    "en": "Eat from the Hand III",
+    "ja": "クラフターの作業精度が向上した状態 III",
+    "de": "Kunstfertigkeits-Bonus III",
+    "fr": "La main qui nourrit III"
+  }
+}

@@ -1,0 +1,39 @@
+@import "../theme";
+
+.app-container {
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  .logo {
+    cursor: pointer;
+    text-decoration: none;
+    color: @text-color;
+  }
+}
+
+.content-container {
+  margin-top: 64px;
+  height: 100%;
+}
+
+.right-menu {
+  float: right;
+  line-height: 64px;
+}
+
+.right-sider {
+  ::ng-deep .ant-layout-sider-zero-width-trigger {
+    left: -36px;
+    border-radius: 4px 0 0 4px;
+    i::before {
+      content: '\e64e';
+    }
+  }
+}
+
+nz-card {
+  margin: 8px 0;
+}

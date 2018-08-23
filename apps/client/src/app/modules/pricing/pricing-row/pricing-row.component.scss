@@ -1,0 +1,40 @@
+:host {
+
+  .price {
+    width: 80px;
+  }
+
+  .amount {
+    width: 60px;
+  }
+
+  .item-name {
+    .mat-icon {
+      vertical-align: middle;
+      cursor: default;
+    }
+  }
+
+  .from-vendor {
+    margin: 0 15px;
+  }
+
+  .list-item {
+    height: 50px !important;
+  }
+
+  .odd {
+    background-color: rgba(123, 123, 123, .2);
+  }
+
+  .amount-group {
+    display: flex;
+    .field-group {
+      margin-left: 20px;
+    }
+  }
+
+  .mat-checkbox {
+    margin-left: 10px;
+  }
+}
