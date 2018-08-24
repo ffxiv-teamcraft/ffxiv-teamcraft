@@ -30,9 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipesModule } from './pipes/pipes.module';
 import * as fromAuth from './reducers/auth.reducer';
 import { AuthEffects } from './effects/auth.effects';
-import { initialState as authInitialState, authReducer, initialState as authInitialState, authReducer, initialState as authInitialState, authReducer } from './+state/auth.reducer';
-import { AuthEffects } from './+state/auth.effects';
-import { AuthFacade } from './+state/auth.facade';
 
 registerLocaleData(en);
 
@@ -45,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppComponent
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US, providers: [AuthFacade], providers: [AuthFacade], providers: [AuthFacade] }
+    { provide: NZ_I18N, useValue: en_US }
   ],
   imports: [
     FlexLayoutModule,
@@ -94,7 +91,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     StoreModule.forFeature('stats', fromStats.reducer),
     EffectsModule.forFeature([StatsEffects, AuthEffects]),
     StoreModule.forFeature('auth', fromAuth.reducer),
-    StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects])
   ],
   bootstrap: [AppComponent]
