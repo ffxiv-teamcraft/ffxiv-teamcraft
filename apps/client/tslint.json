@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ffxiv-teamcraft",
+      "app",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ffxiv-teamcraft",
+      "app",
       "kebab-case"
     ]
   }

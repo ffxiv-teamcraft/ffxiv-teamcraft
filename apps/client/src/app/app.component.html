@@ -13,50 +13,53 @@
             <i class="anticon anticon-notification"></i>
           </nz-badge>
         </li>
-        <li nz-submenu *ngIf="authState$ | async as authState">
-                    <span title>
-                        <span *ngIf="!authState.loading; else loadingAuth">
-                            <nz-avatar *ngIf="!authState.loggedIn" [nzText]="'A'">
-                            </nz-avatar>
-                            <nz-avatar *ngIf="authState.loggedIn" [nzText]="authState.displayName[0]">
-                                <!--TODO user avatar instead of just first letter-->
-                            </nz-avatar>
-                            {{authState.displayName | ifMobile:''}}
-                        </span>
-                        <ng-template #loadingAuth>
-                            <nz-spin></nz-spin>
-                        </ng-template>
-                    </span>
+        <li nz-submenu>
+          <span title>
+            <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
+              <ng-template #authDetails>
+                <span  *ngIf="!(loggedIn$ | async); else userLoggedIn">
+                  <nz-avatar [nzText]="'A'">
+                  </nz-avatar>
+                  {{'COMMON.Anonymous' | translate}}
+                </span>
+                <ng-template #userLoggedIn>
+                <nz-avatar *ngIf="loggedIn$ | async" [nzText]="(character$ | async)?.Name[0]">
+                    <!--TODO user avatar instead of just first letter-->
+                </nz-avatar>
+                {{(character$ | async)?.Name | ifMobile:''}}
+                </ng-template>
+              </ng-template>
+          </span>
           <ul>
-            <li nz-menu-item *ngIf="authState.loggedIn">
+            <li nz-menu-item *ngIf="loggedIn$ | async">
               <i class="anticon anticon-idcard"></i>
               {{'Profile' | translate}}
             </li>
-            <li nz-menu-item *ngIf="authState.loggedIn">
+            <li nz-menu-item *ngIf="loggedIn$ | async">
               <i class="anticon material-icons">people_outline</i>
               {{'TEAMS.Title' | translate}}
             </li>
-            <li nz-menu-item *ngIf="authState.loggedIn">
+            <li nz-menu-item *ngIf="loggedIn$ | async">
               <i class="anticon anticon-link"></i>
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </li>
             <li nz-menu-item>
-                            <span>
-                                <i class="anticon anticon-setting"></i>
-                                <span class="nav-text">{{'SETTINGS.title' | translate}}</span>
-                            </span>
+              <span>
+                  <i class="anticon anticon-setting"></i>
+                  <span class="nav-text">{{'SETTINGS.title' | translate}}</span>
+              </span>
             </li>
             <li nz-menu-divider></li>
-            <li nz-menu-item *ngIf="authState.loggedIn">
+            <li nz-menu-item *ngIf="loggedIn$ | async">
               <i class="anticon anticon-logout"></i>
               {{'Disconnect' | translate}}
             </li>
-            <li nz-menu-item *ngIf="!authState.loggedIn">
+            <li nz-menu-item *ngIf="!(loggedIn$ | async)">
               <i class="anticon anticon-form"></i>
               {{'Registration' | translate}}
             </li>
-            <li nz-menu-item *ngIf="!authState.loggedIn">
+            <li nz-menu-item *ngIf="!(loggedIn$ | async)">
               <i class="anticon anticon-login"></i>
               {{'Login' | translate}}
             </li>
@@ -72,16 +75,16 @@
               [nzBreakpoint]="'lg'">
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
         <li nz-menu-item>
-                    <span>
-                        <i class="anticon anticon-search"></i>
-                        <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
-                    </span>
+          <span>
+              <i class="anticon anticon-search"></i>
+              <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
+          </span>
         </li>
         <li nz-menu-item>
-                    <span>
-                        <i class="anticon anticon-profile"></i>
-                        <span class="nav-text">{{'Lists' | translate}}</span>
-                    </span>
+          <span>
+              <i class="anticon anticon-profile"></i>
+              <span class="nav-text">{{'Lists' | translate}}</span>
+          </span>
         </li>
         <li nz-menu-item>
                     <span>

@@ -1,32 +1,49 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions } from '@ngrx/effects';
-import { DataPersistence } from '@nrwl/nx';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import {
-  LoadAuth,
-  AuthLoaded,
-  AuthLoadError,
-  AuthActionTypes
-} from './auth.actions';
+import { map, mergeMap } from 'rxjs/operators';
+import { from } from 'rxjs';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { UserService } from '../core/database/user.service';
+import { AuthActionTypes, Authenticated, LoggedInAsAnonymous, LoginAsAnonymous, UserFetched } from './auth.actions';
 
 @Injectable()
 export class AuthEffects {
+
   @Effect()
-  loadAuth$ = this.dataPersistence.fetch(AuthActionTypes.LoadAuth, {
-    run: (action: LoadAuth, state: AuthState) => {
-      // Your custom REST 'load' logic goes here. For now just return an empty list...
-      return new AuthLoaded([]);
-    },
+  getUser$ = this.actions$.pipe(
+    ofType(AuthActionTypes.GetUser),
+    mergeMap(() => this.af.authState),
+    map(authState => {
+      if (authState === null) {
+        return new LoginAsAnonymous();
+      } else {
+        const payload: Partial<AuthState> = {
+          uid: authState.uid
+        };
+        if (authState.isAnonymous) {
+          return new LoggedInAsAnonymous(authState.uid);
+        }
+        return new Authenticated(payload);
+      }
+    })
+  );
 
-    onError: (action: LoadAuth, error) => {
-      console.error('Error', error);
-      return new AuthLoadError(error);
-    }
-  });
+  @Effect()
+  loginAsAnonymous$ = this.actions$.pipe(
+    ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
+    mergeMap(() => from(this.af.auth.signInAnonymously())),
+    map(result => new LoggedInAsAnonymous(result.uid))
+  );
 
-  constructor(
-    private actions$: Actions,
-    private dataPersistence: DataPersistence<AuthState>
-  ) {}
+  @Effect()
+  fetchUserOnAuthenticated$ = this.actions$.pipe(
+    ofType(AuthActionTypes.Authenticated),
+    mergeMap((action: Authenticated) => this.userService.get(action.payload.uid)),
+    map(user => new UserFetched(user))
+  );
+
+  constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService) {
+  }
 }

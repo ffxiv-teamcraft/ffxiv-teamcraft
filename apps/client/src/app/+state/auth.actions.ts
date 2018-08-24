@@ -1,30 +1,121 @@
 import { Action } from '@ngrx/store';
-import { Entity } from './auth.reducer';
+import { TeamcraftUser } from '../model/user/teamcraft-user';
+import { AuthState } from './auth.reducer';
 
 export enum AuthActionTypes {
-  LoadAuth = '[Auth] Load Auth',
-  AuthLoaded = '[Auth] Auth Loaded',
-  AuthLoadError = '[Auth] Auth Load Error'
+  GetUser = '[Auth] Get user',
+  Authenticated = '[Auth] Authenticated',
+
+  UserFetched = '[Auth] User fetched',
+
+  LoginAsAnonymous = '[Auth] Login as Anonymous',
+  LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
+
+  GoogleLogin = '[Auth] Google Login attempt',
+  FacebookLogin = '[Auth] Facebook Login attempt',
+  ClassicLogin = '[Auth] Classic Login attempt',
+  Logout = '[Auth] Logout',
+
+  AuthError = '[Auth] Error',
 }
 
-export class LoadAuth implements Action {
-  readonly type = AuthActionTypes.LoadAuth;
+/// Get User AuthState
+
+export class GetUser implements Action {
+  readonly type = AuthActionTypes.GetUser;
+
+  constructor() {
+  }
 }
 
-export class AuthLoadError implements Action {
-  readonly type = AuthActionTypes.AuthLoadError;
-  constructor(public payload: any) {}
+export class Authenticated implements Action {
+  readonly type = AuthActionTypes.Authenticated;
+
+  constructor(public payload: Partial<AuthState>) {
+  }
 }
 
-export class AuthLoaded implements Action {
-  readonly type = AuthActionTypes.AuthLoaded;
-  constructor(public payload: Entity[]) {}
+export class UserFetched implements Action {
+  readonly type = AuthActionTypes.UserFetched;
+
+  constructor(public user: TeamcraftUser) {
+  }
 }
 
-export type AuthAction = LoadAuth | AuthLoaded | AuthLoadError;
+export class LoginAsAnonymous implements Action {
+  readonly type = AuthActionTypes.LoginAsAnonymous;
+
+  constructor() {
+  }
+}
+
+export class LoggedInAsAnonymous implements Action {
+  readonly type = AuthActionTypes.LoggedInAsAnonymous;
+
+  constructor(public uid: string) {
+  }
+}
+
+export class AuthError implements Action {
+  readonly type = AuthActionTypes.AuthError;
+
+  constructor(public payload?: any) {
+  }
+}
+
+/// Login Actions
+
+export class GoogleLogin implements Action {
+  readonly type = AuthActionTypes.GoogleLogin;
+
+  constructor(public payload?: any) {
+  }
+}
+
+export class FacebookLogin implements Action {
+  readonly type = AuthActionTypes.FacebookLogin;
+
+  constructor(public payload?: any) {
+  }
+}
+
+export class ClassicLogin implements Action {
+  readonly type = AuthActionTypes.ClassicLogin;
+
+  constructor(public payload?: any) {
+  }
+}
+
+/// Logout Actions
+
+export class Logout implements Action {
+  readonly type = AuthActionTypes.Logout;
+
+  constructor(public payload?: any) {
+  }
+}
+
+
+export type AuthActions = GetUser
+  | Authenticated
+  | UserFetched
+  | LoginAsAnonymous
+  | LoggedInAsAnonymous
+  | GoogleLogin
+  | FacebookLogin
+  | ClassicLogin
+  | AuthError
+  | Logout;
 
 export const fromAuthActions = {
-  LoadAuth,
-  AuthLoaded,
-  AuthLoadError
+  GetUser,
+  Authenticated,
+  UserFetched,
+  LoginAsAnonymous,
+  LoggedInAsAnonymous,
+  GoogleLogin,
+  FacebookLogin,
+  ClassicLogin,
+  AuthError,
+  Logout
 };

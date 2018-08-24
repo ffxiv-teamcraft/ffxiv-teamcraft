@@ -8,11 +8,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { AuthState } from './reducers/auth.reducer';
-import { select, Store } from '@ngrx/store';
-import { GetUser } from './actions/auth.actions';
+import { AuthFacade } from './+state/auth.facade';
+import { Character } from '@xivapi/angular-client';
 
 declare const ga: Function;
 
@@ -39,19 +38,22 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
-  public authState$: Observable<AuthState>;
+  public loggedIn$: Observable<boolean>;
+
+  public character$: Observable<Character>;
+
+  public loading$: Observable<boolean>;
 
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private store: Store<AuthState>) {
+              private authFacade: AuthFacade) {
 
-    this.authState$ = store.pipe(
-      select('auth')
-    );
+    // Loading is !loaded
+    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+    this.loggedIn$ = this.authFacade.loggedIn$;
+    this.character$ = this.authFacade.mainCharacter$;
 
-    this.store.dispatch(new GetUser());
-
-    this.gt.preload();
+    // this.gt.preload();
     // Translation
     translate.setDefaultLang('en');
     const lang = localStorage.getItem('locale');

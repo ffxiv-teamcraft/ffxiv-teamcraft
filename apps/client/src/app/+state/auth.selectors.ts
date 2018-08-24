@@ -6,36 +6,21 @@ const getAuthState = createFeatureSelector<AuthState>('auth');
 
 const getLoaded = createSelector(
   getAuthState,
-  (state: AuthState) => state.loaded
-);
-const getError = createSelector(
-  getAuthState,
-  (state: AuthState) => state.error
+  (state: AuthState) => !state.loading
 );
 
-const getAllAuth = createSelector(
+const getMainCharacter = createSelector(
   getAuthState,
-  getLoaded,
-  (state: AuthState, isLoaded) => {
-    return isLoaded ? state.list : [];
-  }
+  (state: AuthState) => state.characters.find(char => char.Payload.ID === state.user.defaultLodestoneId).Payload
 );
-const getSelectedId = createSelector(
+
+const getLoggedIn = createSelector(
   getAuthState,
-  (state: AuthState) => state.selectedId
-);
-const getSelectedAuth = createSelector(
-  getAllAuth,
-  getSelectedId,
-  (auth, id) => {
-    const result = auth.find(it => it['id'] === id);
-    return result ? Object.assign({}, result) : undefined;
-  }
+  (state: AuthState) => state.loggedIn
 );
 
 export const authQuery = {
   getLoaded,
-  getError,
-  getAllAuth,
-  getSelectedAuth
+  getMainCharacter,
+  getLoggedIn
 };
