@@ -29,6 +29,7 @@ import { PipesModule } from './pipes/pipes.module';
 import { authReducer, initialState as authInitialState } from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
 import { AuthFacade } from './+state/auth.facade';
+import { XivapiClientModule } from '@xivapi/angular-client';
 
 registerLocaleData(en);
 
@@ -64,6 +65,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+
+    XivapiClientModule.forRoot('63cc0045d7e847149c3f'),
 
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
 
