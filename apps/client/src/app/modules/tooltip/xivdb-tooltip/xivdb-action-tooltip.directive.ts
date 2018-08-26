@@ -35,8 +35,8 @@ export class XivdbActionTooltipDirective implements OnDestroy {
     // Position the tooltip at the top right of the anchor.
     const positionStrategy = this._overlay
       .position()
-      .connectedTo(this._elementRef, { originX: 'end', originY: 'top' }, { overlayX: 'start', overlayY: 'bottom' })
-      .withFallbackPosition({ originX: 'end', originY: 'bottom' }, { overlayX: 'start', overlayY: 'top' });
+      .flexibleConnectedTo(this._elementRef)
+      .withPositions([{ originX: 'end', originY: 'bottom' , overlayX: 'start', overlayY: 'top' }]);
 
     // Create the overlay that will contain the tooltip.
     this._overlayRef = this._overlay.create({

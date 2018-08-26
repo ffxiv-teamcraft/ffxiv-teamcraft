@@ -44,7 +44,7 @@
     "standard-version:dry": "standard-version --dry-run",
     "release:prod": "git push --follow-tags origin master",
     "release:beta": "npm run standard-version -- --prerelease beta && git push --follow-tags origin beta",
-    "test": "node ./tools/build/prebuild.js && ng test --watch=false --code-coverage",
+    "test": "node ./tools/build/prebuild.js && ng test --project=client --watch=false --code-coverage",
     "codecov": "cat coverage/lcov.info | codecov",
     "lint": "ng lint && jsonlint-cli ./src/assets/i18n/*.json",
     "e2e": "ng e2e",
@@ -129,11 +129,11 @@
     "web-animations-js": "^2.3.1"
   },
   "devDependencies": {
-    "@angular/cli": "6.1.2",
+    "@angular/cli": "6.1.5",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@angular-devkit/build-angular": "~0.7.0",
-    "@ngrx/store-devtools": "6.0.1",
+    "@ngrx/store-devtools": "6.1.0",
     "ngrx-store-freeze": "0.2.4",
     "@nrwl/schematics": "6.2.1",
     "jasmine-marbles": "0.3.1",

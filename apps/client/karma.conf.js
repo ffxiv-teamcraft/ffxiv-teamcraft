@@ -8,6 +8,7 @@ module.exports = function(config) {
   const baseConfig = getBaseKarmaConfig();
   config.set({
     ...baseConfig,
+    logLevel: config.LOG_INFO,
     coverageIstanbulReporter: {
       ...baseConfig.coverageIstanbulReporter,
       dir: join(__dirname, '../../coverage/apps/client')

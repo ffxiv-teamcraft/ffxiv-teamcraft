@@ -151,8 +151,8 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
    */
   public changeEmail(currentMail: string, password: string, newMail: string): Promise<void> {
     return this.af.auth.signInWithEmailAndPassword(currentMail, password).then(user => {
-      user.updateEmail(newMail)
-        .then(() => user.sendEmailVerification());
+      user.user.updateEmail(newMail)
+        .then(() => user.user.sendEmailVerification());
     });
   }
 

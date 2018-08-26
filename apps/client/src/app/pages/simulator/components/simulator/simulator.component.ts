@@ -54,6 +54,58 @@ import { Buff } from '../../model/buff.enum';
 export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
+  public set recipe(recipe: Craft) {
+    this.recipe$.next(recipe);
+  }
+
+  @Input()
+  public set crafterStats(stats: CrafterStats) {
+    this.crafterStats$.next(stats);
+  }
+
+  @Input()
+  public set actions(actions: CraftingAction[]) {
+    this.actions$.next(actions);
+  }
+
+  @Input()
+  public set hqIngredients(ingredients: { id: number, amount: number }[]) {
+    this.hqIngredients$.next(ingredients);
+  }
+
+  @Input()
+  public set inputGearSet(set: GearSet) {
+    if (set !== undefined) {
+      this.selectedSet = set;
+      // Custom mode assumes you have everything.
+      this.applyStats(set, this.levels, false);
+    }
+  }
+
+  public _selectedFood: Consumable;
+
+  @Input()
+  public set selectedFood(food: Consumable) {
+    this._selectedFood = food;
+    this.applyStats(this.selectedSet, this.levels, false);
+  }
+
+  public _selectedFreeCompanyActions: FreeCompanyAction[];
+
+  @Input()
+  public set selectedFreeCompanyActions(actions: FreeCompanyAction[]) {
+    this._selectedFreeCompanyActions = actions;
+    this.applyStats(this.selectedSet, this.levels, false);
+  }
+
+  public _selectedMedicine: Consumable;
+
+  @Input()
+  public set selectedMedicine(medicine: Consumable) {
+    this._selectedMedicine = medicine;
+    this.applyStats(this.selectedSet, this.levels, false);
+  }
+  @Input()
   itemId: number;
   @Input()
   itemIcon: number;
@@ -265,17 +317,19 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         map(([recipe, actions, stats, hqIngredients]) => new Simulation(recipe, actions, stats, hqIngredients))
       );
 
-    this.result$ = combineLatest(this.snapshotStep$, this.simulation$, (step, simulation) => {
-      simulation.reset();
-      if (this.snapshotMode) {
-        return simulation.run(true, step);
-      }
-      return simulation.run(true);
-    }).pipe(
-      tap(result => {
-        this.actionFailed = result.steps.find(step => !step.success) !== undefined;
-      })
-    );
+    this.result$ = combineLatest(this.snapshotStep$, this.simulation$)
+      .pipe(
+        map(([step, simulation]) => {
+          simulation.reset();
+          if (this.snapshotMode) {
+            return simulation.run(true, step);
+          }
+          return simulation.run(true);
+        }),
+        tap(result => {
+          this.actionFailed = result.steps.find(step => !step.success) !== undefined;
+        })
+      );
 
     this.report$ = this.result$
       .pipe(
@@ -284,59 +338,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         mergeMap(() => this.simulation$),
         map(simulation => simulation.getReliabilityReport())
       );
-  }
-
-  @Input()
-  public set recipe(recipe: Craft) {
-    this.recipe$.next(recipe);
-  }
-
-  @Input()
-  public set crafterStats(stats: CrafterStats) {
-    this.crafterStats$.next(stats);
-  }
-
-  @Input()
-  public set actions(actions: CraftingAction[]) {
-    this.actions$.next(actions);
-  }
-
-  @Input()
-  public set hqIngredients(ingredients: { id: number, amount: number }[]) {
-    this.hqIngredients$.next(ingredients);
-  }
-
-  @Input()
-  public set inputGearSet(set: GearSet) {
-    if (set !== undefined) {
-      this.selectedSet = set;
-      // Custom mode assumes you have everything.
-      this.applyStats(set, this.levels, false);
-    }
-  }
-
-  public _selectedFood: Consumable;
-
-  @Input()
-  public set selectedFood(food: Consumable) {
-    this._selectedFood = food;
-    this.applyStats(this.selectedSet, this.levels, false);
-  }
-
-  public _selectedFreeCompanyActions: FreeCompanyAction[];
-
-  @Input()
-  public set selectedFreeCompanyActions(actions: FreeCompanyAction[]) {
-    this._selectedFreeCompanyActions = actions;
-    this.applyStats(this.selectedSet, this.levels, false);
-  }
-
-  public _selectedMedicine: Consumable;
-
-  @Input()
-  public set selectedMedicine(medicine: Consumable) {
-    this._selectedMedicine = medicine;
-    this.applyStats(this.selectedSet, this.levels, false);
   }
 
   useRotation(rotation: CraftingRotation): void {

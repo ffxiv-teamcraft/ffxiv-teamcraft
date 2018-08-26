@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TooltipComponent } from './tooltip.component';
 import { TooltipDataService } from './tooltip-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -14,8 +13,8 @@ import { XivdbActionTooltipDirective } from './xivdb-tooltip/xivdb-action-toolti
     HttpClientModule,
     OverlayModule
   ],
-  declarations: [TooltipComponent, XivdbTooltipComponent, XivdbTooltipDirective, XivdbActionTooltipDirective],
-  exports: [TooltipComponent, XivdbTooltipDirective, XivdbActionTooltipDirective],
+  declarations: [XivdbTooltipComponent, XivdbTooltipDirective, XivdbActionTooltipDirective],
+  exports: [XivdbTooltipDirective, XivdbActionTooltipDirective],
   entryComponents: [XivdbTooltipComponent],
   providers: [TooltipDataService]
 })

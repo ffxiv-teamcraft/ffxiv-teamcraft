@@ -110,18 +110,20 @@ export class SimulatorPageComponent {
           filter(rotation => rotation !== undefined),
           mergeMap(id => this.rotationsService.get(id).pipe(distinctUntilChanged())),
           map(res => res))
-      ,
-      (userId, rotation) => ({ userId: userId, rotation: rotation })
-    ).subscribe((res) => {
-      this.notFound = false;
-      this.actions = this.registry.deserializeRotation(res.rotation.rotation);
-      this.canSave = res.userId === res.rotation.authorId;
-      this.authorId = res.rotation.authorId;
-      this.selectedFood = res.rotation.consumables.food;
-      this.selectedMedicine = res.rotation.consumables.medicine;
-      this.selectedFreeCompanyActions = res.rotation.freeCompanyActions;
-      this.rotation = res.rotation;
-    }, () => this.notFound = true);
+    )
+      .pipe(
+        map(([userId, rotation]) => ({ userId: userId, rotation: rotation }))
+      )
+      .subscribe((res) => {
+        this.notFound = false;
+        this.actions = this.registry.deserializeRotation(res.rotation.rotation);
+        this.canSave = res.userId === res.rotation.authorId;
+        this.authorId = res.rotation.authorId;
+        this.selectedFood = res.rotation.consumables.food;
+        this.selectedMedicine = res.rotation.consumables.medicine;
+        this.selectedFreeCompanyActions = res.rotation.freeCompanyActions;
+        this.rotation = res.rotation;
+      }, () => this.notFound = true);
   }
 
   save(rotation: Partial<CraftingRotation>): void {

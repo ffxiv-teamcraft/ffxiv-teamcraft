@@ -29,7 +29,7 @@ export class ScrollService {
       const toolbar = this.document.querySelector('.app-toolbar');
       this._topOffset = (toolbar && toolbar.clientHeight || 0) + topMargin;
     }
-    return this._topOffset!;
+    return this._topOffset;
   }
 
   private _topOfPageElement: Element;
