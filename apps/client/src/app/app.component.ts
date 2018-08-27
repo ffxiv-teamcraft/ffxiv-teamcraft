@@ -12,6 +12,8 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
+import { NzModalService } from 'ng-zorro-antd';
+import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 
 declare const ga: Function;
 
@@ -46,7 +48,7 @@ export class AppComponent implements OnInit {
 
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private dialog: NzModalService) {
 
     // Loading is !loaded
     this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
@@ -97,6 +99,14 @@ export class AppComponent implements OnInit {
       ga('set', 'page', event.url);
       ga('send', 'pageview');
     });
+  }
+
+  openRegisterPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Registration'),
+      nzContent: RegisterPopupComponent,
+      nzFooter: null
+    })
   }
 
   use(lang: string): void {

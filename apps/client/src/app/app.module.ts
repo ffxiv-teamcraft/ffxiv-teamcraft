@@ -30,6 +30,7 @@ import { authReducer, initialState as authInitialState } from './+state/auth.red
 import { AuthEffects } from './+state/auth.effects';
 import { AuthFacade } from './+state/auth.facade';
 import { XivapiClientModule } from '@xivapi/angular-client';
+import { AuthModule } from './core/auth/auth.module';
 
 registerLocaleData(en);
 
@@ -71,6 +72,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
 
     AppRoutingModule,
+    AuthModule,
 
     HttpClientModule,
 

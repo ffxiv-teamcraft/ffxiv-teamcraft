@@ -55,7 +55,7 @@
               <i class="anticon anticon-logout"></i>
               {{'Disconnect' | translate}}
             </li>
-            <li nz-menu-item *ngIf="!(loggedIn$ | async)">
+            <li nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openRegisterPopup()">
               <i class="anticon anticon-form"></i>
               {{'Registration' | translate}}
             </li>
