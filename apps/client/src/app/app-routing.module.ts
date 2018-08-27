@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {
+    path: 'lists',
+    loadChildren: './pages/lists/lists.module#ListsModule'
+  }
 ];
 
 @NgModule({
