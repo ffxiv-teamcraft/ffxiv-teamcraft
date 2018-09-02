@@ -16,19 +16,18 @@
         <li nz-submenu>
           <span title>
             <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
-              <ng-template #authDetails>
-                <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
-                  <nz-avatar [nzText]="'A'">
-                  </nz-avatar>
-                  {{'COMMON.Anonymous' | translate}}
-                </span>
-                <ng-template #userLoggedIn>
-                <nz-avatar *ngIf="loggedIn$ | async" [nzText]="(character$ | async)?.Name[0]">
-                    <!--TODO user avatar instead of just first letter-->
+            <ng-template #authDetails>
+              <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
+                <nz-avatar [nzText]="'A'">
                 </nz-avatar>
-                {{(character$ | async)?.Name | ifMobile:''}}
-                </ng-template>
+                {{'COMMON.Anonymous' | translate}}
+              </span>
+              <ng-template #userLoggedIn>
+              <nz-avatar *ngIf="loggedIn$ | async" [nzSrc]="(character$ | async)?.Avatar">
+              </nz-avatar>
+              {{(character$ | async)?.Name | ifMobile:''}}
               </ng-template>
+            </ng-template>
           </span>
           <ul>
             <li nz-menu-item *ngIf="loggedIn$ | async">
@@ -51,7 +50,7 @@
               </span>
             </li>
             <li nz-menu-divider></li>
-            <li nz-menu-item *ngIf="loggedIn$ | async">
+            <li nz-menu-item *ngIf="loggedIn$ | async" (click)="logOut()">
               <i class="anticon anticon-logout"></i>
               {{'Disconnect' | translate}}
             </li>

@@ -105,7 +105,7 @@
     "@nrwl/nx": "6.2.1",
     "@types/jwt-decode": "^2.2.1",
     "@types/semver": "^5.4.0",
-    "@xivapi/angular-client": "^0.4.1",
+    "@xivapi/angular-client": "^0.5.2",
     "angularfire2": "5.0.0-rc.8",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",

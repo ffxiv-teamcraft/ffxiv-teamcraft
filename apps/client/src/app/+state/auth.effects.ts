@@ -2,11 +2,27 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import { map, mergeMap } from 'rxjs/operators';
-import { from } from 'rxjs';
+import { catchError, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
+import { combineLatest, from, of } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UserService } from '../core/database/user.service';
-import { AuthActionTypes, Authenticated, LoggedInAsAnonymous, LoginAsAnonymous, UserFetched } from './auth.actions';
+import {
+  AddCharacter,
+  AuthActionTypes,
+  Authenticated, CharactersLoaded,
+  LinkingCharacter,
+  LoggedInAsAnonymous,
+  LoginAsAnonymous,
+  NoLinkedCharacter,
+  SetDefaultCharacter,
+  UserFetched, UserPersisted
+} from './auth.actions';
+import { Store } from '@ngrx/store';
+import { TeamcraftUser } from '../model/user/teamcraft-user';
+import { NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
+import { XivapiService } from '@xivapi/angular-client';
 
 @Injectable()
 export class AuthEffects {
@@ -41,9 +57,66 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     mergeMap((action: Authenticated) => this.userService.get(action.payload.uid)),
+    catchError(() => of(new TeamcraftUser())),
     map(user => new UserFetched(user))
   );
 
-  constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService) {
+  @Effect()
+  watchNoLinkedCharacter$ = this.actions$.pipe(
+    // Avoid recursion
+    filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
+    withLatestFrom(this.store),
+    filter(([action, state]) => state.auth.loggedIn && state.auth.user !== null),
+    filter(([action, state]) => state.auth.user.lodestoneIds.length === 0 && state.auth.user.defaultLodestoneId === undefined),
+    map(() => new NoLinkedCharacter())
+  );
+
+  @Effect()
+  openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
+    ofType(AuthActionTypes.NoLinkedCharacter),
+    tap(() => this.dialog.create({
+      nzTitle: this.translate.instant('Character_informations'),
+      nzContent: CharacterLinkPopupComponent,
+      nzFooter: null,
+      nzMaskClosable: false,
+      nzClosable: false
+    })),
+    map(() => new LinkingCharacter())
+  );
+
+  @Effect()
+  setAsDefaultCharacter$ = this.actions$.pipe(
+    ofType(AuthActionTypes.AddCharacter),
+    filter((action: AddCharacter) => action.setAsDefault),
+    map((action: AddCharacter) => new SetDefaultCharacter(action.lodestoneId))
+  );
+
+  @Effect()
+  updateCharactersList$ = this.actions$.pipe(
+    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
+    withLatestFrom(this.store),
+    mergeMap(([, state]) => {
+      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => state.auth.characters.find(char => char.Character.ID === lodestoneId) === undefined);
+      const getMissingCharacters$ = missingCharacters.map(lodestoneId => this.xivapi.getCharacter(lodestoneId));
+      return combineLatest(...getMissingCharacters$)
+        .pipe(
+          map(characters => new CharactersLoaded(characters))
+        )
+    })
+  );
+
+  @Effect()
+  saveUserOnEdition$ = this.actions$.pipe(
+    ofType(AuthActionTypes.AddCharacter,  AuthActionTypes.SetDefaultCharacter),
+    withLatestFrom(this.store),
+    mergeMap(([, state]) => {
+      return this.userService.set(state.auth.uid, {...state.auth.user});
+    }),
+    map(() => new UserPersisted())
+  );
+
+  constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
+              private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
+              private translate: TranslateService, private xivapi: XivapiService) {
   }
 }

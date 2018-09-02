@@ -4,7 +4,10 @@ import { Store } from '@ngrx/store';
 
 import { AuthState } from './auth.reducer';
 import { authQuery } from './auth.selectors';
-import { GetUser } from './auth.actions';
+import { GetUser, Logout } from './auth.actions';
+import { auth } from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { UserCredential } from '@firebase/auth-types';
 
 @Injectable()
 export class AuthFacade {
@@ -12,11 +15,24 @@ export class AuthFacade {
   mainCharacter$ = this.store.select(authQuery.getMainCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
 
-  constructor(private store: Store<{ auth: AuthState }>) {
+  constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth) {
     this.load();
   }
 
   load() {
     this.store.dispatch(new GetUser());
+  }
+
+  public googleOauth(): Promise<UserCredential> {
+    return this.af.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  public facebookOauth(): Promise<UserCredential> {
+    return this.af.auth.signInWithPopup(new auth.FacebookAuthProvider());
+  }
+
+  public logout(): void {
+    this.af.auth.signOut();
+    this.store.dispatch(new Logout());
   }
 }

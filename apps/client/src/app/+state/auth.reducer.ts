@@ -13,7 +13,6 @@ import { AuthActions, AuthActionTypes } from './auth.actions';
 /* tslint:disable:no-empty-interface */
 export interface AuthState {
   uid: string;
-  displayName: string;
   loggedIn: boolean;
   user: TeamcraftUser | null; // TODO
   characters: CharacterResponse[]; // TODO
@@ -22,7 +21,6 @@ export interface AuthState {
 
 export const initialState: AuthState = {
   uid: null,
-  displayName: 'Anonymous',
   user: null,
   characters: [],
   loggedIn: false,
@@ -35,11 +33,23 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     case AuthActionTypes.GetUser:
       return { ...state, loading: true };
 
+    case AuthActionTypes.UserFetched:
+      return { ...state, user: action.user };
+
+    case AuthActionTypes.AddCharacter:
+      return { ...state, user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), action.lodestoneId] } };
+
+    case AuthActionTypes.SetDefaultCharacter:
+      return { ...state, user: { ...state.user, defaultLodestoneId: action.lodestoneId } };
+
+    case AuthActionTypes.CharactersLoaded:
+      return {...state, characters: [...state.characters, ...action.characters], loading: false};
+
     case AuthActionTypes.Authenticated:
       return { ...state, ...action.payload, loading: false, loggedIn: true };
 
     case AuthActionTypes.LoggedInAsAnonymous:
-      return { ...state, uid: action.uid, displayName: 'Anonymous', loggedIn: false, loading: false };
+      return { ...state, uid: action.uid, loggedIn: false, loading: false };
 
     case AuthActionTypes.GoogleLogin:
       return { ...state, loading: true };

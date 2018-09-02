@@ -5,6 +5,7 @@
     "Item_name": "Item name",
     "Only_recipes": "Only recipes"
   },
+  "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
   "Delete": "Delete",
   "Timers": "Timers",
@@ -61,7 +62,9 @@
     "Total": "Total",
     "User_id": "User ID",
     "Open_url": "Open Teamcraft link",
-    "Open_url_placeholder": "Teamcraft link"
+    "Open_url_placeholder": "Teamcraft link",
+    "Select": "Select",
+    "Anonymous": "Anonymous"
   },
   "ALARMS": {
     "No_alarm": "No alarms set",

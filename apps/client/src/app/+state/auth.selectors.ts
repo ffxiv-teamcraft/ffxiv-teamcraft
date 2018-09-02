@@ -11,7 +11,10 @@ const getLoaded = createSelector(
 
 const getMainCharacter = createSelector(
   getAuthState,
-  (state: AuthState) => state.characters.find(char => char.Payload.ID === state.user.defaultLodestoneId).Payload
+  (state: AuthState) => {
+    const character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
+    return character ? character.Character : null;
+  }
 );
 
 const getLoggedIn = createSelector(

@@ -14,6 +14,8 @@ import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
+import { Logout } from './+state/auth.actions';
+import { Store } from '@ngrx/store';
 
 declare const ga: Function;
 
@@ -48,7 +50,7 @@ export class AppComponent implements OnInit {
 
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private authFacade: AuthFacade, private dialog: NzModalService) {
+              private authFacade: AuthFacade, private dialog: NzModalService, private store: Store<any>) {
 
     // Loading is !loaded
     this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
@@ -106,7 +108,11 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Registration'),
       nzContent: RegisterPopupComponent,
       nzFooter: null
-    })
+    });
+  }
+
+  logOut():void{
+    this.store.dispatch(new Logout());
   }
 
   use(lang: string): void {

@@ -99,11 +99,11 @@
 @outline-width: 2px;
 @outline-color: @primary-color;
 
-@background-color-light: hsv(0, 0, 98%); // background of header and selected item
-@background-color-base: hsv(0, 0, 96%); // Default grey background color
+@background-color-light: fade(#fff, 50%); // background of header and selected item
+@background-color-base: fade(#fff, 25%); // Default grey background color
 
 // Disabled states
-@disabled-color: fade(#000, 25%);
+@disabled-color: fade(#fff, 35%);
 @disabled-bg: @background-color-base;
 @disabled-color-dark: fade(#fff, 35%);
 
@@ -271,7 +271,7 @@
 //* Tooltip max width
 @tooltip-max-width: 250px;
 //** Tooltip text color
-@tooltip-color: @component-background;
+@tooltip-color: #fff;
 //** Tooltip background color
 @tooltip-bg: rgba(0, 0, 0, .75);
 //** Tooltip arrow width

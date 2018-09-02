@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
+import { CharacterResponse } from '@xivapi/angular-client';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -15,6 +16,15 @@ export enum AuthActionTypes {
   FacebookLogin = '[Auth] Facebook Login attempt',
   ClassicLogin = '[Auth] Classic Login attempt',
   Logout = '[Auth] Logout',
+
+  RegistrationDone = '[Auth] Registration done',
+
+  NoLinkedCharacter = '[Auth] No linked character',
+  LinkingCharacter = '[Auth] Linking character',
+  AddCharacter = '[Auth] Add character',
+  SetDefaultCharacter = '[Auth] Set default character',
+  CharactersLoaded = '[Auth] Characters loaded',
+  UserPersisted = '[Auth] User persisted',
 
   AuthError = '[Auth] Error',
 }
@@ -90,9 +100,46 @@ export class ClassicLogin implements Action {
 
 export class Logout implements Action {
   readonly type = AuthActionTypes.Logout;
+}
 
-  constructor(public payload?: any) {
+// Registration Actions
+export class RegistrationDone implements Action {
+  readonly type = AuthActionTypes.RegistrationDone;
+}
+
+// Character-related actions
+export class NoLinkedCharacter implements Action {
+  readonly type = AuthActionTypes.NoLinkedCharacter;
+}
+
+export class LinkingCharacter implements Action {
+  readonly type = AuthActionTypes.LinkingCharacter;
+}
+
+export class AddCharacter implements Action {
+  readonly type = AuthActionTypes.AddCharacter;
+
+  constructor(public readonly lodestoneId: number, public readonly setAsDefault = false) {
   }
+}
+
+export class SetDefaultCharacter implements Action {
+  readonly type = AuthActionTypes.SetDefaultCharacter;
+
+  constructor(public readonly lodestoneId: number) {
+  }
+}
+
+export class CharactersLoaded implements Action {
+  readonly type = AuthActionTypes.CharactersLoaded;
+
+  constructor(public readonly characters: CharacterResponse[]) {
+  }
+}
+
+// Just an action to be sent once user is persisted properly
+export class UserPersisted implements Action {
+  readonly type = AuthActionTypes.UserPersisted;
 }
 
 
@@ -105,7 +152,13 @@ export type AuthActions = GetUser
   | FacebookLogin
   | ClassicLogin
   | AuthError
-  | Logout;
+  | Logout
+  | RegistrationDone
+  | LinkingCharacter
+  | AddCharacter
+  | SetDefaultCharacter
+  | CharactersLoaded
+  | UserPersisted;
 
 export const fromAuthActions = {
   GetUser,
@@ -117,5 +170,11 @@ export const fromAuthActions = {
   FacebookLogin,
   ClassicLogin,
   AuthError,
-  Logout
+  Logout,
+  RegistrationDone,
+  LinkingCharacter,
+  AddCharacter,
+  SetDefaultCharacter,
+  CharactersLoaded,
+  UserPersisted
 };
