@@ -26,6 +26,8 @@ export enum AuthActionTypes {
   CharactersLoaded = '[Auth] Characters loaded',
   UserPersisted = '[Auth] User persisted',
 
+  AnonymousWarningShown = '[Auth] Anonyous warning shown',
+
   AuthError = '[Auth] Error',
 }
 
@@ -142,6 +144,11 @@ export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
 }
 
+// Just an action to be sent once anonymous warning has been shown
+export class AnonymousWarningShown implements Action {
+  readonly type = AuthActionTypes.AnonymousWarningShown;
+}
+
 
 export type AuthActions = GetUser
   | Authenticated
@@ -158,7 +165,8 @@ export type AuthActions = GetUser
   | AddCharacter
   | SetDefaultCharacter
   | CharactersLoaded
-  | UserPersisted;
+  | UserPersisted
+  | AnonymousWarningShown;
 
 export const fromAuthActions = {
   GetUser,
@@ -176,5 +184,6 @@ export const fromAuthActions = {
   AddCharacter,
   SetDefaultCharacter,
   CharactersLoaded,
-  UserPersisted
+  UserPersisted,
+  AnonymousWarningShown
 };

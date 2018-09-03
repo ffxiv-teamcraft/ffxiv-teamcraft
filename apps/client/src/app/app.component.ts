@@ -25,7 +25,7 @@ declare const ga: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
 
@@ -131,9 +131,6 @@ export class AppComponent implements OnInit {
     this.locale = lang;
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
-  }
-
-  ngOnInit(): void {
   }
 
   /**

@@ -8,18 +8,21 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
+  AnonymousWarningShown,
   AuthActionTypes,
-  Authenticated, CharactersLoaded,
+  Authenticated,
+  CharactersLoaded,
   LinkingCharacter,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
   NoLinkedCharacter,
   SetDefaultCharacter,
-  UserFetched, UserPersisted
+  UserFetched,
+  UserPersisted
 } from './auth.actions';
 import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { XivapiService } from '@xivapi/angular-client';
@@ -101,22 +104,32 @@ export class AuthEffects {
       return combineLatest(...getMissingCharacters$)
         .pipe(
           map(characters => new CharactersLoaded(characters))
-        )
+        );
     })
   );
 
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter,  AuthActionTypes.SetDefaultCharacter),
+    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      return this.userService.set(state.auth.uid, {...state.auth.user});
+      return this.userService.set(state.auth.uid, { ...state.auth.user });
     }),
     map(() => new UserPersisted())
   );
 
+  @Effect()
+  warningOnAnonymousAccount$ = this.actions$.pipe(
+    ofType(AuthActionTypes.LoggedInAsAnonymous),
+    tap(() => this.notificationService.warning(
+      this.translate.instant('COMMON.Warning'),
+      this.translate.instant('Anonymous_Warning'))),
+    map(() => new AnonymousWarningShown())
+  );
+
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
-              private translate: TranslateService, private xivapi: XivapiService) {
+              private translate: TranslateService, private xivapi: XivapiService,
+              private notificationService: NzNotificationService) {
   }
 }

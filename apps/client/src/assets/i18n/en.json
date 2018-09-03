@@ -70,7 +70,8 @@
     "Open_url": "Open Teamcraft link",
     "Open_url_placeholder": "Teamcraft link",
     "Select": "Select",
-    "Anonymous": "Anonymous"
+    "Anonymous": "Anonymous",
+    "Warning": "Warning"
   },
   "ALARMS": {
     "No_alarm": "No alarms set",

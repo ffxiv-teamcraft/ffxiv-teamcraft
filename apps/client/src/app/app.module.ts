@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { en_US, NgZorroAntdModule, NZ_I18N } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_I18N, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { CoreModule } from './core/core.module';
@@ -44,7 +44,20 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
-    AuthFacade
+    AuthFacade,
+
+    {
+      provide: NZ_MESSAGE_CONFIG,
+      useValue: {
+        nzDuration: 10000,
+        nzMaxStack: 8,
+        nzPauseOnHover: true,
+        nzAnimate: true,
+        nzTop: '92px',
+        nzBottom: '24px',
+        nzPlacement: 'topRight'
+      }
+    }
   ],
   imports: [
     FlexLayoutModule,
