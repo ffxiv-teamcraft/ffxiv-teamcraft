@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-popup',
   templateUrl: './register-popup.component.html',
   styleUrls: ['./register-popup.component.less']
 })
-export class RegisterPopupComponent implements OnInit {
+export class RegisterPopupComponent {
 
   form: FormGroup;
 
+  errorMessageCode: string;
+
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef) {
+              private modalRef: NzModalRef, private messageService: NzMessageService,
+              private translate: TranslateService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -34,22 +38,36 @@ export class RegisterPopupComponent implements OnInit {
   }
 
   public submit(): void {
-    // TODO classic registration.
+    delete this.errorMessageCode;
+    this.authFacade.register(this.form.value.email, this.form.value.password)
+      .then(() => {
+        this.modalRef.close();
+        this.messageService.info(this.translate.instant('Verification_mail_sent'), {
+          nzDuration: 5000,
+          nzPauseOnHover: true,
+          nzAnimate: true
+        });
+      }).catch(err => this.onError(err));
+  }
+
+  private onError(error: any): void {
+    this.errorMessageCode = error.code;
   }
 
   public googleOauth(): void {
-    this.authFacade.googleOauth().then(() => {
-      this.modalRef.close();
-    });
+    delete this.errorMessageCode;
+    this.authFacade.googleOauth()
+      .then(() => {
+        this.modalRef.close();
+      });
   }
 
   public facebookOauth(): void {
-    this.authFacade.facebookOauth().then(() => {
-      this.modalRef.close();
-    });
-  }
-
-  ngOnInit() {
+    delete this.errorMessageCode;
+    this.authFacade.facebookOauth()
+      .then(() => {
+        this.modalRef.close();
+      });
   }
 
 }

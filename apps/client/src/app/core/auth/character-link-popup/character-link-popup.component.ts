@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
+import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
-import { CharacterSearchResultRow } from '@xivapi/angular-client/public_api';
 import { Store } from '@ngrx/store';
 import { AddCharacter } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd';

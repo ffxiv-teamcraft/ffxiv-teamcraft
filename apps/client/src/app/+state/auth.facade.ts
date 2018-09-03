@@ -16,11 +16,15 @@ export class AuthFacade {
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth) {
-    this.load();
+    this.store.dispatch(new GetUser());
   }
 
-  load() {
-    this.store.dispatch(new GetUser());
+  public login(email: string, password: string): Promise<UserCredential> {
+    return this.af.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  public register(email: string, password: string): Promise<any> {
+    return this.af.auth.createUserWithEmailAndPassword(email, password);
   }
 
   public googleOauth(): Promise<UserCredential> {

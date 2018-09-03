@@ -12,6 +12,8 @@ export class LoginPopupComponent {
 
   form: FormGroup;
 
+  errorMessageCode: string;
+
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef) {
     this.form = this.fb.group({
@@ -21,16 +23,27 @@ export class LoginPopupComponent {
   }
 
   login(): void {
-    // TODO classic login
+    delete this.errorMessageCode;
+    this.authFacade.login(this.form.value.email, this.form.value.password)
+      .then(() => {
+        this.modalRef.close();
+      })
+      .catch(err => this.onError(err));
+  }
+
+  private onError(error: any): void {
+    this.errorMessageCode = error.code;
   }
 
   public googleOauth(): void {
+    delete this.errorMessageCode;
     this.authFacade.googleOauth().then(() => {
       this.modalRef.close();
     });
   }
 
   public facebookOauth(): void {
+    delete this.errorMessageCode;
     this.authFacade.facebookOauth().then(() => {
       this.modalRef.close();
     });
