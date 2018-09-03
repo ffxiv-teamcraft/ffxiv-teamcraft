@@ -46,7 +46,7 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return {...state, characters: [...state.characters, ...action.characters], loading: false};
 
     case AuthActionTypes.Authenticated:
-      return { ...state, ...action.payload, loading: false, loggedIn: true };
+      return { ...state, ...action.payload, loading: true, loggedIn: true };
 
     case AuthActionTypes.LoggedInAsAnonymous:
       return { ...state, uid: action.uid, loggedIn: false, loading: false };

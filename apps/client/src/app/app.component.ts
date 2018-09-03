@@ -16,6 +16,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { Logout } from './+state/auth.actions';
 import { Store } from '@ngrx/store';
+import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 
 declare const ga: Function;
 
@@ -107,6 +108,14 @@ export class AppComponent implements OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant('Registration'),
       nzContent: RegisterPopupComponent,
+      nzFooter: null
+    });
+  }
+
+  openLoginPopup():void{
+    this.dialog.create({
+      nzTitle: this.translate.instant('Login'),
+      nzContent: LoginPopupComponent,
       nzFooter: null
     });
   }

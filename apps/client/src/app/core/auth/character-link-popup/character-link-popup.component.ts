@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character, CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
+import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
@@ -37,8 +37,8 @@ export class CharacterLinkPopupComponent {
     this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)
       .pipe(
         map(([servers, inputValue]) => {
-          return servers.filter(server => server.indexOf(inputValue) > -1)
-        }),
+          return servers.filter(server => server.indexOf(inputValue) > -1);
+        })
       );
 
     this.result$ = combineLatest(this.selectedServer.valueChanges, this.characterName.valueChanges)
@@ -48,7 +48,7 @@ export class CharacterLinkPopupComponent {
         mergeMap(([selectedServer, characterName]) => {
           return this.xivapi.searchCharacter(characterName, selectedServer);
         }),
-        map((result: CharacterSearchResult) => result.Characters || []),
+        map((result: CharacterSearchResult) => result.Results || []),
         tap(() => this.loadingResults = false),
         startWith([])
       );

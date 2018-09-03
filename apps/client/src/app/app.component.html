@@ -58,7 +58,7 @@
               <i class="anticon anticon-form"></i>
               {{'Registration' | translate}}
             </li>
-            <li nz-menu-item *ngIf="!(loggedIn$ | async)">
+            <li nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openLoginPopup()">
               <i class="anticon anticon-login"></i>
               {{'Login' | translate}}
             </li>

@@ -1,3 +1,24 @@
-<p>
-  login-popup works!
-</p>
+<form nz-form (ngSubmit)="login()" [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">{{'Email_enter' | translate}}</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input type="email" formControlName="email" id="email" nz-input>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="password">{{'Password' | translate}}</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input type="password" formControlName="password" id="password" nz-input>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary" [disabled]="!form.valid">{{'Submit' | translate}}</button>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-divider [nzText]="'Or' | translate"></nz-divider>
+  <div class="oauth-buttons">
+    <button nz-button nzType="primary" (click)="googleOauth()">{{'Google_login' | translate}}</button>
+    <button nz-button nzType="primary" (click)="facebookOauth()">{{'Facebook_login' | translate}}</button>
+  </div>
+</form>
