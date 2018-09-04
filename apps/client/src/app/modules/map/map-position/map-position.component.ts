@@ -6,7 +6,7 @@ import { Vector2 } from '../../../core/tools/vector2';
 @Component({
   selector: 'app-map-position',
   templateUrl: './map-position.component.html',
-  styleUrls: ['./map-position.component.scss']
+  styleUrls: ['./map-position.component.less']
 })
 export class MapPositionComponent {
 

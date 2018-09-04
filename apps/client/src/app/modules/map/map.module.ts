@@ -8,6 +8,7 @@ import { MapPositionComponent } from './map-position/map-position.component';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { MapComponent } from './map/map.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { MapComponent } from './map/map.component';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+
+    NgZorroAntdModule,
+
     PipesModule,
     CoreModule
   ],

@@ -1,12 +1,12 @@
 <div class="map-container" *ngIf="mapData | async as map">
   <img src="{{map.image}}" alt="" class="map-image">
-  <mat-icon
+  <i
     *ngFor="let marker of markers"
-    class="marker"
-    [ngStyle]="getPosition(map, marker)">
+    class="marker material-icons"
+    [ngStyle]="getMarkerPosition(map, marker)">
     location_on
-  </mat-icon>
+  </i>
   <img *ngFor="let aetheryte of map.aetherytes" [src]="getIcon(aetheryte.type)"
-       alt="" class="aetheryte" [ngStyle]="getPosition(map, aetheryte, {x:-2,y:-2})"
-       matTooltip="{{aetheryte.nameid | placeName | i18n}}" matTooltipPosition="above">
+       alt="" class="aetheryte" [ngStyle]="getMarkerPosition(map, aetheryte, {x:-2,y:-2})"
+       nz-tooltip nzTitle="{{aetheryte.nameid | placeName | i18n}}">
 </div>

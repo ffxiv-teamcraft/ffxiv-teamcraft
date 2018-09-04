@@ -1,1 +1,24 @@
-Work in progress
+<div class="search-box">
+  <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
+    <input class="search-input" type="text" placeholder="{{'ITEMS.Item_name' | translate}}" nz-input>
+  </nz-input-group>
+  <ng-template #addOnAfterTemplate>
+    <label nz-checkbox>{{'ITEMS.Only_recipes' | translate}}</label>
+  </ng-template>
+</div>
+<div class="filters">
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'Filters' | translate">
+      <form nz-form>
+        <nz-form-item>
+          <nz-form-label>
+            Work in Progress
+          </nz-form-label>
+        </nz-form-item>
+      </form>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
+<div>
+  <!-- TODO show only when no search done -->
+</div>

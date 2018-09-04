@@ -35,6 +35,8 @@ import { PendingChangesService } from './database/pending-changes/pending-change
 import { IpcService } from './electron/ipc.service';
 import { PlatformService } from './tools/platform.service';
 import { TradeSourcesExtractor } from './list/data/extractor/trade-sources-extractor';
+import { MathToolsService } from './tools/math-tools';
+import { I18nToolsService } from './tools/i18n-tools.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -78,7 +80,11 @@ export const DATA_EXTRACTORS: Provider[] = [
     PendingChangesService,
     GarlandToolsService,
     IpcService,
-    PlatformService
+    PlatformService,
+    DataService,
+    MathToolsService,
+    LocalizedDataService,
+    I18nToolsService
   ],
   declarations: [
     I18nPipe

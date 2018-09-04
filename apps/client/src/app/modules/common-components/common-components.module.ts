@@ -26,7 +26,6 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { RouterModule } from '@angular/router';
 import { SettingsModule } from '../../pages/settings/settings.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
-import { CharacterAddPopupComponent } from './character-add-popup/character-add-popup.component';
 import { ConfirmationPopupComponent } from './confirmation-popup/confirmation-popup.component';
 import { ForgotPasswordPopupComponent } from './forgot-password-popup/forgot-password-popup.component';
 import { LoginPopupComponent } from './login-popup/login-popup.component';
@@ -79,7 +78,6 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     EorzeanTimeComponent,
     ListPanelComponent,
     RecipeComponent,
-    CharacterAddPopupComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
     LoginPopupComponent,
@@ -110,7 +108,6 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     EorzeanTimeComponent,
     ListPanelComponent,
     RecipeComponent,
-    CharacterAddPopupComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
     LoginPopupComponent,

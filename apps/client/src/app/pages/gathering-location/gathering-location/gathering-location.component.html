@@ -1,0 +1,20 @@
+<div class="search-box">
+  <nz-input-group>
+    <input class="search-input" type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
+           #searchInput (keyup)="query$.next(searchInput.value)">
+  </nz-input-group>
+</div>
+<div class="results" *ngIf="results$ | async as results">
+  <div *ngFor="let node of results">
+    <nz-card [nzCover]="map">
+      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="node.obj.n">
+      </nz-card-meta>
+      <ng-template #itemIcon>
+        <app-item-icon [icon]="node.obj.c"></app-item-icon>
+      </ng-template>
+    </nz-card>
+    <ng-template #map>
+      <app-map [mapId]="node.zoneid" [markers]="[{x: node.x, y: node.y}]"></app-map>
+    </ng-template>
+  </div>
+</div>

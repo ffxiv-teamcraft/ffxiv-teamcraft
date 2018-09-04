@@ -28,10 +28,10 @@ export class CommentRowComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.comment.authorId > -1) {
-      this.db.getCharacter(this.comment.authorId).subscribe(character => {
-        this.authorIcon = character.avatar;
-        this.authorName = character.name;
-      });
+      // this.db.getCharacter(this.comment.authorId).subscribe(character => {
+      //   this.authorIcon = character.avatar;
+      //   this.authorName = character.name;
+      // });
     } else {
       this.authorName = this.translate.instant('Anonymous');
     }

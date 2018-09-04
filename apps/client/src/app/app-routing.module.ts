@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: './pages/search/search.module#SearchModule'
+  },
+  {
+    path: 'gathering-location',
+    loadChildren: './pages/gathering-location/gathering-location.module#GatheringLocationModule'
   }
 ];
 

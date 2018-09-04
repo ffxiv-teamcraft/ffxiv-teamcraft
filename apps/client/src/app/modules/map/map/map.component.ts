@@ -7,7 +7,7 @@ import { Vector2 } from '../../../core/tools/vector2';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.less']
 })
 export class MapComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class MapComponent implements OnInit {
     this.mapData = this.mapService.getMapById(this.mapId);
   }
 
-  getPosition(map: MapData, marker: Vector2, offset = { x: 0, y: 0 }): { top: string, left: string } {
+  getMarkerPosition(map: MapData, marker: Vector2, offset = { x: 0, y: 0 }): { top: string, left: string } {
     const positionPercents = this.mapService.getPositionOnMap(map, marker);
     return { top: `${positionPercents.y + offset.y}%`, left: `${positionPercents.x + offset.y}%` };
   }

@@ -9,7 +9,7 @@ import { publishReplay, refCount } from 'rxjs/operators';
 @Component({
   selector: 'app-map-popup',
   templateUrl: './map-popup.component.html',
-  styleUrls: ['./map-popup.component.scss']
+  styleUrls: ['./map-popup.component.less']
 })
 export class MapPopupComponent implements OnInit {
 
