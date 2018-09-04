@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import { catchError, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, from, of } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UserService } from '../core/database/user.service';
@@ -121,6 +121,7 @@ export class AuthEffects {
   @Effect()
   warningOnAnonymousAccount$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoggedInAsAnonymous),
+    debounceTime(10000),
     tap(() => this.notificationService.warning(
       this.translate.instant('COMMON.Warning'),
       this.translate.instant('Anonymous_Warning'))),
