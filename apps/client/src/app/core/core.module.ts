@@ -37,6 +37,7 @@ import { PlatformService } from './tools/platform.service';
 import { TradeSourcesExtractor } from './list/data/extractor/trade-sources-extractor';
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
+import { BellNodesService } from './data/bell-nodes.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -84,7 +85,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     DataService,
     MathToolsService,
     LocalizedDataService,
-    I18nToolsService
+    I18nToolsService,
+    BellNodesService
   ],
   declarations: [
     I18nPipe

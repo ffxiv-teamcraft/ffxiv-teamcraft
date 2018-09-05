@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MapModule } from '../../modules/map/map.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     MapModule,
     PipesModule,
     ItemIconModule,
+    AlarmsModule,
 
     NgZorroAntdModule
   ],

@@ -6,8 +6,8 @@
 </div>
 <div class="results" *ngIf="results$ | async as results">
   <div *ngFor="let node of results">
-    <nz-card [nzCover]="map">
-      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="node.obj.n">
+    <nz-card [nzCover]="map" [nzActions]="node.timed?[actionAlarm]:[]">
+      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="node.obj.n" [nzDescription]="getNodeDescription(node)">
       </nz-card-meta>
       <ng-template #itemIcon>
         <app-item-icon [icon]="node.obj.c"></app-item-icon>
@@ -15,6 +15,9 @@
     </nz-card>
     <ng-template #map>
       <app-map [mapId]="node.zoneid" [markers]="[{x: node.x, y: node.y}]"></app-map>
+    </ng-template>
+    <ng-template #actionAlarm>
+      <i class="material-icons" (click)="addAlarms(node)">alarm_add</i>
     </ng-template>
   </div>
 </div>
