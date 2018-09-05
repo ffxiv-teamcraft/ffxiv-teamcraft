@@ -24,6 +24,12 @@ Contributions guidelines can be found inside [CONTRIBUTING.md](https://github.co
 
 MIT
 
+## Responsive tooling
+
+We're using @angular/flex-layout for responsive tooling, their wiki is available on the link below.
+
+https://github.com/angular/flex-layout/wiki/Responsive-API
+
 ## Nrwl Extensions for Angular (Nx)
 
 <a href="https://nrwl.io/nx"><img src="https://preview.ibb.co/mW6sdw/nx_logo.png"></a>

@@ -17,6 +17,7 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { Logout } from './+state/auth.actions';
 import { Store } from '@ngrx/store';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
+import { EorzeanTimeService } from './core/time/eorzean-time.service';
 
 declare const ga: Function;
 
@@ -49,14 +50,25 @@ export class AppComponent {
 
   public loading$: Observable<boolean>;
 
+  public time$: Observable<string>;
+
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private authFacade: AuthFacade, private dialog: NzModalService, private store: Store<any>) {
+              private authFacade: AuthFacade, private dialog: NzModalService, private store: Store<any>,
+              private eorzeanTime: EorzeanTimeService) {
 
     // Loading is !loaded
     this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
     this.loggedIn$ = this.authFacade.loggedIn$;
     this.character$ = this.authFacade.mainCharacter$;
+
+    this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
+      map(date => {
+        const minutes = date.getUTCMinutes();
+        const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+        return `${date.getUTCHours()}:${minutesStr}`;
+      })
+    );
 
     // this.gt.preload();
     // Translation

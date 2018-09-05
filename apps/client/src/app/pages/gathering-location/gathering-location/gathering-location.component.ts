@@ -7,6 +7,7 @@ import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
+import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 
 @Component({
   selector: 'app-gathering-location',
@@ -17,7 +18,6 @@ import { Alarm } from '../../../core/alarms/alarm';
 export class GatheringLocationComponent {
 
   query$: Subject<string> = new Subject<string>();
-
 
   results$: Observable<any[]>;
 

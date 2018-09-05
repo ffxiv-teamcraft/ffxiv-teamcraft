@@ -31,13 +31,10 @@ import { VoyagesDetailsPopupComponent } from '../voyages-details-popup/voyages-d
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { FishDetailsPopupComponent } from '../fish-details-popup/fish-details-popup.component';
 import { TranslateService } from '@ngx-translate/core';
-import { AlarmService } from '../../../core/time/alarm.service';
 import { Observable } from 'rxjs';
-import { Timer } from '../../../core/time/timer';
 import { SettingsService } from '../../../pages/settings/settings.service';
 import { AppUser } from '../../../model/list/app-user';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
-import { Alarm } from '../../../core/time/alarm';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 import { DataService } from '../../../core/api/data.service';
 import { UserService } from '../../../core/database/user.service';
@@ -285,7 +282,7 @@ export class ItemComponent implements OnInit, OnChanges {
     mediaChange.mqAlias === 'xs' || (mediaChange.mqAlias === 'sm' && !this.platformService.isDesktop())
   ));
 
-  public timers: Observable<Timer[]>;
+  public timers: Observable<any[]>;
 
   worksOnIt: any;
 
@@ -305,7 +302,7 @@ export class ItemComponent implements OnInit, OnChanges {
               private localizedData: LocalizedDataService,
               private snackBar: MatSnackBar,
               private translator: TranslateService,
-              private alarmService: AlarmService,
+              private alarmService: any,
               public settings: SettingsService,
               private bellNodesService: BellNodesService,
               private etime: EorzeanTimeService,
@@ -470,7 +467,7 @@ export class ItemComponent implements OnInit, OnChanges {
     this.addition = 0;
   }
 
-  public getTimerColor(alarm: Alarm): Observable<string> {
+  public getTimerColor(alarm: any): Observable<string> {
     return this.etime.getEorzeanTime().pipe(
       map(time => {
         if (this.alarmService.isAlarmSpawned(alarm, time)) {
@@ -611,15 +608,15 @@ export class ItemComponent implements OnInit, OnChanges {
   }
 
   public updateTimers(): void {
-    if (this.hasTimers) {
-      this.timers = this.alarmService.getTimers(this.item)
-        .pipe(
-          tap(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)))
-        );
-    }
+    // if (this.hasTimers) {
+    //   this.timers = this.alarmService.getTimers(this.item)
+    //     .pipe(
+    //       tap(timers => timers.forEach(timer => this.updateHasAlarm(timer.itemId)))
+    //     );
+    // }
   }
 
-  public trackByTimers(index: number, timer: Timer) {
+  public trackByTimers(index: number, timer: any) {
     return timer.itemId;
   }
 

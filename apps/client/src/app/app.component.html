@@ -5,6 +5,9 @@
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
+        <li nz-menu-item class="clock" fxShow fxHide.lt-sm>
+          {{time$ | async}}
+        </li>
         <li nz-menu-item nz-popover nzPlacement="bottom" [nzContent]="pins">
           <i class="anticon anticon-pushpin-o"></i>
         </li>
@@ -146,6 +149,9 @@
               [nzCollapsedWidth]="0">
     </nz-sider>
   </nz-layout>
+  <nz-footer fxHide fxShow.lt-sm class="footer">
+    <span class="timer">{{time$ | async}}</span>
+  </nz-footer>
 </nz-layout>
 
 <!--Only for mocking purpose, todo delete-->

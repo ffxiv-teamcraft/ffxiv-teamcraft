@@ -38,6 +38,7 @@ import { TradeSourcesExtractor } from './list/data/extractor/trade-sources-extra
 import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
 import { BellNodesService } from './data/bell-nodes.service';
+import { EorzeanTimeService } from './time/eorzean-time.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -86,7 +87,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     MathToolsService,
     LocalizedDataService,
     I18nToolsService,
-    BellNodesService
+    BellNodesService,
+    EorzeanTimeService
   ],
   declarations: [
     I18nPipe

@@ -1,7 +1,6 @@
 import { DataModel } from '../../core/database/storage/data-model';
 import { ListLayout } from '../../core/layout/list-layout';
 import { DeserializeAs } from '@kaiu/serializer';
-import { Alarm } from '../../core/time/alarm';
 import { ListDetailsFilters } from '../other/list-details-filters';
 import { GearSet } from '../../pages/simulator/model/gear-set';
 import { AlarmGroup } from '../other/alarm-group';
@@ -26,7 +25,7 @@ export class AppUser extends DataModel {
   @DeserializeAs([ListLayout])
   layouts?: ListLayout[];
   // Alarms are now stored inside firebase
-  alarms: Alarm[];
+  alarms: any[];
   // Default filters (#289)
   listDetailsFilters: ListDetailsFilters = ListDetailsFilters.DEFAULT;
   // List ids user has write access to

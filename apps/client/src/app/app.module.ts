@@ -45,7 +45,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     AuthFacade,
-
     {
       provide: NZ_MESSAGE_CONFIG,
       useValue: {
@@ -104,7 +103,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NgZorroAntdModule,
 
     StoreModule.forRoot({}, {}),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    !environment.production ? StoreDevtoolsModule.instrument({
+      name: 'FFXIV Teamcraft'
+    }) : [],
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects])
