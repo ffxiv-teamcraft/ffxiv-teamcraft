@@ -41,8 +41,8 @@
               "baseHref": "/",
               "fileReplacements": [
                 {
-                  "replace": "apps/client/apps/client/src/environments/environment.ts",
-                  "with": "apps/client/apps/client/src/environments/environment.prod.ts"
+                  "replace": "apps/client/src/environments/environment.ts",
+                  "with": "apps/client/src/environments/environment.prod.ts"
                 }
               ]
             },

@@ -31,6 +31,8 @@ import { AuthEffects } from './+state/auth.effects';
 import { AuthFacade } from './+state/auth.facade';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { AuthModule } from './core/auth/auth.module';
+import { AlarmsSidebarModule } from './modules/alarms-sidebar/alarms-sidebar.module';
+import { AlarmsModule } from './core/alarms/alarms.module';
 
 registerLocaleData(en);
 
@@ -99,6 +101,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppRoutingModule,
     CoreModule,
     PipesModule,
+    AlarmsModule,
+    AlarmsSidebarModule,
 
     NgZorroAntdModule,
 

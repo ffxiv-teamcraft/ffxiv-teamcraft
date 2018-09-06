@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MapData } from '../map-data';
 import { Observable } from 'rxjs';
 import { MapService } from '../map.service';
@@ -18,6 +18,9 @@ export class MapComponent implements OnInit {
   markers: Vector2[] = [];
 
   mapData: Observable<MapData>;
+
+  @Output()
+  loaded: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private mapService: MapService) {
   }

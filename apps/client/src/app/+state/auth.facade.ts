@@ -14,6 +14,7 @@ export class AuthFacade {
   loaded$ = this.store.select(authQuery.getLoaded);
   mainCharacter$ = this.store.select(authQuery.getMainCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
+  userId$ = this.store.select(authQuery.getUserId);
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth) {
     this.store.dispatch(new GetUser());

@@ -5,7 +5,9 @@ export enum AlarmsActionTypes {
   LoadAlarms = '[Alarms] Load Alarms',
   AlarmsLoaded = '[Alarms] Alarms Loaded',
 
-  AddAlarms = '[Alarms] Add Alarms'
+  AddAlarms = '[Alarms] Add Alarms',
+
+  PersistAlarms = '[Alarms] Persist Alarms'
 }
 
 export class LoadAlarms implements Action {
@@ -26,10 +28,15 @@ export class AddAlarms implements Action {
   }
 }
 
-export type AlarmsAction = LoadAlarms | AlarmsLoaded | AddAlarms;
+export class PersistAlarms implements Action {
+  readonly type = AlarmsActionTypes.PersistAlarms;
+}
+
+export type AlarmsAction = LoadAlarms | AlarmsLoaded | AddAlarms | PersistAlarms;
 
 export const fromAlarmsActions = {
   LoadAlarms,
   AlarmsLoaded,
-  AddAlarms
+  AddAlarms,
+  PersistAlarms
 };

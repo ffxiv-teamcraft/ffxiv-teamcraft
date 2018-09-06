@@ -1,5 +1,5 @@
 <div class="map-container" *ngIf="mapData | async as map">
-  <img src="{{map.image}}" alt="" class="map-image">
+  <img src="{{map.image}}" alt="" class="map-image" (load)="loaded.emit()">
   <i
     *ngFor="let marker of markers"
     class="marker material-icons"

@@ -1,8 +1,7 @@
-import { Aetheryte } from '../data/aetheryte';
-import { Observable } from 'rxjs';
 import { Vector2 } from '../tools/vector2';
+import { RelationalDataModel } from '../database/storage/relational-data-model';
 
-export interface Alarm {
+export interface Alarm extends RelationalDataModel {
   itemId: number;
   icon: number;
   spawn: number;
@@ -18,8 +17,6 @@ export interface Alarm {
    * 4 = FSH (Spearfishing)
    */
   type: number;
-
-  aetheryte$?: Observable<Aetheryte>;
 
   groupName?: string;
 

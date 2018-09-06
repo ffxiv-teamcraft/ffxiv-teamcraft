@@ -45,7 +45,7 @@ import { CraftedBy } from '../../../model/list/crafted-by';
 import { Permissions } from '../../../core/database/permissions/permissions';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { ListService } from '../../../core/database/list.service';
 import { TeamService } from '../../../core/database/team.service';
 import { NotificationService } from '../../../core/notification/notification.service';
@@ -296,13 +296,14 @@ export class ItemComponent implements OnInit, OnChanges {
 
   public teamLeader$: Observable<boolean>;
 
+  private alarmService: any;
+
   constructor(private i18n: I18nToolsService,
               private dialog: MatDialog,
               private media: ObservableMedia,
               private localizedData: LocalizedDataService,
               private snackBar: MatSnackBar,
               private translator: TranslateService,
-              private alarmService: any,
               public settings: SettingsService,
               private bellNodesService: BellNodesService,
               private etime: EorzeanTimeService,

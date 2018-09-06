@@ -1,15 +1,22 @@
 .search-box {
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
 .results {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   .ant-card {
-    width: 500px;
-    margin: 10px;
+    max-width: 475px;
+    margin: 4px;
+  }
+  .ant-card-loading {
+    width: 475px;
+    @media only screen and (max-width: 600px) {
+      width: 85vw;
+    }
   }
 }
 

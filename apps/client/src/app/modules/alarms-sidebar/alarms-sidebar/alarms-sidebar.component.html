@@ -1,0 +1,5 @@
+<ul *ngIf="alarms$ | async as alarms">
+  <li *ngFor="let alarm of alarms">
+    {{alarm.itemId | itemName | i18n}}
+  </li>
+</ul>

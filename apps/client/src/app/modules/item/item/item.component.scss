@@ -1,4 +1,3 @@
-@import "../../../../theme";
 
 :host {
 
@@ -74,9 +73,9 @@
     align-items: center;
     width: 50%;
 
-    @include client-width('medium') {
-      width: 100%;
-    }
+    //@include client-width('medium') {
+    //  width: 100%;
+    //}
 
     .classes {
       width: 150px;
