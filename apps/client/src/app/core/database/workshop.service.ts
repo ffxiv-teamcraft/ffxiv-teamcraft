@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { FirestoreStorage } from './storage/firebase/firestore-storage';
+import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { Workshop } from '../../model/other/workshop';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { AngularFirestore } from 'angularfire2/firestore';

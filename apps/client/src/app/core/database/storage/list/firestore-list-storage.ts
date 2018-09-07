@@ -3,7 +3,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
 import { combineLatest, Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { FirestoreStorage } from '../firebase/firestore-storage';
+import { FirestoreStorage } from '../firestore/firestore-storage';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -17,7 +17,6 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
   }
 
   getPublicLists(): Observable<List[]> {
-    this.clearCache();
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
       .snapshotChanges()
       .pipe(
@@ -29,7 +28,6 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
   }
 
   getPublicListsByAuthor(uid: string): Observable<List[]> {
-    this.clearCache();
     return this.listsByAuthorRef(uid).pipe(map(lists => lists.filter(list => list.public === true)));
   }
 
@@ -60,7 +58,6 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
   }
 
   private listsByAuthorRef(uid: string): Observable<List[]> {
-    this.clearCache();
     return this.firestore
       .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
       .snapshotChanges()

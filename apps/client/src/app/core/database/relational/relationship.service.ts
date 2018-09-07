@@ -1,4 +1,4 @@
-import { FirestoreStorage } from '../storage/firebase/firestore-storage';
+import { FirestoreStorage } from '../storage/firestore/firestore-storage';
 import { Relationship } from './relationship';
 import { Observable } from 'rxjs/index';
 import { NgSerializerService } from '@kaiu/ng-serializer';

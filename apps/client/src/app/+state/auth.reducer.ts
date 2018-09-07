@@ -14,8 +14,8 @@ import { AuthActions, AuthActionTypes } from './auth.actions';
 export interface AuthState {
   uid: string;
   loggedIn: boolean;
-  user: TeamcraftUser | null; // TODO
-  characters: CharacterResponse[]; // TODO
+  user: TeamcraftUser | null;
+  characters: CharacterResponse[];
   loading: boolean;
 }
 

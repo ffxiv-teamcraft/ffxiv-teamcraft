@@ -14,8 +14,6 @@ import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
-import { Logout } from './+state/auth.actions';
-import { Store } from '@ngrx/store';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
 
@@ -26,7 +24,7 @@ declare const ga: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
 
@@ -54,13 +52,7 @@ export class AppComponent {
 
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private authFacade: AuthFacade, private dialog: NzModalService, private store: Store<any>,
-              private eorzeanTime: EorzeanTimeService) {
-
-    // Loading is !loaded
-    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
-    this.loggedIn$ = this.authFacade.loggedIn$;
-    this.character$ = this.authFacade.mainCharacter$;
+              private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -69,27 +61,6 @@ export class AppComponent {
         return `${date.getUTCHours()}:${minutesStr}`;
       })
     );
-
-    // this.gt.preload();
-    // Translation
-    translate.setDefaultLang('en');
-    const lang = localStorage.getItem('locale');
-    if (lang !== null) {
-      this.use(lang);
-    } else {
-      this.use(translate.getBrowserLang());
-    }
-    translate.onLangChange.subscribe(change => {
-      this.locale = change.lang;
-    });
-
-    fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap, faGavel);
-
-    this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
-      if (maintenance && environment.production) {
-        this.router.navigate(['maintenance']);
-      }
-    });
 
     // Google Analytics
     router.events
@@ -114,6 +85,36 @@ export class AppComponent {
       ga('set', 'page', event.url);
       ga('send', 'pageview');
     });
+
+    // this.gt.preload();
+    // Translation
+    this.translate.setDefaultLang('en');
+    const lang = localStorage.getItem('locale');
+    if (lang !== null) {
+      this.use(lang);
+    } else {
+      this.use(this.translate.getBrowserLang());
+    }
+    this.translate.onLangChange.subscribe(change => {
+      this.locale = change.lang;
+    });
+
+    fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap, faGavel);
+
+    this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
+      if (maintenance && environment.production) {
+        this.router.navigate(['maintenance']);
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    // Loading is !loaded
+    this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+    this.loggedIn$ = this.authFacade.loggedIn$;
+    this.character$ = this.authFacade.mainCharacter$;
+
+    this.authFacade.loadUser();
   }
 
   openRegisterPopup(): void {
@@ -124,7 +125,7 @@ export class AppComponent {
     });
   }
 
-  openLoginPopup():void{
+  openLoginPopup(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('Login'),
       nzContent: LoginPopupComponent,
@@ -132,8 +133,8 @@ export class AppComponent {
     });
   }
 
-  logOut():void{
-    this.store.dispatch(new Logout());
+  logOut(): void {
+    this.authFacade.logout();
   }
 
   use(lang: string): void {

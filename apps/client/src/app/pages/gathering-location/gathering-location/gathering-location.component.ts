@@ -20,7 +20,16 @@ export class GatheringLocationComponent {
 
   results$: Observable<any[]>;
 
+  alarmsLoaded$: Observable<boolean>;
+
+  alarms$: Observable<Alarm[]>;
+
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade) {
+
+    this.alarmsLoaded$ = this.alarmsFacade.loaded$;
+
+    this.alarms$ = this.alarmsFacade.allAlarms$;
+
     this.results$ = this.query$.pipe(
       debounceTime(500),
       mergeMap(query => this.dataService.searchGathering(query)),
@@ -68,21 +77,35 @@ export class GatheringLocationComponent {
 
   public addAlarms(node: any): void {
     const alarms: Alarm[] = node.spawnTimes.map(spawnTime => {
-      return {
-        itemId: node.obj.i,
-        icon: node.obj.c,
-        spawn: spawnTime,
-        duration: node.uptime,
-        slot: 5,// TODO
-        zoneId: node.zoneid,
-        areaId: node.areaid,
-        coords: {
-          x: node.x,
-          y: node.y
-        }
-      };
+      const alarm = this.generateAlarm(node);
+      alarm.spawn = spawnTime;
+      return alarm;
     });
     this.alarmsFacade.addAlarms(alarms);
+  }
+
+  public canCreateAlarm(alarms: Alarm[], node: any): boolean {
+    const generatedAlarm = this.generateAlarm(node);
+    return alarms.find(alarm => {
+      return alarm.itemId === generatedAlarm.itemId
+      && alarm.zoneId === generatedAlarm.zoneId
+      && alarm.areaId === generatedAlarm.areaId
+    }) === undefined;
+  }
+
+  private generateAlarm(node: any): Partial<Alarm> {
+    return {
+      itemId: node.obj.i,
+      icon: node.obj.c,
+      duration: node.uptime,
+      slot: 5,// TODO
+      zoneId: node.zoneid,
+      areaId: node.areaid,
+      coords: {
+        x: node.x,
+        y: node.y
+      }
+    };
   }
 
 }

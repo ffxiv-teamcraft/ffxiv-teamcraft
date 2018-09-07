@@ -147,7 +147,7 @@
               class="right-sider"
               [(nzCollapsed)]="collapsedAlarmsBar"
               [nzCollapsedWidth]="0">
-      <app-alarms-sidebar></app-alarms-sidebar>
+      <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
     </nz-sider>
   </nz-layout>
   <nz-footer fxHide fxShow.lt-sm class="footer">

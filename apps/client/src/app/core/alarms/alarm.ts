@@ -1,7 +1,13 @@
 import { Vector2 } from '../tools/vector2';
-import { RelationalDataModel } from '../database/storage/relational-data-model';
+import { DataModel } from '../database/storage/data-model';
+import { ForeignKey } from '../database/relational/foreign-key';
+import { TeamcraftUser } from '../../model/user/teamcraft-user';
 
-export interface Alarm extends RelationalDataModel {
+export class Alarm extends DataModel {
+
+  @ForeignKey(TeamcraftUser)
+  userId: string;
+
   itemId: number;
   icon: number;
   spawn: number;
@@ -18,7 +24,14 @@ export interface Alarm extends RelationalDataModel {
    */
   type: number;
 
-  groupName?: string;
+  groupName: string;
 
-  note?: string;
+  note: string;
+
+  constructor(alarmData?: Partial<Alarm>) {
+    super();
+    if (alarmData) {
+      Object.assign(this, alarmData);
+    }
+  }
 }

@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { alarmsReducer, initialState as alarmsInitialState } from './+state/alarms.reducer';
 import { AlarmsEffects } from './+state/alarms.effects';
 import { AlarmsFacade } from './+state/alarms.facade';
+import { AlarmsService } from './alarms.service';
 
 @NgModule({
   imports: [
@@ -13,7 +14,10 @@ import { AlarmsFacade } from './+state/alarms.facade';
     EffectsModule.forFeature([AlarmsEffects])
   ],
   declarations: [],
-  providers: [AlarmsFacade]
+  providers: [
+    AlarmsFacade,
+    AlarmsService
+  ]
 })
 export class AlarmsModule {
 }

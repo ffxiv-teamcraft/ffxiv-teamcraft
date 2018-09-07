@@ -1,12 +1,13 @@
 <div class="search-box">
   <nz-input-group>
-    <input class="search-input" type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
+    <input type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
            #searchInput (keyup)="query$.next(searchInput.value)">
   </nz-input-group>
 </div>
 <div class="results" *ngIf="results$ | async as results">
   <div *ngFor="let node of results">
-    <nz-card [nzCover]="map" [nzActions]="node.timed?[actionAlarm]:[]" [nzLoading]="true" #card>
+    <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]"
+             [nzLoading]="true" #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="node.obj.n" [nzDescription]="getNodeDescription(node)">
       </nz-card-meta>
       <ng-template #itemIcon>
@@ -17,7 +18,9 @@
       <app-map [mapId]="node.zoneid" [markers]="[{x: node.x, y: node.y}]" (loaded)="card.nzLoading = false"></app-map>
     </ng-template>
     <ng-template #actionAlarm>
-      <i class="material-icons" (click)="addAlarms(node)">alarm_add</i>
+      <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarms(node)">
+        alarm_add
+      </i>
     </ng-template>
   </div>
 </div>

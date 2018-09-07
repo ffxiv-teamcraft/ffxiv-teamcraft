@@ -6,8 +6,12 @@ import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
 import { AddAlarms, LoadAlarms } from './alarms.actions';
 import { Alarm } from '../alarm';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AlarmsFacade {
 
   loaded$ = this.store.select(alarmsQuery.getLoaded);
@@ -18,6 +22,16 @@ export class AlarmsFacade {
 
   public addAlarms(alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
+  }
+
+  /**
+   * Only one alarm can be added for each item.
+   * @param alarm
+   */
+  public hasAlarm(alarm: Partial<Alarm>): Observable<boolean> {
+    return this.allAlarms$.pipe(
+      map(alarms => alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) !== undefined)
+    );
   }
 
   public loadAlarms(): void {

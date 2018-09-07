@@ -27,7 +27,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { XivapiService } from '@xivapi/angular-client';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthEffects {
 
   @Effect()
