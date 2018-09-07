@@ -98,7 +98,6 @@ export class GatheringLocationComponent {
       itemId: node.obj.i,
       icon: node.obj.c,
       duration: node.uptime,
-      slot: 5,// TODO
       zoneId: node.zoneid,
       areaId: node.areaid,
       coords: {

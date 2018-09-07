@@ -5,11 +5,13 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AlarmsService extends FirestoreRelationalStorage<Alarm> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
-                        protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
+              protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
