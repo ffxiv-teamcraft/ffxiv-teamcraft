@@ -28,6 +28,9 @@ export class ItemIconComponent {
   @Input()
   hq = false;
 
+  @Input()
+  width = 48;
+
   constructor() {
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AddAlarms, AlarmsActionTypes, AlarmsLoaded } from './alarms.actions';
-import { debounceTime, first, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -19,7 +19,7 @@ export class AlarmsEffects {
     ofType(AlarmsActionTypes.LoadAlarms),
     withLatestFrom(this.authFacade.userId$),
     // We want to connect the observable only the first time, no need to reload as it's firestore.
-    first(),
+    distinctUntilChanged(),
     mergeMap(([, userId]) => {
       return this.alarmsService.getByForeignKey(TeamcraftUser, userId);
     }),

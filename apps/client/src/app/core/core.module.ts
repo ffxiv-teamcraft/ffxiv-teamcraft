@@ -39,6 +39,7 @@ import { MathToolsService } from './tools/math-tools';
 import { I18nToolsService } from './tools/i18n-tools.service';
 import { BellNodesService } from './data/bell-nodes.service';
 import { EorzeanTimeService } from './time/eorzean-time.service';
+import { TimerPipe } from './time/timer.pipe';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -91,7 +92,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     EorzeanTimeService
   ],
   declarations: [
-    I18nPipe
+    I18nPipe,
+    TimerPipe
   ],
   exports: [
     I18nPipe,
@@ -99,7 +101,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    PushNotificationsModule
+    PushNotificationsModule,
+    TimerPipe
   ]
 })
 export class CoreModule {

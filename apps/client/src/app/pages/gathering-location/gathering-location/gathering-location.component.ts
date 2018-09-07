@@ -46,8 +46,12 @@ export class GatheringLocationComponent {
               const bellNode = this.bell.getNode(+node.nodeId);
               node.timed = bellNode !== undefined;
               if (node.timed) {
+                const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
                 node.spawnTimes = bellNode.time;
                 node.uptime = bellNode.uptime;
+                if (slotMatch !== undefined) {
+                  node.slot = slotMatch.slot;
+                }
               }
               return node;
             });
@@ -88,8 +92,8 @@ export class GatheringLocationComponent {
     const generatedAlarm = this.generateAlarm(node);
     return alarms.find(alarm => {
       return alarm.itemId === generatedAlarm.itemId
-      && alarm.zoneId === generatedAlarm.zoneId
-      && alarm.areaId === generatedAlarm.areaId
+        && alarm.zoneId === generatedAlarm.zoneId
+        && alarm.areaId === generatedAlarm.areaId;
     }) === undefined;
   }
 
@@ -100,6 +104,7 @@ export class GatheringLocationComponent {
       duration: node.uptime,
       zoneId: node.zoneid,
       areaId: node.areaid,
+      slot: node.slot,
       coords: {
         x: node.x,
         y: node.y

@@ -145,6 +145,7 @@
     </nz-content>
     <nz-sider nzCollapsible
               class="right-sider"
+              [nzWidth]="230"
               [(nzCollapsed)]="collapsedAlarmsBar"
               [nzCollapsedWidth]="0">
       <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>

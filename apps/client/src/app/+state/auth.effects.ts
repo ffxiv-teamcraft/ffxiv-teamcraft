@@ -26,6 +26,7 @@ import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { XivapiService } from '@xivapi/angular-client';
+import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -128,6 +129,12 @@ export class AuthEffects {
       this.translate.instant('COMMON.Warning'),
       this.translate.instant('Anonymous_Warning'))),
     map(() => new AnonymousWarningShown())
+  );
+
+  @Effect()
+  fetchAlarmsOnUserAuth$ = this.actions$.pipe(
+    ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
+    map(() => new LoadAlarms())
   );
 
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,

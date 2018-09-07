@@ -23,6 +23,6 @@ export class AlarmDisplay {
    */
   remainingTime: number;
 
-  constructor(private readonly alarm: Alarm) {
+  constructor(public readonly alarm: Alarm) {
   }
 }

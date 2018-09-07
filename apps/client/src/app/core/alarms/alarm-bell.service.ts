@@ -5,13 +5,14 @@ import { AlarmDisplay } from './alarm-display';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Alarm } from './alarm';
+import { LocalizedDataService } from '../data/localized-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlarmBellService {
 
-  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade) {
+  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService) {
     this.initBell();
   }
 
@@ -19,17 +20,15 @@ export class AlarmBellService {
     combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$)
       .pipe(
         map(([date, alarms]) => {
-          alarms.forEach(alarm => {
+          return alarms.filter(alarm => {
             const lastPlayed = this.getLastPlayed(alarm);
             // Irl alarm duration in ms
             const irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 3600000);
-            if (Date.now() - lastPlayed > irlAlarmDuration &&
-              date.getUTCHours() === alarm.spawn && date.getUTCMinutes() === 0) {
-              this.ring(alarm);
-            }
+            return Date.now() - lastPlayed > irlAlarmDuration &&
+              date.getUTCHours() === alarm.spawn && date.getUTCMinutes() === 0;
           });
         })
-      );
+      ).subscribe(alarmsToPlay => alarmsToPlay.forEach(alarm => this.ring(alarm)));
   }
 
   public getAlarmsDisplay(): Observable<AlarmDisplay[]> {
@@ -41,10 +40,11 @@ export class AlarmBellService {
               const display = new AlarmDisplay(alarm);
               display.spawned = this.isSpawned(alarm, date);
               if (display.spawned) {
-                display.remainingTime = this.getMinutesBefore(date, alarm.spawn + alarm.duration);
+                display.remainingTime = this.getMinutesBefore(date, (alarm.spawn + alarm.duration) % 24);
               } else {
                 display.remainingTime = this.getMinutesBefore(date, alarm.spawn);
               }
+              display.remainingTime = this.eorzeanTime.toEarthTime(display.remainingTime);
               return display;
             })
             .sort((a, b) => {
@@ -64,6 +64,7 @@ export class AlarmBellService {
   }
 
   public ring(alarm: Alarm): void {
+    console.log('RING', this.l12n.getItem(alarm.itemId).en);
   }
 
   private getLastPlayed(alarm: Alarm): number {

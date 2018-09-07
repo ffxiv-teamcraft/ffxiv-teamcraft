@@ -1,0 +1,25 @@
+.alarms-container {
+  display: flex;
+  flex-direction: column;
+  .ant-divider {
+    margin: 0;
+  }
+  .alarm-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 5px;
+    &.spawned {
+      background-color: fade(#777777, 50%);
+    }
+    &.alerted {
+      background-color: fade(#777777, 25%);
+    }
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      margin-left: 5px;
+    }
+  }
+}

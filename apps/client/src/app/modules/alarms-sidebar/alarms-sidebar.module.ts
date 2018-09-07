@@ -5,11 +5,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
+import { ItemIconModule } from '../item-icon/item-icon.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    ItemIconModule,
 
     TranslateModule,
 

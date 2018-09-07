@@ -51,9 +51,7 @@ export class BellNodesService {
   getNode(id: number): any {
     const node = this.nodes.find(n => n.id === id);
     if (node !== undefined) {
-      const match = node.items.find(item => item.id === id);
       node.itemId = id;
-      node.slot = match ? +match.slot : -1;
       node.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
       node.areaid = this.localizedDataService.getAreaIdByENName(node.title);
     }
