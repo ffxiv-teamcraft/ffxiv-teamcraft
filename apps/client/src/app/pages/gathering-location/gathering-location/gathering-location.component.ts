@@ -7,6 +7,8 @@ import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
+import { MapService } from '../../../modules/map/map.service';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-gathering-location',
@@ -24,7 +26,8 @@ export class GatheringLocationComponent {
 
   alarms$: Observable<Alarm[]>;
 
-  constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade) {
+  constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
+              private mapService: MapService) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
@@ -80,12 +83,30 @@ export class GatheringLocationComponent {
   }
 
   public addAlarms(node: any): void {
-    const alarms: Alarm[] = node.spawnTimes.map(spawnTime => {
-      const alarm = this.generateAlarm(node);
-      alarm.spawn = spawnTime;
-      return alarm;
+    combineLatest(
+      node.spawnTimes.map(spawnTime => {
+        const alarm = this.generateAlarm(node);
+        alarm.spawn = spawnTime;
+        return this.mapService.getMapById(alarm.zoneId)
+          .pipe(
+            map((mapData) => {
+              if (mapData !== undefined) {
+                return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+              } else {
+                return undefined;
+              }
+            }),
+            map(aetheryte => {
+              if(aetheryte !== undefined){
+                alarm.aetheryte = aetheryte;
+              }
+              return alarm;
+            })
+          );
+      })
+    ).subscribe((alarms: Alarm[]) => {
+      this.alarmsFacade.addAlarms(alarms);
     });
-    this.alarmsFacade.addAlarms(alarms);
   }
 
   public canCreateAlarm(alarms: Alarm[], node: any): boolean {
@@ -101,10 +122,10 @@ export class GatheringLocationComponent {
     return {
       itemId: node.obj.i,
       icon: node.obj.c,
-      duration: node.uptime,
+      duration: node.uptime / 60,
       zoneId: node.zoneid,
       areaId: node.areaid,
-      slot: node.slot,
+      slot: +node.slot,
       coords: {
         x: node.x,
         y: node.y

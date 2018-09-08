@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/list/recipe';
@@ -105,10 +105,15 @@ export class DataService {
 
   /**
    * Searches for gathering items based on a given name.
+   * Will return an observable of empty array if name is shorter than 3 characters.
+   *
    * @param {string} name
    * @returns {Observable<ItemData[]>}
    */
   public searchGathering(name: string): Observable<any[]> {
+    if(name.length < 3){
+      return of([]);
+    }
     let lang = this.i18n.currentLang;
     if (['en', 'fr', 'de', 'ja'].indexOf(lang) === -1) {
       lang = 'en';

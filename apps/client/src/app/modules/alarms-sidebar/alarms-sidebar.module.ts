@@ -6,12 +6,17 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../item-icon/item-icon.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { MapModule } from '../map/map.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
     ItemIconModule,
+
+    AlarmsModule,
+    MapModule,
 
     TranslateModule,
 

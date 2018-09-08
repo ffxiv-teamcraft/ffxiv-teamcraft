@@ -6,17 +6,22 @@ import { alarmsReducer, initialState as alarmsInitialState } from './+state/alar
 import { AlarmsEffects } from './+state/alarms.effects';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { AlarmsService } from './alarms.service';
+import { AlarmBellService } from './alarm-bell.service';
+import { SettingsModule } from '../../pages/settings/settings.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SettingsModule,
+
     StoreModule.forFeature('alarms', alarmsReducer, { initialState: alarmsInitialState }),
     EffectsModule.forFeature([AlarmsEffects])
   ],
   declarations: [],
   providers: [
     AlarmsFacade,
-    AlarmsService
+    AlarmsService,
+    AlarmBellService
   ]
 })
 export class AlarmsModule {

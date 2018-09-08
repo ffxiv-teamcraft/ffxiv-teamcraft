@@ -9,7 +9,7 @@
         <div class="timer">{{row.remainingTime | timer}}</div>
       </div>
       <div class="map-button">
-        <button nz-button nzType="primary" nzShape="circle" nzSize="small">
+        <button nz-button nzType="primary" nzShape="circle" nzSize="small" (click)="openMap(row.alarm)">
           <i class="anticon anticon-environment-o"></i>
         </button>
       </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapService } from './map.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MapPopupComponent } from './map-popup/map-popup.component';
 import { MatButtonModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { MapPositionComponent } from './map-position/map-position.component';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -24,7 +23,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     CoreModule
   ],
   declarations: [
-    MapPopupComponent,
     MapPositionComponent,
     MapComponent
   ],
@@ -32,11 +30,10 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     MapService
   ],
   exports: [
-    MapPositionComponent,
     MapComponent
   ],
   entryComponents: [
-    MapPopupComponent
+    MapComponent
   ]
 })
 export class MapModule {

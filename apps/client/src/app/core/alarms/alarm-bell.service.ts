@@ -6,13 +6,23 @@ import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { LocalizedDataService } from '../data/localized-data.service';
+import { SettingsService } from '../../pages/settings/settings.service';
+import { PlatformService } from '../tools/platform.service';
+import { IpcService } from '../electron/ipc.service';
+import { TranslateService } from '@ngx-translate/core';
+import { PushNotificationsService } from 'ng-push';
+import { NzNotificationService } from 'ng-zorro-antd';
+import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlarmBellService {
 
-  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService) {
+  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService,
+              private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
+              private localizedData: LocalizedDataService, private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
+              private notificationService: NzNotificationService, private i18n: I18nToolsService) {
     this.initBell();
   }
 
@@ -28,7 +38,12 @@ export class AlarmBellService {
               date.getUTCHours() === alarm.spawn && date.getUTCMinutes() === 0;
           });
         })
-      ).subscribe(alarmsToPlay => alarmsToPlay.forEach(alarm => this.ring(alarm)));
+      ).subscribe(alarmsToPlay => alarmsToPlay.forEach(alarm => {
+      if (!this.settings.alarmsMuted) {
+        this.ring(alarm);
+        this.notify(alarm);
+      }
+    }));
   }
 
   public getAlarmsDisplay(): Observable<AlarmDisplay[]> {
@@ -57,20 +72,62 @@ export class AlarmBellService {
               if (b.spawned) {
                 return 1;
               }
-              return a.remainingTime > b.remainingTime ? -1 : 1;
+              return a.remainingTime < b.remainingTime ? -1 : 1;
             });
         })
       );
   }
 
+  /**
+   * Plays the sound part of the alarm.
+   * @param alarm
+   */
   public ring(alarm: Alarm): void {
-    console.log('RING', this.l12n.getItem(alarm.itemId).en);
+    //Let's ring the alarm !
+    let audio: HTMLAudioElement;
+    // If this isn't a file path (desktop app), then take it inside the assets folder.
+    if (this.settings.alarmSound.indexOf(':') === -1) {
+      audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+    } else {
+      audio = new Audio(this.settings.alarmSound);
+    }
+    audio.loop = false;
+    audio.volume = this.settings.alarmVolume;
+    audio.play();
+    localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
+  }
+
+  public notify(alarm: Alarm): void {
+    const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+    const notificationTitle = this.i18n.getName(this.localizedData.getItem(alarm.itemId));
+    const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId))} - `
+      + `${aetheryteName}` +
+      (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
+    if (this.platform.isDesktop()) {
+
+    } else {
+      this.pushNotificationsService.create(notificationTitle,
+        {
+          icon: notificationIcon,
+          sticky: false,
+          renotify: false,
+          body: notificationBody
+        }
+      );
+      this.notificationService.info(notificationTitle, notificationBody);
+    }
   }
 
   private getLastPlayed(alarm: Alarm): number {
     return +(localStorage.getItem(`played:${alarm.$key}`) || 0);
   }
 
+  /**
+   * Checks if a given alarm is spawned at a given time.
+   * @param alarm
+   * @param time
+   */
   private isSpawned(alarm: Alarm, time: Date): boolean {
     let spawn = alarm.spawn;
     let despawn = (spawn + alarm.duration) % 24;
@@ -85,6 +142,12 @@ export class AlarmBellService {
     }
   }
 
+  /**
+   * Get the amount of minutes before a given hour happens.
+   * @param currentTime
+   * @param hours
+   * @param minutes
+   */
   private getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
     // Convert 0 to 24 for spawn timers
     if (hours === 0) {

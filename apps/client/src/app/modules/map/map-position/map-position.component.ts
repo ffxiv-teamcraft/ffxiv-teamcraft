@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { MapPopupComponent } from '../map-popup/map-popup.component';
 import { Vector2 } from '../../../core/tools/vector2';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { MapComponent } from '../map/map.component';
+import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-map-position',
@@ -16,7 +18,8 @@ export class MapPositionComponent {
   @Input()
   zoneId: number;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: NzModalService, private l12n: LocalizedDataService,
+              private i18n: I18nToolsService) {
   }
 
   getMarker(): Vector2 {
@@ -27,7 +30,15 @@ export class MapPositionComponent {
   }
 
   openMap(): void {
-    this.dialog.open(MapPopupComponent, { data: { coords: this.marker, id: this.zoneId } });
+    this.dialog.create({
+      nzTitle: this.i18n.getName(this.l12n.getPlace(this.zoneId)),
+      nzContent: MapComponent,
+      nzComponentParams: {
+        mapId: this.zoneId,
+        markers: [this.marker]
+      },
+      nzFooter: null
+    });
   }
 
 }

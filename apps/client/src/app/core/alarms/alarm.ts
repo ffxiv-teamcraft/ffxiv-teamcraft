@@ -2,6 +2,7 @@ import { Vector2 } from '../tools/vector2';
 import { DataModel } from '../database/storage/data-model';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
+import { Aetheryte } from '../data/aetheryte';
 
 export class Alarm extends DataModel {
 
@@ -27,6 +28,8 @@ export class Alarm extends DataModel {
   groupName: string;
 
   note: string;
+
+  aetheryte: Aetheryte;
 
   constructor(alarmData?: Partial<Alarm>) {
     super();
