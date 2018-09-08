@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
-import { AddAlarms, LoadAlarms } from './alarms.actions';
+import { AddAlarms, LoadAlarms, RemoveAlarm } from './alarms.actions';
 import { Alarm } from '../alarm';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
@@ -22,6 +22,10 @@ export class AlarmsFacade {
 
   public addAlarms(alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
+  }
+
+  public deleteAlarm(alarm: Alarm): void {
+    this.store.dispatch(new RemoveAlarm(alarm.$key));
   }
 
   /**

@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'gathering-location',
     loadChildren: './pages/gathering-location/gathering-location.module#GatheringLocationModule'
+  },
+  {
+    path: 'alarms',
+    loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
   }
 ];
 

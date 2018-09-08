@@ -1,0 +1,22 @@
+.alarms {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .ant-card {
+    max-width: 475px;
+    margin: 4px;
+    &.spawned {
+      background-color: fade(#777777, 50%);
+    }
+    &.alerted {
+      background-color: fade(#777777, 25%);
+    }
+  }
+  .ant-card-loading {
+    width: 475px;
+    @media only screen and (max-width: 600px) {
+      width: 85vw;
+    }
+  }
+}

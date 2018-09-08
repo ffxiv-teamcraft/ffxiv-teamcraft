@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class EorzeanTimeService {
 
   private static EPOCH_TIME_FACTOR = 20.571428571428573;

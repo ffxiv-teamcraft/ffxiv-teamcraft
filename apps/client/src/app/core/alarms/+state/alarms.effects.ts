@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { AddAlarms, AlarmsActionTypes, AlarmsLoaded } from './alarms.actions';
+import { AddAlarms, AlarmsActionTypes, AlarmsLoaded, RemoveAlarm } from './alarms.actions';
 import { debounceTime, distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
@@ -44,6 +44,14 @@ export class AlarmsEffects {
           })
         );
       }),
+      mergeMap(() => EMPTY)
+    );
+
+  @Effect()
+  removeAlarmFromDatabase$ = this.actions$
+    .pipe(
+      ofType(AlarmsActionTypes.RemoveAlarm),
+      mergeMap((action: RemoveAlarm) => this.alarmsService.remove(action.id)),
       mergeMap(() => EMPTY)
     );
 

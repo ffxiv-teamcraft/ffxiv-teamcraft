@@ -27,6 +27,12 @@ export function alarmsReducer(
         ...state,
         alarms: [...state.alarms, ...action.payload]
       };
+
+    case AlarmsActionTypes.RemoveAlarm:
+      return {
+        ...state,
+        alarms: [...state.alarms.filter(alarm => alarm.$key !== action.id)]
+      };
   }
   return state;
 }
