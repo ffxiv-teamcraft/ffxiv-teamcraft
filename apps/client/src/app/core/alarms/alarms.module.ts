@@ -8,6 +8,7 @@ import { AlarmsFacade } from './+state/alarms.facade';
 import { AlarmsService } from './alarms.service';
 import { AlarmBellService } from './alarm-bell.service';
 import { SettingsModule } from '../../pages/settings/settings.module';
+import { AlarmGroupService } from './alarm-group.service';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { SettingsModule } from '../../pages/settings/settings.module';
   providers: [
     AlarmsFacade,
     AlarmsService,
-    AlarmBellService
+    AlarmBellService,
+    AlarmGroupService
   ]
 })
 export class AlarmsModule {
