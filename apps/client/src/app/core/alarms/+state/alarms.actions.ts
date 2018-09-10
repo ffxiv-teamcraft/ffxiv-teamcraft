@@ -50,7 +50,7 @@ export class PersistAlarms implements Action {
 export class CreateAlarmGroup implements Action {
   readonly type = AlarmsActionTypes.CreateAlarmGroup;
 
-  constructor(public readonly name: string) {
+  constructor(public readonly name: string, public readonly index: number) {
   }
 }
 

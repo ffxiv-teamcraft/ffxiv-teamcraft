@@ -80,7 +80,8 @@
     "Alarms_created": "Alarms created",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
-    "New_group": "New alarm group"
+    "New_group": "New alarm group",
+    "Confirm_group_delete": "Are your sure you want to delete this group?"
   },
   "Item_name": "Item name",
   "No_items_found": "No item found",

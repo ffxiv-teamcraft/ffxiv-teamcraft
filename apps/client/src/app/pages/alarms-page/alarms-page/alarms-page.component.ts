@@ -11,6 +11,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter } from 'rxjs/operators';
+import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
 
 @Component({
   selector: 'app-alarms-page',
@@ -52,7 +53,20 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.assignAlarmGroup(alarm, groupKey);
   }
 
-  createGroup(): void {
+  setGroupIndex(index: number, group: AlarmGroup, groups: AlarmGroupDisplay[]): void {
+    const orderedGroups = groups.map(groupDisplay => groupDisplay.group).filter(g => g.$key !== group.$key);
+    orderedGroups.splice(index, 0, group);
+    orderedGroups
+      .map((g, i) => {
+        g.index = i;
+        return g;
+      })
+      .forEach(g => {
+        this.alarmsFacade.updateGroup(g);
+      });
+  }
+
+  createGroup(index: number): void {
     this.dialog.create({
       nzTitle: this.translate.instant('ALARMS.New_group'),
       nzFooter: null,
@@ -60,8 +74,25 @@ export class AlarmsPageComponent implements OnInit {
     }).afterClose.pipe(
       filter(name => name !== undefined)
     ).subscribe((name) => {
-      this.alarmsFacade.createGroup(name);
+      this.alarmsFacade.createGroup(name, index);
     });
+  }
+
+  renameGroup(group: AlarmGroup): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Please_enter_a_name'),
+      nzFooter: null,
+      nzContent: NameQuestionPopupComponent
+    }).afterClose.pipe(
+      filter(name => name !== undefined)
+    ).subscribe((name) => {
+      group.name = name;
+      this.alarmsFacade.updateGroup(group);
+    });
+  }
+
+  deleteGroup(group: AlarmGroup): void {
+    this.alarmsFacade.deleteGroup(group.$key);
   }
 
   ngOnInit(): void {

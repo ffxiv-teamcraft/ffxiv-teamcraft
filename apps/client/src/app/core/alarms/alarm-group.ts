@@ -7,11 +7,9 @@ export class AlarmGroup extends DataModel {
   @ForeignKey(TeamcraftUser)
   public userId: string;
 
-  public muted: boolean;
+  public enabled = true;
 
-  public index: number;
-
-  constructor(public name: string) {
+  constructor(public name: string, public index: number) {
     super();
   }
 }

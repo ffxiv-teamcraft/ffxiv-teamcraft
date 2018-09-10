@@ -41,7 +41,18 @@ export function alarmsReducer(
     case AlarmsActionTypes.CreateAlarmGroup:
       return {
         ...state,
-        groups: [...state.groups, new AlarmGroup(action.name)]
+        groups: [...state.groups, new AlarmGroup(action.name, action.index)]
+      };
+
+    case AlarmsActionTypes.UpdateAlarmGroup:
+      return {
+        ...state,
+        groups: [...state.groups.map(group => {
+          if (group.$key === action.group.$key) {
+            Object.assign(group, action.group);
+          }
+          return group;
+        })]
       };
 
     case AlarmsActionTypes.DeleteAlarmGroup:

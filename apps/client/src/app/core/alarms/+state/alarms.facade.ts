@@ -37,6 +37,7 @@ export class AlarmsFacade {
       const display = new AlarmsPageDisplay();
       // First of all, populate grouped alarms.
       display.groupedAlarms = groups
+        .sort((a, b) => a.index < b.index ? -1 : 1)
         .map(group => {
           const groupAlarms = alarms
             .filter(alarm => alarm.groupId !== undefined && alarm.groupId === group.$key);
@@ -55,7 +56,7 @@ export class AlarmsFacade {
       return this.sortAlarmDisplays([
         ...alarmsPageDisplay.noGroup,
         ...[].concat.apply([], alarmsPageDisplay.groupedAlarms
-          .filter(groupedAlarms => !groupedAlarms.group.muted)
+          .filter(groupedAlarms => groupedAlarms.group.enabled)
           .map(grouped => grouped.alarms))
       ]);
     })
@@ -72,8 +73,8 @@ export class AlarmsFacade {
     this.store.dispatch(new RemoveAlarm(alarm.$key));
   }
 
-  public createGroup(name: string): void {
-    this.store.dispatch(new CreateAlarmGroup(name));
+  public createGroup(name: string, index: number): void {
+    this.store.dispatch(new CreateAlarmGroup(name, index));
   }
 
   public updateGroup(group: AlarmGroup): void {
@@ -84,7 +85,7 @@ export class AlarmsFacade {
     this.store.dispatch(new DeleteAlarmGroup(key));
   }
 
-  public assignAlarmGroup(alarm: Alarm, groupKey: string):void{
+  public assignAlarmGroup(alarm: Alarm, groupKey: string): void {
     this.store.dispatch(new AssignGroupToAlarm(alarm, groupKey));
   }
 
