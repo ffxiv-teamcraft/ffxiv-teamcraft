@@ -3,11 +3,15 @@ import { DataModel } from '../database/storage/data-model';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { Aetheryte } from '../data/aetheryte';
+import { AlarmGroup } from './alarm-group';
 
 export class Alarm extends DataModel {
 
   @ForeignKey(TeamcraftUser)
   userId: string;
+
+  @ForeignKey(AlarmGroup)
+  groupId?: string;
 
   itemId: number;
   icon: number;

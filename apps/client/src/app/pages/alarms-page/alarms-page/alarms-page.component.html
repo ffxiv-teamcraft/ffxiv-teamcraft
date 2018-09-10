@@ -1,10 +1,48 @@
 <div class="toolbar">
-  <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-  {{'Compact_display' | translate}}
+  <div class="right-toolbar">
+    <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.New_group' | translate}}"
+            (click)="createGroup()">
+      <i class="anticon anticon-folder-add"></i>
+    </button>
+  </div>
+  <div class="spacer"></div>
+  <span>
+    <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
+    {{'Compact_display' | translate}}
+  </span>
 </div>
 
-<div class="alarms" *ngIf="alarms$ | async as alarmDisplays;">
-  <div *ngFor="let row of alarmDisplays; trackBy: trackByAlarm">
+<div class="alarms" *ngIf="display$ | async as display;">
+  <div class="alarms-container" droppable dropScope="alarm" (onDrop)="setAlarmGroup($event.dragData, undefined)">
+    <div *ngFor="let row of display.noGroup; trackBy: trackByAlarm">
+      <ng-container *ngTemplateOutlet="alarmCard;context:{row: row}"></ng-container>
+    </div>
+  </div>
+  <div class="panel-drop-zone" droppable dropScope="group"></div>
+  <div *ngFor="let group of display.groupedAlarms; trackBy: trackByGroup" class="panel-container">
+    <nz-collapse>
+      <nz-collapse-panel [nzHeader]="group.group.name" class="alarm-group-panel"
+                         draggable dragScope="group"
+                         [class.empty-group]="group.alarms.length === 0" [nzActive]="!group.group.muted">
+        <div class="alarms-container" droppable dropScope="alarm"
+             (onDrop)="setAlarmGroup($event.dragData, group.group.$key)">
+          <div *ngFor="let row of group.alarms; trackBy: trackByAlarm">
+            <ng-container *ngTemplateOutlet="alarmCard;context:{row: row}"></ng-container>
+          </div>
+        </div>
+      </nz-collapse-panel>
+      <ng-template #panelTitle>
+        <span>{{group.group.name}}</span>
+        <nz-switch [(ngModel)]="group.group.muted" (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
+        {{'Mute_alarms' | translate}}
+      </ng-template>
+    </nz-collapse>
+    <div class="panel-drop-zone" droppable dropScope="group"></div>
+  </div>
+</div>
+
+<ng-template #alarmCard let-row="row">
+  <div draggable [dragData]="row.alarm" dragScope="alarm">
     <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete]"
              [nzLoading]="settings.compactAlarms?false:true" [class.spawned]="row.spawned" #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
@@ -14,7 +52,7 @@
       </ng-template>
     </nz-card>
     <ng-template #cardTitle>
-      {{row.alarm.itemId | itemName | i18n}} <span *ngIf="row.alarm.slot > -1">({{row.alarm.slot}})</span>
+      {{row.alarm.itemId | itemName | i18n}} <span *ngIf="row.alarm.slot !== null">({{row.alarm.slot | json}})</span>
     </ng-template>
     <ng-template #cardDescription>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}<br>
@@ -28,4 +66,4 @@
       <i class="anticon anticon-delete" (click)="deleteAlarm(row.alarm)"></i>
     </ng-template>
   </div>
-</div>
+</ng-template>

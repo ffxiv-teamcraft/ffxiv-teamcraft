@@ -10,8 +10,13 @@ const getAllAlarms = createSelector(getAlarmsState, getLoaded, (state: AlarmsSta
   return isLoaded ? state.alarms : [];
 });
 
+const getAllGroups = createSelector(getAlarmsState, getLoaded, (state: AlarmsState, isLoaded) => {
+  return isLoaded ? state.groups : [];
+});
+
 
 export const alarmsQuery = {
   getLoaded,
-  getAllAlarms
+  getAllAlarms,
+  getAllGroups
 };

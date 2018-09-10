@@ -42,7 +42,7 @@ export class AlarmsSidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.alarms$ = this.alarmBell.getAlarmsDisplay();
+    this.alarms$ = this.alarmsFacade.alarmsSidebarDisplay$;
     this.loaded$ = this.alarmsFacade.loaded$;
     this.alarmsFacade.loadAlarms();
   }

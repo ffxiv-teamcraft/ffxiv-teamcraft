@@ -11,6 +11,8 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { SettingsModule } from '../settings/settings.module';
+import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 const routes: Routes = [
   {
@@ -34,8 +36,10 @@ const routes: Routes = [
     ItemIconModule,
     AlarmsModule,
     SettingsModule,
+    NameQuestionPopupModule,
 
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    NgDragDropModule
   ],
   declarations: [AlarmsPageComponent]
 })

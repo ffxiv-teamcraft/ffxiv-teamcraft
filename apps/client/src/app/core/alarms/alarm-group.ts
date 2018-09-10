@@ -9,6 +9,8 @@ export class AlarmGroup extends DataModel {
 
   public muted: boolean;
 
+  public index: number;
+
   constructor(public name: string) {
     super();
   }

@@ -1,0 +1,7 @@
+<form (submit)="submit()">
+  <input nz-input placeholder="{{'Please_enter_a_name' | translate}}" type="text" [formControl]="control"
+         class="name-input">
+  <button nz-button [nzType]="'primary'" type="submit"
+          [disabled]="!control.valid">{{'Submit' | translate}}
+  </button>
+</form>

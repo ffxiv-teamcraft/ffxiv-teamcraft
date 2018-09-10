@@ -1,13 +1,16 @@
 import { AlarmsAction, AlarmsActionTypes } from './alarms.actions';
 import { Alarm } from '../alarm';
+import { AlarmGroup } from '../alarm-group';
 
 export interface AlarmsState {
   alarms: Alarm[];
+  groups: AlarmGroup[];
   loaded: boolean;
 }
 
 export const initialState: AlarmsState = {
   alarms: [],
+  groups: [],
   loaded: false
 };
 
@@ -18,7 +21,8 @@ export function alarmsReducer(
     case AlarmsActionTypes.AlarmsLoaded:
       return {
         ...state,
-        alarms: action.payload,
+        alarms: action.alarms,
+        groups: action.groups,
         loaded: true
       };
 
@@ -32,6 +36,29 @@ export function alarmsReducer(
       return {
         ...state,
         alarms: [...state.alarms.filter(alarm => alarm.$key !== action.id)]
+      };
+
+    case AlarmsActionTypes.CreateAlarmGroup:
+      return {
+        ...state,
+        groups: [...state.groups, new AlarmGroup(action.name)]
+      };
+
+    case AlarmsActionTypes.DeleteAlarmGroup:
+      return {
+        ...state,
+        groups: [...state.groups.filter(group => group.$key !== action.id)]
+      };
+
+    case AlarmsActionTypes.AssignGroupToAlarm:
+      return {
+        ...state,
+        alarms: [...state.alarms.map(alarm => {
+          if (alarm.$key === action.alarm.$key) {
+            alarm.groupId = action.groupId;
+          }
+          return alarm;
+        })]
       };
   }
   return state;

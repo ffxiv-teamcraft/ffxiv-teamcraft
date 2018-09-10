@@ -3,7 +3,6 @@ import { ListLayout } from '../../core/layout/list-layout';
 import { DeserializeAs } from '@kaiu/serializer';
 import { ListDetailsFilters } from '../other/list-details-filters';
 import { GearSet } from '../../pages/simulator/model/gear-set';
-import { AlarmGroup } from '../other/alarm-group';
 import { DefaultConsumables } from '../other/default-consumables';
 
 export class AppUser extends DataModel {
@@ -37,7 +36,7 @@ export class AppUser extends DataModel {
   // Contact ids
   contacts: string[] = [];
   // Alarm groups for the user
-  alarmGroups: AlarmGroup[] = [{ name: 'Default group', enabled: true }];
+  // alarmGroups: AlarmGroup[] = [{ name: 'Default group', enabled: true }];
   // Rotation folders
   rotationFolders: string[] = [];
   // Is the character link verified?

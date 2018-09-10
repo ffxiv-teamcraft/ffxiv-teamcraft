@@ -1,6 +1,26 @@
-.alarms {
-  padding: 10px;
+@import "../../../../theme";
+
+.toolbar {
   display: flex;
+  align-items: center;
+}
+
+.empty-group {
+  ::ng-deep .ant-collapse-content-box {
+    padding: 4px !important;
+  }
+}
+
+.panel-drop-zone {
+  min-height: 30px;
+}
+
+.alarms-container {
+  min-height: 30px;
+  width: 100%;
+  border: 1px dashed rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   .ant-card {
@@ -19,4 +39,23 @@
       width: 85vw;
     }
   }
+}
+
+.alarms {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.panel-container {
+  .alarm-group-panel {
+    width: 100%;
+    .alarm-card-container {
+      width: auto;
+    }
+  }
+}
+
+.drag-hint-border {
+  border: 1px dashed @text-color;
 }

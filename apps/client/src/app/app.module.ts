@@ -105,6 +105,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AlarmsSidebarModule,
 
     NgZorroAntdModule,
+    NgDragDropModule.forRoot(),
 
     StoreModule.forRoot({}, {}),
     !environment.production ? StoreDevtoolsModule.instrument({
