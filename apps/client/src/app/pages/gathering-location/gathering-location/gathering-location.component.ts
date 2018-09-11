@@ -49,6 +49,7 @@ export class GatheringLocationComponent {
               const bellNode = this.bell.getNode(+node.nodeId);
               node.timed = bellNode !== undefined;
               if (node.timed) {
+                node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(bellNode.type);
                 const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
                 node.spawnTimes = bellNode.time;
                 node.uptime = bellNode.uptime;
@@ -74,12 +75,11 @@ export class GatheringLocationComponent {
     );
   }
 
-  public getNodeDescription(node: any): string {
-    const coords = `X: ${node.x}, Y: ${node.y}`;
+  public getNodeSpawns(node: any): string {
     if (node.spawnTimes === undefined || node.spawnTimes.length === 0) {
-      return coords;
+      return '';
     }
-    return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00 , `, `${coords} / `).slice(0, -2);
+    return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00, `, ``).slice(0, -2);
   }
 
   public addAlarms(node: any): void {
@@ -97,7 +97,7 @@ export class GatheringLocationComponent {
               }
             }),
             map(aetheryte => {
-              if(aetheryte !== undefined){
+              if (aetheryte !== undefined) {
                 alarm.aetheryte = aetheryte;
               }
               return alarm;
@@ -126,6 +126,7 @@ export class GatheringLocationComponent {
       zoneId: node.zoneid,
       areaId: node.areaid,
       slot: +node.slot,
+      type: node.type,
       coords: {
         x: node.x,
         y: node.y

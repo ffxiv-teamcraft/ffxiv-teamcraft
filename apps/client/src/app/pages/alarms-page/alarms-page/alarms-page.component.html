@@ -36,7 +36,7 @@
         </nz-collapse-panel>
         <ng-template #panelTitle>
           <div class="panel-title">
-            {{group.group.name}} - {{group.group.index}}
+            {{group.group.name}}
             <button nz-button nzGhost nzSize="small" nzShape="circle"
                     (click)="$event.stopPropagation();renameGroup(group.group)">
               <i class="anticon anticon-edit"></i>
@@ -68,11 +68,33 @@
       </ng-template>
     </nz-card>
     <ng-template #cardTitle>
-      {{row.alarm.itemId | itemName | i18n}} <span *ngIf="row.alarm.slot !== null">({{row.alarm.slot | json}})</span>
+      <div class="card-title">
+        <div>
+          {{row.alarm.itemId | itemName | i18n}} <span
+          *ngIf="row.alarm.slot !== null">({{row.alarm.slot}})</span>
+        </div>
+        <div class="spacer"></div>
+        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
+      </div>
     </ng-template>
     <ng-template #cardDescription>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}<br>
-      {{row.remainingTime | timer}}
+      {{row.remainingTime | timer}}<br>
+      <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
+              nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
+              nzSize="small" nzShape="circle" (click)="addNote(row.alarm)" class="note-button">
+        <i class="anticon anticon-file-add"></i>
+      </button>
+      <ng-template #note>
+        <div class="alarm-note">
+          <div>{{row.alarm.note}}</div>
+          <button nz-button nzGhost nzSize="small"
+                  nz-tooltip nzTitle="{{'Edit' | translate}}"
+                  nzShape="circle" (click)="editNote(row.alarm)">
+            <i class="anticon anticon-edit"></i>
+          </button>
+        </div>
+      </ng-template>
     </ng-template>
     <ng-template #map>
       <app-map [mapId]="row.alarm.zoneId" [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"

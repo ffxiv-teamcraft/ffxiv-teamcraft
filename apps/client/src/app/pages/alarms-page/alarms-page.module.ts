@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { SettingsModule } from '../settings/settings.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { NgDragDropModule } from 'ng-drag-drop';
+import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
     AlarmsModule,
     SettingsModule,
     NameQuestionPopupModule,
+    TextQuestionPopupModule,
 
     NgZorroAntdModule,
     NgDragDropModule

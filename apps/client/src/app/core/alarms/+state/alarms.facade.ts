@@ -11,6 +11,7 @@ import {
   DeleteAlarmGroup,
   LoadAlarms,
   RemoveAlarm,
+  UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
@@ -67,6 +68,10 @@ export class AlarmsFacade {
 
   public addAlarms(alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
+  }
+
+  public updateAlarm(alarm: Alarm): void {
+    this.store.dispatch(new UpdateAlarm(alarm));
   }
 
   public deleteAlarm(alarm: Alarm): void {

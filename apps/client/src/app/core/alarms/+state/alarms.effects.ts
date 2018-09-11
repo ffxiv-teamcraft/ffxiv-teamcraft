@@ -8,6 +8,7 @@ import {
   CreateAlarmGroup,
   DeleteAlarmGroup,
   RemoveAlarm,
+  UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
 import { debounceTime, distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
@@ -58,6 +59,15 @@ export class AlarmsEffects {
           })
         );
       }),
+      mergeMap(() => EMPTY)
+    );
+
+
+  @Effect()
+  updateAlarmInDatabase$ = this.actions$
+    .pipe(
+      ofType(AlarmsActionTypes.UpdateAlarm),
+      mergeMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm)),
       mergeMap(() => EMPTY)
     );
 

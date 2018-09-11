@@ -32,6 +32,17 @@ export function alarmsReducer(
         alarms: [...state.alarms, ...action.payload]
       };
 
+    case AlarmsActionTypes.UpdateAlarm:
+      return {
+        ...state,
+        alarms: [...state.alarms.map(alarm => {
+          if (alarm.$key === action.alarm.$key) {
+            Object.assign(alarm, action.alarm);
+          }
+          return alarm;
+        })]
+      };
+
     case AlarmsActionTypes.RemoveAlarm:
       return {
         ...state,

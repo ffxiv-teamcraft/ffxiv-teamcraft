@@ -7,6 +7,7 @@ export enum AlarmsActionTypes {
   AlarmsLoaded = '[Alarms] Alarms Loaded',
 
   AddAlarms = '[Alarms] Add Alarms',
+  UpdateAlarm = '[Alarms] Update Alarm',
   RemoveAlarm = '[Alarms] Remove Alarm',
 
   PersistAlarms = '[Alarms] Persist Alarms',
@@ -33,6 +34,12 @@ export class AddAlarms implements Action {
 
   constructor(public payload: Alarm[]) {
   }
+}
+
+export class UpdateAlarm implements Action {
+  readonly type = AlarmsActionTypes.UpdateAlarm;
+
+  constructor(public readonly alarm: Alarm){}
 }
 
 export class RemoveAlarm implements Action {
@@ -79,6 +86,7 @@ export type AlarmsAction =
   LoadAlarms
   | AlarmsLoaded
   | AddAlarms
+  | UpdateAlarm
   | PersistAlarms
   | RemoveAlarm
   | CreateAlarmGroup
@@ -90,6 +98,7 @@ export const fromAlarmsActions = {
   LoadAlarms,
   AlarmsLoaded,
   AddAlarms,
+  UpdateAlarm,
   PersistAlarms,
   RemoveAlarm,
   CreateAlarmGroup,

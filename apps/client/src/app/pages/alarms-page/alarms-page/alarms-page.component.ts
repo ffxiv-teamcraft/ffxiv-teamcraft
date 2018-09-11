@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
+import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/name-question-popup/text-question-popup.component';
 
 @Component({
   selector: 'app-alarms-page',
@@ -53,6 +54,33 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.assignAlarmGroup(alarm, groupKey);
   }
 
+  addNote(alarm: Alarm): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('ALARMS.Add_note'),
+      nzFooter: null,
+      nzContent: TextQuestionPopupComponent
+    }).afterClose.pipe(
+      filter(note => note !== undefined)
+    ).subscribe((note) => {
+      alarm.note = note;
+      this.alarmsFacade.updateAlarm(alarm);
+    });
+  }
+
+  editNote(alarm: Alarm): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('ALARMS.Edit_note'),
+      nzFooter: null,
+      nzContent: TextQuestionPopupComponent,
+      nzComponentParams: { baseText: alarm.note }
+    }).afterClose.pipe(
+      filter(note => note !== undefined)
+    ).subscribe((note) => {
+      alarm.note = note;
+      this.alarmsFacade.updateAlarm(alarm);
+    });
+  }
+
   setGroupIndex(index: number, group: AlarmGroup, groups: AlarmGroupDisplay[]): void {
     const orderedGroups = groups.map(groupDisplay => groupDisplay.group).filter(g => g.$key !== group.$key);
     orderedGroups.splice(index, 0, group);
@@ -82,7 +110,8 @@ export class AlarmsPageComponent implements OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant('Please_enter_a_name'),
       nzFooter: null,
-      nzContent: NameQuestionPopupComponent
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: group.name }
     }).afterClose.pipe(
       filter(name => name !== undefined)
     ).subscribe((name) => {

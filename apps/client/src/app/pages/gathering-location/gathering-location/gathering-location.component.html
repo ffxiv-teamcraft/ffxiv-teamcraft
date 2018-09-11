@@ -8,7 +8,7 @@
   <div *ngFor="let node of results">
     <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]"
              [nzLoading]="true" #card>
-      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="node.obj.n" [nzDescription]="getNodeDescription(node)">
+      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>
         <app-item-icon [icon]="node.obj.c"></app-item-icon>
@@ -16,6 +16,22 @@
     </nz-card>
     <ng-template #map>
       <app-map [mapId]="node.zoneid" [markers]="[{x: node.x, y: node.y}]" (loaded)="card.nzLoading = false"></app-map>
+    </ng-template>
+
+    <ng-template #title>
+      <div class="card-title">
+        <div>
+          {{node.obj.i | itemName | i18n}} <span
+          *ngIf="node.slot !== null && node.slot !== undefined">({{node.slot | json}})</span>
+        </div>
+        <div class="spacer"></div>
+        <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
+      </div>
+    </ng-template>
+    <ng-template #description>
+      {{node.zoneid | placeName | i18n}}<br>
+      X: {{node.x}}, Y: {{node.y}}<br>
+      {{getNodeSpawns(node)}}
     </ng-template>
     <ng-template #actionAlarm>
       <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarms(node)">

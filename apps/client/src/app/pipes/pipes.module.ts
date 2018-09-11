@@ -13,6 +13,7 @@ import { AbsolutePipe } from './absolute.pipe';
 import { InstanceIconPipe } from './instance-icon.pipe';
 import { FreeCompanyActionNamePipe } from './free-company-action-name.pipe';
 import { IfMobilePipe } from './if-mobile.pipe';
+import { NodeTypeIconPipe } from './node-type-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { IfMobilePipe } from './if-mobile.pipe';
     AbsolutePipe,
     InstanceIconPipe,
     FreeCompanyActionNamePipe,
-    IfMobilePipe
+    IfMobilePipe,
+    NodeTypeIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -45,7 +47,8 @@ import { IfMobilePipe } from './if-mobile.pipe';
     AbsolutePipe,
     InstanceIconPipe,
     FreeCompanyActionNamePipe,
-    IfMobilePipe
+    IfMobilePipe,
+    NodeTypeIconPipe
   ]
 })
 export class PipesModule {
