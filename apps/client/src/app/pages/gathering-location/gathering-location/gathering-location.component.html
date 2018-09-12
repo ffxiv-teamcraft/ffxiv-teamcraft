@@ -22,7 +22,7 @@
       <div class="card-title">
         <div>
           {{node.obj.i | itemName | i18n}} <span
-          *ngIf="node.slot !== null && node.slot !== undefined">({{node.slot | json}})</span>
+          *ngIf="node.slot !== null && node.slot !== undefined">({{node.slot}})</span>
         </div>
         <div class="spacer"></div>
         <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
