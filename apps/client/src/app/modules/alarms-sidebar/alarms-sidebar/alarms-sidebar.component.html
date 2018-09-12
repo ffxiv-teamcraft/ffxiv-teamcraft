@@ -1,6 +1,6 @@
 <div class="alarms-container" *ngIf="alarms$ | async as alarms">
   <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
-    <div class="alarm-row" [class.spawned]="row.spawned">
+    <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played">
       <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName | i18n"
                      [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
       <div class="center-content">

@@ -82,7 +82,8 @@
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are your sure you want to delete this group?",
-    "Add_note": "Add a note"
+    "Add_note": "Add a note",
+    "Volume": "Volume"
   },
   "Item_name": "Item name",
   "No_items_found": "No item found",

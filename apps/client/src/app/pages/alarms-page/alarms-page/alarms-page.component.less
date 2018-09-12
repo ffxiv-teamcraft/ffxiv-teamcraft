@@ -3,6 +3,11 @@
 .toolbar {
   display: flex;
   align-items: center;
+  .right-toolbar {
+    > button {
+      margin-right: 5px;
+    }
+  }
 }
 
 .empty-group {
@@ -56,10 +61,10 @@
     max-width: 475px;
     margin: 4px;
     &.spawned {
-      background-color: fade(#777777, 50%);
+      background-color: fade(@text-color, 30%);
     }
-    &.alerted {
-      background-color: fade(#777777, 25%);
+    &.played {
+      background-color: fade(@text-color, 10%);
     }
   }
   .ant-card-loading {

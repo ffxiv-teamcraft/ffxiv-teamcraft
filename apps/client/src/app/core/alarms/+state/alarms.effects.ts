@@ -80,6 +80,14 @@ export class AlarmsEffects {
     );
 
   @Effect()
+  clearLocalstorageOnAlarmDelete$ = this.actions$
+    .pipe(
+      ofType(AlarmsActionTypes.RemoveAlarm),
+      map((action: RemoveAlarm) => localStorage.removeItem(`played:${action.id}`)),
+      mergeMap(() => EMPTY)
+    );
+
+  @Effect()
   addGroupToDatabase$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.CreateAlarmGroup),
     withLatestFrom(this.authFacade.userId$),

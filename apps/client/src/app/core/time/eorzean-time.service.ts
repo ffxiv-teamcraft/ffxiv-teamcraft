@@ -39,6 +39,10 @@ export class EorzeanTimeService {
   }
 
   private tick(): void {
-    this._timerObservable.next(this.toEorzeanDate(new Date()));
+    // How to mock time:
+    // const mockDate = new Date();
+    // mockDate.setUTCHours(0);
+    // mockDate.setUTCMinutes(0);
+    this._timerObservable.next(new Date());
   }
 }

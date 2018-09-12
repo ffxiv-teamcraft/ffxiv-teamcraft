@@ -28,10 +28,8 @@ import { SettingsModule } from '../../pages/settings/settings.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { ConfirmationPopupComponent } from './confirmation-popup/confirmation-popup.component';
 import { ForgotPasswordPopupComponent } from './forgot-password-popup/forgot-password-popup.component';
-import { LoginPopupComponent } from './login-popup/login-popup.component';
 import { NameEditPopupComponent } from './name-edit-popup/name-edit-popup.component';
 import { ListNamePopupComponent } from './list-name-popup/list-name-popup.component';
-import { RegisterPopupComponent } from './register-popup/register-popup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommentsModule } from '../comments/comments.module';
 import { FfxivcraftingAmountInputComponent } from './ffxivcrafting-amount-input/ffxivcrafting-amount-input.component';
@@ -80,10 +78,8 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     RecipeComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
-    LoginPopupComponent,
     NameEditPopupComponent,
     ListNamePopupComponent,
-    RegisterPopupComponent,
     FfxivcraftingAmountInputComponent,
     PermissionsPopupComponent,
     PermissionsRowComponent,
@@ -110,10 +106,8 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     RecipeComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
-    LoginPopupComponent,
     NameEditPopupComponent,
     ListNamePopupComponent,
-    RegisterPopupComponent,
     PermissionsPopupComponent,
     UserSelectionPopupComponent,
     AlarmGroupNamePopupComponent,

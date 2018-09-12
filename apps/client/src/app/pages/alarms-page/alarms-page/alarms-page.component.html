@@ -5,6 +5,10 @@
               (click)="createGroup(display.groupedAlarms.length)">
         <i class="anticon anticon-folder-add"></i>
       </button>
+      <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'Timer_options' | translate}}"
+              (click)="showSettings()">
+        <i class="anticon anticon-setting"></i>
+      </button>
     </div>
     <div class="spacer"></div>
     <span>
@@ -60,7 +64,7 @@
 <ng-template #alarmCard let-row="row">
   <div draggable [dragData]="row.alarm" dragScope="alarm">
     <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete]"
-             [nzLoading]="settings.compactAlarms?false:true" [class.spawned]="row.spawned" #card>
+             [nzLoading]="settings.compactAlarms?false:true" [class.spawned]="row.spawned" [class.played]="row.played" #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>

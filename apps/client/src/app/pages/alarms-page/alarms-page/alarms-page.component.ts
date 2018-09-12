@@ -13,6 +13,7 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { filter } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/name-question-popup/text-question-popup.component';
+import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
 
 @Component({
   selector: 'app-alarms-page',
@@ -122,6 +123,14 @@ export class AlarmsPageComponent implements OnInit {
 
   deleteGroup(group: AlarmGroup): void {
     this.alarmsFacade.deleteGroup(group.$key);
+  }
+
+  showSettings(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Timer_options'),
+      nzFooter: null,
+      nzContent: AlarmsOptionsPopupComponent
+    })
   }
 
   ngOnInit(): void {

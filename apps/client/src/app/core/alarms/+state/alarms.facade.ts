@@ -23,6 +23,7 @@ import { EorzeanTimeService } from '../../time/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
 import { AlarmGroupDisplay } from '../alarm-group-display';
 import { AlarmGroup } from '../alarm-group';
+import { SettingsService } from '../../../pages/settings/settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +64,8 @@ export class AlarmsFacade {
     })
   );
 
-  constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService) {
+  constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
+              private settings: SettingsService) {
   }
 
   public addAlarms(alarms: Alarm[]): void {
@@ -112,6 +114,7 @@ export class AlarmsFacade {
     return this.sortAlarmDisplays(alarms.map(alarm => {
       const display = new AlarmDisplay(alarm);
       display.spawned = this.isSpawned(alarm, date);
+      display.played = this.isPlayed(alarm, date);
       if (display.spawned) {
         display.remainingTime = this.getMinutesBefore(date, (alarm.spawn + alarm.duration) % 24);
       } else {
@@ -157,12 +160,23 @@ export class AlarmsFacade {
   }
 
   /**
+   * Checks if a given alarm is played at a given time.
+   *
+   * Being played means that the alarm has been played but the node isn't spawned yet.
+   * @param alarm
+   * @param time
+   */
+  private isPlayed(alarm: Alarm, time: Date): boolean {
+    return this.getMinutesBefore(time, alarm.spawn) < this.settings.alarmHoursBefore * 60;
+  }
+
+  /**
    * Get the amount of minutes before a given hour happens.
    * @param currentTime
    * @param hours
    * @param minutes
    */
-  private getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
+  public getMinutesBefore(currentTime: Date, hours: number, minutes = 0): number {
     // Convert 0 to 24 for spawn timers
     if (hours === 0) {
       hours = 24;

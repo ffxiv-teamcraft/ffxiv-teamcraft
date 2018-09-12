@@ -14,6 +14,7 @@ import { SettingsModule } from '../settings/settings.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
+import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-options-popup.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
     NgZorroAntdModule,
     NgDragDropModule
   ],
-  declarations: [AlarmsPageComponent]
+  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent],
+  entryComponents: [AlarmsOptionsPopupComponent]
 })
 export class AlarmsPageModule {
 }

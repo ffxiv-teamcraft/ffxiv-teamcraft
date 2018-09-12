@@ -1,3 +1,5 @@
+@import "../../../../theme";
+
 .alarms-container {
   display: flex;
   flex-direction: column;
@@ -10,10 +12,10 @@
     align-items: center;
     padding: 10px 5px;
     &.spawned {
-      background-color: fade(#777777, 50%);
+      background-color: fade(@text-color, 30%);
     }
-    &.alerted {
-      background-color: fade(#777777, 25%);
+    &.played {
+      background-color: fade(@text-color, 10%);
     }
     .center-content {
       display: flex;
