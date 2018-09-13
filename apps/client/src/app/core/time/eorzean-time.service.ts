@@ -43,6 +43,6 @@ export class EorzeanTimeService {
     // const mockDate = new Date();
     // mockDate.setUTCHours(0);
     // mockDate.setUTCMinutes(0);
-    this._timerObservable.next(new Date());
+    this._timerObservable.next(this.toEorzeanDate(new Date()));
   }
 }

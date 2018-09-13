@@ -31,7 +31,8 @@ export class AlarmBellService {
         map(([date, alarms]) => {
           return alarms.filter(alarm => {
             const lastPlayed = this.getLastPlayed(alarm);
-            const timeBeforePlay = Math.ceil(this.alarmsFacade.getMinutesBefore(date, alarm.spawn) / 60) - this.settings.alarmHoursBefore;
+            // Ceiling on /6 so precision is 1/10
+            const timeBeforePlay = Math.ceil(this.alarmsFacade.getMinutesBefore(date, alarm.spawn) / 6) / 10 - this.settings.alarmHoursBefore;
             // Irl alarm duration in ms
             const irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
             return Date.now() - lastPlayed >= irlAlarmDuration

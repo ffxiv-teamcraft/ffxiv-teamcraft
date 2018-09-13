@@ -15,6 +15,8 @@ import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-
 import { NgDragDropModule } from 'ng-drag-drop';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-options-popup.component';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
@@ -40,6 +42,8 @@ const routes: Routes = [
     SettingsModule,
     NameQuestionPopupModule,
     TextQuestionPopupModule,
+    PageLoaderModule,
+    FullpageMessageModule,
 
     NgZorroAntdModule,
     NgDragDropModule
