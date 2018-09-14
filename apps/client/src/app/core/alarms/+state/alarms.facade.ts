@@ -68,7 +68,7 @@ export class AlarmsFacade {
               private settings: SettingsService) {
   }
 
-  public addAlarms(alarms: Alarm[]): void {
+  public addAlarms(...alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
   }
 
@@ -116,9 +116,9 @@ export class AlarmsFacade {
       display.spawned = this.isSpawned(alarm, date);
       display.played = this.isPlayed(alarm, date);
       if (display.spawned) {
-        display.remainingTime = this.getMinutesBefore(date, (alarm.spawn + alarm.duration) % 24);
+        display.remainingTime = this.getMinutesBefore(date, (this.getNextSpawn(alarm, date) + alarm.duration) % 24);
       } else {
-        display.remainingTime = this.getMinutesBefore(date, alarm.spawn);
+        display.remainingTime = this.getMinutesBefore(date, this.getNextSpawn(alarm, date));
       }
       display.remainingTime = this.etime.toEarthTime(display.remainingTime);
       return display;
@@ -146,7 +146,7 @@ export class AlarmsFacade {
    * @param time
    */
   private isSpawned(alarm: Alarm, time: Date): boolean {
-    let spawn = alarm.spawn;
+    let spawn = this.getNextSpawn(alarm, time);
     let despawn = (spawn + alarm.duration) % 24;
     despawn = despawn === 0 ? 24 : despawn;
     spawn = spawn === 0 ? 24 : spawn;
@@ -167,7 +167,15 @@ export class AlarmsFacade {
    * @param time
    */
   private isPlayed(alarm: Alarm, time: Date): boolean {
-    return this.getMinutesBefore(time, alarm.spawn) < this.settings.alarmHoursBefore * 60;
+    return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
+  }
+
+  public getNextSpawn(alarm: Alarm, time: Date): number {
+    return alarm.spawns.sort((a,b) => {
+      const timeBeforeA =this.getMinutesBefore(time, a);
+      const timeBeforeB =this.getMinutesBefore(time, b);
+      return timeBeforeA < timeBeforeB ? -1 : 1;
+    })[0];
   }
 
   /**

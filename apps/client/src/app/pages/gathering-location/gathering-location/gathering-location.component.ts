@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-import { debounceTime, map, mergeMap } from 'rxjs/operators';
+import { debounceTime, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
-import { combineLatest } from 'rxjs';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-gathering-location',
@@ -26,8 +26,12 @@ export class GatheringLocationComponent {
 
   alarms$: Observable<Alarm[]>;
 
+  loading = false;
+
+  showIntro = true;
+
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService) {
+              private mapService: MapService, private l12n: LocalizedDataService) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
@@ -35,9 +39,13 @@ export class GatheringLocationComponent {
 
     this.results$ = this.query$.pipe(
       debounceTime(500),
+      tap(() => {
+        this.showIntro = false;
+        this.loading = true;
+      }),
       mergeMap(query => this.dataService.searchGathering(query)),
       map(items => {
-        const nodes = items.map(item => {
+        const nodesFromPositions = [].concat.apply(items.map(item => {
           return Object.keys(nodePositions)
             .filter(key => {
               return nodePositions[key].items.indexOf(item.obj.i) > -1;
@@ -59,19 +67,44 @@ export class GatheringLocationComponent {
               }
               return node;
             });
-        });
-        const results = [].concat.apply([], nodes);
+        }));
+        const nodesFromGarlandBell = items
+          .map(item => {
+            return [].concat.apply([],
+              this.bell.getNodesByItemId(item.obj.i)
+                .map(node => {
+                  const slotMatch = node.items.find(nodeItem => nodeItem.id === item.obj.i);
+                  return {
+                    ...item,
+                    nodeId: node.id,
+                    zoneid: this.l12n.getAreaIdByENName(node.zone),
+                    x: node.coords[0],
+                    y: node.coords[1],
+                    level: node.lvl,
+                    type: ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type),
+                    itemId: item.obj.i,
+                    spawnTimes: node.time,
+                    uptime: node.uptime,
+                    slot: slotMatch.slot,
+                    timed: true
+                  };
+                })
+            );
+          });
+
+        const results = [].concat.apply([], nodesFromPositions.concat(nodesFromGarlandBell));
 
         //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
         const finalNodes = [];
         results.forEach(row => {
-          if (finalNodes.find(item => item.id === row.id && item.zoneid === row.zoneid) === undefined) {
+          if (finalNodes.find(node => node.obj.i === row.obj.i && node.zoneid === row.zoneid) === undefined) {
             finalNodes.push(row);
           }
         });
 
         return finalNodes;
-      })
+      }),
+      tap(() => this.loading = false)
     );
   }
 
@@ -82,30 +115,26 @@ export class GatheringLocationComponent {
     return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00, `, ``).slice(0, -2);
   }
 
-  public addAlarms(node: any): void {
-    combineLatest(
-      node.spawnTimes.map(spawnTime => {
-        const alarm = this.generateAlarm(node);
-        alarm.spawn = spawnTime;
-        return this.mapService.getMapById(alarm.zoneId)
-          .pipe(
-            map((mapData) => {
-              if (mapData !== undefined) {
-                return this.mapService.getNearestAetheryte(mapData, alarm.coords);
-              } else {
-                return undefined;
-              }
-            }),
-            map(aetheryte => {
-              if (aetheryte !== undefined) {
-                alarm.aetheryte = aetheryte;
-              }
-              return alarm;
-            })
-          );
-      })
-    ).subscribe((alarms: Alarm[]) => {
-      this.alarmsFacade.addAlarms(alarms);
+  public addAlarm(node: any): void {
+    const alarm: Partial<Alarm> = this.generateAlarm(node);
+    alarm.spawns = node.spawnTimes;
+    this.mapService.getMapById(alarm.zoneId)
+      .pipe(
+        map((mapData) => {
+          if (mapData !== undefined) {
+            return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+          } else {
+            return undefined;
+          }
+        }),
+        map(aetheryte => {
+          if (aetheryte !== undefined) {
+            alarm.aetheryte = aetheryte;
+          }
+          return alarm;
+        })
+      ).subscribe((alarm: Alarm) => {
+      this.alarmsFacade.addAlarms(alarm);
     });
   }
 

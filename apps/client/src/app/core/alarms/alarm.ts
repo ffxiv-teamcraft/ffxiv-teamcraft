@@ -15,7 +15,7 @@ export class Alarm extends DataModel {
 
   itemId: number;
   icon: number;
-  spawn: number;
+  spawns: number[];
   duration: number;
   slot: number | string;
   zoneId: number;

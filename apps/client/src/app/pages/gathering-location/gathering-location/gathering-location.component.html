@@ -4,7 +4,7 @@
            #searchInput (keyup)="query$.next(searchInput.value)">
   </nz-input-group>
 </div>
-<div class="results" *ngIf="results$ | async as results">
+<div class="results" *ngIf="results$ | async as results; else noResults">
   <div *ngFor="let node of results">
     <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]"
              [nzLoading]="true" #card>
@@ -34,9 +34,19 @@
       {{getNodeSpawns(node)}}
     </ng-template>
     <ng-template #actionAlarm>
-      <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarms(node)">
+      <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarm(node)">
         alarm_add
       </i>
     </ng-template>
   </div>
+  <app-fullpage-message *ngIf="results.length === 0">{{'No_items_found' | translate}}</app-fullpage-message>
 </div>
+
+<ng-template #noResults>
+  <div *ngIf="showIntro; else loaderOrNoResults" class="intro">
+    {{'GATHERING_LOCATIONS.Intro' | translate}}
+  </div>
+  <ng-template #loaderOrNoResults>
+    <app-page-loader *ngIf="loading"></app-page-loader>
+  </ng-template>
+</ng-template>

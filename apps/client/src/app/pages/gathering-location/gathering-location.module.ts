@@ -9,6 +9,8 @@ import { MapModule } from '../../modules/map/map.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
@@ -30,6 +32,8 @@ const routes: Routes = [
     PipesModule,
     ItemIconModule,
     AlarmsModule,
+    PageLoaderModule,
+    FullpageMessageModule,
 
     NgZorroAntdModule
   ],

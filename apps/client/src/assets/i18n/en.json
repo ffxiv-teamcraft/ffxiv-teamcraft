@@ -86,7 +86,7 @@
     "Volume": "Volume"
   },
   "Item_name": "Item name",
-  "No_items_found": "No item found",
+  "No_items_found": "No items found",
   "Select_all": "Select all",
   "Do you really want to reset the list?": "Do you really want to reset the list?",
   "Yes": "Yes",
@@ -411,7 +411,8 @@
   "GATHERING_LOCATIONS": {
     "Title": "Gathering items",
     "No_items": "No gathering node found",
-    "Gathering_name": "Enter item name"
+    "Gathering_name": "Enter item name",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
