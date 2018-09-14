@@ -89,7 +89,8 @@
             <div *ngIf="gearsets$ | async as gearsets">
                 <mat-select *ngIf="customMode"
                             [placeholder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
-                            [(ngModel)]="selectedSet" [compareWith]="compareGearSetsFn">
+                            [(ngModel)]="selectedSet" (ngModelChange)="applyStats(selectedSet, levels)"
+                            [compareWith]="compareGearSetsFn">
                     <mat-option *ngFor="let set of gearsets" [value]="set">
                         {{set.jobId | jobName | i18n}} (ilvl {{set.ilvl}}) <span *ngIf="set.specialist">({{'SIMULATOR.Specialist' | translate}})</span>
                     </mat-option>
@@ -126,7 +127,8 @@
                         <input matInput type="number" [readonly]="!customSet" [(ngModel)]="selectedSet.level"
                                [placeholder]="'SIMULATOR.Level' | translate">
                     </mat-form-field>
-                    <mat-checkbox [disabled]="!customSet" [(ngModel)]="selectedSet.specialist" (change)="toggleSpecialist()">
+                    <mat-checkbox [disabled]="!customSet" [(ngModel)]="selectedSet.specialist"
+                                  (change)="toggleSpecialist()">
                         {{'SIMULATOR.CONFIGURATION.Specialist' | translate}}
                     </mat-checkbox>
                 </div>
@@ -206,7 +208,8 @@
                 </div>
                 <div layout="row">
                     <div class="free-company-actions">
-                        <mat-select [(ngModel)]="_selectedFreeCompanyActions" [compareWith]="compareFreeCompanyActionsFn"
+                        <mat-select [(ngModel)]="_selectedFreeCompanyActions"
+                                    [compareWith]="compareFreeCompanyActionsFn"
                                     placeholder="{{'SIMULATOR.CONFIGURATION.Action' | translate}}" multiple>
                             <mat-optgroup *ngFor="let type of ['Control', 'Craftsmanship']"
                                           [label]="('SIMULATOR.CONFIGURATION.'+type) | translate">
