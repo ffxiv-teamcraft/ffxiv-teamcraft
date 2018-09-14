@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.5"></a>
+## [4.4.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.4...v4.4.5) (2018-09-14)
+
+
+### Bug Fixes
+
+* Fixed an issue with custom simulator not being enabled on job select ([7ea5629](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ea5629))
+
+
+### Features
+
+* new $10 tier patreon supporter: S'irle Alythia ([1f3169e](https://github.com/Supamiu/ffxiv-teamcraft/commit/1f3169e))
+
+
+
 <a name="4.4.4"></a>
 ## [4.4.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.3...v4.4.4) (2018-08-08)
 
