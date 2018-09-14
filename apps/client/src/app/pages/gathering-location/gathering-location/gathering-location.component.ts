@@ -133,8 +133,8 @@ export class GatheringLocationComponent {
           }
           return alarm;
         })
-      ).subscribe((alarm: Alarm) => {
-      this.alarmsFacade.addAlarms(alarm);
+      ).subscribe((result: Alarm) => {
+      this.alarmsFacade.addAlarms(result);
     });
   }
 
