@@ -1,24 +1,48 @@
-<div class="search-box">
-  <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
-    <input class="search-input" type="text" placeholder="{{'ITEMS.Item_name' | translate}}" nz-input>
-  </nz-input-group>
-  <ng-template #addOnAfterTemplate>
-    <label nz-checkbox>{{'ITEMS.Only_recipes' | translate}}</label>
-  </ng-template>
+<div class="top-part">
+  <div class="search-box">
+    <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
+      <input class="search-input" type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
+             [ngModel]="query$.value"
+             (keyup)="query$.next(searchInput.value)">
+    </nz-input-group>
+    <ng-template #addOnAfterTemplate>
+      <label nz-checkbox [(ngModel)]="settings.recipesOnlySearch"
+             (ngModelChange)="onlyRecipes$.next($event)">{{'ITEMS.Only_recipes' | translate}}</label>
+    </ng-template>
+  </div>
+  <div class="filters">
+    <nz-collapse>
+      <nz-collapse-panel [nzHeader]="'Filters' | translate">
+        <form nz-form>
+          <nz-form-item>
+            <nz-form-label>
+              Work in Progress
+            </nz-form-label>
+          </nz-form-item>
+        </form>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </div>
 </div>
-<div class="filters">
-  <nz-collapse>
-    <nz-collapse-panel [nzHeader]="'Filters' | translate">
-      <form nz-form>
-        <nz-form-item>
-          <nz-form-label>
-            Work in Progress
-          </nz-form-label>
-        </nz-form-item>
-      </form>
-    </nz-collapse-panel>
-  </nz-collapse>
+<div *ngIf="showIntro">
+  TODO Intro
 </div>
-<div>
-  <!-- TODO show only when no search done -->
+<div *ngIf="results$ | async as results">
+  <div class="results">
+    <app-page-loader [loading]="loading">
+      <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+        <ng-template #item let-item>
+          <nz-list-item>
+            <nz-list-item-meta
+              [nzTitle]="item.itemId | itemName | i18n"
+              [nzAvatar]="item.icon | icon">
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </app-page-loader>
+  </div>
+  <div *ngIf="results.length === 0">
+    <app-fullpage-message>{{'No_items_found' | translate}}</app-fullpage-message>
+  </div>
 </div>

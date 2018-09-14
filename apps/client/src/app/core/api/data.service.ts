@@ -3,12 +3,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
-import { Recipe } from '../../model/list/recipe';
+import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
 import { map } from 'rxjs/operators';
-import { SearchResult } from '../../model/list/search-result';
+import { SearchResult } from '../../model/search/search-result';
 
 @Injectable()
 export class DataService {

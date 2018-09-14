@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-loader',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-loader.component.less']
 })
 export class PageLoaderComponent {
+
+  @Input()
+  loading = true;
 
 }

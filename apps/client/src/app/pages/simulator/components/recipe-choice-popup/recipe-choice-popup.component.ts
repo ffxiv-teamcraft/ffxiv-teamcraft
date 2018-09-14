@@ -2,7 +2,7 @@ import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@an
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { debounceTime, distinctUntilChanged, first, takeUntil } from 'rxjs/operators';
 import { fromEvent, Subject } from 'rxjs/index';
-import { Recipe } from '../../../../model/list/recipe';
+import { Recipe } from '../../../../model/search/recipe';
 import { DataService } from '../../../../core/api/data.service';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';

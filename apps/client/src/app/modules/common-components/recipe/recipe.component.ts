@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { Recipe } from '../../../model/list/recipe';
+import { Recipe } from '../../../model/search/recipe';
 import { SettingsService } from '../../../pages/settings/settings.service';
 
 @Component({

@@ -6,6 +6,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { SettingsModule } from '../settings/settings.module';
 
 const routes: Routes = [
   {
@@ -22,6 +26,10 @@ const routes: Routes = [
 
     CoreModule,
     TranslateModule,
+    FullpageMessageModule,
+    PageLoaderModule,
+    PipesModule,
+    SettingsModule,
 
     NgZorroAntdModule,
 

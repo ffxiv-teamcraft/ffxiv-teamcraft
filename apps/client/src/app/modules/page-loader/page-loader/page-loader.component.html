@@ -1,3 +1,5 @@
 <div class="container">
-  <nz-spin [nzSize]="'large'"></nz-spin>
+  <nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <ng-content></ng-content>
+  </nz-spin>
 </div>
