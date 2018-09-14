@@ -73,7 +73,7 @@
 
 <ng-template #alarmCard let-row="row">
   <div draggable [dragData]="row.alarm" dragScope="alarm">
-    <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete]"
+    <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete, copyMacro]"
              [nzLoading]="settings.compactAlarms?false:true" [class.spawned]="row.spawned" [class.played]="row.played"
              #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
@@ -117,6 +117,10 @@
     </ng-template>
     <ng-template #delete>
       <i class="anticon anticon-delete" (click)="deleteAlarm(row.alarm)"></i>
+    </ng-template>
+    <ng-template #copyMacro>
+      <i class="anticon anticon-copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
+         (cbOnSuccess) = "macroCopied()"></i>
     </ng-template>
   </div>
 </ng-template>

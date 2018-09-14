@@ -7,13 +7,16 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { SettingsService } from '../../settings/settings.service';
 import { AlarmsPageDisplay } from '../../../core/alarms/alarms-page-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/name-question-popup/text-question-popup.component';
 import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 
 @Component({
   selector: 'app-alarms-page',
@@ -28,7 +31,9 @@ export class AlarmsPageComponent implements OnInit {
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private l12n: LocalizedDataService,
+              private i18n: I18nToolsService, private etime: EorzeanTimeService,
+              private message: NzMessageService) {
   }
 
   public get settings(): SettingsService {
@@ -125,12 +130,21 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.deleteGroup(group.$key);
   }
 
+  getIngameAlarmMacro(display: AlarmDisplay): string {
+    return `/alarm "${this.i18n.getName(this.l12n.getItem(display.alarm.itemId))}" et ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
+      Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
+  }
+
+  macroCopied(): void {
+    this.message.success(this.translate.instant('ALARMS.Macro_copied'))
+  }
+
   showSettings(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('Timer_options'),
       nzFooter: null,
       nzContent: AlarmsOptionsPopupComponent
-    })
+    });
   }
 
   ngOnInit(): void {

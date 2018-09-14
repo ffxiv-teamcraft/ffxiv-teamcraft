@@ -83,7 +83,8 @@
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are your sure you want to delete this group?",
     "Add_note": "Add a note",
-    "Volume": "Volume"
+    "Volume": "Volume",
+    "Macro_copied": "Macro copied to your clipboard"
   },
   "Item_name": "Item name",
   "No_items_found": "No items found",

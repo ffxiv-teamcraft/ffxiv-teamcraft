@@ -121,6 +121,7 @@ export class AlarmsFacade {
         display.remainingTime = this.getMinutesBefore(date, this.getNextSpawn(alarm, date));
       }
       display.remainingTime = this.etime.toEarthTime(display.remainingTime);
+      display.nextSpawn = this.getNextSpawn(alarm, date);
       return display;
     }));
   }

@@ -17,6 +17,7 @@ import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-
 import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-options-popup.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
 
     TranslateModule,
+    ClipboardModule,
 
     MapModule,
     CoreModule,

@@ -23,6 +23,11 @@ export class AlarmDisplay {
    */
   remainingTime: number;
 
+  /**
+   * Next spawn for the ingame alarm macro generator.
+   */
+  nextSpawn: number;
+
   constructor(public readonly alarm: Alarm) {
   }
 }
