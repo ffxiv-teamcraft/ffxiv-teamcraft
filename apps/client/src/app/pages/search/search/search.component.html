@@ -32,7 +32,21 @@
     <app-page-loader [loading]="loading">
       <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
         <ng-template #item let-item>
-          <nz-list-item>
+          <nz-list-item [nzContent]="inputBox" [nzActions]="[addToList]">
+            <ng-template #inputBox>
+              <nz-input-group [nzAddOnBefore]="addCrafts"  class="amount-input">
+                <input type="number" [(ngModel)]="item.amount" nz-input>
+                <ng-template #addCrafts>
+                  <label nz-checkbox [(ngModel)]="item.addCrafts" *ngIf="item.recipe !== undefined">{{'ITEMS.Crafts_amount'
+                    | translate}}</label>
+                </ng-template>
+              </nz-input-group>
+            </ng-template>
+            <ng-template #addToList>
+              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip [nzTitle]="'ITEMS.Add_to_list' | translate">
+                <i class="anticon anticon-plus"></i>
+              </button>
+            </ng-template>
             <nz-list-item-meta
               [nzTitle]="item.itemId | itemName | i18n"
               [nzAvatar]="item.icon | icon">

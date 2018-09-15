@@ -72,7 +72,7 @@ export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
     this.dataService.searchItem(this.query, [], true)
       .pipe(first())
       .subscribe(results => {
-        this.results = <Recipe[]>results;
+        // this.results = <Recipe[]>results;
       });
   }
 

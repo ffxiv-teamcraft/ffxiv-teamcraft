@@ -81,20 +81,26 @@ export class DataService {
                 if (craftedByFilter !== undefined && craftedByFilter.value !== recipe.job) {
                   return;
                 }
-                results.push(<Recipe>{
-                  recipeId: recipe.id,
+                results.push({
                   itemId: item.id,
-                  job: recipe.job,
-                  stars: recipe.stars,
-                  lvl: recipe.lvl,
                   icon: item.obj.c,
-                  collectible: item.obj.o === 1
+                  amount: 1,
+                  recipe: {
+                    recipeId: recipe.id,
+                    itemId: item.id,
+                    collectible: item.obj.o === 1,
+                    job: recipe.job,
+                    stars: recipe.stars,
+                    lvl: recipe.lvl,
+                    icon: item.obj.c
+                  }
                 });
               });
             } else {
               results.push({
                 itemId: item.id,
-                icon: item.obj.c
+                icon: item.obj.c,
+                amount: 1
               });
             }
           });
@@ -111,7 +117,7 @@ export class DataService {
    * @returns {Observable<ItemData[]>}
    */
   public searchGathering(name: string): Observable<any[]> {
-    if(name.length < 3){
+    if (name.length < 3) {
       return of([]);
     }
     let lang = this.i18n.currentLang;

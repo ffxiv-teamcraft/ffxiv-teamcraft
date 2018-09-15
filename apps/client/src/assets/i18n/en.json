@@ -9,7 +9,9 @@
     "Title": "Search",
     "No_match": "No matching items",
     "Item_name": "Item name",
-    "Only_recipes": "Only recipes"
+    "Only_recipes": "Only recipes",
+    "Crafts_amount": "# of crafts",
+    "Add_to_list": "Add this item to a list"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",

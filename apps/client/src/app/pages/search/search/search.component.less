@@ -1,6 +1,9 @@
 .search-box {
   width: 50%;
   margin: auto;
+  @media screen and (max-width: 640px) {
+    width: 90%;
+  }
 }
 
 .filters {
@@ -10,4 +13,10 @@
 
 .results {
   padding: 20px 50px;
+  @media screen and (max-width: 640px) {
+    padding: 20px 10px;
+  }
+  .amount-input {
+    width: 200px;
+  }
 }
