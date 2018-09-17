@@ -1,4 +1,4 @@
-import { List } from '../../../../model/list/list';
+import { List } from '../../../list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
 import { combineLatest, Observable } from 'rxjs';

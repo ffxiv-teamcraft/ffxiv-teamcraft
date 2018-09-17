@@ -1,6 +1,6 @@
 import { Craft } from './craft';
-import { I18nData } from '../list/i18n-data';
-import { I18nDataRow } from '../list/i18n-data-row';
+import { I18nData } from '../common/i18n-data';
+import { I18nDataRow } from '../common/i18n-data-row';
 import { DeserializeFieldName } from '@kaiu/serializer';
 import { Fish } from './fish';
 import { SatisfactionData } from './satisfaction-data';

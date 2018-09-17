@@ -1,4 +1,4 @@
-import { ItemData } from '../garland-tools/item-data';
+import { ItemData } from '../../../model/garland-tools/item-data';
 
 export interface CraftAddition {
   item: any;

@@ -1,5 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { GatheredBy } from '../../../../model/list/gathered-by';
+import { GatheredBy } from '../../model/gathered-by';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { LocalizedDataService } from '../../../data/localized-data.service';
@@ -7,7 +7,7 @@ import { HtmlToolsService } from '../../../tools/html-tools.service';
 import { GarlandToolsService } from '../../../api/garland-tools.service';
 import { Item } from '../../../../model/garland-tools/item';
 import * as nodePositions from '../../../data/sources/node-positions.json';
-import { StoredNode } from '../../../../model/list/stored-node';
+import { StoredNode } from '../../model/stored-node';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 

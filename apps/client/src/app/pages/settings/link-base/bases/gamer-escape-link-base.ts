@@ -1,5 +1,5 @@
 import { AbstractLinkBase } from '../abstract-link-base';
-import { I18nName } from '../../../../model/list/i18n-name';
+import { I18nName } from '../../../../model/common/i18n-name';
 
 export class GamerEscapeLinkBase extends AbstractLinkBase {
 

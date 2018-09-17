@@ -1,8 +1,8 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { TradeSource } from '../../../../model/list/trade-source';
+import { TradeSource } from '../../model/trade-source';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Trade } from '../../../../model/list/trade';
+import { Trade } from '../../model/trade';
 import { Item } from '../../../../model/garland-tools/item';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {

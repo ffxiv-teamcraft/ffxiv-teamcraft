@@ -2,9 +2,12 @@ import { DataModel } from '../storage/data-model';
 import { PermissionsRegistry } from './permissions-registry';
 import { Permissions } from './permissions';
 import { DeserializeAs } from '@kaiu/serializer';
+import { ForeignKey } from '../relational/foreign-key';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 export class DataWithPermissions extends DataModel {
 
+  @ForeignKey(TeamcraftUser)
   authorId: string;
 
   @DeserializeAs(PermissionsRegistry)

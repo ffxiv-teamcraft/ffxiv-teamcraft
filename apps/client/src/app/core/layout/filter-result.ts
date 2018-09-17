@@ -1,4 +1,4 @@
-import { ListRow } from '../../model/list/list-row';
+import { ListRow } from '../list/model/list-row';
 
 export interface FilterResult {
   accepted: ListRow[],

@@ -3,12 +3,12 @@ import { ResourceComment } from '../resource-comment';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../core/database/user.service';
-import { ListRow } from '../../../model/list/list-row';
+import { ListRow } from '../../../core/list/model/list-row';
 import { ListService } from '../../../core/database/list.service';
 import { first } from 'rxjs/operators';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
-import { List } from '../../../model/list/list';
+import { List } from '../../../core/list/model/list';
 
 @Component({
   selector: 'app-comments-popup',

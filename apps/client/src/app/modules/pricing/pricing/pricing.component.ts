@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { List } from '../../../model/list/list';
+import { List } from '../../../core/list/model/list';
 import { PricingService } from '../pricing.service';
-import { ListRow } from '../../../model/list/list-row';
+import { ListRow } from '../../../core/list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { ListService } from '../../../core/database/list.service';
 import { SettingsService } from '../../../pages/settings/settings.service';
@@ -37,7 +37,7 @@ export class PricingComponent {
    * @returns {number}
    */
   getSpendingTotal(): number {
-    return this.list.recipes.reduce((total, item) => {
+    return this.list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
       if (this.settings.expectToSellEverything) {
         // If we expect to sell everything, price based on amount of items crafted
@@ -90,7 +90,7 @@ export class PricingComponent {
    * @returns {number}
    */
   getBenefits(): number {
-    return this.getTotalEarnings(this.list.recipes) - this.getSpendingTotal();
+    return this.getTotalEarnings(this.list.finalItems) - this.getSpendingTotal();
   }
 
   public trackByItemFn(index: number, item: ListRow): number {

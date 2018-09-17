@@ -69,9 +69,9 @@
 
 <mat-card *ngIf="list" [ngClass]="{'mobile':isMobile()}">
   <mat-card-title>{{"Earning" | translate}}</mat-card-title>
-  <mat-card-subtitle>{{getTotalEarnings(list.recipes) | number:'1.0-0'}} gil</mat-card-subtitle>
+  <mat-card-subtitle>{{getTotalEarnings(list.finalItems) | number:'1.0-0'}} gil</mat-card-subtitle>
   <mat-list dense>
-    <app-pricing-row *ngFor="let item of list.recipes; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
+    <app-pricing-row *ngFor="let item of list.finalItems; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
                      [item]="item"
                      [listId]="list.$key" [odd]="odd"
                      [craftCost]="getCraftCost(item)"

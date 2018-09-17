@@ -1,5 +1,5 @@
 import { ZoneBreakdownRow } from './zone-breakdown-row';
-import { ListRow } from './list-row';
+import { ListRow } from '../../core/list/model/list-row';
 
 export class ZoneBreakdown {
 

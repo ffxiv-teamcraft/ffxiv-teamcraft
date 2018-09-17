@@ -1,5 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { I18nName } from '../../../../model/list/i18n-name';
+import { I18nName } from '../../../../model/common/i18n-name';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';

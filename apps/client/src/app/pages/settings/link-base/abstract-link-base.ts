@@ -1,4 +1,4 @@
-import { I18nName } from '../../../model/list/i18n-name';
+import { I18nName } from '../../../model/common/i18n-name';
 
 /**
  * A link abse is a constructor class for every external link in the app, allowing settings to change link types on the fly.

@@ -1,11 +1,11 @@
-import { List } from '../../model/list/list';
+import { List } from '../list/model/list';
 import { Injectable } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { combineLatest, Observable, of } from 'rxjs';
 import { ListStore } from './storage/list/list-store';
 import { Workshop } from '../../model/other/workshop';
 import { catchError, map } from 'rxjs/operators';
-import { ListRow } from '../../model/list/list-row';
+import { ListRow } from '../list/model/list-row';
 import { BellNodesService } from '../data/bell-nodes.service';
 
 

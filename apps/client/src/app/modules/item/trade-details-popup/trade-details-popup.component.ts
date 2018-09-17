@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { Trade } from '../../../model/list/trade';
+import { Trade } from '../../../core/list/model/trade';
 
 @Component({
   selector: 'app-trade-details-popup',

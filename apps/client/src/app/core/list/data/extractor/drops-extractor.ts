@@ -1,5 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { Drop } from '../../../../model/list/drop';
+import { Drop } from '../../model/drop';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';

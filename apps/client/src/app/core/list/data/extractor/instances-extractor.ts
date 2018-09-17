@@ -1,7 +1,7 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Instance } from '../../../../model/list/instance';
+import { Instance } from '../../model/instance';
 import { Item } from '../../../../model/garland-tools/item';
 
 export class InstancesExtractor extends AbstractExtractor<Instance[]> {

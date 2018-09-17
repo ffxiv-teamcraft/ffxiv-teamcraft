@@ -2,13 +2,13 @@ import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { AbstractExtractor } from './extractor/abstract-extractor';
 import { ItemData } from '../../../model/garland-tools/item-data';
 import { DataType } from './data-type';
-import { CraftedBy } from '../../../model/list/crafted-by';
-import { TradeSource } from '../../../model/list/trade-source';
-import { Vendor } from '../../../model/list/vendor';
-import { Instance } from '../../../model/list/instance';
-import { GatheredBy } from '../../../model/list/gathered-by';
-import { I18nName } from '../../../model/list/i18n-name';
-import { Drop } from '../../../model/list/drop';
+import { CraftedBy } from '../model/crafted-by';
+import { TradeSource } from '../model/trade-source';
+import { Vendor } from '../model/vendor';
+import { Instance } from '../model/instance';
+import { GatheredBy } from '../model/gathered-by';
+import { I18nName } from '../../../model/common/i18n-name';
+import { Drop } from '../model/drop';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
 

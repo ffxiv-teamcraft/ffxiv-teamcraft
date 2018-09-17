@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
-import { AppUser } from '../../model/list/app-user';
+import { AppUser } from '../../model/common/app-user';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirebaseStorage } from './storage/firebase/firebase-storage';
 import { AngularFireDatabase } from 'angularfire2/database';

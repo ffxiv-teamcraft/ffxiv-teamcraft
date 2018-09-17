@@ -1,25 +1,23 @@
 import { ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
-import { GarlandToolsService } from '../../core/api/garland-tools.service';
-import { I18nToolsService } from '../../core/tools/i18n-tools.service';
+import { GarlandToolsService } from '../../api/garland-tools.service';
+import { I18nToolsService } from '../../tools/i18n-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
-import { ResourceComment } from '../../modules/comments/resource-comment';
-import { Craft } from '../garland-tools/craft';
-import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
+import { ResourceComment } from '../../../modules/comments/resource-comment';
+import { Craft } from '../../../model/garland-tools/craft';
+import { DataWithPermissions } from '../../database/permissions/data-with-permissions';
 import { ModificationEntry } from './modification-entry';
-import { MathTools } from '../../tools/math-tools';
+import { MathTools } from '../../../tools/math-tools';
 
 declare const ga: Function;
 
 export class List extends DataWithPermissions {
   name: string;
-  recipes: ListRow[] = [];
-  preCrafts: ListRow[] = [];
-  gathers: ListRow[] = [];
-  others: ListRow[] = [];
-  crystals: ListRow[] = [];
+
+  finalItems: ListRow[] = [];
+
+  items: ListRow[] = [];
 
   note = '';
 
@@ -27,8 +25,6 @@ export class List extends DataWithPermissions {
   createdAt: string = new Date().toISOString();
 
   version: string;
-
-  favorites: string[] = [];
 
   tags: ListTag[] = [];
 
@@ -57,22 +53,14 @@ export class List extends DataWithPermissions {
     return this.commissionId !== undefined && this.commissionServer !== undefined;
   }
 
-  /**
-   * Returns all items, which means everything except final recipes and crystals.
-   * @returns {ListRow[]}
-   */
-  public get items(): ListRow[] {
-    return (this.others || []).concat(this.gathers || []).concat(this.preCrafts || []);
-  }
-
   public isComplete(): boolean {
-    return this.recipes.filter(recipe => recipe.done < recipe.amount).length === 0;
+    return this.finalItems.filter(recipe => recipe.done < recipe.amount).length === 0;
   }
 
   public clone(): List {
     const clone = new List();
     for (const prop of Object.keys(this)) {
-      if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals', 'note'].indexOf(prop) > -1) {
+      if (['finalItems', 'preCrafts', 'gathers', 'others', 'crystals', 'note'].indexOf(prop) > -1) {
         clone[prop] = JSON.parse(JSON.stringify(this[prop]));
       }
     }
@@ -88,17 +76,7 @@ export class List extends DataWithPermissions {
   }
 
   public reset(): void {
-    this.recipes.forEach(recipe => this.resetDone(recipe));
-  }
-
-  /**
-   * Iterates on others, gathers and preCrafts.
-   * @param {(arg: ListRow) => void} method
-   */
-  public forEachItem(method: (arg: ListRow) => void): void {
-    (this.others || []).forEach(method);
-    (this.gathers || []).forEach(method);
-    (this.preCrafts || []).forEach(method);
+    this.finalItems.forEach(recipe => this.resetDone(recipe));
   }
 
   /**
@@ -106,11 +84,8 @@ export class List extends DataWithPermissions {
    * @param {(arg: ListRow) => void} method
    */
   public forEach(method: (arg: ListRow) => void): void {
-    this.crystals.forEach(method);
-    this.others.forEach(method);
-    this.gathers.forEach(method);
-    this.preCrafts.forEach(method);
-    this.recipes.forEach(method);
+    this.items.forEach(method);
+    this.finalItems.forEach(method);
   }
 
   /**
@@ -118,28 +93,12 @@ export class List extends DataWithPermissions {
    * @param {(arg: ListRow) => void} method
    */
   public forEachCraft(method: (arg: ListRow) => void): void {
-    (this.preCrafts || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
-    (this.recipes || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+    (this.items || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
+    (this.finalItems || []).filter(row => row.craftedBy !== undefined && row.craftedBy.length > 0).forEach(method);
   }
 
-  public addToItems(data: ListRow): number {
-    return this.add(this.recipes, data, true);
-  }
-
-  public addToPreCrafts(data: ListRow): number {
-    return this.add(this.preCrafts, data);
-  }
-
-  public addToGathers(data: ListRow): number {
-    return this.add(this.gathers, data);
-  }
-
-  public addToOthers(data: ListRow): number {
-    return this.add(this.others, data);
-  }
-
-  public addToCrystals(data: ListRow): number {
-    return this.add(this.crystals, data);
+  public addToFinalItems(data: ListRow): number {
+    return this.add(this.finalItems, data, true);
   }
 
   /**
@@ -148,20 +107,11 @@ export class List extends DataWithPermissions {
    * @returns {List}
    */
   public merge(otherList: List): List {
-    otherList.crystals.forEach(crystal => {
-      this.add(this.crystals, crystal);
+    otherList.items.forEach(crystal => {
+      this.add(this.items, crystal);
     });
-    otherList.gathers.forEach(gather => {
-      this.add(this.gathers, gather);
-    });
-    otherList.others.forEach(other => {
-      this.add(this.others, other);
-    });
-    otherList.preCrafts.forEach(preCraft => {
-      this.add(this.preCrafts, preCraft, true);
-    });
-    otherList.recipes.forEach(recipe => {
-      this.add(this.recipes, recipe, true);
+    otherList.finalItems.forEach(recipe => {
+      this.add(this.finalItems, recipe, true);
     });
     return this.clean();
   }
@@ -172,11 +122,11 @@ export class List extends DataWithPermissions {
    */
   public clean(): List {
     for (const prop of Object.keys(this)) {
-      if (['recipes', 'preCrafts', 'gathers', 'others', 'crystals'].indexOf(prop) > -1) {
+      if (['finalItems', 'items'].indexOf(prop) > -1) {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
-        if (prop !== 'recipes') {
+        if (prop !== 'finalItems') {
           this[prop].forEach(row => {
-            if (prop !== 'preCrafts') {
+            if (row.craftedBy === undefined || row.craftedBy.length === 0) {
               row.amount = row.amount_needed = this.totalAmountRequired(<ListRow>row);
             } else {
               row.amount = this.totalAmountRequired(<ListRow>row);
@@ -195,63 +145,20 @@ export class List extends DataWithPermissions {
    * @returns {boolean}
    */
   public isLarge(): boolean {
-    let items = 0;
-    items += this.crystals.length;
-    items += this.gathers.length;
-    items += this.preCrafts.length;
-    items += this.recipes.length;
-    items += this.others.length;
-    return items > 100;
+    let size = 0;
+    size += this.finalItems.length;
+    size += this.items.length;
+    return size > 100;
   }
 
   public isEmpty(): boolean {
-    return this.recipes.length === 0 &&
-      this.preCrafts.length === 0 &&
-      this.gathers.length === 0 &&
-      this.others.length === 0 &&
-      this.crystals.length === 0;
+    return this.finalItems.length === 0 &&
+      this.items.length === 0;
   }
 
-  public getItemById(id: number, excludeRecipes: boolean = false): ListRow {
-    for (const array of Object.keys(this).filter(key => excludeRecipes ? key !== 'recipes' : true)) {
-      for (const row of this[array]) {
-        if (row === undefined) {
-          continue;
-        }
-        if (row.id === id) {
-          return row;
-        }
-      }
-    }
-    return undefined;
-  }
-
-  orderCrystals(): ListRow[] {
-    if (this.crystals === null) {
-      return [];
-    }
-    return this.crystals === null ? null : this.crystals.sort((a, b) => a.id - b.id);
-  }
-
-  orderGatherings(dataService: LocalizedDataService): ListRow[] {
-    if (this.gathers === null) {
-      return [];
-    }
-    return this.gathers.sort((a, b) => {
-      if (dataService.getItem(b.id).en > dataService.getItem(a.id).en) {
-        if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
-          return 1;
-        } else {
-          return -1;
-        }
-      } else {
-        if (dataService.getItem(a.id).en > dataService.getItem(b.id).en) {
-          return 1;
-        } else {
-          return 0;
-        }
-      }
-    });
+  public getItemById(id: number, excludeFinalItems: boolean = false): ListRow {
+    const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
+    return array.find(row => row.id === id);
   }
 
   /**
@@ -371,7 +278,7 @@ export class List extends DataWithPermissions {
     }
     let res = false;
     res = res || (this.version === undefined);
-    res = res || semver.ltr(this.version, '4.1.7');
+    res = res || semver.ltr(this.version, '5.0.0');
     return res;
   }
 
@@ -414,7 +321,7 @@ export class List extends DataWithPermissions {
         // If this is a crystal
         if (element.id < 20 && element.id > 1) {
           const crystal = gt.getCrystalDetails(element.id);
-          this.addToCrystals({
+          this.add(this.items, {
             id: element.id,
             icon: crystal.icon,
             amount: element.amount * addition.amount,
@@ -427,7 +334,7 @@ export class List extends DataWithPermissions {
           const elementDetails = addition.data.getIngredient(element.id);
           if (elementDetails.isCraft()) {
             const yields = elementDetails.craft[0].yield || 1;
-            const added = this.addToPreCrafts({
+            const added = this.add(this.items, {
               id: elementDetails.id,
               icon: elementDetails.icon,
               amount: element.amount * addition.amount,
@@ -442,18 +349,8 @@ export class List extends DataWithPermissions {
               data: addition.data,
               amount: added
             });
-          } else if (elementDetails.hasNodes() || elementDetails.hasFishingSpots()) {
-            this.addToGathers({
-              id: elementDetails.id,
-              icon: elementDetails.icon,
-              amount: element.amount * addition.amount,
-              done: 0,
-              used: 0,
-              yield: 1,
-              usePrice: true
-            });
           } else {
-            this.addToOthers({
+            this.add(this.items, {
               id: elementDetails.id,
               icon: elementDetails.icon,
               amount: element.amount * addition.amount,

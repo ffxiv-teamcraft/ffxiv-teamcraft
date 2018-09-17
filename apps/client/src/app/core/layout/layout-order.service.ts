@@ -1,6 +1,6 @@
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { Injectable } from '@angular/core';
-import { ListRow } from '../../model/list/list-row';
+import { ListRow } from '../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
 

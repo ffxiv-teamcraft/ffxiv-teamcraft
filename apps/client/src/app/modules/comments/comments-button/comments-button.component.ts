@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { CommentsPopupComponent } from '../comments-popup/comments-popup.component';
-import { ListRow } from '../../../model/list/list-row';
-import { List } from '../../../model/list/list';
+import { ListRow } from '../../../core/list/model/list-row';
+import { List } from '../../../core/list/model/list';
 import { ObservableMedia } from '@angular/flex-layout';
 import { SettingsService } from '../../../pages/settings/settings.service';
 import { first } from 'rxjs/operators';

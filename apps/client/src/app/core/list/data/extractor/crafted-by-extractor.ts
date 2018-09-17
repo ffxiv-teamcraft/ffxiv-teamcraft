@@ -1,5 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { CraftedBy } from '../../../../model/list/crafted-by';
+import { CraftedBy } from '../../model/crafted-by';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../api/garland-tools.service';

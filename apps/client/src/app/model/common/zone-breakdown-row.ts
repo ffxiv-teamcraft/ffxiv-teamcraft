@@ -1,4 +1,4 @@
-import { ListRow } from './list-row';
+import { ListRow } from '../../core/list/model/list-row';
 
 export interface ZoneBreakdownRow {
   zoneId: number;

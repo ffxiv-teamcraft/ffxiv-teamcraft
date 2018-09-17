@@ -1,7 +1,7 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Vendor } from '../../../../model/list/vendor';
+import { Vendor } from '../../model/vendor';
 import { Item } from '../../../../model/garland-tools/item';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {

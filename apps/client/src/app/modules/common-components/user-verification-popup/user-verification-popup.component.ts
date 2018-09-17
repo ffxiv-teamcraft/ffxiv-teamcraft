@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { AppUser } from '../../../model/list/app-user';
+import { AppUser } from '../../../model/common/app-user';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { UserService } from '../../../core/database/user.service';
 

@@ -4,13 +4,13 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
 import { LayoutRowDisplay } from './layout-row-display';
-import { List } from '../../model/list/list';
+import { List } from '../list/model/list';
 import { FilterResult } from './filter-result';
 import { ListLayout } from './list-layout';
 import { LayoutOrderService } from './layout-order.service';
 import { Observable, of } from 'rxjs';
 import { UserService } from '../database/user.service';
-import { ListRow } from '../../model/list/list-row';
+import { ListRow } from '../list/model/list-row';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
@@ -100,7 +100,7 @@ export class LayoutService {
     return this.getLayout(index)
       .pipe(
         map(layout => {
-          return this.layoutOrder.order(list.recipes, layout.recipeOrderBy, layout.recipeOrder);
+          return this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
         })
       );
   }

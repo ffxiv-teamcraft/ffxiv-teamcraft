@@ -9,7 +9,7 @@
                     class="team-icon">people_outline
           </mat-icon>
           <span class="title">
-                        {{list.name}} - {{list.recipes===undefined?0:list.recipes.length}}&nbsp;{{'items' | translate}}
+                        {{list.name}} - {{list.finalItems===undefined?0:list.finalItems.length}}&nbsp;{{'items' | translate}}
                     </span>
           <mat-icon *ngIf="list.ephemeral" matTooltip="{{'Ephemeral_list' | translate}}"
                     matTooltipPosition="above">
@@ -165,7 +165,7 @@
           <mat-icon>content_copy</mat-icon>
         </button>
       </div>
-      <div *ngFor="let recipe of list.recipes; let odd = odd"
+      <div *ngFor="let recipe of list.finalItems; let odd = odd"
            [class.odd]="odd">
         <app-recipe [recipe]="recipe"
                     (ondelete)="onrecipedelete.emit(recipe)"

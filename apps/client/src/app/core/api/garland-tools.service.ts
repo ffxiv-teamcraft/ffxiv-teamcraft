@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GarlandToolsData } from '../../model/list/garland-tools-data';
+import { GarlandToolsData } from '../../model/common/garland-tools-data';
 import { Item } from '../../model/garland-tools/item';
 import { JobCategory } from '../../model/garland-tools/job-category';
 import { Venture } from '../../model/garland-tools/venture';

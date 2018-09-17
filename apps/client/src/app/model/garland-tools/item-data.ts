@@ -1,7 +1,7 @@
 import { Item } from './item';
 import { DeserializeAs } from '@kaiu/serializer';
 import { Craft } from './craft';
-import { Instance } from '../list/instance';
+import { Instance } from '../../core/list/model/instance';
 
 export class ItemData {
 

@@ -1,4 +1,4 @@
-import { CompactMasterbook } from './compact-masterbook';
+import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 
 export interface CraftedBy {
   itemId: number;

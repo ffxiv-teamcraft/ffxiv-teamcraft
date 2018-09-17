@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { I18nName } from '../../model/list/i18n-name';
+import { I18nName } from '../../model/common/i18n-name';
 import * as items from './sources/items.json';
 import * as places from './sources/places.json';
 import * as mobs from './sources/mobs.json';

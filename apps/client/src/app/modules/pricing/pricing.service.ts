@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ListRow } from '../../model/list/list-row';
+import { ListRow } from '../../core/list/model/list-row';
 import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
 

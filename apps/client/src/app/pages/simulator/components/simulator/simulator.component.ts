@@ -38,7 +38,6 @@ import { CraftingRotationService } from '../../../../core/database/crafting-rota
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { Router } from '@angular/router';
 import { FreeCompanyAction } from '../../model/free-company-action';
-import { AppUser } from '../../../../model/list/app-user';
 import { PendingChangesService } from '../../../../core/database/pending-changes/pending-changes.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { ConsumablesService } from '../../model/consumables.service';
@@ -136,7 +135,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public snapshotStep$: BehaviorSubject<number> = new BehaviorSubject<number>(Infinity);
   public snapshotMode = false;
   public dirty = false;
-  public userData: AppUser;
+  public userData: any;
   @Input()
   public rotation: CraftingRotation;
   availableRotations$: Observable<CraftingRotation[]>;

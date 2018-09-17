@@ -5,7 +5,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { DocumentChangeAction } from 'angularfire2/firestore/interfaces';
-import { List } from '../../model/list/list';
+import { List } from '../list/model/list';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { map } from 'rxjs/internal/operators';
 

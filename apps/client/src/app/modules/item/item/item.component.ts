@@ -11,20 +11,20 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { ListRow } from '../../../model/list/list-row';
+import { ListRow } from '../../../core/list/model/list-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GatheredByPopupComponent } from '../gathered-by-popup/gathered-by-popup.component';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { DropsDetailsPopupComponent } from '../drops-details-popup/drops-details-popup.component';
 import { TradeDetailsPopupComponent } from '../trade-details-popup/trade-details-popup.component';
-import { I18nName } from '../../../model/list/i18n-name';
+import { I18nName } from '../../../model/common/i18n-name';
 import { DesynthPopupComponent } from '../desynth-popup/desynth-popup.component';
-import { CompactMasterbook } from '../../../model/list/compact-masterbook';
+import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 import { VendorsDetailsPopupComponent } from '../vendors-details-popup/vendors-details-popup.component';
 import { InstancesDetailsPopupComponent } from '../instances-details-popup/instances-details-popup.component';
 import { ReductionDetailsPopupComponent } from '../reduction-details-popup/reduction-details-popup.component';
 import { MathTools } from '../../../tools/math-tools';
-import { List } from '../../../model/list/list';
+import { List } from '../../../core/list/model/list';
 import { RequirementsPopupComponent } from '../requirements-popup/requirements-popup.component';
 import { ObservableMedia } from '@angular/flex-layout';
 import { VoyagesDetailsPopupComponent } from '../voyages-details-popup/voyages-details-popup.component';
@@ -33,7 +33,6 @@ import { FishDetailsPopupComponent } from '../fish-details-popup/fish-details-po
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { SettingsService } from '../../../pages/settings/settings.service';
-import { AppUser } from '../../../model/list/app-user';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 import { DataService } from '../../../core/api/data.service';
@@ -41,7 +40,7 @@ import { UserService } from '../../../core/database/user.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { folklores } from '../../../core/data/sources/folklores';
 import { VentureDetailsPopupComponent } from '../venture-details-popup/venture-details-popup.component';
-import { CraftedBy } from '../../../model/list/crafted-by';
+import { CraftedBy } from '../../../core/list/model/crafted-by';
 import { Permissions } from '../../../core/database/permissions/permissions';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
@@ -50,6 +49,7 @@ import { ListService } from '../../../core/database/list.service';
 import { TeamService } from '../../../core/database/team.service';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { ItemAssignedNotification } from '../../../model/notification/item-assigned-notification';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
@@ -250,7 +250,7 @@ export class ItemComponent implements OnInit, OnChanges {
   even = false;
 
   @Input()
-  user: AppUser;
+  user: any;
 
   @Input()
   permissions: Permissions;
@@ -495,7 +495,7 @@ export class ItemComponent implements OnInit, OnChanges {
   }
 
   updateRequiredForEndCraft(): void {
-    const recipesNeedingItem = this.list.recipes
+    const recipesNeedingItem = this.list.finalItems
       .filter(recipe => recipe.requires !== undefined)
       .filter(recipe => recipe.requires.find(req => req.id === this.item.id) !== undefined);
     if (recipesNeedingItem.length === 0) {

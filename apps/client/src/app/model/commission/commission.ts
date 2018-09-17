@@ -1,9 +1,9 @@
-import { List } from '../list/list';
+import { List } from '../../core/list/model/list';
 import { CommissionStatus } from './commission-status';
 import { CommissionDiscussion } from './commission-discussion';
 import { DataModel } from '../../core/database/storage/data-model';
 import { DeserializeAs } from '@kaiu/serializer';
-import { ListRow } from '../list/list-row';
+import { ListRow } from '../../core/list/model/list-row';
 
 export class Commission extends DataModel {
 
@@ -84,7 +84,7 @@ export class Commission extends DataModel {
     // Only use constructor logic if we're creating a new commission, else it means we're deserializing the object, meaning that
     // everything we need is already in the object itself.
     if (list !== undefined) {
-      this.items = list.recipes;
+      this.items = list.finalItems;
       this.listId = list.$key;
       this.server = server;
       this.authorId = authorId;
