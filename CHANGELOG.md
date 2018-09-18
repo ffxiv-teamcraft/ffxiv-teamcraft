@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.9"></a>
+## [4.4.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.6...v4.4.9) (2018-09-18)
+
+
+### Bug Fixes
+
+* calibrated simulator using data points from live game for 4.4 ([e23f606](https://github.com/Supamiu/ffxiv-teamcraft/commit/e23f606))
+* fixed an issue with quality being incorrect for rlvl380 recipes in simulator ([b3a9980](https://github.com/Supamiu/ffxiv-teamcraft/commit/b3a9980))
+* fixed rlvl for 4.4 custom simulator ([0c02066](https://github.com/Supamiu/ffxiv-teamcraft/commit/0c02066))
+
+
+### Features
+
+* added a button to copy ingame macro in clipboard for alarms ([c38c1d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/c38c1d7))
+
+
+
 <a name="4.4.8"></a>
 ## [4.4.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.6...v4.4.8) (2018-09-18)
 
