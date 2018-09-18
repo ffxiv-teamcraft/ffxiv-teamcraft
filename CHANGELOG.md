@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.11"></a>
+## [4.4.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.10...v4.4.11) (2018-09-18)
+
+
+### Bug Fixes
+
+* fixed an issue with rotation folder not being persisted with rotation modifications ([d821379](https://github.com/Supamiu/ffxiv-teamcraft/commit/d821379)), closes [#589](https://github.com/Supamiu/ffxiv-teamcraft/issues/589)
+
+
+### Features
+
+* team leaders can now remove assignments on a list ([6414b51](https://github.com/Supamiu/ffxiv-teamcraft/commit/6414b51)), closes [#588](https://github.com/Supamiu/ffxiv-teamcraft/issues/588)
+
+
+
 <a name="4.4.10"></a>
 ## [4.4.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.6...v4.4.10) (2018-09-18)
 
