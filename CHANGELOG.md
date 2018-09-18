@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.7"></a>
+## [4.4.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.6...v4.4.7) (2018-09-18)
+
+
+### Bug Fixes
+
+* fixed rlvl for 4.4 custom simulator ([0c02066](https://github.com/Supamiu/ffxiv-teamcraft/commit/0c02066))
+
+
+
 <a name="4.4.6"></a>
 ## [4.4.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.5...v4.4.6) (2018-09-18)
 
