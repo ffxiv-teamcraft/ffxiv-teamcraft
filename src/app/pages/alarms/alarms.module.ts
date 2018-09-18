@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {AlarmsComponent} from './alarms/alarms.component';
-import {CoreModule} from '../../core/core.module';
-import {RouterModule, Routes} from '@angular/router';
-import {AlarmCardComponent} from './alarm-card/alarm-card.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AlarmsComponent } from './alarms/alarms.component';
+import { CoreModule } from '../../core/core.module';
+import { RouterModule, Routes } from '@angular/router';
+import { AlarmCardComponent } from './alarm-card/alarm-card.component';
 import {
     MatButtonModule,
     MatButtonToggleModule,
@@ -17,17 +17,18 @@ import {
     MatListModule,
     MatTooltipModule
 } from '@angular/material';
-import {TranslateModule} from '@ngx-translate/core';
-import {PipesModule} from '../../pipes/pipes.module';
-import {CommonComponentsModule} from '../../modules/common-components/common-components.module';
-import {MaintenanceGuard} from '../maintenance/maintenance.guard';
-import {AddAlarmPopupComponent} from './add-alarm-popup/add-alarm-popup.component';
-import {FormsModule} from '@angular/forms';
-import {TooltipModule} from '../../modules/tooltip/tooltip.module';
-import {ListModule} from '../list/list.module';
-import {MapModule} from '../../modules/map/map.module';
-import {NgDragDropModule} from 'ng-drag-drop';
-import {AlarmNotePopupComponent} from './alarm-note-popup/alarm-note-popup.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { PipesModule } from '../../pipes/pipes.module';
+import { CommonComponentsModule } from '../../modules/common-components/common-components.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { AddAlarmPopupComponent } from './add-alarm-popup/add-alarm-popup.component';
+import { FormsModule } from '@angular/forms';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { ListModule } from '../list/list.module';
+import { MapModule } from '../../modules/map/map.module';
+import { NgDragDropModule } from 'ng-drag-drop';
+import { AlarmNotePopupComponent } from './alarm-note-popup/alarm-note-popup.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [{
     path: '',
@@ -39,6 +40,7 @@ const routes: Routes = [{
     imports: [
         CommonModule,
         FormsModule,
+        ClipboardModule,
 
         RouterModule.forChild(routes),
         TranslateModule,
