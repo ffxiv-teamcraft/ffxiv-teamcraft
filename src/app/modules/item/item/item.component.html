@@ -49,7 +49,7 @@
                 <img src="{{character.avatar}}" alt=""
                      matTooltip="{{'Is_working_on_it' | translate:{name: character.name} }}"
                      matTooltipPosition="above" class="avatar" routerLink="/profile/{{item.workingOnIt}}">
-                <button mat-icon-button color="warn" *ngIf="item.workingOnIt === user.$key"
+                <button mat-icon-button color="warn" *ngIf="item.workingOnIt === user.$key || teamLeader$ | async"
                         (click)="removeWorkingOnIt()">
                     <mat-icon>clear</mat-icon>
                 </button>
