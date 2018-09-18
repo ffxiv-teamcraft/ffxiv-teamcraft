@@ -55,9 +55,8 @@ export class AlarmCardComponent implements OnInit {
     }
 
     generateAlarmMacro(): string {
-        return `/alarm "${this.i18n.getName(this.l12n.getItem(this.alarm.itemId))}" et ${
-            this.alarm.spawn < 10 ? '0' : ''}${this.alarm.spawn}00 ${
-            Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
+        return `/alarm "${this.i18n.getName(this.l12n.getItem(this.alarm.itemId))}" et rp ${
+            this.alarm.spawn < 10 ? '0' : ''}${this.alarm.spawn}00 1`;
     }
 
     getClassIcon(): string {
