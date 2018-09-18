@@ -45,7 +45,8 @@ export class AlarmCardComponent implements OnInit {
 
     map: Observable<MapData>;
 
-    constructor(private mapService: MapService, private dialog: MatDialog, private i18n: I18nToolsService, private l12n: LocalizedDataService,
+    constructor(private mapService: MapService, private dialog: MatDialog,
+                private i18n: I18nToolsService, private l12n: LocalizedDataService,
                 private etime: EorzeanTimeService, private settings: SettingsService) {
     }
 
@@ -53,8 +54,9 @@ export class AlarmCardComponent implements OnInit {
         this.delete.emit();
     }
 
-    generateAlarmMacro():string{
-        return `/alarm "${this.i18n.getName(this.l12n.getItem(this.alarm.itemId))}" et ${this.alarm.spawn < 10 ? '0' : ''}${this.alarm.spawn}00 ${
+    generateAlarmMacro(): string {
+        return `/alarm "${this.i18n.getName(this.l12n.getItem(this.alarm.itemId))}" et ${
+            this.alarm.spawn < 10 ? '0' : ''}${this.alarm.spawn}00 ${
             Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
     }
 
@@ -63,7 +65,7 @@ export class AlarmCardComponent implements OnInit {
     }
 
     editNote(): void {
-        this.dialog.open(AlarmNotePopupComponent, {data: this.alarm});
+        this.dialog.open(AlarmNotePopupComponent, { data: this.alarm });
     }
 
     ngOnInit(): void {
