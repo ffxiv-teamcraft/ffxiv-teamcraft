@@ -1,55 +1,55 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Craft} from '../../../../model/garland-tools/craft';
-import {Simulation} from '../../simulation/simulation';
-import {BehaviorSubject, combineLatest, Observable, of, ReplaySubject} from 'rxjs';
-import {CraftingAction} from '../../model/actions/crafting-action';
-import {CrafterLevels, CrafterStats} from '../../model/crafter-stats';
-import {SimulationReliabilityReport} from '../../simulation/simulation-reliability-report';
-import {SimulationResult} from '../../simulation/simulation-result';
-import {ActionType} from '../../model/actions/action-type';
-import {CraftingActionsRegistry} from '../../model/crafting-actions-registry';
-import {ObservableMedia} from '@angular/flex-layout';
-import {GearSet} from '../../model/gear-set';
-import {UserService} from '../../../../core/database/user.service';
-import {DataService} from '../../../../core/api/data.service';
-import {HtmlToolsService} from '../../../../core/tools/html-tools.service';
-import {EffectiveBuff} from '../../model/effective-buff';
-import {Buff} from 'app/pages/simulator/model/buff.enum';
-import {Consumable} from '../../model/consumable';
-import {DefaultConsumables} from '../../../../model/other/default-consumables';
-import {foods} from '../../../../core/data/sources/foods';
-import {medicines} from '../../../../core/data/sources/medicines';
-import {freeCompanyActions} from '../../../../core/data/sources/free-company-actions';
-import {BonusType} from '../../model/consumable-bonus';
-import {CraftingRotation} from '../../../../model/other/crafting-rotation';
-import {CustomCraftingRotation} from '../../../../model/other/custom-crafting-rotation';
-import {MatDialog, MatSnackBar} from '@angular/material';
-import {ImportRotationPopupComponent} from '../import-rotation-popup/import-rotation-popup.component';
-import {MacroPopupComponent} from '../macro-popup/macro-popup.component';
-import {PendingChangesService} from 'app/core/database/pending-changes/pending-changes.service';
-import {SimulationMinStatsPopupComponent} from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
-import {ImportMacroPopupComponent} from '../import-macro-popup/import-macro-popup.component';
-import {LocalizedDataService} from '../../../../core/data/localized-data.service';
-import {TranslateService} from '@ngx-translate/core';
-import {Language} from 'app/core/data/language';
-import {ConsumablesService} from 'app/pages/simulator/model/consumables.service';
-import {FreeCompanyAction} from 'app/pages/simulator/model/free-company-action';
-import {FreeCompanyActionsService} from 'app/pages/simulator/model/free-company-actions.service';
-import {I18nToolsService} from '../../../../core/tools/i18n-tools.service';
-import {AppUser} from 'app/model/list/app-user';
-import {bufferTime, debounceTime, filter, first, map, mergeMap, tap} from 'rxjs/operators';
-import {CraftingJob} from '../../model/crafting-job.enum';
-import {StepByStepReportPopupComponent} from '../step-by-step-report-popup/step-by-step-report-popup.component';
-import {RotationNamePopupComponent} from '../rotation-name-popup/rotation-name-popup.component';
-import {CraftingRotationService} from '../../../../core/database/crafting-rotation.service';
-import {RecipeChoicePopupComponent} from '../recipe-choice-popup/recipe-choice-popup.component';
-import {Router} from '@angular/router';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Craft } from '../../../../model/garland-tools/craft';
+import { Simulation } from '../../simulation/simulation';
+import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
+import { CraftingAction } from '../../model/actions/crafting-action';
+import { CrafterLevels, CrafterStats } from '../../model/crafter-stats';
+import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
+import { SimulationResult } from '../../simulation/simulation-result';
+import { ActionType } from '../../model/actions/action-type';
+import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
+import { ObservableMedia } from '@angular/flex-layout';
+import { GearSet } from '../../model/gear-set';
+import { UserService } from '../../../../core/database/user.service';
+import { DataService } from '../../../../core/api/data.service';
+import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
+import { EffectiveBuff } from '../../model/effective-buff';
+import { Buff } from 'app/pages/simulator/model/buff.enum';
+import { Consumable } from '../../model/consumable';
+import { DefaultConsumables } from '../../../../model/other/default-consumables';
+import { foods } from '../../../../core/data/sources/foods';
+import { medicines } from '../../../../core/data/sources/medicines';
+import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
+import { BonusType } from '../../model/consumable-bonus';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { CustomCraftingRotation } from '../../../../model/other/custom-crafting-rotation';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { ImportRotationPopupComponent } from '../import-rotation-popup/import-rotation-popup.component';
+import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
+import { PendingChangesService } from 'app/core/database/pending-changes/pending-changes.service';
+import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
+import { ImportMacroPopupComponent } from '../import-macro-popup/import-macro-popup.component';
+import { LocalizedDataService } from '../../../../core/data/localized-data.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Language } from 'app/core/data/language';
+import { ConsumablesService } from 'app/pages/simulator/model/consumables.service';
+import { FreeCompanyAction } from 'app/pages/simulator/model/free-company-action';
+import { FreeCompanyActionsService } from 'app/pages/simulator/model/free-company-actions.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { AppUser } from 'app/model/list/app-user';
+import { bufferTime, debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { CraftingJob } from '../../model/crafting-job.enum';
+import { StepByStepReportPopupComponent } from '../step-by-step-report-popup/step-by-step-report-popup.component';
+import { RotationNamePopupComponent } from '../rotation-name-popup/rotation-name-popup.component';
+import { CraftingRotationService } from '../../../../core/database/crafting-rotation.service';
+import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-simulator',
     templateUrl: './simulator.component.html',
     styleUrls: ['./simulator.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimulatorComponent implements OnInit, OnDestroy {
 
@@ -265,9 +265,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
         const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
         if (aName > bName) {
-            return 1
+            return 1;
         } else if (aName < bName) {
-            return -1
+            return -1;
         } else {
             // If they're both the same item, HQ first
             return a.hq ? -1 : 1;
@@ -314,7 +314,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             this.recipeSync = recipe;
             this.hqIngredientsData = (recipe.ingredients || [])
                 .filter(i => i.id > 20 && i.quality !== undefined)
-                .map(ingredient => ({id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality}));
+                .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
         });
 
         this.gearsets$ = this.userService.getUserData()
@@ -342,7 +342,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                             }),
                             tap(sets => this.levels = <CrafterLevels>sets.map(set => set.level))
                         );
-                }),
+                })
             );
 
         this.simulation$ = combineLatest(
@@ -389,7 +389,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     public showMinStats(simulation: Simulation): void {
-        this.dialog.open(SimulationMinStatsPopupComponent, {data: simulation});
+        this.dialog.open(SimulationMinStatsPopupComponent, { data: simulation });
     }
 
     ngOnInit(): void {
@@ -481,7 +481,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     showStepByStepReport(result: SimulationResult): void {
-        this.dialog.open(StepByStepReportPopupComponent, {data: result});
+        this.dialog.open(StepByStepReportPopupComponent, { data: result });
     }
 
     generateMacro(): void {
@@ -516,7 +516,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
-                consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
+                consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
                 freeCompanyActions: this._selectedFreeCompanyActions,
                 folder: this.rotation.folder
             });
@@ -528,13 +528,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 rotation: this.serializedRotation,
                 recipe: this.recipeSync,
                 authorId: this.authorId,
-                consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
+                consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
                 freeCompanyActions: this._selectedFreeCompanyActions,
                 folder: this.rotation.folder
             });
         }
         if (asNew) {
-            this.snack.open(this.translate.instant('SIMULATOR.Save_as_new_done'), null, {duration: 3000});
+            this.snack.open(this.translate.instant('SIMULATOR.Save_as_new_done'), null, { duration: 3000 });
         }
     }
 
@@ -554,14 +554,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
             if (dragData < targetIndex) {
                 for (let i = dragData; i < targetIndex - 1; i++) {
-                    actions[i] = actions[i + 1]
+                    actions[i] = actions[i + 1];
                 }
-                actions[targetIndex - 1] = movedAction
+                actions[targetIndex - 1] = movedAction;
             } else {
                 for (let i = dragData - 1; i >= targetIndex; i--) {
-                    actions[i + 1] = actions[i]
+                    actions[i + 1] = actions[i];
                 }
-                actions[targetIndex] = movedAction
+                actions[targetIndex] = movedAction;
             }
         } else if (dragData instanceof CraftingAction) {
             actions.splice(targetIndex, 0, dragData);
@@ -670,7 +670,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     editRotationName(rotation: CraftingRotation): void {
-        this.dialog.open(RotationNamePopupComponent, {data: rotation})
+        this.dialog.open(RotationNamePopupComponent, { data: rotation })
             .afterClosed()
             .pipe(
                 filter(res => res !== undefined && res.length > 0 && res !== this.rotation.getName())
