@@ -1,9 +1,9 @@
-import {Simulation} from '../../simulation/simulation';
-import {Buff} from '../buff.enum';
-import {ActionType} from './action-type';
-import {Tables} from '../tables';
-import {CrafterStats} from '../crafter-stats';
-import {CraftingJob} from '../crafting-job.enum';
+import { Simulation } from '../../simulation/simulation';
+import { Buff } from '../buff.enum';
+import { ActionType } from './action-type';
+import { Tables } from '../tables';
+import { CrafterStats } from '../crafter-stats';
+import { CraftingJob } from '../crafting-job.enum';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -134,9 +134,14 @@ export abstract class CraftingAction {
         // Level penalty for recipes above crafter level
         if (levelDifference < 0) {
             levelCorrectionFactor += 0.025 * Math.max(levelDifference, -10);
-            if (Tables.PROGRESS_PENALTY_TABLE[recipeLevel] !== undefined) {
-                recipeLevelPenalty += Tables.PROGRESS_PENALTY_TABLE[recipeLevel];
-            }
+            Object.keys(Tables.PROGRESS_PENALTY_TABLE)
+                .forEach((key) => {
+                    const penaltyLevel = +key;
+                    const penaltyValue = Tables.PROGRESS_PENALTY_TABLE[penaltyLevel];
+                    if (recipeLevel >= penaltyLevel) {
+                        recipeLevelPenalty = penaltyValue;
+                    }
+                });
         }
 
         // Level factor is rounded to nearest percent

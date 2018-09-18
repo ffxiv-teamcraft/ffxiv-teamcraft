@@ -59,7 +59,7 @@ export class Tables {
         250: -0.04,
         320: -0.02,
         350: -0.035,
-        380: -0.05,
+        380: -0.048,
     };
 
     // source: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1846
@@ -173,6 +173,14 @@ export class Tables {
         300: -0.09,
         310: -0.10,
         340: -0.11,
-        380: -0.16,
+        380: -0.135,
     };
 }
+
+/**
+ * 1652
+ * 307
+ *
+ * 1817
+ * 341
+ */
