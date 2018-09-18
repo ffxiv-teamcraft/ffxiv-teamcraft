@@ -1,7 +1,7 @@
 # ffxiv-teamcraft
 
 [![GitHub Release Date](https://img.shields.io/github/release-date/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/releases)
-![Github Downloads](https://img.shields.io/github/downloads/Supamiu/ffxiv-teamcraft/total.svg)
+![Github Downloads](https://img.shields.io/github/downloads/Supamiu/ffxiv-teamcraft/latest/ffxiv-teamcraft-setup.exe.svg)
 [![GitHub issues](https://img.shields.io/github/issues/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Supamiu/ffxiv-teamcraft.svg)](https://github.com/Supamiu/ffxiv-teamcraft/pulls)
 [![Discord](https://img.shields.io/discord/355013337748209665.svg)](https://discord.gg/r6qxt6P)

@@ -1,34 +1,35 @@
-import {ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {TranslateService} from '@ngx-translate/core';
-import {NavigationEnd, Router} from '@angular/router';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {User} from 'firebase/app';
-import {MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material';
-import {RegisterPopupComponent} from './modules/common-components/register-popup/register-popup.component';
-import {LoginPopupComponent} from './modules/common-components/login-popup/login-popup.component';
-import {CharacterAddPopupComponent} from './modules/common-components/character-add-popup/character-add-popup.component';
-import {UserService} from './core/database/user.service';
-import {environment} from '../environments/environment';
-import {PatreonPopupComponent} from './modules/patreon/patreon-popup/patreon-popup.component';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
-import {BetaDisclaimerPopupComponent} from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
-import {SettingsService} from './pages/settings/settings.service';
-import {HelpService} from './core/component/help.service';
-import {GivewayPopupComponent} from './modules/giveway-popup/giveway-popup/giveway-popup.component';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { TranslateService } from '@ngx-translate/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { User } from 'firebase/app';
+import { MatDialog, MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material';
+import { RegisterPopupComponent } from './modules/common-components/register-popup/register-popup.component';
+import { LoginPopupComponent } from './modules/common-components/login-popup/login-popup.component';
+import { CharacterAddPopupComponent } from './modules/common-components/character-add-popup/character-add-popup.component';
+import { UserService } from './core/database/user.service';
+import { environment } from '../environments/environment';
+import { PatreonPopupComponent } from './modules/patreon/patreon-popup/patreon-popup.component';
+import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { BetaDisclaimerPopupComponent } from './modules/beta-disclaimer/beta-disclaimer-popup/beta-disclaimer-popup.component';
+import { SettingsService } from './pages/settings/settings.service';
+import { HelpService } from './core/component/help.service';
+import { GivewayPopupComponent } from './modules/giveway-popup/giveway-popup/giveway-popup.component';
 import fontawesome from '@fortawesome/fontawesome';
-import {faDiscord, faFacebookF, faGithub} from '@fortawesome/fontawesome-free-brands';
-import {faBell, faCalculator, faGavel, faMap} from '@fortawesome/fontawesome-free-solid';
-import {PushNotificationsService} from 'ng-push';
-import {OverlayContainer} from '@angular/cdk/overlay';
-import {PendingChangesService} from './core/database/pending-changes/pending-changes.service';
-import {Observable, Subscription} from 'rxjs';
-import {debounceTime, distinctUntilChanged, map, mergeMap, tap} from 'rxjs/operators';
-import {PlatformService} from './core/tools/platform.service';
-import {IpcService} from './core/electron/ipc.service';
-import {GarlandToolsService} from './core/api/garland-tools.service';
-import {CommissionService} from './core/database/commission/commission.service';
-import {NotificationService} from './core/notification/notification.service';
+import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
+import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
+import { PushNotificationsService } from 'ng-push';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { PendingChangesService } from './core/database/pending-changes/pending-changes.service';
+import { Observable, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { PlatformService } from './core/tools/platform.service';
+import { IpcService } from './core/electron/ipc.service';
+import { GarlandToolsService } from './core/api/garland-tools.service';
+import { CommissionService } from './core/database/commission/commission.service';
+import { NotificationService } from './core/notification/notification.service';
+import * as semver from 'semver';
 
 declare const ga: Function;
 
@@ -90,6 +91,8 @@ export class AppComponent implements OnInit {
 
     notifications$: Observable<number>;
 
+    public lockNavigation = false;
+
     constructor(private auth: AngularFireAuth,
                 private router: Router,
                 private translate: TranslateService,
@@ -136,7 +139,17 @@ export class AppComponent implements OnInit {
         this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
             if (maintenance && environment.production) {
                 this.router.navigate(['maintenance']);
+                this.lockNavigation = true;
             }
+        });
+
+        this.firebase.object('version_lock')
+            .valueChanges()
+            .pipe(
+                filter(version => semver.ltr(environment.version, version.toString()))
+            ).subscribe(() => {
+            this.router.navigate(['version-lock']);
+            this.lockNavigation = true;
         });
 
         // Google Analytics
@@ -187,9 +200,9 @@ export class AppComponent implements OnInit {
                             map(commissions => {
                                 return commissions.reduce((hasBadge, commission) => {
                                     return hasBadge || commission.hasNewThing(character.userId);
-                                }, false)
+                                }, false);
                             })
-                        )
+                        );
                 }),
                 tap(hasCommissionBadge => {
                     const lastNewThingNotification = +localStorage.getItem('commission:notification') || 0;
@@ -198,10 +211,10 @@ export class AppComponent implements OnInit {
                         this.ipc.send('notification', {
                             title: 'FFXIV Teamcraft',
                             content: this.translate.instant('COMMISSION_BOARD.New_things_notification')
-                        })
+                        });
                     }
                 })
-            )
+            );
     }
 
     detectChanges(): void {
