@@ -19,6 +19,10 @@
         </button>
     </i>
     <mat-card-actions>
+        <button mat-raised-button ngxClipboard [cbContent]="generateAlarmMacro()" color="accent">
+            <mat-icon>file_copy</mat-icon>
+            {{'SIMULATOR.Generate_ingame_macro' | translate}}
+        </button>
         <button mat-button (click)="deleteAlarm()" color="warn">
             <mat-icon>delete</mat-icon>
             {{'Delete' | translate}}
