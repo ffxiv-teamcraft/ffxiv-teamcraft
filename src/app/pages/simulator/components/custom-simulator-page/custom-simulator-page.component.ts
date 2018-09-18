@@ -103,6 +103,7 @@ export class CustomSimulatorPageComponent {
                     result.authorId = rotation.authorId;
                     result.description = '';
                     result.name = rotation.name;
+                    result.folder = rotation.folder;
                     result.consumables = rotation.consumables;
                     result.freeCompanyActions = rotation.freeCompanyActions;
                     if (result.$key === undefined || !this.canSave) {

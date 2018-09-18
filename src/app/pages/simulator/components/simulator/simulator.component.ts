@@ -517,7 +517,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 recipe: this.recipeSync,
                 authorId: this.authorId,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
-                freeCompanyActions: this._selectedFreeCompanyActions
+                freeCompanyActions: this._selectedFreeCompanyActions,
+                folder: this.rotation.folder
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
@@ -528,7 +529,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 recipe: this.recipeSync,
                 authorId: this.authorId,
                 consumables: {food: this._selectedFood, medicine: this._selectedMedicine},
-                freeCompanyActions: this._selectedFreeCompanyActions
+                freeCompanyActions: this._selectedFreeCompanyActions,
+                folder: this.rotation.folder
             });
         }
         if (asNew) {

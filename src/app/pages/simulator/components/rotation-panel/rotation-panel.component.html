@@ -28,6 +28,6 @@
     </mat-expansion-panel-header>
     <div class="content">
         <app-action *ngFor="let step of getSteps(rotation)" [action]="step" [hideCost]="true"
-                    [jobId]="rotation.recipe.job"></app-action>
+                    [jobId]="rotation.recipe.job" class="action"></app-action>
     </div>
 </mat-expansion-panel>

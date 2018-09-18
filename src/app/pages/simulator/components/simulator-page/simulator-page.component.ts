@@ -140,6 +140,7 @@ export class SimulatorPageComponent {
                     result.recipe = rotation.recipe;
                     result.description = '';
                     result.name = rotation.name;
+                    result.folder = rotation.folder;
                     result.consumables = rotation.consumables;
                     result.freeCompanyActions = rotation.freeCompanyActions;
                     result.defaultRecipeId = +this.recipeId;
