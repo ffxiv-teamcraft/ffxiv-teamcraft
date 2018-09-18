@@ -57,7 +57,8 @@
     <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()"
                            [class.native-decorator]="!windowDecorator">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
+                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar"
+                     *ngIf="!lockNavigation">
             <div class="accent-background" *ngIf="!settings.compactSidebar">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
