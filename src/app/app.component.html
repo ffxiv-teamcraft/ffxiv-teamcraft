@@ -57,9 +57,8 @@
     <mat-sidenav-container autosize="true" [class.desktop]="platformService.isDesktop()"
                            [class.native-decorator]="!windowDecorator">
         <mat-sidenav mode="{{mobile ? 'over':'side' }}" opened="{{!mobile}}" #sidenav [disableClose]="!mobile"
-                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar"
-                     *ngIf="!lockNavigation">
-            <div class="accent-background" *ngIf="!settings.compactSidebar">
+                     [ngClass]="{'compact': settings.compactSidebar, 'overlay': overlay}" class="nav-sidebar">
+            <div class="accent-background" *ngIf="!settings.compactSidebar && !lockNavigation">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
@@ -75,7 +74,7 @@
                     {{'Disconnect' | translate}}
                 </button>
             </div>
-            <div class="accent-background" *ngIf="settings.compactSidebar">
+            <div class="accent-background" *ngIf="settings.compactSidebar && !lockNavigation">
                 <div class="user">
                     <mat-icon *ngIf="(authState | async)?.isAnonymous">person</mat-icon>
                     <img *ngIf="!((authState | async)?.isAnonymous)" src="{{userIcon}}"
@@ -83,7 +82,7 @@
                 </div>
             </div>
             <mat-divider></mat-divider>
-            <mat-nav-list>
+            <mat-nav-list *ngIf="!lockNavigation">
                 <mat-list-item matTooltip="{{'Compact_sidebar_toggle' | translate}}"
                                matTooltipPosition="right"
                                [matTooltipDisabled]="!settings.compactSidebar"
@@ -229,7 +228,7 @@
                 </mat-list-item>
             </mat-nav-list>
 
-            <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md *ngIf="!settings.compactSidebar">
+            <button mat-button [matMenuTriggerFor]="langMenu" fxHide fxShow.lt-md *ngIf="!settings.compactSidebar && !lockNavigation">
                 {{locale | uppercase}}
             </button>
             <div class="spacer"></div>
