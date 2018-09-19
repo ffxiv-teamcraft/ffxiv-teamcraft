@@ -3,7 +3,9 @@ import {PlatformService} from '../tools/platform.service';
 import {IpcRenderer} from 'electron';
 import {Router} from '@angular/router';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class IpcService {
 
 
@@ -16,10 +18,12 @@ export class IpcService {
     }
 
     public set overlayUri(uri: string) {
+        console.log(uri);
         this._overlayUri = uri;
     }
 
     constructor(private platformService: PlatformService, private router: Router) {
+        console.log('new ipc !');
         // Only load ipc if we're running inside electron
         if (platformService.isDesktop()) {
             if (window.require) {

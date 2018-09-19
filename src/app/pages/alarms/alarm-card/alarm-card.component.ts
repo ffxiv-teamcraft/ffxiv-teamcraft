@@ -46,8 +46,7 @@ export class AlarmCardComponent implements OnInit {
     map: Observable<MapData>;
 
     constructor(private mapService: MapService, private dialog: MatDialog,
-                private i18n: I18nToolsService, private l12n: LocalizedDataService,
-                private etime: EorzeanTimeService, private settings: SettingsService) {
+                private i18n: I18nToolsService, private l12n: LocalizedDataService) {
     }
 
     deleteAlarm(): void {

@@ -118,7 +118,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         NgSerializerModule.forRoot(),
 
         // App Modules
-        CoreModule,
+        CoreModule.forRoot(),
         DatabaseModule,
         PipesModule,
         DonationModule,

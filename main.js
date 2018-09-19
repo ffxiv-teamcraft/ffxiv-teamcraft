@@ -279,6 +279,7 @@ ipcMain.on('overlay', (event, url) => {
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {
+    console.log(data);
     const overlayWindow = openedOverlays[data.uri];
     if (overlayWindow !== undefined) {
         overlayWindow.setOpacity(data.opacity);
