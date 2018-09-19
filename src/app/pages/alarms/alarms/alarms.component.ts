@@ -63,7 +63,7 @@ export class AlarmsComponent {
                 map(data => {
                     const time = data[0];
                     const user = data[1];
-                    const result = user.alarmGroups.map(group => {
+                    const result = (user.alarmGroups || []).map(group => {
                         return {groupName: group.name, enabled: group.enabled, alarms: []};
                     });
                     const alarms: Alarm[] = [];

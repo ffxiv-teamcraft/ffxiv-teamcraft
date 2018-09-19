@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.12"></a>
+## [4.4.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.10...v4.4.12) (2018-09-19)
+
+
+### Bug Fixes
+
+* fixed an issue with opacity slider not working anymore on alarms overlay ([3d41363](https://github.com/Supamiu/ffxiv-teamcraft/commit/3d41363))
+* fixed an issue with rotation folder not being persisted with rotation modifications ([d821379](https://github.com/Supamiu/ffxiv-teamcraft/commit/d821379)), closes [#589](https://github.com/Supamiu/ffxiv-teamcraft/issues/589)
+
+
+### Features
+
+* starting quality ([f2bfe6b](https://github.com/Supamiu/ffxiv-teamcraft/commit/f2bfe6b)), closes [#591](https://github.com/Supamiu/ffxiv-teamcraft/issues/591)
+* team leaders can now remove assignments on a list ([6414b51](https://github.com/Supamiu/ffxiv-teamcraft/commit/6414b51)), closes [#588](https://github.com/Supamiu/ffxiv-teamcraft/issues/588)
+
+
+
 <a name="4.4.11"></a>
 ## [4.4.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.10...v4.4.11) (2018-09-18)
 
