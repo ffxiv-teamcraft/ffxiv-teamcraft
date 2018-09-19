@@ -138,7 +138,12 @@
             </div>
         </div>
         <div class="config-row" *ngIf="!customMode">
-            <h3>{{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}</h3>
+            <h3 class="ingredients">
+                {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}<br>
+                <i *ngIf="startingQuality$ | async as startingQuality">
+                    {{startingQuality}}
+                </i>
+            </h3>
             <mat-list>
                 <mat-list-item *ngFor="let ingredient of hqIngredientsData">
                     <span matLine [appXivdbTooltip]="ingredient.id">{{ingredient.id | itemName | i18n}}</span>

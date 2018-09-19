@@ -162,8 +162,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         new BehaviorSubject<{ id: number, amount: number }[]>([]);
 
     @Input()
-    public set hqIngredients(ingredients: { id: number, amount: number }[]) {
+    public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
         this.hqIngredients$.next(ingredients);
+        this.startingQuality$.next(ingredients.reduce((total, ingredient) => {
+            return total += ingredient.amount * ingredient.quality;
+        }, 0));
     }
 
     @Input()
@@ -199,6 +202,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
 
     public hqIngredientsData: { id: number, amount: number, max: number, quality: number }[] = [];
+
+    public startingQuality$: BehaviorSubject<number> = new BehaviorSubject(0);
 
     public foods: Consumable[] = [];
 
@@ -518,7 +523,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 authorId: this.authorId,
                 consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
                 freeCompanyActions: this._selectedFreeCompanyActions,
-                folder: this.rotation.folder
+                folder: this.rotation === undefined ? '' : this.rotation.folder
             });
         } else {
             this.onsave.emit(<CustomCraftingRotation>{
@@ -530,7 +535,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                 authorId: this.authorId,
                 consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
                 freeCompanyActions: this._selectedFreeCompanyActions,
-                folder: this.rotation.folder
+                folder: this.rotation === undefined ? '' : this.rotation.folder
             });
         }
         if (asNew) {
