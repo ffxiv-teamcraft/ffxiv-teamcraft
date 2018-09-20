@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class SettingsService {
@@ -13,7 +13,7 @@ export class SettingsService {
     }
 
     public get baseLink(): string {
-        return this.getSetting('base-link', 'XIVDB');
+        return this.getSetting('base-link', 'GARLAND_TOOLS');
     }
 
     public set baseLink(base: string) {
