@@ -26,13 +26,7 @@ export class ListsComponent implements OnInit {
   }
 
   createList(): void {
-    this.dialog.create({
-      nzContent: NameQuestionPopupComponent,
-      nzFooter: null,
-      nzTitle: this.translate.instant('New_List')
-    }).afterClose.pipe(
-      filter(name => name !== undefined)
-    ).subscribe(name => this.listsFacade.createEmptyList(name));
+    this.listsFacade.createEmptyList();
   }
 
   trackByList(index: number, list: List): string {

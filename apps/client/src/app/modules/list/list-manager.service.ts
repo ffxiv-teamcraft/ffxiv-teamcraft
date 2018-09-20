@@ -24,7 +24,6 @@ export class ListManagerService {
   }
 
   public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
-    list.version = environment.version;
     return this.db.getItem(itemId)
       .pipe(
         map((data: ItemData) => {

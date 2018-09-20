@@ -405,7 +405,7 @@ export class List extends DataWithPermissions {
     let count = 0;
     this.forEachCraft(craft => {
       // We have to use filter because some items (airships) might require twice the same item.
-      const requirements = craft.requires.filter(req => req.id === item.id);
+      const requirements = (craft.requires || []).filter(req => req.id === item.id);
       if (requirements.length > 0) {
         requirements.forEach(requirement => {
           count += craft.amount_needed * requirement.amount;

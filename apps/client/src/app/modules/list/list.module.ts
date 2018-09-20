@@ -1,5 +1,5 @@
 import { NgModule, Provider } from '@angular/core';
-import { EXTRACTORS } from './data/data-extractor.service';
+import { DataExtractorService, EXTRACTORS } from './data/data-extractor.service';
 import { CraftedByExtractor } from './data/extractor/crafted-by-extractor';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../core/tools/html-tools.service';
@@ -25,6 +25,9 @@ import { DatabaseModule } from '../../core/database/database.module';
 import { ListPanelComponent } from './list-panel/list-panel.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CommonModule } from '@angular/common';
+import { ListManagerService } from './list-manager.service';
+import { PipesModule } from '../../pipes/pipes.module';
+import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -47,6 +50,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     CoreModule,
 
     DatabaseModule,
+    PipesModule,
+    NameQuestionPopupModule,
 
     NgZorroAntdModule,
 
@@ -55,7 +60,9 @@ export const DATA_EXTRACTORS: Provider[] = [
   ],
   providers: [
     ...DATA_EXTRACTORS,
-    ListsFacade
+    DataExtractorService,
+    ListsFacade,
+    ListManagerService
   ],
   declarations: [ListPanelComponent],
   exports: [ListPanelComponent]

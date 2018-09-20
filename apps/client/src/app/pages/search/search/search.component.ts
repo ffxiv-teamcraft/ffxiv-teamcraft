@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { BehaviorSubject, combineLatest, concat, Observable, Subject } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, skip, takeUntil, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +20,7 @@ export class SearchComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.recipesOnlySearch);
 
   results$: Observable<SearchResult[]>;
 
@@ -28,10 +30,21 @@ export class SearchComponent implements OnInit {
 
   loading = false;
 
-  listPickerVisible = false;
+  listPickerVisible$: Subject<boolean> = new Subject<boolean>();
+
+  pickedList$: Subject<List> = new Subject<List>();
+
+  @ViewChild('notificationRef')
+  notification: TemplateRef<any>;
+
+  // Notification data
+  itemsAdded = 0;
+
+  modifiedList: List;
 
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
-              private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade) {
+              private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
+              private listManager: ListManagerService, private notificationService: NzNotificationService) {
   }
 
   ngOnInit(): void {
@@ -71,8 +84,45 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  addItemToList(items: SearchResult[]): void {
-    this.listPickerVisible = true;
+  public addItemsToList(items: SearchResult[]): void {
+    this.listPickerVisible$.next(true);
+    this.pickedList$.pipe(
+      takeUntil(this.listPickerVisible$),
+      mergeMap(list => {
+        return concat(
+          ...items.map(item => {
+            return this.listManager.addToList(item.itemId, list,
+              item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+          })
+        ).pipe(
+          skip(items.length - 1)
+        );
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.listsFacade.allLists$.pipe(
+          map(lists => lists.find(l => l.createdAt === list.createdAt)),
+          filter(l => l !== undefined),
+          first()
+        )
+      })
+    ).subscribe((list) => {
+      this.itemsAdded = items.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+    });
   }
 
+  public pickList(list: List): void {
+    this.pickedList$.next(list);
+    this.listPickerVisible$.next(false);
+  }
+
+  public pickNewList(): void {
+    this.listsFacade.newList().subscribe(list => {
+      this.pickedList$.next(list);
+      this.listPickerVisible$.next(false);
+    });
+  }
 }

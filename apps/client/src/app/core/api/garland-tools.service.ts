@@ -6,13 +6,16 @@ import { Venture } from '../../model/garland-tools/venture';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GarlandToolsService {
 
   private gt: GarlandToolsData = (<any>window).gt;
   private gItemIndex: any[] = (<any>window).gItemIndex;
 
   constructor(private serializer: NgSerializerService, private http: HttpClient) {
+    this.preload();
   }
 
   public preload(): void {

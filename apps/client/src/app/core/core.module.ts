@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { GarlandToolsService } from './api/garland-tools.service';
 import { DataService } from './api/data.service';
@@ -27,6 +27,7 @@ import { I18nToolsService } from './tools/i18n-tools.service';
 import { BellNodesService } from './data/bell-nodes.service';
 import { EorzeanTimeService } from './time/eorzean-time.service';
 import { TimerPipe } from './time/timer.pipe';
+import { HtmlToolsService } from './tools/html-tools.service';
 
 
 @NgModule({
@@ -54,7 +55,6 @@ import { TimerPipe } from './time/timer.pipe';
   providers: [
     UserService,
     PendingChangesService,
-    GarlandToolsService,
     IpcService,
     PlatformService,
     DataService,
@@ -62,7 +62,8 @@ import { TimerPipe } from './time/timer.pipe';
     LocalizedDataService,
     I18nToolsService,
     BellNodesService,
-    EorzeanTimeService
+    EorzeanTimeService,
+    HtmlToolsService
   ],
   declarations: [
     I18nPipe,
@@ -79,4 +80,12 @@ import { TimerPipe } from './time/timer.pipe';
   ]
 })
 export class CoreModule {
+  static forRoot():ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        GarlandToolsService
+      ]
+    }
+  }
 }
