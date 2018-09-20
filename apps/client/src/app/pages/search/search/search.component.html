@@ -43,7 +43,7 @@
               </nz-input-group>
             </ng-template>
             <ng-template #addToList>
-              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip [nzTitle]="'ITEMS.Add_to_list' | translate">
+              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemToList([item])">
                 <i class="anticon anticon-plus"></i>
               </button>
             </ng-template>
@@ -60,3 +60,15 @@
     <app-fullpage-message>{{'No_items_found' | translate}}</app-fullpage-message>
   </div>
 </div>
+
+<nz-drawer [nzVisible]="listPickerVisible" (nzOnClose)="listPickerVisible = false" [nzTitle]="'Pick_a_list' | translate">
+  {{'LISTS.Your_lists' | translate}}
+  <nz-list [nzDataSource]="yourLists$ | async" [nzRenderItem]="list">
+    <ng-template #list let-list>
+      <nz-list-item>
+        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</nz-drawer>

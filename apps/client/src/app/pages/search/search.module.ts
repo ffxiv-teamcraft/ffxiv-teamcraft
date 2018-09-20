@@ -10,6 +10,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { SettingsModule } from '../settings/settings.module';
+import { ListModule } from '../../modules/list/list.module';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     ReactiveFormsModule,
 
     CoreModule,
+    ListModule,
     TranslateModule,
     FullpageMessageModule,
     PageLoaderModule,
