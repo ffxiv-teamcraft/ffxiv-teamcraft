@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.13"></a>
+## [4.4.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.12...v4.4.13) (2018-09-20)
+
+
+### Bug Fixes
+
+* changed outdated list version trigger to 4.4.10 to make sure everybody has updated lists ([0c866bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/0c866bd))
+* switched default link provider from xivdb to garlandtools ([5de9606](https://github.com/Supamiu/ffxiv-teamcraft/commit/5de9606))
+
+
+### Features
+
+* updated tomestones priority for patch 4.4 ([a1b47bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/a1b47bd))
+
+
+
 <a name="4.4.12"></a>
 ## [4.4.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.10...v4.4.12) (2018-09-19)
 
