@@ -1,15 +1,15 @@
-import {ListRow} from './list-row';
-import {CraftAddition} from './craft-addition';
-import {GarlandToolsService} from '../../core/api/garland-tools.service';
-import {I18nToolsService} from '../../core/tools/i18n-tools.service';
-import {MathTools} from 'app/tools/math-tools';
+import { ListRow } from './list-row';
+import { CraftAddition } from './craft-addition';
+import { GarlandToolsService } from '../../core/api/garland-tools.service';
+import { I18nToolsService } from '../../core/tools/i18n-tools.service';
+import { MathTools } from 'app/tools/math-tools';
 import * as semver from 'semver';
-import {ListTag} from './list-tag.enum';
-import {LocalizedDataService} from '../../core/data/localized-data.service';
-import {ResourceComment} from '../../modules/comments/resource-comment';
-import {Craft} from '../garland-tools/craft';
-import {DataWithPermissions} from '../../core/database/permissions/data-with-permissions';
-import {ModificationEntry} from './modification-entry';
+import { ListTag } from './list-tag.enum';
+import { LocalizedDataService } from '../../core/data/localized-data.service';
+import { ResourceComment } from '../../modules/comments/resource-comment';
+import { Craft } from '../garland-tools/craft';
+import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
+import { ModificationEntry } from './modification-entry';
 
 declare const ga: Function;
 
@@ -417,7 +417,7 @@ export class List extends DataWithPermissions {
         }
         let res = false;
         res = res || (this.version === undefined);
-        res = res || semver.ltr(this.version, '4.1.7');
+        res = res || semver.ltr(this.version, '4.4.10');
         return res;
     }
 
