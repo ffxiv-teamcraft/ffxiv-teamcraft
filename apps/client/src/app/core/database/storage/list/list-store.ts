@@ -1,5 +1,5 @@
 import { DataStore } from '../data-store';
-import { List } from '../../../list/model/list';
+import { List } from '../../../../modules/list/model/list';
 import { Observable } from 'rxjs';
 
 export abstract class ListStore extends DataStore<List> {

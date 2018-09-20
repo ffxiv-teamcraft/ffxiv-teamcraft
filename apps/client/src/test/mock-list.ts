@@ -1,5 +1,5 @@
 import { Serializer } from '@kaiu/serializer';
-import { List } from '../app/core/list/model/list';
+import { List } from '../app/modules/list/model/list';
 
 /**
  * WARNING: Big file, this is a complete airship list for mockup purpose.

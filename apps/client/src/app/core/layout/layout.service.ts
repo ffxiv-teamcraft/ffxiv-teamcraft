@@ -4,13 +4,13 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
 import { LayoutRowDisplay } from './layout-row-display';
-import { List } from '../list/model/list';
+import { List } from '../../modules/list/model/list';
 import { FilterResult } from './filter-result';
 import { ListLayout } from './list-layout';
 import { LayoutOrderService } from './layout-order.service';
 import { Observable, of } from 'rxjs';
 import { UserService } from '../database/user.service';
-import { ListRow } from '../list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable()

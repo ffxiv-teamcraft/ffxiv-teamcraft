@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';

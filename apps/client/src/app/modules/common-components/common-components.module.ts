@@ -38,7 +38,6 @@ import { PermissionsRowComponent } from './permissions-popup/permissions-row/per
 import { UserSelectionPopupComponent } from './user-selection-popup/user-selection-popup.component';
 import { FcCrestComponent } from './fc-crest/fc-crest.component';
 import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-group-name-popup.component';
-import { UserVerificationPopupComponent } from './user-verification-popup/user-verification-popup.component';
 
 @NgModule({
   imports: [
@@ -86,7 +85,6 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     UserSelectionPopupComponent,
     FcCrestComponent,
     AlarmGroupNamePopupComponent,
-    UserVerificationPopupComponent
   ],
   exports: [
     RandomGifComponent,
@@ -111,7 +109,6 @@ import { UserVerificationPopupComponent } from './user-verification-popup/user-v
     PermissionsPopupComponent,
     UserSelectionPopupComponent,
     AlarmGroupNamePopupComponent,
-    UserVerificationPopupComponent
   ]
 })
 export class CommonComponentsModule {

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ListService } from './list.service';
+import { ListService } from '../../modules/list/list.service';
 import { UserService } from './user.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ListStore } from './storage/list/list-store';

@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'lists',
-    loadChildren: './pages/lists/lists.module#ListsModule'
+    loadChildren: './pages/lists/lists-page.module#ListsPageModule'
   },
   {
     path: 'search',

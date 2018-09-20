@@ -2,15 +2,15 @@ import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { concat, Observable } from 'rxjs';
 import { ListRow } from './model/list-row';
-import { DataService } from '../api/data.service';
-import { I18nToolsService } from '../tools/i18n-tools.service';
+import { DataService } from '../../core/api/data.service';
+import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { environment } from '../../../environments/environment';
 
 
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
 import { map, skip } from 'rxjs/operators';
-import { GarlandToolsService } from '../api/garland-tools.service';
+import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
 
 @Injectable()

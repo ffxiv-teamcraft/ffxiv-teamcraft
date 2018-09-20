@@ -1,7 +1,7 @@
 import { inject, TestBed } from '@angular/core/testing';
 
 import { PricingService } from './pricing.service';
-import { ListRow } from '../../core/list/model/list-row';
+import { ListRow } from '../list/model/list-row';
 
 
 describe('PricingService', () => {

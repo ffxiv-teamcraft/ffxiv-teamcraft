@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { List } from '../../../core/list/model/list';
+import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
-import { ListService } from '../../../core/database/list.service';
+import { ListService } from '../../list/list.service';
 import { SettingsService } from '../../../pages/settings/settings.service';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { DataService } from '../../../core/api/data.service';
 import { Fish } from '../../../model/garland-tools/fish';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { GatheringNode } from '../../../model/garland-tools/gathering-node';
 import { ItemData } from '../../../model/garland-tools/item-data';

@@ -1,0 +1,40 @@
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="panelHeader">
+    <pre>{{list.finalItems | json}}</pre>
+  </nz-collapse-panel>
+  <ng-template #panelHeader>
+    <div class="panel-header">
+      {{list.name}}
+      <div class="panel-middle-content">
+        <div class="tags">
+          <nz-tag *ngIf="list.ephemeral" [nzColor]="'red'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
+            {{'Ephemeral_tag' | translate}}
+          </nz-tag>
+          <nz-tag [nzColor]="'purple'">Test</nz-tag>
+          <nz-tag [nzColor]="'gold'">Tags</nz-tag>
+        </div>
+        <div class="description">
+          This is a test list, and it's not even a real description
+        </div>
+      </div>
+      <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'primary'">
+        <i class="anticon anticon-folder-open"></i>
+      </button>
+      <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
+              [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(list)">
+        <i class="anticon anticon-delete"></i></button>
+      <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
+        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+          <i class="anticon anticon-ellipsis"></i></button>
+        <ul nz-menu>
+          <li nz-menu-item>Rename</li>
+          <li nz-menu-item>Comments</li>
+          <li nz-menu-item>Tags</li>
+          <li nz-menu-item>Permissions</li>
+          <li nz-menu-item>Template (create or copy)</li>
+          <li nz-menu-item>Custom link (create or copy)</li>
+        </ul>
+      </nz-dropdown>
+    </div>
+  </ng-template>
+</nz-collapse>

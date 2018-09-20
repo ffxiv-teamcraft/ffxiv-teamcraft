@@ -1,14 +1,15 @@
 import { ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
-import { GarlandToolsService } from '../../api/garland-tools.service';
-import { I18nToolsService } from '../../tools/i18n-tools.service';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
-import { ResourceComment } from '../../../modules/comments/resource-comment';
+import { ResourceComment } from '../../comments/resource-comment';
 import { Craft } from '../../../model/garland-tools/craft';
-import { DataWithPermissions } from '../../database/permissions/data-with-permissions';
+import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { ModificationEntry } from './modification-entry';
 import { MathTools } from '../../../tools/math-tools';
+import { environment } from '../../../../environments/environment';
 
 declare const ga: Function;
 
@@ -24,7 +25,7 @@ export class List extends DataWithPermissions {
   // noinspection JSUnusedGlobalSymbols
   createdAt: string = new Date().toISOString();
 
-  version: string;
+  version: string = environment.version;
 
   tags: ListTag[] = [];
 

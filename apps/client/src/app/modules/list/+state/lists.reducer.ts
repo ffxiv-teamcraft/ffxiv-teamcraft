@@ -3,14 +3,13 @@ import { List } from '../model/list';
 
 
 export interface ListsState {
-  list: List[]; // list of Lists; analogous to a sql normalized table
-  selectedId?: string | number; // which Lists record has been selected
+  lists: List[]; // list of Lists; analogous to a sql normalized table
+  selectedId?: string; // which Lists record has been selected
   loaded: boolean; // has the Lists list been loaded
-  error?: any; // last none error (if any)
 }
 
 export const initialState: ListsState = {
-  list: [],
+  lists: [],
   loaded: false
 };
 
@@ -22,7 +21,7 @@ export function listsReducer(
     case ListsActionTypes.ListsLoaded: {
       state = {
         ...state,
-        list: action.payload,
+        lists: action.payload,
         loaded: true
       };
       break;

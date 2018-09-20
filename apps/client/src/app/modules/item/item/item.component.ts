@@ -11,7 +11,7 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GatheredByPopupComponent } from '../gathered-by-popup/gathered-by-popup.component';
 import { MatDialog, MatSnackBar } from '@angular/material';
@@ -24,7 +24,7 @@ import { VendorsDetailsPopupComponent } from '../vendors-details-popup/vendors-d
 import { InstancesDetailsPopupComponent } from '../instances-details-popup/instances-details-popup.component';
 import { ReductionDetailsPopupComponent } from '../reduction-details-popup/reduction-details-popup.component';
 import { MathTools } from '../../../tools/math-tools';
-import { List } from '../../../core/list/model/list';
+import { List } from '../../list/model/list';
 import { RequirementsPopupComponent } from '../requirements-popup/requirements-popup.component';
 import { ObservableMedia } from '@angular/flex-layout';
 import { VoyagesDetailsPopupComponent } from '../voyages-details-popup/voyages-details-popup.component';
@@ -40,16 +40,15 @@ import { UserService } from '../../../core/database/user.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { folklores } from '../../../core/data/sources/folklores';
 import { VentureDetailsPopupComponent } from '../venture-details-popup/venture-details-popup.component';
-import { CraftedBy } from '../../../core/list/model/crafted-by';
+import { CraftedBy } from '../../list/model/crafted-by';
 import { Permissions } from '../../../core/database/permissions/permissions';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { map } from 'rxjs/operators';
-import { ListService } from '../../../core/database/list.service';
+import { ListService } from '../../list/list.service';
 import { TeamService } from '../../../core/database/team.service';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { ItemAssignedNotification } from '../../../model/notification/item-assigned-notification';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
@@ -540,7 +539,7 @@ export class ItemComponent implements OnInit, OnChanges {
   }
 
   updateHasTimers(): void {
-    this.hasTimers = this.listService.hasTimers(this.item);
+    // this.hasTimers = this.listService.hasTimers(this.item);
   }
 
   openRequirementsPopup(): void {

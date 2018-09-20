@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { List } from '../../../core/list/model/list';
+import { List } from '../../list/model/list';
 import { MatDialog, MatExpansionPanel, MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
-import { ListService } from '../../../core/database/list.service';
+import { ListService } from '../../list/list.service';
 // import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -16,9 +16,9 @@ import { ListTemplateService } from '../../../core/database/list-template/list-t
 // import {TemplatePopupComponent} from '../../../pages/template/template-popup/template-popup.component';
 import { PermissionsPopupComponent } from '../permissions-popup/permissions-popup.component';
 import { filter, first, mergeMap, shareReplay } from 'rxjs/operators';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { ListTag } from '../../../core/list/model/list-tag.enum';
+import { ListTag } from '../../list/model/list-tag.enum';
 // import {ListTagsPopupComponent} from '../../../pages/list/list-tags-popup/list-tags-popup.component';
 import { TeamService } from '../../../core/database/team.service';
 import { Team } from '../../../model/other/team';

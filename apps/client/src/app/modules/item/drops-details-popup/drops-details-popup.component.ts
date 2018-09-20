@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 import { Observable } from 'rxjs';
 import { Aetheryte } from '../../../core/data/aetheryte';
 import { MapService } from '../../map/map.service';
-import { Drop } from '../../../core/list/model/drop';
+import { Drop } from '../../list/model/drop';
 import { map } from 'rxjs/operators';
 
 @Component({

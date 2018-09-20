@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
-import { AppUser } from '../../model/common/app-user';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirebaseStorage } from './storage/firebase/firebase-storage';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -19,18 +18,18 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
     super(database, serializer, pendingChangesService);
   }
 
-  public getUserByEmail(email: string): Observable<AppUser> {
+  public getUserByEmail(email: string): Observable<TeamcraftUser> {
     return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
       .snapshotChanges()
       .pipe(
         map(snaps => snaps[0]),
         map(snap => {
-          const valueWithKey: AppUser = { $key: snap.payload.key, ...snap.payload.val() };
+          const valueWithKey: TeamcraftUser = { $key: snap.payload.key, ...snap.payload.val() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');
           }
           delete snap.payload;
-          return this.serializer.deserialize<AppUser>(valueWithKey, this.getClass());
+          return this.serializer.deserialize<TeamcraftUser>(valueWithKey, this.getClass());
         })
       );
   }

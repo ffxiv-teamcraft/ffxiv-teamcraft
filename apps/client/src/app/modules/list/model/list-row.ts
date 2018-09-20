@@ -5,9 +5,9 @@ import { TradeSource } from './trade-source';
 import { Instance } from './instance';
 import { Vendor } from './vendor';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { ResourceComment } from '../../../modules/comments/resource-comment';
+import { ResourceComment } from '../../comments/resource-comment';
 import { DeserializeAs } from '@kaiu/serializer';
-import { DataModel } from '../../database/storage/data-model';
+import { DataModel } from '../../../core/database/storage/data-model';
 import { Drop } from './drop';
 
 export class ListRow extends DataModel {

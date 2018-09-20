@@ -1,11 +1,11 @@
 import { NgModule, Provider } from '@angular/core';
 import { EXTRACTORS } from './data/data-extractor.service';
 import { CraftedByExtractor } from './data/extractor/crafted-by-extractor';
-import { GarlandToolsService } from '../api/garland-tools.service';
-import { HtmlToolsService } from '../tools/html-tools.service';
-import { DataService } from '../api/data.service';
+import { GarlandToolsService } from '../../core/api/garland-tools.service';
+import { HtmlToolsService } from '../../core/tools/html-tools.service';
+import { DataService } from '../../core/api/data.service';
 import { GatheredByExtractor } from './data/extractor/gathered-by-extractor';
-import { LocalizedDataService } from '../data/localized-data.service';
+import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { TradeSourcesExtractor } from './data/extractor/trade-sources-extractor';
 import { VendorsExtractor } from './data/extractor/vendors-extractor';
 import { ReducedFromExtractor } from './data/extractor/reduced-from-extractor';
@@ -15,12 +15,16 @@ import { GardeningExtractor } from './data/extractor/gardening-extractor';
 import { VoyagesExtractor } from './data/extractor/voyages-extractor';
 import { DropsExtractor } from './data/extractor/drops-extractor';
 import { VenturesExtractor } from './data/extractor/ventures-extractor';
-import { CoreModule } from '../core.module';
+import { CoreModule } from '../../core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { initialState as listsInitialState, listsReducer } from './+state/lists.reducer';
 import { ListsEffects } from './+state/lists.effects';
 import { ListsFacade } from './+state/lists.facade';
+import { DatabaseModule } from '../../core/database/database.module';
+import { ListPanelComponent } from './list-panel/list-panel.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { CommonModule } from '@angular/common';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -39,14 +43,22 @@ export const DATA_EXTRACTORS: Provider[] = [
 
 @NgModule({
   imports: [
+    CommonModule,
     CoreModule,
+
+    DatabaseModule,
+
+    NgZorroAntdModule,
+
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
-    EffectsModule.forFeature([ListsEffects]),
+    EffectsModule.forFeature([ListsEffects])
   ],
   providers: [
     ...DATA_EXTRACTORS,
     ListsFacade
-  ]
+  ],
+  declarations: [ListPanelComponent],
+  exports: [ListPanelComponent]
 })
 export class ListModule {
 

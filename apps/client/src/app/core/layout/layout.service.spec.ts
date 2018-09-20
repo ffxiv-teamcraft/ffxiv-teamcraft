@@ -1,7 +1,7 @@
 import { inject, TestBed } from '@angular/core/testing';
 
 import { LayoutService } from './layout.service';
-import { ListRow } from '../list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 import { mockList } from '../../../test/mock-list';
 import { LayoutRowFilter } from './layout-row-filter';
 import { NgSerializerModule } from '@kaiu/ng-serializer';

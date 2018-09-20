@@ -1,7 +1,7 @@
-import { ListRow } from '../list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 import { FilterMethod } from './filter-method';
 import { FilterResult } from './filter-result';
-import { CraftedBy } from '../list/model/crafted-by';
+import { CraftedBy } from '../../modules/list/model/crafted-by';
 
 export class LayoutRowFilter {
 

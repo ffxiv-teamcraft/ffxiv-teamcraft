@@ -1,3 +1,14 @@
-<p>
-  lists works!
-</p>
+<div class="toolbar">
+  <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()">
+    <i class="anticon anticon-file-add"></i>
+  </button>
+</div>
+<app-page-loader [loading]="loading$ | async">
+  <div *ngIf="lists$ | async as lists">
+    <div droppable></div>
+    <div *ngFor="let list of lists; trackBy: trackByList">
+      <app-list-panel [list]="list"></app-list-panel>
+      <div droppable class="list-drop"></div>
+    </div>
+  </div>
+</app-page-loader>

@@ -3,7 +3,7 @@ import { Drop } from '../../model/drop';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
-import * as monsters from '../../../data/sources/monsters.json';
+import * as monsters from '../../../../core/data/sources/monsters.json';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 

@@ -1,9 +1,9 @@
-import { List } from '../../core/list/model/list';
+import { List } from '../../modules/list/model/list';
 import { CommissionStatus } from './commission-status';
 import { CommissionDiscussion } from './commission-discussion';
 import { DataModel } from '../../core/database/storage/data-model';
 import { DeserializeAs } from '@kaiu/serializer';
-import { ListRow } from '../../core/list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 
 export class Commission extends DataModel {
 

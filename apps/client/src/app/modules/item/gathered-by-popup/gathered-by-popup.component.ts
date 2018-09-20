@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { ListRow } from '../../../core/list/model/list-row';
+import { ListRow } from '../../list/model/list-row';
 import { Aetheryte } from '../../../core/data/aetheryte';
 import { Observable } from 'rxjs';
-import { StoredNode } from '../../../core/list/model/stored-node';
+import { StoredNode } from '../../list/model/stored-node';
 import { MapService } from '../../map/map.service';
 import { map } from 'rxjs/operators';
 

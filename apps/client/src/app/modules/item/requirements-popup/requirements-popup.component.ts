@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { List } from '../../../core/list/model/list';
-import { ListRow } from '../../../core/list/model/list-row';
+import { List } from '../../list/model/list';
+import { ListRow } from '../../list/model/list-row';
 
 @Component({
   selector: 'app-requirements-popup',
