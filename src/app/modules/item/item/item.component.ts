@@ -11,49 +11,49 @@ import {
     SimpleChanges,
     ViewChild
 } from '@angular/core';
-import {ListRow} from '../../../model/list/list-row';
-import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
-import {GatheredByPopupComponent} from '../gathered-by-popup/gathered-by-popup.component';
-import {MatDialog, MatSnackBar} from '@angular/material';
-import {DropsDetailsPopupComponent} from '../drops-details-popup/drops-details-popup.component';
-import {TradeDetailsPopupComponent} from '../trade-details-popup/trade-details-popup.component';
-import {I18nName} from '../../../model/list/i18n-name';
-import {DesynthPopupComponent} from '../desynth-popup/desynth-popup.component';
-import {CompactMasterbook} from '../../../model/list/compact-masterbook';
-import {VendorsDetailsPopupComponent} from '../vendors-details-popup/vendors-details-popup.component';
-import {InstancesDetailsPopupComponent} from '../instances-details-popup/instances-details-popup.component';
-import {ReductionDetailsPopupComponent} from '../reduction-details-popup/reduction-details-popup.component';
-import {MathTools} from '../../../tools/math-tools';
-import {List} from '../../../model/list/list';
-import {RequirementsPopupComponent} from '../requirements-popup/requirements-popup.component';
-import {ObservableMedia} from '@angular/flex-layout';
-import {VoyagesDetailsPopupComponent} from '../voyages-details-popup/voyages-details-popup.component';
-import {LocalizedDataService} from '../../../core/data/localized-data.service';
-import {FishDetailsPopupComponent} from '../fish-details-popup/fish-details-popup.component';
-import {TranslateService} from '@ngx-translate/core';
-import {AlarmService} from '../../../core/time/alarm.service';
-import {combineLatest, Observable} from 'rxjs';
-import {Timer} from '../../../core/time/timer';
-import {SettingsService} from '../../../pages/settings/settings.service';
-import {AppUser} from '../../../model/list/app-user';
-import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
-import {BellNodesService} from '../../../core/data/bell-nodes.service';
-import {Alarm} from '../../../core/time/alarm';
-import {EorzeanTimeService} from '../../../core/time/eorzean-time.service';
-import {DataService} from '../../../core/api/data.service';
-import {UserService} from '../../../core/database/user.service';
-import {PlatformService} from '../../../core/tools/platform.service';
-import {folklores} from '../../../core/data/sources/folklores';
-import {VentureDetailsPopupComponent} from '../venture-details-popup/venture-details-popup.component';
-import {CraftedBy} from '../../../model/list/crafted-by';
-import {Permissions} from '../../../core/database/permissions/permissions';
-import {CraftingRotationService} from '../../../core/database/crafting-rotation.service';
-import {CraftingRotation} from '../../../model/other/crafting-rotation';
-import {first, map, mergeMap, publishReplay, refCount, tap} from 'rxjs/operators';
-import {ListService} from '../../../core/database/list.service';
-import {TeamService} from '../../../core/database/team.service';
-import {NotificationService} from '../../../core/notification/notification.service';
-import {ItemAssignedNotification} from '../../../model/notification/item-assigned-notification';
+import { ListRow } from '../../../model/list/list-row';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { GatheredByPopupComponent } from '../gathered-by-popup/gathered-by-popup.component';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { DropsDetailsPopupComponent } from '../drops-details-popup/drops-details-popup.component';
+import { TradeDetailsPopupComponent } from '../trade-details-popup/trade-details-popup.component';
+import { I18nName } from '../../../model/list/i18n-name';
+import { DesynthPopupComponent } from '../desynth-popup/desynth-popup.component';
+import { CompactMasterbook } from '../../../model/list/compact-masterbook';
+import { VendorsDetailsPopupComponent } from '../vendors-details-popup/vendors-details-popup.component';
+import { InstancesDetailsPopupComponent } from '../instances-details-popup/instances-details-popup.component';
+import { ReductionDetailsPopupComponent } from '../reduction-details-popup/reduction-details-popup.component';
+import { MathTools } from '../../../tools/math-tools';
+import { List } from '../../../model/list/list';
+import { RequirementsPopupComponent } from '../requirements-popup/requirements-popup.component';
+import { ObservableMedia } from '@angular/flex-layout';
+import { VoyagesDetailsPopupComponent } from '../voyages-details-popup/voyages-details-popup.component';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { FishDetailsPopupComponent } from '../fish-details-popup/fish-details-popup.component';
+import { TranslateService } from '@ngx-translate/core';
+import { AlarmService } from '../../../core/time/alarm.service';
+import { combineLatest, Observable } from 'rxjs';
+import { Timer } from '../../../core/time/timer';
+import { SettingsService } from '../../../pages/settings/settings.service';
+import { AppUser } from '../../../model/list/app-user';
+import { ComponentWithSubscriptions } from '../../../core/component/component-with-subscriptions';
+import { BellNodesService } from '../../../core/data/bell-nodes.service';
+import { Alarm } from '../../../core/time/alarm';
+import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
+import { DataService } from '../../../core/api/data.service';
+import { UserService } from '../../../core/database/user.service';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { folklores } from '../../../core/data/sources/folklores';
+import { VentureDetailsPopupComponent } from '../venture-details-popup/venture-details-popup.component';
+import { CraftedBy } from '../../../model/list/crafted-by';
+import { Permissions } from '../../../core/database/permissions/permissions';
+import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { first, map, mergeMap, publishReplay, refCount, tap } from 'rxjs/operators';
+import { ListService } from '../../../core/database/list.service';
+import { TeamService } from '../../../core/database/team.service';
+import { NotificationService } from '../../../core/notification/notification.service';
+import { ItemAssignedNotification } from '../../../model/notification/item-assigned-notification';
 
 @Component({
     selector: 'app-item',
@@ -75,8 +75,9 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         10307: 23, // Centurio
         // Tomestones
         28: 20, // Poetics
-        35: 20, // Creation
+        35: 1, // Creation (can't obtain them anymore)
         36: 20, // Mendacity
+        37: 20, // Genesis
         7811: 20, // Rowena's Token (Soldiery)
         9383: 20, // Rowena's Token (Poetics)
         14298: 20, // Rowena's Token (Lore)
