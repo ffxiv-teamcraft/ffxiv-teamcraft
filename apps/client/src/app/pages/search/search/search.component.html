@@ -32,13 +32,14 @@
     <app-page-loader [loading]="loading">
       <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
         <ng-template #item let-item>
-          <nz-list-item [nzContent]="inputBox" [nzActions]="[addToList]">
+          <nz-list-item [nzContent]="inputBox" [nzActions]="[addToList, createQuickListAction, createCommissionAction, openInSimulatorAction]">
             <ng-template #inputBox>
               <nz-input-group [nzAddOnBefore]="addCrafts" class="amount-input">
                 <input type="number" [(ngModel)]="item.amount" nz-input>
                 <ng-template #addCrafts>
-                  <label nz-checkbox [(ngModel)]="item.addCrafts" *ngIf="item.recipe !== undefined">{{'ITEMS.Crafts_amount'
-                    | translate}}</label>
+                  <label nz-checkbox [(ngModel)]="item.addCrafts" *ngIf="item.recipe !== undefined">
+                    {{'ITEMS.Crafts_amount' | translate}}
+                  </label>
                 </ng-template>
               </nz-input-group>
             </ng-template>
@@ -46,6 +47,24 @@
               <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                       [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([item])">
                 <i class="anticon anticon-plus"></i>
+              </button>
+            </ng-template>
+            <ng-template #createQuickListAction>
+              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(item)">
+                <i class="anticon anticon-clock-circle-o"></i>
+              </button>
+            </ng-template>
+            <ng-template #createCommissionAction>
+              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'COMMISSION_BOARD.New_commission' | translate">
+                <i class="anticon anticon-mail"></i>
+              </button>
+            </ng-template>
+            <ng-template #openInSimulatorAction>
+              <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(item)">
+                <i class="material-icons">gavel</i>
               </button>
             </ng-template>
             <nz-list-item-meta

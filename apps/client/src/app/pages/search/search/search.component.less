@@ -1,7 +1,9 @@
+@import '../../../../theme';
+
 .search-box {
   width: 50%;
   margin: auto;
-  @media screen and (max-width: 640px) {
+  @media @mobile {
     width: 90%;
   }
 }
@@ -9,15 +11,48 @@
 .filters {
   width: 80%;
   margin: 10px auto auto;
+  @media @mobile {
+    width: 90%;
+  }
 }
 
 .results {
   padding: 20px 50px;
-  @media screen and (max-width: 640px) {
+  @media @mobile {
     padding: 20px 10px;
   }
   .amount-input {
     width: 200px;
+  }
+}
+
+::ng-deep {
+  .ant-list-item {
+    @media @mobile {
+      justify-content: center;
+    }
+    .ant-list-item-meta {
+      align-items: center;
+      @media @mobile {
+        flex: 0 0 auto;
+        margin-bottom: 5px;
+      }
+      .ant-list-item-meta-title {
+        white-space: nowrap;
+      }
+    }
+    .ant-list-item-action {
+      @media @mobile {
+        margin: auto;
+      }
+    }
+
+    .ant-list-item-content {
+      @media @mobile {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 

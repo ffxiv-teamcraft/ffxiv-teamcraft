@@ -12,6 +12,8 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
+declare const ga: Function;
+
 @Injectable()
 export class ListsFacade {
   loading$ = this.store.select(listsQuery.getLoading);
@@ -42,12 +44,21 @@ export class ListsFacade {
     );
   }
 
+  newEphemeralList(itemName: string): List {
+    const list = new List();
+    list.ephemeral = true;
+    list.name = itemName;
+    return list;
+  }
+
   addList(list: List): void {
     this.store.dispatch(new CreateList(list));
+    ga('send', 'event', 'List', 'creation');
   }
 
   deleteList(key: string): void {
     this.store.dispatch(new DeleteList(key));
+    ga('send', 'event', 'List', 'deletion');
   }
 
   updateList(list: List): void {

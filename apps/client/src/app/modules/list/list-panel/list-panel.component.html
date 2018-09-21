@@ -1,11 +1,18 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader">
-    <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="item">
-      <ng-template #item let-item>
-        <nz-list-item>
-          <nz-list-item-meta [nzAvatar]="item.icon | icon" [nzTitle]="item.id | itemName | i18n"
-                             nzDescription="x{{item.amount}}"></nz-list-item-meta>
+    <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="itemTemplate">
+      <ng-template #itemTemplate let-item>
+        <nz-list-item [nzContent]="amountModifier" [nzActions]="[removeItem]">
+          <nz-list-item-meta [nzAvatar]="item.icon | icon" [nzTitle]="item.id | itemName | i18n"></nz-list-item-meta>
         </nz-list-item>
+        <ng-template #amountModifier>
+          <input nz-input type="number" [(ngModel)]="item.amount">
+        </ng-template>
+        <ng-template #removeItem>
+          <button nz-button [nzType]="'danger'" [nzShape]="'circle'">
+            <i class="anticon anticon-delete"></i>
+          </button>
+        </ng-template>
       </ng-template>
     </nz-list>
   </nz-collapse-panel>
@@ -24,9 +31,10 @@
           This is a test list, and it's not even a real description
         </div>
       </div>
-      <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'primary'">
+      <a (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'primary'"
+         routerLink="/list/{{list.$key}}">
         <i class="anticon anticon-folder-open"></i>
-      </button>
+      </a>
       <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
               [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(list)">
         <i class="anticon anticon-delete"></i></button>

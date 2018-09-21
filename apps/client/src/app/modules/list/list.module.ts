@@ -28,6 +28,8 @@ import { CommonModule } from '@angular/common';
 import { ListManagerService } from './list-manager.service';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -48,10 +50,12 @@ export const DATA_EXTRACTORS: Provider[] = [
   imports: [
     CommonModule,
     CoreModule,
+    FormsModule,
 
     DatabaseModule,
     PipesModule,
     NameQuestionPopupModule,
+    RouterModule,
 
     NgZorroAntdModule,
 

@@ -10,6 +10,8 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-search',
@@ -44,7 +46,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
-              private listManager: ListManagerService, private notificationService: NzNotificationService) {
+              private listManager: ListManagerService, private notificationService: NzNotificationService,
+              private l12n: LocalizedDataService, private i18n: I18nToolsService) {
   }
 
   ngOnInit(): void {
@@ -84,6 +87,23 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  public createQuickList(item: SearchResult): void {
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(item.itemId)));
+    this.listManager.addToList(item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+      .pipe(
+        tap(resultList => this.listsFacade.addList(resultList)),
+        mergeMap(resultList => {
+          return this.listsFacade.allLists$.pipe(
+            map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+        })
+      ).subscribe((newList) => {
+      this.router.navigate(['list', newList.$key]);
+    });
+  }
+
   public addItemsToList(items: SearchResult[]): void {
     this.listPickerVisible$.next(true);
     this.pickedList$.pipe(
@@ -102,10 +122,10 @@ export class SearchComponent implements OnInit {
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.listsFacade.allLists$.pipe(
-          map(lists => lists.find(l => l.createdAt === list.createdAt)),
+          map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
           filter(l => l !== undefined),
           first()
-        )
+        );
       })
     ).subscribe((list) => {
       this.itemsAdded = items.length;
