@@ -4,13 +4,14 @@ import { Store } from '@ngrx/store';
 
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
-import { CreateList, DeleteList, LoadLists, UpdateList } from './lists.actions';
+import { CreateList, DeleteList, LoadList, LoadMyLists, SelectList, UpdateList } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, map } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 declare const ga: Function;
 
@@ -18,9 +19,13 @@ declare const ga: Function;
 export class ListsFacade {
   loading$ = this.store.select(listsQuery.getLoading);
   allLists$ = this.store.select(listsQuery.getAllLists);
+  myLists$ = combineLatest(this.allLists$, this.authFacade.userId$).pipe(
+    map(([lists, userId]) => lists.filter(list => list.authorId === userId))
+  );
   selectedList$ = this.store.select(listsQuery.getSelectedList);
 
-  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService) {
+  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService,
+              private authFacade: AuthFacade) {
   }
 
   createEmptyList(): void {
@@ -66,6 +71,14 @@ export class ListsFacade {
   }
 
   loadAll(): void {
-    this.store.dispatch(new LoadLists());
+    this.store.dispatch(new LoadMyLists());
+  }
+
+  load(key: string): void {
+    this.store.dispatch(new LoadList(key));
+  }
+
+  select(key: string): void {
+    this.store.dispatch(new SelectList(key));
   }
 }

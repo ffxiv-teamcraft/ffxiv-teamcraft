@@ -1,8 +1,14 @@
 import { LayoutRow } from './layout-row';
 import { DeserializeAs } from '@kaiu/serializer';
 import { LayoutRowOrder } from './layout-row-order.enum';
+import { ForeignKey } from '../database/relational/foreign-key';
+import { TeamcraftUser } from '../../model/user/teamcraft-user';
+import { DataModel } from '../database/storage/data-model';
 
-export class ListLayout {
+export class ListLayout extends DataModel {
+
+  @ForeignKey(TeamcraftUser)
+  public userId: string;
 
   @DeserializeAs([LayoutRow])
   public rows: LayoutRow[];
@@ -13,9 +19,7 @@ export class ListLayout {
 
   public recipeZoneBreakdown = false;
 
-  constructor(public name: string, rows: LayoutRow[]) {
-    this.rows = rows;
-  }
+  public name: string;
 
   get base64(): string {
     return btoa(JSON.stringify(this.rows));

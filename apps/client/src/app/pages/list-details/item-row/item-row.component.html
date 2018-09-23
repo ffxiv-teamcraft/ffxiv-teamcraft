@@ -1,0 +1,9 @@
+<div class="item-row">
+  <div class="icon">
+    <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id" [width]="24"></app-item-icon>
+  </div>
+  <div class="item-name">
+    {{item.id | itemName | i18n}}
+  </div>
+</div>
+

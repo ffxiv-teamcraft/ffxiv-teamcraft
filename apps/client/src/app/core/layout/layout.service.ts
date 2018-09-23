@@ -1,52 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { LayoutRow } from './layout-row';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
-import { LayoutRowDisplay } from './layout-row-display';
-import { List } from '../../modules/list/model/list';
-import { FilterResult } from './filter-result';
 import { ListLayout } from './list-layout';
-import { LayoutOrderService } from './layout-order.service';
-import { Observable, of } from 'rxjs';
-import { UserService } from '../database/user.service';
-import { ListRow } from '../../modules/list/model/list-row';
-import { catchError, map } from 'rxjs/operators';
+import { FirestoreRelationalStorage } from '../database/storage/firestore/firestore-relational-storage';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
 
 @Injectable()
-export class LayoutService {
+export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
 
-  constructor(private serializer: NgSerializerService, private layoutOrder: LayoutOrderService, private userService: UserService) {
-    this._layouts = of([]);
-    // this.userService.getUserData()
-    //     .pipe(
-    //         map(userData => {
-    //             const layouts = userData.layouts;
-    //             if (layouts === undefined || layouts === null || layouts.length === 0 ||
-    //                 (layouts.length === 1 && layouts[0].name === 'Default layout')) {
-    //                 return [new ListLayout('Default layout', this.defaultLayout)];
-    //             }
-    //             return layouts;
-    //         }),
-    //         map(layouts => {
-    //             return layouts.map(layout => {
-    //                 if (layout.rows.length === 0) {
-    //                     layout.rows = this.defaultLayout;
-    //                 }
-    //                 return layout;
-    //             });
-    //         })
-    //     );
+  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
+              protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
+    super(firestore, serializer, zone, pendingChangesService);
   }
 
-  private _layouts: Observable<ListLayout[]>;
-
-  public get layouts(): Observable<ListLayout[]> {
-    return this._layouts;
-  }
-
-  public get defaultLayout(): LayoutRow[] {
-    return [
+  public get defaultLayout(): ListLayout {
+    const layout = new ListLayout();
+    layout.name = 'Default Layout';
+    layout.rows = [
       new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
         0, true, false, true),
       new LayoutRow('Vendors ', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.CAN_BE_BOUGHT.name,
@@ -67,79 +40,15 @@ export class LayoutService {
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
         7, true, false, true)
     ];
+    return layout;
   }
 
-  public getDisplay(list: List, index: number): Observable<LayoutRowDisplay[]> {
-    return this.getLayoutRows(index)
-      .pipe(
-        catchError(() => of(this.defaultLayout)),
-        map(layoutRows => {
-          if (layoutRows.find(row => row.filter.name === 'ANYTHING') === undefined) {
-            throw new Error('List layoutRows has to contain an ANYTHING category');
-          }
-          let unfilteredRows = list.items.filter(row => row.hidden !== true);
-          return layoutRows.map(row => {
-            const result: FilterResult = row.filter.filter(unfilteredRows);
-            unfilteredRows = result.rejected;
-            const orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
-            return {
-              title: row.name,
-              rows: orderedAccepted,
-              index: row.index,
-              zoneBreakdown: row.zoneBreakdown,
-              tiers: row.tiers,
-              filterChain: row.filter.name,
-              hideIfEmpty: row.hideIfEmpty
-            };
-          }).sort((a, b) => a.index - b.index);
-        })
-      );
+  protected getBaseUri(params?: any): string {
+    return '/layouts';
   }
 
-  public getRecipes(list: List, index: number): Observable<ListRow[]> {
-    return this.getLayout(index)
-      .pipe(
-        map(layout => {
-          return this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
-        })
-      );
-  }
-
-  public getLayoutRows(index: number): Observable<LayoutRow[]> {
-    return this.getLayout(index)
-      .pipe(
-        map(layout => {
-          if (layout === undefined) {
-            layout = new ListLayout('Default layout', this.defaultLayout);
-          }
-          return layout.rows.sort((a, b) => {
-            // ANYTHING has to be last filter applied, as it rejects nothing.
-            if (a.filter.name === 'ANYTHING') {
-              return 1;
-            }
-            if (b.filter.name === 'ANYTHING') {
-              return -1;
-            }
-            return a.index - b.index;
-          });
-        })
-      );
-  }
-
-  public getLayout(index: number): Observable<ListLayout> {
-    return this._layouts.pipe(map(layouts => layouts[index] || new ListLayout('Default layout', this.defaultLayout)));
-  }
-
-  public persist(layouts: ListLayout[]): Observable<void> {
-    return of(null);
-    // return this.userService.getUserData()
-    //     .pipe(
-    //         first(),
-    //         mergeMap(user => {
-    //             user.layouts = layouts;
-    //             return this.userService.set(user.$key, user);
-    //         })
-    //     );
+  protected getClass(): any {
+    return ListLayout;
   }
 
 }

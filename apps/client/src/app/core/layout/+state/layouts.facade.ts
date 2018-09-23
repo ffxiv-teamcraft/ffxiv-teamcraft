@@ -1,0 +1,87 @@
+import { Injectable } from '@angular/core';
+
+import { Store } from '@ngrx/store';
+
+import { LayoutsState } from './layouts.reducer';
+import { layoutsQuery } from './layouts.selectors';
+import { LoadLayouts } from './layouts.actions';
+import { LayoutOrderService } from '../layout-order.service';
+import { List } from '../../../modules/list/model/list';
+import { Observable } from 'rxjs';
+import { LayoutRowDisplay } from '../layout-row-display';
+import { filter, map } from 'rxjs/operators';
+import { FilterResult } from '../filter-result';
+import { ListLayout } from '../list-layout';
+
+@Injectable()
+export class LayoutsFacade {
+  loaded$ = this.store.select(layoutsQuery.getLoaded);
+  allLayouts$ = this.store.select(layoutsQuery.getAllLayouts);
+
+  selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
+    .pipe(
+      filter(layout => layout !== undefined)
+    );
+
+  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService) {
+  }
+
+  public getDisplay(list: List): Observable<LayoutRowDisplay[]> {
+    return this.selectedLayout$
+      .pipe(
+        map(layout => layout.rows.sort((a, b) => {
+            // ANYTHING has to be last filter applied, as it rejects nothing.
+            if (a.filter.name === 'ANYTHING') {
+              return 1;
+            }
+            if (b.filter.name === 'ANYTHING') {
+              return -1;
+            }
+            return a.index - b.index;
+          })
+        ),
+        map(layoutRows => {
+          let unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20));
+          return layoutRows
+            .map(row => {
+              const result: FilterResult = row.filter.filter(unfilteredRows);
+              unfilteredRows = result.rejected;
+              const orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+              return {
+                title: row.name,
+                rows: orderedAccepted,
+                index: row.index,
+                zoneBreakdown: row.zoneBreakdown,
+                tiers: row.tiers,
+                filterChain: row.filter.name,
+                hideIfEmpty: row.hideIfEmpty
+              };
+            })
+            // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
+            .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
+            .sort((a, b) => a.index - b.index);
+        })
+      );
+  }
+
+  public getFinalItemsDisplay(list: List): Observable<LayoutRowDisplay> {
+    return this.selectedLayout$.pipe(
+      map(layout => {
+        return {
+          title: 'Items',
+          rows: this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder),
+          // Random number, as this panel isn't ordered at all
+          index: 10000,
+          hideIfEmpty: false,
+          zoneBreakdown: layout.recipeZoneBreakdown,
+          tiers: false,
+          filterChain: ''
+        };
+      })
+    );
+  }
+
+  loadAll() {
+    this.store.dispatch(new LoadLayouts());
+  }
+}

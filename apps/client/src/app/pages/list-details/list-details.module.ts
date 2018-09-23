@@ -6,6 +6,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutModule } from '../../core/layout/layout.module';
+import { ListDetailsPanelComponent } from './list-details-panel/list-details-panel.component';
+import { ItemRowComponent } from './item-row/item-row.component';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-panel.component';
 
 const routes: Routes = [
   {
@@ -22,11 +28,14 @@ const routes: Routes = [
 
     CoreModule,
     ListModule,
+    LayoutModule,
+    ItemIconModule,
+    PipesModule,
 
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent]
+  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent]
 })
 export class ListDetailsModule {
 }

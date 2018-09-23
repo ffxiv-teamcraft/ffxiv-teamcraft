@@ -1,3 +1,12 @@
-<p>
-  list-details works!
-</p>
+<div *ngIf="list$ | async as list">
+  <div class="toolbar"></div>
+  <div class="list-title">
+    <h2>{{list.name}}</h2>
+  </div>
+  <div class="list-display" *ngIf="display$ | async as listDisplay">
+    <app-list-crystals-panel [crystals]="crystals$ | async"></app-list-crystals-panel>
+    <app-list-details-panel [displayRow]="displayRow"
+                            *ngFor="let displayRow of listDisplay; trackBy: trackByDisplayRow"></app-list-details-panel>
+    <app-list-details-panel [displayRow]="finalItemsRow$ | async"></app-list-details-panel>
+  </div>
+</div>

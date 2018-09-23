@@ -1,24 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
-import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, UpdateList } from './lists.actions';
+import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, LoadList, UpdateList } from './lists.actions';
 import { distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { EMPTY } from 'rxjs';
+import { combineLatest, EMPTY } from 'rxjs';
 
 @Injectable()
 export class ListsEffects {
 
   @Effect()
-  loadLists$ = this.actions$.pipe(
-    ofType(ListsActionTypes.LoadLists),
+  loadMyLists$ = this.actions$.pipe(
+    ofType(ListsActionTypes.LoadMyLists),
     mergeMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     mergeMap((userId) => {
       return this.listService.getByForeignKey(TeamcraftUser, userId);
     }),
     map(lists => new ListsLoaded(lists))
+  );
+
+  @Effect()
+  loadList$ = this.actions$.pipe(
+    ofType(ListsActionTypes.LoadList),
+    mergeMap((action: LoadList) => {
+      return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
+    }),
+    distinctUntilChanged(),
+    map(([userId, list]) => {
+      // TODO Read permission should be handled here.
+      return list;
+    }),
+    map(list => new ListsLoaded([list]))
   );
 
   @Effect()

@@ -21,10 +21,16 @@ export function listsReducer(
     case ListsActionTypes.ListsLoaded: {
       state = {
         ...state,
-        lists: action.payload,
+        lists: [...state.lists, ...action.payload],
         loaded: true
       };
       break;
+    }
+    case ListsActionTypes.SelectList: {
+      state = {
+        ...state,
+        selectedId: action.key
+      }
     }
   }
   return state;

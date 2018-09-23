@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AmountInputComponent } from './amount-input/amount-input.component';
-import { ItemIconComponent } from './item-icon/item-icon.component';
 import { RandomGifComponent } from './random-gif/random-gif.component';
 import {
   MatButtonModule,
@@ -70,7 +69,6 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
   ],
   declarations: [
     AmountInputComponent,
-    ItemIconComponent,
     RandomGifComponent,
     EorzeanTimeComponent,
     ListPanelComponent,
@@ -92,12 +90,10 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
     RecipeComponent,
     EorzeanTimeComponent,
     AmountInputComponent,
-    ItemIconComponent,
     FfxivcraftingAmountInputComponent
   ],
   entryComponents: [
     AmountInputComponent,
-    ItemIconComponent,
     RandomGifComponent,
     EorzeanTimeComponent,
     ListPanelComponent,

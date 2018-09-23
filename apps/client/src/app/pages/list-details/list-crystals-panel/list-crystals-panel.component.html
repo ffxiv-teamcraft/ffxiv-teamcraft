@@ -1,0 +1,11 @@
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="false">
+    <app-item-icon
+      *ngFor="let crystal of crystals; trackBy: trackByItem"
+      [icon]="crystal.icon"
+      [itemName]="crystal.id | itemName| i18n"
+      [itemId]="crystal.id"
+      [width]="32"></app-item-icon>
+  </nz-collapse-panel>
+  <ng-template #panelHeader>{{'Crystals' | translate}}</ng-template>
+</nz-collapse>

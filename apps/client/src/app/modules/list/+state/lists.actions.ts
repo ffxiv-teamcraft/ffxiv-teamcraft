@@ -2,15 +2,33 @@ import { Action } from '@ngrx/store';
 import { List } from '../model/list';
 
 export enum ListsActionTypes {
-  LoadLists = '[Lists] Load Lists',
+  LoadMyLists = '[Lists] Load My Lists',
+
+  LoadList = '[Lists] Load List',
+  SelectList = '[Lists] Select List',
+
   ListsLoaded = '[Lists] Lists Loaded',
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
   DeleteList = '[Lists] Delete List',
 }
 
-export class LoadLists implements Action {
-  readonly type = ListsActionTypes.LoadLists;
+export class LoadMyLists implements Action {
+  readonly type = ListsActionTypes.LoadMyLists;
+}
+
+export class LoadList implements Action {
+  readonly type = ListsActionTypes.LoadList;
+
+  constructor(public readonly key: string) {
+  }
+}
+
+export class SelectList implements Action {
+  readonly type = ListsActionTypes.SelectList;
+
+  constructor(public readonly key: string) {
+  }
 }
 
 export class ListsLoaded implements Action {
@@ -41,12 +59,14 @@ export class DeleteList implements Action {
   }
 }
 
-export type ListsAction = LoadLists | ListsLoaded | CreateList | UpdateList | DeleteList;
+export type ListsAction = LoadMyLists | ListsLoaded | CreateList | UpdateList | DeleteList | LoadList | SelectList;
 
 export const fromListsActions = {
-  LoadLists,
+  LoadMyLists,
   ListsLoaded,
   CreateList,
   UpdateList,
-  DeleteList
+  DeleteList,
+  LoadList,
+  SelectList
 };

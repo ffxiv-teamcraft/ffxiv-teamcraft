@@ -50,6 +50,10 @@ export class List extends DataWithPermissions {
     super();
   }
 
+  public get crystals():ListRow[]{
+    return this.items.filter(item => item.id > 1 && item.id < 20);
+  }
+
   public get isCommissionList(): boolean {
     return this.commissionId !== undefined && this.commissionServer !== undefined;
   }

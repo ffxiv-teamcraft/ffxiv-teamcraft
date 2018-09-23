@@ -38,12 +38,6 @@ export class ItemData {
     }
     return {
       id: raw.obj.i,
-      name: {
-        en: raw.obj.n,
-        de: raw.obj.n,
-        fr: raw.obj.n,
-        ja: raw.obj.n
-      },
       icon: +raw.obj.c
     };
   }
