@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
 import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, LoadList, UpdateList } from './lists.actions';
-import { distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY } from 'rxjs';
+import { ListsFacade } from './lists.facade';
 
 @Injectable()
 export class ListsEffects {
@@ -24,6 +25,8 @@ export class ListsEffects {
   @Effect()
   loadList$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadList),
+    withLatestFrom(this.listsFacade.allLists$),
+    filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadList>action).key) === undefined),
     mergeMap((action: LoadList) => {
       return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
     }),
@@ -66,7 +69,8 @@ export class ListsEffects {
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
-    private listService: ListService
+    private listService: ListService,
+    private listsFacade: ListsFacade
   ) {
   }
 }

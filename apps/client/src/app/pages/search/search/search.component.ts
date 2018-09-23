@@ -44,6 +44,8 @@ export class SearchComponent implements OnInit {
 
   modifiedList: List;
 
+  allSelected = false;
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
@@ -132,6 +134,18 @@ export class SearchComponent implements OnInit {
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });
+  }
+
+  public addSelectedItemsToList(items: SearchResult[]): void {
+    this.addItemsToList(items.filter(item => item.selected));
+  }
+
+  public selectAll(items: SearchResult[], selected: boolean): void {
+    items.forEach(item => item.selected = selected);
+  }
+
+  public updateAllSelected(items: SearchResult[]): void {
+    this.allSelected = items.reduce((res, item) => item.selected && res, true);
   }
 
   public pickList(list: List): void {

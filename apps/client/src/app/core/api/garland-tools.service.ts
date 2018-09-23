@@ -57,7 +57,8 @@ export class GarlandToolsService {
    * @returns {any}
    */
   public getFishingSpot(id: number): any {
-    return this.gt.fishing.index[id];
+    return {};
+    // return this.gt.fishing.index[id];
   }
 
   /**

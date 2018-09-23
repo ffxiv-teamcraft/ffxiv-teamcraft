@@ -28,11 +28,17 @@
   TODO Intro
 </div>
 <div *ngIf="results$ | async as results">
+  <div class="addition-buttons">
+    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' | translate}}</label>
+    <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+  </div>
   <div class="results">
     <app-page-loader [loading]="loading">
       <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
         <ng-template #item let-item>
-          <nz-list-item [nzContent]="inputBox" [nzActions]="[addToList, createQuickListAction, createCommissionAction, openInSimulatorAction]">
+          <nz-list-item [nzContent]="inputBox"
+                        [nzActions]="[addToList, createQuickListAction, createCommissionAction, openInSimulatorAction]">
+            <label nz-checkbox class="select-box" [(ngModel)]="item.selected" (ngModelChange)="updateAllSelected(results)"></label>
             <ng-template #inputBox>
               <nz-input-group [nzAddOnBefore]="addCrafts" class="amount-input">
                 <input type="number" [(ngModel)]="item.amount" nz-input>

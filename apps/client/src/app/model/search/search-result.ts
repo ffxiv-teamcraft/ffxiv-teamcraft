@@ -8,4 +8,5 @@ export interface SearchResult {
   amount: number;
   // Is amount for amount of items or craft? defaults to item.
   addCrafts?: boolean;
+  selected?: boolean;
 }
