@@ -1,9 +1,42 @@
-<div class="item-row">
-  <div class="icon">
-    <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id" [width]="24"></app-item-icon>
+<div class="item-row" [class.odd]="odd" nz-row>
+  <div class="block left-block" nz-col nzXs="24" nzMd="6">
+    <div class="icon">
+      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+                     [width]="24"></app-item-icon>
+    </div>
+    <div class="item-name">
+      {{item.id | itemName | i18n}}
+    </div>
   </div>
-  <div class="item-name">
-    {{item.id | itemName | i18n}}
+  <div class="block center-block" nz-col nzXs="24" nzMd="8">
+    <div class="timers">
+      <nz-button-group>
+        <button nz-button [nzSize]="'small'">TODO timer</button>
+        <button nz-button [nzSize]="'small'"><i class="anticon anticon-ellipsis"></i></button>
+      </nz-button-group>
+    </div>
+  </div>
+  <div class="block books-and-input-block" nz-col nzXs="24" nzMd="6">
+    <div class="masterbooks">
+      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+                     [width]="24"></app-item-icon>
+    </div>
+    <div class="amount-input">
+      <nz-input-number [nzMin]="0" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1" [ngModel]="item.done"
+                       (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
+      <button nz-button [nzSize]="'small'" [nzShape]="'circle'" [nzType]="'primary'" class="done-button">
+        <i class="anticon anticon-check"></i>
+      </button>
+    </div>
+  </div>
+  <div class="item-obtention" nz-col nzXs="24" nzMd="4">
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
   </div>
 </div>
 

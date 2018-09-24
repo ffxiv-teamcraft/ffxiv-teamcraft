@@ -7,10 +7,19 @@ export enum ListsActionTypes {
   LoadList = '[Lists] Load List',
   SelectList = '[Lists] Select List',
 
+  SetItemDone = '[Lists] Set Item Done',
+
   ListsLoaded = '[Lists] Lists Loaded',
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
   DeleteList = '[Lists] Delete List',
+}
+
+export enum ListsType {
+  MY_LISTS,
+  SINGLE_LIST,
+  COMMUNITY_LISTS,
+  PROFILE_LISTS
 }
 
 export class LoadMyLists implements Action {
@@ -31,10 +40,17 @@ export class SelectList implements Action {
   }
 }
 
+export class SetItemDone implements Action {
+  readonly type = ListsActionTypes.SetItemDone;
+
+  constructor(public readonly itemId: number, public readonly finalItem: boolean, public readonly doneDelta: number) {
+  }
+}
+
 export class ListsLoaded implements Action {
   readonly type = ListsActionTypes.ListsLoaded;
 
-  constructor(public payload: List[]) {
+  constructor(public payload: List[], public readonly listsType: ListsType) {
   }
 }
 
@@ -59,7 +75,7 @@ export class DeleteList implements Action {
   }
 }
 
-export type ListsAction = LoadMyLists | ListsLoaded | CreateList | UpdateList | DeleteList | LoadList | SelectList;
+export type ListsAction = LoadMyLists | ListsLoaded | CreateList | UpdateList | DeleteList | LoadList | SelectList | SetItemDone;
 
 export const fromListsActions = {
   LoadMyLists,
@@ -68,5 +84,6 @@ export const fromListsActions = {
   UpdateList,
   DeleteList,
   LoadList,
-  SelectList
+  SelectList,
+  SetItemDone
 };

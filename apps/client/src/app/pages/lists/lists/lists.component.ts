@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { TranslateService } from '@ngx-translate/core';
-import { NzModalService } from 'ng-zorro-antd';
-import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lists',
@@ -13,12 +10,11 @@ import { List } from '../../../modules/list/model/list';
 })
 export class ListsComponent implements OnInit {
 
-  public lists$ = this.listsFacade.allLists$;
+  public lists$ = this.listsFacade.myLists$;
 
-  public loading$ = this.listsFacade.loading$;
+  public loading$ = this.listsFacade.loadingMyLists$.pipe(tap((loading) => console.log('Loading my lists : ', loading)));
 
-  constructor(private listsFacade: ListsFacade, private translate: TranslateService,
-              private dialog: NzModalService) {
+  constructor(private listsFacade: ListsFacade) {
   }
 
   ngOnInit(): void {

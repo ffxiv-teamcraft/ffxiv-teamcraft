@@ -12,6 +12,7 @@ import { ItemRowComponent } from './item-row/item-row.component';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-panel.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
 
     RouterModule.forChild(routes),
 

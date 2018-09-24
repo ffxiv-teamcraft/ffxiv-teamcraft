@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
-import { CreateList, DeleteList, LoadList, LoadMyLists, SelectList, UpdateList } from './lists.actions';
+import { CreateList, DeleteList, LoadList, LoadMyLists, SelectList, SetItemDone, UpdateList } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, map } from 'rxjs/operators';
@@ -17,9 +17,9 @@ declare const ga: Function;
 
 @Injectable()
 export class ListsFacade {
-  loading$ = this.store.select(listsQuery.getLoading);
+  loadingMyLists$ = this.store.select(listsQuery.getMylistsLoading);
   allLists$ = this.store.select(listsQuery.getAllLists);
-  myLists$ = combineLatest(this.allLists$, this.authFacade.userId$).pipe(
+  myLists$ = combineLatest(this.store.select(listsQuery.getAllMyLists), this.authFacade.userId$).pipe(
     map(([lists, userId]) => lists.filter(list => list.authorId === userId))
   );
   selectedList$ = this.store.select(listsQuery.getSelectedList);
@@ -54,6 +54,10 @@ export class ListsFacade {
     list.ephemeral = true;
     list.name = itemName;
     return list;
+  }
+
+  setItemDone(itemId: number, finalItem: boolean, delta: number): void {
+    this.store.dispatch(new SetItemDone(itemId, finalItem, delta))
   }
 
   addList(list: List): void {

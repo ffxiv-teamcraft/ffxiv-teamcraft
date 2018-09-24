@@ -1,6 +1,7 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="true">
-    <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem" [item]="item"></app-item-row>
+    <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd" [item]="item"
+                  [finalItem]="finalItems" [odd]="odd"></app-item-row>
   </nz-collapse-panel>
   <ng-template #panelHeader>{{displayRow.title | translate}}</ng-template>
 </nz-collapse>

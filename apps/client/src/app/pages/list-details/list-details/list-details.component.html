@@ -7,6 +7,6 @@
     <app-list-crystals-panel [crystals]="crystals$ | async"></app-list-crystals-panel>
     <app-list-details-panel [displayRow]="displayRow"
                             *ngFor="let displayRow of listDisplay; trackBy: trackByDisplayRow"></app-list-details-panel>
-    <app-list-details-panel [displayRow]="finalItemsRow$ | async"></app-list-details-panel>
+    <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
   </div>
 </div>

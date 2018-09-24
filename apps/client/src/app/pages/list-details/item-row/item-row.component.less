@@ -1,8 +1,63 @@
+@import '../../../../theme';
+
 .item-row {
+  padding: 2px 5px;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 2px 0;
   .icon {
     margin-right: 5px;
+  }
+}
+
+.odd {
+  background-color: rgba(77, 77, 77, .5);
+}
+
+.block {
+  display: flex;
+}
+
+.left-block {
+  @media @mobile {
+    justify-content: center;
+    margin: 5px 0;
+  }
+}
+
+.center-block {
+  justify-content: center;
+  @media @mobile {
+    margin: 5px 0;
+  }
+}
+
+.books-and-input-block {
+  justify-content: flex-end;
+  @media @mobile {
+    justify-content: center;
+    margin: 5px 0;
+  }
+}
+
+.item-obtention {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.done-button {
+  margin-left: 5px;
+}
+
+.masterbooks {
+  margin-right: 5px;
+}
+
+.timers {
+  ::ng-deep {
+    .ant-btn-sm {
+      line-height: 24px;
+    }
   }
 }

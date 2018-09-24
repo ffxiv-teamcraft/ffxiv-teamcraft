@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
-import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, LoadList, UpdateList } from './lists.actions';
+import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, ListsType, LoadList, UpdateList } from './lists.actions';
 import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -19,7 +19,7 @@ export class ListsEffects {
     mergeMap((userId) => {
       return this.listService.getByForeignKey(TeamcraftUser, userId);
     }),
-    map(lists => new ListsLoaded(lists))
+    map(lists => new ListsLoaded(lists, ListsType.MY_LISTS))
   );
 
   @Effect()
@@ -27,6 +27,7 @@ export class ListsEffects {
     ofType(ListsActionTypes.LoadList),
     withLatestFrom(this.listsFacade.allLists$),
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadList>action).key) === undefined),
+    map(([action]) => action),
     mergeMap((action: LoadList) => {
       return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
     }),
@@ -35,7 +36,7 @@ export class ListsEffects {
       // TODO Read permission should be handled here.
       return list;
     }),
-    map(list => new ListsLoaded([list]))
+    map(list => new ListsLoaded([list], ListsType.SINGLE_LIST))
   );
 
   @Effect()

@@ -4,22 +4,31 @@ import { ListsState } from './lists.reducer';
 // Lookup the 'Lists' feature state managed by NgRx
 const getListsState = createFeatureSelector<ListsState>('lists');
 
-const getLoading = createSelector(
+const getMylistsLoading = createSelector(
   getListsState,
-  (state: ListsState) => !state.loaded
+  (state: ListsState) => !state.myListsConnected
 );
 
 const getAllLists = createSelector(
   getListsState,
-  getLoading,
-  (state: ListsState, isLoading) => {
-    return isLoading ? [] : state.lists;
+  (state: ListsState) => {
+    return state.lists;
   }
 );
+
+const getAllMyLists = createSelector(
+  getListsState,
+  getMylistsLoading,
+  (state: ListsState, loadingMyLists: boolean) => {
+    return loadingMyLists ? [] : state.lists;
+  }
+);
+
 const getSelectedId = createSelector(
   getListsState,
   (state: ListsState) => state.selectedId
 );
+
 const getSelectedList = createSelector(
   getAllLists,
   getSelectedId,
@@ -30,7 +39,8 @@ const getSelectedList = createSelector(
 );
 
 export const listsQuery = {
-  getLoading,
+  getMylistsLoading,
   getAllLists,
-  getSelectedList
+  getSelectedList,
+  getAllMyLists
 };

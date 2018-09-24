@@ -12,6 +12,9 @@ export class ListDetailsPanelComponent {
   @Input()
   displayRow: LayoutRowDisplay;
 
+  @Input()
+  finalItems = false;
+
   constructor() {
   }
 
