@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
-import { CreateList, DeleteList, ListsActionTypes, ListsLoaded, ListsType, LoadList, UpdateList } from './lists.actions';
+import {
+  CreateList,
+  DeleteList,
+  ListsActionTypes,
+  MyListsLoaded,
+  LoadListDetails,
+  UpdateList,
+  ListDetailsLoaded
+} from './lists.actions';
 import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY } from 'rxjs';
 import { ListsFacade } from './lists.facade';
+import { ListCompactsService } from '../list-compacts.service';
 
 @Injectable()
 export class ListsEffects {
@@ -17,18 +26,18 @@ export class ListsEffects {
     mergeMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     mergeMap((userId) => {
-      return this.listService.getByForeignKey(TeamcraftUser, userId);
+      return this.listCompactsService.getByForeignKey(TeamcraftUser, userId);
     }),
-    map(lists => new ListsLoaded(lists, ListsType.MY_LISTS))
+    map(lists => new MyListsLoaded(lists))
   );
 
   @Effect()
-  loadList$ = this.actions$.pipe(
-    ofType(ListsActionTypes.LoadList),
-    withLatestFrom(this.listsFacade.allLists$),
-    filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadList>action).key) === undefined),
+  loadListDetails$ = this.actions$.pipe(
+    ofType(ListsActionTypes.LoadListDetails),
+    withLatestFrom(this.listsFacade.allListDetails$),
+    filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
-    mergeMap((action: LoadList) => {
+    mergeMap((action: LoadListDetails) => {
       return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
     }),
     distinctUntilChanged(),
@@ -36,7 +45,7 @@ export class ListsEffects {
       // TODO Read permission should be handled here.
       return list;
     }),
-    map(list => new ListsLoaded([list], ListsType.SINGLE_LIST))
+    map(list => new ListDetailsLoaded(list))
   );
 
   @Effect()
@@ -71,6 +80,7 @@ export class ListsEffects {
     private actions$: Actions,
     private authFacade: AuthFacade,
     private listService: ListService,
+    private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade
   ) {
   }

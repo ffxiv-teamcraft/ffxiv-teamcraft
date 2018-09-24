@@ -9,10 +9,10 @@ const getMylistsLoading = createSelector(
   (state: ListsState) => !state.myListsConnected
 );
 
-const getAllLists = createSelector(
+const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
-    return state.lists;
+    return state.listDetails;
   }
 );
 
@@ -20,7 +20,7 @@ const getAllMyLists = createSelector(
   getListsState,
   getMylistsLoading,
   (state: ListsState, loadingMyLists: boolean) => {
-    return loadingMyLists ? [] : state.lists;
+    return loadingMyLists ? [] : state.myLists;
   }
 );
 
@@ -30,7 +30,7 @@ const getSelectedId = createSelector(
 );
 
 const getSelectedList = createSelector(
-  getAllLists,
+  getAllListDetails,
   getSelectedId,
   (lists, id) => {
     const result = lists.find(it => it.$key === id);
@@ -40,7 +40,7 @@ const getSelectedList = createSelector(
 
 export const listsQuery = {
   getMylistsLoading,
-  getAllLists,
+  getAllListDetails,
   getSelectedList,
   getAllMyLists
 };

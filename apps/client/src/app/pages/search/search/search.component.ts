@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
 
   results$: Observable<SearchResult[]>;
 
-  yourLists$: Observable<List[]>;
+  myLists$: Observable<List[]>;
 
   showIntro = true;
 
@@ -53,9 +53,9 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.yourLists$ = this.listsFacade.allLists$;
+    this.myLists$ = this.listsFacade.myLists$;
 
-    this.listsFacade.loadAll();
+    this.listsFacade.loadMyLists();
 
     this.results$ = combineLatest(this.query$, this.onlyRecipes$).pipe(
       filter(([query]) => query.length > 3),
@@ -95,7 +95,7 @@ export class SearchComponent implements OnInit {
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
-          return this.listsFacade.allLists$.pipe(
+          return this.listsFacade.myLists$.pipe(
             map(lists => lists.find(l => l.createdAt === resultList.createdAt && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
@@ -110,6 +110,13 @@ export class SearchComponent implements OnInit {
     this.listPickerVisible$.next(true);
     this.pickedList$.pipe(
       takeUntil(this.listPickerVisible$),
+      // Let's ask for detailed list before we add stuff to a compact ;)
+      tap(list => this.listsFacade.load(list.$key)),
+      mergeMap(list => this.listsFacade.allListDetails$.pipe(
+        map(data => data.find(l => l.$key === list.$key)),
+        filter(resultList => resultList !== undefined),
+        first()
+      )),
       mergeMap(list => {
         return concat(
           ...items.map(item => {
@@ -123,7 +130,7 @@ export class SearchComponent implements OnInit {
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.listsFacade.allLists$.pipe(
+        return this.listsFacade.myLists$.pipe(
           map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
           filter(l => l !== undefined),
           first()

@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
-import { CreateList, DeleteList, LoadList, LoadMyLists, SelectList, SetItemDone, UpdateList } from './lists.actions';
+import { CreateList, DeleteList, LoadListDetails, LoadMyLists, SelectList, SetItemDone, UpdateList } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, map } from 'rxjs/operators';
@@ -18,7 +18,7 @@ declare const ga: Function;
 @Injectable()
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getMylistsLoading);
-  allLists$ = this.store.select(listsQuery.getAllLists);
+  allListDetails$ = this.store.select(listsQuery.getAllListDetails);
   myLists$ = combineLatest(this.store.select(listsQuery.getAllMyLists), this.authFacade.userId$).pipe(
     map(([lists, userId]) => lists.filter(list => list.authorId === userId))
   );
@@ -74,12 +74,12 @@ export class ListsFacade {
     this.store.dispatch(new UpdateList(list));
   }
 
-  loadAll(): void {
+  loadMyLists(): void {
     this.store.dispatch(new LoadMyLists());
   }
 
   load(key: string): void {
-    this.store.dispatch(new LoadList(key));
+    this.store.dispatch(new LoadListDetails(key));
   }
 
   select(key: string): void {

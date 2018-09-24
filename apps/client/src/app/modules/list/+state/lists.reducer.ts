@@ -1,16 +1,18 @@
-import { ListsAction, ListsActionTypes, ListsType } from './lists.actions';
+import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 
 
 export interface ListsState {
-  lists: List[]; // list of Lists; analogous to a sql normalized table
+  myLists: List[];
+  listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   myListsConnected: boolean;
   communityListsConnected: boolean;
 }
 
 export const initialState: ListsState = {
-  lists: [],
+  myLists: [],
+  listDetails: [],
   myListsConnected: false,
   communityListsConnected: false
 };
@@ -20,24 +22,24 @@ export function listsReducer(
   action: ListsAction
 ): ListsState {
   switch (action.type) {
-    case ListsActionTypes.LoadMyLists: {
+    case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,
-        lists: [],
-        myListsConnected: false
+        myLists: [
+          ...action.payload
+        ],
+        myListsConnected: true
       };
       break;
     }
 
-    case ListsActionTypes.ListsLoaded: {
+    case ListsActionTypes.ListDetailsLoaded: {
       state = {
         ...state,
-        lists: [
-          ...state.lists,
-          ...action.payload.filter(list => state.lists.find(l => l.$key === list.$key) === undefined)
-        ],
-        myListsConnected: state.myListsConnected || action.listsType === ListsType.MY_LISTS,
-        communityListsConnected: state.communityListsConnected || action.listsType === ListsType.COMMUNITY_LISTS
+        listDetails: [
+          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
+          action.payload
+        ]
       };
       break;
     }

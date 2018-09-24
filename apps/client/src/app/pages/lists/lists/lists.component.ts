@@ -1,24 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
   styleUrls: ['./lists.component.less']
 })
-export class ListsComponent implements OnInit {
+export class ListsComponent {
 
   public lists$ = this.listsFacade.myLists$;
 
-  public loading$ = this.listsFacade.loadingMyLists$.pipe(tap((loading) => console.log('Loading my lists : ', loading)));
+  public loading$ = this.listsFacade.loadingMyLists$;
 
   constructor(private listsFacade: ListsFacade) {
-  }
-
-  ngOnInit(): void {
-    this.listsFacade.loadAll();
   }
 
   createList(): void {

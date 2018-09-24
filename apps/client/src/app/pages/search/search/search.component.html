@@ -89,7 +89,7 @@
 
 <nz-drawer [nzVisible]="listPickerVisible$ | async" (nzOnClose)="listPickerVisible$.next(false)"
            [nzTitle]="'Pick_a_list' | translate">
-  <nz-list [nzDataSource]="yourLists$ | async" [nzRenderItem]="list" [nzHeader]="header">
+  <nz-list [nzDataSource]="myLists$ | async" [nzRenderItem]="list" [nzHeader]="header">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
         <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">

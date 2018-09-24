@@ -33,6 +33,7 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { AuthModule } from './core/auth/auth.module';
 import { AlarmsSidebarModule } from './modules/alarms-sidebar/alarms-sidebar.module';
 import { AlarmsModule } from './core/alarms/alarms.module';
+import { ListModule } from './modules/list/list.module';
 
 registerLocaleData(en);
 
@@ -87,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     AppRoutingModule,
     AuthModule,
+    ListModule,
 
     HttpClientModule,
 

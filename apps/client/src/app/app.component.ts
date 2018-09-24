@@ -16,6 +16,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
+import { ListsFacade } from './modules/list/+state/lists.facade';
 
 declare const ga: Function;
 
@@ -52,7 +53,8 @@ export class AppComponent implements OnInit {
 
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
-              private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService) {
+              private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
+              private listsFacade: ListsFacade) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -115,6 +117,7 @@ export class AppComponent implements OnInit {
     this.character$ = this.authFacade.mainCharacter$;
 
     this.authFacade.loadUser();
+    this.listsFacade.loadMyLists();
   }
 
   openRegisterPopup(): void {

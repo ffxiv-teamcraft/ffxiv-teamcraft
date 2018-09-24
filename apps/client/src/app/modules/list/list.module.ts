@@ -30,6 +30,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ListCompactsService } from './list-compacts.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -66,7 +67,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ...DATA_EXTRACTORS,
     DataExtractorService,
     ListsFacade,
-    ListManagerService
+    ListManagerService,
+    ListCompactsService
   ],
   declarations: [ListPanelComponent],
   exports: [ListPanelComponent]
