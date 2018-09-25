@@ -43,6 +43,27 @@ export function listsReducer(
       };
       break;
     }
+
+    case ListsActionTypes.UpdateListIndex: {
+      state = {
+        ...state,
+        myLists: [
+          ...state.myLists.map(list => list.$key === action.payload.$key ? action.payload : list)
+        ]
+      };
+      break;
+    }
+
+    case ListsActionTypes.DeleteList: {
+      state = {
+        ...state,
+        myLists: [
+          ...state.myLists.filter(list => list.$key !== action.key)
+        ]
+      };
+      break;
+    }
+
     case ListsActionTypes.SelectList: {
       state = {
         ...state,

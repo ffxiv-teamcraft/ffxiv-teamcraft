@@ -58,6 +58,6 @@ exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpda
 });
 
 exports.deleteListCompacts = functions.firestore.document('/lists/{uid}').onDelete((snap) => {
-  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).remove();
+  return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).delete();
 });
 

@@ -31,7 +31,13 @@
           This is a test list, and it's not even a real description
         </div>
       </div>
-      <a (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'primary'"
+      <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+              [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+              ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
+        <i class="anticon anticon-share-alt"></i>
+      </button>
+      <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button [nzShape]="'circle'"
+         [nzType]="'primary'"
          routerLink="/list/{{list.$key}}">
         <i class="anticon anticon-folder-open"></i>
       </a>

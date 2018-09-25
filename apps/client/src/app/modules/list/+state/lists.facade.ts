@@ -4,7 +4,16 @@ import { Store } from '@ngrx/store';
 
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
-import { CreateList, DeleteList, LoadListDetails, LoadMyLists, SelectList, SetItemDone, UpdateList } from './lists.actions';
+import {
+  CreateList,
+  DeleteList,
+  LoadListDetails,
+  LoadMyLists,
+  SelectList,
+  SetItemDone,
+  UpdateList,
+  UpdateListIndex
+} from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, map } from 'rxjs/operators';
@@ -57,7 +66,7 @@ export class ListsFacade {
   }
 
   setItemDone(itemId: number, finalItem: boolean, delta: number): void {
-    this.store.dispatch(new SetItemDone(itemId, finalItem, delta))
+    this.store.dispatch(new SetItemDone(itemId, finalItem, delta));
   }
 
   addList(list: List): void {
@@ -72,6 +81,10 @@ export class ListsFacade {
 
   updateList(list: List): void {
     this.store.dispatch(new UpdateList(list));
+  }
+
+  updateListIndex(list: List): void {
+    this.store.dispatch(new UpdateListIndex(list));
   }
 
   loadMyLists(): void {

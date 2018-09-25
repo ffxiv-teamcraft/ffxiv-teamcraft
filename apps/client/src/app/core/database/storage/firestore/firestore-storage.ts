@@ -16,18 +16,12 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   add(data: T, uriParams?: any): Observable<string> {
-    this.pendingChangesService.addPendingChange(`add ${this.getBaseUri(uriParams)}`);
     const toAdd = JSON.parse(JSON.stringify(data));
     delete toAdd.$key;
     return fromPromise(this.firestore.collection(this.getBaseUri(uriParams)).add(toAdd))
       .pipe(
         map((ref: any) => {
           return ref.id;
-        }),
-        tap((uid: string) => {
-          // In order to enable cache for this newly created element.
-          this.get(uid);
-          this.pendingChangesService.removePendingChange(`add ${this.getBaseUri(uriParams)}`);
         }));
   }
 

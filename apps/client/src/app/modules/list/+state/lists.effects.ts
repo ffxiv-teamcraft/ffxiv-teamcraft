@@ -8,9 +8,9 @@ import {
   MyListsLoaded,
   LoadListDetails,
   UpdateList,
-  ListDetailsLoaded
+  ListDetailsLoaded, CreateOptimisticListCompact, UpdateListIndex
 } from './lists.actions';
-import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY } from 'rxjs';
@@ -49,15 +49,36 @@ export class ListsEffects {
   );
 
   @Effect()
+  createOptimisticListCompact$ = this.actions$.pipe(
+    ofType(ListsActionTypes.CreateOptimisticListCompact),
+    withLatestFrom(this.listsFacade.myLists$),
+    map(([action, lists]) => {
+      (<CreateOptimisticListCompact>action).payload.$key = (<CreateOptimisticListCompact>action).key;
+      delete (<CreateOptimisticListCompact>action).payload.items;
+      return new MyListsLoaded([...lists, (<CreateOptimisticListCompact>action).payload]);
+    })
+  );
+
+  // @Effect()
+  // persistUpdateListIndex$ = this.actions$.pipe(
+  //   ofType(ListsActionTypes.UpdateListIndex),
+  //   tap(action => this.listsFacade.load((<UpdateListIndex>action).payload.$key)),
+  //   mergeMap(action => )
+  // );
+
+  @Effect()
   createListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.CreateList),
-    withLatestFrom(this.authFacade.userId$),
-    map(([action, userId]) => {
+    withLatestFrom(this.authFacade.userId$, this.listsFacade.myLists$),
+    map(([action, userId, myLists]) => {
       (<CreateList>action).payload.authorId = userId;
+      (<CreateList>action).payload.index = myLists.length + 1;
       return (<CreateList>action).payload;
     }),
-    mergeMap(list => this.listService.add(list)),
-    mergeMap(() => EMPTY)
+    mergeMap(list => this.listService.add(list)
+      .pipe(
+        map((key) => new CreateOptimisticListCompact(list, key)))
+    )
   );
 
   @Effect()

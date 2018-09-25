@@ -14,7 +14,9 @@ export enum ListsActionTypes {
 
 
   CreateList = '[Lists] Create List',
+  CreateOptimisticListCompact = '[Lists] Create List Compact',
   UpdateList = '[Lists] Update List',
+  UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
 }
 
@@ -64,8 +66,22 @@ export class CreateList implements Action {
   }
 }
 
+export class CreateOptimisticListCompact implements Action {
+  readonly type = ListsActionTypes.CreateOptimisticListCompact;
+
+  constructor(public readonly payload: List, public readonly key: string) {
+  }
+}
+
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
+
+  constructor(public readonly payload: List) {
+  }
+}
+
+export class UpdateListIndex implements Action {
+  readonly type = ListsActionTypes.UpdateListIndex;
 
   constructor(public readonly payload: List) {
   }
@@ -78,7 +94,18 @@ export class DeleteList implements Action {
   }
 }
 
-export type ListsAction = LoadMyLists | MyListsLoaded | CreateList | UpdateList | DeleteList | LoadListDetails | SelectList | SetItemDone | ListDetailsLoaded;
+export type ListsAction =
+  LoadMyLists
+  | MyListsLoaded
+  | CreateList
+  | UpdateList
+  | DeleteList
+  | LoadListDetails
+  | SelectList
+  | SetItemDone
+  | ListDetailsLoaded
+  | CreateOptimisticListCompact
+  | UpdateListIndex;
 
 export const fromListsActions = {
   LoadMyLists,
@@ -86,7 +113,9 @@ export const fromListsActions = {
   CreateList,
   UpdateList,
   DeleteList,
-  LoadList: LoadListDetails,
+  LoadListDetails,
   SelectList,
-  SetItemDone
+  SetItemDone,
+  UpdateListIndex,
+  CreateOptimisticListCompact
 };

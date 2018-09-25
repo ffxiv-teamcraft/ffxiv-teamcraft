@@ -31,6 +31,7 @@ import { NameQuestionPopupModule } from '../name-question-popup/name-question-po
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ListCompactsService } from './list-compacts.service';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -58,6 +59,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     NameQuestionPopupModule,
     RouterModule,
 
+    ClipboardModule,
     NgZorroAntdModule,
 
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),

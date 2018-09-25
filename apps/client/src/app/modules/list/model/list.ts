@@ -16,6 +16,9 @@ declare const ga: Function;
 export class List extends DataWithPermissions {
   name: string;
 
+  // For ordering purpose, lower index means higher priority on ordering.
+  index = -1;
+
   finalItems: ListRow[] = [];
 
   items: ListRow[] = [];
