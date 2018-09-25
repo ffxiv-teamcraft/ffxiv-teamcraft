@@ -75,7 +75,12 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "ng:g": "ng g --project=client --styleext=less --spec=false"
+    "ng:g": "ng g --project=client --styleext=less --spec=false",
+    "***********SSR STUFF***************": "",
+    "build": "ng build && npm run build:ssr",
+    "build:ssr": "ng run client:server && npm run webpack:ssr",
+    "webpack:ssr": "webpack --config webpack.server.config.js",
+    "serve:ssr": "node dist/client-webpack/server.js"
   },
   "private": true,
   "dependencies": {
@@ -127,6 +132,7 @@
     "rxjs": "^6.0.0",
     "semver": "^5.4.1",
     "web-animations-js": "^2.3.1",
+    "webpack": "^4.20.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -139,6 +145,8 @@
     "@firebase/auth-types": "^0.3.2",
     "@ngrx/schematics": "^6.1.0",
     "@ngrx/store-devtools": "6.1.0",
+    "@nguniversal/express-engine": "^6.1.0",
+    "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "@nrwl/schematics": "6.2.1",
     "@types/electron": "^1.6.10",
     "@types/jasmine": "~2.8.6",
@@ -174,11 +182,15 @@
     "protractor": "~5.3.0",
     "rxjs-compat": "^6.1.0",
     "standard-version": "^4.4.0",
+    "ts-loader": "^5.2.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2",
     "validate-commit-msg": "^2.14.0",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.1",
+    "ws": "^6.0.0",
+    "xhr2": "^0.1.4"
   },
   "config": {
     "commitizen": {
