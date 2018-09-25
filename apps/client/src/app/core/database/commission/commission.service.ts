@@ -2,10 +2,10 @@ import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from '../storage/firestore/firestore-storage';
 import { Commission } from '../../../model/commission/commission';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
-import { AngularFirestore, QueryFn } from 'angularfire2/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Observable } from 'rxjs/index';
 import { map } from 'rxjs/operators';
+import { AngularFirestore, QueryFn } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'

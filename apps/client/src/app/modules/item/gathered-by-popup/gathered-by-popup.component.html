@@ -9,8 +9,8 @@
       <p mat-line>
         {{node.areaid | placeName | i18n}}
       </p>
-      <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
-                        [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
+      <!--<app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"-->
+                        <!--[marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>-->
       <span mat-line *ngIf="getClosestAetheryte(node) | async as aetheryte" class="closest-tp">
                 <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
             </span>

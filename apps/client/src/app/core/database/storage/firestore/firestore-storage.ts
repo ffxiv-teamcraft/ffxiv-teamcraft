@@ -3,11 +3,10 @@ import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Action } from 'angularfire2/firestore/interfaces';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { fromPromise } from 'rxjs/internal/observable/fromPromise';
 import { map, tap } from 'rxjs/operators';
+import { Action, AngularFirestore } from '@angular/fire/firestore';
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
 

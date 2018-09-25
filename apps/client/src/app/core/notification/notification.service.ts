@@ -2,7 +2,6 @@ import { RelationshipService } from '../database/relational/relationship.service
 import { NotificationRelationship } from './notification-relationship';
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
 import { UserService } from '../database/user.service';
 import { IpcService } from '../electron/ipc.service';
@@ -12,6 +11,7 @@ import { I18nToolsService } from '../tools/i18n-tools.service';
 import { combineLatest, Observable } from 'rxjs';
 import { AbstractNotification } from './abstract-notification';
 import { SettingsService } from '../../pages/settings/settings.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'

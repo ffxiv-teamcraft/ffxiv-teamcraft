@@ -1,9 +1,9 @@
 import { FirestoreStorage } from '../storage/firestore/firestore-storage';
 import { SharedEntity } from './shared-entity';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
 import { Injectable, NgZone } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class SharedEntityService extends FirestoreStorage<SharedEntity> {

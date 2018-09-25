@@ -20,8 +20,8 @@
               {{node.limitType | i18n}}
             </mat-chip>
           </mat-chip-list>
-          <app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"
-                            [marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>
+          <!--<app-map-position mat-line *ngIf="node.coords !== undefined" [zoneId]="node.zoneid"-->
+                            <!--[marker]="{x:node.coords[0], y:node.coords[1]}"></app-map-position>-->
           <span>
                         <b mat-line *ngIf="node.slot !== undefined && +node.slot === node.slot" selected="true"
                            color="accent">Slot:{{node.slot}}</b>

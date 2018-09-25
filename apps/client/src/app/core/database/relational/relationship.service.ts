@@ -2,10 +2,10 @@ import { FirestoreStorage } from '../storage/firestore/firestore-storage';
 import { Relationship } from './relationship';
 import { Observable } from 'rxjs/index';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
 import { map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 export abstract class RelationshipService<T extends Relationship<any, any>> extends FirestoreStorage<T> {
 

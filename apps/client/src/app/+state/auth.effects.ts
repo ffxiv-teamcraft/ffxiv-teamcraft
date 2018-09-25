@@ -4,7 +4,6 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import { catchError, debounceTime, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, from, of } from 'rxjs';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
@@ -27,6 +26,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
+import { User } from 'firebase';
+import { AngularFireAuth } from '@angular/fire/auth';
+import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +39,7 @@ export class AuthEffects {
   getUser$ = this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
     mergeMap(() => this.af.authState),
-    map(authState => {
+    map((authState: User) => {
       if (authState === null) {
         return new LoginAsAnonymous();
       } else {
@@ -56,7 +58,7 @@ export class AuthEffects {
   loginAsAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
     mergeMap(() => from(this.af.auth.signInAnonymously())),
-    map(result => new LoggedInAsAnonymous(result.user.uid))
+    map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
   );
 
   @Effect()

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirebaseStorage } from './storage/firebase/firebase-storage';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { map } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
 export class UserService extends FirebaseStorage<TeamcraftUser> {
@@ -23,7 +23,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
       .snapshotChanges()
       .pipe(
         map(snaps => snaps[0]),
-        map(snap => {
+        map((snap:any) => {
           const valueWithKey: TeamcraftUser = { $key: snap.payload.key, ...snap.payload.val() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');

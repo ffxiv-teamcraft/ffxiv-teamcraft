@@ -167,11 +167,11 @@
       </div>
       <div *ngFor="let recipe of list.finalItems; let odd = odd"
            [class.odd]="odd">
-        <app-recipe [recipe]="recipe"
-                    (ondelete)="onrecipedelete.emit(recipe)"
-                    (onedit)="onedit.emit({recipe: recipe, amount:$event})"
-                    [readonly]="readonly">
-        </app-recipe>
+        <!--<app-recipe [recipe]="recipe"-->
+                    <!--(ondelete)="onrecipedelete.emit(recipe)"-->
+                    <!--(onedit)="onedit.emit({recipe: recipe, amount:$event})"-->
+                    <!--[readonly]="readonly">-->
+        <!--</app-recipe>-->
       </div>
     </mat-list>
   </ng-template>

@@ -5,7 +5,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { ListService } from '../../list/list.service';
 // import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable, of } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
 import { ObservableMedia } from '@angular/flex-layout';
@@ -22,6 +21,7 @@ import { ListTag } from '../../list/model/list-tag.enum';
 // import {ListTagsPopupComponent} from '../../../pages/list/list-tags-popup/list-tags-popup.component';
 import { TeamService } from '../../../core/database/team.service';
 import { Team } from '../../../model/other/team';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-list-panel',

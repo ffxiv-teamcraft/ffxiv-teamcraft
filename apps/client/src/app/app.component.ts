@@ -4,7 +4,6 @@ import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
@@ -17,6 +16,7 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 declare const ga: Function;
 

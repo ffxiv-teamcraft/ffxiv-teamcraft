@@ -6,9 +6,9 @@ import { AuthState } from './auth.reducer';
 import { authQuery } from './auth.selectors';
 import { GetUser, Logout } from './auth.actions';
 import { auth } from 'firebase';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { UserCredential } from '@firebase/auth-types';
 import { filter } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'

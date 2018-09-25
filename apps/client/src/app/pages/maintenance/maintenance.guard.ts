@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/internal/operators';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
 export class MaintenanceGuard implements CanActivate {

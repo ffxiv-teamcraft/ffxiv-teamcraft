@@ -5,12 +5,12 @@
       ({{tradeSource.shopName}})</h3>
     <mat-list-item *ngFor="let trade of tradeSource.trades">
       <div class="trade-part">
-        <app-item-icon [item]="{icon: trade.currencyIcon, id: trade.currencyId}"></app-item-icon>
+        <!--<app-item-icon [item]="{icon: trade.currencyIcon, id: trade.currencyId}"></app-item-icon>-->
         {{trade.currencyAmount}}
       </div>
       <mat-icon>arrow_forward</mat-icon>
       <div class="trade-part">
-        <app-item-icon [item]="{icon: trade.itemIcon, HQ: trade.itemHQ, id: trade.itemId}"></app-item-icon>
+        <!--<app-item-icon [item]="{icon: trade.itemIcon, HQ: trade.itemHQ, id: trade.itemId}"></app-item-icon>-->
         {{trade.itemAmount}}
       </div>
       <div class="trade-part">

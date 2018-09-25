@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { MatDialogRef, MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-forgot-password-popup',

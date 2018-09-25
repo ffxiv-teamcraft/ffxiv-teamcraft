@@ -20,7 +20,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { EorzeanTimeComponent } from './eorzean-time/eorzean-time.component';
 import { ListPanelComponent } from './list-panel/list-panel.component';
-import { RecipeComponent } from './recipe/recipe.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { RouterModule } from '@angular/router';
 import { SettingsModule } from '../../pages/settings/settings.module';
@@ -72,7 +71,6 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
     RandomGifComponent,
     EorzeanTimeComponent,
     ListPanelComponent,
-    RecipeComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
     NameEditPopupComponent,
@@ -87,7 +85,6 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
   exports: [
     RandomGifComponent,
     ListPanelComponent,
-    RecipeComponent,
     EorzeanTimeComponent,
     AmountInputComponent,
     FfxivcraftingAmountInputComponent
@@ -97,7 +94,6 @@ import { AlarmGroupNamePopupComponent } from './alarm-group-name-popup/alarm-gro
     RandomGifComponent,
     EorzeanTimeComponent,
     ListPanelComponent,
-    RecipeComponent,
     ConfirmationPopupComponent,
     ForgotPasswordPopupComponent,
     NameEditPopupComponent,

@@ -4,9 +4,9 @@ import { ListStore } from './list-store';
 import { combineLatest, Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreStorage } from '../firestore/firestore-storage';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { first, map, switchMap } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class FirestoreListStorage extends FirestoreStorage<List> implements ListStore {
@@ -62,7 +62,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
       .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
       .snapshotChanges()
       .pipe(
-        map(snaps => snaps.map(snap => {
+        map((snaps: any[]) => snaps.map(snap => {
           // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
           // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
           // Resulting on an unreadable, undeletable list.
@@ -70,7 +70,7 @@ export class FirestoreListStorage extends FirestoreStorage<List> implements List
           delete data.$key;
           return (<List>{ $key: snap.payload.doc.id, ...data });
         })),
-        map(lists => this.serializer.deserialize<List>(lists, [List]))
+        map((lists: List[]) => this.serializer.deserialize<List>(lists, [List]))
       );
   }
 }

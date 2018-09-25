@@ -14,7 +14,7 @@ export class PermissionsPopupComponent {
   //
   // registry: PermissionsRegistry;
   //
-  // saving = false;
+  saving = false;
   //
   // freeCompany: Observable<any>;
   //

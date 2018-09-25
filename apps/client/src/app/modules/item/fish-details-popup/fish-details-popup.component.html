@@ -12,8 +12,8 @@
         <span class="place-name">{{getNode(spot.spot).zoneid | placeName | i18n}} - {{getNode(spot.spot).areaid | placeName |
             i18n}}</span>
     <br>
-    <span class="place-coords"><app-map-position [marker]="getNode(spot.spot)"
-                                                 [zoneId]="getNode(spot.spot).zoneid"></app-map-position></span>
+    <!--<span class="place-coords"><app-map-position [marker]="getNode(spot.spot)"-->
+                                                 <!--[zoneId]="getNode(spot.spot).zoneid"></app-map-position></span>-->
     <div class="schedule" *ngIf="spot.during !== undefined">
       <mat-icon class="schedule-icon">schedule</mat-icon>
       {{spot.during.start}} - {{spot.during.end}}

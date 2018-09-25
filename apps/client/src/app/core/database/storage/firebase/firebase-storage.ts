@@ -1,13 +1,12 @@
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { from, Observable } from 'rxjs';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 
 
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { debounceTime, map, shareReplay, tap } from 'rxjs/operators';
-import { SnapshotAction } from 'angularfire2/database/interfaces';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {
 
@@ -28,7 +27,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
     return this.firebase.object(`${this.getBaseUri()}/${uid}`)
       .snapshotChanges()
       .pipe(
-        map((snap: SnapshotAction) => {
+        map((snap: any) => {
           const valueWithKey: T = { $key: snap.payload.key, ...snap.payload.val() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');

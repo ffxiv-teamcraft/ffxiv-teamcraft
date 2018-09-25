@@ -5,8 +5,8 @@ import { LayoutRowOrder } from './layout-row-order.enum';
 import { LayoutRowFilter } from './layout-row-filter';
 import { ListLayout } from './list-layout';
 import { FirestoreRelationalStorage } from '../database/storage/firestore/firestore-relational-storage';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class LayoutService extends FirestoreRelationalStorage<ListLayout> {

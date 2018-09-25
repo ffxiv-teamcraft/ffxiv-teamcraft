@@ -1,12 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-import { DocumentChangeAction } from 'angularfire2/firestore/interfaces';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { CraftingRotation } from '../../model/other/crafting-rotation';
 import { map } from 'rxjs/internal/operators';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 
 @Injectable()
 export class CraftingRotationService extends FirestoreStorage<CraftingRotation> {
@@ -20,7 +19,7 @@ export class CraftingRotationService extends FirestoreStorage<CraftingRotation> 
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid))
       .snapshotChanges()
       .pipe(
-        map((snaps: DocumentChangeAction[]) => {
+        map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
           const rotations = snaps.map(snap => {
             const valueWithKey: CraftingRotation = <CraftingRotation>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
             delete snap.payload;

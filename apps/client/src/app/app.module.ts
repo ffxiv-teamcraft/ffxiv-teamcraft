@@ -4,15 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { IS_ELECTRON } from './core/tools/platform.service';
@@ -29,11 +25,15 @@ import { PipesModule } from './pipes/pipes.module';
 import { authReducer, initialState as authInitialState } from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
 import { AuthFacade } from './+state/auth.facade';
-import { XivapiClientModule } from '@xivapi/angular-client';
 import { AuthModule } from './core/auth/auth.module';
 import { AlarmsSidebarModule } from './modules/alarms-sidebar/alarms-sidebar.module';
 import { AlarmsModule } from './core/alarms/alarms.module';
 import { ListModule } from './modules/list/list.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { XivapiClientModule } from '@xivapi/angular-client';
 
 registerLocaleData(en);
 
@@ -59,7 +59,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         nzBottom: '24px',
         nzPlacement: 'topRight'
       }
-    }
+    },
   ],
   imports: [
     FlexLayoutModule,
@@ -94,7 +94,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     BrowserAnimationsModule,
 
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     ReactiveFormsModule,
 

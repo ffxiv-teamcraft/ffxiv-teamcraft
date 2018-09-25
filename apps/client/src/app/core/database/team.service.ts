@@ -2,11 +2,11 @@ import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { Team } from '../../model/other/team';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { UserService } from './user.service';
 import { combineLatest, Observable, of } from 'rxjs/index';
 import { map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'

@@ -6,9 +6,6 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from '../pipes/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDataService } from './data/localized-data.service';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MatButtonModule, MatDialogModule } from '@angular/material';
 import { PushNotificationsModule } from 'ng-push';
 import { AbstractNotification } from './notification/abstract-notification';
@@ -17,7 +14,6 @@ import { TeamInviteNotification } from '../model/notification/team-invite-notifi
 import { TeamExclusionNotification } from '../model/notification/team-exclusion-notification';
 import { ItemAssignedNotification } from '../model/notification/item-assigned-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { UserService } from './database/user.service';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
 import { IpcService } from './electron/ipc.service';
@@ -28,6 +24,10 @@ import { BellNodesService } from './data/bell-nodes.service';
 import { EorzeanTimeService } from './time/eorzean-time.service';
 import { TimerPipe } from './time/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 @NgModule({

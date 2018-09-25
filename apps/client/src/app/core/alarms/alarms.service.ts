@@ -1,9 +1,9 @@
 import { FirestoreRelationalStorage } from '../database/storage/firestore/firestore-relational-storage';
 import { Alarm } from './alarm';
 import { Injectable, NgZone } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
