@@ -3,17 +3,19 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
 import {
   CreateList,
+  CreateOptimisticListCompact,
   DeleteList,
+  ListDetailsLoaded,
   ListsActionTypes,
-  MyListsLoaded,
   LoadListDetails,
+  MyListsLoaded,
   UpdateList,
-  ListDetailsLoaded, CreateOptimisticListCompact, UpdateListIndex
+  UpdateListIndex
 } from './lists.actions';
-import { distinctUntilChanged, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY } from 'rxjs';
+import { combineLatest, concat, EMPTY } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 
@@ -59,20 +61,23 @@ export class ListsEffects {
     })
   );
 
-  // @Effect()
-  // persistUpdateListIndex$ = this.actions$.pipe(
-  //   ofType(ListsActionTypes.UpdateListIndex),
-  //   tap(action => this.listsFacade.load((<UpdateListIndex>action).payload.$key)),
-  //   mergeMap(action => )
-  // );
+  @Effect()
+  persistUpdateListIndex$ = this.actions$.pipe(
+    ofType(ListsActionTypes.UpdateListIndex),
+    map(action => action as UpdateListIndex),
+    mergeMap(action => concat(
+      this.listCompactsService.update(action.payload.$key, { index: action.payload.index }),
+      this.listService.update(action.payload.$key, { index: action.payload.index })
+    )),
+    mergeMap(() => EMPTY)
+  );
 
   @Effect()
   createListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.CreateList),
-    withLatestFrom(this.authFacade.userId$, this.listsFacade.myLists$),
-    map(([action, userId, myLists]) => {
+    withLatestFrom(this.authFacade.userId$),
+    map(([action, userId]) => {
       (<CreateList>action).payload.authorId = userId;
-      (<CreateList>action).payload.index = myLists.length + 1;
       return (<CreateList>action).payload;
     }),
     mergeMap(list => this.listService.add(list)

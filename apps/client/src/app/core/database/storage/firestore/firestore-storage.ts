@@ -39,7 +39,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       );
   }
 
-  update(uid: string, data: T, uriParams?: any): Observable<void> {
+  update(uid: string, data: Partial<T>, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
     const toUpdate = JSON.parse(JSON.stringify(data));
     delete toUpdate.$key;

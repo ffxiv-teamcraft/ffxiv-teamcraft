@@ -19,8 +19,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { filter, map } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable } from 'rxjs';
-import { AuthFacade } from '../../../+state/auth.facade';
+import { Observable } from 'rxjs';
 
 declare const ga: Function;
 
@@ -28,13 +27,16 @@ declare const ga: Function;
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getMylistsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
-  myLists$ = combineLatest(this.store.select(listsQuery.getAllMyLists), this.authFacade.userId$).pipe(
-    map(([lists, userId]) => lists.filter(list => list.authorId === userId))
+  myLists$ = this.store.select(listsQuery.getAllMyLists).pipe(
+    map(lists => {
+      return lists.sort((a, b) => {
+        return a.index < b.index ? -1 : 1;
+      });
+    })
   );
   selectedList$ = this.store.select(listsQuery.getSelectedList);
 
-  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService,
-              private authFacade: AuthFacade) {
+  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService) {
   }
 
   createEmptyList(): void {

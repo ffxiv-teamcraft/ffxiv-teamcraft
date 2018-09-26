@@ -110,6 +110,8 @@
     "@ngx-translate/core": "^10.0.1",
     "@ngx-translate/http-loader": "^3.0.1",
     "@nrwl/nx": "6.2.1",
+    "@swimlane/dragula": "^3.7.3",
+    "@swimlane/ngx-dnd": "^5.1.0",
     "@types/jwt-decode": "^2.2.1",
     "@types/semver": "^5.4.0",
     "@xivapi/angular-client": "^0.6.7",

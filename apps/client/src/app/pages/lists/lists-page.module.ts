@@ -6,7 +6,7 @@ import { CoreModule } from '../../core/core.module';
 import { ListModule } from '../../modules/list/list.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { NgDragDropModule } from 'ng-drag-drop';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 
@@ -28,7 +28,7 @@ const routes: Routes = [
 
     TranslateModule,
     NgZorroAntdModule,
-    NgDragDropModule,
+    NgxDnDModule,
 
     RouterModule.forChild(routes)
   ],

@@ -34,6 +34,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { XivapiClientModule } from '@xivapi/angular-client';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 registerLocaleData(en);
 
@@ -108,6 +109,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
     NgZorroAntdModule,
     NgDragDropModule.forRoot(),
+    NgxDnDModule,
 
     StoreModule.forRoot({}, {}),
     !environment.production ? StoreDevtoolsModule.instrument({

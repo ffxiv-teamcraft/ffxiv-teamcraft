@@ -119,3 +119,84 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+// Drag and drop
+
+.ngx-dnd-container {
+  &.gu-empty {
+    border: 2px dotted red;
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .ex-moved {
+    background-color: #e74c3c;
+  }
+
+  .ex-over {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .handle {
+    padding: 0 5px;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: move;
+  }
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+
+
+.ngx-dnd-item {
+  transition: opacity 0.4s ease-in-out;
+  display: block;
+
+  &:not(.has-handle):not(.move-disabled),
+  &.has-handle [ngxdraghandle],
+  &.has-handle [ngxDragHandle] {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  .ngx-dnd-content {
+    user-select: none;
+  }
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+

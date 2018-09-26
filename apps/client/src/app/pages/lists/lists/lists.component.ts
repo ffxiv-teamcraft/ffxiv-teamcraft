@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lists',
@@ -17,15 +17,7 @@ export class ListsComponent {
 
   constructor(private listsFacade: ListsFacade) {
     this.lists$ = this.listsFacade.myLists$.pipe(
-      map(lists => {
-        return lists.sort((a, b) => {
-          if (a.index === b.index) {
-            return a.createdAt > b.createdAt ? -1 : 1;
-          } else {
-            return a.index < b.index ? -1 : 1;
-          }
-        });
-      })
+      debounceTime(100)
     );
     this.loading$ = this.listsFacade.loadingMyLists$;
   }

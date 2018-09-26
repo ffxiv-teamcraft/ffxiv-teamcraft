@@ -4,13 +4,11 @@
   </button>
 </div>
 <app-page-loader [loading]="loading$ | async">
-  <div *ngIf="lists$ | async as lists">
-    <div droppable class="list-drop" (onDrop)="setListIndex($event.dragData, 0, lists)"></div>
-    <div *ngFor="let list of lists; trackBy: trackByList; let i = index">
-      <div draggable [dragData]="list">
-        <app-list-panel [list]="list"></app-list-panel>
-      </div>
-      <div droppable class="list-drop" (onDrop)="setListIndex($event.dragData, i, lists)"></div>
+  <div class="ngx-dnd-container" *ngIf="lists$ | async as lists" ngxDroppable="list"
+       (drop)="setListIndex($event.value, $event.dropIndex, lists)">
+    <div class="ngx-dnd-item" *ngFor="let list of lists; trackBy: trackByList; let i = index" ngxDraggable="list"
+         [model]="list">
+      <app-list-panel [list]="list"></app-list-panel>
     </div>
   </div>
 </app-page-loader>
