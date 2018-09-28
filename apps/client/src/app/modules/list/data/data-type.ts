@@ -9,5 +9,6 @@ export enum DataType {
   GARDENING,
   VOYAGES,
   DROPS,
-  VENTURE
+  VENTURE,
+  ALARMS
 }

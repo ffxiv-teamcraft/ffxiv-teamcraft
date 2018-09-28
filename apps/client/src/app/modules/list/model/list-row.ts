@@ -9,6 +9,7 @@ import { ResourceComment } from '../../comments/resource-comment';
 import { DeserializeAs } from '@kaiu/serializer';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Drop } from './drop';
+import { Alarm } from '../../../core/alarms/alarm';
 
 export class ListRow extends DataModel {
   icon?: number;
@@ -34,6 +35,7 @@ export class ListRow extends DataModel {
   vendors?: Vendor[] = [];
   voyages?: I18nName[] = [];
   ventures?: number[] = [];
+  alarms?: Alarm[] = [];
 
   /**
    * Is someone working on it?

@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, filter, first, map, mergeMap, skip, takeUntil, tap } from 'rxjs/operators';
@@ -111,12 +111,24 @@ export class SearchComponent implements OnInit {
     this.pickedList$.pipe(
       takeUntil(this.listPickerVisible$),
       // Let's ask for detailed list before we add stuff to a compact ;)
-      tap(list => this.listsFacade.load(list.$key)),
-      mergeMap(list => this.listsFacade.allListDetails$.pipe(
-        map(data => data.find(l => l.$key === list.$key)),
-        filter(resultList => resultList !== undefined),
-        first()
-      )),
+      tap(list => {
+        // Only load details if it's an alreayd existing list
+        if (list.$key) {
+          this.listsFacade.load(list.$key);
+        }
+      }),
+      mergeMap(list => {
+        // If this isn't a new list, wait for it to be loaded;
+        if (list.$key) {
+          return this.listsFacade.allListDetails$.pipe(
+            map(data => data.find(l => l.$key === list.$key)),
+            filter(resultList => resultList !== undefined),
+            first()
+          );
+        }
+        // else, just return the list
+        return of(list);
+      }),
       mergeMap(list => {
         return concat(
           ...items.map(item => {

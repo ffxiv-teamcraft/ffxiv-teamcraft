@@ -9,6 +9,8 @@ import { Instance } from '../model/instance';
 import { GatheredBy } from '../model/gathered-by';
 import { I18nName } from '../../../model/common/i18n-name';
 import { Drop } from '../model/drop';
+import { Alarm } from '../../../core/alarms/alarm';
+import { ListRow } from '../model/list-row';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
 
@@ -128,14 +130,19 @@ export class DataExtractorService {
     return this.extract<number[]>(DataType.VENTURE, id, data);
   }
 
+  extractAlarms(id: number, data: ItemData, row: ListRow): Alarm[] {
+    return this.extract<Alarm[]>(DataType.ALARMS, id, data, row);
+  }
+
   /**
    * Extracts data using the proper extractor.
    * @param {DataType} type
    * @param {number} id
    * @param {ItemData} data
+   * @param row
    * @returns {T}
    */
-  private extract<T>(type: DataType, id: number, data: ItemData): T {
+  private extract<T>(type: DataType, id: number, data: ItemData, row?: ListRow): T {
     return this.extractors.find(ex => ex.getDataType() === type).extract(id, data);
   }
 }

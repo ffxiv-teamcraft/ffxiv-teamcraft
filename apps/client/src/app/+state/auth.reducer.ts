@@ -17,6 +17,7 @@ export interface AuthState {
   user: TeamcraftUser | null;
   characters: CharacterResponse[];
   loading: boolean;
+  linkingCharacter: boolean;
 }
 
 export const initialState: AuthState = {
@@ -24,7 +25,8 @@ export const initialState: AuthState = {
   user: null,
   characters: [],
   loggedIn: false,
-  loading: false
+  loading: false,
+  linkingCharacter: false
 };
 
 export function authReducer(state = initialState, action: AuthActions): AuthState {
@@ -36,14 +38,21 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     case AuthActionTypes.UserFetched:
       return { ...state, user: action.user };
 
+    case AuthActionTypes.LinkingCharacter:
+      return { ...state, linkingCharacter: true };
+
     case AuthActionTypes.AddCharacter:
-      return { ...state, user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), action.lodestoneId] } };
+      return {
+        ...state,
+        user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), action.lodestoneId] },
+        linkingCharacter: false
+      };
 
     case AuthActionTypes.SetDefaultCharacter:
       return { ...state, user: { ...state.user, defaultLodestoneId: action.lodestoneId } };
 
     case AuthActionTypes.CharactersLoaded:
-      return {...state, characters: [...state.characters, ...action.characters], loading: false};
+      return { ...state, characters: [...state.characters, ...action.characters], loading: false };
 
     case AuthActionTypes.Authenticated:
       return { ...state, ...action.payload, loading: true, loggedIn: true };

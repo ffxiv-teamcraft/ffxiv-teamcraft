@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Item } from '../../../../model/garland-tools/item';
 import { DataType } from '../data-type';
+import { ListRow } from '../../model/list-row';
 
 @Injectable()
 export abstract class AbstractExtractor<T> {
@@ -11,14 +12,15 @@ export abstract class AbstractExtractor<T> {
    * Extracts data from the given itemData.
    * @param id The id of the item that needs data extraction.
    * @param {ItemData} itemData The data used for the extraction.
+   * @param row Current row used for extraction
    * @returns {T}
    */
-  public extract(id: number, itemData: ItemData): T | Observable<T> {
+  public extract(id: number, itemData: ItemData, row?: ListRow): T | Observable<T> {
     const item = this.getItem(id, itemData);
     if (item === undefined || !this.canExtract(item)) {
       return this.fallback();
     }
-    return this.doExtract(item, itemData);
+    return this.doExtract(item, itemData, row);
   }
 
   /**
@@ -44,9 +46,10 @@ export abstract class AbstractExtractor<T> {
    * Implementation for each extractor.
    * @param item
    * @param {ItemData} itemData
+   * @param row
    * @returns {Observable<T> | T}
    */
-  protected abstract doExtract(item: Item, itemData: ItemData): T | Observable<T>;
+  protected abstract doExtract(item: Item, itemData: ItemData, row?: ListRow): T | Observable<T>;
 
   /**
    * Gets the item in the ingredients array or in the data itself.

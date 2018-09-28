@@ -99,6 +99,7 @@ export class ListManagerService {
             item.drops = this.extractor.extractDrops(item.id, data);
             item.ventures = this.extractor.extractVentures(item.id, data);
             item.gatheredBy = this.extractor.extractGatheredBy(item.id, data);
+            item.alarms = this.extractor.extractAlarms(item.id, data, item);
           });
           // Return the addition for the next chain element.
           return addition;

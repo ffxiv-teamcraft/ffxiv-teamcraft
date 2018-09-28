@@ -22,6 +22,11 @@ const getLoggedIn = createSelector(
   (state: AuthState) => state.loggedIn
 );
 
+const getLinkingCharacter = createSelector(
+  getAuthState,
+  (state: AuthState) => state.linkingCharacter
+);
+
 const getUserId = createSelector(
   getAuthState,
   (state: AuthState) => state.uid
@@ -30,6 +35,7 @@ const getUserId = createSelector(
 export const authQuery = {
   getLoaded,
   getMainCharacter,
+  getLinkingCharacter,
   getLoggedIn,
   getUserId
 };

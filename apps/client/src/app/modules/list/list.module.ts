@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ListCompactsService } from './list-compacts.service';
 import { ClipboardModule } from 'ngx-clipboard';
+import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -45,7 +46,8 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: GardeningExtractor, multi: true },
   { provide: EXTRACTORS, useClass: VoyagesExtractor, multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: VenturesExtractor, multi: true }
+  { provide: EXTRACTORS, useClass: VenturesExtractor, multi: true },
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, multi: true },
 ];
 
 @NgModule({

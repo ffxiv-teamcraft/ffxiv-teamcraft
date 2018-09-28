@@ -28,6 +28,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthFacade } from './auth.facade';
 import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
@@ -82,6 +83,9 @@ export class AuthEffects {
   @Effect()
   openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
+    withLatestFrom(this.authFacade.linkingCharacter$),
+    tap(console.log),
+    filter(([, linking]) => !linking),
     tap(() => this.dialog.create({
       nzTitle: this.translate.instant('Character_informations'),
       nzContent: CharacterLinkPopupComponent,
@@ -142,6 +146,6 @@ export class AuthEffects {
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private notificationService: NzNotificationService) {
+              private notificationService: NzNotificationService, private authFacade: AuthFacade) {
   }
 }

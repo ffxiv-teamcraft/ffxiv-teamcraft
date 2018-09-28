@@ -16,6 +16,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthFacade {
   loaded$ = this.store.select(authQuery.getLoaded);
   mainCharacter$ = this.store.select(authQuery.getMainCharacter);
+  linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
 

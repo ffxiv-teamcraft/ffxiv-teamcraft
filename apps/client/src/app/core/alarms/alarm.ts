@@ -8,7 +8,7 @@ import { AlarmGroup } from './alarm-group';
 export class Alarm extends DataModel {
 
   @ForeignKey(TeamcraftUser)
-  userId: string;
+  userId?: string;
 
   @ForeignKey(AlarmGroup)
   groupId?: string;
