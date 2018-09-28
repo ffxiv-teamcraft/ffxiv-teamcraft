@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
+<html xmlns:og="http://ogp.me/ns#">
 <head>
     <meta charset="utf-8">
     <title>Teamcraft</title>
     <base href="/">
 
     <meta name="description" content="Final Fantasy XIV collaborative crafting made easy."/>
+
+    <meta property="og:title" content="FFXIV Tool to make crafters and gatherer's life easier !"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ffxivteamcraft.com/"/>
+    <meta property="og:image" content="https://ffxivteamcraft.com/assets/logo.png" />
 
     <meta name="viewport" content="width=device-width,user-scalable=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -3443,7 +3448,7 @@
     </script>
 </head>
 <body>
-<app-roote>
+<app-root>
     <div class="sonar-container">
         <div class="sonar-emitter">
             <img src="./assets/logo.png" alt="Teamcraft logo">
@@ -3473,6 +3478,6 @@
         const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
         document.getElementById('random-patron').innerText = randomPatron;
     </script>
-</app-roote>
+</app-root>
 </body>
 </html>
