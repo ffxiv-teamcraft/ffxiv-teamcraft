@@ -69,15 +69,40 @@
       <!--TODO Simulator link-->
       <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
               [nzGhost]="true" *ngFor="let craft of item.craftedBy">
-        <img [src]="craft.icon" alt="" class="button-img">
+        <img [src]="craft.icon" alt="" class="img-icon">
       </button>
-      <button nz-button nzShape="circle" nzSize="small" *ngIf="item.gatheredBy !== undefined" nz-tooltip
+      <button nz-button nzShape="circle" *ngIf="item.gatheredBy !== undefined" nz-tooltip
               nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}">
-        <img class="button-img" src="{{item.gatheredBy.icon}}">
+        <img class="img-icon gathering-icon" src="{{item.gatheredBy.icon}}">
       </button>
       <img *ngIf="item.gardening === true"
            nzTitle="{{'Gardening' | translate}}"
            nz-tooltip src="./assets/icons/Gardening.png">
+      <button nz-button nz-tooltip nzTitle="{{'Hunting' | translate}}" nzShape="circle"
+              *ngIf="item.drops !== undefined && item.drops.length > 0">
+        <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">
+      </button>
+      <!--TODO trade sources-->
+      <button nz-button nzShape="circle" *ngIf="item.instances !== undefined && item.instances.length > 0"
+              nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip>
+        <img [src]="item.instances[0].icon | instanceIcon">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0"
+              nzTitle="{{'Reduction' | translate}}" nz-tooltip>
+        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.vendors !== undefined && item.vendors.length > 0"
+              nz-tooltip [nzTitle]="'Vendors' | translate">
+        <img class="img-icon" src="https://xivapi.com/i/065000/065002.png" alt="Gil">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.voyages !== undefined && item.voyages.length > 0"
+              nz-tooltip [nzTitle]="'Voyages' | translate">
+        <img class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png" alt="Voyages">
+      </button>
+      <button nz-button nzShape="circle" *ngIf="item.ventures !== undefined && item.ventures.length > 0"
+              nz-tooltip [nzTitle]="'Retainer_ventures' | translate">
+        <img class="img-icon round-icon" src="https://garlandtools.org/db/icons/item/3503.png" alt="Ventures">
+      </button>
     </div>
   </div>
 </div>
