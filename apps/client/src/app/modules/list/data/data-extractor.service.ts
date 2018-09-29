@@ -11,6 +11,7 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { Drop } from '../model/drop';
 import { Alarm } from '../../../core/alarms/alarm';
 import { ListRow } from '../model/list-row';
+import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
 
@@ -130,8 +131,24 @@ export class DataExtractorService {
     return this.extract<number[]>(DataType.VENTURE, id, data);
   }
 
+  /**
+   * Extracts alarms for item.
+   * @param id
+   * @param data
+   * @param row
+   */
   extractAlarms(id: number, data: ItemData, row: ListRow): Alarm[] {
     return this.extract<Alarm[]>(DataType.ALARMS, id, data, row);
+  }
+
+  /**
+   * Extracts masterbooks for item.
+   * @param id
+   * @param data
+   * @param row
+   */
+  extractMasterBooks(id: number, data: ItemData, row: ListRow): CompactMasterbook[] {
+    return this.extract<CompactMasterbook[]>(DataType.MASTERBOOKS, id, data, row);
   }
 
   /**

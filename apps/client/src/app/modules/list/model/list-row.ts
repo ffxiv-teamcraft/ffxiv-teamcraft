@@ -10,6 +10,7 @@ import { DeserializeAs } from '@kaiu/serializer';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Drop } from './drop';
 import { Alarm } from '../../../core/alarms/alarm';
+import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 
 export class ListRow extends DataModel {
   icon?: number;
@@ -36,6 +37,7 @@ export class ListRow extends DataModel {
   voyages?: I18nName[] = [];
   ventures?: number[] = [];
   alarms?: Alarm[] = [];
+  masterbooks?: CompactMasterbook[] = [];
 
   /**
    * Is someone working on it?

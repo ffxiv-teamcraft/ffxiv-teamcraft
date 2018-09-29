@@ -1,0 +1,45 @@
+import { AbstractExtractor } from './abstract-extractor';
+import { CompactMasterbook } from '../../../../model/common/compact-masterbook';
+import { Item } from '../../../../model/garland-tools/item';
+import { ItemData } from '../../../../model/garland-tools/item-data';
+import { ListRow } from '../../model/list-row';
+import { DataType } from '../data-type';
+import { folklores } from '../../../../core/data/sources/folklores';
+
+export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]> {
+  protected canExtract(item: Item): boolean {
+    return item.hasNodes() || item.isCraft();
+  }
+
+  protected doExtract(item: Item, itemData: ItemData, row?: ListRow): CompactMasterbook[] {
+    const res: CompactMasterbook[] = [];
+    if (row.craftedBy !== undefined) {
+      for (const craft of row.craftedBy) {
+        if (craft.masterbook !== undefined) {
+          if (res.find(m => m.id === craft.masterbook.id) === undefined) {
+            res.push(craft.masterbook);
+          }
+        }
+      }
+    }
+    if (row.gatheredBy !== undefined) {
+      const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
+      if (folklore !== undefined) {
+        res.push({
+          id: +folklore,
+          icon: [7012, 7012, 7127, 7127, 7128, 7128][row.gatheredBy.type]
+        });
+      }
+    }
+    return res;
+  }
+
+  getDataType(): DataType {
+    return DataType.MASTERBOOKS;
+  }
+
+  isAsync(): boolean {
+    return false;
+  }
+
+}

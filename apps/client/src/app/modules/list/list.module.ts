@@ -34,6 +34,7 @@ import { ListCompactsService } from './list-compacts.service';
 import { ClipboardModule } from 'ngx-clipboard';
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 import { BellNodesService } from '../../core/data/bell-nodes.service';
+import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -48,7 +49,8 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: VoyagesExtractor, multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [BellNodesService], multi: true }
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [BellNodesService], multi: true },
+  { provide: EXTRACTORS, useClass: MasterbooksExtractor,  multi: true }
 ];
 
 @NgModule({

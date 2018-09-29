@@ -41,7 +41,9 @@
   </div>
   <div class="block books-and-input-block" nz-col nzXs="24" nzMd="6">
     <div class="masterbooks">
-      <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+      <app-item-icon *ngFor="let masterbook of item.masterbooks" [icon]="masterbook.icon"
+                     [itemName]="masterbook.id | itemName| i18n" [itemId]="masterbook.id"
+                     nz-tooltip [nzTitle]="masterbook.id | itemName | i18n"
                      [width]="24"></app-item-icon>
     </div>
     <div class="amount-input">
