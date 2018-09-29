@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.14"></a>
+## [4.4.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.13...v4.4.14) (2018-09-29)
+
+
+### Bug Fixes
+
+* fixed an issue with generated links having two // in some cases ([6ac6efa](https://github.com/Supamiu/ffxiv-teamcraft/commit/6ac6efa))
+
+
+### Features
+
+* improvements made to SEO using OpenGraph ([f5b8542](https://github.com/Supamiu/ffxiv-teamcraft/commit/f5b8542))
+* updated loading page, including new patrons and patreon button ([2f9116d](https://github.com/Supamiu/ffxiv-teamcraft/commit/2f9116d))
+
+
+
 <a name="4.4.13"></a>
 ## [4.4.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.12...v4.4.13) (2018-09-20)
 
