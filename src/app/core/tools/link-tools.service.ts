@@ -8,7 +8,7 @@ export class LinkToolsService {
     }
 
     public getLink(target: string): string {
-        if(target[0] !== '/'){
+        if (target[0] !== '/') {
             target = `/${target}`;
         }
         // If we're inside Electron, create a direct Teamcraft link.
