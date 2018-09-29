@@ -11,7 +11,7 @@ import {
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import { debounceTime, distinctUntilChanged, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -20,6 +20,8 @@ import { AlarmsService } from '../alarms.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AlarmGroupService } from '../alarm-group.service';
 import { AlarmGroup } from '../alarm-group';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +49,11 @@ export class AlarmsEffects {
     .pipe(
       ofType(AlarmsActionTypes.AddAlarms),
       withLatestFrom(this.authFacade.userId$),
+      tap(() => {
+        this.message.success(this.translate.instant('ALARMS.Alarm_created'), {
+          nzDuration: 2000
+        });
+      }),
       map(([action, userId]) => {
         return (<AddAlarms>action).payload.map(alarm => {
           return new Alarm({ ...alarm, userId: userId });
@@ -134,6 +141,7 @@ export class AlarmsEffects {
 
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,
-              private alarmGroupsService: AlarmGroupService) {
+              private alarmGroupsService: AlarmGroupService, private message: NzMessageService,
+              private translate: TranslateService) {
   }
 }

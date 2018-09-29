@@ -9,16 +9,20 @@ import { AlarmsService } from './alarms.service';
 import { AlarmBellService } from './alarm-bell.service';
 import { SettingsModule } from '../../pages/settings/settings.module';
 import { AlarmGroupService } from './alarm-group.service';
+import { AlarmDisplayPipe } from './alarm-display.pipe';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
     CommonModule,
     SettingsModule,
+    NgZorroAntdModule,
 
     StoreModule.forFeature('alarms', alarmsReducer, { initialState: alarmsInitialState }),
     EffectsModule.forFeature([AlarmsEffects])
   ],
-  declarations: [],
+  declarations: [AlarmDisplayPipe],
+  exports: [AlarmDisplayPipe],
   providers: [
     AlarmsFacade,
     AlarmsService,

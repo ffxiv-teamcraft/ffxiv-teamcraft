@@ -40,6 +40,7 @@ export class ListsEffects {
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
     mergeMap((action: LoadListDetails) => {
+      // TODO handle NotFound error properly
       return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
     }),
     distinctUntilChanged(),

@@ -28,6 +28,11 @@ export class AlarmDisplay {
    */
   nextSpawn: number;
 
+  /**
+   * Is the alarm registered in store?
+   */
+  registered?: boolean;
+
   constructor(public readonly alarm: Alarm) {
   }
 }

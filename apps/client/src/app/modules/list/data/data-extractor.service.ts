@@ -143,6 +143,6 @@ export class DataExtractorService {
    * @returns {T}
    */
   private extract<T>(type: DataType, id: number, data: ItemData, row?: ListRow): T {
-    return this.extractors.find(ex => ex.getDataType() === type).extract(id, data);
+    return this.extractors.find(ex => ex.getDataType() === type).extract(id, data, row);
   }
 }

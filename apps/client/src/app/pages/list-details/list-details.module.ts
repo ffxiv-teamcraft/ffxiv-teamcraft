@@ -13,6 +13,8 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-panel.component';
 import { FormsModule } from '@angular/forms';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [
   {
@@ -33,6 +35,8 @@ const routes: Routes = [
     LayoutModule,
     ItemIconModule,
     PipesModule,
+    AlarmsModule,
+    ClipboardModule,
 
     TranslateModule,
     NgZorroAntdModule

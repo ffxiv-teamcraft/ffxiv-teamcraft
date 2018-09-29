@@ -101,8 +101,12 @@ export class AlarmsFacade {
    * @param alarm
    */
   public hasAlarm(alarm: Partial<Alarm>): Observable<boolean> {
+    return this.getRegisteredAlarm(alarm).pipe(map(a => a !== undefined));
+  }
+
+  public getRegisteredAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
     return this.allAlarms$.pipe(
-      map(alarms => alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) !== undefined)
+      map(alarms => alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId))
     );
   }
 
@@ -110,19 +114,23 @@ export class AlarmsFacade {
     this.store.dispatch(new LoadAlarms());
   }
 
-  private createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
+  public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
+    const display = new AlarmDisplay(alarm);
+    display.spawned = this.isSpawned(alarm, date);
+    display.played = this.isPlayed(alarm, date);
+    if (display.spawned) {
+      display.remainingTime = this.getMinutesBefore(date, (this.getNextSpawn(alarm, date) + alarm.duration) % 24);
+    } else {
+      display.remainingTime = this.getMinutesBefore(date, this.getNextSpawn(alarm, date));
+    }
+    display.remainingTime = this.etime.toEarthTime(display.remainingTime);
+    display.nextSpawn = this.getNextSpawn(alarm, date);
+    return display;
+  }
+
+  public createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
     return this.sortAlarmDisplays(alarms.map(alarm => {
-      const display = new AlarmDisplay(alarm);
-      display.spawned = this.isSpawned(alarm, date);
-      display.played = this.isPlayed(alarm, date);
-      if (display.spawned) {
-        display.remainingTime = this.getMinutesBefore(date, (this.getNextSpawn(alarm, date) + alarm.duration) % 24);
-      } else {
-        display.remainingTime = this.getMinutesBefore(date, this.getNextSpawn(alarm, date));
-      }
-      display.remainingTime = this.etime.toEarthTime(display.remainingTime);
-      display.nextSpawn = this.getNextSpawn(alarm, date);
-      return display;
+      return this.createDisplay(alarm, date);
     }));
   }
 
@@ -172,9 +180,9 @@ export class AlarmsFacade {
   }
 
   public getNextSpawn(alarm: Alarm, time: Date): number {
-    return alarm.spawns.sort((a,b) => {
-      const timeBeforeA =this.getMinutesBefore(time, a);
-      const timeBeforeB =this.getMinutesBefore(time, b);
+    return alarm.spawns.sort((a, b) => {
+      const timeBeforeA = this.getMinutesBefore(time, a);
+      const timeBeforeB = this.getMinutesBefore(time, b);
       return timeBeforeA < timeBeforeB ? -1 : 1;
     })[0];
   }
