@@ -10,7 +10,7 @@ import {first} from 'rxjs/operators';
 import {PlatformService} from '../tools/platform.service';
 import {IpcService} from '../electron/ipc.service';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Injectable()
 export class OauthService {
@@ -57,7 +57,7 @@ export class OauthService {
             u.email = user.email;
             this.userService.set(user.uid, u).pipe(first()).subscribe(() => {
                 this.userService.reload();
-                ga('send', 'event', 'Site', 'signup');
+                gtag('send', 'event', 'Site', 'signup');
                 resolve();
             });
         });

@@ -34,7 +34,7 @@ import {LinkToolsService} from '../../../core/tools/link-tools.service';
 import {CommissionService} from '../../../core/database/commission/commission.service';
 import {CommissionStatus} from '../../../model/commission/commission-status';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-lists',
@@ -242,7 +242,7 @@ export class ListsComponent extends ComponentWithSubscriptions implements OnInit
                 })
             )
             .subscribe(() => {
-                ga('send', 'event', 'List', 'deletion');
+                gtag('send', 'event', 'List', 'deletion');
                 this.title.setTitle('Teamcraft');
             });
     }

@@ -14,7 +14,7 @@ import {ListService} from '../../../core/database/list.service';
 import {List} from '../../../model/list/list';
 import {filter, map, mergeMap, tap} from 'rxjs/operators';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-external-list-import-popup',
@@ -132,7 +132,7 @@ export class ExternalListImportPopupComponent implements OnInit {
     }
 
     createList(): void {
-        ga('send', 'event', 'List', 'import');
+        gtag('send', 'event', 'List', 'import');
         let done = 0;
         this.creatingList = true;
         const list = new List();

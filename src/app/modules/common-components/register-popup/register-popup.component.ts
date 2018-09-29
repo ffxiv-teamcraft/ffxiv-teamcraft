@@ -10,7 +10,7 @@ import '@firebase/database';
 import '@firebase/firestore';
 import {OauthService} from '../../../core/auth/oauth.service';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-register-popup',
