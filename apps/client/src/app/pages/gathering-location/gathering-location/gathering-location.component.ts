@@ -81,7 +81,6 @@ export class GatheringLocationComponent {
                     x: node.coords[0],
                     y: node.coords[1],
                     level: node.lvl,
-                    type: ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type),
                     itemId: item.obj.i,
                     spawnTimes: node.time,
                     uptime: node.uptime,

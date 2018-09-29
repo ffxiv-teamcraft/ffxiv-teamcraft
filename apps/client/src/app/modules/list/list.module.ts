@@ -33,8 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { ListCompactsService } from './list-compacts.service';
 import { ClipboardModule } from 'ngx-clipboard';
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
-import { MapService } from '../map/map.service';
-import { MapModule } from '../map/map.module';
+import { BellNodesService } from '../../core/data/bell-nodes.service';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -49,7 +48,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: VoyagesExtractor, multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [MapService], multi: true }
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [BellNodesService], multi: true }
 ];
 
 @NgModule({
@@ -62,7 +61,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     PipesModule,
     NameQuestionPopupModule,
     RouterModule,
-    MapModule,
 
     ClipboardModule,
     NgZorroAntdModule,

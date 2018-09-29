@@ -38,6 +38,7 @@ export class BellNodesService {
           nodeCopy.icon = match.icon;
           nodeCopy.itemId = id;
           nodeCopy.slot = +match.slot;
+          nodeCopy.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
           nodeCopy.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
           nodeCopy.areaid = this.localizedDataService.getAreaIdByENName(node.title);
           results.push(nodeCopy);

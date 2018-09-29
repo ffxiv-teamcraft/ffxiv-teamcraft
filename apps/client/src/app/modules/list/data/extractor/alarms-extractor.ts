@@ -4,10 +4,10 @@ import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { ListRow } from '../../model/list-row';
-import { MapService } from '../../../map/map.service';
+import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(private mapService: MapService) {
+  constructor(private bellNodes: BellNodesService) {
     super();
   }
 
@@ -37,6 +37,30 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           };
         })
       );
+    }
+    if (row.reducedFrom !== undefined) {
+      alarms.push(...[].concat.apply([], row.reducedFrom
+        .filter(reduction => reduction.obj !== undefined && this.bellNodes.getNodesByItemId(reduction.obj.i).length > 0)
+        .map(reduction => {
+          const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
+          return nodes.map(node => {
+            return {
+              itemId: node.itemId,
+              icon: node.icon,
+              duration: node.uptime / 60,
+              zoneId: node.zoneid,
+              areaId: node.areaid,
+              slot: +node.slot,
+              type: node.type,
+              spawns: node.time,
+              coords: {
+                x: node.coords[0],
+                y: node.coords[1]
+              }
+            };
+          });
+        })
+      ));
     }
     return alarms;
   }

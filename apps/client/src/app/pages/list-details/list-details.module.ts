@@ -15,6 +15,7 @@ import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-
 import { FormsModule } from '@angular/forms';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -37,6 +38,8 @@ const routes: Routes = [
     PipesModule,
     AlarmsModule,
     ClipboardModule,
+
+    FlexLayoutModule,
 
     TranslateModule,
     NgZorroAntdModule
