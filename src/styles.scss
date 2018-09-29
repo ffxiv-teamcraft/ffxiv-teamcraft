@@ -193,6 +193,13 @@ mat-form-field:not(.with-infix) {
     }
 }
 
+.patreon-widget {
+    > img {
+        width: 175px;
+    }
+    margin-top: 25px;
+}
+
 .sonar-container {
     -webkit-app-region: drag;
     width: 100%;
