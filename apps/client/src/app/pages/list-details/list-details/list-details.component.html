@@ -1,7 +1,34 @@
 <div *ngIf="list$ | async as list">
-  <div class="toolbar"></div>
-  <div class="list-title">
+  <div class="toolbar" fxLayout="row wrap-reverse" fxLayoutGap="5px">
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i-layout></i-layout>
+    </button>
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i-shield></i-shield>
+    </button>
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i class="material-icons">people_outline</i>
+    </button>
+    <div class="spacer"></div>
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i class="anticon anticon-tags-o"></i>
+    </button>
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i class="material-icons">apps</i>
+    </button>
+    <button disabled nz-button nzType="primary" nzShape="circle">
+      <i class="material-icons">history</i>
+    </button>
+  </div>
+  <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
     <h2>{{list.name}}</h2>
+    <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
+            (click)="renameList(list)">
+      <i class="anticon anticon-edit"></i>
+    </button>
+    <button nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip [nzTitle]="'poop'" (click)="createAlarms(list)">
+      <i class="anticon anticon-clock-circle-o"></i>
+    </button>
   </div>
   <div class="list-display" *ngIf="display$ | async as listDisplay">
     <app-list-crystals-panel [crystals]="crystals$ | async"></app-list-crystals-panel>

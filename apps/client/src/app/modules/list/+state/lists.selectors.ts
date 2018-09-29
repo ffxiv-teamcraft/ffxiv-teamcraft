@@ -33,8 +33,7 @@ const getSelectedList = createSelector(
   getAllListDetails,
   getSelectedId,
   (lists, id) => {
-    const result = lists.find(it => it.$key === id);
-    return result ? Object.assign({}, result) : undefined;
+    return lists.find(it => it.$key === id);
   }
 );
 

@@ -5,7 +5,6 @@ export interface CraftedBy {
   icon: string;
   level: number;
   stars_tooltip: string;
-  stars_html?: string;
   recipeId: string;
   masterbook?: CompactMasterbook;
 }

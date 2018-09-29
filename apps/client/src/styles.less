@@ -1,11 +1,22 @@
 @import "theme";
 
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
 .material-icons {
   font-size: 18px;
 }
 
+.feather {
+  width: 16px;
+}
+
 .ant-btn-circle {
-  font-size: 18px;
+  font-size: 20px;
+  > i.material-icons {
+    margin-top: 6px;
+  }
 }
 
 .ant-menu-item {
@@ -149,15 +160,14 @@
 
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
-  user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently
+                         not supported by any browser */
 }
-
-
 
 .ngx-dnd-item {
   transition: opacity 0.4s ease-in-out;
@@ -185,15 +195,18 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
+
 .gu-hide {
   display: none !important;
 }
+
 .gu-unselectable {
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
 }
+
 .gu-transit {
   opacity: 0.2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";

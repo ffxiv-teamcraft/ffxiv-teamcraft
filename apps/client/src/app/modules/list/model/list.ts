@@ -175,14 +175,14 @@ export class List extends DataWithPermissions {
    * For instance, if you already have Iron ingots, you'll check them into the list, and it'll check the ores needed for the craft,
    * it will also mark them as used as you aren't supposed to have them in your inventory as you used them for the craft.
    *
-   * @param {ListRow} pitem
+   * @param {number} itemId
    * @param {number} amount
    * @param {boolean} setUsed
-   * @param {boolean} excludeRecipes
+   * @param {boolean} excludeFinalItems
    * @param initialAddition
    */
-  public setDone(pitem: ListRow, amount: number, excludeRecipes = false, setUsed = false, initialAddition = amount): void {
-    const item = this.getItemById(pitem.id, excludeRecipes);
+  public setDone(itemId: number, amount: number, excludeFinalItems = false, setUsed = false, initialAddition = amount): void {
+    const item = this.getItemById(itemId, excludeFinalItems);
     const previousDone = MathTools.absoluteCeil(item.done / item.yield);
     if (setUsed) {
       // Save previous used amount
@@ -209,11 +209,11 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
-    amount = MathTools.absoluteCeil(amount / pitem.yield);
+    amount = MathTools.absoluteCeil(amount / item.yield);
     const newDone = MathTools.absoluteCeil(item.done / item.yield);
     if (item.requires !== undefined && newDone !== previousDone) {
       for (const requirement of item.requires) {
-        const requirementItem = this.getItemById(requirement.id, excludeRecipes);
+        const requirementItem = this.getItemById(requirement.id, excludeFinalItems);
         if (requirementItem !== undefined) {
           let nextAmount = requirement.amount * amount;
           // If this is not a precraft, we have to take yields in consideration.
@@ -228,7 +228,7 @@ export class List extends DataWithPermissions {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            this.setDone(requirementItem, nextAmount, true, previousDone !== item.done, initialAddition);
+            this.setDone(requirement.id, nextAmount, true, previousDone !== item.done, initialAddition);
           }
         }
       }
@@ -394,7 +394,7 @@ export class List extends DataWithPermissions {
     if (added < 0 && recipe) {
       const previousDone = row.done;
       if (previousDone > row.amount_needed) {
-        this.setDone(row, row.amount_needed - previousDone);
+        this.setDone(row.id, row.amount_needed - previousDone);
       }
     }
     return added;

@@ -17,9 +17,11 @@
     </nz-list>
   </nz-collapse-panel>
   <ng-template #panelHeader>
-    <div class="panel-header">
-      {{list.name}}
-      <div class="panel-middle-content">
+    <div class="panel-header" nz-row>
+      <div nz-col nzMd="4">
+        {{list.name}}
+      </div>
+      <div nz-col nzMd="16" class="panel-middle-content">
         <div class="tags">
           <nz-tag *ngIf="list.ephemeral" [nzColor]="'red'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
@@ -31,31 +33,33 @@
           This is a test list, and it's not even a real description
         </div>
       </div>
-      <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
-              [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-              ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
-        <i class="anticon anticon-share-alt"></i>
-      </button>
-      <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button [nzShape]="'circle'"
-         [nzType]="'primary'"
-         routerLink="/list/{{list.$key}}">
-        <i class="anticon anticon-folder-open"></i>
-      </a>
-      <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
-              [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(list)">
-        <i class="anticon anticon-delete"></i></button>
-      <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
-        <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-          <i class="anticon anticon-ellipsis"></i></button>
-        <ul nz-menu>
-          <li nz-menu-item>TODO Rename</li>
-          <li nz-menu-item>TODO Comments</li>
-          <li nz-menu-item>TODO Tags</li>
-          <li nz-menu-item>TODO Permissions</li>
-          <li nz-menu-item>TODO Template (create or copy)</li>
-          <li nz-menu-item>TODO Custom link (create or copy)</li>
-        </ul>
-      </nz-dropdown>
+      <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
+        <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
+          <i class="anticon anticon-share-alt"></i>
+        </button>
+        <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button [nzShape]="'circle'"
+           [nzType]="'primary'"
+           routerLink="/list/{{list.$key}}">
+          <i class="anticon anticon-folder-open"></i>
+        </a>
+        <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
+                [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(list)">
+          <i class="anticon anticon-delete"></i></button>
+        <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
+          <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+            <i class="anticon anticon-ellipsis"></i></button>
+          <ul nz-menu>
+            <li nz-menu-item>TODO Rename</li>
+            <li nz-menu-item>TODO Comments</li>
+            <li nz-menu-item>TODO Tags</li>
+            <li nz-menu-item>TODO Permissions</li>
+            <li nz-menu-item>TODO Template (create or copy)</li>
+            <li nz-menu-item>TODO Custom link (create or copy)</li>
+          </ul>
+        </nz-dropdown>
+      </div>
     </div>
   </ng-template>
 </nz-collapse>

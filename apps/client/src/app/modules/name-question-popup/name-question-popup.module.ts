@@ -4,12 +4,14 @@ import { NameQuestionPopupComponent } from './name-question-popup/name-question-
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
 
     TranslateModule,
 

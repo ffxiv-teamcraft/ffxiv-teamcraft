@@ -82,7 +82,7 @@
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
-    "Alarms_created": "Alarms created",
+    "Alarms_created": "{{amount}} alarms created",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",

@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap, shareReplay, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
+import { NzModalService } from 'ng-zorro-antd';
+import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { TranslateService } from '@ngx-translate/core';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 
 @Component({
   selector: 'app-list-details',
@@ -24,7 +28,9 @@ export class ListDetailsComponent implements OnInit {
   public crystals$: Observable<ListRow[]>;
 
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute, private dialog: NzModalService,
+              private translate: TranslateService,
+              private alarmsFacade: AlarmsFacade) {
     this.list$ = this.listsFacade.selectedList$.pipe(shareReplay(1));
     this.finalItemsRow$ = this.list$.pipe(
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
@@ -47,6 +53,38 @@ export class ListDetailsComponent implements OnInit {
       .subscribe(listId => {
         this.listsFacade.select(listId);
       });
+  }
+
+  renameList(list: List): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('Edit')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        list.name = name;
+        return list;
+      })
+    ).subscribe(l => this.listsFacade.updateList(l));
+  }
+
+  createAlarms(list: List): void {
+    this.alarmsFacade.allAlarms$.pipe(
+      first(),
+      map(alarms => {
+        const listAlarms = [];
+        list.forEach(row => listAlarms.push(...row.alarms.filter(alarm => {
+          // Avoid duplicates.
+          return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
+        })));
+        return listAlarms.filter(alarm => {
+          return alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
+        });
+      })
+    ).subscribe(alarms => {
+      this.alarmsFacade.addAlarms(...alarms);
+    });
   }
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {

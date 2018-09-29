@@ -1,5 +1,5 @@
-<div class="item-row" [class.odd]="odd" nz-row>
-  <div class="block left-block" nz-col nzXs="24" nzMd="6">
+<div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done">
+  <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
     <div class="icon">
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
@@ -8,10 +8,12 @@
           [nzTitle]="'Copy_item_name_to_clipboard' | translate"
           (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
       {{item.id | itemName | i18n}}
+      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}</span>
     </span>
   </div>
-  <div class="block center-block" nz-col nzXs="24" nzMd="8">
-    <div class="timers" *ngIf="item.alarms && item.alarms.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
+  <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"
+       [class.empty]="!item.alarms || item.alarms.length < 0">
+    <div class="timers" fxLayout="row wrap" fxLayoutGap="5px">
       <div *ngFor="let alarm of item.alarms">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
@@ -39,7 +41,8 @@
       </div>
     </div>
   </div>
-  <div class="block books-and-input-block" nz-col nzXs="24" nzMd="6">
+  <div class="block books-and-input-block" nz-col nzXs="24" nzSm="12"
+       nzMd="6">
     <div class="masterbooks">
       <app-item-icon *ngFor="let masterbook of item.masterbooks" [icon]="masterbook.icon"
                      [itemName]="masterbook.id | itemName| i18n" [itemId]="masterbook.id"
@@ -47,21 +50,35 @@
                      [width]="24"></app-item-icon>
     </div>
     <div class="amount-input">
-      <nz-input-number [nzMin]="0" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1" [ngModel]="item.done"
-                       (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
-      <button nz-button [nzSize]="'small'" [nzShape]="'circle'" [nzType]="'primary'" class="done-button">
+      <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
+                       [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
+      <span class="amount-max">
+        /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <button nz-button [nzSize]="'small'" [nzShape]="'circle'" [nzType]="'primary'" class="done-button"
+              *ngIf="item.amount > item.done; else done" (click)="markAsDone()">
         <i class="anticon anticon-check"></i>
       </button>
+      <ng-template #done>
+        <i class="anticon anticon-check done-icon"></i>
+      </ng-template>
     </div>
   </div>
-  <div class="item-obtention" nz-col nzXs="24" nzMd="4">
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
-    <button nz-button [nzShape]="'circle'" [nzSize]="'small'" [nzGhost]="true">A</button>
+  <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
+    <div fxLayout="row wrap" fxLayoutGap="2px">
+      <!--TODO Simulator link-->
+      <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
+              [nzGhost]="true" *ngFor="let craft of item.craftedBy">
+        <img [src]="craft.icon" alt="" class="button-img">
+      </button>
+      <button nz-button nzShape="circle" nzSize="small" *ngIf="item.gatheredBy !== undefined" nz-tooltip
+              nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}">
+        <img class="button-img" src="{{item.gatheredBy.icon}}">
+      </button>
+      <img *ngIf="item.gardening === true"
+           nzTitle="{{'Gardening' | translate}}"
+           nz-tooltip src="./assets/icons/Gardening.png">
+    </div>
   </div>
 </div>
 

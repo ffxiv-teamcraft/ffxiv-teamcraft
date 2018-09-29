@@ -32,7 +32,11 @@ export class ItemRowComponent {
   }
 
   itemDoneChanged(newValue: number): void {
-    this.listsFacade.setItemDone(this.item.id, this.finalItem, 0);
+    this.listsFacade.setItemDone(this.item.id, this.finalItem, newValue - this.item.done);
+  }
+
+  markAsDone(): void {
+    this.listsFacade.setItemDone(this.item.id, this.finalItem, this.item.amount - this.item.done);
   }
 
   toggleAlarm(display: AlarmDisplay): void {
@@ -43,7 +47,7 @@ export class ItemRowComponent {
     }
   }
 
-  public success(key: string, args?: any): void {
+  success(key: string, args?: any): void {
     this.messageService.success(this.translate.instant(key, args));
   }
 

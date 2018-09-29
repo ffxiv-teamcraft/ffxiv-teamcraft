@@ -3,6 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   AddAlarms,
   AlarmsActionTypes,
+  AlarmsCreated,
   AlarmsLoaded,
   AssignGroupToAlarm,
   CreateAlarmGroup,
@@ -11,7 +12,7 @@ import {
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import { debounceTime, distinctUntilChanged, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
+import { bufferTime, debounceTime, distinctUntilChanged, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -49,11 +50,6 @@ export class AlarmsEffects {
     .pipe(
       ofType(AlarmsActionTypes.AddAlarms),
       withLatestFrom(this.authFacade.userId$),
-      tap(() => {
-        this.message.success(this.translate.instant('ALARMS.Alarm_created'), {
-          nzDuration: 2000
-        });
-      }),
       map(([action, userId]) => {
         return (<AddAlarms>action).payload.map(alarm => {
           return new Alarm({ ...alarm, userId: userId });
@@ -62,11 +58,11 @@ export class AlarmsEffects {
       mergeMap((alarms: Alarm[]) => {
         return combineLatest(
           alarms.map(alarm => {
-            this.alarmsService.add(alarm);
+            return this.alarmsService.add(alarm);
           })
         );
       }),
-      mergeMap(() => EMPTY)
+      map((alarms) => new AlarmsCreated(alarms.length))
     );
 
 
@@ -135,6 +131,25 @@ export class AlarmsEffects {
     mergeMap(([action, alarms]) => {
       const alarm = alarms.find(a => a.$key === (<AssignGroupToAlarm>action).alarm.$key);
       return this.alarmsService.set(alarm.$key, alarm);
+    }),
+    mergeMap(() => EMPTY)
+  );
+
+  @Effect()
+  showAlarmsCreatedNotification$ = this.actions$.pipe(
+    ofType(AlarmsActionTypes.AlarmsCreated),
+    bufferTime(300),
+    filter(actions => actions.length > 0),
+    tap((creations: AlarmsCreated[]) => {
+      const amount = creations.reduce((count, c) => {
+        return count + c.amount;
+      }, 0);
+      const label = amount === 1
+        ? this.translate.instant('ALARMS.Alarm_created')
+        : this.translate.instant('ALARMS.Alarms_created', { amount: amount });
+      this.message.success(label, {
+        nzDuration: 2000
+      });
     }),
     mergeMap(() => EMPTY)
   );

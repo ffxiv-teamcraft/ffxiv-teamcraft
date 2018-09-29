@@ -8,6 +8,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
+import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 @NgModule({
   imports: [
@@ -17,6 +19,9 @@ import { MapModule } from '../map/map.module';
 
     AlarmsModule,
     MapModule,
+
+    FullpageMessageModule,
+    PageLoaderModule,
 
     TranslateModule,
 

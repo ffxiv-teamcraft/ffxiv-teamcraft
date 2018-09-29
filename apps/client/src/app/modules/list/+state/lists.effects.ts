@@ -9,6 +9,7 @@ import {
   ListsActionTypes,
   LoadListDetails,
   MyListsLoaded,
+  SetItemDone,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
@@ -101,6 +102,17 @@ export class ListsEffects {
     map(action => action as DeleteList),
     mergeMap(action => this.listService.remove(action.key)),
     mergeMap(() => EMPTY)
+  );
+
+  @Effect()
+  updateItemDone$ = this.actions$.pipe(
+    ofType<SetItemDone>(ListsActionTypes.SetItemDone),
+    withLatestFrom(this.listsFacade.selectedList$),
+    map(([action, list]) => {
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem);
+      return list;
+    }),
+    map(list => new UpdateList(list))
   );
 
   constructor(
