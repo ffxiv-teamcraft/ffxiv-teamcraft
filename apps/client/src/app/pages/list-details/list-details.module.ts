@@ -18,6 +18,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { IconsModule } from '../../core/icons/icons.module';
+import { TradeIconPipe } from './trade-icon.pipe';
 
 const routes: Routes = [
   {
@@ -48,7 +49,7 @@ const routes: Routes = [
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent]
+  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe]
 })
 export class ListDetailsModule {
 }

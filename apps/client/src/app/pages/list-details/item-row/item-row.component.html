@@ -65,7 +65,7 @@
     </div>
   </div>
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
-    <div fxLayout="row wrap" fxLayoutGap="2px">
+    <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto">
       <!--TODO Simulator link-->
       <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
               [nzGhost]="true" *ngFor="let craft of item.craftedBy">
@@ -82,10 +82,14 @@
               *ngIf="item.drops !== undefined && item.drops.length > 0">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">
       </button>
-      <!--TODO trade sources-->
+      <button nz-button nzShape="circle" *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0"
+              nzTitle="{{'Trade' | translate}}" nz-tooltip>
+        <img class="img-icon round-icon"
+             [src]="item.tradeSources | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'">
+      </button>
       <button nz-button nzShape="circle" *ngIf="item.instances !== undefined && item.instances.length > 0"
               nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip>
-        <img [src]="item.instances[0].icon | instanceIcon">
+        <img class="img-icon round-icon" [src]="item.instances[0].icon | instanceIcon">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0"
               nzTitle="{{'Reduction' | translate}}" nz-tooltip>
