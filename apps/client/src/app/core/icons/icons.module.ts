@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { IconLayout, IconShield } from 'angular-feather';
+import { IconCopy, IconLayout, IconShield } from 'angular-feather';
 
 @NgModule({
   exports: [
     IconLayout,
-    IconShield
+    IconShield,
+    IconCopy,
   ]
 })
 export class IconsModule {

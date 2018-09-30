@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -29,9 +29,12 @@ export class ListDetailsComponent implements OnInit {
 
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
-              private translate: TranslateService,
-              private alarmsFacade: AlarmsFacade) {
-    this.list$ = this.listsFacade.selectedList$.pipe(shareReplay(1));
+              private translate: TranslateService,private router: Router,
+              private alarmsFacade: AlarmsFacade, private message: NzMessageService) {
+    this.list$ = this.listsFacade.selectedList$.pipe(
+      filter(list => list !== undefined),
+      shareReplay(1)
+    );
     this.finalItemsRow$ = this.list$.pipe(
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
     );
@@ -85,6 +88,20 @@ export class ListDetailsComponent implements OnInit {
     ).subscribe(alarms => {
       this.alarmsFacade.addAlarms(...alarms);
     });
+  }
+
+  cloneList(list: List): void {
+    const clone = list.clone();
+    this.listsFacade.updateList(list);
+    this.listsFacade.addList(clone);
+    this.listsFacade.myLists$.pipe(
+      map(lists => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
+      filter(l => l !== undefined),
+      first()
+    ).subscribe(l => {
+      this.router.navigate(['list', l.$key]);
+      this.message.success(this.translate.instant('List_forked'));
+    }) ;
   }
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {

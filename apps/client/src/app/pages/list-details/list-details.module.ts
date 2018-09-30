@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { IconsModule } from '../../core/icons/icons.module';
 import { TradeIconPipe } from './trade-icon.pipe';
+import { ListHistoryPopupComponent } from './list-history-popup/list-history-popup.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe]
+  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent],
+  entryComponents: [ListHistoryPopupComponent]
 })
 export class ListDetailsModule {
 }

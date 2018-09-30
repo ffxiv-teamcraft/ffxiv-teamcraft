@@ -68,7 +68,7 @@ export class List extends DataWithPermissions {
   public clone(): List {
     const clone = new List();
     for (const prop of Object.keys(this)) {
-      if (['finalItems', 'preCrafts', 'gathers', 'others', 'crystals', 'note'].indexOf(prop) > -1) {
+      if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
         clone[prop] = JSON.parse(JSON.stringify(this[prop]));
       }
     }

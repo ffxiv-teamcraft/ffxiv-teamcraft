@@ -1,10 +1,9 @@
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { fromPromise } from 'rxjs/internal/observable/fromPromise';
 import { map, tap } from 'rxjs/operators';
 import { Action, AngularFirestore } from '@angular/fire/firestore';
 
@@ -18,7 +17,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   add(data: T, uriParams?: any): Observable<string> {
     const toAdd = JSON.parse(JSON.stringify(data));
     delete toAdd.$key;
-    return fromPromise(this.firestore.collection(this.getBaseUri(uriParams)).add(toAdd))
+    return from(this.firestore.collection(this.getBaseUri(uriParams)).add(toAdd))
       .pipe(
         map((ref: any) => {
           return ref.id;
@@ -46,7 +45,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
-    return fromPromise(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate)).pipe(
+    return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(toUpdate)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
       }));
@@ -59,7 +58,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
-    return fromPromise(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(toSet)).pipe(
+    return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(toSet)).pipe(
       tap(() => {
         this.pendingChangesService.removePendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
       }));
@@ -70,7 +69,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     if (uid === undefined || uid === null || uid === '') {
       throw new Error('Empty uid');
     }
-    return fromPromise(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete())
+    return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete())
       .pipe(tap(() => {
         // If there's cache information, delete it.
         this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);

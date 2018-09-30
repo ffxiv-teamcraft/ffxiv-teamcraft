@@ -9,6 +9,10 @@
     <button disabled nz-button nzType="primary" nzShape="circle">
       <i class="material-icons">people_outline</i>
     </button>
+    <button nz-button nzType="primary" nzShape="circle" (click)="cloneList(list)" nz-tooltip
+            [nzTitle]="'List_fork' | translate">
+      <i-copy></i-copy>
+    </button>
     <div class="spacer"></div>
     <button disabled nz-button nzType="primary" nzShape="circle">
       <i class="anticon anticon-tags-o"></i>
