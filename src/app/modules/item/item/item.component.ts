@@ -154,7 +154,7 @@ export class ItemComponent extends ComponentWithSubscriptions implements OnInit,
         14898: 10, // Illuminati Dark Gobcoat
         16542: 10, // Illuminati Darkest Gobcoat
         16543: 10, // Illuminati Tautest Gobtwine
-        16544: 10, // Illuminati Deepest Gobdip 
+        16544: 10, // Illuminati Deepest Gobdip
         19104: 10, // Lost Allagan Roborant
         19105: 10, // Lost Allagan Twine
         19106: 10, // Lost Allagan Glaze
