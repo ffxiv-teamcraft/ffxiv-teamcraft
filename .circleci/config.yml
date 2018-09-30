@@ -134,7 +134,6 @@ workflows:
         - build:
               requires:
               - lint
-              - test
         - deploy-web:
               requires:
               - build
