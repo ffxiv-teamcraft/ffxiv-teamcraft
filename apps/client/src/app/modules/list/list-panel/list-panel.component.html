@@ -6,7 +6,8 @@
           <nz-list-item-meta [nzAvatar]="item.icon | icon" [nzTitle]="item.id | itemName | i18n"></nz-list-item-meta>
         </nz-list-item>
         <ng-template #amountModifier>
-          <input nz-input type="number" [(ngModel)]="item.amount">
+          <input nz-input class="amount-input" type="number" [ngModel]="item.amount"
+                 (ngModelChange)="updateAmount(item, $event)">
         </ng-template>
         <ng-template #removeItem>
           <button nz-button [nzType]="'danger'" [nzShape]="'circle'">
@@ -23,14 +24,15 @@
       </div>
       <div nz-col nzMd="16" class="panel-middle-content">
         <div class="tags">
-          <nz-tag *ngIf="list.ephemeral" [nzColor]="'red'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
+          <nz-tag *ngIf="list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
+          <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" nz-tooltip [nzTitle]="'LIST.Outdated_tag' | translate"></nz-tag>
           <nz-tag [nzColor]="'purple'">Test</nz-tag>
           <nz-tag [nzColor]="'gold'">Tags</nz-tag>
         </div>
         <div class="description">
-          This is a test list, and it's not even a real description
+          {{list.note}}
         </div>
       </div>
       <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
@@ -39,7 +41,8 @@
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
           <i class="anticon anticon-share-alt"></i>
         </button>
-        <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button [nzShape]="'circle'"
+        <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
+           [nzShape]="'circle'"
            [nzType]="'primary'"
            routerLink="/list/{{list.$key}}">
           <i class="anticon anticon-folder-open"></i>

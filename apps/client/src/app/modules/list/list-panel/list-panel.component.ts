@@ -4,6 +4,7 @@ import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { ListRow } from '../model/list-row';
 
 @Component({
   selector: 'app-list-panel',
@@ -23,8 +24,12 @@ export class ListPanelComponent implements OnInit {
     this.listsFacade.deleteList(list.$key);
   }
 
-  public getLink(): string {
+  getLink(): string {
     return this.linkTools.getLink(`/list/${this.list.$key}`);
+  }
+
+  updateAmount(item: ListRow, newAmount: number): void {
+    //TODO
   }
 
   afterLinkCopy(): void {
