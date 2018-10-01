@@ -1,7 +1,50 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="true">
-    <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd" [item]="item"
-                  [finalItem]="finalItems" [odd]="odd"></app-item-row>
+    <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
+      <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd" [item]="item"
+                    [finalItem]="finalItems" [odd]="odd"></app-item-row>
+    </div>
+    <div *ngIf="displayRow.tiers">
+      <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
+        <span class="tier-title">{{'Precraft_tier' | translate}} {{index + 1}}</span>
+        <nz-divider></nz-divider>
+        <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd" [item]="item"
+                      [finalItem]="finalItems" [odd]="odd"></app-item-row>
+      </div>
+    </div>
+    <div *ngIf="displayRow.zoneBreakdown">
+      <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
+        <div *ngIf="row.items.length > 0">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
+            <!--TODO navigation map-->
+            <button nz-button disabled nzShape="circle" *ngIf="false">
+              <i-map></i-map>
+            </button>
+          </div>
+          <nz-divider></nz-divider>
+          <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd" [item]="item"
+                        [finalItem]="finalItems" [odd]="odd"></app-item-row>
+        </div>
+      </div>
+    </div>
   </nz-collapse-panel>
-  <ng-template #panelHeader>{{displayRow.title | translate}}</ng-template>
+  <ng-template #panelHeader>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
+      <div>{{displayRow.title | translate}}</div>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <!--TODO Total price popup-->
+        <button nz-button (click)="$event.stopPropagation()" ngxClipboard disabled
+                nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Total_price' | translate">
+          <i class="material-icons">local_atm</i>
+        </button>
+        <button nz-button (click)="$event.stopPropagation()" ngxClipboard [cbContent]="getTextExport()"
+                (cbOnSuccess)="textCopied()"
+                nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Copy_as_text' | translate">
+          <i class="anticon anticon-copy"></i>
+        </button>
+      </div>
+    </div>
+  </ng-template>
 </nz-collapse>
+
