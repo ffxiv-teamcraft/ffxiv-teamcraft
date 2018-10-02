@@ -11,6 +11,7 @@ import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
 
 @Component({
   selector: 'app-list-details',
@@ -29,7 +30,7 @@ export class ListDetailsComponent implements OnInit {
 
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
-              private translate: TranslateService,private router: Router,
+              private translate: TranslateService, private router: Router,
               private alarmsFacade: AlarmsFacade, private message: NzMessageService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
@@ -101,7 +102,14 @@ export class ListDetailsComponent implements OnInit {
     ).subscribe(l => {
       this.router.navigate(['list', l.$key]);
       this.message.success(this.translate.instant('List_forked'));
-    }) ;
+    });
+  }
+
+  openLayoutOptions(): void {
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: LayoutEditorComponent
+    })
   }
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {

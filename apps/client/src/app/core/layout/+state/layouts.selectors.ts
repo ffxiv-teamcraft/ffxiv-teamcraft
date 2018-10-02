@@ -18,7 +18,7 @@ const getAllLayouts = createSelector(
 );
 const getSelectedId = createSelector(
   getLayoutsState,
-  (state: LayoutsState) => state.selectedId
+  (state: LayoutsState) => state.selectedKey
 );
 const getSelectedLayout = createSelector(
   getAllLayouts,

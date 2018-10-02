@@ -1,6 +1,6 @@
 <div *ngIf="list$ | async as list">
-  <div class="toolbar" fxLayout="row wrap-reverse" fxLayoutGap="5px">
-    <button disabled nz-button nzType="primary" nzShape="circle">
+  <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
+    <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()">
       <i-layout></i-layout>
     </button>
     <button disabled nz-button nzType="primary" nzShape="circle">
@@ -24,7 +24,7 @@
       <i class="material-icons">history</i>
     </button>
   </div>
-  <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+  <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" fxLayoutAlign.lt-sm="center center">
     <h2>{{list.name}}</h2>
     <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
             (click)="renameList(list)">

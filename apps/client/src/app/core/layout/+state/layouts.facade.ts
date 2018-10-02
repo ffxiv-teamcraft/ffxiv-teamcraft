@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { LayoutsState } from './layouts.reducer';
 import { layoutsQuery } from './layouts.selectors';
-import { LoadLayouts } from './layouts.actions';
+import { LoadLayouts, SelectLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
@@ -79,6 +79,10 @@ export class LayoutsFacade {
         };
       })
     );
+  }
+
+  select(layout: ListLayout): void {
+    this.store.dispatch(new SelectLayout(layout.$key));
   }
 
   loadAll() {

@@ -11,7 +11,7 @@ import { ListLayout } from '../list-layout';
 
 export interface LayoutsState {
   layouts: ListLayout[]; // list of Layouts; analogous to a sql normalized table
-  selectedId?: string | number; // which Layouts record has been selected
+  selectedKey?: string; // which Layouts record has been selected
   loaded: boolean; // has the Layouts list been loaded
 }
 
@@ -30,6 +30,14 @@ export function layoutsReducer(
         ...state,
         layouts: action.payload,
         loaded: true
+      };
+      break;
+    }
+
+    case LayoutsActionTypes.SelectLayout: {
+      state = {
+        ...state,
+        selectedKey: action.key
       };
       break;
     }

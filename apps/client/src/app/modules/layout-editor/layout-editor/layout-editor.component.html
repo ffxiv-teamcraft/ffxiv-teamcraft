@@ -1,0 +1,19 @@
+<div *ngIf="selectedLayout$ | async as layout">
+  <div class="topbar" *ngIf="allLayouts$ | async as allLayouts" fxLayout="row" fxLayoutGap="5px">
+    <nz-select [ngModel]="layout" (ngModelChange)="select($event)" [compareWith]="layoutComparator">
+      <nz-option *ngFor="let availableLayout of allLayouts" [nzValue]="availableLayout"
+                 [nzLabel]="availableLayout.name"></nz-option>
+    </nz-select>
+    <button nz-button nzType="primary" (click)="addLayout()">
+      <i class="anticon anticon-plus"></i>
+    </button>
+    <button nz-button nzType="danger" [disabled]="allLayouts.length === 1">
+      <i class="anticon anticon-delete"></i>
+    </button>
+  </div>
+  <div ngxDroppable fxLayout="column" fxLayoutGap="10px">
+    <div *ngFor="let row of layout.rows" ngxDraggable>
+      <app-layout-editor-row [row]="row"></app-layout-editor-row>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<nz-card [nzTitle]="title">
+  <div class="filter" fxLayout="column" fxLayoutGap="5px">
+    <div *ngFor="let fragment of filter" fxLayout="row">
+      <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayoutAlign="flex-start center" fxFlex="1 1 auto">
+        <label nz-checkbox [(ngModel)]="fragment.reversed">NOT</label>
+        <nz-select [nzDisabled]="readonly" [(ngModel)]="fragment.value" fxFlex="1 1 auto" nzShowSearch>
+          <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
+        </nz-select>
+      </div>
+      <nz-select *ngIf="fragment.isBooleanGate" [nzDisabled]="readonly" [(ngModel)]="fragment.value"
+                 fxFlex fxFlexAlign="center center">
+        <nz-option nzValue="or" nzLabel="OR"></nz-option>
+        <nz-option nzValue="and" nzLabel="AND"></nz-option>
+      </nz-select>
+    </div>
+    <button nz-button nzBlock nzType="primary" (click)="addFragment()">
+      <i class="anticon anticon-plus"></i>
+    </button>
+  </div>
+</nz-card>
+<ng-template #title>
+  <nz-input-group nzPrefixIcon="anticon anticon-edit">
+    <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name">
+  </nz-input-group>
+</ng-template>

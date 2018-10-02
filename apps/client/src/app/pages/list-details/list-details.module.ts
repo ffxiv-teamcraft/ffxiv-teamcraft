@@ -20,6 +20,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { IconsModule } from '../../core/icons/icons.module';
 import { TradeIconPipe } from './trade-icon.pipe';
 import { ListHistoryPopupComponent } from './list-history-popup/list-history-popup.component';
+import { LayoutEditorModule } from '../../modules/layout-editor/layout-editor.module';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
     AlarmsModule,
     ClipboardModule,
     FullpageMessageModule,
+    LayoutEditorModule,
 
     FlexLayoutModule,
 
