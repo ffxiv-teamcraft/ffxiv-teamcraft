@@ -100,25 +100,6 @@ export class SearchComponent implements OnInit {
 
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
-      // Let's ask for detailed list before we add stuff to a compact ;)
-      tap(list => {
-        // Only load details if it's an alreayd existing list
-        if (list.$key) {
-          this.listsFacade.load(list.$key);
-        }
-      }),
-      mergeMap(list => {
-        // If this isn't a new list, wait for it to be loaded;
-        if (list.$key) {
-          return this.listsFacade.allListDetails$.pipe(
-            map(data => data.find(l => l.$key === list.$key)),
-            filter(resultList => resultList !== undefined),
-            first()
-          );
-        }
-        // else, just return the list
-        return of(list);
-      }),
       mergeMap(list => {
         return concat(
           ...items.map(item => {
