@@ -1,0 +1,31 @@
+<nz-list [nzDataSource]="myLists$ | async" [nzRenderItem]="list" [nzHeader]="header">
+  <ng-template #list let-list>
+    <nz-list-item [nzActions]="[pickOwnList]">
+      <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+      </nz-list-item-meta>
+    </nz-list-item>
+    <ng-template #pickOwnList>
+      <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
+        class="anticon anticon-check"></i></button>
+    </ng-template>
+  </ng-template>
+  <ng-template #header><i class="anticon anticon-solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+</nz-list>
+<nz-list [nzDataSource]="[]" [nzRenderItem]="sharedList" [nzHeader]="headerSharedLists">
+  <ng-template #sharedList let-list>
+    <nz-list-item [nzActions]="[pickSharedList]">
+      <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+      </nz-list-item-meta>
+    </nz-list-item>
+    <ng-template #pickSharedList>
+      <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
+        class="anticon anticon-check"></i></button>
+    </ng-template>
+  </ng-template>
+  <ng-template #headerSharedLists><i class="anticon anticon-edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
+  </ng-template>
+</nz-list>
+<nz-divider [nzText]="'Or' | translate"></nz-divider>
+<button nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
+  <i class="anticon anticon-plus"></i>&nbsp;{{'New_List' | translate}}
+</button>

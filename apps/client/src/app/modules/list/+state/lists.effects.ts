@@ -13,7 +13,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { distinctUntilChanged, filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY } from 'rxjs';
@@ -26,9 +26,9 @@ export class ListsEffects {
   @Effect()
   loadMyLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
-    mergeMap(() => this.authFacade.userId$),
+    switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
-    mergeMap((userId) => {
+    switchMap((userId) => {
       return this.listCompactsService.getByForeignKey(TeamcraftUser, userId);
     }),
     map(lists => new MyListsLoaded(lists))
@@ -40,7 +40,7 @@ export class ListsEffects {
     withLatestFrom(this.listsFacade.allListDetails$),
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
-    mergeMap((action: LoadListDetails) => {
+    switchMap((action: LoadListDetails) => {
       // TODO handle NotFound error properly
       return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
     }),
@@ -67,11 +67,11 @@ export class ListsEffects {
   persistUpdateListIndex$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateListIndex),
     map(action => action as UpdateListIndex),
-    mergeMap(action => concat(
+    switchMap(action => concat(
       this.listCompactsService.update(action.payload.$key, { index: action.payload.index }),
       this.listService.update(action.payload.$key, { index: action.payload.index })
     )),
-    mergeMap(() => EMPTY)
+    switchMap(() => EMPTY)
   );
 
   @Effect()
@@ -82,7 +82,7 @@ export class ListsEffects {
       (<CreateList>action).payload.authorId = userId;
       return (<CreateList>action).payload;
     }),
-    mergeMap(list => this.listService.add(list)
+    switchMap(list => this.listService.add(list)
       .pipe(
         map((key) => new CreateOptimisticListCompact(list, key)))
     )
@@ -92,16 +92,16 @@ export class ListsEffects {
   UpdateListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateList),
     map(action => action as UpdateList),
-    mergeMap(action => this.listService.update(action.payload.$key, action.payload)),
-    mergeMap(() => EMPTY)
+    switchMap(action => this.listService.update(action.payload.$key, action.payload)),
+    switchMap(() => EMPTY)
   );
 
   @Effect()
   DeleteListFromDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.DeleteList),
     map(action => action as DeleteList),
-    mergeMap(action => this.listService.remove(action.key)),
-    mergeMap(() => EMPTY)
+    switchMap(action => this.listService.remove(action.key)),
+    switchMap(() => EMPTY)
   );
 
   @Effect()

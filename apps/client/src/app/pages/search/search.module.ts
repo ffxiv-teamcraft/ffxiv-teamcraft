@@ -11,6 +11,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { SettingsModule } from '../settings/settings.module';
 import { ListModule } from '../../modules/list/list.module';
+import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
     PageLoaderModule,
     PipesModule,
     SettingsModule,
+    ListPickerModule,
 
     NgZorroAntdModule,
 

@@ -12,6 +12,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 
 @Component({
   selector: 'app-search',
@@ -26,15 +27,9 @@ export class SearchComponent implements OnInit {
 
   results$: Observable<SearchResult[]>;
 
-  myLists$: Observable<List[]>;
-
   showIntro = true;
 
   loading = false;
-
-  listPickerVisible$: Subject<boolean> = new Subject<boolean>();
-
-  pickedList$: Subject<List> = new Subject<List>();
 
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
@@ -49,13 +44,10 @@ export class SearchComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService) {
+              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService) {
   }
 
   ngOnInit(): void {
-    this.myLists$ = this.listsFacade.myLists$;
-
-    this.listsFacade.loadMyLists();
 
     this.results$ = combineLatest(this.query$, this.onlyRecipes$).pipe(
       filter(([query]) => query.length > 3),
@@ -107,9 +99,7 @@ export class SearchComponent implements OnInit {
   }
 
   public addItemsToList(items: SearchResult[]): void {
-    this.listPickerVisible$.next(true);
-    this.pickedList$.pipe(
-      takeUntil(this.listPickerVisible$),
+    this.listPicker.pickList().pipe(
       // Let's ask for detailed list before we add stuff to a compact ;)
       tap(list => {
         // Only load details if it's an alreayd existing list
@@ -165,17 +155,5 @@ export class SearchComponent implements OnInit {
 
   public updateAllSelected(items: SearchResult[]): void {
     this.allSelected = items.reduce((res, item) => item.selected && res, true);
-  }
-
-  public pickList(list: List): void {
-    this.pickedList$.next(list);
-    this.listPickerVisible$.next(false);
-  }
-
-  public pickNewList(): void {
-    this.listsFacade.newList().subscribe(list => {
-      this.pickedList$.next(list);
-      this.listPickerVisible$.next(false);
-    });
   }
 }
