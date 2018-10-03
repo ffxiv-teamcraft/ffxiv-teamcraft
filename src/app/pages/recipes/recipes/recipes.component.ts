@@ -30,7 +30,7 @@ import {SearchResult} from '../../../model/list/search-result';
 import {SettingsService} from '../../settings/settings.service';
 import {CommissionCreationPopupComponent} from '../../commission-board/commission-creation-popup/commission-creation-popup.component';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-recipes',
@@ -399,7 +399,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
                     })
                 ).subscribe(res => {
                     const list = new List();
-                    ga('send', 'event', 'List', 'creation');
+                    gtag('send', 'event', 'List', 'creation');
                     list.name = res.listName;
                     list.authorId = res.authorId;
                     this.listService.add(list).pipe(first()).subscribe(id => {
@@ -423,7 +423,7 @@ export class RecipesComponent extends PageComponent implements OnInit {
 
     private createQuickList(recipe: Recipe, amount: string, collectible: boolean, ephemeral = true): Observable<List> {
         const list = new List();
-        ga('send', 'event', 'List', 'creation');
+        gtag('send', 'event', 'List', 'creation');
         list.name = this.i18n.getName(this.localizedData.getItem(recipe.itemId));
         list.ephemeral = ephemeral;
         return this.resolver.addToList(recipe.itemId, list, recipe.recipeId, +amount, collectible)

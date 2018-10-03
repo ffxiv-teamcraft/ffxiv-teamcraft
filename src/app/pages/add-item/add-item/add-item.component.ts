@@ -10,7 +10,7 @@ import {UserService} from '../../../core/database/user.service';
 import {I18nToolsService} from '../../../core/tools/i18n-tools.service';
 import {map, mergeMap} from 'rxjs/operators';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-add-item',
@@ -67,7 +67,7 @@ export class AddItemComponent implements OnInit {
                         )
                 })
             ).subscribe((l) => {
-            ga('send', 'event', 'List', 'creation');
+            gtag('send', 'event', 'List', 'creation');
             this.listService.getRouterPath(l.$key).subscribe(path => {
                 this.router.navigate(path);
             });

@@ -31,7 +31,7 @@ import { CommissionService } from './core/database/commission/commission.service
 import { NotificationService } from './core/notification/notification.service';
 import * as semver from 'semver';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-root',
@@ -172,8 +172,8 @@ export class AppComponent implements OnInit {
                 });
                 this.ipc.send('overlay:get-opacity', {uri: this.ipc.overlayUri});
             }
-            ga('set', 'page', event.url);
-            ga('send', 'pageview');
+            gtag('set', 'page', event.url);
+            gtag('send', 'pageview');
         });
 
 

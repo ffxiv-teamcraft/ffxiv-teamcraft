@@ -11,7 +11,7 @@ import { Craft } from '../garland-tools/craft';
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
 import { ModificationEntry } from './modification-entry';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 export class List extends DataWithPermissions {
     name: string;
@@ -72,8 +72,8 @@ export class List extends DataWithPermissions {
         clone.version = this.version || '1.0.0';
         clone.tags = this.tags;
         delete clone.$key;
-        ga('send', 'event', 'List', 'creation');
-        ga('send', 'event', 'List', 'clone');
+        gtag('send', 'event', 'List', 'creation');
+        gtag('send', 'event', 'List', 'clone');
         this.forks++;
         clone.reset();
         return clone;

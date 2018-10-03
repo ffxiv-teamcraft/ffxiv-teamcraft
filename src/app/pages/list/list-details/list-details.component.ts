@@ -49,7 +49,7 @@ import {ListProgressNotification} from '../../../model/notification/list-progres
 import {Team} from '../../../model/other/team';
 import {TeamService} from '../../../core/database/team.service';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
     selector: 'app-list-details',
@@ -384,7 +384,7 @@ export class ListDetailsComponent extends ComponentWithSubscriptions implements 
                 switchMap(list => this.listService.set(this.listData.$key, list)),
                 first()
             ).subscribe(() => {
-            ga('send', 'event', 'List', 'regenerate');
+            gtag('send', 'event', 'List', 'regenerate');
             this.cd.reattach();
             dialogRef.close();
             this.snack.open(this.translate.instant('List_recreated'), '', {duration: 2000});
