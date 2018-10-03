@@ -1,19 +1,36 @@
 <div *ngIf="selectedLayout$ | async as layout">
-  <div class="topbar" *ngIf="allLayouts$ | async as allLayouts" fxLayout="row" fxLayoutGap="5px">
+  <div class="topbar" *ngIf="allLayouts$ | async as allLayouts" fxLayout="row" fxLayout.lt-md="column"
+       fxLayoutGap="5px">
     <nz-select [ngModel]="layout" (ngModelChange)="select($event)" [compareWith]="layoutComparator">
       <nz-option *ngFor="let availableLayout of allLayouts" [nzValue]="availableLayout"
                  [nzLabel]="availableLayout.name"></nz-option>
     </nz-select>
-    <button nz-button nzType="primary" (click)="addLayout()">
-      <i class="anticon anticon-plus"></i>
-    </button>
-    <button nz-button nzType="danger" [disabled]="allLayouts.length === 1">
-      <i class="anticon anticon-delete"></i>
-    </button>
-  </div>
-  <div ngxDroppable fxLayout="column" fxLayoutGap="10px">
-    <div *ngFor="let row of layout.rows" ngxDraggable>
-      <app-layout-editor-row [row]="row"></app-layout-editor-row>
+    <div class="button" fxLayout="row" fxLayoutGap="5px">
+      <button nz-button nzType="primary" (click)="addLayout()">
+        <i class="anticon anticon-plus"></i>
+      </button>
+      <button nz-button nzType="primary" (click)="save(layout)"
+              [disabled]="layout.$key === undefined || !dirty">
+        <i class="material-icons">save</i>
+      </button>
+      <button nz-button nzType="danger" [disabled]="layout.$key === undefined" nz-popconfirm
+              [nzTitle]="'Confirm' | translate" (nzOnConfirm)="deleteLayout(layout.$key)">
+        <i class="anticon anticon-delete"></i>
+      </button>
     </div>
   </div>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <nz-input-group nzPrefixIcon="anticon anticon-edit">
+      <input type="text" nz-input [(ngModel)]="layout.name" (ngModelChange)="dirty = true">
+    </nz-input-group>
+    <div ngxDroppable fxLayout="column" fxLayoutGap="10px">
+      <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable>
+        <app-layout-editor-row [row]="row" (rowChange)="dirty=true" [readonly]="row.name === 'Other'"
+                               (delete)="removePanel(layout, row)"></app-layout-editor-row>
+      </div>
+    </div>
+  </div>
+  <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)">
+    <i class="anticon anticon-plus"></i>
+  </button>
 </div>

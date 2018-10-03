@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { LayoutEditorRowComponent } from './layout-editor-row/layout-editor-row.component';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CoreModule,
     LayoutModule,
     NgxDnDModule,
+    PipesModule,
 
     TranslateModule,
     NgZorroAntdModule

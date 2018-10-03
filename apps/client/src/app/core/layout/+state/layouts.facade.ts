@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { LayoutsState } from './layouts.reducer';
 import { layoutsQuery } from './layouts.selectors';
-import { LoadLayouts, SelectLayout } from './layouts.actions';
+import { CreateLayout, DeleteLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
@@ -12,6 +12,7 @@ import { LayoutRowDisplay } from '../layout-row-display';
 import { filter, map } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
+import { LayoutService } from '../layout.service';
 
 @Injectable()
 export class LayoutsFacade {
@@ -23,7 +24,7 @@ export class LayoutsFacade {
       filter(layout => layout !== undefined)
     );
 
-  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService) {
+  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService) {
   }
 
   public getDisplay(list: List): Observable<LayoutRowDisplay[]> {
@@ -79,6 +80,21 @@ export class LayoutsFacade {
         };
       })
     );
+  }
+
+  public createNewLayout(): void {
+    const layout = new ListLayout();
+    layout.name = 'New layout';
+    layout.rows = this.layoutService.defaultLayout.rows;
+    this.store.dispatch(new CreateLayout(layout));
+  }
+
+  public deleteLayout(key: string): void {
+    this.store.dispatch(new DeleteLayout(key));
+  }
+
+  public updateLayout(layout: ListLayout): void {
+    this.store.dispatch(new UpdateLayout(layout));
   }
 
   select(layout: ListLayout): void {

@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
 import { LayoutRow } from '../../../core/layout/layout-row';
 
 @Component({
   selector: 'app-layout-editor-row',
   templateUrl: './layout-editor-row.component.html',
-  styleUrls: ['./layout-editor-row.component.less']
+  styleUrls: ['./layout-editor-row.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutEditorRowComponent implements OnInit {
 
@@ -37,7 +38,8 @@ export class LayoutEditorRowComponent implements OnInit {
   }
 
   public addFragment(): void {
-    this.filter.push({isBooleanGate: true, reversed: false, value: 'or'}, {isBooleanGate: false, reversed: false, value: 'NONE'});
+    this.filter.push({ isBooleanGate: true, reversed: false, value: 'or' }, { isBooleanGate: false, reversed: false, value: 'NONE' });
+    this.rowChange.emit(this.row);
   }
 
   public removeFragment(): void {
@@ -46,6 +48,23 @@ export class LayoutEditorRowComponent implements OnInit {
     }
     this.filterChange();
   }
+
+  getLayoutType(): string {
+    if (this.row.tiers) {
+      return 'tiers';
+    }
+    if (this.row.zoneBreakdown) {
+      return 'zoneBreakdown';
+    }
+    return 'default';
+  }
+
+  setLayoutType(type: 'tiers' | 'zoneBreakdown'): void {
+    this.row.tiers = type === 'tiers';
+    this.row.zoneBreakdown = type === 'zoneBreakdown';
+    this.rowChange.emit(this.row);
+  }
+
 
   ngOnInit(): void {
     this.filter = this.row.filterName.split(':').map(fragment => {

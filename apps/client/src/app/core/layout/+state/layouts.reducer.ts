@@ -17,6 +17,7 @@ export interface LayoutsState {
 
 export const initialState: LayoutsState = {
   layouts: [],
+  selectedKey: localStorage.getItem('layout:selected') || undefined,
   loaded: false
 };
 
@@ -38,6 +39,31 @@ export function layoutsReducer(
       state = {
         ...state,
         selectedKey: action.key
+      };
+      localStorage.setItem('layout:selected', action.key);
+      break;
+    }
+
+    case LayoutsActionTypes.CreateLayout: {
+      state = {
+        ...state,
+        layouts: [...state.layouts, action.layout]
+      };
+      break;
+    }
+
+    case LayoutsActionTypes.DeleteLayout: {
+      state = {
+        ...state,
+        layouts: [...state.layouts.filter(l => l.$key !== action.key)]
+      };
+      break;
+    }
+
+    case LayoutsActionTypes.UpdateLayout: {
+      state = {
+        ...state,
+        layouts: [...state.layouts.map(l => l.$key === action.layout.$key ? action.layout : l)]
       };
       break;
     }

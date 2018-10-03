@@ -1,25 +1,57 @@
 <nz-card [nzTitle]="title">
-  <div class="filter" fxLayout="column" fxLayoutGap="5px">
-    <div *ngFor="let fragment of filter" fxLayout="row">
-      <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayoutAlign="flex-start center" fxFlex="1 1 auto">
-        <label nz-checkbox [(ngModel)]="fragment.reversed">NOT</label>
-        <nz-select [nzDisabled]="readonly" [(ngModel)]="fragment.value" fxFlex="1 1 auto" nzShowSearch>
-          <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <div class="filter" fxLayout="column" fxLayoutGap="5px" *ngIf="!readonly">
+      <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
+        <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start center"
+             fxFlex="1 1 auto" fxLayoutGap="5px">
+          <label nz-checkbox [(ngModel)]="fragment.reversed">NOT</label>
+          <nz-select [(ngModel)]="fragment.value" fxFlex="1 1 auto" nzShowSearch>
+            <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
+          </nz-select>
+          <button nz-button [nzBlock]="false | ifMobile: true" nzGhost nzType="danger" *ngIf="last && filter.length > 1"
+                  (click)="removeFragment()">
+            <i class="anticon anticon-delete"></i>
+          </button>
+        </div>
+        <nz-select *ngIf="fragment.isBooleanGate" [(ngModel)]="fragment.value"
+                   fxFlex fxFlexAlign="center center">
+          <nz-option nzValue="or" nzLabel="OR"></nz-option>
+          <nz-option nzValue="and" nzLabel="AND"></nz-option>
         </nz-select>
       </div>
-      <nz-select *ngIf="fragment.isBooleanGate" [nzDisabled]="readonly" [(ngModel)]="fragment.value"
-                 fxFlex fxFlexAlign="center center">
-        <nz-option nzValue="or" nzLabel="OR"></nz-option>
-        <nz-option nzValue="and" nzLabel="AND"></nz-option>
+      <button nz-button nzBlock nzType="primary" (click)="addFragment()">
+        <i class="anticon anticon-plus"></i>
+      </button>
+    </div>
+    <div class="layout-type">
+      <nz-radio-group [ngModel]="getLayoutType()" (ngModelChange)="setLayoutType($event)">
+        <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
+        <label nz-radio-button [nzValue]="'tiers'">{{"Tier_display_toggle" | translate}}</label>
+        <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
+      </nz-radio-group>
+      <label nz-checkbox [(ngModel)]="row.hideIfEmpty" (ngModelChange)="rowChange.emit(row)">{{"Hide_if_empty" | translate}}</label>
+    </div>
+    <div class="ordering">
+      {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
+      <nz-select [(ngModel)]="row.orderBy" (ngModelChange)="rowChange.emit(row)">
+        <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
+        <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
+        <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
+      </nz-select>
+      <nz-select [(ngModel)]="row.order" (ngModelChange)="rowChange.emit(row)">
+        <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
+        <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
       </nz-select>
     </div>
-    <button nz-button nzBlock nzType="primary" (click)="addFragment()">
-      <i class="anticon anticon-plus"></i>
-    </button>
   </div>
 </nz-card>
 <ng-template #title>
-  <nz-input-group nzPrefixIcon="anticon anticon-edit">
-    <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name">
-  </nz-input-group>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+    <nz-input-group nzPrefixIcon="anticon anticon-edit">
+      <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)">
+    </nz-input-group>
+    <button nz-button nzType="danger" *ngIf="!readonly" (click)="delete.emit()">
+      <i class="anticon anticon-delete"></i>
+    </button>
+  </div>
 </ng-template>

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { LayoutsActionTypes, LayoutsLoaded } from './layouts.actions';
+import { CreateLayout, DeleteLayout, LayoutsActionTypes, LayoutsLoaded, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutService } from '../layout.service';
-import { distinctUntilChanged, map, mergeMap, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, switchMap, withLatestFrom, mergeMap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { LayoutsFacade } from './layouts.facade';
+import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class LayoutsEffects {
@@ -12,19 +14,52 @@ export class LayoutsEffects {
   @Effect()
   loadLayouts$ = this.actions$.pipe(
     ofType(LayoutsActionTypes.LoadLayouts),
-    mergeMap(() => this.authFacade.userId$),
+    switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {
       return this.layoutService.getByForeignKey(TeamcraftUser, userId);
     }),
     // We do not allow empty layouts array, if it's empty, return default layout on index 0;
-    map(layouts => layouts.length === 0 ? [this.layoutService.defaultLayout] : layouts),
+    map(layouts => [this.layoutService.defaultLayout, ...layouts]),
     map(layouts => new LayoutsLoaded(layouts))
+  );
+
+  @Effect()
+  createLayoutInDatabaseAndSelect$ = this.actions$.pipe(
+    ofType(LayoutsActionTypes.CreateLayout),
+    withLatestFrom(this.authFacade.userId$),
+    switchMap(([action, userId]: [CreateLayout, string]) => {
+      action.layout.userId = userId;
+      return this.layoutService.add(action.layout);
+    }),
+    map((createdLayoutKey) => new SelectLayout(createdLayoutKey))
+  );
+
+  @Effect()
+  updateLayoutInDatabase$ = this.actions$.pipe(
+    ofType(LayoutsActionTypes.UpdateLayout),
+    switchMap((action: UpdateLayout) => {
+      return this.layoutService.update(action.layout.$key, action.layout);
+    }),
+    mergeMap(() => EMPTY)
+  );
+
+  @Effect()
+  removeLayoutInDatabase = this.actions$.pipe(
+    ofType(LayoutsActionTypes.DeleteLayout),
+    switchMap((action: DeleteLayout) => {
+      return this.layoutService.remove(action.key);
+    }),
+    withLatestFrom(this.layoutsFacade.allLayouts$),
+    map(([, layouts]) => {
+      return new SelectLayout(layouts[0].$key);
+    })
   );
 
   constructor(
     private actions$: Actions,
     private layoutService: LayoutService,
+    private layoutsFacade: LayoutsFacade,
     private authFacade: AuthFacade
   ) {
   }
