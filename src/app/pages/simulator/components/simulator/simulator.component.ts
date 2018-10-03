@@ -543,6 +543,29 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
     }
 
+    convertRotation(): void {
+        this.dialog.open(RecipeChoicePopupComponent).afterClosed()
+            .pipe(
+                filter(res => res !== undefined && res !== null && res !== '')
+            ).subscribe(result => {
+                this.dataService.getItem(result.itemId).subscribe(item => {
+                    this.onsave.emit({
+                        $key: this.rotation.$key,
+                        name: this.rotation.name,
+                        rotation: this.serializedRotation,
+                        recipe: item.getCraft(result.recipeId),
+                        defaultItemId: result.itemId,
+                        defaultRecipeId: result.recipeId,
+                        authorId: this.authorId,
+                        consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
+                        freeCompanyActions: this._selectedFreeCompanyActions,
+                        folder: ''
+                    });
+                })
+            });
+
+    }
+
     getStars(nb: number): string {
         return this.htmlTools.generateStars(nb);
     }
