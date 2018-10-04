@@ -559,7 +559,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                         authorId: this.authorId,
                         consumables: { food: this._selectedFood, medicine: this._selectedMedicine },
                         freeCompanyActions: this._selectedFreeCompanyActions,
-                        folder: ''
+                        folder: this.rotation === undefined ? '' : this.rotation.folder
                     });
                 })
             });
