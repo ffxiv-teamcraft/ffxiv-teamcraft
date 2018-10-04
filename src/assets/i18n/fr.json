@@ -485,6 +485,7 @@
     "Save_as_new": "Sauvergarder une copie (navigue sur la copie de la rotation)",
     "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
     "Change_rotation": "Changer de rotation",
+    "Convert_rotation": "Convertir en rotation standard",
     "New_rotation_folder": "Nouveau dossier",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",

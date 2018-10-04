@@ -13,6 +13,13 @@
         <mat-icon>save</mat-icon>
     </button>
     <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Convert_rotation' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="customMode && (actions$ | async).length > 0 && authorId === userData?.$key"
+            (click)="convertRotation()">
+        <mat-icon>redo</mat-icon>
+    </button>
+    <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Reset' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
             *ngIf="(actions$ | async).length > 0" (click)="clearRotation()">
