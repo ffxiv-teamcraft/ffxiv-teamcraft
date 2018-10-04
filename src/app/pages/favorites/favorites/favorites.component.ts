@@ -6,7 +6,7 @@ import {ListService} from '../../../core/database/list.service';
 import {ComponentWithSubscriptions} from '../../../core/component/component-with-subscriptions';
 import {Workshop} from '../../../model/other/workshop';
 import {WorkshopService} from '../../../core/database/workshop.service';
-import {catchError, map, switchMap} from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-favorites',
@@ -15,14 +15,15 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 })
 export class FavoritesComponent extends ComponentWithSubscriptions {
 
-    favorites: Observable<List[]>;
+    favorites$: Observable<List[]>;
 
     favoriteWorkshops: Observable<Workshop[]>;
 
     constructor(private userService: UserService, private listService: ListService, private workshopService: WorkshopService) {
         super();
-        this.favorites = this.userService.getUserData()
+        this.favorites$ = this.userService.getUserData()
             .pipe(
+                tap(console.log),
                 switchMap(userData => {
                     const lists: Observable<List>[] = [];
                     (userData.favorites || []).forEach(fav => {
