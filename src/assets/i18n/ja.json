@@ -114,6 +114,7 @@
   },
   "SIMULATOR": {
     "Average_hq": "平均HQ",
+    "Convert_rotation": "普通スキル回しに変えます",
     "CATEGORY": {
       "Buff": "バフ",
       "Cp_recovery": "CPを回復",
