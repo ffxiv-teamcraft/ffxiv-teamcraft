@@ -136,12 +136,6 @@ body {
     }
 }
 
-mat-form-field:not(.with-infix) {
-    .mat-form-field-infix {
-        width: auto !important;
-    }
-}
-
 .inline-chips {
     .mat-chip-list-wrapper {
         flex-wrap: nowrap;
