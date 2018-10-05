@@ -1,17 +1,17 @@
-import {Component} from '@angular/core';
-import {MatDialog, MatDialogRef} from '@angular/material';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {ForgotPasswordPopupComponent} from '../forgot-password-popup/forgot-password-popup.component';
-import {UserService} from '../../../core/database/user.service';
-import {ListService} from '../../../core/database/list.service';
-import {firebase} from '@firebase/app';
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ForgotPasswordPopupComponent } from '../forgot-password-popup/forgot-password-popup.component';
+import { UserService } from '../../../core/database/user.service';
+import { ListService } from '../../../core/database/list.service';
+import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
-import {first} from 'rxjs/operators';
-import {OauthService} from '../../../core/auth/oauth.service';
+import { first } from 'rxjs/operators';
+import { OauthService } from '../../../core/auth/oauth.service';
 
 @Component({
     selector: 'app-login-popup',
@@ -37,7 +37,7 @@ export class LoginPopupComponent {
 
         this.form = fb.group({
             email: ['', Validators.email],
-            password: ['', Validators.required],
+            password: ['', Validators.required]
         });
     }
 
@@ -99,29 +99,12 @@ export class LoginPopupComponent {
                             this.errorState(listsBackup);
                         })
                         .then((authData) => {
-                            if (authData.user !== null && authData.user !== undefined && !authData.user.emailVerified) {
-                                // If the user didn't verify his email, send him a new one.
-                                this.af.auth.currentUser.sendEmailVerification();
-                                // Log out from this user, as his email isn't verified yet.
-                                this.af.auth.signOut().then(() => {
-                                    // Sign in anonymously again, then restore list backup to the newly created user.
-                                    this.af.auth.signInAnonymously().then(user => {
-                                        listsBackup.forEach(list => {
-                                            list.authorId = user.uid;
-                                            this.listService.add(list);
-                                        });
-                                        this.notVerified = true;
-                                        this.userService.reload();
-                                    });
-                                });
-                            } else {
-                                this.afterLogin(authData.user).then(() => {
-                                    this.userService.reload();
-                                    this.dialogRef.close();
-                                }).catch(() => {
-                                    this.errorState(listsBackup);
-                                });
-                            }
+                            this.afterLogin(authData.user).then(() => {
+                                this.userService.reload();
+                                this.dialogRef.close();
+                            }).catch(() => {
+                                this.errorState(listsBackup);
+                            });
                         });
                 });
         });

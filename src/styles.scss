@@ -47,6 +47,12 @@ body {
     }
 }
 
+mat-form-field:not(.with-infix) {
+    .mat-form-field-infix {
+        width: auto !important;
+    }
+}
+
 .strike {
     color: #00E676;
 }
@@ -133,12 +139,6 @@ body {
 .nofix {
     .mat-form-field-infix {
         border-top: none !important;
-    }
-}
-
-mat-form-field:not(.with-infix) {
-    .mat-form-field-infix {
-        width: auto !important;
     }
 }
 

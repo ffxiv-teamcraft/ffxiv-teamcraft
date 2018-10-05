@@ -54,7 +54,7 @@
                                value="{{'Items' | translate}}">
                     </mat-form-field>
                     <div class="order">
-                        <mat-form-field>
+                        <mat-form-field class="order-select">
                             <mat-select class="order-row" placeholder="{{'LIST_DETAILS.LAYOUT.Order_by' | translate}}"
                                         required
                                         [(value)]="availableLayouts[selectedIndex].recipeOrderBy">
@@ -64,7 +64,7 @@
                                 <mat-option value="LEVEL">LEVEL</mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field>
+                        <mat-form-field class="order-select">
                             <mat-select class="order-row" placeholder="{{'LIST_DETAILS.LAYOUT.Order' | translate}}"
                                         required
                                         [(value)]="availableLayouts[selectedIndex].recipeOrder">

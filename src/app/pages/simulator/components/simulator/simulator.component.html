@@ -13,6 +13,13 @@
         <mat-icon>save</mat-icon>
     </button>
     <button mat-mini-fab
+            matTooltip="{{'SIMULATOR.Convert_rotation' | translate}}"
+            matTooltipPosition="{{isMobile()?'below':'right'}}"
+            *ngIf="customMode && (actions$ | async).length > 0 && authorId === userData?.$key"
+            (click)="convertRotation()">
+        <mat-icon>redo</mat-icon>
+    </button>
+    <button mat-mini-fab
             matTooltip="{{'SIMULATOR.Reset' | translate}}"
             matTooltipPosition="{{isMobile()?'below':'right'}}"
             *ngIf="(actions$ | async).length > 0" (click)="clearRotation()">
@@ -170,7 +177,7 @@
             </div>
             <div class="consumables">
                 <div layout="row">
-                    <div class="foods" flex="50">
+                    <div class="foods">
                         <mat-select [(ngModel)]="_selectedFood"
                                     placeholder="{{'SIMULATOR.CONFIGURATION.Food' | translate}}">
                             <mat-option [value]="undefined"></mat-option>
@@ -190,7 +197,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="medicines" flex="50">
+                    <div class="medicines">
                         <mat-select [(ngModel)]="_selectedMedicine"
                                     placeholder="{{'SIMULATOR.CONFIGURATION.Medicine' | translate}}">
                             <mat-option [value]="undefined"></mat-option>

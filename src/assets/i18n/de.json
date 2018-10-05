@@ -483,6 +483,7 @@
 	"Save_as_new": "Als neue Rotation speichern (bringt dich zur neu erstellten Rotation)",
     "Save_as_new_done": "Du arbeitest jetzt auf einer Kopie deiner Rotation",
     "Change_rotation": "Rotation wechseln",
+    "Convert_rotation": "Zu Standardrotation konvertieren",
     "New_rotation_folder": "Neuer Ordner",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",

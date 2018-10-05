@@ -102,6 +102,10 @@
             display: flex;
             > div {
                 margin: 10px;
+                width: 100%;
+            }
+            > .foods, .medicines {
+                width: 50%;
             }
         }
     }

@@ -9,7 +9,7 @@ import {MatButtonModule, MatIconModule, MatListModule} from '@angular/material';
 
 const routes: Routes = [
     {
-        path: 'favorites',
+        path: '',
         component: FavoritesComponent,
         canActivate: [MaintenanceGuard]
     },

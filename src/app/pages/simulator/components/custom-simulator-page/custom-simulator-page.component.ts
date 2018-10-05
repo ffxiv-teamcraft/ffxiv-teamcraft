@@ -100,6 +100,8 @@ export class CustomSimulatorPageComponent {
                     result.rotation = rotation.rotation;
                     result.stats = rotation.stats;
                     result.recipe = rotation.recipe;
+                    result.defaultItemId = rotation.defaultItemId;
+                    result.defaultRecipeId = rotation.defaultRecipeId;
                     result.authorId = rotation.authorId;
                     result.description = '';
                     result.name = rotation.name;
@@ -118,7 +120,13 @@ export class CustomSimulatorPageComponent {
                     }
                 })
             ).subscribe((rotationKey) => {
-            this.router.navigate(['simulator', 'custom', rotationKey]);
+                if (rotation.defaultItemId) {
+                    // If the rotation has a default item ID, it has been converted to a normal rotation, so navigate there
+                    this.router.navigate(['simulator', rotation.defaultItemId, rotation.defaultRecipeId, rotationKey]);
+                } else {
+                    // Otherwise it is a custom rotation
+                    this.router.navigate(['simulator', 'custom', rotationKey]);
+                }
         });
     }
 

@@ -1,15 +1,20 @@
 <h2>{{'Favorites' | translate}}</h2>
-<div *ngIf="(favorites | async)?.length === 0 && ((favoriteWorkshops | async)?.length === 0 || (favoriteWorkshops | async) === null)" class="not-found">
-    <h3>{{"No_favorites" | translate}}</h3>
-</div>
-<div *ngIf="(favorites | async) !== null">
-    <h3>{{'Lists' | translate}}</h3>
-    <mat-divider class="divider"></mat-divider>
-    <app-list-panel *ngFor="let list of favorites | async"
-                    [list]="list"
-                    [expanded]="false"
-                    [readonly]="true"
-                    [authorUid]="list.authorUid"></app-list-panel>
+<div *ngIf="favorites$ | async as favorites">
+    <div
+        *ngIf="favorites.length === 0 && ((favoriteWorkshops | async)?.length === 0 || (favoriteWorkshops | async) === null)"
+        class="not-found">
+        <h3>{{"No_favorites" | translate}}</h3>
+    </div>
+    <div>
+        <h3>{{'Lists' | translate}}</h3>
+        <mat-divider class="divider"></mat-divider>
+        <app-list-panel *ngFor="let list of favorites"
+                        [list]="list"
+                        [expanded]="false"
+                        [readonly]="true"
+                        [authorUid]="list.authorUid"></app-list-panel>
+    </div>
+
 </div>
 
 <div *ngIf="favoriteWorkshops | async as workshops">
