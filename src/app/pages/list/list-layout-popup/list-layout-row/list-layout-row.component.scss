@@ -40,6 +40,9 @@
             }
             .order {
                 display: inline-flex;
+                mat-form-field {
+                    flex: 1 1 auto;
+                }
                 .order-row {
                     max-width: 120px;
                 }
