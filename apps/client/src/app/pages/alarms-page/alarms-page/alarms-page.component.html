@@ -93,7 +93,9 @@
       </div>
     </ng-template>
     <ng-template #cardDescription>
-      {{row.alarm.aetheryte?.nameid | placeName | i18n}}<br>
+      {{row.alarm.aetheryte?.nameid | placeName | i18n}}
+      <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
+           [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>
       {{row.remainingTime | timer}}<br>
       <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
               nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
@@ -119,8 +121,9 @@
       <i class="anticon anticon-delete" (click)="deleteAlarm(row.alarm)"></i>
     </ng-template>
     <ng-template #copyMacro>
-      <i class="anticon anticon-copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
-         (cbOnSuccess) = "macroCopied()"></i>
+      <i class="anticon anticon-copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip
+         nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
+         (cbOnSuccess)="macroCopied()"></i>
     </ng-template>
   </div>
 </ng-template>

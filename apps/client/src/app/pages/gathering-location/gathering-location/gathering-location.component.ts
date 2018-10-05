@@ -9,6 +9,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { folklores } from '../../../core/data/sources/folklores';
 
 @Component({
   selector: 'app-gathering-location',
@@ -65,6 +66,13 @@ export class GatheringLocationComponent {
                   node.slot = slotMatch.slot;
                 }
               }
+              const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
+              if (folklore !== undefined) {
+                node.folklore = {
+                  id: +folklore,
+                  icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+                };
+              }
               return node;
             });
         }));
@@ -74,7 +82,7 @@ export class GatheringLocationComponent {
               this.bell.getNodesByItemId(item.obj.i)
                 .map(node => {
                   const slotMatch = node.items.find(nodeItem => nodeItem.id === item.obj.i);
-                  return {
+                  const result = {
                     ...item,
                     nodeId: node.id,
                     zoneid: this.l12n.getAreaIdByENName(node.zone),
@@ -87,6 +95,14 @@ export class GatheringLocationComponent {
                     slot: slotMatch.slot,
                     timed: true
                   };
+                  const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
+                  if (folklore !== undefined) {
+                    result.folklore = {
+                      id: +folklore,
+                      icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+                    };
+                  }
+                  return result;
                 })
             );
           });
@@ -158,7 +174,8 @@ export class GatheringLocationComponent {
       coords: {
         x: node.x,
         y: node.y
-      }
+      },
+      folklore: node.folklore
     };
   }
 

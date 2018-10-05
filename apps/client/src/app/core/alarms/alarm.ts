@@ -4,6 +4,7 @@ import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { Aetheryte } from '../data/aetheryte';
 import { AlarmGroup } from './alarm-group';
+import { CompactMasterbook } from '../../model/common/compact-masterbook';
 
 export class Alarm extends DataModel {
 
@@ -34,6 +35,8 @@ export class Alarm extends DataModel {
   note: string;
 
   aetheryte: Aetheryte;
+
+  folklore?: CompactMasterbook;
 
   constructor(alarmData?: Partial<Alarm>) {
     super();

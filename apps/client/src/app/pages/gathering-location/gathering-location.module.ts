@@ -11,6 +11,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     CoreModule,
+    FlexLayoutModule,
 
     RouterModule.forChild(routes),
 

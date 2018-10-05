@@ -24,14 +24,21 @@
           {{node.obj.i | itemName | i18n}} <span
           *ngIf="node.slot !== null && node.slot !== undefined">({{node.slot}})</span>
         </div>
-        <div class="spacer"></div>
-        <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
       </div>
     </ng-template>
     <ng-template #description>
-      {{node.zoneid | placeName | i18n}}<br>
-      X: {{node.x}}, Y: {{node.y}}<br>
-      {{getNodeSpawns(node)}}
+      <div fxLayout="row" fxLayoutAlign="space-between flex-start">
+        <div>
+          {{node.zoneid | placeName | i18n}}<br>
+          X: {{node.x}}, Y: {{node.y}}<br>
+          {{getNodeSpawns(node)}}
+        </div>
+        <div fxLayout="column">
+          <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
+          <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
+               [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
+        </div>
+      </div>
     </ng-template>
     <ng-template #actionAlarm>
       <i class="material-icons create-alarm" *ngIf="alarmsLoaded$ | async" (click)="addAlarm(node)">
