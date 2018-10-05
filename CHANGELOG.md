@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.16"></a>
+## [4.4.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.15...v4.4.16) (2018-10-05)
+
+
+### Bug Fixes
+
+* consumable styles ([e4f66ed](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4f66ed))
+* fixed a routing issue with favorites page ([6b56bcb](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b56bcb))
+
+
+### Features
+
+* convert custom rotation to normal rotation ([37f1068](https://github.com/Supamiu/ffxiv-teamcraft/commit/37f1068)), closes [#609](https://github.com/Supamiu/ffxiv-teamcraft/issues/609)
+* disabled email verification as it's useless (invalid email = no password reset though) ([71f2043](https://github.com/Supamiu/ffxiv-teamcraft/commit/71f2043))
+* new $10 tier patreon supporter: Pint Sized Mafia ! ([c71c6e2](https://github.com/Supamiu/ffxiv-teamcraft/commit/c71c6e2))
+* new $10 tier patron, the Pumpkin Spice Lattes ! ([b7e24c2](https://github.com/Supamiu/ffxiv-teamcraft/commit/b7e24c2))
+
+
+
+<a name="4.4.2"></a>
+## [4.4.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.1...v4.4.2) (2018-08-06)
+
+
+
+<a name="4.4.1"></a>
+## [4.4.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.0...v4.4.1) (2018-08-04)
+
+
+
+<a name="4.4.0"></a>
+# [4.4.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.3.9...v4.4.0) (2018-08-04)
+
+
+
 <a name="4.4.15"></a>
 ## [4.4.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.13...v4.4.15) (2018-09-29)
 
