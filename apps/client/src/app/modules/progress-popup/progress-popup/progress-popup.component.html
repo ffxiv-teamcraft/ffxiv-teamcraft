@@ -1,0 +1,6 @@
+<ng-container *ngIf="count > 1; else singleOperation">
+  <nz-progress [nzPercent]="progress$ | async" nzStatus="active"></nz-progress>
+</ng-container>
+<ng-template #singleOperation>
+  <nz-spin nzSize="large"></nz-spin>
+</ng-template>

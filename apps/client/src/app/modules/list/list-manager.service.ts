@@ -115,7 +115,7 @@ export class ListManagerService {
       const permissions = list.permissionsRegistry;
       const backup = [];
       list.items.forEach(item => {
-        backup.push({ array: 'others', item: item });
+        backup.push({ array: 'items', item: item });
       });
       list.finalItems.forEach(item => {
         backup.push({ array: 'finalItems', item: item });

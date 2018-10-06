@@ -12,6 +12,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { SettingsModule } from '../settings/settings.module';
 import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
+import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
     PipesModule,
     SettingsModule,
     ListPickerModule,
+    ProgressPopupModule,
 
     NgZorroAntdModule,
 

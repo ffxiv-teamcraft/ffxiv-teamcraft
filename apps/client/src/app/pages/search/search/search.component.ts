@@ -1,8 +1,8 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, skip, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +13,7 @@ import { NzNotificationService } from 'ng-zorro-antd';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 
 @Component({
   selector: 'app-search',
@@ -44,11 +45,11 @@ export class SearchComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService) {
+              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private progressService: ProgressPopupService) {
   }
 
   ngOnInit(): void {
-
     this.results$ = combineLatest(this.query$, this.onlyRecipes$).pipe(
       filter(([query]) => query.length > 3),
       debounceTime(500),
@@ -83,7 +84,7 @@ export class SearchComponent implements OnInit {
 
   public createQuickList(item: SearchResult): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(item.itemId)));
-    this.listManager.addToList(item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+    const operation$ = this.listManager.addToList(item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
@@ -93,22 +94,27 @@ export class SearchComponent implements OnInit {
             first()
           );
         })
-      ).subscribe((newList) => {
-      this.router.navigate(['list', newList.$key]);
-    });
+      );
+
+    this.progressService.showProgress(operation$, 1)
+      .subscribe((newList) => {
+        this.router.navigate(['list', newList.$key]);
+      });
   }
 
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        return concat(
+        const operation$ = concat(
           ...items.map(item => {
             return this.listManager.addToList(item.itemId, list,
               item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
           })
-        ).pipe(
-          skip(items.length - 1)
         );
+        return this.progressService.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
