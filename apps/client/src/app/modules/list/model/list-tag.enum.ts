@@ -8,6 +8,7 @@ export enum ListTag {
   HOUSING = 'Housing',
   MISC = 'Misc',
   QUEST = 'Quest',
+  SCRIPTS = 'Scripts',
 
   // EQUIPPED BY tags
   TANK = 'Tank',
