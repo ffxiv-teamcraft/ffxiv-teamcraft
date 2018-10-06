@@ -23,14 +23,14 @@
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
       <input type="text" nz-input [(ngModel)]="layout.name" (ngModelChange)="dirty = true">
     </nz-input-group>
-    <div ngxDroppable fxLayout="column" fxLayoutGap="10px">
-      <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable>
+    <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
+      <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
         <app-layout-editor-row [row]="row" (rowChange)="dirty=true" [readonly]="row.name === 'Other'"
                                (delete)="removePanel(layout, row)"></app-layout-editor-row>
       </div>
     </div>
   </div>
   <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)">
-    <i class="anticon anticon-plus"></i>
+    <i class="anticon anticon-plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
   </button>
 </div>
