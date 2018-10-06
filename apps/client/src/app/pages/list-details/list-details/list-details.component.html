@@ -14,7 +14,8 @@
       <i-copy></i-copy>
     </button>
     <div class="spacer"></div>
-    <button disabled nz-button nzType="primary" nzShape="circle">
+    <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
+            [nzTitle]="'LIST_DETAILS.Tags_popup' | translate">
       <i class="anticon anticon-tags-o"></i>
     </button>
     <button disabled nz-button nzType="primary" nzShape="circle">

@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
-import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
+import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 
 @Component({
   selector: 'app-list-panel',
@@ -17,7 +18,8 @@ export class ListPanelComponent implements OnInit {
   list: List;
 
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
-              private translate: TranslateService, private linkTools: LinkToolsService) {
+              private translate: TranslateService, private linkTools: LinkToolsService,
+              private dialog: NzModalService) {
   }
 
   deleteList(list: List): void {
@@ -34,6 +36,15 @@ export class ListPanelComponent implements OnInit {
 
   afterLinkCopy(): void {
     this.message.success(this.translate.instant('Share_link_copied'));
+  }
+
+  openTagsPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
+      nzFooter: null,
+      nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
+    });
   }
 
   ngOnInit() {

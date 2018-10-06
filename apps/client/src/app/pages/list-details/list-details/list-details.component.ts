@@ -14,6 +14,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -120,6 +121,15 @@ export class ListDetailsComponent implements OnInit {
     this.dialog.create({
       nzFooter: null,
       nzContent: LayoutEditorComponent
+    });
+  }
+
+  openTagsPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
+      nzFooter: null,
+      nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
     });
   }
 

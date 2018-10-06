@@ -27,9 +27,8 @@
           <nz-tag *ngIf="list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" nz-tooltip [nzTitle]="'LIST.Outdated_tag' | translate"></nz-tag>
-          <nz-tag [nzColor]="'purple'">Test</nz-tag>
-          <nz-tag [nzColor]="'gold'">Tags</nz-tag>
+          <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" nz-tooltip [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
+          <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>
         </div>
         <div class="description">
           {{list.note}}
@@ -56,7 +55,7 @@
           <ul nz-menu>
             <li nz-menu-item>TODO Rename</li>
             <li nz-menu-item>TODO Comments</li>
-            <li nz-menu-item>TODO Tags</li>
+            <li nz-menu-item (click)="openTagsPopup(list)">{{'LIST_DETAILS.Tags_popup' | translate}}</li>
             <li nz-menu-item>TODO Permissions</li>
             <li nz-menu-item>TODO Template (create or copy)</li>
             <li nz-menu-item>TODO Custom link (create or copy)</li>
