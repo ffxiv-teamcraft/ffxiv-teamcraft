@@ -24,7 +24,8 @@
       <i class="material-icons">history</i>
     </button>
   </div>
-  <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" fxLayoutAlign.lt-sm="center center">
+  <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
+       fxLayoutAlign.lt-sm="center center">
     <h2>{{list.name}}</h2>
     <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
             (click)="renameList(list)">
@@ -33,6 +34,10 @@
     <button nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip
             [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
       <i class="anticon anticon-clock-circle-o"></i>
+    </button>
+    <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
+            [nzTitle]="'LIST.Regenerate' | translate" (click)="regenerateList(list)">
+      <i class="material-icons">update</i>
     </button>
   </div>
   <div class="list-display" *ngIf="display$ | async as listDisplay">

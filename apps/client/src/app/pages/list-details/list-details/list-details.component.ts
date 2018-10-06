@@ -12,6 +12,8 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 
 @Component({
   selector: 'app-list-details',
@@ -31,7 +33,8 @@ export class ListDetailsComponent implements OnInit {
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
-              private alarmsFacade: AlarmsFacade, private message: NzMessageService) {
+              private alarmsFacade: AlarmsFacade, private message: NzMessageService,
+              private listManager: ListManagerService, private progressService: ProgressPopupService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
       shareReplay(1)
@@ -105,11 +108,19 @@ export class ListDetailsComponent implements OnInit {
     });
   }
 
+  regenerateList(list: List): void {
+    this.progressService.showProgress(this.listManager.upgradeList(list), 1, 'List_popup_title')
+      .pipe(first())
+      .subscribe((updatedList) => {
+        this.listsFacade.updateList(updatedList);
+      });
+  }
+
   openLayoutOptions(): void {
     this.dialog.create({
       nzFooter: null,
       nzContent: LayoutEditorComponent
-    })
+    });
   }
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {
