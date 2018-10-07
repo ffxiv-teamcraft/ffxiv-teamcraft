@@ -10,12 +10,14 @@ import { LayoutEditorRowComponent } from './layout-editor-row/layout-editor-row.
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     FlexLayoutModule,
+    ClipboardModule,
 
     CoreModule,
     LayoutModule,

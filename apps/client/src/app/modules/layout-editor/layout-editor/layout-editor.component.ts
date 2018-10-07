@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout-editor',
@@ -20,10 +22,14 @@ export class LayoutEditorComponent {
 
   layoutComparator = (layout1, layout2) => layout1 && layout2 ? layout1.$key === layout2.$key : layout1 === layout2;
 
-  constructor(private layoutsFacade: LayoutsFacade) {
+  constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService) {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
+  }
+
+  layoutCopied(): void {
+    this.message.success(this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied'));
   }
 
   getItemsLayoutType(layout: ListLayout): string {

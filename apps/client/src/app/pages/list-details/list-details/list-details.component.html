@@ -1,6 +1,7 @@
 <div *ngIf="list$ | async as list">
   <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-    <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()">
+    <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
+            [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
       <i-layout></i-layout>
     </button>
     <button disabled nz-button nzType="primary" nzShape="circle">
