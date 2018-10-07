@@ -118,6 +118,11 @@ export class ListDetailsComponent implements OnInit {
       });
   }
 
+  resetList(list: List):void{
+    list.reset();
+    this.listsFacade.updateList(list);
+  }
+
   openLayoutOptions(): void {
     this.dialog.create({
       nzFooter: null,
