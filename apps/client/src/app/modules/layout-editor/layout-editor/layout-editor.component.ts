@@ -20,11 +20,21 @@ export class LayoutEditorComponent {
 
   layoutComparator = (layout1, layout2) => layout1 && layout2 ? layout1.$key === layout2.$key : layout1 === layout2;
 
-
   constructor(private layoutsFacade: LayoutsFacade) {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
+  }
+
+  getItemsLayoutType(layout: ListLayout): string {
+    if (layout.recipeZoneBreakdown) {
+      return 'zoneBreakdown';
+    }
+    return 'default';
+  }
+
+  setItemsLayoutType(layout: ListLayout, type: string): void {
+    layout.recipeZoneBreakdown = type === 'zoneBreakdown';
   }
 
   addLayout(): void {

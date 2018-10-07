@@ -23,6 +23,27 @@
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
       <input type="text" nz-input [(ngModel)]="layout.name" (ngModelChange)="dirty = true">
     </nz-input-group>
+    <nz-card [nzTitle]="'Items' | translate">
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div class="final-items-ordering">
+          {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
+          <nz-select [(ngModel)]="layout.recipeOrderBy" (ngModelChange)="layout.recipeOrderBy">
+            <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
+            <nz-option nzValue="NONE" nzLabel="NONE"></nz-option>
+            <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
+            <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
+          </nz-select>
+          <nz-select [(ngModel)]="layout.recipeOrder" (ngModelChange)="layout.recipeOrder">
+            <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
+            <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
+          </nz-select>
+        </div>
+        <nz-radio-group [ngModel]="getItemsLayoutType(layout)" (ngModelChange)="setItemsLayoutType(layout, $event)">
+          <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
+          <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
+        </nz-radio-group>
+      </div>
+    </nz-card>
     <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">
       <div *ngFor="let row of layout.rows; trackBy: trackByRow" ngxDraggable [model]="row">
         <app-layout-editor-row [row]="row" (rowChange)="dirty=true" [readonly]="row.name === 'Other'"
