@@ -22,6 +22,8 @@ import { TradeIconPipe } from './trade-icon.pipe';
 import { ListHistoryPopupComponent } from './list-history-popup/list-history-popup.component';
 import { LayoutEditorModule } from '../../modules/layout-editor/layout-editor.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { GatheredByComponent } from './item-details/gathered-by/gathered-by.component';
+import { MapModule } from '../../modules/map/map.module';
 
 const routes: Routes = [
   {
@@ -48,14 +50,15 @@ const routes: Routes = [
     FullpageMessageModule,
     LayoutEditorModule,
     ProgressPopupModule,
+    MapModule,
 
     FlexLayoutModule,
 
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent],
-  entryComponents: [ListHistoryPopupComponent]
+  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent, GatheredByComponent],
+  entryComponents: [ListHistoryPopupComponent, GatheredByComponent]
 })
 export class ListDetailsModule {
 }

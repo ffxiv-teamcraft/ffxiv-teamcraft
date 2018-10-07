@@ -44,7 +44,7 @@ export class ListDetailsComponent implements OnInit {
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
     );
     this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list))
+      mergeMap(list => this.layoutsFacade.getDisplay(list)),
     );
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)

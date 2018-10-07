@@ -25,7 +25,7 @@ const getSelectedLayout = createSelector(
   getSelectedId,
   (layouts, id) => {
     const result = layouts.find(it => it.$key === id);
-    return result ? Object.assign({}, result) : undefined;
+    return result ? result : layouts[0];
   }
 );
 

@@ -1,0 +1,34 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxFlex="1 1 auto" fxLayoutAlign="center center">
+    {{item.gatheredBy.level}}{{item.gatheredBy.stars_tooltip}}
+  </div>
+  <nz-list [nzDataSource]="item.gatheredBy.nodes" [nzRenderItem]="nodeTemplate">
+    <ng-template #nodeTemplate let-node>
+      <nz-list-item [nzActions]="[openMap]">
+        <nz-list-item-meta [nzTitle]="node.zoneid | placeName | i18n" [nzDescription]="description">
+          <ng-template #description>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px">
+                <span>{{node.areaid | placeName | i18n}}</span>
+                <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
+                  {{node.limitType | i18n}}
+                </nz-tag>
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="5px">
+                <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
+                <span *ngIf="node.time !== undefined">
+                <i *ngFor="let time of node.time">
+                  {{time}}:00 - {{getDespawnTime(time, node.uptime)}}:00
+                </i>
+              </span>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #openMap>
+            <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}" [zoneId]="node.zoneid"></app-map-position>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>

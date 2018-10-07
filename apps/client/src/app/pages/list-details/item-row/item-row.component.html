@@ -72,7 +72,7 @@
         <img [src]="craft.icon" alt="" class="img-icon">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.gatheredBy !== undefined" nz-tooltip
-              nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}">
+              nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}" (click)="openGatheredByPopup()">
         <img class="img-icon gathering-icon" src="{{item.gatheredBy.icon}}">
       </button>
       <img *ngIf="item.gardening === true"

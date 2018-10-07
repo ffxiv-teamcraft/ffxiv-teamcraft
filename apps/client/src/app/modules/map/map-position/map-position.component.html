@@ -1,4 +1,6 @@
-X: {{getMarker().x}} - Y: {{getMarker().y}}
-<button nz-button nzSize="small" nzShape="circle" (click)="openMap()">
-  <mat-icon>my_location</mat-icon>
-</button>
+<span fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+  <div>X: {{getMarker().x}} - Y: {{getMarker().y}}</div>
+  <button nz-button nzSize="small" nzShape="circle" (click)="openMap()">
+    <i class="material-icons">my_location</i>
+  </button>
+</span>
