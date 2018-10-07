@@ -645,6 +645,14 @@
       "Max_price": "Max price"
     }
   },
+  "LEVEQUESTS": {
+    "Title": "Levequests",
+    "Levequest_name": "Levequest name",
+    "No_results": "No levequests found",
+    "Add_to_list": "Add this levequest's items to a list",
+    "Quantity": "Quantity",
+    "All_deliveries": "All {{value}} Deliveries"
+  },
   "NOTIFICATIONS": {
     "Title": "Notifications",
     "List_progress": "{{author}} added {{amount}} {{itemName}} to list \"{{listName}}\"",

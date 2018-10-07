@@ -1,0 +1,80 @@
+@import '../../../../theme';
+
+.search-box {
+  width: 50%;
+  margin: auto;
+  @media @mobile {
+    width: 90%;
+  }
+}
+
+.filters {
+  width: 80%;
+  margin: 10px auto auto;
+  @media @mobile {
+    width: 90%;
+  }
+}
+
+.addition-buttons {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.results {
+  padding: 20px 50px;
+  @media @mobile {
+    padding: 20px 10px;
+  }
+  .select-box {
+    position: absolute;
+    left: -25px;
+  }
+  .list-center {
+    height: 45px;
+    line-height: 45px;
+  }
+  .amount {
+    width: 70px;  
+  }
+  .all-deliveries {
+    margin-left: 10px;
+  }
+}
+
+::ng-deep {
+  .ant-list-item {
+    @media @mobile {
+      justify-content: center;
+    }
+    .ant-list-item-meta {
+      align-items: center;
+      @media @mobile {
+        flex: 0 0 auto;
+        margin-bottom: 5px;
+      }
+      .ant-list-item-meta-title {
+        white-space: nowrap;
+        margin-bottom: 0;
+      }
+    }
+    .ant-list-item-content > .ant-row {
+      width: 100%;
+    }
+    .ant-list-item-action {
+      @media @mobile {
+        margin: auto;
+      }
+    }
+
+    .ant-list-item-content {
+      @media @mobile {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
