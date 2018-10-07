@@ -1,3 +1,21 @@
-<p>
-  list-history-popup works!
-</p>
+<nz-list [nzRenderItem]="historyRow" [nzDataSource]="history">
+  <ng-template #historyRow let-entry>
+    <nz-list-item>
+      <nz-list-item-meta [nzTitle]="title" [nzDescription]="description" [nzAvatar]="avatar">
+        <ng-template #avatar>
+          <img *ngIf="characters[entry.characterId] | async as character" [src]="character.Avatar"
+               alt="" class="character-avatar">
+        </ng-template>
+        <ng-template #title>{{entry.itemId | itemName | i18n}} {{entry.amount > 0?'+':''}}{{entry.amount}}</ng-template>
+        <ng-template #description>
+          <div *ngIf="characters[entry.characterId] | async as character; else anonymousName">
+            {{character.Name}} - {{entry.date | date: 'short'}}
+          </div>
+          <ng-template #anonymousName>
+            {{'COMMON.Anonymous' | translate}}, {{entry.date | date: 'short'}}
+          </ng-template>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

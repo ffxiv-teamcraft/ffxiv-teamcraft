@@ -67,8 +67,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, finalItem: boolean, delta: number): void {
-    this.store.dispatch(new SetItemDone(itemId, finalItem, delta));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta));
   }
 
   addList(list: List): void {

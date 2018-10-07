@@ -45,11 +45,11 @@ export class ItemRowComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number): void {
-    this.listsFacade.setItemDone(this.item.id, this.finalItem, newValue - this.item.done);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done);
   }
 
   markAsDone(): void {
-    this.listsFacade.setItemDone(this.item.id, this.finalItem, this.item.amount - this.item.done);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done);
   }
 
   toggleAlarm(display: AlarmDisplay): void {

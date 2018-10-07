@@ -22,7 +22,9 @@
     <button disabled nz-button nzType="primary" nzShape="circle">
       <i class="material-icons">apps</i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle">
+    <button [disabled]="list.modificationsHistory.length === 0" nz-button nzType="primary" nzShape="circle"
+            (click)="openHistoryPopup(list)" nz-tooltip
+            [nzTitle]="'LIST.History' | translate">
       <i class="material-icons">history</i>
     </button>
   </div>

@@ -41,7 +41,8 @@ export class SelectList implements Action {
 export class SetItemDone implements Action {
   readonly type = ListsActionTypes.SetItemDone;
 
-  constructor(public readonly itemId: number, public readonly finalItem: boolean, public readonly doneDelta: number) {
+  constructor(public readonly itemId: number, public readonly itemIcon: number,
+              public readonly finalItem: boolean, public readonly doneDelta: number) {
   }
 }
 

@@ -19,6 +19,7 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
+import { List } from '../model/list';
 
 @Injectable()
 export class ListsEffects {
@@ -108,8 +109,18 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$),
-    map(([action, list]) => {
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$),
+    map(([action, list, character]) => {
+      list.modificationsHistory.push({
+        amount: action.doneDelta,
+        date: Date.now(),
+        itemId: action.itemId,
+        itemIcon: action.itemIcon,
+        characterId: character ? character.ID : -1
+      });
+      return [action, list];
+    }),
+    map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem);
       return list;
     }),
