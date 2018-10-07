@@ -13,7 +13,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY } from 'rxjs';
@@ -91,6 +91,7 @@ export class ListsEffects {
   @Effect()
   UpdateListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateList),
+    debounceTime(500),
     map(action => action as UpdateList),
     switchMap(action => this.listService.update(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)

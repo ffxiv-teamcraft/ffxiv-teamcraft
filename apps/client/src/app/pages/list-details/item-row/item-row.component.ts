@@ -1,4 +1,4 @@
-import { Component, Input, Type } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Type } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -16,9 +16,10 @@ import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.com
 @Component({
   selector: 'app-item-row',
   templateUrl: './item-row.component.html',
-  styleUrls: ['./item-row.component.less']
+  styleUrls: ['./item-row.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemRowComponent {
+export class ItemRowComponent implements OnInit {
 
   @Input()
   item: ListRow;
@@ -34,7 +35,13 @@ export class ItemRowComponent {
   constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, private cdRef: ChangeDetectorRef) {
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.cdRef.detectChanges();
+    });
   }
 
   itemDoneChanged(newValue: number): void {
@@ -70,7 +77,7 @@ export class ItemRowComponent {
     this.modal.create({
       nzTitle: this.i18n.getName(this.l12n.getItem(this.item.id)),
       nzContent: component,
-      nzComponentParams: {item: this.item},
+      nzComponentParams: { item: this.item },
       nzFooter: null
     });
   }
