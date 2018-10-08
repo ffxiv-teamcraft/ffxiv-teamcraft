@@ -258,6 +258,7 @@
     "Add_selection": "Add selection to a list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
+    "No_lists": "You have no lists",
     "IMPORT": {
       "Title": "Import list from external website",
       "Paste_link_step_title": "Paste your link to the external list",

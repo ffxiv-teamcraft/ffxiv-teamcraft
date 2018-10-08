@@ -9,6 +9,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     ListModule,
     PageLoaderModule,
     NameQuestionPopupModule,
+    FullpageMessageModule,
 
     TranslateModule,
     NgZorroAntdModule,
