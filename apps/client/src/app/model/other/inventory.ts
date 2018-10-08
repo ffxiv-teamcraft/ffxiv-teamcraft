@@ -11,7 +11,7 @@ export class Inventory {
   }
 
   add(id: number, icon: number, amount: number): void {
-    if (this.isFull()) {
+    if (this.isFull() || amount === 0) {
       return;
     }
     const stackSize = 999;

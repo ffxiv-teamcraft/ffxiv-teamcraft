@@ -13,7 +13,7 @@
       <app-list-panel [list]="list"></app-list-panel>
     </div>
   </div>
-  <app-fullpage-message *ngIf="lists.length === 0">
+  <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)">
     {{'LISTS.No_lists' | translate}}
   </app-fullpage-message>
 </div>

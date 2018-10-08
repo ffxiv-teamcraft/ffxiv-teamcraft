@@ -16,6 +16,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
 import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
+import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
 
 @Component({
   selector: 'app-list-details',
@@ -135,6 +136,15 @@ export class ListDetailsComponent implements OnInit {
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openInventoryPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Inventory_breakdown'),
+      nzFooter: null,
+      nzContent: InventoryViewComponent,
       nzComponentParams: { list: list }
     });
   }

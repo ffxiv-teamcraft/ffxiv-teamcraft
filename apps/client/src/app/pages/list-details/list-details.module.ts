@@ -24,6 +24,7 @@ import { LayoutEditorModule } from '../../modules/layout-editor/layout-editor.mo
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { GatheredByComponent } from './item-details/gathered-by/gathered-by.component';
 import { MapModule } from '../../modules/map/map.module';
+import { InventoryViewComponent } from './inventory-view/inventory-view.component';
 
 const routes: Routes = [
   {
@@ -57,8 +58,8 @@ const routes: Routes = [
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent, GatheredByComponent],
-  entryComponents: [ListHistoryPopupComponent, GatheredByComponent]
+  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent, GatheredByComponent, InventoryViewComponent],
+  entryComponents: [ListHistoryPopupComponent, GatheredByComponent, InventoryViewComponent]
 })
 export class ListDetailsModule {
 }
