@@ -275,6 +275,7 @@
   },
   "LIST": {
     "Regenerate": "Update list to latest Teamcraft version",
+    "Rename": "Rename list",
     "Copied_x_times": "Copied {{count}} times",
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Copy_as_text": "Copy as text",

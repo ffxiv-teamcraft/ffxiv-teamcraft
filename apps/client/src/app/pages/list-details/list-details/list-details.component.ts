@@ -46,7 +46,7 @@ export class ListDetailsComponent implements OnInit {
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
     );
     this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list)),
+      mergeMap(list => this.layoutsFacade.getDisplay(list))
     );
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
@@ -68,6 +68,7 @@ export class ListDetailsComponent implements OnInit {
   renameList(list: List): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -119,7 +120,7 @@ export class ListDetailsComponent implements OnInit {
       });
   }
 
-  resetList(list: List):void{
+  resetList(list: List): void {
     list.reset();
     this.listsFacade.updateList(list);
   }

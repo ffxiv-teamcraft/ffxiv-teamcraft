@@ -6,6 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
+import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
+import { filter, first, map } from 'rxjs/operators';
+import { ListManagerService } from '../list-manager.service';
 
 @Component({
   selector: 'app-list-panel',
@@ -20,7 +23,7 @@ export class ListPanelComponent implements OnInit {
 
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               private translate: TranslateService, private linkTools: LinkToolsService,
-              private dialog: NzModalService) {
+              private dialog: NzModalService, private listManager: ListManagerService) {
   }
 
   deleteList(list: List): void {
@@ -32,7 +35,26 @@ export class ListPanelComponent implements OnInit {
   }
 
   updateAmount(item: ListRow, newAmount: number): void {
-    //TODO
+    this.listManager.addToList(item.id, this.list, item.recipeId, newAmount - item.amount).pipe(
+      first()
+    ).subscribe(list => {
+      this.listsFacade.updateList(list);
+    });
+  }
+
+  renameList(list: List): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: list.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('Edit')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        list.name = name;
+        return list;
+      })
+    ).subscribe(l => this.listsFacade.updateList(l));
   }
 
   afterLinkCopy(): void {

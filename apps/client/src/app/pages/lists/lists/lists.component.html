@@ -1,19 +1,22 @@
 <div class="toolbar">
-  <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()">
+  <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
+          [nzTitle]="'New_List' | translate">
     <i class="anticon anticon-file-add"></i>
   </button>
 </div>
-<app-page-loader *ngIf="loading$ | async">
+<app-page-loader *ngIf="loading$ | async; else lists">
 </app-page-loader>
-<div *ngIf="lists$ | async as lists">
-  <div class="ngx-dnd-container" ngxDroppable="list"
-       (drop)="setListIndex($event.value, $event.dropIndex, lists)">
-    <div class="ngx-dnd-item" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"
-         [model]="list">
-      <app-list-panel [list]="list"></app-list-panel>
+<ng-template #lists>
+  <div *ngIf="lists$ | async as lists">
+    <div class="ngx-dnd-container" ngxDroppable="list"
+         (drop)="setListIndex($event.value, $event.dropIndex, lists)">
+      <div class="ngx-dnd-item" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"
+           [model]="list">
+        <app-list-panel [list]="list"></app-list-panel>
+      </div>
     </div>
+    <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)">
+      {{'LISTS.No_lists' | translate}}
+    </app-fullpage-message>
   </div>
-  <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)">
-    {{'LISTS.No_lists' | translate}}
-  </app-fullpage-message>
-</div>
+</ng-template>
