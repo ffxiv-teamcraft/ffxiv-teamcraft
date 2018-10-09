@@ -3,7 +3,7 @@
     <i class="anticon anticon-file-add"></i>
   </button>
 </div>
-<app-page-loader [loading]="loading$ | async">
+<app-page-loader *ngIf="loading$ | async">
 </app-page-loader>
 <div *ngIf="lists$ | async as lists">
   <div class="ngx-dnd-container" ngxDroppable="list"
