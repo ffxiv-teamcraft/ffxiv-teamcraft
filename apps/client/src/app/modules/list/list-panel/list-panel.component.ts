@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
-import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
@@ -10,7 +10,8 @@ import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 @Component({
   selector: 'app-list-panel',
   templateUrl: './list-panel.component.html',
-  styleUrls: ['./list-panel.component.less']
+  styleUrls: ['./list-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListPanelComponent implements OnInit {
 

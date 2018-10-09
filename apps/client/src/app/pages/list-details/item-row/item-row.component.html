@@ -10,6 +10,21 @@
       {{item.id | itemName | i18n}}
       <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}</span>
     </span>
+    <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
+      <button nz-dropdown  nzSize="small" (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+        <i class="anticon anticon-ellipsis"></i></button>
+      <ul nz-menu>
+        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+          {{'Copy_isearch' | translate}}
+        </li>
+        <li nz-menu-item>TODO Comment</li>
+        <li nz-menu-item>TODO I'm on it</li>
+        <li nz-menu-item>TODO Requirements</li>
+        <li nz-menu-item>TODO Assign user</li>
+        <li nz-menu-item>TODO Mark HQ</li>
+      </ul>
+    </nz-dropdown>
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"
        [class.empty]="!item.alarms || item.alarms.length < 0">
