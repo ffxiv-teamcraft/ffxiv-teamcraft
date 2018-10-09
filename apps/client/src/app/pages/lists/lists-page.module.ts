@@ -10,6 +10,8 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 
 const routes: Routes = [
   {
@@ -21,12 +23,14 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FlexLayoutModule,
 
     CoreModule,
     ListModule,
     PageLoaderModule,
     NameQuestionPopupModule,
     FullpageMessageModule,
+    ProgressPopupModule,
 
     TranslateModule,
     NgZorroAntdModule,

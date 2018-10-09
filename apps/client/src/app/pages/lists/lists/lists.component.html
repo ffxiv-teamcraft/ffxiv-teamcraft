@@ -1,13 +1,19 @@
-<div class="toolbar">
-  <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
-          [nzTitle]="'New_List' | translate">
-    <i class="anticon anticon-file-add"></i>
-  </button>
-</div>
 <app-page-loader *ngIf="loading$ | async; else lists">
 </app-page-loader>
 <ng-template #lists>
   <div *ngIf="lists$ | async as lists">
+    <div class="toolbar" fxLayout="row wrap">
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
+              [nzTitle]="'New_List' | translate">
+        <i class="anticon anticon-file-add"></i>
+      </button>
+      <div class="spacer">
+      </div>
+      <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+              [nzTitle]="'LISTS.Regenerate_all' | translate" (click)="regenerateLists(lists)">
+        <i class="material-icons">update</i>
+      </button>
+    </div>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists)">
       <div class="ngx-dnd-item" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"

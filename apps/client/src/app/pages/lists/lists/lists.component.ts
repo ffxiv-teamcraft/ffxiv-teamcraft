@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { Observable } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { concat, Observable } from 'rxjs';
+import { debounceTime, first, map } from 'rxjs/operators';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-lists',
@@ -15,7 +19,9 @@ export class ListsComponent {
 
   public loading$: Observable<boolean>;
 
-  constructor(private listsFacade: ListsFacade) {
+  constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
+              private listManager: ListManagerService, private message: NzMessageService,
+              private translate: TranslateService) {
     this.lists$ = this.listsFacade.myLists$.pipe(
       debounceTime(100)
     );
@@ -24,6 +30,19 @@ export class ListsComponent {
 
   createList(): void {
     this.listsFacade.createEmptyList();
+  }
+
+  regenerateLists(lists: List[]): void {
+    const regenerations = lists.map(list => {
+      return this.listManager.upgradeList(list)
+        .pipe(
+          map(l => this.listsFacade.updateList(l))
+        );
+    });
+
+    this.progress.showProgress(concat(...regenerations), regenerations.length).pipe(first()).subscribe(() => {
+      this.message.success(this.translate.instant('LISTS.Regenerated_all'));
+    });
   }
 
   setListIndex(list: List, index: number, lists: List[]): void {
