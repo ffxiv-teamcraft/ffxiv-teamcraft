@@ -1,4 +1,5 @@
-<div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done">
+<div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done"
+     [class.craftable]="canBeCrafted$ | async" [class.has-all-ingredients]="hasAllBaseIngredients$ | async">
   <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
     <div class="icon">
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
@@ -8,10 +9,12 @@
           [nzTitle]="'Copy_item_name_to_clipboard' | translate"
           (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
       {{item.id | itemName | i18n}}
-      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}</span>
+      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}<span
+        *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+      </span>
     </span>
-    <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
-      <button nz-dropdown  nzSize="small" (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+    <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
+      <button nz-dropdown nzSize="small" (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
         <i class="anticon anticon-ellipsis"></i></button>
       <ul nz-menu>
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"

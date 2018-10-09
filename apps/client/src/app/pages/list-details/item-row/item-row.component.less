@@ -24,18 +24,19 @@
     border-radius: 50%;
     margin-top: -3px;
   }
+
+  &.craftable {
+    background-color: rgba(19, 168, 255, 0.3);
+    &.odd {
+      background-color: rgba(19, 168, 255, .4);
+    }
+  }
+
   &.done {
     background-color: rgba(94, 255, 91, 0.15);
     opacity: .6;
     &.odd {
       background-color: rgba(94, 255, 91, 0.2);
-    }
-  }
-
-  &.craftable {
-    background-color: rgba(19, 168, 255, 0.5);
-    &.odd {
-      background-color: rgba(19, 168, 255, .3);
     }
   }
 
@@ -85,6 +86,10 @@
 
 .needed {
   font-weight: bold;
+}
+
+.item-options {
+  margin-left: 5px;
 }
 
 .done-button {
