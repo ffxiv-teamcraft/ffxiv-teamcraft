@@ -13,6 +13,13 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
 import { map, shareReplay, tap } from 'rxjs/operators';
+import { HuntingComponent } from '../item-details/hunting/hunting.component';
+import { InstancesComponent } from '../item-details/instances/instances.component';
+import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
+import { VendorsComponent } from '../item-details/vendors/vendors.component';
+import { VenturesComponent } from '../item-details/ventures/ventures.component';
+import { VoyagesComponent } from '../item-details/voyages/voyages.component';
+import { TradesComponent } from '../item-details/trades/trades.component';
 
 @Component({
   selector: 'app-item-row',
@@ -89,6 +96,34 @@ export class ItemRowComponent implements OnInit {
 
   public openGatheredByPopup(): void {
     this.openDetailsPopup(GatheredByComponent);
+  }
+
+  public openHuntingPopup(): void {
+    this.openDetailsPopup(HuntingComponent);
+  }
+
+  public openInstancesPopup(): void {
+    this.openDetailsPopup(InstancesComponent);
+  }
+
+  public openReducedFromPopup(): void {
+    this.openDetailsPopup(ReducedFromComponent);
+  }
+
+  public openVendorsPopup(): void {
+    this.openDetailsPopup(VendorsComponent);
+  }
+
+  public openVenturesPopup(): void {
+    this.openDetailsPopup(VenturesComponent);
+  }
+
+  public openVoyagesPopup(): void {
+    this.openDetailsPopup(VoyagesComponent);
+  }
+
+  public openTradesPopup(): void {
+    this.openDetailsPopup(TradesComponent);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {

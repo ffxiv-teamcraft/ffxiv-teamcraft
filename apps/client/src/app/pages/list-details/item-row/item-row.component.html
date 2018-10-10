@@ -97,32 +97,32 @@
            nzTitle="{{'Gardening' | translate}}"
            nz-tooltip src="./assets/icons/Gardening.png" class="img-icon">
       <button nz-button nz-tooltip nzTitle="{{'Hunting' | translate}}" nzShape="circle"
-              *ngIf="item.drops !== undefined && item.drops.length > 0">
+              *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openHuntingPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0"
-              nzTitle="{{'Trade' | translate}}" nz-tooltip>
+              nzTitle="{{'Trade' | translate}}" nz-tooltip (click)="openTradesPopup()">
         <img class="img-icon round-icon"
              [src]="item.tradeSources | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.instances !== undefined && item.instances.length > 0"
-              nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip>
+              nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip (click)="openInstancesPopup()">
         <img class="img-icon round-icon" [src]="item.instances[0].icon | instanceIcon">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0"
-              nzTitle="{{'Reduction' | translate}}" nz-tooltip>
+              nzTitle="{{'Reduction' | translate}}" nz-tooltip (click)="openReducedFromPopup()">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.vendors !== undefined && item.vendors.length > 0"
-              nz-tooltip [nzTitle]="'Vendors' | translate">
+              nz-tooltip [nzTitle]="'Vendors' | translate" (click)="openVendorsPopup()">
         <img class="img-icon" src="https://xivapi.com/i/065000/065002.png" alt="Gil">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.voyages !== undefined && item.voyages.length > 0"
-              nz-tooltip [nzTitle]="'Voyages' | translate">
+              nz-tooltip [nzTitle]="'Voyages' | translate" (click)="openVoyagesPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png" alt="Voyages">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.ventures !== undefined && item.ventures.length > 0"
-              nz-tooltip [nzTitle]="'Retainer_ventures' | translate">
+              nz-tooltip [nzTitle]="'Retainer_ventures' | translate" (click)="openVenturesPopup()">
         <img class="img-icon round-icon" src="https://garlandtools.org/db/icons/item/3503.png" alt="Ventures">
       </button>
     </div>

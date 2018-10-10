@@ -25,6 +25,13 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { GatheredByComponent } from './item-details/gathered-by/gathered-by.component';
 import { MapModule } from '../../modules/map/map.module';
 import { InventoryViewComponent } from './inventory-view/inventory-view.component';
+import { HuntingComponent } from './item-details/hunting/hunting.component';
+import { InstancesComponent } from './item-details/instances/instances.component';
+import { ReducedFromComponent } from './item-details/reduced-from/reduced-from.component';
+import { VendorsComponent } from './item-details/vendors/vendors.component';
+import { VoyagesComponent } from './item-details/voyages/voyages.component';
+import { VenturesComponent } from './item-details/ventures/ventures.component';
+import { TradesComponent } from './item-details/trades/trades.component';
 
 const routes: Routes = [
   {
@@ -58,8 +65,33 @@ const routes: Routes = [
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent, ListDetailsPanelComponent, ItemRowComponent, ListCrystalsPanelComponent, TradeIconPipe, ListHistoryPopupComponent, GatheredByComponent, InventoryViewComponent],
-  entryComponents: [ListHistoryPopupComponent, GatheredByComponent, InventoryViewComponent]
+  declarations: [ListDetailsComponent,
+    ListDetailsPanelComponent,
+    ItemRowComponent,
+    ListCrystalsPanelComponent,
+    TradeIconPipe,
+    ListHistoryPopupComponent,
+    GatheredByComponent,
+    InventoryViewComponent,
+    HuntingComponent,
+    InstancesComponent,
+    ReducedFromComponent,
+    VendorsComponent,
+    VoyagesComponent,
+    VenturesComponent,
+    TradesComponent
+  ],
+  entryComponents: [
+    ListHistoryPopupComponent,
+    GatheredByComponent,
+    InventoryViewComponent,
+    HuntingComponent,
+    InstancesComponent,
+    ReducedFromComponent,
+    VendorsComponent,
+    VoyagesComponent,
+    VenturesComponent
+  ]
 })
 export class ListDetailsModule {
 }

@@ -1,0 +1,12 @@
+<nz-list [nzRenderItem]="huntTemplate" [nzDataSource]="item.drops">
+  <ng-template #huntTemplate let-drop>
+    <nz-list-item [nzContent]="drop.position !== undefined?position:null">
+      <nz-list-item-meta nzDescription="lvl{{drop.lvl}} - {{drop.zoneid | placeName | i18n}}"
+                         [nzTitle]="drop.id | mobName | i18n">
+      </nz-list-item-meta>
+      <ng-template #position>
+        <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position"></app-map-position>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

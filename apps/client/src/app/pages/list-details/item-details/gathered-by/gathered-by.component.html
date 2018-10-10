@@ -1,6 +1,6 @@
 <div fxLayout="column">
   <div fxLayout="row" fxFlex="1 1 auto" fxLayoutAlign="center center">
-    {{item.gatheredBy.level}}{{item.gatheredBy.stars_tooltip}}
+    lvl {{item.gatheredBy.level}}{{item.gatheredBy.stars_tooltip}}
   </div>
   <nz-list [nzDataSource]="item.gatheredBy.nodes" [nzRenderItem]="nodeTemplate">
     <ng-template #nodeTemplate let-node>
