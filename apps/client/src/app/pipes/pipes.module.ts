@@ -14,6 +14,7 @@ import { InstanceIconPipe } from './instance-icon.pipe';
 import { FreeCompanyActionNamePipe } from './free-company-action-name.pipe';
 import { IfMobilePipe } from './if-mobile.pipe';
 import { NodeTypeIconPipe } from './node-type-icon.pipe';
+import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NodeTypeIconPipe } from './node-type-icon.pipe';
     InstanceIconPipe,
     FreeCompanyActionNamePipe,
     IfMobilePipe,
-    NodeTypeIconPipe
+    NodeTypeIconPipe,
+    ClosestAetherytePipe
   ],
   exports: [
     ItemNamePipe,
@@ -48,7 +50,8 @@ import { NodeTypeIconPipe } from './node-type-icon.pipe';
     InstanceIconPipe,
     FreeCompanyActionNamePipe,
     IfMobilePipe,
-    NodeTypeIconPipe
+    NodeTypeIconPipe,
+    ClosestAetherytePipe
   ]
 })
 export class PipesModule {

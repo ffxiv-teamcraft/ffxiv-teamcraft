@@ -14,7 +14,9 @@
                   {{node.limitType | i18n}}
                 </nz-tag>
               </div>
-              <span e *ngIf="getClosestAetheryte(node) | async as aetheryte" class="closest-tp">
+              <span
+                *ngIf="node.zoneid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
+                class="closest-tp">
                   <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
               </span>
               <div fxLayout="row wrap" fxLayoutGap="5px">
