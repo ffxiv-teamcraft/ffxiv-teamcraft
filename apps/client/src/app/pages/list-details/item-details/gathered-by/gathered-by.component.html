@@ -14,11 +14,6 @@
                   {{node.limitType | i18n}}
                 </nz-tag>
               </div>
-              <span
-                *ngIf="node.zoneid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
-                class="closest-tp">
-                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
-              </span>
               <div fxLayout="row wrap" fxLayoutGap="5px">
                 <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
                 <span *ngIf="node.time !== undefined">
@@ -30,8 +25,16 @@
             </div>
           </ng-template>
           <ng-template #openMap>
-            <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
-                              [zoneId]="node.zoneid"></app-map-position>
+            <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
+              <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
+                                [zoneId]="node.zoneid"></app-map-position>
+              <div
+                *ngIf="node.zoneid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
+                class="closest-tp">
+                <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName |
+                i18n}}
+              </div>
+            </div>
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
