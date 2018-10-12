@@ -5,7 +5,7 @@ export interface Levequest {
   jobId: number;
   itemId: number;
   itemIcon: string;
-  recipes: { id: number, job: number, amount: number }[];
+  recipes: { recipeId: string, jobId: number }[];
   exp: number;
   gil: number;
   // Amount of levequest completions

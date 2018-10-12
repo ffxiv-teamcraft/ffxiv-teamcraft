@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchIndex, XivapiEndpoint, XivapiService, XivapiList } from '@xivapi/angular-client';
+import { SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, Observable, of, concat, pipe } from 'rxjs';
 import { debounceTime, filter, map, switchMap, tap, mergeMap, first } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { Levequest } from './../../../model/search/levequest';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 
 @Component({
   selector: 'app-levequests',
@@ -20,7 +21,15 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 })
 export class LevequestsComponent implements OnInit {
 
+  jobList$: Observable<any>;
+
+  job$: BehaviorSubject<number> = new BehaviorSubject<number>(undefined);
+
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(70);
 
   results$: Observable<Levequest[]>;
 
@@ -40,52 +49,59 @@ export class LevequestsComponent implements OnInit {
 
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
     private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
-    private notificationService: NzNotificationService,
+    private notificationService: NzNotificationService, private gt: GarlandToolsService,
     private l12n: LocalizedDataService, private i18n: I18nToolsService,
     private listPicker: ListPickerService, private progressService: ProgressPopupService) {
   }
 
   ngOnInit(): void {
+    this.jobList$ = of(this.gt.getJobs().slice(8, 16));
+
     this.results$ = this.query$.pipe(
-      filter(query => query.length > 3),
-      debounceTime(500),
       tap(query => {
-        this.showIntro = false;
-        this.loading = true;
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: { query: query },
           relativeTo: this.route
         });
       }),
+      filter(() => this.isValidSearch()),
+      debounceTime(500),
+      tap(() => {
+        this.showIntro = false;
+        this.loading = true;
+      }),
       switchMap(query => {
-        return this.xivapi.search({ indexes: [SearchIndex.LEVE], string: query, columns: ['ID'],
-          filters: [{ column: 'LeveAssignmentType.ID', operator: '>=', value: 5 },
-                    { column: 'LeveAssignmentType.ID', operator: '<=', value: 12 }]
-        })
-      }),
-      map(search => (search.Results || []).map(result => result.ID).filter(id => id !== undefined)),
-      switchMap(ids => {
-        if (ids.length > 0) {
-          return this.xivapi.getList(XivapiEndpoint.Leve, { ids: ids, columns: ['CraftLeve.Item0TargetID',
-            'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0', 'CraftLeve.Item0Recipes.*1.ID',
-            'CraftLeve.Item0Recipes.*1.ClassJob', 'CraftLeve.Item0Recipes.*1.AmountResult',
-            'CraftLeve.Repeats', 'Name', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStartZone.ID'] })
+        let filters;
+
+        if (this.job$.value) {
+          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
         } else {
-          return of({ Results: [] });
+          filters = [{ column: 'ClassJobCategoryTargetID', operator: '>=', value: 9 },
+                     { column: 'ClassJobCategoryTargetID', operator: '<=', value: 16 }]
         }
+
+        filters.push({ column: 'ClassJobLevel', operator: '>=', value: this.levelMin$.value },
+                     { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
+
+        return this.xivapi.search({ indexes: [SearchIndex.LEVE], string: query, filters: filters, staging: true,
+          columns: ['CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
+            'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
+            'Name', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
+            'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStartZone.ID']
+        });
       }),
+      tap(data => console.log(data)),
       map(list => {
         const results: Levequest[] = [];
         (<any>list).Results.forEach(leve => {
           results.push({
             level: leve.ClassJobLevel,
-            jobId: leve.ClassJobCategoryTargetID,
+            jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
             itemIcon: leve.CraftLeve.Item0.Icon,
             recipes: leve.CraftLeve.Item0Recipes.filter(recipe => recipe.ID !== null)
-              .map(recipe => ({ id: recipe.ID, job: recipe.ClassJob, amount: recipe.AmountResult })),
+              .map(recipe => ({ recipeId: recipe.ID, jobId: recipe.ClassJob })),
             exp: leve.ExpReward,
             gil: leve.GilReward,
             amount: 1,
@@ -96,16 +112,46 @@ export class LevequestsComponent implements OnInit {
             repeats: leve.CraftLeve.Repeats
           });
         });
-        return results;
+
+        return results.sort((a, b) => {
+          if (a.jobId === b.jobId) {
+            return a.level - b.level;
+          } else {
+            return a.jobId - b.jobId;
+          }
+        });
       }),
-      tap(data => console.log(data)),
       tap(() => this.loading = false)
     );
 
     this.route.queryParams
-      .pipe(filter(params => params.query !== undefined))
-      .subscribe(params => this.query$.next(params.query)
-    );
+      // .pipe(filter(params => params.query !== undefined))
+      .subscribe(params => {
+        this.query$.next(params.query)
+        this.job$.next(params.job);
+        this.levelMin$.next(params.min || 1);
+        this.levelMax$.next(params.max || 70);
+      });
+  }
+
+  public setJob(value: number): void {
+    this.job$.next(value);
+
+    this.router.navigate([], {
+      queryParamsHandling: 'merge',
+      queryParams: { job: value },
+      relativeTo: this.route
+    });
+  }
+
+  public setLevel(subject: BehaviorSubject<number>, value: number): void {
+    subject.next(value);
+
+    this.router.navigate([], {
+      queryParamsHandling: 'merge',
+      queryParams: { min: this.levelMin$.value, max: this.levelMax$.value },
+      relativeTo: this.route
+    });
   }
 
   public addLevesToList(leves: Levequest[]): void {
@@ -113,15 +159,12 @@ export class LevequestsComponent implements OnInit {
       mergeMap(list => {
         const operation$ = concat(
           ...leves.map(leve => {
-            // TODO: Proper recipe selection for items craftable by multiple jobs
-            const recipe = leve.recipes[0];
-            return this.listManager.addToList(leve.itemId, list, recipe.id.toString(),
-              this.craftAmount(leve, recipe)); 
+            const recipe = leve.recipes.find(r => r.jobId === leve.jobId);
+            return this.listManager.addToList(leve.itemId, list, recipe.recipeId,
+              this.craftAmount(leve));
           })
         );
-        return this.progressService.showProgress(operation$,
-          leves.length,
-          'Adding_recipes',
+        return this.progressService.showProgress(operation$, leves.length, 'Adding_recipes',
           { amount: leves.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
@@ -144,7 +187,7 @@ export class LevequestsComponent implements OnInit {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(leve.itemId)));
     const recipe = leve.recipes[0];
     const operation$ = this.listManager
-      .addToList(leve.itemId, list, recipe.id.toString(), this.craftAmount(leve, recipe))
+      .addToList(leve.itemId, list, recipe.recipeId, this.craftAmount(leve))
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
@@ -162,7 +205,7 @@ export class LevequestsComponent implements OnInit {
       });
   }
 
-  private craftAmount(leve: Levequest, recipe: { amount: number }): number {
+  private craftAmount(leve: Levequest): number {
     return leve.amount * leve.itemQuantity * (leve.allDeliveries ? leve.repeats + 1 : 1);
   }
 
@@ -176,5 +219,9 @@ export class LevequestsComponent implements OnInit {
 
   public updateAllSelected(leves: Levequest[]): void {
     this.allSelected = leves.reduce((res, item) => item.selected && res, true);
+  }
+
+  private isValidSearch(): boolean {
+    return this.query$.value.length > 3 || (this.job$.value && this.levelMax$.value - this.levelMin$.value <= 10);
   }
 }

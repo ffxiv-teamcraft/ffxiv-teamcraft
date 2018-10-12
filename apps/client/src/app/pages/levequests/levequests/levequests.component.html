@@ -1,20 +1,29 @@
 <div class="top-part">
-  <div class="search-box">
-    <nz-input-group>
-      <input class="search-input" type="text" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput nz-input
-             [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
-    </nz-input-group>
-  </div>
+  <nz-select class="job" *ngIf="jobList$ | async as jobList" [ngModel]="job$.value" nzPlaceHolder="Select a job"
+    (ngModelChange)="setJob($event)">
+    <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n"></nz-option>
+  </nz-select>
+
+  <input class="search" type="text" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput
+    nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
+
+  <nz-input-group class="levels" nzCompact>
+    <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+      (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
+    <input type="text" disabled nz-input placeholder="-">
+    <nz-input-number [ngModel]="levelMax$.value" [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+      (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
+  </nz-input-group>
 </div>
 <div *ngIf="showIntro">
   TODO Intro
 </div>
 <div *ngIf="results$ | async as results">
   <div class="addition-buttons">
-      <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">
-        {{'Select_all' | translate}}
-      </label>
-      <button nz-button (click)="addSelectedLevesToList(results)">{{'LISTS.Add_selection' | translate}}</button>
+    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">
+      {{'Select_all' | translate}}
+    </label>
+    <button nz-button (click)="addSelectedLevesToList(results)">{{'LISTS.Add_selection' | translate}}</button>
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">

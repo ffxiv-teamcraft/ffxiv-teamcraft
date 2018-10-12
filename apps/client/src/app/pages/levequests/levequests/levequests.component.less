@@ -1,18 +1,33 @@
 @import '../../../../theme';
 
-.search-box {
+.top-part {
   width: 50%;
-  margin: auto;
   @media @mobile {
     width: 90%;
   }
-}
 
-.filters {
-  width: 80%;
-  margin: 10px auto auto;
-  @media @mobile {
-    width: 90%;
+  margin: 0 auto;
+  display: flex;
+
+  .job {
+    min-width: 120px;
+  }
+
+  .search {
+    margin: 0 20px;
+  }
+
+  .levels {
+    max-width: 150px;
+
+    .ant-input-number {
+      width: 60px;
+    }
+
+    input:disabled {
+      width: 30px;
+      pointer-events: none;
+    }
   }
 }
 
@@ -38,7 +53,7 @@
     line-height: 45px;
   }
   .amount {
-    width: 70px;  
+    width: 70px;
   }
   .all-deliveries {
     margin-left: 10px;
