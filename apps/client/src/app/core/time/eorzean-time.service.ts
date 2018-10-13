@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,6 @@ export class EorzeanTimeService {
   private static EPOCH_TIME_FACTOR = 20.571428571428573;
 
   private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
-
 
   constructor() {
     setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
@@ -35,7 +35,7 @@ export class EorzeanTimeService {
   }
 
   public getEorzeanTime(): Observable<Date> {
-    return this._timerObservable;
+    return this._timerObservable.pipe(shareReplay(1));
   }
 
   private tick(): void {
