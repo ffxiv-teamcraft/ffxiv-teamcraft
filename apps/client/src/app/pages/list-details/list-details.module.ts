@@ -65,7 +65,8 @@ const routes: Routes = [
     TranslateModule,
     NgZorroAntdModule
   ],
-  declarations: [ListDetailsComponent,
+  declarations: [
+    ListDetailsComponent,
     ListDetailsPanelComponent,
     ItemRowComponent,
     ListCrystalsPanelComponent,
@@ -90,7 +91,8 @@ const routes: Routes = [
     ReducedFromComponent,
     VendorsComponent,
     VoyagesComponent,
-    VenturesComponent
+    VenturesComponent,
+    TradesComponent
   ]
 })
 export class ListDetailsModule {

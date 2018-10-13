@@ -54,6 +54,7 @@ export class SearchComponent implements OnInit {
       filter(([query]) => query.length > 3),
       debounceTime(500),
       tap(([query, onlyRecipes]) => {
+        this.settings.recipesOnlySearch = onlyRecipes;
         this.showIntro = false;
         this.loading = true;
         const queryParams = {
