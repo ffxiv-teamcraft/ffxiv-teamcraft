@@ -8,5 +8,6 @@ export interface Venture {
   gathering?: number[];
   ilvl?: number[];
   amounts: number[];
+  amountsDetails?: any[];
   name?: string;
 }

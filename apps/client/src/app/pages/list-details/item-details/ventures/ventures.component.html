@@ -1,3 +1,19 @@
-<p>
-  ventures works!
-</p>
+<nz-list [nzRenderItem]="ventureTemplate" [nzDataSource]="ventures">
+  <ng-template #ventureTemplate let-venture>
+    <nz-list-item [nzContent]="content">
+      <nz-list-item-meta
+        [nzTitle]="venture.name ? (venture.id | ventureName | i18n) : (venture.job | jobAbbr:DOWM | i18n)"
+        nzDescription="Lv. {{venture.lvl}}">
+      </nz-list-item-meta>
+      <ng-template #content>
+        <div fxLayout="column">
+          <div *ngFor="let amount of venture.amountsDetails" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+            <div>{{amount.name | translate}} {{amount.stat}}</div>
+            <i class="anticon anticon-right"></i>
+            <div>x{{amount.quantity}}</div>
+          </div>
+        </div>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
