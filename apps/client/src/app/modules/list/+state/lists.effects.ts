@@ -13,10 +13,10 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, concat, EMPTY } from 'rxjs';
+import { combineLatest, concat, EMPTY, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
@@ -42,15 +42,23 @@ export class ListsEffects {
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
     switchMap((action: LoadListDetails) => {
-      // TODO handle NotFound error properly
-      return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
+      return combineLatest(
+        of(action.key),
+        this.authFacade.userId$,
+        this.listService.get(action.key).pipe(catchError(() => of(null)))
+      );
     }),
     distinctUntilChanged(),
-    map(([userId, list]) => {
+    map(([listKey, userId, list]) => {
       // TODO Read permission should be handled here.
-      return list;
+      return [listKey, list];
     }),
-    map(list => new ListDetailsLoaded(list))
+    map(([key, list]) => {
+      if (list === null) {
+        return new ListDetailsLoaded({ $key: key, notFound: true });
+      }
+      return new ListDetailsLoaded(list);
+    })
   );
 
   @Effect()

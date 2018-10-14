@@ -40,7 +40,11 @@ export class ListDetailsComponent implements OnInit {
               private listManager: ListManagerService, private progressService: ProgressPopupService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
-      tap(list => list.isOutDated() ? this.regenerateList(list) : null),
+      tap(list => {
+        if (!list.notFound && list.isOutDated()) {
+          this.regenerateList(list);
+        }
+      }),
       shareReplay(1)
     );
     this.finalItemsRow$ = this.list$.pipe(

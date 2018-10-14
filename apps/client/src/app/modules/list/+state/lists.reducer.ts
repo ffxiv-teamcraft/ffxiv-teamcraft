@@ -38,7 +38,7 @@ export function listsReducer(
         ...state,
         listDetails: [
           ...state.listDetails.filter(list => list.$key !== action.payload.$key),
-          action.payload
+          <List>action.payload
         ]
       };
       break;

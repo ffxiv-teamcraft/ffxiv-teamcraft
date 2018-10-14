@@ -56,7 +56,7 @@ export class MyListsLoaded implements Action {
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
 
-  constructor(public payload: List) {
+  constructor(public payload: Partial<List>) {
   }
 }
 
