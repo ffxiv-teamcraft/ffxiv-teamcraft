@@ -1,4 +1,4 @@
-<div *ngIf="list$ | async as list">
+<div *ngIf="list$ | async as list; else loader">
   <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
     <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
             [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
@@ -56,3 +56,6 @@
     <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
   </div>
 </div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

@@ -32,6 +32,7 @@ import { VendorsComponent } from './item-details/vendors/vendors.component';
 import { VoyagesComponent } from './item-details/voyages/voyages.component';
 import { VenturesComponent } from './item-details/ventures/ventures.component';
 import { TradesComponent } from './item-details/trades/trades.component';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 
 const routes: Routes = [
   {
@@ -55,6 +56,7 @@ const routes: Routes = [
     PipesModule,
     AlarmsModule,
     ClipboardModule,
+    PageLoaderModule,
     FullpageMessageModule,
     LayoutEditorModule,
     ProgressPopupModule,
