@@ -6,6 +6,7 @@ import { Trade } from '../../model/trade';
 import { Item } from '../../../../model/garland-tools/item';
 import { TradeNpc } from '../../model/trade-npc';
 import { TradeEntry } from '../../model/trade-entry';
+import * as npcs from '../../../../core/data/sources/npcs.json';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
@@ -30,15 +31,10 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
       return {
         npcs: ts.npcs.map(npcId => {
           const npc: TradeNpc = { id: npcId };
-          const partial = itemData.getPartial(npcId.toString(), 'npc');
-          // TODO connect position with xivapi mappy
-          if (partial.c !== undefined && partial.i !== undefined && partial.a !== undefined) {
-            npc.coords = {
-              x: partial.c[0],
-              y: partial.c[1]
-            };
-            npc.zoneId = partial.i;
-            npc.areaId = partial.a;
+          const npcEntry = npcs[npcId];
+          if (npcEntry.position !== null) {
+            npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+            npc.zoneId = npcEntry.position.zoneid;
           }
           return npc;
         }),

@@ -384,13 +384,13 @@
     "fr": "Clair"
   },
   "66": {
-    "en": "Dragonstorm",
+    "en": "Dragonstorms",
     "ja": "邪天",
     "de": "Hass",
     "fr": "Tempête de haine"
   },
   "67": {
-    "en": "Dragonstorm",
+    "en": "Dragonstorms",
     "ja": "邪天",
     "de": "Hass",
     "fr": "Tempête de haine"
@@ -468,13 +468,13 @@
     "fr": "Perturbation dimensionnelle"
   },
   "80": {
-    "en": "Revelstorm",
+    "en": "Revelstorms",
     "ja": "嵐天",
     "de": "Feiersturm",
     "fr": "Tempête festive"
   },
   "81": {
-    "en": "Revelstorm",
+    "en": "Revelstorms",
     "ja": "嵐天",
     "de": "Feiersturm",
     "fr": "Tempête festive"
@@ -492,19 +492,19 @@
     "fr": "Béatitude éternelle"
   },
   "84": {
-    "en": "Wyrmstorm",
+    "en": "Wyrmstorms",
     "ja": "龍天",
     "de": "Drachensturm",
     "fr": "Tempête draconique"
   },
   "85": {
-    "en": "Wyrmstorm",
+    "en": "Wyrmstorms",
     "ja": "龍天",
     "de": "Drachensturm",
     "fr": "Tempête draconique"
   },
   "86": {
-    "en": "Revelstorm",
+    "en": "Revelstorms",
     "ja": "嵐天",
     "de": "Feiersturm",
     "fr": "Tempête festive"
@@ -540,19 +540,19 @@
     "fr": "Dégagé"
   },
   "92": {
-    "en": "White Cyclone",
+    "en": "White Cyclones",
     "ja": "白嵐",
     "de": "Weißer Zyklon",
     "fr": "Tempête blanche"
   },
   "93": {
-    "en": "White Cyclone",
+    "en": "White Cyclones",
     "ja": "白嵐",
     "de": "Weißer Zyklon",
     "fr": "Tempête blanche"
   },
   "94": {
-    "en": "White Cyclone",
+    "en": "White Cyclones",
     "ja": "白嵐",
     "de": "Weißer Zyklon",
     "fr": "Tempête blanche"
@@ -564,7 +564,7 @@
     "fr": "Fantasmagorique"
   },
   "96": {
-    "en": "White Cyclone",
+    "en": "White Cyclones",
     "ja": "白嵐",
     "de": "Weißer Zyklon",
     "fr": "Tempête blanche"
@@ -598,5 +598,71 @@
     "ja": "晴れ",
     "de": "Heiter",
     "fr": "Clair"
+  },
+  "102": {
+    "en": "Scarlet",
+    "ja": "朱炎 ",
+    "de": "Rotlodernd",
+    "fr": "Vermillon"
+  },
+  "103": {
+    "en": "Scarlet",
+    "ja": "朱炎 ",
+    "de": "Rotlodernd",
+    "fr": "Vermillon"
+  },
+  "104": {
+    "en": "Scarlet",
+    "ja": "朱炎 ",
+    "de": "Rotlodernd",
+    "fr": "Vermillon"
+  },
+  "105": {
+    "en": "Fair Skies",
+    "ja": "晴れ",
+    "de": "Heiter",
+    "fr": "Clair"
+  },
+  "106": {
+    "en": "Fair Skies",
+    "ja": "晴れ",
+    "de": "Heiter",
+    "fr": "Clair"
+  },
+  "107": {
+    "en": "Fair Skies",
+    "ja": "晴れ",
+    "de": "Heiter",
+    "fr": "Clair"
+  },
+  "108": {
+    "en": "Fair Skies",
+    "ja": "晴れ",
+    "de": "Heiter",
+    "fr": "Clair"
+  },
+  "109": {
+    "en": "Flames",
+    "ja": "火炎",
+    "de": "Feuer",
+    "fr": "Flammes"
+  },
+  "110": {
+    "en": "Tsunamis",
+    "ja": "津波",
+    "de": "Tsunami",
+    "fr": "Raz-de-marée"
+  },
+  "111": {
+    "en": "Cyclones",
+    "ja": "竜巻",
+    "de": "Tornado",
+    "fr": "Tornade"
+  },
+  "112": {
+    "en": "Geostorms",
+    "ja": "地震 ",
+    "de": "Erdbeben",
+    "fr": "Séisme"
   }
 }
