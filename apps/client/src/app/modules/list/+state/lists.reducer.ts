@@ -33,6 +33,24 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.UpdateList: {
+      state = {
+        ...state,
+        listDetails: [
+          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
+          action.payload
+        ]
+      };
+      if (state.myLists.find(l => l.$key === action.payload.$key) !== undefined) {
+        delete action.payload.items;
+        state.myLists = [
+          ...state.myLists.filter(list => list.$key !== action.payload.$key),
+          action.payload
+        ]
+      }
+      break;
+    }
+
     case ListsActionTypes.ListDetailsLoaded: {
       state = {
         ...state,

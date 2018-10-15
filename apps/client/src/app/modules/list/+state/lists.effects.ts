@@ -98,7 +98,7 @@ export class ListsEffects {
   );
 
   @Effect()
-  UpdateListInDatabase$ = this.actions$.pipe(
+  updateListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateList),
     debounceTime(500),
     map(action => action as UpdateList),
@@ -107,7 +107,7 @@ export class ListsEffects {
   );
 
   @Effect()
-  DeleteListFromDatabase$ = this.actions$.pipe(
+  deleteListFromDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.DeleteList),
     map(action => action as DeleteList),
     switchMap(action => this.listService.remove(action.key)),
