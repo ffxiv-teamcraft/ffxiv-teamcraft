@@ -1,6 +1,6 @@
 <div class="top-part">
-  <nz-select class="job" *ngIf="jobList$ | async as jobList" [ngModel]="job$.value" nzPlaceHolder="Select a job"
-    (ngModelChange)="setJob($event)">
+  <nz-select class="job" [ngModel]="job$.value" [nzAllowClear]="true"
+    [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate" (ngModelChange)="setJob($event)">
     <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n"></nz-option>
   </nz-select>
 
@@ -8,10 +8,10 @@
     nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
 
   <nz-input-group class="levels" nzCompact>
-    <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+    <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="levelMax$.value" [nzPrecision]="0"
       (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
     <input type="text" disabled nz-input placeholder="-">
-    <nz-input-number [ngModel]="levelMax$.value" [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+    <nz-input-number [ngModel]="levelMax$.value" [nzMin]="levelMin$.value" [nzMax]="70" [nzPrecision]="0"
       (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
   </nz-input-group>
 </div>
@@ -54,8 +54,8 @@
                   <app-map-position [marker]="leve.startCoordinates" [zoneId]="leve.startZoneId"></app-map-position>
                 </div>
                 <div nz-col nzSpan="4">
-                  <b>EXP:</b> {{leve.exp | number}}<br />
-                  <b>Gil:</b> {{leve.gil | number}}
+                  <b>EXP:</b> {{leve.exp * craftAmount(leve) | number}}<br />
+                  <b>Gil:</b> {{leve.gil * craftAmount(leve) | number}}
                 </div>
                 <div nz-col nzSpan="8">
                   <nz-input-number class="amount" [nzMin]="1" [nzMax]="999" [nzPrecision]="0"

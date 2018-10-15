@@ -1,18 +1,18 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchIndex, XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
-import { BehaviorSubject, Observable, of, concat, pipe } from 'rxjs';
-import { debounceTime, filter, map, switchMap, tap, mergeMap, first } from 'rxjs/operators';
+import { BehaviorSubject, concat, Observable } from 'rxjs';
+import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
-import { Levequest } from './../../../model/search/levequest';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { Levequest } from './../../../model/search/levequest';
 
 @Component({
   selector: 'app-levequests',
@@ -21,9 +21,9 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 })
 export class LevequestsComponent implements OnInit {
 
-  jobList$: Observable<any>;
+  jobList: any[] = [];
 
-  job$: BehaviorSubject<number> = new BehaviorSubject<number>(undefined);
+  job$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -52,21 +52,20 @@ export class LevequestsComponent implements OnInit {
     private notificationService: NzNotificationService, private gt: GarlandToolsService,
     private l12n: LocalizedDataService, private i18n: I18nToolsService,
     private listPicker: ListPickerService, private progressService: ProgressPopupService) {
+      this.jobList = this.gt.getJobs().slice(8, 16);
   }
 
   ngOnInit(): void {
-    this.jobList$ = of(this.gt.getJobs().slice(8, 16));
-
     this.results$ = this.query$.pipe(
       tap(query => {
         this.router.navigate([], {
           queryParamsHandling: 'merge',
-          queryParams: { query: query },
+          queryParams: { query: query.length > 0 ? query : null },
           relativeTo: this.route
         });
       }),
-      filter(() => this.isValidSearch()),
       debounceTime(500),
+      filter(() => this.isValidSearch()),
       tap(() => {
         this.showIntro = false;
         this.loading = true;
@@ -91,7 +90,6 @@ export class LevequestsComponent implements OnInit {
             'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStartZone.ID']
         });
       }),
-      tap(data => console.log(data)),
       map(list => {
         const results: Levequest[] = [];
         (<any>list).Results.forEach(leve => {
@@ -125,10 +123,9 @@ export class LevequestsComponent implements OnInit {
     );
 
     this.route.queryParams
-      // .pipe(filter(params => params.query !== undefined))
       .subscribe(params => {
-        this.query$.next(params.query)
-        this.job$.next(params.job);
+        this.query$.next(params.query || '');
+        this.job$.next(params.job ? +params.job : null);
         this.levelMin$.next(params.min || 1);
         this.levelMax$.next(params.max || 70);
       });
