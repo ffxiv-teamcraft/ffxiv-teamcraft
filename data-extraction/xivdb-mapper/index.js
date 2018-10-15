@@ -30,7 +30,6 @@ extractData = () => {
     res.setEncoding('utf8');
     res.pipe(csv())
       .on('data', function(row) {
-        console.log(row);
         if (row.ContentIndex === 'BNPC') {
           handleMonster(row, memoryData);
         } else {

@@ -17746,35 +17746,55 @@
     "ja": "居住区担当官",
     "de": "Unterkunftsbeamt[a]",
     "fr": "Officier du logement",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 14,
+      "y": 12
+    }
   },
   "1005647": {
     "en": "Material supplier",
     "ja": "素材屋",
     "de": "Materiallieferant",
     "fr": "Marchand",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 14,
+      "y": 12
+    }
   },
   "1005648": {
     "en": "Housing merchant",
     "ja": "よろず屋",
     "de": "Krämerin",
     "fr": "Quincaillière",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 14,
+      "y": 12
+    }
   },
   "1005649": {
     "en": "Junkmonger",
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 14,
+      "y": 12
+    }
   },
   "1005650": {
     "en": "Independent sutler",
     "ja": "酒保商人",
     "de": "Schankwirtin",
     "fr": "Cantinière indépendante",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 12,
+      "y": 11
+    }
   },
   "1005651": {
     "en": "Housing enthusiast",
@@ -17799,7 +17819,11 @@
     "ja": "船頭",
     "de": "Kapitän",
     "fr": "Skipper",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 7,
+      "y": 11
+    }
   },
   "1005656": {
     "en": "Ferry skipper",
@@ -18922,7 +18946,11 @@
     "ja": "不滅隊の兵卒",
     "de": "Legionsrekrut",
     "fr": "Soldat des Immortels",
-    "position": null
+    "position": {
+      "zoneid": 427,
+      "x": 11,
+      "y": 7
+    }
   },
   "1005881": {
     "en": "Storm recruit",
@@ -30139,7 +30167,11 @@
     "ja": "双蛇党二等牙兵",
     "de": "Novizin",
     "fr": "Soldat 3e classe du serpent",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 7,
+      "y": 11
+    }
   },
   "1007998": {
     "en": "Stopklox Grislyfist",
@@ -46853,217 +46885,341 @@
     "ja": "チョコボ屋 ロドゥリック",
     "de": "Chocobo-Verleiher",
     "fr": "Roderic",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1011196": {
     "en": "Beltardois",
     "ja": "ベルタルドワー",
     "de": "Beltardois",
     "fr": "Beltardois",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1011197": {
     "en": "Delivery moogle",
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1011198": {
     "en": "Prunilla",
     "ja": "プルニヤ",
     "de": "Prunilla",
     "fr": "Prunilla",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1011199": {
     "en": "Niall",
     "ja": "修理屋 ニアル",
     "de": "Niall",
     "fr": "Niall",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011200": {
     "en": "Seghuie",
     "ja": "アクセサリ屋 セギュイ",
     "de": "Seghuie",
     "fr": "Seghuie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011201": {
     "en": "Pasdevillet",
     "ja": "素材屋 パドゥビレ",
     "de": "Pasdevillet",
     "fr": "Pasdevillet",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 11
+    }
   },
   "1011202": {
     "en": "Pienne",
     "ja": "薬屋 ピエヌ",
     "de": "Pienne",
     "fr": "Pienne",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011203": {
     "en": "Elbert",
     "ja": "武具屋 エルベルト",
     "de": "Elbert",
     "fr": "Elbert",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011204": {
     "en": "Norlaise",
     "ja": "防具屋 ノルレズ",
     "de": "Norlaise",
     "fr": "Norlaise",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011205": {
     "en": "Mestonnaux",
     "ja": "料理屋 メストノ",
     "de": "Mestonnaux",
     "fr": "Mestonnaux",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1011206": {
     "en": "Evrardoux",
     "ja": "道具屋 エブラルドゥ",
     "de": "Evrardoux",
     "fr": "Evrardoux",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1011207": {
     "en": "Frine",
     "ja": "よろず屋 フリヌ",
     "de": "Frine",
     "fr": "Frine",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1011208": {
     "en": "Eloin",
     "ja": "エロワン",
     "de": "Eloin",
     "fr": "Eloin",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1011209": {
     "en": "Fionnuala",
     "ja": "フィオンヌアラ",
     "de": "Fionnuala",
     "fr": "Fionnuala",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1011210": {
     "en": "Cesteline",
     "ja": "セストゥリヌ",
     "de": "Cesteline",
     "fr": "Cesteline",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1011211": {
     "en": "Airship ticketer",
     "ja": "搭乗窓口",
     "de": "Kartenverkäufer",
     "fr": "Agent des aéronefs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1011212": {
     "en": "L'khonebb",
     "ja": "リ・コネブ",
     "de": "L'khonebb",
     "fr": "L'khonebb",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1011213": {
     "en": "Skywatcher",
     "ja": "天気予報士",
     "de": "Meteorologin",
     "fr": "Météorologue",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1011214": {
     "en": "Proving grounds guard",
     "ja": "ライトフェザー闘技場の衛兵",
     "de": "Leichtfeder-Wachmann",
     "fr": "Garde de Lesteplume",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1011215": {
     "en": "Scholasticate lector",
     "ja": "神学院の司祭",
     "de": "Adeptin",
     "fr": "Concierge du scolasticat",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 9
+    }
   },
   "1011216": {
     "en": "Urbicien",
     "ja": "ユルビシアン",
     "de": "Urbicien",
     "fr": "Urbicien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 8
+    }
   },
   "1011217": {
     "en": "House Fortemps guard",
     "ja": "フォルタン家の門衛",
     "de": "Fortemps-Ritter",
     "fr": "Garde des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1011218": {
     "en": "Framoncis",
     "ja": "フラモンシス",
     "de": "Framoncis",
     "fr": "Framoncis",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1011219": {
     "en": "Gwen",
     "ja": "グウェン",
     "de": "Gwen",
     "fr": "Gwen",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 10
+    }
   },
   "1011220": {
     "en": "Bartelot",
     "ja": "バーテロット",
     "de": "Bartelot",
     "fr": "Bartelot",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1011221": {
     "en": "Jainelette",
     "ja": "ジェヌレット",
     "de": "Jainelette",
     "fr": "Jainelette",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 9
+    }
   },
   "1011222": {
     "en": "Hierytha",
     "ja": "ハイリサ",
     "de": "Hierytha",
     "fr": "Hierytha",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 16,
+      "y": 9
+    }
   },
   "1011223": {
     "en": "Temple Knight guard",
     "ja": "神殿騎士団の衛兵",
     "de": "Wache[p] der Kommandantur",
     "fr": "Aide du capitaine général",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1011224": {
     "en": "Arc guard",
     "ja": "聖徒門の衛兵",
     "de": "Charlemend",
     "fr": "Garde de l'Arc des Valeureux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1011225": {
     "en": "Herewart",
     "ja": "ヒアーワート",
     "de": "Herewart",
     "fr": "Herewart",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1011226": {
     "en": "Chocobokeep",
@@ -51650,98 +51806,154 @@
     "ja": "よろず屋",
     "de": "Händler",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 33
+    }
   },
   "1011948": {
     "en": "Mender of wreckage",
     "ja": "修理屋",
     "de": "Reparateur",
     "fr": "Artisan",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 33
+    }
   },
   "1011949": {
     "en": "Airship attendant",
     "ja": "搭乗窓口",
     "de": "Kartenverkäufer",
     "fr": "Agent des aéronefs",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 8,
+      "y": 32
+    }
   },
   "1011950": {
     "en": "Delivery moogle",
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 33
+    }
   },
   "1011951": {
     "en": "Ailid",
     "ja": "アイリド",
     "de": "Ailid",
     "fr": "Ailid",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1011952": {
     "en": "Laniaitte",
     "ja": "ラニエット",
     "de": "Laniaitte",
     "fr": "Laniaitte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1012053": {
     "en": "Jauminfrest",
     "ja": "ジョマンフレ",
     "de": "Jauminfrest",
     "fr": "Jauminfrest",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 8,
+      "y": 32
+    }
   },
   "1012054": {
     "en": "Fabrellet",
     "ja": "ファブルレー",
     "de": "Fabrellet",
     "fr": "Fabrellet",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1012055": {
     "en": "Rontremont",
     "ja": "ロントルモン",
     "de": "Rontremont",
     "fr": "Rontremont",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1012056": {
     "en": "Caribault",
     "ja": "カリボー",
     "de": "Caribault",
     "fr": "Caribault",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 35
+    }
   },
   "1012057": {
     "en": "Harmiette",
     "ja": "アルミエット",
     "de": "Harmiette",
     "fr": "Harmiette",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 11,
+      "y": 34
+    }
   },
   "1012058": {
     "en": "Chalberon",
     "ja": "シャルベロン",
     "de": "Chalberon",
     "fr": "Chalberon",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 35
+    }
   },
   "1012059": {
     "en": "Gildon",
     "ja": "ギルドン",
     "de": "Gildon",
     "fr": "Gildon",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 16,
+      "y": 39
+    }
   },
   "1012060": {
     "en": "Marielle",
     "ja": "マリエル",
     "de": "Marielle",
     "fr": "Marielle",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 15,
+      "y": 38
+    }
   },
   "1012061": {
     "en": "Zundu sell-it",
@@ -51832,21 +52044,33 @@
     "ja": "モーグリ族のよろず屋",
     "de": "Mogry-Krämer",
     "fr": "Margoulin mog",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 34
+    }
   },
   "1012074": {
     "en": "Mender of sticks",
     "ja": "モーグリ族の修理屋",
     "de": "Mogry-Reparateur",
     "fr": "Raccommodeur mog",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 34
+    }
   },
   "1012076": {
     "en": "Moggie",
     "ja": "モグッチ",
     "de": "Moggie",
     "fr": "Moggie",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1012077": {
     "en": "Moglin",
@@ -51902,14 +52126,22 @@
     "ja": "モグシア",
     "de": "Moggzia",
     "fr": "Moggzia",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 37
+    }
   },
   "1012085": {
     "en": "Mogmill",
     "ja": "モグミル",
     "de": "Mogmill",
     "fr": "Mogmill",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1012086": {
     "en": "Moogle mender & merchant",
@@ -52329,21 +52561,33 @@
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Module de logistique",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012143": {
     "en": "Reconditioning node",
     "ja": "修理屋",
     "de": "Reparateur",
     "fr": "Sphère de maintien",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012144": {
     "en": "Control node",
     "ja": "管制システム",
     "de": "Informationsmodul",
     "fr": "Module de contrôle",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012145": {
     "en": "Training node",
@@ -52357,7 +52601,11 @@
     "ja": "清掃システム",
     "de": "Reinigungsmodul",
     "fr": "Sphère de nettoyage",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012147": {
     "en": "Safeguard node",
@@ -52389,7 +52637,11 @@
     "ja": "天気予報士",
     "de": "Meteorologin",
     "fr": "Météorologue",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 33
+    }
   },
   "1012151": {
     "en": "Skywatcher",
@@ -52418,28 +52670,44 @@
     "ja": "ノトレルシャン",
     "de": "Notrelchamps",
     "fr": "Notrelchamps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1012155": {
     "en": "Gondelimbaud",
     "ja": "ゴンドゥランボー",
     "de": "Gondelimbaud",
     "fr": "Gondelimbaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012156": {
     "en": "Gaucelmard",
     "ja": "ゴーセルマル",
     "de": "Gaucelmard",
     "fr": "Gaucelmard",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012157": {
     "en": "Quomonrentin",
     "ja": "コモンランタン",
     "de": "Quomonrentin",
     "fr": "Quomonrentin",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1012158": {
     "en": "Yolaine",
@@ -52468,21 +52736,33 @@
     "ja": "モルゲイン",
     "de": "Morgayne",
     "fr": "Morgayne",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1012162": {
     "en": "Vaincannet",
     "ja": "ヴァンカネー",
     "de": "Vaincannet",
     "fr": "Vaincannet",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 12
+    }
   },
   "1012163": {
     "en": "Handeloup",
     "ja": "アンドゥルー",
     "de": "Handeloup",
     "fr": "Handeloup",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012164": {
     "en": "Tescelingeon",
@@ -52500,7 +52780,11 @@
     "ja": "ドレル",
     "de": "Dorelle",
     "fr": "Dorelle",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 10
+    }
   },
   "1012166": {
     "en": "Firmalbert",
@@ -52518,14 +52802,22 @@
     "ja": "ゴルディン",
     "de": "Goldin",
     "fr": "Goldin",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012168": {
     "en": "Maelie",
     "ja": "マエリ",
     "de": "Maelie",
     "fr": "Maelie",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012169": {
     "en": "Gerraldieux",
@@ -52554,70 +52846,110 @@
     "ja": "アライン",
     "de": "Alyne",
     "fr": "Alyne",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1012172": {
     "en": "Aelmer",
     "ja": "機工士 アルマー",
     "de": "Aelmer",
     "fr": "Aelmer",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012174": {
     "en": "Gerivien",
     "ja": "ジェリヴィアン",
     "de": "Gerivien",
     "fr": "Gerivien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 10
+    }
   },
   "1012175": {
     "en": "Bohemondas",
     "ja": "ボエモンダ",
     "de": "Bohemondas",
     "fr": "Bohemondas",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1012176": {
     "en": "Cevilia",
     "ja": "シェビリア",
     "de": "Cevilia",
     "fr": "Cevilia",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 12
+    }
   },
   "1012177": {
     "en": "Arnoulain",
     "ja": "アルヌーラン",
     "de": "Arnoulain",
     "fr": "Arnoulain",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 12
+    }
   },
   "1012178": {
     "en": "Ermiance",
     "ja": "エルミアンス",
     "de": "Ermiance",
     "fr": "Ermiance",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 12
+    }
   },
   "1012179": {
     "en": "Alderan",
     "ja": "アルデラン",
     "de": "Alderan",
     "fr": "Alderan",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1012180": {
     "en": "Elaisse",
     "ja": "エレイズ",
     "de": "Elaisse",
     "fr": "Elaisse",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012181": {
     "en": "Mathye",
     "ja": "マス",
     "de": "Mathye",
     "fr": "Mathye",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 9
+    }
   },
   "1012182": {
     "en": "Raubahn",
@@ -52750,105 +53082,165 @@
     "ja": "フランデゴワール",
     "de": "Frandegoire",
     "fr": "Frandegoire",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 10
+    }
   },
   "1012209": {
     "en": "Aileve",
     "ja": "アイリーヴ",
     "de": "Aileve",
     "fr": "Aileve",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1012211": {
     "en": "Segaulyon",
     "ja": "セゴリョン",
     "de": "Segaulyon",
     "fr": "Segaulyon",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 10
+    }
   },
   "1012212": {
     "en": "Temple Knight squire",
     "ja": "神殿騎士団の従騎士",
     "de": "Wache[p] der Heiligen Kurie",
     "fr": "Écuyer templier",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 7
+    }
   },
   "1012213": {
     "en": "Outreguerlain",
     "ja": "ウトルゲルラン",
     "de": "Outreguerlain",
     "fr": "Outreguerlain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1012214": {
     "en": "Nelinnie",
     "ja": "ネリニ",
     "de": "Nelinnie",
     "fr": "Nelinnie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1012215": {
     "en": "Willmott",
     "ja": "ウィルモット",
     "de": "Willmott",
     "fr": "Willmott",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 9
+    }
   },
   "1012216": {
     "en": "Timinne",
     "ja": "ティミヌ",
     "de": "Timinne",
     "fr": "Timinne",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1012217": {
     "en": "Torsefers",
     "ja": "トルスフェル",
     "de": "Torsefers",
     "fr": "Torsefers",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012218": {
     "en": "Alissie",
     "ja": "アリスィ",
     "de": "Alissie",
     "fr": "Alissie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 12
+    }
   },
   "1012220": {
     "en": "Cliaux",
     "ja": "クリオ",
     "de": "Cliaux",
     "fr": "Cliaux",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 12
+    }
   },
   "1012221": {
     "en": "Heurriette",
     "ja": "ウリエット",
     "de": "Heurriette",
     "fr": "Heurriette",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1012222": {
     "en": "Jannequinard",
     "ja": "ジャンヌキナル",
     "de": "Jannequinard",
     "fr": "Jannequinard",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1012223": {
     "en": "Mugueniel",
     "ja": "ミューグニエル",
     "de": "Mugueniel",
     "fr": "Mugueniel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1012224": {
     "en": "Fleuraie",
     "ja": "フルーレー",
     "de": "Fleuraie",
     "fr": "Fleuraie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1012225": {
     "en": "Ardolain",
@@ -52921,21 +53313,33 @@
     "ja": "ヒルダ",
     "de": "Hilda",
     "fr": "Hilda",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012252": {
     "en": "Symme",
     "ja": "シム",
     "de": "Symme",
     "fr": "Symme",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012253": {
     "en": "Eudestand",
     "ja": "ウデスタン",
     "de": "Eudestand",
     "fr": "Eudestand",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012256": {
     "en": "Aytienne",
@@ -52953,7 +53357,11 @@
     "ja": "稀少琥珀商人",
     "de": "Bernstein-Händlerin",
     "fr": "Collectionneuse d'ambre rare",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1012262": {
     "en": "Theomocent",
@@ -52967,7 +53375,11 @@
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 9
+    }
   },
   "1012264": {
     "en": "Janchette",
@@ -53046,7 +53458,11 @@
     "ja": "モグシン",
     "de": "Mogsy",
     "fr": "Mogsy",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 34
+    }
   },
   "1012286": {
     "en": "Mogoon",
@@ -53192,7 +53608,11 @@
     "ja": "チョコボ屋",
     "de": "Chocobo-Verleiher",
     "fr": "Palefrenier",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1012304": {
     "en": "Chocobokeep",
@@ -53228,112 +53648,176 @@
     "ja": "フォルタン家の執事",
     "de": "Sekretär[p] der Fortemps",
     "fr": "Serviteur des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1012311": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1012312": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1012313": {
     "en": "Haurchefant",
     "ja": "オルシュファン",
     "de": "Haurchefant",
     "fr": "Haurchefant",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012314": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012315": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012316": {
     "en": "House Fortemps manservant",
     "ja": "フォルタン家の執事",
     "de": "Sekretär[p] der Fortemps",
     "fr": "Serviteur des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1012317": {
     "en": "House Fortemps manservant",
     "ja": "フォルタン家の執事",
     "de": "Sekretär[p] der Fortemps",
     "fr": "Serviteur des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1012318": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1012319": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1012320": {
     "en": "House Fortemps manservant",
     "ja": "フォルタン家の執事",
     "de": "Sekretär[p] der Fortemps",
     "fr": "Serviteur des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012321": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012322": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012323": {
     "en": "House Fortemps manservant",
     "ja": "フォルタン家の執事",
     "de": "Sekretär[p] der Fortemps",
     "fr": "Serviteur des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012324": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012325": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012326": {
     "en": "Tataru",
@@ -53372,14 +53856,22 @@
     "ja": "チョコボ屋 ロドゥリック",
     "de": "Chocobo-Pfleger",
     "fr": "Roderic",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012332": {
     "en": "Artoirel",
     "ja": "アルトアレール",
     "de": "Artoirel",
     "fr": "Artoirel",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012333": {
     "en": "Artoirel",
@@ -53408,14 +53900,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012336": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012337": {
     "en": "House Fortemps manservant",
@@ -53516,63 +54016,99 @@
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012350": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012351": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 8,
+      "y": 32
+    }
   },
   "1012352": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 8,
+      "y": 32
+    }
   },
   "1012353": {
     "en": "Airship ticketer",
     "ja": "搭乗窓口",
     "de": "Kartenverkäufer",
     "fr": "Agent des aéronefs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012354": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1012355": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1012356": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 39
+    }
   },
   "1012357": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 39
+    }
   },
   "1012358": {
     "en": "Artoirel",
@@ -53590,14 +54126,22 @@
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1012360": {
     "en": "House Haillenarte knight",
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 16,
+      "y": 35
+    }
   },
   "1012363": {
     "en": "Emmanellain",
@@ -53632,28 +54176,44 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1012368": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1012369": {
     "en": "Haurchefant",
     "ja": "オルシュファン",
     "de": "Haurchefant",
     "fr": "Haurchefant",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1012371": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1012372": {
     "en": "Alianne",
@@ -53681,7 +54241,11 @@
     "ja": "オルシュファン",
     "de": "Haurchefant",
     "fr": "Haurchefant",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1012377": {
     "en": "House Fortemps steward",
@@ -53724,35 +54288,55 @@
     "ja": "オルシュファン",
     "de": "Haurchefant",
     "fr": "Haurchefant",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 8
+    }
   },
   "1012383": {
     "en": "Artoirel",
     "ja": "アルトアレール",
     "de": "Artoirel",
     "fr": "Artoirel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012384": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012385": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012386": {
     "en": "Ishgardian priest",
     "ja": "教皇庁の司祭",
     "de": "Priester[p] der Erzbasilika",
     "fr": "Prêtre du Saint-Siège",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 7
+    }
   },
   "1012387": {
     "en": "Alphinaud",
@@ -53901,21 +54485,33 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012402": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012403": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012404": {
     "en": "Artoirel",
@@ -54110,21 +54706,33 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1012431": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1012432": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1012433": {
     "en": "Unsavory character",
@@ -54451,14 +55059,22 @@
     "ja": "フィリパレ",
     "de": "Philipallais",
     "fr": "Philipallais",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1012502": {
     "en": "Orthodox monastic",
     "ja": "正教の修道士",
     "de": "Orthodox[a] Mönch",
     "fr": "Ecclésiastique",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1012503": {
     "en": "Philipallais",
@@ -54479,7 +55095,11 @@
     "ja": "フィリパレ",
     "de": "Philipallais",
     "fr": "Philipallais",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 12
+    }
   },
   "1012506": {
     "en": "Barthovieu",
@@ -54507,7 +55127,11 @@
     "ja": "フレモンダン",
     "de": "Fremondain",
     "fr": "Fremondain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 11
+    }
   },
   "1012510": {
     "en": "Fremondain",
@@ -54744,7 +55368,11 @@
     "ja": "ピエリヴァン",
     "de": "Pierryvain",
     "fr": "Pierryvain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1012536": {
     "en": "Colbernoux",
@@ -54762,42 +55390,66 @@
     "ja": "エルド",
     "de": "Elde",
     "fr": "Elde",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1012539": {
     "en": "Ortefauchel",
     "ja": "オルテフォシェル",
     "de": "Ortefauchel",
     "fr": "Ortefauchel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1012540": {
     "en": "Ortefauchel",
     "ja": "オルテフォシェル",
     "de": "Ortefauchel",
     "fr": "Ortefauchel",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1012541": {
     "en": "Elde",
     "ja": "エルド",
     "de": "Elde",
     "fr": "Elde",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1012542": {
     "en": "Gerhardt",
     "ja": "ゲルハルト",
     "de": "Gerhardt",
     "fr": "Gerhardt",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1012543": {
     "en": "Beggarly fellow",
     "ja": "貧しい身なりの男",
     "de": "Ärmlich[a] Mann",
     "fr": "Homme en haillons",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1012544": {
     "en": "Aubrenard",
@@ -54815,7 +55467,11 @@
     "ja": "オブルナル",
     "de": "Aubrenard",
     "fr": "Aubrenard",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012546": {
     "en": "Aubrenard",
@@ -54836,42 +55492,66 @@
     "ja": "アヴェリル",
     "de": "Averil",
     "fr": "Averil",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 11
+    }
   },
   "1012549": {
     "en": "Glenda",
     "ja": "グレンダ",
     "de": "Glenda",
     "fr": "Glenda",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1012550": {
     "en": "Well-dressed townsperson",
     "ja": "街角の洒落者",
     "de": "Höchst elegant[a] Person",
     "fr": "Homme élégant",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1012551": {
     "en": "Well-dressed townsperson",
     "ja": "街角の洒落者",
     "de": "Höchst elegant[a] Person",
     "fr": "Femme élégante",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1012552": {
     "en": "Well-dressed townsperson",
     "ja": "街角の洒落者",
     "de": "Höchst elegant[a] Person",
     "fr": "Femme élégante",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012553": {
     "en": "Well-dressed townsperson",
     "ja": "街角の洒落者",
     "de": "Höchst elegant[a] Person",
     "fr": "Femme élégante",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1012554": {
     "en": "Glenda",
@@ -55049,7 +55729,11 @@
     "ja": "金鐘紋の調理師",
     "de": "Ishgards Meistergourmet",
     "fr": "Cuisinier des Durendaire",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012573": {
     "en": "Retired pirate",
@@ -55125,7 +55809,11 @@
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012581": {
     "en": "Haurchefant",
@@ -55160,7 +55848,11 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1012586": {
     "en": "Tataru",
@@ -55791,21 +56483,33 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012662": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012663": {
     "en": "Ysayle",
     "ja": "イゼル",
     "de": "Ysayle",
     "fr": "Ysayle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012664": {
     "en": "Alphinaud",
@@ -55898,7 +56602,11 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 29,
+      "y": 36
+    }
   },
   "1012675": {
     "en": "Ysayle",
@@ -55940,7 +56648,11 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012681": {
     "en": "Kuplo Kopp",
@@ -55954,21 +56666,33 @@
     "ja": "モグタン",
     "de": "Moghan",
     "fr": "Moghan",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012683": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012684": {
     "en": "Ysayle",
     "ja": "イゼル",
     "de": "Ysayle",
     "fr": "Ysayle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1012686": {
     "en": "Alphinaud",
@@ -56010,21 +56734,33 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1012695": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1012696": {
     "en": "Ysayle",
     "ja": "イゼル",
     "de": "Ysayle",
     "fr": "Ysayle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1012697": {
     "en": "Alphinaud",
@@ -56052,84 +56788,132 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012710": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012711": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1012713": {
     "en": "Cid",
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012714": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012715": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012716": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012717": {
     "en": "Cid",
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012718": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012719": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012720": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 10
+    }
   },
   "1012721": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012722": {
     "en": "Alphinaud",
@@ -56316,7 +57100,11 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1012746": {
     "en": "Estinien",
@@ -56337,14 +57125,22 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 9
+    }
   },
   "1012750": {
     "en": "Haurchefant",
     "ja": "オルシュファン",
     "de": "Haurchefant",
     "fr": "Haurchefant",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 9
+    }
   },
   "1012751": {
     "en": "Alphinaud",
@@ -56472,35 +57268,55 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1012767": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012768": {
     "en": "Hilda",
     "ja": "ヒルダ",
     "de": "Hilda",
     "fr": "Hilda",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012769": {
     "en": "Beggarly fellow",
     "ja": "身なりの貧しい男",
     "de": "Ärmlich[a] Mann",
     "fr": "Type misérable",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012770": {
     "en": "Filthy fellow",
     "ja": "薄汚れた男",
     "de": "Schmutzig[a] Mann",
     "fr": "Type crasseux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1012771": {
     "en": "Alphinaud",
@@ -56681,49 +57497,77 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012790": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 9,
+      "y": 11
+    }
   },
   "1012791": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012792": {
     "en": "Cid",
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012793": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012795": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012796": {
     "en": "Guidance node",
     "ja": "誘導システム",
     "de": "Wegleitsystem",
     "fr": "Sphère de guidage",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012797": {
     "en": "Guidance node",
@@ -56979,21 +57823,33 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012837": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012838": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1012839": {
     "en": "Raubahn",
@@ -57085,42 +57941,66 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012852": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012853": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012854": {
     "en": "Cid",
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012855": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012856": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 5,
+      "y": 9
+    }
   },
   "1012857": {
     "en": "Alphinaud",
@@ -57716,7 +58596,11 @@
     "ja": "精強な神殿騎士",
     "de": "Kraftvoll[a] Tempelritter",
     "fr": "Puissant chevalier",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1013061": {
     "en": "Zhai'a Nelhah",
@@ -57843,21 +58727,33 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013078": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013079": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013080": {
     "en": "Ironworks engineer",
@@ -57976,7 +58872,11 @@
     "ja": "フォルタン家の門衛",
     "de": "Fortemps-Wächter",
     "fr": "Garde des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1013102": {
     "en": "Lucia",
@@ -57990,35 +58890,55 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013112": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 12
+    }
   },
   "1013113": {
     "en": "Lucia",
     "ja": "ルキア",
     "de": "Lucia",
     "fr": "Lucia",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013115": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013116": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013117": {
     "en": "Material supplier",
@@ -58081,7 +59001,11 @@
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013126": {
     "en": "Cid",
@@ -58383,28 +59307,44 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013164": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013165": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013166": {
     "en": "Aymeric",
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013167": {
     "en": "Lucia",
@@ -58422,21 +59362,33 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013169": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013170": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013171": {
     "en": "Alphinaud",
@@ -58450,14 +59402,22 @@
     "ja": "イゼル",
     "de": "Ysayle",
     "fr": "Ysayle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1013176": {
     "en": "Notrelchamps",
     "ja": "ノトレルシャン",
     "de": "Notrelchamps",
     "fr": "Notrelchamps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1013178": {
     "en": "Alisaie",
@@ -58586,14 +59546,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 36
+    }
   },
   "1013196": {
     "en": "Hulking hunter",
     "ja": "たくましい猟師",
     "de": "Geschickt[a] Jäger",
     "fr": "Chasseur trapu",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1013197": {
     "en": "Tataru",
@@ -58703,14 +59671,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1013228": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 13
+    }
   },
   "1013229": {
     "en": "Estinien",
@@ -58746,7 +59722,11 @@
     "ja": "フォルタン家の騎士",
     "de": "Fortemps-Ritter",
     "fr": "Chevalier des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1013233": {
     "en": "Haimirich",
@@ -58797,14 +59777,22 @@
     "ja": "ムジ・ミュリラー",
     "de": "Mujih Mewrilah",
     "fr": "Mujih Mewrilah",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1013241": {
     "en": "Basyle",
     "ja": "バジール",
     "de": "Basyle",
     "fr": "Basyle",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 35
+    }
   },
   "1013242": {
     "en": "Mujih Mewrilah",
@@ -58822,35 +59810,55 @@
     "ja": "バジール",
     "de": "Basyle",
     "fr": "Basyle",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1013244": {
     "en": "Mujih Mewrilah",
     "ja": "ムジ・ミュリラー",
     "de": "Mujih Mewrilah",
     "fr": "Mujih Mewrilah",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 35
+    }
   },
   "1013245": {
     "en": "Martineau",
     "ja": "マルティノー",
     "de": "Martineau",
     "fr": "Martineau",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 8
+    }
   },
   "1013246": {
     "en": "Aubierault",
     "ja": "オビエロ",
     "de": "Aubierault",
     "fr": "Aubierault",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 35
+    }
   },
   "1013247": {
     "en": "Vainctoroix",
     "ja": "ヴァンクトロワ",
     "de": "Vainctoroix",
     "fr": "Vainctoroix",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 35
+    }
   },
   "1013248": {
     "en": "Mujih Mewrilah",
@@ -58959,7 +59967,11 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013262": {
     "en": "Broken Mountain",
@@ -58973,7 +59985,11 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 12
+    }
   },
   "1013265": {
     "en": "Estinien",
@@ -58987,21 +60003,33 @@
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1013267": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1013268": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1013272": {
     "en": "Dark stranger",
@@ -59513,21 +60541,33 @@
     "ja": "雲霧街の女",
     "de": "Frau[p] aus den Schwaden",
     "fr": "Mégère de Brouillasse",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 12
+    }
   },
   "1013341": {
     "en": "Brume elder",
     "ja": "雲霧街の老人",
     "de": "Greis[p] aus den Schwaden",
     "fr": "Vieillard de Brouillasse",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 13
+    }
   },
   "1013342": {
     "en": "Brume rat",
     "ja": "雲霧街の少年",
     "de": "Junge[p] aus den Schwaden",
     "fr": "Gamin de Brouillasse",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1013344": {
     "en": "Hot-tempered knight",
@@ -59545,7 +60585,11 @@
     "ja": "薔薇騎兵団の従軍調理師",
     "de": "Lagerköchin",
     "fr": "Cantinière de la garnison",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 18,
+      "y": 38
+    }
   },
   "1013346": {
     "en": "Well-mannered widow",
@@ -59789,7 +60833,11 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013386": {
     "en": "Cid",
@@ -60091,14 +61139,22 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 10
+    }
   },
   "1013423": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 10
+    }
   },
   "1013424": {
     "en": "Emasculated moogle",
@@ -60273,7 +61329,11 @@
     "ja": "モントルガン",
     "de": "Montorgains",
     "fr": "Montorgains",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1013452": {
     "en": "Brucemont",
@@ -60313,7 +61373,11 @@
     "ja": "モントルガン",
     "de": "Montorgains",
     "fr": "Montorgains",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013466": {
     "en": "Heustienne",
@@ -60452,14 +61516,22 @@
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 39
+    }
   },
   "1013499": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 39
+    }
   },
   "1013500": {
     "en": "Mercurial moogle",
@@ -60557,7 +61629,11 @@
     "ja": "ぱたぱたモーグリ",
     "de": "Trappel-Mogry",
     "fr": "Mog rêvasseur",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 27
+    }
   },
   "1013515": {
     "en": "Mogzun",
@@ -60711,14 +61787,22 @@
     "ja": "まだまだモーグリ",
     "de": "Träum-Mogry",
     "fr": "Mog impatient",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 19,
+      "y": 9
+    }
   },
   "1013540": {
     "en": "Rummaging moogle",
     "ja": "ごそごそモーグリ",
     "de": "Stöber-Mogry",
     "fr": "Mog froufroutant",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 17,
+      "y": 9
+    }
   },
   "1013541": {
     "en": "Remarking moogle",
@@ -60781,14 +61865,22 @@
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013550": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1013551": {
     "en": "Chief Honu Vanu",
@@ -60845,21 +61937,33 @@
     "ja": "精悍な神殿騎士",
     "de": "Misstrauisch[a] Tempelritter",
     "fr": "Templier déterminé",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1013558": {
     "en": "Unflinching Temple Knight",
     "ja": "精悍な神殿騎士",
     "de": "Misstrauisch[a] Tempelritter",
     "fr": "Templier déterminé",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013559": {
     "en": "Maenne",
     "ja": "マエヌ",
     "de": "Maenne",
     "fr": "Maenne",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013560": {
     "en": "Maenne",
@@ -60936,7 +62040,11 @@
     "ja": "北方偵察隊の竜騎士",
     "de": "Aufklärerin[p] des Nordtrupps",
     "fr": "Éclaireuse de l'équipe nord",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 11,
+      "y": 9
+    }
   },
   "1013571": {
     "en": "Captured Rose Knight",
@@ -61067,7 +62175,11 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 29,
+      "y": 36
+    }
   },
   "1013588": {
     "en": "Ysayle",
@@ -61792,7 +62904,11 @@
     "ja": "ロリス",
     "de": "Laurisse Jervaint",
     "fr": "Laurisse de Jervaint",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1013683": {
     "en": "Fremondain",
@@ -61940,7 +63056,11 @@
     "ja": "ノエル",
     "de": "Noelle",
     "fr": "Noelle",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 33
+    }
   },
   "1013721": {
     "en": "Yloise",
@@ -62207,7 +63327,11 @@
     "ja": "ゲルハルト",
     "de": "Gerhardt",
     "fr": "Gerhardt",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1013820": {
     "en": "Gerhardt",
@@ -62264,35 +63388,55 @@
     "ja": "アンソールム",
     "de": "Ansaulme",
     "fr": "Ansaulme",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 18,
+      "y": 36
+    }
   },
   "1013828": {
     "en": "Reyna",
     "ja": "レイナ",
     "de": "Reyna",
     "fr": "Reyna",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 36
+    }
   },
   "1013829": {
     "en": "Tona Vanu",
     "ja": "トナバヌ",
     "de": "Tona Vanu",
     "fr": "Tona Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 31,
+      "y": 39
+    }
   },
   "1013830": {
     "en": "Ansaulme",
     "ja": "アンソールム",
     "de": "Ansaulme",
     "fr": "Ansaulme",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 31,
+      "y": 36
+    }
   },
   "1013831": {
     "en": "Reyna",
     "ja": "レイナ",
     "de": "Reyna",
     "fr": "Reyna",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 31,
+      "y": 36
+    }
   },
   "1013832": {
     "en": "Grand tourney officiant",
@@ -62932,28 +64076,44 @@
     "ja": "ハイムリック",
     "de": "Haimirich",
     "fr": "Haimirich",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 34,
+      "y": 26
+    }
   },
   "1013944": {
     "en": "Hatchling",
     "ja": "ひなチョコ",
     "de": "Küken",
     "fr": "Poussinet",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 34,
+      "y": 26
+    }
   },
   "1013945": {
     "en": "Muscles",
     "ja": "剛力",
     "de": "Muckis",
     "fr": "Muscle",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 34,
+      "y": 26
+    }
   },
   "1013949": {
     "en": "Accompanying naturalist",
     "ja": "同行中の博物学者",
     "de": "Begleitend[a] Naturforscher",
     "fr": "Naturaliste accompagnateur",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 34,
+      "y": 26
+    }
   },
   "1013950": {
     "en": "Muscles",
@@ -62967,7 +64127,11 @@
     "ja": "ひなチョコ",
     "de": "Küken",
     "fr": "Poussinet",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 25,
+      "y": 24
+    }
   },
   "1013954": {
     "en": "Hatchling",
@@ -63054,7 +64218,11 @@
     "ja": "リ・コネブ",
     "de": "L'khonebb",
     "fr": "L'khonebb",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1013967": {
     "en": "Oboro",
@@ -63888,42 +65056,66 @@
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1014073": {
     "en": "House Haillenarte squire",
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1014074": {
     "en": "Constaint",
     "ja": "コンスタン",
     "de": "Constaint",
     "fr": "Constaint",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 9,
+      "y": 32
+    }
   },
   "1014075": {
     "en": "House Haillenarte knight",
     "ja": "アインハルト家の騎士",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1014076": {
     "en": "Constaint",
     "ja": "コンスタン",
     "de": "Constaint",
     "fr": "Constaint",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 37
+    }
   },
   "1014084": {
     "en": "House Haillenarte squire",
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 21,
+      "y": 38
+    }
   },
   "1014088": {
     "en": "House Haillenarte knight",
@@ -64119,7 +65311,11 @@
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1014111": {
     "en": "Widargelt",
@@ -64288,7 +65484,11 @@
     "ja": "負傷した騎兵",
     "de": "Verletzt[a] Ritter",
     "fr": "Chevalier blessé",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 8,
+      "y": 32
+    }
   },
   "1014133": {
     "en": "Sly scout",
@@ -64861,7 +66061,11 @@
     "ja": "サンソン大牙士",
     "de": "Sanson",
     "fr": "Sanson",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1014209": {
     "en": "Guydelot",
@@ -64879,7 +66083,11 @@
     "ja": "ギドゥロ",
     "de": "Guydelot",
     "fr": "Guydelot",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 12
+    }
   },
   "1014211": {
     "en": "Pukno Poki",
@@ -65360,7 +66568,11 @@
     "ja": "サンソン大牙士",
     "de": "Sanson",
     "fr": "Sanson",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 26,
+      "y": 36
+    }
   },
   "1014265": {
     "en": "Sanson",
@@ -65374,7 +66586,11 @@
     "ja": "サンソン大牙士",
     "de": "Sanson",
     "fr": "Sanson",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 33
+    }
   },
   "1014267": {
     "en": "Sanson",
@@ -65449,7 +66665,11 @@
     "ja": "サンソン大牙士",
     "de": "Sanson",
     "fr": "Sanson",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 19,
+      "y": 5
+    }
   },
   "1014276": {
     "en": "Sanson",
@@ -65463,7 +66683,11 @@
     "ja": "ギドゥロ",
     "de": "Guydelot",
     "fr": "Guydelot",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 32,
+      "y": 37
+    }
   },
   "1014278": {
     "en": "Guydelot",
@@ -65502,7 +66726,11 @@
     "ja": "モグチャ",
     "de": "Mogta",
     "fr": "Mogta",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 19,
+      "y": 5
+    }
   },
   "1014283": {
     "en": "Mogta",
@@ -65594,21 +66822,33 @@
     "ja": "モグクル",
     "de": "Mogkul",
     "fr": "Mogkul",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1014301": {
     "en": "Mogok",
     "ja": "モグオク",
     "de": "Mogok",
     "fr": "Mogok",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1014302": {
     "en": "Mogga",
     "ja": "モグッカ",
     "de": "Mogga",
     "fr": "Mogga",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1014303": {
     "en": "Mogleo",
@@ -65629,21 +66869,33 @@
     "ja": "モグッカ",
     "de": "Mogga",
     "fr": "Mogga",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 26
+    }
   },
   "1014308": {
     "en": "Mogok",
     "ja": "モグオク",
     "de": "Mogok",
     "fr": "Mogok",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 8,
+      "y": 29
+    }
   },
   "1014309": {
     "en": "Mogleo",
     "ja": "モグレオ",
     "de": "Mogleo",
     "fr": "Mogleo",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1014310": {
     "en": "Ancient vouivre",
@@ -65732,7 +66984,11 @@
     "ja": "ザイ・ア・ネルハー",
     "de": "Zhai'a Nelhah",
     "fr": "Zhai'a Nelhah",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1014321": {
     "en": "Handeloup",
@@ -65965,14 +67221,22 @@
     "ja": "ノッチド・ボーン",
     "de": "Kerbiger Knochen",
     "fr": "Notched Bone",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 15
+    }
   },
   "1014353": {
     "en": "Dedean",
     "ja": "デデアン",
     "de": "Dedean",
     "fr": "Dedean",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 15
+    }
   },
   "1014354": {
     "en": "Notched Bone",
@@ -66379,7 +67643,11 @@
     "ja": "モグレオ",
     "de": "Mogleo",
     "fr": "Mogleo",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 32,
+      "y": 37
+    }
   },
   "1014426": {
     "en": "Mogleo",
@@ -66393,7 +67661,11 @@
     "ja": "むぐむぐモーグリ",
     "de": "Murmel-Mogry",
     "fr": "Mog tracassé",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 32,
+      "y": 37
+    }
   },
   "1014429": {
     "en": "Mogleo",
@@ -66519,7 +67791,11 @@
     "ja": "フォルタン家の騎兵",
     "de": "Fortemps-Ritter",
     "fr": "Chevalier des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014449": {
     "en": "Kupli Kuki",
@@ -66617,7 +67893,11 @@
     "ja": "モグレオ",
     "de": "Mogleo",
     "fr": "Mogleo",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 31,
+      "y": 36
+    }
   },
   "1014463": {
     "en": "Mogleo",
@@ -66631,7 +67911,11 @@
     "ja": "クプリ・クキ",
     "de": "Kupli Kuki",
     "fr": "Kupli Kuki",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 29,
+      "y": 35
+    }
   },
   "1014466": {
     "en": "Kupli Kuki",
@@ -66645,7 +67929,11 @@
     "ja": "ふわふわモーグリ",
     "de": "Flausch-Mogry",
     "fr": "Mog distrait",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 29,
+      "y": 37
+    }
   },
   "1014468": {
     "en": "Moofy moogle",
@@ -66659,7 +67947,11 @@
     "ja": "ふるふるモーグリ",
     "de": "Flatter-Mogry",
     "fr": "Mog émotif",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 30,
+      "y": 38
+    }
   },
   "1014470": {
     "en": "Motioning moogle",
@@ -67323,7 +68615,11 @@
     "ja": "ウリエンジェ",
     "de": "Urianger",
     "fr": "Urianger",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1014564": {
     "en": "Biggs",
@@ -67422,14 +68718,22 @@
     "ja": "ステファニヴィアン",
     "de": "Stephanivien",
     "fr": "Stephanivien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014578": {
     "en": "Fromelaut",
     "ja": "フロムロー",
     "de": "Fromelaut",
     "fr": "Fromelaut",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014579": {
     "en": "Stephanivien",
@@ -67639,7 +68943,11 @@
     "ja": "イゼル",
     "de": "Ysayle",
     "fr": "Ysayle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1014639": {
     "en": "Papashan",
@@ -67674,14 +68982,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014644": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014648": {
     "en": "Halga Tolga",
@@ -67723,14 +69039,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1014654": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1014655": {
     "en": "Constaint",
@@ -67841,35 +69165,55 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1014676": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1014677": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1014678": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1014679": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1014681": {
     "en": "Eschiva",
@@ -67985,21 +69329,33 @@
     "ja": "信心深い老人",
     "de": "Fromm[a] Greis",
     "fr": "Vieillard très croyant",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014705": {
     "en": "Fury-fearing Elezen",
     "ja": "信心深い老人",
     "de": "Fromm[a] Greis",
     "fr": "Vieillard très croyant",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1014706": {
     "en": "Fury-fearing Elezen",
     "ja": "信心深い老人",
     "de": "Fromm[a] Greis",
     "fr": "Vieillard très croyant",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014707": {
     "en": "Bibulous bloke",
@@ -68017,14 +69373,22 @@
     "ja": "元貴族の旦那",
     "de": "Ehemalig[a] Feudalherr",
     "fr": "Ancien noble ishgardais",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1014709": {
     "en": "Title-stripped noble's son",
     "ja": "元貴族の子息",
     "de": "Sohn[p] des Feudalherrn",
     "fr": "Fils de l'ancien noble",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 9
+    }
   },
   "1014710": {
     "en": "Stableman",
@@ -68038,35 +69402,55 @@
     "ja": "手足かじかむ貧民",
     "de": "Frierend[a] Frau",
     "fr": "Miséreuse grelottante",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1014712": {
     "en": "Freezing vagrant",
     "ja": "寒さに震える貧民",
     "de": "Bibbernd[a] Mann",
     "fr": "Miséreux frémissant",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 13
+    }
   },
   "1014713": {
     "en": "Frozen vagrant",
     "ja": "凍えた様子の貧民",
     "de": "Zitternd[a] Frau",
     "fr": "Miséreuse frissonnante",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 12
+    }
   },
   "1014714": {
     "en": "Osaulie",
     "ja": "オゾリー",
     "de": "Osaulie",
     "fr": "Osaulie",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1014715": {
     "en": "House Durendaire knight",
     "ja": "悩める騎兵",
     "de": "Durendaire-Ritter",
     "fr": "Chevalier gêné",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1014716": {
     "en": "Knight of the brush",
@@ -68084,14 +69468,22 @@
     "ja": "悩み深き男",
     "de": "Zutiefst verzweifelt[a] Mann",
     "fr": "Homme embarrassé",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1014718": {
     "en": "Languid noblewoman",
     "ja": "物憂げな令嬢",
     "de": "Schwermütig[a] Fräulein",
     "fr": "Fille languide",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014719": {
     "en": "Noble youth",
@@ -68109,35 +69501,55 @@
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014721": {
     "en": "Osaulie",
     "ja": "オゾリー",
     "de": "Osaulie",
     "fr": "Osaulie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1014722": {
     "en": "Annoyed knight",
     "ja": "怒れる神殿騎士",
     "de": "Erzürnt[a] Ritter",
     "fr": "Templier irritable",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1014723": {
     "en": "Incandescent commoner",
     "ja": "怒れる平民",
     "de": "Ungehalten[a] Bürger",
     "fr": "Roturier irritable",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1014724": {
     "en": "Wailing widow",
     "ja": "悲しみの未亡人",
     "de": "Trauernd[a] Witwe",
     "fr": "Veuve éplorée",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014725": {
     "en": "Starving starveling",
@@ -68155,14 +69567,22 @@
     "ja": "フォルタン家の騎兵",
     "de": "Fortemps-Ritter",
     "fr": "Chevalier des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014727": {
     "en": "House Haillenarte knight",
     "ja": "アインハルト家の騎兵",
     "de": "Haillenarte-Ritter",
     "fr": "Chevalier des Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014728": {
     "en": "Drunken knight",
@@ -68180,7 +69600,11 @@
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014731": {
     "en": "Stephanivien",
@@ -68330,35 +69754,55 @@
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 12
+    }
   },
   "1014752": {
     "en": "Sharp-eyed loiterer",
     "ja": "眼光鋭い不審者",
     "de": "Tückisch[a] Verdächtig[a]",
     "fr": "Rôdeur en repérage",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014753": {
     "en": "Squinty-eyed loiterer",
     "ja": "薄ら笑いの不審者",
     "de": "Listig[a] Verdächtig[a]",
     "fr": "Rôdeur mesquin",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014754": {
     "en": "Shifty-eyed loiterer",
     "ja": "落ち着きのない不審者",
     "de": "Verschlagen[a] Verdächtig[a]",
     "fr": "Rôdeur nerveux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1014757": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1014760": {
     "en": "Stephanivien",
@@ -68405,21 +69849,33 @@
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1014770": {
     "en": "Joye",
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1014771": {
     "en": "Count Baurendouin de Haillenarte",
     "ja": "ボランドゥアン・ド・アインハルト伯爵",
     "de": "Graf Baurendouin Haillenarte",
     "fr": "Comte Baurendouin de Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1014772": {
     "en": "Stephanivien",
@@ -68437,42 +69893,66 @@
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014776": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014777": {
     "en": "Sharp-eyed loiterer",
     "ja": "眼光鋭い不審者",
     "de": "Tückisch[a] Verdächtig[a]",
     "fr": "Rôdeur en repérage",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 11
+    }
   },
   "1014778": {
     "en": "Squinty-eyed loiterer",
     "ja": "薄ら笑いの不審者",
     "de": "Listig[a] Verdächtig[a]",
     "fr": "Rôdeur mesquin",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 9
+    }
   },
   "1014779": {
     "en": "Shifty-eyed loiterer",
     "ja": "落ち着きのない不審者",
     "de": "Verschlagen[a] Verdächtig[a]",
     "fr": "Rôdeur nerveux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 11
+    }
   },
   "1014782": {
     "en": "Joye",
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1014784": {
     "en": "Stephanivien",
@@ -68501,63 +69981,99 @@
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1014795": {
     "en": "Count Baurendouin de Haillenarte",
     "ja": "ボランドゥアン・ド・アインハルト伯爵",
     "de": "Graf Baurendouin Haillenarte",
     "fr": "Comte Baurendouin de Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1014796": {
     "en": "Count Baurendouin de Haillenarte",
     "ja": "ボランドゥアン・ド・アインハルト伯爵",
     "de": "Graf Baurendouin Haillenarte",
     "fr": "Comte Baurendouin de Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014797": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014798": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014799": {
     "en": "Befuddled commoner",
     "ja": "貧しい身なりの男",
     "de": "Ärmlich[a] Mann",
     "fr": "Type misérable",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1014800": {
     "en": "Begrimed commoner",
     "ja": "薄汚れた男",
     "de": "Verdreckt[a] Mann",
     "fr": "Type crasseux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1014801": {
     "en": "Bedraggled commoner",
     "ja": "顔色の悪い男",
     "de": "Blass[a] Mann",
     "fr": "Homme pâlot",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1014802": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014803": {
     "en": "Stephanivien",
@@ -68586,7 +70102,11 @@
     "ja": "工房の機工士",
     "de": "Himmelsstahl-Maschinist",
     "fr": "Soldat machiniste",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 12
+    }
   },
   "1014810": {
     "en": "Weak-kneed watch",
@@ -68637,21 +70157,33 @@
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014820": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014821": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014822": {
     "en": "Celestaux",
@@ -68702,63 +70234,99 @@
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 9
+    }
   },
   "1014831": {
     "en": "Joye",
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 9
+    }
   },
   "1014834": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 11
+    }
   },
   "1014835": {
     "en": "Joye",
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 10
+    }
   },
   "1014836": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1014837": {
     "en": "Count Baurendouin de Haillenarte",
     "ja": "ボランドゥアン・ド・アインハルト伯爵",
     "de": "Graf Baurendouin Haillenarte",
     "fr": "Comte Baurendouin de Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 9,
+      "y": 12
+    }
   },
   "1014838": {
     "en": "Joye",
     "ja": "ジョイ",
     "de": "Joye",
     "fr": "Joye",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014839": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014840": {
     "en": "Celestaux",
     "ja": "セレスト",
     "de": "Celestaux",
     "fr": "Celestaux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1014841": {
     "en": "Stephanivien",
@@ -68823,84 +70391,132 @@
     "ja": "皇都の市民",
     "de": "Ishgarder Bürger",
     "fr": "Citoyen ishgardais",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 9
+    }
   },
   "1014875": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014876": {
     "en": "Punctilious Temple Knight",
     "ja": "堅物な神殿騎士",
     "de": "Überzeugt[a] Tempelritter",
     "fr": "Templier scrupuleux",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014878": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014879": {
     "en": "Lowborn crone",
     "ja": "貧しい身なりの老婆",
     "de": "Gebrechlich[a] Frau",
     "fr": "Vieille femme démunie",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1014880": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1014882": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 16,
+      "y": 9
+    }
   },
   "1014883": {
     "en": "Pernicious Temple Knight",
     "ja": "無頼の神殿騎士",
     "de": "Eifrig[a] Tempelritter",
     "fr": "Templier pernicieux",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 10
+    }
   },
   "1014887": {
     "en": "Frightened maid",
     "ja": "貧しい身なりの娘",
     "de": "Armenmädchen",
     "fr": "Jeune fille effrayée",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 10
+    }
   },
   "1014888": {
     "en": "Frightened maid",
     "ja": "貧しい身なりの娘",
     "de": "Armenmädchen",
     "fr": "Jeune fille effrayée",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 10
+    }
   },
   "1014889": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 10
+    }
   },
   "1014890": {
     "en": "Fray",
     "ja": "フレイ",
     "de": "Fray",
     "fr": "Fray",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1014891": {
     "en": "Fray",
@@ -69206,7 +70822,11 @@
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1014946": {
     "en": "Quimperain",
@@ -69500,14 +71120,22 @@
     "ja": "シドゥルグ",
     "de": "Sidurgu",
     "fr": "Sidurgu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1015035": {
     "en": "Rielle",
     "ja": "リエル",
     "de": "Rielle",
     "fr": "Rielle",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1015036": {
     "en": "Sidurgu",
@@ -69623,14 +71251,22 @@
     "ja": "リエル",
     "de": "Rielle",
     "fr": "Rielle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1015048": {
     "en": "Sidurgu",
     "ja": "シドゥルグ",
     "de": "Sidurgu",
     "fr": "Sidurgu",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 31,
+      "y": 37
+    }
   },
   "1015049": {
     "en": "Sidurgu",
@@ -69853,7 +71489,11 @@
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1015108": {
     "en": "Jannequinard",
@@ -69947,7 +71587,11 @@
     "ja": "カンプラン",
     "de": "Quimperain",
     "fr": "Quimperain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1015118": {
     "en": "Guidance node",
@@ -70004,63 +71648,99 @@
     "ja": "カンプラン",
     "de": "Quimperain",
     "fr": "Quimperain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 10
+    }
   },
   "1015129": {
     "en": "Leveva",
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1015130": {
     "en": "Old World astrologian",
     "ja": "占星術師らしき女性",
     "de": "Frau[p] im Astrologengewand",
     "fr": "Dame radieuse",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1015131": {
     "en": "Quimperain",
     "ja": "カンプラン",
     "de": "Quimperain",
     "fr": "Quimperain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1015134": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 9,
+      "y": 11
+    }
   },
   "1015135": {
     "en": "Biggs",
     "ja": "ビッグス",
     "de": "Biggs",
     "fr": "Biggs",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015136": {
     "en": "Wedge",
     "ja": "ウェッジ",
     "de": "Wedge",
     "fr": "Wedge",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015137": {
     "en": "Guidance node",
     "ja": "誘導システム",
     "de": "Wegleitsystem",
     "fr": "Sphère de guidage",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015138": {
     "en": "Estinien",
     "ja": "エスティニアン",
     "de": "Estinien",
     "fr": "Estinien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1015139": {
     "en": "Muddled moogle",
@@ -70636,7 +72316,11 @@
     "ja": "ギーユステ",
     "de": "Guillestet",
     "fr": "Guillestet",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1015539": {
     "en": "Rostnsthal",
@@ -70661,7 +72345,11 @@
     "ja": "ペルドゥラン",
     "de": "Pelderain",
     "fr": "Pelderain",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 10
+    }
   },
   "1015570": {
     "en": "Goodly adventurer",
@@ -70700,7 +72388,11 @@
     "ja": "フォルタン家の騎兵",
     "de": "Fortemps-Ritter",
     "fr": "Chevalier des Fortemps",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1015599": {
     "en": "Goodly adventurer",
@@ -71774,21 +73466,33 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1015925": {
     "en": "Spineless seminarian",
     "ja": "気弱そうな神学生",
     "de": "Eingeschüchtert[a] Studentin",
     "fr": "Étudiante hésitante",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1015926": {
     "en": "Impertinent pauper",
     "ja": "粗暴な貧民",
     "de": "Rabiat[a] arm[a] Bürger",
     "fr": "Pauvre exalté",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1015930": {
     "en": "Ben",
@@ -71817,7 +73521,11 @@
     "ja": "ガエテル",
     "de": "Gaetelle",
     "fr": "Gaetelle",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 9
+    }
   },
   "1015933": {
     "en": "Gaetelle",
@@ -71845,14 +73553,22 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 10
+    }
   },
   "1015937": {
     "en": "Ben",
     "ja": "ベン",
     "de": "Ben",
     "fr": "Ben",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 10
+    }
   },
   "1015938": {
     "en": "Briardien",
@@ -71880,21 +73596,33 @@
     "ja": "ブリアルディアン",
     "de": "Briardien",
     "fr": "Briardien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1015942": {
     "en": "Gaetelle",
     "ja": "ガエテル",
     "de": "Gaetelle",
     "fr": "Gaetelle",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1015943": {
     "en": "Saturnois",
     "ja": "柔和そうな司祭",
     "de": "Saturnois",
     "fr": "Saturnois",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1015944": {
     "en": "Archombadin",
@@ -71922,35 +73650,55 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1015948": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1015949": {
     "en": "Crammevoix",
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015950": {
     "en": "Lascivious lass",
     "ja": "妖艶な女性",
     "de": "Attraktiv[a] Dame",
     "fr": "Femme voluptueuse",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 10
+    }
   },
   "1015951": {
     "en": "Smiling seminarian",
     "ja": "幸薄そうな神学生",
     "de": "Locker[a] Studentin",
     "fr": "Étudiante indolente",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 10
+    }
   },
   "1015952": {
     "en": "Briardien",
@@ -72048,56 +73796,88 @@
     "ja": "サテュールノワ",
     "de": "Saturnois",
     "fr": "Saturnois",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1015966": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1015967": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1015968": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015969": {
     "en": "Crammevoix",
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015970": {
     "en": "Lascivious lass",
     "ja": "妖艶な女性",
     "de": "Geiselnehmerin",
     "fr": "Femme voluptueuse",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015971": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 11
+    }
   },
   "1015972": {
     "en": "Crammevoix",
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015973": {
     "en": "Crammevoix",
@@ -72126,21 +73906,33 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 11
+    }
   },
   "1015976": {
     "en": "Briardien",
     "ja": "ブリアルディアン",
     "de": "Briardien",
     "fr": "Briardien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 8
+    }
   },
   "1015977": {
     "en": "Scholasticate deacon",
     "ja": "神学院の助祭",
     "de": "Diakon[p] des Theologikums",
     "fr": "Diacre du scolasticat",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1015978": {
     "en": "Lucia",
@@ -72279,7 +74071,11 @@
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1015992": {
     "en": "Krile",
@@ -72421,42 +74217,66 @@
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1016008": {
     "en": "Lucia",
     "ja": "ルキア",
     "de": "Lucia",
     "fr": "Lucia",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016009": {
     "en": "Hilda",
     "ja": "ヒルダ",
     "de": "Hilda",
     "fr": "Hilda",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016010": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016011": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016012": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016013": {
     "en": "Alphinaud",
@@ -72477,28 +74297,44 @@
     "ja": "美しい避難民",
     "de": "Arm[a] Schönheit",
     "fr": "Jolie réfugiée",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 9
+    }
   },
   "1016018": {
     "en": "Maelie",
     "ja": "マエリ",
     "de": "Maelie",
     "fr": "Maelie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 8
+    }
   },
   "1016020": {
     "en": "Vault priest",
     "ja": "教皇庁の司祭",
     "de": "Priester[p] der Kurie",
     "fr": "Prêtre du Saint-Siège",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016021": {
     "en": "Maelie",
     "ja": "マエリ",
     "de": "Maelie",
     "fr": "Maelie",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016024": {
     "en": "Count Edmont de Fortemps",
@@ -72512,98 +74348,154 @@
     "ja": "ヒルダ",
     "de": "Hilda",
     "fr": "Hilda",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1016026": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 11
+    }
   },
   "1016027": {
     "en": "Hilda",
     "ja": "ヒルダ",
     "de": "Hilda",
     "fr": "Hilda",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 10
+    }
   },
   "1016028": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 10
+    }
   },
   "1016029": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1016030": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1016031": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016032": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1016033": {
     "en": "Captive",
     "ja": "捕らわれた男",
     "de": "Gefangen[a]",
     "fr": "Homme ligoté",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016034": {
     "en": "Aymeric",
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016035": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016036": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016037": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016038": {
     "en": "Artoirel",
     "ja": "アルトアレール",
     "de": "Artoirel",
     "fr": "Artoirel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016039": {
     "en": "Hilda",
@@ -72621,7 +74513,11 @@
     "ja": "ウデスタン",
     "de": "Eudestand",
     "fr": "Eudestand",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1016041": {
     "en": "Symme",
@@ -72639,14 +74535,22 @@
     "ja": "ルキア",
     "de": "Lucia",
     "fr": "Lucia",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016049": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016050": {
     "en": "Alphinaud",
@@ -72667,21 +74571,33 @@
     "ja": "アルトアレール",
     "de": "Artoirel",
     "fr": "Artoirel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016053": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1016054": {
     "en": "Honoroit",
     "ja": "オノロワ",
     "de": "Honoroit",
     "fr": "Honoroit",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 11
+    }
   },
   "1016055": {
     "en": "Krile",
@@ -72702,35 +74618,55 @@
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016058": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 13
+    }
   },
   "1016059": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016060": {
     "en": "Y'shtola",
     "ja": "ヤ・シュトラ",
     "de": "Y'shtola",
     "fr": "Y'shtola",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016061": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016062": {
     "en": "Simeonard of the Holiest Flame",
@@ -72843,42 +74779,66 @@
     "ja": "リヌバリ",
     "de": "Linu Vali",
     "fr": "Linu Vali",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1016088": {
     "en": "Linu Vanu",
     "ja": "群雲のリヌバヌ",
     "de": "Linu Vanu",
     "fr": "Linu Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 14
+    }
   },
   "1016089": {
     "en": "Muna Vanu",
     "ja": "ムナバヌ",
     "de": "Muna Vanu",
     "fr": "Muna Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1016090": {
     "en": "Eenu Vanu",
     "ja": "釣師のエヌバヌ",
     "de": "Eenu Vanu",
     "fr": "Eenu Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 15
+    }
   },
   "1016091": {
     "en": "Ranu Vali",
     "ja": "耕人のラヌバリ",
     "de": "Ranu Vali",
     "fr": "Ranu Vali",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 15
+    }
   },
   "1016092": {
     "en": "Ginu Vanu",
     "ja": "大工のギヌバヌ",
     "de": "Ginu Vanu",
     "fr": "Ginu Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1016093": {
     "en": "Luna Vanu",
@@ -73063,28 +75023,44 @@
     "ja": "レッドビルの甲板員",
     "de": "Rotschnabel-Matrose",
     "fr": "Manœuvrier des Becs-rouges",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016117": {
     "en": "Leofard",
     "ja": "レオファード",
     "de": "Leofard",
     "fr": "Leofard",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016118": {
     "en": "Stacia",
     "ja": "スタシア",
     "de": "Stacia",
     "fr": "Stacia",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016119": {
     "en": "Utata",
     "ja": "ウタタ",
     "de": "Utata",
     "fr": "Utata",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016121": {
     "en": "Sky pirate",
@@ -73105,28 +75081,44 @@
     "ja": "不安げな商人",
     "de": "Erschöpft[a] Reeder",
     "fr": "Marchand inquiet",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 11
+    }
   },
   "1016126": {
     "en": "Aurvael",
     "ja": "オールヴァエル",
     "de": "Aurvael",
     "fr": "Aurvael de Haillenarte",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1016127": {
     "en": "Jaquoinie",
     "ja": "ジャコアニ",
     "de": "Jaquoinie",
     "fr": "Jaquoinie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1016130": {
     "en": "Stacia",
     "ja": "スタシア",
     "de": "Stacia",
     "fr": "Stacia",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1016132": {
     "en": "Talons deckswab",
@@ -73140,42 +75132,66 @@
     "ja": "アルダシール",
     "de": "Ardashir",
     "fr": "Ardashir",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 12
+    }
   },
   "1016136": {
     "en": "Gerolt",
     "ja": "ゲロルト",
     "de": "Gerolt",
     "fr": "Gerolt",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 12
+    }
   },
   "1016137": {
     "en": "Leofard",
     "ja": "レオファード",
     "de": "Leofard",
     "fr": "Leofard",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 25,
+      "y": 5
+    }
   },
   "1016138": {
     "en": "Redbill deckhand",
     "ja": "レッドビルの甲板員",
     "de": "Rotschnabel-Matrose",
     "fr": "Manœuvrier des Becs-rouges",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016139": {
     "en": "Stacia",
     "ja": "スタシア",
     "de": "Stacia",
     "fr": "Stacia",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 26,
+      "y": 5
+    }
   },
   "1016140": {
     "en": "Curious cat",
     "ja": "謎めいた黒猫",
     "de": "Neugierig[a] Katze",
     "fr": "Chat mystérieux",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 25,
+      "y": 5
+    }
   },
   "1016141": {
     "en": "Remumu",
@@ -73252,14 +75268,22 @@
     "ja": "クラウド・ミッヂ",
     "de": "Wolkenmückenschwarm",
     "fr": "Nuée de moucherons",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 5,
+      "y": 15
+    }
   },
   "1016157": {
     "en": "Midge cloud",
     "ja": "クラウド・ミッヂ",
     "de": "Wolkenmückenschwarm",
     "fr": "Nuée de moucherons",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 14
+    }
   },
   "1016158": {
     "en": "Midge cloud",
@@ -73403,7 +75427,11 @@
     "ja": "邸宅の使用人",
     "de": "Hausdienerin",
     "fr": "Employée de maison",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1016184": {
     "en": "Estate manservant",
@@ -73470,14 +75498,22 @@
     "ja": "商人のルナバヌ",
     "de": "Luna Vanu",
     "fr": "Luna Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 22,
+      "y": 6
+    }
   },
   "1016212": {
     "en": "Luna Vanu",
     "ja": "商人のルナバヌ",
     "de": "Luna Vanu",
     "fr": "Luna Vanu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 24,
+      "y": 6
+    }
   },
   "1016213": {
     "en": "Luna Vanu",
@@ -73491,7 +75527,11 @@
     "ja": "警戒中の薔薇騎兵",
     "de": "Wachend[a] Rosenkavallerist",
     "fr": "Chevalier de la Rose",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 17,
+      "y": 38
+    }
   },
   "1016216": {
     "en": "Comely korrigan",
@@ -73589,28 +75629,44 @@
     "ja": "はぐれゲイラキャット",
     "de": "Streunend[a] Geira-Katze",
     "fr": "Gaélichat égaré",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 16,
+      "y": 35
+    }
   },
   "1016232": {
     "en": "Stray gaelicat",
     "ja": "はぐれゲイラキャット",
     "de": "Streunend[a] Geira-Katze",
     "fr": "Gaélichat égaré",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 14,
+      "y": 37
+    }
   },
   "1016233": {
     "en": "Stray gaelicat",
     "ja": "はぐれゲイラキャット",
     "de": "Streunend[a] Geira-Katze",
     "fr": "Gaélichat égaré",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 15,
+      "y": 39
+    }
   },
   "1016234": {
     "en": "Scholasticate lector",
     "ja": "神学院の司祭",
     "de": "Adeptin",
     "fr": "Concierge du scolasticat",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 9
+    }
   },
   "1016235": {
     "en": "Comely korrigan",
@@ -73778,14 +75834,22 @@
     "ja": "特殊品納品窓口",
     "de": "Ätherwarenhändler",
     "fr": "Récupérateur",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1016261": {
     "en": "Spoils collector",
     "ja": "スポイル取引窓口",
     "de": "Andenkenhändlerin",
     "fr": "Négociante d'espoilles",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1016262": {
     "en": "Independent arms mender",
@@ -74085,7 +76149,11 @@
     "ja": "ロヌバリ",
     "de": "Ronu Vali",
     "fr": "Ronu Vali",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 15
+    }
   },
   "1016354": {
     "en": "Mythril Eye reporter",
@@ -74148,14 +76216,22 @@
     "ja": "グンド族の若者",
     "de": "Jung[a] Gundo",
     "fr": "Jeune Gundu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 38,
+      "y": 12
+    }
   },
   "1016364": {
     "en": "Gundu youth",
     "ja": "グンド族の若者",
     "de": "Jung[a] Gundo",
     "fr": "Jeune Gundu",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 39,
+      "y": 14
+    }
   },
   "1016365": {
     "en": "Gundu youth",
@@ -74204,14 +76280,22 @@
     "ja": "はぐれゲイラキャット",
     "de": "Streunend[a] Geira-Katze",
     "fr": "Gaélichat égaré",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 16,
+      "y": 38
+    }
   },
   "1016375": {
     "en": "Stray gaelicat",
     "ja": "はぐれゲイラキャット",
     "de": "Streunend[a] Geira-Katze",
     "fr": "Gaélichat égaré",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 10,
+      "y": 32
+    }
   },
   "1016376": {
     "en": "Nodding-off knight",
@@ -74950,7 +77034,11 @@
     "ja": "アルダシール",
     "de": "Ardashir",
     "fr": "Ardashir",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1016522": {
     "en": "Royal handmaiden",
@@ -75338,14 +77426,22 @@
     "ja": "サンクレッド",
     "de": "Thancred",
     "fr": "Thancred",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1016585": {
     "en": "Emmanellain",
     "ja": "エマネラン",
     "de": "Emmanellain",
     "fr": "Emmanellain",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1016587": {
     "en": "Emmanellain",
@@ -75374,7 +77470,11 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1016590": {
     "en": "Alphinaud",
@@ -75431,56 +77531,88 @@
     "ja": "復元システム",
     "de": "Replizierungsdrohne",
     "fr": "Dispositif de reproduction",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 11
+    }
   },
   "1016597": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016598": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1016599": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1016600": {
     "en": "Hildibrand",
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1016601": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1016602": {
     "en": "Gigi",
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1016603": {
     "en": "Cyr",
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 9
+    }
   },
   "1016604": {
     "en": "Cyr",
@@ -75520,28 +77652,44 @@
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016608": {
     "en": "Hildibrand",
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016609": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016610": {
     "en": "Cyr",
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016612": {
     "en": "Nashu Mhakaracca",
@@ -75559,7 +77707,11 @@
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016615": {
     "en": "Yeti",
@@ -75573,7 +77725,11 @@
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1016617": {
     "en": "Hildibrand",
@@ -75602,7 +77758,11 @@
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 10,
+      "y": 11
+    }
   },
   "1016622": {
     "en": "Godbert",
@@ -76139,28 +78299,44 @@
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1016812": {
     "en": "Imperious wyvern",
     "ja": "美しき翼の飛竜",
     "de": "Imposant[a] Wyvern",
     "fr": "Wyverne impérieuse",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 8,
+      "y": 28
+    }
   },
   "1016813": {
     "en": "Aymeric",
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1016814": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1016815": {
     "en": "Ga Bu",
@@ -76214,14 +78390,22 @@
     "ja": "実直な神殿騎士",
     "de": "Gewissenhaft[a] Tempelritter",
     "fr": "Templier intègre",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1016822": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1016823": {
     "en": "Aymeric",
@@ -76250,14 +78434,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1016826": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 14
+    }
   },
   "1016827": {
     "en": "Temple herald",
@@ -76275,7 +78467,11 @@
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 12
+    }
   },
   "1016829": {
     "en": "Grimold",
@@ -76427,7 +78623,11 @@
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 33,
+      "y": 25
+    }
   },
   "1016847": {
     "en": "Vath deftarm",
@@ -76741,7 +78941,11 @@
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1016883": {
     "en": "Artoirel",
@@ -77446,7 +79650,11 @@
     "ja": "小隊付甲軍曹",
     "de": "Sturmmaat[p] 2. Klasse",
     "fr": "Sergent des tempêtes",
-    "position": null
+    "position": {
+      "zoneid": 1802,
+      "x": 6,
+      "y": 6
+    }
   },
   "1016987": {
     "en": "Flame squadron sergeant",
@@ -77588,7 +79796,11 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 7,
+      "y": 27
+    }
   },
   "1017012": {
     "en": "Isildaure",
@@ -77630,14 +79842,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 8,
+      "y": 28
+    }
   },
   "1017023": {
     "en": "Aymeric",
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 8,
+      "y": 28
+    }
   },
   "1017024": {
     "en": "Lucia",
@@ -77827,7 +80047,11 @@
     "ja": "誘導する冒険者",
     "de": "Führer",
     "fr": "Guide de Solitude",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 36,
+      "y": 17
+    }
   },
   "1017058": {
     "en": "The Smith",
@@ -78117,7 +80341,11 @@
     "ja": "教皇庁の司祭",
     "de": "Priester[p] der Erzbasilika",
     "fr": "Prêtre du Saint-Siège",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 8
+    }
   },
   "1017117": {
     "en": "Temple Knight guard",
@@ -78175,28 +80403,44 @@
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 10
+    }
   },
   "1017129": {
     "en": "Hildibrand",
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 9
+    }
   },
   "1017130": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 9
+    }
   },
   "1017131": {
     "en": "Gigi",
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 9
+    }
   },
   "1017132": {
     "en": "Hildibrand",
@@ -78236,7 +80480,11 @@
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1017141": {
     "en": "Stacia",
@@ -78271,14 +80519,22 @@
     "ja": "ウタタ",
     "de": "Utata",
     "fr": "Utata",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 25,
+      "y": 5
+    }
   },
   "1017146": {
     "en": "Cait Sith",
     "ja": "ケット・シー",
     "de": "Cait Sith",
     "fr": "Cait Sith",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 25,
+      "y": 5
+    }
   },
   "1017149": {
     "en": "Leofard",
@@ -78895,14 +81151,22 @@
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1017276": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1017277": {
     "en": "Cyr",
@@ -78920,7 +81184,11 @@
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 8,
+      "y": 11
+    }
   },
   "1017297": {
     "en": "Mayaru Moyaru",
@@ -79100,7 +81368,11 @@
     "ja": "激怒する石工",
     "de": "Wütend[a] Steinmetz",
     "fr": "Maçon en colère",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1017329": {
     "en": "Mogkul",
@@ -79114,7 +81386,11 @@
     "ja": "タレソン",
     "de": "Tarresson",
     "fr": "Tarresson",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 6,
+      "y": 9
+    }
   },
   "1017331": {
     "en": "Tarresson",
@@ -79286,7 +81562,11 @@
     "ja": "採集好きのモーグリ族",
     "de": "Kollektor-Mogry",
     "fr": "Mog dendrologiste",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 39,
+      "y": 27
+    }
   },
   "1017359": {
     "en": "Mendicant moogle",
@@ -79335,21 +81615,33 @@
     "ja": "ひまひまモーグリ",
     "de": "Dämmerbommel-Mogry",
     "fr": "Mog oisif",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1017366": {
     "en": "Mindless moogle",
     "ja": "ぼけぼけモーグリ",
     "de": "Miesemogry",
     "fr": "Mog hébété",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 29,
+      "y": 36
+    }
   },
   "1017367": {
     "en": "Meager moogle",
     "ja": "ぐうぐうモーグリ",
     "de": "Wankelmogry",
     "fr": "Mog affamé",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 32,
+      "y": 37
+    }
   },
   "1017368": {
     "en": "Musing moogle",
@@ -79370,7 +81662,11 @@
     "ja": "修理中のモーグリ族",
     "de": "Bastler-Mogry",
     "fr": "Mog coutelier",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 32,
+      "y": 36
+    }
   },
   "1017371": {
     "en": "Mirthless moogle",
@@ -79419,14 +81715,22 @@
     "ja": "石切のモーグリ族",
     "de": "Felsbrecher-Mogry",
     "fr": "Mog tailleur de pierre",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 27
+    }
   },
   "1017384": {
     "en": "Muzzing moogle",
     "ja": "新米石切のモーグリ族",
     "de": "Felsbrecherhelfer-Mogry",
     "fr": "Mog apprenti tailleur",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 27
+    }
   },
   "1017387": {
     "en": "Muzzing moogle",
@@ -79524,7 +81828,11 @@
     "ja": "彫像を見守るモーグリ族",
     "de": "Wächter-Mogry",
     "fr": "Mog gardien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 34,
+      "y": 15
+    }
   },
   "1017412": {
     "en": "Meticulous moogle",
@@ -79545,7 +81853,11 @@
     "ja": "結晶採りのモーグリ族",
     "de": "Kristallsammler-Mogry",
     "fr": "Mog cristallier",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 31,
+      "y": 37
+    }
   },
   "1017415": {
     "en": "Mystified moogle",
@@ -79577,7 +81889,11 @@
     "ja": "商売上手のモーグリ族",
     "de": "Händler-Mogry",
     "fr": "Mog négociant",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 37
+    }
   },
   "1017422": {
     "en": "Tense Temple Knight",
@@ -79801,28 +82117,44 @@
     "ja": "怠け者のモーグリ族",
     "de": "Unmotiviert[a] Sammler-Mogry",
     "fr": "Mog tire-au-flanc",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 27
+    }
   },
   "1017458": {
     "en": "Maundering moogle",
     "ja": "怠け者のモーグリ族",
     "de": "Unmotiviert[a] Sammler-Mogry",
     "fr": "Mog tire-au-flanc",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 27
+    }
   },
   "1017459": {
     "en": "Maundering moogle",
     "ja": "怠け者のモーグリ族",
     "de": "Unmotiviert[a] Sammler-Mogry",
     "fr": "Mog tire-au-flanc",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 27
+    }
   },
   "1017460": {
     "en": "Maundering moogle",
     "ja": "怠け者のモーグリ族",
     "de": "Hochmotiviert[a] Sammler-Mogry",
     "fr": "Mog tire-au-flanc",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1017461": {
     "en": "Maundering moogle",
@@ -79885,7 +82217,11 @@
     "ja": "クリスタルを見守るモーグリ族",
     "de": "Ungeduldig[a] Sammler-Mogry",
     "fr": "Mog gardien",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 16,
+      "y": 8
+    }
   },
   "1017470": {
     "en": "Dextrous dragonet",
@@ -80260,7 +82596,11 @@
     "ja": "マテリア師",
     "de": "Materia-Einsetzer",
     "fr": "Spécialiste ès matérias",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 10
+    }
   },
   "1017623": {
     "en": "Poofchox",
@@ -80683,7 +83023,11 @@
     "ja": "ボーレル家の家令",
     "de": "Haushofmeister[p] der Borel",
     "fr": "Majordome des Borel",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 16,
+      "y": 9
+    }
   },
   "1017720": {
     "en": "Aymeric",
@@ -81926,42 +84270,66 @@
     "ja": "ルブラソワール",
     "de": "Lebrassoir",
     "fr": "Lebrassoir",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1017881": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 11
+    }
   },
   "1017882": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 11
+    }
   },
   "1017883": {
     "en": "Blaisie",
     "ja": "ブレジー",
     "de": "Blaisie",
     "fr": "Blaisie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 10
+    }
   },
   "1017885": {
     "en": "Briardien",
     "ja": "ブリアルディアン",
     "de": "Briardien",
     "fr": "Briardien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 7,
+      "y": 10
+    }
   },
   "1017886": {
     "en": "Briardien",
     "ja": "ブリアルディアン",
     "de": "Briardien",
     "fr": "Briardien",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 13
+    }
   },
   "1017887": {
     "en": "Briardien",
@@ -81979,7 +84347,11 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 9
+    }
   },
   "1017892": {
     "en": "Briardien",
@@ -82004,14 +84376,22 @@
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 9
+    }
   },
   "1017896": {
     "en": "Crammevoix",
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 9
+    }
   },
   "1017897": {
     "en": "Theomocent",
@@ -82074,49 +84454,77 @@
     "ja": "サテュールノワ",
     "de": "Saturnois",
     "fr": "Saturnois",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 8
+    }
   },
   "1017910": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 8
+    }
   },
   "1017911": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 9,
+      "y": 8
+    }
   },
   "1017912": {
     "en": "Archombadin",
     "ja": "アルションバダン",
     "de": "Archombadin",
     "fr": "Archombadin",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1017913": {
     "en": "Lebrassoir",
     "ja": "ルブラソワール",
     "de": "Lebrassoir",
     "fr": "Lebrassoir",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1017914": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 10
+    }
   },
   "1017915": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 10
+    }
   },
   "1017916": {
     "en": "Theomocent",
@@ -82158,49 +84566,77 @@
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 9
+    }
   },
   "1017924": {
     "en": "Leigh",
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 9
+    }
   },
   "1017925": {
     "en": "Crammevoix",
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 9
+    }
   },
   "1017926": {
     "en": "Briardien",
     "ja": "ブリアルディアン",
     "de": "Briardien",
     "fr": "Briardien",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1017927": {
     "en": "Archombadin",
     "ja": "アルションバダン",
     "de": "Archombadin",
     "fr": "Archombadin",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 9
+    }
   },
   "1017928": {
     "en": "Lebrassoir",
     "ja": "ルブラソワール",
     "de": "Lebrassoir",
     "fr": "Lebrassoir",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 9
+    }
   },
   "1017929": {
     "en": "Theomocent",
     "ja": "テオモサン",
     "de": "Theomocent",
     "fr": "Theomocent",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1017930": {
     "en": "Mide",
@@ -82396,77 +84832,121 @@
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1017960": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1017961": {
     "en": "Gigi",
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 11
+    }
   },
   "1017962": {
     "en": "World-weary maiden",
     "ja": "不機嫌な乙女",
     "de": "Enttäuscht[a] Adelsdame",
     "fr": "Ishgardaise mécontente",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1017963": {
     "en": "Crestfallen maiden",
     "ja": "落ち込んだ乙女",
     "de": "Beleidigt[a] Adelsdame",
     "fr": "Ishgardaise peinée",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1017964": {
     "en": "Vengeful maiden",
     "ja": "憤慨する乙女",
     "de": "Verärgert[a] Adelsdame",
     "fr": "Ishgardaise très remontée",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1017965": {
     "en": "Cyr",
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1017966": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1017967": {
     "en": "Julyan",
     "ja": "ジュリアン",
     "de": "Julyan",
     "fr": "Julyan",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1017968": {
     "en": "Hildibrand",
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1017969": {
     "en": "Gigi",
     "ja": "ギギ",
     "de": "Gigi",
     "fr": "Gigi",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 10,
+      "y": 12
+    }
   },
   "1017970": {
     "en": "Hildibrand",
@@ -82649,21 +85129,33 @@
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017989": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017990": {
     "en": "Cyr",
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017991": {
     "en": "Gigi",
@@ -82681,28 +85173,44 @@
     "ja": "ジュリアン",
     "de": "Julyan",
     "fr": "Julyan",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017993": {
     "en": "Hildibrand",
     "ja": "ヒルディブランド",
     "de": "Hildibrand",
     "fr": "Hildibrand",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017994": {
     "en": "Nashu Mhakaracca",
     "ja": "ナシュ・マカラッカ",
     "de": "Nashu Mhakaracca",
     "fr": "Nashu Mhakaracca",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017996": {
     "en": "Cyr",
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 16
+    }
   },
   "1017997": {
     "en": "Hildibrand",
@@ -82814,7 +85322,11 @@
     "ja": "アイメリク",
     "de": "Aymeric",
     "fr": "Aymeric",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 14,
+      "y": 11
+    }
   },
   "1018013": {
     "en": "Aymeric",
@@ -83400,63 +85912,99 @@
     "ja": "アパルトメント担当官",
     "de": "Wohnungsbeamtin",
     "fr": "Officier des appartements",
-    "position": null
+    "position": {
+      "zoneid": 1813,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018090": {
     "en": "Mender",
     "ja": "修理屋",
     "de": "Reparateur",
     "fr": "Artisan",
-    "position": null
+    "position": {
+      "zoneid": 1813,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018091": {
     "en": "Apartment merchant",
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 1813,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018092": {
     "en": "Apartment caretaker",
     "ja": "アパルトメント担当官",
     "de": "Wohnungsbeamt[a]",
     "fr": "Officier des appartements",
-    "position": null
+    "position": {
+      "zoneid": 1811,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018093": {
     "en": "Mender",
     "ja": "修理屋",
     "de": "Reparateur",
     "fr": "Artisane",
-    "position": null
+    "position": {
+      "zoneid": 1811,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018094": {
     "en": "Apartment merchant",
     "ja": "よろず屋",
     "de": "Krämerin",
     "fr": "Quincaillière",
-    "position": null
+    "position": {
+      "zoneid": 1811,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018095": {
     "en": "Apartment caretaker",
     "ja": "アパルトメント担当官",
     "de": "Wohnungsbeamtin",
     "fr": "Officier des appartements",
-    "position": null
+    "position": {
+      "zoneid": 1815,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018096": {
     "en": "Mender",
     "ja": "修理屋",
     "de": "Reparateur",
     "fr": "Artisan",
-    "position": null
+    "position": {
+      "zoneid": 1815,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018097": {
     "en": "Apartment merchant",
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 1815,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018103": {
     "en": "Yayake",
@@ -83933,7 +86481,11 @@
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 13,
+      "y": 11
+    }
   },
   "1018210": {
     "en": "Papalymo",
@@ -84096,7 +86648,11 @@
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 27,
+      "y": 35
+    }
   },
   "1018233": {
     "en": "Mogzin mockery",
@@ -84110,14 +86666,22 @@
     "ja": "モグジン",
     "de": "Vorarbeiter Mogzin",
     "fr": "Mogzin",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 25
+    }
   },
   "1018235": {
     "en": "Tarresson",
     "ja": "タレソン",
     "de": "Tarresson",
     "fr": "Tarresson",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 25
+    }
   },
   "1018236": {
     "en": "Ohl Deeh",
@@ -84131,14 +86695,22 @@
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 25
+    }
   },
   "1018238": {
     "en": "Wounded Temple Knight",
     "ja": "負傷した工兵",
     "de": "Verletzt[a] Tempelritter",
     "fr": "Ingénieur blessé",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 10,
+      "y": 25
+    }
   },
   "1018239": {
     "en": "Vath deftarm",
@@ -84206,7 +86778,11 @@
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 6,
+      "y": 14
+    }
   },
   "1018251": {
     "en": "Linu Vali",
@@ -84227,42 +86803,66 @@
     "ja": "リヌバリ",
     "de": "Linu Vali",
     "fr": "Linu Vali",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 30,
+      "y": 37
+    }
   },
   "1018254": {
     "en": "Vath deftarm",
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 30,
+      "y": 37
+    }
   },
   "1018255": {
     "en": "Vath deftarm",
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1018256": {
     "en": "Ohl Deeh",
     "ja": "オル・ディー",
     "de": "Ohl Deeh",
     "fr": "Ohl Deeh",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1018257": {
     "en": "Vath deftarm",
     "ja": "ウデキキ",
     "de": "Macher",
     "fr": "Futé",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 9,
+      "y": 11
+    }
   },
   "1018258": {
     "en": "Ohl Deeh",
     "ja": "オル・ディー",
     "de": "Ohl Deeh",
     "fr": "Ohl Deeh",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 9,
+      "y": 11
+    }
   },
   "1018259": {
     "en": "Vath deftarm",
@@ -84304,7 +86904,11 @@
     "ja": "モグジン",
     "de": "Vorarbeiter Mogzin",
     "fr": "Mogzin",
-    "position": null
+    "position": {
+      "zoneid": 2100,
+      "x": 7,
+      "y": 14
+    }
   },
   "1018265": {
     "en": "Raven-haired registrar",
@@ -84396,7 +87000,11 @@
     "ja": "マテリア師",
     "de": "Materia-Einsetzerin",
     "fr": "Spécialiste ès matérias",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018280": {
     "en": "Materia melder",
@@ -84435,7 +87043,11 @@
     "ja": "レイ",
     "de": "Leigh",
     "fr": "Leigh",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 8,
+      "y": 8
+    }
   },
   "1018290": {
     "en": "Damielliot",
@@ -84484,7 +87096,11 @@
     "ja": "クラムヴォワ",
     "de": "Crammevoix",
     "fr": "Crammevoix",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 10
+    }
   },
   "1018314": {
     "en": "Gentle-faced father",
@@ -84691,7 +87307,11 @@
     "ja": "加工システム",
     "de": "Veredelungssystem",
     "fr": "Dispositif de transformation",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 11
+    }
   },
   "1018341": {
     "en": "Raven-haired registrar",
@@ -85020,14 +87640,22 @@
     "ja": "ほわほわモーグリ",
     "de": "Fluff-Mogry",
     "fr": "Mog duveteux",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 26,
+      "y": 37
+    }
   },
   "1018429": {
     "en": "Vidofnir",
     "ja": "ヴィゾーヴニル",
     "de": "Vidofnir",
     "fr": "Vidofnir",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 26,
+      "y": 37
+    }
   },
   "1018430": {
     "en": "Alphinaud",
@@ -85122,7 +87750,11 @@
     "ja": "認証システム",
     "de": "Authentifizierungssystem",
     "fr": "Dispositif de vérification",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 11
+    }
   },
   "1018446": {
     "en": "6th Legion decurion",
@@ -85238,7 +87870,11 @@
     "ja": "キール",
     "de": "Cyr",
     "fr": "Cyr",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 9,
+      "y": 28
+    }
   },
   "1018460": {
     "en": "Orland",
@@ -85697,7 +88333,11 @@
     "ja": "ロックピッカー",
     "de": "Schlüsselmeisterin",
     "fr": "Serrurière",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 11
+    }
   },
   "1018649": {
     "en": "Royal herald",
@@ -85729,21 +88369,33 @@
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 1813,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018659": {
     "en": "Delivery moogle",
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 1811,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018660": {
     "en": "Delivery moogle",
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 1815,
+      "x": 6,
+      "y": 6
+    }
   },
   "1018662": {
     "en": "Material supplier",
@@ -87316,7 +89968,11 @@
     "ja": "居住区担当官",
     "de": "Unterkunftsbeamt[a]",
     "fr": "Officier du logement",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 10
+    }
   },
   "1019101": {
     "en": "Material supplier",
@@ -87345,7 +90001,11 @@
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 10,
+      "y": 10
+    }
   },
   "1019104": {
     "en": "Independent sutler",
@@ -87363,56 +90023,88 @@
     "ja": "ミスター・ハウジング",
     "de": "Unterkunftsenthusiast",
     "fr": "Enthousiaste du logement",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 9
+    }
   },
   "1019106": {
     "en": "Spoils collector",
     "ja": "スポイル取引窓口",
     "de": "Andenkenhändlerin",
     "fr": "Négociante d'espoilles",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 9
+    }
   },
   "1019107": {
     "en": "Spoils trader",
     "ja": "特殊品納品窓口",
     "de": "Ätherwarenhändler",
     "fr": "Récupérateur",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 9
+    }
   },
   "1019108": {
     "en": "Ferry skipper",
     "ja": "船頭",
     "de": "Kapitän",
     "fr": "Skipper",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 8,
+      "y": 9
+    }
   },
   "1019109": {
     "en": "Apartment caretaker",
     "ja": "アパルトメント担当官",
     "de": "Wohnungsbeamt[a]",
     "fr": "Officier des appartements",
-    "position": null
+    "position": {
+      "zoneid": 2272,
+      "x": 6,
+      "y": 6
+    }
   },
   "1019110": {
     "en": "Mender",
     "ja": "修理屋",
     "de": "Reparateurin",
     "fr": "Artisane",
-    "position": null
+    "position": {
+      "zoneid": 2272,
+      "x": 6,
+      "y": 6
+    }
   },
   "1019111": {
     "en": "Apartment merchant",
     "ja": "よろず屋",
     "de": "Krämer",
     "fr": "Quincaillier",
-    "position": null
+    "position": {
+      "zoneid": 2272,
+      "x": 6,
+      "y": 6
+    }
   },
   "1019112": {
     "en": "Delivery moogle",
     "ja": "レターモーグリ",
     "de": "Mogry-Postbote",
     "fr": "Mog postier",
-    "position": null
+    "position": {
+      "zoneid": 2272,
+      "x": 6,
+      "y": 6
+    }
   },
   "1019122": {
     "en": "Gatty",
@@ -90507,7 +93199,11 @@
     "ja": "からくり人形",
     "de": "Marionette",
     "fr": "Pantin",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 7,
+      "y": 12
+    }
   },
   "1019639": {
     "en": "D'zentsa",
@@ -90602,7 +93298,11 @@
     "ja": "ロックピッカー",
     "de": "Schlüsselmeisterin",
     "fr": "Serrurière",
-    "position": null
+    "position": {
+      "zoneid": 426,
+      "x": 7,
+      "y": 11
+    }
   },
   "1019652": {
     "en": "Picker of locks",
@@ -91560,42 +94260,66 @@
     "ja": "ノノワト",
     "de": "Nonowato",
     "fr": "Nonowato",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 13,
+      "y": 15
+    }
   },
   "1019873": {
     "en": "Krystrymm",
     "ja": "クリストリム",
     "de": "Krystrymm",
     "fr": "Krystrymm",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 15
+    }
   },
   "1019874": {
     "en": "Zansei",
     "ja": "ザンセイ",
     "de": "Zansei",
     "fr": "Zansei",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 13,
+      "y": 15
+    }
   },
   "1019875": {
     "en": "Fohcwyda",
     "ja": "フォクウィダ",
     "de": "Fohcwyda",
     "fr": "Fohcwyda",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 15
+    }
   },
   "1019876": {
     "en": "Stickqix",
     "ja": "スティックキクス",
     "de": "Stickix",
     "fr": "Stickqix",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 13,
+      "y": 15
+    }
   },
   "1019877": {
     "en": "Nonowato",
     "ja": "ノノワト",
     "de": "Nonowato",
     "fr": "Nonowato",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 12,
+      "y": 12
+    }
   },
   "1019882": {
     "en": "Nonowato",
@@ -94176,7 +96900,11 @@
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020215": {
     "en": "Haname",
@@ -96578,35 +99306,55 @@
     "ja": "ハンコック",
     "de": "Hancock",
     "fr": "Hancock",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020465": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020466": {
     "en": "Tataru",
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020467": {
     "en": "Lyse",
     "ja": "リセ",
     "de": "Lyse",
     "fr": "Lyse",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020468": {
     "en": "Alisaie",
     "ja": "アリゼー",
     "de": "Alisaie",
     "fr": "Alisaie",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020469": {
     "en": "Curt captain",
@@ -96825,14 +99573,22 @@
     "ja": "ソロバン",
     "de": "Soroban",
     "fr": "Soroban",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020490": {
     "en": "Gyodo",
     "ja": "ギョドウ",
     "de": "Gyodo",
     "fr": "Gyodo",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020491": {
     "en": "Sekiseigumi blade",
@@ -98009,7 +100765,11 @@
     "ja": "ハンコック",
     "de": "Hancock",
     "fr": "Hancock",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1020623": {
     "en": "Wounded Resistance fighter",
@@ -101310,14 +104070,22 @@
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1021192": {
     "en": "Kyokuho",
     "ja": "キョクホウ",
     "de": "Kyokuho",
     "fr": "Kyokuho",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1021193": {
     "en": "Dorgono",
@@ -101478,7 +104246,11 @@
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 15,
+      "y": 10
+    }
   },
   "1021222": {
     "en": "Kyokuho",
@@ -101679,7 +104451,11 @@
     "ja": "レヴェヴァ",
     "de": "Leveva",
     "fr": "Leveva",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1021256": {
     "en": "Udoku",
@@ -105483,7 +108259,11 @@
     "ja": "アリア",
     "de": "Arya",
     "fr": "Arya",
-    "position": null
+    "position": {
+      "zoneid": 2001,
+      "x": 28,
+      "y": 22
+    }
   },
   "1021778": {
     "en": "Arya",
@@ -105567,28 +108347,44 @@
     "ja": "シ・ルン・ティア",
     "de": "X'rhun Tia",
     "fr": "X'rhun Tia",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 8
+    }
   },
   "1021786": {
     "en": "Arya",
     "ja": "アリア",
     "de": "Arya",
     "fr": "Arya",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 8
+    }
   },
   "1021787": {
     "en": "Sour-faced priest",
     "ja": "渋面の司祭",
     "de": "Genervt[a] Priester",
     "fr": "Prêtre renfrogné",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 14,
+      "y": 8
+    }
   },
   "1021788": {
     "en": "Arya",
     "ja": "アリア",
     "de": "Arya",
     "fr": "Arya",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 12
+    }
   },
   "1021789": {
     "en": "X'rhun Tia",
@@ -105661,7 +108457,11 @@
     "ja": "シ・ルン・ティア",
     "de": "X'rhun Tia",
     "fr": "X'rhun Tia",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 11
+    }
   },
   "1021796": {
     "en": "X'rhun Tia",
@@ -106248,35 +109048,55 @@
     "ja": "疑り深い貧民",
     "de": "Misstrauisch[a] Bettlerin",
     "fr": "Nécessiteuse méfiante",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1021884": {
     "en": "Listless lowborn",
     "ja": "冷淡な貧民",
     "de": "Gleichgültig[a] Habenichts",
     "fr": "Nécessiteux indifférent",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1021885": {
     "en": "Musosai",
     "ja": "ムソウサイ",
     "de": "Musosai",
     "fr": "Musosai",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 13
+    }
   },
   "1021886": {
     "en": "Honfraint",
     "ja": "オンフラン",
     "de": "Honfraint",
     "fr": "Honfraint",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1021887": {
     "en": "Musosai",
     "ja": "ムソウサイ",
     "de": "Musosai",
     "fr": "Musosai",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 12
+    }
   },
   "1021888": {
     "en": "Momozigo",
@@ -107512,7 +110332,11 @@
     "ja": "ムソウサイ",
     "de": "Musosai",
     "fr": "Musosai",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 13
+    }
   },
   "1022095": {
     "en": "Fufulupa",
@@ -107894,14 +110718,22 @@
     "ja": "冷たい瞳の神殿騎士",
     "de": "Tempelritter[p] mit kaltem Blick",
     "fr": "Templier au regard froid",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1022150": {
     "en": "Rostnsthal",
     "ja": "ロスティンスタル",
     "de": "Rostnsthal",
     "fr": "Rostnsthal",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 12,
+      "y": 12
+    }
   },
   "1022151": {
     "en": "Muscadain",
@@ -107919,7 +110751,11 @@
     "ja": "警備担当の神殿騎士",
     "de": "Patrouillierend[a] Wachthauptmann",
     "fr": "Vigile des templiers",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 11,
+      "y": 8
+    }
   },
   "1022153": {
     "en": "Hilda",
@@ -111193,35 +114029,55 @@
     "ja": "ヤ・ミトラ",
     "de": "Y'mhitra",
     "fr": "Y'mhitra",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1022786": {
     "en": "Dancing Wolf",
     "ja": "ダンシング・ウルフ大闘士",
     "de": "Tanzender Wolf",
     "fr": "Dancing Wolf",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1022787": {
     "en": "Crispin",
     "ja": "クリスピン上等闘兵",
     "de": "Crispin",
     "fr": "Crispin",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1022788": {
     "en": "Denise",
     "ja": "デニース闘軍曹",
     "de": "Denise",
     "fr": "Denise",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1022789": {
     "en": "Jajasamu",
     "ja": "ジャジャサム少闘士",
     "de": "Jajasamu",
     "fr": "Jajasamu",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1022790": {
     "en": "Y'mhitra",
@@ -111584,7 +114440,11 @@
     "ja": "ロックピッカー",
     "de": "Schlüsselmeisterin",
     "fr": "Serrurière",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 10
+    }
   },
   "1022849": {
     "en": "Battle-scarred veteran",
@@ -111634,35 +114494,55 @@
     "ja": "ミユィ",
     "de": "Millie",
     "fr": "Millie",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1022856": {
     "en": "Discomposed carpenter",
     "ja": "苛立っている大工",
     "de": "Gereizt[a] Zimmermann",
     "fr": "Maçon irrité",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1022859": {
     "en": "Myste",
     "ja": "ミスト",
     "de": "Myste",
     "fr": "Myste",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 11,
+      "y": 12
+    }
   },
   "1022860": {
     "en": "Myste",
     "ja": "ミスト",
     "de": "Myste",
     "fr": "Myste",
-    "position": null
+    "position": {
+      "zoneid": 2300,
+      "x": 13,
+      "y": 11
+    }
   },
   "1022861": {
     "en": "Millie",
     "ja": "ミユィ",
     "de": "Millie",
     "fr": "Millie",
-    "position": null
+    "position": {
+      "zoneid": 2301,
+      "x": 12,
+      "y": 10
+    }
   },
   "1022862": {
     "en": "Myste",
@@ -111903,14 +114783,22 @@
     "ja": "シドゥルグ",
     "de": "Sidurgu",
     "fr": "Sidurgu",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1022889": {
     "en": "Rielle",
     "ja": "リエル",
     "de": "Rielle",
     "fr": "Rielle",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1022890": {
     "en": "Myste",
@@ -111928,14 +114816,22 @@
     "ja": "ミスト",
     "de": "Myste",
     "fr": "Myste",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 26,
+      "y": 36
+    }
   },
   "1022892": {
     "en": "Myste",
     "ja": "ミスト",
     "de": "Myste",
     "fr": "Myste",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1022893": {
     "en": "Sidurgu",
@@ -112273,7 +115169,11 @@
     "ja": "シドゥルグ",
     "de": "Sidurgu",
     "fr": "Sidurgu",
-    "position": null
+    "position": {
+      "zoneid": 2002,
+      "x": 28,
+      "y": 35
+    }
   },
   "1022954": {
     "en": "Maelstrom officer",
@@ -112858,7 +115758,11 @@
     "ja": "タタル",
     "de": "Tataru",
     "fr": "Tataru",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1023085": {
     "en": "Imperial patrol",
@@ -113776,7 +116680,11 @@
     "ja": "マウシ",
     "de": "Mauci",
     "fr": "Mauci",
-    "position": null
+    "position": {
+      "zoneid": 2411,
+      "x": 10,
+      "y": 28
+    }
   },
   "1023195": {
     "en": "Khulan",
@@ -116301,7 +119209,11 @@
     "ja": "プリンキピア",
     "de": "Principia",
     "fr": "Principia Invocationis Magicae",
-    "position": null
+    "position": {
+      "zoneid": 2101,
+      "x": 10,
+      "y": 11
+    }
   },
   "1023595": {
     "en": "Dancing Wolf",
@@ -116373,7 +119285,11 @@
     "ja": "シロガネの役人",
     "de": "Wohngebietsbeamt[a]",
     "fr": "Fonctionnaire de Shirogane",
-    "position": null
+    "position": {
+      "zoneid": 2412,
+      "x": 9,
+      "y": 14
+    }
   },
   "1023606": {
     "en": "Alphinaud",
@@ -120652,7 +123568,11 @@
     "ja": "素材屋",
     "de": "Materiallieferantin",
     "fr": "Marchande",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1024556": {
     "en": "Material supplier",
@@ -120736,7 +123656,11 @@
     "ja": "よろず屋",
     "de": "Krämerin",
     "fr": "Quincaillière",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1024568": {
     "en": "Junkmonger",
@@ -120764,7 +123688,11 @@
     "ja": "よろず屋",
     "de": "Krämerin",
     "fr": "Quincaillière",
-    "position": null
+    "position": {
+      "zoneid": 1101,
+      "x": 6,
+      "y": 6
+    }
   },
   "1024572": {
     "en": "Mender",
@@ -120824,7 +123752,11 @@
     "ja": "修理屋",
     "de": "Reparateurin",
     "fr": "Artisane",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1024580": {
     "en": "Mender",
@@ -120852,7 +123784,11 @@
     "ja": "修理屋",
     "de": "Reparateurin",
     "fr": "Artisane",
-    "position": null
+    "position": {
+      "zoneid": 1101,
+      "x": 6,
+      "y": 6
+    }
   },
   "1024584": {
     "en": "Grede",
@@ -123339,14 +126275,22 @@
     "ja": "アルフィノ",
     "de": "Alphinaud",
     "fr": "Alphinaud",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025024": {
     "en": "Alisaie",
     "ja": "アリゼー",
     "de": "Alisaie",
     "fr": "Alisaie",
-    "position": null
+    "position": {
+      "zoneid": 2927,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025026": {
     "en": "Yugiri",
@@ -123417,14 +126361,22 @@
     "ja": "奉公人",
     "de": "Hokonin",
     "fr": "Hôkônin",
-    "position": null
+    "position": {
+      "zoneid": 1101,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025035": {
     "en": "Hokonin",
     "ja": "奉公人",
     "de": "Hokonin",
     "fr": "Hôkônin",
-    "position": null
+    "position": {
+      "zoneid": 1102,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025036": {
     "en": "Hokonin",
@@ -123484,28 +126436,44 @@
     "ja": "アナンタ族の素材屋",
     "de": "Ananta-Lieferantin",
     "fr": "Vendeuse ananta",
-    "position": null
+    "position": {
+      "zoneid": 1895,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025044": {
     "en": "Ananta junkmonger",
     "ja": "アナンタ族のよろず屋",
     "de": "Ananta-Krämerin",
     "fr": "Quincaillière ananta",
-    "position": null
+    "position": {
+      "zoneid": 1895,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025045": {
     "en": "Ananta mender",
     "ja": "アナンタ族の修理屋",
     "de": "Ananta-Reparateurin",
     "fr": "Réparatrice ananta",
-    "position": null
+    "position": {
+      "zoneid": 1105,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025046": {
     "en": "Ananta maidservant",
     "ja": "アナンタ族の使用人",
     "de": "Ananta-Nestdienerin",
     "fr": "Employée ananta",
-    "position": null
+    "position": {
+      "zoneid": 1895,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025047": {
     "en": "Gerolt",
@@ -127232,7 +130200,11 @@
     "ja": "重そうな荷箱",
     "de": "Materialkiste",
     "fr": "Caisse de matériaux",
-    "position": null
+    "position": {
+      "zoneid": 2411,
+      "x": 19,
+      "y": 21
+    }
   },
   "1025777": {
     "en": "Affable Namazu",
@@ -128428,7 +131400,11 @@
     "ja": "古物商",
     "de": "Gebrauchtwarenhändlerin",
     "fr": "Magasinière personnelle",
-    "position": null
+    "position": {
+      "zoneid": 1101,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025915": {
     "en": "Journeyman salvager",
@@ -128470,7 +131446,11 @@
     "ja": "古物商",
     "de": "Gebrauchtwarenhändlerin",
     "fr": "Magasinière personnelle",
-    "position": null
+    "position": {
+      "zoneid": 1100,
+      "x": 6,
+      "y": 6
+    }
   },
   "1025921": {
     "en": "Journeyman salvager",
