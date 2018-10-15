@@ -81,8 +81,8 @@ export class ListsFacade {
     ga('send', 'event', 'List', 'deletion');
   }
 
-  updateList(list: List): void {
-    this.store.dispatch(new UpdateList(list));
+  updateList(list: List, updateCompact = false): void {
+    this.store.dispatch(new UpdateList(list, updateCompact));
   }
 
   updateListIndex(list: List): void {

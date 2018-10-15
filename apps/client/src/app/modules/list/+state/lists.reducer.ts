@@ -41,12 +41,12 @@ export function listsReducer(
           action.payload
         ]
       };
-      if (state.myLists.find(l => l.$key === action.payload.$key) !== undefined) {
+      if (action.updateCompact && state.myLists.find(l => l.$key === action.payload.$key) !== undefined) {
         delete action.payload.items;
         state.myLists = [
           ...state.myLists.filter(list => list.$key !== action.payload.$key),
           action.payload
-        ]
+        ];
       }
       break;
     }
