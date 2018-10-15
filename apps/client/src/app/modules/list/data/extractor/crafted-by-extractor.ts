@@ -26,7 +26,7 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
   protected doExtract(item: Item, itemData: ItemData): CraftedBy[] {
     const result = [];
-    for (const craft of item.craft.filter(c => c.job > 0)) {
+    for (const craft of item.craft) {
       const craftedBy: CraftedBy = {
         itemId: item.id,
         icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,

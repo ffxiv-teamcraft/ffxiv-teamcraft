@@ -85,10 +85,12 @@
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
     <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto">
       <!--TODO Simulator link-->
-      <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
-              [nzGhost]="true" *ngFor="let craft of item.craftedBy">
-        <img [src]="craft.icon" alt="" class="img-icon">
-      </button>
+      <div *ngFor="let craft of item.craftedBy">
+        <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
+                [nzGhost]="true" *ngIf="craft.icon !== ''">
+          <img [src]="craft.icon" alt="" class="img-icon">
+        </button>
+      </div>
       <button nz-button nzShape="circle" *ngIf="item.gatheredBy !== undefined" nz-tooltip
               nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}" (click)="openGatheredByPopup()">
         <img class="img-icon gathering-icon" src="{{item.gatheredBy.icon}}">
