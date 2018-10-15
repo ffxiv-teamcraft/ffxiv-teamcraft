@@ -90,7 +90,6 @@ handleAetheryte = (row) => {
 };
 
 handleMonster = (row, memoryData) => {
-  console.log(row);
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[row.BNpcNameID] = {
     zoneid: +row.PlaceNameID,
