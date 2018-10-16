@@ -17,6 +17,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
 import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
 import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
+import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
 
 @Component({
   selector: 'app-list-details',
@@ -143,6 +144,15 @@ export class ListDetailsComponent implements OnInit {
       nzFooter: null,
       nzContent: TagsPopupComponent,
       nzComponentParams: { list: list }
+    });
+  }
+
+  openPermissionsPopup(list: List):void{
+    this.dialog.create({
+      nzTitle: this.translate.instant('PERMISSIONS.Title'),
+      nzFooter: null,
+      nzContent: PermissionsBoxComponent,
+      nzComponentParams: { data: list }
     });
   }
 

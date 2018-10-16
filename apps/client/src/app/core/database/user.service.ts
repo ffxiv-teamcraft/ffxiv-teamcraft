@@ -35,69 +35,6 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
   }
 
   /**
-   * Gets user ingame informations.
-   * @returns {Observable<any>}
-   */
-
-  // public getCharacterWithoutCache(): Observable<any> {
-  //     return this.getUserData()
-  //         .pipe(
-  //             mergeMap(user => {
-  //                 return this.dataService.getCharacter(user.lodestoneId, true);
-  //             })
-  //         );
-  // }
-
-  /**
-   * Returns user data informations.
-   * @returns {Observable<AppUser>}
-   */
-  // public getUserData(): Observable<AppUser> {
-  //     return this.reloader
-  //         .pipe(
-  //             filter(() => !this.loggingIn),
-  //             switchMap(() => {
-  //                 return this.af.authState
-  //                     .pipe(
-  //                         first(),
-  //                         mergeMap((user) => {
-  //                             if ((user === null && !this.loggingIn) || user.uid === undefined) {
-  //                                 this.af.auth.signInAnonymously();
-  //                                 return of(<AppUser>{name: 'Anonymous', anonymous: true});
-  //                             }
-  //                             if (user === null || user.isAnonymous) {
-  //                                 return this.get(user.uid).pipe(
-  //                                     catchError(() => {
-  //                                         return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
-  //                                     }));
-  //                             } else {
-  //                                 return this.get(user.uid)
-  //                                     .pipe(
-  //                                         map(u => {
-  //                                             return u;
-  //                                         })
-  //                                     );
-  //                             }
-  //                         })
-  //                     );
-  //             }),
-  //             mergeMap((u: AppUser) => {
-  //                 u.patron = false;
-  //                 if (u.patreonEmail === undefined) {
-  //                     return of(u);
-  //                 }
-  //                 return this.firebase.list('/patreon/supporters').valueChanges()
-  //                     .pipe(
-  //                         map((supporters: { email: string }[]) => {
-  //                             u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
-  //                             return u;
-  //                         })
-  //                     );
-  //             })
-  //         );
-  // }
-
-  /**
    * Checks if a given email is available for patreon account linking.
    * @param {string} email
    * @returns {Observable<boolean>}

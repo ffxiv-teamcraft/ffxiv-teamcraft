@@ -8,7 +8,7 @@ export class DataWithPermissions extends DataModel {
   @ForeignKey(TeamcraftUser)
   authorId: string;
 
-  public registry: { [index: string]: PermissionLevel } = {};
+  public registry: { [index: string]: PermissionLevel } = {'9WA46RdoHsZrMQophOJjALzD6yU2': PermissionLevel.WRITE, '9231253336202687179': PermissionLevel.READ};
 
   public everyone: PermissionLevel = PermissionLevel.PARTICIPATE;
 
@@ -18,6 +18,14 @@ export class DataWithPermissions extends DataModel {
     }
     // Priority to the registry, so you can set READ level to everyone but one guy.
     return this.registry[identifier] || this.everyone;
+  }
+
+  public removePermissionRow(identifier: string): void {
+    delete this.registry[identifier];
+  }
+
+  public addPermissionRow(identifier: string): void {
+    this.registry[identifier] = this.everyone;
   }
 
   public setPermissionLevel(identifier: string, level: PermissionLevel): void {

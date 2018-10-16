@@ -5,7 +5,8 @@
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
         <i-layout></i-layout>
       </button>
-      <button disabled nz-button nzType="primary" nzShape="circle">
+      <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'PERMISSIONS.Title' | translate"
+              (click)="openPermissionsPopup(list)">
         <i-shield></i-shield>
       </button>
       <button disabled nz-button nzType="primary" nzShape="circle">

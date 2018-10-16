@@ -455,6 +455,7 @@
     "Everyone": "Everyone",
     "You": "You",
     "Add_new": "Add a user",
+    "Add_new_fc": "Add a Free Company",
     "Placeholder": "Email or User ID",
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "User not found",

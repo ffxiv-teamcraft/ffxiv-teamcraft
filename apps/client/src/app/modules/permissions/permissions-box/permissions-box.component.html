@@ -1,0 +1,48 @@
+<div *ngIf="permissionRows$ | async as permissionRows; else loader">
+  <nz-list [nzRenderItem]="permissionRowTemplate" [nzDataSource]="permissionRows" nzSize="small">
+    <ng-template #permissionRowTemplate let-row>
+      <nz-list-item [nzContent]="content">
+        <nz-list-item-meta [nzTitle]="row.name" [nzAvatar]="avatar | ifMobile: null">
+          <ng-template #avatar>
+            <div class="avatar-container">
+              <img src="{{layer}}" alt="" *ngFor="let layer of row.avatar" class="avatar-layer">
+            </div>
+          </ng-template>
+        </nz-list-item-meta>
+        <ng-template #content>
+          <nz-select [ngModel]="row.permission" (ngModelChange)="updatePermission(row.id, $event)"
+                     class="permission-select">
+            <nz-option *ngFor="let level of permissionLevels" [nzValue]="level.value"
+                       [nzLabel]="level.label"></nz-option>
+          </nz-select>
+        </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+  <nz-list-item [nzContent]="everyoneContent">
+    <nz-list-item-meta [nzTitle]="'PERMISSIONS.Everyone' | translate">
+    </nz-list-item-meta>
+    <ng-template #everyoneContent>
+      <nz-select [ngModel]="data.everyone" (ngModelChange)="updateEveryonePermission($event)" class="permission-select">
+        <nz-option *ngFor="let level of everyonePermissionLevels" [nzValue]="level.value"
+                   [nzLabel]="level.label"></nz-option>
+      </nz-select>
+    </ng-template>
+  </nz-list-item>
+  <div fxLayout="column" fxLayoutGap="15px">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <button nz-button nzGhost nzType="primary"><i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new' | translate}}</button>
+      <button nz-button nzGhost nzType="primary"><i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}</button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+      <button nz-button [nzType]="'primary'" (click)="save()">{{'Save' | translate}}</button>
+      <button nz-button nzGhost (click)="cancel()">
+        {{'Cancel' | translate}}
+      </button>
+    </div>
+
+  </div>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

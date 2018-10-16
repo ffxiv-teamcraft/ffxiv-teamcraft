@@ -33,6 +33,7 @@ import { VoyagesComponent } from './item-details/voyages/voyages.component';
 import { VenturesComponent } from './item-details/ventures/ventures.component';
 import { TradesComponent } from './item-details/trades/trades.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { PermissionsModule } from '../../modules/permissions/permissions.module';
 
 const routes: Routes = [
   {
@@ -61,6 +62,7 @@ const routes: Routes = [
     LayoutEditorModule,
     ProgressPopupModule,
     MapModule,
+    PermissionsModule,
 
     FlexLayoutModule,
 
