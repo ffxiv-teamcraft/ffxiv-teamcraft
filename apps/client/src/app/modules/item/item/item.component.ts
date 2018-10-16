@@ -41,7 +41,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { folklores } from '../../../core/data/sources/folklores';
 import { VentureDetailsPopupComponent } from '../venture-details-popup/venture-details-popup.component';
 import { CraftedBy } from '../../list/model/crafted-by';
-import { Permissions } from '../../../core/database/permissions/permissions';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { map } from 'rxjs/operators';
@@ -252,7 +251,7 @@ export class ItemComponent implements OnInit, OnChanges {
   user: any;
 
   @Input()
-  permissions: Permissions;
+  permissions: any;
 
   requiredForFinalCraft = 0;
 

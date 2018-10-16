@@ -1,25 +1,30 @@
 import { DataModel } from '../storage/data-model';
-import { PermissionsRegistry } from './permissions-registry';
-import { Permissions } from './permissions';
-import { DeserializeAs } from '@kaiu/serializer';
 import { ForeignKey } from '../relational/foreign-key';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { PermissionLevel } from './permission-level.enum';
 
 export class DataWithPermissions extends DataModel {
 
   @ForeignKey(TeamcraftUser)
   authorId: string;
 
-  @DeserializeAs(PermissionsRegistry)
-  permissionsRegistry: PermissionsRegistry = new PermissionsRegistry();
+  public registry: { [index: string]: PermissionLevel } = {};
 
-  public getPermissions(userId: string, freeCompanyId?: string): Permissions {
-    if (userId === this.authorId) {
-      return { read: true, participate: true, write: true };
+  public everyone: PermissionLevel = PermissionLevel.PARTICIPATE;
+
+  public getPermissionLevel(identifier: string): PermissionLevel {
+    if (identifier === this.authorId) {
+      return PermissionLevel.OWNER;
     }
-    if (freeCompanyId !== undefined && this.permissionsRegistry.freeCompanyId === freeCompanyId) {
-      return this.permissionsRegistry.freeCompany;
+    // Priority to the registry, so you can set READ level to everyone but one guy.
+    return this.registry[identifier] || this.everyone;
+  }
+
+  public setPermissionLevel(identifier: string, level: PermissionLevel): void {
+    // You can't set permissions for the author, he'll stay the admin forever.
+    if (identifier === this.authorId) {
+      return;
     }
-    return this.permissionsRegistry.registry[userId] || this.permissionsRegistry.everyone;
+    this.registry[identifier] = level;
   }
 }
