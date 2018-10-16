@@ -8,6 +8,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
+import { UserPickerModule } from '../user-picker/user-picker.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 
     PipesModule,
     CoreModule,
-    PageLoaderModule
+    PageLoaderModule,
+    UserPickerModule
   ],
   declarations: [PermissionsBoxComponent],
   entryComponents: [PermissionsBoxComponent],

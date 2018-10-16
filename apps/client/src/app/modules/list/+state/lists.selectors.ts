@@ -9,6 +9,11 @@ const getMylistsLoading = createSelector(
   (state: ListsState) => !state.myListsConnected
 );
 
+const getListsWithWriteAccessLoading = createSelector(
+  getListsState,
+  (state: ListsState) => !state.listsWithWriteAccessConnected
+);
+
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
@@ -21,6 +26,14 @@ const getAllMyLists = createSelector(
   getMylistsLoading,
   (state: ListsState, loadingMyLists: boolean) => {
     return loadingMyLists ? [] : state.myLists;
+  }
+);
+
+const getListsWithWriteAccess = createSelector(
+  getListsState,
+  getListsWithWriteAccessLoading,
+  (state: ListsState, loading: boolean) => {
+    return loading ? [] : state.listsWithWriteAccess;
   }
 );
 
@@ -41,5 +54,6 @@ export const listsQuery = {
   getMylistsLoading,
   getAllListDetails,
   getSelectedList,
-  getAllMyLists
+  getAllMyLists,
+  getListsWithWriteAccess
 };

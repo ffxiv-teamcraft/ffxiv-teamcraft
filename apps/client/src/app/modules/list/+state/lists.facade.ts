@@ -7,7 +7,7 @@ import { listsQuery } from './lists.selectors';
 import {
   CreateList,
   DeleteList,
-  LoadListDetails,
+  LoadListDetails, LoadListsWithWriteAccess,
   LoadMyLists,
   SelectList,
   SetItemDone,
@@ -16,10 +16,11 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay, distinctUntilChanged } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 declare const ga: Function;
 
@@ -34,9 +35,16 @@ export class ListsFacade {
       });
     })
   );
+  listsWithWriteAccess$ = this.store.select(listsQuery.getListsWithWriteAccess);
   selectedList$ = this.store.select(listsQuery.getSelectedList);
 
-  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService) {
+  selectedListPermissionLevel$ = combineLatest(this.selectedList$, this.authFacade.userId$).pipe(
+    map(([list, userId]) => list.getPermissionLevel(userId)),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
+  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade) {
   }
 
   createEmptyList(): void {
@@ -91,6 +99,10 @@ export class ListsFacade {
 
   loadMyLists(): void {
     this.store.dispatch(new LoadMyLists());
+  }
+
+  loadListsWithWriteAccess(): void {
+    this.store.dispatch(new LoadListsWithWriteAccess());
   }
 
   load(key: string): void {

@@ -20,6 +20,7 @@ import { VendorsComponent } from '../item-details/vendors/vendors.component';
 import { VenturesComponent } from '../item-details/ventures/ventures.component';
 import { VoyagesComponent } from '../item-details/voyages/voyages.component';
 import { TradesComponent } from '../item-details/trades/trades.component';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Component({
   selector: 'app-item-row',
@@ -41,6 +42,8 @@ export class ItemRowComponent implements OnInit {
   canBeCrafted$: Observable<boolean>;
 
   hasAllBaseIngredients$: Observable<boolean>;
+
+  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 

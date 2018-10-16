@@ -17,12 +17,17 @@ export class ListsComponent {
 
   public lists$: Observable<List[]>;
 
+  public listsWithWriteAccess$: Observable<List[]>;
+
   public loading$: Observable<boolean>;
 
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService) {
     this.lists$ = this.listsFacade.myLists$.pipe(
+      debounceTime(100)
+    );
+    this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
       debounceTime(100)
     );
     this.loading$ = this.listsFacade.loadingMyLists$;

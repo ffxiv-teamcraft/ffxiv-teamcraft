@@ -1,14 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionDisplayRow } from '../permission-display-row';
 import { Observable } from 'rxjs/Observable';
-import { first, map, switchMap } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
-import { combineLatest, of } from 'rxjs';
+import { combineLatest, of, ReplaySubject, Subject } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
-import { ListsFacade } from '../../list/+state/lists.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { UserPickerService } from '../../user-picker/user-picker.service';
 
 @Component({
   selector: 'app-permissions-box',
@@ -18,10 +17,11 @@ import { NzModalRef } from 'ng-zorro-antd';
 })
 export class PermissionsBoxComponent implements OnInit {
 
-  public dirty = false;
-
-  @Input()
   public data: DataWithPermissions;
+
+  public changes$: ReplaySubject<DataWithPermissions> = new ReplaySubject<DataWithPermissions>();
+
+  public ready$: Subject<void>;
 
   permissionLevels = Object.keys(PermissionLevel)
     .filter(k => typeof PermissionLevel[k] === 'number')
@@ -39,12 +39,12 @@ export class PermissionsBoxComponent implements OnInit {
 
   permissionRows$: Observable<PermissionDisplayRow[]>;
 
-  constructor(private xivapi: XivapiService, private userService: UserService,
-              private listsFacade: ListsFacade, private modalRef: NzModalRef) {
+  constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService) {
   }
 
   ngOnInit(): void {
-    this.permissionRows$ = of(this.data).pipe(
+    this.changes$.next(this.data);
+    this.permissionRows$ = this.changes$.pipe(
       switchMap(data => {
         const registryKeys = Object.keys(data.registry);
         if (registryKeys.length === 0) {
@@ -57,8 +57,8 @@ export class PermissionsBoxComponent implements OnInit {
               let entityDetails$: Observable<{ name: string, avatar: string[] }>;
               // If the id has no character in it, it's a free company id, not a TC user id
               if (/^\d+$/im.test(id)) {
-                entityDetails$ = this.xivapi.getFreeCompany(+id, { columns: ['FreeCompany.Name', 'FreeCompany.Crest'] }).pipe(
-                  map(res => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.Crest }))
+                entityDetails$ = this.xivapi.getFreeCompany(id, { columns: ['FreeCompany.Name', 'FreeCompany.Crest'] }).pipe(
+                  map((res: any) => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.Crest }))
                 );
               } else {
                 entityDetails$ = this.userService.get(id).pipe(
@@ -83,24 +83,28 @@ export class PermissionsBoxComponent implements OnInit {
         );
       })
     );
+    this.ready$.next(null);
   }
 
-  public save(): void {
-    this.modalRef.close(this.data);
-  }
-
-  public cancel(): void {
-    this.modalRef.close();
+  public addUser(): void {
+    this.userPickerService.pickUserId()
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((userId) => {
+        this.data.addPermissionRow(userId);
+        this.changes$.next(this.data);
+      });
   }
 
   public updatePermission(id: string, newLevel: PermissionLevel): void {
     this.data.setPermissionLevel(id, newLevel);
-    this.dirty = true;
+    this.changes$.next(this.data);
   }
 
   public updateEveryonePermission(newLevel: PermissionLevel): void {
     this.data.everyone = newLevel;
-    this.dirty = true;
+    this.changes$.next(this.data);
   }
 
 }

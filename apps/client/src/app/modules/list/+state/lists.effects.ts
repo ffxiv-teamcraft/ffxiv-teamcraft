@@ -7,6 +7,7 @@ import {
   DeleteList,
   ListDetailsLoaded,
   ListsActionTypes,
+  ListsWithWriteAccessLoaded,
   LoadListDetails,
   MyListsLoaded,
   SetItemDone,
@@ -20,6 +21,7 @@ import { combineLatest, concat, EMPTY, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
 export class ListsEffects {
@@ -36,6 +38,17 @@ export class ListsEffects {
   );
 
   @Effect()
+  loadListsWithWriteAccess = this.actions$.pipe(
+    ofType(ListsActionTypes.LoadListsWithWriteAccess),
+    switchMap(() => this.authFacade.userId$),
+    distinctUntilChanged(),
+    switchMap((userId) => {
+      return this.listCompactsService.getWithWriteAccess(userId);
+    }),
+    map(lists => new ListsWithWriteAccessLoaded(lists))
+  );
+
+  @Effect()
   loadListDetails$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListDetails),
     withLatestFrom(this.listsFacade.allListDetails$),
@@ -49,11 +62,13 @@ export class ListsEffects {
       );
     }),
     distinctUntilChanged(),
-    map(([listKey, userId, list]) => {
-      // TODO Read permission should be handled here.
-      return [listKey, list];
+    map(([listKey, userId, list]: [string, string, List]) => {
+      if (list !== null && list.getPermissionLevel(userId) >= PermissionLevel.READ) {
+        return [listKey, list];
+      }
+      return [listKey, null];
     }),
-    map(([key, list]) => {
+    map(([key, list]: [string, List]) => {
       if (list === null) {
         return new ListDetailsLoaded({ $key: key, notFound: true });
       }

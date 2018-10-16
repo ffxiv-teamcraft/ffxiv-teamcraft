@@ -16,8 +16,7 @@ export class RegisterPopupComponent {
   errorMessageCode: string;
 
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef, private messageService: NzMessageService,
-              private translate: TranslateService) {
+              private modalRef: NzModalRef) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -42,11 +41,6 @@ export class RegisterPopupComponent {
     this.authFacade.register(this.form.value.email, this.form.value.password)
       .then(() => {
         this.modalRef.close();
-        this.messageService.info(this.translate.instant('Verification_mail_sent'), {
-          nzDuration: 5000,
-          nzPauseOnHover: true,
-          nzAnimate: true
-        });
       }).catch(err => this.onError(err));
   }
 

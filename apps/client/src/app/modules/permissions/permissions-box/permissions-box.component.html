@@ -15,6 +15,9 @@
             <nz-option *ngFor="let level of permissionLevels" [nzValue]="level.value"
                        [nzLabel]="level.label"></nz-option>
           </nz-select>
+          <button nz-button nzType="danger" (click)="data.removePermissionRow(row.id); changes$.next(data);">
+            <i class="anticon anticon-close"></i>
+          </button>
         </ng-template>
       </nz-list-item>
     </ng-template>
@@ -31,16 +34,13 @@
   </nz-list-item>
   <div fxLayout="column" fxLayoutGap="15px">
     <div fxLayout="column" fxLayoutGap="10px">
-      <button nz-button nzGhost nzType="primary"><i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new' | translate}}</button>
-      <button nz-button nzGhost nzType="primary"><i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}</button>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-      <button nz-button [nzType]="'primary'" (click)="save()">{{'Save' | translate}}</button>
-      <button nz-button nzGhost (click)="cancel()">
-        {{'Cancel' | translate}}
+      <button nz-button nzGhost nzType="primary" (click)="addUser()">
+        <i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new' | translate}}
+      </button>
+      <button disabled nz-button nzGhost nzType="primary">
+        TODO <i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
     </div>
-
   </div>
 </div>
 <ng-template #loader>

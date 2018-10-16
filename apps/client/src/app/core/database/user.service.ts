@@ -23,7 +23,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
       .snapshotChanges()
       .pipe(
         map(snaps => snaps[0]),
-        map((snap:any) => {
+        map((snap: any) => {
           const valueWithKey: TeamcraftUser = { $key: snap.payload.key, ...snap.payload.val() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');
@@ -90,6 +90,17 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
       user.user.updateEmail(newMail)
         .then(() => user.user.sendEmailVerification());
     });
+  }
+
+  public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {
+    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('defaultLodestoneId').equalTo(id))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: any[]) => {
+          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ $key: snap.payload.key, ...snap.payload.val() }));
+          return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
+        })
+      );
   }
 
   protected getBaseUri(params?: any): string {

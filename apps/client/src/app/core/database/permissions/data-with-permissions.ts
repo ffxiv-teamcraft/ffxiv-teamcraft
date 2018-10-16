@@ -8,7 +8,7 @@ export class DataWithPermissions extends DataModel {
   @ForeignKey(TeamcraftUser)
   authorId: string;
 
-  public registry: { [index: string]: PermissionLevel } = {'9WA46RdoHsZrMQophOJjALzD6yU2': PermissionLevel.WRITE, '9231253336202687179': PermissionLevel.READ};
+  public registry: { [index: string]: PermissionLevel } = {};
 
   public everyone: PermissionLevel = PermissionLevel.PARTICIPATE;
 

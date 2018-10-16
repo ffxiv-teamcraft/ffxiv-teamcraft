@@ -1,8 +1,15 @@
-.avatar-layer {
-  width: 32px;
-  border-radius: 50%;
-}
-
 .permission-select {
   width: 150px;
+}
+
+.avatar-container {
+  position: relative;
+  width: 32px;
+  .avatar-layer {
+    width: 32px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

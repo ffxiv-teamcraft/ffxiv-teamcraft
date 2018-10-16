@@ -14,9 +14,10 @@
         <i class="material-icons">update</i>
       </button>
     </div>
+    <h2>{{'LISTS.Your_lists' | translate}}</h2>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists)">
-      <div class="ngx-dnd-item" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"
+      <div class="ngx-dnd-item list-panel" *ngFor="let list of lists; trackBy: trackByList" ngxDraggable="list"
            [model]="list">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
@@ -24,5 +25,13 @@
     <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)">
       {{'LISTS.No_lists' | translate}}
     </app-fullpage-message>
+  </div>
+  <div *ngIf="listsWithWriteAccess$ | async as listsWithWriteAccess">
+    <div *ngIf="listsWithWriteAccess.length > 0">
+      <h2>{{'LISTS.Shared_lists' | translate}}</h2>
+      <div class="list-panel" *ngFor="let list of listsWithWriteAccess; trackBy: trackByList">
+        <app-list-panel [list]="list"></app-list-panel>
+      </div>
+    </div>
   </div>
 </ng-template>

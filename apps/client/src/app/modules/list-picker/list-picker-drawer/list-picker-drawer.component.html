@@ -11,7 +11,7 @@
   </ng-template>
   <ng-template #header><i class="anticon anticon-solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
 </nz-list>
-<nz-list [nzDataSource]="[]" [nzRenderItem]="sharedList" [nzHeader]="headerSharedLists">
+<nz-list [nzDataSource]="listsWithWriteAccess$ | async" [nzRenderItem]="sharedList" [nzHeader]="headerSharedLists">
   <ng-template #sharedList let-list>
     <nz-list-item [nzActions]="[pickSharedList]">
       <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">

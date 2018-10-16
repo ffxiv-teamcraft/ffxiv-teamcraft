@@ -4,16 +4,20 @@ import { List } from '../model/list';
 
 export interface ListsState {
   myLists: List[];
+  listsWithWriteAccess: List[],
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   myListsConnected: boolean;
+  listsWithWriteAccessConnected: boolean;
   communityListsConnected: boolean;
 }
 
 export const initialState: ListsState = {
   myLists: [],
+  listsWithWriteAccess: [],
   listDetails: [],
   myListsConnected: false,
+  listsWithWriteAccessConnected: false,
   communityListsConnected: false
 };
 
@@ -29,6 +33,17 @@ export function listsReducer(
           ...action.payload
         ],
         myListsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.ListsWithWriteAccessLoaded: {
+      state = {
+        ...state,
+        listsWithWriteAccess: [
+          ...action.payload
+        ],
+        listsWithWriteAccessConnected: true
       };
       break;
     }

@@ -14,7 +14,8 @@
       </span>
     </span>
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
-      <button nz-dropdown nzSize="small" (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+      <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
+              nz-button [nzShape]="'circle'">
         <i class="anticon anticon-ellipsis"></i></button>
       <ul nz-menu>
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
@@ -69,11 +70,13 @@
     </div>
     <div class="amount-input">
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
+                       [disabled]="(permissionLevel$ | async) < 20"
                        [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
       <span class="amount-max">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
-      <button nz-button [nzSize]="'small'" [nzShape]="'circle'" [nzType]="'primary'" class="done-button"
+      <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
+              [nzType]="'primary'" class="done-button"
               *ngIf="item.amount > item.done; else done" (click)="markAsDone()">
         <i class="anticon anticon-check"></i>
       </button>

@@ -13,10 +13,14 @@ export class ListPickerDrawerComponent {
 
   myLists$: Observable<List[]>;
 
+  listsWithWriteAccess$: Observable<List[]>;
+
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>) {
     this.myLists$ = this.listsFacade.myLists$;
+    this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$;
 
     this.listsFacade.loadMyLists();
+    this.listsFacade.loadListsWithWriteAccess();
   }
 
   pickList(list: List): void {

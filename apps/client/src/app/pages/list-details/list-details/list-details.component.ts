@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -18,6 +18,7 @@ import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.
 import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
 import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
 import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Component({
   selector: 'app-list-details',
@@ -33,6 +34,8 @@ export class ListDetailsComponent implements OnInit {
   public list$: Observable<List>;
 
   public crystals$: Observable<ListRow[]>;
+
+  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
@@ -147,13 +150,22 @@ export class ListDetailsComponent implements OnInit {
     });
   }
 
-  openPermissionsPopup(list: List):void{
-    this.dialog.create({
+  openPermissionsPopup(list: List): void {
+    const modalReady$ = new Subject<void>();
+    const modalRef = this.dialog.create({
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: { data: list }
+      nzComponentParams: { data: list, ready$: modalReady$ }
     });
+    modalReady$.pipe(
+      first(),
+      switchMap(() => {
+        return modalRef.getContentComponent().changes$;
+      })
+    ).subscribe(() => {
+        this.listsFacade.updateList(list);
+      });
   }
 
   openInventoryPopup(list: List): void {
