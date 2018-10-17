@@ -83,7 +83,7 @@ export class LevequestsComponent implements OnInit {
         filters.push({ column: 'ClassJobLevel', operator: '>=', value: this.levelMin$.value },
                      { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
 
-        return this.xivapi.search({ indexes: [SearchIndex.LEVE], string: query, filters: filters, staging: true,
+        return this.xivapi.search({ indexes: [SearchIndex.LEVE], string: query, filters: filters,
           columns: ['CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
             'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
             'Name', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
