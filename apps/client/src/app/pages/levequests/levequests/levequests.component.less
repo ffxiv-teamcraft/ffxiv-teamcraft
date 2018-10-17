@@ -1,0 +1,123 @@
+@import '../../../../theme';
+@underMd: ~"(max-width: 767px)";
+@underXl: ~"(max-width: 1199px)";
+
+.top-part {
+  margin: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .job {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .search {
+      margin-top: 10px;
+    }
+  }
+
+  .levels {
+    width: 100%;
+
+    .ant-input-number {
+      width: 40%;
+    }
+
+    input:disabled {
+      width: 20%;
+      text-align: center;
+      pointer-events: none;
+    }
+  }
+}
+
+.additional-buttons {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.results {
+  padding: 20px 50px;
+  @media @mobile {
+    padding: 20px 10px;
+  }
+
+  .select-box {
+    position: absolute;
+    left: -25px;
+  }
+
+  .ant-list-item-meta{
+    max-width: 500px;
+    @media @underXl {
+      margin-bottom: 10px;
+    }
+  }
+
+  .list-center {
+    text-align: center;
+  }
+
+  .amount {
+    width: 70px;
+    @media @underXl {
+      margin-top: 10px;
+    }
+  }
+
+  .all-deliveries {
+    margin-left: 10px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    @media @underXl {
+      margin-top: 10px;
+    }
+  }
+}
+
+::ng-deep {
+  .ant-list-item {
+    @media @mobile {
+      justify-content: center;
+    }
+    .ant-list-item-meta {
+      align-items: center;
+      @media @mobile {
+        flex: 0 0 auto;
+        margin-bottom: 5px;
+      }
+      .ant-list-item-meta-title {
+        white-space: nowrap;
+        margin-bottom: 0;
+      }
+    }
+    .ant-list-item-content > .ant-row {
+      width: 100%;
+    }
+    .ant-list-item-action {
+      @media @mobile {
+        margin: auto;
+      }
+    }
+
+    .ant-list-item-content {
+      @media @mobile {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

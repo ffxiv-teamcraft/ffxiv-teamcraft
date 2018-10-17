@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: './pages/gathering-location/gathering-location.module#GatheringLocationModule'
   },
   {
+    path: 'levequests',
+    loadChildren: './pages/levequests/levequests.module#LevequestsModule'
+  },
+  {
     path: 'alarms',
     loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
   }
