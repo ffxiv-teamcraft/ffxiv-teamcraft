@@ -118,6 +118,7 @@ export class AppComponent implements OnInit {
 
     this.authFacade.loadUser();
     this.listsFacade.loadMyLists();
+    this.listsFacade.loadListsWithWriteAccess();
   }
 
   openRegisterPopup(): void {

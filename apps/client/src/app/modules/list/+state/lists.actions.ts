@@ -4,12 +4,15 @@ import { List } from '../model/list';
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
 
+  LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
+
   LoadListDetails = '[Lists] Load List',
   SelectList = '[Lists] Select List',
 
   SetItemDone = '[Lists] Set Item Done',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
+  ListsWithWriteAccessLoaded = '[Lists] Lists With Write Access Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
 
@@ -22,6 +25,10 @@ export enum ListsActionTypes {
 
 export class LoadMyLists implements Action {
   readonly type = ListsActionTypes.LoadMyLists;
+}
+
+export class LoadListsWithWriteAccess implements Action {
+  readonly type = ListsActionTypes.LoadListsWithWriteAccess;
 }
 
 export class LoadListDetails implements Action {
@@ -53,10 +60,17 @@ export class MyListsLoaded implements Action {
   }
 }
 
+export class ListsWithWriteAccessLoaded implements Action {
+  readonly type = ListsActionTypes.ListsWithWriteAccessLoaded;
+
+  constructor(public payload: List[]) {
+  }
+}
+
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
 
-  constructor(public payload: List) {
+  constructor(public payload: Partial<List>) {
   }
 }
 
@@ -77,7 +91,7 @@ export class CreateOptimisticListCompact implements Action {
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
-  constructor(public readonly payload: List) {
+  constructor(public readonly payload: List, public readonly updateCompact = false) {
   }
 }
 
@@ -106,17 +120,6 @@ export type ListsAction =
   | SetItemDone
   | ListDetailsLoaded
   | CreateOptimisticListCompact
-  | UpdateListIndex;
-
-export const fromListsActions = {
-  LoadMyLists,
-  MyListsLoaded,
-  CreateList,
-  UpdateList,
-  DeleteList,
-  LoadListDetails,
-  SelectList,
-  SetItemDone,
-  UpdateListIndex,
-  CreateOptimisticListCompact
-};
+  | UpdateListIndex
+  | LoadListsWithWriteAccess
+  | ListsWithWriteAccessLoaded;

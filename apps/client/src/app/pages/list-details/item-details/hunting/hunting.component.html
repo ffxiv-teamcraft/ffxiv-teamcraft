@@ -1,0 +1,19 @@
+<nz-list [nzRenderItem]="huntTemplate" [nzDataSource]="item.drops">
+  <ng-template #huntTemplate let-drop>
+    <nz-list-item [nzContent]="drop.position !== undefined?position:null">
+      <nz-list-item-meta nzDescription="lvl{{drop.lvl}} - {{drop.zoneid | placeName | i18n}}"
+                         [nzTitle]="drop.id | mobName | i18n">
+      </nz-list-item-meta>
+      <ng-template #position>
+        <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
+          <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position"></app-map-position>
+          <div
+            *ngIf="drop.zoneid | closestAetheryte: drop.position | async as aetheryte"
+            class="closest-tp">
+                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
+              </div>
+        </div>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

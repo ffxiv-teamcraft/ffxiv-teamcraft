@@ -2748,7 +2748,7 @@
     "fr": "Fleur de coton arc-en-ciel"
   },
   "465": {
-    "en": "Sprig of Mist Dill",
+    "en": "Mist Dill",
     "ja": "イノンド",
     "de": "Nebeldill",
     "fr": "Aneth"
@@ -4462,5 +4462,35 @@
     "ja": "ザラビクニン",
     "de": "Scheibenbauch",
     "fr": "Poisson-limace"
+  },
+  "751": {
+    "en": "Nightsteel Ore",
+    "ja": "夜鉄鉱",
+    "de": "Nachtstahlerz",
+    "fr": "Minerai de noctacier"
+  },
+  "752": {
+    "en": "Silvergrace Ore",
+    "ja": "清銀鉱",
+    "de": "Silbergunsterz",
+    "fr": "Minerai de graçargent"
+  },
+  "753": {
+    "en": "Black Willow Log",
+    "ja": "ブラックウィロー原木",
+    "de": "Schwarzweiden-Holzscheit",
+    "fr": "Rondin de saule noir"
+  },
+  "754": {
+    "en": "Hingan Flax",
+    "ja": "真麻",
+    "de": "Hingashi-Flachs",
+    "fr": "Fibres de lin hingashien"
+  },
+  "755": {
+    "en": "Usuginu Octopus",
+    "ja": "ウスギヌダコ",
+    "de": "Othardischer Oktopus",
+    "fr": "Poulpe usuginu"
   }
 }

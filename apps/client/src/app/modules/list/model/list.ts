@@ -53,7 +53,7 @@ export class List extends DataWithPermissions {
     super();
   }
 
-  public get crystals():ListRow[]{
+  public get crystals(): ListRow[] {
     return this.items.filter(item => item.id > 1 && item.id < 20);
   }
 
@@ -81,6 +81,19 @@ export class List extends DataWithPermissions {
     this.forks++;
     clone.reset();
     return clone;
+  }
+
+  public getCompact(): List {
+    const compact = new List();
+    for (const prop of Object.keys(this)) {
+      if (['finalItems', 'note'].indexOf(prop) > -1) {
+        compact[prop] = JSON.parse(JSON.stringify(this[prop]));
+      }
+    }
+    compact.name = this.name;
+    compact.version = this.version || '1.0.0';
+    compact.tags = this.tags;
+    return compact;
   }
 
   public reset(): void {
@@ -168,7 +181,6 @@ export class List extends DataWithPermissions {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => row.id === id);
   }
-
   /**
    * Adds items to a given row and tags them as used if they're "done" from another craft.
    *

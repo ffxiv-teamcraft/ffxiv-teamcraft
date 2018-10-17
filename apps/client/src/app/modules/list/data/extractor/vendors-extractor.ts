@@ -3,6 +3,7 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Vendor } from '../../model/vendor';
 import { Item } from '../../../../model/garland-tools/item';
+import * as npcs from '../../../../core/data/sources/npcs.json';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
 
@@ -47,13 +48,10 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
           npcId: vendorId,
           price: itemPartial.p
         };
-        if (npcPartial.c !== undefined && npcPartial.i !== undefined && npcPartial.a !== undefined) {
-          vendor.coords = {
-            x: npcPartial.c[0],
-            y: npcPartial.c[1]
-          };
-          vendor.zoneId = npcPartial.l;
-          vendor.areaId = npcPartial.a;
+        const npcEntry = npcs[vendorId];
+        if (npcEntry.position !== null) {
+          vendor.coords = npcEntry.position;
+          vendor.zoneId = npcEntry.zoneId;
         }
         vendors.push(vendor);
       }

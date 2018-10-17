@@ -34,10 +34,13 @@ export class BellNodesService {
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id);
         if (match !== undefined) {
-          const nodeCopy = JSON.parse(JSON.stringify(node));
+          const nodeCopy = {...node};
           nodeCopy.icon = match.icon;
           nodeCopy.itemId = id;
-          nodeCopy.slot = +match.slot;
+          if(match.slot !== '?' && match.slot !== undefined){
+            console.log(match.slot);
+            nodeCopy.slot = +match.slot;
+          }
           nodeCopy.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
           nodeCopy.zoneid = this.localizedDataService.getAreaIdByENName(node.zone);
           nodeCopy.areaid = this.localizedDataService.getAreaIdByENName(node.title);

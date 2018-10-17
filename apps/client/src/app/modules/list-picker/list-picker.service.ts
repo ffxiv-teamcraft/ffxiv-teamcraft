@@ -42,7 +42,8 @@ export class ListPickerService {
           }
           // else, just return the list
           return of(list);
-        })
+        }),
+        filter(list => list !== undefined)
       );
   }
 }

@@ -41,7 +41,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { folklores } from '../../../core/data/sources/folklores';
 import { VentureDetailsPopupComponent } from '../venture-details-popup/venture-details-popup.component';
 import { CraftedBy } from '../../list/model/crafted-by';
-import { Permissions } from '../../../core/database/permissions/permissions';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { map } from 'rxjs/operators';
@@ -252,7 +251,7 @@ export class ItemComponent implements OnInit, OnChanges {
   user: any;
 
   @Input()
-  permissions: Permissions;
+  permissions: any;
 
   requiredForFinalCraft = 0;
 
@@ -681,20 +680,20 @@ export class ItemComponent implements OnInit, OnChanges {
   }
 
   public updateTradeIcon(): void {
-    if (this.item.tradeSources !== undefined) {
-      const res = { priority: 0, icon: 0 };
-      this.item.tradeSources.forEach(ts => {
-        ts.trades.forEach(trade => {
-          const id = trade.currencyId;
-          if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined &&
-            ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
-            res.icon = trade.currencyIcon;
-            res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
-          }
-        });
-      });
-      this.tradeIcon = res.icon;
-    }
+    // if (this.item.tradeSources !== undefined) {
+    //   const res = { priority: 0, icon: 0 };
+    //   this.item.tradeSources.forEach(ts => {
+    //     ts.trades.forEach(trade => {
+    //       const id = trade.currencyId;
+    //       if (ItemComponent.TRADE_SOURCES_PRIORITIES[id] !== undefined &&
+    //         ItemComponent.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
+    //         res.icon = trade.currencyIcon;
+    //         res.priority = ItemComponent.TRADE_SOURCES_PRIORITIES[id];
+    //       }
+    //     });
+    //   });
+    //   this.tradeIcon = res.icon;
+    // }
   }
 
   public openTradeDetails(item: ListRow): void {

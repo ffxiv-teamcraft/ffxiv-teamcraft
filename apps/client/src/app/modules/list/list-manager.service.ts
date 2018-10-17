@@ -4,7 +4,6 @@ import { concat, Observable } from 'rxjs';
 import { ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-import { environment } from '../../../environments/environment';
 
 
 import { Ingredient } from '../../model/garland-tools/ingredient';
@@ -112,7 +111,7 @@ export class ListManagerService {
 
   public upgradeList(list: List): Observable<List> {
     return this.zone.runOutsideAngular(() => {
-      const permissions = list.permissionsRegistry;
+      const permissions = list.registry;
       const backup = [];
       list.items.forEach(item => {
         backup.push({ array: 'items', item: item });
@@ -150,7 +149,7 @@ export class ListManagerService {
                 }
               }
             });
-            resultList.permissionsRegistry = permissions;
+            resultList.registry = permissions;
             return resultList;
           })
         );

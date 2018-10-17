@@ -37,6 +37,7 @@ import { BellNodesService } from '../../core/data/bell-nodes.service';
 import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -65,6 +66,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     PipesModule,
     NameQuestionPopupModule,
     RouterModule,
+    PageLoaderModule,
 
     ClipboardModule,
     NgZorroAntdModule,

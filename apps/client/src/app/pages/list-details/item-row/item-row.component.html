@@ -1,4 +1,5 @@
-<div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done">
+<div class="item-row" [class.odd]="odd" nz-row fxLayout="row wrap" [class.done]="item.amount <= item.done"
+     [class.craftable]="canBeCrafted$ | async" [class.has-all-ingredients]="hasAllBaseIngredients$ | async">
   <div class="block left-block" nz-col nzXs="24" [nzSm]="item.alarms && item.alarms.length > 0?12:6" nzMd="6">
     <div class="icon">
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
@@ -8,8 +9,26 @@
           [nzTitle]="'Copy_item_name_to_clipboard' | translate"
           (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
       {{item.id | itemName | i18n}}
-      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}</span>
+      <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}<span
+        *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+      </span>
     </span>
+    <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
+      <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
+              nz-button [nzShape]="'circle'">
+        <i class="anticon anticon-ellipsis"></i></button>
+      <ul nz-menu>
+        <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+          {{'Copy_isearch' | translate}}
+        </li>
+        <li nz-menu-item>TODO Comment</li>
+        <li nz-menu-item>TODO I'm on it</li>
+        <li nz-menu-item>TODO Requirements</li>
+        <li nz-menu-item>TODO Assign user</li>
+        <li nz-menu-item>TODO Mark HQ</li>
+      </ul>
+    </nz-dropdown>
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"
        [class.empty]="!item.alarms || item.alarms.length < 0">
@@ -51,11 +70,13 @@
     </div>
     <div class="amount-input">
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
+                       [disabled]="(permissionLevel$ | async) < 20"
                        [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
       <span class="amount-max">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
-      <button nz-button [nzSize]="'small'" [nzShape]="'circle'" [nzType]="'primary'" class="done-button"
+      <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
+              [nzType]="'primary'" class="done-button"
               *ngIf="item.amount > item.done; else done" (click)="markAsDone()">
         <i class="anticon anticon-check"></i>
       </button>
@@ -67,44 +88,46 @@
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
     <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto">
       <!--TODO Simulator link-->
-      <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
-              [nzGhost]="true" *ngFor="let craft of item.craftedBy">
-        <img [src]="craft.icon" alt="" class="img-icon">
-      </button>
+      <div *ngFor="let craft of item.craftedBy">
+        <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
+                [nzGhost]="true" *ngIf="craft.icon !== ''">
+          <img [src]="craft.icon" alt="" class="img-icon">
+        </button>
+      </div>
       <button nz-button nzShape="circle" *ngIf="item.gatheredBy !== undefined" nz-tooltip
               nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}" (click)="openGatheredByPopup()">
         <img class="img-icon gathering-icon" src="{{item.gatheredBy.icon}}">
       </button>
       <img *ngIf="item.gardening === true"
            nzTitle="{{'Gardening' | translate}}"
-           nz-tooltip src="./assets/icons/Gardening.png">
+           nz-tooltip src="./assets/icons/Gardening.png" class="img-icon">
       <button nz-button nz-tooltip nzTitle="{{'Hunting' | translate}}" nzShape="circle"
-              *ngIf="item.drops !== undefined && item.drops.length > 0">
+              *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openHuntingPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.tradeSources !== undefined && item.tradeSources.length > 0"
-              nzTitle="{{'Trade' | translate}}" nz-tooltip>
+              nzTitle="{{'Trade' | translate}}" nz-tooltip (click)="openTradesPopup()">
         <img class="img-icon round-icon"
              [src]="item.tradeSources | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.instances !== undefined && item.instances.length > 0"
-              nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip>
+              nzTitle="{{item.instances[0].name | i18n}}" nz-tooltip (click)="openInstancesPopup()">
         <img class="img-icon round-icon" [src]="item.instances[0].icon | instanceIcon">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.reducedFrom !== undefined && item.reducedFrom.length > 0"
-              nzTitle="{{'Reduction' | translate}}" nz-tooltip>
+              nzTitle="{{'Reduction' | translate}}" nz-tooltip (click)="openReducedFromPopup()">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.vendors !== undefined && item.vendors.length > 0"
-              nz-tooltip [nzTitle]="'Vendors' | translate">
+              nz-tooltip [nzTitle]="'Vendors' | translate" (click)="openVendorsPopup()">
         <img class="img-icon" src="https://xivapi.com/i/065000/065002.png" alt="Gil">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.voyages !== undefined && item.voyages.length > 0"
-              nz-tooltip [nzTitle]="'Voyages' | translate">
+              nz-tooltip [nzTitle]="'Voyages' | translate" (click)="openVoyagesPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png" alt="Voyages">
       </button>
       <button nz-button nzShape="circle" *ngIf="item.ventures !== undefined && item.ventures.length > 0"
-              nz-tooltip [nzTitle]="'Retainer_ventures' | translate">
+              nz-tooltip [nzTitle]="'Retainer_ventures' | translate" (click)="openVenturesPopup()">
         <img class="img-icon round-icon" src="https://garlandtools.org/db/icons/item/3503.png" alt="Ventures">
       </button>
     </div>

@@ -23,7 +23,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
       .snapshotChanges()
       .pipe(
         map(snaps => snaps[0]),
-        map((snap:any) => {
+        map((snap: any) => {
           const valueWithKey: TeamcraftUser = { $key: snap.payload.key, ...snap.payload.val() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');
@@ -33,69 +33,6 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
         })
       );
   }
-
-  /**
-   * Gets user ingame informations.
-   * @returns {Observable<any>}
-   */
-
-  // public getCharacterWithoutCache(): Observable<any> {
-  //     return this.getUserData()
-  //         .pipe(
-  //             mergeMap(user => {
-  //                 return this.dataService.getCharacter(user.lodestoneId, true);
-  //             })
-  //         );
-  // }
-
-  /**
-   * Returns user data informations.
-   * @returns {Observable<AppUser>}
-   */
-  // public getUserData(): Observable<AppUser> {
-  //     return this.reloader
-  //         .pipe(
-  //             filter(() => !this.loggingIn),
-  //             switchMap(() => {
-  //                 return this.af.authState
-  //                     .pipe(
-  //                         first(),
-  //                         mergeMap((user) => {
-  //                             if ((user === null && !this.loggingIn) || user.uid === undefined) {
-  //                                 this.af.auth.signInAnonymously();
-  //                                 return of(<AppUser>{name: 'Anonymous', anonymous: true});
-  //                             }
-  //                             if (user === null || user.isAnonymous) {
-  //                                 return this.get(user.uid).pipe(
-  //                                     catchError(() => {
-  //                                         return of(<AppUser>{$key: user.uid, name: 'Anonymous', anonymous: true});
-  //                                     }));
-  //                             } else {
-  //                                 return this.get(user.uid)
-  //                                     .pipe(
-  //                                         map(u => {
-  //                                             return u;
-  //                                         })
-  //                                     );
-  //                             }
-  //                         })
-  //                     );
-  //             }),
-  //             mergeMap((u: AppUser) => {
-  //                 u.patron = false;
-  //                 if (u.patreonEmail === undefined) {
-  //                     return of(u);
-  //                 }
-  //                 return this.firebase.list('/patreon/supporters').valueChanges()
-  //                     .pipe(
-  //                         map((supporters: { email: string }[]) => {
-  //                             u.patron = supporters.find(s => s.email.toLowerCase() === u.patreonEmail.toLowerCase()) !== undefined;
-  //                             return u;
-  //                         })
-  //                     );
-  //             })
-  //         );
-  // }
 
   /**
    * Checks if a given email is available for patreon account linking.
@@ -153,6 +90,17 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
       user.user.updateEmail(newMail)
         .then(() => user.user.sendEmailVerification());
     });
+  }
+
+  public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {
+    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('defaultLodestoneId').equalTo(id))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: any[]) => {
+          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ $key: snap.payload.key, ...snap.payload.val() }));
+          return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
+        })
+      );
   }
 
   protected getBaseUri(params?: any): string {

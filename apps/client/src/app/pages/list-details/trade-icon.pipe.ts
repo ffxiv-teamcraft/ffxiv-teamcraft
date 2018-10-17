@@ -175,12 +175,14 @@ export class TradeIconPipe implements PipeTransform {
     const res = { priority: 0, icon: 0 };
     tradeSources.forEach(ts => {
       ts.trades.forEach(trade => {
-        const id = trade.currencyId;
-        if (TradeIconPipe.TRADE_SOURCES_PRIORITIES[id] !== undefined &&
-          TradeIconPipe.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
-          res.icon = trade.currencyIcon;
-          res.priority = TradeIconPipe.TRADE_SOURCES_PRIORITIES[id];
-        }
+        trade.currencies.forEach(currency => {
+          const id = currency.id;
+          if (TradeIconPipe.TRADE_SOURCES_PRIORITIES[id] !== undefined &&
+            TradeIconPipe.TRADE_SOURCES_PRIORITIES[id] > res.priority) {
+            res.icon = currency.icon;
+            res.priority = TradeIconPipe.TRADE_SOURCES_PRIORITIES[id];
+          }
+        })
       });
     });
     return res.icon;

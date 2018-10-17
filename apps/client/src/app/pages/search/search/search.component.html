@@ -6,7 +6,7 @@
              (keyup)="query$.next(searchInput.value)">
     </nz-input-group>
     <ng-template #addOnAfterTemplate>
-      <label nz-checkbox [(ngModel)]="settings.recipesOnlySearch"
+      <label nz-checkbox [ngModel]="onlyRecipes$ | async"
              (ngModelChange)="onlyRecipes$.next($event)">{{'ITEMS.Only_recipes' | translate}}</label>
     </ng-template>
   </div>
@@ -29,7 +29,8 @@
 </div>
 <div *ngIf="results$ | async as results">
   <div class="addition-buttons">
-    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' | translate}}</label>
+    <label nz-checkbox [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)">{{'Select_all' |
+      translate}}</label>
     <button nz-button (click)="addSelectedItemsToList(results)">{{'LISTS.Add_selection' | translate}}</button>
   </div>
   <div class="results">
@@ -38,7 +39,8 @@
         <ng-template #item let-item>
           <nz-list-item [nzContent]="inputBox"
                         [nzActions]="[addToList, createQuickListAction, createCommissionAction, openInSimulatorAction]">
-            <label nz-checkbox class="select-box" [(ngModel)]="item.selected" (ngModelChange)="updateAllSelected(results)"></label>
+            <label nz-checkbox class="select-box" [(ngModel)]="item.selected"
+                   (ngModelChange)="updateAllSelected(results)"></label>
             <ng-template #inputBox>
               <nz-input-group [nzAddOnBefore]="addCrafts" [nzCompact]="true" class="amount-input">
                 <input type="number" [(ngModel)]="item.amount" nz-input>

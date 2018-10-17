@@ -1,0 +1,41 @@
+<div *ngIf="servers$ | async as availableServers; else loading">
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
+    <input type="text" id="serverName" nz-input [formControl]="selectedServer" [nzAutocomplete]="auto">
+    <nz-autocomplete #auto>
+      <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
+        {{server}}
+      </nz-auto-option>
+    </nz-autocomplete>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="fcName">{{'FC_name' | translate}}
+    </nz-form-label>
+    <input type="text" id="fcName" nz-input [formControl]="fcName">
+  </nz-form-item>
+</div>
+
+<div class="results">
+  <nz-list [nzDataSource]="result$ | async"
+           [nzItemLayout]="'horizontal'"
+           [nzLoading]="loadingResults"
+           [nzRenderItem]="characterTemplate">
+    <ng-template #characterTemplate let-item>
+      <nz-list-item [nzActions]="[selectAction]">
+        <ng-template #selectAction>
+          <button nz-button nzType="primary" (click)="pickUser(item)">{{'COMMON.Select' | translate}}</button>
+        </ng-template>
+        <nz-list-item-meta
+          [nzTitle]="item.fcName"
+          [nzDescription]="item.userId"
+          [nzAvatar]="item.characterAvatar">
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>
+
+<ng-template #loading>
+  <nz-spin></nz-spin>
+</ng-template>

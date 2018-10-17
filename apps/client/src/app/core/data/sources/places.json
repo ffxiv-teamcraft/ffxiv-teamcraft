@@ -14093,6 +14093,12 @@
     "de": "Die Stille",
     "fr": "Sanctuaire de Jade"
   },
+  "2448": {
+    "en": "The Great Hunt",
+    "ja": "大草原の狩場",
+    "de": "Revier des Rathalos",
+    "fr": "Domaine du roi des cieux"
+  },
   "2449": {
     "en": "Ultimacy",
     "ja": "禁絶幻想",
@@ -14171,11 +14177,227 @@
     "de": "Kolosseum von Gog",
     "fr": "Arène de Goug"
   },
+  "2462": {
+    "en": "Eureka Pagos",
+    "ja": "エウレカ：パゴス帯",
+    "de": "Pagos",
+    "fr": "Eurêka Pagos"
+  },
+  "2463": {
+    "en": "Icepoint",
+    "ja": "アイスポイント",
+    "de": "Eiskuppe",
+    "fr": "L'Engelure"
+  },
+  "2464": {
+    "en": "The Cones",
+    "ja": "パインコーン樹林",
+    "de": "Die Kegel",
+    "fr": "Vallée des Pins"
+  },
+  "2465": {
+    "en": "Frozen Lake",
+    "ja": "フローズンレイク",
+    "de": "Gefrorener See",
+    "fr": "Lac gelé"
+  },
+  "2466": {
+    "en": "The Val River Belly",
+    "ja": "バル川中流域",
+    "de": "Val-Mittellauf",
+    "fr": "Cours moyen de la Val"
+  },
+  "2467": {
+    "en": "Hot Water",
+    "ja": "ホットウォーター",
+    "de": "Heißwasser",
+    "fr": "La Bouilloire"
+  },
+  "2468": {
+    "en": "Brushtip Gap",
+    "ja": "筆先の道",
+    "de": "Pinselspitze",
+    "fr": "La Plume"
+  },
+  "2469": {
+    "en": "Agaric Rock",
+    "ja": "アガリックロック",
+    "de": "Blätterpilzfels",
+    "fr": "Les Agarics de Roc"
+  },
+  "2470": {
+    "en": "Corse Rise",
+    "ja": "屍人の監視台",
+    "de": "Totenturm",
+    "fr": "Butte aux revenants"
+  },
+  "2471": {
+    "en": "Test Cavern 1-P",
+    "ja": "結晶化実験洞",
+    "de": "Testgrotte 1-P",
+    "fr": "Station d'éthéro-cristallisation expérimentale"
+  },
+  "2472": {
+    "en": "Geothermal Studies",
+    "ja": "地熱研究室",
+    "de": "Geothermische Forschung",
+    "fr": "Laboratoire de géothermie"
+  },
+  "2473": {
+    "en": "Gravitational Studies",
+    "ja": "レビテト研究分室",
+    "de": "Gravitationsforschung",
+    "fr": "Laboratoire d'études antigravitationnelles"
+  },
+  "2474": {
+    "en": "Vlondette's Retreat",
+    "ja": "ヴロンデットの別荘",
+    "de": "Vlondettes Refugium",
+    "fr": "Villa de Vlondette"
+  },
+  "2475": {
+    "en": "The Western Edge",
+    "ja": "ウェスタンエッジ",
+    "de": "Westklippe",
+    "fr": "Paroi de l'Ouest"
+  },
+  "2476": {
+    "en": "The Bull's Pen",
+    "ja": "ミノタウロスの箱庭",
+    "de": "Minotaurusgarten",
+    "fr": "L'Enclos aux minotaures"
+  },
+  "2477": {
+    "en": "Frightened Falls",
+    "ja": "凍りついた滝",
+    "de": "Frostfall",
+    "fr": "Cataracte gelée"
+  },
+  "2478": {
+    "en": "The Moldbeds",
+    "ja": "菌床洞",
+    "de": "Schwammmulde",
+    "fr": "Colonie fongique"
+  },
+  "2479": {
+    "en": "The Eastern Edge",
+    "ja": "イースタンエッジ",
+    "de": "Ostklippe",
+    "fr": "Paroi de l'Est"
+  },
+  "2480": {
+    "en": "Icebloom Cavern",
+    "ja": "氷華洞",
+    "de": "Eisblumen-Höhle",
+    "fr": "Caverne aux perce-glaces"
+  },
+  "2481": {
+    "en": "The Fumarole",
+    "ja": "地脈の噴出口",
+    "de": "Fumarole",
+    "fr": "Geyser d'éther"
+  },
+  "2482": {
+    "en": "The Barren Arena",
+    "ja": "氷の円形劇場",
+    "de": "Arena der Leere",
+    "fr": "Arène de Glace"
+  },
   "2483": {
     "en": "The Ridorana Lighthouse",
     "ja": "封じられた聖塔 リドルアナ",
     "de": "Richtfeuer von Ridorana",
     "fr": "Le Phare de Ridorana"
+  },
+  "2484": {
+    "en": "Saint Mocianne's Arboretum (Hard)",
+    "ja": "聖モシャーヌ植物園 (Hard)",
+    "de": "Sankt Mocianne-Arboretum (schwer)",
+    "fr": "Arboretum Sainte-Mocianne (brutal)"
+  },
+  "2485": {
+    "en": "The Shifting Altars of Uznair",
+    "ja": "ウズネアカナル祭殿",
+    "de": "Halle der Glücksaltäre",
+    "fr": "Temple sacré d'Uznair"
+  },
+  "2486": {
+    "en": "The Bleached Shelf",
+    "ja": "真白き岩場",
+    "de": "Die Bleichen Felsnadeln",
+    "fr": "Strates pâles"
+  },
+  "2487": {
+    "en": "The Scorpion's Den",
+    "ja": "ヘデテトの縄張り",
+    "de": "Nistplatz der Hedetet",
+    "fr": "Nid du scorpion"
+  },
+  "2488": {
+    "en": "Imperial Mineshaft",
+    "ja": "忘れられた坑道",
+    "de": "Vergessener Stollen",
+    "fr": "Galeries oubliées"
+  },
+  "2489": {
+    "en": "The Bore",
+    "ja": "大砂虫の通り道",
+    "de": "Jagdweg der Sandkäfer",
+    "fr": "Passage du Géant des sables"
+  },
+  "2490": {
+    "en": "The Gamma Segregate",
+    "ja": "旧ガンマ分離区",
+    "de": "Gamma-Isolationsbereich",
+    "fr": "Ancien répartiteur gamma"
+  },
+  "2491": {
+    "en": "Forsaken Ruins",
+    "ja": "捨て去られた遺構",
+    "de": "Verschüttete Ruinen",
+    "fr": "Salles abandonnées"
+  },
+  "2492": {
+    "en": "The Blacklands",
+    "ja": "焼かれた大地",
+    "de": "Ebene der Verbrannten Erde",
+    "fr": "Terres brûlées"
+  },
+  "2493": {
+    "en": "The Aspersory",
+    "ja": "霧の皿",
+    "de": "Nebelhort",
+    "fr": "Plateau des Brumes"
+  },
+  "2494": {
+    "en": "Whitelick Falls",
+    "ja": "白砂の滝",
+    "de": "Weißsandfälle",
+    "fr": "Cascade de sable blanc"
+  },
+  "2495": {
+    "en": "The First Worm",
+    "ja": "大砂虫の遺骸",
+    "de": "Skelett des Großen Sandkäfers",
+    "fr": "Dernière demeure du Géant des sables"
+  },
+  "2496": {
+    "en": "Hells' Kier",
+    "ja": "獄之底",
+    "de": "Höllengrund",
+    "fr": "Fond des enfers"
+  },
+  "2497": {
+    "en": "The Haunted Manor",
+    "ja": "亡霊屋敷 ホーンテッドマナー",
+    "de": "Geisterschloss",
+    "fr": "Manoir hanté"
+  },
+  "2498": {
+    "en": "The Fall of Belah'dia",
+    "ja": "ベラフディア遺跡風特設アスレチック",
+    "de": "Belah'dias Fall",
+    "fr": "Chutes de Belah'dia"
   },
   "2500": {
     "en": "Hak Khaal",
@@ -14218,6 +14440,12 @@
     "ja": "シロガネ水路",
     "de": "Silberkanal",
     "fr": "Canaux de Shirogane"
+  },
+  "2507": {
+    "en": "The Doman Enclave",
+    "ja": "ドマ町人地",
+    "de": "Domanische Enklave",
+    "fr": "Quartier enclavé de Doma"
   },
   "2511": {
     "en": "Ruby Price Depths",
@@ -14332,6 +14560,18 @@
     "ja": "義援物資置き場",
     "de": "Sammelkiste",
     "fr": "Corbeille à dons"
+  },
+  "2553": {
+    "en": "Achievement Exchange",
+    "ja": "アチーブメント",
+    "de": "Errungenschaften",
+    "fr": "Responsable des récompenses de hauts faits"
+  },
+  "2554": {
+    "en": "Exit",
+    "ja": "コンテンツ退出口",
+    "de": "Ausgang",
+    "fr": "Sortie"
   },
   "2600": {
     "en": "East End",
@@ -15083,6 +15323,90 @@
     "de": "Oberer Turm des Ruins",
     "fr": "Sommet de la tour de Kefka"
   },
+  "2725": {
+    "en": "Psiscape V1.0",
+    "ja": "被検世界「プサイ」V1.0",
+    "de": "Psimetrie 1.0",
+    "fr": "Psistice v1.0"
+  },
+  "2726": {
+    "en": "The Chaos Shrine",
+    "ja": "過去のカオスの神殿",
+    "de": "Chaosschrein",
+    "fr": "Ancien temple de Chaos"
+  },
+  "2727": {
+    "en": "The Interdimensional Rift",
+    "ja": "次元の狭間",
+    "de": "Interdimensionaler Riss",
+    "fr": "Fissure interdimensionnelle"
+  },
+  "2728": {
+    "en": "Final Verification",
+    "ja": "最終検証フィールド",
+    "de": "Finale Verifikation",
+    "fr": "Espace de test final"
+  },
+  "2730": {
+    "en": "The Soil Bed",
+    "ja": "沃土の寝室",
+    "de": "Das Beet",
+    "fr": "La Litière"
+  },
+  "2731": {
+    "en": "Environmental Control",
+    "ja": "環境制御棟",
+    "de": "Umweltkontrollwarte",
+    "fr": "Contrôle environnemental"
+  },
+  "2732": {
+    "en": "Purification Tank C",
+    "ja": "第3浄化槽",
+    "de": "Reinigungstank C",
+    "fr": "Réservoir de purification C"
+  },
+  "2733": {
+    "en": "Purification Tank B",
+    "ja": "第2浄化槽",
+    "de": "Reinigungstank B",
+    "fr": "Réservoir de purification B"
+  },
+  "2734": {
+    "en": "Purification Tank A",
+    "ja": "第1浄化槽",
+    "de": "Reinigungstank A",
+    "fr": "Réservoir de purification A"
+  },
+  "2735": {
+    "en": "Kingsloam",
+    "ja": "汚泥王の謁見室",
+    "de": "Hort des Schlammkönigs",
+    "fr": "Salle d'audience du roi fangeux"
+  },
+  "2736": {
+    "en": "Psiscape V2.0",
+    "ja": "被検世界「プサイ」V2.0",
+    "de": "Psimetrie 2.0",
+    "fr": "Psistice v2.0"
+  },
+  "2737": {
+    "en": "The Interdimensional Rift",
+    "ja": "次元の狭間",
+    "de": "Interdimensionaler Riss",
+    "fr": "Fissure interdimensionnelle"
+  },
+  "2738": {
+    "en": "The Dragonstar",
+    "ja": "竜の星",
+    "de": "Drachenstern",
+    "fr": "Planète des dragons"
+  },
+  "2739": {
+    "en": "Creation",
+    "ja": "再現宇宙",
+    "de": "Kosmos",
+    "fr": "Espace inconnu"
+  },
   "2750": {
     "en": "Rasen Kaikyo",
     "ja": "螺旋海峡",
@@ -15396,7 +15720,7 @@
     "fr": "Compas de l'Hirondelle"
   },
   "2802": {
-    "en": "Dairyu Moon Gates",
+    "en": "The Dairyu Moon Gates",
     "ja": "大龍月亮門",
     "de": "Dairyu-Mondtor",
     "fr": "Portes lune de Dairyu"
@@ -15462,7 +15786,7 @@
     "fr": "Soubresaut du Dragon"
   },
   "2813": {
-    "en": "Doman Enclave",
+    "en": "The Doman Enclave",
     "ja": "ドマ町人地",
     "de": "Domanische Enklave",
     "fr": "Quartier enclavé de Doma"
@@ -15706,6 +16030,54 @@
     "ja": "職人町",
     "de": "Handwerkerviertel",
     "fr": "Ateliers de Shokunin-machi"
+  },
+  "2854": {
+    "en": "The Enclave Demesne",
+    "ja": "田園地",
+    "de": "Reisfelder",
+    "fr": "Rizières de Den'en-chi"
+  },
+  "2855": {
+    "en": "Rissai-juku",
+    "ja": "栗斎塾",
+    "de": "Rissai-Schule",
+    "fr": "École Rissai-juku"
+  },
+  "2856": {
+    "en": "The Enclave Barracks",
+    "ja": "見廻組屯所",
+    "de": "Kaserne der Enklavenwache",
+    "fr": "Caserne du Mimawarigumi"
+  },
+  "2857": {
+    "en": "The Watchtower",
+    "ja": "物見塔",
+    "de": "Wachturm",
+    "fr": "Phare Monomito"
+  },
+  "2858": {
+    "en": "The One Garden",
+    "ja": "無二庭園",
+    "de": "Einzig-Garten",
+    "fr": "Jardins de Muniteien"
+  },
+  "2859": {
+    "en": "The Southern Enclave",
+    "ja": "ドマ町人地南（栗斎塾）",
+    "de": "Enklave Süd (Rissai-Schule)",
+    "fr": "Quartier enclavé sud (école Rissai-juku)"
+  },
+  "2860": {
+    "en": "The Northern Enclave",
+    "ja": "ドマ町人地北（無二庭園・田園地）",
+    "de": "Enklave Nord (Reisfelder und Einzig-Garten)",
+    "fr": "Quartier enclavé nord (jardins de Muniteien/rizières de Den'en-chi)"
+  },
+  "2861": {
+    "en": "The One River",
+    "ja": "無二江流域（ヤンサ方面）",
+    "de": "Goldbecken (Yanxia)",
+    "fr": "Bassin rutilant (Yanxia)"
   },
   "2900": {
     "en": "Pier #2",

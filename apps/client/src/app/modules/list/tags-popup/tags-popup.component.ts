@@ -3,6 +3,8 @@ import { List } from '../model/list';
 import { ListTag } from '../model/list-tag.enum';
 import { NzModalRef } from 'ng-zorro-antd';
 import { ListsFacade } from '../+state/lists.facade';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tags-popup',
@@ -12,15 +14,17 @@ import { ListsFacade } from '../+state/lists.facade';
 export class TagsPopupComponent implements OnInit {
 
   @Input()
-  list: List;
+  list: Partial<List>;
+
+  public list$: Observable<List>;
 
   tags: any[] = [];
 
   constructor(private modalRef: NzModalRef, private listsFacade: ListsFacade) {
   }
 
-  confirm(): void {
-    this.listsFacade.updateList(this.list);
+  confirm(list: List): void {
+    this.listsFacade.updateList(list, true);
     this.modalRef.close();
   }
 
@@ -29,6 +33,11 @@ export class TagsPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.list$ = this.listsFacade.allListDetails$.pipe(
+      map(lists => lists.find(l => l.$key === this.list.$key)),
+      filter(list => list !== undefined)
+    );
+    this.listsFacade.load(this.list.$key);
     this.tags = Object.keys(ListTag).map(key => {
       return {
         value: key,

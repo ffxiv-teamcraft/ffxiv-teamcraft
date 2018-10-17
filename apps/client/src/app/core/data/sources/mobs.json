@@ -16790,7 +16790,7 @@
   "40480000003526": {
     "en": "Griffin",
     "ja": "グリフィン",
-    "de": "Griffon",
+    "de": "Greif",
     "fr": "Griffon"
   },
   "40510000003527": {
@@ -17397,7 +17397,7 @@
     "en": "Mists drake",
     "ja": "ミスト・ドレイク",
     "de": "Nebel-Drakon",
-    "fr": "Dragon des brumes"
+    "fr": "Draconide des brumes"
   },
   "40780000003623": {
     "en": "Dragonet",
@@ -23690,7 +23690,7 @@
   "57280000005044": {
     "en": "Ymir unshelled",
     "ja": "シェルレス・ユミール",
-    "de": "Nackt-Wellhorn",
+    "de": "Nackt-Ymir",
     "fr": "Bulot sans coquille"
   },
   "61040000005169": {
@@ -27495,7 +27495,7 @@
     "en": "Inoshikacho",
     "ja": "猪鹿蝶",
     "de": "Inoshikacho",
-    "fr": "Inoshikacho"
+    "fr": "Ino-shika-cho"
   },
   "71540000006095": {
     "en": "Shiden Skyscream",
@@ -27794,13 +27794,13 @@
   "69690000006152": {
     "en": "Sadu Heavensflame",
     "ja": "炎天のサドゥ",
-    "de": "Sadu",
+    "de": "Sadu Himmelsflamme",
     "fr": "Sadu la flamme céleste"
   },
   "69680000006153": {
     "en": "Magnai the Older",
     "ja": "長兄マグナイ",
-    "de": "Magnai",
+    "de": "Magnai [t] Älter[a]",
     "fr": "Magnai le frère suprême"
   },
   "68220000006155": {
@@ -28626,7 +28626,7 @@
     "fr": "Gulo gulo enragé"
   },
   "74220000006290": {
-    "en": "Tamamo-no-Gozen",
+    "en": "Tamamo Gozen",
     "ja": "玉藻御前",
     "de": "Tamamo no Gozen",
     "fr": "Tamamo-no-Gozen"

@@ -13,6 +13,7 @@ export class TradeDetailsPopupComponent {
   }
 
   getTotal(trade: Trade): number {
-    return Math.ceil((trade.currencyAmount / trade.itemAmount) * (this.data.amount - this.data.done));
+    return 0;
+    // return Math.ceil((trade.currencyAmount / trade.itemAmount) * (this.data.amount - this.data.done));
   }
 }

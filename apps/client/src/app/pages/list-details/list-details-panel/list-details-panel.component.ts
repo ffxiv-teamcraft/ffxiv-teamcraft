@@ -34,7 +34,7 @@ export class ListDetailsPanelComponent implements OnChanges {
     if (this.displayRow && this.displayRow.tiers) {
       this.generateTiers();
     }
-    if(this.displayRow && this.displayRow.zoneBreakdown){
+    if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows);
     }
   }

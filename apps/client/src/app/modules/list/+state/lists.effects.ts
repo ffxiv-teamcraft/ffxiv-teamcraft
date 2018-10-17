@@ -7,19 +7,21 @@ import {
   DeleteList,
   ListDetailsLoaded,
   ListsActionTypes,
+  ListsWithWriteAccessLoaded,
   LoadListDetails,
   MyListsLoaded,
   SetItemDone,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, concat, EMPTY } from 'rxjs';
+import { combineLatest, concat, EMPTY, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
 export class ListsEffects {
@@ -36,21 +38,42 @@ export class ListsEffects {
   );
 
   @Effect()
+  loadListsWithWriteAccess = this.actions$.pipe(
+    ofType(ListsActionTypes.LoadListsWithWriteAccess),
+    switchMap(() => this.authFacade.userId$),
+    distinctUntilChanged(),
+    switchMap((userId) => {
+      return this.listCompactsService.getWithWriteAccess(userId);
+    }),
+    map(lists => new ListsWithWriteAccessLoaded(lists))
+  );
+
+  @Effect()
   loadListDetails$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListDetails),
     withLatestFrom(this.listsFacade.allListDetails$),
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
     switchMap((action: LoadListDetails) => {
-      // TODO handle NotFound error properly
-      return combineLatest(this.authFacade.userId$, this.listService.get(action.key));
+      return combineLatest(
+        of(action.key),
+        this.authFacade.userId$,
+        this.listService.get(action.key).pipe(catchError(() => of(null)))
+      );
     }),
     distinctUntilChanged(),
-    map(([userId, list]) => {
-      // TODO Read permission should be handled here.
-      return list;
+    map(([listKey, userId, list]: [string, string, List]) => {
+      if (list !== null && list.getPermissionLevel(userId) >= PermissionLevel.READ) {
+        return [listKey, list];
+      }
+      return [listKey, null];
     }),
-    map(list => new ListDetailsLoaded(list))
+    map(([key, list]: [string, List]) => {
+      if (list === null) {
+        return new ListDetailsLoaded({ $key: key, notFound: true });
+      }
+      return new ListDetailsLoaded(list);
+    })
   );
 
   @Effect()
@@ -90,7 +113,7 @@ export class ListsEffects {
   );
 
   @Effect()
-  UpdateListInDatabase$ = this.actions$.pipe(
+  updateListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateList),
     debounceTime(500),
     map(action => action as UpdateList),
@@ -99,7 +122,7 @@ export class ListsEffects {
   );
 
   @Effect()
-  DeleteListFromDatabase$ = this.actions$.pipe(
+  deleteListFromDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.DeleteList),
     map(action => action as DeleteList),
     switchMap(action => this.listService.remove(action.key)),

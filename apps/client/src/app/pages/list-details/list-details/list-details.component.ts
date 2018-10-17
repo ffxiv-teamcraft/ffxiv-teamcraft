@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, mergeMap, shareReplay, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -16,6 +16,9 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
 import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
+import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
+import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Component({
   selector: 'app-list-details',
@@ -32,6 +35,8 @@ export class ListDetailsComponent implements OnInit {
 
   public crystals$: Observable<ListRow[]>;
 
+  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+
   constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -39,13 +44,18 @@ export class ListDetailsComponent implements OnInit {
               private listManager: ListManagerService, private progressService: ProgressPopupService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
+      tap(list => {
+        if (!list.notFound && list.isOutDated()) {
+          this.regenerateList(list);
+        }
+      }),
       shareReplay(1)
     );
     this.finalItemsRow$ = this.list$.pipe(
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
     );
     this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list)),
+      mergeMap(list => this.layoutsFacade.getDisplay(list))
     );
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
@@ -67,6 +77,7 @@ export class ListDetailsComponent implements OnInit {
   renameList(list: List): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -118,7 +129,7 @@ export class ListDetailsComponent implements OnInit {
       });
   }
 
-  resetList(list: List):void{
+  resetList(list: List): void {
     list.reset();
     this.listsFacade.updateList(list);
   }
@@ -135,6 +146,33 @@ export class ListDetailsComponent implements OnInit {
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openPermissionsPopup(list: List): void {
+    const modalReady$ = new Subject<void>();
+    const modalRef = this.dialog.create({
+      nzTitle: this.translate.instant('PERMISSIONS.Title'),
+      nzFooter: null,
+      nzContent: PermissionsBoxComponent,
+      nzComponentParams: { data: list, ready$: modalReady$ }
+    });
+    modalReady$.pipe(
+      first(),
+      switchMap(() => {
+        return modalRef.getContentComponent().changes$;
+      })
+    ).subscribe(() => {
+        this.listsFacade.updateList(list);
+      });
+  }
+
+  openInventoryPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Inventory_breakdown'),
+      nzFooter: null,
+      nzContent: InventoryViewComponent,
       nzComponentParams: { list: list }
     });
   }

@@ -4,6 +4,9 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Trade } from '../../model/trade';
 import { Item } from '../../../../model/garland-tools/item';
+import { TradeNpc } from '../../model/trade-npc';
+import { TradeEntry } from '../../model/trade-entry';
+import * as npcs from '../../../../core/data/sources/npcs.json';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
@@ -24,40 +27,56 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): TradeSource[] {
-    const tradeSources: TradeSource [] = [];
-    for (const ts of item.tradeShops) {
-      const tradeSource: TradeSource = {
-        npcId: +ts,
-        trades: [],
+    return item.tradeShops.map(ts => {
+      return {
+        npcs: ts.npcs.map(npcId => {
+          const npc: TradeNpc = { id: npcId };
+          const npcEntry = npcs[npcId];
+          if (npcEntry.position !== null) {
+            npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+            npc.zoneId = npcEntry.position.zoneid;
+          }
+          return npc;
+        }),
+        trades: ts.listings.map(row => {
+          return <Trade>{
+            currencies: row.currency.filter(entry => {
+              return itemData.getPartial(entry.id, 'item') !== undefined;
+            }).map(currency => {
+              const currencyPartial = itemData.getPartial(currency.id, 'item').obj;
+              return <TradeEntry>{
+                id: currencyPartial.i,
+                icon: currencyPartial.c,
+                amount: currency.amount,
+                hq: currency.hq === 1
+              };
+            }),
+            items: row.item.map(tradeItem => {
+              const itemPartialFetch = itemData.getPartial(tradeItem.id, 'item');
+              if (itemPartialFetch !== undefined) {
+                const itemPartial = itemPartialFetch.obj;
+                return <TradeEntry>{
+                  id: itemPartial.i,
+                  icon: itemPartial.c,
+                  amount: tradeItem.amount,
+                  hq: tradeItem.hq === 1
+                };
+              } else if (+tradeItem.id === item.id) {
+                return <TradeEntry>{
+                  id: item.id,
+                  icon: item.icon,
+                  amount: tradeItem.amount,
+                  hq: tradeItem.hq === 1
+                };
+              }
+              return undefined;
+            })
+              .filter(res => res !== undefined)
+          };
+        }),
         shopName: ts.shop
       };
-      for (const npcId of ts.npcs) {
-        const partial = itemData.getPartial(npcId.toString(), 'npc');
-        if (partial.c !== undefined && partial.i !== undefined && partial.a !== undefined) {
-          tradeSource.coords = {
-            x: partial.c[0],
-            y: partial.c[1]
-          };
-          tradeSource.zoneId = partial.i;
-          tradeSource.areaId = partial.a;
-        }
-      }
-      for (const row of ts.listings) {
-        const currencyPartial = itemData.getPartial(row.currency[0].id, 'item').obj;
-        const trade: Trade = {
-          itemIcon: item.icon,
-          itemAmount: row.item[0].amount,
-          itemId: item.id,
-          itemHQ: row.item[0].hq === 1,
-          currencyIcon: currencyPartial.c,
-          currencyAmount: row.currency[0].amount,
-          currencyId: row.currency[0].id
-        };
-        tradeSource.trades.push(trade);
-      }
-      tradeSources.push(tradeSource);
-    }
-    return tradeSources;
+    });
   }
 
 }

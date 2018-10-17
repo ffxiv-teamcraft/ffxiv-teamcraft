@@ -1,11 +1,16 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="false">
-    <app-item-icon
-      *ngFor="let crystal of crystals; trackBy: trackByItem"
-      [icon]="crystal.icon"
-      [itemName]="crystal.id | itemName| i18n"
-      [itemId]="crystal.id"
-      [width]="32"></app-item-icon>
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+      <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center"
+           *ngFor="let crystal of crystals; trackBy: trackByItem">
+        <app-item-icon
+          [icon]="crystal.icon"
+          [itemName]="crystal.id | itemName| i18n"
+          [itemId]="crystal.id"
+          [width]="32"></app-item-icon>
+        <span>x{{crystal.amount}}</span>
+      </div>
+    </div>
   </nz-collapse-panel>
   <ng-template #panelHeader>{{'Crystals' | translate}}</ng-template>
 </nz-collapse>

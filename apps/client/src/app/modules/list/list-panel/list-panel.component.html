@@ -1,16 +1,16 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader">
-    <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="itemTemplate">
+    <nz-list [nzDataSource]="_list.finalItems" [nzRenderItem]="itemTemplate">
       <ng-template #itemTemplate let-item>
         <nz-list-item [nzContent]="amountModifier" [nzActions]="[removeItem]">
           <nz-list-item-meta [nzAvatar]="item.icon | icon" [nzTitle]="item.id | itemName | i18n"></nz-list-item-meta>
         </nz-list-item>
         <ng-template #amountModifier>
-          <input nz-input class="amount-input" type="number" [ngModel]="item.amount"
-                 (ngModelChange)="updateAmount(item, $event)">
+          <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number" [ngModel]="item.amount"
+                           (ngModelChange)="updateAmount(item, $event)"></nz-input-number>
         </ng-template>
         <ng-template #removeItem>
-          <button nz-button [nzType]="'danger'" [nzShape]="'circle'">
+          <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30">
             <i class="anticon anticon-delete"></i>
           </button>
         </ng-template>
@@ -20,18 +20,19 @@
   <ng-template #panelHeader>
     <div class="panel-header" nz-row>
       <div nz-col nzMd="4">
-        {{list.name}}
+        {{_list.name}}
       </div>
       <div nz-col nzMd="16" class="panel-middle-content">
         <div class="tags">
-          <nz-tag *ngIf="list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
+          <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" nz-tooltip [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
-          <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>
+          <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'" nz-tooltip
+                  [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
+          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>
         </div>
         <div class="description">
-          {{list.note}}
+          {{_list.note}}
         </div>
       </div>
       <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
@@ -43,22 +44,23 @@
         <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
            [nzShape]="'circle'"
            [nzType]="'primary'"
-           routerLink="/list/{{list.$key}}">
+           routerLink="/list/{{_list.$key}}">
           <i class="anticon anticon-folder-open"></i>
         </a>
         <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
-                [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(list)">
+                [disabled]="(permissionLevel$ | async) < 40"
+                [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(_list)">
           <i class="anticon anticon-delete"></i></button>
         <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
           <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
             <i class="anticon anticon-ellipsis"></i></button>
           <ul nz-menu>
-            <li nz-menu-item>TODO Rename</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)">{{'LIST.Rename' | translate}}</li>
             <li nz-menu-item>TODO Comments</li>
-            <li nz-menu-item (click)="openTagsPopup(list)">{{'LIST_DETAILS.Tags_popup' | translate}}</li>
-            <li nz-menu-item>TODO Permissions</li>
-            <li nz-menu-item>TODO Template (create or copy)</li>
-            <li nz-menu-item>TODO Custom link (create or copy)</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)">{{'LIST_DETAILS.Tags_popup' | translate}}</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40">TODO Permissions</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10">TODO Template (create or copy)</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10">TODO Custom link (create or copy)</li>
           </ul>
         </nz-dropdown>
       </div>
