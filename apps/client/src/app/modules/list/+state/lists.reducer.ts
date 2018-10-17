@@ -41,7 +41,7 @@ export function listsReducer(
       state = {
         ...state,
         listsWithWriteAccess: [
-          ...action.payload
+          ...action.payload.filter(list => state.myLists.find(l => l.$key === list.$key) === undefined)
         ],
         listsWithWriteAccessConnected: true
       };
