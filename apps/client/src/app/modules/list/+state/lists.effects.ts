@@ -71,15 +71,21 @@ export class ListsEffects {
     filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
     map(([action]) => action),
     switchMap((action: LoadListDetails) => {
-      return combineLatest(
-        of(action.key),
-        this.authFacade.userId$,
-        this.listService.get(action.key).pipe(catchError(() => of(null)))
+      return this.authFacade.loggedIn$.pipe(
+        switchMap(loggedIn => {
+          return combineLatest(
+            of(action.key),
+            this.authFacade.userId$,
+            loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
+            this.listService.get(action.key).pipe(catchError(() => of(null)))
+          );
+        })
       );
     }),
     distinctUntilChanged(),
-    map(([listKey, userId, list]: [string, string, List]) => {
-      if (list !== null && list.getPermissionLevel(userId) >= PermissionLevel.READ) {
+    map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
+      const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+      if (list !== null && permissionLevel >= PermissionLevel.READ) {
         return [listKey, list];
       }
       return [listKey, null];

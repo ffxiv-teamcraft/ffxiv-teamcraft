@@ -16,10 +16,10 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map, shareReplay, distinctUntilChanged } from 'rxjs/operators';
+import { filter, map, shareReplay, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 
 declare const ga: Function;
@@ -38,8 +38,17 @@ export class ListsFacade {
   listsWithWriteAccess$ = this.store.select(listsQuery.getListsWithWriteAccess);
   selectedList$ = this.store.select(listsQuery.getSelectedList);
 
-  selectedListPermissionLevel$ = combineLatest(this.selectedList$, this.authFacade.userId$).pipe(
-    map(([list, userId]) => list.getPermissionLevel(userId)),
+  selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
+    switchMap(loggedIn => {
+      return combineLatest(
+        this.selectedList$,
+        this.authFacade.userId$,
+        loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
+      );
+    }),
+    map(([list, userId, fcId]) => {
+      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+    }),
     distinctUntilChanged(),
     shareReplay(1)
   );
