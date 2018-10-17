@@ -9,6 +9,7 @@ import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
 import { UserPickerModule } from '../user-picker/user-picker.module';
+import { FreecompanyPickerModule } from '../freecompany-picker/freecompany-picker.module';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { UserPickerModule } from '../user-picker/user-picker.module';
     PipesModule,
     CoreModule,
     PageLoaderModule,
-    UserPickerModule
+    UserPickerModule,
+    FreecompanyPickerModule
   ],
   declarations: [PermissionsBoxComponent],
   entryComponents: [PermissionsBoxComponent],

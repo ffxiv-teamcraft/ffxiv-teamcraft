@@ -38,12 +38,28 @@ export class ListsEffects {
   );
 
   @Effect()
-  loadListsWithWriteAccess = this.actions$.pipe(
+  loadListsWithWriteAccess$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListsWithWriteAccess),
-    switchMap(() => this.authFacade.userId$),
+    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.loggedIn$)),
     distinctUntilChanged(),
-    switchMap((userId) => {
-      return this.listCompactsService.getWithWriteAccess(userId);
+    switchMap(([userId, loggedIn]) => {
+      // First of all, load using user Id
+      return this.listCompactsService.getWithWriteAccess(userId).pipe(
+        switchMap((lists) => {
+          // If we're anonymous, just return lists, we can't have fc-shared lists.
+          if (!loggedIn) {
+            return of(lists);
+          }
+          // Then add fc lists if we're not anonymous
+          return this.authFacade.mainCharacter$.pipe(
+            distinctUntilChanged(),
+            switchMap((character) => {
+              return this.listCompactsService.getWithWriteAccess(character.FreeCompanyId.toString());
+            }),
+            map(fcLists => [...lists, ...fcLists])
+          );
+        })
+      );
     }),
     map(lists => new ListsWithWriteAccessLoaded(lists))
   );

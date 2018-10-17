@@ -7,9 +7,9 @@ import { debounceTime, map, shareReplay, startWith, switchMap, tap } from 'rxjs/
 import { UserService } from '../../../core/database/user.service';
 
 @Component({
-  selector: 'app-user-picker',
-  templateUrl: './user-picker.component.html',
-  styleUrls: ['./user-picker.component.less']
+  selector: 'app-freecompany-picker',
+  templateUrl: './freecompany-picker.component.html',
+  styleUrls: ['./freecompany-picker.component.less']
 })
 export class FreecompanyPickerComponent {
 
@@ -27,8 +27,7 @@ export class FreecompanyPickerComponent {
 
   public loadingResults = false;
 
-  constructor(private xivapi: XivapiService, private modalRef: NzModalRef,
-              private userService: UserService) {
+  constructor(private xivapi: XivapiService, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
 
     this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)
@@ -43,34 +42,16 @@ export class FreecompanyPickerComponent {
         tap(() => this.loadingResults = true),
         debounceTime(500),
         switchMap(([selectedServer, characterName]) => {
-          return this.xivapi.searchCharacter(characterName, selectedServer);
+          return this.xivapi.searchFreeCompany(characterName, selectedServer);
         }),
         map((result: CharacterSearchResult) => result.Results || []),
-        switchMap(results => {
-          return combineLatest(
-            results.map(c => {
-              return this.userService.getUsersByLodestoneId(c.ID)
-                .pipe(
-                  map(users => {
-                    return users.map(user => {
-                      return {
-                        userId: user.$key,
-                        characterName: c.Name,
-                        characterAvatar: c.Avatar
-                      };
-                    });
-                  })
-                );
-            })
-          ).pipe(map(res => [].concat.apply([], ...res)));
-        }),
         tap(() => this.loadingResults = false),
         startWith([])
       );
   }
 
-  pickUser(row: any): void {
-    this.modalRef.close(row.userId);
+  pickFc(row: any): void {
+    this.modalRef.close(row.ID);
   }
 
 }

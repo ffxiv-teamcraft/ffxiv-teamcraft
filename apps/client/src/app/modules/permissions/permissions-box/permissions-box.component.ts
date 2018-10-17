@@ -8,6 +8,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { combineLatest, of, ReplaySubject, Subject } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
 import { UserPickerService } from '../../user-picker/user-picker.service';
+import { FreecompanyPickerService } from '../../freecompany-picker/freecompany-picker.service';
 
 @Component({
   selector: 'app-permissions-box',
@@ -39,7 +40,8 @@ export class PermissionsBoxComponent implements OnInit {
 
   permissionRows$: Observable<PermissionDisplayRow[]>;
 
-  constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService) {
+  constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService,
+              private freecompanyPickerService: FreecompanyPickerService) {
   }
 
   ngOnInit(): void {
@@ -93,6 +95,17 @@ export class PermissionsBoxComponent implements OnInit {
       )
       .subscribe((userId) => {
         this.data.addPermissionRow(userId);
+        this.changes$.next(this.data);
+      });
+  }
+
+  public addFc(): void {
+    this.freecompanyPickerService.pickFCId()
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((fcId) => {
+        this.data.addPermissionRow(fcId);
         this.changes$.next(this.data);
       });
   }
