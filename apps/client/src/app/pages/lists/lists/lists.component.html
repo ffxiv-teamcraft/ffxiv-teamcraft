@@ -2,10 +2,14 @@
 </app-page-loader>
 <ng-template #lists>
   <div *ngIf="lists$ | async as lists">
-    <div class="toolbar" fxLayout="row wrap">
+    <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
       <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createList()" nz-tooltip
               [nzTitle]="'New_List' | translate">
         <i class="anticon anticon-file-add"></i>
+      </button>
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" (click)="createWorkshop()" nz-tooltip
+              [nzTitle]="'WORKSHOP.Add_workshop' | translate">
+        <i class="anticon anticon-folder-add"></i>
       </button>
       <div class="spacer">
       </div>
@@ -31,6 +35,14 @@
       <h2>{{'LISTS.Shared_lists' | translate}}</h2>
       <div class="list-panel" *ngFor="let list of listsWithWriteAccess; trackBy: trackByList">
         <app-list-panel [list]="list"></app-list-panel>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="workshops$ | async as workshops">
+    <div *ngIf="workshops.length > 0">
+      <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
+      <div class="workshop-panel" *ngFor="let workshop of workshops; trackBy: trackByList">
+        <app-workshop-panel [workshop]="workshop"></app-workshop-panel>
       </div>
     </div>
   </div>

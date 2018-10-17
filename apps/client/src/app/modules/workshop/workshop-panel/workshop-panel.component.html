@@ -1,0 +1,11 @@
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="panelHeader">
+  </nz-collapse-panel>
+  <ng-template #panelHeader>
+    <div class="panel-header" nz-row>
+      <div nz-col nzMd="4">
+        {{_workshop.name}}
+      </div>
+    </div>
+  </ng-template>
+</nz-collapse>

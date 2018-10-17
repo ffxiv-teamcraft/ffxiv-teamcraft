@@ -9,6 +9,7 @@ import { CraftingRotationService } from './crafting-rotation.service';
 import { CommissionService } from './commission/commission.service';
 import { TeamService } from './team.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { WorkshopService } from './workshop.service';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   ],
   providers: [
     ListService,
+    WorkshopService,
     UserService,
     { provide: ListStore, useClass: FirestoreListStorage },
     DiffService,

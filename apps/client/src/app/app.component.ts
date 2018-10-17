@@ -17,6 +17,7 @@ import { LoginPopupComponent } from './core/auth/login-popup/login-popup.compone
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 
 declare const ga: Function;
 
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -118,6 +119,7 @@ export class AppComponent implements OnInit {
 
     this.authFacade.loadUser();
     this.listsFacade.loadMyLists();
+    this.workshopsFacade.loadMyWorkshops();
     this.listsFacade.loadListsWithWriteAccess();
   }
 

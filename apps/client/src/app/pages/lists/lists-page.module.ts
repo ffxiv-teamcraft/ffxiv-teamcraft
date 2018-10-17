@@ -12,6 +12,7 @@ import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { WorkshopModule } from '../../modules/workshop/workshop.module';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
 
     CoreModule,
     ListModule,
+    WorkshopModule,
     PageLoaderModule,
     NameQuestionPopupModule,
     FullpageMessageModule,

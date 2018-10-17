@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { concat, Observable } from 'rxjs';
-import { debounceTime, first, map } from 'rxjs/operators';
+import { debounceTime, filter, first, map } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { Workshop } from '../../../model/other/workshop';
+import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 
 @Component({
   selector: 'app-lists',
@@ -19,15 +22,26 @@ export class ListsComponent {
 
   public listsWithWriteAccess$: Observable<List[]>;
 
+  public workshops$: Observable<Workshop[]>;
+
+  public workshopsWithWriteAccess$: Observable<Workshop[]>;
+
   public loading$: Observable<boolean>;
 
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private dialog: NzModalService,
+              private workshopsFacade: WorkshopsFacade) {
     this.lists$ = this.listsFacade.myLists$.pipe(
       debounceTime(100)
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
+      debounceTime(100)
+    );
+    this.workshops$ = this.workshopsFacade.myWorkshops$.pipe(
+      debounceTime(100)
+    );
+    this.workshopsWithWriteAccess$ = this.workshopsFacade.workshopsWithWriteAccess$.pipe(
       debounceTime(100)
     );
     this.loading$ = this.listsFacade.loadingMyLists$;
@@ -35,6 +49,24 @@ export class ListsComponent {
 
   createList(): void {
     this.listsFacade.createEmptyList();
+  }
+
+  createWorkshop(): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('WORKSHOP.Add_workshop')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        const workshop = new Workshop();
+        workshop.name = name;
+        return workshop;
+      }),
+      first()
+    ).subscribe((workshop) => {
+      this.workshopsFacade.createWorkshop(workshop);
+    });
   }
 
   regenerateLists(lists: List[]): void {
