@@ -15,6 +15,7 @@ import { FreeCompanyActionNamePipe } from './free-company-action-name.pipe';
 import { IfMobilePipe } from './if-mobile.pipe';
 import { NodeTypeIconPipe } from './node-type-icon.pipe';
 import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
+import { XivapiIconPipe } from './xivapi-icon.pipe'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
     FreeCompanyActionNamePipe,
     IfMobilePipe,
     NodeTypeIconPipe,
-    ClosestAetherytePipe
+    ClosestAetherytePipe,
+    XivapiIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -51,7 +53,8 @@ import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
     FreeCompanyActionNamePipe,
     IfMobilePipe,
     NodeTypeIconPipe,
-    ClosestAetherytePipe
+    ClosestAetherytePipe,
+    XivapiIconPipe
   ]
 })
 export class PipesModule {
