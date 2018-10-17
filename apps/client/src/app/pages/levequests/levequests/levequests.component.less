@@ -1,37 +1,39 @@
 @import '../../../../theme';
+@underMd: ~"(max-width: 767px)";
+@underXl: ~"(max-width: 1199px)";
 
 .top-part {
-  width: 50%;
-  @media @mobile {
-    width: 90%;
-  }
-
-  margin: 0 auto;
+  margin: 0 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   .job {
-    min-width: 120px;
+    width: 100%;
   }
 
-  .search {
-    margin: 0 20px;
+  @media (max-width: 767px) {
+    .search {
+      margin-top: 10px;
+    }
   }
 
   .levels {
-    max-width: 150px;
+    width: 100%;
 
     .ant-input-number {
-      width: 60px;
+      width: 40%;
     }
 
     input:disabled {
-      width: 30px;
+      width: 20%;
+      text-align: center;
       pointer-events: none;
     }
   }
 }
 
-.addition-buttons {
+.additional-buttons {
   width: 100%;
   display: flex;
   padding: 10px;
@@ -44,19 +46,45 @@
   @media @mobile {
     padding: 20px 10px;
   }
+
   .select-box {
     position: absolute;
     left: -25px;
   }
-  .list-center {
-    height: 45px;
-    line-height: 45px;
+
+  .ant-list-item-meta{
+    max-width: 500px;
+    @media @underXl {
+      margin-bottom: 10px;
+    }
   }
+
+  .list-center {
+    text-align: center;
+  }
+
   .amount {
     width: 70px;
+    @media @underXl {
+      margin-top: 10px;
+    }
   }
+
   .all-deliveries {
     margin-left: 10px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    @media @underXl {
+      margin-top: 10px;
+    }
   }
 }
 
