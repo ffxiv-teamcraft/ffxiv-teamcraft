@@ -10,12 +10,16 @@ import { WorkshopPanelComponent } from './workshop-panel/workshop-panel.componen
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
     NgZorroAntdModule,
+    FlexLayoutModule,
+    NgxDnDModule,
 
     DatabaseModule,
     ListModule,

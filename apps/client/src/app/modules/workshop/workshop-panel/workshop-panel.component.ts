@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Workshop } from '../../../model/other/workshop';
-import { ReplaySubject } from 'rxjs';
+import { combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { WorkshopsFacade } from '../+state/workshops.facade';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-workshop-panel',
@@ -18,4 +22,17 @@ export class WorkshopPanelComponent {
   public _workshop: Workshop;
 
   private workshop$: ReplaySubject<Workshop> = new ReplaySubject<Workshop>();
+
+  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.workshop$).pipe(
+    map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
+    distinctUntilChanged(),
+    shareReplay(1),
+  );
+
+  constructor(private workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade) {
+  }
+
+  deleteWorkshop(): void {
+    this.workshopsFacade.deleteWorkshop(this._workshop.$key);
+  }
 }

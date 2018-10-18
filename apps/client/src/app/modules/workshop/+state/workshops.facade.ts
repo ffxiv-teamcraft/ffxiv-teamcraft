@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WorkshopsState } from './workshops.reducer';
 import { workshopsQuery } from './workshops.selectors';
-import { CreateWorkshop, LoadMyWorkshops } from './workshops.actions';
+import { CreateWorkshop, DeleteWorkshop, LoadMyWorkshops } from './workshops.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -31,6 +31,10 @@ export class WorkshopsFacade {
 
   createWorkshop(workshop: Workshop): void {
     this.store.dispatch(new CreateWorkshop(workshop));
+  }
+
+  deleteWorkshop(key: string): void {
+    this.store.dispatch(new DeleteWorkshop(key));
   }
 
   loadMyWorkshops(): void {
