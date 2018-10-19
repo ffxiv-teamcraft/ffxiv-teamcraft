@@ -7,11 +7,12 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
 
 @Component({
   selector: 'app-list-panel',
@@ -22,7 +23,7 @@ import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 export class ListPanelComponent {
 
   @Input()
-  public set list(l: List){
+  public set list(l: List) {
     this._list = l;
     this.list$.next(l);
   }
@@ -31,10 +32,12 @@ export class ListPanelComponent {
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
+  private listsDetails$ = this.listsFacade.allListDetails$;
+
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
     distinctUntilChanged(),
-    shareReplay(1),
+    shareReplay(1)
   );
 
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
@@ -71,7 +74,25 @@ export class ListPanelComponent {
         list.name = name;
         return list;
       })
-    ).subscribe(l => this.listsFacade.updateList(l));
+    ).subscribe(l => this.listsFacade.updateListUsingCompact(l));
+  }
+
+  openPermissionsPopup(list: List): void {
+    const modalReady$ = new Subject<void>();
+    const modalRef = this.dialog.create({
+      nzTitle: this.translate.instant('PERMISSIONS.Title'),
+      nzFooter: null,
+      nzContent: PermissionsBoxComponent,
+      nzComponentParams: { data: list, ready$: modalReady$ }
+    });
+    modalReady$.pipe(
+      first(),
+      switchMap(() => {
+        return modalRef.getContentComponent().changes$;
+      })
+    ).subscribe(() => {
+      this.listsFacade.updateListUsingCompact(list);
+    });
   }
 
   afterLinkCopy(): void {

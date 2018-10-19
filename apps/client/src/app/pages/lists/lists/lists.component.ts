@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { concat, Observable } from 'rxjs';
+import { combineLatest, concat, Observable } from 'rxjs';
 import { debounceTime, filter, first, map } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { Workshop } from '../../../model/other/workshop';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
+import { WorkshopDisplay } from '../../../model/other/workshop-display';
 
 @Component({
   selector: 'app-lists',
@@ -22,9 +23,9 @@ export class ListsComponent {
 
   public listsWithWriteAccess$: Observable<List[]>;
 
-  public workshops$: Observable<Workshop[]>;
+  public workshops$: Observable<WorkshopDisplay[]>;
 
-  public workshopsWithWriteAccess$: Observable<Workshop[]>;
+  public workshopsWithWriteAccess$: Observable<WorkshopDisplay[]>;
 
   public loading$: Observable<boolean>;
 
@@ -32,16 +33,41 @@ export class ListsComponent {
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade) {
-    this.lists$ = this.listsFacade.myLists$.pipe(
-      debounceTime(100)
+    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
+      debounceTime(100),
+      map(([workshops, compacts]) => {
+        return workshops.map(workshop => {
+          return {
+            workshop: workshop,
+            lists: workshop.listIds.map(key => {
+              const list = compacts.find(c => c.$key === key);
+              if (list !== undefined) {
+                list.workshopId = workshop.$key;
+              }
+              return list;
+            })
+          };
+        });
+      })
+    );
+
+    // this.workshopsWithWriteAccess$ = this.workshopsFacade.workshopsWithWriteAccess$.pipe(
+    //   debounceTime(100)
+    // );
+
+    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
+      debounceTime(100),
+      map(([lists, workshops]) => {
+        // lists category shows only lists that have no workshop.
+        return lists
+          .filter(l => workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined)
+          .map(l => {
+            delete l.workshopId;
+            return l;
+          });
+      })
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
-      debounceTime(100)
-    );
-    this.workshops$ = this.workshopsFacade.myWorkshops$.pipe(
-      debounceTime(100)
-    );
-    this.workshopsWithWriteAccess$ = this.workshopsFacade.workshopsWithWriteAccess$.pipe(
       debounceTime(100)
     );
     this.loading$ = this.listsFacade.loadingMyLists$;
@@ -83,6 +109,9 @@ export class ListsComponent {
   }
 
   setListIndex(list: List, index: number, lists: List[]): void {
+    if (list.workshopId !== undefined) {
+      this.workshopsFacade.removeListFromWorkshop(list.$key, list.workshopId);
+    }
     // Remove list from the array
     lists = lists.filter(l => l.$key !== list.$key);
     // Insert it at new index

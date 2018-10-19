@@ -2,7 +2,15 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WorkshopsState } from './workshops.reducer';
 import { workshopsQuery } from './workshops.selectors';
-import { CreateWorkshop, DeleteWorkshop, LoadMyWorkshops } from './workshops.actions';
+import {
+  CreateWorkshop,
+  DeleteWorkshop,
+  LoadMyWorkshops,
+  LoadWorkshop,
+  RemoveListFromWorkshop,
+  SelectWorkshop,
+  UpdateWorkshop
+} from './workshops.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -29,8 +37,24 @@ export class WorkshopsFacade {
   constructor(private store: Store<{ workshops: WorkshopsState }>, private authFacade: AuthFacade) {
   }
 
+  removeListFromWorkshop(listKey: string, workshopKey: string): void {
+    this.store.dispatch(new RemoveListFromWorkshop(listKey, workshopKey));
+  }
+
   createWorkshop(workshop: Workshop): void {
     this.store.dispatch(new CreateWorkshop(workshop));
+  }
+
+  updateWorkshop(workshop: Workshop): void {
+    this.store.dispatch(new UpdateWorkshop(workshop));
+  }
+
+  loadWorkshop(key: string): void {
+    this.store.dispatch(new LoadWorkshop(key));
+  }
+
+  selectWorkshop(key: string): void {
+    this.store.dispatch(new SelectWorkshop(key));
   }
 
   deleteWorkshop(key: string): void {

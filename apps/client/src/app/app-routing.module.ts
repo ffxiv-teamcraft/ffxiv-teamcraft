@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: './pages/list-details/list-details.module#ListDetailsModule'
   },
   {
+    path: 'workshop',
+    loadChildren: './pages/workshop-details/workshop-details.module#WorkshopDetailsModule'
+  },
+  {
     path: 'search',
     loadChildren: './pages/search/search.module#SearchModule'
   },

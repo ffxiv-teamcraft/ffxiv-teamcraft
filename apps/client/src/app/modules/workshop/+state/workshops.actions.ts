@@ -8,16 +8,32 @@ export enum WorkshopsActionTypes {
   SelectWorkshop = '[Workshops] Select Workshop',
 
   MyWorkshopsLoaded = '[Workshops] My Workshops Loaded',
+  WorkshopLoaded = '[Workshops] Workshop Loaded',
   WorkshopsWithWriteAccessLoaded = '[Workshops] Workshops With Write Access Loaded',
 
   CreateWorkshop = '[Workshops] Create Workshop',
   UpdateWorkshopIndex = '[Workshops] Update Workshop Index',
   UpdateWorkshop = '[Workshops] Update Workshop',
+  RemoveListFromWorkshop = '[Workshops] Remove List from Workshop',
   DeleteWorkshop = '[Workshops] Delete Workshop',
 }
 
 export class LoadMyWorkshops implements Action {
   readonly type = WorkshopsActionTypes.LoadMyWorkshops;
+}
+
+export class LoadWorkshop implements Action {
+  readonly type = WorkshopsActionTypes.LoadWorkshop;
+
+  constructor(public readonly key: string) {
+  }
+}
+
+export class WorkshopLoaded implements Action {
+  readonly type = WorkshopsActionTypes.WorkshopLoaded;
+
+  constructor(public readonly workshop: Partial<Workshop>) {
+  }
 }
 
 export class LoadWorkshopsWithWriteAccess implements Action {
@@ -59,6 +75,13 @@ export class UpdateWorkshop implements Action {
   }
 }
 
+export class RemoveListFromWorkshop implements Action {
+  readonly type = WorkshopsActionTypes.RemoveListFromWorkshop;
+
+  constructor(public readonly listKey:string, public readonly workshopKey:string) {
+  }
+}
+
 export class UpdateWorkshopIndex implements Action {
   readonly type = WorkshopsActionTypes.UpdateWorkshopIndex;
 
@@ -82,4 +105,6 @@ export type WorkshopsAction =
   | LoadWorkshopsWithWriteAccess
   | WorkshopsWithWriteAccessLoaded
   | UpdateWorkshop
+  | LoadWorkshop
+  | WorkshopLoaded
   | DeleteWorkshop;

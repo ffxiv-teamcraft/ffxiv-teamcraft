@@ -4,36 +4,21 @@ import { ListsState } from './lists.reducer';
 // Lookup the 'Lists' feature state managed by NgRx
 const getListsState = createFeatureSelector<ListsState>('lists');
 
-const getMylistsLoading = createSelector(
+const getCompactsLoading = createSelector(
   getListsState,
-  (state: ListsState) => !state.myListsConnected
+  (state: ListsState) => !state.compactsConnected
 );
 
-const getListsWithWriteAccessLoading = createSelector(
+const getCompacts = createSelector(
   getListsState,
-  (state: ListsState) => !state.listsWithWriteAccessConnected
+  getCompactsLoading,
+  (state: ListsState, loading) => loading ? [] : state.compacts
 );
 
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
     return state.listDetails;
-  }
-);
-
-const getAllMyLists = createSelector(
-  getListsState,
-  getMylistsLoading,
-  (state: ListsState, loadingMyLists: boolean) => {
-    return loadingMyLists ? [] : state.myLists;
-  }
-);
-
-const getListsWithWriteAccess = createSelector(
-  getListsState,
-  getListsWithWriteAccessLoading,
-  (state: ListsState, loading: boolean) => {
-    return loading ? [] : state.listsWithWriteAccess;
   }
 );
 
@@ -51,9 +36,8 @@ const getSelectedList = createSelector(
 );
 
 export const listsQuery = {
-  getMylistsLoading,
+  getCompactsLoading,
   getAllListDetails,
   getSelectedList,
-  getAllMyLists,
-  getListsWithWriteAccess
+  getCompacts
 };

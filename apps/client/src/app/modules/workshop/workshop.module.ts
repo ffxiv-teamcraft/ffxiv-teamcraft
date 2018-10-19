@@ -12,6 +12,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { CoreModule } from '../../core/core.module';
+import { ClipboardModule } from 'ngx-clipboard';
+
 
 @NgModule({
   imports: [
@@ -20,6 +23,8 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
     NgZorroAntdModule,
     FlexLayoutModule,
     NgxDnDModule,
+    CoreModule,
+    ClipboardModule,
 
     DatabaseModule,
     ListModule,

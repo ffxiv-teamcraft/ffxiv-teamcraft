@@ -3,22 +3,16 @@ import { List } from '../model/list';
 
 
 export interface ListsState {
-  myLists: List[];
-  listsWithWriteAccess: List[],
+  compacts: List[];
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
-  myListsConnected: boolean;
-  listsWithWriteAccessConnected: boolean;
-  communityListsConnected: boolean;
+  compactsConnected: boolean;
 }
 
 export const initialState: ListsState = {
-  myLists: [],
-  listsWithWriteAccess: [],
+  compacts: [],
   listDetails: [],
-  myListsConnected: false,
-  listsWithWriteAccessConnected: false,
-  communityListsConnected: false
+  compactsConnected: false
 };
 
 export function listsReducer(
@@ -29,10 +23,22 @@ export function listsReducer(
     case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,
-        myLists: [
+        compacts: [
+          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
           ...action.payload
         ],
-        myListsConnected: true
+        compactsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.ListCompactLoaded: {
+      state = {
+        ...state,
+        compacts: [
+          ...state.compacts.filter(compact => action.payload.$key !== compact.$key),
+          <List>action.payload
+        ],
       };
       break;
     }
@@ -40,10 +46,10 @@ export function listsReducer(
     case ListsActionTypes.ListsWithWriteAccessLoaded: {
       state = {
         ...state,
-        listsWithWriteAccess: [
-          ...action.payload.filter(list => state.myLists.find(l => l.$key === list.$key) === undefined)
+        compacts: [
+          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+          ...action.payload
         ],
-        listsWithWriteAccessConnected: true
       };
       break;
     }
@@ -56,9 +62,9 @@ export function listsReducer(
           action.payload
         ]
       };
-      if (action.updateCompact && state.myLists.find(l => l.$key === action.payload.$key) !== undefined) {
-        state.myLists = [
-          ...state.myLists.filter(list => list.$key !== action.payload.$key),
+      if (action.updateCompact && state.compacts.find(l => l.$key === action.payload.$key) !== undefined) {
+        state.compacts = [
+          ...state.compacts.filter(list => list.$key !== action.payload.$key),
           action.payload.getCompact()
         ];
       }
@@ -79,8 +85,8 @@ export function listsReducer(
     case ListsActionTypes.UpdateListIndex: {
       state = {
         ...state,
-        myLists: [
-          ...state.myLists.map(list => list.$key === action.payload.$key ? action.payload : list)
+        compacts: [
+          ...state.compacts.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       break;
@@ -89,8 +95,8 @@ export function listsReducer(
     case ListsActionTypes.DeleteList: {
       state = {
         ...state,
-        myLists: [
-          ...state.myLists.filter(list => list.$key !== action.key)
+        compacts: [
+          ...state.compacts.filter(list => list.$key !== action.key)
         ]
       };
       break;

@@ -29,7 +29,20 @@ export function workshopsReducer(
       state = {
         ...state,
         workshops: [
+          ...state.workshops.filter(workshop => action.payload.find(w => w.$key === workshop.$key) === undefined),
           ...action.payload
+        ],
+        workshopsConnected: true
+      };
+      break;
+    }
+
+    case WorkshopsActionTypes.WorkshopLoaded: {
+      state = {
+        ...state,
+        workshops: [
+          ...state.workshops.filter(workshop => action.workshop.$key !== workshop.$key),
+          <Workshop>action.workshop
         ],
         workshopsConnected: true
       };

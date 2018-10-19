@@ -49,6 +49,9 @@ export class List extends DataWithPermissions {
 
   teamId: string;
 
+  // Used for the drag-and-drop feature.
+  workshopId?:string;
+
   constructor() {
     super();
   }
@@ -93,6 +96,10 @@ export class List extends DataWithPermissions {
     compact.name = this.name;
     compact.version = this.version || '1.0.0';
     compact.tags = this.tags;
+    compact.everyone = this.everyone;
+    compact.registry = this.registry;
+    compact.authorId = this.authorId;
+    compact.$key = this.$key;
     return compact;
   }
 

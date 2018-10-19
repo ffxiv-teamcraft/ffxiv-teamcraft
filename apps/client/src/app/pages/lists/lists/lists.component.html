@@ -41,8 +41,8 @@
   <div *ngIf="workshops$ | async as workshops">
     <div *ngIf="workshops.length > 0">
       <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
-      <div class="workshop-panel" *ngFor="let workshop of workshops; trackBy: trackByList">
-        <app-workshop-panel [workshop]="workshop"></app-workshop-panel>
+      <div class="workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList">
+        <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
       </div>
     </div>
   </div>

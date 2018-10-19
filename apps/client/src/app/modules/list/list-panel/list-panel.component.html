@@ -6,7 +6,8 @@
           <nz-list-item-meta [nzAvatar]="item.icon | icon" [nzTitle]="item.id | itemName | i18n"></nz-list-item-meta>
         </nz-list-item>
         <ng-template #amountModifier>
-          <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number" [ngModel]="item.amount"
+          <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number"
+                           [ngModel]="item.amount"
                            (ngModelChange)="updateAmount(item, $event)"></nz-input-number>
         </ng-template>
         <ng-template #removeItem>
@@ -53,12 +54,19 @@
           <i class="anticon anticon-delete"></i></button>
         <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
           <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i class="anticon anticon-ellipsis"></i></button>
+            <i class="anticon anticon-ellipsis"></i>
+          </button>
           <ul nz-menu>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)">{{'LIST.Rename' | translate}}</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)">
+              {{'LIST.Rename' | translate}}
+            </li>
             <li nz-menu-item>TODO Comments</li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)">{{'LIST_DETAILS.Tags_popup' | translate}}</li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40">TODO Permissions</li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)">
+              {{'LIST_DETAILS.Tags_popup' | translate}}
+            </li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openPermissionsPopup(_list)">
+              {{'PERMISSIONS.Title' | translate}}
+            </li>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10">TODO Template (create or copy)</li>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10">TODO Custom link (create or copy)</li>
           </ul>

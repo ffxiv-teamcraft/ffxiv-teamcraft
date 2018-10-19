@@ -4,10 +4,10 @@ import { ListService } from '../list.service';
 import {
   CreateList,
   CreateOptimisticListCompact,
-  DeleteList,
+  DeleteList, ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
-  ListsWithWriteAccessLoaded,
+  ListsWithWriteAccessLoaded, LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
   SetItemDone,
@@ -84,9 +84,11 @@ export class ListsEffects {
     }),
     distinctUntilChanged(),
     map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
-      const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
-      if (list !== null && permissionLevel >= PermissionLevel.READ) {
-        return [listKey, list];
+      if (list !== null) {
+        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+        if(permissionLevel >= PermissionLevel.READ){
+          return [listKey, list];
+        }
       }
       return [listKey, null];
     }),
@@ -170,6 +172,16 @@ export class ListsEffects {
       return list;
     }),
     map(list => new UpdateList(list))
+  );
+
+  @Effect()
+  loadCompact$ = this.actions$.pipe(
+    ofType<LoadListCompact>(ListsActionTypes.LoadListCompact),
+    withLatestFrom(this.listsFacade.compacts$),
+    filter(([action, compacts]) => compacts.find(list => list.$key === (<LoadListCompact>action).key) === undefined),
+    map(([action]) => action),
+    switchMap(action => this.listCompactsService.get(action.key)),
+    map(listCompact => new ListCompactLoaded(listCompact))
   );
 
   constructor(

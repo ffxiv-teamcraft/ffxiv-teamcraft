@@ -7,11 +7,13 @@ export enum ListsActionTypes {
   LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
 
   LoadListDetails = '[Lists] Load List',
+  LoadListCompact = '[Lists] Load List Compact',
   SelectList = '[Lists] Select List',
 
   SetItemDone = '[Lists] Set Item Done',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
+  ListCompactLoaded = '[Lists] List Compact Loaded',
   ListsWithWriteAccessLoaded = '[Lists] Lists With Write Access Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
@@ -33,6 +35,13 @@ export class LoadListsWithWriteAccess implements Action {
 
 export class LoadListDetails implements Action {
   readonly type = ListsActionTypes.LoadListDetails;
+
+  constructor(public readonly key: string) {
+  }
+}
+
+export class LoadListCompact implements Action {
+  readonly type = ListsActionTypes.LoadListCompact;
 
   constructor(public readonly key: string) {
   }
@@ -69,6 +78,13 @@ export class ListsWithWriteAccessLoaded implements Action {
 
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
+
+  constructor(public payload: Partial<List>) {
+  }
+}
+
+export class ListCompactLoaded implements Action {
+  readonly type = ListsActionTypes.ListCompactLoaded;
 
   constructor(public payload: Partial<List>) {
   }
@@ -121,5 +137,7 @@ export type ListsAction =
   | ListDetailsLoaded
   | CreateOptimisticListCompact
   | UpdateListIndex
+  | LoadListCompact
+  | ListCompactLoaded
   | LoadListsWithWriteAccess
   | ListsWithWriteAccessLoaded;

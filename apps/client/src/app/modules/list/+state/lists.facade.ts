@@ -6,8 +6,9 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList,
-  LoadListDetails, LoadListsWithWriteAccess,
+  DeleteList, LoadListCompact,
+  LoadListDetails,
+  LoadListsWithWriteAccess,
   LoadMyLists,
   SelectList,
   SetItemDone,
@@ -16,7 +17,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map, shareReplay, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -26,16 +27,27 @@ declare const ga: Function;
 
 @Injectable()
 export class ListsFacade {
-  loadingMyLists$ = this.store.select(listsQuery.getMylistsLoading);
+  loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
-  myLists$ = this.store.select(listsQuery.getAllMyLists).pipe(
+  compacts$ = this.store.select(listsQuery.getCompacts);
+
+  myLists$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
+    map(([compacts, userId]) => {
+      return compacts.filter(c => c.authorId === userId);
+    }),
     map(lists => {
       return lists.sort((a, b) => {
         return a.index < b.index ? -1 : 1;
       });
     })
   );
-  listsWithWriteAccess$ = this.store.select(listsQuery.getListsWithWriteAccess);
+
+  listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
+    map(([compacts, userId]) => {
+      return compacts.filter(c => c.getPermissionLevel(userId) >= 20 && c.authorId !== userId);
+    })
+  );
+
   selectedList$ = this.store.select(listsQuery.getSelectedList);
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
@@ -54,6 +66,12 @@ export class ListsFacade {
   );
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade) {
+  }
+
+  getWorkshopCompacts(keys: string[]): Observable<List[]> {
+    return this.compacts$.pipe(
+      map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
+    )
   }
 
   createEmptyList(): void {
@@ -102,6 +120,35 @@ export class ListsFacade {
     this.store.dispatch(new UpdateList(list, updateCompact));
   }
 
+  updateListUsingCompact(compact: List): void {
+    this.allListDetails$.pipe(
+      map(lists => lists.find(l => l.$key === compact.$key)),
+      tap(l => l === undefined ? this.load(compact.$key) : null),
+      switchMap(details => {
+        if (details === undefined) {
+          return this.allListDetails$.pipe(
+            map(lists => lists.find(l => l.$key === compact.$key)),
+            filter(l => l !== undefined),
+            first()
+          );
+        } else {
+          return of(details);
+        }
+      }),
+      map(details => {
+        Object.keys(compact).forEach(compactProperty => {
+          if (JSON.stringify(details[compactProperty]) !== JSON.stringify(compact[compactProperty])) {
+            details[compactProperty] = compact[compactProperty];
+          }
+        });
+        return details;
+      }),
+      first()
+    ).subscribe((details) => {
+      this.updateList(details, true);
+    });
+  }
+
   updateListIndex(list: List): void {
     this.store.dispatch(new UpdateListIndex(list));
   }
@@ -112,6 +159,10 @@ export class ListsFacade {
 
   loadListsWithWriteAccess(): void {
     this.store.dispatch(new LoadListsWithWriteAccess());
+  }
+
+  loadCompact(key: string): void {
+    this.store.dispatch(new LoadListCompact(key));
   }
 
   load(key: string): void {
