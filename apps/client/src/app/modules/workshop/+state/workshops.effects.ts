@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   CreateWorkshop,
-  DeleteWorkshop, LoadWorkshop,
+  DeleteWorkshop,
+  LoadWorkshop,
   MyWorkshopsLoaded,
   RemoveListFromWorkshop,
-  UpdateWorkshop, WorkshopLoaded,
-  WorkshopsActionTypes
+  UpdateWorkshop,
+  WorkshopLoaded,
+  WorkshopsActionTypes,
+  WorkshopsWithWriteAccessLoaded
 } from './workshops.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { WorkshopService } from '../../../core/database/workshop.service';
 import { combineLatest, EMPTY, of } from 'rxjs';
 import { WorkshopsFacade } from './workshops.facade';
 import { Workshop } from '../../../model/other/workshop';
-import { ListDetailsLoaded, LoadListDetails } from '../../list/+state/lists.actions';
-import { List } from '../../list/model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
@@ -30,6 +31,29 @@ export class WorkshopsEffects {
       return this.workshopService.getByForeignKey(TeamcraftUser, userId);
     }),
     map(workshops => new MyWorkshopsLoaded(workshops))
+  );
+
+  @Effect()
+  loadWorkshopsWithWriteAccess$ = this.actions$.pipe(
+    ofType(WorkshopsActionTypes.LoadWorkshopsWithWriteAccess),
+    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
+    distinctUntilChanged(),
+    switchMap(([userId, fcId]) => {
+      // First of all, load using user Id
+      return this.workshopService.getWithWriteAccess(userId).pipe(
+        switchMap((workshops) => {
+          // If we don't have fc informations yet, return the workshops directly.
+          if (!fcId) {
+            return of(workshops);
+          }
+          // Else add fc lists
+          return this.workshopService.getWithWriteAccess(fcId).pipe(
+            map(fcWorkshops => [...workshops, ...fcWorkshops])
+          );
+        })
+      );
+    }),
+    map(workshops => new WorkshopsWithWriteAccessLoaded(workshops))
   );
 
   @Effect()
@@ -54,7 +78,7 @@ export class WorkshopsEffects {
     map(([WorkshopKey, userId, fcId, workshop]: [string, string, string | null, Workshop]) => {
       if (workshop !== null) {
         const permissionLevel = Math.max(workshop.getPermissionLevel(userId), workshop.getPermissionLevel(fcId));
-        if(permissionLevel >= PermissionLevel.READ){
+        if (permissionLevel >= PermissionLevel.READ) {
           return [WorkshopKey, workshop];
         }
       }

@@ -121,6 +121,7 @@ export class AppComponent implements OnInit {
     this.listsFacade.loadMyLists();
     this.workshopsFacade.loadMyWorkshops();
     this.listsFacade.loadListsWithWriteAccess();
+    this.workshopsFacade.loadWorkshopsWithWriteAccess();
   }
 
   openRegisterPopup(): void {

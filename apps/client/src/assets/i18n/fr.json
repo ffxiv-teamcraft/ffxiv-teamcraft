@@ -268,7 +268,7 @@
       "Open_description": "Accède à la liste",
       "Delete": "Supprimer la liste",
       "Delete_description": "Supprime la liste",
-      "Delete_warning": "La suppression d'une liste n'est pas réversible"
+      "Delete_warning": "La suppression d'une liste est réversible"
     }
   },
   "LIST_DETAILS": {

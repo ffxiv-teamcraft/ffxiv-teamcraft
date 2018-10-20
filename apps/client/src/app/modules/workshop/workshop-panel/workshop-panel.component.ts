@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
@@ -16,9 +16,10 @@ import { ListsFacade } from '../../list/+state/lists.facade';
 @Component({
   selector: 'app-workshop-panel',
   templateUrl: './workshop-panel.component.html',
-  styleUrls: ['./workshop-panel.component.less']
+  styleUrls: ['./workshop-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorkshopPanelComponent implements OnInit {
+export class WorkshopPanelComponent implements OnChanges {
 
   @Input()
   public set workshop(l: Workshop) {
@@ -91,6 +92,11 @@ export class WorkshopPanelComponent implements OnInit {
     this.workshopsFacade.updateWorkshop(this._workshop);
   }
 
+  removeList(list: List): void {
+    this._workshop.listIds = this._workshop.listIds.filter(key => key !== list.$key);
+    this.workshopsFacade.updateWorkshop(this._workshop);
+  }
+
   afterLinkCopy(): void {
     this.message.success(this.translate.instant('WORKSHOP.Share_link_copied'));
   }
@@ -99,7 +105,7 @@ export class WorkshopPanelComponent implements OnInit {
     return list.$key;
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     // Filter the lists we are missing and we need to load
     this._workshop.listIds.filter(id => this.lists.find(l => l.$key === id) === undefined)
       .forEach((missingCompact) => {

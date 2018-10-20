@@ -39,25 +39,45 @@ export class ListsComponent {
         return workshops.map(workshop => {
           return {
             workshop: workshop,
-            lists: workshop.listIds.map(key => {
-              const list = compacts.find(c => c.$key === key);
-              if (list !== undefined) {
-                list.workshopId = workshop.$key;
-              }
-              return list;
-            })
+            lists: workshop.listIds
+              .map(key => {
+                const list = compacts.find(c => c.$key === key);
+                if (list !== undefined) {
+                  list.workshopId = workshop.$key;
+                }
+                return list;
+              })
+              .filter(l => l !== undefined)
           };
         });
       })
     );
 
-    // this.workshopsWithWriteAccess$ = this.workshopsFacade.workshopsWithWriteAccess$.pipe(
-    //   debounceTime(100)
-    // );
-
-    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
+    this.workshopsWithWriteAccess$ = combineLatest(this.workshopsFacade.workshopsWithWriteAccess$, this.listsFacade.compacts$).pipe(
       debounceTime(100),
-      map(([lists, workshops]) => {
+      map(([workshops, compacts]) => {
+        return workshops
+          .map(workshop => {
+            return {
+              workshop: workshop,
+              lists: workshop.listIds
+                .map(key => {
+                  const list = compacts.find(c => c.$key === key);
+                  if (list !== undefined) {
+                    list.workshopId = workshop.$key;
+                  }
+                  return list;
+                })
+                .filter(l => l !== undefined)
+            };
+          });
+      })
+    );
+
+    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$).pipe(
+      debounceTime(100),
+      map(([lists, myWorkshops, workshopsWithWriteAccess]) => {
+        const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists
           .filter(l => workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined)

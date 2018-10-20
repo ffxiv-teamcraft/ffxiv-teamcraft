@@ -7,7 +7,7 @@ import { authQuery } from './auth.selectors';
 import { GetUser, Logout } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
@@ -19,11 +19,19 @@ export class AuthFacade {
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
+  fcId$ = this.store.select(authQuery.getMainCharacter).pipe(
+    map((character) => {
+      if (character === null) {
+        return null;
+      }
+      return character.FreeCompanyId.toString();
+    })
+  );
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth) {
   }
 
-  public loadUser():void{
+  public loadUser(): void {
     this.store.dispatch(new GetUser());
   }
 

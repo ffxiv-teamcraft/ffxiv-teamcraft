@@ -7,6 +7,7 @@ import {
   DeleteWorkshop,
   LoadMyWorkshops,
   LoadWorkshop,
+  LoadWorkshopsWithWriteAccess,
   RemoveListFromWorkshop,
   SelectWorkshop,
   UpdateWorkshop
@@ -15,6 +16,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Workshop } from '../../../model/other/workshop';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
 export class WorkshopsFacade {
@@ -27,12 +29,15 @@ export class WorkshopsFacade {
       map(([workshops, userId]) => workshops.filter(w => w.authorId === userId)),
       shareReplay(1)
     );
-  // TODO
-  workshopsWithWriteAccess$ = combineLatest(this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$)
-    .pipe(
-      map(([workshops, userId]) => workshops.filter(w => w.authorId === userId)),
-      shareReplay(1)
-    );
+
+  workshopsWithWriteAccess$ = combineLatest(this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$).pipe(
+    map(([compacts, userId, fcId]) => {
+      return compacts.filter(c => {
+        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+      });
+    }),
+    shareReplay(1)
+  );
 
   constructor(private store: Store<{ workshops: WorkshopsState }>, private authFacade: AuthFacade) {
   }
@@ -63,5 +68,9 @@ export class WorkshopsFacade {
 
   loadMyWorkshops(): void {
     this.store.dispatch(new LoadMyWorkshops());
+  }
+
+  loadWorkshopsWithWriteAccess(): void {
+    this.store.dispatch(new LoadWorkshopsWithWriteAccess());
   }
 }

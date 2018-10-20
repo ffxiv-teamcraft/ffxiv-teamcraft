@@ -4,10 +4,12 @@ import { ListService } from '../list.service';
 import {
   CreateList,
   CreateOptimisticListCompact,
-  DeleteList, ListCompactLoaded,
+  DeleteList,
+  ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
-  ListsWithWriteAccessLoaded, LoadListCompact,
+  ListsWithWriteAccessLoaded,
+  LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
   SetItemDone,
@@ -40,22 +42,18 @@ export class ListsEffects {
   @Effect()
   loadListsWithWriteAccess$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListsWithWriteAccess),
-    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.loggedIn$)),
+    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
     distinctUntilChanged(),
-    switchMap(([userId, loggedIn]) => {
+    switchMap(([userId, fcId]) => {
       // First of all, load using user Id
       return this.listCompactsService.getWithWriteAccess(userId).pipe(
         switchMap((lists) => {
-          // If we're anonymous, just return lists, we can't have fc-shared lists.
-          if (!loggedIn) {
+          // If we don't have fc informations yet, return the lists directly.
+          if (!fcId) {
             return of(lists);
           }
-          // Then add fc lists if we're not anonymous
-          return this.authFacade.mainCharacter$.pipe(
-            distinctUntilChanged(),
-            switchMap((character) => {
-              return this.listCompactsService.getWithWriteAccess(character.FreeCompanyId.toString());
-            }),
+          // Else add fc lists
+          return this.listCompactsService.getWithWriteAccess(fcId).pipe(
             map(fcLists => [...lists, ...fcLists])
           );
         })
@@ -86,7 +84,7 @@ export class ListsEffects {
     map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
       if (list !== null) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
-        if(permissionLevel >= PermissionLevel.READ){
+        if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
         }
       }

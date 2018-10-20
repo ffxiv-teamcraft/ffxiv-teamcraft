@@ -17,7 +17,7 @@ export interface WorkshopsState {
 
 export const initialState: WorkshopsState = {
   workshops: [],
-  workshopsConnected: false,
+  workshopsConnected: false
 };
 
 export function workshopsReducer(
@@ -33,6 +33,17 @@ export function workshopsReducer(
           ...action.payload
         ],
         workshopsConnected: true
+      };
+      break;
+    }
+
+    case WorkshopsActionTypes.WorkshopsWithWriteAccessLoaded: {
+      state = {
+        ...state,
+        workshops: [
+          ...state.workshops.filter(workshop => action.payload.find(w => w.$key === workshop.$key) === undefined),
+          ...action.payload
+        ]
       };
       break;
     }

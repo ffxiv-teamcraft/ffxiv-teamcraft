@@ -25,10 +25,10 @@
            [model]="list">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
+      <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)" height="150px">
+        {{'LISTS.No_lists' | translate}}
+      </app-fullpage-message>
     </div>
-    <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)">
-      {{'LISTS.No_lists' | translate}}
-    </app-fullpage-message>
   </div>
   <div *ngIf="listsWithWriteAccess$ | async as listsWithWriteAccess">
     <div *ngIf="listsWithWriteAccess.length > 0">
@@ -42,6 +42,14 @@
     <div *ngIf="workshops.length > 0">
       <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
       <div class="workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList">
+        <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="workshopsWithWriteAccess$ | async as workshopsWithWriteAccess">
+    <div *ngIf="workshopsWithWriteAccess.length > 0">
+      <h2>{{'WORKSHOP.Shared_workshops' | translate}}</h2>
+      <div class="workshop-panel" *ngFor="let workshopDisplay of workshopsWithWriteAccess; trackBy: trackByList">
         <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
       </div>
     </div>

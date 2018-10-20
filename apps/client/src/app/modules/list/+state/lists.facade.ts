@@ -6,7 +6,8 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList, LoadListCompact,
+  DeleteList,
+  LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
   LoadMyLists,
@@ -22,6 +23,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 declare const ga: Function;
 
@@ -42,10 +44,13 @@ export class ListsFacade {
     })
   );
 
-  listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
-    map(([compacts, userId]) => {
-      return compacts.filter(c => c.getPermissionLevel(userId) >= 20 && c.authorId !== userId);
-    })
+  listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$, this.authFacade.fcId$).pipe(
+    map(([compacts, userId, fcId]) => {
+      return compacts.filter(c => {
+        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId
+      });
+    }),
+    shareReplay(1)
   );
 
   selectedList$ = this.store.select(listsQuery.getSelectedList);
@@ -71,7 +76,7 @@ export class ListsFacade {
   getWorkshopCompacts(keys: string[]): Observable<List[]> {
     return this.compacts$.pipe(
       map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
-    )
+    );
   }
 
   createEmptyList(): void {

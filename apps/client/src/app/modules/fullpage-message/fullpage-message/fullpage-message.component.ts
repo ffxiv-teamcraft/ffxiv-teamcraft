@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-fullpage-message',
   templateUrl: './fullpage-message.component.html',
   styleUrls: ['./fullpage-message.component.less']
 })
-export class FullpageMessageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class FullpageMessageComponent {
+  @Input()
+  height = 'calc(100vh - 64px)';
 }
