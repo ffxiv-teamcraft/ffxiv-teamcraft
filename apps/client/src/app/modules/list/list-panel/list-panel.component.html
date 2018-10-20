@@ -11,7 +11,8 @@
                            (ngModelChange)="updateAmount(item, $event)"></nz-input-number>
         </ng-template>
         <ng-template #removeItem>
-          <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30">
+          <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30"
+                  (click)="updateAmount(item, 0)">
             <i class="anticon anticon-delete"></i>
           </button>
         </ng-template>

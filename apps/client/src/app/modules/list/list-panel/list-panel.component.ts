@@ -32,8 +32,6 @@ export class ListPanelComponent {
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
-  private listsDetails$ = this.listsFacade.allListDetails$;
-
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
     distinctUntilChanged(),
