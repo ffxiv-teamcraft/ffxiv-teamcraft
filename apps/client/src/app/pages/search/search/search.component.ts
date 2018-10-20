@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.recipesOnlySearch);
+  onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   results$: Observable<SearchResult[]>;
 
@@ -54,7 +54,6 @@ export class SearchComponent implements OnInit {
       filter(([query]) => query.length > 3),
       debounceTime(500),
       tap(([query, onlyRecipes]) => {
-        this.settings.recipesOnlySearch = onlyRecipes;
         this.showIntro = false;
         this.loading = true;
         const queryParams = {
@@ -78,7 +77,7 @@ export class SearchComponent implements OnInit {
         return params.query !== undefined && params.onlyRecipes !== undefined;
       })
     ).subscribe(params => {
-      this.onlyRecipes$.next(params.onlyRecipes);
+      this.onlyRecipes$.next(params.onlyRecipes === "true");
       this.query$.next(params.query);
     });
   }

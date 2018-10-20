@@ -11,6 +11,23 @@
   </ng-template>
   <ng-template #header><i class="anticon anticon-solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
 </nz-list>
+<div>
+  <nz-list *ngFor="let workshopDisplay of workshops$ | async; trackBy: trackByWorkshopDisplay" [nzDataSource]="workshopDisplay.lists"
+           [nzRenderItem]="workshopList" [nzHeader]="workshopHeader">
+    <ng-template #workshopList let-list>
+      <nz-list-item [nzActions]="[pickOwnList]">
+        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickOwnList>
+        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
+          class="anticon anticon-check"></i></button>
+      </ng-template>
+    </ng-template>
+    <ng-template #workshopHeader><i class="anticon anticon-folder-open"></i>&nbsp;{{workshopDisplay.workshop.name}}
+    </ng-template>
+  </nz-list>
+</div>
 <nz-list [nzDataSource]="listsWithWriteAccess$ | async" [nzRenderItem]="sharedList" [nzHeader]="headerSharedLists">
   <ng-template #sharedList let-list>
     <nz-list-item [nzActions]="[pickSharedList]">
