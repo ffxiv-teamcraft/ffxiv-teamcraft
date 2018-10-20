@@ -4,4 +4,5 @@ export class Workshop extends DataWithPermissions {
   name: string;
   listIds: string[] = [];
   createdAt = new Date().toISOString();
+  index = -1;
 }

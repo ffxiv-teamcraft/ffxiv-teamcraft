@@ -36,20 +36,22 @@ export class ListsComponent {
     this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
-        return workshops.map(workshop => {
-          return {
-            workshop: workshop,
-            lists: workshop.listIds
-              .map(key => {
-                const list = compacts.find(c => c.$key === key);
-                if (list !== undefined) {
-                  list.workshopId = workshop.$key;
-                }
-                return list;
-              })
-              .filter(l => l !== undefined)
-          };
-        });
+        return workshops
+          .map(workshop => {
+            return {
+              workshop: workshop,
+              lists: workshop.listIds
+                .map(key => {
+                  const list = compacts.find(c => c.$key === key);
+                  if (list !== undefined) {
+                    list.workshopId = workshop.$key;
+                  }
+                  return list;
+                })
+                .filter(l => l !== undefined)
+            };
+          })
+          .sort((a, b) => a.workshop.index - b.workshop.index);
       })
     );
 
@@ -85,6 +87,9 @@ export class ListsComponent {
             delete l.workshopId;
             return l;
           });
+      }),
+      map(lists => {
+        return lists.sort((a, b) => b.index - a.index);
       })
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
@@ -147,6 +152,25 @@ export class ListsComponent {
         this.listsFacade.updateListIndex(l);
       });
 
+  }
+
+  setWorkshopIndex(workshop: Workshop, index: number, workshopDisplays: WorkshopDisplay[]): void {
+    // Remove workshop from the array
+    const workshops = workshopDisplays
+      .map(display => display.workshop)
+      .filter(w => w.$key !== workshop.$key);
+    // Insert it at new index
+    workshops.splice(index, 0, workshop);
+    // Update indexes and persist
+    workshops
+      .filter((w, i) => w.index !== i)
+      .map((w, i) => {
+        w.index = i;
+        return w;
+      })
+      .forEach(w => {
+        this.workshopsFacade.updateWorkshop(w);
+      });
   }
 
   trackByList(index: number, list: List): string {

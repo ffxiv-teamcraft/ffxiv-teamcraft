@@ -41,8 +41,13 @@
   <div *ngIf="workshops$ | async as workshops">
     <div *ngIf="workshops.length > 0">
       <h2>{{'WORKSHOP.Workshops' | translate}}</h2>
-      <div class="workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList">
-        <app-workshop-panel [workshop]="workshopDisplay.workshop" [lists]="workshopDisplay.lists"></app-workshop-panel>
+      <div class="ngx-dnd-container" (drop)="setWorkshopIndex($event.value, $event.dropIndex, workshops)"
+           ngxDroppable="workshop">
+        <div class="ngx-dnd-item workshop-panel" *ngFor="let workshopDisplay of workshops; trackBy: trackByList"
+             ngxDraggable="workshop" [model]="workshopDisplay.workshop">
+          <app-workshop-panel [workshop]="workshopDisplay.workshop"
+                              [lists]="workshopDisplay.lists"></app-workshop-panel>
+        </div>
       </div>
     </div>
   </div>

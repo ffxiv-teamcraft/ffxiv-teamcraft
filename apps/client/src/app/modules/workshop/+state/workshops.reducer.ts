@@ -64,7 +64,7 @@ export function workshopsReducer(
       state = {
         ...state,
         workshops: [
-          ...state.workshops.map(list => list.$key === action.payload.$key ? action.payload : list)
+          ...state.workshops.map(workshop => workshop.$key === action.payload.$key ? action.payload : workshop)
         ]
       };
       break;
@@ -74,7 +74,7 @@ export function workshopsReducer(
       state = {
         ...state,
         workshops: [
-          ...state.workshops.filter(list => list.$key !== action.key)
+          ...state.workshops.filter(workshop => workshop.$key !== action.key)
         ]
       };
       break;

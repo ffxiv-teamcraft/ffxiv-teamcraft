@@ -10,7 +10,7 @@ import {
   LoadWorkshopsWithWriteAccess,
   RemoveListFromWorkshop,
   SelectWorkshop,
-  UpdateWorkshop
+  UpdateWorkshop, UpdateWorkshopIndex
 } from './workshops.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
@@ -52,6 +52,10 @@ export class WorkshopsFacade {
 
   updateWorkshop(workshop: Workshop): void {
     this.store.dispatch(new UpdateWorkshop(workshop));
+  }
+
+  updateWorkshopIndex(workshop: Workshop): void {
+    this.store.dispatch(new UpdateWorkshopIndex(workshop));
   }
 
   loadWorkshop(key: string): void {
