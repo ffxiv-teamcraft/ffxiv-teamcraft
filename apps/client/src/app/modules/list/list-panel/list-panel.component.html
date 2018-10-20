@@ -19,11 +19,11 @@
     </nz-list>
   </nz-collapse-panel>
   <ng-template #panelHeader>
-    <div class="panel-header" nz-row>
-      <div nz-col nzMd="4">
+    <div class="panel-header" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
+      <div nz-col nzSm="24" nzMd="4">
         {{_list.name}}
       </div>
-      <div nz-col nzMd="16" class="panel-middle-content">
+      <div nz-col nzSm="24" nzMd="16" class="panel-middle-content">
         <div class="tags">
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
@@ -36,7 +36,7 @@
           {{_list.note}}
         </div>
       </div>
-      <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
+      <div nz-col nzSm="24" nzMd="4" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="flex-end center">
         <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
