@@ -86,6 +86,15 @@
                   "with": "apps/client/src/environments/environment.preview.ts"
                 }
               ]
+            },
+            "electron-preview": {
+              "baseHref": "",
+              "fileReplacements": [
+                {
+                  "replace": "apps/client/src/environments/environment.ts",
+                  "with": "apps/client/src/environments/environment.preview.ts"
+                }
+              ]
             }
           }
         },

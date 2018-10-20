@@ -136,7 +136,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   macroCopied(): void {
-    this.message.success(this.translate.instant('ALARMS.Macro_copied'))
+    this.message.success(this.translate.instant('ALARMS.Macro_copied'));
   }
 
   showSettings(): void {

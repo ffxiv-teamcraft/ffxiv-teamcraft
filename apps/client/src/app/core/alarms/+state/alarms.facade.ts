@@ -15,9 +15,8 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest, Observable } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../time/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';

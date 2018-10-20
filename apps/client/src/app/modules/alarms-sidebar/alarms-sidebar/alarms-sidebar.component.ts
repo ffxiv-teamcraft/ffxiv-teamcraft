@@ -18,8 +18,6 @@ export class AlarmsSidebarComponent implements OnInit {
 
   public alarms$: Observable<AlarmDisplay[]>;
 
-  public loaded$: Observable<boolean>;
-
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private dialog: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService) {
@@ -43,7 +41,6 @@ export class AlarmsSidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.alarms$ = this.alarmsFacade.alarmsSidebarDisplay$;
-    this.loaded$ = this.alarmsFacade.loaded$;
     this.alarmsFacade.loadAlarms();
   }
 

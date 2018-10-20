@@ -9,6 +9,8 @@ const electronOauth2 = require('electron-oauth2');
 
 const argv = process.argv.slice(1);
 
+const BASE_APP_PATH =  path.join(__dirname, 'dist/apps/client');
+
 let win;
 let tray;
 let nativeIcon;
@@ -18,17 +20,12 @@ let updateInterval;
 let openedOverlays = {};
 
 const options = {
-    multi: false,
-    nativeDecorator: false
+    multi: false
 };
 
 for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--multi' || argv[i] === '-m') {
         options.multi = true;
-    }
-    if (argv[i] === '--native-titlebar' || argv[i] === '-nt') {
-        console.log('native titlebar');
-        options.nativeDecorator = true;
     }
 }
 
@@ -54,9 +51,9 @@ if (!options.multi) {
 function createWindow() {
     let opts = {
         show: false,
-        backgroundColor: '#ffffff',
-        frame: options.nativeDecorator,
-        icon: `file://${__dirname}/dist/assets/logo.png`
+        backgroundColor: '#000',
+        frame: true,
+        icon: `file://${BASE_APP_PATH}/assets/logo.png`
     };
     Object.assign(opts, config.get('win:bounds'));
     if (config.get('win:alwaysOnTop')) {
@@ -67,7 +64,7 @@ function createWindow() {
         win.maximize();
     }
 
-    win.loadURL(`file://${__dirname}/dist/index.html`);
+    win.loadURL(`file://${BASE_APP_PATH}/index.html`);
 
     //// uncomment below to open the DevTools.
     //win.webContents.openDevTools();
@@ -92,7 +89,7 @@ function createWindow() {
         config.set('win:alwaysOnTop', win.isAlwaysOnTop());
     });
 
-    const iconPath = path.join(__dirname, 'dist', 'assets', 'logo.png');
+    const iconPath = path.join(BASE_APP_PATH, 'assets/logo.png');
     nativeIcon = nativeImage.createFromPath(iconPath);
     const trayIcon = nativeIcon.resize({width: 16, height: 16});
     tray = new Tray(trayIcon);
@@ -178,9 +175,10 @@ autoUpdater.on('update-downloaded', () => {
     });
 });
 
+// TODO update that before final 5.0 release
 const googleOauthConfig = {
-    clientId: '1082504004791-u79p0kbo22kqn07b97qjsskllgro50o6.apps.googleusercontent.com',
-    clientSecret: 'VNQtDrv0NQbMqxjQ2o8ZTtai',
+    clientId: '884443665612-gvsgirp8v1qcg9c3ercekpbukuaa0nt0.apps.googleusercontent.com',
+    clientSecret: 'iZVoUOdmDX2zdQUQMRRsuHOg',
     authorizationUrl: 'https://accounts.google.com/o/oauth2/auth',
     tokenUrl: 'https://accounts.google.com/o/oauth2/token',
     useBasicAuthorizationHeader: false,
@@ -274,7 +272,7 @@ ipcMain.on('overlay', (event, url) => {
     });
 
 
-    overlay.loadURL(`file://${__dirname}/dist/index.html#${url}?overlay=true`);
+    overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
     openedOverlays[url] = overlay;
 });
 

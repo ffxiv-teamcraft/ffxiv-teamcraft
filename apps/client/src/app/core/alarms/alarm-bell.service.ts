@@ -53,7 +53,7 @@ export class AlarmBellService {
    * @param alarm
    */
   public ring(alarm: Alarm): void {
-    //Let's ring the alarm !
+    // Let's ring the alarm !
     let audio: HTMLAudioElement;
     // If this isn't a file path (desktop app), then take it inside the assets folder.
     if (this.settings.alarmSound.indexOf(':') === -1) {
@@ -75,7 +75,11 @@ export class AlarmBellService {
       + `${aetheryteName}` +
       (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
     if (this.platform.isDesktop()) {
-
+      this.ipc.send('notification', {
+        title: notificationTitle,
+        content: notificationBody,
+        icon: notificationIcon
+      });
     } else {
       this.pushNotificationsService.create(notificationTitle,
         {
