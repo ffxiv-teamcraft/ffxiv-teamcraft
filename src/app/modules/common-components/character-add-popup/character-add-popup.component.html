@@ -19,10 +19,10 @@
         </div>
         <mat-list dense>
             <mat-list-item *ngFor="let character of search | async">
-                <img mat-list-avatar src="{{character.avatar}}" alt="">
-                <h3 matLine>{{character.name}}</h3>
-                <span matLine>{{character.server}}</span>
-                <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}
+                <img mat-list-avatar src="{{character.Avatar}}" alt="">
+                <h3 matLine>{{character.Name}}</h3>
+                <span matLine>{{character.Server}}</span>
+                <button mat-raised-button color="accent" (click)="select(character.ID)">{{'Select' | translate}}
                 </button>
             </mat-list-item>
         </mat-list>

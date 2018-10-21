@@ -4,10 +4,9 @@
             <span class="character-name">
                 {{character.name}}
                 <mat-icon *ngIf="character.user.verified">verified_user</mat-icon>
-                <span *ngIf="freeCompany | async as fc">«{{fc.name}}»</span> - {{character.server}}
+                <span *ngIf="freeCompany | async as fc">«{{fc.Name}}»</span> - {{character.server}}
             </span>
         </mat-card-title>
-        <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
         <div class="spacer"></div>
         <img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png"
              alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"

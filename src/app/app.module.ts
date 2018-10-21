@@ -55,6 +55,7 @@ import { CommissionBoardModule } from './pages/commission-board/commission-board
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsModule } from './pages/settings/settings.module';
 import { VersionLockModule } from './pages/version-lock/version-lock.module';
+import { XivapiClientModule } from '@xivapi/angular-client';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -81,6 +82,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
                 deps: [HttpClient]
             }
         }),
+
+        XivapiClientModule.forRoot('63cc0045d7e847149c3f'),
 
         AngularFireDatabaseModule,
         AngularFireAuthModule,

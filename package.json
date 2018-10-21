@@ -2,7 +2,7 @@
   "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "4.4.17",
+  "version": "4.4.18",
   "license": "MIT",
   "main": "main.js",
   "build": {
@@ -84,7 +84,7 @@
     "@types/jasminewd2": "^2.0.3",
     "@types/jwt-decode": "^2.2.1",
     "@types/semver": "^5.4.0",
-    "@xivapi/angular-client": "^0.2.0",
+    "@xivapi/angular-client": "^0.8.0",
     "angularfire2": "5.0.0-rc.8",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.6",

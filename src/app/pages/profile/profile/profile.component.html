@@ -22,7 +22,6 @@
                             <ng-template #noRating>
                                 {{character.name}}
                             </ng-template>
-                            <mat-icon *ngIf="user.verified">verified_user</mat-icon>
                             <button mat-icon-button color="accent"
                                     (click)="openVerificationPopup()"
                                     *ngIf="!user.verified"
@@ -37,7 +36,6 @@
                             </span>
                         </span>
                     </mat-card-title>
-                    <mat-card-subtitle>{{character.title}}</mat-card-subtitle>
                     <div class="spacer"></div>
                     <img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png"
                          alt="patreon supporter" matTooltip="{{'PROFILE.Patreon_supporter' | translate}}"
