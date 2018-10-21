@@ -1,4 +1,4 @@
-import { NgModule, Provider, ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule, Provider } from '@angular/core';
 import { ListManagerService } from './list/list-manager.service';
 import { HtmlToolsService } from './tools/html-tools.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -50,6 +50,7 @@ import { TeamInviteNotification } from '../model/notification/team-invite-notifi
 import { TeamExclusionNotification } from '../model/notification/team-exclusion-notification';
 import { ItemAssignedNotification } from '../model/notification/item-assigned-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
+import { XivapiClientModule } from '@xivapi/angular-client';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -90,7 +91,8 @@ export const DATA_EXTRACTORS: Provider[] = [
         AngularFireModule,
         MatDialogModule,
         MatButtonModule,
-        PushNotificationsModule
+        PushNotificationsModule,
+        XivapiClientModule
     ],
     providers: [
         // Data Extraction

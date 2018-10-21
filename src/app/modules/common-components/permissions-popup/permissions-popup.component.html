@@ -3,8 +3,8 @@
     <mat-list *ngIf="rows | async as rowsData; else loading">
         <span *ngIf="isWorkshop() && registry.freeCompanyId !== undefined && freeCompany !== undefined">
             <app-permissions-row *ngIf="freeCompany | async as fc"
-                                 [name]="fc.name"
-                                 [fcCrest]="fc.crest"
+                                 [name]="fc.Name"
+                                 [fcCrest]="fc.Crest"
                                  [permissions]="registry.freeCompany"
                                  (permissionsChange)="handleFcPermissionsChange($event)"
                                  (delete)="unbindFreeCompany()"
