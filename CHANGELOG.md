@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.18"></a>
+## [4.4.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.17...v4.4.18) (2018-10-21)
+
+
+### Bug Fixes
+
+* possible fix for "working on it" remove ([dc0ae79](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc0ae79)), closes [#619](https://github.com/Supamiu/ffxiv-teamcraft/issues/619)
+
+
+
 <a name="4.4.17"></a>
 ## [4.4.17](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.16...v4.4.17) (2018-10-08)
 
