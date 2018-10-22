@@ -16,20 +16,6 @@ import { Character, XivapiService } from '@xivapi/angular-client';
 @Injectable()
 export class DataService {
 
-    static craftingJobs = [
-        { abbr: 'CRP', name: 'carpenter' },
-        { abbr: 'BSM', name: 'blacksmith' },
-        { abbr: 'ARM', name: 'armorer' },
-        { abbr: 'LTW', name: 'leatherworker' },
-        { abbr: 'WVR', name: 'weaver' },
-        { abbr: 'GSM', name: 'goldsmith' },
-        { abbr: 'ALC', name: 'alchemist' },
-        { abbr: 'CUL', name: 'culinarian' },
-        { abbr: 'MIN', name: 'miner' },
-        { abbr: 'BTN', name: 'botanist' },
-        { abbr: 'FSH', name: 'fisher' }
-    ];
-
     private garlandUrl = 'https://www.garlandtools.org/db/doc';
     private garlandtoolsVersion = 3;
     private garlandApiUrl = 'https://www.garlandtools.org/api';
@@ -82,7 +68,7 @@ export class DataService {
                                     if (sets.find(set => set.jobId === jobId) === undefined) {
                                         let level = 70;
                                         if (character.classjobs !== undefined) {
-                                            level = character.classjobs[DataService.craftingJobs[jobId - 8].name].level;
+                                            level = character.classjobs[`${jobId}_${jobId}`].level;
                                         }
                                         sets.push({
                                             ilvl: 0,
