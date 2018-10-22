@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.19"></a>
+## [4.4.19](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.18...v4.4.19) (2018-10-22)
+
+
+### Bug Fixes
+
+* fixed some issues related to the new character api ([bff6e94](https://github.com/Supamiu/ffxiv-teamcraft/commit/bff6e94))
+
+
+
 <a name="4.4.18"></a>
 ## [4.4.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.17...v4.4.18) (2018-10-21)
 

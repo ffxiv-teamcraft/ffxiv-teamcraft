@@ -44,7 +44,7 @@
                 <img mat-list-avatar src="{{character.avatar}}" alt="">
                 <h3 matLine>{{character.name}}</h3>
                 <span matLine>{{character.server}}</span>
-                <button mat-raised-button color="accent" (click)="select(character.id)">{{'Select' | translate}}
+                <button mat-raised-button color="accent" (click)="select(+lodestoneId)">{{'Select' | translate}}
                 </button>
             </mat-list-item>
         </mat-list>

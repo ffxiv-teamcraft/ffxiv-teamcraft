@@ -16,20 +16,6 @@ import { Character, XivapiService } from '@xivapi/angular-client';
 @Injectable()
 export class DataService {
 
-    static craftingJobs = [
-        { abbr: 'CRP', name: 'carpenter' },
-        { abbr: 'BSM', name: 'blacksmith' },
-        { abbr: 'ARM', name: 'armorer' },
-        { abbr: 'LTW', name: 'leatherworker' },
-        { abbr: 'WVR', name: 'weaver' },
-        { abbr: 'GSM', name: 'goldsmith' },
-        { abbr: 'ALC', name: 'alchemist' },
-        { abbr: 'CUL', name: 'culinarian' },
-        { abbr: 'MIN', name: 'miner' },
-        { abbr: 'BTN', name: 'botanist' },
-        { abbr: 'FSH', name: 'fisher' }
-    ];
-
     private garlandUrl = 'https://www.garlandtools.org/db/doc';
     private garlandtoolsVersion = 3;
     private garlandApiUrl = 'https://www.garlandtools.org/api';
@@ -82,7 +68,7 @@ export class DataService {
                                     if (sets.find(set => set.jobId === jobId) === undefined) {
                                         let level = 70;
                                         if (character.classjobs !== undefined) {
-                                            level = character.classjobs[DataService.craftingJobs[jobId - 8].name].level;
+                                            level = character.classjobs[`${jobId}_${jobId}`].level;
                                         }
                                         sets.push({
                                             ilvl: 0,
@@ -224,11 +210,17 @@ export class DataService {
         if (!this.characterCache.get(id) || invalidateCache) {
             const request = this.xivapi.getCharacter(id)
                 .pipe(
-                    map(result => this.mapCharacterToXivSyncCharacter(result.Character)),
+                    map(result => {
+                        if (result.Info.Character.State !== 2) {
+                            // Reload in 3 minutes.
+                            const reloadDate = new Date(Date.now() + 180000);
+                            return { name: `Please reload/restart Teamcraft at ${reloadDate.getHours()}:${reloadDate.getMinutes()}` };
+                        }
+                        return this.mapCharacterToXivSyncCharacter(result.Character);
+                    }),
                     publishReplay(1),
                     refCount(),
-                    take(1),
-                    map(res => res !== false ? res : { name: 'Lodestone under maintenance' })
+                    take(1)
                 );
             this.characterCache.set(id, request);
         }
@@ -277,8 +269,8 @@ export class DataService {
             portrait: character.Portrait,
             biography: character.Bio,
             race: character.Race,
-            free_company: character.FreeCompanyId.toString(),
+            free_company: character.FreeCompanyId,
             classjobs: character.ClassJobs
-        }
+        };
     }
 }

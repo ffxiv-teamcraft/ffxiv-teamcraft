@@ -1,10 +1,10 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
-import {DataService} from '../../../core/api/data.service';
-import {combineLatest, fromEvent, Observable} from 'rxjs';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { DataService } from '../../../core/api/data.service';
+import { combineLatest, fromEvent, Observable } from 'rxjs';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
-import {UserService} from '../../../core/database/user.service';
-import {debounceTime, first, map, switchMap, tap} from 'rxjs/operators';
+import { UserService } from '../../../core/database/user.service';
+import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-character-add-popup',
@@ -75,10 +75,9 @@ export class CharacterAddPopupComponent implements OnInit {
                 map(() => this.lodestoneId),
                 tap(() => this.loading = true),
                 switchMap(lodestoneId => {
-                    return this.data.getCharacter(+lodestoneId).pipe(
-                        map(res => res.name === 'Lodestone under maintenance' ? null : res)
-                    );
+                    return this.data.getCharacter(+lodestoneId);
                 }),
+                tap(console.log),
                 tap(() => this.loading = false)
             );
         // Combine them to observe the result.
