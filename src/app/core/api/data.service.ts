@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/list/recipe';
@@ -226,12 +226,9 @@ export class DataService {
                 .pipe(
                     map(result => {
                         if (result.Info.Character.State !== 2) {
-                            setTimeout(() => {
-
-                            });
                             // Reload in 3 minutes.
                             const reloadDate = new Date(Date.now() + 180000);
-                            return of({ name: `Please reload/restart Teamcraft at ${reloadDate.getHours()}:${reloadDate.getMinutes()}` });
+                            return { name: `Please reload/restart Teamcraft at ${reloadDate.getHours()}:${reloadDate.getMinutes()}` };
                         }
                         return this.mapCharacterToXivSyncCharacter(result.Character);
                     }),

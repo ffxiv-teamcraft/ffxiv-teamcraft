@@ -77,6 +77,7 @@ export class CharacterAddPopupComponent implements OnInit {
                 switchMap(lodestoneId => {
                     return this.data.getCharacter(+lodestoneId);
                 }),
+                tap(console.log),
                 tap(() => this.loading = false)
             );
         // Combine them to observe the result.
