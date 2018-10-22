@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/list/recipe';
@@ -224,11 +224,20 @@ export class DataService {
         if (!this.characterCache.get(id) || invalidateCache) {
             const request = this.xivapi.getCharacter(id)
                 .pipe(
-                    map(result => this.mapCharacterToXivSyncCharacter(result.Character)),
+                    map(result => {
+                        if (result.Info.Character.State !== 2) {
+                            setTimeout(() => {
+
+                            });
+                            // Reload in 3 minutes.
+                            const reloadDate = new Date(Date.now() + 180000);
+                            return of({ name: `Please reload/restart Teamcraft at ${reloadDate.getHours()}:${reloadDate.getMinutes()}` });
+                        }
+                        return this.mapCharacterToXivSyncCharacter(result.Character);
+                    }),
                     publishReplay(1),
                     refCount(),
-                    take(1),
-                    map(res => res !== false ? res : { name: 'Lodestone under maintenance' })
+                    take(1)
                 );
             this.characterCache.set(id, request);
         }
@@ -277,8 +286,8 @@ export class DataService {
             portrait: character.Portrait,
             biography: character.Bio,
             race: character.Race,
-            free_company: character.FreeCompanyId.toString(),
+            free_company: character.FreeCompanyId,
             classjobs: character.ClassJobs
-        }
+        };
     }
 }
