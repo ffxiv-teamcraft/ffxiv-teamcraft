@@ -33,9 +33,9 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
       <div>{{displayRow.title | translate}}</div>
       <div fxLayout="row" fxLayoutGap="10px">
-        <!--TODO Total price popup-->
-        <button nz-button (click)="$event.stopPropagation()" ngxClipboard disabled
-                nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Total_price' | translate">
+        <button nz-button (click)="$event.stopPropagation()" *ngIf="hasTrades"
+                nzSize="small" nzShape="circle" nz-tooltip (click)="openTotalPricePopup()"
+                [nzTitle]="'LIST.Total_price' | translate">
           <i class="material-icons">local_atm</i>
         </button>
         <button nz-button (click)="$event.stopPropagation()" ngxClipboard [cbContent]="getTextExport()"

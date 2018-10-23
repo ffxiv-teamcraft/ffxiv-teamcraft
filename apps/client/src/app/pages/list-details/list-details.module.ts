@@ -34,6 +34,7 @@ import { VenturesComponent } from './item-details/ventures/ventures.component';
 import { TradesComponent } from './item-details/trades/trades.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PermissionsModule } from '../../modules/permissions/permissions.module';
+import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-panel-price-popup.component';
 
 const routes: Routes = [
   {
@@ -84,7 +85,8 @@ const routes: Routes = [
     VendorsComponent,
     VoyagesComponent,
     VenturesComponent,
-    TradesComponent
+    TradesComponent,
+    TotalPanelPricePopupComponent
   ],
   entryComponents: [
     ListHistoryPopupComponent,
@@ -96,7 +98,8 @@ const routes: Routes = [
     VendorsComponent,
     VoyagesComponent,
     VenturesComponent,
-    TradesComponent
+    TradesComponent,
+    TotalPanelPricePopupComponent
   ]
 })
 export class ListDetailsModule {

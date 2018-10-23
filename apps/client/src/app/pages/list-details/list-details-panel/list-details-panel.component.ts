@@ -5,9 +5,10 @@ import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
+import { TotalPanelPricePopupComponent } from '../total-panel-price-popup/total-panel-price-popup.component';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -26,8 +27,11 @@ export class ListDetailsPanelComponent implements OnChanges {
 
   zoneBreakdown: ZoneBreakdown;
 
+  hasTrades = false;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
-              private message: NzMessageService, private translate: TranslateService) {
+              private message: NzMessageService, private translate: TranslateService,
+              private dialog: NzModalService) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -37,6 +41,9 @@ export class ListDetailsPanelComponent implements OnChanges {
     if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows);
     }
+    this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
+      return row.tradeSources.length > 0 || row.vendors.length > 0 || hasTrades;
+    }, false);
   }
 
   public generateTiers(): void {
@@ -108,6 +115,17 @@ export class ListDetailsPanelComponent implements OnChanges {
       return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other' };
     }
     return this.l12n.getPlace(id);
+  }
+
+  public openTotalPricePopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST.Total_price'),
+      nzContent: TotalPanelPricePopupComponent,
+      nzComponentParams: {
+        panelContent: this.displayRow.rows
+      },
+      nzFooter: null
+    });
   }
 
   public getTextExport(): string {
