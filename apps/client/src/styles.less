@@ -64,73 +64,49 @@ h1, h2, h3, h4, h5 {
 }
 
 // Loader css
-@keyframes sonarWave {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    transform: scale(6);
-    opacity: 0;
-  }
-}
-
-@keyframes heartbeat {
-  0% {
-    transform: scale(1);
-  }
-  8% {
-    transform: scale(1.1);
-  }
-  16% {
-    transform: scale(1);
-  }
-}
-
-.sonar-container {
-  -webkit-app-region: drag;
+@loader-color: rgba(218,165,32, .3);
+.init-loader-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  #logo {
+    position: relative;
+    > img {
+      width: 200px;
+    }
+  }
+  #logo:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 154.5px;
+    left: 23px;
+    height: 1px;
+    width: 180px;
+    transform-origin: top left;
+    transform: rotate(-45deg);
+    animation: glow 1.5s infinite ease-in-out;
+    border-radius: 30%;
+  }
   .brought-to-you {
     padding-top: 40px;
     font-size: 20px;
     color: darkgrey;
     opacity: .7;
   }
-  .sonar-emitter {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    img {
-      animation: heartbeat 1s infinite;
-      width: 120px;
-      height: 120px;
-    }
-    .sonar-wave {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 9999px;
-      background-color: HSL(37, 15%, 70%);
-      z-index: -1;
-      pointer-events: none;
-      animation: sonarWave 1s linear infinite;
-    }
-  }
 }
 
-.loader-container {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@keyframes glow {
+  50%, 100% {
+    box-shadow: 0 0 0 0 @loader-color;
+  }
+  30% {
+    box-shadow: 0 0 5px 5px @loader-color,
+    inset 0 5px 5px @loader-color;
+  }
 }
 
 // Global antd design modifications

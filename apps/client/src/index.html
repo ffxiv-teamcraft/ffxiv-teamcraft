@@ -58,17 +58,31 @@
 </head>
 <body>
 <app-root>
-  <div class="sonar-container">
-    <div class="sonar-emitter">
-      <img src="./assets/logo.png" alt="Teamcraft logo">
-      <div class="sonar-wave"></div>
+  <div class="init-loader-container">
+    <div id="logo">
+      <img src="./assets/logo.png" alt="FFXIV Teamcraft" class="logo">
     </div>
     <div class="brought-to-you">
       Brought to you by <span id="random-patron"></span>
     </div>
   </div>
   <script>
-    const patrons = ['Tataru Taru', 'Erys Night', 'Killagouge', 'chiya', 'DaiSuki2U (Leviathan)', 'Maie Arania', 'Peppermint Cordial Inc', 'Okashii Kazegane'];
+    const patrons = [
+      'Tataru Taru',
+      'Erys Night',
+      'Killagouge',
+      'chiya',
+      'DaiSuki2U (Leviathan)',
+      'Maie Arania',
+      'Peppermint Cordial Inc',
+      'Okashii Kazegane',
+      'Akurosia',
+      'C\'elosia Arcanine',
+      'Coconut Koala (Diabolos)',
+      'Pumpkin Spice Lattes',
+      'Pint Sized Mafia',
+      'Nunosi Ior'
+    ];
     const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
     document.getElementById('random-patron').innerText = randomPatron;
   </script>
