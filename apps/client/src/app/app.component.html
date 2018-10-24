@@ -8,9 +8,6 @@
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm>
           {{time$ | async}}
         </li>
-        <li class="ant-menu-item" nz-popover nzPlacement="bottom" [nzContent]="pins">
-          <i class="anticon anticon-pushpin-o"></i>
-        </li>
         <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notifications">
           <nz-badge [nzDot]="true">
             <i class="anticon anticon-notification"></i>
