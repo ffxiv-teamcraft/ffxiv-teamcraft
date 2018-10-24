@@ -32,7 +32,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { FishDetailsPopupComponent } from '../fish-details-popup/fish-details-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { SettingsService } from '../../../pages/settings/settings.service';
+import { SettingsService } from '../../settings/settings.service';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 import { DataService } from '../../../core/api/data.service';

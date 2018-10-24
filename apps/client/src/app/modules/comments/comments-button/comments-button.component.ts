@@ -4,7 +4,7 @@ import { CommentsPopupComponent } from '../comments-popup/comments-popup.compone
 import { ListRow } from '../../list/model/list-row';
 import { List } from '../../list/model/list';
 import { ObservableMedia } from '@angular/flex-layout';
-import { SettingsService } from '../../../pages/settings/settings.service';
+import { SettingsService } from '../../settings/settings.service';
 import { first } from 'rxjs/operators';
 
 @Component({

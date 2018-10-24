@@ -10,7 +10,7 @@ import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { combineLatest, Observable } from 'rxjs';
 import { AbstractNotification } from './abstract-notification';
-import { SettingsService } from '../../pages/settings/settings.service';
+import { SettingsService } from '../../modules/settings/settings.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({

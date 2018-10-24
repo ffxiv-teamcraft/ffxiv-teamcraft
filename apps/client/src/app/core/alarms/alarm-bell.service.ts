@@ -5,7 +5,7 @@ import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { LocalizedDataService } from '../data/localized-data.service';
-import { SettingsService } from '../../pages/settings/settings.service';
+import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';

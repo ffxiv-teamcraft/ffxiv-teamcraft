@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SettingsService } from '../../pages/settings/settings.service';
+import { SettingsService } from '../settings/settings.service';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { Recipe } from '../../model/search/recipe';
 import { I18nName } from '../../model/common/i18n-name';

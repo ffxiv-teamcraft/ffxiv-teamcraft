@@ -45,7 +45,7 @@ import { RecipeChoicePopupComponent } from './components/recipe-choice-popup/rec
 import { NewFolderPopupComponent } from './components/new-folder-popup/new-folder-popup.component';
 import { RotationPanelComponent } from './components/rotation-panel/rotation-panel.component';
 import { CoreModule } from '../../core/core.module';
-import { SettingsModule } from '../settings/settings.module';
+import { SettingsModule } from '../../modules/settings/settings.module';
 
 const routes: Routes = [
   {

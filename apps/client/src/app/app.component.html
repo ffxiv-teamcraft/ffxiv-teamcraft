@@ -32,7 +32,7 @@
               </ng-template>
             </ng-template>
           </span>
-          <ul>
+          <span>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
               <i class="anticon anticon-idcard"></i>
               {{'Profile' | translate}}
@@ -46,13 +46,11 @@
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link">
-              <span>
-                  <i class="anticon anticon-setting"></i>
-                  <span class="nav-text">{{'SETTINGS.title' | translate}}</span>
-              </span>
+            <a nz-menu-item class="menu-link" (click)="openSettings()">
+              <i class="anticon anticon-setting"></i>
+              {{'SETTINGS.title' | translate}}
             </a>
-            <li nz-menu-divider></li>
+            <span nz-menu-divider></span>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" (click)="logOut()">
               <i class="anticon anticon-logout"></i>
               {{'Disconnect' | translate}}
@@ -65,7 +63,7 @@
               <i class="anticon anticon-login"></i>
               {{'Login' | translate}}
             </a>
-          </ul>
+          </span>
         </li>
       </ul>
     </nz-header>

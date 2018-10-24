@@ -18,6 +18,7 @@ import { EorzeanTimeService } from './core/time/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
+import { SettingsService } from './modules/settings/settings.service';
 
 declare const ga: Function;
 
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade) {
+              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -153,31 +154,8 @@ export class AppComponent implements OnInit {
     this.translate.use(lang);
   }
 
-  /**
-   * Desktop-specific methods
-   */
-  closeApp(): void {
-    window.close();
-  }
-
-  toggleFullscreen(): void {
-    this.ipc.send('fullscreen-toggle');
-  }
-
-  minimize(): void {
-    this.ipc.send('minimize');
-  }
-
-  setOverlayOpacity(opacity: number): void {
-    this.ipc.send('overlay:set-opacity', { uri: this.ipc.overlayUri, opacity: opacity });
-  }
-
-  previousPage(): void {
-    window.history.back();
-  }
-
-  nextPage(): void {
-    window.history.forward();
+  openSettings(): void {
+    this.settings.openSettings();
   }
 
 }

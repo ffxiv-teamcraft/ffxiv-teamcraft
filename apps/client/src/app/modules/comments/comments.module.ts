@@ -8,8 +8,8 @@ import { CommentsButtonComponent } from './comments-button/comments-button.compo
 import { CommentRowComponent } from './comment-row/comment-row.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { SettingsModule } from '../../pages/settings/settings.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { SettingsModule } from '../settings/settings.module';
 
 @NgModule({
   imports: [

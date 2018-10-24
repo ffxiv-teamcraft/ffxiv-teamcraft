@@ -18,7 +18,6 @@ import {
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { SettingsModule } from '../../pages/settings/settings.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CommentsModule } from '../comments/comments.module';
 import { CommonComponentsModule } from '../common-components/common-components.module';
@@ -38,6 +37,7 @@ import { RouterModule } from '@angular/router';
 import { VentureDetailsPopupComponent } from './venture-details-popup/venture-details-popup.component';
 import { CopyableNameModule } from '../copyable-name/copyable-name.module';
 import { SimulatorLinkPipe } from './simulator-link.pipe';
+import { SettingsModule } from '../settings/settings.module';
 
 @NgModule({
   imports: [

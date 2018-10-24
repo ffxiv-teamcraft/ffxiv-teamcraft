@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../settings/settings.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({

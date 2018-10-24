@@ -9,10 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { SettingsModule } from '../settings/settings.module';
 import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { SettingsModule } from '../../modules/settings/settings.module';
 
 const routes: Routes = [
   {

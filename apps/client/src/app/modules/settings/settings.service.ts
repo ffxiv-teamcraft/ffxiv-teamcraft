@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { NzModalService } from 'ng-zorro-antd';
+import { SettingsPopupComponent } from './settings-popup/settings-popup.component';
 
 @Injectable()
 export class SettingsService {
@@ -7,8 +9,24 @@ export class SettingsService {
   public themeChange$ = new Subject<{ previous: string, next: string }>();
   private readonly cache: { [id: string]: string };
 
-  constructor() {
+  constructor(private dialog: NzModalService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
+  }
+
+  public openSettings(): void {
+    this.dialog.create({
+      nzContent: SettingsPopupComponent,
+      nzWidth: '100vw',
+      nzStyle: {
+        top: 0,
+        paddingBottom: 0
+      },
+      nzBodyStyle: {
+        width: '100vw',
+        height: '100vh'
+      },
+      nzFooter: null
+    });
   }
 
   public get baseLink(): string {

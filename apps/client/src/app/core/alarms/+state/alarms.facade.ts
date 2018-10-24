@@ -22,7 +22,7 @@ import { EorzeanTimeService } from '../../time/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
 import { AlarmGroupDisplay } from '../alarm-group-display';
 import { AlarmGroup } from '../alarm-group';
-import { SettingsService } from '../../../pages/settings/settings.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Injectable({
   providedIn: 'root'

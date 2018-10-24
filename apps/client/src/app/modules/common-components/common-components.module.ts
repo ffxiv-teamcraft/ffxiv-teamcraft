@@ -18,13 +18,13 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { RouterModule } from '@angular/router';
-import { SettingsModule } from '../../pages/settings/settings.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { ForgotPasswordPopupComponent } from './forgot-password-popup/forgot-password-popup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommentsModule } from '../comments/comments.module';
 import { UserSelectionPopupComponent } from './user-selection-popup/user-selection-popup.component';
 import { FcCrestComponent } from './fc-crest/fc-crest.component';
+import { SettingsModule } from '../settings/settings.module';
 
 @NgModule({
   imports: [

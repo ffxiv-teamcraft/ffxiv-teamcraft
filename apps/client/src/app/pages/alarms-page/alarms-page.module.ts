@@ -10,7 +10,6 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
-import { SettingsModule } from '../settings/settings.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
@@ -18,6 +17,7 @@ import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-optio
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { SettingsModule } from '../../modules/settings/settings.module';
 
 const routes: Routes = [
   {

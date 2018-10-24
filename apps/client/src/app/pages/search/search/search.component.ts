@@ -4,7 +4,7 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
-import { SettingsService } from '../../settings/settings.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';

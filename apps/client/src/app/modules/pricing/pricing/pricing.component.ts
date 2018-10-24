@@ -4,7 +4,7 @@ import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { ListService } from '../../list/list.service';
-import { SettingsService } from '../../../pages/settings/settings.service';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-pricing',

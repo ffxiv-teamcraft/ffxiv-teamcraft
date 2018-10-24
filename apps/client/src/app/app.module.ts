@@ -36,6 +36,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { WorkshopModule } from './modules/workshop/workshop.module';
+import { SettingsModule } from './modules/settings/settings.module';
 
 registerLocaleData(en);
 
@@ -92,6 +93,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AuthModule,
     ListModule,
     WorkshopModule,
+    SettingsModule,
 
     HttpClientModule,
 

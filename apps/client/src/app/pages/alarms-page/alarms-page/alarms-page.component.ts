@@ -4,7 +4,7 @@ import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
-import { SettingsService } from '../../settings/settings.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 import { AlarmsPageDisplay } from '../../../core/alarms/alarms-page-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
