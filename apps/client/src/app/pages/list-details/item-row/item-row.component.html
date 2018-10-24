@@ -13,20 +13,29 @@
         *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
       </span>
     </span>
+    <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
+                     [userId]="item.workingOnIt" [width]="24"></app-user-avatar>
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
       <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
               nz-button [nzShape]="'circle'">
         <i class="anticon anticon-ellipsis"></i></button>
-      <ul nz-menu>
+      <ul nz-menu *ngIf="userId$ | async as userId">
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_isearch' | translate}}
         </li>
-        <li nz-menu-item>TODO Comment</li>
-        <li nz-menu-item>TODO I'm on it</li>
-        <li nz-menu-item>TODO Requirements</li>
-        <li nz-menu-item>TODO Assign user</li>
-        <li nz-menu-item>TODO Mark HQ</li>
+        <li nz-menu-item nzDisabled>TODO Comment</li>
+        <li nz-menu-item (click)="setWorkingOnIt(userId)" *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
+          {{'Work_on_it' | translate}}
+        </li>
+        <!--TODO handle team leader role here-->
+        <li nz-menu-item (click)="removeWorkingOnIt()"
+            *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt)">
+          {{'Remove_work_on_it' | translate}}
+        </li>
+        <li nz-menu-item nzDisabled>TODO Requirements</li>
+        <li nz-menu-item nzDisabled>TODO Assign user</li>
+        <li nz-menu-item nzDisabled>TODO Mark HQ</li>
       </ul>
     </nz-dropdown>
   </div>

@@ -35,6 +35,7 @@ import { TradesComponent } from './item-details/trades/trades.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PermissionsModule } from '../../modules/permissions/permissions.module';
 import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-panel-price-popup.component';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 
 const routes: Routes = [
   {
@@ -64,6 +65,7 @@ const routes: Routes = [
     ProgressPopupModule,
     MapModule,
     PermissionsModule,
+    UserAvatarModule,
 
     FlexLayoutModule,
 

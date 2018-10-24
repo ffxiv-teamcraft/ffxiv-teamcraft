@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { List } from '../model/list';
+import { ListRow } from '../model/list-row';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
@@ -11,6 +12,7 @@ export enum ListsActionTypes {
   SelectList = '[Lists] Select List',
 
   SetItemDone = '[Lists] Set Item Done',
+  UpdateItem = '[Lists] Update Item',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
   ListCompactLoaded = '[Lists] List Compact Loaded',
@@ -59,6 +61,13 @@ export class SetItemDone implements Action {
 
   constructor(public readonly itemId: number, public readonly itemIcon: number,
               public readonly finalItem: boolean, public readonly doneDelta: number) {
+  }
+}
+
+export class UpdateItem implements Action {
+  readonly type = ListsActionTypes.UpdateItem;
+
+  constructor(public readonly item: ListRow, public readonly finalItem: boolean) {
   }
 }
 
@@ -140,4 +149,5 @@ export type ListsAction =
   | LoadListCompact
   | ListCompactLoaded
   | LoadListsWithWriteAccess
-  | ListsWithWriteAccessLoaded;
+  | ListsWithWriteAccessLoaded
+  | UpdateItem;

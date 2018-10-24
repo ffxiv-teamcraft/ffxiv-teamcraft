@@ -4,7 +4,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -21,6 +21,9 @@ import { VenturesComponent } from '../item-details/ventures/ventures.component';
 import { VoyagesComponent } from '../item-details/voyages/voyages.component';
 import { TradesComponent } from '../item-details/trades/trades.component';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { Character, XivapiService } from '@xivapi/angular-client';
+import { UserService } from '../../../core/database/user.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-item-row',
@@ -30,8 +33,19 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 })
 export class ItemRowComponent implements OnInit {
 
+  private _item: ListRow;
+
   @Input()
-  item: ListRow;
+  public set item(item: ListRow) {
+    this._item = item;
+    this.item$.next(item);
+  }
+
+  public get item(): ListRow {
+    return this._item;
+  }
+
+  private item$: Subject<ListRow> = new Subject<ListRow>();
 
   @Input()
   finalItem = false;
@@ -47,15 +61,24 @@ export class ItemRowComponent implements OnInit {
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
+  userId$: Observable<string>;
+
+  loggedIn$: Observable<boolean>;
+
   constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private cdRef: ChangeDetectorRef) {
+              private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
+              private userService: UserService, private xivapi: XivapiService,
+              private authFacade: AuthFacade) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
       shareReplay(1)
     );
+
+    this.userId$ = this.authFacade.userId$;
+    this.loggedIn$ = this.authFacade.loggedIn$;
 
     this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
       .pipe(
@@ -70,6 +93,16 @@ export class ItemRowComponent implements OnInit {
     setTimeout(() => {
       this.cdRef.detectChanges();
     });
+  }
+
+  removeWorkingOnIt(): void {
+    delete this.item.workingOnIt;
+    this.listsFacade.updateItem(this.item, this.finalItem);
+  }
+
+  setWorkingOnIt(uid: string): void {
+    this.item.workingOnIt = uid;
+    this.listsFacade.updateItem(this.item, this.finalItem);
   }
 
   itemDoneChanged(newValue: number): void {

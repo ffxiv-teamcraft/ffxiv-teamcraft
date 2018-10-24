@@ -1,0 +1,5 @@
+<a routerLink="/profile/{{userId}}">
+  <img *ngIf="character$ | async as character" [src]="character.Avatar" alt="" nz-tooltip
+       [nzTitle]="messageKey ? (messageKey | translate:{name: character.Name}) : character.Name"
+       [style.width.px]="width" class="avatar">
+</a>

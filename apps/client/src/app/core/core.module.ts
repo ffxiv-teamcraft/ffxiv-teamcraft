@@ -29,6 +29,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
+import { CharacterService } from './api/character.service';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { LinkToolsService } from './tools/link-tools.service';
     BellNodesService,
     EorzeanTimeService,
     HtmlToolsService,
-    LinkToolsService
+    LinkToolsService,
+    CharacterService
   ],
   declarations: [
     I18nPipe,

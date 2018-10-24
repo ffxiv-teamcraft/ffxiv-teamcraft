@@ -13,6 +13,7 @@ import {
   LoadListDetails,
   MyListsLoaded,
   SetItemDone,
+  UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
@@ -167,6 +168,23 @@ export class ListsEffects {
     }),
     map(([action, list]: [SetItemDone, List]) => {
       list.setDone(action.itemId, action.doneDelta, !action.finalItem);
+      return list;
+    }),
+    map(list => new UpdateList(list))
+  );
+
+  @Effect()
+  updateItem$ = this.actions$.pipe(
+    ofType<UpdateItem>(ListsActionTypes.UpdateItem),
+    withLatestFrom(this.listsFacade.selectedList$),
+    map(([action, list]) => {
+      const items = action.finalItem ? list.finalItems : list.items;
+      const updatedItems = items.map(item => item.id === action.item.id ? action.item : item);
+      if (action.finalItem) {
+        list.finalItems = updatedItems;
+      } else {
+        list.items = updatedItems;
+      }
       return list;
     }),
     map(list => new UpdateList(list))

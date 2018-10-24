@@ -12,7 +12,7 @@ import {
   LoadListsWithWriteAccess,
   LoadMyLists,
   SelectList,
-  SetItemDone,
+  SetItemDone, UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
@@ -24,6 +24,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { ListRow } from '../model/list-row';
 
 declare const ga: Function;
 
@@ -109,6 +110,10 @@ export class ListsFacade {
 
   setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number): void {
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta));
+  }
+
+  updateItem(item: ListRow, finalItem: boolean):void{
+    this.store.dispatch(new UpdateItem(item, finalItem));
   }
 
   addList(list: List): void {
