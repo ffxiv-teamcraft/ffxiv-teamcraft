@@ -9,10 +9,11 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
+import { LayoutRow } from '../layout-row';
 
 @Injectable()
 export class LayoutsFacade {
@@ -82,10 +83,10 @@ export class LayoutsFacade {
     );
   }
 
-  public createNewLayout(): void {
+  public createNewLayout(name = 'New layout', content?: LayoutRow[]): void {
     const layout = new ListLayout();
-    layout.name = 'New layout';
-    layout.rows = this.layoutService.defaultLayout.rows;
+    layout.name = name;
+    layout.rows = content || this.layoutService.defaultLayout.rows;
     this.store.dispatch(new CreateLayout(layout));
   }
 

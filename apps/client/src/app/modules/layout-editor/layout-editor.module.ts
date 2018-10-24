@@ -11,6 +11,8 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { TextQuestionPopupModule } from '../text-question-popup/text-question-popup.module';
+import { NgSerializerModule } from '@kaiu/ng-serializer';
 
 @NgModule({
   imports: [
@@ -23,6 +25,9 @@ import { ClipboardModule } from 'ngx-clipboard';
     LayoutModule,
     NgxDnDModule,
     PipesModule,
+    TextQuestionPopupModule,
+
+    NgSerializerModule,
 
     TranslateModule,
     NgZorroAntdModule

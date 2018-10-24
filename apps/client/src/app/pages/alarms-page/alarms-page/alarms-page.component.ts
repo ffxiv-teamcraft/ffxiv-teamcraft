@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
-import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/name-question-popup/text-question-popup.component';
+import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';

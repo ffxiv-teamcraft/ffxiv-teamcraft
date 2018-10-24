@@ -1,5 +1,5 @@
 <form (submit)="submit()">
-  <textarea nz-input [formControl]="control" nzAutosize class="text-area">
+  <textarea nz-input [formControl]="control" [nzAutosize]="{minRows: 5}" class="text-area">
   </textarea>
   <button nz-button [nzType]="'primary'" type="submit"
           [disabled]="!control.valid">{{'Submit' | translate}}

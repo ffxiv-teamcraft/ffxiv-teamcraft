@@ -4,8 +4,11 @@ import { Observable } from 'rxjs';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { TextQuestionPopupComponent } from '../../text-question-popup/text-question-popup/text-question-popup.component';
+import { filter } from 'rxjs/operators';
+import { NgSerializerService } from '@kaiu/ng-serializer';
 
 @Component({
   selector: 'app-layout-editor',
@@ -22,10 +25,26 @@ export class LayoutEditorComponent {
 
   layoutComparator = (layout1, layout2) => layout1 && layout2 ? layout1.$key === layout2.$key : layout1 === layout2;
 
-  constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService) {
+  constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService,
+              private dialog: NzModalService, private serializer: NgSerializerService) {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
+  }
+
+  importLayout(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Import_string'),
+      nzContent: TextQuestionPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined)
+      )
+      .subscribe((data: string) => {
+        const layoutContent = JSON.parse(atob(data));
+        this.layoutsFacade.createNewLayout('Imported layout', this.serializer.deserialize<LayoutRow>(layoutContent, [LayoutRow]));
+      });
   }
 
   layoutCopied(): void {
