@@ -36,6 +36,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PermissionsModule } from '../../modules/permissions/permissions.module';
 import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-panel-price-popup.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { RelationshipsComponent } from './item-details/relationships/relationships.component';
 
 const routes: Routes = [
   {
@@ -88,7 +89,8 @@ const routes: Routes = [
     VoyagesComponent,
     VenturesComponent,
     TradesComponent,
-    TotalPanelPricePopupComponent
+    TotalPanelPricePopupComponent,
+    RelationshipsComponent
   ],
   entryComponents: [
     ListHistoryPopupComponent,
@@ -101,7 +103,8 @@ const routes: Routes = [
     VoyagesComponent,
     VenturesComponent,
     TradesComponent,
-    TotalPanelPricePopupComponent
+    TotalPanelPricePopupComponent,
+    RelationshipsComponent
   ]
 })
 export class ListDetailsModule {

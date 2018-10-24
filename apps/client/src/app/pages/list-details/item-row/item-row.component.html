@@ -33,7 +33,7 @@
             *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt)">
           {{'Remove_work_on_it' | translate}}
         </li>
-        <li nz-menu-item nzDisabled>TODO Requirements</li>
+        <li nz-menu-item (click)="openRequirementsPopup()">{{'Requirements_for_craft' | translate}}</li>
         <li nz-menu-item nzDisabled>TODO Assign user</li>
         <li nz-menu-item nzDisabled>TODO Mark HQ</li>
       </ul>

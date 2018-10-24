@@ -24,6 +24,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { Character, XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { RelationshipsComponent } from '../item-details/relationships/relationships.component';
 
 @Component({
   selector: 'app-item-row',
@@ -160,6 +161,10 @@ export class ItemRowComponent implements OnInit {
 
   public openTradesPopup(): void {
     this.openDetailsPopup(TradesComponent);
+  }
+
+  public openRequirementsPopup(): void {
+    this.openDetailsPopup(RelationshipsComponent);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {
