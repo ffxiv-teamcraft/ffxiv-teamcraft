@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.20"></a>
+## [4.4.20](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.19...v4.4.20) (2018-10-25)
+
+
+### Bug Fixes
+
+* crystals aren't hidden on completion anymore ([2809dff](https://github.com/Supamiu/ffxiv-teamcraft/commit/2809dff))
+* switched to new garlandtools icons url ([70739b4](https://github.com/Supamiu/ffxiv-teamcraft/commit/70739b4))
+
+
+
 <a name="4.4.19"></a>
 ## [4.4.19](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.18...v4.4.19) (2018-10-22)
 
