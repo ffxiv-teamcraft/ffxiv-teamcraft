@@ -48,7 +48,13 @@ export class LayoutsFacade {
             .map(row => {
               const result: FilterResult = row.filter.filter(unfilteredRows);
               unfilteredRows = result.rejected;
-              const orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+              let orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+              if (row.hideCompletedRows) {
+                orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
+              }
+              if(row.hideUsedRows) {
+                orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
+              }
               return {
                 title: row.name,
                 rows: orderedAccepted,

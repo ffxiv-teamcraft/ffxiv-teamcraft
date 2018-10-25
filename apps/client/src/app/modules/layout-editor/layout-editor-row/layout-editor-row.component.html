@@ -23,13 +23,20 @@
         <i class="anticon anticon-plus"></i>
       </button>
     </div>
-    <div class="layout-type">
+    <div class="layout-type" fxLayout="column" fxLayoutGap="5px">
       <nz-radio-group [ngModel]="getLayoutType()" (ngModelChange)="setLayoutType($event)">
         <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
         <label nz-radio-button [nzValue]="'tiers'">{{"Tier_display_toggle" | translate}}</label>
         <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
       </nz-radio-group>
-      <label nz-checkbox [(ngModel)]="row.hideIfEmpty" (ngModelChange)="rowChange.emit(row)">{{"Hide_if_empty" | translate}}</label>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <label nz-checkbox [(ngModel)]="row.hideIfEmpty" (ngModelChange)="rowChange.emit(row)">{{"Hide_if_empty" |
+          translate}}</label>
+        <label nz-checkbox [(ngModel)]="row.hideCompletedRows" (ngModelChange)="rowChange.emit(row)">{{"Hide_completed"
+          | translate}}</label>
+        <label nz-checkbox [(ngModel)]="row.hideUsedRows" (ngModelChange)="rowChange.emit(row)">{{"Hide_used" |
+          translate}}</label>
+      </div>
     </div>
     <div class="ordering">
       {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}

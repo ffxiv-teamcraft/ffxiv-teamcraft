@@ -10,7 +10,9 @@ export class LayoutRow {
               public index?: number,
               public zoneBreakdown = false,
               public tiers = false,
-              public hideIfEmpty = true) {
+              public hideIfEmpty = true,
+              public hideCompletedRows = false,
+              public hideUsedRows = false) {
   }
 
   public get filter(): LayoutRowFilter {
