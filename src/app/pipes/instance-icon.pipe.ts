@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'instanceIcon'
@@ -9,7 +9,7 @@ export class InstanceIconPipe implements PipeTransform {
         if (id === 0) {
             return fallback;
         }
-        return `https://www.garlandtools.org/db/icons/instance/type/${id}.png`;
+        return `https://www.garlandtools.org/files/icons/instance/type/${id}.png`;
     }
 
 }

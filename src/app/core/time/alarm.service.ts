@@ -1,23 +1,23 @@
-import {Injectable} from '@angular/core';
-import {EorzeanTimeService} from './eorzean-time.service';
-import {Alarm} from './alarm';
-import {Observable, of, Subject} from 'rxjs';
-import {ListRow} from '../../model/list/list-row';
-import {SettingsService} from '../../pages/settings/settings.service';
-import {MatDialog, MatSnackBar} from '@angular/material';
-import {LocalizedDataService} from '../data/localized-data.service';
-import {TranslateService} from '@ngx-translate/core';
-import {Timer} from 'app/core/time/timer';
-import {MapPopupComponent} from '../../modules/map/map-popup/map-popup.component';
-import {BellNodesService} from '../data/bell-nodes.service';
-import {PushNotificationsService} from 'ng-push';
-import {UserService} from '../database/user.service';
-import {filter, first, map, mergeMap, takeUntil, tap} from 'rxjs/operators';
-import {AppUser} from '../../model/list/app-user';
-import {PlatformService} from '../tools/platform.service';
-import {IpcService} from '../electron/ipc.service';
-import {MapService} from '../../modules/map/map.service';
-import {I18nToolsService} from '../tools/i18n-tools.service';
+import { Injectable } from '@angular/core';
+import { EorzeanTimeService } from './eorzean-time.service';
+import { Alarm } from './alarm';
+import { Observable, of, Subject } from 'rxjs';
+import { ListRow } from '../../model/list/list-row';
+import { SettingsService } from '../../pages/settings/settings.service';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { LocalizedDataService } from '../data/localized-data.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Timer } from 'app/core/time/timer';
+import { MapPopupComponent } from '../../modules/map/map-popup/map-popup.component';
+import { BellNodesService } from '../data/bell-nodes.service';
+import { PushNotificationsService } from 'ng-push';
+import { UserService } from '../database/user.service';
+import { filter, first, map, mergeMap, takeUntil, tap } from 'rxjs/operators';
+import { AppUser } from '../../model/list/app-user';
+import { PlatformService } from '../tools/platform.service';
+import { IpcService } from '../electron/ipc.service';
+import { MapService } from '../../modules/map/map.service';
+import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Injectable()
 export class AlarmService {
@@ -266,7 +266,7 @@ export class AlarmService {
                                     const notificationBody = `${this.localizedData.getPlace(alarm.zoneId)[this.translator.currentLang]} - `
                                         + `${closestAetheryteName}` +
                                         (alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
-                                    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
+                                    const notificationIcon = `https://www.garlandtools.org/files/icons/item/${alarm.icon}.png`;
                                     if (this.platform.isDesktop()) {
                                         this.ipc.send('notification', {
                                             title: notificationTitle,

@@ -253,7 +253,7 @@
                 </button>
             </mat-expansion-panel-header>
             <div *ngFor="let crystal of listData?.crystals" class="crystals">
-                <div *ngIf="crystal.amount > crystal.done" class="crystal-row"
+                <div class="crystal-row"
                      [class.mat-elevation-z8]="settings.crystalsTracking" [class.tracked]="settings.crystalsTracking">
                     <img [ngClass]="{'crystal':true, 'compact': settings.compactLists}"
                          matTooltip="{{crystal.id | itemName | i18n}}" matTooltipPosition="above"

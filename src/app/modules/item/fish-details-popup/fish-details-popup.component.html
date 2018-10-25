@@ -22,7 +22,7 @@
             <h4 mat-subheader>Weather</h4>
             <mat-list-item *ngFor="let weather of spot.weather">
                 <img mat-list-avatar class="weather-icon"
-                     src="https://www.garlandtools.org/db/icons/weather/{{weather}}.png"
+                     src="https://www.garlandtools.org/files/icons/weather/{{weather}}.png"
                      alt="{{weather}}">
                 <p mat-line>{{getWeatherName(weather) | i18n}}</p>
             </mat-list-item>
