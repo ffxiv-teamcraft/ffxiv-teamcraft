@@ -4,11 +4,11 @@
       <div class="right-toolbar">
         <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.New_group' | translate}}"
                 (click)="createGroup(display.groupedAlarms.length)">
-          <i class="anticon anticon-folder-add"></i>
+          <i nz-icon type="folder-add"></i>
         </button>
         <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'Timer_options' | translate}}"
                 (click)="showSettings()">
-          <i class="anticon anticon-setting"></i>
+          <i nz-icon type="setting"></i>
         </button>
       </div>
       <div class="spacer"></div>
@@ -44,12 +44,12 @@
               {{group.group.name}}
               <button nz-button nzGhost nzSize="small" nzShape="circle"
                       (click)="$event.stopPropagation();renameGroup(group.group)">
-                <i class="anticon anticon-edit"></i>
+                <i nz-icon type="edit"></i>
               </button>
               <button nz-button nzGhost nzSize="small" nzShape="circle" (click)="$event.stopPropagation();"
                       nz-popconfirm
                       [nzTitle]="'ALARMS.Confirm_group_delete' | translate" (nzOnConfirm)="deleteGroup(group.group)">
-                <i class="anticon anticon-delete"></i>
+                <i nz-icon type="delete"></i>
               </button>
               <div class="spacer"></div>
               <nz-switch [(ngModel)]="group.group.enabled"
@@ -100,7 +100,7 @@
       <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
               nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
               nzSize="small" nzShape="circle" (click)="addNote(row.alarm)" class="note-button">
-        <i class="anticon anticon-file-add"></i>
+        <i nz-icon type="file-add"></i>
       </button>
       <ng-template #note>
         <div class="alarm-note">
@@ -108,7 +108,7 @@
           <button nz-button nzGhost nzSize="small"
                   nz-tooltip nzTitle="{{'Edit' | translate}}"
                   nzShape="circle" (click)="editNote(row.alarm)">
-            <i class="anticon anticon-edit"></i>
+            <i nz-icon type="edit"></i>
           </button>
         </div>
       </ng-template>
@@ -118,10 +118,10 @@
                (loaded)="card.nzLoading = false"></app-map>
     </ng-template>
     <ng-template #delete>
-      <i class="anticon anticon-delete" (click)="deleteAlarm(row.alarm)"></i>
+      <i nz-icon type="delete" (click)="deleteAlarm(row.alarm)"></i>
     </ng-template>
     <ng-template #copyMacro>
-      <i class="anticon anticon-copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip
+      <i nz-icon type="copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip
          nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
          (cbOnSuccess)="macroCopied()"></i>
     </ng-template>

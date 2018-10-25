@@ -9,7 +9,7 @@
         <div fxLayout="column">
           <div *ngFor="let amount of venture.amountsDetails" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
             <div>{{amount.name | translate}} {{amount.stat}}</div>
-            <i class="anticon anticon-right"></i>
+            <i nz-icon type="right"></i>
             <div>x{{amount.quantity}}</div>
           </div>
         </div>

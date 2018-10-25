@@ -5,12 +5,12 @@
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
-        <li class="clock ant-menu-item" fxShow fxHide.lt-sm>
+        <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
         </li>
         <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notifications">
           <nz-badge [nzDot]="true">
-            <i class="anticon anticon-notification"></i>
+            <i nz-icon type="notification"></i>
           </nz-badge>
         </li>
         <li nz-submenu>
@@ -31,7 +31,7 @@
           </span>
           <span>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
-              <i class="anticon anticon-idcard"></i>
+              <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
@@ -39,25 +39,25 @@
               {{'TEAMS.Title' | translate}}
             </a>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
-              <i class="anticon anticon-link"></i>
+              <i nz-icon type="link"></i>
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </a>
             <a nz-menu-item class="menu-link" (click)="openSettings()">
-              <i class="anticon anticon-setting"></i>
+              <i nz-icon type="setting"></i>
               {{'SETTINGS.title' | translate}}
             </a>
             <span nz-menu-divider></span>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" (click)="logOut()">
-              <i class="anticon anticon-logout"></i>
+              <i nz-icon type="logout"></i>
               {{'Disconnect' | translate}}
             </a>
             <a nz-menu-item class="menu-link" *ngIf="!(loggedIn$ | async)" (click)="openRegisterPopup()">
-              <i class="anticon anticon-form"></i>
+              <i nz-icon type="form"></i>
               {{'Registration' | translate}}
             </a>
             <a nz-menu-item class="menu-link" *ngIf="!(loggedIn$ | async)" (click)="openLoginPopup()">
-              <i class="anticon anticon-login"></i>
+              <i nz-icon type="login"></i>
               {{'Login' | translate}}
             </a>
           </span>
@@ -73,67 +73,67 @@
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/search">
           <span>
-              <i class="anticon anticon-search"></i>
+              <i nz-icon type="search"></i>
               <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/lists">
           <span>
-              <i class="anticon anticon-profile"></i>
+              <i nz-icon type="profile"></i>
               <span class="nav-text">{{'Lists' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/alarms">
           <span>
-              <i class="anticon anticon-bell"></i>
+              <i nz-icon type="bell"></i>
               <span class="nav-text">{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-api"></i>
+              <i nz-icon type="api"></i>
               <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-inbox"></i>
+              <i nz-icon type="inbox"></i>
               <span class="nav-text">{{'COMMISSION_BOARD.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-solution"></i>
+              <i nz-icon type="solution"></i>
               <span class="nav-text">{{'Public_lists' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/gathering-location">
           <span>
-              <i class="anticon anticon-environment-o"></i>
+              <i nz-icon type="environment-o"></i>
               <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/levequests">
           <span>
-              <i class="anticon anticon-book"></i>
+              <i nz-icon type="book"></i>
               <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-message"></i>
+              <i nz-icon type="message"></i>
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-file-markdown"></i>
+              <i nz-icon type="file-markdown"></i>
               <span class="nav-text">{{'WIKI.Title' | translate}}</span>
           </span>
         </a>
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
           <span>
-              <i class="anticon anticon-info-circle-o"></i>
+              <i nz-icon type="info-circle-o"></i>
               <span class="nav-text">{{'ABOUT.title' | translate}}</span>
           </span>
         </a>
@@ -170,16 +170,16 @@
       Irvine Kineas applied on commission "I need gear"
     </nz-list-item>
     <ng-template #actionSetting>
-      <i class="anticon anticon-check"></i>
+      <i nz-icon type="check"></i>
     </ng-template>
     <ng-template #actionEdit>
-      <i class="anticon anticon-close"></i>
+      <i nz-icon type="close"></i>
     </ng-template>
     <ng-template #actionOpen>
-      <i class="anticon anticon-select"></i>
+      <i nz-icon type="select"></i>
     </ng-template>
     <ng-template #actionEllipsis>
-      <i class="anticon anticon-delete"></i>
+      <i nz-icon type="delete"></i>
     </ng-template>
   </nz-list>
 </ng-template>
@@ -189,10 +189,10 @@
       <nz-list-item-meta [nzTitle]="'Cordials'" [nzDescription]="'/list/a6dz1za5d74a96d'"></nz-list-item-meta>
     </nz-list-item>
     <ng-template #actionOpen>
-      <i class="anticon anticon-select"></i>
+      <i nz-icon type="select"></i>
     </ng-template>
     <ng-template #actionEllipsis>
-      <i class="anticon anticon-delete"></i>
+      <i nz-icon type="delete"></i>
     </ng-template>
   </nz-list>
 </ng-template>

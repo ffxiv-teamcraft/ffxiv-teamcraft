@@ -13,7 +13,7 @@
         <ng-template #removeItem>
           <button nz-button [nzType]="'danger'" [nzShape]="'circle'" [disabled]="(permissionLevel$ | async) < 30"
                   (click)="updateAmount(item, 0)">
-            <i class="anticon anticon-delete"></i>
+            <i nz-icon type="delete"></i>
           </button>
         </ng-template>
       </ng-template>
@@ -41,21 +41,21 @@
         <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard [cbContent]="getLink()" (cbOnSuccess)="afterLinkCopy()">
-          <i class="anticon anticon-share-alt"></i>
+          <i nz-icon type="share-alt"></i>
         </button>
         <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'LIST.BUTTONS.Open' | translate" nz-button
            [nzShape]="'circle'"
            [nzType]="'primary'"
            routerLink="/list/{{_list.$key}}">
-          <i class="anticon anticon-folder-open"></i>
+          <i nz-icon type="folder-open"></i>
         </a>
         <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
                 [disabled]="(permissionLevel$ | async) < 40"
                 [nzTitle]="'LIST.BUTTONS.Delete_warning' | translate" (nzOnConfirm)="deleteList(_list)">
-          <i class="anticon anticon-delete"></i></button>
+          <i nz-icon type="delete"></i></button>
         <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
           <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
-            <i class="anticon anticon-ellipsis"></i>
+            <i nz-icon type="ellipsis"></i>
           </button>
           <ul nz-menu>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameList(_list)">

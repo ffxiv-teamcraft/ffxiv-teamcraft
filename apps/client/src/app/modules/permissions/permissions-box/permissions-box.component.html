@@ -16,7 +16,7 @@
                        [nzLabel]="level.label"></nz-option>
           </nz-select>
           <button nz-button nzType="danger" (click)="data.removePermissionRow(row.id); changes$.next(data);">
-            <i class="anticon anticon-close"></i>
+            <i nz-icon type="close"></i>
           </button>
         </ng-template>
       </nz-list-item>
@@ -35,10 +35,10 @@
   <div fxLayout="column" fxLayoutGap="15px">
     <div fxLayout="column" fxLayoutGap="10px">
       <button nz-button nzGhost nzType="primary" (click)="addUser()">
-        <i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new' | translate}}
+        <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new' | translate}}
       </button>
       <button nz-button nzGhost nzType="primary" (click)="addFc()">
-        <i class="anticon anticon-plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
+        <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
     </div>
   </div>

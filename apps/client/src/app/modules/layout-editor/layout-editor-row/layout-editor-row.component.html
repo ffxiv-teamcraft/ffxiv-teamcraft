@@ -10,7 +10,7 @@
           </nz-select>
           <button nz-button [nzBlock]="false | ifMobile: true" nzGhost nzType="danger" *ngIf="last && filter.length > 1"
                   (click)="removeFragment()">
-            <i class="anticon anticon-delete"></i>
+            <i nz-icon type="delete"></i>
           </button>
         </div>
         <nz-select *ngIf="fragment.isBooleanGate" [(ngModel)]="fragment.value"
@@ -20,7 +20,7 @@
         </nz-select>
       </div>
       <button nz-button nzBlock nzType="primary" (click)="addFragment()">
-        <i class="anticon anticon-plus"></i>
+        <i nz-icon type="plus"></i>
       </button>
     </div>
     <div class="layout-type" fxLayout="column" fxLayoutGap="5px">
@@ -58,7 +58,7 @@
       <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)">
     </nz-input-group>
     <button nz-button nzType="danger" *ngIf="!readonly" (click)="delete.emit()">
-      <i class="anticon anticon-delete"></i>
+      <i nz-icon type="delete"></i>
     </button>
   </div>
 </ng-template>

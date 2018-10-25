@@ -41,7 +41,7 @@
         <button nz-button (click)="$event.stopPropagation()" ngxClipboard [cbContent]="getTextExport()"
                 (cbOnSuccess)="textCopied()"
                 nzSize="small" nzShape="circle" nz-tooltip [nzTitle]="'LIST.Copy_as_text' | translate">
-          <i class="anticon anticon-copy"></i>
+          <i nz-icon type="copy"></i>
         </button>
       </div>
     </div>

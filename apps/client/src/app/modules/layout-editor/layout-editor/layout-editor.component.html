@@ -7,7 +7,7 @@
     </nz-select>
     <div class="buttons" fxLayout="row" fxLayoutGap="5px">
       <button nz-button nzType="primary" (click)="addLayout()">
-        <i class="anticon anticon-plus"></i>
+        <i nz-icon type="plus"></i>
       </button>
       <button nz-button nzType="primary" (click)="save(layout)"
               [disabled]="layout.$key === undefined || !dirty">
@@ -15,17 +15,17 @@
       </button>
       <button nz-button nzType="danger" [disabled]="layout.$key === undefined" nz-popconfirm
               [nzTitle]="'Confirm' | translate" (nzOnConfirm)="deleteLayout(layout.$key)">
-        <i class="anticon anticon-delete"></i>
+        <i nz-icon type="delete"></i>
       </button>
       <div class="spacer"></div>
       <button nz-button ngxClipboard [cbContent]="layout.base64" (cbOnSuccess)="layoutCopied()" nz-tooltip
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate">
-        <i class="anticon anticon-upload"></i>
+        <i nz-icon type="upload"></i>
       </button>
       <button nz-button nz-tooltip
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
               (click)="importLayout()">
-        <i class="anticon anticon-download"></i>
+        <i nz-icon type="download"></i>
       </button>
     </div>
   </div>
@@ -62,6 +62,6 @@
     </div>
   </div>
   <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)">
-    <i class="anticon anticon-plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
+    <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
   </button>
 </div>

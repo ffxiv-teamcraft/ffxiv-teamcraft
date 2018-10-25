@@ -18,7 +18,7 @@
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
       <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
               nz-button [nzShape]="'circle'">
-        <i class="anticon anticon-ellipsis"></i></button>
+        <i nz-icon type="ellipsis"></i></button>
       <ul nz-menu *ngIf="userId$ | async as userId">
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
@@ -47,8 +47,8 @@
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
                   [nzGhost]="!display.registered"
                   (click)="toggleAlarm(display)">
-            <i class="anticon anticon-clock-circle-o" *ngIf="!display.registered"></i>
-            <i class="anticon anticon-close-circle-o" *ngIf="display.registered"></i>
+            <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>
+            <i nz-icon type="close-circle-o" *ngIf="display.registered"></i>
             {{display.remainingTime | timer}}
             <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
             <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
@@ -56,7 +56,7 @@
           <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
             <nz-dropdown *ngIf="!display.registered && alarmGroups.length > 0" [nzPlacement]="'bottomCenter'">
               <button nz-button [nzSize]="'small'" nz-dropdown>
-                <i class="anticon anticon-ellipsis"></i>
+                <i nz-icon type="ellipsis"></i>
               </button>
               <ul nz-menu>
                 <li nz-menu-item *ngFor="let group of alarmGroups" (click)="addAlarmWithGroup(alarm, group)">
@@ -87,10 +87,10 @@
       <button nz-button [disabled]="(permissionLevel$ | async) < 20" [nzSize]="'small'" [nzShape]="'circle'"
               [nzType]="'primary'" class="done-button"
               *ngIf="item.amount > item.done; else done" (click)="markAsDone()">
-        <i class="anticon anticon-check"></i>
+        <i nz-icon type="check"></i>
       </button>
       <ng-template #done>
-        <i class="anticon anticon-check done-icon"></i>
+        <i nz-icon type="check" class="done-icon"></i>
       </ng-template>
     </div>
   </div>
