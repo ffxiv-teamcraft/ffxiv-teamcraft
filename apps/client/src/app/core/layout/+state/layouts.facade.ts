@@ -14,6 +14,8 @@ import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
 import { LayoutRow } from '../layout-row';
+import { ListRow } from '../../../modules/list/model/list-row';
+import { ListDisplay } from '../list-display';
 
 @Injectable()
 export class LayoutsFacade {
@@ -28,46 +30,53 @@ export class LayoutsFacade {
   constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService) {
   }
 
-  public getDisplay(list: List): Observable<LayoutRowDisplay[]> {
+  public getDisplay(list: List): Observable<ListDisplay> {
     return this.selectedLayout$
       .pipe(
-        map(layout => layout.rows.sort((a, b) => {
-            // ANYTHING has to be last filter applied, as it rejects nothing.
-            if (a.filter.name === 'ANYTHING') {
-              return 1;
-            }
-            if (b.filter.name === 'ANYTHING') {
-              return -1;
-            }
-            return a.index - b.index;
-          })
-        ),
-        map(layoutRows => {
-          let unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20));
-          return layoutRows
-            .map(row => {
-              const result: FilterResult = row.filter.filter(unfilteredRows);
-              unfilteredRows = result.rejected;
-              let orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
-              if (row.hideCompletedRows) {
-                orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
-              }
-              if(row.hideUsedRows) {
-                orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
-              }
-              return {
-                title: row.name,
-                rows: orderedAccepted,
-                index: row.index,
-                zoneBreakdown: row.zoneBreakdown,
-                tiers: row.tiers,
-                filterChain: row.filter.name,
-                hideIfEmpty: row.hideIfEmpty
-              };
-            })
-            // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
-            .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
-            .sort((a, b) => a.index - b.index);
+        map(layout => {
+          let unfilteredRows: ListRow[];
+          if (!layout.considerCrystalsAsItems) {
+            unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20));
+          } else {
+            unfilteredRows = list.items.filter(row => row.hidden !== true);
+          }
+          return {
+            crystalsPanel: !layout.considerCrystalsAsItems,
+            rows: layout.rows
+              .sort((a, b) => {
+                // ANYTHING has to be last filter applied, as it rejects nothing.
+                if (a.filter.name === 'ANYTHING') {
+                  return 1;
+                }
+                if (b.filter.name === 'ANYTHING') {
+                  return -1;
+                }
+                return a.index - b.index;
+              })
+              .map(row => {
+                const result: FilterResult = row.filter.filter(unfilteredRows);
+                unfilteredRows = result.rejected;
+                let orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+                if (row.hideCompletedRows) {
+                  orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
+                }
+                if (row.hideUsedRows) {
+                  orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
+                }
+                return {
+                  title: row.name,
+                  rows: orderedAccepted,
+                  index: row.index,
+                  zoneBreakdown: row.zoneBreakdown,
+                  tiers: row.tiers,
+                  filterChain: row.filter.name,
+                  hideIfEmpty: row.hideIfEmpty
+                };
+              })
+              // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
+              .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
+              .sort((a, b) => a.index - b.index)
+          };
         })
       );
   }

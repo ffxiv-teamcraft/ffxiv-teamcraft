@@ -4,8 +4,13 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import * as monsters from '../../../../core/data/sources/monsters.json';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
+
+  constructor(gt: GarlandToolsService) {
+    super(gt);
+  }
 
   isAsync(): boolean {
     return false;

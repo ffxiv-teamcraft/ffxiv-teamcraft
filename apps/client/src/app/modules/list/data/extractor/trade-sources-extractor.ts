@@ -7,11 +7,12 @@ import { Item } from '../../../../model/garland-tools/item';
 import { TradeNpc } from '../../model/trade-npc';
 import { TradeEntry } from '../../model/trade-entry';
 import * as npcs from '../../../../core/data/sources/npcs.json';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
-  constructor() {
-    super();
+  constructor(gt: GarlandToolsService) {
+    super(gt);
   }
 
   public isAsync(): boolean {

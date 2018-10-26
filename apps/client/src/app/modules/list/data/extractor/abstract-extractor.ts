@@ -4,9 +4,13 @@ import { Observable, of } from 'rxjs';
 import { Item } from '../../../../model/garland-tools/item';
 import { DataType } from '../data-type';
 import { ListRow } from '../../model/list-row';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 @Injectable()
 export abstract class AbstractExtractor<T> {
+
+  protected constructor(protected gt: GarlandToolsService) {
+  }
 
   /**
    * Extracts data from the given itemData.
@@ -58,6 +62,9 @@ export abstract class AbstractExtractor<T> {
    * @returns {Item}
    */
   protected getItem(id: number, data: ItemData): Item {
+    if (id > 1 && id < 20) {
+      return this.gt.getCrystalDetails(id);
+    }
     return data.item.id === id ? data.item : data.getIngredient(id);
   }
 

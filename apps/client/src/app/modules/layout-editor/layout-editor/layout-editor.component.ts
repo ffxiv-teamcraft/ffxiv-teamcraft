@@ -60,6 +60,7 @@ export class LayoutEditorComponent {
 
   setItemsLayoutType(layout: ListLayout, type: string): void {
     layout.recipeZoneBreakdown = type === 'zoneBreakdown';
+    this.dirty = true;
   }
 
   addLayout(): void {

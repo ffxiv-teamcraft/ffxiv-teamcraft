@@ -15,9 +15,13 @@ export class ListLayout extends DataModel {
 
   public recipeOrderBy = 'NONE';
 
+  public considerCrystalsAsItems = false;
+
   public recipeOrder: LayoutRowOrder = LayoutRowOrder.ASC;
 
   public recipeZoneBreakdown = false;
+
+  public recipeHideCompleted =false;
 
   public name: string;
 

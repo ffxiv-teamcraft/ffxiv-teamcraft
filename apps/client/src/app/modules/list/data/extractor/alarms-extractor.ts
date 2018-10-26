@@ -6,10 +6,11 @@ import { DataType } from '../data-type';
 import { ListRow } from '../../model/list-row';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(private bellNodes: BellNodesService) {
-    super();
+  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService) {
+    super(gt);
   }
 
   protected canExtract(item: Item): boolean {

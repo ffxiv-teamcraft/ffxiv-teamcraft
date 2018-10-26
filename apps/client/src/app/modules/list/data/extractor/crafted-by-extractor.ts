@@ -8,8 +8,8 @@ import { Item } from '../../../../model/garland-tools/item';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
-  constructor(private gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
-    super();
+  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
+    super(gt);
   }
 
   public isAsync(): boolean {

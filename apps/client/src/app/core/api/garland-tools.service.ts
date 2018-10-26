@@ -48,7 +48,7 @@ export class GarlandToolsService {
    * @returns {Item}
    */
   public getCrystalDetails(id: number): Item {
-    return this.serializer.deserialize<Item>(this.gt.item.ingredients[id], Item);
+    return this.serializer.deserialize<Item>(this.gt.item.ingredients[id.toString()], Item);
   }
 
   /**

@@ -4,11 +4,12 @@ import { DataType } from '../data-type';
 import { Vendor } from '../../model/vendor';
 import { Item } from '../../../../model/garland-tools/item';
 import * as npcs from '../../../../core/data/sources/npcs.json';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
 
-  constructor() {
-    super();
+  constructor(gt: GarlandToolsService) {
+    super(gt);
   }
 
   public isAsync(): boolean {

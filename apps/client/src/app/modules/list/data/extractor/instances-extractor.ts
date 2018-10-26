@@ -3,8 +3,13 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Instance } from '../../model/instance';
 import { Item } from '../../../../model/garland-tools/item';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class InstancesExtractor extends AbstractExtractor<Instance[]> {
+
+  constructor(gt: GarlandToolsService) {
+    super(gt);
+  }
 
   isAsync(): boolean {
     return false;

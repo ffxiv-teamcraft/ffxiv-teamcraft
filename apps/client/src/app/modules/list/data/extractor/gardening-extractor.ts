@@ -2,8 +2,13 @@ import { AbstractExtractor } from './abstract-extractor';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class GardeningExtractor extends AbstractExtractor<boolean> {
+
+  constructor(gt: GarlandToolsService) {
+    super(gt);
+  }
 
   isAsync(): boolean {
     return false;

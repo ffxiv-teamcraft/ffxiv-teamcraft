@@ -44,17 +44,17 @@ import { PermissionsModule } from '../permissions/permissions.module';
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService, DataService], multi: true },
   { provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService], multi: true },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [DataService], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [DataService], multi: true },
-  { provide: EXTRACTORS, useClass: ReducedFromExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: DesynthsExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: InstancesExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: GardeningExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: VoyagesExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: DropsExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: VenturesExtractor, multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [BellNodesService], multi: true },
-  { provide: EXTRACTORS, useClass: MasterbooksExtractor, multi: true }
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, DataService], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, DataService], multi: true },
+  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService], multi: true },
+  { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true }
 ];
 
 @NgModule({

@@ -3,8 +3,13 @@ import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { Observable } from 'rxjs';
 import { DataType } from '../data-type';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class VenturesExtractor extends AbstractExtractor<number[]> {
+
+  constructor(gt: GarlandToolsService) {
+    super(gt);
+  }
 
   isAsync(): boolean {
     return false;

@@ -54,9 +54,9 @@
       </button>
     </div>
     <div class="list-display" *ngIf="display$ | async as listDisplay">
-      <app-list-crystals-panel [crystals]="crystals$ | async"></app-list-crystals-panel>
+      <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel" [crystals]="crystals$ | async"></app-list-crystals-panel>
       <app-list-details-panel [displayRow]="displayRow"
-                              *ngFor="let displayRow of listDisplay; trackBy: trackByDisplayRow"></app-list-details-panel>
+                              *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"></app-list-details-panel>
       <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
     </div>
   </div>

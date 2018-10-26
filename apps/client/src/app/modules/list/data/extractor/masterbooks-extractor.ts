@@ -5,8 +5,13 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { ListRow } from '../../model/list-row';
 import { DataType } from '../data-type';
 import { folklores } from '../../../../core/data/sources/folklores';
+import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]> {
+  constructor(gt: GarlandToolsService) {
+    super(gt);
+  }
+
   protected canExtract(item: Item): boolean {
     return item.hasNodes() || item.isCraft();
   }

@@ -11,8 +11,8 @@ import { StoredNode } from '../../model/stored-node';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
-  constructor(private gt: GarlandToolsService, private htmlTools: HtmlToolsService, private localized: LocalizedDataService) {
-    super();
+  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService, private localized: LocalizedDataService) {
+    super(gt);
   }
 
   isAsync(): boolean {
@@ -24,6 +24,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected canExtract(item: Item): boolean {
+    if (item.id < 20) {
+      console.log(item);
+    }
     return item.hasNodes() || (item.fishingSpots !== undefined && item.fishingSpots.length > 0);
   }
 
@@ -38,7 +41,11 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
     // If it's a node gather (not a fish)
     if (item.hasNodes()) {
       for (const node of item.nodes) {
-        const partial = itemData.getPartial(node.toString(), 'node').obj;
+        const nodePartialEntry = itemData.getPartial(node.toString(), 'node');
+        if (nodePartialEntry === undefined) {
+          break;
+        }
+        const partial = nodePartialEntry.obj;
         let details;
         if (partial.lt !== undefined) {
           details = this.gt.getBellNode(node);

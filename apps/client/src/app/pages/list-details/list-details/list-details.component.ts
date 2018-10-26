@@ -19,6 +19,7 @@ import { ListHistoryPopupComponent } from '../list-history-popup/list-history-po
 import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
 import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { ListDisplay } from '../../../core/layout/list-display';
 
 @Component({
   selector: 'app-list-details',
@@ -27,7 +28,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 })
 export class ListDetailsComponent implements OnInit {
 
-  public display$: Observable<LayoutRowDisplay[]>;
+  public display$: Observable<ListDisplay>;
 
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
