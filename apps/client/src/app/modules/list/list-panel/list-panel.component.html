@@ -29,6 +29,9 @@
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" nz-tooltip [nzTitle]="'Ephemeral_list' | translate">
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
+          <nz-tag *ngIf="_list.public" [nzColor]="'cyan'" nz-tooltip [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+            {{'Public_list' | translate}}
+          </nz-tag>
           <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'" nz-tooltip
                   [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
           <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>

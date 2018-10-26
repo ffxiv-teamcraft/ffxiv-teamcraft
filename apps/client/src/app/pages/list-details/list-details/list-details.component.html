@@ -1,6 +1,6 @@
 <div *ngIf="list$ | async as list; else loader">
   <div *ngIf="!list.notFound; else notFound">
-    <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="center center">
       <button nz-button nzType="primary" nzShape="circle" (click)="openLayoutOptions()" nz-tooltip
               [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate">
         <i-layout></i-layout>
@@ -17,6 +17,10 @@
         <i-copy></i-copy>
       </button>
       <div class="spacer"></div>
+      <label nz-checkbox [(ngModel)]="list.public" [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
+             (ngModelChange)="listsFacade.updateList(list)" nz-tooltip [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+        {{'Public_list' | translate}}
+      </label>
       <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
               [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
         <i nz-icon type="tags-o"></i>
@@ -52,9 +56,13 @@
               [disabled]="(permissionLevel$ | async) < 20">
         <i nz-icon type="reload"></i>
       </button>
+      <div fxFlex="1 1 auto">
+        TODO list description
+      </div>
     </div>
     <div class="list-display" *ngIf="display$ | async as listDisplay">
-      <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel" [crystals]="crystals$ | async"></app-list-crystals-panel>
+      <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
+                               [crystals]="crystals$ | async"></app-list-crystals-panel>
       <app-list-details-panel [displayRow]="displayRow"
                               *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"></app-list-details-panel>
       <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>

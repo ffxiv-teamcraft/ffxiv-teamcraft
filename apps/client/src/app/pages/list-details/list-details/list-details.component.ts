@@ -38,7 +38,7 @@ export class ListDetailsComponent implements OnInit {
 
   public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
-  constructor(private layoutsFacade: LayoutsFacade, private listsFacade: ListsFacade,
+  constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
