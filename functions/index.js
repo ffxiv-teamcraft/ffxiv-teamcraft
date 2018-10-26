@@ -5,17 +5,19 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 const firestore = admin.firestore();
 
-
-function objectWithoutProperties(obj, keys) {
-  let target = {};
-  for (let i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-  return target;
+function getCompact(list) {
+  const compact = list;
+  delete compact.items;
+  compact.finalItems = compact.finalItems.map(item => {
+    return {
+      id: item.id,
+      icon: item.icon,
+      amount: item.amount,
+      amount_needed: item.amount_needed
+    };
+  });
+  return compact;
 }
-
 
 // Firestore counts
 exports.firestoreCountlistsCreate = functions.firestore.document('/lists/{uid}').onCreate(() => {
@@ -46,14 +48,12 @@ exports.firestoreCountCommissions = functions.firestore.document('/commissions/{
 });
 
 exports.createListCompacts = functions.firestore.document('/lists/{uid}').onCreate((snap) => {
-  const compact = snap.data.data();
-  delete compact.items;
+  const compact = getCompact(snap.data.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
 exports.updateListCompacts = functions.firestore.document('/lists/{uid}').onUpdate((snap) => {
-  const compact = snap.data.data();
-  delete compact.items;
+  const compact = getCompact(snap.data.data());
   return firestore.collection('compacts').doc('collections').collection('lists').doc(snap.params.uid).set(compact);
 });
 
