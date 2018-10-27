@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.22"></a>
+## [4.4.22](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.21...v4.4.22) (2018-10-27)
+
+
+### Bug Fixes
+
+* fixed an issue with new characters not having proper levels fetched ([3108c9c](https://github.com/Supamiu/ffxiv-teamcraft/commit/3108c9c))
+
+
+
 <a name="4.4.21"></a>
 ## [4.4.21](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.20...v4.4.21) (2018-10-27)
 
