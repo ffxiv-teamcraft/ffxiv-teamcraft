@@ -13,6 +13,14 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
     super(gt);
   }
 
+  getDataType(): DataType {
+    return DataType.ALARMS;
+  }
+
+  isAsync(): boolean {
+    return false;
+  }
+
   protected canExtract(item: Item): boolean {
     return true;
   }
@@ -81,14 +89,6 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
       ));
     }
     return alarms;
-  }
-
-  getDataType(): DataType {
-    return DataType.ALARMS;
-  }
-
-  isAsync(): boolean {
-    return false;
   }
 
 }

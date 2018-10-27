@@ -8,8 +8,17 @@ import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]> {
+
   constructor(gt: GarlandToolsService) {
     super(gt);
+  }
+
+  getDataType(): DataType {
+    return DataType.MASTERBOOKS;
+  }
+
+  isAsync(): boolean {
+    return false;
   }
 
   protected canExtract(item: Item): boolean {
@@ -37,14 +46,6 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
       }
     }
     return res;
-  }
-
-  getDataType(): DataType {
-    return DataType.MASTERBOOKS;
-  }
-
-  isAsync(): boolean {
-    return false;
   }
 
 }

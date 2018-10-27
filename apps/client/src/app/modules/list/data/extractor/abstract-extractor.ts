@@ -15,12 +15,17 @@ export abstract class AbstractExtractor<T> {
   /**
    * Extracts data from the given itemData.
    * @param id The id of the item that needs data extraction.
-   * @param {ItemData} itemData The data used for the extraction.
+   * @param {ItemData} _itemData The data used for the extraction.
    * @param row Current row used for extraction
    * @returns {T}
    */
-  public extract(id: number, itemData: ItemData, row?: ListRow): T | Observable<T> {
-    const item = this.getItem(id, itemData);
+  public extract(id: number, _itemData: ItemData, row?: ListRow): T | Observable<T> {
+    let item = this.getItem(id, _itemData);
+    let itemData = _itemData;
+    if (this.isCrystal(id)) {
+      itemData = this.gt.getCrystalDetails(id);
+      item = itemData.item;
+    }
     if (item === undefined || !this.canExtract(item)) {
       return this.fallback();
     }
@@ -66,6 +71,14 @@ export abstract class AbstractExtractor<T> {
       return this.gt.getCrystalDetails(id);
     }
     return data.item.id === id ? data.item : data.getIngredient(id);
+  }
+
+  /**
+   * Checks if a given item id is a crystal.
+   * @param id
+   */
+  protected isCrystal(id: number): boolean {
+    return id > 1 && id < 20;
   }
 
   protected extractsArray(): boolean {

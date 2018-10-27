@@ -5,6 +5,8 @@ import { JobCategory } from '../../model/garland-tools/job-category';
 import { Venture } from '../../model/garland-tools/venture';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
+import { ItemData } from '../../model/garland-tools/item-data';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,9 @@ export class GarlandToolsService {
   private gt: GarlandToolsData = (<any>window).gt;
   private gItemIndex: any[] = (<any>window).gItemIndex;
 
+  private commonItemsToLoad = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+  private commonItemsCache: { id: string, obj: ItemData }[] = [];
+
   constructor(private serializer: NgSerializerService, private http: HttpClient) {
     this.preload();
   }
@@ -22,6 +27,22 @@ export class GarlandToolsService {
     if (this.gt.jobCategories === undefined) {
       this.http.get<GarlandToolsData>('https://www.garlandtools.org/db/doc/core/en/3/data.json')
         .subscribe(data => this.gt = Object.assign(this.gt, data));
+    }
+    if (this.commonItemsCache.length === 0) {
+      this.http.get<any[]>(`https://www.garlandtools.org/db/doc/item/en/3/${this.commonItemsToLoad.join(',')}.json`)
+        .pipe(
+          map(items => {
+            return items.map(item => {
+              return {
+                id: item.id,
+                obj: this.serializer.deserialize<ItemData>(item.obj, ItemData)
+              };
+            });
+          })
+        )
+        .subscribe(data => {
+          this.commonItemsCache = data
+        });
     }
   }
 
@@ -47,8 +68,12 @@ export class GarlandToolsService {
    * @param {number} id
    * @returns {Item}
    */
-  public getCrystalDetails(id: number): Item {
-    return this.serializer.deserialize<Item>(this.gt.item.ingredients[id.toString()], Item);
+  public getCrystalDetails(id: number): ItemData | undefined {
+    const found = this.commonItemsCache.find(item => item.id === id.toString());
+    if (found === undefined) {
+      return undefined;
+    }
+    return found.obj;
   }
 
   /**

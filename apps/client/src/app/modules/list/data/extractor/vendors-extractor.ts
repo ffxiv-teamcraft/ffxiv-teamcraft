@@ -27,7 +27,6 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
   protected doExtract(item: Item, itemData: ItemData): Vendor[] {
     const vendors: Vendor[] = [];
     for (const vendorId of item.vendors) {
-      const npcPartial = itemData.getPartial(vendorId.toString(), 'npc').obj;
       let itemPartial = itemData.getPartial(item.id.toString(), 'item');
       // If we didn't find the item in partials, get it from ingredients
       if (itemPartial === undefined) {

@@ -350,7 +350,7 @@ export class List extends DataWithPermissions {
           const crystal = gt.getCrystalDetails(element.id);
           this.add(this.items, {
             id: element.id,
-            icon: crystal.icon,
+            icon: crystal.item.icon,
             amount: element.amount * addition.amount,
             done: 0,
             used: 0,

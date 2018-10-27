@@ -3,7 +3,6 @@ import { DataExtractorService, EXTRACTORS } from './data/data-extractor.service'
 import { CraftedByExtractor } from './data/extractor/crafted-by-extractor';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../core/tools/html-tools.service';
-import { DataService } from '../../core/api/data.service';
 import { GatheredByExtractor } from './data/extractor/gathered-by-extractor';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { TradeSourcesExtractor } from './data/extractor/trade-sources-extractor';
@@ -42,10 +41,10 @@ import { PermissionsModule } from '../permissions/permissions.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
-  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService, DataService], multi: true },
+  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService], multi: true },
   { provide: EXTRACTORS, useClass: GatheredByExtractor, deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService], multi: true },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, DataService], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, DataService], multi: true },
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
