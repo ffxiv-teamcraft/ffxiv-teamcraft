@@ -5,10 +5,10 @@ export class GarlandToolsLinkBase extends AbstractLinkBase {
 
     getItemLink(name: I18nName, id: number): I18nName {
         return {
-            fr: `http://garlandtools.org/files/#item/${id}`,
-            en: `http://garlandtools.org/files/#item/${id}`,
-            de: `http://garlandtools.org/files/#item/${id}`,
-            ja: `http://garlandtools.org/files/#item/${id}`
+            fr: `http://garlandtools.org/db/#item/${id}`,
+            en: `http://garlandtools.org/db/#item/${id}`,
+            de: `http://garlandtools.org/db/#item/${id}`,
+            ja: `http://garlandtools.org/db/#item/${id}`
         };
     }
 
