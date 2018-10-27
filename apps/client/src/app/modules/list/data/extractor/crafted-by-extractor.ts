@@ -21,7 +21,7 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.isCraft();
+    return item.isCraft() && !this.isCrystal(item.id);
   }
 
   protected doExtract(item: Item, itemData: ItemData): CraftedBy[] {

@@ -13,7 +13,8 @@ function getCompact(list) {
       id: item.id,
       icon: item.icon,
       amount: item.amount,
-      amount_needed: item.amount_needed
+      amount_needed: item.amount_needed,
+      recipeId: item.recipeId
     };
   });
   return compact;

@@ -34,6 +34,7 @@
   "Mute_alarms": "Mute alarms",
   "Hide_used": "Hide used rows",
   "Retainer_ventures": "Retainer ventures",
+  "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
     "Workshops": "Workshops",
     "Add_lists": "Add lists",

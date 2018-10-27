@@ -45,6 +45,7 @@
       <div *ngFor="let alarm of item.alarms">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
+                  nz-tooltip [nzTitle]="display.alarm.zoneId | placeName | i18n"
                   [nzGhost]="!display.registered"
                   (click)="toggleAlarm(display)">
             <i nz-icon type="clock-circle-o" *ngIf="!display.registered"></i>

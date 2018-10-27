@@ -31,6 +31,7 @@ export class ListManagerService {
           let toAdd: ListRow;
           // If this is a craft
           if (data.isCraft()) {
+            console.log(data, recipeId);
             const craft = data.getCraft(recipeId);
             const ingredients: Ingredient[] = [];
             // We have to remove unused ingredient properties.
