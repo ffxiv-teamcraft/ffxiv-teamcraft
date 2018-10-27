@@ -5,6 +5,10 @@
             <mat-icon>done_all</mat-icon>
             {{'NOTIFICATIONS.Mark_all_as_read' | translate}}
         </button>
+        <button mat-raised-button color="warn" (click)="removeAll(notifications)">
+            <mat-icon>delete_sweep</mat-icon>
+            {{'NOTIFICATIONS.Remove_all' | translate}}
+        </button>
         <div class="spacer"></div>
         <mat-slide-toggle [(ngModel)]="settings.notificationsMuted">
             <mat-icon>

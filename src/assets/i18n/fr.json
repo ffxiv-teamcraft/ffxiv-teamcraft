@@ -628,7 +628,8 @@
     "Team_invite": "{{invitedBy}} vous a invité dans l'équipe {{teamName}}",
     "Item_assigned": "{{itemName}} vous a été assigné sur la liste \"{{listName}}\"",
     "List_commented": "{{userName}} a commenté sur la liste {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Tout marquer comme lu"
+    "Mark_all_as_read": "Tout marquer comme lu",
+    "Remove_all": "Tout supprimer"
   },
   "TEAMS": {
     "Title": "Équipes",

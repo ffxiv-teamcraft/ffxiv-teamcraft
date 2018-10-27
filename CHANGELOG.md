@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.21"></a>
+## [4.4.21](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.20...v4.4.21) (2018-10-27)
+
+
+### Bug Fixes
+
+* fixed an issue with garland links not using proper link base ([8e6b2bd](https://github.com/Supamiu/ffxiv-teamcraft/commit/8e6b2bd))
+
+
+### Features
+
+* new button in notifications page to remove all notifications at once ([5c29eec](https://github.com/Supamiu/ffxiv-teamcraft/commit/5c29eec))
+
+
+
 <a name="4.4.20"></a>
 ## [4.4.20](https://github.com/Supamiu/ffxiv-teamcraft/compare/v4.4.19...v4.4.20) (2018-10-25)
 

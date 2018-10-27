@@ -23,7 +23,6 @@ export class IpcService {
     }
 
     constructor(private platformService: PlatformService, private router: Router) {
-        console.log('new ipc !');
         // Only load ipc if we're running inside electron
         if (platformService.isDesktop()) {
             if (window.require) {

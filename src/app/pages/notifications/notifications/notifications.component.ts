@@ -31,6 +31,10 @@ export class NotificationsComponent {
         notifications.forEach(notification => this.markAsRead(notification));
     }
 
+    public removeAll(notifications: NotificationRelationship[]): void {
+        notifications.forEach(notification => this.remove(notification));
+    }
+
     public markAsRead(notification: NotificationRelationship): void {
         notification.to.read = true;
         this.notificationService.set(notification.$key, notification);
