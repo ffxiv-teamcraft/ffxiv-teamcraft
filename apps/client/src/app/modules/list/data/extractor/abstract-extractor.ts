@@ -67,9 +67,6 @@ export abstract class AbstractExtractor<T> {
    * @returns {Item}
    */
   protected getItem(id: number, data: ItemData): Item {
-    if (id > 1 && id < 20) {
-      return this.gt.getCrystalDetails(id);
-    }
     return data.item.id === id ? data.item : data.getIngredient(id);
   }
 

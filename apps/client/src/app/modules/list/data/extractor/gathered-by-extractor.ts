@@ -24,9 +24,6 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected canExtract(item: Item): boolean {
-    if (item.id < 20) {
-      console.log(item);
-    }
     return item.hasNodes() || (item.fishingSpots !== undefined && item.fishingSpots.length > 0);
   }
 
@@ -34,7 +31,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
     const gatheredBy: GatheredBy = {
       icon: '',
       stars_tooltip: '',
-      level: 0,
+      level: 999,
       nodes: [],
       type: -1
     };
@@ -59,10 +56,11 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           'https://garlandtools.org/db/images/FSH.png'
         ][partial.t];
         gatheredBy.stars_tooltip = this.htmlTools.generateStars(partial.s);
-        gatheredBy.level = +partial.l;
+        gatheredBy.level = gatheredBy.level > +partial.l ? +partial.l : gatheredBy.level;
         if (partial.n !== undefined) {
           const storedNode: StoredNode = {
             zoneid: partial.z,
+            level: +partial.l,
             areaid: this.localized.getAreaIdByENName(partial.n)
           };
           if (details !== undefined) {
@@ -97,6 +95,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > details.lvl) ? details.lvl : gatheredBy.level;
       }
     }
+    gatheredBy.nodes = gatheredBy.nodes.sort((a, b) => a.level - b.level);
     return gatheredBy;
   }
 

@@ -3,6 +3,7 @@ import { I18nName } from '../../../model/common/i18n-name';
 export interface StoredNode {
   zoneid: number;
   areaid: number;
+  level: number;
   limitType?: I18nName;
   coords?: number[];
   time?: number[];

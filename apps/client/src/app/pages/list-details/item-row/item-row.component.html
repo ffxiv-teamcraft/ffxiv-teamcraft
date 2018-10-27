@@ -109,7 +109,7 @@
       </button>
       <img *ngIf="item.gardening === true"
            nzTitle="{{'Gardening' | translate}}"
-           nz-tooltip src="./assets/icons/Gardening.png" class="img-icon">
+           nz-tooltip src="./assets/icons/Gardening.png" class="img-icon gardening-icon">
       <button nz-button nz-tooltip nzTitle="{{'Hunting' | translate}}" nzShape="circle"
               *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openHuntingPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">
