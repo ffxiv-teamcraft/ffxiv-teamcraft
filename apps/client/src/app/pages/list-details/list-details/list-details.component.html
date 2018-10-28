@@ -14,7 +14,7 @@
       </button>
       <button nz-button nzType="primary" nzShape="circle" (click)="cloneList(list)" nz-tooltip
               [nzTitle]="'List_fork' | translate">
-        <i-copy></i-copy>
+        <i nz-icon type="copy" theme="outline"></i>
       </button>
       <div class="spacer"></div>
       <label nz-checkbox [(ngModel)]="list.public" [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"

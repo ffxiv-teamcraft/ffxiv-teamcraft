@@ -6,7 +6,7 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList,
+  DeleteList, LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
@@ -33,6 +33,7 @@ export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
   compacts$ = this.store.select(listsQuery.getCompacts);
+  communityListsLoading$ = this.store.select(listsQuery.getCommunityListsLoading);
 
   myLists$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
     map(([compacts, userId]) => {
@@ -40,7 +41,7 @@ export class ListsFacade {
     }),
     map(lists => {
       return lists.sort((a, b) => {
-        return a.index < b.index ? -1 : 1;
+        return a.index - b.index;
       });
     })
   );
@@ -48,8 +49,19 @@ export class ListsFacade {
   listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$, this.authFacade.fcId$).pipe(
     map(([compacts, userId, fcId]) => {
       return compacts.filter(c => {
-        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId
+        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
       });
+    }),
+    shareReplay(1)
+  );
+
+  communityLists$ = this.store.select(listsQuery.getCompacts).pipe(
+    map((compacts) => {
+      return compacts
+        .filter(c => {
+          return c.public;
+        })
+        .sort((a, b) => a.$key > b.$key ? -1 : 1);
     }),
     shareReplay(1)
   );
@@ -112,7 +124,7 @@ export class ListsFacade {
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta));
   }
 
-  updateItem(item: ListRow, finalItem: boolean):void{
+  updateItem(item: ListRow, finalItem: boolean): void {
     this.store.dispatch(new UpdateItem(item, finalItem));
   }
 
@@ -165,6 +177,10 @@ export class ListsFacade {
 
   loadMyLists(): void {
     this.store.dispatch(new LoadMyLists());
+  }
+
+  loadCommunityLists(): void {
+    this.store.dispatch(new LoadCommunityLists());
   }
 
   loadListsWithWriteAccess(): void {

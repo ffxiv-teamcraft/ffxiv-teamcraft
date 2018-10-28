@@ -9,6 +9,11 @@ const getCompactsLoading = createSelector(
   (state: ListsState) => !state.compactsConnected
 );
 
+const getCommunityListsLoading = createSelector(
+  getListsState,
+  (state: ListsState) => !state.communityListsConnected
+);
+
 const getCompacts = createSelector(
   getListsState,
   getCompactsLoading,
@@ -39,5 +44,6 @@ export const listsQuery = {
   getCompactsLoading,
   getAllListDetails,
   getSelectedList,
-  getCompacts
+  getCompacts,
+  getCommunityListsLoading
 };

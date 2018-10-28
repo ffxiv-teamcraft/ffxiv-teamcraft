@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
 import {
+  CommunityListsLoaded,
   CreateList,
   CreateOptimisticListCompact,
   DeleteList,
   ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
-  ListsWithWriteAccessLoaded,
+  ListsWithWriteAccessLoaded, LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
@@ -17,7 +18,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom, first } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -198,6 +199,15 @@ export class ListsEffects {
     map(([action]) => action),
     switchMap(action => this.listCompactsService.get(action.key)),
     map(listCompact => new ListCompactLoaded(listCompact))
+  );
+
+  @Effect()
+  loadCommunityLists$ = this.actions$.pipe(
+    ofType<LoadCommunityLists>(ListsActionTypes.LoadCommunityLists),
+    // Once community lists are loaded, we don't need to load them anymore thanks to firestore
+    first(),
+    switchMap(() => this.listCompactsService.getCommunityLists()),
+    map(lists => new CommunityListsLoaded(lists))
   );
 
   constructor(

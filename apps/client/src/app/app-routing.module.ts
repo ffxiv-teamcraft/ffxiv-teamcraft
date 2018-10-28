@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'alarms',
     loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
+  },
+  {
+    path: 'community-lists',
+    loadChildren: './pages/community-lists/community-lists.module#CommunityListsModule'
   }
 ];
 

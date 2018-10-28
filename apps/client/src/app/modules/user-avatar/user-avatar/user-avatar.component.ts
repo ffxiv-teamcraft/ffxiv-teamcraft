@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Character } from '@xivapi/angular-client';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CharacterService } from '../../../core/api/character.service';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-avatar',
@@ -25,7 +26,11 @@ export class UserAvatarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.character$ = this.characterService.getCharacter(this.userId);
+    this.character$ = this.characterService.getCharacter(this.userId).pipe(
+      catchError(() => {
+        return of(null)
+      })
+    );
   }
 
 }

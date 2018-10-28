@@ -21,21 +21,6 @@ export class ListPickerDrawerComponent {
   workshops$: Observable<WorkshopDisplay[]>;
 
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
-    this.myLists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
-      debounceTime(100),
-      map(([lists, workshops]) => {
-        // lists category shows only lists that have no workshop.
-        return lists
-          .filter(l => workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined)
-          .map(l => {
-            delete l.workshopId;
-            return l;
-          });
-      }),
-      map(lists => {
-        return lists.sort((a, b) => b.index - a.index);
-      })
-    );
 
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$;
 
@@ -59,6 +44,24 @@ export class ListPickerDrawerComponent {
           })
           .filter(display => display.lists.length > 0)
           .sort((a, b) => a.workshop.index - b.workshop.index);
+      })
+    );
+
+    this.myLists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
+      debounceTime(100),
+      map(([lists, workshops]) => {
+        // lists category shows only lists that have no workshop.
+        return lists
+          .filter(l => {
+            return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
+          })
+          .map(l => {
+            delete l.workshopId;
+            return l;
+          });
+      }),
+      map(lists => {
+        return lists.sort((a, b) => b.index - a.index);
       })
     );
 

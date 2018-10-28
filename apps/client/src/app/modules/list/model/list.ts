@@ -50,7 +50,7 @@ export class List extends DataWithPermissions {
   teamId: string;
 
   // Used for the drag-and-drop feature.
-  workshopId?:string;
+  workshopId?: string;
 
   constructor() {
     super();
@@ -175,19 +175,19 @@ export class List extends DataWithPermissions {
   public isLarge(): boolean {
     let size = 0;
     size += this.finalItems.length;
-    size += this.items.length;
+    size += this.items ? this.items.length : 0;
     return size > 100;
   }
 
   public isEmpty(): boolean {
-    return this.finalItems.length === 0 &&
-      this.items.length === 0;
+    return this.finalItems.length === 0;
   }
 
   public getItemById(id: number, excludeFinalItems: boolean = false): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
     return array.find(row => row.id === id);
   }
+
   /**
    * Adds items to a given row and tags them as used if they're "done" from another craft.
    *

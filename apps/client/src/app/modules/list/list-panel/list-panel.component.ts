@@ -7,11 +7,11 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
 
 @Component({
@@ -28,12 +28,21 @@ export class ListPanelComponent {
     this.list$.next(l);
   }
 
+  @Input()
+  publicDisplay = false;
+
   public _list: List;
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
+    map(permissionLevel => {
+      if (this.publicDisplay && permissionLevel < 40) {
+        return 0;
+      }
+      return permissionLevel;
+    }),
     distinctUntilChanged(),
     shareReplay(1)
   );
@@ -50,6 +59,29 @@ export class ListPanelComponent {
 
   getLink(): string {
     return this.linkTools.getLink(`/list/${this._list.$key}`);
+  }
+
+  cloneList(compact: List): void {
+    // Connect with store to get full list details before cloning
+    this.listsFacade.load(compact.$key);
+    this.listsFacade.allListDetails$.pipe(
+      map(lists => lists.find(l => l.$key === compact.$key)),
+      filter(list => list !== undefined),
+      first(),
+      switchMap(list => {
+        const clone = list.clone();
+        this.listsFacade.updateList(list);
+        this.listsFacade.addList(clone);
+        return this.listsFacade.myLists$
+          .pipe(
+            map(lists => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+      })
+    ).subscribe(() => {
+      this.message.success(this.translate.instant('List_forked'));
+    });
   }
 
   updateAmount(item: ListRow, newAmount: number): void {

@@ -21,13 +21,29 @@ export class ListCompactsService extends FirestoreRelationalStorage<List> {
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<List>[]) => {
-          const rotations = snaps
+          const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
               const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
               delete snap.payload;
               return valueWithKey;
             });
-          return this.serializer.deserialize<List>(rotations, [this.getClass()]);
+          return this.serializer.deserialize<List>(lists, [this.getClass()]);
+        })
+      );
+  }
+
+  public getCommunityLists(): Observable<List[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`public`, '==', true))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<List>[]) => {
+          const lists = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: List = <List>{ $key: snap.payload.doc.id, ...snap.payload.doc.data() };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<List>(lists, [this.getClass()]);
         })
       );
   }

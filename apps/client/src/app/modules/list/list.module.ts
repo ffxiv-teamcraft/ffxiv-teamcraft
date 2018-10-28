@@ -38,6 +38,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { PermissionsModule } from '../permissions/permissions.module';
+import { IconsModule } from '../../core/icons/icons.module';
+import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -68,6 +70,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     RouterModule,
     PageLoaderModule,
     PermissionsModule,
+    IconsModule,
+    UserAvatarModule,
 
     ClipboardModule,
     NgZorroAntdModule,

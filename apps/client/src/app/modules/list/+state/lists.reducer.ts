@@ -7,12 +7,14 @@ export interface ListsState {
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   compactsConnected: boolean;
+  communityListsConnected: boolean;
 }
 
 export const initialState: ListsState = {
   compacts: [],
   listDetails: [],
-  compactsConnected: false
+  compactsConnected: false,
+  communityListsConnected: false
 };
 
 export function listsReducer(
@@ -50,6 +52,18 @@ export function listsReducer(
           ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
           ...action.payload
         ],
+      };
+      break;
+    }
+
+    case ListsActionTypes.CommunityListsLoaded: {
+      state = {
+        ...state,
+        compacts: [
+          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+          ...action.payload
+        ],
+        communityListsConnected: true
       };
       break;
     }

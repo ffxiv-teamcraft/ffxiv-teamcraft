@@ -1,5 +1,11 @@
 <a routerLink="/profile/{{userId}}">
-  <img *ngIf="character$ | async as character" [src]="character.Avatar" alt="" nz-tooltip
+  <img *ngIf="character$ | async as character; else anonymous" [src]="character.Avatar" alt="" nz-tooltip
        [nzTitle]="messageKey ? (messageKey | translate:{name: character.Name}) : character.Name"
        [style.width.px]="width" class="avatar">
+  <ng-template #anonymous>
+    <i nz-icon type="user" nz-tooltip
+       [style.width.px]="width"
+       [nzTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate">
+    </i>
+  </ng-template>
 </a>

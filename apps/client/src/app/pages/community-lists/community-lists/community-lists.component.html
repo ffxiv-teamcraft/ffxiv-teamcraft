@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+  <h2>{{'Public_lists' | translate}}</h2>
+  <input nz-input type="text" class="filter-input" [placeholder]="'COMMUNITY_LISTS.Name_filter_placeholder' | translate"
+         [ngModel]="nameFilter$ | async" (ngModelChange)="nameFilter$.next($event)">
+  <div fxLayout="row" class="filter-input" fxLayoutGap="5px">
+    <nz-select fxFlex="1 1 auto" nzMode="multiple"
+               [nzPlaceHolder]="'COMMUNITY_LISTS.Tags_filter_placeholder' | translate"
+               [ngModel]="tagsFilter$ | async"
+               (ngModelChange)="tagsFilter$.next($event)">
+      <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
+    </nz-select>
+    <button nz-button (click)="tagsFilter$.next([])" nz-tooltip
+            [nzTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate">
+      <i nz-icon type="reload"></i>
+    </button>
+  </div>
+  <app-page-loader [loading]="loading$ | async" class="lists-container">
+    <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto" *ngIf="filteredLists$ | async as lists">
+      <app-list-panel *ngFor="let list of lists; trackBy: trackByList" [list]="list"
+                      [publicDisplay]="true"></app-list-panel>
+      <app-fullpage-message *ngIf="lists.length === 0">{{'COMMUNITY_LISTS.No_lists_matching' | translate}}
+      </app-fullpage-message>
+    </div>
+  </app-page-loader>
+</div>
