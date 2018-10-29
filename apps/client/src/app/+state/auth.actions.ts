@@ -23,6 +23,7 @@ export enum AuthActionTypes {
   LinkingCharacter = '[Auth] Linking character',
   AddCharacter = '[Auth] Add character',
   SetDefaultCharacter = '[Auth] Set default character',
+  SetCurrentFcId = '[Auth] Set Current fc id',
   CharactersLoaded = '[Auth] Characters loaded',
   UserPersisted = '[Auth] User persisted',
 
@@ -132,6 +133,13 @@ export class SetDefaultCharacter implements Action {
   }
 }
 
+export class SetCurrentFcId implements Action {
+  readonly type = AuthActionTypes.SetCurrentFcId;
+
+  constructor(public readonly fcId: string) {
+  }
+}
+
 export class CharactersLoaded implements Action {
   readonly type = AuthActionTypes.CharactersLoaded;
 
@@ -166,6 +174,7 @@ export type AuthActions = GetUser
   | SetDefaultCharacter
   | CharactersLoaded
   | UserPersisted
+  | SetCurrentFcId
   | AnonymousWarningShown;
 
 export const fromAuthActions = {

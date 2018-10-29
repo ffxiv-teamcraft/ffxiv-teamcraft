@@ -4,10 +4,10 @@ import { Store } from '@ngrx/store';
 
 import { AuthState } from './auth.reducer';
 import { authQuery } from './auth.selectors';
-import { GetUser, Logout } from './auth.actions';
+import { GetUser, Logout, SetCurrentFcId } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -27,6 +27,11 @@ export class AuthFacade {
         return null;
       }
       return character.FreeCompanyId.toString();
+    }),
+    tap(fcId => {
+      if (fcId !== null) {
+        this.store.dispatch(new SetCurrentFcId(fcId));
+      }
     })
   );
 

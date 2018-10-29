@@ -84,7 +84,6 @@ export class AuthEffects {
   openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
     withLatestFrom(this.authFacade.linkingCharacter$),
-    tap(console.log),
     filter(([, linking]) => !linking),
     tap(() => this.dialog.create({
       nzTitle: this.translate.instant('Character_informations'),
@@ -108,8 +107,8 @@ export class AuthEffects {
     ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => state.auth.characters.find(char => char.Character.ID === lodestoneId) === undefined);
-      const getMissingCharacters$ = missingCharacters.map(lodestoneId => this.xivapi.getCharacter(lodestoneId));
+      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined);
+      const getMissingCharacters$ = missingCharacters.map(lodestoneId => this.xivapi.getCharacter(lodestoneId.id));
       return combineLatest(...getMissingCharacters$)
         .pipe(
           map(characters => new CharactersLoaded(characters))
@@ -119,10 +118,10 @@ export class AuthEffects {
 
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter),
+    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      return this.userService.set(state.auth.uid, { ...state.auth.user });
+      return this.userService.update(state.auth.uid, { ...state.auth.user });
     }),
     map(() => new UserPersisted())
   );

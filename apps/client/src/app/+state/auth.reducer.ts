@@ -44,12 +44,15 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     case AuthActionTypes.AddCharacter:
       return {
         ...state,
-        user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), action.lodestoneId] },
+        user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), { id: action.lodestoneId, verified: false}] },
         linkingCharacter: false
       };
 
     case AuthActionTypes.SetDefaultCharacter:
       return { ...state, user: { ...state.user, defaultLodestoneId: action.lodestoneId } };
+
+    case AuthActionTypes.SetCurrentFcId:
+      return { ...state, user: { ...state.user, currentFcId: action.fcId } };
 
     case AuthActionTypes.CharactersLoaded:
       return { ...state, characters: [...state.characters, ...action.characters], loading: false };
