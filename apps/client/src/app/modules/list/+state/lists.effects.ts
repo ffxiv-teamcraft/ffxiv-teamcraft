@@ -9,7 +9,8 @@ import {
   ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
-  ListsWithWriteAccessLoaded, LoadCommunityLists,
+  ListsWithWriteAccessLoaded,
+  LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
@@ -18,7 +19,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom, first } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -172,6 +173,13 @@ export class ListsEffects {
       return list;
     }),
     map(list => new UpdateList(list))
+  );
+
+  @Effect()
+  deleteEphemeralListsOnComplete$ = this.actions$.pipe(
+    ofType<UpdateList>(ListsActionTypes.UpdateList),
+    filter(action => action.payload.ephemeral),
+    map(action => new DeleteList(action.payload.$key))
   );
 
   @Effect()
