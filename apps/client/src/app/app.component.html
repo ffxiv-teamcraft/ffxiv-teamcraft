@@ -23,10 +23,9 @@
                 {{'COMMON.Anonymous' | translate}}
               </span>
               <ng-template #userLoggedIn>
-              <nz-avatar *ngIf="loggedIn$ | async" [nzSrc]="(character$ | async)?.Avatar">
-              </nz-avatar>
-              {{(character$ | async)?.Name | ifMobile:''}}
-              </ng-template>
+                <app-user-avatar [userId]="userId$ | async" [width]="32" [flex]="false"></app-user-avatar>
+                {{(character$ | async)?.Name | ifMobile:''}}
+                </ng-template>
             </ng-template>
           </span>
           <span>
@@ -89,13 +88,13 @@
               <span class="nav-text">{{'HOME_PAGE.FEATURES.alarms_title' | translate}}</span>
           </span>
         </a>
-        <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
+        <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon type="build"></i>
               <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
           </span>
         </a>
-        <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
+        <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon type="inbox"></i>
               <span class="nav-text">{{'COMMISSION_BOARD.Title' | translate}}</span>
@@ -119,19 +118,19 @@
               <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
           </span>
         </a>
-        <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
+        <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon type="message"></i>
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
           </span>
         </a>
-        <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
+        <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon type="file-markdown"></i>
               <span class="nav-text">{{'WIKI.Title' | translate}}</span>
           </span>
         </a>
-        <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected">
+        <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon type="info-circle-o"></i>
               <span class="nav-text">{{'ABOUT.title' | translate}}</span>
@@ -175,19 +174,6 @@
     <ng-template #actionEdit>
       <i nz-icon type="close"></i>
     </ng-template>
-    <ng-template #actionOpen>
-      <i nz-icon type="select"></i>
-    </ng-template>
-    <ng-template #actionEllipsis>
-      <i nz-icon type="delete"></i>
-    </ng-template>
-  </nz-list>
-</ng-template>
-<ng-template #pins>
-  <nz-list>
-    <nz-list-item [nzActions]="[actionOpen,actionEllipsis]">
-      <nz-list-item-meta [nzTitle]="'Cordials'" [nzDescription]="'/list/a6dz1za5d74a96d'"></nz-list-item-meta>
-    </nz-list-item>
     <ng-template #actionOpen>
       <i nz-icon type="select"></i>
     </ng-template>

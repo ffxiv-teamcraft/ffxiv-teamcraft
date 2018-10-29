@@ -6,12 +6,14 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     CoreModule,
+    FlexLayoutModule,
 
     DatabaseModule,
     XivapiClientModule,

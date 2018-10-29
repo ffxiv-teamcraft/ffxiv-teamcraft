@@ -7,18 +7,22 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 @Injectable()
 export class CharacterService {
 
-  private cache: { [index: string]: Observable<Character> } = {};
+  private cache: { [index: string]: Observable<{ character: Character, verified: boolean }> } = {};
 
   constructor(private userService: UserService, private xivapi: XivapiService) {
   }
 
-  public getCharacter(userId: string): Observable<Character> {
+  public getCharacter(userId: string): Observable<{ character: Character, verified: boolean }> {
     if (this.cache[userId] === undefined) {
       this.cache[userId] = this.userService.get(userId)
         .pipe(
-          switchMap(user => this.xivapi.getCharacter(user.defaultLodestoneId)),
-          filter(res => res.Info.Character.State === 2),
-          map(response => response.Character),
+          switchMap(user => this.xivapi.getCharacter(user.defaultLodestoneId).pipe(
+            filter(res => res.Info.Character.State === 2),
+            map(response => ({
+              character: response.Character,
+              verified: user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId).verified
+            }))
+          )),
           shareReplay(1)
         );
     }

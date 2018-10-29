@@ -37,6 +37,7 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { WorkshopModule } from './modules/workshop/workshop.module';
 import { SettingsModule } from './modules/settings/settings.module';
+import { UserAvatarModule } from './modules/user-avatar/user-avatar.module';
 
 registerLocaleData(en);
 
@@ -94,6 +95,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ListModule,
     WorkshopModule,
     SettingsModule,
+    UserAvatarModule,
 
     HttpClientModule,
 
