@@ -1,25 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { FirebaseStorage } from './storage/firebase/firebase-storage';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { map } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
+import { FirestoreStorage } from './storage/firestore/firestore-storage';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
-export class UserService extends FirebaseStorage<TeamcraftUser> {
+export class UserService extends FirestoreStorage<TeamcraftUser> {
 
-  constructor(private af: AngularFireAuth,
-              protected database: AngularFireDatabase,
-              protected serializer: NgSerializerService,
-              protected pendingChangesService: PendingChangesService) {
-    super(database, serializer, pendingChangesService);
+  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth) {
+    super(firestore, serializer, zone, pendingChangesService);
   }
 
   public getUserByEmail(email: string): Observable<TeamcraftUser> {
-    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('email').equalTo(email))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where('email', '==', email))
       .snapshotChanges()
       .pipe(
         map(snaps => snaps[0]),
@@ -40,7 +38,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
    * @returns {Observable<boolean>}
    */
   public checkPatreonEmailAvailability(email: string): Observable<boolean> {
-    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('patreonEmail').equalTo(email))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where('patreonEmail', '==', email))
       .valueChanges()
       .pipe(
         map(res => res.length === 0)
@@ -53,7 +51,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
    * @returns {Observable<boolean>}
    */
   public checkNicknameAvailability(nickname: string): Observable<boolean> {
-    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('nickname').equalTo(nickname))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where('nickname', '==', nickname))
       .valueChanges()
       .pipe(
         map(res => res.length === 0)
@@ -93,7 +91,7 @@ export class UserService extends FirebaseStorage<TeamcraftUser> {
   }
 
   public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {
-    return this.firebase.list(this.getBaseUri(), ref => ref.orderByChild('defaultLodestoneId').equalTo(id))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where('defaultLodestoneId', '==', id))
       .snapshotChanges()
       .pipe(
         map((snaps: any[]) => {
