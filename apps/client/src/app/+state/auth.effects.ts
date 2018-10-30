@@ -121,7 +121,7 @@ export class AuthEffects {
     ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      return this.userService.update(state.auth.uid, { ...state.auth.user });
+      return this.userService.set(state.auth.uid, { ...state.auth.user });
     }),
     map(() => new UserPersisted())
   );
