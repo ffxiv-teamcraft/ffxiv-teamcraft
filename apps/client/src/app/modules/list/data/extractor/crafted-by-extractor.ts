@@ -29,7 +29,7 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
     for (const craft of item.craft) {
       const craftedBy: CraftedBy = {
         itemId: item.id,
-        icon: `https://secure.xivdb.com/img/classes/set2/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
+        icon: `./assets/icons/classjob/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
         level: craft.lvl,
         stars_tooltip: this.htmlTools.generateStars(craft.stars),
         recipeId: craft.id
