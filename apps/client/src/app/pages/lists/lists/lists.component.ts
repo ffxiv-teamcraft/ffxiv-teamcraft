@@ -124,8 +124,8 @@ export class ListsComponent {
     });
   }
 
-  regenerateLists(lists: List[]): void {
-    const regenerations = lists.map(list => {
+  regenerateLists(lists:{communityLists: List[], otherLists: List[]}): void {
+    const regenerations = [...lists.communityLists, ...lists.otherLists].map(list => {
       return this.listManager.upgradeList(list)
         .pipe(
           map(l => this.listsFacade.updateList(l))

@@ -14,6 +14,19 @@
   }
 }
 
+:host ::ng-deep nz-sider {
+  // Using !important here because that's a hotfix, wont work without it.
+  &.collapsed {
+    width: 80px !important;
+    min-width: 80px !important;
+    flex: 0 0 80px !important;
+    max-width: 80px !important;
+    .ant-layout-sider-trigger {
+      width: 80px !important;
+    }
+  }
+}
+
 .menu-link, .menu-link:visited, .menu-link:focus {
   text-decoration: none;
   color: inherit;
@@ -49,3 +62,4 @@
 nz-card {
   margin: 8px 0;
 }
+

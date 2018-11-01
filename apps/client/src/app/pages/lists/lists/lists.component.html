@@ -20,7 +20,7 @@
     </div>
     <h2>{{'LISTS.Your_lists' | translate}}</h2>
     <div class="ngx-dnd-container" ngxDroppable="list"
-         (drop)="setListIndex($event.value, $event.dropIndex, lists)">
+         (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">
       <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.otherLists; trackBy: trackByList"
            ngxDraggable="list"
            [model]="list">
@@ -34,7 +34,7 @@
     <nz-collapse *ngIf="lists.communityLists.length > 0">
       <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">
         <div class="ngx-dnd-container" ngxDroppable="communityList"
-             (drop)="setListIndex($event.value, $event.dropIndex, lists)">
+             (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)">
           <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.communityLists; trackBy: trackByList"
                ngxDraggable="communityList"
                [model]="list">

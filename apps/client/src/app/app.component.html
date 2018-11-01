@@ -29,20 +29,20 @@
             </ng-template>
           </span>
           <span>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
+            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
+            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
               <i class="material-icons">people_outline</i>
               {{'TEAMS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async">
+            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
               <i nz-icon type="link"></i>
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" (click)="openSettings()">
+            <a nz-menu-item class="menu-link" nzDisabled (click)="openSettings()">
               <i nz-icon type="setting"></i>
               {{'SETTINGS.title' | translate}}
             </a>
@@ -67,6 +67,8 @@
   <nz-layout class="content-container">
     <nz-sider nzCollapsible
               [(nzCollapsed)]="collapsedSidebar"
+              (nzCollapsedChange)="settings.compactSidebar = $event"
+              [class.collapsed]="collapsedSidebar | ifMobile: false"
               [nzCollapsedWidth]="80 | ifMobile: 0"
               [nzBreakpoint]="'lg'">
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
