@@ -76,7 +76,7 @@ export class UpdateItem implements Action {
 export class MyListsLoaded implements Action {
   readonly type = ListsActionTypes.MyListsLoaded;
 
-  constructor(public payload: List[]) {
+  constructor(public payload: List[], public readonly userId: string) {
   }
 }
 

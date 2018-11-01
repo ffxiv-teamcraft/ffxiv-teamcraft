@@ -26,7 +26,7 @@ export function listsReducer(
       state = {
         ...state,
         compacts: [
-          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+          ...state.compacts.filter(compact => compact.authorId !== action.userId),
           ...action.payload
         ],
         compactsConnected: true
@@ -40,7 +40,7 @@ export function listsReducer(
         compacts: [
           ...state.compacts.filter(compact => action.payload.$key !== compact.$key),
           <List>action.payload
-        ],
+        ]
       };
       break;
     }
@@ -51,7 +51,7 @@ export function listsReducer(
         compacts: [
           ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
           ...action.payload
-        ],
+        ]
       };
       break;
     }

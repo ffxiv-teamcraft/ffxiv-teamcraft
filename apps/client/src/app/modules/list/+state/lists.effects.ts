@@ -37,9 +37,11 @@ export class ListsEffects {
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {
-      return this.listCompactsService.getByForeignKey(TeamcraftUser, userId);
+      return this.listCompactsService.getByForeignKey(TeamcraftUser, userId)
+        .pipe(
+          map(lists => new MyListsLoaded(lists, userId))
+        );
     }),
-    map(lists => new MyListsLoaded(lists))
   );
 
   @Effect()
@@ -103,12 +105,12 @@ export class ListsEffects {
 
   @Effect()
   createOptimisticListCompact$ = this.actions$.pipe(
-    ofType(ListsActionTypes.CreateOptimisticListCompact),
+    ofType<CreateOptimisticListCompact>(ListsActionTypes.CreateOptimisticListCompact),
     withLatestFrom(this.listsFacade.myLists$),
     map(([action, lists]) => {
-      (<CreateOptimisticListCompact>action).payload.$key = (<CreateOptimisticListCompact>action).key;
-      delete (<CreateOptimisticListCompact>action).payload.items;
-      return new MyListsLoaded([...lists, (<CreateOptimisticListCompact>action).payload]);
+      action.payload.$key = action.key;
+      delete action.payload.items;
+      return new MyListsLoaded([...lists, action.payload], action.payload.authorId);
     })
   );
 
