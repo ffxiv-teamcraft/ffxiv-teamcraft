@@ -18,7 +18,7 @@
       </button>
       <div class="spacer"></div>
       <label nz-checkbox [(ngModel)]="list.public" [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
-             (ngModelChange)="listsFacade.updateList(list)" nz-tooltip [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+             (ngModelChange)="list.index = -1;listsFacade.updateList(list)" nz-tooltip [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
         {{'Public_list' | translate}}
       </label>
       <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip

@@ -19,7 +19,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 })
 export class ListsComponent {
 
-  public lists$: Observable<List[]>;
+  public lists$: Observable<{communityLists: List[], otherLists: List[]}>;
 
   public listsWithWriteAccess$: Observable<List[]>;
 
@@ -88,8 +88,12 @@ export class ListsComponent {
             return l;
           });
       }),
+      map(lists => lists.sort((a, b) => b.index - a.index)),
       map(lists => {
-        return lists.sort((a, b) => b.index - a.index);
+        return {
+          communityLists: lists.filter(l => l.public),
+          otherLists: lists.filter(l => !l.public)
+        };
       })
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
