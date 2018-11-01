@@ -64,8 +64,7 @@ export class UserPickerComponent {
             })
           ).pipe(map(res => [].concat.apply([], ...res)));
         }),
-        tap(() => this.loadingResults = false),
-        startWith([])
+        tap(() => this.loadingResults = false)
       );
   }
 

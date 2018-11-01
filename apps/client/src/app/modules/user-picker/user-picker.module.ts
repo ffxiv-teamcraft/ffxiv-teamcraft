@@ -6,6 +6,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseModule } from '../../core/database/database.module';
 import { UserPickerService } from './user-picker.service';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { UserPickerService } from './user-picker.service';
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
+    PageLoaderModule,
 
     DatabaseModule,
 

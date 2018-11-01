@@ -16,24 +16,29 @@
   </nz-form-item>
 </div>
 
-<div class="results">
-  <nz-list [nzDataSource]="result$ | async"
-           [nzItemLayout]="'horizontal'"
-           [nzLoading]="loadingResults"
-           [nzRenderItem]="characterTemplate">
-    <ng-template #characterTemplate let-item>
-      <nz-list-item [nzActions]="[selectAction]">
-        <ng-template #selectAction>
-          <button nz-button nzType="primary" (click)="pickUser(item)">{{'COMMON.Select' | translate}}</button>
-        </ng-template>
-        <nz-list-item-meta
-          [nzTitle]="item.characterName"
-          [nzDescription]="item.userId"
-          [nzAvatar]="item.characterAvatar">
-        </nz-list-item-meta>
-      </nz-list-item>
+<div class="results" *ngIf="result$ | async as results">
+  <app-page-loader [loading]="loadingResults">
+    <nz-list *ngIf="results.length > 0; else noResults"
+             [nzDataSource]="results"
+             [nzItemLayout]="'horizontal'"
+             [nzRenderItem]="characterTemplate">
+      <ng-template #characterTemplate let-user>
+        <nz-list-item [nzActions]="[selectAction]">
+          <ng-template #selectAction>
+            <button nz-button nzType="primary" (click)="pickUser(user)">{{'COMMON.Select' | translate}}</button>
+          </ng-template>
+          <nz-list-item-meta
+            [nzTitle]="user.characterName"
+            [nzDescription]="user.userId"
+            [nzAvatar]="user.characterAvatar">
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+    <ng-template #noResults>
+      <span *ngIf="!loadingResults">{{'PERMISSIONS.User_not_found' | translate}}</span>
     </ng-template>
-  </nz-list>
+  </app-page-loader>
 </div>
 
 <ng-template #loading>
