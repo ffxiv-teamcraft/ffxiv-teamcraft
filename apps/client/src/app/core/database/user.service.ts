@@ -22,7 +22,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       .pipe(
         map(snaps => snaps[0]),
         map((snap: any) => {
-          const valueWithKey: TeamcraftUser = { $key: snap.payload.key, ...snap.payload.doc.data() };
+          const valueWithKey: TeamcraftUser = { $key: snap.payload.doc.id, ...snap.payload.doc.data() };
           if (!snap.payload.exists()) {
             throw new Error('Not found');
           }
@@ -95,7 +95,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       .snapshotChanges()
       .pipe(
         map((snaps: any[]) => {
-          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ $key: snap.payload.key, ...snap.payload.doc.data() }));
+          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ $key: snap.payload.doc.id, ...snap.payload.doc.data() }));
           return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
         })
       );

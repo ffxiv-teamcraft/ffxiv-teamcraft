@@ -38,7 +38,7 @@ export class UserAvatarComponent implements OnInit {
       filter(c => c !== null)
     );
     this.character$ = character$.pipe(map(res => res.character));
-    this.status$ = character$.pipe(map(res => res.verified ? 'success' : 'error'), tap(console.log));
+    this.status$ = character$.pipe(map(res => res.verified ? 'success' : 'error'));
   }
 
 }

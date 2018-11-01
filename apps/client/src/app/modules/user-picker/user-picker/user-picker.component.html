@@ -30,7 +30,10 @@
           <nz-list-item-meta
             [nzTitle]="user.characterName"
             [nzDescription]="user.userId"
-            [nzAvatar]="user.characterAvatar">
+            [nzAvatar]="avatar">
+            <ng-template #avatar>
+              <app-user-avatar [userId]="user.userId"></app-user-avatar>
+            </ng-template>
           </nz-list-item-meta>
         </nz-list-item>
       </ng-template>

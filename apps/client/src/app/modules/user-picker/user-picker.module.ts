@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseModule } from '../../core/database/database.module';
 import { UserPickerService } from './user-picker.service';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
+import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { PageLoaderModule } from '../page-loader/page-loader.module';
     FormsModule,
     ReactiveFormsModule,
     PageLoaderModule,
+    UserAvatarModule,
 
     DatabaseModule,
 
