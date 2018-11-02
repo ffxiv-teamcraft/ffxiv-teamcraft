@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MapData } from './map-data';
 import { Aetheryte } from '../../core/data/aetheryte';
@@ -9,7 +8,8 @@ import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
-import { map, publishReplay, refCount } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 
 @Injectable()
 export class MapService {
@@ -20,31 +20,33 @@ export class MapService {
   // TP duration on the same map, this is an average.
   private static readonly TP_DURATION = 8;
 
-  data: Observable<MapData[]>;
+  private cache: { [index: number]: Observable<MapData> } = {};
 
-  constructor(private http: HttpClient, private mathService: MathToolsService, private l12n: LocalizedDataService) {
-    this.data = this.http.get<any>('https://api.xivdb.com/maps/get/layers/id')
-      .pipe(
-        map(res => {
-          return Object.keys(res.data).map(key => res.data[key]).map(row => row[0]) as MapData[];
-        }),
-        map(mapData => {
-          return mapData.map(row => {
-            row.aetherytes = this.getAetherytes(row.placename_id);
-            return row;
-          });
-        }),
-        publishReplay(1),
-        refCount()
-      );
+  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService) {
   }
 
-  getMapById(id: number): Observable<MapData> {
-    return this.data.pipe(
-      map(data => {
-        return data.find(row => row.placename_id === id);
-      })
-    );
+  getMapById(placeNameId: number): Observable<MapData> {
+    if (this.cache[placeNameId] === undefined) {
+      this.cache[placeNameId] = this.xivapi.get(XivapiEndpoint.Map, placeNameId).pipe(
+        map(mapData => {
+          return {
+            id: placeNameId,
+            aetherytes: this.getAetherytes(placeNameId),
+            hierarchy: mapData.Hierarchy,
+            image: `https://xivapi.com${mapData.MapFilename}`,
+            offset_x: mapData.OffsetX,
+            offset_y: mapData.OffsetY,
+            map_marker_range: mapData.MapMarkerRange,
+            placename_id: mapData.PlaceNameTargetID,
+            region_id: mapData.PlaceNameRegionTargetID,
+            zone_id: mapData.PlaceNameSubTargetID,
+            size_factor: mapData.SizeFactor,
+            territory_id: mapData.TerritoryTypeTargetID
+          };
+        })
+      );
+    }
+    return this.cache[placeNameId];
   }
 
   public getNearestAetheryte(mapData: MapData, coords: Vector2): Aetheryte {
@@ -57,8 +59,8 @@ export class MapService {
     return nearest;
   }
 
-  public getOptimizedPath(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
-    return this.getMapById(mapId)
+  public getOptimizedPath(placeNameId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
+    return this.getMapById(placeNameId)
       .pipe(
         map(mapData => {
           // We only want big aetherytes.
