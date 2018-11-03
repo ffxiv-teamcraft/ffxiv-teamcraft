@@ -9,7 +9,7 @@
       </ng-template>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-          <app-map-position [zoneId]="vendor.zoneId" [marker]="vendor.coords"></app-map-position>
+          <app-map-position [zoneId]="vendor.zoneId" [marker]="vendor.coords" [mapId]="vendor.mapId"></app-map-position>
           <div
             *ngIf="vendor.zoneId | closestAetheryte: vendor.coords | async as aetheryte"
             class="closest-tp">

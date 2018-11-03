@@ -66,6 +66,7 @@ export class GatheringLocationComponent {
                   node.slot = slotMatch.slot;
                 }
               }
+              node.mapId = node.map;
               const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
               if (folklore !== undefined) {
                 node.folklore = {
@@ -82,10 +83,12 @@ export class GatheringLocationComponent {
               this.bell.getNodesByItemId(item.obj.i)
                 .map(node => {
                   const slotMatch = node.items.find(nodeItem => nodeItem.id === item.obj.i);
+                  const nodePosition = nodePositions[node.id];
                   const result = {
                     ...item,
                     nodeId: node.id,
                     zoneid: this.l12n.getAreaIdByENName(node.zone),
+                    mapId: nodePosition ? nodePositions[node.id].map : this.l12n.getAreaIdByENName(node.zone),
                     x: node.coords[0],
                     y: node.coords[1],
                     level: node.lvl,
@@ -133,6 +136,7 @@ export class GatheringLocationComponent {
   public addAlarm(node: any): void {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
     alarm.spawns = node.spawnTimes;
+    alarm.mapId = node.mapId;
     this.mapService.getMapById(alarm.zoneId)
       .pipe(
         map((mapData) => {

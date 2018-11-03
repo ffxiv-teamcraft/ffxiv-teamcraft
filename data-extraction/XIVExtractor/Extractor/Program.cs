@@ -37,12 +37,12 @@ namespace Extractor
     {
       int[] foods = { 844, 845 };
       JArray foodsArray = ExtractFoodTypes(gameData, foods);
-      string foodsJson = Regex.Replace(foodsArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string foodsJson = Regex.Replace(foodsArray.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\foods.json", foodsJson);
 
       int[] medicines = { 846 };
       JArray medicinesArray = ExtractFoodTypes(gameData, medicines);
-      string medicinesJson = Regex.Replace(medicinesArray.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string medicinesJson = Regex.Replace(medicinesArray.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\medicines.json", medicinesJson);
     }
 
@@ -134,7 +134,7 @@ namespace Extractor
           res.Add(npc.Key.ToString(), npcData);
         }
       }
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\npcs.json", res.ToString());
+      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\npcs.json", res.ToString(Newtonsoft.Json.Formatting.Indented));
     }
 
     static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)
@@ -148,7 +148,7 @@ namespace Extractor
         jRow.Add("nameid", ((SaintCoinach.Xiv.PlaceName)sheet[Int32.Parse(jRow.GetValue("id").ToString())]["PlaceName"]).Key);
         res.Add(row);
       }
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "output\\aetherytes.json", res.ToString());
+      WriteTypescript(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\aetherytes.ts", "aetherytes", res);
     }
 
     static void ExtractNodesPosition(IEnumerable<GatheringPoint> rows)
@@ -176,7 +176,7 @@ namespace Extractor
           res.Add(row.Base.Key.ToString(), node);
         }
       }
-      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\node-positions.json", res.ToString());
+      File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\node-positions.json", res.ToString(Newtonsoft.Json.Formatting.Indented));
     }
 
     static void ExtractItemNames(Localize localize, ARealmReversed realm)
@@ -200,7 +200,7 @@ namespace Extractor
           res.Add("draft" + draft.Key.ToString(), itemName);
         }
       }
-      string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\items.json", json);
     }
 
@@ -216,7 +216,7 @@ namespace Extractor
           res.Add(bnpc.Key.ToString(), itemName);
         }
       }
-      string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\mobs.json", json);
     }
 
@@ -247,7 +247,7 @@ namespace Extractor
           }
         }
       }
-      string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\ventures.json", json);
 
     }
@@ -263,9 +263,14 @@ namespace Extractor
           res.Add(item.Key.ToString(), itemName);
         }
       }
-      string json = Regex.Replace(res.ToString(), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+      string json = Regex.Replace(res.ToString(Newtonsoft.Json.Formatting.Indented), "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
       File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + BASE_ANGULAR_PATH + "src\\app\\core\\data\\sources\\" + fileName + ".json", json);
     }
 
+    static void WriteTypescript(string path, string contentName, JToken content)
+    {
+      var contentString = "export const " + contentName + " = " + content.ToString(Newtonsoft.Json.Formatting.Indented);
+      File.WriteAllText(path, contentString);
+    }
   }
 }

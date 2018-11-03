@@ -13,14 +13,14 @@ const npcs = {};
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-http.get('http://xivapi.com/memoryData/download', (memoryResponse) => {
+http.get('http://xivapi.com/memorydata/download', (memoryResponse) => {
   memoryResponse.setEncoding('utf8');
   memoryResponse.pipe(csv())
     .on('data', function(memoryRow) {
       memoryData.push(memoryRow);
     })
     .on('end', () => {
-      console.log('Extracted memory data');
+      console.log('Extracted memory data, size: ', memoryData.length);
       extractData();
     });
 });
@@ -50,17 +50,17 @@ extractData = () => {
 
       })
       .on('end', function() {
-        const nodesData = JSON.stringify(nodes);
+        const nodesData = JSON.stringify(nodes, null, 2);
         // Write data that needs to be joined with game data first
         fs.writeFileSync('output/nodes-position.json', nodesData);
         console.log('nodes written');
-        const aetherytesData = JSON.stringify(aetherytes);
+        const aetherytesData = JSON.stringify(aetherytes, null, 2);
         fs.writeFileSync('output/aetherytes.json', aetherytesData);
         console.log('aetherytes written');
-        const npcsData = JSON.stringify(npcs);
+        const npcsData = JSON.stringify(npcs, null, 2);
         fs.writeFileSync('output/npcs.json', npcsData);
         console.log('npcs written');
-        const monstersData = JSON.stringify(monsters);
+        const monstersData = JSON.stringify(monsters, null, 2);
         fs.writeFileSync(path.join(outputFolder, 'monsters.json'), monstersData);
         console.log('monsters written');
       });
@@ -69,6 +69,7 @@ extractData = () => {
 
 handleNode = (row) => {
   nodes[+row.ENpcResidentID] = {
+    map: +row.MapID,
     zoneid: +row.PlaceNameID,
     x: Math.round(+row.PosX),
     y: Math.round(+row.PosY)
@@ -91,6 +92,7 @@ handleAetheryte = (row) => {
 handleMonster = (row, memoryData) => {
   const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[row.BNpcNameID] = {
+    map: +row.MapID,
     zoneid: +row.PlaceNameID,
     x: Math.round(+row.PosX),
     y: Math.round(+row.PosY)
@@ -102,6 +104,7 @@ handleMonster = (row, memoryData) => {
 
 handleNpc = (row) => {
   npcs[+row.ENpcResidentID] = {
+    map: +row.MapID,
     zoneid: +row.PlaceNameID,
     x: Math.round(+row.PosX),
     y: Math.round(+row.PosY)

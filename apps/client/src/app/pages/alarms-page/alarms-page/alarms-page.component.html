@@ -74,7 +74,7 @@
 <ng-template #alarmCard let-row="row">
   <div draggable [dragData]="row.alarm" dragScope="alarm">
     <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete, copyMacro]"
-             [nzLoading]="settings.compactAlarms?false:true" [class.spawned]="row.spawned" [class.played]="row.played"
+             [nzLoading]="!settings.compactAlarms" [class.spawned]="row.spawned" [class.played]="row.played"
              #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
@@ -114,7 +114,7 @@
       </ng-template>
     </ng-template>
     <ng-template #map>
-      <app-map [mapId]="row.alarm.zoneId" [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
+      <app-map [mapId]="row.alarm.mapId" [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
                (loaded)="card.nzLoading = false"></app-map>
     </ng-template>
     <ng-template #delete>

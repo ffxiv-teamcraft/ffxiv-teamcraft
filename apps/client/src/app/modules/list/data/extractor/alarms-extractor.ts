@@ -38,6 +38,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             duration: node.uptime / 60,
             zoneId: node.zoneid,
             areaId: node.areaid,
+            mapId: node.mapid,
             slot: +node.slot,
             type: row.gatheredBy.type,
             coords: {

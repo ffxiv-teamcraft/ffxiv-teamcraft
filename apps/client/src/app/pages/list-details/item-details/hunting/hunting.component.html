@@ -6,7 +6,7 @@
       </nz-list-item-meta>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-          <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position"></app-map-position>
+          <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position" [mapId]="drop.map"></app-map-position>
           <div
             *ngIf="drop.zoneid | closestAetheryte: drop.position | async as aetheryte"
             class="closest-tp">

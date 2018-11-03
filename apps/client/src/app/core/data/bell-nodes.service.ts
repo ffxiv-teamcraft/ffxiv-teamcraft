@@ -38,7 +38,6 @@ export class BellNodesService {
           nodeCopy.icon = match.icon;
           nodeCopy.itemId = id;
           if(match.slot !== '?' && match.slot !== undefined){
-            console.log(match.slot);
             nodeCopy.slot = +match.slot;
           }
           nodeCopy.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);

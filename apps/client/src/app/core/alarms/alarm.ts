@@ -20,6 +20,7 @@ export class Alarm extends DataModel {
   duration: number;
   slot: number | string;
   zoneId: number;
+  mapId: number;
   areaId: number;
   coords: Vector2;
   /**

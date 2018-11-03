@@ -15,7 +15,7 @@
       </ng-template>
     </nz-card>
     <ng-template #map>
-      <app-map [mapId]="node.zoneid" [markers]="[{x: node.x, y: node.y}]" (loaded)="card.nzLoading = false"></app-map>
+      <app-map [mapId]="node.mapId" [markers]="[{x: node.x, y: node.y}]" (loaded)="card.nzLoading = false"></app-map>
     </ng-template>
 
     <ng-template #title>

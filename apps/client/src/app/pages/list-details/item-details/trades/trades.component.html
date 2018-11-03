@@ -23,7 +23,7 @@
           </nz-list-item-meta>
           <ng-template #position>
             <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-              <app-map-position [zoneId]="npc.zoneId" [marker]="npc.coords"></app-map-position>
+              <app-map-position [zoneId]="npc.zoneId" [marker]="npc.coords" [mapId]="npc.mapId"></app-map-position>
               <div
                 *ngIf="npc.zoneId | closestAetheryte: npc.coords | async as aetheryte"
                 class="closest-tp">

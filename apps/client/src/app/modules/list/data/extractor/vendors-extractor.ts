@@ -50,8 +50,10 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         };
         const npcEntry = npcs[vendorId];
         if (npcEntry.position !== null) {
-          vendor.coords = npcEntry.position;
-          vendor.zoneId = npcEntry.zoneId;
+          const npcPosition = npcEntry.position;
+          vendor.coords = {x: npcPosition.x, y: npcPosition.y};
+          vendor.zoneId = npcPosition.zoneid;
+          vendor.mapId = npcPosition.map;
         }
         vendors.push(vendor);
       }

@@ -18,6 +18,9 @@ export class MapPositionComponent {
   @Input()
   zoneId: number;
 
+  @Input()
+  mapId: number;
+
   constructor(private dialog: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService) {
   }
@@ -34,7 +37,7 @@ export class MapPositionComponent {
       nzTitle: this.i18n.getName(this.l12n.getPlace(this.zoneId)),
       nzContent: MapComponent,
       nzComponentParams: {
-        mapId: this.zoneId,
+        mapId: this.mapId,
         markers: [this.marker]
       },
       nzFooter: null

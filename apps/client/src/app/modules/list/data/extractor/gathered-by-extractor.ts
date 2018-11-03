@@ -58,7 +58,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         gatheredBy.stars_tooltip = this.htmlTools.generateStars(partial.s);
         gatheredBy.level = gatheredBy.level > +partial.l ? +partial.l : gatheredBy.level;
         if (partial.n !== undefined) {
-          const storedNode: StoredNode = {
+          const storedNode: Partial<StoredNode> = {
             zoneid: partial.z,
             level: +partial.l,
             areaid: this.localized.getAreaIdByENName(partial.n)
@@ -74,6 +74,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.
           if (storedNode.coords === undefined && nodePositions[node] !== undefined) {
             storedNode.coords = [nodePositions[node].x, nodePositions[node].y];
+            storedNode.mapid = nodePositions[node].map;
           }
           // We need to cleanup the node object to avoid database issues with undefined value.
           Object.keys(storedNode).forEach(key => {
@@ -81,7 +82,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
               delete storedNode[key];
             }
           });
-          gatheredBy.nodes.push(storedNode);
+          gatheredBy.nodes.push(<StoredNode>storedNode);
         }
       }
     } else {

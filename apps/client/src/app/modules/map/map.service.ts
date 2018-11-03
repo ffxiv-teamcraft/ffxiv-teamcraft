@@ -25,13 +25,13 @@ export class MapService {
   constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService) {
   }
 
-  getMapById(placeNameId: number): Observable<MapData> {
-    if (this.cache[placeNameId] === undefined) {
-      this.cache[placeNameId] = this.xivapi.get(XivapiEndpoint.Map, placeNameId).pipe(
+  getMapById(mapId: number): Observable<MapData> {
+    if (this.cache[mapId] === undefined) {
+      this.cache[mapId] = this.xivapi.get(XivapiEndpoint.Map, mapId).pipe(
         map(mapData => {
           return {
-            id: placeNameId,
-            aetherytes: this.getAetherytes(placeNameId),
+            id: mapId,
+            aetherytes: this.getAetherytes(mapId),
             hierarchy: mapData.Hierarchy,
             image: `https://xivapi.com${mapData.MapFilename}`,
             offset_x: mapData.OffsetX,
@@ -46,7 +46,7 @@ export class MapService {
         })
       );
     }
-    return this.cache[placeNameId];
+    return this.cache[mapId];
   }
 
   public getNearestAetheryte(mapData: MapData, coords: Vector2): Aetheryte {
@@ -96,7 +96,7 @@ export class MapService {
   }
 
   private getAetherytes(id: number): Aetheryte[] {
-    return aetherytes.filter(aetheryte => aetheryte.placenameid === id);
+    return aetherytes.filter(aetheryte => aetheryte.map === id);
   }
 
   private totalDuration(path: NavigationStep[]): number {
