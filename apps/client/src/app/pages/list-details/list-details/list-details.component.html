@@ -18,7 +18,8 @@
       </button>
       <div class="spacer"></div>
       <label nz-checkbox [(ngModel)]="list.public" [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
-             (ngModelChange)="list.index = -1;listsFacade.updateList(list)" nz-tooltip [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+             (ngModelChange)="list.index = -1;listsFacade.updateList(list)" nz-tooltip
+             [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
         {{'Public_list' | translate}}
       </label>
       <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
@@ -59,6 +60,14 @@
       <div fxFlex="1 1 auto">
         TODO list description
       </div>
+    </div>
+    <div *ngIf="list.public && list.tags.length === 0" class="no-tags-alert">
+      <nz-alert nzType="warning" nzShowIcon [nzMessage]="message">
+        <ng-template #message>
+          {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon type="tags-o"></i>
+          {{'LIST_DETAILS.Missing_tags_after_button' | translate}}
+        </ng-template>
+      </nz-alert>
     </div>
     <div class="list-display" *ngIf="display$ | async as listDisplay">
       <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
