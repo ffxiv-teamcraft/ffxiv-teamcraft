@@ -19,6 +19,7 @@ import { ListsFacade } from './modules/list/+state/lists.facade';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
+import { TeamsFacade } from './modules/teams/+state/teams.facade';
 
 declare const ga: Function;
 
@@ -58,7 +59,8 @@ export class AppComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService) {
+              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
+              public teamsFacade: TeamsFacade) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -125,6 +127,7 @@ export class AppComponent implements OnInit {
     this.workshopsFacade.loadMyWorkshops();
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
+    this.teamsFacade.loadMyTeams();
   }
 
   openRegisterPopup(): void {

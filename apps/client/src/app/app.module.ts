@@ -38,6 +38,7 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { WorkshopModule } from './modules/workshop/workshop.module';
 import { SettingsModule } from './modules/settings/settings.module';
 import { UserAvatarModule } from './modules/user-avatar/user-avatar.module';
+import { TeamsModule } from './modules/teams/teams.module';
 
 registerLocaleData(en);
 
@@ -94,6 +95,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AuthModule,
     ListModule,
     WorkshopModule,
+    TeamsModule,
     SettingsModule,
     UserAvatarModule,
 

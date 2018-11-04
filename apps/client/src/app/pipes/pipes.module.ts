@@ -16,6 +16,8 @@ import { IfMobilePipe } from './if-mobile.pipe';
 import { NodeTypeIconPipe } from './node-type-icon.pipe';
 import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
 import { XivapiIconPipe } from './xivapi-icon.pipe'
+import { CharacterNamePipe } from './character-name.pipe';
+import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { XivapiIconPipe } from './xivapi-icon.pipe'
     IfMobilePipe,
     NodeTypeIconPipe,
     ClosestAetherytePipe,
-    XivapiIconPipe
+    XivapiIconPipe,
+    CharacterNamePipe,
+    TeamcraftLinkPipe
   ],
   exports: [
     ItemNamePipe,
@@ -54,7 +58,9 @@ import { XivapiIconPipe } from './xivapi-icon.pipe'
     IfMobilePipe,
     NodeTypeIconPipe,
     ClosestAetherytePipe,
-    XivapiIconPipe
+    XivapiIconPipe,
+    CharacterNamePipe,
+    TeamcraftLinkPipe
   ]
 })
 export class PipesModule {

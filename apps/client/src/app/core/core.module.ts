@@ -30,6 +30,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
+import { DiscordWebhookService } from './discord-webhook.service';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { CharacterService } from './api/character.service';
     EorzeanTimeService,
     HtmlToolsService,
     LinkToolsService,
-    CharacterService
+    CharacterService,
+    DiscordWebhookService
   ],
   declarations: [
     I18nPipe,

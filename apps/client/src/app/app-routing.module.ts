@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'community-lists',
     loadChildren: './pages/community-lists/community-lists.module#CommunityListsModule'
+  },
+  {
+    path: 'teams',
+    loadChildren: './pages/teams-pages/teams-pages.module#TeamsPagesModule'
   }
 ];
 

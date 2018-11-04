@@ -3,7 +3,7 @@ import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationType } from '../../core/notification/notification-type';
-import { Team } from '../other/team';
+import { Team } from '../team/team';
 
 export class TeamInviteNotification extends NotificationWithQuestion {
 

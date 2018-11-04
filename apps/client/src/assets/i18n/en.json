@@ -25,7 +25,7 @@
   "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
   "Required_for_final_craft": "{{amount}} needed for final items",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
-  "Confirmation": "Confirmation",
+  "Confirmation": "Are you sure?",
   "Is_working_on_it": "{{name}} is working on it",
   "Work_on_it": "I'm working on it",
   "Remove_work_on_it": "Remove user assignation",
@@ -89,7 +89,8 @@
     "Select": "Select",
     "Anonymous": "Anonymous",
     "Warning": "Warning",
-    "Success": "Success"
+    "Success": "Success",
+    "Copy_to_clipboard": "Copy to clipboard"
   },
   "ALARMS": {
     "No_alarm": "No alarms set",
@@ -680,11 +681,22 @@
   },
   "TEAMS": {
     "Title": "Teams",
+    "Leader": "Leader",
+    "Member": "Member",
     "Create_team": "Create a team",
-    "Add_user": "Add a user",
+    "Create_invite_one_day": "Create a new invite (24h lifetime)",
+    "Create_invite_infinite": "Create a new invite (no lifetime)",
     "No_teams": "No Teams",
-    "Pending": "Pending",
+    "Invites": "Invites",
     "Assign_list": "Assign this list to a team",
-    "Detach_team": "Detach team"
+    "Detach_team": "Detach team",
+    "Delete_confirmation": "Are you sure you want to delete this team?",
+    "Invite_expires": "Expires",
+    "Member_joined": "{{characterName}} joined the team !",
+    "Invite_error": "Team invite not found or expired.",
+    "Invite_link_copied": "Team invite link copied to your clipboard",
+    "No_anonymous_join": "You have to create an account to be able to join a team",
+    "Already_in_team": "You are already in this team",
+    "Webhook_setup_complete": "This channel has been configured as tracking channel for team {{teamName}}"
   }
 }

@@ -1,11 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
-import { Team } from '../../model/other/team';
+import { Team } from '../../model/team/team';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { UserService } from './user.service';
-import { combineLatest, Observable, of } from 'rxjs/index';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -14,39 +13,23 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class TeamService extends FirestoreStorage<Team> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private userService: UserService) {
+              protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  public isPremium(team: Team): Observable<boolean> {
-    const members = Object.keys(team.members).filter(userId => team.isConfirmed(userId));
-    return combineLatest(members.map(member => this.userService.get(member)))
+  public getUserTeams(userId: string): Observable<Team[]> {
+    return this.firestore
+      .collection(this.getBaseUri(), ref => ref.where('members', 'array-contains', userId))
+      .snapshotChanges()
       .pipe(
-        map(resultMembers => {
-          // return resultMembers.reduce((premium, m) => premium || m.patron || m.admin, false);
-          return false;
-        })
+        map(snaps => snaps.map(snap => {
+          const data: Team = <Team>snap.payload.doc.data();
+          delete data.$key;
+          return (<Team>{ $key: snap.payload.doc.id, ...data });
+        })),
+        map(teams => this.serializer.deserialize<Team>(teams, [Team])),
+        shareReplay(1)
       );
-  }
-
-  public getUserTeams(): Observable<Team[]> {
-    return of([]);
-    // return this.userService.getUserData().pipe(
-    //     mergeMap(user => {
-    //         return this.firestore
-    //             .collection(this.getBaseUri(), ref => ref.where(`members.${user.$key}`, '>=', -1))
-    //             .snapshotChanges()
-    //             .pipe(
-    //                 map(snaps => snaps.map(snap => {
-    //                     const data = snap.payload.doc.data();
-    //                     delete data.$key;
-    //                     return (<Team>{$key: snap.payload.doc.id, ...data})
-    //                 })),
-    //                 map(teams => this.serializer.deserialize<Team>(teams, [Team])),
-    //                 shareReplay(),
-    //             );
-    //     })
-    // );
   }
 
   protected getBaseUri(params?: any): string {

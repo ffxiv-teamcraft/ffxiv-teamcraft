@@ -10,6 +10,7 @@ import { CommissionService } from './commission/commission.service';
 import { TeamService } from './team.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { WorkshopService } from './workshop.service';
+import { TeamInviteService } from './team-invite.service';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { WorkshopService } from './workshop.service';
     ListService,
     WorkshopService,
     UserService,
+    TeamInviteService,
     { provide: ListStore, useClass: FirestoreListStorage },
     DiffService,
     ListTemplateService,
