@@ -4,7 +4,6 @@ import { SimulatorPageComponent } from './components/simulator-page/simulator-pa
 import { SimulatorComponent } from './components/simulator/simulator.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { CommonComponentsModule } from '../../modules/common-components/common-components.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ActionComponent } from './components/action/action.component';
 import { CraftingActionsRegistry } from './model/crafting-actions-registry';
@@ -108,7 +107,6 @@ const routes: Routes = [
 
     ClipboardModule,
 
-    CommonComponentsModule,
     // CustomLinksModule,
     TooltipModule,
     PipesModule,

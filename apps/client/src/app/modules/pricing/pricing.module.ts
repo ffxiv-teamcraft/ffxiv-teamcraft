@@ -19,7 +19,6 @@ import { PricingRowComponent } from './pricing-row/pricing-row.component';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
-import { CopyableNameModule } from '../copyable-name/copyable-name.module';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -42,8 +41,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
     FormsModule,
     FlexLayoutModule,
-    PipesModule,
-    CopyableNameModule
+    PipesModule
   ],
   declarations: [
     PricingComponent,

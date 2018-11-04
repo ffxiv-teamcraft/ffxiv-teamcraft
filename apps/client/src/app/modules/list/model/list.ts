@@ -4,7 +4,6 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
-import { ResourceComment } from '../../comments/resource-comment';
 import { Craft } from '../../../model/garland-tools/craft';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { ModificationEntry } from './modification-entry';
@@ -38,7 +37,7 @@ export class List extends DataWithPermissions {
 
   ephemeral: boolean;
 
-  comments: ResourceComment[];
+  // comments: ResourceComment[];
 
   // Related to commissions
   commissionId?: string;

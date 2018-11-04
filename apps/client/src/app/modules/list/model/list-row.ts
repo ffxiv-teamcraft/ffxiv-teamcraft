@@ -5,7 +5,6 @@ import { TradeSource } from './trade-source';
 import { Instance } from './instance';
 import { Vendor } from './vendor';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { ResourceComment } from '../../comments/resource-comment';
 import { DeserializeAs } from '@kaiu/serializer';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Drop } from './drop';
@@ -44,8 +43,8 @@ export class ListRow extends DataModel {
    */
   workingOnIt?: string;
 
-  @DeserializeAs([ResourceComment])
-  comments?: ResourceComment[];
+  // @DeserializeAs([ResourceComment])
+  // comments?: ResourceComment[];
 
   hidden?: boolean;
 
