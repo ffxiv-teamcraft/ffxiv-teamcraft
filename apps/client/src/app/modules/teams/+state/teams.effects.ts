@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { CreateTeam, DeleteTeam, LoadMyTeams, LoadTeam, MyTeamsLoaded, TeamLoaded, TeamsActionTypes, UpdateTeam } from './teams.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TeamService } from '../../../core/database/team.service';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
+import { Team } from '../../../model/team/team';
 
 @Injectable()
 export class TeamsEffects {
@@ -21,8 +22,12 @@ export class TeamsEffects {
   @Effect()
   loadTeam$ = this.actions$.pipe(
     ofType<LoadTeam>(TeamsActionTypes.LoadTeam),
-    switchMap((action) => this.teamService.get(action.payload)),
-    map(team => new TeamLoaded(team))
+    switchMap((action) => {
+      return this.teamService.get(action.payload).pipe(
+        catchError(() => of({$key: action.payload, notFound: true}))
+      )
+    }),
+    map(team => new TeamLoaded(<Team>team))
   );
 
   @Effect()

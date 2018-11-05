@@ -19,8 +19,9 @@ export class TeamsFacade {
   selectedTeam$ = this.store.select(teamsQuery.getSelectedTeam);
   myTeams$ = combineLatest(this.allTeams$, this.authFacade.userId$).pipe(
     map(([teams, userId]) => {
-      return teams.filter(team => team.members.indexOf(userId) > -1);
-    })
+      return teams.filter(team => !team.notFound && team.members.indexOf(userId) > -1);
+    }),
+    shareReplay(1)
   );
 
   constructor(private store: Store<{ teams: TeamsState }>, private authFacade: AuthFacade, private teamInviteService: TeamInviteService) {

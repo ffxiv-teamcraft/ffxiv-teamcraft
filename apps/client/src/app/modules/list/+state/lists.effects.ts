@@ -9,6 +9,7 @@ import {
   ListCompactLoaded,
   ListDetailsLoaded,
   ListsActionTypes,
+  ListsForTeamsLoaded,
   ListsWithWriteAccessLoaded,
   LoadCommunityLists,
   LoadListCompact,
@@ -27,6 +28,10 @@ import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { Team } from '../../../model/team/team';
+import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Injectable()
 export class ListsEffects {
@@ -41,7 +46,7 @@ export class ListsEffects {
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
         );
-    }),
+    })
   );
 
   @Effect()
@@ -65,6 +70,15 @@ export class ListsEffects {
       );
     }),
     map(lists => new ListsWithWriteAccessLoaded(lists))
+  );
+
+  @Effect()
+  loadListsForTeam$ = this.teamsFacade.myTeams$.pipe(
+    switchMap((teams) => {
+      return combineLatest(teams.map(team => this.listCompactsService.getByForeignKey(Team, team.$key)));
+    }),
+    map(listsArrays => [].concat.apply([], ...listsArrays)),
+    map(lists => new ListsForTeamsLoaded(lists))
   );
 
   @Effect()
@@ -159,8 +173,8 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$),
-    map(([action, list, character]) => {
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$, this.teamsFacade.selectedTeam$),
+    map(([action, list, character, team]) => {
       list.modificationsHistory.push({
         amount: action.doneDelta,
         date: Date.now(),
@@ -168,6 +182,14 @@ export class ListsEffects {
         itemIcon: action.itemIcon,
         characterId: character ? character.ID : -1
       });
+      if (list.teamId === team.$key) {
+        this.discordWebhookService.sendMessage(team.webhook, 'NOTIFICATIONS.List_progress', {
+          author: character.Name,
+          amount: action.doneDelta,
+          itemName: this.l12n.getItem(action.itemId)[team.language] || this.l12n.getItem(action.itemId).en,
+          listName: list.name
+        }, team.language)
+      }
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
@@ -225,7 +247,10 @@ export class ListsEffects {
     private authFacade: AuthFacade,
     private listService: ListService,
     private listCompactsService: ListCompactsService,
-    private listsFacade: ListsFacade
+    private listsFacade: ListsFacade,
+    private teamsFacade: TeamsFacade,
+    private discordWebhookService: DiscordWebhookService,
+    private l12n: LocalizedDataService
   ) {
   }
 }

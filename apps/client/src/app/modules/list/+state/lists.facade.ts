@@ -28,6 +28,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { Team } from '../../../model/team/team';
 
 declare const ga: Function;
 
@@ -81,7 +82,7 @@ export class ListsFacade {
       );
     }),
     map(([list, userId, team, fcId]) => {
-      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), list.teamId === team.$key ? 20 : 0);
+      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
     }),
     distinctUntilChanged(),
     shareReplay(1)
@@ -89,6 +90,12 @@ export class ListsFacade {
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade) {
+  }
+
+  getTeamLists(team: Team): Observable<List[]> {
+    return this.compacts$.pipe(
+      map(compacts => compacts.filter(compact => compact.teamId === team.$key))
+    )
   }
 
   getWorkshopCompacts(keys: string[]): Observable<List[]> {

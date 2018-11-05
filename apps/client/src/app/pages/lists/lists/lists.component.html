@@ -30,6 +30,16 @@
         {{'LISTS.No_lists' | translate}}
       </app-fullpage-message>
     </div>
+    <div *ngFor="let teamDisplay of teamsDisplays$ | async">
+      <nz-list [nzHeader]="teamDisplay.team.name" *ngIf="teamDisplay.lists.length > 0"
+               [nzRenderItem]="teamList" [nzDataSource]="teamDisplay.lists">
+        <ng-template #teamList let-list>
+          <div class="list-panel">
+            <app-list-panel [list]="list"></app-list-panel>
+          </div>
+        </ng-template>
+      </nz-list>
+    </div>
     <nz-divider></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
       <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">

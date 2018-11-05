@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, concat, Observable } from 'rxjs';
-import { debounceTime, filter, first, map } from 'rxjs/operators';
+import { debounceTime, filter, first, map, switchMap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -11,6 +11,8 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { Workshop } from '../../../model/other/workshop';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
+import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import { Team } from '../../../model/team/team';
 
 @Component({
   selector: 'app-lists',
@@ -19,7 +21,9 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 })
 export class ListsComponent {
 
-  public lists$: Observable<{communityLists: List[], otherLists: List[]}>;
+  public lists$: Observable<{ communityLists: List[], otherLists: List[] }>;
+
+  public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]>;
 
   public listsWithWriteAccess$: Observable<List[]>;
 
@@ -32,7 +36,7 @@ export class ListsComponent {
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
-              private workshopsFacade: WorkshopsFacade) {
+              private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {
     this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
@@ -76,13 +80,26 @@ export class ListsComponent {
       })
     );
 
-    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$).pipe(
+    this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
+      switchMap(teams => {
+        return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
+          map(lists => {
+            return { team: team, lists: lists };
+          })
+        )));
+      })
+    );
+
+    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
       debounceTime(100),
-      map(([lists, myWorkshops, workshopsWithWriteAccess]) => {
+      map(([lists, myWorkshops, workshopsWithWriteAccess, teamDisplays]: [List[], WorkshopDisplay[], WorkshopDisplay[], any[]]) => {
         const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists
-          .filter(l => workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined)
+          .filter(l => {
+            return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
+              && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
+          })
           .map(l => {
             delete l.workshopId;
             return l;
@@ -100,6 +117,8 @@ export class ListsComponent {
       debounceTime(100)
     );
     this.loading$ = this.listsFacade.loadingMyLists$;
+
+    this.teamsFacade.loadMyTeams();
   }
 
   createList(): void {
@@ -124,7 +143,7 @@ export class ListsComponent {
     });
   }
 
-  regenerateLists(lists:{communityLists: List[], otherLists: List[]}): void {
+  regenerateLists(lists: { communityLists: List[], otherLists: List[] }): void {
     const regenerations = [...lists.communityLists, ...lists.otherLists].map(list => {
       return this.listManager.upgradeList(list)
         .pipe(

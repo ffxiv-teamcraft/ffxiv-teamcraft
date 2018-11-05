@@ -56,6 +56,17 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.ListsForTeamsLoaded: {
+      state = {
+        ...state,
+        compacts: [
+          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
+          ...action.payload
+        ]
+      };
+      break;
+    }
+
     case ListsActionTypes.CommunityListsLoaded: {
       state = {
         ...state,

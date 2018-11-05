@@ -697,6 +697,8 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
-    "Webhook_setup_complete": "This channel has been configured as tracking channel for team {{teamName}}"
+    "Webhook_setup_complete": "This channel has been configured as tracking channel for team \"{{teamName}}\"",
+    "List_added_notification": "List \"{{listName}}\" has been assigned to team \"{{teamName}}\"",
+    "List_removed_notification": "List \"{{listName}}\" has been unassigned from team \"{{teamName}}\""
   }
 }

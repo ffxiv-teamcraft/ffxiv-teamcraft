@@ -21,7 +21,7 @@ export function teamsReducer(
       state = {
         ...state,
         teams: [
-          ...state.teams.filter(team => team.members.indexOf(action.userId) === -1),
+          ...state.teams.filter(team => team && !team.notFound && team.members.indexOf(action.userId) === -1),
           ...action.payload
         ],
         loaded: true

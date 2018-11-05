@@ -13,6 +13,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
+import { TeamsModule } from '../../modules/teams/teams.module';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
 
     CoreModule,
     ListModule,
+    TeamsModule,
     WorkshopModule,
     PageLoaderModule,
     NameQuestionPopupModule,

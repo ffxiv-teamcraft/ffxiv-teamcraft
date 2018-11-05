@@ -8,6 +8,8 @@ export enum ListsActionTypes {
   LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
   LoadCommunityLists = '[Lists] Load Community Lists',
 
+  ListsForTeamsLoaded = '[Lists] Lists For Team Loaded',
+
   LoadListDetails = '[Lists] Load List',
   LoadListCompact = '[Lists] Load List Compact',
   SelectList = '[Lists] Select List',
@@ -82,6 +84,13 @@ export class MyListsLoaded implements Action {
 
 export class ListsWithWriteAccessLoaded implements Action {
   readonly type = ListsActionTypes.ListsWithWriteAccessLoaded;
+
+  constructor(public payload: List[]) {
+  }
+}
+
+export class ListsForTeamsLoaded implements Action {
+  readonly type = ListsActionTypes.ListsForTeamsLoaded;
 
   constructor(public payload: List[]) {
   }
@@ -165,4 +174,5 @@ export type ListsAction =
   | ListsWithWriteAccessLoaded
   | LoadCommunityLists
   | CommunityListsLoaded
-  | UpdateItem;
+  | UpdateItem
+  | ListsForTeamsLoaded;

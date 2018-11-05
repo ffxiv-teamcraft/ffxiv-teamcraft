@@ -23,6 +23,7 @@ import { ListDisplay } from '../../../core/layout/list-display';
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { DiscordWebhookService } from '../../../core/discord-webhook.service';
 
 @Component({
   selector: 'app-list-details',
@@ -52,7 +53,8 @@ export class ListDetailsComponent implements OnInit {
               private translate: TranslateService, private router: Router,
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private teamsFacade: TeamsFacade, private authFacade: AuthFacade) {
+              private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
+              private discordWebhookService: DiscordWebhookService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
       tap(list => {
@@ -94,15 +96,36 @@ export class ListDetailsComponent implements OnInit {
       .subscribe(listId => {
         this.listsFacade.select(listId);
       });
+    this.teamsFacade.selectedTeam$.pipe(
+      filter(team => team && team.notFound),
+      switchMap(() => {
+        return this.list$.pipe(first());
+      })
+    ).subscribe(list => {
+      delete list.teamId;
+      this.listsFacade.updateList(list);
+    });
   }
 
   assignTeam(list: List, team: Team): void {
     list.teamId = team.$key;
     this.listsFacade.updateList(list);
+    if (team.webhook !== undefined) {
+      this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.List_added_notification', {
+        listName: list.name,
+        teamName: team.name
+      }, team.language);
+    }
   }
 
-  removeTeam(list: List): void {
+  removeTeam(list: List, team: Team): void {
     delete list.teamId;
+    if (team.webhook !== undefined) {
+      this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.List_removed_notification', {
+        listName: list.name,
+        teamName: team.name
+      }, team.language);
+    }
     this.listsFacade.updateList(list);
   }
 
