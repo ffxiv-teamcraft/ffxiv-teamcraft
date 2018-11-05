@@ -88,7 +88,7 @@ export class TeamsComponent {
   removeMember(team: Team, memberId: string, memberName: string): void {
     team.members = team.members.filter(member => member !== memberId);
     if (team.webhook !== undefined) {
-      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_removed', { memberName: memberName }, team.language);
+      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_removed', { memberName: memberName, teamName: team.name }, team.language);
     }
     this.updateTeam(team);
   }

@@ -689,6 +689,7 @@
     "No_teams": "No Teams",
     "Invites": "Invites",
     "Assign_list": "Assign this list to a team",
+    "Assign_team_member": "Assign to a team member",
     "Detach_team": "Detach team",
     "Delete_confirmation": "Are you sure you want to delete this team?",
     "Invite_expires": "Expires",
@@ -699,6 +700,9 @@
     "Already_in_team": "You are already in this team",
     "Webhook_setup_complete": "This channel has been configured as tracking channel for team \"{{teamName}}\"",
     "List_added_notification": "List \"{{listName}}\" has been assigned to team \"{{teamName}}\"",
-    "List_removed_notification": "List \"{{listName}}\" has been unassigned from team \"{{teamName}}\""
+    "List_removed_notification": "List \"{{listName}}\" has been unassigned from team \"{{teamName}}\"",
+    "Member_removed": "{{memberName}} has been removed from team \"{{teamName}}\"",
+    "Name_changed": "Team \"{{oldName}}\" renamed to \"{{newName}}\"",
+    "User_assigned": "{{itemName}} has been assigned to {{memberName}} on list \"{{listName}}\""
   }
 }

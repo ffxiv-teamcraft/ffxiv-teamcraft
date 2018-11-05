@@ -80,8 +80,8 @@
           </div>
           <nz-list [nzRenderItem]="memberTemplate" [nzDataSource]="team.members" [nzSize]="'small'">
             <ng-template #memberTemplate let-member>
-              <nz-list-item [nzContent]="content">
-                <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="member | characterName | async"
+              <nz-list-item [nzContent]="content" *ngIf="member | characterName | async as characterName">
+                <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="characterName"
                                    [nzDescription]="(member === team.leader?'TEAMS.Leader':'TEAMS.Member') | translate">
                   <ng-template #avatar>
                     <app-user-avatar [userId]="member"></app-user-avatar>
@@ -89,7 +89,8 @@
                   <ng-template #content>
                     <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
                             nz-popconfirm nzSize="small" *ngIf="(userId$ | async) === team.leader"
-                            [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="removeMember(team, member)">
+                            [nzTitle]="'Confirmation' | translate"
+                            (nzOnConfirm)="removeMember(team, member, characterName)">
                       <i nz-icon type="delete"></i>
                     </button>
                   </ng-template>

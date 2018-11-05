@@ -28,13 +28,23 @@
         <li nz-menu-item (click)="setWorkingOnIt(userId)" *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
           {{'Work_on_it' | translate}}
         </li>
-        <!--TODO handle team leader role here-->
         <li nz-menu-item (click)="removeWorkingOnIt()"
-            *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt)">
+            *ngIf="item.workingOnIt !== undefined && (userId === item.workingOnIt || (team$ | async)?.leader === userId)">
           {{'Remove_work_on_it' | translate}}
         </li>
         <li nz-menu-item (click)="openRequirementsPopup()">{{'Requirements_for_craft' | translate}}</li>
-        <li nz-menu-item nzDisabled>TODO Assign user</li>
+        <ng-container *ngIf="team$ | async as team">
+          <li nz-submenu *ngIf="team.leader === userId">
+            <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
+            <ul>
+              <ng-container *ngFor="let member of team.members">
+                <li nz-menu-item *ngIf="member | characterName | async as charName"
+                    (click)="assignTeamMember(team, member, charName)">{{charName}}
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
         <li nz-menu-item nzDisabled>TODO Mark HQ</li>
       </ul>
     </nz-dropdown>

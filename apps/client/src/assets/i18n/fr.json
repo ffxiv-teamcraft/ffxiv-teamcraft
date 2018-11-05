@@ -631,6 +631,7 @@
     "No_teams": "Aucune équipe",
     "Pending": "En attente d'une réponse",
     "Assign_list": "Assigner cette liste à une équipe",
+    "Assign_team_member": "Assigner à un équipier",
     "Detach_team": "Détacher cette liste de son équipe",
     "Create_invite_one_day": "Créer une invitation valable 24h",
     "Create_invite_infinite": "Créer une invitation valable à vie",
@@ -642,6 +643,11 @@
     "Invite_link_copied": "Lien d'invitation copié dans le presse-papiers",
     "No_anonymous_join": "Vous devez avoir un compte pour rejoindre une équipe.",
     "Already_in_team": "Vous êtes déjà dans cette équipe.",
-    "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe \"{{teamName}}\""
+    "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe \"{{teamName}}\"",
+    "List_added_notification": "Liste \"{{listName}}\" attribuée à l'équipe \"{{teamName}}\"",
+    "List_removed_notification": "Liste \"{{listName}}\" retirée de l'équipe \"{{teamName}}\"",
+    "Member_removed": "{{memberName}} a été exclu de l'équipe \"{{teamName}}\"",
+    "Name_changed": "Équipe \"{{oldName}}\" renommée en \"{{newName}}\"",
+    "User_assigned": "{{itemName}} a été assigné à {{memberName}} sur la liste \"{{listName}}\""
   }
 }

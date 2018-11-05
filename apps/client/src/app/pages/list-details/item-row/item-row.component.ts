@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { first, map, shareReplay, tap } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -21,10 +21,13 @@ import { VenturesComponent } from '../item-details/ventures/ventures.component';
 import { VoyagesComponent } from '../item-details/voyages/voyages.component';
 import { TradesComponent } from '../item-details/trades/trades.component';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Character, XivapiService } from '@xivapi/angular-client';
+import { XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RelationshipsComponent } from '../item-details/relationships/relationships.component';
+import { Team } from '../../../model/team/team';
+import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import { DiscordWebhookService } from '../../../core/discord-webhook.service';
 
 @Component({
   selector: 'app-item-row',
@@ -66,12 +69,15 @@ export class ItemRowComponent implements OnInit {
 
   loggedIn$: Observable<boolean>;
 
+  team$: Observable<Team>;
+
   constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
               private userService: UserService, private xivapi: XivapiService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
+              private discordWebhookService: DiscordWebhookService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
@@ -80,6 +86,14 @@ export class ItemRowComponent implements OnInit {
 
     this.userId$ = this.authFacade.userId$;
     this.loggedIn$ = this.authFacade.loggedIn$;
+    this.team$ = combineLatest(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$).pipe(
+      map(([list, team]) => {
+        if (list.teamId === undefined || list.teamId !== team.$key) {
+          return null;
+        }
+        return team;
+      })
+    );
 
     this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
       .pipe(
@@ -104,6 +118,20 @@ export class ItemRowComponent implements OnInit {
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.listsFacade.updateItem(this.item, this.finalItem);
+  }
+
+  assignTeamMember(team: Team, memberId: string, memberName: string): void {
+    this.setWorkingOnIt(memberId);
+    if (team.webhook !== undefined) {
+      const itemName = this.l12n.getItem(this.item.id);
+      this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
+        this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.User_assigned', {
+          memberName: memberName,
+          itemName: itemName[team.language] ? itemName[team.language] : itemName.en,
+          listName: list.name
+        }, team.language);
+      });
+    }
   }
 
   itemDoneChanged(newValue: number): void {
