@@ -13,6 +13,10 @@
           <ng-template #header>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" class="team-header">
               <div>{{team.name}}</div>
+              <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();renameTeam(team)"
+                      *ngIf="team.leader === (userId$ | async)">
+                <i nz-icon type="edit"></i>
+              </button>
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
                       nz-popconfirm
@@ -76,11 +80,18 @@
           </div>
           <nz-list [nzRenderItem]="memberTemplate" [nzDataSource]="team.members" [nzSize]="'small'">
             <ng-template #memberTemplate let-member>
-              <nz-list-item>
+              <nz-list-item [nzContent]="content">
                 <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="member | characterName | async"
                                    [nzDescription]="(member === team.leader?'TEAMS.Leader':'TEAMS.Member') | translate">
                   <ng-template #avatar>
                     <app-user-avatar [userId]="member"></app-user-avatar>
+                  </ng-template>
+                  <ng-template #content>
+                    <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
+                            nz-popconfirm nzSize="small" *ngIf="(userId$ | async) === team.leader"
+                            [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="removeMember(team, member)">
+                      <i nz-icon type="delete"></i>
+                    </button>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>

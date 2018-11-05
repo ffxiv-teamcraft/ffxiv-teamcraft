@@ -67,6 +67,32 @@ export class TeamsComponent {
     }
   }
 
+  renameTeam(team: Team): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzFooter: null,
+      nzComponentParams: { baseName: team.name },
+      nzTitle: this.translate.instant('TEAMS.Create_team')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        if (team.webhook !== undefined) {
+          this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Name_changed', { oldName: team.name, newName: name }, team.language);
+        }
+        team.name = name;
+        this.teamsFacade.updateTeam(team);
+      })
+    ).subscribe();
+  }
+
+  removeMember(team: Team, memberId: string, memberName: string): void {
+    team.members = team.members.filter(member => member !== memberId);
+    if (team.webhook !== undefined) {
+      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_removed', { memberName: memberName }, team.language);
+    }
+    this.updateTeam(team);
+  }
+
   updateTeam(team: Team): void {
     this.teamsFacade.updateTeam(team);
   }
