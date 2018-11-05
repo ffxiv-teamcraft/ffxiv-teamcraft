@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { TeamsState } from './teams.reducer';
 import { teamsQuery } from './teams.selectors';
-import { CreateTeam, DeleteTeam, LoadMyTeams, SelectTeam, UpdateTeam, LoadTeam } from './teams.actions';
+import { CreateTeam, DeleteTeam, LoadMyTeams, LoadTeam, SelectTeam, UpdateTeam } from './teams.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map, shareReplay, tap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { TeamInvite } from '../../../model/team/team-invite';
 export class TeamsFacade {
   loading$ = this.store.select(teamsQuery.getLoaded).pipe(map(loaded => !loaded));
   allTeams$ = this.store.select(teamsQuery.getAllTeams);
-  selectedTeams$ = this.store.select(teamsQuery.getSelectedTeams);
+  selectedTeam$ = this.store.select(teamsQuery.getSelectedTeam);
   myTeams$ = combineLatest(this.allTeams$, this.authFacade.userId$).pipe(
     map(([teams, userId]) => {
       return teams.filter(team => team.members.indexOf(userId) > -1);

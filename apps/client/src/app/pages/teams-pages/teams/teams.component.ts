@@ -63,7 +63,7 @@ export class TeamsComponent {
 
   testHook(team: Team): void {
     if (team.webhook !== undefined) {
-      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Webhook_setup_complete', { teamName: team.name });
+      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Webhook_setup_complete', { teamName: team.name }, team.language);
     }
   }
 

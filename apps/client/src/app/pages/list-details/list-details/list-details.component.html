@@ -9,13 +9,28 @@
               (click)="openPermissionsPopup(list)" [disabled]="(permissionLevel$ | async) < 40">
         <i-shield></i-shield>
       </button>
-      <button disabled nz-button nzType="primary" nzShape="circle">
-        <i class="material-icons">people_outline</i>
-      </button>
       <button nz-button nzType="primary" nzShape="circle" (click)="cloneList(list)" nz-tooltip
               [nzTitle]="'List_fork' | translate">
         <i nz-icon type="copy" theme="outline"></i>
       </button>
+      <div *ngIf="teams$ | async as teams">
+        <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
+          <button nz-dropdown nz-button nzType="primary" nzShape="circle" [disabled]="teams.length === 0"
+                  nz-tooltip [nzTitle]="'TEAMS.Assign_list' | translate">
+            <i class="material-icons">people_outline</i>
+          </button>
+          <ul nz-menu>
+            <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(list, team)">{{team.name}}</li>
+          </ul>
+        </nz-dropdown>
+      </div>
+      <div *ngIf="assignedTeam$ | async as team">
+        <nz-tag *ngIf="list.teamId !== undefined" nzColor="green"
+                [nzMode]="(canRemoveTag$ | async) ? 'closeable' : 'default'"
+                (nzAfterClose)="removeTeam(list, team)">
+          {{team.name}}
+        </nz-tag>
+      </div>
       <div class="spacer"></div>
       <label nz-checkbox [(ngModel)]="list.public" [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
              (ngModelChange)="list.index = -1;listsFacade.updateList(list)" nz-tooltip

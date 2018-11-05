@@ -20,7 +20,7 @@ const getSelectedId = createSelector(
   getTeamsState,
   (state: TeamsState) => state.selectedId
 );
-const getSelectedTeams = createSelector(
+const getSelectedTeam = createSelector(
   getAllTeams,
   getSelectedId,
   (teams, key) => {
@@ -31,5 +31,5 @@ const getSelectedTeams = createSelector(
 export const teamsQuery = {
   getLoaded,
   getAllTeams,
-  getSelectedTeams
+  getSelectedTeam
 };

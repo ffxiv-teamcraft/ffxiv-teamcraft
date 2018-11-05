@@ -22,9 +22,19 @@
             </div>
           </ng-template>
           <div *ngIf="(userId$ | async) === team.leader" fxLayout="column" fxLayoutGap="5px">
-            <nz-input-group nzAddOnBefore="Webhook">
+            <nz-input-group nzAddOnBefore="Webhook" [nzAddOnAfter]="addOnAfterTemplate">
               <input type="text" nz-input placeholder="https://discordapp.com/api/webhooks/..."
                      [(ngModel)]="team.webhook" (ngModelChange)="testHook(team);updateTeam(team)">
+              <ng-template #addOnAfterTemplate>
+                <nz-select [(ngModel)]="team.language" (ngModelChange)="testHook(team);updateTeam(team)">
+                  <nz-option [nzLabel]="'fr'" [nzValue]="'fr'"></nz-option>
+                  <nz-option [nzLabel]="'en'" [nzValue]="'en'"></nz-option>
+                  <nz-option [nzLabel]="'de'" [nzValue]="'de'"></nz-option>
+                  <nz-option [nzLabel]="'ja'" [nzValue]="'ja'"></nz-option>
+                  <nz-option [nzLabel]="'pt'" [nzValue]="'pt'"></nz-option>
+                  <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
+                </nz-select>
+              </ng-template>
             </nz-input-group>
             <nz-list [nzRenderItem]="inviteTemplate" [nzDataSource]="getInvites(team) | async" nzSize="small"
                      [nzHeader]="'TEAMS.Invites' | translate">

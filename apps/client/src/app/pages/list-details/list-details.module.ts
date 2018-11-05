@@ -37,6 +37,7 @@ import { PermissionsModule } from '../../modules/permissions/permissions.module'
 import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-panel-price-popup.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { RelationshipsComponent } from './item-details/relationships/relationships.component';
+import { TeamsModule } from '../../modules/teams/teams.module';
 
 const routes: Routes = [
   {
@@ -56,6 +57,7 @@ const routes: Routes = [
     CoreModule,
     ListModule,
     LayoutModule,
+    TeamsModule,
     ItemIconModule,
     PipesModule,
     AlarmsModule,

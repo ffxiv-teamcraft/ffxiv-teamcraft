@@ -6,13 +6,15 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList, LoadCommunityLists,
+  DeleteList,
+  LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
   LoadMyLists,
   SelectList,
-  SetItemDone, UpdateItem,
+  SetItemDone,
+  UpdateItem,
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
@@ -25,6 +27,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListRow } from '../model/list-row';
+import { TeamsFacade } from '../../teams/+state/teams.facade';
 
 declare const ga: Function;
 
@@ -73,17 +76,19 @@ export class ListsFacade {
       return combineLatest(
         this.selectedList$,
         this.authFacade.userId$,
+        this.teamsFacade.selectedTeam$,
         loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
       );
     }),
-    map(([list, userId, fcId]) => {
-      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
+    map(([list, userId, team, fcId]) => {
+      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), list.teamId === team.$key ? 20 : 0);
     }),
     distinctUntilChanged(),
     shareReplay(1)
   );
 
-  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade) {
+  constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
+              private teamsFacade: TeamsFacade) {
   }
 
   getWorkshopCompacts(keys: string[]): Observable<List[]> {

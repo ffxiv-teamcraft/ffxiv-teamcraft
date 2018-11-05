@@ -9,6 +9,8 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 import { ModificationEntry } from './modification-entry';
 import { MathTools } from '../../../tools/math-tools';
 import { environment } from '../../../../environments/environment';
+import { Team } from '../../../model/team/team';
+import { ForeignKey } from '../../../core/database/relational/foreign-key';
 
 declare const ga: Function;
 
@@ -46,6 +48,7 @@ export class List extends DataWithPermissions {
 
   modificationsHistory: ModificationEntry[] = [];
 
+  @ForeignKey(Team)
   teamId: string;
 
   // Used for the drag-and-drop feature.

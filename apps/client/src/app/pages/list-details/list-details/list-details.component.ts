@@ -3,7 +3,7 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { Observable, Subject } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -20,6 +20,9 @@ import { InventoryViewComponent } from '../inventory-view/inventory-view.compone
 import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListDisplay } from '../../../core/layout/list-display';
+import { Team } from '../../../model/team/team';
+import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-list-details',
@@ -38,16 +41,27 @@ export class ListDetailsComponent implements OnInit {
 
   public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
+  public teams$: Observable<Team[]>;
+
+  public assignedTeam$: Observable<Team>;
+
+  public canRemoveTag$: Observable<boolean>;
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
-              private listManager: ListManagerService, private progressService: ProgressPopupService) {
+              private listManager: ListManagerService, private progressService: ProgressPopupService,
+              private teamsFacade: TeamsFacade, private authFacade: AuthFacade) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       filter(list => list !== undefined),
       tap(list => {
         if (!list.notFound && list.isOutDated()) {
           this.regenerateList(list);
+        }
+        if (list.teamId !== undefined) {
+          this.teamsFacade.loadTeam(list.teamId);
+          this.teamsFacade.select(list.teamId);
         }
       }),
       shareReplay(1)
@@ -61,10 +75,17 @@ export class ListDetailsComponent implements OnInit {
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
     );
+    this.teams$ = this.teamsFacade.myTeams$;
+    this.assignedTeam$ = this.teamsFacade.selectedTeam$;
+    this.canRemoveTag$ = combineLatest(this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$)
+      .pipe(
+        map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
+      );
   }
 
   ngOnInit() {
     this.layoutsFacade.loadAll();
+    this.teamsFacade.loadMyTeams();
     this.activatedRoute.paramMap
       .pipe(
         map(params => params.get('listId')),
@@ -73,6 +94,16 @@ export class ListDetailsComponent implements OnInit {
       .subscribe(listId => {
         this.listsFacade.select(listId);
       });
+  }
+
+  assignTeam(list: List, team: Team): void {
+    list.teamId = team.$key;
+    this.listsFacade.updateList(list);
+  }
+
+  removeTeam(list: List): void {
+    delete list.teamId;
+    this.listsFacade.updateList(list);
   }
 
   renameList(list: List): void {
@@ -165,8 +196,8 @@ export class ListDetailsComponent implements OnInit {
         return modalRef.getContentComponent().changes$;
       })
     ).subscribe(() => {
-        this.listsFacade.updateList(list);
-      });
+      this.listsFacade.updateList(list);
+    });
   }
 
   openInventoryPopup(list: List): void {

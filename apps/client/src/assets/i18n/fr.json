@@ -41,11 +41,6 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
-  "GIVEWAY": {
-    "Title": "Concours 10 000 listes",
-    "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
-    "Access": "Accéder au concours"
-  },
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -117,7 +112,7 @@
   "Submit": "Soumettre",
   "Invalid_credentials": "Mauvais email ou mot de passe",
   "Verification_mail_sent": "Email de vérification envoyé, merci de vérifier votre boîte mail",
-  "Not_verified": "Email non vérifié, merci de consulter votre boîte mail",
+  "Not_verified": "Non vérifié",
   "Lodestone_already_used": "Ce personnage est déjà utilisé",
   "Anonymous_Warning": "Créer un compte permet de conserver ses listes et d'activer plus de fonctionnalités comme le filtre automatique",
   "Game_Term/DoH": "Disciples de la main",
