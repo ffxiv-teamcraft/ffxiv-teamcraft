@@ -636,6 +636,17 @@
     "No_teams": "Aucune équipe",
     "Pending": "En attente d'une réponse",
     "Assign_list": "Assigner cette liste à une équipe",
-    "Detach_team": "Détacher cette liste de son équipe"
+    "Detach_team": "Détacher cette liste de son équipe",
+    "Create_invite_one_day": "Créer une invitation valable 24h",
+    "Create_invite_infinite": "Créer une invitation valable à vie",
+    "Invites": "Invitations",
+    "Delete_confirmation": "Voulez-vous vraiment supprimer cette équipe ?",
+    "Invite_expires": "Expiration: ",
+    "Member_joined": "{{characterName}} a rejoins l'équipe !",
+    "Invite_error": "Invitation non trouvée ou expirée.",
+    "Invite_link_copied": "Lien d'invitation copié dans le presse-papiers",
+    "No_anonymous_join": "Vous devez avoir un compte pour rejoindre une équipe.",
+    "Already_in_team": "Vous êtes déjà dans cette équipe.",
+    "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe {{teamName}}"
   }
 }

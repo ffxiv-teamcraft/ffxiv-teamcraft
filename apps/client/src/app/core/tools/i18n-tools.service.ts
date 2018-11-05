@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nData } from '../../model/common/i18n-data';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class I18nToolsService {
@@ -23,6 +25,14 @@ export class I18nToolsService {
       de: item.de.name,
       ja: item.ja.name
     };
+  }
+
+  public getTranslation(key: string, language: string, interpolationParams?: Object): Observable<string> {
+    return this.translator.getTranslation(language).pipe(
+      map(translations => {
+        return this.translator.getParsedResult(translations, key, interpolationParams);
+      })
+    );
   }
 
 }

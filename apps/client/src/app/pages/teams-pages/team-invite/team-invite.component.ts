@@ -91,7 +91,7 @@ export class TeamInviteComponent implements OnInit {
       first()
     ).subscribe(([team, characterName]: [Team, string]) => {
       if (team.webhook !== undefined) {
-        this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_joined', { characterName: characterName });
+        this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_joined', { characterName: characterName }, team.language);
       }
       this.router.navigateByUrl('/teams');
     });
