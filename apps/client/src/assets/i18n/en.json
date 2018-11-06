@@ -690,7 +690,6 @@
     "Detach_team": "Detach team",
     "Delete_confirmation": "Are you sure you want to delete this team?",
     "Invite_expires": "Expires",
-    "Member_joined": "[{{memberName}}]({{memberProfileUrl}}) joined the team \"{{teamName}}\"!",
     "Invite_error": "Team invite not found or expired.",
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
@@ -701,6 +700,7 @@
       "Webhook_setup_complete": "This channel has been configured as tracking channel for team \"{{teamName}}\"",
       "List_added_notification": "List [{{listName}}]({{listUrl}}) has been assigned to team \"{{teamName}}\"",
       "List_removed_notification": "List [{{listName}}]({{listUrl}}) has been unassigned from team \"{{teamName}}\"",
+      "Member_joined": "[{{memberName}}]({{memberProfileUrl}}) joined the team \"{{teamName}}\"!",
       "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) has been removed from team \"{{teamName}}\"",
       "Name_changed": "Team \"{{oldName}}\" renamed to \"{{newName}}\"",
       "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) has been assigned to [{{memberName}}]({{memberProfileUrl}}) on list [{{listName}}]({{listUrl}})"
