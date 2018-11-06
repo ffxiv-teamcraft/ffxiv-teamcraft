@@ -14399,6 +14399,12 @@
     "de": "Belah'dias Fall",
     "fr": "Chutes de Belah'dia"
   },
+  "2499": {
+    "en": "Kugane Ohashi",
+    "ja": "クガネ大橋",
+    "de": "Kugane-Brücke",
+    "fr": "Pont Ohashi"
+  },
   "2500": {
     "en": "Hak Khaal",
     "ja": "ハク・カール",
@@ -14542,6 +14548,108 @@
     "ja": "ロッホ・セル湖底南東",
     "de": "Seldsee (Nordost)",
     "fr": "Fond du lac Seld (sud-est)"
+  },
+  "2530": {
+    "en": "Eureka Pyros",
+    "ja": "エウレカ：ピューロス帯",
+    "de": "Eureka Pyros",
+    "fr": "Eurêka Pyros"
+  },
+  "2531": {
+    "en": "Northpoint",
+    "ja": "ノースポイント",
+    "de": "Nordkuppe",
+    "fr": "Le Septentrion"
+  },
+  "2532": {
+    "en": "Flurry",
+    "ja": "スノウクラッシュ",
+    "de": "Schneewehen",
+    "fr": "Front glacial"
+  },
+  "2533": {
+    "en": "Northeastern Ice Needles",
+    "ja": "アイスニードル北東",
+    "de": "Nordöstliche Eisnadeln",
+    "fr": "Nord-est des Aiguilles de givre"
+  },
+  "2534": {
+    "en": "Southwestern Ice Needles",
+    "ja": "アイスニードル南西",
+    "de": "Südwestliche Eisnadeln",
+    "fr": "Sud-ouest des Aiguilles de givre"
+  },
+  "2535": {
+    "en": "The Cavern of the Second Cant",
+    "ja": "歌う氷洞",
+    "de": "Singende Eisgrotte",
+    "fr": "Caverne mélodieuse"
+  },
+  "2536": {
+    "en": "Bonfire",
+    "ja": "ピューロスの炎穴",
+    "de": "Leuchtfeuer",
+    "fr": "Puits de feu"
+  },
+  "2537": {
+    "en": "West Flamerock",
+    "ja": "フレイムロック溶岩洞西",
+    "de": "Westlicher Flammenfels",
+    "fr": "Ouest de Rocheflamme"
+  },
+  "2538": {
+    "en": "East Flamerock",
+    "ja": "フレイムロック溶岩洞東",
+    "de": "Östlicher Flammenfels",
+    "fr": "Est de Rocheflamme"
+  },
+  "2539": {
+    "en": "The Living Foundry",
+    "ja": "実験魔器工房",
+    "de": "Magielabor",
+    "fr": "Atelier de prototypage"
+  },
+  "2540": {
+    "en": "The Dragon Star Observatory",
+    "ja": "竜星観測所",
+    "de": "Drachenstern-Observatorium",
+    "fr": "Observatoire de l'étoile du dragon"
+  },
+  "2541": {
+    "en": "The Firing Chamber",
+    "ja": "耐熱実験場",
+    "de": "Brennkammer",
+    "fr": "Site d'expérimentations calorifuges"
+  },
+  "2542": {
+    "en": "Carbonatite Quarry",
+    "ja": "カーボナタイト試掘地",
+    "de": "Karbonatit-Steinbruch",
+    "fr": "Carrière de carbonatite"
+  },
+  "2543": {
+    "en": "The Surgate Town House",
+    "ja": "サーゲイト別邸跡",
+    "de": "Surgate-Landhaus",
+    "fr": "Résidence secondaire de Surgate"
+  },
+  "2544": {
+    "en": "The Garden of Despite",
+    "ja": "嘲りの庭",
+    "de": "Garten des Trotzes",
+    "fr": "Jardin du Brocard"
+  },
+  "2546": {
+    "en": "The Partisan's Proof",
+    "ja": "偏屈者の実験場",
+    "de": "Partisanenpfand",
+    "fr": "Laboratoire de l'opiniâtre"
+  },
+  "2547": {
+    "en": "The Ring of Fire",
+    "ja": "焔の闘技場",
+    "de": "Feuerring",
+    "fr": "Arène de Feu"
   },
   "2550": {
     "en": "Masked Rose",
