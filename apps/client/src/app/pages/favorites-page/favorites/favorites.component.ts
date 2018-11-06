@@ -37,7 +37,7 @@ export class FavoritesComponent {
       switchMap(workshops => {
         return this.workshopsFacade.allWorkshops$.pipe(
           map(ws => ws.filter(w => workshops.indexOf(w.$key) > -1)),
-          filter(workshops => workshops.length === workshops.length),
+          filter(ws => ws.length === workshops.length),
           tap(ws => ws.forEach(w => w.listIds.forEach(listId => this.listsFacade.loadCompact(listId))))
         );
       })
