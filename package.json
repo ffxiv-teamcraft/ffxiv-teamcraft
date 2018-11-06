@@ -131,7 +131,7 @@
     "lodash": "^4.17.10",
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
-    "ng-zorro-antd": "1.7.1",
+    "ng-zorro-antd": "1.8.0",
     "ngx-clipboard": "11.0.0",
     "ngx-markdown": "^1.6.0",
     "rxjs": "^6.0.0",
