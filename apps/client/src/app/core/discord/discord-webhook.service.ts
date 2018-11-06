@@ -72,7 +72,7 @@ export class DiscordWebhookService {
 
   notifyMemberJoined(team: Team, characterName: string, memberId: string): void {
     this.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Member_joined', {
-      characterName: characterName,
+      memberName: characterName,
       teamName: team.name,
       memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`)
     });
@@ -80,7 +80,7 @@ export class DiscordWebhookService {
 
   notifyMemberKicked(team: Team, characterName: string, memberId: string): void {
     this.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Member_removed', {
-      characterName: characterName,
+      memberName: characterName,
       teamName: team.name,
       memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`)
     });
