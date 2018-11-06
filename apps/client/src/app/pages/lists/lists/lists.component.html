@@ -26,7 +26,7 @@
            [model]="list">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
-      <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)" height="150px">
+      <app-fullpage-message *ngIf="lists.length === 0 && !(loading$ | async)" height="150px">
         {{'LISTS.No_lists' | translate}}
       </app-fullpage-message>
     </div>

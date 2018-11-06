@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { combineLatest, concat, Observable } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, switchMap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -82,6 +82,9 @@ export class ListsComponent {
 
     this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
       switchMap(teams => {
+        if(teams.length === 0){
+          return of([]);
+        }
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
             return { team: team, lists: lists };
