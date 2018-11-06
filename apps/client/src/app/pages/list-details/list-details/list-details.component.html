@@ -13,6 +13,7 @@
               [nzTitle]="'List_fork' | translate">
         <i nz-icon type="copy" theme="outline"></i>
       </button>
+      <app-favorite-button type="lists" [key]="list.$key"></app-favorite-button>
       <div *ngIf="teams$ | async as teams">
         <nz-dropdown [nzTrigger]="'click'" *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined">
           <button nz-dropdown nz-button nzType="primary" nzShape="circle" [disabled]="teams.length === 0"

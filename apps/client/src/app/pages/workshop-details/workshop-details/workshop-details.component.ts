@@ -4,7 +4,7 @@ import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.faca
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { Workshop } from '../../../model/other/workshop';
 import { Observable, of } from 'rxjs';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
 import { Character, XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
@@ -43,7 +43,9 @@ export class WorkshopDetailsComponent implements OnInit {
     this.author$ = this.workshop$.pipe(
       filter(workshop => !workshop.notFound),
       switchMap(workshop => {
-        return this.userService.get(workshop.authorId);
+        return this.userService.get(workshop.authorId).pipe(
+          catchError(() => of(null))
+        );
       }),
       switchMap(user => {
         if (user && user.defaultLodestoneId) {

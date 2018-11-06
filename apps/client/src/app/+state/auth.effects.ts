@@ -118,7 +118,7 @@ export class AuthEffects {
 
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId),
+    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId, AuthActionTypes.ToggleFavorite),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
       return this.userService.set(state.auth.uid, { ...state.auth.user });

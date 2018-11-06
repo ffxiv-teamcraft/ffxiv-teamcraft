@@ -37,6 +37,10 @@
               <i nz-icon type="team"></i>
               {{'TEAMS.Title' | translate}}
             </a>
+            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/favorites">
+              <i nz-icon type="heart"></i>
+              {{'Favorites' | translate}}
+            </a>
             <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
               <i nz-icon type="link"></i>
               <!--*ngIf patreon supporter-->

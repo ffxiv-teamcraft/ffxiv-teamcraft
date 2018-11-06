@@ -12,6 +12,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FavoritesModule } from '../../modules/favorites/favorites.module';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     NgZorroAntdModule,
     CoreModule,
     FlexLayoutModule,
+    FavoritesModule,
 
     XivapiClientModule,
 

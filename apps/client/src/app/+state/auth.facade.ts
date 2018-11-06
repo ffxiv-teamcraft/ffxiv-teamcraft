@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { AuthState } from './auth.reducer';
 import { authQuery } from './auth.selectors';
-import { GetUser, Logout, SetCurrentFcId } from './auth.actions';
+import { GetUser, Logout, SetCurrentFcId, ToggleFavorite } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
 import { filter, map, tap } from 'rxjs/operators';
@@ -21,6 +21,8 @@ export class AuthFacade {
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
+  user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null));
+  favorites$ = this.user$.pipe(map(user => user.favorites));
   fcId$ = this.store.select(authQuery.getMainCharacter).pipe(
     map((character) => {
       if (character === null) {
@@ -62,6 +64,10 @@ export class AuthFacade {
   public logout(): void {
     this.af.auth.signOut();
     this.store.dispatch(new Logout());
+  }
+
+  public toggleFavorite(dataType: 'lists' | 'workshops', key: string): void {
+    this.store.dispatch(new ToggleFavorite(dataType, key));
   }
 
   private oauthPopup(provider: any): Promise<UserCredential> {

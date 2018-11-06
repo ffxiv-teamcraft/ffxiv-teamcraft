@@ -32,10 +32,16 @@ const getUserId = createSelector(
   (state: AuthState) => state.uid
 );
 
+const getUser = createSelector(
+  getAuthState,
+  (state: AuthState) => state.user
+);
+
 export const authQuery = {
   getLoaded,
   getMainCharacter,
   getLinkingCharacter,
   getLoggedIn,
+  getUser,
   getUserId
 };

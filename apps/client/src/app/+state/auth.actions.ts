@@ -12,6 +12,8 @@ export enum AuthActionTypes {
   LoginAsAnonymous = '[Auth] Login as Anonymous',
   LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
 
+  ToggleFavorite = '[Auth] Toggle Favorite',
+
   GoogleLogin = '[Auth] Google Login attempt',
   FacebookLogin = '[Auth] Facebook Login attempt',
   ClassicLogin = '[Auth] Classic Login attempt',
@@ -45,6 +47,13 @@ export class Authenticated implements Action {
   readonly type = AuthActionTypes.Authenticated;
 
   constructor(public payload: Partial<AuthState>) {
+  }
+}
+
+export class ToggleFavorite implements Action {
+  readonly type = AuthActionTypes.ToggleFavorite;
+
+  constructor(public dataType: 'lists' | 'workshops', public key: string) {
   }
 }
 
@@ -175,24 +184,5 @@ export type AuthActions = GetUser
   | CharactersLoaded
   | UserPersisted
   | SetCurrentFcId
-  | AnonymousWarningShown;
-
-export const fromAuthActions = {
-  GetUser,
-  Authenticated,
-  UserFetched,
-  LoginAsAnonymous,
-  LoggedInAsAnonymous,
-  GoogleLogin,
-  FacebookLogin,
-  ClassicLogin,
-  AuthError,
-  Logout,
-  RegistrationDone,
-  LinkingCharacter,
-  AddCharacter,
-  SetDefaultCharacter,
-  CharactersLoaded,
-  UserPersisted,
-  AnonymousWarningShown
-};
+  | AnonymousWarningShown
+  | ToggleFavorite;

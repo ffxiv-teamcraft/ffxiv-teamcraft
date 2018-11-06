@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'teams',
     loadChildren: './pages/teams-pages/teams-pages.module#TeamsPagesModule'
+  },
+  {
+    path: 'favorites',
+    loadChildren: './pages/favorites-page/favorites-page.module#FavoritesPageModule'
   }
 ];
 

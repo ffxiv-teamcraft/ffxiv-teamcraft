@@ -1,11 +1,17 @@
 <div *ngIf="workshop$ | async as workshop; else loading">
   <nz-card *ngIf="!workshop.notFound; else notFound">
     <ng-container *ngIf="author$ | async as author">
-      <nz-card-meta [nzAvatar]="author.Avatar?avatarTemplate:null" [nzTitle]="workshop.name"
+      <nz-card-meta [nzAvatar]="author.Avatar?avatarTemplate:null" [nzTitle]="workshopName"
                     [nzDescription]="'WORKSHOP.Created_by' | translate: {name: author.Name | translate}">
       </nz-card-meta>
       <ng-template #avatarTemplate>
         <nz-avatar [nzSrc]="author.Avatar"></nz-avatar>
+      </ng-template>
+      <ng-template #workshopName>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+          <div>{{workshop.name}}</div>
+          <app-favorite-button type="workshops" [key]="workshop.$key"></app-favorite-button>
+        </div>
       </ng-template>
     </ng-container>
     <div *ngIf="lists$ | async as lists" class="lists" fxLayout="column" fxLayoutGap="5px">

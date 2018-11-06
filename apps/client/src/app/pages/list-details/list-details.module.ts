@@ -38,6 +38,7 @@ import { TotalPanelPricePopupComponent } from './total-panel-price-popup/total-p
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { RelationshipsComponent } from './item-details/relationships/relationships.component';
 import { TeamsModule } from '../../modules/teams/teams.module';
+import { FavoritesModule } from '../../modules/favorites/favorites.module';
 
 const routes: Routes = [
   {
@@ -69,6 +70,7 @@ const routes: Routes = [
     MapModule,
     PermissionsModule,
     UserAvatarModule,
+    FavoritesModule,
 
     FlexLayoutModule,
 
