@@ -48,6 +48,8 @@ export class ListDetailsComponent implements OnInit {
 
   public canRemoveTag$: Observable<boolean>;
 
+  public outDated$: Observable<boolean>;
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -79,6 +81,7 @@ export class ListDetailsComponent implements OnInit {
     );
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
+    this.outDated$ = this.list$.pipe(map(list => list.isOutDated()));
     this.canRemoveTag$ = combineLatest(this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$)
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
