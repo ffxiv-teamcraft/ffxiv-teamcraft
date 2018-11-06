@@ -24029,6 +24029,12 @@
     "de": "Tatabaru",
     "fr": "Tatabaru"
   },
+  "1009451": {
+    "en": "Expedition birdwatcher",
+    "ja": "調査隊の警備員",
+    "de": "Expeditionswächter",
+    "fr": "Sentinelle de l'expédition"
+  },
   "1009453": {
     "en": "Cid",
     "ja": "シド",
@@ -78539,6 +78545,48 @@
     "de": "Baenfaeld",
     "fr": "Baenfaeld"
   },
+  "1024178": {
+    "en": "Inoshishi doshin",
+    "ja": "亥同心",
+    "de": "Wildschweinleutnant",
+    "fr": "Lieutenant des cochons"
+  },
+  "1024179": {
+    "en": "Inoshishi doshin",
+    "ja": "亥同心",
+    "de": "Wildschweinleutnant",
+    "fr": "Lieutenant des cochons"
+  },
+  "1024180": {
+    "en": "Inoshishi doshin",
+    "ja": "亥同心",
+    "de": "Wildschweinleutnant",
+    "fr": "Lieutenante des cochons"
+  },
+  "1024181": {
+    "en": "Green inoshishi shonin",
+    "ja": "緑亥商人",
+    "de": "Grün[a] Wildschweinhändler",
+    "fr": "Marchand vert des cochons"
+  },
+  "1024182": {
+    "en": "Red inoshishi shonin",
+    "ja": "赤亥商人",
+    "de": "Rot[a] Wildschweinhändlerin",
+    "fr": "Marchande rouge des cochons"
+  },
+  "1024183": {
+    "en": "Blue inoshishi shonin",
+    "ja": "青亥商人",
+    "de": "Blau[a] Wildschweinhändler",
+    "fr": "Marchand bleu des cochons"
+  },
+  "1024184": {
+    "en": "Inoshishi bugyo",
+    "ja": "亥奉行",
+    "de": "Wildschweinminister",
+    "fr": "Maréchal des cochons"
+  },
   "1024185": {
     "en": "Expedition liaison",
     "ja": "調査隊の渉外係",
@@ -79283,6 +79331,42 @@
     "de": "Torwächterin",
     "fr": "Guide de la Ménagerie royale"
   },
+  "1024437": {
+    "en": "Green inoshishi shonin",
+    "ja": "緑亥商人",
+    "de": "Grün[a] Wildschweinhändler",
+    "fr": "Marchand vert des cochons"
+  },
+  "1024438": {
+    "en": "Red inoshishi shonin",
+    "ja": "赤亥商人",
+    "de": "Rot[a] Wildschweinhändler",
+    "fr": "Marchande rouge des cochons"
+  },
+  "1024439": {
+    "en": "Blue inoshishi shonin",
+    "ja": "青亥商人",
+    "de": "Blau[a] Wildschweinhändler",
+    "fr": "Marchand bleu des cochons"
+  },
+  "1024440": {
+    "en": "Green inoshishi shonin",
+    "ja": "緑亥商人",
+    "de": "Grün[a] Wildschweinhändler",
+    "fr": "Marchand vert des cochons"
+  },
+  "1024441": {
+    "en": "Red inoshishi shonin",
+    "ja": "赤亥商人",
+    "de": "Rot[a] Wildschweinhändler",
+    "fr": "Marchande rouge des cochons"
+  },
+  "1024442": {
+    "en": "Blue inoshishi shonin",
+    "ja": "青亥商人",
+    "de": "Blau[a] Wildschweinhändler",
+    "fr": "Marchand bleu des cochons"
+  },
   "1024443": {
     "en": "M'naago",
     "ja": "メ・ナーゴ",
@@ -79589,6 +79673,12 @@
     "de": "Tsukumo",
     "fr": "Tsukumo"
   },
+  "1024547": {
+    "en": "Neko bugyo",
+    "ja": "猫奉行",
+    "de": "Katzenminister",
+    "fr": "Maréchal des chats"
+  },
   "1024548": {
     "en": "Material supplier",
     "ja": "素材屋",
@@ -79829,6 +79919,54 @@
     "de": "Gheila",
     "fr": "Geila"
   },
+  "1024588": {
+    "en": "Ibukimaru",
+    "ja": "イブキマル",
+    "de": "Ibukimaru",
+    "fr": "Ibukimaru"
+  },
+  "1024589": {
+    "en": "Ibukimaru",
+    "ja": "イブキマル",
+    "de": "Ibukimaru",
+    "fr": "Ibukimaru"
+  },
+  "1024590": {
+    "en": "Ibukimaru",
+    "ja": "イブキマル",
+    "de": "Ibukimaru",
+    "fr": "Ibukimaru"
+  },
+  "1024591": {
+    "en": "Ibukimaru",
+    "ja": "イブキマル",
+    "de": "Ibukimaru",
+    "fr": "Ibukimaru"
+  },
+  "1024592": {
+    "en": "Ibukimaru",
+    "ja": "イブキマル",
+    "de": "Ibukimaru",
+    "fr": "Ibukimaru"
+  },
+  "1024593": {
+    "en": "Troubled townsman",
+    "ja": "戸惑っている男",
+    "de": "Ratlos[a] Mann",
+    "fr": "Homme perplexe"
+  },
+  "1024594": {
+    "en": "Melancholy maiden",
+    "ja": "落ち込んでいる女",
+    "de": "Enttäuscht[a] Frau",
+    "fr": "Femme préoccupée"
+  },
+  "1024595": {
+    "en": "Livid Lominsan",
+    "ja": "怒っている男",
+    "de": "Erzürnt[a] Mann",
+    "fr": "Homme courroucé"
+  },
   "1024600": {
     "en": "Company tragedienne",
     "ja": "かわいらしい劇団員",
@@ -79956,7 +80094,7 @@
     "fr": "Samouraï du Sekiseigumi"
   },
   "1024649": {
-    "en": "Wolf Burglar",
+    "en": "The Wolf Burglar",
     "ja": "こそドロ一匹オオカミ",
     "de": "Einsam[a] Wolf",
     "fr": "Lupin solitaire"
@@ -85913,6 +86051,42 @@
     "de": "Rokka",
     "fr": "Rokka"
   },
+  "1026324": {
+    "en": "Shigure",
+    "ja": "シグレ",
+    "de": "Shigure",
+    "fr": "Shigure"
+  },
+  "1026325": {
+    "en": "Shigure",
+    "ja": "シグレ",
+    "de": "Shigure",
+    "fr": "Shigure"
+  },
+  "1026326": {
+    "en": "Sekiseigumi turnkey",
+    "ja": "赤誠組の牢番",
+    "de": "Gefängniswächter",
+    "fr": "Garde du Sekiseigumi"
+  },
+  "1026327": {
+    "en": "Miyamagi",
+    "ja": "ミヤマギ",
+    "de": "Miyamagi",
+    "fr": "Miyamagi"
+  },
+  "1026328": {
+    "en": "Gentle Dead Man",
+    "ja": "紳士的なゾンビー",
+    "de": "Gentlezombie",
+    "fr": "Gentilhomme zombi"
+  },
+  "1026329": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
+  },
   "1026340": {
     "en": "Coultenet",
     "ja": "クルトゥネ",
@@ -85949,6 +86123,108 @@
     "de": "Alianne",
     "fr": "Alianne"
   },
+  "1026349": {
+    "en": "Shigure",
+    "ja": "シグレ",
+    "de": "Shigure",
+    "fr": "Shigure"
+  },
+  "1026351": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
+  "1026352": {
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca"
+  },
+  "1026353": {
+    "en": "Shigure",
+    "ja": "シグレ",
+    "de": "Shigure",
+    "fr": "Shigure"
+  },
+  "1026354": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
+  },
+  "1026355": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
+  "1026356": {
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca"
+  },
+  "1026357": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
+  },
+  "1026358": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
+  "1026359": {
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca"
+  },
+  "1026360": {
+    "en": "Shigure",
+    "ja": "シグレ",
+    "de": "Shigure",
+    "fr": "Shigure"
+  },
+  "1026361": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
+  },
+  "1026362": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
+  "1026366": {
+    "en": "Confederate shipwatch",
+    "ja": "海賊衆の見張り",
+    "de": "Späher[p] der Konföderation",
+    "fr": "Guetteur de la Confédération"
+  },
+  "1026367": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
+  "1026368": {
+    "en": "Nashu Mhakaracca",
+    "ja": "ナシュ・マカラッカ",
+    "de": "Nashu Mhakaracca",
+    "fr": "Nashu Mhakaracca"
+  },
+  "1026369": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
+  },
   "1026370": {
     "en": "Nero",
     "ja": "ネロ",
@@ -85978,6 +86254,18 @@
     "ja": "オメガ",
     "de": "Omega",
     "fr": "Oméga"
+  },
+  "1026377": {
+    "en": "Koju",
+    "ja": "コウジュ",
+    "de": "Koju",
+    "fr": "Koju"
+  },
+  "1026378": {
+    "en": "Sazanami",
+    "ja": "サザナミ",
+    "de": "Sazanami",
+    "fr": "Sazanami"
   },
   "1026450": {
     "en": "Cid",
@@ -86014,6 +86302,12 @@
     "ja": "シド",
     "de": "Cid",
     "fr": "Cid"
+  },
+  "1026457": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
   },
   "1026458": {
     "en": "Alpha",
@@ -86135,6 +86429,96 @@
     "de": "Fahrend[a] Sänger",
     "fr": "Ménestrel errant"
   },
+  "1026492": {
+    "en": "Krile",
+    "ja": "クルル",
+    "de": "Krile",
+    "fr": "Krile"
+  },
+  "1026493": {
+    "en": "Krile",
+    "ja": "クルル",
+    "de": "Krile",
+    "fr": "Krile"
+  },
+  "1026494": {
+    "en": "Gerolt",
+    "ja": "ゲロルト",
+    "de": "Gerolt",
+    "fr": "Gerolt"
+  },
+  "1026495": {
+    "en": "Drake",
+    "ja": "ドレイク",
+    "de": "Drake",
+    "fr": "Drake"
+  },
+  "1026496": {
+    "en": "Expedition artisan",
+    "ja": "調査隊の職人",
+    "de": "Expeditionshandwerker",
+    "fr": "Artisan de l'expédition"
+  },
+  "1026497": {
+    "en": "Expedition chronicler",
+    "ja": "調査隊の記録担当",
+    "de": "Expeditionschronistin",
+    "fr": "Chroniqueuse de l'expédition"
+  },
+  "1026498": {
+    "en": "Expedition scholar",
+    "ja": "調査隊の研究員",
+    "de": "Inselforscherin",
+    "fr": "Chercheuse de l'expédition"
+  },
+  "1026499": {
+    "en": "Expedition digger",
+    "ja": "調査隊の作業員",
+    "de": "Expeditionsverwalter",
+    "fr": "Ouvrier de l'expédition"
+  },
+  "1026500": {
+    "en": "Expedition potwatch",
+    "ja": "調査隊の調理師",
+    "de": "Expeditionskoch",
+    "fr": "Cuisinier de l'expédition"
+  },
+  "1026501": {
+    "en": "Expedition provisioner",
+    "ja": "調査隊の補給担当",
+    "de": "Materialverwalter",
+    "fr": "Ravitailleur de l'expédition"
+  },
+  "1026502": {
+    "en": "Expedition lockpick",
+    "ja": "調査隊の調達係",
+    "de": "Schlüsselmeisterin",
+    "fr": "Intendante de l'expédition"
+  },
+  "1026503": {
+    "en": "Expedition mender",
+    "ja": "調査隊の修理屋",
+    "de": "Reparateurin",
+    "fr": "Artisane de l'expédition"
+  },
+  "1026504": {
+    "en": "Expedition skywatcher",
+    "ja": "調査隊の天気予報士",
+    "de": "Meteorologe",
+    "fr": "Météorologue de l'expédition"
+  },
+  "1026519": {
+    "en": "Ejika Tsunjika",
+    "ja": "エジカ・ツンジカ",
+    "de": "Ejika Tsunjika",
+    "fr": "Ejika Tsunjika"
+  },
+  "1026520": {
+    "en": "Galuf Baldesion",
+    "ja": "ガラフ・バルデシオン",
+    "de": "Galuf Baldesion",
+    "fr": "Galuf Baldesion"
+  },
   "1026521": {
     "en": "Ihase",
     "ja": "イハセ",
@@ -86183,11 +86567,23 @@
     "de": "Minazuki",
     "fr": "Minazuki"
   },
+  "1026529": {
+    "en": "The Wolf Burglar",
+    "ja": "こそドロ一匹オオカミ",
+    "de": "Einsam[a] Wolf",
+    "fr": "Lupin solitaire"
+  },
   "1026531": {
     "en": "Serpent Marshal Brookstone",
     "ja": "スウェスリク大牙将",
     "de": "Swethryk Brookstone",
     "fr": "Swethryk Brookstone"
+  },
+  "1026532": {
+    "en": "Hildibrand",
+    "ja": "ヒルディブランド",
+    "de": "Hildibrand",
+    "fr": "Hildibrand"
   },
   "1026534": {
     "en": "Hozan",
@@ -86212,6 +86608,12 @@
     "ja": "ヒギリ",
     "de": "Higiri",
     "fr": "Higiri"
+  },
+  "1026541": {
+    "en": "Drake",
+    "ja": "ドレイク",
+    "de": "Drake",
+    "fr": "Drake"
   },
   "1026577": {
     "en": "Ironworks clerk",
@@ -86296,6 +86698,12 @@
     "ja": "ハチナン",
     "de": "Hachinan",
     "fr": "Hachinan"
+  },
+  "1026601": {
+    "en": "Botan",
+    "ja": "ボタン",
+    "de": "Botan",
+    "fr": "Botan"
   },
   "1026602": {
     "en": "Wood Wailer",
@@ -86440,6 +86848,12 @@
     "ja": "悲しげな様子の少女",
     "de": "Impulsiv[a] Mädchen",
     "fr": "Jeune fille triste"
+  },
+  "1026649": {
+    "en": "Expedition engineer",
+    "ja": "調査隊の技師",
+    "de": "Ingenieur",
+    "fr": "Ingénieur de l'expédition"
   },
   "1026650": {
     "en": "Inexperienced enclave guard",
