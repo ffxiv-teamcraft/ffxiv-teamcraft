@@ -30,7 +30,7 @@ import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
-import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Injectable()
@@ -173,8 +173,8 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$, this.teamsFacade.selectedTeam$),
-    map(([action, list, character, team]) => {
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
+    map(([action, list, character, team, userId]) => {
       list.modificationsHistory.push({
         amount: action.doneDelta,
         date: Date.now(),
@@ -183,12 +183,7 @@ export class ListsEffects {
         characterId: character ? character.ID : -1
       });
       if (list.teamId === team.$key) {
-        this.discordWebhookService.sendMessage(team.webhook, 'NOTIFICATIONS.List_progress', {
-          author: character.Name,
-          amount: action.doneDelta,
-          itemName: this.l12n.getItem(action.itemId)[team.language] || this.l12n.getItem(action.itemId).en,
-          listName: list.name
-        }, team.language)
+        this.discordWebhookService.notifyItemChecked(team, list, character.Name, userId, action.doneDelta, action.itemId);
       }
       return [action, list];
     }),

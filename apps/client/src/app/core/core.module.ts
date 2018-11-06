@@ -30,7 +30,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
-import { DiscordWebhookService } from './discord-webhook.service';
+import { DiscordWebhookService } from './discord/discord-webhook.service';
 
 
 @NgModule({

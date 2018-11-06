@@ -8,9 +8,11 @@ import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
-import { map, skip } from 'rxjs/operators';
+import { map, skip, switchMap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
+import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
+import { TeamsFacade } from '../teams/+state/teams.facade';
 
 @Injectable()
 export class ListManagerService {
@@ -19,7 +21,9 @@ export class ListManagerService {
               private gt: GarlandToolsService,
               protected i18n: I18nToolsService,
               private extractor: DataExtractorService,
-              private zone: NgZone) {
+              private zone: NgZone,
+              private discordWebhookService: DiscordWebhookService,
+              private teamsFacade: TeamsFacade) {
   }
 
   public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
@@ -105,7 +109,17 @@ export class ListManagerService {
           return addition;
         }),
         // merge the addition list with the list we want to add items in.
-        map(addition => list.merge(addition))
+        map(addition => list.merge(addition)),
+        switchMap((l) => {
+          return this.teamsFacade.selectedTeam$.pipe(
+            map(team => {
+              if (team.$key === list.teamId && team.webhook !== undefined) {
+                this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+              }
+            }),
+            map(() => l)
+          );
+        })
       );
   }
 

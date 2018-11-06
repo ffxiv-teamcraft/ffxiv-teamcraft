@@ -8,7 +8,7 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { filter, map } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamInvite } from '../../../model/team/team-invite';
-import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 
 @Component({
   selector: 'app-teams',
@@ -63,7 +63,7 @@ export class TeamsComponent {
 
   testHook(team: Team): void {
     if (team.webhook !== undefined) {
-      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Webhook_setup_complete', { teamName: team.name }, team.language);
+      this.discordWebhook.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Webhook_setup_complete', { teamName: team.name });
     }
   }
 
@@ -77,7 +77,10 @@ export class TeamsComponent {
       filter(name => name !== undefined),
       map(name => {
         if (team.webhook !== undefined) {
-          this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Name_changed', { oldName: team.name, newName: name }, team.language);
+          this.discordWebhook.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Name_changed', {
+            oldName: team.name,
+            newName: name
+          });
         }
         team.name = name;
         this.teamsFacade.updateTeam(team);
@@ -88,7 +91,7 @@ export class TeamsComponent {
   removeMember(team: Team, memberId: string, memberName: string): void {
     team.members = team.members.filter(member => member !== memberId);
     if (team.webhook !== undefined) {
-      this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_removed', { memberName: memberName, teamName: team.name }, team.language);
+      this.discordWebhook.notifyMemberKicked(team, memberName, memberId);
     }
     this.updateTeam(team);
   }

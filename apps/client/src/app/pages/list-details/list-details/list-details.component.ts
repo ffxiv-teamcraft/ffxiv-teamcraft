@@ -23,7 +23,7 @@ import { ListDisplay } from '../../../core/layout/list-display';
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 
 @Component({
   selector: 'app-list-details',
@@ -111,20 +111,14 @@ export class ListDetailsComponent implements OnInit {
     list.teamId = team.$key;
     this.listsFacade.updateList(list);
     if (team.webhook !== undefined) {
-      this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.List_added_notification', {
-        listName: list.name,
-        teamName: team.name
-      }, team.language);
+      this.discordWebhookService.notifyListAddedToTeam(team, list);
     }
   }
 
   removeTeam(list: List, team: Team): void {
     delete list.teamId;
     if (team.webhook !== undefined) {
-      this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.List_removed_notification', {
-        listName: list.name,
-        teamName: team.name
-      }, team.language);
+      this.discordWebhookService.notifyListRemovedFromTeam(team, list);
     }
     this.listsFacade.updateList(list);
   }

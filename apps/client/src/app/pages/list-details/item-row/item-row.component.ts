@@ -27,7 +27,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { RelationshipsComponent } from '../item-details/relationships/relationships.component';
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
-import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 
 @Component({
   selector: 'app-item-row',
@@ -123,13 +123,8 @@ export class ItemRowComponent implements OnInit {
   assignTeamMember(team: Team, memberId: string, memberName: string): void {
     this.setWorkingOnIt(memberId);
     if (team.webhook !== undefined) {
-      const itemName = this.l12n.getItem(this.item.id);
       this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
-        this.discordWebhookService.sendMessage(team.webhook, 'TEAMS.User_assigned', {
-          memberName: memberName,
-          itemName: itemName[team.language] ? itemName[team.language] : itemName.en,
-          listName: list.name
-        }, team.language);
+        this.discordWebhookService.notifyUserAssignment(team, memberName, memberId, this.item.id, list);
       });
     }
   }

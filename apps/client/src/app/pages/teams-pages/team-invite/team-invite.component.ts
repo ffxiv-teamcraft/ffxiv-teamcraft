@@ -6,7 +6,7 @@ import { TeamInviteService } from '../../../core/database/team-invite.service';
 import { BehaviorSubject, EMPTY, ReplaySubject } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { Team } from '../../../model/team/team';
-import { DiscordWebhookService } from '../../../core/discord-webhook.service';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { CharacterService } from '../../../core/api/character.service';
 
 @Component({
@@ -84,14 +84,14 @@ export class TeamInviteComponent implements OnInit {
       }),
       switchMap(([team, userId]) => {
         return this.characterService.getCharacter(userId).pipe(
-          map(character => [team, character.character.Name])
+          map(character => [team, character.character.Name, userId])
         );
       }),
       tap(([team]) => this.teamsFacade.updateTeam(team)),
       first()
-    ).subscribe(([team, characterName]: [Team, string]) => {
+    ).subscribe(([team, characterName, userId]: [Team, string, string]) => {
       if (team.webhook !== undefined) {
-        this.discordWebhook.sendMessage(team.webhook, 'TEAMS.Member_joined', { characterName: characterName }, team.language);
+        this.discordWebhook.notifyMemberJoined(team, characterName, userId)
       }
       this.router.navigateByUrl('/teams');
     });
