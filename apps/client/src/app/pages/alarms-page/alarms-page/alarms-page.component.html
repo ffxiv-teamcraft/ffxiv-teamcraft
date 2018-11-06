@@ -61,7 +61,7 @@
              (onDrop)="setGroupIndex(i, $event.dragData.group, display.groupedAlarms)"></div>
       </div>
     </div>
-    <app-fullpage-message *ngIf="display.noGroup.length === 0 && display.groupedAlarms.length === 0">
+    <app-fullpage-message *ngIf="display.noGroup.length === 0 && display.groupedAlarms.length === 0" [height]="300px">
       {{'ALARMS.No_alarm' | translate}}
     </app-fullpage-message>
   </div>
