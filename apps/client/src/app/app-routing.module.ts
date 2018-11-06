@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'favorites',
     loadChildren: './pages/favorites-page/favorites-page.module#FavoritesPageModule'
+  },
+  {
+    path: 'macro-translator',
+    loadChildren: './pages/macro-translator/macro-translator.module#MacroTranslatorModule'
   }
 ];
 
