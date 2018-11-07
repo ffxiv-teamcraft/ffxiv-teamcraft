@@ -14,6 +14,8 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { SearchFilter } from '../../../model/search/search-filter.interface';
 
 @Component({
   selector: 'app-search',
@@ -27,6 +29,8 @@ export class SearchComponent implements OnInit {
   onlyRecipes$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   results$: Observable<SearchResult[]>;
+
+  filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<SearchFilter[]>([]);
 
   showIntro = true;
 
@@ -42,14 +46,34 @@ export class SearchComponent implements OnInit {
 
   allSelected = false;
 
+  form: FormGroup = this.fb.group({
+    ilvlMin: new FormControl(0),
+    ilvlMax: new FormControl(999),
+    elvlMin: new FormControl(0),
+    elvlMax: new FormControl(70),
+    clvlMin: new FormControl(0),
+    clvlMax: new FormControl(70),
+    jobCategories: new FormControl(null),
+    craftJob: new FormControl(null),
+    itemCategory: new FormControl(null)
+  });
+
+  availableJobCategories = [];
+
+  availableCraftJobs = [];
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService) {
+              private progressService: ProgressPopupService, private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
+    this.gt.onceLoaded$.pipe(first()).subscribe(() => {
+      this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
+      this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
+    });
     this.results$ = combineLatest(this.query$, this.onlyRecipes$).pipe(
       filter(([query]) => query.length > 3),
       debounceTime(500),
@@ -77,9 +101,13 @@ export class SearchComponent implements OnInit {
         return params.query !== undefined && params.onlyRecipes !== undefined;
       })
     ).subscribe(params => {
-      this.onlyRecipes$.next(params.onlyRecipes === "true");
+      this.onlyRecipes$.next(params.onlyRecipes === 'true');
       this.query$.next(params.query);
     });
+  }
+
+  submitFilters(): void {
+    // TODO
   }
 
   public createQuickList(item: SearchResult): void {

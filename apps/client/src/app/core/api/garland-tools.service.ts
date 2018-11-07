@@ -6,7 +6,9 @@ import { Venture } from '../../model/garland-tools/venture';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
 import { ItemData } from '../../model/garland-tools/item-data';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,10 @@ export class GarlandToolsService {
   private commonItemsToLoad = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
   private commonItemsCache: { id: string, obj: ItemData }[] = [];
 
+  private loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
+
   constructor(private serializer: NgSerializerService, private http: HttpClient) {
     this.preload();
   }
@@ -26,7 +32,10 @@ export class GarlandToolsService {
   public preload(): void {
     if (this.gt.jobCategories === undefined) {
       this.http.get<GarlandToolsData>('https://www.garlandtools.org/db/doc/core/en/3/data.json')
-        .subscribe(data => this.gt = Object.assign(this.gt, data));
+        .subscribe(data => {
+          this.gt = Object.assign(this.gt, data);
+          this.loaded$.next(true);
+        });
     }
     if (this.commonItemsCache.length === 0) {
       this.http.get<any[]>(`https://www.garlandtools.org/db/doc/item/en/3/${this.commonItemsToLoad.join(',')}.json`)
@@ -41,7 +50,7 @@ export class GarlandToolsService {
           })
         )
         .subscribe(data => {
-          this.commonItemsCache = data
+          this.commonItemsCache = data;
         });
     }
   }

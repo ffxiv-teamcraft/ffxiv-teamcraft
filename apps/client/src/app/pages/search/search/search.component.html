@@ -13,12 +13,81 @@
   <div class="filters">
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'Filters' | translate">
-        <form nz-form>
-          <nz-form-item>
-            <nz-form-label>
-              Work in Progress
-            </nz-form-label>
-          </nz-form-item>
+        <form nz-form [formGroup]="form" (ngSubmit)="submitFilters()">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               fxLayoutAlign.lt-md="center center">
+            <!--Ilvl filter-->
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group nzCompact class="level-range">
+                  <nz-input-number [nzMin]="0" [nzMax]="69" [nzPrecision]="0" id="ilvl"
+                                   formControlName="ilvlMin"></nz-input-number>
+                  <input type="text" disabled nz-input placeholder="-">
+                  <nz-input-number [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+                                   formControlName="ilvlMax"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <!--Elvl filter (equipment level)-->
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group nzCompact class="level-range">
+                  <nz-input-number [nzMin]="0" [nzMax]="69" [nzPrecision]="0" id="elvl"
+                                   formControlName="elvlMin"></nz-input-number>
+                  <input type="text" disabled nz-input placeholder="-">
+                  <nz-input-number [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+                                   formControlName="elvlMax"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <!--Clvl filter (crafter level)-->
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label nzFor="clvl">{{'filters/craft_lvl' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group nzCompact class="level-range">
+                  <nz-input-number [nzMin]="0" [nzMax]="69" [nzPrecision]="0" id="clvl"
+                                   formControlName="clvlMin"></nz-input-number>
+                  <input type="text" disabled nz-input placeholder="-">
+                  <nz-input-number [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+                                   formControlName="clvlMax"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+               fxLayoutAlign.lt-md="center center">
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select formControlName="jobCategories" nzAllowClear>
+                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id" nzCustomContent>
+                    <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
+                    {{category.id | jobAbbr | i18n}}
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-select formControlName="craftJob" nzMode="multiple" nzAllowClear>
+                  <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
+                             [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
+                    <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+                    {{job.id | jobAbbr | i18n}}
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+              <nz-form-label>itemCategory</nz-form-label>
+              <nz-form-control>
+                <nz-select formControlName="itemCategory" nzAllowClear></nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </form>
       </nz-collapse-panel>
     </nz-collapse>
