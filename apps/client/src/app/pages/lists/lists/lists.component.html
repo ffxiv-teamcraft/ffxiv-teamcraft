@@ -26,19 +26,17 @@
            [model]="list">
         <app-list-panel [list]="list"></app-list-panel>
       </div>
-      <app-fullpage-message *ngIf="lists.length === 0 && !(loading$ | async)" height="150px">
+      <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
         {{'LISTS.No_lists' | translate}}
       </app-fullpage-message>
     </div>
-    <div *ngFor="let teamDisplay of teamsDisplays$ | async">
-      <nz-list [nzHeader]="teamDisplay.team.name" *ngIf="teamDisplay.lists.length > 0"
-               [nzRenderItem]="teamList" [nzDataSource]="teamDisplay.lists">
-        <ng-template #teamList let-list>
-          <div class="list-panel">
-            <app-list-panel [list]="list"></app-list-panel>
-          </div>
-        </ng-template>
-      </nz-list>
+    <div *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
+      <div *ngIf="teamDisplay.lists.length > 0">
+        <h3>{{teamDisplay.team.name}}</h3>
+        <div class="list-panel" *ngFor="let list of teamDisplay.lists; trackBy: trackByList">
+          <app-list-panel [list]="list"></app-list-panel>
+        </div>
+      </div>
     </div>
     <nz-divider></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
@@ -50,9 +48,6 @@
                [model]="list">
             <app-list-panel [list]="list"></app-list-panel>
           </div>
-          <app-fullpage-message *ngIf="lists.length === 0 && !(loading | async)" height="150px">
-            {{'LISTS.No_lists' | translate}}
-          </app-fullpage-message>
         </div>
       </nz-collapse-panel>
     </nz-collapse>

@@ -8,7 +8,7 @@ import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
-import { first, map, skip } from 'rxjs/operators';
+import { filter, first, map, skip } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
@@ -26,24 +26,25 @@ export class ListManagerService {
               private teamsFacade: TeamsFacade) {
   }
 
-  public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
-    if(list.teamId){
+  public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false, ignoreHooks = false): Observable<List> {
+    if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
-    }
-    this.teamsFacade.allTeams$
-      .pipe(
-        first(),
-        map(teams => teams.find(team => list.teamId && team.$key === list.teamId))
-      )
-      .subscribe(team => {
-        if (team && team.webhook !== undefined && amount !== 0) {
-          if(amount > 0){
-            this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
-          } else {
-            this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+      this.teamsFacade.allTeams$
+        .pipe(
+          map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
+          filter(team => team !== undefined),
+          first()
+        )
+        .subscribe(team => {
+          if (team && team.webhook !== undefined && amount !== 0) {
+            if (amount > 0) {
+              this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+            } else {
+              this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+            }
           }
-        }
-      });
+        });
+    }
     return this.db.getItem(itemId)
       .pipe(
         map((data: ItemData) => {
@@ -142,7 +143,7 @@ export class ListManagerService {
       });
       const add: Observable<List>[] = [];
       list.finalItems.forEach((recipe) => {
-        add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount));
+        add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true));
       });
       list.items = [];
       list.finalItems = [];

@@ -85,10 +85,14 @@ export class ListPanelComponent {
   }
 
   updateAmount(item: ListRow, newAmount: number): void {
-    this.listManager.addToList(item.id, this._list, item.recipeId, newAmount - item.amount).pipe(
-      first()
+    this.listsFacade.load(this._list.$key);
+    this.listsFacade.allListDetails$.pipe(
+      map(details => details.find(l => l.$key === this._list.$key)),
+      filter(l => l !== undefined),
+      first(),
+      switchMap(listDetails => this.listManager.addToList(item.id, listDetails, item.recipeId, newAmount - item.amount))
     ).subscribe(list => {
-      this.listsFacade.updateList(list);
+      this.listsFacade.updateList(list, true);
     });
   }
 

@@ -157,7 +157,7 @@ export class ListsEffects {
   @Effect()
   updateListInDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateList),
-    debounceTime(500),
+    debounceTime(100),
     map(action => action as UpdateList),
     switchMap(action => this.listService.update(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)

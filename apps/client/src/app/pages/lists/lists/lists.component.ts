@@ -202,4 +202,8 @@ export class ListsComponent {
   trackByList(index: number, list: List): string {
     return list.$key;
   }
+
+  trackByTeam(index: number, team: Team): string {
+    return team.$key;
+  }
 }

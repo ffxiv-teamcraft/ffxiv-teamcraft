@@ -89,8 +89,12 @@ export function listsReducer(
       };
       if (action.updateCompact && state.compacts.find(l => l.$key === action.payload.$key) !== undefined) {
         state.compacts = [
-          ...state.compacts.filter(list => list.$key !== action.payload.$key),
-          action.payload.getCompact()
+          ...state.compacts.map(list => {
+            if (list.$key !== action.payload.$key) {
+              return list;
+            }
+            return action.payload.getCompact();
+          })
         ];
       }
       break;
