@@ -14,8 +14,10 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { I18nName } from '../../../model/common/i18n-name';
 
 @Component({
   selector: 'app-search',
@@ -30,7 +32,7 @@ export class SearchComponent implements OnInit {
 
   results$: Observable<SearchResult[]>;
 
-  filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<SearchFilter[]>([]);
+  filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<any>([]);
 
   showIntro = true;
 
@@ -47,26 +49,46 @@ export class SearchComponent implements OnInit {
   allSelected = false;
 
   form: FormGroup = this.fb.group({
-    ilvlMin: new FormControl(0),
-    ilvlMax: new FormControl(999),
-    elvlMin: new FormControl(0),
-    elvlMax: new FormControl(70),
-    clvlMin: new FormControl(0),
-    clvlMax: new FormControl(70),
-    jobCategories: new FormControl(null),
-    craftJob: new FormControl(null),
-    itemCategory: new FormControl(null)
+    ilvlMin: [0],
+    ilvlMax: [999],
+    elvlMin: [0],
+    elvlMax: [70],
+    clvlMin: [0],
+    clvlMax: [70],
+    jobCategories: [[]],
+    craftJob: [0],
+    itemCategory: [0]
   });
 
   availableJobCategories = [];
 
   availableCraftJobs = [];
 
+  uiCategories$: Observable<{ id: number, name: I18nName }[]>;
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: FormBuilder) {
+              private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService) {
+    this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
+      columns: ['ID','Name_de','Name_en','Name_fr','Name_ja'],
+      max_items: 200
+    }).pipe(
+      map(contentList => {
+        return contentList.Results.map(result => {
+          return {
+            id: result.ID,
+            name: {
+              en: result.Name_en,
+              fr: result.Name_fr,
+              de: result.Name_de,
+              ja: result.Name_ja,
+            }
+          }
+        })
+      })
+    )
   }
 
   ngOnInit(): void {
@@ -74,23 +96,26 @@ export class SearchComponent implements OnInit {
       this.availableJobCategories = this.gt.getJobs().filter(job => job.isJob !== undefined || job.category === 'Disciple of the Land');
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
     });
-    this.results$ = combineLatest(this.query$, this.onlyRecipes$).pipe(
-      filter(([query]) => query.length > 3),
+    this.results$ = combineLatest(this.query$, this.onlyRecipes$, this.filters$).pipe(
+      filter(([query, , filters]) => query.length > 3 || filters.length > 0),
       debounceTime(500),
-      tap(([query, onlyRecipes]) => {
+      tap(([query, onlyRecipes, filters]) => {
         this.showIntro = false;
         this.loading = true;
-        const queryParams = {
+        const queryParams: any = {
           query: query,
           onlyRecipes: onlyRecipes
         };
+        if (filters.length > 0) {
+          queryParams.filters = btoa(JSON.stringify(filters));
+        }
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
           relativeTo: this.route
         });
       }),
-      mergeMap(([query, onlyRecipes]) => this.data.searchItem(query, [], onlyRecipes)),
+      mergeMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
       tap(() => {
         this.loading = false;
       })
@@ -103,11 +128,85 @@ export class SearchComponent implements OnInit {
     ).subscribe(params => {
       this.onlyRecipes$.next(params.onlyRecipes === 'true');
       this.query$.next(params.query);
+      if (params.filters !== undefined) {
+        const filters = JSON.parse(atob(params.filters));
+        this.filters$.next(filters);
+        this.form.patchValue(this.filtersToForm(filters));
+      }
     });
   }
 
   submitFilters(): void {
-    // TODO
+    this.filters$.next(this.getFilters(this.form.controls));
+  }
+
+  private filtersToForm(filters: SearchFilter[]): { [key: string]: any } {
+    const formRawValue = {};
+    filters.forEach(f => {
+      if (f.value.min !== undefined) {
+        formRawValue[`${f.name}Min`] = f.value.min;
+        formRawValue[`${f.name}Max`] = f.value.max;
+      } else {
+        formRawValue[f.name] = f.value;
+      }
+    });
+    return formRawValue;
+  }
+
+  private getFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = [];
+    if (controls.ilvlMax.value < 999 || controls.ilvlMin.value > 0) {
+      filters.push({
+        minMax: true,
+        name: 'ilvl',
+        value: {
+          min: controls.ilvlMin.value,
+          max: controls.ilvlMax.value
+        }
+      });
+    }
+    if (controls.elvlMax.value < 70 || controls.elvlMin.value > 0) {
+      filters.push({
+        minMax: true,
+        name: 'elvl',
+        value: {
+          min: controls.elvlMin.value,
+          max: controls.elvlMax.value
+        }
+      });
+    }
+    if (controls.clvlMax.value < 70 || controls.clvlMin.value > 0) {
+      filters.push({
+        minMax: true,
+        name: 'clvl',
+        value: {
+          min: controls.clvlMin.value,
+          max: controls.clvlMax.value
+        }
+      });
+    }
+    if (controls.jobCategories.value.length > 0) {
+      filters.push({
+        minMax: false,
+        name: 'jobCategories',
+        value: controls.jobCategories.value
+      });
+    }
+    if (controls.craftJob.value !== 0) {
+      filters.push({
+        minMax: false,
+        name: 'craftJob',
+        value: controls.craftJob.value
+      });
+    }
+    if (controls.itemCategory.value !== 0) {
+      filters.push({
+        minMax: false,
+        name: 'itemCategory',
+        value: controls.itemCategory.value
+      });
+    }
+    return filters;
   }
 
   public createQuickList(item: SearchResult): void {

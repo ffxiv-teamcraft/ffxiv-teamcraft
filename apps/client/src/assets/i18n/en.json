@@ -14,7 +14,8 @@
     "Item_name": "Item name",
     "Only_recipes": "Only recipes",
     "Crafts_amount": "# of crafts",
-    "Add_to_list": "Add this item to a list"
+    "Add_to_list": "Add this item to a list",
+    "Apply_filters": "Apply filters"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -170,6 +171,7 @@
   "filters/craft_lvl": "Recipe level",
   "filters/worn_by": "Worn by",
   "filters/crafted_by": "Crafted by",
+  "filters/item_category": "Item type",
   "Adding_recipes": "Adding {{amount}} recipes to list {{listname}}",
   "Recipe_Added": "1 item added to list {{listname}}",
   "Recipes_Added": "{{itemcount}} items added to list {{listname}}",

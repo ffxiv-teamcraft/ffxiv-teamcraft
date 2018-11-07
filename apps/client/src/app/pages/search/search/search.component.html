@@ -12,7 +12,7 @@
   </div>
   <div class="filters">
     <nz-collapse>
-      <nz-collapse-panel [nzHeader]="'Filters' | translate">
+      <nz-collapse-panel [nzHeader]="'Filters' | translate" #filtersPanel>
         <form nz-form [formGroup]="form" (ngSubmit)="submitFilters()">
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
@@ -21,10 +21,10 @@
               <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group nzCompact class="level-range">
-                  <nz-input-number [nzMin]="0" [nzMax]="69" [nzPrecision]="0" id="ilvl"
+                  <nz-input-number [nzMin]="0" [nzMax]="999" [nzPrecision]="0" id="ilvl"
                                    formControlName="ilvlMin"></nz-input-number>
                   <input type="text" disabled nz-input placeholder="-">
-                  <nz-input-number [nzMin]="1" [nzMax]="70" [nzPrecision]="0"
+                  <nz-input-number [nzMin]="1" [nzMax]="999" [nzPrecision]="0"
                                    formControlName="ilvlMax"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
@@ -61,8 +61,9 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="jobCategories" nzAllowClear>
-                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id" nzCustomContent>
+                <nz-select formControlName="jobCategories" nzMode="multiple" nzAllowClear>
+                  <nz-option *ngFor="let category of availableJobCategories" [nzValue]="category.id"
+                             [nzLabel]="category.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{category.abbreviation}}.png" alt="" class="job-icon">
                     {{category.id | jobAbbr | i18n}}
                   </nz-option>
@@ -72,7 +73,7 @@
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="craftJob" nzMode="multiple" nzAllowClear>
+                <nz-select formControlName="craftJob" nzAllowClear>
                   <nz-option *ngFor="let job of availableCraftJobs" [nzValue]="job.id"
                              [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
                     <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
@@ -82,12 +83,19 @@
               </nz-form-control>
             </nz-form-item>
             <nz-form-item [nzFlex]="true" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
-              <nz-form-label>itemCategory</nz-form-label>
+              <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
-                <nz-select formControlName="itemCategory" nzAllowClear></nz-select>
+                <nz-select formControlName="itemCategory" nzShowSearch nzAllowClear>
+                  <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzValue]="uiCategory.id"
+                             [nzLabel]="uiCategory.name | i18n">
+                  </nz-option>
+                </nz-select>
               </nz-form-control>
             </nz-form-item>
           </div>
+          <button nz-button nzType="primary" nzBlock type="submit">
+            <i nz-icon type="filter"></i> {{'ITEMS.Apply_filters' | translate}}
+          </button>
         </form>
       </nz-collapse-panel>
     </nz-collapse>
@@ -148,7 +156,7 @@
     </app-page-loader>
   </div>
   <div *ngIf="results.length === 0">
-    <app-fullpage-message>{{'No_items_found' | translate}}</app-fullpage-message>
+    <app-fullpage-message height="300px">{{'No_items_found' | translate}}</app-fullpage-message>
   </div>
 </div>
 

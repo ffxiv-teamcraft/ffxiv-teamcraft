@@ -56,19 +56,17 @@ export class DataService {
     }
 
     filters.forEach(filter => {
-      if (filter.enabled) {
         if (filter.minMax) {
-          params = params.set(`${filter.filterName}Min`, filter.value.min)
-            .set(`${filter.filterName}Max`, filter.value.max);
-        } else if (filter.name === 'filters/worn_by') {
-          params = params.set(filter.filterName, this.gt.getJobCategories(filter.value).join(','));
+          params = params.set(`${filter.name}Min`, filter.value.min)
+            .set(`${filter.name}Max`, filter.value.max);
+        } else if (filter.name === 'jobCategories') {
+          params = params.set(filter.name, this.gt.getJobCategories(filter.value).join(','));
         } else {
-          params = params.set(filter.filterName, filter.value);
+          params = params.set(filter.name, filter.value);
         }
-        if (filter.name === 'filters/crafted_by') {
+        if (filter.name === 'craftJob') {
           craftedByFilter = filter;
         }
-      }
     });
 
     return this.getGarlandSearch(params)
