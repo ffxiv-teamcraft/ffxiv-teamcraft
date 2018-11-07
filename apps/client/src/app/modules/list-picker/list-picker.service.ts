@@ -23,7 +23,7 @@ export class ListPickerService {
     })
       .afterClose
       .pipe(
-        filter(list => list !== null),
+        filter(list => list !== null && list !== undefined),
         // Let's ask for detailed list before we add stuff to a compact ;)
         tap(list => {
           // Only load details if it's an alreayd existing list

@@ -1,19 +1,21 @@
-<nz-list [nzDataSource]="myLists$ | async" [nzRenderItem]="list" [nzHeader]="header">
-  <ng-template #list let-list>
-    <nz-list-item [nzActions]="[pickOwnList]">
-      <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
-      </nz-list-item-meta>
-    </nz-list-item>
-    <ng-template #pickOwnList>
-      <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
-        nz-icon type="check"></i></button>
+<div *ngIf="myLists$ | async as myLists">
+  <nz-list [nzDataSource]="myLists" [nzRenderItem]="list" [nzHeader]="header">
+    <ng-template #list let-list>
+      <nz-list-item [nzActions]="[pickOwnList]">
+        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickOwnList>
+        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
+          nz-icon type="check"></i></button>
+      </ng-template>
     </ng-template>
-  </ng-template>
-  <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
-</nz-list>
+    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+  </nz-list>
+</div>
 <div>
-  <nz-list *ngFor="let workshopDisplay of workshops$ | async; trackBy: trackByWorkshopDisplay" [nzDataSource]="workshopDisplay.lists"
-           [nzRenderItem]="workshopList" [nzHeader]="workshopHeader">
+  <nz-list *ngFor="let workshopDisplay of workshops$ | async; trackBy: trackByWorkshopDisplay"
+           [nzDataSource]="workshopDisplay.lists" [nzRenderItem]="workshopList" [nzHeader]="workshopHeader">
     <ng-template #workshopList let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
         <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">

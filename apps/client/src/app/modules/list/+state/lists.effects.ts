@@ -31,7 +31,6 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Injectable()
 export class ListsEffects {
@@ -39,6 +38,7 @@ export class ListsEffects {
   @Effect()
   loadMyLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
+    first(),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {
@@ -52,6 +52,7 @@ export class ListsEffects {
   @Effect()
   loadListsWithWriteAccess$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListsWithWriteAccess),
+    first(),
     switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
     distinctUntilChanged(),
     switchMap(([userId, fcId]) => {
@@ -244,8 +245,7 @@ export class ListsEffects {
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,
-    private discordWebhookService: DiscordWebhookService,
-    private l12n: LocalizedDataService
+    private discordWebhookService: DiscordWebhookService
   ) {
   }
 }

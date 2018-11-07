@@ -8,7 +8,7 @@ import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
-import { map, skip, switchMap } from 'rxjs/operators';
+import { first, map, skip } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
@@ -27,6 +27,13 @@ export class ListManagerService {
   }
 
   public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
+    this.teamsFacade.selectedTeam$
+      .pipe(first())
+      .subscribe(team => {
+        if (team && team.$key === list.teamId && team.webhook !== undefined) {
+          this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+        }
+      });
     return this.db.getItem(itemId)
       .pipe(
         map((data: ItemData) => {
@@ -109,17 +116,7 @@ export class ListManagerService {
           return addition;
         }),
         // merge the addition list with the list we want to add items in.
-        map(addition => list.merge(addition)),
-        switchMap((l) => {
-          return this.teamsFacade.selectedTeam$.pipe(
-            map(team => {
-              if (team.$key === list.teamId && team.webhook !== undefined) {
-                this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
-              }
-            }),
-            map(() => l)
-          );
-        })
+        map(addition => list.merge(addition))
       );
   }
 
