@@ -48,7 +48,18 @@ export class DiscordWebhookService {
 
   notifyItemAddition(itemId: number, amount: number, list: List, team: Team): void {
     const itemName = this.l12n.getItem(itemId);
-    this.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.List_progress', {
+    this.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Item_added', {
+      amount: amount,
+      itemName: itemName[team.language] || itemName.en,
+      itemId: itemId,
+      listName: list.name,
+      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+    });
+  }
+
+  notifyItemDeletion(itemId: number, amount: number, list: List, team: Team): void {
+    const itemName = this.l12n.getItem(itemId);
+    this.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Item_removed', {
       amount: amount,
       itemName: itemName[team.language] || itemName.en,
       itemId: itemId,

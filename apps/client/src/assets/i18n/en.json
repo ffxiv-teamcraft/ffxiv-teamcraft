@@ -695,7 +695,8 @@
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
     "NOTIFICATIONS":{
-      "Item_added": "{{amount}} [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) has been added on list [{{listName}}]({{listUrl}})",
+      "Item_added": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been added to list [{{listName}}]({{listUrl}})",
+      "Item_removed": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been removed from list [{{listName}}]({{listUrl}})",
       "List_progress": "[{{characterName}}]({{memberProfileUrl}}) checked {{amount}} [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) as done on list [{{listName}}]({{listUrl}})",
       "Webhook_setup_complete": "This channel has been configured as tracking channel for team \"{{teamName}}\"",
       "List_added_notification": "List [{{listName}}]({{listUrl}}) has been assigned to team \"{{teamName}}\"",

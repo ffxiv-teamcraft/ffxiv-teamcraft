@@ -27,11 +27,21 @@ export class ListManagerService {
   }
 
   public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false): Observable<List> {
-    this.teamsFacade.selectedTeam$
-      .pipe(first())
+    if(list.teamId){
+      this.teamsFacade.loadTeam(list.teamId);
+    }
+    this.teamsFacade.allTeams$
+      .pipe(
+        first(),
+        map(teams => teams.find(team => list.teamId && team.$key === list.teamId))
+      )
       .subscribe(team => {
-        if (team && team.$key === list.teamId && team.webhook !== undefined) {
-          this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+        if (team && team.webhook !== undefined && amount !== 0) {
+          if(amount > 0){
+            this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+          } else {
+            this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+          }
         }
       });
     return this.db.getItem(itemId)

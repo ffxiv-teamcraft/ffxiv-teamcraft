@@ -2,7 +2,13 @@
   <nz-list [nzDataSource]="myLists" [nzRenderItem]="list" [nzHeader]="header">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
-        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">
+        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="description">
+          <ng-template #description>
+            <nz-tag *ngIf="list.public" [nzColor]="'geekblue'" nz-tooltip
+                    [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+              {{'Public_list' | translate}}
+            </nz-tag>
+          </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>
