@@ -20,7 +20,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -84,9 +84,9 @@ export class ListsEffects {
 
   @Effect()
   loadListDetails$ = this.actions$.pipe(
-    ofType(ListsActionTypes.LoadListDetails),
+    ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
     withLatestFrom(this.listsFacade.allListDetails$),
-    filter(([action, allLists]) => allLists.find(list => list.$key === (<LoadListDetails>action).key) === undefined),
+    filter(([action, allLists]) => allLists.find(list => list.$key === action.key) === undefined),
     map(([action]) => action),
     switchMap((action: LoadListDetails) => {
       return this.authFacade.loggedIn$.pipe(
@@ -100,7 +100,6 @@ export class ListsEffects {
         })
       );
     }),
-    distinctUntilChanged(),
     map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
       if (list !== null) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));

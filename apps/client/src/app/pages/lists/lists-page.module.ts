@@ -15,6 +15,7 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { TeamsModule } from '../../modules/teams/teams.module';
 import { MergeListsPopupComponent } from './merge-lists-popup/merge-lists-popup.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
 
     CoreModule,

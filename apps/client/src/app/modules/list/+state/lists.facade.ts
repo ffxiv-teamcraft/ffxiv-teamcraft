@@ -20,7 +20,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -95,7 +95,7 @@ export class ListsFacade {
   getTeamLists(team: Team): Observable<List[]> {
     return this.compacts$.pipe(
       map(compacts => compacts.filter(compact => compact.teamId === team.$key))
-    )
+    );
   }
 
   getWorkshopCompacts(keys: string[]): Observable<List[]> {
@@ -205,6 +205,16 @@ export class ListsFacade {
 
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
+  }
+
+  loadAndWait(key: string): Observable<List> {
+    this.load(key);
+    return this.allListDetails$.pipe(
+      delay(500),
+      map(details => details.find(l => l.$key === key)),
+      filter(list => list !== undefined),
+      first()
+    )
   }
 
   select(key: string): void {
