@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { TeamsModule } from '../../modules/teams/teams.module';
+import { MergeListsPopupComponent } from './merge-lists-popup/merge-lists-popup.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [ListsComponent]
+  declarations: [ListsComponent, MergeListsPopupComponent],
+  entryComponents: [MergeListsPopupComponent]
 })
 export class ListsPageModule {
 }

@@ -13,6 +13,7 @@ import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.faca
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
+import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 
 @Component({
   selector: 'app-lists',
@@ -82,7 +83,7 @@ export class ListsComponent {
 
     this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
       switchMap(teams => {
-        if(teams.length === 0){
+        if (teams.length === 0) {
           return of([]);
         }
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
@@ -197,6 +198,14 @@ export class ListsComponent {
       .forEach(w => {
         this.workshopsFacade.updateWorkshop(w);
       });
+  }
+
+  openMergeDialog(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LISTS.Merge_lists'),
+      nzContent: MergeListsPopupComponent,
+      nzFooter: null
+    });
   }
 
   trackByList(index: number, list: List): string {

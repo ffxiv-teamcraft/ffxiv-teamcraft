@@ -1,0 +1,12 @@
+<nz-list [nzDataSource]="lists$ | async" [nzRenderItem]="listTemplate">
+  <ng-template #listTemplate let-list>
+    <nz-list-item>
+      <nz-list-item-meta [nzTitle]="list.name" [nzAvatar]="checkbox">
+        <ng-template #checkbox>
+          <label nz-checkbox (ngModelChange)="setSelection(list, $event.checked)"></label>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+  <button [disabled]="selectedLists.length === 0" nz-button (click)="merge()">{{'Confirm' | translate}}</button>
+</nz-list>

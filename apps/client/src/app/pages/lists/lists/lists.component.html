@@ -11,6 +11,14 @@
               [nzTitle]="'WORKSHOP.Add_workshop' | translate">
         <i nz-icon type="folder-add"></i>
       </button>
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip (click)="openMergeDialog()"
+              [nzTitle]="'LISTS.Merge_lists' | translate">
+        <i nz-icon type="block"></i>
+      </button>
+      <button nz-button [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+              [nzTitle]="'LISTS.IMPORT.Title' | translate">
+        <i nz-icon type="download"></i>
+      </button>
       <div class="spacer">
       </div>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
