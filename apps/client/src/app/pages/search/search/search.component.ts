@@ -246,11 +246,11 @@ export class SearchComponent implements OnInit {
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.listsFacade.myLists$.pipe(
+        return this.progressService.showProgress(this.listsFacade.myLists$.pipe(
           map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
           filter(l => l !== undefined),
           first()
-        );
+        ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
       this.itemsAdded = items.length;
