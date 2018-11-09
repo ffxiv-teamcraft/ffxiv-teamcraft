@@ -1,3 +1,3 @@
 files:
-  - source: apps/client/src/assets/i18n/en.json
-    translation: apps/client/src/assets/i18n/%two_letters_code%.json
+  - source: /apps/client/src/assets/i18n/en.json
+    translation: /apps/client/src/assets/i18n/%two_letters_code%.json
