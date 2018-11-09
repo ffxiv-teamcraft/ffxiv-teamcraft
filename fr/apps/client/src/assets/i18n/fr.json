@@ -1,8 +1,8 @@
 {
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez une liste",
-  "Pick_a_fc": "",
-  "Saving_in_database": "",
+  "Pick_a_fc": "Choisissez une compagnie libre",
+  "Saving_in_database": "Sauvegarde en cours",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "",
     "auth/email-already-in-use": "",
