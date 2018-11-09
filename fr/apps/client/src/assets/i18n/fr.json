@@ -1,6 +1,6 @@
 {
-  "Pick_a_list": "",
-  "Pick_a_user": "",
+  "Pick_a_list": "Choisissez une liste",
+  "Pick_a_user": "Choisissez une liste",
   "Pick_a_fc": "",
   "Saving_in_database": "",
   "AUTH_ERRORS": {
