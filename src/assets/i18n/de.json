@@ -60,14 +60,15 @@
     "Reset": "Neustart",
     "Total": "Gesamtsumme",
     "User_id": "Nutzer-ID",
-	"Open_url": "Teamcraft Link öffnen",
+    "Open_url": "Teamcraft Link öffnen",
     "Open_url_placeholder": "Teamcraft Link"
   },
   "ALARMS": {
     "No_alarm": "Kein Benachrichtigung gesetzt",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Alarm_created": "Benachrichtigung erstellt",
-	"Alarm_already_created": "Benachrichtigung bereits vorhanden",
+    "Alarms_created": "Alarms created",
+    "Alarm_already_created": "Benachrichtigung bereits vorhanden",
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe"
   },
@@ -147,7 +148,7 @@
   "Add_all_recipes": "Füge Ergebnisse einer Liste hinzu",
   "Character_not_found": "Charakter nicht gefunden",
   "Use_lodestoneId": "Verwende Lodestone ID",
-  "LodestoneId": "Lodestone ID",  
+  "LodestoneId": "Lodestone ID",
   "List_forked": "Liste zu deinem Account kopiert",
   "List_fork": "Kopiere diese Liste zu deinem Account",
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
@@ -170,7 +171,7 @@
   "ALARM": {
     "Spawned": "{{itemName}} erscheint!",
     "See_on_map": "Position",
-	"Note": "Notiz"
+    "Note": "Notiz"
   },
   "Pricing_mode": "Kosten-Modus",
   "Back_to_list": "Zurück zur Liste",
@@ -201,7 +202,7 @@
     "theme": "Design",
     "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge",
     "Simulator_link_base": "Link zum Simulator",
-	"Always_on_top": "Immer im Vordergrund",
+    "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar"
@@ -210,19 +211,19 @@
     "Masterbooks": "Meisterbücher",
     "Patreon_supporter": "Patreon-Unterstützer",
     "Patreon_features": "Patreon-Unterstützer Features",
+    "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
     "Nickname": "Nickname",
     "No_nickname": "Kein Nickname vergeben",
     "Patreon_link_email": "Mit Patreon-Email verknüpfen",
     "Patreon_edit_email": "Patreon-Email ändern",
     "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
     "Patreon_email": "Patreon-Email",
-    "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
     "Contacts": "Kontakte",
-	"New_contact": "User-ID des neuen Kontakts",
+    "New_contact": "User-ID des neuen Kontakts",
     "Save_for_all": "Für alle speichern",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
-	"VERIFICATION": {
-	  "Title": "Profilverifizierung",
+    "VERIFICATION": {
+      "Title": "Profilverifizierung",
       "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
       "Validate": "Verifizieren"
     },
@@ -236,7 +237,7 @@
     "Regenerate_all": "Alle Listen neugenerieren",
     "Merge_lists": "Listen zusammenfassen",
     "Shared_lists": "Listen mit Schreibzugriff",
-	"Add_selection": "Auswahl zu einer Liste hinzufügen",
+    "Add_selection": "Auswahl zu einer Liste hinzufügen",
     "IMPORT": {
       "Title": "Liste von externer Website importieren",
       "Paste_link_step_title": "Füge deinen link der externen Liste ein",
@@ -254,8 +255,9 @@
   "LIST": {
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
-	"Copy_as_text": "Als Text kopieren",
+    "Copy_as_text": "Als Text kopieren",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
+    "Add_all_alarms": "Add all alarms for this list",
     "History": "Historie",
     "BUTTONS": {
       "Add_link_description": "Benutzerdefinierten Link für diese Liste erstellen",
@@ -328,6 +330,7 @@
     "GLAMOUR": "Projektion",
     "HOUSING": "Möbeliar",
     "MISC": "Verschiedenes",
+    "QUEST": "Quest",
     "TANK": "Verteidiger",
     "HEALER": "Heiler",
     "MELEE": "Nahkämpfer",
@@ -335,7 +338,6 @@
     "CASTER": "Zauberer",
     "CRAFTER": "Handwerker",
     "GATHERER": "Sammler",
-    "QUEST": "Quest",
     "PLD": "PLD",
     "WAR": "KRG",
     "DRK": "DKR",
@@ -441,7 +443,7 @@
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
-	"Fixed_notification_number": "Konstanter Klangeffekt",
+    "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
@@ -472,15 +474,15 @@
     "Share_link_copied": "Link zur Rotation in die Zwischenablage kopiert",
     "Persist": "Diese Rotation speichern",
     "Rotation_not_found": "Rotation nicht gefunden",
-    "Confirm_delete": "Willst du diese Rotation wirklich löschen?",	
+    "Confirm_delete": "Willst du diese Rotation wirklich löschen?",
     "Toggle_snapshot_mode": "Snapshot-Modus umschalten",
-	"Open_in_external": "In {{name}}'s Simulator öffnen",
+    "Open_in_external": "In {{name}}'s Simulator öffnen",
     "Select_job_please": "Bitte einen Job auswählen",
     "Rename_rotation": "Rotation umbenennen",
     "Cross_class_setup": "Makro für klassenübergreifende Fähigkeiten erstellen",
     "Include_sound_end": "Klangeffekt am Makroende hinzufügen",
     "Step_by_step_report": "Schritt-für-Schritt Report",
-	"Save_as_new": "Als neue Rotation speichern (bringt dich zur neu erstellten Rotation)",
+    "Save_as_new": "Als neue Rotation speichern (bringt dich zur neu erstellten Rotation)",
     "Save_as_new_done": "Du arbeitest jetzt auf einer Kopie deiner Rotation",
     "Change_rotation": "Rotation wechseln",
     "Convert_rotation": "Zu Standardrotation konvertieren",
@@ -516,8 +518,8 @@
       "Food": "Wähle ein Gericht",
       "Medicine": "Wähle eine Arznei",
       "Action": "Wählen Sie freie Firmenaktionen",
-	  "Save_set": "Benutzerdefinierte Werte speichern",
-	  "Reset_set": "Benutzerdefinierte Werte zurücksetzen",
+      "Save_set": "Benutzerdefinierte Werte speichern",
+      "Reset_set": "Benutzerdefinierte Werte zurücksetzen",
       "Save_consumables": "Speichern Sie diese Verbrauchsmaterialien als Standard",
       "STATS": {
         "CP": "HP",
@@ -559,7 +561,7 @@
   },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
-    "Materials_have_cost": "Materialien für diesen Auftrag haben Kosten > 0, stelle sicher, dass du sie nicht doppelt zählst"
+    "Expect_to_sell_everything": "Expect to sell everything"
   },
   "COMMISSION_BOARD": {
     "Title": "Schwarzes Brett",
@@ -602,8 +604,8 @@
     "Confirm_archive": "Bist du sicher? Das kann nicht rückgängig gemacht werden.",
     "Withdraw": "Aus dem Auftrag zurückziehen",
     "Confirm_withdraw": "Bist du sicher dass du dich aus dem Auftrag zurückziehen möchtest? Dies kann nicht rückgängig gemacht werden.",
-    "New_things_notification":  "Es gibt neue Einträge auf deinem Schwarzen Brett",
-	"Negotiable_price": "Verhandelbar",
+    "New_things_notification": "Es gibt neue Einträge auf deinem Schwarzen Brett",
+    "Negotiable_price": "Verhandelbar",
     "STATUS": {
       "CREATED": "Offen",
       "ACCEPTED": "Laufend",
@@ -626,7 +628,8 @@
     "Team_invite": "{{invitedBy}} hat dich zum Team \"{{teamName}}\" eingeladen",
     "Item_assigned": "{{itemName}} wurde dir auf Liste \"{{listName}}\" zugewiesen",
     "List_commented": "{{userName}} kommentierte auf Liste \"{{listName}}\": \"{{content}}\"",
-    "Mark_all_as_read": "Alle als gelesen markieren"
+    "Mark_all_as_read": "Alle als gelesen markieren",
+    "Remove_all": "Remove all notifications"
   },
   "TEAMS": {
     "Title": "Teams",
