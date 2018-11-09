@@ -25,7 +25,7 @@
   "Timers": "Alarmes",
   "Copy_isearch": "Copier la macro de recherche en jeu",
   "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
-  "Required_for_final_craft": "{{amount}} nécessaire pour un craft final",
+  "Required_for_final_craft": "{{amount}} nécessaire pour les crafts finaux",
   "Compact_sidebar_toggle": "Activer/Désactiver le menu compact",
   "Confirmation": "Êtes-vous sûr ?",
   "Is_working_on_it": "{{name}} travaille dessus",
