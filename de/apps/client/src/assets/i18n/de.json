@@ -98,17 +98,17 @@
     "No_alarm": "Kein Benachrichtigung gesetzt",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Alarm_created": "Benachrichtigung erstellt",
-    "Alarms_created": "",
+    "Alarms_created": "{{amount}} Alarme erstellt",
     "Alarm_already_created": "Benachrichtigung bereits vorhanden",
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
-    "Confirm_group_delete": "",
-    "Add_note": "",
+    "Confirm_group_delete": "Bist du sicher, dass Du diese Gruppe löschen möchtest?",
+    "Add_note": "Notiz hinzufügen",
     "Volume": "",
-    "Macro_copied": ""
+    "Macro_copied": "Makro wurde in die Zwischenablage kopiert"
   },
   "Item_name": "Gegenstandsname",
-  "No_items_found": "",
+  "No_items_found": "Kein Gegenstand gefunden",
   "Select_all": "Alle auswählen",
   "Do you really want to reset the list?": "Möchtest du die Liste wirklich zurücksetzen?",
   "Yes": "Ja",
@@ -150,7 +150,7 @@
   "Submit": "Senden",
   "Invalid_credentials": "Ungültige Daten",
   "Verification_mail_sent": "Bestätigungsmail gesendet, bitte prüfe dein Mail-Postfach",
-  "Not_verified": "",
+  "Not_verified": "Nicht verifiziert",
   "Lodestone_already_used": "Dieser Character wird bereits benutzt",
   "Anonymous_Warning": "Erstelle dir einen Account damit du deine Listen speichern kannst und andere Features nutzen kannst, wie den anpassbaren Filter",
   "Game_Term/DoH": "Handwerker",
@@ -164,7 +164,7 @@
   "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
   "Own_list_outdated_after_button": "Schaltfläche",
   "Home": "Startseite",
-  "Import": "",
+  "Import": "Importieren",
   "Favorites": "Favoriten",
   "Favorite": "Favorit",
   "filters/ilvl": "Gegenstandsstufe",
@@ -707,8 +707,8 @@
       "List_removed_notification": "",
       "Member_joined": "",
       "Member_removed": "",
-      "Name_changed": "",
-      "User_assigned": ""
+      "Name_changed": "Team \"{{oldName}}\" umbenannt in \"{{newName}}\"",
+      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) wurde [{{memberName}}]({{memberProfileUrl}}) auf Liste [{{listName}}]({{listUrl}}) zugewiesen"
     }
   }
 }
