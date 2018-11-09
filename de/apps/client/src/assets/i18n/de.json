@@ -10,7 +10,7 @@
     "auth/wrong-password": ""
   },
   "ITEMS": {
-    "Title": "",
+    "Title": "Suchen",
     "No_match": "Keine passenden Gegenstände",
     "Item_name": "Name des Gegenstands",
     "Only_recipes": "Nur Rezepte",
