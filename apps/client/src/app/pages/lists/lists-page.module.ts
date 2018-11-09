@@ -16,6 +16,7 @@ import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { TeamsModule } from '../../modules/teams/teams.module';
 import { MergeListsPopupComponent } from './merge-lists-popup/merge-lists-popup.component';
 import { FormsModule } from '@angular/forms';
+import { ListImportPopupComponent } from './list-import-popup/list-import-popup.component';
 
 const routes: Routes = [
   {
@@ -45,7 +46,7 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [ListsComponent, MergeListsPopupComponent],
+  declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent],
   entryComponents: [MergeListsPopupComponent]
 })
 export class ListsPageModule {
