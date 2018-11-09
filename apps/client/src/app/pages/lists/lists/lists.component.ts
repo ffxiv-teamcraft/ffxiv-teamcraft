@@ -109,7 +109,7 @@ export class ListsComponent {
             return l;
           });
       }),
-      map(lists => lists.sort((a, b) => b.index - a.index)),
+      map(lists => lists.sort((a, b) => a.index - b.index)),
       map(lists => {
         return {
           communityLists: lists.filter(l => l.public),
