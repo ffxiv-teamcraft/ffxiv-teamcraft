@@ -710,5 +710,12 @@
       "Name_changed": "",
       "User_assigned": ""
     }
+  },
+  "MARKETBOARD": {
+    "Title": "",
+    "Amount": "",
+    "HQ": "",
+    "Total_price": "",
+    "Unit_price": ""
   }
 }
