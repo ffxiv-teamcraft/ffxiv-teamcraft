@@ -1,26 +1,26 @@
 {
   "Pick_a_list": "Escoja una lista",
   "Pick_a_user": "Escoja un usuario",
-  "Pick_a_fc": "Escoja un Gremio Independiente (Fc)",
-  "Saving_in_database": "",
+  "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
+  "Saving_in_database": "Guardando datos en el servidor",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
-    "auth/user-not-found": "",
-    "auth/wrong-password": ""
+    "auth/user-not-found": "Correo electrónico o contraseña incorrectos",
+    "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
   "ITEMS": {
     "Title": "Artículos",
     "No_match": "No se encontró el artículo",
     "Item_name": "Nombre del artículo",
     "Only_recipes": "Solo recetas",
-    "Crafts_amount": "",
-    "Add_to_list": "",
-    "Apply_filters": ""
+    "Crafts_amount": "# de elaboraciones",
+    "Add_to_list": "Agregar este elemento a una lista",
+    "Apply_filters": "Aplicar filtros"
   },
-  "Use_as_default_character": "",
+  "Use_as_default_character": "Usar como caracter por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
-  "Default": "",
+  "Default": "Por defecto",
   "Delete": "Borrar",
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
@@ -30,7 +30,7 @@
   "Confirmation": "Confirmación",
   "Is_working_on_it": "{{name}} está trabajando en esto",
   "Work_on_it": "Yo estoy trabajando en esto",
-  "Remove_work_on_it": "",
+  "Remove_work_on_it": "Quitar asignación de usuario",
   "Add_as_collectible": "Agregar como coleccionable",
   "Compact_display": "Presentación compacta",
   "Mute_alarms": "Silenciar alarmas",
