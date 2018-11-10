@@ -52,8 +52,8 @@
         <i class="material-icons">history</i>
       </button>
     </div>
-    <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
-         fxLayoutAlign.lt-sm="center center">
+    <div class="list-title" fxLayout="row" fxLayoutGap="5px" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
+         fxLayoutAlign="flex-start center">
       <h2>{{list.name}}</h2>
       <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
               (click)="renameList(list)" [disabled]="(permissionLevel$ | async) < 40">

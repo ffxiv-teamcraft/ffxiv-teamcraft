@@ -48,6 +48,7 @@
         <li nz-menu-item nzDisabled>TODO Mark HQ</li>
       </ul>
     </nz-dropdown>
+    <app-marketboard-icon [itemId]="item.id"></app-marketboard-icon>
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"
        [class.empty]="!item.alarms || item.alarms.length < 0">

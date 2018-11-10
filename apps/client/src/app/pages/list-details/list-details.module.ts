@@ -39,6 +39,7 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { RelationshipsComponent } from './item-details/relationships/relationships.component';
 import { TeamsModule } from '../../modules/teams/teams.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
+import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 
 const routes: Routes = [
   {
@@ -71,6 +72,7 @@ const routes: Routes = [
     PermissionsModule,
     UserAvatarModule,
     FavoritesModule,
+    MarketboardModule,
 
     FlexLayoutModule,
 

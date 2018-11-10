@@ -1,0 +1,18 @@
+<nz-table #pricesTable nzSize="small" [nzData]="prices$ | async" [nzLoading]="loading">
+  <thead nzSingleSort (nzSortChange)="sort($event)">
+  <tr>
+    <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
+    <th nzShowSort nzSortKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
+    <th nzShowSort nzSortKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
+    <th nzShowSort nzSortKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of pricesTable.data">
+    <td>{{row.Quantity}}</td>
+    <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ === 1" class="hq-icon"></td>
+    <td>{{row.PriceTotal}}</td>
+    <td>{{row.PricePerUnit}}</td>
+  </tr>
+  </tbody>
+</nz-table>
