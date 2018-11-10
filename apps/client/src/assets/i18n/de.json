@@ -1,13 +1,13 @@
 {
   "Pick_a_list": "Wähle eine Liste",
-  "Pick_a_user": "",
+  "Pick_a_user": "Wähle einen Benutzer",
   "Pick_a_fc": "",
-  "Saving_in_database": "",
+  "Saving_in_database": "Speichere Daten auf dem Server",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
-    "auth/user-not-found": "",
-    "auth/wrong-password": ""
+    "auth/user-not-found": "Email/Passwort ist nicht korrekt",
+    "auth/wrong-password": "Email/Passwort ist nicht korrekt"
   },
   "ITEMS": {
     "Title": "Gegenstände",
@@ -15,12 +15,12 @@
     "Item_name": "Name des Gegenstands",
     "Only_recipes": "Nur Rezepte",
     "Crafts_amount": "",
-    "Add_to_list": "",
-    "Apply_filters": ""
+    "Add_to_list": "Diesen Eintrag zu einer Liste hinzufügen",
+    "Apply_filters": "Filter übernehmen"
   },
-  "Use_as_default_character": "",
+  "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
-  "Default": "",
+  "Default": "Standard",
   "Delete": "Löschen",
   "Timers": "",
   "Copy_isearch": "isearch Makro kopieren",
@@ -88,11 +88,11 @@
     "User_id": "Nutzer-ID",
     "Open_url": "Teamcraft Link öffnen",
     "Open_url_placeholder": "Teamcraft Link",
-    "Select": "",
-    "Anonymous": "",
-    "Warning": "",
-    "Success": "",
-    "Copy_to_clipboard": ""
+    "Select": "Bitte auswählen",
+    "Anonymous": "Anonym",
+    "Warning": "Warnung",
+    "Success": "Erfolg",
+    "Copy_to_clipboard": "In Zwischenablage kopieren"
   },
   "ALARMS": {
     "No_alarm": "Kein Benachrichtigung gesetzt",
@@ -104,7 +104,7 @@
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Bist du sicher, dass Du diese Gruppe löschen möchtest?",
     "Add_note": "Notiz hinzufügen",
-    "Volume": "",
+    "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert"
   },
   "Item_name": "Gegenstandsname",
