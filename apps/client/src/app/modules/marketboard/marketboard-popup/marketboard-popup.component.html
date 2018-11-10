@@ -11,8 +11,8 @@
   <tr *ngFor="let row of pricesTable.data">
     <td>{{row.Quantity}}</td>
     <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ === 1" class="hq-icon"></td>
-    <td>{{row.PriceTotal}}</td>
-    <td>{{row.PricePerUnit}}</td>
+    <td>{{row.PriceTotal | number}}</td>
+    <td>{{row.PricePerUnit | number}}</td>
   </tr>
   </tbody>
 </nz-table>
