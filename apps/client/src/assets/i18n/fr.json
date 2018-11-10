@@ -1,25 +1,42 @@
 {
+  "Pick_a_list": "Choisissez une liste",
+  "Pick_a_user": "Choisissez une liste",
+  "Pick_a_fc": "Choisissez une compagnie libre",
+  "Saving_in_database": "Sauvegarde en cours",
+  "AUTH_ERRORS": {
+    "auth/credential-already-in-use": "Compte déjà utilisé",
+    "auth/email-already-in-use": "Email déjà utilisé",
+    "auth/user-not-found": "Mauvais email ou mot de passe",
+    "auth/wrong-password": "Mauvais email ou mot de passe"
+  },
   "ITEMS": {
     "Title": "Recherche",
     "No_match": "Aucun objet trouvé",
     "Item_name": "Nom de l'objet",
-    "Only_recipes": "Recettes uniquement"
+    "Only_recipes": "Recettes uniquement",
+    "Crafts_amount": "Nb de crafts",
+    "Add_to_list": "Ajouter cet élément à une liste",
+    "Apply_filters": "Appliquer les filtres"
   },
+  "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
+  "Default": "Défaut",
   "Delete": "Supprimer",
   "Timers": "Alarmes",
   "Copy_isearch": "Copier la macro de recherche en jeu",
   "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
-  "Required_for_final_craft": "{{amount}} nécessaire pour un craft final",
+  "Required_for_final_craft": "{{amount}} nécessaire pour les crafts finaux",
   "Compact_sidebar_toggle": "Activer/Désactiver le menu compact",
-  "Confirmation": "Confirmation",
+  "Confirmation": "Êtes-vous sûr ?",
   "Is_working_on_it": "{{name}} travaille dessus",
   "Work_on_it": "Je m'en occupe",
+  "Remove_work_on_it": "Retirer l'assignation d'utilisateur",
   "Add_as_collectible": "Ajouter en collectionnable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
   "Hide_used": "Masquer les éléments utilisés",
   "Retainer_ventures": "Tâches de servant",
+  "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
     "Workshops": "Ateliers",
     "Add_lists": "Ajouter des listes",
@@ -30,7 +47,8 @@
     "Created_by": "Créé par {{name}}",
     "Share_link_copied": "Lien de partage de l'atelier copié",
     "Not_found": "Atelier introuvable ou vous n'avez pas les droits accès",
-    "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture"
+    "Shared_workshops": "Ateliers sur lesquels vous avez le droit d'écriture",
+    "Rename": "Renommer l'atelier"
   },
   "ABOUT": {
     "title": "À Propos",
@@ -41,31 +59,53 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
+  "GIVEWAY": {
+    "Title": "Concours 10 000 listes",
+    "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
+    "Access": "Accéder au concours"
+  },
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
+  "Ephemeral_tag": "éphémère",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
   "Public_lists": "Listes Communautaires",
+  "Your_public_lists": "Vos listes communautaires",
   "Public_list": "Liste Communautaire",
   "Profile": "Profil",
   "X_for_total": "{{amount}} pour le tout",
+  "COMMUNITY_LISTS": {
+    "Tags_filter_placeholder": "Filtrer par tags",
+    "Tags_filter_reset": "Réinitialiser le filtre par tags",
+    "Name_filter_placeholder": "Filtrer par nom",
+    "No_lists_matching": "Pas de listes correspondant à vos filtres"
+  },
   "COMMON": {
     "Save": "Sauvegarder",
     "Reset": "Remettre à 0",
     "Total": "Total",
     "User_id": "ID Utilisateur",
     "Open_url": "Ouvrir un lien Teamcraft",
-    "Open_url_placeholder": "Lien Teamcraft"
+    "Open_url_placeholder": "Lien Teamcraft",
+    "Select": "Sélectionner",
+    "Anonymous": "Anonyme",
+    "Warning": "Attention",
+    "Success": "Succès",
+    "Copy_to_clipboard": "Copier dans le Presse-papiers"
   },
   "ALARMS": {
     "No_alarm": "Aucune alarme définie",
     "Add_alarm": "Ajouter une alarme",
     "Alarm_created": "Alarme créée",
+    "Alarms_created": "{{amount}} alarmes créées",
     "Alarm_already_created": "Alarm déjà définie",
     "Custom_sound": "Son d'alarme personnalisé",
-    "New_group": "New alarm group",
-    "Alarms_created": "Alarmes créées"
+    "New_group": "Nouveau groupe d’alarmes",
+    "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Add_note": "Ajouter une note",
+    "Volume": "Volume",
+    "Macro_copied": "Macro copiée dans votre presse-papiers"
   },
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
@@ -98,8 +138,6 @@
   "Check_all": "Tout cocher",
   "Uncheck_all": "Tout décocher",
   "Level": "Niveau",
-  "auth/credential-already-in-use": "Compte déjà utilisé",
-  "auth/email-already-in-use": "Email déjà utilisé",
   "Registration": "Inscription",
   "Google_register": "Inscription avec Google",
   "Facebook_register": "Inscription avec Facebook",
@@ -121,10 +159,10 @@
   "Upgrade_list": "Régénérer la liste avec la dernière version de l'application",
   "List_recreated": "Liste régénérée avec succès",
   "List_popup_title": "Régénération de la liste en cours, merci de patienter",
-  "List_popup_p": "La régénération devrait prendre quelques secondes, voici un gif pour patienter",
+  "List_popup_p": "Cela devrait être rapide, veuillez patienter un peu",
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
   "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
-  "Own_list_outdated_after_button": "",
+  "Own_list_outdated_after_button": "bouton",
   "Home": "Accueil",
   "Import": "Importer",
   "Favorites": "Favoris",
@@ -134,9 +172,10 @@
   "filters/craft_lvl": "Niveau de la recette",
   "filters/worn_by": "Équipé par",
   "filters/crafted_by": "Fabriqué par",
+  "filters/item_category": "Type d'objet",
   "Adding_recipes": "Ajout de {{amount}} recettes à la liste {{listname}}",
-  "Recipe_Added": "{{itemname}} ajouté à la liste {{listname}}",
-  "Recipes_Added": "Résultats ajouté à la liste {{listname}}",
+  "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
+  "Recipes_Added": "{{itemcount}} objet ajoutés à la liste {{listname}}",
   "Character_name": "Nom complet du personnage",
   "Character_informations": "Informations du personnage",
   "Server_name": "Nom du serveur",
@@ -144,10 +183,10 @@
   "Character_not_found": "Personnage non trouvé",
   "Use_lodestoneId": "Utiliser l'ID lodestone",
   "LodestoneId": "ID lodestone",
-  "Requirements_for_craft": "Voir les prérequis",
   "List_forked": "Liste copiée sur votre compte",
   "List_fork": "Copier cette liste sur votre compte",
   "List_not_found": "Liste introuvable ou vous n'avez pas les droits d'accès",
+  "Requirements_for_craft": "Voir les prérequis",
   "Zone_breakdown": "Résumé par zone",
   "Timer_options": "Options des alarmes",
   "Early_by": "Prévenir en avance (heures éorzéennes)",
@@ -208,7 +247,7 @@
     "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
     "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
     "Nickname": "Pseudonyme",
-    "No_nickname": "No nickname set",
+    "No_nickname": "Aucun pseudo configuré",
     "Patreon_link_email": "Lier mon email patreon",
     "Patreon_edit_email": "Editer mon email patreon",
     "Email_already_used": "Email déjà lié à un autre compte",
@@ -230,10 +269,14 @@
   },
   "LISTS": {
     "Regenerate_all": "Régénérer toutes les listes",
+    "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
+    "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes sur lesquelles vous avez le droit d'écriture",
     "Add_selection": "Ajouter la sélection à une liste",
-    "Add_all_alarms": "Ajouter toute les alarmes d'un coup pour cette liste",
+    "Your_lists": "Vos listes",
+    "Outdated_tag": "Pas à jour",
+    "No_lists": "Vous n’avez pas de listes",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -249,10 +292,14 @@
     }
   },
   "LIST": {
+    "Regenerate": "Mettre la liste à jour vers la dernière version de Teamcraft",
+    "Rename": "Renommer la liste",
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
+    "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
+    "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
@@ -263,13 +310,13 @@
       "Open_description": "Accède à la liste",
       "Delete": "Supprimer la liste",
       "Delete_description": "Supprime la liste",
-      "Delete_warning": "La suppression d'une liste est réversible"
+      "Delete_warning": "La suppression d'une liste n'est pas réversible"
     }
   },
   "LIST_DETAILS": {
     "List_finished": "Liste terminée",
     "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
-    "Missing_tags_after_button": "",
+    "Missing_tags_after_button": " bouton",
     "Add_remove_amount": "Ajouter/enlever un montant donné",
     "No_book": "Livre manquant, cliquer pour aller sur la page de profil",
     "No_note": "Aucune note",
@@ -283,7 +330,8 @@
       "Import_string": "Chaîne d'import de l'affichage",
       "Import_string_copied": "Chaîne d'import de l'affichage copiée !",
       "Layout_name": "Nom de l'affichage",
-      "Invalid_import": "Code d'import invalide"
+      "Invalid_import": "Code d'import invalide",
+      "Global_options": "Options générales"
     },
     "LAYOUT": {
       "Filter": "Filtre",
@@ -333,6 +381,7 @@
     "CASTER": "Magique",
     "CRAFTER": "Artisan",
     "GATHERER": "Récolteur",
+    "SCRIPTS": "Scripts",
     "PLD": "PLD",
     "WAR": "GUE",
     "DRK": "CHN",
@@ -395,7 +444,8 @@
   "GATHERING_LOCATIONS": {
     "Title": "Récoltes",
     "No_items": "Aucune récolte trouvée",
-    "Gathering_name": "Nom de l'objet"
+    "Gathering_name": "Nom de l'objet",
+    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures apparition et la possibilité de créer une alarme. Commencez à tapper un nom et regardez la magie opére !"
   },
   "ANNOUNCEMENT": {
     "Title": "Annonce",
@@ -423,6 +473,7 @@
     "Everyone": "Tout le monde",
     "You": "Vous",
     "Add_new": "Ajouter un utilisateur",
+    "Add_new_fc": "Ajouter une Compagnie Libre",
     "Placeholder": "Email ou ID utilisateur",
     "Bind_free_company": "Lier des permissions à la Compagnie Libre",
     "User_not_found": "Utilisateur introuvable",
@@ -616,38 +667,55 @@
       "Max_price": "Prix maximum"
     }
   },
+  "LEVEQUESTS": {
+    "Title": "Mandats",
+    "Levequest_name": "Nom du mandat",
+    "No_results": "Aucun mandat trouvé",
+    "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
+    "Quantity": "Quantité",
+    "All_deliveries": "Toules les livraisons ({{value}})"
+  },
   "NOTIFICATIONS": {
     "Title": "Notifications",
-    "List_progress": "{{author}} a marqué {{amount}} {{itemName}} comme étant faits pour la liste \"{{listName}}\"",
-    "Team_invite": "{{invitedBy}} vous a invité dans l'équipe {{teamName}}",
-    "Item_assigned": "{{itemName}} vous a été assigné sur la liste \"{{listName}}\"",
     "List_commented": "{{userName}} a commenté sur la liste {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Tout marquer comme lu"
   },
   "TEAMS": {
     "Title": "Équipes",
+    "Leader": "Chef",
+    "Member": "Membre",
     "Create_team": "Créer une équipe",
-    "Add_user": "Ajouter un utilisateur",
+    "Create_invite_one_day": "Créer une nouvelle invitation (valable 1 jour)",
+    "Create_invite_infinite": "Créer une nouvelle invitation permanente",
     "No_teams": "Aucune équipe",
-    "Pending": "En attente d'une réponse",
-    "Assign_list": "Assigner cette liste à une équipe",
-    "Assign_team_member": "Assigner à un équipier",
-    "Detach_team": "Détacher cette liste de son équipe",
-    "Create_invite_one_day": "Créer une invitation valable 24h",
-    "Create_invite_infinite": "Créer une invitation valable à vie",
     "Invites": "Invitations",
-    "Delete_confirmation": "Voulez-vous vraiment supprimer cette équipe ?",
-    "Invite_expires": "Expiration: ",
-    "Member_joined": "{{characterName}} a rejoint l'équipe !",
-    "Invite_error": "Invitation non trouvée ou expirée.",
-    "Invite_link_copied": "Lien d'invitation copié dans le presse-papiers",
-    "No_anonymous_join": "Vous devez avoir un compte pour rejoindre une équipe.",
-    "Already_in_team": "Vous êtes déjà dans cette équipe.",
-    "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe \"{{teamName}}\"",
-    "List_added_notification": "Liste \"{{listName}}\" attribuée à l'équipe \"{{teamName}}\"",
-    "List_removed_notification": "Liste \"{{listName}}\" retirée de l'équipe \"{{teamName}}\"",
-    "Member_removed": "{{memberName}} a été exclu de l'équipe \"{{teamName}}\"",
-    "Name_changed": "Équipe \"{{oldName}}\" renommée en \"{{newName}}\"",
-    "User_assigned": "{{itemName}} a été assigné à {{memberName}} sur la liste \"{{listName}}\""
+    "Assign_list": "Assigner cette liste à une équipe",
+    "Assign_team_member": "Assigner à un membre de l’équipe",
+    "Detach_team": "Détacher cette liste de son équipe",
+    "Delete_confirmation": "Êtes-vous sûr de que vouloir supprimer cette équipe ?",
+    "Invite_expires": "Expire",
+    "Invite_error": "Invitation d'équipe introuvable ou expirée.",
+    "Invite_link_copied": "Lien d'invitation de l'équipe copié dans votre presse-papiers",
+    "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
+    "Already_in_team": "Vous êtes déjà dans cette équipe",
+    "NOTIFICATIONS": {
+      "Item_added": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) ont été ajoutés à la liste [{{listName}}] ({{listUrl}})",
+      "Item_removed": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) ont été retirés de la liste [{{listName}}] ({{listUrl}})",
+      "List_progress": "[{{characterName}}] ({{memberProfileUrl}}) a contribué {{amount}} [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) sur la liste [{{listName}}] ({{listUrl}})",
+      "Webhook_setup_complete": "Ce salon est maintenant configuré comme salon de suivi pour l'équipe \"{{teamName}}\"",
+      "List_added_notification": "La Liste [{{listName}}]({{listUrl}}) a été assignée à l'équipe \"{{teamName}}\"",
+      "List_removed_notification": "La liste [{{listName}}]({{listUrl}}) a été retirée de l'équipe \"{{teamName}}\"",
+      "Member_joined": "[{{memberName}}]({{memberProfileUrl}}) a rejoint l'équipe \"{{teamName}}\"!",
+      "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) a été retiré de l'équipe \"{{teamName}}\"",
+      "Name_changed": "L'équipe \"{{oldName}}\" a été renommée en \"{{newName}}\"",
+      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) a été assigné à [{{memberName}}]({{memberProfileUrl}}) sur la liste [{{listName}}]({{listUrl}})"
+    }
+  },
+  "MARKETBOARD": {
+    "Title": "Hotel des ventes",
+    "Amount": "Quantité",
+    "HQ": "HQ",
+    "Total_price": "Prix total",
+    "Unit_price": "Prix unitaire"
   }
 }
