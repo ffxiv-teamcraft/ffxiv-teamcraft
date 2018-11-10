@@ -700,22 +700,22 @@
     "Already_in_team": "Usted ya está en este equipo",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) se han añadido a la lista [{{listName}}] ({{listUrl}})",
-      "Item_removed": "",
-      "List_progress": "",
-      "Webhook_setup_complete": "",
-      "List_added_notification": "",
-      "List_removed_notification": "",
-      "Member_joined": "",
-      "Member_removed": "",
-      "Name_changed": "",
-      "User_assigned": ""
+      "Item_removed": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) se han quitado de la lista [{{listName}}] ({{listUrl}})",
+      "List_progress": "[{{characterName}}] ({{memberProfileUrl}}) marcó {{amount}} [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) como completados en la lista [[{{listName}}] ({{listUrl}})",
+      "Webhook_setup_complete": "Este canal ha sido configurado como canal de seguimiento para el equipo \"{{teamName}}\"",
+      "List_added_notification": "La lista [{{listName}}] ({{listUrl}}) ha sido asignada al equipo \"{{teamName}}\"",
+      "List_removed_notification": "La lista [{{listName}}] ({{listUrl}}) ha sido desasignada del equipo \"{{teamName}}\"",
+      "Member_joined": "¡[{{memberName}}]({{memberProfileUrl}}) se ha unido al equipo \"{{teamName}}\"!",
+      "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) ha sido expulsado del equipo \"{{teamName}}\"",
+      "Name_changed": "Equipo \"{{oldName}}\" renombrado a \"{{newName}}\"",
+      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ha sido asignado a [{{memberName}}]({{memberProfileUrl}}) en la lista [{{listName}}]({{listUrl}})"
     }
   },
   "MARKETBOARD": {
     "Title": "",
-    "Amount": "",
-    "HQ": "",
-    "Total_price": "",
-    "Unit_price": ""
+    "Amount": "Cantidad",
+    "HQ": "HQ",
+    "Total_price": "Precio total",
+    "Unit_price": "Precio unitario"
   }
 }
