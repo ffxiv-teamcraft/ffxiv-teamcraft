@@ -710,5 +710,12 @@
       "Name_changed": "Team \"{{oldName}}\" umbenannt in \"{{newName}}\"",
       "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) wurde [{{memberName}}]({{memberProfileUrl}}) auf Liste [{{listName}}]({{listUrl}}) zugewiesen"
     }
+  },
+  "MARKETBOARD": {
+    "Title": "",
+    "Amount": "",
+    "HQ": "",
+    "Total_price": "",
+    "Unit_price": ""
   }
 }
