@@ -36,7 +36,7 @@
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Retainer_ventures": "Aventuras de sirviente",
-  "Requires_x_ventures": "",
+  "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
     "Workshops": "Talleres",
     "Add_lists": "Agregar listas",
@@ -48,7 +48,7 @@
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
     "Shared_workshops": "Talleres compartidos contigo",
-    "Rename": ""
+    "Rename": "Renombrar taller"
   },
   "ABOUT": {
     "title": "Acerca de",
@@ -67,19 +67,19 @@
   "Hide_if_empty": "Esconder si está vacío",
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
-  "Ephemeral_tag": "",
+  "Ephemeral_tag": "efímero",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
   "Public_lists": "Listas Comunitarias",
-  "Your_public_lists": "",
+  "Your_public_lists": "Sus listas comunitarias",
   "Public_list": "Lista Comunitaria",
   "Profile": "Perfil",
   "X_for_total": "{{amount}} para el total",
   "COMMUNITY_LISTS": {
-    "Tags_filter_placeholder": "",
-    "Tags_filter_reset": "",
-    "Name_filter_placeholder": "",
-    "No_lists_matching": ""
+    "Tags_filter_placeholder": "Filtrar usando etiquetas",
+    "Tags_filter_reset": "Quitar filtro de etiquetas",
+    "Name_filter_placeholder": "Filtrar usando nombre",
+    "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
   "COMMON": {
     "Save": "Guardar",
