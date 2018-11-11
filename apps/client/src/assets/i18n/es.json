@@ -18,7 +18,7 @@
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros"
   },
-  "Use_as_default_character": "Usar como caracter por defecto",
+  "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
   "Default": "Por defecto",
   "Delete": "Borrar",
@@ -712,7 +712,7 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "",
+    "Title": "Información del mercado",
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
