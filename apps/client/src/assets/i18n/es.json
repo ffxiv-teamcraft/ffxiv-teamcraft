@@ -10,7 +10,7 @@
     "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
   },
   "ITEMS": {
-    "Title": "Artículos",
+    "Title": "Busqueda",
     "No_match": "No se encontró el artículo",
     "Item_name": "Nombre del artículo",
     "Only_recipes": "Solo recetas",
