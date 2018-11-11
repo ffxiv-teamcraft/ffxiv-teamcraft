@@ -56,7 +56,7 @@ export class MarketboardPopupComponent implements OnInit {
             return a[sort.key] > b[sort.key] ? 1 : -1;
           } else {
             if (a[sort.key] === b[sort.key]) {
-              return a.PricePerUnit < b.PricePerUnit ? 1 : -1;
+              return a.PricePerUnit > b.PricePerUnit ? 1 : -1;
             }
             return a[sort.key] < b[sort.key] ? 1 : -1;
           }
