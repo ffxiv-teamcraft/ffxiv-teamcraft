@@ -439,7 +439,12 @@
   "NAVIGATION": {
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
-    "Gather_x": "Sammel {{amount}}"
+    "STEP": {
+      "Gathering": "",
+      "Hunting": "",
+      "Vendor": "",
+      "Trade": ""
+    }
   },
   "GATHERING_LOCATIONS": {
     "Title": "Sammelgegenstand-Suche",
