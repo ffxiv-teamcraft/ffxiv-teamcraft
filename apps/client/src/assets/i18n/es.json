@@ -159,7 +159,7 @@
   "Upgrade_list": "Recrear listas con la última actualización de la aplicación",
   "List_recreated": "Lista recreada apropiadamente",
   "List_popup_title": "Regenerando la lista, por favor espere",
-  "List_popup_p": "Esto debería ser rápido, por favor espere un poco",
+  "Please wait": "",
   "Not_own_list_outdated": "Esta lista está desactualizada, por favor pídale al dueño que la regenere",
   "Own_list_outdated_before_button": "Esta lista está desactualizada, por favor regenérela usando ",
   "Own_list_outdated_after_button": "botón",
