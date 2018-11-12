@@ -1,25 +1,42 @@
 {
+  "Pick_a_list": "Escoja una lista",
+  "Pick_a_user": "Escoja un usuario",
+  "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
+  "Saving_in_database": "Guardando datos en el servidor",
+  "AUTH_ERRORS": {
+    "auth/credential-already-in-use": "Esta cuenta ya está en uso",
+    "auth/email-already-in-use": "Este correo electrónico ya está en uso",
+    "auth/user-not-found": "Correo electrónico o contraseña incorrectos",
+    "auth/wrong-password": "Correo electrónico o contraseña incorrectos"
+  },
   "ITEMS": {
-    "Title": "Artículos",
+    "Title": "Busqueda",
     "No_match": "No se encontró el artículo",
     "Item_name": "Nombre del artículo",
-    "Only_recipes": "Solo recetas"
+    "Only_recipes": "Solo recetas",
+    "Crafts_amount": "# de elaboraciones",
+    "Add_to_list": "Agregar este elemento a una lista",
+    "Apply_filters": "Aplicar filtros"
   },
+  "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
+  "Default": "Por defecto",
   "Delete": "Borrar",
   "Timers": "Temporizadores",
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
   "Required_for_final_craft": "{{amount}} necesario(s) para los artículos finales",
   "Compact_sidebar_toggle": "Alternar barra lateral compacta",
-  "Confirmation": "Confirmación",
+  "Confirmation": "¿Está seguro?",
   "Is_working_on_it": "{{name}} está trabajando en esto",
   "Work_on_it": "Yo estoy trabajando en esto",
+  "Remove_work_on_it": "Quitar asignación de usuario",
   "Add_as_collectible": "Agregar como coleccionable",
   "Compact_display": "Presentación compacta",
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
   "Retainer_ventures": "Aventuras de sirviente",
+  "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
     "Workshops": "Talleres",
     "Add_lists": "Agregar listas",
@@ -30,7 +47,8 @@
     "Created_by": "Creado por {{name}}",
     "Share_link_copied": "Vínculo para compartir taller copiado",
     "Not_found": "Taller no encontrado o no tiene acceso a él",
-    "Shared_workshops": "Talleres compartidos contigo"
+    "Shared_workshops": "Talleres compartidos contigo",
+    "Rename": "Renombrar taller"
   },
   "ABOUT": {
     "title": "Acerca de",
@@ -49,27 +67,45 @@
   "Hide_if_empty": "Esconder si está vacío",
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
+  "Ephemeral_tag": "efímero",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
   "Public_lists": "Listas Comunitarias",
+  "Your_public_lists": "Sus listas comunitarias",
   "Public_list": "Lista Comunitaria",
   "Profile": "Perfil",
   "X_for_total": "{{amount}} para el total",
+  "COMMUNITY_LISTS": {
+    "Tags_filter_placeholder": "Filtrar usando etiquetas",
+    "Tags_filter_reset": "Quitar filtro de etiquetas",
+    "Name_filter_placeholder": "Filtrar usando nombre",
+    "No_lists_matching": "No hay listas que coincidan con sus filtros"
+  },
   "COMMON": {
     "Save": "Guardar",
     "Reset": "Reiniciar",
     "Total": "Total",
     "User_id": "ID de usuario",
     "Open_url": "Abrir enlace de Teamcraft",
-    "Open_url_placeholder": "Enlace de Teamcraft"
+    "Open_url_placeholder": "Enlace de Teamcraft",
+    "Select": "Seleccione",
+    "Anonymous": "Anónimo",
+    "Warning": "Advertencia",
+    "Success": "Éxito",
+    "Copy_to_clipboard": "Copiar al portapapeles"
   },
   "ALARMS": {
     "No_alarm": "No hay alarmas activas",
     "Add_alarm": "Agregar alarma",
     "Alarm_created": "Alarma creada",
+    "Alarms_created": "{{amount}} alarmas creadas",
     "Alarm_already_created": "La alarma ya existe",
     "Custom_sound": "Sonido de alarma personalizado",
-    "New_group": "Nuevo grupo de alarmas"
+    "New_group": "Nuevo grupo de alarmas",
+    "Confirm_group_delete": "¿Está seguro de que quiere borrar este grupo?",
+    "Add_note": "Agregar una nota",
+    "Volume": "Volumen",
+    "Macro_copied": "Macro copiada al portapapeles"
   },
   "Item_name": "Nombre del artículo",
   "No_items_found": "Artículo no encontrado",
@@ -102,8 +138,6 @@
   "Check_all": "Seleccionar todos",
   "Uncheck_all": "Deseleccionar todos",
   "Level": "Nivel",
-  "auth/credential-already-in-use": "Esta cuenta ya está en uso",
-  "auth/email-already-in-use": "Este correo electrónico ya está en uso",
   "Registration": "Registro",
   "Google_register": "Registrar con Google",
   "Facebook_register": "Registrar con Facebook",
@@ -116,7 +150,7 @@
   "Submit": "Enviar",
   "Invalid_credentials": "Credenciales Inválidas",
   "Verification_mail_sent": "Correo de Verificación enviado, favor de checar correo electrónico",
-  "Not_verified": "Tu correo electrónico aún no ha sido verificado, favor de checar correo electrónico",
+  "Not_verified": "No verificado",
   "Lodestone_already_used": "Este personaje ya está en uso",
   "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y activar más características como filtro adaptable",
   "Game_Term/DoH": "Discípulos de la Mano",
@@ -125,7 +159,7 @@
   "Upgrade_list": "Recrear listas con la última actualización de la aplicación",
   "List_recreated": "Lista recreada apropiadamente",
   "List_popup_title": "Regenerando la lista, por favor espere",
-  "List_popup_p": "Esto debería ser rápido, aquí hay un gif para esperar un rato",
+  "Please wait": "",
   "Not_own_list_outdated": "Esta lista está desactualizada, por favor pídale al dueño que la regenere",
   "Own_list_outdated_before_button": "Esta lista está desactualizada, por favor regenérela usando ",
   "Own_list_outdated_after_button": "botón",
@@ -138,9 +172,10 @@
   "filters/craft_lvl": "Nivel de la receta",
   "filters/worn_by": "Usado por",
   "filters/crafted_by": "Creado por:",
+  "filters/item_category": "Tipo de artículo",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
-  "Recipe_Added": "{{itemname}} agregado a la lista {{listname}}",
-  "Recipes_Added": "Resultados agregados a la lista {{listname}}",
+  "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
+  "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
   "Character_name": "Nombre del Personaje",
   "Character_informations": "Información del personaje",
   "Server_name": "Nombre del Servidor",
@@ -169,7 +204,8 @@
   "Email_sent": "Un correo electrónico ha sido enviado con instrucciones para cambiar su contraseña.",
   "ALARM": {
     "Spawned": "¡{{itemName}} va a aparecer!",
-    "See_on_map": "Ubicación"
+    "See_on_map": "Ubicación",
+    "Note": "Nota"
   },
   "Pricing_mode": "Modo precios",
   "Back_to_list": "Regresar a la lista",
@@ -200,7 +236,10 @@
     "theme": "Tema",
     "ffxivcrafting_display": "Cantidades estilo FFXIVcrafting.com",
     "Simulator_link_base": "Vínculo a simulador",
-    "Always_on_top": "Siempre arriba"
+    "Always_on_top": "Siempre arriba",
+    "Check_for_update": "Buscar actualizaciones",
+    "Downloading_update": "Descargando actualización",
+    "No_update_available": "No hay actualización disponible"
   },
   "PROFILE": {
     "Masterbooks": "Libros Maestros",
@@ -218,6 +257,7 @@
     "Save_for_all": "Guardar para todos",
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "VERIFICATION": {
+      "Title": "Validación de perfil",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" en la biografia de su perfil de Lodestone y haga clic en el botón de abajo.",
       "Validate": "Validar"
     },
@@ -229,9 +269,14 @@
   },
   "LISTS": {
     "Regenerate_all": "Regenerar todas las listas",
+    "Regenerated_all": "Sus listas están actualizadas",
     "Merge_lists": "Mezclar listas",
+    "Lists_merged": "¡Listas mezcladas con éxito!",
     "Shared_lists": "Listas compartidas con usted",
     "Add_selection": "Agregar selección a la lista",
+    "Your_lists": "Sus listas",
+    "Outdated_tag": "Desactualizado",
+    "No_lists": "No tiene listas",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
@@ -247,10 +292,15 @@
     }
   },
   "LIST": {
+    "Regenerate": "Actualizar lista a la última versión de Teamcraft",
+    "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
     "Copy_as_text": "Copiar como texto",
+    "Copied_as_text": "Contenido copiado en el portapapeles",
     "Total_price": "Total de compras (gil y otras monedas)",
+    "Add_all_alarms": "Agregar todas las alarmas de esta lista",
+    "History": "Historial",
     "BUTTONS": {
       "Add_link_description": "Crear un vínculo personalizado para esta lista",
       "Create_template_description": "Crear un vínculo a una plantilla de esta lista, se creará una copia de esta lista para quien acceda a este vínculo",
@@ -280,7 +330,8 @@
       "Import_string": "Código de importación de diseño",
       "Import_string_copied": "¡Código de importación de diseño copiado!",
       "Layout_name": "Nombre del diseño",
-      "Invalid_import": "Código de importación invalido"
+      "Invalid_import": "Código de importación invalido",
+      "Global_options": "Opciones generales"
     },
     "LAYOUT": {
       "Filter": "Filtro",
@@ -330,6 +381,7 @@
     "CASTER": "Conjurador",
     "CRAFTER": "Artesano",
     "GATHERER": "Recolector",
+    "SCRIPTS": "Scripts",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -392,7 +444,8 @@
   "GATHERING_LOCATIONS": {
     "Title": "Recolección de artículos",
     "No_items": "No se encontró nodo de recolección",
-    "Gathering_name": "Ingrese nombre del artículo"
+    "Gathering_name": "Ingrese nombre del artículo",
+    "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -420,6 +473,7 @@
     "Everyone": "Todos",
     "You": "Usted",
     "Add_new": "Agregar usuario",
+    "Add_new_fc": "Agregar un Gremio Independiente (FC)",
     "Placeholder": "Correo electrónico o ID de Usuario",
     "Bind_free_company": "Ligar algunos permisos a su Gremio Independiente (FC)",
     "User_not_found": "Usuario no encontrado",
@@ -551,7 +605,8 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Precio del vendedor"
+    "From_vendor": "Precio del vendedor",
+    "Expect_to_sell_everything": "Asumir que se vende todo"
   },
   "COMMISSION_BOARD": {
     "Title": "Tablero de comisiones",
@@ -560,6 +615,7 @@
     "My_requests": "Mis solicitudes",
     "My_crafts": "Mis comisiones en progreso",
     "History": "Archivadas",
+    "Server_history": "Historial del servidor",
     "No_commissions": "No hay comisiones abiertas en tu servidor",
     "Chat_warning": "Recuerde nunca dar sus credenciales en el chat, nadie debería de preguntarselas. El uso de esta plataforma de chat para RMT (intercambio con dinero real) resultará en la suspención permanenete del sitio y el caso enviado a Square Enix",
     "Chat_placeholder": "Mandar mensaje nuevo",
@@ -584,6 +640,7 @@
     "Apply": "Aplicar para esta comisión",
     "Contact_buyer": "Contactar al autor",
     "No_history": "No tiene ninguna comisión archivada",
+    "No_server_history": "El servidor no tiene ninguna comisión archivada",
     "No_crafts": "No tiene ninguna comisión en progreso",
     "No_requests": "No tiene ninguna solicitud de comisión",
     "Rate_user": "Calificación del usuario",
@@ -593,6 +650,7 @@
     "Withdraw": "Abandonar la comisión",
     "Confirm_withdraw": "¿Está seguro que quiere abandonar la comisión? Esto no se puede deshacer.",
     "New_things_notification": "Hay nuevas cosas que revisar en el tablero de comisiones",
+    "Negotiable_price": "Negociable",
     "STATUS": {
       "CREATED": "Abierta",
       "ACCEPTED": "En Progreso",
@@ -602,11 +660,62 @@
       "Crafting": "Elaboración",
       "Gathering": "Recolección",
       "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos",
-      "FILTERS": {
-        "Min_price": "Precio mínimo",
-        "Max_price": "Precio máximo"
-      }
+      "Only_craft": "Materiales incluidos"
+    },
+    "FILTERS": {
+      "Min_price": "Precio mínimo",
+      "Max_price": "Precio máximo"
     }
+  },
+  "LEVEQUESTS": {
+    "Title": "Misiones Leve",
+    "Levequest_name": "Nombre de misión leve",
+    "No_results": "No se encontraron misiones leve",
+    "Add_to_list": "Agregar artículos de esta misión leve a la lista",
+    "Quantity": "Cantidad",
+    "All_deliveries": "Todas las {{value}} entregas"
+  },
+  "NOTIFICATIONS": {
+    "Title": "Notificaciones",
+    "List_commented": "{{userName}} comentó en la lista {{listName}}: \"{{content}}\"",
+    "Mark_all_as_read": "Marcar todo como leído"
+  },
+  "TEAMS": {
+    "Title": "Equipos",
+    "Leader": "Líder",
+    "Member": "Miembro",
+    "Create_team": "Crear un equipo",
+    "Create_invite_one_day": "Crear una nueva invitación (expira en 1 día)",
+    "Create_invite_infinite": "Crear una nueva invitación (permanente)",
+    "No_teams": "No hay equipos",
+    "Invites": "Invitaciones",
+    "Assign_list": "Asignar esta lista a un equipo",
+    "Assign_team_member": "Asignar a un miembro del equipo",
+    "Detach_team": "Desasignar equipo",
+    "Delete_confirmation": "¿Está seguro de que quiere borrar este equipo?",
+    "Invite_expires": "Expira",
+    "Invite_error": "Invitación al equipo no encontrada o expirada.",
+    "Invite_link_copied": "Liga de invitación al equipo copiada al portapapeles",
+    "No_anonymous_join": "Debe crear una cuenta para poder unirse a un equipo",
+    "Already_in_team": "Usted ya está en este equipo",
+    "NOTIFICATIONS": {
+      "Item_added": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) se han añadido a la lista [{{listName}}] ({{listUrl}})",
+      "Item_removed": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) se han quitado de la lista [{{listName}}] ({{listUrl}})",
+      "List_progress": "[{{characterName}}] ({{memberProfileUrl}}) marcó {{amount}} [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) como completados en la lista [[{{listName}}] ({{listUrl}})",
+      "Webhook_setup_complete": "Este canal ha sido configurado como canal de seguimiento para el equipo \"{{teamName}}\"",
+      "List_added_notification": "La lista [{{listName}}] ({{listUrl}}) ha sido asignada al equipo \"{{teamName}}\"",
+      "List_removed_notification": "La lista [{{listName}}] ({{listUrl}}) ha sido desasignada del equipo \"{{teamName}}\"",
+      "Member_joined": "¡[{{memberName}}]({{memberProfileUrl}}) se ha unido al equipo \"{{teamName}}\"!",
+      "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) ha sido expulsado del equipo \"{{teamName}}\"",
+      "Name_changed": "Equipo \"{{oldName}}\" renombrado a \"{{newName}}\"",
+      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ha sido asignado a [{{memberName}}]({{memberProfileUrl}}) en la lista [{{listName}}]({{listUrl}})"
+    }
+  },
+  "MARKETBOARD": {
+    "Title": "Información del mercado",
+    "Amount": "Cantidad",
+    "HQ": "HQ",
+    "Total_price": "Precio total",
+    "Unit_price": "Precio unitario"
   }
 }
