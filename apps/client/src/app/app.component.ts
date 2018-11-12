@@ -30,7 +30,7 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
-  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
+  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es'];
 
   locale: string;
 
@@ -100,6 +100,9 @@ export class AppComponent implements OnInit {
     const lang = localStorage.getItem('locale');
     if (lang !== null) {
       this.use(lang);
+    } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
+      // Specific implementation for BR.
+      this.use('br');
     } else {
       this.use(this.translate.getBrowserLang());
     }
