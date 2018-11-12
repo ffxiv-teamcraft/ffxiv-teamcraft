@@ -439,7 +439,12 @@
   "NAVIGATION": {
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
-    "Gather_x": "Récolter {{amount}}"
+    "STEP": {
+      "Gathering": "",
+      "Hunting": "",
+      "Vendor": "",
+      "Trade": ""
+    }
   },
   "GATHERING_LOCATIONS": {
     "Title": "Récoltes",
