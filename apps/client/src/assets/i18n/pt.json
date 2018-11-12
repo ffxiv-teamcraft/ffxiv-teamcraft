@@ -10,7 +10,7 @@
     "auth/wrong-password": "O email ou a password está errada"
   },
   "ITEMS": {
-    "Title": "Itens",
+    "Title": "Pesquisa",
     "No_match": "Sem itens encontrados",
     "Item_name": "Nome do item",
     "Only_recipes": "Só fórmulas",
@@ -27,7 +27,7 @@
   "Isearch_copied": "/isearch {{itemname}} copiado ao clipboard",
   "Required_for_final_craft": "{{amount}} necessário para os itens finais",
   "Compact_sidebar_toggle": "Ativar compactação da barra lateral",
-  "Confirmation": "Confirmação",
+  "Confirmation": "Tem a certeza?",
   "Is_working_on_it": "{{name}} está trabalhando nisso",
   "Work_on_it": "Estou trabalhando nisso",
   "Remove_work_on_it": "Remover a atribuição do utilizador",
