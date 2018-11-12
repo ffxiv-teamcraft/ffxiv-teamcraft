@@ -120,11 +120,11 @@ export class ItemRowComponent implements OnInit {
     this.listsFacade.updateItem(this.item, this.finalItem);
   }
 
-  assignTeamMember(team: Team, memberId: string, memberName: string): void {
+  assignTeamMember(team: Team, memberId: string): void {
     this.setWorkingOnIt(memberId);
     if (team.webhook !== undefined) {
       this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
-        this.discordWebhookService.notifyUserAssignment(team, memberName, memberId, this.item.id, list);
+        this.discordWebhookService.notifyUserAssignment(team, memberId, this.item.id, list);
       });
     }
   }

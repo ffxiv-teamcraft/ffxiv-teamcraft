@@ -63,7 +63,7 @@ export class TeamsComponent {
 
   testHook(team: Team): void {
     if (team.webhook !== undefined) {
-      this.discordWebhook.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Webhook_setup_complete', { teamName: team.name });
+      this.discordWebhook.sendMessage(team, 'TEAMS.NOTIFICATIONS.Webhook_setup_complete', { teamName: team.name });
     }
   }
 
@@ -77,7 +77,7 @@ export class TeamsComponent {
       filter(name => name !== undefined),
       map(name => {
         if (team.webhook !== undefined) {
-          this.discordWebhook.sendMessage(team.webhook, team.language, 'TEAMS.NOTIFICATIONS.Name_changed', {
+          this.discordWebhook.sendMessage(team, 'TEAMS.NOTIFICATIONS.Name_changed', {
             oldName: team.name,
             newName: name
           });
@@ -88,10 +88,10 @@ export class TeamsComponent {
     ).subscribe();
   }
 
-  removeMember(team: Team, memberId: string, memberName: string): void {
+  removeMember(team: Team, memberId: string): void {
     team.members = team.members.filter(member => member !== memberId);
     if (team.webhook !== undefined) {
-      this.discordWebhook.notifyMemberKicked(team, memberName, memberId);
+      this.discordWebhook.notifyMemberKicked(team, memberId);
     }
     this.updateTeam(team);
   }

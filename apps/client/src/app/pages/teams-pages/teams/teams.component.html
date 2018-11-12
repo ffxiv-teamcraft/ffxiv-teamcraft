@@ -90,7 +90,7 @@
                     <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
                             nz-popconfirm nzSize="small" *ngIf="(userId$ | async) === team.leader"
                             [nzTitle]="'Confirmation' | translate"
-                            (nzOnConfirm)="removeMember(team, member, characterName)">
+                            (nzOnConfirm)="removeMember(team, member)">
                       <i nz-icon type="delete"></i>
                     </button>
                   </ng-template>
