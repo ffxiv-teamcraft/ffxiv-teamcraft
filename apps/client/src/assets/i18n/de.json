@@ -159,7 +159,7 @@
   "Upgrade_list": "Liste mit aktuellem App-Update regenerieren",
   "List_recreated": "Liste korrekt regeneriert",
   "List_popup_title": "Regeneriere die Liste, bitte warten",
-  "List_popup_p": "Das sollte schnell gehen, hier hast du ein GIF um die Zeit zu verkürzen",
+  "Please wait": "",
   "Not_own_list_outdated": "Diese Liste ist nicht mehr aktuell, bitte den Ersteller sie zu erneuern",
   "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
   "Own_list_outdated_after_button": "Schaltfläche",
