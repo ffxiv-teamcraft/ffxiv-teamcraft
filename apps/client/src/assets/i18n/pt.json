@@ -159,7 +159,7 @@
   "Upgrade_list": "Recria a lista com a última versão da aplicação",
   "List_recreated": "Lista recriada com sucesso",
   "List_popup_title": "Gerando a lista novamente, por favor aguarde",
-  "List_popup_p": "Isso deve ser rápido, aqui está um gif enquanto você espera",
+  "Please wait": "",
   "Not_own_list_outdated": "Essa lista é antiga, por favor peça para o dono gerá-la novamente",
   "Own_list_outdated_before_button": "Essa lista é antiga, por favor crie ela novamente usando",
   "Own_list_outdated_after_button": "botão",
