@@ -36,7 +36,8 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
     MapComponent
   ],
   entryComponents: [
-    MapComponent
+    MapComponent,
+    NavigationMapComponent
   ]
 })
 export class MapModule {

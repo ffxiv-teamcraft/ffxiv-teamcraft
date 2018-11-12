@@ -439,7 +439,12 @@
   "NAVIGATION": {
     "Title": "Optimized navigation route",
     "Steps": "Steps",
-    "Gather_x": "Gather {{amount}}"
+    "STEP": {
+      "Gathering": "Gather {{amount}}",
+      "Hunting": "Drop {{amount}}",
+      "Vendor": "Buy {{amount}}",
+      "Trade": "Trade {{amount}}"
+    }
   },
   "GATHERING_LOCATIONS": {
     "Title": "Gathering items",
@@ -698,7 +703,7 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
-    "NOTIFICATIONS":{
+    "NOTIFICATIONS": {
       "Item_added": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been added to list [{{listName}}]({{listUrl}})",
       "Item_removed": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been removed from list [{{listName}}]({{listUrl}})",
       "List_progress": "[{{characterName}}]({{memberProfileUrl}}) checked {{amount}} [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) as done on list [{{listName}}]({{listUrl}})",
