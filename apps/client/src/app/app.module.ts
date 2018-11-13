@@ -39,6 +39,7 @@ import { WorkshopModule } from './modules/workshop/workshop.module';
 import { SettingsModule } from './modules/settings/settings.module';
 import { UserAvatarModule } from './modules/user-avatar/user-avatar.module';
 import { TeamsModule } from './modules/teams/teams.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
 
 registerLocaleData(en);
 
@@ -64,7 +65,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         nzBottom: '24px',
         nzPlacement: 'topRight'
       }
-    },
+    }
   ],
   imports: [
     FlexLayoutModule,
@@ -96,6 +97,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ListModule,
     WorkshopModule,
     TeamsModule,
+    NotificationsModule,
     SettingsModule,
     UserAvatarModule,
 

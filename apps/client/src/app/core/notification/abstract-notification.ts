@@ -3,23 +3,27 @@ import { Parent } from '@kaiu/serializer';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
+import { ForeignKey } from '../database/relational/foreign-key';
+import { TeamcraftUser } from '../../model/user/teamcraft-user';
+import { DataModel } from '../database/storage/data-model';
 
 @Parent({
   allowSelf: false,
   discriminatorField: 'type'
 })
-export abstract class AbstractNotification {
+export abstract class AbstractNotification extends DataModel {
 
-  public readonly date: number;
+  public date: number;
 
   public read = false;
 
   public alerted = false;
 
-  public isQuestion = false;
+  @ForeignKey(TeamcraftUser)
+  public targetId: string;
 
   protected constructor(public readonly type: NotificationType) {
-    this.date = Date.now();
+    super();
   }
 
   public abstract getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string;

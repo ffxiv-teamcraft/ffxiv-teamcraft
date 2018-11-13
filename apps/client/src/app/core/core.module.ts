@@ -9,10 +9,6 @@ import { LocalizedDataService } from './data/localized-data.service';
 import { MatButtonModule, MatDialogModule } from '@angular/material';
 import { PushNotificationsModule } from 'ng-push';
 import { AbstractNotification } from './notification/abstract-notification';
-import { ListProgressNotification } from '../model/notification/list-progress-notification';
-import { TeamInviteNotification } from '../model/notification/team-invite-notification';
-import { TeamExclusionNotification } from '../model/notification/team-exclusion-notification';
-import { ItemAssignedNotification } from '../model/notification/item-assigned-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { UserService } from './database/user.service';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
@@ -40,10 +36,6 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
       {
         parent: AbstractNotification,
         children: {
-          LIST_PROGRESS: ListProgressNotification,
-          TEAM_INVITE: TeamInviteNotification,
-          TEAM_EXCLUSION: TeamExclusionNotification,
-          ITEM_ASSIGNED: ItemAssignedNotification,
           LIST_COMMENT: ListCommentNotification
         }
       }
@@ -86,12 +78,12 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
   ]
 })
 export class CoreModule {
-  static forRoot():ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
       providers: [
         GarlandToolsService
       ]
-    }
+    };
   }
 }
