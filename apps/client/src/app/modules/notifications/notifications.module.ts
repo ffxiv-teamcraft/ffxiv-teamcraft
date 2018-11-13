@@ -9,11 +9,13 @@ import {
 import { NotificationsEffects } from './+state/notifications.effects';
 import { NotificationsFacade } from './+state/notifications.facade';
 import { CoreModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    TranslateModule,
 
     StoreModule.forFeature('notifications', notificationsReducer, {
       initialState: notificationsInitialState

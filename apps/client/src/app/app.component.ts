@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
-  public notifications$ = this.notificationsFacade.allNotifications$;
+  public notifications$ = this.notificationsFacade.notificationsDisplay$;
 
   public loggedIn$: Observable<boolean>;
 

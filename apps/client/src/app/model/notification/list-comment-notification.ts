@@ -19,7 +19,7 @@ export class ListCommentNotification extends AbstractNotification {
   }
 
   getIcon(): string {
-    return 'add_comment';
+    return 'form';
   }
 
   getTargetRoute(): string[] {
