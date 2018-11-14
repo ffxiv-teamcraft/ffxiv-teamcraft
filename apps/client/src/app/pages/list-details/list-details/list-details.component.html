@@ -46,7 +46,7 @@
                 [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
           <i nz-icon type="tags-o"></i>
         </button>
-        <button nz-button nzType="primary" nzShape="circle" nzDisabled (click)="pricingMode = true" nz-tooltip
+        <button nz-button nzType="primary" nzShape="circle" disabled (click)="pricingMode = true" nz-tooltip
                 [nzTitle]="'Pricing_mode' | translate" [disabled]="(permissionLevel$ | async) < 40">
           <i nz-icon type="wallet"></i>
         </button>

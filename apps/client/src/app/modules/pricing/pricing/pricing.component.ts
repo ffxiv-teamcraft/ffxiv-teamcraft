@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
@@ -6,7 +6,7 @@ import { ObservableMedia } from '@angular/flex-layout';
 import { SettingsService } from '../../settings/settings.service';
 import { Observable } from 'rxjs';
 import { ListsFacade } from '../../list/+state/lists.facade';
-import { tap } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pricing',
@@ -17,10 +17,16 @@ export class PricingComponent {
 
   list$: Observable<List>;
 
+  items$: Observable<ListRow[]>;
+
+  preCrafts$: Observable<ListRow[]>;
+
   @Output()
   close: EventEmitter<void> = new EventEmitter<void>();
 
   private costs: { [index: number]: number } = {};
+
+  private spendingTotal = 0;
 
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade) {
@@ -32,7 +38,17 @@ export class PricingComponent {
         list.finalItems.forEach(item => {
           this.costs[item.id] = this._getCraftCost(item, list);
         });
-      })
+        this.spendingTotal = this._getSpendingTotal(list);
+      }),
+      shareReplay(1)
+    );
+
+    this.items$ = this.list$.pipe(
+      map(list => list.items.filter(i => i.craftedBy === undefined || i.craftedBy.length === 0))
+    );
+
+    this.preCrafts$ = this.list$.pipe(
+      map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0))
     );
   }
 
@@ -49,7 +65,11 @@ export class PricingComponent {
    *
    * @returns {number}
    */
-  getSpendingTotal(list: List): number {
+  getSpendingTotal(): number {
+    return this.spendingTotal;
+  }
+
+  private _getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
       if (this.settings.expectToSellEverything) {
@@ -80,7 +100,7 @@ export class PricingComponent {
     if (!row.usePrice) {
       return 0;
     }
-    return this.costs[row.id];
+    return this.costs[row.id] || 0;
   }
 
   private _getCraftCost(row: ListRow, list: List): number {
@@ -107,10 +127,6 @@ export class PricingComponent {
    * @returns {number}
    */
   getBenefits(list: List): number {
-    return this.getTotalEarnings(list.finalItems, list) - this.getSpendingTotal(list);
-  }
-
-  public trackByItemFn(index: number, item: ListRow): number {
-    return item.id;
+    return this.getTotalEarnings(list.finalItems, list) - this.getSpendingTotal();
   }
 }

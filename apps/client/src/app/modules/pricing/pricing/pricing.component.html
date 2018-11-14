@@ -14,13 +14,22 @@
 
   <nz-card>
     <nz-card-meta [nzTitle]="'Spending' | translate"
-                  nzDescription="{{getSpendingTotal(list) | number:'1.0-0'}} gil"></nz-card-meta>
+                  nzDescription="{{getSpendingTotal() | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse>
-      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'TODO' | translate" [nzActive]="true">
-        <nz-list [nzDataSource]="list.items" [nzRenderItem]="pricingRow">
+      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'TODO' | translate">
+        <nz-list [nzDataSource]="items$ | async" [nzRenderItem]="pricingRow" nzSize="small">
           <ng-template #pricingRow let-row>
             <app-pricing-row [item]="row" [listId]="list.$key"
-                             [preCraft]="row.craftedBy && row.craftedBy.length > 0"
+                             (save)="save(list)"></app-pricing-row>
+          </ng-template>
+        </nz-list>
+      </nz-collapse-panel>
+
+      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'TODO' | translate">
+        <nz-list [nzDataSource]="preCrafts$ | async" [nzRenderItem]="pricingRow" nzSize="small">
+          <ng-template #pricingRow let-row>
+            <app-pricing-row [item]="row" [listId]="list.$key"
+                             [preCraft]="true"
                              (save)="save(list)"></app-pricing-row>
           </ng-template>
         </nz-list>
@@ -33,7 +42,7 @@
                   nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse>
       <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="'TODO' | translate">
-        <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="earningRow">
+        <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="earningRow" nzSize="small">
           <ng-template #earningRow let-row>
             <app-pricing-row [item]="row" [listId]="list.$key"
                              [craftCost]="getCraftCost(row)"

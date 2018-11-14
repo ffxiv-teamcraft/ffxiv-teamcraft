@@ -1,10 +1,11 @@
-<nz-list-item [class.odd]="odd" class="list-item" [class.ignored]="item.usePrice" [nzContent]="content">
+<nz-list-item class="list-item" [class.ignored]="!item.usePrice" [nzContent]="content">
   <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="title">
     <ng-template #avatar>
-      <app-item-icon [itemId]="item.id"></app-item-icon>
+      <app-item-icon [itemId]="item.id" [icon]="item.icon" [width]="32"></app-item-icon>
     </ng-template>
     <ng-template #title>
       <div fxLayout="row" fxLayoutAlign="flex-start center">
+        <label nz-checkbox [(ngModel)]="item.usePrice" (change)="save.emit()"></label>
         {{item.id | itemName | i18n}}
         <i *ngIf="_craftCost !== undefined"
            nz-tooltip
@@ -19,29 +20,29 @@
         <app-marketboard-icon [itemId]="item.id"></app-marketboard-icon>
       </div>
     </ng-template>
-    <label nz-checkbox [(ngModel)]="item.usePrice" (change)="save.emit()"></label>
-    <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></label>
   </nz-list-item-meta>
 
   <ng-template #content>
+    <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">
-        <nz-input-group nzCompact [nzAddOnBefore]="'NQ'">
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'NQ'">
           <input nz-input class="price" type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
                  [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
         </nz-input-group>
-        <nz-input-group nzCompact [nzAddOnBefore]="'x'">
-          <input nz-input class="amount" type="number" min="0" [max]="item.amount" [readonly]="isCrystal()"
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'x'">
+          <input nz-input class="amount" type="number" min="0" [max]="item.amount"
+                 [readonly]="isCrystal()"
                  [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()">
         </nz-input-group>
       </div>
       <div *ngIf="!isCrystal()" fxLayout="row">
-        <nz-input-group nzCompact [nzAddOnBefore]="'HQ'">
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'HQ'">
           <input nz-input class="price" type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
                  [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
         </nz-input-group>
-        <nz-input-group nzCompact [nzAddOnBefore]="'x'">
-          <input nz-input class="amount" type="number" lang="en-150" min="0" [max]="item.amount"
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'x'">
+          <input nz-input  class="amount" type="number" lang="en-150" min="0" [max]="item.amount"
                  [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()">
         </nz-input-group>
       </div>
