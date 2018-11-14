@@ -1,30 +1,43 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
-import { ListService } from '../../list/list.service';
 import { SettingsService } from '../../settings/settings.service';
+import { Observable } from 'rxjs';
+import { ListsFacade } from '../../list/+state/lists.facade';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
-  styleUrls: ['./pricing.component.scss']
+  styleUrls: ['./pricing.component.less']
 })
 export class PricingComponent {
 
-  @Input()
-  list: List;
+  list$: Observable<List>;
 
   @Output()
   close: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private pricingService: PricingService, private media: ObservableMedia, private listService: ListService,
-              public settings: SettingsService) {
+  private costs: { [index: number]: number } = {};
+
+  constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
+              private listsFacade: ListsFacade) {
+    this.list$ = this.listsFacade.selectedList$.pipe(
+      tap(list => {
+        list.items.forEach(item => {
+          this.costs[item.id] = this._getCraftCost(item, list);
+        });
+        list.finalItems.forEach(item => {
+          this.costs[item.id] = this._getCraftCost(item, list);
+        });
+      })
+    );
   }
 
-  public save(): void {
-    this.listService.set(this.list.$key, this.list).subscribe();
+  public save(list: List): void {
+    this.listsFacade.updateList(list);
   }
 
   public isMobile(): boolean {
@@ -36,8 +49,8 @@ export class PricingComponent {
    *
    * @returns {number}
    */
-  getSpendingTotal(): number {
-    return this.list.finalItems.reduce((total, item) => {
+  getSpendingTotal(list: List): number {
+    return list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
       if (this.settings.expectToSellEverything) {
         // If we expect to sell everything, price based on amount of items crafted
@@ -50,10 +63,10 @@ export class PricingComponent {
     }, 0);
   }
 
-  getTotalEarnings(rows: ListRow[]): number {
+  getTotalEarnings(rows: ListRow[], list: List): number {
     return rows.filter(row => row.usePrice).reduce((total, row) => {
       const price = this.pricingService.getEarnings(row);
-      const amount = this.pricingService.getAmount(this.list.$key, row, true);
+      const amount = this.pricingService.getAmount(list.$key, row, true);
       return total + amount.nq * price.nq + amount.hq * price.hq;
     }, 0);
   }
@@ -67,14 +80,18 @@ export class PricingComponent {
     if (!row.usePrice) {
       return 0;
     }
+    return this.costs[row.id];
+  }
+
+  private _getCraftCost(row: ListRow, list: List): number {
     // If that's a final item or the price is custom, no recursion.
     if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
       const prices = this.pricingService.getPrice(row);
-      const amounts = this.pricingService.getAmount(this.list.$key, row);
+      const amounts = this.pricingService.getAmount(list.$key, row);
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
     }
     return row.requires.reduce((total, requirement) => {
-      const requirementRow = this.list.getItemById(requirement.id, true);
+      const requirementRow = list.getItemById(requirement.id, true);
       if (this.settings.expectToSellEverything) {
         // If you expect to sell everything, just divide by yield.
         return total + (this.getCraftCost(requirementRow) / row.yield) * requirement.amount;
@@ -89,8 +106,8 @@ export class PricingComponent {
    * Gets the final benefits made from the whole list.
    * @returns {number}
    */
-  getBenefits(): number {
-    return this.getTotalEarnings(this.list.finalItems) - this.getSpendingTotal();
+  getBenefits(list: List): number {
+    return this.getTotalEarnings(list.finalItems, list) - this.getSpendingTotal(list);
   }
 
   public trackByItemFn(index: number, item: ListRow): number {

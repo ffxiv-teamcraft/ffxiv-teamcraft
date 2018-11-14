@@ -50,6 +50,8 @@ export class ListDetailsComponent implements OnInit {
 
   public outDated$: Observable<boolean>;
 
+  public pricingMode = false;
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,

@@ -6,11 +6,12 @@ import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-pricing-row',
   templateUrl: './pricing-row.component.html',
-  styleUrls: ['./pricing-row.component.scss']
+  styleUrls: ['./pricing-row.component.less']
 })
 export class PricingRowComponent implements OnInit {
 
@@ -31,8 +32,8 @@ export class PricingRowComponent implements OnInit {
   @Output()
   save: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private pricingService: PricingService, private media: ObservableMedia, private snackBar: MatSnackBar,
-              private translator: TranslateService) {
+  constructor(private pricingService: PricingService, private media: ObservableMedia,
+              private message: NzMessageService, private translator: TranslateService) {
   }
 
   public _craftCost: number;
@@ -72,14 +73,8 @@ export class PricingRowComponent implements OnInit {
   }
 
   public afterNameCopy(name: string): void {
-    this.snackBar.open(
-      this.translator.instant('Item_name_copied',
-        { itemname: name }),
-      '',
-      {
-        duration: 2000,
-        panelClass: ['snack']
-      }
+    this.message.success(
+      this.translator.instant('Item_name_copied', { itemname: name })
     );
   }
 
