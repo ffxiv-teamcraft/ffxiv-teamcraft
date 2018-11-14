@@ -60,29 +60,26 @@ export class DiscordWebhookService {
     });
   }
 
-  notifyItemAddition(itemId: number, amount: number, list: List, team: Team): void {
+  notifyItemAddition(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
     const itemName = this.l12n.getItem(itemId);
-    // TODO: Miu fix these
-    const itemIcon = undefined;
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
       amount: amount,
       itemName: itemName[team.language] || itemName.en,
       itemId: itemId,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, itemIcon);
+    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
   }
 
-  notifyItemDeletion(itemId: number, amount: number, list: List, team: Team): void {
+  notifyItemDeletion(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
     const itemName = this.l12n.getItem(itemId);
-    const itemIcon = undefined;
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
       amount: amount,
       itemName: itemName[team.language] || itemName.en,
       itemId: itemId,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, itemIcon);
+    }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, amount: number, itemId: number): void {
@@ -105,7 +102,6 @@ export class DiscordWebhookService {
   }
 
   notifyMemberJoined(team: Team, memberId: string): void {
-    const memberImage = undefined;
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {

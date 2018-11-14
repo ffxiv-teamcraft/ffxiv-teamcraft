@@ -72,7 +72,7 @@ export class SearchComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
-      columns: ['ID','Name_de','Name_en','Name_fr','Name_ja'],
+      columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
     }).pipe(
       map(contentList => {
@@ -83,12 +83,12 @@ export class SearchComponent implements OnInit {
               en: result.Name_en,
               fr: result.Name_fr,
               de: result.Name_de,
-              ja: result.Name_ja,
+              ja: result.Name_ja
             }
-          }
-        })
+          };
+        });
       })
-    )
+    );
   }
 
   ngOnInit(): void {
@@ -246,11 +246,13 @@ export class SearchComponent implements OnInit {
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(this.listsFacade.myLists$.pipe(
-          map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key !== undefined)),
-          filter(l => l !== undefined),
-          first()
-        ), 1, 'Saving_in_database');
+        return this.progressService.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
       this.itemsAdded = items.length;

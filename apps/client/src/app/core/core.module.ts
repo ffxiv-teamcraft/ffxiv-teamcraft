@@ -68,7 +68,6 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
     EorzeanTimeService,
     HtmlToolsService,
     LinkToolsService,
-    CharacterService,
     DiscordWebhookService
   ],
   declarations: [
@@ -90,7 +89,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        GarlandToolsService
+        GarlandToolsService,
+        CharacterService
       ]
     }
   }

@@ -1,18 +1,17 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
-import { concat, Observable } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-
-
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import { DataExtractorService } from './data/data-extractor.service';
-import { filter, first, map, skip } from 'rxjs/operators';
+import { filter, first, map, skip, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
+import { Team } from '../../model/team/team';
 
 @Injectable()
 export class ListManagerService {
@@ -27,27 +26,28 @@ export class ListManagerService {
   }
 
   public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false, ignoreHooks = false): Observable<List> {
+    let team$ = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
-      this.teamsFacade.allTeams$
+      team$ = this.teamsFacade.allTeams$
         .pipe(
           map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
           filter(team => team !== undefined),
           first()
-        )
-        .subscribe(team => {
+        );
+    }
+    return combineLatest(team$, this.db.getItem(itemId))
+      .pipe(
+        tap(([team, itemData]) => {
           if (team && team.webhook !== undefined && amount !== 0) {
             if (amount > 0) {
-              this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+              this.discordWebhookService.notifyItemAddition(itemId, itemData.item.icon, amount, list, team);
             } else {
-              this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+              this.discordWebhookService.notifyItemDeletion(itemId, itemData.item.icon, Math.abs(amount), list, team);
             }
           }
-        });
-    }
-    return this.db.getItem(itemId)
-      .pipe(
-        map((data: ItemData) => {
+        }),
+        map(([, data]: [Team, ItemData]) => {
           const crafted = this.extractor.extractCraftedBy(+itemId, data);
           const addition = new List();
           let toAdd: ListRow;
