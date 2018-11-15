@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { Injectable } from '@angular/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { first, switchMap, map } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { Team } from '../../model/team/team';
 import { List } from '../../modules/list/model/list';
 import { LinkToolsService } from '../tools/link-tools.service';
@@ -23,9 +23,11 @@ export class DiscordWebhookService {
     this.i18n.getTranslation(contentKey, team.language, contentParams).pipe(
       first(),
       switchMap(description => {
-        const embed: any = { author: { name: team.name },
-                             color: DiscordWebhookService.COLOR,
-                             timestamp: new Date().toISOString() };
+        const embed: any = {
+          author: { name: team.name },
+          color: DiscordWebhookService.COLOR,
+          timestamp: new Date().toISOString()
+        };
 
         if (description !== undefined) {
           embed.description = description;
@@ -82,9 +84,8 @@ export class DiscordWebhookService {
     }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`);
   }
 
-  notifyItemChecked(team: Team, list: List, memberId: string, amount: number, itemId: number): void {
+  notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number): void {
     const itemName = this.l12n.getItem(itemId);
-    const itemIcon = undefined;
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {
@@ -96,7 +97,7 @@ export class DiscordWebhookService {
           itemId: itemId,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, itemIcon, character.character.Avatar);
+        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
       })
     ).subscribe();
   }
@@ -127,9 +128,8 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
-  notifyUserAssignment(team: Team, memberId: string, itemId: number, list: List): void {
+  notifyUserAssignment(team: Team, itemIcon: number, memberId: string, itemId: number, list: List): void {
     const itemName = this.l12n.getItem(itemId);
-    const itemIcon = undefined;
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {
@@ -140,7 +140,7 @@ export class DiscordWebhookService {
           itemId: itemId,
           listName: list.name,
           listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, itemIcon, character.character.Avatar);
+        }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
       })
     ).subscribe();
   }
