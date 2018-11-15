@@ -129,4 +129,8 @@ export class PricingComponent {
   getBenefits(list: List): number {
     return this.getTotalEarnings(list.finalItems, list) - this.getSpendingTotal();
   }
+
+  public trackByItemFn(index: number, item: ListRow): number {
+    return item.id;
+  }
 }

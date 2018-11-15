@@ -17,22 +17,14 @@
                   nzDescription="{{getSpendingTotal() | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse>
       <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'TODO' | translate">
-        <nz-list [nzDataSource]="items$ | async" [nzRenderItem]="pricingRow" nzSize="small">
-          <ng-template #pricingRow let-row>
-            <app-pricing-row [item]="row" [listId]="list.$key"
-                             (save)="save(list)"></app-pricing-row>
-          </ng-template>
-        </nz-list>
+        <app-pricing-row *ngFor="let row of items$ | async; trackBy: trackByItemFn" [item]="row" [listId]="list.$key"
+                         (save)="save(list)"></app-pricing-row>
       </nz-collapse-panel>
 
       <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'TODO' | translate">
-        <nz-list [nzDataSource]="preCrafts$ | async" [nzRenderItem]="pricingRow" nzSize="small">
-          <ng-template #pricingRow let-row>
-            <app-pricing-row [item]="row" [listId]="list.$key"
-                             [preCraft]="true"
-                             (save)="save(list)"></app-pricing-row>
-          </ng-template>
-        </nz-list>
+
+        <app-pricing-row *ngFor="let row of preCrafts$ | async; trackBy: trackByItemFn" [item]="row" [listId]="list.$key"
+                         [preCraft]="true" (save)="save(list)"></app-pricing-row>
       </nz-collapse-panel>
     </nz-collapse>
   </nz-card>
@@ -42,13 +34,9 @@
                   nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse>
       <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="'TODO' | translate">
-        <nz-list [nzDataSource]="list.finalItems" [nzRenderItem]="earningRow" nzSize="small">
-          <ng-template #earningRow let-row>
-            <app-pricing-row [item]="row" [listId]="list.$key"
-                             [craftCost]="getCraftCost(row)"
-                             (save)="save(list)" [earning]="true"></app-pricing-row>
-          </ng-template>
-        </nz-list>
+        <app-pricing-row *ngFor="let row of list.finalItems; trackBy: trackByItemFn" [item]="row" [listId]="list.$key"
+                         [craftCost]="getCraftCost(row)"
+                         (save)="save(list)" [earning]="true"></app-pricing-row>
       </nz-collapse-panel>
     </nz-collapse>
   </nz-card>

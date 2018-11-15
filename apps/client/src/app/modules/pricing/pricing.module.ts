@@ -12,6 +12,7 @@ import { ListModule } from '../list/list.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { MarketboardModule } from '../marketboard/marketboard.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { MarketboardModule } from '../marketboard/marketboard.module';
     ItemIconModule,
     MarketboardModule,
     NgZorroAntdModule,
+    ClipboardModule,
 
     ListModule
   ],
