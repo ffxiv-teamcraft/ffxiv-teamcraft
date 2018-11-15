@@ -440,10 +440,10 @@
     "Title": "Parcours optimisé",
     "Steps": "Étapes",
     "STEP": {
-      "Gathering": "",
-      "Hunting": "",
-      "Vendor": "",
-      "Trade": ""
+      "Gathering": "Récolter {{amount}}",
+      "Hunting": "Ramasser {{amount}}",
+      "Vendor": "Acheter {{amount}}",
+      "Trade": "Acheter {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
