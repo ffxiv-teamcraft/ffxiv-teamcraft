@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
@@ -10,7 +10,8 @@ import { NzMessageService } from 'ng-zorro-antd';
 @Component({
   selector: 'app-pricing-row',
   templateUrl: './pricing-row.component.html',
-  styleUrls: ['./pricing-row.component.less']
+  styleUrls: ['./pricing-row.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PricingRowComponent implements OnInit {
 
