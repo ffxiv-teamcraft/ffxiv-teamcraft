@@ -33,7 +33,6 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
         .filter(node => node.uptime !== undefined)
         .map(node => {
           const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
-          console.log(node);
           const alarm: Partial<Alarm> = {
             itemId: item.id,
             icon: item.icon,
@@ -72,7 +71,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
               icon: node.icon,
               duration: node.uptime / 60,
               zoneId: node.zoneid,
-              mapId: nodePosition ? nodePositions[node.id].map : node.zoneid,
+              mapId: nodePosition ? nodePosition.map : node.zoneid,
               areaId: node.areaid,
               slot: +node.slot,
               type: node.type,

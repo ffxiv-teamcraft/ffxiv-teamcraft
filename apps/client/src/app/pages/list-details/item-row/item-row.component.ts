@@ -141,7 +141,6 @@ export class ItemRowComponent implements OnInit {
     if (display.registered) {
       this.alarmsFacade.deleteAlarm(display.alarm);
     } else {
-      console.log(display.alarm);
       this.alarmsFacade.addAlarms(display.alarm);
     }
   }
