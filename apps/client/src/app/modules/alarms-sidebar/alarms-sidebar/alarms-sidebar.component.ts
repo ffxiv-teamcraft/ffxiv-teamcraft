@@ -32,7 +32,7 @@ export class AlarmsSidebarComponent implements OnInit {
       nzTitle: this.i18n.getName(this.l12n.getPlace(alarm.zoneId)),
       nzContent: MapComponent,
       nzComponentParams: {
-        mapId: alarm.zoneId,
+        mapId: alarm.mapId,
         markers: [alarm.coords]
       },
       nzFooter: null

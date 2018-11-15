@@ -137,7 +137,7 @@ export class GatheringLocationComponent {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
     alarm.spawns = node.spawnTimes;
     alarm.mapId = node.mapId;
-    this.mapService.getMapById(alarm.zoneId)
+    this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {
           if (mapData !== undefined) {

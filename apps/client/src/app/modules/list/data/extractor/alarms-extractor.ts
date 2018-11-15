@@ -7,6 +7,7 @@ import { ListRow } from '../../model/list-row';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import * as nodePositions from '../../../../core/data/sources/node-positions.json';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
   constructor(gt: GarlandToolsService, private bellNodes: BellNodesService) {
@@ -32,6 +33,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
         .filter(node => node.uptime !== undefined)
         .map(node => {
           const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
+          console.log(node);
           const alarm: Partial<Alarm> = {
             itemId: item.id,
             icon: item.icon,
@@ -64,11 +66,13 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
           return nodes.map(node => {
             const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
+            const nodePosition = nodePositions[node.id];
             const alarm: Partial<Alarm> = {
               itemId: node.itemId,
               icon: node.icon,
               duration: node.uptime / 60,
               zoneId: node.zoneid,
+              mapId: nodePosition ? nodePositions[node.id].map : node.zoneid,
               areaId: node.areaid,
               slot: +node.slot,
               type: node.type,
