@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
