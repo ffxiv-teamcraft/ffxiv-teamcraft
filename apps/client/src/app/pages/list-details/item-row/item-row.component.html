@@ -90,6 +90,15 @@
                      [width]="24"></app-item-icon>
     </div>
     <div class="amount-input">
+      <button nz-button nzSize="small" nz-popover [nzContent]="calculator" nzTrigger="click">
+        <i nz-icon type="calculator"></i>
+        <ng-template #calculator>
+          <nz-input-number [nzMin]="0" [nzMax]="item.amount - item.done" [nzStep]="1" #numberInput
+                           nzAutoFocus></nz-input-number>
+          <button nz-button (click)="itemDoneChanged(numberInput.value)" nzType="primary">+</button>
+          <button nz-button (click)="itemDoneChanged(numberInput.value, -1)" nzType="warn">-</button>
+        </ng-template>
+      </button>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
                        [disabled]="(permissionLevel$ | async) < 20"
                        [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>

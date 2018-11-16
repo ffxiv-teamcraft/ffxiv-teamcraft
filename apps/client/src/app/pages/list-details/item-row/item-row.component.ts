@@ -131,8 +131,8 @@ export class ItemRowComponent implements OnInit {
     }
   }
 
-  itemDoneChanged(newValue: number): void {
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done);
+  itemDoneChanged(newValue: number | string, multiplier = 1): void {
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, (+newValue * multiplier) - this.item.done);
   }
 
   markAsDone(): void {
