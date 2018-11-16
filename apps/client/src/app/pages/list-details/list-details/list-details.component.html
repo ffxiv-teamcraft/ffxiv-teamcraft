@@ -82,9 +82,14 @@
                 [disabled]="(permissionLevel$ | async) < 20">
           <i nz-icon type="reload"></i>
         </button>
-        <div fxFlex="1 1 auto">
-          TODO list description
-        </div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center">
+        <div>{{list.note || ('LIST_DETAILS.No_note' | translate)}}</div>
+        <button nz-button nzSize="small" nzShape="circle" nz-tooltip
+                [nzTitle]="'LIST_DETAILS.Edit_note' | translate" (click)="editNote(list)"
+                [disabled]="(permissionLevel$ | async) < 40">
+          <i nz-icon type="edit"></i>
+        </button>
       </div>
       <div *ngIf="list.public && list.tags.length === 0" class="alert">
         <nz-alert nzType="warning" nzShowIcon [nzMessage]="message">
