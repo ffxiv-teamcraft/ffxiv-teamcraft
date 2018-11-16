@@ -69,6 +69,8 @@ export class ItemRowComponent implements OnInit {
 
   loggedIn$: Observable<boolean>;
 
+  requiredForFinalCraft$: Observable<number>;
+
   team$: Observable<Team>;
 
   constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
@@ -104,6 +106,26 @@ export class ItemRowComponent implements OnInit {
       map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
       shareReplay(1)
     );
+
+    this.requiredForFinalCraft$ = this.listsFacade.selectedList$.pipe(
+      map(list => {
+        const recipesNeedingItem = list.finalItems
+          .filter(item => item.requires !== undefined)
+          .filter(item => item.requires.find(req => req.id === this.item.id) !== undefined);
+        if (this.item.requiredAsHQ) {
+          return this.item.amount;
+        }
+        if (recipesNeedingItem.length === 0) {
+          return 0;
+        } else {
+          let count = 0;
+          recipesNeedingItem.forEach(recipe => {
+            count += recipe.requires.find(req => req.id === this.item.id).amount * recipe.amount;
+          });
+          return count;
+        }
+      })
+    );
   }
 
   ngOnInit(): void {
@@ -114,11 +136,15 @@ export class ItemRowComponent implements OnInit {
 
   removeWorkingOnIt(): void {
     delete this.item.workingOnIt;
-    this.listsFacade.updateItem(this.item, this.finalItem);
+    this.saveItem();
   }
 
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
+    this.saveItem();
+  }
+
+  private saveItem():void{
     this.listsFacade.updateItem(this.item, this.finalItem);
   }
 

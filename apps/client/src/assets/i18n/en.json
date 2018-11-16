@@ -26,6 +26,8 @@
   "Copy_isearch": "Copy isearch macro",
   "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
   "Required_for_final_craft": "{{amount}} needed for final items",
+  "Mark_HQ": "Mark as HQ required",
+  "Unmark_HQ": "Remove HQ requirement",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
   "Confirmation": "Are you sure?",
   "Is_working_on_it": "{{name}} is working on it",
