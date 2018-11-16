@@ -19,6 +19,8 @@ export class PricingComponent {
 
   items$: Observable<ListRow[]>;
 
+  crystals$: Observable<ListRow[]>;
+
   preCrafts$: Observable<ListRow[]>;
 
   @Output()
@@ -26,30 +28,41 @@ export class PricingComponent {
 
   private costs: { [index: number]: number } = {};
 
-  private spendingTotal = 0;
+  public spendingTotal = 0;
 
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
-        list.items.forEach(item => {
-          this.costs[item.id] = this._getCraftCost(item, list);
-        });
-        list.finalItems.forEach(item => {
-          this.costs[item.id] = this._getCraftCost(item, list);
-        });
-        this.spendingTotal = this._getSpendingTotal(list);
+        this.updateCosts(list);
       }),
       shareReplay(1)
     );
 
+    this.crystals$ = this.list$.pipe(
+      map(list => list.items.filter(i => i.id < 20).sort((a, b) => a.id - b.id)),
+      shareReplay(1)
+    );
+
     this.items$ = this.list$.pipe(
-      map(list => list.items.filter(i => i.craftedBy === undefined || i.craftedBy.length === 0))
+      map(list => list.items.filter(i => (i.craftedBy === undefined || i.craftedBy.length === 0) && i.id >= 20)),
+      shareReplay(1)
     );
 
     this.preCrafts$ = this.list$.pipe(
-      map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0))
+      map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0)),
+      shareReplay(1)
     );
+  }
+
+  private updateCosts(list: List):void{
+    list.items.forEach(item => {
+      this.costs[item.id] = this._getCraftCost(item, list);
+    });
+    list.finalItems.forEach(item => {
+      this.costs[item.id] = this._getCraftCost(item, list);
+    });
+    this.spendingTotal = this.getSpendingTotal(list);
   }
 
   public save(list: List): void {
@@ -60,16 +73,7 @@ export class PricingComponent {
     return this.media.isActive('xs') || this.media.isActive('sm');
   }
 
-  /**
-   * Get the total spending of the list.
-   *
-   * @returns {number}
-   */
-  getSpendingTotal(): number {
-    return this.spendingTotal;
-  }
-
-  private _getSpendingTotal(list: List): number {
+  private getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
       if (this.settings.expectToSellEverything) {
@@ -127,7 +131,7 @@ export class PricingComponent {
    * @returns {number}
    */
   getBenefits(list: List): number {
-    return this.getTotalEarnings(list.finalItems, list) - this.getSpendingTotal();
+    return this.getTotalEarnings(list.finalItems, list) - this.spendingTotal;
   }
 
   public trackByItemFn(index: number, item: ListRow): number {

@@ -92,7 +92,8 @@ export class ItemRowComponent implements OnInit {
           return null;
         }
         return team;
-      })
+      }),
+      shareReplay(1)
     );
 
     this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
@@ -100,7 +101,8 @@ export class ItemRowComponent implements OnInit {
         map(list => list.hasAllBaseIngredients(this.item))
       )
     ).pipe(
-      map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients)
+      map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
+      shareReplay(1)
     );
   }
 

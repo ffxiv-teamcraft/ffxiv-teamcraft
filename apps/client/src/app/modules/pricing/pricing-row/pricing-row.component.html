@@ -1,5 +1,6 @@
-<div [class.ignored]="!item.usePrice" nz-row fxLayout="row wrap">
-  <div nz-col nzXs="24" nzMd="6">
+<div [class.ignored]="!item.usePrice" nz-row fxLayout="row wrap" [class.odd]="odd" class="row-container">
+  <div nz-col nzXs="24" nzMd="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <label nz-checkbox [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()"></label>
     <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
                    [width]="24"></app-item-icon>
     <span ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
@@ -7,12 +8,22 @@
           (cbOnSuccess)="afterNameCopy($event.content)">
       {{item.id | itemName | i18n}}
     </span>
+    <i *ngIf="_craftCost !== undefined"
+       nz-tooltip
+       nzTitle="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
+       class="material-icons">
+      attach_money
+    </i>
+    <i *ngIf="price.fromVendor" class="from-vendor material-icons" nz-tooltip
+       nzTitle="{{'PRICING.From_vendor' | translate}}">
+      group
+    </i>
     <app-marketboard-icon [itemId]="item.id"></app-marketboard-icon>
   </div>
   <div nz-col nzXs="24" nzMd="10">
 
   </div>
-  <div nz-col nzXs="24" nzMd="8">
+  <div nz-col nzXs="24" nzMd="8" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
     <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">
