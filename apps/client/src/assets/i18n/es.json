@@ -26,6 +26,8 @@
   "Copy_isearch": "Copiar macro de isearch",
   "Isearch_copied": "/isearch {{itemname}} copiado al portapapeles",
   "Required_for_final_craft": "{{amount}} necesario(s) para los artículos finales",
+  "Mark_HQ": "",
+  "Unmark_HQ": "",
   "Compact_sidebar_toggle": "Alternar barra lateral compacta",
   "Confirmation": "¿Está seguro?",
   "Is_working_on_it": "{{name}} está trabajando en esto",
