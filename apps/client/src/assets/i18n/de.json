@@ -26,6 +26,8 @@
   "Copy_isearch": "isearch Makro kopieren",
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
   "Required_for_final_craft": "{{amount}} für das finale Item erforderlich",
+  "Mark_HQ": "",
+  "Unmark_HQ": "",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
   "Confirmation": "Bist du sicher?",
   "Is_working_on_it": "{{name}} arbeitet dran",
