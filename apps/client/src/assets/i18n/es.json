@@ -444,9 +444,9 @@
     "Steps": "Pasos",
     "STEP": {
       "Gathering": "Recolectar {{amount}}",
-      "Hunting": "Tirar {{amount}}",
-      "Vendor": "",
-      "Trade": ""
+      "Hunting": "Juntar {{amount}}",
+      "Vendor": "Comprar {{amount}}",
+      "Trade": "Intercambiar {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
