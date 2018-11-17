@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Character } from '@xivapi/angular-client';
 import { Observable, of } from 'rxjs';
 import { CharacterService } from '../../../core/api/character.service';
-import { catchError, filter, map, tap } from 'rxjs/operators';
+import { catchError, filter, map, shareReplay, startWith, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-avatar',
@@ -35,10 +35,11 @@ export class UserAvatarComponent implements OnInit {
       catchError(() => {
         return of(null);
       }),
-      filter(c => c !== null)
+      filter(c => c !== null),
+      shareReplay(1)
     );
     this.character$ = character$.pipe(map(res => res.character));
-    this.status$ = character$.pipe(map(res => res.verified ? 'success' : 'error'));
+    this.status$ = character$.pipe(map(res => res.verified ? 'success' : 'error'), startWith(<'success' | 'error'>'error'));
   }
 
 }

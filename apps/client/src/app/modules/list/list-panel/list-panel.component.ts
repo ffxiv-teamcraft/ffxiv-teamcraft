@@ -31,6 +31,9 @@ export class ListPanelComponent {
   @Input()
   publicDisplay = false;
 
+  @Input()
+  hideAvatar = false;
+
   public _list: List;
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();

@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'macro-translator',
     loadChildren: './pages/macro-translator/macro-translator.module#MacroTranslatorModule'
+  },
+  {
+    path: 'profile',
+    loadChildren: './pages/profile/profile.module#ProfileModule'
   }
 ];
 

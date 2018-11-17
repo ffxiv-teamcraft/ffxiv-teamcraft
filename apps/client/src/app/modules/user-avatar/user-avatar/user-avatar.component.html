@@ -1,4 +1,4 @@
-<a routerLink="/profile/{{userId}}">
+<a routerLink="/profile/{{userId}}" (click)="$event.stopPropagation()">
   <nz-badge *ngIf="character$ | async as character; else anonymous" [nzStatus]="status$ | async" [class.flex]="flex">
     <img [src]="character.Avatar" alt="" nz-tooltip
          [nzTitle]="tooltip"
