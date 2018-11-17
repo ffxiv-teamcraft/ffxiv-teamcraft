@@ -724,6 +724,8 @@
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
-    "Unit_price": "Precio unitario"
+    "Unit_price": "Precio unitario",
+    "History": "",
+    "Purchase_date": ""
   }
 }
