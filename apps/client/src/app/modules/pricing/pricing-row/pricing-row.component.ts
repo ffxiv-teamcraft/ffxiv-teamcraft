@@ -3,7 +3,6 @@ import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
 import { ListRow } from '../../list/model/list-row';
-import { ObservableMedia } from '@angular/flex-layout';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 
@@ -25,7 +24,7 @@ export class PricingRowComponent implements OnInit {
   preCraft = false;
   @Input()
   odd = false;
-  price: Price;
+  price: Price = { hq: 0, nq: 0, fromVendor: false };
   customPrice = false;
   amount: ItemAmount;
   @Output()
@@ -34,9 +33,8 @@ export class PricingRowComponent implements OnInit {
   @Output()
   priceChange: EventEmitter<Price> = new EventEmitter<Price>();
 
-  constructor(private pricingService: PricingService, private media: ObservableMedia,
-              private message: NzMessageService, private translator: TranslateService,
-              private cd: ChangeDetectorRef) {
+  constructor(private pricingService: PricingService, private message: NzMessageService,
+              private translator: TranslateService, private cd: ChangeDetectorRef) {
   }
 
   public _craftCost: number;
@@ -98,10 +96,6 @@ export class PricingRowComponent implements OnInit {
     setTimeout(() => {
       this.cd.detectChanges();
     });
-  }
-
-  isMobile(): boolean {
-    return this.media.isActive('sm') || this.media.isActive('xs');
   }
 
   private setAutoCost(): void {

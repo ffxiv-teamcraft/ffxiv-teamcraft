@@ -31,8 +31,7 @@
       <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Pre_crafts' | translate">
 
         <app-pricing-row *ngFor="let row of preCrafts$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
-                         [item]="row"
-                         [listId]="list.$key"
+                         [craftCost]="getCraftCost(row)" [item]="row" [listId]="list.$key"
                          [preCraft]="true" (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
       </nz-collapse-panel>
     </nz-collapse>
@@ -43,7 +42,8 @@
                   nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse class="collapse-container">
       <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="'Items' | translate">
-        <app-pricing-row *ngFor="let row of list.finalItems; trackBy: trackByItemFn;let odd = odd" [odd]="odd" [item]="row" [listId]="list.$key"
+        <app-pricing-row *ngFor="let row of list.finalItems; trackBy: trackByItemFn;let odd = odd" [odd]="odd"
+                         [item]="row" [listId]="list.$key"
                          [craftCost]="getCraftCost(row)"
                          (save)="save(list)" [earning]="true"></app-pricing-row>
       </nz-collapse-panel>
