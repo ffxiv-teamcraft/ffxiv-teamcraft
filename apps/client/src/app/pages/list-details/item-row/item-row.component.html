@@ -5,14 +5,20 @@
       <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
                      [width]="24"></app-item-icon>
     </div>
-    <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
-          [nzTitle]="'Copy_item_name_to_clipboard' | translate"
-          (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
-      {{item.id | itemName | i18n}}
+    <div>
+      <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+            [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+        {{item.id | itemName | i18n}}
+      </span>
+      <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
+        <img src="./assets/icons/HQ.png" alt="" nz-tooltip
+             [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}"/>
+      </span>
       <span class="needed" *ngIf="item.amount > item.done">x{{item.amount - item.done}}<span
         *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
       </span>
-    </span>
+    </div>
     <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
                      [userId]="item.workingOnIt" [width]="24"></app-user-avatar>
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
@@ -45,7 +51,13 @@
             </ul>
           </li>
         </ng-container>
-        <li nz-menu-item nzDisabled>TODO Mark HQ</li>
+        <li nz-menu-item *ngIf="(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
+            (click)="item.requiredAsHQ = true; saveItem()">
+          {{'Mark_HQ' | translate}}
+        </li>
+        <li nz-menu-item *ngIf="item.requiredAsHQ" (click)="item.requiredAsHQ = false; saveItem()">
+          {{'Unmark_HQ' | translate}}
+        </li>
       </ul>
     </nz-dropdown>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="finalItem"></app-marketboard-icon>
@@ -90,6 +102,15 @@
                      [width]="24"></app-item-icon>
     </div>
     <div class="amount-input">
+      <button nz-button nzSize="small" nz-popover [nzContent]="calculator" nzTrigger="click">
+        <i nz-icon type="calculator"></i>
+        <ng-template #calculator>
+          <nz-input-number [nzMin]="0" [nzMax]="item.amount - item.done" [nzStep]="1" #numberInput
+                           nzAutoFocus></nz-input-number>
+          <button nz-button (click)="itemDoneChanged(numberInput.value)" nzType="primary">+</button>
+          <button nz-button (click)="itemDoneChanged(numberInput.value, -1)" nzType="warn">-</button>
+        </ng-template>
+      </button>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
                        [disabled]="(permissionLevel$ | async) < 20"
                        [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>

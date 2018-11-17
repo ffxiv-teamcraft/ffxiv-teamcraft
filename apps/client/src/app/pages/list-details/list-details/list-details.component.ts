@@ -24,6 +24,7 @@ import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -141,6 +142,20 @@ export class ListDetailsComponent implements OnInit {
         return list;
       })
     ).subscribe(l => this.listsFacade.updateList(l));
+  }
+
+  editNote(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Edit_note'),
+      nzFooter: null,
+      nzContent: TextQuestionPopupComponent,
+      nzComponentParams: { baseText: list.note }
+    }).afterClose.pipe(
+      filter(note => note !== undefined)
+    ).subscribe((note) => {
+      list.note = note;
+      this.listsFacade.updateList(list);
+    });
   }
 
   createAlarms(list: List): void {
