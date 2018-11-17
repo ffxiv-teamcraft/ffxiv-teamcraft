@@ -724,6 +724,8 @@
     "Amount": "",
     "HQ": "",
     "Total_price": "",
-    "Unit_price": ""
+    "Unit_price": "",
+    "History": "",
+    "Purchase_date": ""
   }
 }
