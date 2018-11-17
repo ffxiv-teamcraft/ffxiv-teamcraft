@@ -55,7 +55,7 @@ export class PricingComponent {
     );
   }
 
-  private updateCosts(list: List):void{
+  private updateCosts(list: List): void {
     list.items.forEach(item => {
       this.costs[item.id] = this._getCraftCost(item, list);
     });
@@ -69,19 +69,21 @@ export class PricingComponent {
     this.listsFacade.updateList(list);
   }
 
-  public isMobile(): boolean {
-    return this.media.isActive('xs') || this.media.isActive('sm');
-  }
-
   private getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
-      if (this.settings.expectToSellEverything) {
-        // If we expect to sell everything, price based on amount of items crafted
-        cost *= item.amount_needed * item.yield;
+      if (this.pricingService.isCustomPrice(item)) {
+        const price = this.pricingService.getPrice(item);
+        const amount = this.pricingService.getAmount(list.$key, item);
+        cost = price.nq * amount.nq * price.hq * amount.hq;
       } else {
-        // Else, price based on amount of items used
-        cost *= item.amount;
+        if (this.settings.expectToSellEverything) {
+          // If we expect to sell everything, price based on amount of items crafted
+          cost *= item.amount_needed * item.yield;
+        } else {
+          // Else, price based on amount of items used
+          cost *= item.amount;
+        }
       }
       return total + cost;
     }, 0);

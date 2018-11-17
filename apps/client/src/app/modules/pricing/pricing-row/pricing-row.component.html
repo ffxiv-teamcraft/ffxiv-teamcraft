@@ -24,7 +24,7 @@
 
   </div>
   <div nz-col nzXs="24" nzMd="8" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-    <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></label>
+    <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (ngModelChange)="saveCustomPrice()"></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">
         <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'NQ'">
