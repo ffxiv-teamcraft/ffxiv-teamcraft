@@ -152,7 +152,7 @@
               <ng-template #title>
                 <div fxLayout="row">
                   <div>{{item.itemId | itemName | i18n}}</div>
-                  <app-marketboard-icon [itemId]="item.itemId"></app-marketboard-icon>
+                  <app-marketboard-icon [itemId]="item.itemId" [showHistory]="true"></app-marketboard-icon>
                 </div>
               </ng-template>
             </nz-list-item-meta>

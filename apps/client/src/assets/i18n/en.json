@@ -721,6 +721,8 @@
     "Amount": "Quantity",
     "HQ": "HQ",
     "Total_price": "Total price",
-    "Unit_price": "Unit price"
+    "Unit_price": "Unit price",
+    "History": "History",
+    "Purchase_date": "Date"
   }
 }

@@ -1,18 +1,43 @@
-<nz-table #pricesTable nzSize="small" [nzData]="prices$ | async" [nzLoading]="loading">
-  <thead nzSingleSort (nzSortChange)="sort($event)">
-  <tr>
-    <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
-    <th nzShowSort nzSortKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
-    <th nzShowSort nzSortKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
-    <th nzShowSort nzSortKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let row of pricesTable.data">
-    <td>{{row.Quantity}}</td>
-    <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
-    <td>{{row.PriceTotal | number}}</td>
-    <td>{{row.PricePerUnit | number}}</td>
-  </tr>
-  </tbody>
-</nz-table>
+<div fxLayout="column" fxLayoutGap="15px">
+  <nz-table #pricesTable nzSize="small" [nzData]="prices$ | async" [nzLoading]="loading">
+    <thead nzSingleSort (nzSortChange)="sort($event)">
+    <tr>
+      <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
+      <th nzShowSort nzSortKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
+      <th nzShowSort nzSortKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
+      <th nzShowSort nzSortKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of pricesTable.data">
+      <td>{{row.Quantity}}</td>
+      <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
+      <td>{{row.PriceTotal | number}}</td>
+      <td>{{row.PricePerUnit | number}}</td>
+    </tr>
+    </tbody>
+  </nz-table>
+  <div *ngIf="showHistory">
+    <h3>{{'MARKETBOARD.History' | translate}}</h3>
+    <nz-table #historyTable nzSize="small" [nzData]="history$ | async" [nzLoading]="loadingHistory">
+      <thead>
+      <tr>
+        <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>
+        <th>{{'MARKETBOARD.Amount' | translate}}</th>
+        <th>{{'MARKETBOARD.HQ' | translate}}</th>
+        <th>{{'MARKETBOARD.Total_price' | translate}}</th>
+        <th>{{'MARKETBOARD.Unit_price' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of historyTable.data">
+        <td>{{row.PurchaseDate | date:'short'}}</td>
+        <td>{{row.Quantity}}</td>
+        <td><img src="./assets/icons/HQ.png" alt="HQ" *ngIf="row.IsHQ" class="hq-icon"></td>
+        <td>{{row.PriceTotal | number}}</td>
+        <td>{{row.PricePerUnit | number}}</td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

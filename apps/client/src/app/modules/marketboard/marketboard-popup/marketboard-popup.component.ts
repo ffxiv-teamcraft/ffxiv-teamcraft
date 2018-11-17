@@ -4,6 +4,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { MarketboardPrice } from '@xivapi/angular-client/src/model/schema/market/marketboard-price';
+import { MarketboardItemHistory } from '@xivapi/angular-client/src/model/schema/market/marketboard-item-history';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -20,7 +21,11 @@ export class MarketboardPopupComponent implements OnInit {
 
   prices$: Observable<MarketboardPrice[]>;
 
+  history$: Observable<any[]>;
+
   loading = true;
+
+  loadingHistory = true;
 
   sort$: BehaviorSubject<{ key: string, value: 'ascend' | 'descend' }> = new BehaviorSubject<{ key: string, value: any }>({
     key: 'PricePerUnit',
@@ -62,6 +67,23 @@ export class MarketboardPopupComponent implements OnInit {
           }
         })];
       })
+    );
+
+    this.history$ = server$.pipe(
+      switchMap(server => {
+        return this.xivapi.getMarketBoardItemHistory(server, this.itemId);
+      }),
+      map(itemHistory => itemHistory.History),
+      tap(() => this.loadingHistory = false),
+      map(history => {
+        return history.map(entry => {
+          return {
+            ...entry,
+            PurchaseDate: entry.PurchaseDate + '000'
+          }
+        })
+      }),
+      shareReplay(1)
     );
   }
 
