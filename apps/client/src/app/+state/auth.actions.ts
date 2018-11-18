@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
 import { CharacterResponse } from '@xivapi/angular-client';
+import { GearSet } from '../pages/simulator/model/gear-set';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -31,6 +32,7 @@ export enum AuthActionTypes {
   UserPersisted = '[Auth] User persisted',
 
   ToggleMasterbooks = '[Auth] Toggle Masterbooks',
+  SaveSet = '[Auth] Save set',
 
   AnonymousWarningShown = '[Auth] Anonyous warning shown',
 
@@ -169,7 +171,14 @@ export class CharactersLoaded implements Action {
 export class ToggleMasterbooks implements Action {
   readonly type = AuthActionTypes.ToggleMasterbooks;
 
-  constructor(public readonly books: {id: number, checked: boolean}[]) {
+  constructor(public readonly books: { id: number, checked: boolean }[]) {
+  }
+}
+
+export class SaveSet implements Action {
+  readonly type = AuthActionTypes.SaveSet;
+
+  constructor(public readonly set: GearSet) {
   }
 }
 
@@ -204,4 +213,5 @@ export type AuthActions = GetUser
   | AnonymousWarningShown
   | ToggleFavorite
   | RemoveCharacter
-  | ToggleMasterbooks;
+  | ToggleMasterbooks
+  | SaveSet;

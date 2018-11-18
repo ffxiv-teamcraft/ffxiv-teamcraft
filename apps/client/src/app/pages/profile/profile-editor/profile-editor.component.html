@@ -45,9 +45,15 @@
             <nz-list-item [nzContent]="set.jobId <= 15 ? content : null | ifMobile: null"
                           [nzActions]="set.jobId <= 15 ?[masterbooks, stats]:[masterbooks]">
               <ng-template #content>
-                {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
-                {{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}: {{set.control}} -
-                {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}}
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+                  <i nz-icon *ngIf="set.specialist" type="star" nz-tooltip
+                     [nzTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate"></i>
+                  <div>
+                    {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
+                    {{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}: {{set.control}} -
+                    {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}}
+                  </div>
+                </div>
               </ng-template>
               <nz-list-item-meta
                 [nzAvatar]="'./assets/icons/classjob/'+(set.jobId | jobName)?.en?.toLowerCase()+'.png' | ifMobile: null"
@@ -61,7 +67,7 @@
               </ng-template>
               <ng-template #stats>
                 <button nz-button nzShape="circle" nzType="primary" nz-tooltip [nzTitle]="'PROFILE.Stats' | translate"
-                        (click)="editStats(set.jobId)" disabled>
+                        (click)="editStats(set.jobId)">
                   <i nz-icon type="solution" theme="outline"></i>
                 </button>
               </ng-template>

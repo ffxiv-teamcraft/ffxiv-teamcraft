@@ -12,7 +12,7 @@ import {
   SetDefaultCharacter,
   ToggleFavorite,
   ToggleMasterbooks,
-  RemoveCharacter
+  RemoveCharacter, SaveSet
 } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
@@ -24,6 +24,7 @@ import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/c
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs';
+import { GearSet } from '../pages/simulator/model/gear-set';
 
 @Injectable({
   providedIn: 'root'
@@ -120,6 +121,10 @@ export class AuthFacade {
 
   public saveMasterbooks(books: {id: number, checked: boolean}[]): void {
     this.store.dispatch(new ToggleMasterbooks(books));
+  }
+
+  public saveSet(set: GearSet): void {
+    this.store.dispatch(new SaveSet(set));
   }
 
   public loadUser(): void {

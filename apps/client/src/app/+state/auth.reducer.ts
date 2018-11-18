@@ -83,6 +83,26 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.SaveSet: {
+      const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === state.user.defaultLodestoneId);
+      lodestoneId.stats = [
+        ...(lodestoneId.stats || []).filter(set => set.jobId !== action.set.jobId),
+        action.set
+      ];
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          lodestoneIds: [
+            ...state.user.lodestoneIds.filter(entry => {
+              return entry.id !== lodestoneId.id;
+            }),
+            lodestoneId
+          ]
+        }
+      };
+    }
+
     case AuthActionTypes.AddCharacter:
       return {
         ...state,

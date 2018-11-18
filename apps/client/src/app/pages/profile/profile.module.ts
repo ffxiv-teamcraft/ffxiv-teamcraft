@@ -13,6 +13,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { FormsModule } from '@angular/forms';
 import { MasterbooksPopupComponent } from './profile-editor/masterbooks-popup/masterbooks-popup.component';
+import { StatsPopupComponent } from './profile-editor/stats-popup/stats-popup.component';
 
 const routes: Routes = [
   {
@@ -40,8 +41,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent],
-  entryComponents: [ProfileEditorComponent, MasterbooksPopupComponent]
+  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent],
+  entryComponents: [MasterbooksPopupComponent, StatsPopupComponent]
 })
 export class ProfileModule {
 }
