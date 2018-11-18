@@ -41,6 +41,10 @@ export class ProfileEditorComponent {
     this.authFacade.addCharacter();
   }
 
+  removeCharacter(id: number): void {
+    this.authFacade.removeCharacter(id);
+  }
+
   editMasterbooks(jobId: number): void {
     this.dialog.create({
       nzContent: MasterbooksPopupComponent,
@@ -49,7 +53,7 @@ export class ProfileEditorComponent {
       },
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Masterbooks')
-    })
+    });
   }
 
   editStats(jobId: number): void {
@@ -60,7 +64,7 @@ export class ProfileEditorComponent {
       },
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Stats')
-    })
+    });
   }
 
   setDefaultCharacter(lodestoneId: number): void {

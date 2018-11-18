@@ -11,8 +11,8 @@ import {
   SetCurrentFcId,
   SetDefaultCharacter,
   ToggleFavorite,
-  ToggleMasterbook,
-  ToggleMasterbooks
+  ToggleMasterbooks,
+  RemoveCharacter
 } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
@@ -112,6 +112,10 @@ export class AuthFacade {
 
   public setDefaultCharacter(lodestoneId: number): void {
     this.store.dispatch(new SetDefaultCharacter(lodestoneId));
+  }
+
+  public removeCharacter(lodestoneId: number): void {
+    this.store.dispatch(new RemoveCharacter(lodestoneId));
   }
 
   public saveMasterbooks(books: {id: number, checked: boolean}[]): void {

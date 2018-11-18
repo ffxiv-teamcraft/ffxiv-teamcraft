@@ -24,6 +24,7 @@ export enum AuthActionTypes {
   NoLinkedCharacter = '[Auth] No linked character',
   LinkingCharacter = '[Auth] Linking character',
   AddCharacter = '[Auth] Add character',
+  RemoveCharacter = '[Auth] Remove character',
   SetDefaultCharacter = '[Auth] Set default character',
   SetCurrentFcId = '[Auth] Set Current fc id',
   CharactersLoaded = '[Auth] Characters loaded',
@@ -144,6 +145,13 @@ export class SetDefaultCharacter implements Action {
   }
 }
 
+export class RemoveCharacter implements Action {
+  readonly type = AuthActionTypes.RemoveCharacter;
+
+  constructor(public readonly lodestoneId: number) {
+  }
+}
+
 export class SetCurrentFcId implements Action {
   readonly type = AuthActionTypes.SetCurrentFcId;
 
@@ -195,4 +203,5 @@ export type AuthActions = GetUser
   | SetCurrentFcId
   | AnonymousWarningShown
   | ToggleFavorite
+  | RemoveCharacter
   | ToggleMasterbooks;

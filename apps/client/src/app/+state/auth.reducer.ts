@@ -90,6 +90,18 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
         linkingCharacter: false
       };
 
+    case AuthActionTypes.RemoveCharacter:
+      return {
+        ...state,
+        user: { ...state.user,
+          lodestoneIds: [...state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)],
+          defaultLodestoneId: state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)[0].id
+        },
+        characters: [
+          ...state.characters.filter(c => c.Character.ID !== action.lodestoneId)
+        ]
+      };
+
     case AuthActionTypes.SetDefaultCharacter:
       return { ...state, user: { ...state.user, defaultLodestoneId: action.lodestoneId } };
 
