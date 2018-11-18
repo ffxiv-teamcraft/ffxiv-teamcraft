@@ -10,8 +10,15 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { FormsModule } from '@angular/forms';
+import { MasterbooksPopupComponent } from './profile-editor/masterbooks-popup/masterbooks-popup.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: ProfileEditorComponent
+  },
   {
     path: ':userId',
     component: PublicProfileComponent
@@ -21,6 +28,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     TranslateModule,
     NgZorroAntdModule,
     ClipboardModule,
@@ -32,7 +40,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [PublicProfileComponent]
+  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent],
+  entryComponents: [ProfileEditorComponent, MasterbooksPopupComponent]
 })
 export class ProfileModule {
 }

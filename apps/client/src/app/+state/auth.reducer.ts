@@ -57,6 +57,32 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.ToggleMasterbooks: {
+      const books = action.books;
+      const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === state.user.defaultLodestoneId);
+      let masterbooks = (lodestoneId.masterbooks || []);
+      books.forEach(book => {
+        if (book.checked && masterbooks.indexOf(book.id) === -1) {
+          masterbooks.push(book.id);
+        } else if (!book.checked && masterbooks.indexOf(book.id) > -1) {
+          masterbooks = masterbooks.filter(b => b !== book.id);
+        }
+      });
+      lodestoneId.masterbooks = masterbooks;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          lodestoneIds: [
+            ...state.user.lodestoneIds.filter(entry => {
+              return entry.id !== lodestoneId.id;
+            }),
+            lodestoneId
+          ]
+        }
+      };
+    }
+
     case AuthActionTypes.AddCharacter:
       return {
         ...state,

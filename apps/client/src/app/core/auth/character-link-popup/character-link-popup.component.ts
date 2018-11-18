@@ -28,7 +28,7 @@ export class CharacterLinkPopupComponent {
 
   public loadingResults = false;
 
-  public useAsDefault = true;
+  public useAsDefault = false;
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList();

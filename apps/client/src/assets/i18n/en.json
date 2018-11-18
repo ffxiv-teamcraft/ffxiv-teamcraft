@@ -244,6 +244,11 @@
     "No_update_available": "No update available"
   },
   "PROFILE": {
+    "Account": "Account",
+    "Add_character": "Add a character",
+    "Jobs": "Jobs",
+    "Stats": "Stats",
+    "View_on_apkallu_falls": "Open in Apkallu Falls",
     "Masterbooks": "Masterbooks",
     "Patreon_supporter": "Patreon Supporter",
     "Patreon_features": "Patreon supporter features",

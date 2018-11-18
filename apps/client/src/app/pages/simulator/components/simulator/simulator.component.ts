@@ -140,80 +140,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public rotation: CraftingRotation;
   availableRotations$: Observable<CraftingRotation[]>;
   public tooltipsDisabled = false;
-  private defaultGearSets: GearSet[] = [
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 8,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 9,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 10,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 11,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 12,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 13,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 14,
-      level: 70,
-      specialist: false
-    },
-    {
-      ilvl: 0,
-      control: 1350,
-      craftsmanship: 1500,
-      cp: 474,
-      jobId: 15,
-      level: 70,
-      specialist: false
-    }
-  ];
   private recipe$: ReplaySubject<Craft> = new ReplaySubject<Craft>(1);
   private crafterStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>(1);
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
@@ -624,7 +550,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     // First of all, remove old gearset in userData for this job.
     this.userData.gearSets = (this.userData.gearSets || []).filter(s => s.jobId !== set.jobId);
     // Then add this set to custom sets
-    set.custom = true;
+    // set.custom = true;
     this.userData.gearSets.push(set);
     // this.userService.set(this.userData.$key, this.userData).subscribe();
   }
@@ -690,8 +616,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private populateMissingSets(sets: GearSet[]): GearSet[] {
     // Get missing sets and concat to the input array, then return the result.
-    return this.defaultGearSets.filter(row => sets.find(set => row.jobId === set.jobId) === undefined)
-      .concat(sets);
+    // return this.defaultGearSets.filter(row => sets.find(set => row.jobId === set.jobId) === undefined)
+    //   .concat(sets);
+    return sets;
   }
 
   private markAsDirty(): void {

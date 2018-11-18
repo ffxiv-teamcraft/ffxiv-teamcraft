@@ -48,7 +48,7 @@
             </ng-template>
           </span>
           <span>
-            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
+            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/profile">
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>

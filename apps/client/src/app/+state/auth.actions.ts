@@ -29,6 +29,8 @@ export enum AuthActionTypes {
   CharactersLoaded = '[Auth] Characters loaded',
   UserPersisted = '[Auth] User persisted',
 
+  ToggleMasterbooks = '[Auth] Toggle Masterbooks',
+
   AnonymousWarningShown = '[Auth] Anonyous warning shown',
 
   AuthError = '[Auth] Error',
@@ -156,6 +158,13 @@ export class CharactersLoaded implements Action {
   }
 }
 
+export class ToggleMasterbooks implements Action {
+  readonly type = AuthActionTypes.ToggleMasterbooks;
+
+  constructor(public readonly books: {id: number, checked: boolean}[]) {
+  }
+}
+
 // Just an action to be sent once user is persisted properly
 export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
@@ -185,4 +194,5 @@ export type AuthActions = GetUser
   | UserPersisted
   | SetCurrentFcId
   | AnonymousWarningShown
-  | ToggleFavorite;
+  | ToggleFavorite
+  | ToggleMasterbooks;

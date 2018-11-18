@@ -1,0 +1,10 @@
+<div *ngIf="masterbooks$ | async as books" fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center">
+  <label nz-checkbox *ngFor="let book of books" [(ngModel)]="book.checked">
+    {{book.id | itemName | i18n}}
+  </label>
+  <button nz-button (click)="checkAll(books)">{{'Select_all' | translate}}</button>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <button nz-button (click)="save(books)" nzType="primary">{{'Save' | translate}}</button>
+    <button nz-button (click)="cancel()" nzType="danger">{{'Cancel' | translate}}</button>
+  </div>
+</div>

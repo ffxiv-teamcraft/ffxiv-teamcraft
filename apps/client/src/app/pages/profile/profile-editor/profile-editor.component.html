@@ -1,0 +1,84 @@
+<div fxLayout="column" fxLayoutGap="10px" *ngIf="mainCharacter$ | async as mainCharacter">
+  <h2>{{'Profile' | translate}}</h2>
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxLayout.lt-md="column">
+    <img [src]="mainCharacter.character.Avatar" alt="" class="avatar">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <nz-select [ngModel]="mainCharacter.character.ID" (ngModelChange)="setDefaultCharacter($event)">
+        <nz-option *ngFor="let characterEntry of characters$ | async" [nzValue]="characterEntry.character.Character.ID"
+                   [nzLabel]="characterEntry.character.Character.Name">
+        </nz-option>
+      </nz-select>
+      <i nz-icon *ngIf="!mainCharacter.verified" type="exclamation-circle" nz-tooltip
+         [nzTitle]="'Not_verified' | translate"></i>
+    </div>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <button *ngIf="!mainCharacter.verified" nz-button nzType="primary" nzShape="circle" nzSize="small" disabled>
+        <i nz-icon type="check"></i>
+      </button>
+      <button nz-button nzType="primary" nzShape="circle" nzSize="small" nz-tooltip
+              [nzTitle]="'PROFILE.Add_character' | translate" (click)="addCharacter()">
+        <i nz-icon type="plus"></i>
+      </button>
+      <a href="https://apkallufalls.com/character/{{mainCharacter.character.ID}}" target="_blank" nz-tooltip
+         [nzTitle]="'PROFILE.View_on_apkallu_falls' | translate">
+        <img src="https://placekitten.com/32/32" alt="">
+      </a>
+    </div>
+  </div>
+  <div nz-row *ngIf="user$ | async as user" [nzGutter]="10">
+    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+      <nz-card [nzTitle]="'PROFILE.Account' | translate">
+        TODO patreon email, userId
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="24" [nzMd]="12" class="profile-card">
+      <nz-card [nzTitle]="'PROFILE.Jobs' | translate">
+        <nz-list [nzRenderItem]="setTemplate" [nzDataSource]="gearSets$ | async" nzSize="small">
+          <ng-template #setTemplate let-set>
+            <nz-list-item [nzContent]="set.jobId <= 15 ? content : null | ifMobile: null"
+                          [nzActions]="set.jobId <= 15 ?[masterbooks, stats]:[masterbooks]">
+              <ng-template #content>
+                {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
+                {{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}: {{set.control}} -
+                {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}}
+              </ng-template>
+              <nz-list-item-meta
+                [nzAvatar]="'./assets/icons/classjob/'+(set.jobId | jobName)?.en?.toLowerCase()+'.png' | ifMobile: null"
+                [nzTitle]="set.jobId | jobName | i18n"
+                nzDescription="lvl {{set.level}}"></nz-list-item-meta>
+              <ng-template #masterbooks>
+                <button nz-button nzShape="circle" nzType="primary" nz-tooltip
+                        [nzTitle]="'PROFILE.Masterbooks' | translate" (click)="editMasterbooks(set.jobId)">
+                  <i nz-icon type="book"></i>
+                </button>
+              </ng-template>
+              <ng-template #stats>
+                <button nz-button nzShape="circle" nzType="primary" nz-tooltip [nzTitle]="'PROFILE.Stats' | translate"
+                        (click)="editStats(set.jobId)" disabled>
+                  <i nz-icon type="solution" theme="outline"></i>
+                </button>
+              </ng-template>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+      <nz-card [nzTitle]="'PROFILE.Contacts' | translate">
+        <nz-list [nzRenderItem]="contact">
+          <ng-template #contact>
+            <nz-list-item>
+              <nz-list-item-meta>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </div>
+    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+      <nz-card [nzTitle]="'PROFILE.Patreon_features' | translate">
+        TODO nickname
+      </nz-card>
+    </div>
+  </div>
+</div>
