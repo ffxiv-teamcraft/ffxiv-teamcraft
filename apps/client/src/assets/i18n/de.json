@@ -691,7 +691,8 @@
   },
   "NOTIFICATIONS": {
     "Title": "Mitteilungen",
-    "List_commented": "{{userName}} kommentierte auf Liste \"{{listName}}\": \"{{content}}\"",
+    "List_comment_added": "",
+    "List_item_comment_added": "",
     "Mark_all_as_read": "Alle als gelesen markieren"
   },
   "TEAMS": {
