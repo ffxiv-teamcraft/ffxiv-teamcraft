@@ -52,7 +52,11 @@ export class MacroTranslatorComponent {
 
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
-            macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+            if (key === 'ko' && line.indexOf('"') === -1) {
+              macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
+            } else {
+              macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+            }
           });
         } catch (ignored) {
           // Ugly implementation but it's a specific case we don't want to refactor for.
