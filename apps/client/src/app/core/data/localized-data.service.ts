@@ -10,6 +10,7 @@ import * as actions from './sources/actions.json';
 import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import { Language } from './language';
+import { koActions } from './sources/ko-actions';
 
 @Injectable()
 export class LocalizedDataService {
@@ -83,9 +84,20 @@ export class LocalizedDataService {
   }
 
   public getCraftingActionByName(name: string, language: Language): I18nName {
+    if (language === 'ko') {
+      const koRow = koActions.find(a => a.ko === name);
+      if (koRow !== undefined) {
+        name = koRow.en;
+        language = 'en';
+      }
+    }
     const result = this.getRowByName(craftingActions, name, language) || this.getRowByName(actions, name, language);
     if (result === undefined) {
       throw new Error('Data row not found.');
+    }
+    const koResultRow = koActions.find(a => a.en === result.en);
+    if (koResultRow !== undefined) {
+      result.ko = koResultRow.ko;
     }
     return result;
   }
