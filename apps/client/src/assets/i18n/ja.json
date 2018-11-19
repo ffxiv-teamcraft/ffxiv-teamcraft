@@ -733,5 +733,8 @@
     "Unit_price": "",
     "History": "",
     "Purchase_date": ""
+  },
+  "COMMENTS": {
+    "Title": ""
   }
 }
