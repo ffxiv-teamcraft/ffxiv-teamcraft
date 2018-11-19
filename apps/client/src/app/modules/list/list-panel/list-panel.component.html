@@ -80,7 +80,10 @@
                 *ngIf="!publicDisplay">
               {{'LIST.Rename' | translate}}
             </li>
-            <li nz-menu-item>TODO Comments</li>
+            <li nz-menu-item *ngIf="authFacade.userId$ | async as userId"
+                (click)="openCommentsPopup(_list, userId === _list.authorId)">
+              {{'COMMENTS.Title' | translate}}
+            </li>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)"
                 *ngIf="!publicDisplay">
               {{'LIST_DETAILS.Tags_popup' | translate}}

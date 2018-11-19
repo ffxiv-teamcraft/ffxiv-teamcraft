@@ -13,6 +13,8 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
+import { CommentsPopupComponent } from '../../comments/comments-popup/comments-popup.component';
+import { CommentTargetType } from '../../comments/comment-target-type';
 
 @Component({
   selector: 'app-list-panel',
@@ -53,7 +55,7 @@ export class ListPanelComponent {
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
-              private authFacade: AuthFacade) {
+              public authFacade: AuthFacade) {
   }
 
   deleteList(list: List): void {
@@ -129,6 +131,19 @@ export class ListPanelComponent {
       })
     ).subscribe(() => {
       this.listsFacade.updateListUsingCompact(list);
+    });
+  }
+
+  openCommentsPopup(list: List, isAuthor: boolean): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzFooter: null,
+      nzContent: CommentsPopupComponent,
+      nzComponentParams: {
+        targetType: CommentTargetType.LIST,
+        targetId: list.$key,
+        isAuthor: isAuthor
+      }
     });
   }
 
