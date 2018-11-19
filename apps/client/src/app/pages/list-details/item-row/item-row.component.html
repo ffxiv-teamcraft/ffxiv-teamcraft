@@ -30,7 +30,12 @@
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_isearch' | translate}}
         </li>
-        <li nz-menu-item nzDisabled>TODO Comment</li>
+        <ng-container *ngIf="listsFacade.selectedList$ | async as list">
+          <li nz-menu-item *ngIf="userId$ | async as userId"
+              (click)="openCommentsPopup(list, list.authorId === userId)">
+            {{'COMMENTS.Title' | translate}}
+          </li>
+        </ng-container>
         <li nz-menu-item (click)="setWorkingOnIt(userId)" *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
           {{'Work_on_it' | translate}}
         </li>

@@ -21,6 +21,7 @@ import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
+import { AbstractNotification } from './core/notification/abstract-notification';
 
 declare const ga: Function;
 
@@ -135,6 +136,10 @@ export class AppComponent implements OnInit {
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
+  }
+
+  deleteNotification(notification: AbstractNotification): void {
+    this.notificationsFacade.removeNotification(notification.$key);
   }
 
   openRegisterPopup(): void {

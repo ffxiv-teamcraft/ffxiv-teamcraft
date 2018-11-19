@@ -27,6 +27,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
+import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
       {
         parent: AbstractNotification,
         children: {
-          LIST_COMMENT: ListCommentNotification
+          LIST_COMMENT: ListCommentNotification,
+          LIST_ITEM_COMMENT: ListItemCommentNotification,
         }
       }
     ]),

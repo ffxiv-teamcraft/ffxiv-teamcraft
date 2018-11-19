@@ -17,7 +17,7 @@ export class CommentsService extends FirestoreRelationalStorage<ResourceComment>
   }
 
   getComments(type: CommentTargetType, id: string, details = 'none'): Observable<ResourceComment[]> {
-    const queryFn = (ref) => ref.where('type', '==', type).where('id', '==', id).where('targetDetails', '==', details);
+    const queryFn = (ref) => ref.where('targetType', '==', type).where('targetId', '==', id).where('targetDetails', '==', details);
     return this.firestore
       .collection(this.getBaseUri(), queryFn)
       .snapshotChanges()
@@ -28,6 +28,7 @@ export class CommentsService extends FirestoreRelationalStorage<ResourceComment>
           return (<ResourceComment>{ $key: snap.payload.doc.id, ...data });
         })),
         map(comments => this.serializer.deserialize<ResourceComment>(comments, [ResourceComment])),
+        map(comments => comments.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())),
         shareReplay(1)
       );
   }

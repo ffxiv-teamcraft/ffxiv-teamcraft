@@ -5,6 +5,8 @@ import { ResourceComment } from '../resource-comment';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { shareReplay } from 'rxjs/operators';
+import { AbstractNotification } from '../../../core/notification/abstract-notification';
+import { NotificationService } from '../../../core/notification/notification.service';
 
 @Component({
   selector: 'app-comments-popup',
@@ -25,9 +27,12 @@ export class CommentsPopupComponent implements OnInit {
 
   isAuthor: boolean;
 
+  notificationFactory: (comment: ResourceComment) => AbstractNotification;
+
   userId$ = this.authFacade.userId$.pipe(shareReplay(1));
 
-  constructor(private commentsService: CommentsService, private authFacade: AuthFacade) {
+  constructor(private commentsService: CommentsService, private authFacade: AuthFacade,
+              private notificationService: NotificationService) {
   }
 
   ngOnInit() {
@@ -39,14 +44,21 @@ export class CommentsPopupComponent implements OnInit {
   }
 
   postComment(message: string, userId: string): void {
-    const comment = new ResourceComment();
-    comment.authorId = userId;
-    comment.date = Date.now().toLocaleString();
-    comment.content = message;
-    comment.targetType = this.targetType;
-    comment.targetId = this.targetId;
-    comment.targetDetails = this.targetDetails;
-    this.commentsService.add(comment).subscribe();
+    if (message && message.length > 0) {
+      const comment = new ResourceComment();
+      comment.authorId = userId;
+      comment.date = new Date().toUTCString();
+      comment.content = message;
+      comment.targetType = this.targetType;
+      comment.targetId = this.targetId;
+      comment.targetDetails = this.targetDetails;
+      this.commentsService.add(comment).subscribe();
+      delete this.newCommentContent;
+      if (!this.isAuthor && this.notificationFactory !== undefined) {
+        const notification = this.notificationFactory(comment);
+        this.notificationService.add(notification);
+      }
+    }
   }
 
 }

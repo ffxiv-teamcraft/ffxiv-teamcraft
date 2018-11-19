@@ -3,7 +3,8 @@ import { AbstractNotification } from '../../../core/notification/abstract-notifi
 
 export enum NotificationsActionTypes {
   LoadNotifications = '[Notifications] Load Notifications',
-  NotificationsLoaded = '[Notifications] Notifications Loaded'
+  NotificationsLoaded = '[Notifications] Notifications Loaded',
+  RemoveNotification = '[Notifications] Remove Notification',
 }
 
 export class LoadNotifications implements Action {
@@ -12,9 +13,19 @@ export class LoadNotifications implements Action {
 
 export class NotificationsLoaded implements Action {
   readonly type = NotificationsActionTypes.NotificationsLoaded;
-  constructor(public payload: AbstractNotification[]) {}
+
+  constructor(public payload: AbstractNotification[]) {
+  }
+}
+
+export class RemoveNotification implements Action {
+  readonly type = NotificationsActionTypes.RemoveNotification;
+
+  constructor(public key: string) {
+  }
 }
 
 export type NotificationsAction =
   | LoadNotifications
-  | NotificationsLoaded;
+  | NotificationsLoaded
+  | RemoveNotification;

@@ -16,7 +16,7 @@
           <ng-template #notificationsTemplate>
             <nz-list [nzDataSource]="notifications" [nzRenderItem]="notificationTemplate">
               <ng-template #notificationTemplate let-notification>
-                <nz-list-item [nzActions]="[actionClose]">
+                <nz-list-item [nzActions]="[actionOpen, actionClose]">
                   <nz-list-item-meta [nzTitle]="notification.content"
                                      [nzDescription]="notification.route.join('/')"
                                      [nzAvatar]="icon">
@@ -26,7 +26,12 @@
                   </nz-list-item-meta>
                 </nz-list-item>
                 <ng-template #actionClose>
-                  <i nz-icon type="close"></i>
+                  <i nz-icon type="close" (click)="deleteNotification(notification)"></i>
+                </ng-template>
+                <ng-template #actionOpen>
+                  <a [routerLink]="notification.route">
+                    <i nz-icon type="select"></i>
+                  </a>
                 </ng-template>
               </ng-template>
             </nz-list>

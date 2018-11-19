@@ -27,6 +27,14 @@ export function notificationsReducer(
       };
       break;
     }
+
+    case NotificationsActionTypes.RemoveNotification: {
+      state = {
+        ...state,
+        list: [...state.list.filter(n => n.$key !== action.key)]
+      };
+      break;
+    }
   }
   return state;
 }

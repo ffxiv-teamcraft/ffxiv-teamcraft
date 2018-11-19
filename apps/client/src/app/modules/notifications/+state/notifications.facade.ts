@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { NotificationsState } from './notifications.reducer';
 import { notificationsQuery } from './notifications.selectors';
-import { LoadNotifications } from './notifications.actions';
+import { LoadNotifications, RemoveNotification } from './notifications.actions';
 import { map } from 'rxjs/operators';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -30,6 +30,10 @@ export class NotificationsFacade {
 
   constructor(private store: Store<{ notifications: NotificationsState }>, private translate: TranslateService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService) {
+  }
+
+  removeNotification(key: string): void {
+    this.store.dispatch(new RemoveNotification(key));
   }
 
   loadAll() {

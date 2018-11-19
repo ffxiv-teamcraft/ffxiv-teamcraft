@@ -15,6 +15,7 @@ import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
 import { CommentsPopupComponent } from '../../comments/comments-popup/comments-popup.component';
 import { CommentTargetType } from '../../comments/comment-target-type';
+import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
 
 @Component({
   selector: 'app-list-panel',
@@ -142,7 +143,10 @@ export class ListPanelComponent {
       nzComponentParams: {
         targetType: CommentTargetType.LIST,
         targetId: list.$key,
-        isAuthor: isAuthor
+        isAuthor: isAuthor,
+        notificationFactory: (comment) => {
+          return new ListCommentNotification(comment.content, list.name, list.authorId);
+        }
       }
     });
   }

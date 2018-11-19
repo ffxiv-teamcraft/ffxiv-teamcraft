@@ -28,6 +28,11 @@ import { RelationshipsComponent } from '../item-details/relationships/relationsh
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { CommentsPopupComponent } from '../../../modules/comments/comments-popup/comments-popup.component';
+import { CommentTargetType } from '../../../modules/comments/comment-target-type';
+import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
+import { List } from '../../../modules/list/model/list';
+import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
 
 @Component({
   selector: 'app-item-row',
@@ -73,7 +78,7 @@ export class ItemRowComponent implements OnInit {
 
   team$: Observable<Team>;
 
-  constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
+  constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
@@ -139,12 +144,29 @@ export class ItemRowComponent implements OnInit {
     this.saveItem();
   }
 
+  openCommentsPopup(list: List, isAuthor: boolean): void {
+    this.modal.create({
+      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzFooter: null,
+      nzContent: CommentsPopupComponent,
+      nzComponentParams: {
+        targetType: CommentTargetType.LIST,
+        targetId: list.$key,
+        targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`,
+        isAuthor: isAuthor,
+        notificationFactory: (comment) => {
+          return new ListItemCommentNotification(list.$key, this.item.id, comment.content, list.name, list.authorId);
+        }
+      }
+    });
+  }
+
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.saveItem();
   }
 
-  private saveItem():void{
+  private saveItem(): void {
     this.listsFacade.updateItem(this.item, this.finalItem);
   }
 
