@@ -10,6 +10,8 @@ export class TeamcraftUser extends DataModel {
 
   favorites: Favorites = { lists: [], workshops: [] };
 
+  contacts: string[] = [];
+
   admin = false;
 
   patron = false;

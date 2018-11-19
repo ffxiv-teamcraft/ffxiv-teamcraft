@@ -33,11 +33,6 @@
     </div>
   </div>
   <div nz-row *ngIf="user$ | async as user" [nzGutter]="10">
-    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
-      <nz-card [nzTitle]="'PROFILE.Account' | translate">
-        TODO patreon email, userId
-      </nz-card>
-    </div>
     <div nz-col [nzXs]="24" [nzMd]="12" class="profile-card">
       <nz-card [nzTitle]="'PROFILE.Jobs' | translate">
         <nz-list [nzRenderItem]="setTemplate" [nzDataSource]="gearSets$ | async" nzSize="small">
@@ -76,22 +71,42 @@
         </nz-list>
       </nz-card>
     </div>
-    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
-      <nz-card [nzTitle]="'PROFILE.Contacts' | translate">
-        <nz-list [nzRenderItem]="contact">
-          <ng-template #contact>
-            <nz-list-item>
-              <nz-list-item-meta>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-    </div>
-    <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
-      <nz-card [nzTitle]="'PROFILE.Patreon_features' | translate">
-        TODO nickname
-      </nz-card>
-    </div>
+    <ng-container *ngIf="user$ | async as user">
+      <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+        <nz-card [nzTitle]="'PROFILE.Contacts' | translate">
+          <nz-list [nzRenderItem]="contact" [nzDataSource]="user.contacts">
+            <ng-template #contact let-contact>
+              <nz-list-item [nzActions]="[delete]">
+                <nz-list-item-meta [nzTitle]="contact | characterName | async" [nzAvatar]="avatar" [nzDescription]="contact">
+                  <ng-template #delete>
+                    <button nz-button nzType="danger" nzShape="circle" nzSize="small" nz-popconfirm
+                            [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="removeContact(user, contact)">
+                      <i nz-icon type="delete"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template #avatar>
+                    <app-user-avatar [userId]="contact"></app-user-avatar>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+          <button nz-button nzType="primary" nzBlock (click)="newContact(user)">
+            <i nz-icon type="plus"></i>
+            {{'PROFILE.Add_new_contact' | translate}}
+          </button>
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+        <nz-card [nzTitle]="'PROFILE.Account' | translate">
+          TODO patreon email, userId
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+        <nz-card [nzTitle]="'PROFILE.Patreon_features' | translate">
+          TODO nickname
+        </nz-card>
+      </div>
+    </ng-container>
   </div>
 </div>

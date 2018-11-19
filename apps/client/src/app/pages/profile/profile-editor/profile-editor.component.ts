@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd';
 import { MasterbooksPopupComponent } from './masterbooks-popup/masterbooks-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
+import { UserPickerService } from '../../../modules/user-picker/user-picker.service';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-profile-editor',
@@ -34,7 +36,8 @@ export class ProfileEditorComponent {
 
   gearSets$ = this.authFacade.gearSets$;
 
-  constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService) {
+  constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
+              private userPicker: UserPickerService) {
   }
 
   addCharacter(): void {
@@ -65,6 +68,26 @@ export class ProfileEditorComponent {
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Stats')
     });
+  }
+
+  newContact(user: TeamcraftUser): void {
+    this.userPicker.pickUserId().pipe(
+      filter(userId => {
+        return userId !== undefined && (user.contacts || []).indexOf(userId) === -1;
+      }),
+      first()
+    ).subscribe(contactId => {
+      if (user.contacts === undefined) {
+        user.contacts = [];
+      }
+      user.contacts.push(contactId);
+      this.authFacade.updateUser(user);
+    });
+  }
+
+  removeContact(user: TeamcraftUser, contactId: string): void {
+    user.contacts = user.contacts.filter(c => c !== contactId);
+    this.authFacade.updateUser(user);
   }
 
   setDefaultCharacter(lodestoneId: number): void {

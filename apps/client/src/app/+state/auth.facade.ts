@@ -8,11 +8,13 @@ import {
   GetUser,
   LinkingCharacter,
   Logout,
+  RemoveCharacter,
+  SaveSet,
   SetCurrentFcId,
   SetDefaultCharacter,
   ToggleFavorite,
   ToggleMasterbooks,
-  RemoveCharacter, SaveSet
+  UpdateUser
 } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
@@ -25,6 +27,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs';
 import { GearSet } from '../pages/simulator/model/gear-set';
+import { TeamcraftUser } from '../model/user/teamcraft-user';
 
 @Injectable({
   providedIn: 'root'
@@ -129,6 +132,10 @@ export class AuthFacade {
 
   public loadUser(): void {
     this.store.dispatch(new GetUser());
+  }
+
+  public updateUser(user: TeamcraftUser):void{
+    this.store.dispatch(new UpdateUser(user));
   }
 
   public login(email: string, password: string): Promise<UserCredential> {

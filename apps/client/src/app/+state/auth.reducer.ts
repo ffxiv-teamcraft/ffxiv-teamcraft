@@ -103,17 +103,24 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
-    case AuthActionTypes.AddCharacter:
+    case AuthActionTypes.AddCharacter: {
+      if (state.user.lodestoneIds && state.user.lodestoneIds.find(l => l.id === action.lodestoneId) !== undefined) {
+        return state;
+      }
+
       return {
         ...state,
         user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), { id: action.lodestoneId, verified: false }] },
         linkingCharacter: false
       };
+    }
+
 
     case AuthActionTypes.RemoveCharacter:
       return {
         ...state,
-        user: { ...state.user,
+        user: {
+          ...state.user,
           lodestoneIds: [...state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)],
           defaultLodestoneId: state.user.lodestoneIds.filter(entry => entry.id !== action.lodestoneId)[0].id
         },
@@ -129,7 +136,14 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return { ...state, user: { ...state.user, currentFcId: action.fcId } };
 
     case AuthActionTypes.CharactersLoaded:
-      return { ...state, characters: [...state.characters, ...action.characters], loading: false };
+      return {
+        ...state,
+        characters: [
+          ...state.characters,
+          ...action.characters.filter(char => state.characters.find(c => c.Character.ID === char.Character.ID) === undefined)
+        ],
+        loading: false
+      };
 
     case AuthActionTypes.Authenticated:
       return { ...state, ...action.payload, loading: true, loggedIn: true };

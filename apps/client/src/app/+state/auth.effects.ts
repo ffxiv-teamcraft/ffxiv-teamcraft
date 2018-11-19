@@ -16,6 +16,7 @@ import {
   LoginAsAnonymous,
   NoLinkedCharacter,
   SetDefaultCharacter,
+  UpdateUser,
   UserFetched,
   UserPersisted
 } from './auth.actions';
@@ -148,8 +149,17 @@ export class AuthEffects {
     ),
     debounceTime(100),
     withLatestFrom(this.store),
-    mergeMap(([, state]) => {
+    switchMap(([, state]) => {
       return this.userService.set(state.auth.uid, { ...state.auth.user });
+    }),
+    map(() => new UserPersisted())
+  );
+
+  @Effect()
+  updateUser$ = this.actions$.pipe(
+    ofType<UpdateUser>(AuthActionTypes.UpdateUser),
+    switchMap((action) => {
+      return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
   );

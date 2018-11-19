@@ -9,6 +9,7 @@ export enum AuthActionTypes {
   Authenticated = '[Auth] Authenticated',
 
   UserFetched = '[Auth] User fetched',
+  UpdateUser = '[Auth] Update User',
 
   LoginAsAnonymous = '[Auth] Login as Anonymous',
   LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
@@ -64,6 +65,13 @@ export class ToggleFavorite implements Action {
 
 export class UserFetched implements Action {
   readonly type = AuthActionTypes.UserFetched;
+
+  constructor(public user: TeamcraftUser) {
+  }
+}
+
+export class UpdateUser implements Action {
+  readonly type = AuthActionTypes.UpdateUser;
 
   constructor(public user: TeamcraftUser) {
   }
@@ -214,4 +222,5 @@ export type AuthActions = GetUser
   | ToggleFavorite
   | RemoveCharacter
   | ToggleMasterbooks
-  | SaveSet;
+  | SaveSet
+  | UpdateUser;

@@ -8,6 +8,7 @@ import { DatabaseModule } from '../../core/database/database.module';
 import { UserPickerService } from './user-picker.service';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { UserAvatarModule } from '../user-avatar/user-avatar.module';
     ReactiveFormsModule,
     PageLoaderModule,
     UserAvatarModule,
+    PipesModule,
 
     DatabaseModule,
 

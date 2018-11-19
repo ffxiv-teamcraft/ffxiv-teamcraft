@@ -44,6 +44,28 @@
   </app-page-loader>
 </div>
 
+<nz-divider></nz-divider>
+
+<div *ngIf="contacts$ | async as contacts">
+  <nz-list [nzDataSource]="contacts" [nzRenderItem]="contactTemplate" [nzHeader]="'PROFILE.Contacts' | translate">
+    <ng-template #contactTemplate let-contact>
+      <nz-list-item [nzActions]="[selectAction]">
+        <ng-template #selectAction>
+          <button nz-button nzType="primary" (click)="pickUser({userId: contact})">{{'COMMON.Select' | translate}}</button>
+        </ng-template>
+        <nz-list-item-meta
+          [nzTitle]="contact | characterName | async"
+          [nzDescription]="contact"
+          [nzAvatar]="avatar">
+          <ng-template #avatar>
+            <app-user-avatar [userId]="contact"></app-user-avatar>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>
+
 <ng-template #loading>
   <nz-spin></nz-spin>
 </ng-template>

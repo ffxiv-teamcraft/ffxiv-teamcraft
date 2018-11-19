@@ -14,6 +14,8 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { FormsModule } from '@angular/forms';
 import { MasterbooksPopupComponent } from './profile-editor/masterbooks-popup/masterbooks-popup.component';
 import { StatsPopupComponent } from './profile-editor/stats-popup/stats-popup.component';
+import { UserPickerModule } from '../../modules/user-picker/user-picker.module';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 
 const routes: Routes = [
   {
@@ -38,6 +40,8 @@ const routes: Routes = [
     ListModule,
     FlexLayoutModule,
     FullpageMessageModule,
+    UserPickerModule,
+    UserAvatarModule,
 
     RouterModule.forChild(routes)
   ],
