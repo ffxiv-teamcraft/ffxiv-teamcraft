@@ -62,7 +62,6 @@ import { ListItemCommentNotification } from '../model/notification/list-item-com
     EorzeanTimeService,
     HtmlToolsService,
     LinkToolsService,
-    CharacterService,
     DiscordWebhookService
   ],
   declarations: [
@@ -84,7 +83,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        GarlandToolsService
+        GarlandToolsService,
+        CharacterService
       ]
     };
   }

@@ -33,7 +33,7 @@
   "Confirmation": "Are you sure?",
   "Is_working_on_it": "{{name}} is working on it",
   "Work_on_it": "I'm working on it",
-  "Remove_work_on_it": "Remove user assignation",
+  "Remove_work_on_it": "Remove user assignment",
   "Add_as_collectible": "Add as collectable",
   "Compact_display": "Compact display",
   "Mute_alarms": "Mute alarms",
@@ -716,17 +716,17 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
-    "NOTIFICATIONS": {
-      "Item_added": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been added to list [{{listName}}]({{listUrl}})",
-      "Item_removed": "{{amount}} x [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) have been removed from list [{{listName}}]({{listUrl}})",
-      "List_progress": "[{{characterName}}]({{memberProfileUrl}}) checked {{amount}} [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) as done on list [{{listName}}]({{listUrl}})",
-      "Webhook_setup_complete": "This channel has been configured as tracking channel for team \"{{teamName}}\"",
-      "List_added_notification": "List [{{listName}}]({{listUrl}}) has been assigned to team \"{{teamName}}\"",
-      "List_removed_notification": "List [{{listName}}]({{listUrl}}) has been unassigned from team \"{{teamName}}\"",
-      "Member_joined": "[{{memberName}}]({{memberProfileUrl}}) joined the team \"{{teamName}}\"!",
-      "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) has been removed from team \"{{teamName}}\"",
-      "Name_changed": "Team \"{{oldName}}\" renamed to \"{{newName}}\"",
-      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) has been assigned to [{{memberName}}]({{memberProfileUrl}}) on list [{{listName}}]({{listUrl}})"
+    "NOTIFICATIONS":{
+      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
+      "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
+      "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
+      "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
+      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
+      "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
+      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     }
   },
   "MARKETBOARD": {

@@ -22,10 +22,10 @@ export class CharacterService {
               switchMap(user => this.xivapi.getCharacter(user.defaultLodestoneId).pipe(
                 tap(res => {
                   // If state is 1, then try again in 2 minutes
-                  if(res.Info.Character.State === 1){
+                  if (res.Info.Character.State === 1) {
                     setTimeout(() => {
                       reloader.next(null);
-                    }, 120000)
+                    }, 120000);
                   }
                 }),
                 filter(res => res.Info.Character.State === 2),
@@ -33,10 +33,10 @@ export class CharacterService {
                   character: response.Character,
                   verified: user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId).verified
                 }))
-              )),
-              shareReplay(1)
+              ))
             );
-        })
+        }),
+        shareReplay(1)
       );
     }
     return this.cache[userId];

@@ -188,8 +188,8 @@ export class ListsEffects {
         itemIcon: action.itemIcon,
         characterId: character ? character.ID : -1
       });
-      if (team && list.teamId === team.$key) {
-        this.discordWebhookService.notifyItemChecked(team, list, character.Name, userId, action.doneDelta, action.itemId);
+      if (list.teamId === team.$key && action.doneDelta > 0) {
+        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId);
       }
       return [action, list];
     }),

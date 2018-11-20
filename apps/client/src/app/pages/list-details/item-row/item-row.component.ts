@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { first, map, shareReplay, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -30,7 +30,6 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { CommentsPopupComponent } from '../../../modules/comments/comments-popup/comments-popup.component';
 import { CommentTargetType } from '../../../modules/comments/comment-target-type';
-import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
 import { List } from '../../../modules/list/model/list';
 import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
 
@@ -164,17 +163,24 @@ export class ItemRowComponent implements OnInit {
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.saveItem();
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      filter(list => list && list.teamId !== undefined),
+      withLatestFrom(this.team$)
+    ).subscribe(([list, team]) => {
+      this.discordWebhookService.notifyUserAssignment(team, this.item.icon, uid, this.item.id, list);
+    });
   }
 
   private saveItem(): void {
     this.listsFacade.updateItem(this.item, this.finalItem);
   }
 
-  assignTeamMember(team: Team, memberId: string, memberName: string): void {
+  assignTeamMember(team: Team, memberId: string): void {
     this.setWorkingOnIt(memberId);
     if (team.webhook !== undefined) {
       this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
-        this.discordWebhookService.notifyUserAssignment(team, memberName, memberId, this.item.id, list);
+        this.discordWebhookService.notifyUserAssignment(team, this.item.icon, memberId, this.item.id, list);
       });
     }
   }
