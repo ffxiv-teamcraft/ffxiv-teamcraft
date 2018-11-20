@@ -267,6 +267,8 @@
     "VERIFICATION": {
       "Title": "",
       "Guide": "",
+      "Success": "",
+      "Error": "",
       "Validate": ""
     },
     "HELP": {
