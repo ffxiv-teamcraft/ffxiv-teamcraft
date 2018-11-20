@@ -2,6 +2,7 @@
   "Pick_a_list": "",
   "Pick_a_user": "",
   "Pick_a_fc": "",
+  "FC_name": "",
   "Saving_in_database": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "",
@@ -161,7 +162,7 @@
   "Upgrade_list": "",
   "List_recreated": "",
   "List_popup_title": "",
-  "Please wait": "",
+  "Please_wait": "",
   "Not_own_list_outdated": "",
   "Own_list_outdated_before_button": "",
   "Own_list_outdated_after_button": "",
