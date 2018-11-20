@@ -279,6 +279,7 @@
     }
   },
   "LISTS": {
+    "Needs_verification": "",
     "Regenerate_all": "Régénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
