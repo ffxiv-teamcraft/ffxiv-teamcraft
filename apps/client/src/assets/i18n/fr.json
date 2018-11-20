@@ -2,6 +2,7 @@
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez une liste",
   "Pick_a_fc": "Choisissez une compagnie libre",
+  "FC_name": "",
   "Saving_in_database": "Sauvegarde en cours",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
@@ -161,7 +162,7 @@
   "Upgrade_list": "Régénérer la liste avec la dernière version de l'application",
   "List_recreated": "Liste régénérée avec succès",
   "List_popup_title": "Régénération de la liste en cours, merci de patienter",
-  "Please wait": "Cela devrait être rapide, veuillez patienter un peu",
+  "Please_wait": "",
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
   "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
   "Own_list_outdated_after_button": "bouton",
