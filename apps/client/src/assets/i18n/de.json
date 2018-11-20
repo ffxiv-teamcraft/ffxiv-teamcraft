@@ -2,6 +2,7 @@
   "Pick_a_list": "Wähle eine Liste",
   "Pick_a_user": "Wähle einen Benutzer",
   "Pick_a_fc": "",
+  "FC_name": "",
   "Saving_in_database": "Speichere Daten auf dem Server",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
@@ -161,7 +162,7 @@
   "Upgrade_list": "Liste mit aktuellem App-Update regenerieren",
   "List_recreated": "Liste korrekt regeneriert",
   "List_popup_title": "Regeneriere die Liste, bitte warten",
-  "Please wait": "",
+  "Please_wait": "",
   "Not_own_list_outdated": "Diese Liste ist nicht mehr aktuell, bitte den Ersteller sie zu erneuern",
   "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
   "Own_list_outdated_after_button": "Schaltfläche",
