@@ -714,16 +714,16 @@
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
     "NOTIFICATIONS":{
-      "Item_added": "{{amount}}x [**{{itemName}}**](http://garlandtools.org/db/#item/{{itemId}}) has been added to [**{{listName}}**]({{listUrl}}).",
-      "Item_removed": "{{amount}}x [**{{itemName}}**](http://garlandtools.org/db/#item/{{itemId}}) has been removed from [**{{listName}}**]({{listUrl}}).",
-      "List_progress": "[**{{characterName}}**]({{memberProfileUrl}}) marked {{amount}}x [**{{itemName}}**](http://garlandtools.org/db/#item/{{itemId}}) as done on [**{{listName}}**]({{listUrl}}).",
+      "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
+      "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",
       "Webhook_setup_complete": "The **{{teamName}}** team will now be tracked in this channel.",
-      "List_added_notification": "The list [**{{listName}}**]({{listUrl}}) has been added to the team.",
-      "List_removed_notification": "The list [**{{listName}}**]({{listUrl}}) has been removed from the team.",
-      "Member_joined": "[**{{memberName}}**]({{memberProfileUrl}}) has joined the team!",
-      "Member_removed": "[**{{memberName}}**]({{memberProfileUrl}}) has been removed from team.",
+      "List_added_notification": "The list **[{{listName}}]({{listUrl}})** has been added to the team.",
+      "List_removed_notification": "The list **[{{listName}}]({{listUrl}})** has been removed from the team.",
+      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "[**{{itemName}}**](http://garlandtools.org/db/#item/{{itemId}}) has been assigned to [**{{memberName}}**]({{memberProfileUrl}}) on [**{{listName}}**]({{listUrl}})."
+      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
     }
   },
   "MARKETBOARD": {
