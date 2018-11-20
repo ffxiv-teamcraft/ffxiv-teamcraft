@@ -53,11 +53,11 @@ export class ListsEffects {
   loadListsWithWriteAccess$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListsWithWriteAccess),
     first(),
-    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
+    switchMap(() => combineLatest(this.authFacade.user$, this.authFacade.fcId$)),
     distinctUntilChanged(),
-    switchMap(([userId, fcId]) => {
+    switchMap(([user, fcId]) => {
       // First of all, load using user Id
-      return this.listCompactsService.getWithWriteAccess(userId).pipe(
+      return this.listCompactsService.getWithWriteAccess(user.$key).pipe(
         switchMap((lists) => {
           // If we don't have fc informations yet, return the lists directly.
           if (!fcId) {
@@ -65,7 +65,16 @@ export class ListsEffects {
           }
           // Else add fc lists
           return this.listCompactsService.getWithWriteAccess(fcId).pipe(
-            map(fcLists => [...lists, ...fcLists])
+            map(fcLists => {
+              const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+              const verified = idEntry && idEntry.verified;
+              if (!verified) {
+                this.listsFacade.setNeedsverification(true);
+                return lists;
+              }
+              this.listsFacade.setNeedsverification(false);
+              return [...lists, ...fcLists];
+            })
           );
         })
       );

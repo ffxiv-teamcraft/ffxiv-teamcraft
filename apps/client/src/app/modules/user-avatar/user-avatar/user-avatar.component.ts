@@ -23,9 +23,12 @@ export class UserAvatarComponent implements OnInit {
   @Input()
   flex = true;
 
+  @Input()
+  ignoreVerification = false;
+
   character$: Observable<Character>;
 
-  status$: Observable<'success' | 'error'>;
+  status$: Observable<{ verified: boolean }>;
 
   constructor(private characterService: CharacterService) {
   }
@@ -39,7 +42,7 @@ export class UserAvatarComponent implements OnInit {
       shareReplay(1)
     );
     this.character$ = character$.pipe(map(res => res.character));
-    this.status$ = character$.pipe(map(res => res.verified ? 'success' : 'error'), startWith(<'success' | 'error'>'error'));
+    this.status$ = character$.pipe(map(res => ({ verified: res.verified })), startWith({ verified: false }));
   }
 
 }

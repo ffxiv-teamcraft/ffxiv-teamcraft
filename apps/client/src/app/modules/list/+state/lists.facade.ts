@@ -12,6 +12,7 @@ import {
   LoadListDetails,
   LoadListsWithWriteAccess,
   LoadMyLists,
+  NeedsVerification,
   SelectList,
   SetItemDone,
   UpdateItem,
@@ -99,6 +100,8 @@ export class ListsFacade {
     distinctUntilChanged(),
     shareReplay(1)
   );
+
+  needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade) {
@@ -219,6 +222,10 @@ export class ListsFacade {
     this.store.dispatch(new LoadListDetails(key));
   }
 
+  setNeedsverification(needed: boolean): void {
+    this.store.dispatch(new NeedsVerification(needed));
+  }
+
   loadAndWait(key: string): Observable<List> {
     this.load(key);
     return this.allListDetails$.pipe(
@@ -226,7 +233,7 @@ export class ListsFacade {
       map(details => details.find(l => l.$key === key)),
       filter(list => list !== undefined),
       first()
-    )
+    );
   }
 
   select(key: string): void {

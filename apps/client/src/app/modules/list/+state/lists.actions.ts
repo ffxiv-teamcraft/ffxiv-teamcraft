@@ -29,10 +29,19 @@ export enum ListsActionTypes {
   UpdateList = '[Lists] Update List',
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
+
+  NeedsVerification = '{Lists] Needs character verification'
 }
 
 export class LoadMyLists implements Action {
   readonly type = ListsActionTypes.LoadMyLists;
+}
+
+export class NeedsVerification implements Action {
+  readonly type = ListsActionTypes.NeedsVerification;
+
+  constructor(public readonly verificationNeeded: boolean) {
+  }
 }
 
 export class LoadListsWithWriteAccess implements Action {
@@ -175,4 +184,5 @@ export type ListsAction =
   | LoadCommunityLists
   | CommunityListsLoaded
   | UpdateItem
-  | ListsForTeamsLoaded;
+  | ListsForTeamsLoaded
+  | NeedsVerification;

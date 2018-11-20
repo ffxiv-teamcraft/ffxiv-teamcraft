@@ -8,13 +8,15 @@ export interface ListsState {
   selectedId?: string; // which Lists record has been selected
   compactsConnected: boolean;
   communityListsConnected: boolean;
+  needsVerification: boolean;
 }
 
 export const initialState: ListsState = {
   compacts: [],
   listDetails: [],
   compactsConnected: false,
-  communityListsConnected: false
+  communityListsConnected: false,
+  needsVerification: false
 };
 
 export function listsReducer(
@@ -22,6 +24,15 @@ export function listsReducer(
   action: ListsAction
 ): ListsState {
   switch (action.type) {
+
+    case ListsActionTypes.NeedsVerification: {
+      state = {
+        ...state,
+        needsVerification: action.verificationNeeded
+      };
+      break;
+    }
+
     case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,

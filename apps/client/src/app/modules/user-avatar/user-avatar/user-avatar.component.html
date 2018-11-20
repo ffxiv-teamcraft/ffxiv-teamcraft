@@ -1,14 +1,14 @@
 <a routerLink="/profile/{{userId}}" (click)="$event.stopPropagation()">
-  <nz-badge *ngIf="character$ | async as character; else anonymous"
-            [nzStatus]="(status$ | async) === 'error'?'error':null" [class.flex]="flex">
+  <ng-container *ngIf="character$ | async as character; else anonymous">
     <img [src]="character.Avatar" alt="" nz-tooltip
          [nzTitle]="tooltip"
+         [class.gray]="(status$ | async)?.verified === false && !ignoreVerification"
          [style.width.px]="width" class="avatar">
     <ng-template #tooltip>
       {{messageKey ? (messageKey | translate:{name: character.Name}) : character.Name }}
-      <span *ngIf="(status$ | async) === 'error'">({{'Not_verified' | translate}})</span>
+      <span *ngIf="(status$ | async)?.verified === false">({{'Not_verified' | translate}})</span>
     </ng-template>
-  </nz-badge>
+  </ng-container>
   <ng-template #anonymous>
     <i nz-icon type="user" nz-tooltip
        [style.width.px]="width"

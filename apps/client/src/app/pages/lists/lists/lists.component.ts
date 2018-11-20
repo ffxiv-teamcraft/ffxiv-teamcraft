@@ -34,6 +34,8 @@ export class ListsComponent {
 
   public loading$: Observable<boolean>;
 
+  public needsVerification$ = this.listsFacade.needsVerification$;
+
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,

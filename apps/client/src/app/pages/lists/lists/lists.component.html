@@ -26,13 +26,15 @@
         <i nz-icon type="file-sync"></i>
       </button>
     </div>
+    <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate" nzType="warning"
+              *ngIf="needsVerification$ | async" nzShowIcon></nz-alert>
     <h2>{{'LISTS.Your_lists' | translate}}</h2>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">
       <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.otherLists; trackBy: trackByList"
            ngxDraggable="list"
            [model]="list">
-        <app-list-panel [list]="list"></app-list-panel>
+        <app-list-panel [list]="list" [hideAvatar]="true"></app-list-panel>
       </div>
       <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
         {{'LISTS.No_lists' | translate}}

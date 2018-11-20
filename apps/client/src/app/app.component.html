@@ -47,7 +47,8 @@
                 {{'COMMON.Anonymous' | translate}}
               </span>
               <ng-template #userLoggedIn>
-                <app-user-avatar [userId]="userId$ | async" [width]="32" [flex]="false"></app-user-avatar>
+                <app-user-avatar [userId]="userId$ | async" [width]="32" [flex]="false"
+                                 [ignoreVerification]="true"></app-user-avatar>
                 {{(character$ | async)?.Name | ifMobile:''}}
                 </ng-template>
             </ng-template>
