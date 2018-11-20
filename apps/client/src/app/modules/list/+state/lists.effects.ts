@@ -93,14 +93,20 @@ export class ListsEffects {
         switchMap(loggedIn => {
           return combineLatest(
             of(action.key),
-            this.authFacade.userId$,
+            this.authFacade.user$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           );
         })
       );
     }),
-    map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
+    map(([listKey, user, fcId, list]: [string, TeamcraftUser, string | null, List]) => {
+      const userId = user.$key;
+      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+      const verified = idEntry && idEntry.verified;
+      if (!verified) {
+        fcId = null;
+      }
       if (list !== null) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
         if (permissionLevel >= PermissionLevel.READ) {

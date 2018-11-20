@@ -50,8 +50,14 @@ export class ListsFacade {
     })
   );
 
-  listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$, this.authFacade.fcId$).pipe(
-    map(([compacts, userId, fcId]) => {
+  listsWithWriteAccess$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.user$, this.authFacade.fcId$).pipe(
+    map(([compacts, user, fcId]) => {
+      const userId = user.$key;
+      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+      const verified = idEntry && idEntry.verified;
+      if (!verified) {
+        fcId = null;
+      }
       return compacts.filter(c => {
         return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
       });
@@ -76,12 +82,18 @@ export class ListsFacade {
     switchMap(loggedIn => {
       return combineLatest(
         this.selectedList$,
-        this.authFacade.userId$,
+        this.authFacade.user$,
         this.teamsFacade.selectedTeam$,
         loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
       );
     }),
-    map(([list, userId, team, fcId]) => {
+    map(([list, user, team, fcId]) => {
+      const userId = user.$key;
+      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+      const verified = idEntry && idEntry.verified;
+      if (!verified) {
+        fcId = null;
+      }
       return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
     }),
     distinctUntilChanged(),

@@ -2,6 +2,7 @@
   "Pick_a_list": "Pick a list",
   "Pick_a_user": "Pick a user",
   "Pick_a_fc": "Pick a free company",
+  "FC_name": "Free Company Name",
   "Saving_in_database": "Saving data on server",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account already in use",
@@ -161,7 +162,7 @@
   "Upgrade_list": "Recreate list with latest app update",
   "List_recreated": "Recreated list properly",
   "List_popup_title": "Regenerating the list, please wait",
-  "Please wait": "This should be fast, please wait a bit",
+  "Please_wait": "This should be fast, please wait a bit",
   "Not_own_list_outdated": "This list is outdated, please ask the owner to regenerate it",
   "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
   "Own_list_outdated_after_button": "button",
