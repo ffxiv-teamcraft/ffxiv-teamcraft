@@ -582,13 +582,13 @@
       "Food": "음식 선택",
       "Medicine": "약차 선택",
       "Action": "자유부대 버프선택",
-      "Save_set": "",
+      "Save_set": "현재 직업에 스탯을 저장",
       "Reset_set": "",
-      "Save_consumables": "",
+      "Save_consumables": "현재 소모품을 기본값으로 세팅",
       "STATS": {
-        "CP": "",
-        "Craftsmanship": "",
-        "Control": ""
+        "CP": "CP",
+        "Craftsmanship": "작업숙련도",
+        "Control": "가공숙련도"
       }
     }
   },
