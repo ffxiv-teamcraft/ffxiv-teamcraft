@@ -2,6 +2,7 @@
   "Pick_a_list": "Escoja una lista",
   "Pick_a_user": "Escoja un usuario",
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
+  "FC_name": "",
   "Saving_in_database": "Guardando datos en el servidor",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
@@ -161,7 +162,7 @@
   "Upgrade_list": "Recrear listas con la última actualización de la aplicación",
   "List_recreated": "Lista recreada apropiadamente",
   "List_popup_title": "Regenerando la lista, por favor espere",
-  "Please wait": "Esto debería ser rápido, por favor espere un poco",
+  "Please_wait": "",
   "Not_own_list_outdated": "Esta lista está desactualizada, por favor pídale al dueño que la regenere",
   "Own_list_outdated_before_button": "Esta lista está desactualizada, por favor regenérela usando ",
   "Own_list_outdated_after_button": "botón",
