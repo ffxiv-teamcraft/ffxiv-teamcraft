@@ -16,6 +16,7 @@ import {
   LoginAsAnonymous,
   NoLinkedCharacter,
   SetDefaultCharacter,
+  UpdateUser,
   UserFetched,
   UserPersisted
 } from './auth.actions';
@@ -23,7 +24,6 @@ import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from 'firebase';
@@ -85,13 +85,9 @@ export class AuthEffects {
     ofType(AuthActionTypes.NoLinkedCharacter),
     withLatestFrom(this.authFacade.linkingCharacter$),
     filter(([, linking]) => !linking),
-    tap(() => this.dialog.create({
-      nzTitle: this.translate.instant('Character_informations'),
-      nzContent: CharacterLinkPopupComponent,
-      nzFooter: null,
-      nzMaskClosable: false,
-      nzClosable: false
-    })),
+    tap(() => {
+      this.authFacade.addCharacter(true, true);
+    }),
     map(() => new LinkingCharacter())
   );
 
@@ -142,10 +138,28 @@ export class AuthEffects {
 
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId, AuthActionTypes.ToggleFavorite),
+    ofType(
+      AuthActionTypes.AddCharacter,
+      AuthActionTypes.RemoveCharacter,
+      AuthActionTypes.SetDefaultCharacter,
+      AuthActionTypes.SetCurrentFcId,
+      AuthActionTypes.ToggleFavorite,
+      AuthActionTypes.ToggleMasterbooks,
+      AuthActionTypes.SaveSet,
+    ),
+    debounceTime(100),
     withLatestFrom(this.store),
-    mergeMap(([, state]) => {
+    switchMap(([, state]) => {
       return this.userService.set(state.auth.uid, { ...state.auth.user });
+    }),
+    map(() => new UserPersisted())
+  );
+
+  @Effect()
+  updateUser$ = this.actions$.pipe(
+    ofType<UpdateUser>(AuthActionTypes.UpdateUser),
+    switchMap((action) => {
+      return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
   );

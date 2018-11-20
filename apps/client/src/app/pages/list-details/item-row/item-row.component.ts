@@ -28,6 +28,11 @@ import { RelationshipsComponent } from '../item-details/relationships/relationsh
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { CommentsPopupComponent } from '../../../modules/comments/comments-popup/comments-popup.component';
+import { CommentTargetType } from '../../../modules/comments/comment-target-type';
+import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
+import { List } from '../../../modules/list/model/list';
+import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
 
 @Component({
   selector: 'app-item-row',
@@ -69,9 +74,11 @@ export class ItemRowComponent implements OnInit {
 
   loggedIn$: Observable<boolean>;
 
+  requiredForFinalCraft$: Observable<number>;
+
   team$: Observable<Team>;
 
-  constructor(private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
+  constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
@@ -92,7 +99,8 @@ export class ItemRowComponent implements OnInit {
           return null;
         }
         return team;
-      })
+      }),
+      shareReplay(1)
     );
 
     this.hasAllBaseIngredients$ = combineLatest(this.canBeCrafted$, this.listsFacade.selectedList$
@@ -100,7 +108,28 @@ export class ItemRowComponent implements OnInit {
         map(list => list.hasAllBaseIngredients(this.item))
       )
     ).pipe(
-      map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients)
+      map(([craftable, allIngredients]) => !craftable && this.item.amount > this.item.done && allIngredients),
+      shareReplay(1)
+    );
+
+    this.requiredForFinalCraft$ = this.listsFacade.selectedList$.pipe(
+      map(list => {
+        const recipesNeedingItem = list.finalItems
+          .filter(item => item.requires !== undefined)
+          .filter(item => item.requires.find(req => req.id === this.item.id) !== undefined);
+        if (this.item.requiredAsHQ) {
+          return this.item.amount;
+        }
+        if (recipesNeedingItem.length === 0) {
+          return 0;
+        } else {
+          let count = 0;
+          recipesNeedingItem.forEach(recipe => {
+            count += recipe.requires.find(req => req.id === this.item.id).amount * recipe.amount;
+          });
+          return count;
+        }
+      })
     );
   }
 
@@ -112,11 +141,32 @@ export class ItemRowComponent implements OnInit {
 
   removeWorkingOnIt(): void {
     delete this.item.workingOnIt;
-    this.listsFacade.updateItem(this.item, this.finalItem);
+    this.saveItem();
+  }
+
+  openCommentsPopup(list: List, isAuthor: boolean): void {
+    this.modal.create({
+      nzTitle: this.translate.instant('COMMENTS.Title'),
+      nzFooter: null,
+      nzContent: CommentsPopupComponent,
+      nzComponentParams: {
+        targetType: CommentTargetType.LIST,
+        targetId: list.$key,
+        targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`,
+        isAuthor: isAuthor,
+        notificationFactory: (comment) => {
+          return new ListItemCommentNotification(list.$key, this.item.id, comment.content, list.name, list.authorId);
+        }
+      }
+    });
   }
 
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
+    this.saveItem();
+  }
+
+  private saveItem(): void {
     this.listsFacade.updateItem(this.item, this.finalItem);
     this.listsFacade.selectedList$.pipe(
       first(),
@@ -136,8 +186,8 @@ export class ItemRowComponent implements OnInit {
     }
   }
 
-  itemDoneChanged(newValue: number): void {
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done);
+  itemDoneChanged(newValue: number | string, multiplier = 1): void {
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, (+newValue * multiplier) - this.item.done);
   }
 
   markAsDone(): void {

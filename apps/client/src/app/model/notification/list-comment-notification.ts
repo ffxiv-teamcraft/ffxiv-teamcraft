@@ -6,20 +6,19 @@ import { NotificationType } from '../../core/notification/notification-type';
 
 export class ListCommentNotification extends AbstractNotification {
 
-  constructor(private userName: string, private comment: string, private listName: string) {
-    super(NotificationType.LIST_COMMENT);
+  constructor(private comment: string, private listName: string, target: string) {
+    super(NotificationType.LIST_COMMENT, target);
   }
 
   getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string {
-    return translate.instant('NOTIFICATIONS.List_commented', {
-      userName: this.userName,
+    return translate.instant('NOTIFICATIONS.List_comment_added', {
       content: this.comment,
       listName: this.listName
     });
   }
 
   getIcon(): string {
-    return 'add_comment';
+    return 'form';
   }
 
   getTargetRoute(): string[] {

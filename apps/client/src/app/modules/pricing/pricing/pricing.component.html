@@ -1,84 +1,55 @@
-<h3>{{list?.name}} - {{"Pricing" | translate}}</h3>
+<div *ngIf="list$ | async as list" fxLayout="column" fxLayoutGap="10px">
+  <h3>{{list?.name}} - {{"Pricing" | translate}}</h3>
 
-<button mat-button color="accent" (click)="close.emit()">
-  <mat-icon>arrow_back</mat-icon>
-  {{"Back_to_list" | translate}}
-</button>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <button nz-button nzType="primary" (click)="close.emit()">
+      <i nz-icon type="arrow-left"></i>
+      {{'Back_to_list' | translate}}
+    </button>
 
-<mat-slide-toggle [(ngModel)]="settings.expectToSellEverything">
-  {{'PRICING.Expect_to_sell_everything' | translate}}
-</mat-slide-toggle>
+    <label nz-checkbox [(ngModel)]="settings.expectToSellEverything">
+      {{'PRICING.Expect_to_sell_everything' | translate}}
+    </label>
+  </div>
 
-<mat-card *ngIf="list" [class]="isMobile()?'mobile':null">
-  <mat-card-title>
-    {{"Spending" | translate}}
-  </mat-card-title>
-  <mat-card-subtitle>{{getSpendingTotal() | number:'1.0-0'}} gil</mat-card-subtitle>
+  <nz-card>
+    <nz-card-meta [nzTitle]="'Spending' | translate"
+                  nzDescription="{{spendingTotal | number:'1.0-0'}} gil"></nz-card-meta>
+    <nz-collapse class="collapse-container">
+      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Crystals' | translate">
+        <app-pricing-row *ngFor="let row of crystals$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+                         [item]="row" [listId]="list.$key"
+                         (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
+      </nz-collapse-panel>
 
-  <mat-expansion-panel *ngIf="list.crystals.length > 0">
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{"Crystals" | translate}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-list dense>
-      <app-pricing-row *ngFor="let item of list.crystals; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
-                       [item]="item"
-                       [listId]="list.$key"
-                       [odd]="odd"></app-pricing-row>
-    </mat-list>
-  </mat-expansion-panel>
+      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Other' | translate">
+        <app-pricing-row *ngFor="let row of items$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+                         [item]="row" [listId]="list.$key"
+                         (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
+      </nz-collapse-panel>
 
-  <mat-expansion-panel *ngIf="list.gathers.length > 0">
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{"Gathering" | translate}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-list dense>
-      <app-pricing-row *ngFor="let item of list.gathers; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
-                       [item]="item"
-                       [listId]="list.$key"
-                       [odd]="odd"></app-pricing-row>
-    </mat-list>
-  </mat-expansion-panel>
+      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Pre_crafts' | translate">
 
-  <mat-expansion-panel *ngIf="list.others.length > 0">
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{"Other" | translate}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-list dense>
-      <app-pricing-row *ngFor="let item of list.others; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
-                       [item]="item"
-                       [listId]="list.$key"
-                       [odd]="odd"></app-pricing-row>
-    </mat-list>
-  </mat-expansion-panel>
+        <app-pricing-row *ngFor="let row of preCrafts$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+                         [craftCost]="getCraftCost(row)" [item]="row" [listId]="list.$key"
+                         [preCraft]="true" (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </nz-card>
 
-  <mat-expansion-panel *ngIf="list.preCrafts.length > 0">
-    <mat-expansion-panel-header>
-      <mat-panel-title>{{"Pre_crafts" | translate}}</mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-list dense>
-      <app-pricing-row *ngFor="let item of list.preCrafts; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
-                       [item]="item"
-                       [listId]="list.$key"
-                       [odd]="odd"
-                       [craftCost]="getCraftCost(item)"
-                       [preCraft]="true"></app-pricing-row>
-    </mat-list>
-  </mat-expansion-panel>
+  <nz-card>
+    <nz-card-meta [nzTitle]="'Earning' | translate"
+                  nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
+    <nz-collapse class="collapse-container">
+      <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="'Items' | translate">
+        <app-pricing-row *ngFor="let row of list.finalItems; trackBy: trackByItemFn;let odd = odd" [odd]="odd"
+                         [item]="row" [listId]="list.$key"
+                         [craftCost]="getCraftCost(row)"
+                         (save)="save(list)" [earning]="true"></app-pricing-row>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </nz-card>
 
-</mat-card>
-
-<mat-card *ngIf="list" [ngClass]="{'mobile':isMobile()}">
-  <mat-card-title>{{"Earning" | translate}}</mat-card-title>
-  <mat-card-subtitle>{{getTotalEarnings(list.finalItems) | number:'1.0-0'}} gil</mat-card-subtitle>
-  <mat-list dense>
-    <app-pricing-row *ngFor="let item of list.finalItems; trackBy: trackByItemFn; let odd = odd;" (save)="save()"
-                     [item]="item"
-                     [listId]="list.$key" [odd]="odd"
-                     [craftCost]="getCraftCost(item)"
-                     [earning]="true"></app-pricing-row>
-  </mat-list>
-</mat-card>
-
-<mat-card *ngIf="list" class="accent">
-  <mat-card-title>{{"Benefits" | translate}}: {{getBenefits() | number:'1.0-0'}} gil</mat-card-title>
-</mat-card>
+  <nz-alert nzType="success" nzMessage="{{'Benefits' | translate}}: {{getBenefits(list) | number:'1.0-0'}} gil">
+  </nz-alert>
+</div>

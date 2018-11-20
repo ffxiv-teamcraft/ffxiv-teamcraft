@@ -2,12 +2,14 @@ import { Action } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
 import { CharacterResponse } from '@xivapi/angular-client';
+import { GearSet } from '../pages/simulator/model/gear-set';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
   Authenticated = '[Auth] Authenticated',
 
   UserFetched = '[Auth] User fetched',
+  UpdateUser = '[Auth] Update User',
 
   LoginAsAnonymous = '[Auth] Login as Anonymous',
   LoggedInAsAnonymous = '[Auth] Logged in as Anonymous',
@@ -24,10 +26,14 @@ export enum AuthActionTypes {
   NoLinkedCharacter = '[Auth] No linked character',
   LinkingCharacter = '[Auth] Linking character',
   AddCharacter = '[Auth] Add character',
+  RemoveCharacter = '[Auth] Remove character',
   SetDefaultCharacter = '[Auth] Set default character',
   SetCurrentFcId = '[Auth] Set Current fc id',
   CharactersLoaded = '[Auth] Characters loaded',
   UserPersisted = '[Auth] User persisted',
+
+  ToggleMasterbooks = '[Auth] Toggle Masterbooks',
+  SaveSet = '[Auth] Save set',
 
   AnonymousWarningShown = '[Auth] Anonyous warning shown',
 
@@ -59,6 +65,13 @@ export class ToggleFavorite implements Action {
 
 export class UserFetched implements Action {
   readonly type = AuthActionTypes.UserFetched;
+
+  constructor(public user: TeamcraftUser) {
+  }
+}
+
+export class UpdateUser implements Action {
+  readonly type = AuthActionTypes.UpdateUser;
 
   constructor(public user: TeamcraftUser) {
   }
@@ -142,6 +155,13 @@ export class SetDefaultCharacter implements Action {
   }
 }
 
+export class RemoveCharacter implements Action {
+  readonly type = AuthActionTypes.RemoveCharacter;
+
+  constructor(public readonly lodestoneId: number) {
+  }
+}
+
 export class SetCurrentFcId implements Action {
   readonly type = AuthActionTypes.SetCurrentFcId;
 
@@ -153,6 +173,20 @@ export class CharactersLoaded implements Action {
   readonly type = AuthActionTypes.CharactersLoaded;
 
   constructor(public readonly characters: CharacterResponse[]) {
+  }
+}
+
+export class ToggleMasterbooks implements Action {
+  readonly type = AuthActionTypes.ToggleMasterbooks;
+
+  constructor(public readonly books: { id: number, checked: boolean }[]) {
+  }
+}
+
+export class SaveSet implements Action {
+  readonly type = AuthActionTypes.SaveSet;
+
+  constructor(public readonly set: GearSet) {
   }
 }
 
@@ -185,4 +219,8 @@ export type AuthActions = GetUser
   | UserPersisted
   | SetCurrentFcId
   | AnonymousWarningShown
-  | ToggleFavorite;
+  | ToggleFavorite
+  | RemoveCharacter
+  | ToggleMasterbooks
+  | SaveSet
+  | UpdateUser;

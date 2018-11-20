@@ -4,21 +4,22 @@ import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { NotificationType } from '../../core/notification/notification-type';
 
-export class ItemAssignedNotification extends AbstractNotification {
+export class ListItemCommentNotification extends AbstractNotification {
 
-  constructor(private itemId: number, private listName: string, private listId: string) {
-    super(NotificationType.ITEM_ASSIGNED);
+  constructor(private listId: string, private itemId: number, private comment: string, private listName: string, target: string) {
+    super(NotificationType.LIST_ITEM_COMMENT, target);
   }
 
   getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string {
-    return translate.instant('NOTIFICATIONS.Item_assigned', {
+    return translate.instant('NOTIFICATIONS.List_item_comment_added', {
       itemName: i18nTools.getName(l12n.getItem(this.itemId)),
+      content: this.comment,
       listName: this.listName
     });
   }
 
   getIcon(): string {
-    return 'assignment_ind';
+    return 'form';
   }
 
   getTargetRoute(): string[] {

@@ -3,8 +3,9 @@ import { combineLatest, Observable } from 'rxjs';
 import { FormControl, Validators } from '@angular/forms';
 import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd';
-import { debounceTime, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { UserService } from '../../../core/database/user.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-user-picker',
@@ -27,8 +28,14 @@ export class UserPickerComponent {
 
   public loadingResults = false;
 
+  public hideContacts = false;
+
+  public contacts$ = this.authFacade.user$.pipe(
+    map(user => user.contacts)
+  );
+
   constructor(private xivapi: XivapiService, private modalRef: NzModalRef,
-              private userService: UserService) {
+              private userService: UserService, private authFacade: AuthFacade) {
     this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
 
     this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)

@@ -8,10 +8,34 @@
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
         </li>
-        <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notifications">
-          <nz-badge [nzDot]="true">
+        <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notificationsTemplate"
+            *ngIf="notifications$ | async as notifications">
+          <nz-badge [nzDot]="notifications.length > 0">
             <i nz-icon type="notification"></i>
           </nz-badge>
+          <ng-template #notificationsTemplate>
+            <nz-list [nzDataSource]="notifications" [nzRenderItem]="notificationTemplate">
+              <ng-template #notificationTemplate let-notification>
+                <nz-list-item [nzActions]="[actionOpen, actionClose]">
+                  <nz-list-item-meta [nzTitle]="notification.content"
+                                     [nzDescription]="notification.route.join('/')"
+                                     [nzAvatar]="icon">
+                    <ng-template #icon>
+                      <i nz-icon type="{{notification.icon}}"></i>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
+                <ng-template #actionClose>
+                  <i nz-icon type="close" (click)="deleteNotification(notification)"></i>
+                </ng-template>
+                <ng-template #actionOpen>
+                  <a [routerLink]="notification.route">
+                    <i nz-icon type="select"></i>
+                  </a>
+                </ng-template>
+              </ng-template>
+            </nz-list>
+          </ng-template>
         </li>
         <li nz-submenu>
           <span title>
@@ -29,7 +53,7 @@
             </ng-template>
           </span>
           <span>
-            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
+            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/profile">
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
@@ -155,30 +179,3 @@
     <span class="timer">{{time$ | async}}</span>
   </nz-footer>
 </nz-layout>
-
-<!--Only for mocking purpose, todo delete-->
-<ng-template #notifications>
-  <nz-list>
-    <nz-list-item [nzActions]="[actionSetting,actionEdit,actionEllipsis]">
-      Tataru Taru invited you to join team "Lalafell team yay!"
-    </nz-list-item>
-    <nz-list-item [nzActions]="[actionOpen,actionEllipsis]">
-      Peppermint Cordial added 14 Cordials to list "Cordials yay!"
-    </nz-list-item>
-    <nz-list-item [nzActions]="[actionOpen,actionEllipsis]">
-      Irvine Kineas applied on commission "I need gear"
-    </nz-list-item>
-    <ng-template #actionSetting>
-      <i nz-icon type="check"></i>
-    </ng-template>
-    <ng-template #actionEdit>
-      <i nz-icon type="close"></i>
-    </ng-template>
-    <ng-template #actionOpen>
-      <i nz-icon type="select"></i>
-    </ng-template>
-    <ng-template #actionEllipsis>
-      <i nz-icon type="delete"></i>
-    </ng-template>
-  </nz-list>
-</ng-template>

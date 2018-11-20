@@ -26,6 +26,8 @@
   "Copy_isearch": "Copy isearch macro",
   "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
   "Required_for_final_craft": "{{amount}} needed for final items",
+  "Mark_HQ": "Mark as HQ required",
+  "Unmark_HQ": "Remove HQ requirement",
   "Compact_sidebar_toggle": "Toggle compact sidebar",
   "Confirmation": "Are you sure?",
   "Is_working_on_it": "{{name}} is working on it",
@@ -242,6 +244,12 @@
     "No_update_available": "No update available"
   },
   "PROFILE": {
+    "Account": "Account",
+    "Add_character": "Add a character",
+    "Remove_character": "Remove a character",
+    "Jobs": "Jobs",
+    "Stats": "Stats",
+    "View_on_apkallu_falls": "Open in Apkallu Falls",
     "Masterbooks": "Masterbooks",
     "Patreon_supporter": "Patreon Supporter",
     "Patreon_features": "Patreon supporter features",
@@ -253,7 +261,7 @@
     "Email_already_used": "Email already linked to another account",
     "Patreon_email": "Patreon Email",
     "Contacts": "Contacts",
-    "New_contact": "New contact's user ID",
+    "Add_new_contact": "New contact",
     "Save_for_all": "Save for all",
     "User_not_verified": "User not verified, click to verify user",
     "VERIFICATION": {
@@ -320,6 +328,7 @@
     "Add_remove_amount": "Add/remove a given amount",
     "No_book": "Missing book, click to navigate to profile",
     "No_note": "No note",
+    "Edit_note": "No note",
     "Note_placeholder": "Note",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventory",
@@ -682,7 +691,8 @@
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",
-    "List_commented": "{{userName}} commented on list {{listName}}: \"{{content}}\"",
+    "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
+    "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
     "Mark_all_as_read": "Mark all as read"
   },
   "TEAMS": {
@@ -721,6 +731,11 @@
     "Amount": "Quantity",
     "HQ": "HQ",
     "Total_price": "Total price",
-    "Unit_price": "Unit price"
+    "Unit_price": "Unit price",
+    "History": "History",
+    "Purchase_date": "Date"
+  },
+  "COMMENTS": {
+    "Title": "Comments"
   }
 }

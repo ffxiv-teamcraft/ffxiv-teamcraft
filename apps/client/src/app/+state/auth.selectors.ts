@@ -17,6 +17,13 @@ const getMainCharacter = createSelector(
   }
 );
 
+const getCharacters = createSelector(
+  getAuthState,
+  (state: AuthState) => {
+    return state.characters;
+  }
+);
+
 const getLoggedIn = createSelector(
   getAuthState,
   (state: AuthState) => state.loggedIn
@@ -43,5 +50,6 @@ export const authQuery = {
   getLinkingCharacter,
   getLoggedIn,
   getUser,
-  getUserId
+  getUserId,
+  getCharacters
 };

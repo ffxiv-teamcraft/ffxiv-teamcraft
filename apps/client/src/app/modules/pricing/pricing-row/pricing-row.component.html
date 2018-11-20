@@ -1,51 +1,52 @@
-<mat-list-item [class.odd]="odd" class="list-item" [class.ignored]="item.usePrice">
-  <div mat-list-avatar class="icon" *ngIf="!isMobile()">
-    <img mat-list-avatar src="{{item.icon | icon}}" alt="{{item.id | itemName | i18n}}">
-  </div>
-  <p mat-line class="item-name">
-    <app-copyable-name [name]="item.id | itemName | i18n" (afterCopy)="afterNameCopy($event)"
-                       [tooltip]="'Copy_item_name_to_clipboard' | translate">
+<div [class.ignored]="!item.usePrice" nz-row fxLayout="row wrap" [class.odd]="odd" class="row-container">
+  <div nz-col nzXs="24" nzMd="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <label nz-checkbox [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()"></label>
+    <app-item-icon [icon]="item.icon" [itemName]="item.id | itemName| i18n" [itemId]="item.id"
+                   [width]="24"></app-item-icon>
+    <span ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+          [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+          (cbOnSuccess)="afterNameCopy($event.content)">
       {{item.id | itemName | i18n}}
-    </app-copyable-name>
-    <mat-icon *ngIf="_craftCost !== undefined"
-              matTooltip="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
-              matTooltipPosition="above">
+    </span>
+    <i *ngIf="_craftCost !== undefined"
+       nz-tooltip
+       nzTitle="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil"
+       class="material-icons">
       attach_money
-    </mat-icon>
-  </p>
+    </i>
+    <i *ngIf="price.fromVendor" class="from-vendor material-icons" nz-tooltip
+       nzTitle="{{'PRICING.From_vendor' | translate}}">
+      group
+    </i>
+    <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
+  </div>
+  <div nz-col nzXs="24" nzMd="10">
 
-  <mat-icon *ngIf="price.fromVendor" class="from-vendor" matTooltip="{{'PRICING.From_vendor' | translate}}"
-            matTooltipPosition="above">group
-  </mat-icon>
-
-  <mat-slide-toggle [(ngModel)]="item.usePrice" (change)="save.emit()"></mat-slide-toggle>
-
-  <mat-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (change)="saveCustomPrice()"></mat-checkbox>
-
-  <div class="amount-group">
-    <div class="field-group" matLine>
-      <mat-form-field class="nofix price">
-        <span matPrefix>NQ &nbsp;</span>
-        <input matInput type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
-               [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
-      </mat-form-field>
-      <mat-form-field class="nofix amount">
-        <span matPrefix>x &nbsp;</span>
-        <input matInput type="number" min="0" [max]="item.amount" [readonly]="isCrystal()"
-               [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()">
-      </mat-form-field>
-    </div>
-    <div class="field-group" matLine *ngIf="!isCrystal()">
-      <mat-form-field class="nofix price">
-        <span matPrefix>HQ &nbsp;</span>
-        <input matInput type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
-               [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
-      </mat-form-field>
-      <mat-form-field class="nofix amount">
-        <span matPrefix>x &nbsp;</span>
-        <input matInput type="number" lang="en-150" min="0" [max]="item.amount"
-               [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()">
-      </mat-form-field>
+  </div>
+  <div nz-col nzXs="24" nzMd="8" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+    <label nz-checkbox *ngIf="preCraft" [(ngModel)]="customPrice" (ngModelChange)="saveCustomPrice()"></label>
+    <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
+      <div fxLayout="row">
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'NQ'">
+          <input nz-input class="price" type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
+                 [(ngModel)]="price.nq" (ngModelChange)="savePrice()">
+        </nz-input-group>
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'x'">
+          <input nz-input class="amount" type="number" min="0" [max]="item.amount"
+                 [readonly]="isCrystal()"
+                 [(ngModel)]="amount.nq" (ngModelChange)="changeNQ()">
+        </nz-input-group>
+      </div>
+      <div *ngIf="!isCrystal()" fxLayout="row">
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'HQ'">
+          <input nz-input class="price" type="number" lang="en-150" min="0" [disabled]="preCraft && !customPrice"
+                 [(ngModel)]="price.hq" (ngModelChange)="savePrice()">
+        </nz-input-group>
+        <nz-input-group nzCompact nzSize="small" [nzAddOnBefore]="'x'">
+          <input nz-input class="amount" type="number" lang="en-150" min="0" [max]="item.amount"
+                 [(ngModel)]="amount.hq" (ngModelChange)="changeHQ()">
+        </nz-input-group>
+      </div>
     </div>
   </div>
-</mat-list-item>
+</div>

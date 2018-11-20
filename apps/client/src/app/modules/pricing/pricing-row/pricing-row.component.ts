@@ -1,16 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
 import { ListRow } from '../../list/model/list-row';
-import { ObservableMedia } from '@angular/flex-layout';
-import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-pricing-row',
   templateUrl: './pricing-row.component.html',
-  styleUrls: ['./pricing-row.component.scss']
+  styleUrls: ['./pricing-row.component.less']
 })
 export class PricingRowComponent implements OnInit {
 
@@ -25,14 +24,17 @@ export class PricingRowComponent implements OnInit {
   preCraft = false;
   @Input()
   odd = false;
-  price: Price;
+  price: Price = { hq: 0, nq: 0, fromVendor: false };
   customPrice = false;
   amount: ItemAmount;
   @Output()
   save: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private pricingService: PricingService, private media: ObservableMedia, private snackBar: MatSnackBar,
-              private translator: TranslateService) {
+  @Output()
+  priceChange: EventEmitter<Price> = new EventEmitter<Price>();
+
+  constructor(private pricingService: PricingService, private message: NzMessageService,
+              private translator: TranslateService, private cd: ChangeDetectorRef) {
   }
 
   public _craftCost: number;
@@ -49,10 +51,12 @@ export class PricingRowComponent implements OnInit {
 
   savePrice(): void {
     this.pricingService.savePrice(this.item, this.price);
+    this.priceChange.emit(this.price);
   }
 
   saveCustomPrice(): void {
     this.pricingService.saveCustomPrice(this.item, this.customPrice);
+    this.priceChange.emit(this.price);
   }
 
   changeNQ(): void {
@@ -72,14 +76,8 @@ export class PricingRowComponent implements OnInit {
   }
 
   public afterNameCopy(name: string): void {
-    this.snackBar.open(
-      this.translator.instant('Item_name_copied',
-        { itemname: name }),
-      '',
-      {
-        duration: 2000,
-        panelClass: ['snack']
-      }
+    this.message.success(
+      this.translator.instant('Item_name_copied', { itemname: name })
     );
   }
 
@@ -95,15 +93,14 @@ export class PricingRowComponent implements OnInit {
     if (this.item.usePrice === undefined) {
       this.item.usePrice = true;
     }
-  }
-
-  isMobile(): boolean {
-    return this.media.isActive('sm') || this.media.isActive('xs');
+    setTimeout(() => {
+      this.cd.detectChanges();
+    });
   }
 
   private setAutoCost(): void {
     if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
-      this.price.nq = this.price.hq = Math.ceil(this._craftCost);
+      this.price.nq = this.price.hq = Math.ceil(this._craftCost) || 0;
     }
   }
 }

@@ -3,4 +3,5 @@ export interface I18nName {
   en: string;
   de: string;
   ja: string;
+  ko?: string;
 }

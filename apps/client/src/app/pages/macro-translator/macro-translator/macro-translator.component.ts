@@ -8,7 +8,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 })
 export class MacroTranslatorComponent {
   macroToTranslate: string;
-  macroLanguage: 'en' | 'fr' | 'de' | 'ja';
+  macroLanguage: 'en' | 'fr' | 'de' | 'ja' | 'ko';
   macroTranslatedTabs: { label: string, content: string[] }[];
 
   invalidInputs: boolean;
@@ -18,7 +18,8 @@ export class MacroTranslatorComponent {
     { id: 'fr', name: 'FR' },
     { id: 'en', name: 'EN' },
     { id: 'de', name: 'DE' },
-    { id: 'ja', name: 'JA' }
+    { id: 'ja', name: 'JA' },
+    { id: 'ko', name: 'KO' }
   ];
 
   private findActionsRegex: RegExp =
@@ -35,7 +36,8 @@ export class MacroTranslatorComponent {
       fr: [],
       en: [],
       de: [],
-      ja: []
+      ja: [],
+      ko: []
     };
 
     this.translationDone = false;
@@ -50,7 +52,11 @@ export class MacroTranslatorComponent {
 
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
-            macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+            if (key === 'ko' && line.indexOf('"') === -1) {
+              macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
+            } else {
+              macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+            }
           });
         } catch (ignored) {
           // Ugly implementation but it's a specific case we don't want to refactor for.

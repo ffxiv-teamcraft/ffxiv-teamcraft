@@ -26,7 +26,7 @@
       <div nz-col nzSm="22" nzMd="4">
         {{_list.name}}
       </div>
-      <div class="author-avatar">
+      <div class="author-avatar" *ngIf="!hideAvatar">
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
       <div nz-col nzSm="24" nzMd="16" class="panel-middle-content">
@@ -80,7 +80,10 @@
                 *ngIf="!publicDisplay">
               {{'LIST.Rename' | translate}}
             </li>
-            <li nz-menu-item>TODO Comments</li>
+            <li nz-menu-item *ngIf="authFacade.userId$ | async as userId"
+                (click)="openCommentsPopup(_list, userId === _list.authorId)">
+              {{'COMMENTS.Title' | translate}}
+            </li>
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openTagsPopup(_list)"
                 *ngIf="!publicDisplay">
               {{'LIST_DETAILS.Tags_popup' | translate}}
