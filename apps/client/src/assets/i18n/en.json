@@ -55,6 +55,7 @@
   },
   "ABOUT": {
     "title": "About",
+    "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
     "Copyright_notice_title": "Copyright notice",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Thanks",
@@ -717,7 +718,7 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
-    "NOTIFICATIONS":{
+    "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})** marked {{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** as done on **[{{listName}}]({{listUrl}})**.",

@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: './pages/profile/profile.module#ProfileModule'
+  },
+  {
+    path: 'about',
+    loadChildren: './pages/about/about.module#AboutModule'
   }
 ];
 
