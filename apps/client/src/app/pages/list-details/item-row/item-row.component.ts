@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { first, map, shareReplay, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -118,13 +118,20 @@ export class ItemRowComponent implements OnInit {
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.listsFacade.updateItem(this.item, this.finalItem);
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      filter(list => list && list.teamId !== undefined),
+      withLatestFrom(this.team$)
+    ).subscribe(([list, team]) => {
+      this.discordWebhookService.notifyUserAssignment(team, this.item.icon, uid, this.item.id, list);
+    });
   }
 
   assignTeamMember(team: Team, memberId: string): void {
     this.setWorkingOnIt(memberId);
     if (team.webhook !== undefined) {
       this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
-        this.discordWebhookService.notifyUserAssignment(team, memberId, this.item.id, list);
+        this.discordWebhookService.notifyUserAssignment(team, this.item.icon, memberId, this.item.id, list);
       });
     }
   }

@@ -20,7 +20,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -182,8 +182,8 @@ export class ListsEffects {
         itemIcon: action.itemIcon,
         characterId: character ? character.ID : -1
       });
-      if (list.teamId === team.$key) {
-        this.discordWebhookService.notifyItemChecked(team, list, userId, action.doneDelta, action.itemId);
+      if (list.teamId === team.$key && action.doneDelta > 0) {
+        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId);
       }
       return [action, list];
     }),
