@@ -265,8 +265,10 @@
     "Save_for_all": "Für alle speichern",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "VERIFICATION": {
-      "Title": "Profilverifizierung",
+      "Title": "",
       "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
+      "Success": "",
+      "Error": "",
       "Validate": "Verifizieren"
     },
     "HELP": {
