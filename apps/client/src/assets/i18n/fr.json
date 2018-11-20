@@ -265,8 +265,10 @@
     "Save_for_all": "Sauvegarder pour tous",
     "User_not_verified": "User non vérifié, cliquez pour vérifier",
     "VERIFICATION": {
-      "Title": "Validation du profil",
+      "Title": "",
       "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
+      "Success": "",
+      "Error": "",
       "Validate": "Valider"
     },
     "HELP": {
