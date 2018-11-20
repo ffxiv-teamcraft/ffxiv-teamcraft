@@ -30,7 +30,6 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { CommentsPopupComponent } from '../../../modules/comments/comments-popup/comments-popup.component';
 import { CommentTargetType } from '../../../modules/comments/comment-target-type';
-import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
 import { List } from '../../../modules/list/model/list';
 import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
 
@@ -164,10 +163,6 @@ export class ItemRowComponent implements OnInit {
   setWorkingOnIt(uid: string): void {
     this.item.workingOnIt = uid;
     this.saveItem();
-  }
-
-  private saveItem(): void {
-    this.listsFacade.updateItem(this.item, this.finalItem);
     this.listsFacade.selectedList$.pipe(
       first(),
       filter(list => list && list.teamId !== undefined),
@@ -175,6 +170,10 @@ export class ItemRowComponent implements OnInit {
     ).subscribe(([list, team]) => {
       this.discordWebhookService.notifyUserAssignment(team, this.item.icon, uid, this.item.id, list);
     });
+  }
+
+  private saveItem(): void {
+    this.listsFacade.updateItem(this.item, this.finalItem);
   }
 
   assignTeamMember(team: Team, memberId: string): void {
