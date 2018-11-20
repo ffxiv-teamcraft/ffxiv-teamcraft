@@ -43,12 +43,9 @@ import { NotificationsModule } from './modules/notifications/notifications.modul
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { SimulatorModule } from './pages/simulator/simulator.module';
+import { TranslationsLoaderFactory } from './translations-loader';
 
 registerLocaleData(en);
-
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
-}
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -86,7 +83,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: TranslationsLoaderFactory,
         deps: [HttpClient]
       }
     }),
