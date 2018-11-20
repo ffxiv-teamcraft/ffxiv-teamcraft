@@ -33,7 +33,7 @@
   "Confirmation": "Êtes-vous sûr ?",
   "Is_working_on_it": "{{name}} travaille dessus",
   "Work_on_it": "Je m'en occupe",
-  "Remove_work_on_it": "Retirer l'assignation d'utilisateur",
+  "Remove_work_on_it": "",
   "Add_as_collectible": "Ajouter en collectionnable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
@@ -717,16 +717,16 @@
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) ont été ajoutés à la liste [{{listName}}] ({{listUrl}})",
-      "Item_removed": "{{amount}} x [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) ont été retirés de la liste [{{listName}}] ({{listUrl}})",
-      "List_progress": "[{{characterName}}] ({{memberProfileUrl}}) a contribué {{amount}} [{{itemName}}] (http://garlandtools.org/db/#item/{{itemId}}) sur la liste [{{listName}}] ({{listUrl}})",
-      "Webhook_setup_complete": "Ce salon est maintenant configuré comme salon de suivi pour l'équipe \"{{teamName}}\"",
-      "List_added_notification": "La Liste [{{listName}}]({{listUrl}}) a été assignée à l'équipe \"{{teamName}}\"",
-      "List_removed_notification": "La liste [{{listName}}]({{listUrl}}) a été retirée de l'équipe \"{{teamName}}\"",
-      "Member_joined": "[{{memberName}}]({{memberProfileUrl}}) a rejoint l'équipe \"{{teamName}}\"!",
-      "Member_removed": "[{{memberName}}]({{memberProfileUrl}}) a été retiré de l'équipe \"{{teamName}}\"",
-      "Name_changed": "L'équipe \"{{oldName}}\" a été renommée en \"{{newName}}\"",
-      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) a été assigné à [{{memberName}}]({{memberProfileUrl}}) sur la liste [{{listName}}]({{listUrl}})"
+      "Item_added": "",
+      "Item_removed": "",
+      "List_progress": "",
+      "Webhook_setup_complete": "",
+      "List_added_notification": "",
+      "List_removed_notification": "",
+      "Member_joined": "",
+      "Member_removed": "",
+      "Name_changed": "",
+      "User_assigned": ""
     }
   },
   "MARKETBOARD": {
