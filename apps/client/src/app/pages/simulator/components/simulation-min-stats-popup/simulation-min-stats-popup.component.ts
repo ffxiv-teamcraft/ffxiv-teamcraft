@@ -1,15 +1,15 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
-import { Simulation } from '../../simulation/simulation';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-simulation-min-stats-popup',
   templateUrl: './simulation-min-stats-popup.component.html',
-  styleUrls: ['./simulation-min-stats-popup.component.scss']
+  styleUrls: ['./simulation-min-stats-popup.component.less']
 })
-export class SimulationMinStatsPopupComponent {
+export class SimulationMinStatsPopupComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public simulation: Simulation) {
+  constructor() { }
+
+  ngOnInit() {
   }
 
 }

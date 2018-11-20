@@ -12,39 +12,21 @@ import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { CustomSimulatorPageComponent } from './components/custom-simulator-page/custom-simulator-page.component';
 import { RotationsPageComponent } from './components/rotations-page/rotations-page.component';
-import { ImportRotationPopupComponent } from './components/import-rotation-popup/import-rotation-popup.component';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatSelectModule,
-  MatSnackBarModule,
-  MatTableModule,
-  MatTooltipModule
-} from '@angular/material';
 import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
 import { ClipboardModule } from 'ngx-clipboard';
 // import {CustomLinksModule} from '../custom-links/custom-links.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
-import { ImportMacroPopupComponent } from './components/import-macro-popup/import-macro-popup.component';
 import { ConsumablesService } from './model/consumables.service';
 import { FreeCompanyActionsService } from './model/free-company-actions.service';
-import { RotationNamePopupComponent } from './components/rotation-name-popup/rotation-name-popup.component';
-import { StepByStepReportPopupComponent } from './components/step-by-step-report-popup/step-by-step-report-popup.component';
 import { RecipeChoicePopupComponent } from './components/recipe-choice-popup/recipe-choice-popup.component';
-import { NewFolderPopupComponent } from './components/new-folder-popup/new-folder-popup.component';
 import { RotationPanelComponent } from './components/rotation-panel/rotation-panel.component';
 import { CoreModule } from '../../core/core.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
+import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';
 
 const routes: Routes = [
   {
@@ -76,6 +58,11 @@ const routes: Routes = [
     path: 'rotations',
     component: RotationsPageComponent,
     canActivate: [MaintenanceGuard]
+  },
+  {
+    path: 'rotations/folder/:folderId',
+    component: RotationFolderPageComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 
@@ -88,22 +75,9 @@ const routes: Routes = [
 
     TranslateModule,
     NgDragDropModule,
+    FullpageMessageModule,
 
-    MatProgressBarModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatExpansionModule,
-    MatCheckboxModule,
-    MatInputModule,
-    MatListModule,
-    MatTooltipModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatMenuModule,
+    NgZorroAntdModule,
 
     ClipboardModule,
 
@@ -119,25 +93,17 @@ const routes: Routes = [
     SimulatorComponent,
     ActionComponent,
     RotationsPageComponent,
-    ImportRotationPopupComponent,
-    ImportMacroPopupComponent,
     MacroPopupComponent,
     SimulationMinStatsPopupComponent,
-    RotationNamePopupComponent,
-    StepByStepReportPopupComponent,
     RecipeChoicePopupComponent,
-    NewFolderPopupComponent,
-    RotationPanelComponent
+    RotationPanelComponent,
+    RotationFolderPageComponent,
+    StepByStepReportComponent
   ],
   entryComponents: [
-    ImportRotationPopupComponent,
-    ImportMacroPopupComponent,
     MacroPopupComponent,
     SimulationMinStatsPopupComponent,
-    RotationNamePopupComponent,
-    StepByStepReportPopupComponent,
-    RecipeChoicePopupComponent,
-    NewFolderPopupComponent
+    RecipeChoicePopupComponent
   ],
   providers: [
     CraftingActionsRegistry,

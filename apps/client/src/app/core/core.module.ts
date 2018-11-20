@@ -28,6 +28,8 @@ import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
+import { MaintenanceGuard } from '../pages/maintenance/maintenance.guard';
+import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
 
 
 @NgModule({
@@ -38,7 +40,7 @@ import { ListItemCommentNotification } from '../model/notification/list-item-com
         parent: AbstractNotification,
         children: {
           LIST_COMMENT: ListCommentNotification,
-          LIST_ITEM_COMMENT: ListItemCommentNotification,
+          LIST_ITEM_COMMENT: ListItemCommentNotification
         }
       }
     ]),
@@ -47,7 +49,8 @@ import { ListItemCommentNotification } from '../model/notification/list-item-com
     AngularFireDatabaseModule,
     MatDialogModule,
     MatButtonModule,
-    PushNotificationsModule
+    PushNotificationsModule,
+    MaintenanceModule
   ],
   providers: [
     UserService,
@@ -75,6 +78,7 @@ import { ListItemCommentNotification } from '../model/notification/list-item-com
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     PushNotificationsModule,
+    MaintenanceModule,
     TimerPipe
   ]
 })

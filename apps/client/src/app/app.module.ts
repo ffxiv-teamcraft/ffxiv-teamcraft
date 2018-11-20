@@ -42,6 +42,7 @@ import { TeamsModule } from './modules/teams/teams.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+import { SimulatorModule } from './pages/simulator/simulator.module';
 
 registerLocaleData(en);
 
@@ -108,6 +109,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NotificationsModule,
     SettingsModule,
     UserAvatarModule,
+    SimulatorModule,
 
     HttpClientModule,
 
