@@ -10,7 +10,7 @@
         </li>
         <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notificationsTemplate"
             *ngIf="notifications$ | async as notifications">
-          <nz-badge [nzDot]="notifications.length > 0">
+          <nz-badge [nzCount]="notifications.length" class="notifications-count">
             <i nz-icon type="notification"></i>
           </nz-badge>
           <ng-template #notificationsTemplate>
