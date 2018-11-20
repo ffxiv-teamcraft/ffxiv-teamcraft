@@ -188,16 +188,16 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
-    map(([action, list, character, team, userId]) => {
+    withLatestFrom(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
+    map(([action, list, team, userId]) => {
       list.modificationsHistory.push({
         amount: action.doneDelta,
         date: Date.now(),
         itemId: action.itemId,
         itemIcon: action.itemIcon,
-        characterId: character ? character.ID : -1
+        userId: userId
       });
-      if (list.teamId === team.$key && action.doneDelta > 0) {
+      if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId);
       }
       return [action, list];

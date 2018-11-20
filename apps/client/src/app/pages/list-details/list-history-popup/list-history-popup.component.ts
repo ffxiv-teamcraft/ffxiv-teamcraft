@@ -16,22 +16,8 @@ export class ListHistoryPopupComponent implements OnInit {
 
   public history: ModificationEntry[] = [];
 
-  public characters: { [index: number]: Observable<Character> } = {};
-
-  constructor(private xivapi: XivapiService) {
-  }
-
   ngOnInit() {
     this.history = this.list.modificationsHistory.sort((a, b) => a.date > b.date ? -1 : 1);
-    this.history.forEach(entry => {
-      if (this.characters[entry.characterId] === undefined) {
-        this.characters[entry.characterId] = this.xivapi.getCharacter(entry.characterId).pipe(
-          shareReplay(1),
-          filter(response => response.Info.Character.State !== 0),
-          map(response => response.Character)
-        );
-      }
-    });
   }
 
 }

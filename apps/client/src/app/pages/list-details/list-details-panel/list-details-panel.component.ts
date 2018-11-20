@@ -47,7 +47,7 @@ export class ListDetailsPanelComponent implements OnChanges {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows);
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return row.tradeSources.length > 0 || row.vendors.length > 0 || hasTrades;
+      return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
     }, false);
     this.hasNavigationMap = this.displayRow.rows.reduce((hasMap, row) => {
       const hasMonstersWithPosition = row.drops && row.drops.some(d => d.position && (d.position.x !== undefined));
