@@ -3,23 +3,23 @@
   "Pick_a_user": "유저 선택",
   "Pick_a_fc": "자유부대 선택",
   "FC_name": "자유부대 이름",
-  "Saving_in_database": "",
+  "Saving_in_database": "서버에 데이터를 저장했습니다",
   "AUTH_ERRORS": {
-    "auth/credential-already-in-use": "",
-    "auth/email-already-in-use": "",
-    "auth/user-not-found": "",
-    "auth/wrong-password": ""
+    "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
+    "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
+    "auth/user-not-found": "잘못된 이메일 또는 비밀번호",
+    "auth/wrong-password": "잘못된 이메일 또는 비밀번호"
   },
   "ITEMS": {
-    "Title": "",
-    "No_match": "",
-    "Item_name": "",
-    "Only_recipes": "",
+    "Title": "검색",
+    "No_match": "일치하는 아이템이 없습니다",
+    "Item_name": "아이템명",
+    "Only_recipes": "레시피만 검색",
     "Crafts_amount": "",
-    "Add_to_list": "",
-    "Apply_filters": ""
+    "Add_to_list": "리스트에 추가",
+    "Apply_filters": "필터적용"
   },
-  "Use_as_default_character": "",
+  "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "",
   "Default": "",
   "Delete": "",
