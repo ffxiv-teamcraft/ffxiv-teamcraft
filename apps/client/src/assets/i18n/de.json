@@ -725,8 +725,8 @@
       "List_removed_notification": "",
       "Member_joined": "",
       "Member_removed": "",
-      "Name_changed": "Team \"{{oldName}}\" umbenannt in \"{{newName}}\"",
-      "User_assigned": "[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) wurde [{{memberName}}]({{memberProfileUrl}}) auf Liste [{{listName}}]({{listUrl}}) zugewiesen"
+      "Name_changed": "",
+      "User_assigned": ""
     }
   },
   "MARKETBOARD": {
