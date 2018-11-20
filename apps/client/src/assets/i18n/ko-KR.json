@@ -16,7 +16,7 @@
     "Item_name": "아이템명",
     "Only_recipes": "레시피만 검색",
     "Crafts_amount": "",
-    "Add_to_list": "리스트에 추가",
+    "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
@@ -30,7 +30,7 @@
   "Mark_HQ": "",
   "Unmark_HQ": "",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
-  "Confirmation": "",
+  "Confirmation": "계속하시겠습니까?",
   "Is_working_on_it": "",
   "Work_on_it": "",
   "Remove_work_on_it": "",
@@ -59,7 +59,7 @@
     "Copyright_notice_title": "",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "",
-    "Data_sources": "",
+    "Data_sources": "자료 출처",
     "Patreon_supporters": "",
     "Contributors": ""
   },
