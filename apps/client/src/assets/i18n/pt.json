@@ -2,6 +2,7 @@
   "Pick_a_list": "Escolha uma lista",
   "Pick_a_user": "Escolha um utilizador",
   "Pick_a_fc": "Escolha uma compania livre",
+  "FC_name": "",
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
@@ -161,7 +162,7 @@
   "Upgrade_list": "Recria a lista com a última versão da aplicação",
   "List_recreated": "Lista recriada com sucesso",
   "List_popup_title": "Gerando a lista novamente, por favor aguarde",
-  "Please wait": "Isto não deve demorar, aqui está um gif enquanto espera",
+  "Please_wait": "",
   "Not_own_list_outdated": "Essa lista é antiga, por favor peça para o dono gerá-la novamente",
   "Own_list_outdated_before_button": "Essa lista é antiga, por favor crie ela novamente usando",
   "Own_list_outdated_after_button": "botão",
