@@ -16,6 +16,7 @@ import { MasterbooksPopupComponent } from './profile-editor/masterbooks-popup/ma
 import { StatsPopupComponent } from './profile-editor/stats-popup/stats-popup.component';
 import { UserPickerModule } from '../../modules/user-picker/user-picker.module';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { VerificationPopupComponent } from './profile-editor/verification-popup/verification-popup.component';
 
 const routes: Routes = [
   {
@@ -45,8 +46,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent],
-  entryComponents: [MasterbooksPopupComponent, StatsPopupComponent]
+  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent],
+  entryComponents: [MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent]
 })
 export class ProfileModule {
 }

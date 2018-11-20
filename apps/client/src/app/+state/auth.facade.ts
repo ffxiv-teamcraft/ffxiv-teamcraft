@@ -14,7 +14,8 @@ import {
   SetDefaultCharacter,
   ToggleFavorite,
   ToggleMasterbooks,
-  UpdateUser
+  UpdateUser,
+  VerifyCharacter
 } from './auth.actions';
 import { auth } from 'firebase';
 import { UserCredential } from '@firebase/auth-types';
@@ -122,7 +123,7 @@ export class AuthFacade {
     this.store.dispatch(new RemoveCharacter(lodestoneId));
   }
 
-  public saveMasterbooks(books: {id: number, checked: boolean}[]): void {
+  public saveMasterbooks(books: { id: number, checked: boolean }[]): void {
     this.store.dispatch(new ToggleMasterbooks(books));
   }
 
@@ -134,7 +135,11 @@ export class AuthFacade {
     this.store.dispatch(new GetUser());
   }
 
-  public updateUser(user: TeamcraftUser):void{
+  public verifyCharacter(lodestoneId: number) {
+    this.store.dispatch(new VerifyCharacter(lodestoneId));
+  }
+
+  public updateUser(user: TeamcraftUser): void {
     this.store.dispatch(new UpdateUser(user));
   }
 

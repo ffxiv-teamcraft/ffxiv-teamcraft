@@ -146,6 +146,7 @@ export class AuthEffects {
       AuthActionTypes.ToggleFavorite,
       AuthActionTypes.ToggleMasterbooks,
       AuthActionTypes.SaveSet,
+      AuthActionTypes.VerifyCharacter,
     ),
     debounceTime(100),
     withLatestFrom(this.store),

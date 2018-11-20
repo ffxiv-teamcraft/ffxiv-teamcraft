@@ -265,8 +265,10 @@
     "Save_for_all": "Save for all",
     "User_not_verified": "User not verified, click to verify user",
     "VERIFICATION": {
-      "Title": "Profile validation",
+      "Title": "Character verification",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
+      "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
     },
     "HELP": {

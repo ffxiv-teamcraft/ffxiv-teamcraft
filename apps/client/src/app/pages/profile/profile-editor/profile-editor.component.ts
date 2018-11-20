@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { UserPickerService } from '../../../modules/user-picker/user-picker.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { VerificationPopupComponent } from './verification-popup/verification-popup.component';
 
 @Component({
   selector: 'app-profile-editor',
@@ -82,6 +83,18 @@ export class ProfileEditorComponent {
       }
       user.contacts.push(contactId);
       this.authFacade.updateUser(user);
+    });
+  }
+
+  verifyCharacter(userId: string, lodestoneId: number): void {
+    this.dialog.create({
+      nzContent: VerificationPopupComponent,
+      nzComponentParams: {
+        verificationCode: userId,
+        lodestoneId: lodestoneId
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('PROFILE.VERIFICATION.Title')
     });
   }
 
