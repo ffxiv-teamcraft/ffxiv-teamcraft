@@ -427,7 +427,7 @@
     "HELP": {
       "Welcome": "제작법 페이지에 오신 것을 환영합니다. 이 페이지는 제작 목록에서 제작법을 찾고, 구분하고, 더하기 위한 곳입니다.",
       "Filter": "필터 탭에서는 다양한 필터를 사용할 수 있으며, 이를 직접 선택하고 값을 변경하여 원하는 아이템을 찾을 수 있습니다.",
-      "Add_to_list": "",
+      "Add_to_list": "원하는 아이템을 찾은 다음에는 수량을 입력하고 '목록에 추가' 아이콘을 눌러 원하는 목록에 아이템을 추가할 수 있습니다. 이 경우 입력한 수량만큼 목록에 반영됩니다.",
       "Quick_list": "'간이 목록' 버튼을 클릭하여 아이템 이름으로 된 간이 목록을 만들 수 있습니다. 이 목록은 완료시 삭제됩니다.",
       "Add_results": "'결과를 목록에 추가' 버튼은 현재 결과에 있는 각 아이템을 주어진 목록에 추가합니다. 조심하세요, <b>이 버튼을 사용하면 수량은 항상 1로 고정됩니다.</b>"
     }
@@ -483,24 +483,24 @@
   },
   "PERMISSIONS": {
     "Read": "읽기",
-    "Read_description": "",
+    "Read_description": "목록을 볼 수 있는 권한",
     "Participate": "참여하기",
-    "Participate_description": "",
+    "Participate_description": "수량을 조정하고 완료된 아이템을 체크할 수 있는 권한",
     "Write": "글쓰기",
-    "Write_description": "",
+    "Write_description": "아이템을 추가하고 (워크샵에) 목록을 추가할 수 있는 권한",
     "Title": "권한 관리",
     "Everyone": "모두",
     "You": "나",
     "Add_new": "사용자 추가",
     "Add_new_fc": "자유부대 추가",
     "Placeholder": "이메일 또는 사용자 ID",
-    "Bind_free_company": "",
+    "Bind_free_company": "일부 권한을 내 자유부대에 적용",
     "User_not_found": "사용자를 찾지 못했습니다.",
     "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "권한 설정을 저장중",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
-    "Propagate_changes": "",
-    "Propagate_changes_done": ""
+    "Propagate_changes": "워크샵 내부에 목록에 대한 권한 제공",
+    "Propagate_changes_done": "워크샵 내부 목록에 대한 변경이 적용되었습니다"
   },
   "WIKI": {
     "Title": "위키",
