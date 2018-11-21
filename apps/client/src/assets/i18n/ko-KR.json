@@ -221,7 +221,7 @@
   "Used_for": "사용처",
   "xivdb_cart_import": "목록 가져오는 중",
   "Or": "또는",
-  "Make_donation": "기부하기",
+  "Make_donation": "후원하기",
   "Data_from_gt": "garlandtools.org에서 제공받은 데이터",
   "Hide_completed": "완료된 행 숨기기",
   "Your_comment": "내 댓글",
@@ -378,11 +378,11 @@
     }
   },
   "adapt_to_character": "",
-  "reset_filters": "",
+  "reset_filters": "필터 초기화",
   "LIST_TAGS": {
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
-    "LOG": "",
+    "LOG": "로그",
     "LEVE": "의뢰",
     "GLAMOUR": "투영",
     "HOUSING": "하우징",
@@ -440,15 +440,15 @@
     "Invalid_macro_or_language": "잘못된 매크로 또는 언어입니다."
   },
   "CUSTOM_LINKS": {
-    "Title": "",
+    "Title": "사용자 지정 링크",
     "Not_found": "링크를 찾을 수 없습니다.",
-    "Add_link": "",
-    "Dialog_title": "",
+    "Add_link": "사용자 지정 링크 만들기",
+    "Dialog_title": "사용자 지정 링크",
     "Link_type": "",
-    "Link_name": "",
+    "Link_name": "링크 이름",
     "target": "",
-    "Share_link_copied": "",
-    "No_links": ""
+    "Share_link_copied": "사용자 지정 링크가 클립보드에 복사되었습니다",
+    "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
     "Title": "",
@@ -456,8 +456,8 @@
     "STEP": {
       "Gathering": "{{amount}}개 채집",
       "Hunting": "{{amount}}개 사냥으로 얻기",
-      "Vendor": "{{amount}}개 구매",
-      "Trade": "{{amount}}개 교환"
+      "Vendor": "{{amount}}개 상점에서 구매",
+      "Trade": "{{amount}}개 거래로 얻기"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -489,13 +489,13 @@
     "Write": "",
     "Write_description": "",
     "Title": "권한 관리",
-    "Everyone": "",
-    "You": "",
-    "Add_new": "",
-    "Add_new_fc": "",
+    "Everyone": "모두",
+    "You": "나",
+    "Add_new": "사용자 추가",
+    "Add_new_fc": "자유부대 추가",
     "Placeholder": "이메일 또는 사용자 ID",
     "Bind_free_company": "",
-    "User_not_found": "",
+    "User_not_found": "사용자를 찾지 못했습니다.",
     "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
@@ -503,7 +503,7 @@
     "Propagate_changes_done": ""
   },
   "WIKI": {
-    "Title": "",
+    "Title": "위키",
     "Not_found_in_current_lang": "이 페이지는 지금 사용중인 언어로 번역되지 않았습니다. 영어 페이지가 보여집니다.",
     "Not_found": "페이지를 찾을 수 없습니다."
   },
@@ -598,7 +598,7 @@
     "lists_created_count": "",
     "support_patreon": "Patreon으로 후원하기",
     "features": "",
-    "support_title": "",
+    "support_title": "지원",
     "support_content_discord": "사용하다가 어렵거나 문제가 생겼을땐 부끄러워하지 말고 우리 디스코드 채널로 찾아와주세요!",
     "support_comtent_facebook": "페이스북으로도 연락할 수 있습니다.",
     "contribute_title": "",
@@ -642,7 +642,7 @@
     "New_commission": "새로운 의뢰 만들기",
     "New_commission_warning": "이 목록으로 의뢰를 생성하면 해당 목록은 내 목록에서는 보이지 않고(삭제되지는 않음) 아이템을 추가하거나 갯수를 변경할 수 없습니다.",
     "Price_hint": "이 의뢰를 위해 지불해야되는 가격",
-    "Crafted_by": "",
+    "Crafted_by": "완료한 사람: ",
     "Fire": "해고",
     "Confirm_fire": "의뢰를 맡았던 이 사람을 해고하겠습니까?",
     "Delete_payment": "결제수단 삭제",
