@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { NzDrawerRef } from 'ng-zorro-antd';
