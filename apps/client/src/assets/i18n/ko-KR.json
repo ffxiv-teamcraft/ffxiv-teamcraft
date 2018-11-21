@@ -72,7 +72,7 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "시간제",
-  "Quick_list_create": "빠른 목록 생성 (완료시 삭제)",
+  "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
   "Public_lists": "커뮤니티 목록",
   "Your_public_lists": "나의 커뮤니티 목록",
@@ -169,7 +169,7 @@
   "Own_list_outdated_after_button": "버튼",
   "Home": "메인화면",
   "Import": "가져오기",
-  "Favorites": "",
+  "Favorites": "즐겨찾기",
   "Favorite": "",
   "filters/ilvl": "아이템 레벨",
   "filters/lvl": "요구 레벨",
@@ -327,7 +327,7 @@
     }
   },
   "LIST_DETAILS": {
-    "List_finished": "",
+    "List_finished": "목록 완성",
     "Missing_tags_before_button": "",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
@@ -352,7 +352,7 @@
       "Panel_name": "패널 이름",
       "Order_by": "정렬 기준",
       "Order": "순서",
-      "Logic_gate": ""
+      "Logic_gate": "논리항"
     },
     "HELP": {
       "Title": "목록 정보",
@@ -426,9 +426,9 @@
   "RECIPES": {
     "HELP": {
       "Welcome": "제작법 페이지에 오신 것을 환영합니다. 이 페이지는 제작 목록에서 제작법을 찾고, 구분하고, 더하기 위한 곳입니다.",
-      "Filter": "",
+      "Filter": "필터 탭에서는 다양한 필터를 사용할 수 있으며, 이를 직접 선택하고 값을 변경하여 원하는 아이템을 찾을 수 있습니다.",
       "Add_to_list": "",
-      "Quick_list": "",
+      "Quick_list": "'간이 목록' 버튼을 클릭하여 아이템 이름으로 된 간이 목록을 만들 수 있습니다. 이 목록은 완료시 삭제됩니다.",
       "Add_results": "'결과를 목록에 추가' 버튼은 현재 결과에 있는 각 아이템을 주어진 목록에 추가합니다. 조심하세요, <b>이 버튼을 사용하면 수량은 항상 1로 고정됩니다.</b>"
     }
   },
@@ -464,7 +464,7 @@
     "Title": "채집물",
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
-    "Intro": ""
+    "Intro": "채집 장소는 채집 가능한 아이템을 찾고 어디서 얻을 수 있는지, 그리고 알람을 생성할 수 있게 해줍니다. 위쪽 공간에 내용을 적어 찾으려는 채집 정보를 확인하세요!"
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
