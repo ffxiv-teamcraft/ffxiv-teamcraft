@@ -74,7 +74,7 @@
   "Ephemeral_tag": "시간제",
   "Quick_list_create": "빠른 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
-  "Public_lists": "",
+  "Public_lists": "커뮤니티 목록",
   "Your_public_lists": "나의 커뮤니티 목록",
   "Public_list": "커뮤니티 목록",
   "Profile": "프로필",
@@ -88,7 +88,7 @@
   "COMMON": {
     "Save": "저장",
     "Reset": "초기화",
-    "Total": "",
+    "Total": "총합",
     "User_id": "사용자 ID",
     "Open_url": "Teamcraft 링크 열기",
     "Open_url_placeholder": "Teamcraft 링크",
@@ -461,7 +461,7 @@
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "",
+    "Title": "채집물",
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
     "Intro": ""
@@ -548,7 +548,7 @@
     "Include_sound_end": "매크로 종료시 알림음 추가",
     "Step_by_step_report": "제작공정별 정보",
     "Save_as_new": "새로 저장하기(새로 생성된 로테이션)",
-    "Save_as_new_done": "",
+    "Save_as_new_done": "당신은 지금 새로 저장된 로테이션에 있습니다",
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
     "CUSTOM": {
@@ -648,7 +648,7 @@
     "Delete_payment": "결제수단 삭제",
     "Add_payment": "결제수단 추가",
     "Deposit": "착수금",
-    "Owing": "",
+    "Owing": "비용 미지불",
     "Go_to_chat": "채팅으로 이동",
     "Go_to_list": "목록으로 이동",
     "Mark_as_finished": "",
