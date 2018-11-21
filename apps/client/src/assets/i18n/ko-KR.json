@@ -36,7 +36,7 @@
   "Remove_work_on_it": "",
   "Add_as_collectible": "소장품으로 추가",
   "Compact_display": "간소화",
-  "Mute_alarms": "알람 음소거",
+  "Mute_alarms": "음소거",
   "Hide_used": "사용된 행 숨기기",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}} 회의 집사 수행이 필요합니다.",
@@ -227,7 +227,7 @@
   "Your_comment": "내 댓글",
   "Required_crafts_amount": "제작에 필요한 양",
   "Missing_crafts_amount": "{{amount}} 개 부족",
-  "Requires": "",
+  "Requires": "재료",
   "Copy_item_name_to_clipboard": "아이템 이름을 클립보드로 복사",
   "Item_name_copied": "{{itemname}} 클립보드에 복사됨",
   "Tier_display_toggle": "제작 단계를 표시",
@@ -451,7 +451,7 @@
     "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
-    "Title": "",
+    "Title": "최적화 경로",
     "Steps": "",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
@@ -533,7 +533,7 @@
     "custom_rotation": "사용자 지정 로테이션",
     "Reset": "로테이션 초기화",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
-    "Crafting_optimizer_code": "인게임 제작매크로 가져오기",
+    "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
     "Generate_ingame_macro": "인게임 매크로 생성",
     "Share_link_copied": "로테이션 공유용 링크를 클립보드에 복사했습니다",
