@@ -41,17 +41,17 @@
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}} 회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
-    "Workshops": "워크샵",
+    "Workshops": "공방",
     "Add_lists": "목록 추가",
-    "Add_workshop": "워크샵 추가",
-    "Delete_message": "워크샵이 삭제되더라도 내부의 목록은 지워지지 않고 워크샵이 없는 목록으로 돌아갑니다.",
+    "Add_workshop": "공방 추가",
+    "Delete_message": "공방이 삭제되더라도 내부의 목록은 지워지지 않고 공방이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "워크샵 {{workshopName}}에 추가할 목록 선택",
-    "Name_dialog": "워크샵 이름",
+    "Name_dialog": "공방 이름",
     "Created_by": "제작자: {{name}}",
-    "Share_link_copied": "워크샵 공유 링크 복사됨",
-    "Not_found": "해당 워크샵이 없거나 접근할 권한이 없습니다",
-    "Shared_workshops": "",
-    "Rename": "워크샵 이름변경"
+    "Share_link_copied": "공방 공유 링크 복사됨",
+    "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
+    "Shared_workshops": "쓰기 권한이 있는 공방",
+    "Rename": "공방 이름변경"
   },
   "ABOUT": {
     "title": "",
@@ -75,8 +75,8 @@
   "Quick_list_create": "빠른 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
   "Public_lists": "",
-  "Your_public_lists": "",
-  "Public_list": "",
+  "Your_public_lists": "나의 커뮤니티 목록",
+  "Public_list": "커뮤니티 목록",
   "Profile": "프로필",
   "X_for_total": "총 {{amount}} 개",
   "COMMUNITY_LISTS": {
@@ -365,16 +365,16 @@
       "Area_breakdown": "",
       "Pricing_mode": "",
       "Item_category": "",
-      "Requirements": "",
-      "Alarms": "",
-      "Comments": "",
-      "Colors": "",
+      "Requirements": "요구조건 아이콘을 클릭하여 주어진 아이템에 필요한 것이나 해당 아이템을 필요로 하는 것을 확인할 수 있습니다.",
+      "Alarms": "아이템이 시간제 채집물인 경우, 옆의 알람버튼을 클릭하여 채집 장소가 나타나면 알람이 울리게 할 수 있습니다. 알람은 목록에서 벗어나도 작동하며, 단지 웹사이트에 접속 중이기만 하면 됩니다.",
+      "Comments": "(아이템 링크가 아닌 목록의 항목에서) 어떤 아이템에나 댓글을 달 수 있습니다. 이는 더 많은 정보를 제공하거나 토의할 수 있도록 합니다. 댓글은 최대 140자이며 아이템 당 10자로 제한됩니다.",
+      "Colors": "아이템 이름의 색은 각각 의미가 있습니다.<span class=\"craftable\">이 색은 제작 준비된 아이템에 사용됩니다</span>-필요한 재료가 준비되었다는 의미입니다. <span class=\"strike\">이 색은 제작된 아이템에 사용됩니다</span>-제작이 완료되었다는 의미입니다.",
       "Misc_category": "기타",
       "Map_markers": "이 아이콘을 볼 때마다 X, Y좌표보다 읽기 쉬운 지도 마커를 얻기위해 클릭하세요.",
       "Public_list": "목록 공개 설정은 이 목록을 공개 목록 섹션에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
-      "Obtention_details": "",
-      "Labels": "",
-      "Custom_layout": ""
+      "Obtention_details": "각 아이템 항은 항목 우상단에 아이콘을 지니고 있습니다. 각 아이콘을 클릭하면 해당 아이템을 얻는 방법을 알 수 있습니다.",
+      "Labels": "목록을 공개 설정할 때, 적당한 라벨을 붙이는 것을 잊지 마세요",
+      "Custom_layout": "레이아웃 설정은 자유롭게 할 수 있고, 내보내기를 통해 친구에게 공유할 수도 있습니다. 레이아웃은 자신만이 설정할 수 있으며, 브라우저에 저장됩니다. 설정된 레이아웃은 이 브라우저를 사용하는 모든 목록에 영향을 미칩니다."
     }
   },
   "adapt_to_character": "",
@@ -425,7 +425,7 @@
   },
   "RECIPES": {
     "HELP": {
-      "Welcome": "",
+      "Welcome": "제작법 페이지에 오신 것을 환영합니다. 이 페이지는 제작 목록에서 제작법을 찾고, 구분하고, 더하기 위한 곳입니다.",
       "Filter": "",
       "Add_to_list": "",
       "Quick_list": "",
@@ -467,7 +467,7 @@
     "Intro": ""
   },
   "ANNOUNCEMENT": {
-    "Title": "",
+    "Title": "공지사항",
     "Read_more": "자세히 보기"
   },
   "LIST_TEMPLATE": {
@@ -603,20 +603,20 @@
     "support_comtent_facebook": "페이스북으로도 연락할 수 있습니다.",
     "contribute_title": "",
     "contribute_content": "Teamcraft에 기여하고 싶으시면 github의 코드를 확인하고 Pull Requests를 만들어주세요!",
-    "changelog": "",
+    "changelog": "우리 웹사이트의 최신 뉴스나 바뀐 점을 확인하시려면, 변경사항을 확인하세요.",
     "FEATURES": {
       "alarms_title": "알람"
     },
     "GET_STARTED": {
       "Title": "시작하기",
       "First_list_title": "첫 목록 만들기",
-      "First_list_content": "",
-      "First_list_link": "",
+      "First_list_content": "아래 링크를 타고 레시피 페이지로 이동한 뒤 첫 번째 레시피 페이지를 만들어 보세요!",
+      "First_list_link": "레시피 페이지로 이동",
       "Create_alarm_title": "",
-      "Create_alarm_content": "아래 링크를 클릭해서 알람 페이지로 이동하세요. 그리고 알람을 설정해서 채집장소 출현을 놓치지 마세요!",
+      "Create_alarm_content": "아래 링크를 타고 알람 페이지로 이동한 뒤, 알람을 설정해서 채집장소 출현을 놓치지 마세요!",
       "Create_alarm_link": "알람페이지로 이동",
       "Create_rotations_title": "제작 로테이션 생성",
-      "Create_rotations_content": "아래 링크를 클릭하여 로테이션창으로 이동하면 자신의 스탯, 음식, HQ재료로 인게임 제작 로테이션을 생성할 수 있습니다!",
+      "Create_rotations_content": "아래 링크를 타고 로테이션창으로 이동하여 자신의 스탯, 음식, HQ재료를 바탕으로 인게임 제작 로테이션을 생성해보세요!",
       "Create_rotations_link": "로테이션 페이지로 이동",
       "Access_wiki_title": "더 알아보기",
       "Access_wiki_content": "",
