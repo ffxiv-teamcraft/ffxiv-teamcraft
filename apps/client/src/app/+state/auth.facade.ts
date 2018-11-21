@@ -106,7 +106,8 @@ export class AuthFacade {
       nzTitle: this.translate.instant('Character_informations'),
       nzContent: CharacterLinkPopupComponent,
       nzComponentParams: {
-        useAsDefault: useAsDefault
+        useAsDefault: useAsDefault,
+        mandatory: disableClose
       },
       nzFooter: null,
       nzMaskClosable: !disableClose,

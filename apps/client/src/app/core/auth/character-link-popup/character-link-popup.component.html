@@ -48,6 +48,13 @@
 
 <label nz-checkbox [(ngModel)]="useAsDefault">{{'Use_as_default_character' | translate}}</label>
 
+<div *ngIf="mandatory">
+  <nz-divider [nzText]="'Or' | translate"></nz-divider>
+
+  <button nz-button nzBlock (click)="logOut()" nzType="danger">
+    {{'Disconnect_and_anonymous' | translate}}
+  </button>
+</div>
 <ng-template #loading>
   <nz-spin></nz-spin>
 </ng-template>

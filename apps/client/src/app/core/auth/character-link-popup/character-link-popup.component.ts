@@ -4,7 +4,7 @@ import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AddCharacter } from '../../../+state/auth.actions';
+import { AddCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd';
 
 @Component({
@@ -30,6 +30,8 @@ export class CharacterLinkPopupComponent {
 
   public useAsDefault = false;
 
+  public mandatory = false;
+
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList();
 
@@ -51,6 +53,11 @@ export class CharacterLinkPopupComponent {
         tap(() => this.loadingResults = false),
         startWith([])
       );
+  }
+
+  logOut(): void {
+    this.store.dispatch(new Logout());
+    this.modalRef.close();
   }
 
   selectCharacter(character: CharacterSearchResultRow): void {
