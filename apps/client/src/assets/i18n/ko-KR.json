@@ -25,10 +25,10 @@
   "Delete": "삭제",
   "Timers": "타이머",
   "Copy_isearch": "",
-  "Isearch_copied": "",
+  "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
   "Required_for_final_craft": "",
-  "Mark_HQ": "",
-  "Unmark_HQ": "",
+  "Mark_HQ": "고품질 요구 표시",
+  "Unmark_HQ": "고품질 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
   "Confirmation": "계속하시겠습니까?",
   "Is_working_on_it": "{{name}} 작업중",
@@ -44,10 +44,10 @@
     "Workshops": "워크샵",
     "Add_lists": "목록 추가",
     "Add_workshop": "워크샵 추가",
-    "Delete_message": "",
+    "Delete_message": "워크샵이 삭제되더라고 내부의 목록은 지워지지 않고 워크샵이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "워크샵 {{workshopName}}에 추가할 목록 선택",
     "Name_dialog": "워크샵 이름",
-    "Created_by": "",
+    "Created_by": "제작자: {{name}}",
     "Share_link_copied": "워크샵 공유 링크 복사됨",
     "Not_found": "해당 워크샵이 없거나 접근할 권한이 없습니다",
     "Shared_workshops": "",
@@ -60,12 +60,12 @@
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "",
     "Data_sources": "자료 출처",
-    "Patreon_supporters": "",
-    "Contributors": ""
+    "Patreon_supporters": "Patreon 서포터",
+    "Contributors": "기여자"
   },
   "GIVEWAY": {
-    "Title": "",
-    "Body": "",
+    "Title": "1만 목록 달성 이벤트",
+    "Body": "1만 개의 목록이 앱에서 만들어진 것을 기념하기 위해 2월 9일까지 60일 계정권 증정 이벤트가 진행됩니다. \n앱을 이용해주신 것에 대해 감사드립니다. 이 앱이 많은 도움되었기를 빕니다.",
     "Access": ""
   },
   "Hide_if_empty": "",
@@ -599,7 +599,7 @@
     "support_patreon": "Patreon으로 후원하기",
     "features": "",
     "support_title": "",
-    "support_content_discord": "사용하다가 문제가 생겼을땐 부끄러워하지 말고 우리 디스코드 채널로 찾아와주세요!",
+    "support_content_discord": "사용하다가 어렵거나 문제가 생겼을땐 부끄러워하지 말고 우리 디스코드 채널로 찾아와주세요!",
     "support_comtent_facebook": "페이스북으로도 연락할 수 있습니다.",
     "contribute_title": "",
     "contribute_content": "",
@@ -668,17 +668,17 @@
     "Confirm_archive": "",
     "Withdraw": "",
     "Confirm_withdraw": "",
-    "New_things_notification": "",
-    "Negotiable_price": "",
+    "New_things_notification": "의뢰 게시판에 새로운 사항이 있습니다",
+    "Negotiable_price": "협상 가능",
     "STATUS": {
-      "CREATED": "",
-      "ACCEPTED": "",
-      "DONE": ""
+      "CREATED": "열기",
+      "ACCEPTED": "진행 중",
+      "DONE": "저장됨"
     },
     "TAGS": {
-      "Crafting": "",
-      "Gathering": "",
-      "Hunting": "",
+      "Crafting": "제작",
+      "Gathering": "채집",
+      "Hunting": "사냥",
       "Only_craft": ""
     },
     "FILTERS": {
@@ -719,14 +719,14 @@
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
     "NOTIFICATIONS": {
-      "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** 님이 추가하였습니다 ** [{{listName}}] ({{listUrl}}) **.",
-      "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** 님이 삭제하였습니다 ** [{{listName}}] ({{listUrl}})**.",
+      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**를 추가하였습니다.",
+      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**를 삭제하였습니다.",
       "List_progress": "",
       "Webhook_setup_complete": "",
       "List_added_notification": "",
       "List_removed_notification": "",
-      "Member_joined": "",
-      "Member_removed": "",
+      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에 합류했습니다!",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "",
       "User_assigned": ""
     }
