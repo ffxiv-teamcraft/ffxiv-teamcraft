@@ -35,7 +35,7 @@
   "Work_on_it": "진행중입니다.",
   "Remove_work_on_it": "",
   "Add_as_collectible": "소장품으로 추가",
-  "Compact_display": "",
+  "Compact_display": "간소화",
   "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
   "Retainer_ventures": "집사 수행",
@@ -285,7 +285,7 @@
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
     "Lists_merged": "목록 병합이 완료되었습니다!",
-    "Shared_lists": "",
+    "Shared_lists": "쓰기 권한이 있는 목록",
     "Add_selection": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
@@ -316,8 +316,8 @@
     "History": "내역",
     "BUTTONS": {
       "Add_link_description": "이 목록에 대한 사용자 지정 링크 만들기",
-      "Create_template_description": "",
-      "Copy_template_url_description": "",
+      "Create_template_description": "이 목록의 템플릿 링크를 생성하면, 현재 목록에 복사본이 생성됩니다",
+      "Copy_template_url_description": "이 목록의 템플릿 링크를 복사하면, 해당 목록에 복사본이 생성됩니다",
       "Share_description": "공유 링크 복사하기",
       "Open": "목록 열기",
       "Open_description": "",
@@ -328,10 +328,10 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
-    "Missing_tags_before_button": "",
+    "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
-    "No_book": "",
+    "No_book": "비전서가 없습니다. 클릭하면 프로필로 이동합니다.",
     "No_note": "메모 없음",
     "Edit_note": "메모 없음",
     "Note_placeholder": "메모",
@@ -377,7 +377,7 @@
       "Custom_layout": "레이아웃은 자유롭게 설정할 수 있으며, 내보내기를 통해 친구에게 공유할 수도 있습니다. 레이아웃 설정은 개인화 되어있으며, 브라우저에 저장됩니다. 설정된 레이아웃은 이 브라우저를 사용하는 모든 목록에 영향을 미칩니다."
     }
   },
-  "adapt_to_character": "",
+  "adapt_to_character": "캐릭터에 적용",
   "reset_filters": "필터 초기화",
   "LIST_TAGS": {
     "GEAR": "장비",
@@ -471,7 +471,7 @@
     "Read_more": "자세히 보기"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "",
+    "Create_template": "해당 목록에 대한 목록 템플릿 생성",
     "Dialog_title": "템플릿 생성",
     "Link_name": "템플릿 이름",
     "target": "대상 목록",
