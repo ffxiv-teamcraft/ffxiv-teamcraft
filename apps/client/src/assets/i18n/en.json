@@ -63,11 +63,6 @@
     "Patreon_supporters": "Patreon supporters",
     "Contributors": "Contributors"
   },
-  "GIVEWAY": {
-    "Title": "10k lists Giveway",
-    "Body": "In order to thank you properly for the 10k lists created on the app, a 60 days timecard giveway has been created, it will last until Feb. 09.\n Thank you for using this app, I hope it helped you a lot, the app is what it is thanks to you.",
-    "Access": "Access giveway"
-  },
   "Hide_if_empty": "Hide if empty",
   "No_favorites": "No Favorite",
   "Ephemeral_list": "Will be deleted once completed",
@@ -153,9 +148,7 @@
   "Password_Confirmation": "Confirmation",
   "Submit": "Submit",
   "Invalid_credentials": "Invalid credentials",
-  "Verification_mail_sent": "Verification email sent, please check up your mailing box",
   "Not_verified": "Not verified",
-  "Lodestone_already_used": "This character is already used",
   "Anonymous_Warning": "You should create an account to avoid losing your lists and enable more features like adaptive filter",
   "Game_Term/DoH": "Disciples of the Hand",
   "Game_Term/DoL": "Disciples of the Land",
@@ -197,10 +190,6 @@
   "Sound": "Sound",
   "Share_link_copied": "List link copied in the clipboard",
   "Share": "Share",
-  "Patreon_popup_title": "We need your help",
-  "Patreon_popup_body": "As the user base is getting bigger, FFXIV Teamcraft will need a better hosting to make sure everything is working properly with good response time. Because of that we need your support to ensure we have enough funds to pay for the hosting you deserve, to make your experience with the tool the best possible.",
-  "Patreon_popup_body_end": "Please consider supporting us on patreon, by doing this you'll help the team and the users.",
-  "Current_funds": "Current funds",
   "Close": "Close",
   "Forgot_password": "Forgot password",
   "Email_enter": "Email",
@@ -236,9 +225,7 @@
   "SETTINGS": {
     "title": "Settings",
     "link_base": "Item links",
-    "compact_lists": "Compact list display",
     "theme": "Theme",
-    "ffxivcrafting_display": "FFXIVcrafting.com-like amounts",
     "Simulator_link_base": "Simulator link",
     "Always_on_top": "Always on top",
     "Check_for_update": "Check for update",
@@ -272,11 +259,6 @@
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
-    },
-    "HELP": {
-      "Welcome": "Welcome to profile page, this is the place where you can see and edit your own profile.",
-      "Edit": "By clicking on the edit icon, you can edit the character linked to your FFXIV Teamcraft account.",
-      "Masterbooks": "You can put your unlocked masterbooks on your profile, this will allow for warnings in the future when you can't craft an item because you don't have the masterbook."
     }
   },
   "LISTS": {
@@ -353,32 +335,8 @@
       "Order_by": "Sort by",
       "Order": "Order",
       "Logic_gate": "Logic gate"
-    },
-    "HELP": {
-      "Title": "List details",
-      "List_category": "List",
-      "Inventory": "You can switch to inventory view, where the app simulates an inventory to show you what you're supposed to have, it removes items  already used for crafts you've already done.",
-      "Reset_progression": "You can reset the progression of the list entirely using the refresh button, upon confirmation this will set all progression to 0.",
-      "Upgrade": "You can upgrade your list to the latest version using this button, it recreates the list entirely and keeps progression. You'll be asked to upgrade if your list is outdated.",
-      "Fork": "You can fork a list, which means creating a copy of it in its actual state to your account, this works for any list.",
-      "Filters": "You can filter list items, using your account you can apply filters to see only what you can do, you can also hide items that are already done in this panel.",
-      "Area_breakdown": "By toggling Area Breakdown, you can order data based on the area they are obtainable in order to lower the teleport fees.",
-      "Pricing_mode": "When entering pricing mode, you can enter the price of each item you bought, and enter the expected sell price in order to know how much benefits you get from a list.",
-      "Item_category": "Items (rows)",
-      "Requirements": "By clicking on the requirements icon, you can open a dialog showing what is required by a given item, or what it is required for.",
-      "Alarms": "When an item is a timed node, you can click on the alarm button to setup a sound alarm when it spawns, the alarm will be played even if you're not on the list, you just need to be on the website.",
-      "Comments": "You can add comments to any item row, allowing you to provide more informations (not linked to the item, only to the list row) or discuss on it. Comments are limited to 140 characters and 10 comments per item.",
-      "Colors": "Item name colors have a signification, <span class=\"craftable\">this one is for items ready to be crafted</span>, which means that you have everything to craft the item. <span class=\"strike\">This one is for items crafted</span> which means that you have already done this item",
-      "Misc_category": "Other",
-      "Map_markers": "Whenever you see this icon, click on it to get a map marker, which is way easier to read than X,Y coordinates.",
-      "Public_list": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-      "Obtention_details": "Each item row has icons in the top-right section of the row, clicking on each icon will give you more details on how to obtain the corresponding item.",
-      "Labels": "When adding a list to public lists, don't forget to add proper labels to it",
-      "Custom_layout": "You can fully customize your layout, export it and import the layout of a friend. This layout only concern you and is stored in your browser, it will be applied to every list you display using this browser."
     }
   },
-  "adapt_to_character": "Adapt to Character",
-  "reset_filters": "Reset Filters",
   "LIST_TAGS": {
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -423,15 +381,6 @@
     "BOT": "BTN",
     "FSH": "FSH"
   },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "Welcome to the recipes page, this page is meant to search, filter and add recipes to crafting lists.",
-      "Filter": "When you open the Filter tab, a lot of filters become available to you, you can check them and change their values to find what you're looking for.",
-      "Add_to_list": "Once you found the item you're looking for, you can enter an amount and click on the 'add to list' icon, this will ask you where you want to put the item, then it'll add the item to the list you choose at the quantity you entered.",
-      "Quick_list": "You can create quick lists by clicking on the 'Quick List' button, this will instantly create a list with the name of the item, that will be deleted upon completion.",
-      "Add_results": "The 'Add results to a list' button adds every single item in the current result set to a given list, but be carefull, QUANTITY IS ALWAYS SET TO 1 WHEN USING THIS."
-    }
-  },
   "MACRO_TRANSLATION": {
     "Title": "Macro translator",
     "Macro_language": "Macro language",
@@ -455,7 +404,7 @@
     "Steps": "Steps",
     "STEP": {
       "Gathering": "Gather {{amount}}",
-      "Hunting": "Drop {{amount}}",
+      "Hunting": "Get {{amount}} on monsters",
       "Vendor": "Buy {{amount}}",
       "Trade": "Trade {{amount}}"
     }
@@ -592,99 +541,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "Create lists, share, contribute, craft",
-    "count": "lists currently stored",
-    "lists_created_count": "lists created using FFXIV Teamcraft",
-    "support_patreon": "Support us on patreon",
-    "features": "Features",
-    "support_title": "Support",
-    "support_content_discord": "If you have any troubles using the tool, don't be shy, pay us a visit on discord !",
-    "support_comtent_facebook": "You can also find us on facebook",
-    "contribute_title": "Contribute",
-    "contribute_content": "If you want to contribute to the tool, feel free to check the code on github and create some Pull Requests !",
-    "changelog": "To get every news about the website, each changes, please refer to the changelog.",
-    "FEATURES": {
-      "alarms_title": "Alarms"
-    },
-    "GET_STARTED": {
-      "Title": "Get started",
-      "First_list_title": "Create your first list",
-      "First_list_content": "Navigate to the recipes page by clicking the link below and create your first list !",
-      "First_list_link": "Go to recipes page",
-      "Create_alarm_title": "Create node alarms",
-      "Create_alarm_content": "Navigate to the alarms page by clicking the link below and create your first node notification to never miss a spawn !",
-      "Create_alarm_link": "Go to alarms page",
-      "Create_rotations_title": "Create crafting rotations",
-      "Create_rotations_content": "Navigate to the rotations page by clicking the link below and create rotations for ingame crafting, to test with your own stats, foods, and HQ ingredients !",
-      "Create_rotations_link": "Go to rotations page",
-      "Access_wiki_title": "Learn more",
-      "Access_wiki_content": "Navigate to the wiki page by clicking the link below. This page has some documentation for the general website usage, to guide you to make the most out of it and help you as much as possible",
-      "Access_wiki_link": "Go to wiki page"
-    }
-  },
   "PRICING": {
     "From_vendor": "Price from vendor",
     "Expect_to_sell_everything": "Expect to sell everything"
-  },
-  "COMMISSION_BOARD": {
-    "Title": "Commission board",
-    "Create_commission": "Create a commission request",
-    "Board": "Board",
-    "My_requests": "My requests",
-    "My_crafts": "My ongoing commissions",
-    "History": "Archived",
-    "Server_history": "Server history",
-    "No_commissions": "No opened commissions on your server",
-    "Chat_warning": "Remember to never give your credentials in the chat, nobody should ask for them. Using this chat to use the platform for RMT will result in a permanent ban from the website and the case forwarded to Square Enix",
-    "Chat_placeholder": "Send new message",
-    "Chat_hint": "Tip: you can send a message by doing Ctrl + Enter",
-    "New_commission": "Create a new commission request",
-    "New_commission_warning": "Creating a commission from this list will remove it from your lists (but won't delete the list), you won't be able to add more items nor change amounts on it.",
-    "Price_hint": "The price you want to pay for this commission",
-    "Crafted_by": "Fulfilled by:",
-    "Fire": "Fire",
-    "Confirm_fire": "Are you sure you want to fire this user from the commission?",
-    "Delete_payment": "Delete payment",
-    "Add_payment": "Add Payment",
-    "Deposit": "Deposit",
-    "Owing": "Owed",
-    "Go_to_chat": "Go to chat",
-    "Go_to_list": "Go to list",
-    "Mark_as_finished": "Archive the commission",
-    "Candidates": "Candidates",
-    "No_candidates": "No candidates for this commission",
-    "Hire": "Hire",
-    "Confirm_hire": "Are you sure you want to hire this user?",
-    "Apply": "Apply for this commission",
-    "Contact_buyer": "Contact the author",
-    "No_history": "You have no archived commissions",
-    "No_server_history": "The server has no archived commissions",
-    "No_crafts": "You have no ongoing commission",
-    "No_requests": "You have no commission requests",
-    "Rate_user": "User rating",
-    "Rating_description": "Please take a moment to rate the other user",
-    "Commissions": "Commissions",
-    "Confirm_archive": "Are you sure? This can't be undone.",
-    "Withdraw": "Withdraw from the commission",
-    "Confirm_withdraw": "Are you sure you want to withdraw from the commission? This can't be undone.",
-    "New_things_notification": "There's new things to check in your commission board",
-    "Negotiable_price": "Negotiable",
-    "STATUS": {
-      "CREATED": "Opened",
-      "ACCEPTED": "In Progress",
-      "DONE": "Archived"
-    },
-    "TAGS": {
-      "Crafting": "Crafting",
-      "Gathering": "Gathering",
-      "Hunting": "Hunting",
-      "Only_craft": "Materials included"
-    },
-    "FILTERS": {
-      "Min_price": "Min price",
-      "Max_price": "Max price"
-    }
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
