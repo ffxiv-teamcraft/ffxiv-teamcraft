@@ -164,8 +164,8 @@
   "List_recreated": "",
   "List_popup_title": "",
   "Please_wait": "",
-  "Not_own_list_outdated": "",
-  "Own_list_outdated_before_button": "",
+  "Not_own_list_outdated": "이 목록은 만료되었습니다. 생성자에게 갱신을 요청해주세요.",
+  "Own_list_outdated_before_button": "이 목록은 만료되었습니다. 사용하려면 갱신해주세요. ",
   "Own_list_outdated_after_button": "",
   "Home": "",
   "Import": "",
@@ -228,9 +228,9 @@
   "Required_crafts_amount": "제작에 필요한 양",
   "Missing_crafts_amount": "",
   "Requires": "",
-  "Copy_item_name_to_clipboard": "",
-  "Item_name_copied": "",
-  "Tier_display_toggle": "",
+  "Copy_item_name_to_clipboard": "아이템 이름을 클립보드로 복사",
+  "Item_name_copied": "{{itemname}} 클립보드에 복사됨",
+  "Tier_display_toggle": "제작 티어를 표시",
   "Precraft_tier": "",
   "Regenerating_lists": "",
   "SETTINGS": {
@@ -259,7 +259,7 @@
     "Nickname": "",
     "No_nickname": "",
     "Patreon_link_email": "",
-    "Patreon_edit_email": "",
+    "Patreon_edit_email": "Patreon 이메일 편집",
     "Email_already_used": "",
     "Patreon_email": "",
     "Contacts": "",
@@ -281,8 +281,8 @@
   },
   "LISTS": {
     "Needs_verification": "",
-    "Regenerate_all": "",
-    "Regenerated_all": "",
+    "Regenerate_all": "전체 목록 갱신",
+    "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "",
     "Lists_merged": "",
     "Shared_lists": "",
@@ -339,17 +339,17 @@
     "Inventory_breakdown": "",
     "LAYOUT_DIALOG": {
       "Title": "",
-      "Add_panel": "",
-      "Import_layout": "",
-      "Import_string": "",
-      "Import_string_copied": "",
+      "Add_panel": "패널 추가",
+      "Import_layout": "레이아웃 불러오기",
+      "Import_string": "레이아웃 불러오기 코드",
+      "Import_string_copied": "레이아웃 불러오기 코드 복사됨!",
       "Layout_name": "",
-      "Invalid_import": "",
+      "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": ""
     },
     "LAYOUT": {
       "Filter": "",
-      "Panel_name": "",
+      "Panel_name": "패널 이름",
       "Order_by": "",
       "Order": "",
       "Logic_gate": ""
@@ -384,7 +384,7 @@
     "CONSUMABLE": "",
     "LOG": "",
     "LEVE": "의뢰",
-    "GLAMOUR": "",
+    "GLAMOUR": "투영",
     "HOUSING": "하우징",
     "MISC": "",
     "QUEST": "퀘스트",
@@ -493,18 +493,18 @@
     "You": "",
     "Add_new": "",
     "Add_new_fc": "",
-    "Placeholder": "",
+    "Placeholder": "이메일 또는 사용자 ID",
     "Bind_free_company": "",
     "User_not_found": "",
-    "User_id_tip": "",
+    "User_id_tip": "사용자 ID는 프로필 페이지 오른쪽 하단에 있습니다",
     "Saving": "",
-    "No_anonymous": "",
+    "No_anonymous": "권환을 관리하려면 계정이 필요합니다",
     "Propagate_changes": "",
     "Propagate_changes_done": ""
   },
   "WIKI": {
     "Title": "",
-    "Not_found_in_current_lang": "",
+    "Not_found_in_current_lang": "이 페이지는 지금 사용중인 언어로 번역되지 않았습니다. 영어 페이지가 보여집니다.",
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
@@ -637,8 +637,8 @@
     "Server_history": "",
     "No_commissions": "",
     "Chat_warning": "",
-    "Chat_placeholder": "",
-    "Chat_hint": "",
+    "Chat_placeholder": "새 메시지 전송",
+    "Chat_hint": "팁: Ctrl + Enter를 입력하여 메세지를 보낼 수 있습니다.",
     "New_commission": "",
     "New_commission_warning": "",
     "Price_hint": "",
@@ -687,12 +687,12 @@
     }
   },
   "LEVEQUESTS": {
-    "Title": "",
-    "Levequest_name": "",
-    "No_results": "",
-    "Add_to_list": "",
-    "Quantity": "",
-    "All_deliveries": ""
+    "Title": "길드의뢰",
+    "Levequest_name": "길드의뢰명",
+    "No_results": "길드의뢰를 찾을 수 없습니다",
+    "Add_to_list": "이 길드의뢰 아이템을 목록에 추가",
+    "Quantity": "수량",
+    "All_deliveries": "모든 {{value}} 납품"
   },
   "NOTIFICATIONS": {
     "Title": "알림",
@@ -712,11 +712,11 @@
     "Assign_list": "",
     "Assign_team_member": "",
     "Detach_team": "",
-    "Delete_confirmation": "",
+    "Delete_confirmation": "정말로 이 팀을 삭제하시겠습니까?",
     "Invite_expires": "",
     "Invite_error": "팀 초대를 찾을수 없거나 만료되었습니다.",
     "Invite_link_copied": "팀 초대링크를 클립보드에 복사했습니다.",
-    "No_anonymous_join": "",
+    "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
     "NOTIFICATIONS": {
       "Item_added": "",
@@ -732,15 +732,15 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "",
-    "Amount": "",
-    "HQ": "고품질",
-    "Total_price": "",
-    "Unit_price": "",
-    "History": "",
-    "Purchase_date": ""
+    "Title": "장터게시판 정보",
+    "Amount": "수량",
+    "HQ": "HQ",
+    "Total_price": "합계 가격",
+    "Unit_price": "개당 가격",
+    "History": "과거 거래 이력 표시",
+    "Purchase_date": "날짜"
   },
   "COMMENTS": {
-    "Title": ""
+    "Title": "댓글"
   }
 }
