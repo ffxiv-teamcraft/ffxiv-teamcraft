@@ -94,6 +94,7 @@
     "Copy_to_clipboard": ""
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "",
     "Add_alarm": "",
     "Alarm_created": "",
@@ -175,6 +176,7 @@
   "Recipes_Added": "",
   "Character_name": "キャラクター名",
   "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "",
   "Server_name": "ワールド名",
   "Add_all_recipes": "",
