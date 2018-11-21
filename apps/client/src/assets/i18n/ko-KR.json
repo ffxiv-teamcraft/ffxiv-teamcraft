@@ -15,7 +15,7 @@
     "No_match": "일치하는 아이템이 없습니다",
     "Item_name": "아이템 이름",
     "Only_recipes": "제작법만 검색",
-    "Crafts_amount": "",
+    "Crafts_amount": "#개 제작(임시)",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용"
   },
@@ -36,7 +36,7 @@
   "Remove_work_on_it": "사용자 할당 제거",
   "Add_as_collectible": "소장품으로 추가",
   "Compact_display": "간소화",
-  "Mute_alarms": "음소거",
+  "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}} 회의 집사 수행이 필요합니다.",
@@ -95,7 +95,7 @@
     "Select": "선택",
     "Anonymous": "익명",
     "Warning": "경고",
-    "Success": "",
+    "Success": "성공(임시)",
     "Copy_to_clipboard": "클립보드에 복사하기"
   },
   "ALARMS": {
@@ -137,7 +137,7 @@
   "Desynth": "분해",
   "Vendors": "상인",
   "Open": "열기",
-  "Trade": "",
+  "Trade": "교환",
   "Filters": "필터",
   "Check_all": "모두 선택",
   "Uncheck_all": "모두 선택 해제",
@@ -200,7 +200,7 @@
   "Patreon_popup_title": "도움이 필요합니다",
   "Patreon_popup_body": "이용자수가 증가함에 따라 FFXIV Teamcraft는 빠르고 정확한 운영을 위하여 더 나은 호스팅 서비스가 필요합니다. 그렇기에 저희는 여러분들이 원하는 기능과 최상의 경험을 위한 호스팅 서비스 비용에 대한 지원이 필요합니다.",
   "Patreon_popup_body_end": "Patreon을 통해 우리를 지원해주세요. 이를 통해 당신은 저희 팀과 이용자들을 도와줄 수 있습니다.",
-  "Current_funds": "",
+  "Current_funds": "현재 자금(임시)",
   "Close": "닫기",
   "Forgot_password": "비밀번호 찾기",
   "Email_enter": "이메일",
@@ -457,7 +457,7 @@
       "Gathering": "{{amount}}개 채집",
       "Hunting": "{{amount}}개 사냥으로 얻기",
       "Vendor": "{{amount}}개 상점에서 구매",
-      "Trade": "{{amount}}개 거래로 얻기"
+      "Trade": "{{amount}} 개 교환"
     }
   },
   "GATHERING_LOCATIONS": {
