@@ -149,12 +149,12 @@
   "Facebook_login": "Facebook 계정으로 로그인",
   "Login": "로그인",
   "Disconnect": "로그아웃",
-  "Password": "",
+  "Password": "비밀번호",
   "Password_Confirmation": "",
   "Submit": "",
   "Invalid_credentials": "",
-  "Verification_mail_sent": "",
-  "Not_verified": "",
+  "Verification_mail_sent": "인증메일이 발송되었습니다. 받은 메일함에서 확인해주세요.",
+  "Not_verified": "미인증",
   "Lodestone_already_used": "",
   "Anonymous_Warning": "",
   "Game_Term/DoH": "",
@@ -198,7 +198,7 @@
   "Share_link_copied": "",
   "Share": "공유하기",
   "Patreon_popup_title": "",
-  "Patreon_popup_body": "",
+  "Patreon_popup_body": "이용자수가 증가함에 따라 FFXIV Teamcraft는 빠르고 정확한 운영을 위하여 더 나은 호스팅 서비스가 필요합니다. 그렇기에 저희는 여러분들이 원하는 기능과 최상의 경험을 위한 호스팅 서비스 비용에 대한 지원이 필요합니다.",
   "Patreon_popup_body_end": "",
   "Current_funds": "",
   "Close": "",
@@ -433,11 +433,11 @@
     }
   },
   "MACRO_TRANSLATION": {
-    "Title": "",
-    "Macro_language": "",
-    "Macro_to_translate": "",
-    "Do_translate": "",
-    "Invalid_macro_or_language": ""
+    "Title": "매크로 변환기",
+    "Macro_language": "매크로 언어",
+    "Macro_to_translate": "변환할 매크로",
+    "Do_translate": "변역하기!",
+    "Invalid_macro_or_language": "잘못된 매크로 또는 언어입니다."
   },
   "CUSTOM_LINKS": {
     "Title": "",
