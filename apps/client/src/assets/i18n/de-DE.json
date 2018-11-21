@@ -63,11 +63,6 @@
     "Patreon_supporters": "Patreon-Unterstützer",
     "Contributors": "Mitwirkende"
   },
-  "GIVEWAY": {
-    "Title": "10k Listen Giveaway!",
-    "Body": "Um die Erstellung von 10000 Listen zu feiern, wird eine Spielzeitkarte über 60 Tage verlost! Die Verlosung läuft bis zum 09.Februar . \n Ein großes dankeschön dass ihr die App benutzt. Ohne euch wäre Sie nicht das gleiche und ich hoffe dass sie euch sehr hilft.",
-    "Access": "Für das Giveaway anmelden"
-  },
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
@@ -99,6 +94,7 @@
     "Copy_to_clipboard": "In Zwischenablage kopieren"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "Kein Benachrichtigung gesetzt",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Alarm_created": "Benachrichtigung erstellt",
@@ -153,9 +149,7 @@
   "Password_Confirmation": "Bestätigung",
   "Submit": "Senden",
   "Invalid_credentials": "Ungültige Daten",
-  "Verification_mail_sent": "Bestätigungsmail gesendet, bitte prüfe dein Mail-Postfach",
   "Not_verified": "Deine E-Mail-Adresse ist noch nicht bestätigt, bitte prüfe dein Mail-Postfach",
-  "Lodestone_already_used": "Dieser Character wird bereits benutzt",
   "Anonymous_Warning": "Erstelle dir einen Account damit du deine Listen speichern kannst und andere Features nutzen kannst, wie den anpassbaren Filter",
   "Game_Term/DoH": "Handwerker",
   "Game_Term/DoL": "Sammler",
@@ -181,6 +175,8 @@
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
+  "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "Charakterinformationen",
   "Server_name": "Servername",
   "Add_all_recipes": "Füge Ergebnisse einer Liste hinzu",
@@ -197,10 +193,6 @@
   "Sound": "Ton",
   "Share_link_copied": "Listenlink in die Zwischenablage hinzugefügt",
   "Share": "Teilen",
-  "Patreon_popup_title": "Wir brauchen deine Hilfe",
-  "Patreon_popup_body": "Weil immer mehr Leute FFXIV-Teamcraft nutzen, benötigen wir besseres Hosting. Deswegen brauchen wir deine Hilfe, um das entsprechende Hosting gewährleisten zu können, damit du die bestmögliche Erfahrung mit dem Tool hast.",
-  "Patreon_popup_body_end": "Bitte unterstütze uns auf Patreon, damit unterstützt du das Team und die Leute, die das Tool nutzen wollen",
-  "Current_funds": "Aktuelles Guthaben",
   "Close": "Schließen",
   "Forgot_password": "Passwort vergessen",
   "Email_enter": "E-Mail",
@@ -236,9 +228,7 @@
   "SETTINGS": {
     "title": "Einstellungen",
     "link_base": "Gegenstandslink-Quelle",
-    "compact_lists": "Kompaktlisten-Ansicht",
     "theme": "Design",
-    "ffxivcrafting_display": "FFXIVcrafting.com-artige Menge",
     "Simulator_link_base": "Link zum Simulator",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
@@ -272,11 +262,6 @@
       "Success": "",
       "Error": "",
       "Validate": "Verifizieren"
-    },
-    "HELP": {
-      "Welcome": "Willkommen zur Profilseite, hier kannst du dein Profil ansehen und bearbeiten.",
-      "Edit": "Wenn du auf den Bearbeiten-Knopf drückst, kannst du den Character, der mit deinem Teamcraft-Account verknüpft ist, bearbeiten",
-      "Masterbooks": "Du kannst deine freigeschalteten Meisterbücher hier hinterlegen, damit du eine Warnung erhältst wenn dir für eine Herstellung ein Meisterbuch fehlt."
     }
   },
   "LISTS": {
@@ -353,32 +338,8 @@
       "Order_by": "Sortiere nach",
       "Order": "Sortierung",
       "Logic_gate": "Logikgatter"
-    },
-    "HELP": {
-      "Title": "Listendetails",
-      "List_category": "Liste",
-      "Inventory": "Du kannst zur Inventaransicht wechseln, wo du siehst was du zu jeder Zeit im Inventar haben solltest. Die App berechnet automatisch welche Gegenstände du schon für Herstellungen benutzt hast und zeigt die dementsprechend an.",
-      "Reset_progression": "Du kannst den ganzen Fortschritt einer Liste zurücksetzen. Nach einem Bestätigungsdialog werden alle Gegenstände wieder auf 0 gesetzt.",
-      "Upgrade": "Du kannst deine Liste mit diesem Knopf auf die aktuellste Version der App aktualisieren, ohne deinen Fortschritt zu verlieren. Du wirst gefragt ob du aktualisieren möchtest, wenn deine Liste nicht mehr aktuell ist.",
-      "Fork": "Du kannst eine Liste kopieren, womit du eine exakte Kopie einer Liste inklusive Fortschritt in deinem Account hast.",
-      "Filters": "Du kannst Filter benutzen um beispielsweise nur Dinge anzeigen zu lassen die du selber herstellen kannst oder um Dinge auszublenden die bereits fertig sind.",
-      "Area_breakdown": "Wenn du die Gebietsübersicht nutzt kannst du dir die Gebiete anzeigen lassen wo du Dinge bekommen kannst, sortiert nach der Höhe der Teleportkosten.",
-      "Pricing_mode": "Mit Hilfe der Kostenübersicht kannst du für alle Gegenstände die Preise angeben und dir ausrechnen lassen wie viel Gewinn oder Verlust du machst.",
-      "Item_category": "Gegenstände (Reihen)",
-      "Requirements": "Wenn du auf den Bedingungen-Knopf drückst, kannst du dir anzeigen lassen wofür ein Gegenstand benötigt wird oder was dieser Gegenstand benötigt.",
-      "Alarms": "Für eine zeitabhängige Abbaustelle kannst du auf den Alarm-Knopf drücken, um dir automatisch ein Geräusch abspielen zu lassen wenn die Stelle erscheint. Du musst dafür nicht auf der Liste sein, nur auf der Website.",
-      "Comments": "Du kannst Kommentare zu einzelnen Reihen hinzufügen um mehr Informationen zu hinterlegen oder eine Diskussion zu starten. Kommentare sind auf 140 Zeichen und 10 Kommentar pro Reihe begrenzt.",
-      "Colors": "Gegenstandsfarben haben alle eine Bedeutung , <span class=\"craftable\">so sehen Gegenstände aus die hergestellt werden können</span>, was bedeutet das du alle Gegenstände besitzt die zur Herstellung nötig sind. <span class=\"strike\">So sehen bereits hergestellte Gegenstände aus</span>, was bedeutet das dieser Gegenstand bereits erledigt ist.",
-      "Misc_category": "Anderes",
-      "Map_markers": "Immer wenn du dieses Symbol siehst, kannst du es benutzen um dir auf der KArte eine Markierung anzeigen zu lassen, was einfacher ist als X/Y-Koordinaten zu lesen.",
-      "Public_list": "Wenn du eine Liste auf öffentlich setzt, wird es zum Öffentliche Listen-Bereich hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN.",
-      "Obtention_details": "Jeder Gegenstand hat oben-rechts in der Ecke Symbole die dir verraten wie du sie erlangen kannst",
-      "Labels": "Wenn du eine Liste zu den öffentlichen Listen hinzufügst vergiss nicht aussagekräftige Schlagwörter zu setzen",
-      "Custom_layout": "Du kannst dein Layout komplett anpassen, es exportieren und das eines Freundes importieren. Das Layout kannst nur du sehen und es wird in deinem Browser gespeichert und auf jede Liste angewendet die du mit diesem Browser siehst."
     }
   },
-  "adapt_to_character": "An Character anpassen",
-  "reset_filters": "Filter zurücksetzen",
   "LIST_TAGS": {
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -422,15 +383,6 @@
     "MIN": "",
     "BOT": "GÄR",
     "FSH": ""
-  },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "Willkommen auf der Rezepte-Seite, wo du Rezepte suchen und zu Listen hinzufügen kannst oder von Ihnen löschen kannst",
-      "Filter": "Wenn du den Filter-Bereich öffnest, kannst du Filter anwenden und konfigurieren um nur das zu sehen, was du möchtest.",
-      "Add_to_list": "Sowie du den Gegenstand gefunden hast den du suchst, kannst du die Menge eingeben und auf den Knopf drücken, wo du dann gefragt wirst zu welcher Liste du den Gegenstand in der gewünschten Menge hinzufügen möchtest.",
-      "Quick_list": "Du kannst Sofort-Listen erstellen, was automatisch eine Liste mit dem Namen des Gegenstands erstellt und die gelöscht wird sowie sie abgearbeitet ist,",
-      "Add_results": "Der Alle Ergebnisse zur Liste hinzufügen-Knopf fügt alle Ergebnisse der aktuellen Suche zu einer Liste hinzu. VORSICHT: Die Menge beträgt immer 1 auf diesem Weg."
-    }
   },
   "MACRO_TRANSLATION": {
     "Title": "Makro-Übersetzung",
@@ -592,99 +544,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "Erstelle Listen, teile sie, arbeite daran mit, crafte",
-    "count": "Aktuell gespeicherte Listen",
-    "lists_created_count": "Listen erstellt mittels FFXIV Teamcraft",
-    "support_patreon": "Unterstütze uns auf patreon",
-    "features": "",
-    "support_title": "",
-    "support_content_discord": "Wenn du Probleme mit der Benutzung des Tools hast, scheu dich nicht und besuche uns auf Discord!",
-    "support_comtent_facebook": "Du kannst uns auch auf Facebook finden",
-    "contribute_title": "Beitragen",
-    "contribute_content": "Wenn du zu dem Tool beitragen möchtest, fühl dich frei den Code auf Github zu erweitern und Pull Requests zu erstellen!",
-    "changelog": "Um alle Neuigkeiten über das Tool zuerfahren, jede Änderung, schaue bitte ins Changelog.",
-    "FEATURES": {
-      "alarms_title": "Benachrichtigungen"
-    },
-    "GET_STARTED": {
-      "Title": "Lege los",
-      "First_list_title": "Erstelle deine erste Liste",
-      "First_list_content": "Navigiere zur Rezepte-Seite indem du den Link unten anklickst und erstelle deine erste Liste!",
-      "First_list_link": "Gehe zur Rezepte-Seite",
-      "Create_alarm_title": "Erstelle Benachrichtigungen",
-      "Create_alarm_content": "Navigiere zur Benachrichtigungen-Seite indem du den Link unten anklickst und erstelle deine erste Benachrichtigung, um nie wieder einen Spawn zu verpassen!",
-      "Create_alarm_link": "Gehe zur Benachrichtigungen-Seite",
-      "Create_rotations_title": "Erzeuge Rotationen",
-      "Create_rotations_content": "Navigiere zur Rotationen-Seite indem du den Link unten anklickst und erstelle deine erste Rotation, um das Herstellen mit deinen eigenen Job-Werten, Gerichten und HQ-Zutaten zu testen!",
-      "Create_rotations_link": "Gehe zur Rotationen-Seite",
-      "Access_wiki_title": "Erfahre mehr",
-      "Access_wiki_content": "Navigiere zum Wiki indem du den Link unten anklickst. Dort findest du Dokumentationen zur generellen Benutzung der Seite, um das beste aus dem Tool herauszuholen und dich bestmöglich zu unterstützen",
-      "Access_wiki_link": "Gehe zum Wiki"
-    }
-  },
   "PRICING": {
     "From_vendor": "Verkäuferpreis",
     "Expect_to_sell_everything": ""
-  },
-  "COMMISSION_BOARD": {
-    "Title": "Schwarzes Brett",
-    "Create_commission": "Neues Inserat erstellen",
-    "Board": "Inserate",
-    "My_requests": "Meine Inserate",
-    "My_crafts": "Meine aktiven Aufträge",
-    "History": "Archiviert",
-    "Server_history": "serverweite Historie",
-    "No_commissions": "Keine offenen Inserate auf deinem Server",
-    "Chat_warning": "Bitte gib deine Logindaten niemals im Chat weiter, niemand sollte jemals danach fragen. Die Nutzung des Chats als Platform für RMT resultiert in einer permanenten Sperre auf der Webseite und einer Weiterleitung des Falls an Square Enix.",
-    "Chat_placeholder": "Neue Nachricht senden",
-    "Chat_hint": "Tipp: Du kannst eine Nachricht mit Strg + Enter senden",
-    "New_commission": "Neues Inserat erstellen",
-    "New_commission_warning": "Aus dieser Liste ein Inserat zu erstellen entfernt diese aus der Listenübersicht (aber löscht sie nicht). Du wirst keine weiteren Items hinzufügen oder deren Mengen ändern können.",
-    "Price_hint": "Der Preis, den du für das Inserat zahlen möchtest",
-    "Crafted_by": "Hergestellt von:",
-    "Fire": "Entlassen",
-    "Confirm_fire": "Bist du sicher, dass du den Nutzer aus dem Inserat entfernen möchtest?",
-    "Delete_payment": "Zahlung entfernen",
-    "Add_payment": "Zahlung hinzufügen",
-    "Deposit": "Anzahlung",
-    "Owing": "Restbetrag",
-    "Go_to_chat": "Gehe zum Chat",
-    "Go_to_list": "Gehe zur Liste",
-    "Mark_as_finished": "Archiviere das Inserat",
-    "Candidates": "Kandidaten",
-    "No_candidates": "Keine Kandidaten für dieses Inserat",
-    "Hire": "Einstellen",
-    "Confirm_hire": "Bist du sicher, dass du diesen Nutzer einstellen möchtest?",
-    "Apply": "Auf dieses Inserat bewerben",
-    "Contact_buyer": "Kontaktiere den Inserenten",
-    "No_history": "Du hast keine archivierten Inserate",
-    "No_server_history": "Keine archivierten Inserate auf deinem Server",
-    "No_crafts": "Du hast keine aktiven Aufträge",
-    "No_requests": "Du hast keine Inserate",
-    "Rate_user": "Benutzerwertung",
-    "Rating_description": "Bitte nimm dir einen Moment um den Nutzer zu bewerten",
-    "Commissions": "Inserate",
-    "Confirm_archive": "Bist du sicher? Das kann nicht rückgängig gemacht werden.",
-    "Withdraw": "Aus dem Auftrag zurückziehen",
-    "Confirm_withdraw": "Bist du sicher dass du dich aus dem Auftrag zurückziehen möchtest? Dies kann nicht rückgängig gemacht werden.",
-    "New_things_notification": "Es gibt neue Einträge auf deinem Schwarzen Brett",
-    "Negotiable_price": "Verhandelbar",
-    "STATUS": {
-      "CREATED": "Offen",
-      "ACCEPTED": "Laufend",
-      "DONE": "Archiviert"
-    },
-    "TAGS": {
-      "Crafting": "Herstellung",
-      "Gathering": "Sammlung",
-      "Hunting": "Jagd",
-      "Only_craft": "Materialien inklusive"
-    },
-    "FILTERS": {
-      "Min_price": "Min. Preis",
-      "Max_price": "Max. Preis"
-    }
   },
   "LEVEQUESTS": {
     "Title": "",
