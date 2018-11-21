@@ -2,16 +2,17 @@
   "Pick_a_list": "Escolha uma lista",
   "Pick_a_user": "Escolha um utilizador",
   "Pick_a_fc": "Escolha uma compania livre",
+  "FC_name": "",
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "AUTH_ERRORS": {
-    "auth/credential-already-in-use": "Conta já em utilização",
-    "auth/email-already-in-use": "Email já em utilização",
+    "auth/credential-already-in-use": "Conta já está a ser utilizada",
+    "auth/email-already-in-use": "Email já está a ser utilizado",
     "auth/user-not-found": "O email ou a password está errada",
     "auth/wrong-password": "O email ou a password está errada"
   },
   "ITEMS": {
     "Title": "Pesquisa",
-    "No_match": "Sem itens encontrados",
+    "No_match": "Não há itens correspondentes",
     "Item_name": "Nome do item",
     "Only_recipes": "Só fórmulas",
     "Crafts_amount": "# de tarefas",
@@ -22,15 +23,17 @@
   "Download_desktop_app": "Descarregar aplicação para desktop",
   "Default": "Por defeito",
   "Delete": "Eliminar",
-  "Timers": "Temporizador",
+  "Timers": "Temporizadores",
   "Copy_isearch": "Copiar o macro isearch",
-  "Isearch_copied": "/isearch {{itemname}} copiado ao clipboard",
+  "Isearch_copied": "/isearch {{itemname}} copiado para a área de transferência",
   "Required_for_final_craft": "{{amount}} necessário para os itens finais",
-  "Compact_sidebar_toggle": "Ativar compactação da barra lateral",
+  "Mark_HQ": "",
+  "Unmark_HQ": "",
+  "Compact_sidebar_toggle": "Mudar barra lateral compacta",
   "Confirmation": "Tem a certeza?",
-  "Is_working_on_it": "{{name}} está trabalhando nisso",
-  "Work_on_it": "Estou trabalhando nisso",
-  "Remove_work_on_it": "Remover a atribuição do utilizador",
+  "Is_working_on_it": "{{name}} está a trabalhar nisso",
+  "Work_on_it": "Estou a trabalhar nisto",
+  "Remove_work_on_it": "",
   "Add_as_collectible": "Adicionar como colecionável",
   "Compact_display": "Visualização compacta",
   "Mute_alarms": "Mutar alarmes",
@@ -52,6 +55,7 @@
   },
   "ABOUT": {
     "title": "Sobre",
+    "Created_by": "",
     "Copyright_notice_title": "Aviso de direitos autorais",
     "Copyright_notice_content": "FINAL FANTASY é uma marca registrada da Square Enix Holdings co., Ltd.<br>FINAL FANTASY XIV © 2010-2017 SQUARE ENIX CO., Ltd. Todos os direitos reservados.<br>FFXIV Teamcraft não é afiliado com a Square Enix.",
     "Thanks_title": "Obrigado",
@@ -59,18 +63,13 @@
     "Patreon_supporters": "Apoiantes de Patreon",
     "Contributors": "Colaboradores"
   },
-  "GIVEWAY": {
-    "Title": "Giveaway das 10 mil listas",
-    "Body": "A fim de agradecer devidamente ás 10 mil listas criadas na aplicação, foi criado um giveaway de um cartão de 60 dias que durará até 9 de Fevereiro.\nObrigado por usar esta aplicação, espero que lhe tivesse ajudado muito, a aplicação é o que é graças a você.",
-    "Access": "Aceder ao giveaway"
-  },
-  "Hide_if_empty": "Esconder se vazio",
+  "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Não favorito",
-  "Ephemeral_list": "Será deletado assim que completo",
+  "Ephemeral_list": "Será eliminado assim que completo",
   "Ephemeral_tag": "efémero",
-  "Quick_list_create": "Criar uma lista rapidamente (removida assim que completo)",
+  "Quick_list_create": "Criar uma lista rápida (removida assim que se completar)",
   "Tag_filter": "Tags",
-  "Public_lists": "Listas da comunidade",
+  "Public_lists": "Listas públicas",
   "Your_public_lists": "As suas listas públicas",
   "Public_list": "Lista da comunidade",
   "Profile": "Perfil",
@@ -95,6 +94,7 @@
     "Copy_to_clipboard": "Copiar para área de transferência"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "Não há alarmes definidos",
     "Add_alarm": "Adicionar um alarme",
     "Alarm_created": "Alarme criado",
@@ -145,44 +145,44 @@
   "Facebook_login": "Login com o Facebook",
   "Login": "Login",
   "Disconnect": "Desconectar",
-  "Password": "Senha",
+  "Password": "Password",
   "Password_Confirmation": "Confirmação",
   "Submit": "Enviar",
   "Invalid_credentials": "Credênciais inválidas",
-  "Verification_mail_sent": "Email de verificação enviado, por favor verifique sua caixa de entrada",
   "Not_verified": "Seu email ainda não foi verificado, por favor verifique o seu email",
-  "Lodestone_already_used": "Esse personagem já está sendo utilizado",
   "Anonymous_Warning": "Você precisa criar uma conta para evitar perder suas listas e permitir mais funcionalidades como filtro adaptativo.",
-  "Game_Term/DoH": "",
-  "Game_Term/DoL": "",
+  "Game_Term/DoH": "Discípulos da Mão",
+  "Game_Term/DoL": "Discípulos da Terra",
   "Reduction": "Redução",
   "Upgrade_list": "Recria a lista com a última versão da aplicação",
   "List_recreated": "Lista recriada com sucesso",
   "List_popup_title": "Gerando a lista novamente, por favor aguarde",
-  "Please wait": "",
+  "Please_wait": "",
   "Not_own_list_outdated": "Essa lista é antiga, por favor peça para o dono gerá-la novamente",
   "Own_list_outdated_before_button": "Essa lista é antiga, por favor crie ela novamente usando",
   "Own_list_outdated_after_button": "botão",
-  "Home": "",
+  "Home": "Início",
   "Import": "Importar",
   "Favorites": "Favoritos",
   "Favorite": "Favorito",
-  "filters/ilvl": "Level do item",
-  "filters/lvl": "Level requerido",
-  "filters/craft_lvl": "Level da receita",
+  "filters/ilvl": "Nível do item",
+  "filters/lvl": "Nível exigido",
+  "filters/craft_lvl": "Nível da fórmula",
   "filters/worn_by": "Usado por",
   "filters/crafted_by": "Craftado por:",
-  "filters/item_category": "",
+  "filters/item_category": "Tipo de item",
   "Adding_recipes": "Adicionar {{amount}} receitas a lista {{listname}}",
   "Recipe_Added": "{{itemname}} adicionado a lista {{listname}}",
   "Recipes_Added": "Resultados adicionados a lista  {{listname}}",
   "Character_name": "Nome do Personagem",
+  "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "Informações do Personagem",
   "Server_name": "Nome do Servidor",
   "Add_all_recipes": "Adicionar todos resultados a uma lista",
   "Character_not_found": "Personagem não encontrado",
-  "Use_lodestoneId": "",
-  "LodestoneId": "",
+  "Use_lodestoneId": "Use o ID da Lodestone",
+  "LodestoneId": "ID da Lodestone",
   "List_forked": "Lista copiada para sua conta",
   "List_fork": "Copiar a lista para sua conta",
   "List_not_found": "Lista não encontrada ou você não tem acesso a ela",
@@ -193,23 +193,19 @@
   "Sound": "Som",
   "Share_link_copied": "Link da lista copiado ao clipboard",
   "Share": "Compartilhar",
-  "Patreon_popup_title": "Nós precisamos de sua ajuda",
-  "Patreon_popup_body": "Assim que a base de usuários crescer, o FFXIV Teamcraft irá precisar de um host maior para que tudo funcione direito com bom tempo de resposta. Por conta disso, precisamos do seu apoio para garantir que temos fundos suficientes para pagar a hospedagem que você merece, e garantir sua experiência com a ferramenta a melhor possível",
-  "Patreon_popup_body_end": "Por favor considere em ajudar nós no patreon, fazendo isso você ajuda o time e os usuários",
-  "Current_funds": "Dinheiro atual",
   "Close": "Fechar",
   "Forgot_password": "Esqueci a senha",
-  "Email_enter": "",
+  "Email_enter": "Email",
   "Email_not_found": "Email não encontrado",
   "Email_sent": "Um email foi enviado com as instruções para trocar sua senha.",
   "ALARM": {
-    "Spawned": "",
-    "See_on_map": "",
-    "Note": ""
+    "Spawned": "{{itemName}} vai aparecer!",
+    "See_on_map": "Localização",
+    "Note": "Nota"
   },
   "Pricing_mode": "Modo de preço",
-  "Back_to_list": "Voltar a lista",
-  "Spending": "Despesa",
+  "Back_to_list": "Voltar à lista",
+  "Spending": "Gastos",
   "Pricing": "Preço",
   "Earning": "Ganhos",
   "Benefits": "Benefícios",
@@ -232,9 +228,7 @@
   "SETTINGS": {
     "title": "",
     "link_base": "",
-    "compact_lists": "",
     "theme": "",
-    "ffxivcrafting_display": "",
     "Simulator_link_base": "",
     "Always_on_top": "",
     "Check_for_update": "",
@@ -242,6 +236,12 @@
     "No_update_available": ""
   },
   "PROFILE": {
+    "Account": "",
+    "Add_character": "",
+    "Remove_character": "",
+    "Jobs": "",
+    "Stats": "",
+    "View_on_apkallu_falls": "",
     "Masterbooks": "",
     "Patreon_supporter": "",
     "Patreon_features": "",
@@ -253,21 +253,19 @@
     "Email_already_used": "",
     "Patreon_email": "",
     "Contacts": "",
-    "New_contact": "",
+    "Add_new_contact": "",
     "Save_for_all": "",
     "User_not_verified": "",
     "VERIFICATION": {
       "Title": "",
       "Guide": "",
+      "Success": "",
+      "Error": "",
       "Validate": ""
-    },
-    "HELP": {
-      "Welcome": "",
-      "Edit": "",
-      "Masterbooks": ""
     }
   },
   "LISTS": {
+    "Needs_verification": "",
     "Regenerate_all": "",
     "Regenerated_all": "",
     "Merge_lists": "",
@@ -320,6 +318,7 @@
     "Add_remove_amount": "",
     "No_book": "",
     "No_note": "",
+    "Edit_note": "",
     "Note_placeholder": "",
     "Tags_popup": "",
     "Inventory_breakdown": "",
@@ -339,32 +338,8 @@
       "Order_by": "",
       "Order": "",
       "Logic_gate": ""
-    },
-    "HELP": {
-      "Title": "",
-      "List_category": "",
-      "Inventory": "",
-      "Reset_progression": "",
-      "Upgrade": "",
-      "Fork": "",
-      "Filters": "",
-      "Area_breakdown": "",
-      "Pricing_mode": "",
-      "Item_category": "",
-      "Requirements": "",
-      "Alarms": "",
-      "Comments": "",
-      "Colors": "",
-      "Misc_category": "Outro",
-      "Map_markers": "",
-      "Public_list": "",
-      "Obtention_details": "",
-      "Labels": "",
-      "Custom_layout": ""
     }
   },
-  "adapt_to_character": "Adaptar ao Personagem",
-  "reset_filters": "Resetar filtros",
   "LIST_TAGS": {
     "GEAR": "",
     "CONSUMABLE": "",
@@ -409,15 +384,6 @@
     "BOT": "",
     "FSH": ""
   },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "",
-      "Filter": "",
-      "Add_to_list": "",
-      "Quick_list": "",
-      "Add_results": ""
-    }
-  },
   "MACRO_TRANSLATION": {
     "Title": "",
     "Macro_language": "",
@@ -439,7 +405,12 @@
   "NAVIGATION": {
     "Title": "",
     "Steps": "",
-    "Gather_x": ""
+    "STEP": {
+      "Gathering": "",
+      "Hunting": "",
+      "Vendor": "",
+      "Trade": ""
+    }
   },
   "GATHERING_LOCATIONS": {
     "Title": "",
@@ -573,99 +544,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "",
-    "count": "",
-    "lists_created_count": "",
-    "support_patreon": "",
-    "features": "",
-    "support_title": "",
-    "support_content_discord": "",
-    "support_comtent_facebook": "",
-    "contribute_title": "",
-    "contribute_content": "",
-    "changelog": "",
-    "FEATURES": {
-      "alarms_title": ""
-    },
-    "GET_STARTED": {
-      "Title": "",
-      "First_list_title": "",
-      "First_list_content": "",
-      "First_list_link": "",
-      "Create_alarm_title": "",
-      "Create_alarm_content": "",
-      "Create_alarm_link": "",
-      "Create_rotations_title": "",
-      "Create_rotations_content": "",
-      "Create_rotations_link": "",
-      "Access_wiki_title": "",
-      "Access_wiki_content": "",
-      "Access_wiki_link": ""
-    }
-  },
   "PRICING": {
     "From_vendor": "",
     "Expect_to_sell_everything": ""
-  },
-  "COMMISSION_BOARD": {
-    "Title": "",
-    "Create_commission": "",
-    "Board": "",
-    "My_requests": "",
-    "My_crafts": "",
-    "History": "",
-    "Server_history": "",
-    "No_commissions": "",
-    "Chat_warning": "",
-    "Chat_placeholder": "",
-    "Chat_hint": "",
-    "New_commission": "",
-    "New_commission_warning": "",
-    "Price_hint": "",
-    "Crafted_by": "",
-    "Fire": "",
-    "Confirm_fire": "",
-    "Delete_payment": "",
-    "Add_payment": "",
-    "Deposit": "",
-    "Owing": "",
-    "Go_to_chat": "",
-    "Go_to_list": "",
-    "Mark_as_finished": "",
-    "Candidates": "",
-    "No_candidates": "",
-    "Hire": "",
-    "Confirm_hire": "",
-    "Apply": "",
-    "Contact_buyer": "",
-    "No_history": "",
-    "No_server_history": "",
-    "No_crafts": "",
-    "No_requests": "",
-    "Rate_user": "",
-    "Rating_description": "",
-    "Commissions": "",
-    "Confirm_archive": "",
-    "Withdraw": "",
-    "Confirm_withdraw": "",
-    "New_things_notification": "",
-    "Negotiable_price": "",
-    "STATUS": {
-      "CREATED": "",
-      "ACCEPTED": "",
-      "DONE": ""
-    },
-    "TAGS": {
-      "Crafting": "",
-      "Gathering": "",
-      "Hunting": "Caçadas",
-      "Only_craft": ""
-    },
-    "FILTERS": {
-      "Min_price": "",
-      "Max_price": ""
-    }
   },
   "LEVEQUESTS": {
     "Title": "",
@@ -677,7 +558,8 @@
   },
   "NOTIFICATIONS": {
     "Title": "",
-    "List_commented": "",
+    "List_comment_added": "",
+    "List_item_comment_added": "",
     "Mark_all_as_read": ""
   },
   "TEAMS": {
@@ -716,6 +598,11 @@
     "Amount": "",
     "HQ": "",
     "Total_price": "",
-    "Unit_price": ""
+    "Unit_price": "",
+    "History": "",
+    "Purchase_date": ""
+  },
+  "COMMENTS": {
+    "Title": ""
   }
 }
