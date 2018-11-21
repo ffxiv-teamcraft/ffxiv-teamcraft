@@ -404,7 +404,7 @@
     "Steps": "Étapes",
     "STEP": {
       "Gathering": "Récolter {{amount}}",
-      "Hunting": "",
+      "Hunting": "Obtenez {{amount}} sur des monstres",
       "Vendor": "Acheter {{amount}}",
       "Trade": "Acheter {{amount}}"
     }
