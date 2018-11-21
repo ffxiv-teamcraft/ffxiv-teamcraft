@@ -57,16 +57,11 @@
     "title": "TC에 대하여",
     "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
     "Copyright_notice_title": "저작권 안내",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
-    "Thanks_title": "도움",
+    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft는 Square Enix와 관련이 없습니다.",
+    "Thanks_title": "도움 주신 분들",
     "Data_sources": "자료 출처",
     "Patreon_supporters": "Patreon 후원자",
     "Contributors": "기여자"
-  },
-  "GIVEWAY": {
-    "Title": "1만 목록 달성 이벤트",
-    "Body": "1만 개의 목록이 앱에서 만들어진 것을 기념하기 위해 2월 9일까지 60일 계정권 증정 이벤트가 진행됩니다. \n앱을 이용해주신 것에 대해 감사드립니다. 이 앱이 많은 도움되었기를 빕니다.",
-    "Access": "이벤트 참여"
   },
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
@@ -153,9 +148,7 @@
   "Password_Confirmation": "패스워드 재확인",
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
-  "Verification_mail_sent": "인증메일이 발송되었습니다. 받은 메일함에서 확인해주세요.",
   "Not_verified": "미인증",
-  "Lodestone_already_used": "이 캐릭터는 이미 사용중입니다",
   "Anonymous_Warning": "목록의 손실을 피하고 적응형 필터와 같은 다양한 기능을 사용하기 위해서는 계정을 생성해야합니다",
   "Game_Term/DoH": "제작자",
   "Game_Term/DoL": "채집가",
@@ -197,10 +190,6 @@
   "Sound": "소리",
   "Share_link_copied": "링크가 클립보드에 복사되었습니다",
   "Share": "공유하기",
-  "Patreon_popup_title": "도움이 필요합니다",
-  "Patreon_popup_body": "이용자수가 증가함에 따라 FFXIV Teamcraft는 빠르고 정확한 운영을 위하여 더 나은 호스팅 서비스가 필요합니다. 그렇기에 저희는 여러분들이 원하는 기능과 최상의 경험을 제공하기 위해 호스팅 서비스 비용에 대한 지원이 필요합니다.",
-  "Patreon_popup_body_end": "Patreon을 통해 우리를 지원해주세요. 이를 통해 당신은 저희 팀과 이용자들을 도와줄 수 있습니다.",
-  "Current_funds": "현재 자금(임시)",
   "Close": "닫기",
   "Forgot_password": "비밀번호 찾기",
   "Email_enter": "이메일",
@@ -236,9 +225,7 @@
   "SETTINGS": {
     "title": "설정",
     "link_base": "아이템 링크",
-    "compact_lists": "목록 간소화",
     "theme": "테마",
-    "ffxivcrafting_display": "FFXIVcrafting.com 와 비슷하게 설정",
     "Simulator_link_base": "시뮬레이터 링크",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
@@ -272,11 +259,6 @@
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
-    },
-    "HELP": {
-      "Welcome": "프로필 페이지에 어서오세요, 이 페이지에서는 프로필을 보고 편집할 수 있습니다.",
-      "Edit": "편집아이콘을 클릭하면 FFXIV Teamcraft account 에 연동된 캐릭터를 수정할 수 있습니다.",
-      "Masterbooks": "프로필에 사용한 비전서를 입력하여주세요. 이는 추후 보유하지 않은 비전서의 아이템을 제작할 때 경고를 띄워주게 합니다."
     }
   },
   "LISTS": {
@@ -353,32 +335,8 @@
       "Order_by": "정렬 기준",
       "Order": "순서",
       "Logic_gate": "논리항"
-    },
-    "HELP": {
-      "Title": "목록 정보",
-      "List_category": "목록",
-      "Inventory": "소지품 보기를 통해 필요한 아이템을 확인할 수 있습니다. 제작 완료된 아이템들은 삭제됩니다.",
-      "Reset_progression": "새로고침 버튼을 이용해 목록의 모든 진행상황을 초기화 할 수 있습니다.",
-      "Upgrade": "이 버튼을 이용해 목록을 최신버전으로 업데이트 할 수 있습니다. 이는 리스트를 처음부터 재생성하나 진행상황은 유지됩니다. 목록이 만료된 경우 필요합니다.",
-      "Fork": "목록을 포크하여 내 계정에 해당 목록의 상태를 복사할 수 있습니다. 모든 목록에 사용 가능합니다.",
-      "Filters": "목록의 항목을 필터링할 수있고, 계정을 사용하여 실행할 수 있는 항목만 보거나 현재 패널에서 이미 수행된 항목들을 숨길 수 있습니다.",
-      "Area_breakdown": "지역 그룹화 기능을 활성화하면 최소한의 텔레포 비용으로 아이템을 얻을 수 있도록 지역 기준으로 데이터의 순서를 조정할 수 있습니다.",
-      "Pricing_mode": "가격 설정 모드에서는 목록에 있는 각 아이템마다 구매 가격과 판매 가격을 설정하여 얼마만큼의 이윤을 얻을 수 있는지 확인할 수 있습니다.",
-      "Item_category": "아이템 (행)",
-      "Requirements": "요구조건 아이콘을 클릭하여 주어진 아이템에 필요한 것이나 해당 아이템을 필요로 하는 것을 확인할 수 있습니다.",
-      "Alarms": "아이템이 시간제 채집물인 경우, 옆의 알람버튼을 클릭하면 채집 장소가 나타날 때 알람이 울리게 할 수 있습니다. 알람은 해당 목록에서 벗어나도 웹사이트에 접속중이기만 작동합니다.",
-      "Comments": "(아이템 링크가 아닌 목록의 항목에서) 어떤 아이템에나 댓글을 달 수 있습니다. 이는 더 많은 정보를 제공하거나 토의할 수 있도록 합니다. 댓글은 최대 140자이며 아이템 당 10자로 제한됩니다.",
-      "Colors": "아이템 이름의 색은 각각 의미가 있습니다. <span class=\"craftable\"> 제작 가능한 아이템</span>. 필요한 재료가 모두 준비되었다는 의미입니다. <span class=\"strike\">제작된 아이템. </span> 이미 제작을 완료했다는 의미입니다.",
-      "Misc_category": "기타",
-      "Map_markers": "이 아이콘을 누르면 x, y좌표보다 알기 쉬운 지도 마커를 보여줍니다.",
-      "Public_list": "목록 공개 설정은 이 목록을 공개 목록 섹션에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
-      "Obtention_details": "각 아이템 항은 항목 우상단에 아이콘을 지니고 있습니다. 각 아이콘을 클릭하면 해당 아이템을 얻는 방법을 알 수 있습니다.",
-      "Labels": "목록을 공개 설정할 때, 적당한 라벨을 붙이는 것을 잊지 마세요",
-      "Custom_layout": "레이아웃은 자유롭게 설정할 수 있으며, 내보내기를 통해 친구에게 공유할 수도 있습니다. 레이아웃 설정은 개인화 되어있으며, 브라우저에 저장됩니다. 설정된 레이아웃은 이 브라우저를 사용하는 모든 목록에 영향을 미칩니다."
     }
   },
-  "adapt_to_character": "캐릭터와 동기화",
-  "reset_filters": "필터 초기화",
   "LIST_TAGS": {
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -423,15 +381,6 @@
     "BOT": "원예가",
     "FSH": "어부"
   },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "제작법 페이지에 오신 것을 환영합니다. 이 페이지는 제작 목록에서 제작법을 찾고, 구분하고, 더하기 위한 곳입니다.",
-      "Filter": "필터 탭에서는 다양한 필터를 사용할 수 있으며, 이를 직접 선택하고 값을 변경하여 원하는 아이템을 찾을 수 있습니다.",
-      "Add_to_list": "원하는 아이템을 찾은 다음에는 수량을 입력하고 '목록에 추가' 아이콘을 눌러 원하는 목록에 아이템을 추가할 수 있습니다. 이 경우 입력한 수량만큼 목록에 반영됩니다.",
-      "Quick_list": "'간이 목록' 버튼을 클릭하여 아이템 이름으로 된 간이 목록을 만들 수 있습니다. 이 목록은 완료시 삭제됩니다.",
-      "Add_results": "'결과를 목록에 추가' 버튼은 현재 결과에 있는 각 아이템을 주어진 목록에 추가합니다. 조심하세요, <b>이 버튼을 사용하면 수량은 항상 1로 고정됩니다.</b>"
-    }
-  },
   "MACRO_TRANSLATION": {
     "Title": "매크로 변환기",
     "Macro_language": "매크로 언어",
@@ -455,7 +404,7 @@
     "Steps": "단계",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
-      "Hunting": "{{amount}}개 사냥으로 얻기",
+      "Hunting": "",
       "Vendor": "{{amount}}개 상점에서 구매",
       "Trade": "{{amount}} 개 교환"
     }
@@ -569,7 +518,7 @@
     },
     "CONFIGURATION": {
       "Job": "직업",
-      "Custom_set": "사용자지정 스탯 활성화",
+      "Custom_set": "사용자지정 능력치 활성화",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
       "Control": "가공 숙련도",
@@ -592,99 +541,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "목록을 만들고, 공유하고, 기여하고, 제작하세요",
-    "count": "현재 저장된 목록",
-    "lists_created_count": "FFXIV Teamcraft를 사용하여 만들어진 목록",
-    "support_patreon": "Patreon으로 후원하기",
-    "features": "기능",
-    "support_title": "지원",
-    "support_content_discord": "사용하다가 어렵거나 문제가 생겼을땐 부끄러워하지 말고 우리 디스코드 채널로 찾아와주세요!",
-    "support_comtent_facebook": "페이스북으로도 연락할 수 있습니다.",
-    "contribute_title": "기여하기",
-    "contribute_content": "Teamcraft에 기여하고 싶으시면 github의 코드를 확인하고 Pull Requests를 만들어주세요!",
-    "changelog": "우리 웹사이트의 최신 뉴스나 바뀐 점을 확인하시려면, 변경사항을 확인하세요.",
-    "FEATURES": {
-      "alarms_title": "알람"
-    },
-    "GET_STARTED": {
-      "Title": "시작하기",
-      "First_list_title": "첫 목록 만들기",
-      "First_list_content": "아래 링크를 타고 제작법 페이지로 이동한 뒤 첫 번째 목록을 만들어 보세요!",
-      "First_list_link": "제작법 페이지로 이동",
-      "Create_alarm_title": "채집장소 알람 추가",
-      "Create_alarm_content": "아래 링크를 클릭해서 알람 페이지로 이동하세요. 그리고 알람을 설정해서 채집장소 출현을 놓치지 마세요!",
-      "Create_alarm_link": "알람페이지로 이동",
-      "Create_rotations_title": "제작 로테이션 생성",
-      "Create_rotations_content": "아래 링크를 타고 로테이션창으로 이동하여 자신의 능력치, 음식, HQ재료를 바탕으로 인게임 제작 로테이션을 생성해보세요!",
-      "Create_rotations_link": "로테이션 페이지로 이동",
-      "Access_wiki_title": "더 알아보기",
-      "Access_wiki_content": "아래 링크를 클릭하여 위키 페이지로 이동합니다. 이 페이지는 이용자를 돕기 위한 일반적인 웹사이트 이용 가이드 문서를 보유하고 있습니다.",
-      "Access_wiki_link": "위키 페이지로 이동"
-    }
-  },
   "PRICING": {
     "From_vendor": "상인 판매 가격",
     "Expect_to_sell_everything": "전체 판매 가정"
-  },
-  "COMMISSION_BOARD": {
-    "Title": "의뢰 게시판",
-    "Create_commission": "의뢰 요청하기",
-    "Board": "게시판",
-    "My_requests": "내 요청",
-    "My_crafts": "현재 진행중인 내 의뢰",
-    "History": "완료됨",
-    "Server_history": "서버 히스토리",
-    "No_commissions": "현재 서버에 열려있는 의뢰가 없습니다",
-    "Chat_warning": "절대로 개인정보를 누군가에 주어서도 안되고 물어봐서도 안됩니다. 또한 RMT[현거래] 목적으로 이 사이트를 이용시 영구적으로 사용이 금지되고 이 사례는 Square Enix로 전송됩니다.",
-    "Chat_placeholder": "새 메시지 전송",
-    "Chat_hint": "팁: Ctrl + Enter를 입력하여 메세지를 보낼 수 있습니다.",
-    "New_commission": "새로운 의뢰 만들기",
-    "New_commission_warning": "이 목록으로 의뢰를 생성하면 해당 목록은 내 목록에서는 보이지 않고(삭제되지는 않음) 아이템을 추가하거나 갯수를 변경할 수 없습니다.",
-    "Price_hint": "이 의뢰를 위해 지불해야되는 가격",
-    "Crafted_by": "완료한 사람: ",
-    "Fire": "해고",
-    "Confirm_fire": "의뢰를 맡았던 이 사람을 해고하겠습니까?",
-    "Delete_payment": "결제수단 삭제",
-    "Add_payment": "결제수단 추가",
-    "Deposit": "착수금",
-    "Owing": "비용 미지불",
-    "Go_to_chat": "채팅으로 이동",
-    "Go_to_list": "목록으로 이동",
-    "Mark_as_finished": "의뢰 완료",
-    "Candidates": "지원자",
-    "No_candidates": "이 의뢰에 지원자 없음",
-    "Hire": "고용",
-    "Confirm_hire": "이 사람을 고용하겠습니까?",
-    "Apply": "이 의뢰에 적용",
-    "Contact_buyer": "의뢰자에게 연락",
-    "No_history": "완료한 의뢰가 없습니다",
-    "No_server_history": "서버에 완료된 의뢰가 없습니다",
-    "No_crafts": "진행 중인 의뢰가 없습니다",
-    "No_requests": "요청한 의뢰가 없습니다",
-    "Rate_user": "사용자 평점",
-    "Rating_description": "잠시 시간을 내어 다른 유저를 평가해주세요",
-    "Commissions": "의뢰",
-    "Confirm_archive": "이대로 진행하시겠습니까? 취소할 수 없습니다.",
-    "Withdraw": "의뢰 포기하기",
-    "Confirm_withdraw": "이 의뢰를 포기하겠습니까? 취소할 수 없습니다.",
-    "New_things_notification": "의뢰 게시판에 새로운 사항이 있습니다",
-    "Negotiable_price": "협상 가능",
-    "STATUS": {
-      "CREATED": "열림",
-      "ACCEPTED": "진행 중",
-      "DONE": "완료됨"
-    },
-    "TAGS": {
-      "Crafting": "제작",
-      "Gathering": "채집",
-      "Hunting": "사냥",
-      "Only_craft": "마테리아 포함"
-    },
-    "FILTERS": {
-      "Min_price": "최소 가격",
-      "Max_price": "최대 가격"
-    }
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
