@@ -60,7 +60,7 @@
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "",
     "Data_sources": "자료 출처",
-    "Patreon_supporters": "Patreon 서포터",
+    "Patreon_supporters": "Patreon 후원자",
     "Contributors": "기여자"
   },
   "GIVEWAY": {
@@ -441,7 +441,7 @@
   },
   "CUSTOM_LINKS": {
     "Title": "",
-    "Not_found": "",
+    "Not_found": "링크를 찾을 수 없습니다.",
     "Add_link": "",
     "Dialog_title": "",
     "Link_type": "",
@@ -618,9 +618,9 @@
       "Create_rotations_title": "",
       "Create_rotations_content": "",
       "Create_rotations_link": "",
-      "Access_wiki_title": "",
+      "Access_wiki_title": "더 알아보기",
       "Access_wiki_content": "",
-      "Access_wiki_link": ""
+      "Access_wiki_link": "위키 페이지로 이동"
     }
   },
   "PRICING": {
@@ -633,7 +633,7 @@
     "Board": "게시판",
     "My_requests": "내 요청",
     "My_crafts": "현재 진행중인 내 의뢰",
-    "History": "아카이브",
+    "History": "저장됨",
     "Server_history": "서버 히스토리",
     "No_commissions": "현재 열려있는 의뢰가 없습니다",
     "Chat_warning": "절대로 개인정보를 누군가에 주어서도 안되고 물어봐서도 안됩니다. 또한 RMT[현거래] 목적으로 이 사이트를 이용시 영구적으로 사용이 금지되고 이 사례는 Square Enix로 전송됩니다.",
@@ -656,17 +656,17 @@
     "No_candidates": "이 의뢰에 지원자 없음",
     "Hire": "고용",
     "Confirm_hire": "이 사람을 고용하겠습니까?",
-    "Apply": "",
-    "Contact_buyer": "",
-    "No_history": "",
-    "No_server_history": "",
+    "Apply": "이 의뢰에 적용",
+    "Contact_buyer": "의뢰자에게 연락",
+    "No_history": "저장된 의뢰가 없습니다",
+    "No_server_history": "서버에 저장된 의뢰가 없습니다",
     "No_crafts": "진행중인 의뢰가 없습니다",
     "No_requests": "요청한 의뢰가 없습니다",
     "Rate_user": "사용자 평점",
-    "Rating_description": "",
+    "Rating_description": "잠시 시간을 내어 다른 유저를 평가해주세요",
     "Commissions": "의뢰",
     "Confirm_archive": "이대로 실행하시겠습니까? 취소할 수 없습니다.",
-    "Withdraw": "",
+    "Withdraw": "이 의뢰 중단",
     "Confirm_withdraw": "이 의뢰를 중단하겠습니까? 취소할 수 없습니다.",
     "New_things_notification": "의뢰 게시판에 새로운 사항이 있습니다",
     "Negotiable_price": "협상 가능",
@@ -679,7 +679,7 @@
       "Crafting": "제작",
       "Gathering": "채집",
       "Hunting": "사냥",
-      "Only_craft": ""
+      "Only_craft": "마테리아 포함"
     },
     "FILTERS": {
       "Min_price": "최소 가격",
