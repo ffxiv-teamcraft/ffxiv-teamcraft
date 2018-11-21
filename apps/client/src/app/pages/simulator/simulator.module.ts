@@ -27,6 +27,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
 import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -72,6 +73,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+    FlexLayoutModule,
 
     TranslateModule,
     NgDragDropModule,

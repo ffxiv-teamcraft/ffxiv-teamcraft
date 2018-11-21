@@ -1,3 +1,128 @@
-<p>
-  simulator works!
-</p>
+<div fxLayout="column" fxLayoutGap="10px">
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'TODO Simulator Configuration'">
+
+    </nz-collapse-panel>
+  </nz-collapse>
+
+  <div fxLayout="column" fxLayoutGap="10px" *ngIf="result$ | async as resultData">
+    <nz-card>
+      progress, etc
+    </nz-card>
+
+    <nz-card>
+      buffs
+    </nz-card>
+
+    <nz-card>
+      action sequence
+    </nz-card>
+
+    <nz-card>
+      <div class="category-row">
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getProgressActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getQualityActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+      </div>
+      <div class="category-row">
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getCpRecoveryActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getBuffActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+      </div>
+      <div class="category-row">
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getRepairActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getSpecialtyActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+        <div>
+          <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
+          <div class="actions-row">
+            <app-action (actionclick)="addAction(action)" draggable [dragData]="action"
+                        [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
+                    || resultData.simulation.success !== undefined"
+                        [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                        [action]="action" [simulation]="resultData.simulation"
+                        *ngFor="let action of getOtherActions()"
+                        (onDragStart)="tooltipsDisabled = true"
+                        (onDragEnd)="tooltipsDisabled = false"
+                        [tooltipDisabled]="tooltipsDisabled"></app-action>
+          </div>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>
