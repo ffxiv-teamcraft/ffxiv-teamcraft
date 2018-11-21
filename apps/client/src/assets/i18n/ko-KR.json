@@ -26,7 +26,7 @@
   "Timers": "타이머",
   "Copy_isearch": "아이템찾기 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
-  "Required_for_final_craft": "",
+  "Required_for_final_craft": "최종 제작물에 {{amount}} 개 필요",
   "Mark_HQ": "고품질 요구 표시",
   "Unmark_HQ": "고품질 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
@@ -44,7 +44,7 @@
     "Workshops": "워크샵",
     "Add_lists": "목록 추가",
     "Add_workshop": "워크샵 추가",
-    "Delete_message": "워크샵이 삭제되더라고 내부의 목록은 지워지지 않고 워크샵이 없는 목록으로 돌아갑니다.",
+    "Delete_message": "워크샵이 삭제되더라도 내부의 목록은 지워지지 않고 워크샵이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "워크샵 {{workshopName}}에 추가할 목록 선택",
     "Name_dialog": "워크샵 이름",
     "Created_by": "제작자: {{name}}",
@@ -83,7 +83,7 @@
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
     "Name_filter_placeholder": "이름을 사용하여 필터링",
-    "No_lists_matching": ""
+    "No_lists_matching": "필터에 일치하는 내용이 없습니다"
   },
   "COMMON": {
     "Save": "저장",
@@ -138,7 +138,7 @@
   "Vendors": "상인",
   "Open": "열기",
   "Trade": "",
-  "Filters": "",
+  "Filters": "필터",
   "Check_all": "모두 선택",
   "Uncheck_all": "모두 선택 해제",
   "Level": "레벨",
@@ -150,9 +150,9 @@
   "Login": "로그인",
   "Disconnect": "연결해제",
   "Password": "비밀번호",
-  "Password_Confirmation": "",
-  "Submit": "",
-  "Invalid_credentials": "",
+  "Password_Confirmation": "패스워드 재확인",
+  "Submit": "확인",
+  "Invalid_credentials": "로그인 정보가 틀립니다",
   "Verification_mail_sent": "인증메일이 발송되었습니다. 받은 메일함에서 확인해주세요.",
   "Not_verified": "미인증",
   "Lodestone_already_used": "이 캐릭터는 이미 사용중입니다",
@@ -193,8 +193,8 @@
   "Requirements_for_craft": "요구조건 보기",
   "Zone_breakdown": "",
   "Timer_options": "타이머 옵션",
-  "Early_by": "",
-  "Sound": "",
+  "Early_by": "출현 전 알림 (에오르제아 시간 기준)",
+  "Sound": "소리",
   "Share_link_copied": "링크가 클립보드에 복사되었습니다",
   "Share": "공유하기",
   "Patreon_popup_title": "도움이 필요합니다",
@@ -230,7 +230,7 @@
   "Requires": "",
   "Copy_item_name_to_clipboard": "아이템 이름을 클립보드로 복사",
   "Item_name_copied": "{{itemname}} 클립보드에 복사됨",
-  "Tier_display_toggle": "제작 티어를 표시",
+  "Tier_display_toggle": "제작 단계를 표시",
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
@@ -455,9 +455,9 @@
     "Steps": "",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
-      "Hunting": "",
-      "Vendor": "",
-      "Trade": ""
+      "Hunting": "{{amount}}개 사냥으로 얻기",
+      "Vendor": "{{amount}}개 구매",
+      "Trade": "{{amount}}개 교환"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -468,7 +468,7 @@
   },
   "ANNOUNCEMENT": {
     "Title": "",
-    "Read_more": ""
+    "Read_more": "자세히 보기"
   },
   "LIST_TEMPLATE": {
     "Create_template": "",
@@ -488,7 +488,7 @@
     "Participate_description": "",
     "Write": "",
     "Write_description": "",
-    "Title": "",
+    "Title": "권한 관리",
     "Everyone": "",
     "You": "",
     "Add_new": "",
@@ -719,8 +719,8 @@
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**를 추가하였습니다.",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**를 삭제하였습니다.",
+      "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
+      "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**이/가 **[{{listName}}]({{listUrl}})**에 있는 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 완료로 표시함",
       "Webhook_setup_complete": "",
       "List_added_notification": "목록 **[{{listName}}]({{listUrl}})**이/가 팀에 추가되었습니다.",
