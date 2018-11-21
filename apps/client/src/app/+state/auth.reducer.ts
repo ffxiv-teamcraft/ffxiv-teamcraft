@@ -132,6 +132,17 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.AddCustomCharacter: {
+      if (state.user.customCharacters && state.user.customCharacters.find(c => c.ID === action.lodestoneId) !== undefined) {
+        return state;
+      }
+
+      return {
+        ...state,
+        user: { ...state.user, customCharacters: [...(state.user.customCharacters || []), action.character] }
+      };
+    }
+
 
     case AuthActionTypes.RemoveCharacter:
       return {

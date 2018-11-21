@@ -1,5 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
+import { Character } from '@xivapi/angular-client';
 
 // Lookup the 'Auth' feature state managed by NgRx
 const getAuthState = createFeatureSelector<AuthState>('auth');
@@ -12,7 +13,12 @@ const getLoaded = createSelector(
 const getMainCharacter = createSelector(
   getAuthState,
   (state: AuthState) => {
-    const character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
+    let character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
+    // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
+    if (character === undefined && state.user !== null) {
+      const custom = <Character>state.user.customCharacters.find(c => c.ID === state.user.defaultLodestoneId);
+      return custom? custom : null;
+    }
     return character ? character.Character : null;
   }
 );

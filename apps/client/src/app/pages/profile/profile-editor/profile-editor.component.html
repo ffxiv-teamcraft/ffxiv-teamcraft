@@ -2,7 +2,8 @@
   <div fxLayout="column" fxLayoutGap="10px" *ngIf="mainCharacter$ | async as mainCharacter">
     <h2>{{'Profile' | translate}}</h2>
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxLayout.lt-md="column">
-      <img [src]="mainCharacter.character.Avatar" alt="" class="avatar">
+      <img [src]="mainCharacter.character.Avatar" alt="" class="avatar" *ngIf="mainCharacter.character.ID > 0">
+      <nz-avatar *ngIf="mainCharacter.character.ID < 0" [nzText]="mainCharacter.character.Name[0]"></nz-avatar>
       <div fxLayout="row" fxLayoutGap="5px">
         <nz-select [ngModel]="mainCharacter.character.ID" (ngModelChange)="setDefaultCharacter($event)">
           <nz-option *ngFor="let characterEntry of characters$ | async"
@@ -10,11 +11,11 @@
                      [nzLabel]="characterEntry.character.Character.Name">
           </nz-option>
         </nz-select>
-        <i nz-icon *ngIf="!mainCharacter.verified" type="exclamation-circle" nz-tooltip
+        <i nz-icon *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" type="exclamation-circle" nz-tooltip
            [nzTitle]="'Not_verified' | translate"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
-        <button *ngIf="!mainCharacter.verified" nz-button nzType="primary" nzShape="circle" nzSize="small"
+        <button *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button nzType="primary" nzShape="circle" nzSize="small"
                 (click)="verifyCharacter(user.$key, mainCharacter.character.ID)" nz-tooltip
                 [nzTitle]="'PROFILE.VERIFICATION.Title' | translate">
           <i nz-icon type="check"></i>
@@ -30,6 +31,7 @@
           <i nz-icon type="delete"></i>
         </button>
         <a href="https://apkallufalls.com/character/{{mainCharacter.character.ID}}" target="_blank" nz-tooltip
+           *ngIf="mainCharacter.character.ID > 0"
            [nzTitle]="'PROFILE.View_on_apkallu_falls' | translate">
           <img
             src="https://camo.githubusercontent.com/77266c191911dcb4d3f5c6d68f9629b13cde635b/68747470733a2f2f61706b616c6c7566616c6c732e636f6d2f69636f6e2f61706b616c6c752d7370656369616c2e706e67"

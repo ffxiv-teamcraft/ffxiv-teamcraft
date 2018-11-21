@@ -14,37 +14,42 @@
     </nz-form-label>
     <input type="text" id="characterName" nz-input [formControl]="characterName">
   </nz-form-item>
+  <button nz-button nzType="primary" (click)="setKoreanCharacter()">
+    {{'Add_manual_character' | translate}}
+  </button>
 </div>
 
-<div class="results">
-  <nz-list [nzDataSource]="result$ | async"
-           [nzItemLayout]="'horizontal'"
-           [nzLoading]="loadingResults"
-           [nzRenderItem]="characterTemplate">
-    <ng-template #characterTemplate let-item>
-      <nz-list-item [nzActions]="[selectAction]">
-        <ng-template #selectAction>
-          <button nz-button nzType="primary" (click)="selectCharacter(item)">{{'COMMON.Select' | translate}}</button>
-        </ng-template>
-        <nz-list-item-meta
-          [nzTitle]="nzTitle"
-          [nzAvatar]="item.Avatar">
-          <ng-template #nzTitle>
-            <span>{{item.Name}}</span>
+<div *ngIf="selectedServer.value !== 'Korean server'">
+  <div class="results">
+    <nz-list [nzDataSource]="result$ | async"
+             [nzItemLayout]="'horizontal'"
+             [nzLoading]="loadingResults"
+             [nzRenderItem]="characterTemplate">
+      <ng-template #characterTemplate let-item>
+        <nz-list-item [nzActions]="[selectAction]">
+          <ng-template #selectAction>
+            <button nz-button nzType="primary" (click)="selectCharacter(item)">{{'COMMON.Select' | translate}}</button>
           </ng-template>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
+          <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            [nzAvatar]="item.Avatar">
+            <ng-template #nzTitle>
+              <span>{{item.Name}}</span>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
+
+  <nz-divider [nzText]="'Or' | translate"></nz-divider>
+
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="characterName">{{'LodestoneId' | translate}}
+    </nz-form-label>
+    <input type="number" id="LodestoneId" nz-input [formControl]="lodestoneId">
+  </nz-form-item>
 </div>
-
-<nz-divider [nzText]="'Or' | translate"></nz-divider>
-
-<nz-form-item>
-  <nz-form-label nzRequired nzFor="characterName">{{'LodestoneId' | translate}}
-  </nz-form-label>
-  <input type="number" id="LodestoneId" nz-input [formControl]="lodestoneId">
-</nz-form-item>
 
 <label nz-checkbox [(ngModel)]="useAsDefault">{{'Use_as_default_character' | translate}}</label>
 

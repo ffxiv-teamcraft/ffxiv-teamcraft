@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
-import { CharacterResponse } from '@xivapi/angular-client';
+import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { GearSet } from '../pages/simulator/model/gear-set';
 
 export enum AuthActionTypes {
@@ -26,6 +26,7 @@ export enum AuthActionTypes {
   NoLinkedCharacter = '[Auth] No linked character',
   LinkingCharacter = '[Auth] Linking character',
   AddCharacter = '[Auth] Add character',
+  AddCustomCharacter = '[Auth] Add custom character',
   VerifyCharacter = '[Auth] Verify character',
   RemoveCharacter = '[Auth] Remove character',
   SetDefaultCharacter = '[Auth] Set default character',
@@ -149,6 +150,13 @@ export class AddCharacter implements Action {
   }
 }
 
+export class AddCustomCharacter implements Action {
+  readonly type = AuthActionTypes.AddCustomCharacter;
+
+  constructor(public readonly lodestoneId: number, public readonly character: Partial<Character>) {
+  }
+}
+
 export class SetDefaultCharacter implements Action {
   readonly type = AuthActionTypes.SetDefaultCharacter;
 
@@ -232,4 +240,5 @@ export type AuthActions = GetUser
   | ToggleMasterbooks
   | SaveSet
   | VerifyCharacter
+  | AddCustomCharacter
   | UpdateUser;

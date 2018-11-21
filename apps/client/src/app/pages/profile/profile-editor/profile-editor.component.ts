@@ -9,6 +9,7 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { UserPickerService } from '../../../modules/user-picker/user-picker.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { VerificationPopupComponent } from './verification-popup/verification-popup.component';
+import { CharacterResponse } from '@xivapi/angular-client';
 
 @Component({
   selector: 'app-profile-editor',
@@ -24,6 +25,7 @@ export class ProfileEditorComponent {
   characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
     map(([chars, user]) => {
       return chars
+        .concat(<CharacterResponse[]>(user.customCharacters.map(c => ({ Character: c })) || []))
         .map(char => {
           const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === char.Character.ID);
           return {

@@ -43,7 +43,7 @@ export class AuthFacade {
   favorites$ = this.user$.pipe(map(user => user.favorites));
   fcId$ = this.store.select(authQuery.getMainCharacter).pipe(
     map((character) => {
-      if (character === null) {
+      if (character === null || character.FreeCompanyId === undefined) {
         return null;
       }
       return character.FreeCompanyId.toString();
@@ -70,7 +70,7 @@ export class AuthFacade {
       [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
         .filter(jobId => sets.find(set => set.jobId === jobId) === undefined)
         .forEach(jobId => {
-          const classJob = data.character.ClassJobs[`${jobId}_${jobId}`];
+          const classJob = data.character.ClassJobs && data.character.ClassJobs[`${jobId}_${jobId}`];
           if (classJob === undefined) {
             sets.push({
               jobId: jobId,

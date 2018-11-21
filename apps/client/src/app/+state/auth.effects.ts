@@ -103,7 +103,9 @@ export class AuthEffects {
     ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined);
+      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => {
+        return lodestoneId.id > 0 && state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined;
+      });
       const getMissingCharacters$ = missingCharacters.map(lodestoneId => {
         const reloader = new BehaviorSubject<void>(null);
         return reloader.pipe(
@@ -129,6 +131,9 @@ export class AuthEffects {
           })
         );
       });
+      if (missingCharacters.length === 0) {
+        return of(new CharactersLoaded([]));
+      }
       return combineLatest(...getMissingCharacters$)
         .pipe(
           map(characters => new CharactersLoaded(<CharacterResponse[]>characters))
@@ -146,7 +151,7 @@ export class AuthEffects {
       AuthActionTypes.ToggleFavorite,
       AuthActionTypes.ToggleMasterbooks,
       AuthActionTypes.SaveSet,
-      AuthActionTypes.VerifyCharacter,
+      AuthActionTypes.VerifyCharacter
     ),
     debounceTime(100),
     withLatestFrom(this.store),

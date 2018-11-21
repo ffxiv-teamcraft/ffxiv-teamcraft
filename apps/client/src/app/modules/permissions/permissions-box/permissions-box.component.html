@@ -37,7 +37,7 @@
       <button nz-button nzGhost nzType="primary" (click)="addUser()">
         <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new' | translate}}
       </button>
-      <button nz-button nzGhost nzType="primary" (click)="addFc()">
+      <button nz-button nzGhost nzType="primary" (click)="addFc()" *ngIf="canAddFc$ | async">
         <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
     </div>

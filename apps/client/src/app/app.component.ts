@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -127,7 +127,7 @@ export class AppComponent implements OnInit {
     // Loading is !loaded
     this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
     this.loggedIn$ = this.authFacade.loggedIn$;
-    this.character$ = this.authFacade.mainCharacter$;
+    this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
 
     this.authFacade.loadUser();
     this.notificationsFacade.loadAll();

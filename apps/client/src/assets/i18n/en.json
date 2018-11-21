@@ -94,6 +94,7 @@
     "Copy_to_clipboard": "Copy to clipboard"
   },
   "ALARMS": {
+    "Title": "Alarms",
     "No_alarm": "No alarms set",
     "Add_alarm": "Add alarm",
     "Alarm_created": "Alarm created",
@@ -175,6 +176,7 @@
   "Recipes_Added": "{{itemcount}} items added to list {{listname}}",
   "Character_name": "Character Name",
   "Disconnect_and_anonymous": "Disconnect and continue as anonymous",
+  "Add_manual_character": "Add character",
   "Character_informations": "Character informations",
   "Server_name": "Server Name",
   "Add_all_recipes": "Add results to a list",
