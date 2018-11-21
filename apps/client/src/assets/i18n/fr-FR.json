@@ -2,7 +2,7 @@
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez une liste",
   "Pick_a_fc": "Choisissez une compagnie libre",
-  "FC_name": "",
+  "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
@@ -27,13 +27,13 @@
   "Copy_isearch": "Copier la macro de recherche en jeu",
   "Isearch_copied": "/isearch {{itemname}} copié dans le presse-papiers",
   "Required_for_final_craft": "{{amount}} nécessaire pour les crafts finaux",
-  "Mark_HQ": "",
-  "Unmark_HQ": "",
+  "Mark_HQ": "Marquer comme requis en HQ",
+  "Unmark_HQ": "Supprimer l’exigence de HQ",
   "Compact_sidebar_toggle": "Activer/Désactiver le menu compact",
   "Confirmation": "Êtes-vous sûr ?",
   "Is_working_on_it": "{{name}} travaille dessus",
   "Work_on_it": "Je m'en occupe",
-  "Remove_work_on_it": "",
+  "Remove_work_on_it": "Supprimer l’affectation utilisateur",
   "Add_as_collectible": "Ajouter en collectionnable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
@@ -55,18 +55,13 @@
   },
   "ABOUT": {
     "title": "À Propos",
-    "Created_by": "",
+    "Created_by": "FFXIV Teamcraft créé par Miu Asakura de Louisoix, Chaos.",
     "Copyright_notice_title": "Copyright",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.\nFINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.\nFFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Remerciements",
     "Data_sources": "Bases de données",
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
-  },
-  "GIVEWAY": {
-    "Title": "Concours 10 000 listes",
-    "Body": "Pour vous remercier pour les 10 000 listes créées sur le site, un concours mettant en jeu une carte de 60 jours de jeu a été créé, il durera jusqu'au 9 Février.\n Merci d'utiliser le site, il s'améliore chaque jour grâce à vous.",
-    "Access": "Accéder au concours"
   },
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
@@ -99,6 +94,7 @@
     "Copy_to_clipboard": "Copier dans le Presse-papiers"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "Aucune alarme définie",
     "Add_alarm": "Ajouter une alarme",
     "Alarm_created": "Alarme créée",
@@ -153,9 +149,7 @@
   "Password_Confirmation": "Confirmation",
   "Submit": "Soumettre",
   "Invalid_credentials": "Mauvais email ou mot de passe",
-  "Verification_mail_sent": "Email de vérification envoyé, merci de vérifier votre boîte mail",
   "Not_verified": "Non vérifié",
-  "Lodestone_already_used": "Ce personnage est déjà utilisé",
   "Anonymous_Warning": "Créer un compte permet de conserver ses listes et d'activer plus de fonctionnalités comme le filtre automatique",
   "Game_Term/DoH": "Disciples de la main",
   "Game_Term/DoL": "Disciples de la terre",
@@ -163,7 +157,7 @@
   "Upgrade_list": "Régénérer la liste avec la dernière version de l'application",
   "List_recreated": "Liste régénérée avec succès",
   "List_popup_title": "Régénération de la liste en cours, merci de patienter",
-  "Please_wait": "",
+  "Please_wait": "Cela devrait être rapide, veuillez patienter un peu",
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
   "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
   "Own_list_outdated_after_button": "bouton",
@@ -181,6 +175,8 @@
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
   "Recipes_Added": "{{itemcount}} objet ajoutés à la liste {{listname}}",
   "Character_name": "Nom complet du personnage",
+  "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "Informations du personnage",
   "Server_name": "Nom du serveur",
   "Add_all_recipes": "Ajouter les résultats à une liste",
@@ -197,10 +193,6 @@
   "Sound": "Son",
   "Share_link_copied": "Lien de partage copié dans le presse-papiers",
   "Share": "Partager",
-  "Patreon_popup_title": "Nous avons besoin de vous",
-  "Patreon_popup_body": "Avec l'augmentation constante du nombre d'utilisateurs, FFXIV Teamcraft aura bientôt besoin d'un meilleur hébergement afin de s'assurer que tout fonctionne correctement avec de bons temps de réponse. Pour cela nous avons besoin de votre soutien afin d'être sûr que nous avons les fonds nécessaires pour payer les serveurs que vous méritez, afin de vous fournir la meilleure expérience possible.",
-  "Patreon_popup_body_end": "Merci d'envisager un don patreon, en faisant cela vous aidez léquipe mais aussi la communauté des utilisateurs.",
-  "Current_funds": "État actuel des finances",
   "Close": "Fermer",
   "Forgot_password": "Mot de passe oublié",
   "Email_enter": "Email",
@@ -236,9 +228,7 @@
   "SETTINGS": {
     "title": "Options",
     "link_base": "Liens des objets",
-    "compact_lists": "Affichage compact des listes",
     "theme": "Thème",
-    "ffxivcrafting_display": "Affichage des montants façon FFXIVcrafting.com",
     "Simulator_link_base": "Lien vers le simulateur",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
@@ -246,12 +236,12 @@
     "No_update_available": "Pas de mise à jour disponible"
   },
   "PROFILE": {
-    "Account": "",
-    "Add_character": "",
-    "Remove_character": "",
-    "Jobs": "",
-    "Stats": "",
-    "View_on_apkallu_falls": "",
+    "Account": "Compte",
+    "Add_character": "Ajouter un personnage",
+    "Remove_character": "Supprimer ce personnage",
+    "Jobs": "Jobs",
+    "Stats": "Stats",
+    "View_on_apkallu_falls": "Voir sur Apkallu Falls",
     "Masterbooks": "Livres",
     "Patreon_supporter": "Supporter Patreon",
     "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
@@ -263,24 +253,19 @@
     "Email_already_used": "Email déjà lié à un autre compte",
     "Patreon_email": "Email Patreon",
     "Contacts": "Contacts",
-    "Add_new_contact": "",
+    "Add_new_contact": "Nouveau Contact",
     "Save_for_all": "Sauvegarder pour tous",
     "User_not_verified": "User non vérifié, cliquez pour vérifier",
     "VERIFICATION": {
-      "Title": "",
+      "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code : \"{{userId}}\" dans votre biographie sur Lodestone et cliquez sur le bouton ci-dessous pour valider.",
-      "Success": "",
-      "Error": "",
+      "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est pas plus nécessaire.",
+      "Error": "Code introuvable dans votre description, merci de vous assurer que vous l'avez bien placé dans la description et sauvegardé les changements, puis attendez 30 s ~ et réessayez.",
       "Validate": "Valider"
-    },
-    "HELP": {
-      "Welcome": "Bienvenue sur la page de profil, qui vous permet de consulter et modifier votre profil.",
-      "Edit": "En cliquant sur l'icône d'édition, vous pouvez changer le personnage FFXIV lié à votre compte FFXIV Teamcraft.",
-      "Masterbooks": "Vous pouvez attribuer des livres de recette à votre compte pour activer des filtres spécifiques qui alertent en cas d'objet impossible à crafter pour vous à cause d'un livre manquant."
     }
   },
   "LISTS": {
-    "Needs_verification": "",
+    "Needs_verification": "S’il vous plaît vérifier votre compte pour avoir accès aux listes partagées à votre Compagnie Libre",
     "Regenerate_all": "Régénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
@@ -333,7 +318,7 @@
     "Add_remove_amount": "Ajouter/enlever un montant donné",
     "No_book": "Livre manquant, cliquer pour aller sur la page de profil",
     "No_note": "Aucune note",
-    "Edit_note": "",
+    "Edit_note": "Aucune note",
     "Note_placeholder": "Note",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventaire",
@@ -353,32 +338,8 @@
       "Order_by": "Trier par",
       "Order": "Ordre",
       "Logic_gate": "Porte logique"
-    },
-    "HELP": {
-      "Title": "Détails d'une liste",
-      "List_category": "Liste",
-      "Inventory": "Vous pouvez paser en mode inventaire, où un inventaire est simulé pour permettre de suivre plus facilement ce que vous avez à disposition pour être sûr d'être raccord avec la liste.",
-      "Reset_progression": "Le bouton rafraîchir permet de remettre à 0 toute la progression de la liste, à utiliser avec précaution.",
-      "Upgrade": "Le bouton de mise à jour recréé la liste avec la dernière evrsion du site, ajoutant parfois des informations ou résolvant des soucis de listes cassées, le tout en préservant la progression. Il vous sera parfois demandé de mettre une liste à jour via ce bouton si celle-ci ne l'est pas.",
-      "Fork": "Vous pouvez créer une copie de n'importe quelle liste sur votre compte via le bouton de copie.",
-      "Filters": "Les objets d'une liste peuvent être filtrés pour l'affichage afin de ne montrer que les objets non complétés ou encore les objets que vous pouvez faire (en se basant sur les niveaux de vos crafteurs), voir le paneau \"Filtres\"",
-      "Area_breakdown": "En utilisant le bouton de résumé par zone, les objets sont rangés par zone afin d'économiser les frais de téléport, vous pouvez ainsi compléter votre liste zone par zone.",
-      "Pricing_mode": "Le mode profits vous permet de saisir le prix de chaque ingrédient et le prix de vente attendu afin de calculer les bénéfices d'une liste.",
-      "Item_category": "Objets (lignes de liste)",
-      "Requirements": "En cliquant sur l'icône de prérequis, une popup affiche les détails d'un objet, ce dont il a besoin et les recettes qui en ont besoin au sein de la liste.",
-      "Alarms": "Si un objet est une récolte timée, alors un bouton apparaît afin de pouvoir créer une alarme sonore reliée à ce noeud de récolte. L'alarme retentira même si vous n'êtes pas sur la liste, du moment que vous êtes sur le site.",
-      "Comments": "Vous pouvez ajouter des commentaires à chaque objet d'une liste, dans la limite de 10 commentaires de 140 caractères afin de préciser des éléments sur chaque objet, dire qui a contribué de combien, etc.",
-      "Colors": "Les noms d'objets ont différentes couleurs, <span class=\"craftable\">cette couleur pour les objets prêts à être craftés</span>, ce sont les objets pour lesquels vous avez tous les matériaux requis disponibles. <span class=\"strike\">Les objets de cette couleur</span> sont ceux que vous avez déjà obtenu/crafté, ils sont considérés comme complétés.",
-      "Misc_category": "Autre",
-      "Map_markers": "Dès que vous voyez cette icône à coté de coordonnées, vous pouvez cliquer dessus afin d'ouvrir une mini map qui affiche un marqueur en jeu, bien plus lisible que les coordonées.",
-      "Public_list": "Vous pouvez rendre une liste publique, celle-ci rejoindra alors la page des listes publiques afin de pouvoir être copiée par les autres utilisateurs. CECI N'EST PAS REQUIS POUR PARTAGER UNE LISTE.",
-      "Obtention_details": "Chaque objet a des détails sur son obtention dans la partie droite de sa ligne, penseez à cliquer sur les icônes afin de voir plus de détails sur l'objet en question.",
-      "Labels": "Lorsque vous ajoutez une liste aux listes publiques, pensez à y attribuer les labels qui correspondent via le bouton labels.",
-      "Custom_layout": "Vous pouvez pleinement personnaliser votre affichage, l'exporter et importer celui d'un ami. Cet affichage ne concerne que vous et est sauvegardé dans votre navigateur internet, il sera ainsi appliqué à toutes les listes que vous ouvrirez en l'utilisant."
     }
   },
-  "adapt_to_character": "Adapter au personnage",
-  "reset_filters": "Remettre les filtres à zero",
   "LIST_TAGS": {
     "GEAR": "Équipement",
     "CONSUMABLE": "Consommable",
@@ -423,15 +384,6 @@
     "BOT": "BTN",
     "FSH": "PEC"
   },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "Bienvenue dans la page de recherche des recettes",
-      "Filter": "Lorsque vous ouvrez le paneau des filtres, beaucoup de filtres deviennent disponibles, vous pouvez les cocher et en changer la valeur poure trouver ce que vous cherchez.",
-      "Add_to_list": "Une fois que vous avez trouvé la recette que vous cherchez, vous pouvez simplement l'ajouter sur une liste en cliquant sur l'icône associée, un choix de liste s'affichera, ajoutant l'objet à la liste sélectionnée à la quaitité spécifiée.",
-      "Quick_list": "Vous pouvez créer une liste rapide en cliquant sur le bouton associé, ceci crééra une liste portant le nom de l'objet qui sera supprimée lorsque celle-ci sera complétée.",
-      "Add_results": "Le bouton 'Ajouter les résultats à une liste' ajoute tous les objets trouvés à une liste donnée cependant, attention, TOUTES LES QUANTITÉS SONT IGNORÉES."
-    }
-  },
   "MACRO_TRANSLATION": {
     "Title": "Traducteur de macro",
     "Macro_language": "Langue de la macro",
@@ -455,7 +407,7 @@
     "Steps": "Étapes",
     "STEP": {
       "Gathering": "Récolter {{amount}}",
-      "Hunting": "Ramasser {{amount}}",
+      "Hunting": "Obtenez {{amount}} sur des monstres",
       "Vendor": "Acheter {{amount}}",
       "Trade": "Acheter {{amount}}"
     }
@@ -592,99 +544,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "Créez des listes, partagez-les, contribuez, craftez",
-    "count": "listes actuellement stockées",
-    "lists_created_count": "listes créées avec FFXIV Teamcraft",
-    "support_patreon": "Soutenez-nous sur patreon",
-    "features": "Fonctionnalités",
-    "support_title": "Support",
-    "support_content_discord": "Si vous avez des soucis pour utiliser l'application, passez nous voir sur discord !",
-    "support_comtent_facebook": "Vous pouvez également nous trouver sur facebook",
-    "contribute_title": "Contribuer",
-    "contribute_content": "Si vous souhaitez contribuer, forkez le code github et envoyez une Pull Request !",
-    "changelog": "Pour suivre toutes les nouveautés de chaque version à tout moment, se référer au changelog (Anglais)",
-    "FEATURES": {
-      "alarms_title": "Alarmes"
-    },
-    "GET_STARTED": {
-      "Title": "Par où commencer",
-      "First_list_title": "Créer une première liste",
-      "First_list_content": "Dirigez-vous vers la page de recettes pour créer votre première liste de recettes !",
-      "First_list_link": "Allez à la page des recettes",
-      "Create_alarm_title": "Créer une alarme de récolte",
-      "Create_alarm_content": "Naviguez vers la page des alarmes pour créer une notification à l'apparition d'un objet timé !",
-      "Create_alarm_link": "Aller à la page des alarmes",
-      "Create_rotations_title": "Créer une rotation de craft",
-      "Create_rotations_content": "Dirigez-vous vers le simulateur de craft pour créer et tester vos propres rotations, avec vos stats en jeu, des ingrédients HQ si vous le souhaitez et la nourriture de votre choix",
-      "Create_rotations_link": "Aller vers la page des rotations",
-      "Access_wiki_title": "En apprendre plus",
-      "Access_wiki_content": "Le wiki est là pour vous guider à travers le site, vous pouvez le consulter pour apprendre à utiliser chacune des fonctionnalités de FFXIV Teamcraft",
-      "Access_wiki_link": "Aller vers le wiki"
-    }
-  },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu"
-  },
-  "COMMISSION_BOARD": {
-    "Title": "Tableau de requêtes",
-    "Create_commission": "Créer une requête de commission",
-    "Board": "Tableau",
-    "My_requests": "Mes requêtes",
-    "My_crafts": "Mes commissions",
-    "History": "Archives",
-    "Server_history": "Historique du serveur",
-    "No_commissions": "Pas de requêtes sur votre serveur",
-    "Chat_warning": "Pensez bien à ne jamais donner d'identifiants par le chat. Toute utilisation afin de conclure un arrangement de type RMT sera puni d'un ban du site et d'une transmission des preuves à Square Enix.",
-    "Chat_placeholder": "Envoyer un message",
-    "Chat_hint": "Astuce: vous pouvez utiliser Ctrl + Entrée pour envoyer",
-    "New_commission": "Créer une nouvelle requête de commission",
-    "New_commission_warning": "Créer une requête de commission retirera la liste de votre profil sans la suprimer, vous ne pourrez plus la modifier.",
-    "Price_hint": "Le prix que vous souhaitez payer pour la commission",
-    "Crafted_by": "Remplis par:",
-    "Fire": "Virer",
-    "Confirm_fire": "ëtes-vous sûr de vouloir virer cette personne de la commission?",
-    "Delete_payment": "Supprimer le paiement",
-    "Add_payment": "Ajouter un paiement",
-    "Deposit": "Payé",
-    "Owing": "Dû",
-    "Go_to_chat": "Aller sur le chat",
-    "Go_to_list": "Voir la liste",
-    "Mark_as_finished": "Archiver la commission",
-    "Candidates": "Candidats",
-    "No_candidates": "Pas de candidats pour cette commission",
-    "Hire": "Engager",
-    "Confirm_hire": "Êtes-vous sûr de vouloir engager cet utilisateur?",
-    "Apply": "Candidater pour cette commission",
-    "Contact_buyer": "Contacter l'auteur",
-    "No_history": "Vous n'avez pas de commissions archivées",
-    "No_server_history": "Aucune requête archivée sur ce serveur",
-    "No_crafts": "Vous n'avez pas de commissions en cours",
-    "No_requests": "Vous n'avez pas de requêtes de commission",
-    "Rate_user": "Notation de l'utilisateur",
-    "Rating_description": "Merci de prendre un instant pour noter votre interlocuteur.",
-    "Commissions": "Commissions",
-    "Confirm_archive": "Êtes-vous sûr de vouloir archiver? Cette action est irréversible",
-    "Withdraw": "Démissionner",
-    "Confirm_withdraw": "Êtes-vous sûr de vouloir démissionner? Cette action est irréversible",
-    "New_things_notification": "Nouveaux évènements à voir dans la page des commissions pour vous",
-    "Negotiable_price": "Prix à négocier",
-    "STATUS": {
-      "CREATED": "Ouverte",
-      "ACCEPTED": "En cours",
-      "DONE": "Archivée"
-    },
-    "TAGS": {
-      "Crafting": "Fabrication",
-      "Gathering": "Récolte",
-      "Hunting": "Chasse",
-      "Only_craft": "Matériaux inclus"
-    },
-    "FILTERS": {
-      "Min_price": "Prix minimum",
-      "Max_price": "Prix maximum"
-    }
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -696,8 +558,8 @@
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",
-    "List_comment_added": "",
-    "List_item_comment_added": "",
+    "List_comment_added": "Commentaire sur la liste {{listName}}: \"{{content}}\"",
+    "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}}: \"{{content}} \"",
     "Mark_all_as_read": "Tout marquer comme lu"
   },
   "TEAMS": {
@@ -719,16 +581,16 @@
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
     "NOTIFICATIONS": {
-      "Item_added": "",
-      "Item_removed": "",
-      "List_progress": "",
-      "Webhook_setup_complete": "",
-      "List_added_notification": "",
-      "List_removed_notification": "",
-      "Member_joined": "",
-      "Member_removed": "",
-      "Name_changed": "",
-      "User_assigned": ""
+      "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
+      "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
+      "List_progress": "** [{{characterName}}] ({{memberProfileUrl}}) ** marqué {{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** comme fait sur * * [{{listName}}], ({{listUrl}}) **.",
+      "Webhook_setup_complete": "Ce salon a été défini comme salon de suivi pour l'équipe **{{teamName}}**.",
+      "List_added_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été ajoutée à l’équipe.",
+      "List_removed_notification": "La liste ** [{{listName}}] ({{listUrl}}) ** a été retirée de l’équipe.",
+      "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** a rejoint l'équipe!",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
+      "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
+      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     }
   },
   "MARKETBOARD": {
@@ -737,10 +599,10 @@
     "HQ": "HQ",
     "Total_price": "Prix total",
     "Unit_price": "Prix unitaire",
-    "History": "",
-    "Purchase_date": ""
+    "History": "Historique",
+    "Purchase_date": "Date"
   },
   "COMMENTS": {
-    "Title": ""
+    "Title": "Commentaires"
   }
 }
