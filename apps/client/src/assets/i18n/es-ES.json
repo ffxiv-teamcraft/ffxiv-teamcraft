@@ -63,11 +63,6 @@
     "Patreon_supporters": "Seguidores de Patreon",
     "Contributors": "Contribuyentes"
   },
-  "GIVEWAY": {
-    "Title": "Regalo de 10,000 listas",
-    "Body": "Para agradecerle apropiadamente por las 10,000 listas creadas en la aplicación, una tarjeta de regalo de 60 días ha sido creada, va a durar hasta el 09 de Feb.\n Gracias por usar esta aplicación, Espero que le haya ayudado, la aplicación es lo que es gracias a usted.",
-    "Access": "Acceder al regalo"
-  },
   "Hide_if_empty": "Esconder si está vacío",
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
@@ -99,6 +94,7 @@
     "Copy_to_clipboard": "Copiar al portapapeles"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "No hay alarmas activas",
     "Add_alarm": "Agregar alarma",
     "Alarm_created": "Alarma creada",
@@ -153,9 +149,7 @@
   "Password_Confirmation": "Confirmación",
   "Submit": "Enviar",
   "Invalid_credentials": "Credenciales Inválidas",
-  "Verification_mail_sent": "Correo de Verificación enviado, favor de checar correo electrónico",
   "Not_verified": "No verificado",
-  "Lodestone_already_used": "Este personaje ya está en uso",
   "Anonymous_Warning": "Debería crear una cuenta para evitar perder sus listas y activar más características como filtro adaptable",
   "Game_Term/DoH": "Discípulos de la Mano",
   "Game_Term/DoL": "Discípulos de la Tierra",
@@ -181,6 +175,8 @@
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
   "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
   "Character_name": "Nombre del Personaje",
+  "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "Información del personaje",
   "Server_name": "Nombre del Servidor",
   "Add_all_recipes": "Agregar resultados a la lista",
@@ -197,10 +193,6 @@
   "Sound": "Sonido",
   "Share_link_copied": "Vínculo a lista copiado al portapapeles",
   "Share": "Compartir",
-  "Patreon_popup_title": "Necesitamos su ayuda",
-  "Patreon_popup_body": "Conforme la base de usuarios crece, FFXIV Teamcraft va a necesitar mejor alojamiento para asegurar que todo siga funcionando correctamente y con buen tiempo de respuesta. Por ende, necesitamos su apoyo para asegurar que tengamos suficientes fondos para pagar el alojamiento que merece, para hacer su experiencia con la herramienta la mejor posible.",
-  "Patreon_popup_body_end": "Por favor considere apoyarnos en patreon, al hacer esto, ayuda al equipo y a los usuarios.",
-  "Current_funds": "Fondos actuales",
   "Close": "Cerrar",
   "Forgot_password": "Olvidé mi contraseña",
   "Email_enter": "Correo electrónico",
@@ -236,9 +228,7 @@
   "SETTINGS": {
     "title": "Ajustes",
     "link_base": "Vínculos de artículos",
-    "compact_lists": "desplegar lista compacta",
     "theme": "Tema",
-    "ffxivcrafting_display": "Cantidades estilo FFXIVcrafting.com",
     "Simulator_link_base": "Vínculo a simulador",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
@@ -272,11 +262,6 @@
       "Success": "",
       "Error": "",
       "Validate": "Validar"
-    },
-    "HELP": {
-      "Welcome": "Bienvenido a la página de perfil, aquí es donde puede ver y editar su perfil.",
-      "Edit": "Apretar el botón de editar le permite editar el personaje vinculado a su cuenta de FFXIV Teamcraft.",
-      "Masterbooks": "Usted puede guardar que libros maestros ha desbloqueado en su perfil, esto permite mostrar advertencias en el futuro cuando no pueda crear un artículo porque le falta un libro maestro."
     }
   },
   "LISTS": {
@@ -353,32 +338,8 @@
       "Order_by": "Ordenar por",
       "Order": "Orden",
       "Logic_gate": "Compuerta lógica"
-    },
-    "HELP": {
-      "Title": "Detalles de lista",
-      "List_category": "Lista",
-      "Inventory": "Puede cambiar a modo inventario, donde la aplicación simula un inventario para mostrar lo que debería tener, no cuenta los artículos que ya usó para crear otros artículos.",
-      "Reset_progression": "Puede reiniciar el progreso de la lista por completo usando el botón de reinicio, después de confirmar la decisión, todo el progreso se regresa a 0.",
-      "Upgrade": "Puede actualizar su lista a la última versión usando este botón, recrea la lista y mantiene el progreso. Se le pedirá que actualice si su lista está desactualizada.",
-      "Fork": "Puede duplicar una lista, o sea, crear una copia de ella en su estado actual a su cuenta, esto funciona con cualquier lista.",
-      "Filters": "Puede filtrar los artículos de su lista, usando su cuenta puede aplicar filtros para ver solo lo que usted puede hacer, también puede esconder artículos que ya han sido completados en este panel.",
-      "Area_breakdown": "Activando el desglose de área puede ordenar los datos basado en el área en la que se obtienen para ahorrar en costos de teletransportación.",
-      "Pricing_mode": "El modo previo le permite ingresar un precio por cada artículo que compró, el precio al que espera vender para calcular las ganancias que obtendrá de la lista.",
-      "Item_category": "artículos (filas)",
-      "Requirements": "El botón de requerimientos abre un diálogo que muestra que se requiere para un artículo en específico, o para que otro artículo es requerido.",
-      "Alarms": "Cuando un artículo se consigue de un nodo temporizado, puede hacer clic al botón de alarma para activar una alarma sonora cuando el nodo aparezca, la alarma sonará aunque no esté dentro de la lista, solo necesita estar adentro del sitio.",
-      "Comments": "Puede agregar comentarios a cualquier fila de artículo, permitiéndole proveer más información (no está ligado al artículo, solo a la fila de la lista) o discutirlo. Los comentarios están limitados a 140 caracteres y 10 comentarios por artículo.",
-      "Colors": "Los colores en los nombres de los artículos tienen un significado, <span class=\"craftable\">Este es para artículos listos para ser creados</span>, lo que significa que tiene todos los materiales para crearlo. <span class=\"strike\">Este es para los artículos que ya han sido creados</span> lo que significa que ya creo este artículo",
-      "Misc_category": "Otros",
-      "Map_markers": "Cuando vea este icono, haga clic en él para obtener un marcador de mapa, que es más fácil de leer que coordenadas X, Y.",
-      "Public_list": "Haciendo una lista pública la agrega a la sección de listas públicas, ESTO NO ES NECESARIO PARA COMPARTIR UNA LISTA",
-      "Obtention_details": "Cada fila de artículo tiene iconos en la sección superior derecha, haga clic en cada uno de ellos para obtener más detalles de cómo obtener el artículo.",
-      "Labels": "Cuando agregue una lista a las listas públicas, no se olvide de agregar etiquetas apropiadas a la lista",
-      "Custom_layout": "Puede costumizar completamente el diseño de la lista, exportarlo e importar el diseño de un amigo. Este diseño es personal y se guarda en su explorador, será aplicado a cada lista que vea en ese explorador."
     }
   },
-  "adapt_to_character": "Adaptar a Personaje",
-  "reset_filters": "Reiniciar Filtros",
   "LIST_TAGS": {
     "GEAR": "Armadura",
     "CONSUMABLE": "Consumible",
@@ -423,15 +384,6 @@
     "BOT": "BTN",
     "FSH": "FSH"
   },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "Bienvenido a la página de recetas. Esta página sirve para buscar, filtrar y agregar recetas a las listas.",
-      "Filter": "Cuando abre la pestaña de Filtros muchos filtros estarán disponibles para usted. Puede activarlos y cambiar sus valores para encontrar lo que está buscando.",
-      "Add_to_list": "Una vez que encuentra el artículo que está buscando, puede ingresar una cantidad y hacer clic en el icono de 'agregar a lista'. Esto le preguntará donde quiere poner el artículo y lo agregará a la lista seleccionada con la cantidad ingresada.",
-      "Quick_list": "Puede crear listas rápidas con el botón de 'Lista Rápida'. Esto creará una lista instantáneamente con el nombre del artículo y se borrará automáticamente cuando se complete.",
-      "Add_results": "El botón de 'Agregar resultados a una lista' agrega todos los artículos en la lista de resultados actual a una lista de su elección. Pero tenga cuidado, LA CANTIDAD SIEMPRE SE PONE EN 1 CUANDO SE USA ESTE BOTÓN."
-    }
-  },
   "MACRO_TRANSLATION": {
     "Title": "Traductor de Macros",
     "Macro_language": "Lenguaje de Macro",
@@ -455,7 +407,7 @@
     "Steps": "Pasos",
     "STEP": {
       "Gathering": "Recolectar {{amount}}",
-      "Hunting": "Juntar {{amount}}",
+      "Hunting": "",
       "Vendor": "Comprar {{amount}}",
       "Trade": "Intercambiar {{amount}}"
     }
@@ -592,99 +544,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "Cree listas, comparta, contribuya, cree artesanías",
-    "count": "listas actualmente almacenadas",
-    "lists_created_count": "listas creadas usando FFXIV Teamcraft",
-    "support_patreon": "Apóyenos en patreon",
-    "features": "Características",
-    "support_title": "Soporte",
-    "support_content_discord": "Si tiene algún problema usando la herramienta, no sea tímido, ¡visítenos en discord!",
-    "support_comtent_facebook": "También puede encontrarnos en facebook",
-    "contribute_title": "Contribuya",
-    "contribute_content": "Si quiere contribuir a la herramienta, ¡puede revisar el código en github y crear Pull Requests!",
-    "changelog": "Para estar al tanto de lo nuevo en el sitio, cada cambio, favor de referir al registro de cambios.",
-    "FEATURES": {
-      "alarms_title": "Alarmas"
-    },
-    "GET_STARTED": {
-      "Title": "Como empezar",
-      "First_list_title": "Cree su primer lista",
-      "First_list_content": "Navegue a la página de recetas dando clic al vínculo inferior y ¡cree su primer lista!",
-      "First_list_link": "Ir a la página de recetas",
-      "Create_alarm_title": "Cree alarmas de nodo",
-      "Create_alarm_content": "Navegue a la página de alarmas dando clic al vínculo inferior y ¡cree su primer notificación de nodo para nunca perderse una aparición!",
-      "Create_alarm_link": "Ir a la página de alarmas",
-      "Create_rotations_title": "Cree rotaciones de creación de artesanías",
-      "Create_rotations_content": "Navegue a la página de rotaciones dando clic al vínculo inferior y ¡cree rotaciones para crear artesanías en el juego, pruebe sus propios atributos, comidas, e ingredientes HQ!",
-      "Create_rotations_link": "Ir a la página de rotaciones",
-      "Access_wiki_title": "Aprenda más",
-      "Access_wiki_content": "Navegue a la página de wiki dando clic al vínculo inferior. Esta página tiene documentación de cómo usar el sitio en general, para guiarlo y sacarle el mayor provecho y beneficiarlo lo más posible",
-      "Access_wiki_link": "Ir a la página de wiki"
-    }
-  },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
     "Expect_to_sell_everything": "Asumir que se vende todo"
-  },
-  "COMMISSION_BOARD": {
-    "Title": "Tablero de comisiones",
-    "Create_commission": "Crear solicitud de comisión",
-    "Board": "Tablero",
-    "My_requests": "Mis solicitudes",
-    "My_crafts": "Mis comisiones en progreso",
-    "History": "Archivadas",
-    "Server_history": "Historial del servidor",
-    "No_commissions": "No hay comisiones abiertas en tu servidor",
-    "Chat_warning": "Recuerde nunca dar sus credenciales en el chat, nadie debería de preguntarselas. El uso de esta plataforma de chat para RMT (intercambio con dinero real) resultará en la suspención permanenete del sitio y el caso enviado a Square Enix",
-    "Chat_placeholder": "Mandar mensaje nuevo",
-    "Chat_hint": "Tip: puede mandar mensajes usando Ctrl + Enter",
-    "New_commission": "Crear nueva solicitud de comisión",
-    "New_commission_warning": "Crear una comisión desde esta lista la removerá de sus listas (pero no la borrará), no será capaz de agregar más artículos ni cambiar las cantidades en ella.",
-    "Price_hint": "Precio que desea pagar por esta comisión",
-    "Crafted_by": "Elaborado por : ",
-    "Fire": "Despedir",
-    "Confirm_fire": "¿Está seguro que quiere despedir a este usuario de esta comisión?",
-    "Delete_payment": "Borrar pago",
-    "Add_payment": "Agregar pago",
-    "Deposit": "Pagado",
-    "Owing": "Por pagar",
-    "Go_to_chat": "Ir a chat",
-    "Go_to_list": "Ir a lista",
-    "Mark_as_finished": "Archivar comisión",
-    "Candidates": "Candidatos",
-    "No_candidates": "No hay candidatos para esta comisión",
-    "Hire": "Contratar",
-    "Confirm_hire": "¿Está seguro de que quiere contratar a este usuario?",
-    "Apply": "Aplicar para esta comisión",
-    "Contact_buyer": "Contactar al autor",
-    "No_history": "No tiene ninguna comisión archivada",
-    "No_server_history": "El servidor no tiene ninguna comisión archivada",
-    "No_crafts": "No tiene ninguna comisión en progreso",
-    "No_requests": "No tiene ninguna solicitud de comisión",
-    "Rate_user": "Calificación del usuario",
-    "Rating_description": "Por favor tómese un momento para calificar al usuario",
-    "Commissions": "Comisiones",
-    "Confirm_archive": "¿Está seguro? Esto no se puede deshacer.",
-    "Withdraw": "Abandonar la comisión",
-    "Confirm_withdraw": "¿Está seguro que quiere abandonar la comisión? Esto no se puede deshacer.",
-    "New_things_notification": "Hay nuevas cosas que revisar en el tablero de comisiones",
-    "Negotiable_price": "Negociable",
-    "STATUS": {
-      "CREATED": "Abierta",
-      "ACCEPTED": "En Progreso",
-      "DONE": "Archivada"
-    },
-    "TAGS": {
-      "Crafting": "Elaboración",
-      "Gathering": "Recolección",
-      "Hunting": "Caza",
-      "Only_craft": "Materiales incluidos"
-    },
-    "FILTERS": {
-      "Min_price": "Precio mínimo",
-      "Max_price": "Precio máximo"
-    }
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
