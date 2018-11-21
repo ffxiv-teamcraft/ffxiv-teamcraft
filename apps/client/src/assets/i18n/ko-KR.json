@@ -90,7 +90,7 @@
     "Select": "선택",
     "Anonymous": "익명",
     "Warning": "경고",
-    "Success": "성공(임시)",
+    "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기"
   },
   "ALARMS": {
@@ -404,7 +404,7 @@
     "Steps": "단계",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
-      "Hunting": "",
+      "Hunting": "전투로 {{amount}} 개 획득",
       "Vendor": "{{amount}}개 상점에서 구매",
       "Trade": "{{amount}} 개 교환"
     }
