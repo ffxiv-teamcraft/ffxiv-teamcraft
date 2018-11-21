@@ -66,7 +66,7 @@
   "GIVEWAY": {
     "Title": "1만 목록 달성 이벤트",
     "Body": "1만 개의 목록이 앱에서 만들어진 것을 기념하기 위해 2월 9일까지 60일 계정권 증정 이벤트가 진행됩니다. \n앱을 이용해주신 것에 대해 감사드립니다. 이 앱이 많은 도움되었기를 빕니다.",
-    "Access": ""
+    "Access": "이벤트 참여"
   },
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
@@ -452,7 +452,7 @@
   },
   "NAVIGATION": {
     "Title": "최적화 경로",
-    "Steps": "",
+    "Steps": "단계",
     "STEP": {
       "Gathering": "{{amount}}개 채집",
       "Hunting": "{{amount}}개 사냥으로 얻기",
@@ -633,7 +633,7 @@
     "Board": "게시판",
     "My_requests": "내 요청",
     "My_crafts": "현재 진행중인 내 의뢰",
-    "History": "저장됨",
+    "History": "완료됨",
     "Server_history": "서버 히스토리",
     "No_commissions": "현재 열려있는 의뢰가 없습니다",
     "Chat_warning": "절대로 개인정보를 누군가에 주어서도 안되고 물어봐서도 안됩니다. 또한 RMT[현거래] 목적으로 이 사이트를 이용시 영구적으로 사용이 금지되고 이 사례는 Square Enix로 전송됩니다.",
@@ -651,29 +651,29 @@
     "Owing": "비용 미지불",
     "Go_to_chat": "채팅으로 이동",
     "Go_to_list": "목록으로 이동",
-    "Mark_as_finished": "",
+    "Mark_as_finished": "의뢰 완료",
     "Candidates": "지원자",
     "No_candidates": "이 의뢰에 지원자 없음",
     "Hire": "고용",
     "Confirm_hire": "이 사람을 고용하겠습니까?",
     "Apply": "이 의뢰에 적용",
     "Contact_buyer": "의뢰자에게 연락",
-    "No_history": "저장된 의뢰가 없습니다",
-    "No_server_history": "서버에 저장된 의뢰가 없습니다",
+    "No_history": "완료한 의뢰가 없습니다",
+    "No_server_history": "서버에 완료된 의뢰가 없습니다",
     "No_crafts": "진행 중인 의뢰가 없습니다",
     "No_requests": "요청한 의뢰가 없습니다",
     "Rate_user": "사용자 평점",
     "Rating_description": "잠시 시간을 내어 다른 유저를 평가해주세요",
     "Commissions": "의뢰",
-    "Confirm_archive": "이대로 실행하시겠습니까? 취소할 수 없습니다.",
+    "Confirm_archive": "이대로 진행하시겠습니까? 취소할 수 없습니다.",
     "Withdraw": "의뢰 포기하기",
     "Confirm_withdraw": "이 의뢰를 포기하겠습니까? 취소할 수 없습니다.",
     "New_things_notification": "의뢰 게시판에 새로운 사항이 있습니다",
     "Negotiable_price": "협상 가능",
     "STATUS": {
-      "CREATED": "열기",
+      "CREATED": "열림",
       "ACCEPTED": "진행 중",
-      "DONE": "저장됨"
+      "DONE": "완료됨"
     },
     "TAGS": {
       "Crafting": "제작",
