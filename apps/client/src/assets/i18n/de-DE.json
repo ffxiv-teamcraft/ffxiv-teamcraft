@@ -94,6 +94,7 @@
     "Copy_to_clipboard": "In Zwischenablage kopieren"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "Kein Benachrichtigung gesetzt",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Alarm_created": "Benachrichtigung erstellt",
@@ -175,6 +176,7 @@
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
   "Disconnect_and_anonymous": "",
+  "Add_manual_character": "",
   "Character_informations": "Charakterinformationen",
   "Server_name": "Servername",
   "Add_all_recipes": "Füge Ergebnisse einer Liste hinzu",
