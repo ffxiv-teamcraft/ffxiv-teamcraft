@@ -63,11 +63,6 @@
     "Patreon_supporters": "Apoiantes de Patreon",
     "Contributors": "Colaboradores"
   },
-  "GIVEWAY": {
-    "Title": "Giveaway das 10 mil listas",
-    "Body": "A fim de agradecer devidamente ás 10 mil listas criadas na aplicação, foi criado um giveaway de um cartão de 60 dias que durará até 9 de Fevereiro.\nObrigado por usar esta aplicação, espero que lhe tivesse ajudado muito, a aplicação é o que é graças a você.",
-    "Access": "Aceder ao giveaway"
-  },
   "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Não favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
@@ -153,9 +148,7 @@
   "Password_Confirmation": "Confirmação",
   "Submit": "Enviar",
   "Invalid_credentials": "Credênciais inválidas",
-  "Verification_mail_sent": "Email de verificação enviado, por favor verifique sua caixa de entrada",
   "Not_verified": "Seu email ainda não foi verificado, por favor verifique o seu email",
-  "Lodestone_already_used": "Esse personagem já está sendo utilizado",
   "Anonymous_Warning": "Você precisa criar uma conta para evitar perder suas listas e permitir mais funcionalidades como filtro adaptativo.",
   "Game_Term/DoH": "Discípulos da Mão",
   "Game_Term/DoL": "Discípulos da Terra",
@@ -197,10 +190,6 @@
   "Sound": "Som",
   "Share_link_copied": "Link da lista copiado ao clipboard",
   "Share": "Compartilhar",
-  "Patreon_popup_title": "Nós precisamos de sua ajuda",
-  "Patreon_popup_body": "Assim que a base de usuários crescer, o FFXIV Teamcraft irá precisar de um host maior para que tudo funcione direito com bom tempo de resposta. Por conta disso, precisamos do seu apoio para garantir que temos fundos suficientes para pagar a hospedagem que você merece, e garantir sua experiência com a ferramenta a melhor possível",
-  "Patreon_popup_body_end": "Por favor considere em ajudar nós no patreon, fazendo isso você ajuda o time e os usuários",
-  "Current_funds": "Dinheiro atual",
   "Close": "Fechar",
   "Forgot_password": "Esqueci a senha",
   "Email_enter": "Email",
@@ -236,9 +225,7 @@
   "SETTINGS": {
     "title": "",
     "link_base": "",
-    "compact_lists": "",
     "theme": "",
-    "ffxivcrafting_display": "",
     "Simulator_link_base": "",
     "Always_on_top": "",
     "Check_for_update": "",
@@ -272,11 +259,6 @@
       "Success": "",
       "Error": "",
       "Validate": ""
-    },
-    "HELP": {
-      "Welcome": "",
-      "Edit": "",
-      "Masterbooks": ""
     }
   },
   "LISTS": {
@@ -353,32 +335,8 @@
       "Order_by": "",
       "Order": "",
       "Logic_gate": ""
-    },
-    "HELP": {
-      "Title": "",
-      "List_category": "",
-      "Inventory": "",
-      "Reset_progression": "",
-      "Upgrade": "",
-      "Fork": "",
-      "Filters": "",
-      "Area_breakdown": "",
-      "Pricing_mode": "",
-      "Item_category": "",
-      "Requirements": "",
-      "Alarms": "",
-      "Comments": "",
-      "Colors": "",
-      "Misc_category": "Outro",
-      "Map_markers": "",
-      "Public_list": "",
-      "Obtention_details": "",
-      "Labels": "",
-      "Custom_layout": ""
     }
   },
-  "adapt_to_character": "Adaptar ao Personagem",
-  "reset_filters": "Resetar filtros",
   "LIST_TAGS": {
     "GEAR": "",
     "CONSUMABLE": "",
@@ -422,15 +380,6 @@
     "MIN": "",
     "BOT": "",
     "FSH": ""
-  },
-  "RECIPES": {
-    "HELP": {
-      "Welcome": "",
-      "Filter": "",
-      "Add_to_list": "",
-      "Quick_list": "",
-      "Add_results": ""
-    }
   },
   "MACRO_TRANSLATION": {
     "Title": "",
@@ -592,99 +541,9 @@
       }
     }
   },
-  "HOME_PAGE": {
-    "title": "",
-    "count": "",
-    "lists_created_count": "",
-    "support_patreon": "",
-    "features": "",
-    "support_title": "",
-    "support_content_discord": "",
-    "support_comtent_facebook": "",
-    "contribute_title": "",
-    "contribute_content": "",
-    "changelog": "",
-    "FEATURES": {
-      "alarms_title": ""
-    },
-    "GET_STARTED": {
-      "Title": "",
-      "First_list_title": "",
-      "First_list_content": "",
-      "First_list_link": "",
-      "Create_alarm_title": "",
-      "Create_alarm_content": "",
-      "Create_alarm_link": "",
-      "Create_rotations_title": "",
-      "Create_rotations_content": "",
-      "Create_rotations_link": "",
-      "Access_wiki_title": "",
-      "Access_wiki_content": "",
-      "Access_wiki_link": ""
-    }
-  },
   "PRICING": {
     "From_vendor": "",
     "Expect_to_sell_everything": ""
-  },
-  "COMMISSION_BOARD": {
-    "Title": "",
-    "Create_commission": "",
-    "Board": "",
-    "My_requests": "",
-    "My_crafts": "",
-    "History": "",
-    "Server_history": "",
-    "No_commissions": "",
-    "Chat_warning": "",
-    "Chat_placeholder": "",
-    "Chat_hint": "",
-    "New_commission": "",
-    "New_commission_warning": "",
-    "Price_hint": "",
-    "Crafted_by": "",
-    "Fire": "",
-    "Confirm_fire": "",
-    "Delete_payment": "",
-    "Add_payment": "",
-    "Deposit": "",
-    "Owing": "",
-    "Go_to_chat": "",
-    "Go_to_list": "",
-    "Mark_as_finished": "",
-    "Candidates": "",
-    "No_candidates": "",
-    "Hire": "",
-    "Confirm_hire": "",
-    "Apply": "",
-    "Contact_buyer": "",
-    "No_history": "",
-    "No_server_history": "",
-    "No_crafts": "",
-    "No_requests": "",
-    "Rate_user": "",
-    "Rating_description": "",
-    "Commissions": "",
-    "Confirm_archive": "",
-    "Withdraw": "",
-    "Confirm_withdraw": "",
-    "New_things_notification": "",
-    "Negotiable_price": "",
-    "STATUS": {
-      "CREATED": "",
-      "ACCEPTED": "",
-      "DONE": ""
-    },
-    "TAGS": {
-      "Crafting": "",
-      "Gathering": "",
-      "Hunting": "Caçadas",
-      "Only_craft": ""
-    },
-    "FILTERS": {
-      "Min_price": "",
-      "Max_price": ""
-    }
   },
   "LEVEQUESTS": {
     "Title": "",
