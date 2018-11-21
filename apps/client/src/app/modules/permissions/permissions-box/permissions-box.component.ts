@@ -9,6 +9,7 @@ import { combineLatest, of, ReplaySubject, Subject } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
 import { UserPickerService } from '../../user-picker/user-picker.service';
 import { FreecompanyPickerService } from '../../freecompany-picker/freecompany-picker.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-permissions-box',
@@ -40,8 +41,11 @@ export class PermissionsBoxComponent implements OnInit {
 
   permissionRows$: Observable<PermissionDisplayRow[]>;
 
+  canAddFc$: Observable<boolean>;
+
   constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService,
-              private freecompanyPickerService: FreecompanyPickerService) {
+              private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade) {
+    this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }
 
   ngOnInit(): void {

@@ -9,10 +9,6 @@ import { LocalizedDataService } from './data/localized-data.service';
 import { MatButtonModule, MatDialogModule } from '@angular/material';
 import { PushNotificationsModule } from 'ng-push';
 import { AbstractNotification } from './notification/abstract-notification';
-import { ListProgressNotification } from '../model/notification/list-progress-notification';
-import { TeamInviteNotification } from '../model/notification/team-invite-notification';
-import { TeamExclusionNotification } from '../model/notification/team-exclusion-notification';
-import { ItemAssignedNotification } from '../model/notification/item-assigned-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { UserService } from './database/user.service';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
@@ -31,6 +27,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
+import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
+import { MaintenanceGuard } from '../pages/maintenance/maintenance.guard';
+import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
 
 
 @NgModule({
@@ -40,11 +39,8 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
       {
         parent: AbstractNotification,
         children: {
-          LIST_PROGRESS: ListProgressNotification,
-          TEAM_INVITE: TeamInviteNotification,
-          TEAM_EXCLUSION: TeamExclusionNotification,
-          ITEM_ASSIGNED: ItemAssignedNotification,
-          LIST_COMMENT: ListCommentNotification
+          LIST_COMMENT: ListCommentNotification,
+          LIST_ITEM_COMMENT: ListItemCommentNotification
         }
       }
     ]),
@@ -53,7 +49,8 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
     AngularFireDatabaseModule,
     MatDialogModule,
     MatButtonModule,
-    PushNotificationsModule
+    PushNotificationsModule,
+    MaintenanceModule
   ],
   providers: [
     UserService,
@@ -68,7 +65,6 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
     EorzeanTimeService,
     HtmlToolsService,
     LinkToolsService,
-    CharacterService,
     DiscordWebhookService
   ],
   declarations: [
@@ -82,16 +78,18 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     PushNotificationsModule,
+    MaintenanceModule,
     TimerPipe
   ]
 })
 export class CoreModule {
-  static forRoot():ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
       providers: [
-        GarlandToolsService
+        GarlandToolsService,
+        CharacterService
       ]
-    }
+    };
   }
 }

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, filter, map, mergeMap, tap, withLatestFrom } from 'rxjs/operators';
-import { combineLatest, from, of } from 'rxjs';
+import { catchError, debounceTime, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
@@ -16,6 +16,7 @@ import {
   LoginAsAnonymous,
   NoLinkedCharacter,
   SetDefaultCharacter,
+  UpdateUser,
   UserFetched,
   UserPersisted
 } from './auth.actions';
@@ -23,8 +24,7 @@ import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
-import { XivapiService } from '@xivapi/angular-client';
+import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -85,13 +85,9 @@ export class AuthEffects {
     ofType(AuthActionTypes.NoLinkedCharacter),
     withLatestFrom(this.authFacade.linkingCharacter$),
     filter(([, linking]) => !linking),
-    tap(() => this.dialog.create({
-      nzTitle: this.translate.instant('Character_informations'),
-      nzContent: CharacterLinkPopupComponent,
-      nzFooter: null,
-      nzMaskClosable: false,
-      nzClosable: false
-    })),
+    tap(() => {
+      this.authFacade.addCharacter(true, true);
+    }),
     map(() => new LinkingCharacter())
   );
 
@@ -107,21 +103,69 @@ export class AuthEffects {
     ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
-      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined);
-      const getMissingCharacters$ = missingCharacters.map(lodestoneId => this.xivapi.getCharacter(lodestoneId.id));
+      const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => {
+        return lodestoneId.id > 0 && state.auth.characters.find(char => char.Character.ID === lodestoneId.id) === undefined;
+      });
+      const getMissingCharacters$ = missingCharacters.map(lodestoneId => {
+        const reloader = new BehaviorSubject<void>(null);
+        return reloader.pipe(
+          switchMap(() => {
+            return this.xivapi.getCharacter(lodestoneId.id);
+          }),
+          tap(res => {
+            if (res.Info.Character.State === 1) {
+              setTimeout(() => {
+                reloader.next(null);
+              }, 120000);
+            }
+          }),
+          map(res => {
+            if (res.Info.Character.State === 1) {
+              return {
+                Character: {
+                  Name: 'Parsing character...'
+                }
+              };
+            }
+            return res;
+          })
+        );
+      });
+      if (missingCharacters.length === 0) {
+        return of(new CharactersLoaded([]));
+      }
       return combineLatest(...getMissingCharacters$)
         .pipe(
-          map(characters => new CharactersLoaded(characters))
+          map(characters => new CharactersLoaded(<CharacterResponse[]>characters))
         );
     })
   );
 
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
-    ofType(AuthActionTypes.AddCharacter, AuthActionTypes.SetDefaultCharacter, AuthActionTypes.SetCurrentFcId, AuthActionTypes.ToggleFavorite),
+    ofType(
+      AuthActionTypes.AddCharacter,
+      AuthActionTypes.RemoveCharacter,
+      AuthActionTypes.SetDefaultCharacter,
+      AuthActionTypes.SetCurrentFcId,
+      AuthActionTypes.ToggleFavorite,
+      AuthActionTypes.ToggleMasterbooks,
+      AuthActionTypes.SaveSet,
+      AuthActionTypes.VerifyCharacter
+    ),
+    debounceTime(100),
     withLatestFrom(this.store),
-    mergeMap(([, state]) => {
+    switchMap(([, state]) => {
       return this.userService.set(state.auth.uid, { ...state.auth.user });
+    }),
+    map(() => new UserPersisted())
+  );
+
+  @Effect()
+  updateUser$ = this.actions$.pipe(
+    ofType<UpdateUser>(AuthActionTypes.UpdateUser),
+    switchMap((action) => {
+      return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
   );

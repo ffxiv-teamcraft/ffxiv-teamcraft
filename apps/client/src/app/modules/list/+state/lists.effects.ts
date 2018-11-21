@@ -20,7 +20,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -53,11 +53,11 @@ export class ListsEffects {
   loadListsWithWriteAccess$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadListsWithWriteAccess),
     first(),
-    switchMap(() => combineLatest(this.authFacade.userId$, this.authFacade.fcId$)),
+    switchMap(() => combineLatest(this.authFacade.user$, this.authFacade.fcId$)),
     distinctUntilChanged(),
-    switchMap(([userId, fcId]) => {
+    switchMap(([user, fcId]) => {
       // First of all, load using user Id
-      return this.listCompactsService.getWithWriteAccess(userId).pipe(
+      return this.listCompactsService.getWithWriteAccess(user.$key).pipe(
         switchMap((lists) => {
           // If we don't have fc informations yet, return the lists directly.
           if (!fcId) {
@@ -65,7 +65,16 @@ export class ListsEffects {
           }
           // Else add fc lists
           return this.listCompactsService.getWithWriteAccess(fcId).pipe(
-            map(fcLists => [...lists, ...fcLists])
+            map(fcLists => {
+              const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+              const verified = idEntry && idEntry.verified;
+              if (!verified) {
+                this.listsFacade.setNeedsverification(true);
+                return lists;
+              }
+              this.listsFacade.setNeedsverification(false);
+              return [...lists, ...fcLists];
+            })
           );
         })
       );
@@ -93,14 +102,20 @@ export class ListsEffects {
         switchMap(loggedIn => {
           return combineLatest(
             of(action.key),
-            this.authFacade.userId$,
+            this.authFacade.user$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           );
         })
       );
     }),
-    map(([listKey, userId, fcId, list]: [string, string, string | null, List]) => {
+    map(([listKey, user, fcId, list]: [string, TeamcraftUser, string | null, List]) => {
+      const userId = user.$key;
+      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+      const verified = idEntry && idEntry.verified;
+      if (!verified) {
+        fcId = null;
+      }
       if (list !== null) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId));
         if (permissionLevel >= PermissionLevel.READ) {
@@ -173,17 +188,17 @@ export class ListsEffects {
   @Effect()
   updateItemDone$ = this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.mainCharacter$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
-    map(([action, list, character, team, userId]) => {
+    withLatestFrom(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$, this.authFacade.userId$),
+    map(([action, list, team, userId]) => {
       list.modificationsHistory.push({
         amount: action.doneDelta,
         date: Date.now(),
         itemId: action.itemId,
         itemIcon: action.itemIcon,
-        characterId: character ? character.ID : -1
+        userId: userId
       });
-      if (list.teamId === team.$key) {
-        this.discordWebhookService.notifyItemChecked(team, list, character.Name, userId, action.doneDelta, action.itemId);
+      if (team && list.teamId === team.$key && action.doneDelta > 0) {
+        this.discordWebhookService.notifyItemChecked(team, action.itemIcon, list, userId, action.doneDelta, action.itemId);
       }
       return [action, list];
     }),
@@ -197,7 +212,7 @@ export class ListsEffects {
   @Effect()
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    filter(action => action.payload.ephemeral),
+    filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key))
   );
 

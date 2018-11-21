@@ -1,0 +1,24 @@
+<div *ngIf="set$ | async as set" fxLayout="column">
+  <div nz-row class="form-row">
+    <div nz-col [nzXs]="8">{{'Level' | translate}}</div>
+    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.level"></nz-input-number>
+  </div>
+  <div nz-row class="form-row">
+    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}</div>
+    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.craftsmanship"></nz-input-number>
+  </div>
+  <div nz-row class="form-row">
+    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}</div>
+    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.control"></nz-input-number>
+  </div>
+  <div nz-row class="form-row">
+    <div nz-col [nzXs]="8">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}</div>
+    <nz-input-number nz-col [nzXs]="16" [(ngModel)]="set.cp"></nz-input-number>
+  </div>
+  <label nz-checkbox [(ngModel)]="set.specialist">{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <button nz-button (click)="save(set)" nzType="primary">{{'Save' | translate}}</button>
+    <button nz-button (click)="saveForAll(set)" nzType="primary">{{'PROFILE.Save_for_all' | translate}}</button>
+    <button nz-button (click)="cancel()" nzType="danger">{{'Cancel' | translate}}</button>
+  </div>
+</div>

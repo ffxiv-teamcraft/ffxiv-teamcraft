@@ -9,6 +9,9 @@ import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../total-panel-price-popup/total-panel-price-popup.component';
+import { NavigationMapComponent } from '../../../modules/map/navigation-map/navigation-map.component';
+import { NavigationObjective } from '../../../modules/map/navigation-objective';
+import { Vector2 } from '../../../core/tools/vector2';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -29,6 +32,8 @@ export class ListDetailsPanelComponent implements OnChanges {
 
   hasTrades = false;
 
+  hasNavigationMap = false;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService) {
@@ -42,8 +47,79 @@ export class ListDetailsPanelComponent implements OnChanges {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows);
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return row.tradeSources.length > 0 || row.vendors.length > 0 || hasTrades;
+      return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
     }, false);
+    this.hasNavigationMap = this.displayRow.rows.reduce((hasMap, row) => {
+      const hasMonstersWithPosition = row.drops && row.drops.some(d => d.position && (d.position.x !== undefined));
+      const hasNodesWithPosition = row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0);
+      const hasVendorsWithPosition = row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined));
+      const hasTradesWithPosition = row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined));
+      return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
+    }, false);
+  }
+
+  public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant(this.displayRow.title),
+      nzContent: NavigationMapComponent,
+      nzComponentParams: {
+        mapId: zoneBreakdownRow.mapId,
+        points: <NavigationObjective[]>zoneBreakdownRow.items
+          .filter(item => item.done < item.amount)
+          .map(item => {
+            const partial = this.getPosition(item, zoneBreakdownRow);
+            if (partial !== undefined) {
+              return <NavigationObjective>{
+                x: partial.x,
+                y: partial.y,
+                name: this.l12n.getItem(item.id),
+                iconid: item.icon,
+                item_amount: item.amount_needed - item.done,
+                type: partial.type
+              }
+            }
+            return undefined;
+          })
+          .filter(row => row !== undefined)
+      },
+      nzFooter: null
+    });
+  }
+
+  private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
+    if(row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)){
+      const vendor = row.vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
+      return {
+        x: vendor.coords.x,
+        y: vendor.coords.y,
+        type: 'Vendor'
+      };
+    }
+    if(row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))){
+      const trade = row.tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
+      const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
+      return {
+        x: npc.coords.x,
+        y: npc.coords.y,
+        type: 'Trade'
+      };
+    }
+    if(row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)){
+      const node = row.gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
+      return {
+        x: node.coords[0],
+        y: node.coords[1],
+        type: 'Gathering'
+      };
+    }
+    if (row.drops && row.drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {
+      const drop = row.drops.find(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId);
+      return {
+        x: drop.position.x,
+        y: drop.position.y,
+        type: 'Hunting'
+      };
+    }
   }
 
   public generateTiers(): void {

@@ -5,7 +5,7 @@ import { Simulation } from '../../simulation/simulation';
 @Component({
   selector: 'app-action',
   templateUrl: './action.component.html',
-  styleUrls: ['./action.component.scss'],
+  styleUrls: ['./action.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ActionComponent {

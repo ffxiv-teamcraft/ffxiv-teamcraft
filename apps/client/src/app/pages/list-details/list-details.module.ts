@@ -40,6 +40,7 @@ import { RelationshipsComponent } from './item-details/relationships/relationshi
 import { TeamsModule } from '../../modules/teams/teams.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
+import { PricingModule } from '../../modules/pricing/pricing.module';
 
 const routes: Routes = [
   {
@@ -73,6 +74,7 @@ const routes: Routes = [
     UserAvatarModule,
     FavoritesModule,
     MarketboardModule,
+    PricingModule,
 
     FlexLayoutModule,
 

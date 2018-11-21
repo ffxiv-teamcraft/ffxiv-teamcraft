@@ -17,9 +17,9 @@
         <div *ngIf="row.items.length > 0">
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
-            <!--TODO navigation map-->
-            <button nz-button disabled nzShape="circle" *ngIf="false">
-              <i-map></i-map>
+            <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small" (click)="openNavigationMap(row)"
+                    nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
+              <i nz-icon type="gateway"></i>
             </button>
           </div>
           <nz-divider></nz-divider>

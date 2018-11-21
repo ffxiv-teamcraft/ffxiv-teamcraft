@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -20,6 +20,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
+import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
+import { AbstractNotification } from './core/notification/abstract-notification';
 
 declare const ga: Function;
 
@@ -30,7 +32,7 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
-  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'es'];
+  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es'];
 
   locale: string;
 
@@ -46,6 +48,8 @@ export class AppComponent implements OnInit {
 
   collapsedAlarmsBar = true;
 
+  public notifications$ = this.notificationsFacade.notificationsDisplay$;
+
   public loggedIn$: Observable<boolean>;
 
   public character$: Observable<Character>;
@@ -60,7 +64,7 @@ export class AppComponent implements OnInit {
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
-              public teamsFacade: TeamsFacade) {
+              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade) {
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -100,6 +104,9 @@ export class AppComponent implements OnInit {
     const lang = localStorage.getItem('locale');
     if (lang !== null) {
       this.use(lang);
+    } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
+      // Specific implementation for BR.
+      this.use('br');
     } else {
       this.use(this.translate.getBrowserLang());
     }
@@ -120,14 +127,19 @@ export class AppComponent implements OnInit {
     // Loading is !loaded
     this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
     this.loggedIn$ = this.authFacade.loggedIn$;
-    this.character$ = this.authFacade.mainCharacter$;
+    this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
 
     this.authFacade.loadUser();
+    this.notificationsFacade.loadAll();
     this.listsFacade.loadMyLists();
     this.workshopsFacade.loadMyWorkshops();
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
+  }
+
+  deleteNotification(notification: AbstractNotification): void {
+    this.notificationsFacade.removeNotification(notification.$key);
   }
 
   openRegisterPopup(): void {

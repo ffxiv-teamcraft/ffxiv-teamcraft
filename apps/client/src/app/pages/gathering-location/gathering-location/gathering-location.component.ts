@@ -88,7 +88,7 @@ export class GatheringLocationComponent {
                     ...item,
                     nodeId: node.id,
                     zoneid: this.l12n.getAreaIdByENName(node.zone),
-                    mapId: nodePosition ? nodePositions[node.id].map : this.l12n.getAreaIdByENName(node.zone),
+                    mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
                     x: node.coords[0],
                     y: node.coords[1],
                     level: node.lvl,
@@ -137,7 +137,7 @@ export class GatheringLocationComponent {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
     alarm.spawns = node.spawnTimes;
     alarm.mapId = node.mapId;
-    this.mapService.getMapById(alarm.zoneId)
+    this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {
           if (mapData !== undefined) {

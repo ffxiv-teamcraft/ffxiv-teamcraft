@@ -11,7 +11,7 @@ export class ProgressPopupService {
   constructor(private dialog: NzModalService, private translate: TranslateService) {
   }
 
-  public showProgress(operation$: Observable<any>, operationsCount: number, labelKey = 'List_popup_p', labelParams = {}): Observable<any> {
+  public showProgress(operation$: Observable<any>, operationsCount: number, labelKey = 'Please_wait', labelParams = {}): Observable<any> {
     return this.dialog.create({
       nzTitle: this.translate.instant(labelKey, labelParams),
       nzFooter: null,

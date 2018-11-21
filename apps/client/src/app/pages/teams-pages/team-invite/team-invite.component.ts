@@ -82,16 +82,11 @@ export class TeamInviteComponent implements OnInit {
         team.members.push(userId);
         return [team, userId];
       }),
-      switchMap(([team, userId]) => {
-        return this.characterService.getCharacter(userId).pipe(
-          map(character => [team, character.character.Name, userId])
-        );
-      }),
       tap(([team]) => this.teamsFacade.updateTeam(team)),
       first()
-    ).subscribe(([team, characterName, userId]: [Team, string, string]) => {
+    ).subscribe(([team, userId]: [Team, string]) => {
       if (team.webhook !== undefined) {
-        this.discordWebhook.notifyMemberJoined(team, characterName, userId)
+        this.discordWebhook.notifyMemberJoined(team, userId)
       }
       this.router.navigateByUrl('/teams');
     });

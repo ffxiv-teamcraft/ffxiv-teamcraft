@@ -9,7 +9,7 @@ export class XivapiIconPipe implements PipeTransform {
     if (icon === undefined) {
       return fallback;
     }
-    return `http://xivapi.com${icon}`;
+    return `https://xivapi.com${icon}`;
   }
 
 }

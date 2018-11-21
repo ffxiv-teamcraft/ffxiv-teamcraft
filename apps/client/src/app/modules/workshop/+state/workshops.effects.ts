@@ -11,7 +11,7 @@ import {
   WorkshopsActionTypes,
   WorkshopsWithWriteAccessLoaded
 } from './workshops.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { WorkshopService } from '../../../core/database/workshop.service';
@@ -67,7 +67,7 @@ export class WorkshopsEffects {
         switchMap(loggedIn => {
           return combineLatest(
             of(action.key),
-            this.authFacade.userId$,
+            this.authFacade.user$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.workshopService.get(action.key).pipe(catchError(() => of(null)))
           );
@@ -75,7 +75,13 @@ export class WorkshopsEffects {
       );
     }),
     distinctUntilChanged(),
-    map(([WorkshopKey, userId, fcId, workshop]: [string, string, string | null, Workshop]) => {
+    map(([WorkshopKey, user, fcId, workshop]: [string, TeamcraftUser, string | null, Workshop]) => {
+      const userId = user.$key;
+      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+      const verified = idEntry && idEntry.verified;
+      if (!verified) {
+        fcId = null;
+      }
       if (workshop !== null) {
         const permissionLevel = Math.max(workshop.getPermissionLevel(userId), workshop.getPermissionLevel(fcId));
         if (permissionLevel >= PermissionLevel.READ) {

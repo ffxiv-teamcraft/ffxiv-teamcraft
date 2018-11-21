@@ -14,6 +14,7 @@ import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
     SettingsModule,
     ListPickerModule,
     ProgressPopupModule,
+    MarketboardModule,
 
     NgZorroAntdModule,
 

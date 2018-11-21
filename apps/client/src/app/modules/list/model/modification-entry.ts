@@ -1,5 +1,5 @@
 export interface ModificationEntry {
-  characterId: number;
+  userId: string;
   amount: number;
   itemId: number;
   itemIcon: number;

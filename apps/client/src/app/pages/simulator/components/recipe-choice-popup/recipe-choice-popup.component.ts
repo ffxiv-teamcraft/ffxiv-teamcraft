@@ -1,79 +1,15 @@
-import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { debounceTime, distinctUntilChanged, first, takeUntil } from 'rxjs/operators';
-import { fromEvent, Subject } from 'rxjs/index';
-import { Recipe } from '../../../../model/search/recipe';
-import { DataService } from '../../../../core/api/data.service';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-choice-popup',
   templateUrl: './recipe-choice-popup.component.html',
-  styleUrls: ['./recipe-choice-popup.component.scss']
+  styleUrls: ['./recipe-choice-popup.component.less']
 })
-export class RecipeChoicePopupComponent implements OnDestroy, OnInit {
+export class RecipeChoicePopupComponent implements OnInit {
 
-  results: Recipe[] = [];
+  constructor() { }
 
-  @ViewChild('filter')
-  filterElement: ElementRef;
-
-  onDestroy$: Subject<void> = new Subject<void>();
-
-  query: string;
-
-  constructor(private dataService: DataService, private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
-              @Inject(MAT_DIALOG_DATA) public showCustom: boolean, private ref: MatDialogRef<RecipeChoicePopupComponent>) {
-  }
-
-  /**
-   * Gets job informations from a given job id.
-   * @param {number} id
-   * @returns {any}
-   */
-  getJob(id: number): any {
-    return this.gt.getJob(id);
-  }
-
-  /**
-   * Generates star html string for recipes with stars.
-   * @param {number} nb
-   * @returns {string}
-   */
-  getStars(nb: number): string {
-    return this.htmlTools.generateStars(nb);
-  }
-
-  close(item: Recipe): void {
-    if (item === undefined) {
-      this.ref.close();
-    } else {
-      this.ref.close({ itemId: item.itemId, recipeId: item.recipeId });
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next();
-  }
-
-  ngOnInit(): void {
-    fromEvent(this.filterElement.nativeElement, 'keyup')
-      .pipe(
-        takeUntil(this.onDestroy$),
-        debounceTime(500),
-        distinctUntilChanged()
-      ).subscribe(() => {
-      this.doSearch();
-    });
-  }
-
-  private doSearch(): void {
-    this.dataService.searchItem(this.query, [], true)
-      .pipe(first())
-      .subscribe(results => {
-        // this.results = <Recipe[]>results;
-      });
+  ngOnInit() {
   }
 
 }

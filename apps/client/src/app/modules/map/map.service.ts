@@ -59,8 +59,8 @@ export class MapService {
     return nearest;
   }
 
-  public getOptimizedPath(placeNameId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
-    return this.getMapById(placeNameId)
+  public getOptimizedPath(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
+    return this.getMapById(mapId)
       .pipe(
         map(mapData => {
           // We only want big aetherytes.

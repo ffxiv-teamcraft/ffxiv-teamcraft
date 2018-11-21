@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MarketboardPopupComponent } from '../marketboard-popup/marketboard-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-marketboard-icon',
@@ -18,8 +19,8 @@ export class MarketboardIconComponent {
   @Input()
   showHistory = false;
 
-  anonymous$ = this.authFacade.loggedIn$.pipe(
-    map(loggedIn => !loggedIn)
+  disabled$ = combineLatest(this.authFacade.loggedIn$, this.authFacade.mainCharacter$).pipe(
+    map(([loggedIn, character]) => !loggedIn || character.ID < 0)
   );
 
   constructor(private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade) {

@@ -74,6 +74,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.
           if (storedNode.coords === undefined && nodePositions[node] !== undefined) {
             storedNode.coords = [nodePositions[node].x, nodePositions[node].y];
+          }
+          // Set proper map id based on informations we have
+          if (nodePositions[node] !== undefined) {
             storedNode.mapid = nodePositions[node].map;
           }
           // We need to cleanup the node object to avoid database issues with undefined value.

@@ -5,7 +5,6 @@ import { TradeSource } from './trade-source';
 import { Instance } from './instance';
 import { Vendor } from './vendor';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { DeserializeAs } from '@kaiu/serializer';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Drop } from './drop';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -43,8 +42,10 @@ export class ListRow extends DataModel {
    */
   workingOnIt?: string;
 
-  // @DeserializeAs([ResourceComment])
-  // comments?: ResourceComment[];
+  /**
+   * Manual flag for an item required as HQ
+   */
+  requiredAsHQ?: boolean;
 
   hidden?: boolean;
 

@@ -20,6 +20,11 @@ const getCompacts = createSelector(
   (state: ListsState, loading) => loading ? [] : state.compacts
 );
 
+const getNeedsVerification = createSelector(
+  getListsState,
+  (state: ListsState) => state.needsVerification
+);
+
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
@@ -45,5 +50,6 @@ export const listsQuery = {
   getAllListDetails,
   getSelectedList,
   getCompacts,
-  getCommunityListsLoading
+  getCommunityListsLoading,
+  getNeedsVerification
 };

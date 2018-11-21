@@ -34,6 +34,8 @@ export class ListsComponent {
 
   public loading$: Observable<boolean>;
 
+  public needsVerification$ = this.listsFacade.needsVerification$;
+
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
@@ -120,7 +122,11 @@ export class ListsComponent {
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
       debounceTime(100)
     );
-    this.loading$ = this.listsFacade.loadingMyLists$;
+    this.loading$ = combineLatest(this.listsFacade.loadingMyLists$, this.workshopsFacade.loaded$.pipe(map(loaded => !loaded)), this.teamsFacade.loading$).pipe(
+      map((loadingFragments) => {
+        return loadingFragments.reduce((loading, loadingFragment) => loading || loadingFragment, false);
+      })
+    );
 
     this.teamsFacade.loadMyTeams();
   }

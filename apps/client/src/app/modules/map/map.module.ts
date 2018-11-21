@@ -9,6 +9,7 @@ import { MapComponent } from './map/map.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { XivapiClientModule } from '@xivapi/angular-client';
+import { NavigationMapComponent } from './navigation-map/navigation-map.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { XivapiClientModule } from '@xivapi/angular-client';
   ],
   declarations: [
     MapPositionComponent,
-    MapComponent
+    MapComponent,
+    NavigationMapComponent
   ],
   providers: [
     MapService
@@ -34,7 +36,8 @@ import { XivapiClientModule } from '@xivapi/angular-client';
     MapComponent
   ],
   entryComponents: [
-    MapComponent
+    MapComponent,
+    NavigationMapComponent
   ]
 })
 export class MapModule {
