@@ -13,7 +13,7 @@ const getLoaded = createSelector(
 const getMainCharacter = createSelector(
   getAuthState,
   (state: AuthState) => {
-    let character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
+    const character = state.characters.find(char => char.Character.ID === state.user.defaultLodestoneId);
     // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
     if (character === undefined && state.user !== null) {
       const custom = <Character>state.user.customCharacters.find(c => c.ID === state.user.defaultLodestoneId);

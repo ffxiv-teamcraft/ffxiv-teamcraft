@@ -32,7 +32,7 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
-  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es'];
+  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko'];
 
   locale: string;
 
