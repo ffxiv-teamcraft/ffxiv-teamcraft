@@ -94,6 +94,7 @@
     "Copy_to_clipboard": "클립보드에 복사하기"
   },
   "ALARMS": {
+    "Title": "",
     "No_alarm": "설정된 알람 없음",
     "Add_alarm": "알람 추가",
     "Alarm_created": "알람이 생성되었습니다",
@@ -175,6 +176,7 @@
   "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
   "Character_name": "캐릭터 이름",
   "Disconnect_and_anonymous": "연결해제 후 익명으로 계속하기",
+  "Add_manual_character": "",
   "Character_informations": "캐릭터 정보",
   "Server_name": "서버명",
   "Add_all_recipes": "결과를 목록에 추가",
