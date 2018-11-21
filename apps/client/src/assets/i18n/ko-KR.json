@@ -48,7 +48,7 @@
     "List_selection_title": "공방 {{workshopName}} 에 추가할 목록 선택",
     "Name_dialog": "공방 이름",
     "Created_by": "제작자: {{name}}",
-    "Share_link_copied": "공방 공유 링크 복사됨",
+    "Share_link_copied": "공방 공유링크 복사됨",
     "Not_found": "해당 공방이 없거나 접근할 권한이 없습니다",
     "Shared_workshops": "쓰기 권한이 있는 공방",
     "Rename": "공방 이름변경"
@@ -185,8 +185,8 @@
   "Server_name": "서버명",
   "Add_all_recipes": "결과를 목록에 추가",
   "Character_not_found": "캐릭터를 찾을 수 없습니다",
-  "Use_lodestoneId": "로드스톤 ID 사용",
-  "LodestoneId": "로드스톤 ID",
+  "Use_lodestoneId": "Lodestone ID 사용",
+  "LodestoneId": "Lodestone ID",
   "List_forked": "목록이 내 계정에 복사되었습니다",
   "List_fork": "이 목록을 내 계정에 복사하기",
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
@@ -268,7 +268,7 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
-      "Guide": "계정 인증을 위해 로드스톤 Profile Biography에 다음의 코드를 붙여넣으세요. \"{{userId}}\" 그리고 아래의 버튼을 눌러주세요.",
+      "Guide": "계정 인증을 위해 Lodestone Profile Biography에 다음의 코드를 붙여넣으세요. \"{{userId}}\" 그리고 아래의 버튼을 눌러주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
