@@ -539,8 +539,8 @@
       "Save_consumables": "현재 소모품을 기본값으로 세팅",
       "STATS": {
         "CP": "CP",
-        "Craftsmanship": "작업숙련도",
-        "Control": "가공숙련도"
+        "Craftsmanship": "작업 숙련도",
+        "Control": "가공 숙련도"
       }
     }
   },
