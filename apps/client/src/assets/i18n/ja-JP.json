@@ -4,6 +4,7 @@
   "Pick_a_fc": "",
   "FC_name": "",
   "Saving_in_database": "",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "",
     "auth/email-already-in-use": "",
