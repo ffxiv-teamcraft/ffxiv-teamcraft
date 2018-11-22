@@ -37,15 +37,15 @@ export class CharacterLinkPopupComponent {
       map(servers => {
         return [
           ...servers,
-          'Korean server'
-        ];
+          'Korean Server'
+        ].sort();
       })
     );
 
     this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)
       .pipe(
         map(([servers, inputValue]) => {
-          return servers.filter(server => server.indexOf(inputValue) > -1);
+          return servers.filter(server => server.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
         })
       );
 
