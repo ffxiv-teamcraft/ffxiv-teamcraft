@@ -4,6 +4,7 @@
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
   "FC_name": "",
   "Saving_in_database": "Guardando datos en el servidor",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
