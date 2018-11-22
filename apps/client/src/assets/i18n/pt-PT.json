@@ -555,7 +555,13 @@
     "No_results": "",
     "Add_to_list": "",
     "Quantity": "",
-    "All_deliveries": ""
+    "All_deliveries": "",
+    "INTRO": {
+      "Title": "",
+      "First_line": "",
+      "Second_line": "",
+      "Third_line": ""
+    }
   },
   "NOTIFICATIONS": {
     "Title": "",
