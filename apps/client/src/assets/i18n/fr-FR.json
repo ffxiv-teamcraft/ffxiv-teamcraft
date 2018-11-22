@@ -4,6 +4,7 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
