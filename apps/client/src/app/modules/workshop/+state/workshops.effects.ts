@@ -67,7 +67,8 @@ export class WorkshopsEffects {
         switchMap(loggedIn => {
           return combineLatest(
             of(action.key),
-            this.authFacade.user$,
+            loggedIn ? this.authFacade.user$ : of(null),
+            this.authFacade.userId$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.workshopService.get(action.key).pipe(catchError(() => of(null)))
           );
@@ -75,12 +76,13 @@ export class WorkshopsEffects {
       );
     }),
     distinctUntilChanged(),
-    map(([WorkshopKey, user, fcId, workshop]: [string, TeamcraftUser, string | null, Workshop]) => {
-      const userId = user.$key;
-      const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
-      const verified = idEntry && idEntry.verified;
-      if (!verified) {
-        fcId = null;
+    map(([WorkshopKey, user, userId, fcId, workshop]: [string, TeamcraftUser | null, string, string | null, Workshop]) => {
+      if(user !== null){
+        const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
+        const verified = idEntry && idEntry.verified;
+        if (!verified) {
+          fcId = null;
+        }
       }
       if (workshop !== null) {
         const permissionLevel = Math.max(workshop.getPermissionLevel(userId), workshop.getPermissionLevel(fcId));
