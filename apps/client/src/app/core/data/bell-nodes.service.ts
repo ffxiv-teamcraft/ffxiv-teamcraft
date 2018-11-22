@@ -31,12 +31,13 @@ export class BellNodesService {
   getNodesByItemId(id: number): any[] {
     if (this.cache[id] === undefined) {
       const results = [];
+      const itemReductions = reductions[id] || [];
       this.nodes.forEach(node => {
-        const match = node.items.find(item => item.id === id);
+        const match = node.items.find(item => item.id === id || itemReductions.indexOf(item.id) > -1);
         if (match !== undefined) {
           const nodeCopy = {...node};
           nodeCopy.icon = match.icon;
-          nodeCopy.itemId = id;
+          nodeCopy.itemId = match.id;
           if(match.slot !== '?' && match.slot !== undefined){
             nodeCopy.slot = +match.slot;
           }

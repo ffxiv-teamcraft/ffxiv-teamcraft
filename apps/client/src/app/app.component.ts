@@ -11,7 +11,7 @@ import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzIconService, NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
@@ -64,7 +64,10 @@ export class AppComponent implements OnInit {
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
-              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade) {
+              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
+              private iconService: NzIconService) {
+
+    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_c9vo94z9pvp.js'});
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {

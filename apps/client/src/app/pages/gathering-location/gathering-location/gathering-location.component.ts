@@ -62,6 +62,7 @@ export class GatheringLocationComponent {
                 const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
                 node.spawnTimes = bellNode.time;
                 node.uptime = bellNode.uptime;
+                node.icon = item.obj.c;
                 if (slotMatch !== undefined) {
                   node.slot = slotMatch.slot;
                 }
@@ -82,7 +83,6 @@ export class GatheringLocationComponent {
             return [].concat.apply([],
               this.bell.getNodesByItemId(item.obj.i)
                 .map(node => {
-                  const slotMatch = node.items.find(nodeItem => nodeItem.id === item.obj.i);
                   const nodePosition = nodePositions[node.id];
                   const result = {
                     ...item,
@@ -92,10 +92,11 @@ export class GatheringLocationComponent {
                     x: node.coords[0],
                     y: node.coords[1],
                     level: node.lvl,
-                    itemId: item.obj.i,
+                    itemId: node.itemId,
+                    icon: node.icon,
                     spawnTimes: node.time,
                     uptime: node.uptime,
-                    slot: slotMatch.slot,
+                    slot: node.slot,
                     timed: true
                   };
                   const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);

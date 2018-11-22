@@ -18,6 +18,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { SettingsModule } from '../../modules/settings/settings.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    FlexLayoutModule,
 
     RouterModule.forChild(routes),
 

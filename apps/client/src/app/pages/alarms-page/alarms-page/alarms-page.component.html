@@ -1,7 +1,11 @@
 <div *ngIf="loaded$ | async; else loading">
   <div *ngIf="display$ | async as display">
     <div class="toolbar">
-      <div class="right-toolbar">
+      <div class="right-toolbar" fxLayout="row" fxLayoutGap="5px">
+        <a nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Add_alarm' | translate}}"
+           routerLink="/gathering-location">
+          <i nz-icon [iconfont]="'icon-addalarm'"></i>
+        </a>
         <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.New_group' | translate}}"
                 (click)="createGroup(display.groupedAlarms.length)">
           <i nz-icon type="folder-add"></i>
