@@ -28,7 +28,6 @@ import { LinkToolsService } from './tools/link-tools.service';
 import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
-import { MaintenanceGuard } from '../pages/maintenance/maintenance.guard';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
 
 
@@ -62,7 +61,6 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
     LocalizedDataService,
     I18nToolsService,
     BellNodesService,
-    EorzeanTimeService,
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService
@@ -88,6 +86,7 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         GarlandToolsService,
+        EorzeanTimeService,
         CharacterService
       ]
     };
