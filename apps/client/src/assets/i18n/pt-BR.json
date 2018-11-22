@@ -4,6 +4,7 @@
   "Pick_a_fc": "Escolha uma free company",
   "FC_name": "",
   "Saving_in_database": "Salvando os dados no servidor",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",
