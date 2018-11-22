@@ -17,9 +17,9 @@
       </div>
       <div class="spacer"></div>
       <span>
-    <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-    {{'Compact_display' | translate}}
-  </span>
+        <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
+        {{'Compact_display' | translate}}
+      </span>
     </div>
 
     <div class="alarms">
@@ -97,6 +97,7 @@
       </div>
     </ng-template>
     <ng-template #cardDescription>
+      X: {{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}<br>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}
       <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
            [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>

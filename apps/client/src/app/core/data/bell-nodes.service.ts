@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { LocalizedDataService } from './localized-data.service';
-import { TranslateService } from '@ngx-translate/core';
-import { Language } from './language';
 import { reductions } from './sources/reductions';
 
 @Injectable()
@@ -14,18 +12,7 @@ export class BellNodesService {
 
   private cache: { [index: number]: any[] } = {};
 
-  constructor(private localizedDataService: LocalizedDataService, private i18n: TranslateService) {
-  }
-
-  getNodesByItemName(name: string): any[] {
-    let itemIds = this.localizedDataService.getItemIdsByName(name, <Language>this.i18n.currentLang);
-    for (const id of itemIds) {
-      if (reductions[id] !== undefined) {
-        itemIds = itemIds.splice(itemIds.indexOf(id), 1);
-        itemIds.push(...reductions[id]);
-      }
-    }
-    return [].concat.apply([], itemIds.map(id => this.getNodesByItemId(id)));
+  constructor(private localizedDataService: LocalizedDataService) {
   }
 
   getNodesByItemId(id: number): any[] {
@@ -35,10 +22,11 @@ export class BellNodesService {
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id || itemReductions.indexOf(item.id) > -1);
         if (match !== undefined) {
-          const nodeCopy = {...node};
+          const nodeCopy = { ...node };
           nodeCopy.icon = match.icon;
+          console.log(match);
           nodeCopy.itemId = match.id;
-          if(match.slot !== '?' && match.slot !== undefined){
+          if (match.slot !== '?' && match.slot !== undefined) {
             nodeCopy.slot = +match.slot;
           }
           nodeCopy.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
