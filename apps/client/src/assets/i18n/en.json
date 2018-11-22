@@ -555,7 +555,13 @@
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantity",
-    "All_deliveries": "All {{value}} Deliveries"
+    "All_deliveries": "All {{value}} Deliveries",
+    "INTRO": {
+      "Title": "Levequests",
+      "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
+      "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
+      "Third_line": "You can also search by name, in case you know what you're looking for."
+    }
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",

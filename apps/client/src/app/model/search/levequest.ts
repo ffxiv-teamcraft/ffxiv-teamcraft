@@ -1,4 +1,4 @@
-import { Vector2 } from './../../core/tools/vector2';
+import { Vector2 } from '../../core/tools/vector2';
 
 export interface Levequest {
   level: number;
@@ -15,7 +15,7 @@ export interface Levequest {
   name: string;
   repeats: number;
   startCoordinates: Vector2;
-  startZoneId: number;
+  startMapId: number;
   // Levequest is selected from search results
   selected?: boolean;
   // Option to complete all deliveries (3x turn-in) is selected from search results

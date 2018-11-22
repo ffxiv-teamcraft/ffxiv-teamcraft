@@ -1,29 +1,35 @@
 <div nz-row class="top-part" fxLayout="row wrap">
   <div nz-col [nzXs]="{ span: 10, order: 1 }" [nzMd]="{ span: 4 }" [nzXXl]="{ span: 3 }">
     <nz-select class="job" [ngModel]="job$.value" [nzAllowClear]="true"
-      [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate" (ngModelChange)="setJob($event)">
-      <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n"></nz-option>
+               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate" (ngModelChange)="setJob($event)">
+      <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
+        <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">
+        {{job.id | jobAbbr | i18n}}
+      </nz-option>
     </nz-select>
   </div>
 
   <div nz-col [nzXs]="{ span: 24, order: 3 }" [nzMd]="{ span: 10, offset: 1, order: 2 }" [nzXXl]="{ span: 9 }">
     <input type="text" class="search" placeholder="{{'LEVEQUESTS.Levequest_name' | translate}}" #searchInput
-      nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
+           nz-input [ngModel]="query$.value" (keyup)="query$.next(searchInput.value)" autofocus>
   </div>
 
   <div nz-col [nzXs]="{ span: 13, offset: 1, order: 2 }" [nzMd]="{ span: 5, offset: 1, order: 3 }"
-    [nzXXl]="{ span: 3 }">
+       [nzXXl]="{ span: 3 }">
     <nz-input-group class="levels" nzCompact>
       <nz-input-number [ngModel]="levelMin$.value" [nzMin]="1" [nzMax]="levelMax$.value" [nzPrecision]="0"
-        (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
+                       (ngModelChange)="setLevel(levelMin$, $event)"></nz-input-number>
       <input type="text" disabled nz-input placeholder="-">
       <nz-input-number [ngModel]="levelMax$.value" [nzMin]="levelMin$.value" [nzMax]="70" [nzPrecision]="0"
-        (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
+                       (ngModelChange)="setLevel(levelMax$, $event)"></nz-input-number>
     </nz-input-group>
   </div>
 </div>
-<div *ngIf="showIntro">
-  TODO Intro
+<div *ngIf="showIntro" fxLayout="column" fxLayoutAlign="center center" class="intro">
+  <h2>{{'LEVEQUESTS.INTRO.Title' | translate}}</h2>
+  <p>{{'LEVEQUESTS.INTRO.First_line' | translate}}</p>
+  <p>{{'LEVEQUESTS.INTRO.Second_line' | translate}}</p>
+  <p>{{'LEVEQUESTS.INTRO.Third_line' | translate}}</p>
 </div>
 <div *ngIf="results$ | async as results">
   <div class="additional-buttons">
@@ -37,15 +43,15 @@
       <nz-list [nzDataSource]="results" [nzRenderItem]="leve" [nzItemLayout]="'horizontal'">
         <ng-template #leve let-leve>
           <nz-list-item nz-row fxLayout="row wrap" [nzContent]="content">
-              <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
-                (ngModelChange)="updateAllSelected(results)"></label>
-              <nz-list-item-meta nz-col nzSpan="24"
-              [nzTitle]="leve.name"
-              [nzAvatar]="leve.itemIcon | xivapiIcon"
-              [nzDescription]="description">
+            <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
+                   (ngModelChange)="updateAllSelected(results)"></label>
+            <nz-list-item-meta nz-col nzSpan="24"
+                               [nzTitle]="leve.name"
+                               [nzAvatar]="leve.itemIcon | xivapiIcon"
+                               [nzDescription]="description">
               <ng-template #description>
-                  {{leve.itemId | itemName | i18n}}
-                  <span *ngIf="leve.itemQuantity > 1">
+                {{leve.itemId | itemName | i18n}}
+                <span *ngIf="leve.itemQuantity > 1">
                     x {{leve.itemQuantity}}
                   </span>
               </ng-template>
@@ -57,17 +63,17 @@
                 </div>
                 <div nz-col [nzXs]="{ span: 10, offset: 1 }" [nzXl]="{ span: 5, offset: 0 }">
                   <b>{{leve.startZoneId | placeName | i18n}}</b>
-                  <app-map-position [marker]="leve.startCoordinates" [zoneId]="leve.startZoneId"></app-map-position>
+                  <app-map-position [marker]="leve.startCoordinates" [mapId]="leve.startMapId"></app-map-position>
                 </div>
                 <div nz-col nzXs="7" nzXl="5">
-                  <b>EXP:</b> {{leve.exp * craftAmount(leve) | number}}<br />
+                  <b>EXP:</b> {{leve.exp * craftAmount(leve) | number}}<br/>
                   <b>Gil:</b> {{leve.gil * craftAmount(leve) | number}}
                 </div>
                 <div nz-col nzXs="17" nzXl="6">
                   <nz-input-number class="amount" [nzMin]="1" [nzMax]="999" [nzPrecision]="0"
-                    [(ngModel)]="leve.amount"></nz-input-number>
+                                   [(ngModel)]="leve.amount"></nz-input-number>
                   <label nz-checkbox class="all-deliveries" [(ngModel)]="leve.allDeliveries"
-                    *ngIf="leve.repeats > 0">
+                         *ngIf="leve.repeats > 0">
                     {{'LEVEQUESTS.All_deliveries' | translate:({value: leve.repeats + 1})}}
                   </label>
                 </div>
