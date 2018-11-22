@@ -4,6 +4,7 @@
   "Pick_a_fc": "",
   "FC_name": "",
   "Saving_in_database": "Speichere Daten auf dem Server",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
