@@ -555,7 +555,13 @@
     "No_results": "Aucun mandat trouvé",
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
-    "All_deliveries": "Toules les livraisons ({{value}})"
+    "All_deliveries": "Toules les livraisons ({{value}})",
+    "INTRO": {
+      "Title": "",
+      "First_line": "",
+      "Second_line": "",
+      "Third_line": ""
+    }
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",
