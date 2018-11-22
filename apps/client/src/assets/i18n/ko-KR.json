@@ -4,6 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
+  "See_on_map": "",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
