@@ -97,7 +97,7 @@
       </div>
     </ng-template>
     <ng-template #cardDescription>
-      X: {{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}<br>
+      <app-map-position [mapId]="row.alarm.mapId" [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"></app-map-position>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}
       <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
            [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>
