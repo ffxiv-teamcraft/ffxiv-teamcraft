@@ -26,48 +26,54 @@
             </div>
           </ng-template>
           <div *ngIf="(userId$ | async) === team.leader" fxLayout="column" fxLayoutGap="5px">
-            <nz-input-group nzAddOnBefore="Webhook" [nzAddOnAfter]="addOnAfterTemplate">
-              <input type="text" nz-input placeholder="https://discordapp.com/api/webhooks/..."
-                     [(ngModel)]="team.webhook" (ngModelChange)="testHook(team);updateTeam(team)">
-              <ng-template #addOnAfterTemplate>
-                <nz-select [(ngModel)]="team.language" (ngModelChange)="testHook(team);updateTeam(team)">
-                  <nz-option [nzLabel]="'fr'" [nzValue]="'fr'"></nz-option>
-                  <nz-option [nzLabel]="'en'" [nzValue]="'en'"></nz-option>
-                  <nz-option [nzLabel]="'de'" [nzValue]="'de'"></nz-option>
-                  <nz-option [nzLabel]="'ja'" [nzValue]="'ja'"></nz-option>
-                  <nz-option [nzLabel]="'pt'" [nzValue]="'pt'"></nz-option>
-                  <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
-                </nz-select>
-              </ng-template>
-            </nz-input-group>
-            <nz-list *ngIf="getInvites(team) | async as invites" [nzRenderItem]="inviteTemplate"
-                     [nzDataSource]="invites" nzSize="small"
-                     [nzHeader]="'TEAMS.Invites' | translate">
-              <ng-template #inviteTemplate let-invite>
-                <nz-list-item [nzContent]="inviteContent">
-                  <ng-template #inviteContent>
-                    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxFlex="1 1 auto">
-                      <div class="invite-url">{{('/teams/invite/'+invite.$key) | tcLink}}</div>
-                      <button nz-button nzShape="circle" nzSize="small" nz-tooltip ngxClipboard
-                              [cbContent]="('/teams/invite/'+invite.$key) | tcLink"
-                              (cbOnSuccess)="success('TEAMS.Invite_link_copied')"
-                              [nzTitle]="'COMMON.Copy_to_clipboard' | translate">
-                        <i nz-icon type="copy"></i>
-                      </button>
-                      <div class="spacer"></div>
-                      <div>{{'TEAMS.Invite_expires' | translate}}: {{invite.expires === undefined ? ('Never' |
-                        translate) : invite.expires | date:'short'}}
+            <div fxLayout="row" fxLayoutGap="10px" class="team-settings">
+              <span>{{'TEAMS.Discord_updates' | translate }}:</span>
+              <button *ngIf="team.webhook" nz-button nzType="primary" (click)="clearHook(team)">
+                {{'COMMON.Enabled' | translate}}
+              </button>
+              <a *ngIf="team.webhook === undefined" href="{{oauthUrl(team)}}" nz-button nzType="danger">
+                {{'COMMON.Disabled' | translate}}
+              </a>
+              <span>{{'COMMON.Language' | translate }}:</span>
+              <nz-select [(ngModel)]="team.language" (ngModelChange)="updateTeam(team)">
+                <nz-option [nzLabel]="'en'" [nzValue]="'en'"></nz-option>
+                <nz-option [nzLabel]="'fr'" [nzValue]="'fr'"></nz-option>
+                <nz-option [nzLabel]="'de'" [nzValue]="'de'"></nz-option>
+                <nz-option [nzLabel]="'ja'" [nzValue]="'ja'"></nz-option>
+                <nz-option [nzLabel]="'pt'" [nzValue]="'pt'"></nz-option>
+                <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
+              </nz-select>
+              <span>{{team | json}}</span>
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <nz-list *ngIf="getInvites(team) | async as invites" [nzRenderItem]="inviteTemplate"
+                     [nzDataSource]="invites" nzSize="small" [nzHeader]="'TEAMS.Invites' | translate">
+                <ng-template #inviteTemplate let-invite>
+                  <nz-list-item [nzContent]="inviteContent">
+                    <ng-template #inviteContent>
+                      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                        <div class="invite-url">{{('/teams/invite/'+invite.$key) | tcLink}}</div>
+                        <button nz-button nzShape="circle" nzSize="small" nz-tooltip ngxClipboard
+                                [cbContent]="('/teams/invite/'+invite.$key) | tcLink"
+                                (cbOnSuccess)="success('TEAMS.Invite_link_copied')"
+                                [nzTitle]="'COMMON.Copy_to_clipboard' | translate">
+                          <i nz-icon type="copy"></i>
+                        </button>
+                        <div class="spacer"></div>
+                        <div>{{'TEAMS.Invite_expires' | translate}}: {{invite.expires === undefined ? ('Never' |
+                          translate) : invite.expires | date:'short'}}
+                        </div>
+                        <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
+                                nz-popconfirm nzSize="small"
+                                [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteInvite(invite)">
+                          <i nz-icon type="delete"></i>
+                        </button>
                       </div>
-                      <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
-                              nz-popconfirm nzSize="small"
-                              [nzTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteInvite(invite)">
-                        <i nz-icon type="delete"></i>
-                      </button>
-                    </div>
-                  </ng-template>
-                </nz-list-item>
-              </ng-template>
-            </nz-list>
+                    </ng-template>
+                  </nz-list-item>
+                </ng-template>
+              </nz-list>
+            </div>
             <div fxLayout="row" fxLayoutGap="5px">
               <button nz-button nzType="primary" (click)="createInvite(team, false)">
                 <i nz-icon type="user-add"></i>

@@ -12,6 +12,8 @@ import { CharacterService } from '../api/character.service';
 @Injectable()
 export class DiscordWebhookService {
 
+  public static CLIENT_ID = '514350168678727681';
+
   private static COLOR = 10982232;
 
   constructor(private http: HttpClient, private translate: TranslateService,
@@ -143,5 +145,9 @@ export class DiscordWebhookService {
         }, `https://www.garlandtools.org/files/icons/item/${itemIcon}.png`, character.character.Avatar);
       })
     ).subscribe();
+  }
+
+  oauthUrl(state: string, redirectUri: string): string {
+    return `https://discordapp.com/api/oauth2/authorize?response_type=code&client_id=${DiscordWebhookService.CLIENT_ID}&scope=webhook.incoming&state=${state}&redirect_uri=${redirectUri}`;
   }
 }

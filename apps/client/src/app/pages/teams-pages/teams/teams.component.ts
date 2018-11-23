@@ -1,11 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { Observable } from 'rxjs';
 import { Team } from '../../../model/team/team';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, first, tap, switchMap, catchError } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamInvite } from '../../../model/team/team-invite';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
@@ -16,7 +18,7 @@ import { DiscordWebhookService } from '../../../core/discord/discord-webhook.ser
   styleUrls: ['./teams.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TeamsComponent {
+export class TeamsComponent implements OnInit {
 
   myTeams$: Observable<Team[]> = this.teamsFacade.myTeams$;
 
@@ -26,9 +28,38 @@ export class TeamsComponent {
 
   private teamInvitesCache: { [indexx: string]: Observable<TeamInvite[]> } = {};
 
+  private redirectUri: string;
+
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
-              private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService, private message: NzMessageService) {
+              private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
+              private message: NzMessageService, private route: ActivatedRoute, private router: Router,
+              private http: HttpClient) {
     this.teamsFacade.loadMyTeams();
+  }
+
+  ngOnInit(): void {
+    this.redirectUri = window.location.href.replace(/\?.*/, '');
+
+    const params = this.route.snapshot.queryParams;
+    if (params.code && params.state) {
+      // TODO: Show progress during the request
+      this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${params.code}&redirect_uri=${this.redirectUri}`)
+        .pipe(
+          switchMap(response => {
+            return this.myTeams$.pipe(
+              map(teams => teams.find(team => team.$key === params.state)),
+              first(team => team !== undefined),
+              map((team: Team) => {
+                team.webhook = response['webhook']['url'];
+                this.updateTeam(team);
+                this.testHook(team);
+                this.router.navigate([]);
+              })
+            )
+          })
+      ).subscribe(() => {}, (error => console.log(error)));
+      // TODO: Alert the user if there is an error
+    }
   }
 
   createTeam(): void {
@@ -65,6 +96,12 @@ export class TeamsComponent {
     if (team.webhook !== undefined) {
       this.discordWebhook.sendMessage(team, 'TEAMS.NOTIFICATIONS.Webhook_setup_complete', { teamName: team.name });
     }
+  }
+
+  clearHook(team: Team): void {
+    // TODO: Make this persist
+    delete team.webhook;
+    this.updateTeam(team);
   }
 
   renameTeam(team: Team): void {
@@ -110,5 +147,9 @@ export class TeamsComponent {
 
   trackByTeam(index: number, team: Team): string {
     return team.$key;
+  }
+
+  oauthUrl(team: Team): string {
+    return this.discordWebhook.oauthUrl(team.$key, this.redirectUri);
   }
 }
