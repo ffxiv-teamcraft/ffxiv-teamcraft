@@ -92,7 +92,10 @@
     "Anonymous": "Anonymous",
     "Warning": "Warning",
     "Success": "Success",
-    "Copy_to_clipboard": "Copy to clipboard"
+    "Copy_to_clipboard": "Copy to clipboard",
+    "Enabled": "Enabled",
+    "Disabled": "Disabled",
+    "Language": "Language"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -580,6 +583,7 @@
     "Leader": "Leader",
     "Member": "Member",
     "Create_team": "Create a team",
+    "Discord_updates": "Discord updates",
     "Create_invite_one_day": "Create a new invite (expires in 1 day)",
     "Create_invite_infinite": "Create a new invite (permanent)",
     "No_teams": "No Teams",
