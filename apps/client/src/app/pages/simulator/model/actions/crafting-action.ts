@@ -6,6 +6,7 @@ import { CrafterStats } from '../crafter-stats';
 import { CraftingJob } from '../crafting-job.enum';
 import { progressFormulas } from '../formulas/progress-formulas';
 import { qualityFormulas } from '../formulas/quality-formulas';
+import { ingenuityData } from '../formulas/ingenuity-data';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -106,7 +107,25 @@ export abstract class CraftingAction {
       return this.getBaseProgressionFallback(simulation);
     }
     const craftsmanship = simulation.crafterStats.craftsmanship;
-    return craftsmanship * craftsmanship * formula.Ax2 + craftsmanship * formula.Bx + formula.C;
+    let result = craftsmanship * craftsmanship * formula.Ax2 + craftsmanship * formula.Bx + formula.C;
+    if (simulation.hasBuff(Buff.INGENUITY)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Progress', 1);
+    } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Progress', 2);
+    }
+    return result;
+  }
+
+  protected getIngenuityMultiplier(clvl: number, rlvl: number, type: 'Quality' | 'Progress', level: 1 | 2): number {
+    let id = clvl - rlvl;
+    let ingenuityEntry = ingenuityData.find(row => row.Id === id);
+    let ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
+    while (ingenuityEntry === undefined || ingenuityMultiplier === undefined) {
+      id > 0 ? id++ : id--;
+      ingenuityEntry = ingenuityData.find(row => row.Id === id);
+      ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
+    }
+    return ingenuityMultiplier;
   }
 
   /**
@@ -169,7 +188,13 @@ export abstract class CraftingAction {
       return this.getBaseQualityFallback(simulation);
     }
     const control = simulation.crafterStats.getControl(simulation);
-    return control * control * formula.Ax2 + control * formula.Bx + formula.C;
+    let result = control * control * formula.Ax2 + control * formula.Bx + formula.C;
+    if (simulation.hasBuff(Buff.INGENUITY)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Quality', 1);
+    } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Quality', 2);
+    }
+    return result;
   }
 
   protected getBaseQualityFallback(simulation: Simulation): number {

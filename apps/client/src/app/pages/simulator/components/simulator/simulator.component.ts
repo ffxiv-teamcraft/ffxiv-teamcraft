@@ -91,7 +91,6 @@ export class SimulatorComponent {
   }
 
   removeAction(index: number): void {
-    console.log('remove', index);
     const actions = this.actions$.value;
     actions.splice(index, 1);
     this.actions$.next([...actions]);
