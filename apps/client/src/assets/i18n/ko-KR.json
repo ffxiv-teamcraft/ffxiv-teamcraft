@@ -4,7 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
-  "See_on_map": "",
+  "See_on_map": "지도에서 보기",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -557,10 +557,10 @@
     "Quantity": "수량",
     "All_deliveries": "모든 {{value}} 납품",
     "INTRO": {
-      "Title": "",
-      "First_line": "",
-      "Second_line": "",
-      "Third_line": ""
+      "Title": "길드의뢰",
+      "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
+      "Second_line": "직업을 고르고, 레벨 범위를 입력하면 이에 따른 길드의뢰들이 표시됩니다. 원하는 길드의뢰를 선택한 뒤 목록에 추가하면 필요한 제작법이 자동으로 선택된 목록에 추가됩니다.",
+      "Third_line": "또한 길드의뢰명을 알고 있을 경우 이름으로 검색할 수 있습니다."
     }
   },
   "NOTIFICATIONS": {
