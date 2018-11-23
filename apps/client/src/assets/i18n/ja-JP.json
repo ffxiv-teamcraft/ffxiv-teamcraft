@@ -2,9 +2,9 @@
   "Pick_a_list": "",
   "Pick_a_user": "",
   "Pick_a_fc": "",
-  "FC_name": "",
+  "FC_name": "フリーキャンパニー前",
   "Saving_in_database": "",
-  "See_on_map": "",
+  "See_on_map": "地図に見られます",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "",
     "auth/email-already-in-use": "",
@@ -23,7 +23,7 @@
   "Use_as_default_character": "",
   "Download_desktop_app": "",
   "Default": "",
-  "Delete": "",
+  "Delete": "デリート",
   "Timers": "ギャザラー時計",
   "Copy_isearch": "",
   "Isearch_copied": "",
@@ -471,8 +471,8 @@
     "Quality": "品質",
     "Step_counter": "ターン",
     "Durability": "耐久",
-    "Hq": "",
-    "Cp_amount": "",
+    "Hq": "HQ",
+    "Cp_amount": "CP",
     "Simulate_tooltip": "",
     "Configuration": "ジョブ設定",
     "Level": "レベル",
@@ -481,7 +481,7 @@
     "Specialist": "マイスター",
     "New_rotation": "新回し",
     "Rotations": "クラフタースキル回し",
-    "No_rotations": "",
+    "No_rotations": "回しがありません",
     "Create_a": "",
     "custom_rotation": "",
     "Reset": "リセット",
@@ -539,7 +539,7 @@
       "Reset_set": "ステータスをリセット",
       "Save_consumables": "",
       "STATS": {
-        "CP": "",
+        "CP": "CP",
         "Craftsmanship": "作業精度",
         "Control": "加工精度"
       }
@@ -602,9 +602,9 @@
   },
   "MARKETBOARD": {
     "Title": "",
-    "Amount": "",
-    "HQ": "",
-    "Total_price": "",
+    "Amount": "分量",
+    "HQ": "HQ",
+    "Total_price": "全額",
     "Unit_price": "",
     "History": "",
     "Purchase_date": ""
