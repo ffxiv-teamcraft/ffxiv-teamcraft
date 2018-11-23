@@ -40,7 +40,8 @@
                 </nz-select>
               </ng-template>
             </nz-input-group>
-            <nz-list [nzRenderItem]="inviteTemplate" [nzDataSource]="getInvites(team) | async" nzSize="small"
+            <nz-list *ngIf="getInvites(team) | async as invites" [nzRenderItem]="inviteTemplate"
+                     [nzDataSource]="invites" nzSize="small"
                      [nzHeader]="'TEAMS.Invites' | translate">
               <ng-template #inviteTemplate let-invite>
                 <nz-list-item [nzContent]="inviteContent">
