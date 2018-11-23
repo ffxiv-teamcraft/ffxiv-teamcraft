@@ -550,14 +550,14 @@
     "Expect_to_sell_everything": ""
   },
   "LEVEQUESTS": {
-    "Title": "",
-    "Levequest_name": "",
+    "Title": "ギルドリーヴ",
+    "Levequest_name": "リーヴ名",
     "No_results": "",
     "Add_to_list": "",
     "Quantity": "",
     "All_deliveries": "",
     "INTRO": {
-      "Title": "",
+      "Title": "ギルドリーヴ",
       "First_line": "",
       "Second_line": "",
       "Third_line": ""
@@ -582,7 +582,7 @@
     "Assign_team_member": "",
     "Detach_team": "",
     "Delete_confirmation": "",
-    "Invite_expires": "",
+    "Invite_expires": "失効日",
     "Invite_error": "",
     "Invite_link_copied": "",
     "No_anonymous_join": "",
@@ -610,6 +610,6 @@
     "Purchase_date": ""
   },
   "COMMENTS": {
-    "Title": ""
+    "Title": "コメント"
   }
 }
