@@ -4,7 +4,7 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
-  "See_on_map": "",
+  "See_on_map": "Voir sur la carte",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -557,8 +557,8 @@
     "Quantity": "Quantité",
     "All_deliveries": "Toules les livraisons ({{value}})",
     "INTRO": {
-      "Title": "",
-      "First_line": "",
+      "Title": "Mandats",
+      "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
       "Second_line": "",
       "Third_line": ""
     }
