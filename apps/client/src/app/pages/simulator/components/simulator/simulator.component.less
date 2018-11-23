@@ -1,3 +1,75 @@
+:host ::ng-deep {
+  .progress-progressbar {
+    .ant-progress-bg {
+      background-color: green;
+    }
+  }
+  .cp-amount {
+    .ant-progress-bg {
+      background-color: #9254AD;
+    }
+  }
+  .ant-progress-status-success .ant-progress-text {
+    color: inherit;
+  }
+}
+
+.durability {
+  .durability-value {
+    font-size: 2rem;
+  }
+}
+
+.craft-bars {
+  padding-right: 20px;
+}
+
+.buffs-container {
+  min-height: 32px;
+  .buff-container {
+    position: relative;
+    margin: 0 2px;
+    .stacks {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: white;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+    .duration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: white;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+  }
+}
+
+.hq-chances {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-right: 40px;
+}
+
+.report {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 0 1 300px;
+  height: 40px;
+}
+
+.actions-container {
+  min-height: 40px;
+  .action-from-bar:not(.gu-transit) {
+    display: none;
+  }
+}
+
 .category-row {
   display: flex;
   flex-wrap: wrap;

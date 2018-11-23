@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomSimulatorPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

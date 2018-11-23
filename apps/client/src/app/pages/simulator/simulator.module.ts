@@ -9,7 +9,6 @@ import { ActionComponent } from './components/action/action.component';
 import { CraftingActionsRegistry } from './model/crafting-actions-registry';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
-import { NgDragDropModule } from 'ng-drag-drop';
 import { CustomSimulatorPageComponent } from './components/custom-simulator-page/custom-simulator-page.component';
 import { RotationsPageComponent } from './components/rotations-page/rotations-page.component';
 import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
@@ -28,6 +27,8 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
 import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 
 const routes: Routes = [
   {
@@ -76,7 +77,8 @@ const routes: Routes = [
     FlexLayoutModule,
 
     TranslateModule,
-    NgDragDropModule,
+    ItemIconModule,
+    NgxDnDModule,
     FullpageMessageModule,
 
     NgZorroAntdModule,
