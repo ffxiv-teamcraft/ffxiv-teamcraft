@@ -559,7 +559,7 @@
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
-      "Second_line": "",
+      "Second_line": "Sélectionnez un job, entrez une plage de niveau, vous aurez alors une liste des mandats correspondants que vous pourrez sélectionner et ajouter à une liste. Les recettes seront automatiquement ajoutées avec les montants correspondants.",
       "Third_line": ""
     }
   },
