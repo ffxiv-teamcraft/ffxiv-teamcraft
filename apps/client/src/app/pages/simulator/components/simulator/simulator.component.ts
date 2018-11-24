@@ -3,7 +3,6 @@ import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
 import { Simulation } from '../../simulation/simulation';
-import { gradeII_infusion_of_str_Recipe } from '../../test/mocks';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
 import { CrafterLevels, CrafterStats } from '../../model/crafter-stats';
 import { SimulationResult } from '../../simulation/simulation-result';
@@ -174,6 +173,10 @@ export class SimulatorComponent {
     );
   }
 
+  disableEvent(event: any): void {
+    event.el.parentNode.removeChild(event.el);
+  }
+
   addAction(action: CraftingAction, index?: number) {
     if (index === undefined) {
       this.actions$.next([...this.actions$.value, action]);
@@ -185,6 +188,9 @@ export class SimulatorComponent {
   }
 
   actionDrop(event: any): void {
+    if (event.el.parentNode.classList.contains('actions-container')) {
+      event.el.parentNode.removeChild(event.el);
+    }
     this.addAction(event.value, event.dropIndex);
   }
 
@@ -289,6 +295,11 @@ export class SimulatorComponent {
   barFormat(current: number, max: number): () => string {
     return () => `${current}/${max}`;
   }
+
+  barPercent(current: number, max: number): number {
+    return Math.min(100 * current / max, 100);
+  }
+
 
   getStars(stars: number): string {
     return this.htmlTools.generateStars(stars);

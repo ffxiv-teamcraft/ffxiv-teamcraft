@@ -222,15 +222,16 @@
             <div class="top-bars">
               <div fxLayout="column">
                 <h3>{{'SIMULATOR.Progress' | translate}}</h3>
-                <nz-progress [nzPercent]="100*resultData.simulation.progression/resultData.simulation.recipe.progress"
-                             class="progress-progressbar"
-                             [nzFormat]="barFormat(resultData.simulation.progression,resultData.simulation.recipe.progress)"></nz-progress>
+                <nz-progress
+                  [nzPercent]="barPercent(resultData.simulation.progression,resultData.simulation.recipe.progress)"
+                  class="progress-progressbar"
+                  [nzFormat]="barFormat(resultData.simulation.progression,resultData.simulation.recipe.progress)"></nz-progress>
               </div>
               <div fxLayout="column">
                 <h3>{{'SIMULATOR.Quality' | translate}}</h3>
                 <!--TODO thresholds-->
                 <nz-progress
-                  [nzPercent]="100*resultData.simulation.quality/resultData.simulation.recipe.quality"
+                  [nzPercent]="barPercent(resultData.simulation.quality,resultData.simulation.recipe.quality)"
                   [nzFormat]="barFormat(resultData.simulation.quality,resultData.simulation.recipe.quality)"></nz-progress>
               </div>
             </div>
@@ -288,9 +289,9 @@
         <div class="category-row">
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable="nothing" [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
-                          class="ngx-dnd-item action-from-bar"
+                          class="ngx-dnd-item"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
                           [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
@@ -303,7 +304,7 @@
           </div>
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
@@ -320,7 +321,7 @@
         <div class="category-row">
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
@@ -335,7 +336,7 @@
           </div>
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
@@ -352,7 +353,7 @@
         <div class="category-row">
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
@@ -367,7 +368,7 @@
           </div>
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
@@ -382,7 +383,7 @@
           </div>
           <div>
             <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
-            <div class="actions-row ngx-dnd-container" ngxDroppable [copy]="true">
+            <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
               <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
                           class="ngx-dnd-item action-from-bar"
                           [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
