@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "",
+      "Job_not_configured": "",
       "Custom_set": "",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
@@ -535,9 +536,12 @@
       "Food": "Wähle ein Gericht",
       "Medicine": "Wähle eine Arznei",
       "Action": "Wählen Sie freie Firmenaktionen",
-      "Save_set": "Benutzerdefinierte Werte speichern",
+      "Save_on_profile": "",
       "Reset_set": "Benutzerdefinierte Werte zurücksetzen",
       "Save_consumables": "Speichern Sie diese Verbrauchsmaterialien als Standard",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "HP",
         "Craftsmanship": "Kunstfertigkeit",
