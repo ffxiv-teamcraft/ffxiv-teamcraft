@@ -539,6 +539,9 @@
       "Save_on_profile": "Save on profile",
       "Reset_set": "Reset these stats",
       "Save_consumables": "Save these consumables as default",
+      "No_food": "No food",
+      "No_medicine": "No medicine",
+      "No_fc_buffs": "No FC buffs",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",

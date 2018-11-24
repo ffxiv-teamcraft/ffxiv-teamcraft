@@ -1,6 +1,34 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <nz-collapse class="custom-config">
-    <nz-collapse-panel [nzHeader]="'TODO Recipe configuration'"></nz-collapse-panel>
+    <nz-collapse-panel [nzHeader]="'SIMULATOR.CUSTOM.Recipe_configuration' | translate" [nzActive]="true">
+      <form nz-form [formGroup]="recipeForm" [nzLayout]="'inline'">
+        <nz-form-item>
+          <nz-form-label nzFor="rlvl">rlvl</nz-form-label>
+          <nz-form-control>
+            <nz-input-number formControlName="rlvl" name="rlvl" type="text" id="rlvl"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="progress">progress</nz-form-label>
+          <nz-form-control>
+            <nz-input-number formControlName="progress" name="progress" type="text" id="progress"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="quality">quality</nz-form-label>
+          <nz-form-control>
+            <nz-input-number formControlName="quality" name="quality" type="text" id="quality"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="durability">durability</nz-form-label>
+          <nz-form-control>
+            <nz-input-number formControlName="durability" name="durability" type="text"
+                             id="durability"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-collapse-panel>
   </nz-collapse>
-  <app-simulator [custom]="true"></app-simulator>
+  <app-simulator *ngIf="recipe$ | async as recipe" [custom]="true" [recipe]="recipe"></app-simulator>
 </div>

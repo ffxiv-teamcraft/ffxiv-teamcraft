@@ -30,27 +30,38 @@
             <nz-alert nzType="warning" nzShowIcon *ngIf="(stats$ | async)?.craftsmanship === 0"
                       [nzMessage]="'SIMULATOR.CONFIGURATION.Job_not_configured' | translate">
             </nz-alert>
-            <form [formGroup]="statsForm" (ngSubmit)="applyStats()">
+            <form [formGroup]="statsForm" (ngSubmit)="applyStats()" *ngIf="bonuses$ | async as bonuses"
+                  fxLayout="column"
+                  fxLayoutAlign="space-between">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
                 <nz-form-item>
                   <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
                     translate}}
                   </nz-form-label>
                   <nz-form-control>
-                    <nz-input-number [nzMin]="0" id="craftsmanship" formControlName="craftsmanship"></nz-input-number>
+                    <nz-input-group nzAddOnAfter="+{{bonuses.craftsmanship}}">
+                      <nz-input-number class="input-number-with-addon" [nzMin]="0" id="craftsmanship"
+                                       formControlName="craftsmanship"></nz-input-number>
+                    </nz-input-group>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
                   <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}
                   </nz-form-label>
                   <nz-form-control>
-                    <nz-input-number [nzMin]="0" id="control" formControlName="control"></nz-input-number>
+                    <nz-input-group nzAddOnAfter="+{{bonuses.control}}">
+                      <nz-input-number class="input-number-with-addon" [nzMin]="0" id="control"
+                                       formControlName="control"></nz-input-number>
+                    </nz-input-group>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
                   <nz-form-label nzRequired nzFor="cp">{{'SIMULATOR.Cp_amount' | translate}}</nz-form-label>
                   <nz-form-control>
-                    <nz-input-number [nzMin]="0" id="cp" formControlName="cp"></nz-input-number>
+                    <nz-input-group nzAddOnAfter="+{{bonuses.cp}}">
+                      <nz-input-number class="input-number-with-addon" [nzMin]="0" id="cp"
+                                       formControlName="cp"></nz-input-number>
+                    </nz-input-group>
                   </nz-form-control>
                 </nz-form-item>
               </div>
@@ -87,37 +98,90 @@
               </button>
             </form>
           </div>
-          <div nz-col [nzXs]="24" [nzMd]="custom?12:8">
+          <div nz-col [nzXs]="24" [nzMd]="custom?12:8" *ngIf="crafterStats$ | async as crafterStats">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
-            TODO
-            <div nz-row>
-              <div nz-col [nzXs]="12">
-                <nz-select fxFlex="1 1 auto">
-                  <nz-option [nzValue]="undefined">
-                  </nz-option>
+            <div nz-row [nzGutter]="10" nzAllowClear>
+              <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
+                           nzAllowClear>
                   <nz-option *ngFor="let food of foods" [nzValue]="food"
                              nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
                   </nz-option>
                 </nz-select>
+                <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
+                  <div>
+                    <b>{{selectedFood.itemId | itemName | i18n}}</b>
+                    <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
+                  </div>
+                  <div *ngFor="let bonus of selectedFood.bonuses">
+                    {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                    ({{bonus.max}})
+                  </div>
+                </div>
+                <ng-template #noFood>
+                  <div class="nothing-selected">
+                    {{'SIMULATOR.CONFIGURATION.No_food' | translate}}
+                  </div>
+                </ng-template>
               </div>
-              <div nz-col [nzXs]="12">
-                <nz-select fxFlex="1 1 auto">
-                  <nz-option [nzValue]="undefined">
-                  </nz-option>
+              <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                <nz-select [(ngModel)]="selectedMedicine"
+                           [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate" nzAllowClear>
                   <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
                              nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">
                   </nz-option>
                 </nz-select>
+                <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
+                  <div>
+                    <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
+                    <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedMedicine.hq">
+                  </div>
+                  <div *ngFor="let bonus of selectedMedicine.bonuses">
+                    {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                    ({{bonus.max}})
+                  </div>
+                </div>
+                <ng-template #noMedicine>
+                  <div class="nothing-selected">
+                    {{'SIMULATOR.CONFIGURATION.No_medicine' | translate}}
+                  </div>
+                </ng-template>
+              </div>
+              <div nz-col [nzXs]="24" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                <nz-select [(ngModel)]="selectedFreeCompanyActions" nzMode="multiple"
+                           [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Action' | translate" nzAllowClear>
+                  <nz-option-group [nzLabel]="('SIMULATOR.CONFIGURATION.'+type) | translate"
+                                   *ngFor="let type of ['Control', 'Craftsmanship']">
+                    <nz-option *ngFor="let action of getFreeCompanyActions(type)" [nzValue]="action"
+                               [nzLabel]="action.actionId | freeCompanyActionName | i18n"
+                               [nzDisabled]="isFreeCompanyActionOptionDisabled(type, action.actionId)"></nz-option>
+                  </nz-option-group>
+                </nz-select>
+                <div *ngIf="selectedFreeCompanyActions.length > 0; else noFcBuffs">
+                  <div *ngFor="let action of selectedFreeCompanyActions">
+                    <div>
+                      <b>{{action.actionId | freeCompanyActionName | i18n}}</b>
+                    </div>
+                    <div>
+                      {{('SIMULATOR.CONFIGURATION.STATS.'+action.type) | translate}}: {{action.value}}
+                    </div>
+                  </div>
+                </div>
+                <ng-template #noFcBuffs>
+                  <div class="nothing-selected">
+                    {{'SIMULATOR.CONFIGURATION.No_fc_buffs' | translate}}
+                  </div>
+                </ng-template>
               </div>
             </div>
-            <form>
-              <button nz-button nzType="primary" nzBlock type="submit">
+            <div fxLayout="column" fxLayoutGap="5px">
+              <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats)">
                 {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
               </button>
-              <button nz-button nzBlock>
+              <button nz-button nzBlock (click)="saveConsumables()">
                 {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </nz-collapse-panel>

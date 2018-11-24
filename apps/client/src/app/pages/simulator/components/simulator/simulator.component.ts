@@ -26,6 +26,7 @@ import { FreeCompanyAction } from '../../model/free-company-action';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
+import { BonusType } from '../../model/consumable-bonus';
 
 @Component({
   selector: 'app-simulator',
@@ -78,6 +79,12 @@ export class SimulatorComponent {
   public medicines: Consumable[] = [];
   public freeCompanyActions: FreeCompanyAction[] = [];
 
+  public selectedFood: Consumable;
+  public selectedMedicine: Consumable;
+  public selectedFreeCompanyActions: FreeCompanyAction[] = [];
+
+  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({ control: 0, cp: 0, craftsmanship: 0 });
+
   private consumablesSortFn = (a, b) => {
     const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
     const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
@@ -119,10 +126,7 @@ export class SimulatorComponent {
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
 
-    //TODO Remove
-    this.recipe$.next(gradeII_infusion_of_str_Recipe);
-
-    const job$ = merge(this.recipe$.pipe(map(r => r.job)), this.customJob$);
+    const job$ = merge(this.recipe$.pipe(map(r => r.job || 8)), this.customJob$);
 
     const statsFromRecipe$: Observable<CrafterStats> = combineLatest(this.recipe$, job$, this.authFacade.gearSets$).pipe(
       map(([recipe, job, sets]) => {
@@ -144,8 +148,14 @@ export class SimulatorComponent {
 
     this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
 
-    //TODO Connect with buffs
-    this.stats$ = this.crafterStats$;
+    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$).pipe(
+      map(([stats, bonuses]) => {
+        stats.craftsmanship += bonuses.craftsmanship;
+        stats._control += bonuses.control;
+        stats.cp += bonuses.cp;
+        return stats;
+      })
+    );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$).pipe(
       map(([recipe, actions, stats]) => new Simulation(recipe, actions, stats))
     );
@@ -209,6 +219,71 @@ export class SimulatorComponent {
       specialist: rawForm.specialist
     };
     this.authFacade.saveSet(set);
+  }
+
+  applyConsumables(crafterStats: CrafterStats): void {
+    this.bonuses$.next({
+      craftsmanship: this.getBonusValue('Craftsmanship', crafterStats.craftsmanship),
+      control: this.getBonusValue('Control', crafterStats._control),
+      cp: this.getBonusValue('CP', crafterStats.cp)
+    });
+  }
+
+  saveConsumables(): void {
+    //TODO
+  }
+
+  getBonusValue(bonusType: BonusType, baseValue: number): number {
+    let bonusFromFood = 0;
+    let bonusFromMedicine = 0;
+    let bonusFromFreeCompanyAction = 0;
+
+    if (this.selectedFood !== undefined) {
+      const foodBonus = this.selectedFood.getBonus(bonusType);
+      if (foodBonus !== undefined) {
+        bonusFromFood = Math.ceil(baseValue * foodBonus.value);
+        if (bonusFromFood > foodBonus.max) {
+          bonusFromFood = foodBonus.max;
+        }
+      }
+    }
+    if (this.selectedMedicine !== undefined) {
+      const medicineBonus = this.selectedMedicine.getBonus(bonusType);
+      if (medicineBonus !== undefined) {
+        bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
+        if (bonusFromMedicine > medicineBonus.max) {
+          bonusFromMedicine = medicineBonus.max;
+        }
+      }
+    }
+
+    if (this.selectedFreeCompanyActions !== undefined) {
+      bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType);
+    }
+
+    return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction;
+  }
+
+  getFreeCompanyActionValue(bonusType: BonusType): number {
+    let value = 0;
+    const actions = this.selectedFreeCompanyActions || [];
+    const action = actions.find(a => a.type === bonusType);
+
+    if (action !== undefined) {
+      value = action.value;
+    }
+
+    return value;
+  }
+
+  getFreeCompanyActions(type: string): FreeCompanyAction[] {
+    return this.freeCompanyActions.filter(action => action.type === <BonusType> type);
+  }
+
+  isFreeCompanyActionOptionDisabled(type: string, actionId: number): boolean {
+    const actions = this.selectedFreeCompanyActions || [];
+
+    return actions.find(action => action.type === type && action.actionId !== actionId) !== undefined;
   }
 
   barFormat(current: number, max: number): () => string {
