@@ -1,18 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
 import { Simulation } from '../../simulation/simulation';
 import { gradeII_infusion_of_str_Recipe } from '../../test/mocks';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { CrafterStats } from '../../model/crafter-stats';
+import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
+import { CrafterLevels, CrafterStats } from '../../model/crafter-stats';
 import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { Item } from '../../../../model/garland-tools/item';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GearSet } from '../../model/gear-set';
+import { ConsumablesService } from '../../model/consumables.service';
+import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
+import { Consumable } from '../../model/consumable';
+import { foods } from '../../../../core/data/sources/foods';
+import { medicines } from '../../../../core/data/sources/medicines';
+import { FreeCompanyAction } from '../../model/free-company-action';
+import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-simulator',
@@ -21,16 +34,29 @@ import { SimulationReliabilityReport } from '../../simulation/simulation-reliabi
 })
 export class SimulatorComponent {
 
+  @Input()
+  public custom = false;
+
+  @Input()
+  public set recipe(recipe: Craft) {
+    this.recipe$.next(recipe);
+  }
+
+  @Input()
+  public item: Item;
+
   public snapshotMode = false;
 
   public tooltipsDisabled = false;
 
-  //TODO
   public result$: Observable<SimulationResult>;
 
+  //TODO Use selected recipe inside the store
   private actions$ = new BehaviorSubject<CraftingAction[]>([]);
 
-  private stats$ = new ReplaySubject<CrafterStats>();
+  public crafterStats$: Observable<CrafterStats>;
+
+  public stats$: Observable<CrafterStats>;
 
   private recipe$ = new ReplaySubject<Craft>();
 
@@ -38,26 +64,88 @@ export class SimulatorComponent {
 
   public report$: Observable<SimulationReliabilityReport>;
 
-  constructor(private registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService) {
+  public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
+
+  // Customization forms
+  public statsForm: FormGroup;
+  // Cache field for levels to be passed to the form validation.
+  private availableLevels: CrafterLevels;
+  //
+  public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
+
+  // Consumables
+  public foods: Consumable[] = [];
+  public medicines: Consumable[] = [];
+  public freeCompanyActions: FreeCompanyAction[] = [];
+
+  private consumablesSortFn = (a, b) => {
+    const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
+    const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
+    if (aName > bName) {
+      return 1;
+    } else if (aName < bName) {
+      return -1;
+    } else {
+      // If they're both the same item, HQ first
+      return a.hq ? -1 : 1;
+    }
+  };
+
+  private freeCompanyActionsSortFn = (a, b) => {
+    if (a.actionId > b.actionId) {
+      return 1;
+    } else {
+      return -1;
+    }
+  };
+
+  constructor(private registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService,
+              private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
+              public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
+              private localizedDataService: LocalizedDataService) {
+    this.statsForm = this.fb.group({
+      job: [8, Validators.required],
+      craftsmanship: [0, Validators.required],
+      control: [0, Validators.required],
+      cp: [0, Validators.required],
+      level: [0, Validators.required],
+      specialist: [false]
+    });
+
+    this.foods = consumablesService.fromData(foods)
+      .sort(this.consumablesSortFn);
+    this.medicines = consumablesService.fromData(medicines)
+      .sort(this.consumablesSortFn);
+    this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
+      .sort(this.freeCompanyActionsSortFn);
+
+    //TODO Remove
     this.recipe$.next(gradeII_infusion_of_str_Recipe);
-    const mockStats = new CrafterStats(
-      14,
-      1544,
-      1586,
-      485,
-      true,
-      70,
-      [
-        70,
-        70,
-        70,
-        70,
-        70,
-        70,
-        70,
-        70
-      ]);
-    this.stats$.next(mockStats);
+
+    const job$ = merge(this.recipe$.pipe(map(r => r.job)), this.customJob$);
+
+    const statsFromRecipe$: Observable<CrafterStats> = combineLatest(this.recipe$, job$, this.authFacade.gearSets$).pipe(
+      map(([recipe, job, sets]) => {
+        const set = sets.find(s => s.jobId === job);
+        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, <CrafterLevels>sets.map(s => s.level));
+      }),
+      tap(stats => {
+        this.availableLevels = stats.levels;
+        this.statsForm.reset({
+          job: stats.jobId,
+          craftsmanship: stats.craftsmanship,
+          control: stats._control,
+          cp: stats.cp,
+          level: stats.level,
+          specialist: stats.specialist
+        });
+      })
+    );
+
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
+
+    //TODO Connect with buffs
+    this.stats$ = this.crafterStats$;
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$).pipe(
       map(([recipe, actions, stats]) => new Simulation(recipe, actions, stats))
     );
@@ -94,6 +182,33 @@ export class SimulatorComponent {
     const actions = this.actions$.value;
     actions.splice(index, 1);
     this.actions$.next([...actions]);
+  }
+
+  applyStats(): void {
+    const rawForm = this.statsForm.getRawValue();
+    const stats = new CrafterStats(
+      rawForm.job,
+      rawForm.craftsmanship,
+      rawForm.control,
+      rawForm.cp,
+      rawForm.specialist,
+      rawForm.level,
+      this.availableLevels
+    );
+    this.customStats$.next(stats);
+  }
+
+  saveSet(): void {
+    const rawForm = this.statsForm.getRawValue();
+    const set: GearSet = {
+      jobId: rawForm.job,
+      level: rawForm.level,
+      control: rawForm.control,
+      craftsmanship: rawForm.craftsmanship,
+      cp: rawForm.cp,
+      specialist: rawForm.specialist
+    };
+    this.authFacade.saveSet(set);
   }
 
   barFormat(current: number, max: number): () => string {

@@ -15,26 +15,123 @@
       <button nz-button>TODO change rotation</button>
     </div>
     <nz-collapse>
-      <nz-collapse-panel [nzHeader]="'TODO Simulator Configuration'">
-
+      <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
+        <div nz-row [nzGutter]="16">
+          <div nz-col [nzXs]="24" [nzMd]="custom?12:8">
+            <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
+            <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
+                       (ngModelChange)="customJob$.next($event)" class="job-selector">
+              <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzValue]="job"
+                         [nzLabel]="job | jobAbbr | i18n" nzCustomContent>
+                <img src="https://garlandtools.org/db/images/{{(job | jobAbbr)?.en}}.png" alt="" class="job-icon">
+                {{job | jobAbbr | i18n}}
+              </nz-option>
+            </nz-select>
+            <nz-alert nzType="warning" nzShowIcon *ngIf="(stats$ | async)?.craftsmanship === 0"
+                      [nzMessage]="'SIMULATOR.CONFIGURATION.Job_not_configured' | translate">
+            </nz-alert>
+            <form [formGroup]="statsForm" (ngSubmit)="applyStats()">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
+                <nz-form-item>
+                  <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
+                    translate}}
+                  </nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" id="craftsmanship" formControlName="craftsmanship"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}
+                  </nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" id="control" formControlName="control"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label nzRequired nzFor="cp">{{'SIMULATOR.Cp_amount' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" id="cp" formControlName="cp"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
+                <nz-form-item>
+                  <nz-form-label nzRequired nzFor="level">{{'SIMULATOR.Level' | translate}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-input-number [nzMin]="0" id="level" formControlName="level"></nz-input-number>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-control>
+                    <label nz-checkbox id="specialist" formControlName="specialist">{{'SIMULATOR.CONFIGURATION.Specialist'
+                      | translate}}</label>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <button nz-button nzType="primary" nzBlock type="submit">
+                  {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+                </button>
+                <button nz-button nzBlock (click)="saveSet()" [disabled]="!statsForm.dirty">
+                  {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
+                </button>
+              </div>
+            </form>
+          </div>
+          <div nz-col [nzXs]="24" [nzMd]="8" *ngIf="!custom">
+            {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}<br>
+            TODO Ingredients
+            <form>
+              <button nz-button nzType="primary" nzBlock type="submit">
+                {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
+              </button>
+            </form>
+          </div>
+          <div nz-col [nzXs]="24" [nzMd]="custom?12:8">
+            <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
+            TODO
+            <div nz-row>
+              <div nz-col [nzXs]="12">
+                <nz-select fxFlex="1 1 auto">
+                  <nz-option [nzValue]="undefined">
+                  </nz-option>
+                  <nz-option *ngFor="let food of foods" [nzValue]="food"
+                             nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
+                  </nz-option>
+                </nz-select>
+              </div>
+              <div nz-col [nzXs]="12">
+                <nz-select fxFlex="1 1 auto">
+                  <nz-option [nzValue]="undefined">
+                  </nz-option>
+                  <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
+                             nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">
+                  </nz-option>
+                </nz-select>
+              </div>
+            </div>
+            <form>
+              <button nz-button nzType="primary" nzBlock type="submit">
+                {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+              </button>
+              <button nz-button nzBlock>
+                {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
+              </button>
+            </form>
+          </div>
+        </div>
       </nz-collapse-panel>
     </nz-collapse>
 
     <div fxLayout="column" fxLayoutGap="10px" *ngIf="result$ | async as resultData">
       <nz-card>
-        <!--TODO item avatar, item name-->
-        <nz-card-meta [nzAvatar]="null" [nzDescription]="description">
-          <ng-template #description>
-
-          </ng-template>
-        </nz-card-meta>
         <div class="card-header" fxLayout="row" fxLayoutAlign="space-between center">
-          <div fxLayout="row" fxLayoutGap="10px">
+          <div fxLayout="row" fxLayoutGap="10px" *ngIf="!custom">
             <div class="avatar">
-              <app-item-icon [icon]="10" [width]="42"></app-item-icon>
+              <app-item-icon [icon]="item.icon" [width]="42"></app-item-icon>
             </div>
             <div fxLayout="column">
-              <div>TODO item name</div>
+              <div>{{item.id | itemName | i18n}}</div>
               <div>{{resultData.simulation.recipe.lvl}} {{getStars(resultData.simulation.recipe.stars)}}</div>
             </div>
           </div>
