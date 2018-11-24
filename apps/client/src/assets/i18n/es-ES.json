@@ -559,13 +559,13 @@
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
-      "Second_line": "",
-      "Third_line": ""
+      "Second_line": "Seleccione un trabajo e ingrese un rango de niveles. Obtendrá un listado de las misiones leve correspondiente que puede seleccionar y añadir a una lista. Las recetas se añadirán automáticamente a la lista seleccionada.",
+      "Third_line": "También puede buscar por nombre, en caso de que sepa lo que está buscando."
     }
   },
   "NOTIFICATIONS": {
     "Title": "Notificaciones",
-    "List_comment_added": "",
+    "List_comment_added": "Comentario publicado en la lista {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "",
     "Mark_all_as_read": "Marcar todo como leído"
   },
