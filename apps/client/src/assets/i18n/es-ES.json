@@ -595,9 +595,9 @@
       "List_added_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido agregada al equipo.",
       "List_removed_notification": "La lista **[{{listName}}]({{listUrl}})** ha sido quitada del equipo.",
       "Member_joined": "¡**[{{memberName}}]({{memberProfileUrl}})** se ha unido al equipo!",
-      "Member_removed": "",
-      "Name_changed": "",
-      "User_assigned": ""
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** ha sido expulsado del equipo.",
+      "Name_changed": "El equipo **{{oldName}}** ha sido renombrado **{{newName}}**.",
+      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
     }
   },
   "MARKETBOARD": {
@@ -606,10 +606,10 @@
     "HQ": "HQ",
     "Total_price": "Precio total",
     "Unit_price": "Precio unitario",
-    "History": "",
-    "Purchase_date": ""
+    "History": "Historial",
+    "Purchase_date": "Fecha"
   },
   "COMMENTS": {
-    "Title": ""
+    "Title": "Comentarios"
   }
 }
