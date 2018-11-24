@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "ジョブ",
+      "Job_not_configured": "",
       "Custom_set": "カスタムセットを可能にします",
       "Select_job": "ジョブを選び出します",
       "Craftsmanship": "作業精度",
@@ -535,9 +536,12 @@
       "Food": "飯を選び出します",
       "Medicine": "薬を選び出します",
       "Action": "",
-      "Save_set": "このジョブからギアセットを保存",
+      "Save_on_profile": "",
       "Reset_set": "ステータスをリセット",
       "Save_consumables": "",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
