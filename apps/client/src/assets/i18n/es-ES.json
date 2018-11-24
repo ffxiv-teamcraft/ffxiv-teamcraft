@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "Profesión",
+      "Job_not_configured": "",
       "Custom_set": "Activar atributos personalizados",
       "Select_job": "Seleccione una profesión",
       "Craftsmanship": "Artesanía",
@@ -535,9 +536,12 @@
       "Food": "Escoja una comida",
       "Medicine": "Escoja una medicina",
       "Action": "Escoja acciones de compañia",
-      "Save_set": "Guardar estos atributos para esta profesión",
+      "Save_on_profile": "",
       "Reset_set": "Reiniciar estos atributos",
       "Save_consumables": "Usar estos consumibles por defecto",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Artesanía",
