@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "",
+      "Job_not_configured": "",
       "Custom_set": "",
       "Select_job": "",
       "Craftsmanship": "",
@@ -535,9 +536,12 @@
       "Food": "",
       "Medicine": "",
       "Action": "",
-      "Save_set": "",
+      "Save_on_profile": "",
       "Reset_set": "",
       "Save_consumables": "",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "",
         "Craftsmanship": "",
