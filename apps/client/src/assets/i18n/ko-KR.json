@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "직업",
+      "Job_not_configured": "",
       "Custom_set": "사용자지정 능력치 활성화",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
@@ -535,9 +536,12 @@
       "Food": "음식 선택",
       "Medicine": "약차 선택",
       "Action": "자유부대 버프선택",
-      "Save_set": "현재 직업에 능력치를 저장",
+      "Save_on_profile": "",
       "Reset_set": "능력치 초기화",
       "Save_consumables": "현재 소모품을 기본값으로 세팅",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "작업 숙련도",
