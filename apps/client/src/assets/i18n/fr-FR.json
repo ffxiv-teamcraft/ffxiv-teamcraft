@@ -522,6 +522,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
+      "Job_not_configured": "",
       "Custom_set": "Activer les stats personnalisées",
       "Select_job": "Selectionner un job",
       "Craftsmanship": "Habileté",
@@ -535,9 +536,12 @@
       "Food": "Choisir un plat",
       "Medicine": "Choisir un médicament",
       "Action": "Choisir les bienfaits de compagnie libre",
-      "Save_set": "Sauvegarder les stats pour cette classe",
+      "Save_on_profile": "",
       "Reset_set": "Remettre les stats à 0",
       "Save_consumables": "Sauvegarder en tant que consommables par défaut",
+      "No_food": "",
+      "No_medicine": "",
+      "No_fc_buffs": "",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",
