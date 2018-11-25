@@ -1,11 +1,12 @@
-<div fxLayout="row" fxLayoutGap="10px">
+<div fxLayout="row" fxLayoutGap="10px" *ngIf="rotation$ | async as rotation">
   <div class="buttons" fxLayout="column" fxLayoutGap="5px">
     <!--TODO-->
     <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
             [nzTitle]="'SIMULATOR.Save_as_new' | translate">
       <i nz-icon type="copy"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Persist' | translate">
+    <button nz-button *ngIf="(permissionLevel$ | async) >= 30" nzType="primary" nzShape="circle" nz-tooltip
+            [nzTitle]="'SIMULATOR.Persist' | translate" (click)="saveRotation(rotation)">
       <i nz-icon type="save"></i>
     </button>
     <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
@@ -251,7 +252,9 @@
                                [nzMin]="0"
                                [nzStep]="1"
                                (ngModelChange)="snapshotStep$.next($event)"></nz-input-number>
-              <button nz-button (click)="snapshotMode = !snapshotMode" [nzType]="snapshotMode?'primary':'default'"
+              <button nz-button
+                      (click)="snapshotMode = !snapshotMode; snapshotMode === false?snapshotStep$.next(9999):null"
+                      [nzType]="snapshotMode?'primary':'default'"
                       nz-tooltip [nzTitle]="'SIMULATOR.Toggle_snapshot_mode' | translate">
                 <i nz-icon [iconfont]="'icon-debug'"></i>
               </button>

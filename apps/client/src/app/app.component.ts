@@ -22,6 +22,7 @@ import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
+import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 
 declare const ga: Function;
 
@@ -65,7 +66,7 @@ export class AppComponent implements OnInit {
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService) {
+              private iconService: NzIconService, private rotationsFacade: RotationsFacade) {
 
     this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_8itybffikxn.js'});
 
@@ -139,6 +140,7 @@ export class AppComponent implements OnInit {
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
+    this.rotationsFacade.loadMyRotations();
   }
 
   deleteNotification(notification: AbstractNotification): void {

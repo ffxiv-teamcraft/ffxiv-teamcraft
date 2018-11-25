@@ -29,6 +29,7 @@ import { StepByStepReportComponent } from './components/step-by-step-report/step
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { RotationsModule } from '../../modules/rotations/rotations.module';
 
 const routes: Routes = [
   {
@@ -80,6 +81,7 @@ const routes: Routes = [
     ItemIconModule,
     NgxDnDModule,
     FullpageMessageModule,
+    RotationsModule,
 
     NgZorroAntdModule,
 

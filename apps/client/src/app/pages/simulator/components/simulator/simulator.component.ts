@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
 import { Simulation } from '../../simulation/simulation';
-import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { CrafterLevels, CrafterStats } from '../../model/crafter-stats';
 import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -27,13 +27,16 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { BonusType } from '../../model/consumable-bonus';
 import { DefaultConsumables } from '../../../../model/user/default-consumables';
+import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-simulator',
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.less']
 })
-export class SimulatorComponent {
+export class SimulatorComponent implements OnDestroy {
 
   @Input()
   public custom = false;
@@ -41,10 +44,15 @@ export class SimulatorComponent {
   @Input()
   public set recipe(recipe: Craft) {
     this.recipe$.next(recipe);
+    if (recipe.id) {
+      this._recipeId = recipe.id;
+    }
   }
 
   @Input()
   public item: Item;
+
+  private _recipeId: string;
 
   public snapshotMode = false;
 
@@ -56,7 +64,6 @@ export class SimulatorComponent {
 
   public result$: Observable<SimulationResult>;
 
-  //TODO Use selected recipe inside the store
   private actions$ = new BehaviorSubject<CraftingAction[]>([]);
 
   public crafterStats$: Observable<CrafterStats>;
@@ -70,6 +77,8 @@ export class SimulatorComponent {
   public report$: Observable<SimulationReliabilityReport>;
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
+
+  public rotation$ = this.rotationsFacade.selectedRotation$;
 
   // Customization forms
   public statsForm: FormGroup;
@@ -88,6 +97,13 @@ export class SimulatorComponent {
   public selectedFreeCompanyActions: FreeCompanyAction[] = [];
 
   public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({ control: 0, cp: 0, craftsmanship: 0 });
+
+  private onDestroy$ = new Subject<void>();
+  public permissionLevel$ = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
+    map(([rotation, userId]) => {
+      return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
+    })
+  );
 
   private consumablesSortFn = (a, b) => {
     const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
@@ -113,7 +129,16 @@ export class SimulatorComponent {
   constructor(private registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
-              private localizedDataService: LocalizedDataService) {
+              private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
+              private route: ActivatedRoute) {
+    this.rotationsFacade.rotationCreated$.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(createdKey => {
+      this.router.navigate([createdKey], {
+        relativeTo: this.route
+      });
+    });
+
     this.statsForm = this.fb.group({
       job: [8, Validators.required],
       craftsmanship: [0, Validators.required],
@@ -150,7 +175,7 @@ export class SimulatorComponent {
       })
     );
 
-    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(tap(console.log));
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$).pipe(
       map(([stats, bonuses]) => {
@@ -191,10 +216,51 @@ export class SimulatorComponent {
         }
       })
     );
+
+    combineLatest(this.rotation$, this.crafterStats$).pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([rotation, stats]) => {
+      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+      this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+      this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+      this.selectedFreeCompanyActions = rotation.freeCompanyActions;
+      this.applyConsumables(stats);
+    });
   }
 
   disableEvent(event: any): void {
     event.el.parentNode.removeChild(event.el);
+  }
+
+  saveRotation(rotation: CraftingRotation): void {
+    combineLatest(this.stats$, this.actions$).pipe(
+      first()
+    ).subscribe(([stats, actions]) => {
+      if (this.custom) {
+        // TODO custom-specific behavior
+      } else {
+        rotation.defaultItemId = this.item.id;
+        rotation.defaultRecipeId = this._recipeId;
+      }
+      rotation.stats = {
+        jobId: stats.jobId,
+        specialist: stats.specialist,
+        craftsmanship: stats.craftsmanship,
+        cp: stats.cp,
+        control: stats._control,
+        level: stats.level
+      };
+      rotation.rotation = this.registry.serializeRotation(actions);
+      rotation.custom = this.custom;
+      if (this.selectedFood) {
+        rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
+      }
+      if (this.selectedMedicine) {
+        rotation.medicine = { id: this.selectedMedicine.itemId, hq: this.selectedMedicine.hq };
+      }
+      rotation.freeCompanyActions = this.selectedFreeCompanyActions;
+      this.rotationsFacade.updateRotation(rotation);
+    });
   }
 
   addAction(action: CraftingAction, index?: number) {
@@ -366,6 +432,10 @@ export class SimulatorComponent {
 
   getOtherActions(): CraftingAction[] {
     return this.registry.getActionsByType(ActionType.OTHER);
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(null);
   }
 
 }

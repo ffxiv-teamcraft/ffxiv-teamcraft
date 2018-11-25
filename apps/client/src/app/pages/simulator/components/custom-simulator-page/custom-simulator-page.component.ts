@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { first, map, startWith } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 
 @Component({
   selector: 'app-custom-simulator-page',
@@ -15,7 +17,20 @@ export class CustomSimulatorPageComponent {
 
   public recipe$: Observable<Partial<Craft>>;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute,
+              private rotationsFacade: RotationsFacade) {
+    this.route.paramMap.pipe(
+      map(params => params.get('rotationId')),
+      first()
+    ).subscribe(id => {
+      if (id === null) {
+        this.rotationsFacade.createRotation();
+        this.rotationsFacade.selectRotation(undefined);
+      } else {
+        this.rotationsFacade.getRotation(id);
+        this.rotationsFacade.selectRotation(id);
+      }
+    });
     this.recipeForm = this.fb.group({
       rlvl: [380, Validators.required],
       progress: [3728, Validators.required],

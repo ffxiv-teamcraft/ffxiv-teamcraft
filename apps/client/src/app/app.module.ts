@@ -43,6 +43,7 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { SimulatorModule } from './pages/simulator/simulator.module';
 import { TranslationsLoaderFactory } from './translations-loader';
+import { RotationsModule } from './modules/rotations/rotations.module';
 
 registerLocaleData(en);
 
@@ -106,6 +107,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     SettingsModule,
     UserAvatarModule,
     SimulatorModule,
+    RotationsModule,
 
     HttpClientModule,
 
