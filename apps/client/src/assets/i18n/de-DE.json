@@ -104,6 +104,7 @@
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Bist du sicher, dass Du diese Gruppe löschen möchtest?",
+    "Confirm_group_delete_with_alarms": "",
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert"
