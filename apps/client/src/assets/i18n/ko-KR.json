@@ -486,6 +486,7 @@
     "custom_rotation": "사용자 지정 로테이션",
     "Reset": "로테이션 초기화",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
+    "Export_crafting_optimizer": "",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
     "Generate_ingame_macro": "인게임 매크로 생성",
