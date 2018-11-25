@@ -486,6 +486,7 @@
     "custom_rotation": "rotación personalizada",
     "Reset": "Reiniciar rotación",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
+    "Export_crafting_optimizer": "",
     "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
     "Generated_macro": "Macro para el juego",
     "Generate_ingame_macro": "Generar macro para el juego",
