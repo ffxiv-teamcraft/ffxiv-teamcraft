@@ -181,7 +181,17 @@ export class AlarmsFacade {
   public getNextSpawn(alarm: Alarm, time: Date): number {
     return alarm.spawns.sort((a, b) => {
       const timeBeforeA = this.getMinutesBefore(time, a);
+      const timeBeforeADespawns = this.getMinutesBefore(time, (a + alarm.duration) % 24);
       const timeBeforeB = this.getMinutesBefore(time, b);
+      const timeBeforeBDespawns = this.getMinutesBefore(time, (b + alarm.duration) % 24);
+      // If time before next spawn is greater than time before next despawn, this node is spawned !
+      if(timeBeforeADespawns < timeBeforeA){
+        return -1;
+      }
+      if(timeBeforeBDespawns < timeBeforeB){
+        return 1;
+      }
+      // Else just compare remaining time.
       return timeBeforeA < timeBeforeB ? -1 : 1;
     })[0];
   }
