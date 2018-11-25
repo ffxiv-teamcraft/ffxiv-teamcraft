@@ -9,7 +9,7 @@
     </div>
     <div class="teams" *ngIf="myTeams$ | async as teams" fxLayout="column" fxLayoutGap="10px">
       <nz-collapse *ngFor="let team of teams; trackBy: trackByTeam">
-        <nz-collapse-panel [nzHeader]="header">
+        <nz-collapse-panel [nzHeader]="header" [nzActive]="team.$key === params.state">
           <ng-template #header>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" class="team-header">
               <div>{{team.name}}</div>
@@ -44,7 +44,7 @@
                 <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
               </nz-select>
             </div>
-            <nz-alert nzType="error" *ngIf="errorCode !== undefined"
+            <nz-alert nzType="error" *ngIf="errorCode$.value as errorCode"
                       nzMessage="{{'TEAMS.Webhook_error' | translate}} {{errorCode}}" nzShowIcon></nz-alert>
             <div fxLayout="row" fxLayoutGap="5px">
               <nz-list *ngIf="getInvites(team) | async as invites" [nzRenderItem]="inviteTemplate"

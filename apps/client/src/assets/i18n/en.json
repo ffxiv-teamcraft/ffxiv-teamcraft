@@ -93,8 +93,6 @@
     "Warning": "Warning",
     "Success": "Success",
     "Copy_to_clipboard": "Copy to clipboard",
-    "Enabled": "Enabled",
-    "Disabled": "Disabled",
     "Language": "Language"
   },
   "ALARMS": {
@@ -582,11 +580,10 @@
     "Title": "Teams",
     "Leader": "Leader",
     "Member": "Member",
-    "Enable_discord_updates": "Enable discord updates",
-    "Disable_discord_updates": "Disable discord updates",
-    "Webhook_error": "There was an error while creating the discord hook:",
+    "Enable_discord_updates": "Enable Discord updates",
+    "Disable_discord_updates": "Disable Discord updates",
+    "Webhook_error": "There was an error while creating the Discord webhook:",
     "Create_team": "Create a team",
-    "Discord_updates": "Discord updates",
     "Create_invite_one_day": "Create a new invite (expires in 1 day)",
     "Create_invite_infinite": "Create a new invite (permanent)",
     "No_teams": "No Teams",
