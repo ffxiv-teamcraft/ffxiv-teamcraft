@@ -12,7 +12,7 @@ import { catchError, filter, map, mergeMap, tap } from 'rxjs/operators';
 @Component({
   selector: 'app-wiki',
   templateUrl: './wiki.component.html',
-  styleUrls: ['./wiki.component.scss'],
+  styleUrls: ['./wiki.component.less'],
   encapsulation: ViewEncapsulation.None
 })
 export class WikiComponent implements OnInit {
