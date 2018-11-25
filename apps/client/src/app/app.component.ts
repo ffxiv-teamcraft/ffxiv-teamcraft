@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService) {
 
-    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_pyld9qhgggi.js'});
+    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_8itybffikxn.js'});
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
