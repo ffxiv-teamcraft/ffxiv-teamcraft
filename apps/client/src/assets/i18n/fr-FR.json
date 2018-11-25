@@ -104,6 +104,7 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Confirm_group_delete_with_alarms": "",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers"
