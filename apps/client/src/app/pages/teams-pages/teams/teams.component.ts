@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Team } from '../../../model/team/team';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -26,11 +26,13 @@ export class TeamsComponent implements OnInit {
 
   userId$: Observable<string> = this.authFacade.userId$;
 
+  errorCode$: BehaviorSubject<string> = new BehaviorSubject(undefined);
+
   private teamInvitesCache: { [indexx: string]: Observable<TeamInvite[]> } = {};
 
   private redirectUri: string;
 
-  public errorCode: string;
+  public params: any;
 
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
@@ -40,15 +42,15 @@ export class TeamsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.params = this.route.snapshot.queryParams;
     this.redirectUri = window.location.href.replace(/\?.*/, '');
 
-    const params = this.route.snapshot.queryParams;
-    if (params.code && params.state) {
-      this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${params.code}&redirect_uri=${this.redirectUri}`)
+    if (this.params.code && this.params.state) {
+      this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${this.params.code}&redirect_uri=${this.redirectUri}`)
         .pipe(
           switchMap(response => {
             return this.myTeams$.pipe(
-              map(teams => teams.find(team => team.$key === params.state)),
+              map(teams => teams.find(team => team.$key === this.params.state)),
               first(team => team !== undefined),
               map((team: Team) => {
                 team.webhook = response['webhook']['url'];
@@ -58,11 +60,8 @@ export class TeamsComponent implements OnInit {
               })
             )
           })
-      ).subscribe(() => {
-        delete this.errorCode;
-      }, (error => {
-        this.errorCode = error.error;
-      }));
+        ).subscribe(() => {}, (error => this.errorCode$.next(error.error))
+      );
     }
   }
 
