@@ -45,7 +45,7 @@ export class TeamsEffects {
   @Effect()
   updateTeamInDatabase$ = this.actions$.pipe(
     ofType<UpdateTeam>(TeamsActionTypes.UpdateTeam),
-    switchMap(action => this.teamService.update(action.payload.$key, action.payload)),
+    switchMap(action => this.teamService.set(action.payload.$key, action.payload)),
     switchMap(() => EMPTY)
   );
 

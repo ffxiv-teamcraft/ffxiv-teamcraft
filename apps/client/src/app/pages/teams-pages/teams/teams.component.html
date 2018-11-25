@@ -27,12 +27,12 @@
           </ng-template>
           <div *ngIf="(userId$ | async) === team.leader" fxLayout="column" fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutGap="10px" class="team-settings">
-              <span>{{'TEAMS.Discord_updates' | translate }}:</span>
-              <button *ngIf="team.webhook" nz-button nzType="primary" (click)="clearHook(team)">
-                {{'COMMON.Enabled' | translate}}
+              <button *ngIf="team.webhook" nz-button nzType="danger"
+                      nz-popconfirm (nzOnConfirm)="clearHook(team)">
+                {{'TEAMS.Disable_discord_updates' | translate}}
               </button>
-              <a *ngIf="team.webhook === undefined" href="{{oauthUrl(team)}}" nz-button nzType="danger">
-                {{'COMMON.Disabled' | translate}}
+              <a *ngIf="team.webhook === undefined" href="{{oauthUrl(team)}}" nz-button nzType="primary">
+                {{'TEAMS.Enable_discord_updates' | translate }}
               </a>
               <span>{{'COMMON.Language' | translate }}:</span>
               <nz-select [(ngModel)]="team.language" (ngModelChange)="updateTeam(team)">
@@ -43,11 +43,12 @@
                 <nz-option [nzLabel]="'pt'" [nzValue]="'pt'"></nz-option>
                 <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
               </nz-select>
-              <span>{{team | json}}</span>
             </div>
+            <nz-alert nzType="error" *ngIf="errorCode !== undefined"
+                      nzMessage="{{'TEAMS.Webhook_error' | translate}} {{errorCode}}" nzShowIcon></nz-alert>
             <div fxLayout="row" fxLayoutGap="5px">
               <nz-list *ngIf="getInvites(team) | async as invites" [nzRenderItem]="inviteTemplate"
-                     [nzDataSource]="invites" nzSize="small" [nzHeader]="'TEAMS.Invites' | translate">
+                       [nzDataSource]="invites" nzSize="small" [nzHeader]="'TEAMS.Invites' | translate">
                 <ng-template #inviteTemplate let-invite>
                   <nz-list-item [nzContent]="inviteContent">
                     <ng-template #inviteContent>
