@@ -103,6 +103,16 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
     }
 
+    case AuthActionTypes.SaveDefaultConsumables: {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          defaultConsumables: action.consumables
+        }
+      };
+    }
+
     case AuthActionTypes.VerifyCharacter: {
       const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === action.lodestoneId);
       lodestoneId.verified = true;

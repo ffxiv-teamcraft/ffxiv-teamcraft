@@ -3,6 +3,7 @@ import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthState } from './auth.reducer';
 import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { GearSet } from '../pages/simulator/model/gear-set';
+import { DefaultConsumables } from '../model/user/default-consumables';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -36,6 +37,7 @@ export enum AuthActionTypes {
 
   ToggleMasterbooks = '[Auth] Toggle Masterbooks',
   SaveSet = '[Auth] Save set',
+  SaveDefaultConsumables = '[Auth] Save default consumables',
 
   AnonymousWarningShown = '[Auth] Anonyous warning shown',
 
@@ -206,6 +208,13 @@ export class SaveSet implements Action {
   }
 }
 
+export class SaveDefaultConsumables implements Action {
+  readonly type = AuthActionTypes.SaveDefaultConsumables;
+
+  constructor(public readonly consumables: DefaultConsumables) {
+  }
+}
+
 // Just an action to be sent once user is persisted properly
 export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
@@ -241,4 +250,5 @@ export type AuthActions = GetUser
   | SaveSet
   | VerifyCharacter
   | AddCustomCharacter
+  | SaveDefaultConsumables
   | UpdateUser;

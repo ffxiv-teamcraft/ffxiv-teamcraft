@@ -1,8 +1,7 @@
 import { DataModel } from '../../core/database/storage/data-model';
 import { Craft } from '../garland-tools/craft';
-import { SavedConsumables } from './saved-consumables';
 import { FreeCompanyAction } from '../../pages/simulator/model/free-company-action';
-import { DeserializeAs } from '@kaiu/serializer';
+import { ConsumableRow } from '../user/consumable-row';
 
 export class CraftingRotation extends DataModel {
 
@@ -22,8 +21,9 @@ export class CraftingRotation extends DataModel {
 
   public folder?: string;
 
-  @DeserializeAs(SavedConsumables)
-  public consumables: SavedConsumables = new SavedConsumables();
+  public food: ConsumableRow;
+
+  public medicine: ConsumableRow;
 
   public freeCompanyActions: FreeCompanyAction[];
 

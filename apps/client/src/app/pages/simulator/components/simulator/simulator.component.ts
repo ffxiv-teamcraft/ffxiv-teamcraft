@@ -26,6 +26,7 @@ import { freeCompanyActions } from '../../../../core/data/sources/free-company-a
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { BonusType } from '../../model/consumable-bonus';
+import { DefaultConsumables } from '../../../../model/user/default-consumables';
 
 @Component({
   selector: 'app-simulator',
@@ -149,14 +150,18 @@ export class SimulatorComponent {
       })
     );
 
-    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(tap(console.log));
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$).pipe(
       map(([stats, bonuses]) => {
-        stats.craftsmanship += bonuses.craftsmanship;
-        stats._control += bonuses.control;
-        stats.cp += bonuses.cp;
-        return stats;
+        return new CrafterStats(
+          stats.jobId,
+          stats.craftsmanship + bonuses.craftsmanship,
+          stats._control + bonuses.control,
+          stats.cp + bonuses.cp,
+          stats.specialist,
+          stats.level,
+          stats.levels);
       })
     );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$).pipe(
@@ -242,6 +247,21 @@ export class SimulatorComponent {
     this.authFacade.saveSet(set);
   }
 
+  saveDefaultConsumables(): void {
+    const consumables: DefaultConsumables = {
+      food: {
+        id: (this.selectedFood || <any>{}).itemId,
+        hq: (this.selectedFood || <any>{}).hq
+      },
+      medicine: {
+        id: (this.selectedMedicine || <any>{}).itemId,
+        hq: (this.selectedMedicine || <any>{}).hq
+      },
+      fcBuffs: <[number, number]>(this.selectedFreeCompanyActions || []).map(action => action.actionId)
+    };
+    this.authFacade.saveDefaultConsumables(consumables);
+  }
+
   applyConsumables(crafterStats: CrafterStats): void {
     this.bonuses$.next({
       craftsmanship: this.getBonusValue('Craftsmanship', crafterStats.craftsmanship),
@@ -250,16 +270,12 @@ export class SimulatorComponent {
     });
   }
 
-  saveConsumables(): void {
-    //TODO
-  }
-
   getBonusValue(bonusType: BonusType, baseValue: number): number {
     let bonusFromFood = 0;
     let bonusFromMedicine = 0;
     let bonusFromFreeCompanyAction = 0;
 
-    if (this.selectedFood !== undefined) {
+    if (this.selectedFood !== undefined && this.selectedFood !== null) {
       const foodBonus = this.selectedFood.getBonus(bonusType);
       if (foodBonus !== undefined) {
         bonusFromFood = Math.ceil(baseValue * foodBonus.value);
@@ -268,7 +284,7 @@ export class SimulatorComponent {
         }
       }
     }
-    if (this.selectedMedicine !== undefined) {
+    if (this.selectedMedicine !== undefined && this.selectedMedicine !== null) {
       const medicineBonus = this.selectedMedicine.getBonus(bonusType);
       if (medicineBonus !== undefined) {
         bonusFromMedicine = Math.ceil(baseValue * medicineBonus.value);
@@ -278,7 +294,7 @@ export class SimulatorComponent {
       }
     }
 
-    if (this.selectedFreeCompanyActions !== undefined) {
+    if (this.selectedFreeCompanyActions !== undefined && this.selectedFreeCompanyActions !== null) {
       bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType);
     }
 

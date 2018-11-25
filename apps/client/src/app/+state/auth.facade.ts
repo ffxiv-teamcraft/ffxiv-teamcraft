@@ -8,7 +8,7 @@ import {
   GetUser,
   LinkingCharacter,
   Logout,
-  RemoveCharacter,
+  RemoveCharacter, SaveDefaultConsumables,
   SaveSet,
   SetCurrentFcId,
   SetDefaultCharacter,
@@ -29,6 +29,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, of } from 'rxjs';
 import { GearSet } from '../pages/simulator/model/gear-set';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
+import { DefaultConsumables } from '../model/user/default-consumables';
 
 @Injectable({
   providedIn: 'root'
@@ -139,6 +140,10 @@ export class AuthFacade {
 
   public saveSet(set: GearSet): void {
     this.store.dispatch(new SaveSet(set));
+  }
+
+  public saveDefaultConsumables(consumables: DefaultConsumables): void {
+    this.store.dispatch(new SaveDefaultConsumables(consumables));
   }
 
   public loadUser(): void {
