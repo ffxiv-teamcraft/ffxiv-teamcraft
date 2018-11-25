@@ -57,6 +57,7 @@
               </button>
               <div class="spacer"></div>
               <nz-switch [(ngModel)]="group.group.enabled"
+                         (click)="$event.stopPropagation();"
                          (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
             </div>
           </ng-template>
