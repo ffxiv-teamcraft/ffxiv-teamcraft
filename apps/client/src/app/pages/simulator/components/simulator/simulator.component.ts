@@ -9,7 +9,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { map, tap } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -47,7 +47,11 @@ export class SimulatorComponent {
 
   public snapshotMode = false;
 
+  public snapshotStep$: BehaviorSubject<number> = new BehaviorSubject<number>(Infinity);
+
   public tooltipsDisabled = false;
+
+  public actionFailed = false;
 
   public result$: Observable<SimulationResult>;
 
@@ -156,9 +160,20 @@ export class SimulatorComponent {
       })
     );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$).pipe(
-      map(([recipe, actions, stats]) => new Simulation(recipe, actions, stats))
+      map(([recipe, actions, stats]) => new Simulation(recipe, actions, stats)),
+      shareReplay(1)
     );
-    this.result$ = this.simulation$.pipe(map(sim => sim.run(true)));
+    this.result$ = combineLatest(this.snapshotStep$, this.simulation$).pipe(
+      map(([snapshotStep, sim]) => {
+        sim.reset();
+        if (this.snapshotMode) {
+          return sim.run(true, snapshotStep);
+        } else {
+          return sim.run(true);
+        }
+      }),
+      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined)
+    );
     this.report$ = combineLatest(this.simulation$, this.result$).pipe(
       map(([simulation, result]) => {
         if (!result.success) {
