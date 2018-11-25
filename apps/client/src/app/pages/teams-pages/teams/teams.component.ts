@@ -30,6 +30,8 @@ export class TeamsComponent implements OnInit {
 
   private redirectUri: string;
 
+  public errorCode: string;
+
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
               private message: NzMessageService, private route: ActivatedRoute, private router: Router,
@@ -42,7 +44,6 @@ export class TeamsComponent implements OnInit {
 
     const params = this.route.snapshot.queryParams;
     if (params.code && params.state) {
-      // TODO: Show progress during the request
       this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${params.code}&redirect_uri=${this.redirectUri}`)
         .pipe(
           switchMap(response => {
@@ -57,8 +58,11 @@ export class TeamsComponent implements OnInit {
               })
             )
           })
-      ).subscribe(() => {}, (error => console.log(error)));
-      // TODO: Alert the user if there is an error
+      ).subscribe(() => {
+        delete this.errorCode;
+      }, (error => {
+        this.errorCode = error.error;
+      }));
     }
   }
 
@@ -99,7 +103,6 @@ export class TeamsComponent implements OnInit {
   }
 
   clearHook(team: Team): void {
-    // TODO: Make this persist
     delete team.webhook;
     this.updateTeam(team);
   }
