@@ -9,7 +9,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { distinctUntilChanged, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -30,6 +30,9 @@ import { DefaultConsumables } from '../../../../model/user/default-consumables';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd';
+import { TextQuestionPopupComponent } from '../../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-simulator',
@@ -64,7 +67,7 @@ export class SimulatorComponent implements OnDestroy {
 
   public result$: Observable<SimulationResult>;
 
-  private actions$ = new BehaviorSubject<CraftingAction[]>([]);
+  public actions$ = new BehaviorSubject<CraftingAction[]>([]);
 
   public crafterStats$: Observable<CrafterStats>;
 
@@ -133,11 +136,11 @@ export class SimulatorComponent implements OnDestroy {
     }
   };
 
-  constructor(private registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService,
+  constructor(public registry: CraftingActionsRegistry, private htmlTools: HtmlToolsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(createdKey => {
@@ -250,12 +253,25 @@ export class SimulatorComponent implements OnDestroy {
     event.el.parentNode.removeChild(event.el);
   }
 
+  importFromCraftingOptimizer(): void {
+    this.dialog.create({
+      nzContent: TextQuestionPopupComponent,
+      nzTitle: this.translate.instant('SIMULATOR.Import_from_crafting_optimizer'),
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined && res !== null && res.length > 0 && res[0] === '['),
+        map(res => this.registry.importFromCraftOpt(JSON.parse(res))),
+        first()
+      ).subscribe(actions => this.actions$.next(actions));
+  }
+
   saveRotation(rotation: CraftingRotation): void {
     combineLatest(this.stats$, this.actions$).pipe(
       first()
     ).subscribe(([stats, actions]) => {
       if (this.custom) {
-        // TODO custom-specific behavior
+        // custom-specific behavior goes here if we find any.
       } else {
         rotation.defaultItemId = this.item.id;
         rotation.defaultRecipeId = this._recipeId;
@@ -279,6 +295,11 @@ export class SimulatorComponent implements OnDestroy {
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
     });
+  }
+
+  saveRotationAsNew(rotation: CraftingRotation): void {
+    delete rotation.$key;
+    this.saveRotation(rotation);
   }
 
   addAction(action: CraftingAction, index?: number) {

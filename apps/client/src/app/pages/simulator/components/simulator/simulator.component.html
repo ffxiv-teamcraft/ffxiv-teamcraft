@@ -1,26 +1,29 @@
 <div fxLayout="row" fxLayoutGap="10px" *ngIf="rotation$ | async as rotation">
   <div class="buttons" fxLayout="column" fxLayoutGap="5px">
-    <!--TODO-->
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
-            [nzTitle]="'SIMULATOR.Save_as_new' | translate">
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            *ngIf="rotation.$key !== undefined"
+            [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
       <i nz-icon type="copy"></i>
     </button>
     <button nz-button *ngIf="(permissionLevel$ | async) >= 30" nzType="primary" nzShape="circle" nz-tooltip
             [nzTitle]="'SIMULATOR.Persist' | translate" (click)="saveRotation(rotation)">
       <i nz-icon type="save"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button disabled nz-button *ngIf="custom" nzType="primary" nzShape="circle" nz-tooltip
             [nzTitle]="'SIMULATOR.Convert_rotation' | translate">
       <i nz-icon type="redo"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate">
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate"
+            nz-popconfirm (nzOnConfirm)="actions$.next([])">
       <i nz-icon type="reload"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
-            [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate">
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
+    (click)="importFromCraftingOptimizer()">
       <i nz-icon type="download"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            ngxClipboard [cbContent]="registry.exportToCraftOpt(rotation.rotation)"
             [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate">
       <i nz-icon type="upload"></i>
     </button>

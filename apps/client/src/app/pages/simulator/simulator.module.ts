@@ -30,6 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
+import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
+import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 
 const routes: Routes = [
   {
@@ -82,6 +84,8 @@ const routes: Routes = [
     NgxDnDModule,
     FullpageMessageModule,
     RotationsModule,
+    NameQuestionPopupModule,
+    TextQuestionPopupModule,
 
     NgZorroAntdModule,
 
