@@ -582,7 +582,7 @@
     "Member": "멤버",
     "Enable_discord_updates": "디스코드 업데이트 활성화",
     "Disable_discord_updates": "디스코드 업데이트 비활성화",
-    "Webhook_error": "디스코드 웹훅을 만드는동안 오류가 발생했습니다.",
+    "Webhook_error": "디스코드 webhook을 만드는동안 오류가 발생했습니다.",
     "Create_team": "팀 생성",
     "Create_invite_one_day": "새로운 초대링크 만들기[만료기간 1일]",
     "Create_invite_infinite": "새로운 초대링크 만들기[만료없음]",
