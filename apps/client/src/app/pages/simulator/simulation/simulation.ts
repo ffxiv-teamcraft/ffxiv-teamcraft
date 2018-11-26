@@ -28,11 +28,11 @@ export class Simulation {
   public steps: ActionResult[] = [];
 
   constructor(public readonly recipe: Craft, public readonly actions: CraftingAction[], private _crafterStats: CrafterStats,
-              hqIngredients: { id: number, amount: number }[] = []) {
+              private hqIngredients: { id: number, amount: number }[] = []) {
     this.durability = recipe.durability;
     this.availableCP = this._crafterStats.cp;
     this.maxCP = this.availableCP;
-    for (const ingredient of hqIngredients) {
+    for (const ingredient of this.hqIngredients) {
       // Get the ingredient in the recipe
       const ingredientDetails = this.recipe.ingredients.find(i => i.id === ingredient.id);
       // Check that the ingredient in included in the recipe
@@ -76,21 +76,25 @@ export class Simulation {
   }
 
   public getMinStats(): { control: number, craftsmanship: number, cp: number } {
+    const originalHqPercent = this.run(true).hqPercent;
     // Three loops, one per stat
     while (this.run(true).success) {
       this.crafterStats.craftsmanship--;
       this.reset();
     }
-    while (this.run(true).hqPercent >= 100) {
+    this.crafterStats.craftsmanship++;
+    while (this.run(true).hqPercent >= originalHqPercent) {
       this.crafterStats._control--;
       this.reset();
     }
+    this.crafterStats._control++;
     while (this.run(true).success) {
       this.crafterStats.cp--;
       this.reset();
     }
+    this.crafterStats.cp++;
     return {
-      control: this.crafterStats.getControl(this),
+      control: this.crafterStats._control,
       craftsmanship: this.crafterStats.craftsmanship,
       cp: this.crafterStats.cp
     };
@@ -302,5 +306,9 @@ export class Simulation {
         this.state = 'NORMAL';
       }
     }
+  }
+
+  clone(): Simulation {
+    return new Simulation(this.recipe, this.actions, this.crafterStats, this.hqIngredients);
   }
 }

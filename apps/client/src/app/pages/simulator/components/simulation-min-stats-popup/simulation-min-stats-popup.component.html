@@ -1,3 +1,5 @@
-<p>
-  simulation-min-stats-popup works!
-</p>
+<div *ngIf="stats">
+  <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}: {{stats.craftsmanship}}</div>
+  <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{stats.control}}</div>
+  <div>{{'SIMULATOR.Cp_amount' | translate}}: {{stats.cp}}</div>
+</div>

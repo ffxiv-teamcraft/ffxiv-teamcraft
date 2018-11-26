@@ -53,6 +53,14 @@
   padding-right: 40px;
 }
 
+.buttons {
+  position: fixed;
+}
+
+.simulator {
+  margin-left: 42px;
+}
+
 .buffs-container {
   min-height: 32px;
   .buff-container {
@@ -92,10 +100,18 @@
   height: 40px;
 }
 
-.actions-container {
-  min-height: 40px;
-  .action-from-bar:not(.gu-transit) {
-    display: none;
+.actions-card {
+  position: relative;
+  .warning-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  .actions-container {
+    min-height: 40px;
+    .action-from-bar:not(.gu-transit) {
+      display: none;
+    }
   }
 }
 

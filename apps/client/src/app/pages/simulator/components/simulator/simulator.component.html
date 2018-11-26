@@ -14,40 +14,52 @@
       <i nz-icon type="redo"></i>
     </button>
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Reset' | translate"
-            nz-popconfirm (nzOnConfirm)="actions$.next([])">
+            nz-popconfirm (nzOnConfirm)="actions$.next([]);this.dirty = true">
       <i nz-icon type="reload"></i>
     </button>
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
             [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
-    (click)="importFromCraftingOptimizer()">
+            (click)="importFromCraftingOptimizer()">
       <i nz-icon type="download"></i>
     </button>
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            [disabled]="rotation.rotation.length === 0"
             ngxClipboard [cbContent]="registry.exportToCraftOpt(rotation.rotation)"
+            (cbOnSuccess)="success('SIMULATOR.Export_copied')"
             [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate">
       <i nz-icon type="upload"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            (click)="importFromXIVMacro()"
             [nzTitle]="'SIMULATOR.Import_macro' | translate">
       <i nz-icon type="select"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            [disabled]="rotation.rotation.length === 0"
+            (click)="openMacroPopup()"
             [nzTitle]="'SIMULATOR.Generate_ingame_macro' | translate">
       <span class="text-icon">XIV</span>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            *ngIf="simulation$ | async as simulation"
+            (click)="openMinStatsPopup(simulation)"
             [nzTitle]="'SIMULATOR.Min_stats' | translate">
       <i nz-icon type="safety-certificate"></i>
     </button>
-    <button disabled nz-button nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+            *ngIf="result$ | async as resultData"
+            (click)="openStepByStepReportPopup(resultData)"
             [nzTitle]="'SIMULATOR.Step_by_step_report' | translate">
       <i nz-icon type="ordered-list"></i>
     </button>
   </div>
-  <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto">
-    <div fxLayout="row" fxLayoutGap="5px">
-      <p>TODO Rotation name</p>
-      <button nz-button>TODO rename</button>
+  <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <div>{{rotation.getName()}}<span *ngIf="dirty">*</span></div>
+      <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
+              (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40">
+        <i nz-icon type="edit"></i>
+      </button>
       <button nz-button>TODO change rotation</button>
     </div>
     <nz-collapse>
@@ -211,7 +223,7 @@
               </div>
             </div>
             <div fxLayout="column" fxLayoutGap="5px">
-              <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats)">
+              <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true">
                 {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
               </button>
               <button nz-button nzBlock (click)="saveDefaultConsumables()">
@@ -325,7 +337,9 @@
         </div>
       </nz-card>
 
-      <nz-card [class.failed]="actionFailed">
+      <nz-card [class.failed]="actionFailed" class="actions-card">
+        <i nz-icon type="exclamation-circle" theme="twotone" [twoToneColor]="'#aa9400'" class="warning-icon"
+           nz-tooltip [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" *ngIf="dirty"></i>
         <div fxLayout="row wrap" ngxDroppable="action" fxLayoutGap="10px" class="actions-container ngx-dnd-container"
              (drop)="actionDrop($event)">
           <div *ngFor="let step of resultData.steps;let i = index;" [ngxDraggable]="['action']"

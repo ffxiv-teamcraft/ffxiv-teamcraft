@@ -1,3 +1,38 @@
-<p>
-  macro-popup works!
-</p>
+<div class="config" fxLayout="column" fxLayoutGap="5px">
+  <label nz-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
+    {{'SIMULATOR.Include_sound_end' | translate}}
+  </label>
+  <label nz-checkbox [(ngModel)]="fixedEcho" [nzDisabled]="!addEcho" (ngModelChange)="generateMacros()">
+    {{'SIMULATOR.Fixed_notification_number' | translate}}
+  </label>
+  <div class="fields">
+    <nz-form-item>
+      <nz-form-label>{{'SIMULATOR.Starting_echo_number' | translate}}</nz-form-label>
+      <nz-input-number [nzMin]="1" [nzMax]="16" [(ngModel)]="echoSeNumber" [nzDisabled]="!addEcho"
+                       (ngModelChange)="generateMacros()"></nz-input-number>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'SIMULATOR.Extra_wait' | translate}}</nz-form-label>
+      <nz-input-number [nzMin]="0" [nzMax]="100" [(ngModel)]="extraWait"
+                       (ngModelChange)="generateMacros()"></nz-input-number>
+    </nz-form-item>
+  </div>
+</div>
+<div class="macro">
+  <pre *ngFor="let macroFragment of macro" class="macro-fragment">
+    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard [cbContent]="getText(macroFragment)">
+        <i nz-icon type="copy"></i>
+    </button>
+    <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
+  </pre>
+</div>
+<b>{{'SIMULATOR.Cross_class_setup' | translate}}</b>
+<nz-divider></nz-divider>
+<div class="macro">
+  <pre class="macro-fragment">
+    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard [cbContent]="getText(aactionsMacro)">
+        <i nz-icon type="copy"></i>
+    </button>
+    <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}<br></span>
+  </pre>
+</div>

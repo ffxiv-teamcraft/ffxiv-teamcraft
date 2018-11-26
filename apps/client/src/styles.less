@@ -13,56 +13,6 @@ h1, h2, h3, h4, h5 {
   width: 16px;
 }
 
-.ant-alert-success, .ant-alert-warning {
-  .ant-alert-message {
-    color: rgba(0, 0, 0, .8);
-  }
-}
-
-.input-number-with-addon {
-  border-radius: 4px 0 0 4px;
-}
-
-.ant-btn-circle {
-  font-size: 20px;
-  box-shadow: 0 0 .5px 0 white;
-  &:not(.ant-btn-primary) {
-    box-shadow: 0 0 .5px 0 white inset;
-  }
-  > i.material-icons {
-    margin-top: 6px;
-  }
-  &.ant-btn-sm {
-    > i.material-icons {
-      margin-top: 2px;
-    }
-  }
-}
-
-.ant-menu-item {
-  .anticon {
-    font-size: 18px !important;
-  }
-}
-
-.ant-modal-body {
-  @media @mobile {
-    padding: 12px;
-  }
-}
-
-.ant-layout-sider-zero-width-trigger {
-  opacity: .8;
-}
-
-.ant-select-dropdown-menu-item:hover, .ant-select-dropdown-menu-item-active, .ant-dropdown-menu-item:hover {
-  background-color: rgba(255, 255, 255, .2);
-}
-
-.ant-menu-item-selected:not(.menu-link) {
-  background-color: unset !important;
-}
-
 // Let's have nicer scrollbars ! credits to angular/aio: https://github.com/angular/angular/blob/3a30f5d937e64289ad9a89a1cbc4bd66d8a8867a/aio/src/styles/2-modules/_scrollbar.scss
 *::-webkit-scrollbar, *::-webkit-scrollbar, *::-webkit-scrollbar {
   height: 6px;
@@ -134,6 +84,60 @@ h1, h2, h3, h4, h5 {
     color: #ffa39e;
     background-color: #352525;
   }
+}
+
+.ant-table-thead > tr.ant-table-row-hover > td, .ant-table-tbody > tr.ant-table-row-hover > td, .ant-table-thead > tr:hover > td, .ant-table-tbody > tr:hover > td {
+  background-color: rgba(128, 128, 128, .3);
+}
+
+.ant-alert-success, .ant-alert-warning {
+  .ant-alert-message {
+    color: rgba(0, 0, 0, .8);
+  }
+}
+
+.input-number-with-addon {
+  border-radius: 4px 0 0 4px;
+}
+
+.ant-btn-circle {
+  font-size: 20px;
+  box-shadow: 0 0 .5px 0 white;
+  &:not(.ant-btn-primary) {
+    box-shadow: 0 0 .5px 0 white inset;
+  }
+  > i.material-icons {
+    margin-top: 6px;
+  }
+  &.ant-btn-sm {
+    > i.material-icons {
+      margin-top: 2px;
+    }
+  }
+}
+
+.ant-menu-item {
+  .anticon {
+    font-size: 18px !important;
+  }
+}
+
+.ant-modal-body {
+  @media @mobile {
+    padding: 12px;
+  }
+}
+
+.ant-layout-sider-zero-width-trigger {
+  opacity: .8;
+}
+
+.ant-select-dropdown-menu-item:hover, .ant-select-dropdown-menu-item-active, .ant-dropdown-menu-item:hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.ant-menu-item-selected:not(.menu-link) {
+  background-color: unset !important;
 }
 
 // Tooling

@@ -107,6 +107,11 @@ export class LocalizedDataService {
     if (result === undefined) {
       throw new Error('Data row not found.');
     }
+    const name = result.en;
+    const koRow = koActions.find(a => a.en === name);
+    if (koRow !== undefined) {
+      result.ko = koRow.ko;
+    }
     return result;
   }
 

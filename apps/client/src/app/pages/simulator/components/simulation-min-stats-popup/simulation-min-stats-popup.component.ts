@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Simulation } from '../../simulation/simulation';
 
 @Component({
   selector: 'app-simulation-min-stats-popup',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimulationMinStatsPopupComponent implements OnInit {
 
-  constructor() { }
+  simulation: Simulation;
 
-  ngOnInit() {
+  stats: { control: number, craftsmanship: number, cp: number };
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.stats = this.simulation.getMinStats();
+    });
   }
 
 }

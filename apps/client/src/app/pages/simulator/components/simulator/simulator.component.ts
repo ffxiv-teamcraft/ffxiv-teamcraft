@@ -30,9 +30,15 @@ import { DefaultConsumables } from '../../../../model/user/default-consumables';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TextQuestionPopupComponent } from '../../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import { Language } from '../../../../core/data/language';
+import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
+import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
+import { StepByStepReportComponent } from '../step-by-step-report/step-by-step-report.component';
+import { CraftingJob } from '../../model/crafting-job.enum';
+import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -75,14 +81,15 @@ export class SimulatorComponent implements OnDestroy {
 
   private recipe$ = new ReplaySubject<Craft>();
 
-  private simulation$: Observable<Simulation>;
+  public simulation$: Observable<Simulation>;
 
   public report$: Observable<SimulationReliabilityReport>;
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
-  public rotation$ = combineLatest(this.rotationsFacade.selectedRotation$, this.actions$).pipe(
-    map(([rotation, actions]) => {
+  public rotation$ = combineLatest(this.recipe$, this.rotationsFacade.selectedRotation$, this.actions$).pipe(
+    map(([recipe, rotation, actions]) => {
+      rotation.recipe = recipe;
       if (actions.length > 0) {
         rotation.rotation = this.registry.serializeRotation(actions);
       }
@@ -109,6 +116,18 @@ export class SimulatorComponent implements OnDestroy {
   public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({ control: 0, cp: 0, craftsmanship: 0 });
 
   private onDestroy$ = new Subject<void>();
+
+  private job: CraftingJob;
+
+  public dirty = false;
+
+  // Regex stuff for macro import
+  private findActionsRegex: RegExp =
+    new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
+
+  private findActionsAutoTranslatedRegex: RegExp =
+    new RegExp(/\/(ac|action)[\s]+([^<]+)?.*/, 'i');
+
   public permissionLevel$ = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
     map(([rotation, userId]) => {
       return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
@@ -140,7 +159,8 @@ export class SimulatorComponent implements OnDestroy {
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
-              private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService) {
+              private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
+              private message: NzMessageService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(createdKey => {
@@ -165,7 +185,7 @@ export class SimulatorComponent implements OnDestroy {
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
 
-    const job$ = merge(this.recipe$.pipe(map(r => r.job || 8)), this.customJob$);
+    const job$ = merge(this.recipe$.pipe(map(r => r.job || 8)), this.customJob$).pipe(tap(job => this.job = job));
 
     const statsFromRecipe$: Observable<CrafterStats> = combineLatest(this.recipe$, job$, this.authFacade.gearSets$).pipe(
       map(([recipe, job, sets]) => {
@@ -215,7 +235,8 @@ export class SimulatorComponent implements OnDestroy {
           return sim.run(true);
         }
       }),
-      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined)
+      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
+      shareReplay(1)
     );
     this.report$ = combineLatest(this.simulation$, this.result$).pipe(
       map(([simulation, result]) => {
@@ -233,7 +254,7 @@ export class SimulatorComponent implements OnDestroy {
     combineLatest(this.rotation$, this.crafterStats$).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats]) => {
-      if (rotation.rotation) {
+      if (rotation.rotation && rotation.rotation.length > 0 && JSON.stringify(rotation.rotation) !== JSON.stringify(this.registry.serializeRotation(this.actions$.value))) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       }
       if (rotation.food && this.selectedFood === undefined) {
@@ -253,6 +274,28 @@ export class SimulatorComponent implements OnDestroy {
     event.el.parentNode.removeChild(event.el);
   }
 
+  renameRotation(rotation: CraftingRotation): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: rotation.getName() },
+      nzFooter: null,
+      nzTitle: this.translate.instant('Edit')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        rotation.name = name;
+        return rotation;
+      })
+    ).subscribe(r => {
+      this.rotationsFacade.updateRotation(r);
+      this.dirty = false;
+    });
+  }
+
+  success(translationKey: string): void {
+    this.message.success(this.translate.instant(translationKey));
+  }
+
   importFromCraftingOptimizer(): void {
     this.dialog.create({
       nzContent: TextQuestionPopupComponent,
@@ -260,8 +303,85 @@ export class SimulatorComponent implements OnDestroy {
       nzFooter: null
     }).afterClose
       .pipe(
-        filter(res => res !== undefined && res !== null && res.length > 0 && res[0] === '['),
+        filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('[') > -1),
         map(res => this.registry.importFromCraftOpt(JSON.parse(res))),
+        first()
+      ).subscribe(actions => this.actions$.next(actions));
+  }
+
+  openMacroPopup(): void {
+    this.dialog.create({
+      nzContent: MacroPopupComponent,
+      nzComponentParams: {
+        rotation: this.actions$.value,
+        job: this.job
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+      nzFooter: null
+    });
+  }
+
+  openMinStatsPopup(simulation: Simulation): void {
+    this.dialog.create({
+      nzContent: SimulationMinStatsPopupComponent,
+      nzComponentParams: {
+        simulation: simulation.clone()
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Min_stats'),
+      nzFooter: null
+    });
+  }
+
+  openStepByStepReportPopup(result: SimulationResult): void {
+    console.log(result);
+    this.dialog.create({
+      nzContent: StepByStepReportComponent,
+      nzComponentParams: {
+        steps: result.steps
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Step_by_step_report'),
+      nzFooter: null
+    });
+  }
+
+  importFromXIVMacro(): void {
+    this.dialog.create({
+      nzContent: TextQuestionPopupComponent,
+      nzTitle: this.translate.instant('SIMULATOR.Import_macro'),
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('/ac') > -1),
+        map(macro => {
+          const actionIds: number[] = [];
+          for (const line of macro.split('\n')) {
+            let match = this.findActionsRegex.exec(line);
+            if (match !== null && match !== undefined) {
+              const skillName = match[2].replace(/"/g, '');
+              // Get translated skill
+              try {
+                actionIds
+                  .push(this.localizedDataService.getCraftingActionIdByName(skillName,
+                    <Language>this.translate.currentLang));
+              } catch (ignored) {
+                // Ugly implementation but it's a specific case we don't want to refactor for.
+                try {
+                  // If there's no skill match with the first regex, try the second one (for auto translated skills)
+                  match = this.findActionsAutoTranslatedRegex.exec(line);
+                  if (match !== null) {
+                    actionIds
+                      .push(this.localizedDataService.getCraftingActionIdByName(match[2],
+                        <Language>this.translate.currentLang));
+                  }
+                } catch (ignoredAgain) {
+                  break;
+                }
+              }
+            }
+          }
+          return actionIds;
+        }),
+        map(actionIds => this.registry.createFromIds(actionIds)),
         first()
       ).subscribe(actions => this.actions$.next(actions));
   }
@@ -294,6 +414,7 @@ export class SimulatorComponent implements OnDestroy {
       }
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
+      this.dirty = false;
     });
   }
 
@@ -310,6 +431,7 @@ export class SimulatorComponent implements OnDestroy {
       actions.splice(index, 0, action);
       this.actions$.next([...actions]);
     }
+    this.dirty = true;
   }
 
   actionDrop(event: any): void {
@@ -323,6 +445,7 @@ export class SimulatorComponent implements OnDestroy {
     const actions = this.actions$.value;
     actions.splice(index, 1);
     this.actions$.next([...actions]);
+    this.dirty = true;
   }
 
   applyStats(): void {
