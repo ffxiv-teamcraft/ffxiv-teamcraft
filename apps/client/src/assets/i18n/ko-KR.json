@@ -93,7 +93,7 @@
     "Warning": "경고",
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
-    "Language": "Language"
+    "Language": "언어"
   },
   "ALARMS": {
     "Title": "알람",
@@ -580,9 +580,9 @@
     "Title": "팀",
     "Leader": "리더",
     "Member": "멤버",
-    "Enable_discord_updates": "Enable Discord updates",
-    "Disable_discord_updates": "Disable Discord updates",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
+    "Enable_discord_updates": "디스코드 업데이트 사용",
+    "Disable_discord_updates": "디스코드 업데이트 사용안함",
+    "Webhook_error": "디스코드 웹훅을 만드는동안 오류가 발생했습니다.",
     "Create_team": "팀 생성",
     "Create_invite_one_day": "새로운 초대링크 만들기[만료기간 1일]",
     "Create_invite_infinite": "새로운 초대링크 만들기[만료없음]",
