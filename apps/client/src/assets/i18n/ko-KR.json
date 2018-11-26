@@ -104,7 +104,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말로 이 그룹을 삭제하시겠습니까?",
-    "Confirm_group_delete_with_alarms": "",
+    "Confirm_group_delete_with_alarms": "정말로 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다"
@@ -487,7 +487,7 @@
     "custom_rotation": "사용자 지정 로테이션",
     "Reset": "로테이션 초기화",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
-    "Export_crafting_optimizer": "",
+    "Export_crafting_optimizer": "Crafting optimizer 형식으로 내보내기",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
     "Generate_ingame_macro": "인게임 매크로 생성",
