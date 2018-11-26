@@ -1,5 +1,4 @@
 import { Craft } from '../garland-tools/craft';
-import { FreeCompanyAction } from '../../pages/simulator/model/free-company-action';
 import { ConsumableRow } from '../user/consumable-row';
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
 import { GearSet } from '../../pages/simulator/model/gear-set';
@@ -24,7 +23,7 @@ export class CraftingRotation extends DataWithPermissions {
 
   public medicine: ConsumableRow;
 
-  public freeCompanyActions: FreeCompanyAction[] = [];
+  public freeCompanyActions: [number, number] = [0, 0];
 
   public stats: GearSet;
 

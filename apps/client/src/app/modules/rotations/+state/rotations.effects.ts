@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { DeleteRotation, MyRotationsLoaded, RotationPersisted, RotationsActionTypes, UpdateRotation } from './rotations.actions';
+import {
+  DeleteRotation,
+  GetRotation,
+  MyRotationsLoaded,
+  RotationLoaded,
+  RotationPersisted,
+  RotationsActionTypes,
+  UpdateRotation
+} from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { EMPTY, of } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable()
 export class RotationsEffects {
@@ -22,6 +30,17 @@ export class RotationsEffects {
   );
 
   @Effect()
+  getRotation$ = this.actions$.pipe(
+    ofType<GetRotation>(RotationsActionTypes.GetRotation),
+    switchMap(action => {
+      return this.rotationsService.get(action.key).pipe(
+        catchError(() => of({$key: action.key, notFound: true}))
+      );
+    }),
+    map(rotation => new RotationLoaded(rotation))
+  );
+
+  @Effect()
   updateRotation$ = this.actions$.pipe(
     ofType<UpdateRotation>(RotationsActionTypes.UpdateRotation),
     withLatestFrom(this.authFacade.userId$),
@@ -33,7 +52,8 @@ export class RotationsEffects {
         return this.rotationsService.set(action.rotation.$key, action.rotation);
       }
     }),
-    switchMap((res) => res !== null ? of(new RotationPersisted(res)) : EMPTY)
+    filter(res => res !== null),
+    switchMap((res: string) => of(new RotationPersisted(res)))
   );
 
   @Effect()

@@ -9,10 +9,11 @@ export enum RotationsActionTypes {
   CreateRotation = '[Rotations] Create Rotation',
   UpdateRotation = '[Rotations] Update Rotation',
   RotationPersisted = '[Rotations] Rotation Persisted',
-  DeleteRotation = '[Rotations] Delete rotation',
-  GetRotation = '[Rotations] Get rotation',
+  DeleteRotation = '[Rotations] Delete Rotation',
+  GetRotation = '[Rotations] Get Rotation',
+  RotationLoaded = '[Rotations] Rotation Loaded',
 
-  SelectRotation = '[Rotations] Select rotation'
+  SelectRotation = '[Rotations] Select Rotation'
 }
 
 export class LoadMyRotations implements Action {
@@ -61,6 +62,13 @@ export class GetRotation implements Action {
   }
 }
 
+export class RotationLoaded implements Action {
+  readonly type = RotationsActionTypes.RotationLoaded;
+
+  constructor(public readonly rotation: Partial<CraftingRotation>) {
+  }
+}
+
 export class MyRotationsLoaded implements Action {
   readonly type = RotationsActionTypes.MyRotationsLoaded;
 
@@ -76,4 +84,5 @@ export type RotationsAction =
   | CreateRotation
   | SelectRotation
   | RotationPersisted
+  | RotationLoaded
   | GetRotation;

@@ -50,7 +50,7 @@ export class AuthEffects {
         if (authState.isAnonymous) {
           return new LoggedInAsAnonymous(authState.uid);
         }
-        return new Authenticated(payload);
+        return new Authenticated(payload, payload.uid);
       }
     })
   );
@@ -64,8 +64,8 @@ export class AuthEffects {
 
   @Effect()
   fetchUserOnAuthenticated$ = this.actions$.pipe(
-    ofType(AuthActionTypes.Authenticated),
-    mergeMap((action: Authenticated) => this.userService.get(action.payload.uid)),
+    ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
+    mergeMap((action: Authenticated) => this.userService.get(action.uid)),
     catchError(() => of(new TeamcraftUser())),
     map(user => new UserFetched(user))
   );

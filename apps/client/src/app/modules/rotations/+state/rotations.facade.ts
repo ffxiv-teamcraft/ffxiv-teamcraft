@@ -3,19 +3,21 @@ import { Store } from '@ngrx/store';
 import { RotationsState } from './rotations.reducer';
 import { rotationsQuery } from './rotations.selectors';
 import {
+  CreateRotation,
   DeleteRotation,
   GetRotation,
   LoadMyRotations,
-  UpdateRotation,
+  RotationPersisted,
+  RotationsActionTypes,
   SelectRotation,
-  CreateRotation,
-  RotationsActionTypes, RotationPersisted
+  UpdateRotation
 } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest, Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, first, map } from 'rxjs/operators';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { Actions, ofType } from '@ngrx/effects';
+import { DefaultConsumables } from '../../../model/user/default-consumables';
 
 @Injectable()
 export class RotationsFacade {
@@ -38,7 +40,16 @@ export class RotationsFacade {
   }
 
   createRotation(): void {
-    this.store.dispatch(new CreateRotation(new CraftingRotation()));
+    this.authFacade.user$.pipe(
+      map(user => user.defaultConsumables || <DefaultConsumables>{}),
+      first()
+    ).subscribe(consumables => {
+      const rotation = new CraftingRotation();
+      rotation.food = consumables.food;
+      rotation.medicine = consumables.medicine;
+      rotation.freeCompanyActions = consumables.fcBuffs;
+      this.store.dispatch(new CreateRotation(rotation));
+    });
   }
 
   updateRotation(rotation: CraftingRotation): void {

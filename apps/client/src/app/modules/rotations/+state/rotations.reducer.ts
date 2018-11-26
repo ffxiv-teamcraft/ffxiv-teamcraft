@@ -37,6 +37,14 @@ export function rotationsReducer(
       break;
     }
 
+    case RotationsActionTypes.RotationLoaded: {
+      state = {
+        ...state,
+        rotations: [...state.rotations.filter(r => r.$key !== action.rotation.$key), <CraftingRotation>action.rotation]
+      };
+      break;
+    }
+
     case RotationsActionTypes.DeleteRotation: {
       state = {
         ...state,

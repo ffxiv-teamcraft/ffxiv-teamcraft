@@ -9,7 +9,7 @@ import { SimulationResult } from '../../simulation/simulation-result';
 import { EffectiveBuff } from '../../model/effective-buff';
 import { Buff } from '../../model/buff.enum';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { SimulationReliabilityReport } from '../../simulation/simulation-reliability-report';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -78,7 +78,14 @@ export class SimulatorComponent implements OnDestroy {
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
-  public rotation$ = this.rotationsFacade.selectedRotation$;
+  public rotation$ = combineLatest(this.rotationsFacade.selectedRotation$, this.actions$).pipe(
+    map(([rotation, actions]) => {
+      if (actions.length > 0) {
+        rotation.rotation = this.registry.serializeRotation(actions);
+      }
+      return rotation;
+    })
+  );
 
   // Customization forms
   public statsForm: FormGroup;
@@ -172,6 +179,9 @@ export class SimulatorComponent implements OnDestroy {
           level: stats.level,
           specialist: stats.specialist
         });
+      }),
+      distinctUntilChanged((before, after) => {
+        return JSON.stringify(before) === JSON.stringify(after);
       })
     );
 
@@ -220,10 +230,18 @@ export class SimulatorComponent implements OnDestroy {
     combineLatest(this.rotation$, this.crafterStats$).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats]) => {
-      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-      this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
-      this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
-      this.selectedFreeCompanyActions = rotation.freeCompanyActions;
+      if (rotation.rotation) {
+        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+      }
+      if (rotation.food && this.selectedFood === undefined) {
+        this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+      }
+      if (rotation.medicine && this.selectedMedicine === undefined) {
+        this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+      }
+      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0) {
+        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
+      }
       this.applyConsumables(stats);
     });
   }
@@ -258,7 +276,7 @@ export class SimulatorComponent implements OnDestroy {
       if (this.selectedMedicine) {
         rotation.medicine = { id: this.selectedMedicine.itemId, hq: this.selectedMedicine.hq };
       }
-      rotation.freeCompanyActions = this.selectedFreeCompanyActions;
+      rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
     });
   }
