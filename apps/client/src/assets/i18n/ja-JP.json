@@ -1,15 +1,15 @@
 {
-  "Pick_a_list": "Pick a list",
-  "Pick_a_user": "Pick a user",
-  "Pick_a_fc": "Pick a free company",
+  "Pick_a_list": "リストの選択",
+  "Pick_a_user": "ユーザーを選択する",
+  "Pick_a_fc": "フリーカンパニーの選択",
   "FC_name": "フリーカンパニー前",
-  "Saving_in_database": "Saving data on server",
+  "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に存在する",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
-    "auth/user-not-found": "Wrong email or password",
-    "auth/wrong-password": "Wrong email or password"
+    "auth/user-not-found": "メール アドレスまたはパスワードが間違っています",
+    "auth/wrong-password": "メール アドレスまたはパスワードが間違っています"
   },
   "ITEMS": {
     "Title": "アイテム",
