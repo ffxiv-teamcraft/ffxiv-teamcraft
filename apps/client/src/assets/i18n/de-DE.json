@@ -489,6 +489,8 @@
     "Reset": "Rotation zurücksetzen",
     "Import_from_crafting_optimizer": "Von Handwerks Optimierung importieren",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
+    "Export_copied": "Crafting optimizer export code copied to your clipboard",
+    "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
     "Crafting_optimizer_code": "Import Code von Handwerks Optimierung",
     "Generated_macro": "Spiel-Makro",
     "Generate_ingame_macro": "Spiel-Makro generieren",
