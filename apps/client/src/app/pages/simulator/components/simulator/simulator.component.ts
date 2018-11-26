@@ -121,6 +121,22 @@ export class SimulatorComponent implements OnDestroy {
 
   public dirty = false;
 
+  // HQ ingredients
+  private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
+    new BehaviorSubject<{ id: number, amount: number }[]>([]);
+
+  @Input()
+  public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
+    this.hqIngredients$.next(ingredients);
+    this.startingQuality$.next(ingredients.reduce((total, ingredient) => {
+      return total + ingredient.amount * ingredient.quality;
+    }, 0));
+  }
+
+  public hqIngredientsData$: Observable<{ id: number, amount: number, max: number, quality: number }[]>;
+
+  public startingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   // Regex stuff for macro import
   private findActionsRegex: RegExp =
     new RegExp(/\/(ac|action)[\s]+(([\w]+)|"([^"]+)")?.*/, 'i');
@@ -208,6 +224,14 @@ export class SimulatorComponent implements OnDestroy {
       })
     );
 
+    this.hqIngredientsData$ = this.recipe$.pipe(
+      map(recipe => {
+        return (recipe.ingredients || [])
+          .filter(i => i.id > 20 && i.quality !== undefined)
+          .map(ingredient => ({ id: ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
+      })
+    );
+
     this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
 
     this.stats$ = combineLatest(this.crafterStats$, this.bonuses$).pipe(
@@ -222,8 +246,8 @@ export class SimulatorComponent implements OnDestroy {
           stats.levels);
       })
     );
-    this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$).pipe(
-      map(([recipe, actions, stats]) => new Simulation(recipe, actions, stats)),
+    this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$, this.hqIngredients$).pipe(
+      map(([recipe, actions, stats, hqIngredients]) => new Simulation(recipe, actions, stats, hqIngredients)),
       shareReplay(1)
     );
     this.result$ = combineLatest(this.snapshotStep$, this.simulation$).pipe(

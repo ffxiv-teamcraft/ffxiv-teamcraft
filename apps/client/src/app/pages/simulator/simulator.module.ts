@@ -32,6 +32,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 
 const routes: Routes = [
   {
@@ -45,7 +46,7 @@ const routes: Routes = [
     canActivate: [MaintenanceGuard]
   },
   {
-    path: 'simulator/:itemId/:rotationId',
+    path: 'simulator/:itemId/:recipeId',
     component: SimulatorPageComponent,
     canActivate: [MaintenanceGuard]
   },
@@ -86,6 +87,7 @@ const routes: Routes = [
     RotationsModule,
     NameQuestionPopupModule,
     TextQuestionPopupModule,
+    PageLoaderModule,
 
     NgZorroAntdModule,
 

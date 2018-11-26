@@ -138,13 +138,33 @@
             </form>
           </div>
           <div nz-col [nzXs]="24" [nzMd]="8" *ngIf="!custom">
-            {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}<br>
-            TODO Ingredients
-            <form>
-              <button nz-button nzType="primary" nzBlock type="submit">
+            <ng-container *ngIf="hqIngredientsData$ | async as hqIngredientsData">
+              <h3>
+                {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
+                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
+              </h3>
+              <nz-list [nzDataSource]="hqIngredientsData"
+                       [nzRenderItem]="hqIngredientTemplate">
+                <ng-template #hqIngredientTemplate let-ingredient>
+                  <nz-list-item [nzContent]="content">
+                    <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
+                                       [nzDescription]="ingredient.quality"></nz-list-item-meta>
+                    <ng-template #content>
+                      <nz-form-control>
+                        <nz-input-group nzAddOnAfter="/{{ingredient.max}}">
+                          <nz-input-number class="input-number-with-addon" [nzMin]="0"
+                                           [(ngModel)]="ingredient.amount"
+                                           [nzMax]="ingredient.max"></nz-input-number>
+                        </nz-input-group>
+                      </nz-form-control>
+                    </ng-template>
+                  </nz-list-item>
+                </ng-template>
+              </nz-list>
+              <button nz-button nzType="primary" nzBlock (click)="hqIngredients = hqIngredientsData">
                 {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
               </button>
-            </form>
+            </ng-container>
           </div>
           <div nz-col [nzXs]="24" [nzMd]="custom?12:8" *ngIf="crafterStats$ | async as crafterStats">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>

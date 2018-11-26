@@ -141,10 +141,10 @@
               </button>
             </ng-template>
             <ng-template #openInSimulatorAction>
-              <button nz-button nzDisabled [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'Quick_list_create' | translate" (click)="createQuickList(item)">
+              <a nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" routerLink="/simulator/{{item.itemId}}">
                 <i class="material-icons">gavel</i>
-              </button>
+              </a>
             </ng-template>
             <nz-list-item-meta
               [nzTitle]="title"

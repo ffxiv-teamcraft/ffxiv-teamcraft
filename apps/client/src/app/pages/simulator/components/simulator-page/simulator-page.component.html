@@ -1,3 +1,4 @@
-<p>
-  simulator-page works!
-</p>
+<app-simulator *ngIf="recipe$ | async as recipe; else loading" [recipe]="recipe" [item]="item$ | async"></app-simulator>
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>
