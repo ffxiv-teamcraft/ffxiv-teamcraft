@@ -8,7 +8,8 @@ import {
   GetUser,
   LinkingCharacter,
   Logout,
-  RemoveCharacter, SaveDefaultConsumables,
+  RemoveCharacter,
+  SaveDefaultConsumables,
   SaveSet,
   SetCurrentFcId,
   SetDefaultCharacter,
@@ -17,7 +18,8 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { auth } from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import { UserCredential } from '@firebase/auth-types';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -167,11 +169,11 @@ export class AuthFacade {
   }
 
   public googleOauth(): Promise<UserCredential> {
-    return this.oauthPopup(new auth.GoogleAuthProvider());
+    return this.oauthPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   public facebookOauth(): Promise<UserCredential> {
-    return this.oauthPopup(new auth.FacebookAuthProvider());
+    return this.oauthPopup(new firebase.auth.FacebookAuthProvider());
   }
 
   public logout(): void {
