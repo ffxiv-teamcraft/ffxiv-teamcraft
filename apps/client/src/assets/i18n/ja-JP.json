@@ -13,15 +13,15 @@
   },
   "ITEMS": {
     "Title": "アイテム",
-    "No_match": "No matching items",
+    "No_match": "一致するアイテムがありません",
     "Item_name": "アイテム名",
-    "Only_recipes": "Only recipes",
-    "Crafts_amount": "# of crafts",
+    "Only_recipes": "レシピのみ",
+    "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
-    "Apply_filters": "Apply filters"
+    "Apply_filters": "フィルターを適用"
   },
-  "Use_as_default_character": "Use as default character",
-  "Download_desktop_app": "Download desktop app",
+  "Use_as_default_character": "デフォルトキャラとして使う",
+  "Download_desktop_app": "デスクトップアプリをダウンロード",
   "Default": "デフォルト",
   "Delete": "デリート",
   "Timers": "ギャザラー時計",
