@@ -11,7 +11,7 @@ import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzIconService, NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/time/eorzean-time.service';
@@ -22,6 +22,7 @@ import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
+import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 
 declare const ga: Function;
 
@@ -32,7 +33,7 @@ declare const ga: Function;
 })
 export class AppComponent implements OnInit {
 
-  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es'];
+  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko'];
 
   locale: string;
 
@@ -64,7 +65,10 @@ export class AppComponent implements OnInit {
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
-              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade) {
+              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
+              private iconService: NzIconService, private rotationsFacade: RotationsFacade) {
+
+    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_8itybffikxn.js'});
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -136,6 +140,7 @@ export class AppComponent implements OnInit {
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
+    this.rotationsFacade.loadMyRotations();
   }
 
   deleteNotification(notification: AbstractNotification): void {

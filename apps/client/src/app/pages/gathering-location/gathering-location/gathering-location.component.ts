@@ -57,11 +57,14 @@ export class GatheringLocationComponent {
             .map(node => {
               const bellNode = this.bell.getNode(+node.nodeId);
               node.timed = bellNode !== undefined;
+              node.itemId = node.obj.i;
+              console.log(node.itemId);
               if (node.timed) {
                 node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(bellNode.type);
                 const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
                 node.spawnTimes = bellNode.time;
                 node.uptime = bellNode.uptime;
+                node.icon = item.obj.c;
                 if (slotMatch !== undefined) {
                   node.slot = slotMatch.slot;
                 }
@@ -82,7 +85,6 @@ export class GatheringLocationComponent {
             return [].concat.apply([],
               this.bell.getNodesByItemId(item.obj.i)
                 .map(node => {
-                  const slotMatch = node.items.find(nodeItem => nodeItem.id === item.obj.i);
                   const nodePosition = nodePositions[node.id];
                   const result = {
                     ...item,
@@ -92,10 +94,12 @@ export class GatheringLocationComponent {
                     x: node.coords[0],
                     y: node.coords[1],
                     level: node.lvl,
-                    itemId: item.obj.i,
+                    type: node.type,
+                    itemId: node.itemId,
+                    icon: node.icon,
                     spawnTimes: node.time,
                     uptime: node.uptime,
-                    slot: slotMatch.slot,
+                    slot: node.slot,
                     timed: true
                   };
                   const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
@@ -115,7 +119,7 @@ export class GatheringLocationComponent {
         //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
         const finalNodes = [];
         results.forEach(row => {
-          if (finalNodes.find(node => node.obj.i === row.obj.i && node.zoneid === row.zoneid) === undefined) {
+          if (finalNodes.find(node => node.itemId === row.itemId && node.zoneid === row.zoneid) === undefined) {
             finalNodes.push(row);
           }
         });
@@ -168,8 +172,8 @@ export class GatheringLocationComponent {
 
   private generateAlarm(node: any): Partial<Alarm> {
     return {
-      itemId: node.obj.i,
-      icon: node.obj.c,
+      itemId: node.itemId,
+      icon: node.icon,
       duration: node.uptime / 60,
       zoneId: node.zoneid,
       areaId: node.areaid,

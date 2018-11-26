@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchIndex, XivapiService } from '@xivapi/angular-client';
+import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, concat, Observable } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Levequest } from './../../../model/search/levequest';
+import { Levequest } from '../../../model/search/levequest';
 
 @Component({
   selector: 'app-levequests',
@@ -27,7 +27,7 @@ export class LevequestsComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(60);
 
   levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(70);
 
@@ -48,11 +48,11 @@ export class LevequestsComponent implements OnInit {
   notification: TemplateRef<any>;
 
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
-    private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
-    private notificationService: NzNotificationService, private gt: GarlandToolsService,
-    private l12n: LocalizedDataService, private i18n: I18nToolsService,
-    private listPicker: ListPickerService, private progressService: ProgressPopupService) {
-      this.jobList = this.gt.getJobs().slice(8, 16);
+              private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
+              private notificationService: NzNotificationService, private gt: GarlandToolsService,
+              private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private listPicker: ListPickerService, private progressService: ProgressPopupService) {
+    this.jobList = this.gt.getJobs().slice(8, 16);
   }
 
   ngOnInit(): void {
@@ -65,29 +65,25 @@ export class LevequestsComponent implements OnInit {
         });
       }),
       debounceTime(500),
-      filter(() => this.isValidSearch()),
+      filter((query) => this.job$.value !== null || query.length > 3),
       tap(() => {
         this.showIntro = false;
         this.loading = true;
       }),
       switchMap(query => {
-        let filters;
-
-        if (this.job$.value) {
-          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
-        } else {
-          filters = [{ column: 'ClassJobCategoryTargetID', operator: '>=', value: 9 },
-                     { column: 'ClassJobCategoryTargetID', operator: '<=', value: 16 }]
-        }
+        const filters: XivapiSearchFilter[] = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
 
         filters.push({ column: 'ClassJobLevel', operator: '>=', value: this.levelMin$.value },
-                     { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
+          { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
 
-        return this.xivapi.search({ indexes: [SearchIndex.LEVE], string: query, filters: filters,
-          columns: ['CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
+        return this.xivapi.search({
+          indexes: [SearchIndex.LEVE], string: query, filters: filters,
+          columns: ['Icon', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
             'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
             'Name', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStartZone.ID']
+            'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
+          // 105 is the amount of leves from 1 to 70 for a single job
+          limit: 105
         });
       }),
       map(list => {
@@ -97,7 +93,7 @@ export class LevequestsComponent implements OnInit {
             level: leve.ClassJobLevel,
             jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
-            itemIcon: leve.CraftLeve.Item0.Icon,
+            itemIcon: leve.Icon,
             recipes: leve.CraftLeve.Item0Recipes.filter(recipe => recipe.ID !== null)
               .map(recipe => ({ recipeId: recipe.ID, jobId: recipe.ClassJob })),
             exp: leve.ExpReward,
@@ -106,7 +102,7 @@ export class LevequestsComponent implements OnInit {
             itemQuantity: leve.CraftLeve.ItemCount0,
             name: leve.Name,
             startCoordinates: { x: leve.LevelLevemete.X, y: leve.LevelLevemete.Y },
-            startZoneId: leve.PlaceNameStartZone.ID,
+            startMapId: leve.PlaceNameStart.ID,
             repeats: leve.CraftLeve.Repeats
           });
         });
@@ -126,7 +122,7 @@ export class LevequestsComponent implements OnInit {
       .subscribe(params => {
         this.query$.next(params.query || '');
         this.job$.next(params.job ? +params.job : null);
-        this.levelMin$.next(params.min || 1);
+        this.levelMin$.next(params.min || 60);
         this.levelMax$.next(params.max || 70);
       });
   }
@@ -216,9 +212,5 @@ export class LevequestsComponent implements OnInit {
 
   public updateAllSelected(leves: Levequest[]): void {
     this.allSelected = leves.reduce((res, item) => item.selected && res, true);
-  }
-
-  private isValidSearch(): boolean {
-    return this.query$.value.length > 3 || (this.job$.value && this.levelMax$.value - this.levelMin$.value <= 10);
   }
 }

@@ -1,7 +1,11 @@
 <div *ngIf="loaded$ | async; else loading">
   <div *ngIf="display$ | async as display">
     <div class="toolbar">
-      <div class="right-toolbar">
+      <div class="right-toolbar" fxLayout="row" fxLayoutGap="5px">
+        <a nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Add_alarm' | translate}}"
+           routerLink="/gathering-location">
+          <i nz-icon [iconfont]="'icon-addalarm'"></i>
+        </a>
         <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.New_group' | translate}}"
                 (click)="createGroup(display.groupedAlarms.length)">
           <i nz-icon type="folder-add"></i>
@@ -13,9 +17,9 @@
       </div>
       <div class="spacer"></div>
       <span>
-    <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-    {{'Compact_display' | translate}}
-  </span>
+        <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
+        {{'Compact_display' | translate}}
+      </span>
     </div>
 
     <div class="alarms">
@@ -51,8 +55,16 @@
                       [nzTitle]="'ALARMS.Confirm_group_delete' | translate" (nzOnConfirm)="deleteGroup(group.group)">
                 <i nz-icon type="delete"></i>
               </button>
+              <button nz-button nzSize="small" nzShape="circle" (click)="$event.stopPropagation();"
+                      nz-popconfirm
+                      nzType="danger"
+                      [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                      (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)">
+                <i nz-icon iconfont="icon-delete_all"></i>
+              </button>
               <div class="spacer"></div>
               <nz-switch [(ngModel)]="group.group.enabled"
+                         (click)="$event.stopPropagation();"
                          (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
             </div>
           </ng-template>
@@ -93,6 +105,8 @@
       </div>
     </ng-template>
     <ng-template #cardDescription>
+      <app-map-position [mapId]="row.alarm.mapId"
+                        [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"></app-map-position>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}
       <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
            [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>

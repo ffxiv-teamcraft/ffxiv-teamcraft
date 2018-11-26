@@ -2,6 +2,7 @@ import { DataModel } from '../../core/database/storage/data-model';
 import { Favorites } from '../other/favorites';
 import { LodestoneIdEntry } from './lodestone-id-entry';
 import { Character } from '@xivapi/angular-client';
+import { DefaultConsumables } from './default-consumables';
 
 export class TeamcraftUser extends DataModel {
   defaultLodestoneId: number;
@@ -18,4 +19,6 @@ export class TeamcraftUser extends DataModel {
   admin = false;
 
   patron = false;
+
+  defaultConsumables: DefaultConsumables;
 }

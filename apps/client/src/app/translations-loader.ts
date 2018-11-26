@@ -4,11 +4,6 @@ import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 
 
-export function TranslationsLoaderFactory(http: HttpClient): TranslateLoader {
-
-  return new TranslationsLoader(http);
-}
-
 export class TranslationsLoader implements TranslateLoader {
 
   constructor(private http: HttpClient) {
@@ -20,7 +15,7 @@ export class TranslationsLoader implements TranslateLoader {
 
   getFilename(lang: string): string {
     switch (lang) {
-      case'de':
+      case 'de':
         return 'de-DE';
       case 'es':
         return 'es-ES';
@@ -33,9 +28,14 @@ export class TranslationsLoader implements TranslateLoader {
       case 'pt':
         return 'pt-PT';
       case 'br':
-        return 'br-BR';
+        return 'pt-BR';
       default:
         return 'en';
     }
   }
+}
+
+export function TranslationsLoaderFactory(http: HttpClient): TranslateLoader {
+
+  return new TranslationsLoader(http);
 }

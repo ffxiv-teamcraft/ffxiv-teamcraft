@@ -4,6 +4,7 @@
   "Pick_a_fc": "Pick a free company",
   "FC_name": "Free Company Name",
   "Saving_in_database": "Saving data on server",
+  "See_on_map": "See on map",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account already in use",
     "auth/email-already-in-use": "Email already in use",
@@ -91,7 +92,8 @@
     "Anonymous": "Anonymous",
     "Warning": "Warning",
     "Success": "Success",
-    "Copy_to_clipboard": "Copy to clipboard"
+    "Copy_to_clipboard": "Copy to clipboard",
+    "Language": "Language"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -103,6 +105,7 @@
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are your sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are your sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Add a note",
     "Volume": "Volume",
     "Macro_copied": "Macro copied to your clipboard"
@@ -485,6 +488,7 @@
     "custom_rotation": "custom rotation",
     "Reset": "Reset rotation",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
+    "Export_crafting_optimizer": "Export using crafting optimizer format",
     "Crafting_optimizer_code": "Crafting optimizer import code",
     "Generated_macro": "Ingame Macro",
     "Generate_ingame_macro": "Generate ingame macro",
@@ -521,6 +525,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
+      "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
       "Custom_set": "Enable custom set",
       "Select_job": "Select a job",
       "Craftsmanship": "Craftsmanship",
@@ -534,9 +539,12 @@
       "Food": "Choose a food",
       "Medicine": "Choose a medicine",
       "Action": "Choose free company actions",
-      "Save_set": "Save these stats for this job",
+      "Save_on_profile": "Save on profile",
       "Reset_set": "Reset these stats",
       "Save_consumables": "Save these consumables as default",
+      "No_food": "No food",
+      "No_medicine": "No medicine",
+      "No_fc_buffs": "No FC buffs",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Craftsmanship",
@@ -554,7 +562,13 @@
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantity",
-    "All_deliveries": "All {{value}} Deliveries"
+    "All_deliveries": "All {{value}} Deliveries",
+    "INTRO": {
+      "Title": "Levequests",
+      "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
+      "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
+      "Third_line": "You can also search by name, in case you know what you're looking for."
+    }
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",
@@ -566,6 +580,9 @@
     "Title": "Teams",
     "Leader": "Leader",
     "Member": "Member",
+    "Enable_discord_updates": "Enable Discord updates",
+    "Disable_discord_updates": "Disable Discord updates",
+    "Webhook_error": "There was an error while creating the Discord webhook:",
     "Create_team": "Create a team",
     "Create_invite_one_day": "Create a new invite (expires in 1 day)",
     "Create_invite_infinite": "Create a new invite (permanent)",

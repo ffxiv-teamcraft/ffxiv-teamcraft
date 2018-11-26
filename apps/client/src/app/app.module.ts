@@ -6,7 +6,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarkdownModule } from 'ngx-markdown';
@@ -44,6 +43,7 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { SimulatorModule } from './pages/simulator/simulator.module';
 import { TranslationsLoaderFactory } from './translations-loader';
+import { RotationsModule } from './modules/rotations/rotations.module';
 
 registerLocaleData(en);
 
@@ -107,6 +107,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     SettingsModule,
     UserAvatarModule,
     SimulatorModule,
+    RotationsModule,
 
     HttpClientModule,
 

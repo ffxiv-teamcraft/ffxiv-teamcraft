@@ -130,6 +130,11 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.deleteGroup(group.$key);
   }
 
+  deleteGroupAndAlarms(group: AlarmGroup, alarms: AlarmDisplay[]): void {
+    this.alarmsFacade.deleteGroup(group.$key);
+    alarms.map(alarm => alarm.alarm).forEach(alarm => this.deleteAlarm(alarm));
+  }
+
   getIngameAlarmMacro(display: AlarmDisplay): string {
     return `/alarm "${this.i18n.getName(this.l12n.getItem(display.alarm.itemId))}" et ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;

@@ -4,6 +4,9 @@ import { ActionType } from './action-type';
 import { Tables } from '../tables';
 import { CrafterStats } from '../crafter-stats';
 import { CraftingJob } from '../crafting-job.enum';
+import { progressFormulas } from '../formulas/progress-formulas';
+import { qualityFormulas } from '../formulas/quality-formulas';
+import { ingenuityData } from '../formulas/ingenuity-data';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -95,13 +98,43 @@ export abstract class CraftingAction {
     return levelDifference;
   }
 
+  protected getBaseProgression(simulation: Simulation): number {
+    const stats = simulation.crafterStats;
+    const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
+    const formula = progressFormulas.find(entry => entry.CharLevel === crafterLevel && entry.RecipeLevel === simulation.recipe.rlvl);
+    // If we don't have a formula for this combination, fallback.
+    if (formula === undefined) {
+      return this.getBaseProgressionFallback(simulation);
+    }
+    const craftsmanship = simulation.crafterStats.craftsmanship;
+    let result = craftsmanship * craftsmanship * formula.Ax2 + craftsmanship * formula.Bx + formula.C;
+    if (simulation.hasBuff(Buff.INGENUITY)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Progress', 1);
+    } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Progress', 2);
+    }
+    return result;
+  }
+
+  protected getIngenuityMultiplier(clvl: number, rlvl: number, type: 'Quality' | 'Progress', level: 1 | 2): number {
+    let id = clvl - rlvl;
+    let ingenuityEntry = ingenuityData.find(row => row.Id === id);
+    let ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
+    while (ingenuityEntry === undefined || ingenuityMultiplier === undefined) {
+      id > 0 ? id++ : id--;
+      ingenuityEntry = ingenuityData.find(row => row.Id === id);
+      ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
+    }
+    return ingenuityMultiplier;
+  }
+
   /**
    * Gets base progression, implementation is from ermad's fork
    * (https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js)
    * @param {Simulation} simulation
    * @returns {number}
    */
-  protected getBaseProgression(simulation: Simulation): number {
+  protected getBaseProgressionFallback(simulation: Simulation): number {
     const recipeLevel = simulation.recipe.rlvl;
     const stats: CrafterStats = simulation.crafterStats;
     const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
@@ -147,6 +180,24 @@ export abstract class CraftingAction {
 
 
   protected getBaseQuality(simulation: Simulation): number {
+    const stats = simulation.crafterStats;
+    const crafterLevel = Tables.LEVEL_TABLE[stats.level] || stats.level;
+    const formula = qualityFormulas.find(entry => entry.CharLevel === crafterLevel && entry.RecipeLevel === simulation.recipe.rlvl);
+    // If we don't have a formula for this combination, fallback.
+    if (formula === undefined) {
+      return this.getBaseQualityFallback(simulation);
+    }
+    const control = simulation.crafterStats.getControl(simulation);
+    let result = control * control * formula.Ax2 + control * formula.Bx + formula.C;
+    if (simulation.hasBuff(Buff.INGENUITY)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Quality', 1);
+    } else if (simulation.hasBuff(Buff.INGENUITY_II)) {
+      result *= this.getIngenuityMultiplier(crafterLevel, simulation.recipe.rlvl, 'Quality', 2);
+    }
+    return result;
+  }
+
+  protected getBaseQualityFallback(simulation: Simulation): number {
     const recipeLevel = simulation.recipe.rlvl;
     const stats: CrafterStats = simulation.crafterStats;
     let recipeLevelPenalty = 0;

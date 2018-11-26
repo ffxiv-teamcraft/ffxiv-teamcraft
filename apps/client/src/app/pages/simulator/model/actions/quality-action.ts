@@ -10,7 +10,7 @@ export abstract class QualityAction extends GeneralAction {
   }
 
   execute(simulation: Simulation, skipStackAddition = false): void {
-    let qualityIncrease = this.getBaseQuality(simulation) * this.getPotency(simulation) / 100;
+    let qualityIncrease = Math.floor(this.getBaseQuality(simulation) * this.getPotency(simulation) / 100);
     switch (simulation.state) {
       case 'EXCELLENT':
         qualityIncrease *= 4;

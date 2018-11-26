@@ -15,6 +15,7 @@ import { CoreModule } from '../../core/core.module';
 import { MapModule } from '../../modules/map/map.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
 
     CoreModule,
     ListModule,

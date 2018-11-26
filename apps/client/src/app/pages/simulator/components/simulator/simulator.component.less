@@ -1,0 +1,122 @@
+:host ::ng-deep {
+  .progress-progressbar {
+    .ant-progress-bg {
+      background-color: green;
+    }
+  }
+  .cp-amount {
+    .ant-progress-bg {
+      background-color: #9254AD;
+    }
+  }
+  .ant-progress-status-success .ant-progress-text {
+    color: inherit;
+  }
+}
+
+.failed {
+  background-color: rgba(255, 0, 0, .3);
+}
+
+.text-icon {
+  font-size: 0.8em;
+}
+
+.nothing-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  flex: 1 1 auto;
+  opacity: .7;
+}
+
+.consumable-col {
+  min-height: 130px;
+}
+
+.job-selector {
+  width: 100%;
+}
+
+.job-icon {
+  width: 32px;
+}
+
+.durability {
+  .durability-value {
+    font-size: 2rem;
+  }
+}
+
+.craft-bars {
+  padding-right: 40px;
+}
+
+.buffs-container {
+  min-height: 32px;
+  .buff-container {
+    position: relative;
+    margin: 0 2px;
+    .stacks {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: white;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+    .duration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: white;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+  }
+}
+
+.hq-chances {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-right: 40px;
+}
+
+.report {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 0 1 300px;
+  height: 40px;
+}
+
+.actions-container {
+  min-height: 40px;
+  .action-from-bar:not(.gu-transit) {
+    display: none;
+  }
+}
+
+.category-row {
+  display: flex;
+  flex-wrap: wrap;
+  h4 {
+    padding-left: 15px;
+  }
+  .actions-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 5px;
+    background: rgba(0, 0, 0, .3);
+    margin: 10px;
+    .gu-transit {
+      display: none;
+    }
+    app-action {
+      margin: 5px;
+    }
+  }
+}

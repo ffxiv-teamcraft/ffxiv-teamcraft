@@ -1,10 +1,9 @@
-import { DataModel } from '../../core/database/storage/data-model';
 import { Craft } from '../garland-tools/craft';
-import { SavedConsumables } from './saved-consumables';
-import { FreeCompanyAction } from '../../pages/simulator/model/free-company-action';
-import { DeserializeAs } from '@kaiu/serializer';
+import { ConsumableRow } from '../user/consumable-row';
+import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
+import { GearSet } from '../../pages/simulator/model/gear-set';
 
-export class CraftingRotation extends DataModel {
+export class CraftingRotation extends DataWithPermissions {
 
   public name: string;
 
@@ -12,20 +11,23 @@ export class CraftingRotation extends DataModel {
 
   public rotation: string[] = [];
 
-  public authorId: string;
-
   public description: string;
 
   public defaultItemId?: number;
 
-  public defaultRecipeId?: number;
+  public defaultRecipeId?: string;
 
   public folder?: string;
 
-  @DeserializeAs(SavedConsumables)
-  public consumables: SavedConsumables = new SavedConsumables();
+  public food: ConsumableRow;
 
-  public freeCompanyActions: FreeCompanyAction[];
+  public medicine: ConsumableRow;
+
+  public freeCompanyActions: [number, number] = [0, 0];
+
+  public stats: GearSet;
+
+  public custom = false;
 
   public getName(): string {
     return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
