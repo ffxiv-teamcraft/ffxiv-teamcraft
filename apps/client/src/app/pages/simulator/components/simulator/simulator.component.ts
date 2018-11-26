@@ -94,6 +94,11 @@ export class SimulatorComponent implements OnDestroy {
         rotation.rotation = this.registry.serializeRotation(actions);
       }
       return rotation;
+    }),
+    tap(rotation => {
+      if (rotation.$key === undefined && rotation.rotation.length > 0) {
+        this.dirty = true;
+      }
     })
   );
 
