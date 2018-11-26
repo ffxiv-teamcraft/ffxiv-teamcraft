@@ -489,6 +489,8 @@
     "Reset": "Reiniciar rotación",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
+    "Export_copied": "Crafting optimizer export code copied to your clipboard",
+    "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
     "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
     "Generated_macro": "Macro para el juego",
     "Generate_ingame_macro": "Generar macro para el juego",
