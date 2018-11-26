@@ -92,7 +92,8 @@
     "Anonymous": "Anónimo",
     "Warning": "Aviso",
     "Success": "Sucesso",
-    "Copy_to_clipboard": "Copiar para área de transferência"
+    "Copy_to_clipboard": "Copiar para área de transferência",
+    "Language": ""
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -579,6 +580,9 @@
     "Title": "",
     "Leader": "",
     "Member": "",
+    "Enable_discord_updates": "",
+    "Disable_discord_updates": "",
+    "Webhook_error": "",
     "Create_team": "",
     "Create_invite_one_day": "",
     "Create_invite_infinite": "",
