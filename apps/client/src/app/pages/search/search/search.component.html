@@ -141,8 +141,8 @@
               </button>
             </ng-template>
             <ng-template #openInSimulatorAction>
-              <a nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" routerLink="/simulator/{{item.itemId}}">
+              <a nz-button *ngIf="item.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" routerLink="/simulator/{{item.itemId}}/{{item.recipe.recipeId}}">
                 <i class="material-icons">gavel</i>
               </a>
             </ng-template>
