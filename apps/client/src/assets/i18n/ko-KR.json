@@ -92,7 +92,8 @@
     "Anonymous": "익명",
     "Warning": "경고",
     "Success": "성공",
-    "Copy_to_clipboard": "클립보드에 복사하기"
+    "Copy_to_clipboard": "클립보드에 복사하기",
+    "Language": ""
   },
   "ALARMS": {
     "Title": "알람",
@@ -579,6 +580,9 @@
     "Title": "팀",
     "Leader": "리더",
     "Member": "멤버",
+    "Enable_discord_updates": "",
+    "Disable_discord_updates": "",
+    "Webhook_error": "",
     "Create_team": "팀 생성",
     "Create_invite_one_day": "새로운 초대링크 만들기[만료기간 1일]",
     "Create_invite_infinite": "새로운 초대링크 만들기[만료없음]",
