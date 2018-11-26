@@ -489,6 +489,8 @@
     "Reset": "リセット",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
+    "Export_copied": "Crafting optimizer export code copied to your clipboard",
+    "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
     "Crafting_optimizer_code": "Crafting optimizer import code",
     "Generated_macro": "ゲームのマクロ",
     "Generate_ingame_macro": "ゲームのマクロを作ります",
