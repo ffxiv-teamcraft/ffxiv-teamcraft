@@ -4,6 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
+  "See_on_map": "지도에서 보기",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -31,7 +32,7 @@
   "Unmark_HQ": "HQ 요구 지우기",
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
   "Confirmation": "계속하시겠습니까?",
-  "Is_working_on_it": "{{name}} 이 작업 중",
+  "Is_working_on_it": "{{name}} 작업중",
   "Work_on_it": "작업 중입니다.",
   "Remove_work_on_it": "사용자 할당 제거",
   "Add_as_collectible": "소장품으로 추가",
@@ -91,7 +92,8 @@
     "Anonymous": "익명",
     "Warning": "경고",
     "Success": "성공",
-    "Copy_to_clipboard": "클립보드에 복사하기"
+    "Copy_to_clipboard": "클립보드에 복사하기",
+    "Language": "언어"
   },
   "ALARMS": {
     "Title": "알람",
@@ -103,6 +105,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말로 이 그룹을 삭제하시겠습니까?",
+    "Confirm_group_delete_with_alarms": "정말로 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다"
@@ -413,7 +416,7 @@
     }
   },
   "GATHERING_LOCATIONS": {
-    "Title": "채집물",
+    "Title": "채집수첩",
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
     "Intro": "채집 장소는 채집 가능한 아이템을 찾고 어디서 얻을 수 있는지, 그리고 알람을 생성할 수 있게 해줍니다. 위쪽 공간에 내용을 적어 찾으려는 채집 정보를 확인하세요!"
@@ -485,6 +488,7 @@
     "custom_rotation": "사용자 지정 로테이션",
     "Reset": "로테이션 초기화",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
+    "Export_crafting_optimizer": "Crafting optimizer 형식으로 내보내기",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
     "Generate_ingame_macro": "인게임 매크로 생성",
@@ -521,6 +525,7 @@
     },
     "CONFIGURATION": {
       "Job": "직업",
+      "Job_not_configured": "아직 이 직업을 설정하지 않은 것 같습니다. 프로필 페이지에서 직업 설정이 되었는지 확인한 뒤 능력치를 설정해주세요.",
       "Custom_set": "사용자지정 능력치 활성화",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
@@ -534,13 +539,16 @@
       "Food": "음식 선택",
       "Medicine": "약차 선택",
       "Action": "자유부대 버프선택",
-      "Save_set": "현재 직업에 능력치를 저장",
+      "Save_on_profile": "프로필에 저장",
       "Reset_set": "능력치 초기화",
       "Save_consumables": "현재 소모품을 기본값으로 세팅",
+      "No_food": "음식 없음",
+      "No_medicine": "약차 없음",
+      "No_fc_buffs": "부대버프 없음",
       "STATS": {
         "CP": "CP",
-        "Craftsmanship": "작업숙련도",
-        "Control": "가공숙련도"
+        "Craftsmanship": "작업 숙련도",
+        "Control": "가공 숙련도"
       }
     }
   },
@@ -554,7 +562,13 @@
     "No_results": "길드의뢰를 찾을 수 없습니다",
     "Add_to_list": "이 길드의뢰 아이템을 목록에 추가",
     "Quantity": "수량",
-    "All_deliveries": "모든 {{value}} 납품"
+    "All_deliveries": "모든 {{value}} 납품",
+    "INTRO": {
+      "Title": "길드의뢰",
+      "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
+      "Second_line": "직업을 고르고, 레벨 범위를 입력하면 이에 따른 길드의뢰들이 표시됩니다. 원하는 길드의뢰를 선택한 뒤 목록에 추가하면 필요한 제작법이 자동으로 선택된 목록에 추가됩니다.",
+      "Third_line": "또한 길드의뢰명을 알고 있을 경우 이름으로 검색할 수 있습니다."
+    }
   },
   "NOTIFICATIONS": {
     "Title": "알림",
@@ -566,6 +580,9 @@
     "Title": "팀",
     "Leader": "리더",
     "Member": "멤버",
+    "Enable_discord_updates": "디스코드 업데이트 사용",
+    "Disable_discord_updates": "디스코드 업데이트 사용안함",
+    "Webhook_error": "디스코드 웹훅을 만드는동안 오류가 발생했습니다.",
     "Create_team": "팀 생성",
     "Create_invite_one_day": "새로운 초대링크 만들기[만료기간 1일]",
     "Create_invite_infinite": "새로운 초대링크 만들기[만료없음]",

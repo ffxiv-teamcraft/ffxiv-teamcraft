@@ -4,6 +4,7 @@
   "Pick_a_fc": "Choisissez une compagnie libre",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
+  "See_on_map": "Voir sur la carte",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -91,10 +92,11 @@
     "Anonymous": "Anonyme",
     "Warning": "Attention",
     "Success": "Succès",
-    "Copy_to_clipboard": "Copier dans le Presse-papiers"
+    "Copy_to_clipboard": "Copier dans le Presse-papiers",
+    "Language": "Language"
   },
   "ALARMS": {
-    "Title": "",
+    "Title": "Alarmes",
     "No_alarm": "Aucune alarme définie",
     "Add_alarm": "Ajouter une alarme",
     "Alarm_created": "Alarme créée",
@@ -103,6 +105,7 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Confirm_group_delete_with_alarms": "Are your sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers"
@@ -175,8 +178,8 @@
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
   "Recipes_Added": "{{itemcount}} objet ajoutés à la liste {{listname}}",
   "Character_name": "Nom complet du personnage",
-  "Disconnect_and_anonymous": "",
-  "Add_manual_character": "",
+  "Disconnect_and_anonymous": "Se déconnecter et continuer en tant qu'anonyme",
+  "Add_manual_character": "Ajouter un personnage",
   "Character_informations": "Informations du personnage",
   "Server_name": "Nom du serveur",
   "Add_all_recipes": "Ajouter les résultats à une liste",
@@ -485,6 +488,7 @@
     "custom_rotation": "rotation personnalisée",
     "Reset": "Remettre à zéro la rotation",
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
+    "Export_crafting_optimizer": "Exporter au format crafting optimizer",
     "Crafting_optimizer_code": "Code d'import de crafting optimizer",
     "Generated_macro": "Macro en jeu",
     "Generate_ingame_macro": "Générer une macro en jeu",
@@ -521,6 +525,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
+      "Job_not_configured": "Il semble que vous n’avez configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses stats",
       "Custom_set": "Activer les stats personnalisées",
       "Select_job": "Selectionner un job",
       "Craftsmanship": "Habileté",
@@ -534,9 +539,12 @@
       "Food": "Choisir un plat",
       "Medicine": "Choisir un médicament",
       "Action": "Choisir les bienfaits de compagnie libre",
-      "Save_set": "Sauvegarder les stats pour cette classe",
+      "Save_on_profile": "Enregistrer dans le profil",
       "Reset_set": "Remettre les stats à 0",
       "Save_consumables": "Sauvegarder en tant que consommables par défaut",
+      "No_food": "Pas de nourriture",
+      "No_medicine": "Aucun médicament",
+      "No_fc_buffs": "Aucun bienfait",
       "STATS": {
         "CP": "PS",
         "Craftsmanship": "Habileté",
@@ -554,7 +562,13 @@
     "No_results": "Aucun mandat trouvé",
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
-    "All_deliveries": "Toules les livraisons ({{value}})"
+    "All_deliveries": "Toules les livraisons ({{value}})",
+    "INTRO": {
+      "Title": "Mandats",
+      "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
+      "Second_line": "Sélectionnez un job, entrez une plage de niveau, vous aurez alors une liste des mandats correspondants que vous pourrez sélectionner et ajouter à une liste. Les recettes seront automatiquement ajoutées avec les montants correspondants.",
+      "Third_line": "Vous pouvez également rechercher par nom, dans le cas où vous savez ce que vous voulez."
+    }
   },
   "NOTIFICATIONS": {
     "Title": "Notifications",
@@ -566,6 +580,9 @@
     "Title": "Équipes",
     "Leader": "Chef",
     "Member": "Membre",
+    "Enable_discord_updates": "Enable Discord updates",
+    "Disable_discord_updates": "Disable Discord updates",
+    "Webhook_error": "There was an error while creating the Discord webhook:",
     "Create_team": "Créer une équipe",
     "Create_invite_one_day": "Créer une nouvelle invitation (valable 1 jour)",
     "Create_invite_infinite": "Créer une nouvelle invitation permanente",
