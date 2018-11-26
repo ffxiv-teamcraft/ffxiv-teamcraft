@@ -92,7 +92,8 @@
     "Anonymous": "Anónimo",
     "Warning": "Advertencia",
     "Success": "Éxito",
-    "Copy_to_clipboard": "Copiar al portapapeles"
+    "Copy_to_clipboard": "Copiar al portapapeles",
+    "Language": ""
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -579,6 +580,9 @@
     "Title": "Equipos",
     "Leader": "Líder",
     "Member": "Miembro",
+    "Enable_discord_updates": "",
+    "Disable_discord_updates": "",
+    "Webhook_error": "",
     "Create_team": "Crear un equipo",
     "Create_invite_one_day": "Crear una nueva invitación (expira en 1 día)",
     "Create_invite_infinite": "Crear una nueva invitación (permanente)",
