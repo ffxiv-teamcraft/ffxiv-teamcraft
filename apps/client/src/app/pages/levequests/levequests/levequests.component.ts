@@ -69,6 +69,7 @@ export class LevequestsComponent implements OnInit {
       tap(() => {
         this.showIntro = false;
         this.loading = true;
+        this.allSelected = false;
       }),
       switchMap(query => {
         const filters: XivapiSearchFilter[] = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];

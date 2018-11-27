@@ -100,6 +100,7 @@ export class SearchComponent implements OnInit {
       filter(([query, , filters]) => query.length > 3 || filters.length > 0),
       debounceTime(500),
       tap(([query, onlyRecipes, filters]) => {
+        this.allSelected = false;
         this.showIntro = false;
         this.loading = true;
         const queryParams: any = {
