@@ -322,6 +322,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "List completed",
+    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
     "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
     "Missing_tags_after_button": " button",
     "Add_remove_amount": "Add/remove a given amount",
@@ -351,6 +352,7 @@
     }
   },
   "LIST_TAGS": {
+    "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
     "LOG": "Log",
