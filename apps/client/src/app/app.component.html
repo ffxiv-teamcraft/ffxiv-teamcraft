@@ -102,10 +102,7 @@
   <nz-layout class="content-container">
     <nz-sider nzCollapsible
               [(nzCollapsed)]="collapsedSidebar"
-              (nzCollapsedChange)="settings.compactSidebar = $event"
-              [class.collapsed]="collapsedSidebar | ifMobile: false"
-              [nzCollapsedWidth]="80 | ifMobile: 0"
-              [nzBreakpoint]="'lg'">
+              [nzCollapsedWidth]="80 | ifMobile: 0">
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
         <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/search">
           <span>
