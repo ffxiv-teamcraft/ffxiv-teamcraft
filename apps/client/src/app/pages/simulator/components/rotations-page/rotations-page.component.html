@@ -1,4 +1,10 @@
 <h2>{{'SIMULATOR.Rotations' | translate}}</h2>
+<div class="toolbar" fxLayout="row" fxLayoutGap="5px">
+  <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nzSize="small" nz-tooltip
+          [nzTitle]="'SIMULATOR.New_rotation'" (click)="newRotation()">
+    <i nz-icon type="file-add"></i>
+  </button>
+</div>
 <div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
   <div *ngIf="rotations.length > 0; else noRotations" fxLayout="column" fxLayoutGap="10px"
        class="ngx-dnd-container" ngxDroppable="rotation"

@@ -52,6 +52,7 @@ export class Simulation {
   }
 
   public getReliabilityReport(): SimulationReliabilityReport {
+    this.reset();
     const results: SimulationResult[] = [];
     // Let's run the simulation 500 times.
     for (let i = 0; i < 500; i++) {
@@ -67,6 +68,7 @@ export class Simulation {
     } else {
       hqMedian = (results[Math.floor(results.length / 2)].hqPercent + results[Math.ceil(results.length / 2)].hqPercent) / 2;
     }
+    console.log(this.actions);
     return {
       rawData: results,
       successPercent: Math.round(successPercent),

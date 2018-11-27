@@ -1,3 +1,36 @@
-<p>
-  recipe-choice-popup works!
-</p>
+<nz-alert *ngIf="warning" nzType="warning" [nzMessage]="warning | translate" nzShowIcon>
+</nz-alert>
+<input type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
+       (keyup)="query$.next(searchInput.value)" nzAutoFocus>
+<nz-list [nzLoading]="loading" [nzRenderItem]="recipeTemplate" [nzDataSource]="results$ | async">
+  <ng-template #recipeTemplate let-recipe>
+    <nz-list-item [nzContent]="content">
+      <nz-list-item-meta [nzAvatar]="avatar"
+                         [nzTitle]="recipe.itemId | itemName | i18n"
+                         [nzDescription]="description">
+        <ng-template #avatar>
+          <app-item-icon [itemId]="recipe.itemId" [icon]="recipe.icon" [width]="32"></app-item-icon>
+        </ng-template>
+        <ng-template #description>
+          <img src="https://www.garlandtools.org/db/images/{{getJob(recipe.job)?.abbreviation}}.png"
+               alt="getJob(item.job)?.abbreviation" class="crafted-by">
+          {{recipe.lvl}}
+          {{getStars(recipe.stars)}}
+        </ng-template>
+      </nz-list-item-meta>
+      <ng-template #content>
+        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="close()"
+                routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}">
+          <i nz-icon type="check"></i>
+        </button>
+      </ng-template>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
+<div *ngIf="showCustom">
+  <nz-divider [nzText]="'Or' | translate"></nz-divider>
+  <a nz-button [nzType]="'primary'" class="new-list-button" nzBlock (click)="close()"
+     routerLink="/simulator/custom/{{rotationId}}">
+    {{'SIMULATOR.Create_a' | translate}} {{'SIMULATOR.custom_rotation' | translate}}
+  </a>
+</div>

@@ -41,6 +41,7 @@ import { CraftingJob } from '../../model/crafting-job.enum';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
+import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -89,7 +90,7 @@ export class SimulatorComponent implements OnDestroy {
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
-  public rotation$ =  this.rotationsFacade.selectedRotation$.pipe(
+  public rotation$ = this.rotationsFacade.selectedRotation$.pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
@@ -189,7 +190,8 @@ export class SimulatorComponent implements OnDestroy {
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService) {
     this.rotationsFacade.rotationCreated$.pipe(
-      takeUntil(this.onDestroy$)
+      takeUntil(this.onDestroy$),
+      filter(key => key !== undefined)
     ).subscribe(createdKey => {
       const commands = ['simulator'];
       if (this.custom) {
@@ -286,6 +288,8 @@ export class SimulatorComponent implements OnDestroy {
             rawData: [],
             successPercent: 0
           };
+        } else {
+          return simulation.getReliabilityReport();
         }
       })
     );
@@ -315,6 +319,18 @@ export class SimulatorComponent implements OnDestroy {
 
   changeRotation(): void {
     this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
+  }
+
+  changeRecipe(rotation: CraftingRotation): void {
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: RecipeChoicePopupComponent,
+      nzComponentParams: {
+        rotationId: rotation.$key,
+        warning: this.dirty ? 'SIMULATOR.Changing_recipe_save_warning' : null
+      },
+      nzTitle: this.translate.instant('Pick_a_recipe')
+    });
   }
 
   renameRotation(rotation: CraftingRotation): void {

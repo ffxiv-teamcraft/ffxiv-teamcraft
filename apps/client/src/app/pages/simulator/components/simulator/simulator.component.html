@@ -9,7 +9,8 @@
             [nzTitle]="'SIMULATOR.Persist' | translate" (click)="saveRotation(rotation)">
       <i nz-icon type="save"></i>
     </button>
-    <button disabled nz-button *ngIf="custom" nzType="primary" nzShape="circle" nz-tooltip
+    <button nz-button *ngIf="custom" nzType="primary" nzShape="circle" nz-tooltip
+            (click)="changeRecipe(rotation)"
             [nzTitle]="'SIMULATOR.Convert_rotation' | translate">
       <i nz-icon type="redo"></i>
     </button>
@@ -271,7 +272,13 @@
               <app-item-icon [icon]="item.icon" [width]="42"></app-item-icon>
             </div>
             <div fxLayout="column">
-              <div>{{item.id | itemName | i18n}}</div>
+              <div fxLayout="row" fxLayoutGap="5px">
+                <div>{{item.id | itemName | i18n}}</div>
+                <button nz-button nzSize="small" nzShape="circle" (click)="changeRecipe(rotation)" nz-tooltip
+                        [nzTitle]="'SIMULATOR.Change_recipe' | translate">
+                  <i nz-icon iconfont="icon-exchange"></i>
+                </button>
+              </div>
               <div>{{resultData.simulation.recipe.lvl}} {{getStars(resultData.simulation.recipe.stars)}}</div>
             </div>
           </div>

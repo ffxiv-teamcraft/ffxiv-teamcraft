@@ -64,6 +64,7 @@ import { NameOfWater } from './actions/buff/name-of-water';
 import { WasteNot } from './actions/buff/waste-not';
 import { WasteNotII } from './actions/buff/waste-not-ii';
 import { IngenuityII } from './actions/buff/ingenuity-ii';
+import { Reclaim } from './actions/buff/reclaim';
 
 @Injectable()
 export class CraftingActionsRegistry {
@@ -132,7 +133,8 @@ export class CraftingActionsRegistry {
     { short: 'specialtyRefurbish', full: 'SpecialtyRefurbish' },
     { short: 'specialtyReflect', full: 'SpecialtyReflect' },
     { short: 'strokeOfGenius', full: 'StrokeOfGenius' },
-    { short: 'finishingTouches', full: 'FinishingTouches' }
+    { short: 'finishingTouches', full: 'FinishingTouches' },
+    { short: 'reclaim', full: 'Reclaim' }
   ];
 
   private static readonly ALL_ACTIONS: { name: string, action: CraftingAction }[] = [
@@ -211,7 +213,8 @@ export class CraftingActionsRegistry {
 
     // Other
     { name: 'Observe', action: new Observe() },
-    { name: 'TrainedHand', action: new TrainedHand() }
+    { name: 'TrainedHand', action: new TrainedHand() },
+    { name: 'Reclaim', action: new Reclaim() }
   ];
 
   public getActionsByType(type: ActionType): CraftingAction[] {

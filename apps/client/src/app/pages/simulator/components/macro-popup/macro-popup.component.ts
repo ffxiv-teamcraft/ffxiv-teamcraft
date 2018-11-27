@@ -4,6 +4,7 @@ import { LocalizedDataService } from '../../../../core/data/localized-data.servi
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { CraftingJob } from '../../model/crafting-job.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { Reclaim } from '../../model/actions/buff/reclaim';
 
 @Component({
   selector: 'app-macro-popup',
@@ -30,6 +31,8 @@ export class MacroPopupComponent implements OnInit {
 
   job: CraftingJob;
 
+  tooManyAactions = false;
+
   constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService) {
   }
 
@@ -55,7 +58,7 @@ export class MacroPopupComponent implements OnInit {
       }
       macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
       totalLength++;
-      if (macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1 ) {
+      if (macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
         let seNumber: number;
         if (this.fixedEcho) {
           seNumber = this.echoSeNumber;
@@ -74,6 +77,12 @@ export class MacroPopupComponent implements OnInit {
         seNumber = Math.min(this.echoSeNumber + this.macro.length, 16);
       }
       this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
+    }
+    if (this.aactionsMacro.length < 10) {
+      this.aactionsMacro.push(`/aaction ${this.i18n.getName(this.l12n.getCraftingAction(new Reclaim().getIds()[0]))}`);
+    }
+    if (this.aactionsMacro.length > 10) {
+      this.tooManyAactions = true;
     }
     if (this.aactionsMacro.length > 0) {
       this.aactionsMacro.push('/echo Cross class setup finished <se.4>');

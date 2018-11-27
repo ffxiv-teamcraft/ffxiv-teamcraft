@@ -35,4 +35,6 @@ export enum Buff {
   NAME_OF_EARTH,
   NAME_OF_LIGHTNING,
   NAME_OF_WATER,
+
+  RECLAIM
 }
