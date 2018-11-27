@@ -9,13 +9,16 @@ function getCompact(list) {
   const compact = list;
   delete compact.items;
   compact.finalItems = compact.finalItems.map(item => {
-    return {
+    const entry = {
       id: item.id,
       icon: item.icon,
       amount: item.amount,
-      amount_needed: item.amount_needed,
-      recipeId: item.recipeId
+      amount_needed: item.amount_needed
     };
+    if (item.recipeId !== undefined) {
+      entry.recipeId = item.recipeId;
+    }
+    return entry;
   });
   return compact;
 }
