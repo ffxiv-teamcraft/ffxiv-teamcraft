@@ -186,9 +186,13 @@ export class SimulatorComponent implements OnDestroy {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(createdKey => {
-      this.router.navigate([createdKey], {
-        relativeTo: this.route
-      });
+      const commands = ['simulator'];
+      if (this.custom) {
+        commands.push(createdKey);
+      } else {
+        commands.push(this.item.id.toString(), this._recipeId, createdKey);
+      }
+      this.router.navigate(commands);
     });
 
     this.statsForm = this.fb.group({

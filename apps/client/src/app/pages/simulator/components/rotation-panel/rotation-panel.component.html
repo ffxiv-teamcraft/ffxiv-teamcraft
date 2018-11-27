@@ -4,6 +4,10 @@
       <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
         <div>{{rotation.getName()}}</div>
         <div fxLayout="row" fxLayoutGap="5px">
+          <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'SIMULATOR.Rename_rotation' | translate"
+                  (click)="$event.stopPropagation();renameRotation(rotation)">
+            <i nz-icon type="edit"></i>
+          </button>
           <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
              nz-button
              [nzShape]="'circle'"

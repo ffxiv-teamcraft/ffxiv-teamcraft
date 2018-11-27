@@ -3,12 +3,13 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -28,7 +29,7 @@ export class RotationPanelComponent {
 
   constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private dialog: NzModalService) {
     this.actions$ = this.rotation$.pipe(
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
@@ -44,6 +45,24 @@ export class RotationPanelComponent {
     } else {
       return `/simulator/${rotation.defaultItemId}/${rotation.defaultRecipeId}/${rotation.$key}`;
     }
+  }
+
+  renameRotation(rotation: CraftingRotation): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: rotation.getName() },
+      nzFooter: null,
+      nzTitle: this.translate.instant('Edit')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        rotation.name = name;
+        return rotation;
+      })
+    ).subscribe(r => {
+      this.rotationsFacade.updateRotation(r);
+
+    });
   }
 
   afterLinkCopy(): void {
