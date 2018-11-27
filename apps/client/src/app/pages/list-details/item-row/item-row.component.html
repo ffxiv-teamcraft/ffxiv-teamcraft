@@ -134,10 +134,10 @@
   </div>
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
     <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto">
-      <!--TODO Simulator link-->
       <div *ngFor="let craft of item.craftedBy">
         <button nz-button [nzShape]="'circle'" nz-tooltip nzTitle="{{craft.level}}{{craft.stars_tooltip}}"
-                [nzGhost]="true" *ngIf="craft.icon !== ''">
+                (click)="openSimulator(craft.recipeId)"
+                *ngIf="craft.icon !== ''">
           <img [src]="craft.icon" alt="" class="img-icon">
         </button>
       </div>

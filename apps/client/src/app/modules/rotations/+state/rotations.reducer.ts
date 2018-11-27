@@ -32,7 +32,7 @@ export function rotationsReducer(
     case RotationsActionTypes.CreateRotation: {
       state = {
         ...state,
-        rotations: [...state.rotations, action.rotation]
+        rotations: [...state.rotations.filter(rotation => rotation.$key !== undefined), action.rotation]
       };
       break;
     }

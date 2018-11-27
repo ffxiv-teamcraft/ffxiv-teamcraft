@@ -18,6 +18,7 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
+import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-search',
@@ -70,7 +71,8 @@ export class SearchComponent implements OnInit {
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService) {
+              private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
+              private rotationPicker: RotationPickerService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -268,6 +270,10 @@ export class SearchComponent implements OnInit {
 
   public selectAll(items: SearchResult[], selected: boolean): void {
     items.forEach(item => item.selected = selected);
+  }
+
+  public openInSimulator(itemId: number, recipeId: string): void {
+    this.rotationPicker.openInSimulator(itemId, recipeId);
   }
 
   public updateAllSelected(items: SearchResult[]): void {

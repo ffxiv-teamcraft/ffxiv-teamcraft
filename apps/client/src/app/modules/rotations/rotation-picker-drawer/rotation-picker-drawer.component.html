@@ -1,0 +1,23 @@
+<div *ngIf="rotations$ | async as rotations">
+  <nz-list [nzDataSource]="rotations" [nzRenderItem]="rotation" [nzHeader]="header">
+    <ng-template #rotation let-rotation>
+      <nz-list-item [nzActions]="[pickRotation]">
+        <nz-list-item-meta [nzTitle]="rotation.getName()">
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickRotation>
+        <a nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+           routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+          <i nz-icon type="check"></i>
+        </a>
+      </ng-template>
+    </ng-template>
+    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
+  </nz-list>
+  <ng-container *ngIf="!disableNew">
+    <nz-divider [nzText]="'Or' | translate"></nz-divider>
+    <a nz-button [nzType]="'primary'" nzBlock (click)="ref.close(null)" routerLink="/simulator/{{itemId}}/{{recipeId}}">
+      <i nz-icon type="plus"></i>&nbsp;{{'SIMULATOR.New_rotation' | translate}}
+    </a>
+  </ng-container>
+</div>

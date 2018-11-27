@@ -32,6 +32,7 @@ import { CommentsPopupComponent } from '../../../modules/comments/comments-popup
 import { CommentTargetType } from '../../../modules/comments/comment-target-type';
 import { List } from '../../../modules/list/model/list';
 import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
+import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-item-row',
@@ -83,7 +84,8 @@ export class ItemRowComponent implements OnInit {
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
               private userService: UserService, private xivapi: XivapiService,
               private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
-              private discordWebhookService: DiscordWebhookService) {
+              private discordWebhookService: DiscordWebhookService,
+              private rotationPicker: RotationPickerService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
@@ -244,6 +246,10 @@ export class ItemRowComponent implements OnInit {
 
   public openRequirementsPopup(): void {
     this.openDetailsPopup(RelationshipsComponent);
+  }
+
+  public openSimulator(recipeId: string): void {
+    this.rotationPicker.openInSimulator(this.item.id, recipeId);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>): void {

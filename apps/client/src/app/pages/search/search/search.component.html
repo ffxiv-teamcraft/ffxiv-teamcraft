@@ -141,10 +141,10 @@
               </button>
             </ng-template>
             <ng-template #openInSimulatorAction>
-              <a nz-button *ngIf="item.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" routerLink="/simulator/{{item.itemId}}/{{item.recipe.recipeId}}">
+              <button nz-button *ngIf="item.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
+                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" (click)="openInSimulator(item.itemId, item.recipe.recipeId)">
                 <i class="material-icons">gavel</i>
-              </a>
+              </button>
             </ng-template>
             <nz-list-item-meta
               [nzTitle]="title"
