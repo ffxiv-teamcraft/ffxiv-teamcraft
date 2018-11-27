@@ -58,7 +58,6 @@ export class GatheringLocationComponent {
               const bellNode = this.bell.getNode(+node.nodeId);
               node.timed = bellNode !== undefined;
               node.itemId = node.obj.i;
-              console.log(node.itemId);
               if (node.timed) {
                 node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(bellNode.type);
                 const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);

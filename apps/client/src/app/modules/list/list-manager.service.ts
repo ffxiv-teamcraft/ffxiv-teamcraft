@@ -136,10 +136,10 @@ export class ListManagerService {
       const permissions = list.registry;
       const backup = [];
       list.items.forEach(item => {
-        backup.push({ array: 'items', item: item });
+        backup.push({ array: 'items', item: { ...item } });
       });
       list.finalItems.forEach(item => {
-        backup.push({ array: 'finalItems', item: item });
+        backup.push({ array: 'finalItems', item: { ...item } });
       });
       const add: Observable<List>[] = [];
       list.finalItems.forEach((recipe) => {
@@ -158,7 +158,7 @@ export class ListManagerService {
                 if (row.item.comments !== undefined) {
                   listRow.comments = row.item.comments;
                 }
-                listRow.done = row.item.done;
+                listRow.done = row.item.done || 0;
                 listRow.used = row.item.used || 0;
                 if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
                   if (listRow.done > listRow.amount) {

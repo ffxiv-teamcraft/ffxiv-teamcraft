@@ -24,7 +24,6 @@ export class BellNodesService {
         if (match !== undefined) {
           const nodeCopy = { ...node };
           nodeCopy.icon = match.icon;
-          console.log(match);
           nodeCopy.itemId = match.id;
           if (match.slot !== '?' && match.slot !== undefined) {
             nodeCopy.slot = +match.slot;

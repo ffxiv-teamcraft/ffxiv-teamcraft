@@ -20,7 +20,7 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -97,7 +97,7 @@ export class ListsEffects {
     withLatestFrom(this.listsFacade.allListDetails$),
     filter(([action, allLists]) => allLists.find(list => list.$key === action.key) === undefined),
     map(([action]) => action),
-    switchMap((action: LoadListDetails) => {
+    mergeMap((action: LoadListDetails) => {
       return this.authFacade.loggedIn$.pipe(
         switchMap(loggedIn => {
           return combineLatest(
@@ -241,7 +241,7 @@ export class ListsEffects {
     withLatestFrom(this.listsFacade.compacts$),
     filter(([action, compacts]) => compacts.find(list => list.$key === (<LoadListCompact>action).key) === undefined),
     map(([action]) => action),
-    switchMap(action => this.listCompactsService.get(action.key)),
+    mergeMap(action => this.listCompactsService.get(action.key)),
     map(listCompact => new ListCompactLoaded(listCompact))
   );
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { debounceTime, filter, first, map, switchMap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -154,11 +154,19 @@ export class ListsComponent {
   }
 
   regenerateLists(lists: { communityLists: List[], otherLists: List[] }): void {
-    const regenerations = [...lists.communityLists, ...lists.otherLists].map(list => {
-      return this.listManager.upgradeList(list)
-        .pipe(
-          map(l => this.listsFacade.updateList(l))
-        );
+    const compacts = [...lists.communityLists, ...lists.otherLists];
+    compacts.forEach(compact => {
+      this.listsFacade.load(compact.$key);
+    });
+
+    const regenerations = compacts.map(compact => {
+      return this.listsFacade.allListDetails$.pipe(
+        map(details => details.find(l => l.$key === compact.$key)),
+        filter(list => list !== undefined),
+        first(),
+        switchMap(list => this.listManager.upgradeList(list)),
+        tap(l => this.listsFacade.updateList(l))
+      );
     });
 
     this.progress.showProgress(concat(...regenerations), regenerations.length).pipe(first()).subscribe(() => {
