@@ -21,7 +21,6 @@ export class CustomSimulatorPageComponent {
               private rotationsFacade: RotationsFacade) {
     this.route.paramMap.pipe(
       map(params => params.get('rotationId')),
-      first()
     ).subscribe(id => {
       if (id === null) {
         this.rotationsFacade.createRotation();

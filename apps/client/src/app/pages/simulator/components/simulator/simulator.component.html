@@ -65,7 +65,10 @@
               (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40">
         <i nz-icon type="edit"></i>
       </button>
-      <button nz-button>TODO change rotation</button>
+      <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'SIMULATOR.Change_rotation' | translate"
+              (click)="changeRotation()">
+        <i nz-icon iconfont="icon-exchange"></i>
+      </button>
     </div>
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">

@@ -6,8 +6,12 @@
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickRotation>
-        <a nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+        <a nz-button *ngIf="!custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
            routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+          <i nz-icon type="check"></i>
+        </a>
+        <a nz-button *ngIf="custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+           routerLink="/simulator/custom/{{rotation.$key}}">
           <i nz-icon type="check"></i>
         </a>
       </ng-template>

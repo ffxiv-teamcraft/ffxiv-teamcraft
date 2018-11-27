@@ -11,13 +11,14 @@ export class RotationPickerService {
   constructor(private nzDrawer: NzDrawerService, private translate: TranslateService) {
   }
 
-  openInSimulator(itemId: number, recipeId: string, disableNew = false): void {
+  openInSimulator(itemId: number, recipeId: string, disableNew = false, custom = false): void {
     this.nzDrawer.create<RotationPickerDrawerComponent, Partial<RotationPickerDrawerComponent>, null>({
       nzContent: RotationPickerDrawerComponent,
       nzContentParams: {
         itemId: itemId,
         recipeId: recipeId,
-        disableNew: disableNew
+        disableNew: disableNew,
+        custom: custom
       },
       nzTitle: this.translate.instant('Pick_a_rotation')
     });

@@ -40,6 +40,7 @@ import { StepByStepReportComponent } from '../step-by-step-report/step-by-step-r
 import { CraftingJob } from '../../model/crafting-job.enum';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
+import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-simulator',
@@ -88,20 +89,24 @@ export class SimulatorComponent implements OnDestroy {
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
-  public rotation$ = combineLatest(this.recipe$, this.rotationsFacade.selectedRotation$, this.actions$).pipe(
-    map(([recipe, rotation, actions]) => {
-      rotation.recipe = recipe;
-      if (actions.length > 0) {
-        rotation.rotation = this.registry.serializeRotation(actions);
-      }
-      return rotation;
-    }),
+  public rotation$ =  this.rotationsFacade.selectedRotation$.pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
       }
     })
   );
+
+  // public rotation$ = combineLatest(this.recipe$,, this.actions$).pipe(
+  //   map(([recipe, rotation, actions]) => {
+  //     rotation.recipe = recipe;
+  //     if (actions.length > 0) {
+  //       rotation.rotation = this.registry.serializeRotation(actions);
+  //     }
+  //     return rotation;
+  //   }),
+  //
+  // );
 
   // Customization forms
   public statsForm: FormGroup;
@@ -182,13 +187,13 @@ export class SimulatorComponent implements OnDestroy {
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
-              private message: NzMessageService, private linkTools: LinkToolsService) {
+              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(createdKey => {
       const commands = ['simulator'];
       if (this.custom) {
-        commands.push(createdKey);
+        commands.push('custom', createdKey);
       } else {
         commands.push(this.item.id.toString(), this._recipeId, createdKey);
       }
@@ -306,6 +311,10 @@ export class SimulatorComponent implements OnDestroy {
 
   disableEvent(event: any): void {
     event.el.parentNode.removeChild(event.el);
+  }
+
+  changeRotation(): void {
+    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
   }
 
   renameRotation(rotation: CraftingRotation): void {

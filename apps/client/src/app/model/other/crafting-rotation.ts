@@ -35,7 +35,7 @@ export class CraftingRotation extends DataWithPermissions {
     if (this.recipe) {
       return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
     } else {
-      return 'Borken';
+      return 'New custom rotation';
     }
   }
 }

@@ -23,7 +23,6 @@ export class SimulatorPageComponent {
 
     this.route.paramMap.pipe(
       map(params => params.get('rotationId')),
-      first()
     ).subscribe(id => {
       if (id === null) {
         this.rotationsFacade.createRotation();

@@ -18,6 +18,8 @@ export class RotationPickerDrawerComponent {
 
   public disableNew = false;
 
+  public custom = false;
+
   constructor(private rotationsFacade: RotationsFacade, public ref: NzDrawerRef<CraftingRotation>) {
   }
 }
