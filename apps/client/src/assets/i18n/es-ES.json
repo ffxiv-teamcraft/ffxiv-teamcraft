@@ -322,6 +322,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Lista completada",
+    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
     "Missing_tags_before_button": "Esta lista se muestra como una lista de la comunidad pero no tiene etiquetas, por favor agregue algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
@@ -351,6 +352,7 @@
     }
   },
   "LIST_TAGS": {
+    "OUTDATED": "Outdated",
     "GEAR": "Armadura",
     "CONSUMABLE": "Consumible",
     "LOG": "Registro",
