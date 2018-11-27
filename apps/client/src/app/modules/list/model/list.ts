@@ -12,7 +12,7 @@ import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 export class List extends DataWithPermissions {
   name: string;
@@ -81,8 +81,8 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     delete clone.$key;
-    ga('send', 'event', 'List', 'creation');
-    ga('send', 'event', 'List', 'clone');
+    gtag('send', 'event', 'List', 'creation');
+    gtag('send', 'event', 'List', 'clone');
     this.forks++;
     clone.reset();
     return clone;

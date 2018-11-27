@@ -24,7 +24,7 @@ import { NotificationsFacade } from './modules/notifications/+state/notification
 import { AbstractNotification } from './core/notification/abstract-notification';
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -98,8 +98,8 @@ export class AppComponent implements OnInit {
         });
         this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
       }
-      ga('set', 'page', event.url);
-      ga('send', 'pageview');
+      gtag('set', 'page', event.url);
+      gtag('send', 'pageview');
     });
 
     // this.gt.preload();

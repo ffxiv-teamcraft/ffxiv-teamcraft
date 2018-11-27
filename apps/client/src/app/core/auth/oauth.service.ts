@@ -8,8 +8,6 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-declare const ga: Function;
-
 @Injectable()
 export class OauthService {
 

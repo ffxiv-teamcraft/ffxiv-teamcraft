@@ -6,7 +6,6 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from '../pipes/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDataService } from './data/localized-data.service';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
 import { PushNotificationsModule } from 'ng-push';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
@@ -46,8 +45,6 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
     TranslateModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    MatDialogModule,
-    MatButtonModule,
     PushNotificationsModule,
     MaintenanceModule
   ],

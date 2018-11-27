@@ -4,7 +4,6 @@ import { WikiComponent } from './wiki/wiki.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
-import { MatInputModule } from '@angular/material';
 import { ScrollService } from './services/scroll.service';
 import { ScrollSpyService } from './services/scroll-spy.service';
 
@@ -24,8 +23,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-
-    MatInputModule,
 
     TranslateModule,
     MarkdownModule.forChild()

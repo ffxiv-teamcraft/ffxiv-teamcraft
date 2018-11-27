@@ -31,7 +31,7 @@ import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 
-declare const ga: Function;
+declare const gtag: Function;
 
 @Injectable()
 export class ListsFacade {
@@ -173,12 +173,12 @@ export class ListsFacade {
 
   addList(list: List): void {
     this.store.dispatch(new CreateList(list));
-    ga('send', 'event', 'List', 'creation');
+    gtag('send', 'event', 'List', 'creation');
   }
 
   deleteList(key: string): void {
     this.store.dispatch(new DeleteList(key));
-    ga('send', 'event', 'List', 'deletion');
+    gtag('send', 'event', 'List', 'deletion');
   }
 
   updateList(list: List, updateCompact = false): void {

@@ -10,7 +10,7 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgDragDropModule } from 'ng-drag-drop';
-import { IS_ELECTRON } from './core/tools/platform.service';
+import { IS_ELECTRON, PlatformService } from './core/tools/platform.service';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -84,7 +84,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
       loader: {
         provide: TranslateLoader,
         useFactory: TranslationsLoaderFactory,
-        deps: [HttpClient]
+        deps: [HttpClient, PlatformService]
       }
     }),
 
