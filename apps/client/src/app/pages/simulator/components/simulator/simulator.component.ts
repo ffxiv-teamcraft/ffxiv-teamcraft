@@ -39,6 +39,7 @@ import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/
 import { StepByStepReportComponent } from '../step-by-step-report/step-by-step-report.component';
 import { CraftingJob } from '../../model/crafting-job.enum';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-simulator',
@@ -181,7 +182,7 @@ export class SimulatorComponent implements OnDestroy {
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
-              private message: NzMessageService) {
+              private message: NzMessageService, private linkTools: LinkToolsService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(createdKey => {
@@ -362,7 +363,6 @@ export class SimulatorComponent implements OnDestroy {
   }
 
   openStepByStepReportPopup(result: SimulationResult): void {
-    console.log(result);
     this.dialog.create({
       nzContent: StepByStepReportComponent,
       nzComponentParams: {
@@ -371,6 +371,18 @@ export class SimulatorComponent implements OnDestroy {
       nzTitle: this.translate.instant('SIMULATOR.Step_by_step_report'),
       nzFooter: null
     });
+  }
+
+  getLink(rotation: CraftingRotation): string {
+    if (rotation.custom) {
+      return this.linkTools.getLink(`/simulator/custom/${rotation.$key}`);
+    } else {
+      return this.linkTools.getLink(`/simulator/${rotation.defaultItemId}/${rotation.defaultRecipeId}/${rotation.$key}`);
+    }
+  }
+
+  afterLinkCopy(): void {
+    this.message.success(this.translate.instant('SIMULATOR.Share_link_copied'));
   }
 
   importFromXIVMacro(): void {
@@ -416,15 +428,16 @@ export class SimulatorComponent implements OnDestroy {
   }
 
   saveRotation(rotation: CraftingRotation): void {
-    combineLatest(this.stats$, this.actions$).pipe(
+    combineLatest(this.stats$, this.actions$, this.recipe$).pipe(
       first()
-    ).subscribe(([stats, actions]) => {
+    ).subscribe(([stats, actions, recipe]) => {
       if (this.custom) {
         // custom-specific behavior goes here if we find any.
       } else {
         rotation.defaultItemId = this.item.id;
         rotation.defaultRecipeId = this._recipeId;
       }
+      rotation.recipe = recipe;
       rotation.stats = {
         jobId: stats.jobId,
         specialist: stats.specialist,

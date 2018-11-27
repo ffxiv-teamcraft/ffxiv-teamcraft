@@ -7,6 +7,8 @@ export class CraftingRotation extends DataWithPermissions {
 
   public name: string;
 
+  public index = -1;
+
   public recipe: Partial<Craft>;
 
   public rotation: string[] = [];
@@ -30,6 +32,10 @@ export class CraftingRotation extends DataWithPermissions {
   public custom = false;
 
   public getName(): string {
-    return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
+    if (this.recipe) {
+      return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
+    } else {
+      return 'Borken';
+    }
   }
 }

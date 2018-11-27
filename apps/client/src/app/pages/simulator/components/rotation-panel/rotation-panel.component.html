@@ -1,3 +1,30 @@
-<p>
-  rotation-panel works!
-</p>
+<nz-collapse *ngIf="rotation$ | async as rotation">
+  <nz-collapse-panel [nzHeader]="header">
+    <ng-template #header>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
+        <div>{{rotation.getName()}}</div>
+        <div fxLayout="row" fxLayoutGap="5px">
+          <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
+             nz-button
+             [nzShape]="'circle'"
+             [nzType]="'primary'"
+             [routerLink]="getRouterLink(rotation)">
+            <i nz-icon type="folder-open"></i>
+          </a>
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                  [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                  ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
+            <i nz-icon type="share-alt"></i>
+          </button>
+          <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
+                  [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)">
+            <i nz-icon type="delete"></i>
+          </button>
+        </div>
+      </div>
+    </ng-template>
+    <div fxLayout="row wrap" fxLayoutGap="10px" *ngIf="actions$ | async as actions">
+      <app-action *ngFor="let action of actions" [action]="action" [hideCost]="true"></app-action>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>

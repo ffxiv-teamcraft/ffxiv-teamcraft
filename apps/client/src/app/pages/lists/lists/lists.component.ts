@@ -184,7 +184,6 @@ export class ListsComponent {
       .forEach(l => {
         this.listsFacade.updateListIndex(l);
       });
-
   }
 
   setWorkshopIndex(workshop: Workshop, index: number, workshopDisplays: WorkshopDisplay[]): void {

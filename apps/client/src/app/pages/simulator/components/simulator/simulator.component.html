@@ -52,6 +52,11 @@
             [nzTitle]="'SIMULATOR.Step_by_step_report' | translate">
       <i nz-icon type="ordered-list"></i>
     </button>
+    <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+            [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+            ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
+      <i nz-icon type="share-alt"></i>
+    </button>
   </div>
   <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">

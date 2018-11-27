@@ -14,6 +14,7 @@ import { catchError, filter, map, switchMap, withLatestFrom } from 'rxjs/operato
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { of } from 'rxjs';
+import { EMPTY } from 'rxjs/internal/observable/empty';
 
 @Injectable()
 export class RotationsEffects {
@@ -61,7 +62,8 @@ export class RotationsEffects {
     ofType<DeleteRotation>(RotationsActionTypes.DeleteRotation),
     switchMap((action) => {
       return this.rotationsService.remove(action.key);
-    })
+    }),
+    switchMap(() => EMPTY)
   );
 
   constructor(

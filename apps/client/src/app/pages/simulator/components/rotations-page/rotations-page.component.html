@@ -1,3 +1,18 @@
-<p>
-  rotations-page works!
-</p>
+<h2>{{'SIMULATOR.Rotations' | translate}}</h2>
+<div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
+  <div *ngIf="rotations.length > 0; else noRotations" fxLayout="column" fxLayoutGap="10px"
+       class="ngx-dnd-container" ngxDroppable="rotation"
+       (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)">
+    <div *ngFor="let rotation of rotations; trackBy: trackByRotation" ngxDraggable="rotation" [model]="rotation">
+      <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+    </div>
+  </div>
+  <ng-template #noRotations>
+    <app-fullpage-message>
+      {{'SIMULATOR.No_rotations' | translate}}
+    </app-fullpage-message>
+  </ng-template>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

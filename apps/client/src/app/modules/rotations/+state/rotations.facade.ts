@@ -24,7 +24,8 @@ export class RotationsFacade {
   loading$ = this.store.select(rotationsQuery.getLoading);
   allRotations$ = this.store.select(rotationsQuery.getAllRotations);
   myRotations$ = combineLatest(this.allRotations$, this.authFacade.userId$).pipe(
-    map(([rotations, userId]) => rotations.filter(r => r.authorId === userId))
+    map(([rotations, userId]) => rotations.filter(r => r.authorId === userId)),
+    map(rotations => rotations.sort((a, b) => a.index - b.index))
   );
   selectedRotation$ = this.store.select(rotationsQuery.getSelectedRotation).pipe(
     filter(r => r !== undefined && r !== null)
