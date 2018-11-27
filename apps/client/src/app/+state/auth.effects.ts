@@ -63,9 +63,17 @@ export class AuthEffects {
   );
 
   @Effect()
+  fetchUserOnAnoymous$ = this.actions$.pipe(
+    ofType(AuthActionTypes.LoggedInAsAnonymous),
+    switchMap((action: Authenticated) => this.userService.get(action.uid)),
+    catchError(() => of(new TeamcraftUser())),
+    map(user => new UserFetched(user))
+  );
+
+  @Effect()
   fetchUserOnAuthenticated$ = this.actions$.pipe(
-    ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
-    mergeMap((action: Authenticated) => this.userService.get(action.uid)),
+    ofType(AuthActionTypes.Authenticated),
+    switchMap((action: Authenticated) => this.userService.get(action.uid)),
     catchError(() => of(new TeamcraftUser())),
     map(user => new UserFetched(user))
   );
@@ -75,7 +83,7 @@ export class AuthEffects {
     // Avoid recursion
     filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
     withLatestFrom(this.store),
-    filter(([action, state]) => state.auth.loggedIn && state.auth.user !== null),
+    filter(([action, state]) => !state.auth.loading && state.auth.loggedIn && state.auth.user !== null),
     filter(([action, state]) => state.auth.user.lodestoneIds.length === 0 && state.auth.user.defaultLodestoneId === undefined),
     map(() => new NoLinkedCharacter())
   );
