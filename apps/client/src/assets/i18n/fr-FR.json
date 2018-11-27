@@ -344,6 +344,7 @@
     }
   },
   "LIST_TAGS": {
+    "OUTDATED": "Périmée",
     "GEAR": "Équipement",
     "CONSUMABLE": "Consommable",
     "LOG": "Carnet",

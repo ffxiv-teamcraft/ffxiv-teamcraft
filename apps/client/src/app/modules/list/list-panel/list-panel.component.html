@@ -35,12 +35,11 @@
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
           <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" nz-tooltip
-                  [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
+                  [nzTitle]="'LIST_DETAILS.Public_list_description' | translate">
             {{'Public_list' | translate}}
           </nz-tag>
-          <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'" nz-tooltip
-                  [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
-          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>
+          <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
+          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.'+tag) | uppercase | translate}}</nz-tag>
         </div>
         <div class="description">
           {{_list.note}}
