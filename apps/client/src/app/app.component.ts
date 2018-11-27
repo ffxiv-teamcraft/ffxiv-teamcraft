@@ -4,7 +4,7 @@ import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { faDiscord, faFacebookF, faGithub } from '@fortawesome/fontawesome-free-brands';
+import { faDiscord, faFacebookF, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
@@ -23,6 +23,7 @@ import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
+import { PlatformService } from './core/tools/platform.service';
 
 declare const gtag: Function;
 
@@ -61,12 +62,16 @@ export class AppComponent implements OnInit {
 
   public time$: Observable<string>;
 
+  public desktop = false;
+
   constructor(private gt: GarlandToolsService, private translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService, private rotationsFacade: RotationsFacade) {
+              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService) {
+
+    this.desktop = this.platformService.isDesktop();
 
     this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_ddldn6q6l4l.js'});
 
@@ -118,7 +123,7 @@ export class AppComponent implements OnInit {
       this.locale = change.lang;
     });
 
-    fontawesome.library.add(faDiscord, faFacebookF, faGithub, faCalculator, faBell, faMap, faGavel);
+    fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
 
     this.firebase.object('maintenance').valueChanges().subscribe(maintenance => {
       if (maintenance && environment.production) {
