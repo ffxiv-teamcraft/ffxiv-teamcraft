@@ -145,9 +145,13 @@
               nzTitle="{{item.gatheredBy.level}} {{item.gatheredBy.stars_tooltip}}" (click)="openGatheredByPopup()">
         <img class="img-icon gathering-icon" src="{{item.gatheredBy.icon}}">
       </button>
-      <img *ngIf="item.gardening === true"
-           nzTitle="{{'Gardening' | translate}}"
-           nz-tooltip src="./assets/icons/Gardening.png" class="img-icon gardening-icon">
+      <a href="{{item.gardening | ffxivgardening | i18n}}"
+         target="_blank"
+         nz-tooltip
+         nzTitle="{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}"
+         *ngIf="item.gardening">
+        <img src="./assets/icons/Gardening.png" class="img-icon gardening-icon">
+      </a>
       <button nz-button nz-tooltip nzTitle="{{'Hunting' | translate}}" nzShape="circle"
               *ngIf="item.drops !== undefined && item.drops.length > 0" (click)="openHuntingPopup()">
         <img class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png" alt="Drops">

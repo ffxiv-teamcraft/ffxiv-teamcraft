@@ -25,7 +25,7 @@ export class ListRow extends DataModel {
 
   craftedBy?: CraftedBy[] = [];
   gatheredBy?: GatheredBy;
-  gardening?: boolean;
+  gardening?: number;
   drops?: Drop[] = [];
   tradeSources?: TradeSource[] = [];
   instances?: Instance[];

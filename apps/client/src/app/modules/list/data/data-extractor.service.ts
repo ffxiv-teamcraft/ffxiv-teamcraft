@@ -48,8 +48,8 @@ export class DataExtractorService {
    * @param {ItemData} data
    * @returns {GatheredBy}
    */
-  extractGardening(id: number, data: ItemData): boolean {
-    return this.extract<boolean>(DataType.GARDENING, id, data);
+  extractGardening(id: number, data: ItemData): number {
+    return this.extract<number>(DataType.GARDENING, id, data);
   }
 
   /**

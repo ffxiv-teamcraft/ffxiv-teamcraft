@@ -15,9 +15,10 @@ import { FreeCompanyActionNamePipe } from './free-company-action-name.pipe';
 import { IfMobilePipe } from './if-mobile.pipe';
 import { NodeTypeIconPipe } from './node-type-icon.pipe';
 import { ClosestAetherytePipe } from './closest-aetheryte.pipe';
-import { XivapiIconPipe } from './xivapi-icon.pipe'
+import { XivapiIconPipe } from './xivapi-icon.pipe';
 import { CharacterNamePipe } from './character-name.pipe';
 import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
+import { FfxivgardeningPipe } from './ffxivgardening.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
     ClosestAetherytePipe,
     XivapiIconPipe,
     CharacterNamePipe,
-    TeamcraftLinkPipe
+    TeamcraftLinkPipe,
+    FfxivgardeningPipe
   ],
   exports: [
     ItemNamePipe,
@@ -60,7 +62,8 @@ import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
     ClosestAetherytePipe,
     XivapiIconPipe,
     CharacterNamePipe,
-    TeamcraftLinkPipe
+    TeamcraftLinkPipe,
+    FfxivgardeningPipe
   ]
 })
 export class PipesModule {
