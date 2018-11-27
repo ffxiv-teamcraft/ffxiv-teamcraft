@@ -322,6 +322,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
+    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
@@ -351,6 +352,7 @@
     }
   },
   "LIST_TAGS": {
+    "OUTDATED": "Outdated",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
     "LOG": "제작수첩",
