@@ -73,8 +73,8 @@
     </div>
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
-        <div nz-row [nzGutter]="16">
-          <div nz-col [nzXs]="24" [nzMd]="custom?12:8">
+        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly flex-start">
+          <div fxFlex="1 1 30%" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
             <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
                        (ngModelChange)="customJob$.next($event)" class="job-selector">
@@ -136,6 +136,7 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
+
               <div fxLayout="column" fxLayoutGap="5px">
                 <button nz-button nzType="primary" nzBlock type="submit">
                   {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
@@ -146,8 +147,8 @@
               </div>
             </form>
           </div>
-          <div nz-col [nzXs]="24" [nzMd]="8" *ngIf="!custom">
-            <ng-container *ngIf="hqIngredientsData$ | async as hqIngredientsData">
+          <div fxFlex="1 1 30%" *ngIf="!custom">
+            <div *ngIf="hqIngredientsData$ | async as hqIngredientsData" fxLayout="column">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
                 <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
@@ -170,12 +171,13 @@
                   </nz-list-item>
                 </ng-template>
               </nz-list>
+              <div fxFlex="1 1 auto"></div>
               <button nz-button nzType="primary" nzBlock (click)="hqIngredients = hqIngredientsData">
                 {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
               </button>
-            </ng-container>
+            </div>
           </div>
-          <div nz-col [nzXs]="24" [nzMd]="custom?12:8" *ngIf="crafterStats$ | async as crafterStats">
+          <div fxFlex="1 1 30%" *ngIf="crafterStats$ | async as crafterStats"  fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
             <div nz-row [nzGutter]="10" nzAllowClear>
               <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
@@ -251,7 +253,7 @@
                 </ng-template>
               </div>
             </div>
-            <div fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="column" fxLayoutGap="5px" fxFlexAlign="flex-end flex-end">
               <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true">
                 {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
               </button>
