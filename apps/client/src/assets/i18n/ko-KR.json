@@ -637,5 +637,10 @@
   },
   "COMMENTS": {
     "Title": "댓글"
+  },
+  "TOOLTIP": {
+    "Level": "Level",
+    "Cost": "Cost",
+    "Class_job": "Class/Job"
   }
 }
