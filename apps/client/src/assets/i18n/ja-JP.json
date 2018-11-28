@@ -637,5 +637,10 @@
   },
   "COMMENTS": {
     "Title": "コメント"
+  },
+  "TOOLTIP": {
+    "Level": "Level",
+    "Cost": "Cost",
+    "Class_job": "Class/Job"
   }
 }
