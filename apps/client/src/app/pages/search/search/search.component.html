@@ -142,7 +142,8 @@
             </ng-template>
             <ng-template #openInSimulatorAction>
               <button nz-button *ngIf="item.recipe !== undefined" [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
-                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" (click)="openInSimulator(item.itemId, item.recipe.recipeId)">
+                      [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
+                      (click)="openInSimulator(item.itemId, item.recipe.recipeId)">
                 <i class="material-icons">gavel</i>
               </button>
             </ng-template>
@@ -168,7 +169,8 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <i class="ant-notification-notice-icon ant-notification-notice-icon-success" nz-icon nzType="check-circle"></i>
+    <span class="ant-notification-notice-icon"><i nz-icon type="circle-o"
+                                                  class="ant-notification-notice-icon-success"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
       <div class="ant-notification-notice-description">

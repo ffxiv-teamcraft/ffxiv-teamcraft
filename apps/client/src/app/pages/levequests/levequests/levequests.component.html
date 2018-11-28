@@ -101,7 +101,8 @@
 
 <ng-template #notificationRef let-notification>
   <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <i class="ant-notification-notice-icon ant-notification-notice-icon-success anticon anticon-check-circle-o"></i>
+    <span class="ant-notification-notice-icon"><i nz-icon type="circle-o"
+                                                  class="ant-notification-notice-icon-success"></i></span>
     <div>
       <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
       <div class="ant-notification-notice-description">

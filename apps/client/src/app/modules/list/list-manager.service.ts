@@ -12,6 +12,7 @@ import { ItemData } from '../../model/garland-tools/item-data';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
 import { Team } from '../../model/team/team';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class ListManagerService {
@@ -132,49 +133,48 @@ export class ListManagerService {
   }
 
   public upgradeList(list: List): Observable<List> {
-    return this.zone.runOutsideAngular(() => {
-      const permissions = list.registry;
-      const backup = [];
-      list.items.forEach(item => {
-        backup.push({ array: 'items', item: { ...item } });
-      });
-      list.finalItems.forEach(item => {
-        backup.push({ array: 'finalItems', item: { ...item } });
-      });
-      const add: Observable<List>[] = [];
-      list.finalItems.forEach((recipe) => {
-        add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true));
-      });
-      list.items = [];
-      list.finalItems = [];
-      return concat(...add)
-        .pipe(
-          // Only apply backup at last iteration, to avoid unnecessary slow process.
-          skip(add.length - 1),
-          map((resultList: List) => {
-            backup.forEach(row => {
-              const listRow = resultList[row.array].find(item => item.id === row.item.id);
-              if (listRow !== undefined) {
-                if (row.item.comments !== undefined) {
-                  listRow.comments = row.item.comments;
+    const permissions = list.registry;
+    const backup = [];
+    list.items.forEach(item => {
+      backup.push({ array: 'items', item: { ...item } });
+    });
+    list.finalItems.forEach(item => {
+      backup.push({ array: 'finalItems', item: { ...item } });
+    });
+    const add: Observable<List>[] = [];
+    list.finalItems.forEach((recipe) => {
+      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true));
+    });
+    list.items = [];
+    list.finalItems = [];
+    list.version = environment.version;
+    return concat(...add)
+      .pipe(
+        // Only apply backup at last iteration, to avoid unnecessary slow process.
+        skip(add.length - 1),
+        map((resultList: List) => {
+          backup.forEach(row => {
+            const listRow = resultList[row.array].find(item => item.id === row.item.id);
+            if (listRow !== undefined) {
+              if (row.item.comments !== undefined) {
+                listRow.comments = row.item.comments;
+              }
+              listRow.done = row.item.done || 0;
+              listRow.used = row.item.used || 0;
+              if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
+                if (listRow.done > listRow.amount) {
+                  listRow.done = listRow.amount;
                 }
-                listRow.done = row.item.done || 0;
-                listRow.used = row.item.used || 0;
-                if (row.item.craftedBy !== undefined && row.item.craftedBy.length > 0) {
-                  if (listRow.done > listRow.amount) {
-                    listRow.done = listRow.amount;
-                  }
-                } else {
-                  if (listRow.done > listRow.amount_needed) {
-                    listRow.done = listRow.amount_needed;
-                  }
+              } else {
+                if (listRow.done > listRow.amount_needed) {
+                  listRow.done = listRow.amount_needed;
                 }
               }
-            });
-            resultList.registry = permissions;
-            return resultList;
-          })
-        );
-    });
+            }
+          });
+          resultList.registry = permissions;
+          return resultList;
+        })
+      );
   }
 }

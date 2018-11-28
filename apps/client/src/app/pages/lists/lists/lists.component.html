@@ -22,7 +22,8 @@
       <div class="spacer">
       </div>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-              [nzTitle]="'LISTS.Regenerate_all' | translate" (click)="regenerateLists(lists)">
+              *ngIf="myLists$ | async as myLists"
+              [nzTitle]="'LISTS.Regenerate_all' | translate" (click)="regenerateLists(myLists)">
         <i nz-icon type="file-sync"></i>
       </button>
     </div>

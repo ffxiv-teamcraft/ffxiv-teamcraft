@@ -32,6 +32,8 @@ export class ListsComponent {
 
   public workshopsWithWriteAccess$: Observable<WorkshopDisplay[]>;
 
+  public myLists$ = this.listsFacade.myLists$;
+
   public loading$: Observable<boolean>;
 
   public needsVerification$ = this.listsFacade.needsVerification$;
@@ -153,8 +155,7 @@ export class ListsComponent {
     });
   }
 
-  regenerateLists(lists: { communityLists: List[], otherLists: List[] }): void {
-    const compacts = [...lists.communityLists, ...lists.otherLists];
+  regenerateLists(compacts: List[]): void {
     compacts.forEach(compact => {
       this.listsFacade.load(compact.$key);
     });
@@ -169,9 +170,21 @@ export class ListsComponent {
       );
     });
 
-    this.progress.showProgress(concat(...regenerations), regenerations.length).pipe(first()).subscribe(() => {
-      this.message.success(this.translate.instant('LISTS.Regenerated_all'));
-    });
+    this.progress.showProgress(concat(...regenerations), regenerations.length)
+      .pipe(
+        first(),
+        switchMap(() => {
+          return this.progress.showProgress(this.listsFacade.myLists$.pipe(
+            filter(lists => {
+              return lists.some(l => l.isOutDated()) === false;
+            }),
+            first()
+          ), 1, 'Saving_in_database');
+        })
+      )
+      .subscribe(() => {
+        this.message.success(this.translate.instant('LISTS.Regenerated_all'));
+      });
   }
 
   setListIndex(list: List, index: number, lists: List[]): void {

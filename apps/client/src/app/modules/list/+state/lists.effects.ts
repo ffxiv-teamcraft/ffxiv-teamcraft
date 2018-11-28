@@ -38,7 +38,6 @@ export class ListsEffects {
   @Effect()
   loadMyLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
-    first(),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {

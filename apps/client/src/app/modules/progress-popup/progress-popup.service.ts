@@ -16,6 +16,7 @@ export class ProgressPopupService {
       nzTitle: this.translate.instant(labelKey, labelParams),
       nzFooter: null,
       nzClosable: false,
+      nzMaskClosable: false,
       nzContent: ProgressPopupComponent,
       nzComponentParams: { operation$: operation$.pipe(shareReplay(1)), count: operationsCount }
     }).afterClose;
