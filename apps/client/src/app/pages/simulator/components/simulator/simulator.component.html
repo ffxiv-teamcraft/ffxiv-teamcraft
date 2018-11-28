@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutGap="10px" *ngIf="rotation$ | async as rotation">
-  <div class="buttons" fxLayout="column" fxLayoutGap="5px">
+  <div class="buttons" fxLayout="column" fxLayoutGap="10px">
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
             *ngIf="rotation.$key !== undefined"
             [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
@@ -73,7 +73,7 @@
     </div>
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
-        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly flex-start">
+        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly">
           <div fxFlex="1 1 30%" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
             <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
@@ -92,9 +92,7 @@
                   fxLayoutAlign="space-between">
               <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
                 <nz-form-item>
-                  <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
-                    translate}}
-                  </nz-form-label>
+                  <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}</nz-form-label>
                   <nz-form-control>
                     <nz-input-group nzAddOnAfter="+{{bonuses.craftsmanship}}">
                       <nz-input-number class="input-number-with-addon" [nzMin]="0" id="craftsmanship"
@@ -103,8 +101,7 @@
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}
-                  </nz-form-label>
+                  <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}</nz-form-label>
                   <nz-form-control>
                     <nz-input-group nzAddOnAfter="+{{bonuses.control}}">
                       <nz-input-number class="input-number-with-addon" [nzMin]="0" id="control"
@@ -136,48 +133,47 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-
-              <div fxLayout="column" fxLayoutGap="5px">
-                <button nz-button nzType="primary" nzBlock type="submit">
-                  {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
-                </button>
-                <button nz-button nzBlock (click)="saveSet()" [disabled]="!statsForm.dirty">
-                  {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
-                </button>
-              </div>
             </form>
+            <div fxLayout="column" fxLayoutGap="5px" class="apply">
+              <button nz-button nzType="primary" nzBlock type="submit">
+                {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+              </button>
+              <button nz-button nzBlock (click)="saveSet()" [disabled]="!statsForm.dirty">
+                {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
+              </button>
+            </div>
           </div>
-          <div fxFlex="1 1 30%" *ngIf="!custom">
-            <div *ngIf="hqIngredientsData$ | async as hqIngredientsData" fxLayout="column">
-              <h3>
-                {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
-                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
-              </h3>
-              <nz-list [nzDataSource]="hqIngredientsData"
-                       [nzRenderItem]="hqIngredientTemplate">
-                <ng-template #hqIngredientTemplate let-ingredient>
-                  <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
-                                       [nzDescription]="ingredient.quality"></nz-list-item-meta>
-                    <ng-template #content>
-                      <nz-form-control>
-                        <nz-input-group nzAddOnAfter="/{{ingredient.max}}">
-                          <nz-input-number class="input-number-with-addon" [nzMin]="0"
-                                           [(ngModel)]="ingredient.amount"
-                                           [nzMax]="ingredient.max"></nz-input-number>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </ng-template>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-              <div fxFlex="1 1 auto"></div>
+          <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData" fxFlex="1 1 30%"
+            fxLayout="column" class="ingredients">
+            <h3>
+              {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
+              <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
+            </h3>
+            <nz-list [nzDataSource]="hqIngredientsData"
+                      [nzRenderItem]="hqIngredientTemplate">
+              <ng-template #hqIngredientTemplate let-ingredient>
+                <nz-list-item [nzContent]="content">
+                  <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
+                                      [nzDescription]="ingredient.quality"></nz-list-item-meta>
+                  <ng-template #content>
+                    <nz-form-control>
+                      <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
+                        <nz-input-number class="input-number-with-addon" [nzMin]="0"
+                                          [(ngModel)]="ingredient.amount"
+                                          [nzMax]="ingredient.max"></nz-input-number>
+                      </nz-input-group>
+                    </nz-form-control>
+                  </ng-template>
+                </nz-list-item>
+              </ng-template>
+            </nz-list>
+            <div class="apply">
               <button nz-button nzType="primary" nzBlock (click)="hqIngredients = hqIngredientsData">
                 {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
               </button>
             </div>
           </div>
-          <div fxFlex="1 1 30%" *ngIf="crafterStats$ | async as crafterStats"  fxLayout="column">
+          <div fxFlex="1 1 30%" *ngIf="crafterStats$ | async as crafterStats" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
             <div nz-row [nzGutter]="10" nzAllowClear>
               <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
@@ -253,7 +249,7 @@
                 </ng-template>
               </div>
             </div>
-            <div fxLayout="column" fxLayoutGap="5px" fxFlexAlign="flex-end flex-end">
+            <div fxLayout="column" fxLayoutGap="5px" fxFlexAlign="flex-end flex-end" class="apply">
               <button nz-button nzType="primary" nzBlock (click)="applyConsumables(crafterStats);this.dirty = true">
                 {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
               </button>
