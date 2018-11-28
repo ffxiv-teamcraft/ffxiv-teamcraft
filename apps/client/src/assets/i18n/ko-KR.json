@@ -18,7 +18,7 @@
     "No_match": "일치하는 아이템이 없습니다",
     "Item_name": "아이템 이름",
     "Only_recipes": "제작법만 검색",
-    "Crafts_amount": "#회 제작",
+    "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용"
   },
@@ -176,7 +176,7 @@
   "Favorite": "즐겨찾기",
   "filters/ilvl": "아이템 레벨",
   "filters/lvl": "요구 레벨",
-  "filters/craft_lvl": "제작레벨",
+  "filters/craft_lvl": "제작 레벨",
   "filters/worn_by": "착용 직업",
   "filters/crafted_by": "제작 직업",
   "filters/item_category": "종류",
@@ -639,8 +639,8 @@
     "Title": "댓글"
   },
   "TOOLTIP": {
-    "Level": "Level",
+    "Level": "레벨",
     "Cost": "Cost",
-    "Class_job": "Class/Job"
+    "Class_job": "클래스/직업"
   }
 }
