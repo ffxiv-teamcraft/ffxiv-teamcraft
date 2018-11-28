@@ -1,38 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { map } from 'rxjs/operators';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable()
 export class TooltipDataService {
 
-  constructor(private http: HttpClient, private translator: TranslateService) {
+  private actions: { [index: number]: Observable<any> } = {};
+  private items: { [index: number]: Observable<any> } = {};
+
+  constructor(private translator: TranslateService, private xivapi: XivapiService) {
   }
 
-  getTooltipData(id: number): Observable<string> {
-    return this.loadFromXivdb(id);
+  getItemTooltipData(id: number): Observable<any> {
+    if (this.items[id] === undefined) {
+      this.items[id] = this.xivapi.get(XivapiEndpoint.Item, id);
+    }
+    return this.items[id];
   }
 
-  getActionTooltipData(id: number): Observable<string> {
-    return this.loadActionFromXivdb(id);
-  }
-
-  loadFromXivdb(id: number): Observable<string> {
-    const params = new HttpParams()
-      .set('list[item]', id.toString())
-      .set('language', this.translator.currentLang);
-
-    return this.http.get<any>('https://secure.xivdb.com/tooltip', { params })
-      .pipe(map(res => res.item[0].html));
-  }
-
-  loadActionFromXivdb(id: number): Observable<string> {
-    const params = new HttpParams()
-      .set('list[action]', id.toString())
-      .set('language', this.translator.currentLang);
-
-    return this.http.get<any>('https://secure.xivdb.com/tooltip', { params })
-      .pipe(map(res => res.action[0].html));
+  getActionTooltipData(id: number): Observable<any> {
+    if (this.actions[id] === undefined) {
+      if (id > 99999) {
+        this.actions[id] = this.xivapi.get(XivapiEndpoint.CraftAction, id).pipe(shareReplay(1));
+      } else {
+        this.actions[id] = this.xivapi.get(XivapiEndpoint.Action, id).pipe(shareReplay(1));
+      }
+    }
+    return this.actions[id];
   }
 }

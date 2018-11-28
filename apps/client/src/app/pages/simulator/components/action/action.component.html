@@ -1,6 +1,7 @@
-<!--TODO action tooltip-->
 <div class="action-container" (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null">
   <div class="action"
+       [appXivdbActionTooltip]="action.getId(getJobId())"
+       [appXivdbActionTooltipDisabled]="tooltipDisabled"
        [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp, 'not-enough-cp': notEnoughCp}">
     <img src="{{action.getId(getJobId()) | actionIcon}}" alt="">
     <div class="red-overlay" *ngIf="notEnoughCp || disabled"></div>
