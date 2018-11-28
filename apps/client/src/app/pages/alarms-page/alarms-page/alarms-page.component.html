@@ -23,10 +23,12 @@
     </div>
 
     <div class="alarms">
-      <div class="alarms-container" droppable dropScope="alarm" (onDrop)="setAlarmGroup($event.dragData, undefined)">
-        <div *ngFor="let row of display.noGroup; trackBy: trackByAlarm">
+      <div class="alarms-container" droppable dropScope="alarm" (onDrop)="setAlarmGroup($event.dragData, undefined)"
+           fxLayout="row wrap"
+           fxLayoutGap="5px">
+        <ng-container *ngFor="let row of display.noGroup; trackBy: trackByAlarm">
           <ng-container *ngTemplateOutlet="alarmCard;context:{row: row}"></ng-container>
-        </div>
+        </ng-container>
       </div>
       <div class="panel-drop-zone" droppable dropScope="group"
            (onDrop)="setGroupIndex(0, $event.dragData.group, display.groupedAlarms)"></div>
@@ -37,10 +39,12 @@
                              [dragData]="group"
                              [class.empty-group]="group.alarms.length === 0" [nzActive]="!group.group.muted">
             <div class="alarms-container" droppable dropScope="alarm"
+                 fxLayout="row wrap"
+                 fxLayoutGap="5px"
                  (onDrop)="setAlarmGroup($event.dragData, group.group.$key)">
-              <div *ngFor="let row of group.alarms; trackBy: trackByAlarm">
+              <ng-container *ngFor="let row of group.alarms; trackBy: trackByAlarm">
                 <ng-container *ngTemplateOutlet="alarmCard;context:{row: row}"></ng-container>
-              </div>
+              </ng-container>
             </div>
           </nz-collapse-panel>
           <ng-template #panelTitle>
@@ -84,8 +88,10 @@
 </ng-template>
 
 <ng-template #alarmCard let-row="row">
-  <div draggable [dragData]="row.alarm" dragScope="alarm">
+  <div draggable [dragData]="row.alarm" dragScope="alarm" fxFlex="1 1 20%" class="alarm-card-container">
     <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete, copyMacro]"
+             class="alarm-card"
+             fxLayout="column"
              [nzLoading]="!settings.compactAlarms" [class.spawned]="row.spawned" [class.played]="row.played"
              #card>
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
@@ -95,13 +101,12 @@
       </ng-template>
     </nz-card>
     <ng-template #cardTitle>
-      <div class="card-title">
-        <div>
-          {{row.alarm.itemId | itemName | i18n}} <span
-          *ngIf="row.alarm.slot !== null">({{row.alarm.slot}})</span>
+      <div class="card-title" fxLayout="row">
+        <div fxLayout="row" fxFlex="1 1 auto">
+          <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
+          <span *ngIf="row.alarm.slot !== null" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
         </div>
-        <div class="spacer"></div>
-        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
+        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type" fxFlex="0 0 auto">
       </div>
     </ng-template>
     <ng-template #cardDescription>

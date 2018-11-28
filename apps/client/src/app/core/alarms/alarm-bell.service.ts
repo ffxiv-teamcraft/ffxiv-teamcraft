@@ -68,11 +68,14 @@ export class AlarmBellService {
   }
 
   public notify(alarm: Alarm): void {
-    const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    let aetheryteName;
+    if (alarm.aetheryte) {
+      aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    }
     const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
     const notificationTitle = this.i18n.getName(this.localizedData.getItem(alarm.itemId));
     const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId))} - `
-      + `${aetheryteName}` +
+      + `${aetheryteName ? aetheryteName : ''}` +
       (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
     if (this.platform.isDesktop()) {
       this.ipc.send('notification', {
