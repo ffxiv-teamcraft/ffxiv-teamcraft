@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -61,7 +61,8 @@ export class ListsComponent {
             };
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
-      })
+      }),
+      shareReplay(1)
     );
 
     this.workshopsWithWriteAccess$ = combineLatest(this.workshopsFacade.workshopsWithWriteAccess$, this.listsFacade.compacts$).pipe(
@@ -82,7 +83,8 @@ export class ListsComponent {
                 .filter(l => l !== undefined)
             };
           });
-      })
+      }),
+      shareReplay(1)
     );
 
     this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
@@ -95,12 +97,14 @@ export class ListsComponent {
             return { team: team, lists: lists };
           })
         )));
-      })
+      }),
+      shareReplay(1)
     );
 
-    this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
+    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
+      filter(([loading]) => !loading),
       debounceTime(100),
-      map(([lists, myWorkshops, workshopsWithWriteAccess, teamDisplays]: [List[], WorkshopDisplay[], WorkshopDisplay[], any[]]) => {
+      map(([,lists, myWorkshops, workshopsWithWriteAccess, teamDisplays]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[]]) => {
         const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists
@@ -119,15 +123,16 @@ export class ListsComponent {
           communityLists: lists.filter(l => l.public),
           otherLists: lists.filter(l => !l.public)
         };
-      })
+      }),
+      shareReplay(1)
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
-      debounceTime(100)
+      debounceTime(100),
+      shareReplay(1)
     );
-    this.loading$ = combineLatest(this.listsFacade.loadingMyLists$, this.workshopsFacade.loaded$.pipe(map(loaded => !loaded)), this.teamsFacade.loading$).pipe(
-      map((loadingFragments) => {
-        return loadingFragments.reduce((loading, loadingFragment) => loading || loadingFragment, false);
-      })
+    this.loading$ = combineLatest(this.lists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
+      map(() => false),
+      startWith(true)
     );
 
     this.teamsFacade.loadMyTeams();
