@@ -65,6 +65,14 @@
         </li>
       </ul>
     </nz-dropdown>
+    <ng-container *ngIf="missingBooks$ | async as missingBooks">
+      <button nz-button nzGhost nzSize="small" nzShape="circle" nzType="danger" *ngIf="missingBooks.length > 0"
+              class="missing-masterbooks"
+              nz-tooltip [nzTitle]="'LIST_DETAILS.Missing_masterbook' | translate"
+              (click)="checkMasterbooks(missingBooks)">
+        <i nz-icon type="warning"></i>
+      </button>
+    </ng-container>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="finalItem"></app-marketboard-icon>
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"

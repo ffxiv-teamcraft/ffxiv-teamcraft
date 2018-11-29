@@ -78,6 +78,8 @@ export class ItemRowComponent implements OnInit {
 
   team$: Observable<Team>;
 
+  missingBooks$: Observable<number[]>;
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -90,6 +92,14 @@ export class ItemRowComponent implements OnInit {
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
       shareReplay(1)
+    );
+
+    this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
+      map(entry => {
+        return this.item.masterbooks
+          .filter(book => entry.masterbooks.indexOf(book.id) === -1)
+          .map(book => book.id);
+      })
     );
 
     this.userId$ = this.authFacade.userId$;
@@ -138,6 +148,10 @@ export class ItemRowComponent implements OnInit {
     setTimeout(() => {
       this.cdRef.detectChanges();
     });
+  }
+
+  checkMasterbooks(books: number[]): void {
+    this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
   }
 
   removeWorkingOnIt(): void {
