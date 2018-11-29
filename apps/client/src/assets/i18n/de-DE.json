@@ -36,18 +36,18 @@
   "Isearch_copied": "/isearch {{itemname}} in Zwischenablage kopiert",
   "Required_for_final_craft": "{{amount}} für das finale Item erforderlich",
   "Mark_HQ": "Markieren als HQ erforderlich",
-  "Unmark_HQ": "Remove HQ requirement",
+  "Unmark_HQ": "HQ-Erfordernis entfernen",
   "Compact_sidebar_toggle": "Kompakte Seitenleiste umschalten",
   "Confirmation": "Bist du sicher?",
   "Is_working_on_it": "{{name}} arbeitet dran",
   "Work_on_it": "Als 'in Arbeit' markieren",
-  "Remove_work_on_it": "Remove user assignment",
+  "Remove_work_on_it": "Nutzerzuordnung entfernen",
   "Add_as_collectible": "Als Sammlerstück hinzufügen",
   "Collectable_flag": "Collectable",
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
   "Hide_used": "Verwendete Reihen ausblenden",
-  "Collapse_if_done": "Collapse if done",
+  "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
@@ -65,7 +65,7 @@
   },
   "ABOUT": {
     "title": "Über FFXIVTeamcraft",
-    "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
+    "Created_by": "FFXIV Teamcraft erstellt von Miu Asakura auf Louisoix, Chaos.",
     "Copyright_notice_title": "Urheberrechtsschutz",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Danke!",
@@ -424,8 +424,8 @@
     "STEP": {
       "Gathering": "Gather {{amount}}",
       "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Vendor": "Kaufe {{amount}}",
+      "Trade": "Handel {{amount}}"
     }
   },
   "GATHERING_LOCATIONS": {
@@ -460,7 +460,7 @@
     "Everyone": "Jeder",
     "You": "Du",
     "Add_new": "Benutzer hinzufügen",
-    "Add_new_fc": "Add a Free Company",
+    "Add_new_fc": "Freie Gesellschaft hinzufügen",
     "Placeholder": "E-Mail oder Nutzer ID",
     "Bind_free_company": "Ändere Rechte für alle Mitglieder deiner freien Gesellschaft",
     "User_not_found": "Nutzer nicht gefunden",
@@ -489,7 +489,7 @@
     "Hq": "HQ",
     "Cp_amount": "HP",
     "Simulate_tooltip": "Im Simulator herstellen",
-    "Change_recipe": "Change recipe",
+    "Change_recipe": "Rezept wechseln",
     "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
     "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
     "Convert_rotation": "Open in standard simulator",
@@ -564,7 +564,7 @@
       "Save_consumables": "Speichern Sie diese Verbrauchsmaterialien als Standard",
       "No_food": "No food",
       "No_medicine": "No medicine",
-      "No_fc_buffs": "No FC buffs",
+      "No_fc_buffs": "Keine FG Buffs",
       "STATS": {
         "CP": "HP",
         "Craftsmanship": "Kunstfertigkeit",
@@ -581,7 +581,7 @@
     "Levequest_name": "Levequest name",
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
-    "Quantity": "Quantity",
+    "Quantity": "Anzahl",
     "All_deliveries": "All {{value}} Deliveries",
     "INTRO": {
       "Title": "Levequests",
