@@ -103,6 +103,7 @@
     <nz-sider nzCollapsible
               class="sider"
               [(nzCollapsed)]="collapsedSidebar"
+              (nzCollapsedChange)="settings.compactSidebar = $event"
               [nzCollapsedWidth]="80 | ifMobile: 0">
       <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
         <div>
