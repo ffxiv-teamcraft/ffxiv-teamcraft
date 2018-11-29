@@ -7,6 +7,7 @@
   "FC_name": "Nombre de Gremio Independiente (FC)",
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -46,6 +47,7 @@
   "Compact_display": "Presentación compacta",
   "Mute_alarms": "Silenciar alarmas",
   "Hide_used": "Esconder filas usadas",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Aventuras de sirviente",
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
@@ -328,7 +330,7 @@
     "Missing_tags_before_button": "Esta lista se muestra como una lista de la comunidad pero no tiene etiquetas, por favor agregue algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
-    "No_book": "Falta un libro, haga clic para navegar a su perfil",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "No hay nota",
     "Edit_note": "No hay nota",
     "Note_placeholder": "Nota",
