@@ -50,6 +50,16 @@ export class StatsPopupComponent implements OnInit {
     this.modalRef.close();
   }
 
+  applySpecChange(set: GearSet, spec: boolean): void {
+    if (spec) {
+      set.craftsmanship += 20;
+      set.control += 20;
+    } else {
+      set.craftsmanship -= 20;
+      set.control -= 20;
+    }
+  }
+
   cancel(): void {
     this.modalRef.close();
   }

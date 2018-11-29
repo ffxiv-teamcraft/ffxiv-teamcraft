@@ -98,17 +98,6 @@ export class SimulatorComponent implements OnDestroy {
     })
   );
 
-  // public rotation$ = combineLatest(this.recipe$,, this.actions$).pipe(
-  //   map(([recipe, rotation, actions]) => {
-  //     rotation.recipe = recipe;
-  //     if (actions.length > 0) {
-  //       rotation.rotation = this.registry.serializeRotation(actions);
-  //     }
-  //     return rotation;
-  //   }),
-  //
-  // );
-
   // Customization forms
   public statsForm: FormGroup;
   // Cache field for levels to be passed to the form validation.
@@ -211,6 +200,20 @@ export class SimulatorComponent implements OnDestroy {
       specialist: [false]
     });
 
+    this.statsForm.valueChanges.pipe(
+      takeUntil(this.onDestroy$),
+      distinctUntilChanged((prev, next) => prev.specialist === next.specialist)
+    ).subscribe(stats => {
+      if (stats.specialist) {
+        stats.craftsmanship += 20;
+        stats.control += 20;
+      } else {
+        stats.craftsmanship -= 20;
+        stats.control -= 20;
+      }
+      this.statsForm.patchValue(stats, {emitEvent: false});
+    });
+
     this.foods = consumablesService.fromData(foods)
       .sort(this.consumablesSortFn);
     this.medicines = consumablesService.fromData(medicines)
@@ -234,7 +237,7 @@ export class SimulatorComponent implements OnDestroy {
           cp: stats.cp,
           level: stats.level,
           specialist: stats.specialist
-        });
+        }, {emitEvent: false});
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
