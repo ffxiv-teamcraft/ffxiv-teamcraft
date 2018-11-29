@@ -24,11 +24,26 @@
   }
 }
 
+.alarm-card-container {
+  margin-bottom: 5px;
+  .alarm-card {
+    width: 100%;
+    height: 100%;
+    ::ng-deep .ant-card-body {
+      flex: 1 1 auto;
+    }
+  }
+}
+
 .card-title {
   display: flex;
   align-items: center;
   .node-type {
     width: 32px;
+  }
+  .alarm-item-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -61,7 +76,7 @@
     max-width: 475px;
     margin: 4px;
     &.spawned {
-      background-color: fade(@text-color, 30%);
+      background-color: fade(@text-color, 40%);
     }
     &.played {
       background-color: fade(@text-color, 10%);

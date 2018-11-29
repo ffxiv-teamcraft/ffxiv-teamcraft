@@ -1,3 +1,5 @@
+@import '../../../../../styles';
+
 :host ::ng-deep {
   .progress-progressbar {
     .ant-progress-bg {
@@ -67,10 +69,19 @@
 
 .buttons {
   position: fixed;
+  @media @mobile {
+    position: unset;
+    > button {
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .simulator {
   margin-left: 42px;
+  @media @mobile {
+    margin-left: 0;
+  }
 }
 
 .buffs-container {

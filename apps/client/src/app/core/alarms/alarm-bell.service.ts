@@ -26,13 +26,20 @@ export class AlarmBellService {
   }
 
   private initBell(): void {
-    combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$)
+    combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$)
       .pipe(
-        map(([date, alarms]) => {
+        map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {
+            const alarmGroup = groups.find(group => {
+              return alarm.groupId === group.$key;
+            });
+            // If this alarm has a group and it's muted, don't even go further
+            if (alarmGroup && !alarmGroup.enabled) {
+              return false;
+            }
             const lastPlayed = this.getLastPlayed(alarm);
             // Ceiling on /6 so precision is 1/10
-            const timeBeforePlay = Math.ceil(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
+            const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
             // Irl alarm duration in ms
             const irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
             return Date.now() - lastPlayed >= irlAlarmDuration
@@ -68,11 +75,14 @@ export class AlarmBellService {
   }
 
   public notify(alarm: Alarm): void {
-    const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    let aetheryteName;
+    if (alarm.aetheryte) {
+      aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    }
     const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
     const notificationTitle = this.i18n.getName(this.localizedData.getItem(alarm.itemId));
     const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId))} - `
-      + `${aetheryteName}` +
+      + `${aetheryteName ? aetheryteName : ''}` +
       (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
     if (this.platform.isDesktop()) {
       this.ipc.send('notification', {
