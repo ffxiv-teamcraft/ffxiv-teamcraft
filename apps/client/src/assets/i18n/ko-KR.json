@@ -397,9 +397,9 @@
     "FSH": "어부"
   },
   "MACRO_TRANSLATION": {
-    "Title": "매크로 변환기",
+    "Title": "매크로 번역기",
     "Macro_language": "매크로 언어",
-    "Macro_to_translate": "변환할 매크로",
+    "Macro_to_translate": "번역할 매크로",
     "Do_translate": "번역하기!",
     "Invalid_macro_or_language": "잘못된 매크로 또는 언어입니다."
   },
