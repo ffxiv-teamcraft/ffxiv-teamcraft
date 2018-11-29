@@ -64,24 +64,26 @@
            fxLayoutAlign.lt-md="center center"
            fxLayoutAlign="flex-start center">
         <h2>{{list.name}}</h2>
-        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
-                (click)="renameList(list)" [disabled]="(permissionLevel$ | async) < 40">
-          <i nz-icon type="edit"></i>
-        </button>
-        <button nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip
-                [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
-          <i nz-icon type="clock-circle-o"></i>
-        </button>
-        <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
-                [nzTitle]="'LIST.Regenerate' | translate" (click)="regenerateList(list)"
-                [disabled]="(permissionLevel$ | async) < 30">
-          <i class="material-icons">update</i>
-        </button>
-        <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
-                nz-popconfirm [nzTitle]="'Reset_progression' | translate" (nzOnConfirm)="resetList(list)"
-                [disabled]="(permissionLevel$ | async) < 20">
-          <i nz-icon type="reload"></i>
-        </button>
+        <div fxLayout="row" fxLayoutGap="5px">
+          <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'Edit' | translate"
+                  (click)="renameList(list)" [disabled]="(permissionLevel$ | async) < 40">
+            <i nz-icon type="edit"></i>
+          </button>
+          <button nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip
+                  [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
+            <i nz-icon type="clock-circle-o"></i>
+          </button>
+          <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
+                  [nzTitle]="'LIST.Regenerate' | translate" (click)="regenerateList(list)"
+                  [disabled]="(permissionLevel$ | async) < 30">
+            <i class="material-icons">update</i>
+          </button>
+          <button nz-button nzType="primary" nzSize="small" nzShape="circle" nz-tooltip
+                  nz-popconfirm [nzTitle]="'Reset_progression' | translate" (nzOnConfirm)="resetList(list)"
+                  [disabled]="(permissionLevel$ | async) < 20">
+            <i nz-icon type="reload"></i>
+          </button>
+        </div>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center">
         <div>{{list.note || ('LIST_DETAILS.No_note' | translate)}}</div>
