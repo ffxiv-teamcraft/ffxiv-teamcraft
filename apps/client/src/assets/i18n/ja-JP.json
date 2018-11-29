@@ -7,6 +7,7 @@
   "FC_name": "フリーカンパニー前",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に存在する",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
@@ -46,6 +47,7 @@
   "Compact_display": "コンパクト表示",
   "Mute_alarms": "アラームをミュート",
   "Hide_used": "Hide used rows",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
@@ -328,7 +330,7 @@
     "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
     "Missing_tags_after_button": " button",
     "Add_remove_amount": "Add/remove a given amount",
-    "No_book": "Missing book, click to navigate to profile",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "No note",
     "Edit_note": "No note",
     "Note_placeholder": "Note",
