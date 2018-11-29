@@ -1,5 +1,5 @@
-<div fxLayout="row" fxLayoutGap="10px" *ngIf="rotation$ | async as rotation">
-  <div class="buttons" fxLayout="column" fxLayoutGap="5px">
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" *ngIf="rotation$ | async as rotation">
+  <div class="buttons" fxLayout.lt-sm="row wrap" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="5px">
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
             *ngIf="rotation.$key !== undefined"
             [nzTitle]="'SIMULATOR.Save_as_new' | translate" (click)="saveRotationAsNew(rotation)">
@@ -73,8 +73,9 @@
     </div>
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
-        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly flex-start">
-          <div fxFlex="1 1 30%" fxLayout="column">
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center"
+             fxLayoutAlign="space-evenly flex-start">
+          <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
             <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
                        (ngModelChange)="customJob$.next($event)" class="job-selector">
@@ -90,7 +91,8 @@
             <form [formGroup]="statsForm" (ngSubmit)="applyStats()" *ngIf="bonuses$ | async as bonuses"
                   fxLayout="column"
                   fxLayoutAlign="space-between">
-              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
+                   fxLayoutAlign="space-evenly center">
                 <nz-form-item>
                   <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
                     translate}}
@@ -122,7 +124,8 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
+                   fxLayoutAlign="space-evenly center">
                 <nz-form-item>
                   <nz-form-label nzRequired nzFor="level">{{'SIMULATOR.Level' | translate}}</nz-form-label>
                   <nz-form-control>
@@ -147,7 +150,7 @@
               </div>
             </form>
           </div>
-          <div fxFlex="1 1 30%" *ngIf="!custom">
+          <div fxFlex="1 0 30%" *ngIf="!custom">
             <div *ngIf="hqIngredientsData$ | async as hqIngredientsData" fxLayout="column">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
@@ -177,56 +180,58 @@
               </button>
             </div>
           </div>
-          <div fxFlex="1 1 30%" *ngIf="crafterStats$ | async as crafterStats"  fxLayout="column">
+          <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" *ngIf="crafterStats$ | async as crafterStats" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
-            <div nz-row [nzGutter]="10" nzAllowClear>
-              <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
-                <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
-                           nzAllowClear>
-                  <nz-option *ngFor="let food of foods" [nzValue]="food"
-                             nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
-                  </nz-option>
-                </nz-select>
-                <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
-                  <div>
-                    <b>{{selectedFood.itemId | itemName | i18n}}</b>
-                    <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
+            <div>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                  <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
+                             nzAllowClear>
+                    <nz-option *ngFor="let food of foods" [nzValue]="food"
+                               nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
+                    </nz-option>
+                  </nz-select>
+                  <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
+                    <div>
+                      <b>{{selectedFood.itemId | itemName | i18n}}</b>
+                      <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
+                    </div>
+                    <div *ngFor="let bonus of selectedFood.bonuses">
+                      {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                      ({{bonus.max}})
+                    </div>
                   </div>
-                  <div *ngFor="let bonus of selectedFood.bonuses">
-                    {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
-                    ({{bonus.max}})
-                  </div>
+                  <ng-template #noFood>
+                    <div class="nothing-selected">
+                      {{'SIMULATOR.CONFIGURATION.No_food' | translate}}
+                    </div>
+                  </ng-template>
                 </div>
-                <ng-template #noFood>
-                  <div class="nothing-selected">
-                    {{'SIMULATOR.CONFIGURATION.No_food' | translate}}
+                <div fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                  <nz-select [(ngModel)]="selectedMedicine"
+                             [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate" nzAllowClear>
+                    <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
+                               nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">
+                    </nz-option>
+                  </nz-select>
+                  <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
+                    <div>
+                      <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
+                      <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedMedicine.hq">
+                    </div>
+                    <div *ngFor="let bonus of selectedMedicine.bonuses">
+                      {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                      ({{bonus.max}})
+                    </div>
                   </div>
-                </ng-template>
-              </div>
-              <div nz-col [nzXs]="12" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
-                <nz-select [(ngModel)]="selectedMedicine"
-                           [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate" nzAllowClear>
-                  <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
-                             nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">
-                  </nz-option>
-                </nz-select>
-                <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
-                  <div>
-                    <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
-                    <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedMedicine.hq">
-                  </div>
-                  <div *ngFor="let bonus of selectedMedicine.bonuses">
-                    {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
-                    ({{bonus.max}})
-                  </div>
+                  <ng-template #noMedicine>
+                    <div class="nothing-selected">
+                      {{'SIMULATOR.CONFIGURATION.No_medicine' | translate}}
+                    </div>
+                  </ng-template>
                 </div>
-                <ng-template #noMedicine>
-                  <div class="nothing-selected">
-                    {{'SIMULATOR.CONFIGURATION.No_medicine' | translate}}
-                  </div>
-                </ng-template>
               </div>
-              <div nz-col [nzXs]="24" fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+              <div fxLayout="column" fxLayoutGap="10px" class="consumable-col">
                 <nz-select [(ngModel)]="selectedFreeCompanyActions" nzMode="multiple"
                            [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Action' | translate" nzAllowClear>
                   <nz-option-group [nzLabel]="('SIMULATOR.CONFIGURATION.'+type) | translate"
