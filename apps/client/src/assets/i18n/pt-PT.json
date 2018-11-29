@@ -7,6 +7,7 @@
   "FC_name": "Nome da Compania Livre",
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "See_on_map": "Ver no mapa",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -46,6 +47,7 @@
   "Compact_display": "Visualização compacta",
   "Mute_alarms": "Mutar alarmes",
   "Hide_used": "Esconder as linhas usadas",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Empreendimentos de empregado",
   "Requires_x_ventures": "Requer {{amount}} empreendimentos para adequirir tudo",
   "WORKSHOP": {
@@ -328,7 +330,7 @@
     "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
     "Missing_tags_after_button": " button",
     "Add_remove_amount": "Add/remove a given amount",
-    "No_book": "Missing book, click to navigate to profile",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "No note",
     "Edit_note": "No note",
     "Note_placeholder": "Note",
