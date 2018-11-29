@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutGap="5px">
+  <nz-input-number [(ngModel)]="value"
+                   name="value"
+                   (keyup.enter)="submit()"
+                   [nzStep]="1"
+                   autofocus></nz-input-number>
+  <button nz-button nzType="primary" (click)="submit()">{{'Submit' | translate}}
+  </button>
+</div>

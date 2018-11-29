@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { filter, first, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -33,6 +33,8 @@ import { CommentTargetType } from '../../../modules/comments/comment-target-type
 import { List } from '../../../modules/list/model/list';
 import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
+import { NumberQuestionPopupComponent } from '../../../modules/number-question-popup/number-question-popup/number-question-popup.component';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
 
 @Component({
   selector: 'app-item-row',
@@ -87,6 +89,7 @@ export class ItemRowComponent implements OnInit {
               private userService: UserService, private xivapi: XivapiService,
               private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
               private discordWebhookService: DiscordWebhookService,
+              private listManager: ListManagerService,
               private rotationPicker: RotationPickerService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
@@ -152,6 +155,31 @@ export class ItemRowComponent implements OnInit {
 
   checkMasterbooks(books: number[]): void {
     this.authFacade.saveMasterbooks(books.map(book => ({ id: book, checked: true })));
+  }
+
+  changeAmount(): void {
+    this.modal.create({
+      nzTitle: this.translate.instant('Edit_amount'),
+      nzFooter: null,
+      nzContent: NumberQuestionPopupComponent,
+      nzComponentParams: {
+        value: this.item.amount
+      }
+    }).afterClose
+      .pipe(
+        filter(res => res !== undefined),
+        switchMap((amount) => {
+          return this.listsFacade.selectedList$.pipe(
+            first(),
+            switchMap(list => {
+              return this.listManager.addToList(this.item.id, list, this.item.recipeId, amount - this.item.amount);
+            })
+          );
+        })
+      )
+      .subscribe((list) => {
+        this.listsFacade.updateList(list, true);
+      });
   }
 
   removeWorkingOnIt(): void {

@@ -56,11 +56,17 @@
             </ul>
           </li>
         </ng-container>
-        <li nz-menu-item *ngIf="(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
+        <li nz-menu-item *ngIf="finalItem && (permissionLevel$ | async) >= 30"
+            (click)="changeAmount()">
+          {{'Edit_amount' | translate}}
+        </li>
+        <li nz-menu-item
+            *ngIf=" (permissionLevel$ | async) >= 30 &&(requiredForFinalCraft$ | async) === 0 && !item.requiredAsHQ"
             (click)="item.requiredAsHQ = true; saveItem()">
           {{'Mark_HQ' | translate}}
         </li>
-        <li nz-menu-item *ngIf="item.requiredAsHQ" (click)="item.requiredAsHQ = false; saveItem()">
+        <li nz-menu-item *ngIf="item.requiredAsHQ && (permissionLevel$ | async) >= 30"
+            (click)="item.requiredAsHQ = false; saveItem()">
           {{'Unmark_HQ' | translate}}
         </li>
       </ul>
