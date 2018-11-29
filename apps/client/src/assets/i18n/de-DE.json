@@ -249,8 +249,8 @@
   },
   "PROFILE": {
     "Account": "Account",
-    "Add_character": "Add a character",
-    "Remove_character": "Remove a character",
+    "Add_character": "Charakter hinzufügen",
+    "Remove_character": "Charakter entfernen",
     "Jobs": "Jobs",
     "Stats": "Stats",
     "View_on_apkallu_falls": "Open in Apkallu Falls",
@@ -265,11 +265,11 @@
     "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
     "Patreon_email": "Patreon-Email",
     "Contacts": "Kontakte",
-    "Add_new_contact": "New contact",
+    "Add_new_contact": "Neuer Kontakt",
     "Save_for_all": "Für alle speichern",
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "VERIFICATION": {
-      "Title": "Character verification",
+      "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
@@ -284,9 +284,9 @@
     "Lists_merged": "Lists merged with success !",
     "Shared_lists": "Listen mit Schreibzugriff",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
-    "Your_lists": "Your lists",
+    "Your_lists": "Deine Listen",
     "Outdated_tag": "Outdated",
-    "No_lists": "You have no lists",
+    "No_lists": "Du hast keine Listen",
     "IMPORT": {
       "Title": "Liste von externer Website importieren",
       "Paste_link_step_title": "Füge deinen link der externen Liste ein",
@@ -307,7 +307,7 @@
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
     "Copy_as_text": "Als Text kopieren",
-    "Copied_as_text": "Content copied in clipboard",
+    "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
     "Total_trade_price": "Gesamt: ",
     "Add_all_alarms": "Add all alarms for this list",
@@ -632,15 +632,15 @@
   },
   "MARKETBOARD": {
     "Title": "Marketboard Informations",
-    "Amount": "Quantity",
+    "Amount": "Menge",
     "HQ": "HQ",
-    "Total_price": "Total price",
-    "Unit_price": "Unit price",
-    "History": "History",
-    "Purchase_date": "Date"
+    "Total_price": "Gesamtpreis",
+    "Unit_price": "Einzelpreis",
+    "History": "Historie",
+    "Purchase_date": "Datum"
   },
   "COMMENTS": {
-    "Title": "Comments"
+    "Title": "Kommentare"
   },
   "TOOLTIP": {
     "Level": "Level",
