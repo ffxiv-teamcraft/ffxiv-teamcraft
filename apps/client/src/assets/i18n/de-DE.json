@@ -303,13 +303,13 @@
   },
   "LIST": {
     "Regenerate": "Update list to latest Teamcraft version",
-    "Rename": "Rename list",
+    "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
     "Copy_as_text": "Als Text kopieren",
     "Copied_as_text": "Content copied in clipboard",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
-    "Total_trade_price": "Total: ",
+    "Total_trade_price": "Gesamt: ",
     "Add_all_alarms": "Add all alarms for this list",
     "History": "Historie",
     "BUTTONS": {
@@ -332,11 +332,11 @@
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "Keine Notiz",
-    "Edit_note": "No note",
+    "Edit_note": "Keine Notiz",
     "Note_placeholder": "Notiz",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventar",
-    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
+    "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -345,7 +345,7 @@
       "Import_string_copied": "Layout Import Code kopiert!",
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
-      "Global_options": "General options"
+      "Global_options": "Allgemeine Optionen"
     },
     "LAYOUT": {
       "Filter": "Filter",
@@ -422,7 +422,7 @@
     "Title": "Optimierte Navigationsroute",
     "Steps": "Stationen",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
+      "Gathering": "Sammel {{amount}}",
       "Hunting": "Get {{amount}} on monsters",
       "Vendor": "Kaufe {{amount}}",
       "Trade": "Handel {{amount}}"
@@ -644,7 +644,7 @@
   },
   "TOOLTIP": {
     "Level": "Level",
-    "Cost": "Cost",
+    "Cost": "Kosten",
     "Class_job": "Class/Job"
   }
 }
