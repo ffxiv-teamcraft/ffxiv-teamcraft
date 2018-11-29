@@ -4,6 +4,7 @@ import { AuthState } from './auth.reducer';
 import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { GearSet } from '../pages/simulator/model/gear-set';
 import { DefaultConsumables } from '../model/user/default-consumables';
+import { Favorites } from '../model/other/favorites';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -63,7 +64,7 @@ export class Authenticated implements Action {
 export class ToggleFavorite implements Action {
   readonly type = AuthActionTypes.ToggleFavorite;
 
-  constructor(public dataType: 'lists' | 'workshops', public key: string) {
+  constructor(public dataType: keyof Favorites, public key: string) {
   }
 }
 

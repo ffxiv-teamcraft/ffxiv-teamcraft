@@ -18,6 +18,27 @@
     </ng-template>
     <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'SIMULATOR.Rotations' | translate}}</ng-template>
   </nz-list>
+  <nz-list *ngIf="favoriteRotations$ | async as favRotations" [nzDataSource]="favRotations" [nzRenderItem]="rotation"
+           [nzHeader]="header">
+    <ng-template #rotation let-rotation>
+      <nz-list-item [nzActions]="[pickRotation]">
+        <nz-list-item-meta [nzTitle]="rotation.getName()">
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickRotation>
+        <a nz-button *ngIf="!custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+           routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+          <i nz-icon type="check"></i>
+        </a>
+        <a nz-button *ngIf="custom" [nzType]="'primary'" [nzShape]="'circle'" (click)="ref.close(rotation)"
+           routerLink="/simulator/custom/{{rotation.$key}}">
+          <i nz-icon type="check"></i>
+        </a>
+      </ng-template>
+    </ng-template>
+    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'SIMULATOR.Favorite_Rotations' | translate}}
+    </ng-template>
+  </nz-list>
   <ng-container *ngIf="!disableNew">
     <nz-divider [nzText]="'Or' | translate"></nz-divider>
     <a nz-button [nzType]="'primary'" nzBlock (click)="ref.close(null)" routerLink="/simulator/{{itemId}}/{{recipeId}}">

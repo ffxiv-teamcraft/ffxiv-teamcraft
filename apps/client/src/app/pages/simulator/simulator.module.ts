@@ -33,6 +33,7 @@ import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { FavoritesModule } from '../../modules/favorites/favorites.module';
 
 const routes: Routes = [
   {
@@ -88,6 +89,7 @@ const routes: Routes = [
     NameQuestionPopupModule,
     TextQuestionPopupModule,
     PageLoaderModule,
+    FavoritesModule,
 
     NgZorroAntdModule,
 
@@ -111,6 +113,9 @@ const routes: Routes = [
     RotationPanelComponent,
     RotationFolderPageComponent,
     StepByStepReportComponent
+  ],
+  exports: [
+    RotationPanelComponent
   ],
   entryComponents: [
     MacroPopupComponent,

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
+import { Favorites } from '../../../model/other/favorites';
 
 @Component({
   selector: 'app-favorite-button',
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class FavoriteButtonComponent implements OnInit {
 
   @Input()
-  type: 'workshops' | 'lists';
+  type: keyof Favorites;
 
   @Input()
   key: string;

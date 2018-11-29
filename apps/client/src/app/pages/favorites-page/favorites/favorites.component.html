@@ -14,3 +14,11 @@
     </div>
   </ng-template>
 </nz-list>
+
+<nz-list [nzHeader]="'SIMULATOR.Rotations' | translate" [nzRenderItem]="rotationRow" [nzDataSource]="rotations$ | async">
+  <ng-template #rotationRow let-rotation>
+    <div class="favorite-row">
+      <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+    </div>
+  </ng-template>
+</nz-list>

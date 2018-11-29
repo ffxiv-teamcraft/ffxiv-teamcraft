@@ -58,6 +58,7 @@
             ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
       <i nz-icon type="share-alt"></i>
     </button>
+    <app-favorite-button *ngIf="rotation.$key" type="rotations" [key]="rotation.$key"></app-favorite-button>
   </div>
   <div fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="simulator">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -73,7 +74,8 @@
     </div>
     <nz-collapse>
       <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
-        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center">
+        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-sm="column"
+             fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center">
           <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
             <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
             <nz-select [nzDisabled]="!custom" [ngModel]="(stats$ | async)?.jobId"
@@ -93,7 +95,9 @@
               <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
                    fxLayoutAlign="space-evenly center">
                 <nz-form-item>
-                  <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}</nz-form-label>
+                  <nz-form-label nzRequired nzFor="craftsmanship">{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
+                    translate}}
+                  </nz-form-label>
                   <nz-form-control>
                     <nz-input-group nzAddOnAfter="+{{bonuses.craftsmanship}}">
                       <nz-input-number class="input-number-with-addon" [nzMin]="0" id="craftsmanship"
@@ -102,7 +106,8 @@
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}</nz-form-label>
+                  <nz-form-label nzRequired nzFor="control">{{'SIMULATOR.CONFIGURATION.Control' | translate}}
+                  </nz-form-label>
                   <nz-form-control>
                     <nz-input-group nzAddOnAfter="+{{bonuses.control}}">
                       <nz-input-number class="input-number-with-addon" [nzMin]="0" id="control"
@@ -146,23 +151,23 @@
             </div>
           </div>
           <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData" fxFlex="1 1 30%"
-            fxLayout="column" class="ingredients">
+               fxLayout="column" class="ingredients">
             <h3>
               {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
               <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
             </h3>
             <nz-list [nzDataSource]="hqIngredientsData"
-                      [nzRenderItem]="hqIngredientTemplate">
+                     [nzRenderItem]="hqIngredientTemplate">
               <ng-template #hqIngredientTemplate let-ingredient>
                 <nz-list-item [nzContent]="content">
                   <nz-list-item-meta [nzTitle]="ingredient.id | itemName | i18n"
-                                      [nzDescription]="ingredient.quality"></nz-list-item-meta>
+                                     [nzDescription]="ingredient.quality"></nz-list-item-meta>
                   <ng-template #content>
                     <nz-form-control>
                       <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
                         <nz-input-number class="input-number-with-addon" [nzMin]="0"
-                                          [(ngModel)]="ingredient.amount"
-                                          [nzMax]="ingredient.max"></nz-input-number>
+                                         [(ngModel)]="ingredient.amount"
+                                         [nzMax]="ingredient.max"></nz-input-number>
                       </nz-input-group>
                     </nz-form-control>
                   </ng-template>

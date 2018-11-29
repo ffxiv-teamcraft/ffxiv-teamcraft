@@ -32,6 +32,7 @@ import { combineLatest, of } from 'rxjs';
 import { GearSet } from '../pages/simulator/model/gear-set';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
+import { Favorites } from '../model/other/favorites';
 
 @Injectable({
   providedIn: 'root'
@@ -181,7 +182,7 @@ export class AuthFacade {
     this.store.dispatch(new Logout());
   }
 
-  public toggleFavorite(dataType: 'lists' | 'workshops', key: string): void {
+  public toggleFavorite(dataType: keyof Favorites, key: string): void {
     this.store.dispatch(new ToggleFavorite(dataType, key));
   }
 

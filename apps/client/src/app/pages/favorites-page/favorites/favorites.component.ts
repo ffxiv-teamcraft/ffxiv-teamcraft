@@ -7,6 +7,8 @@ import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
+import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
 
 @Component({
   selector: 'app-favorites',
@@ -19,7 +21,10 @@ export class FavoritesComponent {
 
   public lists$: Observable<List[]>;
 
-  constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade) {
+  public rotations$: Observable<CraftingRotation[]>;
+
+  constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade,
+              private rotationsFacade: RotationsFacade) {
     this.lists$ = this.authFacade.favorites$.pipe(
       map(favorites => favorites.lists),
       tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
@@ -27,6 +32,17 @@ export class FavoritesComponent {
         return this.listsFacade.compacts$.pipe(
           map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1)),
           filter(compacts => compacts.length === lists.length)
+        );
+      })
+    );
+
+    this.rotations$ = this.authFacade.favorites$.pipe(
+      map(favorites => favorites.rotations),
+      tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
+      switchMap(rotations => {
+        return this.rotationsFacade.allRotations$.pipe(
+          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1)),
+          filter(loadedRotations => loadedRotations.length === rotations.length)
         );
       })
     );

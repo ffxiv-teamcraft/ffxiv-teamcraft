@@ -7,6 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { ListModule } from '../../modules/list/list.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
+import { RotationsModule } from '../../modules/rotations/rotations.module';
+import { SimulatorModule } from '../simulator/simulator.module';
 
 const routes: Routes = [
   {
@@ -22,6 +24,8 @@ const routes: Routes = [
     TranslateModule,
     ListModule,
     WorkshopModule,
+    RotationsModule,
+    SimulatorModule,
 
     NgZorroAntdModule,
 
