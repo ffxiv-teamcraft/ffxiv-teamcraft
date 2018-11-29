@@ -102,7 +102,7 @@
     "Warning": "Warnung",
     "Success": "Erfolg",
     "Copy_to_clipboard": "In Zwischenablage kopieren",
-    "Language": "Language"
+    "Language": "Sprache"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -188,7 +188,7 @@
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
   "Character_name": "Charaktername",
   "Disconnect_and_anonymous": "Disconnect and continue as anonymous",
-  "Add_manual_character": "Add character",
+  "Add_manual_character": "Charakter hinzufügen",
   "Character_informations": "Charakterinformationen",
   "Server_name": "Servername",
   "Add_all_recipes": "Füge Ergebnisse einer Liste hinzu",
