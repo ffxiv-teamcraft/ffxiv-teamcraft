@@ -7,6 +7,7 @@
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -46,6 +47,7 @@
   "Compact_display": "간소화",
   "Mute_alarms": "알람 음소거",
   "Hide_used": "사용된 행 숨기기",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "집사 수행",
   "Requires_x_ventures": "총 {{amount}} 회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
@@ -328,7 +330,7 @@
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
-    "No_book": "비전서가 없습니다. 클릭하면 프로필로 이동합니다.",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "메모 없음",
     "Edit_note": "메모 없음",
     "Note_placeholder": "메모",
