@@ -7,6 +7,7 @@
   "FC_name": "Free Company Name",
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "See on map",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -46,6 +47,7 @@
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
   "Hide_used": "Verwendete Reihen ausblenden",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
@@ -328,7 +330,7 @@
     "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
-    "No_book": "Fehlendes Buch! Klicken um zum Profil zu gelangen",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "Keine Notiz",
     "Edit_note": "No note",
     "Note_placeholder": "Notiz",
