@@ -119,11 +119,12 @@
             <label nz-checkbox class="select-box" [(ngModel)]="item.selected"
                    (ngModelChange)="updateAllSelected(results)"></label>
             <ng-template #inputBox>
-              <nz-input-group [nzAddOnBefore]="addCrafts" [nzCompact]="true" class="amount-input">
+              <nz-input-group [nzAddOnBefore]="item.recipe !== undefined?addCrafts:null" [nzCompact]="true"
+                              class="amount-input">
                 <input type="number" [(ngModel)]="item.amount" nz-input>
                 <ng-template #addCrafts>
-                  <label nz-checkbox [(ngModel)]="item.addCrafts" *ngIf="item.recipe !== undefined">
-                    {{'ITEMS.Crafts_amount' | translate}}
+                  <label nz-checkbox [(ngModel)]="item.addCrafts">
+                    {{'Add_as_collectible' | translate}}
                   </label>
                 </ng-template>
               </nz-input-group>
