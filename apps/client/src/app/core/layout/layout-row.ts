@@ -12,7 +12,8 @@ export class LayoutRow {
               public tiers = false,
               public hideIfEmpty = true,
               public hideCompletedRows = false,
-              public hideUsedRows = false) {
+              public hideUsedRows = false,
+              public collapseIfDone = false) {
   }
 
   public get filter(): LayoutRowFilter {

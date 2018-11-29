@@ -70,7 +70,8 @@ export class LayoutsFacade {
                   zoneBreakdown: row.zoneBreakdown,
                   tiers: row.tiers,
                   filterChain: row.filter.name,
-                  hideIfEmpty: row.hideIfEmpty
+                  hideIfEmpty: row.hideIfEmpty,
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, row) => row.done >= row.amount && collapse, true) : false
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
@@ -92,7 +93,8 @@ export class LayoutsFacade {
           hideIfEmpty: false,
           zoneBreakdown: layout.recipeZoneBreakdown,
           tiers: false,
-          filterChain: ''
+          filterChain: '',
+          collapsed: false
         };
       })
     );

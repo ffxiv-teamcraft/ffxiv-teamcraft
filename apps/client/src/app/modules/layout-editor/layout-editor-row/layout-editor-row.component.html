@@ -36,6 +36,8 @@
           | translate}}</label>
         <label nz-checkbox [(ngModel)]="row.hideUsedRows" (ngModelChange)="rowChange.emit(row)">{{"Hide_used" |
           translate}}</label>
+        <label nz-checkbox [(ngModel)]="row.collapseIfDone" (ngModelChange)="rowChange.emit(row)">{{"Collapse_if_done" |
+          translate}}</label>
       </div>
     </div>
     <div class="ordering">
