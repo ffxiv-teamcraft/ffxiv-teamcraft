@@ -14,6 +14,12 @@
                 (click)="showSettings()">
           <i nz-icon type="setting"></i>
         </button>
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip
+                nzTitle="{{(settings.alarmsMuted?'Unmute_alarms':'Mute_alarms') | translate}}"
+                (click)="settings.alarmsMuted = !settings.alarmsMuted">
+          <i nz-icon iconfont="icon-bell" *ngIf="settings.alarmsMuted"></i>
+          <i nz-icon iconfont="icon-bell-mute" *ngIf="!settings.alarmsMuted"></i>
+        </button>
       </div>
       <div class="spacer"></div>
       <span>
@@ -106,7 +112,8 @@
           <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
           <span *ngIf="row.alarm.slot !== null" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
         </div>
-        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type" fxFlex="0 0 auto">
+        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type"
+             fxFlex="0 0 auto">
       </div>
     </ng-template>
     <ng-template #cardDescription>

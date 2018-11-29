@@ -4,7 +4,7 @@ import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { faDiscord, faFacebookF, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
+import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_ddldn6q6l4l.js'});
+    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_m3rrm5jysn.js'});
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
