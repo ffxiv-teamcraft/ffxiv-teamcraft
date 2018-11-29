@@ -31,8 +31,6 @@ export class Alarm extends DataModel {
    */
   type: number;
 
-  groupName: string;
-
   note: string;
 
   aetheryte: Aetheryte;

@@ -112,8 +112,8 @@
         <ng-template #calculator>
           <nz-input-number [nzMin]="0" [nzMax]="item.amount - item.done" [nzStep]="1" #numberInput
                            nzAutoFocus></nz-input-number>
-          <button nz-button (click)="itemDoneChanged(numberInput.value)" nzType="primary">+</button>
-          <button nz-button (click)="itemDoneChanged(numberInput.value, -1)" nzType="warn">-</button>
+          <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>
+          <button nz-button (click)="remove(numberInput.value)" nzType="warn">-</button>
         </ng-template>
       </button>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"

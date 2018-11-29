@@ -26,10 +26,17 @@ export class AlarmBellService {
   }
 
   private initBell(): void {
-    combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$)
+    combineLatest(this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$)
       .pipe(
-        map(([date, alarms]) => {
+        map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {
+            const alarmGroup = groups.find(group => {
+              return alarm.groupId === group.$key;
+            });
+            // If this alarm has a group and it's muted, don't even go further
+            if (alarmGroup && !alarmGroup.enabled) {
+              return false;
+            }
             const lastPlayed = this.getLastPlayed(alarm);
             // Ceiling on /6 so precision is 1/10
             const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;

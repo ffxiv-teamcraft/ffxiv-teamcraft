@@ -36,7 +36,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
           if (npcEntry.position !== null) {
             npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
             npc.zoneId = npcEntry.position.zoneid;
-            npc.mapId = npcEntry.map;
+            npc.mapId = npcEntry.position.map;
           }
           return npc;
         }),
