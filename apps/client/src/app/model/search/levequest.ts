@@ -16,6 +16,7 @@ export interface Levequest {
   repeats: number;
   startCoordinates: Vector2;
   startMapId: number;
+  startPlaceId: number;
   // Levequest is selected from search results
   selected?: boolean;
   // Option to complete all deliveries (3x turn-in) is selected from search results
