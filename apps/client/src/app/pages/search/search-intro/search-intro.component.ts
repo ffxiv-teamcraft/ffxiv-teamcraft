@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 
+interface FeatureEntry {
+  link: string;
+  title: string;
+  description: string;
+}
+
 @Component({
   selector: 'app-search-intro',
   templateUrl: './search-intro.component.html',
@@ -9,6 +15,44 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class SearchIntroComponent {
 
   counter$ = this.firebase.object<number>('lists_created').valueChanges();
+
+  features: FeatureEntry[] = [
+    {
+      link: '/lists',
+      title: 'Lists',
+      description: 'Lists'
+    },
+    {
+      link: '/community-lists',
+      title: 'Public_lists',
+      description: 'Public_lists'
+    },
+    {
+      link: '/alarms',
+      title: 'ALARMS.Title',
+      description: 'Alarms'
+    },
+    {
+      link: '/gathering-location',
+      title: 'GATHERING_LOCATIONS.Title',
+      description: 'Gathering_location'
+    },
+    {
+      link: '/rotations',
+      title: 'SIMULATOR.Rotations',
+      description: 'Rotations'
+    },
+    {
+      link: '/levequests',
+      title: 'LEVEQUESTS.Title',
+      description: 'Levequests'
+    },
+    {
+      link: '/levequests',
+      title: 'MACRO_TRANSLATION.Title',
+      description: 'Macro_translation'
+    },
+  ];
 
   constructor(private firebase: AngularFireDatabase) {
   }

@@ -9,21 +9,18 @@
   </a>
 </div>
 <div fxLayout="column" fxLayoutAlign="flex-start" class="list-container">
-  <h3>Start now !</h3>
-  <nz-list>
-    <nz-list-item>
-      <nz-list-item-meta [nzAvatar]="featureIcon">
-        <ng-template #featureIcon>
-
+  <nz-list [nzRenderItem]="featureRow" [nzDataSource]="features" nzSplit="false" [nzHeader]="'SEARCH_INTRO.Features_header' | translate">
+    <ng-template #featureRow let-feature>
+      <nz-list-item [nzActions]="[navigateTo]">
+        <nz-list-item-meta [nzTitle]="feature.title | translate"
+                           [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate">
+        </nz-list-item-meta>
+        <ng-template #navigateTo>
+          <a [routerLink]="feature.link" nz-button nzShape="circle">
+            <i nz-icon type="select"></i>
+          </a>
         </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
+      </nz-list-item>
+    </ng-template>
   </nz-list>
-  <ul>
-    <li>blablablablablabalbalbalbalablab Search page</li>
-    <li>balbalbalbalabalbalbabalbabalablab Simulator</li>
-    <li>dpakzdpazndpaknzdpazndpakzndpazd Teams</li>
-    <li>nodakndokanzdoanzdoazdoa Macro translator</li>
-    <li>daodoazhdoazdoazgda alarms</li>
-  </ul>
 </div>
