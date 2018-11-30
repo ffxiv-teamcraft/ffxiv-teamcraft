@@ -314,7 +314,7 @@ export class List extends DataWithPermissions {
     }
     let res = false;
     res = res || (this.version === undefined);
-    res = res || semver.ltr(this.version, '5.0.0');
+    res = res || semver.ltr(this.version, '5.0.0-beta.0');
     return res;
   }
 
