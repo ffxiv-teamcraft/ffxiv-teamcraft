@@ -60,10 +60,10 @@ export class ListDetailsComponent implements OnInit {
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService) {
-    this.list$ = this.listsFacade.selectedList$.pipe(
-      filter(list => list !== undefined),
-      tap(list => {
-        if (!list.notFound && list.isOutDated()) {
+    this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
+      filter(([list]) => list !== undefined),
+      tap(([list, permissionLevel]) => {
+        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE) {
           this.regenerateList(list);
         }
         if (list.teamId !== undefined) {
@@ -71,6 +71,7 @@ export class ListDetailsComponent implements OnInit {
           this.teamsFacade.select(list.teamId);
         }
       }),
+      map(([list]) => list),
       shareReplay(1)
     );
     this.finalItemsRow$ = this.list$.pipe(
