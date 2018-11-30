@@ -32,7 +32,7 @@ export class MarketboardIconComponent {
       nzContent: MarketboardPopupComponent,
       nzComponentParams: {
         itemId: this.itemId,
-        showHistory: this.showHistory
+        showHistory: true
       },
       nzFooter: null
     });

@@ -77,9 +77,9 @@
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" nzDisabled (click)="openSettings()">
+            <a nz-menu-item class="menu-link" (click)="openSettings()">
               <i nz-icon type="setting"></i>
-              {{'SETTINGS.title' | translate}}
+              {{'SETTINGS.Title' | translate}}
             </a>
             <span nz-menu-divider></span>
             <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" (click)="logOut()">

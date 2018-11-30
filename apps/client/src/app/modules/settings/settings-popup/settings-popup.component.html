@@ -1,3 +1,15 @@
-<p>
-  settings-popup works!
-</p>
+<nz-tabset nzTabPosition="left" [nzSelectedIndex]="selectedTab" class="tabset">
+  <nz-tab [nzTitle]="'SETTINGS.General' | translate">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'COMMON.Language' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [ngModel]="translate.currentLang" (ngModelChange)="setLanguage($event)">
+            <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                       [nzValue]="locale"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </nz-tab>
+</nz-tabset>

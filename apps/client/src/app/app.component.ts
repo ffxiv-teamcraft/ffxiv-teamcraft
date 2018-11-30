@@ -24,6 +24,7 @@ import { NotificationsFacade } from './modules/notifications/+state/notification
 import { AbstractNotification } from './core/notification/abstract-notification';
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
+import { SettingsPopupService } from './modules/settings/settings-popup.service';
 
 declare const gtag: Function;
 
@@ -33,8 +34,6 @@ declare const gtag: Function;
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-
-  public static LOCALES: string[] = ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko'];
 
   locale: string;
 
@@ -69,11 +68,12 @@ export class AppComponent implements OnInit {
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService) {
+              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
+              private settingsPopupService: SettingsPopupService) {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({scriptUrl: 'https://at.alicdn.com/t/font_931253_m3rrm5jysn.js'});
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_m3rrm5jysn.js' });
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -111,6 +111,7 @@ export class AppComponent implements OnInit {
     // Translation
     this.translate.setDefaultLang('en');
     const lang = localStorage.getItem('locale');
+    this.translate.onLangChange.subscribe(l => this.locale = l);
     if (lang !== null) {
       this.use(lang);
     } else if (this.translate.getBrowserCultureLang() === 'pt-BR') {
@@ -173,7 +174,7 @@ export class AppComponent implements OnInit {
   }
 
   use(lang: string): void {
-    if (AppComponent.LOCALES.indexOf(lang) === -1) {
+    if (this.settings.availableLocales.indexOf(lang) === -1) {
       lang = 'en';
     }
     this.locale = lang;
@@ -182,7 +183,7 @@ export class AppComponent implements OnInit {
   }
 
   openSettings(): void {
-    this.settings.openSettings();
+    this.settingsPopupService.openSettings();
   }
 
 }
