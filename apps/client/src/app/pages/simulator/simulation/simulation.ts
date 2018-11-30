@@ -84,7 +84,7 @@ export class Simulation {
       this.reset();
     }
     this.crafterStats.craftsmanship++;
-    while (this.run(true).hqPercent >= originalHqPercent) {
+    while (this.run(true).hqPercent >= originalHqPercent && originalHqPercent > 1 && this.crafterStats._control > 0) {
       this.crafterStats._control--;
       this.reset();
     }
