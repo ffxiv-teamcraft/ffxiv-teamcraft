@@ -222,11 +222,6 @@ export class ItemRowComponent implements OnInit {
 
   assignTeamMember(team: Team, memberId: string): void {
     this.setWorkingOnIt(memberId);
-    if (team.webhook !== undefined) {
-      this.listsFacade.selectedList$.pipe(first()).subscribe(list => {
-        this.discordWebhookService.notifyUserAssignment(team, this.item.icon, memberId, this.item.id, list);
-      });
-    }
   }
 
   itemDoneChanged(newValue: number): void {
