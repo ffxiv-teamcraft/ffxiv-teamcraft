@@ -25,7 +25,7 @@
     </button>
     <button nz-button nzType="primary" nzShape="circle" nz-tooltip
             [disabled]="rotation.rotation.length === 0"
-            ngxClipboard [cbContent]="registry.exportToCraftOpt(rotation.rotation)"
+            ngxClipboard [cbContent]="registry.exportToCraftOpt(rotation.rotation || [])"
             (cbOnSuccess)="success('SIMULATOR.Export_copied')"
             [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate">
       <i nz-icon type="upload"></i>
