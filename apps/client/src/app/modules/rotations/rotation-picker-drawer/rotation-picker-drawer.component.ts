@@ -27,7 +27,7 @@ export class RotationPickerDrawerComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade, public ref: NzDrawerRef<CraftingRotation>) {
     this.favoriteRotations$ = this.authFacade.favorites$.pipe(
-      map(favorites => favorites.rotations),
+      map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       switchMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
