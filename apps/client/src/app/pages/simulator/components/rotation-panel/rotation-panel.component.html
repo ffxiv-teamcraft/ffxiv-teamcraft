@@ -21,7 +21,8 @@
             <i nz-icon type="share-alt"></i>
           </button>
           <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
-                  [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)">
+                  [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)"
+                  *ngIf="(permissionLevel$ | async) >= 40">
             <i nz-icon type="delete"></i>
           </button>
         </div>

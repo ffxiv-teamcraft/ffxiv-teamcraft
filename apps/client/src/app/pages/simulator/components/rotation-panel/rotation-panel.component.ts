@@ -10,6 +10,9 @@ import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { combineLatest } from 'rxjs';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -27,9 +30,14 @@ export class RotationPanelComponent {
 
   actions$: Observable<CraftingAction[]>;
 
+  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
+    map(([rotation, userId]) => rotation.getPermissionLevel(userId))
+  );
+
   constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
-              private translate: TranslateService, private dialog: NzModalService) {
+              private translate: TranslateService, private dialog: NzModalService,
+              private authFacade: AuthFacade) {
     this.actions$ = this.rotation$.pipe(
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
@@ -61,7 +69,6 @@ export class RotationPanelComponent {
       })
     ).subscribe(r => {
       this.rotationsFacade.updateRotation(r);
-
     });
   }
 
