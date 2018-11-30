@@ -230,22 +230,22 @@ export class ItemRowComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number): void {
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, newValue - this.item.done, this.item.recipeId);
   }
 
 
   add(amount: string): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, +amount, this.item.recipeId);
   }
 
   remove(amount: string): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount));
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * (+amount), this.item.recipeId);
   }
 
   markAsDone(): void {
-    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done);
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId);
   }
 
   toggleAlarm(display: AlarmDisplay): void {

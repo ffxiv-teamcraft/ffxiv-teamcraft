@@ -19,6 +19,7 @@ import { SearchFilter } from '../../../model/search/search-filter.interface';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
+import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 
 @Component({
   selector: 'app-search',
@@ -72,7 +73,7 @@ export class SearchComponent implements OnInit {
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
-              private rotationPicker: RotationPickerService) {
+              private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -210,6 +211,10 @@ export class SearchComponent implements OnInit {
       });
     }
     return filters;
+  }
+
+  public getStars(amount: number): string {
+    return this.htmlTools.generateStars(amount);
   }
 
   public createQuickList(item: SearchResult): void {

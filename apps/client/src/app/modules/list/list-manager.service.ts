@@ -110,7 +110,13 @@ export class ListManagerService {
           }
           // Process items to add details.
           addition.forEach(item => {
-            item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
+            if (data.isCraft() && recipeId !== undefined && data.item.id === item.id) {
+              item.craftedBy = this.extractor.extractCraftedBy(item.id, data).filter(row => {
+                return row.recipeId === recipeId;
+              });
+            } else {
+              item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
+            }
             item.vendors = this.extractor.extractVendors(item.id, data);
             item.tradeSources = this.extractor.extractTradeSources(item.id, data);
             item.reducedFrom = this.extractor.extractReducedFrom(item.id, data);

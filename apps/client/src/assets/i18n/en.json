@@ -174,7 +174,6 @@
   "Not_own_list_outdated": "This list is outdated, please ask the owner to regenerate it",
   "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
   "Own_list_outdated_after_button": "button",
-  "Home": "Home",
   "Import": "Import",
   "Favorites": "Favorites",
   "Favorite": "Favorite",
@@ -649,5 +648,11 @@
     "Level": "Level",
     "Cost": "Cost",
     "Class_job": "Class/Job"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation"
   }
 }

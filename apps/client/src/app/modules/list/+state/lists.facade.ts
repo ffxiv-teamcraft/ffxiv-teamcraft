@@ -163,8 +163,8 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta));
+  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string): void {
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {

@@ -204,7 +204,7 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem);
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, false, action.recipeId);
       return list;
     }),
     map(list => new UpdateList(list))
@@ -241,7 +241,7 @@ export class ListsEffects {
     filter(([action, compacts]) => compacts.find(list => list.$key === (<LoadListCompact>action).key) === undefined),
     map(([action]) => action),
     mergeMap(action => this.listCompactsService.get(action.key)),
-    catchError(() => of({notFound: true})),
+    catchError(() => of({ notFound: true })),
     map(listCompact => new ListCompactLoaded(listCompact))
   );
 

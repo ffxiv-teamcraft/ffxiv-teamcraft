@@ -185,9 +185,15 @@ export class List extends DataWithPermissions {
     return this.finalItems.length === 0;
   }
 
-  public getItemById(id: number, excludeFinalItems: boolean = false): ListRow {
+  public getItemById(id: number, excludeFinalItems: boolean = false, recipeId?: string): ListRow {
     const array = excludeFinalItems ? this.items : this.items.concat(this.finalItems);
-    return array.find(row => row.id === id);
+    return array.find(row => {
+      let matches = row.id === id;
+      if (recipeId !== undefined) {
+        matches = matches && row.recipeId === recipeId;
+      }
+      return matches;
+    });
   }
 
   /**
@@ -200,10 +206,11 @@ export class List extends DataWithPermissions {
    * @param {number} amount
    * @param {boolean} setUsed
    * @param {boolean} excludeFinalItems
+   * @param recipeId
    * @param initialAddition
    */
-  public setDone(itemId: number, amount: number, excludeFinalItems = false, setUsed = false, initialAddition = amount): void {
-    const item = this.getItemById(itemId, excludeFinalItems);
+  public setDone(itemId: number, amount: number, excludeFinalItems = false, setUsed = false, recipeId?: string, initialAddition = amount): void {
+    const item = this.getItemById(itemId, excludeFinalItems, recipeId);
     const previousDone = MathTools.absoluteCeil(item.done / item.yield);
     if (setUsed) {
       // Save previous used amount
@@ -249,7 +256,7 @@ export class List extends DataWithPermissions {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            this.setDone(requirement.id, nextAmount, true, previousDone !== item.done, initialAddition);
+            this.setDone(requirement.id, nextAmount, true, previousDone !== item.done, undefined, initialAddition);
           }
         }
       }
@@ -401,7 +408,7 @@ export class List extends DataWithPermissions {
   private add(array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
-      return r.id === data.id;
+      return r.id === data.id && r.recipeId === data.recipeId;
     });
     if (row === undefined) {
       array.push(data);
@@ -415,7 +422,7 @@ export class List extends DataWithPermissions {
     if (added < 0 && recipe) {
       const previousDone = row.done;
       if (previousDone > row.amount_needed) {
-        this.setDone(row.id, row.amount_needed - previousDone);
+        this.setDone(row.id, row.amount_needed - previousDone, !recipe, false, data.recipeId);
       }
     }
     return added;

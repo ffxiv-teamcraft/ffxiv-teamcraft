@@ -102,7 +102,7 @@
   </div>
 </div>
 <div *ngIf="showIntro">
-  TODO Intro
+  <app-search-intro></app-search-intro>
 </div>
 <div *ngIf="results$ | async as results">
   <div class="addition-buttons">
@@ -112,7 +112,7 @@
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">
-      <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+      <nz-list *ngIf="results.length > 0" [nzDataSource]="results" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
         <ng-template #item let-item>
           <nz-list-item [nzContent]="inputBox"
                         [nzActions]="[addToList, createQuickListAction, openInSimulatorAction]">
@@ -150,11 +150,23 @@
             </ng-template>
             <nz-list-item-meta
               [nzTitle]="title"
-              [nzAvatar]="item.icon | icon">
+              [nzDescription]="item.recipe?description:null"
+              [nzAvatar]="icon">
+              <ng-template #icon>
+                <app-item-icon [icon]="item.icon" [itemId]="item.itemId"></app-item-icon>
+              </ng-template>
               <ng-template #title>
                 <div fxLayout="row">
                   <div>{{item.itemId | itemName | i18n}}</div>
                   <app-marketboard-icon [itemId]="item.itemId" [showHistory]="true"></app-marketboard-icon>
+                </div>
+              </ng-template>
+              <ng-template #description>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                  <img src="https://garlandtools.org/db/images/{{(item.recipe.job | jobAbbr)?.en}}.png"
+                       alt="{{item.recipe.job | jobAbbr | i18n}}" class="job-icon">
+                  <div>lvl{{item.recipe.lvl}} <span *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span>
+                  </div>
                 </div>
               </ng-template>
             </nz-list-item-meta>

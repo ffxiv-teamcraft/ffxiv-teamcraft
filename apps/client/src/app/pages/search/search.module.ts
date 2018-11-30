@@ -16,6 +16,8 @@ import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
+import { SearchIntroComponent } from './search-intro/search-intro.component';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 
 const routes: Routes = [
   {
@@ -42,12 +44,13 @@ const routes: Routes = [
     ProgressPopupModule,
     MarketboardModule,
     RotationsModule,
+    ItemIconModule,
 
     NgZorroAntdModule,
 
     RouterModule.forChild(routes)
   ],
-  declarations: [SearchComponent]
+  declarations: [SearchComponent, SearchIntroComponent]
 })
 export class SearchModule {
 }
