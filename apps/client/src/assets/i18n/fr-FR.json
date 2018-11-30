@@ -174,7 +174,6 @@
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
   "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
   "Own_list_outdated_after_button": "bouton",
-  "Home": "Accueil",
   "Import": "Importer",
   "Favorites": "Favoris",
   "Favorite": "Favoris",
@@ -548,6 +547,7 @@
     "CONFIGURATION": {
       "Job": "Job",
       "Job_not_configured": "Il semble que vous n’avez configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses stats",
+      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "Activer les stats personnalisées",
       "Select_job": "Selectionner un job",
       "Craftsmanship": "Habileté",
@@ -648,5 +648,11 @@
     "Level": "Level",
     "Cost": "Cost",
     "Class_job": "Class/Job"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation"
   }
 }
