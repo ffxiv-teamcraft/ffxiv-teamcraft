@@ -28,7 +28,7 @@
       </button>
     </div>
     <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate" nzType="warning"
-              *ngIf="needsVerification$ | async" nzShowIcon></nz-alert>
+              *ngIf="needsVerification$ | async" nzShowIcon class="fc-check-warning"></nz-alert>
     <h2>{{'LISTS.Your_lists' | translate}}</h2>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">
