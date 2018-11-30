@@ -62,8 +62,9 @@
                   <b>{{leve.level}} {{leve.jobId | jobAbbr | i18n}}</b>
                 </div>
                 <div nz-col [nzXs]="{ span: 10, offset: 1 }" [nzXl]="{ span: 5, offset: 0 }">
-                  <b>{{leve.startZoneId | placeName | i18n}}</b>
-                  <app-map-position [marker]="leve.startCoordinates" [mapId]="leve.startMapId"></app-map-position>
+                  <b>{{leve.startPlaceId | placeName | i18n}}</b>
+                  <!--<app-map-position [marker]="leve.startCoordinates" [mapId]="leve.startMapId"-->
+                                    <!--[zoneId]="leve.startPlaceId"></app-map-position>-->
                 </div>
                 <div nz-col nzXs="7" nzXl="5">
                   <b>EXP:</b> {{leve.exp * craftAmount(leve) | number}}<br/>

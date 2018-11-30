@@ -100,7 +100,7 @@
              fxLayout="column"
              [nzLoading]="!settings.compactAlarms" [class.spawned]="row.spawned" [class.played]="row.played"
              #card>
-      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
+      <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
         <app-item-icon [icon]="row.alarm.icon"></app-item-icon>
@@ -108,12 +108,11 @@
     </nz-card>
     <ng-template #cardTitle>
       <div class="card-title" fxLayout="row">
-        <div fxLayout="row" fxFlex="1 1 auto">
+        <div fxLayout="row" class="name-slot-container">
           <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
           <span *ngIf="row.alarm.slot !== null" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
         </div>
-        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type"
-             fxFlex="0 0 auto">
+        <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
       </div>
     </ng-template>
     <ng-template #cardDescription>

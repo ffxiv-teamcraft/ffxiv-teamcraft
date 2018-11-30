@@ -42,6 +42,9 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return { ...state, linkingCharacter: true };
 
     case AuthActionTypes.ToggleFavorite: {
+      if (state.user.favorites[action.dataType] === undefined) {
+        state.user.favorites[action.dataType] = [];
+      }
       if (state.user.favorites[action.dataType].indexOf(action.key) > -1) {
         state.user.favorites[action.dataType] = state.user.favorites[action.dataType].filter(fav => fav !== action.key);
       } else {

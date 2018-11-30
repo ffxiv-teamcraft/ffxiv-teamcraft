@@ -68,7 +68,6 @@ export class Simulation {
     } else {
       hqMedian = (results[Math.floor(results.length / 2)].hqPercent + results[Math.ceil(results.length / 2)].hqPercent) / 2;
     }
-    console.log(this.actions);
     return {
       rawData: results,
       successPercent: Math.round(successPercent),

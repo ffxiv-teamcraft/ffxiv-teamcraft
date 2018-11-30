@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { ActionType } from '../../model/actions/action-type';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
@@ -48,7 +48,7 @@ import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.less']
 })
-export class SimulatorComponent implements OnDestroy {
+export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
   public custom = false;
@@ -270,18 +270,6 @@ export class SimulatorComponent implements OnDestroy {
     );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$, this.hqIngredients$).pipe(
       map(([recipe, actions, stats, hqIngredients]) => new Simulation(recipe, actions, stats, hqIngredients)),
-      shareReplay(1)
-    );
-    this.result$ = combineLatest(this.snapshotStep$, this.simulation$).pipe(
-      map(([snapshotStep, sim]) => {
-        sim.reset();
-        if (this.snapshotMode) {
-          return sim.run(true, snapshotStep);
-        } else {
-          return sim.run(true);
-        }
-      }),
-      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
       shareReplay(1)
     );
     this.report$ = combineLatest(this.simulation$, this.result$).pipe(
@@ -674,6 +662,21 @@ export class SimulatorComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.onDestroy$.next(null);
+  }
+
+  ngOnInit(): void {
+    this.result$ = combineLatest(this.snapshotStep$, this.simulation$).pipe(
+      map(([snapshotStep, sim]) => {
+        sim.reset();
+        if (this.snapshotMode) {
+          return sim.run(true, snapshotStep);
+        } else {
+          return sim.run(true);
+        }
+      }),
+      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
+      shareReplay(1)
+    );
   }
 
 }

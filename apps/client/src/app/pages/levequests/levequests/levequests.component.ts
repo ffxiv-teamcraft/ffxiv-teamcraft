@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { BehaviorSubject, concat, Observable } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -65,21 +65,28 @@ export class LevequestsComponent implements OnInit {
         });
       }),
       debounceTime(500),
-      filter((query) => this.job$.value !== null || query.length > 3),
+      filter((query) => query.length > 3 || this.job$.value !== null),
       tap(() => {
         this.showIntro = false;
         this.loading = true;
         this.allSelected = false;
       }),
       switchMap(query => {
-        const filters: XivapiSearchFilter[] = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
+        let filters;
+
+        if (this.job$.value) {
+          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +this.job$.value + 1 }];
+        } else {
+          filters = [{ column: 'ClassJobCategoryTargetID', operator: '>=', value: 9 },
+            { column: 'ClassJobCategoryTargetID', operator: '<=', value: 16 }];
+        }
 
         filters.push({ column: 'ClassJobLevel', operator: '>=', value: this.levelMin$.value },
           { column: 'ClassJobLevel', operator: '<=', value: this.levelMax$.value });
 
         return this.xivapi.search({
           indexes: [SearchIndex.LEVE], string: query, filters: filters,
-          columns: ['Icon', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
+          columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
             'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
             'Name', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
             'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
@@ -94,7 +101,7 @@ export class LevequestsComponent implements OnInit {
             level: leve.ClassJobLevel,
             jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
-            itemIcon: leve.Icon,
+            itemIcon: leve.CraftLeve.Item0.Icon,
             recipes: leve.CraftLeve.Item0Recipes.filter(recipe => recipe.ID !== null)
               .map(recipe => ({ recipeId: recipe.ID, jobId: recipe.ClassJob })),
             exp: leve.ExpReward,
@@ -103,7 +110,8 @@ export class LevequestsComponent implements OnInit {
             itemQuantity: leve.CraftLeve.ItemCount0,
             name: leve.Name,
             startCoordinates: { x: leve.LevelLevemete.X, y: leve.LevelLevemete.Y },
-            startMapId: leve.PlaceNameStart.ID,
+            startMapId: leve.LevelLevemete.Map.ID,
+            startPlaceId: leve.PlaceNameStart.ID,
             repeats: leve.CraftLeve.Repeats
           });
         });

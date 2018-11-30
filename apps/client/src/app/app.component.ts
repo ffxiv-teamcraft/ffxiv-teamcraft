@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedSidebar = true;
+  collapsedSidebar = this.settings.compactSidebar;
 
   collapsedAlarmsBar = true;
 

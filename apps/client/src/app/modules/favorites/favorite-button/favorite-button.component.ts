@@ -34,7 +34,7 @@ export class FavoriteButtonComponent implements OnInit {
   ngOnInit(): void {
     this.isFavorite$ = this.favorites$.pipe(
       map(favorites => {
-        return favorites[this.type].indexOf(this.key) > -1;
+        return (favorites[this.type] || []).indexOf(this.key) > -1;
       })
     );
   }
