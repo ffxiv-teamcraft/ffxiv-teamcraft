@@ -238,15 +238,15 @@ export class CraftingActionsRegistry {
       .map(row => row.action);
   }
 
-  public exportToCraftOpt(actionNames: string[]): string[] {
-    return actionNames.map(actionName => {
+  public exportToCraftOpt(actionNames: string[]): string {
+    return JSON.stringify(actionNames.map(actionName => {
       return CraftingActionsRegistry.ACTION_IMPORT_NAMES
         .find(el => {
           return el.full === actionName;
         });
     })
       .filter(action => action !== undefined)
-      .map(row => row.short);
+      .map(row => row.short));
   }
 
   public createFromIds(ids: number[]): CraftingAction[] {
