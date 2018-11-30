@@ -20,6 +20,7 @@
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'"
                       nz-popconfirm
+                      *ngIf="team.leader === (userId$ | async)"
                       [nzTitle]="'TEAMS.Delete_confirmation' | translate" (nzOnConfirm)="deleteTeam(team)">
                 <i nz-icon type="delete"></i>
               </button>
@@ -95,12 +96,14 @@
                     <app-user-avatar [userId]="member"></app-user-avatar>
                   </ng-template>
                   <ng-template #content>
-                    <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
-                            nz-popconfirm nzSize="small" *ngIf="(userId$ | async) === team.leader"
-                            [nzTitle]="'Confirmation' | translate"
-                            (nzOnConfirm)="removeMember(team, member)">
-                      <i nz-icon type="delete"></i>
-                    </button>
+                    <ng-container *ngIf="(userId$ | async) as userId">
+                      <button nz-button [nzShape]="'circle'" [nzType]="'danger'"
+                              nz-popconfirm nzSize="small" *ngIf="userId === team.leader || userId === member"
+                              [nzTitle]="'Confirmation' | translate"
+                              (nzOnConfirm)="removeMember(team, member)">
+                        <i nz-icon type="delete"></i>
+                      </button>
+                    </ng-container>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>

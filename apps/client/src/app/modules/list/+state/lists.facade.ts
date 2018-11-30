@@ -103,6 +103,7 @@ export class ListsFacade {
         loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
       );
     }),
+    filter(([list]) => list !== undefined),
     map(([list, user, userId, team, fcId]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
