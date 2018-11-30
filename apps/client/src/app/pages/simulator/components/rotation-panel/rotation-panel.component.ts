@@ -40,7 +40,7 @@ export class RotationPanelComponent {
   }
 
   getRouterLink(rotation: CraftingRotation): string {
-    if (rotation.custom) {
+    if (rotation.custom || rotation.defaultItemId === undefined || rotation.defaultRecipeId === undefined) {
       return `/simulator/custom/${rotation.$key}`;
     } else {
       return `/simulator/${rotation.defaultItemId}/${rotation.defaultRecipeId}/${rotation.$key}`;
