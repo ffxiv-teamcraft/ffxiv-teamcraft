@@ -187,7 +187,7 @@
             <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
             <div>
               <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
-                <div fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                <div fxLayout="column" fxFlex="1 1 auto" fxLayoutGap="10px" class="consumable-col">
                   <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
                              nzAllowClear>
                     <nz-option *ngFor="let food of foods" [nzValue]="food"
@@ -210,7 +210,7 @@
                     </div>
                   </ng-template>
                 </div>
-                <div fxLayout="column" fxLayoutGap="10px" class="consumable-col">
+                <div fxLayout="column" fxFlex="1 1 auto" fxLayoutGap="10px" class="consumable-col">
                   <nz-select [(ngModel)]="selectedMedicine"
                              [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate" nzAllowClear>
                     <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
