@@ -71,7 +71,7 @@ export class LayoutsFacade {
                   tiers: row.tiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, row) => row.done >= row.amount && collapse, true) : false
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
