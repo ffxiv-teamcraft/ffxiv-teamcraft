@@ -72,7 +72,7 @@ export class ListsFacade {
             }
           }
           return compacts.filter(c => {
-            return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
+            return !c.notFound && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE && c.authorId !== userId;
           });
         })
       );

@@ -241,6 +241,7 @@ export class ListsEffects {
     filter(([action, compacts]) => compacts.find(list => list.$key === (<LoadListCompact>action).key) === undefined),
     map(([action]) => action),
     mergeMap(action => this.listCompactsService.get(action.key)),
+    catchError(() => of({notFound: true})),
     map(listCompact => new ListCompactLoaded(listCompact))
   );
 
