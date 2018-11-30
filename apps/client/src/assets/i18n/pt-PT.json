@@ -270,7 +270,7 @@
     "User_not_verified": "Utilizador não verificado, clique para o verificar",
     "VERIFICATION": {
       "Title": "Character verification",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
+      "Guide": "Para verificar a sua conta, coloque este código: \"{{userId}}\" dentro da biografia do perfil na Lodestone e clique no botão abaixo.",
       "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Validate"
@@ -459,9 +459,9 @@
     "Title": "Permissions management",
     "Everyone": "Everyone",
     "You": "You",
-    "Add_new": "Add a user",
+    "Add_new": "Adicionar um utilizador",
     "Add_new_fc": "Add a Free Company",
-    "Placeholder": "Email or User ID",
+    "Placeholder": "ID de utilizador ou email",
     "Bind_free_company": "Bind some permissions to your Free Company",
     "User_not_found": "Utilizador não encontrado",
     "User_id_tip": "O ID de utilizador pode ser encontrado na página de perfil, no canto inferior direito",
@@ -629,7 +629,7 @@
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** has joined the team!",
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
-      "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+      "User_assigned": "* * [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) * * foi atribuído a * * [{{memberName}}] ({{memberProfileUrl}}) * * na * * [{{listName}}] ({{listUrl}}) * *."
     }
   },
   "MARKETBOARD": {
