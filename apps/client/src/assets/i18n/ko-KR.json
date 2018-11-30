@@ -650,9 +650,9 @@
     "Class_job": "클래스/직업"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Create lists, share, contribute, craft",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation"
+    "Slogan": "목록을 만들고, 공유하고, 기여하고, 제작하세요",
+    "Lists_created_counter": "FFXIV Teamcraft를 사용하여 만들어진 목록 {{amount}}",
+    "Support_patreon": "Patreon으로 후원하기",
+    "Donation_button": "후원하기[1회]"
   }
 }
