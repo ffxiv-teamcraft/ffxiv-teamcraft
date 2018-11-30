@@ -174,7 +174,6 @@
   "Not_own_list_outdated": "Diese Liste ist nicht mehr aktuell, bitte den Ersteller sie zu erneuern",
   "Own_list_outdated_before_button": "Diese Liste ist nicht mehr aktuell, aktualisiere sie mit folgeder ",
   "Own_list_outdated_after_button": "Schaltfläche",
-  "Home": "Startseite",
   "Import": "Importieren",
   "Favorites": "Favoriten",
   "Favorite": "Favorit",
@@ -548,6 +547,7 @@
     "CONFIGURATION": {
       "Job": "Job",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
+      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "Enable custom set",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
@@ -648,5 +648,11 @@
     "Level": "Level",
     "Cost": "Kosten",
     "Class_job": "Class/Job"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation"
   }
 }
