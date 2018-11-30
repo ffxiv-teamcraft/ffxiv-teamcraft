@@ -87,10 +87,12 @@
               </nz-option>
             </nz-select>
             <nz-alert nzType="warning" nzShowIcon *ngIf="(stats$ | async)?.craftsmanship === 0"
-                      [nzMessage]="'SIMULATOR.CONFIGURATION.Job_not_configured' | translate">
+                      [nzMessage]="((loggedIn$ | async)?'SIMULATOR.CONFIGURATION.Job_not_configured':
+                      'SIMULATOR.CONFIGURATION.Job_not_configured_anonymous') | translate">
             </nz-alert>
             <form [formGroup]="statsForm" (ngSubmit)="applyStats()" *ngIf="bonuses$ | async as bonuses"
                   fxLayout="column"
+                  id="ngForm"
                   fxLayoutAlign="space-between">
               <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign.lt-sm="center center"
                    fxLayoutAlign="space-evenly center">
@@ -142,10 +144,10 @@
               </div>
             </form>
             <div fxLayout="column" fxLayoutGap="5px" class="apply">
-              <button nz-button nzType="primary" nzBlock type="submit">
+              <button nz-button nzType="primary" nzBlock type="submit" form="ngForm">
                 {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
               </button>
-              <button nz-button nzBlock (click)="saveSet()" [disabled]="!statsForm.dirty">
+              <button nz-button nzBlock (click)="saveSet()" [disabled]="!statsForm.dirty" *ngIf="loggedIn$ | async">
                 {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
               </button>
             </div>

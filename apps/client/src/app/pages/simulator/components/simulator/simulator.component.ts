@@ -82,6 +82,8 @@ export class SimulatorComponent implements OnDestroy {
 
   public stats$: Observable<CrafterStats>;
 
+  public loggedIn$ = this.authFacade.loggedIn$;
+
   private recipe$ = new ReplaySubject<Craft>();
 
   public simulation$: Observable<Simulation>;
@@ -195,7 +197,7 @@ export class SimulatorComponent implements OnDestroy {
       job: [8, Validators.required],
       craftsmanship: [0, Validators.required],
       control: [0, Validators.required],
-      cp: [0, Validators.required],
+      cp: [180, Validators.required],
       level: [0, Validators.required],
       specialist: [false]
     });
@@ -207,11 +209,11 @@ export class SimulatorComponent implements OnDestroy {
       if (stats.specialist) {
         stats.craftsmanship += 20;
         stats.control += 20;
-      } else {
+      } else if (stats.craftsmanship > 0 && stats.control > 0) {
         stats.craftsmanship -= 20;
         stats.control -= 20;
       }
-      this.statsForm.patchValue(stats, {emitEvent: false});
+      this.statsForm.patchValue(stats, { emitEvent: false });
     });
 
     this.foods = consumablesService.fromData(foods)
@@ -237,7 +239,7 @@ export class SimulatorComponent implements OnDestroy {
           cp: stats.cp,
           level: stats.level,
           specialist: stats.specialist
-        }, {emitEvent: false});
+        }, { emitEvent: false });
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);

@@ -89,7 +89,7 @@ export class AuthFacade {
               jobId: jobId,
               control: 0,
               craftsmanship: 0,
-              cp: 0,
+              cp: 180,
               level: 0,
               specialist: false
             });
@@ -98,7 +98,7 @@ export class AuthFacade {
               jobId: jobId,
               control: 0,
               craftsmanship: 0,
-              cp: 0,
+              cp: 180,
               level: classJob.Level,
               specialist: false
             });
