@@ -174,7 +174,6 @@
   "Not_own_list_outdated": "This list is outdated, please ask the owner to regenerate it",
   "Own_list_outdated_before_button": "This list is outdated, please regenerate it using ",
   "Own_list_outdated_after_button": "button",
-  "Home": "ホーム",
   "Import": "輸入",
   "Favorites": "お気に入り",
   "Favorite": "Favorite",
@@ -548,6 +547,7 @@
     "CONFIGURATION": {
       "Job": "ジョブ",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
+      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "カスタムセットを可能にします",
       "Select_job": "ジョブを選び出します",
       "Craftsmanship": "作業精度",
@@ -648,5 +648,11 @@
     "Level": "Level",
     "Cost": "Cost",
     "Class_job": "Class/Job"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation"
   }
 }
