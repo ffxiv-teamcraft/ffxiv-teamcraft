@@ -174,7 +174,6 @@
   "Not_own_list_outdated": "이 목록은 만료되었습니다. 생성자에게 갱신을 요청해주세요.",
   "Own_list_outdated_before_button": "이 목록은 만료되었습니다. 사용하려면 갱신해주세요. ",
   "Own_list_outdated_after_button": "버튼",
-  "Home": "메인화면",
   "Import": "가져오기",
   "Favorites": "즐겨찾기",
   "Favorite": "즐겨찾기",
@@ -548,6 +547,7 @@
     "CONFIGURATION": {
       "Job": "직업",
       "Job_not_configured": "아직 이 직업을 설정하지 않은 것 같습니다. 프로필 페이지에서 직업 설정이 되었는지 확인한 뒤 능력치를 설정해주세요.",
+      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "사용자지정 능력치 활성화",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
@@ -648,5 +648,11 @@
     "Level": "레벨",
     "Cost": "비용",
     "Class_job": "클래스/직업"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation"
   }
 }
