@@ -48,7 +48,7 @@ export class SearchIntroComponent {
       description: 'Levequests'
     },
     {
-      link: '/levequests',
+      link: '/macro-translator',
       title: 'MACRO_TRANSLATION.Title',
       description: 'Macro_translation'
     },
