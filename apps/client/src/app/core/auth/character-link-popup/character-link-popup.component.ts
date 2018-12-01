@@ -70,6 +70,7 @@ export class CharacterLinkPopupComponent {
     };
     this.store.dispatch(new AddCharacter(fakeLodestoneId, this.useAsDefault));
     this.store.dispatch(new AddCustomCharacter(fakeLodestoneId, customCharacter));
+    this.modalRef.close();
   }
 
   logOut(): void {
