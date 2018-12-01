@@ -173,7 +173,7 @@ export class ListDetailsComponent implements OnInit {
         });
       })
     ).subscribe(alarms => {
-      this.alarmsFacade.addAlarms(...alarms);
+      this.alarmsFacade.addAlarmsAndGroup(alarms, list.name);
     });
   }
 

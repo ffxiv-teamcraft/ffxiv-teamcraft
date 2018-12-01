@@ -262,6 +262,10 @@ export class ItemRowComponent implements OnInit {
     this.alarmsFacade.addAlarms(alarm);
   }
 
+  addAllAlarms() {
+    this.alarmsFacade.addAlarmsAndGroup(this.item.alarms, this.i18n.getName(this.l12n.getItem(this.item.id)));
+  }
+
   public openGatheredByPopup(): void {
     this.openDetailsPopup(GatheredByComponent);
   }

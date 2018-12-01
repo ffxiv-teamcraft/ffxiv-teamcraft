@@ -15,7 +15,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { map } from 'rxjs/operators';
+import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../time/eorzean-time.service';
@@ -69,6 +69,18 @@ export class AlarmsFacade {
 
   public addAlarms(...alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
+  }
+
+  public addAlarmsAndGroup(alarms: Alarm[], groupName: string): void {
+    this.store.dispatch(new CreateAlarmGroup(groupName, 0));
+    this.allGroups$.pipe(
+      map(groups => groups.find(g => g.name === groupName && g.index === 0)),
+      filter(g => g !== undefined && g.$key !== undefined),
+      first()
+    ).subscribe(group => {
+      alarms.forEach(alarm => alarm.groupId = group.$key);
+      this.store.dispatch(new AddAlarms(alarms));
+    });
   }
 
   public updateAlarm(alarm: Alarm): void {
@@ -185,10 +197,10 @@ export class AlarmsFacade {
       const timeBeforeB = this.getMinutesBefore(time, b);
       const timeBeforeBDespawns = this.getMinutesBefore(time, (b + alarm.duration) % 24);
       // If time before next spawn is greater than time before next despawn, this node is spawned !
-      if(timeBeforeADespawns < timeBeforeA){
+      if (timeBeforeADespawns < timeBeforeA) {
         return -1;
       }
-      if(timeBeforeBDespawns < timeBeforeB){
+      if (timeBeforeBDespawns < timeBeforeB) {
         return 1;
       }
       // Else just compare remaining time.

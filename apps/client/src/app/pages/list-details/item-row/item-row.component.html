@@ -50,6 +50,9 @@
             {{'COMMENTS.Title' | translate}}
           </li>
         </ng-container>
+        <li nz-menu-item (click)="addAllAlarms()" *ngIf="item.alarms !== undefined && item.alarms.length > 0">
+          {{'LIST_DETAILS.Add_all_item_alarms' | translate}}
+        </li>
         <li nz-menu-item (click)="setWorkingOnIt(userId)" *ngIf="item.workingOnIt === undefined && loggedIn$ | async">
           {{'Work_on_it' | translate}}
         </li>
