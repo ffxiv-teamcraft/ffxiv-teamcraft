@@ -270,7 +270,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$, this.hqIngredients$).pipe(
       map(([recipe, actions, stats, hqIngredients]) => {
-        console.log(stats);
         return new Simulation(recipe, actions, stats, hqIngredients);
       }),
       shareReplay(1)
