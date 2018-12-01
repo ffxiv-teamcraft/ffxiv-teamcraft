@@ -657,12 +657,12 @@
     "Features_header": "Get started !",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
-      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
+      "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등의 모든 것을 찾을 수 있는 커뮤티니 목록을 복사할 수 있습니다.",
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서 당신이 플레이하는 FFXIV에 맞는 언어로 번역해보세요!"
+      "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인해보세요!",
+      "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
+      "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV에 맞는 언어로 매크로를 번역할 수 있습니다."
     }
   }
 }
