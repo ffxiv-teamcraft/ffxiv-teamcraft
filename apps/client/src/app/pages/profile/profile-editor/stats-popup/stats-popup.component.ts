@@ -23,10 +23,11 @@ export class StatsPopupComponent implements OnInit {
     this.set$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
         const set = (entry.stats || []).find(stat => stat.jobId === this.jobId);
+        const level = entry.character.ClassJobs ? entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level : 0;
         if (set === undefined) {
           return {
             jobId: this.jobId,
-            level: entry.character.ClassJobs[`${this.jobId}_${this.jobId}`].Level,
+            level: level,
             cp: 0,
             control: 0,
             craftsmanship: 0,
