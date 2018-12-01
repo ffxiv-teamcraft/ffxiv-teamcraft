@@ -256,20 +256,23 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     this.crafterStats$ = merge(statsFromRecipe$, this.customStats$);
 
-    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$).pipe(
-      map(([stats, bonuses]) => {
+    this.stats$ = combineLatest(this.crafterStats$, this.bonuses$, this.loggedIn$).pipe(
+      map(([stats, bonuses, loggedIn]) => {
         return new CrafterStats(
           stats.jobId,
           stats.craftsmanship + bonuses.craftsmanship,
           stats._control + bonuses.control,
           stats.cp + bonuses.cp,
           stats.specialist,
-          stats.level,
-          stats.levels);
+          loggedIn ? stats.level : 70,
+          loggedIn ? stats.levels : [70, 70, 70, 70, 70, 70, 70, 70]);
       })
     );
     this.simulation$ = combineLatest(this.recipe$, this.actions$, this.stats$, this.hqIngredients$).pipe(
-      map(([recipe, actions, stats, hqIngredients]) => new Simulation(recipe, actions, stats, hqIngredients)),
+      map(([recipe, actions, stats, hqIngredients]) => {
+        console.log(stats);
+        return new Simulation(recipe, actions, stats, hqIngredients);
+      }),
       shareReplay(1)
     );
     this.report$ = combineLatest(this.simulation$, this.result$).pipe(

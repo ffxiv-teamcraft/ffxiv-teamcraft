@@ -74,7 +74,7 @@
         </button>
       </div>
       <nz-collapse>
-        <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom">
+        <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom || (loggedIn$ | async) === false">
           <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-sm="column"
                fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center">
             <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
