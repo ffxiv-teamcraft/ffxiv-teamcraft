@@ -10,12 +10,14 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
     ItemIconModule,
+    FlexLayoutModule,
 
     AlarmsModule,
     MapModule,
