@@ -64,37 +64,37 @@
             </ng-template>
           </span>
           <span>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/profile">
+            <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/profile">
               <i nz-icon type="idcard"></i>
               {{'Profile' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/teams">
+            <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/teams">
               <i nz-icon type="team"></i>
               {{'TEAMS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" routerLink="/favorites">
+            <a nz-menu-item *ngIf="loggedIn$ | async" routerLink="/favorites">
               <i nz-icon type="heart"></i>
               {{'Favorites' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" nzDisabled *ngIf="loggedIn$ | async">
+            <a nz-menu-item nzDisabled *ngIf="loggedIn$ | async">
               <i nz-icon type="link"></i>
               <!--*ngIf patreon supporter-->
               {{'CUSTOM_LINKS.Title' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" (click)="openSettings()">
+            <a nz-menu-item (click)="openSettings()">
               <i nz-icon type="setting"></i>
               {{'SETTINGS.Title' | translate}}
             </a>
             <span nz-menu-divider></span>
-            <a nz-menu-item class="menu-link" *ngIf="loggedIn$ | async" (click)="logOut()">
+            <a nz-menu-item *ngIf="loggedIn$ | async" (click)="logOut()">
               <i nz-icon type="logout"></i>
               {{'Disconnect' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="!(loggedIn$ | async)" (click)="openRegisterPopup()">
+            <a nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openRegisterPopup()">
               <i nz-icon type="form"></i>
               {{'Registration' | translate}}
             </a>
-            <a nz-menu-item class="menu-link" *ngIf="!(loggedIn$ | async)" (click)="openLoginPopup()">
+            <a nz-menu-item *ngIf="!(loggedIn$ | async)" (click)="openLoginPopup()">
               <i nz-icon type="login"></i>
               {{'Login' | translate}}
             </a>
