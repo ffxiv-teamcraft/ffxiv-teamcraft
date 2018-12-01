@@ -326,7 +326,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
-    "Public_list_description": "목록 공개 설정은 이 목록을 공개 목록 섹션에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
+    "Public_list_description": "목록 공개 설정은 이 목록을 커뮤티니 목록에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
