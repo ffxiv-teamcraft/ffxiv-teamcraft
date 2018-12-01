@@ -238,10 +238,10 @@
   "Precraft_tier": "Meilenstein",
   "Regenerating_lists": "Neugenerierende Liste",
   "SETTINGS": {
-    "title": "Einstellungen",
-    "link_base": "Gegenstandslink-Quelle",
-    "theme": "Design",
-    "Simulator_link_base": "Link zum Simulator",
+    "Title": "Einstellungen",
+    "General": "General",
+    "Link_base": "Gegenstandslink-Quelle",
+    "Theme": "Design",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
@@ -639,7 +639,8 @@
     "Total_price": "Gesamtpreis",
     "Unit_price": "Einzelpreis",
     "History": "Historie",
-    "Purchase_date": "Datum"
+    "Purchase_date": "Datum",
+    "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
     "Title": "Kommentare"
