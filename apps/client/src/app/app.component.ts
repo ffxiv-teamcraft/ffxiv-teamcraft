@@ -35,6 +35,8 @@ declare const gtag: Function;
 })
 export class AppComponent implements OnInit {
 
+  public availableLanguages = this.settings.availableLocales;
+
   locale: string;
 
   version = environment.version;
@@ -63,7 +65,7 @@ export class AppComponent implements OnInit {
 
   public desktop = false;
 
-  constructor(private gt: GarlandToolsService, private translate: TranslateService,
+  constructor(private gt: GarlandToolsService, public translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,

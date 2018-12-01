@@ -4,6 +4,10 @@
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
+      <nz-select class="language-swap" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang" (ngModelChange)="use($event)">
+        <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                   [nzValue]="locale"></nz-option>
+      </nz-select>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
