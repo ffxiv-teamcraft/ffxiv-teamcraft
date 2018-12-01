@@ -238,10 +238,10 @@
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
-    "title": "설정",
-    "link_base": "아이템 링크",
-    "theme": "테마",
-    "Simulator_link_base": "시뮬레이터 링크",
+    "Title": "설정",
+    "General": "General",
+    "Link_base": "아이템 링크",
+    "Theme": "테마",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
@@ -639,7 +639,8 @@
     "Total_price": "합계 가격",
     "Unit_price": "개당 가격",
     "History": "최근 기록",
-    "Purchase_date": "날짜"
+    "Purchase_date": "날짜",
+    "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
     "Title": "댓글"
