@@ -238,10 +238,10 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Régénération des listes en cours",
   "SETTINGS": {
-    "title": "Options",
-    "link_base": "Liens des objets",
-    "theme": "Thème",
-    "Simulator_link_base": "Lien vers le simulateur",
+    "Title": "Options",
+    "General": "General",
+    "Link_base": "Liens des objets",
+    "Theme": "Thème",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
@@ -639,7 +639,8 @@
     "Total_price": "Prix total",
     "Unit_price": "Prix unitaire",
     "History": "Historique",
-    "Purchase_date": "Date"
+    "Purchase_date": "Date",
+    "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
     "Title": "Commentaires"
