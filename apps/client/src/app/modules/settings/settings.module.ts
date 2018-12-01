@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SettingsPopupComponent } from './settings-popup/settings-popup.component';
 import { SettingsService } from './settings.service';
@@ -21,9 +21,16 @@ import { FormsModule } from '@angular/forms';
     SettingsPopupComponent
   ],
   providers: [
-    SettingsService,
     SettingsPopupService
   ]
 })
 export class SettingsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SettingsModule,
+      providers: [
+        SettingsService
+      ]
+    };
+  }
 }

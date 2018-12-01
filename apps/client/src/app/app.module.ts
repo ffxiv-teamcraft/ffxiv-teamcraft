@@ -104,7 +104,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     WorkshopModule,
     TeamsModule,
     NotificationsModule,
-    SettingsModule,
+    SettingsModule.forRoot(),
     UserAvatarModule,
     SimulatorModule,
     RotationsModule,

@@ -7,7 +7,14 @@
     </div>
     <div>
       <span class="item-name" ngxClipboard [cbContent]="item.id | itemName | i18n" nz-tooltip
+            *ngIf="settings.preferredCopyType === 'classic'"
             [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+        {{item.id | itemName | i18n}}
+      </span>
+      <span class="item-name" ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;" nz-tooltip
+            *ngIf="settings.preferredCopyType === 'isearch'"
+            [nzTitle]="'Copy_isearch' | translate"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
         {{item.id | itemName | i18n}}
       </span>
@@ -24,11 +31,18 @@
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
       <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
               nz-button [nzShape]="'circle'">
-        <i nz-icon type="ellipsis"></i></button>
+        <i nz-icon type="ellipsis"></i>
+      </button>
       <ul nz-menu *ngIf="userId$ | async as userId">
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+            *ngIf="settings.preferredCopyType === 'classic'"
             (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
           {{'Copy_isearch' | translate}}
+        </li>
+        <li nz-menu-item ngxClipboard [cbContent]="item.id | itemName | i18n"
+            *ngIf="settings.preferredCopyType === 'isearch'"
+            (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})">
+          {{'Copy_item_name_to_clipboard' | translate}}
         </li>
         <ng-container *ngIf="listsFacade.selectedList$ | async as list">
           <li nz-menu-item *ngIf="userId$ | async as userId"

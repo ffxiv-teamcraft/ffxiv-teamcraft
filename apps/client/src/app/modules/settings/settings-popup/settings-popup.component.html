@@ -10,6 +10,15 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Preferred_copy_type' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.preferredCopyType">
+            <nz-option [nzLabel]="'SETTINGS.COPY_TYPE.Classic' | translate" [nzValue]="'classic'"></nz-option>
+            <nz-option [nzLabel]="'SETTINGS.COPY_TYPE.Isearch' | translate" [nzValue]="'isearch'"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
     </div>
   </nz-tab>
 </nz-tabset>

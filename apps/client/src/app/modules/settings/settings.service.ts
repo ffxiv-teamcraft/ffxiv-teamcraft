@@ -23,6 +23,14 @@ export class SettingsService {
     this.setSetting('base-link', base);
   }
 
+  public get preferredCopyType(): string {
+    return this.getSetting('copy-type', 'classic');
+  }
+
+  public set preferredCopyType(copyType: string) {
+    this.setSetting('copy-type', copyType);
+  }
+
   public get crystalsTracking(): boolean {
     return this.getSetting('crystals-tracking', 'false') === 'true';
   }

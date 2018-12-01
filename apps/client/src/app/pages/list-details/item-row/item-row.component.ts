@@ -35,6 +35,7 @@ import { ListItemCommentNotification } from '../../../model/notification/list-it
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { NumberQuestionPopupComponent } from '../../../modules/number-question-popup/number-question-popup/number-question-popup.component';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-item-row',
@@ -89,6 +90,7 @@ export class ItemRowComponent implements OnInit {
               private userService: UserService, private xivapi: XivapiService,
               private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
               private discordWebhookService: DiscordWebhookService,
+              public settings: SettingsService,
               private listManager: ListManagerService,
               private rotationPicker: RotationPickerService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
@@ -109,7 +111,7 @@ export class ItemRowComponent implements OnInit {
     this.loggedIn$ = this.authFacade.loggedIn$;
     this.team$ = combineLatest(this.listsFacade.selectedList$, this.teamsFacade.selectedTeam$).pipe(
       map(([list, team]) => {
-        if (list.teamId === undefined || list.teamId !== team.$key) {
+        if (list.teamId === undefined || (team && list.teamId !== team.$key)) {
           return null;
         }
         return team;
