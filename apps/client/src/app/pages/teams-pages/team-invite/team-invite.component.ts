@@ -61,7 +61,7 @@ export class TeamInviteComponent implements OnInit {
         );
       }),
       switchMap(team => this.authFacade.loggedIn$.pipe(map(loggedIn => ([team, loggedIn])))),
-      filter(([team, loggedIn]) => {
+      filter(([team, loggedIn]: [Team, boolean]) => {
         if(!loggedIn){
           this.error$.next('TEAMS.No_anonymous_join');
           this.loading$.next(false);

@@ -48,9 +48,11 @@ export class RotationsEffects {
     switchMap(([action, userId]) => {
       if (action.rotation.$key === undefined || action.rotation.getPermissionLevel(userId) < 30) {
         action.rotation.authorId = userId;
-        return this.rotationsService.add(action.rotation).pipe();
+        return this.rotationsService.add(action.rotation);
       } else {
-        return this.rotationsService.set(action.rotation.$key, action.rotation);
+        return this.rotationsService.set(action.rotation.$key, action.rotation).pipe(
+          map(() => null)
+        );
       }
     }),
     filter(res => res !== null),

@@ -33,6 +33,7 @@ import { GearSet } from '../pages/simulator/model/gear-set';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
+import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 
 @Injectable({
   providedIn: 'root'
@@ -68,14 +69,18 @@ export class AuthFacade {
       };
     })
   );
+
   gearSets$ = this.loggedIn$.pipe(
-    switchMap(loggedIn => {
+    switchMap((loggedIn: boolean) => {
       if (loggedIn) {
         return this.mainCharacterEntry$;
       }
-      return of({ stats: [] });
+      return of(null);
     }),
-    map(data => {
+    map((data: Partial<LodestoneIdEntry>) => {
+      if (data === null) {
+        data = { stats: [] };
+      }
       const sets = data.stats || [];
       [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
         .filter(jobId => sets.find(set => set.jobId === jobId) === undefined)
