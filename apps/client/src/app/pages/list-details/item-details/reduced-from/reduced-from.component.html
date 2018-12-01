@@ -31,9 +31,10 @@
             <ng-template #openMap>
               <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
                 <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
+                                  [mapId]="node.mapid"
                                   [zoneId]="node.zoneid"></app-map-position>
                 <div
-                  *ngIf="node.zoneid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
+                  *ngIf="node.mapid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
                   class="closest-tp">
                   <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName
                   |

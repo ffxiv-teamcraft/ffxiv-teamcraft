@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalizedDataService } from './localized-data.service';
 import { reductions } from './sources/reductions';
+import * as nodePositions from '../../core/data/sources/node-positions.json';
 
 @Injectable()
 export class BellNodesService {
@@ -22,9 +23,11 @@ export class BellNodesService {
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id || itemReductions.indexOf(item.id) > -1);
         if (match !== undefined) {
+          const nodePosition = nodePositions[node.id];
           const nodeCopy = { ...node };
           nodeCopy.icon = match.icon;
           nodeCopy.itemId = match.id;
+          nodeCopy.mapid = nodePosition ? nodePosition.map : node.zoneid;
           if (match.slot !== '?' && match.slot !== undefined) {
             nodeCopy.slot = +match.slot;
           }
