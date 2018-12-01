@@ -245,7 +245,12 @@
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
-    "No_update_available": "사용가능한 업데이트가 없습니다."
+    "No_update_available": "사용가능한 업데이트가 없습니다.",
+    "Preferred_copy_type": "Preferred copy type",
+    "COPY_TYPE": {
+      "Classic": "Copy item name",
+      "Isearch": "Copy /isearch macro"
+    }
   },
   "PROFILE": {
     "Account": "계정",
@@ -337,6 +342,7 @@
     "Tags_popup": "태그",
     "Inventory_breakdown": "소지품",
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
+    "Add_all_item_alarms": "Add all alarms for this item",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
