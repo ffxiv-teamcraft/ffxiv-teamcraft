@@ -245,7 +245,12 @@
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
-    "No_update_available": "No hay actualización disponible"
+    "No_update_available": "No hay actualización disponible",
+    "Preferred_copy_type": "Preferred copy type",
+    "COPY_TYPE": {
+      "Classic": "Copy item name",
+      "Isearch": "Copy /isearch macro"
+    }
   },
   "PROFILE": {
     "Account": "Cuenta",
@@ -337,6 +342,7 @@
     "Tags_popup": "Etiquetas",
     "Inventory_breakdown": "Inventario",
     "Open_in_ffxivgardening": "Open in ffxivgardening.com",
+    "Add_all_item_alarms": "Add all alarms for this item",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
