@@ -95,7 +95,7 @@ export class LayoutEditorComponent {
   }
 
   removePanel(layout: ListLayout, row: LayoutRow): void {
-    layout.rows = layout.rows.filter(r => r.name !== row.name && r.index !== row.index);
+    layout.rows = layout.rows.filter(r => r.name !== row.name && r.filterName !== row.filterName);
     this.dirty = true;
   }
 

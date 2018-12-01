@@ -1,7 +1,7 @@
 <div *ngIf="selectedLayout$ | async as layout">
   <div class="topbar" *ngIf="allLayouts$ | async as allLayouts" fxLayout="row" fxLayout.lt-md="column"
        fxLayoutGap="5px">
-    <nz-select [ngModel]="layout" (ngModelChange)="select($event)" [compareWith]="layoutComparator">
+    <nz-select [ngModel]="layout" (ngModelChange)="select($event)" [compareWith]="layoutComparator" fxFlex="1 1 auto">
       <nz-option *ngFor="let availableLayout of allLayouts" [nzValue]="availableLayout"
                  [nzLabel]="availableLayout.name"></nz-option>
     </nz-select>
