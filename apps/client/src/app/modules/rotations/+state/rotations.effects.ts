@@ -10,7 +10,7 @@ import {
   UpdateRotation
 } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { catchError, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, withLatestFrom, mergeMap } from 'rxjs/operators';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { of } from 'rxjs';
@@ -33,7 +33,7 @@ export class RotationsEffects {
   @Effect()
   getRotation$ = this.actions$.pipe(
     ofType<GetRotation>(RotationsActionTypes.GetRotation),
-    switchMap(action => {
+    mergeMap(action => {
       return this.rotationsService.get(action.key).pipe(
         catchError(() => of({$key: action.key, notFound: true}))
       );
@@ -60,7 +60,7 @@ export class RotationsEffects {
   @Effect()
   deleteRotation$ = this.actions$.pipe(
     ofType<DeleteRotation>(RotationsActionTypes.DeleteRotation),
-    switchMap((action) => {
+    mergeMap((action) => {
       return this.rotationsService.remove(action.key);
     }),
     switchMap(() => EMPTY)

@@ -3,7 +3,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, switchMap, tap, distinctUntilChanged } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -37,12 +37,12 @@ export class FavoritesComponent {
     );
 
     this.rotations$ = this.authFacade.favorites$.pipe(
+      distinctUntilChanged((a,b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
       map(favorites => favorites.rotations),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       switchMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
-          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1)),
-          filter(loadedRotations => loadedRotations.length === rotations.length)
+          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1))
         );
       })
     );
