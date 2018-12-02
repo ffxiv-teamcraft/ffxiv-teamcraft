@@ -112,9 +112,10 @@
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">
-      <div *ngFor="let item of results; trackBy: trackByItem" fxLayout="row" fxLayoutGap="5px"
+      <div *ngFor="let item of results; trackBy: trackByItem" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px"
            fxLayoutAlign="space-between center"
-      class="result-row">
+           fxLayoutAlign.lt-md="center center"
+           class="result-row">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div class="checkbox">
             <label nz-checkbox [(ngModel)]="item.selected"
@@ -131,8 +132,9 @@
               *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span></div>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutGap="10px" nz-row>
-          <div nz-col [nzMd]="15" class="input-box">
+        <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px"
+             fxLayoutAlign.lt-md="center center" nz-row>
+          <div nz-col [nzXs]="24" [nzMd]="15" class="input-box">
             <nz-input-group [nzAddOnBefore]="item.recipe !== undefined?addCrafts:null" [nzCompact]="true"
                             class="amount-input">
               <input type="number" [(ngModel)]="item.amount" nz-input>
@@ -143,7 +145,7 @@
               </ng-template>
             </nz-input-group>
           </div>
-          <div nz-col [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px">
+          <div nz-col [nzXs]="24" [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px">
             <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                     [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([item])">
               <i nz-icon type="plus"></i>
