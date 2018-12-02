@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -31,6 +31,8 @@ export class ListsComponent {
   public workshops$: Observable<WorkshopDisplay[]>;
 
   public workshopsWithWriteAccess$: Observable<WorkshopDisplay[]>;
+
+  public query$ = new BehaviorSubject<string>('');
 
   public myLists$ = this.listsFacade.myLists$;
 
@@ -101,10 +103,10 @@ export class ListsComponent {
       shareReplay(1)
     );
 
-    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$).pipe(
+    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$, this.query$).pipe(
       filter(([loading]) => !loading),
       debounceTime(100),
-      map(([,lists, myWorkshops, workshopsWithWriteAccess, teamDisplays]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[]]) => {
+      map(([,lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
         const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists
@@ -112,6 +114,7 @@ export class ListsComponent {
             return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
               && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
           })
+          .filter(l => l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;

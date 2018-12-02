@@ -30,6 +30,13 @@
     <nz-alert [nzMessage]="'LISTS.Needs_verification' | translate" nzType="warning"
               *ngIf="needsVerification$ | async" nzShowIcon class="fc-check-warning"></nz-alert>
     <h2>{{'LISTS.Your_lists' | translate}}</h2>
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" [ngModel]="query$.value" (ngModelChange)="query$.next($event)" nz-input
+             placeholder="{{'LISTS.Lists_search_placeholder' | translate}}">
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon type="search"></i>
+    </ng-template>
     <div class="ngx-dnd-container" ngxDroppable="list"
          (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)">
       <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.otherLists; trackBy: trackByList"
