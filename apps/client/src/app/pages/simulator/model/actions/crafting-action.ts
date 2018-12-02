@@ -120,7 +120,7 @@ export abstract class CraftingAction {
     let id = clvl - rlvl;
     let ingenuityEntry = ingenuityData.find(row => row.Id === id);
     let ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
-    while (ingenuityEntry === undefined || ingenuityMultiplier === undefined) {
+    while (ingenuityMultiplier === null || ingenuityMultiplier === undefined) {
       id > 0 ? id++ : id--;
       ingenuityEntry = ingenuityData.find(row => row.Id === id);
       ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
