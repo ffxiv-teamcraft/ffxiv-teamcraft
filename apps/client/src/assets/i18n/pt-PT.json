@@ -118,7 +118,23 @@
     "Confirm_group_delete_with_alarms": "Tem a certeza que deseja eliminar este grupo e todos os seus alarmes?",
     "Add_note": "Adicionar uma nota",
     "Volume": "Volume de som",
-    "Macro_copied": "Macro copiado para a área de transferência"
+    "Macro_copied": "Macro copiado para a área de transferência",
+    "CUSTOM": {
+      "Title": "Add custom alarm",
+      "Name": "Name",
+      "Spawn": "Spawn",
+      "Duration": "Duration",
+      "Slot": "Slot",
+      "Type": "Node type",
+      "Map": "Map",
+      "TYPE": {
+        "Mineral": "Mineral Deposit",
+        "Rocky": "Rocky Outcrop",
+        "Tree": "Mature Tree",
+        "Vegetation": "Lush Vegetation Patch",
+        "Fishing": "Fishing"
+      }
+    }
   },
   "Item_name": "Nome do Item",
   "No_items_found": "Nenhum item encontrado",
