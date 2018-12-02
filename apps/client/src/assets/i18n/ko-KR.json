@@ -126,12 +126,12 @@
       "Duration": "Duration",
       "Slot": "Slot",
       "Type": "Node type",
-      "Map": "Map",
+      "Map": "지도",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
-        "Vegetation": "Lush Vegetation Patch",
+        "Mineral": "광물",
+        "Rocky": "바위터",
+        "Tree": "성목",
+        "Vegetation": "약초밭",
         "Fishing": "Fishing"
       }
     }
