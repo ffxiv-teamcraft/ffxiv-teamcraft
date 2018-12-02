@@ -57,12 +57,22 @@ nz-select {
   @media @mobile {
     padding: 20px 10px;
   }
+
   .amount-input {
     width: 200px;
   }
-  .select-box {
-    position: absolute;
-    left: -25px;
+
+  .item-name {
+    font-size: 1.2em;
+  }
+
+  .description {
+    opacity: .8;
+  }
+
+  .result-row {
+    border-bottom: 1px solid @text-color;
+    padding: 5px;
   }
 }
 
@@ -71,16 +81,19 @@ nz-select {
     @media @mobile {
       justify-content: center;
     }
+
     .ant-list-item-meta {
       align-items: center;
       @media @mobile {
         flex: 0 0 auto;
         margin-bottom: 5px;
       }
+
       .ant-list-item-meta-title {
         white-space: nowrap;
       }
     }
+
     .ant-list-item-action {
       @media @mobile {
         margin: auto;

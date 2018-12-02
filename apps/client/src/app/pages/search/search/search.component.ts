@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -119,7 +119,7 @@ export class SearchComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      mergeMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
+      switchMap(([query, onlyRecipes, filters]) => this.data.searchItem(query, filters, onlyRecipes)),
       tap(() => {
         this.loading = false;
       })
@@ -283,5 +283,9 @@ export class SearchComponent implements OnInit {
 
   public updateAllSelected(items: SearchResult[]): void {
     this.allSelected = items.reduce((res, item) => item.selected && res, true);
+  }
+
+  trackByItem(index: number, item: SearchResult): number {
+    return item.itemId;
   }
 }
