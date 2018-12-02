@@ -248,7 +248,7 @@
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "Preferred copy type",
     "COPY_TYPE": {
-      "Classic": "Copy item name",
+      "Classic": "아이템 이름 복사",
       "Isearch": "Copy /isearch macro"
     }
   },
