@@ -292,6 +292,7 @@
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
+    "Lists_search_placeholder": "Search for a list...",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
