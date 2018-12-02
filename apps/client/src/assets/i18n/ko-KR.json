@@ -239,14 +239,14 @@
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
     "Title": "설정",
-    "General": "General",
+    "General": "일반",
     "Link_base": "아이템 링크",
     "Theme": "테마",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
-    "Preferred_copy_type": "Preferred copy type",
+    "Preferred_copy_type": "기본 복사 유형",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -292,7 +292,7 @@
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
-    "Lists_search_placeholder": "Search for a list...",
+    "Lists_search_placeholder": "목록 찾는 중..",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -343,7 +343,7 @@
     "Tags_popup": "태그",
     "Inventory_breakdown": "소지품",
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
-    "Add_all_item_alarms": "Add all alarms for this item",
+    "Add_all_item_alarms": "이 아이템을 모든 알람에 추가",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
