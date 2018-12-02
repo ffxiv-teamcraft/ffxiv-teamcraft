@@ -121,18 +121,18 @@
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "CUSTOM": {
       "Title": "Add custom alarm",
-      "Name": "Name",
-      "Spawn": "Spawn",
+      "Name": "이름",
+      "Spawn": "등장 시간",
       "Duration": "Duration",
       "Slot": "Slot",
-      "Type": "Node type",
+      "Type": "채집물 유형",
       "Map": "지도",
       "TYPE": {
         "Mineral": "광맥",
         "Rocky": "바위터",
         "Tree": "성목",
         "Vegetation": "약초밭",
-        "Fishing": "Fishing"
+        "Fishing": "낚시터"
       }
     }
   },
