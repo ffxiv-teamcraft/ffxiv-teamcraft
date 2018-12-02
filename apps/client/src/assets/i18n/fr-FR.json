@@ -292,6 +292,7 @@
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n’avez pas de listes",
+    "Lists_search_placeholder": "Search for a list...",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
