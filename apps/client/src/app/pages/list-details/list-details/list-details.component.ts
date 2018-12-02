@@ -164,10 +164,16 @@ export class ListDetailsComponent implements OnInit {
       first(),
       map(alarms => {
         const listAlarms = [];
-        list.forEach(row => listAlarms.push(...row.alarms.filter(alarm => {
-          // Avoid duplicates.
-          return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
-        })));
+        list.forEach(row => {
+          // We don't want to create alarms for the clusters.
+          if (row.id < 20) {
+            return;
+          }
+          listAlarms.push(...row.alarms.filter(alarm => {
+            // Avoid duplicates.
+            return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
+          }));
+        });
         return listAlarms.filter(alarm => {
           return alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
         });
