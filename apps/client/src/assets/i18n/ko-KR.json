@@ -128,7 +128,7 @@
       "Type": "Node type",
       "Map": "지도",
       "TYPE": {
-        "Mineral": "광물",
+        "Mineral": "광맥",
         "Rocky": "바위터",
         "Tree": "성목",
         "Vegetation": "약초밭",
