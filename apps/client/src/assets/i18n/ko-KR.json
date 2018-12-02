@@ -249,7 +249,7 @@
     "Preferred_copy_type": "Preferred copy type",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
-      "Isearch": "Copy /isearch macro"
+      "Isearch": "/아이템검색 매크로 복사"
     }
   },
   "PROFILE": {
@@ -646,7 +646,7 @@
     "Unit_price": "개당 가격",
     "History": "최근 기록",
     "Purchase_date": "날짜",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)"
   },
   "COMMENTS": {
     "Title": "댓글"
