@@ -120,11 +120,11 @@
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "CUSTOM": {
-      "Title": "Add custom alarm",
+      "Title": "개별 알람 추가",
       "Name": "이름",
       "Spawn": "등장 시간",
-      "Duration": "Duration",
-      "Slot": "Slot",
+      "Duration": "지속 시간",
+      "Slot": "슬롯",
       "Type": "채집물 유형",
       "Map": "지도",
       "TYPE": {
