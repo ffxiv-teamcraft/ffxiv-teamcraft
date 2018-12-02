@@ -9,6 +9,8 @@
           <nz-input-number [disabled]="(permissionLevel$ | async) < 30" class="amount-input" type="number"
                            *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
                            [ngModel]="item.amount"
+                           #amountModifierInput
+                           (keyup.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
                            (ngModelChange)="updateAmount(item, $event)"></nz-input-number>
           <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
         </ng-template>
