@@ -20,7 +20,17 @@ import {
   UpdateList,
   UpdateListIndex
 } from './lists.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  mergeMap,
+  switchMap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, concat, EMPTY, of } from 'rxjs';
@@ -148,7 +158,7 @@ export class ListsEffects {
   persistUpdateListIndex$ = this.actions$.pipe(
     ofType(ListsActionTypes.UpdateListIndex),
     map(action => action as UpdateListIndex),
-    switchMap(action => concat(
+    mergeMap(action => combineLatest(
       this.listCompactsService.update(action.payload.$key, { index: action.payload.index }),
       this.listService.update(action.payload.$key, { index: action.payload.index })
     )),
@@ -182,7 +192,8 @@ export class ListsEffects {
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.DeleteList),
     map(action => action as DeleteList),
-    switchMap(action => this.listService.remove(action.key)),
+    mergeMap(action => combineLatest(this.listService.remove(action.key),
+      this.listCompactsService.remove(action.key))),
     switchMap(() => EMPTY)
   );
 
