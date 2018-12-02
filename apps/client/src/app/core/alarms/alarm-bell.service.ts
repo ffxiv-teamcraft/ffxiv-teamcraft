@@ -79,9 +79,9 @@ export class AlarmBellService {
     if (alarm.aetheryte) {
       aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
     }
-    const notificationIcon = `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png`;
-    const notificationTitle = this.i18n.getName(this.localizedData.getItem(alarm.itemId));
-    const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId))} - `
+    const notificationIcon = alarm.icon ? `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png` : 'https://ffxivteamcraft.com/assets/logo.png';
+    const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
+    const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `
       + `${aetheryteName ? aetheryteName : ''}` +
       (alarm.slot !== undefined ? ` - Slot ${alarm.slot}` : '');
     if (this.platform.isDesktop()) {

@@ -9,7 +9,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
@@ -19,6 +19,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { ClipboardModule } from 'ngx-clipboard';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CustomAlarmPopupComponent } from './custom-alarm-popup/custom-alarm-popup.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
 
     RouterModule.forChild(routes),
@@ -52,8 +54,8 @@ const routes: Routes = [
     NgZorroAntdModule,
     NgDragDropModule
   ],
-  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent],
-  entryComponents: [AlarmsOptionsPopupComponent]
+  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent, CustomAlarmPopupComponent],
+  entryComponents: [AlarmsOptionsPopupComponent, CustomAlarmPopupComponent]
 })
 export class AlarmsPageModule {
 }

@@ -15,6 +15,8 @@ export class Alarm extends DataModel {
   groupId?: string;
 
   itemId: number;
+  // Use for custom alarms
+  name?: string;
   icon: number;
   spawns: number[];
   duration: number;

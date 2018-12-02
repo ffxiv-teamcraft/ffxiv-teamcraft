@@ -19,6 +19,8 @@ import { XivapiIconPipe } from './xivapi-icon.pipe';
 import { CharacterNamePipe } from './character-name.pipe';
 import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
 import { FfxivgardeningPipe } from './ffxivgardening.pipe';
+import { NodeTypeNamePipe } from './node-type-name';
+import { XivapiI18nPipe } from './xivapi-i18n.pipe';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,13 @@ import { FfxivgardeningPipe } from './ffxivgardening.pipe';
     FreeCompanyActionNamePipe,
     IfMobilePipe,
     NodeTypeIconPipe,
+    NodeTypeNamePipe,
     ClosestAetherytePipe,
     XivapiIconPipe,
     CharacterNamePipe,
     TeamcraftLinkPipe,
-    FfxivgardeningPipe
+    FfxivgardeningPipe,
+    XivapiI18nPipe
   ],
   exports: [
     ItemNamePipe,
@@ -59,11 +63,13 @@ import { FfxivgardeningPipe } from './ffxivgardening.pipe';
     FreeCompanyActionNamePipe,
     IfMobilePipe,
     NodeTypeIconPipe,
+    NodeTypeNamePipe,
     ClosestAetherytePipe,
     XivapiIconPipe,
     CharacterNamePipe,
     TeamcraftLinkPipe,
-    FfxivgardeningPipe
+    FfxivgardeningPipe,
+    XivapiI18nPipe
   ]
 })
 export class PipesModule {

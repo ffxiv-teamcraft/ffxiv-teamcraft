@@ -20,6 +20,10 @@
           <i nz-icon iconfont="icon-bell" *ngIf="settings.alarmsMuted"></i>
           <i nz-icon iconfont="icon-bell-mute" *ngIf="!settings.alarmsMuted"></i>
         </button>
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
+                (click)="newCustomAlarm()">
+          <i nz-icon type="form"></i>
+        </button>
       </div>
       <div class="spacer"></div>
       <span>
@@ -95,21 +99,30 @@
 
 <ng-template #alarmCard let-row="row">
   <div draggable [dragData]="row.alarm" dragScope="alarm" fxFlex="1 1 20%" class="alarm-card-container">
-    <nz-card [nzCover]="settings.compactAlarms?null:map" [nzActions]="[delete, copyMacro]"
+    <nz-card [nzCover]="settings.compactAlarms || row.alarm.mapId === null?null:map"
+             [nzActions]="[delete, copyMacro]"
              class="alarm-card"
              fxLayout="column"
-             [nzLoading]="!settings.compactAlarms" [class.spawned]="row.spawned" [class.played]="row.played"
+             [nzLoading]="!settings.compactAlarms && row.alarm.mapId !== null" [class.spawned]="row.spawned"
+             [class.played]="row.played"
              #card>
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
-        <app-item-icon [icon]="row.alarm.icon"></app-item-icon>
+        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"></app-item-icon>
+        <ng-template #customAlarmIcon>
+          <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
+        </ng-template>
       </ng-template>
     </nz-card>
     <ng-template #cardTitle>
       <div class="card-title" fxLayout="row">
         <div fxLayout="row" class="name-slot-container">
-          <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
+          <span class="alarm-item-name" fxFlex="1 1 auto"
+                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}}</span>
+          <ng-template #customName>
+            <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.name}}</span>
+          </ng-template>
           <span *ngIf="row.alarm.slot !== null" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
         </div>
         <img *ngIf="row.alarm.type !== undefined" src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
@@ -117,6 +130,7 @@
     </ng-template>
     <ng-template #cardDescription>
       <app-map-position [mapId]="row.alarm.mapId"
+                        *ngIf="row.alarm.mapId"
                         [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"></app-map-position>
       {{row.alarm.aetheryte?.nameid | placeName | i18n}}
       <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
@@ -139,7 +153,8 @@
       </ng-template>
     </ng-template>
     <ng-template #map>
-      <app-map [mapId]="row.alarm.mapId" [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
+      <app-map *ngIf="row.alarm.mapId" [mapId]="row.alarm.mapId"
+               [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
                (loaded)="card.nzLoading = false"></app-map>
     </ng-template>
     <ng-template #delete>

@@ -34,7 +34,7 @@ export class MapPositionComponent {
 
   openMap(): void {
     this.dialog.create({
-      nzTitle: this.i18n.getName(this.l12n.getPlace(this.zoneId)),
+      nzTitle: this.zoneId ? this.i18n.getName(this.l12n.getPlace(this.zoneId)) : this.i18n.getName(this.l12n.getPlace(this.mapId)),
       nzContent: MapComponent,
       nzComponentParams: {
         mapId: this.mapId,

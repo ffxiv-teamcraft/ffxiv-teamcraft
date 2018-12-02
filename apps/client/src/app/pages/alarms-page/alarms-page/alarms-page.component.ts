@@ -17,6 +17,7 @@ import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-opti
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
+import { CustomAlarmPopupComponent } from '../custom-alarm-popup/custom-alarm-popup.component';
 
 @Component({
   selector: 'app-alarms-page',
@@ -70,6 +71,14 @@ export class AlarmsPageComponent implements OnInit {
     ).subscribe((note) => {
       alarm.note = note;
       this.alarmsFacade.updateAlarm(alarm);
+    });
+  }
+
+  newCustomAlarm(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('ALARMS.CUSTOM.Title'),
+      nzFooter: null,
+      nzContent: CustomAlarmPopupComponent
     });
   }
 
@@ -136,7 +145,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   getIngameAlarmMacro(display: AlarmDisplay): string {
-    return `/alarm "${this.i18n.getName(this.l12n.getItem(display.alarm.itemId))}" et ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
+    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)) : display.alarm.name}" et ${display.nextSpawn < 10 ? '0' : ''}${display.nextSpawn}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
   }
 
