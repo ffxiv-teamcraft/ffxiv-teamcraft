@@ -118,7 +118,23 @@
     "Confirm_group_delete_with_alarms": "정말로 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
-    "Macro_copied": "매크로가 클립보드에 복사되었습니다"
+    "Macro_copied": "매크로가 클립보드에 복사되었습니다",
+    "CUSTOM": {
+      "Title": "Add custom alarm",
+      "Name": "Name",
+      "Spawn": "Spawn",
+      "Duration": "Duration",
+      "Slot": "Slot",
+      "Type": "Node type",
+      "Map": "Map",
+      "TYPE": {
+        "Mineral": "Mineral Deposit",
+        "Rocky": "Rocky Outcrop",
+        "Tree": "Mature Tree",
+        "Vegetation": "Lush Vegetation Patch",
+        "Fishing": "Fishing"
+      }
+    }
   },
   "Item_name": "아이템 이름",
   "No_items_found": "검색 결과 없음",
