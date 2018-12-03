@@ -130,7 +130,7 @@
       "TYPE": {
         "Mineral": "鉱脈",
         "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
+        "Tree": "良木",
         "Vegetation": "Lush Vegetation Patch",
         "Fishing": "釣り場"
       }
@@ -327,7 +327,7 @@
     "Regenerate": "最新Teamcraftバージョンにリストをアップデートする",
     "Rename": "リスト名を変更する",
     "Copied_x_times": "{{count}} 回コピーされました",
-    "Enable_crystals_tracking": "Enable crystals tracking",
+    "Enable_crystals_tracking": "必要クリスタル即時計算活性化する",
     "Copy_as_text": "テキストにコピー",
     "Copied_as_text": "クリップボードに内容がコビーされました",
     "Total_price": "総費用(ギル及び手形)",
@@ -675,16 +675,16 @@
   },
   "SEARCH_INTRO": {
     "Slogan": "リストを作って、シェアして、寄与して、制作して下さい",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Features_header": "Get started !",
+    "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを使って、作られました",
+    "Support_patreon": "Patreonでサポートする",
+    "Donation_button": "後援する[1回]",
+    "Features_header": "始める！",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "リストを作って制作に必要な全ての材料を確認し、フレンドさんにシェアできます。アイテム検索でフィルタを適用して、特定アイテムを選択してから制作を開始することができます。",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
+      "Rotations": "制作マクロを作り、シミュレーターで確認したり、使用者指定シミュレーターを利用して理論上の制作マクロが構成することができます。",
       "Levequests": "ジョブとレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
       "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語にマクロに翻訳できます。"
     }
