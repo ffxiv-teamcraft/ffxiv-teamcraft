@@ -286,15 +286,15 @@
     "Email_already_used": "Eメールが既に他のアカウントに繋がれています",
     "Patreon_email": "Patreonのメールアドレス",
     "Contacts": "連絡先",
-    "Add_new_contact": "New contact",
-    "Save_for_all": "Save for all",
-    "User_not_verified": "User not verified, click to verify user",
+    "Add_new_contact": "新しい連絡先",
+    "Save_for_all": "全て保存する",
+    "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "VERIFICATION": {
-      "Title": "Character verification",
-      "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below.",
-      "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
-      "Validate": "Validate"
+      "Title": "キャラクター認証",
+      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボータンを押して下さい。",
+      "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールでコードを消してもよろしいです。",
+      "Error": "Bioからコードを探せません。コードを貼り付けてから、変更されたのか、ご確認して下さい。そして約30秒後にやり直して下さい",
+      "Validate": "認証"
     }
   },
   "LISTS": {
