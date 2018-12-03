@@ -1,4 +1,4 @@
-<nz-layout class="app-container">
+<nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container">
   <nz-layout>
     <nz-header class="header">
       <a class="logo" routerLink="/">
@@ -221,3 +221,6 @@
     <span class="timer">{{time$ | async}}</span>
   </nz-footer>
 </nz-layout>
+<ng-template #desktopOpenedMessage>
+  Opened in desktop (TODO)
+</ng-template>

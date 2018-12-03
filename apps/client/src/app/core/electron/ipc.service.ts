@@ -49,8 +49,11 @@ export class IpcService {
 
   private connectListeners(): void {
     this.send('app-ready', true);
-    this.on('navigate', (event, url) => {
-      this.router.navigateByUrl(url);
+    this.on('navigate', (event, url: string) => {
+      if (url.endsWith('/')) {
+        url = url.substr(0, url.length - 1);
+      }
+      this.router.navigate(url.split('/'));
     });
   }
 }

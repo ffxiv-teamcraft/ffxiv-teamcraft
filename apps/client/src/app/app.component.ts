@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -25,6 +25,8 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
+import * as customProtocolDetection from 'custom-protocol-detection';
+import { of, Subject } from 'rxjs';
 
 declare const gtag: Function;
 
@@ -64,6 +66,8 @@ export class AppComponent implements OnInit {
   public time$: Observable<string>;
 
   public desktop = false;
+
+  public hasDesktop$: Observable<boolean>;
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -109,7 +113,29 @@ export class AppComponent implements OnInit {
       gtag('send', 'pageview');
     });
 
-    // this.gt.preload();
+    // Custom protocol detection
+    this.hasDesktop$ = router.events.pipe(
+      filter(current => current instanceof NavigationEnd),
+      switchMap((current: NavigationEnd) => {
+        let url = current.url;
+        if (this.platformService.isDesktop()) {
+          return of(false);
+        }
+        if (url.endsWith('/')) {
+          url = url.substring(0, url.length - 1);
+        }
+        const responseSubject = new Subject<boolean>();
+        customProtocolDetection(`teamcraft://${url}`,
+          () => responseSubject.next(true),
+          () => responseSubject.next(false),
+          () => responseSubject.next(false));
+        return responseSubject;
+      }),
+      startWith(false)
+    );
+
+    this.hasDesktop$.subscribe();
+
     // Translation
     this.translate.setDefaultLang('en');
     const lang = localStorage.getItem('locale');
