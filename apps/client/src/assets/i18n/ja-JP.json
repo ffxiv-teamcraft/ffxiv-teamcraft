@@ -442,19 +442,19 @@
     "No_links": "使用者指定リンクなし"
   },
   "NAVIGATION": {
-    "Title": "Optimized navigation route",
-    "Steps": "Steps",
+    "Title": "最適化経路",
+    "Steps": "段階",
     "STEP": {
-      "Gathering": "Gather {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
-      "Vendor": "Buy {{amount}}",
-      "Trade": "Trade {{amount}}"
+      "Gathering": "{{amount}} 個 採集",
+      "Hunting": "戦闘で {{amount}} 個 獲得",
+      "Vendor": "{{amount}} 個 商店から購入",
+      "Trade": "{{amount}} 個 交換"
     }
   },
   "GATHERING_LOCATIONS": {
     "Title": "ギャザラーマップ",
-    "No_items": "No gathering node found",
-    "Gathering_name": "Enter item name",
+    "No_items": "採集場所を見つかりませんでした。",
+    "Gathering_name": "アイテム名を入力して下さい",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
   },
   "ANNOUNCEMENT": {
