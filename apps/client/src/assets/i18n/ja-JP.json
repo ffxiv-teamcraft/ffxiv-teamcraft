@@ -336,13 +336,13 @@
     "History": "内訳",
     "BUTTONS": {
       "Add_link_description": "このリストに対する使用者指定リンクを作る",
-      "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
-      "Copy_template_url_description": "Copy the template link for this list, which will create a copy of the list for whoever opens it",
-      "Share_description": "Copy share link to your clipboard",
-      "Open": "Open list",
-      "Open_description": "Access the list",
-      "Delete": "Delete list",
-      "Delete_description": "Deletes the list",
+      "Create_template_description": "このリストのテンプレートリンクを生成すれば、現在のリストにコピーしたものが生成されます",
+      "Copy_template_url_description": "このリストのテンプレートリンクをコピーすれば、該当リストにコピーしたものが生成されます",
+      "Share_description": "シェアリンクをコピーする",
+      "Open": "リストを開く",
+      "Open_description": "リストに繋ぐ",
+      "Delete": "リストを削除",
+      "Delete_description": "このリストを削除します",
       "Delete_warning": "Deleting a list can't be undone"
     }
   },
