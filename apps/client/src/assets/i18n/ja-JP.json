@@ -610,8 +610,8 @@
     "All_deliveries": "全ての {{value}} 納品",
     "INTRO": {
       "Title": "ギルドリーヴ",
-      "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
-      "Second_line": "Select a job, input a level range, you'll get a listing of the corresponding leves that you can check and add to a list, recipes will be automatically added to the selected list.",
+      "First_line": "このページでは、与えられるギルドオーダーや様々なギルドオーダーに対するリストが作れます。",
+      "Second_line": "ジョブを選び、レベル範囲を入力すれば、条件に合うギルドオーダーが表示されます。望むギルドオーダーを選択してからリストに追加すれば、必要な制作法が自動的に選択されたリストに追加されます。",
       "Third_line": "You can also search by name, in case you know what you're looking for."
     }
   },
