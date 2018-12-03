@@ -4,7 +4,7 @@
   "author": "Flavien Normand <contact@flavien-normand.fr>",
   "version": "5.0.0-beta.2",
   "license": "MIT",
-  "main": "main.js",
+  "main": "desktop/main.js",
   "build": {
     "appId": "ffxivteamcraft",
     "artifactName": "${productName}-setup.${ext}",
@@ -12,9 +12,15 @@
       "output": "release"
     },
     "files": [
-      "main.js",
+      "desktop/main.js",
       "dist"
     ],
+    "protocols": {
+      "name": "ffxiv-teamcraft",
+      "schemes": [
+        "teamcraft"
+      ]
+    },
     "mac": {
       "category": "public.app-category.games"
     },
@@ -36,6 +42,7 @@
     "build:watch": "node ./tools/build/prebuild.js && ng build --project=client --watch --configuration=electron-dev",
     "build:prod": "node ./tools/build/prebuild.js && ng build --project=client --prod",
     "build:electron-prod": "node ./tools/build/prebuild.js && ng build --project=client --configuration=electron",
+    "build:electron-dev": "node ./tools/build/prebuild.js && ng build --project=client --configuration=electron-dev",
     "build:beta": "node ./tools/build/prebuild.js && ng build --project=client --configuration=beta",
     "standard-version": "standard-version",
     "standard-version:patch": "standard-version --release-as patch",
@@ -51,9 +58,10 @@
     "prerelease": "npm test",
     "commit": "git-cz",
     "translations:clean": "node tools/translations-cleaner.js",
-    "electron:start": "electron ./main.js",
-    "electron:start:no-decorators": "electron ./main.js --native-titlebar",
+    "electron:start": "electron ./desktop/main.js",
+    "electron:start:no-decorators": "electron ./desktop/main.js --native-titlebar",
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
+    "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
@@ -118,8 +126,8 @@
     "core-js": "^2.5.4",
     "electron-config": "^1.0.0",
     "electron-log": "^2.2.14",
-    "electron-oauth2": "^3.0.0",
-    "electron-updater": "^3.0.3",
+    "electron-is-dev": "^1.0.1",
+    "electron-updater": "^4.0.0",
     "firebase": "^5.5.0",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
@@ -156,9 +164,8 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "^1.8.7",
+    "electron": "^3.0.10",
     "electron-builder": "^20.28.3",
-    "electron-is-dev": "^0.3.0",
     "electron-reload": "^1.2.2",
     "express": "^4.16.3",
     "firebase-tools": "^4.0.1",

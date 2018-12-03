@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzModalRef } from 'ng-zorro-antd';
+import { PlatformService } from '../../tools/platform.service';
 
 @Component({
   selector: 'app-login-popup',
@@ -15,7 +16,7 @@ export class LoginPopupComponent {
   errorMessageCode: string;
 
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef) {
+              private modalRef: NzModalRef, public platform: PlatformService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]

@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { PlatformService } from '../../tools/platform.service';
 
 @Component({
   selector: 'app-register-popup',
@@ -16,7 +17,7 @@ export class RegisterPopupComponent {
   errorMessageCode: string;
 
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef) {
+              private modalRef: NzModalRef, public platform: PlatformService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],

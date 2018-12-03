@@ -28,6 +28,6 @@
           nzMessage="{{('AUTH_ERRORS.'+errorMessageCode) | translate}}"></nz-alert>
 <nz-divider [nzText]="'Or' | translate"></nz-divider>
 <div class="oauth-buttons">
-  <button nz-button nzType="primary" (click)="googleOauth()">{{'Google_register' | translate}}</button>
-  <button nz-button nzType="primary" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
+  <button nz-button nzType="primary" [disabled]="platform.isDesktop()" (click)="googleOauth()">{{'Google_register' | translate}}</button>
+  <button nz-button nzType="primary" [disabled]="platform.isDesktop()" (click)="facebookOauth()">{{'Facebook_register' | translate}}</button>
 </div>

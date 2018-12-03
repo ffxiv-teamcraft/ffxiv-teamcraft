@@ -5,11 +5,9 @@ const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
 
-const electronOauth2 = require('electron-oauth2');
-
 const argv = process.argv.slice(1);
 
-const BASE_APP_PATH =  path.join(__dirname, 'dist/apps/client');
+const BASE_APP_PATH =  path.join(__dirname, '../dist/apps/client');
 
 let win;
 let tray;
@@ -173,54 +171,6 @@ autoUpdater.on('update-downloaded', () => {
             autoUpdater.quitAndInstall();
         }
     });
-});
-
-// TODO update that before final 5.0 release
-const googleOauthConfig = {
-    clientId: '884443665612-gvsgirp8v1qcg9c3ercekpbukuaa0nt0.apps.googleusercontent.com',
-    clientSecret: 'iZVoUOdmDX2zdQUQMRRsuHOg',
-    authorizationUrl: 'https://accounts.google.com/o/oauth2/auth',
-    tokenUrl: 'https://accounts.google.com/o/oauth2/token',
-    useBasicAuthorizationHeader: false,
-    redirectUri: 'http://localhost'
-};
-
-const facebookOauthConfig = {
-    clientId: '2276769899216306',
-    clientSecret: 'ef11a5f84559dca5d3c012e0f6904484',
-    authorizationUrl: 'https://www.facebook.com/v3.0/dialog/oauth',
-    tokenUrl: 'https://www.facebook.com/v3.0/dialog/oauth',
-    useBasicAuthorizationHeader: false,
-    redirectUri: 'http://localhost'
-};
-
-const windowParams = {
-    alwaysOnTop: true,
-    autoHideMenuBar: true,
-    webPreferences: {
-        nodeIntegration: false
-    }
-};
-const googleOauth = electronOauth2(googleOauthConfig, windowParams);
-const facebookOauth = electronOauth2(facebookOauthConfig, windowParams);
-
-ipcMain.on('oauth', (event, providerType) => {
-    if (providerType === 'google.com') {
-        googleOauth.getAccessToken({scope: 'https://www.googleapis.com/auth/userinfo.profile'})
-            .then(token => {
-                event.sender.send('oauth-reply', token);
-            }, err => {
-                console.log('Error while getting token', err);
-            });
-    }
-    if (providerType === 'facebook.com') {
-        facebookOauth.getAccessToken({})
-            .then(token => {
-                event.sender.send('google-oauth-reply', token);
-            }, err => {
-                console.log('Error while getting token', err);
-            });
-    }
 });
 
 ipcMain.on('notification', (event, config) => {
