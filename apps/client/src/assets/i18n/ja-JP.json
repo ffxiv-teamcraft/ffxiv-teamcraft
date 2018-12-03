@@ -588,8 +588,8 @@
       "Reset_set": "ステータスをリセット",
       "Save_consumables": "現在の消耗品をデフォルト値に設定",
       "No_food": "食事なし",
-      "No_medicine": "No medicine",
-      "No_fc_buffs": "No FC buffs",
+      "No_medicine": "薬茶なし",
+      "No_fc_buffs": "フリーカンパニーのバフなし",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "作業精度",
@@ -598,16 +598,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor",
-    "Expect_to_sell_everything": "Expect to sell everything"
+    "From_vendor": "商店販売値段",
+    "Expect_to_sell_everything": "全体販売仮定"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
-    "No_results": "No levequests found",
-    "Add_to_list": "Add this levequest's items to a list",
-    "Quantity": "Quantity",
-    "All_deliveries": "All {{value}} Deliveries",
+    "No_results": "ギルドオーダーが見つかりませんでした",
+    "Add_to_list": "このギルドオーダーアイテムをリストに追加する",
+    "Quantity": "数量",
+    "All_deliveries": "全ての {{value}} 納品",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
