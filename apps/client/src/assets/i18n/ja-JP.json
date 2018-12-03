@@ -682,8 +682,8 @@
     "DESCRIPTION": {
       "Lists": "リストを作って制作に必要な全ての材料を確認し、フレンドさんにシェアできます。アイテム検索でフィルタを適用して、特定アイテムを選択してから制作を開始することができます。",
       "Public_lists": "制作品、ギルドリーヴ納品や制作手帳を完了、飛空艇、Bis装備など全てを貴方のコミュニティリストにコピーできます。",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
+      "Alarms": "アラームを作って、採集場所出現を逃さずに、グループに結んでゲーム内に送り出すことと同じようなことができます",
+      "Gathering_location": "採集物に関する情報を見つかり、アラームを作り、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
       "Rotations": "制作マクロを作り、シミュレーターで確認したり、使用者指定シミュレーターを利用して理論上の制作マクロが構成することができます。",
       "Levequests": "ジョブとレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
       "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語にマクロに翻訳できます。"
