@@ -2,9 +2,12 @@
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez une liste",
   "Pick_a_fc": "Choisissez une compagnie libre",
+  "Pick_a_rotation": "Pick a rotation",
+  "Pick_a_recipe": "Pick a recipe",
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
+  "Edit_amount": "Edit amount",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -22,6 +25,10 @@
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
+  "Find_us_on_twitter": "Find us on Twitter",
+  "Join_discord_server": "Join discord server",
+  "See_code_github": "See the code on github",
+  "Support_on_patreon": "Support the project on patreon",
   "Default": "Défaut",
   "Delete": "Supprimer",
   "Timers": "Alarmes",
@@ -36,9 +43,12 @@
   "Work_on_it": "Je m'en occupe",
   "Remove_work_on_it": "Supprimer l’affectation utilisateur",
   "Add_as_collectible": "Ajouter en collectionnable",
+  "Collectable_flag": "Collectable",
   "Compact_display": "Affichage compact",
   "Mute_alarms": "Mettre en sourdine",
+  "Unmute_alarms": "Unmute alarms",
   "Hide_used": "Masquer les éléments utilisés",
+  "Collapse_if_done": "Collapse if done",
   "Retainer_ventures": "Tâches de servant",
   "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
@@ -93,7 +103,7 @@
     "Warning": "Attention",
     "Success": "Succès",
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
-    "Language": "Language"
+    "Language": "Langue"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -105,10 +115,26 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
-    "Confirm_group_delete_with_alarms": "Are your sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
-    "Macro_copied": "Macro copiée dans votre presse-papiers"
+    "Macro_copied": "Macro copiée dans votre presse-papiers",
+    "CUSTOM": {
+      "Title": "Add custom alarm",
+      "Name": "Name",
+      "Spawn": "Spawn",
+      "Duration": "Duration",
+      "Slot": "Slot",
+      "Type": "Node type",
+      "Map": "Map",
+      "TYPE": {
+        "Mineral": "Mineral Deposit",
+        "Rocky": "Rocky Outcrop",
+        "Tree": "Mature Tree",
+        "Vegetation": "Lush Vegetation Patch",
+        "Fishing": "Fishing"
+      }
+    }
   },
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
@@ -164,7 +190,6 @@
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la régénérer",
   "Own_list_outdated_before_button": "Cette liste est périmée, merci de la régénérer en utilisant le bouton ",
   "Own_list_outdated_after_button": "bouton",
-  "Home": "Accueil",
   "Import": "Importer",
   "Favorites": "Favoris",
   "Favorite": "Favoris",
@@ -229,14 +254,19 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Régénération des listes en cours",
   "SETTINGS": {
-    "title": "Options",
-    "link_base": "Liens des objets",
-    "theme": "Thème",
-    "Simulator_link_base": "Lien vers le simulateur",
+    "Title": "Options",
+    "General": "General",
+    "Link_base": "Liens des objets",
+    "Theme": "Thème",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
-    "No_update_available": "Pas de mise à jour disponible"
+    "No_update_available": "Pas de mise à jour disponible",
+    "Preferred_copy_type": "Preferred copy type",
+    "COPY_TYPE": {
+      "Classic": "Copy item name",
+      "Isearch": "Copy /isearch macro"
+    }
   },
   "PROFILE": {
     "Account": "Compte",
@@ -278,6 +308,7 @@
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n’avez pas de listes",
+    "Lists_search_placeholder": "Search for a list...",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -300,6 +331,7 @@
     "Copy_as_text": "Copier au format texte",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
+    "Total_trade_price": "Total: ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
     "BUTTONS": {
@@ -316,15 +348,18 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Liste terminée",
+    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
     "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
     "Missing_tags_after_button": " bouton",
     "Add_remove_amount": "Ajouter/enlever un montant donné",
-    "No_book": "Livre manquant, cliquer pour aller sur la page de profil",
+    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
     "No_note": "Aucune note",
     "Edit_note": "Aucune note",
     "Note_placeholder": "Note",
     "Tags_popup": "Tags",
     "Inventory_breakdown": "Inventaire",
+    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
+    "Add_all_item_alarms": "Add all alarms for this item",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -344,7 +379,7 @@
     }
   },
   "LIST_TAGS": {
-    "OUTDATED": "Périmée",
+    "OUTDATED": "Outdated",
     "GEAR": "Équipement",
     "CONSUMABLE": "Consommable",
     "LOG": "Carnet",
@@ -477,6 +512,10 @@
     "Hq": "HQ",
     "Cp_amount": "PS",
     "Simulate_tooltip": "Fabriquer dans le simulateur",
+    "Change_recipe": "Change recipe",
+    "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
+    "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
+    "Convert_rotation": "Open in standard simulator",
     "Configuration": "Configuration",
     "Level": "Niveau",
     "Reliability": "Fiabilité",
@@ -484,15 +523,19 @@
     "Specialist": "Specialiste",
     "New_rotation": "Nouvelle rotation",
     "Rotations": "Rotations de craft",
+    "Favorite_Rotations": "Favorite Rotations",
     "No_rotations": "Aucune rotation",
     "Create_a": "Créer une",
     "custom_rotation": "rotation personnalisée",
     "Reset": "Remettre à zéro la rotation",
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
     "Export_crafting_optimizer": "Exporter au format crafting optimizer",
+    "Export_copied": "Crafting optimizer export code copied to your clipboard",
+    "Unsaved_changes": "You have unsaved changes, please save before leaving this page or changes will be lost.",
     "Crafting_optimizer_code": "Code d'import de crafting optimizer",
     "Generated_macro": "Macro en jeu",
     "Generate_ingame_macro": "Générer une macro en jeu",
+    "Share_button_tooltip": "Copy share link",
     "Share_link_copied": "Lien de rotation copié dans le presse-papiers",
     "Persist": "Sauvegarder cette rotation",
     "Rotation_not_found": "Rotation non trouvée",
@@ -527,6 +570,7 @@
     "CONFIGURATION": {
       "Job": "Job",
       "Job_not_configured": "Il semble que vous n’avez configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses stats",
+      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "Activer les stats personnalisées",
       "Select_job": "Selectionner un job",
       "Craftsmanship": "Habileté",
@@ -581,9 +625,9 @@
     "Title": "Équipes",
     "Leader": "Chef",
     "Member": "Membre",
-    "Enable_discord_updates": "Enable Discord updates",
-    "Disable_discord_updates": "Disable Discord updates",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
+    "Enable_discord_updates": "Activer le suivi via discord",
+    "Disable_discord_updates": "Désactiver le suivi via discord",
+    "Webhook_error": "Une erreur est survenue lors de la création du webhook discord:",
     "Create_team": "Créer une équipe",
     "Create_invite_one_day": "Créer une nouvelle invitation (valable 1 jour)",
     "Create_invite_infinite": "Créer une nouvelle invitation permanente",
@@ -618,9 +662,31 @@
     "Total_price": "Prix total",
     "Unit_price": "Prix unitaire",
     "History": "Historique",
-    "Purchase_date": "Date"
+    "Purchase_date": "Date",
+    "More_on_mogboard": "More details on mogboard"
   },
   "COMMENTS": {
     "Title": "Commentaires"
+  },
+  "TOOLTIP": {
+    "Level": "Level",
+    "Cost": "Cost",
+    "Class_job": "Class/Job"
+  },
+  "SEARCH_INTRO": {
+    "Slogan": "Create lists, share, contribute, craft",
+    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
+    "Support_patreon": "Support us on patreon",
+    "Donation_button": "Make a one time donation",
+    "Features_header": "Get started !",
+    "DESCRIPTION": {
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
+      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
+      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+    }
   }
 }
