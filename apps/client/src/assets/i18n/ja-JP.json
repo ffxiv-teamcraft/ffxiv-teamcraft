@@ -455,29 +455,29 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所を見つかりませんでした。",
     "Gathering_name": "アイテム名を入力して下さい",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
+    "Intro": "採集手帳には、採集可能なアイテムを検索することができ、採集場所確認とアラーム生成などの詳細機能を提供します。上の空間に内容を書いて、探そうとする採集情報をご確認して下さい！"
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
-    "Read_more": "Read more"
+    "Read_more": "詳細に見る"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "Create a list template for this list",
-    "Dialog_title": "Template creation",
-    "Link_name": "Template name",
-    "target": "Target list",
-    "Share_link_copied": "Template share link copied to the clipboard",
-    "Copy_template_url": "Copy template url",
-    "Cloning_list": "Creating a copy of the list to your account",
-    "Redirect_notice": "You'll be redirected to the list once the clone is created",
-    "Not_found": "Template not found"
+    "Create_template": "該当リストに対する、リストテンプレート生成する",
+    "Dialog_title": "テンプレート生成",
+    "Link_name": "テンプレート名",
+    "target": "対象リスト",
+    "Share_link_copied": "テンプレートシェアリンクがクリップボードにコピーされました",
+    "Copy_template_url": "テンプレート url コピー",
+    "Cloning_list": "マイアカウントでリストコピーしたものを生成する",
+    "Redirect_notice": "コピー生成する時にリストに繋がれます。",
+    "Not_found": "テンプレートが見つかりません"
   },
   "PERMISSIONS": {
-    "Read": "Read",
-    "Read_description": "The ability to see the list",
-    "Participate": "Participate",
-    "Participate_description": "This gives you permission to tick items and modify amounts done",
-    "Write": "Write",
+    "Read": "読む",
+    "Read_description": "リストを見れる権限",
+    "Participate": "参加",
+    "Participate_description": "数量を調整し、完了されたアイテムをチェックできる権限",
+    "Write": "書き込む",
     "Write_description": "This gives you the permission to add items, add lists (for workshops)",
     "Title": "Permissions management",
     "Everyone": "Everyone",
