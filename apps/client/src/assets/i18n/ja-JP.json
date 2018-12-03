@@ -612,23 +612,23 @@
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、与えられるギルドオーダーや様々なギルドオーダーに対するリストが作れます。",
       "Second_line": "ジョブを選び、レベル範囲を入力すれば、条件に合うギルドオーダーが表示されます。望むギルドオーダーを選択してからリストに追加すれば、必要な制作法が自動的に選択されたリストに追加されます。",
-      "Third_line": "You can also search by name, in case you know what you're looking for."
+      "Third_line": "ギルドオーダー名を分かってる場合、名前で検索することができます。"
     }
   },
   "NOTIFICATIONS": {
-    "Title": "Notifications",
-    "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
-    "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Title": "お知らせ",
+    "List_comment_added": "{{listName}} にコメントが追加されました: \"{{content}}\"",
+    "List_item_comment_added": "{{listName}} の {{itemName}} にコメントが追加されました: \"{{content}}\"",
+    "Mark_all_as_read": "全て既読に表示"
   },
   "TEAMS": {
-    "Title": "Teams",
-    "Leader": "Leader",
-    "Member": "Member",
-    "Enable_discord_updates": "Enable Discord updates",
-    "Disable_discord_updates": "Disable Discord updates",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
-    "Create_team": "Create a team",
+    "Title": "チーム",
+    "Leader": "リーダー",
+    "Member": "メンバー",
+    "Enable_discord_updates": "Discordアップデート活性化",
+    "Disable_discord_updates": "Discordアップデート非活性化",
+    "Webhook_error": "Discord webhookを構築する間に、誤謬が発生しました。",
+    "Create_team": "チームを生成",
     "Create_invite_one_day": "Create a new invite (expires in 1 day)",
     "Create_invite_infinite": "Create a new invite (permanent)",
     "No_teams": "No Teams",
