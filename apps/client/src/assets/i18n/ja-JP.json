@@ -663,18 +663,18 @@
     "Unit_price": "単価",
     "History": "最近記録",
     "Purchase_date": "日付",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "Mogboardで詳しい情報を見る"
   },
   "COMMENTS": {
     "Title": "コメント"
   },
   "TOOLTIP": {
-    "Level": "Level",
-    "Cost": "Cost",
-    "Class_job": "Class/Job"
+    "Level": "レベル",
+    "Cost": "費用",
+    "Class_job": "クラス/ジョブ"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Create lists, share, contribute, craft",
+    "Slogan": "リストを作って、シェアして、寄与して、制作して下さい",
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Support us on patreon",
     "Donation_button": "Make a one time donation",
