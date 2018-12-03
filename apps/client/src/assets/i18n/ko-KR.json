@@ -513,7 +513,7 @@
     "Cp_amount": "CP",
     "Simulate_tooltip": "시뮬레이터로 제작",
     "Change_recipe": "제작법 변경",
-    "Changing_recipe_save_warning": "제작법을 선택하기 전에 저장하지 않을 경부 변경 내용이 손실됩니다",
+    "Changing_recipe_save_warning": "제작법을 선택하기 전에 저장하지 않을 경우 변경 내용이 손실됩니다",
     "Too_many_aactions": "사용 가능한 보조기술의 수를 초과하였습니다",
     "Convert_rotation": "기본 시뮬레이터에서 열기",
     "Configuration": "설정",
