@@ -128,7 +128,7 @@
       "Type": "採集品種類",
       "Map": "地図",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
+        "Mineral": "鉱脈",
         "Rocky": "Rocky Outcrop",
         "Tree": "Mature Tree",
         "Vegetation": "Lush Vegetation Patch",
@@ -604,15 +604,15 @@
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
-    "No_results": "ギルドオーダーが見つかりませんでした",
-    "Add_to_list": "このギルドオーダーアイテムをリストに追加する",
+    "No_results": "ギルドリーヴが見つかりませんでした",
+    "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
     "Quantity": "数量",
     "All_deliveries": "全ての {{value}} 納品",
     "INTRO": {
       "Title": "ギルドリーヴ",
-      "First_line": "このページでは、与えられるギルドオーダーや様々なギルドオーダーに対するリストが作れます。",
-      "Second_line": "ジョブを選び、レベル範囲を入力すれば、条件に合うギルドオーダーが表示されます。望むギルドオーダーを選択してからリストに追加すれば、必要な制作法が自動的に選択されたリストに追加されます。",
-      "Third_line": "ギルドオーダー名を分かってる場合、名前で検索することができます。"
+      "First_line": "このページでは、与えられるギルドリーヴや様々なギルドリーヴに対するリストが作れます。",
+      "Second_line": "ジョブを選び、レベル範囲を入力すれば、条件に合うギルドリーヴが表示されます。望むギルドリーヴを選択してからリストに追加すれば、必要な制作法が自動的に選択されたリストに追加されます。",
+      "Third_line": "ギルドリーヴ名を分かってる場合、名前で検索することができます。"
     }
   },
   "NOTIFICATIONS": {
@@ -685,8 +685,8 @@
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+      "Levequests": "ジョブとレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
+      "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語にマクロに翻訳できます。"
     }
   }
 }
