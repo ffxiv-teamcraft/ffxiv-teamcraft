@@ -73,6 +73,13 @@ export class LocalizedDataService {
   }
 
   public getCraftingActionIdByName(name: string, language: Language): number {
+    if (language === 'ko') {
+      const koRow = koActions.find(a => a.ko === name);
+      if (koRow !== undefined) {
+        name = koRow.en;
+        language = 'en';
+      }
+    }
     let res = this.getIndexByName(craftingActions, name, language);
     if (res === -1) {
       res = this.getIndexByName(actions, name, language);
