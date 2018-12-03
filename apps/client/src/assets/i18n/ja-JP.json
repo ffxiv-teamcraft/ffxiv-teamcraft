@@ -129,9 +129,9 @@
       "Map": "地図",
       "TYPE": {
         "Mineral": "鉱脈",
-        "Rocky": "Rocky Outcrop",
+        "Rocky": "採掘場",
         "Tree": "良木",
-        "Vegetation": "Lush Vegetation Patch",
+        "Vegetation": "草刈場",
         "Fishing": "釣り場"
       }
     }
@@ -375,7 +375,7 @@
       "Panel_name": "パネル名",
       "Order_by": "整列基準",
       "Order": "順番",
-      "Logic_gate": "Logic gate"
+      "Logic_gate": "ロジックゲート"
     }
   },
   "LIST_TAGS": {
