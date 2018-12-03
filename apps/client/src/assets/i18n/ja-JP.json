@@ -291,7 +291,7 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "VERIFICATION": {
       "Title": "キャラクター認証",
-      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボータンを押して下さい。",
+      "Guide": "アカウントの認証のために Lodestone Profile Biographyに次のコードを貼り付けて下さい。 \"{{userId}}\" そして、下のボタンを押して下さい。",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールでコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認して下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
@@ -343,27 +343,27 @@
       "Open_description": "リストに繋ぐ",
       "Delete": "リストを削除",
       "Delete_description": "このリストを削除します",
-      "Delete_warning": "Deleting a list can't be undone"
+      "Delete_warning": "リスト削除は取り消すことはできません"
     }
   },
   "LIST_DETAILS": {
     "List_finished": "リスト完成",
     "Public_list_description": "リスト公開設定はこのリストをコミュニティリストに追加させます. <b>シェアは要りません.</b>",
-    "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
-    "Missing_tags_after_button": " button",
-    "Add_remove_amount": "Add/remove a given amount",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
-    "No_note": "No note",
-    "Edit_note": "No note",
-    "Note_placeholder": "Note",
+    "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを入力して下さい。 ",
+    "Missing_tags_after_button": " ボタン",
+    "Add_remove_amount": "現在数量から追加/除去",
+    "Missing_masterbook": "この秘伝書を保有しておりません。プロフィールに追加するには、クリックして下さい。",
+    "No_note": "メモなし",
+    "Edit_note": "メモ訂正",
+    "Note_placeholder": "メモ",
     "Tags_popup": "タグ",
-    "Inventory_breakdown": "Inventory",
-    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
+    "Inventory_breakdown": "所持品",
+    "Open_in_ffxivgardening": "ffxivgardening.comで開く",
+    "Add_all_item_alarms": "このアイテムに対するアラーム追加",
     "LAYOUT_DIALOG": {
-      "Title": "Layout",
-      "Add_panel": "Add Panel",
-      "Import_layout": "Import a layout",
+      "Title": "レイアウト",
+      "Add_panel": "パネル追加",
+      "Import_layout": "レイアウト呼び寄せる",
       "Import_string": "レイアウト呼び寄せるコード",
       "Import_string_copied": "レイアウト呼び寄せるコードコピーされました！",
       "Layout_name": "レイアウト名",
@@ -433,13 +433,13 @@
   "CUSTOM_LINKS": {
     "Title": "使用者指定リンク",
     "Not_found": "リンクを見つかりませんでした。",
-    "Add_link": "Create a custom link",
-    "Dialog_title": "Custom link",
-    "Link_type": "Link type",
-    "Link_name": "Link name",
-    "target": "Link target",
-    "Share_link_copied": "Custom link copied to clipboard",
-    "No_links": "No custom links"
+    "Add_link": "使用者指定リンクを作る",
+    "Dialog_title": "使用者指定リンク",
+    "Link_type": "リンクタイプ",
+    "Link_name": "リンク名",
+    "target": "リンク対象",
+    "Share_link_copied": "使用者指定リンクがクリップボードにコピーされました",
+    "No_links": "使用者指定リンクなし"
   },
   "NAVIGATION": {
     "Title": "Optimized navigation route",
