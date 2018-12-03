@@ -682,11 +682,11 @@
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
       "Public_lists": "Clonez des listes communautaires pour vous aider à construire des kits de mandats, de complétion de carnet, des aéronefs, du stuff, tout peut être trouvé ici.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+      "Alarms": "Créer des alarmes pour s’assurer que vous ne manquez pas une récolte, organisez-les en groupes, importez-les en jeu, tout est possible.",
+      "Gathering_location": "Trouvez des informations sur n'importe quel objet récoltable, créez une alarme, trouvez ses coordonnées, l'éthéryte la plus proche, le livre de récolte nécessaire, et bien plus !",
+      "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulator configurable !",
+      "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et exp, puis créez rapidement une liste pour les réaliser.",
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d'oeil pour les rendre utilisable dans votre version de FFXIV !"
     }
   }
 }
