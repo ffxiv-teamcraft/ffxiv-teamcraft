@@ -5,6 +5,7 @@ const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
+const express = require('express');
 
 const argv = process.argv.slice(1);
 
@@ -39,9 +40,13 @@ if (!gotTheLock && !options.multi) {
 }
 
 app.on('second-instance', (event, commandLine, workingDirectory) => {
-  let path = commandLine[1].substr(12);
-  log.info(`Opening from second-instance : `, path);
-  win.webContents.send('navigate', path);
+  const cmdLine = commandLine[1];
+  if (cmdLine) {
+    let path = commandLine[1].substr(12);
+    log.info(`Opening from second-instance : `, path);
+    win.webContents.send('navigate', path);
+    win.focus();
+  }
   // Someone tried to run a second instance, we should focus our window.
   if (win) {
     if (win.isMinimized()) win.restore();
@@ -50,6 +55,8 @@ app.on('second-instance', (event, commandLine, workingDirectory) => {
 });
 
 let deepLink = '';
+
+let api;
 
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
@@ -81,7 +88,7 @@ function createWindow() {
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 
   // Event when the window is closed.
   win.on('closed', function() {
@@ -89,6 +96,24 @@ function createWindow() {
   });
 
   win.once('ready-to-show', () => {
+    if (api === undefined) {
+      // Start the api server for app detection
+      api = express();
+
+      api.use(function(req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        next();
+      });
+
+      api.get('/', (req, res) => {
+        res.send('OK');
+      });
+
+      api.listen(7331);
+    }
+
+    win.focus();
     win.show();
     autoUpdater.checkForUpdates();
     updateInterval = setInterval(() => {

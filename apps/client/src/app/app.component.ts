@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { distinctUntilChanged, filter, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -25,8 +25,9 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import * as customProtocolDetection from 'custom-protocol-detection';
-import { of, Subject } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 declare const gtag: Function;
 
@@ -69,17 +70,23 @@ export class AppComponent implements OnInit {
 
   public hasDesktop$: Observable<boolean>;
 
+  private hasDesktopReloader$ = new BehaviorSubject<void>(null);
+
+  get desktopUrl(): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
+  }
+
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService) {
+              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer) {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_m3rrm5jysn.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_maxek3aoiwq.js' });
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -114,7 +121,8 @@ export class AppComponent implements OnInit {
     });
 
     // Custom protocol detection
-    this.hasDesktop$ = router.events.pipe(
+    this.hasDesktop$ = this.hasDesktopReloader$.pipe(
+      switchMap(() => router.events),
       filter(current => current instanceof NavigationEnd),
       switchMap((current: NavigationEnd) => {
         let url = current.url;
@@ -124,17 +132,19 @@ export class AppComponent implements OnInit {
         if (url.endsWith('/')) {
           url = url.substring(0, url.length - 1);
         }
-        const responseSubject = new Subject<boolean>();
-        customProtocolDetection(`teamcraft://${url}`,
-          () => responseSubject.next(true),
-          () => responseSubject.next(false),
-          () => responseSubject.next(false));
-        return responseSubject;
-      }),
-      startWith(false)
+        return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+          map(() => true),
+          tap(hasDesktop => {
+            if (hasDesktop && this.settings.autoOpenInDesktop) {
+              window.location.assign(`teamcraft://${url}`);
+            }
+          }),
+          catchError(() => {
+            return of(false);
+          })
+        );
+      })
     );
-
-    this.hasDesktop$.subscribe();
 
     // Translation
     this.translate.setDefaultLang('en');
@@ -201,6 +211,12 @@ export class AppComponent implements OnInit {
     this.authFacade.logout();
   }
 
+  openedApp(): void {
+    setTimeout(() => {
+      this.hasDesktopReloader$.next(null);
+    }, 30000);
+  }
+
   use(lang: string): void {
     if (this.settings.availableLocales.indexOf(lang) === -1) {
       lang = 'en';
@@ -213,5 +229,4 @@ export class AppComponent implements OnInit {
   openSettings(): void {
     this.settingsPopupService.openSettings();
   }
-
 }

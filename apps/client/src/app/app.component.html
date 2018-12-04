@@ -4,13 +4,20 @@
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
-      <nz-select class="language-swap" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang" (ngModelChange)="use($event)">
+      <nz-select class="language-swap" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+                 (ngModelChange)="use($event)">
         <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                    [nzValue]="locale"></nz-option>
       </nz-select>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
+        </li>
+        <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex *ngIf="!platformService.isDesktop()" nz-tooltip
+            [nzTitle]="'COMMON.Open_in_desktop' | translate" nzPlacement="bottom">
+          <a [href]="desktopUrl" (click)="openedApp()">
+            <i nz-icon iconfont="icon-openinapp"></i>
+          </a>
         </li>
         <li class="ant-menu-item" nz-popover nzPlacement="bottomRight" [nzContent]="notificationsTemplate"
             *ngIf="notifications$ | async as notifications">
@@ -58,7 +65,7 @@
                 <ng-template #krAvatar>
                   <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
                 </ng-template>
-                {{character.Name | ifMobile:''}}
+                  {{character.Name | ifMobile:''}}
                 </ng-container>
                 </ng-template>
             </ng-template>
@@ -142,7 +149,8 @@
               <span class="nav-text">{{'Public_lists' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/gathering-location">
+            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected"
+               routerLink="/gathering-location">
           <span>
               <i nz-icon type="environment-o"></i>
               <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
@@ -196,7 +204,8 @@
              class="social-fab github"
              target="_blank"><i class="fab fa-github"></i>
           </a>
-          <a nz-button nzShape="circle" href="https://www.patreon.com/ffxivteamcraft" class="social-fab patreon" nz-tooltip
+          <a nz-button nzShape="circle" href="https://www.patreon.com/ffxivteamcraft" class="social-fab patreon"
+             nz-tooltip
              nzTitle="{{'Support_on_patreon' | translate}}"
              target="_blank">
             <i class="fab fa-patreon"></i>
@@ -222,5 +231,8 @@
   </nz-footer>
 </nz-layout>
 <ng-template #desktopOpenedMessage>
-  Opened in desktop (TODO)
+  <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center" class="opened-in-desktop">
+    <img src="./assets/logo.png" alt="FFXIV Teamcraft">
+    <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
+  </div>
 </ng-template>

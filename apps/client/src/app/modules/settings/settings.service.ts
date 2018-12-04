@@ -23,6 +23,15 @@ export class SettingsService {
     this.setSetting('base-link', base);
   }
 
+  public get autoOpenInDesktop(): boolean {
+    return this.getSetting('auto-open-in-desktop', 'true') === 'true';
+  }
+
+  public set autoOpenInDesktop(open: boolean) {
+    this.setSetting('auto-open-in-desktop', open.toString());
+  }
+
+
   public get preferredCopyType(): string {
     return this.getSetting('copy-type', 'classic');
   }

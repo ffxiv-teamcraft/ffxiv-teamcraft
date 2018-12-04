@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { TranslateService } from '@ngx-translate/core';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-settings-popup',
@@ -13,7 +14,8 @@ export class SettingsPopupComponent {
 
   availableLanguages = this.settings.availableLocales;
 
-  constructor(public settings: SettingsService, public translate: TranslateService) {
+  constructor(public settings: SettingsService, public translate: TranslateService,
+              public platform: PlatformService) {
   }
 
   setLanguage(lang: string): void {
