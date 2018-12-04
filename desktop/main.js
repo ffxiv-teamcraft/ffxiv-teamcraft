@@ -6,6 +6,10 @@ const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
 const express = require('express');
+const { OAuth2Provider } = require('electron-oauth-helper');
+const firebase = require('firebase/app');
+const querystring = require('querystring');
+require('firebase/auth');
 
 const argv = process.argv.slice(1);
 
@@ -301,4 +305,37 @@ ipcMain.on('minimize', () => {
 
 ipcMain.on('update:check', () => {
   autoUpdater.checkForUpdates();
+});
+
+// Oauth stuff
+ipcMain.on('oauth', (event, providerId) => {
+  if (providerId === 'google.com') {
+    const provider = new OAuth2Provider({
+      authorize_url: 'https://accounts.google.com/o/oauth2/auth',
+      access_token_url: 'https://accounts.google.com/o/oauth2/token',
+      response_type: 'code',
+      client_id: '716469847404-mketgv15vadpi2pkshjljrh3jiietcn8.apps.googleusercontent.com',
+      redirect_uri: 'http://localhost',
+      scope: 'https://www.googleapis.com/auth/userinfo.profile'
+    });
+    const window = new BrowserWindow({
+      width: 600,
+      height: 800,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true,
+      },
+    });
+    provider.perform(window).then(resp => {
+      const query = querystring.parse(resp);
+      console.log(query);
+      const credential = firebase.auth.GoogleAuthProvider.credential(query.access_token);
+      firebase.auth().signInWithCredential(credential)
+        .then(user => {
+          window.close();
+          console.log(user);
+        })
+        .catch(error => console.error(error));
+    }).catch(error => console.log(error));
+  }
 });
