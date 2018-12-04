@@ -103,7 +103,9 @@
     "Warning": "경고",
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
-    "Language": "언어"
+    "Language": "언어",
+    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Open_in_desktop": "Open in desktop app"
   },
   "ALARMS": {
     "Title": "알람",
@@ -263,6 +265,7 @@
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "기본 복사 유형",
+    "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
