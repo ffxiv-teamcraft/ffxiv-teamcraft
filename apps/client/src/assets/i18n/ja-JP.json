@@ -103,7 +103,9 @@
     "Warning": "警告",
     "Success": "成功",
     "Copy_to_clipboard": "クリップボードにコピーする",
-    "Language": "言語"
+    "Language": "言語",
+    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Open_in_desktop": "Open in desktop app"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -263,6 +265,7 @@
     "Downloading_update": "アップデートダウンロード中",
     "No_update_available": "使用可能なアップデートがありません。",
     "Preferred_copy_type": "基本コピー類型",
+    "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピー",
       "Isearch": "/アイテム検索 マクロコピー"
