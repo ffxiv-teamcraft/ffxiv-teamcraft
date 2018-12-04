@@ -166,7 +166,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "^3.0.10",
+    "electron": "^2.0.14",
     "electron-builder": "^20.28.3",
     "electron-reload": "^1.2.2",
     "firebase-tools": "^4.0.1",

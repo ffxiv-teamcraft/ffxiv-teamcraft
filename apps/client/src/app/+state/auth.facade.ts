@@ -28,12 +28,13 @@ import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { GearSet } from '../pages/simulator/model/gear-set';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
+import { OauthService } from '../core/auth/oauth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -116,7 +117,8 @@ export class AuthFacade {
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
               private platformService: PlatformService, private ipc: IpcService,
-              private dialog: NzModalService, private translate: TranslateService) {
+              private dialog: NzModalService, private translate: TranslateService,
+              private oauthService: OauthService) {
   }
 
   public addCharacter(useAsDefault = false, disableClose = false): void {
@@ -174,11 +176,11 @@ export class AuthFacade {
     return this.af.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  public googleOauth(): Promise<UserCredential> {
+  public googleOauth(): Observable<UserCredential> {
     return this.oauthPopup(new firebase.auth.GoogleAuthProvider());
   }
 
-  public facebookOauth(): Promise<UserCredential> {
+  public facebookOauth(): Observable<UserCredential> {
     return this.oauthPopup(new firebase.auth.FacebookAuthProvider());
   }
 
@@ -191,27 +193,7 @@ export class AuthFacade {
     this.store.dispatch(new ToggleFavorite(dataType, key));
   }
 
-  private oauthPopup(provider: any): Promise<UserCredential> {
-    return new Promise((resolve, reject) => {
-      let signInPromise: Promise<any>;
-      // If we're running inside electron, we need a special implementation.
-      if (this.platformService.isDesktop()) {
-        signInPromise = new Promise((innerResolve) => {
-          this.ipc.on('oauth-reply', (event, { access_token }) => {
-            this.af.auth
-              .signInAndRetrieveDataWithCredential(provider.credential(null, access_token))
-              .then(result => innerResolve(result));
-          });
-        });
-        this.ipc.send('oauth', provider.providerId);
-      } else {
-        signInPromise = this.af.auth.signInWithPopup(provider);
-      }
-      return signInPromise.then((oauth) => {
-        resolve(oauth);
-      }).catch((error) => {
-        reject(error);
-      });
-    });
+  private oauthPopup(provider: any): Observable<UserCredential> {
+    return this.oauthService.login(provider);
   }
 }

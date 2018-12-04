@@ -2,15 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Team } from '../../../model/team/team';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map, first, tap, switchMap, catchError } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamInvite } from '../../../model/team/team-invite';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { IpcService } from '../../../core/electron/ipc.service';
+import '@firebase/auth';
+import '@firebase/database';
+import '@firebase/firestore';
 
 @Component({
   selector: 'app-teams',
@@ -37,7 +42,8 @@ export class TeamsComponent implements OnInit {
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
               private message: NzMessageService, private route: ActivatedRoute, private router: Router,
-              private http: HttpClient) {
+              private http: HttpClient, private platform: PlatformService,
+              private ipc: IpcService) {
     this.teamsFacade.loadMyTeams();
   }
 
@@ -48,21 +54,26 @@ export class TeamsComponent implements OnInit {
     if (this.params.code && this.params.state) {
       this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${this.params.code}&redirect_uri=${this.redirectUri}`)
         .pipe(
-          switchMap(response => {
-            return this.myTeams$.pipe(
-              map(teams => teams.find(team => team.$key === this.params.state)),
-              first(team => team !== undefined),
-              map((team: Team) => {
-                team.webhook = response['webhook']['url'];
-                this.updateTeam(team);
-                this.testHook(team);
-                this.router.navigate([]);
-              })
-            )
+          switchMap((response: any) => {
+            return this.setWebhook(this.params.state, response.webhook.url);
           })
-        ).subscribe(() => {}, (error => this.errorCode$.next(error.error))
+        ).subscribe(() => {
+        }, (error => this.errorCode$.next(error.error))
       );
     }
+  }
+
+  private setWebhook(key: string, hook: string): Observable<any> {
+    return this.myTeams$.pipe(
+      map(teams => teams.find(team => team.$key === key)),
+      first(team => team !== undefined),
+      map((team: Team) => {
+        team.webhook = hook;
+        this.updateTeam(team);
+        this.testHook(team);
+        this.router.navigate([]);
+      })
+    );
   }
 
   createTeam(): void {
@@ -151,7 +162,21 @@ export class TeamsComponent implements OnInit {
     return team.$key;
   }
 
-  oauthUrl(team: Team): string {
-    return this.discordWebhook.oauthUrl(team.$key, this.redirectUri);
+  discordOauth(team: Team): void {
+    if (this.platform.isDesktop()) {
+      this.ipc.on('oauth-reply', (event, code) => {
+        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${code}&redirect_uri=http://localhost`)
+          .pipe(
+            switchMap((response: any) => {
+              return this.setWebhook(team.$key, response.webhook.url);
+            })
+          )
+          .subscribe(() => {
+          }, error => this.errorCode$.next(error.error));
+      });
+      this.ipc.send('oauth', 'discordapp.com');
+    } else {
+      window.open(this.discordWebhook.oauthUrl(team.$key, this.redirectUri));
+    }
   }
 }

@@ -6,10 +6,8 @@ const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
 const express = require('express');
-const { OAuth2Provider } = require('electron-oauth-helper');
-const firebase = require('firebase/app');
-const querystring = require('querystring');
-require('firebase/auth');
+
+const oauth = require('./oauth.js');
 
 const argv = process.argv.slice(1);
 
@@ -37,26 +35,27 @@ if (isDev) {
   // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
 }
 
-const gotTheLock = app.requestSingleInstanceLock();
+if (!options.multi) {
+  const shouldQuit = app.makeSingleInstance(function (commandLine) {
+    // Someone tried to run a second instance, we should focus our window.
+    if (win && !options.multi) {
+      const cmdLine = commandLine[1];
+      if (cmdLine) {
+        let path = commandLine[1].substr(12);
+        log.info(`Opening from second-instance : `, path);
+        win.webContents.send('navigate', path);
+        win.focus();
+      }
+      if (win.isMinimized()) win.restore();
+      win.focus();
+    }
+  });
 
-if (!gotTheLock && !options.multi) {
-  app.quit();
+  if (shouldQuit) {
+    app.quit();
+    return;
+  }
 }
-
-app.on('second-instance', (event, commandLine, workingDirectory) => {
-  const cmdLine = commandLine[1];
-  if (cmdLine) {
-    let path = commandLine[1].substr(12);
-    log.info(`Opening from second-instance : `, path);
-    win.webContents.send('navigate', path);
-    win.focus();
-  }
-  // Someone tried to run a second instance, we should focus our window.
-  if (win) {
-    if (win.isMinimized()) win.restore();
-    win.focus();
-  }
-});
 
 let deepLink = '';
 
@@ -92,7 +91,7 @@ function createWindow() {
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
   //// uncomment below to open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // Event when the window is closed.
   win.on('closed', function() {
@@ -310,32 +309,33 @@ ipcMain.on('update:check', () => {
 // Oauth stuff
 ipcMain.on('oauth', (event, providerId) => {
   if (providerId === 'google.com') {
-    const provider = new OAuth2Provider({
+    const provider = {
       authorize_url: 'https://accounts.google.com/o/oauth2/auth',
-      access_token_url: 'https://accounts.google.com/o/oauth2/token',
-      response_type: 'code',
       client_id: '716469847404-mketgv15vadpi2pkshjljrh3jiietcn8.apps.googleusercontent.com',
-      redirect_uri: 'http://localhost',
-      scope: 'https://www.googleapis.com/auth/userinfo.profile'
+      redirect_uri: 'http://localhost'
+    };
+    oauth(provider).getCode({scope: 'https://www.googleapis.com/auth/userinfo.profile'}).then(code => {
+      event.sender.send('oauth-reply', code);
     });
-    const window = new BrowserWindow({
-      width: 600,
-      height: 800,
-      webPreferences: {
-        nodeIntegration: false,
-        contextIsolation: true,
-      },
+  }
+  if (providerId === 'facebook.com') {
+    const provider = {
+      authorize_url: 'https://www.facebook.com/v3.0/dialog/oauth',
+      client_id: '2276769899216306',
+      redirect_uri: 'http://localhost'
+    };
+    oauth(provider).getCode({}).then(code => {
+      event.sender.send('oauth-reply', code);
     });
-    provider.perform(window).then(resp => {
-      const query = querystring.parse(resp);
-      console.log(query);
-      const credential = firebase.auth.GoogleAuthProvider.credential(query.access_token);
-      firebase.auth().signInWithCredential(credential)
-        .then(user => {
-          window.close();
-          console.log(user);
-        })
-        .catch(error => console.error(error));
-    }).catch(error => console.log(error));
+  }
+  if (providerId === 'discordapp.com') {
+    const provider = {
+      authorize_url: 'https://discordapp.com/api/oauth2/authorize',
+      client_id: '514350168678727681',
+      redirect_uri: 'http://localhost'
+    };
+    oauth(provider).getCode({scope: 'webhook.incoming'}).then(code => {
+      event.sender.send('oauth-reply', code);
+    });
   }
 });
