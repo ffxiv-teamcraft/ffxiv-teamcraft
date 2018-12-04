@@ -103,7 +103,9 @@
     "Warning": "Warnung",
     "Success": "Erfolg",
     "Copy_to_clipboard": "In Zwischenablage kopieren",
-    "Language": "Sprache"
+    "Language": "Sprache",
+    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Open_in_desktop": "Open in desktop app"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -263,6 +265,7 @@
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
     "Preferred_copy_type": "Preferred copy type",
+    "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
