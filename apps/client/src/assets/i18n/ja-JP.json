@@ -121,6 +121,7 @@
     "Add_note": "ノートを追加する",
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
+    "Open_overlay": "Open overlay",
     "CUSTOM": {
       "Title": "使用者指定、アラーム追加",
       "Name": "名前",
