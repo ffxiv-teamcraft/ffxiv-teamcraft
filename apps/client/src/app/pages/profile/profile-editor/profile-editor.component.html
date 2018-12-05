@@ -11,15 +11,20 @@
                      [nzLabel]="characterEntry.character.Character.Name">
           </nz-option>
         </nz-select>
-        <i nz-icon *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" type="exclamation-circle" nz-tooltip
+        <i nz-icon *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" type="exclamation-circle"
+           nz-tooltip
            [nzTitle]="'Not_verified' | translate"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
-        <button *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button nzType="primary" nzShape="circle" nzSize="small"
-                (click)="verifyCharacter(user.$key, mainCharacter.character.ID)" nz-tooltip
-                [nzTitle]="'PROFILE.VERIFICATION.Title' | translate">
-          <i nz-icon type="check"></i>
-        </button>
+        <ng-container *ngIf="userId$ | async as userId">
+          <button *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button nzType="primary"
+                  nzShape="circle" nzSize="small"
+                  (click)="verifyCharacter(userId, mainCharacter.character.ID)" nz-tooltip
+                  [nzTitle]="'PROFILE.VERIFICATION.Title' | translate">
+            <i nz-icon type="check"></i>
+          </button>
+        </ng-container>
+
         <button nz-button nzType="primary" nzShape="circle" nzSize="small" nz-tooltip
                 [nzTitle]="'PROFILE.Add_character' | translate" (click)="addCharacter()">
           <i nz-icon type="plus"></i>

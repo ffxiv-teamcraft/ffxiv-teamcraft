@@ -18,6 +18,8 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { EorzeanTimeService } from '../../../core/time/eorzean-time.service';
 import { CustomAlarmPopupComponent } from '../custom-alarm-popup/custom-alarm-popup.component';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-alarms-page',
@@ -34,11 +36,16 @@ export class AlarmsPageComponent implements OnInit {
               private _settings: SettingsService, private dialog: NzModalService,
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private etime: EorzeanTimeService,
-              private message: NzMessageService) {
+              private message: NzMessageService, private ipc: IpcService,
+              public platform: PlatformService) {
   }
 
   public get settings(): SettingsService {
     return this._settings;
+  }
+
+  public openOverlay(): void {
+    this.ipc.send('overlay', '/alarms-overlay');
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {

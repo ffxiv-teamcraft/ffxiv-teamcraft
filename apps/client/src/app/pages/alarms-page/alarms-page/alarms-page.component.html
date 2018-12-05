@@ -26,10 +26,16 @@
         </button>
       </div>
       <div class="spacer"></div>
-      <span>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Open_overlay' | translate}}"
+                (click)="openOverlay()" *ngIf="platform.isDesktop()">
+          <i nz-icon type="desktop"></i>
+        </button>
+        <span>
         <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-        {{'Compact_display' | translate}}
+          {{'Compact_display' | translate}}
       </span>
+      </div>
     </div>
 
     <div class="alarms">

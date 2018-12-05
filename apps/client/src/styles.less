@@ -37,12 +37,15 @@ h1, h2, h3, h4, h5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   #logo {
     position: relative;
+
     > img {
       width: 200px;
     }
   }
+
   #logo:before {
     content: "";
     display: block;
@@ -56,6 +59,7 @@ h1, h2, h3, h4, h5 {
     animation: glow 1.5s infinite ease-in-out;
     border-radius: 30%;
   }
+
   .brought-to-you {
     padding-top: 40px;
     font-size: 20px;
@@ -103,12 +107,15 @@ h1, h2, h3, h4, h5 {
 .ant-btn-circle {
   font-size: 20px;
   box-shadow: 0 0 .5px 0 white;
+
   &:not(.ant-btn-primary) {
     box-shadow: 0 0 .5px 0 white inset;
   }
+
   > i.material-icons {
     margin-top: 6px;
   }
+
   &.ant-btn-sm {
     > i.material-icons {
       margin-top: 2px;
@@ -143,6 +150,11 @@ h1, h2, h3, h4, h5 {
 // Tooling
 .page-container {
   padding: 20px 25px;
+
+  &.overlay {
+    padding: 0;
+    height: calc(100% - 21px);
+  }
 }
 
 .spacer {
@@ -234,6 +246,7 @@ h1, h2, h3, h4, h5 {
 .item-row {
   &.craftable {
     background-color: rgba(19, 168, 255, 0.3);
+
     &.odd {
       background-color: rgba(19, 168, 255, .4);
     }
@@ -242,6 +255,7 @@ h1, h2, h3, h4, h5 {
   &.done {
     background-color: rgba(94, 255, 91, 0.15);
     opacity: .6;
+
     &.odd {
       background-color: rgba(94, 255, 91, 0.2);
     }

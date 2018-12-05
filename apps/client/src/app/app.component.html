@@ -1,5 +1,5 @@
 <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container">
-  <nz-layout>
+  <nz-layout *ngIf="!overlay">
     <nz-header class="header">
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
@@ -110,8 +110,9 @@
       </ul>
     </nz-header>
   </nz-layout>
-  <nz-layout class="content-container">
+  <nz-layout class="content-container" [class.overlay]="overlay">
     <nz-sider nzCollapsible
+              *ngIf="!overlay"
               class="sider"
               [(nzCollapsed)]="collapsedSidebar"
               (nzCollapsedChange)="settings.compactSidebar = $event"
@@ -214,11 +215,12 @@
       </div>
     </nz-sider>
     <nz-content>
-      <div class="page-container">
+      <div class="page-container" [class.overlay]="overlay">
         <router-outlet></router-outlet>
       </div>
     </nz-content>
     <nz-sider nzCollapsible
+              *ngIf="!overlay"
               class="right-sider"
               [nzWidth]="230"
               [(nzCollapsed)]="collapsedAlarmsBar"
@@ -226,7 +228,7 @@
       <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
     </nz-sider>
   </nz-layout>
-  <nz-footer fxHide fxShow.lt-sm class="footer">
+  <nz-footer [fxHide]="!overlay" fxShow.lt-sm class="footer">
     <span class="timer">{{time$ | async}}</span>
   </nz-footer>
 </nz-layout>

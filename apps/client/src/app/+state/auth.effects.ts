@@ -131,6 +131,7 @@ export class AuthEffects {
             if (res.Info.Character.State === 1) {
               return {
                 Character: {
+                  ID: lodestoneId.id,
                   Name: 'Parsing character...'
                 }
               };

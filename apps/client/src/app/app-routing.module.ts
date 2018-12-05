@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
   },
   {
+    path: 'alarms-overlay',
+    loadChildren: './pages/alarms-overlay/alarms-overlay.module#AlarmsOverlayModule'
+  },
+  {
     path: 'community-lists',
     loadChildren: './pages/community-lists/community-lists.module#CommunityListsModule'
   },

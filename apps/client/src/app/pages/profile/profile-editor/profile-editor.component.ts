@@ -20,6 +20,8 @@ export class ProfileEditorComponent {
 
   user$ = this.authFacade.user$;
 
+  userId$ = this.authFacade.userId$;
+
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
 
   characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
