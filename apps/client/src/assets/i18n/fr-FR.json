@@ -104,8 +104,8 @@
     "Success": "Succès",
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
     "Language": "Langue",
-    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app"
+    "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
+    "Open_in_desktop": "Ouvrir dans l'application bureau"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -130,10 +130,10 @@
       "Type": "Type de nœud",
       "Map": "Carte",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
+        "Mineral": "Filon de minerai",
+        "Rocky": "Carrière de pierre",
         "Tree": "Arbre mature",
-        "Vegetation": "Lush Vegetation Patch",
+        "Vegetation": "Carré de végétation",
         "Fishing": "Pêche"
       }
     }
@@ -265,7 +265,7 @@
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
     "Preferred_copy_type": "Type de copie préférée",
-    "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
