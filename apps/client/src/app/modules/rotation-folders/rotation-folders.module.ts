@@ -3,22 +3,22 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {
-  ROTATIONFOLDERS_FEATURE_KEY,
   initialState as rotationFoldersInitialState,
+  ROTATIONFOLDERS_FEATURE_KEY,
   rotationFoldersReducer
 } from './+state/rotation-folders.reducer';
 import { RotationFoldersEffects } from './+state/rotation-folders.effects';
 import { RotationFoldersFacade } from './+state/rotation-folders.facade';
 import { CoreModule } from '../../core/core.module';
 import { RotationsModule } from '../rotations/rotations.module';
-import { RotationFolderPanelComponent } from './rotation-folder-panel/rotation-folder-panel.component';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { DatabaseModule } from '../../core/database/database.module';
 
 @NgModule({
-  declarations: [RotationFolderPanelComponent],
   imports: [
     CommonModule,
     CoreModule,
+    DatabaseModule,
     RotationsModule,
     NgxDnDModule,
 
@@ -31,4 +31,5 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
   ],
   providers: [RotationFoldersFacade]
 })
-export class RotationFoldersModule {}
+export class RotationFoldersModule {
+}

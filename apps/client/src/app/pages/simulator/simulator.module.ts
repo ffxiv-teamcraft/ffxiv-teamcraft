@@ -35,6 +35,7 @@ import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
+import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
 
 const routes: Routes = [
   {
@@ -114,10 +115,12 @@ const routes: Routes = [
     RecipeChoicePopupComponent,
     RotationPanelComponent,
     RotationFolderPageComponent,
-    StepByStepReportComponent
+    StepByStepReportComponent,
+    RotationFolderPanelComponent
   ],
   exports: [
-    RotationPanelComponent
+    RotationPanelComponent,
+    RotationFolderPanelComponent
   ],
   entryComponents: [
     MacroPopupComponent,

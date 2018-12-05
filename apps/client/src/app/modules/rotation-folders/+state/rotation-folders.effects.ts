@@ -4,7 +4,7 @@ import {
   CreateRotationFolder,
   DeleteRotationFolder,
   LoadRotationFolder,
-  MyRotationFoldersLoaded,
+  MyRotationFoldersLoaded, RemoveRotationFromFolder,
   RotationFolderLoaded,
   RotationFoldersActionTypes,
   UpdateRotationFolder
@@ -14,6 +14,10 @@ import { map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { CraftingRotationsFolderService } from '../../../core/database/crafting-rotations-folder.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { EMPTY } from 'rxjs';
+import { RemoveListFromWorkshop, UpdateWorkshop, WorkshopsActionTypes } from '../../workshop/+state/workshops.actions';
+import { Workshop } from '../../../model/other/workshop';
+import { RotationFoldersFacade } from './rotation-folders.facade';
+import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 
 @Injectable()
 export class RotationFoldersEffects {
@@ -65,9 +69,21 @@ export class RotationFoldersEffects {
     switchMap(() => EMPTY)
   );
 
+  @Effect()
+  removeListFromWorkshop$ = this.actions$.pipe(
+    ofType<RemoveRotationFromFolder>(RotationFoldersActionTypes.RemoveRotationFromFolder),
+    withLatestFrom(this.foldersFacade.allRotationFolders$),
+    map(([action, folders]: [RemoveRotationFromFolder, CraftingRotationsFolder[]]) => {
+      const folder = folders.find(f => f.$key === action.folderKey);
+      folder.rotationIds = folder.rotationIds.filter(id => id !== action.rotationKey);
+      return new UpdateRotationFolder(folder);
+    })
+  );
+
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
+    private foldersFacade: RotationFoldersFacade,
     private craftingRotationFolderService: CraftingRotationsFolderService
   ) {
   }

@@ -8,13 +8,14 @@ import {
   CreateRotationFolder,
   DeleteRotationFolder,
   LoadMyRotationFolders,
-  LoadRotationFolder,
+  LoadRotationFolder, RemoveRotationFromFolder,
   UpdateRotationFolder
 } from './rotation-folders.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
+import { RemoveListFromWorkshop } from '../../workshop/+state/workshops.actions';
 
 @Injectable()
 export class RotationFoldersFacade {
@@ -26,7 +27,8 @@ export class RotationFoldersFacade {
     select(rotationFoldersQuery.getSelectedRotationFolder)
   );
   myRotationFolders$ = combineLatest(this.allRotationFolders$, this.authFacade.userId$).pipe(
-    map(([folders, userId]) => folders.filter(folder => folder.authorId === userId))
+    map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
+    shareReplay(1)
   );
 
   constructor(private store: Store<RotationFoldersPartialState>,
@@ -43,6 +45,10 @@ export class RotationFoldersFacade {
 
   createFolder(folder: CraftingRotationsFolder): void {
     this.store.dispatch(new CreateRotationFolder(folder));
+  }
+
+  removeRotationFromFolder(rotationKey: string, folderKey: string): void {
+    this.store.dispatch(new RemoveRotationFromFolder(rotationKey, folderKey));
   }
 
   loadFolder(key: string): void {

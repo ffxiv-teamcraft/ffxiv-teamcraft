@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { combineLatest } from 'rxjs';
@@ -24,10 +24,9 @@ export class RotationsPageComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
               private foldersFacade: RotationFoldersFacade) {
-    this.rotations$ = this.rotationsFacade.myRotations$;
-    this.rotationFoldersDisplay$ = combineLatest(this.foldersFacade.myRotationFolders$, this.rotations$).pipe(
+    this.rotationFoldersDisplay$ = combineLatest(this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$).pipe(
       map(([folders, rotations]) => {
-        return folders.map(folder => {
+        return folders.filter(folder => folder.$key !== undefined).map(folder => {
           return {
             folder: folder,
             rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
@@ -38,8 +37,20 @@ export class RotationsPageComponent {
               })
           };
         });
+      }),
+      shareReplay(1)
+    );
+
+    this.rotations$ = combineLatest(this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$).pipe(
+      map(([rotations, folders]) => {
+        return rotations.filter(rotation => {
+          return folders.find(folder => {
+            return folder.rotationIds.find(id => id === rotation.$key) !== undefined;
+          }) === undefined;
+        });
       })
     );
+
     this.foldersFacade.loadMyRotationFolders();
   }
 
@@ -55,10 +66,9 @@ export class RotationsPageComponent {
   }
 
   setRotationIndex(rotation: CraftingRotation, index: number, rotations: CraftingRotation[]): void {
-    // TODO remove from folder
-    // if (list.workshopId !== undefined) {
-    //   this.workshopsFacade.removeListFromWorkshop(list.$key, list.workshopId);
-    // }
+    if (rotation.folderId !== undefined) {
+      this.foldersFacade.removeRotationFromFolder(rotation.$key, rotation.folderId);
+    }
     // Remove list from the array
     rotations = rotations.filter(r => r.$key !== rotation.$key);
     // Insert it at new index
@@ -79,7 +89,7 @@ export class RotationsPageComponent {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
-      nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDER.New_folder')
+      nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.New_folder')
     }).afterClose.pipe(
       filter(name => name !== undefined),
       map(name => {

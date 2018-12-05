@@ -1,7 +1,6 @@
 import { CustomLinksService } from '../custom-links/custom-links.service';
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { DiffService } from '../diff/diff.service';
 import { Observable } from 'rxjs';
 import { ListTemplate } from './list-template';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
@@ -13,7 +12,6 @@ export class ListTemplateService extends CustomLinksService<ListTemplate> {
 
   constructor(protected database: AngularFireDatabase,
               protected serializer: NgSerializerService,
-              protected diffService: DiffService,
               protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
     super(database, serializer, pendingChangesService);

@@ -1,24 +1,23 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
-import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { Component, Input } from '@angular/core';
+import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
-import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { AuthFacade } from '../../../+state/auth.facade';
-import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
-import { RotationFoldersFacade } from '../+state/rotation-folders.facade';
-import { RotationsFacade } from '../../rotations/+state/rotations.facade';
+import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';
+import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 
 @Component({
   selector: 'app-rotation-folder-panel',
   templateUrl: './rotation-folder-panel.component.html',
   styleUrls: ['./rotation-folder-panel.component.less']
 })
-export class RotationFolderPanelComponent implements OnChanges {
+export class RotationFolderPanelComponent {
 
   @Input()
   public set folder(l: CraftingRotationsFolder) {
@@ -40,8 +39,7 @@ export class RotationFolderPanelComponent implements OnChanges {
   );
 
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
-              private rotationsFacade: RotationsFacade) {
+              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService) {
   }
 
   deleteFolder(): void {
@@ -102,14 +100,6 @@ export class RotationFolderPanelComponent implements OnChanges {
 
   trackByCraftingRotation(index: number, rotation: CraftingRotation): string {
     return rotation.$key;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // Filter the rotations we are missing and we need to load
-    this._folder.rotationIds.filter(id => this.rotations.find(l => l.$key === id) === undefined)
-      .forEach((missingRotation) => {
-        this.rotationsFacade.getRotation(missingRotation);
-      });
   }
 
 }

@@ -562,6 +562,15 @@
       "Recipe_quality": "Max quality",
       "Recipe_durability": "Durability"
     },
+    "ROTATIONS": {
+      "FOLDERS": {
+        "Folders": "Rotation folders",
+        "Rename": "Rename folder",
+        "New_folder": "New folder",
+        "Delete_message": "Deleting a folder won't delete the rotations inside.",
+        "Share_link_copied": "Rotation folder share link copied to your clipboard"
+      }
+    },
     "CATEGORY": {
       "Progression": "Progression",
       "Quality": "Quality",
