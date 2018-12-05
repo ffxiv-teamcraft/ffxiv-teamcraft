@@ -5,6 +5,11 @@ import { Observable } from 'rxjs/Observable';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
+import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { filter, map } from 'rxjs/operators';
+import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
+import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-rotations-page',
@@ -15,8 +20,27 @@ export class RotationsPageComponent {
 
   public rotations$: Observable<CraftingRotation[]>;
 
-  constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService) {
+  public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+
+  constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
+              private foldersFacade: RotationFoldersFacade) {
     this.rotations$ = this.rotationsFacade.myRotations$;
+    this.rotationFoldersDisplay$ = combineLatest(this.foldersFacade.myRotationFolders$, this.rotations$).pipe(
+      map(([folders, rotations]) => {
+        return folders.map(folder => {
+          return {
+            folder: folder,
+            rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
+              .filter(r => r !== undefined)
+              .map(rotation => {
+                rotation.folderId = folder.$key;
+                return rotation;
+              })
+          };
+        });
+      })
+    );
+    this.foldersFacade.loadMyRotationFolders();
   }
 
   newRotation(): void {
@@ -49,6 +73,21 @@ export class RotationsPageComponent {
       .forEach(r => {
         this.rotationsFacade.updateRotation(r);
       });
+  }
+
+  newFolder(): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzFooter: null,
+      nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDER.New_folder')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        const folder = new CraftingRotationsFolder();
+        folder.name = name;
+        return folder;
+      })
+    ).subscribe(folder => this.foldersFacade.createFolder(folder));
   }
 
   trackByRotation(index: number, rotation: CraftingRotation): string {

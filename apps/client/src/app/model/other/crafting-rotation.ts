@@ -7,6 +7,9 @@ export class CraftingRotation extends DataWithPermissions {
 
   public name: string;
 
+  // Used as reference to current folder inside rotations page.
+  public folderId?: string;
+
   public index = -1;
 
   public recipe: Partial<Craft>;

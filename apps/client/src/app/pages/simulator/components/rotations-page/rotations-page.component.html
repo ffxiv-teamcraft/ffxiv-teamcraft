@@ -4,6 +4,10 @@
           [nzTitle]="'SIMULATOR.New_rotation' | translate" (click)="newRotation()">
     <i nz-icon type="file-add"></i>
   </button>
+  <button nz-button nzType="primary" nzShape="circle" class="new-rotation" nz-tooltip
+          [nzTitle]="'SIMULATOR.ROTATIONS.FOLDER.New_folder' | translate" (click)="newFolder()">
+    <i nz-icon type="folder-add"></i>
+  </button>
 </div>
 <div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
   <div *ngIf="rotations.length > 0; else noRotations" fxLayout="column" fxLayoutGap="10px"
@@ -12,6 +16,9 @@
     <div *ngFor="let rotation of rotations; trackBy: trackByRotation" ngxDraggable="rotation" [model]="rotation">
       <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
     </div>
+  </div>
+  <div *ngFor="let folderDisplay of rotationFoldersDisplay$ | async">
+    <app-rotation-folder-panel [folder]="folderDisplay.folder" [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
   </div>
   <ng-template #noRotations>
     <app-fullpage-message>
