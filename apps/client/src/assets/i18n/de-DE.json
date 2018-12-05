@@ -121,6 +121,7 @@
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
+    "Open_overlay": "Open overlay",
     "CUSTOM": {
       "Title": "Add custom alarm",
       "Name": "Name",
