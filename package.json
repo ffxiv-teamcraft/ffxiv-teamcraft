@@ -1,18 +1,19 @@
 {
-  "name": "ffxiv-teamcraft",
+  "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
   "version": "5.0.0-beta.2",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
-    "appId": "ffxivteamcraft",
+    "appId": "ffxivteamcraft-beta",
     "artifactName": "${productName}-setup.${ext}",
     "directories": {
       "output": "release"
     },
     "files": [
       "desktop/main.js",
+      "desktop/oauth.js",
       "dist"
     ],
     "protocols": {
@@ -62,6 +63,7 @@
     "electron:start:no-decorators": "electron ./desktop/main.js --native-titlebar",
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
     "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win --dir",
+    "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
@@ -166,7 +168,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "^3.0.10",
+    "electron": "^2.0.14",
     "electron-builder": "^20.28.3",
     "electron-reload": "^1.2.2",
     "firebase-tools": "^4.0.1",

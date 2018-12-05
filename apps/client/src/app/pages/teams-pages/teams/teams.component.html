@@ -32,9 +32,9 @@
                       nz-popconfirm (nzOnConfirm)="clearHook(team)">
                 {{'TEAMS.Disable_discord_updates' | translate}}
               </button>
-              <a *ngIf="team.webhook === undefined" href="{{oauthUrl(team)}}" nz-button nzType="primary">
+              <button *ngIf="team.webhook === undefined" (click)="discordOauth(team)" nz-button nzType="primary">
                 {{'TEAMS.Enable_discord_updates' | translate }}
-              </a>
+              </button>
               <span>{{'COMMON.Language' | translate }}:</span>
               <nz-select [(ngModel)]="team.language" (ngModelChange)="updateTeam(team)">
                 <nz-option [nzLabel]="'en'" [nzValue]="'en'"></nz-option>
