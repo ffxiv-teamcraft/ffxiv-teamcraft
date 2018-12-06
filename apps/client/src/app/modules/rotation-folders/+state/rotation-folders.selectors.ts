@@ -16,9 +16,8 @@ const getLoaded = createSelector(
 
 const getAllRotationFolders = createSelector(
   getRotationFoldersState,
-  getLoaded,
-  (state: RotationFoldersState, isLoaded) => {
-    return isLoaded ? state.list : [];
+  (state: RotationFoldersState) => {
+    return state.list;
   }
 );
 const getSelectedId = createSelector(

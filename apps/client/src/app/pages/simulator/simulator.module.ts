@@ -36,6 +36,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 
 const routes: Routes = [
   {
@@ -69,7 +70,7 @@ const routes: Routes = [
     canActivate: [MaintenanceGuard]
   },
   {
-    path: 'rotations/folder/:folderId',
+    path: 'rotation-folder/:folderId',
     component: RotationFolderPageComponent,
     canActivate: [MaintenanceGuard]
   }
@@ -93,6 +94,7 @@ const routes: Routes = [
     TextQuestionPopupModule,
     PageLoaderModule,
     FavoritesModule,
+    UserAvatarModule,
 
     NgZorroAntdModule,
 

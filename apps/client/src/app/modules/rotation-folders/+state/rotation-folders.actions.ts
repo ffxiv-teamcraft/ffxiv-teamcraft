@@ -12,6 +12,7 @@ export enum RotationFoldersActionTypes {
   CreateRotationFolder = '[RotationFolders] Create Rotation Folder',
   DeleteRotationFolder = '[RotationFolders] Delete Rotation Folder',
   RemoveRotationFromFolder = '[RotationFolders] Remove Rotation From Folder',
+  FolderCreated = '[RotationFolders] Rotation Folder Created'
 }
 
 export class LoadMyRotationFolders implements Action {
@@ -27,6 +28,13 @@ export class MyRotationFoldersLoaded implements Action {
 
 export class SelectRotationFolder implements Action {
   readonly type = RotationFoldersActionTypes.SelectRotationFolder;
+
+  constructor(public key: string) {
+  }
+}
+
+export class FolderCreated implements Action {
+  readonly type = RotationFoldersActionTypes.FolderCreated;
 
   constructor(public key: string) {
   }
@@ -84,5 +92,6 @@ export type RotationFoldersAction =
   | UpdateRotationFolder
   | CreateRotationFolder
   | RemoveRotationFromFolder
+  | FolderCreated
   | DeleteRotationFolder;
 

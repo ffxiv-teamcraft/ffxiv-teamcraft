@@ -69,7 +69,7 @@ export class RotationsPageComponent {
     if (rotation.folderId !== undefined) {
       this.foldersFacade.removeRotationFromFolder(rotation.$key, rotation.folderId);
     }
-    // Remove list from the array
+    // Remove rotation from the array
     rotations = rotations.filter(r => r.$key !== rotation.$key);
     // Insert it at new index
     rotations.splice(index, 0, rotation);

@@ -3,21 +3,22 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   CreateRotationFolder,
   DeleteRotationFolder,
+  FolderCreated,
   LoadRotationFolder,
-  MyRotationFoldersLoaded, RemoveRotationFromFolder,
+  MyRotationFoldersLoaded,
+  RemoveRotationFromFolder,
   RotationFolderLoaded,
   RotationFoldersActionTypes,
   UpdateRotationFolder
 } from './rotation-folders.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { CraftingRotationsFolderService } from '../../../core/database/crafting-rotations-folder.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { EMPTY } from 'rxjs';
-import { RemoveListFromWorkshop, UpdateWorkshop, WorkshopsActionTypes } from '../../workshop/+state/workshops.actions';
-import { Workshop } from '../../../model/other/workshop';
+import { EMPTY, of } from 'rxjs';
 import { RotationFoldersFacade } from './rotation-folders.facade';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
+import { RotationsFacade } from '../../rotations/+state/rotations.facade';
 
 @Injectable()
 export class RotationFoldersEffects {
@@ -37,7 +38,14 @@ export class RotationFoldersEffects {
   loadRotationFolder$ = this.actions$.pipe(
     ofType<LoadRotationFolder>(RotationFoldersActionTypes.LoadRotationFolder),
     mergeMap(action => {
-      return this.craftingRotationFolderService.get(action.key);
+      return this.craftingRotationFolderService.get(action.key).pipe(
+        catchError(() => {
+          return of({ $key: action.key, notFound: true, rotationIds: [] });
+        })
+      );
+    }),
+    tap((folder: CraftingRotationsFolder) => {
+      return folder.rotationIds.forEach(rotationId => this.rotationsFacade.getRotation(rotationId));
     }),
     map(folder => new RotationFolderLoaded(folder))
   );
@@ -48,9 +56,12 @@ export class RotationFoldersEffects {
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]) => {
       action.folder.authorId = userId;
+      if (action.folder.originalAuthorId === undefined) {
+        action.folder.originalAuthorId = userId;
+      }
       return this.craftingRotationFolderService.add(action.folder);
     }),
-    switchMap(() => EMPTY)
+    map((key: string) => new FolderCreated(key))
   );
 
 
@@ -84,6 +95,7 @@ export class RotationFoldersEffects {
     private actions$: Actions,
     private authFacade: AuthFacade,
     private foldersFacade: RotationFoldersFacade,
+    private rotationsFacade: RotationsFacade,
     private craftingRotationFolderService: CraftingRotationsFolderService
   ) {
   }
