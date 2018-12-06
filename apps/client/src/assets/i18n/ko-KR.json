@@ -104,8 +104,8 @@
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
-    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app"
+    "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
+    "Open_in_desktop": "데스크톱 앱에서 열기"
   },
   "ALARMS": {
     "Title": "알람",
@@ -266,7 +266,7 @@
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "기본 복사 유형",
-    "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -564,15 +564,15 @@
     },
     "ROTATIONS": {
       "FOLDERS": {
-        "Folders": "Rotation folders",
-        "Rename": "Rename folder",
-        "New_folder": "New folder",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
-        "Shared_by": "Shared by {{name}}",
-        "Created_by": "Created by {{name}}",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
+        "Folders": "로테이션 폴더",
+        "Rename": "폴더 이름 변경",
+        "New_folder": "새 폴더",
+        "Delete_message": "폴더를 삭제시 폴더내의 로테이션은 삭제되지 않습니다.",
+        "Share_link_copied": "로테이션 폴더 공유용 링크를 클립보드에 복사했습니다",
+        "Shared_by": "공유자: {{name}}",
+        "Created_by": "제작자: {{name}}",
+        "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
+        "Folder_copied": "폴더가 내 계정에 복사되었습니다",
         "Favorite_folders": "Favorite folders"
       }
     },
