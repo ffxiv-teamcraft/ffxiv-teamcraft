@@ -2,7 +2,7 @@
   "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-beta.2",
+  "version": "5.0.0-beta.3",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
