@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file. See [standa
 * alarms overlay for desktop app ([c8aebd4](https://github.com/Supamiu/ffxiv-teamcraft/commit/c8aebd4))
 * better implementation for custom protocol ([fd25ffe](https://github.com/Supamiu/ffxiv-teamcraft/commit/fd25ffe))
 * desktop app is ready with secure oauth ! ([69b5316](https://github.com/Supamiu/ffxiv-teamcraft/commit/69b5316))
-* larger scrollbars and navigation stae persistance for desktop app ([53695ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/53695ee)), closes [#602](https://github.com/Supamiu/ffxiv-teamcraft/issues/602)
+* larger scrollbars and navigation state persistance for desktop app ([53695ee](https://github.com/Supamiu/ffxiv-teamcraft/commit/53695ee)), closes [#602](https://github.com/Supamiu/ffxiv-teamcraft/issues/602)
 * proper support for custom protocol ([b09bda8](https://github.com/Supamiu/ffxiv-teamcraft/commit/b09bda8))
 * support for korean in macro import inside simulator ([6ffa6e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/6ffa6e4))
 * vendor map name is now shown inside vendors panel ([ebca986](https://github.com/Supamiu/ffxiv-teamcraft/commit/ebca986))
