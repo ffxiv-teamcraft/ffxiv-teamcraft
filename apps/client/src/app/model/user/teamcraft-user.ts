@@ -12,7 +12,7 @@ export class TeamcraftUser extends DataModel {
 
   customCharacters: Partial<Character>[] = [];
 
-  favorites: Favorites = { lists: [], workshops: [], rotations: [] };
+  favorites: Favorites = { lists: [], workshops: [], rotations: [], rotationFolders: [] };
 
   contacts: string[] = [];
 

@@ -1,3 +1,31 @@
-<p>
-  rotation-folder-page works!
-</p>
+<div *ngIf="folder$ | async as folder; else loading">
+  <nz-card *ngIf="!folder.notFound; else notFound">
+    <nz-card-meta [nzAvatar]="avatarTemplate" [nzTitle]="folderName"
+                  [nzDescription]="description">
+      <ng-template #description>
+        {{'SIMULATOR.ROTATIONS.FOLDERS.Shared_by' | translate: { name: folder.authorId | characterName | async } }},
+        {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.originalAuthorId | characterName | async } }}
+      </ng-template>
+    </nz-card-meta>
+    <ng-template #avatarTemplate>
+      <app-user-avatar [userId]="folder.authorId"></app-user-avatar>
+    </ng-template>
+    <ng-template #folderName>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+        <div>{{folder.name}}</div>
+        <app-favorite-button type="rotationFolders" [key]="folder.$key"></app-favorite-button>
+      </div>
+    </ng-template>
+    <div *ngIf="rotations$ | async as rotations" class="rotations" fxLayout="column" fxLayoutGap="5px">
+      <app-rotation-panel *ngFor="let rotation of rotations" [rotation]="rotation"></app-rotation-panel>
+    </div>
+  </nz-card>
+  <ng-template #notFound>
+    <app-fullpage-message>
+      {{'SIMULATOR.ROTATIONS.FOLDERS.Not_found' | translate}}
+    </app-fullpage-message>
+  </ng-template>
+</div>
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>

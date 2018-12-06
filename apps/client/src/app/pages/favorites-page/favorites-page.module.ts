@@ -9,6 +9,7 @@ import { ListModule } from '../../modules/list/list.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { SimulatorModule } from '../simulator/simulator.module';
+import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     ListModule,
     WorkshopModule,
     RotationsModule,
+    RotationFoldersModule,
     SimulatorModule,
 
     NgZorroAntdModule,

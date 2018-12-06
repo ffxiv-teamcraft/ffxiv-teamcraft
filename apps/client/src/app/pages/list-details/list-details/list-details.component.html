@@ -54,9 +54,10 @@
                 [nzTitle]="'LIST_DETAILS.Inventory_breakdown' | translate">
           <i class="material-icons">apps</i>
         </button>
-        <button [disabled]="list.modificationsHistory.length === 0" nz-button nzType="primary" nzShape="circle"
+        <button nz-button nzType="primary" nzShape="circle"
                 (click)="openHistoryPopup(list)" nz-tooltip
-                [nzTitle]="'LIST.History' | translate" [disabled]="(permissionLevel$ | async) < 20">
+                [nzTitle]="'LIST.History' | translate"
+                [disabled]="list.modificationsHistory.length === 0 || (permissionLevel$ | async) < 20">
           <i class="material-icons">history</i>
         </button>
       </div>

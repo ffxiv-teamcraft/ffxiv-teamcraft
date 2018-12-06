@@ -53,14 +53,6 @@ export function rotationsReducer(
       break;
     }
 
-    case RotationsActionTypes.UpdateRotation: {
-      state = {
-        ...state,
-        rotations: [...state.rotations.map(rotation => rotation.$key === action.rotation.$key ? action.rotation : rotation)]
-      };
-      break;
-    }
-
     case RotationsActionTypes.SelectRotation: {
       state = {
         ...state,

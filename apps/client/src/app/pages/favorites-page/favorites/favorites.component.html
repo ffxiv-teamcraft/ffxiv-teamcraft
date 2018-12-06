@@ -25,3 +25,13 @@
     </div>
   </ng-template>
 </nz-list>
+
+<nz-list [nzHeader]="'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate" [nzRenderItem]="folderRow"
+         [nzDataSource]="rotationFolders"
+         *ngIf="rotationFolders$ | async as rotationFolders">
+  <ng-template #folderRow let-folder>
+    <div class="favorite-row">
+      <app-rotation-folder-panel [folder]="folder.folder" [rotations]="folder.rotations"></app-rotation-folder-panel>
+    </div>
+  </ng-template>
+</nz-list>
