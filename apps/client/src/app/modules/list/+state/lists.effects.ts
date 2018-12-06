@@ -28,7 +28,7 @@ import {
   first,
   map,
   mergeMap,
-  switchMap,
+  switchMap, tap,
   withLatestFrom
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -41,6 +41,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ListsEffects {
@@ -225,7 +226,8 @@ export class ListsEffects {
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
-    map(action => new DeleteList(action.payload.$key))
+    map(action => new DeleteList(action.payload.$key)),
+    tap(() => this.router.navigate(['/lists']))
   );
 
   @Effect()
@@ -272,6 +274,7 @@ export class ListsEffects {
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,
+    private router: Router,
     private discordWebhookService: DiscordWebhookService
   ) {
   }

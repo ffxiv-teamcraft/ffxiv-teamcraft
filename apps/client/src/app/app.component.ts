@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -123,6 +123,7 @@ export class AppComponent implements OnInit {
     // Custom protocol detection
     this.hasDesktop$ = this.hasDesktopReloader$.pipe(
       switchMap(() => router.events),
+      first(),
       filter(current => current instanceof NavigationEnd),
       switchMap((current: NavigationEnd) => {
         let url = current.url;
