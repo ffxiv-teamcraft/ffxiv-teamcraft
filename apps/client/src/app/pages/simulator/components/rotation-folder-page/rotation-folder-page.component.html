@@ -3,8 +3,7 @@
     <nz-card-meta [nzAvatar]="avatarTemplate" [nzTitle]="folderName"
                   [nzDescription]="description">
       <ng-template #description>
-        {{'SIMULATOR.ROTATIONS.FOLDERS.Shared_by' | translate: { name: folder.authorId | characterName | async } }},
-        {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.originalAuthorId | characterName | async } }}
+        {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.authorId | characterName | async } }}
       </ng-template>
     </nz-card-meta>
     <ng-template #avatarTemplate>
