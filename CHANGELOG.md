@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file. See [standa
 * proper support for custom protocol ([b09bda8](https://github.com/Supamiu/ffxiv-teamcraft/commit/b09bda8))
 * support for korean in macro import inside simulator ([6ffa6e4](https://github.com/Supamiu/ffxiv-teamcraft/commit/6ffa6e4))
 * vendor map name is now shown inside vendors panel ([ebca986](https://github.com/Supamiu/ffxiv-teamcraft/commit/ebca986))
-* you can now create and share rotation fodlers ([12fb7a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/12fb7a6))
+* you can now create and share rotation folders ([12fb7a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/12fb7a6))
 
 
 
