@@ -85,6 +85,7 @@
     "help": "./node_modules/.bin/nx help",
     "ng:g": "ng g --project=client --styleext=less --spec=false",
     "electron-builder": "electron-builder",
+    "bundle-report": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "***********SSR STUFF***************": "",
     "build": "ng build && npm run build:ssr",
     "build:ssr": "ng run client:server && npm run webpack:ssr",
@@ -195,6 +196,7 @@
     "tslint": "~5.9.1",
     "typescript": "~3.1.6",
     "validate-commit-msg": "^2.14.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "ws": "^6.0.0",
     "xhr2": "^0.1.4"
   },
