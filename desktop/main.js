@@ -36,7 +36,7 @@ if (isDev) {
 }
 
 if (!options.multi) {
-  const shouldQuit = app.makeSingleInstance(function (commandLine) {
+  const shouldQuit = app.makeSingleInstance(function(commandLine) {
     // Someone tried to run a second instance, we should focus our window.
     if (win && !options.multi) {
       const cmdLine = commandLine[1];
@@ -73,6 +73,8 @@ function createWindow() {
   if (process.platform === 'win32') {
     log.info(`Opening from argv : `, process.argv.slice(1));
     deepLink = process.argv.slice(1).toString().substr(12);
+  } else {
+    deepLink = config.get('router:uri') || '';
   }
   let opts = {
     show: false,
@@ -129,6 +131,7 @@ function createWindow() {
     config.set('win:bounds', win.getBounds());
     config.set('win:fullscreen', win.isMaximized());
     config.set('win:alwaysOnTop', win.isAlwaysOnTop());
+    config.set('router:uri', deepLink);
   });
 
   const iconPath = path.join(BASE_APP_PATH, 'assets/logo.png');
@@ -302,6 +305,10 @@ ipcMain.on('minimize', () => {
   win.minimize();
 });
 
+ipcMain.on('navigated', (event, uri) => {
+  deepLink = uri;
+});
+
 ipcMain.on('update:check', () => {
   autoUpdater.checkForUpdates();
 });
@@ -314,7 +321,7 @@ ipcMain.on('oauth', (event, providerId) => {
       client_id: '716469847404-mketgv15vadpi2pkshjljrh3jiietcn8.apps.googleusercontent.com',
       redirect_uri: 'http://localhost'
     };
-    oauth(provider).getCode({scope: 'https://www.googleapis.com/auth/userinfo.profile'}).then(code => {
+    oauth(provider).getCode({ scope: 'https://www.googleapis.com/auth/userinfo.profile' }).then(code => {
       event.sender.send('oauth-reply', code);
     });
   }
@@ -334,7 +341,7 @@ ipcMain.on('oauth', (event, providerId) => {
       client_id: '514350168678727681',
       redirect_uri: 'http://localhost'
     };
-    oauth(provider).getCode({scope: 'webhook.incoming'}).then(code => {
+    oauth(provider).getCode({ scope: 'webhook.incoming' }).then(code => {
       event.sender.send('oauth-reply', code);
     });
   }

@@ -107,6 +107,7 @@ export class AppComponent implements OnInit {
         })
       ).subscribe((event: any) => {
       this.overlay = event.url.indexOf('?overlay') > -1;
+      this.ipc.send('navigated', event.url);
       this.ipc.on('window-decorator', (e, value) => {
         this.windowDecorator = value;
       });
