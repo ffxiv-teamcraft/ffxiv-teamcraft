@@ -562,6 +562,20 @@
       "Recipe_quality": "Calidad máxima",
       "Recipe_durability": "Durabilidad"
     },
+    "ROTATIONS": {
+      "FOLDERS": {
+        "Folders": "Rotation folders",
+        "Rename": "Rename folder",
+        "New_folder": "New folder",
+        "Delete_message": "Deleting a folder won't delete the rotations inside.",
+        "Share_link_copied": "Rotation folder share link copied to your clipboard",
+        "Shared_by": "Shared by {{name}}",
+        "Created_by": "Created by {{name}}",
+        "Copy_folder": "Copy this folder and its content to your account",
+        "Folder_copied": "Folder copied to your account",
+        "Favorite_folders": "Favorite folders"
+      }
+    },
     "CATEGORY": {
       "Progression": "Progresión",
       "Quality": "Calidad",
