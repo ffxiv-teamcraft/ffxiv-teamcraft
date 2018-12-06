@@ -87,7 +87,8 @@ export class LayoutsFacade {
       map(layout => {
         return {
           title: 'Items',
-          rows: this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder),
+          rows: this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
+            .filter(row => layout.recipeHideCompleted ? row.done >= row.amount : true),
           // Random number, as this panel isn't ordered at all
           index: 10000,
           hideIfEmpty: false,
