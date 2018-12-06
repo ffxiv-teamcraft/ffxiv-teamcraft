@@ -114,7 +114,7 @@ export class ListsComponent {
             return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
               && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
           })
-          .filter(l => l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
+          .filter(l => !l.notFound && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;
