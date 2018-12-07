@@ -313,6 +313,8 @@
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
     "Lists_search_placeholder": "목록 검색",
+    "Add_to_a_list": "Add to a list",
+    "Please_pick_recipe": "Please pick a recipe for this item",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
