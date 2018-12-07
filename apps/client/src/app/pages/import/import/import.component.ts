@@ -13,12 +13,14 @@ import { DataService } from '../../../core/api/data.service';
 })
 export class ImportComponent {
 
-  public items$: Observable<{ item: ItemData, quantity: number, recipeId?: string }[]>;
+  public items$: Observable<{ itemData: ItemData, quantity: number, recipeId?: string }[]>;
 
   wrongFormat = false;
 
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
               private dataService: DataService) {
+
+    // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx
     this.items$ = this.route.paramMap.pipe(
       map(params => params.get('importString')),
       map(importString => {
@@ -37,23 +39,38 @@ export class ImportComponent {
             itemId: itemId,
             recipeId: recipeId,
             quantity: quantity
-          }
+          };
         });
       }),
       switchMap(rows => {
         return combineLatest(rows.map(row => {
           return this.dataService.getItem(row.itemId).pipe(
             map(itemData => {
-              return {
-                item: itemData,
+              const res = {
+                itemData: itemData,
                 recipeId: row.recipeId,
                 quantity: row.quantity
-              }
+              };
+
+              // if (res.recipeId === 'null' && itemData.isCraft()) {
+              //   res.recipeId = itemData.item.craft[0].id.toString();
+              // }
+              return res;
             })
-          )
-        }))
+          );
+        }));
       })
     );
+  }
+
+  canDoImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): boolean {
+    return data.reduce((valid, row) => {
+      return valid && (!row.itemData.isCraft() || row.recipeId !== 'null');
+    }, true);
+  }
+
+  doImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): void {
+    //TODO
   }
 
 }
