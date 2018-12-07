@@ -242,7 +242,6 @@
   "Benefits": "이윤",
   "Minimal_craft_cost": "최소 제작 비용",
   "Used_for": "사용처",
-  "xivdb_cart_import": "목록 가져오는 중",
   "Or": "또는",
   "Make_donation": "후원하기",
   "Data_from_gt": "garlandtools.org에서 제공받은 데이터",
@@ -315,6 +314,7 @@
     "Lists_search_placeholder": "목록 검색",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
+    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
