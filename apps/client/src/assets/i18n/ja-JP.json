@@ -313,6 +313,8 @@
     "Outdated_tag": "満了",
     "No_lists": "リストにありません",
     "Lists_search_placeholder": "リスト検索",
+    "Add_to_a_list": "Add to a list",
+    "Please_pick_recipe": "Please pick a recipe for this item",
     "IMPORT": {
       "Title": "外部サイトからリストを持って来る",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
