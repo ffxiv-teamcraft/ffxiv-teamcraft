@@ -99,6 +99,11 @@ export class LayoutEditorComponent {
     this.dirty = true;
   }
 
+  updatePanel(layout: ListLayout, row: LayoutRow): void {
+    layout.rows = layout.rows.map(r => r.name === row.name ? row : r);
+    this.dirty = true;
+  }
+
   save(layout: ListLayout): void {
     this.layoutsFacade.updateLayout(layout);
     this.dirty = false;
