@@ -313,6 +313,8 @@
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n’avez pas de listes",
     "Lists_search_placeholder": "Rechercher une liste...",
+    "Add_to_a_list": "Add to a list",
+    "Please_pick_recipe": "Please pick a recipe for this item",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
