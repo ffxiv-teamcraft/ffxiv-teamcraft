@@ -11,6 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
+import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 
 const routes: Routes = [
   {
@@ -31,6 +33,8 @@ const routes: Routes = [
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,
+    ProgressPopupModule,
+    ListPickerModule,
 
     PageLoaderModule
   ],

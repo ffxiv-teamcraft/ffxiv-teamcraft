@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { combineLatest, Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { combineLatest, concat, Observable } from 'rxjs';
+import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 
 @Component({
   selector: 'app-import',
@@ -18,7 +21,9 @@ export class ImportComponent {
   wrongFormat = false;
 
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
-              private dataService: DataService) {
+              private dataService: DataService, private router: Router,
+              private listManager: ListManagerService, private progressService: ProgressPopupService,
+              private listsFacade: ListsFacade) {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx
     this.items$ = this.route.paramMap.pipe(
@@ -33,7 +38,7 @@ export class ImportComponent {
         return exploded.map(row => {
           const rowContent = row.split(',');
           const itemId = +rowContent[0];
-          const recipeId = rowContent[1];
+          const recipeId = rowContent[1] === 'null'?null:rowContent[1];
           const quantity = +rowContent[2];
           return {
             itemId: itemId,
@@ -52,9 +57,9 @@ export class ImportComponent {
                 quantity: row.quantity
               };
 
-              // if (res.recipeId === 'null' && itemData.isCraft()) {
-              //   res.recipeId = itemData.item.craft[0].id.toString();
-              // }
+              if (res.recipeId === null && itemData.isCraft()) {
+                res.recipeId = itemData.item.craft[0].id.toString();
+              }
               return res;
             })
           );
@@ -65,12 +70,37 @@ export class ImportComponent {
 
   canDoImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): boolean {
     return data.reduce((valid, row) => {
-      return valid && (!row.itemData.isCraft() || row.recipeId !== 'null');
+      return valid && (!row.itemData.isCraft() || row.recipeId !== null);
     }, true);
   }
 
   doImport(data: { itemData: ItemData, quantity: number, recipeId?: string }[]): void {
-    //TODO
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operation$ = concat(
+          ...data.map(row => {
+            return this.listManager.addToList(row.itemData.item.id, list, +row.recipeId, row.quantity);
+          })
+        );
+        return this.progressService.showProgress(operation$,
+          data.length,
+          'Adding_recipes',
+          { amount: data.length, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest(this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt === list.createdAt && l.$key === list.$key && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.router.navigate(['list', list.$key]);
+    });
   }
 
 }

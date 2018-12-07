@@ -26,7 +26,7 @@ export class ListManagerService {
               private teamsFacade: TeamsFacade) {
   }
 
-  public addToList(itemId: number, list: List, recipeId: string, amount = 1, collectible = false, ignoreHooks = false): Observable<List> {
+  public addToList(itemId: number, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false): Observable<List> {
     let team$ = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
@@ -54,7 +54,7 @@ export class ListManagerService {
           let toAdd: ListRow;
           // If this is a craft
           if (data.isCraft()) {
-            const craft = data.getCraft(recipeId);
+            const craft = data.getCraft(recipeId.toString());
             const ingredients: Ingredient[] = [];
             // We have to remove unused ingredient properties.
             craft.ingredients.forEach(i => {
@@ -80,7 +80,7 @@ export class ListManagerService {
               done: 0,
               used: 0,
               yield: yields,
-              recipeId: recipeId,
+              recipeId: recipeId.toString(),
               requires: ingredients,
               craftedBy: crafted,
               usePrice: true
@@ -106,7 +106,7 @@ export class ListManagerService {
               item: data.item,
               data: data,
               amount: added
-            }], this.gt, this.i18n, recipeId);
+            }], this.gt, this.i18n, recipeId.toString());
           }
           // Process items to add details.
           addition.forEach(item => {

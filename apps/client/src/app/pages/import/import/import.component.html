@@ -1,6 +1,7 @@
 <div class="import-container">
+  <h2>{{'Import' | translate}}</h2>
   <div class="description">
-    TODO description
+    {{'LISTS.Import_description' | translate}}
   </div>
   <div *ngIf="items$ | async as rows; else loading" fxLayout="column" class="items-container">
     <div class="item-row" fxLayout="row" fxLayoutGap="5px" *ngFor="let row of rows; let odd = odd;"
@@ -9,7 +10,7 @@
       <div class="item-name">{{row.itemData.item.id | itemName | i18n}} x{{row.quantity}}</div>
       <div fxFlex="1 1 auto">
         <nz-alert nzType="error" *ngIf="row.itemData.isCraft() && row.recipeId === null"
-                  [nzMessage]="'LISTS.Please_pick_recipe' | translate"></nz-alert>
+                  [nzMessage]="'LISTS.Please_pick_recipe' | translate" nzShowIcon></nz-alert>
       </div>
       <nz-radio-group [(ngModel)]="row.recipeId" *ngIf="row.itemData.isCraft()">
         <label nz-radio-button [nzValue]="craft.id.toString()" *ngFor="let craft of row.itemData.item.craft">
