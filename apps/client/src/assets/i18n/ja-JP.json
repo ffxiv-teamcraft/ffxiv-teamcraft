@@ -242,7 +242,6 @@
   "Benefits": "利潤",
   "Minimal_craft_cost": "最小制作費用",
   "Used_for": "使用先",
-  "xivdb_cart_import": "リストを呼び寄せる中",
   "Or": "または",
   "Make_donation": "後援する",
   "Data_from_gt": "garlandtools.orgから提供されたデータ",
@@ -315,6 +314,7 @@
     "Lists_search_placeholder": "リスト検索",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
+    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
       "Title": "外部サイトからリストを持って来る",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
