@@ -242,7 +242,6 @@
   "Benefits": "Bénéfice",
   "Minimal_craft_cost": "Coût minimal de fabrication",
   "Used_for": "Utilisé pour",
-  "xivdb_cart_import": "Import de la liste",
   "Or": "ou",
   "Make_donation": "Faire un don",
   "Data_from_gt": "Données fournies par garlandtools.org",
@@ -315,6 +314,7 @@
     "Lists_search_placeholder": "Rechercher une liste...",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
+    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
