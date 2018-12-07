@@ -9,6 +9,11 @@
                   (click)="$event.stopPropagation();renameRotation(rotation)">
             <i nz-icon type="edit"></i>
           </button>
+          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                  [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                  ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
+            <i nz-icon type="share-alt"></i>
+          </button>
           <a (click)="$event.stopPropagation()" nz-tooltip [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
              nz-button
              [nzShape]="'circle'"
@@ -16,11 +21,6 @@
              [routerLink]="getRouterLink(rotation)">
             <i nz-icon type="folder-open"></i>
           </a>
-          <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
-                  [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
-                  ngxClipboard [cbContent]="getLink(rotation)" (cbOnSuccess)="afterLinkCopy()">
-            <i nz-icon type="share-alt"></i>
-          </button>
           <button (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'" [nzType]="'danger'" nz-popconfirm
                   [nzTitle]="'SIMULATOR.Confirm_delete' | translate" (nzOnConfirm)="delete(rotation)"
                   *ngIf="(permissionLevel$ | async) >= 40">
