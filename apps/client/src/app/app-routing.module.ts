@@ -62,6 +62,14 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: './pages/about/about.module#AboutModule'
+  },
+  {
+    path: 'import',
+    loadChildren: './pages/import/import.module#ImportModule'
+  },
+  {
+    path: 'list-import/:importString',
+    redirectTo: 'import/:importString'
   }
 ];
 
