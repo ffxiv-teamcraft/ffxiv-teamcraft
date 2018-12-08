@@ -74,6 +74,7 @@
     "Patreon_supporters": "Patreon-Unterstützer",
     "Contributors": "Mitwirkende"
   },
+  "Patreon_login_success": "Patreon login success !",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
@@ -105,7 +106,8 @@
     "Copy_to_clipboard": "In Zwischenablage kopieren",
     "Language": "Sprache",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app"
+    "Open_in_desktop": "Open in desktop app",
+    "Admin": "Administrator"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -266,6 +268,11 @@
     "No_update_available": "Kein Update verfügbar",
     "Preferred_copy_type": "Preferred copy type",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Account": "Account",
+    "Reset_password": "Reset password",
+    "Reset_password_warning": "Are you sure you want to reset your password?",
+    "Password_reset_mail_sent": "Password reset email sent",
+    "Connect_with_patreon": "Connect with patreon",
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
@@ -284,10 +291,6 @@
     "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
     "Nickname": "Nickname",
     "No_nickname": "Kein Nickname vergeben",
-    "Patreon_link_email": "Mit Patreon-Email verknüpfen",
-    "Patreon_edit_email": "Patreon-Email ändern",
-    "Email_already_used": "Email ist bereits mit einem anderen Account verknüpft",
-    "Patreon_email": "Patreon-Email",
     "Contacts": "Kontakte",
     "Add_new_contact": "Neuer Kontakt",
     "Save_for_all": "Für alle speichern",
