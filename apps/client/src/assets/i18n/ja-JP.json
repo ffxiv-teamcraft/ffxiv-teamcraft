@@ -74,6 +74,7 @@
     "Patreon_supporters": "Patreonサポーター",
     "Contributors": "助っ人"
   },
+  "Patreon_login_success": "Patreon login success !",
   "Hide_if_empty": "空いてる場合隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -105,7 +106,8 @@
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app"
+    "Open_in_desktop": "Open in desktop app",
+    "Admin": "Administrator"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -266,6 +268,11 @@
     "No_update_available": "使用可能なアップデートがありません。",
     "Preferred_copy_type": "基本コピー類型",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Account": "Account",
+    "Reset_password": "Reset password",
+    "Reset_password_warning": "Are you sure you want to reset your password?",
+    "Password_reset_mail_sent": "Password reset email sent",
+    "Connect_with_patreon": "Connect with patreon",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピー",
       "Isearch": "/アイテム検索 マクロコピー"
@@ -284,10 +291,6 @@
     "Feature_requires_nickname": "この機能はニックネームの設定が必要です",
     "Nickname": "ニックネーム",
     "No_nickname": "ニックネームが設定されていません",
-    "Patreon_link_email": "Patreonのメールアドレスにリンクする",
-    "Patreon_edit_email": "Patreon Eメール編集",
-    "Email_already_used": "Eメールが既に他のアカウントに繋がれています",
-    "Patreon_email": "Patreonのメールアドレス",
     "Contacts": "連絡先",
     "Add_new_contact": "新しい連絡先",
     "Save_for_all": "全て保存する",
