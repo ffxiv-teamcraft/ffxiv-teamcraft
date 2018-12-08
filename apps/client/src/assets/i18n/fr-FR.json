@@ -74,6 +74,7 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
+  "Patreon_login_success": "Patreon login success !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -105,7 +106,8 @@
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
     "Language": "Langue",
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
-    "Open_in_desktop": "Ouvrir dans l'application bureau"
+    "Open_in_desktop": "Ouvrir dans l'application bureau",
+    "Admin": "Administrator"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -266,6 +268,11 @@
     "No_update_available": "Pas de mise à jour disponible",
     "Preferred_copy_type": "Type de copie préférée",
     "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
+    "Account": "Account",
+    "Reset_password": "Reset password",
+    "Reset_password_warning": "Are you sure you want to reset your password?",
+    "Password_reset_mail_sent": "Password reset email sent",
+    "Connect_with_patreon": "Connect with patreon",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -284,10 +291,6 @@
     "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
     "Nickname": "Pseudonyme",
     "No_nickname": "Aucun pseudo configuré",
-    "Patreon_link_email": "Lier mon email patreon",
-    "Patreon_edit_email": "Editer mon email patreon",
-    "Email_already_used": "Email déjà lié à un autre compte",
-    "Patreon_email": "Email Patreon",
     "Contacts": "Contacts",
     "Add_new_contact": "Nouveau Contact",
     "Save_for_all": "Sauvegarder pour tous",
