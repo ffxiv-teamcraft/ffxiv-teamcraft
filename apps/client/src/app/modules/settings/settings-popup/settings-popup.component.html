@@ -28,4 +28,14 @@
       </nz-form-item>
     </div>
   </nz-tab>
+  <nz-tab [nzTitle]="'SETTINGS.Account' | translate" *ngIf="loggedIn$ | async">
+    <div fxLayout="column" fxLayoutGap="10px" class="account-buttons">
+      <button nz-button nz-popconfirm [nzTitle]="'SETTINGS.Reset_password_warning'" (nzOnConfirm)="resetPassword()">
+        {{'SETTINGS.Reset_password' | translate}}
+      </button>
+      <button nz-button nzType="primary" (click)="patreonOauth()">
+        {{'SETTINGS.Connect_with_patreon' | translate}}
+      </button>
+    </div>
+  </nz-tab>
 </nz-tabset>

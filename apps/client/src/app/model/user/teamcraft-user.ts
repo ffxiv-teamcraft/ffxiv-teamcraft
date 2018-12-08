@@ -21,4 +21,10 @@ export class TeamcraftUser extends DataModel {
   patron = false;
 
   defaultConsumables: DefaultConsumables;
+
+  patreonToken?: string;
+
+  patreonRefreshToken?: string;
+
+  lastPatreonRefresh?: number;
 }

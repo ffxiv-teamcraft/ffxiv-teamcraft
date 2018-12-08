@@ -6,6 +6,8 @@ import { CharacterService } from '../../../core/api/character.service';
 import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-public-profile',
@@ -16,12 +18,14 @@ export class PublicProfileComponent {
 
   public characterEntry$: Observable<{ character: Character, verified: boolean }>;
 
+  public user$: Observable<TeamcraftUser>;
+
   public communityLists$: Observable<List[]>;
 
   notFound = false;
 
   constructor(private route: ActivatedRoute, private characterService: CharacterService,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private authFacade: AuthFacade) {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
       shareReplay(1)
@@ -33,6 +37,7 @@ export class PublicProfileComponent {
         return EMPTY;
       })
     );
+    this.user$ = this.authFacade.user$;
     this.listsFacade.loadCommunityLists();
     this.communityLists$ = combineLatest(userId$, this.listsFacade.communityLists$).pipe(
       map(([userId, lists]) => {

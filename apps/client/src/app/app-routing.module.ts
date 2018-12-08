@@ -68,6 +68,10 @@ const routes: Routes = [
     loadChildren: './pages/import/import.module#ImportModule'
   },
   {
+    path: 'patreon-redirect',
+    loadChildren: './pages/patreon-redirect/patreon-redirect.module#PatreonRedirectModule'
+  },
+  {
     path: 'list-import/:importString',
     redirectTo: 'import/:importString'
   }

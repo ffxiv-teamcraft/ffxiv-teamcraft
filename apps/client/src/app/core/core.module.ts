@@ -28,6 +28,7 @@ import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
+import { PatreonService } from './patreon/patreon.service';
 
 
 @NgModule({
@@ -51,7 +52,6 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
   providers: [
     UserService,
     PendingChangesService,
-    IpcService,
     PlatformService,
     DataService,
     MathToolsService,
@@ -60,7 +60,8 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
     BellNodesService,
     HtmlToolsService,
     LinkToolsService,
-    DiscordWebhookService
+    DiscordWebhookService,
+    PatreonService
   ],
   declarations: [
     I18nPipe,
@@ -84,7 +85,8 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        CharacterService
+        CharacterService,
+        IpcService
       ]
     };
   }

@@ -29,6 +29,7 @@ import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
+import { PatreonService } from '../core/patreon/patreon.service';
 import UserCredential = firebase.auth.UserCredential;
 
 @Injectable({
@@ -75,6 +76,12 @@ export class AuthEffects {
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid)),
     catchError(() => of(new TeamcraftUser())),
+    tap(user => {
+      // If token has been refreshed more than 3 weeks ago, refresh it now.
+      if (Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
+        this.patreonService.refreshToken(user);
+      }
+    }),
     map(user => new UserFetched(user))
   );
 
@@ -199,6 +206,7 @@ export class AuthEffects {
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private notificationService: NzNotificationService, private authFacade: AuthFacade) {
+              private notificationService: NzNotificationService, private authFacade: AuthFacade,
+              private patreonService: PatreonService) {
   }
 }
