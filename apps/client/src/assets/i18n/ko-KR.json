@@ -74,6 +74,7 @@
     "Patreon_supporters": "Patreon 후원자",
     "Contributors": "기여자"
   },
+  "Patreon_login_success": "Patreon login success !",
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
@@ -105,7 +106,8 @@
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
     "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
-    "Open_in_desktop": "데스크톱 앱에서 열기"
+    "Open_in_desktop": "데스크톱 앱에서 열기",
+    "Admin": "Administrator"
   },
   "ALARMS": {
     "Title": "알람",
@@ -266,6 +268,11 @@
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
+    "Account": "Account",
+    "Reset_password": "Reset password",
+    "Reset_password_warning": "Are you sure you want to reset your password?",
+    "Password_reset_mail_sent": "Password reset email sent",
+    "Connect_with_patreon": "Connect with patreon",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -284,10 +291,6 @@
     "Feature_requires_nickname": "이 기능은 닉네임 설정이 필요합니다",
     "Nickname": "닉네임",
     "No_nickname": "닉네임이 설정되지 않았습니다",
-    "Patreon_link_email": "Patreon 이메일 연결",
-    "Patreon_edit_email": "Patreon 이메일 편집",
-    "Email_already_used": "이메일이 이미 다른 계정에 연결되어 있습니다",
-    "Patreon_email": "Patreon 이메일",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
     "Save_for_all": "모두 저장",
