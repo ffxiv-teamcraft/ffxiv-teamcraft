@@ -112,10 +112,12 @@
   </div>
   <div class="results">
     <app-page-loader [loading]="loading">
-      <div *ngFor="let item of results; trackBy: trackByItem" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px"
+      <div *ngFor="let item of results; trackBy: trackByItem; let odd = odd" fxLayout="row" fxLayout.lt-md="column"
+           fxLayoutGap="5px"
            fxLayoutAlign="space-between center"
            fxLayoutAlign.lt-md="center center"
-           class="result-row">
+           class="result-row"
+           [class.odd]="odd">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div class="checkbox">
             <label nz-checkbox [(ngModel)]="item.selected"

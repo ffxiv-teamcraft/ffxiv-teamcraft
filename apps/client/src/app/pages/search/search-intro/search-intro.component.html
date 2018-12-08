@@ -1,12 +1,12 @@
 <div fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-  <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
-  <h2 *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: {amount: counter} }}</h2>
   <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" class="patreon"> <img
     src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png" alt="patreon logo"
     class="patreon-logo">{{"SEARCH_INTRO.Support_patreon" | translate}}</a>
   <a href="https://donorbox.org/ffxiv-teamcraft-funding" target="_blank" nz-button nzType="primary">
     {{"SEARCH_INTRO.Donation_button" | translate}}
   </a>
+  <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
+  <h2 *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: {amount: counter} }}</h2>
 </div>
 <div fxLayout="column" fxLayoutAlign="flex-start" class="list-container">
   <nz-list [nzRenderItem]="featureRow" [nzDataSource]="features" nzSplit="false" [nzHeader]="'SEARCH_INTRO.Features_header' | translate">
