@@ -10,10 +10,13 @@ export class UserPickerService {
   constructor(private dialog: NzModalService, private translate: TranslateService) {
   }
 
-  public pickUserId(): Observable<string> {
+  public pickUserId(hideContacts = false): Observable<string> {
     return this.dialog.create({
       nzTitle: this.translate.instant('Pick_a_user'),
       nzContent: UserPickerComponent,
+      nzComponentParams: {
+        hideContacts: hideContacts
+      },
       nzFooter: null
     }).afterClose;
   }

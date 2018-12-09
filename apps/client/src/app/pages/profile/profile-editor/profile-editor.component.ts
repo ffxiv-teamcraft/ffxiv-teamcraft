@@ -76,7 +76,7 @@ export class ProfileEditorComponent {
   }
 
   newContact(user: TeamcraftUser): void {
-    this.userPicker.pickUserId().pipe(
+    this.userPicker.pickUserId(true).pipe(
       filter(userId => {
         return userId !== undefined && (user.contacts || []).indexOf(userId) === -1;
       }),
