@@ -5,9 +5,13 @@
         <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName | i18n"
                        [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
         <div class="center-content">
-          <div class="item-name">{{row.alarm.itemId | itemName | i18n}} <span class="slot" *ngIf="row.alarm.slot"
-          >({{row.alarm.slot}})</span>
-          </div>
+          <span class="item-name"
+                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}} <span class="slot" *ngIf="row.alarm.slot"
+          >({{row.alarm.slot}})</span></span>
+          <ng-template #customName>
+            <span class="item-name">{{row.alarm.name}} <span class="slot" *ngIf="row.alarm.slot"
+            >({{row.alarm.slot}})</span></span>
+          </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer">{{row.remainingTime | timer}}</div>
             <div *ngIf="overlayMode"
