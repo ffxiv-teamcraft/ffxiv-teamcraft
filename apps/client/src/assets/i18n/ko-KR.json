@@ -129,8 +129,8 @@
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
       "Spawn": "등장 시간",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
+      "Spawns_twice": "알람 2회생성",
+      "Spawns_twice_description": "에오르제아 시간기준 하루 두번 알람(오전/오후)",
       "Duration": "채집 가능 시간",
       "Slot": "슬롯",
       "Type": "채집물 유형",
@@ -271,12 +271,12 @@
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
-    "Account": "Account",
-    "Reset_password": "Reset password",
-    "Reset_password_warning": "Are you sure you want to reset your password?",
-    "Password_reset_mail_sent": "Password reset email sent",
-    "Connect_with_patreon": "Connect with patreon",
-    "Connected_with_patreon": "Connected with patreon",
+    "Account": "계정",
+    "Reset_password": "비밀번호 초기화",
+    "Reset_password_warning": "비밀번호를 초기화 하시겠습니까?",
+    "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다",
+    "Connect_with_patreon": "Patreon에 연결",
+    "Connected_with_patreon": "Patreon에 연결되었습니다",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -321,7 +321,7 @@
     "Lists_search_placeholder": "목록 검색",
     "Add_to_a_list": "목록에 추가",
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -701,7 +701,7 @@
     "Class_job": "클래스/직업"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
+    "Slogan": "제작하고, 공유하고, 기여하세요",
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
