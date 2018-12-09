@@ -703,12 +703,12 @@
     "Donation_button": "Haga una donación por única vez",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
-      "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame, everything is possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
+      "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",
+      "Public_lists": "Copie listas creadas por la comunidad para ayudar a construir cosas, artículos para leves, completar sus registros, dirigibles, armaduras, todo lo puede encontrar aquí.",
+      "Alarms": "Cree alarmas para asegurar que no se pierda una aparición de nodo. Organízelas en grupos, impórtelas al juego, todo es posible.",
+      "Gathering_location": "Encuentre información acerca de cual artículo de recolección, cree una alarma, obtenga las coordenadas instantáneamente, el aetheryte mas cercano, el libro de maestría necesario, ¡y más!",
+      "Rotations": "¡Cree rotaciones de elaboración, pruébelas en el simulador, o teorice rotaciones futuras usando el simulador personalizado!",
+      "Levequests": "Encuentre misiones leve para una profesión en particular y/o rango de nivel, vea el beneficio instantáneo en ellas y cree listas para ellas.",
       "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
     }
   }
