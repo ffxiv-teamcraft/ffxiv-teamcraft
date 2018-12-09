@@ -593,7 +593,7 @@
     "CONFIGURATION": {
       "Job": "Profesión",
       "Job_not_configured": "Parece que no ha configurado esta profesión aun, vaya a la página de su perfil para configurarla correctamente y establecer atributos",
-      "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
+      "Job_not_configured_anonymous": "Por favor ingrese sus atributos para tener una simulación precisa o inicie sesión",
       "Custom_set": "Activar atributos personalizados",
       "Select_job": "Seleccione una profesión",
       "Craftsmanship": "Artesanía",
@@ -607,12 +607,12 @@
       "Food": "Escoja una comida",
       "Medicine": "Escoja una medicina",
       "Action": "Escoja acciones de compañia",
-      "Save_on_profile": "Save on profile",
+      "Save_on_profile": "Guardar en el perfil",
       "Reset_set": "Reiniciar estos atributos",
       "Save_consumables": "Usar estos consumibles por defecto",
-      "No_food": "No food",
-      "No_medicine": "No medicine",
-      "No_fc_buffs": "No FC buffs",
+      "No_food": "Sin comida",
+      "No_medicine": "Sin medicina",
+      "No_fc_buffs": "Sin bonos de Gremio Independiente (FC)",
       "STATS": {
         "CP": "CP",
         "Craftsmanship": "Artesanía",
@@ -648,9 +648,9 @@
     "Title": "Equipos",
     "Leader": "Líder",
     "Member": "Miembro",
-    "Enable_discord_updates": "Enable Discord updates",
-    "Disable_discord_updates": "Disable Discord updates",
-    "Webhook_error": "There was an error while creating the Discord webhook:",
+    "Enable_discord_updates": "Habilitar las actualizaciones de Discord",
+    "Disable_discord_updates": "Desactivar las actualizaciones de Discord",
+    "Webhook_error": "Hubo un error al crear el webhook de Discord:",
     "Create_team": "Crear un equipo",
     "Create_invite_one_day": "Crear una nueva invitación (expira en 1 día)",
     "Create_invite_infinite": "Crear una nueva invitación (permanente)",
@@ -686,22 +686,22 @@
     "Unit_price": "Precio unitario",
     "History": "Historial",
     "Purchase_date": "Fecha",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "Más detalles en mogboard"
   },
   "COMMENTS": {
     "Title": "Comentarios"
   },
   "TOOLTIP": {
-    "Level": "Level",
-    "Cost": "Cost",
-    "Class_job": "Class/Job"
+    "Level": "Nivel",
+    "Cost": "Costo",
+    "Class_job": "Clase/Profesión"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
-    "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
-    "Support_patreon": "Support us on patreon",
-    "Donation_button": "Make a one time donation",
-    "Features_header": "Get started !",
+    "Slogan": "Elabore, comparta, contribuya",
+    "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
+    "Support_patreon": "Apóyenos en patreon",
+    "Donation_button": "Haga una donación por única vez",
+    "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you building things, levekits, log completion, airships, BiS gear, everything can be found here.",
