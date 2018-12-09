@@ -129,6 +129,8 @@
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
       "Spawn": "Spawn",
+      "Spawns_twice": "Spawns twice",
+      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
       "Duration": "Duración",
       "Slot": "Ranura",
       "Type": "Tipo de nodo",
