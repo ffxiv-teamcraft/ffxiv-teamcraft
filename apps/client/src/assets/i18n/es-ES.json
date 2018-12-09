@@ -273,6 +273,7 @@
     "Reset_password_warning": "¿Está seguro que desea restablecer la contraseña?",
     "Password_reset_mail_sent": "Correo electrónico para restablecimiento de contraseña enviado",
     "Connect_with_patreon": "Conectar con patreon",
+    "Connected_with_patreon": "Connected with patreon",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
