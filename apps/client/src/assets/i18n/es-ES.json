@@ -513,7 +513,7 @@
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
-    "Min_stats": "Attributos mínimos",
+    "Min_stats": "Atributos mínimos",
     "Progress": "Progreso",
     "Quality": "Calidad",
     "Step_counter": "Paso",
@@ -572,13 +572,13 @@
         "Folders": "Carpetas de rotación",
         "Rename": "Renombrar carpeta",
         "New_folder": "Nueva carpeta",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
-        "Shared_by": "Shared by {{name}}",
-        "Created_by": "Created by {{name}}",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Delete_message": "Borrar una carpeta no borrará las rotaciones adentro.",
+        "Share_link_copied": "Vínculo para compartir carpeta de rotaciones copiado a su portapapeles",
+        "Shared_by": "Compartido por {{name}}",
+        "Created_by": "Creado por {{name}}",
+        "Copy_folder": "Copiar esta carpeta y su contenido a su cuenta",
+        "Folder_copied": "Carpeta copiada a su cuenta",
+        "Favorite_folders": "Carpeta de favoritos"
       }
     },
     "CATEGORY": {
@@ -592,7 +592,7 @@
     },
     "CONFIGURATION": {
       "Job": "Profesión",
-      "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
+      "Job_not_configured": "Parece que no ha configurado esta profesión aun, vaya a la página de su perfil para configurarla correctamente y establecer atributos",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "Activar atributos personalizados",
       "Select_job": "Seleccione una profesión",
