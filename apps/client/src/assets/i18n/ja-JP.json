@@ -129,6 +129,8 @@
       "Title": "使用者指定、アラーム追加",
       "Name": "名前",
       "Spawn": "リスポンタイム",
+      "Spawns_twice": "Spawns twice",
+      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
       "Duration": "採集可能時間",
       "Slot": "スロット",
       "Type": "採集品種類",
