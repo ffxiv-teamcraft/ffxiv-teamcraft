@@ -274,7 +274,7 @@
     "Account": "계정",
     "Reset_password": "비밀번호 초기화",
     "Reset_password_warning": "비밀번호를 초기화 하시겠습니까?",
-    "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다",
+    "Password_reset_mail_sent": "비밀번호 초기화 이메일이 전송되었습니다",
     "Connect_with_patreon": "Patreon에 연결",
     "Connected_with_patreon": "Patreon에 연결되었습니다",
     "COPY_TYPE": {
