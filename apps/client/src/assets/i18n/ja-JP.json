@@ -8,6 +8,7 @@
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
   "Edit_amount": "総量を訂正",
+  "List_fork_in_progress": "Copying the list to your account...",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に存在する",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
@@ -318,7 +319,7 @@
     "Lists_search_placeholder": "リスト検索",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
-    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
       "Title": "外部サイトからリストを持って来る",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
