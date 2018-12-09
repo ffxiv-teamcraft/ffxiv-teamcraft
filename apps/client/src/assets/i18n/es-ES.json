@@ -270,12 +270,12 @@
     "Auto_open_in_desktop": "Abrir vínculos en aplicación de escritorio cuando se inicie",
     "Account": "Cuenta",
     "Reset_password": "Restablecer contraseña",
-    "Reset_password_warning": "Are you sure you want to reset your password?",
-    "Password_reset_mail_sent": "Password reset email sent",
-    "Connect_with_patreon": "Connect with patreon",
+    "Reset_password_warning": "¿Está seguro que desea restablecer la contraseña?",
+    "Password_reset_mail_sent": "Correo electrónico para restablecimiento de contraseña enviado",
+    "Connect_with_patreon": "Conectar con patreon",
     "COPY_TYPE": {
-      "Classic": "Copy item name",
-      "Isearch": "Copy /isearch macro"
+      "Classic": "Copiar nombre de artículo",
+      "Isearch": "Copiar macro de /isearch"
     }
   },
   "PROFILE": {
@@ -314,10 +314,10 @@
     "Your_lists": "Sus listas",
     "Outdated_tag": "Desactualizado",
     "No_lists": "No tiene listas",
-    "Lists_search_placeholder": "Search for a list...",
-    "Add_to_a_list": "Add to a list",
-    "Please_pick_recipe": "Please pick a recipe for this item",
-    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Lists_search_placeholder": "Buscar una lista...",
+    "Add_to_a_list": "Agregar a una lista",
+    "Please_pick_recipe": "Por favor elija una receta para este artículo",
+    "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
@@ -357,18 +357,18 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Lista completada",
-    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
+    "Public_list_description": "Establecer una lista como pública la añade a la sección de listas públicas, ESTO NO ES NECESARIO PARA COMPARTIR UNA LISTA",
     "Missing_tags_before_button": "Esta lista se muestra como una lista de la comunidad pero no tiene etiquetas, por favor agregue algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
-    "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
+    "Missing_masterbook": "No tiene este libre de maestría en su perfil, haga clic para agregar al perfil.",
     "No_note": "No hay nota",
     "Edit_note": "No hay nota",
     "Note_placeholder": "Nota",
     "Tags_popup": "Etiquetas",
     "Inventory_breakdown": "Inventario",
-    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
+    "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
+    "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -388,7 +388,7 @@
     }
   },
   "LIST_TAGS": {
-    "OUTDATED": "Outdated",
+    "OUTDATED": "Desactualizado",
     "GEAR": "Armadura",
     "CONSUMABLE": "Consumible",
     "LOG": "Registro",
@@ -521,7 +521,7 @@
     "Hq": "HQ",
     "Cp_amount": "CP",
     "Simulate_tooltip": "Crear en simulador",
-    "Change_recipe": "Change recipe",
+    "Change_recipe": "Cambiar receta",
     "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
     "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
     "Convert_rotation": "Open in standard simulator",
