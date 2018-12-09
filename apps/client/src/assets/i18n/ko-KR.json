@@ -129,6 +129,8 @@
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
       "Spawn": "등장 시간",
+      "Spawns_twice": "Spawns twice",
+      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
       "Duration": "채집 가능 시간",
       "Slot": "슬롯",
       "Type": "채집물 유형",
