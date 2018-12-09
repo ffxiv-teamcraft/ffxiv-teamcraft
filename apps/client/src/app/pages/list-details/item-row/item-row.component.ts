@@ -245,6 +245,10 @@ export class ItemRowComponent implements OnInit {
     this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, this.item.amount - this.item.done, this.item.recipeId);
   }
 
+  resetDone(): void {
+    this.listsFacade.setItemDone(this.item.id, this.item.icon, this.finalItem, -1 * this.item.done, this.item.recipeId);
+  }
+
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
       this.alarmsFacade.deleteAlarm(display.alarm);
