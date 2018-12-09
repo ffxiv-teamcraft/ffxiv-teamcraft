@@ -187,11 +187,11 @@ export class ListDetailsComponent implements OnInit {
     const clone = list.clone();
     this.listsFacade.updateList(list);
     this.listsFacade.addList(clone);
-    this.listsFacade.myLists$.pipe(
+    this.progressService.showProgress(this.listsFacade.myLists$.pipe(
       map(lists => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
       filter(l => l !== undefined),
       first()
-    ).subscribe(l => {
+    ), 1, 'List_fork_in_progress').pipe(first()).subscribe(l => {
       this.router.navigate(['list', l.$key]);
       this.message.success(this.translate.instant('List_forked'));
     });
