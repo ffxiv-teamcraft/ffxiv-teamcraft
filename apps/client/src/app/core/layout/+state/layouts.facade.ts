@@ -24,7 +24,11 @@ export class LayoutsFacade {
 
   selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
     .pipe(
-      filter(layout => layout !== undefined)
+      filter(layout => layout !== undefined),
+      map(layout => {
+        layout.rows = layout.rows.sort((a, b) => a.index - b.index);
+        return layout;
+      })
     );
 
   constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService) {

@@ -73,10 +73,10 @@ export class LayoutEditorComponent {
     // Insert it at new index
     layout.rows.splice(index, 0, row);
     // Update indexes and persist
-    layout.rows
-      .filter((r, i) => r.index !== i)
-      .forEach((r, i) => {
+    layout.rows = layout.rows
+      .map((r, i) => {
         r.index = i;
+        return r;
       });
     this.dirty = true;
   }
