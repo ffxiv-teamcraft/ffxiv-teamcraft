@@ -23,6 +23,8 @@ export class SettingsPopupComponent {
 
   loggedIn$ = this.authFacade.loggedIn$;
 
+  user$ = this.authFacade.user$;
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
@@ -32,7 +34,7 @@ export class SettingsPopupComponent {
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
       this.ipc.on('oauth-reply', (event, code) => {
-        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${code}&redirect_uri=http://localhost`)
+        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?code=${code}&redirect_uri=http://localhost`)
           .pipe(
             switchMap((response: any) => {
               return this.authFacade.user$.pipe(
@@ -57,7 +59,7 @@ export class SettingsPopupComponent {
       this.ipc.send('oauth', 'patreon.com');
     } else {
       window.open(`https://www.patreon.com/oauth2/authorize?response_type=code&client_id=MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE&redirect_uri=${
-        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity.memberships`);
+        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity`);
     }
   }
 

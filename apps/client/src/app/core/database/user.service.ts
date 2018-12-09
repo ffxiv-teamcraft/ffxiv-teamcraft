@@ -7,7 +7,7 @@ import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UserService extends FirestoreStorage<TeamcraftUser> {
@@ -42,7 +42,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         }
         return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`).pipe(
           map((response: any) => {
-            user.patron = response.data.relationships.pledges.data.find(pledge => pledge.type === 'pledge' && pledge.id === '1240898') !== undefined;
+            user.patron = response.included && response.included[0] && response.included[0].attributes &&
+              response.included[0].attributes.patron_status === 'active_patron';
             return user;
           })
         );
