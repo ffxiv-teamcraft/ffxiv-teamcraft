@@ -129,6 +129,8 @@
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
       "Spawn": "Apparition",
+      "Spawns_twice": "Spawns twice",
+      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
       "Duration": "Durée",
       "Slot": "Emplacement",
       "Type": "Type de nœud",
