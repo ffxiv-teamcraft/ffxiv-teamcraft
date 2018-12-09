@@ -8,6 +8,7 @@
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
+  "List_fork_in_progress": "Copying the list to your account...",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -318,7 +319,7 @@
     "Lists_search_placeholder": "Rechercher une liste...",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
-    "Import_description": "Pick the recipe tou want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
