@@ -273,6 +273,7 @@
     "Reset_password_warning": "Are you sure you want to reset your password?",
     "Password_reset_mail_sent": "Password reset email sent",
     "Connect_with_patreon": "Connect with patreon",
+    "Connected_with_patreon": "Connected with patreon",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
