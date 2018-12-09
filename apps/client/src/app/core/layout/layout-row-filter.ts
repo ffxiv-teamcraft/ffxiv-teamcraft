@@ -26,9 +26,11 @@ export class LayoutRowFilter {
     if (row.tradeSources !== undefined) {
       // These ids are for voidrake and Althyk lavender.
       for (const tokenId of [15858, 15857]) {
-        if (row.tradeSources
-          .find(source => source.trades
-            .find(trade => +trade.currencies.find(c => c.id === tokenId) !== undefined) !== undefined) !== undefined) {
+        if (row.tradeSources.some(source => {
+          return source.trades.some(trade => {
+            return trade.currencies.some(c => c.id === tokenId);
+          });
+        })) {
           return true;
         }
       }
@@ -71,9 +73,11 @@ export class LayoutRowFilter {
       ];
 
       for (const tokenId of scriptIds) {
-        if (row.tradeSources
-          .find(source => source.trades
-            .find(trade => +trade.currencies.find(c => c.id === tokenId) !== undefined) !== undefined) !== undefined) {
+        if (row.tradeSources.some(source => {
+          return source.trades.some(trade => {
+            return trade.currencies.some(c => c.id === tokenId);
+          });
+        })) {
           return true;
         }
       }
