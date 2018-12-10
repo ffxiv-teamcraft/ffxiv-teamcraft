@@ -21,6 +21,8 @@ import { TeamcraftLinkPipe } from './teamcraft-link.pipe';
 import { FfxivgardeningPipe } from './ffxivgardening.pipe';
 import { NodeTypeNamePipe } from './node-type-name';
 import { XivapiI18nPipe } from './xivapi-i18n.pipe';
+import { WeatherNamePipe } from './weather-name.pipe';
+import { WeatherIconPipe } from './weather-icon.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { XivapiI18nPipe } from './xivapi-i18n.pipe';
     CharacterNamePipe,
     TeamcraftLinkPipe,
     FfxivgardeningPipe,
-    XivapiI18nPipe
+    XivapiI18nPipe,
+    WeatherNamePipe,
+    WeatherIconPipe
   ],
   exports: [
     ItemNamePipe,
@@ -69,7 +73,9 @@ import { XivapiI18nPipe } from './xivapi-i18n.pipe';
     CharacterNamePipe,
     TeamcraftLinkPipe,
     FfxivgardeningPipe,
-    XivapiI18nPipe
+    XivapiI18nPipe,
+    WeatherNamePipe,
+    WeatherIconPipe
   ]
 })
 export class PipesModule {

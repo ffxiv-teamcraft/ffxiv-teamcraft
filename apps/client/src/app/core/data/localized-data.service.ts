@@ -60,8 +60,12 @@ export class LocalizedDataService {
     return this.getRow(ventures, id);
   }
 
-  public getWeather(name: string): I18nName {
-    return this.getRowByName(weathers, name, 'en');
+  public getWeather(id: number): I18nName {
+    return this.getRow(weathers, id);
+  }
+
+  public getWeatherId(name: string): number {
+    return this.getIndexByName(weathers, name, 'en');
   }
 
   public getAreaIdByENName(name: string): number {

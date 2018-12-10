@@ -42,6 +42,7 @@ import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { PricingModule } from '../../modules/pricing/pricing.module';
 import { NumberQuestionPopupModule } from '../../modules/number-question-popup/number-question-popup.module';
+import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 
 const routes: Routes = [
   {
@@ -77,6 +78,7 @@ const routes: Routes = [
     MarketboardModule,
     PricingModule,
     NumberQuestionPopupModule,
+    FishingBaitModule,
 
     FlexLayoutModule,
 
