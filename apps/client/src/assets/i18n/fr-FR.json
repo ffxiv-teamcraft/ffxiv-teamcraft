@@ -321,7 +321,7 @@
     "Lists_search_placeholder": "Rechercher une liste...",
     "Add_to_a_list": "Ajouter à une liste",
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -573,16 +573,16 @@
     },
     "ROTATIONS": {
       "FOLDERS": {
-        "Folders": "Rotation folders",
-        "Rename": "Rename folder",
-        "New_folder": "New folder",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
-        "Shared_by": "Shared by {{name}}",
-        "Created_by": "Created by {{name}}",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Folders": "Dossiers de rotation",
+        "Rename": "Renommer le dossier",
+        "New_folder": "Nouveau dossier",
+        "Delete_message": "La suppression d’un dossier n'entraîne pas la suppression des rotations à l’intérieur.",
+        "Share_link_copied": "Lien de partage pour le dossier rotation copié dans votre presse-papiers",
+        "Shared_by": "Partagé par {{name}}",
+        "Created_by": "Créé par {{name}}",
+        "Copy_folder": "Copiez ce dossier et son contenu dans votre compte",
+        "Folder_copied": "Dossier copié sur votre compte",
+        "Favorite_folders": "Dossiers favoris"
       }
     },
     "CATEGORY": {
@@ -701,7 +701,7 @@
     "Class_job": "Classe/Job"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
+    "Slogan": "Fabriquez, Partagez, Contribuez",
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
