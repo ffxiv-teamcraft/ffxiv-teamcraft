@@ -8,7 +8,7 @@
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
-  "List_fork_in_progress": "Copying the list to your account...",
+  "List_fork_in_progress": "Copie de la liste en cours...",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -75,7 +75,7 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
-  "Patreon_login_success": "Patreon login success !",
+  "Patreon_login_success": "Connexion avec Patreon effectuée !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -108,7 +108,7 @@
     "Language": "Langue",
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
-    "Admin": "Administrator"
+    "Admin": "Administrateur"
   },
   "ALARMS": {
     "Title": "Alarmes",
