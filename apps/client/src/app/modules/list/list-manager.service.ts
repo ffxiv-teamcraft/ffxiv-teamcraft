@@ -112,7 +112,7 @@ export class ListManagerService {
           addition.forEach(item => {
             if (data.isCraft() && recipeId !== undefined && data.item.id === item.id) {
               item.craftedBy = this.extractor.extractCraftedBy(item.id, data).filter(row => {
-                return row.recipeId === recipeId;
+                return row.recipeId.toString() === recipeId.toString();
               });
             } else {
               item.craftedBy = this.extractor.extractCraftedBy(item.id, data);
