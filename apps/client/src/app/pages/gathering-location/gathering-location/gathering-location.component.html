@@ -6,7 +6,7 @@
 </div>
 <div class="results" *ngIf="results$ | async as results; else noResults">
   <div *ngFor="let node of results">
-    <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]" #card>
+    <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]">
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>
@@ -31,11 +31,18 @@
           {{node.zoneid | placeName | i18n}}<br>
           X: {{node.x}}, Y: {{node.y}}<br>
           {{getNodeSpawns(node)}}
+          <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+            <div *ngFor="let weather of node.weathers">
+              <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+                   [nzTitle]="weather | weatherName | i18n">
+            </div>
+          </div>
         </div>
         <div fxLayout="column">
           <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
           <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
                [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
+          <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>
         </div>
       </div>
     </ng-template>

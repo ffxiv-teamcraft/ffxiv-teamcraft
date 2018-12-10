@@ -10,6 +10,7 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { folklores } from '../../../core/data/sources/folklores';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 
 @Component({
   selector: 'app-gathering-location',
@@ -32,7 +33,7 @@ export class GatheringLocationComponent {
   showIntro = true;
 
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, private l12n: LocalizedDataService) {
+              private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
@@ -46,7 +47,7 @@ export class GatheringLocationComponent {
       }),
       mergeMap(query => this.dataService.searchGathering(query)),
       map(items => {
-        const nodesFromPositions = [].concat.apply(items.map(item => {
+        const nodesFromPositions = [].concat.apply([], ...items.map(item => {
           return Object.keys(nodePositions)
             .filter(key => {
               return nodePositions[key].items.indexOf(item.obj.i) > -1;
@@ -79,10 +80,10 @@ export class GatheringLocationComponent {
               return node;
             });
         }));
-        const nodesFromGarlandBell = items
+        const nodesFromGarlandBell = [].concat.apply([], ...items
           .map(item => {
             return [].concat.apply([],
-              this.bell.getNodesByItemId(item.obj.i)
+              ...this.bell.getNodesByItemId(item.obj.i)
                 .map(node => {
                   const nodePosition = nodePositions[node.id];
                   const result = {
@@ -111,9 +112,56 @@ export class GatheringLocationComponent {
                   return result;
                 })
             );
-          });
+          })
+        );
 
-        const results = [].concat.apply([], nodesFromPositions.concat(nodesFromGarlandBell));
+        const nodesFromFishing = [].concat.apply([], ...items.map(item => {
+          const spots = this.gt.getFishingSpots(item.obj.i);
+          if (spots.length > 0) {
+            return spots.map(spot => {
+              const mapId = this.l12n.getAreaIdByENName(spot.zone);
+              const zoneId = this.l12n.getAreaIdByENName(spot.title);
+              if (mapId !== undefined) {
+                const result = {
+                  ...item,
+                  zoneid: zoneId,
+                  mapId: mapId,
+                  x: spot.coords[0],
+                  y: spot.coords[1],
+                  level: spot.lvl,
+                  type: 4,
+                  itemId: spot.id,
+                  icon: spot.icon,
+                  timed: true
+                };
+                if (spot.during !== undefined) {
+                  result.spawnTimes = [spot.during.start];
+                  result.uptime = spot.during.end - spot.during.start;
+                  // Just in case it despawns the day after.
+                  result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
+                  // As uptimes are always in minutes, gotta convert to minutes here too.
+                  result.uptime *= 60;
+                }
+                result.baits = spot.bait.map(bait => {
+                  const baitData = this.gt.getBait(bait);
+                  return {
+                    icon: baitData.icon,
+                    id: baitData.id
+                  };
+                });
+                if (spot.weather) {
+                  result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
+                }
+                return result;
+              }
+              return undefined;
+            })
+              .filter(res => res !== undefined);
+          }
+          return [];
+        }).filter(res => res !== undefined));
+
+        const results = [...nodesFromPositions, ...nodesFromGarlandBell, ...nodesFromFishing];
 
         //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
         const finalNodes = [];
@@ -140,6 +188,8 @@ export class GatheringLocationComponent {
     const alarm: Partial<Alarm> = this.generateAlarm(node);
     alarm.spawns = node.spawnTimes;
     alarm.mapId = node.mapId;
+    alarm.baits = node.baits;
+    alarm.weathers = node.weathers;
     this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {
