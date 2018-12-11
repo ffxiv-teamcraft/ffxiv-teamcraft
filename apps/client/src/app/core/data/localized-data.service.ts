@@ -11,6 +11,7 @@ import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
+import { mapIds } from './sources/map-ids';
 
 @Injectable()
 export class LocalizedDataService {
@@ -74,6 +75,14 @@ export class LocalizedDataService {
 
   public getFreeCompanyAction(id: number): I18nName {
     return this.getRow(freeCompanyActions, id);
+  }
+
+  public getMapId(name: string): number {
+    const result = mapIds.find(map => map.name === name);
+    if (result === undefined) {
+      return -1;
+    }
+    return result.id;
   }
 
   public getCraftingActionIdByName(name: string, language: Language): number {

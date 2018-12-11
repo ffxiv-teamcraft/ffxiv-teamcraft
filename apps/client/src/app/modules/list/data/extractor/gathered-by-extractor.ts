@@ -95,7 +95,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
       // If it's a fish, we have to handle it in another way
       const spots = this.gt.getFishingSpots(item.id);
       for (const spot of spots) {
-        const mapId = this.localized.getAreaIdByENName(spot.zone);
+        const mapId = this.localized.getMapId(spot.zone);
         const zoneId = this.localized.getAreaIdByENName(spot.title);
         if (mapId !== undefined) {
           const node: StoredNode = {
