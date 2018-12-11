@@ -1,11 +1,15 @@
 import { DataModel } from '../storage/data-model';
+import { ForeignKey } from '../relational/foreign-key';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 export class CustomLink extends DataModel {
   template = false;
   authorNickname: string;
   uri: string;
   redirectTo: string;
-  author: string;
+
+  @ForeignKey(TeamcraftUser)
+  authorId: string;
 
   getType(): string {
     return this.redirectTo.split('/')[0];
