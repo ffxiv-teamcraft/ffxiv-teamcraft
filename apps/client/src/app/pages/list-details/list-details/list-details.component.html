@@ -48,7 +48,7 @@
         </button>
         <button nz-button nzType="primary" nzShape="circle" (click)="pricingMode = true" nz-tooltip
                 [nzTitle]="'Pricing_mode' | translate" [disabled]="(permissionLevel$ | async) < 40">
-          <i nz-icon type="wallet"></i>
+          <i nz-icon iconfont="icon-dollar"></i>
         </button>
         <button nz-button nzType="primary" nzShape="circle" (click)="openInventoryPopup(list)" nz-tooltip
                 [nzTitle]="'LIST_DETAILS.Inventory_breakdown' | translate">
