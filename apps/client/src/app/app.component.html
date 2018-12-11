@@ -83,11 +83,12 @@
               <i nz-icon type="heart"></i>
               {{'Favorites' | translate}}
             </a>
-            <a nz-menu-item nzDisabled *ngIf="loggedIn$ | async">
-              <i nz-icon type="link"></i>
-              <!--*ngIf patreon supporter-->
-              {{'CUSTOM_LINKS.Title' | translate}}
-            </a>
+            <ng-container *ngIf="user$ | async as user">
+              <a nz-menu-item nzDisabled *ngIf="user.patron || user.admin">
+                <i nz-icon type="link"></i>
+                {{'CUSTOM_LINKS.Title' | translate}}
+              </a>
+            </ng-container>
             <a nz-menu-item (click)="openSettings()">
               <i nz-icon type="setting"></i>
               {{'SETTINGS.Title' | translate}}

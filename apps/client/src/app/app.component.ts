@@ -62,6 +62,8 @@ export class AppComponent implements OnInit {
 
   public userId$ = this.authFacade.userId$;
 
+  public user$ = this.authFacade.user$;
+
   public loading$: Observable<boolean>;
 
   public time$: Observable<string>;
