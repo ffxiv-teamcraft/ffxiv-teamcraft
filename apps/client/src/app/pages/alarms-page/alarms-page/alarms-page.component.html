@@ -109,9 +109,8 @@
              [nzActions]="[delete, copyMacro]"
              class="alarm-card"
              fxLayout="column"
-             [nzLoading]="!settings.compactAlarms && row.alarm.mapId !== null" [class.spawned]="row.spawned"
-             [class.played]="row.played"
-             #card>
+             [class.spawned]="row.spawned"
+             [class.played]="row.played">
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
@@ -170,8 +169,7 @@
     </ng-template>
     <ng-template #map>
       <app-map *ngIf="row.alarm.mapId" [mapId]="row.alarm.mapId"
-               [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
-               (loaded)="card.nzLoading = false"></app-map>
+               [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
     </ng-template>
     <ng-template #delete>
       <i nz-icon type="delete" (click)="deleteAlarm(row.alarm)"></i>
