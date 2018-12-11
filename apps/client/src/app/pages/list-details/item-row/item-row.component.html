@@ -165,7 +165,7 @@
   </div>
   <div class="item-obtention" nz-col nzXs="24" nzSm="6" nzMd="4">
     <div fxLayout="row wrap" fxLayoutGap="2px" fxFlex="0 1 auto">
-      <div *ngFor="let craft of item.craftedBy" [fxLayout]="item.craftedBy.length > 1?'column':'row'"
+      <div *ngFor="let craft of item.craftedBy; trackBy: trackByCraft" [fxLayout]="item.craftedBy.length > 1?'column':'row'"
            [fxLayoutGap]="item.craftedBy.length > 1?'0px':'5px'"
            fxLayoutAlign="center center">
         <button nz-button [nzShape]="'circle'" (click)="openSimulator(craft.recipeId)"
