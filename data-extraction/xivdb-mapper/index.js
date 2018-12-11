@@ -1,10 +1,10 @@
 const csv = require('csv-parser');
+const request = require('request');
 const fs = require('fs');
-const http = require('http');
-const path = require('path');
-
-const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
-const memoryData = [];
+const http = require('https');
+const Rx = require('rxjs');
+const { switchMap, map } = require('rxjs/operators');
+const { getAllPages, persistToJson, persistToTypescript, get } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -13,59 +13,66 @@ const npcs = {};
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-http.get('http://xivapi.com/memorydata/download', (memoryResponse) => {
-  memoryResponse.setEncoding('utf8');
-  memoryResponse.pipe(csv())
-    .on('data', function(memoryRow) {
-      memoryData.push(memoryRow);
-    })
-    .on('end', () => {
-      console.log('Extracted memory data, size: ', memoryData.length);
-      extractData();
-    });
-});
 
-extractData = () => {
-  http.get('http://xivapi.com/mapdata/download', (res) => {
-    res.setEncoding('utf8');
-    res.pipe(csv())
-      .on('data', function(row) {
-        if (row.ContentIndex === 'BNPC') {
-          handleMonster(row, memoryData);
-        } else {
-          switch (row.Type) {
-            case 'NPC':
-              handleNpc(row);
-              break;
-            case 'Gathering':
-              handleNode(row);
-              break;
-            case 'Aetheryte':
-              handleAetheryte(row);
-              break;
-            default:
-              break;
-          }
-        }
+// MapData extraction
 
-      })
-      .on('end', function() {
-        const nodesData = JSON.stringify(nodes, null, 2);
-        // Write data that needs to be joined with game data first
-        fs.writeFileSync('output/nodes-position.json', nodesData);
-        console.log('nodes written');
-        const aetherytesData = JSON.stringify(aetherytes, null, 2);
-        fs.writeFileSync('output/aetherytes.json', aetherytesData);
-        console.log('aetherytes written');
-        const npcsData = JSON.stringify(npcs, null, 2);
-        fs.writeFileSync('output/npcs.json', npcsData);
-        console.log('npcs written');
-        const monstersData = JSON.stringify(monsters, null, 2);
-        fs.writeFileSync(path.join(outputFolder, 'monsters.json'), monstersData);
-        console.log('monsters written');
-      });
-  });
-};
+// commented for now as we're waiting for the memory and map data endpoints to return non-empty csv files.
+// const memoryData$ = new Rx.Subject();
+//
+// const mapData$ = new Rx.Subject();
+// http.get('https://xivapi.com/downloads/xivapi-map-data', (res) => mapData$.next(res));
+//
+// http.get('https://xivapi.com/downloads/xivapi-memory-data', (memoryResponse) => {
+//   const memoryData = [];
+//   console.log(memoryResponse);
+//   memoryResponse.setEncoding('utf8');
+//   memoryResponse.pipe(csv())
+//     .on('data', function(memoryRow) {
+//       console.log(memoryRow);
+//       memoryData.push(memoryRow);
+//     })
+//     .on('end', () => {
+//       console.log('Extracted memory data, size: ', memoryData.length);
+//       memoryData$.next(memoryData);
+//     });
+// });
+//
+// Rx.combineLatest(memoryData$, mapData$)
+//   .subscribe(([memoryData, res]) => {
+//     res.setEncoding('utf8');
+//     res.pipe(csv())
+//       .on('data', function(row) {
+//         if (row.ContentIndex === 'BNPC') {
+//           handleMonster(row, memoryData);
+//         } else {
+//           switch (row.Type) {
+//             case 'NPC':
+//               handleNpc(row);
+//               break;
+//             case 'Gathering':
+//               handleNode(row);
+//               break;
+//             case 'Aetheryte':
+//               handleAetheryte(row);
+//               break;
+//             default:
+//               break;
+//           }
+//         }
+//
+//       })
+//       .on('end', function() {
+//         // Write data that needs to be joined with game data first
+//         persistToJson('node-positions', nodes);
+//         console.log('nodes written');
+//         persistToTypescript('aetherytes', 'aetherytes', aetherytes);
+//         console.log('aetherytes written');
+//         persistToJson('npcs', npcs);
+//         console.log('npcs written');
+//         persistToJson('monsters', monsters);
+//         console.log('monsters written');
+//       });
+//   });
 
 handleNode = (row) => {
   nodes[+row.ENpcResidentID] = {
@@ -110,3 +117,15 @@ handleNpc = (row) => {
     y: Math.round(+row.PosY)
   };
 };
+
+// Map ids extraction
+
+const mapIds = [];
+
+getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en&key=63cc0045d7e847149c3f').subscribe(res => {
+  res.Results.forEach(map => {
+    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en });
+  });
+}, null, () => {
+  persistToTypescript('map-ids', 'mapIds', mapIds);
+});
