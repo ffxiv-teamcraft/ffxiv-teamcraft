@@ -130,7 +130,7 @@
             <div class="item-name">{{item.itemId | itemName | i18n}}
               <app-marketboard-icon [itemId]="item.itemId" [showHistory]="true"></app-marketboard-icon>
             </div>
-            <div class="description" *ngIf="item.recipe !== undefined">
+            <div class="description" *ngIf="item.recipe !== undefined && item.recipe.job > 0">
               <img src="https://garlandtools.org/db/images/{{(item.recipe.job | jobAbbr)?.en}}.png"
                    class="job-icon small"
                    alt="{{item.recipe.job | jobAbbr | i18n}}">
