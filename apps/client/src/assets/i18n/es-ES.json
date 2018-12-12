@@ -8,7 +8,7 @@
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
   "Edit_amount": "Editar cantidad",
-  "List_fork_in_progress": "Copying the list to your account...",
+  "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -129,8 +129,8 @@
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
       "Spawn": "Spawn",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
+      "Spawns_twice": "Aparece dos veces",
+      "Spawns_twice_description": "Aparece dos veces por día eorzeano (Una aparición AM y otra PM)",
       "Duration": "Duración",
       "Slot": "Ranura",
       "Type": "Tipo de nodo",
@@ -276,7 +276,7 @@
     "Reset_password_warning": "¿Está seguro que desea restablecer la contraseña?",
     "Password_reset_mail_sent": "Correo electrónico para restablecimiento de contraseña enviado",
     "Connect_with_patreon": "Conectar con patreon",
-    "Connected_with_patreon": "Connected with patreon",
+    "Connected_with_patreon": "Conectado con patreon",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -321,7 +321,7 @@
     "Lists_search_placeholder": "Buscar una lista...",
     "Add_to_a_list": "Agregar a una lista",
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
