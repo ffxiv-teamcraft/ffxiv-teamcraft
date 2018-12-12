@@ -277,6 +277,7 @@
     "Password_reset_mail_sent": "Password reset email sent",
     "Connect_with_patreon": "Connect with patreon",
     "Connected_with_patreon": "Connected with patreon",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピー",
       "Isearch": "/アイテム検索 マクロコピー"
