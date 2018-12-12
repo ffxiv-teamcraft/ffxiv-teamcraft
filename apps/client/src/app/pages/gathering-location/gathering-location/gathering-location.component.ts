@@ -47,7 +47,7 @@ export class GatheringLocationComponent {
       }),
       mergeMap(query => this.dataService.searchGathering(query)),
       map(items => {
-        const nodesFromPositions = [].concat.apply([], ...items.map(item => {
+        const nodesFromPositions = [].concat.apply([], items.map(item => {
           return Object.keys(nodePositions)
             .filter(key => {
               return nodePositions[key].items.indexOf(item.obj.i) > -1;
@@ -80,6 +80,7 @@ export class GatheringLocationComponent {
               return node;
             });
         }));
+
         const nodesFromGarlandBell = [].concat.apply([], ...items
           .map(item => {
             return [].concat.apply([],
@@ -119,7 +120,7 @@ export class GatheringLocationComponent {
           const spots = this.gt.getFishingSpots(item.obj.i);
           if (spots.length > 0) {
             return spots.map(spot => {
-              const mapId = this.l12n.getAreaIdByENName(spot.zone);
+              const mapId = this.l12n.getMapId(spot.zone);
               const zoneId = this.l12n.getAreaIdByENName(spot.title);
               if (mapId !== undefined) {
                 const result = {
