@@ -1,0 +1,3 @@
+<ul *ngIf="links$ | async as links">
+  <li *ngFor="let link of links">{{link.uri}}</li>
+</ul>

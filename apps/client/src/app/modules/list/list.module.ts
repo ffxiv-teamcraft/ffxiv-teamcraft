@@ -42,6 +42,7 @@ import { IconsModule } from '../../core/icons/icons.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { TeamsModule } from '../teams/teams.module';
 import { CommentsModule } from '../comments/comments.module';
+import { CustomLinksModule } from '../custom-links/custom-links.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -76,6 +77,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     UserAvatarModule,
     TeamsModule,
     CommentsModule,
+    CustomLinksModule,
 
     ClipboardModule,
     NgZorroAntdModule,

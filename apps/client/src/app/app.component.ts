@@ -28,6 +28,7 @@ import { SettingsPopupService } from './modules/settings/settings-popup.service'
 import { BehaviorSubject, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 
 declare const gtag: Function;
 
@@ -84,7 +85,8 @@ export class AppComponent implements OnInit {
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer) {
+              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
+              private customLinksFacade: CustomLinksFacade) {
 
     this.desktop = this.platformService.isDesktop();
 
@@ -189,6 +191,7 @@ export class AppComponent implements OnInit {
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
     this.rotationsFacade.loadMyRotations();
+    this.customLinksFacade.loadMyCustomLinks();
   }
 
   deleteNotification(notification: AbstractNotification): void {

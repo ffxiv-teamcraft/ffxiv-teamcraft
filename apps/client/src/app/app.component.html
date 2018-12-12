@@ -84,7 +84,7 @@
               {{'Favorites' | translate}}
             </a>
             <ng-container *ngIf="user$ | async as user">
-              <a nz-menu-item nzDisabled *ngIf="user.patron || user.admin">
+              <a nz-menu-item routerLink="/custom-links" *ngIf="user.patron || user.admin">
                 <i nz-icon type="link"></i>
                 {{'CUSTOM_LINKS.Title' | translate}}
               </a>

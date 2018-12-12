@@ -41,7 +41,7 @@
             {{'Public_list' | translate}}
           </nz-tag>
           <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
-          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.'+tag) | uppercase | translate}}</nz-tag>
+          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
         </div>
         <div class="description">
           {{_list.note}}
@@ -93,12 +93,20 @@
                 *ngIf="!publicDisplay">
               {{'PERMISSIONS.Title' | translate}}
             </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10"
-                *ngIf="!publicDisplay">TODO Template (create or copy)
-            </li>
-            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 10"
-                *ngIf="!publicDisplay">TODO Custom link (create or copy)
-            </li>
+            <ng-container *ngIf="(permissionLevel$ | async) >= 40">
+              <ng-container *ngIf="user$ | async as user">
+                <li nz-menu-item [nzDisabled]="!user.nickName"
+                    (click)="createTemplate(_list, user)"
+                    *ngIf="!publicDisplay && (user.patron || user.admin)">
+                  {{'LIST_TEMPLATE.Create_template' | translate}}
+                </li>
+                <li nz-menu-item [nzDisabled]="!user.nickName"
+                    (click)="createCustomLink(_list, user)"
+                    *ngIf="!publicDisplay && (user.patron || user.admin)">
+                  {{'CUSTOM_LINKS.Add_link' | translate}}
+                </li>
+              </ng-container>
+            </ng-container>
           </ul>
         </nz-dropdown>
       </div>

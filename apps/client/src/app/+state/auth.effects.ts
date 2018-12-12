@@ -64,11 +64,26 @@ export class AuthEffects {
   );
 
   @Effect()
-  fetchUserOnAnoymous$ = this.actions$.pipe(
+  fetchUserOnAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoggedInAsAnonymous),
     switchMap((action: Authenticated) => this.userService.get(action.uid)),
     catchError(() => of(new TeamcraftUser())),
     map(user => new UserFetched(user))
+  );
+
+  private nickNameWarningShown = false;
+
+  @Effect()
+  showNicknameWarning$ = this.actions$.pipe(
+    ofType<UserFetched>(AuthActionTypes.UserFetched),
+    debounceTime(10000),
+    tap((action: UserFetched) => {
+      const user = action.user;
+      if (!this.nickNameWarningShown && (user.patron || user.admin) && user.nickName === undefined) {
+        this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
+        this.nickNameWarningShown = true;
+      }
+    })
   );
 
   @Effect()

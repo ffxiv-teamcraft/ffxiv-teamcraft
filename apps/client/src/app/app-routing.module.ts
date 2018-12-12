@@ -74,7 +74,11 @@ const routes: Routes = [
   {
     path: 'list-import/:importString',
     redirectTo: 'import/:importString'
-  }
+  },
+  {
+    path: 'custom-links',
+    loadChildren: './pages/custom-links/custom-links-page.module#CustomLinksPageModule'
+  },
 ];
 
 @NgModule({

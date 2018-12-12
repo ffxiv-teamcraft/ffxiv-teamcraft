@@ -7,7 +7,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -16,6 +16,11 @@ import { PermissionsBoxComponent } from '../../permissions/permissions-box/permi
 import { CommentsPopupComponent } from '../../comments/comments-popup/comments-popup.component';
 import { CommentTargetType } from '../../comments/comment-target-type';
 import { ListCommentNotification } from '../../../model/notification/list-comment-notification';
+import { CustomLink } from '../../../core/database/custom-links/custom-link';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { ListTemplate } from '../../../core/database/custom-links/list-template';
+import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-list-panel',
@@ -41,6 +46,12 @@ export class ListPanelComponent {
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
+
+  public listTemplate$: Observable<ListTemplate>;
+
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
     map(permissionLevel => {
@@ -56,7 +67,8 @@ export class ListPanelComponent {
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
-              public authFacade: AuthFacade) {
+              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
+              private clipboard: ClipboardService) {
   }
 
   deleteList(list: List): void {
@@ -162,6 +174,57 @@ export class ListPanelComponent {
       nzContent: TagsPopupComponent,
       nzComponentParams: { list: list }
     });
+  }
+
+  createCustomLink(list: List, user: TeamcraftUser): void {
+    if (!user.nickName) {
+      return;
+    }
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: list.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('CUSTOM_LINKS.Add_link')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        const link = new CustomLink();
+        link.redirectTo = `list/${list.$key}`;
+        link.authorId = user.$key;
+        link.authorNickname = user.nickName;
+        link.uri = name.split('/').join('');
+        return link;
+      }),
+      tap(link => this.customLinksFacade.createCustomLink(link)),
+      switchMap(link => {
+        return this.customLinksFacade.myCustomLinks$.pipe(
+          map(links => links.find(l => l.uri === link.uri && l.$key !== undefined)),
+          filter(l => l !== undefined)
+        );
+      })
+    ).subscribe(link => {
+      this.clipboard.copyFromContent(link.getUrl());
+      this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
+    });
+  }
+
+  createTemplate(list: List, user: TeamcraftUser): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: list.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('LIST_TEMPLATE.Create_template')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        const template = new ListTemplate();
+        template.originalListId = list.$key;
+        template.authorId = user.$key;
+        template.authorNickname = user.nickName;
+        template.uri = name.split('/').join('');
+        return template;
+      })
+    );
   }
 
 }
