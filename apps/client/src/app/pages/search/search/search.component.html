@@ -139,8 +139,8 @@
           </div>
         </div>
         <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px"
-             fxLayoutAlign.lt-md="center center" nz-row>
-          <div nz-col [nzXs]="24" [nzMd]="15" class="input-box">
+             fxLayoutAlign.lt-md="center center" nz-row class="inputs-container">
+          <div nz-col [nzXs]="24" [nzMd]="15" class="input-box" fxLayout="row" fxLayoutAlign="center center">
             <nz-input-group [nzAddOnBefore]="item.recipe !== undefined?addCrafts:null" [nzCompact]="true"
                             class="amount-input">
               <input type="number" [(ngModel)]="item.amount" nz-input>
@@ -151,7 +151,8 @@
               </ng-template>
             </nz-input-group>
           </div>
-          <div nz-col [nzXs]="24" [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px">
+          <div nz-col [nzXs]="24" [nzMd]="9" class="actions" fxLayout="row" fxLayoutGap="5px"
+               fxLayoutAlign="center center">
             <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-tooltip
                     [nzTitle]="'ITEMS.Add_to_list' | translate" (click)="addItemsToList([item])">
               <i nz-icon type="plus"></i>
