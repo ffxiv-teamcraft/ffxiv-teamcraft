@@ -9,6 +9,11 @@ import { first, map, switchMap, tap } from 'rxjs/operators';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../../core/database/user.service';
+import { Observable } from 'rxjs';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
+import { CustomLink } from '../../../core/database/custom-links/custom-link';
 
 @Component({
   selector: 'app-settings-popup',
@@ -25,10 +30,13 @@ export class SettingsPopupComponent {
 
   user$ = this.authFacade.user$;
 
+  nicknameAvailable: boolean;
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
-              private ipc: IpcService, private router: Router, private http: HttpClient) {
+              private ipc: IpcService, private router: Router, private http: HttpClient,
+              private userService: UserService, private customLinksFacade: CustomLinksFacade) {
   }
 
   patreonOauth(): void {
@@ -66,6 +74,24 @@ export class SettingsPopupComponent {
   resetPassword(): void {
     this.af.auth.sendPasswordResetEmail(this.af.auth.currentUser.email).then(() => {
       this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
+    });
+  }
+
+  checkNicknameAvailability(nickname: string): void {
+    this.userService.checkNicknameAvailability(nickname).pipe(first()).subscribe(res => this.nicknameAvailable = res);
+  }
+
+  setNickname(user: TeamcraftUser, nickname: string): void {
+    this.customLinksFacade.myCustomLinks$.pipe(
+      first(),
+      map((links: CustomLink[]) => links.map(link => {
+        link.authorNickname = nickname;
+        return link;
+      }))
+    ).subscribe(links => {
+      links.forEach(link => this.customLinksFacade.updateCustomLink(link));
+      user.nickname = nickname;
+      this.authFacade.updateUser(user);
     });
   }
 

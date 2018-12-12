@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { CustomLinksPartialState } from './custom-links.reducer';
-import { CreateCustomLink, DeleteCustomLink, LoadMyCustomLinks } from './custom-links.actions';
+import { CreateCustomLink, DeleteCustomLink, LoadMyCustomLinks, UpdateCustomLink } from './custom-links.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
 import { filter, map, shareReplay } from 'rxjs/operators';
@@ -29,6 +29,10 @@ export class CustomLinksFacade {
 
   createCustomLink(link: CustomLink): void {
     this.store.dispatch(new CreateCustomLink(link));
+  }
+
+  updateCustomLink(link: CustomLink): void {
+    this.store.dispatch(new UpdateCustomLink(link));
   }
 
   deleteCustomLink(key: string): void {

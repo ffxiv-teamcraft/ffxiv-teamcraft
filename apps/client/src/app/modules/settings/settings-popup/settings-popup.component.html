@@ -34,7 +34,8 @@
         {{'SETTINGS.Reset_password' | translate}}
       </button>
       <ng-container *ngIf="user$ | async as user">
-        <button nz-button nzType="primary" (click)="patreonOauth()" *ngIf="user.patreonToken === undefined; else connectedWithPatreon">
+        <button nz-button nzType="primary" (click)="patreonOauth()"
+                *ngIf="user.patreonToken === undefined; else connectedWithPatreon">
           {{'SETTINGS.Connect_with_patreon' | translate}}
         </button>
         <ng-template #connectedWithPatreon>
@@ -42,7 +43,22 @@
             {{'SETTINGS.Connected_with_patreon' | translate}}
           </p>
         </ng-template>
-
+        <div *ngIf="user.patron || user.admin" fxLayout="column" fxLayoutGap="5px">
+          <nz-input-group>
+            <nz-form-label>{{'SETTINGS.Nickname' | translate}}</nz-form-label>
+            <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null">
+              <input type="text" nz-input placeholder="Nickname" #nickname [ngModel]="user.nickname"
+                     (ngModelChange)="nicknameAvailable = undefined">
+              <nz-form-explain *ngIf="nicknameAvailable === false">{{'SETTINGS.Nickname_used' | translate}}</nz-form-explain>
+            </nz-form-control>
+          </nz-input-group>
+          <button nz-button *ngIf="!nicknameAvailable && nickname.value !== user.nickname" nzBlock
+                  (click)="checkNicknameAvailability(nickname.value)">Verify
+          </button>
+          <button nz-button *ngIf="nicknameAvailable && nickname.value !== user.nickname" nzBlock
+                  (click)="setNickname(user, nickname.value)" nzType="primary">Apply
+          </button>
+        </div>
       </ng-container>
     </div>
   </nz-tab>

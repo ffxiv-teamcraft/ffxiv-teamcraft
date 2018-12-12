@@ -95,12 +95,12 @@
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
-                <li nz-menu-item [nzDisabled]="!user.nickName"
+                <li nz-menu-item [nzDisabled]="!user.nickname"
                     (click)="createTemplate(_list, user)"
                     *ngIf="!publicDisplay && (user.patron || user.admin)">
                   {{'LIST_TEMPLATE.Create_template' | translate}}
                 </li>
-                <li nz-menu-item [nzDisabled]="!user.nickName"
+                <li nz-menu-item [nzDisabled]="!user.nickname"
                     (click)="createCustomLink(_list, user)"
                     *ngIf="!publicDisplay && (user.patron || user.admin)">
                   {{'CUSTOM_LINKS.Add_link' | translate}}

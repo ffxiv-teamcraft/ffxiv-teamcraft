@@ -28,5 +28,5 @@ export class TeamcraftUser extends DataModel {
 
   lastPatreonRefresh?: number;
 
-  nickName: string;
+  nickname: string;
 }

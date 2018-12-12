@@ -79,7 +79,7 @@ export class AuthEffects {
     debounceTime(10000),
     tap((action: UserFetched) => {
       const user = action.user;
-      if (!this.nickNameWarningShown && (user.patron || user.admin) && user.nickName === undefined) {
+      if (!this.nickNameWarningShown && (user.patron || user.admin) && user.nickname === undefined) {
         this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
         this.nickNameWarningShown = true;
       }

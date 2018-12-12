@@ -177,7 +177,7 @@ export class ListPanelComponent {
   }
 
   createCustomLink(list: List, user: TeamcraftUser): void {
-    if (!user.nickName) {
+    if (!user.nickname) {
       return;
     }
     this.dialog.create({
@@ -191,7 +191,7 @@ export class ListPanelComponent {
         const link = new CustomLink();
         link.redirectTo = `list/${list.$key}`;
         link.authorId = user.$key;
-        link.authorNickname = user.nickName;
+        link.authorNickname = user.nickname;
         link.uri = name.split('/').join('');
         return link;
       }),
@@ -199,7 +199,8 @@ export class ListPanelComponent {
       switchMap(link => {
         return this.customLinksFacade.myCustomLinks$.pipe(
           map(links => links.find(l => l.uri === link.uri && l.$key !== undefined)),
-          filter(l => l !== undefined)
+          filter(l => l !== undefined),
+          first()
         );
       })
     ).subscribe(link => {
@@ -220,7 +221,7 @@ export class ListPanelComponent {
         const template = new ListTemplate();
         template.originalListId = list.$key;
         template.authorId = user.$key;
-        template.authorNickname = user.nickName;
+        template.authorNickname = user.nickname;
         template.uri = name.split('/').join('');
         return template;
       })
