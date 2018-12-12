@@ -64,8 +64,10 @@
             </div>
           </nz-collapse-panel>
           <ng-template #panelTitle>
-            <div class="panel-title">
-              {{group.group.name}}
+            <div class="panel-title" fxLayout="row wrap" fxLayoutAlign="flex-start center">
+              <div class="group-name">
+                {{group.group.name}}
+              </div>
               <button nz-button nzGhost nzSize="small" nzShape="circle"
                       (click)="$event.stopPropagation();renameGroup(group.group)">
                 <i nz-icon type="edit"></i>
