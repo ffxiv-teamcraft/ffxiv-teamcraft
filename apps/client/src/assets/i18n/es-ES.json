@@ -277,6 +277,7 @@
     "Password_reset_mail_sent": "Correo electrónico para restablecimiento de contraseña enviado",
     "Connect_with_patreon": "Conectar con patreon",
     "Connected_with_patreon": "Conectado con patreon",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
