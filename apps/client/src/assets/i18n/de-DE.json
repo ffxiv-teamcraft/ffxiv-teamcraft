@@ -277,6 +277,8 @@
     "Password_reset_mail_sent": "Password reset email sent",
     "Connect_with_patreon": "Connect with patreon",
     "Connected_with_patreon": "Connected with patreon",
+    "Nickname": "Nickname",
+    "Nickname_used": "Nickname already used",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "Copy item name",
@@ -293,9 +295,6 @@
     "Masterbooks": "Meisterbücher",
     "Patreon_supporter": "Patreon-Unterstützer",
     "Patreon_features": "Patreon-Unterstützer Features",
-    "Feature_requires_nickname": "Dieses Feature erfordert, dass du einen Nickname vergeben hast",
-    "Nickname": "Nickname",
-    "No_nickname": "Kein Nickname vergeben",
     "Contacts": "Kontakte",
     "Add_new_contact": "Neuer Kontakt",
     "Save_for_all": "Für alle speichern",
