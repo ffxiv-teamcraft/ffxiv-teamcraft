@@ -29,6 +29,8 @@ import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
 import { PatreonService } from './patreon/patreon.service';
+import { CustomLink } from './database/custom-links/custom-link';
+import { ListTemplate } from './database/custom-links/list-template';
 
 
 @NgModule({
@@ -40,6 +42,13 @@ import { PatreonService } from './patreon/patreon.service';
         children: {
           LIST_COMMENT: ListCommentNotification,
           LIST_ITEM_COMMENT: ListItemCommentNotification
+        }
+      },
+      {
+        parent: CustomLink,
+        children: {
+          link: CustomLink,
+          template: ListTemplate
         }
       }
     ]),

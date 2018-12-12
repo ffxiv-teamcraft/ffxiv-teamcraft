@@ -1,9 +1,14 @@
 import { DataModel } from '../storage/data-model';
 import { ForeignKey } from '../relational/foreign-key';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { Parent } from '@kaiu/serializer';
 
+@Parent({
+  discriminatorField: 'type',
+  allowSelf: true
+})
 export class CustomLink extends DataModel {
-  template = false;
+  type = 'link';
   authorNickname: string;
   uri: string;
   redirectTo: string;
