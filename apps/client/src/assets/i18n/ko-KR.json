@@ -277,6 +277,8 @@
     "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다",
     "Connect_with_patreon": "Patreon에 연결",
     "Connected_with_patreon": "Patreon에 연결되었습니다",
+    "Nickname": "Nickname",
+    "Nickname_used": "Nickname already used",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -293,9 +295,6 @@
     "Masterbooks": "비전서",
     "Patreon_supporter": "Patreon 후원자",
     "Patreon_features": "Patreon 후원자 특전",
-    "Feature_requires_nickname": "이 기능은 닉네임 설정이 필요합니다",
-    "Nickname": "닉네임",
-    "No_nickname": "닉네임이 설정되지 않았습니다",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
     "Save_for_all": "모두 저장",
