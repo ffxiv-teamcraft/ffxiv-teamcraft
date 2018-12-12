@@ -126,8 +126,4 @@ export class RotationsPageComponent {
     return rotation.$key;
   }
 
-  trackByRotationFolder(index: number, folder: CraftingRotationsFolder): string {
-    return folder.$key + folder.index;
-  }
-
 }
