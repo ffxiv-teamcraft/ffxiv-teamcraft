@@ -68,7 +68,7 @@ export class RotationFoldersEffects {
   @Effect()
   updateRotationFolder$ = this.actions$.pipe(
     ofType<UpdateRotationFolder>(RotationFoldersActionTypes.UpdateRotationFolder),
-    switchMap(action => this.craftingRotationFolderService.update(action.folder.$key, action.folder)),
+    mergeMap(action => this.craftingRotationFolderService.set(action.folder.$key, action.folder)),
     switchMap(() => EMPTY)
   );
 
@@ -76,7 +76,7 @@ export class RotationFoldersEffects {
   @Effect()
   deleteRotationFolder$ = this.actions$.pipe(
     ofType<DeleteRotationFolder>(RotationFoldersActionTypes.DeleteRotationFolder),
-    switchMap(action => this.craftingRotationFolderService.remove(action.key)),
+    mergeMap(action => this.craftingRotationFolderService.remove(action.key)),
     switchMap(() => EMPTY)
   );
 

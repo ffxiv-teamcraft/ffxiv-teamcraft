@@ -14,7 +14,6 @@ import { catchError, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/opera
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { EMPTY, of } from 'rxjs';
 import { CustomLinksFacade } from './custom-links.facade';
-import { RotationsFacade } from '../../rotations/+state/rotations.facade';
 import { CustomLinksService } from '../../../core/database/custom-links/custom-links.service';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 
@@ -26,7 +25,7 @@ export class CustomLinksEffects {
     ofType(CustomLinksActionTypes.LoadMyCustomLinks),
     switchMap(() => this.authFacade.userId$),
     switchMap(userId => {
-      return this.craftingCustomLinkService.getByForeignKey(TeamcraftUser, userId).pipe(
+      return this.customLinksService.getByForeignKey(TeamcraftUser, userId).pipe(
         map(links => new MyCustomLinksLoaded(links, userId))
       );
     })
@@ -36,7 +35,7 @@ export class CustomLinksEffects {
   loadCustomLink$ = this.actions$.pipe(
     ofType<LoadCustomLink>(CustomLinksActionTypes.LoadCustomLink),
     mergeMap(action => {
-      return this.craftingCustomLinkService.get(action.key).pipe(
+      return this.customLinksService.get(action.key).pipe(
         catchError(() => {
           return of({ $key: action.key, notFound: true });
         })
@@ -51,7 +50,7 @@ export class CustomLinksEffects {
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]) => {
       action.link.authorId = userId;
-      return this.craftingCustomLinkService.add(action.link);
+      return this.customLinksService.add(action.link);
     }),
     switchMap(() => EMPTY)
   );
@@ -60,7 +59,7 @@ export class CustomLinksEffects {
   @Effect()
   updateCustomLink$ = this.actions$.pipe(
     ofType<UpdateCustomLink>(CustomLinksActionTypes.UpdateCustomLink),
-    switchMap(action => this.craftingCustomLinkService.update(action.link.$key, action.link)),
+    switchMap(action => this.customLinksService.update(action.link.$key, action.link)),
     switchMap(() => EMPTY)
   );
 
@@ -68,7 +67,7 @@ export class CustomLinksEffects {
   @Effect()
   deleteCustomLink$ = this.actions$.pipe(
     ofType<DeleteCustomLink>(CustomLinksActionTypes.DeleteCustomLink),
-    switchMap(action => this.craftingCustomLinkService.remove(action.key)),
+    switchMap(action => this.customLinksService.remove(action.key)),
     switchMap(() => EMPTY)
   );
 
@@ -76,8 +75,7 @@ export class CustomLinksEffects {
     private actions$: Actions,
     private authFacade: AuthFacade,
     private linksFacade: CustomLinksFacade,
-    private rotationsFacade: RotationsFacade,
-    private craftingCustomLinkService: CustomLinksService
+    private customLinksService: CustomLinksService
   ) {
   }
 }

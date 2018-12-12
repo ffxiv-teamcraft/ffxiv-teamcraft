@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { combineLatest } from 'rxjs';
@@ -26,19 +26,21 @@ export class RotationsPageComponent {
               private foldersFacade: RotationFoldersFacade) {
     this.rotationFoldersDisplay$ = combineLatest(this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$).pipe(
       map(([folders, rotations]) => {
-        return folders.filter(folder => folder.$key !== undefined).map(folder => {
-          return {
-            folder: folder,
-            rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
-              .filter(r => r !== undefined)
-              .map(rotation => {
-                rotation.folderId = folder.$key;
-                return rotation;
-              })
-          };
-        });
+        return folders
+          .filter(folder => folder.$key !== undefined)
+          .map(folder => {
+            return {
+              folder: folder,
+              rotations: folder.rotationIds.map(id => rotations.find(r => r.$key === id))
+                .filter(r => r !== undefined)
+                .map(rotation => {
+                  rotation.folderId = folder.$key;
+                  return rotation;
+                })
+            };
+          });
       }),
-      shareReplay(1)
+      map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
     );
 
     this.rotations$ = combineLatest(this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$).pipe(
@@ -100,8 +102,32 @@ export class RotationsPageComponent {
     ).subscribe(folder => this.foldersFacade.createFolder(folder));
   }
 
+  setRotationFolderIndex(display: { folder: CraftingRotationsFolder, rotations: CraftingRotation[] },
+                         index: number,
+                         displays: { folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]): void {
+    // Remove folder from the array
+    displays = displays.filter(d => d.folder.$key !== display.folder.$key);
+    // Insert it at new index
+    displays.splice(index, 0, display);
+    // Update indexes and persist
+    displays
+      .map(d => d.folder)
+      .filter((f, i) => f.index !== i)
+      .map((f, i) => {
+        f.index = i;
+        return f;
+      })
+      .forEach(f => {
+        this.foldersFacade.updateFolder(f);
+      });
+  }
+
   trackByRotation(index: number, rotation: CraftingRotation): string {
     return rotation.$key;
+  }
+
+  trackByRotationFolder(index: number, folder: CraftingRotationsFolder): string {
+    return folder.$key + folder.index;
   }
 
 }

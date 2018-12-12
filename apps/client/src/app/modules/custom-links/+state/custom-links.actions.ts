@@ -5,12 +5,12 @@ export enum CustomLinksActionTypes {
   LoadMyCustomLinks = '[CustomLinks] Load My CustomLinks',
   MyCustomLinksLoaded = '[CustomLinks] My CustomLinks Loaded',
 
-  SelectCustomLink = '[CustomLinks] Select Rotation Folder',
-  LoadCustomLink = '[CustomLinks] Load Rotation Folder',
-  CustomLinkLoaded = '[CustomLinks] Rotation Folder Loaded',
-  UpdateCustomLink = '[CustomLinks] UpdateRotation Folder',
-  CreateCustomLink = '[CustomLinks] Create Rotation Folder',
-  DeleteCustomLink = '[CustomLinks] Delete Rotation Folder',
+  SelectCustomLink = '[CustomLinks] Select Custom Link',
+  LoadCustomLink = '[CustomLinks] Load Custom Link',
+  CustomLinkLoaded = '[CustomLinks] Custom Link Loaded',
+  UpdateCustomLink = '[CustomLinks] Update Custom Link',
+  CreateCustomLink = '[CustomLinks] Create Custom Link',
+  DeleteCustomLink = '[CustomLinks] Delete Custom Link',
 }
 
 export class LoadMyCustomLinks implements Action {

@@ -40,13 +40,12 @@ export function rotationFoldersReducer(
         ...state,
         list: [
           ...state.list.map(folder => {
-            if (folder.authorId === action.folder.$key) {
+            if (folder.$key === action.folder.$key) {
               return action.folder;
             }
             return folder;
           })
-        ],
-        loaded: true
+        ]
       };
       break;
     }

@@ -8,7 +8,7 @@ export enum RotationFoldersActionTypes {
   SelectRotationFolder = '[RotationFolders] Select Rotation Folder',
   LoadRotationFolder = '[RotationFolders] Load Rotation Folder',
   RotationFolderLoaded = '[RotationFolders] Rotation Folder Loaded',
-  UpdateRotationFolder = '[RotationFolders] UpdateRotation Folder',
+  UpdateRotationFolder = '[RotationFolders] Update Rotation Folder',
   CreateRotationFolder = '[RotationFolders] Create Rotation Folder',
   DeleteRotationFolder = '[RotationFolders] Delete Rotation Folder',
   RemoveRotationFromFolder = '[RotationFolders] Remove Rotation From Folder',

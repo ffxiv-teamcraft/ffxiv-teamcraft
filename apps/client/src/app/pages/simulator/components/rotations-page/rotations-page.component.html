@@ -21,9 +21,14 @@
   <ng-container *ngIf="rotationFoldersDisplay$ | async as folders">
     <div class="folders" fxLayout="column" fxLayoutGap="10px" *ngIf="folders.length > 0">
       <h2>{{'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate}}</h2>
-      <div *ngFor="let folderDisplay of folders; trackBy: trackByRotation">
-        <app-rotation-folder-panel [folder]="folderDisplay.folder"
-                                   [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
+      <div fxLayout="column" fxLayoutGap="5px"
+           class="ngx-dnd-container" ngxDroppable="folder"
+           (drop)="setRotationFolderIndex($event.value, $event.dropIndex, folders)">
+        <div *ngFor="let folderDisplay of folders" ngxDraggable="folder"
+             [model]="folderDisplay" class="ngx-dnd-item">
+          <app-rotation-folder-panel [folder]="folderDisplay.folder"
+                                     [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
+        </div>
       </div>
     </div>
   </ng-container>

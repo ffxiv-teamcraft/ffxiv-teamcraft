@@ -15,7 +15,7 @@ import {
 } from './rotation-folders.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest, Observable } from 'rxjs';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { RotationsFacade } from '../../rotations/+state/rotations.facade';
@@ -31,8 +31,8 @@ export class RotationFoldersFacade {
     filter(rotation => rotation !== undefined)
   );
   myRotationFolders$ = combineLatest(this.allRotationFolders$, this.authFacade.userId$).pipe(
-    map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
-    shareReplay(1)
+    map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)
+      .sort((a, b) => a.index - b.index))
   );
 
   favoriteRotationFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]> =

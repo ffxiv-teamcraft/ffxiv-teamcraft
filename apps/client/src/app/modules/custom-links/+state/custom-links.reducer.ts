@@ -1,11 +1,11 @@
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { CustomLinksAction, CustomLinksActionTypes } from './custom-links.actions';
 
-export const CUSTOM_LINKS_FEATURE_KEY = 'rotationFolders';
+export const CUSTOM_LINKS_FEATURE_KEY = 'customLinks';
 
 export interface CustomLinksState {
   list: CustomLink[]; // list of CustomLinks; analogous to a sql normalized table
-  selectedId?: string | number; // which CustomLinks record has been selected
+  selectedId?: string | number; // which CustomLink record has been selected
   loaded: boolean; // has the CustomLinks list been loaded
 }
 
