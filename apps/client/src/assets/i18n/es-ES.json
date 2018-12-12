@@ -128,7 +128,7 @@
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
-      "Spawn": "Spawn",
+      "Spawn": "Tiempo de aparición",
       "Spawns_twice": "Aparece dos veces",
       "Spawns_twice_description": "Aparece dos veces por día eorzeano (Una aparición AM y otra PM)",
       "Duration": "Duración",
