@@ -277,6 +277,7 @@
     "Password_reset_mail_sent": "E-mail de réinitialisation du mot de passe envoyé",
     "Connect_with_patreon": "Lier son compte à patreon",
     "Connected_with_patreon": "Compte lié avec patreon",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
