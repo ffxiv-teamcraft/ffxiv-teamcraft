@@ -447,11 +447,13 @@
     "Title": "使用者指定リンク",
     "Not_found": "リンクを見つかりませんでした。",
     "Add_link": "使用者指定リンクを作る",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "使用者指定リンク",
     "Link_type": "リンクタイプ",
     "Link_name": "リンク名",
     "target": "リンク対象",
     "Share_link_copied": "使用者指定リンクがクリップボードにコピーされました",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "使用者指定リンクなし"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "該当リストに対する、リストテンプレート生成する",
+    "Template_created": "List template created",
     "Dialog_title": "テンプレート生成",
     "Link_name": "テンプレート名",
     "target": "対象リスト",
@@ -483,7 +486,11 @@
     "Copy_template_url": "テンプレート url コピー",
     "Cloning_list": "マイアカウントでリストコピーしたものを生成する",
     "Redirect_notice": "コピー生成する時にリストに繋がれます。",
-    "Not_found": "テンプレートが見つかりません"
+    "Not_found": "テンプレートが見つかりません",
+    "STATUS": {
+      "Loading": "Loading template from database",
+      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+    }
   },
   "PERMISSIONS": {
     "Read": "読む",
