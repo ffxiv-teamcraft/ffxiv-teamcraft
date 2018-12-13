@@ -274,11 +274,11 @@
     "Account": "계정",
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
-    "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다",
+    "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다.",
     "Connect_with_patreon": "Patreon에 연결",
-    "Connected_with_patreon": "Patreon에 연결되었습니다",
+    "Connected_with_patreon": "Patreon에 연결되었습니다.",
     "Nickname": "닉네임",
-    "Nickname_used": "이미 사용중인 닉네임",
+    "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
@@ -447,13 +447,13 @@
     "Title": "사용자 지정 링크",
     "Not_found": "링크를 찾을 수 없습니다.",
     "Add_link": "사용자 지정 링크 만들기",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "사용자 지정 링크가 생성되었습니다, 복사하려면 공유 버튼을 클릭하세요.",
     "Dialog_title": "사용자 지정 링크",
     "Link_type": "링크 타입",
     "Link_name": "링크 이름",
     "target": "링크 대상",
     "Share_link_copied": "사용자 지정 링크가 클립보드에 복사되었습니다",
-    "Copy_custom_link": "Copy custom link",
+    "Copy_custom_link": "사용자 지정 링크 복사",
     "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
@@ -478,7 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "해당 목록에 대한 목록 템플릿 생성",
-    "Template_created": "List template created",
+    "Template_created": "목록 서식이 생성되었습니다.",
     "Dialog_title": "템플릿 생성",
     "Link_name": "템플릿 이름",
     "target": "대상 목록",
@@ -488,8 +488,8 @@
     "Redirect_notice": "복사본 생성시 목록으로 리디렉션 됩니다.",
     "Not_found": "템플릿을 찾을 수 없습니다",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "데이터베이스에서 서식을 불러오는 중",
+      "Copying": "목록 복사본을 계정에 생성중입니다. 완료시 자동으로 이동합니다."
     }
   },
   "PERMISSIONS": {
