@@ -34,6 +34,23 @@
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="renameFolder()">
               {{'SIMULATOR.ROTATIONS.FOLDERS.Rename' | translate}}
             </li>
+            <ng-container *ngIf="(permissionLevel$ | async) >= 40">
+              <ng-container *ngIf="user$ | async as user">
+                <ng-container *ngIf="user.patron || user.admin">
+                  <li nz-menu-item [nzDisabled]="!user.nickname"
+                      (click)="createCustomLink(_folder, user)"
+                      *ngIf="(customLink$ | async) === undefined; else copyLink">
+                    {{'CUSTOM_LINKS.Add_link' | translate}}
+                  </li>
+                  <ng-template #copyLink>
+                    <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
+                        (cbOnSuccess)="afterCustomLinkCopy()">
+                      {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
+                    </li>
+                  </ng-template>
+                </ng-container>
+              </ng-container>
+            </ng-container>
           </ul>
         </nz-dropdown>
       </div>

@@ -95,16 +95,30 @@
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
-                <li nz-menu-item [nzDisabled]="!user.nickname"
-                    (click)="createTemplate(_list, user)"
-                    *ngIf="!publicDisplay && (user.patron || user.admin)">
-                  {{'LIST_TEMPLATE.Create_template' | translate}}
-                </li>
-                <li nz-menu-item [nzDisabled]="!user.nickname"
-                    (click)="createCustomLink(_list, user)"
-                    *ngIf="!publicDisplay && (user.patron || user.admin)">
-                  {{'CUSTOM_LINKS.Add_link' | translate}}
-                </li>
+                <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
+                  <li nz-menu-item [nzDisabled]="!user.nickname"
+                      (click)="createTemplate(_list, user)"
+                      *ngIf="(listTemplate$ | async) === undefined; else copyTemplate">
+                    {{'LIST_TEMPLATE.Create_template' | translate}}
+                  </li>
+                  <ng-template #copyTemplate>
+                    <li nz-menu-item *ngIf="listTemplate$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
+                        (cbOnSuccess)="afterTemplateUrlCopy()">
+                      {{'LIST_TEMPLATE.Copy_template_url' | translate}}
+                    </li>
+                  </ng-template>
+                  <li nz-menu-item [nzDisabled]="!user.nickname"
+                      (click)="createCustomLink(_list, user)"
+                      *ngIf="(customLink$ | async) === undefined; else copyLink">
+                    {{'CUSTOM_LINKS.Add_link' | translate}}
+                  </li>
+                  <ng-template #copyLink>
+                    <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
+                        (cbOnSuccess)="afterCustomLinkCopy()">
+                      {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
+                    </li>
+                  </ng-template>
+                </ng-container>
               </ng-container>
             </ng-container>
           </ul>

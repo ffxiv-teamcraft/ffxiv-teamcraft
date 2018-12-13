@@ -3,7 +3,7 @@ import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotati
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -11,6 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
+import { Workshop } from '../../../../model/other/workshop';
+import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
+import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 
 @Component({
   selector: 'app-rotation-folder-panel',
@@ -38,8 +42,29 @@ export class RotationFolderPanelComponent {
     shareReplay(1)
   );
 
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
+
+  private syncLinkUrl: string;
+
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
-              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService) {
+              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
+              private customLinksFacade: CustomLinksFacade) {
+
+    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.folder$).pipe(
+      map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),
+      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+      shareReplay(1)
+    );
+  }
+
+  createCustomLink(folder: CraftingRotationsFolder, user: TeamcraftUser): void {
+    this.customLinksFacade.createCustomLink(folder.name, `rotation-folder/${folder.$key}`, user);
+  }
+
+  afterCustomLinkCopy(): void {
+    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   deleteFolder(): void {
@@ -47,7 +72,7 @@ export class RotationFolderPanelComponent {
   }
 
   getLink(): string {
-    return this.linkTools.getLink(`/rotation-folder/${this._folder.$key}`);
+    return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/rotation-folder/${this._folder.$key}`);
   }
 
   renameFolder(): void {

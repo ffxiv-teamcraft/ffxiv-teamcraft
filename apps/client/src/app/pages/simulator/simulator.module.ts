@@ -37,6 +37,7 @@ import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
 
 const routes: Routes = [
   {
@@ -95,6 +96,7 @@ const routes: Routes = [
     PageLoaderModule,
     FavoritesModule,
     UserAvatarModule,
+    CustomLinksModule,
 
     NgZorroAntdModule,
 

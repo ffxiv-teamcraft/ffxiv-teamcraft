@@ -26,6 +26,30 @@
                   *ngIf="(permissionLevel$ | async) >= 40">
             <i nz-icon type="delete"></i>
           </button>
+          <ng-container *ngIf="(permissionLevel$ | async) >= 40">
+            <ng-container *ngIf="user$ | async as user">
+              <ng-container *ngIf="user.patron || user.admin">
+                <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'"
+                             *ngIf="(permissionLevel$ | async) >= 30">
+                  <button nz-dropdown (click)="$event.stopPropagation()" nz-button [nzShape]="'circle'">
+                    <i nz-icon type="ellipsis"></i></button>
+                  <ul nz-menu>
+                    <li nz-menu-item [nzDisabled]="!user.nickname"
+                        (click)="createCustomLink(rotation, user)"
+                        *ngIf="(customLink$ | async) === undefined; else copyLink">
+                      {{'CUSTOM_LINKS.Add_link' | translate}}
+                    </li>
+                    <ng-template #copyLink>
+                      <li nz-menu-item *ngIf="customLink$ | async as link" ngxClipboard [cbContent]="link.getUrl()"
+                          (cbOnSuccess)="afterCustomLinkCopy()">
+                        {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
+                      </li>
+                    </ng-template>
+                  </ul>
+                </nz-dropdown>
+              </ng-container>
+            </ng-container>
+          </ng-container>
         </div>
       </div>
     </ng-template>

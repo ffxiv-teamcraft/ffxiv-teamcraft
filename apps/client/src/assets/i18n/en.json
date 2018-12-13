@@ -447,11 +447,13 @@
     "Title": "Custom Links",
     "Not_found": "Link not found",
     "Add_link": "Create a custom link",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "Custom link",
     "Link_type": "Link type",
     "Link_name": "Link name",
     "target": "Link target",
     "Share_link_copied": "Custom link copied to clipboard",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "No custom links"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Create a list template for this list",
+    "Template_created": "List template created",
     "Dialog_title": "Template creation",
     "Link_name": "Template name",
     "target": "Target list",

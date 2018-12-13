@@ -48,9 +48,11 @@ export class ListPanelComponent {
 
   public user$ = this.authFacade.user$;
 
+  public listTemplate$: Observable<ListTemplate>;
+
   public customLink$: Observable<CustomLink>;
 
-  public listTemplate$: Observable<ListTemplate>;
+  private syncLinkUrl: string;
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
@@ -67,8 +69,21 @@ export class ListPanelComponent {
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private clipboard: ClipboardService) {
+              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade) {
+    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+      map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
+      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+      shareReplay(1)
+    );
+
+
+    this.listTemplate$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+      map(([links, list]) => {
+        return <ListTemplate>links.find(link => {
+          return link.type === 'template' && (<ListTemplate>link).originalListId === list.$key;
+        });
+      })
+    );
   }
 
   deleteList(list: List): void {
@@ -76,7 +91,7 @@ export class ListPanelComponent {
   }
 
   getLink(): string {
-    return this.linkTools.getLink(`/list/${this._list.$key}`);
+    return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
   }
 
   cloneList(compact: List): void {
@@ -167,6 +182,10 @@ export class ListPanelComponent {
     this.message.success(this.translate.instant('Share_link_copied'));
   }
 
+  afterTemplateUrlCopy(): void {
+    this.message.success(this.translate.instant('LIST_TEMPLATE.Share_link_copied'));
+  }
+
   openTagsPopup(list: List): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
@@ -177,36 +196,11 @@ export class ListPanelComponent {
   }
 
   createCustomLink(list: List, user: TeamcraftUser): void {
-    if (!user.nickname) {
-      return;
-    }
-    this.dialog.create({
-      nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: list.name },
-      nzFooter: null,
-      nzTitle: this.translate.instant('CUSTOM_LINKS.Add_link')
-    }).afterClose.pipe(
-      filter(name => name !== undefined),
-      map(name => {
-        const link = new CustomLink();
-        link.redirectTo = `list/${list.$key}`;
-        link.authorId = user.$key;
-        link.authorNickname = user.nickname;
-        link.uri = name.split('/').join('');
-        return link;
-      }),
-      tap(link => this.customLinksFacade.createCustomLink(link)),
-      switchMap(link => {
-        return this.customLinksFacade.myCustomLinks$.pipe(
-          map(links => links.find(l => l.uri === link.uri && l.$key !== undefined)),
-          filter(l => l !== undefined),
-          first()
-        );
-      })
-    ).subscribe(link => {
-      this.clipboard.copyFromContent(link.getUrl());
-      this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
-    });
+    this.customLinksFacade.createCustomLink(list.name, `list/${list.$key}`, user);
+  }
+
+  afterCustomLinkCopy(): void {
+    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   createTemplate(list: List, user: TeamcraftUser): void {
@@ -224,8 +218,18 @@ export class ListPanelComponent {
         template.authorNickname = user.nickname;
         template.uri = name.split('/').join('');
         return template;
+      }),
+      tap(link => this.customLinksFacade.addCustomLink(link)),
+      switchMap(link => {
+        return this.customLinksFacade.myCustomLinks$.pipe(
+          map(links => links.find(l => l.uri === link.uri && l.$key !== undefined)),
+          filter(l => l !== undefined),
+          first()
+        );
       })
-    );
+    ).subscribe(link => {
+      this.message.success(this.translate.instant('LIST_TEMPLATE.Template_created'));
+    });
   }
 
 }

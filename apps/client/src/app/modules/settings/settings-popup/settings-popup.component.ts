@@ -10,7 +10,6 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../../core/database/user.service';
-import { Observable } from 'rxjs';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
