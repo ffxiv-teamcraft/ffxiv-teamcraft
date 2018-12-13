@@ -447,11 +447,13 @@
     "Title": "Vínculos Personalizados",
     "Not_found": "Vínculo no encontrado",
     "Add_link": "Crear un vínculo personalizado",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "Vínculo Personalizado",
     "Link_type": "Tipo de vínculo",
     "Link_name": "Nombre del vínculo",
     "target": "Objetivo del vínculo",
     "Share_link_copied": "Vínculo personalizado copiado al portapapeles",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "No hay vínculos personalizados"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Crear una plantilla para esta lista",
+    "Template_created": "List template created",
     "Dialog_title": "Creación de plantilla",
     "Link_name": "Nombre de la plantilla",
     "target": "Lista objetivo",
@@ -483,7 +486,11 @@
     "Copy_template_url": "Copiar url de la plantilla",
     "Cloning_list": "Creando una copia de la lista a su cuenta",
     "Redirect_notice": "Será redirigido a la lista una vez que la copia sea creada",
-    "Not_found": "Plantilla no encontrada"
+    "Not_found": "Plantilla no encontrada",
+    "STATUS": {
+      "Loading": "Loading template from database",
+      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+    }
   },
   "PERMISSIONS": {
     "Read": "Lectura",
