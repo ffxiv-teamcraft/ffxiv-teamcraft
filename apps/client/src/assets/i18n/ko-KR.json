@@ -447,11 +447,13 @@
     "Title": "사용자 지정 링크",
     "Not_found": "링크를 찾을 수 없습니다.",
     "Add_link": "사용자 지정 링크 만들기",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "사용자 지정 링크",
     "Link_type": "링크 타입",
     "Link_name": "링크 이름",
     "target": "링크 대상",
     "Share_link_copied": "사용자 지정 링크가 클립보드에 복사되었습니다",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "해당 목록에 대한 목록 템플릿 생성",
+    "Template_created": "List template created",
     "Dialog_title": "템플릿 생성",
     "Link_name": "템플릿 이름",
     "target": "대상 목록",
@@ -483,7 +486,11 @@
     "Copy_template_url": "템플릿 url 복사",
     "Cloning_list": "내 계정으로 목록 복사본 생성",
     "Redirect_notice": "복사본 생성시 목록으로 리디렉션 됩니다.",
-    "Not_found": "템플릿을 찾을 수 없습니다"
+    "Not_found": "템플릿을 찾을 수 없습니다",
+    "STATUS": {
+      "Loading": "Loading template from database",
+      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+    }
   },
   "PERMISSIONS": {
     "Read": "읽기",
