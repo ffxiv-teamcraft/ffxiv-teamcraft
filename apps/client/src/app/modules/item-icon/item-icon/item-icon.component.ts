@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-item-icon',
@@ -31,7 +32,11 @@ export class ItemIconComponent {
   @Input()
   width = 48;
 
-  constructor() {
+  constructor(private settings: SettingsService) {
+  }
+
+  getLink(): string {
+    return `https://garlandtools.org/db/#item/${this.itemId}`;
   }
 
 }

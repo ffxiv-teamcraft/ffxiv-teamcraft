@@ -16,7 +16,7 @@ export class SettingsService {
   }
 
   public get baseLink(): string {
-    return this.getSetting('base-link', 'XIVDB');
+    return this.getSetting('base-link', 'Garlandtools');
   }
 
   public set baseLink(base: string) {
