@@ -96,7 +96,7 @@ export class ListsComponent {
         }
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
-            return { team: team, lists: lists.sort((a,b) => a.$key > b.$key ? -1 : 1) };
+            return { team: team, lists: lists.sort((a, b) => a.$key > b.$key ? -1 : 1) };
           })
         )));
       }),
@@ -106,7 +106,7 @@ export class ListsComponent {
     this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$, this.query$).pipe(
       filter(([loading]) => !loading),
       debounceTime(100),
-      map(([,lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
+      map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
         const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists

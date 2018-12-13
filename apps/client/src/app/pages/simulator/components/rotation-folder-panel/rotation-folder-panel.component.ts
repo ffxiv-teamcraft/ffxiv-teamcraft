@@ -11,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
-import { Workshop } from '../../../../model/other/workshop';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';

@@ -23,7 +23,8 @@
                 </span>
               </div>
               <div *ngIf="node.weathers !== undefined" fxLayout="column" fxLayoutGap="5px">
-                <div *ngFor="let weather of node.weathers" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div *ngFor="let weather of node.weathers" fxLayout="row" fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center">
                   <img [src]="weather | weatherIcon" alt="">
                   <div>
                     {{weather | weatherName | i18n}}

@@ -74,7 +74,8 @@
         </button>
       </div>
       <nz-collapse>
-        <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate" [nzActive]="custom || (loggedIn$ | async) === false">
+        <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate"
+                           [nzActive]="custom || (loggedIn$ | async) === false">
           <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly" fxLayout.lt-sm="column"
                fxLayoutGap.lt-sm="16px" fxLayoutAlign.lt-sm="center center">
             <div [fxFlex]="custom?'1 1 48%':'1 0 30%'" fxLayout="column">
@@ -138,7 +139,8 @@
                   </nz-form-item>
                   <nz-form-item>
                     <nz-form-control>
-                      <label nz-checkbox id="specialist" formControlName="specialist">{{'SIMULATOR.CONFIGURATION.Specialist'
+                      <label nz-checkbox id="specialist"
+                             formControlName="specialist">{{'SIMULATOR.CONFIGURATION.Specialist'
                         | translate}}</label>
                     </nz-form-control>
                   </nz-form-item>
@@ -201,7 +203,7 @@
                         <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedFood.hq">
                       </div>
                       <div *ngFor="let bonus of selectedFood.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{bonus.value * 100}}%
                         ({{bonus.max}})
                       </div>
                     </div>
@@ -224,7 +226,7 @@
                         <img src="./assets/icons/HQ.png" alt="(HQ)" *ngIf="selectedMedicine.hq">
                       </div>
                       <div *ngFor="let bonus of selectedMedicine.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.'+bonus.type) | translate}}: {{bonus.value * 100}}%
+                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{bonus.value * 100}}%
                         ({{bonus.max}})
                       </div>
                     </div>
@@ -251,7 +253,7 @@
                         <b>{{action.actionId | freeCompanyActionName | i18n}}</b>
                       </div>
                       <div>
-                        {{('SIMULATOR.CONFIGURATION.STATS.'+action.type) | translate}}: {{action.value}}
+                        {{('SIMULATOR.CONFIGURATION.STATS.' + action.type) | translate}}: {{action.value}}
                       </div>
                     </div>
                   </div>
@@ -325,7 +327,8 @@
           <div fxLayout="row" fxLayoutGap="10px">
             <div class="durability" fxLayout="column" fxLayoutAlign="center center">
               <h3>{{'SIMULATOR.Durability' | translate}}</h3>
-              <span class="durability-value">{{resultData.simulation.durability}} / {{resultData.simulation.recipe.durability}}</span>
+              <span class="durability-value">{{resultData.simulation.durability}}
+                / {{resultData.simulation.recipe.durability}}</span>
             </div>
             <div class="craft-bars" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
               <div class="top-bars">

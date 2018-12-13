@@ -13,11 +13,13 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: ':importString',
-    component: ImportComponent
+    component: ImportComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

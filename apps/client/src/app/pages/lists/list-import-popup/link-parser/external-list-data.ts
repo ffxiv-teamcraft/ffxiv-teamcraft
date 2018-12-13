@@ -1,4 +1,4 @@
 export interface ExternalListData {
-    itemId: number;
-    quantity: number;
+  itemId: number;
+  quantity: number;
 }

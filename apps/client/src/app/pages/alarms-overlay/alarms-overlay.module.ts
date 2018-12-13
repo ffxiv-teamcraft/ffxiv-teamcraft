@@ -15,11 +15,13 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
 import { FormsModule } from '@angular/forms';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: AlarmsOverlayComponent
+    component: AlarmsOverlayComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

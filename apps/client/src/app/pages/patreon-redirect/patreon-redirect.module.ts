@@ -5,11 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: PatreonRedirectComponent
+    component: PatreonRedirectComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

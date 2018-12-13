@@ -18,11 +18,13 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { SearchIntroComponent } from './search-intro/search-intro.component';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: SearchComponent
+    component: SearchComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

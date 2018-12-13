@@ -1,5 +1,6 @@
 <div class="config" fxLayout="column" fxLayoutGap="5px">
-  <nz-alert nzType="danger" [nzMessage]="'SIMULATOR.Too_many_aactions' | translate" *ngIf="tooManyAactions" nzShowIcon></nz-alert>
+  <nz-alert nzType="danger" [nzMessage]="'SIMULATOR.Too_many_aactions' | translate" *ngIf="tooManyAactions"
+            nzShowIcon></nz-alert>
   <label nz-checkbox [(ngModel)]="addEcho" (ngModelChange)="generateMacros()">
     {{'SIMULATOR.Include_sound_end' | translate}}
   </label>
@@ -21,7 +22,8 @@
 </div>
 <div class="macro">
   <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard [cbContent]="getText(macroFragment)">
+    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
+            [cbContent]="getText(macroFragment)">
         <i nz-icon type="copy"></i>
     </button>
     <span class="macro-line" *ngFor="let line of macroFragment">{{line}}<br></span>
@@ -31,7 +33,8 @@
 <nz-divider></nz-divider>
 <div class="macro">
   <pre class="macro-fragment">
-    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard [cbContent]="getText(aactionsMacro)">
+    <button nz-button nzShape="circle" nzSize="small" class="copy-macro" ngxClipboard
+            [cbContent]="getText(aactionsMacro)">
         <i nz-icon type="copy"></i>
     </button>
     <span class="macro-line" *ngFor="let line of aactionsMacro">{{line}}<br></span>

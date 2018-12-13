@@ -18,7 +18,7 @@ export class TeamInviteComponent implements OnInit {
 
   loading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  error$: ReplaySubject<string>= new ReplaySubject<string>();
+  error$: ReplaySubject<string> = new ReplaySubject<string>();
 
   constructor(private route: ActivatedRoute, private router: Router,
               private teamsFacade: TeamsFacade, private teamInviteService: TeamInviteService,
@@ -62,7 +62,7 @@ export class TeamInviteComponent implements OnInit {
       }),
       switchMap(team => this.authFacade.loggedIn$.pipe(map(loggedIn => ([team, loggedIn])))),
       filter(([team, loggedIn]: [Team, boolean]) => {
-        if(!loggedIn){
+        if (!loggedIn) {
           this.error$.next('TEAMS.No_anonymous_join');
           this.loading$.next(false);
         }
@@ -86,7 +86,7 @@ export class TeamInviteComponent implements OnInit {
       first()
     ).subscribe(([team, userId]: [Team, string]) => {
       if (team.webhook !== undefined) {
-        this.discordWebhook.notifyMemberJoined(team, userId)
+        this.discordWebhook.notifyMemberJoined(team, userId);
       }
       this.router.navigateByUrl('/teams');
     });

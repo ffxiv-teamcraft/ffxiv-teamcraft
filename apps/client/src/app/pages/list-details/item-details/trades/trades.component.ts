@@ -21,7 +21,7 @@ export class TradesComponent extends ItemDetailsPopup {
       return {
         ...currency,
         amount: Math.ceil(currency.amount * this.item.amount / itemsPerTrade)
-      }
+      };
     });
   }
 

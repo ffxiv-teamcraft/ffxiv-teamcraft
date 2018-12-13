@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { Observable } from 'rxjs';
-import { first, map, startWith } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 
@@ -20,7 +20,7 @@ export class CustomSimulatorPageComponent {
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
               private rotationsFacade: RotationsFacade) {
     this.route.paramMap.pipe(
-      map(params => params.get('rotationId')),
+      map(params => params.get('rotationId'))
     ).subscribe(id => {
       if (id === null) {
         this.rotationsFacade.createRotation();

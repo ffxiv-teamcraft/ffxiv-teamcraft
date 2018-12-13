@@ -13,11 +13,13 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: GatheringLocationComponent
+    component: GatheringLocationComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

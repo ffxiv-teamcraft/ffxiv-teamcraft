@@ -61,9 +61,9 @@ export class MasterbooksPopupComponent implements OnInit {
     books.forEach(book => book.checked = true);
   }
 
-  save(books: {id: number, checked: boolean}[]): void {
+  save(books: { id: number, checked: boolean }[]): void {
     this.authFacade.saveMasterbooks(books);
-    this.modalRef.close()
+    this.modalRef.close();
   }
 
   cancel(): void {

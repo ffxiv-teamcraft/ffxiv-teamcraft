@@ -8,11 +8,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ClipboardModule } from 'ngx-clipboard';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: MacroTranslatorComponent
+    component: MacroTranslatorComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 
@@ -31,4 +33,5 @@ const routes: Routes = [
   ],
   declarations: [MacroTranslatorComponent]
 })
-export class MacroTranslatorModule { }
+export class MacroTranslatorModule {
+}

@@ -13,10 +13,12 @@ import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [{
   path: '',
-  component: CustomLinksComponent
+  component: CustomLinksComponent,
+  canActivate: [MaintenanceGuard]
 }];
 
 @NgModule({

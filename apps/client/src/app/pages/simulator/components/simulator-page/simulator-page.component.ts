@@ -3,7 +3,7 @@ import { Craft } from '../../../../model/garland-tools/craft';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
-import { first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 
@@ -22,7 +22,7 @@ export class SimulatorPageComponent {
               private rotationsFacade: RotationsFacade, private router: Router) {
 
     this.route.paramMap.pipe(
-      map(params => params.get('rotationId')),
+      map(params => params.get('rotationId'))
     ).subscribe(id => {
       if (id === null) {
         this.rotationsFacade.createRotation();

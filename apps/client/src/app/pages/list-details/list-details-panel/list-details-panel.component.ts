@@ -11,7 +11,6 @@ import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../total-panel-price-popup/total-panel-price-popup.component';
 import { NavigationMapComponent } from '../../../modules/map/navigation-map/navigation-map.component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
-import { Vector2 } from '../../../core/tools/vector2';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -76,7 +75,7 @@ export class ListDetailsPanelComponent implements OnChanges {
                 iconid: item.icon,
                 item_amount: item.amount_needed - item.done,
                 type: partial.type
-              }
+              };
             }
             return undefined;
           })
@@ -87,7 +86,7 @@ export class ListDetailsPanelComponent implements OnChanges {
   }
 
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    if(row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)){
+    if (row.vendors && row.vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = row.vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
       return {
         x: vendor.coords.x,
@@ -95,7 +94,7 @@ export class ListDetailsPanelComponent implements OnChanges {
         type: 'Vendor'
       };
     }
-    if(row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))){
+    if (row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))) {
       const trade = row.tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
       const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
       return {
@@ -104,7 +103,7 @@ export class ListDetailsPanelComponent implements OnChanges {
         type: 'Trade'
       };
     }
-    if(row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)){
+    if (row.gatheredBy && row.gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
       const node = row.gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
       return {
         x: node.coords[0],

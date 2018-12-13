@@ -43,11 +43,13 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 import { PricingModule } from '../../modules/pricing/pricing.module';
 import { NumberQuestionPopupModule } from '../../modules/number-question-popup/number-question-popup.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: ':listId',
-    component: ListDetailsComponent
+    component: ListDetailsComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

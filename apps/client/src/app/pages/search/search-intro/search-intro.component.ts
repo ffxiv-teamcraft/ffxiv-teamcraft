@@ -51,7 +51,7 @@ export class SearchIntroComponent {
       link: '/macro-translator',
       title: 'MACRO_TRANSLATION.Title',
       description: 'Macro_translation'
-    },
+    }
   ];
 
   constructor(private firebase: AngularFireDatabase) {

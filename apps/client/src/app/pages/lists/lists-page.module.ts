@@ -17,11 +17,13 @@ import { TeamsModule } from '../../modules/teams/teams.module';
 import { MergeListsPopupComponent } from './merge-lists-popup/merge-lists-popup.component';
 import { FormsModule } from '@angular/forms';
 import { ListImportPopupComponent } from './list-import-popup/list-import-popup.component';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListsComponent
+    component: ListsComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

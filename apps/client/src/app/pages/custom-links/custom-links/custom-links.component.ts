@@ -28,7 +28,7 @@ export class CustomLinksComponent {
               private translate: TranslateService) {
     this.linksDisplay$ = this.customLinksFacade.myCustomLinks$.pipe(
       switchMap(links => {
-        if(links.length === 0){
+        if (links.length === 0) {
           return of([]);
         }
         return combineLatest(links.map(link => {

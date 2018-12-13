@@ -3,10 +3,12 @@
   position: relative;
   height: 40px;
   width: 40px;
+
   .action {
     &.disabled {
       opacity: .8;
     }
+
     &.not-enough-cp {
       .cost {
         position: absolute;
@@ -19,9 +21,11 @@
         text-shadow: -1px 0 #820000, 0 1px #820000, 1px 0 #820000, 0 -1px #820000;
       }
     }
+
     img {
       border-radius: 5px;
     }
+
     .failed {
       position: absolute;
       right: -12px;
@@ -30,6 +34,7 @@
       color: red;
       text-shadow: -1px 0 #820000, 0 1px #820000, 1px 0 #820000, 0 -1px #820000;
     }
+
     .red-overlay {
       position: absolute;
       top: 0;
@@ -40,6 +45,7 @@
       background-color: rgb(255, 150, 150);
       opacity: .4;
     }
+
     .cost {
       position: absolute;
       font-size: 12px;
@@ -50,6 +56,7 @@
       color: #ffd0e1;
       text-shadow: -1px 0 #680082, 0 1px #680082, 1px 0 #680082, 0 -1px #680082;
     }
+
     // This comes from lokyst's css
     &:before {
       position: absolute;
@@ -62,6 +69,7 @@
       background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, .15) 100%);
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.6)), color-stop(100%, rgba(255, 255, 255, .15)));
     }
+
     &:after {
       content: ' ';
       width: 100%;

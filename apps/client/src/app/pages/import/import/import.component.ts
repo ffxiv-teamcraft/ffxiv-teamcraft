@@ -38,7 +38,7 @@ export class ImportComponent {
         return exploded.map(row => {
           const rowContent = row.split(',');
           const itemId = +rowContent[0];
-          const recipeId = rowContent[1] === 'null'?null:rowContent[1];
+          const recipeId = rowContent[1] === 'null' ? null : rowContent[1];
           const quantity = +rowContent[2];
           return {
             itemId: itemId,

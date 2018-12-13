@@ -116,7 +116,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public selectedMedicine: Consumable;
   public selectedFreeCompanyActions: FreeCompanyAction[] = [];
 
-  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({ control: 0, cp: 0, craftsmanship: 0 });
+  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({
+    control: 0,
+    cp: 0,
+    craftsmanship: 0
+  });
 
   private onDestroy$ = new Subject<void>();
 
@@ -608,7 +612,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getFreeCompanyActions(type: string): FreeCompanyAction[] {
-    return this.freeCompanyActions.filter(action => action.type === <BonusType> type);
+    return this.freeCompanyActions.filter(action => action.type === <BonusType>type);
   }
 
   isFreeCompanyActionOptionDisabled(type: string, actionId: number): boolean {
