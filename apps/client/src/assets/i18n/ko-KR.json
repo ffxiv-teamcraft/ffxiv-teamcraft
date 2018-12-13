@@ -129,8 +129,8 @@
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
       "Spawn": "등장 시간",
-      "Spawns_twice": "알람 2회생성",
-      "Spawns_twice_description": "에오르제아 시간기준 하루 두번 알람(오전/오후)",
+      "Spawns_twice": "2회 출현",
+      "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
       "Duration": "채집 가능 시간",
       "Slot": "슬롯",
       "Type": "채집물 유형",
@@ -337,7 +337,7 @@
     }
   },
   "LIST": {
-    "Regenerate": "최신 Teamcraft 버전으로 목록 업데이트",
+    "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
@@ -361,7 +361,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
-    "Public_list_description": "목록 공개 설정은 이 목록을 커뮤티니 목록에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
+    "Public_list_description": "목록 공개 설정은 이 목록을 커뮤티니 목록에 추가시킵니다. \"공유는 필요하지 않습니다.\"",
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
