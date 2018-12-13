@@ -277,9 +277,9 @@
     "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다",
     "Connect_with_patreon": "Patreon에 연결",
     "Connected_with_patreon": "Patreon에 연결되었습니다",
-    "Nickname": "Nickname",
-    "Nickname_used": "Nickname already used",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Nickname": "닉네임",
+    "Nickname_used": "이미 사용중인 닉네임",
+    "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해서는 설정 페이지로 이동하여 닉네임을 설정해야 합니다.",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
