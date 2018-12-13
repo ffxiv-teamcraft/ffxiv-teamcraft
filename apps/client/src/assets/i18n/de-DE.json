@@ -447,11 +447,13 @@
     "Title": "Benutzerdefinierbare Links",
     "Not_found": "Link nicht gefunden",
     "Add_link": "Benutzerdefinierbaren Link erstellen",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "Benutzerdefinierbarer Link",
     "Link_type": "Linkart",
     "Link_name": "Linkname",
     "target": "Linkziel",
     "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "Keine benutzerdefinierten Links vorhanden"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Eine Vorlage für diese Liste erstellen",
+    "Template_created": "List template created",
     "Dialog_title": "Vorlagenerstellung",
     "Link_name": "Vorlagenname",
     "target": "Zielliste",
@@ -483,7 +486,11 @@
     "Copy_template_url": "Vorlagen-URL kopieren",
     "Cloning_list": "Eine Kopie der Liste wird deinem Account hinzugefügt",
     "Redirect_notice": "Du wirst zu der Liste weitergeleitet, sobald die Kopie erstellt ist",
-    "Not_found": "Vorlage nicht gefunden"
+    "Not_found": "Vorlage nicht gefunden",
+    "STATUS": {
+      "Loading": "Loading template from database",
+      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+    }
   },
   "PERMISSIONS": {
     "Read": "Anzeigen",
