@@ -447,11 +447,13 @@
     "Title": "Liens",
     "Not_found": "Lien introuvable",
     "Add_link": "Créer un lien",
+    "Link_created": "Custom link created, click the share button to copy it",
     "Dialog_title": "Lien",
     "Link_type": "Type de lien",
     "Link_name": "Nom du lien",
     "target": "Cible du lien",
     "Share_link_copied": "Lien copié dans le presse-papiers",
+    "Copy_custom_link": "Copy custom link",
     "No_links": "Aucun lien défini"
   },
   "NAVIGATION": {
@@ -476,6 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Créer un modèle de liste pour cette liste",
+    "Template_created": "List template created",
     "Dialog_title": "Création du modèle",
     "Link_name": "Nom du modèle",
     "target": "Liste cible",
@@ -483,7 +486,11 @@
     "Copy_template_url": "Copier l'url du modèle",
     "Cloning_list": "Création d'une copie de la liste sur votre compte",
     "Redirect_notice": "Vous serez redirigé vers la liste une fois celle-ci créée",
-    "Not_found": "Modèle introuvable"
+    "Not_found": "Modèle introuvable",
+    "STATUS": {
+      "Loading": "Loading template from database",
+      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+    }
   },
   "PERMISSIONS": {
     "Read": "Lire",
