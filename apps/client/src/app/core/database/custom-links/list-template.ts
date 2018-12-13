@@ -17,4 +17,8 @@ export class ListTemplate extends CustomLink {
       return `${window.location.protocol}//${window.location.host}/template/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
     }
   }
+
+  getEntityId(): string {
+    return this.originalListId;
+  }
 }

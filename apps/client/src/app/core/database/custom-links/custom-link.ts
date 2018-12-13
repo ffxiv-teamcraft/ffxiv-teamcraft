@@ -17,7 +17,11 @@ export class CustomLink extends DataModel {
   authorId: string;
 
   getType(): string {
-    return this.redirectTo.split('/')[0];
+    const type = this.redirectTo.split('/')[0];
+    if (type === 'simulator') {
+      return 'rotation';
+    }
+    return type;
   }
 
   getUrl(): string {
@@ -27,5 +31,10 @@ export class CustomLink extends DataModel {
     } else {
       return `${window.location.protocol}//${window.location.host}/link/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
     }
+  }
+
+  getEntityId(): string {
+    const exploded = this.redirectTo.split('/');
+    return exploded[exploded.length - 1];
   }
 }

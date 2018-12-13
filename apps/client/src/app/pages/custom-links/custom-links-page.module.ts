@@ -6,6 +6,13 @@ import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { DatabaseModule } from '../../core/database/database.module';
+import { ListModule } from '../../modules/list/list.module';
+import { RotationsModule } from '../../modules/rotations/rotations.module';
+import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
+import { WorkshopModule } from '../../modules/workshop/workshop.module';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [{
   path: '',
@@ -20,6 +27,15 @@ const routes: Routes = [{
     FlexLayoutModule,
     NgZorroAntdModule,
     DatabaseModule,
+    FullpageMessageModule,
+    PageLoaderModule,
+    ClipboardModule,
+
+    ListModule,
+    RotationsModule,
+    RotationFoldersModule,
+    WorkshopModule,
+
     RouterModule.forChild(routes)
   ]
 })
