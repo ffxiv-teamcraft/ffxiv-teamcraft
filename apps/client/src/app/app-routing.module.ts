@@ -79,6 +79,14 @@ const routes: Routes = [
     path: 'custom-links',
     loadChildren: './pages/custom-links/custom-links-page.module#CustomLinksPageModule'
   },
+  {
+    path: 'link',
+    loadChildren: './pages/link/link.module#LinkModule'
+  },
+  {
+    path: 'template',
+    loadChildren: './pages/template/template.module#TemplateModule'
+  },
 ];
 
 @NgModule({

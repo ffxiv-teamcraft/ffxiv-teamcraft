@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkComponent } from './link/link.component';
+import { TemplateComponent } from './template/template.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -10,20 +10,20 @@ import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: ':nickname/:uri',
-    component: LinkComponent
+    component: TemplateComponent
   }
 ];
 
 @NgModule({
-  declarations: [LinkComponent],
+  declarations: [TemplateComponent],
   imports: [
     CommonModule,
     PageLoaderModule,
-    FullpageMessageModule,
     TranslateModule,
+    FullpageMessageModule,
     CustomLinksModule,
     RouterModule.forChild(routes)
   ]
 })
-export class LinkModule {
+export class TemplateModule {
 }

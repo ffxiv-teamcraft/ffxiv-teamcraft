@@ -10,9 +10,9 @@ import {
   UpdateCustomLink
 } from './custom-links.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { catchError, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import { map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { EMPTY, of } from 'rxjs';
+import { EMPTY } from 'rxjs';
 import { CustomLinksFacade } from './custom-links.facade';
 import { CustomLinksService } from '../../../core/database/custom-links/custom-links.service';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
@@ -35,9 +35,17 @@ export class CustomLinksEffects {
   loadCustomLink$ = this.actions$.pipe(
     ofType<LoadCustomLink>(CustomLinksActionTypes.LoadCustomLink),
     mergeMap(action => {
-      return this.customLinksService.get(action.key).pipe(
-        catchError(() => {
-          return of({ $key: action.key, notFound: true });
+      return this.customLinksService.getByUriAndNickname(action.linkName, action.nickname).pipe(
+        map((link) => {
+          if (link === undefined) {
+            return {
+              uri: action.linkName,
+              authorNickname: action.nickname,
+              type: action.template ? 'template' : 'link',
+              notFound: true
+            };
+          }
+          return link;
         })
       );
     }),

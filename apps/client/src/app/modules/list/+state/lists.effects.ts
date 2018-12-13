@@ -28,12 +28,13 @@ import {
   first,
   map,
   mergeMap,
-  switchMap, tap,
+  switchMap,
+  tap,
   withLatestFrom
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, concat, EMPTY, of } from 'rxjs';
+import { combineLatest, EMPTY, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
@@ -46,6 +47,8 @@ import { Router } from '@angular/router';
 @Injectable()
 export class ListsEffects {
 
+  cleaned = false;
+
   @Effect()
   loadMyLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
@@ -56,6 +59,12 @@ export class ListsEffects {
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
         );
+    }),
+    tap(action => {
+      if (!this.cleaned) {
+        action.payload.filter(l => l.name === 'Gatherings').forEach(l => this.listsFacade.deleteList(l.$key));
+        this.cleaned = true;
+      }
     })
   );
 

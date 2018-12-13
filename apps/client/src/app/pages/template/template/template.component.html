@@ -1,0 +1,8 @@
+<div *ngIf="!notFound; else notFoundTemplate" class="status-container">
+  <app-page-loader></app-page-loader>
+  <div class="status">{{('LIST_TEMPLATE.STATUS.' + status) | translate}}</div>
+</div>
+<ng-template #notFoundTemplate>
+  <app-fullpage-message>{{'LIST_TEMPLATE.Not_found' | translate}}</app-fullpage-message>
+</ng-template>
+

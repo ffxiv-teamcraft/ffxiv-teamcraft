@@ -34,7 +34,7 @@ export class SelectCustomLink implements Action {
 export class LoadCustomLink implements Action {
   readonly type = CustomLinksActionTypes.LoadCustomLink;
 
-  constructor(public key: string) {
+  constructor(public nickname: string, public linkName: string, public template: boolean) {
   }
 }
 
