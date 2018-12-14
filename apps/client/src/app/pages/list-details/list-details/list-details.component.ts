@@ -25,6 +25,8 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-list-details',
@@ -59,7 +61,8 @@ export class ListDetailsComponent implements OnInit {
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
-              private discordWebhookService: DiscordWebhookService) {
+              private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
+              private l12n: LocalizedDataService) {
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
@@ -78,7 +81,8 @@ export class ListDetailsComponent implements OnInit {
       mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
     );
     this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list))
+      mergeMap(list => this.layoutsFacade.getDisplay(list)),
+      shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
@@ -195,6 +199,19 @@ export class ListDetailsComponent implements OnInit {
       this.router.navigate(['list', l.$key]);
       this.message.success(this.translate.instant('List_forked'));
     });
+  }
+
+  public getListTextExport(list: ListDisplay): string {
+    return list.rows.reduce((result, displayRow) => {
+      return result + displayRow.rows.reduce((exportString, row) => {
+        return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+      }, `${displayRow.title} :\n`) + '\n';
+    }, '')
+
+  }
+
+  afterListTextCopied(): void {
+    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   regenerateList(list: List): void {
