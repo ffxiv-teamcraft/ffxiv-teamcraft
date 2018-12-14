@@ -16,13 +16,13 @@
     "auth/wrong-password": "Pogrešan email ili zaporka"
   },
   "ITEMS": {
-    "Title": "Search",
-    "No_match": "No matching items",
-    "Item_name": "Item name",
-    "Only_recipes": "Only recipes",
+    "Title": "Pretraživanje",
+    "No_match": "Nema podudarnih stavki",
+    "Item_name": "Naziv stavke",
+    "Only_recipes": "Samo recepti",
     "Crafts_amount": "# of crafts",
-    "Add_to_list": "Add this item to a list",
-    "Apply_filters": "Apply filters"
+    "Add_to_list": "Dodajte ovu stavku na popis",
+    "Apply_filters": "Primijenite filtre"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -342,6 +342,7 @@
     "Copied_x_times": "Copied {{count}} times",
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Copy_as_text": "Copy as text",
+    "Copy_list_as_text": "Copy the whole list as text",
     "Copied_as_text": "Content copied in clipboard",
     "Total_price": "Total trades (gils and currencies)",
     "Total_trade_price": "Total: ",
