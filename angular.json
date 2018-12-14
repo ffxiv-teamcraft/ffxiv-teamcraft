@@ -35,7 +35,8 @@
               }
             ],
             "styles": [
-              "apps/client/src/styles.less"
+              "apps/client/src/styles.less",
+              "apps/client/src/theme.less"
             ],
             "scripts": []
           },
