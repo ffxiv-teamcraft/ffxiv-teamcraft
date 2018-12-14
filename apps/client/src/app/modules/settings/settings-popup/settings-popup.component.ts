@@ -13,6 +13,7 @@ import { UserService } from '../../../core/database/user.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
+import { Theme } from '../theme';
 
 @Component({
   selector: 'app-settings-popup',
@@ -30,6 +31,8 @@ export class SettingsPopupComponent {
   user$ = this.authFacade.user$;
 
   nicknameAvailable: boolean;
+
+  availableThemes = Theme.ALL_THEMES;
 
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,

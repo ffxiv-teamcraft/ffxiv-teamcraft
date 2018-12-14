@@ -11,6 +11,15 @@
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.theme">
+            <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme.name"
+                       [nzValue]="theme"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Preferred_copy_type' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
           <nz-select [(ngModel)]="settings.preferredCopyType">
@@ -49,7 +58,8 @@
             <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null">
               <input type="text" nz-input placeholder="Nickname" #nickname [ngModel]="user.nickname"
                      (ngModelChange)="nicknameAvailable = undefined">
-              <nz-form-explain *ngIf="nicknameAvailable === false">{{'SETTINGS.Nickname_used' | translate}}</nz-form-explain>
+              <nz-form-explain
+                *ngIf="nicknameAvailable === false">{{'SETTINGS.Nickname_used' | translate}}</nz-form-explain>
             </nz-form-control>
           </nz-input-group>
           <button nz-button *ngIf="!nicknameAvailable && nickname.value !== user.nickname" nzBlock

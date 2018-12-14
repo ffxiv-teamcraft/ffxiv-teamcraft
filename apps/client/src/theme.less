@@ -3,32 +3,30 @@
 :root {
   --primary-color: @primary-color;
   --highlight-color: @highlight-color;
-  --layout-color: @layout-header-background;
-  --body-background: @body-background;
   --text-color: @text-color;
 }
 
 // Themes
-.light-blue {
-  --primary-color: lightblue;
-  --highlight-color: green;
-  --layout-color: #AAAAAA;
-  --body-background: #fefefe;
-  --text-color: black;
+.green {
+  --primary-color: #009a4d;
+  --highlight-color: #b77cb3;
+  --text-color: white;
+}
+
+.blue {
+  --primary-color: #15459a;
+  --highlight-color: #dac900;
+  --text-color: white;
 }
 
 // Themes connections
-body {
-  background-color: var(--body-background);
-  color: var(--text-color);
-}
-
-.ant-layout-header, .ant-layout-footer {
-  background: var(--layout-color) !important;
-}
-
 ::selection {
   background: var(--primary-color) !important;
+}
+
+.ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
+  color: var(--primary-color) !important;
+  text-decoration-color: var(--primary-color) !important;
 }
 
 [ant-click-animating-without-extra-node]:after,
@@ -36,7 +34,7 @@ body {
   border-color: var(--primary-color) !important;
 }
 
-.ant-menu-item-selected, .ant-switch-checked {
+.ant-menu-item-selected, .ant-switch-checked, .ant-tabs-ink-bar {
   background-color: var(--primary-color) !important;
 }
 
