@@ -34,7 +34,7 @@
   "Delete": "Brisanje",
   "Timers": "Tajmeri",
   "Copy_isearch": "Kopirajte isearch makronaredbe",
-  "Isearch_copied": "/isearch {{itemname}} copied to clipboard",
+  "Isearch_copied": "/isearch {{itemname}} je kopiran u međuspremnik",
   "Required_for_final_craft": "{{amount}} needed for final items",
   "Mark_HQ": "Mark as HQ required",
   "Unmark_HQ": "Remove HQ requirement",
