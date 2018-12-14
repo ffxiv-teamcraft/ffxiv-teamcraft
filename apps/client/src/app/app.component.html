@@ -9,7 +9,7 @@
         <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                    [nzValue]="locale"></nz-option>
       </nz-select>
-      <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
+      <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="settings.theme.isDark?'dark':null" class="right-menu">
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
         </li>
@@ -120,7 +120,8 @@
               [nzCollapsedWidth]="80 | ifMobile: 0">
       <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
         <div>
-          <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
+          <ul nz-menu [class.dark]="settings.theme.isDark" [nzTheme]="settings.theme.isDark?'dark':null"
+              [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
             <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/search">
           <span>
               <i nz-icon type="search"></i>

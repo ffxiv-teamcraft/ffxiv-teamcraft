@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Theme } from './theme';
 
 @Injectable()
 export class SettingsService {
 
-  public themeChange$ = new Subject<{ previous: string, next: string }>();
+  public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   private readonly cache: { [id: string]: string };
 
   constructor() {
@@ -96,13 +97,14 @@ export class SettingsService {
     this.setSetting('pricing:expect-sell-all', sellEverything.toString());
   }
 
-  public get theme(): string {
-    return this.getSetting('theme', 'dark-orange');
+  public get theme(): Theme {
+    const themeName =  this.getSetting('theme', 'DEFAULT');
+    return Theme.byName(themeName);
   }
 
-  public set theme(theme: string) {
+  public set theme(theme: Theme) {
     this.themeChange$.next({ previous: this.theme, next: theme });
-    this.setSetting('theme', theme);
+    this.setSetting('theme', theme.name);
   }
 
   public get alarmHoursBefore(): number {

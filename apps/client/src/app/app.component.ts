@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -86,7 +86,9 @@ export class AppComponent implements OnInit {
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
-              private customLinksFacade: CustomLinksFacade) {
+              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2) {
+
+    this.renderer.addClass(document.body, this.settings.theme.className);
 
     this.desktop = this.platformService.isDesktop();
 
@@ -192,6 +194,11 @@ export class AppComponent implements OnInit {
     this.teamsFacade.loadMyTeams();
     this.rotationsFacade.loadMyRotations();
     this.customLinksFacade.loadMyCustomLinks();
+
+    this.settings.themeChange$.subscribe((change => {
+      this.renderer.removeClass(document.body, change.previous.className);
+      this.renderer.addClass(document.body, change.next.className);
+    }));
   }
 
   deleteNotification(notification: AbstractNotification): void {

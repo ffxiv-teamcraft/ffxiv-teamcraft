@@ -3,8 +3,28 @@
 :root {
   --primary-color: @primary-color;
   --highlight-color: @highlight-color;
+  --layout-color: @layout-header-background;
   --body-background: @body-background;
   --text-color: @text-color;
+}
+
+// Themes
+.light-blue {
+  --primary-color: lightblue;
+  --highlight-color: green;
+  --layout-color: #AAAAAA;
+  --body-background: #fefefe;
+  --text-color: black;
+}
+
+// Themes connections
+body {
+  background-color: var(--body-background);
+  color: var(--text-color);
+}
+
+.ant-layout-header, .ant-layout-footer {
+  background: var(--layout-color) !important;
 }
 
 ::selection {
