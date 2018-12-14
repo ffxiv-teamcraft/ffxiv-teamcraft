@@ -12,8 +12,8 @@
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Račun se već koristi",
     "auth/email-already-in-use": "Email se već koristi",
-    "auth/user-not-found": "Wrong email or password",
-    "auth/wrong-password": "Wrong email or password"
+    "auth/user-not-found": "Pogrešan email ili zaporka",
+    "auth/wrong-password": "Pogrešan email ili zaporka"
   },
   "ITEMS": {
     "Title": "Search",
