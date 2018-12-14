@@ -311,7 +311,6 @@
                 <nz-input-number [nzDisabled]="!snapshotMode"
                                  class="stap-counter"
                                  [ngModel]="resultData.simulation.steps.length"
-                                 [nzMax]="resultData.simulation.steps.length"
                                  [nzMin]="0"
                                  [nzStep]="1"
                                  (ngModelChange)="snapshotStep$.next($event)"></nz-input-number>
@@ -334,17 +333,37 @@
               <div class="top-bars">
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Progress' | translate}}</h3>
-                  <nz-progress
-                    [nzPercent]="barPercent(resultData.simulation.progression,resultData.simulation.recipe.progress)"
-                    class="progress-progressbar"
-                    [nzFormat]="barFormat(resultData.simulation.progression,resultData.simulation.recipe.progress)"></nz-progress>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <nz-progress
+                      fxFlex="1 1 auto"
+                      [nzShowInfo]="false"
+                      [nzPercent]="barPercent(resultData.simulation.progression,resultData.simulation.recipe.progress)"
+                      [nzFormat]="barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)"
+                      class="progress-progressbar">
+                    </nz-progress>
+                    <div
+                      class="progress-value">{{barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)()}}</div>
+                  </div>
                 </div>
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Quality' | translate}}</h3>
-                  <!--TODO thresholds-->
-                  <nz-progress
-                    [nzPercent]="barPercent(resultData.simulation.quality,resultData.simulation.recipe.quality)"
-                    [nzFormat]="barFormat(resultData.simulation.quality,resultData.simulation.recipe.quality)"></nz-progress>
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    <div class="quality-bar" fxFlex="1 1 auto">
+                      <div *ngFor="let threshold of thresholds"
+                            [ngStyle]="{left: 100 * threshold / resultData.simulation.recipe.quality + '%'}"
+                            class="threshold-marker" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+                        <div class="marker"></div>
+                        <div class="value">{{(threshold/10) | number: '1.0-0'}}</div>
+                      </div>
+                      <nz-progress
+                        fxFlex="1 1 auto"
+                        [nzShowInfo]="false"
+                        [nzPercent]="barPercent(resultData.simulation.quality,resultData.simulation.recipe.quality)"
+                        [nzFormat]="barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)"></nz-progress>
+                    </div>
+                    <div
+                      class="progress-value">{{barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)()}}</div>
+                  </div>
                 </div>
               </div>
               <div fxLayout="row" fxLayoutAlign="space-between center">

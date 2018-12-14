@@ -24,6 +24,29 @@
   justify-content: flex-end;
 }
 
+.quality-bar {
+  position: relative;
+
+  .threshold-marker {
+    position: absolute;
+    height: 17px;
+
+    .marker {
+      background-color: var(--primary-color);
+      height: 100%;
+      width: 2px;
+      z-index: 1000;
+    }
+
+    .value {
+      font-size: .8em;
+      padding-left: 2px;
+      margin-top: -7px;
+      height: 10px;
+    }
+  }
+}
+
 .ingredients {
   button {
     margin-bottom: 37px;
