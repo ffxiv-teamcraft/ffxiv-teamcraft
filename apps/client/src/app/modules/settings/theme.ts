@@ -1,6 +1,6 @@
 export class Theme {
 
-  public static readonly DEFAULT = new Theme('DEFAULT', '', true);
+  public static readonly DEFAULT = new Theme('DEFAULT', 'default', true);
 
   public static readonly LIGHT_BLUE = new Theme('LIGHT_BLUE', 'light-blue', false);
 
