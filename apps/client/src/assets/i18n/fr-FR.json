@@ -277,9 +277,9 @@
     "Password_reset_mail_sent": "E-mail de réinitialisation du mot de passe envoyé",
     "Connect_with_patreon": "Lier son compte à patreon",
     "Connected_with_patreon": "Compte lié avec patreon",
-    "Nickname": "Nickname",
-    "Nickname_used": "Nickname already used",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Nickname": "Pseudo",
+    "Nickname_used": "Pseudo déjà utilisé",
+    "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -447,13 +447,13 @@
     "Title": "Liens",
     "Not_found": "Lien introuvable",
     "Add_link": "Créer un lien",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "Lien personnalisé créé, cliquez sur le bouton de partage pour le copier",
     "Dialog_title": "Lien",
     "Link_type": "Type de lien",
     "Link_name": "Nom du lien",
     "target": "Cible du lien",
     "Share_link_copied": "Lien copié dans le presse-papiers",
-    "Copy_custom_link": "Copy custom link",
+    "Copy_custom_link": "Copier le lien personnalisé",
     "No_links": "Aucun lien défini"
   },
   "NAVIGATION": {
@@ -478,7 +478,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Créer un modèle de liste pour cette liste",
-    "Template_created": "List template created",
+    "Template_created": "Modèle de liste créé",
     "Dialog_title": "Création du modèle",
     "Link_name": "Nom du modèle",
     "target": "Liste cible",
@@ -488,8 +488,8 @@
     "Redirect_notice": "Vous serez redirigé vers la liste une fois celle-ci créée",
     "Not_found": "Modèle introuvable",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "Chargement du modèle depuis la base de données",
+      "Copying": "Création d’une copie de la liste dans votre compte, vous serez redirigé vers celle-ci une fois créée"
     }
   },
   "PERMISSIONS": {
