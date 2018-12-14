@@ -8,7 +8,7 @@
   "Saving_in_database": "Os datos estão a ser guardados no servidor",
   "See_on_map": "Ver no mapa",
   "Edit_amount": "Editar a quantidade",
-  "List_fork_in_progress": "Copying the list to your account...",
+  "List_fork_in_progress": "A copiar a lista para a sua conta...",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -75,7 +75,7 @@
     "Patreon_supporters": "Apoiantes de Patreon",
     "Contributors": "Colaboradores"
   },
-  "Patreon_login_success": "Patreon login success !",
+  "Patreon_login_success": "Login com Patreon feito com sucesso!",
   "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Não favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
@@ -106,9 +106,9 @@
     "Success": "Sucesso",
     "Copy_to_clipboard": "Copiar para área de transferência",
     "Language": "Lingua",
-    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app",
-    "Admin": "Administrator"
+    "Opened_in_desktop": "Esta página foi aberta na app do desktop, pode agora fecha-la.",
+    "Open_in_desktop": "Abrir na app do desktop",
+    "Admin": "Administrador"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -124,23 +124,23 @@
     "Add_note": "Adicionar uma nota",
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
-    "Open_overlay": "Open overlay",
+    "Open_overlay": "Abrir overlay",
     "CUSTOM": {
-      "Title": "Add custom alarm",
-      "Name": "Name",
-      "Spawn": "Spawn",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
-      "Duration": "Duration",
-      "Slot": "Slot",
+      "Title": "Adicionar alarme personalizado",
+      "Name": "Nome",
+      "Spawn": "Aparece",
+      "Spawns_twice": "Aparece duas vezes",
+      "Spawns_twice_description": "Aparece duas vezes por dia do jogo (um de manhã, outro à tarde)",
+      "Duration": "Duração",
+      "Slot": "Vaga",
       "Type": "Node type",
-      "Map": "Map",
+      "Map": "Mapa",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
+        "Mineral": "Depósito mineral",
         "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
-        "Vegetation": "Lush Vegetation Patch",
-        "Fishing": "Fishing"
+        "Tree": "Árvore madura",
+        "Vegetation": "Vegetação exuberante",
+        "Fishing": "Pesca"
       }
     }
   },
@@ -262,14 +262,14 @@
   "Regenerating_lists": "Recriando listas",
   "SETTINGS": {
     "Title": "Configurações",
-    "General": "General",
+    "General": "Geral",
     "Link_base": "Links de item",
     "Theme": "Tema",
     "Always_on_top": "Sempre visível",
     "Check_for_update": "Procurar actualizações",
     "Downloading_update": "A transferir a actualização",
     "No_update_available": "Não há actualizações disponíveis",
-    "Preferred_copy_type": "Preferred copy type",
+    "Preferred_copy_type": "Tipo de cópia preferida",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "Account": "Account",
     "Reset_password": "Reset password",
