@@ -20,7 +20,7 @@
     "No_match": "Nema podudarnih stavki",
     "Item_name": "Naziv stavke",
     "Only_recipes": "Samo recepti",
-    "Crafts_amount": "# of crafts",
+    "Crafts_amount": "# obrta",
     "Add_to_list": "Dodajte ovu stavku na popis",
     "Apply_filters": "Primijenite filtre"
   },
@@ -67,7 +67,7 @@
   },
   "ABOUT": {
     "title": "O",
-    "Created_by": "FFXIV Teamcraft created by Miu Asakura from Louisoix, Chaos.",
+    "Created_by": "FFXIV Teamcraft stvoren je od strane Miu Asakure iz Louisoixa, Chaos.",
     "Copyright_notice_title": "Copyright notice",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
     "Thanks_title": "Thanks",
