@@ -16,6 +16,12 @@
   .ant-progress-status-success .ant-progress-text {
     color: inherit;
   }
+
+  .ant-card-body {
+    @media @mobile {
+      padding: 12px;
+    }
+  }
 }
 
 .apply {
@@ -88,10 +94,6 @@
   }
 }
 
-.craft-bars {
-  padding-right: 40px;
-}
-
 .buttons {
   position: fixed;
   @media @mobile {
@@ -147,7 +149,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  flex: 0 1 300px;
   height: 40px;
 }
 
@@ -165,6 +166,10 @@
 
     .action-from-bar:not(.gu-transit) {
       display: none;
+    }
+
+    .action-container {
+      margin-bottom: 5px;
     }
   }
 }
