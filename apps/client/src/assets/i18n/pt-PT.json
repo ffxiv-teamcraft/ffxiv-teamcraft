@@ -271,7 +271,7 @@
     "No_update_available": "Não há actualizações disponíveis",
     "Preferred_copy_type": "Tipo de cópia preferida",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
-    "Account": "Account",
+    "Account": "Conta",
     "Reset_password": "Reset password",
     "Reset_password_warning": "Are you sure you want to reset your password?",
     "Password_reset_mail_sent": "Password reset email sent",
@@ -282,7 +282,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
       "Classic": "Copy item name",
-      "Isearch": "Copy /isearch macro"
+      "Isearch": "Copiar macro /isearch"
     }
   },
   "PROFILE": {
@@ -319,7 +319,7 @@
     "Outdated_tag": "Desactualizado",
     "No_lists": "Não tem nenhuma lista",
     "Lists_search_placeholder": "Search for a list...",
-    "Add_to_a_list": "Add to a list",
+    "Add_to_a_list": "Adicionar a uma lista",
     "Please_pick_recipe": "Please pick a recipe for this item",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
     "IMPORT": {
@@ -332,7 +332,7 @@
       "Give_list_name": "Dê um nome à sua lista nova",
       "Final_step": "Validação",
       "Choices_needed": "Some recipe choices are pending",
-      "Creating_list": "Creating the list",
+      "Creating_list": "Criando a lista",
       "Loading_items": "Loading items informations"
     }
   },
