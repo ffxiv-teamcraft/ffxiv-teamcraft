@@ -49,7 +49,7 @@ export class AuthFacade {
   favorites$ = this.user$.pipe(map(user => user.favorites));
   fcId$ = this.store.select(authQuery.getMainCharacter).pipe(
     map((character) => {
-      if (character === null || character.FreeCompanyId === undefined) {
+      if (character === null || character.FreeCompanyId === undefined || character.FreeCompanyId === null) {
         return null;
       }
       return character.FreeCompanyId.toString();
