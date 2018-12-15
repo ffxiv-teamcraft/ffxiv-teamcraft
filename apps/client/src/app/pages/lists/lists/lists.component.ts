@@ -14,6 +14,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
+import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 
 @Component({
   selector: 'app-lists',
@@ -238,6 +239,14 @@ export class ListsComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('LISTS.Merge_lists'),
       nzContent: MergeListsPopupComponent,
+      nzFooter: null
+    });
+  }
+
+  importList(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LISTS.IMPORT.Title'),
+      nzContent: ListImportPopupComponent,
       nzFooter: null
     });
   }

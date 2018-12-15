@@ -327,6 +327,8 @@
       "Paste_link_step_title": "Paste your link to the external list",
       "Paste_link_step_placeholder": "List link",
       "Link_not_supported": "This link can't be imported",
+      "Links_supported": "Links supported: {{links}}",
+      "Link_recognized": "{{type}} recognized, you can import it",
       "Next": "Next",
       "Back": "Back",
       "Give_list_name": "Give your new list a name",

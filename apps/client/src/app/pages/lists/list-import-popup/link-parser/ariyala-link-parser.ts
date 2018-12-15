@@ -1,12 +1,11 @@
 import { ExternalListLinkParser } from './external-list-link-parser';
 import { Observable } from 'rxjs/Observable';
-import { ExternalListData } from './external-list-data';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AriyalaMateria } from './aryiala-materia';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
-  private static API_URL = 'http://ffxiv.ariyala.com/store.app?identifier=';
+  private static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
 
   private static REGEXP = /http:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
 
@@ -29,30 +28,37 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
     return AriyalaLinkParser.REGEXP.test(url);
   }
 
-  parse(url: string): Observable<ExternalListData[]> {
+  parse(url: string): Observable<string> {
     const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
     return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
       map(data => {
-        return data[data.content].normal;
+        return data.datasets[data.content].normal;
       }),
       map(gear => {
-        const entries: ExternalListData[] = [];
+        const entries: string[] = [];
         Object.keys(gear.items).forEach(slot => {
-          entries.push({ itemId: gear.items[slot], quantity: 1 });
+          let quantity = 1;
+          if (slot.indexOf('ring') > -1) {
+            quantity = 2;
+          }
+          if (slot === 'food') {
+            quantity = 30;
+          }
+          entries.push(`${gear.items[slot]},null,${quantity}`);
           const materias: string[] = gear.materiaData[`${slot}-${gear.items[slot]}`];
           if (materias !== undefined) {
             entries.push(...materias.map(materia => {
-              return {
-                itemId: AriyalaMateria[materia],
-                // TODO handle overmeld slots etc.
-                quantity: 1
-              };
+              return `${AriyalaMateria[materia]},null,${1}`;
             }));
           }
         });
-        return entries;
+        return btoa(entries.join(';'));
       })
     );
+  }
+
+  getName(): string {
+    return 'Ariyala';
   }
 
 }

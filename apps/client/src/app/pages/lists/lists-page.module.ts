@@ -49,7 +49,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent],
-  entryComponents: [MergeListsPopupComponent]
+  entryComponents: [MergeListsPopupComponent, ListImportPopupComponent]
 })
 export class ListsPageModule {
 }
