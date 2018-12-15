@@ -327,6 +327,8 @@
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
       "Paste_link_step_placeholder": "リストリンク",
       "Link_not_supported": "このリンクは呼び寄せられません",
+      "Links_supported": "Links supported: {{links}}",
+      "Link_recognized": "{{type}} recognized, you can import it",
       "Next": "次",
       "Back": "昨",
       "Give_list_name": "新しいリストに名前を設定",
