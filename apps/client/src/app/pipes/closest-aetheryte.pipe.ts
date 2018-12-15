@@ -3,7 +3,7 @@ import { MapService } from '../modules/map/map.service';
 import { Aetheryte } from '../core/data/aetheryte';
 import { Observable } from 'rxjs';
 import { Vector2 } from '../core/tools/vector2';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Pipe({
   name: 'closestAetheryte'
@@ -15,8 +15,12 @@ export class ClosestAetherytePipe implements PipeTransform {
 
   transform(mapId: number, position: Vector2): Observable<Aetheryte> {
     return this.mapService.getMapById(mapId).pipe(
+      tap(console.log),
       filter(mapData => mapData !== undefined),
-      map(mapData => this.mapService.getNearestAetheryte(mapData, position)),
+      map(mapData => {
+        console.log(mapData);
+        return this.mapService.getNearestAetheryte(mapData, position)
+      }),
       filter(res => res && res.nameid !== undefined)
     );
   }
