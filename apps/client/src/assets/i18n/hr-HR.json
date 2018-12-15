@@ -133,7 +133,7 @@
       "Spawns_twice_description": "Pojavljuje se dvaput u Eorzeanskom danu (Jednom prijepodne, Jednom poslijepodne)",
       "Duration": "Trajanje",
       "Slot": "Mjesto",
-      "Type": "Node type",
+      "Type": "Node vrsta",
       "Map": "Karta",
       "TYPE": {
         "Mineral": "Mineral Deposit",
