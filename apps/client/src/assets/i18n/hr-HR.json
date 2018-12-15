@@ -121,9 +121,9 @@
     "New_group": "Nova grupa alarma",
     "Confirm_group_delete": "Jeste li sigurni da želite izbrisati ovu grupu?",
     "Confirm_group_delete_with_alarms": "Jeste sigurni da želite izbrisati ovu grupu i sve alarme u njemu?",
-    "Add_note": "Add a note",
-    "Volume": "Volume",
-    "Macro_copied": "Macro copied to your clipboard",
+    "Add_note": "Dodajte bilješku",
+    "Volume": "Glasnoća",
+    "Macro_copied": "Makronaredba kopirana u međuspremnik",
     "Open_overlay": "Open overlay",
     "CUSTOM": {
       "Title": "Add custom alarm",
