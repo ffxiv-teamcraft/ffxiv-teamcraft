@@ -116,7 +116,8 @@
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
-        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"></app-item-icon>
+        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"
+                       [itemId]="row.alarm.itemId"></app-item-icon>
         <ng-template #customAlarmIcon>
           <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
         </ng-template>

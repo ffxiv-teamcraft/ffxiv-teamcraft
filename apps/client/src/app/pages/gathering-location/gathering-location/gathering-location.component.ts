@@ -133,7 +133,7 @@ export class GatheringLocationComponent {
                   type: 4,
                   itemId: spot.id,
                   icon: spot.icon,
-                  timed: true
+                  timed: spot.during !== undefined
                 };
                 if (spot.during !== undefined) {
                   result.spawnTimes = [spot.during.start];
