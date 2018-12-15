@@ -327,6 +327,8 @@
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
       "Paste_link_step_placeholder": "목록 링크",
       "Link_not_supported": "이 링크는 가져올 수 없습니다",
+      "Links_supported": "Links supported: {{links}}",
+      "Link_recognized": "{{type}} recognized, you can import it",
       "Next": "다음",
       "Back": "이전",
       "Give_list_name": "새 목록 이름 설정",
