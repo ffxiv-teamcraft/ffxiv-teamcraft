@@ -8,6 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class XivapiItemTooltipComponent {
 
-  @Input() item: any;
-
+  @Input() itemHtml: string;
 }
