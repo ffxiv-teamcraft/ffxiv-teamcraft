@@ -710,7 +710,8 @@
   "TOOLTIP": {
     "Level": "레벨",
     "Cost": "비용",
-    "Class_job": "클래스/직업"
+    "Class_job": "클래스/직업",
+    "Damage": "Damage"
   },
   "SEARCH_INTRO": {
     "Slogan": "제작하고, 공유하고, 기여하세요",
