@@ -636,7 +636,9 @@
   },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
-    "Expect_to_sell_everything": "Asumir que se vende todo"
+    "Expect_to_sell_everything": "Asumir que se vende todo",
+    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
