@@ -710,7 +710,8 @@
   "TOOLTIP": {
     "Level": "Niveau",
     "Cost": "Coût",
-    "Class_job": "Classe/Job"
+    "Class_job": "Classe/Job",
+    "Damage": "Damage"
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
