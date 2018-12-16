@@ -636,7 +636,9 @@
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
-    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu"
+    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
+    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
