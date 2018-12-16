@@ -710,7 +710,8 @@
   "TOOLTIP": {
     "Level": "レベル",
     "Cost": "費用",
-    "Class_job": "クラス/ジョブ"
+    "Class_job": "クラス/ジョブ",
+    "Damage": "Damage"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
