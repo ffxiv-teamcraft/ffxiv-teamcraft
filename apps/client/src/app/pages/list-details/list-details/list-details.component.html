@@ -77,7 +77,7 @@
           <button nz-button nzShape="circle" nzSize="small" nz-tooltip
                   *ngIf="display$ | async as listDisplay"
                   [nzTitle]="'LIST.Copy_list_as_text' | translate" ngxClipboard
-                  [cbContent]="getListTextExport(listDisplay)"
+                  [cbContent]="getListTextExport(listDisplay, list)"
                   (cbOnSuccess)="afterListTextCopied()">
             <i nz-icon type="copy"></i>
           </button>

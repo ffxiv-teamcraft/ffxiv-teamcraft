@@ -201,12 +201,15 @@ export class ListDetailsComponent implements OnInit {
     });
   }
 
-  public getListTextExport(list: ListDisplay): string {
-    return list.rows.reduce((result, displayRow) => {
+  public getListTextExport(display: ListDisplay, list: List): string {
+    const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
+      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+    }, `${this.translate.instant('Crystals')} :\n`) + '\n';
+    return display.rows.reduce((result, displayRow) => {
       return result + displayRow.rows.reduce((exportString, row) => {
         return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
       }, `${displayRow.title} :\n`) + '\n';
-    }, '')
+    }, seed)
 
   }
 
