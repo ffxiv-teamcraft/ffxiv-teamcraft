@@ -710,7 +710,8 @@
   "TOOLTIP": {
     "Level": "Level",
     "Cost": "Cost",
-    "Class_job": "Class/Job"
+    "Class_job": "Class/Job",
+    "Damage": "Damage"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
