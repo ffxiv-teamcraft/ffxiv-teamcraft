@@ -636,7 +636,9 @@
   },
   "PRICING": {
     "From_vendor": "商店販売値段",
-    "Expect_to_sell_everything": "全体販売仮定"
+    "Expect_to_sell_everything": "全体販売仮定",
+    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
