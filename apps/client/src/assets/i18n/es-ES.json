@@ -710,7 +710,8 @@
   "TOOLTIP": {
     "Level": "Nivel",
     "Cost": "Costo",
-    "Class_job": "Clase/Profesión"
+    "Class_job": "Clase/Profesión",
+    "Damage": "Damage"
   },
   "SEARCH_INTRO": {
     "Slogan": "Elabore, comparta, contribuya",
