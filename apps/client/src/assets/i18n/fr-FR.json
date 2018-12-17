@@ -709,9 +709,13 @@
   },
   "TOOLTIP": {
     "Level": "Niveau",
+    "Ilvl": "ilvl",
     "Cost": "Coût",
     "Class_job": "Classe/Job",
-    "Damage": "Damage"
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense"
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
