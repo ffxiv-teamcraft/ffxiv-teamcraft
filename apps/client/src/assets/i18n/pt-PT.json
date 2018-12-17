@@ -352,7 +352,7 @@
     "History": "Histórico",
     "COMPLETION_POPUP": {
       "Title": "List completed",
-      "Content": "This list is now completed, what do you want o do with it?",
+      "Content": "This list is now completed, what do you want to do with it?",
       "Delete": "Delete the list",
       "Reset": "Reset the list",
       "Nothing": "Nothing"
@@ -644,7 +644,7 @@
   "PRICING": {
     "From_vendor": "Price from vendor",
     "Expect_to_sell_everything": "Expect to sell everything",
-    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
+    "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
   },
   "LEVEQUESTS": {
