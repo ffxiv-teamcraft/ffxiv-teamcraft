@@ -43,6 +43,9 @@ import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd';
+import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class ListsEffects {
@@ -276,6 +279,26 @@ export class ListsEffects {
     map(lists => new CommunityListsLoaded(lists))
   );
 
+  @Effect()
+  openCompletionPopup$ = this.actions$.pipe(
+    ofType<SetItemDone>(ListsActionTypes.SetItemDone),
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
+    filter(([action, list, userId]) => {
+      return list.authorId === userId && list.isComplete();
+    }),
+    tap(([, list]) => {
+      this.dialog.create({
+        nzTitle: this.translate.instant('LISTS.COMPLETION_POPUP.Title'),
+        nzFooter: null,
+        nzContent: ListCompletionPopupComponent,
+        nzComponentParams: {
+          list: list
+        }
+      });
+    }),
+    switchMap(() => EMPTY)
+  );
+
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
@@ -284,6 +307,8 @@ export class ListsEffects {
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,
     private router: Router,
+    private dialog: NzModalService,
+    private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService
   ) {
   }
