@@ -21,6 +21,7 @@
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Crystals' | translate}}</div>
             <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
                     class="fill-prices-button"
                     (nzOnConfirm)="fillMbCosts(crystals)"
                     (click)="$event.stopPropagation()"
@@ -39,6 +40,7 @@
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Other' | translate}}</div>
             <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
                     class="fill-prices-button"
                     (nzOnConfirm)="fillMbCosts(items)"
                     (click)="$event.stopPropagation()"
@@ -57,6 +59,7 @@
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Pre_crafts' | translate}}</div>
             <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
                     class="fill-prices-button"
                     (nzOnConfirm)="fillMbCosts(preCrafts)"
                     (click)="$event.stopPropagation()"
@@ -82,6 +85,7 @@
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Items' | translate}}</div>
             <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
                     class="fill-prices-button"
                     (nzOnConfirm)="fillMbCosts(list.finalItems)"
                     (click)="$event.stopPropagation()"

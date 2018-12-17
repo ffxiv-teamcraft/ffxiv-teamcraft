@@ -163,9 +163,20 @@ export class ListPanelComponent {
       first(),
       switchMap(() => {
         return modalRef.getContentComponent().changes$;
+      }),
+      switchMap(() => {
+        return this.listsFacade.allListDetails$.pipe(
+          map(details => details.find(l => l.$key === this._list.$key)),
+          filter(l => l !== undefined),
+          first(),
+          map(changes => {
+            Object.assign(list, changes);
+            return list;
+          })
+        );
       })
-    ).subscribe(() => {
-      this.listsFacade.updateListUsingCompact(list);
+    ).subscribe((res) => {
+      this.listsFacade.updateListUsingCompact(res);
     });
   }
 

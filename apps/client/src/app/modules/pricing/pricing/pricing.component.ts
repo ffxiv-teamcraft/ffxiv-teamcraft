@@ -4,9 +4,9 @@ import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { SettingsService } from '../../settings/settings.service';
-import { combineLatest, concat, interval, Observable, Subject } from 'rxjs';
+import { interval, Observable, Subject } from 'rxjs';
 import { ListsFacade } from '../../list/+state/lists.facade';
-import { delay, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, toArray } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
@@ -36,6 +36,8 @@ export class PricingComponent {
   private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
     map(char => char.Server)
   );
+
+  private loggedIn$ = this.authFacade.loggedIn$;
 
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
@@ -101,10 +103,10 @@ export class PricingComponent {
         first()
       )
       .subscribe((list) => {
-      stopInterval$.next(null);
-      this.pricingService.priceChanged$.next(null);
-      this.updateCosts(list);
-    });
+        stopInterval$.next(null);
+        this.pricingService.priceChanged$.next(null);
+        this.updateCosts(list);
+      });
   }
 
   private updateCosts(list: List): void {

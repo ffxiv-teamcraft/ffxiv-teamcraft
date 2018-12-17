@@ -51,9 +51,10 @@
   }
 }
 
-.ant-btn-primary:not([disabled]) {
+.ant-btn-primary:not([disabled]):not(.ant-btn-background-ghost) {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+  color: var(--text-color);
 }
 
 .ant-input:hover, .ant-select-selection:hover, .ant-input-number:hover, .ant-select-open .ant-select-selection {
