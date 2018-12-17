@@ -25,7 +25,7 @@ module.exports = function(config) {
     let url = config.authorize_url + '?' + querystring.stringify(urlParams);
 
     return new Promise(function(resolve, reject) {
-      const authWindow = new BrowserWindow({
+      let authWindow = new BrowserWindow({
         alwaysOnTop: true,
         autoHideMenuBar: true,
         webPreferences: {
