@@ -327,8 +327,8 @@
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
       "Paste_link_step_placeholder": "목록 링크",
       "Link_not_supported": "이 링크는 가져올 수 없습니다",
-      "Links_supported": "Links supported: {{links}}",
-      "Link_recognized": "{{type}} recognized, you can import it",
+      "Links_supported": "후원 링크: {{links}}",
+      "Link_recognized": "{{type}} 가 확인되었으며, 가져올 수 있습니다",
       "Next": "다음",
       "Back": "이전",
       "Give_list_name": "새 목록 이름 설정",
@@ -344,18 +344,18 @@
     "Copied_x_times": "{{count}}번 복사됨",
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
     "Copy_as_text": "텍스트로 복사",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
-      "Content": "This list is now completed, what do you want o do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Title": "목록 완성",
+      "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
+      "Delete": "목록 삭제",
+      "Reset": "목록 초기화",
+      "Nothing": "없음"
     },
     "BUTTONS": {
       "Add_link_description": "이 목록에 대한 사용자 지정 링크 만들기",
@@ -644,8 +644,8 @@
   "PRICING": {
     "From_vendor": "상인 판매 가격",
     "Expect_to_sell_everything": "전체 판매 가정",
-    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
+    "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
