@@ -149,6 +149,8 @@
       </button>
       <nz-input-number [nzMin]="0" [nzMax]="item.amount" [nzSize]="'small'" [nzMax]="item.amount" [nzStep]="1"
                        [disabled]="(permissionLevel$ | async) < 20"
+                       (keypress.enter)="itemDoneChanged(input.ngModel)"
+                       #input
                        [ngModel]="item.done" (ngModelChange)="itemDoneChanged($event)"></nz-input-number>
       <span class="amount-max">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
