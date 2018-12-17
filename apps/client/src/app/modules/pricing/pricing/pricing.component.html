@@ -102,6 +102,7 @@
     </nz-collapse>
   </nz-card>
 
-  <nz-alert nzType="success" nzMessage="{{'Benefits' | translate}}: {{getBenefits(list) | number:'1.0-0'}} gil">
+  <nz-alert *ngIf="getBenefits(list) as benefits" [nzType]="benefits >= 0 ? 'success' : 'error'"
+            nzMessage="{{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}} gil">
   </nz-alert>
 </div>
