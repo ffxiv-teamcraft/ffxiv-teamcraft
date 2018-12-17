@@ -327,8 +327,8 @@
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
       "Paste_link_step_placeholder": "Lien de la liste",
       "Link_not_supported": "Ce lien ne peut être importé",
-      "Links_supported": "Links supported: {{links}}",
-      "Link_recognized": "{{type}} recognized, you can import it",
+      "Links_supported": "Liens supportés: {{links}}",
+      "Link_recognized": "Lien de {{type}} reconnu, vous pouvez l'importer",
       "Next": "Suivant",
       "Back": "Précédent",
       "Give_list_name": "Donnez un nom à la liste",
@@ -344,18 +344,18 @@
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
-      "Content": "This list is now completed, what do you want o do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Title": "Liste terminée",
+      "Content": "This list is now completed, what do you want to do with it?",
+      "Delete": "Supprimer la liste",
+      "Reset": "Réinitialiser la liste",
+      "Nothing": "Rien"
     },
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
@@ -644,8 +644,8 @@
   "PRICING": {
     "From_vendor": "Prix au vendeur",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
-    "Autofill_panel_prices": "Fill empty prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -719,10 +719,10 @@
     "Ilvl": "ilvl",
     "Cost": "Coût",
     "Class_job": "Classe/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Damage_phys": "Dégâts Phys.",
+    "Damage_mag": "Dégâts Mag.",
+    "Defense_phys": "Défense Phys.",
+    "Defense_mag": "Défense Mag."
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
