@@ -38,7 +38,7 @@
               <app-map-position [marker]="{x:node.coords[0], y: node.coords[1]}"
                                 [zoneId]="node.zoneid" [mapId]="node.mapid"></app-map-position>
               <div
-                *ngIf="node.zoneid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
+                *ngIf="node.mapid | closestAetheryte: { x: node.coords[0], y: node.coords[1] } | async as aetheryte"
                 class="closest-tp">
                 <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName |
                 i18n}}
