@@ -709,9 +709,13 @@
   },
   "TOOLTIP": {
     "Level": "레벨",
+    "Ilvl": "ilvl",
     "Cost": "비용",
     "Class_job": "클래스/직업",
-    "Damage": "Damage"
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense"
   },
   "SEARCH_INTRO": {
     "Slogan": "제작하고, 공유하고, 기여하세요",
