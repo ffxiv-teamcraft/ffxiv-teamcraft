@@ -350,6 +350,13 @@
     "Total_trade_price": "総合: ",
     "Add_all_alarms": "このリストに対する、アラーム追加",
     "History": "内訳",
+    "COMPLETION_POPUP": {
+      "Title": "List completed",
+      "Content": "This list is now completed, what do you want o do with it?",
+      "Delete": "Delete the list",
+      "Reset": "Reset the list",
+      "Nothing": "Nothing"
+    },
     "BUTTONS": {
       "Add_link_description": "このリストに対する使用者指定リンクを作る",
       "Create_template_description": "このリストのテンプレートリンクを生成すれば、現在のリストにコピーしたものが生成されます",
