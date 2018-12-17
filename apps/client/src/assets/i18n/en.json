@@ -352,7 +352,7 @@
     "History": "History",
     "COMPLETION_POPUP": {
       "Title": "List completed",
-      "Content": "This list is now completed, what do you want o do with it?",
+      "Content": "This list is now completed, what do you want to do with it?",
       "Delete": "Delete the list",
       "Reset": "Reset the list",
       "Nothing": "Nothing"
