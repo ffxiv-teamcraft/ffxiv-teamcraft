@@ -1,7 +1,7 @@
 <div class="search-box">
   <nz-input-group>
     <input type="text" placeholder="{{'GATHERING_LOCATIONS.Gathering_name' | translate}}" nz-input
-           #searchInput (keyup)="query$.next(searchInput.value)">
+           #searchInput (keyup)="query$.next(searchInput.value)" autofocus>
   </nz-input-group>
 </div>
 <div class="results" *ngIf="results$ | async as results; else noResults">

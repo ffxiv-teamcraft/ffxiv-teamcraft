@@ -3,6 +3,7 @@
     <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
       <input class="search-input" type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
              [ngModel]="query$.value"
+             autofocus
              (keyup)="query$.next(searchInput.value)">
     </nz-input-group>
     <ng-template #addOnAfterTemplate>
