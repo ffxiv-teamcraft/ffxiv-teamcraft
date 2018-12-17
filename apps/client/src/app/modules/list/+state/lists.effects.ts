@@ -284,11 +284,11 @@ export class ListsEffects {
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
     filter(([action, list, userId]) => {
-      return list.authorId === userId && list.isComplete();
+      return !list.ephemeral && list.authorId === userId && list.isComplete();
     }),
     tap(([, list]) => {
       this.dialog.create({
-        nzTitle: this.translate.instant('LISTS.COMPLETION_POPUP.Title'),
+        nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
         nzFooter: null,
         nzContent: ListCompletionPopupComponent,
         nzComponentParams: {
