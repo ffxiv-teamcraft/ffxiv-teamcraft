@@ -352,7 +352,7 @@
     "History": "내역",
     "COMPLETION_POPUP": {
       "Title": "목록 완성",
-      "Content": "This list is now completed, what do you want to do with it?",
+      "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
       "Delete": "목록 삭제",
       "Reset": "목록 초기화",
       "Nothing": "없음"
@@ -644,7 +644,7 @@
   "PRICING": {
     "From_vendor": "상인 판매 가격",
     "Expect_to_sell_everything": "전체 판매 가정",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
     "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?"
   },
   "LEVEQUESTS": {
