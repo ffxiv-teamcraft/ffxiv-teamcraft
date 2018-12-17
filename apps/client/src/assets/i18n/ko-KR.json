@@ -350,6 +350,13 @@
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
+    "COMPLETION_POPUP": {
+      "Title": "List completed",
+      "Content": "This list is now completed, what do you want o do with it?",
+      "Delete": "Delete the list",
+      "Reset": "Reset the list",
+      "Nothing": "Nothing"
+    },
     "BUTTONS": {
       "Add_link_description": "이 목록에 대한 사용자 지정 링크 만들기",
       "Create_template_description": "이 목록의 템플릿 링크를 생성하면, 현재 목록에 복사본이 생성됩니다",
