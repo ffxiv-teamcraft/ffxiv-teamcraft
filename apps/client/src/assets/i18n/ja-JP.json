@@ -709,9 +709,13 @@
   },
   "TOOLTIP": {
     "Level": "レベル",
+    "Ilvl": "ilvl",
     "Cost": "費用",
     "Class_job": "クラス/ジョブ",
-    "Damage": "Damage"
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
