@@ -350,6 +350,13 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
+    "COMPLETION_POPUP": {
+      "Title": "List completed",
+      "Content": "This list is now completed, what do you want o do with it?",
+      "Delete": "Delete the list",
+      "Reset": "Reset the list",
+      "Nothing": "Nothing"
+    },
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
