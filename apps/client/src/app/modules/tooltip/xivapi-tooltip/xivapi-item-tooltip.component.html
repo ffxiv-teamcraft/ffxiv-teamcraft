@@ -1,0 +1,63 @@
+<div class="tooltip-container">
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+    <div class="icon">
+      <img src="https://xivapi.com{{item.Icon}}" alt="{{item | xivapiI18n}}">
+    </div>
+    <div class="name">
+      <p>{{item | xivapiI18n}}</p>
+    </div>
+  </div>
+  <div class="description" *ngIf="item.Description !== undefined && item.Description.length > 0">
+    <span [innerHtml]="item | xivapiI18n: 'Description' | xivUIText"></span>
+  </div>
+  <div nz-row class="class-jobs" *ngIf="item.ClassJobCategory !== null">
+    <div nz-col [nzXs]="12">
+      <p class="detail-name">
+        {{'TOOLTIP.Class_job' | translate}}
+      </p>
+    </div>
+    <div nz-col [nzXs]="12">
+      <p class="detail-value">
+        {{item.ClassJobCategory | xivapiI18n}}
+      </p>
+    </div>
+  </div>
+  <div class="main-attributes details">
+    <div nz-row nzGutter="10" *ngFor="let row of mainAttributes">
+      <div nz-col [nzXs]="12">
+        <p class="detail-name" *ngIf="!row.requiresPipe">
+          {{row.name | translate}}
+        </p>
+        <p class="detail-name" *ngIf="row.requiresPipe">
+          {{row.name | xivapiI18n}}
+        </p>
+      </div>
+      <div nz-col [nzXs]="12">
+        <p class="detail-value">
+          {{row.value}}
+          <span class="hq-value" *ngIf="item.CanBeHq === 1 && row.valueHq && row.valueHq !== row.value">
+            ({{row.valueHq}})
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="details">
+    <div nz-row nzGutter="10" *ngFor="let row of stats">
+      <div nz-col [nzXs]="12">
+        <p class="detail-name" *ngIf="!row.requiresPipe">
+          {{row.name | translate}}
+        </p>
+        <p class="detail-name" *ngIf="row.requiresPipe">
+          {{row.name | xivapiI18n}}
+        </p>
+      </div>
+      <div nz-col [nzXs]="12">
+        <p class="detail-value">
+          {{row.value}} <span class="hq-value" *ngIf="item.CanBeHq">({{row.valueHq}})</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="xivapi">xivapi.com</div>
+</div>

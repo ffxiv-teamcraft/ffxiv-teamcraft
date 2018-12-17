@@ -53,7 +53,7 @@ export class XivapiItemTooltipDirective implements OnDestroy {
     const tooltip = this._overlayRef.attach(portal).instance;
 
     // Set the innerHtml of our component with the html given by XivDB.
-    tooltip.itemHtml = item;
+    tooltip.item = item;
     this._detectorRef.markForCheck();
   };
 
