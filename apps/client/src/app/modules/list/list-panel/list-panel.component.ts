@@ -20,7 +20,6 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { ListTemplate } from '../../../core/database/custom-links/list-template';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
-import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-list-panel',
@@ -129,19 +128,27 @@ export class ListPanelComponent {
     });
   }
 
-  renameList(list: List): void {
+  renameList(_list: List): void {
+    this.listsFacade.load(this._list.$key);
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: list.name },
+      nzComponentParams: { baseName: _list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
       filter(name => name !== undefined),
-      map(name => {
-        list.name = name;
-        return list;
+      switchMap(name => {
+        return this.listsFacade.allListDetails$.pipe(
+          map(details => details.find(l => l.$key === this._list.$key)),
+          filter(l => l !== undefined),
+          first(),
+          map(list => {
+            list.name = name;
+            return list;
+          })
+        );
       })
-    ).subscribe(l => this.listsFacade.updateListUsingCompact(l));
+    ).subscribe(l => this.listsFacade.updateList(l));
   }
 
   openPermissionsPopup(list: List): void {
