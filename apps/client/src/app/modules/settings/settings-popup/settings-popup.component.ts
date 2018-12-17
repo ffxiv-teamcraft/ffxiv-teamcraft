@@ -44,7 +44,7 @@ export class SettingsPopupComponent {
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
       this.ipc.on('oauth-reply', (event, code) => {
-        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?code=${code}&redirect_uri=http://localhost`)
+        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${code}&redirect_uri=http://localhost`)
           .pipe(
             switchMap((response: any) => {
               return this.authFacade.user$.pipe(
@@ -62,9 +62,7 @@ export class SettingsPopupComponent {
                 })
               );
             })
-          )
-          .subscribe(() => {
-          }, error => this.message.error(error.error, { nzDuration: 30000 }));
+          ).subscribe();
       });
       this.ipc.send('oauth', 'patreon.com');
     } else {

@@ -348,10 +348,10 @@ ipcMain.on('oauth', (event, providerId) => {
   if (providerId === 'patreon.com') {
     const provider = {
       authorize_url: 'https://www.patreon.com/oauth2/authorize',
-      client_id: '1a83620e4a9acd30be524f81d4dd7e8ddfa39d0962872842d7f9c8267eaa0e20',
+      client_id: 'MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE',
       redirect_uri: 'http://localhost'
     };
-    oauth(provider).getCode({scope: 'identity.memberships'}).then(code => {
+    oauth(provider).getCode({scope: 'identity'}).then(code => {
       event.sender.send('oauth-reply', code);
     });
   }

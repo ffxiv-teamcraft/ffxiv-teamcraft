@@ -51,13 +51,19 @@ module.exports = function(config) {
           reject(error);
           authWindow.removeAllListeners('closed');
           setImmediate(function() {
-            authWindow.close();
+            if (authWindow) {
+              authWindow.close();
+              authWindow = null;
+            }
           });
         } else if (code) {
           resolve(code);
           authWindow.removeAllListeners('closed');
           setImmediate(function() {
-            authWindow.close();
+            if (authWindow) {
+              authWindow.close();
+              authWindow = null;
+            }
           });
         }
       }
@@ -73,6 +79,6 @@ module.exports = function(config) {
   }
 
   return {
-    getCode: getCode,
+    getCode: getCode
   };
 };
