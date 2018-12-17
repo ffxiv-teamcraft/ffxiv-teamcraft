@@ -360,10 +360,10 @@
                         fxFlex="1 1 auto"
                         [nzShowInfo]="false"
                         [nzPercent]="barPercent(resultData.simulation.quality,resultData.simulation.recipe.quality)"
-                        [nzFormat]="barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)"></nz-progress>
+                        [nzFormat]="barFormat(resultData.simulation.quality, resultData.simulation.recipe.quality)"></nz-progress>
                     </div>
                     <div
-                      class="progress-value">{{barFormat(resultData.simulation.progression, resultData.simulation.recipe.progress)()}}</div>
+                      class="progress-value">{{barFormat(resultData.simulation.quality, resultData.simulation.recipe.quality)()}}</div>
                   </div>
                 </div>
               </div>
