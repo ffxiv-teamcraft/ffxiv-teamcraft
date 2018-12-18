@@ -9,6 +9,7 @@
   "See_on_map": "地図に見られます",
   "Edit_amount": "総量を訂正",
   "List_fork_in_progress": "Copying the list to your account...",
+  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に存在する",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
@@ -103,6 +104,7 @@
     "Select": "選択",
     "Anonymous": "匿名",
     "Warning": "警告",
+    "Error": "Error",
     "Success": "成功",
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
