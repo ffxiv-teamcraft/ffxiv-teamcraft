@@ -9,6 +9,7 @@
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
+  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -103,6 +104,7 @@
     "Select": "Sélectionner",
     "Anonymous": "Anonyme",
     "Warning": "Attention",
+    "Error": "Error",
     "Success": "Succès",
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
     "Language": "Langue",
@@ -352,7 +354,7 @@
     "History": "Historique",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
-      "Content": "This list is now completed, what do you want to do with it?",
+      "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
       "Delete": "Supprimer la liste",
       "Reset": "Réinitialiser la liste",
       "Nothing": "Rien"
@@ -644,7 +646,7 @@
   "PRICING": {
     "From_vendor": "Prix au vendeur",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?"
   },
   "LEVEQUESTS": {
