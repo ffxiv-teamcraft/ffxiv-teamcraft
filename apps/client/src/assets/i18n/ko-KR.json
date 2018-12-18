@@ -9,6 +9,7 @@
   "See_on_map": "지도에서 보기",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
+  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -103,6 +104,7 @@
     "Select": "선택",
     "Anonymous": "익명",
     "Warning": "경고",
+    "Error": "Error",
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
