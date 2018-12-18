@@ -9,6 +9,7 @@
   "See_on_map": "Ver en mapa",
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
+  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -103,6 +104,7 @@
     "Select": "Seleccione",
     "Anonymous": "Anónimo",
     "Warning": "Advertencia",
+    "Error": "Error",
     "Success": "Éxito",
     "Copy_to_clipboard": "Copiar al portapapeles",
     "Language": "Idioma",
