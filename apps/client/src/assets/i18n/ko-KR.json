@@ -9,7 +9,7 @@
   "See_on_map": "지도에서 보기",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -104,7 +104,7 @@
     "Select": "선택",
     "Anonymous": "익명",
     "Warning": "경고",
-    "Error": "Error",
+    "Error": "오류",
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
@@ -353,7 +353,7 @@
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
     "COMPLETION_POPUP": {
-      "Title": "목록 완성",
+      "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
       "Delete": "목록 삭제",
       "Reset": "목록 초기화",
