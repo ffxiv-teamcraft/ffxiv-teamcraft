@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
 import { catchError, debounceTime, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, from, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
@@ -90,7 +90,15 @@ export class AuthEffects {
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
     switchMap((action: Authenticated) => this.userService.get(action.uid)),
-    catchError(() => of(new TeamcraftUser())),
+    catchError((error) => {
+      if (error.message.indexOf('Not found') > -1) {
+        of(new TeamcraftUser());
+      } else {
+        this.authFacade.logout();
+        this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
+        return EMPTY;
+      }
+    }),
     tap(user => {
       // If token has been refreshed more than 3 weeks ago, refresh it now.
       if (Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
