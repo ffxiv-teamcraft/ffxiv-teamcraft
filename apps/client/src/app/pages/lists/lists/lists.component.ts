@@ -128,6 +128,17 @@ export class ListsComponent {
           otherLists: lists.filter(l => !l.public)
         };
       }),
+      tap(display => {
+        display.otherLists
+          .filter((l, i) => l.index !== i)
+          .map((l, i) => {
+            l.index = i;
+            return l;
+          })
+          .forEach(l => {
+            this.listsFacade.updateListIndex(l);
+          });
+      }),
       shareReplay(1)
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(

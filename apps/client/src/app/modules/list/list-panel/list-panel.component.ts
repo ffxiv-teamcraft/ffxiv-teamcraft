@@ -7,7 +7,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -52,6 +52,8 @@ export class ListPanelComponent {
   public customLink$: Observable<CustomLink>;
 
   private syncLinkUrl: string;
+
+  private updateAmountDebounces: { [index: number]: Subject<any> } = {};
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.list$).pipe(
     map(([userId, list]) => list.getPermissionLevel(userId)),
@@ -116,16 +118,27 @@ export class ListPanelComponent {
     });
   }
 
-  updateAmount(item: ListRow, newAmount: number): void {
-    this.listsFacade.load(this._list.$key);
-    this.listsFacade.allListDetails$.pipe(
-      map(details => details.find(l => l.$key === this._list.$key)),
-      filter(l => l !== undefined),
-      first(),
-      switchMap(listDetails => this.listManager.addToList(item.id, listDetails, item.recipeId, newAmount - item.amount))
-    ).subscribe(list => {
-      this.listsFacade.updateList(list, true);
-    });
+  updateAmount(item: ListRow, inputValue: number): void {
+    let updateSubject = this.updateAmountDebounces[item.id];
+    if (updateSubject === undefined) {
+      updateSubject = new Subject<number>();
+      this.updateAmountDebounces[item.id] = updateSubject;
+      updateSubject.pipe(
+        debounceTime(500),
+        switchMap((newAmount: number) => {
+          this.listsFacade.load(this._list.$key);
+          return this.listsFacade.allListDetails$.pipe(
+            map(details => details.find(l => l.$key === this._list.$key)),
+            filter(l => l !== undefined),
+            first(),
+            switchMap(listDetails => this.listManager.addToList(item.id, listDetails, item.recipeId, newAmount - item.amount))
+          );
+        }))
+        .subscribe(list => {
+          this.listsFacade.updateList(list, true);
+        });
+    }
+    updateSubject.next(inputValue);
   }
 
   renameList(_list: List): void {
@@ -248,6 +261,10 @@ export class ListPanelComponent {
     ).subscribe(link => {
       this.message.success(this.translate.instant('LIST_TEMPLATE.Template_created'));
     });
+  }
+
+  trackByItem(index: number, item: ListRow): number {
+    return item.id;
   }
 
 }

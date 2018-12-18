@@ -104,6 +104,7 @@ export class List extends DataWithPermissions {
     compact.registry = this.registry;
     compact.authorId = this.authorId;
     compact.$key = this.$key;
+    compact.ephemeral = this.ephemeral;
     return compact;
   }
 
