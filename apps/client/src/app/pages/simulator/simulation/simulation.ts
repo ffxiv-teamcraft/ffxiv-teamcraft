@@ -120,46 +120,47 @@ export class Simulation {
    * @returns {ActionResult[]}
    */
   public run(linear = false, maxTurns = Infinity): SimulationResult {
-    this.actions.forEach((action: CraftingAction, index: number) => {
-      // If we're starting and the crafter is specialist
-      if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
-        // Push stroke of genius buff
-        this.buffs.push({
-          buff: Buff.STROKE_OF_GENIUS,
-          stacks: 0,
-          duration: Infinity,
-          appliedStep: -1
-        });
-        // Apply stroke of genius manually in the stats
-        this.availableCP += 15;
-        this.maxCP += 15;
-      }
-      // If we can use the action
-      if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
-        && this.steps.length < maxTurns) {
-        this.runAction(action, linear);
-      } else {
-        // If we can't, add the step to the result but skip it.
-        this.steps.push({
-          action: action,
-          success: null,
-          addedQuality: 0,
-          addedProgression: 0,
-          cpDifference: 0,
-          skipped: true,
-          solidityDifference: 0,
-          state: this.state
-        });
-      }
-      if (this.steps.length <= maxTurns) {
-        // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
-        this.tickBuffs(linear);
-      }
-      // Tick state to change it for next turn if not in linear mode
-      if (!linear) {
-        this.tickState();
-      }
-    });
+    this.actions.filter(a => a !== undefined)
+      .forEach((action: CraftingAction, index: number) => {
+        // If we're starting and the crafter is specialist
+        if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
+          // Push stroke of genius buff
+          this.buffs.push({
+            buff: Buff.STROKE_OF_GENIUS,
+            stacks: 0,
+            duration: Infinity,
+            appliedStep: -1
+          });
+          // Apply stroke of genius manually in the stats
+          this.availableCP += 15;
+          this.maxCP += 15;
+        }
+        // If we can use the action
+        if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
+          && this.steps.length < maxTurns) {
+          this.runAction(action, linear);
+        } else {
+          // If we can't, add the step to the result but skip it.
+          this.steps.push({
+            action: action,
+            success: null,
+            addedQuality: 0,
+            addedProgression: 0,
+            cpDifference: 0,
+            skipped: true,
+            solidityDifference: 0,
+            state: this.state
+          });
+        }
+        if (this.steps.length <= maxTurns) {
+          // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
+          this.tickBuffs(linear);
+        }
+        // Tick state to change it for next turn if not in linear mode
+        if (!linear) {
+          this.tickState();
+        }
+      });
     // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
     return {
