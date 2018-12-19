@@ -32,7 +32,12 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
     const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
     return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
       map(data => {
-        return data.datasets[data.content].normal;
+        let dataset = data.datasets[data.content];
+        // for DoH/DoL
+        if (dataset === undefined) {
+          dataset = data.datasets[Object.keys(data.datasets)[0]];
+        }
+        return dataset.normal;
       }),
       map(gear => {
         const entries: string[] = [];
