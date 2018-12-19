@@ -9,7 +9,7 @@
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur discord de Teamcraft (en anglais ou français).",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -104,7 +104,7 @@
     "Select": "Sélectionner",
     "Anonymous": "Anonyme",
     "Warning": "Attention",
-    "Error": "Error",
+    "Error": "Erreur",
     "Success": "Succès",
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
     "Language": "Langue",
