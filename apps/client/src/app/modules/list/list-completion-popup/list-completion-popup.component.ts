@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd';
 import { ListsFacade } from '../+state/lists.facade';
 import { List } from '../model/list';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-completion-popup',
@@ -12,7 +13,7 @@ export class ListCompletionPopupComponent {
 
   list: List;
 
-  constructor(private ref: NzModalRef, private listsFacade: ListsFacade) {
+  constructor(private ref: NzModalRef, private listsFacade: ListsFacade, private router: Router) {
   }
 
   close(): void {
@@ -21,6 +22,7 @@ export class ListCompletionPopupComponent {
 
   deleteList(): void {
     this.listsFacade.deleteList(this.list.$key);
+    this.router.navigate(['/lists']);
     this.close();
   }
 
