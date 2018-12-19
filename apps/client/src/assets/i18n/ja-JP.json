@@ -501,6 +501,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
+    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Extra wait",
     "Import_macro": "ゲームのマクロが輸入をします",
     "Ingame_macro": "マクロ",

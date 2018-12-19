@@ -5,6 +5,7 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { CraftingJob } from '../../model/crafting-job.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { Reclaim } from '../../model/actions/buff/reclaim';
+import { Simulation } from '../../simulation/simulation';
 
 @Component({
   selector: 'app-macro-popup',
@@ -27,9 +28,13 @@ export class MacroPopupComponent implements OnInit {
 
   public extraWait = 0;
 
+  public breakOnReclaim = false;
+
   rotation: CraftingAction[];
 
   job: CraftingJob;
+
+  simulation: Simulation;
 
   tooManyAactions = false;
 
@@ -40,10 +45,13 @@ export class MacroPopupComponent implements OnInit {
     this.macro = [[]];
     this.aactionsMacro = ['/aaction clear'];
     let totalLength = 0;
+    const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
     this.rotation.forEach((action) => {
+      console.log(reclaimBreakpoint);
       let macroFragment = this.macro[this.macro.length - 1];
       // One macro is 15 lines, if this one is full, create another one.
-      if (macroFragment.length >= this.maxMacroLines) {
+      // Alternatively, if breaking on Reclaim is enabled, split there too.
+      if ((this.breakOnReclaim && (macroFragment.length === reclaimBreakpoint + 1)) || macroFragment.length >= this.maxMacroLines) {
         this.macro.push([]);
         macroFragment = this.macro[this.macro.length - 1];
       }
@@ -56,9 +64,18 @@ export class MacroPopupComponent implements OnInit {
           this.aactionsMacro.push(`/aaction ${actionName}`);
         }
       }
+
       macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
       totalLength++;
-      if (macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
+
+      let doneWithChunk: boolean;
+      if(this.breakOnReclaim && macroFragment.length === reclaimBreakpoint){
+        doneWithChunk = true;
+      } else if(macroFragment.length === 14 && this.addEcho && this.rotation.length > totalLength + 1) {
+        doneWithChunk = true;
+      }
+
+      if (this.addEcho && doneWithChunk) {
         let seNumber: number;
         if (this.fixedEcho) {
           seNumber = this.echoSeNumber;
