@@ -10,7 +10,7 @@
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>
-        <app-item-icon [icon]="node.icon"></app-item-icon>
+        <app-item-icon [icon]="node.icon" [itemId]="node.itemId"></app-item-icon>
       </ng-template>
     </nz-card>
     <ng-template #map>
