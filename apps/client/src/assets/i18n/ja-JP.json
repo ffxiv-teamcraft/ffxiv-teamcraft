@@ -385,6 +385,7 @@
     "Inventory_breakdown": "所持品",
     "Open_in_ffxivgardening": "ffxivgardening.comで開く",
     "Add_all_item_alarms": "このアイテムに対するアラーム追加",
+    "Adaptative_filter": "Only show what I can do",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネル追加",
