@@ -3,7 +3,7 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -55,6 +55,18 @@ export class ListDetailsComponent implements OnInit {
 
   public pricingMode = false;
 
+  public loggedIn$ = this.authFacade.loggedIn$;
+
+  private adaptativeFilter$ = new BehaviorSubject<boolean>(false);
+
+  public get adaptativeFilter(): boolean {
+    return this.adaptativeFilter$.value;
+  }
+
+  public set adaptativeFilter(value: boolean) {
+    this.adaptativeFilter$.next(value);
+  }
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -77,11 +89,11 @@ export class ListDetailsComponent implements OnInit {
       map(([list]) => list),
       shareReplay(1)
     );
-    this.finalItemsRow$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
+    this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
-    this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list)),
+    this.display$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getDisplay(list, adaptativeFilter)),
       shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
@@ -209,7 +221,7 @@ export class ListDetailsComponent implements OnInit {
       return result + displayRow.rows.reduce((exportString, row) => {
         return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
       }, `${displayRow.title} :\n`) + '\n';
-    }, seed)
+    }, seed);
 
   }
 

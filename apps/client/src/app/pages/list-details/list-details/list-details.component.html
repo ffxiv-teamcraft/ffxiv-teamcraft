@@ -91,6 +91,10 @@
                   [disabled]="(permissionLevel$ | async) < 20">
             <i nz-icon type="reload"></i>
           </button>
+          <div>
+            <label nz-checkbox [(ngModel)]="adaptativeFilter"
+                   *ngIf="loggedIn$ | async">{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
+          </div>
         </div>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center">
