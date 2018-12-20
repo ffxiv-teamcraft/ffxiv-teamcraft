@@ -3,7 +3,14 @@ import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import { NavigationEnd, Router } from '@angular/router';
+import {
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+  RouterEvent
+} from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
@@ -76,6 +83,8 @@ export class AppComponent implements OnInit {
 
   private hasDesktopReloader$ = new BehaviorSubject<void>(null);
 
+  public navigating = true;
+
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
   }
@@ -102,6 +111,22 @@ export class AppComponent implements OnInit {
         return `${date.getUTCHours()}:${minutesStr}`;
       })
     );
+
+    // Navigation handle for a proper loader display
+    router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationStart) {
+        this.navigating = true;
+      }
+      if (event instanceof NavigationEnd) {
+        this.navigating = false;
+      }
+      if (event instanceof NavigationCancel) {
+        this.navigating = false;
+      }
+      if (event instanceof NavigationError) {
+        this.navigating = false;
+      }
+    });
 
     // Google Analytics
     router.events
