@@ -70,7 +70,7 @@ export class PricingComponent {
     const rowsToFill = rows
       .filter(row => {
         const price = this.pricingService.getPrice(row);
-        return price.nq === 0 || price.hq === 0;
+        return !price.fromVendor;
       });
     const operations = interval(250).pipe(
       takeUntil(stopInterval$),

@@ -205,8 +205,7 @@ export class ListsEffects {
   deleteListFromDatabase$ = this.actions$.pipe(
     ofType(ListsActionTypes.DeleteList),
     map(action => action as DeleteList),
-    mergeMap(action => combineLatest(this.listService.remove(action.key),
-      this.listCompactsService.remove(action.key))),
+    mergeMap(action => this.listService.remove(action.key)),
     switchMap(() => EMPTY)
   );
 
