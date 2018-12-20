@@ -56,7 +56,10 @@
 </nz-card>
 <ng-template #title>
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
-    <nz-input-group nzPrefixIcon="anticon anticon-edit">
+    <nz-input-group [nzPrefix]="icon">
+      <ng-template #icon>
+        <i nz-icon type="edit"></i>
+      </ng-template>
       <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)">
     </nz-input-group>
     <button nz-button nzType="danger" *ngIf="!readonly" (click)="delete.emit()">
