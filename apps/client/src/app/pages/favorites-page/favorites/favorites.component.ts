@@ -3,12 +3,14 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, filter, map, switchMap, tap, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
+import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
+import { RotationFoldersFacade } from '../../../modules/rotation-folders/+state/rotation-folders.facade';
 
 @Component({
   selector: 'app-favorites',
@@ -23,8 +25,10 @@ export class FavoritesComponent {
 
   public rotations$: Observable<CraftingRotation[]>;
 
+  public rotationFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+
   constructor(private authFacade: AuthFacade, private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade,
-              private rotationsFacade: RotationsFacade) {
+              private rotationsFacade: RotationsFacade, private rotationFoldersFacade: RotationFoldersFacade) {
     this.lists$ = this.authFacade.favorites$.pipe(
       map(favorites => favorites.lists),
       tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
@@ -37,7 +41,7 @@ export class FavoritesComponent {
     );
 
     this.rotations$ = this.authFacade.favorites$.pipe(
-      distinctUntilChanged((a,b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
+      distinctUntilChanged((a, b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
       map(favorites => favorites.rotations),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       switchMap(rotations => {
@@ -79,6 +83,8 @@ export class FavoritesComponent {
           });
       })
     );
+
+    this.rotationFolders$ = this.rotationFoldersFacade.favoriteRotationFolders$;
   }
 
 }

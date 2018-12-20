@@ -42,6 +42,9 @@ import { IconsModule } from '../../core/icons/icons.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { TeamsModule } from '../teams/teams.module';
 import { CommentsModule } from '../comments/comments.module';
+import { CustomLinksModule } from '../custom-links/custom-links.module';
+import { ListCompletionPopupComponent } from './list-completion-popup/list-completion-popup.component';
+import { ItemIconModule } from '../item-icon/item-icon.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -76,6 +79,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     UserAvatarModule,
     TeamsModule,
     CommentsModule,
+    CustomLinksModule,
+    ItemIconModule,
 
     ClipboardModule,
     NgZorroAntdModule,
@@ -91,8 +96,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ListManagerService,
     ListCompactsService
   ],
-  declarations: [ListPanelComponent, TagsPopupComponent],
-  entryComponents: [TagsPopupComponent],
+  declarations: [ListPanelComponent, TagsPopupComponent, ListCompletionPopupComponent],
+  entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent]
 })
 export class ListModule {

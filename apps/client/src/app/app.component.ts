@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -28,6 +28,8 @@ import { SettingsPopupService } from './modules/settings/settings-popup.service'
 import { BehaviorSubject, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
+import { ObservableMedia } from '@angular/flex-layout';
 
 declare const gtag: Function;
 
@@ -62,6 +64,8 @@ export class AppComponent implements OnInit {
 
   public userId$ = this.authFacade.userId$;
 
+  public user$ = this.authFacade.user$;
+
   public loading$: Observable<boolean>;
 
   public time$: Observable<string>;
@@ -82,11 +86,14 @@ export class AppComponent implements OnInit {
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer) {
+              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
+              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia) {
+
+    this.renderer.addClass(document.body, this.settings.theme.className);
 
     this.desktop = this.platformService.isDesktop();
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_maxek3aoiwq.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_pxv80d5yyj8.js' });
 
     this.time$ = this.eorzeanTime.getEorzeanTime().pipe(
       map(date => {
@@ -107,6 +114,7 @@ export class AppComponent implements OnInit {
         })
       ).subscribe((event: any) => {
       this.overlay = event.url.indexOf('?overlay') > -1;
+      this.ipc.send('navigated', event.url);
       this.ipc.on('window-decorator', (e, value) => {
         this.windowDecorator = value;
       });
@@ -123,6 +131,7 @@ export class AppComponent implements OnInit {
     // Custom protocol detection
     this.hasDesktop$ = this.hasDesktopReloader$.pipe(
       switchMap(() => router.events),
+      first(),
       filter(current => current instanceof NavigationEnd),
       switchMap((current: NavigationEnd) => {
         let url = current.url;
@@ -185,6 +194,16 @@ export class AppComponent implements OnInit {
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
     this.rotationsFacade.loadMyRotations();
+    this.customLinksFacade.loadMyCustomLinks();
+
+    if (this.media.isActive('lt-md')) {
+      this.collapsedSidebar = true;
+    }
+
+    this.settings.themeChange$.subscribe((change => {
+      this.renderer.removeClass(document.body, change.previous.className);
+      this.renderer.addClass(document.body, change.next.className);
+    }));
   }
 
   deleteNotification(notification: AbstractNotification): void {

@@ -29,11 +29,12 @@ import {
   map,
   mergeMap,
   switchMap,
+  tap,
   withLatestFrom
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, concat, EMPTY, of } from 'rxjs';
+import { combineLatest, EMPTY, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { ListCompactsService } from '../list-compacts.service';
 import { List } from '../model/list';
@@ -41,9 +42,15 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd';
+import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class ListsEffects {
+
+  cleaned = false;
 
   @Effect()
   loadMyLists$ = this.actions$.pipe(
@@ -55,6 +62,12 @@ export class ListsEffects {
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
         );
+    }),
+    tap(action => {
+      if (!this.cleaned) {
+        action.payload.filter(l => l.name === 'Gatherings').forEach(l => this.listsFacade.deleteList(l.$key));
+        this.cleaned = true;
+      }
     })
   );
 
@@ -225,7 +238,8 @@ export class ListsEffects {
   deleteEphemeralListsOnComplete$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
-    map(action => new DeleteList(action.payload.$key))
+    map(action => new DeleteList(action.payload.$key)),
+    tap(() => this.router.navigate(['/lists']))
   );
 
   @Effect()
@@ -265,6 +279,26 @@ export class ListsEffects {
     map(lists => new CommunityListsLoaded(lists))
   );
 
+  @Effect()
+  openCompletionPopup$ = this.actions$.pipe(
+    ofType<SetItemDone>(ListsActionTypes.SetItemDone),
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
+    filter(([action, list, userId]) => {
+      return !list.ephemeral && list.authorId === userId && list.isComplete();
+    }),
+    tap(([, list]) => {
+      this.dialog.create({
+        nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
+        nzFooter: null,
+        nzContent: ListCompletionPopupComponent,
+        nzComponentParams: {
+          list: list
+        }
+      });
+    }),
+    switchMap(() => EMPTY)
+  );
+
   constructor(
     private actions$: Actions,
     private authFacade: AuthFacade,
@@ -272,6 +306,9 @@ export class ListsEffects {
     private listCompactsService: ListCompactsService,
     private listsFacade: ListsFacade,
     private teamsFacade: TeamsFacade,
+    private router: Router,
+    private dialog: NzModalService,
+    private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService
   ) {
   }

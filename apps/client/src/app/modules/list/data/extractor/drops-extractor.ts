@@ -31,7 +31,7 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
       if (partial !== undefined) {
         const monsterId: string = Math.floor(d % 1000000).toString();
         const zoneid = monsters[monsterId] !== undefined ? monsters[monsterId].zoneid : partial.obj.z;
-        const mapid = monsters[monsterId] !== undefined ? monsters[monsterId].mapid : partial.obj.z;
+        const mapid = monsters[monsterId] !== undefined ? monsters[monsterId].map : partial.obj.z;
         const drop: Drop = {
           id: d,
           mapid: mapid,

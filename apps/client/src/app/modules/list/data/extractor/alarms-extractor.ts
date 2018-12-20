@@ -48,6 +48,12 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             },
             spawns: node.time
           };
+          if (node.baits !== undefined) {
+            alarm.baits = node.baits;
+          }
+          if (node.weathers !== undefined) {
+            alarm.weathers = node.weathers;
+          }
           if (folklore !== undefined) {
             alarm.folklore = {
               id: +folklore,

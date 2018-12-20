@@ -3,7 +3,7 @@ import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,6 +12,9 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { List } from '../../list/model/list';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
 import { ListsFacade } from '../../list/+state/lists.facade';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
+import { CustomLink } from '../../../core/database/custom-links/custom-link';
 
 @Component({
   selector: 'app-workshop-panel',
@@ -40,9 +43,28 @@ export class WorkshopPanelComponent implements OnChanges {
     shareReplay(1)
   );
 
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
+
+  private syncLinkUrl: string;
+
   constructor(private workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade) {
+    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.workshop$).pipe(
+      map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
+      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+      shareReplay(1)
+    );
+  }
+
+  createCustomLink(workshop: Workshop, user: TeamcraftUser): void {
+    this.customLinksFacade.createCustomLink(workshop.name, `workshop/${workshop.$key}`, user);
+  }
+
+  afterCustomLinkCopy(): void {
+    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   deleteWorkshop(): void {
@@ -50,7 +72,7 @@ export class WorkshopPanelComponent implements OnChanges {
   }
 
   getLink(): string {
-    return this.linkTools.getLink(`/workshop/${this._workshop.$key}`);
+    return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/workshop/${this._workshop.$key}`);
   }
 
   renameWorkshop(): void {

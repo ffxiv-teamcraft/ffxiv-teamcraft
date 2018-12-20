@@ -140,9 +140,10 @@ export class AlarmsFacade {
   }
 
   public createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
-    return this.sortAlarmDisplays(alarms.map(alarm => {
-      return this.createDisplay(alarm, date);
-    }));
+    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined)
+      .map(alarm => {
+        return this.createDisplay(alarm, date);
+      }));
   }
 
   private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {

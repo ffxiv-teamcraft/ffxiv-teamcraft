@@ -1,0 +1,129 @@
+import { Component, Input } from '@angular/core';
+import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { LinkToolsService } from '../../../../core/tools/link-tools.service';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';
+import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
+import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
+import { CustomLink } from '../../../../core/database/custom-links/custom-link';
+
+@Component({
+  selector: 'app-rotation-folder-panel',
+  templateUrl: './rotation-folder-panel.component.html',
+  styleUrls: ['./rotation-folder-panel.component.less']
+})
+export class RotationFolderPanelComponent {
+
+  @Input()
+  public set folder(l: CraftingRotationsFolder) {
+    this._folder = l;
+    this.folder$.next(l);
+  }
+
+  public _folder: CraftingRotationsFolder;
+
+  private folder$: ReplaySubject<CraftingRotationsFolder> = new ReplaySubject<CraftingRotationsFolder>();
+
+  @Input()
+  rotations: CraftingRotation[] = [];
+
+  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.authFacade.userId$, this.folder$).pipe(
+    map(([userId, folder]) => folder.getPermissionLevel(userId)),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
+
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
+
+  private syncLinkUrl: string;
+
+  constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
+              private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
+              private customLinksFacade: CustomLinksFacade) {
+
+    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.folder$).pipe(
+      map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),
+      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+      shareReplay(1)
+    );
+  }
+
+  createCustomLink(folder: CraftingRotationsFolder, user: TeamcraftUser): void {
+    this.customLinksFacade.createCustomLink(folder.name, `rotation-folder/${folder.$key}`, user);
+  }
+
+  afterCustomLinkCopy(): void {
+    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
+  }
+
+  deleteFolder(): void {
+    this.foldersFacade.deleteFolder(this._folder.$key);
+  }
+
+  getLink(): string {
+    return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/rotation-folder/${this._folder.$key}`);
+  }
+
+  renameFolder(): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: this._folder.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('Edit')
+    }).afterClose.pipe(
+      filter(name => name !== undefined),
+      map(name => {
+        this._folder.name = name;
+        return this._folder;
+      })
+    ).subscribe(folder => this.foldersFacade.updateFolder(folder));
+  }
+
+  openPermissionsPopup(): void {
+    const modalReady$ = new Subject<void>();
+    const modalRef = this.dialog.create({
+      nzTitle: this.translate.instant('PERMISSIONS.Title'),
+      nzFooter: null,
+      nzContent: PermissionsBoxComponent,
+      nzComponentParams: { data: this._folder, ready$: modalReady$ }
+    });
+    modalReady$.pipe(
+      first(),
+      switchMap(() => {
+        return modalRef.getContentComponent().changes$;
+      })
+    ).subscribe((updatedCraftingRotationsFolder: CraftingRotationsFolder) => {
+      this.foldersFacade.updateFolder(updatedCraftingRotationsFolder);
+    });
+  }
+
+  onCraftingRotationDrop(rotation: CraftingRotation, index: number): void {
+    this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
+    this._folder.rotationIds.splice(index, 0, rotation.$key);
+    this.foldersFacade.updateFolder(this._folder);
+  }
+
+  removeCraftingRotation(rotation: CraftingRotation): void {
+    this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
+    this.foldersFacade.updateFolder(this._folder);
+  }
+
+  afterLinkCopy(): void {
+    this.message.success(this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Share_link_copied'));
+  }
+
+  trackByCraftingRotation(index: number, rotation: CraftingRotation): string {
+    return rotation.$key;
+  }
+
+}

@@ -14,7 +14,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
 
   public panelContent: ListRow[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   getTradeSourceByPriority(tradeSources: TradeSource[]): TradeSource {
     return tradeSources.sort((a, b) => {
@@ -30,7 +31,7 @@ export class TotalPanelPricePopupComponent implements OnInit {
           // We'll use -1 as currencyId for gil.
           const gilsRow = result.find(r => r.currencyId === -1);
           if (gilsRow === undefined) {
-            result.push({currencyId: -1, currencyIcon: -1, costs: [vendor.price * (row.amount - row.done)]});
+            result.push({ currencyId: -1, currencyIcon: -1, costs: [vendor.price * (row.amount - row.done)] });
           } else {
             gilsRow.costs[0] += vendor.price * (row.amount - row.done);
           }

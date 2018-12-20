@@ -1,18 +1,20 @@
 {
-  "name": "ffxiv-teamcraft",
+  "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-beta.2",
+  "version": "5.0.0-beta.4",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
-    "appId": "ffxivteamcraft",
+    "appId": "ffxivteamcraft-beta",
     "artifactName": "${productName}-setup.${ext}",
+    "forceCodeSigning": true,
     "directories": {
       "output": "release"
     },
     "files": [
       "desktop/main.js",
+      "desktop/oauth.js",
       "dist"
     ],
     "protocols": {
@@ -26,6 +28,7 @@
     },
     "win": {
       "icon": "./tools/build/icon.ico",
+      "publisherName": "Miu Asakura",
       "publish": [
         "github"
       ]
@@ -62,6 +65,7 @@
     "electron:start:no-decorators": "electron ./desktop/main.js --native-titlebar",
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
     "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win --dir",
+    "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
@@ -81,8 +85,8 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "ng:g": "ng g --project=client --styleext=less --spec=false",
     "electron-builder": "electron-builder",
+    "bundle-report": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "***********SSR STUFF***************": "",
     "build": "ng build && npm run build:ssr",
     "build:ssr": "ng run client:server && npm run webpack:ssr",
@@ -166,7 +170,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "del-cli": "^1.1.0",
-    "electron": "^3.0.10",
+    "electron": "^2.0.14",
     "electron-builder": "^20.28.3",
     "electron-reload": "^1.2.2",
     "firebase-tools": "^4.0.1",
@@ -193,6 +197,7 @@
     "tslint": "~5.9.1",
     "typescript": "~3.1.6",
     "validate-commit-msg": "^2.14.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "ws": "^6.0.0",
     "xhr2": "^0.1.4"
   },

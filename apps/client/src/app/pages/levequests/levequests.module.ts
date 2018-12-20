@@ -16,11 +16,13 @@ import { MapModule } from '../../modules/map/map.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: LevequestsComponent
+    component: LevequestsComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 
@@ -48,4 +50,5 @@ const routes: Routes = [
   ],
   declarations: [LevequestsComponent]
 })
-export class LevequestsModule { }
+export class LevequestsModule {
+}

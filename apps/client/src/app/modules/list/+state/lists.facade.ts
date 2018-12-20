@@ -91,7 +91,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList);
+  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined && !list.notFound));
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {

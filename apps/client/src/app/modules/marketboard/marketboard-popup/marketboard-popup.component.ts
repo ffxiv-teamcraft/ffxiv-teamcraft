@@ -4,7 +4,6 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { MarketboardPrice } from '@xivapi/angular-client/src/model/schema/market/marketboard-price';
-import { MarketboardItemHistory } from '@xivapi/angular-client/src/model/schema/market/marketboard-item-history';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -27,6 +26,8 @@ export class MarketboardPopupComponent implements OnInit {
 
   loadingHistory = true;
 
+  server$: Observable<string>;
+
   sort$: BehaviorSubject<{ key: string, value: 'ascend' | 'descend' }> = new BehaviorSubject<{ key: string, value: any }>({
     key: 'PricePerUnit',
     value: 'ascend'
@@ -36,12 +37,12 @@ export class MarketboardPopupComponent implements OnInit {
   }
 
   ngOnInit() {
-    const server$ = this.authFacade.mainCharacter$.pipe(
+    this.server$ = this.authFacade.mainCharacter$.pipe(
       map(character => character.Server),
       shareReplay(1)
     );
 
-    this.prices$ = combineLatest(server$
+    this.prices$ = combineLatest(this.server$
         .pipe(
           switchMap(server => {
             return this.xivapi.getMarketBoardItem(server, this.itemId);
@@ -69,7 +70,7 @@ export class MarketboardPopupComponent implements OnInit {
       })
     );
 
-    this.history$ = server$.pipe(
+    this.history$ = this.server$.pipe(
       switchMap(server => {
         return this.xivapi.getMarketBoardItemHistory(server, this.itemId);
       }),
@@ -80,8 +81,8 @@ export class MarketboardPopupComponent implements OnInit {
           return {
             ...entry,
             PurchaseDate: entry.PurchaseDate + '000'
-          }
-        })
+          };
+        });
       }),
       shareReplay(1)
     );

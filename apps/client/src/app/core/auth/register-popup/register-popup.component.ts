@@ -52,7 +52,7 @@ export class RegisterPopupComponent {
   public googleOauth(): void {
     delete this.errorMessageCode;
     this.authFacade.googleOauth()
-      .then(() => {
+      .subscribe(() => {
         this.modalRef.close();
       });
   }
@@ -60,7 +60,7 @@ export class RegisterPopupComponent {
   public facebookOauth(): void {
     delete this.errorMessageCode;
     this.authFacade.facebookOauth()
-      .then(() => {
+      .subscribe(() => {
         this.modalRef.close();
       });
   }

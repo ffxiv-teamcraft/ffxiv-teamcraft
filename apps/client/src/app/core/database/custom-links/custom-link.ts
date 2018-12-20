@@ -1,14 +1,27 @@
 import { DataModel } from '../storage/data-model';
+import { ForeignKey } from '../relational/foreign-key';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { Parent } from '@kaiu/serializer';
 
+@Parent({
+  discriminatorField: 'type',
+  allowSelf: true
+})
 export class CustomLink extends DataModel {
-  template = false;
+  type = 'link';
   authorNickname: string;
   uri: string;
   redirectTo: string;
-  author: string;
+
+  @ForeignKey(TeamcraftUser)
+  authorId: string;
 
   getType(): string {
-    return this.redirectTo.split('/')[0];
+    const type = this.redirectTo.split('/')[0];
+    if (type === 'simulator') {
+      return 'rotation';
+    }
+    return type;
   }
 
   getUrl(): string {
@@ -18,5 +31,10 @@ export class CustomLink extends DataModel {
     } else {
       return `${window.location.protocol}//${window.location.host}/link/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;
     }
+  }
+
+  getEntityId(): string {
+    const exploded = this.redirectTo.split('/');
+    return exploded[exploded.length - 1];
   }
 }

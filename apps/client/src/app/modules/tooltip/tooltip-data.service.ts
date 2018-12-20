@@ -8,16 +8,12 @@ import { shareReplay } from 'rxjs/operators';
 export class TooltipDataService {
 
   private actions: { [index: number]: Observable<any> } = {};
-  private items: { [index: number]: Observable<any> } = {};
 
   constructor(private translator: TranslateService, private xivapi: XivapiService) {
   }
 
   getItemTooltipData(id: number): Observable<any> {
-    if (this.items[id] === undefined) {
-      this.items[id] = this.xivapi.get(XivapiEndpoint.Item, id);
-    }
-    return this.items[id];
+    return this.xivapi.get(XivapiEndpoint.Item, id);
   }
 
   getActionTooltipData(id: number): Observable<any> {

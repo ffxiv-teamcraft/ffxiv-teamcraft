@@ -17,7 +17,7 @@ const getCommunityListsLoading = createSelector(
 const getCompacts = createSelector(
   getListsState,
   getCompactsLoading,
-  (state: ListsState, loading) => loading ? [] : state.compacts
+  (state: ListsState, loading) => loading ? [] : state.compacts.filter(c => state.deleted.indexOf(c.$key) === -1)
 );
 
 const getNeedsVerification = createSelector(
@@ -28,7 +28,7 @@ const getNeedsVerification = createSelector(
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
-    return state.listDetails;
+    return state.listDetails.filter(d => state.deleted.indexOf(d.$key) === -1);
   }
 );
 

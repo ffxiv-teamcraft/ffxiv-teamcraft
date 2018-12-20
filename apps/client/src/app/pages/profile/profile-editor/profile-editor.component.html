@@ -11,15 +11,20 @@
                      [nzLabel]="characterEntry.character.Character.Name">
           </nz-option>
         </nz-select>
-        <i nz-icon *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" type="exclamation-circle" nz-tooltip
+        <i nz-icon *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" type="exclamation-circle"
+           nz-tooltip
            [nzTitle]="'Not_verified' | translate"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
-        <button *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button nzType="primary" nzShape="circle" nzSize="small"
-                (click)="verifyCharacter(user.$key, mainCharacter.character.ID)" nz-tooltip
-                [nzTitle]="'PROFILE.VERIFICATION.Title' | translate">
-          <i nz-icon type="check"></i>
-        </button>
+        <ng-container *ngIf="userId$ | async as userId">
+          <button *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button nzType="primary"
+                  nzShape="circle" nzSize="small"
+                  (click)="verifyCharacter(userId, mainCharacter.character.ID)" nz-tooltip
+                  [nzTitle]="'PROFILE.VERIFICATION.Title' | translate">
+            <i nz-icon type="check"></i>
+          </button>
+        </ng-container>
+
         <button nz-button nzType="primary" nzShape="circle" nzSize="small" nz-tooltip
                 [nzTitle]="'PROFILE.Add_character' | translate" (click)="addCharacter()">
           <i nz-icon type="plus"></i>
@@ -38,6 +43,10 @@
             alt="" class="apkallu-logo">
         </a>
       </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+      <nz-tag [nzColor]="'magenta'" *ngIf="user.admin">{{'COMMON.Admin' | translate}}</nz-tag>
+      <nz-tag [nzColor]="'purple'" *ngIf="user.patron">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
     </div>
     <div nz-row [nzGutter]="10">
       <div nz-col [nzXs]="24" [nzMd]="12" class="profile-card">
@@ -79,7 +88,7 @@
         </nz-card>
       </div>
       <ng-container *ngIf="user$ | async as user">
-        <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
+        <div nz-col [nzXs]="24" [nzMd]="12" class="profile-card">
           <nz-card [nzTitle]="'PROFILE.Contacts' | translate">
             <nz-list [nzRenderItem]="contact" [nzDataSource]="user.contacts">
               <ng-template #contact let-contact>
@@ -103,16 +112,6 @@
               <i nz-icon type="plus"></i>
               {{'PROFILE.Add_new_contact' | translate}}
             </button>
-          </nz-card>
-        </div>
-        <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
-          <nz-card [nzTitle]="'PROFILE.Account' | translate">
-            TODO patreon email, userId
-          </nz-card>
-        </div>
-        <div nz-col [nzXs]="24" [nzMd]="6" class="profile-card">
-          <nz-card [nzTitle]="'PROFILE.Patreon_features' | translate">
-            TODO nickname
           </nz-card>
         </div>
       </ng-container>

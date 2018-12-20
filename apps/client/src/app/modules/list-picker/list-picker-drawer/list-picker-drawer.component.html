@@ -1,3 +1,7 @@
+<button nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
+  <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
+</button>
+<nz-divider [nzText]="'Or' | translate"></nz-divider>
 <div *ngIf="myLists$ | async as myLists">
   <nz-list [nzDataSource]="myLists" [nzRenderItem]="list" [nzHeader]="header">
     <ng-template #list let-list>
@@ -50,7 +54,3 @@
   <ng-template #headerSharedLists><i nz-icon type="edit"></i>&nbsp;{{'LISTS.Shared_lists' | translate}}
   </ng-template>
 </nz-list>
-<nz-divider [nzText]="'Or' | translate"></nz-divider>
-<button nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
-  <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
-</button>

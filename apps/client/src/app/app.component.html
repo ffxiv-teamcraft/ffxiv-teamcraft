@@ -1,5 +1,5 @@
 <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container">
-  <nz-layout>
+  <nz-layout *ngIf="!overlay">
     <nz-header class="header">
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
@@ -48,7 +48,7 @@
             </nz-list>
           </ng-template>
         </li>
-        <li nz-submenu class="user-menu">
+        <li nz-submenu class="user-menu" [class.accent]="!(loggedIn$ | async)">
           <span title>
             <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
             <ng-template #authDetails>
@@ -83,11 +83,12 @@
               <i nz-icon type="heart"></i>
               {{'Favorites' | translate}}
             </a>
-            <a nz-menu-item nzDisabled *ngIf="loggedIn$ | async">
-              <i nz-icon type="link"></i>
-              <!--*ngIf patreon supporter-->
-              {{'CUSTOM_LINKS.Title' | translate}}
-            </a>
+            <ng-container *ngIf="user$ | async as user">
+              <a nz-menu-item routerLink="/custom-links" *ngIf="user.patron || user.admin">
+                <i nz-icon type="link"></i>
+                {{'CUSTOM_LINKS.Title' | translate}}
+              </a>
+            </ng-container>
             <a nz-menu-item (click)="openSettings()">
               <i nz-icon type="setting"></i>
               {{'SETTINGS.Title' | translate}}
@@ -110,15 +111,17 @@
       </ul>
     </nz-header>
   </nz-layout>
-  <nz-layout class="content-container">
+  <nz-layout class="content-container" [class.overlay]="overlay">
     <nz-sider nzCollapsible
+              *ngIf="!overlay"
               class="sider"
               [(nzCollapsed)]="collapsedSidebar"
               (nzCollapsedChange)="settings.compactSidebar = $event"
               [nzCollapsedWidth]="80 | ifMobile: 0">
       <div fxLayout="column" class="flex-container" fxLayoutAlign="space-between">
         <div>
-          <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
+          <ul nz-menu [class.dark]="settings.theme.isDark" [nzTheme]="'dark'"
+              [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
             <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/search">
           <span>
               <i nz-icon type="search"></i>
@@ -168,12 +171,6 @@
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" nzDisabled routerLinkActive="ant-menu-item-selected">
-          <span>
-              <i nz-icon type="file-markdown"></i>
-              <span class="nav-text">{{'WIKI.Title' | translate}}</span>
-          </span>
-            </a>
             <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/about">
           <span>
               <i nz-icon type="info-circle-o"></i>
@@ -214,11 +211,12 @@
       </div>
     </nz-sider>
     <nz-content>
-      <div class="page-container">
+      <div class="page-container" [class.overlay]="overlay">
         <router-outlet></router-outlet>
       </div>
     </nz-content>
     <nz-sider nzCollapsible
+              *ngIf="!overlay"
               class="right-sider"
               [nzWidth]="230"
               [(nzCollapsed)]="collapsedAlarmsBar"
@@ -226,7 +224,7 @@
       <app-alarms-sidebar *ngIf="!(loading$ | async)"></app-alarms-sidebar>
     </nz-sider>
   </nz-layout>
-  <nz-footer fxHide fxShow.lt-sm class="footer">
+  <nz-footer [fxHide]="!overlay" fxShow.lt-sm class="footer">
     <span class="timer">{{time$ | async}}</span>
   </nz-footer>
 </nz-layout>

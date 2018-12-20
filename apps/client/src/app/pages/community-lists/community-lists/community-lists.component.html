@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
   <h2>{{'Public_lists' | translate}}</h2>
   <input nz-input type="text" class="filter-input" [placeholder]="'COMMUNITY_LISTS.Name_filter_placeholder' | translate"
-         [ngModel]="nameFilter$ | async" (ngModelChange)="nameFilter$.next($event)">
+         [ngModel]="nameFilter$ | async" (ngModelChange)="nameFilter$.next($event)" autofocus>
   <div fxLayout="row" class="filter-input" fxLayoutGap="5px">
     <nz-select fxFlex="1 1 auto" nzMode="multiple"
                [nzPlaceHolder]="'COMMUNITY_LISTS.Tags_filter_placeholder' | translate"

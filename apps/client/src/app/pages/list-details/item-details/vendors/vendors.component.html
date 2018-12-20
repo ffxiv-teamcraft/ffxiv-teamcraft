@@ -9,11 +9,12 @@
       </ng-template>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
+          <div>{{vendor.zoneId | placeName | i18n}}</div>
           <app-map-position [zoneId]="vendor.zoneId" [marker]="vendor.coords" [mapId]="vendor.mapId"></app-map-position>
-          <div
-            *ngIf="vendor.zoneId | closestAetheryte: vendor.coords | async as aetheryte"
-            class="closest-tp">
-            <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
+          <div *ngIf="vendor.mapId | closestAetheryte: vendor.coords | async as aetheryte"
+               class="closest-tp">
+            <img src="./assets/icons/Aetheryte.png" alt=""
+                 class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
           </div>
         </div>
       </ng-template>

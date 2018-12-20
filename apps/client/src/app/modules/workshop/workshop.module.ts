@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { CoreModule } from '../../core/core.module';
 import { ClipboardModule } from 'ngx-clipboard';
+import { CustomLinksModule } from '../custom-links/custom-links.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     NgxDnDModule,
     CoreModule,
     ClipboardModule,
+    CustomLinksModule,
 
     DatabaseModule,
     ListModule,

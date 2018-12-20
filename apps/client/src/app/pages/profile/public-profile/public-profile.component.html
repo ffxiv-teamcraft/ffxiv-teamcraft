@@ -1,5 +1,6 @@
 <div *ngIf="characterEntry$ | async as characterEntry">
-  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start flex-start" fxLayoutAlign.lt-md="center center" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start flex-start" fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="10px">
     <img [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt=""
          [class.portrait]="true | ifMobile: false" [class.avatar]="false |ifMobile:true">
     <div fxLayout="column" fxFlex="1 1 auto" fxLayoutAlign.lt-md="center center">
@@ -9,7 +10,10 @@
            [nzTitle]="'Not_verified' | translate"></i>
       </h2>
       <span>{{characterEntry.character.Server}}</span>
-      <!--TODO Badges-->
+      <div *ngIf="user$ | async as user" fxLayout="row wrap" fxLayoutGap="5px">
+        <nz-tag [nzColor]="'magenta'" *ngIf="user.admin">{{'COMMON.Admin' | translate}}</nz-tag>
+        <nz-tag [nzColor]="'purple'" *ngIf="user.patron">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
+      </div>
       <nz-list [nzHeader]="'Public_lists' | translate" [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
         <ng-template #list let-list>
           <app-list-panel [list]="list" [publicDisplay]="true" [hideAvatar]="true"></app-list-panel>

@@ -4,9 +4,12 @@ import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
 import { ObservableMedia } from '@angular/flex-layout';
 import { SettingsService } from '../../settings/settings.service';
-import { Observable } from 'rxjs';
+import { interval, Observable, Subject } from 'rxjs';
 import { ListsFacade } from '../../list/+state/lists.facade';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { XivapiService } from '@xivapi/angular-client';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 
 @Component({
   selector: 'app-pricing',
@@ -30,8 +33,15 @@ export class PricingComponent {
 
   public spendingTotal = 0;
 
+  private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
+    map(char => char.Server)
+  );
+
+  private loggedIn$ = this.authFacade.loggedIn$;
+
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
+              private progressService: ProgressPopupService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -53,6 +63,50 @@ export class PricingComponent {
       map(list => list.items.filter(i => i.craftedBy && i.craftedBy.length > 0)),
       shareReplay(1)
     );
+  }
+
+  public fillMbCosts(rows: ListRow[]): void {
+    const stopInterval$ = new Subject<void>();
+    const rowsToFill = rows
+      .filter(row => {
+        const price = this.pricingService.getPrice(row);
+        return price.nq === 0 || price.hq === 0;
+      });
+    const operations = interval(250).pipe(
+      takeUntil(stopInterval$),
+      filter(index => rowsToFill[index] !== undefined),
+      mergeMap(index => {
+        const row = rowsToFill[index];
+        return this.server$.pipe(
+          mergeMap(server => this.xivapi.getMarketBoardItem(server, row.id)),
+          map(mbItem => {
+            const prices = mbItem.Prices;
+            const cheapestHq = prices.filter(p => p.IsHQ)
+              .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+            const cheapestNq = prices.filter(p => !p.IsHQ)
+              .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+            return {
+              item: row,
+              hq: cheapestHq ? cheapestHq.PricePerUnit : 0,
+              nq: cheapestNq ? cheapestNq.PricePerUnit : 0
+            };
+          })
+        );
+      }),
+      tap((res) => {
+        this.pricingService.savePrice(res.item, { nq: res.nq, hq: res.hq, fromVendor: false });
+      })
+    );
+    this.progressService.showProgress(operations, rowsToFill.length)
+      .pipe(
+        switchMap(() => this.list$),
+        first()
+      )
+      .subscribe((list) => {
+        stopInterval$.next(null);
+        this.pricingService.priceChanged$.next(null);
+        this.updateCosts(list);
+      });
   }
 
   private updateCosts(list: List): void {

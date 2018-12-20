@@ -15,22 +15,61 @@
   <nz-card>
     <nz-card-meta [nzTitle]="'Spending' | translate"
                   nzDescription="{{spendingTotal | number:'1.0-0'}} gil"></nz-card-meta>
-    <nz-collapse class="collapse-container">
-      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Crystals' | translate">
-        <app-pricing-row *ngFor="let row of crystals$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+    <nz-collapse class="collapse-container" *ngIf="list.items.length > 0">
+      <nz-collapse-panel *ngIf="crystals$ | async as crystals" [nzHeader]="header">
+        <ng-template #header>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'Crystals' | translate}}</div>
+            <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
+                    class="fill-prices-button"
+                    (nzOnConfirm)="fillMbCosts(crystals)"
+                    (click)="$event.stopPropagation()"
+                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}">
+              {{'PRICING.Autofill_panel_prices' | translate}}
+            </button>
+          </div>
+        </ng-template>
+        <app-pricing-row *ngFor="let row of crystals; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
                          [item]="row" [listId]="list.$key"
                          (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
       </nz-collapse-panel>
 
-      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Other' | translate">
-        <app-pricing-row *ngFor="let row of items$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+      <nz-collapse-panel *ngIf="items$ | async as items" [nzHeader]="header">
+        <ng-template #header>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'Other' | translate}}</div>
+            <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
+                    class="fill-prices-button"
+                    (nzOnConfirm)="fillMbCosts(items)"
+                    (click)="$event.stopPropagation()"
+                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}">
+              {{'PRICING.Autofill_panel_prices' | translate}}
+            </button>
+          </div>
+        </ng-template>
+        <app-pricing-row *ngFor="let row of items; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
                          [item]="row" [listId]="list.$key"
                          (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
       </nz-collapse-panel>
 
-      <nz-collapse-panel *ngIf="list.items.length > 0" [nzHeader]="'Pre_crafts' | translate">
+      <nz-collapse-panel *ngIf="preCrafts$ | async as preCrafts" [nzHeader]="header">
+        <ng-template #header>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'Pre_crafts' | translate}}</div>
+            <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
+                    class="fill-prices-button"
+                    (nzOnConfirm)="fillMbCosts(preCrafts)"
+                    (click)="$event.stopPropagation()"
+                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}">
+              {{'PRICING.Autofill_panel_prices' | translate}}
+            </button>
+          </div>
+        </ng-template>
 
-        <app-pricing-row *ngFor="let row of preCrafts$ | async; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
+        <app-pricing-row *ngFor="let row of preCrafts; trackBy: trackByItemFn; let odd = odd" [odd]="odd"
                          [craftCost]="getCraftCost(row)" [item]="row" [listId]="list.$key"
                          [preCraft]="true" (save)="save(list)" (priceChange)="updateCosts(list)"></app-pricing-row>
       </nz-collapse-panel>
@@ -41,7 +80,20 @@
     <nz-card-meta [nzTitle]="'Earning' | translate"
                   nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
     <nz-collapse class="collapse-container">
-      <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="'Items' | translate">
+      <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="header">
+        <ng-template #header>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{'Items' | translate}}</div>
+            <button nz-button nz-popconfirm nzType="primary"
+                    *ngIf="loggedIn$ | async"
+                    class="fill-prices-button"
+                    (nzOnConfirm)="fillMbCosts(list.finalItems)"
+                    (click)="$event.stopPropagation()"
+                    [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}">
+              {{'PRICING.Autofill_panel_prices' | translate}}
+            </button>
+          </div>
+        </ng-template>
         <app-pricing-row *ngFor="let row of list.finalItems; trackBy: trackByItemFn;let odd = odd" [odd]="odd"
                          [item]="row" [listId]="list.$key"
                          [craftCost]="getCraftCost(row)"
@@ -50,6 +102,7 @@
     </nz-collapse>
   </nz-card>
 
-  <nz-alert nzType="success" nzMessage="{{'Benefits' | translate}}: {{getBenefits(list) | number:'1.0-0'}} gil">
+  <nz-alert *ngIf="getBenefits(list) as benefits" [nzType]="benefits >= 0 ? 'success' : 'error'"
+            nzMessage="{{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}} gil">
   </nz-alert>
 </div>

@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
   },
   {
+    path: 'alarms-overlay',
+    loadChildren: './pages/alarms-overlay/alarms-overlay.module#AlarmsOverlayModule'
+  },
+  {
     path: 'community-lists',
     loadChildren: './pages/community-lists/community-lists.module#CommunityListsModule'
   },
@@ -58,7 +62,31 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: './pages/about/about.module#AboutModule'
-  }
+  },
+  {
+    path: 'import',
+    loadChildren: './pages/import/import.module#ImportModule'
+  },
+  {
+    path: 'patreon-redirect',
+    loadChildren: './pages/patreon-redirect/patreon-redirect.module#PatreonRedirectModule'
+  },
+  {
+    path: 'list-import/:importString',
+    redirectTo: 'import/:importString'
+  },
+  {
+    path: 'custom-links',
+    loadChildren: './pages/custom-links/custom-links-page.module#CustomLinksPageModule'
+  },
+  {
+    path: 'link',
+    loadChildren: './pages/link/link.module#LinkModule'
+  },
+  {
+    path: 'template',
+    loadChildren: './pages/template/template.module#TemplateModule'
+  },
 ];
 
 @NgModule({

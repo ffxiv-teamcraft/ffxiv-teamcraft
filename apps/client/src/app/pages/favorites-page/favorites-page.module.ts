@@ -9,11 +9,14 @@ import { ListModule } from '../../modules/list/list.module';
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { SimulatorModule } from '../simulator/simulator.module';
+import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: FavoritesComponent
+    component: FavoritesComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 
@@ -25,12 +28,14 @@ const routes: Routes = [
     ListModule,
     WorkshopModule,
     RotationsModule,
+    RotationFoldersModule,
     SimulatorModule,
 
     NgZorroAntdModule,
 
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
   declarations: [FavoritesComponent]
 })
-export class FavoritesPageModule { }
+export class FavoritesPageModule {
+}

@@ -13,11 +13,13 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: ':id',
-    component: WorkshopDetailsComponent
+    component: WorkshopDetailsComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

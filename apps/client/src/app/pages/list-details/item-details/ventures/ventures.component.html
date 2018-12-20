@@ -12,7 +12,8 @@
             <div>{{threshold.name | translate}} {{threshold.stat}}</div>
             <i nz-icon type="right"></i>
             <div>x{{threshold.quantity}}
-              <span nz-tooltip [nzTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}">
+              <span nz-tooltip
+                    [nzTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}">
                 ({{((item.amount - item.done) / threshold.quantity) | ceil }})
               </span>
             </div>

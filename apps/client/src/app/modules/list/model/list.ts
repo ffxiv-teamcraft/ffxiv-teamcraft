@@ -67,7 +67,9 @@ export class List extends DataWithPermissions {
   }
 
   public isComplete(): boolean {
-    return this.finalItems.length > 0 && this.finalItems.filter(recipe => recipe.done < recipe.amount).length === 0;
+    return this.finalItems.length > 0 && this.finalItems.filter(recipe => {
+      return recipe.done < recipe.amount;
+    }).length === 0;
   }
 
   public clone(): List {
@@ -102,6 +104,7 @@ export class List extends DataWithPermissions {
     compact.registry = this.registry;
     compact.authorId = this.authorId;
     compact.$key = this.$key;
+    compact.ephemeral = this.ephemeral;
     return compact;
   }
 
@@ -137,8 +140,8 @@ export class List extends DataWithPermissions {
    * @returns {List}
    */
   public merge(otherList: List): List {
-    otherList.items.forEach(crystal => {
-      this.add(this.items, crystal);
+    otherList.items.forEach(item => {
+      this.add(this.items, item);
     });
     otherList.finalItems.forEach(recipe => {
       this.add(this.finalItems, recipe, true);
@@ -168,17 +171,6 @@ export class List extends DataWithPermissions {
       }
     }
     return this;
-  }
-
-  /**
-   * Checks if a list is large or not, mostly used for display purpose.
-   * @returns {boolean}
-   */
-  public isLarge(): boolean {
-    let size = 0;
-    size += this.finalItems.length;
-    size += this.items ? this.items.length : 0;
-    return size > 100;
   }
 
   public isEmpty(): boolean {
@@ -316,21 +308,6 @@ export class List extends DataWithPermissions {
     res = res || (this.version === undefined);
     res = res || semver.ltr(this.version, '5.0.0-beta.0');
     return res;
-  }
-
-  public onlyNeedsCrafts(): boolean {
-    // We init a boolean to true for the result.
-    let onlyNeedsCrafts = true;
-    // If one of the non-craftable items is not finished, set the boolean to false
-    this.forEach((row) => {
-      if (row.id < 20 && row.id > 1) {
-        return;
-      }
-      if (row.craftedBy === undefined || row.craftedBy.length === 0) {
-        onlyNeedsCrafts = onlyNeedsCrafts && row.done >= row.amount;
-      }
-    });
-    return onlyNeedsCrafts;
   }
 
   public resetDone(item: ListRow): void {

@@ -58,8 +58,8 @@ export class Simulation {
   public getReliabilityReport(): SimulationReliabilityReport {
     this.reset();
     const results: SimulationResult[] = [];
-    // Let's run the simulation 500 times.
-    for (let i = 0; i < 500; i++) {
+    // Let's run the simulation 200 times.
+    for (let i = 0; i < 200; i++) {
       results.push(this.run(false));
       this.reset();
     }
@@ -126,7 +126,7 @@ export class Simulation {
   public run(linear = false, maxTurns = Infinity): SimulationResult {
     this.lastPossibleReclaimStep = -1;
     const reclaimAction = new Reclaim();
-    this.actions.forEach((action: CraftingAction, index: number) => {
+    this.actions.filter(a => a !== undefined).forEach((action: CraftingAction, index: number) => {
       // If we're starting and the crafter is specialist
       if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
         // Push stroke of genius buff

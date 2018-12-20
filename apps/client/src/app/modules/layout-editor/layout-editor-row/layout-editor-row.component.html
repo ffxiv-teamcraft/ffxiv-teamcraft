@@ -4,8 +4,8 @@
       <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
         <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start center"
              fxFlex="1 1 auto" fxLayoutGap="5px">
-          <label nz-checkbox [(ngModel)]="fragment.reversed">NOT</label>
-          <nz-select [(ngModel)]="fragment.value" fxFlex="1 1 auto" nzShowSearch>
+          <label nz-checkbox [(ngModel)]="fragment.reversed" (ngModelChange)="filterChange()">NOT</label>
+          <nz-select [(ngModel)]="fragment.value" (ngModelChange)="filterChange()" fxFlex="1 1 auto" nzShowSearch>
             <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
           </nz-select>
           <button nz-button [nzBlock]="false | ifMobile: true" nzGhost nzType="danger" *ngIf="last && filter.length > 1"

@@ -11,7 +11,7 @@ import { XivapiItemTooltipComponent } from './xivapi-item-tooltip.component';
  * This directive take care of the XivDB request, based on the given item ID.
  */
 @Directive({
-  selector: '[appXivdbTooltip]'
+  selector: '[appXivApiTooltip]'
 })
 export class XivapiItemTooltipDirective implements OnDestroy {
 
@@ -20,9 +20,9 @@ export class XivapiItemTooltipDirective implements OnDestroy {
   // - "You should use an alias when the directive name is also an input property, and the directive name doesn't describe the property."
 
   /* tslint:disable:no-input-rename */
-  @Input('appXivdbTooltip') itemId: number;
+  @Input('appXivApiTooltip') itemId: number;
 
-  @Input('appXivdbTooltipDisabled') disabled = false;
+  @Input('appXivApiTooltipDisabled') disabled = false;
   /* tslint:enable:no-input-rename */
 
   /** Subscription for the XivDB request. */

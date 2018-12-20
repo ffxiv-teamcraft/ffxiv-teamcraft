@@ -1,29 +1,45 @@
-@import "../../../../theme";
+@import "../../../../default-theme";
 
 .alarms-container {
   display: flex;
   flex-direction: column;
   overflow: auto;
   height: 100%;
+
   .ant-divider {
     margin: 0;
   }
+
   .alarm-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px 5px;
+
+    .item-icon {
+      position: relative;
+
+      .node-type {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
     &.spawned {
       background-color: fade(@text-color, 30%);
     }
+
     &.played {
       background-color: fade(@text-color, 10%);
     }
+
     .center-content {
       display: flex;
       flex-direction: column;
       flex: 1 1 auto;
-      margin-left: 5px;
     }
   }
 }
