@@ -356,12 +356,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       ).subscribe(actions => this.actions$.next(actions));
   }
 
-  openMacroPopup(): void {
+  openMacroPopup(simulation: Simulation): void {
     this.dialog.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
         rotation: this.actions$.value,
-        job: this.job
+        job: this.job,
+        simulation: simulation.clone()
       },
       nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
       nzFooter: null

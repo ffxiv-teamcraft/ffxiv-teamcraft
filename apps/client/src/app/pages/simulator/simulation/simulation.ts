@@ -7,6 +7,7 @@ import { Buff } from '../model/buff.enum';
 import { SimulationResult } from './simulation-result';
 import { SimulationReliabilityReport } from './simulation-reliability-report';
 import { Tables } from '../model/tables';
+import { Reclaim } from '../model/actions/buff/reclaim';
 
 export class Simulation {
 
@@ -26,6 +27,9 @@ export class Simulation {
   public success: boolean;
 
   public steps: ActionResult[] = [];
+
+  public lastPossibleReclaimStep : number; // equals the index of the last step where you have CP/durability for Reclaim,
+                                           // or -1 if Reclaim is uncastable (i.e. not enough CP)
 
   constructor(public readonly recipe: Craft, public readonly actions: CraftingAction[], private _crafterStats: CrafterStats,
               private hqIngredients: { id: number, amount: number }[] = []) {
@@ -120,47 +124,51 @@ export class Simulation {
    * @returns {ActionResult[]}
    */
   public run(linear = false, maxTurns = Infinity): SimulationResult {
-    this.actions.filter(a => a !== undefined)
-      .forEach((action: CraftingAction, index: number) => {
-        // If we're starting and the crafter is specialist
-        if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
-          // Push stroke of genius buff
-          this.buffs.push({
-            buff: Buff.STROKE_OF_GENIUS,
-            stacks: 0,
-            duration: Infinity,
-            appliedStep: -1
-          });
-          // Apply stroke of genius manually in the stats
-          this.availableCP += 15;
-          this.maxCP += 15;
+    this.lastPossibleReclaimStep = -1;
+    const reclaimAction = new Reclaim();
+    this.actions.filter(a => a !== undefined).forEach((action: CraftingAction, index: number) => {
+      // If we're starting and the crafter is specialist
+      if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
+        // Push stroke of genius buff
+        this.buffs.push({
+          buff: Buff.STROKE_OF_GENIUS,
+          stacks: 0,
+          duration: Infinity,
+          appliedStep: -1
+        });
+        // Apply stroke of genius manually in the stats
+        this.availableCP += 15;
+        this.maxCP += 15;
+      }
+      // If we can use the action
+      if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
+        && this.steps.length < maxTurns) {
+        this.runAction(action, linear);
+        if(reclaimAction.getBaseCPCost(this) <= this.availableCP && reclaimAction.canBeUsed(this, linear)){
+          this.lastPossibleReclaimStep = index;
         }
-        // If we can use the action
-        if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
-          && this.steps.length < maxTurns) {
-          this.runAction(action, linear);
-        } else {
-          // If we can't, add the step to the result but skip it.
-          this.steps.push({
-            action: action,
-            success: null,
-            addedQuality: 0,
-            addedProgression: 0,
-            cpDifference: 0,
-            skipped: true,
-            solidityDifference: 0,
-            state: this.state
-          });
-        }
-        if (this.steps.length <= maxTurns) {
-          // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
-          this.tickBuffs(linear);
-        }
-        // Tick state to change it for next turn if not in linear mode
-        if (!linear) {
-          this.tickState();
-        }
-      });
+      } else {
+        // If we can't, add the step to the result but skip it.
+        this.steps.push({
+          action: action,
+          success: null,
+          addedQuality: 0,
+          addedProgression: 0,
+          cpDifference: 0,
+          skipped: true,
+          solidityDifference: 0,
+          state: this.state
+        });
+      }
+      if (this.steps.length <= maxTurns) {
+        // Tick buffs after checking synth result, so if we reach 0 durability, synth fails.
+        this.tickBuffs(linear);
+      }
+      // Tick state to change it for next turn if not in linear mode
+      if (!linear) {
+        this.tickState();
+      }
+    });
     // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
     return {

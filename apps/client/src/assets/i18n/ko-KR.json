@@ -501,6 +501,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
+    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
