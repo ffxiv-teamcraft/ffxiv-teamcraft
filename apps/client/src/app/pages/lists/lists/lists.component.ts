@@ -14,6 +14,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
+import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 
 @Component({
   selector: 'app-lists',
@@ -96,7 +97,7 @@ export class ListsComponent {
         }
         return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
           map(lists => {
-            return { team: team, lists: lists };
+            return { team: team, lists: lists.sort((a, b) => a.$key > b.$key ? -1 : 1) };
           })
         )));
       }),
@@ -106,7 +107,7 @@ export class ListsComponent {
     this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.workshopsWithWriteAccess$, this.teamsDisplays$, this.query$).pipe(
       filter(([loading]) => !loading),
       debounceTime(100),
-      map(([,lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
+      map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
         const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
         // lists category shows only lists that have no workshop.
         return lists
@@ -114,7 +115,7 @@ export class ListsComponent {
             return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
               && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
           })
-          .filter(l => l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
+          .filter(l => !l.notFound && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;
@@ -126,6 +127,17 @@ export class ListsComponent {
           communityLists: lists.filter(l => l.public),
           otherLists: lists.filter(l => !l.public)
         };
+      }),
+      tap(display => {
+        display.otherLists
+          .filter((l, i) => l.index !== i)
+          .map((l, i) => {
+            l.index = i;
+            return l;
+          })
+          .forEach(l => {
+            this.listsFacade.updateListIndex(l);
+          });
       }),
       shareReplay(1)
     );
@@ -238,6 +250,14 @@ export class ListsComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('LISTS.Merge_lists'),
       nzContent: MergeListsPopupComponent,
+      nzFooter: null
+    });
+  }
+
+  importList(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LISTS.IMPORT.Title'),
+      nzContent: ListImportPopupComponent,
       nzFooter: null
     });
   }

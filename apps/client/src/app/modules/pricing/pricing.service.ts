@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ListRow } from '../list/model/list-row';
 import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class PricingService {
@@ -20,6 +21,8 @@ export class PricingService {
    * Array of custom prices
    */
   private customPrices: number[];
+
+  public priceChanged$ = new Subject<void>();
 
   constructor() {
     this.prices = this.parsePrices(localStorage.getItem('prices'));

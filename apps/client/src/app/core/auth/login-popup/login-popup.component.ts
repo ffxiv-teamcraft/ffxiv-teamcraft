@@ -38,14 +38,14 @@ export class LoginPopupComponent {
 
   public googleOauth(): void {
     delete this.errorMessageCode;
-    this.authFacade.googleOauth().then(() => {
+    this.authFacade.googleOauth().subscribe(() => {
       this.modalRef.close();
     });
   }
 
   public facebookOauth(): void {
     delete this.errorMessageCode;
-    this.authFacade.facebookOauth().then(() => {
+    this.authFacade.facebookOauth().subscribe(() => {
       this.modalRef.close();
     });
   }

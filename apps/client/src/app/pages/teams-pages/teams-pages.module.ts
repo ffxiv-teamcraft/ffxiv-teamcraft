@@ -14,15 +14,18 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
 import { TeamInviteComponent } from './team-invite/team-invite.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: TeamsComponent
+    component: TeamsComponent,
+    canActivate: [MaintenanceGuard]
   },
   {
     path: 'invite/:inviteId',
-    component: TeamInviteComponent
+    component: TeamInviteComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

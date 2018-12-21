@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -6,8 +6,76 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: ['./xivapi-item-tooltip.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class XivapiItemTooltipComponent {
+export class XivapiItemTooltipComponent implements OnInit {
 
   @Input() item: any;
+
+  /**
+   * Main attributes are ilvl, attack damage or duration for foods.
+   */
+  public mainAttributes = [];
+
+  public stats = [];
+
+  ngOnInit(): void {
+    this.mainAttributes.push({
+      name: 'TOOLTIP.Level',
+      value: this.item.LevelEquip
+    });
+    this.mainAttributes.push({
+      name: 'TOOLTIP.Ilvl',
+      value: this.item.LevelItem
+    });
+    // If the item has some damage, handle it.
+    if (this.item.DamagePhys || this.item.DamageMag) {
+      if (this.item.DamagePhys > this.item.DamageMag) {
+        this.mainAttributes.push({
+          name: 'TOOLTIP.Damage_phys',
+          value: this.item.DamagePhys,
+          valueHq: this.item.DamagePhys + this.item.BaseParamValueSpecial0
+        });
+      } else {
+        this.mainAttributes.push({
+          name: 'TOOLTIP.Damage_mag',
+          value: this.item.DamageMag,
+          valueHq: this.item.DamageMag + this.item.BaseParamValueSpecial1
+        });
+      }
+    }
+    // If the item has some defense, handle it.
+    if (this.item.DefensePhys || this.item.DefenseMag) {
+      this.mainAttributes.push({
+        name: 'TOOLTIP.Defense_phys',
+        value: this.item.DefensePhys,
+        valueHq: this.item.DefensePhys + this.item.BaseParamValueSpecial0
+      });
+      this.mainAttributes.push({
+        name: 'TOOLTIP.Defense_mag',
+        value: this.item.DefenseMag,
+        valueHq: this.item.DefenseMag + this.item.BaseParamValueSpecial1
+      });
+    }
+    // Handle stats
+    this.stats = Object.keys(this.item)
+      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key])
+      .map(key => {
+        const statIndex = key.match(/(\d+)/)[0];
+        const res: any = {
+          name: this.item[key],
+          value: this.item[`BaseParamValue${statIndex}`],
+          requiresPipe: true
+        };
+        if (this.item.CanBeHq === 1) {
+          const statId = this.item[`BaseParam${statIndex}TargetID`];
+          const specialParamKey = Object.keys(this.item)
+            .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && this.item[k])
+            .find(k => this.item[k] === statId);
+          const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
+          res.valueHq = res.value + this.item[`BaseParamValueSpecial${specialParamIndex}`];
+        }
+        return res;
+      });
+  }
+
 
 }

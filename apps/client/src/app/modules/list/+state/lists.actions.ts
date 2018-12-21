@@ -30,7 +30,7 @@ export enum ListsActionTypes {
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
 
-  NeedsVerification = '{Lists] Needs character verification'
+  NeedsVerification = '[Lists] Needs character verification'
 }
 
 export class LoadMyLists implements Action {

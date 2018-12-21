@@ -30,7 +30,7 @@
             </nz-tag>
             <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" nz-tooltip
                     [nzTitle]="'LIST_TAGS.Outdated' | translate"></nz-tag>
-            <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.'+tag) | translate}}</nz-tag>
+            <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.' + tag) | translate}}</nz-tag>
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

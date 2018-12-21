@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
-import { first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 
@@ -18,11 +18,13 @@ export class SimulatorPageComponent {
 
   item$: Observable<Item>;
 
+  thresholds$: Observable<number[]>;
+
   constructor(private route: ActivatedRoute, private dataService: DataService,
               private rotationsFacade: RotationsFacade, private router: Router) {
 
     this.route.paramMap.pipe(
-      map(params => params.get('rotationId')),
+      map(params => params.get('rotationId'))
     ).subscribe(id => {
       if (id === null) {
         this.rotationsFacade.createRotation();
@@ -39,6 +41,21 @@ export class SimulatorPageComponent {
       }),
       map(itemData => itemData.item),
       shareReplay(1)
+    );
+
+    this.thresholds$ = this.item$.pipe(
+      map(item => {
+        if (item.collectable === 1) {
+          // If it's a delivery item
+          if (item.satisfaction !== undefined) {
+            // We want thresholds on quality, not collectable score.
+            return item.satisfaction[0].rating.map(r => r * 10);
+          } else if (item.masterpiece !== undefined) {
+            return item.masterpiece.rating.map(r => r * 10);
+          }
+        }
+        return [];
+      })
     );
 
     this.recipe$ = this.route.paramMap.pipe(

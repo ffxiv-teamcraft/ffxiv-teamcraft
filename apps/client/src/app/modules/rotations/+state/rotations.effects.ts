@@ -45,7 +45,7 @@ export class RotationsEffects {
   updateRotation$ = this.actions$.pipe(
     ofType<UpdateRotation>(RotationsActionTypes.UpdateRotation),
     withLatestFrom(this.authFacade.userId$),
-    switchMap(([action, userId]) => {
+    mergeMap(([action, userId]) => {
       if (action.rotation.$key === undefined || action.rotation.getPermissionLevel(userId) < 30) {
         action.rotation.authorId = userId;
         return this.rotationsService.add(action.rotation);

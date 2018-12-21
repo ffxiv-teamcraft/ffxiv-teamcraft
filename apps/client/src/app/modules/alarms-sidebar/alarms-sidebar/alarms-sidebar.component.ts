@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Observable } from 'rxjs/Observable';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
@@ -17,6 +17,11 @@ import { MapComponent } from '../../map/map/map.component';
 export class AlarmsSidebarComponent implements OnInit {
 
   public alarms$: Observable<AlarmDisplay[]>;
+
+  public loaded$ = this.alarmsFacade.loaded$;
+
+  @Input()
+  public overlayMode = false;
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private dialog: NzModalService, private l12n: LocalizedDataService,

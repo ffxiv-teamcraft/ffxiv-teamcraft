@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

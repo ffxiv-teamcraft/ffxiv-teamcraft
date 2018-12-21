@@ -1,18 +1,19 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth) {
+              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
@@ -32,17 +33,22 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       );
   }
 
-  /**
-   * Checks if a given email is available for patreon account linking.
-   * @param {string} email
-   * @returns {Observable<boolean>}
-   */
-  public checkPatreonEmailAvailability(email: string): Observable<boolean> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('patreonEmail', '==', email))
-      .valueChanges()
-      .pipe(
-        map(res => res.length === 0)
-      );
+  public get(uid: string): Observable<TeamcraftUser> {
+    return super.get(uid).pipe(
+      switchMap(user => {
+        if (user.patreonToken === undefined) {
+          user.patron = false;
+          return of(user);
+        }
+        return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`).pipe(
+          map((response: any) => {
+            user.patron = response.included && response.included[0] && response.included[0].attributes &&
+              response.included[0].attributes.patron_status === 'active_patron';
+            return user;
+          })
+        );
+      })
+    );
   }
 
   /**
@@ -56,24 +62,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       .pipe(
         map(res => res.length === 0)
       );
-  }
-
-
-  /**
-   * Deletes a user based on his id, deleting all of his lists at the same time.
-   * @param {string} uid
-   * @returns {Promise<void>}
-   */
-  public deleteUser(uid: string): void {
-    // return new Promise<void>(resolve => {
-    //     this.listService.getUserLists(uid).subscribe(lists => {
-    //         if (lists === []) {
-    //             return this.remove(uid).pipe(first()).subscribe(resolve);
-    //         } else {
-    //             return this.listService.deleteUserLists(uid).subscribe(resolve);
-    //         }
-    //     });
-    // });
   }
 
   /**

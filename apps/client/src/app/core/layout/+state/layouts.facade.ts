@@ -9,13 +9,14 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
 import { LayoutRow } from '../layout-row';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Injectable()
 export class LayoutsFacade {
@@ -24,16 +25,22 @@ export class LayoutsFacade {
 
   selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
     .pipe(
-      filter(layout => layout !== undefined)
+      filter(layout => layout !== undefined),
+      map(layout => {
+        layout.rows = layout.rows.sort((a, b) => a.index - b.index);
+        return layout;
+      })
     );
 
-  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService) {
+  constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService,
+              private authFacade: AuthFacade) {
   }
 
-  public getDisplay(list: List): Observable<ListDisplay> {
+  public getDisplay(list: List, adaptativeFilter: boolean): Observable<ListDisplay> {
     return this.selectedLayout$
       .pipe(
-        map(layout => {
+        withLatestFrom(this.authFacade.mainCharacterEntry$),
+        map(([layout, characterEntry]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
             unfilteredRows = list.items.filter(row => row.hidden !== true && (row.id < 1 || row.id > 20));
@@ -63,6 +70,23 @@ export class LayoutsFacade {
                 if (row.hideUsedRows) {
                   orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
                 }
+                if (adaptativeFilter) {
+                  orderedAccepted = orderedAccepted.filter(item => {
+                    if (item.gatheredBy !== undefined) {
+                      const gatherJob = [16, 16, 17, 17, 18, 18][item.gatheredBy.type];
+                      const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+                      return set && set.level >= item.gatheredBy.level;
+                    }
+                    if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
+                      return item.craftedBy.reduce((canCraft, craft) => {
+                        const jobId = craft.jobId;
+                        const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                        return (set && set.level >= craft.level) || canCraft;
+                      }, false);
+                    }
+                    return true;
+                  });
+                }
                 return {
                   title: row.name,
                   rows: orderedAccepted,
@@ -82,12 +106,32 @@ export class LayoutsFacade {
       );
   }
 
-  public getFinalItemsDisplay(list: List): Observable<LayoutRowDisplay> {
+  public getFinalItemsDisplay(list: List, adaptativeFilter: boolean): Observable<LayoutRowDisplay> {
     return this.selectedLayout$.pipe(
-      map(layout => {
+      withLatestFrom(this.authFacade.mainCharacterEntry$),
+      map(([layout, characterEntry]) => {
+        let rows = this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
+          .filter(row => layout.recipeHideCompleted ? row.done < row.amount : true);
+        if (adaptativeFilter) {
+          rows = rows.filter(item => {
+            if (item.gatheredBy !== undefined) {
+              const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(item.gatheredBy.type);
+              const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+              return set && set.level >= item.gatheredBy.level;
+            }
+            if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
+              return item.craftedBy.reduce((canCraft, craft) => {
+                const jobId = craft.jobId;
+                const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                return (set && set.level >= craft.level) || canCraft;
+              }, false);
+            }
+            return true;
+          });
+        }
         return {
           title: 'Items',
-          rows: this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder),
+          rows: rows,
           // Random number, as this panel isn't ordered at all
           index: 10000,
           hideIfEmpty: false,

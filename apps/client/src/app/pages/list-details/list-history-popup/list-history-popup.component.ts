@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
-import { Character, XivapiService } from '@xivapi/angular-client';
-import { Observable } from 'rxjs';
-import { filter, map, shareReplay } from 'rxjs/operators';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 
 @Component({

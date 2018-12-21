@@ -25,6 +25,8 @@ export interface GarlandToolsData {
   jobCategories: JobCategory[];
   ventureIndex: Venture[];
   bell: {
-    nodes: any[]
+    nodes: any[];
+    fish: any[];
+    bait: any[];
   };
 }

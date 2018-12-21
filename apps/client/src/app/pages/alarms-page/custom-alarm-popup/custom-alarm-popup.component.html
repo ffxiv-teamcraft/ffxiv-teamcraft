@@ -15,6 +15,13 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
+    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawns_twice' | translate}}</nz-form-label>
+    <nz-form-control [nzSm]="16" [nzXs]="24">
+      <label nz-checkbox formControlName="spawnsTwice" nz-tooltip
+             [nzTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate"></label>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-number formControlName="duration" [nzMin]="0" [nzStep]="1"></nz-input-number>

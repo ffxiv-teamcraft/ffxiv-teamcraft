@@ -4,8 +4,8 @@
       <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
         <div *ngIf="!fragment.isBooleanGate" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start center"
              fxFlex="1 1 auto" fxLayoutGap="5px">
-          <label nz-checkbox [(ngModel)]="fragment.reversed">NOT</label>
-          <nz-select [(ngModel)]="fragment.value" fxFlex="1 1 auto" nzShowSearch>
+          <label nz-checkbox [(ngModel)]="fragment.reversed" (ngModelChange)="filterChange()">NOT</label>
+          <nz-select [(ngModel)]="fragment.value" (ngModelChange)="filterChange()" fxFlex="1 1 auto" nzShowSearch>
             <nz-option *ngFor="let filter of getAllFilters()" [nzValue]="filter" [nzLabel]="filter"></nz-option>
           </nz-select>
           <button nz-button [nzBlock]="false | ifMobile: true" nzGhost nzType="danger" *ngIf="last && filter.length > 1"
@@ -56,7 +56,10 @@
 </nz-card>
 <ng-template #title>
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
-    <nz-input-group nzPrefixIcon="anticon anticon-edit">
+    <nz-input-group [nzPrefix]="icon">
+      <ng-template #icon>
+        <i nz-icon type="edit"></i>
+      </ng-template>
       <input [disabled]="readonly" type="text" nz-input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)">
     </nz-input-group>
     <button nz-button nzType="danger" *ngIf="!readonly" (click)="delete.emit()">

@@ -1,5 +1,4 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Workshop } from '../../model/other/workshop';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';

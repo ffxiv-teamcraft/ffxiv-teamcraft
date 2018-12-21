@@ -12,7 +12,7 @@ export class TeamcraftUser extends DataModel {
 
   customCharacters: Partial<Character>[] = [];
 
-  favorites: Favorites = { lists: [], workshops: [], rotations: [] };
+  favorites: Favorites = { lists: [], workshops: [], rotations: [], rotationFolders: [] };
 
   contacts: string[] = [];
 
@@ -21,4 +21,12 @@ export class TeamcraftUser extends DataModel {
   patron = false;
 
   defaultConsumables: DefaultConsumables;
+
+  patreonToken?: string;
+
+  patreonRefreshToken?: string;
+
+  lastPatreonRefresh?: number;
+
+  nickname: string;
 }

@@ -1,17 +1,19 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { PricingService } from '../pricing.service';
 import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
 import { ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pricing-row',
   templateUrl: './pricing-row.component.html',
   styleUrls: ['./pricing-row.component.less']
 })
-export class PricingRowComponent implements OnInit {
+export class PricingRowComponent implements OnInit, OnDestroy {
 
   @Input()
   item: ListRow;
@@ -32,6 +34,8 @@ export class PricingRowComponent implements OnInit {
 
   @Output()
   priceChange: EventEmitter<Price> = new EventEmitter<Price>();
+
+  private onDestroy$: Subject<void> = new Subject<void>();
 
   constructor(private pricingService: PricingService, private message: NzMessageService,
               private translator: TranslateService, private cd: ChangeDetectorRef) {
@@ -82,6 +86,13 @@ export class PricingRowComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.updatePrice();
+    this.pricingService.priceChanged$.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
+      this.updatePrice();
+    });
+  }
+
+  private updatePrice(): void {
     this.customPrice = this.pricingService.isCustomPrice(this.item);
     if (this.earning) {
       this.price = this.pricingService.getEarnings(this.item);
@@ -102,5 +113,9 @@ export class PricingRowComponent implements OnInit {
     if (this.preCraft && !this.customPrice && this.item.vendors.length === 0) {
       this.price.nq = this.price.hq = Math.ceil(this._craftCost) || 0;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(null);
   }
 }

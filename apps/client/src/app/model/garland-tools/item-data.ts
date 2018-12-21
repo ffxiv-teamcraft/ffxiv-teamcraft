@@ -24,7 +24,7 @@ export class ItemData {
 
   public getCraft(recipeId: string): Craft {
     return this.item.craft
-      .find(i => recipeId.toString().indexOf(i.id.toString()) > -1 || i.id.toString().indexOf(recipeId.toString()) > -1);
+      .find(craft => recipeId.toString() === craft.id.toString());
   }
 
   public getPartial(id: string, type?: string): any {

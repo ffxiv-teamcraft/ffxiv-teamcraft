@@ -28,6 +28,9 @@ import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
+import { PatreonService } from './patreon/patreon.service';
+import { CustomLink } from './database/custom-links/custom-link';
+import { ListTemplate } from './database/custom-links/list-template';
 
 
 @NgModule({
@@ -40,6 +43,13 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
           LIST_COMMENT: ListCommentNotification,
           LIST_ITEM_COMMENT: ListItemCommentNotification
         }
+      },
+      {
+        parent: CustomLink,
+        children: {
+          link: CustomLink,
+          template: ListTemplate
+        }
       }
     ]),
     TranslateModule,
@@ -51,7 +61,6 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
   providers: [
     UserService,
     PendingChangesService,
-    IpcService,
     PlatformService,
     DataService,
     MathToolsService,
@@ -60,7 +69,8 @@ import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
     BellNodesService,
     HtmlToolsService,
     LinkToolsService,
-    DiscordWebhookService
+    DiscordWebhookService,
+    PatreonService
   ],
   declarations: [
     I18nPipe,
@@ -84,7 +94,8 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        CharacterService
+        CharacterService,
+        IpcService
       ]
     };
   }

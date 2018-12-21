@@ -5,6 +5,7 @@ import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs/Observable';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-folders.facade';
 
 @Component({
   selector: 'app-rotation-picker-drawer',
@@ -25,7 +26,10 @@ export class RotationPickerDrawerComponent {
 
   favoriteRotations$: Observable<CraftingRotation[]>;
 
-  constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade, public ref: NzDrawerRef<CraftingRotation>) {
+  favoriteFolders$;
+
+  constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade,
+              private rotationFoldersFacade: RotationFoldersFacade, public ref: NzDrawerRef<CraftingRotation>) {
     this.favoriteRotations$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
@@ -36,5 +40,7 @@ export class RotationPickerDrawerComponent {
         );
       })
     );
+
+    this.favoriteFolders$ = this.rotationFoldersFacade.favoriteRotationFolders$;
   }
 }

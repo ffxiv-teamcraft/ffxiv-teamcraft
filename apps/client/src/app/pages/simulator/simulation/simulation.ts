@@ -58,8 +58,8 @@ export class Simulation {
   public getReliabilityReport(): SimulationReliabilityReport {
     this.reset();
     const results: SimulationResult[] = [];
-    // Let's run the simulation 500 times.
-    for (let i = 0; i < 500; i++) {
+    // Let's run the simulation 200 times.
+    for (let i = 0; i < 200; i++) {
       results.push(this.run(false));
       this.reset();
     }

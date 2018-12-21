@@ -39,7 +39,7 @@ export class LayoutsEffects {
   updateLayoutInDatabase$ = this.actions$.pipe(
     ofType(LayoutsActionTypes.UpdateLayout),
     switchMap((action: UpdateLayout) => {
-      return this.layoutService.update(action.layout.$key, action.layout);
+      return this.layoutService.set(action.layout.$key, action.layout);
     }),
     mergeMap(() => EMPTY)
   );

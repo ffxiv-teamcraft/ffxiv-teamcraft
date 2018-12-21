@@ -6,12 +6,14 @@
       </nz-list-item-meta>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-          <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position" [mapId]="drop.map"></app-map-position>
+          <div>{{drop.zoneid | placeName | i18n}}</div>
+          <app-map-position [zoneId]="drop.zoneid" [marker]="drop.position" [mapId]="drop.mapid"></app-map-position>
           <div
-            *ngIf="drop.zoneid | closestAetheryte: drop.position | async as aetheryte"
+            *ngIf="drop.mapid | closestAetheryte: drop.position | async as aetheryte"
             class="closest-tp">
-                  <img src="./assets/icons/Aetheryte.png" alt="" class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
-              </div>
+            <img src="./assets/icons/Aetheryte.png" alt=""
+                 class="aetheryte-icon"> {{aetheryte.nameid | placeName | i18n}}
+          </div>
         </div>
       </ng-template>
     </nz-list-item>

@@ -64,6 +64,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   @Input()
   public item: Item;
 
+  @Input()
+  public thresholds: number[] = [];
+
   private _recipeId: string;
 
   public snapshotMode = false;
@@ -116,7 +119,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public selectedMedicine: Consumable;
   public selectedFreeCompanyActions: FreeCompanyAction[] = [];
 
-  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({ control: 0, cp: 0, craftsmanship: 0 });
+  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({
+    control: 0,
+    cp: 0,
+    craftsmanship: 0
+  });
 
   private onDestroy$ = new Subject<void>();
 
@@ -273,20 +280,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return new Simulation(recipe, actions, stats, hqIngredients);
       }),
       shareReplay(1)
-    );
-    this.report$ = combineLatest(this.simulation$, this.result$).pipe(
-      map(([simulation, result]) => {
-        if (!result.success) {
-          return {
-            averageHQPercent: 0,
-            medianHQPercent: 0,
-            rawData: [],
-            successPercent: 0
-          };
-        } else {
-          return simulation.getReliabilityReport();
-        }
-      })
     );
 
     combineLatest(this.rotation$, this.crafterStats$).pipe(
@@ -609,7 +602,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getFreeCompanyActions(type: string): FreeCompanyAction[] {
-    return this.freeCompanyActions.filter(action => action.type === <BonusType> type);
+    return this.freeCompanyActions.filter(action => action.type === <BonusType>type);
   }
 
   isFreeCompanyActionOptionDisabled(type: string, actionId: number): boolean {
@@ -679,6 +672,21 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }),
       tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
       shareReplay(1)
+    );
+
+    this.report$ = combineLatest(this.simulation$, this.result$).pipe(
+      map(([simulation, result]) => {
+        if (!result.success) {
+          return {
+            averageHQPercent: 0,
+            medianHQPercent: 0,
+            rawData: [],
+            successPercent: 0
+          };
+        } else {
+          return simulation.clone().getReliabilityReport();
+        }
+      })
     );
   }
 

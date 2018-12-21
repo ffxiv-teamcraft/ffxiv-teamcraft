@@ -2,6 +2,18 @@ import { Component } from '@angular/core';
 import { SettingsService } from '../settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { NzMessageService } from 'ng-zorro-antd';
+import { first, map, switchMap, tap } from 'rxjs/operators';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../../core/database/user.service';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
+import { CustomLink } from '../../../core/database/custom-links/custom-link';
+import { Theme } from '../theme';
 
 @Component({
   selector: 'app-settings-popup',
@@ -14,8 +26,73 @@ export class SettingsPopupComponent {
 
   availableLanguages = this.settings.availableLocales;
 
+  loggedIn$ = this.authFacade.loggedIn$;
+
+  user$ = this.authFacade.user$;
+
+  nicknameAvailable: boolean;
+
+  availableThemes = Theme.ALL_THEMES;
+
   constructor(public settings: SettingsService, public translate: TranslateService,
-              public platform: PlatformService) {
+              public platform: PlatformService, private authFacade: AuthFacade,
+              private af: AngularFireAuth, private message: NzMessageService,
+              private ipc: IpcService, private router: Router, private http: HttpClient,
+              private userService: UserService, private customLinksFacade: CustomLinksFacade) {
+  }
+
+  patreonOauth(): void {
+    if (this.platform.isDesktop()) {
+      this.ipc.on('oauth-reply', (event, code) => {
+        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${code}&redirect_uri=http://localhost`)
+          .pipe(
+            switchMap((response: any) => {
+              return this.authFacade.user$.pipe(
+                first(),
+                map(user => {
+                  user.patreonToken = response.access_token;
+                  user.patreonRefreshToken = response.refresh_token;
+                  user.lastPatreonRefresh = Date.now();
+                  return user;
+                }),
+                tap(updatedUser => {
+                  this.authFacade.updateUser(updatedUser);
+                  this.message.success(this.translate.instant('Patreon_login_success'));
+                  this.router.navigate(['/']);
+                })
+              );
+            })
+          ).subscribe();
+      });
+      this.ipc.send('oauth', 'patreon.com');
+    } else {
+      window.open(`https://www.patreon.com/oauth2/authorize?response_type=code&client_id=MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE&redirect_uri=${
+        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity`);
+    }
+  }
+
+  resetPassword(): void {
+    this.af.auth.sendPasswordResetEmail(this.af.auth.currentUser.email).then(() => {
+      this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
+    });
+  }
+
+  checkNicknameAvailability(nickname: string): void {
+    this.userService.checkNicknameAvailability(nickname).pipe(first()).subscribe(res => this.nicknameAvailable = res);
+  }
+
+  setNickname(user: TeamcraftUser, nickname: string): void {
+    this.customLinksFacade.myCustomLinks$.pipe(
+      first(),
+      map((links: CustomLink[]) => links.map(link => {
+        link.authorNickname = nickname;
+        return link;
+      }))
+    ).subscribe(links => {
+      links.forEach(link => this.customLinksFacade.updateCustomLink(link));
+      user.nickname = nickname;
+      this.authFacade.updateUser(user);
+    });
   }
 
   setLanguage(lang: string): void {

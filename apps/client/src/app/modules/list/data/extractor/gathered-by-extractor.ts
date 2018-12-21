@@ -8,6 +8,7 @@ import { GarlandToolsService } from '../../../../core/api/garland-tools.service'
 import { Item } from '../../../../model/garland-tools/item';
 import * as nodePositions from '../../../../core/data/sources/node-positions.json';
 import { StoredNode } from '../../model/stored-node';
+import { FishingBait } from '../../model/fishing-bait';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
@@ -89,18 +90,67 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         }
       }
     } else {
+      gatheredBy.type = 4;
+      gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
       // If it's a fish, we have to handle it in another way
-      for (const spot of item.fishingSpots) {
-        const details = this.gt.getFishingSpot(spot);
-        gatheredBy.icon = 'https://garlandtools.org/db/images/FSH.png';
-        if (details.areaid !== undefined) {
-          gatheredBy.nodes.push(details);
+      const spots = this.gt.getFishingSpots(item.id);
+      for (const spot of spots) {
+        const mapId = this.localized.getMapId(spot.zone);
+        const zoneId = this.localized.getAreaIdByENName(spot.title);
+        if (mapId !== undefined) {
+          const node: StoredNode = {
+            mapid: mapId,
+            areaid: mapId,
+            zoneid: zoneId,
+            coords: spot.coords as number[],
+            level: spot.lvl
+          };
+          if (spot.during !== undefined) {
+            node.time = [spot.during.start];
+            node.uptime = spot.during.end - spot.during.start;
+            // Just in case it despawns the day after.
+            node.uptime = node.uptime < 0 ? node.uptime + 24 : node.uptime;
+            // As uptimes are always in minutes, gotta convert to minutes here too.
+            node.uptime *= 60;
+          }
+          node.baits = this.getBaits(spot.bait);
+          if (spot.weather) {
+            node.weathers = spot.weather.map(w => this.localized.getWeatherId(w));
+          }
+          gatheredBy.nodes.push(node);
         }
-        gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > details.lvl) ? details.lvl : gatheredBy.level;
+        gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > spot.lvl) ? spot.lvl : gatheredBy.level;
+      }
+      // If we don't have some complete spots from gt, let's get some partials.
+      if (spots.length === 0) {
+        for (const spot of item.fishingSpots) {
+          const partial = itemData.getPartial(spot.toString(), 'fishing');
+          if (partial !== undefined) {
+            const node: StoredNode = {
+              zoneid: partial.obj.z,
+              areaid: partial.obj.z,
+              mapid: partial.obj.z,
+              level: partial.obj.l,
+              coords: [partial.obj.x, partial.obj.y]
+            };
+            gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > partial.obj.l) ? partial.obj.l : gatheredBy.level;
+            gatheredBy.nodes.push(node);
+          }
+        }
       }
     }
     gatheredBy.nodes = gatheredBy.nodes.sort((a, b) => a.level - b.level);
     return gatheredBy;
+  }
+
+  private getBaits(baitNames: string[]): FishingBait[] {
+    return baitNames.map(bait => {
+      const baitData = this.gt.getBait(bait);
+      return {
+        icon: baitData.icon,
+        id: baitData.id
+      };
+    });
   }
 
   protected extractsArray(): boolean {

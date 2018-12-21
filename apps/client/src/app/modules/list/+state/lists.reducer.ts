@@ -9,6 +9,7 @@ export interface ListsState {
   compactsConnected: boolean;
   communityListsConnected: boolean;
   needsVerification: boolean;
+  deleted: string[];
 }
 
 export const initialState: ListsState = {
@@ -16,7 +17,8 @@ export const initialState: ListsState = {
   listDetails: [],
   compactsConnected: false,
   communityListsConnected: false,
-  needsVerification: false
+  needsVerification: false,
+  deleted: []
 };
 
 export function listsReducer(
@@ -137,7 +139,8 @@ export function listsReducer(
         ...state,
         compacts: [
           ...state.compacts.filter(list => list.$key !== action.key)
-        ]
+        ],
+        deleted: [...state.deleted, action.key]
       };
       break;
     }

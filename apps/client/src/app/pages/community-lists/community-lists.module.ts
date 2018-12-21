@@ -9,11 +9,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: CommunityListsComponent
+    component: CommunityListsComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

@@ -1,4 +1,4 @@
-@import "../theme";
+@import "../default-theme";
 
 .app-container {
   height: 100%;
@@ -6,6 +6,7 @@
 
 .opened-in-desktop {
   height: 100%;
+
   .desktop-message {
     font-size: 2em;
     opacity: .8;
@@ -15,11 +16,13 @@
 .header {
   position: fixed;
   width: 100%;
+
   .logo {
     cursor: pointer;
     text-decoration: none;
-    color: @text-color;
+    color: var(--text-color);
   }
+
   .language-swap {
     margin-left: 10px;
   }
@@ -39,6 +42,7 @@
     height: 16px;
     line-height: 16px;
     top: -4px;
+
     .ant-badge-count {
       font-size: 11px;
     }
@@ -59,6 +63,10 @@
 .content-container {
   margin-top: 64px;
   height: 100%;
+
+  &.overlay {
+    margin-top: 0;
+  }
 }
 
 .right-menu {
@@ -70,6 +78,7 @@
   ::ng-deep .ant-layout-sider-zero-width-trigger {
     left: -36px;
     border-radius: 4px 0 0 4px;
+
     i::before {
       content: '\e64e';
     }
@@ -87,6 +96,9 @@
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: @layout-header-background;
   padding: 0;
   display: flex;

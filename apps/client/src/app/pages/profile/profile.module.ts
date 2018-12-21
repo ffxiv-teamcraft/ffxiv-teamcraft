@@ -17,15 +17,18 @@ import { StatsPopupComponent } from './profile-editor/stats-popup/stats-popup.co
 import { UserPickerModule } from '../../modules/user-picker/user-picker.module';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { VerificationPopupComponent } from './profile-editor/verification-popup/verification-popup.component';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProfileEditorComponent
+    component: ProfileEditorComponent,
+    canActivate: [MaintenanceGuard]
   },
   {
     path: ':userId',
-    component: PublicProfileComponent
+    component: PublicProfileComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 

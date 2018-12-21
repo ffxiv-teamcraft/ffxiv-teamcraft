@@ -6,13 +6,21 @@
       background-color: green;
     }
   }
+
   .cp-amount {
     .ant-progress-bg {
       background-color: #9254AD;
     }
   }
+
   .ant-progress-status-success .ant-progress-text {
     color: inherit;
+  }
+
+  .ant-card-body {
+    @media @mobile {
+      padding: 12px;
+    }
   }
 }
 
@@ -20,6 +28,29 @@
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+}
+
+.quality-bar {
+  position: relative;
+
+  .threshold-marker {
+    position: absolute;
+    height: 17px;
+
+    .marker {
+      background-color: var(--primary-color);
+      height: 100%;
+      width: 2px;
+      z-index: 1000;
+    }
+
+    .value {
+      font-size: .8em;
+      padding-left: 2px;
+      margin-top: -7px;
+      height: 10px;
+    }
+  }
 }
 
 .ingredients {
@@ -63,10 +94,6 @@
   }
 }
 
-.craft-bars {
-  padding-right: 40px;
-}
-
 .buttons {
   position: fixed;
   @media @mobile {
@@ -86,9 +113,11 @@
 
 .buffs-container {
   min-height: 32px;
+
   .buff-container {
     position: relative;
     margin: 0 2px;
+
     .stacks {
       position: absolute;
       top: 0;
@@ -96,6 +125,7 @@
       color: white;
       text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     }
+
     .duration {
       position: absolute;
       bottom: 0;
@@ -119,21 +149,27 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  flex: 0 1 300px;
   height: 40px;
 }
 
 .actions-card {
   position: relative;
+
   .warning-icon {
     position: absolute;
     top: 5px;
     left: 5px;
   }
+
   .actions-container {
     min-height: 40px;
+
     .action-from-bar:not(.gu-transit) {
       display: none;
+    }
+
+    .action-container {
+      margin-bottom: 5px;
     }
   }
 }
@@ -141,9 +177,11 @@
 .category-row {
   display: flex;
   flex-wrap: wrap;
+
   h4 {
     padding-left: 15px;
   }
+
   .actions-row {
     display: flex;
     justify-content: flex-start;
@@ -151,9 +189,11 @@
     padding: 5px;
     background: rgba(0, 0, 0, .3);
     margin: 10px;
+
     .gu-transit {
       display: none;
     }
+
     app-action {
       margin: 5px;
     }

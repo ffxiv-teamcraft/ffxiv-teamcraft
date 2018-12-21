@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { ListService } from '../../modules/list/list.service';
 import { UserService } from './user.service';
 import { ListStore } from './storage/list/list-store';
-import { DiffService } from './diff/diff.service';
 import { FirestoreListStorage } from './storage/list/firestore-list-storage';
-import { ListTemplateService } from './list-template/list-template.service';
 import { CraftingRotationService } from './crafting-rotation.service';
-import { CommissionService } from './commission/commission.service';
 import { TeamService } from './team.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { WorkshopService } from './workshop.service';
 import { TeamInviteService } from './team-invite.service';
+import { CraftingRotationsFolderService } from './crafting-rotations-folder.service';
+import { CustomLinksService } from './custom-links/custom-links.service';
 
 
 @NgModule({
@@ -23,10 +22,9 @@ import { TeamInviteService } from './team-invite.service';
     UserService,
     TeamInviteService,
     { provide: ListStore, useClass: FirestoreListStorage },
-    DiffService,
-    ListTemplateService,
+    CustomLinksService,
     CraftingRotationService,
-    CommissionService,
+    CraftingRotationsFolderService,
     TeamService
   ]
 })

@@ -1,1 +1,19 @@
-WORK IN PROGRESS
+<div *ngIf="!inProgress; else loader">
+  <nz-form-item>
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+      <input type="text" nz-input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()"
+             [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate">
+      <nz-form-explain
+        *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</nz-form-explain>
+      <nz-form-explain
+        *ngIf="importLinkSupported === false">{{'LISTS.IMPORT.Link_not_supported' | translate}}</nz-form-explain>
+      <nz-form-explain
+        *ngIf="importLinkSupported === true">{{'LISTS.IMPORT.Link_recognized' | translate: { type: linkType } }}</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" [disabled]="!importLinkSupported"
+          (click)="submit()">{{'Import' | translate}}</button>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

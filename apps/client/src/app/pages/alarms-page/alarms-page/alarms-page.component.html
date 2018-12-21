@@ -26,10 +26,16 @@
         </button>
       </div>
       <div class="spacer"></div>
-      <span>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <button nz-button nzShape="circle" nzType="primary" nz-tooltip nzTitle="{{'ALARMS.Open_overlay' | translate}}"
+                (click)="openOverlay()" *ngIf="platform.isDesktop()">
+          <i nz-icon type="desktop"></i>
+        </button>
+        <span>
         <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
-        {{'Compact_display' | translate}}
+          {{'Compact_display' | translate}}
       </span>
+      </div>
     </div>
 
     <div class="alarms">
@@ -58,8 +64,10 @@
             </div>
           </nz-collapse-panel>
           <ng-template #panelTitle>
-            <div class="panel-title">
-              {{group.group.name}}
+            <div class="panel-title" fxLayout="row wrap" fxLayoutAlign="flex-start center">
+              <div class="group-name">
+                {{group.group.name}}
+              </div>
               <button nz-button nzGhost nzSize="small" nzShape="circle"
                       (click)="$event.stopPropagation();renameGroup(group.group)">
                 <i nz-icon type="edit"></i>
@@ -103,13 +111,13 @@
              [nzActions]="[delete, copyMacro]"
              class="alarm-card"
              fxLayout="column"
-             [nzLoading]="!settings.compactAlarms && row.alarm.mapId !== null" [class.spawned]="row.spawned"
-             [class.played]="row.played"
-             #card>
+             [class.spawned]="row.spawned"
+             [class.played]="row.played">
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>
-        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"></app-item-icon>
+        <app-item-icon *ngIf="row.alarm.icon; else customAlarmIcon" [icon]="row.alarm.icon"
+                       [itemId]="row.alarm.itemId"></app-item-icon>
         <ng-template #customAlarmIcon>
           <nz-avatar [nzText]="row.alarm.name[0]"></nz-avatar>
         </ng-template>
@@ -130,12 +138,26 @@
     </ng-template>
     <ng-template #cardDescription>
       <app-map-position [mapId]="row.alarm.mapId"
+                        [zoneId]="row.alarm.zoneId"
                         *ngIf="row.alarm.mapId"
                         [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"></app-map-position>
-      {{row.alarm.aetheryte?.nameid | placeName | i18n}}
+      {{(row.alarm.mapId | closestAetheryte: {
+      x: row.alarm.coords.x,
+      y: row.alarm.coords.y
+    } | async)?.nameid | placeName | i18n}}
+
       <img *ngIf="row.alarm.folklore !== undefined" src="{{row.alarm.folklore.icon | icon}}" nz-tooltip
            [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt="" class="folklore"><br>
       {{row.remainingTime | timer}}<br>
+      <div *ngIf="row.alarm.baits !== undefined" class="baits">
+        <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
+      </div>
+      <div *ngIf="row.alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+        <div *ngFor="let weather of row.alarm.weathers">
+          <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
+               [nzTitle]="weather | weatherName | i18n">
+        </div>
+      </div>
       <button *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button nzGhost
               nz-tooltip nzTitle="{{'ALARMS.Add_note' | translate}}"
               nzSize="small" nzShape="circle" (click)="addNote(row.alarm)" class="note-button">
@@ -154,8 +176,7 @@
     </ng-template>
     <ng-template #map>
       <app-map *ngIf="row.alarm.mapId" [mapId]="row.alarm.mapId"
-               [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"
-               (loaded)="card.nzLoading = false"></app-map>
+               [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
     </ng-template>
     <ng-template #delete>
       <i nz-icon type="delete" (click)="deleteAlarm(row.alarm)"></i>

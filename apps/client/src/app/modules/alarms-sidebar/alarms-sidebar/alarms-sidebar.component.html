@@ -1,28 +1,39 @@
-<div class="alarms-container" *ngIf="alarms$ | async as alarms; else loading">
-  <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
-    <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played">
-      <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName | i18n"
-                     [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
-      <div class="center-content">
-        <div class="item-name">{{row.alarm.itemId | itemName | i18n}} <span class="slot" *ngIf="row.alarm.slot">({{row.alarm.slot}})</span>
+<ng-container *ngIf="loaded$ | async; else loading">
+  <div class="alarms-container" *ngIf="alarms$ | async as alarms">
+    <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
+      <div class="alarm-row" [class.spawned]="row.spawned" [class.played]="row.played" fxLayout="row" fxLayoutGap="5px">
+        <div class="item-icon">
+          <app-item-icon [icon]="row.alarm.icon" [itemName]="row.alarm.itemId | itemName | i18n"
+                         [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
+          <img src="{{row.alarm.type | nodeTypeIcon}}" alt="" class="node-type">
         </div>
-        <div fxLayout="row wrap" fxLayoutGap="5px">
-          <div class="timer">{{row.remainingTime | timer}}</div>
-          <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
+        <div class="center-content">
+          <span class="item-name"
+                *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}}</span>
+          <ng-template #customName>
+            <span class="item-name">{{row.alarm.name}}</span>
+          </ng-template>
+          <div fxLayout="row wrap" fxLayoutGap="5px">
+            <div class="timer">{{row.remainingTime | timer}}</div>
+            <div *ngIf="overlayMode"
+                 class="map">{{(row.alarm.aetheryte?.nameid || row.alarm.mapId) | placeName | i18n}}</div>
+            <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
+          </div>
+        </div>
+        <div class="slot" *ngIf="row.alarm.slot">({{row.alarm.slot}})</div>
+        <div class="map-button" *ngIf="!overlayMode">
+          <button nz-button nzType="primary" nzShape="circle" nzSize="small" (click)="openMap(row.alarm)">
+            <i nz-icon type="environment-o"></i>
+          </button>
         </div>
       </div>
-      <div class="map-button">
-        <button nz-button nzType="primary" nzShape="circle" nzSize="small" (click)="openMap(row.alarm)">
-          <i nz-icon type="environment-o"></i>
-        </button>
-      </div>
+      <nz-divider *ngIf="!last"></nz-divider>
     </div>
-    <nz-divider *ngIf="!last"></nz-divider>
+    <app-fullpage-message *ngIf="alarms.length === 0">
+      {{'ALARMS.No_alarm' | translate}}
+    </app-fullpage-message>
   </div>
-  <app-fullpage-message *ngIf="alarms.length === 0">
-    {{'ALARMS.No_alarm' | translate}}
-  </app-fullpage-message>
-</div>
+</ng-container>
 <ng-template #loading>
   <app-page-loader></app-page-loader>
 </ng-template>

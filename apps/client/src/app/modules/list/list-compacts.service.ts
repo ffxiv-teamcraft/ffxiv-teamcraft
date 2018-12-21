@@ -48,18 +48,6 @@ export class ListCompactsService extends FirestoreRelationalStorage<List> {
       );
   }
 
-  add(data: List, uriParams?: any): Observable<string> {
-    throw new Error('This is a readonly service');
-  }
-
-  set(uid: string, data: List, uriParams?: any): Observable<void> {
-    throw new Error('This is a readonly service');
-  }
-
-  remove(uid: string, uriParams?: any): Observable<void> {
-    throw new Error('This is a readonly service');
-  }
-
   protected getBaseUri(params?: any): string {
     return 'compacts/collections/lists';
   }

@@ -11,6 +11,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
+import { UiColorsService } from './ui-colors.service';
+import { UiTextPipe } from './xiv-ui-text.pipe';
 
 @NgModule({
   imports: [
@@ -22,10 +24,10 @@ import { PipesModule } from '../../pipes/pipes.module';
     TranslateModule,
     PipesModule
   ],
-  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective],
+  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
   exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective],
   entryComponents: [XivapiActionTooltipComponent, XivapiItemTooltipComponent],
-  providers: [TooltipDataService]
+  providers: [TooltipDataService, UiColorsService]
 })
 export class TooltipModule {
 }

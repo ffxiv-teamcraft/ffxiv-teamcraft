@@ -20,6 +20,8 @@ export class ProfileEditorComponent {
 
   user$ = this.authFacade.user$;
 
+  userId$ = this.authFacade.userId$;
+
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
 
   characters$ = combineLatest(this.authFacade.characters$, this.authFacade.user$).pipe(
@@ -74,7 +76,7 @@ export class ProfileEditorComponent {
   }
 
   newContact(user: TeamcraftUser): void {
-    this.userPicker.pickUserId().pipe(
+    this.userPicker.pickUserId(true).pipe(
       filter(userId => {
         return userId !== undefined && (user.contacts || []).indexOf(userId) === -1;
       }),

@@ -34,6 +34,10 @@ import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
+import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
+import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { CustomLinksModule } from '../../modules/custom-links/custom-links.module';
 
 const routes: Routes = [
   {
@@ -67,7 +71,7 @@ const routes: Routes = [
     canActivate: [MaintenanceGuard]
   },
   {
-    path: 'rotations/folder/:folderId',
+    path: 'rotation-folder/:folderId',
     component: RotationFolderPageComponent,
     canActivate: [MaintenanceGuard]
   }
@@ -86,10 +90,13 @@ const routes: Routes = [
     NgxDnDModule,
     FullpageMessageModule,
     RotationsModule,
+    RotationFoldersModule,
     NameQuestionPopupModule,
     TextQuestionPopupModule,
     PageLoaderModule,
     FavoritesModule,
+    UserAvatarModule,
+    CustomLinksModule,
 
     NgZorroAntdModule,
 
@@ -112,10 +119,12 @@ const routes: Routes = [
     RecipeChoicePopupComponent,
     RotationPanelComponent,
     RotationFolderPageComponent,
-    StepByStepReportComponent
+    StepByStepReportComponent,
+    RotationFolderPanelComponent
   ],
   exports: [
-    RotationPanelComponent
+    RotationPanelComponent,
+    RotationFolderPanelComponent
   ],
   entryComponents: [
     MacroPopupComponent,

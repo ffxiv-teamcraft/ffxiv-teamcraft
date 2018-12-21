@@ -30,6 +30,9 @@ export class AlarmBellService {
       .pipe(
         map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {
+            if (alarm.spawns === undefined) {
+              return false;
+            }
             const alarmGroup = groups.find(group => {
               return alarm.groupId === group.$key;
             });

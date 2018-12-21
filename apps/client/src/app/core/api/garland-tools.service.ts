@@ -90,9 +90,19 @@ export class GarlandToolsService {
    * @param {number} id
    * @returns {any}
    */
-  public getFishingSpot(id: number): any {
-    return {};
-    // return this.gt.fishing.index[id];
+  public getFishingSpots(id: number): any[] {
+    return this.gt.bell.fish.filter(fish => {
+      return +fish.id === id;
+    });
+  }
+
+  /**
+   * Gets details about a fishing bait in garlandtools data.
+   * @param {number} name
+   * @returns {any}
+   */
+  public getBait(name: string): any {
+    return this.gt.bell.bait[name];
   }
 
   /**

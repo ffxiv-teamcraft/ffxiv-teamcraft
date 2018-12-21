@@ -3,7 +3,7 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { CraftingAction } from '../../model/actions/crafting-action';
 import { CraftingActionsRegistry } from '../../model/crafting-actions-registry';
 import { Observable } from 'rxjs/Observable';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -13,6 +13,9 @@ import { NameQuestionPopupComponent } from '../../../../modules/name-question-po
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
+import { CustomLink } from '../../../../core/database/custom-links/custom-link';
+import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
+import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -34,13 +37,33 @@ export class RotationPanelComponent {
     map(([rotation, userId]) => rotation.getPermissionLevel(userId))
   );
 
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
+
+  private syncLinkUrl: string;
+
   constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade) {
     this.actions$ = this.rotation$.pipe(
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
+
+    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.rotation$).pipe(
+      map(([links, rotation]) => links.find(link => link.redirectTo === this.getRouterLink(rotation).substr(1))),
+      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+      shareReplay(1)
+    );
+  }
+
+  createCustomLink(rotation: CraftingRotation, user: TeamcraftUser): void {
+    this.customLinksFacade.createCustomLink(rotation.getName(), this.getRouterLink(rotation).substr(1), user);
+  }
+
+  afterCustomLinkCopy(): void {
+    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   getLink(rotation: CraftingRotation): string {

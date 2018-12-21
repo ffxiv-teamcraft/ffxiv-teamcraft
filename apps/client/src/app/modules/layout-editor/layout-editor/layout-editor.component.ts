@@ -73,10 +73,10 @@ export class LayoutEditorComponent {
     // Insert it at new index
     layout.rows.splice(index, 0, row);
     // Update indexes and persist
-    layout.rows
-      .filter((r, i) => r.index !== i)
-      .forEach((r, i) => {
+    layout.rows = layout.rows
+      .map((r, i) => {
         r.index = i;
+        return r;
       });
     this.dirty = true;
   }
@@ -96,6 +96,11 @@ export class LayoutEditorComponent {
 
   removePanel(layout: ListLayout, row: LayoutRow): void {
     layout.rows = layout.rows.filter(r => r.name !== row.name && r.filterName !== row.filterName);
+    this.dirty = true;
+  }
+
+  updatePanel(layout: ListLayout, row: LayoutRow): void {
+    layout.rows = layout.rows.map(r => r.name === row.name ? row : r);
     this.dirty = true;
   }
 

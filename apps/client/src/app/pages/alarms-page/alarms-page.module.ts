@@ -20,11 +20,14 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomAlarmPopupComponent } from './custom-alarm-popup/custom-alarm-popup.component';
+import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
+import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: AlarmsPageComponent
+    component: AlarmsPageComponent,
+    canActivate: [MaintenanceGuard]
   }
 ];
 
@@ -50,6 +53,7 @@ const routes: Routes = [
     TextQuestionPopupModule,
     PageLoaderModule,
     FullpageMessageModule,
+    FishingBaitModule,
 
     NgZorroAntdModule,
     NgDragDropModule

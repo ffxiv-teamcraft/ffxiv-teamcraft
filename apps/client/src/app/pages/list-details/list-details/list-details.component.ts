@@ -3,7 +3,7 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -25,6 +25,8 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-list-details',
@@ -53,13 +55,26 @@ export class ListDetailsComponent implements OnInit {
 
   public pricingMode = false;
 
+  public loggedIn$ = this.authFacade.loggedIn$;
+
+  private adaptativeFilter$ = new BehaviorSubject<boolean>(false);
+
+  public get adaptativeFilter(): boolean {
+    return this.adaptativeFilter$.value;
+  }
+
+  public set adaptativeFilter(value: boolean) {
+    this.adaptativeFilter$.next(value);
+  }
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
-              private discordWebhookService: DiscordWebhookService) {
+              private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
+              private l12n: LocalizedDataService) {
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
@@ -74,11 +89,12 @@ export class ListDetailsComponent implements OnInit {
       map(([list]) => list),
       shareReplay(1)
     );
-    this.finalItemsRow$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getFinalItemsDisplay(list))
+    this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
-    this.display$ = this.list$.pipe(
-      mergeMap(list => this.layoutsFacade.getDisplay(list))
+    this.display$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
+      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getDisplay(list, adaptativeFilter)),
+      shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
@@ -187,14 +203,30 @@ export class ListDetailsComponent implements OnInit {
     const clone = list.clone();
     this.listsFacade.updateList(list);
     this.listsFacade.addList(clone);
-    this.listsFacade.myLists$.pipe(
+    this.progressService.showProgress(this.listsFacade.myLists$.pipe(
       map(lists => lists.find(l => l.createdAt === clone.createdAt && l.$key !== undefined)),
       filter(l => l !== undefined),
       first()
-    ).subscribe(l => {
+    ), 1, 'List_fork_in_progress').pipe(first()).subscribe(l => {
       this.router.navigate(['list', l.$key]);
       this.message.success(this.translate.instant('List_forked'));
     });
+  }
+
+  public getListTextExport(display: ListDisplay, list: List): string {
+    const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
+      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+    }, `${this.translate.instant('Crystals')} :\n`) + '\n';
+    return display.rows.reduce((result, displayRow) => {
+      return result + displayRow.rows.reduce((exportString, row) => {
+        return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
+      }, `${displayRow.title} :\n`) + '\n';
+    }, seed);
+
+  }
+
+  afterListTextCopied(): void {
+    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   regenerateList(list: List): void {

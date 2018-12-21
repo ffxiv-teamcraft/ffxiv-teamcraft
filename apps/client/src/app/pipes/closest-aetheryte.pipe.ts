@@ -16,7 +16,10 @@ export class ClosestAetherytePipe implements PipeTransform {
   transform(mapId: number, position: Vector2): Observable<Aetheryte> {
     return this.mapService.getMapById(mapId).pipe(
       filter(mapData => mapData !== undefined),
-      map(mapData => this.mapService.getNearestAetheryte(mapData, position))
+      map(mapData => {
+        return this.mapService.getNearestAetheryte(mapData, position);
+      }),
+      filter(res => res && res.nameid !== undefined)
     );
   }
 

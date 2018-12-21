@@ -1,9 +1,10 @@
-import { ExternalListData } from './external-list-data';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export interface ExternalListLinkParser {
 
-    canParse(url: string): boolean;
+  getName(): string;
 
-    parse(url: string): Observable<ExternalListData[]>;
+  canParse(url: string): boolean;
+
+  parse(url: string): Observable<string>;
 }

@@ -182,7 +182,7 @@ export class TradeIconPipe implements PipeTransform {
             res.icon = currency.icon;
             res.priority = TradeIconPipe.TRADE_SOURCES_PRIORITIES[id];
           }
-        })
+        });
       });
     });
     return res.icon;

@@ -1,4 +1,4 @@
-@import '../../../../theme';
+@import '../../../../default-theme';
 
 .search-box {
   width: 50%;
@@ -17,9 +17,31 @@ nz-select {
   width: 200px !important;
 }
 
+.input-box {
+  ::ng-deep {
+    input {
+      max-width: 120px;
+    }
+  }
+}
+
+.inputs-container {
+  @media @mobile {
+    width: 100%;
+  }
+  @media @tablet {
+    width: 100%;
+  }
+}
+
 .job-icon {
   width: 32px;
   height: 32px;
+
+  &.small {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .level-range {
@@ -73,6 +95,10 @@ nz-select {
   .result-row {
     border-bottom: 1px solid @text-color;
     padding: 5px;
+
+    &.odd {
+      background-color: rgba(77, 77, 77, .5);
+    }
   }
 }
 

@@ -5,4 +5,6 @@ export interface Favorites {
   lists: string[];
 
   rotations: string[];
+
+  rotationFolders: string[];
 }
