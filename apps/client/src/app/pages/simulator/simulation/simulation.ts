@@ -126,7 +126,7 @@ export class Simulation {
   public run(linear = false, maxTurns = Infinity): SimulationResult {
     this.lastPossibleReclaimStep = -1;
     const reclaimAction = new Reclaim();
-    this.actions.forEach((action: CraftingAction, index: number) => {
+    this.actions.filter(a => a !== undefined).forEach((action: CraftingAction, index: number) => {
       // If we're starting and the crafter is specialist
       if (index === 0 && this.crafterStats.specialist && this.crafterStats.level >= 70) {
         // Push stroke of genius buff
