@@ -47,7 +47,6 @@ export class MacroPopupComponent implements OnInit {
     let totalLength = 0;
     const reclaimBreakpoint = this.simulation.clone().run(true).simulation.lastPossibleReclaimStep;
     this.rotation.forEach((action) => {
-      console.log(reclaimBreakpoint);
       let macroFragment = this.macro[this.macro.length - 1];
       // One macro is 15 lines, if this one is full, create another one.
       // Alternatively, if breaking on Reclaim is enabled, split there too.
