@@ -8,8 +8,8 @@ import {
 } from './+state/notifications.reducer';
 import { NotificationsEffects } from './+state/notifications.effects';
 import { NotificationsFacade } from './+state/notifications.facade';
-import { CoreModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   imports: [
