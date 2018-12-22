@@ -7,7 +7,7 @@ import { layoutsQuery } from './layouts.selectors';
 import { CreateLayout, DeleteLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
 import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
@@ -39,7 +39,7 @@ export class LayoutsFacade {
   public getDisplay(list: List, adaptativeFilter: boolean): Observable<ListDisplay> {
     return this.selectedLayout$
       .pipe(
-        withLatestFrom(this.authFacade.mainCharacterEntry$),
+        withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
         map(([layout, characterEntry]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
@@ -108,7 +108,7 @@ export class LayoutsFacade {
 
   public getFinalItemsDisplay(list: List, adaptativeFilter: boolean): Observable<LayoutRowDisplay> {
     return this.selectedLayout$.pipe(
-      withLatestFrom(this.authFacade.mainCharacterEntry$),
+      withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
       map(([layout, characterEntry]) => {
         let rows = this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
           .filter(row => layout.recipeHideCompleted ? row.done < row.amount : true);
