@@ -1,4 +1,5 @@
 import { Vector2 } from '../../core/tools/vector2';
+import { I18nName } from '../common/i18n-name';
 
 export interface Levequest {
   level: number;
@@ -12,7 +13,7 @@ export interface Levequest {
   amount: number;
   // Quantity of item required for completion
   itemQuantity: number;
-  name: string;
+  name: I18nName;
   repeats: number;
   startCoordinates: Vector2;
   startMapId: number;

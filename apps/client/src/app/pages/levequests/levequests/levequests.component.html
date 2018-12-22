@@ -46,7 +46,7 @@
             <label nz-checkbox class="select-box" [(ngModel)]="leve.selected"
                    (ngModelChange)="updateAllSelected(results)"></label>
             <nz-list-item-meta nz-col nzSpan="24"
-                               [nzTitle]="leve.name"
+                               [nzTitle]="leve.name | i18n"
                                [nzAvatar]="leve.itemIcon | xivapiIcon"
                                [nzDescription]="description">
               <ng-template #description>
