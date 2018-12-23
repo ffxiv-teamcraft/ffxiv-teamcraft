@@ -23,7 +23,8 @@
     "Only_recipes": "제작법만 검색",
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
-    "Apply_filters": "필터적용"
+    "Apply_filters": "필터적용",
+    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
