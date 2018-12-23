@@ -121,6 +121,10 @@ export class AuthFacade {
               private oauthService: OauthService) {
   }
 
+  resetPassword(email: string): void {
+    this.af.auth.sendPasswordResetEmail(email);
+  }
+
   public addCharacter(useAsDefault = false, disableClose = false): void {
     this.dialog.create({
       nzTitle: this.translate.instant('Character_informations'),

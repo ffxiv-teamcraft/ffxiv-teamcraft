@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
 import { PlatformService } from '../../tools/platform.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-popup',
@@ -16,7 +17,8 @@ export class LoginPopupComponent {
   errorMessageCode: string;
 
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
-              private modalRef: NzModalRef, public platform: PlatformService) {
+              private modalRef: NzModalRef, public platform: PlatformService,
+              private message: NzMessageService, private translate: TranslateService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -30,6 +32,13 @@ export class LoginPopupComponent {
         this.modalRef.close();
       })
       .catch(err => this.onError(err));
+  }
+
+  public sendResetPassword(): void {
+    const email = this.form.getRawValue().email;
+    this.authFacade.resetPassword(email);
+    this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
+    this.modalRef.close();
   }
 
   private onError(error: any): void {
