@@ -46,6 +46,7 @@ import { TranslationsLoaderFactory } from './translations-loader';
 import { RotationsModule } from './modules/rotations/rotations.module';
 import { CustomLinksModule } from './modules/custom-links/custom-links.module';
 import { PageLoaderModule } from './modules/page-loader/page-loader.module';
+import { MapModule } from './modules/map/map.module';
 
 registerLocaleData(en);
 
@@ -107,6 +108,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     TeamsModule,
     NotificationsModule,
     SettingsModule.forRoot(),
+    MapModule.forRoot(),
     UserAvatarModule,
     SimulatorModule,
     RotationsModule,

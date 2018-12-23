@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapService } from './map.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,9 +28,6 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
     MapComponent,
     NavigationMapComponent
   ],
-  providers: [
-    MapService
-  ],
   exports: [
     MapPositionComponent,
     MapComponent
@@ -41,4 +38,13 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
   ]
 })
 export class MapModule {
+
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: MapModule,
+      providers: [
+        MapService
+      ]
+    };
+  }
 }
