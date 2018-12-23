@@ -24,7 +24,7 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Puisque notre source de données est limitée à 50 résultats, vous devriez affiner for filtres pour rechercher un résultat spécifique."
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
