@@ -7,7 +7,9 @@
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
-  "Edit_amount": "총량 수정",
+  "Edit_amount": "수량 수정",
+  "List_fork_in_progress": "목록을 내 계정으로 복사중...",
+  "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -21,7 +23,8 @@
     "Only_recipes": "제작법만 검색",
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
-    "Apply_filters": "필터적용"
+    "Apply_filters": "필터적용",
+    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -40,8 +43,8 @@
   "Compact_sidebar_toggle": "메뉴 펼치기/숨기기",
   "Confirmation": "계속하시겠습니까?",
   "Is_working_on_it": "{{name}} 작업중",
-  "Work_on_it": "작업 중입니다.",
-  "Remove_work_on_it": "사용자 할당 제거",
+  "Work_on_it": "제작자 할당",
+  "Remove_work_on_it": "제작 담당 제거",
   "Add_as_collectible": "소장품으로 추가",
   "Collectable_flag": "소장품",
   "Compact_display": "간소화",
@@ -74,10 +77,11 @@
     "Patreon_supporters": "Patreon 후원자",
     "Contributors": "기여자"
   },
+  "Patreon_login_success": "Patreon 로그인 성공!",
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
-  "Ephemeral_tag": "시간제",
+  "Ephemeral_tag": "간이 목록",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
   "Public_lists": "커뮤니티 목록",
@@ -101,9 +105,13 @@
     "Select": "선택",
     "Anonymous": "익명",
     "Warning": "경고",
+    "Error": "오류",
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
-    "Language": "언어"
+    "Language": "언어",
+    "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
+    "Open_in_desktop": "데스크톱 앱에서 열기",
+    "Admin": "관리자"
   },
   "ALARMS": {
     "Title": "알람",
@@ -119,10 +127,13 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
+    "Open_overlay": "오버레이 열기",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
       "Spawn": "등장 시간",
+      "Spawns_twice": "2회 출현",
+      "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
       "Duration": "채집 가능 시간",
       "Slot": "슬롯",
       "Type": "채집물 유형",
@@ -239,7 +250,6 @@
   "Benefits": "이윤",
   "Minimal_craft_cost": "최소 제작 비용",
   "Used_for": "사용처",
-  "xivdb_cart_import": "목록 가져오는 중",
   "Or": "또는",
   "Make_donation": "후원하기",
   "Data_from_gt": "garlandtools.org에서 제공받은 데이터",
@@ -263,6 +273,16 @@
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
     "Preferred_copy_type": "기본 복사 유형",
+    "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
+    "Account": "계정",
+    "Reset_password": "비밀번호 재설정",
+    "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
+    "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다.",
+    "Connect_with_patreon": "Patreon에 연결",
+    "Connected_with_patreon": "Patreon에 연결되었습니다.",
+    "Nickname": "닉네임",
+    "Nickname_used": "이미 사용중인 닉네임입니다.",
+    "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "COPY_TYPE": {
       "Classic": "아이템 이름 복사",
       "Isearch": "/아이템검색 매크로 복사"
@@ -278,13 +298,6 @@
     "Masterbooks": "비전서",
     "Patreon_supporter": "Patreon 후원자",
     "Patreon_features": "Patreon 후원자 특전",
-    "Feature_requires_nickname": "이 기능은 닉네임 설정이 필요합니다",
-    "Nickname": "닉네임",
-    "No_nickname": "닉네임이 설정되지 않았습니다",
-    "Patreon_link_email": "Patreon 이메일 연결",
-    "Patreon_edit_email": "Patreon 이메일 편집",
-    "Email_already_used": "이메일이 이미 다른 계정에 연결되어 있습니다",
-    "Patreon_email": "Patreon 이메일",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
     "Save_for_all": "모두 저장",
@@ -309,11 +322,16 @@
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
     "Lists_search_placeholder": "목록 검색",
+    "Add_to_a_list": "목록에 추가",
+    "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
+    "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
       "Paste_link_step_placeholder": "목록 링크",
       "Link_not_supported": "이 링크는 가져올 수 없습니다",
+      "Links_supported": "지원하는 링크: {{links}}",
+      "Link_recognized": "{{type}} 로 확인되었으며, 가져올 수 있습니다",
       "Next": "다음",
       "Back": "이전",
       "Give_list_name": "새 목록 이름 설정",
@@ -324,16 +342,24 @@
     }
   },
   "LIST": {
-    "Regenerate": "최신 Teamcraft 버전으로 목록 업데이트",
+    "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
     "Copy_as_text": "텍스트로 복사",
+    "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
+    "COMPLETION_POPUP": {
+      "Title": "완료된 목록",
+      "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
+      "Delete": "목록 삭제",
+      "Reset": "목록 초기화",
+      "Nothing": "없음"
+    },
     "BUTTONS": {
       "Add_link_description": "이 목록에 대한 사용자 지정 링크 만들기",
       "Create_template_description": "이 목록의 템플릿 링크를 생성하면, 현재 목록에 복사본이 생성됩니다",
@@ -348,7 +374,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
-    "Public_list_description": "목록 공개 설정은 이 목록을 커뮤티니 목록에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
+    "Public_list_description": "목록 공개 설정은 이 목록을 커뮤티니 목록에 추가시킵니다. \"공유는 필요하지 않습니다.\"",
     "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
@@ -360,12 +386,13 @@
     "Inventory_breakdown": "소지품",
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
+    "Adaptative_filter": "할 수 있는 것만 표시",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
       "Import_layout": "레이아웃 불러오기",
-      "Import_string": "레이아웃 불러오기 코드",
-      "Import_string_copied": "레이아웃 불러오기 코드 복사됨!",
+      "Import_string": "레이아웃 코드",
+      "Import_string_copied": "레이아웃 코드 복사됨!",
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정"
@@ -434,11 +461,13 @@
     "Title": "사용자 지정 링크",
     "Not_found": "링크를 찾을 수 없습니다.",
     "Add_link": "사용자 지정 링크 만들기",
+    "Link_created": "사용자 지정 링크가 생성되었습니다, 복사하려면 공유 버튼을 클릭하세요.",
     "Dialog_title": "사용자 지정 링크",
     "Link_type": "링크 타입",
     "Link_name": "링크 이름",
     "target": "링크 대상",
     "Share_link_copied": "사용자 지정 링크가 클립보드에 복사되었습니다",
+    "Copy_custom_link": "사용자 지정 링크 복사",
     "No_links": "사용자 지정 링크 없음"
   },
   "NAVIGATION": {
@@ -463,6 +492,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "해당 목록에 대한 목록 템플릿 생성",
+    "Template_created": "목록 서식이 생성되었습니다.",
     "Dialog_title": "템플릿 생성",
     "Link_name": "템플릿 이름",
     "target": "대상 목록",
@@ -470,7 +500,11 @@
     "Copy_template_url": "템플릿 url 복사",
     "Cloning_list": "내 계정으로 목록 복사본 생성",
     "Redirect_notice": "복사본 생성시 목록으로 리디렉션 됩니다.",
-    "Not_found": "템플릿을 찾을 수 없습니다"
+    "Not_found": "템플릿을 찾을 수 없습니다",
+    "STATUS": {
+      "Loading": "데이터베이스에서 서식을 불러오는 중",
+      "Copying": "목록 복사본을 계정에 생성중입니다. 완료시 자동으로 이동합니다."
+    }
   },
   "PERMISSIONS": {
     "Read": "읽기",
@@ -501,6 +535,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
+    "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
     "Extra_wait": "매크로 지연시간",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
@@ -513,7 +548,7 @@
     "Cp_amount": "CP",
     "Simulate_tooltip": "시뮬레이터로 제작",
     "Change_recipe": "제작법 변경",
-    "Changing_recipe_save_warning": "제작법을 선택하기 전에 저장하지 않을 경부 변경 내용이 손실됩니다",
+    "Changing_recipe_save_warning": "제작법을 선택하기 전에 저장하지 않을 경우 변경 내용이 손실됩니다",
     "Too_many_aactions": "사용 가능한 보조기술의 수를 초과하였습니다",
     "Convert_rotation": "기본 시뮬레이터에서 열기",
     "Configuration": "설정",
@@ -558,6 +593,20 @@
       "Recipe_quality": "품질",
       "Recipe_durability": "내구도"
     },
+    "ROTATIONS": {
+      "FOLDERS": {
+        "Folders": "로테이션 폴더",
+        "Rename": "폴더 이름 변경",
+        "New_folder": "새 폴더",
+        "Delete_message": "폴더를 삭제해도 폴더 내의 로테이션은 삭제되지 않습니다.",
+        "Share_link_copied": "로테이션 폴더 공유용 링크를 클립보드에 복사했습니다",
+        "Shared_by": "공유자: {{name}}",
+        "Created_by": "제작자: {{name}}",
+        "Copy_folder": "이 폴더와 내용을 내 계정으로 복사",
+        "Folder_copied": "폴더가 내 계정에 복사되었습니다",
+        "Favorite_folders": "즐겨찾기 폴더"
+      }
+    },
     "CATEGORY": {
       "Progression": "작업",
       "Quality": "가공",
@@ -599,7 +648,9 @@
   },
   "PRICING": {
     "From_vendor": "상인 판매 가격",
-    "Expect_to_sell_everything": "전체 판매 가정"
+    "Expect_to_sell_everything": "전체 판매 가정",
+    "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
+    "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?"
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -670,18 +721,23 @@
   },
   "TOOLTIP": {
     "Level": "레벨",
+    "Ilvl": "아이템레벨",
     "Cost": "비용",
-    "Class_job": "클래스/직업"
+    "Class_job": "클래스/직업",
+    "Damage_phys": "물리 공격력",
+    "Damage_mag": "공격마법 위력",
+    "Defense_phys": "물리 방어력",
+    "Defense_mag": "마법 방어력"
   },
   "SEARCH_INTRO": {
-    "Slogan": "목록을 만들고, 공유하고, 기여하고, 제작하세요",
+    "Slogan": "제작하고, 공유하고, 기여하세요",
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
     "Features_header": "시작하기 !",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
-      "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤티니 목록으로 복사할 수 있습니다.",
+      "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
       "Alarms": "알람을 만들어 채집장소 출현을 놓치지 않고, 그룹으로 묶고, 인게임으로 내보내는 것과 같은 모든 것을 할 수 있습니다.",
       "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다.",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",

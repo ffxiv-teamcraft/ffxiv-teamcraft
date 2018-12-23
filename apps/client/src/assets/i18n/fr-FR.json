@@ -8,6 +8,8 @@
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
+  "List_fork_in_progress": "Copie de la liste en cours...",
+  "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur discord de Teamcraft (en anglais ou français).",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -21,7 +23,8 @@
     "Only_recipes": "Recettes uniquement",
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
-    "Apply_filters": "Appliquer les filtres"
+    "Apply_filters": "Appliquer les filtres",
+    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Puisque notre source de données est limitée à 50 résultats, vous devriez affiner for filtres pour rechercher un résultat spécifique."
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -74,6 +77,7 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
+  "Patreon_login_success": "Connexion avec Patreon effectuée !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favoris",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -101,9 +105,13 @@
     "Select": "Sélectionner",
     "Anonymous": "Anonyme",
     "Warning": "Attention",
+    "Error": "Erreur",
     "Success": "Succès",
     "Copy_to_clipboard": "Copier dans le Presse-papiers",
-    "Language": "Langue"
+    "Language": "Langue",
+    "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
+    "Open_in_desktop": "Ouvrir dans l'application bureau",
+    "Admin": "Administrateur"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -119,19 +127,22 @@
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
+    "Open_overlay": "Ouvrir l'overlay",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
       "Spawn": "Apparition",
+      "Spawns_twice": "Deux spawns",
+      "Spawns_twice_description": "Apparaît deux fois en une journée éorzéenne",
       "Duration": "Durée",
       "Slot": "Emplacement",
       "Type": "Type de nœud",
       "Map": "Carte",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
+        "Mineral": "Filon de minerai",
+        "Rocky": "Carrière de pierre",
         "Tree": "Arbre mature",
-        "Vegetation": "Lush Vegetation Patch",
+        "Vegetation": "Carré de végétation",
         "Fishing": "Pêche"
       }
     }
@@ -239,7 +250,6 @@
   "Benefits": "Bénéfice",
   "Minimal_craft_cost": "Coût minimal de fabrication",
   "Used_for": "Utilisé pour",
-  "xivdb_cart_import": "Import de la liste",
   "Or": "ou",
   "Make_donation": "Faire un don",
   "Data_from_gt": "Données fournies par garlandtools.org",
@@ -263,6 +273,16 @@
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
     "Preferred_copy_type": "Type de copie préférée",
+    "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
+    "Account": "Compte",
+    "Reset_password": "Réinitialiser le mot de passe",
+    "Reset_password_warning": "Êtes-vous sûr de vouloir réinitialiser votre mot de passe ?",
+    "Password_reset_mail_sent": "E-mail de réinitialisation du mot de passe envoyé",
+    "Connect_with_patreon": "Lier son compte à patreon",
+    "Connected_with_patreon": "Compte lié avec patreon",
+    "Nickname": "Pseudo",
+    "Nickname_used": "Pseudo déjà utilisé",
+    "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -278,13 +298,6 @@
     "Masterbooks": "Livres",
     "Patreon_supporter": "Supporter Patreon",
     "Patreon_features": "Fonctionnalités réservées aux supporters patreon",
-    "Feature_requires_nickname": "Cette fonctionnalité a besoin qu'un pseudonyme soit défini pour votre profil",
-    "Nickname": "Pseudonyme",
-    "No_nickname": "Aucun pseudo configuré",
-    "Patreon_link_email": "Lier mon email patreon",
-    "Patreon_edit_email": "Editer mon email patreon",
-    "Email_already_used": "Email déjà lié à un autre compte",
-    "Patreon_email": "Email Patreon",
     "Contacts": "Contacts",
     "Add_new_contact": "Nouveau Contact",
     "Save_for_all": "Sauvegarder pour tous",
@@ -309,11 +322,16 @@
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n’avez pas de listes",
     "Lists_search_placeholder": "Rechercher une liste...",
+    "Add_to_a_list": "Ajouter à une liste",
+    "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
+    "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
       "Paste_link_step_placeholder": "Lien de la liste",
       "Link_not_supported": "Ce lien ne peut être importé",
+      "Links_supported": "Liens supportés: {{links}}",
+      "Link_recognized": "Lien de {{type}} reconnu, vous pouvez l'importer",
       "Next": "Suivant",
       "Back": "Précédent",
       "Give_list_name": "Donnez un nom à la liste",
@@ -329,11 +347,19 @@
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Copy_as_text": "Copier au format texte",
+    "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
+    "COMPLETION_POPUP": {
+      "Title": "Liste terminée",
+      "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
+      "Delete": "Supprimer la liste",
+      "Reset": "Réinitialiser la liste",
+      "Nothing": "Rien"
+    },
     "BUTTONS": {
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
@@ -360,6 +386,7 @@
     "Inventory_breakdown": "Inventaire",
     "Open_in_ffxivgardening": "Ouvrir dans ffxivgardening.com",
     "Add_all_item_alarms": "Ajouter toutes les alarmes pour cet objet",
+    "Adaptative_filter": "N’afficher que ce que je peux faire",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -434,11 +461,13 @@
     "Title": "Liens",
     "Not_found": "Lien introuvable",
     "Add_link": "Créer un lien",
+    "Link_created": "Lien personnalisé créé, cliquez sur le bouton de partage pour le copier",
     "Dialog_title": "Lien",
     "Link_type": "Type de lien",
     "Link_name": "Nom du lien",
     "target": "Cible du lien",
     "Share_link_copied": "Lien copié dans le presse-papiers",
+    "Copy_custom_link": "Copier le lien personnalisé",
     "No_links": "Aucun lien défini"
   },
   "NAVIGATION": {
@@ -463,6 +492,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Créer un modèle de liste pour cette liste",
+    "Template_created": "Modèle de liste créé",
     "Dialog_title": "Création du modèle",
     "Link_name": "Nom du modèle",
     "target": "Liste cible",
@@ -470,7 +500,11 @@
     "Copy_template_url": "Copier l'url du modèle",
     "Cloning_list": "Création d'une copie de la liste sur votre compte",
     "Redirect_notice": "Vous serez redirigé vers la liste une fois celle-ci créée",
-    "Not_found": "Modèle introuvable"
+    "Not_found": "Modèle introuvable",
+    "STATUS": {
+      "Loading": "Chargement du modèle depuis la base de données",
+      "Copying": "Création d’une copie de la liste dans votre compte, vous serez redirigé vers celle-ci une fois créée"
+    }
   },
   "PERMISSIONS": {
     "Read": "Lire",
@@ -501,6 +535,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
+    "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
     "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
@@ -558,6 +593,20 @@
       "Recipe_quality": "Qualité maximum",
       "Recipe_durability": "Solidité"
     },
+    "ROTATIONS": {
+      "FOLDERS": {
+        "Folders": "Dossiers de rotation",
+        "Rename": "Renommer le dossier",
+        "New_folder": "Nouveau dossier",
+        "Delete_message": "La suppression d’un dossier n'entraîne pas la suppression des rotations à l’intérieur.",
+        "Share_link_copied": "Lien de partage pour le dossier rotation copié dans votre presse-papiers",
+        "Shared_by": "Partagé par {{name}}",
+        "Created_by": "Créé par {{name}}",
+        "Copy_folder": "Copiez ce dossier et son contenu dans votre compte",
+        "Folder_copied": "Dossier copié sur votre compte",
+        "Favorite_folders": "Dossiers favoris"
+      }
+    },
     "CATEGORY": {
       "Progression": "Progression",
       "Quality": "Qualité",
@@ -599,7 +648,9 @@
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
-    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu"
+    "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
+    "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
+    "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -670,11 +721,16 @@
   },
   "TOOLTIP": {
     "Level": "Niveau",
+    "Ilvl": "ilvl",
     "Cost": "Coût",
-    "Class_job": "Classe/Job"
+    "Class_job": "Classe/Job",
+    "Damage_phys": "Dégâts Phys.",
+    "Damage_mag": "Dégâts Mag.",
+    "Defense_phys": "Défense Phys.",
+    "Defense_mag": "Défense Mag."
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craftez, partagez, contribuez",
+    "Slogan": "Fabriquez, Partagez, Contribuez",
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
