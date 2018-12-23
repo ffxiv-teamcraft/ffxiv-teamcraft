@@ -9,7 +9,7 @@
   "See_on_map": "Pogledajte na karti",
   "Edit_amount": "Odredite količinu",
   "List_fork_in_progress": "Kopiranje popisa na vaš račun...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Greška u mreži detektirana, odjavljeni ste. Ako se problem nastavi, molimo kontaktirajte Miu na Discord serveru.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Račun se već koristi",
     "auth/email-already-in-use": "Email se već koristi",
