@@ -51,6 +51,7 @@ export class ItemRowComponent implements OnInit {
   @Input()
   public set item(item: ListRow) {
     this._item = item;
+    this.cdRef.detectChanges();
     this.item$.next(item);
   }
 
