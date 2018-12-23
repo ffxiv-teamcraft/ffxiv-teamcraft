@@ -501,7 +501,6 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
