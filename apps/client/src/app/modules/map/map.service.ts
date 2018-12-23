@@ -8,7 +8,7 @@ import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 
 @Injectable()
@@ -43,7 +43,8 @@ export class MapService {
             size_factor: mapData.SizeFactor,
             territory_id: mapData.TerritoryTypeTargetID
           };
-        })
+        }),
+        shareReplay(1)
       );
     }
     return this.cache[mapId];

@@ -23,7 +23,7 @@
     </nz-tab>
   </nz-tabset>
 
-  <nz-alert nzType="error" *ngIf="invalidInputs">
-    {{'MACRO_TRANSLATION.Invalid_macro_or_language' | translate}}
+  <nz-alert nzType="error" [nzMessage]="'MACRO_TRANSLATION.Invalid_macro_or_language' | translate"
+            *ngIf="invalidInputs">
   </nz-alert>
 </div>

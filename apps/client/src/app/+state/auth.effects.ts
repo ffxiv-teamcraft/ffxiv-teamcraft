@@ -114,7 +114,7 @@ export class AuthEffects {
     filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
     withLatestFrom(this.store),
     filter(([action, state]) => !state.auth.loading && state.auth.loggedIn && state.auth.user !== null),
-    filter(([action, state]) => state.auth.user.lodestoneIds.length === 0 && state.auth.user.defaultLodestoneId === undefined),
+    filter(([action, state]) => state.auth.user.lodestoneIds.length === 0 && state.auth.user.defaultLodestoneId === undefined && state.auth.characters.length === 0),
     map(() => new NoLinkedCharacter())
   );
 

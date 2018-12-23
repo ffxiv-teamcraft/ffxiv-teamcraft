@@ -23,7 +23,8 @@
     "Only_recipes": "Only recipes",
     "Crafts_amount": "# of crafts",
     "Add_to_list": "Add this item to a list",
-    "Apply_filters": "Apply filters"
+    "Apply_filters": "Apply filters",
+    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",

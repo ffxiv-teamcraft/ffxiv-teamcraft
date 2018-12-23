@@ -59,6 +59,12 @@ export class MacroTranslatorComponent {
             }
           });
         } catch (ignored) {
+          if (skillName === 'clear') {
+            Object.keys(macroTranslated).forEach(key => {
+              macroTranslated[key].push(line);
+            });
+            continue;
+          }
           // Ugly implementation but it's a specific case we don't want to refactor for.
           try {
             // If there's no skill match with the first regex, try the second one (for auto translated skills)
