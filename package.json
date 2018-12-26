@@ -1,5 +1,5 @@
 {
-  "name": "ffxiv-teamcraft-beta",
+  "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
   "version": "5.0.0-beta.4",
@@ -132,7 +132,7 @@
     "electron-is-dev": "^1.0.1",
     "electron-log": "^2.2.17",
     "electron-oauth-helper": "^2.0.3",
-    "electron-updater": "^4.0.0",
+    "electron-updater": "^3.2.3",
     "express": "^4.16.4",
     "firebase": "^5.5.0",
     "hammerjs": "^2.0.8",

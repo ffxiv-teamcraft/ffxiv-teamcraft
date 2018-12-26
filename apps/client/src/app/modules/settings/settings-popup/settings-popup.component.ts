@@ -34,11 +34,51 @@ export class SettingsPopupComponent {
 
   availableThemes = Theme.ALL_THEMES;
 
+  alwaysOnTop = false;
+
+  checkingForUpdate = false;
+
+  updateAvailable: boolean;
+
+  downloadProgress: any = {
+    bytesPerSecond: 0,
+    percent: 0,
+    total: 0,
+    transferred: 0
+  };
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
               private ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade) {
+
+    this.ipc.on('always-on-top:value', (event, value) => {
+      this.alwaysOnTop = value;
+    });
+    this.ipc.send('always-on-top:get');
+
+    this.ipc.on('checking-for-update', () => {
+      this.checkingForUpdate = true;
+    });
+
+    this.ipc.on('update-available', (event, available: boolean) => {
+      this.checkingForUpdate = false;
+      this.updateAvailable = available;
+    });
+
+    this.ipc.on('download-progress', (event, progress: any) => {
+      progress.percent = Math.round(progress.percent);
+      this.downloadProgress = progress;
+    });
+  }
+
+  alwaysOnTopChange(value: boolean): void {
+    this.ipc.send('always-on-top', value);
+  }
+
+  checkForUpdate(): void {
+    this.ipc.send('update:check');
   }
 
   patreonOauth(): void {

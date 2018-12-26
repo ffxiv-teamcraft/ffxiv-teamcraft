@@ -80,7 +80,7 @@ function createWindow() {
     show: false,
     backgroundColor: '#000',
     frame: true,
-    icon: `file://${BASE_APP_PATH}/assets/logo.png`
+    icon: `file://${BASE_APP_PATH}/assets/app-icon.png`
   };
   Object.assign(opts, config.get('win:bounds'));
   if (config.get('win:alwaysOnTop')) {
@@ -134,7 +134,7 @@ function createWindow() {
     config.set('router:uri', deepLink);
   });
 
-  const iconPath = path.join(BASE_APP_PATH, 'assets/logo.png');
+  const iconPath = path.join(BASE_APP_PATH, 'assets/app-icon.png');
   nativeIcon = nativeImage.createFromPath(iconPath);
   const trayIcon = nativeIcon.resize({ width: 16, height: 16 });
   tray = new Tray(trayIcon);

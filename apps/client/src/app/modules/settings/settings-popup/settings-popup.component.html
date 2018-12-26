@@ -72,4 +72,24 @@
       </ng-container>
     </div>
   </nz-tab>
+  <nz-tab [nzTitle]="'SETTINGS.Desktop' | translate" *ngIf="platform.isDesktop()">
+    <label nz-checkbox [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)">
+      {{'SETTINGS.Always_on_top' | translate}}
+    </label>
+    <div class="updater">
+      <button nz-button nzType="primary" (click)="checkForUpdate()" *ngIf="!updateAvailable && !checkingForUpdate">
+        {{'SETTINGS.Check_for_update' | translate}}
+      </button>
+      <nz-spin *ngIf="checkingForUpdate && !updateDavailable"></nz-spin>
+      <div *ngIf="updateAvailable === true">
+        {{'SETTINGS.Downloading_update' | translate}}
+        <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
+        <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}
+          - {{downloadProgress.bytesPerSecond / 1000000 | number}}MBps</span>
+      </div>
+      <div *ngIf="updateAvailable === false">
+        {{'SETTINGS.No_update_available' | translate}}
+      </div>
+    </div>
+  </nz-tab>
 </nz-tabset>
