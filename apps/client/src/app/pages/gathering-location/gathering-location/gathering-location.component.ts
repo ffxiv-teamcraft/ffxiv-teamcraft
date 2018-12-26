@@ -59,12 +59,12 @@ export class GatheringLocationComponent {
               const bellNode = this.bell.getNode(+node.nodeId);
               node.timed = bellNode !== undefined;
               node.itemId = node.obj.i;
+              node.icon = item.obj.c;
               if (node.timed) {
                 node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(bellNode.type);
                 const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
                 node.spawnTimes = bellNode.time;
                 node.uptime = bellNode.uptime;
-                node.icon = item.obj.c;
                 if (slotMatch !== undefined) {
                   node.slot = slotMatch.slot;
                 }
