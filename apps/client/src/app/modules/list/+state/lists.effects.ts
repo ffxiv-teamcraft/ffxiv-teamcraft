@@ -275,7 +275,9 @@ export class ListsEffects {
     // Once community lists are loaded, we don't need to load them anymore thanks to firestore
     first(),
     switchMap(() => this.listCompactsService.getCommunityLists()),
-    map(lists => new CommunityListsLoaded(lists))
+    withLatestFrom(this.authFacade.userId$),
+    filter(([lists, userId]) => lists.filter(l => l.authorId !== userId).length > 0),
+    map(([lists]) => new CommunityListsLoaded(lists))
   );
 
   @Effect()
