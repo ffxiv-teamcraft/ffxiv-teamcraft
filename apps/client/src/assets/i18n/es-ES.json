@@ -535,6 +535,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
+    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
@@ -649,7 +650,9 @@
     "From_vendor": "Precio del vendedor",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Copy_earnings_as_text": "Copy content as text",
+    "Content_copied": "Content copied in your clipboard"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
