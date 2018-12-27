@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
-    "appId": "ffxivteamcraft-beta",
+    "appId": "ffxivteamcraft",
     "artifactName": "${productName}-setup.${ext}",
     "forceCodeSigning": true,
     "directories": {
