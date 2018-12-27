@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ListService } from '../list.service';
 import {
-  CommunityListsLoaded,
   CreateList,
   CreateOptimisticListCompact,
   DeleteList,
@@ -11,7 +10,6 @@ import {
   ListsActionTypes,
   ListsForTeamsLoaded,
   ListsWithWriteAccessLoaded,
-  LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
@@ -259,17 +257,6 @@ export class ListsEffects {
     mergeMap(action => this.listCompactsService.get(action.key)),
     catchError(() => of({ notFound: true })),
     map(listCompact => new ListCompactLoaded(listCompact))
-  );
-
-  @Effect()
-  loadCommunityLists$ = this.actions$.pipe(
-    ofType<LoadCommunityLists>(ListsActionTypes.LoadCommunityLists),
-    // Once community lists are loaded, we don't need to load them anymore thanks to firestore
-    first(),
-    switchMap(() => this.listCompactsService.getCommunityLists()),
-    withLatestFrom(this.authFacade.userId$),
-    filter(([lists, userId]) => lists.filter(l => l.authorId !== userId).length > 0),
-    map(([lists]) => new CommunityListsLoaded(lists))
   );
 
   @Effect()

@@ -6,7 +6,6 @@ export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
 
   LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
-  LoadCommunityLists = '[Lists] Load Community Lists',
 
   ListsForTeamsLoaded = '[Lists] Lists For Team Loaded',
 
@@ -20,7 +19,6 @@ export enum ListsActionTypes {
   MyListsLoaded = '[Lists] My Lists Loaded',
   ListCompactLoaded = '[Lists] List Compact Loaded',
   ListsWithWriteAccessLoaded = '[Lists] Lists With Write Access Loaded',
-  CommunityListsLoaded = '[Lists] Community lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
 
@@ -106,17 +104,6 @@ export class ListsForTeamsLoaded implements Action {
   }
 }
 
-export class LoadCommunityLists implements Action {
-  readonly type = ListsActionTypes.LoadCommunityLists;
-}
-
-export class CommunityListsLoaded implements Action {
-  readonly type = ListsActionTypes.CommunityListsLoaded;
-
-  constructor(public payload: List[]) {
-  }
-}
-
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
 
@@ -182,8 +169,6 @@ export type ListsAction =
   | ListCompactLoaded
   | LoadListsWithWriteAccess
   | ListsWithWriteAccessLoaded
-  | LoadCommunityLists
-  | CommunityListsLoaded
   | UpdateItem
   | ListsForTeamsLoaded
   | NeedsVerification;
