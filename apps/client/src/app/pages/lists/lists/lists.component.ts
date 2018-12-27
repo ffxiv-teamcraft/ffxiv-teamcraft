@@ -39,6 +39,8 @@ export class ListsComponent {
 
   public loading$: Observable<boolean>;
 
+  private regenerating = false;
+
   public needsVerification$ = this.listsFacade.needsVerification$;
 
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
@@ -132,7 +134,7 @@ export class ListsComponent {
         display.otherLists
           .filter((l, i) => l.index !== i)
           .forEach((l, i) => {
-            if (l.index !== i) {
+            if (l.index !== i && !this.regenerating) {
               l.index = i;
               this.listsFacade.updateListIndex(l);
             }
@@ -175,6 +177,7 @@ export class ListsComponent {
   }
 
   regenerateLists(compacts: List[]): void {
+    this.regenerating = true;
     compacts.forEach(compact => {
       this.listsFacade.load(compact.$key);
     });
@@ -202,6 +205,7 @@ export class ListsComponent {
         })
       )
       .subscribe(() => {
+        this.regenerating = false;
         this.message.success(this.translate.instant('LISTS.Regenerated_all'));
       });
   }
