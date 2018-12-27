@@ -178,7 +178,8 @@ export class ListsEffects {
     }),
     switchMap(list => this.listService.add(list)
       .pipe(
-        map((key) => new CreateOptimisticListCompact(list, key)))
+        map((key) => new CreateOptimisticListCompact(list, key))
+      )
     )
   );
 

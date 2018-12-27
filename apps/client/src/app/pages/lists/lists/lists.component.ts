@@ -131,12 +131,11 @@ export class ListsComponent {
       tap(display => {
         display.otherLists
           .filter((l, i) => l.index !== i)
-          .map((l, i) => {
-            l.index = i;
-            return l;
-          })
-          .forEach(l => {
-            this.listsFacade.updateListIndex(l);
+          .forEach((l, i) => {
+            if (l.index !== i) {
+              l.index = i;
+              this.listsFacade.updateListIndex(l);
+            }
           });
       }),
       shareReplay(1)
