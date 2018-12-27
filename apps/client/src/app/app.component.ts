@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedSidebar = this.settings.compactSidebar;
+  collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
 
   collapsedAlarmsBar = true;
 
@@ -229,6 +229,12 @@ export class AppComponent implements OnInit {
       this.renderer.removeClass(document.body, change.previous.className);
       this.renderer.addClass(document.body, change.next.className);
     }));
+  }
+
+  public onNavLinkClick(): void {
+    if (this.media.isActive('lt-md')) {
+      this.collapsedSidebar = true;
+    }
   }
 
   deleteNotification(notification: AbstractNotification): void {
