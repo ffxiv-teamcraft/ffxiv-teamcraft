@@ -276,6 +276,14 @@ export class AppComponent implements OnInit {
     this.translate.use(lang);
   }
 
+  public back(): void {
+    window.history.back();
+  }
+
+  public forward(): void {
+    window.history.forward();
+  }
+
   openSettings(): void {
     this.settingsPopupService.openSettings();
   }

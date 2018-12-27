@@ -4,11 +4,22 @@
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
-      <nz-select class="language-swap" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+      <nz-select fxLayout="row" fxFlex="0 0 auto" class="language-swap" *ngIf="true | ifMobile: false"
+                 [ngModel]="translate.currentLang"
                  (ngModelChange)="use($event)">
         <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                    [nzValue]="locale"></nz-option>
       </nz-select>
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto" fxLayoutGap="5px"
+           *ngIf="platformService.isDesktop()">
+        <button nz-button nzShape="circle" (click)="back()">
+          <i nz-icon type="arrow-left"></i>
+        </button>
+        <button nz-button nzShape="circle" (click)="forward()">
+          <i nz-icon type="arrow-right"></i>
+        </button>
+      </div>
+      <div fxFlex="1 1 auto" *ngIf="!platformService.isDesktop()"></div>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
