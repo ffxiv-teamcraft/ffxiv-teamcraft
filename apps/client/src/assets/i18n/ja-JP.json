@@ -11,10 +11,10 @@
   "List_fork_in_progress": "Copying the list to your account...",
   "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
-    "auth/credential-already-in-use": "このアカウントは既に存在する",
+    "auth/credential-already-in-use": "このアカウントは既に使われている",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
-    "auth/user-not-found": "メール アドレスまたはパスワードが間違っています",
-    "auth/wrong-password": "メール アドレスまたはパスワードが間違っています"
+    "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
+    "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
   "ITEMS": {
     "Title": "アイテム",
