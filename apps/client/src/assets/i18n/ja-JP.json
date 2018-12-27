@@ -62,7 +62,7 @@
     "List_selection_title": "工房 {{workshopName}} に追加するリストを選ぶ",
     "Name_dialog": "地下工房名",
     "Created_by": "クラフター: {{name}}",
-    "Share_link_copied": "工房シェアリンクにコピーされる",
+    "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房になかったり、接近する権限がありません",
     "Shared_workshops": "書く権限がある工房",
     "Rename": "工房の名前変更"
@@ -259,7 +259,7 @@
   "Missing_crafts_amount": "{{amount}} 個不足",
   "Requires": "材料",
   "Copy_item_name_to_clipboard": "アイテム名前をクリップボードにコピーする",
-  "Item_name_copied": "{{itemname}} クリップボードにコピーされた",
+  "Item_name_copied": "{{itemname}} クリップボードにコピーされました",
   "Tier_display_toggle": "制作段階を表示",
   "Precraft_tier": "段階",
   "Regenerating_lists": "リスト更新",
