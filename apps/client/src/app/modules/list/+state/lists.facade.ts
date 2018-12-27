@@ -48,7 +48,8 @@ export class ListsFacade {
       return lists.sort((a, b) => {
         return a.index - b.index;
       });
-    })
+    }),
+    shareReplay(1)
   );
 
   listsWithWriteAccess$ = this.authFacade.loggedIn$.pipe(

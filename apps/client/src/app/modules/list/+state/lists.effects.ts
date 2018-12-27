@@ -50,8 +50,6 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class ListsEffects {
 
-  cleaned = false;
-
   @Effect()
   loadMyLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
@@ -62,12 +60,6 @@ export class ListsEffects {
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
         );
-    }),
-    tap(action => {
-      if (!this.cleaned) {
-        action.payload.filter(l => l.name === 'Gatherings').forEach(l => this.listsFacade.deleteList(l.$key));
-        this.cleaned = true;
-      }
     })
   );
 

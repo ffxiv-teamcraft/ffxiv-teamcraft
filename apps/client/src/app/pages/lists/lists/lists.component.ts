@@ -186,7 +186,7 @@ export class ListsComponent {
         filter(list => list !== undefined),
         first(),
         switchMap(list => this.listManager.upgradeList(list)),
-        tap(l => this.listsFacade.updateList(l))
+        tap(l => this.listsFacade.updateList(l, true))
       );
     });
 
