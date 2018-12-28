@@ -3,8 +3,9 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { first, map, tap } from 'rxjs/operators';
+import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ListCompactsService } from '../../../modules/list/list-compacts.service';
 
 @Component({
   selector: 'app-community-lists',
@@ -21,12 +22,18 @@ export class CommunityListsComponent {
 
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  loading$ = this.listsFacade.communityListsLoading$;
+  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  public pageSize = 20;
+
+  public totalLength = 0;
+
+  loading = true;
 
   filteredLists$: Observable<List[]>;
 
-  constructor(private listsFacade: ListsFacade, route: ActivatedRoute, router: Router) {
-    this.listsFacade.loadCommunityLists();
+  constructor(private listsFacade: ListsFacade, private listCompactsService: ListCompactsService,
+              route: ActivatedRoute, router: Router) {
     this.tags = Object.keys(ListTag).map(key => {
       return {
         value: key,
@@ -35,6 +42,7 @@ export class CommunityListsComponent {
     });
     this.filters$ = combineLatest(this.nameFilter$, this.tagsFilter$).pipe(
       tap(([name, tags]) => {
+        this.page$.next(1);
         const queryParams = {};
         if (name !== '') {
           queryParams['name'] = name;
@@ -58,12 +66,23 @@ export class CommunityListsComponent {
           this.tagsFilter$.next(query.get('tags').split(',').filter(tag => tag !== ''));
         }
       });
-    this.filteredLists$ = combineLatest(this.listsFacade.communityLists$, this.filters$).pipe(
-      map(([lists, filters]) => {
-        return lists.filter(list => {
-          return list.name.indexOf(filters.name) > -1 && filters.tags.reduce((matches, tag) => matches && list.tags.indexOf(<ListTag>tag) > -1, true);
-        });
-      })
+    this.filteredLists$ = this.filters$.pipe(
+      tap(() => this.loading = true),
+      debounceTime(250),
+      switchMap((filters) => {
+        return this.listCompactsService.getCommunityLists(filters.tags.map(tag => ListTag[tag]), filters.name).pipe(
+          tap(lists => {
+            this.totalLength = lists.length;
+          }),
+          switchMap(lists => {
+            return this.page$.pipe(map(page => {
+              const pageStart = Math.max(0, (page - 1) * this.pageSize);
+              return lists.slice(pageStart, pageStart + this.pageSize);
+            }));
+          })
+        );
+      }),
+      tap(() => this.loading = false)
     );
   }
 

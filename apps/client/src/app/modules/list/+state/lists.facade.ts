@@ -7,7 +7,6 @@ import { listsQuery } from './lists.selectors';
 import {
   CreateList,
   DeleteList,
-  LoadCommunityLists,
   LoadListCompact,
   LoadListDetails,
   LoadListsWithWriteAccess,
@@ -38,7 +37,6 @@ export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
   compacts$ = this.store.select(listsQuery.getCompacts);
-  communityListsLoading$ = this.store.select(listsQuery.getCommunityListsLoading);
 
   myLists$ = combineLatest(this.store.select(listsQuery.getCompacts), this.authFacade.userId$).pipe(
     map(([compacts, userId]) => {
@@ -48,7 +46,8 @@ export class ListsFacade {
       return lists.sort((a, b) => {
         return a.index - b.index;
       });
-    })
+    }),
+    shareReplay(1)
   );
 
   listsWithWriteAccess$ = this.authFacade.loggedIn$.pipe(
@@ -221,10 +220,6 @@ export class ListsFacade {
 
   loadMyLists(): void {
     this.store.dispatch(new LoadMyLists());
-  }
-
-  loadCommunityLists(): void {
-    this.store.dispatch(new LoadCommunityLists());
   }
 
   loadListsWithWriteAccess(): void {

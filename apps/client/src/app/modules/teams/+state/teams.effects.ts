@@ -15,7 +15,7 @@ export class TeamsEffects {
     ofType<LoadMyTeams>(TeamsActionTypes.LoadMyTeams),
     switchMap(() => this.authFacade.userId$),
     switchMap((uid) => this.teamService.getUserTeams(uid).pipe(
-      map(teams => new MyTeamsLoaded(teams, uid))
+      map(teams => new MyTeamsLoaded(teams.filter(t => t.members[0] !== '0'), uid))
     ))
   );
 

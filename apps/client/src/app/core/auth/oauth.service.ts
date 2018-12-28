@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserCredential } from '@firebase/auth-types';
 import { from, Observable, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class OauthService {
@@ -26,8 +27,8 @@ export class OauthService {
       signIn$ = new Subject<UserCredential>();
       this._ipc.on('oauth-reply', (event, code) => {
         const authorizationUrl = provider.providerId === 'google.com' ?
-          `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth?code=${code}&redirect_uri=http://localhost` :
-          `\`https://us-central1-ffxivteamcraft.cloudfunctions.net/facebook-oauth?code=${code}&redirect_uri=http://localhost\``;
+          `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost` :
+          `\`https://us-central1-ffxivteamcraft.cloudfunctions.net/facebook-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost\``;
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {

@@ -10,6 +10,10 @@ import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } 
 import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-pricing',
@@ -41,7 +45,8 @@ export class PricingComponent {
 
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
-              private progressService: ProgressPopupService) {
+              private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private translate: TranslateService, private message: NzMessageService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -121,6 +126,28 @@ export class PricingComponent {
 
   public save(list: List): void {
     this.listsFacade.updateList(list);
+  }
+
+  public getEarningText(rows: ListRow[], list: List): string {
+    return rows.filter(row => row.usePrice)
+      .reduce((total, row) => {
+        const price = this.pricingService.getEarnings(row);
+        const amount = this.pricingService.getAmount(list.$key, row, true);
+        let priceString: string;
+        if (price.hq > 0 && amount.hq > 0) {
+          priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
+          if (price.nq > 0 && amount.nq > 0) {
+            priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+          }
+        } else {
+          priceString = `${price.nq}gil x${amount.nq}(NQ)`;
+        }
+        return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
+      }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+  }
+
+  public afterCopy(): void {
+    this.message.success(this.translate.instant('PRICING.Content_copied'));
   }
 
   private getSpendingTotal(list: List): number {

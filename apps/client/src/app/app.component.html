@@ -4,11 +4,22 @@
       <a class="logo" routerLink="/">
         {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
       </a>
-      <nz-select class="language-swap" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+      <nz-select fxLayout="row" fxFlex="0 0 auto" class="language-swap" *ngIf="true | ifMobile: false"
+                 [ngModel]="translate.currentLang"
                  (ngModelChange)="use($event)">
         <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                    [nzValue]="locale"></nz-option>
       </nz-select>
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="1 1 auto" fxLayoutGap="5px"
+           *ngIf="platformService.isDesktop()">
+        <button nz-button nzShape="circle" (click)="back()">
+          <i nz-icon type="arrow-left"></i>
+        </button>
+        <button nz-button nzShape="circle" (click)="forward()">
+          <i nz-icon type="arrow-right"></i>
+        </button>
+      </div>
+      <div fxFlex="1 1 auto" *ngIf="!platformService.isDesktop()"></div>
       <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu">
         <li class="clock ant-menu-item" fxShow fxHide.lt-sm fxFlex>
           {{time$ | async}}
@@ -122,57 +133,64 @@
         <div>
           <ul nz-menu [class.dark]="settings.theme.isDark" [nzTheme]="'dark'"
               [nzMode]="'inline'" [nzInlineCollapsed]="collapsedSidebar">
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/search">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/search">
           <span>
               <i nz-icon type="search"></i>
               <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/lists">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/lists">
           <span>
               <i nz-icon type="profile"></i>
               <span class="nav-text">{{'Lists' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/alarms">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/alarms">
           <span>
               <i nz-icon type="bell"></i>
               <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/rotations">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/rotations">
           <span>
               <i nz-icon type="build"></i>
               <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/community-lists">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/community-lists">
           <span>
               <i nz-icon type="solution"></i>
               <span class="nav-text">{{'Public_lists' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected"
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                routerLink="/gathering-location">
           <span>
               <i nz-icon type="environment-o"></i>
               <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/levequests">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/levequests">
           <span>
               <i nz-icon type="book"></i>
               <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected"
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
                routerLink="/macro-translator">
           <span>
               <i nz-icon type="message"></i>
               <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
           </span>
             </a>
-            <a nz-menu-item class="menu-link" routerLinkActive="ant-menu-item-selected" routerLink="/about">
+            <a nz-menu-item class="menu-link" (click)="onNavLinkClick()" routerLinkActive="ant-menu-item-selected"
+               routerLink="/about">
           <span>
               <i nz-icon type="info-circle-o"></i>
               <span class="nav-text">{{'ABOUT.title' | translate}}</span>

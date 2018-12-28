@@ -77,8 +77,18 @@
   </nz-card>
 
   <nz-card>
-    <nz-card-meta [nzTitle]="'Earning' | translate"
+    <nz-card-meta [nzTitle]="title"
                   nzDescription="{{getTotalEarnings(list.finalItems, list) | number:'1.0-0'}} gil"></nz-card-meta>
+    <ng-template #title>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'Earning' | translate}}</div>
+        <button nz-button ngxClipboard nz-tooltip nzShape="circle"
+                [nzTitle]="'PRICING.Copy_earnings_as_text' | translate"
+                [cbContent]="getEarningText(list.finalItems, list)" (cbOnSuccess)="afterCopy()">
+          <i nz-icon type="copy"></i>
+        </button>
+      </div>
+    </ng-template>
     <nz-collapse class="collapse-container">
       <nz-collapse-panel *ngIf="list.finalItems.length > 0" [nzHeader]="header">
         <ng-template #header>

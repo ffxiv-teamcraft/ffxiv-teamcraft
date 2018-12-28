@@ -6,7 +6,7 @@
 import { version } from './version';
 
 export const environment = {
-  production: true,
+  production: false,
   version: version,
   firebase: {
     apiKey: 'AIzaSyCkrNPf7XlyuxQeqNtynvDFDnQ-XigG3WA',

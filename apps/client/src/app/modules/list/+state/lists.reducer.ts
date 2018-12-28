@@ -7,7 +7,6 @@ export interface ListsState {
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
   compactsConnected: boolean;
-  communityListsConnected: boolean;
   needsVerification: boolean;
   deleted: string[];
 }
@@ -16,7 +15,6 @@ export const initialState: ListsState = {
   compacts: [],
   listDetails: [],
   compactsConnected: false,
-  communityListsConnected: false,
   needsVerification: false,
   deleted: []
 };
@@ -76,18 +74,6 @@ export function listsReducer(
           ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
           ...action.payload
         ]
-      };
-      break;
-    }
-
-    case ListsActionTypes.CommunityListsLoaded: {
-      state = {
-        ...state,
-        compacts: [
-          ...state.compacts.filter(compact => action.payload.find(c => c.$key === compact.$key) === undefined),
-          ...action.payload
-        ],
-        communityListsConnected: true
       };
       break;
     }
