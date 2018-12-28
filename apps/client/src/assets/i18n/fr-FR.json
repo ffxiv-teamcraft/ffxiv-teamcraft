@@ -697,6 +697,7 @@
     "Invite_link_copied": "Lien d'invitation de l'équipe copié dans votre presse-papiers",
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
       "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
@@ -708,6 +709,16 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
       "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
