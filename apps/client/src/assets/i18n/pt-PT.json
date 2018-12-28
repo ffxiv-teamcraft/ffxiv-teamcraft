@@ -283,9 +283,9 @@
     "Connected_with_patreon": "Conectado com patreon",
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
     "COPY_TYPE": {
-      "Classic": "Copy item name",
+      "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
     }
   },
@@ -322,10 +322,10 @@
     "Your_lists": "As suas listas",
     "Outdated_tag": "Desactualizado",
     "No_lists": "Não tem nenhuma lista",
-    "Lists_search_placeholder": "Search for a list...",
+    "Lists_search_placeholder": "Pesquisar uma lista...",
     "Add_to_a_list": "Adicionar a uma lista",
-    "Please_pick_recipe": "Please pick a recipe for this item",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Please_pick_recipe": "Escolha uma fórmula para este item",
+    "Import_description": "Escolha uma fórmula que queira utilizar para os itens que consegue criar e seleccione uma lista, esses itens serão adicionados à lista e será então redireccionado a essa lista.",
     "IMPORT": {
       "Title": "Importar lista de um website externo",
       "Paste_link_step_title": "Cole o link da lista externa",
@@ -337,7 +337,7 @@
       "Back": "Voltar",
       "Give_list_name": "Dê um nome à sua lista nova",
       "Final_step": "Validação",
-      "Choices_needed": "Some recipe choices are pending",
+      "Choices_needed": "Algumas escolhas da fórmula estão pendentes",
       "Creating_list": "Criando a lista",
       "Loading_items": "Loading items informations"
     }
@@ -549,8 +549,8 @@
     "Hq": "HQ",
     "Cp_amount": "CP",
     "Simulate_tooltip": "Craft in simulator",
-    "Change_recipe": "Change recipe",
-    "Changing_recipe_save_warning": "Your changes will be lost if you don't save them before picking a recipe",
+    "Change_recipe": "Mudar a fórmula",
+    "Changing_recipe_save_warning": "As suas alterações serão perdidas se não salvar antes de escolher uma fórmul",
     "Too_many_aactions": "You have more than 10 cross-class actions used for this macro",
     "Convert_rotation": "Open in standard simulator",
     "Configuration": "Configuration",
@@ -589,7 +589,7 @@
     "Change_rotation": "Change rotation",
     "New_rotation_folder": "New folder",
     "CUSTOM": {
-      "Recipe_configuration": "Recipe configuration",
+      "Recipe_configuration": "Configuração da fórmula",
       "Recipe_level": "Level da receita",
       "Recipe_progress": "Max progress",
       "Recipe_quality": "Max quality",
