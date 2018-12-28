@@ -526,7 +526,8 @@
     "Saving": "Sauvegarde des permissions",
     "No_anonymous": "Vous devez créer un compte pour gérer les permissions",
     "Propagate_changes": "Propager les permissions aux listes dans l'atelier",
-    "Propagate_changes_done": "Permissions propagées avec succès"
+    "Propagate_changes_done": "Permissions propagées avec succès",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
