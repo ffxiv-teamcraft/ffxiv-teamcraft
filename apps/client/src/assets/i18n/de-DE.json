@@ -9,7 +9,7 @@
   "See_on_map": "Auf der Karte anzeigen",
   "Edit_amount": "Anzahl ändern",
   "List_fork_in_progress": "Copying the list to your account...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
