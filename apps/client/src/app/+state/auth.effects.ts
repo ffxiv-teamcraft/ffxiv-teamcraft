@@ -2,7 +2,17 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  tap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -107,6 +117,7 @@ export class AuthEffects {
         this.patreonService.refreshToken(user);
       }
     }),
+    distinctUntilChanged((a,b) => JSON.stringify(a) === JSON.stringify(b)),
     map(user => new UserFetched(user))
   );
 
