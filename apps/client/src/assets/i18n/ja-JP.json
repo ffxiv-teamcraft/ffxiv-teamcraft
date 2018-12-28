@@ -534,7 +534,7 @@
     "Not_found": "ページが見つかりませんでした。"
   },
   "SIMULATOR": {
-    "Fixed_notification_number": "固定されたお知らせ",
+    "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "Echo 時間",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "マクロ遅延時間",
@@ -636,7 +636,7 @@
       "Action": "フリーカンパニーのバフ選択",
       "Save_on_profile": "プロフィールに保存する",
       "Reset_set": "ステータスをリセット",
-      "Save_consumables": "現在の消耗品をデフォルト値に設定",
+      "Save_consumables": "現在の消耗品をデフォルトに設定保存する",
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
