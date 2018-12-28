@@ -29,9 +29,12 @@
     <app-user-avatar class="working-on-it" *ngIf="item.workingOnIt !== undefined" messageKey="Is_working_on_it"
                      [userId]="item.workingOnIt" [width]="24"></app-user-avatar>
     <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'" class="item-options">
-      <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20" (click)="$event.stopPropagation()"
+      <button nz-dropdown nzSize="small" [disabled]="(permissionLevel$ | async) < 20"
+              (click)="$event.stopPropagation()"
               nz-button [nzShape]="'circle'">
-        <i nz-icon type="ellipsis"></i>
+        <nz-badge [nzDot]="commentBadge$ | async">
+          <i nz-icon type="ellipsis"></i>
+        </nz-badge>
       </button>
       <ul nz-menu *ngIf="userId$ | async as userId">
         <li nz-menu-item ngxClipboard cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
@@ -47,7 +50,9 @@
         <ng-container *ngIf="listsFacade.selectedList$ | async as list">
           <li nz-menu-item *ngIf="userId$ | async as userId"
               (click)="openCommentsPopup(list, list.authorId === userId)">
-            {{'COMMENTS.Title' | translate}}
+            <nz-badge [nzDot]="commentBadge$ | async">
+              {{'COMMENTS.Title' | translate}}
+            </nz-badge>
           </li>
         </ng-container>
         <li nz-menu-item (click)="addAllAlarms()" *ngIf="item.alarms !== undefined && item.alarms.length > 0">

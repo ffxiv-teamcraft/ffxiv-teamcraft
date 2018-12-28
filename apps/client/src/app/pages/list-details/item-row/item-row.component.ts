@@ -12,7 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemDetailsPopup } from '../item-details/item-details-popup';
 import { GatheredByComponent } from '../item-details/gathered-by/gathered-by.component';
-import { filter, first, map, shareReplay, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { HuntingComponent } from '../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../item-details/instances/instances.component';
 import { ReducedFromComponent } from '../item-details/reduced-from/reduced-from.component';
@@ -37,6 +37,7 @@ import { NumberQuestionPopupComponent } from '../../../modules/number-question-p
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Craft } from '../../../model/garland-tools/craft';
+import { CommentsService } from '../../../modules/comments/comments.service';
 
 @Component({
   selector: 'app-item-row',
@@ -85,6 +86,8 @@ export class ItemRowComponent implements OnInit {
 
   missingBooks$: Observable<number[]>;
 
+  commentBadge$: Observable<boolean>;
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -94,10 +97,24 @@ export class ItemRowComponent implements OnInit {
               private discordWebhookService: DiscordWebhookService,
               public settings: SettingsService,
               private listManager: ListManagerService,
-              private rotationPicker: RotationPickerService) {
+              private rotationPicker: RotationPickerService,
+              private commentsService: CommentsService) {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
+      shareReplay(1)
+    );
+
+    this.commentBadge$ = this.listsFacade.selectedList$.pipe(
+      switchMap((list) => {
+        return this.commentsService.getComments(
+          CommentTargetType.LIST,
+          list.$key,
+          `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`
+        );
+      }),
+      map(comments => comments.length > 0),
+      startWith(false),
       shareReplay(1)
     );
 
