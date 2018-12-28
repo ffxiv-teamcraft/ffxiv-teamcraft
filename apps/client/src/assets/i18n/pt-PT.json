@@ -350,26 +350,26 @@
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copie toda a lista como texto",
     "Copied_as_text": "Conteúdo copiado para a área de transferências",
-    "Total_price": "Total trades (gils and currencies)",
+    "Total_price": "Total de compras (gil e outras moeadas)",
     "Total_trade_price": "Total: ",
-    "Add_all_alarms": "Add all alarms for this list",
+    "Add_all_alarms": "Adicionar todos os alarmes d'esta lista",
     "History": "Histórico",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
-      "Content": "This list is now completed, what do you want to do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Title": "Lista concluída",
+      "Content": "Esta lista está concluída, o que quer fazer?",
+      "Delete": "Apagar esta lista",
+      "Reset": "Repor a lista",
+      "Nothing": "Nada"
     },
     "BUTTONS": {
-      "Add_link_description": "Create a custom link for this list",
-      "Create_template_description": "Create a template link for this list, which will create a copy of the list for whoever opens it",
-      "Copy_template_url_description": "Copy the template link for this list, which will create a copy of the list for whoever opens it",
-      "Share_description": "Copy share link to your clipboard",
+      "Add_link_description": "Criar um link personalizado para esta lista",
+      "Create_template_description": "Criar um link para um modelo d'esta lista, que criará uma cópia da lista para quem a abrir",
+      "Copy_template_url_description": "Copiar o link de modelo d'esta lista, que criará uma cópia da lista para quem a abrir",
+      "Share_description": "Copiar link de partilha para a área de transferência",
       "Open": "Abrir lista",
       "Open_description": "Aceder à lista",
       "Delete": "Eliminar lista",
-      "Delete_description": "Deletes the list",
+      "Delete_description": "Apaga a lista",
       "Delete_warning": "Deleting a list can't be undone"
     }
   },
