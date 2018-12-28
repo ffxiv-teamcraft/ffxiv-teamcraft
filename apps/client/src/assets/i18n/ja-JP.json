@@ -637,8 +637,8 @@
       "Save_on_profile": "プロフィールに保存する",
       "Reset_set": "ステータスをリセット",
       "Save_consumables": "現在の消耗品をデフォルト値に設定",
-      "No_food": "食事なし",
-      "No_medicine": "薬茶なし",
+      "No_food": "飯なし",
+      "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
       "STATS": {
         "CP": "CP",
