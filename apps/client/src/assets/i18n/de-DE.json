@@ -24,7 +24,7 @@
     "Crafts_amount": "# Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -46,7 +46,7 @@
   "Work_on_it": "Als 'in Arbeit' markieren",
   "Remove_work_on_it": "Nutzerzuordnung entfernen",
   "Add_as_collectible": "Als Sammlerstück hinzufügen",
-  "Collectable_flag": "Collectable",
+  "Collectable_flag": "Sammlerstücke",
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
   "Unmute_alarms": "Unmute alarms",
