@@ -16,6 +16,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
+import { WebhookSetting } from '../../../model/team/webhook-setting';
 
 @Component({
   selector: 'app-teams',
@@ -160,6 +161,10 @@ export class TeamsComponent implements OnInit {
 
   trackByTeam(index: number, team: Team): string {
     return team.$key;
+  }
+
+  trackByPermission(index: number, permission: WebhookSetting): string {
+    return permission.name;
   }
 
   discordOauth(team: Team): void {

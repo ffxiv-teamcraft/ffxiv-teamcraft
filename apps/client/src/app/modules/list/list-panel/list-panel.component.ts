@@ -151,7 +151,7 @@ export class ListPanelComponent {
 
   assignTeam(list: List, team: Team): void {
     list.teamId = team.$key;
-    this.listsFacade.updateList(list);
+    this.listsFacade.updateListUsingCompact(list);
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListAddedToTeam(team, list);
     }

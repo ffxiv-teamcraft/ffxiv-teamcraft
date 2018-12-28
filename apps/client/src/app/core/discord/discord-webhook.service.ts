@@ -8,6 +8,7 @@ import { List } from '../../modules/list/model/list';
 import { LinkToolsService } from '../tools/link-tools.service';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { CharacterService } from '../api/character.service';
+import { WebhookSettingType } from '../../model/team/webhook-setting-type';
 
 @Injectable()
 export class DiscordWebhookService {
@@ -49,6 +50,9 @@ export class DiscordWebhookService {
   }
 
   notifyListAddedToTeam(team: Team, list: List): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.LIST_ADDED)) {
+      return;
+    }
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_added_notification', {
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`),
@@ -57,6 +61,9 @@ export class DiscordWebhookService {
   }
 
   notifyListRemovedFromTeam(team: Team, list: List): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.LIST_REMOVED)) {
+      return;
+    }
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_removed_notification', {
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`),
@@ -65,6 +72,9 @@ export class DiscordWebhookService {
   }
 
   notifyItemAddition(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
+      return;
+    }
     const itemName = this.l12n.getItem(itemId);
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
       amount: amount,
@@ -76,6 +86,9 @@ export class DiscordWebhookService {
   }
 
   notifyItemDeletion(itemId: number, itemIcon: number, amount: number, list: List, team: Team): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
+      return;
+    }
     const itemName = this.l12n.getItem(itemId);
     this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
       amount: amount,
@@ -87,6 +100,9 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, itemIcon: number, list: List, memberId: string, amount: number, itemId: number): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
+      return;
+    }
     const itemName = this.l12n.getItem(itemId);
     this.characterService.getCharacter(memberId).pipe(
       first(),
@@ -105,6 +121,9 @@ export class DiscordWebhookService {
   }
 
   notifyMemberJoined(team: Team, memberId: string): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.MEMBER_JOINED)) {
+      return;
+    }
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {
@@ -118,6 +137,9 @@ export class DiscordWebhookService {
   }
 
   notifyMemberKicked(team: Team, memberId: string): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.MEMBER_LEFT)) {
+      return;
+    }
     this.characterService.getCharacter(memberId).pipe(
       first(),
       map(character => {
@@ -131,6 +153,9 @@ export class DiscordWebhookService {
   }
 
   notifyUserAssignment(team: Team, itemIcon: number, memberId: string, itemId: number, list: List): void {
+    if (!team.hasSettingEnabled(WebhookSettingType.USER_ASSIGNMENT)) {
+      return;
+    }
     const itemName = this.l12n.getItem(itemId);
     this.characterService.getCharacter(memberId).pipe(
       first(),
