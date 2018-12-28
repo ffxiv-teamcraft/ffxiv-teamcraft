@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
+import { Character, CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
-import { debounceTime, map, mergeMap, startWith, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
@@ -25,6 +25,8 @@ export class CharacterLinkPopupComponent {
   public lodestoneId = new FormControl(null);
 
   public result$: Observable<CharacterSearchResultRow[]>;
+
+  public lodestoneIdCharacter$: Observable<Character>;
 
   public loadingResults = false;
 
@@ -60,6 +62,15 @@ export class CharacterLinkPopupComponent {
         tap(() => this.loadingResults = false),
         startWith([])
       );
+
+    this.lodestoneIdCharacter$ = this.lodestoneId.valueChanges.pipe(
+      filter(id => id && id !== ''),
+      mergeMap(lodestoneId => {
+        return this.xivapi.getCharacter(lodestoneId);
+      }),
+      map(response => response.Character),
+      filter(character => character !== null)
+    );
   }
 
   setKoreanCharacter(): void {
