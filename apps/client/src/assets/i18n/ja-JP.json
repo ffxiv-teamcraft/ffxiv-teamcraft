@@ -7,7 +7,7 @@
   "FC_name": "フリーカンパニー前",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
-  "Edit_amount": "総量を訂正",
+  "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "Copying the list to your account...",
   "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
   "AUTH_ERRORS": {
@@ -48,8 +48,8 @@
   "Add_as_collectible": "蒐集品として追加",
   "Collectable_flag": "蒐集品",
   "Compact_display": "コンパクト表示",
-  "Mute_alarms": "アラームをミュート",
-  "Unmute_alarms": "アラームを解除",
+  "Mute_alarms": "アラームをミュートする",
+  "Unmute_alarms": "アラームのミュートを解除する",
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了した後、削除",
   "Retainer_ventures": "リテイナーベンチャー",
@@ -526,7 +526,8 @@
     "Saving": "権限設定を保存中",
     "No_anonymous": "権限を管理するには、アカウントが要ります",
     "Propagate_changes": "工房内部にリストに対する権限提供",
-    "Propagate_changes_done": "工房内部リストに対する変更が適用されました"
+    "Propagate_changes_done": "工房内部リストに対する変更が適用されました",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "ウィキ",
