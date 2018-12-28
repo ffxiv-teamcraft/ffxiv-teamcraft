@@ -1,3 +1,5 @@
+<nz-alert nzType="info" nzShowIcon [nzMessage]="'PERMISSIONS.Team_notice' | translate"
+          *ngIf="data['teamId'] !== undefined"></nz-alert>
 <div *ngIf="permissionRows$ | async as permissionRows; else loader">
   <nz-list [nzRenderItem]="permissionRowTemplate" [nzDataSource]="permissionRows" nzSize="small">
     <ng-template #permissionRowTemplate let-row>
