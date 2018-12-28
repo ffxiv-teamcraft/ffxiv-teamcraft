@@ -11,6 +11,8 @@ RUN echo "deb http://httpredir.debian.org/debian stretch-backports main" | sudo 
       wine64/stretch-backports \
       libwine/stretch-backports \
       libwine:i386/stretch-backports \
-      fonts-wine/stretch-backports
+      fonts-wine/stretch-backports\
+      libssl1.0.0\
+      libssl-dev
 
 LABEL com.circleci.preserve-entrypoint=true
