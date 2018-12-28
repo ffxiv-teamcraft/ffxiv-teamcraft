@@ -53,7 +53,7 @@
   "Hide_used": "使用された項目を隠す",
   "Collapse_if_done": "完了した後、削除",
   "Retainer_ventures": "リテイナーベンチャー",
-  "Requires_x_ventures": "総 {{amount}} 回のリテーナーアドベンチャーが必要です。",
+  "Requires_x_ventures": "総 {{amount}} 回のリテーナーベンチャーが必要です。",
   "WORKSHOP": {
     "Workshops": "地下工房",
     "Add_lists": "リストを追加する",
@@ -63,7 +63,7 @@
     "Name_dialog": "地下工房名",
     "Created_by": "クラフター: {{name}}",
     "Share_link_copied": "工房シェアリンクにコピーされました",
-    "Not_found": "この工房になかったり、接近する権限がありません",
+    "Not_found": "この工房に無いか、アクセスする権限がありません",
     "Shared_workshops": "書く権限がある工房",
     "Rename": "工房の名前変更"
   },
@@ -75,14 +75,14 @@
     "Thanks_title": "ありがとう!",
     "Data_sources": "資料の出所",
     "Patreon_supporters": "Patreonサポーター",
-    "Contributors": "助っ人"
+    "Contributors": "サポーター"
   },
   "Patreon_login_success": "Patreon login success !",
-  "Hide_if_empty": "空いてる場合隠す",
+  "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
   "Ephemeral_tag": "時間制",
-  "Quick_list_create": "簡易リスト生成(完了した後、削除)",
+  "Quick_list_create": "簡易リストを生成(完了した後、削除)",
   "Tag_filter": "タグ",
   "Public_lists": "コミュニティリスト",
   "Your_public_lists": "マイコミュニティリスト",
