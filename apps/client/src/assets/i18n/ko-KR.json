@@ -697,6 +697,7 @@
     "Invite_link_copied": "팀 초대링크를 클립보드에 복사했습니다.",
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
       "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
@@ -708,6 +709,16 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "**{{oldName}}** 에서 **{{newName}}** 로 이름이 변경되었습니다.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
