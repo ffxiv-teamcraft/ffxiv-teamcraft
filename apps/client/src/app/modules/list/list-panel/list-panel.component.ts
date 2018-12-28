@@ -135,6 +135,7 @@ export class ListPanelComponent {
           );
         }))
         .subscribe(list => {
+          delete this.updateAmountDebounces[item.id];
           this.listsFacade.updateList(list, true);
         });
     }
