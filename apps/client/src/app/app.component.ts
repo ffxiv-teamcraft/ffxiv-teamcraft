@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedSidebar = this.settings.compactSidebar;
+  collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
 
   collapsedAlarmsBar = true;
 
@@ -231,6 +231,12 @@ export class AppComponent implements OnInit {
     }));
   }
 
+  public onNavLinkClick(): void {
+    if (this.media.isActive('lt-md')) {
+      this.collapsedSidebar = true;
+    }
+  }
+
   deleteNotification(notification: AbstractNotification): void {
     this.notificationsFacade.removeNotification(notification.$key);
   }
@@ -268,6 +274,14 @@ export class AppComponent implements OnInit {
     this.locale = lang;
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
+  }
+
+  public back(): void {
+    window.history.back();
+  }
+
+  public forward(): void {
+    window.history.forward();
   }
 
   openSettings(): void {

@@ -92,8 +92,8 @@ export class PricingComponent {
               .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
             return {
               item: row,
-              hq: cheapestHq ? cheapestHq.PricePerUnit : 0,
-              nq: cheapestNq ? cheapestNq.PricePerUnit : 0
+              hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
+              nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq
             };
           })
         );

@@ -2,7 +2,17 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  tap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -89,10 +99,12 @@ export class AuthEffects {
   @Effect()
   fetchUserOnAuthenticated$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated),
-    switchMap((action: Authenticated) => this.userService.get(action.uid)),
+    switchMap((action: Authenticated) => this.userService.get(action.uid).pipe(
+      filter(user => user.$key !== undefined)
+    )),
     catchError((error) => {
-      if (error.message.indexOf('Not found') > -1) {
-        of(new TeamcraftUser());
+      if (error.message.toLowerCase().indexOf('not found') > -1) {
+        return of(new TeamcraftUser());
       } else {
         this.authFacade.logout();
         this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
@@ -105,6 +117,7 @@ export class AuthEffects {
         this.patreonService.refreshToken(user);
       }
     }),
+    distinctUntilChanged((a,b) => JSON.stringify(a) === JSON.stringify(b)),
     map(user => new UserFetched(user))
   );
 
@@ -113,7 +126,11 @@ export class AuthEffects {
     // Avoid recursion
     filter(action => action.type !== AuthActionTypes.NoLinkedCharacter && action.type !== AuthActionTypes.LinkingCharacter),
     withLatestFrom(this.store),
-    filter(([action, state]) => !state.auth.loading && state.auth.loggedIn && state.auth.user !== null),
+    filter(([action, state]) => {
+      return !state.auth.loading
+        && state.auth.loggedIn
+        && (state.auth.user === null || state.auth.user.$key === undefined || state.auth.user.$key === state.auth.uid);
+    }),
     filter(([action, state]) => state.auth.user.lodestoneIds.length === 0 && state.auth.user.defaultLodestoneId === undefined && state.auth.characters.length === 0),
     map(() => new NoLinkedCharacter())
   );

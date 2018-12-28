@@ -39,6 +39,8 @@ export class ListsComponent {
 
   public loading$: Observable<boolean>;
 
+  private regenerating = false;
+
   public needsVerification$ = this.listsFacade.needsVerification$;
 
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
@@ -131,12 +133,11 @@ export class ListsComponent {
       tap(display => {
         display.otherLists
           .filter((l, i) => l.index !== i)
-          .map((l, i) => {
-            l.index = i;
-            return l;
-          })
-          .forEach(l => {
-            this.listsFacade.updateListIndex(l);
+          .forEach((l, i) => {
+            if (l.index !== i && !this.regenerating) {
+              l.index = i;
+              this.listsFacade.updateListIndex(l);
+            }
           });
       }),
       shareReplay(1)
@@ -176,6 +177,7 @@ export class ListsComponent {
   }
 
   regenerateLists(compacts: List[]): void {
+    this.regenerating = true;
     compacts.forEach(compact => {
       this.listsFacade.load(compact.$key);
     });
@@ -186,7 +188,7 @@ export class ListsComponent {
         filter(list => list !== undefined),
         first(),
         switchMap(list => this.listManager.upgradeList(list)),
-        tap(l => this.listsFacade.updateList(l))
+        tap(l => this.listsFacade.updateList(l, true))
       );
     });
 
@@ -203,6 +205,7 @@ export class ListsComponent {
         })
       )
       .subscribe(() => {
+        this.regenerating = false;
         this.message.success(this.translate.instant('LISTS.Regenerated_all'));
       });
   }

@@ -20,6 +20,9 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { ListTemplate } from '../../../core/database/custom-links/list-template';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
+import { Team } from '../../../model/team/team';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { TeamsFacade } from '../../teams/+state/teams.facade';
 
 @Component({
   selector: 'app-list-panel',
@@ -51,6 +54,8 @@ export class ListPanelComponent {
 
   public customLink$: Observable<CustomLink>;
 
+  public teams$: Observable<Team[]>;
+
   private syncLinkUrl: string;
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
@@ -70,13 +75,15 @@ export class ListPanelComponent {
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
-              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade) {
+              public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
+              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
 
+    this.teams$ = this.teamsFacade.myTeams$;
 
     this.listTemplate$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => {
@@ -135,10 +142,19 @@ export class ListPanelComponent {
           );
         }))
         .subscribe(list => {
+          delete this.updateAmountDebounces[item.id];
           this.listsFacade.updateList(list, true);
         });
     }
     updateSubject.next(inputValue);
+  }
+
+  assignTeam(list: List, team: Team): void {
+    list.teamId = team.$key;
+    this.listsFacade.updateListUsingCompact(list);
+    if (team.webhook !== undefined) {
+      this.discordWebhookService.notifyListAddedToTeam(team, list);
+    }
   }
 
   renameList(_list: List): void {

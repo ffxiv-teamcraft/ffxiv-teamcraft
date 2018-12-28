@@ -43,6 +43,7 @@
         {{'SETTINGS.Reset_password' | translate}}
       </button>
       <ng-container *ngIf="user$ | async as user">
+        <div>UserID: {{user.$key}}</div>
         <button nz-button nzType="primary" (click)="patreonOauth()"
                 *ngIf="user.patreonToken === undefined; else connectedWithPatreon">
           {{'SETTINGS.Connect_with_patreon' | translate}}

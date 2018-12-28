@@ -9,7 +9,7 @@ firestore.settings({timestampsInSnapshots: true});
 function getCompact(list) {
   const compact = list;
   delete compact.items;
-  compact.finalItems = compact.finalItems.map(item => {
+  compact.finalItems = (compact.finalItems || []).map(item => {
     const entry = {
       id: item.id,
       icon: item.icon,
@@ -41,14 +41,6 @@ exports.firestoreCountlistsDelete = functions.firestore.document('/lists/{uid}')
   const ref = admin.database().ref('/list_count');
   return ref.transaction(current => {
     return current - 1;
-  }).then(() => null);
-});
-
-exports.firestoreCountCommissions = functions.firestore.document('/commissions/{server}/registry/{uid}').onCreate(() => {
-  const creationsRef = admin.database().ref('/commissions_created');
-  // Increment the number of lists created using the tool.
-  return creationsRef.transaction(current => {
-    return current + 1;
   }).then(() => null);
 });
 

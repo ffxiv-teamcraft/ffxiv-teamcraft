@@ -49,6 +49,20 @@
     </nz-form-label>
     <input type="number" id="LodestoneId" nz-input [formControl]="lodestoneId">
   </nz-form-item>
+  <div *ngIf="lodestoneIdCharacter$ | async as lodestoneIdCharacter">
+    <nz-list-item [nzActions]="[selectAction]">
+      <ng-template #selectAction>
+        <button nz-button nzType="primary" (click)="selectCharacter(lodestoneIdCharacter)">{{'COMMON.Select' | translate}}</button>
+      </ng-template>
+      <nz-list-item-meta
+        [nzTitle]="nzTitle"
+        [nzAvatar]="lodestoneIdCharacter.Avatar">
+        <ng-template #nzTitle>
+          <span>{{lodestoneIdCharacter.Name}}</span>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </div>
 </div>
 
 <label nz-checkbox [(ngModel)]="useAsDefault">{{'Use_as_default_character' | translate}}</label>

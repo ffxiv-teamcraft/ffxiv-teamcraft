@@ -2,11 +2,11 @@
   "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-rc.0",
+  "version": "5.0.0-rc.2",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
-    "appId": "ffxivteamcraft-beta",
+    "appId": "ffxivteamcraft",
     "artifactName": "${productName}-setup.${ext}",
     "forceCodeSigning": true,
     "directories": {
@@ -153,7 +153,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",
     "@angular-devkit/schematics": "^0.8.8",
-    "@angular/cli": "7.1.0",
+    "@angular/cli": "7.1.4",
     "@angular/compiler-cli": "^7.1.4",
     "@angular/language-service": "^7.1.4",
     "@firebase/auth-types": "^0.4.0",

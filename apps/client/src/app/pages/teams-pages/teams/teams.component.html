@@ -47,6 +47,16 @@
                 <nz-option [nzLabel]="'ko'" [nzValue]="'es'"></nz-option>
               </nz-select>
             </div>
+            <div *ngIf="team.webhook !== undefined" fxLayout="column">
+              <h3>{{'TEAMS.Webhook_configuration' | translate}}</h3>
+              <div nz-row>
+                <div nz-col [nzMd]="12" [nzSm]="24" *ngFor="let row of team.webhookSettings; trackBy: trackByPermission">
+                  <label nz-checkbox
+                         [(ngModel)]="row.value"
+                         (ngModelChange)="updateTeam(team)">{{('TEAMS.PERMISSIONS.' + row.name) | translate}}</label>
+                </div>
+              </div>
+            </div>
             <nz-alert nzType="error" *ngIf="errorCode$.value as errorCode"
                       nzMessage="{{'TEAMS.Webhook_error' | translate}} {{errorCode}}" nzShowIcon></nz-alert>
             <div fxLayout="row" fxLayoutGap="5px">

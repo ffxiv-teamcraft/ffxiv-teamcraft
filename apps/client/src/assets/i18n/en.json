@@ -122,8 +122,8 @@
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",
-    "Confirm_group_delete": "Are your sure you want to delete this group?",
-    "Confirm_group_delete_with_alarms": "Are your sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Add a note",
     "Volume": "Volume",
     "Macro_copied": "Macro copied to your clipboard",
@@ -526,7 +526,8 @@
     "Saving": "Saving permissions",
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
-    "Propagate_changes_done": "Changes propagated to lists inside the workshop"
+    "Propagate_changes_done": "Changes propagated to lists inside the workshop",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -696,6 +697,7 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
@@ -707,6 +709,16 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {

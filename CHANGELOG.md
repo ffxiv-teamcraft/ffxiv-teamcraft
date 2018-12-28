@@ -2,6 +2,168 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.2"></a>
+# [5.0.0-rc.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-beta.4...v5.0.0-rc.2) (2018-12-28)
+
+
+### Bug Fixes
+
+* added alert to explain teams permissions inside permission popup ([f782748](https://github.com/Supamiu/ffxiv-teamcraft/commit/f782748))
+* fixed a performance issue with auth system ([b9aaad3](https://github.com/Supamiu/ffxiv-teamcraft/commit/b9aaad3))
+* fixed an error popup sometimes poping in desktop app ([41eaddd](https://github.com/Supamiu/ffxiv-teamcraft/commit/41eaddd))
+* fixed an issue with item amount modification in list panel ([f9dac9d](https://github.com/Supamiu/ffxiv-teamcraft/commit/f9dac9d))
+* fixed an issue with login and character linking ([7c2e67d](https://github.com/Supamiu/ffxiv-teamcraft/commit/7c2e67d))
+* fixed character link popup lodestoneId input field ([8d9d31e](https://github.com/Supamiu/ffxiv-teamcraft/commit/8d9d31e))
+* fixed color on error message alerts ([a605548](https://github.com/Supamiu/ffxiv-teamcraft/commit/a605548))
+* reduced bundle size by setting icons loading to dynamic ([aff1ab6](https://github.com/Supamiu/ffxiv-teamcraft/commit/aff1ab6))
+* renaming a rotation or changing its stats doesn't require save anymore ([b8878d7](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8878d7))
+* **i18n:** fixed a typo in english strings ([930a297](https://github.com/Supamiu/ffxiv-teamcraft/commit/930a297))
+* **levequests:** fixed an issue with exp display in search results ([b9b3e46](https://github.com/Supamiu/ffxiv-teamcraft/commit/b9b3e46))
+* **pricing:** dont replace price if not available inside mb ([17cc23e](https://github.com/Supamiu/ffxiv-teamcraft/commit/17cc23e))
+
+
+### Features
+
+* you can now assign a list to a team from the /lists page ([0d63eae](https://github.com/Supamiu/ffxiv-teamcraft/commit/0d63eae))
+* **simulator:** added search capability to consumables select boxes ([502b967](https://github.com/Supamiu/ffxiv-teamcraft/commit/502b967))
+* **teams:** you can now configure team webhook to send only a given type of message ([77e6bb7](https://github.com/Supamiu/ffxiv-teamcraft/commit/77e6bb7))
+
+
+
+<a name="5.0.0-rc.1"></a>
+# 5.0.0-rc.1 (2018-12-27)
+
+
+### Bug Fixes
+
+* fixed a bug with list deletion and ordering ([b4ba6ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/b4ba6ef))
+* fixed an issue with list regeneration being way too slow ([09f2ecf](https://github.com/Supamiu/ffxiv-teamcraft/commit/09f2ecf))
+* fixed an issue with requirements popup not linking to garlandtools properly ([6785939](https://github.com/Supamiu/ffxiv-teamcraft/commit/6785939))
+* fixed an issue with teams loading, preventing discord hook connection ([da7f37d](https://github.com/Supamiu/ffxiv-teamcraft/commit/da7f37d)), closes [#664](https://github.com/Supamiu/ffxiv-teamcraft/issues/664)
+* fixed community lists page ([2785c80](https://github.com/Supamiu/ffxiv-teamcraft/commit/2785c80))
+* fixed sidebar behavior on mobile devices ([c06d065](https://github.com/Supamiu/ffxiv-teamcraft/commit/c06d065))
+
+
+### Features
+
+* new nav buttons for the desktop app ([47096e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/47096e5))
+
+
+
+<a name="5.0.0-rc.0"></a>
+# 5.0.0-rc.0 (2018-12-26)
+
+
+### Bug Fixes
+
+* deleting a list from completion dialog now navigates back to the lists page ([154b0a7](https://github.com/Supamiu/ffxiv-teamcraft/commit/154b0a7))
+* fixed a bug with permissions popup deleting ephemeral lists ([7a9dc5d](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a9dc5d))
+* fixed an issue freezing the simulator in some cases ([19feab5](https://github.com/Supamiu/ffxiv-teamcraft/commit/19feab5))
+* fixed an issue with ariyala sets import for DoH/DoL ([68e7894](https://github.com/Supamiu/ffxiv-teamcraft/commit/68e7894))
+* fixed an issue with first time login and character association ([05e46b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/05e46b9))
+* fixed an issue with list display in anonymous mode ([560f9a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/560f9a8))
+* fixed an issue with list item amount update moving the panel ([0a473e0](https://github.com/Supamiu/ffxiv-teamcraft/commit/0a473e0))
+* fixed an issue with macro translator and /aaction clear ([a950324](https://github.com/Supamiu/ffxiv-teamcraft/commit/a950324))
+* fixed an issue with maps loading inside alarms page ([fd0fe77](https://github.com/Supamiu/ffxiv-teamcraft/commit/fd0fe77))
+* fixed an issue with patreon login showing an error message ([afb7bd1](https://github.com/Supamiu/ffxiv-teamcraft/commit/afb7bd1))
+* fixed change detector inside list rows ([10e5566](https://github.com/Supamiu/ffxiv-teamcraft/commit/10e5566))
+* fixed icon color inside layout editor ([859a088](https://github.com/Supamiu/ffxiv-teamcraft/commit/859a088))
+* fixed item links inside gathering-locations component ([7deec17](https://github.com/Supamiu/ffxiv-teamcraft/commit/7deec17))
+* fixed main layout side on mobile ([8c5ae28](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c5ae28))
+* fixed missing icon issue with some gathering cards ([f434bcd](https://github.com/Supamiu/ffxiv-teamcraft/commit/f434bcd))
+* fixed name display in levequests page ([e5bd8a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/e5bd8a6))
+* fixes for aot build (more perfs) ([9bc1a55](https://github.com/Supamiu/ffxiv-teamcraft/commit/9bc1a55))
+* pricing mode MB integration doesn't override vendor prices anymore ([b8b7ec0](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8b7ec0))
+* removed useless margin under the notification box ([eb07a25](https://github.com/Supamiu/ffxiv-teamcraft/commit/eb07a25))
+* you can now properly set level filters to 70-70 ([8277235](https://github.com/Supamiu/ffxiv-teamcraft/commit/8277235))
+
+
+### Features
+
+* adaptative filter for list details ([e4a54e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4a54e1))
+* added a reset password button inside the login box ([dcece3d](https://github.com/Supamiu/ffxiv-teamcraft/commit/dcece3d))
+* added autofocus on search fields ([8342222](https://github.com/Supamiu/ffxiv-teamcraft/commit/8342222))
+* better handling of network issues when loading user ([f195f66](https://github.com/Supamiu/ffxiv-teamcraft/commit/f195f66))
+* change pricing result color based on benefits amount ([ac01161](https://github.com/Supamiu/ffxiv-teamcraft/commit/ac01161))
+* copy button for earning category in pricing ([a7abccf](https://github.com/Supamiu/ffxiv-teamcraft/commit/a7abccf)), closes [#545](https://github.com/Supamiu/ffxiv-teamcraft/issues/545)
+* deep linking for mogboard inside marketboard popup ([dbcf9ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/dbcf9ef))
+* generated ingame alarm macros now repeat properly ([5e3b945](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e3b945))
+* new loader that spawns upon navigation for better UX ([872587e](https://github.com/Supamiu/ffxiv-teamcraft/commit/872587e))
+* now showing a warning if results.length >= 50 in search page ([ff9942b](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff9942b))
+* pressing enter inside amount input in list details now applies the amount properly ([969dc94](https://github.com/Supamiu/ffxiv-teamcraft/commit/969dc94))
+* reduced amount of iterations for the reliability report to 200 ([7c9664e](https://github.com/Supamiu/ffxiv-teamcraft/commit/7c9664e))
+* **simulator:** macros can now split on latest possible Reclaim point. ([e6c5678](https://github.com/Supamiu/ffxiv-teamcraft/commit/e6c5678))
+* **simulator:** removed an entirely-deliberate console.log statement. ([b5985ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5985ac))
+
+
+
+<a name="5.0.0-rc.1"></a>
+# [5.0.0-rc.1](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-beta.4...v5.0.0-rc.1) (2018-12-27)
+
+
+### Bug Fixes
+
+* fixed a bug with list deletion and ordering ([b4ba6ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/b4ba6ef))
+* fixed an issue with list regeneration being way too slow ([09f2ecf](https://github.com/Supamiu/ffxiv-teamcraft/commit/09f2ecf))
+* fixed an issue with requirements popup not linking to garlandtools properly ([6785939](https://github.com/Supamiu/ffxiv-teamcraft/commit/6785939))
+* fixed an issue with teams loading, preventing discord hook connection ([da7f37d](https://github.com/Supamiu/ffxiv-teamcraft/commit/da7f37d)), closes [#664](https://github.com/Supamiu/ffxiv-teamcraft/issues/664)
+* fixed community lists page ([2785c80](https://github.com/Supamiu/ffxiv-teamcraft/commit/2785c80))
+* fixed sidebar behavior on mobile devices ([c06d065](https://github.com/Supamiu/ffxiv-teamcraft/commit/c06d065))
+
+
+### Features
+
+* new nav buttons for the desktop app ([47096e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/47096e5))
+
+
+
+<a name="5.0.0-rc.0"></a>
+# 5.0.0-rc.0 (2018-12-26)
+
+
+### Bug Fixes
+
+* deleting a list from completion dialog now navigates back to the lists page ([154b0a7](https://github.com/Supamiu/ffxiv-teamcraft/commit/154b0a7))
+* fixed a bug with permissions popup deleting ephemeral lists ([7a9dc5d](https://github.com/Supamiu/ffxiv-teamcraft/commit/7a9dc5d))
+* fixed an issue freezing the simulator in some cases ([19feab5](https://github.com/Supamiu/ffxiv-teamcraft/commit/19feab5))
+* fixed an issue with ariyala sets import for DoH/DoL ([68e7894](https://github.com/Supamiu/ffxiv-teamcraft/commit/68e7894))
+* fixed an issue with first time login and character association ([05e46b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/05e46b9))
+* fixed an issue with list display in anonymous mode ([560f9a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/560f9a8))
+* fixed an issue with list item amount update moving the panel ([0a473e0](https://github.com/Supamiu/ffxiv-teamcraft/commit/0a473e0))
+* fixed an issue with macro translator and /aaction clear ([a950324](https://github.com/Supamiu/ffxiv-teamcraft/commit/a950324))
+* fixed an issue with maps loading inside alarms page ([fd0fe77](https://github.com/Supamiu/ffxiv-teamcraft/commit/fd0fe77))
+* fixed an issue with patreon login showing an error message ([afb7bd1](https://github.com/Supamiu/ffxiv-teamcraft/commit/afb7bd1))
+* fixed change detector inside list rows ([10e5566](https://github.com/Supamiu/ffxiv-teamcraft/commit/10e5566))
+* fixed icon color inside layout editor ([859a088](https://github.com/Supamiu/ffxiv-teamcraft/commit/859a088))
+* fixed item links inside gathering-locations component ([7deec17](https://github.com/Supamiu/ffxiv-teamcraft/commit/7deec17))
+* fixed main layout side on mobile ([8c5ae28](https://github.com/Supamiu/ffxiv-teamcraft/commit/8c5ae28))
+* fixed missing icon issue with some gathering cards ([f434bcd](https://github.com/Supamiu/ffxiv-teamcraft/commit/f434bcd))
+* fixed name display in levequests page ([e5bd8a6](https://github.com/Supamiu/ffxiv-teamcraft/commit/e5bd8a6))
+* fixes for aot build (more perfs) ([9bc1a55](https://github.com/Supamiu/ffxiv-teamcraft/commit/9bc1a55))
+* pricing mode MB integration doesn't override vendor prices anymore ([b8b7ec0](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8b7ec0))
+* removed useless margin under the notification box ([eb07a25](https://github.com/Supamiu/ffxiv-teamcraft/commit/eb07a25))
+* you can now properly set level filters to 70-70 ([8277235](https://github.com/Supamiu/ffxiv-teamcraft/commit/8277235))
+
+
+### Features
+
+* adaptative filter for list details ([e4a54e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/e4a54e1))
+* added a reset password button inside the login box ([dcece3d](https://github.com/Supamiu/ffxiv-teamcraft/commit/dcece3d))
+* added autofocus on search fields ([8342222](https://github.com/Supamiu/ffxiv-teamcraft/commit/8342222))
+* better handling of network issues when loading user ([f195f66](https://github.com/Supamiu/ffxiv-teamcraft/commit/f195f66))
+* change pricing result color based on benefits amount ([ac01161](https://github.com/Supamiu/ffxiv-teamcraft/commit/ac01161))
+* copy button for earning category in pricing ([a7abccf](https://github.com/Supamiu/ffxiv-teamcraft/commit/a7abccf)), closes [#545](https://github.com/Supamiu/ffxiv-teamcraft/issues/545)
+* deep linking for mogboard inside marketboard popup ([dbcf9ef](https://github.com/Supamiu/ffxiv-teamcraft/commit/dbcf9ef))
+* generated ingame alarm macros now repeat properly ([5e3b945](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e3b945))
+* new loader that spawns upon navigation for better UX ([872587e](https://github.com/Supamiu/ffxiv-teamcraft/commit/872587e))
+* now showing a warning if results.length >= 50 in search page ([ff9942b](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff9942b))
+* pressing enter inside amount input in list details now applies the amount properly ([969dc94](https://github.com/Supamiu/ffxiv-teamcraft/commit/969dc94))
+* reduced amount of iterations for the reliability report to 200 ([7c9664e](https://github.com/Supamiu/ffxiv-teamcraft/commit/7c9664e))
+* **simulator:** macros can now split on latest possible Reclaim point. ([e6c5678](https://github.com/Supamiu/ffxiv-teamcraft/commit/e6c5678))
+* **simulator:** removed an entirely-deliberate console.log statement. ([b5985ac](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5985ac))
+
+
+
 <a name="5.0.0-rc.0"></a>
 # [5.0.0-rc.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-beta.4...v5.0.0-rc.0) (2018-12-26)
 

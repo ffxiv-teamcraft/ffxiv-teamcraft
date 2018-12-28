@@ -285,7 +285,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     combineLatest(this.rotation$, this.crafterStats$).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats]) => {
-      if (rotation.rotation && rotation.rotation.length > 0 && JSON.stringify(rotation.rotation) !== JSON.stringify(this.registry.serializeRotation(this.actions$.value))) {
+      if (this.actions$.value.length === 0) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       }
       if (rotation.food && this.selectedFood === undefined) {
@@ -307,6 +307,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   changeRotation(): void {
     this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
+  }
+
+  getCraftOptExportString(): string {
+    return this.registry.exportToCraftOpt(this.registry.serializeRotation(this.actions$.value));
   }
 
   changeRecipe(rotation: CraftingRotation): void {
@@ -334,7 +338,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return rotation;
       })
     ).subscribe(r => {
-      this.rotationsFacade.updateRotation(r);
+      this.saveRotation(r);
       this.dirty = false;
     });
   }
