@@ -8,7 +8,7 @@
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
   "Edit_amount": "Anzahl ändern",
-  "List_fork_in_progress": "Die Liste wird in deinen Account kopiert...",
+  "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
@@ -21,7 +21,7 @@
     "No_match": "Keine passenden Gegenstände",
     "Item_name": "Name des Gegenstands",
     "Only_recipes": "Nur Rezepte",
-    "Crafts_amount": "# Herstellungen",
+    "Crafts_amount": "# der Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden."
@@ -53,7 +53,7 @@
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
-  "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
+  "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
     "Workshops": "Workshops",
     "Add_lists": "Liste hinzufügen",
