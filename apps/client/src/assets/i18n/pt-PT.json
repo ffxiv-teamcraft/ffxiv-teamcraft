@@ -140,7 +140,7 @@
       "Map": "Mapa",
       "TYPE": {
         "Mineral": "Depósito mineral",
-        "Rocky": "Rocky Outcrop",
+        "Rocky": "Afloramento rochoso",
         "Tree": "Árvore madura",
         "Vegetation": "Vegetação exuberante",
         "Fishing": "Pesca"
@@ -331,25 +331,25 @@
       "Paste_link_step_title": "Cole o link da lista externa",
       "Paste_link_step_placeholder": "Link da lista",
       "Link_not_supported": "Este link não pode ser importado",
-      "Links_supported": "Links supported: {{links}}",
-      "Link_recognized": "{{type}} recognized, you can import it",
+      "Links_supported": "Links suportados: {{links}}",
+      "Link_recognized": "{{type}} reconhecido, pode importar",
       "Next": "Próximo",
       "Back": "Voltar",
       "Give_list_name": "Dê um nome à sua lista nova",
       "Final_step": "Validação",
       "Choices_needed": "Algumas escolhas da fórmula estão pendentes",
       "Creating_list": "Criando a lista",
-      "Loading_items": "Loading items informations"
+      "Loading_items": "Carregando as informações dos itens"
     }
   },
   "LIST": {
-    "Regenerate": "Update list to latest Teamcraft version",
+    "Regenerate": "Actualizar a lista para a ultima versão de Teamcraft",
     "Rename": "Renomear lista",
     "Copied_x_times": "Copiado {{count}} vezes",
-    "Enable_crystals_tracking": "Enable crystals tracking",
+    "Enable_crystals_tracking": "Activar rasteamento de cristais",
     "Copy_as_text": "Copiar como texto",
-    "Copy_list_as_text": "Copy the whole list as text",
-    "Copied_as_text": "Content copied in clipboard",
+    "Copy_list_as_text": "Copie toda a lista como texto",
+    "Copied_as_text": "Conteúdo copiado para a área de transferências",
     "Total_price": "Total trades (gils and currencies)",
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Add all alarms for this list",
@@ -592,7 +592,7 @@
       "Recipe_configuration": "Configuração da fórmula",
       "Recipe_level": "Level da receita",
       "Recipe_progress": "Progresso ao máximo",
-      "Recipe_quality": "Max quality",
+      "Recipe_quality": "Qualidade ao máximo",
       "Recipe_durability": "Durability"
     },
     "ROTATIONS": {
