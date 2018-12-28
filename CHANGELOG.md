@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.3"></a>
+# [5.0.0-rc.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.2...v5.0.0-rc.3) (2018-12-28)
+
+
+### Bug Fixes
+
+* fixed an issue with desktop app updater ([d4712b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/d4712b9))
+
+
+### Features
+
+* added new patreon supporter to loading screen: Modestie ([770337d](https://github.com/Supamiu/ffxiv-teamcraft/commit/770337d))
+* show dot on dropdown trigger and comments menu if item has comment(s) ([1ec2cdd](https://github.com/Supamiu/ffxiv-teamcraft/commit/1ec2cdd))
+
+
+
 <a name="5.0.0-rc.2"></a>
 # [5.0.0-rc.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-beta.4...v5.0.0-rc.2) (2018-12-28)
 

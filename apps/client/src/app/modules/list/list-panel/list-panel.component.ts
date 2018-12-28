@@ -149,12 +149,22 @@ export class ListPanelComponent {
     updateSubject.next(inputValue);
   }
 
-  assignTeam(list: List, team: Team): void {
-    list.teamId = team.$key;
-    this.listsFacade.updateListUsingCompact(list);
-    if (team.webhook !== undefined) {
-      this.discordWebhookService.notifyListAddedToTeam(team, list);
-    }
+  assignTeam(compact: List, team: Team): void {
+    this.listsFacade.load(compact.$key);
+    this.listsFacade.allListDetails$.pipe(
+      map(details => details.find(l => l.$key === this._list.$key)),
+      filter(l => l !== undefined),
+      first(),
+      map(list => {
+        list.teamId = team.$key;
+        return list;
+      })
+    ).subscribe(list => {
+      this.listsFacade.updateList(list);
+      if (team.webhook !== undefined) {
+        this.discordWebhookService.notifyListAddedToTeam(team, list);
+      }
+    });
   }
 
   renameList(_list: List): void {
