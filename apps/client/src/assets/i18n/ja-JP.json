@@ -236,7 +236,7 @@
   "Forgot_password": "パスワードをお忘れですか?",
   "Email_enter": "メールアドレッス",
   "Email_not_found": "メールアドレスが見つかりません",
-  "Email_sent": "パスワード変更メールが発送されました。",
+  "Email_sent": "パスワード変更メールが発送されました",
   "ALARM": {
     "Spawned": "{{itemName}} 出現予定",
     "See_on_map": "位置情報",
