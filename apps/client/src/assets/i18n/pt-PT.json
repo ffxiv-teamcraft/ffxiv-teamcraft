@@ -9,7 +9,7 @@
   "See_on_map": "Ver no mapa",
   "Edit_amount": "Editar a quantidade",
   "List_fork_in_progress": "A copiar a lista para a sua conta...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Foi detectado um erro de ligação, portanto foi desligado. Se o problema persistir contacte Miu no Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
