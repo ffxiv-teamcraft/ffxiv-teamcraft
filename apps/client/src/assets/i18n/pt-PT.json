@@ -370,7 +370,7 @@
       "Open_description": "Aceder à lista",
       "Delete": "Eliminar lista",
       "Delete_description": "Apaga a lista",
-      "Delete_warning": "Deleting a list can't be undone"
+      "Delete_warning": "Impossível reverter a eliminação da lista"
     }
   },
   "LIST_DETAILS": {
@@ -380,17 +380,17 @@
     "Missing_tags_after_button": " botão",
     "Add_remove_amount": "Add/remove a given amount",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
-    "No_note": "No note",
-    "Edit_note": "No note",
-    "Note_placeholder": "Note",
+    "No_note": "Sem nota",
+    "Edit_note": "Sem nota",
+    "Note_placeholder": "Nota",
     "Tags_popup": "Tags",
-    "Inventory_breakdown": "Inventory",
-    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
+    "Inventory_breakdown": "Inventário",
+    "Open_in_ffxivgardening": "Aberto em ffxivgardening.com",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
-      "Add_panel": "Add Panel",
+      "Add_panel": "Adicionar painel",
       "Import_layout": "Import a layout",
       "Import_string": "Layout import code",
       "Import_string_copied": "Layout import code copied !",
@@ -413,8 +413,8 @@
     "LOG": "Log",
     "LEVE": "Leve",
     "GLAMOUR": "Glamour",
-    "HOUSING": "Housing",
-    "MISC": "Misc",
+    "HOUSING": "Habitação",
+    "MISC": "Diversos",
     "QUEST": "Quest",
     "TANK": "Tank",
     "HEALER": "Healer",
