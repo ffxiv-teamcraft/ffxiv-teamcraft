@@ -88,10 +88,10 @@
   "Your_public_lists": "マイコミュニティリスト",
   "Public_list": "リスト公開",
   "Profile": "プロフィール",
-  "X_for_total": "総 {{amount}} 個",
+  "X_for_total": "合計 {{amount}} 個",
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
-    "Tags_filter_reset": "フィルタ初期化",
+    "Tags_filter_reset": "フィルター初期化",
     "Name_filter_placeholder": "名前を使用してフィルタリング",
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
@@ -118,7 +118,7 @@
     "No_alarm": "設定されたアラームなし",
     "Add_alarm": "アラームを追加する",
     "Alarm_created": "アラームが作成されました",
-    "Alarms_created": "{{amount}} 個のアラームが生成される",
+    "Alarms_created": "{{amount}} 個のアラームが設定済み",
     "Alarm_already_created": "アラームが既に設定されています",
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
