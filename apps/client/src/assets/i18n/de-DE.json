@@ -8,7 +8,7 @@
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
   "Edit_amount": "Anzahl ändern",
-  "List_fork_in_progress": "Copying the list to your account...",
+  "List_fork_in_progress": "Die Liste wird in deinen Account kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
@@ -21,7 +21,7 @@
     "No_match": "Keine passenden Gegenstände",
     "Item_name": "Name des Gegenstands",
     "Only_recipes": "Nur Rezepte",
-    "Crafts_amount": "# of crafts",
+    "Crafts_amount": "# Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
