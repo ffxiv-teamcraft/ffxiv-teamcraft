@@ -49,7 +49,9 @@ module.exports = function(config) {
 
         if (error !== undefined) {
           reject(error);
-          authWindow.removeAllListeners('closed');
+          if (authWindow) {
+            authWindow.removeAllListeners('closed');
+          }
           setImmediate(function() {
             if (authWindow) {
               authWindow.close();
@@ -58,7 +60,9 @@ module.exports = function(config) {
           });
         } else if (code) {
           resolve(code);
-          authWindow.removeAllListeners('closed');
+          if (authWindow) {
+            authWindow.removeAllListeners('closed');
+          }
           setImmediate(function() {
             if (authWindow) {
               authWindow.close();
