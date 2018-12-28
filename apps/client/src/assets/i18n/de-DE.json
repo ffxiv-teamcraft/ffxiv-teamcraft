@@ -526,7 +526,8 @@
     "Saving": "Rechte werden gespeichert",
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
-    "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet"
+    "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
