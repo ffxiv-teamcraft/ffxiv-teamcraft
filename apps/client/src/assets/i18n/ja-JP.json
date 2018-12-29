@@ -239,7 +239,7 @@
   "Email_sent": "パスワード変更メールが発送されました",
   "ALARM": {
     "Spawned": "{{itemName}} 出現予定",
-    "See_on_map": "位置情報",
+    "See_on_map": "地図に見られます",
     "Note": "メモ"
   },
   "Pricing_mode": "値段計算モード",
@@ -697,7 +697,7 @@
     "Invite_link_copied": "チームの誘いリンクがクリップボードにコピーされました",
     "No_anonymous_join": "チームにさんかするためには、アカウントが必要とします",
     "Already_in_team": "既にチームに参加してる状態です",
-    "Webhook_configuration": "Webhook settings",
+    "Webhook_configuration": "Webhook設定",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加しました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除しました。",
