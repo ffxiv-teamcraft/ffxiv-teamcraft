@@ -374,25 +374,25 @@
   "LIST_DETAILS": {
     "List_finished": "Список завершен",
     "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as community list but has no tags, please add some tags using ",
-    "Missing_tags_after_button": " button",
-    "Add_remove_amount": "Add/remove a given amount",
+    "Missing_tags_before_button": "Этот список отображается как список сообщества, но без тегов, добавьте несколько тегов ",
+    "Missing_tags_after_button": " кнопка",
+    "Add_remove_amount": "Добавить/удалить данное количество",
     "Missing_masterbook": "You don't have this masterbook in your profile, click to add it to the profile.",
-    "No_note": "No note",
-    "Edit_note": "No note",
-    "Note_placeholder": "Note",
-    "Tags_popup": "Tags",
-    "Inventory_breakdown": "Inventory",
-    "Open_in_ffxivgardening": "Open in ffxivgardening.com",
-    "Add_all_item_alarms": "Add all alarms for this item",
-    "Adaptative_filter": "Only show what I can do",
+    "No_note": "Нет заметки",
+    "Edit_note": "Нет заметки",
+    "Note_placeholder": "Заметка",
+    "Tags_popup": "Теги",
+    "Inventory_breakdown": "Инвентарь",
+    "Open_in_ffxivgardening": "Открыть в ffxivgardening.com",
+    "Add_all_item_alarms": "Создать все оповещения для этого предмета",
+    "Adaptative_filter": "Показать только то, что я могу сделать",
     "LAYOUT_DIALOG": {
-      "Title": "Layout",
-      "Add_panel": "Add Panel",
-      "Import_layout": "Import a layout",
-      "Import_string": "Layout import code",
-      "Import_string_copied": "Layout import code copied !",
-      "Layout_name": "Layout name",
+      "Title": "Макет",
+      "Add_panel": "Добавить панель",
+      "Import_layout": "Импорт макета",
+      "Import_string": "Импорт кода макета",
+      "Import_string_copied": "Импорт кода макета скопирован!",
+      "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки"
     },
@@ -401,7 +401,7 @@
       "Panel_name": "Имя панели",
       "Order_by": "Сортировка по",
       "Order": "Порядок",
-      "Logic_gate": "Logic gate"
+      "Logic_gate": "Логические ворота"
     }
   },
   "LIST_TAGS": {
@@ -420,7 +420,7 @@
     "RANGED": "Лучник",
     "CASTER": "Маг",
     "CRAFTER": "Крафтер",
-    "GATHERER": "Gatherer",
+    "GATHERER": "Сборщик",
     "SCRIPTS": "Сценарии",
     "PLD": "PLD",
     "WAR": "WAR",
@@ -450,11 +450,11 @@
     "FSH": "FSH"
   },
   "MACRO_TRANSLATION": {
-    "Title": "Macro translator",
-    "Macro_language": "Macro language",
-    "Macro_to_translate": "Macro to translate",
+    "Title": "Макрос переводчик",
+    "Macro_language": "Макрос язык",
+    "Macro_to_translate": "Макрос для перевода",
     "Do_translate": "Перевести!",
-    "Invalid_macro_or_language": "Invalid macro or language."
+    "Invalid_macro_or_language": "Недействительный макрос или язык."
   },
   "CUSTOM_LINKS": {
     "Title": "Настраиваемые ссылки",
@@ -464,8 +464,8 @@
     "Dialog_title": "Настраиваемая ссылка",
     "Link_type": "Тип ссылки",
     "Link_name": "Имя ссылки",
-    "target": "Link target",
-    "Share_link_copied": "Custom link copied to clipboard",
+    "target": "Цель ссылки",
+    "Share_link_copied": "Кастомная ссылка скопирована",
     "Copy_custom_link": "Копировать ссылку",
     "No_links": "Нет кастомных ссылок"
   },
@@ -490,12 +490,12 @@
     "Read_more": "Подробнее"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "Create a list template for this list",
-    "Template_created": "List template created",
-    "Dialog_title": "Template creation",
-    "Link_name": "Template name",
-    "target": "Target list",
-    "Share_link_copied": "Template share link copied to the clipboard",
+    "Create_template": "Создать ссылку шаблона для этого списка",
+    "Template_created": "Список шаблона создан",
+    "Dialog_title": "Создание шаблона",
+    "Link_name": "Имя шаблона",
+    "target": "Цель списка",
+    "Share_link_copied": "Ссылка на шаблон скопирована в буфер обмена",
     "Copy_template_url": "Копировать шаблон url",
     "Cloning_list": "Создать копию списка на ваш аккаунт",
     "Redirect_notice": "You'll be redirected to the list once the clone is created",
@@ -507,7 +507,7 @@
   },
   "PERMISSIONS": {
     "Read": "Прочесть",
-    "Read_description": "The ability to see the list",
+    "Read_description": "Возможность видеть список",
     "Participate": "Участвовать",
     "Participate_description": "This gives you permission to tick items and modify amounts done",
     "Write": "Записать",
@@ -518,7 +518,7 @@
     "Add_new": "Добавить пользователя",
     "Add_new_fc": "Добавить свободную компанию",
     "Placeholder": "Email или ID пользователя",
-    "Bind_free_company": "Bind some permissions to your Free Company",
+    "Bind_free_company": "Назначить некоторые привилегии в вашу свободную компанию",
     "User_not_found": "Пользователь не найден",
     "User_id_tip": "The user ID can be found in profile page in bottom-right corner",
     "Saving": "Сохранить разрешения",
@@ -533,7 +533,7 @@
     "Not_found": "Cтраница не найдена"
   },
   "SIMULATOR": {
-    "Fixed_notification_number": "Fixed notification",
+    "Fixed_notification_number": "Уведомление исправлено",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Дополнительное ожидание",
@@ -587,14 +587,14 @@
     "New_rotation_folder": "New folder",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
-      "Recipe_level": "Recipe level",
+      "Recipe_level": "Уровень рецепта",
       "Recipe_progress": "Максимальный прогресс",
       "Recipe_quality": "Максимальное качество",
       "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
       "FOLDERS": {
-        "Folders": "Rotation folders",
+        "Folders": "Папки поворота",
         "Rename": "Переименовать папку",
         "New_folder": "Новая папка",
         "Delete_message": "Deleting a folder won't delete the rotations inside.",
@@ -714,12 +714,12 @@
       "ITEM_REMOVED": "Предмет удален",
       "LIST_ADDED": "Список добавлен",
       "LIST_REMOVED": "Список удален",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "LIST_PROGRESSION": "Прогресс списка",
+      "USER_ASSIGNMENT": "Назначение пользователей"
     }
   },
   "MARKETBOARD": {
-    "Title": "Marketboard Informations",
+    "Title": "Информация о рынке",
     "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Количество",
     "HQ": "HQ",
@@ -727,7 +727,7 @@
     "Unit_price": "Цена единицы",
     "History": "История",
     "Purchase_date": "Дата",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "Более подробная инфа на доске"
   },
   "COMMENTS": {
     "Title": "Комментарии"
