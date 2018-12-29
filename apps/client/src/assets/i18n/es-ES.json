@@ -720,6 +720,7 @@
   },
   "MARKETBOARD": {
     "Title": "Información del mercado",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
