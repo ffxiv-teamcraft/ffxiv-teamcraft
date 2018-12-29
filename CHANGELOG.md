@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.4"></a>
+# [5.0.0-rc.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.3...v5.0.0-rc.4) (2018-12-29)
+
+
+### Bug Fixes
+
+* collectible additions should now carry over regeneration ([b10be93](https://github.com/Supamiu/ffxiv-teamcraft/commit/b10be93))
+* fixed an issue with "ready to craft" status ([9a36cea](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a36cea))
+* fixed incorrect amount display inside requirements popup ([5775b90](https://github.com/Supamiu/ffxiv-teamcraft/commit/5775b90))
+* **fishing:** fixed an issue with fishing map sometimes incorrect ([9a3c707](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a3c707))
+* **i18n:** fixed split string that shouldn't be splitted ([d61c8a2](https://github.com/Supamiu/ffxiv-teamcraft/commit/d61c8a2))
+* **i18n:** removed useless translation strings ([d02fee3](https://github.com/Supamiu/ffxiv-teamcraft/commit/d02fee3))
+* **simulator:** fixed incorrect stacks amount with byregot's miracle ([001ca34](https://github.com/Supamiu/ffxiv-teamcraft/commit/001ca34))
+
+
+### Features
+
+* added label for calculator inside list rows ([d2b69d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/d2b69d8))
+* **list-picker:** you can now search for a list, and they are now ordered properly ([cc05087](https://github.com/Supamiu/ffxiv-teamcraft/commit/cc05087))
+* **marketboard:** added proper error message for when xivapi or companion is down ([3a73adc](https://github.com/Supamiu/ffxiv-teamcraft/commit/3a73adc))
+* **profile:** you can now edit DoL levels inside profile editor ([68a30ad](https://github.com/Supamiu/ffxiv-teamcraft/commit/68a30ad))
+
+
+
 <a name="5.0.0-rc.3"></a>
 # [5.0.0-rc.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.2...v5.0.0-rc.3) (2018-12-28)
 
