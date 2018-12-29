@@ -602,7 +602,7 @@
         "New_folder": "新しいフォルダー",
         "Delete_message": "Deleting a folder won't delete the rotations inside.",
         "Share_link_copied": "Rotation folder share link copied to your clipboard",
-        "Shared_by": "{{name}} と共有する",
+        "Shared_by": "{{name}} で共有された",
         "Created_by": "{{name}} で作成された",
         "Copy_folder": "Copy this folder and its content to your account",
         "Folder_copied": "Folder copied to your account",
