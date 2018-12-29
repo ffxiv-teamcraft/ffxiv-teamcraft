@@ -149,7 +149,7 @@ export class ListManagerService {
     });
     const add: Observable<List>[] = [];
     list.finalItems.forEach((recipe) => {
-      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true));
+      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, recipe.yield === 1, true));
     });
     list.items = [];
     list.finalItems = [];
