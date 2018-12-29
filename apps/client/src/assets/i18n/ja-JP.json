@@ -139,7 +139,7 @@
       "Type": "採集品種類",
       "Map": "地図",
       "TYPE": {
-        "Mineral": "鉱脈",
+        "Mineral": "岩場",
         "Rocky": "採掘場",
         "Tree": "良木",
         "Vegetation": "草刈場",
