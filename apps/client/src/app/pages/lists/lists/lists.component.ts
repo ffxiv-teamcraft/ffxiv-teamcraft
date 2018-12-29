@@ -132,9 +132,8 @@ export class ListsComponent {
       }),
       tap(display => {
         display.otherLists
-          .filter((l, i) => l.index !== i)
           .forEach((l, i) => {
-            if (l.index !== i && !this.regenerating) {
+            if (l.index === -1 && l.index !== i && !this.regenerating) {
               l.index = i;
               this.listsFacade.updateListIndex(l);
             }
@@ -220,9 +219,10 @@ export class ListsComponent {
     lists.splice(index, 0, list);
     // Update indexes and persist
     lists
-      .filter((l, i) => l.index !== i)
       .map((l, i) => {
-        l.index = i;
+        if (l.index !== i) {
+          l.index = i;
+        }
         return l;
       })
       .forEach(l => {
