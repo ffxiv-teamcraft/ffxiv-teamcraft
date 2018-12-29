@@ -591,27 +591,27 @@
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",
-      "Recipe_progress": "Max progress",
-      "Recipe_quality": "Max quality",
-      "Recipe_durability": "Durability"
+      "Recipe_progress": "Максимальный прогресс",
+      "Recipe_quality": "Максимальное качество",
+      "Recipe_durability": "Прочность"
     },
     "ROTATIONS": {
       "FOLDERS": {
         "Folders": "Rotation folders",
-        "Rename": "Rename folder",
-        "New_folder": "New folder",
+        "Rename": "Переименовать папку",
+        "New_folder": "Новая папка",
         "Delete_message": "Deleting a folder won't delete the rotations inside.",
         "Share_link_copied": "Rotation folder share link copied to your clipboard",
-        "Shared_by": "Shared by {{name}}",
-        "Created_by": "Created by {{name}}",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Shared_by": "Поделился {{name}}",
+        "Created_by": "Создано {{name}}",
+        "Copy_folder": "Копировать эту папку и контент на ваш аккаунт",
+        "Folder_copied": "Папка скопирована на ваш аккаунт",
+        "Favorite_folders": "Избранные папки"
       }
     },
     "CATEGORY": {
-      "Progression": "Progression",
-      "Quality": "Quality",
+      "Progression": "Прогресс",
+      "Quality": "Качество",
       "Cp_recovery": "восстановление CP",
       "Buff": "Бафф",
       "Specialty": "Специальность",
@@ -624,26 +624,26 @@
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Custom_set": "Enable custom set",
       "Select_job": "Выбрать роль",
-      "Craftsmanship": "Craftsmanship",
+      "Craftsmanship": "Мастерство",
       "Control": "Управление",
       "Specialist": "Специалист",
-      "Ingredients": "HQ Ingredients",
-      "Consumables": "Consumables",
+      "Ingredients": "Ингредиенты HQ",
+      "Consumables": "Расходники",
       "Apply_stats": "Применить статы",
-      "Apply_ingredients": "Apply HQ ingredients",
-      "Apply_foods": "Apply consumables",
+      "Apply_ingredients": "Применить ингредиенты HQ",
+      "Apply_foods": "Применить расходники",
       "Food": "Выбрать еду",
       "Medicine": "Выбрать медикамент",
       "Action": "Choose free company actions",
       "Save_on_profile": "Сохранить в профиль",
-      "Reset_set": "Reset these stats",
+      "Reset_set": "Сбросить статистику",
       "Save_consumables": "Save these consumables as default",
       "No_food": "Нет еды",
       "No_medicine": "Нет медикаментов",
-      "No_fc_buffs": "No FC buffs",
+      "No_fc_buffs": "Нет FC баффов",
       "STATS": {
         "CP": "CP",
-        "Craftsmanship": "Craftsmanship",
+        "Craftsmanship": "Мастерство",
         "Control": "Управление"
       }
     }
@@ -653,8 +653,8 @@
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Copy_earnings_as_text": "Копировать как текст",
+    "Content_copied": "Скопировано в буфер обмена"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -662,7 +662,7 @@
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Количество",
-    "All_deliveries": "All {{value}} Deliveries",
+    "All_deliveries": "Все {{value}} доставлено",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
@@ -674,12 +674,12 @@
     "Title": "Уведомления",
     "List_comment_added": "Comment posted on list {{listName}}: \"{{content}}\"",
     "List_item_comment_added": "Comment posted on {{itemName}}, list {{listName}}: \"{{content}}\"",
-    "Mark_all_as_read": "Mark all as read"
+    "Mark_all_as_read": "Отметить все как прочитанные"
   },
   "TEAMS": {
-    "Title": "Teams",
-    "Leader": "Leader",
-    "Member": "Member",
+    "Title": "Команды",
+    "Leader": "Лидер",
+    "Member": "Участник",
     "Enable_discord_updates": "Enable Discord updates",
     "Disable_discord_updates": "Disable Discord updates",
     "Webhook_error": "There was an error while creating the Discord webhook:",
