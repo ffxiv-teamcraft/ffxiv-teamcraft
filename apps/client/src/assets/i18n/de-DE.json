@@ -271,6 +271,7 @@
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
+    "Install_update": "Install update",
     "Preferred_copy_type": "Preferred copy type",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "Account": "Account",
