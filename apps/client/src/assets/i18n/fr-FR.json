@@ -122,8 +122,8 @@
     "Alarm_already_created": "Alarm déjà définie",
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
-    "Confirm_group_delete": "Are you sure you want to delete this group?",
-    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
@@ -525,7 +525,7 @@
     "No_anonymous": "Vous devez créer un compte pour gérer les permissions",
     "Propagate_changes": "Propager les permissions aux listes dans l'atelier",
     "Propagate_changes_done": "Permissions propagées avec succès",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "L'équipe associée à cette liste a la permission PARTICIPATE de façon automatique"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -560,7 +560,7 @@
     "Rotations": "Rotations de craft",
     "Favorite_Rotations": "Rotations préférées",
     "No_rotations": "Aucune rotation",
-    "Create_a_custom_rotation": "Create a custom rotation",
+    "Create_a_custom_rotation": "Créer une rotation personnalisée",
     "Reset": "Remettre à zéro la rotation",
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
     "Export_crafting_optimizer": "Exporter au format crafting optimizer",
@@ -694,7 +694,7 @@
     "Invite_link_copied": "Lien d'invitation de l'équipe copié dans votre presse-papiers",
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
-    "Webhook_configuration": "Webhook settings",
+    "Webhook_configuration": "Paramètres du bot",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
       "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
@@ -708,19 +708,19 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Member joined",
-      "MEMBER_LEFT": "Member left",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "MEMBER_JOINED": "Un membre à rejoint",
+      "MEMBER_LEFT": "Un membre est parti",
+      "ITEM_ADDED": "Objet ajouté à une liste",
+      "ITEM_REMOVED": "Objet retiré d'une liste",
+      "LIST_ADDED": "Liste ajoutée",
+      "LIST_REMOVED": "Liste supprimée",
+      "LIST_PROGRESSION": "Progression d'une liste",
+      "USER_ASSIGNMENT": "Affectation d'un utilisateur"
     }
   },
   "MARKETBOARD": {
     "Title": "Hotel des ventes",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "XIVAPI ou l'API compagnon est actuellement down, veuillez patienter un instant avant de réessayer.",
     "Amount": "Quantité",
     "HQ": "HQ",
     "Total_price": "Prix total",
