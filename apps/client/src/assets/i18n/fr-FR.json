@@ -271,6 +271,7 @@
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
+    "Install_update": "Install update",
     "Preferred_copy_type": "Type de copie préférée",
     "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
     "Account": "Compte",
