@@ -8,8 +8,8 @@
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
   "Edit_amount": "Anzahl ändern",
-  "List_fork_in_progress": "Copying the list to your account...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
+  "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -21,10 +21,10 @@
     "No_match": "Keine passenden Gegenstände",
     "Item_name": "Name des Gegenstands",
     "Only_recipes": "Nur Rezepte",
-    "Crafts_amount": "# of crafts",
+    "Crafts_amount": "# der Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -46,14 +46,14 @@
   "Work_on_it": "Als 'in Arbeit' markieren",
   "Remove_work_on_it": "Nutzerzuordnung entfernen",
   "Add_as_collectible": "Als Sammlerstück hinzufügen",
-  "Collectable_flag": "Collectable",
+  "Collectable_flag": "Sammlerstücke",
   "Compact_display": "Komptaktansicht",
   "Mute_alarms": "Benachrichtigung stummschalten",
-  "Unmute_alarms": "Unmute alarms",
+  "Unmute_alarms": "Alarm reaktivieren",
   "Hide_used": "Verwendete Reihen ausblenden",
   "Collapse_if_done": "Bei Fertigstellung zusammenklappen",
   "Retainer_ventures": "Gehilfen-Unternehmungen",
-  "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
+  "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
     "Workshops": "Workshops",
     "Add_lists": "Liste hinzufügen",
@@ -71,7 +71,7 @@
     "title": "Über FFXIVTeamcraft",
     "Created_by": "FFXIV Teamcraft erstellt von Miu Asakura auf Louisoix, Chaos.",
     "Copyright_notice_title": "Urheberrechtsschutz",
-    "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraft is not affiliated with Square Enix.",
+    "Copyright_notice_content": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010-2017 SQUARE ENIX CO., LTD. Alle Rechte vorbehalten.<br>FFXIV Teamcraft hat keine Verbindung zu Square Enix.",
     "Thanks_title": "Danke!",
     "Data_sources": "Datenquellen",
     "Patreon_supporters": "Patreon-Unterstützer",
@@ -81,7 +81,7 @@
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
-  "Ephemeral_tag": "ephemeral",
+  "Ephemeral_tag": "vergänglich",
   "Quick_list_create": "Erstelle eine Kurzzeit-Liste (wird gelöscht wenn sie komplett ist)",
   "Tag_filter": "Tags",
   "Public_lists": "Communitylisten",
@@ -122,8 +122,8 @@
     "Alarm_already_created": "Benachrichtigung bereits vorhanden",
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
-    "Confirm_group_delete": "Bist du sicher, dass Du diese Gruppe löschen möchtest?",
-    "Confirm_group_delete_with_alarms": "Are your sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
@@ -251,10 +251,8 @@
   "Minimal_craft_cost": "Minimum Herstellungskosten",
   "Used_for": "Benutzt für",
   "Or": "oder",
-  "Make_donation": "Spende",
   "Data_from_gt": "Daten zur Verfügung gestellt von garlandtools.org",
   "Hide_completed": "Verstecke komplettierte Reihen",
-  "Your_comment": "Dein Kommentar",
   "Required_crafts_amount": "Menge an Herstellungen",
   "Missing_crafts_amount": "{{amount}} um Ziel-Menge zu erreichen",
   "Requires": "Erfordert",
@@ -268,6 +266,7 @@
     "General": "General",
     "Link_base": "Gegenstandslink-Quelle",
     "Theme": "Design",
+    "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
@@ -525,7 +524,8 @@
     "Saving": "Rechte werden gespeichert",
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
-    "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet"
+    "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -535,6 +535,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
+    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
@@ -559,8 +560,7 @@
     "Rotations": "Handwerks Rotationen",
     "Favorite_Rotations": "Favorite Rotations",
     "No_rotations": "Keine Rotationen",
-    "Create_a": "Erstelle eine",
-    "custom_rotation": "eigene Rotation",
+    "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Rotation zurücksetzen",
     "Import_from_crafting_optimizer": "Von Handwerks Optimierung importieren",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
@@ -649,7 +649,9 @@
     "From_vendor": "Verkäuferpreis",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Copy_earnings_as_text": "Copy content as text",
+    "Content_copied": "Content copied in your clipboard"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -692,6 +694,7 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
@@ -703,10 +706,21 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
     "Title": "Marketboard Informations",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Menge",
     "HQ": "HQ",
     "Total_price": "Gesamtpreis",

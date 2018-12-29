@@ -122,8 +122,8 @@
     "Alarm_already_created": "Alarm déjà définie",
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
-    "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
-    "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
+    "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
@@ -251,10 +251,8 @@
   "Minimal_craft_cost": "Coût minimal de fabrication",
   "Used_for": "Utilisé pour",
   "Or": "ou",
-  "Make_donation": "Faire un don",
   "Data_from_gt": "Données fournies par garlandtools.org",
   "Hide_completed": "Masquer les éléments complétés",
-  "Your_comment": "Votre commentaire",
   "Required_crafts_amount": "Nombre de crafts à faire",
   "Missing_crafts_amount": "{{amount}} pour atteindre le total",
   "Requires": "Nécessite",
@@ -268,6 +266,7 @@
     "General": "Général",
     "Link_base": "Liens des objets",
     "Theme": "Thème",
+    "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
@@ -525,7 +524,8 @@
     "Saving": "Sauvegarde des permissions",
     "No_anonymous": "Vous devez créer un compte pour gérer les permissions",
     "Propagate_changes": "Propager les permissions aux listes dans l'atelier",
-    "Propagate_changes_done": "Permissions propagées avec succès"
+    "Propagate_changes_done": "Permissions propagées avec succès",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -560,8 +560,7 @@
     "Rotations": "Rotations de craft",
     "Favorite_Rotations": "Rotations préférées",
     "No_rotations": "Aucune rotation",
-    "Create_a": "Créer une",
-    "custom_rotation": "rotation personnalisée",
+    "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Remettre à zéro la rotation",
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
     "Export_crafting_optimizer": "Exporter au format crafting optimizer",
@@ -650,7 +649,9 @@
     "From_vendor": "Prix au vendeur",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
-    "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?"
+    "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
+    "Copy_earnings_as_text": "Copier le contenu au format texte",
+    "Content_copied": "Contenu copié dans le presse-papiers"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -693,6 +694,7 @@
     "Invite_link_copied": "Lien d'invitation de l'équipe copié dans votre presse-papiers",
     "No_anonymous_join": "Vous devez créer un compte pour pouvoir rejoindre une équipe",
     "Already_in_team": "Vous êtes déjà dans cette équipe",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été ajouté à ** [{{listName}}] ({{listUrl}}) **.",
       "Item_removed": "{{amount}}x ** [{{itemName}}](http://garlandtools.org/db/#item/{{itemId}}) ** a été retiré de ** [{{listName}}] ({{listUrl}})**.",
@@ -704,10 +706,21 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** a été retiré de l'équipe.",
       "Name_changed": "L'équipe **{{oldName}}** a été renommée en **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
     "Title": "Hotel des ventes",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Quantité",
     "HQ": "HQ",
     "Total_price": "Prix total",

@@ -24,7 +24,7 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "검색 결과가 50개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다."
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -122,8 +122,8 @@
     "Alarm_already_created": "알람이 이미 설정되었습니다",
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
-    "Confirm_group_delete": "정말로 이 그룹을 삭제하시겠습니까?",
-    "Confirm_group_delete_with_alarms": "정말로 그룹과 그 안에 있는 알람을 지우시겠습니까?",
+    "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
+    "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
@@ -251,10 +251,8 @@
   "Minimal_craft_cost": "최소 제작 비용",
   "Used_for": "사용처",
   "Or": "또는",
-  "Make_donation": "후원하기",
   "Data_from_gt": "garlandtools.org에서 제공받은 데이터",
   "Hide_completed": "완료된 행 숨기기",
-  "Your_comment": "내 댓글",
   "Required_crafts_amount": "제작에 필요한 양",
   "Missing_crafts_amount": "{{amount}}개 부족",
   "Requires": "재료",
@@ -268,6 +266,7 @@
     "General": "일반",
     "Link_base": "아이템 링크",
     "Theme": "테마",
+    "Desktop": "데스크탑",
     "Always_on_top": "항상 위에 표시",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
@@ -525,7 +524,8 @@
     "Saving": "권한 설정을 저장중",
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
     "Propagate_changes": "워크샵 내부에 목록에 대한 권한 제공",
-    "Propagate_changes_done": "워크샵 내부 목록에 대한 변경이 적용되었습니다"
+    "Propagate_changes_done": "워크샵 내부 목록에 대한 변경이 적용되었습니다",
+    "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다."
   },
   "WIKI": {
     "Title": "위키",
@@ -560,8 +560,7 @@
     "Rotations": "제작 로테이션",
     "Favorite_Rotations": "로테이션 즐겨찾기",
     "No_rotations": "등록된 로테이션이 없습니다",
-    "Create_a": "생성:",
-    "custom_rotation": "사용자 지정 로테이션",
+    "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "로테이션 초기화",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
     "Export_crafting_optimizer": "Crafting optimizer 형식으로 내보내기",
@@ -650,7 +649,9 @@
     "From_vendor": "상인 판매 가격",
     "Expect_to_sell_everything": "전체 판매 가정",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
-    "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?"
+    "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}} 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
+    "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
+    "Content_copied": "클립보드로 내용이 복사되었습니다."
   },
   "LEVEQUESTS": {
     "Title": "길드의뢰",
@@ -658,7 +659,7 @@
     "No_results": "길드의뢰를 찾을 수 없습니다",
     "Add_to_list": "이 길드의뢰 아이템을 목록에 추가",
     "Quantity": "수량",
-    "All_deliveries": "모든 {{value}} 납품",
+    "All_deliveries": "총 {{value}}회 납품",
     "INTRO": {
       "Title": "길드의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
@@ -693,6 +694,7 @@
     "Invite_link_copied": "팀 초대링크를 클립보드에 복사했습니다.",
     "No_anonymous_join": "팀에 참가하기 위해서는 계정이 필요합니다",
     "Already_in_team": "이미 팀에 참여한 상태입니다",
+    "Webhook_configuration": "Webhook 설정",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 추가하였습니다.",
       "Item_removed": "**[{{listName}}]({{listUrl}})**에 {{amount}}개의 **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**을/를 삭제하였습니다.",
@@ -704,10 +706,21 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** 님이 팀에서 제외되었습니다.",
       "Name_changed": "**{{oldName}}** 에서 **{{newName}}** 로 이름이 변경되었습니다.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "팀 가입",
+      "MEMBER_LEFT": "팀 탈퇴",
+      "ITEM_ADDED": "아이템 추가",
+      "ITEM_REMOVED": "아이템 제거",
+      "LIST_ADDED": "목록 추가",
+      "LIST_REMOVED": "목록 제거",
+      "LIST_PROGRESSION": "목록 진척도 변경",
+      "USER_ASSIGNMENT": "팀원 할당"
     }
   },
   "MARKETBOARD": {
     "Title": "장터게시판 정보",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "수량",
     "HQ": "HQ",
     "Total_price": "합계 가격",

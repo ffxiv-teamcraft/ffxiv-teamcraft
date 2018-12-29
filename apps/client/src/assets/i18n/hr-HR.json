@@ -9,7 +9,7 @@
   "See_on_map": "Pogledajte na karti",
   "Edit_amount": "Odredite količinu",
   "List_fork_in_progress": "Kopiranje popisa na vaš račun...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Greška u mreži detektirana, odjavljeni ste. Ako se problem nastavi, molimo kontaktirajte Miu na Discord serveru.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Račun se već koristi",
     "auth/email-already-in-use": "Email se već koristi",
@@ -24,7 +24,7 @@
     "Crafts_amount": "# obrta",
     "Add_to_list": "Dodajte ovu stavku na popis",
     "Apply_filters": "Primijenite filtre",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "Ovo pretraživanje prikazuje više od 50 stavki. Pošto je naš izvor podataka ograničen na 50 rezultata, možda će vam trebati dodatni filteri da pronađete određeni predmet."
   },
   "Use_as_default_character": "Odaberite glavnog lika",
   "Download_desktop_app": "Preuzmite aplikaciju za radnu površinu",
@@ -105,7 +105,7 @@
     "Select": "Odaberite",
     "Anonymous": "Anonimno",
     "Warning": "Upozorenje",
-    "Error": "Error",
+    "Error": "Greška",
     "Success": "Uspjeh",
     "Copy_to_clipboard": "Kopirajte u međuspremnik",
     "Language": "Jezik",
@@ -122,12 +122,12 @@
     "Alarm_already_created": "Već postavljen alarm",
     "Custom_sound": "Prilagođen zvuk alarma",
     "New_group": "Nova grupa alarma",
-    "Confirm_group_delete": "Jeste li sigurni da želite izbrisati ovu grupu?",
-    "Confirm_group_delete_with_alarms": "Jeste sigurni da želite izbrisati ovu grupu i sve alarme u njemu?",
+    "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Dodajte bilješku",
     "Volume": "Glasnoća",
     "Macro_copied": "Makronaredba kopirana u međuspremnik",
-    "Open_overlay": "Open overlay",
+    "Open_overlay": "Otvorite prevlaku",
     "CUSTOM": {
       "Title": "Dodajte zadani alarm",
       "Name": "Naziv",
@@ -228,21 +228,21 @@
   "Requirements_for_craft": "Vidjeti zahtjeve",
   "Zone_breakdown": "Opis područja",
   "Timer_options": "Mogućnosti timera",
-  "Early_by": "Early by (eorzean hours)",
-  "Sound": "Sound",
-  "Share_link_copied": "List link copied in the clipboard",
-  "Share": "Share",
-  "Close": "Close",
-  "Forgot_password": "Forgot password",
+  "Early_by": "Rano po (eorzean sati)",
+  "Sound": "Zvuk",
+  "Share_link_copied": "Veza popisa kopirana u međuspremnik",
+  "Share": "Podijelite",
+  "Close": "Zatvoriti",
+  "Forgot_password": "Zaboravili ste lozinku?",
   "Email_enter": "Email",
-  "Email_not_found": "Email not found",
-  "Email_sent": "An email has been sent with instructions to change your password.",
+  "Email_not_found": "Email nije pronađen",
+  "Email_sent": "Poslan je email s uputama za promjenu lozinke.",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn !",
-    "See_on_map": "Location",
-    "Note": "Note"
+    "Spawned": "{{itemName}} će se pojaviti !",
+    "See_on_map": "Lokacija",
+    "Note": "Bilješka"
   },
-  "Pricing_mode": "Pricing mode",
+  "Pricing_mode": "Prikaz s cijenama",
   "Back_to_list": "Back to list",
   "Spending": "Spending",
   "Pricing": "Pricing",
@@ -251,10 +251,8 @@
   "Minimal_craft_cost": "Minimal craft cost",
   "Used_for": "Used for",
   "Or": "or",
-  "Make_donation": "Make a donation",
   "Data_from_gt": "Data provided by garlandtools.org",
   "Hide_completed": "Hide completed rows",
-  "Your_comment": "Your comment",
   "Required_crafts_amount": "Required amount of crafts",
   "Missing_crafts_amount": "{{amount}} to reach total",
   "Requires": "Requires",
@@ -268,6 +266,7 @@
     "General": "General",
     "Link_base": "Item links",
     "Theme": "Theme",
+    "Desktop": "Desktop",
     "Always_on_top": "Always on top",
     "Check_for_update": "Check for update",
     "Downloading_update": "Downloading update",
@@ -525,7 +524,8 @@
     "Saving": "Saving permissions",
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
-    "Propagate_changes_done": "Changes propagated to lists inside the workshop"
+    "Propagate_changes_done": "Changes propagated to lists inside the workshop",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -560,8 +560,7 @@
     "Rotations": "Crafting rotations",
     "Favorite_Rotations": "Favorite Rotations",
     "No_rotations": "No rotations",
-    "Create_a": "Create a",
-    "custom_rotation": "custom rotation",
+    "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Reset rotation",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
@@ -650,7 +649,9 @@
     "From_vendor": "Price from vendor",
     "Expect_to_sell_everything": "Expect to sell everything",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Copy_earnings_as_text": "Copy content as text",
+    "Content_copied": "Content copied in your clipboard"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -693,6 +694,7 @@
     "Invite_link_copied": "Team invite link copied to your clipboard",
     "No_anonymous_join": "You have to create an account to be able to join a team",
     "Already_in_team": "You are already in this team",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been added to **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been removed from **[{{listName}}]({{listUrl}})**.",
@@ -704,10 +706,21 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** has been removed from team.",
       "Name_changed": "The **{{oldName}}** team has been renamed to **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** has been assigned to **[{{memberName}}]({{memberProfileUrl}})** on **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
     "Title": "Marketboard Informations",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Quantity",
     "HQ": "HQ",
     "Total_price": "Total price",
