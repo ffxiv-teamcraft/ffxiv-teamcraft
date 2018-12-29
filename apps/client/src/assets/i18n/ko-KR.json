@@ -271,6 +271,7 @@
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
+    "Install_update": "Install update",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
     "Account": "계정",
