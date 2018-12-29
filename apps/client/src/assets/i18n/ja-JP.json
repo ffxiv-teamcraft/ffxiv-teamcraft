@@ -35,7 +35,7 @@
   "Default": "デフォルト",
   "Delete": "削除",
   "Timers": "ギャザラー時計",
-  "Copy_isearch": "isearch マクロをコピー",
+  "Copy_isearch": "/isearchマクロをコピーする",
   "Isearch_copied": "/isearch {{itemname}} がクリップボードにコピーされました",
   "Required_for_final_craft": "目的アイテム完成には残り {{amount}} 個必要です",
   "Mark_HQ": "HQ要求を表示する",
@@ -259,7 +259,7 @@
   "Missing_crafts_amount": "{{amount}} 個不足",
   "Requires": "材料",
   "Copy_item_name_to_clipboard": "アイテム名をクリップボードにコピーする",
-  "Item_name_copied": "{{itemname}} クリップボードにコピーされました",
+  "Item_name_copied": "{{itemname}} はクリップボードにコピーされました",
   "Tier_display_toggle": "制作段階を表示",
   "Precraft_tier": "段階",
   "Regenerating_lists": "リスト更新",
@@ -285,8 +285,8 @@
     "Nickname_used": "Nickname already used",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
     "COPY_TYPE": {
-      "Classic": "アイテム名をコピー",
-      "Isearch": "/アイテム検索 マクロコピー"
+      "Classic": "アイテム名をコピーする",
+      "Isearch": "/isearchマクロをコピーする"
     }
   },
   "PROFILE": {
@@ -355,10 +355,10 @@
     "Add_all_alarms": "このリストに対する、アラーム追加",
     "History": "内訳",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
+      "Title": "リスト完成しました",
       "Content": "This list is now completed, what do you want to do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
+      "Delete": "このリストを削除する",
+      "Reset": "このリストをリセットする",
       "Nothing": "ここには何もない"
     },
     "BUTTONS": {
@@ -468,7 +468,7 @@
     "Link_name": "リンク名",
     "target": "リンクターゲット",
     "Share_link_copied": "使用者指定リンクがクリップボードにコピーされました",
-    "Copy_custom_link": "Copy custom link",
+    "Copy_custom_link": "カスタムリンクをコピーする",
     "No_links": "使用者指定リンクなし"
   },
   "NAVIGATION": {
@@ -572,7 +572,7 @@
     "Crafting_optimizer_code": "Crafting optimizer コード[=ゲーム内の制作マクロ]",
     "Generated_macro": "ゲームのマクロ",
     "Generate_ingame_macro": "ゲームのマクロを作ります",
-    "Share_button_tooltip": "シェアリンクコピー",
+    "Share_button_tooltip": "シェアリンクをコピーする",
     "Share_link_copied": "制作マクロシェア向けリンクをクリップボードにコピーされました",
     "Persist": "この回しを保存",
     "Rotation_not_found": "スキル回しを見つかりませんでした",
@@ -694,7 +694,7 @@
     "Delete_confirmation": "本当にこのチームを削除しますか？",
     "Invite_expires": "失効日",
     "Invite_error": "チームの招待を見つからなかったり、満了されました。",
-    "Invite_link_copied": "チームの誘いリンクがクリップボードにコピーしました",
+    "Invite_link_copied": "チームの誘いリンクがクリップボードにコピーされました",
     "No_anonymous_join": "チームにさんかするためには、アカウントが必要とします",
     "Already_in_team": "既にチームに参加してる状態です",
     "Webhook_configuration": "Webhook settings",
