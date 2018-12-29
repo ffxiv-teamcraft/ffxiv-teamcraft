@@ -105,13 +105,13 @@
     "Select": "選択",
     "Anonymous": "匿名",
     "Warning": "警告",
-    "Error": "Error",
+    "Error": "エラー",
     "Success": "成功",
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
     "Open_in_desktop": "Open in desktop app",
-    "Admin": "Administrator"
+    "Admin": "管理者"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -267,16 +267,16 @@
     "Title": "設定",
     "General": "一般",
     "Link_base": "アイテムリンク",
-    "Theme": "テーマ",
+    "Theme": "テーマカラー",
     "Desktop": "Desktop",
     "Always_on_top": "常に上に表示",
     "Check_for_update": "アップデート確認",
-    "Downloading_update": "アップデートダウンロード中",
+    "Downloading_update": "アップデートがダウンロード中",
     "No_update_available": "使用可能なアップデートがありません。",
     "Preferred_copy_type": "基本コピー類型",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
-    "Account": "Account",
-    "Reset_password": "Reset password",
+    "Account": "アカウント",
+    "Reset_password": "パスワードをリセットする",
     "Reset_password_warning": "Are you sure you want to reset your password?",
     "Password_reset_mail_sent": "Password reset email sent",
     "Connect_with_patreon": "Connect with patreon",
@@ -359,7 +359,7 @@
       "Content": "This list is now completed, what do you want to do with it?",
       "Delete": "Delete the list",
       "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Nothing": "ここには何もない"
     },
     "BUTTONS": {
       "Add_link_description": "このリストに対する使用者指定リンクを作る",
@@ -598,8 +598,8 @@
     "ROTATIONS": {
       "FOLDERS": {
         "Folders": "Rotation folders",
-        "Rename": "Rename folder",
-        "New_folder": "New folder",
+        "Rename": "オプションの名前を変更する",
+        "New_folder": "新しいフォルダー",
         "Delete_message": "Deleting a folder won't delete the rotations inside.",
         "Share_link_copied": "Rotation folder share link copied to your clipboard",
         "Shared_by": "Shared by {{name}}",
