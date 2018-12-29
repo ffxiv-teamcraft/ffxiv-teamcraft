@@ -235,7 +235,7 @@
   "Close": "閉じる",
   "Forgot_password": "パスワードを忘れた場合はこちら",
   "Email_enter": "メールアドレッス",
-  "Email_not_found": "メールアドレスが見つかりません",
+  "Email_not_found": "メールアドレスを見付け出しません",
   "Email_sent": "パスワード変更メールが発送されました",
   "ALARM": {
     "Spawned": "{{itemName}} 出現予定",
@@ -692,7 +692,7 @@
     "Assign_team_member": "チームのメンバーに割り当てする",
     "Detach_team": "チームを分ける",
     "Delete_confirmation": "本当にこのチームを削除しますか？",
-    "Invite_expires": "失効日",
+    "Invite_expires": "有効期限",
     "Invite_error": "チームの招待を見つからなかったり、満了されました。",
     "Invite_link_copied": "チームの誘いリンクがクリップボードにコピーされました",
     "No_anonymous_join": "チームにさんかするためには、アカウントが必要とします",
