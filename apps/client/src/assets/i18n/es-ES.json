@@ -122,8 +122,8 @@
     "Alarm_already_created": "La alarma ya existe",
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
-    "Confirm_group_delete": "¿Está seguro de que quiere borrar este grupo?",
-    "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
+    "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
@@ -251,10 +251,8 @@
   "Minimal_craft_cost": "Costo mínimo de creación",
   "Used_for": "Usado para",
   "Or": "o",
-  "Make_donation": "Hacer una donación",
   "Data_from_gt": "Datos proporcionados por garlandtools.org",
   "Hide_completed": "Esconder filas completadas",
-  "Your_comment": "Su comentario",
   "Required_crafts_amount": "Cantidad requerida de creaciones",
   "Missing_crafts_amount": "{{amount}} para alcanzar el total",
   "Requires": "Requiere",
@@ -268,6 +266,7 @@
     "General": "General",
     "Link_base": "Vínculos de artículos",
     "Theme": "Tema",
+    "Desktop": "Desktop",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
@@ -525,7 +524,8 @@
     "Saving": "Guardando permisos",
     "No_anonymous": "Necesita una cuenta para administrar permisos",
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
-    "Propagate_changes_done": "Cambios propagados a las listas dentro del taller"
+    "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -535,6 +535,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
+    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
@@ -559,8 +560,7 @@
     "Rotations": "Rotaciones de artesanías",
     "Favorite_Rotations": "Rotaciones Favoritas",
     "No_rotations": "No hay rotaciones",
-    "Create_a": "Crear una",
-    "custom_rotation": "rotación personalizada",
+    "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Reiniciar rotación",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Export_crafting_optimizer": "Exportar usando el formato de optimizador de elaboración",
@@ -649,7 +649,9 @@
     "From_vendor": "Precio del vendedor",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?"
+    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
+    "Copy_earnings_as_text": "Copy content as text",
+    "Content_copied": "Content copied in your clipboard"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -692,6 +694,7 @@
     "Invite_link_copied": "Liga de invitación al equipo copiada al portapapeles",
     "No_anonymous_join": "Debe crear una cuenta para poder unirse a un equipo",
     "Already_in_team": "Usted ya está en este equipo",
+    "Webhook_configuration": "Webhook settings",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
@@ -703,10 +706,21 @@
       "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** ha sido expulsado del equipo.",
       "Name_changed": "El equipo **{{oldName}}** ha sido renombrado **{{newName}}**.",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
+    },
+    "PERMISSIONS": {
+      "MEMBER_JOINED": "Member joined",
+      "MEMBER_LEFT": "Member left",
+      "ITEM_ADDED": "Item added",
+      "ITEM_REMOVED": "Item removed",
+      "LIST_ADDED": "List added",
+      "LIST_REMOVED": "List removed",
+      "LIST_PROGRESSION": "List progression",
+      "USER_ASSIGNMENT": "User assignment"
     }
   },
   "MARKETBOARD": {
     "Title": "Información del mercado",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
