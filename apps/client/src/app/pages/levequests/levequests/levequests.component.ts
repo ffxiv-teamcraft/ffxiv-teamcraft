@@ -208,7 +208,7 @@ export class LevequestsComponent implements OnInit {
   }
 
   private craftAmount(leve: Levequest): number {
-    return leve.amount * leve.itemQuantity * (leve.allDeliveries ? leve.repeats + 1 : 1);
+    return leve.amount * (leve.allDeliveries ? leve.repeats + 1 : 1);
   }
 
   public addSelectedLevesToList(leves: Levequest[]): void {

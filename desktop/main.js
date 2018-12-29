@@ -318,7 +318,7 @@ ipcMain.on('oauth', (event, providerId) => {
   if (providerId === 'google.com') {
     const provider = {
       authorize_url: 'https://accounts.google.com/o/oauth2/auth',
-      client_id: '716469847404-mketgv15vadpi2pkshjljrh3jiietcn8.apps.googleusercontent.com',
+      client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
       redirect_uri: 'http://localhost'
     };
     oauth(provider).getCode({ scope: 'https://www.googleapis.com/auth/userinfo.profile' }).then(code => {

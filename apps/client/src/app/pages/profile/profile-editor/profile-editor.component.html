@@ -54,7 +54,7 @@
           <nz-list [nzRenderItem]="setTemplate" [nzDataSource]="gearSets$ | async" nzSize="small">
             <ng-template #setTemplate let-set>
               <nz-list-item [nzContent]="set.jobId <= 15 ? content : null | ifMobile: null"
-                            [nzActions]="set.jobId <= 15 ?[masterbooks, stats]:[masterbooks]">
+                            [nzActions]="[masterbooks, stats]">
                 <ng-template #content>
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
                     <i nz-icon *ngIf="set.specialist" type="star" nz-tooltip

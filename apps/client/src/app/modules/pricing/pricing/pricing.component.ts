@@ -92,8 +92,8 @@ export class PricingComponent {
               .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
             return {
               item: row,
-              hq: cheapestHq ? cheapestHq.PricePerUnit : 0,
-              nq: cheapestNq ? cheapestNq.PricePerUnit : 0
+              hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
+              nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq
             };
           })
         );
@@ -107,10 +107,14 @@ export class PricingComponent {
         switchMap(() => this.list$),
         first()
       )
-      .subscribe((list) => {
-        stopInterval$.next(null);
-        this.pricingService.priceChanged$.next(null);
-        this.updateCosts(list);
+      .subscribe((res) => {
+        if (res instanceof Error) {
+          this.message.error(this.translate.instant('MARKETBOARD.'))
+        } else {
+          stopInterval$.next(null);
+          this.pricingService.priceChanged$.next(null);
+          this.updateCosts(res);
+        }
       });
   }
 

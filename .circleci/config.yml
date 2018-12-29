@@ -90,9 +90,6 @@ jobs:
         - run:
             name: Deploying web
             command: ./node_modules/.bin/firebase deploy -P default --token "$FIREBASE_TOKEN"
-        - run:
-            name: Deploying desktop
-            command: npm run electron:setup:publish
 
     deploy-desktop:
         <<: *defaults

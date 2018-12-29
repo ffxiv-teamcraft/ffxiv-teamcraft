@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { MarketboardPrice } from '@xivapi/angular-client/src/model/schema/market/marketboard-price';
 
 @Component({
@@ -28,6 +28,8 @@ export class MarketboardPopupComponent implements OnInit {
 
   server$: Observable<string>;
 
+  error = false;
+
   sort$: BehaviorSubject<{ key: string, value: 'ascend' | 'descend' }> = new BehaviorSubject<{ key: string, value: any }>({
     key: 'PricePerUnit',
     value: 'ascend'
@@ -49,6 +51,11 @@ export class MarketboardPopupComponent implements OnInit {
           }),
           map(item => item.Prices),
           tap(() => this.loading = false),
+          catchError((err) => {
+            console.error(err);
+            this.error = true;
+            return of([]);
+          }),
           shareReplay(1)
         ),
       this.sort$
@@ -75,6 +82,11 @@ export class MarketboardPopupComponent implements OnInit {
         return this.xivapi.getMarketBoardItemHistory(server, this.itemId);
       }),
       map(itemHistory => itemHistory.History),
+      catchError((err) => {
+        console.error(err);
+        this.error = true;
+        return of([]);
+      }),
       tap(() => this.loadingHistory = false),
       map(history => {
         return history.map(entry => {

@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { en_US, NgZorroAntdModule, NZ_I18N, NZ_ICONS, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
+import { en_US, NgZorroAntdModule, NZ_I18N, NZ_MESSAGE_CONFIG } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { CoreModule } from './core/core.module';
@@ -39,8 +39,6 @@ import { SettingsModule } from './modules/settings/settings.module';
 import { UserAvatarModule } from './modules/user-avatar/user-avatar.module';
 import { TeamsModule } from './modules/teams/teams.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
-import { IconDefinition } from '@ant-design/icons-angular';
-import * as AllIcons from '@ant-design/icons-angular/icons';
 import { SimulatorModule } from './pages/simulator/simulator.module';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { RotationsModule } from './modules/rotations/rotations.module';
@@ -50,17 +48,11 @@ import { MapModule } from './modules/map/map.module';
 
 registerLocaleData(en);
 
-const antDesignIcons = AllIcons as {
-  [key: string]: IconDefinition;
-};
-const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   providers: [
-    { provide: NZ_ICONS, useValue: icons },
     { provide: NZ_I18N, useValue: en_US },
     AuthFacade,
     {

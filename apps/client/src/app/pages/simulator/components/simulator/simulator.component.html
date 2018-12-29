@@ -25,8 +25,8 @@
         <i nz-icon type="download"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-              [disabled]="rotation.rotation.length === 0"
-              ngxClipboard [cbContent]="registry.exportToCraftOpt(rotation.rotation || [])"
+              [disabled]="actions$.value.length === 0"
+              ngxClipboard [cbContent]="getCraftOptExportString()"
               (cbOnSuccess)="success('SIMULATOR.Export_copied')"
               [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate">
         <i nz-icon type="upload"></i>
@@ -37,7 +37,7 @@
         <i nz-icon type="select"></i>
       </button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-              [disabled]="rotation.rotation.length === 0"
+              [disabled]="actions$.value.length === 0"
               *ngIf="simulation$ | async as simulation"
               (click)="openMacroPopup(simulation)"
               [nzTitle]="'SIMULATOR.Generate_ingame_macro' | translate">
@@ -194,7 +194,7 @@
                 <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center">
                   <div fxLayout="column" fxFlex="1 1 auto" fxLayoutGap="10px" class="consumable-col">
                     <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
-                               nzAllowClear>
+                               nzAllowClear nzShowSearch>
                       <nz-option *ngFor="let food of foods" [nzValue]="food"
                                  nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
                       </nz-option>
@@ -217,6 +217,7 @@
                   </div>
                   <div fxLayout="column" fxFlex="1 1 auto" fxLayoutGap="10px" class="consumable-col">
                     <nz-select [(ngModel)]="selectedMedicine"
+                               nzShowSearch
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate" nzAllowClear>
                       <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
                                  nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">

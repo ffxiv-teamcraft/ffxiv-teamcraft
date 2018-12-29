@@ -1,6 +1,7 @@
 <div nz-row class="top-part" fxLayout="row wrap">
   <div nz-col [nzXs]="{ span: 10, order: 1 }" [nzMd]="{ span: 4 }" [nzXXl]="{ span: 3 }">
     <nz-select class="job" [ngModel]="job$.value" [nzAllowClear]="true"
+               nzShowSearch
                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate" (ngModelChange)="setJob($event)">
       <nz-option *ngFor="let job of jobList" [nzValue]="job.id" [nzLabel]="job.id | jobAbbr | i18n" nzCustomContent>
         <img src="https://garlandtools.org/db/images/{{job.abbreviation}}.png" alt="" class="job-icon">

@@ -39,13 +39,6 @@ export class List extends DataWithPermissions {
 
   ephemeral: boolean;
 
-  // comments: ResourceComment[];
-
-  // Related to commissions
-  commissionId?: string;
-
-  commissionServer?: string;
-
   modificationsHistory: ModificationEntry[] = [];
 
   @ForeignKey(Team)
@@ -60,10 +53,6 @@ export class List extends DataWithPermissions {
 
   public get crystals(): ListRow[] {
     return this.items.filter(item => item.id > 1 && item.id < 20);
-  }
-
-  public get isCommissionList(): boolean {
-    return this.commissionId !== undefined && this.commissionServer !== undefined;
   }
 
   public isComplete(): boolean {
@@ -270,7 +259,7 @@ export class List extends DataWithPermissions {
         // While each requirement has enough items remaining, you can craft the item.
         // If only one misses, then this will turn false for the rest of the loop
         canCraft = canCraft &&
-          (requirementItem.done - requirementItem.used) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
+          (requirementItem.done) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
       }
     }
     return canCraft;
