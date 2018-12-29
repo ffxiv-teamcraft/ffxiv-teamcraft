@@ -81,7 +81,7 @@
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
-  "Ephemeral_tag": "時間制",
+  "Ephemeral_tag": "刻限",
   "Quick_list_create": "簡易リストを生成(完了した後、削除)",
   "Tag_filter": "タグ",
   "Public_lists": "コミュニティリスト",
@@ -98,7 +98,7 @@
   "COMMON": {
     "Save": "保存",
     "Reset": "リセット",
-    "Total": "総合",
+    "Total": "合計",
     "User_id": "ユーザーID",
     "Open_url": "Teamcraft リンクを開く",
     "Open_url_placeholder": "Teamcraft リンク",
@@ -351,7 +351,7 @@
     "Copy_list_as_text": "Copy the whole list as text",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギル及び手形)",
-    "Total_trade_price": "総合: ",
+    "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラーム追加",
     "History": "内訳",
     "COMPLETION_POPUP": {
