@@ -711,14 +711,14 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**이/가 [{{listName}}]({{listUrl}})**의 **[{{memberName}}]({{memberProfileUrl}})**에게 할당되었습니다."
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Member joined",
-      "MEMBER_LEFT": "Member left",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "MEMBER_JOINED": "팀 가입",
+      "MEMBER_LEFT": "팀 탈퇴",
+      "ITEM_ADDED": "아이템 추가",
+      "ITEM_REMOVED": "아이템 제거",
+      "LIST_ADDED": "목록 추가",
+      "LIST_REMOVED": "목록 제거",
+      "LIST_PROGRESSION": "목록 진척도 변경",
+      "USER_ASSIGNMENT": "팀원 관리"
     }
   },
   "MARKETBOARD": {
