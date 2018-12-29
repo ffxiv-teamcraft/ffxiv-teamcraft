@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { NzDrawerRef } from 'ng-zorro-antd';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 
 @Component({
@@ -14,19 +14,23 @@ import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 })
 export class ListPickerDrawerComponent {
 
-  myLists$: Observable<List[]>;
-
   listsWithWriteAccess$: Observable<List[]>;
 
   workshops$: Observable<WorkshopDisplay[]>;
 
+  lists$: Observable<{ communityLists: List[], otherLists: List[] }>;
+
+  query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
 
-    this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$;
+    this.listsWithWriteAccess$ = combineLatest(this.listsFacade.listsWithWriteAccess$, this.query$).pipe(
+      map(([lists, query]) => lists.filter(l => !l.notFound && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
+    );
 
-    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
+    this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$, this.query$).pipe(
       debounceTime(100),
-      map(([workshops, compacts]) => {
+      map(([workshops, compacts, query]) => {
         return workshops
           .map(workshop => {
             return {
@@ -40,29 +44,41 @@ export class ListPickerDrawerComponent {
                   return list;
                 })
                 .filter(l => l !== undefined)
+                .filter(l => !l.notFound && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
             };
           })
-          .filter(display => display.lists.length > 0)
           .sort((a, b) => a.workshop.index - b.workshop.index);
-      })
+      }),
+      shareReplay(1)
     );
 
-    this.myLists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
+    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.query$).pipe(
+      filter(([loading]) => !loading),
       debounceTime(100),
-      map(([lists, workshops]) => {
+      map(([, lists, workshops, query]: [boolean, List[], WorkshopDisplay[], string]) => {
         // lists category shows only lists that have no workshop.
         return lists
           .filter(l => {
             return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
           })
+          .filter(l => !l.notFound && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;
           });
       }),
+      map(lists => lists.sort((a, b) => a.index - b.index)),
       map(lists => {
-        return lists.sort((a, b) => b.index - a.index);
-      })
+        return {
+          communityLists: lists.filter(l => l.public),
+          otherLists: lists.filter(l => !l.public)
+        };
+      }),
+      shareReplay(1)
+    );
+    this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
+      debounceTime(100),
+      shareReplay(1)
     );
 
     this.listsFacade.loadMyLists();

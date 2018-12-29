@@ -2,17 +2,18 @@
   <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
 </button>
 <nz-divider [nzText]="'Or' | translate"></nz-divider>
-<div *ngIf="myLists$ | async as myLists">
-  <nz-list [nzDataSource]="myLists" [nzRenderItem]="list" [nzHeader]="header">
+<nz-input-group [nzSuffix]="suffixIconSearch">
+  <input type="text" [ngModel]="query$ | async" (ngModelChange)="query$.next($event)" nz-input
+         [placeholder]="'LISTS.Lists_search_placeholder' | translate">
+</nz-input-group>
+<ng-template #suffixIconSearch>
+  <i nz-icon type="search"></i>
+</ng-template>
+<div *ngIf="lists$ | async as lists">
+  <nz-list [nzDataSource]="lists.otherLists" [nzRenderItem]="list" [nzHeader]="yourListsHeader">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
-        <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="description">
-          <ng-template #description>
-            <nz-tag *ngIf="list.public" [nzColor]="'geekblue'" nz-tooltip
-                    [nzTitle]="'LIST_DETAILS.HELP.Public_list' | translate">
-              {{'Public_list' | translate}}
-            </nz-tag>
-          </ng-template>
+        <nz-list-item-meta [nzTitle]="list.name">
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>
@@ -20,7 +21,21 @@
           nz-icon type="check"></i></button>
       </ng-template>
     </ng-template>
-    <ng-template #header><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+    <ng-template #yourListsHeader><i nz-icon type="solution"></i>&nbsp;{{'LISTS.Your_lists' | translate}}</ng-template>
+  </nz-list>
+  <nz-list [nzDataSource]="lists.communityLists" [nzRenderItem]="list" [nzHeader]="communityListsHeader">
+    <ng-template #list let-list>
+      <nz-list-item [nzActions]="[pickOwnList]">
+        <nz-list-item-meta [nzTitle]="list.name">
+        </nz-list-item-meta>
+      </nz-list-item>
+      <ng-template #pickOwnList>
+        <button nz-button [nzType]="'primary'" [nzShape]="'circle'" (click)="pickList(list)"><i
+          nz-icon type="check"></i></button>
+      </ng-template>
+    </ng-template>
+    <ng-template #communityListsHeader><i nz-icon type="solution"></i>&nbsp;{{'Your_public_lists' | translate}}
+    </ng-template>
   </nz-list>
 </div>
 <div>
