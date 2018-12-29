@@ -368,8 +368,8 @@
       "Share_description": "シェアリンクをクリップボードにコピーする",
       "Open": "リストを開く",
       "Open_description": "リストに繋ぐ",
-      "Delete": "リストを削除",
-      "Delete_description": "このリストを削除します",
+      "Delete": "削除",
+      "Delete_description": "このリストを削除する",
       "Delete_warning": "リスト削除は取り消すことはできません"
     }
   },
