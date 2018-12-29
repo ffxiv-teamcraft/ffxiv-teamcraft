@@ -720,6 +720,7 @@
   },
   "MARKETBOARD": {
     "Title": "マーケットボード情報",
+    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
     "Amount": "分量",
     "HQ": "HQ",
     "Total_price": "全額",
