@@ -136,7 +136,7 @@
       "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
       "Duration": "採集可能時間",
       "Slot": "段目",
-      "Type": "採集品種類",
+      "Type": "タイプ",
       "Map": "地図",
       "TYPE": {
         "Mineral": "岩場",
