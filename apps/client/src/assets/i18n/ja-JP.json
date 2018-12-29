@@ -249,7 +249,7 @@
   "Earning": "収益",
   "Benefits": "利潤",
   "Minimal_craft_cost": "最小制作費用",
-  "Used_for": "使用先",
+  "Used_for": "素材に使う",
   "Or": "または",
   "Make_donation": "後援する",
   "Data_from_gt": "garlandtools.orgから提供されたデータ",
@@ -736,13 +736,13 @@
   },
   "TOOLTIP": {
     "Level": "レベル",
-    "Ilvl": "ilvl",
+    "Ilvl": "IL",
     "Cost": "費用",
     "Class_job": "ジョブ",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Damage_phys": "物理ダメージ",
+    "Damage_mag": "魔法ダメージ",
+    "Defense_phys": "物理防御力",
+    "Defense_mag": "魔法防御力"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
