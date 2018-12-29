@@ -527,7 +527,7 @@
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
     "Propagate_changes": "워크샵 내부에 목록에 대한 권한 제공",
     "Propagate_changes_done": "워크샵 내부 목록에 대한 변경이 적용되었습니다",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다."
   },
   "WIKI": {
     "Title": "위키",
