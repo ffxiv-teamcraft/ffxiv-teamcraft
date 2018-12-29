@@ -110,7 +110,7 @@
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
-    "Open_in_desktop": "Open in desktop app",
+    "Open_in_desktop": "PCアップリに開く",
     "Admin": "管理者"
   },
   "ALARMS": {
@@ -711,8 +711,8 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てされました"
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Member joined",
-      "MEMBER_LEFT": "Member left",
+      "MEMBER_JOINED": "メンバー入りました",
+      "MEMBER_LEFT": "メンバー脱退しました",
       "ITEM_ADDED": "Item added",
       "ITEM_REMOVED": "Item removed",
       "LIST_ADDED": "List added",
