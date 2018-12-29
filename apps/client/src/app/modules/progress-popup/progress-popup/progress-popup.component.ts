@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, scan, skip, startWith } from 'rxjs/operators';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, map, scan, skip, startWith } from 'rxjs/operators';
 import { NzModalRef } from 'ng-zorro-antd';
 
 @Component({
@@ -28,6 +28,10 @@ export class ProgressPopupComponent implements OnInit {
       map(counter => Math.ceil(100 * counter / this.count))
     );
     this.operation$.pipe(
+      catchError(() => {
+        this.modalRef.close(new Error());
+        return EMPTY;
+      }),
       skip(this.count - 1)
     ).subscribe((res) => {
       this.modalRef.close(res);

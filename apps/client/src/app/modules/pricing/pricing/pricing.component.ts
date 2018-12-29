@@ -107,10 +107,14 @@ export class PricingComponent {
         switchMap(() => this.list$),
         first()
       )
-      .subscribe((list) => {
-        stopInterval$.next(null);
-        this.pricingService.priceChanged$.next(null);
-        this.updateCosts(list);
+      .subscribe((res) => {
+        if (res instanceof Error) {
+          this.message.error(this.translate.instant('MARKETBOARD.'))
+        } else {
+          stopInterval$.next(null);
+          this.pricingService.priceChanged$.next(null);
+          this.updateCosts(res);
+        }
       });
   }
 
