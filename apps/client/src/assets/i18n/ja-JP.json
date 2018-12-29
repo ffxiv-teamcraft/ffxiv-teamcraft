@@ -484,7 +484,7 @@
   "GATHERING_LOCATIONS": {
     "Title": "ギャザラーマップ",
     "No_items": "採集場所を見つかりませんでした。",
-    "Gathering_name": "アイテム名を入力して下さい",
+    "Gathering_name": "アイテム名を入力してください",
     "Intro": "採集手帳には、採集可能なアイテムを検索することができ、採集場所確認とアラーム生成などの詳細機能を提供します。上の空間に内容を書いて、探そうとする採集情報をご確認下さい！"
   },
   "ANNOUNCEMENT": {
@@ -661,7 +661,7 @@
     "Levequest_name": "リーヴ名",
     "No_results": "ギルドリーヴが見つかりませんでした",
     "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
-    "Quantity": "数量",
+    "Quantity": "分量",
     "All_deliveries": "全ての {{value}} 納品",
     "INTRO": {
       "Title": "ギルドリーヴ",
