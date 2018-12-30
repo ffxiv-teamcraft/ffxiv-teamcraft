@@ -1,6 +1,6 @@
 {
   "Pick_a_list": "Choisissez une liste",
-  "Pick_a_user": "Choisissez une liste",
+  "Pick_a_user": "Choisissez un utilisateur",
   "Pick_a_fc": "Choisissez une compagnie libre",
   "Pick_a_rotation": "Choisissez une rotation",
   "Pick_a_recipe": "Choisissez une recette",
@@ -9,11 +9,11 @@
   "See_on_map": "Voir sur la carte",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
-  "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur discord de Teamcraft (en anglais ou français).",
+  "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
-    "auth/user-not-found": "Mauvais email ou mot de passe",
+    "auth/user-not-found": "Utilisateur introuvable",
     "auth/wrong-password": "Mauvais email ou mot de passe"
   },
   "ITEMS": {
@@ -256,7 +256,7 @@
   "Required_crafts_amount": "Nombre de crafts à faire",
   "Missing_crafts_amount": "{{amount}} pour atteindre le total",
   "Requires": "Nécessite",
-  "Copy_item_name_to_clipboard": "Copier le nom dans le press-papiers",
+  "Copy_item_name_to_clipboard": "Copier le nom dans le presse-papiers",
   "Item_name_copied": "{{itemname}} copié dans le presse-papiers",
   "Tier_display_toggle": "Voir les étapes de craft",
   "Precraft_tier": "Étape",
