@@ -721,7 +721,7 @@
   },
   "MARKETBOARD": {
     "Title": "マーケットボード情報",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "現在 XIVAPI またはコンパニオン APIに問題があります。しばらく時間をおいてもう一度お試し下さい。",
     "Amount": "分量",
     "HQ": "HQ",
     "Total_price": "全額",
@@ -744,7 +744,7 @@
     "Defense_mag": "魔法防御力"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
+    "Slogan": "制作、シェア、貢献",
     "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを使って、作られました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "後援する[1回]",
