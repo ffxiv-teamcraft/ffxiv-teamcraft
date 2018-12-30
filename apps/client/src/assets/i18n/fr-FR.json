@@ -672,16 +672,16 @@
   "NOTIFICATIONS": {
     "Title": "Notifications",
     "List_comment_added": "Commentaire sur la liste {{listName}} : \"{{content}}\"",
-    "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}}: \"{{content}} \"",
+    "List_item_comment_added": "Commentaire posté sur {{itemName}}, liste {{listName}} : \"{{content}} \"",
     "Mark_all_as_read": "Tout marquer comme lu"
   },
   "TEAMS": {
     "Title": "Équipes",
     "Leader": "Chef",
     "Member": "Membre",
-    "Enable_discord_updates": "Activer le suivi via discord",
-    "Disable_discord_updates": "Désactiver le suivi via discord",
-    "Webhook_error": "Une erreur est survenue lors de la création du webhook discord:",
+    "Enable_discord_updates": "Activer le suivi via Discord",
+    "Disable_discord_updates": "Désactiver le suivi via Discord",
+    "Webhook_error": "Une erreur est survenue lors de la création du webhook Discord :",
     "Create_team": "Créer une équipe",
     "Create_invite_one_day": "Créer une nouvelle invitation (valable 1 jour)",
     "Create_invite_infinite": "Créer une nouvelle invitation permanente",
@@ -690,7 +690,7 @@
     "Assign_list": "Assigner cette liste à une équipe",
     "Assign_team_member": "Assigner à un membre de l’équipe",
     "Detach_team": "Détacher cette liste de son équipe",
-    "Delete_confirmation": "Êtes-vous sûr de que vouloir supprimer cette équipe ?",
+    "Delete_confirmation": "Êtes-vous sûr de vouloir supprimer cette équipe ?",
     "Invite_expires": "Expire",
     "Invite_error": "Invitation d'équipe introuvable ou expirée.",
     "Invite_link_copied": "Lien d'invitation de l'équipe copié dans votre presse-papiers",
@@ -710,7 +710,7 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** a été assigné à **[{{memberName}}]({{memberProfileUrl}})** sur la liste **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Un membre à rejoint",
+      "MEMBER_JOINED": "Un membre a rejoint",
       "MEMBER_LEFT": "Un membre est parti",
       "ITEM_ADDED": "Objet ajouté à une liste",
       "ITEM_REMOVED": "Objet retiré d'une liste",
@@ -721,8 +721,8 @@
     }
   },
   "MARKETBOARD": {
-    "Title": "Hotel des ventes",
-    "Error": "XIVAPI ou l'API compagnon est actuellement down, veuillez patienter un instant avant de réessayer.",
+    "Title": "Hôtel des ventes",
+    "Error": "XIVAPI ou l'API compagnon est actuellement inaccessible, veuillez patienter un instant avant de réessayer.",
     "Amount": "Quantité",
     "HQ": "HQ",
     "Total_price": "Prix total",
@@ -752,12 +752,12 @@
     "Features_header": "Par où commencer !",
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
-      "Public_lists": "Clonez des listes communautaires pour vous aider à construire des kits de mandats, de complétion de carnet, des aéronefs, du stuff, tout peut être trouvé ici.",
+      "Public_lists": "Clonez des listes communautaires pour vous aider à construire des kits de mandats, de complétion de carnet, des aéronefs, de l'équipement, tout peut être trouvé ici.",
       "Alarms": "Créer des alarmes pour s’assurer que vous ne manquez pas une récolte, organisez-les en groupes, importez-les en jeu, tout est possible.",
       "Gathering_location": "Trouvez des informations sur n'importe quel objet récoltable, créez une alarme, trouvez ses coordonnées, l'éthéryte la plus proche, le livre de récolte nécessaire, et bien plus !",
-      "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulator configurable !",
-      "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et exp, puis créez rapidement une liste pour les réaliser.",
-      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d'oeil pour les rendre utilisable dans votre version de FFXIV !"
+      "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
+      "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
     }
   }
 }
