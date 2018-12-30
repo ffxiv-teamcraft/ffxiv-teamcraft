@@ -27,9 +27,9 @@ export class LevequestsComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(60);
+  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
-  levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(70);
+  levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(10);
 
   results$: Observable<Levequest[]>;
 
@@ -43,6 +43,12 @@ export class LevequestsComponent implements OnInit {
   modifiedList: List;
 
   allSelected = false;
+
+  computeExp = false;
+
+  startingExp = 0;
+
+  startingLevel = 1;
 
   @ViewChild('notificationRef')
   notification: TemplateRef<any>;
@@ -65,7 +71,7 @@ export class LevequestsComponent implements OnInit {
         });
       }),
       debounceTime(500),
-      filter((query) => query.length > 3 || this.job$.value !== null),
+      filter((query) => (query.length > 3 || this.job$.value !== null) && this.levelMin$.value <= this.levelMax$.value),
       tap(() => {
         this.showIntro = false;
         this.loading = true;
@@ -106,6 +112,7 @@ export class LevequestsComponent implements OnInit {
               .map(recipe => ({ recipeId: recipe.ID, jobId: recipe.ClassJob })),
             exp: leve.ExpReward,
             gil: leve.GilReward,
+            hq: false,
             amount: 1,
             itemQuantity: leve.CraftLeve.ItemCount0,
             name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja },
@@ -131,9 +138,32 @@ export class LevequestsComponent implements OnInit {
       .subscribe(params => {
         this.query$.next(params.query || '');
         this.job$.next(params.job ? +params.job : null);
-        this.levelMin$.next(params.min || 60);
-        this.levelMax$.next(params.max || 70);
+        this.levelMin$.next(params.min || 1);
+        this.levelMax$.next(params.max || 10);
       });
+  }
+
+  public getMaxExp(level: number): number {
+    return this.gt.getMaxXp(level);
+  }
+
+  public getExp(leveExp: number): { level: number, exp: number, expPercent: number } {
+    let exp = this.startingExp + leveExp;
+    let level = this.startingLevel;
+    while (exp - this.getMaxExp(level) >= 0 && level < 69) {
+      exp -= this.getMaxExp(level);
+      level++;
+    }
+    // Handle special case for lvl 70
+    if (exp >= this.getMaxExp(level) && level >= 69) {
+      level = 70;
+      exp = 0;
+    }
+    return {
+      level: level,
+      expPercent: Math.min(100, Math.floor(100 * exp / this.getMaxExp(level))),
+      exp: Math.min(exp, this.getMaxExp(level))
+    };
   }
 
   public setJob(value: number): void {
@@ -205,6 +235,16 @@ export class LevequestsComponent implements OnInit {
       .subscribe((newList) => {
         this.router.navigate(['list', newList.$key]);
       });
+  }
+
+  public getLeveExp(leve: Levequest): number {
+    const res = leve.exp * this.craftAmount(leve);
+    return leve.hq ? res * 2 : res;
+  }
+
+  public getLeveGil(leve: Levequest): number {
+    const res = leve.gil * this.craftAmount(leve);
+    return leve.hq ? res * 2 : res;
   }
 
   private craftAmount(leve: Levequest): number {
