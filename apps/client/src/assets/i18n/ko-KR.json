@@ -499,7 +499,7 @@
     "Share_link_copied": "템플릿 공유링크가 클립보드에 복사되었습니다",
     "Copy_template_url": "템플릿 url 복사",
     "Cloning_list": "내 계정으로 목록 복사본 생성",
-    "Redirect_notice": "복사본 생성시 목록으로 리디렉션 됩니다.",
+    "Redirect_notice": "복사본 생성시 목록으로 이동됩니다.",
     "Not_found": "템플릿을 찾을 수 없습니다",
     "STATUS": {
       "Loading": "데이터베이스에서 서식을 불러오는 중",
