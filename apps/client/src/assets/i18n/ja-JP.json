@@ -661,6 +661,7 @@
     "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
     "Quantity": "分量",
     "All_deliveries": "全ての {{value}} 納品",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、与えられるギルドリーヴや様々なギルドリーヴに対するリストが作れます。",
