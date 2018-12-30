@@ -598,13 +598,13 @@
         "Folders": "スキル回しフォルダー",
         "Rename": "オプションの名前を変更する",
         "New_folder": "新しいフォルダー",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
+        "Delete_message": "フォルダーを削除しても、フォルダー内の自分のスキル回しに関するのは削除されません。",
+        "Share_link_copied": "制作マクロシェア向けリンクをクリップボードにコピーされました",
         "Shared_by": "{{name}} で共有された",
         "Created_by": "{{name}} で作成された",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Copy_folder": "このフォルダーと内容をマイアカウントにコピーする",
+        "Folder_copied": "フォルダーがマイアカウントにコピーされました",
+        "Favorite_folders": "お気に入りフォルダー"
       }
     },
     "CATEGORY": {
