@@ -9,6 +9,7 @@ export interface Levequest {
   recipes: { recipeId: string, jobId: number }[];
   exp: number;
   gil: number;
+  hq: boolean;
   // Amount of levequest completions
   amount: number;
   // Quantity of item required for completion

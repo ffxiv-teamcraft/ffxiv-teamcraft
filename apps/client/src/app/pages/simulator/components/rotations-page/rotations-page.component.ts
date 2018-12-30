@@ -77,9 +77,10 @@ export class RotationsPageComponent {
     rotations.splice(index, 0, rotation);
     // Update indexes and persist
     rotations
-      .filter((r, i) => r.index !== i)
       .map((r, i) => {
-        r.index = i;
+        if (r.index !== i) {
+          r.index = i;
+        }
         return r;
       })
       .forEach(r => {

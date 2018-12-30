@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.5"></a>
+# [5.0.0-rc.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.4...v5.0.0-rc.5) (2018-12-30)
+
+
+### Bug Fixes
+
+* fixed ordering in rotations and lists ([5d2fbd1](https://github.com/Supamiu/ffxiv-teamcraft/commit/5d2fbd1))
+
+
+### Features
+
+* **desktop:** added "install update" button for when update if found and downloaded ([b94ea4f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b94ea4f))
+* **levequests:** added exp computing system ([ba64948](https://github.com/Supamiu/ffxiv-teamcraft/commit/ba64948))
+
+
+
 <a name="5.0.0-rc.4"></a>
 # [5.0.0-rc.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.3...v5.0.0-rc.4) (2018-12-29)
 
