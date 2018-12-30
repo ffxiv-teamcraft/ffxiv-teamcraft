@@ -526,7 +526,7 @@
     "No_anonymous": "権限を管理するには、アカウントが要ります",
     "Propagate_changes": "工房内部にリストに対する権限提供",
     "Propagate_changes_done": "工房内部リストに対する変更が適用されました",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限を持たれます。"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -536,7 +536,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "Echo 時間",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "’リサイクル’が使える部分にマクロを分ける",
     "Extra_wait": "マクロ遅延時間",
     "Import_macro": "ゲームのマクロが輸入をします",
     "Ingame_macro": "マクロ",
@@ -561,7 +561,7 @@
     "Rotations": "スキル回し",
     "Favorite_Rotations": "制作スキル回しお気に入り",
     "No_rotations": "スキル回しがありません",
-    "Create_a_custom_rotation": "Create a custom rotation",
+    "Create_a_custom_rotation": "使用者指定スキル回しを作ります",
     "Reset": "リセット",
     "Import_from_crafting_optimizer": "Crafting optimizerから持って来る",
     "Export_crafting_optimizer": "Crafting optimizer 形式で送り出す",
@@ -595,7 +595,7 @@
     },
     "ROTATIONS": {
       "FOLDERS": {
-        "Folders": "Rotation folders",
+        "Folders": "スキル回しフォルダー",
         "Rename": "オプションの名前を変更する",
         "New_folder": "新しいフォルダー",
         "Delete_message": "Deleting a folder won't delete the rotations inside.",
