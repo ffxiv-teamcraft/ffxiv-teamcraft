@@ -661,6 +661,7 @@
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantity",
     "All_deliveries": "All {{value}} Deliveries",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
