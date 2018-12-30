@@ -492,7 +492,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "該当リストに対する、リストテンプレート生成する",
-    "Template_created": "List template created",
+    "Template_created": "リストの書式が生成されました。",
     "Dialog_title": "テンプレート生成",
     "Link_name": "テンプレート名",
     "target": "対象リスト",
@@ -502,8 +502,8 @@
     "Redirect_notice": "コピー生成する時にリストに繋がれます。",
     "Not_found": "テンプレートが見つかりません",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "データベースから書式を読み込み中です。",
+      "Copying": "リストのコピーをアカウントに生成中です。完了したら自動に移動します。"
     }
   },
   "PERMISSIONS": {
