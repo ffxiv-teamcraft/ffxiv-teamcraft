@@ -661,6 +661,7 @@
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
     "All_deliveries": "Toules les livraisons ({{value}})",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
