@@ -649,10 +649,10 @@
   "PRICING": {
     "From_vendor": "商店販売値段",
     "Expect_to_sell_everything": "全体販売仮定",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices_warning": "この作業は所要時間があり、完了まで {{time}} ほど所要すると予想されます。このまま進行しますか?",
+    "Copy_earnings_as_text": "内容をテキストにコピーする",
+    "Content_copied": "クリップボードに内容がコピーされました。"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -711,11 +711,11 @@
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
       "MEMBER_LEFT": "メンバー脱退しました",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
+      "ITEM_ADDED": "アイテムが追加されました",
+      "ITEM_REMOVED": "アイテムが削除しました",
+      "LIST_ADDED": "リスト追加",
+      "LIST_REMOVED": "リスト削除",
+      "LIST_PROGRESSION": "リストの進行状況を変更",
       "USER_ASSIGNMENT": "User assignment"
     }
   },
