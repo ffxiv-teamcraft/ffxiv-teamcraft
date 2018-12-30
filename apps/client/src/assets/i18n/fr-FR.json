@@ -271,7 +271,7 @@
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
-    "Install_update": "Install update",
+    "Install_update": "Installer la mise à jour",
     "Preferred_copy_type": "Type de copie préférée",
     "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
     "Account": "Compte",
@@ -661,7 +661,7 @@
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
     "All_deliveries": "Toules les livraisons ({{value}})",
-    "Compute_exp": "Show impact on xp",
+    "Compute_exp": "Voir l'impact sur l'expérience",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
