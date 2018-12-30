@@ -661,6 +661,7 @@
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
     "All_deliveries": "Todas las {{value}} entregas",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
