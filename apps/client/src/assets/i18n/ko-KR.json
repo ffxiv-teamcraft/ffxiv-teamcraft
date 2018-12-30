@@ -35,7 +35,7 @@
   "Default": "기본 설정",
   "Delete": "삭제",
   "Timers": "타이머",
-  "Copy_isearch": "아이템찾기 매크로 복사",
+  "Copy_isearch": "아이템검색 매크로 복사",
   "Isearch_copied": "/아이템검색 {{itemname}} 클립보드에 복사되었습니다",
   "Required_for_final_craft": "최종 제작물에 {{amount}}개 필요",
   "Mark_HQ": "HQ 요구 표시",
