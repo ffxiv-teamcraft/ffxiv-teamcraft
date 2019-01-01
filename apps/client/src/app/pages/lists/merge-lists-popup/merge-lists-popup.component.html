@@ -8,8 +8,11 @@
   <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: workshopDisplay.lists}"></ng-container>
 </div>
 
-<button [disabled]="selectedLists.length < 2 || merging" nz-button (click)="merge()">{{'Confirm' | translate}}
-</button>
+<div fxLayout="row" fxLayoutGap="10px">
+  <button [disabled]="selectedLists.length < 2 || merging" nz-button (click)="merge()">{{'Confirm' | translate}}
+  </button>
+  <label nz-checkbox [(ngModel)]="deleteAfter">{{'LISTS.Delete_after_merge' | translate}}</label>
+</div>
 
 <ng-template #listsDisplay let-lists>
   <nz-list [nzDataSource]="lists" [nzRenderItem]="listTemplate">

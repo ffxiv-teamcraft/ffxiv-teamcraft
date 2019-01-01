@@ -26,6 +26,8 @@ export class MergeListsPopupComponent implements OnInit {
 
   merging = false;
 
+  deleteAfter = false;
+
   constructor(private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private modalRef: NzModalRef, private message: NzMessageService,
               private translate: TranslateService, private workshopsFacade: WorkshopsFacade) {
@@ -109,7 +111,14 @@ export class MergeListsPopupComponent implements OnInit {
             first()
           ), 1, 'Saving_in_database');
         }),
-        first()
+        first(),
+        tap(() => {
+          if (this.deleteAfter) {
+            this.selectedLists.forEach(list => {
+              this.listsFacade.deleteList(list.$key);
+            });
+          }
+        })
       ).subscribe(() => {
       this.message.success(this.translate.instant('LISTS.Lists_merged'));
       this.modalRef.close();
