@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.6"></a>
+# [5.0.0-rc.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.4...v5.0.0-rc.6) (2019-01-01)
+
+
+### Bug Fixes
+
+* craft and gathering buttons always last for better display ([b8334cf](https://github.com/Supamiu/ffxiv-teamcraft/commit/b8334cf))
+* fixed ordering in rotations and lists ([5d2fbd1](https://github.com/Supamiu/ffxiv-teamcraft/commit/5d2fbd1))
+* implemented a possible fix for merge popup, needs more testing ([189864c](https://github.com/Supamiu/ffxiv-teamcraft/commit/189864c))
+* large lists details panels are now collapsed by default ([7fe04df](https://github.com/Supamiu/ffxiv-teamcraft/commit/7fe04df))
+* only show warning icon if all of the available books are missing ([1e3bfd3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1e3bfd3))
+
+
+### Features
+
+* **alarms:** you can now delete alarms inside the drawer and the overlay ([bc8cfaa](https://github.com/Supamiu/ffxiv-teamcraft/commit/bc8cfaa))
+* **desktop:** added "install update" button for when update if found and downloaded ([b94ea4f](https://github.com/Supamiu/ffxiv-teamcraft/commit/b94ea4f))
+* **levequests:** added exp computing system ([ba64948](https://github.com/Supamiu/ffxiv-teamcraft/commit/ba64948))
+
+
+
 <a name="5.0.0-rc.5"></a>
 # [5.0.0-rc.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.4...v5.0.0-rc.5) (2018-12-30)
 
