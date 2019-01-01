@@ -194,9 +194,10 @@ export class ListsEffects {
 
   @Effect()
   deleteListFromDatabase$ = this.actions$.pipe(
-    ofType(ListsActionTypes.DeleteList),
-    map(action => action as DeleteList),
-    mergeMap(action => this.listService.remove(action.key)),
+    ofType<DeleteList>(ListsActionTypes.DeleteList),
+    mergeMap(action => {
+      return combineLatest(this.listService.remove(action.key), this.listCompactsService.remove(action.key));
+    }),
     switchMap(() => EMPTY)
   );
 
