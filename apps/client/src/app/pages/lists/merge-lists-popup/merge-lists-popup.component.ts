@@ -5,8 +5,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
 import { debounceTime, filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
-import { concat } from 'rxjs';
-import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { combineLatest, concat } from 'rxjs';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -26,6 +25,8 @@ export class MergeListsPopupComponent implements OnInit {
   selectedLists: List[] = [];
 
   merging = false;
+
+  deleteAfter = false;
 
   constructor(private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private modalRef: NzModalRef, private message: NzMessageService,
@@ -64,7 +65,6 @@ export class MergeListsPopupComponent implements OnInit {
           .sort((a, b) => a.workshop.index - b.workshop.index);
       })
     );
-
     this.lists$ = combineLatest(this.listsFacade.myLists$, this.workshops$).pipe(
       debounceTime(100),
       map(([lists, workshops]) => {
@@ -111,7 +111,14 @@ export class MergeListsPopupComponent implements OnInit {
             first()
           ), 1, 'Saving_in_database');
         }),
-        first()
+        first(),
+        tap(() => {
+          if (this.deleteAfter) {
+            this.selectedLists.forEach(list => {
+              this.listsFacade.deleteList(list.$key);
+            });
+          }
+        })
       ).subscribe(() => {
       this.message.success(this.translate.instant('LISTS.Lists_merged'));
       this.modalRef.close();
