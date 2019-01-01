@@ -325,6 +325,7 @@
     "Add_to_a_list": "リストに追加",
     "Please_pick_recipe": "このアイテムに対する、制作法を選んで下さい。",
     "Import_description": "作ろうとするアイテムに対する制作法を選び、リストを選んで下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
+    "Delete_after_merge": "Delete original lists after merge",
     "IMPORT": {
       "Title": "外部サイトからリストを持って来る",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
