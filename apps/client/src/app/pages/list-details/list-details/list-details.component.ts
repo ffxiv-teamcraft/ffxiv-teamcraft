@@ -53,6 +53,8 @@ export class ListDetailsComponent implements OnInit {
 
   public outDated$: Observable<boolean>;
 
+  public listIsLarge: boolean;
+
   public pricingMode = false;
 
   public loggedIn$ = this.authFacade.loggedIn$;
@@ -85,6 +87,7 @@ export class ListDetailsComponent implements OnInit {
           this.teamsFacade.loadTeam(list.teamId);
           this.teamsFacade.select(list.teamId);
         }
+        this.listIsLarge = list.isLarge();
       }),
       map(([list]) => list),
       shareReplay(1)

@@ -1,5 +1,5 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!displayRow.collapsed">
+  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!displayRow.collapsed || collapsed">
     <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
       <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd" [item]="item"
                     [finalItem]="finalItems" [odd]="odd"></app-item-row>
