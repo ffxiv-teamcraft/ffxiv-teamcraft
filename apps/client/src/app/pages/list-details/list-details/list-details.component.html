@@ -120,6 +120,7 @@
         <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
                                  [crystals]="crystals$ | async"></app-list-crystals-panel>
         <app-list-details-panel [displayRow]="displayRow"
+                                [collapsed]="listIsLarge"
                                 *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"></app-list-details-panel>
         <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
       </div>

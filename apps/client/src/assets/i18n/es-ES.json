@@ -271,6 +271,7 @@
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
     "No_update_available": "No hay actualización disponible",
+    "Install_update": "Install update",
     "Preferred_copy_type": "Tipo de copia preferida",
     "Auto_open_in_desktop": "Abrir vínculos en aplicación de escritorio cuando se inicie",
     "Account": "Cuenta",
@@ -660,6 +661,7 @@
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
     "All_deliveries": "Todas las {{value}} entregas",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",

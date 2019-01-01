@@ -271,6 +271,7 @@
     "Check_for_update": "Check for update",
     "Downloading_update": "Downloading update",
     "No_update_available": "No update available",
+    "Install_update": "Install update",
     "Preferred_copy_type": "Preferred copy type",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
     "Account": "Account",
@@ -660,6 +661,7 @@
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantity",
     "All_deliveries": "All {{value}} Deliveries",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",

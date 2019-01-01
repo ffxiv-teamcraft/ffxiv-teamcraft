@@ -26,6 +26,9 @@
             <i nz-icon type="environment-o"></i>
           </button>
         </div>
+        <div class="delete-icon" (click)="deleteAlarm(row.alarm)">
+          <i nz-icon type="close"></i>
+        </div>
       </div>
       <nz-divider *ngIf="!last"></nz-divider>
     </div>

@@ -25,6 +25,9 @@ export class ListDetailsPanelComponent implements OnChanges {
   @Input()
   finalItems = false;
 
+  @Input()
+  collapsed = false;
+
   tiers: ListRow[][];
 
   zoneBreakdown: ZoneBreakdown;

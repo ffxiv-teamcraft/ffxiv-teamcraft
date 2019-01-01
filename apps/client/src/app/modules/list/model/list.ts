@@ -394,6 +394,10 @@ export class List extends DataWithPermissions {
     return added;
   }
 
+  public isLarge(): boolean {
+    return this.items.length > 100;
+  }
+
   /**
    * Gets the total amount needed for a given item based on requirements of the crafts in the list.
    * @param {ListRow} item

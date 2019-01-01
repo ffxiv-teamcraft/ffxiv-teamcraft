@@ -120,7 +120,7 @@ export class ItemRowComponent implements OnInit {
 
     this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
-        return this.item.masterbooks
+        return (this.item.masterbooks || [])
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
       })

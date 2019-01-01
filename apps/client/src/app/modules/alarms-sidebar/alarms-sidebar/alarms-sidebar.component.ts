@@ -32,6 +32,10 @@ export class AlarmsSidebarComponent implements OnInit {
     return display.alarm.$key;
   }
 
+  deleteAlarm(alarm: Alarm): void {
+    this.alarmsFacade.deleteAlarm(alarm);
+  }
+
   openMap(alarm: Alarm): void {
     this.dialog.create({
       nzTitle: this.i18n.getName(this.l12n.getPlace(alarm.zoneId)),
