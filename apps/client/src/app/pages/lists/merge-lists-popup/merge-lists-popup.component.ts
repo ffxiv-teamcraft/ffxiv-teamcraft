@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -17,7 +17,7 @@ import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.faca
   styleUrls: ['./merge-lists-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MergeListsPopupComponent {
+export class MergeListsPopupComponent implements OnInit {
 
   lists$: Observable<List[]>;
 
@@ -30,6 +30,18 @@ export class MergeListsPopupComponent {
   constructor(private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private modalRef: NzModalRef, private message: NzMessageService,
               private translate: TranslateService, private workshopsFacade: WorkshopsFacade) {
+  }
+
+  public setSelection(list: List, selected: true): void {
+    if (selected) {
+      this.selectedLists.push(list);
+      this.listsFacade.load(list.$key);
+    } else {
+      this.selectedLists = this.selectedLists.filter(l => l.$key !== list.$key);
+    }
+  }
+
+  ngOnInit(): void {
     this.workshops$ = combineLatest(this.workshopsFacade.myWorkshops$, this.listsFacade.compacts$).pipe(
       debounceTime(100),
       map(([workshops, compacts]) => {
@@ -70,15 +82,6 @@ export class MergeListsPopupComponent {
         return lists.sort((a, b) => b.index - a.index);
       })
     );
-  }
-
-  public setSelection(list: List, selected: true): void {
-    if (selected) {
-      this.selectedLists.push(list);
-      this.listsFacade.load(list.$key);
-    } else {
-      this.selectedLists = this.selectedLists.filter(l => l.$key !== list.$key);
-    }
   }
 
   public merge(): void {
