@@ -325,6 +325,7 @@
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Delete_after_merge": "Delete original lists after merge",
     "IMPORT": {
       "Title": "Импорт списка из внешнего веб-сайта",
       "Paste_link_step_title": "Вставьте вашу ссылку для внешнего списка",
