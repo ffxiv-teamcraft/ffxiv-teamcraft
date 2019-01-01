@@ -8,8 +8,8 @@
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "Copying the list to your account...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "List_fork_in_progress": "このリストをマイアカウントにコピーしてます",
+  "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、Tc ディスコードサーバーの’Miu’にお問い合わせて下さい。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われている",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
@@ -24,7 +24,7 @@
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "検索結果が50個以上超えてます。データソースの制限により正確なアイテムを探すためには、追加フィルタ設定が必要です。"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -77,7 +77,7 @@
     "Patreon_supporters": "Patreonサポーター",
     "Contributors": "サポーター"
   },
-  "Patreon_login_success": "Patreon login success !",
+  "Patreon_login_success": "Patreonログイン成功!",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -109,7 +109,7 @@
     "Success": "成功",
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
-    "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Opened_in_desktop": "このページはデスクトップアプリ内に開きました。もうこのページを閉じることができます。",
     "Open_in_desktop": "PCアップリに開く",
     "Admin": "管理者"
   },
@@ -122,18 +122,18 @@
     "Alarm_already_created": "アラームが既に設定されています",
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
-    "Confirm_group_delete": "Are you sure you want to delete this group?",
-    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete": "このグループを削除しても本当によろしいですか?",
+    "Confirm_group_delete_with_alarms": "本当にこのグループとグループに含まれてるアラームを全て削除しますか？",
     "Add_note": "メモを追加する",
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
-    "Open_overlay": "Open overlay",
+    "Open_overlay": "オーバーレイ開く",
     "CUSTOM": {
       "Title": "使用者指定、アラーム追加",
       "Name": "名前",
       "Spawn": "リスポンタイム",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
+      "Spawns_twice": "2回出現",
+      "Spawns_twice_description": "エオルゼア1日の基準で2回出現します。(午前、午後)",
       "Duration": "採集可能時間",
       "Slot": "段目",
       "Type": "タイプ",
@@ -271,17 +271,18 @@
     "Check_for_update": "アップデート確認",
     "Downloading_update": "アップデートがダウンロード中",
     "No_update_available": "使用可能なアップデートがありません。",
+    "Install_update": "アップデートインストール",
     "Preferred_copy_type": "基本コピー類型",
-    "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Auto_open_in_desktop": "デスクトップアプリでリンク開く",
     "Account": "アカウント",
     "Reset_password": "パスワードをリセットする",
-    "Reset_password_warning": "Are you sure you want to reset your password?",
-    "Password_reset_mail_sent": "Password reset email sent",
-    "Connect_with_patreon": "Connect with patreon",
-    "Connected_with_patreon": "Connected with patreon",
-    "Nickname": "Nickname",
-    "Nickname_used": "Nickname already used",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Reset_password_warning": "パスワードを再設定しますか？",
+    "Password_reset_mail_sent": "パスワード再設定、E-メールに転送されました。",
+    "Connect_with_patreon": "Patreonに繋ぐ",
+    "Connected_with_patreon": "Patreonに繋がれました。",
+    "Nickname": "ニックネーム",
+    "Nickname_used": "既に使用されてるニックネームです。",
+    "No_nickname_warning": "後援者専用機能たちを使用するためには、設定ページからニックネームを設定して下さい。",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -321,16 +322,16 @@
     "Outdated_tag": "古い",
     "No_lists": "リストがありません",
     "Lists_search_placeholder": "リスト検索",
-    "Add_to_a_list": "Add to a list",
-    "Please_pick_recipe": "Please pick a recipe for this item",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Add_to_a_list": "リストに追加",
+    "Please_pick_recipe": "このアイテムに対する、制作法を選んで下さい。",
+    "Import_description": "作ろうとするアイテムに対する制作法を選び、リストを選んで下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
     "IMPORT": {
       "Title": "外部サイトからリストを持って来る",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
       "Paste_link_step_placeholder": "リストリンク",
       "Link_not_supported": "このリンクは呼び寄せられません",
-      "Links_supported": "Links supported: {{links}}",
-      "Link_recognized": "{{type}} recognized, you can import it",
+      "Links_supported": "支援するリンク: {{links}}",
+      "Link_recognized": "{{type}} に確認され, 持ってこれます",
       "Next": "次",
       "Back": "昨",
       "Give_list_name": "新しいリストに名前を設定",
@@ -346,7 +347,7 @@
     "Copied_x_times": "{{count}} 回コピーされました",
     "Enable_crystals_tracking": "必要クリスタル即時計算活性化する",
     "Copy_as_text": "テキストにコピーする",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "全体リストをテキストにコピー",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギル及び手形)",
     "Total_trade_price": "合計: ",
@@ -354,7 +355,7 @@
     "History": "内訳",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
-      "Content": "This list is now completed, what do you want to do with it?",
+      "Content": "このリストは完了されました。何をしますか?",
       "Delete": "このリストを削除する",
       "Reset": "このリストをリセットする",
       "Nothing": "ここには何もない"
@@ -385,7 +386,7 @@
     "Inventory_breakdown": "所持品",
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
     "Add_all_item_alarms": "このアイテムに対するアラーム追加",
-    "Adaptative_filter": "Only show what I can do",
+    "Adaptative_filter": "可能なことのみ表示",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -460,7 +461,7 @@
     "Title": "使用者指定リンク",
     "Not_found": "リンクを見つかりませんでした。",
     "Add_link": "使用者指定リンクを作る",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "使用者指定リンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
     "Dialog_title": "使用者指定リンク",
     "Link_type": "リンクタイプ",
     "Link_name": "リンク名",
@@ -491,7 +492,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "該当リストに対する、リストテンプレート生成する",
-    "Template_created": "List template created",
+    "Template_created": "リストの書式が生成されました。",
     "Dialog_title": "テンプレート生成",
     "Link_name": "テンプレート名",
     "target": "対象リスト",
@@ -501,8 +502,8 @@
     "Redirect_notice": "コピー生成する時にリストに繋がれます。",
     "Not_found": "テンプレートが見つかりません",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "データベースから書式を読み込み中です。",
+      "Copying": "リストのコピーをアカウントに生成中です。完了したら自動に移動します。"
     }
   },
   "PERMISSIONS": {
@@ -525,7 +526,7 @@
     "No_anonymous": "権限を管理するには、アカウントが要ります",
     "Propagate_changes": "工房内部にリストに対する権限提供",
     "Propagate_changes_done": "工房内部リストに対する変更が適用されました",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限を持たれます。"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -535,7 +536,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "Echo 時間",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "’リサイクル’が使える部分にマクロを分ける",
     "Extra_wait": "マクロ遅延時間",
     "Import_macro": "ゲームのマクロが輸入をします",
     "Ingame_macro": "マクロ",
@@ -560,7 +561,7 @@
     "Rotations": "スキル回し",
     "Favorite_Rotations": "制作スキル回しお気に入り",
     "No_rotations": "スキル回しがありません",
-    "Create_a_custom_rotation": "Create a custom rotation",
+    "Create_a_custom_rotation": "使用者指定スキル回しを作ります",
     "Reset": "リセット",
     "Import_from_crafting_optimizer": "Crafting optimizerから持って来る",
     "Export_crafting_optimizer": "Crafting optimizer 形式で送り出す",
@@ -594,16 +595,16 @@
     },
     "ROTATIONS": {
       "FOLDERS": {
-        "Folders": "Rotation folders",
+        "Folders": "スキル回しフォルダー",
         "Rename": "オプションの名前を変更する",
         "New_folder": "新しいフォルダー",
-        "Delete_message": "Deleting a folder won't delete the rotations inside.",
-        "Share_link_copied": "Rotation folder share link copied to your clipboard",
+        "Delete_message": "フォルダーを削除しても、フォルダー内の自分のスキル回しに関するのは削除されません。",
+        "Share_link_copied": "制作マクロシェア向けリンクをクリップボードにコピーされました",
         "Shared_by": "{{name}} で共有された",
         "Created_by": "{{name}} で作成された",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Copy_folder": "このフォルダーと内容をマイアカウントにコピーする",
+        "Folder_copied": "フォルダーがマイアカウントにコピーされました",
+        "Favorite_folders": "お気に入りフォルダー"
       }
     },
     "CATEGORY": {
@@ -648,10 +649,10 @@
   "PRICING": {
     "From_vendor": "商店販売値段",
     "Expect_to_sell_everything": "全体販売仮定",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices_warning": "この作業は所要時間があり、完了まで {{time}} ほど所要すると予想されます。このまま進行しますか?",
+    "Copy_earnings_as_text": "内容をテキストにコピーする",
+    "Content_copied": "クリップボードに内容がコピーされました。"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -660,6 +661,7 @@
     "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
     "Quantity": "分量",
     "All_deliveries": "全ての {{value}} 納品",
+    "Compute_exp": "Show impact on xp",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、与えられるギルドリーヴや様々なギルドリーヴに対するリストが作れます。",
@@ -677,9 +679,9 @@
     "Title": "チーム",
     "Leader": "リーダー",
     "Member": "メンバー",
-    "Enable_discord_updates": "Discordアップデート活性化",
-    "Disable_discord_updates": "Discordアップデート非活性化",
-    "Webhook_error": "Discord webhookを構築する間に、誤謬が発生しました。",
+    "Enable_discord_updates": "ディスコードアップデート活性化",
+    "Disable_discord_updates": "ディスコードアップデート非活性化",
+    "Webhook_error": "ディスコード webhookを構築する間に、誤謬が発生しました。",
     "Create_team": "チームを生成",
     "Create_invite_one_day": "新しい招待リンクを作る[満了期間1日]",
     "Create_invite_infinite": "新しい招待リンクを作る[無制限]",
@@ -710,17 +712,17 @@
     "PERMISSIONS": {
       "MEMBER_JOINED": "メンバー入りました",
       "MEMBER_LEFT": "メンバー脱退しました",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "ITEM_ADDED": "アイテムが追加されました",
+      "ITEM_REMOVED": "アイテムが削除しました",
+      "LIST_ADDED": "リスト追加",
+      "LIST_REMOVED": "リスト削除",
+      "LIST_PROGRESSION": "リストの進行状況を変更",
+      "USER_ASSIGNMENT": "チーム員に作業を割り当てる"
     }
   },
   "MARKETBOARD": {
     "Title": "マーケットボード情報",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "現在 XIVAPI またはコンパニオン APIに問題があります。しばらく時間をおいてもう一度お試し下さい。",
     "Amount": "分量",
     "HQ": "HQ",
     "Total_price": "全額",
@@ -743,7 +745,7 @@
     "Defense_mag": "魔法防御力"
   },
   "SEARCH_INTRO": {
-    "Slogan": "Craft, share, contribute",
+    "Slogan": "制作、シェア、貢献",
     "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを使って、作られました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "後援する[1回]",
