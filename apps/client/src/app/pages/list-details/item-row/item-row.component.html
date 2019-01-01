@@ -95,7 +95,7 @@
     </nz-dropdown>
     <ng-container *ngIf="missingBooks$ | async as missingBooks">
       <button nz-button nzGhost nzSize="small" nzShape="circle" nzType="danger"
-              *ngIf="missingBooks.length === item.masterbooks.length"
+              *ngIf="missingBooks?.length > 0 && missingBooks.length === item.masterbooks?.length"
               class="missing-masterbooks"
               nz-tooltip [nzTitle]="'LIST_DETAILS.Missing_masterbook' | translate"
               (click)="checkMasterbooks(missingBooks)">
