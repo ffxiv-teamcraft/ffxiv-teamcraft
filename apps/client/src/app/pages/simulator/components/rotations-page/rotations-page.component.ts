@@ -113,7 +113,6 @@ export class RotationsPageComponent {
     // Update indexes and persist
     displays
       .map(d => d.folder)
-      .filter((f, i) => f.index !== i)
       .map((f, i) => {
         f.index = i;
         return f;
@@ -123,7 +122,7 @@ export class RotationsPageComponent {
       });
   }
 
-  trackByRotation(index: number, rotation: CraftingRotation): string {
+  trackByKey(index: number, rotation: CraftingRotation): string {
     return rotation.$key;
   }
 
