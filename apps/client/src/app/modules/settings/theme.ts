@@ -6,7 +6,11 @@ export class Theme {
 
   public static readonly BLUE = new Theme('BLUE', 'blue', false);
 
-  public static ALL_THEMES = [Theme.DEFAULT, Theme.GREEN, Theme.BLUE];
+  public static readonly RED = new Theme('RED', 'red', false);
+
+  public static readonly PURPLE = new Theme('PURPLE', 'purple', false);
+
+  public static ALL_THEMES = [Theme.DEFAULT, Theme.GREEN, Theme.BLUE, Theme.RED, Theme.PURPLE];
 
   constructor(public name: string, public className: string, public isDark: boolean) {
   }
