@@ -55,7 +55,7 @@
   "Retainer_ventures": "Gehilfen-Unternehmungen",
   "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
-    "Workshops": "Workshops",
+    "Workshops": "Werkstätten",
     "Add_lists": "Liste hinzufügen",
     "Add_workshop": "Workshop hinzufügen",
     "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
@@ -65,7 +65,7 @@
     "Share_link_copied": "Workshoplink wurde kopiert",
     "Not_found": "Workshop nicht gefunden oder du hast keinen Zugriff darauf",
     "Shared_workshops": "Workshops mit Schreibzugriff",
-    "Rename": "Rename workshop"
+    "Rename": "Werkstatt umbenennen"
   },
   "ABOUT": {
     "title": "Über FFXIVTeamcraft",
@@ -77,7 +77,7 @@
     "Patreon_supporters": "Patreon-Unterstützer",
     "Contributors": "Mitwirkende"
   },
-  "Patreon_login_success": "Patreon login success !",
+  "Patreon_login_success": "Anmeldung mit Patreon erfolgreich!",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird gelöscht sowie die Liste fertig ist",
