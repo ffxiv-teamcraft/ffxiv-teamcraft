@@ -131,11 +131,11 @@
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
       "Name": "Name",
-      "Spawn": "Spawn",
-      "Spawns_twice": "Spawns twice",
-      "Spawns_twice_description": "Spawns twice per eorzean day (One spawn AM, one PM)",
-      "Duration": "Duration",
-      "Slot": "Slot",
+      "Spawn": "Zeit",
+      "Spawns_twice": "Erscheint zweimal",
+      "Spawns_twice_description": "Erscheint zweimal pro eorzischen Tag (je einmal vor- und nachmittags)",
+      "Duration": "Dauer",
+      "Slot": "Position",
       "Type": "Node type",
       "Map": "Map",
       "TYPE": {
