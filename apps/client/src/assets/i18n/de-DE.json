@@ -136,8 +136,8 @@
       "Spawns_twice_description": "Erscheint zweimal pro eorzischen Tag (je einmal vor- und nachmittags)",
       "Duration": "Dauer",
       "Slot": "Position",
-      "Type": "Node type",
-      "Map": "Map",
+      "Type": "Art des Vorkommens",
+      "Map": "Karte",
       "TYPE": {
         "Mineral": "Mineral Deposit",
         "Rocky": "Rocky Outcrop",
