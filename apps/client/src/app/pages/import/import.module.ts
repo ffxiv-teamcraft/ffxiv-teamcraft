@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
     PipesModule,
     ProgressPopupModule,
     ListPickerModule,
+    HttpClientModule,
 
     PageLoaderModule
   ],
