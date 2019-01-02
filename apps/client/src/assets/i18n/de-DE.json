@@ -280,11 +280,11 @@
     "Password_reset_mail_sent": "E-Mail zur Zurücksetzung des Passworts wurde gesendet",
     "Connect_with_patreon": "Mit Patreon verbinden",
     "Connected_with_patreon": "Mit Patreon verbunden",
-    "Nickname": "Nickname",
-    "Nickname_used": "Nickname already used",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Nickname": "Benutzername",
+    "Nickname_used": "Benutzername wird bereits verwendet",
+    "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "COPY_TYPE": {
-      "Classic": "Copy item name",
+      "Classic": "Itemnamen kopieren",
       "Isearch": "Copy /isearch macro"
     }
   },
@@ -462,13 +462,13 @@
     "Title": "Benutzerdefinierbare Links",
     "Not_found": "Link nicht gefunden",
     "Add_link": "Benutzerdefinierbaren Link erstellen",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "Eigener Link angelegt, klicke den Teilen Button zum kopieren",
     "Dialog_title": "Benutzerdefinierbarer Link",
     "Link_type": "Linkart",
     "Link_name": "Linkname",
     "target": "Linkziel",
     "Share_link_copied": "Benutzerdefinierbarer Link wurde in die Zwischenablage kopiert",
-    "Copy_custom_link": "Copy custom link",
+    "Copy_custom_link": "Kopiere Eigenen Link",
     "No_links": "Keine benutzerdefinierten Links vorhanden"
   },
   "NAVIGATION": {
@@ -476,7 +476,7 @@
     "Steps": "Stationen",
     "STEP": {
       "Gathering": "Sammel {{amount}}",
-      "Hunting": "Get {{amount}} on monsters",
+      "Hunting": "Sammle {{amount}} von Monstern",
       "Vendor": "Kaufe {{amount}}",
       "Trade": "Handel {{amount}}"
     }
