@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.8"></a>
+# [5.0.0-rc.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.7...v5.0.0-rc.8) (2019-01-02)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a display error with alarm aetherytes ([c2977f5](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2977f5))
+* **community-lists:** hide the paginator if there's no results ([fe6530e](https://github.com/Supamiu/ffxiv-teamcraft/commit/fe6530e))
+* **levequests:** fixed an issue with crafts amount inside some leves ([bd7420a](https://github.com/Supamiu/ffxiv-teamcraft/commit/bd7420a))
+* **list:** fixed a bug with team assignation and community lists ([998d401](https://github.com/Supamiu/ffxiv-teamcraft/commit/998d401))
+
+
+### Features
+
+* **desktop:** added support for linux desktop build ([123a970](https://github.com/Supamiu/ffxiv-teamcraft/commit/123a970))
+* **import:** added callback queryparam ([9fbb298](https://github.com/Supamiu/ffxiv-teamcraft/commit/9fbb298))
+* **theme:** added red and purple themes ([f8ae9c7](https://github.com/Supamiu/ffxiv-teamcraft/commit/f8ae9c7))
+
+
+
 <a name="5.0.0-rc.7"></a>
 # [5.0.0-rc.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.4...v5.0.0-rc.7) (2019-01-01)
 
