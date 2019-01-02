@@ -117,12 +117,17 @@
         <nz-alert nzType="error" nzShowIcon [nzMessage]="'Not_own_list_outdated' | translate"></nz-alert>
       </div>
       <div class="list-display" *ngIf="display$ | async as listDisplay">
-        <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
-                                 [crystals]="crystals$ | async"></app-list-crystals-panel>
-        <app-list-details-panel [displayRow]="displayRow"
-                                [collapsed]="listIsLarge"
-                                *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"></app-list-details-panel>
-        <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
+          <div class="list-with-inventory">
+            <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
+                                     [crystals]="crystals$ | async"></app-list-crystals-panel>
+            <app-list-details-panel [displayRow]="displayRow"
+                                    [collapsed]="listIsLarge"
+                                    *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"></app-list-details-panel>
+            <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
+          </div>
+          <div class="inventory">
+            <app-inventory-view [list]="list"></app-inventory-view>
+          </div>
       </div>
     </ng-template>
   </div>
