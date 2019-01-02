@@ -91,12 +91,14 @@
                 *ngIf="!publicDisplay">
               {{'PERMISSIONS.Title' | translate}}
             </li>
-            <li nz-submenu *ngIf="teams$ | async as teams">
-              <span title>{{'TEAMS.Assign_list' | translate}}</span>
-              <ul>
-                <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(_list, team)">{{team.name}}</li>
-              </ul>
-            </li>
+            <ng-container *ngIf="!publicDisplay">
+              <li nz-submenu *ngIf="teams$ | async as teams">
+                <span title>{{'TEAMS.Assign_list' | translate}}</span>
+                <ul>
+                  <li *ngFor="let team of teams" nz-menu-item (click)="assignTeam(_list, team)">{{team.name}}</li>
+                </ul>
+              </li>
+            </ng-container>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">

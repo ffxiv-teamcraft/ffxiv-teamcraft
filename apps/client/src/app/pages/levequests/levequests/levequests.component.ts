@@ -193,7 +193,7 @@ export class LevequestsComponent implements OnInit {
           ...leves.map(leve => {
             const recipe = leve.recipes.find(r => r.jobId === leve.jobId);
             return this.listManager.addToList(leve.itemId, list, recipe.recipeId,
-              this.craftAmount(leve));
+              leve.itemQuantity * this.craftAmount(leve));
           })
         );
         return this.progressService.showProgress(operation$, leves.length, 'Adding_recipes',
@@ -219,7 +219,7 @@ export class LevequestsComponent implements OnInit {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(leve.itemId)));
     const recipe = leve.recipes[0];
     const operation$ = this.listManager
-      .addToList(leve.itemId, list, recipe.recipeId, this.craftAmount(leve))
+      .addToList(leve.itemId, list, recipe.recipeId, leve.itemQuantity * this.craftAmount(leve))
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {

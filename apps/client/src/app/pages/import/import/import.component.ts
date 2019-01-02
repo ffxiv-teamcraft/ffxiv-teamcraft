@@ -8,6 +8,8 @@ import { DataService } from '../../../core/api/data.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { HttpClient } from '@angular/common/http';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-import',
@@ -23,7 +25,7 @@ export class ImportComponent {
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
               private dataService: DataService, private router: Router,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService) {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx
     this.items$ = this.route.paramMap.pipe(
@@ -99,6 +101,10 @@ export class ImportComponent {
           ), 1, 'Saving_in_database');
       })
     ).subscribe((list) => {
+      const callbackUrl = this.route.snapshot.queryParamMap.get('callback');
+      if (callbackUrl !== null) {
+        this.http.post(callbackUrl, { url: this.linkTools.getLink(`/list/${list.$key}`) }).subscribe();
+      }
       this.router.navigate(['list', list.$key]);
     });
   }

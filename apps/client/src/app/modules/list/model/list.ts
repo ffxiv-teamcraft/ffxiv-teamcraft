@@ -198,7 +198,7 @@ export class List extends DataWithPermissions {
       const previousUsed = item.used;
       // Update used amount
       item.used += amount;
-      if (item.used > previousUsed && item.used >= Math.max(item.done + amount, item.amount)) {
+      if (item.used > previousUsed && item.used !== Math.min(item.done + amount, item.amount)) {
         // Set amount to the amount of items to add to the total.
         amount = amount - (item.done - previousUsed);
       }
@@ -259,7 +259,7 @@ export class List extends DataWithPermissions {
         // While each requirement has enough items remaining, you can craft the item.
         // If only one misses, then this will turn false for the rest of the loop
         canCraft = canCraft &&
-          (requirementItem.done) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
+          (requirementItem.done - requirementItem.used) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
       }
     }
     return canCraft;
