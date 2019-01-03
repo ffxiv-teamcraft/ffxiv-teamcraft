@@ -51,7 +51,7 @@
   "Mute_alarms": "アラームをミュートする",
   "Unmute_alarms": "アラームのミュートを解除する",
   "Hide_used": "使用された項目を隠す",
-  "Collapse_if_done": "完了しなら削除する",
+  "Collapse_if_done": "完了しならパネルを隠す",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "総 {{amount}} 回のリテーナーベンチャーが必要です。",
   "WORKSHOP": {
@@ -73,11 +73,11 @@
     "Copyright_notice_title": "著作権情報",
     "Copyright_notice_content": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br>FINAL FANTASY XIV © 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.<br>FFXIV Teamcraftは Square Enixと関連がありません。",
     "Thanks_title": "ありがとう!",
-    "Data_sources": "資料の出所",
+    "Data_sources": "データソース",
     "Patreon_supporters": "Patreonサポーター",
     "Contributors": "サポーター"
   },
-  "Patreon_login_success": "Patreonログイン成功!",
+  "Patreon_login_success": "Patreonログイン成功された!",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
