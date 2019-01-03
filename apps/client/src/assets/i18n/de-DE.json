@@ -294,7 +294,7 @@
     "Remove_character": "Charakter entfernen",
     "Jobs": "Jobs",
     "Stats": "Attribute",
-    "View_on_apkallu_falls": "Open in Apkallu Falls",
+    "View_on_apkallu_falls": "Auf Apkallu Falls öffnen",
     "Masterbooks": "Meisterbücher",
     "Patreon_supporter": "Patreon-Unterstützer",
     "Patreon_features": "Patreon-Unterstützer Features",
@@ -305,8 +305,8 @@
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren füge diesen Code in deine Lodestone Biografie ein: \"{{userId}}\". Klicke danach den Button unten.",
-      "Success": "Character verified ! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio, please make sure you pasted it and applied the changes, then wait ~30s and retry.",
+      "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus der Biografie entfernt werden.",
+      "Error": "Der Code konnte nicht in deiner Biografie gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
     }
   },
