@@ -347,6 +347,7 @@
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
+    "Always_show_inventory": "Always show inventory (disabled on mobile)",
     "Copy_as_text": "텍스트로 복사",
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
