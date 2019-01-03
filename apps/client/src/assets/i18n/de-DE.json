@@ -528,7 +528,7 @@
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -538,7 +538,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "Teile Makros am letzten möglichen Schritt für Reklamation",
     "Extra_wait": "Extra Wartezeit",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
