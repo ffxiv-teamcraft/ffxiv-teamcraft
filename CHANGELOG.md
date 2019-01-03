@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.10"></a>
+# [5.0.0-rc.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.9...v5.0.0-rc.10) (2019-01-03)
+
+
+### Bug Fixes
+
+* fixed an issue with amount modification in some specific cases ([beaebff](https://github.com/Supamiu/ffxiv-teamcraft/commit/beaebff))
+* removed the quick "hide completed" switch because it needs more stuff ([3dc65d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/3dc65d0)), closes [#675](https://github.com/Supamiu/ffxiv-teamcraft/issues/675)
+
+
+
 <a name="5.0.0-rc.9"></a>
 # [5.0.0-rc.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.8...v5.0.0-rc.9) (2019-01-03)
 
