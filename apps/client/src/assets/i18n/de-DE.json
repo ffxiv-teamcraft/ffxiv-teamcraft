@@ -143,7 +143,7 @@
         "Rocky": "Rocky Outcrop",
         "Tree": "Mature Tree",
         "Vegetation": "Lush Vegetation Patch",
-        "Fishing": "Fishing"
+        "Fishing": "Angeln"
       }
     }
   },
@@ -347,7 +347,7 @@
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
-    "Always_show_inventory": "Always show inventory (disabled on mobile)",
+    "Always_show_inventory": "Zeige Inventar immer an (auf Mobilgeräten deaktiviert)",
     "Copy_as_text": "Als Text kopieren",
     "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
@@ -756,10 +756,10 @@
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fang an Dinge herzustellen.",
       "Public_lists": "Kopiere von der Community erstellte Listen, die dir helfen Dinge herzustellen. Ausrüstung, Freibriefe, Notizbücher, Luftschiffe, alles kann hier gefunden werden.",
       "Alarms": "Erstelle Alarme um kein Erscheinen eines Vorkommens zu verpassen, organisiere sie in Gruppen, importiere sie im Spiel, alles ist möglich.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more !",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator !",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
+      "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
+      "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
+      "Levequests": "Fine Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
+      "Macro_translation": "Du hast Macros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deinem FFXIV funktioniert!"
     }
   }
 }
