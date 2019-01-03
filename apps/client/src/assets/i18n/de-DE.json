@@ -602,18 +602,18 @@
         "New_folder": "Neuer Ordner",
         "Delete_message": "Das löschen eines Ordners löscht nicht die enthaltenen Rotationen.",
         "Share_link_copied": "Link zum Rotationsordner in die Zwischenablage kopiert",
-        "Shared_by": "Von {{name}} geteilt",
-        "Created_by": "Created by {{name}}",
-        "Copy_folder": "Copy this folder and its content to your account",
-        "Folder_copied": "Folder copied to your account",
-        "Favorite_folders": "Favorite folders"
+        "Shared_by": "Geteilt {{name}} von",
+        "Created_by": "Erstellt von {{name}}",
+        "Copy_folder": "Kopiere diesen Ordner und seinen Inhalt in dein Konto",
+        "Folder_copied": "Ordner in dein Konto kopiert",
+        "Favorite_folders": "Favorisierte Ordner"
       }
     },
     "CATEGORY": {
       "Progression": "Fortschritt",
       "Quality": "Qualität",
       "Cp_recovery": "HP Wiederherstellung",
-      "Buff": "Buff",
+      "Buff": "Statuseffekt",
       "Specialty": "Specialisten",
       "Repair": "Reparatur",
       "Other": "Anderes"
