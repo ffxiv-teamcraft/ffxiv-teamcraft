@@ -207,7 +207,7 @@
   "filters/ilvl": "アイテムレベル",
   "filters/lvl": "装備レベル",
   "filters/craft_lvl": "レシピレベル",
-  "filters/worn_by": "着用ジョブ",
+  "filters/worn_by": "装備できるジョブ",
   "filters/crafted_by": "クラフター",
   "filters/item_category": "種類",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
