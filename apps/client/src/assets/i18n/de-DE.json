@@ -443,14 +443,14 @@
     "CRP": "ZMR",
     "BSM": "GRS",
     "ARM": "PLA",
-    "GSM": "GSM",
+    "GSM": "GLD",
     "LTW": "GER",
     "WVR": "WEB",
     "ALC": "ALC",
     "CUL": "GRM",
     "MIN": "MIN",
     "BOT": "GÄR",
-    "FSH": "FSH"
+    "FSH": "FIS"
   },
   "MACRO_TRANSLATION": {
     "Title": "Makro-Übersetzung",
