@@ -512,7 +512,7 @@
     "Read_description": "リストを見れる権限",
     "Participate": "参加",
     "Participate_description": "数量を調整し、完了されたアイテムをチェックできる権限",
-    "Write": "書き込む",
+    "Write": "書き込み",
     "Write_description": "アイテムを追加し(工房に) リストを追加できる権限",
     "Title": "権限管理",
     "Everyone": "全員",
