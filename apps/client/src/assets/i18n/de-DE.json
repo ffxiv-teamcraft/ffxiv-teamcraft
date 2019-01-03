@@ -731,20 +731,20 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_mogboard": "More details on mogboard"
+    "More_on_mogboard": "Mehr Details auf mogboard"
   },
   "COMMENTS": {
     "Title": "Kommentare"
   },
   "TOOLTIP": {
-    "Level": "Level",
-    "Ilvl": "ilvl",
+    "Level": "Stufe",
+    "Ilvl": "G.-St.",
     "Cost": "Kosten",
-    "Class_job": "Class/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Class_job": "Klasse/Job",
+    "Damage_phys": "Phys. Schaden",
+    "Damage_mag": "Mag. Schaden",
+    "Defense_phys": "Verteidigung",
+    "Defense_mag": "Magieabwehr"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
