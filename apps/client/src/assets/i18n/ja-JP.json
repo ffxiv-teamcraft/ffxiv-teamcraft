@@ -219,7 +219,7 @@
   "Character_informations": "キャラクター情報",
   "Server_name": "ワールド名",
   "Add_all_recipes": "結果をリストに追加する",
-  "Character_not_found": "キャラクター名を見付けません",
+  "Character_not_found": "キャラクター名が見つかりません",
   "Use_lodestoneId": "キャラクターIDで検索",
   "LodestoneId": "ロドストID",
   "List_forked": "このリストが自分のアカウントにコピーされました",
@@ -278,10 +278,10 @@
     "Reset_password": "パスワードをリセットする",
     "Reset_password_warning": "パスワードを再設定しますか？",
     "Password_reset_mail_sent": "パスワード再設定、E-メールに転送されました。",
-    "Connect_with_patreon": "Patreonに繋ぐ",
-    "Connected_with_patreon": "Patreonに繋がれました。",
-    "Nickname": "ニックネーム",
-    "Nickname_used": "既に使用されてるニックネームです。",
+    "Connect_with_patreon": "アカウントはPatreonにつなぐ",
+    "Connected_with_patreon": "アカウントはPatreonにつながれた",
+    "Nickname": "Patreonの通称名",
+    "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "後援者専用機能たちを使用するためには、設定ページからニックネームを設定して下さい。",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
@@ -460,7 +460,7 @@
   },
   "CUSTOM_LINKS": {
     "Title": "使用者指定リンク",
-    "Not_found": "リンクを見付けません",
+    "Not_found": "リンクが見つかりません",
     "Add_link": "使用者指定リンクを作る",
     "Link_created": "使用者指定リンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
     "Dialog_title": "使用者指定リンク",
@@ -501,7 +501,7 @@
     "Copy_template_url": "テンプレートのURLをコピーする",
     "Cloning_list": "マイアカウントでリストコピーしたものを生成する",
     "Redirect_notice": "コピー生成する時にリストに繋がれます。",
-    "Not_found": "テンプレート見付けません",
+    "Not_found": "テンプレートが見つかりません",
     "STATUS": {
       "Loading": "データベースから書式を読み込み中です。",
       "Copying": "リストのコピーをアカウントに生成中です。完了したら自動に移動します。"
@@ -521,8 +521,8 @@
     "Add_new_fc": "フリーカンパニーを追加する",
     "Placeholder": "Eメールまたは、使用者ID",
     "Bind_free_company": "一部権限を自分のフリーカンパニーに適用",
-    "User_not_found": "使用者を見つかりませんでした。",
-    "User_id_tip": "使用者IDはプロフィールページの右側の下段にあります",
+    "User_not_found": "アカウントが見つかりません。",
+    "User_id_tip": "ユーザーIDはプロフィールページの右下隅にあります",
     "Saving": "権限設定を保存中",
     "No_anonymous": "権限を管理するには、アカウントが要ります",
     "Propagate_changes": "工房内部にリストに対する権限提供",
@@ -531,8 +531,8 @@
   },
   "WIKI": {
     "Title": "ウィキ",
-    "Not_found_in_current_lang": "このページは今使用中の言語には翻訳されておりません。英語ページが表示されます。",
-    "Not_found": "ページが見つかりませんでした。"
+    "Not_found_in_current_lang": "このページは今使用中の言語には翻訳されてありません。英語ページが表示されます。",
+    "Not_found": "ページが見つかりません。"
   },
   "SIMULATOR": {
     "Fixed_notification_number": "お知らせのSEを選ぶ",
@@ -574,7 +574,7 @@
     "Share_button_tooltip": "シェアリンクをコピーする",
     "Share_link_copied": "制作マクロシェア向けリンクをクリップボードにコピーされました",
     "Persist": "この回しを保存",
-    "Rotation_not_found": "スキル回しを見つかりませんでした",
+    "Rotation_not_found": "スキル回しが見つかりません",
     "Confirm_delete": "制作マクロを削除しますか？",
     "Toggle_snapshot_mode": "製作工程確認モードに変換",
     "Open_in_external": "{{name}} のシミュレーターで開く",
@@ -658,7 +658,7 @@
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
-    "No_results": "ギルドリーヴが見つかりませんでした",
+    "No_results": "ギルドリーヴが見つかりません",
     "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
     "Quantity": "分量",
     "All_deliveries": "全ての {{value}} 納品",
