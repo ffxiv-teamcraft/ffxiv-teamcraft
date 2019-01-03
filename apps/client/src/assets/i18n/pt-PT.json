@@ -347,6 +347,7 @@
     "Rename": "Renomear lista",
     "Copied_x_times": "Copiado {{count}} vezes",
     "Enable_crystals_tracking": "Activar rasteamento de cristais",
+    "Always_show_inventory": "Always show inventory (disabled on mobile)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copie toda a lista como texto",
     "Copied_as_text": "Conteúdo copiado para a área de transferências",
