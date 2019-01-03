@@ -347,6 +347,7 @@
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
     "Enable_crystals_tracking": "Включить отслеживание кристаллов",
+    "Always_show_inventory": "Always show inventory (disabled on mobile)",
     "Copy_as_text": "Копировать как текст",
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
