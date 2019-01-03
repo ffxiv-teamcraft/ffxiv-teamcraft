@@ -161,9 +161,14 @@ export class LayoutsFacade {
 
   select(layout: ListLayout): void {
     this.store.dispatch(new SelectLayout(layout.$key));
+    localStorage.setItem('layout:selected', layout.$key);
   }
 
   loadAll() {
     this.store.dispatch(new LoadLayouts());
+    const selectedKey = localStorage.getItem('layout:selected');
+    if (selectedKey !== null) {
+      this.store.dispatch(new SelectLayout(selectedKey));
+    }
   }
 }
