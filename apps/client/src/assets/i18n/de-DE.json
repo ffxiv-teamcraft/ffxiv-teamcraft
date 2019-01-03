@@ -343,23 +343,23 @@
     }
   },
   "LIST": {
-    "Regenerate": "Update list to latest Teamcraft version",
+    "Regenerate": "Regeneriere Liste für aktuellste Teamcraft Version",
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
     "Copy_as_text": "Als Text kopieren",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",
     "Total_trade_price": "Gesamt: ",
-    "Add_all_alarms": "Add all alarms for this list",
+    "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
-      "Content": "This list is now completed, what do you want to do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Title": "Liste fertiggestellt",
+      "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
+      "Delete": "Liste löschen",
+      "Reset": "Liste zurücksetzen",
+      "Nothing": "Nichts"
     },
     "BUTTONS": {
       "Add_link_description": "Benutzerdefinierten Link für diese Liste erstellen",
