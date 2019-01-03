@@ -219,7 +219,7 @@
   "Character_informations": "キャラクター情報",
   "Server_name": "ワールド名",
   "Add_all_recipes": "結果をリストに追加する",
-  "Character_not_found": "キャラクター名を見つかりませんでした",
+  "Character_not_found": "キャラクター名を見付けません",
   "Use_lodestoneId": "キャラクターIDで検索",
   "LodestoneId": "ロドストID",
   "List_forked": "このリストが自分のアカウントにコピーされました",
@@ -460,7 +460,7 @@
   },
   "CUSTOM_LINKS": {
     "Title": "使用者指定リンク",
-    "Not_found": "リンクを見つかりませんでした。",
+    "Not_found": "リンクを見付けません",
     "Add_link": "使用者指定リンクを作る",
     "Link_created": "使用者指定リンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
     "Dialog_title": "使用者指定リンク",
