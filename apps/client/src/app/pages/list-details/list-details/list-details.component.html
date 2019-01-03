@@ -116,8 +116,8 @@
       <div *ngIf="(outDated$ | async) && (permissionLevel$ | async) < 40" class="alert">
         <nz-alert nzType="error" nzShowIcon [nzMessage]="'Not_own_list_outdated' | translate"></nz-alert>
       </div>
-      <div class="list-display" *ngIf="display$ | async as listDisplay">
-        <div [class.list-with-inventory]="listDisplay.showInventory | ifMobile: false">
+      <div class="list-display" *ngIf="display$ | async as listDisplay" fxLayout="row" fxLayoutGap="10px">
+        <div fxFlex="1 1 auto">
           <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
                                    [crystals]="crystals$ | async"></app-list-crystals-panel>
           <app-list-details-panel [displayRow]="displayRow"

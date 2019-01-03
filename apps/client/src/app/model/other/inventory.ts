@@ -14,7 +14,8 @@ export class Inventory {
     if (amount === 0) {
       return;
     }
-    if (this.grid.filter(slot => slot !== undefined).length % 35 === 0) {
+    const usedSlots = this.grid.filter(slot => slot !== undefined).length;
+    if (usedSlots > 0 && usedSlots % 35 === 0) {
       this.grid.push(...new Array(Inventory.INVENTORY_PANEL_SIZE));
     }
     const stackSize = 999;
