@@ -139,10 +139,10 @@
       "Type": "Art des Vorkommens",
       "Map": "Karte",
       "TYPE": {
-        "Mineral": "Mineral Deposit",
-        "Rocky": "Rocky Outcrop",
-        "Tree": "Mature Tree",
-        "Vegetation": "Lush Vegetation Patch",
+        "Mineral": "Lagerstätte",
+        "Rocky": "Steinbruch",
+        "Tree": "Nutzbaum",
+        "Vegetation": "Üppige Vegetation",
         "Fishing": "Angeln"
       }
     }
