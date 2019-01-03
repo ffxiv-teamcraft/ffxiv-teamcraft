@@ -8,7 +8,7 @@
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピーしてます",
+  "List_fork_in_progress": "このリストをマイアカウントにコピーする",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、Tc ディスコードサーバーの’Miu’にお問い合わせて下さい。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われている",
