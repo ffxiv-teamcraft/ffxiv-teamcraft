@@ -9,7 +9,7 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map, withLatestFrom } from 'rxjs/operators';
+import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
@@ -29,7 +29,8 @@ export class LayoutsFacade {
       map(layout => {
         layout.rows = layout.rows.sort((a, b) => a.index - b.index);
         return layout;
-      })
+      }),
+      shareReplay(1)
     );
 
   constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService,

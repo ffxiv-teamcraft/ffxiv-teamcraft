@@ -20,7 +20,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
-  debounceTime,
+  debounceTime, delay,
   distinctUntilChanged,
   filter,
   first,
@@ -230,6 +230,7 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key)),
+    delay(500),
     tap(() => this.router.navigate(['/lists']))
   );
 

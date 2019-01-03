@@ -47,9 +47,6 @@
                  [nzTitle]="'LIST_DETAILS.Public_list_description' | translate">
             {{'Public_list' | translate}}
           </label>
-          <label nz-checkbox [ngModel]="hideCompleted$ | async" (ngModelChange)="setHideCompleted($event)" nz-tooltip>
-            {{'Hide_completed' | translate}}
-          </label>
           <div fxLayout="row" fxLayoutGap="5px">
             <button nz-button nzType="primary" nzShape="circle" (click)="openTagsPopup(list)" nz-tooltip
                     [nzTitle]="'LIST_DETAILS.Tags_popup' | translate" [disabled]="(permissionLevel$ | async) < 40">
