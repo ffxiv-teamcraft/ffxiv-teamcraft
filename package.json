@@ -26,6 +26,12 @@
     "mac": {
       "category": "public.app-category.games"
     },
+    "linux": {
+      "icon": "./tools/build/icon.ico",
+      "target": "deb",
+      "maintainer": "Miu Asakura",
+      "category": "Game"
+    },
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "Miu Asakura",
