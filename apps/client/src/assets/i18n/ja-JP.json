@@ -686,7 +686,7 @@
     "Create_team": "チームを生成",
     "Create_invite_one_day": "新しい招待リンクを作る[満了期間1日]",
     "Create_invite_infinite": "新しい招待リンクを作る[無制限]",
-    "No_teams": "所属されたチームがありません",
+    "No_teams": "チームがありません",
     "Invites": "招待",
     "Assign_list": "このリストをチームに割り当てする",
     "Assign_team_member": "チームのメンバーに割り当てする",
@@ -715,8 +715,8 @@
       "MEMBER_LEFT": "メンバー脱退しました",
       "ITEM_ADDED": "アイテムが追加されました",
       "ITEM_REMOVED": "アイテムが削除しました",
-      "LIST_ADDED": "リスト追加",
-      "LIST_REMOVED": "リスト削除",
+      "LIST_ADDED": "リストを追加された",
+      "LIST_REMOVED": "リストを削除された",
       "LIST_PROGRESSION": "リストの進行状況を変更",
       "USER_ASSIGNMENT": "チーム員に作業を割り当てる"
     }
