@@ -375,7 +375,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Liste erfolgreich abgeschlossen",
-    "Public_list_description": "Setting a list to public adds it to the public lists section, THIS IS NOT REQUIRED TO SHARE A LIST",
+    "Public_list_description": "Zeigt diese Liste im Bereich Communitylisten, damit andere sie kopieren können. DAS IST NICHT NOTWENDIG UM DIE LISTE ZU TEILEN!",
     "Missing_tags_before_button": "Deine Communityliste scheint keine Tags zu haben, bitte füge einige Tags mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
