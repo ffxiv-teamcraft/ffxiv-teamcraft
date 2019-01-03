@@ -8,8 +8,8 @@
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図に見られます",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピーする",
-  "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、Tc ディスコードサーバーの’Miu’にお問い合わせて下さい。",
+  "List_fork_in_progress": "このリストをマイアカウントにコピーしてます",
+  "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせてください。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われている",
     "auth/email-already-in-use": "このメールアドレスは既に使われている",
@@ -40,7 +40,7 @@
   "Required_for_final_craft": "目的アイテム完成には残り {{amount}} 個必要です",
   "Mark_HQ": "HQ要求を表示する",
   "Unmark_HQ": "HQ要求を消す",
-  "Compact_sidebar_toggle": "コンパクトサイドバーに切り替える",
+  "Compact_sidebar_toggle": "コンパクトサイドバーを切り替える",
   "Confirmation": "本当によろしいですか？",
   "Is_working_on_it": "{{name}} が作業してます",
   "Work_on_it": "私がやってるよ！",
@@ -51,7 +51,7 @@
   "Mute_alarms": "アラームをミュートする",
   "Unmute_alarms": "アラームのミュートを解除する",
   "Hide_used": "使用された項目を隠す",
-  "Collapse_if_done": "完了した後、削除",
+  "Collapse_if_done": "完了しなら削除する",
   "Retainer_ventures": "リテイナーベンチャー",
   "Requires_x_ventures": "総 {{amount}} 回のリテーナーベンチャーが必要です。",
   "WORKSHOP": {
@@ -61,7 +61,7 @@
     "Delete_message": "工房が削除されたとしても、リストは削除されず、工房にないリストに戻ります",
     "List_selection_title": "工房 {{workshopName}} に追加するリストを選ぶ",
     "Name_dialog": "地下工房名",
-    "Created_by": "クラフター: {{name}}",
+    "Created_by": "{{name}} で作成された",
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
     "Shared_workshops": "書く権限がある工房",
@@ -86,7 +86,7 @@
   "Tag_filter": "タグ",
   "Public_lists": "コミュニティリスト",
   "Your_public_lists": "マイコミュニティリスト",
-  "Public_list": "リスト公開",
+  "Public_list": "公共リスト",
   "Profile": "プロフィール",
   "X_for_total": "合計 {{amount}} 個",
   "COMMUNITY_LISTS": {
@@ -133,7 +133,7 @@
       "Name": "名前",
       "Spawn": "リスポンタイム",
       "Spawns_twice": "2回出現",
-      "Spawns_twice_description": "エオルゼア1日の基準で2回出現します。(午前、午後)",
+      "Spawns_twice_description": "エオルゼア日で2回出現します。(午前、午後)",
       "Duration": "採集可能時間",
       "Slot": "段目",
       "Type": "タイプ",
@@ -204,9 +204,9 @@
   "Import": "輸入",
   "Favorites": "お気に入り",
   "Favorite": "お気に入り",
-  "filters/ilvl": "アイテムLv",
+  "filters/ilvl": "IL",
   "filters/lvl": "装備Lv",
-  "filters/craft_lvl": "レシピLv",
+  "filters/craft_lvl": "レシピレベル",
   "filters/worn_by": "着用ジョブ",
   "filters/crafted_by": "クラフター",
   "filters/item_category": "種類",
@@ -730,7 +730,7 @@
     "Unit_price": "単価",
     "History": "最近記録",
     "Purchase_date": "日付",
-    "More_on_mogboard": "Mogboardで詳しい情報を見る"
+    "More_on_mogboard": "Mogboardで詳しく情報を見る"
   },
   "COMMENTS": {
     "Title": "コメント"
