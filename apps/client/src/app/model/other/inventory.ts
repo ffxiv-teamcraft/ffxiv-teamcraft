@@ -1,8 +1,8 @@
 export class Inventory {
 
-  private static INTENTORY_SIZE = 140;
+  private static INVENTORY_PANEL_SIZE = 35;
 
-  private grid: { id: number, icon: number, amount: number }[] = new Array(Inventory.INTENTORY_SIZE);
+  private grid: { id: number, icon: number, amount: number }[] = new Array(Inventory.INVENTORY_PANEL_SIZE);
 
   private nextFreeSlot = 0;
 
@@ -11,8 +11,11 @@ export class Inventory {
   }
 
   add(id: number, icon: number, amount: number): void {
-    if (this.isFull() || amount === 0) {
+    if (amount === 0) {
       return;
+    }
+    if (this.grid.filter(slot => slot !== undefined).length % 35 === 0) {
+      this.grid.push(...new Array(Inventory.INVENTORY_PANEL_SIZE));
     }
     const stackSize = 999;
     const stacks = Math.ceil(amount / stackSize);
@@ -27,14 +30,12 @@ export class Inventory {
     }
   }
 
-  public isFull(): boolean {
-    return this.nextFreeSlot >= Inventory.INTENTORY_SIZE + 1;
-  }
-
   getDisplay(): { id: number, icon: number, amount: number }[][] {
-    return [this.grid.slice(0, 35),
-      this.grid.slice(35, 70),
-      this.grid.slice(70, 105),
-      this.grid.slice(105, Inventory.INTENTORY_SIZE)];
+    const display = [];
+    const grid = [...this.grid];
+    while (grid.length) {
+      display.push(grid.splice(0, 35));
+    }
+    return display;
   }
 }

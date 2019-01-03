@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start center" class="inventory-container">
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start center" class="inventory-container">
   <div *ngFor="let tab of display$ | async" fxLayout="row wrap" fxLayoutGap="5px" class="tab">
     <div *ngFor="let slot of tab" class="slot" [class.empty]="slot === undefined" nz-tooltip
          [nzTitle]="slot?.id | itemName| i18n">

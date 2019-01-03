@@ -49,6 +49,7 @@ export class LayoutsFacade {
           }
           return {
             crystalsPanel: !layout.considerCrystalsAsItems,
+            showInventory: layout.showInventory,
             rows: layout.rows
               .sort((a, b) => {
                 // ANYTHING has to be last filter applied, as it rejects nothing.
