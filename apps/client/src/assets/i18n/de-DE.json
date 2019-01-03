@@ -486,7 +486,7 @@
     "Title": "Sammelgegenstand-Suche",
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
-    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trag einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
+    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -494,7 +494,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Eine Vorlage für diese Liste erstellen",
-    "Template_created": "List template created",
+    "Template_created": "Listenvorlage erstellt",
     "Dialog_title": "Vorlagenerstellung",
     "Link_name": "Vorlagenname",
     "target": "Zielliste",
@@ -504,8 +504,8 @@
     "Redirect_notice": "Du wirst zu der Liste weitergeleitet, sobald die Kopie erstellt ist",
     "Not_found": "Vorlage nicht gefunden",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "Lade Vorlage aus der Datenbank",
+      "Copying": "Kopie der Liste wird in deinem Account erstellt, du wirst nach Abschluss weitergeleitet"
     }
   },
   "PERMISSIONS": {
