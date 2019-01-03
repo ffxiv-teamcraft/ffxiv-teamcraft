@@ -714,9 +714,9 @@
       "MEMBER_JOINED": "メンバー入りました",
       "MEMBER_LEFT": "メンバー脱退しました",
       "ITEM_ADDED": "アイテムが追加されました",
-      "ITEM_REMOVED": "アイテムが削除しました",
-      "LIST_ADDED": "リストを追加された",
-      "LIST_REMOVED": "リストを削除された",
+      "ITEM_REMOVED": "アイテムが削除されました",
+      "LIST_ADDED": "リストが追加されました",
+      "LIST_REMOVED": "リストが削除されました",
       "LIST_PROGRESSION": "リストの進行状況を変更",
       "USER_ASSIGNMENT": "チーム員に作業を割り当てる"
     }
