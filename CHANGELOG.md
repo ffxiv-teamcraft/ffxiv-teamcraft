@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.9"></a>
+# [5.0.0-rc.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.8...v5.0.0-rc.9) (2019-01-03)
+
+
+### Bug Fixes
+
+* **rotations:** fixed an UX issue with rotation folders drag and drop ([c700b7c](https://github.com/Supamiu/ffxiv-teamcraft/commit/c700b7c))
+
+
+### Features
+
+* added a checkbox to hide or show completed items easily ([da3c583](https://github.com/Supamiu/ffxiv-teamcraft/commit/da3c583)), closes [#675](https://github.com/Supamiu/ffxiv-teamcraft/issues/675)
+* **levequests:** applied better display for start => end of leves ([036bf8a](https://github.com/Supamiu/ffxiv-teamcraft/commit/036bf8a))
+* list inventory display layout option ([698e8cc](https://github.com/Supamiu/ffxiv-teamcraft/commit/698e8cc))
+
+
+
 <a name="5.0.0-rc.8"></a>
 # [5.0.0-rc.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.7...v5.0.0-rc.8) (2019-01-02)
 

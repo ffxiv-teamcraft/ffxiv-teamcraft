@@ -1,35 +1,41 @@
-.tab {
-  max-width: 225px;
-  margin-bottom: 10px;
+:host {
+  .inventory-container{
+    width: 225px;
+  }
 
-  .slot {
-    border-radius: 5px;
-    height: 40px;
-    width: 40px;
-    margin-bottom: 5px;
+  .tab {
+    max-width: 225px;
+    margin-bottom: 10px;
 
-    &.empty {
-      background: grey;
-      opacity: .2;
-      border-bottom: 1px solid white;
-      pointer-events: none;
-    }
+    .slot {
+      border-radius: 5px;
+      height: 40px;
+      width: 40px;
+      margin-bottom: 5px;
 
-    .item-container {
-      position: relative;
-
-      img {
-        height: 40px;
-        width: 40px;
-        border-radius: 6px;
+      &.empty {
+        background: grey;
+        opacity: .2;
+        border-bottom: 1px solid white;
+        pointer-events: none;
       }
 
-      .amount {
-        position: absolute;
-        bottom: 1px;
-        right: 1px;
-        font-size: 11px;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      .item-container {
+        position: relative;
+
+        img {
+          height: 40px;
+          width: 40px;
+          border-radius: 6px;
+        }
+
+        .amount {
+          position: absolute;
+          bottom: 1px;
+          right: 1px;
+          font-size: 11px;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
       }
     }
   }

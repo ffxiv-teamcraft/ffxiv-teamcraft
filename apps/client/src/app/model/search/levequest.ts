@@ -1,4 +1,3 @@
-import { Vector2 } from '../../core/tools/vector2';
 import { I18nName } from '../common/i18n-name';
 
 export interface Levequest {
@@ -16,8 +15,7 @@ export interface Levequest {
   itemQuantity: number;
   name: I18nName;
   repeats: number;
-  startCoordinates: Vector2;
-  startMapId: number;
+  deliveryPlaceId: number;
   startPlaceId: number;
   // Levequest is selected from search results
   selected?: boolean;
