@@ -485,7 +485,7 @@
     "Title": "Sammelgegenstand-Suche",
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
+    "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trag einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
