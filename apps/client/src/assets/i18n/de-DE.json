@@ -272,7 +272,7 @@
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
     "Install_update": "Aktualisierung installieren",
-    "Preferred_copy_type": "Bevorzugter Kopiertyp",
+    "Preferred_copy_type": "Bevorzugte Kopiermethode",
     "Auto_open_in_desktop": "Öffne Links in Desktop-App, wenn sie gestartet ist",
     "Account": "Konto",
     "Reset_password": "Passwort zurücksetzen",
@@ -284,16 +284,16 @@
     "Nickname_used": "Benutzername wird bereits verwendet",
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "COPY_TYPE": {
-      "Classic": "Itemnamen kopieren",
-      "Isearch": "Copy /isearch macro"
+      "Classic": "Gegenstandsnamen kopieren",
+      "Isearch": "/isearch Makro kopieren"
     }
   },
   "PROFILE": {
-    "Account": "Account",
+    "Account": "Konto",
     "Add_character": "Charakter hinzufügen",
     "Remove_character": "Charakter entfernen",
     "Jobs": "Jobs",
-    "Stats": "Stats",
+    "Stats": "Attribute",
     "View_on_apkallu_falls": "Open in Apkallu Falls",
     "Masterbooks": "Meisterbücher",
     "Patreon_supporter": "Patreon-Unterstützer",
