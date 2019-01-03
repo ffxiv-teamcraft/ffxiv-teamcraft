@@ -59,6 +59,8 @@ export class ListDetailsComponent implements OnInit {
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
+  public hideCompleted$: Observable<boolean>;
+
   private adaptativeFilter$ = new BehaviorSubject<boolean>(false);
 
   public get adaptativeFilter(): boolean {
@@ -102,6 +104,12 @@ export class ListDetailsComponent implements OnInit {
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
     );
+    this.hideCompleted$ = this.layoutsFacade.selectedLayout$.pipe(
+      map(layout => {
+        return layout.rows.reduce((hide, row) => row.hideCompletedRows && hide, false);
+      })
+    );
+
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
     this.outDated$ = this.list$.pipe(map(list => list.isOutDated()));
@@ -130,6 +138,21 @@ export class ListDetailsComponent implements OnInit {
     ).subscribe(list => {
       delete list.teamId;
       this.listsFacade.updateList(list);
+    });
+  }
+
+  setHideCompleted(value: boolean): void {
+    this.layoutsFacade.selectedLayout$.pipe(
+      first(),
+      map(layout => {
+        layout.rows = layout.rows.map(row => {
+          row.hideCompletedRows = value;
+          return row;
+        });
+        return layout;
+      })
+    ).subscribe(layout => {
+      this.layoutsFacade.updateLayout(layout);
     });
   }
 
