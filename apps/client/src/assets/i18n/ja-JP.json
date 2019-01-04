@@ -620,7 +620,7 @@
     "CONFIGURATION": {
       "Job": "ジョブ",
       "Job_not_configured": "まだ、このジョブを設定してないようです。プロフィールページでジョブが設定されてるか確認してから、能力値を設定して下さい。",
-      "Job_not_configured_anonymous": "正確なシミュレーションのために能力値を入力したり、アカウントにログインして下さい",
+      "Job_not_configured_anonymous": "正確なシミュレーションのために能力値を入力やアカウントにログインして下さい",
       "Custom_set": "カスタムセットを可能にします",
       "Select_job": "ジョブを選び出します",
       "Craftsmanship": "作業精度",
