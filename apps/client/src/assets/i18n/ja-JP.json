@@ -536,7 +536,7 @@
   },
   "SIMULATOR": {
     "Fixed_notification_number": "お知らせのSEを選ぶ",
-    "Starting_echo_number": "Echo 時間",
+    "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リサイクル’が使える部分にマクロを分ける",
     "Extra_wait": "マクロ遅延時間",
     "Import_macro": "ゲームのマクロが輸入をします",
