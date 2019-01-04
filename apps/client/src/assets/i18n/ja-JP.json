@@ -582,7 +582,7 @@
     "Rename_rotation": "スキル回し名を変更する",
     "Cross_class_setup": "ロールスキル設定",
     "Include_sound_end": "マクロ終了する時、お知らせ追加",
-    "Step_by_step_report": "製作工程別情報",
+    "Step_by_step_report": "制作ターン別情報",
     "Save_as_new": "新たに保存する （新たに生成されたスキル回しに開く）",
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
     "Change_rotation": "スキル回しを変更する",
