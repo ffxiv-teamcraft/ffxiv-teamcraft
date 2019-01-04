@@ -65,7 +65,7 @@
     "Share_link_copied": "工房シェアリンクにコピーされました",
     "Not_found": "この工房に無いか、アクセスする権限がありません",
     "Shared_workshops": "書く権限がある工房",
-    "Rename": "工房の名前変更"
+    "Rename": "工房名を変更する"
   },
   "ABOUT": {
     "title": "当サイトについて",
@@ -275,7 +275,7 @@
     "Account": "アカウント",
     "Reset_password": "パスワードをリセットする",
     "Reset_password_warning": "本当にパスワードを再設定しますか？",
-    "Password_reset_mail_sent": "パスワード再設定、E-メールに転送されました。",
+    "Password_reset_mail_sent": "パスワード再設定メールに寄せされました",
     "Connect_with_patreon": "アカウントはPatreonにつなぐ",
     "Connected_with_patreon": "アカウントはPatreonにつながれた",
     "Nickname": "Patreonの通称名",
@@ -422,7 +422,7 @@
     "CASTER": "キャスター",
     "CRAFTER": "クラフター",
     "GATHERER": "ギャザラー",
-    "SCRIPTS": "ロウェナの手形",
+    "SCRIPTS": "スクリップ",
     "PLD": "ナイト",
     "WAR": "戦士",
     "DRK": "暗黒戦士",
@@ -578,7 +578,7 @@
     "Toggle_snapshot_mode": "製作工程確認モードに変換",
     "Open_in_external": "{{name}} のシミュレーターに開く",
     "Select_job_please": "ジョブを選び出します",
-    "Rename_rotation": "回し名を変更します",
+    "Rename_rotation": "スキル回し名を変更する",
     "Cross_class_setup": "ロールスキル設定",
     "Include_sound_end": "マクロ終了する時、お知らせ追加",
     "Step_by_step_report": "製作工程別情報",
@@ -596,7 +596,7 @@
     "ROTATIONS": {
       "FOLDERS": {
         "Folders": "スキル回しフォルダー",
-        "Rename": "フォルダーの名前を変更する",
+        "Rename": "フォルダー名を変更する",
         "New_folder": "新しいフォルダー",
         "Delete_message": "フォルダーを削除しても、フォルダー内の自分のスキル回しに関するのは削除されません。",
         "Share_link_copied": "スキル回しフォルダーのシェアリンクがクリップボードにコピーされました",
@@ -679,8 +679,8 @@
     "Title": "チーム",
     "Leader": "リーダー",
     "Member": "メンバー",
-    "Enable_discord_updates": "ディスコードアップデート活性化",
-    "Disable_discord_updates": "ディスコードアップデート非活性化",
+    "Enable_discord_updates": "ディスコードにアップデートを活性化する",
+    "Disable_discord_updates": "ディスコードにアップデートを非活性化する",
     "Webhook_error": "ディスコード webhookを構築する間に、誤謬が発生しました。",
     "Create_team": "チームを生成",
     "Create_invite_one_day": "新しい招待リンクを作る[満了期間1日]",
@@ -698,8 +698,8 @@
     "Already_in_team": "既にチームに参加してる状態です",
     "Webhook_configuration": "Webhook設定",
     "NOTIFICATIONS": {
-      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加しました。",
-      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除しました。",
+      "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
+      "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を完了に表示した",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
