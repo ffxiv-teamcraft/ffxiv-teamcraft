@@ -353,6 +353,7 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Add all alarms for this list",
     "History": "History",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
