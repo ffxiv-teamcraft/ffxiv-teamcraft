@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.11"></a>
+# [5.0.0-rc.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.10...v5.0.0-rc.11) (2019-01-04)
+
+
+### Bug Fixes
+
+* **desktop:** fixed icon on linux builds, also changed format to deb ([df905dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/df905dd))
+* fixed a typo for scrips ([6a1eeec](https://github.com/Supamiu/ffxiv-teamcraft/commit/6a1eeec))
+* **desktop:** implemented possible fix for auto updater ([c0d4ccd](https://github.com/Supamiu/ffxiv-teamcraft/commit/c0d4ccd))
+* **layouts:** layout selection now persists on page reload ([eeec18c](https://github.com/Supamiu/ffxiv-teamcraft/commit/eeec18c))
+
+
+### Features
+
+* **list-panel:** brought back the items counter in list panel header ([8db06af](https://github.com/Supamiu/ffxiv-teamcraft/commit/8db06af))
+* new "buy a Teamcraft T-shirt" button in search intro ([6291d2a](https://github.com/Supamiu/ffxiv-teamcraft/commit/6291d2a))
+
+
+
 <a name="5.0.0-rc.10"></a>
 # [5.0.0-rc.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.9...v5.0.0-rc.10) (2019-01-03)
 

@@ -2,7 +2,7 @@
   "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-rc.10",
+  "version": "5.0.0-rc.11",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -25,6 +25,12 @@
     },
     "mac": {
       "category": "public.app-category.games"
+    },
+    "linux": {
+      "icon": "./tools/build/icon.ico",
+      "target": "deb",
+      "maintainer": "Miu Asakura",
+      "category": "Game"
     },
     "win": {
       "icon": "./tools/build/icon.ico",

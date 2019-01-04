@@ -91,7 +91,7 @@
       <div *ngIf="updateAvailable === false && !checkingForUpdate">
         {{'SETTINGS.No_update_available' | translate}}
       </div>
-      <button nz-button nzType="primary" (click)="installUpdate()" *ngIf="updateAvailable && !checkingForUpdate">
+      <button nz-button nzType="primary" (click)="installUpdate()" *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
         {{'SETTINGS.Install_update' | translate}}
       </button>
     </div>

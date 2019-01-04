@@ -26,7 +26,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
         1, false, true, true),
       new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name,
         2, false, false, true),
-      new LayoutRow('Tomes/Tokens/Scripts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TOKEN_TRADE.name,
+      new LayoutRow('Tomes/Tokens/Scrips', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TOKEN_TRADE.name,
         3, false, false, true),
       new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name,
         4, false, false, true),
