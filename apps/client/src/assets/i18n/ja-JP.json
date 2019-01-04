@@ -682,7 +682,7 @@
     "Member": "メンバー",
     "Enable_discord_updates": "ディスコードにアップデートを活性化する",
     "Disable_discord_updates": "ディスコードにアップデートを非活性化する",
-    "Webhook_error": "ディスコード webhookを構築する間に、誤謬が発生しました。",
+    "Webhook_error": "ディスコード webhookを作成中、エラーが発生しました。",
     "Create_team": "チームを生成",
     "Create_invite_one_day": "新しい招待リンクを作る[満了期間1日]",
     "Create_invite_infinite": "新しい招待リンクを作る[無制限]",
