@@ -376,18 +376,18 @@
   "LIST_DETAILS": {
     "List_finished": "リストを完成されました",
     "Public_list_description": "リスト公開設定はこのリストをコミュニティリストに追加させます. <b>シェアは要りません.</b>",
-    "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを付けて下さい。 ",
+    "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを付けて下さい ",
     "Missing_tags_after_button": " ボタン",
-    "Add_remove_amount": "現在数量から追加/除去",
-    "Missing_masterbook": "この秘伝書を保有しておりません。プロフィールに追加するには、クリックして下さい。",
+    "Add_remove_amount": "現在数量から追加/削除する",
+    "Missing_masterbook": "この秘伝書を保有してません。プロフィールに追加するには、クリックして下さい。",
     "No_note": "メモなし",
-    "Edit_note": "メモ訂正",
+    "Edit_note": "メモを修正する",
     "Note_placeholder": "メモ",
     "Tags_popup": "タグ",
     "Inventory_breakdown": "所持品",
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
     "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
-    "Adaptative_filter": "可能なことのみ表示",
+    "Adaptative_filter": "可能なことのみ表示する",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -459,20 +459,20 @@
     "Invalid_macro_or_language": "有効しないマクロまたは、言語です。"
   },
   "CUSTOM_LINKS": {
-    "Title": "使用者指定リンク",
+    "Title": "使用者指定のリンク",
     "Not_found": "リンクが見つかりません",
-    "Add_link": "使用者指定リンクを作る",
-    "Link_created": "使用者指定リンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
-    "Dialog_title": "使用者指定リンク",
+    "Add_link": "使用者指定のリンクを作る",
+    "Link_created": "使用者指定のリンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
+    "Dialog_title": "使用者指定のリンク",
     "Link_type": "リンクタイプ",
     "Link_name": "リンク名",
     "target": "リンクターゲット",
-    "Share_link_copied": "使用者指定リンクがクリップボードにコピーされました",
+    "Share_link_copied": "使用者指定のリンクがクリップボードにコピーされました",
     "Copy_custom_link": "カスタムリンクをコピーする",
-    "No_links": "使用者指定リンクなし"
+    "No_links": "使用者指定のリンクなし"
   },
   "NAVIGATION": {
-    "Title": "最適化経路",
+    "Title": "最適化されたルート",
     "Steps": "段階",
     "STEP": {
       "Gathering": "{{amount}} 個採集",
