@@ -376,7 +376,7 @@
   "LIST_DETAILS": {
     "List_finished": "リストを完成されました",
     "Public_list_description": "リスト公開設定はこのリストをコミュニティリストに追加させます. <b>シェアは要りません.</b>",
-    "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを入力して下さい。 ",
+    "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを付けて下さい。 ",
     "Missing_tags_after_button": " ボタン",
     "Add_remove_amount": "現在数量から追加/除去",
     "Missing_masterbook": "この秘伝書を保有しておりません。プロフィールに追加するには、クリックして下さい。",
