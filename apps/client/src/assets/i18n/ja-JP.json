@@ -538,7 +538,7 @@
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リサイクル’が使える部分にマクロを分ける",
-    "Extra_wait": "マクロ遅延時間",
+    "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロが輸入をします",
     "Ingame_macro": "マクロ",
     "Min_stats": "制作に必要な最低能力値",
