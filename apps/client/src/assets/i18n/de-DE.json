@@ -353,6 +353,7 @@
     "Total_trade_price": "Gesamt: ",
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -749,6 +750,7 @@
     "Lists_created_counter": "{{amount}} Listen wurden mit FFXIV Teamcraft erstellt",
     "Support_patreon": "Unterstütze uns auf Patreon",
     "Donation_button": "Mach eine einmalige Spende",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "Lege los!",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fang an Dinge herzustellen.",
