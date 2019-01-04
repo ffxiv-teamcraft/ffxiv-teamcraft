@@ -537,7 +537,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
-    "Break_on_reclaim": "’リサイクル’が使える部分にマクロを分ける",
+    "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
     "Extra_wait": "追加待ち",
     "Import_macro": "ゲームのマクロが輸入をします",
     "Ingame_macro": "マクロ",
@@ -576,7 +576,7 @@
     "Persist": "この回しを保存する",
     "Rotation_not_found": "スキル回しが見つかりません",
     "Confirm_delete": "本当にスキル回しを削除しますか？",
-    "Toggle_snapshot_mode": "製作工程確認モードに変換",
+    "Toggle_snapshot_mode": "ターンを元に戻す",
     "Open_in_external": "{{name}} のシミュレーターに開く",
     "Select_job_please": "ジョブを選び出します",
     "Rename_rotation": "スキル回し名を変更する",
