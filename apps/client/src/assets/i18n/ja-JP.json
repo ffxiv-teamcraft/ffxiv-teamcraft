@@ -110,7 +110,7 @@
     "Copy_to_clipboard": "クリップボードにコピーする",
     "Language": "言語",
     "Opened_in_desktop": "このページはPCアプリ内に開きました。このページを閉じることが出来ます。",
-    "Open_in_desktop": "PCアップリに開く",
+    "Open_in_desktop": "PCアプリで開く",
     "Admin": "管理者"
   },
   "ALARMS": {
@@ -349,7 +349,7 @@
     "Copy_as_text": "テキストにコピーする",
     "Copy_list_as_text": "全てこのリストをテキストにコピーする",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
-    "Total_price": "総費用(ギル及び貨幣)",
+    "Total_price": "総費用(ギルや各種通貨)",
     "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
