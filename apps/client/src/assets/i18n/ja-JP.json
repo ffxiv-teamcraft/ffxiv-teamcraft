@@ -369,7 +369,7 @@
       "Open_description": "リストにアクセスする",
       "Delete": "削除",
       "Delete_description": "このリストを削除する",
-      "Delete_warning": "リスト削除は取り消すことはできません"
+      "Delete_warning": "リストの削除は取り消すことができません"
     }
   },
   "LIST_DETAILS": {
