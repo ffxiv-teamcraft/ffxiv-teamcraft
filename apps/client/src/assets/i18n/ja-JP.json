@@ -258,7 +258,7 @@
   "Item_name_copied": "{{itemname}} はクリップボードにコピーされました",
   "Tier_display_toggle": "制作段階を表示する",
   "Precraft_tier": "段階",
-  "Regenerating_lists": "リスト更新",
+  "Regenerating_lists": "リストの更新",
   "SETTINGS": {
     "Title": "設定",
     "General": "一般",
@@ -271,7 +271,7 @@
     "No_update_available": "利用可能な更新はありません",
     "Install_update": "アップデートをインストール",
     "Preferred_copy_type": "基本コピー類型",
-    "Auto_open_in_desktop": "デスクトップアプリでリンク開く",
+    "Auto_open_in_desktop": "デスクトップのアプリからリンクを開く",
     "Account": "アカウント",
     "Reset_password": "パスワードをリセットする",
     "Reset_password_warning": "本当にパスワードを再設定しますか？",
@@ -280,7 +280,7 @@
     "Connected_with_patreon": "アカウントはPatreonにつながれた",
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
-    "No_nickname_warning": "後援者専用機能たちを使用するためには、設定ページからニックネームを設定して下さい。",
+    "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
