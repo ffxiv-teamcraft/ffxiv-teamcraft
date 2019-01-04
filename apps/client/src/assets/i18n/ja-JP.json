@@ -366,7 +366,7 @@
       "Copy_template_url_description": "このリストのテンプレートリンクをコピーすれば、該当リストにコピーしたものが生成されます",
       "Share_description": "シェアリンクをクリップボードにコピーする",
       "Open": "リストを開く",
-      "Open_description": "リストに繋ぐ",
+      "Open_description": "リストにアクセスする",
       "Delete": "削除",
       "Delete_description": "このリストを削除する",
       "Delete_warning": "リスト削除は取り消すことはできません"
