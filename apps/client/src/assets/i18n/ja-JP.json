@@ -131,7 +131,7 @@
     "CUSTOM": {
       "Title": "使用者指定された、アラームを追加する",
       "Name": "名前",
-      "Spawn": "リスポンタイム",
+      "Spawn": "リスポン時間",
       "Spawns_twice": "2回出現",
       "Spawns_twice_description": "エオルゼア日で2回出現します。(午前、午後)",
       "Duration": "採集可能時間",
@@ -156,7 +156,7 @@
   "Crystals": "クリスタル",
   "Gathering": "採集",
   "Other": "その他",
-  "Pre_crafts": "下位制作",
+  "Pre_crafts": "下位材料",
   "Items": "アイテム",
   "New_List": "新リスト",
   "Please_enter_a_name": "名前を入力してください",
@@ -474,7 +474,7 @@
     "Title": "最適化経路",
     "Steps": "段階",
     "STEP": {
-      "Gathering": "{{amount}} 個 採集",
+      "Gathering": "{{amount}} 個採集",
       "Hunting": "戦闘で {{amount}} 個 獲得",
       "Vendor": "{{amount}} 個 商店から購入",
       "Trade": "{{amount}} 個 交換"
