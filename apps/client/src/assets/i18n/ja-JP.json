@@ -661,7 +661,7 @@
     "No_results": "ギルドリーヴが見つかりません",
     "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
     "Quantity": "分量",
-    "All_deliveries": "全ての {{value}} 納品",
+    "All_deliveries": "総 {{value}} 回 納品",
     "Compute_exp": "経験値の変化を見る",
     "INTRO": {
       "Title": "ギルドリーヴ",
