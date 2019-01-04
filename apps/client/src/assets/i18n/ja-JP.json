@@ -476,14 +476,14 @@
     "Steps": "段階",
     "STEP": {
       "Gathering": "{{amount}} 個採集",
-      "Hunting": "戦闘で {{amount}} 個 獲得",
-      "Vendor": "{{amount}} 個 商店から購入",
-      "Trade": "{{amount}} 個 交換"
+      "Hunting": "戦闘で {{amount}} 個 獲得した",
+      "Vendor": "{{amount}} 個 商店から購入した",
+      "Trade": "{{amount}} 個 交換した"
     }
   },
   "GATHERING_LOCATIONS": {
     "Title": "ギャザラーマップ",
-    "No_items": "採集場所を見つかりませんでした。",
+    "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム生成などの詳細機能を提供します。検索欄に内容を書き込んで、探そうとする採集情報をご確認下さい！"
   },
@@ -492,35 +492,35 @@
     "Read_more": "詳細に見る"
   },
   "LIST_TEMPLATE": {
-    "Create_template": "該当リストに対する、リストテンプレート生成する",
+    "Create_template": "該当リストに対する、リストのテンプレート生成する",
     "Template_created": "リストの書式が生成されました。",
-    "Dialog_title": "テンプレート生成",
+    "Dialog_title": "テンプレートの生成",
     "Link_name": "テンプレート名",
-    "target": "対象リスト",
+    "target": "対象のリスト",
     "Share_link_copied": "テンプレートシェアリンクがクリップボードにコピーされました",
     "Copy_template_url": "テンプレートのURLをコピーする",
-    "Cloning_list": "マイアカウントでリストコピーしたものを生成する",
-    "Redirect_notice": "コピー生成する時にリストに繋がれます。",
+    "Cloning_list": "マイアカウントにリストのコピー本を生成する",
+    "Redirect_notice": "コピー本を生成する時にリストに移動されます。",
     "Not_found": "テンプレートが見つかりません",
     "STATUS": {
       "Loading": "データベースから書式を読み込み中です。",
-      "Copying": "リストのコピーをアカウントに生成中です。完了したら自動に移動します。"
+      "Copying": "リストのコピー本をアカウントに生成中です。完了したら自動に移動します。"
     }
   },
   "PERMISSIONS": {
     "Read": "読む",
-    "Read_description": "リストを見れる権限",
-    "Participate": "参加",
+    "Read_description": "リストが見れる権限",
+    "Participate": "参加する",
     "Participate_description": "数量を調整し、完了されたアイテムをチェックできる権限",
-    "Write": "書き込み",
-    "Write_description": "アイテムを追加し(工房に) リストを追加できる権限",
+    "Write": "書く",
+    "Write_description": "アイテムを追加し(工房に) リストを追加する権限",
     "Title": "権限管理",
     "Everyone": "全員",
     "You": "自分",
     "Add_new": "使用者追加",
     "Add_new_fc": "フリーカンパニーを追加する",
-    "Placeholder": "Eメールまたは、使用者ID",
-    "Bind_free_company": "一部権限を自分のフリーカンパニーに適用",
+    "Placeholder": "Eメールまたは、使用者のID",
+    "Bind_free_company": "一部の権限を自分のフリーカンパニーに適用",
     "User_not_found": "アカウントが見つかりません。",
     "User_id_tip": "ユーザーIDはプロフィールページの右下隅にあります",
     "Saving": "権限設定を保存中",
