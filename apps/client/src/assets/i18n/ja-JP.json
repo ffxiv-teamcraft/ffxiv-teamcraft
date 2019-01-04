@@ -129,7 +129,7 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
     "CUSTOM": {
-      "Title": "使用者指定された、アラームを追加する",
+      "Title": "カスタムアラームを追加する",
       "Name": "名前",
       "Spawn": "リスポンタイム",
       "Spawns_twice": "2回出現",
@@ -362,7 +362,7 @@
       "Nothing": "ここには何もない"
     },
     "BUTTONS": {
-      "Add_link_description": "このリストに対する使用者指定リンクを作る",
+      "Add_link_description": "このリストに対するカスタムリンクを作る",
       "Create_template_description": "このリストのテンプレートリンクを生成すれば、現在のリストにコピー本が生成されます",
       "Copy_template_url_description": "このリストのテンプレートリンクをコピーすれば、該当リストにコピーしたものが生成されます",
       "Share_description": "シェアリンクをクリップボードにコピーする",
@@ -459,17 +459,17 @@
     "Invalid_macro_or_language": "有効しないマクロまたは、言語です。"
   },
   "CUSTOM_LINKS": {
-    "Title": "使用者指定のリンク",
+    "Title": "カスタムリンク",
     "Not_found": "リンクが見つかりません",
-    "Add_link": "使用者指定のリンクを作る",
-    "Link_created": "使用者指定のリンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
-    "Dialog_title": "使用者指定のリンク",
+    "Add_link": "カスタムリンクを作る",
+    "Link_created": "カスタムリンクが生成されました。コピーするためには、シェアボタンを押して下さい。",
+    "Dialog_title": "カスタムリンク",
     "Link_type": "リンクタイプ",
     "Link_name": "リンク名",
     "target": "リンクターゲット",
-    "Share_link_copied": "使用者指定のリンクがクリップボードにコピーされました",
+    "Share_link_copied": "カスタムリンクがクリップボードにコピーされました",
     "Copy_custom_link": "カスタムリンクをコピーする",
-    "No_links": "使用者指定のリンクなし"
+    "No_links": "カスタムリンクなし"
   },
   "NAVIGATION": {
     "Title": "最適化されたルート",
@@ -551,8 +551,8 @@
     "Simulate_tooltip": "シミュレーターで制作",
     "Change_recipe": "レシピを変更する",
     "Changing_recipe_save_warning": "制作レシピを選択する前に保存しない場合、変更した内容が損失されます",
-    "Too_many_aactions": "使用可能なロールスキルの数が超過しました",
-    "Convert_rotation": "基本シミュレーターで開く",
+    "Too_many_aactions": "このマクロには、10個以上のアディショナルアクションが使用されています。",
+    "Convert_rotation": "標準シミュレータで開く",
     "Configuration": "ジョブ設定",
     "Level": "レベル",
     "Reliability": "確実",
@@ -562,7 +562,7 @@
     "Rotations": "スキル回し",
     "Favorite_Rotations": "制作スキル回しお気に入り",
     "No_rotations": "スキル回しがありません",
-    "Create_a_custom_rotation": "使用者指定スキル回しを作ります",
+    "Create_a_custom_rotation": "カスタムでスキル回しを作ります",
     "Reset": "リセット",
     "Import_from_crafting_optimizer": "Crafting optimizerから持って来る",
     "Export_crafting_optimizer": "Crafting optimizer 形式で送り出す",
@@ -757,7 +757,7 @@
       "Public_lists": "制作品、ギルドリーヴ納品や制作手帳を完了、飛空艇、Bis装備など全てを貴方のコミュニティリストにコピーできます。",
       "Alarms": "アラームを作って、採集場所出現を逃さずに、グループに結んでゲーム内に送り出すことと同じようなことができます",
       "Gathering_location": "採集物に関する情報を見つかり、アラームを作り、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
-      "Rotations": "スキル回しを作って、シミュレーターで確認や使用者指定シミュレーターを利用して理論上の制作マクロが構成することができます。",
+      "Rotations": "スキル回しを作って、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロが構成することができます。",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
       "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語にマクロに翻訳できます。"
     }
