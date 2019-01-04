@@ -353,6 +353,7 @@
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Создать оповещения для этого списка",
     "History": "История",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
@@ -749,6 +750,7 @@
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Поддержать нас в patreon",
     "Donation_button": "Сделать одноразовое пожертвование",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",
