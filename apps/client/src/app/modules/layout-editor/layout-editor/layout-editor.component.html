@@ -31,12 +31,20 @@
   </div>
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
-      <input type="text" nz-input [(ngModel)]="layout.name" (ngModelChange)="dirty = true">
+      <input type="text" nz-input [(ngModel)]="layout.name"
+             [disabled]="layout.name === 'Default Layout'" (ngModelChange)="dirty = true">
     </nz-input-group>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
-        <label nz-checkbox [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true">
+        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
+               [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true">
           {{"LIST.Enable_crystals_tracking" | translate}}
+        </label>
+      </div>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
+               [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true">
+          {{"LIST.Always_show_inventory" | translate}}
         </label>
       </div>
     </nz-card>
@@ -44,18 +52,24 @@
       <div fxLayout="column" fxLayoutGap="10px">
         <div class="final-items-ordering">
           {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
-          <nz-select [(ngModel)]="layout.recipeOrderBy" (ngModelChange)="dirty = true">
+          <nz-select [(ngModel)]="layout.recipeOrderBy"
+                     [nzDisabled]="layout.name === 'Default Layout'"
+                     (ngModelChange)="dirty = true">
             <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
             <nz-option nzValue="NONE" nzLabel="NONE"></nz-option>
             <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
             <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
           </nz-select>
-          <nz-select [(ngModel)]="layout.recipeOrder" (ngModelChange)="dirty = true">
+          <nz-select [(ngModel)]="layout.recipeOrder"
+                     [nzDisabled]="layout.name === 'Default Layout'"
+                     (ngModelChange)="dirty = true">
             <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
             <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
           </nz-select>
         </div>
-        <nz-radio-group [ngModel]="getItemsLayoutType(layout)" (ngModelChange)="setItemsLayoutType(layout, $event)">
+        <nz-radio-group [ngModel]="getItemsLayoutType(layout)"
+                        [nzDisabled]="layout.name === 'Default Layout'"
+                        (ngModelChange)="setItemsLayoutType(layout, $event)">
           <label nz-radio-button [nzValue]="'default'">{{"Default" | translate}}</label>
           <label nz-radio-button [nzValue]="'zoneBreakdown'">{{"Zone_breakdown" | translate}}</label>
         </nz-radio-group>
@@ -71,7 +85,7 @@
       </div>
     </div>
   </div>
-  <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)">
+  <button nz-button nzType="primary" nzBlock (click)="addPanel(layout)" [disabled]="layout.name === 'Default Layout'">
     <i nz-icon type="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
   </button>
 </div>

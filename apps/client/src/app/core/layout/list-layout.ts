@@ -17,6 +17,8 @@ export class ListLayout extends DataModel {
 
   public considerCrystalsAsItems = false;
 
+  public showInventory = false;
+
   public recipeOrder: LayoutRowOrder = LayoutRowOrder.ASC;
 
   public recipeZoneBreakdown = false;

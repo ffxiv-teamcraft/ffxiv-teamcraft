@@ -102,6 +102,7 @@ export class ListDetailsComponent implements OnInit {
     this.crystals$ = this.list$.pipe(
       map(list => list.crystals)
     );
+
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
     this.outDated$ = this.list$.pipe(map(list => list.isOutDated()));

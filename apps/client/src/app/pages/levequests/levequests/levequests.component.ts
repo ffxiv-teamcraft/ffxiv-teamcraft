@@ -95,7 +95,7 @@ export class LevequestsComponent implements OnInit {
           columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon', 'CraftLeve.ItemCount0',
             'CraftLeve.Item0Recipes.*2.ID', 'CraftLeve.Item0Recipes.*2.ClassJob', 'CraftLeve.Repeats',
             'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.X', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
+            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID'],
           // 105 is the amount of leves from 1 to 70 for a single job
           limit: 105
         });
@@ -116,9 +116,8 @@ export class LevequestsComponent implements OnInit {
             amount: 1,
             itemQuantity: leve.CraftLeve.ItemCount0,
             name: { en: leve.Name_en, fr: leve.Name_fr, de: leve.Name_de, ja: leve.Name_ja },
-            startCoordinates: { x: leve.LevelLevemete.X, y: leve.LevelLevemete.Y },
-            startMapId: leve.LevelLevemete.Map.ID,
             startPlaceId: leve.PlaceNameStart.ID,
+            deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats
           });
         });

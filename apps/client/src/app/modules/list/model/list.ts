@@ -200,7 +200,7 @@ export class List extends DataWithPermissions {
       item.used += amount;
       if (item.used > previousUsed && item.used !== Math.min(item.done + amount, item.amount)) {
         // Set amount to the amount of items to add to the total.
-        amount = amount - (item.done - previousUsed);
+        amount = Math.max(0, amount - (item.done - previousUsed));
       }
       item.done += amount;
       if (item.used > item.amount) {
@@ -258,8 +258,14 @@ export class List extends DataWithPermissions {
       if (requirementItem !== undefined) {
         // While each requirement has enough items remaining, you can craft the item.
         // If only one misses, then this will turn false for the rest of the loop
+        let requirementAvailableQuantity = requirementItem.done - requirementItem.used;
+        // If this is yielding more than one and it's an not exact amount (theorically crafted a float amount)
+        // add one to simulate it properly.
+        if (item.yield > 1 && ((item.done / item.yield) % 1 !== 0) && requirementAvailableQuantity > 0) {
+          requirementAvailableQuantity += requirement.amount;
+        }
         canCraft = canCraft &&
-          (requirementItem.done - requirementItem.used) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
+          (requirementAvailableQuantity) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
       }
     }
     return canCraft;
