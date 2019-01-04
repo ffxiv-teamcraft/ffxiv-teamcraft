@@ -345,7 +345,7 @@
     "Rename": "リスト名を変更する",
     "Copied_x_times": "{{count}} 回コピーされました",
     "Enable_crystals_tracking": "必要クリスタル即時計算活性化する",
-    "Always_show_inventory": "Always show inventory (disabled on mobile)",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "テキストにコピーする",
     "Copy_list_as_text": "全体リストをテキストにコピー",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
