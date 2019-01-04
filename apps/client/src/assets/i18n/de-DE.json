@@ -345,7 +345,7 @@
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}} mal kopiert",
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Inventar immer anzeigen (auf Geräten <600px Breite deaktiviert)",
     "Copy_as_text": "Als Text kopieren",
     "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
