@@ -353,6 +353,7 @@
     "Total_trade_price": "Total : ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -749,6 +750,7 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "Par où commencer !",
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
