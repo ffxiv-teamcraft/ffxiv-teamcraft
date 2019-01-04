@@ -129,7 +129,7 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
     "CUSTOM": {
-      "Title": "使用者指定、アラーム追加",
+      "Title": "使用者指定された、アラームを追加する",
       "Name": "名前",
       "Spawn": "リスポンタイム",
       "Spawns_twice": "2回出現",
@@ -325,10 +325,10 @@
     "Import_description": "作ろうとするアイテムに対する制作法を選び、リストを選んで下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
     "Delete_after_merge": "マージ後に既存のリストを削除する",
     "IMPORT": {
-      "Title": "外部サイトからリストを持って来る",
+      "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイト・リンクを貼り付く",
       "Paste_link_step_placeholder": "リストリンク",
-      "Link_not_supported": "このリンクは呼び寄せられません",
+      "Link_not_supported": "このリンクは取り込せられません",
       "Links_supported": "支援するリンク: {{links}}",
       "Link_recognized": "{{type}} に確認され, 持ってこれます",
       "Next": "次",
@@ -351,7 +351,7 @@
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギル及び手形)",
     "Total_trade_price": "合計: ",
-    "Add_all_alarms": "このリストに対する、アラーム追加",
+    "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "内訳",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
@@ -373,7 +373,7 @@
     }
   },
   "LIST_DETAILS": {
-    "List_finished": "リスト完成",
+    "List_finished": "リストを完成されました",
     "Public_list_description": "リスト公開設定はこのリストをコミュニティリストに追加させます. <b>シェアは要りません.</b>",
     "Missing_tags_before_button": "コミュニティリストに登録されたリストにタグがありません。タグを入力して下さい。 ",
     "Missing_tags_after_button": " ボタン",
@@ -385,7 +385,7 @@
     "Tags_popup": "タグ",
     "Inventory_breakdown": "所持品",
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
-    "Add_all_item_alarms": "このアイテムに対するアラーム追加",
+    "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
     "Adaptative_filter": "可能なことのみ表示",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
