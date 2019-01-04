@@ -391,11 +391,11 @@
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
-      "Import_layout": "レイアウト呼び寄せる",
-      "Import_string": "レイアウト呼び寄せるコード",
-      "Import_string_copied": "レイアウト呼び寄せるコードコピーされました！",
+      "Import_layout": "レイアウトを呼び寄せる",
+      "Import_string": "レイアウトを呼び寄せるコード",
+      "Import_string_copied": "レイアウトを呼び寄せるコードがコピーされました！",
       "Layout_name": "レイアウト名",
-      "Invalid_import": "有効しない呼び寄せるコードです",
+      "Invalid_import": "有効でない呼び寄せるコードです",
       "Global_options": "一般設定"
     },
     "LAYOUT": {
