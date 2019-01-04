@@ -345,7 +345,7 @@
     "Rename": "Renommer la liste",
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
-    "Always_show_inventory": "Always show inventory (disabled on mobile)",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Copier au format texte",
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
