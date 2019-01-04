@@ -131,7 +131,7 @@
     "CUSTOM": {
       "Title": "使用者指定された、アラームを追加する",
       "Name": "名前",
-      "Spawn": "リスポン時間",
+      "Spawn": "リスポンタイム",
       "Spawns_twice": "2回出現",
       "Spawns_twice_description": "エオルゼア日で2回出現します。(午前、午後)",
       "Duration": "採集可能時間",
@@ -353,6 +353,7 @@
     "Total_trade_price": "合計: ",
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
@@ -749,6 +750,7 @@
     "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを作られました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "後援する（1回）",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "始める！",
     "DESCRIPTION": {
       "Lists": "リストを作って制作に必要な全ての材料を確認し、フレンドさんにシェアできます。アイテム検索でフィルタを適用して、特定アイテムを選択してから制作を開始することができます。",
