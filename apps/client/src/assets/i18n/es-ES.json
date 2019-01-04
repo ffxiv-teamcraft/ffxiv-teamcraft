@@ -345,7 +345,7 @@
     "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
-    "Always_show_inventory": "Always show inventory (disabled on mobile)",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copy the whole list as text",
     "Copied_as_text": "Contenido copiado en el portapapeles",
