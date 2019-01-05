@@ -335,7 +335,6 @@
       "Back": "Назад",
       "Give_list_name": "Назовите ваш новый список",
       "Final_step": "Проверка",
-      "Choices_needed": "Ожидается выбор нескольких рецептов",
       "Creating_list": "Создание списка",
       "Loading_items": "Загрузка информации о предметах"
     }
@@ -402,8 +401,7 @@
       "Filter": "Фильтр",
       "Panel_name": "Имя панели",
       "Order_by": "Сортировка по",
-      "Order": "Порядок",
-      "Logic_gate": "Логические ворота"
+      "Order": "Порядок"
     }
   },
   "LIST_TAGS": {
@@ -621,7 +619,6 @@
       "Job": "Работа",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
-      "Custom_set": "Включить кастомный комплект",
       "Select_job": "Выбрать роль",
       "Craftsmanship": "Мастерство",
       "Control": "Управление",
@@ -663,6 +660,8 @@
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Show impact on xp",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
