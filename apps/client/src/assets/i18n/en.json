@@ -335,7 +335,6 @@
       "Back": "Back",
       "Give_list_name": "Give your new list a name",
       "Final_step": "Validation",
-      "Choices_needed": "Some recipe choices are pending",
       "Creating_list": "Creating the list",
       "Loading_items": "Loading items informations"
     }
@@ -663,6 +662,8 @@
     "Quantity": "Quantity",
     "All_deliveries": "All {{value}} Deliveries",
     "Compute_exp": "Show impact on xp",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
