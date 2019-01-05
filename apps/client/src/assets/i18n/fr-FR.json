@@ -335,7 +335,6 @@
       "Back": "Précédent",
       "Give_list_name": "Donnez un nom à la liste",
       "Final_step": "Validation",
-      "Choices_needed": "Certains objets nécessitent un choix de recette",
       "Creating_list": "Création de la liste en cours",
       "Loading_items": "Chargement des informations sur les objets"
     }
@@ -402,8 +401,7 @@
       "Filter": "Filtre",
       "Panel_name": "Nom de la catégorie",
       "Order_by": "Trier par",
-      "Order": "Ordre",
-      "Logic_gate": "Porte logique"
+      "Order": "Ordre"
     }
   },
   "LIST_TAGS": {
@@ -621,7 +619,6 @@
       "Job": "Job",
       "Job_not_configured": "Il semble que vous n’avez pas configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses caractéristiques",
       "Job_not_configured_anonymous": "Veuillez entrer vos statistiques pour avoir une simulation précise ou connectez-vous à votre compte",
-      "Custom_set": "Activer les caractéristiques personnalisées",
       "Select_job": "Sélectionner un job",
       "Craftsmanship": "Habileté",
       "Control": "Contrôle",
@@ -663,6 +660,8 @@
     "Quantity": "Quantité",
     "All_deliveries": "Toutes les livraisons ({{value}})",
     "Compute_exp": "Voir l'impact sur l'expérience",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
