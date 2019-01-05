@@ -581,7 +581,7 @@
     "Select_job_please": "ジョブを選び出します",
     "Rename_rotation": "スキル回し名を変更する",
     "Cross_class_setup": "ロールスキル設定",
-    "Include_sound_end": "マクロ終了する時、お知らせ追加",
+    "Include_sound_end": "マクロが終了した後に、アラームを追加する",
     "Step_by_step_report": "制作ターン別情報",
     "Save_as_new": "新たに保存する （新たに生成されたスキル回しに開く）",
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
@@ -650,7 +650,7 @@
   "PRICING": {
     "From_vendor": "商店販売値段",
     "Expect_to_sell_everything": "全体販売仮定",
-    "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
+    "Autofill_panel_prices": "マーケットボード値段に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があり、完了まで {{time}} ほど所要すると予想されます。このまま進行しますか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。"
