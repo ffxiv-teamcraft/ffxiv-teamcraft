@@ -335,7 +335,6 @@
       "Back": "Zurück",
       "Give_list_name": "Gib deiner neuen Liste einen Namen",
       "Final_step": "Validieren",
-      "Choices_needed": "Für einige Rezepte muss eine Auswahl getroffen werden.",
       "Creating_list": "Liste wird angelegt.",
       "Loading_items": "Lade Gegenstandsinformationen"
     }
@@ -402,8 +401,7 @@
       "Filter": "Filter",
       "Panel_name": "Bereichsname",
       "Order_by": "Sortiere nach",
-      "Order": "Sortierung",
-      "Logic_gate": "Logikgatter"
+      "Order": "Sortierung"
     }
   },
   "LIST_TAGS": {
@@ -621,7 +619,6 @@
       "Job": "Job",
       "Job_not_configured": "Du hast diesen Job noch nicht konfiguriert. Gehe in dein Profi um ihn zu konfigurieren und die Attribute zu speichern",
       "Job_not_configured_anonymous": "Bitte gib für eine akkurate Simulation deine Attribute an oder melde dich mit deinem Konto an",
-      "Custom_set": "Enable custom set",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
       "Control": "Kontrolle",
@@ -663,6 +660,8 @@
     "Quantity": "Anzahl",
     "All_deliveries": "Alle {{value}} Lieferungen",
     "Compute_exp": "Auswirkung auf Routine anzeigen",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
