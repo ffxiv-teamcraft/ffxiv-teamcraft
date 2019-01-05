@@ -133,7 +133,7 @@ export class ListsComponent {
       tap(display => {
         display.otherLists
           .forEach((l, i) => {
-            if (l.index === -1 && l.index !== i && !this.regenerating) {
+            if ((l.index === -1 || l.index !== i) && !this.regenerating) {
               l.index = i;
               this.listsFacade.updateListIndex(l);
             }
