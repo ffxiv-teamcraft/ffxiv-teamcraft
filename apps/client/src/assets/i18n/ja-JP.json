@@ -391,9 +391,9 @@
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
-      "Import_layout": "レイアウトをインポートする",
-      "Import_string": "レイアウトのコードを取り込ませる",
-      "Import_string_copied": "レイアウトのコードを取り込めがコピーされました！",
+      "Import_layout": "レイアウトのインポート",
+      "Import_string": "レイアウトのインポートコード",
+      "Import_string_copied": "レイアウトのインポートコードがコピーされました！",
       "Layout_name": "レイアウト名",
       "Invalid_import": "無効なインポートコード",
       "Global_options": "一般設定"
@@ -527,7 +527,7 @@
     "No_anonymous": "権限を管理するためのアカウントが必要です",
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
-    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限を持たれます。"
+    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が持たれます。"
   },
   "WIKI": {
     "Title": "ウィキ",
