@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.12"></a>
+# [5.0.0-rc.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.10...v5.0.0-rc.12) (2019-01-05)
+
+
+### Bug Fixes
+
+* **desktop:** fixed icon on linux builds, also changed format to deb ([df905dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/df905dd))
+* fixed a typo for scrips ([6a1eeec](https://github.com/Supamiu/ffxiv-teamcraft/commit/6a1eeec))
+* **desktop:** fixed linux build ([50144cf](https://github.com/Supamiu/ffxiv-teamcraft/commit/50144cf))
+* **desktop:** implemented possible fix for auto updater ([c0d4ccd](https://github.com/Supamiu/ffxiv-teamcraft/commit/c0d4ccd))
+* **layouts:** layout selection now persists on page reload ([eeec18c](https://github.com/Supamiu/ffxiv-teamcraft/commit/eeec18c))
+* fixed an issue with new lists ordering ([5c92e92](https://github.com/Supamiu/ffxiv-teamcraft/commit/5c92e92))
+* **simulator:** fixed a bug preventing you from removing consumables of a rotation ([656ef55](https://github.com/Supamiu/ffxiv-teamcraft/commit/656ef55))
+* **simulator:** fixed an issue with rotation swapping ([2aa0c4b](https://github.com/Supamiu/ffxiv-teamcraft/commit/2aa0c4b))
+
+
+### Features
+
+* new "buy a Teamcraft T-shirt" button in search intro ([6291d2a](https://github.com/Supamiu/ffxiv-teamcraft/commit/6291d2a))
+* **levequests:** added a link to gamerescape for more details on the leve ([3f659ab](https://github.com/Supamiu/ffxiv-teamcraft/commit/3f659ab))
+* **list-panel:** brought back the items counter in list panel header ([8db06af](https://github.com/Supamiu/ffxiv-teamcraft/commit/8db06af))
+
+
+
 <a name="5.0.0-rc.11"></a>
 # [5.0.0-rc.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.10...v5.0.0-rc.11) (2019-01-04)
 
