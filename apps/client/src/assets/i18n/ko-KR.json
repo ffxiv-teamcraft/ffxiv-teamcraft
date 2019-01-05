@@ -353,7 +353,7 @@
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
-    "Items_count": "{{amount}} items",
+    "Items_count": "{{amount}} 아이템",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -750,7 +750,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
+    "Buy_a_tshirt": "Teamcraft 티셔츠 구매하기",
     "Features_header": "시작하기 !",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
