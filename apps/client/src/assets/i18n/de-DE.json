@@ -661,7 +661,7 @@
     "No_results": "Keine Freibriefe gefunden",
     "Add_to_list": "Füge die Gegenstände für den Freibrief einer Liste hinzu",
     "Quantity": "Anzahl",
-    "All_deliveries": "All {{value}} Deliveries",
+    "All_deliveries": "Alle {{value}} Lieferungen",
     "Compute_exp": "Auswirkung auf Routine anzeigen",
     "INTRO": {
       "Title": "Freibriefe",
