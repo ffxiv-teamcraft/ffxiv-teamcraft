@@ -568,7 +568,7 @@
     "Export_crafting_optimizer": "Crafting optimizer 形式で送り出す",
     "Export_copied": "Crafting optimizer 送り出すのコードをクリップボードにコピーしました。",
     "Unsaved_changes": "変更を保存していません。このページを離れる前に保存してください。保存しないと変更が失われます",
-    "Crafting_optimizer_code": "Crafting optimizer コード[=ゲーム内の制作マクロ]",
+    "Crafting_optimizer_code": "Crafting optimizerのコード[=ゲーム内の制作マクロ]",
     "Generated_macro": "ゲームのマクロ",
     "Generate_ingame_macro": "ゲームのマクロを作ります",
     "Share_button_tooltip": "シェアリンクをコピーする",
