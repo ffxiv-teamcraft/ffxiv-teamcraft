@@ -326,8 +326,8 @@
     "Delete_after_merge": "マージ後に既存のリストを削除する",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
-      "Paste_link_step_title": "外部サイト・リンクを貼り付ける",
-      "Paste_link_step_placeholder": "リストリンク",
+      "Paste_link_step_title": "外部サイトのリンクをペーストする",
+      "Paste_link_step_placeholder": "リストのリンク",
       "Link_not_supported": "このリンクは取り込せられません",
       "Links_supported": "支援するリンク: {{links}}",
       "Link_recognized": "{{type}} に確認され, 取り込める",
@@ -393,7 +393,7 @@
       "Add_panel": "パネルを追加する",
       "Import_layout": "レイアウトを取り込ませる",
       "Import_string": "レイアウトのコードを取り込ませる",
-      "Import_string_copied": "レイアウトを呼び寄せるコードがコピーされました！",
+      "Import_string_copied": "レイアウトのコードを取り込めがコピーされました！",
       "Layout_name": "レイアウト名",
       "Invalid_import": "有効でない呼び寄せるコードです",
       "Global_options": "一般設定"
@@ -539,7 +539,7 @@
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
     "Extra_wait": "追加待ち",
-    "Import_macro": "ゲームのマクロが輸入をします",
+    "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
     "Min_stats": "制作に必要な最低能力値",
     "Progress": "必要工数",
