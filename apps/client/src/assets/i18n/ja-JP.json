@@ -701,12 +701,12 @@
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
       "Item_removed": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を削除されました。",
-      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を完了に表示した",
+      "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を完了に表示する",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
       "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから抜けました",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
-      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームから抜けました。",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** がチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てられました"
     },
@@ -753,7 +753,7 @@
     "Buy_a_tshirt": "Teamcraft Tシャツを買う",
     "Features_header": "始める！",
     "DESCRIPTION": {
-      "Lists": "リストを作成して制作に必要な全ての材料を確認し、フレンドにシェアできます。アイテム検索でフィルターに適用して、特定アイテムを選択してから制作を開始することができます。",
+      "Lists": "リストを作成して制作に必要な全ての素材を確認し、フレンドにシェアできます。アイテム検索でフィルターに適用して、特定アイテムを選択してから制作を開始することができます。",
       "Public_lists": "制作品やギルドリーヴの納品や制作手帳を完了、飛空艇、Bis装備など全てを貴方のコミュニティリストにコピーできます。",
       "Alarms": "アラームを作成し、採集場所からの出現を逃さずに、グループに結んでゲーム内にエクスポートすることと同じようなことができます",
       "Gathering_location": "採集物に関する情報を見つかり、アラームを作成し、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
