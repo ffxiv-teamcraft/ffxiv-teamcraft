@@ -333,9 +333,9 @@
       "Link_recognized": "{{type}} に確認され, 取り込める",
       "Next": "次",
       "Back": "昨",
-      "Give_list_name": "新しいリストに名前を設定",
-      "Final_step": "確認",
-      "Choices_needed": "一部選択された制作レシピが保留中です。",
+      "Give_list_name": "新しいリストに名前を付ける",
+      "Final_step": "検証",
+      "Choices_needed": "幾つかの制作レシピの選択が保留中です。",
       "Creating_list": "リストを生成する",
       "Loading_items": "アイテム情報を読み込み中"
     }
