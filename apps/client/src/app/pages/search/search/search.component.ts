@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -240,12 +240,18 @@ export class SearchComponent implements OnInit {
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operation$ = concat(
-          ...items.map(item => {
-            return this.listManager.addToList(item.itemId, list,
-              item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-          })
-        );
+        const operations = items.map(item => {
+          return this.listManager.addToList(item.itemId, list,
+            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
         return this.progressService.showProgress(operation$,
           items.length,
           'Adding_recipes',
