@@ -660,8 +660,8 @@
     "Quantity": "Anzahl",
     "All_deliveries": "Alle {{value}} Lieferungen",
     "Compute_exp": "Auswirkung auf Routine anzeigen",
-    "More_on_gamerescape": "More details on gamerescape",
-    "Deliver_to": "Deliver to {{placename}}",
+    "More_on_gamerescape": "Mehr auf gamerescape (Englisch)",
+    "Deliver_to": "Liefere nach {{placename}}",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
