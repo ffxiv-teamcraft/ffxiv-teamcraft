@@ -651,7 +651,7 @@
     "From_vendor": "商店販売値段",
     "Expect_to_sell_everything": "全体販売仮定",
     "Autofill_panel_prices": "マーケットボード値段に基づいて自動入力する",
-    "Autofill_panel_prices_warning": "この作業は所要時間があり、完了まで {{time}} ほど所要すると予想されます。このまま進行しますか?",
+    "Autofill_panel_prices_warning": "この作業は所要時間があり、完了まで {{time}} くらいかかりますが、このままでよろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。"
   },
@@ -659,7 +659,7 @@
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
     "No_results": "ギルドリーヴが見つかりません",
-    "Add_to_list": "このギルドリーヴアイテムをリストに追加する",
+    "Add_to_list": "このギルドリーヴのアイテムをリストに追加する",
     "Quantity": "分量",
     "All_deliveries": "総 {{value}} 回 納品",
     "Compute_exp": "経験値の変化を見る",
