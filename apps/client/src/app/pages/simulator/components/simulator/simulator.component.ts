@@ -285,9 +285,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     combineLatest(this.rotation$, this.crafterStats$).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats]) => {
-      if (this.actions$.value.length === 0) {
-        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-      }
+      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       if (rotation.food && this.selectedFood === undefined) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
       }
