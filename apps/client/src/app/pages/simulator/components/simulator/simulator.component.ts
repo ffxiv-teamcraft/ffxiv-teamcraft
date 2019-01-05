@@ -285,9 +285,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     combineLatest(this.rotation$, this.crafterStats$).pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats]) => {
-      if (this.actions$.value.length === 0) {
-        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
-      }
+      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       if (rotation.food && this.selectedFood === undefined) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
       }
@@ -472,9 +470,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       rotation.custom = this.custom;
       if (this.selectedFood) {
         rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
+      } else {
+        delete rotation.food;
       }
       if (this.selectedMedicine) {
         rotation.medicine = { id: this.selectedMedicine.itemId, hq: this.selectedMedicine.hq };
+      } else {
+        delete rotation.medicine;
       }
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
