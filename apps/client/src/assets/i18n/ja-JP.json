@@ -527,7 +527,7 @@
     "No_anonymous": "権限を管理するためのアカウントが必要です",
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
-    "Team_notice": "このリストに属するチームは、自動に参加権限が付与されます。"
+    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。"
   },
   "WIKI": {
     "Title": "ウィキ",
@@ -689,7 +689,7 @@
     "No_teams": "チームがありません",
     "Invites": "招待",
     "Assign_list": "このリストをチームに割り当てる",
-    "Assign_team_member": "チームのメンバーに割り当てる",
+    "Assign_team_member": "チームメンバーに割り当てる",
     "Detach_team": "チームを分離する",
     "Delete_confirmation": "このチームを解散しますか？",
     "Invite_expires": "有効期限",
@@ -718,7 +718,7 @@
       "LIST_ADDED": "リストが追加されました",
       "LIST_REMOVED": "リストが削除されました",
       "LIST_PROGRESSION": "リストの進行度を変更する",
-      "USER_ASSIGNMENT": "チーム内の構成員に作業を割り当てる"
+      "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる"
     }
   },
   "MARKETBOARD": {
