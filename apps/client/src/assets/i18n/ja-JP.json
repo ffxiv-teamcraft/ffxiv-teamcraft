@@ -693,10 +693,10 @@
     "Detach_team": "チームを分ける",
     "Delete_confirmation": "本当にこのチームを削除しますか？",
     "Invite_expires": "有効期限",
-    "Invite_error": "チームの招待を見つからなかったり、満了されました。",
+    "Invite_error": "チームへの招待が見つからないか、期限切れです。",
     "Invite_link_copied": "チームの誘いリンクがクリップボードにコピーされました",
-    "No_anonymous_join": "チームにさんかするためには、アカウントが必要とします",
-    "Already_in_team": "既にチームに参加してる状態です",
+    "No_anonymous_join": "チームに参加するためには、アカウントが必要です",
+    "Already_in_team": "既にチームに参加しています",
     "Webhook_configuration": "Webhook設定",
     "NOTIFICATIONS": {
       "Item_added": "**[{{listName}}]({{listUrl}})**に {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を追加されました。",
@@ -704,9 +704,9 @@
       "List_progress": "**[{{characterName}}]({{memberProfileUrl}})**が **[{{listName}}]({{listUrl}})**にある {{amount}}個の **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**を完了に表示した",
       "Webhook_setup_complete": "**{{teamName}}** チームをこのチャンネルから追跡し始めました。",
       "List_added_notification": "リスト **[{{listName}}]({{listUrl}})**がチームに追加されました。",
-      "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから除去されました。",
+      "List_removed_notification": "リスト **[{{listName}}]({{listUrl}})**がチームから抜けました",
       "Member_joined": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームに入りました!",
-      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームから抜けることになりました。",
+      "Member_removed": "**[{{memberName}}]({{memberProfileUrl}})** さんがチームから抜けました。",
       "Name_changed": "**{{oldName}}** から **{{newName}}** に名前が変更されました。",
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})**が [{{listName}}]({{listUrl}})**の **[{{memberName}}]({{memberProfileUrl}})**に割り当てされました"
     },
@@ -717,7 +717,7 @@
       "ITEM_REMOVED": "アイテムが削除されました",
       "LIST_ADDED": "リストが追加されました",
       "LIST_REMOVED": "リストが削除されました",
-      "LIST_PROGRESSION": "リストの進行状況を変更",
+      "LIST_PROGRESSION": "リストの進行度を変更する",
       "USER_ASSIGNMENT": "チーム員に作業を割り当てる"
     }
   },
