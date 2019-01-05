@@ -470,9 +470,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       rotation.custom = this.custom;
       if (this.selectedFood) {
         rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
+      } else {
+        delete rotation.food;
       }
       if (this.selectedMedicine) {
         rotation.medicine = { id: this.selectedMedicine.itemId, hq: this.selectedMedicine.hq };
+      } else {
+        delete rotation.medicine;
       }
       rotation.freeCompanyActions = <[number, number]>this.selectedFreeCompanyActions.map(action => action.actionId);
       this.rotationsFacade.updateRotation(rotation);
