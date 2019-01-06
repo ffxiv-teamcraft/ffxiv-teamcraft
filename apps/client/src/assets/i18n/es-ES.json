@@ -24,7 +24,9 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -395,7 +397,8 @@
       "Import_string_copied": "¡Código de importación de diseño copiado!",
       "Layout_name": "Nombre del diseño",
       "Invalid_import": "Código de importación invalido",
-      "Global_options": "Opciones generales"
+      "Global_options": "Opciones generales",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filtro",
