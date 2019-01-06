@@ -24,7 +24,9 @@
     "Crafts_amount": "# der Herstellungen",
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
-    "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden."
+    "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -395,7 +397,8 @@
       "Import_string_copied": "Layout Import Code kopiert!",
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
-      "Global_options": "Allgemeine Optionen"
+      "Global_options": "Allgemeine Optionen",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filter",
