@@ -398,7 +398,7 @@
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "\"Default Layout\" ist schreibgeschützt. Erstelle mit dem + Button ein neues, um es zu ändern."
     },
     "LAYOUT": {
       "Filter": "Filter",
