@@ -248,7 +248,7 @@ export class SearchComponent implements OnInit {
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
-          concat(
+          operation$ = concat(
             ...operations
           );
         } else {
