@@ -663,7 +663,7 @@
     "Quantity": "Quantité",
     "All_deliveries": "Toutes les livraisons ({{value}})",
     "Compute_exp": "Voir l'impact sur l'expérience",
-    "More_on_gamerescape": "More details on gamerescape",
+    "More_on_gamerescape": "Plus d'informations sur gamerescape",
     "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Mandats",
@@ -752,7 +752,7 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
+    "Buy_a_tshirt": "Acheter un T-shirt Teamcraft",
     "Features_header": "Par où commencer !",
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
