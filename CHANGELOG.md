@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.14"></a>
+# [5.0.0-rc.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.13...v5.0.0-rc.14) (2019-01-06)
+
+
+### Bug Fixes
+
+* fixed an issue preventing users from adding an item to a list ([a342246](https://github.com/Supamiu/ffxiv-teamcraft/commit/a342246))
+
+
+
 <a name="5.0.0-rc.13"></a>
 # [5.0.0-rc.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.12...v5.0.0-rc.13) (2019-01-06)
 
