@@ -19,7 +19,7 @@ jobs:
             - v1-dependencies-
         - run:
             name: Update npm
-            command: npm i -g npm
+            command: sudo npm i -g npm
         - run:
             name: Install local dependencies
             command: npm ci
