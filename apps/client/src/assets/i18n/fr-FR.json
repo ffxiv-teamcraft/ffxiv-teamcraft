@@ -24,7 +24,9 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique."
+    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -395,7 +397,8 @@
       "Import_string_copied": "Chaîne d'import de l'affichage copiée !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
-      "Global_options": "Options générales"
+      "Global_options": "Options générales",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filtre",
