@@ -29,6 +29,8 @@
       </button>
     </div>
   </div>
+  <nz-alert nzType="info" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
+            *ngIf="layout.name === 'Default Layout'" nzShowIcon class="default-warning"></nz-alert>
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="anticon anticon-edit">
       <input type="text" nz-input [(ngModel)]="layout.name"

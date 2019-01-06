@@ -395,7 +395,8 @@
       "Import_string_copied": "Layout import code copied !",
       "Layout_name": "Layout name",
       "Invalid_import": "Invalid import code",
-      "Global_options": "General options"
+      "Global_options": "General options",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filter",
