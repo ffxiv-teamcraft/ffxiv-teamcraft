@@ -562,7 +562,7 @@
     "No_rotations": "スキル回しがありません",
     "Create_a_custom_rotation": "カスタムでスキル回しを作ります",
     "Reset": "リセット",
-    "Import_from_crafting_optimizer": "Crafting optimizerからインポート",
+    "Import_from_crafting_optimizer": "Crafting optimizerからスキル回しをインポート",
     "Export_crafting_optimizer": "Crafting optimizer 形式にエクスポート",
     "Export_copied": "Crafting optimizer エクスポートコードをクリップボードにコピーしました。",
     "Unsaved_changes": "変更を保存していません。このページを離れる前に保存してください。保存しないと変更が失われます",
