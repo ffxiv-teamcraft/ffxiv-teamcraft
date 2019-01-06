@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-      <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center">
+      <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center" class="note">
         <div>{{list.note || ('LIST_DETAILS.No_note' | translate)}}</div>
         <button nz-button nzSize="small" nzShape="circle" nz-tooltip
                 [nzTitle]="'LIST_DETAILS.Edit_note' | translate" (click)="editNote(list)"

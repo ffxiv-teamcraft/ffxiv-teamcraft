@@ -4,7 +4,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../core/alarms/alarm';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -88,6 +88,8 @@ export class ItemRowComponent implements OnInit {
 
   commentBadge$: Observable<boolean>;
 
+  commentBadgeReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -102,19 +104,6 @@ export class ItemRowComponent implements OnInit {
     this.canBeCrafted$ = this.listsFacade.selectedList$.pipe(
       tap(() => this.cdRef.detectChanges()),
       map(list => list.canBeCrafted(this.item)),
-      shareReplay(1)
-    );
-
-    this.commentBadge$ = this.listsFacade.selectedList$.pipe(
-      switchMap((list) => {
-        return this.commentsService.getComments(
-          CommentTargetType.LIST,
-          list.$key,
-          `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`
-        );
-      }),
-      map(comments => comments.length > 0),
-      startWith(false),
       shareReplay(1)
     );
 
@@ -172,6 +161,19 @@ export class ItemRowComponent implements OnInit {
     setTimeout(() => {
       this.cdRef.detectChanges();
     });
+
+    this.commentBadge$ = this.commentBadgeReloader$.pipe(
+      switchMap(() => this.listsFacade.selectedList$),
+      switchMap((list) => {
+        return this.commentsService.getComments(
+          CommentTargetType.LIST,
+          list.$key,
+          `${this.finalItem ? 'finalItems' : 'items'}:${this.item.id}`
+        );
+      }),
+      map(comments => comments.length > 0),
+      startWith(false)
+    );
   }
 
   checkMasterbooks(books: number[]): void {
@@ -222,6 +224,8 @@ export class ItemRowComponent implements OnInit {
           return new ListItemCommentNotification(list.$key, this.item.id, comment.content, list.name, list.authorId);
         }
       }
+    }).afterClose.subscribe(() => {
+      this.commentBadgeReloader$.next(null);
     });
   }
 

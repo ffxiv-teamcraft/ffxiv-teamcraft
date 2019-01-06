@@ -27,15 +27,16 @@ export class TotalPanelPricePopupComponent implements OnInit {
   ngOnInit(): void {
     this.totalPrice = this.panelContent.reduce((result, row) => {
       if (row.vendors !== null && row.vendors.length > 0) {
-        row.vendors.forEach(vendor => {
-          // We'll use -1 as currencyId for gil.
-          const gilsRow = result.find(r => r.currencyId === -1);
-          if (gilsRow === undefined) {
-            result.push({ currencyId: -1, currencyIcon: -1, costs: [vendor.price * (row.amount - row.done)] });
-          } else {
-            gilsRow.costs[0] += vendor.price * (row.amount - row.done);
-          }
-        });
+        const vendor = row.vendors
+          .sort((a, b) => {
+            return a.price - b.price;
+          })[0];
+        const gilsRow = result.find(r => r.currencyId === -1);
+        if (gilsRow === undefined) {
+          result.push({ currencyId: -1, currencyIcon: -1, costs: [vendor.price * (row.amount - row.done)] });
+        } else {
+          gilsRow.costs[0] += vendor.price * (row.amount - row.done);
+        }
       } else if (row.tradeSources !== undefined && row.tradeSources.length > 0) {
         const tradeSource = this.getTradeSourceByPriority(row.tradeSources);
         const trade = tradeSource.trades[0];

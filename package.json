@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-rc.12",
+  "version": "5.0.0-rc.13",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -29,7 +29,6 @@
     },
     "linux": {
       "icon": "./tools/build/icon.ico",
-      "target": "deb",
       "maintainer": "Miu Asakura",
       "category": "Game"
     },
@@ -70,7 +69,7 @@
     "translations:clean": "node tools/translations-cleaner.js",
     "electron:start": "electron ./desktop/main.js",
     "electron:start:no-decorators": "electron ./desktop/main.js --native-titlebar",
-    "electron:setup:build": "del-cli release/* && electron-builder --win --linux",
+    "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
     "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win --dir",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win --linux -p always",

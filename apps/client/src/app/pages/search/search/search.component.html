@@ -1,11 +1,15 @@
 <div class="top-part">
-  <div class="search-box">
+  <div class="search-box" fxLayout="row">
     <nz-input-group [nzAddOnAfter]="addOnAfterTemplate">
       <input class="search-input" type="text" placeholder="{{'ITEMS.Item_name' | translate}}" #searchInput nz-input
              [ngModel]="query$.value"
              autofocus
              (keyup)="query$.next(searchInput.value)">
     </nz-input-group>
+    <button nz-button ngxClipboard [cbContent]="getShareUrl()" (cbOnSuccess)="afterShareLinkCopied()" nz-tooltip
+            [nzTitle]="'ITEMS.Share_url' | translate">
+      <i nz-icon type="share-alt"></i>
+    </button>
     <ng-template #addOnAfterTemplate>
       <label nz-checkbox [ngModel]="onlyRecipes$ | async"
              (ngModelChange)="onlyRecipes$.next($event)">{{'ITEMS.Only_recipes' | translate}}</label>

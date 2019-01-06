@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-rc.13"></a>
+# [5.0.0-rc.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.12...v5.0.0-rc.13) (2019-01-06)
+
+
+### Bug Fixes
+
+* added margin below note button in list details ([ee805b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/ee805b9))
+* fixed a bug allowing you to add 0 items to a list, freezing progress ([533f18a](https://github.com/Supamiu/ffxiv-teamcraft/commit/533f18a))
+* fixed a bug preventing comments badge display in the Items panel ([29494b9](https://github.com/Supamiu/ffxiv-teamcraft/commit/29494b9))
+* fixed an issue with calculator allowing you to input wrong values ([dc1948a](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc1948a))
+* fixed an issue with total price being wrong for gil trades ([234851c](https://github.com/Supamiu/ffxiv-teamcraft/commit/234851c))
+
+
+### Features
+
+* added information message inside layout dialog about default layout being readonly ([c364a96](https://github.com/Supamiu/ffxiv-teamcraft/commit/c364a96))
+* **search:** added button to copy search url to your clipboard ([661988d](https://github.com/Supamiu/ffxiv-teamcraft/commit/661988d))
+* **tooltips:** added item kind inside tooltips ([7ddc27f](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ddc27f))
+
+
+
 <a name="5.0.0-rc.12"></a>
 # [5.0.0-rc.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.10...v5.0.0-rc.12) (2019-01-05)
 

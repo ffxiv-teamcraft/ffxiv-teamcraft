@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
@@ -20,6 +20,7 @@ import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-search',
@@ -73,7 +74,8 @@ export class SearchComponent implements OnInit {
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
-              private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService) {
+              private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
+              private message: NzMessageService, private translate: TranslateService) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -240,12 +242,18 @@ export class SearchComponent implements OnInit {
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operation$ = concat(
-          ...items.map(item => {
-            return this.listManager.addToList(item.itemId, list,
-              item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
-          })
-        );
+        const operations = items.map(item => {
+          return this.listManager.addToList(item.itemId, list,
+            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
         return this.progressService.showProgress(operation$,
           items.length,
           'Adding_recipes',
@@ -267,6 +275,14 @@ export class SearchComponent implements OnInit {
       this.modifiedList = list;
       this.notificationService.template(this.notification);
     });
+  }
+
+  public getShareUrl(): string {
+    return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
+  }
+
+  public afterShareLinkCopied(): void {
+    this.message.success(this.translate.instant('ITEMS.Share_url_copied'));
   }
 
   public addSelectedItemsToList(items: SearchResult[]): void {

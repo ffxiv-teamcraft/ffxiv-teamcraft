@@ -3,8 +3,9 @@
     <div class="icon">
       <img src="https://xivapi.com{{item.Icon}}" alt="{{item | xivapiI18n}}">
     </div>
-    <div class="name">
-      <p>{{item | xivapiI18n}}</p>
+    <div class="name" fxLayout="column">
+      <span>{{item | xivapiI18n}}</span>
+      <span class="item-kind">{{item.ItemKind | xivapiI18n}}</span>
     </div>
   </div>
   <div class="description" *ngIf="item.Description !== undefined && item.Description.length > 0">

@@ -120,9 +120,9 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdates();
+    autoUpdater.checkForUpdatesAndNotify();
     updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdates();
+      autoUpdater.checkForUpdatesAndNotify();
     }, 300000);
   });
 
@@ -310,7 +310,7 @@ ipcMain.on('navigated', (event, uri) => {
 });
 
 ipcMain.on('update:check', () => {
-  autoUpdater.checkForUpdates();
+  autoUpdater.checkForUpdatesAndNotify();
 });
 
 // Oauth stuff
