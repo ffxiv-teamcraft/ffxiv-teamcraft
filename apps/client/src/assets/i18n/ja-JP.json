@@ -25,8 +25,8 @@
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
     "Too_many_results_warning": "検索結果が50個以上超えてます。データソースの制限による正確なアイテムを探すためには、追加フィルタ設定が必要です。",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Share_url": "検索URLをクリップボードにコピー",
+    "Share_url_copied": "マクロがクリップボードにコピーされました"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -486,7 +486,7 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
-    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム生成などの詳細機能を提供します。検索欄に内容を書き込み、探そうとする採集情報をご確認下さい！"
+    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！"
   },
   "ANNOUNCEMENT": {
     "Title": "お知らせ",
