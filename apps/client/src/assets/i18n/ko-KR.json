@@ -352,7 +352,7 @@
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
-    "Items_count": "{{amount}} 아이템",
+    "Items_count": "아이템 {{amount}}개",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
