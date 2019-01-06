@@ -502,7 +502,7 @@
     "Not_found": "Vorlage nicht gefunden",
     "STATUS": {
       "Loading": "Lade Vorlage aus der Datenbank",
-      "Copying": "Kopie der Liste wird in deinem Account erstellt, du wirst nach Abschluss weitergeleitet"
+      "Copying": "Kopie der Liste wird in deinem Konto erstellt, du wirst nach Abschluss weitergeleitet"
     }
   },
   "PERMISSIONS": {
