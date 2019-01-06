@@ -19,7 +19,7 @@ jobs:
             - v1-dependencies-
         - run:
             name: Install local dependencies
-            command: npm install
+            command: npm ci
         - run:
             name: Install functions dependencies
             command: cd functions && npm install && cd ../
