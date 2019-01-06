@@ -25,8 +25,8 @@
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
     "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Share_url": "Copier l'url de recherche dans le presse-papiers",
+    "Share_url_copied": "Url de recherche copié dans le presse-papiers"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -346,7 +346,7 @@
     "Rename": "Renommer la liste",
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Toujours afficher l'inventaire (désactivé pour les petits écrans, < 600px)",
     "Copy_as_text": "Copier au format texte",
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
@@ -398,7 +398,7 @@
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "Le template par défaut est en lecture seule, vous devez créer un nouveau template et utiliser le bouton + pour le modifier."
     },
     "LAYOUT": {
       "Filter": "Filtre",
@@ -424,7 +424,7 @@
     "CASTER": "Magique",
     "CRAFTER": "Artisan",
     "GATHERER": "Récolteur",
-    "SCRIPTS": "Scrips",
+    "SCRIPTS": "Assignats",
     "PLD": "PLD",
     "WAR": "GUE",
     "DRK": "CHN",
@@ -664,7 +664,7 @@
     "All_deliveries": "Toutes les livraisons ({{value}})",
     "Compute_exp": "Voir l'impact sur l'expérience",
     "More_on_gamerescape": "Plus d'informations sur gamerescape",
-    "Deliver_to": "Deliver to {{placename}}",
+    "Deliver_to": "Remettre à {{placename}}",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
