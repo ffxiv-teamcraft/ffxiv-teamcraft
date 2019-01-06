@@ -25,8 +25,8 @@
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Too_many_results_warning": "Die Suche hatte mehr als 50 Ergebnisse. Da unsere Datenquelle maximal 50 Ergebnisse liefert, sind eventuell weitere Filter nötig um einen bestimmten Gegenstand zu finden.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
+    "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
