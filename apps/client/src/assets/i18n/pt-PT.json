@@ -24,7 +24,9 @@
     "Crafts_amount": "# de tarefas",
     "Add_to_list": "Adicionar esse item para uma lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "Esta pesquisa mostra mais de 50 resultados. Devido ao facto que a fonte de dados é limitada a 50 é sugerido que especifique mais os filtros."
+    "Too_many_results_warning": "Esta pesquisa mostra mais de 50 resultados. Devido ao facto que a fonte de dados é limitada a 50 é sugerido que especifique mais os filtros.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Usar como personagem de padrão",
   "Download_desktop_app": "Descarregar aplicação para desktop",
@@ -395,7 +397,8 @@
       "Import_string_copied": "Layout import code copied !",
       "Layout_name": "Layout name",
       "Invalid_import": "Invalid import code",
-      "Global_options": "General options"
+      "Global_options": "General options",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filtro",
