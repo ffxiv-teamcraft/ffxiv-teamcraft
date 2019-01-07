@@ -650,7 +650,7 @@
   "PRICING": {
     "From_vendor": "商店販売価格",
     "Expect_to_sell_everything": "全体販売期待値",
-    "Autofill_panel_prices": "マーケットボードの価格によって自動入力する",
+    "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。"
