@@ -394,7 +394,7 @@
       "Add_panel": "パネルを追加する",
       "Import_layout": "レイアウトを読み込む",
       "Import_string": "レイアウトを読み込む",
-      "Import_string_copied": "レイアウトコードの取り込みがコピーされました！",
+      "Import_string_copied": "取り込んだレイアウトのコードがコピーされました！",
       "Layout_name": "レイアウト名",
       "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
