@@ -392,11 +392,11 @@
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
-      "Import_layout": "レイアウトをインポートする",
-      "Import_string": "レイアウト・インポートコード",
-      "Import_string_copied": "レイアウトのインポートコードがコピーされました！",
+      "Import_layout": "レイアウトを取り込ませる",
+      "Import_string": "レイアウトのコードを取り込ませる",
+      "Import_string_copied": "レイアウトコードの取り込みがコピーされました！",
       "Layout_name": "レイアウト名",
-      "Invalid_import": "無効なインポートコード",
+      "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
       "Default_readonly_message": "デフォルトのレイアウトは読み取り専用です。カスタマイズを使用するためには、＋ボタンを押してください"
     },
