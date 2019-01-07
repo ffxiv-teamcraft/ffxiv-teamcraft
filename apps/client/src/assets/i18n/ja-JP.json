@@ -566,8 +566,8 @@
     "Create_a_custom_rotation": "カスタムでスキル回しを作ります",
     "Reset": "リセット",
     "Import_from_crafting_optimizer": "Crafting optimizerから取り込む",
-    "Export_crafting_optimizer": "Crafting optimizer 形式にエクスポートする",
-    "Export_copied": "Crafting optimizer エクスポートコードをクリップボードにコピーしました。",
+    "Export_crafting_optimizer": "Crafting optimizer 形式に送り出す",
+    "Export_copied": "Crafting optimizer 送り出しのコードをクリップボードにコピーしました。",
     "Unsaved_changes": "変更を保存していません。このページを離れる前に保存してください。保存しないと変更が失われます",
     "Crafting_optimizer_code": "Crafting optimizerのコード[=ゲーム内の制作マクロ]",
     "Generated_macro": "ゲームのマクロ",
@@ -650,7 +650,7 @@
   "PRICING": {
     "From_vendor": "商店販売価格",
     "Expect_to_sell_everything": "全体販売期待値",
-    "Autofill_panel_prices": "マーケットボードの価格に基づいて自動入力する",
+    "Autofill_panel_prices": "マーケットボードの価格によって自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。"
