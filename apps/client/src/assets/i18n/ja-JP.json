@@ -17,14 +17,14 @@
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
   "ITEMS": {
-    "Title": "アイテム",
+    "Title": "検索",
     "No_match": "一致するアイテムがありません",
     "Item_name": "アイテム名",
     "Only_recipes": "レシピのみ",
     "Crafts_amount": "クラフトの数",
     "Add_to_list": "このアイテムをリストに追加する",
     "Apply_filters": "フィルターを適用する",
-    "Too_many_results_warning": "検索結果が50個以上超えてます。データソースの制限による正確なアイテムを探すためには、追加フィルタ設定が必要です。",
+    "Too_many_results_warning": "検索結果が50件以上超えてます。データソースの制限による正確なアイテムを探すためには、追加フィルター設定が必要です。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました"
   },
