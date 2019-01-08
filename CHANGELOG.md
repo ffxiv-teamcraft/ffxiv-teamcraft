@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.14...v5.0.0) (2019-01-08)
+
+
+### Features
+
+* **list-details:** easy "hide completed rows" override inside list details view ([de4e70d](https://github.com/Supamiu/ffxiv-teamcraft/commit/de4e70d)), closes [#675](https://github.com/Supamiu/ffxiv-teamcraft/issues/675)
+* added 4.5 patch support ([0835200](https://github.com/Supamiu/ffxiv-teamcraft/commit/0835200))
+
+
+
 <a name="5.0.0-rc.14"></a>
 # [5.0.0-rc.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.0-rc.13...v5.0.0-rc.14) (2019-01-06)
 
