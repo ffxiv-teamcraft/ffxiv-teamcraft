@@ -91,9 +91,14 @@
       <div *ngIf="updateAvailable === false && !checkingForUpdate">
         {{'SETTINGS.No_update_available' | translate}}
       </div>
-      <button nz-button nzType="primary" (click)="installUpdate()" *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
+      <button nz-button nzType="primary" (click)="installUpdate()"
+              *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
         {{'SETTINGS.Install_update' | translate}}
       </button>
+      <p>
+        Auto updater is a bit broken at the moment, you might need to download latest build manually at <a
+        href="https://ffxivteamcraft.com/desktop">https://ffxivteamcraft.com/desktop</a> until this message disappears
+      </p>
     </div>
   </nz-tab>
 </nz-tabset>
