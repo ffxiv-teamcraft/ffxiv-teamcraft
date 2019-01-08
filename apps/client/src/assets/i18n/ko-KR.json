@@ -24,7 +24,9 @@
     "Crafts_amount": "제작 횟수",
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
-    "Too_many_results_warning": "검색 결과가 50개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다."
+    "Too_many_results_warning": "검색 결과가 50개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
+    "Share_url": "검색URL을 클립보드로 복사하기",
+    "Share_url_copied": "검색URL이 클립보드에 복사되었습니다"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -199,8 +201,6 @@
   "List_popup_title": "목록을 갱신중입니다. 잠시만 기다려주세요",
   "Please_wait": "금방 될거에요. 잠깐만 기다려주세요",
   "Not_own_list_outdated": "이 목록은 만료되었습니다. 생성자에게 갱신을 요청해주세요.",
-  "Own_list_outdated_before_button": "이 목록은 만료되었습니다. 사용하려면 갱신해주세요. ",
-  "Own_list_outdated_after_button": "버튼",
   "Import": "가져오기",
   "Favorites": "즐겨찾기",
   "Favorite": "즐겨찾기",
@@ -325,6 +325,7 @@
     "Add_to_a_list": "목록에 추가",
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
     "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
+    "Delete_after_merge": "병합 후 기존 목록 삭제",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -336,7 +337,6 @@
       "Back": "이전",
       "Give_list_name": "새 목록 이름 설정",
       "Final_step": "확인",
-      "Choices_needed": "일부 선택된 제작법이 보류 중입니다.",
       "Creating_list": "목록 생성",
       "Loading_items": "아이템 정보 로딩중"
     }
@@ -346,6 +346,7 @@
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
+    "Always_show_inventory": "소지품 항상 보이기(600px이하의 화면에서는 비활성화)",
     "Copy_as_text": "텍스트로 복사",
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
@@ -353,6 +354,7 @@
     "Total_trade_price": "총합: ",
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
+    "Items_count": "아이템 {{amount}}개",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -395,14 +397,14 @@
       "Import_string_copied": "레이아웃 코드 복사됨!",
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
-      "Global_options": "일반 설정"
+      "Global_options": "일반 설정",
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, 사용자 정의 레이아웃을 만들기 위해서는 +버튼을 누르세요."
     },
     "LAYOUT": {
       "Filter": "필터",
       "Panel_name": "패널 이름",
       "Order_by": "정렬 기준",
-      "Order": "순서",
-      "Logic_gate": "논리항"
+      "Order": "순서"
     }
   },
   "LIST_TAGS": {
@@ -484,7 +486,7 @@
     "Title": "채집수첩",
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
-    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 공간에 내용을 적어 찾으려는 채집 정보를 확인하세요!"
+    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!"
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
@@ -620,7 +622,6 @@
       "Job": "직업",
       "Job_not_configured": "아직 이 직업을 설정하지 않은 것 같습니다. 프로필 페이지에서 직업 설정이 되었는지 확인한 뒤 능력치를 설정해주세요.",
       "Job_not_configured_anonymous": "정확한 시뮬레이션을 위해 능력치를 입력하거나 계정에 로그인 해 주시길 바랍니다",
-      "Custom_set": "사용자지정 능력치 활성화",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
       "Control": "가공 숙련도",
@@ -662,6 +663,8 @@
     "Quantity": "수량",
     "All_deliveries": "총 {{value}}회 납품",
     "Compute_exp": "경험치 변화 보기",
+    "More_on_gamerescape": "'Gamer Escape'에서 상세정보 보기",
+    "Deliver_to": "{{placename}} 로 납품",
     "INTRO": {
       "Title": "길드의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
@@ -749,6 +752,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
+    "Buy_a_tshirt": "Teamcraft 티셔츠 구매하기",
     "Features_header": "시작하기 !",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",

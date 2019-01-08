@@ -24,7 +24,9 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item."
+    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -199,8 +201,6 @@
   "List_popup_title": "Regenerando la lista, por favor espere",
   "Please_wait": "Esto debería ser rápido, por favor espere un poco",
   "Not_own_list_outdated": "Esta lista está desactualizada, por favor pídale al dueño que la regenere",
-  "Own_list_outdated_before_button": "Esta lista está desactualizada, por favor regenérela usando ",
-  "Own_list_outdated_after_button": "botón",
   "Import": "Importar",
   "Favorites": "Favoritos",
   "Favorite": "Favorito",
@@ -325,6 +325,7 @@
     "Add_to_a_list": "Agregar a una lista",
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
     "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
+    "Delete_after_merge": "Delete original lists after merge",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
@@ -336,7 +337,6 @@
       "Back": "Atrás",
       "Give_list_name": "Dele a su nueva lista un nombre",
       "Final_step": "Validación",
-      "Choices_needed": "Algunas elecciones de receta están pendientes",
       "Creating_list": "Creando la lista",
       "Loading_items": "Cargando la información de los artículos"
     }
@@ -346,6 +346,7 @@
     "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Copiar como texto",
     "Copy_list_as_text": "Copy the whole list as text",
     "Copied_as_text": "Contenido copiado en el portapapeles",
@@ -353,6 +354,7 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
@@ -395,14 +397,14 @@
       "Import_string_copied": "¡Código de importación de diseño copiado!",
       "Layout_name": "Nombre del diseño",
       "Invalid_import": "Código de importación invalido",
-      "Global_options": "Opciones generales"
+      "Global_options": "Opciones generales",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filtro",
       "Panel_name": "Nombre del panel",
       "Order_by": "Ordenar por",
-      "Order": "Orden",
-      "Logic_gate": "Compuerta lógica"
+      "Order": "Orden"
     }
   },
   "LIST_TAGS": {
@@ -422,7 +424,7 @@
     "CASTER": "Conjurador",
     "CRAFTER": "Artesano",
     "GATHERER": "Recolector",
-    "SCRIPTS": "Scripts",
+    "SCRIPTS": "Scrips",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -620,7 +622,6 @@
       "Job": "Profesión",
       "Job_not_configured": "Parece que no ha configurado esta profesión aun, vaya a la página de su perfil para configurarla correctamente y establecer atributos",
       "Job_not_configured_anonymous": "Por favor ingrese sus atributos para tener una simulación precisa o inicie sesión",
-      "Custom_set": "Activar atributos personalizados",
       "Select_job": "Seleccione una profesión",
       "Craftsmanship": "Artesanía",
       "Control": "Control",
@@ -662,6 +663,8 @@
     "Quantity": "Cantidad",
     "All_deliveries": "Todas las {{value}} entregas",
     "Compute_exp": "Show impact on xp",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
@@ -749,6 +752,7 @@
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
     "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",

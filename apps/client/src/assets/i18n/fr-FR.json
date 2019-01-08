@@ -24,7 +24,9 @@
     "Crafts_amount": "Nb de crafts",
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
-    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique."
+    "Too_many_results_warning": "Cette recherche a donné plus de 50 résultats. Notre source de données est limitée à 50 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
+    "Share_url": "Copier l'url de recherche dans le presse-papiers",
+    "Share_url_copied": "Url de recherche copié dans le presse-papiers"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -199,8 +201,6 @@
   "List_popup_title": "Regénération de la liste en cours, merci de patienter",
   "Please_wait": "Cela devrait être rapide, veuillez patienter un peu",
   "Not_own_list_outdated": "Cette liste est périmée, merci de demander à son propriétaire de la générer à nouveau",
-  "Own_list_outdated_before_button": "Cette liste est périmée, merci de la regénérer en utilisant le bouton ",
-  "Own_list_outdated_after_button": "bouton",
   "Import": "Importer",
   "Favorites": "Favoris",
   "Favorite": "Favoris",
@@ -325,6 +325,7 @@
     "Add_to_a_list": "Ajouter à une liste",
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
     "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
+    "Delete_after_merge": "Supprimer les listes originales après la fusion",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -336,7 +337,6 @@
       "Back": "Précédent",
       "Give_list_name": "Donnez un nom à la liste",
       "Final_step": "Validation",
-      "Choices_needed": "Certains objets nécessitent un choix de recette",
       "Creating_list": "Création de la liste en cours",
       "Loading_items": "Chargement des informations sur les objets"
     }
@@ -346,6 +346,7 @@
     "Rename": "Renommer la liste",
     "Copied_x_times": "Copiée {{count}} fois",
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
+    "Always_show_inventory": "Toujours afficher l'inventaire (désactivé pour les petits écrans, < 600px)",
     "Copy_as_text": "Copier au format texte",
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
@@ -353,6 +354,7 @@
     "Total_trade_price": "Total : ",
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -395,14 +397,14 @@
       "Import_string_copied": "Chaîne d'import de l'affichage copiée !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
-      "Global_options": "Options générales"
+      "Global_options": "Options générales",
+      "Default_readonly_message": "Le template par défaut est en lecture seule, vous devez créer un nouveau template et utiliser le bouton + pour le modifier."
     },
     "LAYOUT": {
       "Filter": "Filtre",
       "Panel_name": "Nom de la catégorie",
       "Order_by": "Trier par",
-      "Order": "Ordre",
-      "Logic_gate": "Porte logique"
+      "Order": "Ordre"
     }
   },
   "LIST_TAGS": {
@@ -422,7 +424,7 @@
     "CASTER": "Magique",
     "CRAFTER": "Artisan",
     "GATHERER": "Récolteur",
-    "SCRIPTS": "Scripts",
+    "SCRIPTS": "Assignats",
     "PLD": "PLD",
     "WAR": "GUE",
     "DRK": "CHN",
@@ -620,7 +622,6 @@
       "Job": "Job",
       "Job_not_configured": "Il semble que vous n’avez pas configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses caractéristiques",
       "Job_not_configured_anonymous": "Veuillez entrer vos statistiques pour avoir une simulation précise ou connectez-vous à votre compte",
-      "Custom_set": "Activer les caractéristiques personnalisées",
       "Select_job": "Sélectionner un job",
       "Craftsmanship": "Habileté",
       "Control": "Contrôle",
@@ -662,6 +663,8 @@
     "Quantity": "Quantité",
     "All_deliveries": "Toutes les livraisons ({{value}})",
     "Compute_exp": "Voir l'impact sur l'expérience",
+    "More_on_gamerescape": "Plus d'informations sur gamerescape",
+    "Deliver_to": "Remettre à {{placename}}",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
@@ -749,6 +752,7 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
+    "Buy_a_tshirt": "Acheter un T-shirt Teamcraft",
     "Features_header": "Par où commencer !",
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
