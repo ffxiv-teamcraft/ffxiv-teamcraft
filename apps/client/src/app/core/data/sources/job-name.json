@@ -214,5 +214,11 @@
     "ja": "赤魔道士",
     "de": "Rotmagier",
     "fr": "Mage rouge"
+  },
+  "36": {
+    "en": "Blue mage",
+    "ja": "青魔道士",
+    "de": "Blaumagier",
+    "fr": "Mage bleu"
   }
 }

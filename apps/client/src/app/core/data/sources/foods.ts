@@ -1,34 +1,40 @@
-export const foods = [{ 'itemId': 4666, 'Control': [{ 'amount': 0.08, 'max': 4 }, { 'amount': 0.1, 'max': 5 }] }, {
-  'itemId': 4667,
-  'Control': [{ 'amount': 0.08, 'max': 8 }, { 'amount': 0.1, 'max': 10 }]
-}, { 'itemId': 4668, 'Control': [{ 'amount': 0.08, 'max': 12 }, { 'amount': 0.1, 'max': 15 }] }, {
-  'itemId': 4669,
-  'Control': [{ 'amount': 0.08, 'max': 14 }, { 'amount': 0.1, 'max': 17 }]
-}, { 'itemId': 4670, 'Control': [{ 'amount': 0.08, 'max': 16 }, { 'amount': 0.1, 'max': 20 }] }, {
-  'itemId': 4671,
-  'Control': [{ 'amount': 0.08, 'max': 18 }, { 'amount': 0.1, 'max': 23 }]
-}, { 'itemId': 4672, 'Control': [{ 'amount': 0.08, 'max': 25 }, { 'amount': 0.1, 'max': 31 }] }, {
-  'itemId': 4716,
-  'CP': [{ 'amount': 0.1, 'max': 10 }, { 'amount': 0.13, 'max': 12 }]
-}, { 'itemId': 4717, 'CP': [{ 'amount': 0.1, 'max': 17 }, { 'amount': 0.13, 'max': 21 }] }, {
-  'itemId': 4718,
-  'CP': [{ 'amount': 0.1, 'max': 21 }, { 'amount': 0.13, 'max': 26 }]
-}, { 'itemId': 4719, 'CP': [{ 'amount': 0.1, 'max': 24 }, { 'amount': 0.13, 'max': 30 }] }, {
-  'itemId': 4720,
-  'CP': [{ 'amount': 0.1, 'max': 26 }, { 'amount': 0.13, 'max': 33 }]
-}, { 'itemId': 4721, 'CP': [{ 'amount': 0.1, 'max': 34 }, { 'amount': 0.13, 'max': 43 }] }, {
+export const foods = [{
+  'itemId': 4666,
+  'Control': [{ 'amount': 0.08, 'max': 4 }, { 'amount': 0.1, 'max': 5 }]
+}, { 'itemId': 4667, 'Control': [{ 'amount': 0.08, 'max': 8 }, { 'amount': 0.1, 'max': 10 }] }, {
+  'itemId': 4668,
+  'Control': [{ 'amount': 0.08, 'max': 12 }, { 'amount': 0.1, 'max': 15 }]
+}, { 'itemId': 4669, 'Control': [{ 'amount': 0.08, 'max': 14 }, { 'amount': 0.1, 'max': 17 }] }, {
+  'itemId': 4670,
+  'Control': [{ 'amount': 0.08, 'max': 16 }, { 'amount': 0.1, 'max': 20 }]
+}, { 'itemId': 4671, 'Control': [{ 'amount': 0.08, 'max': 18 }, { 'amount': 0.1, 'max': 23 }] }, {
+  'itemId': 4672,
+  'Control': [{ 'amount': 0.08, 'max': 25 }, { 'amount': 0.1, 'max': 31 }]
+}, { 'itemId': 4716, 'CP': [{ 'amount': 0.1, 'max': 10 }, { 'amount': 0.13, 'max': 12 }] }, {
+  'itemId': 4717,
+  'CP': [{ 'amount': 0.1, 'max': 17 }, { 'amount': 0.13, 'max': 21 }]
+}, { 'itemId': 4718, 'CP': [{ 'amount': 0.1, 'max': 21 }, { 'amount': 0.13, 'max': 26 }] }, {
+  'itemId': 4719,
+  'CP': [{ 'amount': 0.1, 'max': 24 }, { 'amount': 0.13, 'max': 30 }]
+}, { 'itemId': 4720, 'CP': [{ 'amount': 0.1, 'max': 26 }, { 'amount': 0.13, 'max': 33 }] }, {
+  'itemId': 4721,
+  'CP': [{ 'amount': 0.1, 'max': 34 }, { 'amount': 0.13, 'max': 43 }]
+}, {
   'itemId': 4722,
   'Craftsmanship': [{ 'amount': 0.12, 'max': 12 }, { 'amount': 0.15, 'max': 15 }]
-}, { 'itemId': 4723, 'Craftsmanship': [{ 'amount': 0.12, 'max': 16 }, { 'amount': 0.15, 'max': 20 }] }, {
+}, {
+  'itemId': 4723,
+  'Craftsmanship': [{ 'amount': 0.12, 'max': 16 }, { 'amount': 0.15, 'max': 20 }]
+}, {
   'itemId': 4724,
   'Craftsmanship': [{ 'amount': 0.12, 'max': 20 }, { 'amount': 0.15, 'max': 25 }]
-}, { 'itemId': 4725, 'Craftsmanship': [{ 'amount': 0.12, 'max': 32 }, { 'amount': 0.15, 'max': 40 }] }, {
-  'itemId': 4726,
-  'Craftsmanship': [{ 'amount': 0.12, 'max': 8 }, { 'amount': 0.15, 'max': 10 }]
-}, { 'itemId': 4727, 'Craftsmanship': [{ 'amount': 0.12, 'max': 24 }, { 'amount': 0.15, 'max': 30 }] }, {
-  'itemId': 6144,
-  'Control': [{ 'amount': 0.08, 'max': 22 }, { 'amount': 0.1, 'max': 27 }]
 }, {
+  'itemId': 4725,
+  'Craftsmanship': [{ 'amount': 0.12, 'max': 32 }, { 'amount': 0.15, 'max': 40 }]
+}, { 'itemId': 4726, 'Craftsmanship': [{ 'amount': 0.12, 'max': 8 }, { 'amount': 0.15, 'max': 10 }] }, {
+  'itemId': 4727,
+  'Craftsmanship': [{ 'amount': 0.12, 'max': 24 }, { 'amount': 0.15, 'max': 30 }]
+}, { 'itemId': 6144, 'Control': [{ 'amount': 0.08, 'max': 22 }, { 'amount': 0.1, 'max': 27 }] }, {
   'itemId': 7574,
   'Craftsmanship': [{ 'amount': 0.1, 'max': 38 }, { 'amount': 0.12, 'max': 47 }],
   'CP': [{ 'amount': 0.04, 'max': 14 }, { 'amount': 0.05, 'max': 17 }]

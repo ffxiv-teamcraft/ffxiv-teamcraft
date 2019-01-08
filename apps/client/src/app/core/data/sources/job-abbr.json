@@ -214,5 +214,11 @@
     "ja": "RDM",
     "de": "RMA",
     "fr": "MRG"
+  },
+  "36": {
+    "en": "BLU",
+    "ja": "BLU",
+    "de": "BMA",
+    "fr": "MBU"
   }
 }

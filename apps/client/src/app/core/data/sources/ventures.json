@@ -3122,7 +3122,7 @@
   "527": {
     "en": "Young Cieldalaes Spinach",
     "ja": "ソフトスピナッチ",
-    "de": "Junger Ciedaläen-Spinat",
+    "de": "Junger Cieldaläen-Spinat",
     "fr": "Jeunes épinards des Cieldalaes"
   },
   "528": {
@@ -4492,5 +4492,17 @@
     "ja": "ウスギヌダコ",
     "de": "Othardischer Oktopus",
     "fr": "Poulpe usuginu"
+  },
+  "756": {
+    "en": "Hawk's Eye",
+    "ja": "鷹目石",
+    "de": "Falkenauge",
+    "fr": "Œil-de-faucon"
+  },
+  "757": {
+    "en": "Hardened Veteran Tree Sap",
+    "ja": "老木樹液塊",
+    "de": "Gehärteter alter Baumsaft",
+    "fr": "Sève durcie de vieil arbre"
   }
 }
