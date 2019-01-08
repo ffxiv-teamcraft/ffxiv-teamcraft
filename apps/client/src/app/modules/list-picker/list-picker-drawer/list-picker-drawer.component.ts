@@ -44,7 +44,7 @@ export class ListPickerDrawerComponent {
                   return list;
                 })
                 .filter(l => l !== undefined)
-                .filter(l => !l.notFound && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
+                .filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
             };
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
