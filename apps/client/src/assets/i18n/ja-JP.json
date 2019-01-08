@@ -12,7 +12,7 @@
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせてください。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われている",
-    "auth/email-already-in-use": "このメールアドレスは既に使われている",
+    "auth/email-already-in-use": "このメールアドレスは既に使われています",
     "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
   },
