@@ -398,7 +398,7 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, 사용자 정의 레이아웃을 만들기 위해서는 +버튼을 누르세요."
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다."
     },
     "LAYOUT": {
       "Filter": "필터",
