@@ -44,14 +44,15 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         if (itemPartial.p === undefined) {
           continue;
         }
+        console.log(vendorId, itemPartial.p);
         const vendor: Vendor = {
           npcId: vendorId,
           price: itemPartial.p
         };
         const npcEntry = npcs[vendorId];
-        if (npcEntry.position !== null) {
+        if (npcEntry && npcEntry.position !== null) {
           const npcPosition = npcEntry.position;
-          vendor.coords = {x: npcPosition.x, y: npcPosition.y};
+          vendor.coords = { x: npcPosition.x, y: npcPosition.y };
           vendor.zoneId = npcPosition.zoneid;
           vendor.mapId = npcPosition.map;
         }
