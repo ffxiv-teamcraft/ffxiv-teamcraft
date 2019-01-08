@@ -37,7 +37,7 @@ export class LayoutsFacade {
               private authFacade: AuthFacade) {
   }
 
-  public getDisplay(list: List, adaptativeFilter: boolean): Observable<ListDisplay> {
+  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
     return this.selectedLayout$
       .pipe(
         withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
@@ -66,7 +66,7 @@ export class LayoutsFacade {
                 const result: FilterResult = row.filter.filter(unfilteredRows);
                 unfilteredRows = result.rejected;
                 let orderedAccepted = this.layoutOrder.order(result.accepted, row.orderBy, row.order);
-                if (row.hideCompletedRows) {
+                if (row.hideCompletedRows || overrideHideCompleted) {
                   orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
                 }
                 if (row.hideUsedRows) {

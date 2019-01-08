@@ -24,7 +24,9 @@
     "Crafts_amount": "# obrta",
     "Add_to_list": "Dodajte ovu stavku na popis",
     "Apply_filters": "Primijenite filtre",
-    "Too_many_results_warning": "Ovo pretraživanje prikazuje više od 50 stavki. Pošto je naš izvor podataka ograničen na 50 rezultata, možda će vam trebati dodatni filteri da pronađete određeni predmet."
+    "Too_many_results_warning": "Ovo pretraživanje prikazuje više od 50 stavki. Pošto je naš izvor podataka ograničen na 50 rezultata, možda će vam trebati dodatni filteri da pronađete određeni predmet.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Odaberite glavnog lika",
   "Download_desktop_app": "Preuzmite aplikaciju za radnu površinu",
@@ -199,8 +201,6 @@
   "List_popup_title": "Regeneriranje popisa, molimo pričekajte",
   "Please_wait": "Ovo bi trebalo biti brzo, pričekajte koji trenutak",
   "Not_own_list_outdated": "Ovaj popis je zastario, zamolite vlasnika da ga obnovi",
-  "Own_list_outdated_before_button": "Ovaj popis je zastario, molimo obnoviti putem ",
-  "Own_list_outdated_after_button": "tipka",
   "Import": "Unos",
   "Favorites": "Favoriti",
   "Favorite": "Favorit",
@@ -325,6 +325,7 @@
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Delete_after_merge": "Delete original lists after merge",
     "IMPORT": {
       "Title": "Import list from external website",
       "Paste_link_step_title": "Paste your link to the external list",
@@ -336,7 +337,6 @@
       "Back": "Back",
       "Give_list_name": "Give your new list a name",
       "Final_step": "Validation",
-      "Choices_needed": "Some recipe choices are pending",
       "Creating_list": "Creating the list",
       "Loading_items": "Loading items informations"
     }
@@ -346,6 +346,7 @@
     "Rename": "Rename list",
     "Copied_x_times": "Copied {{count}} times",
     "Enable_crystals_tracking": "Enable crystals tracking",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Copy as text",
     "Copy_list_as_text": "Copy the whole list as text",
     "Copied_as_text": "Content copied in clipboard",
@@ -353,6 +354,7 @@
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Add all alarms for this list",
     "History": "History",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
@@ -395,14 +397,14 @@
       "Import_string_copied": "Layout import code copied !",
       "Layout_name": "Layout name",
       "Invalid_import": "Invalid import code",
-      "Global_options": "General options"
+      "Global_options": "General options",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Filter",
       "Panel_name": "Panel name",
       "Order_by": "Sort by",
-      "Order": "Order",
-      "Logic_gate": "Logic gate"
+      "Order": "Order"
     }
   },
   "LIST_TAGS": {
@@ -422,7 +424,7 @@
     "CASTER": "Caster",
     "CRAFTER": "Crafter",
     "GATHERER": "Gatherer",
-    "SCRIPTS": "Scripts",
+    "SCRIPTS": "Scrips",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -620,7 +622,6 @@
       "Job": "Job",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
-      "Custom_set": "Enable custom set",
       "Select_job": "Select a job",
       "Craftsmanship": "Craftsmanship",
       "Control": "Control",
@@ -662,6 +663,8 @@
     "Quantity": "Quantity",
     "All_deliveries": "All {{value}} Deliveries",
     "Compute_exp": "Show impact on xp",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
@@ -749,6 +752,7 @@
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Support us on patreon",
     "Donation_button": "Make a one time donation",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "Get started !",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",

@@ -59,7 +59,9 @@ export class ListDetailsComponent implements OnInit {
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
-  private adaptativeFilter$ = new BehaviorSubject<boolean>(false);
+  private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed') === 'true');
+
+  public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
@@ -95,8 +97,8 @@ export class ListDetailsComponent implements OnInit {
     this.finalItemsRow$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
       mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
     );
-    this.display$ = combineLatest(this.list$, this.adaptativeFilter$).pipe(
-      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getDisplay(list, adaptativeFilter)),
+    this.display$ = combineLatest(this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$).pipe(
+      mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
       shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
@@ -140,6 +142,11 @@ export class ListDetailsComponent implements OnInit {
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListAddedToTeam(team, list);
     }
+  }
+
+  setHideCompleted(newValue: boolean): void {
+    localStorage.setItem('hide-completed', newValue.toString());
+    this.hideCompletedGlobal$.next(newValue);
   }
 
   removeTeam(list: List, team: Team): void {

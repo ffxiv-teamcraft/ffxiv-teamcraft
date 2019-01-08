@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "5.0.0-rc.14",
+  "version": "5.0.0",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -26,11 +26,6 @@
     },
     "mac": {
       "category": "public.app-category.games"
-    },
-    "linux": {
-      "icon": "./tools/build/icon.ico",
-      "maintainer": "Miu Asakura",
-      "category": "Game"
     },
     "win": {
       "icon": "./tools/build/icon.ico",
@@ -72,7 +67,7 @@
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
     "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win --dir",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
-    "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win --linux -p always",
+    "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
     "pack": "electron-builder --dir",

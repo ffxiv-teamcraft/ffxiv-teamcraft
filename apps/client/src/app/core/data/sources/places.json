@@ -4417,9 +4417,9 @@
   },
   "775": {
     "en": "Miners' Guild",
-    "ja": "採掘師ギルド前",
-    "de": "Minenarbeitergilde",
-    "fr": "Guilde des mineurs"
+    "ja": "採掘師ギルド前（ブルースカイ）",
+    "de": "Minenarbeitergilde (Himmlische Arena)",
+    "fr": "Guilde des mineurs (Ciel azur)"
   },
   "776": {
     "en": "Alchemists' Guild",
@@ -8568,10 +8568,10 @@
     "fr": "Comptoir du Méga Cactpot"
   },
   "1498": {
-    "en": "The Manderville Lounge",
-    "ja": "ラウンジ・マンダヴィル",
-    "de": "Manderville-Lounge",
-    "fr": "Salon des Manderville"
+    "en": "The Manderville Tables",
+    "ja": "テーブル・マンダヴィル",
+    "de": "Manderville-Tische",
+    "fr": "Tables des Manderville"
   },
   "1499": {
     "en": "The Manderville Lounge",
@@ -8690,12 +8690,12 @@
   "1518": {
     "en": "Entrance & Card Squares",
     "ja": "エントランススクウェア（カードスクウェア）",
-    "de": "Foyer",
+    "de": "Foyer und Kartenspiel-Salon",
     "fr": "Hall d'accueil (Square des duellistes)"
   },
   "1519": {
     "en": "Wonder Square East",
-    "ja": "ワンダースクウェア東",
+    "ja": "ワンダースクウェア東（ドマ式麻雀）",
     "de": "Platz der Wunder (Ost)",
     "fr": "Square des merveilles est"
   },
@@ -14399,6 +14399,12 @@
     "de": "Belah'dias Fall",
     "fr": "Chutes de Belah'dia"
   },
+  "2499": {
+    "en": "Kugane Ohashi",
+    "ja": "クガネ大橋",
+    "de": "Kugane-Brücke",
+    "fr": "Pont Ohashi"
+  },
   "2500": {
     "en": "Hak Khaal",
     "ja": "ハク・カール",
@@ -14446,6 +14452,12 @@
     "ja": "ドマ町人地",
     "de": "Domanische Enklave",
     "fr": "Quartier enclavé de Doma"
+  },
+  "2510": {
+    "en": "The Wreath of Snakes",
+    "ja": "蛇神大社",
+    "de": "Heiligtum der Schlange",
+    "fr": "Sanctuaire du Grand Serpent"
   },
   "2511": {
     "en": "Ruby Price Depths",
@@ -14543,6 +14555,120 @@
     "de": "Seldsee (Nordost)",
     "fr": "Fond du lac Seld (sud-est)"
   },
+  "2530": {
+    "en": "Eureka Pyros",
+    "ja": "エウレカ：ピューロス帯",
+    "de": "Eureka Pyros",
+    "fr": "Eurêka Pyros"
+  },
+  "2531": {
+    "en": "Northpoint",
+    "ja": "ノースポイント",
+    "de": "Nordkuppe",
+    "fr": "Le Septentrion"
+  },
+  "2532": {
+    "en": "Flurry",
+    "ja": "スノウクラッシュ",
+    "de": "Schneewehen",
+    "fr": "Front glacial"
+  },
+  "2533": {
+    "en": "Northeastern Ice Needles",
+    "ja": "アイスニードル北東",
+    "de": "Nordöstliche Eisnadeln",
+    "fr": "Nord-est des Aiguilles de givre"
+  },
+  "2534": {
+    "en": "Southwestern Ice Needles",
+    "ja": "アイスニードル南西",
+    "de": "Südwestliche Eisnadeln",
+    "fr": "Sud-ouest des Aiguilles de givre"
+  },
+  "2535": {
+    "en": "The Cavern of the Second Cant",
+    "ja": "歌う氷洞",
+    "de": "Singende Eisgrotte",
+    "fr": "Caverne mélodieuse"
+  },
+  "2536": {
+    "en": "Bonfire",
+    "ja": "ピューロスの炎穴",
+    "de": "Leuchtfeuer",
+    "fr": "Puits de feu"
+  },
+  "2537": {
+    "en": "West Flamerock",
+    "ja": "フレイムロック溶岩洞西",
+    "de": "Westlicher Flammenfels",
+    "fr": "Ouest de Rocheflamme"
+  },
+  "2538": {
+    "en": "East Flamerock",
+    "ja": "フレイムロック溶岩洞東",
+    "de": "Östlicher Flammenfels",
+    "fr": "Est de Rocheflamme"
+  },
+  "2539": {
+    "en": "The Living Foundry",
+    "ja": "実験魔器工房",
+    "de": "Magielabor",
+    "fr": "Atelier de prototypage"
+  },
+  "2540": {
+    "en": "The Dragon Star Observatory",
+    "ja": "竜星観測所",
+    "de": "Drachenstern-Observatorium",
+    "fr": "Observatoire de l'étoile du dragon"
+  },
+  "2541": {
+    "en": "The Firing Chamber",
+    "ja": "耐熱実験場",
+    "de": "Brennkammer",
+    "fr": "Site d'expérimentations calorifuges"
+  },
+  "2542": {
+    "en": "Carbonatite Quarry",
+    "ja": "カーボナタイト試掘地",
+    "de": "Karbonatit-Steinbruch",
+    "fr": "Carrière de carbonatite"
+  },
+  "2543": {
+    "en": "The Surgate Town House",
+    "ja": "サーゲイト別邸跡",
+    "de": "Surgate-Landhaus",
+    "fr": "Résidence secondaire de Surgate"
+  },
+  "2544": {
+    "en": "The Garden of Despite",
+    "ja": "嘲りの庭",
+    "de": "Garten des Trotzes",
+    "fr": "Jardin du Brocard"
+  },
+  "2546": {
+    "en": "The Partisan's Proof",
+    "ja": "偏屈者の実験場",
+    "de": "Partisanenpfand",
+    "fr": "Laboratoire de l'opiniâtre"
+  },
+  "2547": {
+    "en": "The Ring of Fire",
+    "ja": "焔の闘技場",
+    "de": "Feuerring",
+    "fr": "Arène de Feu"
+  },
+  "2548": {
+    "en": "Blue Sky",
+    "ja": "ブルースカイ",
+    "de": "Himmlische Arena",
+    "fr": "Ciel azur"
+  },
+  "2549": {
+    "en": "The Manderville Tables",
+    "ja": "魔導雀荘「マンダヴィル」",
+    "de": "Manderville-Tische",
+    "fr": "Tables des Manderville"
+  },
   "2550": {
     "en": "Masked Rose",
     "ja": "ファッションチェック",
@@ -14572,6 +14698,18 @@
     "ja": "コンテンツ退出口",
     "de": "Ausgang",
     "fr": "Sortie"
+  },
+  "2556": {
+    "en": "Blue Mage",
+    "ja": "青魔道士",
+    "de": "Blaumagier",
+    "fr": "Mage bleu"
+  },
+  "2586": {
+    "en": "The Ghimlyt Dark",
+    "ja": "ギムリトダーク",
+    "de": "Ghimlyt-Finsternis",
+    "fr": "Les Ténèbres de Ghimlyt"
   },
   "2600": {
     "en": "East End",
@@ -15347,6 +15485,12 @@
     "de": "Finale Verifikation",
     "fr": "Espace de test final"
   },
+  "2729": {
+    "en": "The Last Line",
+    "ja": "最終防衛ライン",
+    "de": "Letzte Verteidigungslinie",
+    "fr": "Ligne magistrale"
+  },
   "2730": {
     "en": "The Soil Bed",
     "ja": "沃土の寝室",
@@ -15406,6 +15550,66 @@
     "ja": "再現宇宙",
     "de": "Kosmos",
     "fr": "Espace inconnu"
+  },
+  "2740": {
+    "en": "The First Line",
+    "ja": "第一防衛ライン",
+    "de": "Erste Verteidigungslinie",
+    "fr": "Première ligne de défense"
+  },
+  "2741": {
+    "en": "The Second Line",
+    "ja": "第二防衛ライン",
+    "de": "Zweite Verteidigungslinie",
+    "fr": "Deuxième ligne de défense"
+  },
+  "2742": {
+    "en": "Alliance Headquarters",
+    "ja": "エオルゼア同盟軍本陣",
+    "de": "Hauptquartier der Allianz",
+    "fr": "Quartier général de l'Alliance"
+  },
+  "2743": {
+    "en": "The Trenches",
+    "ja": "同盟軍塹壕",
+    "de": "Kampfgräben",
+    "fr": "Tranchées"
+  },
+  "2744": {
+    "en": "The Field of Dust",
+    "ja": "薄汚れた広場",
+    "de": "Feld des Staubs",
+    "fr": "Champ de poussière"
+  },
+  "2745": {
+    "en": "Crash Site",
+    "ja": "飛空戦艦墜落現場",
+    "de": "Absturzstelle",
+    "fr": "Aéronef écrasé"
+  },
+  "2746": {
+    "en": "The Field of Soot",
+    "ja": "煤だらけの荒野",
+    "de": "Feld des Rußes",
+    "fr": "Champ calciné"
+  },
+  "2747": {
+    "en": "Impact Crater",
+    "ja": "巨大爆撃痕",
+    "de": "Bombenkrater",
+    "fr": "Gigantesque cratère"
+  },
+  "2748": {
+    "en": "The Field of Ash",
+    "ja": "灰だらけの荒野",
+    "de": "Feld der Asche",
+    "fr": "Champ de cendre"
+  },
+  "2749": {
+    "en": "Provisional Imperial Landing",
+    "ja": "帝国軍仮設ランディング",
+    "de": "Provisorischer Landeplatz",
+    "fr": "Aire d'atterrissage provisoire"
   },
   "2750": {
     "en": "Rasen Kaikyo",
@@ -16079,6 +16283,90 @@
     "de": "Goldbecken (Yanxia)",
     "fr": "Bassin rutilant (Yanxia)"
   },
+  "2862": {
+    "en": "Eorzean Alliance Headquarters",
+    "ja": "エオルゼア同盟軍本陣",
+    "de": "Hauptquartier der Allianz",
+    "fr": "Quartier général de l'Alliance"
+  },
+  "2863": {
+    "en": "Garlean Legion Tents",
+    "ja": "ガレマール帝国軍天幕",
+    "de": "Kommandozelt der Garleischen Armee",
+    "fr": "Grande tente de l'armée impériale"
+  },
+  "2864": {
+    "en": "The Orbonne Monastery",
+    "ja": "楽欲の僧院 オーボンヌ",
+    "de": "Kloster von Orbonne",
+    "fr": "Monastère d'Orbonne"
+  },
+  "2865": {
+    "en": "The Golmore Jungle",
+    "ja": "ゴルモア大密林",
+    "de": "Golmore-Dschungel",
+    "fr": "Jungle de Golmore"
+  },
+  "2866": {
+    "en": "The Orbonne Monastery",
+    "ja": "オーボンヌ修道院",
+    "de": "Kloster von Orbonne",
+    "fr": "Monastère d'Orbonne"
+  },
+  "2867": {
+    "en": "The Necrohol",
+    "ja": "死せる都",
+    "de": "Nekropole",
+    "fr": "La Nécropole"
+  },
+  "2868": {
+    "en": "The Jungle's Plea",
+    "ja": "密林の円庭",
+    "de": "Flehen des Dschungels",
+    "fr": "La Prostration de la Jungle"
+  },
+  "2869": {
+    "en": "Realm of the Machinists",
+    "ja": "機工士の領域",
+    "de": "Reich der Maschinisten",
+    "fr": "Cloître de l'ingénieur"
+  },
+  "2870": {
+    "en": "Realm of the Templars",
+    "ja": "聖騎士の領域",
+    "de": "Reich der Tempelritter",
+    "fr": "Cloître de la chevalière sacrée"
+  },
+  "2871": {
+    "en": "Lifeless Alley",
+    "ja": "命なき街路",
+    "de": "Lebloser Pfad",
+    "fr": "Corridors silencieux"
+  },
+  "2872": {
+    "en": "Realm of the Thunder God",
+    "ja": "雷神の領域",
+    "de": "Reich des Donnergottes",
+    "fr": "Cloître du Dieu de la Foudre"
+  },
+  "2873": {
+    "en": "Crystalline Gaol",
+    "ja": "水晶の監獄",
+    "de": "Kristallkerker",
+    "fr": "Geôle cristalline"
+  },
+  "2874": {
+    "en": "Confessional",
+    "ja": "懺悔室",
+    "de": "Beichtstuhl",
+    "fr": "Confessionnal"
+  },
+  "2875": {
+    "en": "The Forgotten Arena",
+    "ja": "古の闘技場",
+    "de": "Vergessene Arena",
+    "fr": "Arène abandonnée"
+  },
   "2900": {
     "en": "Pier #2",
     "ja": "第二波止場",
@@ -16182,7 +16470,7 @@
     "fr": "Chantiers navals d'Ofunakura"
   },
   "2917": {
-    "en": "Mujikoza",
+    "en": "The Mujikoza",
     "ja": "無地鼓座",
     "de": "Mujikoza",
     "fr": "Mujikoza"
@@ -16270,5 +16558,17 @@
     "ja": "エーテライト・プラザ",
     "de": "Ätherytenplatz",
     "fr": "Place de l'Éthérite"
+  },
+  "2932": {
+    "en": "Kugane Ohashi",
+    "ja": "真ギルガメッシュ討滅戦",
+    "de": "Revanche in den Ruinen",
+    "fr": "Revanche au vieux château"
+  },
+  "2933": {
+    "en": "The Dragon's Neck",
+    "ja": "アマジナ杯闘技会決勝戦",
+    "de": "Drachenhals-Kolosseum",
+    "fr": "Le Col du dragon"
   }
 }

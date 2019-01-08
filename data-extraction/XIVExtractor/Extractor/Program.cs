@@ -14,23 +14,23 @@ namespace Extractor
 
     static void Main(string[] args)
     {
-      const string GameDirectory = @"F:\SquareEnix\FINAL FANTASY XIV - A Realm Reborn";
+      const string GameDirectory = @"E:\SquareEnix\FINAL FANTASY XIV - A Realm Reborn";
       ARealmReversed realm = new ARealmReversed(GameDirectory, "SaintCoinach.History.zip", SaintCoinach.Ex.Language.English, "app_data.sqlite");
       Localize localize = new Localize(realm);
       ExtractItemNames(localize, realm);
       ExtractNames(localize, realm.GameData.GetSheet<PlaceName>(), "Name", "places");
       ExtractNames(localize, realm.GameData.GetSheet<Weather>(), "Name", "weathers");
-      ExtractMobNames(localize, realm);
+      //ExtractMobNames(localize, realm);
       ExtractNames(localize, realm.GameData.GetSheet<CraftAction>(), "Name", "craft-actions");
       ExtractNames(localize, realm.GameData.GetSheet<SaintCoinach.Xiv.Action>(), "Name", "actions");
-      ExtractAetheryteNames(localize, realm);
+      //ExtractAetheryteNames(localize, realm);
       ExtractVentureNames(localize, realm);
-      ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
+      //ExtractNodesPosition(realm.GameData.GetSheet<GatheringPoint>());
       ExtractActionIcons(realm.GameData);
       ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Abbreviation", "job-abbr");
       ExtractNames(localize, realm.GameData.GetSheet<ClassJob>(), "Name", "job-name");
       ExtractConsumables(realm.GameData);
-      ExtractNpcs(localize, realm);
+      //ExtractNpcs(localize, realm);
     }
 
     static void ExtractConsumables(XivCollection gameData)

@@ -24,7 +24,9 @@
     "Crafts_amount": "# крафтов",
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
-    "Too_many_results_warning": "В поимке более 50 предметов. Поскольку наш источник данных ограничен 50 результатами, вам могут понадобиться дополнительные фильтры для поиска конкретного элемента."
+    "Too_many_results_warning": "В поимке более 50 предметов. Поскольку наш источник данных ограничен 50 результатами, вам могут понадобиться дополнительные фильтры для поиска конкретного элемента.",
+    "Share_url": "Copy search url to your clipboard",
+    "Share_url_copied": "Search url copied to your clipboard"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте приложение",
@@ -199,8 +201,6 @@
   "List_popup_title": "Восстановление списка, пожалуйста, подождите",
   "Please_wait": "Это должно быть быстро, подождите немного",
   "Not_own_list_outdated": "Этот список устарел, пожалуйста, попросите владельца обновить его",
-  "Own_list_outdated_before_button": "Этот список устарел, пожалуйста, пересоздайте его ",
-  "Own_list_outdated_after_button": "кнопка",
   "Import": "Импорт",
   "Favorites": "Избранное",
   "Favorite": "Избранное",
@@ -325,6 +325,7 @@
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
+    "Delete_after_merge": "Delete original lists after merge",
     "IMPORT": {
       "Title": "Импорт списка из внешнего веб-сайта",
       "Paste_link_step_title": "Вставьте вашу ссылку для внешнего списка",
@@ -336,7 +337,6 @@
       "Back": "Назад",
       "Give_list_name": "Назовите ваш новый список",
       "Final_step": "Проверка",
-      "Choices_needed": "Ожидается выбор нескольких рецептов",
       "Creating_list": "Создание списка",
       "Loading_items": "Загрузка информации о предметах"
     }
@@ -346,6 +346,7 @@
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
     "Enable_crystals_tracking": "Включить отслеживание кристаллов",
+    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Копировать как текст",
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
@@ -353,6 +354,7 @@
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Создать оповещения для этого списка",
     "History": "История",
+    "Items_count": "{{amount}} items",
     "COMPLETION_POPUP": {
       "Title": "Список завершен",
       "Content": "Этот лист завершен, что вы хотите с ним сделать?",
@@ -395,14 +397,14 @@
       "Import_string_copied": "Импорт кода макета скопирован!",
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
-      "Global_options": "Главные настройки"
+      "Global_options": "Главные настройки",
+      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
     },
     "LAYOUT": {
       "Filter": "Фильтр",
       "Panel_name": "Имя панели",
       "Order_by": "Сортировка по",
-      "Order": "Порядок",
-      "Logic_gate": "Логические ворота"
+      "Order": "Порядок"
     }
   },
   "LIST_TAGS": {
@@ -422,7 +424,7 @@
     "CASTER": "Маг",
     "CRAFTER": "Крафтер",
     "GATHERER": "Сборщик",
-    "SCRIPTS": "Сценарии",
+    "SCRIPTS": "Scrips",
     "PLD": "PLD",
     "WAR": "WAR",
     "DRK": "DRK",
@@ -620,7 +622,6 @@
       "Job": "Работа",
       "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
-      "Custom_set": "Включить кастомный комплект",
       "Select_job": "Выбрать роль",
       "Craftsmanship": "Мастерство",
       "Control": "Управление",
@@ -662,6 +663,8 @@
     "Quantity": "Количество",
     "All_deliveries": "Все {{value}} доставлено",
     "Compute_exp": "Show impact on xp",
+    "More_on_gamerescape": "More details on gamerescape",
+    "Deliver_to": "Deliver to {{placename}}",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",
@@ -749,6 +752,7 @@
     "Lists_created_counter": "{{amount}} lists created using FFXIV Teamcraft",
     "Support_patreon": "Поддержать нас в patreon",
     "Donation_button": "Сделать одноразовое пожертвование",
+    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here ! Just search for an item, expand filters to get specific items, and start crafting things.",

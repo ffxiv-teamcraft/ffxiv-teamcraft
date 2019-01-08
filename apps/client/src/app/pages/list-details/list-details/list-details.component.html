@@ -105,6 +105,12 @@
             <label nz-checkbox [(ngModel)]="adaptativeFilter"
                    *ngIf="loggedIn$ | async">{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
           </div>
+          <div>
+            <label nz-checkbox [ngModel]="hideCompletedGlobal$ | async"
+                   (ngModelChange)="setHideCompleted($event)" nz-tooltip>
+              {{'Hide_completed' | translate}}
+            </label>
+          </div>
         </div>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flext-start center" class="note">
