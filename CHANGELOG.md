@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.3"></a>
+## [5.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.2...v5.0.3) (2019-01-08)
+
+
+### Bug Fixes
+
+* **desktop:** added disclaimer about broken auto updater for desktop app ([b765870](https://github.com/Supamiu/ffxiv-teamcraft/commit/b765870))
+* **list-picker:** fiwed an issue with some broken lists breaking the list picker (again) ([a7ac4e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a7ac4e1))
+* **user-picker:** server search is no longer case sensitive ([9dcadb0](https://github.com/Supamiu/ffxiv-teamcraft/commit/9dcadb0))
+
+
+
 <a name="5.0.2"></a>
 ## [5.0.2](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.1...v5.0.2) (2019-01-08)
 
