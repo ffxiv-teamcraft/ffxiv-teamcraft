@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Требуется {{amount}} предприятий чтобы получить все",
   "WORKSHOP": {
     "Workshops": "Мастерские",
-    "Add_lists": "Добавить список",
+    "Add_one_list": "Add a list",
     "Add_workshop": "Добавить мастерскую",
     "Delete_message": "Удаление мастерской не удалит в нем списки, они будут перемещены",
     "List_selection_title": "Выберите списки для добавлению в мастерскую {{workshopName}}",
