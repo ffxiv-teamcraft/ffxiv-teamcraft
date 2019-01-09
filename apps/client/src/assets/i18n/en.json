@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Requires {{amount}} ventures to get everything",
   "WORKSHOP": {
     "Workshops": "Workshops",
-    "Add_lists": "Add lists",
+    "Add_one_list": "Add a list",
     "Add_workshop": "Add workshop",
     "Delete_message": "Deleting a workshop won't delete the lists in it, they will only be brought back to workshop-less lists",
     "List_selection_title": "Select lists to add to workshop {{workshopName}}",

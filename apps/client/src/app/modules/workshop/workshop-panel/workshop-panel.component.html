@@ -33,6 +33,9 @@
             <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 40" (click)="openPermissionsPopup()">
               {{'PERMISSIONS.Title' | translate}}
             </li>
+            <li nz-menu-item [nzDisabled]="(permissionLevel$ | async) < 30" (click)="addList()">
+              {{'WORKSHOP.Add_one_list' | translate}}
+            </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.patron || user.admin">
