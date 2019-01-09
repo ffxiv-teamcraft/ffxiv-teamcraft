@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
     "Workshops": "Talleres",
-    "Add_lists": "Agregar listas",
+    "Add_one_list": "Add a list",
     "Add_workshop": "Agregar taller",
     "Delete_message": "Borrar un taller no borra las listas en el, solo serán movidas a las listas sin taller",
     "List_selection_title": "Seleccione las listas a agregar al taller {{workshopName}}",
