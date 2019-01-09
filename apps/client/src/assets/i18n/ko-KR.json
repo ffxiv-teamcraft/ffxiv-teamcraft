@@ -58,7 +58,7 @@
   "Requires_x_ventures": "총 {{amount}}회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
     "Workshops": "공방",
-    "Add_lists": "목록 추가",
+    "Add_one_list": "Add a list",
     "Add_workshop": "공방 추가",
     "Delete_message": "공방이 삭제되더라도 내부의 목록은 지워지지 않고 공방이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "공방 {{workshopName}} 에 추가할 목록 선택",
