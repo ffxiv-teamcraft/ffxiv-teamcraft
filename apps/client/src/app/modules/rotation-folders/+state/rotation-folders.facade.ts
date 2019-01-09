@@ -45,7 +45,7 @@ export class RotationFoldersFacade {
         });
         return favorites.rotationFolders
           .map(folderId => folders.find(folder => folder.$key === folderId))
-          .filter(f => f !== undefined)
+          .filter(f => f !== undefined && !f.notFound)
           .map(folder => {
             return {
               folder: folder,
