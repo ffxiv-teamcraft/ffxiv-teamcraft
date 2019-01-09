@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
 import { List } from '../../list/model/list';
 import { PricingService } from '../pricing.service';
 import { ListRow } from '../../list/model/list-row';
@@ -20,7 +20,7 @@ import { NzMessageService } from 'ng-zorro-antd';
   templateUrl: './pricing.component.html',
   styleUrls: ['./pricing.component.less']
 })
-export class PricingComponent {
+export class PricingComponent implements AfterViewInit {
 
   list$: Observable<List>;
 
@@ -41,12 +41,12 @@ export class PricingComponent {
     map(char => char.Server)
   );
 
-  private loggedIn$ = this.authFacade.loggedIn$;
+  loggedIn$ = this.authFacade.loggedIn$;
 
   constructor(private pricingService: PricingService, private media: ObservableMedia, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private translate: TranslateService, private message: NzMessageService) {
+              private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -109,7 +109,7 @@ export class PricingComponent {
       )
       .subscribe((res) => {
         if (res instanceof Error) {
-          this.message.error(this.translate.instant('MARKETBOARD.'))
+          this.message.error(this.translate.instant('MARKETBOARD.'));
         } else {
           stopInterval$.next(null);
           this.pricingService.priceChanged$.next(null);
@@ -160,7 +160,7 @@ export class PricingComponent {
       if (this.pricingService.isCustomPrice(item)) {
         const price = this.pricingService.getPrice(item);
         const amount = this.pricingService.getAmount(list.$key, item);
-        cost = price.nq * amount.nq * price.hq * amount.hq;
+        cost = Math.min(1, price.nq * amount.nq) * Math.min(1, price.hq * amount.hq);
       } else {
         if (this.settings.expectToSellEverything) {
           // If we expect to sell everything, price based on amount of items crafted
@@ -195,13 +195,7 @@ export class PricingComponent {
   }
 
   private _getCraftCost(row: ListRow, list: List): number {
-    // If that's a final item or the price is custom, no recursion.
-    if (this.pricingService.isCustomPrice(row) || row.requires === undefined || row.requires.length === 0) {
-      const prices = this.pricingService.getPrice(row);
-      const amounts = this.pricingService.getAmount(list.$key, row);
-      return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
-    }
-    return row.requires.reduce((total, requirement) => {
+    const price = (row.requires || []).reduce((total, requirement) => {
       const requirementRow = list.getItemById(requirement.id, true);
       if (this.settings.expectToSellEverything) {
         // If you expect to sell everything, just divide by yield.
@@ -211,6 +205,13 @@ export class PricingComponent {
         return total + (this.getCraftCost(requirementRow) / (row.amount / row.amount_needed)) * requirement.amount;
       }
     }, 0);
+    // If that's a final item or the price is custom, no recursion.
+    if (this.pricingService.isCustomPrice(row) || price === 0) {
+      const prices = this.pricingService.getPrice(row);
+      const amounts = this.pricingService.getAmount(list.$key, row);
+      return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
+    }
+    return price;
   }
 
   /**
@@ -223,5 +224,11 @@ export class PricingComponent {
 
   public trackByItemFn(index: number, item: ListRow): number {
     return item.id;
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.cd.detectChanges();
+    }, 500);
   }
 }
