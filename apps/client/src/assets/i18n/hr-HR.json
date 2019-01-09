@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Potrebno je {{amount}} zadataka za prikupljanje svih predmeta",
   "WORKSHOP": {
     "Workshops": "Radionice",
-    "Add_lists": "Dodajte popise",
+    "Add_one_list": "Add a list",
     "Add_workshop": "Dodajte radionice",
     "Delete_message": "Brisanje radionice neće izbrisati popise u njoj, oni će samo biti vraćeni u popise bez radionica",
     "List_selection_title": "Odaberite popise za dodavanje u radionicu {{workshopName}}",
