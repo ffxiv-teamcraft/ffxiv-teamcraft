@@ -8,20 +8,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **desktop:** added disclaimer about broken auto updater for desktop app ([b765870](https://github.com/Supamiu/ffxiv-teamcraft/commit/b765870))
 * **desktop:** fixed random crash happening in desktop app ([8673861](https://github.com/Supamiu/ffxiv-teamcraft/commit/8673861))
 * **favorites:** fixed favorites display sometimes not showing lists ([6986eec](https://github.com/Supamiu/ffxiv-teamcraft/commit/6986eec))
 * **list-details:** airship prototype aren't acounted as masterbooks anymore ([4bd1e8d](https://github.com/Supamiu/ffxiv-teamcraft/commit/4bd1e8d))
-* **list-picker:** fiwed an issue with some broken lists breaking the list picker (again) ([a7ac4e1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a7ac4e1))
 * **pricing:** fixed an issue with vendor price not being used properly for precrafts ([84ea004](https://github.com/Supamiu/ffxiv-teamcraft/commit/84ea004))
-* **user-picker:** server search is no longer case sensitive ([9dcadb0](https://github.com/Supamiu/ffxiv-teamcraft/commit/9dcadb0))
 
 
 ### Features
 
 * **workshop:** you can now add a list to a workshop using the menu directly ([46091dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/46091dd))
-
-
 
 <a name="5.0.3"></a>
 ## [5.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.2...v5.0.3) (2019-01-08)
