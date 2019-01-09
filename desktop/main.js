@@ -43,7 +43,7 @@ if (!options.multi) {
       if (cmdLine) {
         let path = commandLine[1].substr(12);
         log.info(`Opening from second-instance : `, path);
-        win.webContents.send('navigate', path);
+        win && win.webContents.send('navigate', path);
         win.focus();
       }
       if (win.isMinimized()) win.restore();
@@ -191,19 +191,19 @@ app.on('activate', function() {
 });
 
 autoUpdater.on('checking-for-update', () => {
-  win.webContents.send('checking-for-update', true);
+  win && win.webContents.send('checking-for-update', true);
 });
 
 autoUpdater.on('download-progress', (progress) => {
-  win.webContents.send('download-progress', progress);
+  win && win.webContents.send('download-progress', progress);
 });
 
 autoUpdater.on('update-available', () => {
-  win.webContents.send('update-available', true);
+  win && win.webContents.send('update-available', true);
 });
 
 autoUpdater.on('update-not-available', () => {
-  win.webContents.send('update-available', false);
+  win && win.webContents.send('update-available', false);
 });
 
 autoUpdater.on('update-downloaded', () => {

@@ -110,6 +110,8 @@ export class ItemRowComponent implements OnInit {
     this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
         return (this.item.masterbooks || [])
+          // Ignore string ids, as they are draft ids
+          .filter(book => (<any>book.id.toString()) !== (<any>book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
       })

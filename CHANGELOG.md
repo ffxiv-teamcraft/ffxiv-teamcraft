@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.4"></a>
+## [5.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.2...v5.0.4) (2019-01-09)
+
+
+### Bug Fixes
+
+* **desktop:** fixed random crash happening in desktop app ([8673861](https://github.com/Supamiu/ffxiv-teamcraft/commit/8673861))
+* **favorites:** fixed favorites display sometimes not showing lists ([6986eec](https://github.com/Supamiu/ffxiv-teamcraft/commit/6986eec))
+* **list-details:** airship prototype aren't acounted as masterbooks anymore ([4bd1e8d](https://github.com/Supamiu/ffxiv-teamcraft/commit/4bd1e8d))
+* **pricing:** fixed an issue with vendor price not being used properly for precrafts ([84ea004](https://github.com/Supamiu/ffxiv-teamcraft/commit/84ea004))
+
+
+### Features
+
+* **workshop:** you can now add a list to a workshop using the menu directly ([46091dd](https://github.com/Supamiu/ffxiv-teamcraft/commit/46091dd))
+
 <a name="5.0.3"></a>
 ## [5.0.3](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.2...v5.0.3) (2019-01-08)
 

@@ -16,10 +16,13 @@ export class ListPickerService {
               private listsFacade: ListsFacade) {
   }
 
-  pickList(): Observable<List> {
-    return this.nzDrawer.create<ListPickerDrawerComponent, null, List>({
+  pickList(workshopView = false): Observable<List> {
+    return this.nzDrawer.create<ListPickerDrawerComponent, Partial<ListPickerDrawerComponent>, List>({
       nzTitle: this.translate.instant('Pick_a_list'),
-      nzContent: ListPickerDrawerComponent
+      nzContent: ListPickerDrawerComponent,
+      nzContentParams: {
+        workshopView: workshopView
+      }
     })
       .afterClose
       .pipe(

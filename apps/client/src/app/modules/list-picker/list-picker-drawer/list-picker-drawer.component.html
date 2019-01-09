@@ -1,7 +1,7 @@
-<button nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
+<button *ngIf="!workshopView" nz-button [nzType]="'primary'" class="new-list-button" (click)="pickNewList()" nzBlock>
   <i nz-icon type="plus"></i>&nbsp;{{'New_List' | translate}}
 </button>
-<nz-divider [nzText]="'Or' | translate"></nz-divider>
+<nz-divider *ngIf="!workshopView" [nzText]="'Or' | translate"></nz-divider>
 <nz-input-group [nzSuffix]="suffixIconSearch">
   <input type="text" [ngModel]="query$ | async" (ngModelChange)="query$.next($event)" nz-input
          [placeholder]="'LISTS.Lists_search_placeholder' | translate">
@@ -38,7 +38,7 @@
     </ng-template>
   </nz-list>
 </div>
-<div>
+<div *ngIf="!workshopView">
   <nz-list *ngFor="let workshopDisplay of workshops$ | async; trackBy: trackByWorkshopDisplay"
            [nzDataSource]="workshopDisplay.lists" [nzRenderItem]="workshopList" [nzHeader]="workshopHeader">
     <ng-template #workshopList let-list>
@@ -55,7 +55,8 @@
     </ng-template>
   </nz-list>
 </div>
-<nz-list [nzDataSource]="listsWithWriteAccess$ | async" [nzRenderItem]="sharedList" [nzHeader]="headerSharedLists">
+<nz-list *ngIf="!workshopView" [nzDataSource]="listsWithWriteAccess$ | async" [nzRenderItem]="sharedList"
+         [nzHeader]="headerSharedLists">
   <ng-template #sharedList let-list>
     <nz-list-item [nzActions]="[pickSharedList]">
       <nz-list-item-meta [nzTitle]="list.name" [nzDescription]="list.description">

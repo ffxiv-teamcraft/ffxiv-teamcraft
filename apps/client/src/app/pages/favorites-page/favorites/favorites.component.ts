@@ -34,8 +34,7 @@ export class FavoritesComponent {
       tap(lists => lists.forEach(list => this.listsFacade.loadCompact(list))),
       switchMap(lists => {
         return this.listsFacade.compacts$.pipe(
-          map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1)),
-          filter(compacts => compacts.length === lists.length)
+          map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
         );
       })
     );
@@ -46,7 +45,7 @@ export class FavoritesComponent {
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
       switchMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
-          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1))
+          map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1&& !r.notFound))
         );
       })
     );

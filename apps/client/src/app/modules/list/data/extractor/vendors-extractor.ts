@@ -44,7 +44,6 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         if (itemPartial.p === undefined) {
           continue;
         }
-        console.log(vendorId, itemPartial.p);
         const vendor: Vendor = {
           npcId: vendorId,
           price: itemPartial.p

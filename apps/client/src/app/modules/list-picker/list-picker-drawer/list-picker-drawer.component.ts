@@ -22,6 +22,8 @@ export class ListPickerDrawerComponent {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
+  workshopView: boolean;
+
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
 
     this.listsWithWriteAccess$ = combineLatest(this.listsFacade.listsWithWriteAccess$, this.query$).pipe(

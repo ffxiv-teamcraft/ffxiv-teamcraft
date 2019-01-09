@@ -15,6 +15,7 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { CoreModule } from '../../core/core.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CustomLinksModule } from '../custom-links/custom-links.module';
+import { ListPickerModule } from '../list-picker/list-picker.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CustomLinksModule } from '../custom-links/custom-links.module';
 
     DatabaseModule,
     ListModule,
+    ListPickerModule,
 
     StoreModule.forFeature('workshops', workshopsReducer, {
       initialState: workshopsInitialState

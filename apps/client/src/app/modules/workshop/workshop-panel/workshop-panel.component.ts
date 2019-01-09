@@ -15,6 +15,7 @@ import { ListsFacade } from '../../list/+state/lists.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
+import { ListPickerService } from '../../list-picker/list-picker.service';
 
 @Component({
   selector: 'app-workshop-panel',
@@ -51,12 +52,20 @@ export class WorkshopPanelComponent implements OnChanges {
 
   constructor(private workshopsFacade: WorkshopsFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
               private message: NzMessageService, private translate: TranslateService, private dialog: NzModalService,
-              private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade) {
+              private listsFacade: ListsFacade, private customLinksFacade: CustomLinksFacade,
+              private listPicker: ListPickerService) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.workshop$).pipe(
       map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
+  }
+
+  addList(): void {
+    this.listPicker.pickList(true).subscribe(list => {
+      this._workshop.listIds.push(list.$key);
+      this.workshopsFacade.updateWorkshop(this._workshop);
+    });
   }
 
   createCustomLink(workshop: Workshop, user: TeamcraftUser): void {
