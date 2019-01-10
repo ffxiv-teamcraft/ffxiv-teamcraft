@@ -11,7 +11,7 @@
   "List_fork_in_progress": "このリストをマイアカウントにコピー中です。",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "AUTH_ERRORS": {
-    "auth/credential-already-in-use": "このアカウントは既に使われている",
+    "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
     "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
@@ -749,7 +749,7 @@
   },
   "SEARCH_INTRO": {
     "Slogan": "制作、シェア、貢献",
-    "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを作られました",
+    "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "後援する（1回）",
     "Buy_a_tshirt": "Teamcraft Tシャツを買う",
@@ -761,7 +761,7 @@
       "Gathering_location": "採集物に関する情報を見つかり、アラームを作成し、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
       "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
-      "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
+      "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
     }
   }
 }
