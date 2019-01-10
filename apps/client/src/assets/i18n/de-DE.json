@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
     "Workshops": "Werkstätten",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Eine Liste hinzufügen",
     "Add_workshop": "Workshop hinzufügen",
     "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
     "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
