@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Requiert {{amount}} tâches pour tout obtenir",
   "WORKSHOP": {
     "Workshops": "Ateliers",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Ajouter une liste",
     "Add_workshop": "Ajouter un atelier",
     "Delete_message": "Supprimer un atelier ne supprimera pas les listes qui y sont rattachées, elles seront simplement renvoyées dans les listes sans atelier",
     "List_selection_title": "Choisissez les listes à ajouter à l'atelier {{workshopName}}",
