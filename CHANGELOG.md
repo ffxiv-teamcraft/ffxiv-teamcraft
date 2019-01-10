@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.5"></a>
+## [5.0.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.4...v5.0.5) (2019-01-10)
+
+
+### Bug Fixes
+
+* **pricing:** fixed an issue with first pricing opening showing wrong values ([8f0a885](https://github.com/Supamiu/ffxiv-teamcraft/commit/8f0a885))
+
+
+### Features
+
+* added Ize and Erwan as patreon supporters in the loading screen ([78c5585](https://github.com/Supamiu/ffxiv-teamcraft/commit/78c5585))
+
+
+
 <a name="5.0.4"></a>
 ## [5.0.4](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.2...v5.0.4) (2019-01-09)
 

@@ -50,6 +50,7 @@ export class PricingComponent implements AfterViewInit {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
+        this.updateCosts(list);
       }),
       shareReplay(1)
     );
@@ -126,6 +127,7 @@ export class PricingComponent implements AfterViewInit {
       this.costs[item.id] = this._getCraftCost(item, list);
     });
     this.spendingTotal = this.getSpendingTotal(list);
+    this.cd.detectChanges();
   }
 
   public save(list: List): void {
@@ -154,7 +156,7 @@ export class PricingComponent implements AfterViewInit {
     this.message.success(this.translate.instant('PRICING.Content_copied'));
   }
 
-  private getSpendingTotal(list: List): number {
+  public getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {
       let cost = this.getCraftCost(item);
       if (this.pricingService.isCustomPrice(item)) {

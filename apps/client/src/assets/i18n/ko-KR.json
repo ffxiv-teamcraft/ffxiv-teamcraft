@@ -58,7 +58,7 @@
   "Requires_x_ventures": "총 {{amount}}회의 집사 수행이 필요합니다.",
   "WORKSHOP": {
     "Workshops": "공방",
-    "Add_lists": "목록 추가",
+    "Add_one_list": "목록 추가",
     "Add_workshop": "공방 추가",
     "Delete_message": "공방이 삭제되더라도 내부의 목록은 지워지지 않고 공방이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "공방 {{workshopName}} 에 추가할 목록 선택",
@@ -398,7 +398,7 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, 사용자 정의 레이아웃을 만들기 위해서는 +버튼을 누르세요."
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다."
     },
     "LAYOUT": {
       "Filter": "필터",

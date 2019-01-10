@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Erfordert insgesamt {{amount}} Unternehmungen",
   "WORKSHOP": {
     "Workshops": "Werkstätten",
-    "Add_lists": "Liste hinzufügen",
+    "Add_one_list": "Eine Liste hinzufügen",
     "Add_workshop": "Workshop hinzufügen",
     "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
     "List_selection_title": "Listen auswählen, um sie zu Workshop {{workshopName}} hinzuzufügen",
@@ -294,7 +294,7 @@
     "Remove_character": "Charakter entfernen",
     "Jobs": "Jobs",
     "Stats": "Attribute",
-    "View_on_apkallu_falls": "Auf Apkallu Falls öffnen",
+    "View_on_apkallu_falls": "Auf ApkalluFalls.com öffnen",
     "Masterbooks": "Meisterbücher",
     "Patreon_supporter": "Patreon-Unterstützer",
     "Patreon_features": "Patreon-Unterstützer Features",
@@ -732,7 +732,7 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_mogboard": "Mehr Details auf mogboard"
+    "More_on_mogboard": "Mehr Details auf mogboard.com"
   },
   "COMMENTS": {
     "Title": "Kommentare"

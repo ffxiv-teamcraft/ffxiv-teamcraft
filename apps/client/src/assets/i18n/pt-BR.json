@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Requer {{amount}} investimentos para conseguir tudo",
   "WORKSHOP": {
     "Workshops": "Oficinas",
-    "Add_lists": "Adicionar listas",
+    "Add_one_list": "Add a list",
     "Add_workshop": "Adicionar uma oficina",
     "Delete_message": "Ao eliminar uma oficina não eliminará as listas lá contidas, as mesmas só serão recuperadas em listas individuais",
     "List_selection_title": "Selecione a lista para adicionar à oficina {{workshopName}}",
