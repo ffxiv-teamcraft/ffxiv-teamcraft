@@ -58,7 +58,7 @@
   "Requires_x_ventures": "総 {{amount}} 回のリテイナーベンチャーが必要です。",
   "WORKSHOP": {
     "Workshops": "地下工房",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "リストを追加する",
     "Add_workshop": "地下工房を追加する",
     "Delete_message": "工房が削除されたとしても、リストは削除されず、工房にないリストに戻ります",
     "List_selection_title": "工房 {{workshopName}} に追加するリストを選択する",
