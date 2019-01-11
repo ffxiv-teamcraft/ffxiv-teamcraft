@@ -83,6 +83,13 @@
                     [nzTitle]="'LIST.Add_all_alarms' | translate" (click)="createAlarms(list)">
               <i nz-icon type="clock-circle-o"></i>
             </button>
+            <button nz-button (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzType]="'primary'" nz-tooltip
+                    [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                    *ngIf="(permissionLevel$ | async) > 10"
+                    ngxClipboard [cbContent]="getLink(list)"
+                    nzSize="small"(cbOnSuccess)="afterLinkCopy()">
+              <i nz-icon type="share-alt"></i>
+            </button>
             <button nz-button nzShape="circle" nzSize="small" nz-tooltip
                     *ngIf="display$ | async as listDisplay"
                     [nzTitle]="'LIST.Copy_list_as_text' | translate" ngxClipboard
