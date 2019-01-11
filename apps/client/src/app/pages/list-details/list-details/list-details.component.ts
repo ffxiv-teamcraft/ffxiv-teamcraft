@@ -27,6 +27,7 @@ import { DiscordWebhookService } from '../../../core/discord/discord-webhook.ser
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-list-details',
@@ -78,7 +79,7 @@ export class ListDetailsComponent implements OnInit {
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
-              private l12n: LocalizedDataService) {
+              private l12n: LocalizedDataService, private linkTools: LinkToolsService) {
     this.list$ = combineLatest(this.listsFacade.selectedList$, this.permissionLevel$).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
@@ -134,6 +135,14 @@ export class ListDetailsComponent implements OnInit {
       delete list.teamId;
       this.listsFacade.updateList(list);
     });
+  }
+
+  getLink(list: List): string {
+    return this.linkTools.getLink(`/list/${list.$key}`);
+  }
+
+  afterLinkCopy(): void {
+    this.message.success(this.translate.instant('Share_link_copied'));
   }
 
   assignTeam(list: List, team: Team): void {
