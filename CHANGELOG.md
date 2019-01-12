@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.7"></a>
+## [5.0.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.6...v5.0.7) (2019-01-12)
+
+
+### Bug Fixes
+
+* **alarms:** changed spawned and played colors for alarms ([43b6955](https://github.com/Supamiu/ffxiv-teamcraft/commit/43b6955)), closes [#697](https://github.com/Supamiu/ffxiv-teamcraft/issues/697)
+* **simulator:** fixed link to the item details on the icon ([3af6491](https://github.com/Supamiu/ffxiv-teamcraft/commit/3af6491))
+
+
+### Features
+
+* **search:** "only recipes" check is now persisted inside the localstorage ([28fb058](https://github.com/Supamiu/ffxiv-teamcraft/commit/28fb058))
+
+
+
 <a name="5.0.6"></a>
 ## [5.0.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.4...v5.0.6) (2019-01-11)
 
@@ -9,7 +25,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * **pricing:** fixed an issue with first pricing opening showing wrong values ([8f0a885](https://github.com/Supamiu/ffxiv-teamcraft/commit/8f0a885))
-* fixed an issue with wrong location nme for fishes ([5e84abd](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e84abd))
+* fixed an issue with wrong location name for fishes ([5e84abd](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e84abd))
 * **pricing:** fixed an issue with incorrect pricing in some cases ([e088da3](https://github.com/Supamiu/ffxiv-teamcraft/commit/e088da3))
 
 
