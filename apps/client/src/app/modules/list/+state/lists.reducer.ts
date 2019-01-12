@@ -82,8 +82,7 @@ export function listsReducer(
       state = {
         ...state,
         listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
-          action.payload
+          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       if (action.updateCompact && state.compacts.find(l => l.$key === action.payload.$key) !== undefined) {
