@@ -286,7 +286,7 @@
                fxLayoutGap.lt-sm="10px">
             <div fxLayout="row" fxLayoutGap="10px" *ngIf="!custom">
               <div class="avatar">
-                <app-item-icon [icon]="item.icon" [width]="42" *ngIf="true | ifMobile: false"></app-item-icon>
+                <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="42" *ngIf="true | ifMobile: false"></app-item-icon>
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px">
