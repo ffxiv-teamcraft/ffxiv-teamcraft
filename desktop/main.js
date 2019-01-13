@@ -220,6 +220,10 @@ autoUpdater.on('update-downloaded', () => {
   });
 });
 
+ipcMain.on('show-devtools', () => {
+  win.webContents.openDevTools();
+});
+
 ipcMain.on('notification', (event, config) => {
   // Override icon for now, as getting the icon from url doesn't seem to be working properly.
   config.icon = nativeIcon;
@@ -351,7 +355,7 @@ ipcMain.on('oauth', (event, providerId) => {
       client_id: 'MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE',
       redirect_uri: 'http://localhost'
     };
-    oauth(provider).getCode({scope: 'identity'}).then(code => {
+    oauth(provider).getCode({ scope: 'identity' }).then(code => {
       event.sender.send('oauth-reply', code);
     });
   }

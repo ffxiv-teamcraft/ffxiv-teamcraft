@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.9"></a>
+## [5.0.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.8...v5.0.9) (2019-01-13)
+
+
+### Bug Fixes
+
+* fixed a bug with some layouts freezing the app entirely ([5b0c7d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/5b0c7d1))
+* **list-panel:** fixed an issue with tags showing twice ([7ec391a](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ec391a))
+* fixed an issue with +/- input when item is done ([365fefe](https://github.com/Supamiu/ffxiv-teamcraft/commit/365fefe))
+* fixed an issue with new profiles and the "show only what I can do" checkbox ([da98309](https://github.com/Supamiu/ffxiv-teamcraft/commit/da98309))
+
+
+### Features
+
+* **desktop:** added a button in settings to show devtools when using desktop app ([cf7f0df](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf7f0df))
+* **profile:** "Save for All" doesn't propagate specialist state anymore ([33f093f](https://github.com/Supamiu/ffxiv-teamcraft/commit/33f093f)), closes [#699](https://github.com/Supamiu/ffxiv-teamcraft/issues/699)
+
+
+
 <a name="5.0.8"></a>
 ## [5.0.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.7...v5.0.8) (2019-01-13)
 
