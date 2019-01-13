@@ -149,6 +149,10 @@ export class ListPanelComponent {
     updateSubject.next(inputValue);
   }
 
+  getTags(): string[] {
+    return this._list.tags.filter((tag, i) => this._list.tags.indexOf(tag) === i);
+  }
+
   assignTeam(compact: List, team: Team): void {
     this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
