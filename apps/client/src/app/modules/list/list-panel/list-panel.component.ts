@@ -150,7 +150,7 @@ export class ListPanelComponent {
   }
 
   getTags(): string[] {
-    return this._list.tags.filter((tag, i) => this._list.tags.indexOf(tag) === i);
+    return (this._list.tags || []).filter((tag, i) => this._list.tags.indexOf(tag) === i);
   }
 
   assignTeam(compact: List, team: Team): void {
