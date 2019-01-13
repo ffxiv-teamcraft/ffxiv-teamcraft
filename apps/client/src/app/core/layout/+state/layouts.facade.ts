@@ -77,13 +77,13 @@ export class LayoutsFacade {
                   orderedAccepted = orderedAccepted.filter(item => {
                     if (item.gatheredBy !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][item.gatheredBy.type];
-                      const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+                      const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
                       return set && set.level >= item.gatheredBy.level;
                     }
                     if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
                       return item.craftedBy.reduce((canCraft, craft) => {
                         const jobId = craft.jobId;
-                        const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                        const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                         return (set && set.level >= craft.level) || canCraft;
                       }, false);
                     }
@@ -119,13 +119,13 @@ export class LayoutsFacade {
           rows = rows.filter(item => {
             if (item.gatheredBy !== undefined) {
               const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(item.gatheredBy.type);
-              const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+              const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
               return set && set.level >= item.gatheredBy.level;
             }
             if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
               return item.craftedBy.reduce((canCraft, craft) => {
                 const jobId = craft.jobId;
-                const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                 return (set && set.level >= craft.level) || canCraft;
               }, false);
             }
