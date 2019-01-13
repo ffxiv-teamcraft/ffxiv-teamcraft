@@ -38,6 +38,7 @@ export enum ListTag {
   BLM = 'BLM',
   SMN = 'SMN',
   RDM = 'RDM',
+  BLU = 'BLU',
 
   CRP = 'CRP',
   BSM = 'BSM',
