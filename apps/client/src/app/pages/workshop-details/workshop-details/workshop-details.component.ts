@@ -37,7 +37,8 @@ export class WorkshopDetailsComponent implements OnInit {
       filter(workshop => !workshop.notFound),
       switchMap(workshop => {
         return this.listsFacade.getWorkshopCompacts(workshop.listIds);
-      })
+      }),
+      map(lists => lists.filter(list => list !== undefined && !list.notFound))
     );
 
     this.author$ = this.workshop$.pipe(
