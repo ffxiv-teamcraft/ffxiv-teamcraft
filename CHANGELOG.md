@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.8"></a>
+## [5.0.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.7...v5.0.8) (2019-01-13)
+
+
+### Bug Fixes
+
+* fixed an issue showing infinite loader when list isn't found ([1626962](https://github.com/Supamiu/ffxiv-teamcraft/commit/1626962))
+* fixed an issue with lists reordering when you change item amounts ([ea29372](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea29372))
+* **alarms:** fixed colors for spawned and played state ([b321403](https://github.com/Supamiu/ffxiv-teamcraft/commit/b321403))
+
+
+
 <a name="5.0.7"></a>
 ## [5.0.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.6...v5.0.7) (2019-01-12)
 

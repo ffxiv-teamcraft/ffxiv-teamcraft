@@ -90,7 +90,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined && !list.notFound));
+  selectedList$ = this.store.select(listsQuery.getSelectedList).pipe(filter(list => list !== undefined));
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
@@ -110,6 +110,9 @@ export class ListsFacade {
         if (!verified) {
           fcId = null;
         }
+      }
+      if (list.notFound) {
+        return 20;
       }
       return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
     }),
