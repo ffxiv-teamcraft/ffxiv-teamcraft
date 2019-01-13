@@ -152,8 +152,8 @@ export class AuthFacade {
     this.store.dispatch(new ToggleMasterbooks(books));
   }
 
-  public saveSet(set: GearSet): void {
-    this.store.dispatch(new SaveSet(set));
+  public saveSet(set: GearSet, ignoreSpecialist = false): void {
+    this.store.dispatch(new SaveSet(set, ignoreSpecialist));
   }
 
   public saveDefaultConsumables(consumables: DefaultConsumables): void {

@@ -46,7 +46,7 @@ export class StatsPopupComponent implements OnInit {
 
   saveForAll(set: GearSet): void {
     [8, 9, 10, 11, 12, 13, 14, 15].forEach(jobId => {
-      this.authFacade.saveSet({ ...set, jobId: jobId });
+      this.authFacade.saveSet({ ...set, jobId: jobId }, true);
     });
     this.modalRef.close();
   }

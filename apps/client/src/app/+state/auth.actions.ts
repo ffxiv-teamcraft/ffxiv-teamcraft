@@ -205,7 +205,7 @@ export class ToggleMasterbooks implements Action {
 export class SaveSet implements Action {
   readonly type = AuthActionTypes.SaveSet;
 
-  constructor(public readonly set: GearSet) {
+  constructor(public readonly set: GearSet, public readonly ignoreSpecialist: boolean) {
   }
 }
 
