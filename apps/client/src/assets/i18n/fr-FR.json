@@ -283,6 +283,7 @@
     "Nickname": "Pseudo",
     "Nickname_used": "Pseudo déjà utilisé",
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
+    "Show_devtools": "Show dev tools",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
