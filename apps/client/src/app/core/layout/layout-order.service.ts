@@ -46,13 +46,10 @@ export class LayoutOrderService {
       const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
       const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
       if (aJobId === bJobId) {
-        if (aLevel > bLevel) {
-          return -1;
-        } else if (aLevel > bLevel) {
-          return 1;
-        } else {
-          return aName > bName ? 1 : -1;
+        if(aLevel === bLevel){
+         return aName > bName ? -1 : 1
         }
+        return aLevel - bLevel;
       } else {
         return aJobId - bJobId;
       }
