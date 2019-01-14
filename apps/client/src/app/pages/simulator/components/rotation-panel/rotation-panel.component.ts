@@ -16,6 +16,7 @@ import { PermissionLevel } from '../../../../core/database/permissions/permissio
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -46,7 +47,8 @@ export class RotationPanelComponent {
   constructor(private registry: CraftingActionsRegistry, private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
-              private authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade) {
+              private authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
+              private router: Router) {
     this.actions$ = this.rotation$.pipe(
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
@@ -56,6 +58,10 @@ export class RotationPanelComponent {
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
+  }
+
+  openRotation(rotation: CraftingRotation): void {
+    this.router.navigateByUrl(this.getRouterLink(rotation));
   }
 
   createCustomLink(rotation: CraftingRotation, user: TeamcraftUser): void {
