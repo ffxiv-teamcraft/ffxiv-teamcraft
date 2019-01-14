@@ -120,10 +120,16 @@ export abstract class CraftingAction {
     let id = clvl - rlvl;
     let ingenuityEntry = ingenuityData.find(row => row.Id === id);
     let ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
-    while (ingenuityMultiplier === null || ingenuityMultiplier === undefined) {
+    let tries = 0;
+    while (ingenuityMultiplier === null || ingenuityMultiplier === undefined && tries < 100) {
+      tries++;
       id > 0 ? id++ : id--;
       ingenuityEntry = ingenuityData.find(row => row.Id === id);
       ingenuityMultiplier = ingenuityEntry === undefined ? undefined : ingenuityEntry[`${type}Ingenuity${level}`];
+    }
+    // If we tried too many times, just return 1, we don't have ingenuity data for that.
+    if (tries >= 100) {
+      ingenuityMultiplier = 1.0;
     }
     return ingenuityMultiplier;
   }
