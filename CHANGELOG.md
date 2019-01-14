@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.10"></a>
+## [5.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.9...v5.0.10) (2019-01-14)
+
+
+### Bug Fixes
+
+* fixed style for devtools button in desktop app ([11a2f27](https://github.com/Supamiu/ffxiv-teamcraft/commit/11a2f27))
+* **simulator:** fixed a freeze happening in some cases with byregot's blessing ([7f116f8](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f116f8))
+* **workshop:** fixed an issue with workshop details when some of the lists were deleted ([8160f91](https://github.com/Supamiu/ffxiv-teamcraft/commit/8160f91))
+
+
+### Features
+
+* lists and rotations can now be opened using double click on name ([43993a3](https://github.com/Supamiu/ffxiv-teamcraft/commit/43993a3)), closes [#700](https://github.com/Supamiu/ffxiv-teamcraft/issues/700)
+* **gathering-location:** added compact display toggle ([546dd60](https://github.com/Supamiu/ffxiv-teamcraft/commit/546dd60)), closes [#684](https://github.com/Supamiu/ffxiv-teamcraft/issues/684)
+* **inventory:** items in inventory are now sorted by id ([c07ef3b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c07ef3b))
+* **layout:** recipe default order type is now JOB, followed by LEVEL ([4f2acb6](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f2acb6))
+* **list:** show a check mark next to panel name if it's collapsed because it's done ([d1e25ba](https://github.com/Supamiu/ffxiv-teamcraft/commit/d1e25ba))
+
+
+
 <a name="5.0.9"></a>
 ## [5.0.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.8...v5.0.9) (2019-01-13)
 
