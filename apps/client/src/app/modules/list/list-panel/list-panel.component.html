@@ -22,7 +22,7 @@
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div class="panel-header" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
-      <div nz-col nzSm="22" nzMd="4">
+      <div nz-col nzSm="22" nzMd="4" (dblclick)="openList()">
         {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
       </div>
       <div class="author-avatar" *ngIf="!hideAvatar && _list.authorId !== undefined">

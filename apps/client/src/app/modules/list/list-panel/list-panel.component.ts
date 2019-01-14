@@ -23,6 +23,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { Team } from '../../../model/team/team';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-panel',
@@ -76,7 +77,8 @@ export class ListPanelComponent {
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade) {
+              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
+              private router: Router) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
@@ -100,6 +102,12 @@ export class ListPanelComponent {
 
   getLink(): string {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
+  }
+
+  openList(): void {
+    if (!this.publicDisplay) {
+      this.router.navigate(['/list', this._list.$key]);
+    }
   }
 
   cloneList(compact: List): void {

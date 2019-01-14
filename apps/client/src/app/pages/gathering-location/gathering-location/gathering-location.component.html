@@ -4,9 +4,16 @@
            #searchInput (keyup)="query$.next(searchInput.value)" autofocus>
   </nz-input-group>
 </div>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+  <nz-switch [(ngModel)]="compactDisplay" (ngModelChange)="saveCompactDisplay($event)"></nz-switch>
+  <div>
+    {{'Compact_display' | translate}}
+  </div>
+</div>
 <div class="results" *ngIf="results$ | async as results; else noResults">
-  <div *ngFor="let node of results">
-    <nz-card [nzCover]="map" [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]">
+  <div *ngFor="let node of results" [class.compact-node]="compactDisplay">
+    <nz-card [nzCover]="compactDisplay?null:map"
+             [nzActions]="(canCreateAlarm(alarms$ | async, node) && node.timed)?[actionAlarm]:[]">
       <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title" [nzDescription]="description">
       </nz-card-meta>
       <ng-template #itemIcon>

@@ -32,12 +32,16 @@ export class GatheringLocationComponent {
 
   showIntro = true;
 
+  compactDisplay = false;
+
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService) {
 
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
 
     this.alarms$ = this.alarmsFacade.allAlarms$;
+
+    this.compactDisplay = localStorage.getItem('gathering-location:compact') === 'true';
 
     this.results$ = this.query$.pipe(
       debounceTime(500),
@@ -218,6 +222,10 @@ export class GatheringLocationComponent {
         && alarm.zoneId === generatedAlarm.zoneId
         && alarm.areaId === generatedAlarm.areaId;
     }) === undefined;
+  }
+
+  public saveCompactDisplay(value: boolean): void {
+    localStorage.setItem('gathering-location:compact', value.toString());
   }
 
   private generateAlarm(node: any): Partial<Alarm> {

@@ -33,7 +33,13 @@ export class Inventory {
 
   getDisplay(): { id: number, icon: number, amount: number }[][] {
     const display = [];
-    const grid = [...this.grid];
+    const grid = [...this.grid].sort((a, b) => {
+      if (a.id === b.id) {
+        // If it's the same item, order by amount DESC
+        return b.amount - a.amount;
+      }
+      return a.id - b.id;
+    });
     while (grid.length) {
       display.push(grid.splice(0, 35));
     }

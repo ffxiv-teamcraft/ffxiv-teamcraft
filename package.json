@@ -30,6 +30,7 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "Miu Asakura",
+      "certificateSubjectName": "Miu Asakura",
       "publish": [
         "github"
       ]
