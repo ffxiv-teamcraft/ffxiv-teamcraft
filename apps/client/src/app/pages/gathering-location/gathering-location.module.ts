@@ -14,6 +14,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     CommonModule,
     CoreModule,
     FlexLayoutModule,
+    FormsModule,
 
     RouterModule.forChild(routes),
 
