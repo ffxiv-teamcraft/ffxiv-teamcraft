@@ -5,6 +5,7 @@ const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
+log.transports.file.level = 'info';
 const express = require('express');
 
 const oauth = require('./oauth.js');
@@ -120,9 +121,9 @@ function createWindow() {
 
     win.focus();
     win.show();
-    autoUpdater.checkForUpdatesAndNotify();
+    autoUpdater.checkForUpdates();
     updateInterval = setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify();
+      autoUpdater.checkForUpdates();
     }, 300000);
   });
 
@@ -191,6 +192,7 @@ app.on('activate', function() {
 });
 
 autoUpdater.on('checking-for-update', () => {
+  log.log('Checking for update');
   win && win.webContents.send('checking-for-update', true);
 });
 
@@ -199,14 +201,17 @@ autoUpdater.on('download-progress', (progress) => {
 });
 
 autoUpdater.on('update-available', () => {
+  log.log('Update available');
   win && win.webContents.send('update-available', true);
 });
 
 autoUpdater.on('update-not-available', () => {
+  log.log('No update found');
   win && win.webContents.send('update-available', false);
 });
 
 autoUpdater.on('update-downloaded', () => {
+  log.log('Update downloaded');
   clearInterval(updateInterval);
   dialog.showMessageBox({
     type: 'info',
@@ -231,6 +236,7 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('run-update', () => {
+  log.log('Run update setup');
   autoUpdater.quitAndInstall(true, true);
 });
 
@@ -314,7 +320,8 @@ ipcMain.on('navigated', (event, uri) => {
 });
 
 ipcMain.on('update:check', () => {
-  autoUpdater.checkForUpdatesAndNotify();
+  log.log('Renderer asked for an update check');
+  autoUpdater.checkForUpdates();
 });
 
 // Oauth stuff
