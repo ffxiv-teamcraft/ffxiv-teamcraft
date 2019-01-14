@@ -9,7 +9,7 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
@@ -98,7 +98,8 @@ export class LayoutsFacade {
                   tiers: row.tiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                  layoutRow: row
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
@@ -141,7 +142,8 @@ export class LayoutsFacade {
           zoneBreakdown: layout.recipeZoneBreakdown,
           tiers: false,
           filterChain: '',
-          collapsed: false
+          collapsed: false,
+          layoutRow: null
         };
       })
     );

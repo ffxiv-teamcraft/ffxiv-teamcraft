@@ -1,4 +1,5 @@
 import { ListRow } from '../../modules/list/model/list-row';
+import { LayoutRow } from './layout-row';
 
 export interface LayoutRowDisplay {
   title: string;
@@ -9,4 +10,5 @@ export interface LayoutRowDisplay {
   filterChain: string;
   hideIfEmpty: boolean;
   collapsed: boolean;
+  layoutRow: LayoutRow;
 }

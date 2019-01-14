@@ -31,7 +31,11 @@
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">
-      <div>{{displayRow.title | translate}}</div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{displayRow.title | translate}}</div>
+        <i nz-icon type="check"
+           *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"></i>
+      </div>
       <div fxLayout="row" fxLayoutGap="10px">
         <button nz-button (click)="$event.stopPropagation()" *ngIf="hasTrades"
                 nzSize="small" nzShape="circle" nz-tooltip (click)="openTotalPricePopup()"
