@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
+import { craftingLog } from '../data/sources/crafting-log';
 
 @Injectable()
 export class LayoutOrderService {
@@ -31,29 +32,23 @@ export class LayoutOrderService {
     'LEVEL': (a, b) => {
       const aLevel = this.getLevel(a);
       const bLevel = this.getLevel(b);
-      const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
-      const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
       // If same level, order by name for these two
-      return aLevel === bLevel ? aName > bName ? 1 : -1 : aLevel - bLevel;
+      return aLevel === bLevel ? this.orderFunctions['NAME'](a, b) : aLevel - bLevel;
     },
     'JOB': (a, b) => {
       const aJobId = this.getJobId(a);
       const bJobId = this.getJobId(b);
-      // If same job, order by level for these two
-      const aLevel = this.getLevel(a);
-      const bLevel = this.getLevel(b);
-      // If same level, order by name
-      const aName: string = this.localizedData.getItem(a.id)[this.translate.currentLang];
-      const bName: string = this.localizedData.getItem(b.id)[this.translate.currentLang];
       if (aJobId === bJobId) {
-        if(aLevel === bLevel){
-         return aName > bName ? -1 : 1
+        const aIndex = this.getLogIndex(a);
+        const bIndex = this.getLogIndex(b);
+        if (aIndex > -1 && bIndex > -1) {
+          return aIndex - bIndex;
         }
-        return aLevel - bLevel;
+        return this.orderFunctions['LEVEL'](a, b);
       } else {
         return aJobId - bJobId;
       }
-    }
+    },
   };
 
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService) {
@@ -66,6 +61,20 @@ export class LayoutOrderService {
     }
     const orderedASC = data.sort(ordering);
     return order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse();
+  }
+
+  private getLogIndex(row: ListRow): number {
+    if (row.craftedBy === undefined || row.craftedBy.length === 0) {
+      return -1;
+    }
+    const craft = row.craftedBy[0];
+    const logEntry = craftingLog[craft.jobId - 8];
+    // Log entry is undefined if it's an airship
+    if (logEntry === undefined) {
+      return -1;
+    }
+    // We multiply index by craft.jobId because we want it to keep the job order too
+    return logEntry.indexOf(+row.recipeId) * craft.jobId;
   }
 
   private getJobId(row: ListRow): number {

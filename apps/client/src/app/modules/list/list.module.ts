@@ -45,6 +45,7 @@ import { CommentsModule } from '../comments/comments.module';
 import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListCompletionPopupComponent } from './list-completion-popup/list-completion-popup.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
+import { LayoutModule } from '../../core/layout/layout.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -81,6 +82,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     CommentsModule,
     CustomLinksModule,
     ItemIconModule,
+    LayoutModule,
 
     ClipboardModule,
     NgZorroAntdModule,
