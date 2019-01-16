@@ -714,9 +714,9 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Member joined",
-      "MEMBER_LEFT": "Member left",
-      "ITEM_ADDED": "Item added",
+      "MEMBER_JOINED": "Un miembro se ha unido",
+      "MEMBER_LEFT": "Un miembro se ha ido",
+      "ITEM_ADDED": "Artículo agregado",
       "ITEM_REMOVED": "Item removed",
       "LIST_ADDED": "List added",
       "LIST_REMOVED": "List removed",
