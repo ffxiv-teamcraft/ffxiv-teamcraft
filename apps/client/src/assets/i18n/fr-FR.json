@@ -130,6 +130,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir l'overlay",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
