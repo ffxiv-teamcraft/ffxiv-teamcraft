@@ -4,14 +4,14 @@
   "Pick_a_fc": "フリーカンパニーを選択する",
   "Pick_a_rotation": "制作スキル回しを選ぶ",
   "Pick_a_recipe": "制作レシピを選ぶ",
-  "FC_name": "フリーカンパニー前",
+  "FC_name": "フリーカンパニー名",
   "Saving_in_database": "サーバーにデータを保存します。",
-  "See_on_map": "地図に見られます",
+  "See_on_map": "地図で見る",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピーしてます",
-  "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせてください。",
+  "List_fork_in_progress": "このリストをマイアカウントにコピー中です。",
+  "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "AUTH_ERRORS": {
-    "auth/credential-already-in-use": "このアカウントは既に使われている",
+    "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
     "auth/user-not-found": "メールアドレスまたはパスワードが間違っています",
     "auth/wrong-password": "メールアドレスまたはパスワードが間違っています"
@@ -130,6 +130,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
@@ -283,6 +284,7 @@
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "後援者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
+    "Show_devtools": "Devツールを表示",
     "COPY_TYPE": {
       "Classic": "アイテム名をコピーする",
       "Isearch": "/isearchマクロをコピーする"
@@ -440,6 +442,7 @@
     "BLM": "黒魔道士",
     "SMN": "召喚士",
     "RDM": "赤魔道士",
+    "BLU": "青魔道士",
     "CRP": "木工",
     "BSM": "鍛冶",
     "ARM": "甲冑",
@@ -749,7 +752,7 @@
   },
   "SEARCH_INTRO": {
     "Slogan": "制作、シェア、貢献",
-    "Lists_created_counter": "{{amount}} 個のリストが FFXIV Teamcraftを作られました",
+    "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "後援する（1回）",
     "Buy_a_tshirt": "Teamcraft Tシャツを買う",
@@ -761,7 +764,7 @@
       "Gathering_location": "採集物に関する情報を見つかり、アラームを作成し、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
       "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
-      "Macro_translation": "マクロを見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
+      "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
     }
   }
 }

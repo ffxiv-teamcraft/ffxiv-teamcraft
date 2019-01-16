@@ -1949,7 +1949,7 @@ export const mapIds = [
   },
   {
     'id': 488,
-    'name': null
+    'name': ''
   },
   {
     'id': 489,
@@ -1957,7 +1957,7 @@ export const mapIds = [
   },
   {
     'id': 490,
-    'name': null
+    'name': 'Blue Sky'
   },
   {
     'id': 491,
@@ -1997,6 +1997,6 @@ export const mapIds = [
   },
   {
     'id': 500,
-    'name': null
+    'name': 'The Ghimlyt Dark'
   }
 ];

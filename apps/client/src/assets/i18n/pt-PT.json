@@ -130,6 +130,7 @@
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
@@ -283,6 +284,7 @@
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
     "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
+    "Show_devtools": "Show dev tools",
     "COPY_TYPE": {
       "Classic": "Copiar nome to item",
       "Isearch": "Copiar macro /isearch"
@@ -440,6 +442,7 @@
     "BLM": "BLM",
     "SMN": "SMN",
     "RDM": "RDM",
+    "BLU": "BLU",
     "CRP": "CRP",
     "BSM": "BSM",
     "ARM": "ARM",

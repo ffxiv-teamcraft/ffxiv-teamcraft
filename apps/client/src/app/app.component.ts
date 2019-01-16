@@ -37,6 +37,7 @@ import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { ObservableMedia } from '@angular/flex-layout';
+import { LayoutsFacade } from './core/layout/+state/layouts.facade';
 
 declare const gtag: Function;
 
@@ -96,7 +97,8 @@ export class AppComponent implements OnInit {
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
-              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia) {
+              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: ObservableMedia,
+              private layoutsFacade: LayoutsFacade) {
 
     this.renderer.addClass(document.body, this.settings.theme.className);
 
@@ -220,6 +222,7 @@ export class AppComponent implements OnInit {
     this.teamsFacade.loadMyTeams();
     this.rotationsFacade.loadMyRotations();
     this.customLinksFacade.loadMyCustomLinks();
+    this.layoutsFacade.loadAll();
 
     if (this.media.isActive('lt-md')) {
       this.collapsedSidebar = true;

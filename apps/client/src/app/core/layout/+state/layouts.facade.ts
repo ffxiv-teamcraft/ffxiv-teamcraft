@@ -9,11 +9,10 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map, shareReplay, withLatestFrom } from 'rxjs/operators';
+import { map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { LayoutRow } from '../layout-row';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -25,7 +24,12 @@ export class LayoutsFacade {
 
   selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
     .pipe(
-      filter(layout => layout !== undefined),
+      map(layout => {
+        if (layout === undefined) {
+          return this.layoutService.defaultLayout;
+        }
+        return layout;
+      }),
       map(layout => {
         layout.rows = layout.rows.sort((a, b) => a.index - b.index);
         return layout;
@@ -149,10 +153,11 @@ export class LayoutsFacade {
     );
   }
 
-  public createNewLayout(name = 'New layout', content?: LayoutRow[]): void {
+  public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
     const layout = new ListLayout();
-    layout.name = name;
-    layout.rows = content || this.layoutService.defaultLayout.rows;
+    Object.assign(layout, baseLayout);
+    layout.name = (baseLayout && baseLayout.name) || name;
+    layout.rows = layout.rows || this.layoutService.defaultLayout.rows;
     this.store.dispatch(new CreateLayout(layout));
   }
 

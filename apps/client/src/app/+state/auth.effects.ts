@@ -117,7 +117,7 @@ export class AuthEffects {
         this.patreonService.refreshToken(user);
       }
     }),
-    distinctUntilChanged((a,b) => JSON.stringify(a) === JSON.stringify(b)),
+    distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
     map(user => new UserFetched(user))
   );
 
@@ -156,6 +156,9 @@ export class AuthEffects {
   @Effect()
   updateCharactersList$ = this.actions$.pipe(
     ofType(AuthActionTypes.AddCharacter, AuthActionTypes.UserFetched),
+    distinctUntilChanged((userFetched: UserFetched, previousUserFetched: UserFetched) => {
+      return (userFetched.user && userFetched.user.$key) === (previousUserFetched.user && previousUserFetched.user.$key);
+    }),
     withLatestFrom(this.store),
     mergeMap(([, state]) => {
       const missingCharacters = state.auth.user.lodestoneIds.filter(lodestoneId => {

@@ -43,7 +43,7 @@ export class LayoutEditorComponent {
       )
       .subscribe((data: string) => {
         const layoutContent = JSON.parse(atob(data));
-        this.layoutsFacade.createNewLayout('Imported layout', this.serializer.deserialize<LayoutRow>(layoutContent, [LayoutRow]));
+        this.layoutsFacade.createNewLayout('Imported layout', this.serializer.deserialize<ListLayout>(layoutContent, ListLayout));
       });
   }
 

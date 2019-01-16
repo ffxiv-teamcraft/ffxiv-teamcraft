@@ -52,6 +52,7 @@ export class ItemRowComponent implements OnInit {
   @Input()
   public set item(item: ListRow) {
     this._item = item;
+    this.handleAlarms(item);
     this.cdRef.detectChanges();
     this.item$.next(item);
   }
@@ -67,6 +68,10 @@ export class ItemRowComponent implements OnInit {
 
   @Input()
   odd = false;
+
+  alarms: Alarm[] = [];
+
+  moreAlarmsAvailable = 0;
 
   canBeCrafted$: Observable<boolean>;
 
@@ -110,7 +115,7 @@ export class ItemRowComponent implements OnInit {
     this.missingBooks$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
         return (this.item.masterbooks || [])
-          // Ignore string ids, as they are draft ids
+        // Ignore string ids, as they are draft ids
           .filter(book => (<any>book.id.toString()) !== (<any>book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
@@ -291,6 +296,16 @@ export class ItemRowComponent implements OnInit {
     this.alarmsFacade.addAlarms(alarm);
   }
 
+  private handleAlarms(item: ListRow): void {
+    // We don't want to display more than 6 alarms, else it becomes a large shitfest
+    if (!item.alarms || item.alarms.length < 8) {
+      this.alarms = item.alarms;
+    } else {
+      this.alarms = item.alarms.slice(0, 8);
+      this.moreAlarmsAvailable = item.alarms.length - 8;
+    }
+  }
+
   addAllAlarms() {
     this.alarmsFacade.addAlarmsAndGroup(this.item.alarms, this.i18n.getName(this.l12n.getItem(this.item.id)));
   }
@@ -346,5 +361,9 @@ export class ItemRowComponent implements OnInit {
 
   public trackByCraft(index: number, craft: Craft): string {
     return craft.id;
+  }
+
+  public trackByAlarm(index: number, alarm: Alarm): string {
+    return alarm.$key;
   }
 }
