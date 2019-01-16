@@ -130,6 +130,7 @@
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
