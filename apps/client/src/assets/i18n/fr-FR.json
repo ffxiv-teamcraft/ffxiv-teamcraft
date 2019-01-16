@@ -130,7 +130,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir l'overlay",
-    "More_available": "and {{amount}} more...",
+    "More_available": "et {{amount}} autres...",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -442,7 +442,7 @@
     "BLM": "MNO",
     "SMN": "INV",
     "RDM": "MRG",
-    "BLU": "BLU",
+    "BLU": "MBU",
     "CRP": "MEN",
     "BSM": "FOR",
     "ARM": "ARM",
