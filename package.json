@@ -30,7 +30,6 @@
     "win": {
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
-      "certificateSubjectName": "FFXIV Teamcraft",
       "publish": [
         "github"
       ]
