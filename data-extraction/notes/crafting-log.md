@@ -1,4 +1,4 @@
-#Crafting Log
+# Crafting Log
 
 Crafting log pages can be found at https://xivapi.com/RecipeNotebookList
 
