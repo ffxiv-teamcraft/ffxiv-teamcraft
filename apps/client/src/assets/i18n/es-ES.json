@@ -717,16 +717,16 @@
       "MEMBER_JOINED": "Un miembro se ha unido",
       "MEMBER_LEFT": "Un miembro se ha ido",
       "ITEM_ADDED": "Artículo agregado",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "ITEM_REMOVED": "Artículo removido",
+      "LIST_ADDED": "Lista agregada",
+      "LIST_REMOVED": "Lista removida",
+      "LIST_PROGRESSION": "Progresión de la lista",
+      "USER_ASSIGNMENT": "Asignación de usuario"
     }
   },
   "MARKETBOARD": {
     "Title": "Información del mercado",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "XIVAPI o Companion API está actualmente caído, por favor espere un momento antes de volver a intentarlo.",
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
@@ -743,17 +743,17 @@
     "Ilvl": "ilvl",
     "Cost": "Costo",
     "Class_job": "Clase/Profesión",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Damage_phys": "Daño Fís.",
+    "Damage_mag": "Daño Mag.",
+    "Defense_phys": "Defensa Fís.",
+    "Defense_mag": "Defensa Mag."
   },
   "SEARCH_INTRO": {
     "Slogan": "Elabore, comparta, contribuya",
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
     "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
+    "Buy_a_tshirt": "Comprar una camiseta de Teamcraft",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",
