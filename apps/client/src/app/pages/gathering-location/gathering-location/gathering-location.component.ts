@@ -171,7 +171,7 @@ export class GatheringLocationComponent {
         //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
         const finalNodes = [];
         results.forEach(row => {
-          if (finalNodes.find(node => node.itemId === row.itemId && node.zoneid === row.zoneid) === undefined) {
+          if (finalNodes.find(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type) === undefined) {
             finalNodes.push(row);
           }
         });
