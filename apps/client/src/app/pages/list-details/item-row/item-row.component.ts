@@ -169,8 +169,6 @@ export class ItemRowComponent implements OnInit {
       this.cdRef.detectChanges();
     });
 
-    console.log('item init');
-
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       switchMap(() => this.listsFacade.selectedList$),
       switchMap((list) => {

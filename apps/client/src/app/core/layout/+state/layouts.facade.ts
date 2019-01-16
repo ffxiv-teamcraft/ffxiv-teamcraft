@@ -13,7 +13,6 @@ import { filter, map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { LayoutRow } from '../layout-row';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -149,10 +148,11 @@ export class LayoutsFacade {
     );
   }
 
-  public createNewLayout(name = 'New layout', content?: LayoutRow[]): void {
+  public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
     const layout = new ListLayout();
-    layout.name = name;
-    layout.rows = content || this.layoutService.defaultLayout.rows;
+    Object.assign(layout, baseLayout);
+    layout.name = (baseLayout && baseLayout.name) || name;
+    layout.rows = layout.rows || this.layoutService.defaultLayout.rows;
     this.store.dispatch(new CreateLayout(layout));
   }
 

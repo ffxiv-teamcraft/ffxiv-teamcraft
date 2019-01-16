@@ -28,6 +28,8 @@ export class ListLayout extends DataModel {
   public name: string;
 
   get base64(): string {
-    return btoa(JSON.stringify(this.rows));
+    const exportLayout = {...this as any};
+    delete exportLayout.userId;
+    return btoa(JSON.stringify(exportLayout));
   }
 }
