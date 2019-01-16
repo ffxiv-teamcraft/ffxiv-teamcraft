@@ -130,6 +130,7 @@
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 열기",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
