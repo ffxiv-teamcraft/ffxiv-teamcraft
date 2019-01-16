@@ -130,6 +130,7 @@
     "Volume": "Громкость",
     "Macro_copied": "Макрос сохранён в буфер обмена",
     "Open_overlay": "Открыть оверлей",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Имя",
