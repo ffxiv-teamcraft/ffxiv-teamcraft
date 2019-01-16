@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.11"></a>
+## [5.0.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.10...v5.0.11) (2019-01-16)
+
+
+### Bug Fixes
+
+* **alarms:** alarms now show only the first 8 alarms to avoid spamming the UI ([0e4f21e](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e4f21e))
+* **gathering-location:** fixed an issue with some nodes being filtered while they shouldn't be ([2a6222b](https://github.com/Supamiu/ffxiv-teamcraft/commit/2a6222b)), closes [#706](https://github.com/Supamiu/ffxiv-teamcraft/issues/706)
+* **layout:** fixed default layout filter for token trades panel ([1d213b3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1d213b3))
+* **layout:** layout export now takes the whole layout into account, not only panels ([e2863b3](https://github.com/Supamiu/ffxiv-teamcraft/commit/e2863b3))
+* **layout:** voidrake and lavender aren't filtered in tokens panel in default layout anymore ([4479e64](https://github.com/Supamiu/ffxiv-teamcraft/commit/4479e64))
+
+
+### Features
+
+* **layout:** default sort (JOB) now sorts following ingame log ([69dd7b7](https://github.com/Supamiu/ffxiv-teamcraft/commit/69dd7b7)), closes [#621](https://github.com/Supamiu/ffxiv-teamcraft/issues/621)
+* **lists:** community lists and list panels are now lazy loading ([d743bcb](https://github.com/Supamiu/ffxiv-teamcraft/commit/d743bcb))
+
+
+
 <a name="5.0.10"></a>
 ## [5.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.9...v5.0.10) (2019-01-14)
 
