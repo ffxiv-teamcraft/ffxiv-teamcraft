@@ -9,7 +9,7 @@
   "See_on_map": "Ver en mapa",
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
-  "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -24,9 +24,9 @@
     "Crafts_amount": "# de elaboraciones",
     "Add_to_list": "Agregar este elemento a una lista",
     "Apply_filters": "Aplicar filtros",
-    "Too_many_results_warning": "This search returned over 50 item. Since our data source is limited to 50 results, you may need additional filters to find a specific item.",
-    "Share_url": "Copy search url to your clipboard",
-    "Share_url_copied": "Search url copied to your clipboard"
+    "Too_many_results_warning": "Esta búsqueda devuelve más de 50 artículos. Como nuestro origen de datos esta limitado a 50 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
+    "Share_url": "Copiar el url de búsqueda al portapapeles",
+    "Share_url_copied": "URL de búsqueda copiado al portapapeles"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -58,7 +58,7 @@
   "Requires_x_ventures": "Requiere {{amount}} aventuras de sirviente para conseguirlo todo",
   "WORKSHOP": {
     "Workshops": "Talleres",
-    "Add_one_list": "Add a list",
+    "Add_one_list": "Agregar una lista",
     "Add_workshop": "Agregar taller",
     "Delete_message": "Borrar un taller no borra las listas en el, solo serán movidas a las listas sin taller",
     "List_selection_title": "Seleccione las listas a agregar al taller {{workshopName}}",
@@ -124,12 +124,13 @@
     "Alarm_already_created": "La alarma ya existe",
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
-    "Confirm_group_delete": "Are you sure you want to delete this group?",
-    "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
+    "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
+    "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
@@ -266,12 +267,12 @@
     "General": "General",
     "Link_base": "Vínculos de artículos",
     "Theme": "Tema",
-    "Desktop": "Desktop",
+    "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
     "No_update_available": "No hay actualización disponible",
-    "Install_update": "Install update",
+    "Install_update": "Instalar actualización",
     "Preferred_copy_type": "Tipo de copia preferida",
     "Auto_open_in_desktop": "Abrir vínculos en aplicación de escritorio cuando se inicie",
     "Account": "Cuenta",
@@ -280,9 +281,10 @@
     "Password_reset_mail_sent": "Correo electrónico para restablecimiento de contraseña enviado",
     "Connect_with_patreon": "Conectar con patreon",
     "Connected_with_patreon": "Conectado con patreon",
-    "Nickname": "Nickname",
-    "Nickname_used": "Nickname already used",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Nickname": "Apodo",
+    "Nickname_used": "El apodo ya está en uso",
+    "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
+    "Show_devtools": "Mostrar herramientas de desarrollador",
     "COPY_TYPE": {
       "Classic": "Copiar nombre de artículo",
       "Isearch": "Copiar macro de /isearch"
@@ -325,14 +327,14 @@
     "Add_to_a_list": "Agregar a una lista",
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
     "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
-    "Delete_after_merge": "Delete original lists after merge",
+    "Delete_after_merge": "Borrar listas originales después de combinar",
     "IMPORT": {
       "Title": "Importar listas de sitio externo",
       "Paste_link_step_title": "Pegue su vínculo a su lista externa",
       "Paste_link_step_placeholder": "Vínculo a la lista",
       "Link_not_supported": "Este vínculo no puede ser importado",
-      "Links_supported": "Links supported: {{links}}",
-      "Link_recognized": "{{type}} recognized, you can import it",
+      "Links_supported": "Enlaces soportados: {{links}}",
+      "Link_recognized": "{{type}} reconocido, puede importarlo",
       "Next": "Siguiente",
       "Back": "Atrás",
       "Give_list_name": "Dele a su nueva lista un nombre",
@@ -346,21 +348,21 @@
     "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
     "Enable_crystals_tracking": "Habilitar rastreo de cristales",
-    "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
+    "Always_show_inventory": "Siempre mostrar inventario (desactivado en pantallas pequeñas, < 600px)",
     "Copy_as_text": "Copiar como texto",
-    "Copy_list_as_text": "Copy the whole list as text",
+    "Copy_list_as_text": "Copiar toda la lista como texto",
     "Copied_as_text": "Contenido copiado en el portapapeles",
     "Total_price": "Total de compras (gil y otras monedas)",
     "Total_trade_price": "Total: ",
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
-    "Items_count": "{{amount}} items",
+    "Items_count": "{{amount}} artículos",
     "COMPLETION_POPUP": {
-      "Title": "List completed",
-      "Content": "This list is now completed, what do you want to do with it?",
-      "Delete": "Delete the list",
-      "Reset": "Reset the list",
-      "Nothing": "Nothing"
+      "Title": "Lista completada",
+      "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
+      "Delete": "Borrar la lista",
+      "Reset": "Restablecer la lista",
+      "Nothing": "Nada"
     },
     "BUTTONS": {
       "Add_link_description": "Crear un vínculo personalizado para esta lista",
@@ -388,7 +390,7 @@
     "Inventory_breakdown": "Inventario",
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
-    "Adaptative_filter": "Only show what I can do",
+    "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -398,7 +400,7 @@
       "Layout_name": "Nombre del diseño",
       "Invalid_import": "Código de importación invalido",
       "Global_options": "Opciones generales",
-      "Default_readonly_message": "Default layout is readonly, you have to create a new layout using the + button to be able to customize it."
+      "Default_readonly_message": "El diseño predeterminado es de sólo lectura, tiene que crear un nuevo diseño con el botón + para poder personalizarlo."
     },
     "LAYOUT": {
       "Filter": "Filtro",
@@ -464,13 +466,13 @@
     "Title": "Vínculos Personalizados",
     "Not_found": "Vínculo no encontrado",
     "Add_link": "Crear un vínculo personalizado",
-    "Link_created": "Custom link created, click the share button to copy it",
+    "Link_created": "Vínculo personalizado creado, haga clic en el botón de compartir para copiarlo",
     "Dialog_title": "Vínculo Personalizado",
     "Link_type": "Tipo de vínculo",
     "Link_name": "Nombre del vínculo",
     "target": "Objetivo del vínculo",
     "Share_link_copied": "Vínculo personalizado copiado al portapapeles",
-    "Copy_custom_link": "Copy custom link",
+    "Copy_custom_link": "Copiar vínculo personalizado",
     "No_links": "No hay vínculos personalizados"
   },
   "NAVIGATION": {
@@ -495,7 +497,7 @@
   },
   "LIST_TEMPLATE": {
     "Create_template": "Crear una plantilla para esta lista",
-    "Template_created": "List template created",
+    "Template_created": "Plantilla de lista creada",
     "Dialog_title": "Creación de plantilla",
     "Link_name": "Nombre de la plantilla",
     "target": "Lista objetivo",
@@ -505,8 +507,8 @@
     "Redirect_notice": "Será redirigido a la lista una vez que la copia sea creada",
     "Not_found": "Plantilla no encontrada",
     "STATUS": {
-      "Loading": "Loading template from database",
-      "Copying": "Creating a copy of the list in your account, you'll be redirected to it once it's done"
+      "Loading": "Cargando plantilla desde base de datos",
+      "Copying": "Creando una copia de la lista en su cuenta. Será redirigido a ella cuando esté lista"
     }
   },
   "PERMISSIONS": {
@@ -529,7 +531,7 @@
     "No_anonymous": "Necesita una cuenta para administrar permisos",
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -539,7 +541,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
-    "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Break_on_reclaim": "Dividir macros en el punto de no regreso con Reclaim",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
@@ -564,7 +566,7 @@
     "Rotations": "Rotaciones de artesanías",
     "Favorite_Rotations": "Rotaciones Favoritas",
     "No_rotations": "No hay rotaciones",
-    "Create_a_custom_rotation": "Create a custom rotation",
+    "Create_a_custom_rotation": "Crear rotación personalizada",
     "Reset": "Reiniciar rotación",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Export_crafting_optimizer": "Exportar usando el formato de optimizador de elaboración",
@@ -651,10 +653,10 @@
   "PRICING": {
     "From_vendor": "Precio del vendedor",
     "Expect_to_sell_everything": "Asumir que se vende todo",
-    "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
-    "Content_copied": "Content copied in your clipboard"
+    "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
+    "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
+    "Copy_earnings_as_text": "Copiar contenido como texto",
+    "Content_copied": "Contenido copiado a su portapapeles"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -663,9 +665,9 @@
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
     "All_deliveries": "Todas las {{value}} entregas",
-    "Compute_exp": "Show impact on xp",
-    "More_on_gamerescape": "More details on gamerescape",
-    "Deliver_to": "Deliver to {{placename}}",
+    "Compute_exp": "Mostrar impacto en exp",
+    "More_on_gamerescape": "Más detalles en gamerescape",
+    "Deliver_to": "Entregar a {{placename}}",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
@@ -700,7 +702,7 @@
     "Invite_link_copied": "Liga de invitación al equipo copiada al portapapeles",
     "No_anonymous_join": "Debe crear una cuenta para poder unirse a un equipo",
     "Already_in_team": "Usted ya está en este equipo",
-    "Webhook_configuration": "Webhook settings",
+    "Webhook_configuration": "Configuración de Webhook",
     "NOTIFICATIONS": {
       "Item_added": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han añadido a **[{{listName}}]({{listUrl}})**.",
       "Item_removed": "{{amount}}x **[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** se han quitado de **[{{listName}}]({{listUrl}})**.",
@@ -714,19 +716,19 @@
       "User_assigned": "**[{{itemName}}](http://garlandtools.org/db/#item/{{itemId}})** ha sido asignado a **[{{memberName}}]({{memberProfileUrl}})** en **[{{listName}}]({{listUrl}})**."
     },
     "PERMISSIONS": {
-      "MEMBER_JOINED": "Member joined",
-      "MEMBER_LEFT": "Member left",
-      "ITEM_ADDED": "Item added",
-      "ITEM_REMOVED": "Item removed",
-      "LIST_ADDED": "List added",
-      "LIST_REMOVED": "List removed",
-      "LIST_PROGRESSION": "List progression",
-      "USER_ASSIGNMENT": "User assignment"
+      "MEMBER_JOINED": "Un miembro se ha unido",
+      "MEMBER_LEFT": "Un miembro se ha ido",
+      "ITEM_ADDED": "Artículo agregado",
+      "ITEM_REMOVED": "Artículo removido",
+      "LIST_ADDED": "Lista agregada",
+      "LIST_REMOVED": "Lista removida",
+      "LIST_PROGRESSION": "Progresión de la lista",
+      "USER_ASSIGNMENT": "Asignación de usuario"
     }
   },
   "MARKETBOARD": {
     "Title": "Información del mercado",
-    "Error": "XIVAPI or Companion API is currently down, please wait a moment before retrying.",
+    "Error": "XIVAPI o Companion API está actualmente caído, por favor espere un momento antes de volver a intentarlo.",
     "Amount": "Cantidad",
     "HQ": "HQ",
     "Total_price": "Precio total",
@@ -743,17 +745,17 @@
     "Ilvl": "ilvl",
     "Cost": "Costo",
     "Class_job": "Clase/Profesión",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Damage_phys": "Daño Fís.",
+    "Damage_mag": "Daño Mag.",
+    "Defense_phys": "Defensa Fís.",
+    "Defense_mag": "Defensa Mag."
   },
   "SEARCH_INTRO": {
     "Slogan": "Elabore, comparta, contribuya",
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
     "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
-    "Buy_a_tshirt": "Buy a Teamcraft T-shirt",
+    "Buy_a_tshirt": "Comprar una camiseta de Teamcraft",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",

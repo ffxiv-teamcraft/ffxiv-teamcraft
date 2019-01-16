@@ -130,6 +130,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir l'overlay",
+    "More_available": "et {{amount}} autres...",
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
@@ -283,6 +284,7 @@
     "Nickname": "Pseudo",
     "Nickname_used": "Pseudo déjà utilisé",
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
+    "Show_devtools": "Afficher les outils de debug",
     "COPY_TYPE": {
       "Classic": "Copier le nom de l'objet",
       "Isearch": "Copier la macro de recherche en jeu (/isearch)"
@@ -320,7 +322,7 @@
     "Add_selection": "Ajouter la sélection à une liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
-    "No_lists": "Vous n’avez pas de listes",
+    "No_lists": "Vous n'avez pas de listes",
     "Lists_search_placeholder": "Rechercher une liste...",
     "Add_to_a_list": "Ajouter à une liste",
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
@@ -380,7 +382,7 @@
     "Missing_tags_before_button": "Cette liste est affichée en tant que liste communautaire sans tags, merci d'y ajouter des tags via le bouton ",
     "Missing_tags_after_button": " bouton",
     "Add_remove_amount": "Ajouter/enlever un montant donné",
-    "Missing_masterbook": "Vous avez pas ce livre de recettes dans votre profil, cliquez pour l’ajouter.",
+    "Missing_masterbook": "Vous n'avez pas ce livre de recettes dans votre profil, cliquez pour l'ajouter.",
     "No_note": "Aucune note",
     "Edit_note": "Aucune note",
     "Note_placeholder": "Note",

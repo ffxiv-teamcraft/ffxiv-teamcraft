@@ -130,6 +130,7 @@
     "Volume": "Volume",
     "Macro_copied": "Macro copied to your clipboard",
     "Open_overlay": "Open overlay",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Add custom alarm",
       "Name": "Name",
@@ -283,6 +284,7 @@
     "Nickname": "Nickname",
     "Nickname_used": "Nickname already used",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the patron exclusive features properly.",
+    "Show_devtools": "Show dev tools",
     "COPY_TYPE": {
       "Classic": "Copy item name",
       "Isearch": "Copy /isearch macro"
