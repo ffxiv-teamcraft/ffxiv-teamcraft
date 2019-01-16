@@ -130,6 +130,7 @@
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
     "Open_overlay": "Abrir overlay",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",
       "Name": "Nome",
