@@ -130,6 +130,7 @@
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイ開く",
+    "More_available": "and {{amount}} more...",
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
