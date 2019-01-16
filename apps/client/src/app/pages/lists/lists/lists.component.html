@@ -58,9 +58,11 @@
     </div>
     <nz-divider></nz-divider>
     <nz-collapse *ngIf="lists.communityLists.length > 0">
-      <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})">
+      <nz-collapse-panel nzHeader="{{'Your_public_lists' | translate}} ({{lists.communityLists.length}})"
+                         #communityListsPanel>
         <div class="ngx-dnd-container" ngxDroppable="communityList"
-             (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)">
+             (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)"
+             *ngIf="communityListsPanel.nzActive">
           <div class="ngx-dnd-item list-panel" *ngFor="let list of lists.communityLists; trackBy: trackByList"
                ngxDraggable="communityList"
                [model]="list">

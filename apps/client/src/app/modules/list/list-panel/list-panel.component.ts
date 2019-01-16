@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -82,7 +82,8 @@ export class ListPanelComponent {
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
-              private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService) {
+              private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
+              private cd: ChangeDetectorRef) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
@@ -309,6 +310,12 @@ export class ListPanelComponent {
     ).subscribe(link => {
       this.message.success(this.translate.instant('LIST_TEMPLATE.Template_created'));
     });
+  }
+
+  openStateChange(): void {
+    setTimeout(() => {
+      this.cd.detectChanges();
+    }, 50);
   }
 
   trackByItem(index: number, item: ListRow): number {
