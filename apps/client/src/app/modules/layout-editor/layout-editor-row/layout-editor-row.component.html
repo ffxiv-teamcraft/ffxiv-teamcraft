@@ -47,6 +47,7 @@
         <nz-option nzValue="NAME" nzLabel="NAME"></nz-option>
         <nz-option nzValue="LEVEL" nzLabel="LEVEL"></nz-option>
         <nz-option nzValue="JOB" nzLabel="JOB"></nz-option>
+        <nz-option nzValue="INGAME_LOG" nzLabel="INGAME_LOG"></nz-option>
       </nz-select>
       <nz-select [(ngModel)]="row.order" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly">
         <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>

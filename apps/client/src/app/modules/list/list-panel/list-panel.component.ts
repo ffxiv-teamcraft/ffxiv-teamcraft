@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
@@ -23,6 +23,9 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { Team } from '../../../model/team/team';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { Router } from '@angular/router';
+import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 
 @Component({
   selector: 'app-list-panel',
@@ -56,6 +59,8 @@ export class ListPanelComponent {
 
   public teams$: Observable<Team[]>;
 
+  public listContent$: Observable<ListRow[]>;
+
   private syncLinkUrl: string;
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};
@@ -76,7 +81,9 @@ export class ListPanelComponent {
               private translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
-              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade) {
+              private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
+              private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
+              private cd: ChangeDetectorRef) {
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
@@ -92,6 +99,12 @@ export class ListPanelComponent {
         });
       })
     );
+
+    this.listContent$ = combineLatest(this.list$, this.layoutsFacade.selectedLayout$).pipe(
+      map(([list, layout]) => {
+        return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
+      })
+    );
   }
 
   deleteList(list: List): void {
@@ -100,6 +113,12 @@ export class ListPanelComponent {
 
   getLink(): string {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
+  }
+
+  openList(): void {
+    if (!this.publicDisplay) {
+      this.router.navigate(['/list', this._list.$key]);
+    }
   }
 
   cloneList(compact: List): void {
@@ -147,6 +166,10 @@ export class ListPanelComponent {
         });
     }
     updateSubject.next(inputValue);
+  }
+
+  getTags(): string[] {
+    return (this._list.tags || []).filter((tag, i) => this._list.tags.indexOf(tag) === i);
   }
 
   assignTeam(compact: List, team: Team): void {
@@ -287,6 +310,12 @@ export class ListPanelComponent {
     ).subscribe(link => {
       this.message.success(this.translate.instant('LIST_TEMPLATE.Template_created'));
     });
+  }
+
+  openStateChange(): void {
+    setTimeout(() => {
+      this.cd.detectChanges();
+    }, 50);
   }
 
   trackByItem(index: number, item: ListRow): number {

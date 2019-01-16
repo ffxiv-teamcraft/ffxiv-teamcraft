@@ -1,8 +1,8 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader">
-    <div fxLayout="column" fxLayoutGap="10px">
+  <nz-collapse-panel [nzHeader]="panelHeader" #listContentPanel (nzActiveChange)="openStateChange()">
+    <div fxLayout="column" fxLayoutGap="10px" *ngIf="listContentPanel.nzActive">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
-           *ngFor="let item of _list.finalItems; trackBy: trackByItem">
+           *ngFor="let item of listContent$ | async; trackBy: trackByItem">
         <app-item-icon [width]="32" [itemId]="item.id" [icon]="item.icon"></app-item-icon>
         <div>{{item.id | itemName | i18n}}</div>
         <div class="spacer"></div>
@@ -22,7 +22,7 @@
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div class="panel-header" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
-      <div nz-col nzSm="22" nzMd="4">
+      <div nz-col nzSm="22" nzMd="4" (dblclick)="openList()">
         {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
       </div>
       <div class="author-avatar" *ngIf="!hideAvatar && _list.authorId !== undefined">
@@ -38,7 +38,7 @@
             {{'Public_list' | translate}}
           </nz-tag>
           <nz-tag *ngIf="_list.isOutDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
-          <nz-tag *ngFor="let tag of _list.tags">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
+          <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
         </div>
         <div class="description">
           {{_list.note}}

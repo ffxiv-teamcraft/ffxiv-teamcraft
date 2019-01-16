@@ -85,6 +85,10 @@ export class SettingsPopupComponent {
     this.ipc.send('run-update');
   }
 
+  openDesktopConsole(): void {
+    this.ipc.send('show-devtools');
+  }
+
   patreonOauth(): void {
     if (this.platform.isDesktop()) {
       this.ipc.on('oauth-reply', (event, code) => {

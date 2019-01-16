@@ -122,7 +122,7 @@ namespace Extractor
 
     static void ExtractNpcs(Localize localize, ARealmReversed realm)
     {
-      JObject npcs = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivdb-mapper\output\npcs.json"));
+      JObject npcs = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\npcs.json"));
       JObject res = new JObject();
       var sheet = realm.GameData.GetSheet<ENpcResident>();
       foreach (var npc in sheet)
@@ -139,7 +139,7 @@ namespace Extractor
 
     static void ExtractAetheryteNames(Localize localize, ARealmReversed realm)
     {
-      JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\xivdb-mapper\output\aetherytes.json"));
+      JArray aetherytes = JArray.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\aetherytes.json"));
       JArray res = new JArray();
       var sheet = realm.GameData.GetSheet("Aetheryte");
       foreach (var row in aetherytes)
@@ -153,7 +153,7 @@ namespace Extractor
 
     static void ExtractNodesPosition(IEnumerable<GatheringPoint> rows)
     {
-      JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivdb-mapper\output\nodes-position.json"));
+      JObject positions = JObject.Parse(File.ReadAllText(@"..\..\..\..\xivapi\output\nodes-position.json"));
       JObject res = new JObject();
       foreach (var row in rows)
       {

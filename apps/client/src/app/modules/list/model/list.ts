@@ -94,6 +94,7 @@ export class List extends DataWithPermissions {
     compact.authorId = this.authorId;
     compact.$key = this.$key;
     compact.ephemeral = this.ephemeral;
+    compact.index = this.index;
     return compact;
   }
 

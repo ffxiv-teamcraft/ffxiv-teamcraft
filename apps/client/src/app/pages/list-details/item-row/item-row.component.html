@@ -105,9 +105,9 @@
     <app-marketboard-icon [itemId]="item.id" [showHistory]="finalItem"></app-marketboard-icon>
   </div>
   <div class="block center-block" nz-col nzXs="24" nzSm="12" nzMd="8"
-       [class.empty]="!item.alarms || item.alarms.length < 0">
+       [class.empty]="!alarms || alarms.length < 0">
     <div class="timers" fxLayout="row wrap" fxLayoutGap="5px">
-      <div *ngFor="let alarm of item.alarms">
+      <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
         <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
           <button nz-button [nzSize]="'small'" [nzType]="display.spawned?'primary':'default'"
                   nz-tooltip [nzTitle]="display.alarm.zoneId | placeName | i18n"
@@ -133,6 +133,8 @@
           </ng-container>
         </nz-button-group>
       </div>
+      <nz-tag
+        *ngIf="moreAlarmsAvailable > 0" class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
     </div>
   </div>
   <div class="block books-and-input-block" nz-col nzXs="24" nzSm="12"
@@ -148,7 +150,7 @@
               [nzContent]="calculator" nzTrigger="click">
         <i nz-icon type="calculator"></i>
         <ng-template #calculator>
-          <nz-input-number [nzMin]="0" [nzMax]="item.amount - item.done" [nzStep]="1"
+          <nz-input-number [nzMin]="0" [nzStep]="1"
                            [ngModel]="0" #numberInput
                            nzAutoFocus></nz-input-number>
           <button nz-button (click)="add(numberInput.value)" nzType="primary">+</button>

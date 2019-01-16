@@ -112,7 +112,7 @@
              class="alarm-card"
              fxLayout="column"
              [class.spawned]="row.spawned"
-             [class.played]="row.played">
+             [class.played]="row.played  && !row.spawned">
       <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzTitle]="cardTitle" [nzDescription]="cardDescription">
       </nz-card-meta>
       <ng-template #itemIcon>

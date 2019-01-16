@@ -129,7 +129,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           if (partial !== undefined) {
             const node: StoredNode = {
               zoneid: partial.obj.z,
-              areaid: mapId,
+              areaid: partial.obj.z,
               mapid: mapId,
               level: partial.obj.l,
               coords: [partial.obj.x, partial.obj.y]

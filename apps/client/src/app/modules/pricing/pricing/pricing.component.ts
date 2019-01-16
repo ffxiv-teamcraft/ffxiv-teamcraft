@@ -208,7 +208,7 @@ export class PricingComponent implements AfterViewInit {
       }
     }, 0);
     // If that's a final item or the price is custom, no recursion.
-    if (this.pricingService.isCustomPrice(row) || price === 0) {
+    if (this.pricingService.isCustomPrice(row) || price === 0 || this.pricingService.getPrice(row).fromVendor) {
       const prices = this.pricingService.getPrice(row);
       const amounts = this.pricingService.getAmount(list.$key, row);
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);

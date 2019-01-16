@@ -4,7 +4,7 @@ const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
 const { switchMap, map } = require('rxjs/operators');
-const { getAllPages, persistToJson, persistToTypescript, get } = require('./tools.js');
+const { getAllPages, getOnePage, persistToJson, persistToTypescript, get } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -128,4 +128,46 @@ getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en&key=63cc0045d7e
   });
 }, null, () => {
   persistToTypescript('map-ids', 'mapIds', mapIds);
+});
+
+// Crafting log extraction
+
+const craftingLog = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
+
+// Preparing the query params, each page has 160 slots so we have to make sure we get all of them
+let columns = [];
+for (let i = 0; i < 160; i++) {
+  columns.push(`Recipe${i}.ID`);
+  columns.push(`Recipe${i}.CraftType.ID`);
+}
+
+const completeFetch = [];
+
+getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${columns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+  completeFetch.push(...res.Results);
+}, null, () => {
+  completeFetch.forEach(page => {
+    // If it's an empty page, don't go further
+    if (page.Recipe0.ID === -1) {
+      return;
+    }
+    Object.keys(page)
+      .filter(key => {
+        return page[key] && page[key].ID !== -1 && page[key].ID !== null;
+      })
+      .forEach(key => {
+        const entry = page[key];
+        craftingLog[entry.CraftType.ID].push(entry.ID);
+      });
+  });
+  persistToTypescript('crafting-log', 'craftingLog', craftingLog);
 });

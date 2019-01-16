@@ -88,6 +88,10 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
 
     case AuthActionTypes.SaveSet: {
       const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === state.user.defaultLodestoneId);
+      const oldSet = (lodestoneId.stats || []).find(set => set.jobId === action.set.jobId);
+      if (oldSet !== undefined && action.ignoreSpecialist) {
+        action.set.specialist = oldSet.specialist;
+      }
       lodestoneId.stats = [
         ...(lodestoneId.stats || []).filter(set => set.jobId !== action.set.jobId),
         action.set
@@ -140,7 +144,10 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
 
       return {
         ...state,
-        user: { ...state.user, lodestoneIds: [...(state.user.lodestoneIds || []), { id: action.lodestoneId, verified: false }] },
+        user: {
+          ...state.user,
+          lodestoneIds: [...(state.user.lodestoneIds || []), { id: action.lodestoneId, verified: false }]
+        },
         linkingCharacter: false
       };
     }

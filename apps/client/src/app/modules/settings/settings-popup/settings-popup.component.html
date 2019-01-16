@@ -74,31 +74,36 @@
     </div>
   </nz-tab>
   <nz-tab [nzTitle]="'SETTINGS.Desktop' | translate" *ngIf="platform.isDesktop()">
-    <label nz-checkbox [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)">
-      {{'SETTINGS.Always_on_top' | translate}}
-    </label>
-    <div class="updater">
-      <button nz-button nzType="primary" (click)="checkForUpdate()" *ngIf="!updateAvailable && !checkingForUpdate">
-        {{'SETTINGS.Check_for_update' | translate}}
-      </button>
-      <nz-spin *ngIf="checkingForUpdate && !updateDavailable"></nz-spin>
-      <div *ngIf="updateAvailable === true">
-        {{'SETTINGS.Downloading_update' | translate}}
-        <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
-        <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}
-          - {{downloadProgress.bytesPerSecond / 100000 | number}}MBps</span>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <label nz-checkbox [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)">
+        {{'SETTINGS.Always_on_top' | translate}}
+      </label>
+      <div class="updater">
+        <button nz-button nzType="primary" (click)="checkForUpdate()" *ngIf="!updateAvailable && !checkingForUpdate">
+          {{'SETTINGS.Check_for_update' | translate}}
+        </button>
+        <nz-spin *ngIf="checkingForUpdate && !updateDavailable"></nz-spin>
+        <div *ngIf="updateAvailable === true">
+          {{'SETTINGS.Downloading_update' | translate}}
+          <nz-progress [nzPercent]="downloadProgress.percent"></nz-progress>
+          <span>{{downloadProgress.transferred / 1000000 | number}}/{{downloadProgress.total / 1000000 | number}}
+            - {{downloadProgress.bytesPerSecond / 100000 | number}}MBps</span>
+        </div>
+        <div *ngIf="updateAvailable === false && !checkingForUpdate">
+          {{'SETTINGS.No_update_available' | translate}}
+        </div>
+        <button nz-button nzType="primary" (click)="installUpdate()"
+                *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
+          {{'SETTINGS.Install_update' | translate}}
+        </button>
+        <p>
+          Auto updater is a bit broken at the moment, you might need to download latest build manually at <a
+          href="https://ffxivteamcraft.com/desktop">https://ffxivteamcraft.com/desktop</a> until this message disappears
+        </p>
       </div>
-      <div *ngIf="updateAvailable === false && !checkingForUpdate">
-        {{'SETTINGS.No_update_available' | translate}}
-      </div>
-      <button nz-button nzType="primary" (click)="installUpdate()"
-              *ngIf="updateAvailable && !checkingForUpdate && downloadProgress.total / 1000000 >= 1">
-        {{'SETTINGS.Install_update' | translate}}
+      <button nz-button (click)="openDesktopConsole()">
+        {{'SETTINGS.Show_devtools' | translate}}
       </button>
-      <p>
-        Auto updater is a bit broken at the moment, you might need to download latest build manually at <a
-        href="https://ffxivteamcraft.com/desktop">https://ffxivteamcraft.com/desktop</a> until this message disappears
-      </p>
     </div>
   </nz-tab>
 </nz-tabset>

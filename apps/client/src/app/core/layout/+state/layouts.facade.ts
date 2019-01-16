@@ -9,11 +9,10 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
+import { map, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { LayoutRow } from '../layout-row';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -25,7 +24,12 @@ export class LayoutsFacade {
 
   selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
     .pipe(
-      filter(layout => layout !== undefined),
+      map(layout => {
+        if (layout === undefined) {
+          return this.layoutService.defaultLayout;
+        }
+        return layout;
+      }),
       map(layout => {
         layout.rows = layout.rows.sort((a, b) => a.index - b.index);
         return layout;
@@ -52,6 +56,7 @@ export class LayoutsFacade {
             crystalsPanel: !layout.considerCrystalsAsItems,
             showInventory: layout.showInventory,
             rows: layout.rows
+              .filter(row => row !== undefined)
               .sort((a, b) => {
                 // ANYTHING has to be last filter applied, as it rejects nothing.
                 if (a.filter.name === 'ANYTHING') {
@@ -76,13 +81,13 @@ export class LayoutsFacade {
                   orderedAccepted = orderedAccepted.filter(item => {
                     if (item.gatheredBy !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][item.gatheredBy.type];
-                      const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+                      const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
                       return set && set.level >= item.gatheredBy.level;
                     }
                     if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
                       return item.craftedBy.reduce((canCraft, craft) => {
                         const jobId = craft.jobId;
-                        const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                        const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                         return (set && set.level >= craft.level) || canCraft;
                       }, false);
                     }
@@ -97,7 +102,8 @@ export class LayoutsFacade {
                   tiers: row.tiers,
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false
+                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                  layoutRow: row
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
@@ -118,13 +124,13 @@ export class LayoutsFacade {
           rows = rows.filter(item => {
             if (item.gatheredBy !== undefined) {
               const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(item.gatheredBy.type);
-              const set = characterEntry.stats.find(stat => stat.jobId === gatherJob);
+              const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
               return set && set.level >= item.gatheredBy.level;
             }
             if (item.craftedBy !== undefined && item.craftedBy.length > 0) {
               return item.craftedBy.reduce((canCraft, craft) => {
                 const jobId = craft.jobId;
-                const set = characterEntry.stats.find(stat => stat.jobId === jobId);
+                const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
                 return (set && set.level >= craft.level) || canCraft;
               }, false);
             }
@@ -140,16 +146,18 @@ export class LayoutsFacade {
           zoneBreakdown: layout.recipeZoneBreakdown,
           tiers: false,
           filterChain: '',
-          collapsed: false
+          collapsed: false,
+          layoutRow: null
         };
       })
     );
   }
 
-  public createNewLayout(name = 'New layout', content?: LayoutRow[]): void {
+  public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
     const layout = new ListLayout();
-    layout.name = name;
-    layout.rows = content || this.layoutService.defaultLayout.rows;
+    Object.assign(layout, baseLayout);
+    layout.name = (baseLayout && baseLayout.name) || name;
+    layout.rows = layout.rows || this.layoutService.defaultLayout.rows;
     this.store.dispatch(new CreateLayout(layout));
   }
 

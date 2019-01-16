@@ -2,6 +2,112 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.11"></a>
+## [5.0.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.10...v5.0.11) (2019-01-16)
+
+
+### Bug Fixes
+
+* **alarms:** alarms now show only the first 8 alarms to avoid spamming the UI ([0e4f21e](https://github.com/Supamiu/ffxiv-teamcraft/commit/0e4f21e))
+* **gathering-location:** fixed an issue with some nodes being filtered while they shouldn't be ([2a6222b](https://github.com/Supamiu/ffxiv-teamcraft/commit/2a6222b)), closes [#706](https://github.com/Supamiu/ffxiv-teamcraft/issues/706)
+* **layout:** fixed default layout filter for token trades panel ([1d213b3](https://github.com/Supamiu/ffxiv-teamcraft/commit/1d213b3))
+* **layout:** layout export now takes the whole layout into account, not only panels ([e2863b3](https://github.com/Supamiu/ffxiv-teamcraft/commit/e2863b3))
+* **layout:** voidrake and lavender aren't filtered in tokens panel in default layout anymore ([4479e64](https://github.com/Supamiu/ffxiv-teamcraft/commit/4479e64))
+
+
+### Features
+
+* **layout:** default sort (JOB) now sorts following ingame log ([69dd7b7](https://github.com/Supamiu/ffxiv-teamcraft/commit/69dd7b7)), closes [#621](https://github.com/Supamiu/ffxiv-teamcraft/issues/621)
+* **lists:** community lists and list panels are now lazy loading ([d743bcb](https://github.com/Supamiu/ffxiv-teamcraft/commit/d743bcb))
+
+
+
+<a name="5.0.10"></a>
+## [5.0.10](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.9...v5.0.10) (2019-01-14)
+
+
+### Bug Fixes
+
+* fixed style for devtools button in desktop app ([11a2f27](https://github.com/Supamiu/ffxiv-teamcraft/commit/11a2f27))
+* **simulator:** fixed a freeze happening in some cases with byregot's blessing ([7f116f8](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f116f8))
+* **workshop:** fixed an issue with workshop details when some of the lists were deleted ([8160f91](https://github.com/Supamiu/ffxiv-teamcraft/commit/8160f91))
+
+
+### Features
+
+* lists and rotations can now be opened using double click on name ([43993a3](https://github.com/Supamiu/ffxiv-teamcraft/commit/43993a3)), closes [#700](https://github.com/Supamiu/ffxiv-teamcraft/issues/700)
+* **gathering-location:** added compact display toggle ([546dd60](https://github.com/Supamiu/ffxiv-teamcraft/commit/546dd60)), closes [#684](https://github.com/Supamiu/ffxiv-teamcraft/issues/684)
+* **inventory:** items in inventory are now sorted by id ([c07ef3b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c07ef3b))
+* **layout:** recipe default order type is now JOB, followed by LEVEL ([4f2acb6](https://github.com/Supamiu/ffxiv-teamcraft/commit/4f2acb6))
+* **list:** show a check mark next to panel name if it's collapsed because it's done ([d1e25ba](https://github.com/Supamiu/ffxiv-teamcraft/commit/d1e25ba))
+
+
+
+<a name="5.0.9"></a>
+## [5.0.9](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.8...v5.0.9) (2019-01-13)
+
+
+### Bug Fixes
+
+* fixed a bug with some layouts freezing the app entirely ([5b0c7d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/5b0c7d1))
+* **list-panel:** fixed an issue with tags showing twice ([7ec391a](https://github.com/Supamiu/ffxiv-teamcraft/commit/7ec391a))
+* fixed an issue with +/- input when item is done ([365fefe](https://github.com/Supamiu/ffxiv-teamcraft/commit/365fefe))
+* fixed an issue with new profiles and the "show only what I can do" checkbox ([da98309](https://github.com/Supamiu/ffxiv-teamcraft/commit/da98309))
+
+
+### Features
+
+* **desktop:** added a button in settings to show devtools when using desktop app ([cf7f0df](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf7f0df))
+* **profile:** "Save for All" doesn't propagate specialist state anymore ([33f093f](https://github.com/Supamiu/ffxiv-teamcraft/commit/33f093f)), closes [#699](https://github.com/Supamiu/ffxiv-teamcraft/issues/699)
+
+
+
+<a name="5.0.8"></a>
+## [5.0.8](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.7...v5.0.8) (2019-01-13)
+
+
+### Bug Fixes
+
+* fixed an issue showing infinite loader when list isn't found ([1626962](https://github.com/Supamiu/ffxiv-teamcraft/commit/1626962))
+* fixed an issue with lists reordering when you change item amounts ([ea29372](https://github.com/Supamiu/ffxiv-teamcraft/commit/ea29372))
+* **alarms:** fixed colors for spawned and played state ([b321403](https://github.com/Supamiu/ffxiv-teamcraft/commit/b321403))
+
+
+
+<a name="5.0.7"></a>
+## [5.0.7](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.6...v5.0.7) (2019-01-12)
+
+
+### Bug Fixes
+
+* **alarms:** changed spawned and played colors for alarms ([43b6955](https://github.com/Supamiu/ffxiv-teamcraft/commit/43b6955)), closes [#697](https://github.com/Supamiu/ffxiv-teamcraft/issues/697)
+* **simulator:** fixed link to the item details on the icon ([3af6491](https://github.com/Supamiu/ffxiv-teamcraft/commit/3af6491))
+
+
+### Features
+
+* **search:** "only recipes" check is now persisted inside the localstorage ([28fb058](https://github.com/Supamiu/ffxiv-teamcraft/commit/28fb058))
+
+
+
+<a name="5.0.6"></a>
+## [5.0.6](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.4...v5.0.6) (2019-01-11)
+
+
+### Bug Fixes
+
+* **pricing:** fixed an issue with first pricing opening showing wrong values ([8f0a885](https://github.com/Supamiu/ffxiv-teamcraft/commit/8f0a885))
+* fixed an issue with wrong location name for fishes ([5e84abd](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e84abd))
+* **pricing:** fixed an issue with incorrect pricing in some cases ([e088da3](https://github.com/Supamiu/ffxiv-teamcraft/commit/e088da3))
+
+
+### Features
+
+* added a share link copy button inside list details page ([877bc27](https://github.com/Supamiu/ffxiv-teamcraft/commit/877bc27))
+* added Ize and Erwan as patreon supporters in the loading screen ([78c5585](https://github.com/Supamiu/ffxiv-teamcraft/commit/78c5585))
+
+
+
 <a name="5.0.5"></a>
 ## [5.0.5](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.4...v5.0.5) (2019-01-10)
 

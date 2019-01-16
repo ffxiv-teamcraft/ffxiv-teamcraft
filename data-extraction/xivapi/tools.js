@@ -7,7 +7,7 @@ const fs = require('fs');
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
 
 
-const get = (url) =>  {
+const get = (url) => {
   const res$ = new Rx.Subject();
   request(url, (err, _, res) => res$.next(res));
   return res$.pipe(
@@ -40,6 +40,10 @@ module.exports.getAllPages = (endpoint) => {
     }),
     takeUntil(complete$)
   );
+};
+
+module.exports.getOnePage = (endpoint) => {
+  return get(endpoint);
 };
 
 module.exports.persistToJson = (fileName, content) => fs.writeFileSync(path.join(outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
