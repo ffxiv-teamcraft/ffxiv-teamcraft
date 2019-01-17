@@ -489,6 +489,7 @@
     "Title": "Sammelgegenstand-Suche",
     "No_items": "Nichts zum Sammeln gefunden",
     "Gathering_name": "Sammelgegenstand eingeben",
+    "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!"
   },
   "ANNOUNCEMENT": {
