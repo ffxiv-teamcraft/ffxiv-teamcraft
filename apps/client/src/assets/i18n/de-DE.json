@@ -130,7 +130,7 @@
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay öffnen",
-    "More_available": "and {{amount}} more...",
+    "More_available": "und {{amount}} mehr...",
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
       "Name": "Name",
