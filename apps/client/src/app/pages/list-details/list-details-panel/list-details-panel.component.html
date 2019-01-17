@@ -15,7 +15,7 @@
     <div *ngIf="displayRow.zoneBreakdown">
       <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
         <div *ngIf="row.items.length > 0">
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <span class="zone-title">{{getLocation(row.zoneId) | i18n}}</span>
             <button nz-button *ngIf="hasNavigationMap" nzShape="circle" nzSize="small" (click)="openNavigationMap(row)"
                     nz-tooltip [nzTitle]="'NAVIGATION.Title' | translate">
