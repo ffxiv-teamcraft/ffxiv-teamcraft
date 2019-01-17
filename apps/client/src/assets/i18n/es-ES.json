@@ -130,7 +130,7 @@
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
-    "More_available": "and {{amount}} more...",
+    "More_available": "y {{amount}} más...",
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
@@ -541,7 +541,7 @@
   "SIMULATOR": {
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
-    "Break_on_reclaim": "Dividir macros en el punto de no regreso con Reclaim",
+    "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
     "Extra_wait": "Espera extra",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
