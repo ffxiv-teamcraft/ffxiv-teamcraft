@@ -489,6 +489,7 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
+    "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！"
   },
   "ANNOUNCEMENT": {
