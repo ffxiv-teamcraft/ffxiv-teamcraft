@@ -357,7 +357,7 @@
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
     "Items_count": "{{amount}} items",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "Voir la quantité fabricable",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
