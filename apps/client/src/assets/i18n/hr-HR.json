@@ -357,6 +357,7 @@
     "Add_all_alarms": "Add all alarms for this list",
     "History": "History",
     "Items_count": "{{amount}} items",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "Open in ffxivgardening.com",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -489,6 +491,7 @@
     "Title": "Gathering items",
     "No_items": "No gathering node found",
     "Gathering_name": "Enter item name",
+    "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !"
   },
   "ANNOUNCEMENT": {
@@ -531,7 +534,8 @@
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "Wiki",

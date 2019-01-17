@@ -357,6 +357,7 @@
     "Add_all_alarms": "Ajouter toutes les alarmes pour cette liste",
     "History": "Historique",
     "Items_count": "{{amount}} items",
+    "Show_craftable_amount": "Voir la quantité fabricable",
     "COMPLETION_POPUP": {
       "Title": "Liste terminée",
       "Content": "Cette liste est maintenant terminée, que voulez-vous en faire ?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "Ouvrir dans ffxivgardening.com",
     "Add_all_item_alarms": "Ajouter toutes les alarmes pour cet objet",
     "Adaptative_filter": "N’afficher que ce que je peux faire",
+    "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -489,6 +491,7 @@
     "Title": "Récoltes",
     "No_items": "Aucune récolte trouvée",
     "Gathering_name": "Nom de l'objet",
+    "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
     "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !"
   },
   "ANNOUNCEMENT": {
@@ -531,7 +534,8 @@
     "No_anonymous": "Vous devez créer un compte pour gérer les permissions",
     "Propagate_changes": "Propager les permissions aux listes dans l'atelier",
     "Propagate_changes_done": "Permissions propagées avec succès",
-    "Team_notice": "L'équipe associée à cette liste a la permission PARTICIPATE de façon automatique"
+    "Team_notice": "L'équipe associée à cette liste a la permission PARTICIPATE de façon automatique",
+    "Default_permission_level": "Niveau de permission par défaut"
   },
   "WIKI": {
     "Title": "Wiki",

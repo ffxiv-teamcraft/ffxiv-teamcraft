@@ -357,6 +357,7 @@
     "Add_all_alarms": "このリストに対する、アラームを追加する",
     "History": "履歴",
     "Items_count": "{{amount}} アイテム",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "リスト完成しました",
       "Content": "このリストは完了されました。何をしますか?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "ffxivgardening.comに開く",
     "Add_all_item_alarms": "このアイテムに対してアラームを追加する",
     "Adaptative_filter": "可能なことのみ表示する",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -489,6 +491,7 @@
     "Title": "ギャザラーマップ",
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
+    "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！"
   },
   "ANNOUNCEMENT": {
@@ -531,7 +534,8 @@
     "No_anonymous": "権限を管理するためのアカウントが必要です",
     "Propagate_changes": "工房内でリストアップする権限の提案する",
     "Propagate_changes_done": "工房内のリストに変更が反映されました",
-    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。"
+    "Team_notice": "このリストに割り当てられたチームは、自動に参加権限が付与されます。",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "ウィキ",
