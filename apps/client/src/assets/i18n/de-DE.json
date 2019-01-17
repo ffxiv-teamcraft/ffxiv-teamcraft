@@ -357,6 +357,7 @@
     "Add_all_alarms": "Erstelle alle Alarme für diese Liste",
     "History": "Historie",
     "Items_count": "{{amount}} Gegenstände",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "Liste fertiggestellt",
       "Content": "Diese Liste ist fertiggestellt, was willst du damit machen?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "Auf ffxivgardening.com öffnen",
     "Add_all_item_alarms": "Erstelle alle Alarme für diesen Gegenstand",
     "Adaptative_filter": "Zeige nur, was ich tun kann",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -532,7 +534,8 @@
     "No_anonymous": "Du brauchst einen Account, um Rechte zu verwalten",
     "Propagate_changes": "Berechtigungen auch auf Listen des Workshops anwenden",
     "Propagate_changes_done": "Änderungen wurden auf Listen des Workshops angewendet",
-    "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht"
+    "Team_notice": "Das mit dieser Liste verbundene Team hat automatisch das BEITRAGEN Recht",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "Wiki",
