@@ -272,6 +272,25 @@ export class List extends DataWithPermissions {
     return canCraft;
   }
 
+  craftableAmount(item: ListRow): number {
+    if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {
+      return 0;
+    }
+    let amount = 0;
+    const itemClone = { ...item };
+    let canCraft = true;
+    while (canCraft && amount < item.amount) {
+      itemClone.done = 0;
+      itemClone.amount = amount + 1;
+      itemClone.amount_needed = Math.ceil(itemClone.amount / itemClone.yield);
+      canCraft = this.canBeCrafted(itemClone);
+      if (canCraft) {
+        amount++;
+      }
+    }
+    return amount;
+  }
+
   hasAllBaseIngredients(item: ListRow, amount = item.amount): boolean {
     // If it's not a craft, break recursion
     if (item.craftedBy === undefined || item.craftedBy.length === 0 || item.requires === undefined) {

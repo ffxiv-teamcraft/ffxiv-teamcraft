@@ -1,14 +1,18 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!displayRow.collapsed || collapsed">
     <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
-      <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd" [item]="item"
+      <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
+                    [layout]="displayRow.layout"
+                    [item]="item"
                     [finalItem]="finalItems" [odd]="odd"></app-item-row>
     </div>
     <div *ngIf="displayRow.tiers">
       <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
         <span class="tier-title">{{'Precraft_tier' | translate}} {{index + 1}}</span>
         <nz-divider></nz-divider>
-        <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd" [item]="item"
+        <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
+                      [layout]="displayRow.layout"
+                      [item]="item"
                       [finalItem]="finalItems" [odd]="odd"></app-item-row>
       </div>
     </div>
@@ -23,7 +27,9 @@
             </button>
           </div>
           <nz-divider></nz-divider>
-          <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd" [item]="item"
+          <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
+                        [layout]="displayRow.layout"
+                        [item]="item"
                         [finalItem]="finalItems" [odd]="odd"></app-item-row>
         </div>
       </div>

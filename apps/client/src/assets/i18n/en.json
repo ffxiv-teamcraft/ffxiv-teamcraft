@@ -357,6 +357,7 @@
     "Add_all_alarms": "Add all alarms for this list",
     "History": "History",
     "Items_count": "{{amount}} items",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "List completed",
       "Content": "This list is now completed, what do you want to do with it?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "Open in ffxivgardening.com",
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

@@ -103,7 +103,8 @@ export class LayoutsFacade {
                   filterChain: row.filter.name,
                   hideIfEmpty: row.hideIfEmpty,
                   collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
-                  layoutRow: row
+                  layoutRow: row,
+                  layout: layout
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
@@ -147,7 +148,8 @@ export class LayoutsFacade {
           tiers: false,
           filterChain: '',
           collapsed: false,
-          layoutRow: null
+          layoutRow: null,
+          layout: layout
         };
       })
     );
