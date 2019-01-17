@@ -29,6 +29,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { ListRow } from '../model/list-row';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
+import { SettingsService } from '../../settings/settings.service';
 
 declare const gtag: Function;
 
@@ -123,7 +124,7 @@ export class ListsFacade {
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService) {
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -153,6 +154,7 @@ export class ListsFacade {
       filter(name => name !== undefined),
       map(name => {
         const list = new List();
+        list.everyone = this.settings.defaultPermissionLevel;
         list.name = name;
         return list;
       })
@@ -161,6 +163,7 @@ export class ListsFacade {
 
   newEphemeralList(itemName: string): List {
     const list = new List();
+    list.everyone = this.settings.defaultPermissionLevel;
     list.ephemeral = true;
     list.name = itemName;
     return list;
