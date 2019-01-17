@@ -357,6 +357,7 @@
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "Lista completada",
       "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -489,6 +491,7 @@
     "Title": "Recolección de artículos",
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
+    "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
   },
   "ANNOUNCEMENT": {
@@ -531,7 +534,8 @@
     "No_anonymous": "Necesita una cuenta para administrar permisos",
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
-    "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR"
+    "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "Wiki",
