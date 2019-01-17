@@ -60,9 +60,9 @@ export class ListDetailsComponent implements OnInit {
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
-  private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed') === 'true');
+  private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
 
-  public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');
 
   public get adaptativeFilter(): boolean {
     return this.adaptativeFilter$.value;
@@ -156,7 +156,7 @@ export class ListDetailsComponent implements OnInit {
   }
 
   setHideCompleted(newValue: boolean): void {
-    localStorage.setItem('hide-completed', newValue.toString());
+    localStorage.setItem('hide-completed-rows', newValue.toString());
     this.hideCompletedGlobal$.next(newValue);
   }
 

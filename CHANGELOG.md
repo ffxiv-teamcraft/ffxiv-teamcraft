@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.12"></a>
+## [5.0.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.11...v5.0.12) (2019-01-17)
+
+
+### Bug Fixes
+
+* **list-details:** "hide completed rows" is now properly persisted inside local storage ([71a7ab0](https://github.com/Supamiu/ffxiv-teamcraft/commit/71a7ab0)), closes [#715](https://github.com/Supamiu/ffxiv-teamcraft/issues/715)
+* **list-details:** optimized navigation route button is now next to zone name ([04781a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/04781a8))
+* **permissions:** fixed a bug with permissions not applying properly in some cases ([e941eb2](https://github.com/Supamiu/ffxiv-teamcraft/commit/e941eb2))
+
+
+### Features
+
+* **alarms:** gathering location and alarms now have better support for ephemeral nodes ([a658281](https://github.com/Supamiu/ffxiv-teamcraft/commit/a658281)), closes [#568](https://github.com/Supamiu/ffxiv-teamcraft/issues/568)
+* **layout:** new option to see how many items you can craft on craftable rows ([c2727ae](https://github.com/Supamiu/ffxiv-teamcraft/commit/c2727ae))
+* **permissions:** added default permission level setting in settings page ([b5eeecc](https://github.com/Supamiu/ffxiv-teamcraft/commit/b5eeecc))
+* **permissions:** added propagate permissions button inside workshop permissions popup ([a0c2eea](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0c2eea))
+
+
+
 <a name="5.0.11"></a>
 ## [5.0.11](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.10...v5.0.11) (2019-01-16)
 

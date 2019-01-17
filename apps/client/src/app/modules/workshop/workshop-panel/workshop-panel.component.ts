@@ -3,7 +3,7 @@ import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -105,7 +105,7 @@ export class WorkshopPanelComponent implements OnChanges {
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: { data: this._workshop, ready$: modalReady$ }
+      nzComponentParams: { data: this._workshop, ready$: modalReady$, enablePropagation: true }
     });
     modalReady$.pipe(
       first(),
@@ -114,6 +114,47 @@ export class WorkshopPanelComponent implements OnChanges {
       })
     ).subscribe((updatedWorkshop: Workshop) => {
       this.workshopsFacade.updateWorkshop(updatedWorkshop);
+    });
+
+    modalReady$.pipe(
+      first(),
+      switchMap(() => {
+        return modalRef.getContentComponent().propagateChanges$;
+      }),
+      tap((workshop: Workshop) => {
+        workshop.listIds.forEach(id => {
+          this.listsFacade.load(id);
+        });
+      }),
+      withLatestFrom(this.authFacade.userId$),
+      switchMap(([workshop, userId]) => {
+        return this.listsFacade.allListDetails$.pipe(
+          filter(details => {
+            return workshop.listIds.reduce((loaded, key) => {
+              return loaded && details.some(list => list.$key === key);
+            }, true);
+          }),
+          map(details => {
+            return workshop.listIds
+              .map(key => {
+                return details.find(l => l.$key === key);
+              })
+              .filter(list => {
+                return list.getPermissionLevel(userId) >= 40;
+              })
+              .map(list => {
+                list.mergePermissions(workshop, true);
+                return list;
+              });
+          }),
+          first()
+        );
+      })
+    ).subscribe((updatedLists: List[]) => {
+      updatedLists.forEach(list => {
+        this.listsFacade.updateList(list, true);
+      });
+      this.message.success(this.translate.instant('PERMISSIONS.Propagate_changes_done'));
     });
   }
 

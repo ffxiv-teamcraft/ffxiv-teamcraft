@@ -136,6 +136,11 @@
       <nz-tag
         *ngIf="moreAlarmsAvailable > 0" class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
     </div>
+    <div *ngIf="layout?.showCraftableAmount && item.craftedBy !== undefined && item.craftedBy.length > 0">
+      <div *ngIf="craftableAmount$ | async as craftableAmount" class="craftable-amount">
+        {{'LIST_DETAILS.Amount_craftable' | translate:{amount: craftableAmount} }}
+      </div>
+    </div>
   </div>
   <div class="block books-and-input-block" nz-col nzXs="24" nzSm="12"
        nzMd="6">

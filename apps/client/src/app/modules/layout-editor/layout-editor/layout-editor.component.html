@@ -49,6 +49,12 @@
           {{"LIST.Always_show_inventory" | translate}}
         </label>
       </div>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <label nz-checkbox [nzDisabled]="layout.name === 'Default Layout'"
+               [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true">
+          {{"LIST.Show_craftable_amount" | translate}}
+        </label>
+      </div>
     </nz-card>
     <nz-card [nzTitle]="'Items' | translate">
       <div fxLayout="column" fxLayoutGap="10px">

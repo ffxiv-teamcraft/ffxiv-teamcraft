@@ -357,6 +357,7 @@
     "Add_all_alarms": "이 목록에 대한 알람 추가",
     "History": "내역",
     "Items_count": "아이템 {{amount}}개",
+    "Show_craftable_amount": "Show craftable amount",
     "COMPLETION_POPUP": {
       "Title": "완료된 목록",
       "Content": "이 목록은 완료되었습니다. 무엇을 하시겠습니까?",
@@ -391,6 +392,7 @@
     "Open_in_ffxivgardening": "ffxivgardening.com에서 열기",
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
+    "Amount_craftable": "You can craft {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -489,6 +491,7 @@
     "Title": "채집수첩",
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
+    "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!"
   },
   "ANNOUNCEMENT": {
@@ -531,7 +534,8 @@
     "No_anonymous": "권한을 관리하려면 계정이 필요합니다",
     "Propagate_changes": "공방 내부에 목록에 대한 권한 제공",
     "Propagate_changes_done": "공방 내부 목록에 대한 변경이 적용되었습니다",
-    "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다."
+    "Team_notice": "이 목록이 할당된 팀은 자동으로 참여 권한을 갖습니다.",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "위키",

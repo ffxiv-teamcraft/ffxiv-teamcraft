@@ -43,6 +43,10 @@ export class Alarm extends DataModel {
 
   folklore?: CompactMasterbook;
 
+  reduction?: boolean;
+
+  ephemeral?: boolean;
+
   constructor(alarmData?: Partial<Alarm>) {
     super();
     if (alarmData) {

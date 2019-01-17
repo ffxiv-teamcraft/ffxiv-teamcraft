@@ -42,6 +42,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             mapId: node.mapid,
             slot: +node.slot,
             type: row.gatheredBy.type,
+            ephemeral: node.limitType.en === 'Ephemeral',
             coords: {
               x: node.coords[0],
               y: node.coords[1]

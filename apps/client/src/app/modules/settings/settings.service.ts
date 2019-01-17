@@ -41,20 +41,12 @@ export class SettingsService {
     this.setSetting('copy-type', copyType);
   }
 
-  public get crystalsTracking(): boolean {
-    return this.getSetting('crystals-tracking', 'false') === 'true';
+  public get defaultPermissionLevel(): number {
+    return +this.getSetting('default-permission-level', '20');
   }
 
-  public set crystalsTracking(enabled: boolean) {
-    this.setSetting('crystals-tracking', enabled.toString());
-  }
-
-  public get compactLists(): boolean {
-    return this.getSetting('compact-lists', 'false') === 'true';
-  }
-
-  public set compactLists(compact: boolean) {
-    this.setSetting('compact-lists', compact.toString());
+  public set defaultPermissionLevel(level: number) {
+    this.setSetting('default-permission-level', level.toString());
   }
 
   public get compactSidebar(): boolean {
@@ -63,14 +55,6 @@ export class SettingsService {
 
   public set compactSidebar(compact: boolean) {
     this.setSetting('compact-sidebar', compact.toString());
-  }
-
-  public get recipesOnlySearch(): boolean {
-    return this.getSetting('search-only-recipes', 'false') === 'true';
-  }
-
-  public set recipesOnlySearch(compact: boolean) {
-    this.setSetting('search-only-recipes', compact.toString());
   }
 
   public get compactAlarms(): boolean {

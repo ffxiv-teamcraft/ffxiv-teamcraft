@@ -37,7 +37,8 @@
         <div>
           {{node.zoneid | placeName | i18n}}<br>
           X: {{node.x}}, Y: {{node.y}}<br>
-          {{getNodeSpawns(node)}}
+          {{getNodeSpawns(node)}} <i nz-icon type="clock-circle" *ngIf="node.ephemeral" nz-tooltip
+                                     [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate"></i>
           <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
             <div *ngFor="let weather of node.weathers">
               <img [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}" nz-tooltip
@@ -45,8 +46,10 @@
             </div>
           </div>
         </div>
-        <div fxLayout="column">
+        <div fxLayout="column" fxLayoutGap="5px">
           <img *ngIf="node.type !== undefined" src="{{node.type | nodeTypeIcon}}" alt="" class="node-type">
+          <img *ngIf="node.reduction" class="reduction-icon" src="https://www.garlandtools.org/db/images/Reduce.png"
+               nz-tooltip [nzTitle]="'Reduction' | translate">
           <img *ngIf="node.folklore !== undefined" src="{{node.folklore.icon | icon}}" nz-tooltip
                [nzTitle]="node.folklore.id | itemName | i18n" alt="" class="folklore">
           <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"></app-fishing-bait>

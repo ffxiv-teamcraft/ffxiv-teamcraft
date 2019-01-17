@@ -38,6 +38,7 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Craft } from '../../../model/garland-tools/craft';
 import { CommentsService } from '../../../modules/comments/comments.service';
+import { ListLayout } from '../../../core/layout/list-layout';
 
 @Component({
   selector: 'app-item-row',
@@ -69,11 +70,16 @@ export class ItemRowComponent implements OnInit {
   @Input()
   odd = false;
 
+  @Input()
+  layout: ListLayout;
+
   alarms: Alarm[] = [];
 
   moreAlarmsAvailable = 0;
 
   canBeCrafted$: Observable<boolean>;
+
+  craftableAmount$: Observable<number>;
 
   hasAllBaseIngredients$: Observable<boolean>;
 
@@ -168,6 +174,13 @@ export class ItemRowComponent implements OnInit {
     setTimeout(() => {
       this.cdRef.detectChanges();
     });
+
+    this.craftableAmount$ = this.listsFacade.selectedList$.pipe(
+      filter(() => this.layout.showCraftableAmount),
+      tap(() => this.cdRef.detectChanges()),
+      map(list => list.craftableAmount(this.item)),
+      shareReplay(1)
+    );
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       switchMap(() => this.listsFacade.selectedList$),

@@ -35,7 +35,7 @@ export class ListsComponent {
 
   public query$ = new BehaviorSubject<string>('');
 
-  public myLists$ = this.listsFacade.myLists$;
+  public myLists$ = this.listsFacade.myLists$.pipe(debounceTime(50));
 
   public loading$: Observable<boolean>;
 

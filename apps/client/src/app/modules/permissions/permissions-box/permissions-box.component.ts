@@ -23,6 +23,10 @@ export class PermissionsBoxComponent implements OnInit {
 
   public changes$: ReplaySubject<DataWithPermissions> = new ReplaySubject<DataWithPermissions>();
 
+  public enablePropagation = false;
+
+  public propagateChanges$: Subject<DataWithPermissions> = new Subject<DataWithPermissions>();
+
   public ready$: Subject<void>;
 
   permissionLevels = Object.keys(PermissionLevel)
