@@ -42,6 +42,9 @@
       <button nz-button nzGhost nzType="primary" (click)="addFc()" *ngIf="canAddFc$ | async">
         <i nz-icon type="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
+      <button nz-button nzGhost (click)="propagateChanges$.next(data)" *ngIf="enablePropagation">
+        {{'PERMISSIONS.Propagate_changes' | translate}}
+      </button>
     </div>
   </div>
 </div>

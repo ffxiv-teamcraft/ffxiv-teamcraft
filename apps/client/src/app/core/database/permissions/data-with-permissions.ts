@@ -35,4 +35,15 @@ export class DataWithPermissions extends DataModel {
     }
     this.registry[identifier] = level;
   }
+
+  public mergePermissions(other: DataWithPermissions, force = false): void {
+    this.everyone = force ? other.everyone : Math.min(other.everyone, this.everyone);
+    Object.keys(other.registry).forEach(registryKey => {
+      if (this.registry[registryKey] === undefined) {
+        this.registry[registryKey] = other.registry[registryKey];
+      } else {
+        this.registry[registryKey] = force ? other.registry[registryKey] : Math.min(other.registry[registryKey], this.registry[registryKey]);
+      }
+    });
+  }
 }
