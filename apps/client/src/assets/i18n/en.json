@@ -532,7 +532,8 @@
     "No_anonymous": "You need an account to manage permissions",
     "Propagate_changes": "Propagate permissions to lists inside the workshop",
     "Propagate_changes_done": "Changes propagated to lists inside the workshop",
-    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission"
+    "Team_notice": "The team associated to this list automatically has PARTICIPATE permission",
+    "Default_permission_level": "Default permission level"
   },
   "WIKI": {
     "Title": "Wiki",
