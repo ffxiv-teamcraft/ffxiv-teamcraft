@@ -11,6 +11,7 @@ import { MapService } from '../../../modules/map/map.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { folklores } from '../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { reductions } from '../../../core/data/sources/reductions';
 
 @Component({
   selector: 'app-gathering-location',
@@ -88,7 +89,8 @@ export class GatheringLocationComponent {
         const nodesFromGarlandBell = [].concat.apply([], ...items
           .map(item => {
             return [].concat.apply([],
-              ...this.bell.getNodesByItemId(item.obj.i)
+              ...[item.obj.i, ...reductions[item.obj.i]].map(itemId => {
+                return this.bell.getNodesByItemId(itemId)
                 .map(node => {
                   const nodePosition = nodePositions[node.id];
                   const result = {
@@ -105,7 +107,9 @@ export class GatheringLocationComponent {
                     spawnTimes: node.time,
                     uptime: node.uptime,
                     slot: node.slot,
-                    timed: true
+                    timed: true,
+                    reduction: reductions[item.obj.i] && reductions[item.obj.i].indexOf(node.itemId) > -1,
+                    ephemeral: node.name === 'Ephemeral'
                   };
                   const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
                   if (folklore !== undefined) {
@@ -115,7 +119,8 @@ export class GatheringLocationComponent {
                     };
                   }
                   return result;
-                })
+                });
+              })
             );
           })
         );
@@ -241,7 +246,9 @@ export class GatheringLocationComponent {
         x: node.x,
         y: node.y
       },
-      folklore: node.folklore
+      folklore: node.folklore,
+      reduction: node.reduction,
+      ephemeral: node.ephemeral
     };
   }
 
