@@ -221,6 +221,7 @@ export class ListPanelComponent {
       nzContent: PermissionsBoxComponent,
       nzComponentParams: { data: list, ready$: modalReady$ }
     });
+    this.listsFacade.load(list.$key);
     modalReady$.pipe(
       first(),
       switchMap(() => {
@@ -228,7 +229,7 @@ export class ListPanelComponent {
       }),
       switchMap(() => {
         return this.listsFacade.allListDetails$.pipe(
-          map(details => details.find(l => l.$key === this._list.$key)),
+          map(details => details.find(l => l.$key === list.$key)),
           filter(l => l !== undefined),
           first(),
           map(changes => {
@@ -238,7 +239,7 @@ export class ListPanelComponent {
         );
       })
     ).subscribe((res) => {
-      this.listsFacade.updateListUsingCompact(res);
+      this.listsFacade.updateList(res);
     });
   }
 
