@@ -39,8 +39,11 @@ export abstract class CraftingAction {
 
   abstract getSuccessRate(simulationState: Simulation): number;
 
-  canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
+  canBeUsed(simulationState: Simulation, linear?: boolean, safeMode?: boolean): boolean {
     const levelRequirement = this.getLevelRequirement();
+    if (safeMode && this.getSuccessRate(simulationState) < 100) {
+      return false;
+    }
     if (levelRequirement.job !== CraftingJob.ANY && simulationState.crafterStats.levels[levelRequirement.job] !== undefined) {
       return simulationState.crafterStats.levels[levelRequirement.job] >= levelRequirement.level
         && this._canBeUsed(simulationState, linear);
