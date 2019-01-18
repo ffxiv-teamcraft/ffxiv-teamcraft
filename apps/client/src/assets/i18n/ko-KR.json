@@ -595,6 +595,8 @@
     "Save_as_new_done": "새로 저장된 로테이션을 불러왔습니다",
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
+    "Safe_mode": "Safe mode",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
