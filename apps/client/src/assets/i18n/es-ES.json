@@ -595,6 +595,8 @@
     "Save_as_new_done": "Usted está ahora en una copia de su rotación",
     "Change_rotation": "Escoger rotación",
     "New_rotation_folder": "Nueva carpeta",
+    "Safe_mode": "Safe mode",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",
