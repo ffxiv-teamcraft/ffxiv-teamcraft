@@ -595,6 +595,8 @@
     "Save_as_new_done": "新たに保存されたスキル回しを呼び寄せました",
     "Change_rotation": "スキル回しを変更する",
     "New_rotation_folder": "新回しフォルダー",
+    "Safe_mode": "Safe mode",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "製作情報",
       "Recipe_level": "レシピLv",
