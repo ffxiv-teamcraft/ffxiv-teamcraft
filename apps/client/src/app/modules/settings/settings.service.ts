@@ -157,11 +157,11 @@ export class SettingsService {
   }
 
   public get noPanelBorders(): boolean {
-    return this.getSetting('no-panel-borders', 'false') === 'true';
+    return this.getSetting('noPanelBorders', 'false') === 'true';
   }
 
   public set noPanelBorders(borders: boolean) {
-    this.setSetting('no-panel-borders', borders.toString());
+    this.setSetting('noPanelBorders', borders.toString());
   }
 
   private getSetting(name: string, defaultValue: string): string {
