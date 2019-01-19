@@ -31,7 +31,8 @@
             <i nz-icon type="environment-o"></i>
           </button>
         </div>
-        <div class="delete-icon" (click)="deleteAlarm(row.alarm)">
+        <div class="delete-icon" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+             (nzOnConfirm)="deleteAlarm(row.alarm)">
           <i nz-icon type="close"></i>
         </div>
       </div>
