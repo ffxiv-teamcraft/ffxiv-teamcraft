@@ -772,5 +772,10 @@
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認して、リストが作れます。",
       "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
   }
 }
