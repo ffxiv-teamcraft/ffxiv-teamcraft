@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.13"></a>
+## [5.0.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.12...v5.0.13) (2019-01-20)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with closest aetheryte tp not showing properly ([2add519](https://github.com/Supamiu/ffxiv-teamcraft/commit/2add519))
+* **search:** fixed a bug with some search terms ([9568fdb](https://github.com/Supamiu/ffxiv-teamcraft/commit/9568fdb))
+* **settings:** fixed a missing translation in general settings ([7f39752](https://github.com/Supamiu/ffxiv-teamcraft/commit/7f39752))
+* **simulator:** fixed position of "XIV" inside macro export button ([7b06d75](https://github.com/Supamiu/ffxiv-teamcraft/commit/7b06d75))
+
+
+### Features
+
+* **alarms:** added confirmation message for alarms deletion ([e3b5dec](https://github.com/Supamiu/ffxiv-teamcraft/commit/e3b5dec))
+* added a message in every page to show when a new version is available ([ff7e4a8](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff7e4a8))
+* added new patreon supporter: Morphean Knights ([cf58678](https://github.com/Supamiu/ffxiv-teamcraft/commit/cf58678))
+* **settings:** new option to remove panel borders ([d40baab](https://github.com/Supamiu/ffxiv-teamcraft/commit/d40baab))
+* **simulator:** added new safe mode to make 100% safe rotations easily ([c939f99](https://github.com/Supamiu/ffxiv-teamcraft/commit/c939f99)), closes [#713](https://github.com/Supamiu/ffxiv-teamcraft/issues/713)
+
+
+
 <a name="5.0.12"></a>
 ## [5.0.12](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.11...v5.0.12) (2019-01-17)
 
