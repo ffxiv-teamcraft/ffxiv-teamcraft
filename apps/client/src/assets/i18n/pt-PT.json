@@ -772,5 +772,10 @@
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
       "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
   }
 }
