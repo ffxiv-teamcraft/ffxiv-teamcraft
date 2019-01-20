@@ -597,7 +597,7 @@
     "Change_rotation": "Rotation wechseln",
     "New_rotation_folder": "Neuer Ordner",
     "Safe_mode": "Sicherer Modus",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "CUSTOM": {
       "Recipe_configuration": "Einstellungen für Rezept",
       "Recipe_level": "Level für Rezept",
