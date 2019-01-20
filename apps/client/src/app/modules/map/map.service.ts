@@ -97,6 +97,10 @@ export class MapService {
   }
 
   private getAetherytes(id: number): Aetheryte[] {
+    // If it's dravanian forelandes, use Idyllshire id instead.
+    if(id === 213){
+      id = 257;
+    }
     return aetherytes.filter(aetheryte => aetheryte.map === id);
   }
 
