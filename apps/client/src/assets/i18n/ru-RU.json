@@ -267,6 +267,7 @@
     "General": "Главные",
     "Link_base": "Ссылка на предмет",
     "Theme": "Тема",
+    "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Рабочий стол",
     "Always_on_top": "Всегда наверху",
     "Check_for_update": "Проверить обновления",
