@@ -596,8 +596,8 @@
     "Save_as_new_done": "새로 저장된 로테이션을 불러왔습니다",
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "안전 모드",
+    "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "CUSTOM": {
       "Recipe_configuration": "제작난이도 설정",
       "Recipe_level": "레시피 레벨",
@@ -775,8 +775,8 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "새 업데이트가 있습니다! ",
+    "Desktop_instructions": "최신 버전을 다운로드를 위해 링크로 이동하세요:  ",
+    "Web_instructions": "최신 버전으로 가져오기 위해 페이지를 새로고침 하세요."
   }
 }
