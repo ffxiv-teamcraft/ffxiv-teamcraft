@@ -140,6 +140,14 @@ export class SettingsService {
     this.setSetting('ffxivcrafting-display', display.toString());
   }
 
+  public get noPanelBorders(): boolean {
+    return this.getSetting('noPanelBorders', 'false') === 'true';
+  }
+
+  public set noPanelBorders(borders: boolean) {
+    this.setSetting('noPanelBorders', borders.toString());
+  }
+
   private getSetting(name: string, defaultValue: string): string {
     return this.cache[name] || defaultValue;
   }

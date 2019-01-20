@@ -1,4 +1,4 @@
-<nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container">
+<nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" class="app-container" [class.no-panel-borders]="settings.noPanelBorders">
   <nz-layout *ngIf="!overlay">
     <nz-header class="header">
       <a class="logo" routerLink="/">
