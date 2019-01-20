@@ -772,5 +772,10 @@
       "Levequests": "Fine Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
       "Macro_translation": "Du hast Macros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deinem FFXIV funktioniert!"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
   }
 }
