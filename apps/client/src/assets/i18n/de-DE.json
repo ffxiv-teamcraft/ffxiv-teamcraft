@@ -267,6 +267,7 @@
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
     "Theme": "Design",
+    "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
