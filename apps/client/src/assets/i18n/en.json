@@ -267,6 +267,7 @@
     "General": "General",
     "Link_base": "Item links",
     "Theme": "Theme",
+    "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
     "Always_on_top": "Always on top",
     "Check_for_update": "Check for update",
@@ -595,6 +596,8 @@
     "Save_as_new_done": "You're now on a copy of your rotation",
     "Change_rotation": "Change rotation",
     "New_rotation_folder": "New folder",
+    "Safe_mode": "Safe mode",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
     "CUSTOM": {
       "Recipe_configuration": "Recipe configuration",
       "Recipe_level": "Recipe level",
@@ -770,5 +773,10 @@
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefit on them and create lists for them.",
       "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your ffxiv !"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
   }
 }

@@ -181,7 +181,8 @@
                [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
     </ng-template>
     <ng-template #delete>
-      <i nz-icon type="delete" (click)="deleteAlarm(row.alarm)"></i>
+      <i nz-icon type="delete" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+         (nzOnConfirm)="deleteAlarm(row.alarm)"></i>
     </ng-template>
     <ng-template #copyMacro>
       <i nz-icon type="copy" ngxClipboard [cbContent]="getIngameAlarmMacro(row)" nz-tooltip

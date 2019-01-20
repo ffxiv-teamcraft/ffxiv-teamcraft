@@ -74,6 +74,14 @@
                 (click)="changeRotation()">
           <i nz-icon iconfont="icon-exchange"></i>
         </button>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" nz-tooltip
+             [nzTitle]="'SIMULATOR.Safe_mode_tooltip' | translate">
+          <div>
+            <nz-switch [ngModel]="safeMode$ | async"
+                       (ngModelChange)="safeMode$.next($event);saveSafeMode($event)"></nz-switch>
+          </div>
+          <div>{{'SIMULATOR.Safe_mode' | translate}}</div>
+        </div>
       </div>
       <nz-collapse>
         <nz-collapse-panel [nzHeader]="'SIMULATOR.Configuration' | translate"
@@ -286,7 +294,8 @@
                fxLayoutGap.lt-sm="10px">
             <div fxLayout="row" fxLayoutGap="10px" *ngIf="!custom">
               <div class="avatar">
-                <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="42" *ngIf="true | ifMobile: false"></app-item-icon>
+                <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="42"
+                               *ngIf="true | ifMobile: false"></app-item-icon>
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutGap="5px">
@@ -333,7 +342,7 @@
               <span class="durability-value">{{resultData.simulation.durability}}
                 / {{resultData.simulation.recipe.durability}}</span>
             </div>
-            <div  fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+            <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
               <div class="top-bars">
                 <div fxLayout="column">
                   <h3>{{'SIMULATOR.Progress' | translate}}</h3>
@@ -434,10 +443,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getProgressActions()"
@@ -449,10 +460,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getQualityActions()"
@@ -466,10 +479,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Cp_recovery' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getCpRecoveryActions()"
@@ -481,10 +496,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getBuffActions()"
@@ -498,10 +515,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getRepairActions()"
@@ -513,10 +532,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Specialty' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getSpecialtyActions()"
@@ -528,10 +549,12 @@
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
               <div class="actions-row ngx-dnd-container" ngxDroppable (drop)="disableEvent($event)" [copy]="true">
-                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']" [model]="action"
+                <app-action (actionclick)="addAction(action)" [ngxDraggable]="['action']"
+                            [model]="action"
                             class="ngx-dnd-item action-from-bar"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode
                     || resultData.simulation.success !== undefined"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [action]="action" [simulation]="resultData.simulation"
                             *ngFor="let action of getOtherActions()"

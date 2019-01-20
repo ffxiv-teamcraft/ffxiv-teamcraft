@@ -267,6 +267,7 @@
     "General": "Général",
     "Link_base": "Liens des objets",
     "Theme": "Thème",
+    "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
     "Check_for_update": "Chercher une mise à jour",
@@ -369,7 +370,7 @@
       "Add_link_description": "Créé un lien personnalisé pour la liste",
       "Create_template_description": "Créé un lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
       "Copy_template_url_description": "Copie le lien de template pour la liste, qui la copiera sur le compte de quiconque ouvre le lien",
-      "Share_description": "Copie le lien de partage dans le presse-papiers",
+      "Share_description": "Copier le lien de partage dans le presse-papiers",
       "Open": "Ouvrir la liste",
       "Open_description": "Accède à la liste",
       "Delete": "Supprimer la liste",
@@ -595,6 +596,8 @@
     "Save_as_new_done": "Vous êtes maintenant sur la copie de votre rotation",
     "Change_rotation": "Changer de rotation",
     "New_rotation_folder": "Nouveau dossier",
+    "Safe_mode": "Mode garanti",
+    "Safe_mode_tooltip": "Désactive toutes les actions qui n'ont pas 100% de chance de réussite (prend en compte les bonus)",
     "CUSTOM": {
       "Recipe_configuration": "Configuration de la recette",
       "Recipe_level": "Niveau de la recette",
@@ -770,5 +773,10 @@
       "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
       "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "Une nouvelle mise à jour est disponible ! ",
+    "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
+    "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   }
 }
