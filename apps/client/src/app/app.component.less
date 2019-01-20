@@ -2,10 +2,12 @@
 
 .app-container {
   height: 100%;
+}
 
-  &.no-panel-borders .ant-collapse,
-  &.no-panel-borders .ant-collapse > .ant-collapse-item,
-  &.no-panel-borders .ant-collapse-content {
+::ng-deep .no-panel-borders {
+  .ant-collapse,
+  .ant-collapse > .ant-collapse-item,
+  .ant-collapse-content {
     border: 0;
   }
 }
