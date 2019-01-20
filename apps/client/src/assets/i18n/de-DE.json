@@ -267,7 +267,7 @@
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
     "Theme": "Design",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Deaktiviere Ränder um diverse Elemente",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
     "Check_for_update": "Neues Update verfügbar?",
@@ -777,6 +777,6 @@
   "UPDATE": {
     "New_update_available": "A new update is available ! ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
   }
 }
