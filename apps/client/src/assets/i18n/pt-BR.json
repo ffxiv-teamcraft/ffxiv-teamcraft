@@ -267,6 +267,7 @@
     "General": "General",
     "Link_base": "Item links",
     "Theme": "Theme",
+    "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
     "Always_on_top": "Always on top",
     "Check_for_update": "Check for update",
