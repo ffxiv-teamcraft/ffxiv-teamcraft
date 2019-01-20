@@ -772,5 +772,10 @@
       "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
       "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
     }
+  },
+  "UPDATE": {
+    "New_update_available": "A new update is available ! ",
+    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
+    "Web_instructions": "Please reload the page to get the latest version."
   }
 }
