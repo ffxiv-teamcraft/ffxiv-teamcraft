@@ -143,16 +143,49 @@ const craftingLog = [
   []
 ];
 
+const craftingLogPages = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
+
 // Preparing the query params, each page has 160 slots so we have to make sure we get all of them
-let columns = [];
+let columns = ['ID', 'Recipe0.SecretRecipeBookTargetID'];
 for (let i = 0; i < 160; i++) {
   columns.push(`Recipe${i}.ID`);
   columns.push(`Recipe${i}.CraftType.ID`);
+  columns.push(`Recipe${i}.ItemResultTargetID`);
+  columns.push(`Recipe${i}.RecipeLevelTable`);
 }
 
 const completeFetch = [];
 
-getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${columns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+function addToLogPage(entry, pageId) {
+  let page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
+  if (page === undefined) {
+    craftingLogPages[entry.CraftType.ID].push({
+      id: pageId,
+      masterbook: entry.SecretRecipeBookTargetID,
+      startLevel: entry.RecipeLevelTable,
+      recipes: []
+    });
+  }
+  page.recipes.push({
+    recipeId: entry.ID,
+    itemId: entry.ItemResultTargetID,
+    rlvl: entry.RecipeLevelTable.ID
+  });
+}
+
+getAllPages(`https://xivapi.com/RecipeNotebookList`, {
+  columns: columns,
+  key: '63cc0045d7e847149c3f'
+}).subscribe(res => {
   completeFetch.push(...res.Results);
 }, null, () => {
   completeFetch.forEach(page => {
@@ -167,7 +200,9 @@ getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${columns.join(',')}&
       .forEach(key => {
         const entry = page[key];
         craftingLog[entry.CraftType.ID].push(entry.ID);
+        addToLogPage(entry);
       });
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
+  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
 });

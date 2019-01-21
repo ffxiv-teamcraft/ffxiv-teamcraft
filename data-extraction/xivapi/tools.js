@@ -7,12 +7,20 @@ const fs = require('fs');
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
 
 
-const get = (url) => {
+const get = (url, body) => {
+  console.log('--------------------');
+  console.log('GET', url);
+  console.log('--------------------');
   const res$ = new Rx.Subject();
-  request(url, (err, _, res) => res$.next(res));
-  return res$.pipe(
-    map(res => JSON.parse(res))
-  );
+  if (body !== undefined) {
+    request(url, {
+      body: body,
+      json: true
+    }, (err, _, res) => res$.next(res));
+  } else {
+    request(url, { json: true }, (err, _, res) => res$.next(res));
+  }
+  return res$;
 };
 
 function addQueryParam(url, paramName, paramValue) {
@@ -23,12 +31,18 @@ function addQueryParam(url, paramName, paramValue) {
   }
 }
 
-module.exports.getAllPages = (endpoint) => {
+module.exports.getAllPages = (endpoint, body) => {
   const page$ = new Rx.BehaviorSubject(1);
   const complete$ = new Rx.Subject();
   return page$.pipe(
     mergeMap(page => {
-      return get(addQueryParam(endpoint, 'page', page)).pipe(
+      let url = endpoint;
+      if (body !== undefined) {
+        body.page = page;
+      } else {
+        url = addQueryParam(endpoint, 'page', page);
+      }
+      return get(url, body).pipe(
         tap(result => {
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
