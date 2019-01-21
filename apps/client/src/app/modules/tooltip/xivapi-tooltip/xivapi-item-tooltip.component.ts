@@ -18,6 +18,9 @@ export class XivapiItemTooltipComponent implements OnInit {
   public stats = [];
 
   ngOnInit(): void {
+    if (this.item === undefined) {
+      return;
+    }
     this.mainAttributes.push({
       name: 'TOOLTIP.Level',
       value: this.item.LevelEquip

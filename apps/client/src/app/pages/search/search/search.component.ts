@@ -152,7 +152,7 @@ export class SearchComponent implements OnInit {
   private filtersToForm(filters: SearchFilter[]): { [key: string]: any } {
     const formRawValue = {};
     (filters || []).forEach(f => {
-      if (f.value.min !== undefined) {
+      if (f.value !== null && f.value.min !== undefined) {
         formRawValue[`${f.name}Min`] = f.value.min;
         formRawValue[`${f.name}Max`] = f.value.max;
       } else {
