@@ -8,6 +8,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
     path: 'lists',
     loadChildren: './pages/lists/lists-page.module#ListsPageModule'
   },
