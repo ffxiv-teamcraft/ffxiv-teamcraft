@@ -13,7 +13,8 @@ export class LayoutRow {
               public hideIfEmpty = true,
               public hideCompletedRows = false,
               public hideUsedRows = false,
-              public collapseIfDone = false) {
+              public collapseIfDone = false,
+              public hideZoneDuplicates = false) {
   }
 
   public get filter(): LayoutRowFilter {

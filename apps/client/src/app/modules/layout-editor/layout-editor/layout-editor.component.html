@@ -83,6 +83,8 @@
         </nz-radio-group>
         <label nz-checkbox [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true">{{"Hide_completed" |
           translate}}</label>
+        <label nz-checkbox *ngIf="layout.recipeZoneBreakdown" [(ngModel)]="layout.recipeHideZoneDuplicates"
+               (ngModelChange)="dirty = true">{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </nz-card>
     <div ngxDroppable fxLayout="column" fxLayoutGap="10px" (drop)="moveRow($event.value, $event.dropIndex, layout)">

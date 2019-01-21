@@ -3,21 +3,21 @@ import { ListRow } from '../../modules/list/model/list-row';
 
 export class ZoneBreakdown {
 
-  constructor(rows: ListRow[]) {
+  constructor(rows: ListRow[], hideZoneDuplicates = false) {
     rows.forEach(row => {
       if (row.gatheredBy !== undefined && row.gatheredBy.nodes !== undefined && row.gatheredBy.nodes.length !== 0) {
         row.gatheredBy.nodes.forEach(node => {
-          this.addToBreakdown(node.zoneid, node.mapid, row);
+          this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates);
         });
         return;
       }
       if (row.drops !== undefined && row.drops.length > 0) {
         row.drops.forEach(drop => {
-          this.addToBreakdown(drop.zoneid, drop.mapid, row);
+          this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates);
         });
         return;
       }
-      this.addToBreakdown(-1, -1, row);
+      this.addToBreakdown(-1, -1, row, hideZoneDuplicates);
     });
   }
 
@@ -36,9 +36,13 @@ export class ZoneBreakdown {
    * @param zoneId
    * @param item
    * @param mapId
+   * @param hideZoneDuplicates
    */
-  private addToBreakdown(zoneId: number, mapId: number, item: ListRow): void {
+  private addToBreakdown(zoneId: number, mapId: number, item: ListRow, hideZoneDuplicates: boolean): void {
     const existingRow = this.rows.find(r => r.zoneId === zoneId);
+    if (hideZoneDuplicates && this.rows.some(r => r.items.some(i => i.id === item.id))) {
+      return;
+    }
     if (existingRow === undefined) {
       this._rows.push({ zoneId: zoneId, items: [item], mapId: mapId });
     } else {

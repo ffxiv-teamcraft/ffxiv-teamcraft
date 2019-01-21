@@ -46,7 +46,7 @@ export class ListDetailsPanelComponent implements OnChanges {
       this.generateTiers();
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows);
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.getHideZoneDuplicates());
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (row.tradeSources && row.tradeSources.length > 0) || (row.vendors && row.vendors.length > 0) || hasTrades;
@@ -58,6 +58,13 @@ export class ListDetailsPanelComponent implements OnChanges {
       const hasTradesWithPosition = row.tradeSources && row.tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined));
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
     }, false);
+  }
+
+  private getHideZoneDuplicates(): boolean {
+    if (this.displayRow.layoutRow === null) {
+      return this.displayRow.layout.recipeHideZoneDuplicates;
+    }
+    return this.displayRow.layoutRow.hideZoneDuplicates;
   }
 
   public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
