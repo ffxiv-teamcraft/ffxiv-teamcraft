@@ -4,7 +4,7 @@ const fs = require('fs');
 const http = require('https');
 const Rx = require('rxjs');
 const { switchMap, map } = require('rxjs/operators');
-const { getAllPages, getOnePage, persistToJson, persistToTypescript, get } = require('./tools.js');
+const { getAllPages, getOnePage, persistToJsonAsset, persistToTypescript, get, getAllEntries } = require('./tools.js');
 
 const nodes = {};
 const aetherytes = [];
@@ -154,16 +154,6 @@ const craftingLogPages = [
   []
 ];
 
-// Preparing the query params, each page has 160 slots so we have to make sure we get all of them
-let columns = ['ID', 'Recipe0.SecretRecipeBookTargetID'];
-for (let i = 0; i < 160; i++) {
-  columns.push(`Recipe${i}.ID`);
-  columns.push(`Recipe${i}.CraftType.ID`);
-  columns.push(`Recipe${i}.ItemResultTargetID`);
-  columns.push(`Recipe${i}.RecipeLevelTable`);
-}
-
-const completeFetch = [];
 
 function addToLogPage(entry, pageId) {
   let page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
@@ -174,6 +164,7 @@ function addToLogPage(entry, pageId) {
       startLevel: entry.RecipeLevelTable,
       recipes: []
     });
+    page = craftingLogPages[entry.CraftType.ID].find(page => page.id === pageId);
   }
   page.recipes.push({
     recipeId: entry.ID,
@@ -182,27 +173,22 @@ function addToLogPage(entry, pageId) {
   });
 }
 
-getAllPages(`https://xivapi.com/RecipeNotebookList`, {
-  columns: columns,
-  key: '63cc0045d7e847149c3f'
-}).subscribe(res => {
-  completeFetch.push(...res.Results);
-}, null, () => {
+getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
   completeFetch.forEach(page => {
     // If it's an empty page, don't go further
-    if (page.Recipe0.ID === -1) {
+    if (!page.Recipe0 || page.Recipe0.ID === -1) {
       return;
     }
     Object.keys(page)
       .filter(key => {
-        return page[key] && page[key].ID !== -1 && page[key].ID !== null;
+        return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
       })
       .forEach(key => {
         const entry = page[key];
         craftingLog[entry.CraftType.ID].push(entry.ID);
-        addToLogPage(entry);
+        addToLogPage(entry, page.ID);
       });
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
-  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
+  persistToTypescript('crafting-log-pages', 'craftingLog', craftingLogPages);
 });
