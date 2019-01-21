@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { mapIds } from '../data/sources/map-ids';
 import { weatherIndex } from '../data/sources/weather-index';
+import { EorzeanTimeService } from './eorzean-time.service';
 
 @Injectable()
 export class WeatherService {
@@ -9,11 +10,10 @@ export class WeatherService {
   /**
    * Gets weather rate for a given time,
    * see https://github.com/viion/ffxiv-datamining/blob/master/docs/Weather.md for implementation details
-   * @param weatherRate
    * @param date
    */
-  private getWeatherRateValue(weatherRate: number, date: Date): number {
-    const unixSeconds = Math.trunc(date.getTime() / 1000);
+  private getWeatherRateValue(date: Date): number {
+    const unixSeconds = Math.round(date.getTime() / EorzeanTimeService.EPOCH_TIME_FACTOR / 1000);
     const eorzeanHour = unixSeconds / 175;
     // Do the magic 'cause for calculations 16:00 is 0, 00:00 is 8 and 08:00 is 16
     const increment = (eorzeanHour + 8 - (eorzeanHour % 8)) % 24;
@@ -30,9 +30,11 @@ export class WeatherService {
   }
 
   public getWeather(mapId: number, date: Date): number {
-    const weatherRate = mapIds.find(map => map.id === mapId).weatherRate;
-    const weatherRateValue = this.getWeatherRateValue(weatherRate, date);
+    const weatherRate = weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
+    const weatherRateValue = this.getWeatherRateValue(date);
     const rates = Object.keys(weatherRate);
+    console.log(weatherRateValue, rates);
+    return;
     for (const rate of rates) {
       if (weatherRateValue <= +rate) {
         return weatherRate[rate];
@@ -41,8 +43,16 @@ export class WeatherService {
     return 1;
   }
 
-  public getNextWeatherStart(mapId: number, weatherId: number): Date | null {
-    const weatherRate = mapIds.find(map => map.id === mapId).weatherRate;
-    return null;
+  public getNextWeatherStart(mapId: number, weatherId: number, date: Date, weatherRate?: any): Date | null {
+    weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
+    if (!Object.keys(weatherRate).some(key => weatherRate[key] === weatherId)) {
+      return null;
+    }
+    if (this.getWeather(mapId, date) === weatherId) {
+      return date;
+    }
+    return;
+    date.setHours((date.getHours() + 8) % 8);
+    return this.getNextWeatherStart(mapId, weatherId, date, weatherRate);
   }
 }
