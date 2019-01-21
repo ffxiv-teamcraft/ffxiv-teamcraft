@@ -21,7 +21,7 @@ import { Character } from '@xivapi/angular-client';
 import { NzIconService, NzModalService } from 'ng-zorro-antd';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
-import { EorzeanTimeService } from './core/time/eorzean-time.service';
+import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';

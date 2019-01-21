@@ -18,7 +18,7 @@ import { Alarm } from '../alarm';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
-import { EorzeanTimeService } from '../../time/eorzean-time.service';
+import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
 import { AlarmGroupDisplay } from '../alarm-group-display';
 import { AlarmGroup } from '../alarm-group';

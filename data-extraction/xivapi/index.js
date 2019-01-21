@@ -122,9 +122,9 @@ handleNpc = (row) => {
 
 const mapIds = [];
 
-getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en&key=63cc0045d7e847149c3f').subscribe(res => {
+getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,TerritoryType.WeatherRate&key=63cc0045d7e847149c3f').subscribe(res => {
   res.Results.forEach(map => {
-    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en });
+    mapIds.push({ id: +map.ID, name: map.PlaceName.Name_en, weatherRate: map.TerritoryType.WeatherRate });
   });
 }, null, () => {
   persistToTypescript('map-ids', 'mapIds', mapIds);
@@ -144,15 +144,15 @@ const craftingLog = [
 ];
 
 // Preparing the query params, each page has 160 slots so we have to make sure we get all of them
-let columns = [];
+let logColumns = [];
 for (let i = 0; i < 160; i++) {
-  columns.push(`Recipe${i}.ID`);
-  columns.push(`Recipe${i}.CraftType.ID`);
+  logColumns.push(`Recipe${i}.ID`);
+  logColumns.push(`Recipe${i}.CraftType.ID`);
 }
 
 const completeFetch = [];
 
-getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${columns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${logColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
   completeFetch.push(...res.Results);
 }, null, () => {
   completeFetch.forEach(page => {
@@ -170,4 +170,47 @@ getAllPages(`https://xivapi.com/RecipeNotebookList?columns=${columns.join(',')}&
       });
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
+});
+
+// Weather index extraction
+const weatherIndexes = [];
+
+const weatherIndexData = {};
+
+const weatherColumns = [
+  'ID',
+  'Rate0',
+  'Rate1',
+  'Rate2',
+  'Rate3',
+  'Rate4',
+  'Rate5',
+  'Rate6',
+  'Rate7',
+  'Weather0TargetID',
+  'Weather1TargetID',
+  'Weather2TargetID',
+  'Weather3TargetID',
+  'Weather4TargetID',
+  'Weather5TargetID',
+  'Weather6TargetID',
+  'Weather7TargetID'
+];
+
+getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+  weatherIndexes.push(...res.Results);
+}, null, () => {
+  weatherIndexes.forEach(weatherIndex => {
+    weatherIndexData[weatherIndex.ID] = {
+      [weatherIndex.Rate0]: weatherIndex.Weather0TargetID,
+      [weatherIndex.Rate1]: weatherIndex.Weather1TargetID,
+      [weatherIndex.Rate2]: weatherIndex.Weather2TargetID,
+      [weatherIndex.Rate3]: weatherIndex.Weather3TargetID,
+      [weatherIndex.Rate4]: weatherIndex.Weather4TargetID,
+      [weatherIndex.Rate5]: weatherIndex.Weather5TargetID,
+      [weatherIndex.Rate6]: weatherIndex.Weather6TargetID,
+      [weatherIndex.Rate7]: weatherIndex.Weather7TargetID
+    };
+  });
+  persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
 });
