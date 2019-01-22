@@ -29,4 +29,6 @@ export class TeamcraftUser extends DataModel {
   lastPatreonRefresh?: number;
 
   nickname: string;
+
+  logProgression: number[] = [];
 }
