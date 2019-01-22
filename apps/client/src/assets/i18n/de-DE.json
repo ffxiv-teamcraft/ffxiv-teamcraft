@@ -10,6 +10,7 @@
   "Edit_amount": "Anzahl ändern",
   "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -778,5 +779,18 @@
     "New_update_available": "Eine neue Version ist verfügbar!",
     "Desktop_instructions": "Klicke hier, um die neueste Version herunterladen: ",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
+  },
+  "LOG_TRACKER": {
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
+    }
   }
 }
