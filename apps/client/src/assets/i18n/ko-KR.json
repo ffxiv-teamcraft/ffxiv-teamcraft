@@ -10,7 +10,7 @@
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -781,16 +781,16 @@
     "Web_instructions": "최신 버전으로 가져오기 위해 페이지를 새로고침 하세요."
   },
   "LOG_TRACKER": {
-    "Mark_page_as_done": "Mark this page as done",
-    "Mark_as_done": "Mark this item as done",
-    "Mark_as_not_done": "Mark this item as not done",
-    "Create_list": "Create a list to complete this page",
+    "Mark_page_as_done": "이 페이지를 완료됨 으로 표시",
+    "Mark_as_done": "이 아이템을 완료됨 으로 표시",
+    "Mark_as_not_done": "이 아이템을 완료되지 않음 으로 표시",
+    "Create_list": "이 페이지에 완료된 목록 만들기",
     "PAGE": {
-      "Master_recipes": "Master recipes ({{number}})",
-      "Housing_items": "Housing({{number}})",
-      "Others": "Others",
-      "Dyes": "Dyes",
-      "Other_master_recipes": "Other Master Recipes"
+      "Master_recipes": "비전서 제작법 {{number}}",
+      "Housing_items": "하우징 {{number}}",
+      "Others": "기타",
+      "Dyes": "염료",
+      "Other_master_recipes": "다른 비전서 제작법"
     }
   }
 }
