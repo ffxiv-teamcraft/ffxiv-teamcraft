@@ -13,10 +13,11 @@ import {
   LoadListCompact,
   LoadListDetails,
   MyListsLoaded,
-  SetItemDone,
+  SetItemDone, TeamListsLoaded,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndex,
+  LoadTeamLists
 } from './lists.actions';
 import {
   catchError,
@@ -57,6 +58,18 @@ export class ListsEffects {
       return this.listCompactsService.getByForeignKey(TeamcraftUser, userId)
         .pipe(
           map(lists => new MyListsLoaded(lists, userId))
+        );
+    })
+  );
+
+  @Effect()
+  loadTeamLists$ = this.actions$.pipe(
+    ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
+    distinctUntilChanged(),
+    switchMap((action) => {
+      return this.listCompactsService.getByForeignKey(Team, action.teamId)
+        .pipe(
+          map(lists => new TeamListsLoaded(lists, action.teamId))
         );
     })
   );
