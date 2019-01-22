@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: './pages/levequests/levequests.module#LevequestsModule'
   },
   {
+    path: 'log-tracker',
+    loadChildren: './pages/log-tracker/log-tracker.module#LogTrackerModule'
+  },
+  {
     path: 'alarms',
     loadChildren: './pages/alarms-page/alarms-page.module#AlarmsPageModule'
   },

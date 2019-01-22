@@ -169,7 +169,9 @@ function addToLogPage(entry, pageId) {
   page.recipes.push({
     recipeId: entry.ID,
     itemId: entry.ItemResultTargetID,
-    rlvl: entry.RecipeLevelTable.ID
+    rlvl: entry.RecipeLevelTable.ID,
+    icon: entry.ItemResult.Icon,
+    category: entry.ItemResult.ItemUICategoryTargetID
   });
 }
 
@@ -190,5 +192,5 @@ getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', t
       });
   });
   persistToTypescript('crafting-log', 'craftingLog', craftingLog);
-  persistToTypescript('crafting-log-pages', 'craftingLog', craftingLogPages);
+  persistToTypescript('crafting-log-pages', 'craftingLogPages', craftingLogPages);
 });
