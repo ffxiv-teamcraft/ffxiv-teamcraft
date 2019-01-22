@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import * as items from './sources/items.json';
+import * as items from '../../../assets/data/items.json';
 import * as places from './sources/places.json';
 import * as mobs from './sources/mobs.json';
 import * as weathers from './sources/weathers.json';
@@ -12,17 +12,21 @@ import * as freeCompanyActions from './sources/free-company-actions.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LocalizedDataService {
 
   indentRegexp = new RegExp('<Indent/>', 'i');
 
-  constructor() {
+  private items: any = {};
+
+  constructor(private http: HttpClient) {
+    this.http.get('/assets/data/items.json').subscribe(i => this.items = i);
   }
 
   public getItem(id: number): I18nName {
-    const row = this.getRow(items, id);
+    const row = this.getRow(this.items, id);
     if (row !== undefined) {
       row.fr = row.fr.replace(this.indentRegexp, '');
     }
@@ -35,9 +39,9 @@ export class LocalizedDataService {
     }
     const regex = new RegExp(`${name}`, 'i');
     const res = [];
-    const keys = Object.keys(items);
+    const keys = Object.keys(this.items);
     for (const key of keys) {
-      if (regex.test(items[key][language])) {
+      if (regex.test(this.items[key][language])) {
         res.push(key);
       }
     }
