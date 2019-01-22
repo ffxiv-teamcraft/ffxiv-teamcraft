@@ -10,6 +10,7 @@
   "Edit_amount": "Editar a quantidade",
   "List_fork_in_progress": "Copying the list to your account...",
   "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",
@@ -778,5 +779,18 @@
     "New_update_available": "A new update is available ! ",
     "Desktop_instructions": "Please navigate to the following link to download latest version: ",
     "Web_instructions": "Please reload the page to get the latest version."
+  },
+  "LOG_TRACKER": {
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
+    }
   }
 }
