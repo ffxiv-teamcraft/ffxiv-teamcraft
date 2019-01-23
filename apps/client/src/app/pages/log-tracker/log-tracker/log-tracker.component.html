@@ -8,7 +8,7 @@
                (nzSelectedIndexChange)="selectedPage = tab[$event].id">
       <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
         <ng-template #titleTemplate>
-          {{ getPageName(page) }} - {{page.id}} <span *ngIf="isRequiredForAchievement(page)" nz-tooltip
+          {{ getPageName(page) }}<span *ngIf="isRequiredForAchievement(page)" nz-tooltip
                                         [nzTitle]="'LOG_TRACKER.Required_for_achievement' | translate">*</span>
         </ng-template>
         <nz-spin [nzSpinning]="userCompletion === {}">
