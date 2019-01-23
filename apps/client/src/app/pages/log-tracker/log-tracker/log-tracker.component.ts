@@ -23,7 +23,7 @@ export class LogTrackerComponent {
 
   private pageNameCache: { [index: number]: string } = {};
 
-  private userCompletion: { [index: number]: boolean } = {};
+  public userCompletion: { [index: number]: boolean } = {};
 
   public selectedPage = 0;
 
