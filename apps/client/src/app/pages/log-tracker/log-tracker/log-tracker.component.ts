@@ -106,6 +106,13 @@ export class LogTrackerComponent {
     return this.pageNameCache[page.id];
   }
 
+  public isRequiredForAchievement(page: any): boolean {
+    return (!page.masterbook
+      && page.startLevel.ClassJobLevel !== 50
+      && page.startLevel.ClassJobLevel !== 30)
+      || (page.id > 1055 && page.id < 1072);
+  }
+
   private _getPageName(page: any): string {
     if (page.masterbook > 0) {
       const masterbookIndex = this.getMasterbookIndex(page);
@@ -114,14 +121,14 @@ export class LogTrackerComponent {
       }
       return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: Math.floor(masterbookIndex) })}`;
     }
+    if (page.id > 1055 && page.id < 1072) {
+      return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1064 ? 1 : 2 })}`;
+    }
     if (page.startLevel.ClassJobLevel === 50) {
       return this.translate.instant('LOG_TRACKER.PAGE.Others');
     }
     if (page.startLevel.ClassJobLevel === 30) {
       return this.translate.instant('LOG_TRACKER.PAGE.Dyes');
-    }
-    if (page.id > 1055 && page.id < 1072) {
-      return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1064 ? 1 : 2 })}`;
     }
     return `${page.startLevel.ClassJobLevel} - ${page.startLevel.ClassJobLevel + 4}`;
   }
