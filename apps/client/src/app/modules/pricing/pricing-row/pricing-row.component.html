@@ -18,6 +18,10 @@
        nzTitle="{{'PRICING.From_vendor' | translate}}">
       group
     </i>
+    <i *ngIf="vendorPrice?.nq < price?.nq" nz-icon type="warning" theme="twotone" nz-tooltip
+       [twoToneColor]="'#eb4141'"
+       nzTitle="{{'PRICING.Cheaper_at_vendor' | translate}}">
+    </i>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
   </div>
   <div nz-col nzXs="24" nzMd="10">

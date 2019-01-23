@@ -10,17 +10,17 @@ export class PricingService {
   /**
    * Object representation of current stored prices
    */
-  private prices: { [index: number]: Price };
+  private readonly prices: { [index: number]: Price };
 
   /**
    * Object representation of current stored amounts
    */
-  private amounts: { [index: string]: { [index: number]: ItemAmount } };
+  private readonly amounts: { [index: string]: { [index: number]: ItemAmount } };
 
   /**
    * Array of custom prices
    */
-  private customPrices: number[];
+  private readonly customPrices: number[];
 
   public priceChanged$ = new Subject<void>();
 
@@ -84,6 +84,23 @@ export class PricingService {
       storedValue.fromVendor = false;
       return storedValue;
     }
+    if (item.vendors !== undefined && item.vendors.length > 0) {
+      const cheapest = item.vendors.sort((a, b) => {
+        return a.price - b.price;
+      })[0];
+      return { nq: cheapest.price, hq: 0, fromVendor: true };
+    }
+    return { nq: 0, hq: 0, fromVendor: false };
+  }
+
+  /**
+   * Gets the gil value of an item using only vendors.
+   *
+   * If nothing is found, returns 0.
+   * @param {ListRow} item
+   * @returns {number}
+   */
+  getVendorPrice(item: ListRow): Price {
     if (item.vendors !== undefined && item.vendors.length > 0) {
       const cheapest = item.vendors.sort((a, b) => {
         return a.price - b.price;

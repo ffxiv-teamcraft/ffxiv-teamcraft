@@ -27,6 +27,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   @Input()
   odd = false;
   price: Price = { hq: 0, nq: 0, fromVendor: false };
+  vendorPrice: Price;
   customPrice = false;
   amount: ItemAmount;
   @Output()
@@ -93,6 +94,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   }
 
   private updatePrice(): void {
+    this.vendorPrice = this.pricingService.getVendorPrice(this.item);
     this.customPrice = this.pricingService.isCustomPrice(this.item);
     if (this.earning) {
       this.price = this.pricingService.getEarnings(this.item);
