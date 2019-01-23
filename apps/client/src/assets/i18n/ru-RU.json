@@ -664,7 +664,8 @@
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
     "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
     "Copy_earnings_as_text": "Копировать как текст",
-    "Content_copied": "Скопировано в буфер обмена"
+    "Content_copied": "Скопировано в буфер обмена",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
