@@ -90,8 +90,10 @@ export class LayoutRowFilter {
 
       for (const tokenId of tomeIds) {
         if (row.tradeSources
-          .find(source => source.trades
-            .find(trade => +trade.currencies.find(c => c.id === tokenId) !== undefined) !== undefined) !== undefined) {
+          .some(source => source.trades
+            .some(trade => trade.currencies.some(c => c.id === tokenId)
+            )
+          )) {
           return true;
         }
       }
