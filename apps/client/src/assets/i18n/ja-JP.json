@@ -660,12 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "商店販売価格",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "販売予定",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
