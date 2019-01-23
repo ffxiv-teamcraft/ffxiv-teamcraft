@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.14"></a>
+## [5.0.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.13...v5.0.14) (2019-01-23)
+
+
+### Bug Fixes
+
+* fixed an issue with old /home routes not being redirected properly ([96a234e](https://github.com/Supamiu/ffxiv-teamcraft/commit/96a234e))
+* **layout:** fixed a bug with ASC and DESC being inverted for layout ordering ([d5b27d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/d5b27d0))
+* **pricing:** fixed a bug where filling prices with MB would just load infinitely ([262dddf](https://github.com/Supamiu/ffxiv-teamcraft/commit/262dddf))
+* **profile:** added glamour masterbooks to the profile editor for masterbooks ([4a7c092](https://github.com/Supamiu/ffxiv-teamcraft/commit/4a7c092))
+* **teams:** fixed an issue stopping team lists from loading ([dc94314](https://github.com/Supamiu/ffxiv-teamcraft/commit/dc94314))
+* fixed an issue with tooltip sometimes crashing for no reason ([6382f4a](https://github.com/Supamiu/ffxiv-teamcraft/commit/6382f4a))
+* fixed some issues with search component sometimes firing errors ([0ba46d3](https://github.com/Supamiu/ffxiv-teamcraft/commit/0ba46d3))
+
+
+### Features
+
+* new crafting log tracker ([6b467d0](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b467d0)), closes [#724](https://github.com/Supamiu/ffxiv-teamcraft/issues/724)
+* **layout:** new layout filter available: FROM_BEAST_TRIBE ([9a7db4d](https://github.com/Supamiu/ffxiv-teamcraft/commit/9a7db4d))
+* **layout:** new option to remove duplicates from zone breakdown, per panel ([79e3f5b](https://github.com/Supamiu/ffxiv-teamcraft/commit/79e3f5b)), closes [#723](https://github.com/Supamiu/ffxiv-teamcraft/issues/723)
+* **list-details:** added a way to tag an item as not required HQ at all ([944878d](https://github.com/Supamiu/ffxiv-teamcraft/commit/944878d))
+* **list-panel:** added color change for odd rows to make them easier to read ([8b2c16d](https://github.com/Supamiu/ffxiv-teamcraft/commit/8b2c16d))
+* **log-tracker:** added "*" character next to page names if they are needed for achievement ([aa8e03a](https://github.com/Supamiu/ffxiv-teamcraft/commit/aa8e03a))
+* **pricing:** added a warning for when an item is cheaper at NPC than the current price value ([549e246](https://github.com/Supamiu/ffxiv-teamcraft/commit/549e246))
+* **pricing:** added an icon for when price shown is from crafting ([68692c9](https://github.com/Supamiu/ffxiv-teamcraft/commit/68692c9))
+
+
+
 <a name="5.0.13"></a>
 ## [5.0.13](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.12...v5.0.13) (2019-01-20)
 
