@@ -60,7 +60,7 @@ export class XivapiItemTooltipComponent implements OnInit {
     }
     // Handle stats
     this.stats = Object.keys(this.item)
-      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key])
+      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key] && key !== undefined)
       .map(key => {
         const statIndex = key.match(/(\d+)/)[0];
         const res: any = {
