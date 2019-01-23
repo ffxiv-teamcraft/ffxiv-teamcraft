@@ -1,4 +1,4 @@
-import { ListsAction, ListsActionTypes } from './lists.actions';
+import { ListsAction, ListsActionTypes, TeamListsLoaded } from './lists.actions';
 import { List } from '../model/list';
 
 
@@ -41,6 +41,17 @@ export function listsReducer(
           ...action.payload
         ],
         compactsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.TeamListsLoaded: {
+      state = {
+        ...state,
+        compacts: [
+          ...state.compacts.filter(compact => compact.teamId !== action.teamId),
+          ...action.payload
+        ]
       };
       break;
     }

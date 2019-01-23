@@ -25,12 +25,14 @@ export class ListLayout extends DataModel {
 
   public recipeZoneBreakdown = false;
 
-  public recipeHideCompleted =false;
+  public recipeHideCompleted = false;
+
+  public recipeHideZoneDuplicates = false;
 
   public name: string;
 
   get base64(): string {
-    const exportLayout = {...this as any};
+    const exportLayout = { ...this as any };
     delete exportLayout.userId;
     return btoa(JSON.stringify(exportLayout));
   }

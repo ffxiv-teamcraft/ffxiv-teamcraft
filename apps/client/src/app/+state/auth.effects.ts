@@ -216,7 +216,9 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.store),
     switchMap(([, state]) => {
-      return this.userService.set(state.auth.uid, { ...state.auth.user });
+      return this.userService.set(state.auth.uid, { ...state.auth.user }).pipe(
+        catchError(() => of(null))
+      );
     }),
     map(() => new UserPersisted())
   );

@@ -4,6 +4,7 @@ import { ListRow } from '../model/list-row';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
+  LoadTeamLists = '[Lists] Load Team Lists',
 
   LoadListsWithWriteAccess = '[Lists] Load Lists With Write Access',
 
@@ -17,6 +18,7 @@ export enum ListsActionTypes {
   UpdateItem = '[Lists] Update Item',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
+  TeamListsLoaded = '[Lists] Team Lists Loaded',
   ListCompactLoaded = '[Lists] List Compact Loaded',
   ListsWithWriteAccessLoaded = '[Lists] Lists With Write Access Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
@@ -33,6 +35,20 @@ export enum ListsActionTypes {
 
 export class LoadMyLists implements Action {
   readonly type = ListsActionTypes.LoadMyLists;
+}
+
+export class LoadTeamLists implements Action {
+  readonly type = ListsActionTypes.LoadTeamLists;
+
+  constructor(public readonly teamId: string) {
+  }
+}
+
+export class TeamListsLoaded implements Action {
+  readonly type = ListsActionTypes.TeamListsLoaded;
+
+  constructor(public payload: List[], public readonly teamId: string) {
+  }
 }
 
 export class NeedsVerification implements Action {
@@ -171,4 +187,6 @@ export type ListsAction =
   | ListsWithWriteAccessLoaded
   | UpdateItem
   | ListsForTeamsLoaded
-  | NeedsVerification;
+  | NeedsVerification
+  | LoadTeamLists
+  | TeamListsLoaded;

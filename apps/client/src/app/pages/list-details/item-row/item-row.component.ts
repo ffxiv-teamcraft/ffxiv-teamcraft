@@ -157,7 +157,7 @@ export class ItemRowComponent implements OnInit {
         if (this.item.requiredAsHQ) {
           return this.item.amount;
         }
-        if (recipesNeedingItem.length === 0) {
+        if (recipesNeedingItem.length === 0 || this.item.requiredAsHQ === false) {
           return 0;
         } else {
           let count = 0;
