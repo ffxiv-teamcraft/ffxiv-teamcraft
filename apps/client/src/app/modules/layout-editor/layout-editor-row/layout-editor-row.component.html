@@ -58,8 +58,8 @@
         <nz-option nzValue="INGAME_LOG" nzLabel="INGAME_LOG"></nz-option>
       </nz-select>
       <nz-select [(ngModel)]="row.order" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly">
-        <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
-        <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
+        <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
+        <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
       </nz-select>
     </div>
   </div>

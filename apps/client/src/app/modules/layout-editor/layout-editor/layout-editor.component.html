@@ -71,8 +71,8 @@
           <nz-select [(ngModel)]="layout.recipeOrder"
                      [nzDisabled]="layout.name === 'Default Layout'"
                      (ngModelChange)="dirty = true">
-            <nz-option [nzValue]="0" nzLabel="DESC"></nz-option>
-            <nz-option [nzValue]="1" nzLabel="ASC"></nz-option>
+            <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
+            <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
           </nz-select>
         </div>
         <nz-radio-group [ngModel]="getItemsLayoutType(layout)"
