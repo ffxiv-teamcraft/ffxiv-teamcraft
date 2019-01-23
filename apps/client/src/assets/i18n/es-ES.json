@@ -664,7 +664,8 @@
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
-    "Content_copied": "Contenido copiado a su portapapeles"
+    "Content_copied": "Contenido copiado a su portapapeles",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
