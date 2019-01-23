@@ -660,12 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
