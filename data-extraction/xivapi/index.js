@@ -185,6 +185,9 @@ getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', t
       .filter(key => {
         return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
       })
+      .sort((a, b) => {
+        return +a.match(/^Recipe(\d+)$/)[1] - +b.match(/^Recipe(\d+)$/)[1];
+      })
       .forEach(key => {
         const entry = page[key];
         craftingLog[entry.CraftType.ID].push(entry.ID);

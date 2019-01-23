@@ -119,7 +119,8 @@ export class LogTrackerComponent {
       if (masterbookIndex === -7) {
         return this.translate.instant('LOG_TRACKER.PAGE.Other_master_recipes');
       }
-      return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: Math.floor(masterbookIndex) })}`;
+      const masterbookNumber = Math.floor((page.id - 1000) / 8) + 1;
+      return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: masterbookNumber })}`;
     }
     if (page.id > 1055 && page.id < 1072) {
       return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1064 ? 1 : 2 })}`;

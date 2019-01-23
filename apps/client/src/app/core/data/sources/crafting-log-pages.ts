@@ -184,13 +184,6 @@ export const craftingLogPages = [
           "category": 23
         },
         {
-          "recipeId": 1036,
-          "itemId": 2233,
-          "rlvl": 15,
-          "icon": "/i/030000/030019.png",
-          "category": 11
-        },
-        {
           "recipeId": 1028,
           "itemId": 2573,
           "rlvl": 12,
@@ -245,6 +238,13 @@ export const craftingLogPages = [
           "rlvl": 15,
           "icon": "/i/032000/032202.png",
           "category": 4
+        },
+        {
+          "recipeId": 1036,
+          "itemId": 2233,
+          "rlvl": 15,
+          "icon": "/i/030000/030019.png",
+          "category": 11
         }
       ]
     },
@@ -274,13 +274,6 @@ export const craftingLogPages = [
           "rlvl": 16,
           "icon": "/i/038000/038201.png",
           "category": 32
-        },
-        {
-          "recipeId": 1044,
-          "itemId": 2703,
-          "rlvl": 20,
-          "icon": "/i/041000/041215.png",
-          "category": 34
         },
         {
           "recipeId": 1039,
@@ -337,6 +330,13 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/038000/038212.png",
           "category": 32
+        },
+        {
+          "recipeId": 1044,
+          "itemId": 2703,
+          "rlvl": 20,
+          "icon": "/i/041000/041215.png",
+          "category": 34
         }
       ]
     },
@@ -366,20 +366,6 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/032000/032209.png",
           "category": 4
-        },
-        {
-          "recipeId": 1057,
-          "itemId": 2409,
-          "rlvl": 25,
-          "icon": "/i/035000/035351.png",
-          "category": 19
-        },
-        {
-          "recipeId": 1058,
-          "itemId": 2576,
-          "rlvl": 25,
-          "icon": "/i/038000/038206.png",
-          "category": 32
         },
         {
           "recipeId": 1049,
@@ -436,6 +422,20 @@ export const craftingLogPages = [
           "rlvl": 25,
           "icon": "/i/022000/022456.png",
           "category": 50
+        },
+        {
+          "recipeId": 1057,
+          "itemId": 2409,
+          "rlvl": 25,
+          "icon": "/i/035000/035351.png",
+          "category": 19
+        },
+        {
+          "recipeId": 1058,
+          "itemId": 2576,
+          "rlvl": 25,
+          "icon": "/i/038000/038206.png",
+          "category": 32
         }
       ]
     },
@@ -552,13 +552,6 @@ export const craftingLogPages = [
           "category": 50
         },
         {
-          "recipeId": 1517,
-          "itemId": 2238,
-          "rlvl": 35,
-          "icon": "/i/030000/030017.png",
-          "category": 11
-        },
-        {
           "recipeId": 1070,
           "itemId": 2578,
           "rlvl": 32,
@@ -613,6 +606,13 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/032000/032640.png",
           "category": 9
+        },
+        {
+          "recipeId": 1517,
+          "itemId": 2238,
+          "rlvl": 35,
+          "icon": "/i/030000/030017.png",
+          "category": 11
         }
       ]
     },
@@ -642,13 +642,6 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/032000/032224.png",
           "category": 4
-        },
-        {
-          "recipeId": 1519,
-          "itemId": 2580,
-          "rlvl": 40,
-          "icon": "/i/038000/038210.png",
-          "category": 32
         },
         {
           "recipeId": 1081,
@@ -705,6 +698,13 @@ export const craftingLogPages = [
           "rlvl": 40,
           "icon": "/i/035000/035555.png",
           "category": 23
+        },
+        {
+          "recipeId": 1519,
+          "itemId": 2580,
+          "rlvl": 40,
+          "icon": "/i/038000/038210.png",
+          "category": 32
         }
       ]
     },
@@ -734,20 +734,6 @@ export const craftingLogPages = [
           "rlvl": 42,
           "icon": "/i/032000/032644.png",
           "category": 9
-        },
-        {
-          "recipeId": 1094,
-          "itemId": 2287,
-          "rlvl": 45,
-          "icon": "/i/030000/030033.png",
-          "category": 11
-        },
-        {
-          "recipeId": 1523,
-          "itemId": 1871,
-          "rlvl": 45,
-          "icon": "/i/031000/031817.png",
-          "category": 5
         },
         {
           "recipeId": 1088,
@@ -804,6 +790,20 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/038000/038210.png",
           "category": 32
+        },
+        {
+          "recipeId": 1094,
+          "itemId": 2287,
+          "rlvl": 45,
+          "icon": "/i/030000/030033.png",
+          "category": 11
+        },
+        {
+          "recipeId": 1523,
+          "itemId": 1871,
+          "rlvl": 45,
+          "icon": "/i/031000/031817.png",
+          "category": 5
         }
       ]
     },
@@ -833,6 +833,62 @@ export const craftingLogPages = [
           "rlvl": 47,
           "icon": "/i/031000/031829.png",
           "category": 5
+        },
+        {
+          "recipeId": 1524,
+          "itemId": 2414,
+          "rlvl": 47,
+          "icon": "/i/035000/035353.png",
+          "category": 19
+        },
+        {
+          "recipeId": 1525,
+          "itemId": 1941,
+          "rlvl": 47,
+          "icon": "/i/032000/032263.png",
+          "category": 4
+        },
+        {
+          "recipeId": 1911,
+          "itemId": 2044,
+          "rlvl": 48,
+          "icon": "/i/032000/032642.png",
+          "category": 9
+        },
+        {
+          "recipeId": 1098,
+          "itemId": 2582,
+          "rlvl": 48,
+          "icon": "/i/038000/038207.png",
+          "category": 32
+        },
+        {
+          "recipeId": 1097,
+          "itemId": 3908,
+          "rlvl": 48,
+          "icon": "/i/046000/046280.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1100,
+          "itemId": 1872,
+          "rlvl": 49,
+          "icon": "/i/031000/031830.png",
+          "category": 5
+        },
+        {
+          "recipeId": 1099,
+          "itemId": 1942,
+          "rlvl": 49,
+          "icon": "/i/032000/032217.png",
+          "category": 4
+        },
+        {
+          "recipeId": 1526,
+          "itemId": 5378,
+          "rlvl": 55,
+          "icon": "/i/022000/022465.png",
+          "category": 50
         },
         {
           "recipeId": 1530,
@@ -905,13 +961,6 @@ export const craftingLogPages = [
           "category": 61
         },
         {
-          "recipeId": 1524,
-          "itemId": 2414,
-          "rlvl": 47,
-          "icon": "/i/035000/035353.png",
-          "category": 19
-        },
-        {
           "recipeId": 2865,
           "itemId": 14182,
           "rlvl": 90,
@@ -924,55 +973,6 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/028000/028571.png",
           "category": 81
-        },
-        {
-          "recipeId": 1525,
-          "itemId": 1941,
-          "rlvl": 47,
-          "icon": "/i/032000/032263.png",
-          "category": 4
-        },
-        {
-          "recipeId": 1911,
-          "itemId": 2044,
-          "rlvl": 48,
-          "icon": "/i/032000/032642.png",
-          "category": 9
-        },
-        {
-          "recipeId": 1098,
-          "itemId": 2582,
-          "rlvl": 48,
-          "icon": "/i/038000/038207.png",
-          "category": 32
-        },
-        {
-          "recipeId": 1097,
-          "itemId": 3908,
-          "rlvl": 48,
-          "icon": "/i/046000/046280.png",
-          "category": 38
-        },
-        {
-          "recipeId": 1100,
-          "itemId": 1872,
-          "rlvl": 49,
-          "icon": "/i/031000/031830.png",
-          "category": 5
-        },
-        {
-          "recipeId": 1099,
-          "itemId": 1942,
-          "rlvl": 49,
-          "icon": "/i/032000/032217.png",
-          "category": 4
-        },
-        {
-          "recipeId": 1526,
-          "itemId": 5378,
-          "rlvl": 55,
-          "icon": "/i/022000/022465.png",
-          "category": 50
         }
       ]
     },
@@ -1002,62 +1002,6 @@ export const craftingLogPages = [
           "rlvl": 120,
           "icon": "/i/031000/031889.png",
           "category": 5
-        },
-        {
-          "recipeId": 2224,
-          "itemId": 12014,
-          "rlvl": 130,
-          "icon": "/i/048000/048917.png",
-          "category": 42
-        },
-        {
-          "recipeId": 2226,
-          "itemId": 12020,
-          "rlvl": 130,
-          "icon": "/i/048000/048170.png",
-          "category": 43
-        },
-        {
-          "recipeId": 2240,
-          "itemId": 12581,
-          "rlvl": 133,
-          "icon": "/i/022000/022469.png",
-          "category": 50
-        },
-        {
-          "recipeId": 2198,
-          "itemId": 10606,
-          "rlvl": 133,
-          "icon": "/i/031000/031890.png",
-          "category": 5
-        },
-        {
-          "recipeId": 2203,
-          "itemId": 10612,
-          "rlvl": 133,
-          "icon": "/i/032000/032300.png",
-          "category": 4
-        },
-        {
-          "recipeId": 2208,
-          "itemId": 10636,
-          "rlvl": 133,
-          "icon": "/i/032000/032682.png",
-          "category": 9
-        },
-        {
-          "recipeId": 2222,
-          "itemId": 12011,
-          "rlvl": 133,
-          "icon": "/i/048000/048412.png",
-          "category": 40
-        },
-        {
-          "recipeId": 2214,
-          "itemId": 11912,
-          "rlvl": 136,
-          "icon": "/i/038000/038220.png",
-          "category": 32
         },
         {
           "recipeId": 2201,
@@ -1114,6 +1058,62 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/035000/035558.png",
           "category": 23
+        },
+        {
+          "recipeId": 2224,
+          "itemId": 12014,
+          "rlvl": 130,
+          "icon": "/i/048000/048917.png",
+          "category": 42
+        },
+        {
+          "recipeId": 2226,
+          "itemId": 12020,
+          "rlvl": 130,
+          "icon": "/i/048000/048170.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2240,
+          "itemId": 12581,
+          "rlvl": 133,
+          "icon": "/i/022000/022469.png",
+          "category": 50
+        },
+        {
+          "recipeId": 2198,
+          "itemId": 10606,
+          "rlvl": 133,
+          "icon": "/i/031000/031890.png",
+          "category": 5
+        },
+        {
+          "recipeId": 2203,
+          "itemId": 10612,
+          "rlvl": 133,
+          "icon": "/i/032000/032300.png",
+          "category": 4
+        },
+        {
+          "recipeId": 2208,
+          "itemId": 10636,
+          "rlvl": 133,
+          "icon": "/i/032000/032682.png",
+          "category": 9
+        },
+        {
+          "recipeId": 2222,
+          "itemId": 12011,
+          "rlvl": 133,
+          "icon": "/i/048000/048412.png",
+          "category": 40
+        },
+        {
+          "recipeId": 2214,
+          "itemId": 11912,
+          "rlvl": 136,
+          "icon": "/i/038000/038220.png",
+          "category": 32
         }
       ]
     },
@@ -1143,6 +1143,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/031000/031906.png",
           "category": 5
+        },
+        {
+          "recipeId": 2204,
+          "itemId": 10613,
+          "rlvl": 139,
+          "icon": "/i/032000/032301.png",
+          "category": 4
+        },
+        {
+          "recipeId": 2217,
+          "itemId": 11928,
+          "rlvl": 139,
+          "icon": "/i/035000/035358.png",
+          "category": 19
+        },
+        {
+          "recipeId": 2220,
+          "itemId": 11936,
+          "rlvl": 139,
+          "icon": "/i/035000/035558.png",
+          "category": 23
+        },
+        {
+          "recipeId": 2210,
+          "itemId": 10799,
+          "rlvl": 139,
+          "icon": "/i/041000/041259.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2212,
+          "itemId": 10925,
+          "rlvl": 139,
+          "icon": "/i/041000/041261.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2211,
+          "itemId": 10883,
+          "rlvl": 139,
+          "icon": "/i/041000/041260.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2215,
+          "itemId": 11913,
+          "rlvl": 142,
+          "icon": "/i/038000/038219.png",
+          "category": 32
+        },
+        {
+          "recipeId": 2227,
+          "itemId": 12021,
+          "rlvl": 142,
+          "icon": "/i/048000/048171.png",
+          "category": 43
         },
         {
           "recipeId": 2242,
@@ -1206,62 +1262,6 @@ export const craftingLogPages = [
           "rlvl": 150,
           "icon": "/i/025000/025955.png",
           "category": 94
-        },
-        {
-          "recipeId": 2204,
-          "itemId": 10613,
-          "rlvl": 139,
-          "icon": "/i/032000/032301.png",
-          "category": 4
-        },
-        {
-          "recipeId": 2217,
-          "itemId": 11928,
-          "rlvl": 139,
-          "icon": "/i/035000/035358.png",
-          "category": 19
-        },
-        {
-          "recipeId": 2220,
-          "itemId": 11936,
-          "rlvl": 139,
-          "icon": "/i/035000/035558.png",
-          "category": 23
-        },
-        {
-          "recipeId": 2210,
-          "itemId": 10799,
-          "rlvl": 139,
-          "icon": "/i/041000/041259.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2212,
-          "itemId": 10925,
-          "rlvl": 139,
-          "icon": "/i/041000/041261.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2211,
-          "itemId": 10883,
-          "rlvl": 139,
-          "icon": "/i/041000/041260.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2215,
-          "itemId": 11913,
-          "rlvl": 142,
-          "icon": "/i/038000/038219.png",
-          "category": 32
-        },
-        {
-          "recipeId": 2227,
-          "itemId": 12021,
-          "rlvl": 142,
-          "icon": "/i/048000/048171.png",
-          "category": 43
         }
       ]
     },
@@ -1291,6 +1291,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/032000/032707.png",
           "category": 9
+        },
+        {
+          "recipeId": 3002,
+          "itemId": 18079,
+          "rlvl": 255,
+          "icon": "/i/040000/040492.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2959,
+          "itemId": 18036,
+          "rlvl": 260,
+          "icon": "/i/031000/031933.png",
+          "category": 5
+        },
+        {
+          "recipeId": 2960,
+          "itemId": 18037,
+          "rlvl": 260,
+          "icon": "/i/032000/032340.png",
+          "category": 4
+        },
+        {
+          "recipeId": 3383,
+          "itemId": 19516,
+          "rlvl": 260,
+          "icon": "/i/038000/038224.png",
+          "category": 32
+        },
+        {
+          "recipeId": 3008,
+          "itemId": 18085,
+          "rlvl": 260,
+          "icon": "/i/040000/040491.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3609,
+          "itemId": 19926,
+          "rlvl": 265,
+          "icon": "/i/022000/022453.png",
+          "category": 50
+        },
+        {
+          "recipeId": 3037,
+          "itemId": 18192,
+          "rlvl": 265,
+          "icon": "/i/031000/031949.png",
+          "category": 5
+        },
+        {
+          "recipeId": 3038,
+          "itemId": 18193,
+          "rlvl": 265,
+          "icon": "/i/032000/032339.png",
+          "category": 4
         },
         {
           "recipeId": 3042,
@@ -1363,13 +1419,6 @@ export const craftingLogPages = [
           "category": 4
         },
         {
-          "recipeId": 3002,
-          "itemId": 18079,
-          "rlvl": 255,
-          "icon": "/i/040000/040492.png",
-          "category": 34
-        },
-        {
           "recipeId": 3120,
           "itemId": 18353,
           "rlvl": 273,
@@ -1396,55 +1445,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/038000/038226.png",
           "category": 32
-        },
-        {
-          "recipeId": 2959,
-          "itemId": 18036,
-          "rlvl": 260,
-          "icon": "/i/031000/031933.png",
-          "category": 5
-        },
-        {
-          "recipeId": 2960,
-          "itemId": 18037,
-          "rlvl": 260,
-          "icon": "/i/032000/032340.png",
-          "category": 4
-        },
-        {
-          "recipeId": 3383,
-          "itemId": 19516,
-          "rlvl": 260,
-          "icon": "/i/038000/038224.png",
-          "category": 32
-        },
-        {
-          "recipeId": 3008,
-          "itemId": 18085,
-          "rlvl": 260,
-          "icon": "/i/040000/040491.png",
-          "category": 34
-        },
-        {
-          "recipeId": 3609,
-          "itemId": 19926,
-          "rlvl": 265,
-          "icon": "/i/022000/022453.png",
-          "category": 50
-        },
-        {
-          "recipeId": 3037,
-          "itemId": 18192,
-          "rlvl": 265,
-          "icon": "/i/031000/031949.png",
-          "category": 5
-        },
-        {
-          "recipeId": 3038,
-          "itemId": 18193,
-          "rlvl": 265,
-          "icon": "/i/032000/032339.png",
-          "category": 4
         }
       ]
     },
@@ -1474,6 +1474,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/031000/031934.png",
           "category": 5
+        },
+        {
+          "recipeId": 3194,
+          "itemId": 18505,
+          "rlvl": 279,
+          "icon": "/i/032000/032325.png",
+          "category": 4
+        },
+        {
+          "recipeId": 3198,
+          "itemId": 18509,
+          "rlvl": 279,
+          "icon": "/i/032000/032709.png",
+          "category": 9
+        },
+        {
+          "recipeId": 3425,
+          "itemId": 19558,
+          "rlvl": 279,
+          "icon": "/i/038000/038225.png",
+          "category": 32
+        },
+        {
+          "recipeId": 3429,
+          "itemId": 19562,
+          "rlvl": 282,
+          "icon": "/i/035000/035362.png",
+          "category": 19
+        },
+        {
+          "recipeId": 3431,
+          "itemId": 19564,
+          "rlvl": 282,
+          "icon": "/i/035000/035563.png",
+          "category": 23
+        },
+        {
+          "recipeId": 3518,
+          "itemId": 19738,
+          "rlvl": 282,
+          "icon": "/i/048000/048704.png",
+          "category": 41
+        },
+        {
+          "recipeId": 3519,
+          "itemId": 19739,
+          "rlvl": 282,
+          "icon": "/i/048000/048474.png",
+          "category": 40
+        },
+        {
+          "recipeId": 3520,
+          "itemId": 19740,
+          "rlvl": 282,
+          "icon": "/i/048000/048978.png",
+          "category": 42
         },
         {
           "recipeId": 3521,
@@ -1546,13 +1602,6 @@ export const craftingLogPages = [
           "category": 19
         },
         {
-          "recipeId": 3194,
-          "itemId": 18505,
-          "rlvl": 279,
-          "icon": "/i/032000/032325.png",
-          "category": 4
-        },
-        {
           "recipeId": 3452,
           "itemId": 19585,
           "rlvl": 290,
@@ -1565,55 +1614,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/038000/038227.png",
           "category": 32
-        },
-        {
-          "recipeId": 3198,
-          "itemId": 18509,
-          "rlvl": 279,
-          "icon": "/i/032000/032709.png",
-          "category": 9
-        },
-        {
-          "recipeId": 3425,
-          "itemId": 19558,
-          "rlvl": 279,
-          "icon": "/i/038000/038225.png",
-          "category": 32
-        },
-        {
-          "recipeId": 3429,
-          "itemId": 19562,
-          "rlvl": 282,
-          "icon": "/i/035000/035362.png",
-          "category": 19
-        },
-        {
-          "recipeId": 3431,
-          "itemId": 19564,
-          "rlvl": 282,
-          "icon": "/i/035000/035563.png",
-          "category": 23
-        },
-        {
-          "recipeId": 3518,
-          "itemId": 19738,
-          "rlvl": 282,
-          "icon": "/i/048000/048704.png",
-          "category": 41
-        },
-        {
-          "recipeId": 3519,
-          "itemId": 19739,
-          "rlvl": 282,
-          "icon": "/i/048000/048474.png",
-          "category": 40
-        },
-        {
-          "recipeId": 3520,
-          "itemId": 19740,
-          "rlvl": 282,
-          "icon": "/i/048000/048978.png",
-          "category": 42
         }
       ]
     },
@@ -1643,55 +1643,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
-        },
-        {
-          "recipeId": 31849,
-          "itemId": 15143,
-          "rlvl": 90,
-          "icon": "/i/052000/052255.png",
-          "category": 77
-        },
-        {
-          "recipeId": 32993,
-          "itemId": 22554,
-          "rlvl": 90,
-          "icon": "/i/052000/052276.png",
-          "category": 77
-        },
-        {
-          "recipeId": 32992,
-          "itemId": 22553,
-          "rlvl": 90,
-          "icon": "/i/052000/052914.png",
-          "category": 78
-        },
-        {
-          "recipeId": 30833,
-          "itemId": 9310,
-          "rlvl": 90,
-          "icon": "/i/035000/035356.png",
-          "category": 19
-        },
-        {
-          "recipeId": 30835,
-          "itemId": 9312,
-          "rlvl": 90,
-          "icon": "/i/035000/035557.png",
-          "category": 23
-        },
-        {
-          "recipeId": 31857,
-          "itemId": 15161,
-          "rlvl": 90,
-          "icon": "/i/053000/053128.png",
-          "category": 76
-        },
-        {
-          "recipeId": 30985,
-          "itemId": 12232,
-          "rlvl": 139,
-          "icon": "/i/022000/022462.png",
-          "category": 50
         },
         {
           "recipeId": 32067,
@@ -1748,6 +1699,55 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/052000/052637.png",
           "category": 57
+        },
+        {
+          "recipeId": 31849,
+          "itemId": 15143,
+          "rlvl": 90,
+          "icon": "/i/052000/052255.png",
+          "category": 77
+        },
+        {
+          "recipeId": 32993,
+          "itemId": 22554,
+          "rlvl": 90,
+          "icon": "/i/052000/052276.png",
+          "category": 77
+        },
+        {
+          "recipeId": 32992,
+          "itemId": 22553,
+          "rlvl": 90,
+          "icon": "/i/052000/052914.png",
+          "category": 78
+        },
+        {
+          "recipeId": 30833,
+          "itemId": 9310,
+          "rlvl": 90,
+          "icon": "/i/035000/035356.png",
+          "category": 19
+        },
+        {
+          "recipeId": 30835,
+          "itemId": 9312,
+          "rlvl": 90,
+          "icon": "/i/035000/035557.png",
+          "category": 23
+        },
+        {
+          "recipeId": 31857,
+          "itemId": 15161,
+          "rlvl": 90,
+          "icon": "/i/053000/053128.png",
+          "category": 76
+        },
+        {
+          "recipeId": 30985,
+          "itemId": 12232,
+          "rlvl": 139,
+          "icon": "/i/022000/022462.png",
+          "category": 50
         }
       ]
     },
@@ -1857,6 +1857,62 @@ export const craftingLogPages = [
           "category": 5
         },
         {
+          "recipeId": 30973,
+          "itemId": 10615,
+          "rlvl": 150,
+          "icon": "/i/032000/032302.png",
+          "category": 4
+        },
+        {
+          "recipeId": 30974,
+          "itemId": 10639,
+          "rlvl": 150,
+          "icon": "/i/032000/032667.png",
+          "category": 9
+        },
+        {
+          "recipeId": 30975,
+          "itemId": 11914,
+          "rlvl": 150,
+          "icon": "/i/038000/038221.png",
+          "category": 32
+        },
+        {
+          "recipeId": 30969,
+          "itemId": 10350,
+          "rlvl": 150,
+          "icon": "/i/051000/051121.png",
+          "category": 75
+        },
+        {
+          "recipeId": 31341,
+          "itemId": 13758,
+          "rlvl": 160,
+          "icon": "/i/022000/022459.png",
+          "category": 50
+        },
+        {
+          "recipeId": 30981,
+          "itemId": 12055,
+          "rlvl": 160,
+          "icon": "/i/028000/028633.png",
+          "category": 81
+        },
+        {
+          "recipeId": 32979,
+          "itemId": 22531,
+          "rlvl": 160,
+          "icon": "/i/051000/051036.png",
+          "category": 74
+        },
+        {
+          "recipeId": 30968,
+          "itemId": 10349,
+          "rlvl": 160,
+          "icon": "/i/051000/051120.png",
+          "category": 75
+        },
+        {
           "recipeId": 30970,
           "itemId": 10351,
           "rlvl": 160,
@@ -1925,13 +1981,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/035000/035556.png",
           "category": 23
-        },
-        {
-          "recipeId": 30973,
-          "itemId": 10615,
-          "rlvl": 150,
-          "icon": "/i/032000/032302.png",
-          "category": 4
         },
         {
           "recipeId": 30978,
@@ -2004,13 +2053,6 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 30974,
-          "itemId": 10639,
-          "rlvl": 150,
-          "icon": "/i/032000/032667.png",
-          "category": 9
-        },
-        {
           "recipeId": 32120,
           "itemId": 15963,
           "rlvl": 180,
@@ -2023,48 +2065,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/052000/052579.png",
           "category": 57
-        },
-        {
-          "recipeId": 30975,
-          "itemId": 11914,
-          "rlvl": 150,
-          "icon": "/i/038000/038221.png",
-          "category": 32
-        },
-        {
-          "recipeId": 30969,
-          "itemId": 10350,
-          "rlvl": 150,
-          "icon": "/i/051000/051121.png",
-          "category": 75
-        },
-        {
-          "recipeId": 31341,
-          "itemId": 13758,
-          "rlvl": 160,
-          "icon": "/i/022000/022459.png",
-          "category": 50
-        },
-        {
-          "recipeId": 30981,
-          "itemId": 12055,
-          "rlvl": 160,
-          "icon": "/i/028000/028633.png",
-          "category": 81
-        },
-        {
-          "recipeId": 32979,
-          "itemId": 22531,
-          "rlvl": 160,
-          "icon": "/i/051000/051036.png",
-          "category": 74
-        },
-        {
-          "recipeId": 30968,
-          "itemId": 10349,
-          "rlvl": 160,
-          "icon": "/i/051000/051120.png",
-          "category": 75
         }
       ]
     },
@@ -2094,6 +2094,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/031000/031896.png",
           "category": 5
+        },
+        {
+          "recipeId": 32088,
+          "itemId": 15587,
+          "rlvl": 180,
+          "icon": "/i/031000/031901.png",
+          "category": 5
+        },
+        {
+          "recipeId": 31934,
+          "itemId": 15574,
+          "rlvl": 180,
+          "icon": "/i/032000/032292.png",
+          "category": 4
+        },
+        {
+          "recipeId": 32089,
+          "itemId": 15588,
+          "rlvl": 180,
+          "icon": "/i/032000/032296.png",
+          "category": 4
+        },
+        {
+          "recipeId": 31938,
+          "itemId": 15578,
+          "rlvl": 180,
+          "icon": "/i/032000/032671.png",
+          "category": 9
+        },
+        {
+          "recipeId": 32093,
+          "itemId": 15592,
+          "rlvl": 180,
+          "icon": "/i/032000/032676.png",
+          "category": 9
+        },
+        {
+          "recipeId": 31454,
+          "itemId": 14045,
+          "rlvl": 180,
+          "icon": "/i/052000/052587.png",
+          "category": 57
+        },
+        {
+          "recipeId": 31463,
+          "itemId": 14051,
+          "rlvl": 180,
+          "icon": "/i/052000/052254.png",
+          "category": 77
+        },
+        {
+          "recipeId": 32066,
+          "itemId": 16781,
+          "rlvl": 180,
+          "icon": "/i/052000/052256.png",
+          "category": 77
         },
         {
           "recipeId": 32056,
@@ -2166,13 +2222,6 @@ export const craftingLogPages = [
           "category": 9
         },
         {
-          "recipeId": 32088,
-          "itemId": 15587,
-          "rlvl": 180,
-          "icon": "/i/031000/031901.png",
-          "category": 5
-        },
-        {
           "recipeId": 32140,
           "itemId": 17612,
           "rlvl": 210,
@@ -2241,13 +2290,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/048000/048429.png",
           "category": 40
-        },
-        {
-          "recipeId": 31934,
-          "itemId": 15574,
-          "rlvl": 180,
-          "icon": "/i/032000/032292.png",
-          "category": 4
         },
         {
           "recipeId": 31358,
@@ -2320,13 +2362,6 @@ export const craftingLogPages = [
           "category": 32
         },
         {
-          "recipeId": 32089,
-          "itemId": 15588,
-          "rlvl": 180,
-          "icon": "/i/032000/032296.png",
-          "category": 4
-        },
-        {
           "recipeId": 31890,
           "itemId": 15530,
           "rlvl": 220,
@@ -2394,13 +2429,6 @@ export const craftingLogPages = [
           "itemId": 16635,
           "rlvl": 250,
           "icon": "/i/032000/032685.png",
-          "category": 9
-        },
-        {
-          "recipeId": 31938,
-          "itemId": 15578,
-          "rlvl": 180,
-          "icon": "/i/032000/032671.png",
           "category": 9
         },
         {
@@ -2472,34 +2500,6 @@ export const craftingLogPages = [
           "rlvl": 250,
           "icon": "/i/048000/048953.png",
           "category": 42
-        },
-        {
-          "recipeId": 32093,
-          "itemId": 15592,
-          "rlvl": 180,
-          "icon": "/i/032000/032676.png",
-          "category": 9
-        },
-        {
-          "recipeId": 31454,
-          "itemId": 14045,
-          "rlvl": 180,
-          "icon": "/i/052000/052587.png",
-          "category": 57
-        },
-        {
-          "recipeId": 31463,
-          "itemId": 14051,
-          "rlvl": 180,
-          "icon": "/i/052000/052254.png",
-          "category": 77
-        },
-        {
-          "recipeId": 32066,
-          "itemId": 16781,
-          "rlvl": 180,
-          "icon": "/i/052000/052256.png",
-          "category": 77
         }
       ]
     },
@@ -2529,55 +2529,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/052000/052365.png",
           "category": 79
-        },
-        {
-          "recipeId": 32406,
-          "itemId": 19036,
-          "rlvl": 320,
-          "icon": "/i/048000/048477.png",
-          "category": 40
-        },
-        {
-          "recipeId": 32405,
-          "itemId": 19035,
-          "rlvl": 320,
-          "icon": "/i/048000/048477.png",
-          "category": 40
-        },
-        {
-          "recipeId": 32407,
-          "itemId": 19037,
-          "rlvl": 320,
-          "icon": "/i/048000/048981.png",
-          "category": 42
-        },
-        {
-          "recipeId": 32408,
-          "itemId": 19038,
-          "rlvl": 320,
-          "icon": "/i/048000/048981.png",
-          "category": 42
-        },
-        {
-          "recipeId": 32409,
-          "itemId": 19039,
-          "rlvl": 320,
-          "icon": "/i/048000/048981.png",
-          "category": 42
-        },
-        {
-          "recipeId": 32411,
-          "itemId": 19041,
-          "rlvl": 320,
-          "icon": "/i/048000/048981.png",
-          "category": 42
-        },
-        {
-          "recipeId": 32410,
-          "itemId": 19040,
-          "rlvl": 320,
-          "icon": "/i/048000/048981.png",
-          "category": 42
         },
         {
           "recipeId": 32425,
@@ -2634,6 +2585,55 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/048000/048477.png",
           "category": 40
+        },
+        {
+          "recipeId": 32406,
+          "itemId": 19036,
+          "rlvl": 320,
+          "icon": "/i/048000/048477.png",
+          "category": 40
+        },
+        {
+          "recipeId": 32405,
+          "itemId": 19035,
+          "rlvl": 320,
+          "icon": "/i/048000/048477.png",
+          "category": 40
+        },
+        {
+          "recipeId": 32407,
+          "itemId": 19037,
+          "rlvl": 320,
+          "icon": "/i/048000/048981.png",
+          "category": 42
+        },
+        {
+          "recipeId": 32408,
+          "itemId": 19038,
+          "rlvl": 320,
+          "icon": "/i/048000/048981.png",
+          "category": 42
+        },
+        {
+          "recipeId": 32409,
+          "itemId": 19039,
+          "rlvl": 320,
+          "icon": "/i/048000/048981.png",
+          "category": 42
+        },
+        {
+          "recipeId": 32411,
+          "itemId": 19041,
+          "rlvl": 320,
+          "icon": "/i/048000/048981.png",
+          "category": 42
+        },
+        {
+          "recipeId": 32410,
+          "itemId": 19040,
+          "rlvl": 320,
+          "icon": "/i/048000/048981.png",
+          "category": 42
         }
       ]
     },
@@ -2663,6 +2663,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/052000/052652.png",
           "category": 77
+        },
+        {
+          "recipeId": 33002,
+          "itemId": 22579,
+          "rlvl": 320,
+          "icon": "/i/053000/053160.png",
+          "category": 76
+        },
+        {
+          "recipeId": 32984,
+          "itemId": 22539,
+          "rlvl": 320,
+          "icon": "/i/052000/052636.png",
+          "category": 57
+        },
+        {
+          "recipeId": 32985,
+          "itemId": 22540,
+          "rlvl": 320,
+          "icon": "/i/052000/052634.png",
+          "category": 57
+        },
+        {
+          "recipeId": 32983,
+          "itemId": 22538,
+          "rlvl": 320,
+          "icon": "/i/052000/052275.png",
+          "category": 77
+        },
+        {
+          "recipeId": 32675,
+          "itemId": 21866,
+          "rlvl": 320,
+          "icon": "/i/053000/053152.png",
+          "category": 76
+        },
+        {
+          "recipeId": 32667,
+          "itemId": 21830,
+          "rlvl": 320,
+          "icon": "/i/052000/052266.png",
+          "category": 77
+        },
+        {
+          "recipeId": 33001,
+          "itemId": 22569,
+          "rlvl": 320,
+          "icon": "/i/052000/052277.png",
+          "category": 77
+        },
+        {
+          "recipeId": 32681,
+          "itemId": 21835,
+          "rlvl": 320,
+          "icon": "/i/052000/052373.png",
+          "category": 79
         },
         {
           "recipeId": 32666,
@@ -2735,13 +2791,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 33002,
-          "itemId": 22579,
-          "rlvl": 320,
-          "icon": "/i/053000/053160.png",
-          "category": 76
-        },
-        {
           "recipeId": 32618,
           "itemId": 21758,
           "rlvl": 350,
@@ -2810,13 +2859,6 @@ export const craftingLogPages = [
           "rlvl": 350,
           "icon": "/i/048000/048934.png",
           "category": 42
-        },
-        {
-          "recipeId": 32984,
-          "itemId": 22539,
-          "rlvl": 320,
-          "icon": "/i/052000/052636.png",
-          "category": 57
         },
         {
           "recipeId": 32626,
@@ -2889,13 +2931,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 32985,
-          "itemId": 22540,
-          "rlvl": 320,
-          "icon": "/i/052000/052634.png",
-          "category": 57
-        },
-        {
           "recipeId": 33140,
           "itemId": 23835,
           "rlvl": 380,
@@ -2943,41 +2978,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/048000/048998.png",
           "category": 42
-        },
-        {
-          "recipeId": 32983,
-          "itemId": 22538,
-          "rlvl": 320,
-          "icon": "/i/052000/052275.png",
-          "category": 77
-        },
-        {
-          "recipeId": 32675,
-          "itemId": 21866,
-          "rlvl": 320,
-          "icon": "/i/053000/053152.png",
-          "category": 76
-        },
-        {
-          "recipeId": 32667,
-          "itemId": 21830,
-          "rlvl": 320,
-          "icon": "/i/052000/052266.png",
-          "category": 77
-        },
-        {
-          "recipeId": 33001,
-          "itemId": 22569,
-          "rlvl": 320,
-          "icon": "/i/052000/052277.png",
-          "category": 77
-        },
-        {
-          "recipeId": 32681,
-          "itemId": 21835,
-          "rlvl": 320,
-          "icon": "/i/052000/052373.png",
-          "category": 79
         }
       ]
     },
@@ -3073,6 +3073,62 @@ export const craftingLogPages = [
           "category": 67
         },
         {
+          "recipeId": 1739,
+          "itemId": 6492,
+          "rlvl": 13,
+          "icon": "/i/053000/053010.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1651,
+          "itemId": 6401,
+          "rlvl": 14,
+          "icon": "/i/050000/050701.png",
+          "category": 67
+        },
+        {
+          "recipeId": 1738,
+          "itemId": 6491,
+          "rlvl": 14,
+          "icon": "/i/053000/053009.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1656,
+          "itemId": 6406,
+          "rlvl": 16,
+          "icon": "/i/050000/050706.png",
+          "category": 67
+        },
+        {
+          "recipeId": 1657,
+          "itemId": 6407,
+          "rlvl": 16,
+          "icon": "/i/050000/050707.png",
+          "category": 67
+        },
+        {
+          "recipeId": 1682,
+          "itemId": 6432,
+          "rlvl": 16,
+          "icon": "/i/050000/050305.png",
+          "category": 70
+        },
+        {
+          "recipeId": 1652,
+          "itemId": 6402,
+          "rlvl": 17,
+          "icon": "/i/050000/050702.png",
+          "category": 67
+        },
+        {
+          "recipeId": 1633,
+          "itemId": 6383,
+          "rlvl": 18,
+          "icon": "/i/050000/050222.png",
+          "category": 66
+        },
+        {
           "recipeId": 1714,
           "itemId": 6464,
           "rlvl": 19,
@@ -3141,13 +3197,6 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/050000/050105.png",
           "category": 68
-        },
-        {
-          "recipeId": 1739,
-          "itemId": 6492,
-          "rlvl": 13,
-          "icon": "/i/053000/053010.png",
-          "category": 76
         },
         {
           "recipeId": 1671,
@@ -3220,13 +3269,6 @@ export const craftingLogPages = [
           "category": 76
         },
         {
-          "recipeId": 1651,
-          "itemId": 6401,
-          "rlvl": 14,
-          "icon": "/i/050000/050701.png",
-          "category": 67
-        },
-        {
           "recipeId": 1705,
           "itemId": 6455,
           "rlvl": 31,
@@ -3295,13 +3337,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/050000/050411.png",
           "category": 65
-        },
-        {
-          "recipeId": 1738,
-          "itemId": 6491,
-          "rlvl": 14,
-          "icon": "/i/053000/053009.png",
-          "category": 76
         },
         {
           "recipeId": 1636,
@@ -3374,13 +3409,6 @@ export const craftingLogPages = [
           "category": 72
         },
         {
-          "recipeId": 1656,
-          "itemId": 6406,
-          "rlvl": 16,
-          "icon": "/i/050000/050706.png",
-          "category": 67
-        },
-        {
           "recipeId": 1604,
           "itemId": 6354,
           "rlvl": 55,
@@ -3449,13 +3477,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/051000/051025.png",
           "category": 74
-        },
-        {
-          "recipeId": 1657,
-          "itemId": 6407,
-          "rlvl": 16,
-          "icon": "/i/050000/050707.png",
-          "category": 67
         },
         {
           "recipeId": 2050,
@@ -3528,13 +3549,6 @@ export const craftingLogPages = [
           "category": 66
         },
         {
-          "recipeId": 1682,
-          "itemId": 6432,
-          "rlvl": 16,
-          "icon": "/i/050000/050305.png",
-          "category": 70
-        },
-        {
           "recipeId": 3723,
           "itemId": 22520,
           "rlvl": 265,
@@ -3605,13 +3619,6 @@ export const craftingLogPages = [
           "category": 71
         },
         {
-          "recipeId": 1652,
-          "itemId": 6402,
-          "rlvl": 17,
-          "icon": "/i/050000/050702.png",
-          "category": 67
-        },
-        {
           "recipeId": 3715,
           "itemId": 20718,
           "rlvl": 285,
@@ -3645,13 +3652,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/053000/053145.png",
           "category": 76
-        },
-        {
-          "recipeId": 1633,
-          "itemId": 6383,
-          "rlvl": 18,
-          "icon": "/i/050000/050222.png",
-          "category": 66
         }
       ]
     },
@@ -3683,81 +3683,67 @@ export const craftingLogPages = [
           "category": 57
         },
         {
+          "recipeId": 1849,
+          "itemId": 6624,
+          "rlvl": 15,
+          "icon": "/i/052000/052486.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1967,
+          "itemId": 7084,
+          "rlvl": 18,
+          "icon": "/i/052000/052233.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2830,
+          "itemId": 13075,
+          "rlvl": 18,
+          "icon": "/i/052000/052252.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1787,
+          "itemId": 6561,
+          "rlvl": 19,
+          "icon": "/i/052000/052413.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2028,
+          "itemId": 7973,
+          "rlvl": 20,
+          "icon": "/i/052000/052515.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1780,
+          "itemId": 6548,
+          "rlvl": 20,
+          "icon": "/i/052000/052434.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1802,
+          "itemId": 6576,
+          "rlvl": 21,
+          "icon": "/i/052000/052440.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1862,
+          "itemId": 6637,
+          "rlvl": 22,
+          "icon": "/i/052000/052106.png",
+          "category": 78
+        },
+        {
           "recipeId": 1847,
           "itemId": 6622,
           "rlvl": 23,
           "icon": "/i/052000/052482.png",
           "category": 77
-        },
-        {
-          "recipeId": 1982,
-          "itemId": 7102,
-          "rlvl": 90,
-          "icon": "/i/052000/052234.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1972,
-          "itemId": 7089,
-          "rlvl": 90,
-          "icon": "/i/052000/052232.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2175,
-          "itemId": 9730,
-          "rlvl": 90,
-          "icon": "/i/052000/052338.png",
-          "category": 79
-        },
-        {
-          "recipeId": 2105,
-          "itemId": 8789,
-          "rlvl": 110,
-          "icon": "/i/052000/052536.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2096,
-          "itemId": 8779,
-          "rlvl": 110,
-          "icon": "/i/052000/052540.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2097,
-          "itemId": 8780,
-          "rlvl": 110,
-          "icon": "/i/052000/052541.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2098,
-          "itemId": 8781,
-          "rlvl": 110,
-          "icon": "/i/052000/052542.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2171,
-          "itemId": 9724,
-          "rlvl": 110,
-          "icon": "/i/052000/052240.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2180,
-          "itemId": 9737,
-          "rlvl": 110,
-          "icon": "/i/052000/052241.png",
-          "category": 77
-        },
-        {
-          "recipeId": 3765,
-          "itemId": 23877,
-          "rlvl": 115,
-          "icon": "/i/052000/052386.png",
-          "category": 79
         },
         {
           "recipeId": 2831,
@@ -3767,150 +3753,10 @@ export const craftingLogPages = [
           "category": 57
         },
         {
-          "recipeId": 2236,
-          "itemId": 12101,
-          "rlvl": 120,
-          "icon": "/i/052000/052245.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2233,
-          "itemId": 12097,
-          "rlvl": 125,
-          "icon": "/i/052000/052568.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2888,
-          "itemId": 15147,
-          "rlvl": 136,
-          "icon": "/i/052000/052590.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2228,
-          "itemId": 12084,
-          "rlvl": 136,
-          "icon": "/i/052000/052563.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2229,
-          "itemId": 12085,
-          "rlvl": 136,
-          "icon": "/i/052000/052243.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2230,
-          "itemId": 12094,
-          "rlvl": 136,
-          "icon": "/i/052000/052565.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2935,
-          "itemId": 16936,
-          "rlvl": 136,
-          "icon": "/i/052000/052350.png",
-          "category": 79
-        },
-        {
-          "recipeId": 3797,
-          "itemId": 24509,
-          "rlvl": 136,
-          "icon": "/i/052000/052281.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2235,
-          "itemId": 12100,
-          "rlvl": 142,
-          "icon": "/i/052000/052244.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2933,
-          "itemId": 15776,
-          "rlvl": 145,
-          "icon": "/i/052000/052818.png",
-          "category": 78
-        },
-        {
           "recipeId": 1788,
           "itemId": 6562,
           "rlvl": 25,
           "icon": "/i/052000/052414.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2938,
-          "itemId": 17023,
-          "rlvl": 148,
-          "icon": "/i/052000/052839.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3731,
-          "itemId": 20742,
-          "rlvl": 260,
-          "icon": "/i/052000/052366.png",
-          "category": 79
-        },
-        {
-          "recipeId": 3724,
-          "itemId": 20734,
-          "rlvl": 260,
-          "icon": "/i/052000/052621.png",
-          "category": 77
-        },
-        {
-          "recipeId": 3722,
-          "itemId": 6541,
-          "rlvl": 265,
-          "icon": "/i/052000/052919.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3541,
-          "itemId": 17958,
-          "rlvl": 270,
-          "icon": "/i/052000/052846.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3721,
-          "itemId": 20731,
-          "rlvl": 270,
-          "icon": "/i/052000/052616.png",
-          "category": 57
-        },
-        {
-          "recipeId": 3542,
-          "itemId": 17959,
-          "rlvl": 276,
-          "icon": "/i/052000/052847.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3725,
-          "itemId": 20735,
-          "rlvl": 279,
-          "icon": "/i/052000/052615.png",
-          "category": 77
-        },
-        {
-          "recipeId": 3728,
-          "itemId": 20738,
-          "rlvl": 279,
-          "icon": "/i/052000/052610.png",
-          "category": 77
-        },
-        {
-          "recipeId": 3543,
-          "itemId": 17960,
-          "rlvl": 285,
-          "icon": "/i/052000/052604.png",
           "category": 57
         },
         {
@@ -3919,27 +3765,6 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/052000/052216.png",
           "category": 77
-        },
-        {
-          "recipeId": 3726,
-          "itemId": 20736,
-          "rlvl": 285,
-          "icon": "/i/052000/052613.png",
-          "category": 77
-        },
-        {
-          "recipeId": 3729,
-          "itemId": 20739,
-          "rlvl": 288,
-          "icon": "/i/052000/052612.png",
-          "category": 57
-        },
-        {
-          "recipeId": 3730,
-          "itemId": 20740,
-          "rlvl": 288,
-          "icon": "/i/052000/052614.png",
-          "category": 57
         },
         {
           "recipeId": 1762,
@@ -3982,13 +3807,6 @@ export const craftingLogPages = [
           "rlvl": 28,
           "icon": "/i/052000/052417.png",
           "category": 57
-        },
-        {
-          "recipeId": 1849,
-          "itemId": 6624,
-          "rlvl": 15,
-          "icon": "/i/052000/052486.png",
-          "category": 77
         },
         {
           "recipeId": 1840,
@@ -4061,13 +3879,6 @@ export const craftingLogPages = [
           "category": 79
         },
         {
-          "recipeId": 1967,
-          "itemId": 7084,
-          "rlvl": 18,
-          "icon": "/i/052000/052233.png",
-          "category": 57
-        },
-        {
           "recipeId": 3795,
           "itemId": 24507,
           "rlvl": 32,
@@ -4135,13 +3946,6 @@ export const craftingLogPages = [
           "itemId": 12095,
           "rlvl": 35,
           "icon": "/i/052000/052567.png",
-          "category": 77
-        },
-        {
-          "recipeId": 2830,
-          "itemId": 13075,
-          "rlvl": 18,
-          "icon": "/i/052000/052252.png",
           "category": 77
         },
         {
@@ -4215,13 +4019,6 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 1787,
-          "itemId": 6561,
-          "rlvl": 19,
-          "icon": "/i/052000/052413.png",
-          "category": 57
-        },
-        {
           "recipeId": 3770,
           "itemId": 23891,
           "rlvl": 43,
@@ -4290,13 +4087,6 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/051000/051244.png",
           "category": 73
-        },
-        {
-          "recipeId": 2028,
-          "itemId": 7973,
-          "rlvl": 20,
-          "icon": "/i/052000/052515.png",
-          "category": 77
         },
         {
           "recipeId": 1794,
@@ -4369,13 +4159,6 @@ export const craftingLogPages = [
           "category": 57
         },
         {
-          "recipeId": 1780,
-          "itemId": 6548,
-          "rlvl": 20,
-          "icon": "/i/052000/052434.png",
-          "category": 77
-        },
-        {
           "recipeId": 1962,
           "itemId": 7079,
           "rlvl": 55,
@@ -4444,13 +4227,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/052000/052837.png",
           "category": 78
-        },
-        {
-          "recipeId": 1802,
-          "itemId": 6576,
-          "rlvl": 21,
-          "icon": "/i/052000/052440.png",
-          "category": 57
         },
         {
           "recipeId": 3769,
@@ -4523,13 +4299,6 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 1862,
-          "itemId": 6637,
-          "rlvl": 22,
-          "icon": "/i/052000/052106.png",
-          "category": 78
-        },
-        {
           "recipeId": 1974,
           "itemId": 7091,
           "rlvl": 90,
@@ -4598,6 +4367,237 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/052000/052503.png",
           "category": 57
+        },
+        {
+          "recipeId": 1982,
+          "itemId": 7102,
+          "rlvl": 90,
+          "icon": "/i/052000/052234.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1972,
+          "itemId": 7089,
+          "rlvl": 90,
+          "icon": "/i/052000/052232.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2175,
+          "itemId": 9730,
+          "rlvl": 90,
+          "icon": "/i/052000/052338.png",
+          "category": 79
+        },
+        {
+          "recipeId": 2105,
+          "itemId": 8789,
+          "rlvl": 110,
+          "icon": "/i/052000/052536.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2096,
+          "itemId": 8779,
+          "rlvl": 110,
+          "icon": "/i/052000/052540.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2097,
+          "itemId": 8780,
+          "rlvl": 110,
+          "icon": "/i/052000/052541.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2098,
+          "itemId": 8781,
+          "rlvl": 110,
+          "icon": "/i/052000/052542.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2171,
+          "itemId": 9724,
+          "rlvl": 110,
+          "icon": "/i/052000/052240.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2180,
+          "itemId": 9737,
+          "rlvl": 110,
+          "icon": "/i/052000/052241.png",
+          "category": 77
+        },
+        {
+          "recipeId": 3765,
+          "itemId": 23877,
+          "rlvl": 115,
+          "icon": "/i/052000/052386.png",
+          "category": 79
+        },
+        {
+          "recipeId": 2236,
+          "itemId": 12101,
+          "rlvl": 120,
+          "icon": "/i/052000/052245.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2233,
+          "itemId": 12097,
+          "rlvl": 125,
+          "icon": "/i/052000/052568.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2888,
+          "itemId": 15147,
+          "rlvl": 136,
+          "icon": "/i/052000/052590.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2228,
+          "itemId": 12084,
+          "rlvl": 136,
+          "icon": "/i/052000/052563.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2229,
+          "itemId": 12085,
+          "rlvl": 136,
+          "icon": "/i/052000/052243.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2230,
+          "itemId": 12094,
+          "rlvl": 136,
+          "icon": "/i/052000/052565.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2935,
+          "itemId": 16936,
+          "rlvl": 136,
+          "icon": "/i/052000/052350.png",
+          "category": 79
+        },
+        {
+          "recipeId": 3797,
+          "itemId": 24509,
+          "rlvl": 136,
+          "icon": "/i/052000/052281.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2235,
+          "itemId": 12100,
+          "rlvl": 142,
+          "icon": "/i/052000/052244.png",
+          "category": 77
+        },
+        {
+          "recipeId": 2933,
+          "itemId": 15776,
+          "rlvl": 145,
+          "icon": "/i/052000/052818.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2938,
+          "itemId": 17023,
+          "rlvl": 148,
+          "icon": "/i/052000/052839.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3731,
+          "itemId": 20742,
+          "rlvl": 260,
+          "icon": "/i/052000/052366.png",
+          "category": 79
+        },
+        {
+          "recipeId": 3724,
+          "itemId": 20734,
+          "rlvl": 260,
+          "icon": "/i/052000/052621.png",
+          "category": 77
+        },
+        {
+          "recipeId": 3722,
+          "itemId": 6541,
+          "rlvl": 265,
+          "icon": "/i/052000/052919.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3541,
+          "itemId": 17958,
+          "rlvl": 270,
+          "icon": "/i/052000/052846.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3721,
+          "itemId": 20731,
+          "rlvl": 270,
+          "icon": "/i/052000/052616.png",
+          "category": 57
+        },
+        {
+          "recipeId": 3542,
+          "itemId": 17959,
+          "rlvl": 276,
+          "icon": "/i/052000/052847.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3725,
+          "itemId": 20735,
+          "rlvl": 279,
+          "icon": "/i/052000/052615.png",
+          "category": 77
+        },
+        {
+          "recipeId": 3728,
+          "itemId": 20738,
+          "rlvl": 279,
+          "icon": "/i/052000/052610.png",
+          "category": 77
+        },
+        {
+          "recipeId": 3543,
+          "itemId": 17960,
+          "rlvl": 285,
+          "icon": "/i/052000/052604.png",
+          "category": 57
+        },
+        {
+          "recipeId": 3726,
+          "itemId": 20736,
+          "rlvl": 285,
+          "icon": "/i/052000/052613.png",
+          "category": 77
+        },
+        {
+          "recipeId": 3729,
+          "itemId": 20739,
+          "rlvl": 288,
+          "icon": "/i/052000/052612.png",
+          "category": 57
+        },
+        {
+          "recipeId": 3730,
+          "itemId": 20740,
+          "rlvl": 288,
+          "icon": "/i/052000/052614.png",
+          "category": 57
         }
       ]
     },
@@ -4626,6 +4626,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30001,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30002,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30008,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30009,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30108,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30109,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30005,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30354,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -4699,13 +4755,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30001,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30358,
           "itemId": 5800,
           "rlvl": 30,
@@ -4738,55 +4787,6 @@ export const craftingLogPages = [
           "itemId": 5811,
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30002,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30008,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30009,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30108,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30109,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30005,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30354,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
           "category": 55
         }
       ]
@@ -4857,27 +4857,6 @@ export const craftingLogPages = [
           "category": 30
         },
         {
-          "recipeId": 10,
-          "itemId": 2328,
-          "rlvl": 5,
-          "icon": "/i/035000/035051.png",
-          "category": 13
-        },
-        {
-          "recipeId": 11,
-          "itemId": 2341,
-          "rlvl": 5,
-          "icon": "/i/035000/035101.png",
-          "category": 14
-        },
-        {
-          "recipeId": 12,
-          "itemId": 2367,
-          "rlvl": 5,
-          "icon": "/i/035000/035201.png",
-          "category": 16
-        },
-        {
           "recipeId": 3,
           "itemId": 1602,
           "rlvl": 2,
@@ -4932,6 +4911,27 @@ export const craftingLogPages = [
           "rlvl": 5,
           "icon": "/i/033000/033802.png",
           "category": 84
+        },
+        {
+          "recipeId": 10,
+          "itemId": 2328,
+          "rlvl": 5,
+          "icon": "/i/035000/035051.png",
+          "category": 13
+        },
+        {
+          "recipeId": 11,
+          "itemId": 2341,
+          "rlvl": 5,
+          "icon": "/i/035000/035101.png",
+          "category": 14
+        },
+        {
+          "recipeId": 12,
+          "itemId": 2367,
+          "rlvl": 5,
+          "icon": "/i/035000/035201.png",
+          "category": 16
         }
       ]
     },
@@ -4961,48 +4961,6 @@ export const craftingLogPages = [
           "rlvl": 6,
           "icon": "/i/035000/035751.png",
           "category": 27
-        },
-        {
-          "recipeId": 2073,
-          "itemId": 8660,
-          "rlvl": 10,
-          "icon": "/i/033000/033804.png",
-          "category": 84
-        },
-        {
-          "recipeId": 25,
-          "itemId": 2342,
-          "rlvl": 10,
-          "icon": "/i/035000/035101.png",
-          "category": 14
-        },
-        {
-          "recipeId": 22,
-          "itemId": 2356,
-          "rlvl": 10,
-          "icon": "/i/035000/035151.png",
-          "category": 15
-        },
-        {
-          "recipeId": 23,
-          "itemId": 2381,
-          "rlvl": 10,
-          "icon": "/i/035000/035251.png",
-          "category": 17
-        },
-        {
-          "recipeId": 26,
-          "itemId": 2393,
-          "rlvl": 10,
-          "icon": "/i/035000/035302.png",
-          "category": 18
-        },
-        {
-          "recipeId": 24,
-          "itemId": 2482,
-          "rlvl": 10,
-          "icon": "/i/035000/035651.png",
-          "category": 25
         },
         {
           "recipeId": 15,
@@ -5059,6 +5017,48 @@ export const craftingLogPages = [
           "rlvl": 9,
           "icon": "/i/035000/035051.png",
           "category": 13
+        },
+        {
+          "recipeId": 2073,
+          "itemId": 8660,
+          "rlvl": 10,
+          "icon": "/i/033000/033804.png",
+          "category": 84
+        },
+        {
+          "recipeId": 25,
+          "itemId": 2342,
+          "rlvl": 10,
+          "icon": "/i/035000/035101.png",
+          "category": 14
+        },
+        {
+          "recipeId": 22,
+          "itemId": 2356,
+          "rlvl": 10,
+          "icon": "/i/035000/035151.png",
+          "category": 15
+        },
+        {
+          "recipeId": 23,
+          "itemId": 2381,
+          "rlvl": 10,
+          "icon": "/i/035000/035251.png",
+          "category": 17
+        },
+        {
+          "recipeId": 26,
+          "itemId": 2393,
+          "rlvl": 10,
+          "icon": "/i/035000/035302.png",
+          "category": 18
+        },
+        {
+          "recipeId": 24,
+          "itemId": 2482,
+          "rlvl": 10,
+          "icon": "/i/035000/035651.png",
+          "category": 25
         }
       ]
     },
@@ -5088,62 +5088,6 @@ export const craftingLogPages = [
           "rlvl": 11,
           "icon": "/i/035000/035401.png",
           "category": 20
-        },
-        {
-          "recipeId": 38,
-          "itemId": 1605,
-          "rlvl": 13,
-          "icon": "/i/030000/030401.png",
-          "category": 2
-        },
-        {
-          "recipeId": 37,
-          "itemId": 1684,
-          "rlvl": 13,
-          "icon": "/i/031000/031013.png",
-          "category": 1
-        },
-        {
-          "recipeId": 39,
-          "itemId": 1753,
-          "rlvl": 14,
-          "icon": "/i/031000/031405.png",
-          "category": 3
-        },
-        {
-          "recipeId": 2074,
-          "itemId": 9186,
-          "rlvl": 14,
-          "icon": "/i/033000/033805.png",
-          "category": 84
-        },
-        {
-          "recipeId": 40,
-          "itemId": 2419,
-          "rlvl": 14,
-          "icon": "/i/035000/035402.png",
-          "category": 20
-        },
-        {
-          "recipeId": 2854,
-          "itemId": 13726,
-          "rlvl": 15,
-          "icon": "/i/021000/021003.png",
-          "category": 85
-        },
-        {
-          "recipeId": 41,
-          "itemId": 2343,
-          "rlvl": 15,
-          "icon": "/i/035000/035103.png",
-          "category": 14
-        },
-        {
-          "recipeId": 42,
-          "itemId": 2369,
-          "rlvl": 15,
-          "icon": "/i/035000/035204.png",
-          "category": 16
         },
         {
           "recipeId": 27,
@@ -5200,6 +5144,62 @@ export const craftingLogPages = [
           "rlvl": 12,
           "icon": "/i/038000/038101.png",
           "category": 30
+        },
+        {
+          "recipeId": 38,
+          "itemId": 1605,
+          "rlvl": 13,
+          "icon": "/i/030000/030401.png",
+          "category": 2
+        },
+        {
+          "recipeId": 37,
+          "itemId": 1684,
+          "rlvl": 13,
+          "icon": "/i/031000/031013.png",
+          "category": 1
+        },
+        {
+          "recipeId": 39,
+          "itemId": 1753,
+          "rlvl": 14,
+          "icon": "/i/031000/031405.png",
+          "category": 3
+        },
+        {
+          "recipeId": 2074,
+          "itemId": 9186,
+          "rlvl": 14,
+          "icon": "/i/033000/033805.png",
+          "category": 84
+        },
+        {
+          "recipeId": 40,
+          "itemId": 2419,
+          "rlvl": 14,
+          "icon": "/i/035000/035402.png",
+          "category": 20
+        },
+        {
+          "recipeId": 2854,
+          "itemId": 13726,
+          "rlvl": 15,
+          "icon": "/i/021000/021003.png",
+          "category": 85
+        },
+        {
+          "recipeId": 41,
+          "itemId": 2343,
+          "rlvl": 15,
+          "icon": "/i/035000/035103.png",
+          "category": 14
+        },
+        {
+          "recipeId": 42,
+          "itemId": 2369,
+          "rlvl": 15,
+          "icon": "/i/035000/035204.png",
+          "category": 16
         }
       ]
     },
@@ -5229,6 +5229,62 @@ export const craftingLogPages = [
           "rlvl": 16,
           "icon": "/i/021000/021004.png",
           "category": 49
+        },
+        {
+          "recipeId": 45,
+          "itemId": 1607,
+          "rlvl": 16,
+          "icon": "/i/030000/030504.png",
+          "category": 2
+        },
+        {
+          "recipeId": 47,
+          "itemId": 1686,
+          "rlvl": 16,
+          "icon": "/i/031000/031015.png",
+          "category": 1
+        },
+        {
+          "recipeId": 2075,
+          "itemId": 8661,
+          "rlvl": 16,
+          "icon": "/i/033000/033806.png",
+          "category": 84
+        },
+        {
+          "recipeId": 46,
+          "itemId": 2317,
+          "rlvl": 16,
+          "icon": "/i/035000/035003.png",
+          "category": 12
+        },
+        {
+          "recipeId": 44,
+          "itemId": 2522,
+          "rlvl": 16,
+          "icon": "/i/038000/038004.png",
+          "category": 28
+        },
+        {
+          "recipeId": 48,
+          "itemId": 1754,
+          "rlvl": 17,
+          "icon": "/i/031000/031402.png",
+          "category": 3
+        },
+        {
+          "recipeId": 50,
+          "itemId": 1756,
+          "rlvl": 17,
+          "icon": "/i/031000/031404.png",
+          "category": 3
+        },
+        {
+          "recipeId": 49,
+          "itemId": 2548,
+          "rlvl": 17,
+          "icon": "/i/038000/038102.png",
+          "category": 30
         },
         {
           "recipeId": 51,
@@ -5301,13 +5357,6 @@ export const craftingLogPages = [
           "category": 2
         },
         {
-          "recipeId": 45,
-          "itemId": 1607,
-          "rlvl": 16,
-          "icon": "/i/030000/030504.png",
-          "category": 2
-        },
-        {
           "recipeId": 2076,
           "itemId": 8662,
           "rlvl": 20,
@@ -5334,55 +5383,6 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/038000/038002.png",
           "category": 28
-        },
-        {
-          "recipeId": 47,
-          "itemId": 1686,
-          "rlvl": 16,
-          "icon": "/i/031000/031015.png",
-          "category": 1
-        },
-        {
-          "recipeId": 2075,
-          "itemId": 8661,
-          "rlvl": 16,
-          "icon": "/i/033000/033806.png",
-          "category": 84
-        },
-        {
-          "recipeId": 46,
-          "itemId": 2317,
-          "rlvl": 16,
-          "icon": "/i/035000/035003.png",
-          "category": 12
-        },
-        {
-          "recipeId": 44,
-          "itemId": 2522,
-          "rlvl": 16,
-          "icon": "/i/038000/038004.png",
-          "category": 28
-        },
-        {
-          "recipeId": 48,
-          "itemId": 1754,
-          "rlvl": 17,
-          "icon": "/i/031000/031402.png",
-          "category": 3
-        },
-        {
-          "recipeId": 50,
-          "itemId": 1756,
-          "rlvl": 17,
-          "icon": "/i/031000/031404.png",
-          "category": 3
-        },
-        {
-          "recipeId": 49,
-          "itemId": 2548,
-          "rlvl": 17,
-          "icon": "/i/038000/038102.png",
-          "category": 30
         }
       ]
     },
@@ -5412,6 +5412,62 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/035000/035102.png",
           "category": 14
+        },
+        {
+          "recipeId": 70,
+          "itemId": 2371,
+          "rlvl": 21,
+          "icon": "/i/035000/035202.png",
+          "category": 16
+        },
+        {
+          "recipeId": 69,
+          "itemId": 2396,
+          "rlvl": 21,
+          "icon": "/i/035000/035303.png",
+          "category": 18
+        },
+        {
+          "recipeId": 66,
+          "itemId": 2484,
+          "rlvl": 21,
+          "icon": "/i/035000/035652.png",
+          "category": 25
+        },
+        {
+          "recipeId": 64,
+          "itemId": 2510,
+          "rlvl": 21,
+          "icon": "/i/035000/035752.png",
+          "category": 27
+        },
+        {
+          "recipeId": 65,
+          "itemId": 2562,
+          "rlvl": 21,
+          "icon": "/i/038000/038152.png",
+          "category": 31
+        },
+        {
+          "recipeId": 74,
+          "itemId": 1614,
+          "rlvl": 22,
+          "icon": "/i/030000/030405.png",
+          "category": 2
+        },
+        {
+          "recipeId": 2077,
+          "itemId": 8663,
+          "rlvl": 22,
+          "icon": "/i/033000/033811.png",
+          "category": 84
+        },
+        {
+          "recipeId": 71,
+          "itemId": 2358,
+          "rlvl": 22,
+          "icon": "/i/035000/035152.png",
+          "category": 15
         },
         {
           "recipeId": 72,
@@ -5484,13 +5540,6 @@ export const craftingLogPages = [
           "category": 30
         },
         {
-          "recipeId": 70,
-          "itemId": 2371,
-          "rlvl": 21,
-          "icon": "/i/035000/035202.png",
-          "category": 16
-        },
-        {
           "recipeId": 84,
           "itemId": 1622,
           "rlvl": 25,
@@ -5517,55 +5566,6 @@ export const craftingLogPages = [
           "rlvl": 25,
           "icon": "/i/038000/038152.png",
           "category": 31
-        },
-        {
-          "recipeId": 69,
-          "itemId": 2396,
-          "rlvl": 21,
-          "icon": "/i/035000/035303.png",
-          "category": 18
-        },
-        {
-          "recipeId": 66,
-          "itemId": 2484,
-          "rlvl": 21,
-          "icon": "/i/035000/035652.png",
-          "category": 25
-        },
-        {
-          "recipeId": 64,
-          "itemId": 2510,
-          "rlvl": 21,
-          "icon": "/i/035000/035752.png",
-          "category": 27
-        },
-        {
-          "recipeId": 65,
-          "itemId": 2562,
-          "rlvl": 21,
-          "icon": "/i/038000/038152.png",
-          "category": 31
-        },
-        {
-          "recipeId": 74,
-          "itemId": 1614,
-          "rlvl": 22,
-          "icon": "/i/030000/030405.png",
-          "category": 2
-        },
-        {
-          "recipeId": 2077,
-          "itemId": 8663,
-          "rlvl": 22,
-          "icon": "/i/033000/033811.png",
-          "category": 84
-        },
-        {
-          "recipeId": 71,
-          "itemId": 2358,
-          "rlvl": 22,
-          "icon": "/i/035000/035152.png",
-          "category": 15
         }
       ]
     },
@@ -5595,6 +5595,62 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/031000/031413.png",
           "category": 3
+        },
+        {
+          "recipeId": 2078,
+          "itemId": 9193,
+          "rlvl": 26,
+          "icon": "/i/033000/033815.png",
+          "category": 84
+        },
+        {
+          "recipeId": 90,
+          "itemId": 2346,
+          "rlvl": 26,
+          "icon": "/i/035000/035104.png",
+          "category": 14
+        },
+        {
+          "recipeId": 89,
+          "itemId": 2372,
+          "rlvl": 26,
+          "icon": "/i/035000/035205.png",
+          "category": 16
+        },
+        {
+          "recipeId": 88,
+          "itemId": 2397,
+          "rlvl": 26,
+          "icon": "/i/035000/035305.png",
+          "category": 18
+        },
+        {
+          "recipeId": 1588,
+          "itemId": 7019,
+          "rlvl": 27,
+          "icon": "/i/021000/021008.png",
+          "category": 49
+        },
+        {
+          "recipeId": 92,
+          "itemId": 2359,
+          "rlvl": 27,
+          "icon": "/i/035000/035152.png",
+          "category": 15
+        },
+        {
+          "recipeId": 93,
+          "itemId": 2384,
+          "rlvl": 27,
+          "icon": "/i/035000/035252.png",
+          "category": 17
+        },
+        {
+          "recipeId": 94,
+          "itemId": 2525,
+          "rlvl": 27,
+          "icon": "/i/038000/038005.png",
+          "category": 28
         },
         {
           "recipeId": 95,
@@ -5667,13 +5723,6 @@ export const craftingLogPages = [
           "category": 84
         },
         {
-          "recipeId": 2078,
-          "itemId": 9193,
-          "rlvl": 26,
-          "icon": "/i/033000/033815.png",
-          "category": 84
-        },
-        {
           "recipeId": 108,
           "itemId": 2321,
           "rlvl": 30,
@@ -5707,55 +5756,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/038000/038053.png",
           "category": 29
-        },
-        {
-          "recipeId": 90,
-          "itemId": 2346,
-          "rlvl": 26,
-          "icon": "/i/035000/035104.png",
-          "category": 14
-        },
-        {
-          "recipeId": 89,
-          "itemId": 2372,
-          "rlvl": 26,
-          "icon": "/i/035000/035205.png",
-          "category": 16
-        },
-        {
-          "recipeId": 88,
-          "itemId": 2397,
-          "rlvl": 26,
-          "icon": "/i/035000/035305.png",
-          "category": 18
-        },
-        {
-          "recipeId": 1588,
-          "itemId": 7019,
-          "rlvl": 27,
-          "icon": "/i/021000/021008.png",
-          "category": 49
-        },
-        {
-          "recipeId": 92,
-          "itemId": 2359,
-          "rlvl": 27,
-          "icon": "/i/035000/035152.png",
-          "category": 15
-        },
-        {
-          "recipeId": 93,
-          "itemId": 2384,
-          "rlvl": 27,
-          "icon": "/i/035000/035252.png",
-          "category": 17
-        },
-        {
-          "recipeId": 94,
-          "itemId": 2525,
-          "rlvl": 27,
-          "icon": "/i/038000/038005.png",
-          "category": 28
         }
       ]
     },
@@ -5785,6 +5785,62 @@ export const craftingLogPages = [
           "rlvl": 31,
           "icon": "/i/035000/035053.png",
           "category": 13
+        },
+        {
+          "recipeId": 109,
+          "itemId": 2436,
+          "rlvl": 31,
+          "icon": "/i/035000/035454.png",
+          "category": 21
+        },
+        {
+          "recipeId": 113,
+          "itemId": 1776,
+          "rlvl": 32,
+          "icon": "/i/031000/031425.png",
+          "category": 3
+        },
+        {
+          "recipeId": 115,
+          "itemId": 2348,
+          "rlvl": 32,
+          "icon": "/i/035000/035108.png",
+          "category": 14
+        },
+        {
+          "recipeId": 116,
+          "itemId": 2399,
+          "rlvl": 32,
+          "icon": "/i/035000/035306.png",
+          "category": 18
+        },
+        {
+          "recipeId": 114,
+          "itemId": 2487,
+          "rlvl": 32,
+          "icon": "/i/035000/035655.png",
+          "category": 25
+        },
+        {
+          "recipeId": 112,
+          "itemId": 2513,
+          "rlvl": 32,
+          "icon": "/i/035000/035754.png",
+          "category": 27
+        },
+        {
+          "recipeId": 120,
+          "itemId": 2527,
+          "rlvl": 33,
+          "icon": "/i/038000/038012.png",
+          "category": 28
+        },
+        {
+          "recipeId": 118,
+          "itemId": 2540,
+          "rlvl": 33,
+          "icon": "/i/038000/038053.png",
+          "category": 29
         },
         {
           "recipeId": 124,
@@ -5857,13 +5913,6 @@ export const craftingLogPages = [
           "category": 12
         },
         {
-          "recipeId": 109,
-          "itemId": 2436,
-          "rlvl": 31,
-          "icon": "/i/035000/035454.png",
-          "category": 21
-        },
-        {
           "recipeId": 125,
           "itemId": 2386,
           "rlvl": 35,
@@ -5904,55 +5953,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/030000/030509.png",
           "category": 2
-        },
-        {
-          "recipeId": 113,
-          "itemId": 1776,
-          "rlvl": 32,
-          "icon": "/i/031000/031425.png",
-          "category": 3
-        },
-        {
-          "recipeId": 115,
-          "itemId": 2348,
-          "rlvl": 32,
-          "icon": "/i/035000/035108.png",
-          "category": 14
-        },
-        {
-          "recipeId": 116,
-          "itemId": 2399,
-          "rlvl": 32,
-          "icon": "/i/035000/035306.png",
-          "category": 18
-        },
-        {
-          "recipeId": 114,
-          "itemId": 2487,
-          "rlvl": 32,
-          "icon": "/i/035000/035655.png",
-          "category": 25
-        },
-        {
-          "recipeId": 112,
-          "itemId": 2513,
-          "rlvl": 32,
-          "icon": "/i/035000/035754.png",
-          "category": 27
-        },
-        {
-          "recipeId": 120,
-          "itemId": 2527,
-          "rlvl": 33,
-          "icon": "/i/038000/038012.png",
-          "category": 28
-        },
-        {
-          "recipeId": 118,
-          "itemId": 2540,
-          "rlvl": 33,
-          "icon": "/i/038000/038053.png",
-          "category": 29
         }
       ]
     },
@@ -5982,6 +5982,62 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/035000/035405.png",
           "category": 20
+        },
+        {
+          "recipeId": 133,
+          "itemId": 2437,
+          "rlvl": 36,
+          "icon": "/i/035000/035454.png",
+          "category": 21
+        },
+        {
+          "recipeId": 134,
+          "itemId": 1639,
+          "rlvl": 37,
+          "icon": "/i/030000/030435.png",
+          "category": 2
+        },
+        {
+          "recipeId": 135,
+          "itemId": 5065,
+          "rlvl": 38,
+          "icon": "/i/020000/020811.png",
+          "category": 49
+        },
+        {
+          "recipeId": 137,
+          "itemId": 1643,
+          "rlvl": 38,
+          "icon": "/i/030000/030500.png",
+          "category": 2
+        },
+        {
+          "recipeId": 2244,
+          "itemId": 10402,
+          "rlvl": 38,
+          "icon": "/i/034000/034208.png",
+          "category": 87
+        },
+        {
+          "recipeId": 2082,
+          "itemId": 8666,
+          "rlvl": 38,
+          "icon": "/i/033000/033825.png",
+          "category": 84
+        },
+        {
+          "recipeId": 2250,
+          "itemId": 10464,
+          "rlvl": 38,
+          "icon": "/i/034000/034610.png",
+          "category": 88
+        },
+        {
+          "recipeId": 1186,
+          "itemId": 2350,
+          "rlvl": 38,
+          "icon": "/i/035000/035109.png",
+          "category": 14
         },
         {
           "recipeId": 1185,
@@ -6054,13 +6110,6 @@ export const craftingLogPages = [
           "category": 3
         },
         {
-          "recipeId": 133,
-          "itemId": 2437,
-          "rlvl": 36,
-          "icon": "/i/035000/035454.png",
-          "category": 21
-        },
-        {
           "recipeId": 147,
           "itemId": 2337,
           "rlvl": 40,
@@ -6087,55 +6136,6 @@ export const craftingLogPages = [
           "rlvl": 40,
           "icon": "/i/035000/035455.png",
           "category": 21
-        },
-        {
-          "recipeId": 134,
-          "itemId": 1639,
-          "rlvl": 37,
-          "icon": "/i/030000/030435.png",
-          "category": 2
-        },
-        {
-          "recipeId": 135,
-          "itemId": 5065,
-          "rlvl": 38,
-          "icon": "/i/020000/020811.png",
-          "category": 49
-        },
-        {
-          "recipeId": 137,
-          "itemId": 1643,
-          "rlvl": 38,
-          "icon": "/i/030000/030500.png",
-          "category": 2
-        },
-        {
-          "recipeId": 2244,
-          "itemId": 10402,
-          "rlvl": 38,
-          "icon": "/i/034000/034208.png",
-          "category": 87
-        },
-        {
-          "recipeId": 2082,
-          "itemId": 8666,
-          "rlvl": 38,
-          "icon": "/i/033000/033825.png",
-          "category": 84
-        },
-        {
-          "recipeId": 2250,
-          "itemId": 10464,
-          "rlvl": 38,
-          "icon": "/i/034000/034610.png",
-          "category": 88
-        },
-        {
-          "recipeId": 1186,
-          "itemId": 2350,
-          "rlvl": 38,
-          "icon": "/i/035000/035109.png",
-          "category": 14
         }
       ]
     },
@@ -6165,6 +6165,62 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/033000/033829.png",
           "category": 84
+        },
+        {
+          "recipeId": 2251,
+          "itemId": 10465,
+          "rlvl": 41,
+          "icon": "/i/034000/034646.png",
+          "category": 88
+        },
+        {
+          "recipeId": 151,
+          "itemId": 2490,
+          "rlvl": 41,
+          "icon": "/i/035000/035653.png",
+          "category": 25
+        },
+        {
+          "recipeId": 149,
+          "itemId": 2516,
+          "rlvl": 41,
+          "icon": "/i/035000/035753.png",
+          "category": 27
+        },
+        {
+          "recipeId": 152,
+          "itemId": 2542,
+          "rlvl": 41,
+          "icon": "/i/038000/038054.png",
+          "category": 29
+        },
+        {
+          "recipeId": 150,
+          "itemId": 2568,
+          "rlvl": 41,
+          "icon": "/i/038000/038153.png",
+          "category": 31
+        },
+        {
+          "recipeId": 153,
+          "itemId": 5059,
+          "rlvl": 42,
+          "icon": "/i/020000/020802.png",
+          "category": 49
+        },
+        {
+          "recipeId": 156,
+          "itemId": 1657,
+          "rlvl": 42,
+          "icon": "/i/030000/030407.png",
+          "category": 2
+        },
+        {
+          "recipeId": 157,
+          "itemId": 1723,
+          "rlvl": 42,
+          "icon": "/i/031000/031018.png",
+          "category": 1
         },
         {
           "recipeId": 1188,
@@ -6237,13 +6293,6 @@ export const craftingLogPages = [
           "category": 16
         },
         {
-          "recipeId": 2251,
-          "itemId": 10465,
-          "rlvl": 41,
-          "icon": "/i/034000/034646.png",
-          "category": 88
-        },
-        {
           "recipeId": 1197,
           "itemId": 2529,
           "rlvl": 43,
@@ -6314,13 +6363,6 @@ export const craftingLogPages = [
           "category": 87
         },
         {
-          "recipeId": 151,
-          "itemId": 2490,
-          "rlvl": 41,
-          "icon": "/i/035000/035653.png",
-          "category": 25
-        },
-        {
           "recipeId": 2084,
           "itemId": 8667,
           "rlvl": 45,
@@ -6368,48 +6410,6 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/030000/030429.png",
           "category": 2
-        },
-        {
-          "recipeId": 149,
-          "itemId": 2516,
-          "rlvl": 41,
-          "icon": "/i/035000/035753.png",
-          "category": 27
-        },
-        {
-          "recipeId": 152,
-          "itemId": 2542,
-          "rlvl": 41,
-          "icon": "/i/038000/038054.png",
-          "category": 29
-        },
-        {
-          "recipeId": 150,
-          "itemId": 2568,
-          "rlvl": 41,
-          "icon": "/i/038000/038153.png",
-          "category": 31
-        },
-        {
-          "recipeId": 153,
-          "itemId": 5059,
-          "rlvl": 42,
-          "icon": "/i/020000/020802.png",
-          "category": 49
-        },
-        {
-          "recipeId": 156,
-          "itemId": 1657,
-          "rlvl": 42,
-          "icon": "/i/030000/030407.png",
-          "category": 2
-        },
-        {
-          "recipeId": 157,
-          "itemId": 1723,
-          "rlvl": 42,
-          "icon": "/i/031000/031018.png",
-          "category": 1
         }
       ]
     },
@@ -6439,6 +6439,62 @@ export const craftingLogPages = [
           "rlvl": 46,
           "icon": "/i/035000/035408.png",
           "category": 20
+        },
+        {
+          "recipeId": 165,
+          "itemId": 2377,
+          "rlvl": 47,
+          "icon": "/i/035000/035208.png",
+          "category": 16
+        },
+        {
+          "recipeId": 164,
+          "itemId": 2402,
+          "rlvl": 47,
+          "icon": "/i/035000/035308.png",
+          "category": 18
+        },
+        {
+          "recipeId": 1205,
+          "itemId": 1800,
+          "rlvl": 47,
+          "icon": "/i/031000/031418.png",
+          "category": 3
+        },
+        {
+          "recipeId": 2247,
+          "itemId": 10405,
+          "rlvl": 48,
+          "icon": "/i/034000/034257.png",
+          "category": 87
+        },
+        {
+          "recipeId": 2253,
+          "itemId": 10467,
+          "rlvl": 48,
+          "icon": "/i/034000/034648.png",
+          "category": 88
+        },
+        {
+          "recipeId": 166,
+          "itemId": 2530,
+          "rlvl": 48,
+          "icon": "/i/038000/038010.png",
+          "category": 28
+        },
+        {
+          "recipeId": 168,
+          "itemId": 1663,
+          "rlvl": 49,
+          "icon": "/i/030000/030436.png",
+          "category": 2
+        },
+        {
+          "recipeId": 1206,
+          "itemId": 1803,
+          "rlvl": 49,
+          "icon": "/i/031000/031459.png",
+          "category": 3
         },
         {
           "recipeId": 169,
@@ -6511,13 +6567,6 @@ export const craftingLogPages = [
           "category": 17
         },
         {
-          "recipeId": 165,
-          "itemId": 2377,
-          "rlvl": 47,
-          "icon": "/i/035000/035208.png",
-          "category": 16
-        },
-        {
           "recipeId": 1216,
           "itemId": 2441,
           "rlvl": 55,
@@ -6588,13 +6637,6 @@ export const craftingLogPages = [
           "category": 56
         },
         {
-          "recipeId": 164,
-          "itemId": 2402,
-          "rlvl": 47,
-          "icon": "/i/035000/035308.png",
-          "category": 18
-        },
-        {
           "recipeId": 2088,
           "itemId": 9461,
           "rlvl": 70,
@@ -6656,48 +6698,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/028000/028616.png",
           "category": 81
-        },
-        {
-          "recipeId": 1205,
-          "itemId": 1800,
-          "rlvl": 47,
-          "icon": "/i/031000/031418.png",
-          "category": 3
-        },
-        {
-          "recipeId": 2247,
-          "itemId": 10405,
-          "rlvl": 48,
-          "icon": "/i/034000/034257.png",
-          "category": 87
-        },
-        {
-          "recipeId": 2253,
-          "itemId": 10467,
-          "rlvl": 48,
-          "icon": "/i/034000/034648.png",
-          "category": 88
-        },
-        {
-          "recipeId": 166,
-          "itemId": 2530,
-          "rlvl": 48,
-          "icon": "/i/038000/038010.png",
-          "category": 28
-        },
-        {
-          "recipeId": 168,
-          "itemId": 1663,
-          "rlvl": 49,
-          "icon": "/i/030000/030436.png",
-          "category": 2
-        },
-        {
-          "recipeId": 1206,
-          "itemId": 1803,
-          "rlvl": 49,
-          "icon": "/i/031000/031459.png",
-          "category": 3
         }
       ]
     },
@@ -6727,6 +6727,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/038000/038527.png",
           "category": 96
+        },
+        {
+          "recipeId": 2335,
+          "itemId": 12528,
+          "rlvl": 120,
+          "icon": "/i/021000/021014.png",
+          "category": 49
+        },
+        {
+          "recipeId": 2255,
+          "itemId": 10586,
+          "rlvl": 120,
+          "icon": "/i/030000/030519.png",
+          "category": 2
+        },
+        {
+          "recipeId": 2265,
+          "itemId": 10598,
+          "rlvl": 120,
+          "icon": "/i/031000/031506.png",
+          "category": 3
+        },
+        {
+          "recipeId": 2275,
+          "itemId": 10622,
+          "rlvl": 120,
+          "icon": "/i/034000/034210.png",
+          "category": 87
+        },
+        {
+          "recipeId": 2260,
+          "itemId": 10592,
+          "rlvl": 120,
+          "icon": "/i/031000/031084.png",
+          "category": 1
+        },
+        {
+          "recipeId": 2270,
+          "itemId": 10616,
+          "rlvl": 120,
+          "icon": "/i/033000/033877.png",
+          "category": 84
+        },
+        {
+          "recipeId": 2280,
+          "itemId": 10628,
+          "rlvl": 120,
+          "icon": "/i/034000/034616.png",
+          "category": 88
+        },
+        {
+          "recipeId": 2331,
+          "itemId": 12519,
+          "rlvl": 125,
+          "icon": "/i/020000/020824.png",
+          "category": 49
         },
         {
           "recipeId": 3652,
@@ -6799,13 +6855,6 @@ export const craftingLogPages = [
           "category": 3
         },
         {
-          "recipeId": 2335,
-          "itemId": 12528,
-          "rlvl": 120,
-          "icon": "/i/021000/021014.png",
-          "category": 49
-        },
-        {
           "recipeId": 2276,
           "itemId": 10623,
           "rlvl": 130,
@@ -6874,13 +6923,6 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/035000/035757.png",
           "category": 27
-        },
-        {
-          "recipeId": 2255,
-          "itemId": 10586,
-          "rlvl": 120,
-          "icon": "/i/030000/030519.png",
-          "category": 2
         },
         {
           "recipeId": 2324,
@@ -6953,13 +6995,6 @@ export const craftingLogPages = [
           "category": 84
         },
         {
-          "recipeId": 2265,
-          "itemId": 10598,
-          "rlvl": 120,
-          "icon": "/i/031000/031506.png",
-          "category": 3
-        },
-        {
           "recipeId": 2282,
           "itemId": 10630,
           "rlvl": 133,
@@ -7014,41 +7049,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/038000/038117.png",
           "category": 30
-        },
-        {
-          "recipeId": 2275,
-          "itemId": 10622,
-          "rlvl": 120,
-          "icon": "/i/034000/034210.png",
-          "category": 87
-        },
-        {
-          "recipeId": 2260,
-          "itemId": 10592,
-          "rlvl": 120,
-          "icon": "/i/031000/031084.png",
-          "category": 1
-        },
-        {
-          "recipeId": 2270,
-          "itemId": 10616,
-          "rlvl": 120,
-          "icon": "/i/033000/033877.png",
-          "category": 84
-        },
-        {
-          "recipeId": 2280,
-          "itemId": 10628,
-          "rlvl": 120,
-          "icon": "/i/034000/034616.png",
-          "category": 88
-        },
-        {
-          "recipeId": 2331,
-          "itemId": 12519,
-          "rlvl": 125,
-          "icon": "/i/020000/020824.png",
-          "category": 49
         }
       ]
     },
@@ -7078,6 +7078,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/038000/038533.png",
           "category": 96
+        },
+        {
+          "recipeId": 2307,
+          "itemId": 11916,
+          "rlvl": 139,
+          "icon": "/i/035000/035061.png",
+          "category": 13
+        },
+        {
+          "recipeId": 2310,
+          "itemId": 11920,
+          "rlvl": 139,
+          "icon": "/i/035000/035158.png",
+          "category": 15
+        },
+        {
+          "recipeId": 2313,
+          "itemId": 11924,
+          "rlvl": 139,
+          "icon": "/i/035000/035258.png",
+          "category": 17
+        },
+        {
+          "recipeId": 2316,
+          "itemId": 11932,
+          "rlvl": 139,
+          "icon": "/i/035000/035454.png",
+          "category": 21
+        },
+        {
+          "recipeId": 2319,
+          "itemId": 11940,
+          "rlvl": 139,
+          "icon": "/i/035000/035658.png",
+          "category": 25
+        },
+        {
+          "recipeId": 2322,
+          "itemId": 11944,
+          "rlvl": 139,
+          "icon": "/i/035000/035758.png",
+          "category": 27
+        },
+        {
+          "recipeId": 2325,
+          "itemId": 11948,
+          "rlvl": 139,
+          "icon": "/i/038000/038058.png",
+          "category": 29
+        },
+        {
+          "recipeId": 2328,
+          "itemId": 11952,
+          "rlvl": 139,
+          "icon": "/i/038000/038158.png",
+          "category": 31
         },
         {
           "recipeId": 2258,
@@ -7150,13 +7206,6 @@ export const craftingLogPages = [
           "category": 18
         },
         {
-          "recipeId": 2307,
-          "itemId": 11916,
-          "rlvl": 139,
-          "icon": "/i/035000/035061.png",
-          "category": 13
-        },
-        {
           "recipeId": 2299,
           "itemId": 11889,
           "rlvl": 142,
@@ -7227,13 +7276,6 @@ export const craftingLogPages = [
           "category": 96
         },
         {
-          "recipeId": 2310,
-          "itemId": 11920,
-          "rlvl": 139,
-          "icon": "/i/035000/035158.png",
-          "category": 15
-        },
-        {
           "recipeId": 2274,
           "itemId": 10620,
           "rlvl": 145,
@@ -7302,48 +7344,6 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/038000/038157.png",
           "category": 31
-        },
-        {
-          "recipeId": 2313,
-          "itemId": 11924,
-          "rlvl": 139,
-          "icon": "/i/035000/035258.png",
-          "category": 17
-        },
-        {
-          "recipeId": 2316,
-          "itemId": 11932,
-          "rlvl": 139,
-          "icon": "/i/035000/035454.png",
-          "category": 21
-        },
-        {
-          "recipeId": 2319,
-          "itemId": 11940,
-          "rlvl": 139,
-          "icon": "/i/035000/035658.png",
-          "category": 25
-        },
-        {
-          "recipeId": 2322,
-          "itemId": 11944,
-          "rlvl": 139,
-          "icon": "/i/035000/035758.png",
-          "category": 27
-        },
-        {
-          "recipeId": 2325,
-          "itemId": 11948,
-          "rlvl": 139,
-          "icon": "/i/038000/038058.png",
-          "category": 29
-        },
-        {
-          "recipeId": 2328,
-          "itemId": 11952,
-          "rlvl": 139,
-          "icon": "/i/038000/038158.png",
-          "category": 31
         }
       ]
     },
@@ -7373,6 +7373,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/030000/030559.png",
           "category": 2
+        },
+        {
+          "recipeId": 2958,
+          "itemId": 18035,
+          "rlvl": 255,
+          "icon": "/i/031000/031548.png",
+          "category": 3
+        },
+        {
+          "recipeId": 2962,
+          "itemId": 18039,
+          "rlvl": 255,
+          "icon": "/i/034000/034286.png",
+          "category": 87
+        },
+        {
+          "recipeId": 2957,
+          "itemId": 18034,
+          "rlvl": 255,
+          "icon": "/i/031000/031143.png",
+          "category": 1
+        },
+        {
+          "recipeId": 2969,
+          "itemId": 18046,
+          "rlvl": 255,
+          "icon": "/i/038000/038534.png",
+          "category": 96
+        },
+        {
+          "recipeId": 2961,
+          "itemId": 18038,
+          "rlvl": 255,
+          "icon": "/i/033000/033911.png",
+          "category": 84
+        },
+        {
+          "recipeId": 2963,
+          "itemId": 18040,
+          "rlvl": 255,
+          "icon": "/i/034000/034686.png",
+          "category": 88
+        },
+        {
+          "recipeId": 3373,
+          "itemId": 19506,
+          "rlvl": 260,
+          "icon": "/i/035000/035022.png",
+          "category": 12
+        },
+        {
+          "recipeId": 3374,
+          "itemId": 19507,
+          "rlvl": 260,
+          "icon": "/i/035000/035121.png",
+          "category": 14
         },
         {
           "recipeId": 3375,
@@ -7445,13 +7501,6 @@ export const craftingLogPages = [
           "category": 21
         },
         {
-          "recipeId": 2958,
-          "itemId": 18035,
-          "rlvl": 255,
-          "icon": "/i/031000/031548.png",
-          "category": 3
-        },
-        {
           "recipeId": 3390,
           "itemId": 19523,
           "rlvl": 265,
@@ -7520,13 +7569,6 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/033000/033928.png",
           "category": 84
-        },
-        {
-          "recipeId": 2962,
-          "itemId": 18039,
-          "rlvl": 255,
-          "icon": "/i/034000/034286.png",
-          "category": 87
         },
         {
           "recipeId": 3041,
@@ -7599,13 +7641,6 @@ export const craftingLogPages = [
           "category": 20
         },
         {
-          "recipeId": 2957,
-          "itemId": 18034,
-          "rlvl": 255,
-          "icon": "/i/031000/031143.png",
-          "category": 1
-        },
-        {
           "recipeId": 3402,
           "itemId": 19535,
           "rlvl": 273,
@@ -7676,13 +7711,6 @@ export const craftingLogPages = [
           "category": 21
         },
         {
-          "recipeId": 2969,
-          "itemId": 18046,
-          "rlvl": 255,
-          "icon": "/i/038000/038534.png",
-          "category": 96
-        },
-        {
           "recipeId": 3411,
           "itemId": 19544,
           "rlvl": 276,
@@ -7709,34 +7737,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/038000/038161.png",
           "category": 31
-        },
-        {
-          "recipeId": 2961,
-          "itemId": 18038,
-          "rlvl": 255,
-          "icon": "/i/033000/033911.png",
-          "category": 84
-        },
-        {
-          "recipeId": 2963,
-          "itemId": 18040,
-          "rlvl": 255,
-          "icon": "/i/034000/034686.png",
-          "category": 88
-        },
-        {
-          "recipeId": 3373,
-          "itemId": 19506,
-          "rlvl": 260,
-          "icon": "/i/035000/035022.png",
-          "category": 12
-        },
-        {
-          "recipeId": 3374,
-          "itemId": 19507,
-          "rlvl": 260,
-          "icon": "/i/035000/035121.png",
-          "category": 14
         }
       ]
     },
@@ -7766,6 +7766,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/030000/030561.png",
           "category": 2
+        },
+        {
+          "recipeId": 3192,
+          "itemId": 18503,
+          "rlvl": 279,
+          "icon": "/i/031000/031533.png",
+          "category": 3
+        },
+        {
+          "recipeId": 3191,
+          "itemId": 18502,
+          "rlvl": 279,
+          "icon": "/i/031000/031132.png",
+          "category": 1
+        },
+        {
+          "recipeId": 3415,
+          "itemId": 19548,
+          "rlvl": 279,
+          "icon": "/i/035000/035023.png",
+          "category": 12
+        },
+        {
+          "recipeId": 3416,
+          "itemId": 19549,
+          "rlvl": 279,
+          "icon": "/i/035000/035122.png",
+          "category": 14
+        },
+        {
+          "recipeId": 3417,
+          "itemId": 19550,
+          "rlvl": 279,
+          "icon": "/i/035000/035223.png",
+          "category": 16
+        },
+        {
+          "recipeId": 3418,
+          "itemId": 19551,
+          "rlvl": 279,
+          "icon": "/i/035000/035321.png",
+          "category": 18
+        },
+        {
+          "recipeId": 3419,
+          "itemId": 19552,
+          "rlvl": 279,
+          "icon": "/i/035000/035423.png",
+          "category": 20
+        },
+        {
+          "recipeId": 3423,
+          "itemId": 19556,
+          "rlvl": 279,
+          "icon": "/i/038000/038024.png",
+          "category": 28
         },
         {
           "recipeId": 3424,
@@ -7838,13 +7894,6 @@ export const craftingLogPages = [
           "category": 25
         },
         {
-          "recipeId": 3192,
-          "itemId": 18503,
-          "rlvl": 279,
-          "icon": "/i/031000/031533.png",
-          "category": 3
-        },
-        {
           "recipeId": 3433,
           "itemId": 19566,
           "rlvl": 282,
@@ -7913,13 +7962,6 @@ export const craftingLogPages = [
           "rlvl": 285,
           "icon": "/i/033000/033918.png",
           "category": 84
-        },
-        {
-          "recipeId": 3191,
-          "itemId": 18502,
-          "rlvl": 279,
-          "icon": "/i/031000/031132.png",
-          "category": 1
         },
         {
           "recipeId": 3275,
@@ -7992,13 +8034,6 @@ export const craftingLogPages = [
           "category": 15
         },
         {
-          "recipeId": 3415,
-          "itemId": 19548,
-          "rlvl": 279,
-          "icon": "/i/035000/035023.png",
-          "category": 12
-        },
-        {
           "recipeId": 3449,
           "itemId": 19582,
           "rlvl": 290,
@@ -8039,41 +8074,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/038000/038163.png",
           "category": 31
-        },
-        {
-          "recipeId": 3416,
-          "itemId": 19549,
-          "rlvl": 279,
-          "icon": "/i/035000/035122.png",
-          "category": 14
-        },
-        {
-          "recipeId": 3417,
-          "itemId": 19550,
-          "rlvl": 279,
-          "icon": "/i/035000/035223.png",
-          "category": 16
-        },
-        {
-          "recipeId": 3418,
-          "itemId": 19551,
-          "rlvl": 279,
-          "icon": "/i/035000/035321.png",
-          "category": 18
-        },
-        {
-          "recipeId": 3419,
-          "itemId": 19552,
-          "rlvl": 279,
-          "icon": "/i/035000/035423.png",
-          "category": 20
-        },
-        {
-          "recipeId": 3423,
-          "itemId": 19556,
-          "rlvl": 279,
-          "icon": "/i/038000/038024.png",
-          "category": 28
         }
       ]
     },
@@ -8103,41 +8103,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
-        },
-        {
-          "recipeId": 30836,
-          "itemId": 9313,
-          "rlvl": 90,
-          "icon": "/i/035000/035656.png",
-          "category": 25
-        },
-        {
-          "recipeId": 30837,
-          "itemId": 9314,
-          "rlvl": 90,
-          "icon": "/i/035000/035756.png",
-          "category": 27
-        },
-        {
-          "recipeId": 30838,
-          "itemId": 9315,
-          "rlvl": 90,
-          "icon": "/i/038000/038056.png",
-          "category": 29
-        },
-        {
-          "recipeId": 30839,
-          "itemId": 9316,
-          "rlvl": 90,
-          "icon": "/i/038000/038156.png",
-          "category": 31
-        },
-        {
-          "recipeId": 31021,
-          "itemId": 12913,
-          "rlvl": 125,
-          "icon": "/i/020000/020966.png",
-          "category": 49
         },
         {
           "recipeId": 30418,
@@ -8194,6 +8159,41 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/035000/035457.png",
           "category": 21
+        },
+        {
+          "recipeId": 30836,
+          "itemId": 9313,
+          "rlvl": 90,
+          "icon": "/i/035000/035656.png",
+          "category": 25
+        },
+        {
+          "recipeId": 30837,
+          "itemId": 9314,
+          "rlvl": 90,
+          "icon": "/i/035000/035756.png",
+          "category": 27
+        },
+        {
+          "recipeId": 30838,
+          "itemId": 9315,
+          "rlvl": 90,
+          "icon": "/i/038000/038056.png",
+          "category": 29
+        },
+        {
+          "recipeId": 30839,
+          "itemId": 9316,
+          "rlvl": 90,
+          "icon": "/i/038000/038156.png",
+          "category": 31
+        },
+        {
+          "recipeId": 31021,
+          "itemId": 12913,
+          "rlvl": 125,
+          "icon": "/i/020000/020966.png",
+          "category": 49
         }
       ]
     },
@@ -8223,34 +8223,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/030000/030490.png",
           "category": 2
-        },
-        {
-          "recipeId": 30991,
-          "itemId": 10412,
-          "rlvl": 110,
-          "icon": "/i/034000/034224.png",
-          "category": 87
-        },
-        {
-          "recipeId": 30939,
-          "itemId": 9084,
-          "rlvl": 110,
-          "icon": "/i/031000/031081.png",
-          "category": 1
-        },
-        {
-          "recipeId": 30943,
-          "itemId": 9088,
-          "rlvl": 110,
-          "icon": "/i/033000/033869.png",
-          "category": 84
-        },
-        {
-          "recipeId": 30997,
-          "itemId": 10474,
-          "rlvl": 110,
-          "icon": "/i/034000/034629.png",
-          "category": 88
         },
         {
           "recipeId": 31918,
@@ -8307,6 +8279,34 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/031000/031487.png",
           "category": 3
+        },
+        {
+          "recipeId": 30991,
+          "itemId": 10412,
+          "rlvl": 110,
+          "icon": "/i/034000/034224.png",
+          "category": 87
+        },
+        {
+          "recipeId": 30939,
+          "itemId": 9084,
+          "rlvl": 110,
+          "icon": "/i/031000/031081.png",
+          "category": 1
+        },
+        {
+          "recipeId": 30943,
+          "itemId": 9088,
+          "rlvl": 110,
+          "icon": "/i/033000/033869.png",
+          "category": 84
+        },
+        {
+          "recipeId": 30997,
+          "itemId": 10474,
+          "rlvl": 110,
+          "icon": "/i/034000/034629.png",
+          "category": 88
         }
       ]
     },
@@ -8336,6 +8336,62 @@ export const craftingLogPages = [
           "rlvl": 150,
           "icon": "/i/031000/031505.png",
           "category": 3
+        },
+        {
+          "recipeId": 31003,
+          "itemId": 10627,
+          "rlvl": 150,
+          "icon": "/i/034000/034223.png",
+          "category": 87
+        },
+        {
+          "recipeId": 31000,
+          "itemId": 10597,
+          "rlvl": 150,
+          "icon": "/i/031000/031086.png",
+          "category": 1
+        },
+        {
+          "recipeId": 31002,
+          "itemId": 10621,
+          "rlvl": 150,
+          "icon": "/i/033000/033873.png",
+          "category": 84
+        },
+        {
+          "recipeId": 31004,
+          "itemId": 10633,
+          "rlvl": 150,
+          "icon": "/i/034000/034622.png",
+          "category": 88
+        },
+        {
+          "recipeId": 31005,
+          "itemId": 11874,
+          "rlvl": 150,
+          "icon": "/i/035000/035017.png",
+          "category": 12
+        },
+        {
+          "recipeId": 31006,
+          "itemId": 11878,
+          "rlvl": 150,
+          "icon": "/i/035000/035116.png",
+          "category": 14
+        },
+        {
+          "recipeId": 31007,
+          "itemId": 11882,
+          "rlvl": 150,
+          "icon": "/i/035000/035217.png",
+          "category": 16
+        },
+        {
+          "recipeId": 31008,
+          "itemId": 11886,
+          "rlvl": 150,
+          "icon": "/i/035000/035317.png",
+          "category": 18
         },
         {
           "recipeId": 31009,
@@ -8408,13 +8464,6 @@ export const craftingLogPages = [
           "category": 15
         },
         {
-          "recipeId": 31003,
-          "itemId": 10627,
-          "rlvl": 150,
-          "icon": "/i/034000/034223.png",
-          "category": 87
-        },
-        {
           "recipeId": 31014,
           "itemId": 11926,
           "rlvl": 180,
@@ -8485,60 +8534,11 @@ export const craftingLogPages = [
           "category": 18
         },
         {
-          "recipeId": 31000,
-          "itemId": 10597,
-          "rlvl": 150,
-          "icon": "/i/031000/031086.png",
-          "category": 1
-        },
-        {
           "recipeId": 31278,
           "itemId": 13009,
           "rlvl": 180,
           "icon": "/i/035000/035419.png",
           "category": 20
-        },
-        {
-          "recipeId": 31002,
-          "itemId": 10621,
-          "rlvl": 150,
-          "icon": "/i/033000/033873.png",
-          "category": 84
-        },
-        {
-          "recipeId": 31004,
-          "itemId": 10633,
-          "rlvl": 150,
-          "icon": "/i/034000/034622.png",
-          "category": 88
-        },
-        {
-          "recipeId": 31005,
-          "itemId": 11874,
-          "rlvl": 150,
-          "icon": "/i/035000/035017.png",
-          "category": 12
-        },
-        {
-          "recipeId": 31006,
-          "itemId": 11878,
-          "rlvl": 150,
-          "icon": "/i/035000/035116.png",
-          "category": 14
-        },
-        {
-          "recipeId": 31007,
-          "itemId": 11882,
-          "rlvl": 150,
-          "icon": "/i/035000/035217.png",
-          "category": 16
-        },
-        {
-          "recipeId": 31008,
-          "itemId": 11886,
-          "rlvl": 150,
-          "icon": "/i/035000/035317.png",
-          "category": 18
         }
       ]
     },
@@ -8568,6 +8568,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/020000/020967.png",
           "category": 49
+        },
+        {
+          "recipeId": 31930,
+          "itemId": 15570,
+          "rlvl": 180,
+          "icon": "/i/030000/030525.png",
+          "category": 2
+        },
+        {
+          "recipeId": 32085,
+          "itemId": 15584,
+          "rlvl": 180,
+          "icon": "/i/030000/030529.png",
+          "category": 2
+        },
+        {
+          "recipeId": 31932,
+          "itemId": 15572,
+          "rlvl": 180,
+          "icon": "/i/031000/031494.png",
+          "category": 3
+        },
+        {
+          "recipeId": 32087,
+          "itemId": 15586,
+          "rlvl": 180,
+          "icon": "/i/031000/031499.png",
+          "category": 3
+        },
+        {
+          "recipeId": 31936,
+          "itemId": 15576,
+          "rlvl": 180,
+          "icon": "/i/034000/034238.png",
+          "category": 87
+        },
+        {
+          "recipeId": 32091,
+          "itemId": 15590,
+          "rlvl": 180,
+          "icon": "/i/034000/034243.png",
+          "category": 87
+        },
+        {
+          "recipeId": 31931,
+          "itemId": 15571,
+          "rlvl": 180,
+          "icon": "/i/031000/031096.png",
+          "category": 1
+        },
+        {
+          "recipeId": 32086,
+          "itemId": 15585,
+          "rlvl": 180,
+          "icon": "/i/031000/031100.png",
+          "category": 1
         },
         {
           "recipeId": 32320,
@@ -8640,13 +8696,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 31930,
-          "itemId": 15570,
-          "rlvl": 180,
-          "icon": "/i/030000/030525.png",
-          "category": 2
-        },
-        {
           "recipeId": 32099,
           "itemId": 15598,
           "rlvl": 210,
@@ -8715,13 +8764,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/034000/034270.png",
           "category": 87
-        },
-        {
-          "recipeId": 32085,
-          "itemId": 15584,
-          "rlvl": 180,
-          "icon": "/i/030000/030529.png",
-          "category": 2
         },
         {
           "recipeId": 33184,
@@ -8794,13 +8836,6 @@ export const craftingLogPages = [
           "category": 96
         },
         {
-          "recipeId": 31932,
-          "itemId": 15572,
-          "rlvl": 180,
-          "icon": "/i/031000/031494.png",
-          "category": 3
-        },
-        {
           "recipeId": 32104,
           "itemId": 15603,
           "rlvl": 210,
@@ -8869,13 +8904,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/030000/030483.png",
           "category": 2
-        },
-        {
-          "recipeId": 32087,
-          "itemId": 15586,
-          "rlvl": 180,
-          "icon": "/i/031000/031499.png",
-          "category": 3
         },
         {
           "recipeId": 33215,
@@ -8948,13 +8976,6 @@ export const craftingLogPages = [
           "category": 84
         },
         {
-          "recipeId": 31936,
-          "itemId": 15576,
-          "rlvl": 180,
-          "icon": "/i/034000/034238.png",
-          "category": 87
-        },
-        {
           "recipeId": 31415,
           "itemId": 13839,
           "rlvl": 210,
@@ -9023,13 +9044,6 @@ export const craftingLogPages = [
           "rlvl": 220,
           "icon": "/i/035000/035259.png",
           "category": 17
-        },
-        {
-          "recipeId": 32091,
-          "itemId": 15590,
-          "rlvl": 180,
-          "icon": "/i/034000/034243.png",
-          "category": 87
         },
         {
           "recipeId": 31898,
@@ -9102,13 +9116,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 31931,
-          "itemId": 15571,
-          "rlvl": 180,
-          "icon": "/i/031000/031096.png",
-          "category": 1
-        },
-        {
           "recipeId": 31960,
           "itemId": 16627,
           "rlvl": 250,
@@ -9149,13 +9156,6 @@ export const craftingLogPages = [
           "rlvl": 250,
           "icon": "/i/034000/034666.png",
           "category": 88
-        },
-        {
-          "recipeId": 32086,
-          "itemId": 15585,
-          "rlvl": 180,
-          "icon": "/i/031000/031100.png",
-          "category": 1
         }
       ]
     },
@@ -9185,41 +9185,6 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/030000/030568.png",
           "category": 2
-        },
-        {
-          "recipeId": 32438,
-          "itemId": 19603,
-          "rlvl": 320,
-          "icon": "/i/035000/035225.png",
-          "category": 16
-        },
-        {
-          "recipeId": 32439,
-          "itemId": 19604,
-          "rlvl": 320,
-          "icon": "/i/035000/035324.png",
-          "category": 18
-        },
-        {
-          "recipeId": 32440,
-          "itemId": 19605,
-          "rlvl": 320,
-          "icon": "/i/035000/035426.png",
-          "category": 20
-        },
-        {
-          "recipeId": 32444,
-          "itemId": 19609,
-          "rlvl": 320,
-          "icon": "/i/038000/038028.png",
-          "category": 28
-        },
-        {
-          "recipeId": 32445,
-          "itemId": 19610,
-          "rlvl": 320,
-          "icon": "/i/038000/038125.png",
-          "category": 30
         },
         {
           "recipeId": 32341,
@@ -9276,6 +9241,41 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/035000/035125.png",
           "category": 14
+        },
+        {
+          "recipeId": 32438,
+          "itemId": 19603,
+          "rlvl": 320,
+          "icon": "/i/035000/035225.png",
+          "category": 16
+        },
+        {
+          "recipeId": 32439,
+          "itemId": 19604,
+          "rlvl": 320,
+          "icon": "/i/035000/035324.png",
+          "category": 18
+        },
+        {
+          "recipeId": 32440,
+          "itemId": 19605,
+          "rlvl": 320,
+          "icon": "/i/035000/035426.png",
+          "category": 20
+        },
+        {
+          "recipeId": 32444,
+          "itemId": 19609,
+          "rlvl": 320,
+          "icon": "/i/038000/038028.png",
+          "category": 28
+        },
+        {
+          "recipeId": 32445,
+          "itemId": 19610,
+          "rlvl": 320,
+          "icon": "/i/038000/038125.png",
+          "category": 30
         }
       ]
     },
@@ -9305,6 +9305,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/052000/052267.png",
           "category": 77
+        },
+        {
+          "recipeId": 32633,
+          "itemId": 22427,
+          "rlvl": 350,
+          "icon": "/i/020000/020804.png",
+          "category": 49
+        },
+        {
+          "recipeId": 32555,
+          "itemId": 21695,
+          "rlvl": 350,
+          "icon": "/i/030000/030581.png",
+          "category": 2
+        },
+        {
+          "recipeId": 32557,
+          "itemId": 21697,
+          "rlvl": 350,
+          "icon": "/i/031000/031555.png",
+          "category": 3
+        },
+        {
+          "recipeId": 32561,
+          "itemId": 21701,
+          "rlvl": 350,
+          "icon": "/i/034000/034309.png",
+          "category": 87
+        },
+        {
+          "recipeId": 32556,
+          "itemId": 21696,
+          "rlvl": 350,
+          "icon": "/i/031000/031147.png",
+          "category": 1
+        },
+        {
+          "recipeId": 32568,
+          "itemId": 21708,
+          "rlvl": 350,
+          "icon": "/i/038000/038563.png",
+          "category": 96
+        },
+        {
+          "recipeId": 32560,
+          "itemId": 21700,
+          "rlvl": 350,
+          "icon": "/i/033000/033933.png",
+          "category": 84
+        },
+        {
+          "recipeId": 32562,
+          "itemId": 21702,
+          "rlvl": 350,
+          "icon": "/i/039000/039707.png",
+          "category": 88
         },
         {
           "recipeId": 33020,
@@ -9377,13 +9433,6 @@ export const craftingLogPages = [
           "category": 25
         },
         {
-          "recipeId": 32633,
-          "itemId": 22427,
-          "rlvl": 350,
-          "icon": "/i/020000/020804.png",
-          "category": 49
-        },
-        {
           "recipeId": 33038,
           "itemId": 22902,
           "rlvl": 350,
@@ -9454,13 +9503,6 @@ export const craftingLogPages = [
           "category": 5
         },
         {
-          "recipeId": 32555,
-          "itemId": 21695,
-          "rlvl": 350,
-          "icon": "/i/030000/030581.png",
-          "category": 2
-        },
-        {
           "recipeId": 33074,
           "itemId": 23769,
           "rlvl": 380,
@@ -9486,48 +9528,6 @@ export const craftingLogPages = [
           "itemId": 23775,
           "rlvl": 380,
           "icon": "/i/039000/039718.png",
-          "category": 88
-        },
-        {
-          "recipeId": 32557,
-          "itemId": 21697,
-          "rlvl": 350,
-          "icon": "/i/031000/031555.png",
-          "category": 3
-        },
-        {
-          "recipeId": 32561,
-          "itemId": 21701,
-          "rlvl": 350,
-          "icon": "/i/034000/034309.png",
-          "category": 87
-        },
-        {
-          "recipeId": 32556,
-          "itemId": 21696,
-          "rlvl": 350,
-          "icon": "/i/031000/031147.png",
-          "category": 1
-        },
-        {
-          "recipeId": 32568,
-          "itemId": 21708,
-          "rlvl": 350,
-          "icon": "/i/038000/038563.png",
-          "category": 96
-        },
-        {
-          "recipeId": 32560,
-          "itemId": 21700,
-          "rlvl": 350,
-          "icon": "/i/033000/033933.png",
-          "category": 84
-        },
-        {
-          "recipeId": 32562,
-          "itemId": 21702,
-          "rlvl": 350,
-          "icon": "/i/039000/039707.png",
           "category": 88
         }
       ]
@@ -9558,6 +9558,62 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/038000/038502.png",
           "category": 96
+        },
+        {
+          "recipeId": 32312,
+          "itemId": 20362,
+          "rlvl": 90,
+          "icon": "/i/038000/038544.png",
+          "category": 96
+        },
+        {
+          "recipeId": 32316,
+          "itemId": 20370,
+          "rlvl": 90,
+          "icon": "/i/038000/038513.png",
+          "category": 96
+        },
+        {
+          "recipeId": 30449,
+          "itemId": 8355,
+          "rlvl": 90,
+          "icon": "/i/030000/030437.png",
+          "category": 2
+        },
+        {
+          "recipeId": 30458,
+          "itemId": 8364,
+          "rlvl": 90,
+          "icon": "/i/030000/030441.png",
+          "category": 2
+        },
+        {
+          "recipeId": 30476,
+          "itemId": 8382,
+          "rlvl": 90,
+          "icon": "/i/030000/030438.png",
+          "category": 2
+        },
+        {
+          "recipeId": 30451,
+          "itemId": 8357,
+          "rlvl": 90,
+          "icon": "/i/031000/031427.png",
+          "category": 3
+        },
+        {
+          "recipeId": 30460,
+          "itemId": 8366,
+          "rlvl": 90,
+          "icon": "/i/031000/031432.png",
+          "category": 3
+        },
+        {
+          "recipeId": 30478,
+          "itemId": 8384,
+          "rlvl": 90,
+          "icon": "/i/031000/031428.png",
+          "category": 3
         },
         {
           "recipeId": 30988,
@@ -9630,13 +9686,6 @@ export const craftingLogPages = [
           "category": 88
         },
         {
-          "recipeId": 32312,
-          "itemId": 20362,
-          "rlvl": 90,
-          "icon": "/i/038000/038544.png",
-          "category": 96
-        },
-        {
           "recipeId": 30994,
           "itemId": 10471,
           "rlvl": 90,
@@ -9649,55 +9698,6 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/034000/034657.png",
           "category": 88
-        },
-        {
-          "recipeId": 32316,
-          "itemId": 20370,
-          "rlvl": 90,
-          "icon": "/i/038000/038513.png",
-          "category": 96
-        },
-        {
-          "recipeId": 30449,
-          "itemId": 8355,
-          "rlvl": 90,
-          "icon": "/i/030000/030437.png",
-          "category": 2
-        },
-        {
-          "recipeId": 30458,
-          "itemId": 8364,
-          "rlvl": 90,
-          "icon": "/i/030000/030441.png",
-          "category": 2
-        },
-        {
-          "recipeId": 30476,
-          "itemId": 8382,
-          "rlvl": 90,
-          "icon": "/i/030000/030438.png",
-          "category": 2
-        },
-        {
-          "recipeId": 30451,
-          "itemId": 8357,
-          "rlvl": 90,
-          "icon": "/i/031000/031427.png",
-          "category": 3
-        },
-        {
-          "recipeId": 30460,
-          "itemId": 8366,
-          "rlvl": 90,
-          "icon": "/i/031000/031432.png",
-          "category": 3
-        },
-        {
-          "recipeId": 30478,
-          "itemId": 8384,
-          "rlvl": 90,
-          "icon": "/i/031000/031428.png",
-          "category": 3
         }
       ]
     },
@@ -9727,6 +9727,62 @@ export const craftingLogPages = [
           "rlvl": 18,
           "icon": "/i/050000/050703.png",
           "category": 67
+        },
+        {
+          "recipeId": 1658,
+          "itemId": 6408,
+          "rlvl": 20,
+          "icon": "/i/050000/050708.png",
+          "category": 67
+        },
+        {
+          "recipeId": 1711,
+          "itemId": 6461,
+          "rlvl": 21,
+          "icon": "/i/051000/051112.png",
+          "category": 75
+        },
+        {
+          "recipeId": 1662,
+          "itemId": 6412,
+          "rlvl": 27,
+          "icon": "/i/050000/050103.png",
+          "category": 68
+        },
+        {
+          "recipeId": 1712,
+          "itemId": 6462,
+          "rlvl": 29,
+          "icon": "/i/051000/051109.png",
+          "category": 75
+        },
+        {
+          "recipeId": 1737,
+          "itemId": 6490,
+          "rlvl": 30,
+          "icon": "/i/053000/053031.png",
+          "category": 76
+        },
+        {
+          "recipeId": 2127,
+          "itemId": 8821,
+          "rlvl": 32,
+          "icon": "/i/053000/053080.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1734,
+          "itemId": 6487,
+          "rlvl": 33,
+          "icon": "/i/053000/053030.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1676,
+          "itemId": 6426,
+          "rlvl": 42,
+          "icon": "/i/050000/050502.png",
+          "category": 69
         },
         {
           "recipeId": 1747,
@@ -9799,13 +9855,6 @@ export const craftingLogPages = [
           "category": 76
         },
         {
-          "recipeId": 1658,
-          "itemId": 6408,
-          "rlvl": 20,
-          "icon": "/i/050000/050708.png",
-          "category": 67
-        },
-        {
           "recipeId": 2125,
           "itemId": 8819,
           "rlvl": 90,
@@ -9860,55 +9909,6 @@ export const craftingLogPages = [
           "rlvl": 285,
           "icon": "/i/050000/050431.png",
           "category": 65
-        },
-        {
-          "recipeId": 1711,
-          "itemId": 6461,
-          "rlvl": 21,
-          "icon": "/i/051000/051112.png",
-          "category": 75
-        },
-        {
-          "recipeId": 1662,
-          "itemId": 6412,
-          "rlvl": 27,
-          "icon": "/i/050000/050103.png",
-          "category": 68
-        },
-        {
-          "recipeId": 1712,
-          "itemId": 6462,
-          "rlvl": 29,
-          "icon": "/i/051000/051109.png",
-          "category": 75
-        },
-        {
-          "recipeId": 1737,
-          "itemId": 6490,
-          "rlvl": 30,
-          "icon": "/i/053000/053031.png",
-          "category": 76
-        },
-        {
-          "recipeId": 2127,
-          "itemId": 8821,
-          "rlvl": 32,
-          "icon": "/i/053000/053080.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1734,
-          "itemId": 6487,
-          "rlvl": 33,
-          "icon": "/i/053000/053030.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1676,
-          "itemId": 6426,
-          "rlvl": 42,
-          "icon": "/i/050000/050502.png",
-          "category": 69
         }
       ]
     },
@@ -9938,6 +9938,62 @@ export const craftingLogPages = [
           "rlvl": 18,
           "icon": "/i/052000/052329.png",
           "category": 79
+        },
+        {
+          "recipeId": 1755,
+          "itemId": 6513,
+          "rlvl": 21,
+          "icon": "/i/052000/052452.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1831,
+          "itemId": 6606,
+          "rlvl": 24,
+          "icon": "/i/052000/052220.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1881,
+          "itemId": 6663,
+          "rlvl": 27,
+          "icon": "/i/052000/052314.png",
+          "category": 79
+        },
+        {
+          "recipeId": 1850,
+          "itemId": 6625,
+          "rlvl": 30,
+          "icon": "/i/052000/052477.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1796,
+          "itemId": 6570,
+          "rlvl": 35,
+          "icon": "/i/052000/052415.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1806,
+          "itemId": 6580,
+          "rlvl": 35,
+          "icon": "/i/052000/052422.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1790,
+          "itemId": 6564,
+          "rlvl": 35,
+          "icon": "/i/052000/052409.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1851,
+          "itemId": 6626,
+          "rlvl": 35,
+          "icon": "/i/052000/052483.png",
+          "category": 77
         },
         {
           "recipeId": 1855,
@@ -10010,13 +10066,6 @@ export const craftingLogPages = [
           "category": 79
         },
         {
-          "recipeId": 1755,
-          "itemId": 6513,
-          "rlvl": 21,
-          "icon": "/i/052000/052452.png",
-          "category": 57
-        },
-        {
           "recipeId": 1764,
           "itemId": 6522,
           "rlvl": 70,
@@ -10085,55 +10134,6 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/052000/052879.png",
           "category": 78
-        },
-        {
-          "recipeId": 1831,
-          "itemId": 6606,
-          "rlvl": 24,
-          "icon": "/i/052000/052220.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1881,
-          "itemId": 6663,
-          "rlvl": 27,
-          "icon": "/i/052000/052314.png",
-          "category": 79
-        },
-        {
-          "recipeId": 1850,
-          "itemId": 6625,
-          "rlvl": 30,
-          "icon": "/i/052000/052477.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1796,
-          "itemId": 6570,
-          "rlvl": 35,
-          "icon": "/i/052000/052415.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1806,
-          "itemId": 6580,
-          "rlvl": 35,
-          "icon": "/i/052000/052422.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1790,
-          "itemId": 6564,
-          "rlvl": 35,
-          "icon": "/i/052000/052409.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1851,
-          "itemId": 6626,
-          "rlvl": 35,
-          "icon": "/i/052000/052483.png",
-          "category": 77
         }
       ]
     },
@@ -10162,6 +10162,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30014,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30015,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30021,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30022,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30114,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30115,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30018,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30360,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -10235,13 +10291,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30014,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30364,
           "itemId": 5800,
           "rlvl": 30,
@@ -10274,55 +10323,6 @@ export const craftingLogPages = [
           "itemId": 5811,
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30015,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30021,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30022,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30114,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30115,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30018,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30360,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
           "category": 55
         }
       ]
@@ -10549,34 +10549,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 1590,
-          "itemId": 7021,
-          "rlvl": 15,
-          "icon": "/i/021000/021003.png",
-          "category": 49
-        },
-        {
-          "recipeId": 197,
-          "itemId": 2470,
-          "rlvl": 15,
-          "icon": "/i/035000/035602.png",
-          "category": 24
-        },
-        {
-          "recipeId": 196,
-          "itemId": 2496,
-          "rlvl": 15,
-          "icon": "/i/035000/035702.png",
-          "category": 26
-        },
-        {
-          "recipeId": 195,
-          "itemId": 2231,
-          "rlvl": 15,
-          "icon": "/i/030000/030004.png",
-          "category": 11
-        },
-        {
           "recipeId": 188,
           "itemId": 2673,
           "rlvl": 12,
@@ -10631,6 +10603,34 @@ export const craftingLogPages = [
           "rlvl": 15,
           "icon": "/i/020000/020910.png",
           "category": 49
+        },
+        {
+          "recipeId": 1590,
+          "itemId": 7021,
+          "rlvl": 15,
+          "icon": "/i/021000/021003.png",
+          "category": 49
+        },
+        {
+          "recipeId": 197,
+          "itemId": 2470,
+          "rlvl": 15,
+          "icon": "/i/035000/035602.png",
+          "category": 24
+        },
+        {
+          "recipeId": 196,
+          "itemId": 2496,
+          "rlvl": 15,
+          "icon": "/i/035000/035702.png",
+          "category": 26
+        },
+        {
+          "recipeId": 195,
+          "itemId": 2231,
+          "rlvl": 15,
+          "icon": "/i/030000/030004.png",
+          "category": 11
         }
       ]
     },
@@ -10659,20 +10659,6 @@ export const craftingLogPages = [
           "itemId": 3550,
           "rlvl": 16,
           "icon": "/i/044000/044518.png",
-          "category": 37
-        },
-        {
-          "recipeId": 207,
-          "itemId": 3045,
-          "rlvl": 20,
-          "icon": "/i/042000/042802.png",
-          "category": 35
-        },
-        {
-          "recipeId": 206,
-          "itemId": 3563,
-          "rlvl": 20,
-          "icon": "/i/044000/044502.png",
           "category": 37
         },
         {
@@ -10730,6 +10716,20 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/040000/040002.png",
           "category": 34
+        },
+        {
+          "recipeId": 207,
+          "itemId": 3045,
+          "rlvl": 20,
+          "icon": "/i/042000/042802.png",
+          "category": 35
+        },
+        {
+          "recipeId": 206,
+          "itemId": 3563,
+          "rlvl": 20,
+          "icon": "/i/044000/044502.png",
+          "category": 37
         }
       ]
     },
@@ -10759,41 +10759,6 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/044000/044516.png",
           "category": 37
-        },
-        {
-          "recipeId": 219,
-          "itemId": 2725,
-          "rlvl": 24,
-          "icon": "/i/040000/040022.png",
-          "category": 34
-        },
-        {
-          "recipeId": 221,
-          "itemId": 3998,
-          "rlvl": 24,
-          "icon": "/i/047000/047206.png",
-          "category": 39
-        },
-        {
-          "recipeId": 222,
-          "itemId": 3068,
-          "rlvl": 25,
-          "icon": "/i/042000/042820.png",
-          "category": 35
-        },
-        {
-          "recipeId": 223,
-          "itemId": 3579,
-          "rlvl": 25,
-          "icon": "/i/044000/044568.png",
-          "category": 37
-        },
-        {
-          "recipeId": 224,
-          "itemId": 3352,
-          "rlvl": 25,
-          "icon": "/i/045000/045291.png",
-          "category": 36
         },
         {
           "recipeId": 212,
@@ -10850,6 +10815,41 @@ export const craftingLogPages = [
           "rlvl": 24,
           "icon": "/i/030000/030013.png",
           "category": 11
+        },
+        {
+          "recipeId": 219,
+          "itemId": 2725,
+          "rlvl": 24,
+          "icon": "/i/040000/040022.png",
+          "category": 34
+        },
+        {
+          "recipeId": 221,
+          "itemId": 3998,
+          "rlvl": 24,
+          "icon": "/i/047000/047206.png",
+          "category": 39
+        },
+        {
+          "recipeId": 222,
+          "itemId": 3068,
+          "rlvl": 25,
+          "icon": "/i/042000/042820.png",
+          "category": 35
+        },
+        {
+          "recipeId": 223,
+          "itemId": 3579,
+          "rlvl": 25,
+          "icon": "/i/044000/044568.png",
+          "category": 37
+        },
+        {
+          "recipeId": 224,
+          "itemId": 3352,
+          "rlvl": 25,
+          "icon": "/i/045000/045291.png",
+          "category": 36
         }
       ]
     },
@@ -10879,6 +10879,62 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/021000/021003.png",
           "category": 49
+        },
+        {
+          "recipeId": 226,
+          "itemId": 2473,
+          "rlvl": 26,
+          "icon": "/i/035000/035605.png",
+          "category": 24
+        },
+        {
+          "recipeId": 227,
+          "itemId": 5073,
+          "rlvl": 27,
+          "icon": "/i/020000/020952.png",
+          "category": 49
+        },
+        {
+          "recipeId": 228,
+          "itemId": 5093,
+          "rlvl": 27,
+          "icon": "/i/021000/021003.png",
+          "category": 49
+        },
+        {
+          "recipeId": 1591,
+          "itemId": 7022,
+          "rlvl": 27,
+          "icon": "/i/021000/021003.png",
+          "category": 49
+        },
+        {
+          "recipeId": 230,
+          "itemId": 2499,
+          "rlvl": 27,
+          "icon": "/i/035000/035706.png",
+          "category": 26
+        },
+        {
+          "recipeId": 229,
+          "itemId": 2248,
+          "rlvl": 27,
+          "icon": "/i/030000/030069.png",
+          "category": 11
+        },
+        {
+          "recipeId": 231,
+          "itemId": 5083,
+          "rlvl": 28,
+          "icon": "/i/020000/020911.png",
+          "category": 49
+        },
+        {
+          "recipeId": 233,
+          "itemId": 3096,
+          "rlvl": 28,
+          "icon": "/i/043000/043082.png",
+          "category": 35
         },
         {
           "recipeId": 232,
@@ -10942,62 +10998,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/046000/046836.png",
           "category": 38
-        },
-        {
-          "recipeId": 226,
-          "itemId": 2473,
-          "rlvl": 26,
-          "icon": "/i/035000/035605.png",
-          "category": 24
-        },
-        {
-          "recipeId": 227,
-          "itemId": 5073,
-          "rlvl": 27,
-          "icon": "/i/020000/020952.png",
-          "category": 49
-        },
-        {
-          "recipeId": 228,
-          "itemId": 5093,
-          "rlvl": 27,
-          "icon": "/i/021000/021003.png",
-          "category": 49
-        },
-        {
-          "recipeId": 1591,
-          "itemId": 7022,
-          "rlvl": 27,
-          "icon": "/i/021000/021003.png",
-          "category": 49
-        },
-        {
-          "recipeId": 230,
-          "itemId": 2499,
-          "rlvl": 27,
-          "icon": "/i/035000/035706.png",
-          "category": 26
-        },
-        {
-          "recipeId": 229,
-          "itemId": 2248,
-          "rlvl": 27,
-          "icon": "/i/030000/030069.png",
-          "category": 11
-        },
-        {
-          "recipeId": 231,
-          "itemId": 5083,
-          "rlvl": 28,
-          "icon": "/i/020000/020911.png",
-          "category": 49
-        },
-        {
-          "recipeId": 233,
-          "itemId": 3096,
-          "rlvl": 28,
-          "icon": "/i/043000/043082.png",
-          "category": 35
         }
       ]
     },
@@ -11027,6 +11027,62 @@ export const craftingLogPages = [
           "rlvl": 31,
           "icon": "/i/040000/040097.png",
           "category": 34
+        },
+        {
+          "recipeId": 242,
+          "itemId": 3586,
+          "rlvl": 31,
+          "icon": "/i/044000/044532.png",
+          "category": 37
+        },
+        {
+          "recipeId": 243,
+          "itemId": 4009,
+          "rlvl": 31,
+          "icon": "/i/047000/047202.png",
+          "category": 39
+        },
+        {
+          "recipeId": 248,
+          "itemId": 3118,
+          "rlvl": 32,
+          "icon": "/i/043000/043175.png",
+          "category": 35
+        },
+        {
+          "recipeId": 247,
+          "itemId": 3605,
+          "rlvl": 32,
+          "icon": "/i/044000/044578.png",
+          "category": 37
+        },
+        {
+          "recipeId": 246,
+          "itemId": 3835,
+          "rlvl": 32,
+          "icon": "/i/046000/046870.png",
+          "category": 38
+        },
+        {
+          "recipeId": 250,
+          "itemId": 2501,
+          "rlvl": 33,
+          "icon": "/i/035000/035708.png",
+          "category": 26
+        },
+        {
+          "recipeId": 249,
+          "itemId": 2260,
+          "rlvl": 33,
+          "icon": "/i/030000/030006.png",
+          "category": 11
+        },
+        {
+          "recipeId": 251,
+          "itemId": 2475,
+          "rlvl": 34,
+          "icon": "/i/035000/035607.png",
+          "category": 24
         },
         {
           "recipeId": 255,
@@ -11090,62 +11146,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/030000/030021.png",
           "category": 11
-        },
-        {
-          "recipeId": 242,
-          "itemId": 3586,
-          "rlvl": 31,
-          "icon": "/i/044000/044532.png",
-          "category": 37
-        },
-        {
-          "recipeId": 243,
-          "itemId": 4009,
-          "rlvl": 31,
-          "icon": "/i/047000/047202.png",
-          "category": 39
-        },
-        {
-          "recipeId": 248,
-          "itemId": 3118,
-          "rlvl": 32,
-          "icon": "/i/043000/043175.png",
-          "category": 35
-        },
-        {
-          "recipeId": 247,
-          "itemId": 3605,
-          "rlvl": 32,
-          "icon": "/i/044000/044578.png",
-          "category": 37
-        },
-        {
-          "recipeId": 246,
-          "itemId": 3835,
-          "rlvl": 32,
-          "icon": "/i/046000/046870.png",
-          "category": 38
-        },
-        {
-          "recipeId": 250,
-          "itemId": 2501,
-          "rlvl": 33,
-          "icon": "/i/035000/035708.png",
-          "category": 26
-        },
-        {
-          "recipeId": 249,
-          "itemId": 2260,
-          "rlvl": 33,
-          "icon": "/i/030000/030006.png",
-          "category": 11
-        },
-        {
-          "recipeId": 251,
-          "itemId": 2475,
-          "rlvl": 34,
-          "icon": "/i/035000/035607.png",
-          "category": 24
         }
       ]
     },
@@ -11175,62 +11175,6 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/035000/035709.png",
           "category": 26
-        },
-        {
-          "recipeId": 1233,
-          "itemId": 2757,
-          "rlvl": 38,
-          "icon": "/i/040000/040001.png",
-          "category": 34
-        },
-        {
-          "recipeId": 1235,
-          "itemId": 3149,
-          "rlvl": 39,
-          "icon": "/i/042000/042833.png",
-          "category": 35
-        },
-        {
-          "recipeId": 1234,
-          "itemId": 3628,
-          "rlvl": 39,
-          "icon": "/i/044000/044592.png",
-          "category": 37
-        },
-        {
-          "recipeId": 1236,
-          "itemId": 3854,
-          "rlvl": 39,
-          "icon": "/i/046000/046885.png",
-          "category": 38
-        },
-        {
-          "recipeId": 268,
-          "itemId": 2476,
-          "rlvl": 40,
-          "icon": "/i/035000/035608.png",
-          "category": 24
-        },
-        {
-          "recipeId": 267,
-          "itemId": 2802,
-          "rlvl": 40,
-          "icon": "/i/040000/040045.png",
-          "category": 34
-        },
-        {
-          "recipeId": 266,
-          "itemId": 3142,
-          "rlvl": 40,
-          "icon": "/i/043000/043083.png",
-          "category": 35
-        },
-        {
-          "recipeId": 1237,
-          "itemId": 2278,
-          "rlvl": 40,
-          "icon": "/i/030000/030028.png",
-          "category": 11
         },
         {
           "recipeId": 262,
@@ -11287,6 +11231,62 @@ export const craftingLogPages = [
           "rlvl": 38,
           "icon": "/i/047000/047278.png",
           "category": 39
+        },
+        {
+          "recipeId": 1233,
+          "itemId": 2757,
+          "rlvl": 38,
+          "icon": "/i/040000/040001.png",
+          "category": 34
+        },
+        {
+          "recipeId": 1235,
+          "itemId": 3149,
+          "rlvl": 39,
+          "icon": "/i/042000/042833.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1234,
+          "itemId": 3628,
+          "rlvl": 39,
+          "icon": "/i/044000/044592.png",
+          "category": 37
+        },
+        {
+          "recipeId": 1236,
+          "itemId": 3854,
+          "rlvl": 39,
+          "icon": "/i/046000/046885.png",
+          "category": 38
+        },
+        {
+          "recipeId": 268,
+          "itemId": 2476,
+          "rlvl": 40,
+          "icon": "/i/035000/035608.png",
+          "category": 24
+        },
+        {
+          "recipeId": 267,
+          "itemId": 2802,
+          "rlvl": 40,
+          "icon": "/i/040000/040045.png",
+          "category": 34
+        },
+        {
+          "recipeId": 266,
+          "itemId": 3142,
+          "rlvl": 40,
+          "icon": "/i/043000/043083.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1237,
+          "itemId": 2278,
+          "rlvl": 40,
+          "icon": "/i/030000/030028.png",
+          "category": 11
         }
       ]
     },
@@ -11316,6 +11316,62 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/044000/044536.png",
           "category": 37
+        },
+        {
+          "recipeId": 269,
+          "itemId": 3858,
+          "rlvl": 41,
+          "icon": "/i/046000/046841.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1238,
+          "itemId": 3164,
+          "rlvl": 41,
+          "icon": "/i/043000/043067.png",
+          "category": 35
+        },
+        {
+          "recipeId": 273,
+          "itemId": 5059,
+          "rlvl": 42,
+          "icon": "/i/020000/020802.png",
+          "category": 49
+        },
+        {
+          "recipeId": 1239,
+          "itemId": 2477,
+          "rlvl": 42,
+          "icon": "/i/035000/035602.png",
+          "category": 24
+        },
+        {
+          "recipeId": 272,
+          "itemId": 2819,
+          "rlvl": 42,
+          "icon": "/i/041000/041211.png",
+          "category": 34
+        },
+        {
+          "recipeId": 276,
+          "itemId": 2827,
+          "rlvl": 42,
+          "icon": "/i/040000/040050.png",
+          "category": 34
+        },
+        {
+          "recipeId": 277,
+          "itemId": 3174,
+          "rlvl": 42,
+          "icon": "/i/043000/043086.png",
+          "category": 35
+        },
+        {
+          "recipeId": 271,
+          "itemId": 3861,
+          "rlvl": 42,
+          "icon": "/i/046000/046024.png",
+          "category": 38
         },
         {
           "recipeId": 275,
@@ -11388,13 +11444,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 269,
-          "itemId": 3858,
-          "rlvl": 41,
-          "icon": "/i/046000/046841.png",
-          "category": 38
-        },
-        {
           "recipeId": 1592,
           "itemId": 7023,
           "rlvl": 44,
@@ -11465,60 +11514,11 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 1238,
-          "itemId": 3164,
-          "rlvl": 41,
-          "icon": "/i/043000/043067.png",
-          "category": 35
-        },
-        {
           "recipeId": 1246,
           "itemId": 2300,
           "rlvl": 45,
           "icon": "/i/030000/030034.png",
           "category": 11
-        },
-        {
-          "recipeId": 273,
-          "itemId": 5059,
-          "rlvl": 42,
-          "icon": "/i/020000/020802.png",
-          "category": 49
-        },
-        {
-          "recipeId": 1239,
-          "itemId": 2477,
-          "rlvl": 42,
-          "icon": "/i/035000/035602.png",
-          "category": 24
-        },
-        {
-          "recipeId": 272,
-          "itemId": 2819,
-          "rlvl": 42,
-          "icon": "/i/041000/041211.png",
-          "category": 34
-        },
-        {
-          "recipeId": 276,
-          "itemId": 2827,
-          "rlvl": 42,
-          "icon": "/i/040000/040050.png",
-          "category": 34
-        },
-        {
-          "recipeId": 277,
-          "itemId": 3174,
-          "rlvl": 42,
-          "icon": "/i/043000/043086.png",
-          "category": 35
-        },
-        {
-          "recipeId": 271,
-          "itemId": 3861,
-          "rlvl": 42,
-          "icon": "/i/046000/046024.png",
-          "category": 38
         }
       ]
     },
@@ -11548,6 +11548,62 @@ export const craftingLogPages = [
           "rlvl": 46,
           "icon": "/i/046000/046025.png",
           "category": 38
+        },
+        {
+          "recipeId": 1248,
+          "itemId": 3218,
+          "rlvl": 46,
+          "icon": "/i/043000/043040.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1251,
+          "itemId": 2504,
+          "rlvl": 47,
+          "icon": "/i/035000/035712.png",
+          "category": 26
+        },
+        {
+          "recipeId": 1250,
+          "itemId": 3243,
+          "rlvl": 47,
+          "icon": "/i/043000/043066.png",
+          "category": 35
+        },
+        {
+          "recipeId": 290,
+          "itemId": 3670,
+          "rlvl": 48,
+          "icon": "/i/044000/044535.png",
+          "category": 37
+        },
+        {
+          "recipeId": 1253,
+          "itemId": 2296,
+          "rlvl": 49,
+          "icon": "/i/030000/030075.png",
+          "category": 11
+        },
+        {
+          "recipeId": 291,
+          "itemId": 2861,
+          "rlvl": 49,
+          "icon": "/i/041000/041212.png",
+          "category": 34
+        },
+        {
+          "recipeId": 1252,
+          "itemId": 2893,
+          "rlvl": 49,
+          "icon": "/i/040000/040094.png",
+          "category": 34
+        },
+        {
+          "recipeId": 296,
+          "itemId": 2478,
+          "rlvl": 50,
+          "icon": "/i/035000/035606.png",
+          "category": 24
         },
         {
           "recipeId": 292,
@@ -11620,13 +11676,6 @@ export const craftingLogPages = [
           "category": 81
         },
         {
-          "recipeId": 1248,
-          "itemId": 3218,
-          "rlvl": 46,
-          "icon": "/i/043000/043040.png",
-          "category": 35
-        },
-        {
           "recipeId": 1254,
           "itemId": 5061,
           "rlvl": 55,
@@ -11695,13 +11744,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/046000/046810.png",
           "category": 38
-        },
-        {
-          "recipeId": 1251,
-          "itemId": 2504,
-          "rlvl": 47,
-          "icon": "/i/035000/035712.png",
-          "category": 26
         },
         {
           "recipeId": 1262,
@@ -11774,13 +11816,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 1250,
-          "itemId": 3243,
-          "rlvl": 47,
-          "icon": "/i/043000/043066.png",
-          "category": 35
-        },
-        {
           "recipeId": 1275,
           "itemId": 3257,
           "rlvl": 70,
@@ -11849,41 +11884,6 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/049000/049068.png",
           "category": 63
-        },
-        {
-          "recipeId": 290,
-          "itemId": 3670,
-          "rlvl": 48,
-          "icon": "/i/044000/044535.png",
-          "category": 37
-        },
-        {
-          "recipeId": 1253,
-          "itemId": 2296,
-          "rlvl": 49,
-          "icon": "/i/030000/030075.png",
-          "category": 11
-        },
-        {
-          "recipeId": 291,
-          "itemId": 2861,
-          "rlvl": 49,
-          "icon": "/i/041000/041212.png",
-          "category": 34
-        },
-        {
-          "recipeId": 1252,
-          "itemId": 2893,
-          "rlvl": 49,
-          "icon": "/i/040000/040094.png",
-          "category": 34
-        },
-        {
-          "recipeId": 296,
-          "itemId": 2478,
-          "rlvl": 50,
-          "icon": "/i/035000/035606.png",
-          "category": 24
         }
       ]
     },
@@ -11913,6 +11913,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/040000/040212.png",
           "category": 34
+        },
+        {
+          "recipeId": 2364,
+          "itemId": 10712,
+          "rlvl": 115,
+          "icon": "/i/040000/040213.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2355,
+          "itemId": 10691,
+          "rlvl": 115,
+          "icon": "/i/047000/047212.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2376,
+          "itemId": 10733,
+          "rlvl": 115,
+          "icon": "/i/047000/047212.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2824,
+          "itemId": 12528,
+          "rlvl": 120,
+          "icon": "/i/021000/021014.png",
+          "category": 49
+        },
+        {
+          "recipeId": 2338,
+          "itemId": 10664,
+          "rlvl": 120,
+          "icon": "/i/030000/030113.png",
+          "category": 11
+        },
+        {
+          "recipeId": 2347,
+          "itemId": 10677,
+          "rlvl": 120,
+          "icon": "/i/042000/042880.png",
+          "category": 35
+        },
+        {
+          "recipeId": 2368,
+          "itemId": 10719,
+          "rlvl": 120,
+          "icon": "/i/042000/042881.png",
+          "category": 35
+        },
+        {
+          "recipeId": 2351,
+          "itemId": 10684,
+          "rlvl": 120,
+          "icon": "/i/044000/044702.png",
+          "category": 37
         },
         {
           "recipeId": 2372,
@@ -11985,13 +12041,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 2364,
-          "itemId": 10712,
-          "rlvl": 115,
-          "icon": "/i/040000/040213.png",
-          "category": 34
-        },
-        {
           "recipeId": 2825,
           "itemId": 12529,
           "rlvl": 133,
@@ -12062,13 +12111,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 2355,
-          "itemId": 10691,
-          "rlvl": 115,
-          "icon": "/i/047000/047212.png",
-          "category": 39
-        },
-        {
           "recipeId": 2369,
           "itemId": 10721,
           "rlvl": 136,
@@ -12102,48 +12144,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/047000/047010.png",
           "category": 38
-        },
-        {
-          "recipeId": 2376,
-          "itemId": 10733,
-          "rlvl": 115,
-          "icon": "/i/047000/047212.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2824,
-          "itemId": 12528,
-          "rlvl": 120,
-          "icon": "/i/021000/021014.png",
-          "category": 49
-        },
-        {
-          "recipeId": 2338,
-          "itemId": 10664,
-          "rlvl": 120,
-          "icon": "/i/030000/030113.png",
-          "category": 11
-        },
-        {
-          "recipeId": 2347,
-          "itemId": 10677,
-          "rlvl": 120,
-          "icon": "/i/042000/042880.png",
-          "category": 35
-        },
-        {
-          "recipeId": 2368,
-          "itemId": 10719,
-          "rlvl": 120,
-          "icon": "/i/042000/042881.png",
-          "category": 35
-        },
-        {
-          "recipeId": 2351,
-          "itemId": 10684,
-          "rlvl": 120,
-          "icon": "/i/044000/044702.png",
-          "category": 37
         }
       ]
     },
@@ -12173,6 +12173,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/040000/040217.png",
           "category": 34
+        },
+        {
+          "recipeId": 2366,
+          "itemId": 10715,
+          "rlvl": 139,
+          "icon": "/i/041000/041256.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2385,
+          "itemId": 10757,
+          "rlvl": 139,
+          "icon": "/i/041000/041257.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2391,
+          "itemId": 10841,
+          "rlvl": 139,
+          "icon": "/i/041000/041258.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2353,
+          "itemId": 10687,
+          "rlvl": 139,
+          "icon": "/i/044000/044710.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2374,
+          "itemId": 10729,
+          "rlvl": 139,
+          "icon": "/i/044000/044711.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2387,
+          "itemId": 10771,
+          "rlvl": 139,
+          "icon": "/i/044000/044712.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2393,
+          "itemId": 10855,
+          "rlvl": 139,
+          "icon": "/i/044000/044713.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2357,
+          "itemId": 10694,
+          "rlvl": 139,
+          "icon": "/i/047000/047204.png",
+          "category": 39
         },
         {
           "recipeId": 2397,
@@ -12245,13 +12301,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 2366,
-          "itemId": 10715,
-          "rlvl": 139,
-          "icon": "/i/041000/041256.png",
-          "category": 34
-        },
-        {
           "recipeId": 2394,
           "itemId": 10876,
           "rlvl": 142,
@@ -12322,13 +12371,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 2385,
-          "itemId": 10757,
-          "rlvl": 139,
-          "icon": "/i/041000/041257.png",
-          "category": 34
-        },
-        {
           "recipeId": 2383,
           "itemId": 10751,
           "rlvl": 145,
@@ -12369,48 +12411,6 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/045000/045669.png",
           "category": 36
-        },
-        {
-          "recipeId": 2391,
-          "itemId": 10841,
-          "rlvl": 139,
-          "icon": "/i/041000/041258.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2353,
-          "itemId": 10687,
-          "rlvl": 139,
-          "icon": "/i/044000/044710.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2374,
-          "itemId": 10729,
-          "rlvl": 139,
-          "icon": "/i/044000/044711.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2387,
-          "itemId": 10771,
-          "rlvl": 139,
-          "icon": "/i/044000/044712.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2393,
-          "itemId": 10855,
-          "rlvl": 139,
-          "icon": "/i/044000/044713.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2357,
-          "itemId": 10694,
-          "rlvl": 139,
-          "icon": "/i/047000/047204.png",
-          "category": 39
         }
       ]
     },
@@ -12440,6 +12440,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/030000/030155.png",
           "category": 11
+        },
+        {
+          "recipeId": 2972,
+          "itemId": 18049,
+          "rlvl": 255,
+          "icon": "/i/040000/040280.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2978,
+          "itemId": 18055,
+          "rlvl": 255,
+          "icon": "/i/040000/040281.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3379,
+          "itemId": 19512,
+          "rlvl": 260,
+          "icon": "/i/035000/035620.png",
+          "category": 24
+        },
+        {
+          "recipeId": 3380,
+          "itemId": 19513,
+          "rlvl": 260,
+          "icon": "/i/035000/035723.png",
+          "category": 26
+        },
+        {
+          "recipeId": 2973,
+          "itemId": 18050,
+          "rlvl": 260,
+          "icon": "/i/042000/042956.png",
+          "category": 35
+        },
+        {
+          "recipeId": 2979,
+          "itemId": 18056,
+          "rlvl": 260,
+          "icon": "/i/042000/042957.png",
+          "category": 35
+        },
+        {
+          "recipeId": 2974,
+          "itemId": 18051,
+          "rlvl": 260,
+          "icon": "/i/049000/049549.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2980,
+          "itemId": 18057,
+          "rlvl": 260,
+          "icon": "/i/049000/049550.png",
+          "category": 37
         },
         {
           "recipeId": 3618,
@@ -12512,13 +12568,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 2972,
-          "itemId": 18049,
-          "rlvl": 255,
-          "icon": "/i/040000/040280.png",
-          "category": 34
-        },
-        {
           "recipeId": 3054,
           "itemId": 18209,
           "rlvl": 270,
@@ -12589,13 +12638,6 @@ export const craftingLogPages = [
           "category": 24
         },
         {
-          "recipeId": 2978,
-          "itemId": 18055,
-          "rlvl": 255,
-          "icon": "/i/040000/040281.png",
-          "category": 34
-        },
-        {
           "recipeId": 3401,
           "itemId": 19534,
           "rlvl": 276,
@@ -12622,48 +12664,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/043000/043377.png",
           "category": 35
-        },
-        {
-          "recipeId": 3379,
-          "itemId": 19512,
-          "rlvl": 260,
-          "icon": "/i/035000/035620.png",
-          "category": 24
-        },
-        {
-          "recipeId": 3380,
-          "itemId": 19513,
-          "rlvl": 260,
-          "icon": "/i/035000/035723.png",
-          "category": 26
-        },
-        {
-          "recipeId": 2973,
-          "itemId": 18050,
-          "rlvl": 260,
-          "icon": "/i/042000/042956.png",
-          "category": 35
-        },
-        {
-          "recipeId": 2979,
-          "itemId": 18056,
-          "rlvl": 260,
-          "icon": "/i/042000/042957.png",
-          "category": 35
-        },
-        {
-          "recipeId": 2974,
-          "itemId": 18051,
-          "rlvl": 260,
-          "icon": "/i/049000/049549.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2980,
-          "itemId": 18057,
-          "rlvl": 260,
-          "icon": "/i/049000/049550.png",
-          "category": 37
         }
       ]
     },
@@ -12693,6 +12693,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/049000/049536.png",
           "category": 37
+        },
+        {
+          "recipeId": 3214,
+          "itemId": 18525,
+          "rlvl": 279,
+          "icon": "/i/049000/049537.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3220,
+          "itemId": 18531,
+          "rlvl": 279,
+          "icon": "/i/049000/049538.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3232,
+          "itemId": 18543,
+          "rlvl": 279,
+          "icon": "/i/049000/049539.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3210,
+          "itemId": 18521,
+          "rlvl": 279,
+          "icon": "/i/047000/047119.png",
+          "category": 38
+        },
+        {
+          "recipeId": 3216,
+          "itemId": 18527,
+          "rlvl": 279,
+          "icon": "/i/047000/047122.png",
+          "category": 38
+        },
+        {
+          "recipeId": 3222,
+          "itemId": 18533,
+          "rlvl": 279,
+          "icon": "/i/047000/047120.png",
+          "category": 38
+        },
+        {
+          "recipeId": 3234,
+          "itemId": 18545,
+          "rlvl": 279,
+          "icon": "/i/047000/047121.png",
+          "category": 38
+        },
+        {
+          "recipeId": 3421,
+          "itemId": 19554,
+          "rlvl": 282,
+          "icon": "/i/035000/035621.png",
+          "category": 24
         },
         {
           "recipeId": 3422,
@@ -12765,13 +12821,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 3214,
-          "itemId": 18525,
-          "rlvl": 279,
-          "icon": "/i/049000/049537.png",
-          "category": 37
-        },
-        {
           "recipeId": 3295,
           "itemId": 18684,
           "rlvl": 285,
@@ -12840,55 +12889,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/047000/047302.png",
           "category": 39
-        },
-        {
-          "recipeId": 3220,
-          "itemId": 18531,
-          "rlvl": 279,
-          "icon": "/i/049000/049538.png",
-          "category": 37
-        },
-        {
-          "recipeId": 3232,
-          "itemId": 18543,
-          "rlvl": 279,
-          "icon": "/i/049000/049539.png",
-          "category": 37
-        },
-        {
-          "recipeId": 3210,
-          "itemId": 18521,
-          "rlvl": 279,
-          "icon": "/i/047000/047119.png",
-          "category": 38
-        },
-        {
-          "recipeId": 3216,
-          "itemId": 18527,
-          "rlvl": 279,
-          "icon": "/i/047000/047122.png",
-          "category": 38
-        },
-        {
-          "recipeId": 3222,
-          "itemId": 18533,
-          "rlvl": 279,
-          "icon": "/i/047000/047120.png",
-          "category": 38
-        },
-        {
-          "recipeId": 3234,
-          "itemId": 18545,
-          "rlvl": 279,
-          "icon": "/i/047000/047121.png",
-          "category": 38
-        },
-        {
-          "recipeId": 3421,
-          "itemId": 19554,
-          "rlvl": 282,
-          "icon": "/i/035000/035621.png",
-          "category": 24
         }
       ]
     },
@@ -12918,62 +12918,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
-        },
-        {
-          "recipeId": 30243,
-          "itemId": 7482,
-          "rlvl": 90,
-          "icon": "/i/044000/044624.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30249,
-          "itemId": 7488,
-          "rlvl": 90,
-          "icon": "/i/044000/044618.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30246,
-          "itemId": 7485,
-          "rlvl": 90,
-          "icon": "/i/047000/047234.png",
-          "category": 39
-        },
-        {
-          "recipeId": 30252,
-          "itemId": 7491,
-          "rlvl": 90,
-          "icon": "/i/047000/047287.png",
-          "category": 39
-        },
-        {
-          "recipeId": 30244,
-          "itemId": 7483,
-          "rlvl": 90,
-          "icon": "/i/045000/045423.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30245,
-          "itemId": 7484,
-          "rlvl": 90,
-          "icon": "/i/046000/046925.png",
-          "category": 38
-        },
-        {
-          "recipeId": 30251,
-          "itemId": 7490,
-          "rlvl": 90,
-          "icon": "/i/046000/046927.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31051,
-          "itemId": 12913,
-          "rlvl": 125,
-          "icon": "/i/020000/020966.png",
-          "category": 49
         },
         {
           "recipeId": 30419,
@@ -13030,6 +12974,62 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/043000/043202.png",
           "category": 35
+        },
+        {
+          "recipeId": 30243,
+          "itemId": 7482,
+          "rlvl": 90,
+          "icon": "/i/044000/044624.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30249,
+          "itemId": 7488,
+          "rlvl": 90,
+          "icon": "/i/044000/044618.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30246,
+          "itemId": 7485,
+          "rlvl": 90,
+          "icon": "/i/047000/047234.png",
+          "category": 39
+        },
+        {
+          "recipeId": 30252,
+          "itemId": 7491,
+          "rlvl": 90,
+          "icon": "/i/047000/047287.png",
+          "category": 39
+        },
+        {
+          "recipeId": 30244,
+          "itemId": 7483,
+          "rlvl": 90,
+          "icon": "/i/045000/045423.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30245,
+          "itemId": 7484,
+          "rlvl": 90,
+          "icon": "/i/046000/046925.png",
+          "category": 38
+        },
+        {
+          "recipeId": 30251,
+          "itemId": 7490,
+          "rlvl": 90,
+          "icon": "/i/046000/046927.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31051,
+          "itemId": 12913,
+          "rlvl": 125,
+          "icon": "/i/020000/020966.png",
+          "category": 49
         }
       ]
     },
@@ -13059,13 +13059,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/030000/030108.png",
           "category": 11
-        },
-        {
-          "recipeId": 30878,
-          "itemId": 9040,
-          "rlvl": 110,
-          "icon": "/i/046000/046968.png",
-          "category": 38
         },
         {
           "recipeId": 30868,
@@ -13122,6 +13115,13 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/046000/046967.png",
           "category": 38
+        },
+        {
+          "recipeId": 30878,
+          "itemId": 9040,
+          "rlvl": 110,
+          "icon": "/i/046000/046968.png",
+          "category": 38
         }
       ]
     },
@@ -13151,6 +13151,62 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/041000/041124.png",
           "category": 34
+        },
+        {
+          "recipeId": 31031,
+          "itemId": 10696,
+          "rlvl": 148,
+          "icon": "/i/047000/047206.png",
+          "category": 39
+        },
+        {
+          "recipeId": 31041,
+          "itemId": 11898,
+          "rlvl": 150,
+          "icon": "/i/035000/035617.png",
+          "category": 24
+        },
+        {
+          "recipeId": 31042,
+          "itemId": 11902,
+          "rlvl": 150,
+          "icon": "/i/035000/035720.png",
+          "category": 26
+        },
+        {
+          "recipeId": 31024,
+          "itemId": 10669,
+          "rlvl": 150,
+          "icon": "/i/030000/030116.png",
+          "category": 11
+        },
+        {
+          "recipeId": 31027,
+          "itemId": 10682,
+          "rlvl": 150,
+          "icon": "/i/043000/043278.png",
+          "category": 35
+        },
+        {
+          "recipeId": 31035,
+          "itemId": 10724,
+          "rlvl": 150,
+          "icon": "/i/043000/043279.png",
+          "category": 35
+        },
+        {
+          "recipeId": 31029,
+          "itemId": 10689,
+          "rlvl": 150,
+          "icon": "/i/044000/044379.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31032,
+          "itemId": 10710,
+          "rlvl": 150,
+          "icon": "/i/047000/047020.png",
+          "category": 38
         },
         {
           "recipeId": 31038,
@@ -13223,13 +13279,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 31031,
-          "itemId": 10696,
-          "rlvl": 148,
-          "icon": "/i/047000/047206.png",
-          "category": 39
-        },
-        {
           "recipeId": 31050,
           "itemId": 12527,
           "rlvl": 180,
@@ -13300,13 +13349,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 31041,
-          "itemId": 11898,
-          "rlvl": 150,
-          "icon": "/i/035000/035617.png",
-          "category": 24
-        },
-        {
           "recipeId": 31049,
           "itemId": 12107,
           "rlvl": 180,
@@ -13375,48 +13417,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/044000/044728.png",
           "category": 37
-        },
-        {
-          "recipeId": 31042,
-          "itemId": 11902,
-          "rlvl": 150,
-          "icon": "/i/035000/035720.png",
-          "category": 26
-        },
-        {
-          "recipeId": 31024,
-          "itemId": 10669,
-          "rlvl": 150,
-          "icon": "/i/030000/030116.png",
-          "category": 11
-        },
-        {
-          "recipeId": 31027,
-          "itemId": 10682,
-          "rlvl": 150,
-          "icon": "/i/043000/043278.png",
-          "category": 35
-        },
-        {
-          "recipeId": 31035,
-          "itemId": 10724,
-          "rlvl": 150,
-          "icon": "/i/043000/043279.png",
-          "category": 35
-        },
-        {
-          "recipeId": 31029,
-          "itemId": 10689,
-          "rlvl": 150,
-          "icon": "/i/044000/044379.png",
-          "category": 37
-        },
-        {
-          "recipeId": 31032,
-          "itemId": 10710,
-          "rlvl": 150,
-          "icon": "/i/047000/047020.png",
-          "category": 38
         }
       ]
     },
@@ -13446,6 +13446,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/020000/020967.png",
           "category": 49
+        },
+        {
+          "recipeId": 31943,
+          "itemId": 15583,
+          "rlvl": 180,
+          "icon": "/i/030000/030120.png",
+          "category": 11
+        },
+        {
+          "recipeId": 32098,
+          "itemId": 15597,
+          "rlvl": 180,
+          "icon": "/i/030000/030125.png",
+          "category": 11
+        },
+        {
+          "recipeId": 31380,
+          "itemId": 13804,
+          "rlvl": 180,
+          "icon": "/i/040000/040115.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31385,
+          "itemId": 13809,
+          "rlvl": 180,
+          "icon": "/i/040000/040143.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31390,
+          "itemId": 13814,
+          "rlvl": 180,
+          "icon": "/i/040000/040117.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31395,
+          "itemId": 13819,
+          "rlvl": 180,
+          "icon": "/i/040000/040118.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31429,
+          "itemId": 13853,
+          "rlvl": 180,
+          "icon": "/i/041000/041231.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31434,
+          "itemId": 13858,
+          "rlvl": 180,
+          "icon": "/i/041000/041232.png",
+          "category": 34
         },
         {
           "recipeId": 31819,
@@ -13518,13 +13574,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 31943,
-          "itemId": 15583,
-          "rlvl": 180,
-          "icon": "/i/030000/030120.png",
-          "category": 11
-        },
-        {
           "recipeId": 31382,
           "itemId": 13806,
           "rlvl": 180,
@@ -13593,13 +13642,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/045000/045374.png",
           "category": 36
-        },
-        {
-          "recipeId": 32098,
-          "itemId": 15597,
-          "rlvl": 180,
-          "icon": "/i/030000/030125.png",
-          "category": 11
         },
         {
           "recipeId": 31384,
@@ -13672,13 +13714,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 31380,
-          "itemId": 13804,
-          "rlvl": 180,
-          "icon": "/i/040000/040115.png",
-          "category": 34
-        },
-        {
           "recipeId": 31483,
           "itemId": 14146,
           "rlvl": 210,
@@ -13747,13 +13782,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/030000/030098.png",
           "category": 11
-        },
-        {
-          "recipeId": 31385,
-          "itemId": 13809,
-          "rlvl": 180,
-          "icon": "/i/040000/040143.png",
-          "category": 34
         },
         {
           "recipeId": 31531,
@@ -13826,13 +13854,6 @@ export const craftingLogPages = [
           "category": 24
         },
         {
-          "recipeId": 31390,
-          "itemId": 13814,
-          "rlvl": 180,
-          "icon": "/i/040000/040117.png",
-          "category": 34
-        },
-        {
           "recipeId": 31902,
           "itemId": 15542,
           "rlvl": 220,
@@ -13901,13 +13922,6 @@ export const craftingLogPages = [
           "rlvl": 250,
           "icon": "/i/047000/047074.png",
           "category": 38
-        },
-        {
-          "recipeId": 31395,
-          "itemId": 13819,
-          "rlvl": 180,
-          "icon": "/i/040000/040118.png",
-          "category": 34
         },
         {
           "recipeId": 32186,
@@ -13980,13 +13994,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 31429,
-          "itemId": 13853,
-          "rlvl": 180,
-          "icon": "/i/041000/041231.png",
-          "category": 34
-        },
-        {
           "recipeId": 31982,
           "itemId": 16649,
           "rlvl": 250,
@@ -14055,13 +14062,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/052000/052849.png",
           "category": 78
-        },
-        {
-          "recipeId": 31434,
-          "itemId": 13858,
-          "rlvl": 180,
-          "icon": "/i/041000/041232.png",
-          "category": 34
         }
       ]
     },
@@ -14091,20 +14091,6 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/035000/035624.png",
           "category": 24
-        },
-        {
-          "recipeId": 32365,
-          "itemId": 18995,
-          "rlvl": 320,
-          "icon": "/i/047000/047112.png",
-          "category": 38
-        },
-        {
-          "recipeId": 32551,
-          "itemId": 21042,
-          "rlvl": 320,
-          "icon": "/i/049000/049180.png",
-          "category": 63
         },
         {
           "recipeId": 32443,
@@ -14161,6 +14147,20 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/047000/047111.png",
           "category": 38
+        },
+        {
+          "recipeId": 32365,
+          "itemId": 18995,
+          "rlvl": 320,
+          "icon": "/i/047000/047112.png",
+          "category": 38
+        },
+        {
+          "recipeId": 32551,
+          "itemId": 21042,
+          "rlvl": 320,
+          "icon": "/i/049000/049180.png",
+          "category": 63
         }
       ]
     },
@@ -14190,6 +14190,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/052000/052890.png",
           "category": 78
+        },
+        {
+          "recipeId": 33202,
+          "itemId": 24492,
+          "rlvl": 320,
+          "icon": "/i/052000/052963.png",
+          "category": 78
+        },
+        {
+          "recipeId": 33203,
+          "itemId": 24493,
+          "rlvl": 320,
+          "icon": "/i/052000/052962.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32634,
+          "itemId": 22427,
+          "rlvl": 350,
+          "icon": "/i/020000/020804.png",
+          "category": 49
+        },
+        {
+          "recipeId": 33026,
+          "itemId": 22890,
+          "rlvl": 350,
+          "icon": "/i/035000/035626.png",
+          "category": 24
+        },
+        {
+          "recipeId": 33027,
+          "itemId": 22891,
+          "rlvl": 350,
+          "icon": "/i/035000/035729.png",
+          "category": 26
+        },
+        {
+          "recipeId": 32570,
+          "itemId": 21710,
+          "rlvl": 350,
+          "icon": "/i/030000/030174.png",
+          "category": 11
+        },
+        {
+          "recipeId": 32571,
+          "itemId": 21711,
+          "rlvl": 350,
+          "icon": "/i/040000/040294.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32577,
+          "itemId": 21717,
+          "rlvl": 350,
+          "icon": "/i/040000/040295.png",
+          "category": 34
         },
         {
           "recipeId": 32572,
@@ -14262,13 +14318,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 33202,
-          "itemId": 24492,
-          "rlvl": 320,
-          "icon": "/i/052000/052963.png",
-          "category": 78
-        },
-        {
           "recipeId": 33091,
           "itemId": 23786,
           "rlvl": 380,
@@ -14309,55 +14358,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/049000/049204.png",
           "category": 63
-        },
-        {
-          "recipeId": 33203,
-          "itemId": 24493,
-          "rlvl": 320,
-          "icon": "/i/052000/052962.png",
-          "category": 78
-        },
-        {
-          "recipeId": 32634,
-          "itemId": 22427,
-          "rlvl": 350,
-          "icon": "/i/020000/020804.png",
-          "category": 49
-        },
-        {
-          "recipeId": 33026,
-          "itemId": 22890,
-          "rlvl": 350,
-          "icon": "/i/035000/035626.png",
-          "category": 24
-        },
-        {
-          "recipeId": 33027,
-          "itemId": 22891,
-          "rlvl": 350,
-          "icon": "/i/035000/035729.png",
-          "category": 26
-        },
-        {
-          "recipeId": 32570,
-          "itemId": 21710,
-          "rlvl": 350,
-          "icon": "/i/030000/030174.png",
-          "category": 11
-        },
-        {
-          "recipeId": 32571,
-          "itemId": 21711,
-          "rlvl": 350,
-          "icon": "/i/040000/040294.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32577,
-          "itemId": 21717,
-          "rlvl": 350,
-          "icon": "/i/040000/040295.png",
-          "category": 34
         }
       ]
     },
@@ -14423,6 +14423,62 @@ export const craftingLogPages = [
           "rlvl": 19,
           "icon": "/i/050000/050001.png",
           "category": 71
+        },
+        {
+          "recipeId": 1717,
+          "itemId": 6467,
+          "rlvl": 22,
+          "icon": "/i/051000/051114.png",
+          "category": 75
+        },
+        {
+          "recipeId": 1688,
+          "itemId": 6438,
+          "rlvl": 25,
+          "icon": "/i/050000/050002.png",
+          "category": 71
+        },
+        {
+          "recipeId": 1718,
+          "itemId": 6468,
+          "rlvl": 27,
+          "icon": "/i/051000/051111.png",
+          "category": 75
+        },
+        {
+          "recipeId": 1666,
+          "itemId": 6416,
+          "rlvl": 29,
+          "icon": "/i/050000/050107.png",
+          "category": 68
+        },
+        {
+          "recipeId": 2131,
+          "itemId": 8834,
+          "rlvl": 29,
+          "icon": "/i/051000/051019.png",
+          "category": 74
+        },
+        {
+          "recipeId": 2045,
+          "itemId": 7996,
+          "rlvl": 30,
+          "icon": "/i/053000/053062.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1669,
+          "itemId": 6419,
+          "rlvl": 34,
+          "icon": "/i/050000/050504.png",
+          "category": 69
+        },
+        {
+          "recipeId": 2401,
+          "itemId": 12235,
+          "rlvl": 35,
+          "icon": "/i/053000/053102.png",
+          "category": 76
         },
         {
           "recipeId": 1685,
@@ -14495,13 +14551,6 @@ export const craftingLogPages = [
           "category": 65
         },
         {
-          "recipeId": 1717,
-          "itemId": 6467,
-          "rlvl": 22,
-          "icon": "/i/051000/051114.png",
-          "category": 75
-        },
-        {
           "recipeId": 3689,
           "itemId": 20691,
           "rlvl": 255,
@@ -14563,55 +14612,6 @@ export const craftingLogPages = [
           "rlvl": 285,
           "icon": "/i/050000/050233.png",
           "category": 66
-        },
-        {
-          "recipeId": 1688,
-          "itemId": 6438,
-          "rlvl": 25,
-          "icon": "/i/050000/050002.png",
-          "category": 71
-        },
-        {
-          "recipeId": 1718,
-          "itemId": 6468,
-          "rlvl": 27,
-          "icon": "/i/051000/051111.png",
-          "category": 75
-        },
-        {
-          "recipeId": 1666,
-          "itemId": 6416,
-          "rlvl": 29,
-          "icon": "/i/050000/050107.png",
-          "category": 68
-        },
-        {
-          "recipeId": 2131,
-          "itemId": 8834,
-          "rlvl": 29,
-          "icon": "/i/051000/051019.png",
-          "category": 74
-        },
-        {
-          "recipeId": 2045,
-          "itemId": 7996,
-          "rlvl": 30,
-          "icon": "/i/053000/053062.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1669,
-          "itemId": 6419,
-          "rlvl": 34,
-          "icon": "/i/050000/050504.png",
-          "category": 69
-        },
-        {
-          "recipeId": 2401,
-          "itemId": 12235,
-          "rlvl": 35,
-          "icon": "/i/053000/053102.png",
-          "category": 76
         }
       ]
     },
@@ -14640,6 +14640,62 @@ export const craftingLogPages = [
           "itemId": 6612,
           "rlvl": 20,
           "icon": "/i/052000/052227.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1836,
+          "itemId": 6611,
+          "rlvl": 25,
+          "icon": "/i/052000/052226.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1844,
+          "itemId": 6619,
+          "rlvl": 29,
+          "icon": "/i/052000/052201.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1826,
+          "itemId": 6601,
+          "rlvl": 32,
+          "icon": "/i/052000/052228.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1781,
+          "itemId": 6549,
+          "rlvl": 32,
+          "icon": "/i/052000/052431.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1829,
+          "itemId": 6604,
+          "rlvl": 34,
+          "icon": "/i/052000/052217.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1835,
+          "itemId": 6610,
+          "rlvl": 34,
+          "icon": "/i/052000/052225.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1888,
+          "itemId": 6670,
+          "rlvl": 38,
+          "icon": "/i/052000/052306.png",
+          "category": 79
+        },
+        {
+          "recipeId": 1841,
+          "itemId": 6616,
+          "rlvl": 46,
+          "icon": "/i/052000/052206.png",
           "category": 77
         },
         {
@@ -14713,13 +14769,6 @@ export const craftingLogPages = [
           "category": 80
         },
         {
-          "recipeId": 1836,
-          "itemId": 6611,
-          "rlvl": 25,
-          "icon": "/i/052000/052226.png",
-          "category": 77
-        },
-        {
           "recipeId": 1981,
           "itemId": 7101,
           "rlvl": 90,
@@ -14739,55 +14788,6 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/052000/052878.png",
           "category": 78
-        },
-        {
-          "recipeId": 1844,
-          "itemId": 6619,
-          "rlvl": 29,
-          "icon": "/i/052000/052201.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1826,
-          "itemId": 6601,
-          "rlvl": 32,
-          "icon": "/i/052000/052228.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1781,
-          "itemId": 6549,
-          "rlvl": 32,
-          "icon": "/i/052000/052431.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1829,
-          "itemId": 6604,
-          "rlvl": 34,
-          "icon": "/i/052000/052217.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1835,
-          "itemId": 6610,
-          "rlvl": 34,
-          "icon": "/i/052000/052225.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1888,
-          "itemId": 6670,
-          "rlvl": 38,
-          "icon": "/i/052000/052306.png",
-          "category": 79
-        },
-        {
-          "recipeId": 1841,
-          "itemId": 6616,
-          "rlvl": 46,
-          "icon": "/i/052000/052206.png",
-          "category": 77
         }
       ]
     },
@@ -14816,6 +14816,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30027,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30028,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30034,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30035,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30120,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30121,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30031,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30366,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -14889,13 +14945,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30027,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30370,
           "itemId": 5800,
           "rlvl": 30,
@@ -14928,55 +14977,6 @@ export const craftingLogPages = [
           "itemId": 5811,
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30028,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30034,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30035,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30120,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30121,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30031,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30366,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
           "category": 55
         }
       ]
@@ -15075,13 +15075,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 679,
-          "itemId": 4093,
-          "rlvl": 10,
-          "icon": "/i/048000/048832.png",
-          "category": 42
-        },
-        {
           "recipeId": 672,
           "itemId": 4422,
           "rlvl": 7,
@@ -15136,6 +15129,13 @@ export const craftingLogPages = [
           "rlvl": 10,
           "icon": "/i/032000/032801.png",
           "category": 6
+        },
+        {
+          "recipeId": 679,
+          "itemId": 4093,
+          "rlvl": 10,
+          "icon": "/i/048000/048832.png",
+          "category": 42
         }
       ]
     },
@@ -15165,55 +15165,6 @@ export const craftingLogPages = [
           "rlvl": 12,
           "icon": "/i/032000/032801.png",
           "category": 6
-        },
-        {
-          "recipeId": 688,
-          "itemId": 5063,
-          "rlvl": 14,
-          "icon": "/i/020000/020815.png",
-          "category": 49
-        },
-        {
-          "recipeId": 693,
-          "itemId": 2059,
-          "rlvl": 14,
-          "icon": "/i/032000/032812.png",
-          "category": 6
-        },
-        {
-          "recipeId": 692,
-          "itemId": 2668,
-          "rlvl": 14,
-          "icon": "/i/041000/041304.png",
-          "category": 34
-        },
-        {
-          "recipeId": 694,
-          "itemId": 5087,
-          "rlvl": 15,
-          "icon": "/i/020000/020914.png",
-          "category": 49
-        },
-        {
-          "recipeId": 695,
-          "itemId": 4204,
-          "rlvl": 15,
-          "icon": "/i/048000/048533.png",
-          "category": 41
-        },
-        {
-          "recipeId": 696,
-          "itemId": 4309,
-          "rlvl": 15,
-          "icon": "/i/048000/048302.png",
-          "category": 40
-        },
-        {
-          "recipeId": 697,
-          "itemId": 4094,
-          "rlvl": 15,
-          "icon": "/i/048000/048802.png",
-          "category": 42
         },
         {
           "recipeId": 683,
@@ -15270,6 +15221,55 @@ export const craftingLogPages = [
           "rlvl": 14,
           "icon": "/i/021000/021276.png",
           "category": 48
+        },
+        {
+          "recipeId": 688,
+          "itemId": 5063,
+          "rlvl": 14,
+          "icon": "/i/020000/020815.png",
+          "category": 49
+        },
+        {
+          "recipeId": 693,
+          "itemId": 2059,
+          "rlvl": 14,
+          "icon": "/i/032000/032812.png",
+          "category": 6
+        },
+        {
+          "recipeId": 692,
+          "itemId": 2668,
+          "rlvl": 14,
+          "icon": "/i/041000/041304.png",
+          "category": 34
+        },
+        {
+          "recipeId": 694,
+          "itemId": 5087,
+          "rlvl": 15,
+          "icon": "/i/020000/020914.png",
+          "category": 49
+        },
+        {
+          "recipeId": 695,
+          "itemId": 4204,
+          "rlvl": 15,
+          "icon": "/i/048000/048533.png",
+          "category": 41
+        },
+        {
+          "recipeId": 696,
+          "itemId": 4309,
+          "rlvl": 15,
+          "icon": "/i/048000/048302.png",
+          "category": 40
+        },
+        {
+          "recipeId": 697,
+          "itemId": 4094,
+          "rlvl": 15,
+          "icon": "/i/048000/048802.png",
+          "category": 42
         }
       ]
     },
@@ -15299,62 +15299,6 @@ export const craftingLogPages = [
           "rlvl": 16,
           "icon": "/i/048000/048802.png",
           "category": 42
-        },
-        {
-          "recipeId": 707,
-          "itemId": 2689,
-          "rlvl": 19,
-          "icon": "/i/041000/041010.png",
-          "category": 34
-        },
-        {
-          "recipeId": 708,
-          "itemId": 2695,
-          "rlvl": 19,
-          "icon": "/i/041000/041008.png",
-          "category": 34
-        },
-        {
-          "recipeId": 709,
-          "itemId": 4100,
-          "rlvl": 19,
-          "icon": "/i/048000/048832.png",
-          "category": 42
-        },
-        {
-          "recipeId": 711,
-          "itemId": 5259,
-          "rlvl": 20,
-          "icon": "/i/021000/021470.png",
-          "category": 48
-        },
-        {
-          "recipeId": 712,
-          "itemId": 2061,
-          "rlvl": 20,
-          "icon": "/i/032000/032802.png",
-          "category": 6
-        },
-        {
-          "recipeId": 713,
-          "itemId": 4430,
-          "rlvl": 20,
-          "icon": "/i/048000/048002.png",
-          "category": 43
-        },
-        {
-          "recipeId": 714,
-          "itemId": 4431,
-          "rlvl": 20,
-          "icon": "/i/048000/048002.png",
-          "category": 43
-        },
-        {
-          "recipeId": 1437,
-          "itemId": 2614,
-          "rlvl": 20,
-          "icon": "/i/027000/027057.png",
-          "category": 33
         },
         {
           "recipeId": 702,
@@ -15411,6 +15355,62 @@ export const craftingLogPages = [
           "rlvl": 19,
           "icon": "/i/041000/041009.png",
           "category": 34
+        },
+        {
+          "recipeId": 707,
+          "itemId": 2689,
+          "rlvl": 19,
+          "icon": "/i/041000/041010.png",
+          "category": 34
+        },
+        {
+          "recipeId": 708,
+          "itemId": 2695,
+          "rlvl": 19,
+          "icon": "/i/041000/041008.png",
+          "category": 34
+        },
+        {
+          "recipeId": 709,
+          "itemId": 4100,
+          "rlvl": 19,
+          "icon": "/i/048000/048832.png",
+          "category": 42
+        },
+        {
+          "recipeId": 711,
+          "itemId": 5259,
+          "rlvl": 20,
+          "icon": "/i/021000/021470.png",
+          "category": 48
+        },
+        {
+          "recipeId": 712,
+          "itemId": 2061,
+          "rlvl": 20,
+          "icon": "/i/032000/032802.png",
+          "category": 6
+        },
+        {
+          "recipeId": 713,
+          "itemId": 4430,
+          "rlvl": 20,
+          "icon": "/i/048000/048002.png",
+          "category": 43
+        },
+        {
+          "recipeId": 714,
+          "itemId": 4431,
+          "rlvl": 20,
+          "icon": "/i/048000/048002.png",
+          "category": 43
+        },
+        {
+          "recipeId": 1437,
+          "itemId": 2614,
+          "rlvl": 20,
+          "icon": "/i/027000/027057.png",
+          "category": 33
         }
       ]
     },
@@ -15440,6 +15440,62 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/048000/048302.png",
           "category": 40
+        },
+        {
+          "recipeId": 716,
+          "itemId": 4433,
+          "rlvl": 21,
+          "icon": "/i/048000/048032.png",
+          "category": 43
+        },
+        {
+          "recipeId": 718,
+          "itemId": 5199,
+          "rlvl": 22,
+          "icon": "/i/021000/021258.png",
+          "category": 48
+        },
+        {
+          "recipeId": 719,
+          "itemId": 5203,
+          "rlvl": 22,
+          "icon": "/i/021000/021255.png",
+          "category": 48
+        },
+        {
+          "recipeId": 720,
+          "itemId": 5202,
+          "rlvl": 22,
+          "icon": "/i/021000/021257.png",
+          "category": 48
+        },
+        {
+          "recipeId": 721,
+          "itemId": 2446,
+          "rlvl": 22,
+          "icon": "/i/035000/035506.png",
+          "category": 22
+        },
+        {
+          "recipeId": 1438,
+          "itemId": 2611,
+          "rlvl": 22,
+          "icon": "/i/027000/027051.png",
+          "category": 33
+        },
+        {
+          "recipeId": 722,
+          "itemId": 5201,
+          "rlvl": 23,
+          "icon": "/i/021000/021256.png",
+          "category": 48
+        },
+        {
+          "recipeId": 723,
+          "itemId": 5200,
+          "rlvl": 23,
+          "icon": "/i/021000/021254.png",
+          "category": 48
         },
         {
           "recipeId": 724,
@@ -15512,13 +15568,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 716,
-          "itemId": 4433,
-          "rlvl": 21,
-          "icon": "/i/048000/048032.png",
-          "category": 43
-        },
-        {
           "recipeId": 730,
           "itemId": 4211,
           "rlvl": 24,
@@ -15573,55 +15622,6 @@ export const craftingLogPages = [
           "rlvl": 25,
           "icon": "/i/048000/048162.png",
           "category": 61
-        },
-        {
-          "recipeId": 718,
-          "itemId": 5199,
-          "rlvl": 22,
-          "icon": "/i/021000/021258.png",
-          "category": 48
-        },
-        {
-          "recipeId": 719,
-          "itemId": 5203,
-          "rlvl": 22,
-          "icon": "/i/021000/021255.png",
-          "category": 48
-        },
-        {
-          "recipeId": 720,
-          "itemId": 5202,
-          "rlvl": 22,
-          "icon": "/i/021000/021257.png",
-          "category": 48
-        },
-        {
-          "recipeId": 721,
-          "itemId": 2446,
-          "rlvl": 22,
-          "icon": "/i/035000/035506.png",
-          "category": 22
-        },
-        {
-          "recipeId": 1438,
-          "itemId": 2611,
-          "rlvl": 22,
-          "icon": "/i/027000/027051.png",
-          "category": 33
-        },
-        {
-          "recipeId": 722,
-          "itemId": 5201,
-          "rlvl": 23,
-          "icon": "/i/021000/021256.png",
-          "category": 48
-        },
-        {
-          "recipeId": 723,
-          "itemId": 5200,
-          "rlvl": 23,
-          "icon": "/i/021000/021254.png",
-          "category": 48
         }
       ]
     },
@@ -15651,6 +15651,62 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/035000/035507.png",
           "category": 22
+        },
+        {
+          "recipeId": 737,
+          "itemId": 4213,
+          "rlvl": 26,
+          "icon": "/i/048000/048503.png",
+          "category": 41
+        },
+        {
+          "recipeId": 740,
+          "itemId": 4317,
+          "rlvl": 26,
+          "icon": "/i/048000/048331.png",
+          "category": 40
+        },
+        {
+          "recipeId": 738,
+          "itemId": 4439,
+          "rlvl": 26,
+          "icon": "/i/048000/048003.png",
+          "category": 43
+        },
+        {
+          "recipeId": 739,
+          "itemId": 4440,
+          "rlvl": 26,
+          "icon": "/i/048000/048003.png",
+          "category": 43
+        },
+        {
+          "recipeId": 747,
+          "itemId": 4214,
+          "rlvl": 27,
+          "icon": "/i/048000/048508.png",
+          "category": 41
+        },
+        {
+          "recipeId": 749,
+          "itemId": 4216,
+          "rlvl": 27,
+          "icon": "/i/048000/048512.png",
+          "category": 41
+        },
+        {
+          "recipeId": 743,
+          "itemId": 4320,
+          "rlvl": 27,
+          "icon": "/i/048000/048309.png",
+          "category": 40
+        },
+        {
+          "recipeId": 745,
+          "itemId": 4322,
+          "rlvl": 27,
+          "icon": "/i/048000/048313.png",
+          "category": 40
         },
         {
           "recipeId": 744,
@@ -15723,13 +15779,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 737,
-          "itemId": 4213,
-          "rlvl": 26,
-          "icon": "/i/048000/048503.png",
-          "category": 41
-        },
-        {
           "recipeId": 754,
           "itemId": 4119,
           "rlvl": 28,
@@ -15800,13 +15849,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 740,
-          "itemId": 4317,
-          "rlvl": 26,
-          "icon": "/i/048000/048331.png",
-          "category": 40
-        },
-        {
           "recipeId": 764,
           "itemId": 4324,
           "rlvl": 30,
@@ -15826,48 +15868,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/048000/048009.png",
           "category": 43
-        },
-        {
-          "recipeId": 738,
-          "itemId": 4439,
-          "rlvl": 26,
-          "icon": "/i/048000/048003.png",
-          "category": 43
-        },
-        {
-          "recipeId": 739,
-          "itemId": 4440,
-          "rlvl": 26,
-          "icon": "/i/048000/048003.png",
-          "category": 43
-        },
-        {
-          "recipeId": 747,
-          "itemId": 4214,
-          "rlvl": 27,
-          "icon": "/i/048000/048508.png",
-          "category": 41
-        },
-        {
-          "recipeId": 749,
-          "itemId": 4216,
-          "rlvl": 27,
-          "icon": "/i/048000/048512.png",
-          "category": 41
-        },
-        {
-          "recipeId": 743,
-          "itemId": 4320,
-          "rlvl": 27,
-          "icon": "/i/048000/048309.png",
-          "category": 40
-        },
-        {
-          "recipeId": 745,
-          "itemId": 4322,
-          "rlvl": 27,
-          "icon": "/i/048000/048313.png",
-          "category": 40
         }
       ]
     },
@@ -15897,6 +15897,62 @@ export const craftingLogPages = [
           "rlvl": 31,
           "icon": "/i/048000/048503.png",
           "category": 41
+        },
+        {
+          "recipeId": 768,
+          "itemId": 4332,
+          "rlvl": 31,
+          "icon": "/i/048000/048303.png",
+          "category": 40
+        },
+        {
+          "recipeId": 769,
+          "itemId": 4121,
+          "rlvl": 31,
+          "icon": "/i/048000/048833.png",
+          "category": 42
+        },
+        {
+          "recipeId": 770,
+          "itemId": 4454,
+          "rlvl": 31,
+          "icon": "/i/048000/048033.png",
+          "category": 43
+        },
+        {
+          "recipeId": 773,
+          "itemId": 5180,
+          "rlvl": 32,
+          "icon": "/i/021000/021291.png",
+          "category": 48
+        },
+        {
+          "recipeId": 774,
+          "itemId": 5179,
+          "rlvl": 32,
+          "icon": "/i/021000/021288.png",
+          "category": 48
+        },
+        {
+          "recipeId": 775,
+          "itemId": 5175,
+          "rlvl": 32,
+          "icon": "/i/021000/021277.png",
+          "category": 48
+        },
+        {
+          "recipeId": 776,
+          "itemId": 5176,
+          "rlvl": 32,
+          "icon": "/i/021000/021278.png",
+          "category": 48
+        },
+        {
+          "recipeId": 777,
+          "itemId": 5178,
+          "rlvl": 32,
+          "icon": "/i/021000/021283.png",
+          "category": 48
         },
         {
           "recipeId": 778,
@@ -15969,13 +16025,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 768,
-          "itemId": 4332,
-          "rlvl": 31,
-          "icon": "/i/048000/048303.png",
-          "category": 40
-        },
-        {
           "recipeId": 786,
           "itemId": 5065,
           "rlvl": 34,
@@ -16046,13 +16095,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 769,
-          "itemId": 4121,
-          "rlvl": 31,
-          "icon": "/i/048000/048833.png",
-          "category": 42
-        },
-        {
           "recipeId": 796,
           "itemId": 2078,
           "rlvl": 35,
@@ -16107,48 +16149,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/032000/032811.png",
           "category": 6
-        },
-        {
-          "recipeId": 770,
-          "itemId": 4454,
-          "rlvl": 31,
-          "icon": "/i/048000/048033.png",
-          "category": 43
-        },
-        {
-          "recipeId": 773,
-          "itemId": 5180,
-          "rlvl": 32,
-          "icon": "/i/021000/021291.png",
-          "category": 48
-        },
-        {
-          "recipeId": 774,
-          "itemId": 5179,
-          "rlvl": 32,
-          "icon": "/i/021000/021288.png",
-          "category": 48
-        },
-        {
-          "recipeId": 775,
-          "itemId": 5175,
-          "rlvl": 32,
-          "icon": "/i/021000/021277.png",
-          "category": 48
-        },
-        {
-          "recipeId": 776,
-          "itemId": 5176,
-          "rlvl": 32,
-          "icon": "/i/021000/021278.png",
-          "category": 48
-        },
-        {
-          "recipeId": 777,
-          "itemId": 5178,
-          "rlvl": 32,
-          "icon": "/i/021000/021283.png",
-          "category": 48
         }
       ]
     },
@@ -16178,6 +16178,62 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/035000/035505.png",
           "category": 22
+        },
+        {
+          "recipeId": 800,
+          "itemId": 4337,
+          "rlvl": 36,
+          "icon": "/i/048000/048330.png",
+          "category": 40
+        },
+        {
+          "recipeId": 802,
+          "itemId": 4465,
+          "rlvl": 36,
+          "icon": "/i/048000/048005.png",
+          "category": 43
+        },
+        {
+          "recipeId": 1447,
+          "itemId": 4467,
+          "rlvl": 36,
+          "icon": "/i/048000/048005.png",
+          "category": 43
+        },
+        {
+          "recipeId": 1448,
+          "itemId": 2623,
+          "rlvl": 36,
+          "icon": "/i/027000/027059.png",
+          "category": 33
+        },
+        {
+          "recipeId": 803,
+          "itemId": 4349,
+          "rlvl": 37,
+          "icon": "/i/048000/048316.png",
+          "category": 40
+        },
+        {
+          "recipeId": 804,
+          "itemId": 4347,
+          "rlvl": 37,
+          "icon": "/i/048000/048320.png",
+          "category": 40
+        },
+        {
+          "recipeId": 805,
+          "itemId": 4339,
+          "rlvl": 37,
+          "icon": "/i/048000/048315.png",
+          "category": 40
+        },
+        {
+          "recipeId": 806,
+          "itemId": 4341,
+          "rlvl": 37,
+          "icon": "/i/048000/048319.png",
+          "category": 40
         },
         {
           "recipeId": 807,
@@ -16250,13 +16306,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 800,
-          "itemId": 4337,
-          "rlvl": 36,
-          "icon": "/i/048000/048330.png",
-          "category": 40
-        },
-        {
           "recipeId": 816,
           "itemId": 4145,
           "rlvl": 38,
@@ -16327,13 +16376,6 @@ export const craftingLogPages = [
           "category": 33
         },
         {
-          "recipeId": 802,
-          "itemId": 4465,
-          "rlvl": 36,
-          "icon": "/i/048000/048005.png",
-          "category": 43
-        },
-        {
           "recipeId": 825,
           "itemId": 5196,
           "rlvl": 40,
@@ -16402,48 +16444,6 @@ export const craftingLogPages = [
           "rlvl": 40,
           "icon": "/i/027000/027065.png",
           "category": 33
-        },
-        {
-          "recipeId": 1447,
-          "itemId": 4467,
-          "rlvl": 36,
-          "icon": "/i/048000/048005.png",
-          "category": 43
-        },
-        {
-          "recipeId": 1448,
-          "itemId": 2623,
-          "rlvl": 36,
-          "icon": "/i/027000/027059.png",
-          "category": 33
-        },
-        {
-          "recipeId": 803,
-          "itemId": 4349,
-          "rlvl": 37,
-          "icon": "/i/048000/048316.png",
-          "category": 40
-        },
-        {
-          "recipeId": 804,
-          "itemId": 4347,
-          "rlvl": 37,
-          "icon": "/i/048000/048320.png",
-          "category": 40
-        },
-        {
-          "recipeId": 805,
-          "itemId": 4339,
-          "rlvl": 37,
-          "icon": "/i/048000/048315.png",
-          "category": 40
-        },
-        {
-          "recipeId": 806,
-          "itemId": 4341,
-          "rlvl": 37,
-          "icon": "/i/048000/048319.png",
-          "category": 40
         }
       ]
     },
@@ -16473,6 +16473,62 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/021000/021275.png",
           "category": 48
+        },
+        {
+          "recipeId": 834,
+          "itemId": 5185,
+          "rlvl": 41,
+          "icon": "/i/021000/021281.png",
+          "category": 48
+        },
+        {
+          "recipeId": 835,
+          "itemId": 5186,
+          "rlvl": 41,
+          "icon": "/i/021000/021271.png",
+          "category": 48
+        },
+        {
+          "recipeId": 836,
+          "itemId": 5183,
+          "rlvl": 41,
+          "icon": "/i/021000/021293.png",
+          "category": 48
+        },
+        {
+          "recipeId": 837,
+          "itemId": 5181,
+          "rlvl": 41,
+          "icon": "/i/021000/021284.png",
+          "category": 48
+        },
+        {
+          "recipeId": 838,
+          "itemId": 2125,
+          "rlvl": 41,
+          "icon": "/i/033000/033003.png",
+          "category": 7
+        },
+        {
+          "recipeId": 2410,
+          "itemId": 10527,
+          "rlvl": 41,
+          "icon": "/i/034000/034830.png",
+          "category": 89
+        },
+        {
+          "recipeId": 839,
+          "itemId": 4245,
+          "rlvl": 41,
+          "icon": "/i/048000/048528.png",
+          "category": 41
+        },
+        {
+          "recipeId": 1451,
+          "itemId": 4247,
+          "rlvl": 41,
+          "icon": "/i/048000/048505.png",
+          "category": 41
         },
         {
           "recipeId": 841,
@@ -16545,13 +16601,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 834,
-          "itemId": 5185,
-          "rlvl": 41,
-          "icon": "/i/021000/021281.png",
-          "category": 48
-        },
-        {
           "recipeId": 846,
           "itemId": 2800,
           "rlvl": 42,
@@ -16620,13 +16669,6 @@ export const craftingLogPages = [
           "rlvl": 43,
           "icon": "/i/048000/048804.png",
           "category": 42
-        },
-        {
-          "recipeId": 835,
-          "itemId": 5186,
-          "rlvl": 41,
-          "icon": "/i/021000/021271.png",
-          "category": 48
         },
         {
           "recipeId": 854,
@@ -16699,13 +16741,6 @@ export const craftingLogPages = [
           "category": 89
         },
         {
-          "recipeId": 836,
-          "itemId": 5183,
-          "rlvl": 41,
-          "icon": "/i/021000/021293.png",
-          "category": 48
-        },
-        {
           "recipeId": 862,
           "itemId": 2857,
           "rlvl": 45,
@@ -16776,46 +16811,11 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 837,
-          "itemId": 5181,
-          "rlvl": 41,
-          "icon": "/i/021000/021284.png",
-          "category": 48
-        },
-        {
           "recipeId": 1460,
           "itemId": 1732,
           "rlvl": 45,
           "icon": "/i/031000/031060.png",
           "category": 1
-        },
-        {
-          "recipeId": 838,
-          "itemId": 2125,
-          "rlvl": 41,
-          "icon": "/i/033000/033003.png",
-          "category": 7
-        },
-        {
-          "recipeId": 2410,
-          "itemId": 10527,
-          "rlvl": 41,
-          "icon": "/i/034000/034830.png",
-          "category": 89
-        },
-        {
-          "recipeId": 839,
-          "itemId": 4245,
-          "rlvl": 41,
-          "icon": "/i/048000/048528.png",
-          "category": 41
-        },
-        {
-          "recipeId": 1451,
-          "itemId": 4247,
-          "rlvl": 41,
-          "icon": "/i/048000/048505.png",
-          "category": 41
         }
       ]
     },
@@ -16845,6 +16845,62 @@ export const craftingLogPages = [
           "rlvl": 47,
           "icon": "/i/035000/035504.png",
           "category": 22
+        },
+        {
+          "recipeId": 873,
+          "itemId": 4367,
+          "rlvl": 47,
+          "icon": "/i/048000/048325.png",
+          "category": 40
+        },
+        {
+          "recipeId": 875,
+          "itemId": 4373,
+          "rlvl": 47,
+          "icon": "/i/048000/048326.png",
+          "category": 40
+        },
+        {
+          "recipeId": 877,
+          "itemId": 4375,
+          "rlvl": 47,
+          "icon": "/i/048000/048322.png",
+          "category": 40
+        },
+        {
+          "recipeId": 871,
+          "itemId": 4162,
+          "rlvl": 47,
+          "icon": "/i/048000/048826.png",
+          "category": 42
+        },
+        {
+          "recipeId": 874,
+          "itemId": 4158,
+          "rlvl": 47,
+          "icon": "/i/048000/048827.png",
+          "category": 42
+        },
+        {
+          "recipeId": 876,
+          "itemId": 4164,
+          "rlvl": 47,
+          "icon": "/i/048000/048828.png",
+          "category": 42
+        },
+        {
+          "recipeId": 878,
+          "itemId": 4166,
+          "rlvl": 47,
+          "icon": "/i/048000/048824.png",
+          "category": 42
+        },
+        {
+          "recipeId": 879,
+          "itemId": 4508,
+          "rlvl": 47,
+          "icon": "/i/048000/048024.png",
+          "category": 43
         },
         {
           "recipeId": 1462,
@@ -16917,13 +16973,6 @@ export const craftingLogPages = [
           "category": 33
         },
         {
-          "recipeId": 873,
-          "itemId": 4367,
-          "rlvl": 47,
-          "icon": "/i/048000/048325.png",
-          "category": 40
-        },
-        {
           "recipeId": 1466,
           "itemId": 2097,
           "rlvl": 49,
@@ -16992,13 +17041,6 @@ export const craftingLogPages = [
           "rlvl": 49,
           "icon": "/i/048000/048021.png",
           "category": 43
-        },
-        {
-          "recipeId": 875,
-          "itemId": 4373,
-          "rlvl": 47,
-          "icon": "/i/048000/048326.png",
-          "category": 40
         },
         {
           "recipeId": 893,
@@ -17071,13 +17113,6 @@ export const craftingLogPages = [
           "category": 81
         },
         {
-          "recipeId": 877,
-          "itemId": 4375,
-          "rlvl": 47,
-          "icon": "/i/048000/048322.png",
-          "category": 40
-        },
-        {
           "recipeId": 1470,
           "itemId": 5204,
           "rlvl": 55,
@@ -17146,13 +17181,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/032000/032846.png",
           "category": 6
-        },
-        {
-          "recipeId": 871,
-          "itemId": 4162,
-          "rlvl": 47,
-          "icon": "/i/048000/048826.png",
-          "category": 42
         },
         {
           "recipeId": 1476,
@@ -17225,13 +17253,6 @@ export const craftingLogPages = [
           "category": 89
         },
         {
-          "recipeId": 874,
-          "itemId": 4158,
-          "rlvl": 47,
-          "icon": "/i/048000/048827.png",
-          "category": 42
-        },
-        {
           "recipeId": 1492,
           "itemId": 2932,
           "rlvl": 70,
@@ -17302,13 +17323,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 876,
-          "itemId": 4164,
-          "rlvl": 47,
-          "icon": "/i/048000/048828.png",
-          "category": 42
-        },
-        {
           "recipeId": 1486,
           "itemId": 4182,
           "rlvl": 70,
@@ -17334,20 +17348,6 @@ export const craftingLogPages = [
           "itemId": 4528,
           "rlvl": 70,
           "icon": "/i/048000/048094.png",
-          "category": 43
-        },
-        {
-          "recipeId": 878,
-          "itemId": 4166,
-          "rlvl": 47,
-          "icon": "/i/048000/048824.png",
-          "category": 42
-        },
-        {
-          "recipeId": 879,
-          "itemId": 4508,
-          "rlvl": 47,
-          "icon": "/i/048000/048024.png",
           "category": 43
         }
       ]
@@ -17378,6 +17378,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/020000/020823.png",
           "category": 49
+        },
+        {
+          "recipeId": 3651,
+          "itemId": 20389,
+          "rlvl": 115,
+          "icon": "/i/038000/038847.png",
+          "category": 97
+        },
+        {
+          "recipeId": 2440,
+          "itemId": 10982,
+          "rlvl": 115,
+          "icon": "/i/048000/048173.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2458,
+          "itemId": 11006,
+          "rlvl": 115,
+          "icon": "/i/048000/048173.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2476,
+          "itemId": 11030,
+          "rlvl": 115,
+          "icon": "/i/048000/048173.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2512,
+          "itemId": 11078,
+          "rlvl": 115,
+          "icon": "/i/048000/048173.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2494,
+          "itemId": 11054,
+          "rlvl": 115,
+          "icon": "/i/048000/048173.png",
+          "category": 43
+        },
+        {
+          "recipeId": 2532,
+          "itemId": 12542,
+          "rlvl": 120,
+          "icon": "/i/021000/021326.png",
+          "category": 48
+        },
+        {
+          "recipeId": 2414,
+          "itemId": 10640,
+          "rlvl": 120,
+          "icon": "/i/033000/033033.png",
+          "category": 7
         },
         {
           "recipeId": 2419,
@@ -17450,13 +17506,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 3651,
-          "itemId": 20389,
-          "rlvl": 115,
-          "icon": "/i/038000/038847.png",
-          "category": 97
-        },
-        {
           "recipeId": 2448,
           "itemId": 10994,
           "rlvl": 120,
@@ -17525,13 +17574,6 @@ export const craftingLogPages = [
           "rlvl": 125,
           "icon": "/i/048000/048637.png",
           "category": 41
-        },
-        {
-          "recipeId": 2440,
-          "itemId": 10982,
-          "rlvl": 115,
-          "icon": "/i/048000/048173.png",
-          "category": 43
         },
         {
           "recipeId": 2508,
@@ -17604,13 +17646,6 @@ export const craftingLogPages = [
           "category": 48
         },
         {
-          "recipeId": 2458,
-          "itemId": 11006,
-          "rlvl": 115,
-          "icon": "/i/048000/048173.png",
-          "category": 43
-        },
-        {
           "recipeId": 2415,
           "itemId": 10641,
           "rlvl": 130,
@@ -17678,13 +17713,6 @@ export const craftingLogPages = [
           "itemId": 11031,
           "rlvl": 130,
           "icon": "/i/048000/048181.png",
-          "category": 43
-        },
-        {
-          "recipeId": 2476,
-          "itemId": 11030,
-          "rlvl": 115,
-          "icon": "/i/048000/048173.png",
           "category": 43
         },
         {
@@ -17758,13 +17786,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 2512,
-          "itemId": 11078,
-          "rlvl": 115,
-          "icon": "/i/048000/048173.png",
-          "category": 43
-        },
-        {
           "recipeId": 2460,
           "itemId": 11008,
           "rlvl": 133,
@@ -17835,13 +17856,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 2494,
-          "itemId": 11054,
-          "rlvl": 115,
-          "icon": "/i/048000/048173.png",
-          "category": 43
-        },
-        {
           "recipeId": 2509,
           "itemId": 11074,
           "rlvl": 136,
@@ -17889,20 +17903,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/048000/048924.png",
           "category": 42
-        },
-        {
-          "recipeId": 2532,
-          "itemId": 12542,
-          "rlvl": 120,
-          "icon": "/i/021000/021326.png",
-          "category": 48
-        },
-        {
-          "recipeId": 2414,
-          "itemId": 10640,
-          "rlvl": 120,
-          "icon": "/i/033000/033033.png",
-          "category": 7
         }
       ]
     },
@@ -17932,6 +17932,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/021000/021470.png",
           "category": 48
+        },
+        {
+          "recipeId": 2529,
+          "itemId": 12521,
+          "rlvl": 139,
+          "icon": "/i/020000/020826.png",
+          "category": 49
+        },
+        {
+          "recipeId": 3657,
+          "itemId": 20395,
+          "rlvl": 139,
+          "icon": "/i/038000/038853.png",
+          "category": 97
+        },
+        {
+          "recipeId": 2519,
+          "itemId": 11893,
+          "rlvl": 139,
+          "icon": "/i/035000/035518.png",
+          "category": 22
+        },
+        {
+          "recipeId": 2523,
+          "itemId": 12018,
+          "rlvl": 139,
+          "icon": "/i/048000/048625.png",
+          "category": 41
+        },
+        {
+          "recipeId": 2433,
+          "itemId": 10973,
+          "rlvl": 139,
+          "icon": "/i/048000/048932.png",
+          "category": 42
+        },
+        {
+          "recipeId": 2451,
+          "itemId": 10997,
+          "rlvl": 139,
+          "icon": "/i/048000/048932.png",
+          "category": 42
+        },
+        {
+          "recipeId": 2469,
+          "itemId": 11021,
+          "rlvl": 139,
+          "icon": "/i/048000/048932.png",
+          "category": 42
+        },
+        {
+          "recipeId": 2505,
+          "itemId": 11069,
+          "rlvl": 139,
+          "icon": "/i/048000/048932.png",
+          "category": 42
         },
         {
           "recipeId": 2487,
@@ -18004,13 +18060,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 2529,
-          "itemId": 12521,
-          "rlvl": 139,
-          "icon": "/i/020000/020826.png",
-          "category": 49
-        },
-        {
           "recipeId": 2456,
           "itemId": 11003,
           "rlvl": 142,
@@ -18079,13 +18128,6 @@ export const craftingLogPages = [
           "rlvl": 142,
           "icon": "/i/048000/048428.png",
           "category": 40
-        },
-        {
-          "recipeId": 3657,
-          "itemId": 20395,
-          "rlvl": 139,
-          "icon": "/i/038000/038853.png",
-          "category": 97
         },
         {
           "recipeId": 2530,
@@ -18158,13 +18200,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 2519,
-          "itemId": 11893,
-          "rlvl": 139,
-          "icon": "/i/035000/035518.png",
-          "category": 22
-        },
-        {
           "recipeId": 2506,
           "itemId": 11070,
           "rlvl": 145,
@@ -18235,13 +18270,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 2523,
-          "itemId": 12018,
-          "rlvl": 139,
-          "icon": "/i/048000/048625.png",
-          "category": 41
-        },
-        {
           "recipeId": 2501,
           "itemId": 11064,
           "rlvl": 148,
@@ -18303,34 +18331,6 @@ export const craftingLogPages = [
           "rlvl": 150,
           "icon": "/i/027000/027070.png",
           "category": 33
-        },
-        {
-          "recipeId": 2433,
-          "itemId": 10973,
-          "rlvl": 139,
-          "icon": "/i/048000/048932.png",
-          "category": 42
-        },
-        {
-          "recipeId": 2451,
-          "itemId": 10997,
-          "rlvl": 139,
-          "icon": "/i/048000/048932.png",
-          "category": 42
-        },
-        {
-          "recipeId": 2469,
-          "itemId": 11021,
-          "rlvl": 139,
-          "icon": "/i/048000/048932.png",
-          "category": 42
-        },
-        {
-          "recipeId": 2505,
-          "itemId": 11069,
-          "rlvl": 139,
-          "icon": "/i/048000/048932.png",
-          "category": 42
         }
       ]
     },
@@ -18360,6 +18360,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/020000/020817.png",
           "category": 49
+        },
+        {
+          "recipeId": 3010,
+          "itemId": 18087,
+          "rlvl": 255,
+          "icon": "/i/044000/044995.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3004,
+          "itemId": 18081,
+          "rlvl": 255,
+          "icon": "/i/044000/044996.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3024,
+          "itemId": 18101,
+          "rlvl": 255,
+          "icon": "/i/048000/048812.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3025,
+          "itemId": 18102,
+          "rlvl": 255,
+          "icon": "/i/048000/048812.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3026,
+          "itemId": 18103,
+          "rlvl": 255,
+          "icon": "/i/048000/048812.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3028,
+          "itemId": 18105,
+          "rlvl": 255,
+          "icon": "/i/048000/048812.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3027,
+          "itemId": 18104,
+          "rlvl": 255,
+          "icon": "/i/048000/048812.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3029,
+          "itemId": 18106,
+          "rlvl": 255,
+          "icon": "/i/048000/048010.png",
+          "category": 43
         },
         {
           "recipeId": 3030,
@@ -18432,13 +18488,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 3010,
-          "itemId": 18087,
-          "rlvl": 255,
-          "icon": "/i/044000/044995.png",
-          "category": 37
-        },
-        {
           "recipeId": 2996,
           "itemId": 18073,
           "rlvl": 260,
@@ -18507,13 +18556,6 @@ export const craftingLogPages = [
           "rlvl": 260,
           "icon": "/i/048000/048312.png",
           "category": 40
-        },
-        {
-          "recipeId": 3004,
-          "itemId": 18081,
-          "rlvl": 255,
-          "icon": "/i/044000/044996.png",
-          "category": 37
         },
         {
           "recipeId": 3022,
@@ -18586,13 +18628,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 3024,
-          "itemId": 18101,
-          "rlvl": 255,
-          "icon": "/i/048000/048812.png",
-          "category": 42
-        },
-        {
           "recipeId": 3109,
           "itemId": 18264,
           "rlvl": 265,
@@ -18663,13 +18698,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 3025,
-          "itemId": 18102,
-          "rlvl": 255,
-          "icon": "/i/048000/048812.png",
-          "category": 42
-        },
-        {
           "recipeId": 3096,
           "itemId": 18251,
           "rlvl": 270,
@@ -18737,13 +18765,6 @@ export const craftingLogPages = [
           "itemId": 18413,
           "rlvl": 273,
           "icon": "/i/048000/048974.png",
-          "category": 42
-        },
-        {
-          "recipeId": 3026,
-          "itemId": 18103,
-          "rlvl": 255,
-          "icon": "/i/048000/048812.png",
           "category": 42
         },
         {
@@ -18817,13 +18838,6 @@ export const craftingLogPages = [
           "category": 7
         },
         {
-          "recipeId": 3028,
-          "itemId": 18105,
-          "rlvl": 255,
-          "icon": "/i/048000/048812.png",
-          "category": 42
-        },
-        {
           "recipeId": 3126,
           "itemId": 18359,
           "rlvl": 276,
@@ -18894,13 +18908,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 3027,
-          "itemId": 18104,
-          "rlvl": 255,
-          "icon": "/i/048000/048812.png",
-          "category": 42
-        },
-        {
           "recipeId": 3173,
           "itemId": 18406,
           "rlvl": 276,
@@ -18941,13 +18948,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/048000/048471.png",
           "category": 40
-        },
-        {
-          "recipeId": 3029,
-          "itemId": 18106,
-          "rlvl": 255,
-          "icon": "/i/048000/048010.png",
-          "category": 43
         }
       ]
     },
@@ -18977,6 +18977,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/020000/020835.png",
           "category": 49
+        },
+        {
+          "recipeId": 3420,
+          "itemId": 19553,
+          "rlvl": 279,
+          "icon": "/i/035000/035522.png",
+          "category": 22
+        },
+        {
+          "recipeId": 3258,
+          "itemId": 18569,
+          "rlvl": 279,
+          "icon": "/i/048000/048976.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3259,
+          "itemId": 18570,
+          "rlvl": 279,
+          "icon": "/i/048000/048976.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3260,
+          "itemId": 18571,
+          "rlvl": 279,
+          "icon": "/i/048000/048976.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3262,
+          "itemId": 18573,
+          "rlvl": 279,
+          "icon": "/i/048000/048976.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3261,
+          "itemId": 18572,
+          "rlvl": 279,
+          "icon": "/i/048000/048976.png",
+          "category": 42
+        },
+        {
+          "recipeId": 3263,
+          "itemId": 18574,
+          "rlvl": 279,
+          "icon": "/i/048000/048225.png",
+          "category": 43
+        },
+        {
+          "recipeId": 3264,
+          "itemId": 18575,
+          "rlvl": 279,
+          "icon": "/i/048000/048225.png",
+          "category": 43
         },
         {
           "recipeId": 3265,
@@ -19049,13 +19105,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 3420,
-          "itemId": 19553,
-          "rlvl": 279,
-          "icon": "/i/035000/035522.png",
-          "category": 22
-        },
-        {
           "recipeId": 3251,
           "itemId": 18562,
           "rlvl": 282,
@@ -19126,13 +19175,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 3258,
-          "itemId": 18569,
-          "rlvl": 279,
-          "icon": "/i/048000/048976.png",
-          "category": 42
-        },
-        {
           "recipeId": 3328,
           "itemId": 18717,
           "rlvl": 285,
@@ -19200,13 +19242,6 @@ export const craftingLogPages = [
           "itemId": 18726,
           "rlvl": 285,
           "icon": "/i/048000/048990.png",
-          "category": 42
-        },
-        {
-          "recipeId": 3259,
-          "itemId": 18570,
-          "rlvl": 279,
-          "icon": "/i/048000/048976.png",
           "category": 42
         },
         {
@@ -19280,13 +19315,6 @@ export const craftingLogPages = [
           "category": 97
         },
         {
-          "recipeId": 3260,
-          "itemId": 18571,
-          "rlvl": 279,
-          "icon": "/i/048000/048976.png",
-          "category": 42
-        },
-        {
           "recipeId": 3280,
           "itemId": 18669,
           "rlvl": 288,
@@ -19355,13 +19383,6 @@ export const craftingLogPages = [
           "rlvl": 288,
           "icon": "/i/048000/048231.png",
           "category": 43
-        },
-        {
-          "recipeId": 3262,
-          "itemId": 18573,
-          "rlvl": 279,
-          "icon": "/i/048000/048976.png",
-          "category": 42
         },
         {
           "recipeId": 3372,
@@ -19434,13 +19455,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 3261,
-          "itemId": 18572,
-          "rlvl": 279,
-          "icon": "/i/048000/048976.png",
-          "category": 42
-        },
-        {
           "recipeId": 3360,
           "itemId": 18956,
           "rlvl": 290,
@@ -19460,20 +19474,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/048000/048461.png",
           "category": 40
-        },
-        {
-          "recipeId": 3263,
-          "itemId": 18574,
-          "rlvl": 279,
-          "icon": "/i/048000/048225.png",
-          "category": 43
-        },
-        {
-          "recipeId": 3264,
-          "itemId": 18575,
-          "rlvl": 279,
-          "icon": "/i/048000/048225.png",
-          "category": 43
         }
       ]
     },
@@ -19503,48 +19503,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
-        },
-        {
-          "recipeId": 30292,
-          "itemId": 5069,
-          "rlvl": 90,
-          "icon": "/i/020000/020809.png",
-          "category": 49
-        },
-        {
-          "recipeId": 30827,
-          "itemId": 9359,
-          "rlvl": 90,
-          "icon": "/i/020000/020817.png",
-          "category": 49
-        },
-        {
-          "recipeId": 30917,
-          "itemId": 9510,
-          "rlvl": 90,
-          "icon": "/i/048000/048007.png",
-          "category": 61
-        },
-        {
-          "recipeId": 30265,
-          "itemId": 7504,
-          "rlvl": 90,
-          "icon": "/i/041000/041349.png",
-          "category": 34
-        },
-        {
-          "recipeId": 31855,
-          "itemId": 15159,
-          "rlvl": 90,
-          "icon": "/i/053000/053126.png",
-          "category": 76
-        },
-        {
-          "recipeId": 31092,
-          "itemId": 12912,
-          "rlvl": 133,
-          "icon": "/i/021000/021286.png",
-          "category": 48
         },
         {
           "recipeId": 30928,
@@ -19601,6 +19559,48 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/021000/021289.png",
           "category": 48
+        },
+        {
+          "recipeId": 30292,
+          "itemId": 5069,
+          "rlvl": 90,
+          "icon": "/i/020000/020809.png",
+          "category": 49
+        },
+        {
+          "recipeId": 30827,
+          "itemId": 9359,
+          "rlvl": 90,
+          "icon": "/i/020000/020817.png",
+          "category": 49
+        },
+        {
+          "recipeId": 30917,
+          "itemId": 9510,
+          "rlvl": 90,
+          "icon": "/i/048000/048007.png",
+          "category": 61
+        },
+        {
+          "recipeId": 30265,
+          "itemId": 7504,
+          "rlvl": 90,
+          "icon": "/i/041000/041349.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31855,
+          "itemId": 15159,
+          "rlvl": 90,
+          "icon": "/i/053000/053126.png",
+          "category": 76
+        },
+        {
+          "recipeId": 31092,
+          "itemId": 12912,
+          "rlvl": 133,
+          "icon": "/i/021000/021286.png",
+          "category": 48
         }
       ]
     },
@@ -19630,6 +19630,62 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/020000/020810.png",
           "category": 49
+        },
+        {
+          "recipeId": 31925,
+          "itemId": 15565,
+          "rlvl": 110,
+          "icon": "/i/032000/032859.png",
+          "category": 7
+        },
+        {
+          "recipeId": 32319,
+          "itemId": 20379,
+          "rlvl": 110,
+          "icon": "/i/038000/038812.png",
+          "category": 97
+        },
+        {
+          "recipeId": 31928,
+          "itemId": 15568,
+          "rlvl": 110,
+          "icon": "/i/034000/034818.png",
+          "category": 89
+        },
+        {
+          "recipeId": 31057,
+          "itemId": 10536,
+          "rlvl": 110,
+          "icon": "/i/034000/034802.png",
+          "category": 89
+        },
+        {
+          "recipeId": 30898,
+          "itemId": 9072,
+          "rlvl": 110,
+          "icon": "/i/041000/041094.png",
+          "category": 34
+        },
+        {
+          "recipeId": 30892,
+          "itemId": 9062,
+          "rlvl": 110,
+          "icon": "/i/041000/041095.png",
+          "category": 34
+        },
+        {
+          "recipeId": 30949,
+          "itemId": 9033,
+          "rlvl": 110,
+          "icon": "/i/048000/048612.png",
+          "category": 41
+        },
+        {
+          "recipeId": 30953,
+          "itemId": 9049,
+          "rlvl": 110,
+          "icon": "/i/048000/048614.png",
+          "category": 41
         },
         {
           "recipeId": 30957,
@@ -19702,13 +19758,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 31925,
-          "itemId": 15565,
-          "rlvl": 110,
-          "icon": "/i/032000/032859.png",
-          "category": 7
-        },
-        {
           "recipeId": 30956,
           "itemId": 9058,
           "rlvl": 110,
@@ -19763,55 +19812,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/048000/048157.png",
           "category": 43
-        },
-        {
-          "recipeId": 32319,
-          "itemId": 20379,
-          "rlvl": 110,
-          "icon": "/i/038000/038812.png",
-          "category": 97
-        },
-        {
-          "recipeId": 31928,
-          "itemId": 15568,
-          "rlvl": 110,
-          "icon": "/i/034000/034818.png",
-          "category": 89
-        },
-        {
-          "recipeId": 31057,
-          "itemId": 10536,
-          "rlvl": 110,
-          "icon": "/i/034000/034802.png",
-          "category": 89
-        },
-        {
-          "recipeId": 30898,
-          "itemId": 9072,
-          "rlvl": 110,
-          "icon": "/i/041000/041094.png",
-          "category": 34
-        },
-        {
-          "recipeId": 30892,
-          "itemId": 9062,
-          "rlvl": 110,
-          "icon": "/i/041000/041095.png",
-          "category": 34
-        },
-        {
-          "recipeId": 30949,
-          "itemId": 9033,
-          "rlvl": 110,
-          "icon": "/i/048000/048612.png",
-          "category": 41
-        },
-        {
-          "recipeId": 30953,
-          "itemId": 9049,
-          "rlvl": 110,
-          "icon": "/i/048000/048614.png",
-          "category": 41
         }
       ]
     },
@@ -19841,6 +19841,62 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/048000/048427.png",
           "category": 40
+        },
+        {
+          "recipeId": 31072,
+          "itemId": 11017,
+          "rlvl": 148,
+          "icon": "/i/048000/048427.png",
+          "category": 40
+        },
+        {
+          "recipeId": 31080,
+          "itemId": 11065,
+          "rlvl": 148,
+          "icon": "/i/048000/048427.png",
+          "category": 40
+        },
+        {
+          "recipeId": 31076,
+          "itemId": 11041,
+          "rlvl": 148,
+          "icon": "/i/048000/048427.png",
+          "category": 40
+        },
+        {
+          "recipeId": 31059,
+          "itemId": 10645,
+          "rlvl": 150,
+          "icon": "/i/033000/033039.png",
+          "category": 7
+        },
+        {
+          "recipeId": 31060,
+          "itemId": 10663,
+          "rlvl": 150,
+          "icon": "/i/034000/034855.png",
+          "category": 89
+        },
+        {
+          "recipeId": 31084,
+          "itemId": 11894,
+          "rlvl": 150,
+          "icon": "/i/035000/035517.png",
+          "category": 22
+        },
+        {
+          "recipeId": 31061,
+          "itemId": 10885,
+          "rlvl": 150,
+          "icon": "/i/041000/041125.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31066,
+          "itemId": 10981,
+          "rlvl": 150,
+          "icon": "/i/048000/048639.png",
+          "category": 41
         },
         {
           "recipeId": 31070,
@@ -19913,13 +19969,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 31072,
-          "itemId": 11017,
-          "rlvl": 148,
-          "icon": "/i/048000/048427.png",
-          "category": 40
-        },
-        {
           "recipeId": 31071,
           "itemId": 11011,
           "rlvl": 150,
@@ -19988,13 +20037,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/020000/020828.png",
           "category": 49
-        },
-        {
-          "recipeId": 31080,
-          "itemId": 11065,
-          "rlvl": 148,
-          "icon": "/i/048000/048427.png",
-          "category": 40
         },
         {
           "recipeId": 32126,
@@ -20067,13 +20109,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 31076,
-          "itemId": 11041,
-          "rlvl": 148,
-          "icon": "/i/048000/048427.png",
-          "category": 40
-        },
-        {
           "recipeId": 31327,
           "itemId": 13670,
           "rlvl": 180,
@@ -20114,41 +20149,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/051000/051128.png",
           "category": 75
-        },
-        {
-          "recipeId": 31059,
-          "itemId": 10645,
-          "rlvl": 150,
-          "icon": "/i/033000/033039.png",
-          "category": 7
-        },
-        {
-          "recipeId": 31060,
-          "itemId": 10663,
-          "rlvl": 150,
-          "icon": "/i/034000/034855.png",
-          "category": 89
-        },
-        {
-          "recipeId": 31084,
-          "itemId": 11894,
-          "rlvl": 150,
-          "icon": "/i/035000/035517.png",
-          "category": 22
-        },
-        {
-          "recipeId": 31061,
-          "itemId": 10885,
-          "rlvl": 150,
-          "icon": "/i/041000/041125.png",
-          "category": 34
-        },
-        {
-          "recipeId": 31066,
-          "itemId": 10981,
-          "rlvl": 150,
-          "icon": "/i/048000/048639.png",
-          "category": 41
         }
       ]
     },
@@ -20178,6 +20178,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/033000/033040.png",
           "category": 7
+        },
+        {
+          "recipeId": 32094,
+          "itemId": 15593,
+          "rlvl": 180,
+          "icon": "/i/033000/033044.png",
+          "category": 7
+        },
+        {
+          "recipeId": 32321,
+          "itemId": 20429,
+          "rlvl": 180,
+          "icon": "/i/038000/038830.png",
+          "category": 97
+        },
+        {
+          "recipeId": 32323,
+          "itemId": 20433,
+          "rlvl": 180,
+          "icon": "/i/038000/038829.png",
+          "category": 97
+        },
+        {
+          "recipeId": 31942,
+          "itemId": 15582,
+          "rlvl": 180,
+          "icon": "/i/034000/034805.png",
+          "category": 89
+        },
+        {
+          "recipeId": 32097,
+          "itemId": 15596,
+          "rlvl": 180,
+          "icon": "/i/034000/034824.png",
+          "category": 89
+        },
+        {
+          "recipeId": 32306,
+          "itemId": 17954,
+          "rlvl": 180,
+          "icon": "/i/052000/052845.png",
+          "category": 78
+        },
+        {
+          "recipeId": 31405,
+          "itemId": 13829,
+          "rlvl": 180,
+          "icon": "/i/040000/040114.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31400,
+          "itemId": 13824,
+          "rlvl": 180,
+          "icon": "/i/040000/040116.png",
+          "category": 34
         },
         {
           "recipeId": 31424,
@@ -20250,13 +20306,6 @@ export const craftingLogPages = [
           "category": 49
         },
         {
-          "recipeId": 32094,
-          "itemId": 15593,
-          "rlvl": 180,
-          "icon": "/i/033000/033044.png",
-          "category": 7
-        },
-        {
           "recipeId": 33185,
           "itemId": 24327,
           "rlvl": 210,
@@ -20327,13 +20376,6 @@ export const craftingLogPages = [
           "category": 9
         },
         {
-          "recipeId": 32321,
-          "itemId": 20429,
-          "rlvl": 180,
-          "icon": "/i/038000/038830.png",
-          "category": 97
-        },
-        {
           "recipeId": 32111,
           "itemId": 15610,
           "rlvl": 210,
@@ -20401,13 +20443,6 @@ export const craftingLogPages = [
           "itemId": 25036,
           "rlvl": 210,
           "icon": "/i/038000/038805.png",
-          "category": 97
-        },
-        {
-          "recipeId": 32323,
-          "itemId": 20433,
-          "rlvl": 180,
-          "icon": "/i/038000/038829.png",
           "category": 97
         },
         {
@@ -20481,13 +20516,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 31942,
-          "itemId": 15582,
-          "rlvl": 180,
-          "icon": "/i/034000/034805.png",
-          "category": 89
-        },
-        {
           "recipeId": 31353,
           "itemId": 13308,
           "rlvl": 210,
@@ -20558,13 +20586,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 32097,
-          "itemId": 15596,
-          "rlvl": 180,
-          "icon": "/i/034000/034824.png",
-          "category": 89
-        },
-        {
           "recipeId": 31893,
           "itemId": 15533,
           "rlvl": 220,
@@ -20632,13 +20653,6 @@ export const craftingLogPages = [
           "itemId": 15964,
           "rlvl": 250,
           "icon": "/i/052000/052813.png",
-          "category": 78
-        },
-        {
-          "recipeId": 32306,
-          "itemId": 17954,
-          "rlvl": 180,
-          "icon": "/i/052000/052845.png",
           "category": 78
         },
         {
@@ -20712,13 +20726,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 31405,
-          "itemId": 13829,
-          "rlvl": 180,
-          "icon": "/i/040000/040114.png",
-          "category": 34
-        },
-        {
           "recipeId": 32031,
           "itemId": 16698,
           "rlvl": 250,
@@ -20766,13 +20773,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/052000/052848.png",
           "category": 78
-        },
-        {
-          "recipeId": 31400,
-          "itemId": 13824,
-          "rlvl": 180,
-          "icon": "/i/040000/040116.png",
-          "category": 34
         }
       ]
     },
@@ -20802,6 +20802,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/020000/020812.png",
           "category": 49
+        },
+        {
+          "recipeId": 32348,
+          "itemId": 18978,
+          "rlvl": 320,
+          "icon": "/i/033000/033083.png",
+          "category": 7
+        },
+        {
+          "recipeId": 32353,
+          "itemId": 18983,
+          "rlvl": 320,
+          "icon": "/i/038000/038815.png",
+          "category": 97
+        },
+        {
+          "recipeId": 32351,
+          "itemId": 18981,
+          "rlvl": 320,
+          "icon": "/i/034000/034891.png",
+          "category": 89
+        },
+        {
+          "recipeId": 32441,
+          "itemId": 19606,
+          "rlvl": 320,
+          "icon": "/i/035000/035525.png",
+          "category": 22
+        },
+        {
+          "recipeId": 32361,
+          "itemId": 18991,
+          "rlvl": 320,
+          "icon": "/i/040000/040475.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32367,
+          "itemId": 18997,
+          "rlvl": 320,
+          "icon": "/i/040000/040476.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32379,
+          "itemId": 19009,
+          "rlvl": 320,
+          "icon": "/i/040000/040477.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32397,
+          "itemId": 19027,
+          "rlvl": 320,
+          "icon": "/i/048000/048707.png",
+          "category": 41
         },
         {
           "recipeId": 32398,
@@ -20865,62 +20921,6 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/048000/048230.png",
           "category": 43
-        },
-        {
-          "recipeId": 32348,
-          "itemId": 18978,
-          "rlvl": 320,
-          "icon": "/i/033000/033083.png",
-          "category": 7
-        },
-        {
-          "recipeId": 32353,
-          "itemId": 18983,
-          "rlvl": 320,
-          "icon": "/i/038000/038815.png",
-          "category": 97
-        },
-        {
-          "recipeId": 32351,
-          "itemId": 18981,
-          "rlvl": 320,
-          "icon": "/i/034000/034891.png",
-          "category": 89
-        },
-        {
-          "recipeId": 32441,
-          "itemId": 19606,
-          "rlvl": 320,
-          "icon": "/i/035000/035525.png",
-          "category": 22
-        },
-        {
-          "recipeId": 32361,
-          "itemId": 18991,
-          "rlvl": 320,
-          "icon": "/i/040000/040475.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32367,
-          "itemId": 18997,
-          "rlvl": 320,
-          "icon": "/i/040000/040476.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32379,
-          "itemId": 19009,
-          "rlvl": 320,
-          "icon": "/i/040000/040477.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32397,
-          "itemId": 19027,
-          "rlvl": 320,
-          "icon": "/i/048000/048707.png",
-          "category": 41
         }
       ]
     },
@@ -20950,6 +20950,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/051000/051133.png",
           "category": 75
+        },
+        {
+          "recipeId": 33005,
+          "itemId": 22582,
+          "rlvl": 320,
+          "icon": "/i/053000/053161.png",
+          "category": 76
+        },
+        {
+          "recipeId": 32668,
+          "itemId": 21833,
+          "rlvl": 320,
+          "icon": "/i/052000/052629.png",
+          "category": 57
+        },
+        {
+          "recipeId": 32673,
+          "itemId": 21843,
+          "rlvl": 320,
+          "icon": "/i/052000/052892.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32661,
+          "itemId": 21813,
+          "rlvl": 320,
+          "icon": "/i/052000/052904.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32982,
+          "itemId": 22537,
+          "rlvl": 320,
+          "icon": "/i/052000/052641.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32679,
+          "itemId": 20746,
+          "rlvl": 320,
+          "icon": "/i/052000/052875.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32670,
+          "itemId": 21836,
+          "rlvl": 320,
+          "icon": "/i/052000/052367.png",
+          "category": 79
+        },
+        {
+          "recipeId": 32986,
+          "itemId": 22541,
+          "rlvl": 320,
+          "icon": "/i/052000/052379.png",
+          "category": 79
         },
         {
           "recipeId": 32662,
@@ -21022,13 +21078,6 @@ export const craftingLogPages = [
           "category": 41
         },
         {
-          "recipeId": 33005,
-          "itemId": 22582,
-          "rlvl": 320,
-          "icon": "/i/053000/053161.png",
-          "category": 76
-        },
-        {
           "recipeId": 32614,
           "itemId": 21754,
           "rlvl": 350,
@@ -21097,13 +21146,6 @@ export const craftingLogPages = [
           "rlvl": 350,
           "icon": "/i/048000/048184.png",
           "category": 43
-        },
-        {
-          "recipeId": 32668,
-          "itemId": 21833,
-          "rlvl": 320,
-          "icon": "/i/052000/052629.png",
-          "category": 57
         },
         {
           "recipeId": 32631,
@@ -21176,13 +21218,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 32673,
-          "itemId": 21843,
-          "rlvl": 320,
-          "icon": "/i/052000/052892.png",
-          "category": 78
-        },
-        {
           "recipeId": 33119,
           "itemId": 23814,
           "rlvl": 380,
@@ -21253,13 +21288,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 32661,
-          "itemId": 21813,
-          "rlvl": 320,
-          "icon": "/i/052000/052904.png",
-          "category": 78
-        },
-        {
           "recipeId": 33149,
           "itemId": 23844,
           "rlvl": 380,
@@ -21272,34 +21300,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/052000/052977.png",
           "category": 78
-        },
-        {
-          "recipeId": 32982,
-          "itemId": 22537,
-          "rlvl": 320,
-          "icon": "/i/052000/052641.png",
-          "category": 78
-        },
-        {
-          "recipeId": 32679,
-          "itemId": 20746,
-          "rlvl": 320,
-          "icon": "/i/052000/052875.png",
-          "category": 78
-        },
-        {
-          "recipeId": 32670,
-          "itemId": 21836,
-          "rlvl": 320,
-          "icon": "/i/052000/052367.png",
-          "category": 79
-        },
-        {
-          "recipeId": 32986,
-          "itemId": 22541,
-          "rlvl": 320,
-          "icon": "/i/052000/052379.png",
-          "category": 79
         }
       ]
     },
@@ -21329,6 +21329,62 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/048000/048556.png",
           "category": 41
+        },
+        {
+          "recipeId": 30488,
+          "itemId": 8450,
+          "rlvl": 55,
+          "icon": "/i/048000/048565.png",
+          "category": 41
+        },
+        {
+          "recipeId": 30489,
+          "itemId": 8451,
+          "rlvl": 55,
+          "icon": "/i/048000/048307.png",
+          "category": 40
+        },
+        {
+          "recipeId": 30823,
+          "itemId": 8705,
+          "rlvl": 70,
+          "icon": "/i/041000/041358.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32311,
+          "itemId": 20359,
+          "rlvl": 90,
+          "icon": "/i/038000/038811.png",
+          "category": 97
+        },
+        {
+          "recipeId": 32313,
+          "itemId": 20363,
+          "rlvl": 90,
+          "icon": "/i/038000/038802.png",
+          "category": 97
+        },
+        {
+          "recipeId": 32317,
+          "itemId": 20371,
+          "rlvl": 90,
+          "icon": "/i/038000/038819.png",
+          "category": 97
+        },
+        {
+          "recipeId": 30848,
+          "itemId": 9235,
+          "rlvl": 90,
+          "icon": "/i/033000/033846.png",
+          "category": 84
+        },
+        {
+          "recipeId": 30455,
+          "itemId": 8361,
+          "rlvl": 90,
+          "icon": "/i/032000/032821.png",
+          "category": 6
         },
         {
           "recipeId": 31958,
@@ -21398,13 +21454,6 @@ export const craftingLogPages = [
           "itemId": 8282,
           "rlvl": 90,
           "icon": "/i/048000/048601.png",
-          "category": 41
-        },
-        {
-          "recipeId": 30488,
-          "itemId": 8450,
-          "rlvl": 55,
-          "icon": "/i/048000/048565.png",
           "category": 41
         },
         {
@@ -21478,13 +21527,6 @@ export const craftingLogPages = [
           "category": 42
         },
         {
-          "recipeId": 30489,
-          "itemId": 8451,
-          "rlvl": 55,
-          "icon": "/i/048000/048307.png",
-          "category": 40
-        },
-        {
           "recipeId": 30438,
           "itemId": 8293,
           "rlvl": 90,
@@ -21555,53 +21597,11 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 30823,
-          "itemId": 8705,
-          "rlvl": 70,
-          "icon": "/i/041000/041358.png",
-          "category": 34
-        },
-        {
           "recipeId": 30448,
           "itemId": 8303,
           "rlvl": 90,
           "icon": "/i/048000/048148.png",
           "category": 43
-        },
-        {
-          "recipeId": 32311,
-          "itemId": 20359,
-          "rlvl": 90,
-          "icon": "/i/038000/038811.png",
-          "category": 97
-        },
-        {
-          "recipeId": 32313,
-          "itemId": 20363,
-          "rlvl": 90,
-          "icon": "/i/038000/038802.png",
-          "category": 97
-        },
-        {
-          "recipeId": 32317,
-          "itemId": 20371,
-          "rlvl": 90,
-          "icon": "/i/038000/038819.png",
-          "category": 97
-        },
-        {
-          "recipeId": 30848,
-          "itemId": 9235,
-          "rlvl": 90,
-          "icon": "/i/033000/033846.png",
-          "category": 84
-        },
-        {
-          "recipeId": 30455,
-          "itemId": 8361,
-          "rlvl": 90,
-          "icon": "/i/032000/032821.png",
-          "category": 6
         }
       ]
     },
@@ -21631,6 +21631,62 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/050000/050220.png",
           "category": 66
+        },
+        {
+          "recipeId": 1644,
+          "itemId": 6394,
+          "rlvl": 20,
+          "icon": "/i/050000/050227.png",
+          "category": 66
+        },
+        {
+          "recipeId": 1616,
+          "itemId": 6366,
+          "rlvl": 21,
+          "icon": "/i/050000/050426.png",
+          "category": 65
+        },
+        {
+          "recipeId": 1635,
+          "itemId": 6385,
+          "rlvl": 21,
+          "icon": "/i/050000/050224.png",
+          "category": 66
+        },
+        {
+          "recipeId": 1643,
+          "itemId": 6393,
+          "rlvl": 21,
+          "icon": "/i/050000/050226.png",
+          "category": 66
+        },
+        {
+          "recipeId": 1626,
+          "itemId": 6376,
+          "rlvl": 22,
+          "icon": "/i/050000/050221.png",
+          "category": 66
+        },
+        {
+          "recipeId": 1689,
+          "itemId": 6439,
+          "rlvl": 24,
+          "icon": "/i/050000/050003.png",
+          "category": 71
+        },
+        {
+          "recipeId": 2063,
+          "itemId": 8015,
+          "rlvl": 25,
+          "icon": "/i/051000/051016.png",
+          "category": 74
+        },
+        {
+          "recipeId": 1661,
+          "itemId": 6411,
+          "rlvl": 29,
+          "icon": "/i/050000/050102.png",
+          "category": 68
         },
         {
           "recipeId": 1668,
@@ -21703,13 +21759,6 @@ export const craftingLogPages = [
           "category": 73
         },
         {
-          "recipeId": 1644,
-          "itemId": 6394,
-          "rlvl": 20,
-          "icon": "/i/050000/050227.png",
-          "category": 66
-        },
-        {
           "recipeId": 1620,
           "itemId": 6370,
           "rlvl": 35,
@@ -21778,13 +21827,6 @@ export const craftingLogPages = [
           "rlvl": 39,
           "icon": "/i/050000/050212.png",
           "category": 66
-        },
-        {
-          "recipeId": 1616,
-          "itemId": 6366,
-          "rlvl": 21,
-          "icon": "/i/050000/050426.png",
-          "category": 65
         },
         {
           "recipeId": 2193,
@@ -21857,13 +21899,6 @@ export const craftingLogPages = [
           "category": 76
         },
         {
-          "recipeId": 1635,
-          "itemId": 6385,
-          "rlvl": 21,
-          "icon": "/i/050000/050224.png",
-          "category": 66
-        },
-        {
           "recipeId": 1698,
           "itemId": 6448,
           "rlvl": 50,
@@ -21931,13 +21966,6 @@ export const craftingLogPages = [
           "itemId": 6391,
           "rlvl": 55,
           "icon": "/i/050000/050206.png",
-          "category": 66
-        },
-        {
-          "recipeId": 1643,
-          "itemId": 6393,
-          "rlvl": 21,
-          "icon": "/i/050000/050226.png",
           "category": 66
         },
         {
@@ -22011,13 +22039,6 @@ export const craftingLogPages = [
           "category": 76
         },
         {
-          "recipeId": 1626,
-          "itemId": 6376,
-          "rlvl": 22,
-          "icon": "/i/050000/050221.png",
-          "category": 66
-        },
-        {
           "recipeId": 2132,
           "itemId": 8835,
           "rlvl": 90,
@@ -22088,13 +22109,6 @@ export const craftingLogPages = [
           "category": 65
         },
         {
-          "recipeId": 1689,
-          "itemId": 6439,
-          "rlvl": 24,
-          "icon": "/i/050000/050003.png",
-          "category": 71
-        },
-        {
           "recipeId": 3703,
           "itemId": 20705,
           "rlvl": 270,
@@ -22128,20 +22142,6 @@ export const craftingLogPages = [
           "rlvl": 285,
           "icon": "/i/050000/050432.png",
           "category": 65
-        },
-        {
-          "recipeId": 2063,
-          "itemId": 8015,
-          "rlvl": 25,
-          "icon": "/i/051000/051016.png",
-          "category": 74
-        },
-        {
-          "recipeId": 1661,
-          "itemId": 6411,
-          "rlvl": 29,
-          "icon": "/i/050000/050102.png",
-          "category": 68
         }
       ]
     },
@@ -22171,6 +22171,62 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/052000/052442.png",
           "category": 57
+        },
+        {
+          "recipeId": 1863,
+          "itemId": 6638,
+          "rlvl": 24,
+          "icon": "/i/052000/052107.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1812,
+          "itemId": 6586,
+          "rlvl": 27,
+          "icon": "/i/052000/052425.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1875,
+          "itemId": 6650,
+          "rlvl": 27,
+          "icon": "/i/052000/052118.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3538,
+          "itemId": 17955,
+          "rlvl": 29,
+          "icon": "/i/052000/052354.png",
+          "category": 79
+        },
+        {
+          "recipeId": 3801,
+          "itemId": 24514,
+          "rlvl": 30,
+          "icon": "/i/052000/052986.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2106,
+          "itemId": 8790,
+          "rlvl": 32,
+          "icon": "/i/052000/052544.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1868,
+          "itemId": 6643,
+          "rlvl": 35,
+          "icon": "/i/052000/052112.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1873,
+          "itemId": 6648,
+          "rlvl": 35,
+          "icon": "/i/052000/052117.png",
+          "category": 78
         },
         {
           "recipeId": 1799,
@@ -22243,13 +22299,6 @@ export const craftingLogPages = [
           "category": 79
         },
         {
-          "recipeId": 1863,
-          "itemId": 6638,
-          "rlvl": 24,
-          "icon": "/i/052000/052107.png",
-          "category": 78
-        },
-        {
           "recipeId": 1839,
           "itemId": 6614,
           "rlvl": 44,
@@ -22317,13 +22366,6 @@ export const craftingLogPages = [
           "itemId": 6591,
           "rlvl": 50,
           "icon": "/i/052000/052443.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1812,
-          "itemId": 6586,
-          "rlvl": 27,
-          "icon": "/i/052000/052425.png",
           "category": 57
         },
         {
@@ -22397,13 +22439,6 @@ export const craftingLogPages = [
           "category": 79
         },
         {
-          "recipeId": 1875,
-          "itemId": 6650,
-          "rlvl": 27,
-          "icon": "/i/052000/052118.png",
-          "category": 78
-        },
-        {
           "recipeId": 1882,
           "itemId": 6664,
           "rlvl": 70,
@@ -22465,41 +22500,6 @@ export const craftingLogPages = [
           "rlvl": 142,
           "icon": "/i/052000/052971.png",
           "category": 78
-        },
-        {
-          "recipeId": 3538,
-          "itemId": 17955,
-          "rlvl": 29,
-          "icon": "/i/052000/052354.png",
-          "category": 79
-        },
-        {
-          "recipeId": 3801,
-          "itemId": 24514,
-          "rlvl": 30,
-          "icon": "/i/052000/052986.png",
-          "category": 57
-        },
-        {
-          "recipeId": 2106,
-          "itemId": 8790,
-          "rlvl": 32,
-          "icon": "/i/052000/052544.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1868,
-          "itemId": 6643,
-          "rlvl": 35,
-          "icon": "/i/052000/052112.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1873,
-          "itemId": 6648,
-          "rlvl": 35,
-          "icon": "/i/052000/052117.png",
-          "category": 78
         }
       ]
     },
@@ -22528,6 +22528,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30040,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30041,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30047,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30048,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30126,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30127,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30044,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30372,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -22601,13 +22657,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30040,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30376,
           "itemId": 5800,
           "rlvl": 30,
@@ -22641,55 +22690,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
           "category": 55
-        },
-        {
-          "recipeId": 30041,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30047,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30048,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30126,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30127,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30044,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30372,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
         }
       ]
     }
@@ -22721,34 +22721,6 @@ export const craftingLogPages = [
           "rlvl": 1,
           "icon": "/i/040000/040584.png",
           "category": 34
-        },
-        {
-          "recipeId": 310,
-          "itemId": 3761,
-          "rlvl": 4,
-          "icon": "/i/046000/046165.png",
-          "category": 38
-        },
-        {
-          "recipeId": 315,
-          "itemId": 3310,
-          "rlvl": 5,
-          "icon": "/i/045000/045127.png",
-          "category": 36
-        },
-        {
-          "recipeId": 313,
-          "itemId": 3762,
-          "rlvl": 5,
-          "icon": "/i/046000/046126.png",
-          "category": 38
-        },
-        {
-          "recipeId": 314,
-          "itemId": 4304,
-          "rlvl": 5,
-          "icon": "/i/048000/048336.png",
-          "category": 40
         },
         {
           "recipeId": 305,
@@ -22805,6 +22777,34 @@ export const craftingLogPages = [
           "rlvl": 4,
           "icon": "/i/047000/047223.png",
           "category": 39
+        },
+        {
+          "recipeId": 310,
+          "itemId": 3761,
+          "rlvl": 4,
+          "icon": "/i/046000/046165.png",
+          "category": 38
+        },
+        {
+          "recipeId": 315,
+          "itemId": 3310,
+          "rlvl": 5,
+          "icon": "/i/045000/045127.png",
+          "category": 36
+        },
+        {
+          "recipeId": 313,
+          "itemId": 3762,
+          "rlvl": 5,
+          "icon": "/i/046000/046126.png",
+          "category": 38
+        },
+        {
+          "recipeId": 314,
+          "itemId": 4304,
+          "rlvl": 5,
+          "icon": "/i/048000/048336.png",
+          "category": 40
         }
       ]
     },
@@ -22834,48 +22834,6 @@ export const craftingLogPages = [
           "rlvl": 6,
           "icon": "/i/044000/044825.png",
           "category": 37
-        },
-        {
-          "recipeId": 327,
-          "itemId": 3536,
-          "rlvl": 9,
-          "icon": "/i/044000/044071.png",
-          "category": 37
-        },
-        {
-          "recipeId": 326,
-          "itemId": 3768,
-          "rlvl": 9,
-          "icon": "/i/046000/046128.png",
-          "category": 38
-        },
-        {
-          "recipeId": 328,
-          "itemId": 3769,
-          "rlvl": 9,
-          "icon": "/i/046000/046109.png",
-          "category": 38
-        },
-        {
-          "recipeId": 329,
-          "itemId": 3016,
-          "rlvl": 10,
-          "icon": "/i/043000/043026.png",
-          "category": 35
-        },
-        {
-          "recipeId": 331,
-          "itemId": 3537,
-          "rlvl": 10,
-          "icon": "/i/044000/044804.png",
-          "category": 37
-        },
-        {
-          "recipeId": 330,
-          "itemId": 3966,
-          "rlvl": 10,
-          "icon": "/i/047000/047272.png",
-          "category": 39
         },
         {
           "recipeId": 319,
@@ -22932,6 +22890,48 @@ export const craftingLogPages = [
           "rlvl": 8,
           "icon": "/i/046000/046159.png",
           "category": 38
+        },
+        {
+          "recipeId": 327,
+          "itemId": 3536,
+          "rlvl": 9,
+          "icon": "/i/044000/044071.png",
+          "category": 37
+        },
+        {
+          "recipeId": 326,
+          "itemId": 3768,
+          "rlvl": 9,
+          "icon": "/i/046000/046128.png",
+          "category": 38
+        },
+        {
+          "recipeId": 328,
+          "itemId": 3769,
+          "rlvl": 9,
+          "icon": "/i/046000/046109.png",
+          "category": 38
+        },
+        {
+          "recipeId": 329,
+          "itemId": 3016,
+          "rlvl": 10,
+          "icon": "/i/043000/043026.png",
+          "category": 35
+        },
+        {
+          "recipeId": 331,
+          "itemId": 3537,
+          "rlvl": 10,
+          "icon": "/i/044000/044804.png",
+          "category": 37
+        },
+        {
+          "recipeId": 330,
+          "itemId": 3966,
+          "rlvl": 10,
+          "icon": "/i/047000/047272.png",
+          "category": 39
         }
       ]
     },
@@ -22960,6 +22960,62 @@ export const craftingLogPages = [
           "itemId": 3965,
           "rlvl": 11,
           "icon": "/i/047000/047215.png",
+          "category": 39
+        },
+        {
+          "recipeId": 334,
+          "itemId": 3771,
+          "rlvl": 11,
+          "icon": "/i/046000/046167.png",
+          "category": 38
+        },
+        {
+          "recipeId": 336,
+          "itemId": 3017,
+          "rlvl": 12,
+          "icon": "/i/043000/043134.png",
+          "category": 35
+        },
+        {
+          "recipeId": 337,
+          "itemId": 3968,
+          "rlvl": 12,
+          "icon": "/i/047000/047203.png",
+          "category": 39
+        },
+        {
+          "recipeId": 335,
+          "itemId": 3770,
+          "rlvl": 12,
+          "icon": "/i/046000/046816.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1577,
+          "itemId": 3773,
+          "rlvl": 12,
+          "icon": "/i/046000/046004.png",
+          "category": 38
+        },
+        {
+          "recipeId": 338,
+          "itemId": 2229,
+          "rlvl": 13,
+          "icon": "/i/030000/030007.png",
+          "category": 11
+        },
+        {
+          "recipeId": 340,
+          "itemId": 3541,
+          "rlvl": 13,
+          "icon": "/i/044000/044522.png",
+          "category": 37
+        },
+        {
+          "recipeId": 339,
+          "itemId": 3967,
+          "rlvl": 13,
+          "icon": "/i/047000/047218.png",
           "category": 39
         },
         {
@@ -23031,62 +23087,6 @@ export const craftingLogPages = [
           "rlvl": 15,
           "icon": "/i/048000/048340.png",
           "category": 40
-        },
-        {
-          "recipeId": 334,
-          "itemId": 3771,
-          "rlvl": 11,
-          "icon": "/i/046000/046167.png",
-          "category": 38
-        },
-        {
-          "recipeId": 336,
-          "itemId": 3017,
-          "rlvl": 12,
-          "icon": "/i/043000/043134.png",
-          "category": 35
-        },
-        {
-          "recipeId": 337,
-          "itemId": 3968,
-          "rlvl": 12,
-          "icon": "/i/047000/047203.png",
-          "category": 39
-        },
-        {
-          "recipeId": 335,
-          "itemId": 3770,
-          "rlvl": 12,
-          "icon": "/i/046000/046816.png",
-          "category": 38
-        },
-        {
-          "recipeId": 1577,
-          "itemId": 3773,
-          "rlvl": 12,
-          "icon": "/i/046000/046004.png",
-          "category": 38
-        },
-        {
-          "recipeId": 338,
-          "itemId": 2229,
-          "rlvl": 13,
-          "icon": "/i/030000/030007.png",
-          "category": 11
-        },
-        {
-          "recipeId": 340,
-          "itemId": 3541,
-          "rlvl": 13,
-          "icon": "/i/044000/044522.png",
-          "category": 37
-        },
-        {
-          "recipeId": 339,
-          "itemId": 3967,
-          "rlvl": 13,
-          "icon": "/i/047000/047218.png",
-          "category": 39
         }
       ]
     },
@@ -23116,48 +23116,6 @@ export const craftingLogPages = [
           "rlvl": 16,
           "icon": "/i/047000/047242.png",
           "category": 39
-        },
-        {
-          "recipeId": 359,
-          "itemId": 3552,
-          "rlvl": 18,
-          "icon": "/i/044000/044068.png",
-          "category": 37
-        },
-        {
-          "recipeId": 363,
-          "itemId": 2697,
-          "rlvl": 19,
-          "icon": "/i/040000/040016.png",
-          "category": 34
-        },
-        {
-          "recipeId": 362,
-          "itemId": 3982,
-          "rlvl": 19,
-          "icon": "/i/047000/047201.png",
-          "category": 39
-        },
-        {
-          "recipeId": 361,
-          "itemId": 3784,
-          "rlvl": 19,
-          "icon": "/i/046000/046163.png",
-          "category": 38
-        },
-        {
-          "recipeId": 365,
-          "itemId": 3562,
-          "rlvl": 20,
-          "icon": "/i/044000/044001.png",
-          "category": 37
-        },
-        {
-          "recipeId": 364,
-          "itemId": 4435,
-          "rlvl": 20,
-          "icon": "/i/048000/048083.png",
-          "category": 43
         },
         {
           "recipeId": 352,
@@ -23214,6 +23172,48 @@ export const craftingLogPages = [
           "rlvl": 18,
           "icon": "/i/044000/044806.png",
           "category": 37
+        },
+        {
+          "recipeId": 359,
+          "itemId": 3552,
+          "rlvl": 18,
+          "icon": "/i/044000/044068.png",
+          "category": 37
+        },
+        {
+          "recipeId": 363,
+          "itemId": 2697,
+          "rlvl": 19,
+          "icon": "/i/040000/040016.png",
+          "category": 34
+        },
+        {
+          "recipeId": 362,
+          "itemId": 3982,
+          "rlvl": 19,
+          "icon": "/i/047000/047201.png",
+          "category": 39
+        },
+        {
+          "recipeId": 361,
+          "itemId": 3784,
+          "rlvl": 19,
+          "icon": "/i/046000/046163.png",
+          "category": 38
+        },
+        {
+          "recipeId": 365,
+          "itemId": 3562,
+          "rlvl": 20,
+          "icon": "/i/044000/044001.png",
+          "category": 37
+        },
+        {
+          "recipeId": 364,
+          "itemId": 4435,
+          "rlvl": 20,
+          "icon": "/i/048000/048083.png",
+          "category": 43
         }
       ]
     },
@@ -23242,62 +23242,6 @@ export const craftingLogPages = [
           "itemId": 3790,
           "rlvl": 21,
           "icon": "/i/046000/046112.png",
-          "category": 38
-        },
-        {
-          "recipeId": 374,
-          "itemId": 3791,
-          "rlvl": 23,
-          "icon": "/i/046000/046321.png",
-          "category": 38
-        },
-        {
-          "recipeId": 377,
-          "itemId": 3991,
-          "rlvl": 24,
-          "icon": "/i/047000/047203.png",
-          "category": 39
-        },
-        {
-          "recipeId": 379,
-          "itemId": 3989,
-          "rlvl": 24,
-          "icon": "/i/047000/047224.png",
-          "category": 39
-        },
-        {
-          "recipeId": 378,
-          "itemId": 3347,
-          "rlvl": 24,
-          "icon": "/i/045000/045304.png",
-          "category": 36
-        },
-        {
-          "recipeId": 1579,
-          "itemId": 3806,
-          "rlvl": 24,
-          "icon": "/i/046000/046117.png",
-          "category": 38
-        },
-        {
-          "recipeId": 381,
-          "itemId": 3576,
-          "rlvl": 25,
-          "icon": "/i/044000/044062.png",
-          "category": 37
-        },
-        {
-          "recipeId": 382,
-          "itemId": 3578,
-          "rlvl": 25,
-          "icon": "/i/044000/044062.png",
-          "category": 37
-        },
-        {
-          "recipeId": 380,
-          "itemId": 3799,
-          "rlvl": 25,
-          "icon": "/i/046000/046187.png",
           "category": 38
         },
         {
@@ -23355,6 +23299,62 @@ export const craftingLogPages = [
           "rlvl": 23,
           "icon": "/i/047000/047227.png",
           "category": 39
+        },
+        {
+          "recipeId": 374,
+          "itemId": 3791,
+          "rlvl": 23,
+          "icon": "/i/046000/046321.png",
+          "category": 38
+        },
+        {
+          "recipeId": 377,
+          "itemId": 3991,
+          "rlvl": 24,
+          "icon": "/i/047000/047203.png",
+          "category": 39
+        },
+        {
+          "recipeId": 379,
+          "itemId": 3989,
+          "rlvl": 24,
+          "icon": "/i/047000/047224.png",
+          "category": 39
+        },
+        {
+          "recipeId": 378,
+          "itemId": 3347,
+          "rlvl": 24,
+          "icon": "/i/045000/045304.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1579,
+          "itemId": 3806,
+          "rlvl": 24,
+          "icon": "/i/046000/046117.png",
+          "category": 38
+        },
+        {
+          "recipeId": 381,
+          "itemId": 3576,
+          "rlvl": 25,
+          "icon": "/i/044000/044062.png",
+          "category": 37
+        },
+        {
+          "recipeId": 382,
+          "itemId": 3578,
+          "rlvl": 25,
+          "icon": "/i/044000/044062.png",
+          "category": 37
+        },
+        {
+          "recipeId": 380,
+          "itemId": 3799,
+          "rlvl": 25,
+          "icon": "/i/046000/046187.png",
+          "category": 38
         }
       ]
     },
@@ -23384,48 +23384,6 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/046000/046156.png",
           "category": 38
-        },
-        {
-          "recipeId": 394,
-          "itemId": 2250,
-          "rlvl": 29,
-          "icon": "/i/030000/030008.png",
-          "category": 11
-        },
-        {
-          "recipeId": 395,
-          "itemId": 3367,
-          "rlvl": 29,
-          "icon": "/i/045000/045289.png",
-          "category": 36
-        },
-        {
-          "recipeId": 393,
-          "itemId": 4106,
-          "rlvl": 29,
-          "icon": "/i/048000/048840.png",
-          "category": 42
-        },
-        {
-          "recipeId": 396,
-          "itemId": 3099,
-          "rlvl": 30,
-          "icon": "/i/042000/042081.png",
-          "category": 35
-        },
-        {
-          "recipeId": 398,
-          "itemId": 3100,
-          "rlvl": 30,
-          "icon": "/i/043000/043085.png",
-          "category": 35
-        },
-        {
-          "recipeId": 397,
-          "itemId": 3597,
-          "rlvl": 30,
-          "icon": "/i/044000/044529.png",
-          "category": 37
         },
         {
           "recipeId": 385,
@@ -23482,6 +23440,48 @@ export const craftingLogPages = [
           "rlvl": 28,
           "icon": "/i/047000/047220.png",
           "category": 39
+        },
+        {
+          "recipeId": 394,
+          "itemId": 2250,
+          "rlvl": 29,
+          "icon": "/i/030000/030008.png",
+          "category": 11
+        },
+        {
+          "recipeId": 395,
+          "itemId": 3367,
+          "rlvl": 29,
+          "icon": "/i/045000/045289.png",
+          "category": 36
+        },
+        {
+          "recipeId": 393,
+          "itemId": 4106,
+          "rlvl": 29,
+          "icon": "/i/048000/048840.png",
+          "category": 42
+        },
+        {
+          "recipeId": 396,
+          "itemId": 3099,
+          "rlvl": 30,
+          "icon": "/i/042000/042081.png",
+          "category": 35
+        },
+        {
+          "recipeId": 398,
+          "itemId": 3100,
+          "rlvl": 30,
+          "icon": "/i/043000/043085.png",
+          "category": 35
+        },
+        {
+          "recipeId": 397,
+          "itemId": 3597,
+          "rlvl": 30,
+          "icon": "/i/044000/044529.png",
+          "category": 37
         }
       ]
     },
@@ -23511,6 +23511,62 @@ export const craftingLogPages = [
           "rlvl": 31,
           "icon": "/i/045000/045281.png",
           "category": 36
+        },
+        {
+          "recipeId": 401,
+          "itemId": 3827,
+          "rlvl": 31,
+          "icon": "/i/046000/046323.png",
+          "category": 38
+        },
+        {
+          "recipeId": 402,
+          "itemId": 3829,
+          "rlvl": 31,
+          "icon": "/i/046000/046146.png",
+          "category": 38
+        },
+        {
+          "recipeId": 405,
+          "itemId": 4016,
+          "rlvl": 32,
+          "icon": "/i/047000/047222.png",
+          "category": 39
+        },
+        {
+          "recipeId": 404,
+          "itemId": 3377,
+          "rlvl": 32,
+          "icon": "/i/045000/045307.png",
+          "category": 36
+        },
+        {
+          "recipeId": 403,
+          "itemId": 4456,
+          "rlvl": 32,
+          "icon": "/i/048000/048084.png",
+          "category": 43
+        },
+        {
+          "recipeId": 406,
+          "itemId": 5282,
+          "rlvl": 33,
+          "icon": "/i/022000/022015.png",
+          "category": 52
+        },
+        {
+          "recipeId": 409,
+          "itemId": 1708,
+          "rlvl": 33,
+          "icon": "/i/031000/031010.png",
+          "category": 1
+        },
+        {
+          "recipeId": 407,
+          "itemId": 2767,
+          "rlvl": 33,
+          "icon": "/i/041000/041317.png",
+          "category": 34
         },
         {
           "recipeId": 410,
@@ -23581,62 +23637,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/047000/047244.png",
           "category": 39
-        },
-        {
-          "recipeId": 401,
-          "itemId": 3827,
-          "rlvl": 31,
-          "icon": "/i/046000/046323.png",
-          "category": 38
-        },
-        {
-          "recipeId": 402,
-          "itemId": 3829,
-          "rlvl": 31,
-          "icon": "/i/046000/046146.png",
-          "category": 38
-        },
-        {
-          "recipeId": 405,
-          "itemId": 4016,
-          "rlvl": 32,
-          "icon": "/i/047000/047222.png",
-          "category": 39
-        },
-        {
-          "recipeId": 404,
-          "itemId": 3377,
-          "rlvl": 32,
-          "icon": "/i/045000/045307.png",
-          "category": 36
-        },
-        {
-          "recipeId": 403,
-          "itemId": 4456,
-          "rlvl": 32,
-          "icon": "/i/048000/048084.png",
-          "category": 43
-        },
-        {
-          "recipeId": 406,
-          "itemId": 5282,
-          "rlvl": 33,
-          "icon": "/i/022000/022015.png",
-          "category": 52
-        },
-        {
-          "recipeId": 409,
-          "itemId": 1708,
-          "rlvl": 33,
-          "icon": "/i/031000/031010.png",
-          "category": 1
-        },
-        {
-          "recipeId": 407,
-          "itemId": 2767,
-          "rlvl": 33,
-          "icon": "/i/041000/041317.png",
-          "category": 34
         }
       ]
     },
@@ -23666,6 +23666,62 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/048000/048836.png",
           "category": 42
+        },
+        {
+          "recipeId": 1282,
+          "itemId": 4132,
+          "rlvl": 36,
+          "icon": "/i/048000/048836.png",
+          "category": 42
+        },
+        {
+          "recipeId": 420,
+          "itemId": 2788,
+          "rlvl": 37,
+          "icon": "/i/040000/040048.png",
+          "category": 34
+        },
+        {
+          "recipeId": 419,
+          "itemId": 3138,
+          "rlvl": 37,
+          "icon": "/i/043000/043079.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1283,
+          "itemId": 4032,
+          "rlvl": 37,
+          "icon": "/i/047000/047242.png",
+          "category": 39
+        },
+        {
+          "recipeId": 418,
+          "itemId": 3402,
+          "rlvl": 37,
+          "icon": "/i/045000/045173.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1284,
+          "itemId": 4018,
+          "rlvl": 37,
+          "icon": "/i/047000/047252.png",
+          "category": 39
+        },
+        {
+          "recipeId": 421,
+          "itemId": 5284,
+          "rlvl": 38,
+          "icon": "/i/022000/022024.png",
+          "category": 52
+        },
+        {
+          "recipeId": 424,
+          "itemId": 3625,
+          "rlvl": 38,
+          "icon": "/i/044000/044102.png",
+          "category": 37
         },
         {
           "recipeId": 1285,
@@ -23738,13 +23794,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 1282,
-          "itemId": 4132,
-          "rlvl": 36,
-          "icon": "/i/048000/048836.png",
-          "category": 42
-        },
-        {
           "recipeId": 428,
           "itemId": 3639,
           "rlvl": 40,
@@ -23799,55 +23848,6 @@ export const craftingLogPages = [
           "rlvl": 40,
           "icon": "/i/049000/049116.png",
           "category": 63
-        },
-        {
-          "recipeId": 420,
-          "itemId": 2788,
-          "rlvl": 37,
-          "icon": "/i/040000/040048.png",
-          "category": 34
-        },
-        {
-          "recipeId": 419,
-          "itemId": 3138,
-          "rlvl": 37,
-          "icon": "/i/043000/043079.png",
-          "category": 35
-        },
-        {
-          "recipeId": 1283,
-          "itemId": 4032,
-          "rlvl": 37,
-          "icon": "/i/047000/047242.png",
-          "category": 39
-        },
-        {
-          "recipeId": 418,
-          "itemId": 3402,
-          "rlvl": 37,
-          "icon": "/i/045000/045173.png",
-          "category": 36
-        },
-        {
-          "recipeId": 1284,
-          "itemId": 4018,
-          "rlvl": 37,
-          "icon": "/i/047000/047252.png",
-          "category": 39
-        },
-        {
-          "recipeId": 421,
-          "itemId": 5284,
-          "rlvl": 38,
-          "icon": "/i/022000/022024.png",
-          "category": 52
-        },
-        {
-          "recipeId": 424,
-          "itemId": 3625,
-          "rlvl": 38,
-          "icon": "/i/044000/044102.png",
-          "category": 37
         }
       ]
     },
@@ -23877,6 +23877,62 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/047000/047239.png",
           "category": 39
+        },
+        {
+          "recipeId": 432,
+          "itemId": 3416,
+          "rlvl": 41,
+          "icon": "/i/045000/045174.png",
+          "category": 36
+        },
+        {
+          "recipeId": 433,
+          "itemId": 3426,
+          "rlvl": 41,
+          "icon": "/i/045000/045169.png",
+          "category": 36
+        },
+        {
+          "recipeId": 435,
+          "itemId": 3423,
+          "rlvl": 41,
+          "icon": "/i/045000/045181.png",
+          "category": 36
+        },
+        {
+          "recipeId": 436,
+          "itemId": 3866,
+          "rlvl": 41,
+          "icon": "/i/046000/046216.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1288,
+          "itemId": 3911,
+          "rlvl": 41,
+          "icon": "/i/046000/046102.png",
+          "category": 38
+        },
+        {
+          "recipeId": 440,
+          "itemId": 2270,
+          "rlvl": 42,
+          "icon": "/i/030000/030010.png",
+          "category": 11
+        },
+        {
+          "recipeId": 437,
+          "itemId": 3871,
+          "rlvl": 42,
+          "icon": "/i/046000/046214.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1289,
+          "itemId": 5287,
+          "rlvl": 43,
+          "icon": "/i/021000/021823.png",
+          "category": 52
         },
         {
           "recipeId": 438,
@@ -23949,13 +24005,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 432,
-          "itemId": 3416,
-          "rlvl": 41,
-          "icon": "/i/045000/045174.png",
-          "category": 36
-        },
-        {
           "recipeId": 1290,
           "itemId": 2915,
           "rlvl": 43,
@@ -24026,13 +24075,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 433,
-          "itemId": 3426,
-          "rlvl": 41,
-          "icon": "/i/045000/045169.png",
-          "category": 36
-        },
-        {
           "recipeId": 1300,
           "itemId": 3694,
           "rlvl": 45,
@@ -24087,48 +24129,6 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/048000/048841.png",
           "category": 42
-        },
-        {
-          "recipeId": 435,
-          "itemId": 3423,
-          "rlvl": 41,
-          "icon": "/i/045000/045181.png",
-          "category": 36
-        },
-        {
-          "recipeId": 436,
-          "itemId": 3866,
-          "rlvl": 41,
-          "icon": "/i/046000/046216.png",
-          "category": 38
-        },
-        {
-          "recipeId": 1288,
-          "itemId": 3911,
-          "rlvl": 41,
-          "icon": "/i/046000/046102.png",
-          "category": 38
-        },
-        {
-          "recipeId": 440,
-          "itemId": 2270,
-          "rlvl": 42,
-          "icon": "/i/030000/030010.png",
-          "category": 11
-        },
-        {
-          "recipeId": 437,
-          "itemId": 3871,
-          "rlvl": 42,
-          "icon": "/i/046000/046214.png",
-          "category": 38
-        },
-        {
-          "recipeId": 1289,
-          "itemId": 5287,
-          "rlvl": 43,
-          "icon": "/i/021000/021823.png",
-          "category": 52
         }
       ]
     },
@@ -24158,6 +24158,62 @@ export const craftingLogPages = [
           "rlvl": 46,
           "icon": "/i/046000/046102.png",
           "category": 38
+        },
+        {
+          "recipeId": 1295,
+          "itemId": 5286,
+          "rlvl": 47,
+          "icon": "/i/022000/022006.png",
+          "category": 52
+        },
+        {
+          "recipeId": 462,
+          "itemId": 3206,
+          "rlvl": 47,
+          "icon": "/i/042000/042223.png",
+          "category": 35
+        },
+        {
+          "recipeId": 458,
+          "itemId": 3904,
+          "rlvl": 47,
+          "icon": "/i/046000/046337.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1297,
+          "itemId": 3244,
+          "rlvl": 47,
+          "icon": "/i/042000/042166.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1299,
+          "itemId": 2298,
+          "rlvl": 48,
+          "icon": "/i/030000/030071.png",
+          "category": 11
+        },
+        {
+          "recipeId": 1298,
+          "itemId": 4516,
+          "rlvl": 48,
+          "icon": "/i/048000/048032.png",
+          "category": 43
+        },
+        {
+          "recipeId": 1301,
+          "itemId": 3213,
+          "rlvl": 49,
+          "icon": "/i/043000/043162.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1302,
+          "itemId": 4061,
+          "rlvl": 49,
+          "icon": "/i/047000/047227.png",
+          "category": 39
         },
         {
           "recipeId": 1303,
@@ -24230,13 +24286,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 1295,
-          "itemId": 5286,
-          "rlvl": 47,
-          "icon": "/i/022000/022006.png",
-          "category": 52
-        },
-        {
           "recipeId": 1320,
           "itemId": 3699,
           "rlvl": 55,
@@ -24305,13 +24354,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/046000/046382.png",
           "category": 38
-        },
-        {
-          "recipeId": 462,
-          "itemId": 3206,
-          "rlvl": 47,
-          "icon": "/i/042000/042223.png",
-          "category": 35
         },
         {
           "recipeId": 1929,
@@ -24384,13 +24426,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 458,
-          "itemId": 3904,
-          "rlvl": 47,
-          "icon": "/i/046000/046337.png",
-          "category": 38
-        },
-        {
           "recipeId": 1323,
           "itemId": 3238,
           "rlvl": 55,
@@ -24459,13 +24494,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/044000/044187.png",
           "category": 37
-        },
-        {
-          "recipeId": 1297,
-          "itemId": 3244,
-          "rlvl": 47,
-          "icon": "/i/042000/042166.png",
-          "category": 35
         },
         {
           "recipeId": 1343,
@@ -24538,13 +24566,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 1299,
-          "itemId": 2298,
-          "rlvl": 48,
-          "icon": "/i/030000/030071.png",
-          "category": 11
-        },
-        {
           "recipeId": 1322,
           "itemId": 3936,
           "rlvl": 55,
@@ -24613,13 +24634,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/043000/043095.png",
           "category": 35
-        },
-        {
-          "recipeId": 1298,
-          "itemId": 4516,
-          "rlvl": 48,
-          "icon": "/i/048000/048032.png",
-          "category": 43
         },
         {
           "recipeId": 1351,
@@ -24692,13 +24706,6 @@ export const craftingLogPages = [
           "category": 40
         },
         {
-          "recipeId": 1301,
-          "itemId": 3213,
-          "rlvl": 49,
-          "icon": "/i/043000/043162.png",
-          "category": 35
-        },
-        {
           "recipeId": 1360,
           "itemId": 4181,
           "rlvl": 70,
@@ -24725,13 +24732,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/049000/049086.png",
           "category": 63
-        },
-        {
-          "recipeId": 1302,
-          "itemId": 4061,
-          "rlvl": 49,
-          "icon": "/i/047000/047227.png",
-          "category": 39
         }
       ]
     },
@@ -24761,6 +24761,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/044000/044361.png",
           "category": 37
+        },
+        {
+          "recipeId": 2577,
+          "itemId": 10810,
+          "rlvl": 115,
+          "icon": "/i/044000/044363.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2615,
+          "itemId": 10936,
+          "rlvl": 115,
+          "icon": "/i/044000/044365.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2603,
+          "itemId": 10894,
+          "rlvl": 115,
+          "icon": "/i/044000/044364.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2566,
+          "itemId": 10775,
+          "rlvl": 115,
+          "icon": "/i/047000/047209.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2850,
+          "itemId": 13685,
+          "rlvl": 120,
+          "icon": "/i/040000/040799.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2627,
+          "itemId": 11965,
+          "rlvl": 120,
+          "icon": "/i/044000/044388.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2637,
+          "itemId": 11993,
+          "rlvl": 120,
+          "icon": "/i/044000/044387.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2548,
+          "itemId": 10698,
+          "rlvl": 120,
+          "icon": "/i/045000/045640.png",
+          "category": 36
         },
         {
           "recipeId": 2556,
@@ -24833,13 +24889,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 2577,
-          "itemId": 10810,
-          "rlvl": 115,
-          "icon": "/i/044000/044363.png",
-          "category": 37
-        },
-        {
           "recipeId": 2634,
           "itemId": 11988,
           "rlvl": 125,
@@ -24908,13 +24957,6 @@ export const craftingLogPages = [
           "rlvl": 125,
           "icon": "/i/047000/047223.png",
           "category": 39
-        },
-        {
-          "recipeId": 2615,
-          "itemId": 10936,
-          "rlvl": 115,
-          "icon": "/i/044000/044365.png",
-          "category": 37
         },
         {
           "recipeId": 2567,
@@ -24987,13 +25029,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2603,
-          "itemId": 10894,
-          "rlvl": 115,
-          "icon": "/i/044000/044364.png",
-          "category": 37
-        },
-        {
           "recipeId": 2552,
           "itemId": 10713,
           "rlvl": 130,
@@ -25062,13 +25097,6 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/046000/046519.png",
           "category": 38
-        },
-        {
-          "recipeId": 2566,
-          "itemId": 10775,
-          "rlvl": 115,
-          "icon": "/i/047000/047209.png",
-          "category": 39
         },
         {
           "recipeId": 2644,
@@ -25141,13 +25169,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 2850,
-          "itemId": 13685,
-          "rlvl": 120,
-          "icon": "/i/040000/040799.png",
-          "category": 34
-        },
-        {
           "recipeId": 2583,
           "itemId": 10819,
           "rlvl": 133,
@@ -25216,13 +25237,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/043000/043274.png",
           "category": 35
-        },
-        {
-          "recipeId": 2627,
-          "itemId": 11965,
-          "rlvl": 120,
-          "icon": "/i/044000/044388.png",
-          "category": 37
         },
         {
           "recipeId": 2880,
@@ -25295,13 +25309,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 2637,
-          "itemId": 11993,
-          "rlvl": 120,
-          "icon": "/i/044000/044387.png",
-          "category": 37
-        },
-        {
           "recipeId": 2610,
           "itemId": 10917,
           "rlvl": 136,
@@ -25328,13 +25335,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/046000/046663.png",
           "category": 38
-        },
-        {
-          "recipeId": 2548,
-          "itemId": 10698,
-          "rlvl": 120,
-          "icon": "/i/045000/045640.png",
-          "category": 36
         }
       ]
     },
@@ -25364,6 +25364,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/042000/042470.png",
           "category": 35
+        },
+        {
+          "recipeId": 2580,
+          "itemId": 10813,
+          "rlvl": 139,
+          "icon": "/i/044000/044374.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2617,
+          "itemId": 10939,
+          "rlvl": 139,
+          "icon": "/i/044000/044376.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2605,
+          "itemId": 10897,
+          "rlvl": 139,
+          "icon": "/i/044000/044375.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2555,
+          "itemId": 10736,
+          "rlvl": 139,
+          "icon": "/i/047000/047226.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2569,
+          "itemId": 10778,
+          "rlvl": 139,
+          "icon": "/i/047000/047226.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2596,
+          "itemId": 10862,
+          "rlvl": 139,
+          "icon": "/i/047000/047226.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2856,
+          "itemId": 13771,
+          "rlvl": 139,
+          "icon": "/i/045000/045722.png",
+          "category": 36
+        },
+        {
+          "recipeId": 2632,
+          "itemId": 11980,
+          "rlvl": 139,
+          "icon": "/i/046000/046542.png",
+          "category": 38
         },
         {
           "recipeId": 2645,
@@ -25436,13 +25492,6 @@ export const craftingLogPages = [
           "category": 43
         },
         {
-          "recipeId": 2580,
-          "itemId": 10813,
-          "rlvl": 139,
-          "icon": "/i/044000/044374.png",
-          "category": 37
-        },
-        {
           "recipeId": 2657,
           "itemId": 12566,
           "rlvl": 145,
@@ -25513,13 +25562,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 2617,
-          "itemId": 10939,
-          "rlvl": 139,
-          "icon": "/i/044000/044376.png",
-          "category": 37
-        },
-        {
           "recipeId": 2640,
           "itemId": 11999,
           "rlvl": 145,
@@ -25574,48 +25616,6 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/046000/046529.png",
           "category": 38
-        },
-        {
-          "recipeId": 2605,
-          "itemId": 10897,
-          "rlvl": 139,
-          "icon": "/i/044000/044375.png",
-          "category": 37
-        },
-        {
-          "recipeId": 2555,
-          "itemId": 10736,
-          "rlvl": 139,
-          "icon": "/i/047000/047226.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2569,
-          "itemId": 10778,
-          "rlvl": 139,
-          "icon": "/i/047000/047226.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2596,
-          "itemId": 10862,
-          "rlvl": 139,
-          "icon": "/i/047000/047226.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2856,
-          "itemId": 13771,
-          "rlvl": 139,
-          "icon": "/i/045000/045722.png",
-          "category": 36
-        },
-        {
-          "recipeId": 2632,
-          "itemId": 11980,
-          "rlvl": 139,
-          "icon": "/i/046000/046542.png",
-          "category": 38
         }
       ]
     },
@@ -25645,6 +25645,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/040000/040880.png",
           "category": 34
+        },
+        {
+          "recipeId": 2992,
+          "itemId": 18069,
+          "rlvl": 255,
+          "icon": "/i/044000/044998.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2977,
+          "itemId": 18054,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2983,
+          "itemId": 18060,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2989,
+          "itemId": 18066,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3001,
+          "itemId": 18078,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2995,
+          "itemId": 18072,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3013,
+          "itemId": 18090,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3007,
+          "itemId": 18084,
+          "rlvl": 255,
+          "icon": "/i/047000/047239.png",
+          "category": 39
         },
         {
           "recipeId": 3462,
@@ -25717,13 +25773,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 2992,
-          "itemId": 18069,
-          "rlvl": 255,
-          "icon": "/i/044000/044998.png",
-          "category": 37
-        },
-        {
           "recipeId": 2988,
           "itemId": 18065,
           "rlvl": 260,
@@ -25792,13 +25841,6 @@ export const craftingLogPages = [
           "rlvl": 265,
           "icon": "/i/044000/044983.png",
           "category": 37
-        },
-        {
-          "recipeId": 2977,
-          "itemId": 18054,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
         },
         {
           "recipeId": 3076,
@@ -25871,13 +25913,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2983,
-          "itemId": 18060,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
-        },
-        {
           "recipeId": 3473,
           "itemId": 19628,
           "rlvl": 270,
@@ -25946,13 +25981,6 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/046000/046758.png",
           "category": 38
-        },
-        {
-          "recipeId": 2989,
-          "itemId": 18066,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
         },
         {
           "recipeId": 3476,
@@ -26025,13 +26053,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 3001,
-          "itemId": 18078,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
-        },
-        {
           "recipeId": 3160,
           "itemId": 18393,
           "rlvl": 273,
@@ -26102,13 +26123,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 2995,
-          "itemId": 18072,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
-        },
-        {
           "recipeId": 3156,
           "itemId": 18389,
           "rlvl": 276,
@@ -26149,20 +26163,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/046000/046759.png",
           "category": 38
-        },
-        {
-          "recipeId": 3013,
-          "itemId": 18090,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3007,
-          "itemId": 18084,
-          "rlvl": 255,
-          "icon": "/i/047000/047239.png",
-          "category": 39
         }
       ]
     },
@@ -26192,6 +26192,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/040000/040482.png",
           "category": 34
+        },
+        {
+          "recipeId": 3230,
+          "itemId": 18541,
+          "rlvl": 279,
+          "icon": "/i/040000/040483.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3226,
+          "itemId": 18537,
+          "rlvl": 279,
+          "icon": "/i/049000/049542.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3244,
+          "itemId": 18555,
+          "rlvl": 279,
+          "icon": "/i/049000/049540.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3238,
+          "itemId": 18549,
+          "rlvl": 279,
+          "icon": "/i/049000/049541.png",
+          "category": 37
+        },
+        {
+          "recipeId": 3211,
+          "itemId": 18522,
+          "rlvl": 279,
+          "icon": "/i/047000/047214.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3217,
+          "itemId": 18528,
+          "rlvl": 279,
+          "icon": "/i/047000/047214.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3229,
+          "itemId": 18540,
+          "rlvl": 279,
+          "icon": "/i/047000/047430.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3247,
+          "itemId": 18558,
+          "rlvl": 279,
+          "icon": "/i/047000/047430.png",
+          "category": 39
         },
         {
           "recipeId": 3241,
@@ -26264,13 +26320,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 3230,
-          "itemId": 18541,
-          "rlvl": 279,
-          "icon": "/i/040000/040483.png",
-          "category": 34
-        },
-        {
           "recipeId": 3494,
           "itemId": 19649,
           "rlvl": 282,
@@ -26339,13 +26388,6 @@ export const craftingLogPages = [
           "rlvl": 282,
           "icon": "/i/048000/048979.png",
           "category": 42
-        },
-        {
-          "recipeId": 3226,
-          "itemId": 18537,
-          "rlvl": 279,
-          "icon": "/i/049000/049542.png",
-          "category": 37
         },
         {
           "recipeId": 3526,
@@ -26418,13 +26460,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 3244,
-          "itemId": 18555,
-          "rlvl": 279,
-          "icon": "/i/049000/049540.png",
-          "category": 37
-        },
-        {
           "recipeId": 3306,
           "itemId": 18695,
           "rlvl": 285,
@@ -26492,13 +26527,6 @@ export const craftingLogPages = [
           "itemId": 18711,
           "rlvl": 288,
           "icon": "/i/044000/044990.png",
-          "category": 37
-        },
-        {
-          "recipeId": 3238,
-          "itemId": 18549,
-          "rlvl": 279,
-          "icon": "/i/049000/049541.png",
           "category": 37
         },
         {
@@ -26572,13 +26600,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 3211,
-          "itemId": 18522,
-          "rlvl": 279,
-          "icon": "/i/047000/047214.png",
-          "category": 39
-        },
-        {
           "recipeId": 3533,
           "itemId": 19753,
           "rlvl": 290,
@@ -26605,27 +26626,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/048000/048217.png",
           "category": 43
-        },
-        {
-          "recipeId": 3217,
-          "itemId": 18528,
-          "rlvl": 279,
-          "icon": "/i/047000/047214.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3229,
-          "itemId": 18540,
-          "rlvl": 279,
-          "icon": "/i/047000/047430.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3247,
-          "itemId": 18558,
-          "rlvl": 279,
-          "icon": "/i/047000/047430.png",
-          "category": 39
         }
       ]
     },
@@ -26655,6 +26655,62 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
+        },
+        {
+          "recipeId": 30929,
+          "itemId": 10104,
+          "rlvl": 90,
+          "icon": "/i/022000/022008.png",
+          "category": 52
+        },
+        {
+          "recipeId": 30421,
+          "itemId": 8036,
+          "rlvl": 90,
+          "icon": "/i/022000/022030.png",
+          "category": 52
+        },
+        {
+          "recipeId": 30294,
+          "itemId": 7608,
+          "rlvl": 90,
+          "icon": "/i/022000/022010.png",
+          "category": 52
+        },
+        {
+          "recipeId": 30921,
+          "itemId": 9514,
+          "rlvl": 90,
+          "icon": "/i/026000/026180.png",
+          "category": 52
+        },
+        {
+          "recipeId": 30253,
+          "itemId": 7492,
+          "rlvl": 90,
+          "icon": "/i/040000/040394.png",
+          "category": 34
+        },
+        {
+          "recipeId": 30254,
+          "itemId": 7493,
+          "rlvl": 90,
+          "icon": "/i/042000/042372.png",
+          "category": 35
+        },
+        {
+          "recipeId": 30260,
+          "itemId": 7499,
+          "rlvl": 90,
+          "icon": "/i/042000/042373.png",
+          "category": 35
+        },
+        {
+          "recipeId": 30255,
+          "itemId": 7494,
+          "rlvl": 90,
+          "icon": "/i/044000/044252.png",
+          "category": 37
         },
         {
           "recipeId": 30261,
@@ -26727,13 +26783,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 30929,
-          "itemId": 10104,
-          "rlvl": 90,
-          "icon": "/i/022000/022008.png",
-          "category": 52
-        },
-        {
           "recipeId": 30263,
           "itemId": 7502,
           "rlvl": 90,
@@ -26767,55 +26816,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/021000/021831.png",
           "category": 52
-        },
-        {
-          "recipeId": 30421,
-          "itemId": 8036,
-          "rlvl": 90,
-          "icon": "/i/022000/022030.png",
-          "category": 52
-        },
-        {
-          "recipeId": 30294,
-          "itemId": 7608,
-          "rlvl": 90,
-          "icon": "/i/022000/022010.png",
-          "category": 52
-        },
-        {
-          "recipeId": 30921,
-          "itemId": 9514,
-          "rlvl": 90,
-          "icon": "/i/026000/026180.png",
-          "category": 52
-        },
-        {
-          "recipeId": 30253,
-          "itemId": 7492,
-          "rlvl": 90,
-          "icon": "/i/040000/040394.png",
-          "category": 34
-        },
-        {
-          "recipeId": 30254,
-          "itemId": 7493,
-          "rlvl": 90,
-          "icon": "/i/042000/042372.png",
-          "category": 35
-        },
-        {
-          "recipeId": 30260,
-          "itemId": 7499,
-          "rlvl": 90,
-          "icon": "/i/042000/042373.png",
-          "category": 35
-        },
-        {
-          "recipeId": 30255,
-          "itemId": 7494,
-          "rlvl": 90,
-          "icon": "/i/044000/044252.png",
-          "category": 37
         }
       ]
     },
@@ -26845,6 +26845,62 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/040000/040719.png",
           "category": 34
+        },
+        {
+          "recipeId": 30887,
+          "itemId": 9053,
+          "rlvl": 110,
+          "icon": "/i/042000/042402.png",
+          "category": 35
+        },
+        {
+          "recipeId": 30888,
+          "itemId": 9054,
+          "rlvl": 110,
+          "icon": "/i/044000/044289.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30900,
+          "itemId": 9074,
+          "rlvl": 110,
+          "icon": "/i/044000/044286.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30894,
+          "itemId": 9064,
+          "rlvl": 110,
+          "icon": "/i/044000/044287.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30904,
+          "itemId": 9300,
+          "rlvl": 110,
+          "icon": "/i/044000/044279.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30908,
+          "itemId": 9304,
+          "rlvl": 110,
+          "icon": "/i/044000/044833.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30879,
+          "itemId": 9041,
+          "rlvl": 110,
+          "icon": "/i/047000/047281.png",
+          "category": 39
+        },
+        {
+          "recipeId": 30885,
+          "itemId": 9047,
+          "rlvl": 110,
+          "icon": "/i/047000/047295.png",
+          "category": 39
         },
         {
           "recipeId": 30916,
@@ -26917,13 +26973,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 30887,
-          "itemId": 9053,
-          "rlvl": 110,
-          "icon": "/i/042000/042402.png",
-          "category": 35
-        },
-        {
           "recipeId": 30896,
           "itemId": 9066,
           "rlvl": 110,
@@ -26936,55 +26985,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/046000/046415.png",
           "category": 38
-        },
-        {
-          "recipeId": 30888,
-          "itemId": 9054,
-          "rlvl": 110,
-          "icon": "/i/044000/044289.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30900,
-          "itemId": 9074,
-          "rlvl": 110,
-          "icon": "/i/044000/044286.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30894,
-          "itemId": 9064,
-          "rlvl": 110,
-          "icon": "/i/044000/044287.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30904,
-          "itemId": 9300,
-          "rlvl": 110,
-          "icon": "/i/044000/044279.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30908,
-          "itemId": 9304,
-          "rlvl": 110,
-          "icon": "/i/044000/044833.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30879,
-          "itemId": 9041,
-          "rlvl": 110,
-          "icon": "/i/047000/047281.png",
-          "category": 39
-        },
-        {
-          "recipeId": 30885,
-          "itemId": 9047,
-          "rlvl": 110,
-          "icon": "/i/047000/047295.png",
-          "category": 39
         }
       ]
     },
@@ -27016,6 +27016,62 @@ export const craftingLogPages = [
           "category": 37
         },
         {
+          "recipeId": 31110,
+          "itemId": 10773,
+          "rlvl": 148,
+          "icon": "/i/044000/044720.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31126,
+          "itemId": 10857,
+          "rlvl": 148,
+          "icon": "/i/044000/044721.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31119,
+          "itemId": 10815,
+          "rlvl": 148,
+          "icon": "/i/044000/044722.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31137,
+          "itemId": 10941,
+          "rlvl": 148,
+          "icon": "/i/044000/044381.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31133,
+          "itemId": 10899,
+          "rlvl": 148,
+          "icon": "/i/044000/044380.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31142,
+          "itemId": 11969,
+          "rlvl": 148,
+          "icon": "/i/044000/044395.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31147,
+          "itemId": 11997,
+          "rlvl": 148,
+          "icon": "/i/044000/044394.png",
+          "category": 37
+        },
+        {
+          "recipeId": 31104,
+          "itemId": 10738,
+          "rlvl": 148,
+          "icon": "/i/047000/047225.png",
+          "category": 39
+        },
+        {
           "recipeId": 31112,
           "itemId": 10780,
           "rlvl": 148,
@@ -27023,95 +27079,11 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 31316,
-          "itemId": 13656,
-          "rlvl": 180,
-          "icon": "/i/046000/046553.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31132,
-          "itemId": 10879,
-          "rlvl": 180,
-          "icon": "/i/046000/046533.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31326,
-          "itemId": 13668,
-          "rlvl": 180,
-          "icon": "/i/046000/046554.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31123,
-          "itemId": 10837,
-          "rlvl": 180,
-          "icon": "/i/046000/046534.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31321,
-          "itemId": 13662,
-          "rlvl": 180,
-          "icon": "/i/046000/046555.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31141,
-          "itemId": 10963,
-          "rlvl": 180,
-          "icon": "/i/046000/046536.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31336,
-          "itemId": 13680,
-          "rlvl": 180,
-          "icon": "/i/046000/046557.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31136,
-          "itemId": 10921,
-          "rlvl": 180,
-          "icon": "/i/046000/046535.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31331,
-          "itemId": 13674,
-          "rlvl": 180,
-          "icon": "/i/046000/046556.png",
-          "category": 38
-        },
-        {
-          "recipeId": 31150,
-          "itemId": 12025,
-          "rlvl": 180,
-          "icon": "/i/048000/048417.png",
-          "category": 40
-        },
-        {
           "recipeId": 31128,
           "itemId": 10864,
           "rlvl": 148,
           "icon": "/i/047000/047219.png",
           "category": 39
-        },
-        {
-          "recipeId": 31151,
-          "itemId": 12028,
-          "rlvl": 180,
-          "icon": "/i/048000/048922.png",
-          "category": 42
-        },
-        {
-          "recipeId": 31152,
-          "itemId": 12034,
-          "rlvl": 180,
-          "icon": "/i/048000/048169.png",
-          "category": 43
         },
         {
           "recipeId": 31134,
@@ -27168,13 +27140,6 @@ export const craftingLogPages = [
           "rlvl": 150,
           "icon": "/i/045000/045678.png",
           "category": 36
-        },
-        {
-          "recipeId": 31110,
-          "itemId": 10773,
-          "rlvl": 148,
-          "icon": "/i/044000/044720.png",
-          "category": 37
         },
         {
           "recipeId": 31121,
@@ -27247,13 +27212,6 @@ export const craftingLogPages = [
           "category": 52
         },
         {
-          "recipeId": 31126,
-          "itemId": 10857,
-          "rlvl": 148,
-          "icon": "/i/044000/044721.png",
-          "category": 37
-        },
-        {
           "recipeId": 32130,
           "itemId": 17469,
           "rlvl": 160,
@@ -27321,13 +27279,6 @@ export const craftingLogPages = [
           "itemId": 14941,
           "rlvl": 160,
           "icon": "/i/044000/044445.png",
-          "category": 37
-        },
-        {
-          "recipeId": 31119,
-          "itemId": 10815,
-          "rlvl": 148,
-          "icon": "/i/044000/044722.png",
           "category": 37
         },
         {
@@ -27401,13 +27352,6 @@ export const craftingLogPages = [
           "category": 52
         },
         {
-          "recipeId": 31137,
-          "itemId": 10941,
-          "rlvl": 148,
-          "icon": "/i/044000/044381.png",
-          "category": 37
-        },
-        {
           "recipeId": 31153,
           "itemId": 12103,
           "rlvl": 160,
@@ -27478,13 +27422,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 31133,
-          "itemId": 10899,
-          "rlvl": 148,
-          "icon": "/i/044000/044380.png",
-          "category": 37
-        },
-        {
           "recipeId": 31313,
           "itemId": 13653,
           "rlvl": 180,
@@ -27552,13 +27489,6 @@ export const craftingLogPages = [
           "itemId": 13050,
           "rlvl": 180,
           "icon": "/i/044000/044322.png",
-          "category": 37
-        },
-        {
-          "recipeId": 31142,
-          "itemId": 11969,
-          "rlvl": 148,
-          "icon": "/i/044000/044395.png",
           "category": 37
         },
         {
@@ -27632,13 +27562,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 31147,
-          "itemId": 11997,
-          "rlvl": 148,
-          "icon": "/i/044000/044394.png",
-          "category": 37
-        },
-        {
           "recipeId": 31105,
           "itemId": 10739,
           "rlvl": 180,
@@ -27709,13 +27632,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 31104,
-          "itemId": 10738,
-          "rlvl": 148,
-          "icon": "/i/047000/047225.png",
-          "category": 39
-        },
-        {
           "recipeId": 31243,
           "itemId": 13022,
           "rlvl": 180,
@@ -27784,6 +27700,90 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/046000/046532.png",
           "category": 38
+        },
+        {
+          "recipeId": 31316,
+          "itemId": 13656,
+          "rlvl": 180,
+          "icon": "/i/046000/046553.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31132,
+          "itemId": 10879,
+          "rlvl": 180,
+          "icon": "/i/046000/046533.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31326,
+          "itemId": 13668,
+          "rlvl": 180,
+          "icon": "/i/046000/046554.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31123,
+          "itemId": 10837,
+          "rlvl": 180,
+          "icon": "/i/046000/046534.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31321,
+          "itemId": 13662,
+          "rlvl": 180,
+          "icon": "/i/046000/046555.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31141,
+          "itemId": 10963,
+          "rlvl": 180,
+          "icon": "/i/046000/046536.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31336,
+          "itemId": 13680,
+          "rlvl": 180,
+          "icon": "/i/046000/046557.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31136,
+          "itemId": 10921,
+          "rlvl": 180,
+          "icon": "/i/046000/046535.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31331,
+          "itemId": 13674,
+          "rlvl": 180,
+          "icon": "/i/046000/046556.png",
+          "category": 38
+        },
+        {
+          "recipeId": 31150,
+          "itemId": 12025,
+          "rlvl": 180,
+          "icon": "/i/048000/048417.png",
+          "category": 40
+        },
+        {
+          "recipeId": 31151,
+          "itemId": 12028,
+          "rlvl": 180,
+          "icon": "/i/048000/048922.png",
+          "category": 42
+        },
+        {
+          "recipeId": 31152,
+          "itemId": 12034,
+          "rlvl": 180,
+          "icon": "/i/048000/048169.png",
+          "category": 43
         }
       ]
     },
@@ -27815,46 +27815,67 @@ export const craftingLogPages = [
           "category": 63
         },
         {
+          "recipeId": 31462,
+          "itemId": 14050,
+          "rlvl": 180,
+          "icon": "/i/052000/052589.png",
+          "category": 57
+        },
+        {
+          "recipeId": 31870,
+          "itemId": 15510,
+          "rlvl": 180,
+          "icon": "/i/040000/040823.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31439,
+          "itemId": 13863,
+          "rlvl": 180,
+          "icon": "/i/041000/041233.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31449,
+          "itemId": 13873,
+          "rlvl": 180,
+          "icon": "/i/041000/041228.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31829,
+          "itemId": 13907,
+          "rlvl": 180,
+          "icon": "/i/040000/040718.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31839,
+          "itemId": 13917,
+          "rlvl": 180,
+          "icon": "/i/040000/040717.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31871,
+          "itemId": 15511,
+          "rlvl": 180,
+          "icon": "/i/042000/042514.png",
+          "category": 35
+        },
+        {
+          "recipeId": 31825,
+          "itemId": 13903,
+          "rlvl": 180,
+          "icon": "/i/043000/043214.png",
+          "category": 35
+        },
+        {
           "recipeId": 31845,
           "itemId": 13923,
           "rlvl": 180,
           "icon": "/i/043000/043216.png",
           "category": 35
-        },
-        {
-          "recipeId": 32014,
-          "itemId": 16681,
-          "rlvl": 250,
-          "icon": "/i/046000/046640.png",
-          "category": 38
-        },
-        {
-          "recipeId": 32008,
-          "itemId": 16675,
-          "rlvl": 250,
-          "icon": "/i/046000/046639.png",
-          "category": 38
-        },
-        {
-          "recipeId": 32330,
-          "itemId": 20472,
-          "rlvl": 300,
-          "icon": "/i/044000/044999.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32332,
-          "itemId": 20474,
-          "rlvl": 300,
-          "icon": "/i/046000/046785.png",
-          "category": 38
-        },
-        {
-          "recipeId": 32336,
-          "itemId": 20478,
-          "rlvl": 300,
-          "icon": "/i/046000/046059.png",
-          "category": 38
         },
         {
           "recipeId": 31830,
@@ -27918,13 +27939,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/044000/044645.png",
           "category": 37
-        },
-        {
-          "recipeId": 31462,
-          "itemId": 14050,
-          "rlvl": 180,
-          "icon": "/i/052000/052589.png",
-          "category": 57
         },
         {
           "recipeId": 31846,
@@ -27997,13 +28011,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31870,
-          "itemId": 15510,
-          "rlvl": 180,
-          "icon": "/i/040000/040823.png",
-          "category": 34
-        },
-        {
           "recipeId": 31832,
           "itemId": 13910,
           "rlvl": 180,
@@ -28072,13 +28079,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/046000/046970.png",
           "category": 38
-        },
-        {
-          "recipeId": 31439,
-          "itemId": 13863,
-          "rlvl": 180,
-          "icon": "/i/041000/041233.png",
-          "category": 34
         },
         {
           "recipeId": 31843,
@@ -28151,13 +28151,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 31449,
-          "itemId": 13873,
-          "rlvl": 180,
-          "icon": "/i/041000/041228.png",
-          "category": 34
-        },
-        {
           "recipeId": 31538,
           "itemId": 14719,
           "rlvl": 210,
@@ -28226,13 +28219,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/046000/046590.png",
           "category": 38
-        },
-        {
-          "recipeId": 31829,
-          "itemId": 13907,
-          "rlvl": 180,
-          "icon": "/i/040000/040718.png",
-          "category": 34
         },
         {
           "recipeId": 31550,
@@ -28305,13 +28291,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 31839,
-          "itemId": 13917,
-          "rlvl": 180,
-          "icon": "/i/040000/040717.png",
-          "category": 34
-        },
-        {
           "recipeId": 31894,
           "itemId": 15534,
           "rlvl": 220,
@@ -28379,13 +28358,6 @@ export const craftingLogPages = [
           "itemId": 17322,
           "rlvl": 250,
           "icon": "/i/043000/043320.png",
-          "category": 35
-        },
-        {
-          "recipeId": 31871,
-          "itemId": 15511,
-          "rlvl": 180,
-          "icon": "/i/042000/042514.png",
           "category": 35
         },
         {
@@ -28459,13 +28431,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 31825,
-          "itemId": 13903,
-          "rlvl": 180,
-          "icon": "/i/043000/043214.png",
-          "category": 35
-        },
-        {
           "recipeId": 32000,
           "itemId": 16667,
           "rlvl": 250,
@@ -28534,6 +28499,41 @@ export const craftingLogPages = [
           "rlvl": 250,
           "icon": "/i/047000/047061.png",
           "category": 38
+        },
+        {
+          "recipeId": 32014,
+          "itemId": 16681,
+          "rlvl": 250,
+          "icon": "/i/046000/046640.png",
+          "category": 38
+        },
+        {
+          "recipeId": 32008,
+          "itemId": 16675,
+          "rlvl": 250,
+          "icon": "/i/046000/046639.png",
+          "category": 38
+        },
+        {
+          "recipeId": 32330,
+          "itemId": 20472,
+          "rlvl": 300,
+          "icon": "/i/044000/044999.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32332,
+          "itemId": 20474,
+          "rlvl": 300,
+          "icon": "/i/046000/046785.png",
+          "category": 38
+        },
+        {
+          "recipeId": 32336,
+          "itemId": 20478,
+          "rlvl": 300,
+          "icon": "/i/046000/046059.png",
+          "category": 38
         }
       ]
     },
@@ -28563,6 +28563,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/041000/041178.png",
           "category": 34
+        },
+        {
+          "recipeId": 32391,
+          "itemId": 19021,
+          "rlvl": 320,
+          "icon": "/i/041000/041176.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32385,
+          "itemId": 19015,
+          "rlvl": 320,
+          "icon": "/i/041000/041177.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32368,
+          "itemId": 18998,
+          "rlvl": 320,
+          "icon": "/i/043000/043347.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32380,
+          "itemId": 19010,
+          "rlvl": 320,
+          "icon": "/i/043000/043348.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32369,
+          "itemId": 18999,
+          "rlvl": 320,
+          "icon": "/i/049000/049531.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32381,
+          "itemId": 19011,
+          "rlvl": 320,
+          "icon": "/i/049000/049532.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32375,
+          "itemId": 19005,
+          "rlvl": 320,
+          "icon": "/i/044000/044963.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32393,
+          "itemId": 19023,
+          "rlvl": 320,
+          "icon": "/i/044000/044961.png",
+          "category": 37
         },
         {
           "recipeId": 32387,
@@ -28635,13 +28691,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 32391,
-          "itemId": 19021,
-          "rlvl": 320,
-          "icon": "/i/041000/041176.png",
-          "category": 34
-        },
-        {
           "recipeId": 32389,
           "itemId": 19019,
           "rlvl": 320,
@@ -28661,55 +28710,6 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/049000/049989.png",
           "category": 38
-        },
-        {
-          "recipeId": 32385,
-          "itemId": 19015,
-          "rlvl": 320,
-          "icon": "/i/041000/041177.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32368,
-          "itemId": 18998,
-          "rlvl": 320,
-          "icon": "/i/043000/043347.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32380,
-          "itemId": 19010,
-          "rlvl": 320,
-          "icon": "/i/043000/043348.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32369,
-          "itemId": 18999,
-          "rlvl": 320,
-          "icon": "/i/049000/049531.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32381,
-          "itemId": 19011,
-          "rlvl": 320,
-          "icon": "/i/049000/049532.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32375,
-          "itemId": 19005,
-          "rlvl": 320,
-          "icon": "/i/044000/044963.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32393,
-          "itemId": 19023,
-          "rlvl": 320,
-          "icon": "/i/044000/044961.png",
-          "category": 37
         }
       ]
     },
@@ -28739,6 +28739,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/046000/046071.png",
           "category": 38
+        },
+        {
+          "recipeId": 33003,
+          "itemId": 23097,
+          "rlvl": 320,
+          "icon": "/i/052000/052635.png",
+          "category": 57
+        },
+        {
+          "recipeId": 32664,
+          "itemId": 21817,
+          "rlvl": 350,
+          "icon": "/i/052000/052625.png",
+          "category": 57
+        },
+        {
+          "recipeId": 32637,
+          "itemId": 22430,
+          "rlvl": 350,
+          "icon": "/i/022000/022016.png",
+          "category": 52
+        },
+        {
+          "recipeId": 32597,
+          "itemId": 21737,
+          "rlvl": 350,
+          "icon": "/i/049000/049321.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32591,
+          "itemId": 21731,
+          "rlvl": 350,
+          "icon": "/i/049000/049320.png",
+          "category": 37
+        },
+        {
+          "recipeId": 33043,
+          "itemId": 22907,
+          "rlvl": 350,
+          "icon": "/i/049000/049334.png",
+          "category": 37
+        },
+        {
+          "recipeId": 33048,
+          "itemId": 22912,
+          "rlvl": 350,
+          "icon": "/i/049000/049333.png",
+          "category": 37
+        },
+        {
+          "recipeId": 32576,
+          "itemId": 21716,
+          "rlvl": 350,
+          "icon": "/i/047000/047256.png",
+          "category": 39
         },
         {
           "recipeId": 32582,
@@ -28811,13 +28867,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 33003,
-          "itemId": 23097,
-          "rlvl": 320,
-          "icon": "/i/052000/052635.png",
-          "category": 57
-        },
-        {
           "recipeId": 32605,
           "itemId": 21745,
           "rlvl": 350,
@@ -28886,13 +28935,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/049000/049355.png",
           "category": 37
-        },
-        {
-          "recipeId": 32664,
-          "itemId": 21817,
-          "rlvl": 350,
-          "icon": "/i/052000/052625.png",
-          "category": 57
         },
         {
           "recipeId": 33109,
@@ -28965,13 +29007,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 32637,
-          "itemId": 22430,
-          "rlvl": 350,
-          "icon": "/i/022000/022016.png",
-          "category": 52
-        },
-        {
           "recipeId": 33105,
           "itemId": 23800,
           "rlvl": 380,
@@ -29005,41 +29040,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/046000/046073.png",
           "category": 38
-        },
-        {
-          "recipeId": 32597,
-          "itemId": 21737,
-          "rlvl": 350,
-          "icon": "/i/049000/049321.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32591,
-          "itemId": 21731,
-          "rlvl": 350,
-          "icon": "/i/049000/049320.png",
-          "category": 37
-        },
-        {
-          "recipeId": 33043,
-          "itemId": 22907,
-          "rlvl": 350,
-          "icon": "/i/049000/049334.png",
-          "category": 37
-        },
-        {
-          "recipeId": 33048,
-          "itemId": 22912,
-          "rlvl": 350,
-          "icon": "/i/049000/049333.png",
-          "category": 37
-        },
-        {
-          "recipeId": 32576,
-          "itemId": 21716,
-          "rlvl": 350,
-          "icon": "/i/047000/047256.png",
-          "category": 39
         }
       ]
     },
@@ -29068,55 +29068,6 @@ export const craftingLogPages = [
           "itemId": 8546,
           "rlvl": 55,
           "icon": "/i/047000/047538.png",
-          "category": 35
-        },
-        {
-          "recipeId": 30491,
-          "itemId": 8453,
-          "rlvl": 55,
-          "icon": "/i/048000/048153.png",
-          "category": 43
-        },
-        {
-          "recipeId": 30846,
-          "itemId": 9291,
-          "rlvl": 70,
-          "icon": "/i/041000/041362.png",
-          "category": 34
-        },
-        {
-          "recipeId": 30842,
-          "itemId": 9285,
-          "rlvl": 70,
-          "icon": "/i/046000/046416.png",
-          "category": 38
-        },
-        {
-          "recipeId": 30845,
-          "itemId": 9288,
-          "rlvl": 70,
-          "icon": "/i/046000/046419.png",
-          "category": 38
-        },
-        {
-          "recipeId": 30477,
-          "itemId": 8383,
-          "rlvl": 90,
-          "icon": "/i/031000/031023.png",
-          "category": 1
-        },
-        {
-          "recipeId": 30494,
-          "itemId": 8456,
-          "rlvl": 90,
-          "icon": "/i/042000/042372.png",
-          "category": 35
-        },
-        {
-          "recipeId": 30495,
-          "itemId": 8457,
-          "rlvl": 90,
-          "icon": "/i/042000/042373.png",
           "category": 35
         },
         {
@@ -29174,6 +29125,55 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/048000/048377.png",
           "category": 40
+        },
+        {
+          "recipeId": 30491,
+          "itemId": 8453,
+          "rlvl": 55,
+          "icon": "/i/048000/048153.png",
+          "category": 43
+        },
+        {
+          "recipeId": 30846,
+          "itemId": 9291,
+          "rlvl": 70,
+          "icon": "/i/041000/041362.png",
+          "category": 34
+        },
+        {
+          "recipeId": 30842,
+          "itemId": 9285,
+          "rlvl": 70,
+          "icon": "/i/046000/046416.png",
+          "category": 38
+        },
+        {
+          "recipeId": 30845,
+          "itemId": 9288,
+          "rlvl": 70,
+          "icon": "/i/046000/046419.png",
+          "category": 38
+        },
+        {
+          "recipeId": 30477,
+          "itemId": 8383,
+          "rlvl": 90,
+          "icon": "/i/031000/031023.png",
+          "category": 1
+        },
+        {
+          "recipeId": 30494,
+          "itemId": 8456,
+          "rlvl": 90,
+          "icon": "/i/042000/042372.png",
+          "category": 35
+        },
+        {
+          "recipeId": 30495,
+          "itemId": 8457,
+          "rlvl": 90,
+          "icon": "/i/042000/042373.png",
+          "category": 35
         }
       ]
     },
@@ -29262,6 +29262,62 @@ export const craftingLogPages = [
           "category": 57
         },
         {
+          "recipeId": 1761,
+          "itemId": 6519,
+          "rlvl": 28,
+          "icon": "/i/052000/052461.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1774,
+          "itemId": 6535,
+          "rlvl": 29,
+          "icon": "/i/052000/052402.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1759,
+          "itemId": 6517,
+          "rlvl": 35,
+          "icon": "/i/052000/052449.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1856,
+          "itemId": 6631,
+          "rlvl": 38,
+          "icon": "/i/052000/052210.png",
+          "category": 77
+        },
+        {
+          "recipeId": 1900,
+          "itemId": 6682,
+          "rlvl": 40,
+          "icon": "/i/052000/052002.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1893,
+          "itemId": 6675,
+          "rlvl": 41,
+          "icon": "/i/052000/052006.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1896,
+          "itemId": 6678,
+          "rlvl": 44,
+          "icon": "/i/052000/052009.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1769,
+          "itemId": 6530,
+          "rlvl": 46,
+          "icon": "/i/052000/052407.png",
+          "category": 57
+        },
+        {
           "recipeId": 1892,
           "itemId": 6674,
           "rlvl": 47,
@@ -29332,13 +29388,6 @@ export const craftingLogPages = [
           "category": 57
         },
         {
-          "recipeId": 1761,
-          "itemId": 6519,
-          "rlvl": 28,
-          "icon": "/i/052000/052461.png",
-          "category": 57
-        },
-        {
           "recipeId": 1890,
           "itemId": 6672,
           "rlvl": 55,
@@ -29372,55 +29421,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/052000/052603.png",
           "category": 57
-        },
-        {
-          "recipeId": 1774,
-          "itemId": 6535,
-          "rlvl": 29,
-          "icon": "/i/052000/052402.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1759,
-          "itemId": 6517,
-          "rlvl": 35,
-          "icon": "/i/052000/052449.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1856,
-          "itemId": 6631,
-          "rlvl": 38,
-          "icon": "/i/052000/052210.png",
-          "category": 77
-        },
-        {
-          "recipeId": 1900,
-          "itemId": 6682,
-          "rlvl": 40,
-          "icon": "/i/052000/052002.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1893,
-          "itemId": 6675,
-          "rlvl": 41,
-          "icon": "/i/052000/052006.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1896,
-          "itemId": 6678,
-          "rlvl": 44,
-          "icon": "/i/052000/052009.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1769,
-          "itemId": 6530,
-          "rlvl": 46,
-          "icon": "/i/052000/052407.png",
-          "category": 57
         }
       ]
     },
@@ -29449,6 +29449,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30053,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30054,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30060,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30061,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30132,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30133,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30057,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30378,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -29522,13 +29578,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30053,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30382,
           "itemId": 5800,
           "rlvl": 30,
@@ -29562,55 +29611,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
           "category": 55
-        },
-        {
-          "recipeId": 30054,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30060,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30061,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30132,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30133,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30057,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30378,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
         }
       ]
     }
@@ -29642,6 +29642,62 @@ export const craftingLogPages = [
           "rlvl": 2,
           "icon": "/i/021000/021601.png",
           "category": 51
+        },
+        {
+          "recipeId": 466,
+          "itemId": 3515,
+          "rlvl": 2,
+          "icon": "/i/044000/044008.png",
+          "category": 37
+        },
+        {
+          "recipeId": 467,
+          "itemId": 3307,
+          "rlvl": 2,
+          "icon": "/i/047000/047701.png",
+          "category": 36
+        },
+        {
+          "recipeId": 468,
+          "itemId": 3308,
+          "rlvl": 2,
+          "icon": "/i/047000/047713.png",
+          "category": 36
+        },
+        {
+          "recipeId": 470,
+          "itemId": 2629,
+          "rlvl": 3,
+          "icon": "/i/040000/040301.png",
+          "category": 34
+        },
+        {
+          "recipeId": 469,
+          "itemId": 2996,
+          "rlvl": 3,
+          "icon": "/i/047000/047501.png",
+          "category": 35
+        },
+        {
+          "recipeId": 471,
+          "itemId": 2997,
+          "rlvl": 3,
+          "icon": "/i/047000/047513.png",
+          "category": 35
+        },
+        {
+          "recipeId": 472,
+          "itemId": 3275,
+          "rlvl": 3,
+          "icon": "/i/045000/045034.png",
+          "category": 36
+        },
+        {
+          "recipeId": 474,
+          "itemId": 2630,
+          "rlvl": 4,
+          "icon": "/i/040000/040301.png",
+          "category": 34
         },
         {
           "recipeId": 473,
@@ -29714,67 +29770,11 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 466,
-          "itemId": 3515,
-          "rlvl": 2,
-          "icon": "/i/044000/044008.png",
-          "category": 37
-        },
-        {
           "recipeId": 482,
           "itemId": 3312,
           "rlvl": 5,
           "icon": "/i/045000/045079.png",
           "category": 36
-        },
-        {
-          "recipeId": 467,
-          "itemId": 3307,
-          "rlvl": 2,
-          "icon": "/i/047000/047701.png",
-          "category": 36
-        },
-        {
-          "recipeId": 468,
-          "itemId": 3308,
-          "rlvl": 2,
-          "icon": "/i/047000/047713.png",
-          "category": 36
-        },
-        {
-          "recipeId": 470,
-          "itemId": 2629,
-          "rlvl": 3,
-          "icon": "/i/040000/040301.png",
-          "category": 34
-        },
-        {
-          "recipeId": 469,
-          "itemId": 2996,
-          "rlvl": 3,
-          "icon": "/i/047000/047501.png",
-          "category": 35
-        },
-        {
-          "recipeId": 471,
-          "itemId": 2997,
-          "rlvl": 3,
-          "icon": "/i/047000/047513.png",
-          "category": 35
-        },
-        {
-          "recipeId": 472,
-          "itemId": 3275,
-          "rlvl": 3,
-          "icon": "/i/045000/045034.png",
-          "category": 36
-        },
-        {
-          "recipeId": 474,
-          "itemId": 2630,
-          "rlvl": 4,
-          "icon": "/i/040000/040301.png",
-          "category": 34
         }
       ]
     },
@@ -29804,62 +29804,6 @@ export const craftingLogPages = [
           "rlvl": 6,
           "icon": "/i/043000/043042.png",
           "category": 35
-        },
-        {
-          "recipeId": 495,
-          "itemId": 3014,
-          "rlvl": 9,
-          "icon": "/i/042000/042233.png",
-          "category": 35
-        },
-        {
-          "recipeId": 496,
-          "itemId": 3013,
-          "rlvl": 9,
-          "icon": "/i/042000/042116.png",
-          "category": 35
-        },
-        {
-          "recipeId": 497,
-          "itemId": 3317,
-          "rlvl": 9,
-          "icon": "/i/045000/045282.png",
-          "category": 36
-        },
-        {
-          "recipeId": 498,
-          "itemId": 3315,
-          "rlvl": 9,
-          "icon": "/i/045000/045001.png",
-          "category": 36
-        },
-        {
-          "recipeId": 500,
-          "itemId": 2661,
-          "rlvl": 10,
-          "icon": "/i/040000/040302.png",
-          "category": 34
-        },
-        {
-          "recipeId": 501,
-          "itemId": 3015,
-          "rlvl": 10,
-          "icon": "/i/042000/042017.png",
-          "category": 35
-        },
-        {
-          "recipeId": 499,
-          "itemId": 3318,
-          "rlvl": 10,
-          "icon": "/i/045000/045015.png",
-          "category": 36
-        },
-        {
-          "recipeId": 502,
-          "itemId": 3316,
-          "rlvl": 10,
-          "icon": "/i/045000/045035.png",
-          "category": 36
         },
         {
           "recipeId": 487,
@@ -29916,6 +29860,62 @@ export const craftingLogPages = [
           "rlvl": 8,
           "icon": "/i/045000/045309.png",
           "category": 36
+        },
+        {
+          "recipeId": 495,
+          "itemId": 3014,
+          "rlvl": 9,
+          "icon": "/i/042000/042233.png",
+          "category": 35
+        },
+        {
+          "recipeId": 496,
+          "itemId": 3013,
+          "rlvl": 9,
+          "icon": "/i/042000/042116.png",
+          "category": 35
+        },
+        {
+          "recipeId": 497,
+          "itemId": 3317,
+          "rlvl": 9,
+          "icon": "/i/045000/045282.png",
+          "category": 36
+        },
+        {
+          "recipeId": 498,
+          "itemId": 3315,
+          "rlvl": 9,
+          "icon": "/i/045000/045001.png",
+          "category": 36
+        },
+        {
+          "recipeId": 500,
+          "itemId": 2661,
+          "rlvl": 10,
+          "icon": "/i/040000/040302.png",
+          "category": 34
+        },
+        {
+          "recipeId": 501,
+          "itemId": 3015,
+          "rlvl": 10,
+          "icon": "/i/042000/042017.png",
+          "category": 35
+        },
+        {
+          "recipeId": 499,
+          "itemId": 3318,
+          "rlvl": 10,
+          "icon": "/i/045000/045015.png",
+          "category": 36
+        },
+        {
+          "recipeId": 502,
+          "itemId": 3316,
+          "rlvl": 10,
+          "icon": "/i/045000/045035.png",
+          "category": 36
         }
       ]
     },
@@ -29945,6 +29945,62 @@ export const craftingLogPages = [
           "rlvl": 11,
           "icon": "/i/044000/044042.png",
           "category": 37
+        },
+        {
+          "recipeId": 505,
+          "itemId": 3538,
+          "rlvl": 11,
+          "icon": "/i/044000/044159.png",
+          "category": 37
+        },
+        {
+          "recipeId": 506,
+          "itemId": 5334,
+          "rlvl": 12,
+          "icon": "/i/021000/021656.png",
+          "category": 51
+        },
+        {
+          "recipeId": 507,
+          "itemId": 2663,
+          "rlvl": 12,
+          "icon": "/i/040000/040623.png",
+          "category": 34
+        },
+        {
+          "recipeId": 508,
+          "itemId": 3020,
+          "rlvl": 12,
+          "icon": "/i/042000/042116.png",
+          "category": 35
+        },
+        {
+          "recipeId": 509,
+          "itemId": 3019,
+          "rlvl": 12,
+          "icon": "/i/042000/042116.png",
+          "category": 35
+        },
+        {
+          "recipeId": 510,
+          "itemId": 3018,
+          "rlvl": 12,
+          "icon": "/i/042000/042044.png",
+          "category": 35
+        },
+        {
+          "recipeId": 511,
+          "itemId": 5325,
+          "rlvl": 13,
+          "icon": "/i/021000/021602.png",
+          "category": 51
+        },
+        {
+          "recipeId": 512,
+          "itemId": 2665,
+          "rlvl": 13,
+          "icon": "/i/040000/040326.png",
+          "category": 34
         },
         {
           "recipeId": 514,
@@ -30017,67 +30073,11 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 505,
-          "itemId": 3538,
-          "rlvl": 11,
-          "icon": "/i/044000/044159.png",
-          "category": 37
-        },
-        {
           "recipeId": 521,
           "itemId": 3322,
           "rlvl": 15,
           "icon": "/i/045000/045139.png",
           "category": 36
-        },
-        {
-          "recipeId": 506,
-          "itemId": 5334,
-          "rlvl": 12,
-          "icon": "/i/021000/021656.png",
-          "category": 51
-        },
-        {
-          "recipeId": 507,
-          "itemId": 2663,
-          "rlvl": 12,
-          "icon": "/i/040000/040623.png",
-          "category": 34
-        },
-        {
-          "recipeId": 508,
-          "itemId": 3020,
-          "rlvl": 12,
-          "icon": "/i/042000/042116.png",
-          "category": 35
-        },
-        {
-          "recipeId": 509,
-          "itemId": 3019,
-          "rlvl": 12,
-          "icon": "/i/042000/042116.png",
-          "category": 35
-        },
-        {
-          "recipeId": 510,
-          "itemId": 3018,
-          "rlvl": 12,
-          "icon": "/i/042000/042044.png",
-          "category": 35
-        },
-        {
-          "recipeId": 511,
-          "itemId": 5325,
-          "rlvl": 13,
-          "icon": "/i/021000/021602.png",
-          "category": 51
-        },
-        {
-          "recipeId": 512,
-          "itemId": 2665,
-          "rlvl": 13,
-          "icon": "/i/040000/040326.png",
-          "category": 34
         }
       ]
     },
@@ -30106,6 +30106,62 @@ export const craftingLogPages = [
           "itemId": 3023,
           "rlvl": 16,
           "icon": "/i/042000/042173.png",
+          "category": 35
+        },
+        {
+          "recipeId": 527,
+          "itemId": 3028,
+          "rlvl": 16,
+          "icon": "/i/043000/043046.png",
+          "category": 35
+        },
+        {
+          "recipeId": 528,
+          "itemId": 3974,
+          "rlvl": 16,
+          "icon": "/i/047000/047401.png",
+          "category": 39
+        },
+        {
+          "recipeId": 525,
+          "itemId": 3325,
+          "rlvl": 16,
+          "icon": "/i/045000/045015.png",
+          "category": 36
+        },
+        {
+          "recipeId": 530,
+          "itemId": 3036,
+          "rlvl": 17,
+          "icon": "/i/042000/042020.png",
+          "category": 35
+        },
+        {
+          "recipeId": 531,
+          "itemId": 3038,
+          "rlvl": 17,
+          "icon": "/i/042000/042020.png",
+          "category": 35
+        },
+        {
+          "recipeId": 529,
+          "itemId": 3332,
+          "rlvl": 17,
+          "icon": "/i/045000/045019.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1594,
+          "itemId": 7025,
+          "rlvl": 18,
+          "icon": "/i/021000/021602.png",
+          "category": 51
+        },
+        {
+          "recipeId": 532,
+          "itemId": 3041,
+          "rlvl": 18,
+          "icon": "/i/042000/042299.png",
           "category": 35
         },
         {
@@ -30170,62 +30226,6 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/045000/045029.png",
           "category": 36
-        },
-        {
-          "recipeId": 527,
-          "itemId": 3028,
-          "rlvl": 16,
-          "icon": "/i/043000/043046.png",
-          "category": 35
-        },
-        {
-          "recipeId": 528,
-          "itemId": 3974,
-          "rlvl": 16,
-          "icon": "/i/047000/047401.png",
-          "category": 39
-        },
-        {
-          "recipeId": 525,
-          "itemId": 3325,
-          "rlvl": 16,
-          "icon": "/i/045000/045015.png",
-          "category": 36
-        },
-        {
-          "recipeId": 530,
-          "itemId": 3036,
-          "rlvl": 17,
-          "icon": "/i/042000/042020.png",
-          "category": 35
-        },
-        {
-          "recipeId": 531,
-          "itemId": 3038,
-          "rlvl": 17,
-          "icon": "/i/042000/042020.png",
-          "category": 35
-        },
-        {
-          "recipeId": 529,
-          "itemId": 3332,
-          "rlvl": 17,
-          "icon": "/i/045000/045019.png",
-          "category": 36
-        },
-        {
-          "recipeId": 1594,
-          "itemId": 7025,
-          "rlvl": 18,
-          "icon": "/i/021000/021602.png",
-          "category": 51
-        },
-        {
-          "recipeId": 532,
-          "itemId": 3041,
-          "rlvl": 18,
-          "icon": "/i/042000/042299.png",
-          "category": 35
         }
       ]
     },
@@ -30255,6 +30255,62 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/047000/047421.png",
           "category": 39
+        },
+        {
+          "recipeId": 544,
+          "itemId": 3050,
+          "rlvl": 22,
+          "icon": "/i/042000/042154.png",
+          "category": 35
+        },
+        {
+          "recipeId": 545,
+          "itemId": 3343,
+          "rlvl": 22,
+          "icon": "/i/045000/045283.png",
+          "category": 36
+        },
+        {
+          "recipeId": 546,
+          "itemId": 3800,
+          "rlvl": 22,
+          "icon": "/i/046000/046194.png",
+          "category": 38
+        },
+        {
+          "recipeId": 547,
+          "itemId": 5335,
+          "rlvl": 23,
+          "icon": "/i/021000/021657.png",
+          "category": 51
+        },
+        {
+          "recipeId": 550,
+          "itemId": 2719,
+          "rlvl": 23,
+          "icon": "/i/040000/040630.png",
+          "category": 34
+        },
+        {
+          "recipeId": 548,
+          "itemId": 3053,
+          "rlvl": 23,
+          "icon": "/i/042000/042120.png",
+          "category": 35
+        },
+        {
+          "recipeId": 549,
+          "itemId": 3052,
+          "rlvl": 23,
+          "icon": "/i/042000/042120.png",
+          "category": 35
+        },
+        {
+          "recipeId": 551,
+          "itemId": 3060,
+          "rlvl": 23,
+          "icon": "/i/042000/042091.png",
+          "category": 35
         },
         {
           "recipeId": 552,
@@ -30327,67 +30383,11 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 544,
-          "itemId": 3050,
-          "rlvl": 22,
-          "icon": "/i/042000/042154.png",
-          "category": 35
-        },
-        {
           "recipeId": 562,
           "itemId": 3354,
           "rlvl": 25,
           "icon": "/i/045000/045297.png",
           "category": 36
-        },
-        {
-          "recipeId": 545,
-          "itemId": 3343,
-          "rlvl": 22,
-          "icon": "/i/045000/045283.png",
-          "category": 36
-        },
-        {
-          "recipeId": 546,
-          "itemId": 3800,
-          "rlvl": 22,
-          "icon": "/i/046000/046194.png",
-          "category": 38
-        },
-        {
-          "recipeId": 547,
-          "itemId": 5335,
-          "rlvl": 23,
-          "icon": "/i/021000/021657.png",
-          "category": 51
-        },
-        {
-          "recipeId": 550,
-          "itemId": 2719,
-          "rlvl": 23,
-          "icon": "/i/040000/040630.png",
-          "category": 34
-        },
-        {
-          "recipeId": 548,
-          "itemId": 3053,
-          "rlvl": 23,
-          "icon": "/i/042000/042120.png",
-          "category": 35
-        },
-        {
-          "recipeId": 549,
-          "itemId": 3052,
-          "rlvl": 23,
-          "icon": "/i/042000/042120.png",
-          "category": 35
-        },
-        {
-          "recipeId": 551,
-          "itemId": 3060,
-          "rlvl": 23,
-          "icon": "/i/042000/042091.png",
-          "category": 35
         }
       ]
     },
@@ -30417,6 +30417,62 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/042000/042226.png",
           "category": 35
+        },
+        {
+          "recipeId": 565,
+          "itemId": 3996,
+          "rlvl": 26,
+          "icon": "/i/047000/047408.png",
+          "category": 39
+        },
+        {
+          "recipeId": 567,
+          "itemId": 2733,
+          "rlvl": 27,
+          "icon": "/i/040000/040592.png",
+          "category": 34
+        },
+        {
+          "recipeId": 568,
+          "itemId": 3090,
+          "rlvl": 27,
+          "icon": "/i/043000/043515.png",
+          "category": 35
+        },
+        {
+          "recipeId": 566,
+          "itemId": 4001,
+          "rlvl": 27,
+          "icon": "/i/047000/047406.png",
+          "category": 39
+        },
+        {
+          "recipeId": 569,
+          "itemId": 3355,
+          "rlvl": 27,
+          "icon": "/i/045000/045088.png",
+          "category": 36
+        },
+        {
+          "recipeId": 570,
+          "itemId": 2734,
+          "rlvl": 28,
+          "icon": "/i/040000/040592.png",
+          "category": 34
+        },
+        {
+          "recipeId": 571,
+          "itemId": 3092,
+          "rlvl": 28,
+          "icon": "/i/042000/042198.png",
+          "category": 35
+        },
+        {
+          "recipeId": 572,
+          "itemId": 4006,
+          "rlvl": 28,
+          "icon": "/i/047000/047246.png",
+          "category": 39
         },
         {
           "recipeId": 574,
@@ -30487,62 +30543,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/046000/046199.png",
           "category": 38
-        },
-        {
-          "recipeId": 565,
-          "itemId": 3996,
-          "rlvl": 26,
-          "icon": "/i/047000/047408.png",
-          "category": 39
-        },
-        {
-          "recipeId": 567,
-          "itemId": 2733,
-          "rlvl": 27,
-          "icon": "/i/040000/040592.png",
-          "category": 34
-        },
-        {
-          "recipeId": 568,
-          "itemId": 3090,
-          "rlvl": 27,
-          "icon": "/i/043000/043515.png",
-          "category": 35
-        },
-        {
-          "recipeId": 566,
-          "itemId": 4001,
-          "rlvl": 27,
-          "icon": "/i/047000/047406.png",
-          "category": 39
-        },
-        {
-          "recipeId": 569,
-          "itemId": 3355,
-          "rlvl": 27,
-          "icon": "/i/045000/045088.png",
-          "category": 36
-        },
-        {
-          "recipeId": 570,
-          "itemId": 2734,
-          "rlvl": 28,
-          "icon": "/i/040000/040592.png",
-          "category": 34
-        },
-        {
-          "recipeId": 571,
-          "itemId": 3092,
-          "rlvl": 28,
-          "icon": "/i/042000/042198.png",
-          "category": 35
-        },
-        {
-          "recipeId": 572,
-          "itemId": 4006,
-          "rlvl": 28,
-          "icon": "/i/047000/047246.png",
-          "category": 39
         }
       ]
     },
@@ -30571,6 +30571,62 @@ export const craftingLogPages = [
           "itemId": 3603,
           "rlvl": 31,
           "icon": "/i/044000/044081.png",
+          "category": 37
+        },
+        {
+          "recipeId": 584,
+          "itemId": 4013,
+          "rlvl": 31,
+          "icon": "/i/047000/047403.png",
+          "category": 39
+        },
+        {
+          "recipeId": 583,
+          "itemId": 3372,
+          "rlvl": 31,
+          "icon": "/i/045000/045285.png",
+          "category": 36
+        },
+        {
+          "recipeId": 587,
+          "itemId": 5336,
+          "rlvl": 32,
+          "icon": "/i/021000/021659.png",
+          "category": 51
+        },
+        {
+          "recipeId": 588,
+          "itemId": 2763,
+          "rlvl": 32,
+          "icon": "/i/040000/040662.png",
+          "category": 34
+        },
+        {
+          "recipeId": 589,
+          "itemId": 3120,
+          "rlvl": 32,
+          "icon": "/i/042000/042130.png",
+          "category": 35
+        },
+        {
+          "recipeId": 590,
+          "itemId": 5327,
+          "rlvl": 33,
+          "icon": "/i/021000/021605.png",
+          "category": 51
+        },
+        {
+          "recipeId": 591,
+          "itemId": 3121,
+          "rlvl": 33,
+          "icon": "/i/042000/042130.png",
+          "category": 35
+        },
+        {
+          "recipeId": 593,
+          "itemId": 3607,
+          "rlvl": 33,
+          "icon": "/i/044000/044161.png",
           "category": 37
         },
         {
@@ -30644,13 +30700,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 584,
-          "itemId": 4013,
-          "rlvl": 31,
-          "icon": "/i/047000/047403.png",
-          "category": 39
-        },
-        {
           "recipeId": 2895,
           "itemId": 15930,
           "rlvl": 35,
@@ -30670,55 +30719,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/047000/047248.png",
           "category": 39
-        },
-        {
-          "recipeId": 583,
-          "itemId": 3372,
-          "rlvl": 31,
-          "icon": "/i/045000/045285.png",
-          "category": 36
-        },
-        {
-          "recipeId": 587,
-          "itemId": 5336,
-          "rlvl": 32,
-          "icon": "/i/021000/021659.png",
-          "category": 51
-        },
-        {
-          "recipeId": 588,
-          "itemId": 2763,
-          "rlvl": 32,
-          "icon": "/i/040000/040662.png",
-          "category": 34
-        },
-        {
-          "recipeId": 589,
-          "itemId": 3120,
-          "rlvl": 32,
-          "icon": "/i/042000/042130.png",
-          "category": 35
-        },
-        {
-          "recipeId": 590,
-          "itemId": 5327,
-          "rlvl": 33,
-          "icon": "/i/021000/021605.png",
-          "category": 51
-        },
-        {
-          "recipeId": 591,
-          "itemId": 3121,
-          "rlvl": 33,
-          "icon": "/i/042000/042130.png",
-          "category": 35
-        },
-        {
-          "recipeId": 593,
-          "itemId": 3607,
-          "rlvl": 33,
-          "icon": "/i/044000/044161.png",
-          "category": 37
         }
       ]
     },
@@ -30748,6 +30748,62 @@ export const craftingLogPages = [
           "rlvl": 36,
           "icon": "/i/040000/040624.png",
           "category": 34
+        },
+        {
+          "recipeId": 603,
+          "itemId": 3140,
+          "rlvl": 36,
+          "icon": "/i/043000/043521.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1363,
+          "itemId": 4030,
+          "rlvl": 36,
+          "icon": "/i/047000/047408.png",
+          "category": 39
+        },
+        {
+          "recipeId": 602,
+          "itemId": 3399,
+          "rlvl": 36,
+          "icon": "/i/045000/045184.png",
+          "category": 36
+        },
+        {
+          "recipeId": 604,
+          "itemId": 2804,
+          "rlvl": 37,
+          "icon": "/i/040000/040606.png",
+          "category": 34
+        },
+        {
+          "recipeId": 605,
+          "itemId": 4033,
+          "rlvl": 37,
+          "icon": "/i/047000/047255.png",
+          "category": 39
+        },
+        {
+          "recipeId": 607,
+          "itemId": 3404,
+          "rlvl": 37,
+          "icon": "/i/045000/045310.png",
+          "category": 36
+        },
+        {
+          "recipeId": 606,
+          "itemId": 3849,
+          "rlvl": 37,
+          "icon": "/i/046000/046338.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1364,
+          "itemId": 3076,
+          "rlvl": 37,
+          "icon": "/i/042000/042206.png",
+          "category": 35
         },
         {
           "recipeId": 608,
@@ -30817,13 +30873,6 @@ export const craftingLogPages = [
           "itemId": 3147,
           "rlvl": 39,
           "icon": "/i/042000/042228.png",
-          "category": 35
-        },
-        {
-          "recipeId": 603,
-          "itemId": 3140,
-          "rlvl": 36,
-          "icon": "/i/043000/043521.png",
           "category": 35
         },
         {
@@ -30897,59 +30946,10 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 1363,
-          "itemId": 4030,
-          "rlvl": 36,
-          "icon": "/i/047000/047408.png",
-          "category": 39
-        },
-        {
           "recipeId": 1370,
           "itemId": 3137,
           "rlvl": 40,
           "icon": "/i/042000/042183.png",
-          "category": 35
-        },
-        {
-          "recipeId": 602,
-          "itemId": 3399,
-          "rlvl": 36,
-          "icon": "/i/045000/045184.png",
-          "category": 36
-        },
-        {
-          "recipeId": 604,
-          "itemId": 2804,
-          "rlvl": 37,
-          "icon": "/i/040000/040606.png",
-          "category": 34
-        },
-        {
-          "recipeId": 605,
-          "itemId": 4033,
-          "rlvl": 37,
-          "icon": "/i/047000/047255.png",
-          "category": 39
-        },
-        {
-          "recipeId": 607,
-          "itemId": 3404,
-          "rlvl": 37,
-          "icon": "/i/045000/045310.png",
-          "category": 36
-        },
-        {
-          "recipeId": 606,
-          "itemId": 3849,
-          "rlvl": 37,
-          "icon": "/i/046000/046338.png",
-          "category": 38
-        },
-        {
-          "recipeId": 1364,
-          "itemId": 3076,
-          "rlvl": 37,
-          "icon": "/i/042000/042206.png",
           "category": 35
         }
       ]
@@ -30980,6 +30980,62 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/042000/042064.png",
           "category": 35
+        },
+        {
+          "recipeId": 624,
+          "itemId": 3162,
+          "rlvl": 41,
+          "icon": "/i/042000/042231.png",
+          "category": 35
+        },
+        {
+          "recipeId": 1371,
+          "itemId": 3640,
+          "rlvl": 41,
+          "icon": "/i/044000/044198.png",
+          "category": 37
+        },
+        {
+          "recipeId": 622,
+          "itemId": 3413,
+          "rlvl": 41,
+          "icon": "/i/045000/045172.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1372,
+          "itemId": 2785,
+          "rlvl": 41,
+          "icon": "/i/040000/040577.png",
+          "category": 34
+        },
+        {
+          "recipeId": 1596,
+          "itemId": 7027,
+          "rlvl": 42,
+          "icon": "/i/021000/021607.png",
+          "category": 51
+        },
+        {
+          "recipeId": 628,
+          "itemId": 2829,
+          "rlvl": 42,
+          "icon": "/i/040000/040622.png",
+          "category": 34
+        },
+        {
+          "recipeId": 629,
+          "itemId": 2825,
+          "rlvl": 42,
+          "icon": "/i/040000/040626.png",
+          "category": 34
+        },
+        {
+          "recipeId": 635,
+          "itemId": 2832,
+          "rlvl": 42,
+          "icon": "/i/040000/040628.png",
+          "category": 34
         },
         {
           "recipeId": 2840,
@@ -31052,13 +31108,6 @@ export const craftingLogPages = [
           "category": 38
         },
         {
-          "recipeId": 624,
-          "itemId": 3162,
-          "rlvl": 41,
-          "icon": "/i/042000/042231.png",
-          "category": 35
-        },
-        {
           "recipeId": 640,
           "itemId": 5329,
           "rlvl": 43,
@@ -31127,13 +31176,6 @@ export const craftingLogPages = [
           "rlvl": 44,
           "icon": "/i/040000/040530.png",
           "category": 34
-        },
-        {
-          "recipeId": 1371,
-          "itemId": 3640,
-          "rlvl": 41,
-          "icon": "/i/044000/044198.png",
-          "category": 37
         },
         {
           "recipeId": 643,
@@ -31206,13 +31248,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 622,
-          "itemId": 3413,
-          "rlvl": 41,
-          "icon": "/i/045000/045172.png",
-          "category": 36
-        },
-        {
           "recipeId": 653,
           "itemId": 3205,
           "rlvl": 45,
@@ -31267,41 +31302,6 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/040000/040574.png",
           "category": 34
-        },
-        {
-          "recipeId": 1372,
-          "itemId": 2785,
-          "rlvl": 41,
-          "icon": "/i/040000/040577.png",
-          "category": 34
-        },
-        {
-          "recipeId": 1596,
-          "itemId": 7027,
-          "rlvl": 42,
-          "icon": "/i/021000/021607.png",
-          "category": 51
-        },
-        {
-          "recipeId": 628,
-          "itemId": 2829,
-          "rlvl": 42,
-          "icon": "/i/040000/040622.png",
-          "category": 34
-        },
-        {
-          "recipeId": 629,
-          "itemId": 2825,
-          "rlvl": 42,
-          "icon": "/i/040000/040626.png",
-          "category": 34
-        },
-        {
-          "recipeId": 635,
-          "itemId": 2832,
-          "rlvl": 42,
-          "icon": "/i/040000/040628.png",
-          "category": 34
         }
       ]
     },
@@ -31331,6 +31331,62 @@ export const craftingLogPages = [
           "rlvl": 46,
           "icon": "/i/044000/044100.png",
           "category": 37
+        },
+        {
+          "recipeId": 658,
+          "itemId": 3681,
+          "rlvl": 46,
+          "icon": "/i/044000/044098.png",
+          "category": 37
+        },
+        {
+          "recipeId": 1380,
+          "itemId": 3914,
+          "rlvl": 46,
+          "icon": "/i/046000/046329.png",
+          "category": 38
+        },
+        {
+          "recipeId": 1377,
+          "itemId": 2888,
+          "rlvl": 46,
+          "icon": "/i/040000/040377.png",
+          "category": 34
+        },
+        {
+          "recipeId": 660,
+          "itemId": 2891,
+          "rlvl": 47,
+          "icon": "/i/040000/040629.png",
+          "category": 34
+        },
+        {
+          "recipeId": 659,
+          "itemId": 3467,
+          "rlvl": 47,
+          "icon": "/i/045000/045183.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1381,
+          "itemId": 3469,
+          "rlvl": 47,
+          "icon": "/i/045000/045298.png",
+          "category": 36
+        },
+        {
+          "recipeId": 1378,
+          "itemId": 3208,
+          "rlvl": 47,
+          "icon": "/i/042000/042065.png",
+          "category": 35
+        },
+        {
+          "recipeId": 661,
+          "itemId": 3211,
+          "rlvl": 48,
+          "icon": "/i/042000/042230.png",
+          "category": 35
         },
         {
           "recipeId": 1382,
@@ -31403,13 +31459,6 @@ export const craftingLogPages = [
           "category": 51
         },
         {
-          "recipeId": 658,
-          "itemId": 3681,
-          "rlvl": 46,
-          "icon": "/i/044000/044098.png",
-          "category": 37
-        },
-        {
           "recipeId": 1946,
           "itemId": 7777,
           "rlvl": 55,
@@ -31478,13 +31527,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/047000/047562.png",
           "category": 35
-        },
-        {
-          "recipeId": 1380,
-          "itemId": 3914,
-          "rlvl": 46,
-          "icon": "/i/046000/046329.png",
-          "category": 38
         },
         {
           "recipeId": 1403,
@@ -31557,13 +31599,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 1377,
-          "itemId": 2888,
-          "rlvl": 46,
-          "icon": "/i/040000/040377.png",
-          "category": 34
-        },
-        {
           "recipeId": 1412,
           "itemId": 3231,
           "rlvl": 55,
@@ -31632,13 +31667,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/045000/045330.png",
           "category": 36
-        },
-        {
-          "recipeId": 660,
-          "itemId": 2891,
-          "rlvl": 47,
-          "icon": "/i/040000/040629.png",
-          "category": 34
         },
         {
           "recipeId": 1416,
@@ -31711,13 +31739,6 @@ export const craftingLogPages = [
           "category": 56
         },
         {
-          "recipeId": 659,
-          "itemId": 3467,
-          "rlvl": 47,
-          "icon": "/i/045000/045183.png",
-          "category": 36
-        },
-        {
           "recipeId": 1390,
           "itemId": 5579,
           "rlvl": 70,
@@ -31786,13 +31807,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/047000/047413.png",
           "category": 39
-        },
-        {
-          "recipeId": 1381,
-          "itemId": 3469,
-          "rlvl": 47,
-          "icon": "/i/045000/045298.png",
-          "category": 36
         },
         {
           "recipeId": 1429,
@@ -31865,13 +31879,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 1378,
-          "itemId": 3208,
-          "rlvl": 47,
-          "icon": "/i/042000/042065.png",
-          "category": 35
-        },
-        {
           "recipeId": 1932,
           "itemId": 7541,
           "rlvl": 90,
@@ -31905,13 +31912,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/028000/028585.png",
           "category": 81
-        },
-        {
-          "recipeId": 661,
-          "itemId": 3211,
-          "rlvl": 48,
-          "icon": "/i/042000/042230.png",
-          "category": 35
         }
       ]
     },
@@ -31941,6 +31941,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/021000/021668.png",
           "category": 51
+        },
+        {
+          "recipeId": 2684,
+          "itemId": 10838,
+          "rlvl": 115,
+          "icon": "/i/040000/040419.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2670,
+          "itemId": 10796,
+          "rlvl": 115,
+          "icon": "/i/040000/040760.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2714,
+          "itemId": 10922,
+          "rlvl": 115,
+          "icon": "/i/040000/040762.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2696,
+          "itemId": 10880,
+          "rlvl": 115,
+          "icon": "/i/040000/040761.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2690,
+          "itemId": 10852,
+          "rlvl": 115,
+          "icon": "/i/044000/044362.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2691,
+          "itemId": 10859,
+          "rlvl": 115,
+          "icon": "/i/047000/047403.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2677,
+          "itemId": 10817,
+          "rlvl": 115,
+          "icon": "/i/047000/047403.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2721,
+          "itemId": 10943,
+          "rlvl": 115,
+          "icon": "/i/047000/047403.png",
+          "category": 39
         },
         {
           "recipeId": 2706,
@@ -32013,13 +32069,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 2684,
-          "itemId": 10838,
-          "rlvl": 115,
-          "icon": "/i/040000/040419.png",
-          "category": 34
-        },
-        {
           "recipeId": 2679,
           "itemId": 10824,
           "rlvl": 120,
@@ -32090,13 +32139,6 @@ export const craftingLogPages = [
           "category": 51
         },
         {
-          "recipeId": 2670,
-          "itemId": 10796,
-          "rlvl": 115,
-          "icon": "/i/040000/040760.png",
-          "category": 34
-        },
-        {
           "recipeId": 2685,
           "itemId": 10839,
           "rlvl": 125,
@@ -32164,13 +32206,6 @@ export const craftingLogPages = [
           "itemId": 11956,
           "rlvl": 130,
           "icon": "/i/040000/040421.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2714,
-          "itemId": 10922,
-          "rlvl": 115,
-          "icon": "/i/040000/040762.png",
           "category": 34
         },
         {
@@ -32244,13 +32279,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 2696,
-          "itemId": 10880,
-          "rlvl": 115,
-          "icon": "/i/040000/040761.png",
-          "category": 34
-        },
-        {
           "recipeId": 2753,
           "itemId": 12590,
           "rlvl": 133,
@@ -32319,13 +32347,6 @@ export const craftingLogPages = [
           "rlvl": 133,
           "icon": "/i/048000/048419.png",
           "category": 40
-        },
-        {
-          "recipeId": 2690,
-          "itemId": 10852,
-          "rlvl": 115,
-          "icon": "/i/044000/044362.png",
-          "category": 37
         },
         {
           "recipeId": 2732,
@@ -32398,13 +32419,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 2691,
-          "itemId": 10859,
-          "rlvl": 115,
-          "icon": "/i/047000/047403.png",
-          "category": 39
-        },
-        {
           "recipeId": 2668,
           "itemId": 10784,
           "rlvl": 136,
@@ -32459,20 +32473,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/045000/045846.png",
           "category": 36
-        },
-        {
-          "recipeId": 2677,
-          "itemId": 10817,
-          "rlvl": 115,
-          "icon": "/i/047000/047403.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2721,
-          "itemId": 10943,
-          "rlvl": 115,
-          "icon": "/i/047000/047403.png",
-          "category": 39
         }
       ]
     },
@@ -32502,6 +32502,62 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/042000/042471.png",
           "category": 35
+        },
+        {
+          "recipeId": 2853,
+          "itemId": 13688,
+          "rlvl": 139,
+          "icon": "/i/042000/042485.png",
+          "category": 35
+        },
+        {
+          "recipeId": 2678,
+          "itemId": 10820,
+          "rlvl": 139,
+          "icon": "/i/047000/047421.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2722,
+          "itemId": 10946,
+          "rlvl": 139,
+          "icon": "/i/047000/047421.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2707,
+          "itemId": 10904,
+          "rlvl": 139,
+          "icon": "/i/047000/047421.png",
+          "category": 39
+        },
+        {
+          "recipeId": 2746,
+          "itemId": 11975,
+          "rlvl": 139,
+          "icon": "/i/045000/045694.png",
+          "category": 36
+        },
+        {
+          "recipeId": 2750,
+          "itemId": 12003,
+          "rlvl": 139,
+          "icon": "/i/045000/045693.png",
+          "category": 36
+        },
+        {
+          "recipeId": 2822,
+          "itemId": 12991,
+          "rlvl": 139,
+          "icon": "/i/049000/049113.png",
+          "category": 63
+        },
+        {
+          "recipeId": 2758,
+          "itemId": 12596,
+          "rlvl": 142,
+          "icon": "/i/021000/021657.png",
+          "category": 51
         },
         {
           "recipeId": 2675,
@@ -32574,13 +32630,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2853,
-          "itemId": 13688,
-          "rlvl": 139,
-          "icon": "/i/042000/042485.png",
-          "category": 35
-        },
-        {
           "recipeId": 2698,
           "itemId": 10884,
           "rlvl": 145,
@@ -32651,13 +32700,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 2678,
-          "itemId": 10820,
-          "rlvl": 139,
-          "icon": "/i/047000/047421.png",
-          "category": 39
-        },
-        {
           "recipeId": 2695,
           "itemId": 10870,
           "rlvl": 148,
@@ -32684,48 +32726,6 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/045000/045673.png",
           "category": 36
-        },
-        {
-          "recipeId": 2722,
-          "itemId": 10946,
-          "rlvl": 139,
-          "icon": "/i/047000/047421.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2707,
-          "itemId": 10904,
-          "rlvl": 139,
-          "icon": "/i/047000/047421.png",
-          "category": 39
-        },
-        {
-          "recipeId": 2746,
-          "itemId": 11975,
-          "rlvl": 139,
-          "icon": "/i/045000/045694.png",
-          "category": 36
-        },
-        {
-          "recipeId": 2750,
-          "itemId": 12003,
-          "rlvl": 139,
-          "icon": "/i/045000/045693.png",
-          "category": 36
-        },
-        {
-          "recipeId": 2822,
-          "itemId": 12991,
-          "rlvl": 139,
-          "icon": "/i/049000/049113.png",
-          "category": 63
-        },
-        {
-          "recipeId": 2758,
-          "itemId": 12596,
-          "rlvl": 142,
-          "icon": "/i/021000/021657.png",
-          "category": 51
         }
       ]
     },
@@ -32755,6 +32755,62 @@ export const craftingLogPages = [
           "rlvl": 255,
           "icon": "/i/021000/021658.png",
           "category": 51
+        },
+        {
+          "recipeId": 2986,
+          "itemId": 18063,
+          "rlvl": 255,
+          "icon": "/i/044000/044988.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2998,
+          "itemId": 18075,
+          "rlvl": 255,
+          "icon": "/i/044000/044989.png",
+          "category": 37
+        },
+        {
+          "recipeId": 2987,
+          "itemId": 18064,
+          "rlvl": 255,
+          "icon": "/i/049000/049731.png",
+          "category": 36
+        },
+        {
+          "recipeId": 2999,
+          "itemId": 18076,
+          "rlvl": 255,
+          "icon": "/i/049000/049732.png",
+          "category": 36
+        },
+        {
+          "recipeId": 3011,
+          "itemId": 18088,
+          "rlvl": 255,
+          "icon": "/i/049000/049741.png",
+          "category": 36
+        },
+        {
+          "recipeId": 3005,
+          "itemId": 18082,
+          "rlvl": 255,
+          "icon": "/i/049000/049742.png",
+          "category": 36
+        },
+        {
+          "recipeId": 3457,
+          "itemId": 19612,
+          "rlvl": 260,
+          "icon": "/i/040000/040888.png",
+          "category": 34
+        },
+        {
+          "recipeId": 2985,
+          "itemId": 18062,
+          "rlvl": 260,
+          "icon": "/i/043000/043366.png",
+          "category": 35
         },
         {
           "recipeId": 2997,
@@ -32827,13 +32883,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2986,
-          "itemId": 18063,
-          "rlvl": 255,
-          "icon": "/i/044000/044988.png",
-          "category": 37
-        },
-        {
           "recipeId": 3086,
           "itemId": 18241,
           "rlvl": 265,
@@ -32902,13 +32951,6 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/043000/043803.png",
           "category": 35
-        },
-        {
-          "recipeId": 2998,
-          "itemId": 18075,
-          "rlvl": 255,
-          "icon": "/i/044000/044989.png",
-          "category": 37
         },
         {
           "recipeId": 3081,
@@ -32981,13 +33023,6 @@ export const craftingLogPages = [
           "category": 51
         },
         {
-          "recipeId": 2987,
-          "itemId": 18064,
-          "rlvl": 255,
-          "icon": "/i/049000/049731.png",
-          "category": 36
-        },
-        {
           "recipeId": 3164,
           "itemId": 18397,
           "rlvl": 273,
@@ -33055,13 +33090,6 @@ export const craftingLogPages = [
           "itemId": 18394,
           "rlvl": 273,
           "icon": "/i/049000/049750.png",
-          "category": 36
-        },
-        {
-          "recipeId": 2999,
-          "itemId": 18076,
-          "rlvl": 255,
-          "icon": "/i/049000/049732.png",
           "category": 36
         },
         {
@@ -33135,39 +33163,11 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 3011,
-          "itemId": 18088,
-          "rlvl": 255,
-          "icon": "/i/049000/049741.png",
-          "category": 36
-        },
-        {
           "recipeId": 3485,
           "itemId": 19640,
           "rlvl": 276,
           "icon": "/i/045000/045972.png",
           "category": 36
-        },
-        {
-          "recipeId": 3005,
-          "itemId": 18082,
-          "rlvl": 255,
-          "icon": "/i/049000/049742.png",
-          "category": 36
-        },
-        {
-          "recipeId": 3457,
-          "itemId": 19612,
-          "rlvl": 260,
-          "icon": "/i/040000/040888.png",
-          "category": 34
-        },
-        {
-          "recipeId": 2985,
-          "itemId": 18062,
-          "rlvl": 260,
-          "icon": "/i/043000/043366.png",
-          "category": 35
         }
       ]
     },
@@ -33197,6 +33197,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/021000/021660.png",
           "category": 51
+        },
+        {
+          "recipeId": 3224,
+          "itemId": 18535,
+          "rlvl": 279,
+          "icon": "/i/040000/040874.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3242,
+          "itemId": 18553,
+          "rlvl": 279,
+          "icon": "/i/040000/040872.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3236,
+          "itemId": 18547,
+          "rlvl": 279,
+          "icon": "/i/040000/040873.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3744,
+          "itemId": 21936,
+          "rlvl": 279,
+          "icon": "/i/042000/042593.png",
+          "category": 35
+        },
+        {
+          "recipeId": 3223,
+          "itemId": 18534,
+          "rlvl": 279,
+          "icon": "/i/047000/047408.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3235,
+          "itemId": 18546,
+          "rlvl": 279,
+          "icon": "/i/047000/047408.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3517,
+          "itemId": 19737,
+          "rlvl": 279,
+          "icon": "/i/047000/047255.png",
+          "category": 39
+        },
+        {
+          "recipeId": 3487,
+          "itemId": 19642,
+          "rlvl": 282,
+          "icon": "/i/040000/040893.png",
+          "category": 34
         },
         {
           "recipeId": 3492,
@@ -33269,13 +33325,6 @@ export const craftingLogPages = [
           "category": 51
         },
         {
-          "recipeId": 3224,
-          "itemId": 18535,
-          "rlvl": 279,
-          "icon": "/i/040000/040874.png",
-          "category": 34
-        },
-        {
           "recipeId": 3643,
           "itemId": 19988,
           "rlvl": 285,
@@ -33344,13 +33393,6 @@ export const craftingLogPages = [
           "rlvl": 288,
           "icon": "/i/043000/043368.png",
           "category": 35
-        },
-        {
-          "recipeId": 3242,
-          "itemId": 18553,
-          "rlvl": 279,
-          "icon": "/i/040000/040872.png",
-          "category": 34
         },
         {
           "recipeId": 3352,
@@ -33423,13 +33465,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 3236,
-          "itemId": 18547,
-          "rlvl": 279,
-          "icon": "/i/040000/040873.png",
-          "category": 34
-        },
-        {
           "recipeId": 3503,
           "itemId": 19658,
           "rlvl": 290,
@@ -33456,41 +33491,6 @@ export const craftingLogPages = [
           "rlvl": 290,
           "icon": "/i/049000/049730.png",
           "category": 36
-        },
-        {
-          "recipeId": 3744,
-          "itemId": 21936,
-          "rlvl": 279,
-          "icon": "/i/042000/042593.png",
-          "category": 35
-        },
-        {
-          "recipeId": 3223,
-          "itemId": 18534,
-          "rlvl": 279,
-          "icon": "/i/047000/047408.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3235,
-          "itemId": 18546,
-          "rlvl": 279,
-          "icon": "/i/047000/047408.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3517,
-          "itemId": 19737,
-          "rlvl": 279,
-          "icon": "/i/047000/047255.png",
-          "category": 39
-        },
-        {
-          "recipeId": 3487,
-          "itemId": 19642,
-          "rlvl": 282,
-          "icon": "/i/040000/040893.png",
-          "category": 34
         }
       ]
     },
@@ -33520,6 +33520,62 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
+        },
+        {
+          "recipeId": 33198,
+          "itemId": 23900,
+          "rlvl": 70,
+          "icon": "/i/051000/051037.png",
+          "category": 74
+        },
+        {
+          "recipeId": 30422,
+          "itemId": 8037,
+          "rlvl": 90,
+          "icon": "/i/021000/021608.png",
+          "category": 51
+        },
+        {
+          "recipeId": 30930,
+          "itemId": 10105,
+          "rlvl": 90,
+          "icon": "/i/023000/023152.png",
+          "category": 51
+        },
+        {
+          "recipeId": 30295,
+          "itemId": 7609,
+          "rlvl": 90,
+          "icon": "/i/021000/021606.png",
+          "category": 51
+        },
+        {
+          "recipeId": 30924,
+          "itemId": 9517,
+          "rlvl": 90,
+          "icon": "/i/021000/021612.png",
+          "category": 51
+        },
+        {
+          "recipeId": 30259,
+          "itemId": 7498,
+          "rlvl": 90,
+          "icon": "/i/040000/040700.png",
+          "category": 34
+        },
+        {
+          "recipeId": 30271,
+          "itemId": 7510,
+          "rlvl": 90,
+          "icon": "/i/040000/040693.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32069,
+          "itemId": 15462,
+          "rlvl": 90,
+          "icon": "/i/041000/041140.png",
+          "category": 34
         },
         {
           "recipeId": 30272,
@@ -33583,62 +33639,6 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/021000/021603.png",
           "category": 51
-        },
-        {
-          "recipeId": 33198,
-          "itemId": 23900,
-          "rlvl": 70,
-          "icon": "/i/051000/051037.png",
-          "category": 74
-        },
-        {
-          "recipeId": 30422,
-          "itemId": 8037,
-          "rlvl": 90,
-          "icon": "/i/021000/021608.png",
-          "category": 51
-        },
-        {
-          "recipeId": 30930,
-          "itemId": 10105,
-          "rlvl": 90,
-          "icon": "/i/023000/023152.png",
-          "category": 51
-        },
-        {
-          "recipeId": 30295,
-          "itemId": 7609,
-          "rlvl": 90,
-          "icon": "/i/021000/021606.png",
-          "category": 51
-        },
-        {
-          "recipeId": 30924,
-          "itemId": 9517,
-          "rlvl": 90,
-          "icon": "/i/021000/021612.png",
-          "category": 51
-        },
-        {
-          "recipeId": 30259,
-          "itemId": 7498,
-          "rlvl": 90,
-          "icon": "/i/040000/040700.png",
-          "category": 34
-        },
-        {
-          "recipeId": 30271,
-          "itemId": 7510,
-          "rlvl": 90,
-          "icon": "/i/040000/040693.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32069,
-          "itemId": 15462,
-          "rlvl": 90,
-          "icon": "/i/041000/041140.png",
-          "category": 34
         }
       ]
     },
@@ -33668,62 +33668,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/040000/040403.png",
           "category": 34
-        },
-        {
-          "recipeId": 30913,
-          "itemId": 9487,
-          "rlvl": 110,
-          "icon": "/i/044000/044291.png",
-          "category": 37
-        },
-        {
-          "recipeId": 30891,
-          "itemId": 9057,
-          "rlvl": 110,
-          "icon": "/i/047000/047405.png",
-          "category": 39
-        },
-        {
-          "recipeId": 30883,
-          "itemId": 9045,
-          "rlvl": 110,
-          "icon": "/i/045000/045502.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30914,
-          "itemId": 9488,
-          "rlvl": 110,
-          "icon": "/i/045000/045508.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30901,
-          "itemId": 9075,
-          "rlvl": 110,
-          "icon": "/i/045000/045498.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30895,
-          "itemId": 9065,
-          "rlvl": 110,
-          "icon": "/i/045000/045500.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30905,
-          "itemId": 9301,
-          "rlvl": 110,
-          "icon": "/i/045000/045482.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30909,
-          "itemId": 9305,
-          "rlvl": 110,
-          "icon": "/i/045000/045481.png",
-          "category": 36
         },
         {
           "recipeId": 30911,
@@ -33780,6 +33724,62 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/044000/044288.png",
           "category": 37
+        },
+        {
+          "recipeId": 30913,
+          "itemId": 9487,
+          "rlvl": 110,
+          "icon": "/i/044000/044291.png",
+          "category": 37
+        },
+        {
+          "recipeId": 30891,
+          "itemId": 9057,
+          "rlvl": 110,
+          "icon": "/i/047000/047405.png",
+          "category": 39
+        },
+        {
+          "recipeId": 30883,
+          "itemId": 9045,
+          "rlvl": 110,
+          "icon": "/i/045000/045502.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30914,
+          "itemId": 9488,
+          "rlvl": 110,
+          "icon": "/i/045000/045508.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30901,
+          "itemId": 9075,
+          "rlvl": 110,
+          "icon": "/i/045000/045498.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30895,
+          "itemId": 9065,
+          "rlvl": 110,
+          "icon": "/i/045000/045500.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30905,
+          "itemId": 9301,
+          "rlvl": 110,
+          "icon": "/i/045000/045482.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30909,
+          "itemId": 9305,
+          "rlvl": 110,
+          "icon": "/i/045000/045481.png",
+          "category": 36
         }
       ]
     },
@@ -33809,6 +33809,62 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/047000/047404.png",
           "category": 39
+        },
+        {
+          "recipeId": 31184,
+          "itemId": 10948,
+          "rlvl": 148,
+          "icon": "/i/047000/047404.png",
+          "category": 39
+        },
+        {
+          "recipeId": 31164,
+          "itemId": 10759,
+          "rlvl": 150,
+          "icon": "/i/041000/041265.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31172,
+          "itemId": 10843,
+          "rlvl": 150,
+          "icon": "/i/041000/041266.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31167,
+          "itemId": 10801,
+          "rlvl": 150,
+          "icon": "/i/041000/041267.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31180,
+          "itemId": 10927,
+          "rlvl": 150,
+          "icon": "/i/040000/040767.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31186,
+          "itemId": 11959,
+          "rlvl": 150,
+          "icon": "/i/040000/040776.png",
+          "category": 34
+        },
+        {
+          "recipeId": 31165,
+          "itemId": 10766,
+          "rlvl": 150,
+          "icon": "/i/042000/042458.png",
+          "category": 35
+        },
+        {
+          "recipeId": 31173,
+          "itemId": 10850,
+          "rlvl": 150,
+          "icon": "/i/042000/042459.png",
+          "category": 35
         },
         {
           "recipeId": 31168,
@@ -33881,13 +33937,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31184,
-          "itemId": 10948,
-          "rlvl": 148,
-          "icon": "/i/047000/047404.png",
-          "category": 39
-        },
-        {
           "recipeId": 31339,
           "itemId": 13748,
           "rlvl": 160,
@@ -33955,13 +34004,6 @@ export const craftingLogPages = [
           "itemId": 16599,
           "rlvl": 160,
           "icon": "/i/040000/040840.png",
-          "category": 34
-        },
-        {
-          "recipeId": 31164,
-          "itemId": 10759,
-          "rlvl": 150,
-          "icon": "/i/041000/041265.png",
           "category": 34
         },
         {
@@ -34035,13 +34077,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31172,
-          "itemId": 10843,
-          "rlvl": 150,
-          "icon": "/i/041000/041266.png",
-          "category": 34
-        },
-        {
           "recipeId": 31286,
           "itemId": 13267,
           "rlvl": 160,
@@ -34110,13 +34145,6 @@ export const craftingLogPages = [
           "rlvl": 160,
           "icon": "/i/028000/028698.png",
           "category": 81
-        },
-        {
-          "recipeId": 31167,
-          "itemId": 10801,
-          "rlvl": 150,
-          "icon": "/i/041000/041267.png",
-          "category": 34
         },
         {
           "recipeId": 31860,
@@ -34189,13 +34217,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 31180,
-          "itemId": 10927,
-          "rlvl": 150,
-          "icon": "/i/040000/040767.png",
-          "category": 34
-        },
-        {
           "recipeId": 31260,
           "itemId": 13039,
           "rlvl": 180,
@@ -34264,13 +34285,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/044000/044321.png",
           "category": 37
-        },
-        {
-          "recipeId": 31186,
-          "itemId": 11959,
-          "rlvl": 150,
-          "icon": "/i/040000/040776.png",
-          "category": 34
         },
         {
           "recipeId": 31183,
@@ -34343,13 +34357,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31165,
-          "itemId": 10766,
-          "rlvl": 150,
-          "icon": "/i/042000/042458.png",
-          "category": 35
-        },
-        {
           "recipeId": 31262,
           "itemId": 13041,
           "rlvl": 180,
@@ -34420,13 +34427,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31173,
-          "itemId": 10850,
-          "rlvl": 150,
-          "icon": "/i/042000/042459.png",
-          "category": 35
-        },
-        {
           "recipeId": 31335,
           "itemId": 13679,
           "rlvl": 180,
@@ -34475,6 +34475,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/052000/052179.png",
           "category": 78
+        },
+        {
+          "recipeId": 31456,
+          "itemId": 14900,
+          "rlvl": 180,
+          "icon": "/i/052000/052189.png",
+          "category": 78
+        },
+        {
+          "recipeId": 31457,
+          "itemId": 14901,
+          "rlvl": 180,
+          "icon": "/i/052000/052190.png",
+          "category": 78
+        },
+        {
+          "recipeId": 31458,
+          "itemId": 14902,
+          "rlvl": 180,
+          "icon": "/i/052000/052191.png",
+          "category": 78
+        },
+        {
+          "recipeId": 31459,
+          "itemId": 14903,
+          "rlvl": 180,
+          "icon": "/i/052000/052192.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32060,
+          "itemId": 15967,
+          "rlvl": 180,
+          "icon": "/i/052000/052815.png",
+          "category": 78
+        },
+        {
+          "recipeId": 32061,
+          "itemId": 15968,
+          "rlvl": 180,
+          "icon": "/i/052000/052816.png",
+          "category": 78
+        },
+        {
+          "recipeId": 31461,
+          "itemId": 14049,
+          "rlvl": 180,
+          "icon": "/i/052000/052025.png",
+          "category": 80
+        },
+        {
+          "recipeId": 31880,
+          "itemId": 15520,
+          "rlvl": 180,
+          "icon": "/i/040000/040821.png",
+          "category": 34
         },
         {
           "recipeId": 31834,
@@ -34547,13 +34603,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31456,
-          "itemId": 14900,
-          "rlvl": 180,
-          "icon": "/i/052000/052189.png",
-          "category": 78
-        },
-        {
           "recipeId": 31873,
           "itemId": 15513,
           "rlvl": 180,
@@ -34622,13 +34671,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/045000/045506.png",
           "category": 36
-        },
-        {
-          "recipeId": 31457,
-          "itemId": 14901,
-          "rlvl": 180,
-          "icon": "/i/052000/052190.png",
-          "category": 78
         },
         {
           "recipeId": 31842,
@@ -34701,13 +34743,6 @@ export const craftingLogPages = [
           "category": 35
         },
         {
-          "recipeId": 31458,
-          "itemId": 14902,
-          "rlvl": 180,
-          "icon": "/i/052000/052191.png",
-          "category": 78
-        },
-        {
           "recipeId": 31553,
           "itemId": 14734,
           "rlvl": 210,
@@ -34776,13 +34811,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/045000/045757.png",
           "category": 36
-        },
-        {
-          "recipeId": 31459,
-          "itemId": 14903,
-          "rlvl": 180,
-          "icon": "/i/052000/052192.png",
-          "category": 78
         },
         {
           "recipeId": 31559,
@@ -34855,13 +34883,6 @@ export const craftingLogPages = [
           "category": 51
         },
         {
-          "recipeId": 32060,
-          "itemId": 15967,
-          "rlvl": 180,
-          "icon": "/i/052000/052815.png",
-          "category": 78
-        },
-        {
           "recipeId": 32155,
           "itemId": 17309,
           "rlvl": 250,
@@ -34930,13 +34951,6 @@ export const craftingLogPages = [
           "rlvl": 250,
           "icon": "/i/040000/040434.png",
           "category": 34
-        },
-        {
-          "recipeId": 32061,
-          "itemId": 15968,
-          "rlvl": 180,
-          "icon": "/i/052000/052816.png",
-          "category": 78
         },
         {
           "recipeId": 31987,
@@ -35009,13 +35023,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 31461,
-          "itemId": 14049,
-          "rlvl": 180,
-          "icon": "/i/052000/052025.png",
-          "category": 80
-        },
-        {
           "recipeId": 32007,
           "itemId": 16674,
           "rlvl": 250,
@@ -35077,13 +35084,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/028000/028762.png",
           "category": 81
-        },
-        {
-          "recipeId": 31880,
-          "itemId": 15520,
-          "rlvl": 180,
-          "icon": "/i/040000/040821.png",
-          "category": 34
         }
       ]
     },
@@ -35113,6 +35113,62 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/028000/028775.png",
           "category": 81
+        },
+        {
+          "recipeId": 32429,
+          "itemId": 19990,
+          "rlvl": 320,
+          "icon": "/i/021000/021622.png",
+          "category": 51
+        },
+        {
+          "recipeId": 32447,
+          "itemId": 19717,
+          "rlvl": 320,
+          "icon": "/i/047000/047915.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32452,
+          "itemId": 19722,
+          "rlvl": 320,
+          "icon": "/i/047000/047914.png",
+          "category": 34
+        },
+        {
+          "recipeId": 32374,
+          "itemId": 19004,
+          "rlvl": 320,
+          "icon": "/i/043000/043349.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32392,
+          "itemId": 19022,
+          "rlvl": 320,
+          "icon": "/i/043000/043695.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32386,
+          "itemId": 19016,
+          "rlvl": 320,
+          "icon": "/i/043000/043696.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32448,
+          "itemId": 19718,
+          "rlvl": 320,
+          "icon": "/i/042000/042620.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32453,
+          "itemId": 19723,
+          "rlvl": 320,
+          "icon": "/i/042000/042619.png",
+          "category": 35
         },
         {
           "recipeId": 32552,
@@ -35185,13 +35241,6 @@ export const craftingLogPages = [
           "category": 39
         },
         {
-          "recipeId": 32429,
-          "itemId": 19990,
-          "rlvl": 320,
-          "icon": "/i/021000/021622.png",
-          "category": 51
-        },
-        {
           "recipeId": 32370,
           "itemId": 19000,
           "rlvl": 320,
@@ -35232,55 +35281,6 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/049000/049874.png",
           "category": 36
-        },
-        {
-          "recipeId": 32447,
-          "itemId": 19717,
-          "rlvl": 320,
-          "icon": "/i/047000/047915.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32452,
-          "itemId": 19722,
-          "rlvl": 320,
-          "icon": "/i/047000/047914.png",
-          "category": 34
-        },
-        {
-          "recipeId": 32374,
-          "itemId": 19004,
-          "rlvl": 320,
-          "icon": "/i/043000/043349.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32392,
-          "itemId": 19022,
-          "rlvl": 320,
-          "icon": "/i/043000/043695.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32386,
-          "itemId": 19016,
-          "rlvl": 320,
-          "icon": "/i/043000/043696.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32448,
-          "itemId": 19718,
-          "rlvl": 320,
-          "icon": "/i/042000/042620.png",
-          "category": 35
-        },
-        {
-          "recipeId": 32453,
-          "itemId": 19723,
-          "rlvl": 320,
-          "icon": "/i/042000/042619.png",
-          "category": 35
         }
       ]
     },
@@ -35310,6 +35310,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/040000/040911.png",
           "category": 34
+        },
+        {
+          "recipeId": 32656,
+          "itemId": 21937,
+          "rlvl": 320,
+          "icon": "/i/042000/042592.png",
+          "category": 35
+        },
+        {
+          "recipeId": 32680,
+          "itemId": 21941,
+          "rlvl": 320,
+          "icon": "/i/042000/042596.png",
+          "category": 35
+        },
+        {
+          "recipeId": 33062,
+          "itemId": 22998,
+          "rlvl": 320,
+          "icon": "/i/042000/042606.png",
+          "category": 35
+        },
+        {
+          "recipeId": 33066,
+          "itemId": 23001,
+          "rlvl": 320,
+          "icon": "/i/042000/042605.png",
+          "category": 35
+        },
+        {
+          "recipeId": 33063,
+          "itemId": 22999,
+          "rlvl": 320,
+          "icon": "/i/049000/049828.png",
+          "category": 36
+        },
+        {
+          "recipeId": 33067,
+          "itemId": 23002,
+          "rlvl": 320,
+          "icon": "/i/049000/049827.png",
+          "category": 36
+        },
+        {
+          "recipeId": 33008,
+          "itemId": 23030,
+          "rlvl": 320,
+          "icon": "/i/028000/028796.png",
+          "category": 81
+        },
+        {
+          "recipeId": 33009,
+          "itemId": 21915,
+          "rlvl": 320,
+          "icon": "/i/028000/028782.png",
+          "category": 81
         },
         {
           "recipeId": 32676,
@@ -35382,13 +35438,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 32656,
-          "itemId": 21937,
-          "rlvl": 320,
-          "icon": "/i/042000/042592.png",
-          "category": 35
-        },
-        {
           "recipeId": 33041,
           "itemId": 22905,
           "rlvl": 350,
@@ -35457,13 +35506,6 @@ export const craftingLogPages = [
           "rlvl": 350,
           "icon": "/i/049000/049319.png",
           "category": 37
-        },
-        {
-          "recipeId": 32680,
-          "itemId": 21941,
-          "rlvl": 320,
-          "icon": "/i/042000/042596.png",
-          "category": 35
         },
         {
           "recipeId": 32609,
@@ -35536,13 +35578,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 33062,
-          "itemId": 22998,
-          "rlvl": 320,
-          "icon": "/i/042000/042606.png",
-          "category": 35
-        },
-        {
           "recipeId": 32604,
           "itemId": 21744,
           "rlvl": 350,
@@ -35610,13 +35645,6 @@ export const craftingLogPages = [
           "itemId": 24592,
           "rlvl": 350,
           "icon": "/i/043000/043859.png",
-          "category": 35
-        },
-        {
-          "recipeId": 33066,
-          "itemId": 23001,
-          "rlvl": 320,
-          "icon": "/i/042000/042605.png",
           "category": 35
         },
         {
@@ -35690,13 +35718,6 @@ export const craftingLogPages = [
           "category": 36
         },
         {
-          "recipeId": 33063,
-          "itemId": 22999,
-          "rlvl": 320,
-          "icon": "/i/049000/049828.png",
-          "category": 36
-        },
-        {
           "recipeId": 33104,
           "itemId": 23799,
           "rlvl": 380,
@@ -35744,27 +35765,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/028000/028827.png",
           "category": 81
-        },
-        {
-          "recipeId": 33067,
-          "itemId": 23002,
-          "rlvl": 320,
-          "icon": "/i/049000/049827.png",
-          "category": 36
-        },
-        {
-          "recipeId": 33008,
-          "itemId": 23030,
-          "rlvl": 320,
-          "icon": "/i/028000/028796.png",
-          "category": 81
-        },
-        {
-          "recipeId": 33009,
-          "itemId": 21915,
-          "rlvl": 320,
-          "icon": "/i/028000/028782.png",
-          "category": 81
         }
       ]
     },
@@ -35794,34 +35794,6 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/040000/040709.png",
           "category": 34
-        },
-        {
-          "recipeId": 30844,
-          "itemId": 9287,
-          "rlvl": 70,
-          "icon": "/i/045000/045491.png",
-          "category": 36
-        },
-        {
-          "recipeId": 30510,
-          "itemId": 8561,
-          "rlvl": 70,
-          "icon": "/i/046000/046032.png",
-          "category": 38
-        },
-        {
-          "recipeId": 30497,
-          "itemId": 8459,
-          "rlvl": 90,
-          "icon": "/i/042000/042371.png",
-          "category": 35
-        },
-        {
-          "recipeId": 30496,
-          "itemId": 8458,
-          "rlvl": 90,
-          "icon": "/i/043000/043543.png",
-          "category": 35
         },
         {
           "recipeId": 30499,
@@ -35878,6 +35850,34 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/045000/045483.png",
           "category": 36
+        },
+        {
+          "recipeId": 30844,
+          "itemId": 9287,
+          "rlvl": 70,
+          "icon": "/i/045000/045491.png",
+          "category": 36
+        },
+        {
+          "recipeId": 30510,
+          "itemId": 8561,
+          "rlvl": 70,
+          "icon": "/i/046000/046032.png",
+          "category": 38
+        },
+        {
+          "recipeId": 30497,
+          "itemId": 8459,
+          "rlvl": 90,
+          "icon": "/i/042000/042371.png",
+          "category": 35
+        },
+        {
+          "recipeId": 30496,
+          "itemId": 8458,
+          "rlvl": 90,
+          "icon": "/i/043000/043543.png",
+          "category": 35
         }
       ]
     },
@@ -35907,6 +35907,62 @@ export const craftingLogPages = [
           "rlvl": 21,
           "icon": "/i/050000/050424.png",
           "category": 65
+        },
+        {
+          "recipeId": 1679,
+          "itemId": 6429,
+          "rlvl": 32,
+          "icon": "/i/050000/050302.png",
+          "category": 70
+        },
+        {
+          "recipeId": 1609,
+          "itemId": 6359,
+          "rlvl": 34,
+          "icon": "/i/050000/050413.png",
+          "category": 65
+        },
+        {
+          "recipeId": 2189,
+          "itemId": 9766,
+          "rlvl": 35,
+          "icon": "/i/051000/051223.png",
+          "category": 73
+        },
+        {
+          "recipeId": 1611,
+          "itemId": 6361,
+          "rlvl": 38,
+          "icon": "/i/050000/050415.png",
+          "category": 65
+        },
+        {
+          "recipeId": 1729,
+          "itemId": 6482,
+          "rlvl": 39,
+          "icon": "/i/053000/053025.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1681,
+          "itemId": 6431,
+          "rlvl": 40,
+          "icon": "/i/050000/050304.png",
+          "category": 70
+        },
+        {
+          "recipeId": 2055,
+          "itemId": 8007,
+          "rlvl": 41,
+          "icon": "/i/051000/051214.png",
+          "category": 73
+        },
+        {
+          "recipeId": 2056,
+          "itemId": 8008,
+          "rlvl": 41,
+          "icon": "/i/051000/051215.png",
+          "category": 73
         },
         {
           "recipeId": 2057,
@@ -35979,13 +36035,6 @@ export const craftingLogPages = [
           "category": 65
         },
         {
-          "recipeId": 1679,
-          "itemId": 6429,
-          "rlvl": 32,
-          "icon": "/i/050000/050302.png",
-          "category": 70
-        },
-        {
           "recipeId": 2010,
           "itemId": 7140,
           "rlvl": 70,
@@ -36019,55 +36068,6 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/051000/051237.png",
           "category": 73
-        },
-        {
-          "recipeId": 1609,
-          "itemId": 6359,
-          "rlvl": 34,
-          "icon": "/i/050000/050413.png",
-          "category": 65
-        },
-        {
-          "recipeId": 2189,
-          "itemId": 9766,
-          "rlvl": 35,
-          "icon": "/i/051000/051223.png",
-          "category": 73
-        },
-        {
-          "recipeId": 1611,
-          "itemId": 6361,
-          "rlvl": 38,
-          "icon": "/i/050000/050415.png",
-          "category": 65
-        },
-        {
-          "recipeId": 1729,
-          "itemId": 6482,
-          "rlvl": 39,
-          "icon": "/i/053000/053025.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1681,
-          "itemId": 6431,
-          "rlvl": 40,
-          "icon": "/i/050000/050304.png",
-          "category": 70
-        },
-        {
-          "recipeId": 2055,
-          "itemId": 8007,
-          "rlvl": 41,
-          "icon": "/i/051000/051214.png",
-          "category": 73
-        },
-        {
-          "recipeId": 2056,
-          "itemId": 8008,
-          "rlvl": 41,
-          "icon": "/i/051000/051215.png",
-          "category": 73
         }
       ]
     },
@@ -36097,6 +36097,62 @@ export const craftingLogPages = [
           "rlvl": 28,
           "icon": "/i/052000/052463.png",
           "category": 57
+        },
+        {
+          "recipeId": 1899,
+          "itemId": 6681,
+          "rlvl": 32,
+          "icon": "/i/052000/052011.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1779,
+          "itemId": 6544,
+          "rlvl": 34,
+          "icon": "/i/052000/052464.png",
+          "category": 57
+        },
+        {
+          "recipeId": 2889,
+          "itemId": 15151,
+          "rlvl": 35,
+          "icon": "/i/052000/052593.png",
+          "category": 57
+        },
+        {
+          "recipeId": 3803,
+          "itemId": 24522,
+          "rlvl": 36,
+          "icon": "/i/052000/052961.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1891,
+          "itemId": 6673,
+          "rlvl": 37,
+          "icon": "/i/052000/052007.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1895,
+          "itemId": 6677,
+          "rlvl": 37,
+          "icon": "/i/052000/052010.png",
+          "category": 80
+        },
+        {
+          "recipeId": 1897,
+          "itemId": 6679,
+          "rlvl": 37,
+          "icon": "/i/052000/052012.png",
+          "category": 80
+        },
+        {
+          "recipeId": 3806,
+          "itemId": 24525,
+          "rlvl": 39,
+          "icon": "/i/052000/052029.png",
+          "category": 80
         },
         {
           "recipeId": 1968,
@@ -36166,13 +36222,6 @@ export const craftingLogPages = [
           "itemId": 8814,
           "rlvl": 45,
           "icon": "/i/052000/052022.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1899,
-          "itemId": 6681,
-          "rlvl": 32,
-          "icon": "/i/052000/052011.png",
           "category": 80
         },
         {
@@ -36246,13 +36295,6 @@ export const craftingLogPages = [
           "category": 80
         },
         {
-          "recipeId": 1779,
-          "itemId": 6544,
-          "rlvl": 34,
-          "icon": "/i/052000/052464.png",
-          "category": 57
-        },
-        {
           "recipeId": 1966,
           "itemId": 7083,
           "rlvl": 55,
@@ -36323,13 +36365,6 @@ export const craftingLogPages = [
           "category": 80
         },
         {
-          "recipeId": 2889,
-          "itemId": 15151,
-          "rlvl": 35,
-          "icon": "/i/052000/052593.png",
-          "category": 57
-        },
-        {
           "recipeId": 1970,
           "itemId": 7087,
           "rlvl": 90,
@@ -36391,41 +36426,6 @@ export const craftingLogPages = [
           "rlvl": 288,
           "icon": "/i/052000/052883.png",
           "category": 78
-        },
-        {
-          "recipeId": 3803,
-          "itemId": 24522,
-          "rlvl": 36,
-          "icon": "/i/052000/052961.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1891,
-          "itemId": 6673,
-          "rlvl": 37,
-          "icon": "/i/052000/052007.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1895,
-          "itemId": 6677,
-          "rlvl": 37,
-          "icon": "/i/052000/052010.png",
-          "category": 80
-        },
-        {
-          "recipeId": 1897,
-          "itemId": 6679,
-          "rlvl": 37,
-          "icon": "/i/052000/052012.png",
-          "category": 80
-        },
-        {
-          "recipeId": 3806,
-          "itemId": 24525,
-          "rlvl": 39,
-          "icon": "/i/052000/052029.png",
-          "category": 80
         }
       ]
     },
@@ -36454,6 +36454,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30066,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30067,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30073,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30074,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30138,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30139,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30070,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30384,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -36527,13 +36583,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30066,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30388,
           "itemId": 5800,
           "rlvl": 30,
@@ -36566,55 +36615,6 @@ export const craftingLogPages = [
           "itemId": 5811,
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30067,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30073,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30074,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30138,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30139,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30070,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30384,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
           "category": 55
         }
       ]
@@ -36862,13 +36862,6 @@ export const craftingLogPages = [
           "category": 8
         },
         {
-          "recipeId": 1132,
-          "itemId": 4598,
-          "rlvl": 20,
-          "icon": "/i/020000/020669.png",
-          "category": 44
-        },
-        {
           "recipeId": 1126,
           "itemId": 4597,
           "rlvl": 16,
@@ -36923,6 +36916,13 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/033000/033405.png",
           "category": 10
+        },
+        {
+          "recipeId": 1132,
+          "itemId": 4598,
+          "rlvl": 20,
+          "icon": "/i/020000/020669.png",
+          "category": 44
         }
       ]
     },
@@ -36951,20 +36951,6 @@ export const craftingLogPages = [
           "itemId": 4574,
           "rlvl": 21,
           "icon": "/i/020000/020681.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1141,
-          "itemId": 5522,
-          "rlvl": 25,
-          "icon": "/i/022000/022616.png",
-          "category": 54
-        },
-        {
-          "recipeId": 1142,
-          "itemId": 4552,
-          "rlvl": 25,
-          "icon": "/i/020000/020602.png",
           "category": 44
         },
         {
@@ -37022,6 +37008,20 @@ export const craftingLogPages = [
           "rlvl": 24,
           "icon": "/i/033000/033410.png",
           "category": 10
+        },
+        {
+          "recipeId": 1141,
+          "itemId": 5522,
+          "rlvl": 25,
+          "icon": "/i/022000/022616.png",
+          "category": 54
+        },
+        {
+          "recipeId": 1142,
+          "itemId": 4552,
+          "rlvl": 25,
+          "icon": "/i/020000/020602.png",
+          "category": 44
         }
       ]
     },
@@ -37051,20 +37051,6 @@ export const craftingLogPages = [
           "rlvl": 27,
           "icon": "/i/032000/032402.png",
           "category": 8
-        },
-        {
-          "recipeId": 2871,
-          "itemId": 14242,
-          "rlvl": 30,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 2872,
-          "itemId": 14243,
-          "rlvl": 30,
-          "icon": "/i/025000/025945.png",
-          "category": 94
         },
         {
           "recipeId": 1145,
@@ -37121,6 +37107,20 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/025000/025945.png",
           "category": 94
+        },
+        {
+          "recipeId": 2871,
+          "itemId": 14242,
+          "rlvl": 30,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 2872,
+          "itemId": 14243,
+          "rlvl": 30,
+          "icon": "/i/025000/025945.png",
+          "category": 94
         }
       ]
     },
@@ -37149,6 +37149,62 @@ export const craftingLogPages = [
           "itemId": 4603,
           "rlvl": 31,
           "icon": "/i/020000/020669.png",
+          "category": 44
+        },
+        {
+          "recipeId": 2784,
+          "itemId": 12611,
+          "rlvl": 32,
+          "icon": "/i/022000/022604.png",
+          "category": 54
+        },
+        {
+          "recipeId": 1154,
+          "itemId": 4601,
+          "rlvl": 32,
+          "icon": "/i/020000/020666.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1155,
+          "itemId": 4602,
+          "rlvl": 32,
+          "icon": "/i/020000/020668.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1156,
+          "itemId": 5478,
+          "rlvl": 33,
+          "icon": "/i/025000/025923.png",
+          "category": 54
+        },
+        {
+          "recipeId": 1157,
+          "itemId": 4599,
+          "rlvl": 33,
+          "icon": "/i/020000/020665.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1158,
+          "itemId": 2166,
+          "rlvl": 34,
+          "icon": "/i/033000/033416.png",
+          "category": 10
+        },
+        {
+          "recipeId": 1159,
+          "itemId": 1969,
+          "rlvl": 34,
+          "icon": "/i/032000/032404.png",
+          "category": 8
+        },
+        {
+          "recipeId": 1919,
+          "itemId": 4614,
+          "rlvl": 34,
+          "icon": "/i/020000/020670.png",
           "category": 44
         },
         {
@@ -37220,62 +37276,6 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/020000/020682.png",
           "category": 44
-        },
-        {
-          "recipeId": 2784,
-          "itemId": 12611,
-          "rlvl": 32,
-          "icon": "/i/022000/022604.png",
-          "category": 54
-        },
-        {
-          "recipeId": 1154,
-          "itemId": 4601,
-          "rlvl": 32,
-          "icon": "/i/020000/020666.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1155,
-          "itemId": 4602,
-          "rlvl": 32,
-          "icon": "/i/020000/020668.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1156,
-          "itemId": 5478,
-          "rlvl": 33,
-          "icon": "/i/025000/025923.png",
-          "category": 54
-        },
-        {
-          "recipeId": 1157,
-          "itemId": 4599,
-          "rlvl": 33,
-          "icon": "/i/020000/020665.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1158,
-          "itemId": 2166,
-          "rlvl": 34,
-          "icon": "/i/033000/033416.png",
-          "category": 10
-        },
-        {
-          "recipeId": 1159,
-          "itemId": 1969,
-          "rlvl": 34,
-          "icon": "/i/032000/032404.png",
-          "category": 8
-        },
-        {
-          "recipeId": 1919,
-          "itemId": 4614,
-          "rlvl": 34,
-          "icon": "/i/020000/020670.png",
-          "category": 44
         }
       ]
     },
@@ -37304,13 +37304,6 @@ export const craftingLogPages = [
           "itemId": 4582,
           "rlvl": 36,
           "icon": "/i/020000/020683.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1170,
-          "itemId": 4567,
-          "rlvl": 40,
-          "icon": "/i/020000/020644.png",
           "category": 44
         },
         {
@@ -37368,6 +37361,13 @@ export const craftingLogPages = [
           "rlvl": 40,
           "icon": "/i/022000/022609.png",
           "category": 54
+        },
+        {
+          "recipeId": 1170,
+          "itemId": 4567,
+          "rlvl": 40,
+          "icon": "/i/020000/020644.png",
+          "category": 44
         }
       ]
     },
@@ -37397,20 +37397,6 @@ export const craftingLogPages = [
           "rlvl": 41,
           "icon": "/i/022000/022802.png",
           "category": 54
-        },
-        {
-          "recipeId": 1177,
-          "itemId": 4604,
-          "rlvl": 45,
-          "icon": "/i/020000/020665.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1178,
-          "itemId": 4607,
-          "rlvl": 45,
-          "icon": "/i/020000/020668.png",
-          "category": 44
         },
         {
           "recipeId": 1539,
@@ -37467,6 +37453,20 @@ export const craftingLogPages = [
           "rlvl": 45,
           "icon": "/i/032000/032405.png",
           "category": 8
+        },
+        {
+          "recipeId": 1177,
+          "itemId": 4604,
+          "rlvl": 45,
+          "icon": "/i/020000/020665.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1178,
+          "itemId": 4607,
+          "rlvl": 45,
+          "icon": "/i/020000/020668.png",
+          "category": 44
         }
       ]
     },
@@ -37495,6 +37495,62 @@ export const craftingLogPages = [
           "itemId": 4605,
           "rlvl": 46,
           "icon": "/i/020000/020667.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1179,
+          "itemId": 4606,
+          "rlvl": 46,
+          "icon": "/i/020000/020666.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1542,
+          "itemId": 4584,
+          "rlvl": 47,
+          "icon": "/i/020000/020681.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1543,
+          "itemId": 4588,
+          "rlvl": 47,
+          "icon": "/i/020000/020682.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1545,
+          "itemId": 4586,
+          "rlvl": 48,
+          "icon": "/i/020000/020684.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1544,
+          "itemId": 4587,
+          "rlvl": 48,
+          "icon": "/i/020000/020683.png",
+          "category": 44
+        },
+        {
+          "recipeId": 1546,
+          "itemId": 2189,
+          "rlvl": 49,
+          "icon": "/i/033000/033433.png",
+          "category": 10
+        },
+        {
+          "recipeId": 1547,
+          "itemId": 1987,
+          "rlvl": 49,
+          "icon": "/i/032000/032412.png",
+          "category": 8
+        },
+        {
+          "recipeId": 1548,
+          "itemId": 4585,
+          "rlvl": 49,
+          "icon": "/i/020000/020685.png",
           "category": 44
         },
         {
@@ -37568,13 +37624,6 @@ export const craftingLogPages = [
           "category": 94
         },
         {
-          "recipeId": 1179,
-          "itemId": 4606,
-          "rlvl": 46,
-          "icon": "/i/020000/020666.png",
-          "category": 44
-        },
-        {
           "recipeId": 2868,
           "itemId": 14234,
           "rlvl": 50,
@@ -37645,13 +37694,6 @@ export const craftingLogPages = [
           "category": 54
         },
         {
-          "recipeId": 1542,
-          "itemId": 4584,
-          "rlvl": 47,
-          "icon": "/i/020000/020681.png",
-          "category": 44
-        },
-        {
           "recipeId": 1552,
           "itemId": 5481,
           "rlvl": 70,
@@ -37719,13 +37761,6 @@ export const craftingLogPages = [
           "itemId": 4560,
           "rlvl": 70,
           "icon": "/i/020000/020625.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1543,
-          "itemId": 4588,
-          "rlvl": 47,
-          "icon": "/i/020000/020682.png",
           "category": 44
         },
         {
@@ -37799,45 +37834,10 @@ export const craftingLogPages = [
           "category": 44
         },
         {
-          "recipeId": 1545,
-          "itemId": 4586,
-          "rlvl": 48,
-          "icon": "/i/020000/020684.png",
-          "category": 44
-        },
-        {
           "recipeId": 1571,
           "itemId": 4631,
           "rlvl": 70,
           "icon": "/i/020000/020671.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1544,
-          "itemId": 4587,
-          "rlvl": 48,
-          "icon": "/i/020000/020683.png",
-          "category": 44
-        },
-        {
-          "recipeId": 1546,
-          "itemId": 2189,
-          "rlvl": 49,
-          "icon": "/i/033000/033433.png",
-          "category": 10
-        },
-        {
-          "recipeId": 1547,
-          "itemId": 1987,
-          "rlvl": 49,
-          "icon": "/i/032000/032412.png",
-          "category": 8
-        },
-        {
-          "recipeId": 1548,
-          "itemId": 4585,
-          "rlvl": 49,
-          "icon": "/i/020000/020685.png",
           "category": 44
         }
       ]
@@ -37868,6 +37868,62 @@ export const craftingLogPages = [
           "rlvl": 115,
           "icon": "/i/033000/033519.png",
           "category": 10
+        },
+        {
+          "recipeId": 2768,
+          "itemId": 10652,
+          "rlvl": 115,
+          "icon": "/i/033000/033520.png",
+          "category": 98
+        },
+        {
+          "recipeId": 2781,
+          "itemId": 12607,
+          "rlvl": 120,
+          "icon": "/i/022000/022655.png",
+          "category": 54
+        },
+        {
+          "recipeId": 2759,
+          "itemId": 5506,
+          "rlvl": 120,
+          "icon": "/i/022000/022607.png",
+          "category": 54
+        },
+        {
+          "recipeId": 2779,
+          "itemId": 12604,
+          "rlvl": 125,
+          "icon": "/i/022000/022653.png",
+          "category": 54
+        },
+        {
+          "recipeId": 2764,
+          "itemId": 10647,
+          "rlvl": 125,
+          "icon": "/i/033000/033525.png",
+          "category": 10
+        },
+        {
+          "recipeId": 2207,
+          "itemId": 10635,
+          "rlvl": 125,
+          "icon": "/i/032000/032680.png",
+          "category": 9
+        },
+        {
+          "recipeId": 2769,
+          "itemId": 10653,
+          "rlvl": 125,
+          "icon": "/i/033000/033526.png",
+          "category": 98
+        },
+        {
+          "recipeId": 2785,
+          "itemId": 12612,
+          "rlvl": 130,
+          "icon": "/i/020000/020670.png",
+          "category": 54
         },
         {
           "recipeId": 2786,
@@ -37940,13 +37996,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2768,
-          "itemId": 10652,
-          "rlvl": 115,
-          "icon": "/i/033000/033520.png",
-          "category": 98
-        },
-        {
           "recipeId": 2924,
           "itemId": 16616,
           "rlvl": 130,
@@ -38015,13 +38064,6 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/041000/041823.png",
           "category": 34
-        },
-        {
-          "recipeId": 2781,
-          "itemId": 12607,
-          "rlvl": 120,
-          "icon": "/i/022000/022655.png",
-          "category": 54
         },
         {
           "recipeId": 2948,
@@ -38094,13 +38136,6 @@ export const craftingLogPages = [
           "category": 34
         },
         {
-          "recipeId": 2759,
-          "itemId": 5506,
-          "rlvl": 120,
-          "icon": "/i/022000/022607.png",
-          "category": 54
-        },
-        {
           "recipeId": 3662,
           "itemId": 20263,
           "rlvl": 130,
@@ -38169,13 +38204,6 @@ export const craftingLogPages = [
           "rlvl": 130,
           "icon": "/i/041000/041839.png",
           "category": 34
-        },
-        {
-          "recipeId": 2779,
-          "itemId": 12604,
-          "rlvl": 125,
-          "icon": "/i/022000/022653.png",
-          "category": 54
         },
         {
           "recipeId": 3672,
@@ -38248,13 +38276,6 @@ export const craftingLogPages = [
           "category": 54
         },
         {
-          "recipeId": 2764,
-          "itemId": 10647,
-          "rlvl": 125,
-          "icon": "/i/033000/033525.png",
-          "category": 10
-        },
-        {
           "recipeId": 2760,
           "itemId": 5507,
           "rlvl": 136,
@@ -38274,27 +38295,6 @@ export const craftingLogPages = [
           "rlvl": 136,
           "icon": "/i/033000/033501.png",
           "category": 98
-        },
-        {
-          "recipeId": 2207,
-          "itemId": 10635,
-          "rlvl": 125,
-          "icon": "/i/032000/032680.png",
-          "category": 9
-        },
-        {
-          "recipeId": 2769,
-          "itemId": 10653,
-          "rlvl": 125,
-          "icon": "/i/033000/033526.png",
-          "category": 98
-        },
-        {
-          "recipeId": 2785,
-          "itemId": 12612,
-          "rlvl": 130,
-          "icon": "/i/020000/020670.png",
-          "category": 54
         }
       ]
     },
@@ -38324,27 +38324,6 @@ export const craftingLogPages = [
           "rlvl": 139,
           "icon": "/i/032000/032681.png",
           "category": 9
-        },
-        {
-          "recipeId": 3760,
-          "itemId": 23349,
-          "rlvl": 150,
-          "icon": "/i/020000/020644.png",
-          "category": 44
-        },
-        {
-          "recipeId": 2845,
-          "itemId": 13637,
-          "rlvl": 150,
-          "icon": "/i/020000/020601.png",
-          "category": 44
-        },
-        {
-          "recipeId": 2846,
-          "itemId": 13638,
-          "rlvl": 150,
-          "icon": "/i/020000/020621.png",
-          "category": 44
         },
         {
           "recipeId": 2766,
@@ -38401,6 +38380,27 @@ export const craftingLogPages = [
           "rlvl": 150,
           "icon": "/i/024000/024103.png",
           "category": 54
+        },
+        {
+          "recipeId": 3760,
+          "itemId": 23349,
+          "rlvl": 150,
+          "icon": "/i/020000/020644.png",
+          "category": 44
+        },
+        {
+          "recipeId": 2845,
+          "itemId": 13637,
+          "rlvl": 150,
+          "icon": "/i/020000/020601.png",
+          "category": 44
+        },
+        {
+          "recipeId": 2846,
+          "itemId": 13638,
+          "rlvl": 150,
+          "icon": "/i/020000/020621.png",
+          "category": 44
         }
       ]
     },
@@ -38429,6 +38429,62 @@ export const craftingLogPages = [
           "itemId": 19901,
           "rlvl": 255,
           "icon": "/i/025000/025920.png",
+          "category": 54
+        },
+        {
+          "recipeId": 2966,
+          "itemId": 18043,
+          "rlvl": 260,
+          "icon": "/i/039000/039408.png",
+          "category": 10
+        },
+        {
+          "recipeId": 2967,
+          "itemId": 18044,
+          "rlvl": 260,
+          "icon": "/i/039000/039409.png",
+          "category": 98
+        },
+        {
+          "recipeId": 3044,
+          "itemId": 18199,
+          "rlvl": 265,
+          "icon": "/i/039000/039402.png",
+          "category": 10
+        },
+        {
+          "recipeId": 3045,
+          "itemId": 18200,
+          "rlvl": 265,
+          "icon": "/i/039000/039403.png",
+          "category": 98
+        },
+        {
+          "recipeId": 3590,
+          "itemId": 19885,
+          "rlvl": 265,
+          "icon": "/i/020000/020643.png",
+          "category": 44
+        },
+        {
+          "recipeId": 3596,
+          "itemId": 19891,
+          "rlvl": 270,
+          "icon": "/i/020000/020644.png",
+          "category": 54
+        },
+        {
+          "recipeId": 3597,
+          "itemId": 19892,
+          "rlvl": 270,
+          "icon": "/i/020000/020641.png",
+          "category": 54
+        },
+        {
+          "recipeId": 3598,
+          "itemId": 19893,
+          "rlvl": 270,
+          "icon": "/i/020000/020645.png",
           "category": 54
         },
         {
@@ -38486,62 +38542,6 @@ export const craftingLogPages = [
           "rlvl": 276,
           "icon": "/i/024000/024412.png",
           "category": 44
-        },
-        {
-          "recipeId": 2966,
-          "itemId": 18043,
-          "rlvl": 260,
-          "icon": "/i/039000/039408.png",
-          "category": 10
-        },
-        {
-          "recipeId": 2967,
-          "itemId": 18044,
-          "rlvl": 260,
-          "icon": "/i/039000/039409.png",
-          "category": 98
-        },
-        {
-          "recipeId": 3044,
-          "itemId": 18199,
-          "rlvl": 265,
-          "icon": "/i/039000/039402.png",
-          "category": 10
-        },
-        {
-          "recipeId": 3045,
-          "itemId": 18200,
-          "rlvl": 265,
-          "icon": "/i/039000/039403.png",
-          "category": 98
-        },
-        {
-          "recipeId": 3590,
-          "itemId": 19885,
-          "rlvl": 265,
-          "icon": "/i/020000/020643.png",
-          "category": 44
-        },
-        {
-          "recipeId": 3596,
-          "itemId": 19891,
-          "rlvl": 270,
-          "icon": "/i/020000/020644.png",
-          "category": 54
-        },
-        {
-          "recipeId": 3597,
-          "itemId": 19892,
-          "rlvl": 270,
-          "icon": "/i/020000/020641.png",
-          "category": 54
-        },
-        {
-          "recipeId": 3598,
-          "itemId": 19893,
-          "rlvl": 270,
-          "icon": "/i/020000/020645.png",
-          "category": 54
         }
       ]
     },
@@ -38571,6 +38571,62 @@ export const craftingLogPages = [
           "rlvl": 279,
           "icon": "/i/022000/022637.png",
           "category": 54
+        },
+        {
+          "recipeId": 3750,
+          "itemId": 23098,
+          "rlvl": 279,
+          "icon": "/i/041000/041846.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3751,
+          "itemId": 23099,
+          "rlvl": 279,
+          "icon": "/i/041000/041847.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3752,
+          "itemId": 23100,
+          "rlvl": 279,
+          "icon": "/i/041000/041848.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3753,
+          "itemId": 23101,
+          "rlvl": 279,
+          "icon": "/i/041000/041849.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3754,
+          "itemId": 23102,
+          "rlvl": 279,
+          "icon": "/i/041000/041850.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3755,
+          "itemId": 23103,
+          "rlvl": 279,
+          "icon": "/i/041000/041851.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3756,
+          "itemId": 23104,
+          "rlvl": 279,
+          "icon": "/i/041000/041852.png",
+          "category": 34
+        },
+        {
+          "recipeId": 3757,
+          "itemId": 23105,
+          "rlvl": 279,
+          "icon": "/i/041000/041853.png",
+          "category": 34
         },
         {
           "recipeId": 3758,
@@ -38640,13 +38696,6 @@ export const craftingLogPages = [
           "itemId": 24183,
           "rlvl": 279,
           "icon": "/i/041000/041863.png",
-          "category": 34
-        },
-        {
-          "recipeId": 3750,
-          "itemId": 23098,
-          "rlvl": 279,
-          "icon": "/i/041000/041846.png",
           "category": 34
         },
         {
@@ -38720,13 +38769,6 @@ export const craftingLogPages = [
           "category": 37
         },
         {
-          "recipeId": 3751,
-          "itemId": 23099,
-          "rlvl": 279,
-          "icon": "/i/041000/041847.png",
-          "category": 34
-        },
-        {
           "recipeId": 3736,
           "itemId": 21927,
           "rlvl": 279,
@@ -38795,13 +38837,6 @@ export const craftingLogPages = [
           "rlvl": 282,
           "icon": "/i/039000/039411.png",
           "category": 98
-        },
-        {
-          "recipeId": 3752,
-          "itemId": 23100,
-          "rlvl": 279,
-          "icon": "/i/041000/041848.png",
-          "category": 34
         },
         {
           "recipeId": 3589,
@@ -38874,46 +38909,11 @@ export const craftingLogPages = [
           "category": 44
         },
         {
-          "recipeId": 3753,
-          "itemId": 23101,
-          "rlvl": 279,
-          "icon": "/i/041000/041849.png",
-          "category": 34
-        },
-        {
           "recipeId": 3594,
           "itemId": 19889,
           "rlvl": 290,
           "icon": "/i/020000/020704.png",
           "category": 44
-        },
-        {
-          "recipeId": 3754,
-          "itemId": 23102,
-          "rlvl": 279,
-          "icon": "/i/041000/041850.png",
-          "category": 34
-        },
-        {
-          "recipeId": 3755,
-          "itemId": 23103,
-          "rlvl": 279,
-          "icon": "/i/041000/041851.png",
-          "category": 34
-        },
-        {
-          "recipeId": 3756,
-          "itemId": 23104,
-          "rlvl": 279,
-          "icon": "/i/041000/041852.png",
-          "category": 34
-        },
-        {
-          "recipeId": 3757,
-          "itemId": 23105,
-          "rlvl": 279,
-          "icon": "/i/041000/041853.png",
-          "category": 34
         }
       ]
     },
@@ -38943,6 +38943,62 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
+        },
+        {
+          "recipeId": 31510,
+          "itemId": 14244,
+          "rlvl": 70,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31513,
+          "itemId": 14247,
+          "rlvl": 70,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31954,
+          "itemId": 15823,
+          "rlvl": 70,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 30277,
+          "itemId": 1666,
+          "rlvl": 70,
+          "icon": "/i/030000/030448.png",
+          "category": 2
+        },
+        {
+          "recipeId": 30279,
+          "itemId": 1806,
+          "rlvl": 70,
+          "icon": "/i/031000/031442.png",
+          "category": 3
+        },
+        {
+          "recipeId": 31193,
+          "itemId": 10406,
+          "rlvl": 70,
+          "icon": "/i/034000/034234.png",
+          "category": 87
+        },
+        {
+          "recipeId": 30280,
+          "itemId": 1875,
+          "rlvl": 70,
+          "icon": "/i/031000/031844.png",
+          "category": 5
+        },
+        {
+          "recipeId": 30278,
+          "itemId": 1736,
+          "rlvl": 70,
+          "icon": "/i/031000/031036.png",
+          "category": 1
         },
         {
           "recipeId": 30825,
@@ -39015,13 +39071,6 @@ export const craftingLogPages = [
           "category": 54
         },
         {
-          "recipeId": 31510,
-          "itemId": 14244,
-          "rlvl": 70,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
           "recipeId": 30931,
           "itemId": 10106,
           "rlvl": 90,
@@ -39090,13 +39139,6 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/026000/026108.png",
           "category": 56
-        },
-        {
-          "recipeId": 31513,
-          "itemId": 14247,
-          "rlvl": 70,
-          "icon": "/i/025000/025945.png",
-          "category": 94
         },
         {
           "recipeId": 30415,
@@ -39169,13 +39211,6 @@ export const craftingLogPages = [
           "category": 94
         },
         {
-          "recipeId": 31954,
-          "itemId": 15823,
-          "rlvl": 70,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
           "recipeId": 31799,
           "itemId": 6141,
           "rlvl": 90,
@@ -39223,41 +39258,6 @@ export const craftingLogPages = [
           "rlvl": 160,
           "icon": "/i/025000/025923.png",
           "category": 54
-        },
-        {
-          "recipeId": 30277,
-          "itemId": 1666,
-          "rlvl": 70,
-          "icon": "/i/030000/030448.png",
-          "category": 2
-        },
-        {
-          "recipeId": 30279,
-          "itemId": 1806,
-          "rlvl": 70,
-          "icon": "/i/031000/031442.png",
-          "category": 3
-        },
-        {
-          "recipeId": 31193,
-          "itemId": 10406,
-          "rlvl": 70,
-          "icon": "/i/034000/034234.png",
-          "category": 87
-        },
-        {
-          "recipeId": 30280,
-          "itemId": 1875,
-          "rlvl": 70,
-          "icon": "/i/031000/031844.png",
-          "category": 5
-        },
-        {
-          "recipeId": 30278,
-          "itemId": 1736,
-          "rlvl": 70,
-          "icon": "/i/031000/031036.png",
-          "category": 1
         }
       ]
     },
@@ -39287,6 +39287,62 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/033000/033487.png",
           "category": 98
+        },
+        {
+          "recipeId": 31520,
+          "itemId": 14256,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31521,
+          "itemId": 14257,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31522,
+          "itemId": 14258,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31523,
+          "itemId": 14259,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31524,
+          "itemId": 14260,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31525,
+          "itemId": 14261,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31527,
+          "itemId": 14263,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31528,
+          "itemId": 14264,
+          "rlvl": 110,
+          "icon": "/i/025000/025945.png",
+          "category": 94
         },
         {
           "recipeId": 31529,
@@ -39359,13 +39415,6 @@ export const craftingLogPages = [
           "category": 63
         },
         {
-          "recipeId": 31520,
-          "itemId": 14256,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
           "recipeId": 30853,
           "itemId": 9324,
           "rlvl": 110,
@@ -39406,55 +39455,6 @@ export const craftingLogPages = [
           "rlvl": 110,
           "icon": "/i/026000/026163.png",
           "category": 63
-        },
-        {
-          "recipeId": 31521,
-          "itemId": 14257,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31522,
-          "itemId": 14258,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31523,
-          "itemId": 14259,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31524,
-          "itemId": 14260,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31525,
-          "itemId": 14261,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31527,
-          "itemId": 14263,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31528,
-          "itemId": 14264,
-          "rlvl": 110,
-          "icon": "/i/025000/025945.png",
-          "category": 94
         }
       ]
     },
@@ -39484,6 +39484,62 @@ export const craftingLogPages = [
           "rlvl": 145,
           "icon": "/i/020000/020667.png",
           "category": 44
+        },
+        {
+          "recipeId": 31208,
+          "itemId": 12624,
+          "rlvl": 148,
+          "icon": "/i/020000/020666.png",
+          "category": 44
+        },
+        {
+          "recipeId": 31209,
+          "itemId": 12625,
+          "rlvl": 148,
+          "icon": "/i/020000/020668.png",
+          "category": 44
+        },
+        {
+          "recipeId": 31210,
+          "itemId": 12626,
+          "rlvl": 148,
+          "icon": "/i/020000/020669.png",
+          "category": 44
+        },
+        {
+          "recipeId": 31506,
+          "itemId": 14230,
+          "rlvl": 150,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31507,
+          "itemId": 14231,
+          "rlvl": 150,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31508,
+          "itemId": 14239,
+          "rlvl": 150,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31509,
+          "itemId": 14240,
+          "rlvl": 150,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 31511,
+          "itemId": 14245,
+          "rlvl": 150,
+          "icon": "/i/025000/025945.png",
+          "category": 94
         },
         {
           "recipeId": 31947,
@@ -39556,13 +39612,6 @@ export const craftingLogPages = [
           "category": 98
         },
         {
-          "recipeId": 31208,
-          "itemId": 12624,
-          "rlvl": 148,
-          "icon": "/i/020000/020666.png",
-          "category": 44
-        },
-        {
           "recipeId": 31200,
           "itemId": 12606,
           "rlvl": 160,
@@ -39633,13 +39682,6 @@ export const craftingLogPages = [
           "category": 94
         },
         {
-          "recipeId": 31209,
-          "itemId": 12625,
-          "rlvl": 148,
-          "icon": "/i/020000/020668.png",
-          "category": 44
-        },
-        {
           "recipeId": 32148,
           "itemId": 17638,
           "rlvl": 160,
@@ -39687,48 +39729,6 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/053000/053106.png",
           "category": 76
-        },
-        {
-          "recipeId": 31210,
-          "itemId": 12626,
-          "rlvl": 148,
-          "icon": "/i/020000/020669.png",
-          "category": 44
-        },
-        {
-          "recipeId": 31506,
-          "itemId": 14230,
-          "rlvl": 150,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31507,
-          "itemId": 14231,
-          "rlvl": 150,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31508,
-          "itemId": 14239,
-          "rlvl": 150,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31509,
-          "itemId": 14240,
-          "rlvl": 150,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
-          "recipeId": 31511,
-          "itemId": 14245,
-          "rlvl": 150,
-          "icon": "/i/025000/025945.png",
-          "category": 94
         }
       ]
     },
@@ -39758,6 +39758,62 @@ export const craftingLogPages = [
           "rlvl": 180,
           "icon": "/i/022000/022651.png",
           "category": 54
+        },
+        {
+          "recipeId": 31489,
+          "itemId": 14161,
+          "rlvl": 180,
+          "icon": "/i/022000/022610.png",
+          "category": 54
+        },
+        {
+          "recipeId": 31505,
+          "itemId": 14189,
+          "rlvl": 180,
+          "icon": "/i/022000/022210.png",
+          "category": 54
+        },
+        {
+          "recipeId": 31940,
+          "itemId": 15580,
+          "rlvl": 180,
+          "icon": "/i/033000/033503.png",
+          "category": 10
+        },
+        {
+          "recipeId": 32095,
+          "itemId": 15594,
+          "rlvl": 180,
+          "icon": "/i/033000/033511.png",
+          "category": 10
+        },
+        {
+          "recipeId": 31941,
+          "itemId": 15581,
+          "rlvl": 180,
+          "icon": "/i/033000/033504.png",
+          "category": 98
+        },
+        {
+          "recipeId": 32096,
+          "itemId": 15595,
+          "rlvl": 180,
+          "icon": "/i/033000/033512.png",
+          "category": 98
+        },
+        {
+          "recipeId": 32978,
+          "itemId": 22530,
+          "rlvl": 180,
+          "icon": "/i/051000/051240.png",
+          "category": 73
+        },
+        {
+          "recipeId": 32994,
+          "itemId": 22557,
+          "rlvl": 180,
+          "icon": "/i/052000/052911.png",
+          "category": 78
         },
         {
           "recipeId": 31530,
@@ -39830,13 +39886,6 @@ export const craftingLogPages = [
           "category": 98
         },
         {
-          "recipeId": 31489,
-          "itemId": 14161,
-          "rlvl": 180,
-          "icon": "/i/022000/022610.png",
-          "category": 54
-        },
-        {
           "recipeId": 33189,
           "itemId": 24331,
           "rlvl": 210,
@@ -39905,13 +39954,6 @@ export const craftingLogPages = [
           "rlvl": 210,
           "icon": "/i/020000/020703.png",
           "category": 44
-        },
-        {
-          "recipeId": 31505,
-          "itemId": 14189,
-          "rlvl": 180,
-          "icon": "/i/022000/022210.png",
-          "category": 54
         },
         {
           "recipeId": 31498,
@@ -39984,13 +40026,6 @@ export const craftingLogPages = [
           "category": 98
         },
         {
-          "recipeId": 31940,
-          "itemId": 15580,
-          "rlvl": 180,
-          "icon": "/i/033000/033503.png",
-          "category": 10
-        },
-        {
           "recipeId": 32051,
           "itemId": 16716,
           "rlvl": 250,
@@ -40038,41 +40073,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/025000/025945.png",
           "category": 94
-        },
-        {
-          "recipeId": 32095,
-          "itemId": 15594,
-          "rlvl": 180,
-          "icon": "/i/033000/033511.png",
-          "category": 10
-        },
-        {
-          "recipeId": 31941,
-          "itemId": 15581,
-          "rlvl": 180,
-          "icon": "/i/033000/033504.png",
-          "category": 98
-        },
-        {
-          "recipeId": 32096,
-          "itemId": 15595,
-          "rlvl": 180,
-          "icon": "/i/033000/033512.png",
-          "category": 98
-        },
-        {
-          "recipeId": 32978,
-          "itemId": 22530,
-          "rlvl": 180,
-          "icon": "/i/051000/051240.png",
-          "category": 73
-        },
-        {
-          "recipeId": 32994,
-          "itemId": 22557,
-          "rlvl": 180,
-          "icon": "/i/052000/052911.png",
-          "category": 78
         }
       ]
     },
@@ -40102,27 +40102,6 @@ export const craftingLogPages = [
           "rlvl": 300,
           "icon": "/i/025000/025945.png",
           "category": 94
-        },
-        {
-          "recipeId": 32349,
-          "itemId": 18979,
-          "rlvl": 320,
-          "icon": "/i/033000/033586.png",
-          "category": 10
-        },
-        {
-          "recipeId": 32350,
-          "itemId": 18980,
-          "rlvl": 320,
-          "icon": "/i/033000/033587.png",
-          "category": 98
-        },
-        {
-          "recipeId": 32461,
-          "itemId": 21052,
-          "rlvl": 320,
-          "icon": "/i/052000/052406.png",
-          "category": 63
         },
         {
           "recipeId": 32466,
@@ -40179,6 +40158,27 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/020000/020642.png",
           "category": 54
+        },
+        {
+          "recipeId": 32349,
+          "itemId": 18979,
+          "rlvl": 320,
+          "icon": "/i/033000/033586.png",
+          "category": 10
+        },
+        {
+          "recipeId": 32350,
+          "itemId": 18980,
+          "rlvl": 320,
+          "icon": "/i/033000/033587.png",
+          "category": 98
+        },
+        {
+          "recipeId": 32461,
+          "itemId": 21052,
+          "rlvl": 320,
+          "icon": "/i/052000/052406.png",
+          "category": 63
         }
       ]
     },
@@ -40208,6 +40208,62 @@ export const craftingLogPages = [
           "rlvl": 320,
           "icon": "/i/052000/052930.png",
           "category": 78
+        },
+        {
+          "recipeId": 32669,
+          "itemId": 21834,
+          "rlvl": 320,
+          "icon": "/i/052000/052897.png",
+          "category": 78
+        },
+        {
+          "recipeId": 33012,
+          "itemId": 23316,
+          "rlvl": 320,
+          "icon": "/i/025000/025945.png",
+          "category": 94
+        },
+        {
+          "recipeId": 33019,
+          "itemId": 23184,
+          "rlvl": 350,
+          "icon": "/i/022000/022654.png",
+          "category": 54
+        },
+        {
+          "recipeId": 32639,
+          "itemId": 22422,
+          "rlvl": 350,
+          "icon": "/i/020000/020644.png",
+          "category": 54
+        },
+        {
+          "recipeId": 32640,
+          "itemId": 22423,
+          "rlvl": 350,
+          "icon": "/i/020000/020641.png",
+          "category": 54
+        },
+        {
+          "recipeId": 32641,
+          "itemId": 22424,
+          "rlvl": 350,
+          "icon": "/i/020000/020645.png",
+          "category": 54
+        },
+        {
+          "recipeId": 32642,
+          "itemId": 22425,
+          "rlvl": 350,
+          "icon": "/i/020000/020662.png",
+          "category": 54
+        },
+        {
+          "recipeId": 32643,
+          "itemId": 22426,
+          "rlvl": 350,
+          "icon": "/i/020000/020642.png",
+          "category": 54
         },
         {
           "recipeId": 33018,
@@ -40280,13 +40336,6 @@ export const craftingLogPages = [
           "category": 94
         },
         {
-          "recipeId": 32669,
-          "itemId": 21834,
-          "rlvl": 320,
-          "icon": "/i/052000/052897.png",
-          "category": 78
-        },
-        {
           "recipeId": 33010,
           "itemId": 23331,
           "rlvl": 350,
@@ -40357,13 +40406,6 @@ export const craftingLogPages = [
           "category": 44
         },
         {
-          "recipeId": 33012,
-          "itemId": 23316,
-          "rlvl": 320,
-          "icon": "/i/025000/025945.png",
-          "category": 94
-        },
-        {
           "recipeId": 33163,
           "itemId": 24262,
           "rlvl": 380,
@@ -40404,48 +40446,6 @@ export const craftingLogPages = [
           "rlvl": 380,
           "icon": "/i/025000/025945.png",
           "category": 94
-        },
-        {
-          "recipeId": 33019,
-          "itemId": 23184,
-          "rlvl": 350,
-          "icon": "/i/022000/022654.png",
-          "category": 54
-        },
-        {
-          "recipeId": 32639,
-          "itemId": 22422,
-          "rlvl": 350,
-          "icon": "/i/020000/020644.png",
-          "category": 54
-        },
-        {
-          "recipeId": 32640,
-          "itemId": 22423,
-          "rlvl": 350,
-          "icon": "/i/020000/020641.png",
-          "category": 54
-        },
-        {
-          "recipeId": 32641,
-          "itemId": 22424,
-          "rlvl": 350,
-          "icon": "/i/020000/020645.png",
-          "category": 54
-        },
-        {
-          "recipeId": 32642,
-          "itemId": 22425,
-          "rlvl": 350,
-          "icon": "/i/020000/020662.png",
-          "category": 54
-        },
-        {
-          "recipeId": 32643,
-          "itemId": 22426,
-          "rlvl": 350,
-          "icon": "/i/020000/020642.png",
-          "category": 54
         }
       ]
     },
@@ -40475,6 +40475,62 @@ export const craftingLogPages = [
           "rlvl": 55,
           "icon": "/i/020000/020645.png",
           "category": 44
+        },
+        {
+          "recipeId": 32314,
+          "itemId": 20366,
+          "rlvl": 90,
+          "icon": "/i/038000/038505.png",
+          "category": 96
+        },
+        {
+          "recipeId": 32315,
+          "itemId": 20367,
+          "rlvl": 90,
+          "icon": "/i/038000/038818.png",
+          "category": 97
+        },
+        {
+          "recipeId": 30468,
+          "itemId": 8374,
+          "rlvl": 90,
+          "icon": "/i/031000/031468.png",
+          "category": 3
+        },
+        {
+          "recipeId": 31194,
+          "itemId": 10410,
+          "rlvl": 90,
+          "icon": "/i/034000/034233.png",
+          "category": 87
+        },
+        {
+          "recipeId": 30469,
+          "itemId": 8375,
+          "rlvl": 90,
+          "icon": "/i/031000/031866.png",
+          "category": 5
+        },
+        {
+          "recipeId": 30467,
+          "itemId": 8373,
+          "rlvl": 90,
+          "icon": "/i/031000/031063.png",
+          "category": 1
+        },
+        {
+          "recipeId": 30849,
+          "itemId": 9236,
+          "rlvl": 90,
+          "icon": "/i/033000/033853.png",
+          "category": 84
+        },
+        {
+          "recipeId": 30470,
+          "itemId": 8376,
+          "rlvl": 90,
+          "icon": "/i/032000/032264.png",
+          "category": 4
         },
         {
           "recipeId": 30996,
@@ -40547,13 +40603,6 @@ export const craftingLogPages = [
           "category": 9
         },
         {
-          "recipeId": 32314,
-          "itemId": 20366,
-          "rlvl": 90,
-          "icon": "/i/038000/038505.png",
-          "category": 96
-        },
-        {
           "recipeId": 30457,
           "itemId": 8363,
           "rlvl": 90,
@@ -40594,55 +40643,6 @@ export const craftingLogPages = [
           "rlvl": 90,
           "icon": "/i/030000/030087.png",
           "category": 11
-        },
-        {
-          "recipeId": 32315,
-          "itemId": 20367,
-          "rlvl": 90,
-          "icon": "/i/038000/038818.png",
-          "category": 97
-        },
-        {
-          "recipeId": 30468,
-          "itemId": 8374,
-          "rlvl": 90,
-          "icon": "/i/031000/031468.png",
-          "category": 3
-        },
-        {
-          "recipeId": 31194,
-          "itemId": 10410,
-          "rlvl": 90,
-          "icon": "/i/034000/034233.png",
-          "category": 87
-        },
-        {
-          "recipeId": 30469,
-          "itemId": 8375,
-          "rlvl": 90,
-          "icon": "/i/031000/031866.png",
-          "category": 5
-        },
-        {
-          "recipeId": 30467,
-          "itemId": 8373,
-          "rlvl": 90,
-          "icon": "/i/031000/031063.png",
-          "category": 1
-        },
-        {
-          "recipeId": 30849,
-          "itemId": 9236,
-          "rlvl": 90,
-          "icon": "/i/033000/033853.png",
-          "category": 84
-        },
-        {
-          "recipeId": 30470,
-          "itemId": 8376,
-          "rlvl": 90,
-          "icon": "/i/032000/032264.png",
-          "category": 4
         }
       ]
     },
@@ -40672,6 +40672,62 @@ export const craftingLogPages = [
           "rlvl": 20,
           "icon": "/i/050000/050303.png",
           "category": 70
+        },
+        {
+          "recipeId": 1723,
+          "itemId": 6476,
+          "rlvl": 20,
+          "icon": "/i/053000/053004.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1724,
+          "itemId": 6477,
+          "rlvl": 20,
+          "icon": "/i/053000/053003.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1725,
+          "itemId": 6478,
+          "rlvl": 20,
+          "icon": "/i/053000/053005.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1597,
+          "itemId": 6347,
+          "rlvl": 20,
+          "icon": "/i/050000/050419.png",
+          "category": 65
+        },
+        {
+          "recipeId": 1753,
+          "itemId": 6511,
+          "rlvl": 23,
+          "icon": "/i/053000/053015.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1607,
+          "itemId": 6357,
+          "rlvl": 23,
+          "icon": "/i/050000/050423.png",
+          "category": 65
+        },
+        {
+          "recipeId": 1726,
+          "itemId": 6479,
+          "rlvl": 24,
+          "icon": "/i/053000/053001.png",
+          "category": 76
+        },
+        {
+          "recipeId": 1752,
+          "itemId": 6510,
+          "rlvl": 24,
+          "icon": "/i/053000/053014.png",
+          "category": 76
         },
         {
           "recipeId": 1735,
@@ -40741,13 +40797,6 @@ export const craftingLogPages = [
           "itemId": 6480,
           "rlvl": 33,
           "icon": "/i/053000/053002.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1723,
-          "itemId": 6476,
-          "rlvl": 20,
-          "icon": "/i/053000/053004.png",
           "category": 76
         },
         {
@@ -40821,13 +40870,6 @@ export const craftingLogPages = [
           "category": 74
         },
         {
-          "recipeId": 1724,
-          "itemId": 6477,
-          "rlvl": 20,
-          "icon": "/i/053000/053003.png",
-          "category": 76
-        },
-        {
           "recipeId": 2122,
           "itemId": 8816,
           "rlvl": 50,
@@ -40896,13 +40938,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/027000/027681.png",
           "category": 61
-        },
-        {
-          "recipeId": 1725,
-          "itemId": 6478,
-          "rlvl": 20,
-          "icon": "/i/053000/053005.png",
-          "category": 76
         },
         {
           "recipeId": 2154,
@@ -40975,13 +41010,6 @@ export const craftingLogPages = [
           "category": 61
         },
         {
-          "recipeId": 1597,
-          "itemId": 6347,
-          "rlvl": 20,
-          "icon": "/i/050000/050419.png",
-          "category": 65
-        },
-        {
           "recipeId": 2164,
           "itemId": 8858,
           "rlvl": 70,
@@ -41052,38 +41080,10 @@ export const craftingLogPages = [
           "category": 76
         },
         {
-          "recipeId": 1753,
-          "itemId": 6511,
-          "rlvl": 23,
-          "icon": "/i/053000/053015.png",
-          "category": 76
-        },
-        {
           "recipeId": 2834,
           "itemId": 13090,
           "rlvl": 148,
           "icon": "/i/053000/053105.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1607,
-          "itemId": 6357,
-          "rlvl": 23,
-          "icon": "/i/050000/050423.png",
-          "category": 65
-        },
-        {
-          "recipeId": 1726,
-          "itemId": 6479,
-          "rlvl": 24,
-          "icon": "/i/053000/053001.png",
-          "category": 76
-        },
-        {
-          "recipeId": 1752,
-          "itemId": 6510,
-          "rlvl": 24,
-          "icon": "/i/053000/053014.png",
           "category": 76
         }
       ]
@@ -41114,6 +41114,62 @@ export const craftingLogPages = [
           "rlvl": 13,
           "icon": "/i/052000/052435.png",
           "category": 57
+        },
+        {
+          "recipeId": 1874,
+          "itemId": 6649,
+          "rlvl": 15,
+          "icon": "/i/052000/052122.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1821,
+          "itemId": 6595,
+          "rlvl": 22,
+          "icon": "/i/052000/052436.png",
+          "category": 57
+        },
+        {
+          "recipeId": 1864,
+          "itemId": 6639,
+          "rlvl": 23,
+          "icon": "/i/052000/052113.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1865,
+          "itemId": 6640,
+          "rlvl": 23,
+          "icon": "/i/052000/052114.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1866,
+          "itemId": 6641,
+          "rlvl": 23,
+          "icon": "/i/052000/052115.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2026,
+          "itemId": 7970,
+          "rlvl": 27,
+          "icon": "/i/052000/052327.png",
+          "category": 79
+        },
+        {
+          "recipeId": 1869,
+          "itemId": 6644,
+          "rlvl": 33,
+          "icon": "/i/052000/052123.png",
+          "category": 78
+        },
+        {
+          "recipeId": 1870,
+          "itemId": 6645,
+          "rlvl": 33,
+          "icon": "/i/052000/052124.png",
+          "category": 78
         },
         {
           "recipeId": 1871,
@@ -41186,13 +41242,6 @@ export const craftingLogPages = [
           "category": 57
         },
         {
-          "recipeId": 1874,
-          "itemId": 6649,
-          "rlvl": 15,
-          "icon": "/i/052000/052122.png",
-          "category": 78
-        },
-        {
           "recipeId": 2117,
           "itemId": 8809,
           "rlvl": 70,
@@ -41211,55 +41260,6 @@ export const craftingLogPages = [
           "itemId": 24502,
           "rlvl": 273,
           "icon": "/i/052000/052973.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1821,
-          "itemId": 6595,
-          "rlvl": 22,
-          "icon": "/i/052000/052436.png",
-          "category": 57
-        },
-        {
-          "recipeId": 1864,
-          "itemId": 6639,
-          "rlvl": 23,
-          "icon": "/i/052000/052113.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1865,
-          "itemId": 6640,
-          "rlvl": 23,
-          "icon": "/i/052000/052114.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1866,
-          "itemId": 6641,
-          "rlvl": 23,
-          "icon": "/i/052000/052115.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2026,
-          "itemId": 7970,
-          "rlvl": 27,
-          "icon": "/i/052000/052327.png",
-          "category": 79
-        },
-        {
-          "recipeId": 1869,
-          "itemId": 6644,
-          "rlvl": 33,
-          "icon": "/i/052000/052123.png",
-          "category": 78
-        },
-        {
-          "recipeId": 1870,
-          "itemId": 6645,
-          "rlvl": 33,
-          "icon": "/i/052000/052124.png",
           "category": 78
         }
       ]
@@ -41289,6 +41289,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30079,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30080,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30086,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30087,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30144,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30145,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30083,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30390,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -41362,13 +41418,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30079,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30394,
           "itemId": 5800,
           "rlvl": 30,
@@ -41402,55 +41451,6 @@ export const craftingLogPages = [
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
           "category": 55
-        },
-        {
-          "recipeId": 30080,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30086,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30087,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30144,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30145,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30083,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30390,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
         }
       ]
     }
@@ -41482,41 +41482,6 @@ export const craftingLogPages = [
           "rlvl": 1,
           "icon": "/i/025000/025105.png",
           "category": 45
-        },
-        {
-          "recipeId": 2790,
-          "itemId": 10332,
-          "rlvl": 5,
-          "icon": "/i/024000/024319.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2892,
-          "itemId": 15425,
-          "rlvl": 5,
-          "icon": "/i/024000/024080.png",
-          "category": 46
-        },
-        {
-          "recipeId": 910,
-          "itemId": 4639,
-          "rlvl": 5,
-          "icon": "/i/024000/024355.png",
-          "category": 46
-        },
-        {
-          "recipeId": 911,
-          "itemId": 4660,
-          "rlvl": 5,
-          "icon": "/i/024000/024301.png",
-          "category": 46
-        },
-        {
-          "recipeId": 909,
-          "itemId": 4696,
-          "rlvl": 5,
-          "icon": "/i/024000/024006.png",
-          "category": 46
         },
         {
           "recipeId": 903,
@@ -41573,6 +41538,41 @@ export const craftingLogPages = [
           "rlvl": 5,
           "icon": "/i/027000/027008.png",
           "category": 33
+        },
+        {
+          "recipeId": 2790,
+          "itemId": 10332,
+          "rlvl": 5,
+          "icon": "/i/024000/024319.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2892,
+          "itemId": 15425,
+          "rlvl": 5,
+          "icon": "/i/024000/024080.png",
+          "category": 46
+        },
+        {
+          "recipeId": 910,
+          "itemId": 4639,
+          "rlvl": 5,
+          "icon": "/i/024000/024355.png",
+          "category": 46
+        },
+        {
+          "recipeId": 911,
+          "itemId": 4660,
+          "rlvl": 5,
+          "icon": "/i/024000/024301.png",
+          "category": 46
+        },
+        {
+          "recipeId": 909,
+          "itemId": 4696,
+          "rlvl": 5,
+          "icon": "/i/024000/024006.png",
+          "category": 46
         }
       ]
     },
@@ -41601,27 +41601,6 @@ export const craftingLogPages = [
           "itemId": 4745,
           "rlvl": 6,
           "icon": "/i/024000/024401.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1497,
-          "itemId": 2589,
-          "rlvl": 10,
-          "icon": "/i/027000/027009.png",
-          "category": 33
-        },
-        {
-          "recipeId": 922,
-          "itemId": 4681,
-          "rlvl": 10,
-          "icon": "/i/024000/024153.png",
-          "category": 46
-        },
-        {
-          "recipeId": 923,
-          "itemId": 4726,
-          "rlvl": 10,
-          "icon": "/i/024000/024454.png",
           "category": 46
         },
         {
@@ -41679,6 +41658,27 @@ export const craftingLogPages = [
           "rlvl": 10,
           "icon": "/i/025000/025051.png",
           "category": 45
+        },
+        {
+          "recipeId": 1497,
+          "itemId": 2589,
+          "rlvl": 10,
+          "icon": "/i/027000/027009.png",
+          "category": 33
+        },
+        {
+          "recipeId": 922,
+          "itemId": 4681,
+          "rlvl": 10,
+          "icon": "/i/024000/024153.png",
+          "category": 46
+        },
+        {
+          "recipeId": 923,
+          "itemId": 4726,
+          "rlvl": 10,
+          "icon": "/i/024000/024454.png",
+          "category": 46
         }
       ]
     },
@@ -41708,27 +41708,6 @@ export const craftingLogPages = [
           "rlvl": 11,
           "icon": "/i/025000/025051.png",
           "category": 45
-        },
-        {
-          "recipeId": 934,
-          "itemId": 4708,
-          "rlvl": 14,
-          "icon": "/i/024000/024354.png",
-          "category": 46
-        },
-        {
-          "recipeId": 936,
-          "itemId": 4661,
-          "rlvl": 15,
-          "icon": "/i/024000/024302.png",
-          "category": 46
-        },
-        {
-          "recipeId": 935,
-          "itemId": 4666,
-          "rlvl": 15,
-          "icon": "/i/024000/024315.png",
-          "category": 46
         },
         {
           "recipeId": 926,
@@ -41785,6 +41764,27 @@ export const craftingLogPages = [
           "rlvl": 14,
           "icon": "/i/025000/025053.png",
           "category": 45
+        },
+        {
+          "recipeId": 934,
+          "itemId": 4708,
+          "rlvl": 14,
+          "icon": "/i/024000/024354.png",
+          "category": 46
+        },
+        {
+          "recipeId": 936,
+          "itemId": 4661,
+          "rlvl": 15,
+          "icon": "/i/024000/024302.png",
+          "category": 46
+        },
+        {
+          "recipeId": 935,
+          "itemId": 4666,
+          "rlvl": 15,
+          "icon": "/i/024000/024315.png",
+          "category": 46
         }
       ]
     },
@@ -41814,41 +41814,6 @@ export const craftingLogPages = [
           "rlvl": 16,
           "icon": "/i/025000/025452.png",
           "category": 45
-        },
-        {
-          "recipeId": 947,
-          "itemId": 4667,
-          "rlvl": 19,
-          "icon": "/i/024000/024316.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1498,
-          "itemId": 2593,
-          "rlvl": 20,
-          "icon": "/i/027000/027011.png",
-          "category": 33
-        },
-        {
-          "recipeId": 1499,
-          "itemId": 6142,
-          "rlvl": 20,
-          "icon": "/i/024000/024301.png",
-          "category": 46
-        },
-        {
-          "recipeId": 949,
-          "itemId": 4675,
-          "rlvl": 20,
-          "icon": "/i/024000/024110.png",
-          "category": 46
-        },
-        {
-          "recipeId": 948,
-          "itemId": 4690,
-          "rlvl": 20,
-          "icon": "/i/024000/024204.png",
-          "category": 46
         },
         {
           "recipeId": 940,
@@ -41905,6 +41870,41 @@ export const craftingLogPages = [
           "rlvl": 18,
           "icon": "/i/024000/024054.png",
           "category": 46
+        },
+        {
+          "recipeId": 947,
+          "itemId": 4667,
+          "rlvl": 19,
+          "icon": "/i/024000/024316.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1498,
+          "itemId": 2593,
+          "rlvl": 20,
+          "icon": "/i/027000/027011.png",
+          "category": 33
+        },
+        {
+          "recipeId": 1499,
+          "itemId": 6142,
+          "rlvl": 20,
+          "icon": "/i/024000/024301.png",
+          "category": 46
+        },
+        {
+          "recipeId": 949,
+          "itemId": 4675,
+          "rlvl": 20,
+          "icon": "/i/024000/024110.png",
+          "category": 46
+        },
+        {
+          "recipeId": 948,
+          "itemId": 4690,
+          "rlvl": 20,
+          "icon": "/i/024000/024204.png",
+          "category": 46
         }
       ]
     },
@@ -41933,27 +41933,6 @@ export const craftingLogPages = [
           "itemId": 4698,
           "rlvl": 21,
           "icon": "/i/024000/024004.png",
-          "category": 46
-        },
-        {
-          "recipeId": 960,
-          "itemId": 4749,
-          "rlvl": 24,
-          "icon": "/i/024000/024406.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1500,
-          "itemId": 2595,
-          "rlvl": 25,
-          "icon": "/i/027000/027010.png",
-          "category": 33
-        },
-        {
-          "recipeId": 961,
-          "itemId": 4711,
-          "rlvl": 25,
-          "icon": "/i/024000/024305.png",
           "category": 46
         },
         {
@@ -42011,6 +41990,27 @@ export const craftingLogPages = [
           "rlvl": 23,
           "icon": "/i/024000/024357.png",
           "category": 46
+        },
+        {
+          "recipeId": 960,
+          "itemId": 4749,
+          "rlvl": 24,
+          "icon": "/i/024000/024406.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1500,
+          "itemId": 2595,
+          "rlvl": 25,
+          "icon": "/i/027000/027010.png",
+          "category": 33
+        },
+        {
+          "recipeId": 961,
+          "itemId": 4711,
+          "rlvl": 25,
+          "icon": "/i/024000/024305.png",
+          "category": 46
         }
       ]
     },
@@ -42040,48 +42040,6 @@ export const craftingLogPages = [
           "rlvl": 26,
           "icon": "/i/024000/024101.png",
           "category": 46
-        },
-        {
-          "recipeId": 972,
-          "itemId": 4669,
-          "rlvl": 30,
-          "icon": "/i/024000/024309.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2140,
-          "itemId": 9615,
-          "rlvl": 30,
-          "icon": "/i/027000/027555.png",
-          "category": 61
-        },
-        {
-          "recipeId": 2142,
-          "itemId": 9618,
-          "rlvl": 30,
-          "icon": "/i/027000/027552.png",
-          "category": 61
-        },
-        {
-          "recipeId": 2146,
-          "itemId": 9624,
-          "rlvl": 30,
-          "icon": "/i/027000/027551.png",
-          "category": 61
-        },
-        {
-          "recipeId": 2148,
-          "itemId": 9627,
-          "rlvl": 30,
-          "icon": "/i/027000/027553.png",
-          "category": 61
-        },
-        {
-          "recipeId": 2144,
-          "itemId": 9621,
-          "rlvl": 30,
-          "icon": "/i/027000/027554.png",
-          "category": 61
         },
         {
           "recipeId": 962,
@@ -42138,6 +42096,48 @@ export const craftingLogPages = [
           "rlvl": 29,
           "icon": "/i/025000/025356.png",
           "category": 45
+        },
+        {
+          "recipeId": 972,
+          "itemId": 4669,
+          "rlvl": 30,
+          "icon": "/i/024000/024309.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2140,
+          "itemId": 9615,
+          "rlvl": 30,
+          "icon": "/i/027000/027555.png",
+          "category": 61
+        },
+        {
+          "recipeId": 2142,
+          "itemId": 9618,
+          "rlvl": 30,
+          "icon": "/i/027000/027552.png",
+          "category": 61
+        },
+        {
+          "recipeId": 2146,
+          "itemId": 9624,
+          "rlvl": 30,
+          "icon": "/i/027000/027551.png",
+          "category": 61
+        },
+        {
+          "recipeId": 2148,
+          "itemId": 9627,
+          "rlvl": 30,
+          "icon": "/i/027000/027553.png",
+          "category": 61
+        },
+        {
+          "recipeId": 2144,
+          "itemId": 9621,
+          "rlvl": 30,
+          "icon": "/i/027000/027554.png",
+          "category": 61
         }
       ]
     },
@@ -42166,13 +42166,6 @@ export const craftingLogPages = [
           "itemId": 4685,
           "rlvl": 31,
           "icon": "/i/024000/024157.png",
-          "category": 46
-        },
-        {
-          "recipeId": 982,
-          "itemId": 4719,
-          "rlvl": 35,
-          "icon": "/i/024000/024104.png",
           "category": 46
         },
         {
@@ -42230,6 +42223,13 @@ export const craftingLogPages = [
           "rlvl": 35,
           "icon": "/i/027000/027007.png",
           "category": 33
+        },
+        {
+          "recipeId": 982,
+          "itemId": 4719,
+          "rlvl": 35,
+          "icon": "/i/024000/024104.png",
+          "category": 46
         }
       ]
     },
@@ -42258,13 +42258,6 @@ export const craftingLogPages = [
           "itemId": 4686,
           "rlvl": 36,
           "icon": "/i/024000/024155.png",
-          "category": 46
-        },
-        {
-          "recipeId": 991,
-          "itemId": 4747,
-          "rlvl": 40,
-          "icon": "/i/024000/024402.png",
           "category": 46
         },
         {
@@ -42321,6 +42314,13 @@ export const craftingLogPages = [
           "itemId": 4733,
           "rlvl": 40,
           "icon": "/i/024000/024052.png",
+          "category": 46
+        },
+        {
+          "recipeId": 991,
+          "itemId": 4747,
+          "rlvl": 40,
+          "icon": "/i/024000/024402.png",
           "category": 46
         }
       ]
@@ -42431,6 +42431,62 @@ export const craftingLogPages = [
           "category": 46
         },
         {
+          "recipeId": 1003,
+          "itemId": 4713,
+          "rlvl": 48,
+          "icon": "/i/024000/024057.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1004,
+          "itemId": 4694,
+          "rlvl": 49,
+          "icon": "/i/024000/024206.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1005,
+          "itemId": 4647,
+          "rlvl": 50,
+          "icon": "/i/024000/024352.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1006,
+          "itemId": 4678,
+          "rlvl": 50,
+          "icon": "/i/024000/024110.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1007,
+          "itemId": 4715,
+          "rlvl": 50,
+          "icon": "/i/024000/024252.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1505,
+          "itemId": 6144,
+          "rlvl": 50,
+          "icon": "/i/024000/024113.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1507,
+          "itemId": 4672,
+          "rlvl": 55,
+          "icon": "/i/024000/024309.png",
+          "category": 46
+        },
+        {
+          "recipeId": 1508,
+          "itemId": 4688,
+          "rlvl": 55,
+          "icon": "/i/024000/024151.png",
+          "category": 46
+        },
+        {
           "recipeId": 1504,
           "itemId": 4714,
           "rlvl": 55,
@@ -42501,13 +42557,6 @@ export const craftingLogPages = [
           "category": 46
         },
         {
-          "recipeId": 1003,
-          "itemId": 4713,
-          "rlvl": 48,
-          "icon": "/i/024000/024057.png",
-          "category": 46
-        },
-        {
           "recipeId": 1512,
           "itemId": 4734,
           "rlvl": 70,
@@ -42555,55 +42604,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/027000/027554.png",
           "category": 61
-        },
-        {
-          "recipeId": 1004,
-          "itemId": 4694,
-          "rlvl": 49,
-          "icon": "/i/024000/024206.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1005,
-          "itemId": 4647,
-          "rlvl": 50,
-          "icon": "/i/024000/024352.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1006,
-          "itemId": 4678,
-          "rlvl": 50,
-          "icon": "/i/024000/024110.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1007,
-          "itemId": 4715,
-          "rlvl": 50,
-          "icon": "/i/024000/024252.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1505,
-          "itemId": 6144,
-          "rlvl": 50,
-          "icon": "/i/024000/024113.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1507,
-          "itemId": 4672,
-          "rlvl": 55,
-          "icon": "/i/024000/024309.png",
-          "category": 46
-        },
-        {
-          "recipeId": 1508,
-          "itemId": 4688,
-          "rlvl": 55,
-          "icon": "/i/024000/024151.png",
-          "category": 46
         }
       ]
     },
@@ -42632,41 +42632,6 @@ export const craftingLogPages = [
           "itemId": 12845,
           "rlvl": 120,
           "icon": "/i/024000/024073.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2814,
-          "itemId": 12867,
-          "rlvl": 133,
-          "icon": "/i/024000/024112.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2810,
-          "itemId": 12862,
-          "rlvl": 133,
-          "icon": "/i/024000/024103.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2797,
-          "itemId": 12846,
-          "rlvl": 133,
-          "icon": "/i/024000/024077.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2818,
-          "itemId": 12890,
-          "rlvl": 136,
-          "icon": "/i/025000/025109.png",
-          "category": 45
-        },
-        {
-          "recipeId": 2799,
-          "itemId": 12849,
-          "rlvl": 136,
-          "icon": "/i/024000/024002.png",
           "category": 46
         },
         {
@@ -42724,6 +42689,41 @@ export const craftingLogPages = [
           "rlvl": 133,
           "icon": "/i/024000/024301.png",
           "category": 46
+        },
+        {
+          "recipeId": 2814,
+          "itemId": 12867,
+          "rlvl": 133,
+          "icon": "/i/024000/024112.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2810,
+          "itemId": 12862,
+          "rlvl": 133,
+          "icon": "/i/024000/024103.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2797,
+          "itemId": 12846,
+          "rlvl": 133,
+          "icon": "/i/024000/024077.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2818,
+          "itemId": 12890,
+          "rlvl": 136,
+          "icon": "/i/025000/025109.png",
+          "category": 45
+        },
+        {
+          "recipeId": 2799,
+          "itemId": 12849,
+          "rlvl": 136,
+          "icon": "/i/024000/024002.png",
+          "category": 46
         }
       ]
     },
@@ -42752,41 +42752,6 @@ export const craftingLogPages = [
           "itemId": 12863,
           "rlvl": 139,
           "icon": "/i/024000/024101.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2798,
-          "itemId": 12847,
-          "rlvl": 148,
-          "icon": "/i/024000/024076.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2808,
-          "itemId": 12860,
-          "rlvl": 150,
-          "icon": "/i/024000/024363.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2815,
-          "itemId": 12868,
-          "rlvl": 150,
-          "icon": "/i/024000/024159.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2803,
-          "itemId": 12854,
-          "rlvl": 150,
-          "icon": "/i/024000/024207.png",
-          "category": 46
-        },
-        {
-          "recipeId": 2812,
-          "itemId": 12864,
-          "rlvl": 150,
-          "icon": "/i/024000/024114.png",
           "category": 46
         },
         {
@@ -42844,6 +42809,41 @@ export const craftingLogPages = [
           "rlvl": 148,
           "icon": "/i/024000/024014.png",
           "category": 46
+        },
+        {
+          "recipeId": 2798,
+          "itemId": 12847,
+          "rlvl": 148,
+          "icon": "/i/024000/024076.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2808,
+          "itemId": 12860,
+          "rlvl": 150,
+          "icon": "/i/024000/024363.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2815,
+          "itemId": 12868,
+          "rlvl": 150,
+          "icon": "/i/024000/024159.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2803,
+          "itemId": 12854,
+          "rlvl": 150,
+          "icon": "/i/024000/024207.png",
+          "category": 46
+        },
+        {
+          "recipeId": 2812,
+          "itemId": 12864,
+          "rlvl": 150,
+          "icon": "/i/024000/024114.png",
+          "category": 46
         }
       ]
     },
@@ -42872,62 +42872,6 @@ export const craftingLogPages = [
           "itemId": 19811,
           "rlvl": 260,
           "icon": "/i/024000/024083.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3582,
-          "itemId": 19842,
-          "rlvl": 273,
-          "icon": "/i/025000/025059.png",
-          "category": 45
-        },
-        {
-          "recipeId": 3584,
-          "itemId": 19844,
-          "rlvl": 273,
-          "icon": "/i/025000/025103.png",
-          "category": 45
-        },
-        {
-          "recipeId": 3575,
-          "itemId": 19833,
-          "rlvl": 273,
-          "icon": "/i/024000/024308.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3576,
-          "itemId": 19834,
-          "rlvl": 273,
-          "icon": "/i/024000/024120.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3583,
-          "itemId": 19843,
-          "rlvl": 276,
-          "icon": "/i/025000/025451.png",
-          "category": 45
-        },
-        {
-          "recipeId": 3560,
-          "itemId": 19817,
-          "rlvl": 276,
-          "icon": "/i/024000/024351.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3567,
-          "itemId": 19825,
-          "rlvl": 276,
-          "icon": "/i/024000/024313.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3573,
-          "itemId": 19831,
-          "rlvl": 276,
-          "icon": "/i/024000/024160.png",
           "category": 46
         },
         {
@@ -42985,6 +42929,62 @@ export const craftingLogPages = [
           "rlvl": 270,
           "icon": "/i/029000/029112.png",
           "category": 46
+        },
+        {
+          "recipeId": 3582,
+          "itemId": 19842,
+          "rlvl": 273,
+          "icon": "/i/025000/025059.png",
+          "category": 45
+        },
+        {
+          "recipeId": 3584,
+          "itemId": 19844,
+          "rlvl": 273,
+          "icon": "/i/025000/025103.png",
+          "category": 45
+        },
+        {
+          "recipeId": 3575,
+          "itemId": 19833,
+          "rlvl": 273,
+          "icon": "/i/024000/024308.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3576,
+          "itemId": 19834,
+          "rlvl": 273,
+          "icon": "/i/024000/024120.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3583,
+          "itemId": 19843,
+          "rlvl": 276,
+          "icon": "/i/025000/025451.png",
+          "category": 45
+        },
+        {
+          "recipeId": 3560,
+          "itemId": 19817,
+          "rlvl": 276,
+          "icon": "/i/024000/024351.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3567,
+          "itemId": 19825,
+          "rlvl": 276,
+          "icon": "/i/024000/024313.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3573,
+          "itemId": 19831,
+          "rlvl": 276,
+          "icon": "/i/024000/024160.png",
+          "category": 46
         }
       ]
     },
@@ -43013,62 +43013,6 @@ export const craftingLogPages = [
           "itemId": 19832,
           "rlvl": 279,
           "icon": "/i/024000/024151.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3561,
-          "itemId": 19819,
-          "rlvl": 288,
-          "icon": "/i/024000/024353.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3571,
-          "itemId": 19829,
-          "rlvl": 288,
-          "icon": "/i/024000/024161.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3557,
-          "itemId": 19814,
-          "rlvl": 288,
-          "icon": "/i/024000/024021.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3569,
-          "itemId": 19827,
-          "rlvl": 290,
-          "icon": "/i/024000/024312.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3566,
-          "itemId": 19824,
-          "rlvl": 290,
-          "icon": "/i/024000/024317.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3572,
-          "itemId": 19830,
-          "rlvl": 290,
-          "icon": "/i/024000/024112.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3558,
-          "itemId": 19815,
-          "rlvl": 300,
-          "icon": "/i/021000/021005.png",
-          "category": 46
-        },
-        {
-          "recipeId": 3555,
-          "itemId": 19812,
-          "rlvl": 300,
-          "icon": "/i/024000/024082.png",
           "category": 46
         },
         {
@@ -43126,6 +43070,62 @@ export const craftingLogPages = [
           "rlvl": 285,
           "icon": "/i/024000/024412.png",
           "category": 46
+        },
+        {
+          "recipeId": 3561,
+          "itemId": 19819,
+          "rlvl": 288,
+          "icon": "/i/024000/024353.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3571,
+          "itemId": 19829,
+          "rlvl": 288,
+          "icon": "/i/024000/024161.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3557,
+          "itemId": 19814,
+          "rlvl": 288,
+          "icon": "/i/024000/024021.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3569,
+          "itemId": 19827,
+          "rlvl": 290,
+          "icon": "/i/024000/024312.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3566,
+          "itemId": 19824,
+          "rlvl": 290,
+          "icon": "/i/024000/024317.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3572,
+          "itemId": 19830,
+          "rlvl": 290,
+          "icon": "/i/024000/024112.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3558,
+          "itemId": 19815,
+          "rlvl": 300,
+          "icon": "/i/021000/021005.png",
+          "category": 46
+        },
+        {
+          "recipeId": 3555,
+          "itemId": 19812,
+          "rlvl": 300,
+          "icon": "/i/024000/024082.png",
+          "category": 46
         }
       ]
     },
@@ -43155,13 +43155,6 @@ export const craftingLogPages = [
           "rlvl": 70,
           "icon": "/i/021000/021003.png",
           "category": 61
-        },
-        {
-          "recipeId": 30289,
-          "itemId": 7573,
-          "rlvl": 90,
-          "icon": "/i/024000/024071.png",
-          "category": 46
         },
         {
           "recipeId": 30424,
@@ -43217,6 +43210,13 @@ export const craftingLogPages = [
           "itemId": 9333,
           "rlvl": 90,
           "icon": "/i/024000/024115.png",
+          "category": 46
+        },
+        {
+          "recipeId": 30289,
+          "itemId": 7573,
+          "rlvl": 90,
+          "icon": "/i/024000/024071.png",
           "category": 46
         }
       ]
@@ -43292,13 +43292,6 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 31219,
-          "itemId": 12089,
-          "rlvl": 160,
-          "icon": "/i/052000/052164.png",
-          "category": 78
-        },
-        {
           "recipeId": 31224,
           "itemId": 12857,
           "rlvl": 160,
@@ -43353,6 +43346,13 @@ export const craftingLogPages = [
           "rlvl": 160,
           "icon": "/i/024000/024410.png",
           "category": 46
+        },
+        {
+          "recipeId": 31219,
+          "itemId": 12089,
+          "rlvl": 160,
+          "icon": "/i/052000/052164.png",
+          "category": 78
         }
       ]
     },
@@ -43381,55 +43381,6 @@ export const craftingLogPages = [
           "itemId": 14139,
           "rlvl": 180,
           "icon": "/i/024000/024320.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32046,
-          "itemId": 16711,
-          "rlvl": 250,
-          "icon": "/i/024000/024019.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32048,
-          "itemId": 16713,
-          "rlvl": 250,
-          "icon": "/i/024000/024020.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32049,
-          "itemId": 16714,
-          "rlvl": 250,
-          "icon": "/i/024000/024363.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32047,
-          "itemId": 16712,
-          "rlvl": 250,
-          "icon": "/i/024000/024119.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32050,
-          "itemId": 16715,
-          "rlvl": 250,
-          "icon": "/i/024000/024253.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32044,
-          "itemId": 16709,
-          "rlvl": 250,
-          "icon": "/i/024000/024407.png",
-          "category": 46
-        },
-        {
-          "recipeId": 32045,
-          "itemId": 16710,
-          "rlvl": 250,
-          "icon": "/i/024000/024054.png",
           "category": 46
         },
         {
@@ -43486,6 +43437,55 @@ export const craftingLogPages = [
           "itemId": 15650,
           "rlvl": 220,
           "icon": "/i/024000/024118.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32046,
+          "itemId": 16711,
+          "rlvl": 250,
+          "icon": "/i/024000/024019.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32048,
+          "itemId": 16713,
+          "rlvl": 250,
+          "icon": "/i/024000/024020.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32049,
+          "itemId": 16714,
+          "rlvl": 250,
+          "icon": "/i/024000/024363.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32047,
+          "itemId": 16712,
+          "rlvl": 250,
+          "icon": "/i/024000/024119.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32050,
+          "itemId": 16715,
+          "rlvl": 250,
+          "icon": "/i/024000/024253.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32044,
+          "itemId": 16709,
+          "rlvl": 250,
+          "icon": "/i/024000/024407.png",
+          "category": 46
+        },
+        {
+          "recipeId": 32045,
+          "itemId": 16710,
+          "rlvl": 250,
+          "icon": "/i/024000/024054.png",
           "category": 46
         }
       ]
@@ -43568,62 +43568,6 @@ export const craftingLogPages = [
           "category": 46
         },
         {
-          "recipeId": 33016,
-          "itemId": 23187,
-          "rlvl": 350,
-          "icon": "/i/024000/024414.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33169,
-          "itemId": 24276,
-          "rlvl": 380,
-          "icon": "/i/024000/024026.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33173,
-          "itemId": 24280,
-          "rlvl": 380,
-          "icon": "/i/024000/024262.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33168,
-          "itemId": 24275,
-          "rlvl": 380,
-          "icon": "/i/024000/024207.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33170,
-          "itemId": 24277,
-          "rlvl": 380,
-          "icon": "/i/024000/024162.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33172,
-          "itemId": 24279,
-          "rlvl": 380,
-          "icon": "/i/024000/024025.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33171,
-          "itemId": 24278,
-          "rlvl": 380,
-          "icon": "/i/024000/024086.png",
-          "category": 46
-        },
-        {
-          "recipeId": 33167,
-          "itemId": 24274,
-          "rlvl": 380,
-          "icon": "/i/024000/024412.png",
-          "category": 46
-        },
-        {
           "recipeId": 33017,
           "itemId": 23188,
           "rlvl": 350,
@@ -43678,6 +43622,62 @@ export const craftingLogPages = [
           "rlvl": 350,
           "icon": "/i/024000/024405.png",
           "category": 46
+        },
+        {
+          "recipeId": 33016,
+          "itemId": 23187,
+          "rlvl": 350,
+          "icon": "/i/024000/024414.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33169,
+          "itemId": 24276,
+          "rlvl": 380,
+          "icon": "/i/024000/024026.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33173,
+          "itemId": 24280,
+          "rlvl": 380,
+          "icon": "/i/024000/024262.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33168,
+          "itemId": 24275,
+          "rlvl": 380,
+          "icon": "/i/024000/024207.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33170,
+          "itemId": 24277,
+          "rlvl": 380,
+          "icon": "/i/024000/024162.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33172,
+          "itemId": 24279,
+          "rlvl": 380,
+          "icon": "/i/024000/024025.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33171,
+          "itemId": 24278,
+          "rlvl": 380,
+          "icon": "/i/024000/024086.png",
+          "category": 46
+        },
+        {
+          "recipeId": 33167,
+          "itemId": 24274,
+          "rlvl": 380,
+          "icon": "/i/024000/024412.png",
+          "category": 46
         }
       ]
     },
@@ -43706,6 +43706,62 @@ export const craftingLogPages = [
           "itemId": 8802,
           "rlvl": 20,
           "icon": "/i/052000/052154.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2173,
+          "itemId": 9727,
+          "rlvl": 25,
+          "icon": "/i/052000/052159.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3802,
+          "itemId": 24515,
+          "rlvl": 27,
+          "icon": "/i/052000/052987.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2093,
+          "itemId": 7963,
+          "rlvl": 30,
+          "icon": "/i/052000/052139.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3763,
+          "itemId": 23862,
+          "rlvl": 32,
+          "icon": "/i/052000/052956.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2172,
+          "itemId": 9726,
+          "rlvl": 35,
+          "icon": "/i/052000/052161.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2089,
+          "itemId": 7959,
+          "rlvl": 40,
+          "icon": "/i/052000/052135.png",
+          "category": 78
+        },
+        {
+          "recipeId": 3764,
+          "itemId": 23874,
+          "rlvl": 43,
+          "icon": "/i/052000/052958.png",
+          "category": 78
+        },
+        {
+          "recipeId": 2887,
+          "itemId": 15146,
+          "rlvl": 45,
+          "icon": "/i/052000/052194.png",
           "category": 78
         },
         {
@@ -43779,13 +43835,6 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 2173,
-          "itemId": 9727,
-          "rlvl": 25,
-          "icon": "/i/052000/052159.png",
-          "category": 78
-        },
-        {
           "recipeId": 2793,
           "itemId": 12092,
           "rlvl": 139,
@@ -43856,59 +43905,10 @@ export const craftingLogPages = [
           "category": 78
         },
         {
-          "recipeId": 3802,
-          "itemId": 24515,
-          "rlvl": 27,
-          "icon": "/i/052000/052987.png",
-          "category": 78
-        },
-        {
           "recipeId": 3745,
           "itemId": 21822,
           "rlvl": 288,
           "icon": "/i/052000/052908.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2093,
-          "itemId": 7963,
-          "rlvl": 30,
-          "icon": "/i/052000/052139.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3763,
-          "itemId": 23862,
-          "rlvl": 32,
-          "icon": "/i/052000/052956.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2172,
-          "itemId": 9726,
-          "rlvl": 35,
-          "icon": "/i/052000/052161.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2089,
-          "itemId": 7959,
-          "rlvl": 40,
-          "icon": "/i/052000/052135.png",
-          "category": 78
-        },
-        {
-          "recipeId": 3764,
-          "itemId": 23874,
-          "rlvl": 43,
-          "icon": "/i/052000/052958.png",
-          "category": 78
-        },
-        {
-          "recipeId": 2887,
-          "itemId": 15146,
-          "rlvl": 45,
-          "icon": "/i/052000/052194.png",
           "category": 78
         }
       ]
@@ -43938,6 +43938,62 @@ export const craftingLogPages = [
           "itemId": 5734,
           "rlvl": 30,
           "icon": "/i/022000/022807.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30092,
+          "itemId": 5738,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30093,
+          "itemId": 5740,
+          "rlvl": 30,
+          "icon": "/i/022000/022805.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30099,
+          "itemId": 5754,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30100,
+          "itemId": 5761,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30150,
+          "itemId": 5744,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30151,
+          "itemId": 5749,
+          "rlvl": 30,
+          "icon": "/i/022000/022809.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30096,
+          "itemId": 5765,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
+          "category": 55
+        },
+        {
+          "recipeId": 30396,
+          "itemId": 5766,
+          "rlvl": 30,
+          "icon": "/i/022000/022806.png",
           "category": 55
         },
         {
@@ -44011,13 +44067,6 @@ export const craftingLogPages = [
           "category": 55
         },
         {
-          "recipeId": 30092,
-          "itemId": 5738,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
           "recipeId": 30400,
           "itemId": 5800,
           "rlvl": 30,
@@ -44050,55 +44099,6 @@ export const craftingLogPages = [
           "itemId": 5811,
           "rlvl": 30,
           "icon": "/i/022000/022812.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30093,
-          "itemId": 5740,
-          "rlvl": 30,
-          "icon": "/i/022000/022805.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30099,
-          "itemId": 5754,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30100,
-          "itemId": 5761,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30150,
-          "itemId": 5744,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30151,
-          "itemId": 5749,
-          "rlvl": 30,
-          "icon": "/i/022000/022809.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30096,
-          "itemId": 5765,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
-          "category": 55
-        },
-        {
-          "recipeId": 30396,
-          "itemId": 5766,
-          "rlvl": 30,
-          "icon": "/i/022000/022806.png",
           "category": 55
         }
       ]
