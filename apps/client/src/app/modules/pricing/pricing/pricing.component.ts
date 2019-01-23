@@ -78,6 +78,9 @@ export class PricingComponent implements AfterViewInit {
         const price = this.pricingService.getPrice(row);
         return !price.fromVendor;
       });
+    if (rowsToFill.length === 0) {
+      return;
+    }
     const operations = interval(250).pipe(
       takeUntil(stopInterval$),
       filter(index => rowsToFill[index] !== undefined),
