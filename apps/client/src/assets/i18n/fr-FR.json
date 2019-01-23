@@ -664,7 +664,8 @@
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
-    "Content_copied": "Contenu copié dans le presse-papiers"
+    "Content_copied": "Contenu copié dans le presse-papiers",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
