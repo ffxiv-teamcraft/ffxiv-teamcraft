@@ -10,6 +10,7 @@
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
+  "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -659,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "Prix au vendeur",
+    "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
     "Copy_earnings_as_text": "Copier le contenu au format texte",
-    "Content_copied": "Contenu copié dans le presse-papiers"
+    "Content_copied": "Contenu copié dans le presse-papiers",
+    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -778,5 +781,18 @@
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
     "Desktop_instructions": "Veuillez cliquer sur ce lien pour télécharger la dernière version : ",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
+  },
+  "LOG_TRACKER": {
+    "Mark_page_as_done": "Marquer cette page comme terminée",
+    "Mark_as_done": "Marquer comme fait",
+    "Mark_as_not_done": "Marquer comme non fait",
+    "Create_list": "Créer une liste pour compléter cette page",
+    "PAGE": {
+      "Master_recipes": "Expert - tome {{number}}",
+      "Housing_items": "Logement ({{number}})",
+      "Others": "Autres",
+      "Dyes": "Teintures",
+      "Other_master_recipes": "Expert - autres"
+    }
   }
 }

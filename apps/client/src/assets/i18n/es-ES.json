@@ -10,6 +10,7 @@
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
+  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -267,7 +268,7 @@
     "General": "General",
     "Link_base": "Vínculos de artículos",
     "Theme": "Tema",
-    "no_panel_borders": "Disable borders around various panels",
+    "no_panel_borders": "Desactivar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
     "Check_for_update": "Buscar actualizaciones",
@@ -358,7 +359,7 @@
     "Add_all_alarms": "Agregar todas las alarmas de esta lista",
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
-    "Show_craftable_amount": "Show craftable amount",
+    "Show_craftable_amount": "Mostrar cantidad fabricable",
     "COMPLETION_POPUP": {
       "Title": "Lista completada",
       "Content": "Esta lista esta ahora completada. ¿Qué quiere hacer con ella?",
@@ -393,7 +394,7 @@
     "Open_in_ffxivgardening": "Abrir en ffxivgardening.com",
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
-    "Amount_craftable": "You can craft {{amount}}",
+    "Amount_craftable": "Puede crear {{amount}}",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -492,7 +493,7 @@
     "Title": "Recolección de artículos",
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
-    "Ephemeral_node": "Ephemeral node, can be respawned",
+    "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!"
   },
   "ANNOUNCEMENT": {
@@ -536,7 +537,7 @@
     "Propagate_changes": "Propagar permisos a las listas dentro del taller",
     "Propagate_changes_done": "Cambios propagados a las listas dentro del taller",
     "Team_notice": "El equipo asociado a esta lista automáticamente tiene el permiso de PARTICIPAR",
-    "Default_permission_level": "Default permission level"
+    "Default_permission_level": "Nivel de permiso predeterminado"
   },
   "WIKI": {
     "Title": "Wiki",
@@ -596,8 +597,8 @@
     "Save_as_new_done": "Usted está ahora en una copia de su rotación",
     "Change_rotation": "Escoger rotación",
     "New_rotation_folder": "Nueva carpeta",
-    "Safe_mode": "Safe mode",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chances to succeed (takes buffs into account)",
+    "Safe_mode": "Modo seguro",
+    "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "CUSTOM": {
       "Recipe_configuration": "Configuración de receta",
       "Recipe_level": "Nivel de receta",
@@ -659,11 +660,13 @@
   },
   "PRICING": {
     "From_vendor": "Precio del vendedor",
+    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Asumir que se vende todo",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
     "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
     "Copy_earnings_as_text": "Copiar contenido como texto",
-    "Content_copied": "Contenido copiado a su portapapeles"
+    "Content_copied": "Contenido copiado a su portapapeles",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -775,8 +778,21 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available ! ",
-    "Desktop_instructions": "Please navigate to the following link to download latest version: ",
-    "Web_instructions": "Please reload the page to get the latest version."
+    "New_update_available": "¡Nueva actualización disponible! ",
+    "Desktop_instructions": "Por favor siga el siguiente enlace para descargar la última versión: ",
+    "Web_instructions": "Por favor refresque la página para obtener la última versión."
+  },
+  "LOG_TRACKER": {
+    "Mark_page_as_done": "Mark this page as done",
+    "Mark_as_done": "Mark this item as done",
+    "Mark_as_not_done": "Mark this item as not done",
+    "Create_list": "Create a list to complete this page",
+    "PAGE": {
+      "Master_recipes": "Master recipes ({{number}})",
+      "Housing_items": "Housing({{number}})",
+      "Others": "Others",
+      "Dyes": "Dyes",
+      "Other_master_recipes": "Other Master Recipes"
+    }
   }
 }
