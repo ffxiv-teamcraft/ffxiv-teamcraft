@@ -53,6 +53,8 @@ export class LayoutRowFilter {
 
   static IS_MONSTER_DROP = new LayoutRowFilter(row => row.drops !== undefined && row.drops.length > 0, 'IS_MONSTER_DROP');
 
+  static IS_DUNGEON_DROP = new LayoutRowFilter(row => row.instances !== undefined && row.instances.length > 0, 'IS_DUNGEON_DROP');
+
   static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
     .find(source => source.trades
         .find(trade => trade.currencies.find(currency => [20, 21, 22].indexOf(+currency.id) > -1) !== undefined)
@@ -90,8 +92,10 @@ export class LayoutRowFilter {
 
       for (const tokenId of tomeIds) {
         if (row.tradeSources
-          .find(source => source.trades
-            .find(trade => +trade.currencies.find(c => c.id === tokenId) !== undefined) !== undefined) !== undefined) {
+          .some(source => source.trades
+            .some(trade => trade.currencies.some(c => c.id === tokenId)
+            )
+          )) {
           return true;
         }
       }
