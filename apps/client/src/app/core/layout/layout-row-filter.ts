@@ -15,6 +15,42 @@ export class LayoutRowFilter {
     return row.vendors !== undefined && row.vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
+  static FROM_BEAST_TRIBE = new LayoutRowFilter(row => {
+    if (row.tradeSources === undefined || row.vendors === undefined) {
+      return false;
+    }
+    const beastTribeNpcs = [
+      // Sylphic Vendor
+      1005569,
+      // Kobald Vendor
+      1008909,
+      // Sahagin Vendo
+      1008907,
+      // Amalj'aa Vendor
+      1005554,
+      // Ixali Vendor
+      1009205,
+      // Vath Stickpeddler
+      1016804,
+      // Luna Vanu
+      1016093,
+      // Mogmul Mogbelly
+      1017172,
+      // Shikitahe
+      1024219,
+      // Madhura
+      1024774,
+      // Gyosho
+      1025604];
+    return row.vendors.some(vendor => {
+      return beastTribeNpcs.indexOf(vendor.npcId) > -1;
+    }) || row.tradeSources.some(trade => {
+      return trade.npcs.some(npc => {
+        return beastTribeNpcs.indexOf(npc.id) > -1;
+      });
+    });
+  }, 'FROM_BEAST_TRIBE');
+
   static IS_MONSTER_DROP = new LayoutRowFilter(row => row.drops !== undefined && row.drops.length > 0, 'IS_MONSTER_DROP');
 
   static IS_GC_TRADE = new LayoutRowFilter(row => row.tradeSources !== undefined && row.tradeSources
