@@ -664,7 +664,8 @@
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
     "Copy_earnings_as_text": "Kopiere Inhalt als Text",
-    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert"
+    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
