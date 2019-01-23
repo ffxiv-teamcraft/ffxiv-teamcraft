@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.15"></a>
+## [5.0.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.14...v5.0.15) (2019-01-23)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with tomes filter ([9bee1e5](https://github.com/Supamiu/ffxiv-teamcraft/commit/9bee1e5))
+* fixed an issue with desktop app not loading item names properly ([3ee4fb7](https://github.com/Supamiu/ffxiv-teamcraft/commit/3ee4fb7))
+* fixed an issue with some masterbook icons not showing properly ([82bbfe4](https://github.com/Supamiu/ffxiv-teamcraft/commit/82bbfe4))
+
+
+### Features
+
+* **layout:** new `IS_DUNGEON_DROP` filter ([d73e53d](https://github.com/Supamiu/ffxiv-teamcraft/commit/d73e53d))
+
+
+
 <a name="5.0.14"></a>
 ## [5.0.14](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.13...v5.0.14) (2019-01-23)
 
