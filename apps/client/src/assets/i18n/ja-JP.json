@@ -664,7 +664,8 @@
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
     "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
     "Copy_earnings_as_text": "内容をテキストにコピーする",
-    "Content_copied": "クリップボードに内容がコピーされました。"
+    "Content_copied": "クリップボードに内容がコピーされました。",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
