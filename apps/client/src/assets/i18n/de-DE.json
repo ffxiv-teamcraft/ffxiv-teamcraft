@@ -783,6 +783,7 @@
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
   },
   "LOG_TRACKER": {
+    "Title": "Log Tracker",
     "Mark_page_as_done": "Mark this page as done",
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
