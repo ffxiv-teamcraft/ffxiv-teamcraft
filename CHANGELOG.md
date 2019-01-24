@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.16"></a>
+## [5.0.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.15...v5.0.16) (2019-01-24)
+
+
+### Bug Fixes
+
+* **layout:** fixed an issue with large lists not being shown properly in some cases ([2b1d0d8](https://github.com/Supamiu/ffxiv-teamcraft/commit/2b1d0d8)), closes [#733](https://github.com/Supamiu/ffxiv-teamcraft/issues/733)
+
+
+
 <a name="5.0.15"></a>
 ## [5.0.15](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.14...v5.0.15) (2019-01-23)
 
