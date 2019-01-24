@@ -783,6 +783,7 @@
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
   },
   "LOG_TRACKER": {
+    "Title": "Log Tracker",
     "Mark_page_as_done": "Marquer cette page comme terminée",
     "Mark_as_done": "Marquer comme fait",
     "Mark_as_not_done": "Marquer comme non fait",
