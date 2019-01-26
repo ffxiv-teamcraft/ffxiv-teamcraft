@@ -784,7 +784,7 @@
   },
   "LOG_TRACKER": {
     "Title": "Log Tracker",
-    "Mark_page_as_done": "Mark this page as done",
+    "Mark_page_as_done": "Diese Seite als erledigt markieren",
     "Mark_as_done": "Mark this item as done",
     "Mark_as_not_done": "Mark this item as not done",
     "Create_list": "Create a list to complete this page",
@@ -792,7 +792,7 @@
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
       "Others": "Others",
-      "Dyes": "Dyes",
+      "Dyes": "Farben",
       "Other_master_recipes": "Other Master Recipes"
     }
   }
