@@ -118,7 +118,7 @@
   },
   "ALARMS": {
     "Title": "알람",
-    "No_alarm": "설정된 알람 없음",
+    "No_alarm": "알람 없음",
     "Add_alarm": "알람 추가",
     "Alarm_created": "알람이 생성되었습니다",
     "Alarms_created": "{{amount}}개의 알람 생성됨",
