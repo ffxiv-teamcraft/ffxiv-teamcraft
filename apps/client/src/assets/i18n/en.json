@@ -315,7 +315,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Please verify your account to have access to the lists shared to your FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Regenerate all lists",
     "Regenerated_all": "Your lists are now up to date",
     "Merge_lists": "Merge lists",

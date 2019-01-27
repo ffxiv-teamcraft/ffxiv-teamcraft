@@ -13,7 +13,7 @@ import {
   LoadMyLists, LoadTeamLists,
   NeedsVerification,
   SelectList,
-  SetItemDone,
+  SetItemDone, UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -213,6 +213,10 @@ export class ListsFacade {
 
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
+  }
+
+  unload(key: string): void {
+    this.store.dispatch(new UnloadListDetails(key));
   }
 
   setNeedsverification(needed: boolean): void {

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.17"></a>
+## [5.0.17](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.16...v5.0.17) (2019-01-27)
+
+
+### Bug Fixes
+
+* **list-panel:** fixed an issue with buttons sometimes hidden even if you had permissions ([ff87bbf](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff87bbf))
+* **perfs:** item names cache is now shared across the app properly ([c37866b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c37866b))
+* **perfs:** lists are now unloaded upon leaving details page ([a0c75d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0c75d1))
+
+
+### Features
+
+* **patreon:** added new patreon supporter to loading screen: Qih "Kweh" Mewrilah ([3eb131b](https://github.com/Supamiu/ffxiv-teamcraft/commit/3eb131b))
+
+
+
 <a name="5.0.16"></a>
 ## [5.0.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.15...v5.0.16) (2019-01-24)
 
