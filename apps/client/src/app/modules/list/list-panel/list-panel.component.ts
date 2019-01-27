@@ -74,7 +74,7 @@ export class ListPanelComponent {
       ).pipe(
         map(([userId, user, list]) => {
           if (user !== null) {
-            return Math.min(list.getPermissionLevel(userId), list.getPermissionLevel(user.currentFcId));
+            return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(user.currentFcId));
           } else {
             return list.getPermissionLevel(userId);
           }

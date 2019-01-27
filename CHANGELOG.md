@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.18"></a>
+## [5.0.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.17...v5.0.18) (2019-01-27)
+
+
+### Bug Fixes
+
+* **permissions:** fixed an issue with list deletion button ([d3be009](https://github.com/Supamiu/ffxiv-teamcraft/commit/d3be009))
+
+
+
 <a name="5.0.17"></a>
 ## [5.0.17](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.16...v5.0.17) (2019-01-27)
 
