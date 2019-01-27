@@ -315,7 +315,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Пожалуйста, подтвердите ваш аккаунт для возможности иметь доступ к общим спискам",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
