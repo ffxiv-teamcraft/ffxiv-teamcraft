@@ -315,7 +315,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 계정을 인증해주세요",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
