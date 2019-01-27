@@ -315,7 +315,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "Bitte verifiziere dein Konto um Zugriff auf die Listen deiner Freien Gesellschaft zu erhalten",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
     "Merge_lists": "Listen zusammenfassen",
