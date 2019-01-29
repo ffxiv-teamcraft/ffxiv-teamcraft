@@ -548,6 +548,8 @@
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Extra wait",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
