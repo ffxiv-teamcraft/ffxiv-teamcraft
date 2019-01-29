@@ -302,7 +302,7 @@ export class Simulation {
     for (const effectiveBuff of this.buffs) {
       // We are checking the appliedStep because ticks only happen at the beginning of the second turn after the application,
       // For instance, Great strides launched at turn 1 will start to loose duration at the beginning of turn 3
-      if (effectiveBuff.appliedStep + 1 < this.steps.length) {
+      if (effectiveBuff.appliedStep < this.steps.length) {
         // If the buff has something to do, let it do it
         if (effectiveBuff.tick !== undefined) {
           effectiveBuff.tick(this, linear);

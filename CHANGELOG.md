@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.20"></a>
+## [5.0.20](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.19...v5.0.20) (2019-01-29)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an issue with buff ticks not being started properly ([5e78364](https://github.com/Supamiu/ffxiv-teamcraft/commit/5e78364))
+* **simulator:** restored initial wait duration for Comfort Zone and manipulation II ([33084b6](https://github.com/Supamiu/ffxiv-teamcraft/commit/33084b6))
+
+
+
 <a name="5.0.19"></a>
 ## [5.0.19](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.18...v5.0.19) (2019-01-29)
 
