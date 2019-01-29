@@ -7,6 +7,9 @@
   <label nz-checkbox [(ngModel)]="fixedEcho" [nzDisabled]="!addEcho" (ngModelChange)="generateMacros()">
     {{'SIMULATOR.Fixed_notification_number' | translate}}
   </label>
+  <label nz-checkbox [(ngModel)]="addConsumables" (ngModelChange)="generateMacros()">
+    {{'SIMULATOR.Include_consumables_notification' | translate}}
+  </label>
   <label nz-checkbox [(ngModel)]="breakOnReclaim" (ngModelChange)="generateMacros()">
     {{'SIMULATOR.Break_on_reclaim' | translate}}
   </label>
