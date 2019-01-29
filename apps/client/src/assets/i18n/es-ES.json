@@ -4,6 +4,7 @@
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
   "Pick_a_rotation": "Elegir una rotación",
   "Pick_a_recipe": "Elegir una receta",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Nombre de Gremio Independiente (FC)",
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Agregar todas las alarmas para este artículo",
     "Adaptative_filter": "Sólo mostrar lo que puedo hacer",
     "Amount_craftable": "Puede crear {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -658,6 +660,13 @@
         "Craftsmanship": "Artesanía",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
