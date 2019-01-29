@@ -4,6 +4,7 @@
   "Pick_a_fc": "자유부대 선택",
   "Pick_a_rotation": "로테이션 선택",
   "Pick_a_recipe": "제작법 선택",
+  "Pick_an_item": "Pick an item",
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "이 아이템에 대한 알람 추가",
     "Adaptative_filter": "할 수 있는 것만 표시",
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -658,6 +660,13 @@
         "Craftsmanship": "작업 숙련도",
         "Control": "가공 숙련도"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
