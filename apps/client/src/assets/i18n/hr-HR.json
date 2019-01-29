@@ -4,6 +4,7 @@
   "Pick_a_fc": "Odaberite Free Company",
   "Pick_a_rotation": "Odaberite set vještina",
   "Pick_a_recipe": "Odaberite recept",
+  "Pick_an_item": "Pick an item",
   "FC_name": "Free Company ime",
   "Saving_in_database": "Spremanje podataka na server",
   "See_on_map": "Pogledajte na karti",
@@ -395,6 +396,7 @@
     "Add_all_item_alarms": "Add all alarms for this item",
     "Adaptative_filter": "Only show what I can do",
     "Amount_craftable": "You can craft {{amount}}",
+    "Add_item": "Add an item",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -658,6 +660,13 @@
         "Craftsmanship": "Craftsmanship",
         "Control": "Control"
       }
+    },
+    "FAIL_CAUSE": {
+      "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
+      "NOT_ENOUGH_CP": "Not enough CP",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "NOT_SPECIALIST": "Specialist rotation but you're not specialist"
     }
   },
   "PRICING": {
