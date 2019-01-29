@@ -548,6 +548,8 @@
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
+    "Include_consumables_notification": "Include consumables notification",
+    "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
