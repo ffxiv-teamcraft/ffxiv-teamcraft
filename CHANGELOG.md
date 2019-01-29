@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.19"></a>
+## [5.0.19](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.18...v5.0.19) (2019-01-29)
+
+
+### Bug Fixes
+
+* fixed an issue with some items not being added to a list properly ([b7c3fd2](https://github.com/Supamiu/ffxiv-teamcraft/commit/b7c3fd2)), closes [#739](https://github.com/Supamiu/ffxiv-teamcraft/issues/739)
+
+
+### Features
+
+* **list:** you can now add items to a list directly from list details panel ([2d9edce](https://github.com/Supamiu/ffxiv-teamcraft/commit/2d9edce)), closes [#529](https://github.com/Supamiu/ffxiv-teamcraft/issues/529)
+* **simulator:** Add consumables to generated macros ([#717](https://github.com/Supamiu/ffxiv-teamcraft/issues/717)) ([59c0819](https://github.com/Supamiu/ffxiv-teamcraft/commit/59c0819))
+* **simulator:** changed buffs bar for a floating bar on mobile ([46b3384](https://github.com/Supamiu/ffxiv-teamcraft/commit/46b3384))
+* **simulator:** you can now see why a rotation fails ([6b70c97](https://github.com/Supamiu/ffxiv-teamcraft/commit/6b70c97)), closes [#661](https://github.com/Supamiu/ffxiv-teamcraft/issues/661)
+
+
+
+<a name="5.0.18"></a>
+## [5.0.18](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.17...v5.0.18) (2019-01-27)
+
+
+### Bug Fixes
+
+* **permissions:** fixed an issue with list deletion button ([d3be009](https://github.com/Supamiu/ffxiv-teamcraft/commit/d3be009))
+
+
+
+<a name="5.0.17"></a>
+## [5.0.17](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.16...v5.0.17) (2019-01-27)
+
+
+### Bug Fixes
+
+* **list-panel:** fixed an issue with buttons sometimes hidden even if you had permissions ([ff87bbf](https://github.com/Supamiu/ffxiv-teamcraft/commit/ff87bbf))
+* **perfs:** item names cache is now shared across the app properly ([c37866b](https://github.com/Supamiu/ffxiv-teamcraft/commit/c37866b))
+* **perfs:** lists are now unloaded upon leaving details page ([a0c75d1](https://github.com/Supamiu/ffxiv-teamcraft/commit/a0c75d1))
+
+
+### Features
+
+* **patreon:** added new patreon supporter to loading screen: Qih "Kweh" Mewrilah ([3eb131b](https://github.com/Supamiu/ffxiv-teamcraft/commit/3eb131b))
+
+
+
 <a name="5.0.16"></a>
 ## [5.0.16](https://github.com/Supamiu/ffxiv-teamcraft/compare/v5.0.15...v5.0.16) (2019-01-24)
 

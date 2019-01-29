@@ -13,7 +13,7 @@ import {
   LoadMyLists, LoadTeamLists,
   NeedsVerification,
   SelectList,
-  SetItemDone,
+  SetItemDone, UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndex
@@ -33,7 +33,9 @@ import { SettingsService } from '../../settings/settings.service';
 
 declare const gtag: Function;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getCompactsLoading);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails);
@@ -213,6 +215,10 @@ export class ListsFacade {
 
   load(key: string): void {
     this.store.dispatch(new LoadListDetails(key));
+  }
+
+  unload(key: string): void {
+    this.store.dispatch(new UnloadListDetails(key));
   }
 
   setNeedsverification(needed: boolean): void {

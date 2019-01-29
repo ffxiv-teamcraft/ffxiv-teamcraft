@@ -112,6 +112,22 @@
   }
 }
 
+.mobile-buffs {
+  position: fixed;
+  bottom: 11px;
+  z-index: 1000;
+  width: ~"calc(100% - 60px)";
+  opacity: .8;
+
+  ::ng-deep .ant-card-body {
+    padding: 3px !important;
+  }
+}
+
+.mobile-actions {
+  margin-bottom: 50px;
+}
+
 .buffs-container {
   min-height: 32px;
 
@@ -160,6 +176,13 @@
     position: absolute;
     top: 5px;
     left: 5px;
+  }
+
+  .fail-reason {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
   }
 
   .actions-container {

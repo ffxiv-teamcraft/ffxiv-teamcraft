@@ -3,6 +3,7 @@ import { Simulation } from '../../../simulation/simulation';
 import { Buff } from '../../buff.enum';
 import { Innovation } from '../buff/innovation';
 import { CraftingJob } from '../../crafting-job.enum';
+import { SimulationFailCause } from '../../simulation-fail-cause.enum';
 
 export class InnovativeTouch extends QualityAction {
 
@@ -29,6 +30,13 @@ export class InnovativeTouch extends QualityAction {
 
   _canBeUsed(simulationState: Simulation): boolean {
     return simulationState.crafterStats.specialist;
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.crafterStats.specialist) {
+      return SimulationFailCause.NOT_SPECIALIST;
+    }
+    super.getFailCause(simulationState, linear, safeMode);
   }
 
   getBaseCPCost(simulationState: Simulation): number {

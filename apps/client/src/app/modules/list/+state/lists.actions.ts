@@ -11,6 +11,7 @@ export enum ListsActionTypes {
   ListsForTeamsLoaded = '[Lists] Lists For Team Loaded',
 
   LoadListDetails = '[Lists] Load List',
+  UnloadListDetails = '[Lists] Unload List',
   LoadListCompact = '[Lists] Load List Compact',
   SelectList = '[Lists] Select List',
 
@@ -64,6 +65,13 @@ export class LoadListsWithWriteAccess implements Action {
 
 export class LoadListDetails implements Action {
   readonly type = ListsActionTypes.LoadListDetails;
+
+  constructor(public readonly key: string) {
+  }
+}
+
+export class UnloadListDetails implements Action {
+  readonly type = ListsActionTypes.UnloadListDetails;
 
   constructor(public readonly key: string) {
   }
@@ -189,4 +197,5 @@ export type ListsAction =
   | ListsForTeamsLoaded
   | NeedsVerification
   | LoadTeamLists
-  | TeamListsLoaded;
+  | TeamListsLoaded
+  | UnloadListDetails;

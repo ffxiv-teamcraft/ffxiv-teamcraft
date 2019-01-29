@@ -7,6 +7,7 @@ import { CraftingJob } from '../crafting-job.enum';
 import { progressFormulas } from '../formulas/progress-formulas';
 import { qualityFormulas } from '../formulas/quality-formulas';
 import { ingenuityData } from '../formulas/ingenuity-data';
+import { SimulationFailCause } from '../simulation-fail-cause.enum';
 
 /**
  * This is the parent class of all actions in the simulator.
@@ -49,6 +50,21 @@ export abstract class CraftingAction {
         && this._canBeUsed(simulationState, linear);
     }
     return simulationState.crafterStats.level >= levelRequirement.level && this._canBeUsed(simulationState, linear);
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    const levelRequirement = this.getLevelRequirement();
+    if (safeMode && this.getSuccessRate(simulationState) < 100) {
+      return SimulationFailCause.UNSAFE_ACTION;
+    }
+    if (levelRequirement.job !== CraftingJob.ANY && simulationState.crafterStats.levels[levelRequirement.job] !== undefined) {
+      if (simulationState.crafterStats.levels[levelRequirement.job] < levelRequirement.level) {
+        return SimulationFailCause.MISSING_LEVEL_REQUIREMENT;
+      }
+    }
+    if (simulationState.crafterStats.level >= levelRequirement.level) {
+      return SimulationFailCause.MISSING_LEVEL_REQUIREMENT;
+    }
   }
 
   abstract _canBeUsed(simulationState: Simulation, linear?: boolean): boolean;

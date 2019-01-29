@@ -316,7 +316,7 @@
     }
   },
   "LISTS": {
-    "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
+    "Needs_verification": "Merci de vérifier votre personnage dans la page profil afin d'accéder aux listes partagées à votre Compagnie Libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",

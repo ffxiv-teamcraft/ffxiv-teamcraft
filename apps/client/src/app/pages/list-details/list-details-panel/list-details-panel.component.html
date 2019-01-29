@@ -1,5 +1,6 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)" (nzActiveChange)="collapsed = !$event">
+  <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="!(displayRow.collapsed || collapsed)"
+                     (nzActiveChange)="collapsed = !$event">
     <div *ngIf="!(displayRow.collapsed)">
       <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown">
         <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
@@ -37,6 +38,9 @@
         </div>
       </div>
     </div>
+    <button nz-button nzBlock *ngIf="finalItems && (permissionLevel$ | async) >= 30" (click)="addItem()">
+      + {{'LIST_DETAILS.Add_item' | translate}}
+    </button>
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="panel-header">

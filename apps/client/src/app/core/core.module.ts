@@ -64,7 +64,6 @@ import { ListTemplate } from './database/custom-links/list-template';
     PlatformService,
     DataService,
     MathToolsService,
-    LocalizedDataService,
     I18nToolsService,
     BellNodesService,
     HtmlToolsService,
@@ -95,7 +94,8 @@ export class CoreModule {
         GarlandToolsService,
         EorzeanTimeService,
         CharacterService,
-        IpcService
+        IpcService,
+        LocalizedDataService
       ]
     };
   }
