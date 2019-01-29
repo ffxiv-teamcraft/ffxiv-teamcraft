@@ -3,6 +3,7 @@ import { Simulation } from '../../../simulation/simulation';
 import { ActionType } from '../action-type';
 import { Buff } from '../../buff.enum';
 import { CraftingJob } from '../../crafting-job.enum';
+import { SimulationFailCause } from '../../simulation-fail-cause.enum';
 
 export class Satisfaction extends CraftingAction {
 
@@ -13,6 +14,13 @@ export class Satisfaction extends CraftingAction {
   _canBeUsed(simulationState: Simulation, linear?: boolean): boolean {
     return simulationState.crafterStats.specialist && simulationState.hasBuff(Buff.WHISTLE_WHILE_YOU_WORK)
       && simulationState.getBuff(Buff.WHISTLE_WHILE_YOU_WORK).stacks % 3 === 0;
+  }
+
+  getFailCause(simulationState: Simulation, linear?: boolean, safeMode?: boolean): SimulationFailCause {
+    if (!simulationState.crafterStats.specialist) {
+      return SimulationFailCause.NOT_SPECIALIST;
+    }
+    super.getFailCause(simulationState, linear, safeMode);
   }
 
   execute(simulation: Simulation): void {

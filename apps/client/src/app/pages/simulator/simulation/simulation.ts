@@ -146,9 +146,17 @@ export class Simulation {
         this.maxCP += 15;
       }
       let result: ActionResult;
+      let failCause: SimulationFailCause;
+      const canUseAction = action.canBeUsed(this, linear);
+      if (!canUseAction) {
+        failCause = action.getFailCause(this, linear, safeMode);
+      }
+      const hasEnoughCP = action.getBaseCPCost(this) <= this.availableCP;
+      if (!hasEnoughCP) {
+        failCause = SimulationFailCause.NOT_ENOUGH_CP;
+      }
       // If we can use the action
-      if (this.success === undefined && action.getBaseCPCost(this) <= this.availableCP && action.canBeUsed(this, linear)
-        && this.steps.length < maxTurns) {
+      if (this.success === undefined && hasEnoughCP && this.steps.length < maxTurns && canUseAction) {
         result = this.runAction(action, linear, safeMode);
         if (reclaimAction.getBaseCPCost(this) <= this.availableCP && reclaimAction.canBeUsed(this, linear)) {
           this.lastPossibleReclaimStep = index;
@@ -163,7 +171,8 @@ export class Simulation {
           cpDifference: 0,
           skipped: true,
           solidityDifference: 0,
-          state: this.state
+          state: this.state,
+          failCause: failCause
         };
       }
       if (this.steps.length <= maxTurns) {
@@ -193,12 +202,17 @@ export class Simulation {
     });
     // HQ percent to quality percent formulae: https://github.com/Ermad/ffxiv-craft-opt-web/blob/master/app/js/ffxivcraftmodel.js#L1455
 
-    return {
+    const failedAction = this.steps.find(step => step.failCause !== undefined);
+    const res: SimulationResult = {
       steps: this.steps,
       hqPercent: this.getHQPercent(),
       success: this.progression >= this.recipe.progress,
       simulation: this
     };
+    if (failedAction !== undefined) {
+      res.failCause = SimulationFailCause[failedAction.failCause];
+    }
+    return res;
   }
 
   /**
@@ -214,8 +228,10 @@ export class Simulation {
     const progressionBefore = this.progression;
     const durabilityBefore = this.durability;
     const cpBefore = this.availableCP;
+    let failCause: SimulationFailCause;
     let success = false;
     if (safeMode && action.getSuccessRate(this) < 100) {
+      failCause = SimulationFailCause.UNSAFE_ACTION;
       action.onFail(this);
       this.safe = false;
     } else {
@@ -234,6 +250,7 @@ export class Simulation {
     if (this.progression >= this.recipe.progress) {
       this.success = true;
     } else if (this.durability <= 0) {
+      failCause = SimulationFailCause.DURABILITY_REACHED_ZERO;
       // Check durability to see if the craft is failed or not
       this.success = false;
     }
@@ -247,7 +264,7 @@ export class Simulation {
       skipped: false,
       solidityDifference: this.durability - durabilityBefore,
       state: this.state,
-      failCause: success || !safeMode ? undefined : SimulationFailCause.UNSAFE_ACTION
+      failCause: failCause
     };
   }
 

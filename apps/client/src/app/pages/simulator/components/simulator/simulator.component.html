@@ -436,6 +436,9 @@
                           [failed]="!step.success"></app-action>
             </div>
           </div>
+          <div *ngIf="resultData.failCause !== undefined" class="fail-reason">
+            {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}}
+          </div>
         </nz-card>
 
         <nz-card [class.mobile-actions]="false | ifMobile: true">
